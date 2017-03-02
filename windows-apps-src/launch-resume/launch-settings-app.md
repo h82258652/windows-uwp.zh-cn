@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "启动 Windows 设置应用"
 description: "了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 1135feec72510e6cbe955161ac169158a71097b9
-ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
 
 ## <a name="how-to-launch-the-settings-app"></a>如何启动“设置”应用
 
-若要启动“设置”应用，请使用以下示例中所示的 `ms-settings:` URI 方案。
+若要启动**设置**应用，请使用以下示例中所示的 `ms-settings:` URI 方案。
 
 在此示例中，超链接 XAML 控件用于使用 `ms-settings:privacy-microphone` URI 启动麦克风的隐私设置页面。
 
@@ -376,9 +383,4 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

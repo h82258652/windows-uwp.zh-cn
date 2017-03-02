@@ -3,18 +3,25 @@ author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: "MVVM 和语言性能提示"
 description: "本主题讨论了一些与选择软件设计模式和编程语言相关的性能注意事项。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5833422a3074ddfa581011d91c8364bddb3c3088
+ms.lasthandoff: 02/07/2017
 
 ---
-# MVVM 和语言性能提示
+# <a name="mvvm-and-language-performance-tips"></a>MVVM 和语言性能提示
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题讨论了一些与选择软件设计模式和编程语言相关的性能注意事项。
 
-## Model-View-ViewModel (MVVM) 模式
+## <a name="the-model-view-viewmodel-mvvm-pattern"></a>Model-View-ViewModel (MVVM) 模式
 
 Model-View-ViewModel (MVVM) 模式在许多 XAML 应用中很常见。 （MVVM 是非常类似于 Fowler 对 Model-View-Presenter 模式的描述，但它专用于 XAML）。 MVVM 模式有个问题，就是它可能会无意间产生具有过多层和过多分配的应用。 MVVM 会产生这些应用。
 
@@ -28,7 +35,7 @@ Model-View-ViewModel (MVVM) 模式在许多 XAML 应用中很常见。 （MVVM �
 -   在 MVVM 中，通常使用 ICommand 将 Button.Click 连接到视图模型，如常见的 DelegateCommand 或 RelayCommand 帮助程序。 虽然这些命令是额外的分配，但包含了 CanExecuteChanged 事件侦听器、增加了工作集和页面的启动/导航时间。 **建议：**请考虑将事件处理程序放在你的代码隐藏中，同时将它们附加到视图事件，并在引发这些事件时在你的视图模型上调用命令，这可以作为使用便利 ICommand 接口的备用方法。 你还需要添加额外代码，以便在该命令不可用时禁用“按钮”。
 -   在 MVVM 中，通常使用所有可能的 UI 配置来创建“页面”，然后通过将“可见性”属性绑定到 VM 中的属性来折叠树的某些部分。 这会不必要地增加启动时间，也可能会增加工作集（因为树的某些部分可能永远不会变得可见）。 **建议：**使用 x:DeferLoadStrategy 功能来延迟启动之外的树的不必要部分。 另外，还要为页面的不同模式创建单独的用户控件，并使用代码隐藏保持仅加载必要的控件。
 
-## C++/CX 建议
+## <a name="ccx-recommendations"></a>C++/CX 建议
 
 -   **使用最新版本**。 对 C++/CX 编译器进行连续的性能改进。 确保使用最新的工具集生成你的应用。
 -   **禁用 RTTI (/ GR-)**。 在编译器中，RTTI 默认处于打开状态，因此除非你的生成环境将其关闭，否则你可能正在使用它。 RTTI 的开销非常大，如果你的代码对其没有很大的依赖性，请将其关闭。 XAML 框架对你的代码使用 RTTI 没有任何要求。
@@ -41,10 +48,5 @@ Model-View-ViewModel (MVVM) 模式在许多 XAML 应用中很常见。 （MVVM �
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

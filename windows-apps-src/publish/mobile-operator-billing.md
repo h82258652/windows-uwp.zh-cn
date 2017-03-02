@@ -3,9 +3,16 @@ author: jnHs
 Description: "Windows 应用商店为支持此功能的移动运营商提供移动运营商结算作为付款方式。"
 title: "移动运营商结算"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
-ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cbf519d5755adb13f6a41845b4771ac459d880cc
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -26,6 +33,7 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 
 | 国家/地区  | 移动运营商 |
 |-----------------|------------------|
+| 奥地利         | Hutchison 3G Austria |
 | 芬兰         | DNA、Elisa       |
 | 法国          | Orange           |
 | 德国         | O2               |
@@ -37,7 +45,7 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 | 瑞典          | Telenor          |
 | 瑞士     | Swisscom         |
 | 美国   | Sprint           |
-| 英国  | O2               |
+| 英国  | O2、3 UK         |
 
  
 
@@ -55,11 +63,8 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 | 比利时              | BASE、Mobistar、Proximus                                           |
 | 巴西               | Claro                                                              |
 | 加拿大               | Fido、Rogers                                                       |
-| 中国                | China Mobile                                                       |
-| 哥伦比亚             | Movistar                                                           |
 | 捷克共和国       | T-Mobile、Vodafone、O2                                             |
-| 厄瓜多尔              | Claro                                                              |
-| 芬兰              | Elisa、TeliaSonera、DNA                                            |
+| 芬兰              | TeliaSonera、DNA                                            |
 | 法国               | Orange、SFR、Bouygues                                              |
 | 德国              | Telefonica、Telekom Deutschland、Vodafone                          |
 | 希腊               | Vodafone                                                           |
@@ -68,7 +73,6 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 | 印度尼西亚            | Indosat、Telkomsel、Hutchinson CP Telecommunications (HCPT)        |
 | 爱尔兰              | O2、Vodafone、Three                                                |
 | 意大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
-| 约旦               | Umniah                                                             |
 | 墨西哥               | Iusacell、Telcel、Movistar                                         |
 | 荷兰          | T-Mobile、Vodafone                                                 |
 | 波兰               | T-Mobile、Orange、Polkomtel (Plus)、Play                           |
@@ -91,10 +95,5 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

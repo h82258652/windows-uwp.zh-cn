@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "在 Windows 应用商店提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新提交。"
 title: "使用 Windows 应用商店提交 API 创建应用提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 创建应用提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 创建应用提交
+# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 创建应用提交
 
 
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 有关此方法如何适用通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -27,9 +34,9 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 确保应用至少有一个已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息的提交。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 <span/>
  
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -48,19 +55,19 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要创建提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何为应用创建新提交。
 
@@ -69,7 +76,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 该响应正文包含新提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅[应用提交资源](manage-app-submissions.md#app-submission-object)。
 
@@ -81,7 +88,8 @@ Authorization: Bearer <your access token>
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -173,7 +181,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -185,7 +193,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取应用提交](get-an-app-submission.md)
@@ -193,9 +201,4 @@ Authorization: Bearer <your access token>
 * [更新应用提交](update-an-app-submission.md)
 * [删除应用提交](delete-an-app-submission.md)
 * [获取应用提交的状态](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

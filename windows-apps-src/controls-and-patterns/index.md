@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
+ms.sourcegitcommit: 412a3f70861c6cd1bbf003fe0bd78c8547a5f3f8
+ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
@@ -174,8 +176,10 @@ ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 </ul>
 </div>
 
+## <a name="additional-controls-options"></a>其他控件选项
 
+可以从 [Telerik](http://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](http://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](http://www.actiprosoftware.com/products/controls/universal)等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。  
 
-<!--HONumber=Dec16_HO2-->
+如果你有兴趣了解有关这些控件的详细信息，请查看 GitHub 上的[客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database)示例。 此示例使用了 Telerik 的数据网格控件和数据输入验证功能，它们是 Telerik 的 UI for UWP 套件的一部分。 UI for UWP 套件是一个包含 20 多个控件的集合，通过 .NET Foundation 以开源项目的形式提供。
 
-
+![客户订单数据库图像](images/customerOrdersDataGrid.png)

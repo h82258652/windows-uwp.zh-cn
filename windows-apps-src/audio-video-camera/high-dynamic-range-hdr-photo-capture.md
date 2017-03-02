@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: "本文介绍了如何使用 AdvancedPhotoCapture 类捕获高动态范围 (HDR) 和低亮度照片。"
 title: "高动态范围 (HDR) 和低亮度照片捕获"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: cd711c2a5eb718521e3bf04ea7d37929dec5fb05
-ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 高动态范围 (HDR) 和低亮度照片捕获
+# <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高动态范围 (HDR) 和低亮度照片捕获
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -37,21 +44,21 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 有一个通用 Windows 示例展示了 **AdvancedPhotoCapture** 类的用法，你可以使用该类查看用在上下文中或用作自己应用起始点的 API。 有关详细信息，请参阅[相机高级捕获示例](http://go.microsoft.com/fwlink/?LinkID=620517)。
 
-## 高级照片捕获命名空间
+## <a name="advanced-photo-capture-namespaces"></a>高级照片捕获命名空间
 
 本文中的代码示例除了在基本媒体捕获所需的命名空间中之外，还在以下命名空间中使用 API。
 
 [!code-cs[HDRPhotoUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHDRPhotoUsing)]
 
-## HDR 照片捕获
+## <a name="hdr-photo-capture"></a>HDR 照片捕获
 
-### 确定 HDR 照片捕获在当前设备上是否受支持
+### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>确定 HDR 照片捕获在当前设备上是否受支持
 
 本文中介绍的 HDR 捕获技术使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象进行执行。 并非所有设备都支持使用 **AdvancedPhotoCapture** 的 HDR 捕获。 确定该技术在当前运行你的应用的设备上是否受支持，方法是获取 **MediaCapture** 对象的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825)，然后获取 [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) 属性。 检查视频设备控制器的 [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844) 集合以查看它是否包含 [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845)。 如果包含，则支持使用 **AdvancedPhotoCapture** 的 HDR 捕获。
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
-### 配置和准备 AdvancedPhotoCapture 对象
+### <a name="configure-and-prepare-the-advancedphotocapture-object"></a>配置和准备 AdvancedPhotoCapture 对象
 
 因为你将需要从代码内的多个位置访问 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 实例，所以你应声明成员变量以保留对象。
 
@@ -65,9 +72,9 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 [!code-cs[CreateAdvancedCaptureAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateAdvancedCaptureAsync)]
 
-### 捕获 HDR 照片
+### <a name="capture-an-hdr-photo"></a>捕获 HDR 照片
 
-通过调用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象的 [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) 方法，捕获 HDR 照片。 此方法将返回在其 [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) 属性中提供已捕获照片的 [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378) 对象。
+通过调用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象的 [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) 方法，捕获 HDR 照片。 此方法将返回在其 [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) 属性中提供已捕获照片的 [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378)  对象。
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
@@ -75,7 +82,7 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 用于将图像保存到磁盘的 **SaveCapturedFrameAsync** 帮助程序方法将稍后在本文中论述。
 
-### 获取可选参考帧
+### <a name="get-optional-reference-frame"></a>获取可选参考帧
 
 HDR 进程捕获多个帧，然后在已捕获所有帧之后，将它们合成到单个图像中。 你可以在已捕获帧之后，但在完成整个 HDR 进程之前，通过处理 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) 事件来访问该帧。 如果你只对最终 HDR 照片结果感兴趣，你不需要执行此操作。
 
@@ -94,20 +101,20 @@ HDR 进程捕获多个帧，然后在已捕获所有帧之后，将它们合成�
 
 [!code-cs[OptionalReferencePhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOptionalReferencePhotoCaptured)]
 
-### 当已捕获所有帧时将收到通知
+### <a name="receive-a-notification-when-all-frames-have-been-captured"></a>当已捕获所有帧时将收到通知
 
 HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处理为最终的 HDR 图像。 仍在捕获源 HDR 帧期间，无法启动另一个捕获，但在捕获所有帧之后，在完成 HDR 后期处理之前，你可以启动一个捕获。 当完成 HDR 捕获时将引发 [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) 事件，通知你可以启动另一个捕获。 典型方案是在 HDR 捕获开始时禁用你的 UI 的捕获按钮，然后在引发 **AllPhotosCaptured** 时重新启用它。
 
 [!code-cs[AllPhotosCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAllPhotosCaptured)]
 
-### 清理 AdvancedPhotoCapture 对象
+### <a name="clean-up-the-advancedphotocapture-object"></a>清理 AdvancedPhotoCapture 对象
 
 当你的应用完成捕获时，在释放 **MediaCapture** 对象之前，你应通过调用 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/mt181391) 并将你的成员变量设置为 Null 来关闭 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象。
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 
-## 低亮度照片捕获
+## <a name="low-light-photo-capture"></a>低亮度照片捕获
 当你使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) 类的低亮度功能时，系统将对当前场景进行评估，并根据需要应用一种算法进行低光补偿。 如果系统确定不需要应用该算法，则执行常规捕获。
 
 在使用低亮度照片捕获功能之前，应确定该技术在当前运行你的应用的设备上是否受支持，方法是获取 **MediaCapture** 对象的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825)，然后获取 [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) 属性。 检查视频设备控制器的 [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844) 集合以查看它是否包含 [**AdvancedPhotoMode.LowLight**](https://msdn.microsoft.com/library/windows/apps/mt147845)。 如果包含，则支持使用 **AdvancedPhotoCapture** 的低亮度捕获。 
@@ -137,10 +144,10 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
-## 使用 AdvancedCapturedPhoto 对象
+## <a name="working-with-advancedcapturedphoto-objects"></a>使用 AdvancedCapturedPhoto 对象
 [**AdvancedPhotoCapture.CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.CaptureAsync) 可返回一个 [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto) 对象，用来表示已捕获的照片。 此对象将公开 [**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto.Frame) 属性，这可返回一个 [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) 对象，用来表示该图像。 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.OptionalReferencePhotoCaptured) 事件还将在它的事件参数中提供一个 **CapturedFrame** 对象。 获取此类型的对象后，你可以对它执行各种操作，包括创建 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) 或将该图像保存到文件。 
 
-## 从 CapturedFrame 获取 SoftwareBitmap
+## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>从 CapturedFrame 获取 SoftwareBitmap
 从 **CapturedFrame** 对象获取 **SoftwareBitmap** 轻而易举，只需访问该对象的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) 属性即可。 不过，大多数编码格式都不会因 **AdvancedPhotoCapture** 而支持 **SoftwareBitmap**，因此在使用之前，应检查并确保该属性不为 null。
 
 [!code-cs[SoftwareBitmapFromCapturedFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapFromCapturedFrame)]
@@ -151,7 +158,7 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 
 当然，你可以始终将图像保存到某个文件，然后在单独的步骤中将该文件加载到 **SoftwareBitmap** 中。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[**创建、编辑和保存位图图像**](imaging.md)。
 
-## 将 CapturedFrame 保存到文件
+## <a name="save-a-capturedframe-to-a-file"></a>将 CapturedFrame 保存到文件
 [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) 类可实现 IInputStream 接口，因此可以将它用作对 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) 的输入，然后可以使用 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) 将图像数据写入磁盘。
 
 在以下示例中，在用户的图片库中创建一个新文件夹，并且在此文件夹中创建一个文件。 请注意，你的应用需要包含应用部件清单文件中的**图片库**功能才能访问此目录。 然后针对指定文件打开文件流。 接下来，调用 [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder.CreateAsync) 从 **CapturedFrame** 创建解码器。 然后，[**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) 即可通过该文件流和解码器创建编码器。
@@ -162,13 +169,8 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 
 [!code-cs[SaveCapturedFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSaveCapturedFrameAsync)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

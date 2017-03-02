@@ -3,14 +3,21 @@ author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: "蓝牙 GATT"
 description: "本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) API 概述，以及用于三个常见 GATT 方案的示例代码。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c6187f4bfe6f2940b8dbfea0e6441f2fa9ac2c66
+ms.lasthandoff: 02/07/2017
 
 ---
-# 蓝牙 GATT
+# <a name="bluetooth-gatt"></a>蓝牙 GATT
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要的 API **
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) 的概述，以及用于三个常见 GATT 方案的示例代码：检索蓝牙数据、控制蓝牙 LE 温度计设备，以及控制蓝牙 LE 设备数据的显示。
 
-## 概述
+## <a name="overview"></a>概述
 
 开发人员可使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 命名空间中的 API 访问蓝牙 LE 服务、描述符和特性。 蓝牙 LE 设备通过以下内容的集合公开其功能：
 
@@ -44,7 +51,7 @@ ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 为方便起见，蓝牙 SIG 将持续提供[公共配置文件](http://go.microsoft.com/fwlink/p/?LinkID=317977)的列表。
 
-## 检索蓝牙数据
+## <a name="retrieve-bluetooth-data"></a>检索蓝牙数据
 
 在本示例中，应用使用来自蓝牙设备的温度度量，可实现蓝牙 LE 健康温度计服务。 应用指定其希望在新的温度度量可用时收到通知。 通过为“温度计特征值更改”事件注册事件处理程序，应用将在前台运行时收到特征值更改事件通知。
 
@@ -165,7 +172,7 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## 控制蓝牙 LE 温度计设备
+## <a name="control-a-bluetooth-le-thermometer-device"></a>控制蓝牙 LE 温度计设备
 
 在本示例中，UWP 应用充当虚拟蓝牙 LE 温度计设备的控制器。 除了 [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) 配置文件的标准特性外，该设备还声明了允许用户检索以摄氏度或华氏度读取的值的格式特性。 该应用使用可靠的写入事务以确保格式和度量间隔设置为单个值。
 
@@ -285,7 +292,7 @@ void MainPage::Initialize()
 
 ```
 
-## 控制蓝牙 LE 设备数据的显示
+## <a name="control-the-presentation-of-bluetooth-le-device-data"></a>控制蓝牙 LE 设备数据的显示
 
 蓝牙 LE 设备可能公开向用户提供的当前电量的电池服务。 电池服务包括可选的 [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) 描述符，此描述符在解释电量数据时提供一些灵活性。 此方案提供一个应用示例，此应用与此类设备兼容，并且在向用户显示前使用 **PresentationFormats** 属性格式化特性值。
 
@@ -397,10 +404,5 @@ void MainPage::BatteryLevelChanged(
 ```
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

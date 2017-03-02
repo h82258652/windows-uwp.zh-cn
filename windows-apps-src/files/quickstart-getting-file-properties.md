@@ -2,18 +2,25 @@
 author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "获取文件属性"
-description: "获取由 StorageFile 对象表示的文件属性&amp;\\#8212;顶级、基本和扩展&amp;\\#8212;。"
+description: "获取由 StorageFile 对象表示的文件属性&\\#8212;顶级、基本和扩展&\\#8212;。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89dee43da35e9a31bb7a795324119cb429d3734e
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="get-file-properties"></a>获取文件属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737)
 -   [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)
@@ -21,7 +28,7 @@ ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 获取由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件属性：顶级、基本和扩展。
 
-**注意** 另请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+**注意**  另请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
  
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 很多顶级文件属性都可以作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类的成员进行访问。 这些属性包括文件属性、内容类型、创建日期、显示名称和文件类型等。
 
-**注意** 记得声明 **picturesLibrary** 功能。
+**注意**  请记住，要声明 **picturesLibrary** 功能。
 
  
 
@@ -134,9 +141,4 @@ foreach (Windows.Storage.StorageFile file in files)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

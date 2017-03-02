@@ -3,13 +3,20 @@ author: PatrickFarley
 title: "执行地理编码和反向地理编码"
 description: "通过调用 Windows.Services.Maps 命名空间中 MapLocationFinder 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。"
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 地理编码, 地图, 位置"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16be7bcafaf286a71e79fb4bca01511ddc7a1ae0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 执行地理编码和反向地理编码
+# <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -28,11 +35,11 @@ ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
 -   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。 通过 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
 -   每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象都包含一个 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象。 通过每个 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问该对象。
 
-**重要提示** 必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+**重要提示**  必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
 
  
 
-## 获取位置（地理编码）
+## <a name="get-a-location-geocode"></a>获取位置（地理编码）
 
 
 通过执行以下步骤，将地址或地点名称转换为地理位置（地理编码）。
@@ -81,7 +88,7 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## 获取地址（反向地理编码）
+## <a name="get-an-address-reverse-geocode"></a>获取地址（反向地理编码）
 
 
 通过执行以下步骤，将地理位置转换为地址（反向地理编码）。
@@ -123,7 +130,7 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 town = Redmond
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
 * [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -133,11 +140,4 @@ town = Redmond
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

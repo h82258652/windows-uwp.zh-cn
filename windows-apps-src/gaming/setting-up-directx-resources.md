@@ -3,13 +3,20 @@ author: mtoepke
 title: "设置 DirectX 资源和显示图像"
 description: "下面我们将为你介绍如何创建 Direct3D 设备、交换链和呈现目标视图，以及如何向屏幕显示呈现的图像。"
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, directx, 资源, 图像"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 设置 DirectX 资源和显示图像
+# <a name="set-up-directx-resources-and-display-an-image"></a>设置 DirectX 资源和显示图像
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,16 +25,16 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
 
 **目标：**在 C++ 通用 Windows 平台 (UWP) 应用中设置 DirectX 资源并显示纯色。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
 
 **完成所需时间：**20 分钟。
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 1. 使用 ComPtr 声明 Direct3D 接口变量
+### <a name="1-declaring-direct3d-interface-variables-with-comptr"></a>1. 使用 ComPtr 声明 Direct3D 接口变量
 
 我们使用 Windows 运行时 C++ 模板库 (WRL) 中的 ComPtr [智能指针](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx)模板来声明 Direct3D 接口变量，以便可以采用防异常的方式管理这些变量的生存时间。 然后，使用这些变量访问 [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 及其成员。 例如：
 
@@ -44,7 +51,7 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
 
 在启动示例应用之后，该示例应用将初始化并加载，然后就可以运行了。
 
-### 2. 创建 Direct3D 设备
+### <a name="2-creating-the-direct3d-device"></a>2. 创建 Direct3D 设备
 
 若要使用 Direct3D API 来呈现场景，必须首先创建一个代表显示适配器的 Direct3D 设备。 要创建 Direct3D 设备，需要调用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 函数。 在 [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329) 值的数组中指定级别 9.1 至 11.1。 Direct3D 按顺序检查数组并返回支持的最高功能级别。 因此，为了获取可用的最高级功能级别，我们将 **D3D\_FEATURE\_LEVEL** 数组条目按从高到低的顺序列出。 将 [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) 标记传递到 *Flags* 参数，使 Direct3D 资源与 Direct2D 交互操作。 如果使用调试版本，则还需传递 [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG) 标记。 有关调试应用的详细信息，请参阅[使用调试层来调试应用](https://msdn.microsoft.com/library/windows/desktop/jj200584)。
 
@@ -99,7 +106,7 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
             );
 ```
 
-### 3. 创建交换链
+### <a name="3-creating-the-swap-chain"></a>3. 创建交换链
 
 接下来，创建设备用于呈现和显示的交换链。 声明并初始化 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 结构来描述该交换链。 接着，将该交换链设置为翻转模型（即，在 **SwapEffect** 成员中设置 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) 值的交换链）并将 **Format** 成员设置为 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)。 将 **SampleDesc** 成员指定的 [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072) 结构的 **Count** 成员设置为 1，并将 **DXGI\_SAMPLE\_DESC** 的 **Quality** 成员设置为 0，因为翻转模型不支持多重采样抗锯齿 (MSAA)。 将 **BufferCount** 成员设置为 2，让交换链可以使用前台缓冲区来向显示设备显示，并使用后台缓冲区充当呈现器目标。
 
@@ -174,7 +181,7 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
                 );
 ```
 
-### 4. 创建呈现器目标视图
+### <a name="4-creating-the-render-target-view"></a>4. 创建呈现器目标视图
 
 要将图形呈现到窗口，需要创建一个呈现器目标视图。 调用 [**IDXGISwapChain::GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb174570) 来获取交换链接的后台缓冲区，以便在创建呈现器目标视图时使用。 将后台缓冲区指定为一个 2D 纹理 ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635))。 要创建呈现器目标视图，需要使用交换链的后台缓冲区调用 [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517)。 通过将视区 ([**D3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476260)) 指定为交换链的后台缓冲区的最大大小，指定绘制到整个核心窗口。 在对 [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) 的调用中使用视区将视区绑定到管道的[光栅化阶段](https://msdn.microsoft.com/library/windows/desktop/bb205125)。 光栅化阶段将向量信息转换为光栅图像。 此情况下不要求转换，因为我们只是显示纯色。
 
@@ -214,7 +221,7 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
         m_d3dDeviceContext->RSSetViewports(1, &viewport);
 ```
 
-### 5. 显示呈现的图像
+### <a name="5-presenting-the-rendered-image"></a>5. 显示呈现的图像
 
 我们将进入一个不断呈现和显示场景的无限循环。
 
@@ -256,7 +263,7 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
         }
 ```
 
-### 6. 调整应用窗口和交换链的缓冲区的大小
+### <a name="6-resizing-the-app-window-and-the-swap-chains-buffer"></a>6. 调整应用窗口和交换链的缓冲区的大小
 
 如果应用窗口大小发生改变，则应用必须调整交换链的缓冲区的大小，重新创建呈现器目标视图，然后显示大小调整后的呈现图像。 要调整交换链缓冲区的大小，需要调用 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 在此调用中，保持缓冲区的数量和缓冲区的格式不变（将 *BufferCount* 参数设置为 2，并将 *NewFormat* 参数设置为 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)）。 使交换链的后台缓冲区的大小与调整后的窗口大小相同。 在调整了交换链的缓冲区的大小之后，创建新的呈现器目标并显示新呈现的图像（与初始化应用时类似）。
 
@@ -273,7 +280,7 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
                 );
 ```
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 
 我们创建了一个 Direct3D 设备、交换链和呈现器目标视图，并向显示器显示了呈现的图像。
@@ -288,10 +295,5 @@ ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

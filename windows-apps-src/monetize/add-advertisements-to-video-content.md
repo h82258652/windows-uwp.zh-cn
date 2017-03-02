@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: "了解如何使用 AdScheduler 类向视频内容添加广告。"
-title: "使用 HTML 5 和 JavaScript 向视频内容添加广告"
+title: "向使用 HTML 5 和 JavaScript 编写的视频内容添加广告"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 广告, 视频, scheduler, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 5573d37068a6b6c10ff9e380bb8b34bb83516c35
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b42b57f385857301bb74037dbb5c0c7200653316
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="add-advertisements-to-video-content-in-html-5-and-javascript"></a>使用 HTML 5 和 JavaScript 向视频内容添加广告
+# <a name="add-advertisements-to-video-content-in-html-5-and-javascript"></a>向使用 HTML 5 和 JavaScript 编写的视频内容添加广告
 
 
 本演练演示了如何在使用 JavaScript 与 HTML 编写的通用 Windows 平台 (UWP) 应用中，使用 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) 类向视频内容添加广告。
@@ -96,9 +103,4 @@ ms.openlocfilehash: 5573d37068a6b6c10ff9e380bb8b34bb83516c35
 
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

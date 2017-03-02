@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "你可以为已在 Windows 应用商店中发布的应用或加载项生成促销代码。"
-title: "生成促销代码"
+Description: "你可以为已在 Windows 应用商店中发布的应用或加载项生成促销充值码。"
+title: "生成促销充值码"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a92f642b2d28eb801106388648455752c10e013a
-ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb97ccb1555e214871603861a3e5edeaaf3a55d7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 生成促销代码
+# <a name="generate-promotional-codes"></a>生成促销充值码
 
 
-你可以为已在 Windows 应用商店中发布的应用或加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用促销代码来使用户免费访问应用或加载项，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
+你可以为已在 Windows 应用商店中发布的应用或加载项生成促销充值码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用促销代码来使用户免费访问应用或加载项，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
 
 每个促销代码都具有对应的唯一可兑换 URL，你可以将其分配给单个用户或一组用户。 用户只需单击 URL 即可兑换充值码并从 Windows 应用商店安装应用或加载项。
 
@@ -24,9 +31,9 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
     -   你的所有应用的促销充值码订单的摘要（位于“仪表板概述”****页面上），以及每个应用各自的促销充值码订单的摘要（位于每个应用的“应用概述”****页面上）。
     -   每个应用的促销充值码订单的详细摘要（位于每个应用的“促销充值码”****页面上）。
 
-> **注意** 即使你已在应用的[定价和可用性](set-app-pricing-and-availability.md)仪表板页面上选择了“隐藏此应用并阻止获取。但具有促销充值码的客户仍可以在 Windows 10 设备上下载它”****选项，你仍然可以生成促销充值码。 你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，然后用户才能兑换促销充值码来安装应用。
+> **注意**  即使你已在应用的[定价和可用性](set-app-pricing-and-availability.md)仪表板页面上选择了**隐藏此应用并阻止获取。但具有促销充值码的客户仍可以在 Windows 10 设备上下载它**选项，你仍然可以生成促销代码。 你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，然后用户才能兑换促销充值码来安装应用。
 
-## 促销充值码策略
+## <a name="promotional-code-policies"></a>促销充值码策略
 
 
 请注意以下促销代码策略：
@@ -36,7 +43,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 -   对于每个应用或加载项，每 6 个月你最多可以生成 500 个促销代码。 6 个月期间从提交首个促销充值码订单时开始算起。
 -   你必须按照[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)中定义的要求进行操作，包括“3k. 促销充值码”****部分。
 
-## 预订促销代码
+## <a name="order-promotional-codes"></a>预订促销代码
 
 
 若要为已发布到 Windows 应用商店的应用或加载项预订促销代码：
@@ -57,7 +64,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
 促销充值码通常在提交订单后的 60 分钟内提供下载，尽管某些订单可能需要较长时间处理。 在完成订单并提供充值码下载后，订单状态将更改为“可用”****。
 
-## 下载和分发促销充值码
+## <a name="download-and-distribute-promotional-codes"></a>下载和分发促销充值码
 
 
 若要下载已完成的促销充值码订单并将充值码分发给应用的用户：
@@ -91,7 +98,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
     -   充值码的可兑换 URL。
     -   指导用户访问可兑换 URL、使用其 Microsoft 帐户登录并按照说明下载和安装应用的说明。
 
-## 充值码兑换用户体验
+## <a name="code-redemption-user-experience"></a>充值码兑换用户体验
 
 
 在将可兑换 URL 分配给用户后，以下步骤介绍用户将遵循以兑换应用的体验。
@@ -104,7 +111,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
     浏览器导航到带有“获取&lt;应用名称&gt;”**********链接的“谢谢”****页面。
 
-    > **注意** 如果你的应用尚未发布，用户将在执行此步骤时收到一个错误。
+    > **注意**  如果你的应用尚未发布，用户将在执行此步骤时收到一个错误。
 
 3.  用户单击“获取&lt;应用名称&gt;”**********。
 
@@ -112,9 +119,9 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
     如果用户使用未安装 Windows 应用商店的计算机或设备，则浏览器打开到该应用的 Windows 应用商店网页。 用户可单击“安装”****来免费安装该应用。
 
-    > **注意** 在某些情况下，应用页面可能显示“购买”****按钮而不是“安装”****，即使该应用已通过促销充值码成功兑换。 用户可单击“购买”****来免费安装该应用。
+    > **注意**  在某些情况下，应用页面可能显示**购买**按钮而不是**安装**，即使该应用已通过促销充值码成功兑换。 用户可单击“购买”****来免费安装该应用。
 
-## 查看促销充值码
+## <a name="review-your-promotional-codes"></a>查看促销充值码
 
 
 有多种不同的方法可用于查看促销充值码的使用情况。
@@ -136,10 +143,5 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO4-->
 
 

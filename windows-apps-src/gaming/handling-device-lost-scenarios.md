@@ -3,9 +3,16 @@ author: mtoepke
 title: "在 Direct3D 11 中处理设备删除方案"
 description: "本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx 11, 设备丢失"
 translationtype: Human Translation
-ms.sourcegitcommit: 5ed3815397b076ab3ee14fd3c22b235b46da5f09
-ms.openlocfilehash: b88d85c78ba5d08718b7e2c844f94beb71e5134a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2202d8ea4584f7755464fd3035829d348cfbff8d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -163,7 +170,7 @@ if (m_deviceNotify != nullptr)
 
 对于与 Visual Studio 图形诊断相关的 Direct3D 事件捕获和播放，Visual Studio 开发人员命令提示符支持命令行工具“dxcap”。 当你的应用正在运行时，你可以使用命令行选项“-forcetdr”，以便强制执行 GPU 超时检测和恢复事件，进而触发 DXGI\_ERROR\_DEVICE\_REMOVED 并允许你测试错误处理代码。
 
-> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 有关如何安装适用于 Windows 10 的图形工具的详细信息可以在此处找到：<https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
+> **注意**  DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 有关如何安装适用于 Windows 10 的图形工具的详细信息可以在此处找到：<https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
 
  
 
@@ -173,10 +180,5 @@ if (m_deviceNotify != nullptr)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

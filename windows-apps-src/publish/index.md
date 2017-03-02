@@ -1,14 +1,22 @@
 ---
 author: jnHs
 Description: "了解如何将 Windows 应用发布到 Windows 应用商店。"
+title: "发布 Windows 应用"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 translationtype: Human Translation
-ms.sourcegitcommit: f894decad6a88ad3923e0bd5c54a6f4906555081
-ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 43cd6db99001974283175cb611d2e06c5da2221c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 发布 Windows 应用
+# <a name="publish-windows-apps"></a>发布 Windows 应用
 
 你可以使用 Windows 开发人员中心仪表板将应用发布到 Windows 应用商店。 
 
@@ -29,9 +37,4 @@ ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
 | [获取收入](getting-paid-apps.md) | 获取有关从应用、加载项和 Microsoft Advertising 中获取收益的详细信息。 |
 | [应用商店策略和行为准则](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | 本节包括适用于 Windows 应用和内容的[应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)和[应用质量](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)条件，以及开发人员应该遵循的[行为准则](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)。 |
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

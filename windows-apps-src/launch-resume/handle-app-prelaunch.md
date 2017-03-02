@@ -3,23 +3,30 @@ author: TylerMSFT
 title: "处理应用预启动"
 description: "了解如何通过替代 OnLaunched 方法并调用 CoreApplication.EnablePrelaunch(true) 处理应用预启动。"
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea9aa37e15dbb6c977b0c0be4f91f77f3879e622
-ms.openlocfilehash: cf7cb9f81207f4f25eb8e78283079df27f83d7dc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6107fe07fc8e98db7d197354246784a31a9c902c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 处理应用预启动
+# <a name="handle-app-prelaunch"></a>处理应用预启动
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何通过替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法处理应用预启动。
 
-## 简介
+## <a name="introduction"></a>简介
 
 当允许使用可用的系统资源时，可通过在后台主动启动用户的最常用应用，提升桌面设备系列设备上的 Windows 应用商店应用的启动性能。 预启动的应用在启动后不久就会处于暂停状态。 然后，在用户调用该应用时，它通过从暂停状态切换到运行状态而得到恢复，这比冷启动应用的速度要快得多。 用户的体验只是启动应用的速度非常快。
 
-在 Windows 10 之前，应用不会自动利用预启动。 在 Windows 10 版本 1511 中，所有通用 Windows 平台 (UWP) 应用均已等待预启动。 在 Windows 10 版本 1607 中，你必须通过调用 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) 选择加入预启动行为。 放置此调用的绝佳位置是进行 `if (e.PrelaunchActivated == false)` 检查的位置附近的 `OnLaunched()` 内。
+在 Windows 10 之前，应用不会自动利用预启动。 在 Windows 10 版本 1511 中，所有通用 Windows 平台 (UWP) 应用均已等待预启动。 在 Windows 10 版本 1607 中，你必须通过调用 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) 选择加入预启动行为。 放置此调用的绝佳位置是进行 `if (e.PrelaunchActivated == false)` 检查的位置附近的 `OnLaunched()` 内。
 
 是否预启动应用取决于系统资源。 如果系统遇到资源压力，则不会预启动应用。
 
@@ -27,11 +34,11 @@ ms.openlocfilehash: cf7cb9f81207f4f25eb8e78283079df27f83d7dc
 
 XAML 项目（C#、VB、C++）和 WinJS 的默认模板适合在 Visual Studio 2015 Update 3 中预启动。
 
-## 预启动和应用生命周期
+## <a name="prelaunch-and-the-app-lifecycle"></a>预启动和应用生命周期
 
 预启动应用后，它将进入暂停状态。 （请参阅[处理应用暂停](suspend-an-app.md)）。
 
-## 检测和处理预启动
+## <a name="detect-and-handle-prelaunch"></a>检测和处理预启动
 
 在激活期间，应用会收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志运行应仅在用户显式启动应用（如在 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 中的以下摘录中所示）时运行的代码。
 
@@ -76,9 +83,9 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**提示** 如果要面向版本 1607 之前的 Windows 10 版本并且要选择退出预启动，请检查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 如果它已设置，请在执行任何创建框架或激活窗口的操作前从 OnLaunched() 返回。
+**提示**  如果要面向版本 1607 之前的 Windows 10 版本并且要选择退出预启动，请检查 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 如果它已设置，请在执行任何创建框架或激活窗口的操作前从 OnLaunched() 返回。
 
-## 使用 VisibilityChanged 事件
+## <a name="use-the-visibilitychanged-event"></a>使用 VisibilityChanged 事件
 
 用户看不到通过预启动激活的应用。 它们在用户切换到它们时可见。 你可能想要延迟某些操作，直到可以看到应用主窗口为止。 例如，如果你的应用显示来自某个源的新增项列表，你可以在 [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) 事件期间更新该列表，而非使用在预启动该应用时生成的列表，因为该列表可能在用户激活该应用时就已过时。 以下代码处理 **MainPage** 的 **VisibilityChanged** 事件：
 
@@ -100,9 +107,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## DirectX 游戏指南
+## <a name="directx-games-guidance"></a>DirectX 游戏指南
 
-DirectX 游戏通常不应启用预启动，因为许多 DirectX 游戏在可以检测到预启动之前执行其初始化。 从 Windows 1607 周年版本开始，默认情况下不会预启动你的游戏。  如果你希望你的游戏充分利用预启动，请调用 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)。
+DirectX 游戏通常不应启用预启动，因为许多 DirectX 游戏在可以检测到预启动之前执行其初始化。 从 Windows 1607 周年版本开始，默认情况下不会预启动你的游戏。  如果你希望你的游戏充分利用预启动，请调用 [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)。
 
 如果你的游戏面向早期版本的 Windows 10，你可以处理预启动条件退出应用程序：
 
@@ -122,9 +129,9 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 }
 ```
 
-## WinJS 应用指南
+## <a name="winjs-app-guidance"></a>WinJS 应用指南
 
-如果你的 WinJS 应用面向早期版本的 Windows 10，你可以在 [onactivated](https://msdn.microsoft.com/en-us/library/windows/apps/br212679.aspx) 处理程序中处理预启动条件：
+如果你的 WinJS 应用面向早期版本的 Windows 10，你可以在 [onactivated](https://msdn.microsoft.com/library/windows/apps/br212679.aspx) 处理程序中处理预启动条件：
 
 ```js
     app.onactivated = function (args) {
@@ -137,7 +144,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     }
 ```
 
-## 一般指南
+## <a name="general-guidance"></a>一般指南
 
 -   应用不应在预启动期间执行运行时间较长的操作，因为该应用会在无法快速暂停的情况下终止。
 -   预启动应用时，应用不应从 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 启动音频播放，因为该应用不可见并且音频播放的原因并不明显。
@@ -149,13 +156,8 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 -   应用的遥测应可以区分正常磁贴激活和预启动激活，以便更轻松地缩小发生问题的方案。
 -   如果你拥有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，则可以在 Visual Studio 2015 中模拟应用预启动，方法是依次选择“调试”****&gt;“其他调试目标”****&gt;“调试 Windows 通用应用预启动”****。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
-* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
 

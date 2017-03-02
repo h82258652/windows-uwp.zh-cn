@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One"
 description: "介绍如何使用免费 Fiddler 工具查看 UWP Xbox One 开发工具包上的网络流量。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 translationtype: Human Translation
-ms.sourcegitcommit: 11c6cffab7934937b6d89c30e4d03ae752f6b3b7
-ms.openlocfilehash: 241fa495c7277fe2bf4feafeb4062842f97e59b1
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c7ebd56205db2674df5da6d64ecc9332aa96230e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One
+# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One
 
 Fiddler 是一种 Web 调试代理，用于记录 Xbox One 开发工具包和 Internet 之间的所有 HTTP 和 HTTPS 流量。 你将使用它记录和检查与 Xbox 服务和依赖方 Web 服务之间的流量，以便了解和调试 Web 服务调用。 
 
@@ -18,7 +26,7 @@ Fiddler 是一款免费软件，可从 [Fiddler 网站](http://www.fiddler2.com/
 
 Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler 的计算机禁用上游连接，则在主机的身份验证过期前，主机可能无法检测到此断开连接。 如果你使用的是 Fiddler，请确保断开主机与运行 Fiddler 的计算机之间的连接，而不是使用 Fiddler 模拟断开连接。
 
-### 在开发电脑上安装并启用 Fiddler
+### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>在开发电脑上安装并启用 Fiddler
 请按照以下步骤安装并启用 Fiddler，以便从开发工具包监视流量：
 
 1. 按照 [Fiddler 网站](http://www.fiddler2.com/fiddler2/)上的指示在开发电脑上安装 Fiddler。 
@@ -52,7 +60,7 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
   4. 单击“将根证书导出到桌面”****。
 7. 退出并重启 Fiddler。
 
-### 将开发工具包配置为使用 Fiddler 作为其 Internet 代理
+### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a>将开发工具包配置为使用 Fiddler 作为其 Internet 代理
 
 1. 导航到 Xbox Device Portal UI 中的“网络”****工具。
 2. 浏览你导出到桌面的 Fiddler 根证书。 
@@ -60,7 +68,7 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 4. 键入 Fiddler 正在侦听的端口号（默认情况下，Fiddler 使用端口 8888）。 
 5. 单击“启用”****。 这将重启你的开发工具包。
 
-### 停止使用 Fiddler
+### <a name="to-stop-using-fiddler"></a>停止使用 Fiddler
 若要停止使用 Fiddler 作为 Internet 代理（并使 Fiddler 停止跟踪所有开发工具包的网络流量），请执行以下操作：
 
 1. 导航到 Xbox Device Portal UI 中的“网络”****工具。
@@ -69,16 +77,11 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 > [!NOTE]
 > 每台安装了 Fiddler 的电脑都使用不同的 Fiddler 根证书。 如果你有多台电脑可用于为开发工具包提供 Fiddler 代理，你将需要在它们之间进行切换时选择新的根证书。 如果你只使用一台电脑，则只需在首次启用 Fiddler 时选择根证书。 你仍然必须指定 IP 地址和端口。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Fiddler 设置 API 参考](wdp-fiddler-api.md)
 - [常见问题](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

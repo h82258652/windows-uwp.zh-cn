@@ -1,20 +1,27 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "本主题介绍用于旋转的新 Windows UI，并提供在 Windows 应用商店应用中使用这个新交互机制时应该考虑的用户体验指南。"
+Description: "本主题介绍用于旋转的全新 Windows UI，并提供在 Windows 应用商店应用中使用这个新交互机制时应该考虑的用户体验指南。"
 title: "旋转"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="rotation"></a>旋转
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-本文介绍用于旋转的新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
+本文介绍用于旋转的全新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
@@ -126,10 +133,5 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

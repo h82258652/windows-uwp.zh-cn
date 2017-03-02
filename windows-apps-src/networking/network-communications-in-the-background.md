@@ -3,15 +3,22 @@ author: DelfCo
 description: "当应用不在前台时，它们使用后台任务和两个主机制来保持通信。"
 title: "后台网络通信"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a6d297ca8510267d21656bd2e22bb3958a4a4b52
-ms.openlocfilehash: ea979eceb20c13d4025ec94ec8ed05b484a7eb27
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3f0e52780788eafe9e53bba491b8d54208dcc761
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="network-communications-in-the-background"></a>后台网络通信
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -586,10 +593,5 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   应用可能需要进行初始 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 请求以正确测试并设置传输，然后再创建要用于 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的传输。 在应用确定正确设置传输后，可以将 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 对象配置为与 **ControlChannelTrigger** 一起使用的传输对象。 设计此过程是为了防止在某些情况下断开通过传输建立的连接。 使用 SSL 与证书，应用可能需要显示一个对话框以输入 PIN 或者用于存在多个证书可供选择时。 可能需要进行代理身份验证和服务器身份验证。 如果代理或服务器身份验证已过期，则可能会关闭连接。 应用可以处理这些身份验证过期问题的一个方法是设置计时器。 当需要 HTTP 重定向时，不能保证能够可靠建立第二次连接。 初始测试请求可以确保在将 **IXMLHTTPRequest2** 对象用作 **ControlChannelTrigger** 对象的传输之前，应用使用最新的重定向 URL。
 
 有关结合使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的详细信息，请参阅 [ControlChannelTrigger 和 IXMLHTTPRequest2 示例](http://go.microsoft.com/fwlink/p/?linkid=258538)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

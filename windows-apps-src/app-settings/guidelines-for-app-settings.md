@@ -5,9 +5,16 @@ title: "应用设置指南"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ## <a name="should-i-include-a-settings-page-in-my-app"></a>应用中应包含设置页面吗？
 
-以下是属于应用设置页面的应用选项的示例： 
+以下是属于应用设置页面的应用选项的示例：
 
 -   影响应用的行为并且不需要频繁调整的配置选项，例如在天气应用中在摄氏度或华氏度之间选择默认的温度单位，更改邮件应用的帐户设置、通知设置或辅助选项。
 -   取决于用户首选项的选项，如音乐、音效或颜色主题。
@@ -51,21 +58,21 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 **应用栏**
 
-如果你要使用应用栏或工具栏（通常是中心或表/透视表导航布局的一部分），请将入口点最后一项放置在“更多”弹出窗口菜单中。 如果使用户更容易发现设置入口点对应用来说很重要，请将入口点直接放在应用栏上，而不是放在“更多”弹出窗口菜单中。
+如果使用[应用栏](../controls-and-patterns/app-bars.md)或工具栏，请将设置入口点作为最后一个项目放在“更多”溢出菜单中。 如果使用户更容易发现设置入口点对应用来说很重要，请将入口点直接放在应用栏上，而不是放在溢出菜单中。
 
 ![应用栏的应用设置入口点](images/appsettings-entrypoint-tabs.png)
 
 **中心**
 
-如果你要使用中心布局，应用设置的入口点应放置在应用栏的“更多”弹出窗口菜单中。
+如果你要使用中心布局，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
-**表/透视表**
+**选项卡/透视表**
 
-对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”弹出窗口菜单中。
+对于选项卡或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
 **大纲-细节**
 
-与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
+与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为大纲窗格顶级上的最后一个固定项。
 
 ## <a name="layout"></a>布局
 
@@ -80,6 +87,22 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ![手机上应用设置页面的布局](images/appsettings-layout-navpane-mobile.png)
 
+## <a name="color-mode-settings"></a>“颜色模式”设置
+
+
+如果你的应用允许用户选择应用的颜色模式，请使用[单选按钮](../controls-and-patterns/radio-button.md)或[组合框](../controls-and-patterns/lists.md#drop-down-lists)提供这些选项，标头为“选择模式”。 选项应包括以下内容
+- 浅色
+- 深色
+- Windows 默认模式
+
+我们还建议添加一个指向 Windows 设置应用的“颜色”页面的超链接，用户可以在此查看 Windows 默认主题。 对于超链接文本，请使用字符串“Windows 颜色设置”。
+
+![“选择模式”部分](images/appsettings_mode.png)
+
+<div class=”microsoft-internal-note”>
+[UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2) 上提供了显示“选择模式”部分的首选文本字符串的详细红线。
+</div>
+
 ## <a name="about-section-and-give-feedback-button"></a>“关于”部分和“提供反馈”按钮
 
 
@@ -89,10 +112,8 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ![附带“提供反馈”按钮的“关于此应用”部分](images/appsettings-about.png)
 
-## <a name="recommendations"></a>建议
 
-
-## <a name="app-settings-page-content"></a>应用设置页面内容
+## <a name="recommended-page-content"></a>推荐的页面内容
 
 
 当你有一个要包括在应用设置页面中的项目列表后，请考虑以下指南：
@@ -105,9 +126,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 -   将不太常用的设置组合到一个入口中，以便每个更常见的设置都有其各自的入口。 将仅包含信息的内容或链接放入“关于”设置。
 -   不要复制“权限”窗格中的功能。 默认情况下，Windows 提供此窗格，你无法修改它。
 
-##  <a name="add-settings-content-to-settings-flyouts"></a>向“设置”浮出控件添加设置内容
-
-
+-   向“设置”浮出控件添加设置内容
 -   在单个列中从上至下展示内容，支持滚动（如果需要）。 滚动限制的最大值是屏幕高度的两倍。
 -   使用以下应用设置控件：
 
@@ -131,10 +150,4 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 * [进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [存储和检索应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "游戏的移动观看控件"
 description: "了解如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。"
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 移动观看, 控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40af05538aa6a6fff6e159fe8aa8812090e8b44b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>游戏的移动观看控件
+# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>游戏的移动观看控件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,13 +29,13 @@ ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
 
 这些控件在游戏中通常称为 WASD 控件，其中 W、A、、S 和 D 键用于 x-z 平面固定的相机移动，鼠标用于控制相机围绕 x 和 y 轴的旋转。
 
-## 目标
+## <a name="objectives"></a>目标
 
 
 -   在 DirectX 游戏上为鼠标和键盘以及触摸屏添加基本移动观看控件。
 -   实现用于导航 3D 环境的第一人称相机。
 
-## 关于触摸控件实现的说明
+## <a name="a-note-on-touch-control-implementations"></a>关于触摸控件实现的说明
 
 
 对于触摸控件，我们实现两个控制器：移动控制器（处理 x-z 平面上相对于相机视点的移动）和观看控制器（瞄准相机的观看点）。 我们的移动控制器映射到键盘 WASD 按钮，观看控制器映射到鼠标。 但是对于触摸控件，我们需要定义屏幕的一个区域作为方向输入或者虚拟 WASD 按钮，屏幕其余区域作为观看控件的输入空间。
@@ -39,7 +46,7 @@ ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
 
 当你在屏幕左下角移动触摸指针（而非鼠标！）时，任何向上移动都会使相机向前移动。 任何向下移动都会使相机向后移动。 在移动控制器的指针空间左右移动与此相同。 在该空间外部，相机将成为一个观看控制器 - 只需触摸相机或将其拖到其面对的位置。
 
-## 设置基本输入事件基础结构
+## <a name="set-up-the-basic-input-event-infrastructure"></a>设置基本输入事件基础结构
 
 
 首先，我们必须创建用于处理来自鼠标和键盘的输入事件的控制类，并基于该输入更新相机视图。 由于我们要实现移动观看控件，因此我们将其称为 **MoveLookController**。
@@ -184,7 +191,7 @@ internal:
 
 现在，你在此处拥有了实现移动观看控件所需的全部组件。 因此，我们将这些片段连接在一起。
 
-## 创建基本输入事件
+## <a name="create-the-basic-input-events"></a>创建基本输入事件
 
 
 Windows 运行时事件调度程序提供我们需要 **MoveLookController** 类的实例处理的 5 个事件：
@@ -376,7 +383,7 @@ void MoveLookController::OnKeyUp(
 
 而且，当释放按键时，此事件处理程序会将其设置回 false。 当我们调用 **Update** 时，它将检查这些方向移动状态，并相应地移动相机。 这比触摸实现相对简单一些！
 
-## 初始化触摸控件和控制器状态
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a>初始化触摸控件和控制器状态
 
 
 现在让我们将事件连接在一起，并初始化所有控制器状态字段。
@@ -423,7 +430,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 
 **Initialize** 将指向该应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。 它初始化移动和观看指针的 ID、将触摸屏移动控制器实现的命令矢量设置为零，并将相机设置为在应用启动时观看正前方。
 
-## 获取和设置相机的位置和方向
+## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>获取和设置相机的位置和方向
 
 
 让我们定义一些方法，以便相对于视区获取和设置相机位置。
@@ -464,7 +471,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## 更新控制器状态信息
+## <a name="updating-the-controller-state-info"></a>更新控制器状态信息
 
 
 现在，我们将执行计算，可将 **m\_movePointerPosition** 中跟踪的指针坐标信息转换为世界坐标系中的新坐标信息。 每当刷新主应用循环时，应用都会调用此方法。 因此，我们需要在这里计算要传递给应用的新视点位置信息，以便在投影到视口之前更新 视图矩阵。
@@ -556,7 +563,7 @@ void MoveLookController::Update(CoreWindow ^window)
 
 玩家视点的最后位置是最后位置加计算的速度，呈现器在调用 **get\_Position** 方法（通常在每个帧的设置期间）时将读取此数据。 然后，我们将移动命令重置为零。
 
-## 使用相机的新位置更新视图矩阵
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>使用相机的新位置更新视图矩阵
 
 
 我们可以获取相机聚焦的场景空间坐标，每当指示你的应用更新坐标时，将执行此操作（例如在主屏循环中每 60 秒）。 此伪代码建议你可以实现的调用行为：
@@ -585,10 +592,5 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

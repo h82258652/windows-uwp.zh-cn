@@ -2,13 +2,20 @@
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: "使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试"
-description: "通过使用适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。"
+description: "通过适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
-ms.openlocfilehash: 6889c80d9879295fec31685aa3fd9bea9e6aea3e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c20b64cdc2a1335d4739d6790512eddd76bc8a08
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
+# <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -18,7 +25,7 @@ ms.openlocfilehash: 6889c80d9879295fec31685aa3fd9bea9e6aea3e
 
 你可以通过针对各种屏幕分辨率和屏幕大小配置使用唯一的 Windows 10 移动版模拟器图像，测试自己的通用应用。 通过使用 Microsoft 模拟器随附的工具，你可以模拟与某台设备的真实交互并测试你的应用的各种功能。
 
-## 系统要求
+## <a name="system-requirements"></a>系统要求
 
 你的计算机必须满足以下要求：
 
@@ -46,7 +53,7 @@ RAM
 
 适用于 Windows 10 移动版的 Microsoft 模拟器无法加载面向 Windows Phone OS 7.1 之前的 Windows Phone 操作系统版本的应用。
 
-## 安装和卸载
+## <a name="installing-and-uninstalling"></a>安装和卸载
 
 -   **安装**。
 
@@ -60,15 +67,15 @@ RAM
 
     当卸载适用于 Windows 10 移动版的 Microsoft 模拟器时，为供该模拟器使用而创建的 Hyper-V 虚拟以太网适配器不会自动删除。 你可以从“控制面板”****的“网络连接”****中手动删除此虚拟适配器。
 
-## 适用于 Windows 10 移动版的 Microsoft 模拟器的新增功能
+## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>适用于 Windows 10 移动版的 Microsoft 模拟器的新增功能
 
-除了提供对 Universal Windows Platform (UWP) 的支持外，该模拟器还添加了以下功能：
+除了提供对通用 Windows 平台 (UWP) 的支持外，该模拟器还添加了以下功能：
 
 -   鼠标输入模式支持，可区分鼠标输入和单一触摸输入。
 -   NFC 支持。 借助这款模拟器，不仅可以模拟 NFC，还可以测试和开发支持 NFC/邻近感应的通用应用。
 -   本机硬件加速使用本地显卡提高模拟器中的图形性能。 必须安装支持的图形卡，并在仿真器的“其他工具”****设置用户界面的“传感器”****选项卡上启用加速，以便使用加速。
 
-## 可以在仿真器中测试的功能
+## <a name="features-that-you-can-test-in-the-emulator"></a>可以在仿真器中测试的功能
 
 除了在上一部分中所述的新功能，还可以在适用于 Windows 10 移动版的 Microsoft 模拟器中测试以下常用功能。
 
@@ -96,7 +103,7 @@ RAM
 
 -   **锁屏界面**。 打开模拟器时，在计算机键盘上按 F12 两次。 F12 键可模拟手机上的电源按钮。 第一次按键将关闭屏幕。 第二次按键将再次打开屏幕，同时显示锁屏界面。 使用鼠标向上滑动锁屏可解锁屏幕。
 
-## 无法在模拟器中测试的功能
+## <a name="features-that-you-cant-test-in-the-emulator"></a>无法在模拟器中测试的功能
 
 仅可以在物理设备上测试以下功能。
 
@@ -106,7 +113,7 @@ RAM
 -   亮度。 模拟器的亮度级别始终很高。
 -   高分辨率的视频。 分辨率高于 VGA 分辨率 (640 x 480) 的视频无法可靠地显示，在内存仅为 512MB 的模拟器映像上尤其如此。
 
-## 鼠标输入
+## <a name="mouse-input"></a>鼠标输入
 
 通过使用 Windows 电脑上的物理鼠标或触控板和模拟器工具栏上的鼠标输入按钮，即可模拟鼠标输入。 如果你的应用允许用户使用与其 Windows 10 设备配对的鼠标提供输入，此功能将很有用。
 
@@ -120,7 +127,7 @@ RAM
 
 仿真器工具栏上的鼠标输入按钮。
 
-## 键盘输入
+## <a name="keyboard-input"></a>键盘输入
 
 仿真器支持将开发计算机上的硬件键盘映射到 Windows Phone 上的键盘。 键行为与在 Windows Phone 设备中相同。 
 
@@ -151,7 +158,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
  
 
 
-## 近场通信 (NFC)
+## <a name="near-field-communications-nfc"></a>近场通信 (NFC)
 
 通过使用仿真器“其他工具”****菜单中的“NFC”****选项卡，即可对在 Windows 10 移动版上使用已启用的近场通信 (NFC) 功能的应用进行生成和测试。 对于从邻近感应方案（如点击以共享）到卡仿真（如点击以支付）等多种方案，NFC 非常有用。
 
@@ -173,7 +180,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 
 在启动快速启动安装程序后，请确保按照上述说明选中防火墙提示上的全部 3 个复选框。 此外，必须安装触碰器工具，并且在与 Microsoft 模拟器相同的物理主机上使用它。
 
-### 邻近感应模式
+### <a name="proximity-mode"></a>邻近感应模式
 
 若要模拟一对手机触碰到一起，你将需要启动一对 Windows Phone 8 模拟器。 由于 Visual Studio 不支持同时运行两个相同的模拟器，因此你需要为每个模拟器选择不同的分辨率，以便解决该问题。
 
@@ -211,7 +218,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 
 Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例将公开与 Windows Phone 8 模拟器相同的协议。 你需要下载 DDK、构建该示例驱动程序、在 Windows 8 设备上安装它，然后将 Windows 8 设备的 IP 地址或主机名添加到设备列表，并将其与另一台 Windows 8 设备或一个 Windows Phone 8 模拟器触碰。
 
-### 主机卡仿真 (HCE) 模式
+### <a name="host-card-emulation-hce-mode"></a>主机卡仿真 (HCE) 模式
 
 在主机卡仿真 (HCE) 模式下，你可以通过编写自己的自定义脚本来模拟智能卡读卡器终端（例如销售点 (POS) 终端）来测试基于 HCE 的卡仿真应用程序。 此工具假定你熟悉读取器终端（例如 POS、锁屏提醒读取器或公交卡读卡器）和智能卡（你正在应用程序中进行模拟）之间发送的命令响应对（符合 ISO-7816-4）。
 
@@ -231,7 +238,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](http://go.microsoft.com/fwlink/?LinkId=534749)。
 
-### 如何创建用于 HCE 测试的脚本
+### <a name="how-to-create-scripts-for-hce-testing"></a>如何创建用于 HCE 测试的脚本
 
 脚本编写为 C# 代码，并且将在你单击“播放”****按钮时调用你的脚本的 Run 方法，此方法采用 IScriptProcessor 接口，此接口用于收发 APDU 命令、输出到日志窗口和控制等待来自手机的 APDU 响应的超时。
 
@@ -258,13 +265,13 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         }
 ```
 
-### 智能卡读卡器模式
+### <a name="smart-card-reader-mode"></a>智能卡读卡器模式
 
 该仿真器可连接到主计算机上的智能卡读卡器设备，以便使所插入或触碰的智能卡显示到手机应用程序中，并且可使用 [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) 类与 APDU 进行通信。 若要实现此功能，你将需要一个连接到计算机的兼容智能卡读卡器设备，USB 智能卡读卡器（NFC/非接触式和插入/接触式均可）广泛可用。 若要使仿真器可以使用连接的智能卡读卡器，首先选择“读卡器”****模式，该模式应该显示一个列出连接到主系统的所有兼容智能卡读卡器的下拉框，然后从该下拉框中选择你希望连接的智能卡读卡器设备。
 
 请注意，并非所有支持 NFC 的智能卡读卡器都支持某些类型的 NFC 卡，其中有一些不支持标准 PC/SC 存储卡 APDU 命令。
 
-## 多点输入
+## <a name="multi-point-input"></a>多点输入
 
 通过使用仿真器工具栏上的“多点输入”****按钮，可模拟收缩和缩放、旋转和平移对象的多点触摸输入。 如果应用显示的照片、地图或其他视觉元素用户可以缩放、旋转或平移，此功能将很有用。
 
@@ -281,7 +288,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![模拟器工具栏上的多点输入选项](images/em-multipoint.png)
 
-## 加速计
+## <a name="accelerometer"></a>加速计
 
 通过使用仿真器的“其他工具”****的“加速计”****选项卡，测试可跟踪手机移动的应用。
 
@@ -305,7 +312,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![模拟器的“其他工具”中的“加速计”页面](images/em-accelerometer.png)
 
-## 位置和驱动
+## <a name="location-and-driving"></a>位置和驱动
 
 通过使用仿真器的“其他工具”****的“加速计”****选项卡，测试使用导航和地理围栏的应用。 对于在类似于真实世界的条件下模拟驾车、骑行和步行，此功能将很有用。
 
@@ -385,7 +392,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 -   模拟的位置属性只包括“纬度”、“经度”、“精度”和PositionSource。 位置模拟器不会模拟其他属性，例如“速度”、“方向”等。
 
-## 网络
+## <a name="network"></a>网络
 
 通过仿真器的“其他工具”****的“网络”****选项卡，使用不同的网络速度和不同的信号强度测试你的应用。 如果你的应用调用 Web 服务或传输数据，此功能将很有用。
 
@@ -409,7 +416,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![模拟器的“其他工具”中的“网络”页面](images/em-network.png)
 
-## SD 卡
+## <a name="sd-card"></a>SD 卡
 
 通过仿真器的“其他工具”****的“SD 卡”****选项卡，使用模拟的可移动 SD 卡测试你的应用。 如果你的应用读取或写入文件，此功能将很有用。
 
@@ -444,11 +451,11 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         -   如果你在同步操作正在进行时单击“取消同步”****，将弹出该卡，并且同步操作的结果会不完整。
     -   “弹出 SD 卡”****按钮将更改回“插入 SD 卡”****。
 
-> **注意** 由于手机使用的 SD 卡已格式化为 FAT32 文件系统，所以最大容量为 32GB。
+> **注意** 由于手机使用的 SD 卡已使用 FAT32 文件系统进行格式化，所以最大容量为 32GB。
 
 读取和写入模拟 SD 卡的速度受到限制以模仿真实速度。 访问 SD 卡的速度慢于访问计算机的硬盘驱动器的速度。
 
-## 通知
+## <a name="notifications"></a>通知
 
 使用仿真器的“其他工具”****的“通知”****选项卡，向你的应用发送推送通知。 如果你的应用接收推送通知，此功能将很有用。
 
@@ -520,7 +527,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![模拟器的“其他工具”中的“通知”页面](images/em-notifications.png)
 
-## 传感器
+## <a name="sensors"></a>传感器
 
 通过仿真器的“其他工具”****的“传感器”****选项卡，测试应用在不具有所有可选传感器或相机功能的低成本手机上的工作方式。 如果你的应用使用相机或某些手机传感器，并且你希望你的应用可以尽可能扩大市场范围，此功能将很有用。
 
@@ -562,7 +569,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 | 视频分辨率   | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更高 |
 | 预览分辨率 | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
-## 帧速率计数器
+## <a name="frame-rate-counters"></a>帧速率计数器
 
 在 Windows Phone 模拟器中使用帧速率计数器以监视运行的应用的性能。
 
@@ -607,31 +614,31 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 >End If
 >```
 
-## 已知问题
+## <a name="known-issues"></a>已知问题
 
 下面是模拟器的已知问题，以及解决问题的建议方法（如果遇到问题）。
 
-### 错误消息：“删除虚拟以太网交换机时失败”
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>错误消息：“删除虚拟以太网交换机时失败”
 
 在某些情况下，包括在更新到新的 Windows 10 外部测试版之后，与模拟器相关联的虚拟网络交换机可能会进入无法通过用户界面删除的状态。
 
 若要在此情况下恢复，请在管理员命令提示符下运行“netcfg -d”：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 当命令结束运行时，需要重新启动计算机才能完成恢复过程。
 
-**注意** 此命令将删除所有网络设备，而不仅仅是与仿真器相关联的设备。 当计算机再次启动时，将自动发现所有硬件网络设备。
+**注意** 此命令将删除所有网络设备，而不仅仅是与模拟器相关联的设备。 当计算机再次启动时，将自动发现所有硬件网络设备。
  
-### 无法启动模拟器
+### <a name="unable-to-launch-the-emulators"></a>无法启动模拟器
 
 Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机、diff 磁盘和特定于模拟器的网络交换机，它已随附于模拟器 (XDE) 二进制文件。 如果仿真器虚拟机进入错误状态，你应使用此工具将其清理。 从管理员命令提示符运行该工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **注意** XDECleanup.exe 删除所有特定于仿真器的 Hyper-V VM，并且它还将删除任何 VM 检查点或已保存的状态。
+> **注意** XDECleanup.exe 删除所有特定于模拟器的 Hyper-V VM，并且它还将删除任何 VM 检查点或已保存的状态。
 
-### 卸载 Windows 10 移动版映像
+### <a name="uninstall-windows-10-for-mobile-image"></a>卸载 Windows 10 移动版映像
 
 当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”****列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - <version>”****、右键单击它，然后选择“卸载”****。
 
 在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果已将仿真器安装到默认路径，则 VHD 文件位于 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd。
 
-###如何禁用硬件加速图形
+###<a name="how-to-disable-hardware-accelerated-graphics"></a>如何禁用硬件加速图形
 
 默认情况下，Windows 10 移动版模拟器将使用硬件加速图形。 如果你在启动已启用硬件加速的模拟器时遇到了问题，可以通过设置注册表值将其关闭。
 
@@ -646,19 +653,14 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 **注意：**设置此注册表值后，必须针对你在 Visual Studio 中启动的配置删除 Hyper-V 管理器中的虚拟机，然后重新启动使用软件呈现图形的仿真器。
 
-## 支持资源
+## <a name="support-resources"></a>支持资源
 
 若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](http://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](http://go.microsoft.com/fwlink/?LinkId=535000)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [在模拟器中运行 Windows Phone 应用](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
 * [Windows 和 Windows Phone SDK 存档](https://dev.windows.com/downloads/sdk-archive)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

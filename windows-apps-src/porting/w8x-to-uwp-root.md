@@ -3,13 +3,20 @@ author: mcleblanc
 description: "如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。"
 title: "从 Windows 运行时 8.x 移动到 UWP"
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a4ee1fd29b276958ed6a18b4eadcd89d5ea914b6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 从 Windows 运行时 8.x 移动到 UWP
+# <a name="move-from-windows-runtime-8x-to-uwp"></a>从 Windows 运行时 8.x 移动到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 
 在移植时，你将发现 Windows 10 与之前的平台共享大部分 API 以及 XAML 标记、UI 框架和工具，并且对它们全都很熟悉。 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
 
-## 如果你有一个 Universal 8.1 App
+## <a name="if-you-have-a-universal-81-app"></a>如果你有一个 Universal 8.1 App
 
 通用 8.1 应用是基于 8.1 通用应用项目生成的。 假设该项目的名称是 AppName\_81。 它包含这些子项目。
 
@@ -34,19 +41,19 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 3.  将 Windows 项目的内容移植到面向跨平台设备系列的应用。 如果适用，从 WindowsPhone 项目中回收任何其他内容，并无条件或自适应地使用该内容。
 4.  将 Windows 项目的内容移植到面向跨平台或桌面设备系列的应用，同时将 WindowsPhone 项目的内容移植到面向跨平台或移动设备系列的应用。 你可以使用共享项目创建解决方案，并在这两个项目之间继续共享源代码、标记文件以及其他资源。 或者，你可以创建不同的解决方案并且仍可使用链接共享相同的项目。
 
-## 如果你有 Windows 8.1 应用
+## <a name="if-you-have-a-windows-81-app"></a>如果你有 Windows 8.1 应用
 
 将项目移植到面向通用或桌面设备系列的应用。 如果你选择通用设备系列，并且你的应用调用仅在桌面设备系列中实现的 API，那么你可以使用自适应代码保护这些调用。
 
-## 如果你有 Windows Phone 8.1 应用
+## <a name="if-you-have-a-windows-phone-81-app"></a>如果你有 Windows Phone 8.1 应用
 
 将项目移植到面向通用或移动设备系列的应用。 如果你选择通用设备系列，并且你的应用调用仅在移动设备系列中实现的 API，那么你可以使用自适应代码保护这些调用。
 
-## 使你的应用适应多种外形规格
+## <a name="adapting-your-app-to-multiple-form-factors"></a>使你的应用适应多种外形规格
 
 你从之前的部分中选择的选项将决定你的应用可运行的设备范围，并且这可能是非常广泛的设备范围。 即使将应用限制到移动设备系列，它仍然支持多种屏幕大小。 因此，如果你的应用要在之前不支持的外形规格上运行，请在这些外形规格上测试你的 UI 并进行任何必要的更改，以便你的 UI 可针对每种外形规格进行相应调整。 你可以将其视为一个移植后任务或移植延伸目标，[Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 和 [QuizGame](w8x-to-uwp-case-study-quizgame.md) 案例研究中提供了一些关于它的实际应用示例。
 
-## 按层实现移植
+## <a name="approaching-porting-layer-by-layer"></a>按层实现移植
 
 在将 Universal 8.1 App 移植到 UWP App 的模型时，几乎你的所有知识和经验都将进行转移，同时你所使用的大多数源代码和标记以及软件模式也将进行转移。
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 
 在移植之前或移植过程中，应考虑是否可以通过合并应用来改进它，以便可以将具有类似目的的代码集中在图层中，而不是使它们随意地分散。 按照上述步骤将应用重构到图层中，以便你可以更加轻松地更正应用、测试它，随后读取并维护它。 通过遵循模型-视图-视图模型 ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，你可以使功能更容易重复使用。 此模式可使应用的数据、业务和 UI 部分彼此分隔开。 即使是在 UI 中，该模式也可以将状态和行为与视觉效果分隔开并且可分开测试。 借助 MVVM，你可以编写一次数据和业务逻辑并在所有设备上使用它，而不考虑 UI。 你可能还可以跨设备重复使用许多视图模型和视图部分。
 
-## 如果已具有 Microsoft Visual Studio 2015 RC 项目
+## <a name="if-you-have-a-microsoft-visual-studio-2015-rc-project"></a>如果已具有 Microsoft Visual Studio 2015 RC 项目
 
 如果你有使用 Microsoft Visual Studio 2015 RC 创建的 Windows 10 项目，请参阅[将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM](update-your-visual-studio-2015-rc-project-to-rtm.md)。
  
@@ -70,16 +77,11 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 | [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 此案例研究基于 [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件中提供的信息生成。 在视图模型中，类 Author 的每个实例都表示一组由该作者创作的书籍，而在 SemanticZoom 中，我们可以按作者查看分组书籍的列表，或者可以缩小到能够看到包含作者的跳转列表。 |
 | [案例研究：QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 UWP 应用的案例研究。 |
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 **文档**
 * [Windows 运行时参考](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [为所有 Windows 设备生成通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [为应用设计 UX](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

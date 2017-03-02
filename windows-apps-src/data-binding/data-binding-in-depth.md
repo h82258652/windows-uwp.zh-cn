@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解数据绑定"
 description: "数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
-ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -593,9 +600,9 @@ MainPage.xaml
 
 绑定标记包含属性名称（对于 C#，有时是字段和方法）。 因此，在重命名属性时，你还需要更改对其进行引用的任何绑定。 若忘记执行此操作，会导致出现一个典型的数据绑定 Bug，并且你的应用将不能编译或不能正常运行。
 
-由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 创建的绑定对象在功能上大致等同。 但是，{x:Bind} 具有绑定源的类型信息，并且会在编译时生成源代码。 借助 {x:Bind}，可使用剩余代码检测同一类型的问题。 这包括编译时对绑定表达式的验证，以及通过在作为页面的部分类生成的源代码中设置断点来调试。 可以在 `obj` 文件夹的文件中找到这些类，如文件夹名为（适用于 C#）`<view name>.g.cs`。 如果你有绑定方面的问题，请打开 Microsoft Visual Studio 调试器中的**出现未处理的异常时中断**。 该调试器将在该点处中断执行，以便你可以调试哪里出现了问题。 对于绑定源节点图形的每个部分，{x:Bind} 生成的代码均遵循相同的模式，你可以使用“调用堆栈”窗口中的信息来帮助确定导致该问题出现的调用顺序。
+由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 创建的绑定对象在功能上大致等同。 但是，{x:Bind} 具有绑定源的类型信息，并且会在编译时生成源代码。 借助 {x:Bind}，可使用剩余代码检测同一类型的问题。 这包括编译时对绑定表达式的验证，以及通过在作为页面的部分类生成的源代码中设置断点来调试。 可以在 `obj` 文件夹的文件中找到这些类，如文件夹名为（适用于 C#）`<view name>.g.cs`。 如果你有绑定方面的问题，请打开 Microsoft Visual Studio 调试器中的**出现未处理的异常时中断**。 该调试器将在该点处中断执行，以便你可以调试哪里出现了问题。 对于绑定源节点图形的每个部分，{x:Bind} 生成的代码均遵循相同的模式，你可以使用**调用堆栈**窗口中的信息来帮助确定导致该问题出现的调用顺序。
 
-[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 不具有绑定源的类型信息。 但在通过附加的调试器运行你的应用时，Visual Studio 中的“输出”窗口中将显示所有绑定错误。
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 不具有绑定源的类型信息。 但在通过附加的调试器运行你的应用时，Visual Studio 中的**输出**窗口中将显示所有绑定错误。
 
 ## <a name="creating-bindings-in-code"></a>使用代码创建绑定
 
@@ -661,10 +668,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | 不支持 | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} 可在所有情况下（除 TextBox.Text 等待失去的焦点之外）使用 PropertyChanged 行为更新绑定源。 | 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

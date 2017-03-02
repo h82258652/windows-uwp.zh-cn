@@ -1,20 +1,27 @@
 ---
 author: DelfCo
-Description: "开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。"
+Description: "开发你的应用以支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。"
 title: "调整布局和字体并支持 RTL"
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 05208607b148a48e8a680691de90161feeea7700
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b7d34aaf891497af80ed8c94609e6a8fbbd3bec
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>调整布局和字体并支持 RTL
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
+开发你的应用以支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
 
 ## <a name="layout-guidelines"></a>布局指南
 
@@ -110,9 +117,4 @@ C++：
 
 ## <a name="related-topics"></a>相关主题
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

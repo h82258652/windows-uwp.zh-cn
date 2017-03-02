@@ -3,16 +3,23 @@ title: "凭据保险箱"
 description: "本文介绍了通用 Windows 平台 (UWP) 应用可如何使用凭据保险箱安全存储和检索用户凭据，并使用用户的 Microsoft 帐户在设备间漫游用户凭据。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d72432aa5f9ccc40d4f822f5d76c1e09b606e33a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 凭据保险箱
+# <a name="credential-locker"></a>凭据保险箱
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍了通用 Windows 平台 (UWP) 应用可如何使用凭据保险箱安全存储和检索用户凭据，并使用用户的 Microsoft 帐户在设备间漫游用户凭据。
@@ -21,7 +28,7 @@ ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
 
 对于域帐户来说，凭据保险箱的工作方式略有不同。 如果有凭据与 Microsoft 帐户一起存储，并且将该帐户与域帐户关联（如作时使用的帐户），凭据将漫游至该域帐户。 但是，任何在使用域帐户登录时添加的新凭据不会漫游。 这确保了该域的私有凭据不会暴露在域之外。
 
-## 存储用户凭据
+## <a name="storing-user-credentials"></a>存储用户凭据
 
 
 1.  使用来自 [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 命名空间的 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 对象获取对凭据保险箱的引用。
@@ -33,7 +40,7 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## 检索用户凭据
+## <a name="retrieving-user-credentials"></a>检索用户凭据
 
 
 在你拥有对 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 对象的引用之后，你有多个选项从凭据保险箱检索用户凭据。
@@ -104,7 +111,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## 删除用户凭据
+## <a name="deleting-user-credentials"></a>删除用户凭据
 
 
 在凭据保险箱中删除用户凭据是一个快捷的两步式过程。
@@ -119,7 +126,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## 最佳做法
+## <a name="best-practices"></a>最佳做法
 
 
 将凭据保险箱仅用于存储密码，而不要将其用于存储较大的数据 blob。
@@ -130,8 +137,3 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 -   用户已选择保存密码。
 
 永远不要使用应用数据或漫游设置在纯文本中存储凭据。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

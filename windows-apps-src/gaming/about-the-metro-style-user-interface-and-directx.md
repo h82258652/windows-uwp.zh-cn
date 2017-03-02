@@ -3,20 +3,27 @@ author: mtoepke
 title: "应用对象和 DirectX"
 description: "使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。"
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, directx, 应用对象"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 应用对象和 DirectX
+# <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。 相反，因为它们在 Windows 运行时堆栈中的较低级别上运行，所以它们必须以更加基本的方式与用户界面框架互操作： 直接访问应用对象并与之互操作。 了解何时以及如何执行此互操作，以及作为 DirectX 开发人员， 你可以如何在 UWP 应用的开发中高效使用此模型。
 
-## 重要的核心用户界面命名空间
+## <a name="the-important-core-user-interface-namespaces"></a>重要的核心用户界面命名空间
 
 
 首先，让我们看一下必须包含（使用 **using**）在 UWP 应用中的 Windows 运行时命名空间。 获取更多详细信息。
@@ -27,11 +34,11 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意** 如果你未开发 UWP 应用，使用特定于 JavaScript 或 XAML 的库和命名空间中提供的用户界面组件，而不是这些命名空间中提供的类型。
+> **注意**   如果你未开发 UWP 应用，请使用特定于 JavaScript 或 XAML 的库和命名空间中提供的用户界面组件，而不要使用这些命名空间中提供的类型。
 
  
 
-## Windows 运行时应用对象
+## <a name="the-windows-runtime-app-object"></a>Windows 运行时应用对象
 
 
 在你的 UWP 应用中，你希望获得一个窗口和一个视图提供程序，你可从该提供程序获得一个视图，也可将你的交换链（显示缓冲区）连接到该提供程序。 你也可以将此视图连接到正在运行的应用的特定于窗口的事件中。 要获得应用对象的父窗口（由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 类型定义），可以创建一个实现 [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) 的类型，就像我们在上一个代码段中所做的一样。
@@ -58,7 +65,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 掌握了这些基础知识之后，让我们看一下扩展此方法所需的更多选项。
 
-## 核心用户界面类型
+## <a name="core-user-interface-types"></a>核心用户界面类型
 
 
 以下是 Windows 运行时中可能对你有帮助的其他核心用户界面类型：
@@ -79,12 +86,12 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 总之，应用对象提供了一个视图提供程序工厂。 它创建一个视图提供程序并为应用实例化一个父窗口。 视图提供程序定义应用的父窗口的视图。 现在，让我们谈谈视图和父窗口的具体细节。
 
-## CoreApplicationView 行为和属性
+## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView 行为和属性
 
 
 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 表示当前的应用视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，可访问它之上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件注册委托来处理视图的激活和停用事件。
 
-## CoreWindow 行为和属性
+## <a name="corewindow-behaviors-and-properties"></a>CoreWindow 行为和属性
 
 
 在应用对象初始化时，会创建父窗口（一个 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例）并传递给视图提供程序。 如果应用有一个窗口要显示，它会显示它，否则它会初始化视图。
@@ -93,7 +100,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 你也可以访问 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 实例。
 
-## CoreDispatcher 行为和属性
+## <a name="coredispatcher-behaviors-and-properties"></a>CoreDispatcher 行为和属性
 
 
 你可以确定为具有 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 类型的窗口调度的事件线程行为。 在此类型中，有一个特别重要的方法：即 [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，该方法启动窗口事件处理。 使用应用的错误选项调用此方法可能导致各种异常的事件处理行为。
@@ -109,7 +116,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 使用 DirectX 的 UWP 应使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) 选项来防止可能中断图形更新的阻止行为。
 
-## DirectX 开发中与 ASTA 有关的注意事项
+## <a name="asta-considerations-for-directx-devs"></a>DirectX 开发中与 ASTA 有关的注意事项
 
 
 用于定义 UWP 和 DirectX 应用的运行时表示形式的应用对象使用名为应用程序单线程单元 (ASTA) 的线程模型来托管你的应用的 UI 视图。 如果要开发 UWP 和 DirectX 应用，需要熟悉 ASTA 的属性，因为从 UWP 和 DirectX 应用调度的任何线程都必须使用 [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API 或使用 [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)。 （你可以通过从应用中调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获取 ASTA 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象。）
@@ -152,10 +159,5 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

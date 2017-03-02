@@ -3,20 +3,27 @@ author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: "本文介绍如何读写图像元数据属性以及如何使用 GeotagHelper 实用程序类标注文件。"
 title: "图像元数据"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: af9a4c243c939ddc04e5d0763b58df00e70d7017
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 图像元数据
+# <a name="image-metadata"></a>图像元数据
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何读写图像元数据属性以及如何使用 [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) 实用程序类标注文件。
 
-## 图像属性
+## <a name="image-properties"></a>图像属性
 
 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 属性返回对关于文件的相关内容信息提供访问的 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 对象。 通过调用 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 获取特定于图像的属性。 返回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 对象公开包含基本图像元数据字段（如图像的标题和捕获日期）的成员。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
 
 -   由于不受支持的属性在检索时可能会返回 Null 值，因此在使用返回的元数据值之前，始终检查 Null。
 
-## 地理标签帮助程序
+## <a name="geotag-helper"></a>地理标签帮助程序
 
 GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) API 标记带有地理数据的图像，而不必手动分析或构建元数据格式。
 
@@ -54,7 +61,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
-## 解码和编码图像元数据
+## <a name="decode-and-encode-image-metadata"></a>解码和编码图像元数据
 
 使用图像数据的最先进方式是使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 或 [BitmapEncoder](bitmapencoder-options-reference.md) 在流级别上读写属性。 对于这些操作，你可以使用 Windows 属性来指定正在读写的数据，但你也可以使用由 Windows 图像处理组件 (WIC) 提供的元数据查询语言为请求的属性指定路径。
 
@@ -79,7 +86,7 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 -   如果请求的属性之一不受与编码器关联的图像支持，[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 将失败，错误代码为 0x88982F41。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [图像处理](imaging.md)
  
@@ -88,10 +95,5 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

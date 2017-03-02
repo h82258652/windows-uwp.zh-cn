@@ -3,13 +3,20 @@ title: "智能卡"
 description: "本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 及移除智能卡或断开智能卡连接。"
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
-ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 智能卡
+# <a name="smart-cards"></a>智能卡
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,12 +24,12 @@ ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
 
 本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 及移除智能卡或断开智能卡连接。 
 
-## 配置应用清单
+## <a name="configure-the-app-manifest"></a>配置应用清单
 
 
 必须先在项目 Package.appxmanifest 文件中设置“共享的用户证书”****功能，应用才可以使用智能卡或虚拟智能卡对用户进行身份验证。
 
-## 访问连接的卡读取器和智能卡
+## <a name="access-connected-card-readers-and-smart-cards"></a>访问连接的卡读取器和智能卡
 
 
 你可以通过向 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法传递设备 ID（在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定）来查询读取器和连接的智能卡。 若要访问当前连接到返回的读取器设备的智能卡，请调用 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)。
@@ -56,7 +63,7 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 
 然后你可以将每个返回的 [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) 对象传递到 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 以访问使你的应用可以访问并自定义其配置的方法。
 
-## 创建虚拟智能卡
+## <a name="create-a-virtual-smart-card"></a>创建虚拟智能卡
 
 
 若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 创建虚拟智能卡，你的应用将首先需要提供一个昵称、一个管理员密钥和一个 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 昵称一般向应用提供，但你的应用将仍需要提供一个管理员密钥并生成一个当前 **SmartCardPinPolicy** 的实例，然后才能将所有三个值传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
@@ -80,7 +87,7 @@ SmartCardProvisioning provisioning = await
 
 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
 
-## 处理身份验证质询
+## <a name="handle-authentication-challenges"></a>处理身份验证质询
 
 
 要使用智能卡或虚拟智能卡进行身份验证，你的应用必须提供行为以完成存储在卡上的管理密钥数据和由身份验证服务器或管理工具维护的管理密钥数据之间的质询。
@@ -107,7 +114,7 @@ static class ChallengeResponseAlgorithm
 
 你将看到这个在本主题的剩余部分中被多次引用的代码是我们审查如何完成身份验证操作以及如何将更改应用到智能卡和虚拟智能卡信息。
 
-## 验证智能卡或虚拟智能卡身份验证响应
+## <a name="verify-smart-card-or-virtual-smart-card-authentication-response"></a>验证智能卡或虚拟智能卡身份验证响应
 
 
 现在我们已定义了身份验证质询的逻辑，我们可以与读取器进行通信以访问智能卡，或者访问虚拟智能卡进行身份验证。
@@ -135,7 +142,7 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## 更改或重置用户 PIN
+## <a name="change-or-reset-a-user-pin"></a>更改或重置用户 PIN
 
 
 更改与智能卡关联的 PIN 的步骤：
@@ -184,7 +191,7 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## 删除智能卡或虚拟智能卡
+## <a name="remove-a-smart-card-or-virtual-smart-card"></a>删除智能卡或虚拟智能卡
 
 
 当删除物理智能卡时，[**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) 事件将在删除卡时引发。
@@ -202,8 +209,3 @@ reader.CardRemoved += HandleCardRemoved;
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

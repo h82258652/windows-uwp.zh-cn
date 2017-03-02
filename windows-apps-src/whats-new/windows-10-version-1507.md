@@ -1,15 +1,22 @@
 ---
 author: QuinnRadich
 Description: "Windows 10 版本 1507 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。"
-title: "Windows 10 版本 1507 中的新增功能 - 2015 年 7 月"
-keywords: "新增功能, 新功能, 更新, 更新, 功能, 新, Windows 10, 1507"
+title: "Windows 10 版本 1507 中的新增功能"
+keywords: "新增功能, 新功能, 更新, 功能, 新, Windows 10, 1507"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 translationtype: Human Translation
-ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
-ms.openlocfilehash: 0388f444431f9716a1f311c8c2dfc8db2de83df3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 4650eaa22f299910bd7956972bd7099ea6d78943
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows 10 版本 1507 中的新增功能
+# <a name="whats-new-in-windows-10-version-1507"></a>Windows 10 版本 1507 中的新增功能
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,83 +25,83 @@ Windows 10 和新开发人员工具提供了受新的通用 Windows 平台 (UWP)
 
 下面按功能逐个向你介绍 Windows 10 版本 1507 中的新增功能。
 
-## 自适应布局
+## <a name="adaptive-layouts"></a>自适应布局
 
 功能 | 描述
  :---- | ----:
-适用于定制内容的多个视图 | XAML 针对定义用于共享相同代码文件的定制视图（.xaml 文件）提供了新的支持。 这使你可以更加方便地创建和保留已定制为特定设备系列或方案的不同视图。 如果你的应用具有不同的 UI 内容、布局或导航模型（与对应的方案截然不同），应构建多个视图。 例如，对于针对移动版应用的单手使用模式进行优化的导航菜单，你可以使用 [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx)；而对于针对桌面版应用的鼠标输入进行优化的导航菜单，你可以使用 [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)。
+适用于定制内容的多个视图 | XAML 针对定义用于共享相同代码文件的定制视图（.xaml 文件）提供了新的支持。 这使你能够更加轻松地创建和维护针对特定设备系列或方案定制的不同视图。 如果你的应用具有不同的 UI 内容、布局或导航模型（与对应的方案截然不同），应构建多个视图。 例如，对于针对移动版应用的单手使用模式进行优化的导航菜单，你可以使用 [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx)；而对于针对桌面版应用的鼠标输入进行优化的导航菜单，你可以使用 [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)。
 StateTriggers | 使用新的 [VisualState.StateTriggers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.statetriggers.aspx) 功能，你可以基于窗口高度/宽度或者基于自定义触发器有条件地设置相关属性。 之前，你必须在代码中处理 Window [SizeChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.window.sizechanged.aspx) 事件并调用 [VisualStateManager.GotoState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.gotostate.aspx)。
 Setters | 使用新的 [VisualState.Setters](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.setters.aspx) 语法，你可以使用简化的标记定义 [VisualStateManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx) 中的属性更改。 之前，你必须使用情节提要并创建动画来应用属性更改，例如将 [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 的方向从水平更改为垂直。 在通用 Windows 应用中，你可以使用以下更加简单的 Setter 语法： <setter target="stackPanel1.Orientation" value="Vertical" />
 
 
-## XAML 功能
+## <a name="xaml-features"></a>XAML 功能
 
 功能 | 描述
  :---- | :----
-已编译的数据绑定 (x:Bind) | 在通用 Windows 应用中，你可以使用基于编译器的新绑定机制，该机制可通过 x:Bind 属性进行启用。 基于编译器的绑定将在编译时严格设置类型并进行处理，这将非常快速并且会在绑定类型不匹配时提供编译时错误。 因为绑定已转换为编译的应用代码，所以你现在就可以调试绑定，方法是在 Visual Studio 中逐步执行代码以诊断特定的绑定问题。 你还可以使用 x:Bind 来绑定方法，例如 <textblock text="{x:Bind Customer.Address.ToString()}" /> 对于典型的绑定方案，你可以使用 x:Bind 替代绑定，从而获得改进的性能和可维护性。
-列表的声明性增量呈现 (x:Phase) | 在通用 Windows 应用中，新的 x:Phase 属性允许你使用 XAML（而非代码）执行列表的增量呈现或阶段性呈现。 当平移带有复杂项目的较长列表时，你的应用呈现项目的速度可能不足以跟上平移的速度，以致于你的用户获得了一次槽糕的体验。 阶段性呈现让你可以在某一列表项目中指定个别元素的呈现优先级，以便仅该列表项目中最重要的部分才能在快速平移方案中呈现。 这将为你的用户提供一次较为顺畅的平移体验。 <br /><br /> 在 Windows 8.1 中，你可以处理 [ContainerContentChanging](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging.aspx) 事件，并编写用于分阶段呈现列表项目的代码。 在 UWP 应用中，你可以使用 x:Phase 属性以声明方式完成阶段性呈现。 通过将 x:Phase 与已编译的绑定 x:Bind 结合使用，你可以在数据模板中为每个绑定元素轻松指定呈现优先级。 在进行平移时，呈现项目所需执行的操作是基于阶段按时间进行分片，这将支持增量项目呈现。
-UI 元素的延迟加载 (x:deferLoadstrategy) | 在通用 Windows 应用中，新的 x:deferLoadstrategy 指令允许你指定要延迟加载的用户界面部分，从而改进启动性能并减少应用的内存使用量。 例如，如果你的应用 UI 中存在一个仅在输入错误数据时才显示的数据验证元素，则你可以延迟该元素的加载，直到需要该元素。 随后，这些元素对象将不会在加载页面时创建，它们只会在发生数据错误或者需要添加到页面的可视树时才会进行创建。
+已编译的数据绑定 (x:Bind) | 在通用 Windows 应用中，你可以使用基于编译器的新绑定机制，该机制可通过 x:Bind 属性进行启用。 基于编译器的绑定属于强类型，并且会在编译时进行处理，这样速度既快又可以在绑定类型不匹配时提供编译时错误。 而且由于绑定已转换为经过编译的应用代码，因此你现在可以通过在 Visual Studio 中单步调试代码诊断具体的绑定问题来调试绑定。 你还可以使用 x:Bind 来绑定方法，例如 <textblock text="{x:Bind Customer.Address.ToString()}" /> 对于典型的绑定方案，你可以使用 x:Bind 替代绑定，从而获得改进的性能和可维护性。
+列表的声明性增量呈现 (x:Phase) | 在通用 Windows 应用中，新的 x:Phase 属性允许你使用 XAML（而非代码）执行列表的增量呈现或阶段性呈现。 当平移项目比较复杂的长列表时，你的应用可能无法以足够跟上平移速度的速度来呈现项目，从而为你的用户带来不良的体验。 分阶段呈现使你可以指定列表项目中各个元素的呈现优先级，所以只有列表项目的最重要部分才会在快速平移时呈现。 这将为你的用户提供一次较为顺畅的平移体验。 <br /><br /> 在 Windows 8.1 中，你可以处理 [ContainerContentChanging](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging.aspx) 事件，并编写用于分阶段呈现列表项目的代码。 在 UWP 应用中，你可以使用 x:Phase 属性以声明方式完成阶段性呈现。 将 x:Phase 与已编译的绑定 x:Bind 结合使用使你可以轻松地为数据模板中的每个绑定元素指定呈现优先级。 在进行平移时，呈现项目所需执行的操作是基于阶段按时间进行分片，这将支持增量项目呈现。
+UI 元素的延迟加载 (x:deferLoadstrategy) | 在通用 Windows 应用中，新的 x:deferLoadstrategy 指令允许你指定要延迟加载的用户界面部分，从而改进启动性能并减少应用的内存使用量。 例如，如果你的应用 UI 具有用于数据验证的元素，并且仅在输入不正确的数据时显示，则可以延迟加载该元素（除非需要显示）。 随后，这些元素对象将不会在加载页面时创建，它们只会在发生数据错误或者需要添加到页面的可视树时才会进行创建。
 SplitView | 借助新的 [SplitView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) 控件，你可以轻松显示和隐藏瞬态内容。 该控件通常用于“汉堡包菜单”之类的顶级导航方案，其中导航内容处于隐藏状态，可按需滑入作为用户操作的结果。
 RelativePanel | [RelativePanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx) 是一种新型的布局面板，该面板允许你放置子对象并使其相互对齐或与父面板对齐。 例如，你可以指定某些文本应始终置于该面板的左侧，并指定按钮应始终向下对齐文本。 当创建没有明确的线性模式的用户模式但却要求使用 [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 或 [Grid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 时，可使用 ReleativePanel。
 CalendarView | 借助 [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx) 控件，可使用基于月份的自定义视图轻松查看和选择日期以及日期范围。 CalendarView 支持相关功能，例如可将最小日期、最大日期和截止日期限制在可选的日期范围内。 你还可以设置自定义密度栏，这些密度栏可用于显示某一天的计划的一般“细节”。
 CalendarDatePicker | [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendardatepicker.aspx) 是一个下拉式控件，该控件已针对从 CalendarView 选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。 它类似于 [DatePicker](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.datepicker.aspx) 控件，不过 DatePicker 是针对选取一个已知日期（例如出生日期）进行优化的。
 MediaTransportControls | 借助新的 [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols.aspx) 类，可更轻松地自定义 [MediaElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) 的传输控件。 在 Windows 8.1 中，你可以启用 MediaElement 的内置传输控件，或通过调用 MediaElement 方法创建你自己的传输控件。 现在，你可以使用 MediaTransportControls 的内置功能，并且仍然可以轻松地自定义其外观，以适合你的应用。
-属性更改通知 | 在通用 Windows 应用中，你可以侦听 DependencyObjects 上的属性更改，即便是属性没有对应的更改事件也是如此。 通知的操作行为类似于事件，但实际上显示为回调。 与事件处理程序一样，回调将提取一个发件人参数，但不会提取事件参数。 而是，将仅传递属性标识符来指示是哪个属性。 借助此信息，你的应用可以定义多个属性通知的单个处理程序。 有关详细信息，请参阅 [RegisterPropertyChangedCallback](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 和 [UnregisterPropertyChangedCallback](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.unregisterpropertychangedcallback.aspx)。
+属性更改通知 | 在通用 Windows 应用中，你可以侦听 DependencyObjects 上的属性更改，即便是属性没有对应的更改事件也是如此。 该通知会像事件一样运行，但实际上作为回调公开。 该回调会像事件处理程序一样采用发送者参数，但不会采用事件参数。 仅传递属性标识符以指示何种属性。 借助此信息，你的应用可以定义多个属性通知的单个处理程序。 有关详细信息，请参阅 [RegisterPropertyChangedCallback](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 和 [UnregisterPropertyChangedCallback](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.unregisterpropertychangedcallback.aspx)。
 地图 | 已更新为提供 3D 鸟瞰图和街景视图的 [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx) 类。 这些新功能和早期的映射功能现在可用于通用 Windows 应用。 使用以下 API 将映射添加到你的应用：[Windows.UI.Xaml.Controls.Maps](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.aspx) 和 [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx)。 若要立即开始在通用 Windows 应用中使用这些 API，请从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求一个密钥。 有关详细信息，请参阅[如何验证地图应用](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528.aspx)。 Windows 10 还有一个新增功能，即电脑和手机用户可以从“设置”应用下载离线地图。 当 Internet 访问不可用时，[MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx) 可使用脱机地图（如果可用）来显示地图。
 输入按钮映射 | [Windows.UI.Xaml.Input.KeyEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.keyroutedeventargs.aspx) 类具有新的 [OriginalKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.keyroutedeventargs.originalkey.aspx) 属性以及对 [Windows.System.VirtualKey](https://msdn.microsoft.com/library/windows/apps/windows.system.virtualkey.aspx) 所做的相应更新，从而让你可以获取与键盘输入事件关联的原始且未映射的输入按钮。
 墨迹书写 | 借助 [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控件和基础 [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 类，现在可以更容易地使用采用 C++、C# 或 Visual Basic 的 Windows 运行时应用中功能强大的墨迹功能。 [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控件定义了一个用于绘制和呈现墨迹笔划的覆盖区域。 此控件的功能（输入、处理和呈现）源自 [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)、[InkStroke](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkstroke.aspx)、[InkRecognizers](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkrecognizer.aspx) 和 [InkSynchronizer](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inksynchronizer.aspx) 类。 **重要提示：**这些类在使用 JavaScript 的 Windows 应用中不受支持。
 
 
-## 已更新的 XAML 功能
+## <a name="updated-xaml-features"></a>已更新的 XAML 功能
 
 功能 | 描述
  :---- | :----
 CommandBar 和 AppBar 更新 | [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) 和 [AppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbar) 控件已针对跨设备系列的 UWP 应用更新为具有一致的 API、行为和用户体验。 <br /><br />适用于通用 Windows 应用的 CommandBar 控件已得到了改进，从而可提供 AppBar 功能的超集，并且针对如何将其用于你的应用提供了更大的灵活性。 对于 Windows 10 上所有新的通用 Windows 应用，应使用 CommandBar。 在 Windows 8.1 的 CommandBar 中，你只能使用已实现 [ICommandBarElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.icommandbarelement.aspx) 的控件，如 [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)。 在通用 Windows 应用中，除了 AppBarButtons 外，你现在还可以将自定义内容放入 CommandBar 中。 <br /><br />AppBar 控件已得到了更新，以便你可以更加轻松地将使用 AppBar 的 Windows 8.1 应用移动到通用 Windows 平台。 AppBar 设计为可与全屏应用一起使用并且可通过边缘手势进行调用。 针对诸如 Window 应用以及 Window 10 中缺少边缘手势等问题对控件帐户进行更新。 <br /><br />之前仅在 Windows Phone 上提供的[隐藏 AppBar.ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 现在在所有设备系列上均受支持，从而让你可以在不同的命令提示级别之间选择。 AppBar 默认情况下显示最少内容的提示，以便在将你的 Windows 8.1 应用升级到通用 Windows 应用时能为你提供一致性，不过你将无法再依赖平台中的边缘手势支持。
 GridView 更新 | 在 Windows 10 之前，默认的 GridView 布局方向在 Windows 上为水平方向，而在 Windows Phone 上为垂直方向。 在 UWP 应用中，GridView 默认情况下针对所有设备系列使用垂直布局，以确保你能获得一致的默认体验。
-AreStickyGroupHeadersEnabled 属性 | 当你在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 或 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 中显示分组数据时，组标头将在列表滚动时保持可见状态。 这对于大型数据集很重要，其中标头为用户正在查看的数据提供了上下文。 不过，在每个组中仅具有少数几个元素时，你可能会希望标头随着项目滚动至屏幕外。 你可以通过设置 [ItemsStackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 和 [ItemsWrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) 上的 AreStickyGroupHeadersEnabled 属性控制此行为。
+AreStickyGroupHeadersEnabled 属性 | 当你在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 或 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 中显示分组数据时，组标头将在列表滚动时保持可见状态。 这在大型数据集中很重要，因为标头会提供用户正在查看的数据的上下文。 不过，在每个组中仅具有少数几个元素时，你可能会希望标头随着项目滚动至屏幕外。 你可以通过设置 [ItemsStackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 和 [ItemsWrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) 上的 AreStickyGroupHeadersEnabled 属性控制此行为。
 GroupHeaderContainerFromItemContainer 方法 | 当你在 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx) 中显示分组数据时，你可以通过调用 [GroupHeaderContainerFromItemContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.groupheadercontainerfromitemcontainer.aspx) 方法，获取对该组父标头的引用。 例如，如果用户要在某组中删除最后一项，你可以获取对该组标头的引用，并同时删除该项和组标头。
 ChoosingGroupHeaderContainer 事件 | 借助 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 上的新 [ChoosingGroupHeaderContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer.aspx) 事件，你可以在 ListView 或 GridView 中设置组标头的状态。 例如，你可以通过处理此事件，将组标头上的 [AutomationProperties.Nameproperty](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.nameproperty.aspx) 设置为借助辅助技术来标识该组。
 ChoosingItemContainer 事件 | 借助 ListViewBase 上的新 [ChoosingItemContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer.aspx) 事件，你可以更好地控制 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 或 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 中的 UI 虚拟化。 将此事件与 [ContainerContentChanging](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging.aspx) 事件结合使用，以保持你自己的要根据需要利用的回收容器的队列。 例如，如果数据源因需筛选而被重置，你可以通过快速将一组已创建的视觉对象 (ItemContainers) 与其对应的数据匹配获取最佳性能。
-列表滚动虚拟化 |XAML [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 控件中有一个新 [ListViewBase.ChooseingItemContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer.aspx) 事件，该事件可在数据集合中发生更改时改进控件的性能。 系统现在将当前项与焦点状态和选择状态保留在视图中，而不是执行该列表的完全重置，这将重新播放 Entrance 动画；视口中的新项和已删除的项将流畅地闪烁。 一旦未破坏的容器中的数据集合发生变化，应用即可快速将所有“旧”项与其之前的容器匹配，并跳过容器生命周期替代方法的进一步处理。 仅“新”项得到处理并与回收的容器或新容器相关联。
+列表滚动虚拟化 |XAML [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 控件中有一个新 [ListViewBase.ChooseingItemContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer.aspx) 事件，该事件可在数据集合中发生更改时改进控件的性能。 现在，系统将维护当前视图中的项目以及焦点和选择状态，而不是完全重置列表，以免重播进入动画；视口中新建和已删除的项目会流畅地以动画方式进入和离开。 一旦未破坏的容器中的数据集合发生变化，应用即可快速将所有“旧”项与其之前的容器匹配，并跳过容器生命周期替代方法的进一步处理。 仅“新”项得到处理并与回收的容器或新容器相关联。
 SelectRange 方法和 SelectedRanges 属性 | 在通用 Windows 应用中，借助 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 控件，你现在可以根据项目索引的范围（而非项目对象引用）选择相应项目。 这对于描述项目选项而言是一种非常有效的方式，因为无需针对每个选定项目创建项目对象。 有关详细信息，请参阅 [ListViewBase.SelectedRanges](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectedranges.aspx)、[ListViewBase.SelectRange](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 和 [ListViewBase.DeselectRange](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx)。
 新 ListViewItemPresenter API | [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 使用项目表示器来提供默认的视觉对象，以供选择和着重显示。 在 UWP 应用中，[ListViewItemPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) 和[GridViewItemPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.gridviewitempresenter.aspx) 具有新的属性，以便你可以针对列表项目进一步自定义视觉对象。 新增的属性为 heckBoxBrush、CheckMode、FocusSecondaryBorderBrush、PointerOverForeground、PressedBackground 和 SelectedPressedBackground。
-SemanticZoom 更新 | 对于跨所有设备系列的 UWP 应用，[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.semanticzoom.aspx) 控件现在具有一致的行为。 在放大视图和缩小视图之间切换的默认操作是，点击放大视图上的组标头。 这与 Windows Phone 8.1 上的此类行为相同，不过在 Windows 8.1 上有所变动，因为其中使用了收缩手势进行缩放。 若要使用收缩手势更改视图，应在 SemanticZoom 的内部 ScrollViewer 上设置 [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)="Enabled"。 <br /><br />对于通用 Windows 应用，缩小视图将替代放大视图，并且前者与所替换的视图的大小相同。 这与 Windows 8.1 上的此类行为相同，不过在 Windows Phone 8.1 上有所变动，因为其中缩小视图会占用整个屏幕，并且会在其他所有内容的顶部呈现。
+SemanticZoom 更新 | 对于跨所有设备系列的 UWP 应用，[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.semanticzoom.aspx) 控件现在具有一致的行为。 在放大视图和缩小视图之间进行切换的默认操作是点击放大视图中的组标头。 这与 Windows Phone 8.1 上的此类行为相同，不过在 Windows 8.1 上有所变动，因为其中使用了收缩手势进行缩放。 若要使用收缩手势更改视图，应在 SemanticZoom 的内部 ScrollViewer 上设置 [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)="Enabled"。 <br /><br />对于通用 Windows 应用，缩小视图将替代放大视图，并且前者与所替换的视图的大小相同。 这与 Windows 8.1 上的此类行为相同，不过在 Windows Phone 8.1 上有所变动，因为其中缩小视图会占用整个屏幕，并且会在其他所有内容的顶部呈现。
 DatePicker 和 TimePicker 更新 | 对于跨所有设备系列的通用 Windows 应用，[DatePicker](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.datepicker.aspx) 和 [TimePicker](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.timepicker.aspx) 控件现在具有一个一致的实现。 此外，它们在 Windows 10 中有了新的外观。 控件的弹出部分现在可在所有设备上使用 [DatePickerFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.datepickerflyout.aspx) 和 [TimePickerFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.timepickerflyout.aspx) 控件。 这与 Windows Phone 8.1 上的此类行为相同，不过在 Windows 8.1 上有所变动，因为其中使用了 [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 控件。 使用浮出控件可让你更轻松地创建自定义的日期和时间选取器。
-新的 ScrollViewer API | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 具有新的 [DirectManipulationStarted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx) 和 [DirectManipulationCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx) 事件，可在触摸平移开始和停止时通知应用。 你可以处理这些事件，以通过这些用户操作调整 UI。
+新的 ScrollViewer API | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 具有新的 [DirectManipulationStarted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx) 和 [DirectManipulationCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx) 事件，可在触摸平移开始和停止时通知应用。 你可以处理这些事件以使你的 UI 与这些用户操作相协调。
 MenuFlyout 更新 | 在通用 Windows 应用中，提供了可更轻松地构建更好的上下文菜单的全新 API。 新 [MenuFlyout.ShowAt](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.showat.aspx) 方法使你可以指定你希望浮出控件相对于其他元素的出现位置。 （并且，你的 MenuFlyout 甚至可以覆盖应用窗口边界。）使用新的 [MenuFlyoutSubItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutsubitem.aspx) 类来创建级联菜单。
 ContentPresenter、Grid 和 StackPanel 的新边框属性 | 常用容器控件具有新的边框属性，可用于在其周围绘制边框，而无需向你的 XAML 添加额外的边框元素。 [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx)、[Grid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 和 [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 具有以下新属性：BorderBrush、BorderThickness、CornerRadius 和 Padding。
 ContentPresenter 上的新文本 API | [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) 具有可更好地控制文本显示的新 API：LineHeight、LineStackingStrategy、MaxLines 和 TextWrapping。
-系统焦点视觉对象 | XAML 控件的焦点视觉对象现在由系统创建，而不是在控件模版中被声明为 XAML 元素。 移动设备通常不需要焦点视觉对象，让系统按需创建并管理它们可改进应用性能。 如果你需要更好地控制焦点视觉对象，可以替换该系统行为并提供定义焦点视觉对象的自定义控件模板。 有关详细信息，请参阅 [UseSystemFocusVisuals](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.usesystemfocusvisuals.aspx) 和 [IsTemplateFocusTarget](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istemplatefocustargetproperty.aspx)。
+系统焦点视觉对象 | XAML 控件的焦点视觉对象现在由系统创建，而不是在控件模版中被声明为 XAML 元素。 在移动设备上，通常不需要焦点视觉效果，让系统根据需要创建并管理它们可提升性能。 如果你需要更好地控制焦点视觉对象，可以替换该系统行为并提供定义焦点视觉对象的自定义控件模板。 有关详细信息，请参阅 [UseSystemFocusVisuals](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.usesystemfocusvisuals.aspx) 和 [IsTemplateFocusTarget](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istemplatefocustargetproperty.aspx)。
 PasswordBox.PasswordRevealMode | 在通用 Windows 应用中，[PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性将替换 IsPasswordRevealButtonEnabled 属性，以跨设备系列提供一致的行为。 **注意：**在 Windows 10 之前，密码显示按钮在默认情况下不显示；在通用 Windows 应用中，将在默认情况下显示。 如果应用安全要求始终掩盖密码，请务必将 PasswordRevealMode 设置为 Hidden。
 Control.IsTextScaleFactorEnabled | 以前可在 Windows Phone 8.1 上使用的 [IsTextScaleFactorEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istextscalefactorenabledproperty.aspx) 属性现在可用于所有设备系列上的通用 Windows 应用。
 AutoSuggestBox | Windows Phone 8.1 中的 [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox.aspx) 控件现在可用于所有设备系列上的通用 Windows 应用，你应使用它而不是 [SearchBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.searchbox.aspx)。 AutoSuggestBox 在用户键入时即提供建议，与各种输入类型相辅相成，如触摸、键盘和输入法编辑器。 它还具有一些可使之更好地发挥搜索框作用的新成员：[QueryIcon](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 属性和 [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) 事件。
 ContentDialog | Windows Phone 8.1 中的 [ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx) 控件现在可用于所有设备系列上的通用 Windows 应用。 ContentDialog 可用于显示可在所有系列的设备上完美运行的自定义模式对话框。
 Pivot | Windows Phone 8.1 中的 [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) 控件现在可用于所有设备系列上的通用 Windows 应用。 现在，你可以将相同的 Pivot 控件用于你的移动和桌面设备应用。 Pivot 基于屏幕大小和输入类型提供自适应行为。 你可以设置 Pivot 控件的样式，以提供类似选项卡的行为，每个透视项中包含不同的信息视图。
 
-## 文本
+## <a name="text"></a>文本
 
 功能 | 描述
  :---- | :----
 Windows 内核文本 API | 新的 [Windows.UI.Text.Core](https://msdn.microsoft.com/library/windows/apps/windows.ui.text.core.aspx) 命名空间具有一个客户端-服务器系统功能，该系统可将键盘输入处理集中到单个服务器。 你可以使用它来操作自定义文本输入控件的编辑缓冲区。 通过应用和服务器之间的异步通信通道，文本输入服务器可确保你的文本输入控件及其本身的编辑缓冲区内容始终保持同步。
 矢量图标 | [Glyphs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.glyphs.aspx) 元素具有新的 [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.glyphs.iscolorfontenabled.aspx) 和 [ColorFontPalleteIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.glyphs.colorfontpaletteindex.aspx) 属性，可支持彩色字体；现在，你可以使用字体文件呈现基于字体的图标。 在将 ColorFontPalleteIndex 用于调色板切换时，可使用不同的颜色组合呈现一个图标；例如，显示该图标的启用和禁用版本。
-“输入法编辑器”窗口事件 | 用户有时通过“输入法编辑器”输入文本，该编辑器显示在窗口中文本输入框的正下方（通常用于东亚语言）。 若要使你的应用 UI 与 IME 窗口相得益彰，你可以对 [TextBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.aspx) 和 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richeditbox.aspx) 使用 CandidateWindowBoundsChanged 事件和 DesiredCandidateWindowAlignment 属性。
-文本撰写事件 | [TextBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.aspx) 和 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richeditbox.aspx) 具有以下新事件，可在使用“输入法编辑器”撰写文本时通知应用：TextCompositionStarted、TextCompositionEnded 和 TextCompositionChanged。 你可以处理这些事件，以通过 IME 文本撰写进程调整应用代码。 例如，你可以为东亚语言实现内联自动完成功能。
-改进的双向文本处理 | XAML 文本控件具有全新 API，可改进双向文本处理，从而针对各种输入语言生成更好的文本对齐方式和段落方向。 TextReadingOrder 属性的默认值已更改为 DetectFromContent，因此对检测读取顺序的支持在默认情况下处于启用状态。 TextReadingOrder 属性也已添加到 PasswordBox、RichEditBox 和 TextBox。 若要选择从内容自动检测对齐方式，可以将文本控件的 TextAlignment 属性设置为新的 DetectFromContent 值。
-文本呈现 | 在 Windows 10 中，在大多数情况下，现在 XAML 应用中的文本的呈现速度几乎是 Windows 8.1 的两倍。 在大多数情况下，你的应用将受益于此改进而无需任何更改。 除了更快地呈现之外，这些改进还降低了 5% 的 XAML 应用典型内存消耗。
+输入法编辑器窗口事件 | 用户有时通过“输入法编辑器”输入文本，该编辑器显示在窗口中文本输入框的正下方（通常用于东亚语言）。 若要使你的应用 UI 与 IME 窗口相得益彰，你可以对 [TextBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.aspx) 和 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richeditbox.aspx) 使用 CandidateWindowBoundsChanged 事件和 DesiredCandidateWindowAlignment 属性。
+文本撰写事件 | [TextBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.aspx) 和 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richeditbox.aspx) 具有以下新事件，可在使用“输入法编辑器”撰写文本时通知应用：TextCompositionStarted、TextCompositionEnded 和 TextCompositionChanged。 你可以处理这些事件，以通过 IME 文本撰写进程调整应用代码。 例如，你可以针对东亚语言实现内联式自动完成功能。
+改进对双向文本的处理 | XAML 文本控件具有全新 API，可改进双向文本处理，从而针对各种输入语言生成更好的文本对齐方式和段落方向。 TextReadingOrder 属性的默认值已更改为 DetectFromContent，因此对检测读取顺序的支持在默认情况下处于启用状态。 TextReadingOrder 属性也已添加到 PasswordBox、RichEditBox 和 TextBox。 若要选择从内容自动检测对齐方式，可以将文本控件的 TextAlignment 属性设置为新的 DetectFromContent 值。
+文本呈现 | 在 Windows 10 中，XAML 应用中的文本呈现速度现在大多比 Windows 8.1 将近快两倍。 在大多数情况下，你的应用将受益于这一改进，而无需进行任何更改。 除了更快地呈现之外，这些改进还降低了 5% 的 XAML 应用典型内存消耗。
 
-## 应用程序模型
+## <a name="application-model"></a>应用程序模型
 
 功能 | 描述
  :---- | :----
 Cortana | 通过语音命令扩展 Cortana 的基本功能，这些命令用于在外部应用程序中启动并执行一个单独操作。 通过集成应用的基本功能，并通过为用户提供中心入口点以在无需直接打开应用的情况下完成大多数任务，Cortana 可以充当应用和用户之间的联络人。 在大多数情况下，这可以为用户节省大量时间和精力。 了解如何[将应用集成到 Cortana Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230.aspx)。 如果你需要创意，可以参考[通用 Windows 应用设计基础知识](https://developer.microsoft.com/windows/design/layout)中特定于 Cortana 的设计建议和 UX 指南。
 文件资源管理器 | 新的 [Windows.System.Launcher.LaunchFolderAsync](https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchfolderasync.aspx) 方法允许你启动文件资源管理器并显示所指定的文件夹的内容。
-共享存储 | 新的 [Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) 类及其方法允许你与另一个应用共享文件，方法是当通过使用 URI 激活启动另一个应用时，传递一个共享标记。 目标应用通过兑换该令牌来获取由源应用共享的文件。
+共享存储 | 新的 [Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) 类及其方法允许你与另一个应用共享文件，方法是当通过使用 URI 激活启动另一个应用时，传递一个共享标记。 目标应用会兑换令牌以获取源应用共享的文件。
 设置 | 通过将 ms-settings 协议与 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriasync.aspx) 方法结合使用，显示内置的设置页面。 例如，以下代码显示 WLAN 设置页面：**bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));** <br /><br />有关可以显示的设置页面列表，请参阅[如何使用 ms-settings 协议显示内置设置页面](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx)。
 应用到应用的通信 | 通过 Windows 10 中新增的[应用到应用的通信](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827.aspx) API，Windows 应用程序（以及 Windows Web 应用程序）可以相互启动并交换数据和文件。 利用这些新 API，使得原本需要用户使用多个应用程序才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用程序来完成支付流程。
-应用服务 | 在 Windows 10 中，应用可以使用应用服务为其他应用提供服务。 应用服务采用后台任务形式。 前台应用可通过在其他应用中调用应用服务，在后台执行任务。 有关应用服务 API 的参考信息，请参阅 [Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)。
+应用服务 | 应用服务是应用在 Windows 10 中向其他应用提供服务的方法。 应用服务的表现形式为后台任务。 前台应用可通过在其他应用中调用应用服务，在后台执行任务。 有关应用服务 API 的参考信息，请参阅 [Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)。
 应用包清单 | 对 Windows 10 的[程序包清单架构](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)参考的更新包括已添加、已删除和已更改的元素。 有关该架构中所有元素、属性和类型的参考信息，请参阅[元素层次结构](https://msdn.microsoft.com/library/windows/apps/dn934819.aspx)。
 
-## 设备
+## <a name="devices"></a>设备
 
 功能 | 描述
  :---- | :----
@@ -105,22 +112,22 @@ AllJoyn | [Windows.Devices.AllJoyn](https://msdn.microsoft.com/library/windows/a
 电池 | 通过 [Windows.Devices.Power](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.aspx) 命名空间中的电池 API，你的应用可了解连接到正在运行该应用的设备的所有电池的详细信息。 通过创建 [Battery](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.aspx) 对象来表示单个电池控制器或聚合的所有电池控制器（在它们分别由 [FromIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) 或 [AggregateBattery](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.aggregatebattery.aspx) 创建后）。 使用 [GetReport](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport.aspx) 方法返回 [BatteryReport](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.aspx) 对象，该对象可指示相应电池的充电、容量和状态。
 MIDI 设备 | 新的 [Windows.Devices.Midi](https://msdn.microsoft.com/library/windows/apps/windows.devices.midi.aspx) 命名空间可以让你创建能够与外部 MIDI 设备通信的 A=apps、直接与 Microsoft GS MIDI 软件合成器通信的应用和外部设备，以及多个客户端同时访问单个 MIDI 端口的方案。
 自定义传感器支持 | [Windows.Devices.Sensors.Custom](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.custom.aspx) 命名空间允许硬件开发人员定义新的自定义传感器类型，例如 CO2 传感器。
-基于主机的卡片模拟 (HCE) | 使用主机卡模拟，可实现操作系统中所托管的 NFC 卡片模拟服务，并且仍然可以通过 NFC 射频硬件与外部读取器通信。 若要触发后台任务以通过 NFC 模拟智能卡，请使用 [SmartCardTrigger](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.background.smartcardtrigger.aspx) 类。 [SmartCardTriggerType](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.smartcards.smartcardtriggertype.aspx) 枚举中的 EmulatorHostApplicationActivated 值会让你的应用知道 HCE 事件已发生。
+基于主机的卡仿真 (HCE) | 使用主机卡模拟，可实现操作系统中所托管的 NFC 卡片模拟服务，并且仍然可以通过 NFC 射频硬件与外部读取器通信。 若要触发后台任务以通过 NFC 模拟智能卡，请使用 [SmartCardTrigger](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.background.smartcardtrigger.aspx) 类。 [SmartCardTriggerType](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.smartcards.smartcardtriggertype.aspx) 枚举中的 EmulatorHostApplicationActivated 值会让你的应用知道 HCE 事件已发生。
 
-## 图形
-
-功能 | 描述
- :---- | :----
-DirectX | Windows 10 中的 DirectX 12 在 DirectX 的核心处引入了下一代版本的 Microsoft Direct3D，即 3D Graphics API。 [Direct3D 12 图形](https://msdn.microsoft.com/library/windows/desktop/dn903821(v=vs.85).aspx)可实现类似控制台的低级别 API 的效率和性能。 Direct3D 12 现在比以往更快、更有效。 它提供更丰富的场景、更多的对象、更复杂的效果，并且能更好地利用现代图形硬件。
-SoftwareBitmapSource | 在通用 Windows 应用中，可将新的 [SoftwareBitmapSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.softwarebitmapsource.aspx) 类型用作 XAML 图像源。 这可将未编码的图像传递到 XAML 框架，从而使其立即显示在屏幕上，同时避免 XAML 框架对图像进行编码。 你可以实现更快速的图像呈现，如直接通过相机呈现低延迟照片、使用自定义图像解码器、从 DirectX 图面捕获帧，或者甚至从零开始创建内存中图像并直接使用 XAML 呈现所有这些图像，延迟和内存开销均较低。
-透视相机 | 在通用 Windows 应用中，XAML 具有全新 Transform3D API，它可用于将透视转换应用到 XAML 树（或场景），后者再根据该单一场景范围的转换（或相机）来转换所有 XAML 子元素。 虽然在以前，你可以通过使用 MatrixTransform 和复杂数学运算来实现此转换，但是 Transform3D 显著地简化了此效果，同时还可以动画方式呈现该效果。 有关详细信息，请参阅 [UIElement.Transform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx) 属性、[Transform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.transform3d.aspx)、[CompositeTransform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) 和 [PerspectiveTransform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx)。
-
-## 媒体
+## <a name="graphics"></a>图形
 
 功能 | 描述
  :---- | :----
-HTTP 实时流 | 你可以使用新的 [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.streaming.adaptive.adaptivemediasource.aspx) 类将自适应视频流功能添加到你的应用。 通过将对象指向流清单文件对其进行初始化。 受支持的清单格式包括 HTTP 实时流 (HLS) 和基于 HTTP 的动态自适应流 (DASH)。 一旦将对象绑定到 XAML 媒体元素，将开始自适应播放。 可以在适当情况下查询和设置流的属性，例如可用比特率、最小和最大比特率。
-媒体基础转换代码视频处理器 (XVP) 支持媒体基础转换 (MFT) | 使用媒体基础转换 (MFT) 的 Windows 应用现在可以使用**媒体基础转换代码视频处理器** (XVP) 来转换、缩放和转化原始视频数据：新的 [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919.aspx) 属性甚至可以在 Microsoft DirectX 视频加速 (DXVA) 模式下启用对调用方分配的纹理的输出。 新 [IMFVideoProcessorControl2](https://msdn.microsoft.com/library/windows/desktop/dn800741.aspx) 接口允许你的应用启用硬件效果、查询支持的硬件效果以及替代由视频处理器执行的旋转操作。
+DirectX | Windows 10 中的 DirectX 12 在 DirectX 的核心处引入了下一代版本的 Microsoft Direct3D，即 3D Graphics API。 [Direct3D 12 图形](https://msdn.microsoft.com/library/windows/desktop/dn903821(v=vs.85).aspx)可实现类似控制台的低级别 API 的效率和性能。 Direct3D 12 比以往更快且更有效率。 它可以实现更丰富的场景、更多的对象、更复杂的效果，并且可以更好地利用现代图形硬件。
+SoftwareBitmapSource | 在通用 Windows 应用中，可将新的 [SoftwareBitmapSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.softwarebitmapsource.aspx) 类型用作 XAML 图像源。 这样，你可以将未编码图像传递到 XAML 框架，以便立即在屏幕上显示，从而通过 XAML 框架绕过图像解码。 你可以实现更快速的图像呈现，如直接通过相机呈现低延迟照片、使用自定义图像解码器、从 DirectX 图面捕获帧，或者甚至从零开始创建内存中图像并直接使用 XAML 呈现所有这些图像，延迟和内存开销均较低。
+透视相机 | 在通用 Windows 应用中，XAML 具有全新 Transform3D API，它可用于将透视转换应用到 XAML 树（或场景），后者再根据该单一场景范围的转换（或相机）来转换所有 XAML 子元素。 你之前可以通过 MatrixTransform 和复杂的数学运算执行此操作，但 Transform3D 极大地简化了此效果，并且还支持对此效果进行动画处理。 有关详细信息，请参阅 [UIElement.Transform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx) 属性、[Transform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.transform3d.aspx)、[CompositeTransform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) 和 [PerspectiveTransform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx)。
+
+## <a name="media"></a>媒体
+
+功能 | 描述
+ :---- | :----
+HTTP 实时流 | 你可以使用新的 [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.streaming.adaptive.adaptivemediasource.aspx) 类将自适应视频流功能添加到你的应用。 通过将对象指向流清单文件可初始化该对象。 支持的清单格式包括 Http 实时传送视频流 (HLS) 和 HTTP 动态自适应流式处理 (DASH)。 对象绑定到 XAML 媒体元素后，即开始自适应播放。 在适当的时候可以查询和设置流的属性，如可用的比特率、最小比特率和最大比特率。
+对媒体基础转换 (MFTs) 的媒体基础转换代码视频处理器 (XVP) 支持 | 使用媒体基础转换 (MFT) 的 Windows 应用现在可以使用**媒体基础转换代码视频处理器** (XVP) 来转换、缩放和转化原始视频数据：新的 [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919.aspx) 属性甚至可以在 Microsoft DirectX 视频加速 (DXVA) 模式下启用对调用方分配的纹理的输出。 新 [IMFVideoProcessorControl2](https://msdn.microsoft.com/library/windows/desktop/dn800741.aspx) 接口允许你的应用启用硬件效果、查询支持的硬件效果以及替代由视频处理器执行的旋转操作。
 转码 | 新 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.background.mediaprocessingtrigger.aspx) API 让你的应用在后台任务中执行媒体转码，这样即使当前台应用已终止，也可以继续进行转码操作。
 MediaElement 媒体失败事件 | 在通用 Windows 应用中，[MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 将播放包含多个流的内容，即使其中一个流具有解码错误，只要媒体内容包含至少一个有效流即可。 例如，如果包含音频流和视频流的内容中的视频流失败，[MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 仍将播放音频流。 [PartialMediaFailureDetected](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.partialmediafailuredetected.aspx) 会通知你流内的其中一个流无法解码。 它还允许你知道哪种类型的流失败，以便你可以在 UI 中反映该信息。 如果在媒体流内的所有流失败，将引发 [MediaFailed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.mediafailed.aspx) 事件。
 通过 MediaElement 支持自适应视频流 | [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 具有新的 [SetPlaybackSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.setplaybacksource.aspx) 方法，可支持自适应视频流。 若要将你的媒体源设置为 AdaptiveMediaSource，请使用此方法。
@@ -130,56 +137,56 @@ MediaElement 媒体失败事件 | 在通用 Windows 应用中，[MediaElement](h
 媒体组合的重叠 | 新 [MediaOverlay](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.editing.mediaoverlay.aspx) 和 [MediaOverlayLayer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.editing.mediaoverlaylayer.aspx) API 更便于向媒体组合添加静态或动态媒体内容的多个层。 可以为每个层调整不透明度、位置和计时，你甚至可以为输入层实现你自己的自定义复合器。
 新效果框架 | [Windows.Media.Effects](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.aspx) 命名空间提供了简单、直观的框架，以便将效果添加到音频和视频流。 框架包含可以实现创建自定义的音频和视频效果并将它们插入到媒体管道的基本接口。
 
-## 网络
+## <a name="networking"></a>网络
 
 功能 | 描述
  :---- | :----
-套接字 | 套接字更新包括： <br /><br />**套接字代理：**套接字代理可以代表处于应用生命周期中任意状态的应用建立和关闭套接字连接。 这使应用和它们提供的服务更容易被发现。 例如，通过套接字代理，Win32 服务仍可接受传入的套接字连接，即便是该服务不在运行也是如此。 <br /><br />**吞吐量改进：**套接字吞吐量已针对使用 Windows.Networking.Sockets 命名空间的应用进行了优化。
+套接字 | 套接字更新包括： <br /><br />**套接字代理：**套接字代理可以代表处于应用生命周期中任意状态的应用建立和关闭套接字连接。 这使得应用及其提供的服务更容易被发现。 例如，通过套接字代理，Win32 服务仍可接受传入的套接字连接，即便是该服务不在运行也是如此。 <br /><br />**吞吐量改进：**套接字吞吐量已针对使用 Windows.Networking.Sockets 命名空间的应用进行了优化。
 后台传输后续处理任务 | 你可以利用 [Windows.Networking.BackgroundTransfer](https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx) 命名空间中的新 API 注册后处理任务组。 这样你的应用便可以立即根据后台传输的成功或失败执行操作，而不是等待下次用户恢复它，即使该应用不在前台运行也是如此。
 广告的蓝牙支持 | 借助 [Windows.Devices.Bluetooth.Advertisement](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.aspx) 命名空间，你的应用可以发送、接收并筛选蓝牙 LE 广告。
-Wi-Fi Direct API 更新 | 更新设备代理，以实现在不离开应用的情况下与设备匹配。 除此之外，[Windows.Devices.WiFiDirect](https://msdn.microsoft.com/library/windows/apps/windows.devices.wifidirect.aspx) 命名空间还可以让某个设备能够检测到其他设备，并让该设备侦听传入的连接通知。<br /><br />**注意：**在此版本中，WLAN Direct 功能改进未内置于 UX 中，并且它们仅支持一键配对。 此外，此版本仅支持一个活动连接。
+WLAN Direct API 更新 | 更新设备代理，以实现在不离开应用的情况下与设备匹配。 除此之外，[Windows.Devices.WiFiDirect](https://msdn.microsoft.com/library/windows/apps/windows.devices.wifidirect.aspx) 命名空间还可以让某个设备能够检测到其他设备，并让该设备侦听传入的连接通知。<br /><br />**注意：**在此版本中，WLAN Direct 功能改进未内置于 UX 中，并且它们仅支持一键配对。 此外，此版本仅支持一个活动连接。
 JSON 支持改进 | 在调试会话期间，转换 JSON 对象时，[Windows.Data.Json](https://msdn.microsoft.com/library/windows/apps/windows.data.json.aspx) 命名空间现在能更好地支持已有的标准定义和开发人员体验。
 
-## 安全
+## <a name="security"></a>安全
 
 功能 | 描述
  :---- | :----
-ECC 加密 | [Windows.Security.Cryptography](https://msdn.microsoft.com/library/windows/apps/windows.security.cryptography.aspx) 命名空间中的新 API 支持椭圆曲线密码 (ECC)，后者是基于有限域上椭圆曲线的公共密钥加密实现。 在算法上，ECC 比 RSA 更为复杂，它提供更小的密钥大小、可减少内存占用并且可提高性能。 它提供 Microsoft 服务并且向客户提供 RSA 密钥和 NIST 批准曲线参数的替代方法。
-Microsoft Passport | Microsoft Passport 是身份验证的替代方法，它使用非对称加密和手势来替代密码。 “凭据”命名空间中的类（如 [KeyCredentialManger](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.keycredentialmanager.aspx)）让开发人员可以轻松通过 Microsoft Passport 来创建应用程序，而无需使用复杂的加密或生物识别。
-Microsoft Passport for Work | Microsoft Passport for Work 是使用 Azure Active Directory 帐户登录 Windows 的替代方法，它无需使用密码、智能卡和虚拟智能卡。 你可以选择是禁用还是启用此策略设置。
-令牌代理 | 令牌是一个新型的身份验证框架，可让应用更加轻松地连接到联机标识提供程序（例如 Facebook）。 帐户用户名和密码管理等功能和简化的 UI 为用户极大改善了身份验证体验。
+ECC 加密 | [Windows.Security.Cryptography](https://msdn.microsoft.com/library/windows/apps/windows.security.cryptography.aspx) 命名空间中的新 API 支持椭圆曲线密码 (ECC)，后者是基于有限域上椭圆曲线的公共密钥加密实现。 ECC 在算术方面比 RSA 更为复杂，但提供了较小的密钥大小、降低了内存消耗，从而提升了性能。 它为 Microsoft 服务和客户提供了 RSA 密钥和 NIST 批准曲线参数的替代方法。
+Microsoft Passport | Microsoft Passport 是身份验证的一种替代方法，使用非对称加密和手势来替换密码。 “凭据”命名空间中的类（如 [KeyCredentialManger](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.keycredentialmanager.aspx)）让开发人员可以轻松通过 Microsoft Passport 来创建应用程序，而无需使用复杂的加密或生物识别。
+Microsoft Passport for Work | Microsoft Passport for Work 是使用 Azure Active Directory 帐户登录 Windows 的替代方法，不需要使用密码、智能卡和虚拟智能卡。 你可以选择是禁用还是启用此策略设置。
+令牌代理 | 令牌代理是一种新的身份验证框架，使应用更易于连接到联机标识提供者（如 Facebook）。 帐户用户名和密码管理等功能和简化的 UI 为用户极大改善了身份验证体验。
 
-## 系统服务
+## <a name="system-services"></a>系统服务
 
 功能 | 描述
  :---- | :----
 电源 | 现在，当节电模式处于启用或未启用状态时，你的 Windows 桌面应用程序将得到通知。 通过响应电源条件更改，你的应用程序将有机会帮助延长电池使用时间。 <br /><br />[GUID_POWER_SAVING_STATUS](https://msdn.microsoft.com/library/windows/desktop/hh448380.aspx)：将此新的 GUID 与 [PowerSettingRegisterNotification](https://msdn.microsoft.com/library/windows/desktop/hh769082(v=vs.85).aspx) 函数结合使用，以便在节电模式处于启用或未启用状态时收到通知。 <br /><br />[SYSTEM_POWER_STATUS](https://msdn.microsoft.com/library/windows/desktop/aa373232.aspx)：已将此结构更新为支持节电模式。 第四个成员 *SystemStatusFlag*（以前称为 Reserved1）现在指示节电模式是否处于启用状态。 使用 [GetSystemPowerStatus](https://msdn.microsoft.com/library/windows/desktop/aa372693(v=vs.85).aspx) 函数检索指向此结构的指针。
 版本 | 你可以使用[版本帮助程序函数](https://msdn.microsoft.com/library/windows/desktop/dn424972.aspx)确定操作系统的版本。 在 Windows 10 中，这些帮助程序函数包括一个新函数 [IsWindows10OrGreater](https://msdn.microsoft.com/library/windows/desktop/dn905474(v=vs.85).aspx)。 如果你想要确定系统版本，则应该使用帮助程序函数，而不是使用已弃用的 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 和 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函数。 有关如何获取系统版本的详细信息，请参阅[获取系统版本](https://msdn.microsoft.com/library/windows/desktop/ms724429.aspx)。 <br /><br />如果你使用已弃用的 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 或 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函数在 [OSVERSIONINFOEX](https://msdn.microsoft.com/library/windows/desktop/ms724833(v=vs.85).aspx) 或 [OSVERSIONINFO](https://msdn.microsoft.com/library/windows/desktop/ms724834.aspx) 结构中获取版本信息，请注意，这些结构包含的版本号将从适用于 Windows 8.1 和 Windows Server 2012 R2 的 6.3 版增加到适用于 Windows 10 的 10.0 版。 有关操作系统版本号的详细信息，请参阅[操作系统版本](https://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)。 <br /><br />你还需要在你的应用程序中明确定向到 Windows 8.1 或 Windows 10，以使用 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 或 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函数获取有关这些版本的正确版本信息。 有关如何针对这些版本的 Windows 定向你的应用程序的信息，请参阅[针对 Windows 定向你的应用程序](https://msdn.microsoft.com/library/windows/desktop/dn481241.aspx)。
-用户信息 | [Windows.System](https://msdn.microsoft.com/library/windows/apps/windows.system.aspx) 命名空间中的新 API 使你可以轻松访问用户相关信息，例如其用户名和头像。 它还提供响应诸如登录和注销等用户事件的功能。
+用户信息 | [Windows.System](https://msdn.microsoft.com/library/windows/apps/windows.system.aspx) 命名空间中的新 API 使你可以轻松访问用户相关信息，例如其用户名和头像。 它还提供了响应用户事件（如登录和注销）的功能。
 内存管理和分析 | 对 [Windows.System](https://msdn.microsoft.com/library/windows/apps/windows.system.aspx) 中内存分析 API 的支持已扩展至所有平台，并且其整体功能已通过新的类和函数进行增强。
 
-## 存储
+## <a name="storage"></a>存储
 
 功能 | 描述
  :---- | :----
 文件搜索 API 可用于 Windows Phone | 作为应用发布者，你可以注册你的应用，以便通过将扩展添加到应用清单，与其他应用共享存储文件夹。 然后，调用 [Windows.Storage.ApplicationData.GetPublisherCacheFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.getpublishercachefolder.aspx) 方法来获取共享的存储位置。 Windows 运行时应用的强大安全模型通常可防止应用在它们自己间共享数据。 但是，它可以帮助来自同一发布者的应用共享基于每个用户的文件和设置。
 
-## 工具
+## <a name="tools"></a>工具
 
 功能 | 描述
  :---- | :----
-Visual Studio 中的 Live Visual Tree | Visual Studio 具备全新的 Live Visual Tree 功能。 你可以在调试时用它来快速地了解应用可视化树的状态，并发现设置元素属性的方式。 它还可用于在应用运行时更改属性值，以便在无需重新启动的情况下进行调整和实验。
+Visual Studio 中的 Live Visual Tree | Visual Studio 具备全新的 Live Visual Tree 功能。 你可以在调试时使用该功能来快速了解应用的可视化树状态，并了解元素属性的设置方式。 该功能还允许你在应用运行时更改属性值，这样你无需重新启动即可进行调整和实验。
 跟踪日志记录 | [跟踪日志记录](https://msdn.microsoft.com/library/windows/desktop/dn904636(v=vs.85).aspx)是适用于用户模式应用和内核模式驱动程序的全新事件跟踪 API；它构建在 [Windows 事件跟踪](https://msdn.microsoft.com/library/windows/desktop/bb968803(v=vs.85).aspx) (ETW) 的基础之上。 此 API 提供了一种简化方式来检测代码和在结构数据中包括事件，而无需要求单独的检测清单 XML 文件。 WinRT、.NET 和 C/C++ TraceLogging API 都可服务于不同的开发人员受众。
 
-## 用户体验
+## <a name="user-experience"></a>用户体验
 
 功能 | 描述
  :---- | :----
-语音识别 | 通用 Windows 平台现已支持针对长篇听写场景的连续语音识别。 请参阅“语音交互”文档中的“如何启用连续听写”。
+语音识别 | 通用 Windows 平台现已支持针对长篇听写场景的连续语音识别。 了解如何在语音交互文档中启用连续听写。
 不同应用程序平台之间的拖放功能 | 新 [Windows.ApplicationModel.DataTransfer.DragDrop](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.dragdrop.aspx) 命名空间为通用 Windows 应用提供拖放功能。 以前，桌面程序中的常见拖放方案（例如将文档从文件夹拖动到需要附加它的 Outlook 电子邮件中）不适用于通用 Windows 应用。 通过使用这些新 API，你的应用可以让用户轻松地在不同的通用 Windows 应用和桌面之间移动数据。 <br /><br />为了支持在应用间拖放，已向 XAML 添加以下新 API：[ListViewBase.DragItemsCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.dragitemscompleted.aspx)； <br />UIElement：[CanDrag](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.candrag.aspx)、[DragStarting](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.dragstarting.aspx)、[StartDragAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.startdragasync.aspx)、[DropCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.dropcompleted.aspx)；  <br />[DragOperationDeferral](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragoperationdeferral.aspx)、[DragUI](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragui.aspx)、[DragUIOverride](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.draguioverride.aspx)； <br />DragEventArgs：[AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.acceptedoperation.aspx)、[DataView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.dataview.aspx)、[DragUIOverride](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.draguioverride.aspx)、[GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.getdeferral.aspx)、[Modifiers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.modifiers.aspx)； <br />[DragItemsCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.dragitemscompletedeventargs.aspx)、[DropCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dropcompletedeventargs.aspx)、[DragStartingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragstartingeventargs.aspx)
 自定义窗口标题栏 | 对于适用于桌面设备系列的 UWP 应用，现在可以将 [ApplicationViewTitleBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationviewtitlebar.aspx) 类与 [ApplicationView.TitleBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.titlebar.aspx) 属性和 [Window.SetTitleBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.titlebar.aspx) 方法结合使用，以便将默认 Windows 标题栏内容替换为你自己的自定义 XAML 内容。 你的 XAML 将被视为“系统镶边”，因此 Windows（而不是你的应用）将处理输入事件。 这意味着用户仍可拖动窗口并调整其大小，即使在单击自定义标题栏内容时也是如此。
 
-## Web
+## <a name="web"></a>Web
 
 功能 | 描述
  :---- | :----
@@ -198,9 +205,4 @@ WebView.ClearTemporaryWebDataAsync 方法 | 当用户与 XAML WebView 中的 Web
 
 
 ---
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

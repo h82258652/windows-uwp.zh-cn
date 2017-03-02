@@ -3,19 +3,26 @@ author: jwmsft
 description: "了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。"
 title: "移动和绘制命令语法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移动和绘制命令语法
+# <a name="move-and-draw-commands-syntax"></a>移动和绘制命令语法
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。 移动和绘制命令由许多设计和图形工具使用，用于按序列化和交换格式输出矢量图形或形状。
 
-## 使用移动和绘制命令字符串的属性
+## <a name="properties-that-use-move-and-draw-command-strings"></a>使用移动和绘制命令字符串的属性
 
 移动和绘制命令语法受 XAML 的内部类型转换器支持，可分析命令并生成运行时图形表示形式。 此表示形式基本上是一组用于演示的完成矢量。 矢量本身不会完成表示细节；你仍然需要在元素上设置其他值。 对于 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象，你还需要适用于 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378)、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) 和其他属性的值，然后 **Path** 必须通过某种途径连接到可视化树。 对于 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 对象，设置 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) 属性。
 
@@ -28,11 +35,11 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 [**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移动和绘制命令。 你可以将使用移动和绘制命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 对象与 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 对象中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 类型结合起来，然后将其用作 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是此方法与使用属性定义的数据的移动和绘制命令相比并不常用。
 
-## 使用移动和绘制命令与使用 **PathGeometry**
+## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>使用移动和绘制命令与使用 **PathGeometry**
 
 对于 Windows 运行时 XAML，移动和绘制命令将生成包含 [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 属性值的单个 [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) 对象的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168)。 每个绘制命令都将在此单个 **PathFigure** 的 [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) 集合中生成一个 [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 派生类，移动命令将更改 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166)，并且存在的关闭命令可将 [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) 设置为 **true**。 如果你在运行时检查 **Data** 值，则可以将此结构作为对象模型导航。
 
-## 基本语法
+## <a name="the-basic-syntax"></a>基本语法
 
 移动和绘制命令的语法可总结如下：
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 不要将逗号用作十进制数字的小数点；命令字符串由 XAML 解释，并且不会说明特定于文化的数字格式约定，该约定与 **en-us** 当地使用的约定不同。
 
-## 语法细节
+## <a name="syntax-specifics"></a>语法细节
 
 **填充规则**
 
@@ -222,7 +229,7 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 你可以使用科学计数法，而不是使用小数或整数。 例如，`+1.e17` 是有效值。
 
-## 用于生成移动和绘制命令的设计工具
+## <a name="design-tools-that-produce-move-and-draw-commands"></a>用于生成移动和绘制命令的设计工具
 
 在 Blend for Microsoft Visual Studio 2015 中使用**笔**工具和其他绘图工具通常会生成一个具有移动和绘制命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。
 
@@ -230,16 +237,11 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 为其他常用矢量图形设计工具提供了输出程序或插件，这些工具用于采用 XAML 格式输出矢量。 它们通常使用 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的移动和绘制命令在布局容器中创建 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。 XAML 中可能存在多个 **Path** 元素，因此可以应用不同的画笔。 许多此类导出程序或插件最初是为 Windows Presentation Foundation (WPF) XAML 或 Silverlight 编写的，但 XAML 路径语法与 Windows 运行时 XAML 一致。 通常，你可以使用来自导出程序的 XAML 区块，并将其正确粘贴到 Windows 运行时 XAML 页面中。 （但是，如果 **RadialGradientBrush** 是已转换的 XAML 的一部分，你将无法使用它，因为 Windows 运行时 XAML 不支持该画笔。）
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [绘制形状](https://msdn.microsoft.com/library/windows/apps/mt280380)
 * [使用画笔](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

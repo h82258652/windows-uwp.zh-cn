@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: "阅读 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。"
 title: "HTML 和 JavaScript 疑难解答指南"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, advertising, AdControl, 疑难解答, HTML, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe06749583dc42ec84dc4acd876ea96c70c916db
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -380,9 +387,4 @@ ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

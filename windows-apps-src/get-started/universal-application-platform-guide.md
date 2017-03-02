@@ -1,15 +1,22 @@
 ---
 author: TylerMSFT
 title: "通用 Windows 平台简介"
-description: "了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows10 的设备运行。"
+description: "了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows 10 的设备运行。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98dd2da8e16552fcde9790bd77f17a2100b63d4f
-ms.openlocfilehash: 170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f1e69b302f9b979423e2b38a11cd477b1b805a4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 通用 Windows 平台简介
+# <a name="intro-to-the-universal-windows-platform"></a>通用 Windows 平台简介
 
 在本指南中，你将了解如下内容：
 
@@ -17,19 +24,19 @@ ms.openlocfilehash: 170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0
 -   借助新的 UI 控件和面板，即可使你的 UI 能够适应不同的设备外形规格。
 -   如何了解和控制适用于你的应用的 API 图面。
 
-Windows8 引入了 Windows 运行时 (WinRT)，这是 Windows 应用模型史上的一次突破。 它的设计初衷是成为通用应用程序体系结构。
+Windows 8 引入了 Windows 运行时 (WinRT)，这是 Windows 应用模型史上的一次突破。 它的设计初衷是成为通用应用程序体系结构。
 
-在提供 Windows Phone 8.1 后，Windows 运行时在 Windows Phone 8.1 与 Windows 之间仍保持一致。 这使得开发人员能够创建面向使用共享基本代码的 Windows 和 Windows Phone 的*通用 Windows8 应用*。
+在提供 Windows Phone 8.1 后，Windows 运行时在 Windows Phone 8.1 与 Windows 之间仍保持一致。 这使得开发人员能够创建面向使用共享基本代码的 Windows 和 Windows Phone 的*通用 Windows 8 应用*。
 
-Windows10 引入了通用 Windows 平台 (UWP)，这进一步推动了 Windows 运行时模型的发展，并将该平台引入到 Windows10 统一核心版中。 作为核心版的一部分，UWP 现提供了一个可供在每个运行 Windows10 的设备上使用的通用应用平台。 借助此次突破，面向 UWP 的应用不仅可以调用对所有设备均通用的 WinRT API，还可以调用特定于要运行应用的设备系列的 API（包括 Win32 和 .NET API）。 UWP 可跨不同设备提供有保证的核心 API 图层。 这意味着你可以创建可安装在各种设备上的单个应用包。 并且借助该单个应用包，Windows 应用商店可提供一个统一的分发渠道，以涉及访问可运行你的应用的所有设备类型。
+Windows10 引入了通用 Windows 平台 (UWP)，这进一步推动了 Windows 运行时模型的发展，并将该平台引入到 Windows 10 统一核心版中。 作为核心版的一部分，UWP 现提供了一个可供在每个运行 Windows 10 的设备上使用的通用应用平台。 借助此次突破，面向 UWP 的应用不仅可以调用对所有设备均通用的 WinRT API，还可以调用特定于要运行应用的设备系列的 API（包括 Win32 和 .NET API）。 UWP 可跨不同设备提供有保证的核心 API 图层。 这意味着你可以创建可安装在各种设备上的单个应用包。 并且借助该单个应用包，Windows 应用商店可提供一个统一的分发渠道，以涉及访问可运行你的应用的所有设备类型。
 
 ![通用 Windows 平台应用可在各种设备上运行，支持自适应式用户界面、自然用户输入、一个应用商店、一个开发人员中心，以及云服务](images/universalapps-overview.png)
 
 由于 UWP 应用可在各种具有不同外形规格和输入方式的设备上运行，因此你可能希望针对每个设备对其进行定制，并且可能希望每个设备都能各具独特功能。 设备将其自己独特的 API 添加到有保证的 API 图层。 你可以编写相关代码以有条件地访问这些独特 API，这样你的应用便能在其他设备上提供不同的体验时启用特定于某一设备类型的功能。 自适应 UI 控件和新布局面板可帮助你在广泛的屏幕分辨率中定制你的 UI。
 
-## 设备系列
+## <a name="device-families"></a>设备系列
 
-Windows8.1 和 Windows Phone 8.1 应用面向以下任一操作系统 (OS)：Window 或 Windows Phone。 在 Windows10 中，你将不再面向某一操作系统，而是让你的应用改为面向一个或多个设备系列。 设备系列可标识在其中的设备上所需的 API、系统特性和行为。 它还用于确定可从应用商店安装你的应用的设备集。 下面是设备系列的层次结构。
+Windows 8.1 和 Windows Phone 8.1 应用面向以下任一操作系统 (OS)：Window 或 Windows Phone。 在 Windows 10 中，你将不再面向某一操作系统，而是让你的应用改为面向一个或多个设备系列。 设备系列可标识在其中的设备上所需的 API、系统特性和行为。 它还用于确定可从应用商店安装你的应用的设备集。 下面是设备系列的层次结构。
 
 ![设备系列](images/device-family-tree.png)
 
@@ -71,9 +78,9 @@ Windows8.1 和 Windows Phone 8.1 应用面向以下任一操作系统 (OS)：Win
 
 默认情况下，Microsoft Visual Studio 将 **Windows.Universal** 指定为应用包清单文件中的目标设备系列。 若要指定应用从应用商店向其提供的设备系列，请在 Package.appxmanifest 文件中手动配置 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素。
 
-## UI 和通用输入
+## <a name="ui-and-universal-input"></a>UI 和通用输入
 
-UWP 应用可以在具有不同输入形式、屏幕分辨率、DPI 密度和其他独特的特征的各式各样的设备上运行。 Windows10 提供了新的通用控件、布局面板和工具，以便你的 UI 能够适应可运行你的应用的设备。 例如，当你的应用要在台式机与移动设备上运行时，你可以定制 UI 以充分利用这两者屏幕分辨率方面的差异。
+UWP 应用可以在具有不同输入形式、屏幕分辨率、DPI 密度和其他独特的特征的各式各样的设备上运行。 Windows 10 提供了新的通用控件、布局面板和工具，以便你的 UI 能够适应可运行你的应用的设备。 例如，当你的应用要在台式机与移动设备上运行时，你可以定制 UI 以充分利用这两者屏幕分辨率方面的差异。
 
 你的应用 UI 的某些方面将自动适应不同的设备。 诸如按钮和滑块等控件将自动适应不同的设备系列和输入模式。 但是，你的应用的用户体验设计可能需要根据正在运行该应用的设备进行调整。 例如，当照片应用在手持式小型设备上运行时，该应用应当适应 UI，以确保该用法是单手使用的理想之选。 当照片应用在台式机上运行时，UI 应进行调整以充分利用额外的屏幕空间。
 
@@ -84,9 +91,9 @@ Windows 通过以下功能帮助你的 UI 面向多个设备：
 -   工具可以帮助你设计出能够适应不同屏幕分辨率的 UI
 -   自适应缩放用于调整以适应不同设备的分辨率和 DPI
 
-### 通用控件和布局面板
+### <a name="universal-controls-and-layout-panels"></a>通用控件和布局面板
 
-Windows10 提供了新的控件，例如日历和拆分视图。 之前仅适用于 Windows Phone 的透视控件现在也可用于通用设备系列。
+Windows 10 提供了新的控件，例如日历和拆分视图。 之前仅适用于 Windows Phone 的透视控件现在也可用于通用设备系列。
 
 控件已经过更新，从而可以在较大的屏幕上正常运行、自行根据设备提供的屏幕像素数进行调整，以及可与多种输入类型（例如键盘、鼠标、触摸、笔及 Xbox 控制器之类的控制器）良好地协作运行。
 
@@ -98,9 +105,9 @@ Windows10 提供了新的控件，例如日历和拆分视图。 之前仅适用
 
 ![手机通信应用 UI](images/adaptiveux-phone.png)
 
-为了帮助你基于可用的屏幕空间量对整体 UI 布局进行调整，Windows10 引入了自适应面板和设计状态。
+为了帮助你基于可用的屏幕空间量对整体 UI 布局进行调整，Windows 10 引入了自适应面板和设计状态。
 
-### 设计带有自适应面板的自适应 UI
+### <a name="design-adaptive-ui-with-adaptive-panels"></a>设计带有自适应面板的自适应 UI
 
 布局面板将依据可用空间为其子面板提供相应的大小和位置。 例如，[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 将按顺序（水平或垂直）排列其子面板。 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 会像 CSS 网格那样将其子网格置于单元格中。
 
@@ -118,7 +125,7 @@ Windows10 提供了新的控件，例如日历和拆分视图。 之前仅适用
 </RelativePanel>
 ```
 
-### 使用视觉状态触发器，生成可针对可用屏幕空间进行调整的 UI
+### <a name="use-visual-state-triggers-to-build-ui-that-can-adapt-to-available-screen-space"></a>使用视觉状态触发器，生成可针对可用屏幕空间进行调整的 UI
 
 你的 UI 可能需要根据窗口大小的变化进行调整。 自适应视觉状态允许你更改视觉状态，以响应窗口大小的变化。
 
@@ -162,7 +169,7 @@ StateTriggers 定义激活视觉状态的阈值，然后将根据触发状态更
 </Grid>
 ```
 
-### 工具
+### <a name="tooling"></a>工具
 
 默认情况下，你可能需要面向最广泛的可用设备系列。 当你准备好查看你的应用在特定设备上的外观和布局方式时，可使用 Visual Studio 中的设备预览工具栏，在较小或中等移动设备、电脑或者较大电视屏幕上预览你的 UI。 这样一来，你便可以定制和测试自己的自适应视觉状态：
 
@@ -170,15 +177,15 @@ StateTriggers 定义激活视觉状态的阈值，然后将根据触发状态更
 
 你无需事先确定好将支持的每个设备类型。 你可以在以后向你的项目添加其他设备大小。
 
-### 自适应缩放
+### <a name="adaptive-scaling"></a>自适应缩放
 
-Windows10 引入了现有缩放模型的演变。 除了缩放矢量内容外，还有一系列统一的比例系数，用于在各种屏幕大小和显示分辨率中为 UI 元素提供一致的大小。 比例系数还与其他操作系统（如 iOS 和 Android）的比例系数兼容。 这样便可以更轻松地在这些平台之间共享资源。
+Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外，还有一系列统一的比例系数，用于在各种屏幕大小和显示分辨率中为 UI 元素提供一致的大小。 比例系数还与其他操作系统（如 iOS 和 Android）的比例系数兼容。 这样便可以更轻松地在这些平台之间共享资源。
 
 应用商店选择要下载的资源在一定程序上取决于设备的 DPI。 仅下载最匹配设备的资源。
 
-### 常用的输入处理
+### <a name="common-input-handling"></a>常用的输入处理
 
-可以生成通用 Windows 应用，方法是使用可处理各种输入的通用控件，例如鼠标、键盘、触摸、笔和控制器（如 Xbox 控制器）。 墨迹历来仅与笔输入关联，但在 Windows10 中，墨迹还与某些设备上的触摸和任意指针输入关联。 墨迹在许多设备（包括移动设备）上均受支持，并且易于与几行代码合并。
+可以生成通用 Windows 应用，方法是使用可处理各种输入的通用控件，例如鼠标、键盘、触摸、笔和控制器（如 Xbox 控制器）。 墨迹历来仅与笔输入关联，但在 Windows 10 中，墨迹还与某些设备上的触摸和任意指针输入关联。 墨迹在许多设备（包括移动设备）上均受支持，并且易于与几行代码合并。
 
 以下 API 提供对输入的访问：
 
@@ -187,10 +194,10 @@ Windows10 引入了现有缩放模型的演变。 除了缩放矢量内容外，
 -   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 是支持设备查询功能的设备 API，以便你可以确定哪些输入形式在设备上可用。
 -   新的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) XAML 控件和 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) Windows 运行时 API 允许你访问墨迹笔划数据。
 
-## 编写代码
+## <a name="writing-code"></a>编写代码
 
 
-  [Visual Studio 中 Windows10 项目](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10)的编程语言选项包括 Visual C++、C#、Visual Basic 和 JavaScript。 对于 Visual C++、C# 和 Visual Basic，可以使用 XAML 实现高保真的本机 UI 体验。 对于 Visual C++，可以选择用 DirectX 来替代 XAML 或者同时使用这两者进行绘制。 对于 JavaScript，表示层将采用 HTML，毋庸置疑，HTML 是跨平台 Web 标准。 大部分代码和 UI 都是通用的，可采用相同的方式在任意位置运行。 但对于为特定设备系列定制的代码和为特定外形规格定制的 UI，你可以选择使用自适应代码和自适应 UI。 让我们来看一下以下不同的用例。
+  [Visual Studio 中 Windows 10 项目](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10)的编程语言选项包括 Visual C++、C#、Visual Basic 和 JavaScript。 对于 Visual C++、C# 和 Visual Basic，可以使用 XAML 实现高保真的本机 UI 体验。 对于 Visual C++，可以选择用 DirectX 来替代 XAML 或者同时使用这两者进行绘制。 对于 JavaScript，表示层将采用 HTML，毋庸置疑，HTML 是跨平台 Web 标准。 大部分代码和 UI 都是通用的，可采用相同的方式在任意位置运行。 但对于为特定设备系列定制的代码和为特定外形规格定制的 UI，你可以选择使用自适应代码和自适应 UI。 让我们来看一下以下不同的用例。
 
 **调用由你的目标设备系列实现的 API**
 
@@ -246,11 +253,11 @@ Windows10 引入了现有缩放模型的演变。 除了缩放矢量内容外，
 
 **UWP 中的 Win32 API**
 
-用 C++/CX 编写的 UWP 应用或 Windows 运行时组件具有对 UWP 所包含的 Win32 API 的访问权限。 这些 Win32 API 由所有 Windows10 设备系列实现。 将你的应用链接到 Windowsapp.lib。 Windowsapp.lib 是为 UWP API 提供导出的“Umbrella”库。 指向 Windowsapp.lib 的链接将添加到存在于所有 Windows10 设备系列上的 Dll 的应用依赖项。
+用 C++/CX 编写的 UWP 应用或 Windows 运行时组件具有对 UWP 所包含的 Win32 API 的访问权限。 这些 Win32 API 由所有 Windows 10 设备系列实现。 将你的应用链接到 Windowsapp.lib。 Windowsapp.lib 是为 UWP API 提供导出的“Umbrella”库。 指向 Windowsapp.lib 的链接将添加到存在于所有 Windows 10 设备系列上的 Dll 的应用依赖项。
 
 有关适用于 UWP 应用的 Win32 API 的完整列表，请参阅 [UWP 应用的 API 集](https://msdn.microsoft.com/library/windows/desktop/mt186421)和 [UWP 应用的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)。
 
-## 用户体验
+## <a name="user-experience"></a>用户体验
 
 借助通用 Windows 应用，你可以充分利用正在运行此类应用的设备的独特功能。 你的应用可以利用桌面设备的全部功能、平板电脑上直接操作的自然交互（包括触摸和笔输入）、移动设备的便携性和方便性、[Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) 的协作功能，以及支持 UWP 应用的其他设备。
 
@@ -272,18 +279,13 @@ Windows10 引入了现有缩放模型的演变。 除了缩放矢量内容外，
 
     请参阅[文本和文本输入指南](https://msdn.microsoft.com/library/windows/apps/dn611864)，以获取更多的传统交互体验。
 
-## 通过你的仪表板提交通用 Windows 应用
+## <a name="submit-a-universal-windows-app-through-your-dashboard"></a>通过你的仪表板提交通用 Windows 应用
 
 
 利用统一的新 Windows 开发人员中心仪表板，你可以在同一位置管理和提交所有面向 Windows 设备的应用。 新功能简化了流程，同时给予您更多的控制。 你还会找到与[付款详细信息](https://msdn.microsoft.com/library/windows/apps/dn986925)组合的详细[分析报告](https://msdn.microsoft.com/library/windows/apps/mt148522)、[推广你的应用并与客户互动](https://msdn.microsoft.com/library/windows/apps/mt148526)的方式，等等。
 
 若要了解如何在 Windows 应用商店中提交应用以供发布，请参阅[使用统一的 Windows 开发人员中心仪表板](../publish/using-the-windows-dev-center-dashboard.md)。
 
-## 另请参阅 ##
-有关更多入门材料，请参阅 [Windows10 - 生成适用于 Windows10 设备的 Windows 应用简介](https://msdn.microsoft.com/en-us/magazine/dn973012.aspx)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
+## <a name="see-also"></a>另请参阅 ##
+有关更多入门材料，请参阅 [Windows 10 - 生成适用于 Windows 10 设备的 Windows 应用简介](https://msdn.microsoft.com/magazine/dn973012.aspx)
 

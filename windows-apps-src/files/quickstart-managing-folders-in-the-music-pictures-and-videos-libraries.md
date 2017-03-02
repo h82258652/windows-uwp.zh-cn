@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "音乐、图片和视频库中的文件和文件夹"
 description: "将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 18acfda780211a008a3c5febdcbff2bf007ff379
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 -   **对位置的访问权限**
 
-    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在“功能”页上，选择你的应用管理的库。
+    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在**功能**页上，选择你的应用管理的库。
 
     -   **音乐库**
     -   **图片库**
@@ -39,7 +46,7 @@ ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 ## <a name="get-a-reference-to-a-library"></a>获取对库的引用
 
 
-**注意** 要记得声明相应的功能。
+**注意**  请记住，要声明相应的功能。
  
 
 若要获取对用户的音乐、图片或视频库的引用，请调用 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 提供 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 枚举中的相应值。
@@ -245,9 +252,4 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

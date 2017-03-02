@@ -3,31 +3,38 @@ author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: "在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建加载项。"
 title: "使用 Windows 应用商店提交 API 创建加载项"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 创建加载项, 应用内产品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 创建加载项
+# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 创建加载项
 
 
 
 
 在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建加载项（也称为应用内产品或 IAP）。
 
->**注意**  此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
+>**注意**&nbsp;&nbsp;此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -38,7 +45,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 <span/>
  
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -46,7 +53,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请求正文具有以下参数。
  
@@ -58,7 +65,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 
 <span/>
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何为应用创建新易耗型加载项。
 
@@ -73,7 +80,7 @@ Content-Type: application/json
 }
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 有关响应正文中这些值的更多详细信息，请参阅[加载项资源](manage-add-ons.md#add-on-object)。
 
@@ -94,7 +101,7 @@ Content-Type: application/json
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -105,16 +112,11 @@ Content-Type: application/json
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理加载项提交](manage-add-on-submissions.md)
 * [获取所有加载项](get-all-add-ons.md)
 * [获取加载项](get-an-add-on.md)
 * [删除加载项](delete-an-add-on.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

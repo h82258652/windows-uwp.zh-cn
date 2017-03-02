@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "枚举设备"
 description: "枚举命名空间可以让你找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
-ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 05ba89322a72763660a49b9e14a2d318eacc56a6
+ms.lasthandoff: 02/07/2017
 
 ---
-# 枚举设备
+# <a name="enumerate-devices"></a>枚举设备
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 示例
+## <a name="samples"></a>示例
 
 枚举所有可用设备的最简单方法是使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 命令拍摄快照（会在以下部分进一步介绍）。
 
@@ -24,7 +31,7 @@ async void enumerateSnapshot(){
 
 若要下载演示 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的更多高级用法的示例，请单击[此处](http://go.microsoft.com/fwlink/?LinkID=620536)。
 
-## 枚举 API
+## <a name="enumeration-apis"></a>枚举 API
 
 枚举命名空间可以让你找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。 用于枚举可能的设备而使用的 API 为 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间。 使用这些 API 的一些原因包括以下方面。
 
@@ -53,7 +60,7 @@ async void enumerateSnapshot(){
 -   枚举当前可发现的设备并观察变化
 -   枚举当前可发现的设备并观察后台任务中的变化
 
-## DeviceInformation 对象
+## <a name="deviceinformation-objects"></a>DeviceInformation 对象
 
 
 如果使用枚举 API，你将经常需要使用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象。 这些对象包含大多数可用的设备信息。 下表将介绍你感兴趣的一些 **DeviceInformation** 属性。 有关完整列表，请参阅 **DeviceInformation** 引用页。
@@ -66,7 +73,7 @@ async void enumerateSnapshot(){
 
  
 
-## DevicePicker UI
+## <a name="devicepicker-ui"></a>DevicePicker UI
 
 
 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控件，用于创建使用户能够从列表中选择设备的较小 UI。 你可以使用多种方法自定义 **DevicePicker** 窗口。
@@ -78,13 +85,13 @@ async void enumerateSnapshot(){
 
 当 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 处于显示状态时，如果添加、删除或更新设备，则 UI 内容将自动更新。
 
-**注意** 不能使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 指定 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如果想要拥有特定的 **DeviceInformationKind** 设备，你将需要生成一个 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 并提供你自己的 UI。
+**注意**  不能使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 指定 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如果想要拥有特定的 **DeviceInformationKind** 设备，你将需要生成一个 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 并提供你自己的 UI。
 
  
 
 强制转换媒体内容和 DIAL 各自还提供其自带的选取器（如果你想要使用它们）。 它们分别是 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) 和 [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783)。
 
-## 枚举设备快照
+## <a name="enumerate-a-snapshot-of-devices"></a>枚举设备快照
 
 
 在某些情形下，[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 将不能满足你的需求，你需要更灵活的东西。 也许你想要生成自己的 UI 或需要枚举设备而无需向用户显示 UI。 在这些情况中，你可以枚举设备快照。 这需要仔细查看当前已连接到系统或已与系统配对的设备。 然而，需要注意的是此方法只是查看可用设备的快照，因此在你枚举列表后，你将无法找到连接的设备。 如果更新或删除了设备，你也将收不到通知。 要注意的另一个可能的缺点是，在完成整个枚举之前，此方法将保留所有结果。 因此，如果你对 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 对象感兴趣，则不应使用此方法，因为是通过网络或无线协议才找到了它们。 这最多可能需要 30 秒才能完成。 在这种情况下，你应使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象来枚举可能的设备。
@@ -99,7 +106,7 @@ async void enumerateSnapshot(){
 
 
 
-## 枚举并监视设备
+## <a name="enumerate-and-watch-devices"></a>枚举并监视设备
 
 
 一种更强大更灵活的枚举设备的方法就是创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)。 选择此种方法可为你枚举设备提供最大的灵活性。 它不仅可让你枚举当前存在的设备，而且在添加、删除与你的设备选择器相匹配的设备时或在属性发生更改时，还会收到通知。 当创建 **DeviceWatcher** 后，你将会提供一个设备选择器。 有关设备选择器的详细信息，请参阅[生成设备选择器](build-a-device-selector.md)。 创建观察程序后，针对与你提供的标准相匹配的任何设备，你将会收到以下通知。
@@ -114,12 +121,12 @@ async void enumerateSnapshot(){
 
 若要创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)，请使用一种 [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) 方法。 这些方法会重载以便让你能够指定你感兴趣的设备。 你可以通过提供 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 或在设备选择器中传递来执行此操作。 设备选择器是一个 AQS 字符串，可以指定你想要枚举的设备。 有关详细信息，请参阅[生成设备选择器](build-a-device-selector.md)。 你还可以指定你想要为设备检索的和感兴趣的属性。 如果你执行了此操作，则指定的属性将会在每个 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象（返回在集合中）的属性包中可用。 请务必注意并不是所有的属性都可用于所有的设备种类。 要查看哪些属性可用于哪些设备种类，请参阅[设备信息属性](device-information-properties.md)
 
-## 将设备作为后台任务监视
+## <a name="watch-devices-as-a-background-task"></a>将设备作为后台任务监视
 
 
 将设备作为后台任务监视与上述的创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 非常类似。 实际上，你仍需要先创建一个常规的 **DeviceWatcher** 对象（如前一部分中所述）。 创建后，你就可以调用 [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 如果你调用 **GetBackgroundTrigger**，则必须指定哪些是你感兴趣的通知：添加、删除或更新。 如果不请求添加，你也无法请求更新或删除。 一旦你注册了触发器，**DeviceWatcher** 将立刻开始在后台运行。 从此刻开始，只要收到匹配条件的应用程序新通知，就会触发后台任务并向你提供自其上次触发应用程序以来最新的更改。
 
-**重要提示** 只要观察程序处于 **EnumerationCompleted** 状态，[**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 就会第一时间触发你的应用程序。 这意味着它将包含所有的初始结果。 不管将来何时触发你的应用程序，它将仅包含自上次触发就已出现的添加、更新和删除通知。 这与前台的 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象略有不同，因为初始结果并不是一个个地依次而来，而是在达到 **EnumerationCompleted** 后以捆绑的形式传送。
+**重要提示**  只要观察程序处于 **EnumerationCompleted** 状态，[**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 就会第一时间触发你的应用程序。 这意味着它将包含所有的初始结果。 不管将来何时触发你的应用程序，它将仅包含自上次触发就已出现的添加、更新和删除通知。 这与前台的 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象略有不同，因为初始结果并不是一个个地依次而来，而是在达到 **EnumerationCompleted** 后以捆绑的形式传送。
 
  
 
@@ -135,7 +142,7 @@ async void enumerateSnapshot(){
 
 如果你的 [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 包含了不支持作为后台任务进行扫描的协议，则你的触发器仍会起作用。 不过，你将不能通过该协议来获取任何更新或结果。 正常情况下，仍可检测到其他协议或设备的更新。
 
-## 使用 DeviceInformationKind
+## <a name="using-deviceinformationkind"></a>使用 DeviceInformationKind
 
 
 在大多数情况下，你无需担心 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 对象的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)。 这是因为你正使用的设备 API 所返回的设备选择器将会保证你能够获取设备对象的正确类型以便与其 API 结合使用。 然而，在某些情况下，你将需要获取设备的 **DeviceInformation**，但是没有相应的设备 API 可以提供设备选择器。 在这些情况下，你将需要生成自己的选择器。 例如，设备上的 Web 服务没有专用的 API，不过你可以通过使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 来发现这些设备以及获取它们的相关信息，并且通过使用套接字 API 来使用这些设备。
@@ -146,7 +153,7 @@ async void enumerateSnapshot(){
 
 在枚举 **AssociationEndpoint**、**AssociationEndpointContainer** 或 **AssociationEndpointService** 对象时，将通过无线或网络协议进行枚举。 在这些情况下，我们建议你不要使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 而改用 [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx)。 这是因为在网络上进行搜索通常会导致在生成 [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 之前，搜索操作超时不会超过 10 秒或以上。 直到触发 **EnumerationCompleted**，**FindAllAsync** 才会完成其操作。 如果你在使用 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446)，则无论何时调用 **EnumerationCompleted**，你都将获得更接近实际时间的结果。
 
-## 保存设备供以后使用
+## <a name="save-a-device-for-later-use"></a>保存设备供以后使用
 
 
 任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象都可由两条信息的组合来唯一地标识：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果保留了这两条信息，可以在 **DeviceInformation** 对象丢失之后，通过向 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 提供此信息以重新创建它。 如果执行此操作，则可以保存与你的应用集成的设备的用户首选项。
@@ -158,10 +165,5 @@ async void enumerateSnapshot(){
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

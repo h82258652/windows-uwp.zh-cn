@@ -5,9 +5,16 @@ title: "应用设置和数据"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 52bf5b65412918e522b57ba06d83c67771086a93
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cdb1035d3d035c92c29e84bdd04ca7692c7e19de
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -46,10 +53,5 @@ ms.openlocfilehash: 52bf5b65412918e522b57ba06d83c67771086a93
 </table>
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

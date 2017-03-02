@@ -3,18 +3,25 @@ author: jnHs
 Description: "提交加载项时，在“应用商店一览”步骤中提供的信息将显示给你的客户。"
 title: "创建加载项应用商店一览"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf24a0a51734d159a412824d6b43d76d92b3002
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 创建加载项应用商店一览
+# <a name="create-add-on-store-listings"></a>创建加载项应用商店一览
 
 
-提交加载项时，如果你的客户看到获取加载项的选项，将向他们显示在“应用商店一览”****步骤中提供的信息。 请务必仔细考虑应用商店一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义应用商店一览。
+提交加载项时，如果你的客户看到获取加载项的选项，将向他们显示在**应用商店一览**步骤中提供的信息。 请务必仔细考虑应用商店一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义应用商店一览。
 
-## 语言
+## <a name="languages"></a>语言
 
 
 需要指定一种或多种[语言](supported-languages.md)，才可以输入应用商店一览信息。 我们建议为应用支持的每种语言提供应用商店一览。
@@ -25,15 +32,15 @@ ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
 
 若要编辑应用商店一览，请在加载项提交概述上单击语言名称。 下面介绍了你可以为每种语言输入的信息。
 
-## 标题
+## <a name="title"></a>标题
 
 你必须在此处提供标题，对于此加载项，它是你的客户将看到的名称。 你的标题最长可以为 100 个字符。
 
-## 说明
+## <a name="description"></a>说明
 
 如果你想要显示更多信息（而不仅仅是一个标题），请在此处输入最多 200 个字符。 此字段是可选的。
 
-## 图标
+## <a name="icon"></a>图标
 
 你也可以选择提供一张可以显示给客户的图像。 此图标必须是大小正好为 300 x 300 像素的 .png 文件。
 
@@ -43,10 +50,5 @@ ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

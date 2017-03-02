@@ -3,16 +3,23 @@ author: mtoepke
 title: "绘制到屏幕"
 description: "最终，我们会移植可将旋转立方体绘制到屏幕的代码。"
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, directx, 图形"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e2039743ba45d577c08c0a6d9c17c7f923b2d86
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 绘制到屏幕
+# <a name="draw-to-the-screen"></a>绘制到屏幕
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -66,9 +73,9 @@ Direct3D 设备和设备上下文以及呈现目标的初始化和配置可以�
 
 当 Direct3D 设备上下文与 EGL 和 EGLContext 类型相关时有关该上下文的详细信息，请参阅[将 EGL 代码移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 步骤 1：呈现场景并进行显示
+### <a name="step-1-rendering-the-scene-and-displaying-it"></a>步骤 1：呈现场景并进行显示
 
 更新立方体数据（在本例中，将其围绕 y 轴稍稍旋转）后，Render 方法将视口设置为绘制上下文 (EGLSurface) 的尺寸。 该上下文包含将使用配置的显示器 (EGLDisplay) 显示到窗口图面 (EGLSurface) 的颜色缓冲区。 此时，该示例更新顶点数据属性、重新绑定索引缓冲区、绘制立方体，并在着色管道绘制的颜色缓冲区中交换到显示器图面。
 
@@ -195,16 +202,16 @@ void RenderObject::Render()
 
 调用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 之后，你的帧会输出到配置的显示器。
 
-## 上一步
+## <a name="previous-step"></a>上一步
 
 
 [移植 GLSL](port-the-glsl.md)
 
-## 备注
+## <a name="remarks"></a>备注
 
 该示例掩盖了很多与配置设备资源相关的复杂事项，对于通用 Windows 平台 (UWP) DirectX 应用来说更是如此。 我们建议你查看全部模板代码，尤其是执行窗口和设备资源设置和管理的部分。 UWP 应用必须支持旋转事件以及暂停/恢复事件，并且该模板演示了处理显示参数中缺少接口或更改的最佳做法。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -218,10 +225,5 @@ void RenderObject::Render()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

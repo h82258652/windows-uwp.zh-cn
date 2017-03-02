@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
+description: "使用 Windows 应用商店分析 API，以编程方式针对已注册到你的或组织的 Windows 开发人员中心帐户的应用检索分析数据。"
 title: "使用 Windows 应用商店服务访问分析数据"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 应用商店服务, Windows 应用商店分析 API"
 translationtype: Human Translation
-ms.sourcegitcommit: 1a2e856cddf9998eeb8b0132c2fb79f5188c218b
-ms.openlocfilehash: 596cc5054367acf0d3609a34b764bc7fcf33ea0b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1538f06b09bd4143750c10a2774137f87359ebce
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="access-analytics-data-using-windows-store-services"></a>使用 Windows 应用商店服务访问分析数据
 
-使用 *Windows 应用商店分析 API*，为注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用 *Windows 应用商店分析 API*，以编程方式针对已注册到你的或组织的 Windows 开发人员中心帐户的应用检索分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍端到端过程：
 
@@ -32,13 +39,13 @@ ms.openlocfilehash: 596cc5054367acf0d3609a34b764bc7fcf33ea0b
 
 若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
 
-1.  在开发人员中心中，转到“帐户设置”、单击“管理用户”，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在“管理用户”页面中，单击“添加 Azure AD 应用程序”、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配“管理者”角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  返回到“管理用户”页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”和“客户端 ID”值。
+3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID**和**客户端 ID**值。
 
-4. 单击“添加新密钥”。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>步骤 2：获取 Azure AD 访问令牌
@@ -67,15 +74,12 @@ grant_type=client_credentials
 
 获取 Azure AD 访问令牌后，可以随时调用 Windows 应用商店分析 API。 有关每个方法的语法信息，请参阅以下文章。 必须将访问令牌传递到每个方法的 **Authorization** 标头。
 
-* [获取应用购置](get-app-acquisitions.md)
-* [获取加载项购置](get-in-app-acquisitions.md)
-* [获取错误报告数据](get-error-reporting-data.md)
-* [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
-* [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
-* [获取应用评分](get-app-ratings.md)
-* [获取应用评价](get-app-reviews.md)
-* [获取广告性能数据](get-ad-performance-data.md)
-* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)
+| 方案       | 描述      |
+|---------------|--------------------|
+| 购置 |  获取应用和加载项的购置数据。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用购置](get-app-acquisitions.md)</li><li>[获取加载项购置](get-in-app-acquisitions.md)</li></ul> |
+| 错误 | 获取应用中有关错误的数据。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| 评分和评价 | 获取应用的评分和评价信息。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用评分](get-app-ratings.md)</li><li>[获取应用评价](get-app-reviews.md)</li></ul> |
+| 应用内广告和广告市场活动 | 获取应用内广告和促销广告市场活动的性能数据。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取广告性能数据](get-ad-performance-data.md)</li><li>[获取广告市场活动性能数据](get-ad-campaign-performance-data.md)</li></ul> |
 
 ## <a name="code-example"></a>代码示例
 
@@ -117,11 +121,5 @@ Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和�
 * [获取应用评分](get-app-ratings.md)
 * [获取应用评价](get-app-reviews.md)
 * [获取广告性能数据](get-ad-performance-data.md)
-* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)
- 
-
-
-
-<!--HONumber=Dec16_HO4-->
-
+* [获取促销市场活动性能数据](get-ad-campaign-performance-data.md)
 

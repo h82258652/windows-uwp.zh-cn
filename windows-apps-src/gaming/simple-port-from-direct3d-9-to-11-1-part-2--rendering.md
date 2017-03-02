@@ -3,13 +3,20 @@ author: mtoepke
 title: "转换呈现框架"
 description: "介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。"
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, 呈现框架, 转换, direct3d 9, direct3d 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d33a694cf835ba3d997a7c4a111349c117e2493e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 转换呈现框架
+# <a name="convert-the-rendering-framework"></a>转换呈现框架
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
 
 介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 演练的第 2 部分。
 
-## 将效果转换到 HLSL 着色器
+## <a name="convert-effects-to-hlsl-shaders"></a>将效果转换到 HLSL 着色器
 
 
 以下示例是针对传统“效果” API 编写的简单的 D3DX 技术，用于硬件顶点转换和传递颜色数据。
@@ -103,7 +110,7 @@ Direct3D 9 中用于将顶点着色器绑定到像素着色器的规则比 Direc
 
 下面是我们的硬件转换顶点着色器，这次是在它自己的文件中定义的。
 
-> **注意** 需要使用顶点着色器来输出 SV_POSITION 系统值语义。 该语义将顶点位置数据解析为坐标值，其中 x 介于 -1 和 1 之间，y 介于 -1 和 1 之间，z 除以原始齐次坐标 w 值 (z/w) ，并且 w 为 1 除以原始的 w 值 (1/w)。
+> **注意**：需要使用顶点着色器来输出 SV\_POSITION 系统值语义。 该语义将顶点位置数据解析为坐标值，其中 x 介于 -1 和 1 之间，y 介于 -1 和 1 之间，z 除以原始齐次坐标 w 值 (z/w) ，并且 w 为 1 除以原始的 w 值 (1/w)。
 
  
 
@@ -150,7 +157,7 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 
 这是我们使用传递像素着色器所全部需要的。 尽管我们称它为传递，但实际上是获取每个像素的透视校正插值颜色数据。 请注意，我们的像素着色器会根据 API 的需要将 SV\_TARGET 系统值语义应用于颜色值输出。
 
-> **注意** 着色器级别 9\_x 像素着色器无法从 SV\_POSITION 系统值语义中进行读取。 模型 4.0（或更高版本）像素着色器可以使用 SV\_POSITION 来检索屏幕上的像素位置，其中 x 介于 0 和呈现目标宽度之间，y 介于 0 和呈现目标高度（每个偏移 0.5）之间。
+> **注意**：着色器级别 9\_x 像素着色器无法从 SV\_POSITION 系统值语义中进行读取。 模型 4.0（或更高版本）像素着色器可以使用 SV\_POSITION 来检索屏幕上的像素位置，其中 x 介于 0 和呈现目标宽度之间，y 介于 0 和呈现目标高度（每个偏移 0.5）之间。
 
  
 
@@ -180,7 +187,7 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## 编译和加载着色器
+## <a name="compile-and-load-shaders"></a>编译和加载着色器
 
 
 Direct3D 9 游戏通常使用“效果”库作为实现可编程管道的便捷方法。 可以使用 [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) 方法在运行时编译效果。
@@ -234,7 +241,7 @@ m_d3dDevice->CreateVertexShader(
 
 若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用包中。
 
-> **注意** 请确保为 HLSL 编译器设置正确的目标功能级别；在 Visual Studio 中右键单击 HLSL 源文件，选择“属性”并在“HLSL 编译器”-&gt;“常规”****下更改“着色器模型”****设置。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
+> **注意**：请确保为 HLSL 编译器设置正确的目标功能级别；在 Visual Studio 中右键单击 HLSL 源文件，选择“属性”并在**HLSL 编译器 -&gt; 常规**下更改**着色器模型**设置。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
 
  
 
@@ -244,7 +251,7 @@ m_d3dDevice->CreateVertexShader(
 
 每个顶点数据必须采用兼容的类型存储在系统内存中。 DirectXMath 数据类型可能有所帮助；例如，DXGI\_FORMAT\_R32G32B32\_FLOAT 对应于 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)。
 
-> **注意** 常量缓冲区使用一个固定的输入布局，该布局一次对齐四个浮点数。 建议对常量缓冲区数据使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)（及其派生对象）。
+> **注意**：常量缓冲区使用一个固定的输入布局，该布局一次对齐四个浮点数。 建议对常量缓冲区数据使用 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)（及其派生对象）。
 
  
 
@@ -262,7 +269,7 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## 创建几何图形资源
+## <a name="create-geometry-resources"></a>创建几何图形资源
 
 
 在 Direct3D 9 中，我们通过在 Direct3D 设备上创建缓冲区、锁定内存并将数据从 CPU 内存复制到 GPU 内存来存储几何图形资源。
@@ -315,7 +322,7 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## 实现呈现链
+## <a name="implement-the-rendering-chain"></a>实现呈现链
 
 
 Direct3D 9 游戏通常使用一个基于效果的呈现链。 这种类型的呈现链设置效果对象，为其提供所需的资源并让其呈现每个通道。
@@ -489,10 +496,5 @@ m_swapChain->Present(1, 0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

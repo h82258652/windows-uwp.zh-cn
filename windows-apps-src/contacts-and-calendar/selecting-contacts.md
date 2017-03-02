@@ -10,8 +10,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 7181a51a91997124b2c5c8ba184261de63de9caf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5e53332ae3596341e4322bc16882cf678672083d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -234,9 +235,4 @@ public class ContactItemAdapter
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 现在，你基本了解了如何使用联系人选取器检索联系人信息。 从 GitHub 下载[通用 Windows 应用示例](http://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用联系人和联系人选取器的示例。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

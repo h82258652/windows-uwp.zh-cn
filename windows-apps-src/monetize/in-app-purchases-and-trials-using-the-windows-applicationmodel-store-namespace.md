@@ -2,10 +2,17 @@
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows 10 版本 1607 之前的版本）。"
-title: "使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用"
+title: "使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "uwp, 应用内购买, IAP, 加载项, 试用, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -50,7 +57,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 尽管可以修改此文件中的值，但我们建议创建自己的 WindowsStoreProxy.xml 文件（在 Visual Studio 项目的数据文件夹中）以供 **CurrentAppSimulator** 改用。 模拟交易时，调用 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 以加载文件。 如果不调用 **ReloadSimulatorAsync** 加载你自己的 WindowsStoreProxy.xml 文件， **CurrentAppSimulator** 将创建/加载（但不是会覆盖）默认 WindowsStoreProxy.xml 文件。
 
->**注意**  请注意，**CurrentAppSimulator** 不会完全初始化，直到 **ReloadSimulatorAsync** 完成。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
+>**注意**&nbsp;&nbsp;请注意，**CurrentAppSimulator** 不会完全初始化，直到 **ReloadSimulatorAsync** 完成。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
 
 
 <span id="proxy-examples" />
@@ -146,11 +153,11 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 本部分列出的 XSD 文件定义 WindowsStoreProxy.xml 文件的结构。 若要在使用 WindowsStoreProxy.xml 文件时将此架构应用到 Visual Studio 中的 XML 编辑器，请执行以下操作：
 
 1. 在 Visual Studio 中打开 WindowsStoreProxy.xml 文件。
-2. 在“XML”菜单上，单击“创建架构”。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
+2. 在 **XML** 菜单上，单击**创建架构**。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
 3. 将该 .xsd 文件的内容替换为以下架构。
 4. 将文件保存到可以将其应用到多个应用项目的位置。
 5. 在 Visual Studio 中切换到 WindowsStoreProxy.xml 文件。
-6. 在“XML”菜单上，单击“架构”，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击“添加”。 导航到正确的文件，然后单击“确定”。 你现在应该可以在列表中看到该文件。 确保在该架构的“使用”列中出现复选标记。
+6. 在 **XML** 菜单上，单击**架构**，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击**添加**。 导航到正确的文件，然后单击**确定**。 你现在应该可以在列表中看到该文件。 确保在该架构的**使用**列中出现复选标记。
 
 一旦完成这些操作，对 WindowsStoreProxy.xml 进行的编辑将遵循该架构。 有关详细信息，请参阅[如何：选择要使用的 XML 架构](http://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
@@ -417,7 +424,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |    包含应用用来标识加载项的字符串。           |
 |  **LicenseDuration**  |    否        |    指示已购买商品后，许可证有效的天数。 由产品购买创建的新许可证的过期日期是购买日期加许可证持续时间。 此属性仅在 **ProductType** 属性是 **Durable** 时使用；对于易耗型加载项，将忽略此属性。           |
-|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
+|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation)元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
 
 <span id="marketdata-child-of-product"/>
 #### <a name="marketdata-element-child-of-product"></a>MarketData 元素（Product 的子元素）
@@ -537,9 +544,4 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 |  **TransactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |
 |  **状态**  |      是      |  包含应用用于指示易耗品的实施状态的字符串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
 |  **OfferID**  |     否       |    包含应用用来标识易耗品所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

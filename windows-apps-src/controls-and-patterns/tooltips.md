@@ -5,10 +5,16 @@ title: "工具提示"
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d5ea37534ab88391954f72cbf80b21fd994dc1ee
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="tooltips"></a>工具提示
@@ -72,9 +78,4 @@ ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
 相关主题
 
 * [**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

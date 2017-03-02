@@ -3,13 +3,20 @@ title: "身份验证和用户身份"
 description: "通用 Windows 平台 (UWP) 应用提供了多个选项可用于用户身份验证，范围从使用 Web 身份验证代理的简单的单一登录 (SSO) 到高度安全的双因素身份验证。"
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3c890ac8d8363982d9f014c36b6cba59bee39f20
-ms.openlocfilehash: 5ed154b3d31e8741972edc8c8a0fd343f41d4167
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ddc397e5155190902dc00ff54190bcb8ac95ce1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 身份验证和用户身份
+# <a name="authentication-and-user-identity"></a>身份验证和用户身份
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -34,10 +41,5 @@ ms.openlocfilehash: 5ed154b3d31e8741972edc8c8a0fd343f41d4167
 <tr><td>[Web 帐户管理器](web-account-manager.md)</td><td>本文将介绍如何使用新的 Windows 10 Web 帐户管理器 API 来显示 AccountsSettingsPane 并将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本的操作（如获取配置文件数据或将文件上传到他们的 OneDrive）。 </td></tr>
 <tr><td>[Web 身份验证代理](web-authentication-broker.md)</td><td>本文介绍了如何将应用连接到使用身份验证协议（如 OpenID 或 OAuth）的在线标识提供程序（如 Facebook、Twitter、Flickr、Instagram 等）。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用访问的提供者资源的访问令牌。</td></tr>
 </table>
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

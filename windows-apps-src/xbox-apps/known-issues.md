@@ -2,9 +2,17 @@
 author: Mtoepke
 title: "Xbox One 开发人员计划上的 UWP 已知问题"
 description: 
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 translationtype: Human Translation
-ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
-ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -48,9 +56,9 @@ There is currently no workaround for this issue. Apps should govern their memory
 6. 关闭应用。
 7. 从 VS 中使用 F5 进行启动，然后应用将在没有任何提示的情况下启动。
 
-此时，权限是“粘连的”，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
+此时，权限是_粘连的_，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
  
-有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为“始终”时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。   
+有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为**始终**时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。   
 
 <!--### x86 vs. x64
 
@@ -168,7 +176,7 @@ Sometimes this is resolved by sorting a column on the table.-->
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>导航到 WDP 导致证书警告
 
-你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows Device Portal，请单击“继续浏览此网站”。
+你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows Device Portal，请单击**继续浏览此网站**。
 
 ![网站安全证书警告](images/security_cert_warning.jpg)
 
@@ -177,12 +185,52 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
+## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>Xbox 上的 KnownFolders.MediaServerDevices 警告
+
+在桌面上，媒体服务器与电脑“配对”，设备关联服务不断跟踪哪些服务器当前在线，因此初始文件系统查询可以立即返回当前在线的配对服务器的列表。
+
+在 Xbox 上，没有用于添加或删除服务器的 UI，因此初始文件系统查询将始终返回空。 你必须创建一个查询并订阅 ContentsChanged 事件，同时在每次收到通知时刷新查询。 服务器将陆续出现，大多数会在 3 秒内被发现。
+
+简单的示例代码：
+
+```
+namespace TestDNLA {
+
+    public sealed partial class MainPage : Page {
+        public MainPage() {
+            this.InitializeComponent();
+        }
+
+        private async void FindFiles_Click(object sender, RoutedEventArgs e) {
+            try {
+                StorageFolder library = KnownFolders.MediaServerDevices;
+                var folderQuery = library.CreateFolderQuery();
+                folderQuery.ContentsChanged += FolderQuery_ContentsChanged;
+                IReadOnlyList<StorageFolder> rootFolders = await folderQuery.GetFoldersAsync();
+                if (rootFolders.Count == 0) {
+                    Debug.WriteLine("No Folders found");
+                } else {
+                    Debug.WriteLine("Folders found");
+                }
+            } catch (Exception ex) {
+                Debug.WriteLine("Error: " + ex.Message);
+            } finally {
+                Debug.WriteLine("Done");
+            }
+        }
+
+        private async void FolderQuery_ContentsChanged(Windows.Storage.Search.IStorageQueryResultBase sender, object args) {
+            Debug.WriteLine("Folder added " + sender.Folder.Name);
+            IReadOnlyList<StorageFolder> topLevelFolders = await sender.Folder.GetFoldersAsync();
+            foreach (StorageFolder topLevelFolder in topLevelFolders) {
+                Debug.WriteLine(topLevelFolder.Name);
+            }
+        }
+    }
+}
+```
+
 ## <a name="see-also"></a>另请参阅
 - [常见问题](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

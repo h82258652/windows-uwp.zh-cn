@@ -3,13 +3,20 @@ author: mtoepke
 title: "初始化 Direct3D 11"
 description: "介绍如何将 Direct3D 9 初始化代码转换为 Direct3D 11，包括如何获取 Direct3D 设备和设备上下文的句柄以及如何使用 DXGI 设置交换链。"
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, direct3d 11, 初始化, 移植, direct3d 9"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 初始化 Direct3D 11
+# <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
 
 介绍如何将 Direct3D 9 初始化代码转换为 Direct3D 11，包括如何获取 Direct3D 设备和设备上下文的句柄以及如何使用 DXGI 设置交换链。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 操作实例的第 1 部分。
 
-## 初始化 Direct3D 设备
+## <a name="initialize-the-direct3d-device"></a>初始化 Direct3D 设备
 
 
 在 Direct3D 9 中，我们通过调用 [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) 创建了 Direct3D 设备的一个句柄。 我们先获取指向 [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) 的指针，然后指定了控制 Direct3D 设备和交换链配置的很多参数。 执行该操作之前，我们调用了 [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) 以确保我们没有要求设备执行无法完成的操作。
@@ -70,7 +77,7 @@ m_pD3D->CreateDevice(
 
 创建 Direct3D 11 设备和上下文之后，我们可以利用 COM 指针功能获取最新版本的接口，该指针功能还包括其他功能，因此我们总是推荐使用它。
 
-> **注意** D3D\_FEATURE\_LEVEL\_9\_1（对应于着色器模型 2.0）是 Windows 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
+> **注意**：D3D\_FEATURE\_LEVEL\_9\_1（对应于着色器模型 2.0）是 Windows 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
 
  
 
@@ -115,14 +122,14 @@ device.As(&m_d3dDevice);
 context.As(&m_d3dContext);
 ```
 
-## 创建交换链
+## <a name="create-a-swap-chain"></a>创建交换链
 
 
 Direct3D 11 包含一个称为 DirectX 图形基础结构 (DXGI) 的设备 API。 使用 DXGI 接口，我们可以控制交换链的配置方式，并可设置共享设备。 初始化 Direct3D 时，我们会在这一步骤中使用 DXGI 来创建交换链。 创建设备之后，我们便可以跟随一个接口链回到 DXGI 适配器。
 
 Direct3D 设备为 DXGI 实现一个 COM 接口。 首先，我们需要获取该接口并使用该接口来请求托管设备的 DXGI 适配器。 然后，我们使用 DXGI 适配器来创建 DXGI 工厂。
 
-> **注意** 这些是 COM 接口，因此你的第一反应可能是使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 应该使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智能指针。 然后，只需调用 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，从而提供正确接口类型的一个空 COM 指针。
+> **注意**：这些是 COM 接口，因此你的第一反应可能是使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 应该使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智能指针。 然后，只需调用 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，从而提供正确接口类型的一个空 COM 指针。
 
  
 
@@ -146,7 +153,7 @@ dxgiAdapter->GetParent(
 
 既然我们拥有了 DXGI 工厂，那么我们便可以使用它来创建交换链。 下面我们定义交换链参数。 我们需要指定表面格式；我们将选择 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059)，因为它与 Direct2D 兼容。 我们将关闭显示缩放、多重采样以及立体呈现，因为该示例中没有使用这些功能。 由于我们直接在 CoreWindow 中运行，因此可以将宽度和高度设置为 0 并自动获取全屏值。
 
-> **注意** 始终将 *SDKVersion* 参数设置为用于 UWP 应用的 D3D11\_SDK\_VERSION。
+> **注意**：始终将 *SDKVersion* 参数设置为用于 UWP 应用的 D3D11\_SDK\_VERSION。
 
  
 
@@ -166,7 +173,7 @@ swapChain.As(&m_swapChain);
 
 为了确保我们不会呈现屏幕未实际显示的内容，我们将帧延迟设置为 1 并使用 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077)。 这不仅能够省电而且还是应用商店的认证要求；我们将在本操作实例的第 2 部分中了解有关呈现到屏幕的更多信息。
 
-> **注意** 可以使用多线程（例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作项）在呈现线程被阻止时继续其他工作。
+> **注意**：可以使用多线程（例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作项）在呈现线程被阻止时继续其他工作。
 
  
 
@@ -178,7 +185,7 @@ dxgiDevice->SetMaximumFrameLatency(1);
 
 现在，我们可以设置用于呈现的后台缓冲区。
 
-## 将后台缓冲区配置为呈现目标
+## <a name="configure-the-back-buffer-as-a-render-target"></a>将后台缓冲区配置为呈现目标
 
 
 首先，我们必须获取后台缓冲区的句柄。 （请注意，后台缓冲区由 DXGI 交换链所有，而在 DirectX 9 中，它是由 Direct3D 设备所有。）然后，我们通过使用后台缓冲区创建呈现目标*视图*来告知 Direct3D 设备将其用作呈现目标。
@@ -227,10 +234,5 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

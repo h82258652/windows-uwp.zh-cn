@@ -3,13 +3,20 @@ author: mtoepke
 title: "移植游戏循环"
 description: "介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 IFrameworkView 来控制全屏 CoreWindow。"
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, 移植, 游戏循环, direct3d 9, directx 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 23631bf464095e1d2f2aab97740d89c6a82f4a70
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植游戏循环
+# <a name="port-the-game-loop"></a>移植游戏循环
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,14 +30,14 @@ ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
 
 介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 来控制全屏 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 操作实例的第 3 部分。
 
-## 创建窗口
+## <a name="create-a-window"></a>创建窗口
 
 
 若要设置一个具有 Direct3D 9 视区的桌面窗口，我们必须为桌面应用实现传统的窗口框架。 必须创建 HWND、设置窗口大小、 提供窗口处理回调、使其可见等。
 
 UWP 环境具有更简单的系统。 不再设置传统的窗口，Windows 应用商店游戏使用 DirectX 实现 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)。 对于要直接在应用容器内的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中运行的 DirectX 应用和游戏来说，存在该接口。
 
-> **注意** Windows 提供指向资源（如源应用程序对象和 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)）的托管指针。 请参阅 [**对象运算符的句柄 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **注意**：Windows 提供指向资源（如源应用程序对象和 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)）的托管指针。 请参阅 [**对象运算符的句柄 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
 
  
 
@@ -69,7 +76,7 @@ public:
 };
 ```
 
-## 移植游戏循环
+## <a name="port-the-game-loop"></a>移植游戏循环
 
 
 下面我们看一看 Direct3D 9 实现中的游戏循环。 该代码位于应用的 main 函数中。 该循环的每次迭代都处理一个窗口消息或呈现一个帧。
@@ -121,7 +128,7 @@ while (true)
 
 现在，我们已经拥有一个 UWP 应用，该应用设置与我们的 DirectX 9 示例相同的基本图形基础结构并呈现相同的彩色立方体。
 
-## 自此处转至何处？
+## <a name="where-do-i-go-from-here"></a>自此处转至何处？
 
 
 为 [DirectX 11 移植 FAQ](directx-porting-faq.md) 创建书签。
@@ -140,10 +147,5 @@ DirectX UWP 模板包含可随时与游戏结合使用的强大 Direct3D 设备�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

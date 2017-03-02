@@ -1,15 +1,22 @@
 ---
 author: msatranjr
 title: "地图和位置概述"
-description: "本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。"
+description: "本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本节还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。"
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 地图, 位置, 地图服务"
 translationtype: Human Translation
-ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
-ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6ab167cb032cffba11e7e90e3aefe91bd1c21d74
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 地图和位置概述
+# <a name="maps-and-location-overview"></a>地图和位置概述
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
 
  
 
-## 显示地图
+## <a name="display-maps"></a>显示地图
 
 
 使用 [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空间中的 API 在应用中以 2D、3D 或街景视图方式显示地图。 你可以使用图钉、图像、图形或 XAML UI 元素在地图上标记兴趣点 (POI)。 你还可以覆盖平铺图像或完全替换地图图像。
@@ -38,7 +45,7 @@ ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
 
 
 
-## 访问地图服务
+## <a name="access-map-services"></a>访问地图服务
 
 通过使用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中的 API 将路线、方向和地理编码功能添加到你的应用。 你还可以通过将“设置”应用直接启动到相应的页面来帮助用户管理离线地图。
 
@@ -50,7 +57,7 @@ ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
 | [执行地理编码和反向地理编码](geocoding.md) | 通过调用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
 
 
-## 获取用户的位置
+## <a name="get-the-users-location"></a>获取用户的位置
 
 获取用户的当前位置，并使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空间中的 API 在发生位置更改时在应用中收到通知。 这些 API 成员还经常在地图 API 的参数中使用。 [**Windows.Devices.Geolocation.Geofencing**](https://msdn.microsoft.com/library/windows/apps/dn263744) 命名空间中的 API 会在用户进入或退出地理围栏（预定义的地理区域）时通知你的应用。
 
@@ -62,13 +69,13 @@ ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
 | [地理围栏设计指南](guidelines-for-geofencing.md) | 使用地理围栏功能的应用的性能指南。 |
 | [设置地理围栏](set-up-a-geofence.md) | 在你的应用中设置地理围栏并了解如何处理前台和后台中的通知。 |
 
-## 启动 Windows 地图应用
+## <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
 你的应用可以启动 Windows 地图应用（如此处所示）来显示特定地图和逐向路线。 考虑使用 Windows 地图应用提供地图功能，而不是在你自己的应用中直接提供该功能。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
 ![Windows 地图应用的示例。](images/mapnyc.png)
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
@@ -79,12 +86,4 @@ ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
 * [隐私感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

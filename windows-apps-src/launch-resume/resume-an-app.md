@@ -1,17 +1,24 @@
 ---
 author: TylerMSFT
 title: "处理应用恢复"
-description: "了解当系统恢复你的应用时如何刷新显示的内容。"
+description: "了解如何在系统恢复你的应用时刷新显示的内容。"
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
-ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 113f0ce8e59bab716443c0a74ca39649a1bb83ac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 处理应用恢复
+# <a name="handle-app-resume"></a>处理应用恢复
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
 
 了解当系统恢复你的应用时刷新 UI 的情况。 本主题中的示例可向事件处理程序注册 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
 
-## 注册 resuming 事件处理程序
+## <a name="register-the-resuming-event-handler"></a>注册 resuming 事件处理程序
 
 注册以处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，该事件指示用户从你的应用切换到桌面或其他应用，而后又切换回你的应用。
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
 > }
 > ```
 
-## 刷新显示的内容并重新获取资源
+## <a name="refresh-displayed-content-and-reacquire-resources"></a>刷新显示的内容并重新获取资源
 
 在用户切换到其他应用或桌面后，系统会暂停你的应用数秒钟。 每当用户切换回你的应用时，系统会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统将还原离开时所使用的应用。 对用户来说，就好像应用一直在后台运行一样。
 
@@ -89,22 +96,17 @@ ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
 > }
 > ```
 
-> **注意** 由于 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件未从 UI 线程中引发，因此必须在你的处理程序中使用调度程序，调度对你的 UI 的任何调用。
+> **注意**  由于 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)事件未从 UI 会话中引发，因此必须在你的处理程序中使用调度程序，调度对你的 UI 的任何调用。
 
-## 备注
+## <a name="remarks"></a>备注
 
 当你的应用连接到 Visual Studio 调试器时，它将不会暂停。 但是，你可以从调试器中暂停它，然后向其发送一个 **Resume** 事件，以便调试你的代码。 确保“调试位置”****工具栏可见并单击“暂停”****图标旁边的下拉列表。 然后选择“恢复”****。
 
-对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件始终后跟 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
+对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件始终后跟 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
 * [处理应用激活](activate-an-app.md)
 * [处理应用暂停](suspend-an-app.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

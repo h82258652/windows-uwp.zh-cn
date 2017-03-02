@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项提交的数据。"
 title: "使用 Windows 应用商店提交 API 获取加载项提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 应用内产品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 使用你的开发人员中心帐户为应用创建加载项提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建加载项提交](create-an-add-on-submission.md)方法。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 ## <a name="request"></a>请求
 
@@ -100,7 +107,8 @@ Authorization: Bearer <your access token>
       "US": "Tier4",
     },
     "sales": [],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -151,9 +159,4 @@ Authorization: Bearer <your access token>
 * [更新加载项提交](update-an-add-on-submission.md)
 * [删除加载项提交](delete-an-add-on-submission.md)
 * [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

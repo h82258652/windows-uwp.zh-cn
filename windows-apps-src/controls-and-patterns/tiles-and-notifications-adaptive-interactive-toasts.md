@@ -1,20 +1,27 @@
 ---
 author: mijacobs
-Description: "自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。"
+Description: "借助自适应和交互式 Toast 通知，你可以创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。"
 title: "自适应和交互式 Toast 通知"
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 76a7a6dd3f0e0026e54483fa0ee5f82376ca0c99
-ms.openlocfilehash: 4420ecac17c41858aac7379b4dfaaa43b853318d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b1962e58d3513ddff908a0d556731d83cce20af4
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="adaptive-and-interactive-toast-notifications"></a>自适应和交互式 Toast 通知
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
+借助自适应和交互式 Toast 通知，你可以创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
 
 自适应和交互式 Toast 通知模型具有以下针对传统 Toast 模板目录的更新：
 
@@ -112,30 +119,7 @@ ToastContent content = new ToastContent()
 };
 ```
 
-<<<<<<< HEAD 下一步，我们需要将 toast 转换为 [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) 对象。 如果定义 XML 文件（此处名为“content.xml”）中的 toast，请使用此代码：
-
-```CSharp
-string xmlText = File.ReadAllText("content.xml");
-XmlDocument xmlContent = new XmlDocument();
-xmlContent.LoadXml(xmlText);
-```
-
-或，如果定义 C# 中的 toast 模板，请使用此代码：
-
-```CSharp
-XmlDocument xmlContent = content.GetXml();
-```
-
-无论如何创建 XMLDocument，你都可以使用此代码创建和发送 toast：
-
-```CSharp
-ToastNotification notification = new ToastNotification(xmlContent);
-ToastNotificationManager.CreateToastNotifier().Show(notification);
-```
-
-若要查看显示操作中的 toast 通知的完整应用，请参阅 [发送本地 toast 通知的快速入门](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)。
-
-下面是该结构的可视化表示形式：
+以及该结构的可视化表示形式：
 
 ![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
@@ -146,7 +130,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 通用 Windows 平台 (UWP) 应用中的磁贴通知支持基于不同磁贴大小的多个模板。 但是，Toast 通知只有一个模板名称：**ToastGeneric**。 只有一个模板名称意味着：
 
 -   你可以更改 Toast 内容，例如添加另一行文本、添加嵌入式图像或将缩略图图像从显示应用图标更改为其他内容，并且在执行任意上述操作时无需担心更改整个模板或由于模板名称和内容之间的不匹配而创建无效的负载。
--   你可以使用相同代码为专用于传递到不同类型的 Microsoft Windows 设备（包括手机、平板电脑、电脑和 Xbox One）的 **Toast 通知**构建相同的负载。 其中每台设备都将接受通知，并使用相应的视觉提示和交互模型根据其 UI策略向用户显示通知。
+-   你可以使用相同代码为专用于传递到不同类型的 Microsoft Windows 设备（包括手机、平板电脑、PC 和 Xbox One）的 **Toast 通知**构建相同的负载。 其中每台设备都将接受通知，并使用相应的视觉提示和交互模型根据其 UI策略向用户显示通知。
 
 有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
@@ -174,14 +158,16 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-### <a name="audio"></a>音频
+### <a name="audio"></a>Audio
 
-自定义声音当前在面向桌面平台的 UWP 应用上不受支持；相反，你可以为你的桌面上的应用从 ms-winsoundevents 列表中进行选择。 移动平台上的 UWP 应用支持 ms-winsoundevents 以及采用以下格式的自定义声音：
+移动版一直支持自定义音频，桌面版 1511（内部测试版本 10586）或更新版本也支持此功能。 可通过以下路径引用自定义音频：
 
 -   ms-appx:///
 -   ms-appdata:///
 
-有关 Toast 通知中的音频的信息（其中包括 ms-winsoundevents 的完整列表），请参阅[音频架构页面](https://msdn.microsoft.com/library/windows/apps/br230842)。
+或者，你可以从 [ms winsoundevents 列表](https://msdn.microsoft.com/library/windows/apps/br230842)中选择，它始终在两种平台上受支持。
+
+有关 Toast 通知中的音频的信息，请参阅[音频架构页面](https://msdn.microsoft.com/library/windows/apps/br230842)。 若要了解如何使用自定义音频发送 Toast，[请参阅此博客文章](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/06/18/quickstart-sending-a-toast-notification-with-custom-audio/)。
 
 ## <a name="alarms-reminders-and-incoming-calls"></a>闹钟、提醒和来电
 
@@ -263,9 +249,9 @@ ToastContent content = new ToastContent()
 
  
 
-**带有操作的通知**
+**带有操作的通知，示例 1**
 
-此示例会创建一个带有两个可能的响应操作的通知。
+此示例显示...
 
 ```XML
 <toast launch="app-defined-string">
@@ -323,11 +309,73 @@ ToastContent content = new ToastContent()
 
 ![带有操作的通知，示例 1](images/adaptivetoasts-xmlsample02.jpg)
 
+ 
 
+**带有操作的通知，示例 2**
+
+此示例显示...
+
+```XML
+<toast launch="app-defined-string">
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Restaurant suggestion...</text>
+      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
+    </binding>
+  </visual>
+  <actions>
+    <action activationType="foreground" content="Reviews" arguments="reviews" />
+    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
+  </actions>
+</toast>
+```
+
+```CSharp
+ToastContent content = new ToastContent()
+{
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Restaurant suggestion..."
+                },
+ 
+                new AdaptiveText()
+                {
+                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
+                }
+            }
+        }
+    },
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Buttons =
+        {
+            new ToastButton("Reviews", "reviews"),
+ 
+            new ToastButton("Show map", "bingmaps:?q=sushi")
+            {
+                ActivationType = ToastActivationType.Protocol
+            }
+        }
+    }
+};
+```
+
+![带有操作的通知，示例 2](images/adaptivetoasts-xmlsample03.jpg)
+
+ 
 
 **带有文本输入和操作的通知，示例 1**
 
-此示例会创建一个接受文本输入以及两个可能的响应操作的通知。
+此示例显示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -408,7 +456,7 @@ ToastContent content = new ToastContent()
 
 **带有文本输入和操作的通知，示例 2**
 
-此示例会创建一个接受文本输入和单个操作的通知。
+此示例显示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -485,7 +533,7 @@ ToastContent content = new ToastContent()
 
 **带有选择输入和操作的通知**
 
-此示例会创建一个带有一个下拉选择菜单和两个可能操作的通知。
+此示例显示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -569,7 +617,7 @@ ToastContent content = new ToastContent()
 
 **提醒通知**
 
-与前面的示例一样，我们可以使用选择菜单和两个操作创建提醒通知：
+此示例显示...
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
@@ -1112,8 +1160,3 @@ ToastContent content = new ToastContent()
 
 * [快速入门：发送本地 toast 和句柄激活](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
 * [GitHub 上的通知库](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
-
-
-<!--HONumber=Dec16_HO3-->
-
-

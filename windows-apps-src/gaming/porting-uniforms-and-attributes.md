@@ -3,13 +3,20 @@ author: mtoepke
 title: "将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较"
 description: "在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。"
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, opengl, direct3d, 缓冲区, uniform, 顶点属性"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43b568b046246931e24ded5f40f56d3f24d1b05a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
+# <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -37,7 +44,7 @@ ms.openlocfilehash: d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1
 
  
 
-## 移植缓冲区
+## <a name="port-buffers"></a>移植缓冲区
 
 
 在 OpenGL ES 2.0 中，创建和绑定任何种类缓冲区的过程通常遵循此模式。
@@ -119,7 +126,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## 将 uniform 和 uniform 缓冲区对象更改为 Direct3D 常量缓冲区
+## <a name="change-uniforms-and-uniform-buffer-objects-to-direct3d-constant-buffers"></a>将 uniform 和 uniform 缓冲区对象更改为 Direct3D 常量缓冲区
 
 
 在 Open GL ES 2.0 中，uniform 是向各个着色器程序提供常量数据的机制。 着色器不能改变此数据。
@@ -184,7 +191,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 请注意，必须为每个常量缓冲区声明一个寄存器。 不同的 Direct3D 功能级别可用的最大寄存器数有所不同，因此不要超过最低目标功能级别对应的最大数量。
 
-## 将顶点属性移植到 Direct3D 输入布局和 HLSL 语义
+## <a name="port-vertex-attributes-to-a-direct3d-input-layouts-and-hlsl-semantics"></a>将顶点属性移植到 Direct3D 输入布局和 HLSL 语义
 
 
 由于着色器管道可以修改顶点数据，因此，OpenGL ES 2.0 要求你将数据指定为“attribute”而不是“uniform”。 （这在更高版本 OpenGL 和 GLSL 中已更改。）特定于顶点的数据（如顶点位置、法线、切线以及颜色值）作为属性值提供给着色器。 这些属性值与顶点数据中每个元素的特定偏移相对应；例如，第一个属性可以指向单个顶点的位置组件，第二个属性可以指向法线等。
@@ -298,10 +305,5 @@ struct VertexShaderInput
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

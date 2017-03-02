@@ -1,17 +1,24 @@
 ---
 author: DelfCo
 description: "使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。"
-title: "RSS/Atom 订阅源"
+title: "RSS/Atom 源"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
-ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da28caa7703a04b1d11254d9c894cf02b044ab64
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="rssatom-feeds"></a>RSS/Atom 订阅源
+# <a name="rssatom-feeds"></a>RSS/Atom 源
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -230,9 +237,4 @@ function displayCurrentItem() {
     });
 }
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

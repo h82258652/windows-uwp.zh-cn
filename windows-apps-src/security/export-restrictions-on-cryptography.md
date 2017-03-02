@@ -3,13 +3,20 @@ title: "有关加密的出口限制"
 description: "使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Windows 应用商店中。"
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 265f0f0d9db1a8ae53a8d6561e289f8e303e08b1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 有关加密的出口限制
+# <a name="export-restrictions-on-cryptography"></a>有关加密的导出限制
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,7 +25,7 @@ ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
 
 美国商务部工业与安全局负责对使用某些加密类型的技术出口进行监管。 Windows 应用商店中列出的所有应用都必须遵守这些法律和法规，因为这些应用文件可以存储在美国。 甚至其他国家或地区的应用开发者上载在美国之外分发的应用也必须遵守这些法规。 因此，当向 Windows 应用商店提交应用时，所有应用开发者必须确保他们的应用不包含这些法规所限制的任何技术。
 
-> **注意** 在此提供的信息提供了一些指南，但作为在 Windows 应用商店中发布应用的应用开发者，确保应用遵守所有适用法律和法规是你自己的责任。
+> **注意**  在此提供的信息提供了一些指南，但作为在 Windows 应用商店中发布应用的应用开发者，确保应用遵守所有适用法律和法规是你自己的责任。
 
  
 
@@ -26,11 +33,11 @@ ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
 
 有关监管技术出口（包括加密）的出口管理条例 (EAR) 的信息，请参阅[对使用加密的项进行 EAR 控制](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
-## 监管使用
+## <a name="governed-uses"></a>监管使用
 
 首先，确定应用是否使用了出口管理条例监管的加密类型。 该问题包括显示在以下列表中的示例；但是切记，此列表不包括每种可能的加密应用。
 
-> **重要提示** 不仅要考虑为应用编写的代码，而且要考虑应用包括或链接到的所有软件库、实用工具和操作系统组件。
+> **重要提示**  不仅要考虑为应用编写的代码，而且要考虑应用包括或链接到的所有软件库、实用工具和操作系统组件。
 
 -   对数字签名的任何使用，例如身份验证或完整性检查
 -   对你的应用使用或访问的任何数据或文件的加密
@@ -42,7 +49,7 @@ ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
 
 有关加密应用程序的最新完整列表，请参阅[使用加密的项的 EAR 控制](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
-## 非限制使用
+## <a name="non-restricted-uses"></a>非限制使用
 
 请注意，某些加密的应用程序不受限制。 以下是不受限制的任务：
 
@@ -57,9 +64,4 @@ ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
 如果应用为不在此列表中的任何任务调用、支持、包含或使用加密，则它需要出口商品分类编号 (ECCN)。
 
 如果没有 ECCN，请参阅 [ECCN 问题与答案](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

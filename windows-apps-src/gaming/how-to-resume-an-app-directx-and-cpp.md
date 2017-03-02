@@ -3,20 +3,27 @@ author: mtoepke
 title: "如何恢复应用（DirectX 和 C++）"
 description: "本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。"
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 恢复, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 978f779eaeb732b549657751c11cd2192728999b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0ef4617417526cd2e39ce968e4d682b4015e22d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 如何恢复应用（DirectX 和 C++）
+# <a name="how-to-resume-an-app-directx-and-c"></a>如何恢复应用（DirectX 和 C++）
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。
 
-## 注册恢复事件处理程序
+## <a name="register-the-resuming-event-handler"></a>注册恢复事件处理程序
 
 
 注册以处理 [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) 事件， 该事件指示用户从你的应用切换离开，而后又切换回你的应用。
@@ -37,7 +44,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## 暂停之后刷新显示的内容
+## <a name="refresh-displayed-content-after-suspension"></a>暂停之后刷新显示的内容
 
 
 当你的应用处理 Resuming 事件时，它将有机会刷新其显示的内容。 还原你已使用你的 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 处理程序保存的所有应用，然后重新启动处理。 游戏开发人员：如果你已暂停你的音频引擎，那么现在该重新启动它了。
@@ -80,12 +87,12 @@ void App::Run()
 }
 ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 
 每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。 但是，应用可能已暂停很长一段时间，因此，它应当刷新在应用暂停之后可能已发生更改的任何显示内容，并且重新启动任何呈现或音频处理线程。 如果你已在上一个暂停事件期间保存任何游戏状态数据，现在请还原它。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [如何暂停应用（DirectX 和 C++）](how-to-suspend-an-app-directx-and-cpp.md)
 * [如何激活应用（DirectX 和 C++）](how-to-activate-an-app-directx-and-cpp.md)
@@ -96,10 +103,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

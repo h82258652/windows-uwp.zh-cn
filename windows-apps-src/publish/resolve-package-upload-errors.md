@@ -3,16 +3,23 @@ author: jnHs
 Description: "如果在应用提交过程中上传应用包时遇到错误，必须先解决错误，然后才能将应用提交到应用商店。"
 title: "解决程序包上传错误"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc
-ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a46c556303b88f8d506f5315e23d4e2b2edf5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="resolve-package-upload-errors"></a>解决程序包上传错误
 
 
-如果在[应用提交](app-submissions.md)过程中[上载应用包](upload-app-packages.md)时遇到错误，你必须先解决错误，然后才能将应用提交到应用商店。 错误消息将指示问题所在，以及为解决该问题而可能需要执行的操作。 下面是一些指向可帮助你解决这些错误的其他信息的指针。
+如果在[应用提交](app-submissions.md)过程中[上载应用包](upload-app-packages.md)时遇到错误，必须先解决错误，然后才能将应用提交到应用商店。 错误消息将指示问题所在，以及为解决该问题而可能需要执行的操作。 下面是一些指向可帮助你解决这些错误的其他信息的指针。
 
 ## <a name="package-type-errors-for-windows-phone-81"></a>Windows Phone 8.1 的程序包类型错误
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
 
 还需注意，如果你的提交含有多个 Windows Phone 8.1 XAP，则它们必须具有相同的版本号。
 
-**注意** 有关与其他错误消息相关的附加问题以及关于解决它们的帮助信息，请访问我们的[论坛](http://go.microsoft.com/fwlink/p/?LinkId=224196)。
+**注意**  有关与其他错误消息相关的附加问题以及关于解决它们的帮助信息，请访问我们的[论坛](http://go.microsoft.com/fwlink/p/?LinkId=224196)。
 
  
 
@@ -37,10 +44,5 @@ ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

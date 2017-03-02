@@ -3,13 +3,20 @@ title: "MAC、哈希以及签名"
 description: "本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用消息验证代码 (MAC)、哈希和签名检测消息篡改。"
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f29b77317e0b03aff7e56087aa3a882720170b29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MAC、哈希以及签名
+# <a name="macs-hashes-and-signatures"></a>MAC、哈希以及签名
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
 
 本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用消息验证代码 (MAC)、哈希和签名检测消息篡改。
 
-## 消息验证代码 (MAC)
+## <a name="message-authentication-codes-macs"></a>消息验证代码 (MAC)
 
 
 加密有助于防止未经授权的个人读取消息，但不能防止个人篡改消息。 更改的消息（即使该更改不会导致任何情况发生，只是一种无聊的行为）会产生实际成本。 消息验证代码 (MAC) 有助于防止消息篡改。 例如，考虑以下情景：
@@ -122,7 +129,7 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## 哈希
+## <a name="hashes"></a>哈希
 
 
 加密哈希函数获取任意长度的数据块并返回固定大小的位字符串。 哈希函数通常在对数据进行签名时使用。 由于大多数公钥签名操作是计算密集型的操作，因此对消息哈希进行签名（加密）比对原始消息进行签名通常更高效。 以下过程显示了一个常用的简化方案：
@@ -179,7 +186,7 @@ public void SampleReusableHash()
 
 ```
 
-## 数字签名
+## <a name="digital-signatures"></a>数字签名
 
 
 数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 但是 MAC 使用私钥使消息接受者能够验证消息在传输期间是否尚未改变，签名使用私钥/公钥对。
@@ -189,8 +196,3 @@ public void SampleReusableHash()
 签名通过发送者的公钥只能确保原始消息未被改变以及消息哈希是由对私钥有访问权限的某个人进行的签名。
 
 你可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象枚举可用的签名算法以及生成或导入密钥对。 你可以在 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类上使用静态方法对消息进行签名或验证签名。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

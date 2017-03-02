@@ -1,32 +1,39 @@
 ---
 author: msatranjr
-Description: "地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和交通。"
+Description: "地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和路况。"
 title: "地图指南"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 地图控件, 地图, 位置"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ad6267e0294e4a62c1e586c066ce9d0489940d7d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 地图控件
+# <a name="map-control"></a>地图控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、街景视图、交通、公交和本地企业。
 
 ![地图示例，基本视图](./images/win10fa/controls-maps-basic.jpg)
 
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 
 当你希望应用内具有一个允许用户查看特定于应用或通用地理信息的地图时，请使用地图控件。 在应用中有一个地图控件意味着用户无需为了获取该信息而离开应用。
 
-**注意** 如果你不介意用户离开应用，请考虑使用 Windows 地图应用提供该信息。 你的应用可以启动 Windows 地图应用来显示特定的地图、路线和搜索结果。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)。
+**注意**  如果你不介意用户离开应用，请考虑使用 Windows 地图应用提供该信息。 你的应用可以启动 Windows 地图应用来显示特定的地图、路线和搜索结果。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
-## 示例
+## <a name="examples"></a>示例
 
 
 此示例显示具有街景视图的地图：
@@ -46,7 +53,7 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 ![具有街景视图的 3D 地图视图示例](./images/win10fa/controls-maps-3dstreetview.png)
 
 
-## 建议
+## <a name="recommendations"></a>建议
 
 
 -   使用充足的屏幕空间（或整个屏幕）显示地图，以便用户无需过度平移和缩放来查看地理信息。
@@ -55,7 +62,7 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 
 -   使用 [**map elements**](https://msdn.microsoft.com/library/windows/apps/dn637034) 在地图场景中嵌入目标点；任何其他信息都可作为覆盖地图场景的瞬态 UI 显示。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [使用 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)
@@ -67,13 +74,4 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

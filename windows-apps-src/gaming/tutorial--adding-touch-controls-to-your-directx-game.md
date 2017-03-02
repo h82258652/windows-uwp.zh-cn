@@ -3,13 +3,20 @@ author: mtoepke
 title: "游戏的触摸控件"
 description: "了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。"
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 触摸, 控件, directx, 输入"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 游戏的触摸控件
+# <a name="touch-controls-for-games"></a>游戏的触摸控件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,16 +25,16 @@ ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
 
 你可以将这些控件合并到游戏中，让玩家能够在 3D 环境中通过拖动滚动或平移地图或游戏区。 例如，在策略游戏或拼图游戏中，你可以使用这些控件让玩家通过左右平移来观看大于屏幕的游戏环境。
 
-> **注意** 我们的代码还使用基于鼠标的平移控件。 与指针相关的事件通过 Windows 运行时 API 进行抽象，因此它们可以处理基于触摸或基于鼠标的指针事件。
+> **注意**  我们的代码还使用基于鼠标的平移控件。 与指针相关的事件通过 Windows 运行时 API 进行抽象，因此它们可以处理基于触摸或基于鼠标的指针事件。
 
  
 
-## 目标
+## <a name="objectives"></a>目标
 
 
 -   创建简单触摸拖动控件，用于在 DirectX 游戏中平移固定平面相机。
 
-## 设置基本触摸事件基础结构
+## <a name="set-up-the-basic-touch-event-infrastructure"></a>设置基本触摸事件基础结构
 
 
 首先，我们在本示例中定义基本控制器类型 **CameraPanController**。 在此处，我们将控制器定义为抽象概念，即用户可以执行的行为集。
@@ -126,7 +133,7 @@ public:
 
 现在，我们将各个片段连接在一起。
 
-## 创建基本触摸事件
+## <a name="create-the-basic-touch-events"></a>创建基本触摸事件
 
 
 Windows 运行时事件调度程序提供我们希望自己的应用处理的 3 个事件：
@@ -204,7 +211,7 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## 初始化触摸控件和控制器状态
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a>初始化触摸控件和控制器状态
 
 
 让我们挂起这些事件并初始化相机控制器的所有基本状态字段。
@@ -238,7 +245,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 
 **Initialize** 将指向该应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件的事件处理程序。
 
-## 获取并设置相机控制器的位置
+## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>获取并设置相机控制器的位置
 
 
 让我们定义一些方法，以便在场景空间中获取和设置相机控制器的位置。
@@ -272,7 +279,7 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 
 **get_FixedLookPoint** 是一个公共属性，在本示例中用于获取垂直于 x-y 平面的视点。 在计算 x、y 和 z 轴坐标值时，如果要为固定相机创建更多斜角，可以更改此方法以使用三角函数正弦和余弦。
 
-## 更新相机控制器的状态信息
+## <a name="updating-the-camera-controller-state-information"></a>更新相机控制器的状态信息
 
 
 现在，我们将执行计算，将 **m\_panPointerPosition** 中跟踪的指针坐标信息转换为 3D 场景空间中相应的新坐标信息。 每当刷新主应用循环时，应用都会调用此方法。 我们需要在其中计算要传递给应用的新位置 信息，以便在投影到视口之前更新视图矩阵。
@@ -320,7 +327,7 @@ void CameraPanController::Update( CoreWindow ^window )
 
 由于我们不希望触摸或鼠标的抖动造成相机平移不稳定，因此围绕指针设置一个直径为 32 像素的死区。 我们还有一个速度值，在本例中为 1:1，该值是指针经过死区时跨过的像素与移动速度的比值。 你可以调整此行为来减慢或加快移动速度。
 
-## 使用相机的新位置更新视图矩阵
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>使用相机的新位置更新视图矩阵
 
 
 现在，我们可以获取相机聚焦的场景空间坐标，每当指示你的应用执行更新坐标时，将执行此操作（例如在主屏循环中每 60 秒）。 此伪代码建议你可以实现的调用行为：
@@ -349,10 +356,5 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

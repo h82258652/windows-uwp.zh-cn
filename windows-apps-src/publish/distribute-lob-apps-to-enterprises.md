@@ -3,36 +3,43 @@ author: jnHs
 Description: "你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。"
 title: "将 LOB 应用分配到企业"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
-ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 94d12656a122f623240463886297c2378753924b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将 LOB 应用分配到企业
+# <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 
 
 你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。
 
-> **重要提示** 此时，仅免费应用可以通过适用于企业的Windows 应用商店专门分配到企业。 如果你提交某个付费应用作为 LOB，它此时不会向企业提供。 
+> **重要提示**  此时，仅免费应用可以通过适用于企业的Windows 应用商店专门分配到企业。 如果你提交某个付费应用作为 LOB，它此时不会向企业提供。 
 
-## 设置企业关联
+## <a name="setting-up-the-enterprise-association"></a>设置企业关联
 
 
 将 LOB 应用专门发布到企业的第一步是建立你的帐户和企业的专用应用商店之间的关联。
 
-> **重要提示** 此关联过程必须由企业启动，并且必须发送到你的帐户的“联系人信息”****下的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
+> **重要提示**  此关联过程必须由企业启动，并且必须发送到你的帐户的**联系人信息**下的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
 
 在企业选择邀请你发布供其专门使用的应用时，你将收到包含确认该关联的链接的电子邮件。 你还可以通过转到“帐户设置”****的“企业关联”****部分确认这些关联。
 
 若要确认关联，请单击“接受”****。 随后你的帐户将能够发布供该企业专门使用的应用。
 
-## 提交 LOB 应用
+## <a name="submitting-an-lob-app"></a>提交 LOB 应用
 
 
 在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的认证过程，并且必须遵循所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 仅有数个部分过程不同。
 
-### 分发和可见性
+### <a name="distribution-and-visibility"></a>分发和可见性
 
 在设置企业关联后，每次提交应用时，你都会在提交的“定价和可用性”****页面的“分发和可见性”****部分中看到下拉框。 默认情况下，此下拉框设置为“零售分配”****。 若要使应用供某个企业专门使用，你需要选择“业务线 (LOB) 分配”****。
 
@@ -40,9 +47,9 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 选择应该能够获取应用的企业。 任何其他人均无法访问该应用。
 
-> **注意** 若要将某个应用作为业务线应用发布，必须至少选择一家企业。
+> **注意**  若要将某个应用作为业务线应用发布，必须至少选择一家企业。
 
-### 组织授权
+### <a name="organizational-licensing"></a>组织授权
 
 默认情况下，在提交应用时，“应用商店管理的(在线)批量许可”****框已选中。 在发布 LOB 应用时，此框必须处于选中状态，以便企业可以批量获取你的应用。 此操作不会让在“分发和可见性”****部分中选择的企业之外的任何人使用该应用。
 
@@ -50,10 +57,10 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 有关详细信息，请参阅[组织授权选项](organizational-licensing.md)。
 
-### 年龄分级
+### <a name="age-ratings"></a>年龄分级
 对于 LOB 应用，提交过程的[年龄分级](age-ratings.md)步骤的工作方式与零售应用相同，但还具有其他选项供你手动指示你的应用的应用商店年龄分级，而不是完成问卷或导入现有的 IARC 分级 ID。 此手动分级仅适用于 LOB 分发，因此如果你曾经将该应用的“分发和可见性”****设置更改为“零售分发”****，在可以发布该提交之前，需要先完成年龄分级问卷。
 
-### LOB 应用的企业部署
+### <a name="enterprise-deployment-of-lob-apps"></a>LOB 应用的企业部署
 
 单击“提交到应用商店”****后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Windows 应用商店门户中将应用添加到其专用存储。 企业稍后可以将应用部署到其用户。
 
@@ -61,7 +68,7 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)和[使用专用应用商店分配应用](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
 
-### 更新 LOB 应用
+### <a name="updating-lob-apps"></a>更新 LOB 应用
 
 若要发布对已经发布为 LOB 的应用的更新，只需创建新的提交即可。 你可以上传新程序包或进行任何其他更改，然后单击“提交到应用商店”****使更新的版本可用。 请确保使“分发和可见性”****中的企业选择保持不变（除非你打算更改这些选择，例如选择获取应用的其他企业，或删除一家之前分配了应用的企业）。
 
@@ -69,7 +76,7 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 > **注意** 将应用更改为“零售分发”****时，如果尚未填写[年龄分级问卷](age-ratings.md)，请完成该问卷（即使该应用不适用于新的购置也是如此）。
 
-### 通过旁加载分配 LOB 应用
+### <a name="distributing-lob-apps-through-sideloading"></a>通过旁加载分配 LOB 应用
 
 通过适用于企业的应用商店发布应用可以确保应用由应用商店进行签名，并遵守标准的应用商店策略。
 
@@ -83,10 +90,5 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO1-->
 
 

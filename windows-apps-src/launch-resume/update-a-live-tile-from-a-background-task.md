@@ -1,17 +1,24 @@
 ---
 author: TylerMSFT
 title: "使用后台任务更新动态磁贴"
-description: "使用后台任务，以利用最新内容更新应用的动态磁贴。"
+description: "使用后台任务将应用的动态磁贴更新为最新内容。"
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 76521772e4f93ee143ad698ad798f4b88ebcf3a7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# 使用后台任务更新动态磁贴
+# <a name="update-a-live-tile-from-a-background-task"></a>通过后台任务更新动态磁贴
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -28,7 +35,7 @@ ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">一份开发备忘录 - 使用后台任务更新动态磁贴</iframe>
 
-## 创建后台任务项目
+## <a name="create-the-background-task-project"></a>创建后台任务项目
 
 
 要为应用启用动态磁贴，请向你的解决方案中添加一个新的 Windows 运行时组件项目。 这是一个独立程序集，当用户安装你的应用时，OS 需要在后台加载并运行该程序集。
@@ -38,7 +45,7 @@ ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 3.  将项目命名为 BackgroundTasks，然后单击或点击“确定”****。 Microsoft Visual Studio 即会将这个新项目添加到该解决方案。
 4.  在主项目中，向 BackgroundTasks 项目添加一个引用。
 
-## 实施后台任务
+## <a name="implement-the-background-task"></a>实施后台任务
 
 
 实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口，以创建用于更新应用动态磁贴的类。 后台工作将采用 Run 方法。 在这种情况下，该任务将收到一个 MSDN 博客联合源。 为了防止该任务在异步代码仍在运行时过早关闭，请延期执行。
@@ -141,7 +148,7 @@ namespace BackgroundTasks
 }
 ```
 
-## 设置包清单
+## <a name="set-up-the-package-manifest"></a>设置包清单
 
 
 若要设置包清单，请打开它并添加一个新的后台任务声明。 将该任务的入口点设置为类名称，包括其命名空间。
@@ -154,16 +161,16 @@ namespace BackgroundTasks
 6.  单击或点击“应用程序 UI”****选项卡。
 7.  将“锁屏界面通知”****设置为“锁屏提醒和磁贴文本”****。
 8.  在“锁屏提醒徽标”****字段中，将路径设置为 24x24 像素图标。
-    **重要提示** 此图标只能使用单色透明像素。
+    **重要提示**  此图标只能使用单色透明像素。
 9.  在“小徽标”****字段中，将路径设置为 30x30 像素图标。
 10. 在“宽徽标”****字段中，将路径设置为 310x150 像素图标。
 
-## 注册后台任务
+## <a name="register-the-background-task"></a>注册后台任务
 
 
 创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以注册你的任务。
 
-> **注意** 从 Windows 8.1 开始，后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
+> **注意**  从 Windows 8.1 开始，后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
  
 
 在应用的主页中，添加 **RegisterBackgroundTask** 方法并在 **OnNavigatedTo** 事件处理程序中进行调用。
@@ -240,7 +247,7 @@ namespace ContosoApp
 }
 ```
 
-## 调试后台任务
+## <a name="debug-the-background-task"></a>调试后台任务
 
 
 若要调试后台任务，请在该任务的 Run 方法中设置一个断点。 在“调试位置”****工具栏中，选择你的后台任务。 这将导致系统立即调用 Run 方法。
@@ -255,7 +262,7 @@ namespace ContosoApp
 8.  按 Shift+F5 或点击“调试”&gt;“停止调试”****以停止调试。
 9.  返回到“开始”屏幕上的该应用磁贴。 几秒钟后，你的应用磁贴上将会显示磁贴通知。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -267,9 +274,4 @@ namespace ContosoApp
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

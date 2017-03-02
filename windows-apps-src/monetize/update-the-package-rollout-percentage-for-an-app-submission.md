@@ -2,19 +2,27 @@
 author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法更新应用提交的软件包推出百分比。"
 title: "使用 Windows 应用商店提交 API 更新应用提交的软件包推出百分比"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 应用提交, 更新, 百分比"
+ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 18dee2374ad1daa33520438d348aa8ea0805c30a
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 更新应用提交的软件包推出百分比
+# <a name="update-the-package-rollout-percentage-for-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 更新应用提交的软件包推出百分比
 
 
 使用 Windows 应用商店提交 API 中的此方法[更新应用提交的推出百分比](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)。 有关通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -23,9 +31,9 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 * 使用你的开发人员中心帐户为应用创建提交。 可以使用开发人员中心仪表板执行此操作，也可以使用[创建应用提交](create-an-app-submission.md)方法执行此操作。
 * 启用提交的逐步软件包推出。 可以使用[开发人员中心仪表板](../publish/gradual-package-rollout.md)执行此操作，也可以[使用 Windows 应用商店提交 API](manage-app-submissions.md#manage-gradual-package-rollout) 执行此操作。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求参数的使用示例和描述。
 
@@ -36,7 +44,7 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 <span/>
  
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +52,7 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,11 +62,11 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何更新应用提交的软件包推出百分比。
 
@@ -67,7 +75,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 有关响应正文中这些值的更多详细信息，请参阅[软件包推出资源](manage-app-submissions.md#package-rollout-object)。
 
@@ -80,7 +88,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -92,14 +100,9 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [逐步软件包推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 应用商店提交 API 管理应用提交](manage-app-submissions.md)
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

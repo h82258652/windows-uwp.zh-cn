@@ -3,29 +3,36 @@ author: mcleanbyron
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: "在 Windows 应用商店提交 API 中使用此方法，可删除现有加载项提交。"
 title: "使用 Windows 应用商店提交 API 删除加载项提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 删除, 应用内产品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b0068876803ea62dbf1d5329ddda19912a4f94d7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 117ed98dc961231cdbc7258b1097b7e0452efe35
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 删除加载项提交
+# <a name="delete-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 删除加载项提交
 
 
 
 
 在 Windows 应用商店提交 API 中使用此方法，可删除现有加载项（也称为应用内产品或 IAP）提交。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: b0068876803ea62dbf1d5329ddda19912a4f94d7
 <span/>
  
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: b0068876803ea62dbf1d5329ddda19912a4f94d7
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -53,13 +60,13 @@ ms.openlocfilehash: b0068876803ea62dbf1d5329ddda19912a4f94d7
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
 <span/>
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何删除加载项提交。
 
@@ -68,11 +75,11 @@ DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 如果成功，此方法会返回空的响应正文。
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -84,7 +91,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取加载项提交](get-an-add-on-submission.md)
@@ -92,9 +99,4 @@ Authorization: Bearer <your access token>
 * [确认加载项提交](commit-an-add-on-submission.md)
 * [更新加载项提交](update-an-add-on-submission.md)
 * [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

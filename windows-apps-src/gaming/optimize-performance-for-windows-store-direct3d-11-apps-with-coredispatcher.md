@@ -1,22 +1,29 @@
 ---
 author: mtoepke
 title: "优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟"
-description: "输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。"
+description: "输入延迟可能会大大影响游戏体验，将其优化可使游戏的体验更完美。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx, 输入延迟"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7cb4b72ed035e77a2054daffa9f105449f3b501
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
+#  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。 此外，适当的输入事件优化可延长电池使用时间。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
+输入延迟会大大影响游戏体验，将其优化可使游戏的体验更完美。 此外，适当的输入事件优化可延长电池寿命。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
 
-## 输入延迟
+## <a name="input-latency"></a>输入延迟
 
 
 输入延迟是指系统响应用户输入所用的时间。 该响应通常是屏幕上显示的内容的更改，或通过音频反馈听到的内容。
@@ -25,14 +32,14 @@ ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 
 了解游戏的输入延迟需求十分重要，这使你可采用最适合方案的方式处理事件。 没有适用于所有游戏的解决方案。
 
-## 电源效率
+## <a name="power-efficiency"></a>电源效率
 
 
 在输入延迟的上下文中，“电源效率”是指游戏对 GPU 的使用程度。 使用较少 GPU 资源的游戏具有较高的电源效率，可延长电池使用时间。 该情况也适用于 CPU。
 
 如果一个游戏可采用低于 60 帧每秒（这是当前大部分显示器上的最大渲染速度）绘制整个屏幕而不损害用户体验，则可通过降低其绘制频率来提高电源效率。 一些游戏仅在用户输入时更新屏幕，因此这些游戏不应以 60 帧每秒的速度重复绘制相同的内容。
 
-## 选择优化的目标
+## <a name="choosing-what-to-optimize-for"></a>选择优化的目标
 
 
 设计 DirectX 应用时，你需要作出一些选择。 该应用是否需要以 60 帧每秒的速度渲染以显示流畅的动画？或者它是否仅需在输入时进行渲染？ 它是否需要具有尽可能短的输入延迟？或者它是否能容忍一点延迟？ 用户是否期待我的应用谨慎地使用电池？
@@ -44,7 +51,7 @@ ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 3.  以 60 帧每秒的速度渲染。 在此方案中，游戏持续更新屏幕。 电源效率低，因为它渲染屏幕可以显示的最大框架数。 输入延迟高，因为在显示内容时 DirectX 会阻止线程。 这样做使线程无法向屏幕发送多于它向用户显示的框架。 第一人称射击游戏、即时战略游戏和基于物理学的游戏是可能归入此类别的应用的示例。
 4.  以 60 帧每秒的速度渲染，并实现尽可能短的输入延迟。 与方案 3 类似，应用持续更新屏幕，因此电源效率将会很低。 区别是，该游戏在单独的线程上响应输入，因此输入处理 不会因为向屏幕显示图形而被阻止。 联机多人游戏、格斗游戏或节奏/计时游戏可能归入此类别，因为它们支持 在极端紧凑的事件窗口中的移动输入。
 
-## 实现
+## <a name="implementation"></a>实现
 
 
 大部分 DirectX 游戏都由所谓游戏循环驱动。 基本算法是执行以下步骤，直到用户退出游戏或应用为止：
@@ -57,7 +64,7 @@ ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 
 我们将通过在一个简单的七巧板游戏上进行迭代，来展示上述各种方案的游戏循环的实现。 针对每种实现讨论的决策点、收益和权衡可作为指南，从而帮助你优化应用以实现较短的输入延迟和较高的电源效率。
 
-## 方案 1：按需渲染
+## <a name="scenario-1-render-on-demand"></a>方案 1：按需渲染
 
 
 七巧板游戏的首次迭代仅在用户移动一片七巧板时更新屏幕。 用户可以将一片七巧板拖到某个位置，或者通过选中它并触摸正确的目标位置来贴靠该七巧板。 在第二种情况中，该七巧板将跳到目标位置，此处没有任何动画或效果。
@@ -88,7 +95,7 @@ void App::Run()
 }
 ```
 
-## 方案 2：按需渲染，并带有过渡动画
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>方案 2：按需渲染，并带有过渡动画
 
 
 在第二次迭代中，游戏经过修改，当用户选中一块七巧板并触摸它的正确目标位置时，将出现它越过屏幕到达目标位置的动画。
@@ -136,7 +143,7 @@ void App::Run()
 
 为了支持 **ProcessOneAndAllPending** 和 **ProcessAllIfPresent** 之间的过渡，应用必须跟踪状态以了解是否正在创建动画。 在七巧板应用中，通过添加可在游戏循环期间在 GameState 类上调用的新方法来实现此目的。 游戏循环的动画分支通过调用 GameState 的新 Update 方法来促使动画状态更新。
 
-## 方案 3：以 60 帧每秒的速度渲染
+## <a name="scenario-3-render-60-frames-per-second"></a>方案 3：以 60 帧每秒的速度渲染
 
 
 在第三次迭代中，该应用显示一个计时器，它将向用户显示他们已在七巧板游戏上使用的时间。 因为它显示运行时间的单位精确到毫秒，所以它必须以 60 帧每秒的速度渲染才能保持不断更新显示内容。
@@ -174,7 +181,7 @@ void App::Run()
 
 然而，这种开发的便利需要付出代价。 以 60 帧每秒的速度呈现需要比按需呈现使用更多的电源。 在游戏更改每帧显示的内容时，最好是使用 **ProcessAllIfPresent**。 它还会使输入延迟增加多达 16.7 毫秒，因为应用现在会在屏幕的同步间隔（而不是在 **ProcessEvents** 时）阻止游戏循环。 因为每帧仅处理一次队列 (60 Hz)，所以一些输入事件可能会失败。
 
-## 方案 4：以 60 帧每秒的速度渲染，并实现尽可能短的输入延迟
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>方案 4：以 60 帧每秒的速度渲染，并实现尽可能短的输入延迟
 
 
 一些游戏可以忽略或补偿增加的输入延迟（如方案 3 中所见）。 然而，如果较短的输入延迟对于游戏体验和玩家感受反馈十分重要，以 60 帧每秒的速度渲染的游戏需要在单独线程上处理输入。
@@ -232,10 +239,10 @@ void JigsawPuzzleMain::StartRenderThread()
 
 Microsoft Visual Studio 2015 中的 **DirectX 11 和 XAML 应用（通用 Windows）**模板将游戏循环拆分为多个采用相似样式的线程。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
 
-## 缩短输入延迟的其他方法
+## <a name="additional-ways-to-reduce-input-latency"></a>缩短输入延迟的其他方法
 
 
-### 使用可等待的交换链
+### <a name="use-waitable-swap-chains"></a>使用可等待的交换链
 
 DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入。 在 60 Hz 屏幕上，屏幕每隔 16.7 毫秒（1 秒/60 帧）刷新一次。 图 1 显示了在刷新信号为 16.7 毫秒 (VBlank) 时，以 60 帧每秒的速度渲染的应用的输入事件的大致生命周期和响应情况：
 
@@ -257,10 +264,5 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

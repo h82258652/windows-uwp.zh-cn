@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: "调试、测试和性能"
 description: "使用 Microsoft Visual Studio 调试和测试应用。 若要使应用为 Windows 应用商店认证过程做好准备，请使用 Windows 应用认证工具包。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3867bca43bef549fc67b202e329e884ee1ff8fa0
-ms.openlocfilehash: 527ad3c4ade1df2a4737df5fba81a1a72ee35c0f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 831a29950d8f8658e1a584d8a33256ff4121c706
+ms.lasthandoff: 02/07/2017
 
 ---
-# 调试、测试和性能
+# <a name="debugging-testing-and-performance"></a>调试、测试和性能
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -24,10 +31,5 @@ ms.openlocfilehash: 527ad3c4ade1df2a4737df5fba81a1a72ee35c0f
 | [Windows Device Portal](device-portal.md) | Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 |
 | [Windows 应用认证工具包](windows-app-certification-kit.md) | 为应用提供成为 [Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)的最佳机会。 |
 | [性能](performance-and-xaml-ui.md) | 用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 |
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

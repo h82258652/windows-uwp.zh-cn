@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: "合成画笔"
 description: "画笔通过其输出绘制 Visual 的区域。 不同的画笔具有不同的输出类型。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9affb4fab1931c7584d86bfb07797345788c28f9
+ms.lasthandoff: 02/07/2017
 
 ---
-# 合成画笔
+# <a name="composition-brushes"></a>合成画笔
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 画笔通过其输出绘制 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的区域。 不同的画笔具有不同的输出类型。 合成 API 提供了三种画笔类型：
 
@@ -27,19 +34,19 @@ ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
 -   [使用图面画笔](./composition-brushes.md#using-surface-brush)
 -   [配置拉伸和对齐](./composition-brushes.md#configuring-stretch-and-alignment)
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 本概述假定你已熟悉基本合成应用程序的结构，如[合成 UI](visual-layer.md) 中所述。
 
-## 颜色基础知识
+## <a name="color-basics"></a>颜色基础知识
 
 在使用 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 绘制之前，你需要选择颜色。 合成 API 使用 Windows 运行时结构和 Color 来表示某种颜色。 Color 结构使用 sRGB 编码。 sRGB 编码将颜色划分为以下四种：alpha、红色、绿色和蓝色。 每个分量均由一个浮点值表示，该值通常介于 0.0 和 1.0 之间。 值 0.0 表示完全没有该颜色，而值 1.0 表示该颜色完全呈现。 对于 alpha 分量，0.0 表示完全透明的颜色，而 1.0 表示完全不透明的颜色。
 
-### Alpha 模式
+### <a name="alpha-modes"></a>Alpha 模式
 
 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 中的 Color 值始终表示 straight alpha。
 
-## 使用颜色画笔
+## <a name="using-color-brush"></a>使用颜色画笔
 
 若要创建颜色画笔，请调用 Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) 方法，从而返回 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)。 **CompositionColorBrush** 的默认颜色为 \#00000000。 下图和代码显示了一个较小的可视化树来创建一个矩形，该矩形用黑色画笔描边，并使用颜色值为 0x9ACD32 的纯色画笔进行绘制。
 
@@ -68,7 +75,7 @@ Visual2.Offset = new Vector3(3, 3, 0);
 
 与其他画笔不同，创建 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) 是一项开销相对较少的操作。 每次呈现时你都可以创建 **CompositionColorBrush** 对象，而对性能仅产生较小的影响或不产生任何影响。
 
-## 使用图面画笔
+## <a name="using-surface-brush"></a>使用图面画笔
 
 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 使用合成图面（由 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 对象表示）绘制视觉对象 下图显示了一个使用 licorice 位图绘制的正方形，其中该位图使用 D2D 呈现在 **ICompositionSurface** 上。
 
@@ -92,7 +99,7 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## 配置拉伸和对齐
+## <a name="configuring-stretch-and-alignment"></a>配置拉伸和对齐
 
 有时，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 的内容不能完全填充正在绘制的视觉区域。 如果出现这种情况，合成 API 将使用该画笔的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 和 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式设置来确定如何填充剩余的区域。
 
@@ -108,14 +115,10 @@ visual.Brush = _surfaceBrush;
 
  
 
- 
+## <a name="related-topics"></a>相关主题
+[带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性](composition-native-interop.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

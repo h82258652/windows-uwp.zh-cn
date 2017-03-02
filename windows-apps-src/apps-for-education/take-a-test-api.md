@@ -2,13 +2,21 @@
 author: TylerMSFT
 Description: "适用于 Microsoft 参加测验应用的 JavaScript API 使你可以进行安全的评估。 参加测验提供了安全的浏览器，可防止学生在测试时使用其他计算机或 Internet 资源。"
 title: "参加测验 JavaScript API。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 translationtype: Human Translation
-ms.sourcegitcommit: 7f578d73a9a625b0ac7d9c10f6dc8118c36b07d0
-ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ac1a9b38a9857ae536025e682f98d01135850a19
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 参加测验 JavaScript API
+# <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
 [参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是基于浏览器的应用，可为高利害关系测试提供锁定的在线评估。 它支持高利害关系通用核心测试的 SBAC 浏览器 API 标准，并使你可以专注于评估内容，而不是锁定 Windows 的方法。
 
@@ -16,14 +24,14 @@ Microsoft Edge 浏览器支持的参加测验具有一个 JavaScript API，Web �
 
 该 API（基于[通用核心 SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)）提供文本到语音转换功能以及查询设备是否处于锁定状态、正在运行的用户和系统进程等功能。
 
-有关应用本身的信息，请参阅[参加测验应用技术参考](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。
+有关应用本身的信息，请参阅[参加测验应用技术参考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical)。
 
 > [!Important]
 > 这些 API 在远程会话中不起作用。  
 
 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
 
-## 参考文档
+## <a name="reference-documentation"></a>参考文档
 参加测验 API 由以下命名空间组成。 
 
 | 命名空间 | 说明 |
@@ -32,7 +40,7 @@ Microsoft Edge 浏览器支持的参加测验具有一个 JavaScript API，Web �
 |[TTS 命名空间](#tts-namespace)|文本到语音转换功能|
 
 
- ### 安全命名空间
+ ### <a name="security-namespace"></a>安全命名空间
 
 安全命名空间使你可以锁定设备、检查用户和系统进程列表、获取 MAC 和 IP 地址以及清除缓存的 Web 资源。
 
@@ -48,7 +56,7 @@ Microsoft Edge 浏览器支持的参加测验具有一个 JavaScript API，Web �
 
 ---
 <span id="clearCache"/>
-### void clearCache()
+### <a name="void-clearcache"></a>void clearCache()
 清除缓存的 Web 资源。
 
 **语法**  
@@ -61,12 +69,12 @@ Microsoft Edge 浏览器支持的参加测验具有一个 JavaScript API，Web �
 `None`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="close"/>
-### close(boolean restart)
+### <a name="closeboolean-restart"></a>close(boolean restart)
 关闭浏览器并解锁设备。
 
 **语法**  
@@ -79,30 +87,30 @@ Windows10 版本 1607
 `None`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="enableLockDown"/>
-### enableLockdown(boolean lockdown)
+### <a name="enablelockdownboolean-lockdown"></a>enableLockdown(boolean lockdown)
 锁定设备。 也用于解锁设备。
 
 **语法**  
 `browser.security.enableLockDown(true|false);`
 
 **参数**  
-`lockdown` - `true` 用于在锁屏界面上运行 Take-a-Test 应用，并应用此[文档](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 `False` 停止在锁屏界面上运行参加测验 Take-a-Test 并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。
+`lockdown` - `true` 用于在锁屏界面上运行 Take-a-Test 应用，并应用此[文档](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中讨论的策略。 `False` 停止在锁屏界面上运行参加测验 Take-a-Test 并关闭它，除非该应用不处于锁定状态；在此情况下没有影响。
 
 **返回值**  
 `None`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="getIPAddressList"/>
-### string[] getIPAddressList()
+### <a name="string-getipaddresslist"></a>string[] getIPAddressList()
 获取设备的 IP 地址列表。
 
 **语法**  
@@ -117,7 +125,7 @@ Windows10 版本 1607
 ---
 
 <span id="getMACAddress" />
-### string[] getMACAddress()
+### <a name="string-getmacaddress"></a>string[] getMACAddress()
 获取设备的 MAC 地址列表。
 
 **语法**  
@@ -130,12 +138,12 @@ Windows10 版本 1607
 `An array of MAC addresses.`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="getProcessList" />
-### string[] getProcessList()
+### <a name="string-getprocesslist"></a>string[] getProcessList()
 获取用户正在运行的进程列表。
 
 **语法**  
@@ -150,12 +158,12 @@ Windows10 版本 1607
 **备注** 该列表不包括系统进程。
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="isEnvironmentSecure" />
-### boolean isEnvironmentSecure()
+### <a name="boolean-isenvironmentsecure"></a>boolean isEnvironmentSecure()
 确定锁定上下文是否仍然应用于设备。
 
 **语法**  
@@ -168,11 +176,11 @@ Windows10 版本 1607
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
-### TTS 命名空间
+### <a name="tts-namespace"></a>TTS 命名空间
 
 TTS 命名空间处理应用的文本到语音转换功能。
 
@@ -191,7 +199,7 @@ TTS 命名空间处理应用的文本到语音转换功能。
 ---
 
 <span id="getStatus" />
-### string getStatus()
+### <a name="string-getstatus"></a>string getStatus()
 获取语音播放状态。
 
 **语法**  
@@ -204,12 +212,12 @@ TTS 命名空间处理应用的文本到语音转换功能。
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="getVoices" />
-### string[] getVoices()
+### <a name="string-getvoices"></a>string[] getVoices()
 获取可用声音包列表。
 
 **语法**  
@@ -222,12 +230,12 @@ Windows10 版本 1607
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="pause" />
-### void pause()
+### <a name="void-pause"></a>void pause()
 
 暂停语音合成。
 
@@ -243,12 +251,12 @@ Windows10 版本 1607
 `None`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="resume" />
-### void resume()
+### <a name="void-resume"></a>void resume()
 恢复暂停的语音合成。
 
 **语法**  
@@ -261,12 +269,12 @@ Windows10 版本 1607
 `None`
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="speak" />
-### void speak(string text, object options, function callback)
+### <a name="void-speakstring-text-object-options-function-callback"></a>void speak(string text, object options, function callback)
 启动客户端文本到语音合成。
 
 **语法**  
@@ -293,12 +301,12 @@ var options = {
 选项对象必须遵循上述示例中所示的顺序、命名和大小写。
 
 **要求**  
-Windows10 版本 1607
+Windows 10 版本 1607
 
 ---
 
 <span id="stop" />
-### void stop()
+### <a name="void-stop"></a>void stop()
 停止语音合成。
 
 **语法**  
@@ -311,10 +319,5 @@ Windows10 版本 1607
 `None`
 
 **要求**  
-Windows10 版本 1607
-
-
-
-<!--HONumber=Nov16_HO1-->
-
+Windows 10 版本 1607
 

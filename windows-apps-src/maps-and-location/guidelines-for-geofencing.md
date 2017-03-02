@@ -3,13 +3,20 @@ author: PatrickFarley
 Description: "在应用中遵循这些适用于地理围栏的最佳做法。"
 title: "地理围栏应用指南"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 地图, 位置, 地理围栏"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e21b5b89c95a6b4988e1e95fc924ec3eefd46942
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 地理围栏应用指南
+# <a name="guidelines-for-geofencing-apps"></a>地理围栏应用指南
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,13 +29,13 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 在应用中遵循这些适用于[**地理围栏**](https://msdn.microsoft.com/library/windows/apps/dn263744)的最佳做法。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 
 -   如果在发生 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 事件时应用需要具备 Internet 访问权限，请在创建地理围栏之前先检查有无 Internet 访问权限。
     -   如果应用当前没有 Internet 访问权限，你可以提示用户在你设置地理围栏之前连接到 Internet。
     -   如果不能访问 Internet，请避免消耗进行地理围栏位置检查所需的电源。
--   在地理围栏事件指示 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 状态发生更改时，通过检查时间戳和当前位置来确保地理围栏通知的相关性。 有关详细信息，请参阅下面的[检查时间戳和当前位置](#timestamp)。
+-   在地理围栏事件指示 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 状态发生更改时，通过检查时间戳和当前位置来确保地理围栏通知的相关性。 有关详细信息，请参阅下面的**检查时间戳和当前位置**。
 -   当设备无法访问位置信息时，创建异常来管理这些情况，并在需要时通知用户。 由于以下原因，可能不提供位置信息：已禁用权限、设备未包含 GPS 无线电、GPS 信号受阻或者 Wi-Fi 信号不够强。
 -   总体而言，没有必要同时在前台和后台侦听地理围栏事件。 然而，如果你的应用需要同时在前台和后台侦听地理围栏事件：
 
@@ -40,9 +47,9 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 -   对每个应用不要使用多于 1000 个地理围栏。 系统实际上支持每个应用数千个地理围栏，你可以通过使用多于 1000 个来维持良好的应用性能以帮助减少应用的内存使用量。
 -   不要创建带有小于 50 米的 radius 的地理围栏。 如果应用必须带有小型 radius 的地理围栏，则最好建议用户在具备 GPS 无线电的设备上使用该应用，确保获得最佳性能。
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
-### 检查时间戳和当前位置
+### <a name="checking-the-time-stamp-and-current-location"></a>检查时间戳和当前位置
 
 当某个事件表明 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 状态存在变化时，应同时检查事件的时间戳和你的当前位置。 各种各样的因素都可能会影响用户具体何时处理事件，例如系统没有足够资源来启动后台任务、用户没注意到通知，或者设备处在待机状态（在 Windows 上）。 例如，可能会出现下面的顺序：
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 通过时间戳，你可以判断出过去发生的操作。 通过当前位置，你可以了解到用户现已离开地理围栏。 根据应用的功能，你可能希望过滤掉这个事件。
 
-### 后台侦听器和前台侦听器
+### <a name="background-and-foreground-listeners"></a>后台侦听器和前台侦听器
 
 通常，你的应用不需要同时在前台和后台任务中侦听 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 事件。 如果遇到可能同时需要在前台和后台任务中侦听的情况，最简洁的方法是由后台任务来处理通知。 如果你同时设置了前台和后台地理围栏侦听器，则无法保证哪个侦听器先被触发，为此你必须一直调用 [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) 方法以判断是否发生了事件。
 
@@ -62,9 +69,9 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 ```csharp
     Windows.UI.Core.CoreWindow coreWindow;    
-    
+
     // This needs to be set before InitializeComponent sets up event registration for app visibility
-    coreWindow = CoreWindow.GetForCurrentThread(); 
+    coreWindow = CoreWindow.GetForCurrentThread();
     coreWindow.VisibilityChanged += OnVisibilityChanged;
 ```
 
@@ -114,13 +121,13 @@ function onVisibilityChanged() {
 }
 ```
 
-### 确定地理围栏的大小
+### <a name="sizing-your-geofences"></a>确定地理围栏的大小
 
 虽说 GPS 可以提供最精确的位置信息，但是地理围栏也可以使用 Wi-Fi 或其他位置传感器来确定用户的当前位置。 不过，使用这些方法会影响你创建地理围栏的大小范围。 如果精确度较低，创建较小的地理围栏不会有任何帮助。 通常，建议不要创建半径小于 50 米的地理围栏。 同样，地理围栏后台任务仅在 Windows 上定期运行；如果你使用较小的地理围栏，你可能会完全错过 [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exit** 事件。
 
 如果应用需要使用半径较小的的地理围栏，最好建议用户在具备 GPS 无线电的设备上使用该应用，确保获得最佳性能。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
@@ -130,13 +137,4 @@ function onVisibilityChanged() {
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

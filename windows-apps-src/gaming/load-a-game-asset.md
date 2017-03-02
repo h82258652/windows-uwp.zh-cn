@@ -1,31 +1,38 @@
 ---
 author: mtoepke
 title: "在 DirectX 游戏中加载资源"
-description: "大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。"
+description: "大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（例如着色器、纹理、预先定义的网络或其他图形数据）。"
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx, 加载资源"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 09221cb853b3d327b5cb60cacec109032135eabc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 032cde6294093a2c0a1c582312b9353a146e94da
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在 DirectX 游戏中加载资源
+# <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。 下面，让我们看一看在通用 Windows 平台 (UWP) 游戏中加载要使用的这些文件时必须考虑的一个高级视图。
+大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（例如着色器、纹理、预先定义的网络或其他图形数据）。 下面，让我们看一看在通用 Windows 平台 (UWP) 游戏中加载要使用的这些文件时必须考虑的一个高级视图。
 
 例如，游戏中的多边形对象网格可能是使用其他工具创建的，并且已导出为某个特定格式。 纹理等也是一样：尽管大多数工具通常可以编写平面的未压缩的位图并且大多数图形 API 都可以理解，但这对于在游戏中的使用来说还远远不够。 下面我们将指导你完成加载三个不同类型的图形资源以便用于 Direct3D 的基本步骤：网格（模型）、纹理（位图）以及编译的着色器对象。
 
-## 你需要了解的内容
+## <a name="what-you-need-to-know"></a>你需要了解的内容
 
 
-### 技术
+### <a name="technologies"></a>技术
 
 -   并行模式库 (ppltasks.h)
 
-### 先决条件
+### <a name="prerequisites"></a>先决条件
 
 -   了解基本的 Windows 运行时
 -   了解异步任务
@@ -68,9 +75,9 @@ ms.openlocfilehash: 09221cb853b3d327b5cb60cacec109032135eabc
 
  
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 异步加载
+### <a name="asynchronous-loading"></a>异步加载
 
 使用并行模式库 (PPL) 中的 **task** 模板处理异步加载。 **task** 包含一个方法调用，后跟完成调用后处理异步调用结果的 lambda，通常遵循以下格式：
 
@@ -194,7 +201,7 @@ void ResourceLoading::CreateDeviceResources()
 
 当然，不同的资源类型通常需要额外的处理或转换，然后才能在你的图形管道中使用它们。 让我们看一看三种特定类型的资源：网格、纹理和着色器。
 
-### 加载网格
+### <a name="loading-meshes"></a>加载网格
 
 网格就是顶点数据，由游戏中的代码按步骤生成或者是从其他应用（如 3DStudio MAX 或 Alias WaveFront）导出到某个文件。 这些网格表示游戏中的模型，从简单的基元（如立方体和球面）到汽车、房屋和字符。 它们通常包含颜色和动画数据，具体取决于它们的格式。 我们重点介绍只包含顶点数据的网格。
 
@@ -303,7 +310,7 @@ void BasicLoader::CreateMesh(
 
 接下来，让我们看一看如何加载纹理。
 
-### 加载纹理
+### <a name="loading-textures"></a>加载纹理
 
 游戏中最常用的资源（以及由磁盘上和内存中的大多数文件组成的资源）就是纹理。 与网格一样，纹理可以采用各种格式，并且你可以将它们转换为加载时 Direct3D 可以使用的格式。 纹理也有各种类型，用于创建不同的效果。 可以使用纹理的 MIP 级别来改进远距离对象的外观和性能；可以使用深色和浅色映射来产生分层效果并在顶部产生基本纹理；在每个像素照明计算中使用法线贴图 。 在现代游戏中，典型场景可能会有数千个单个纹理，你的代码必须有效地管理它们！
 
@@ -514,7 +521,7 @@ void BasicLoader::CreateTexture(
 
 此外，各个纹理或纹理“皮肤”可能会映射到特定网格多边形或图面。 该映射数据通常由工具导出，艺术家或设计人员使用它来创建模型和纹理。 确保你在加载导出的数据时捕获该信息，因为当你只需分段着色时你将使用它将正确的纹理映射到相应的表面。
 
-### 加载着色器
+### <a name="loading-shaders"></a>加载着色器
 
 着色器是编译的高级着色器语言 \(HLSL\) 文件，这些文件加载到内存中并在图形管道的特定阶段进行调用。 最常用和最基本的着色器是顶点和像素着色器，它们在场景的视区中分别处理网格和想色的各个顶点。 执行 HLSL 代码可转换几何体、应用照明效果和纹理，以及对呈现的场景执行后期处理。
 
@@ -689,11 +696,11 @@ task<void> BasicLoader::LoadShaderAsync(
 
 其他着色器类型（如外壳着色器和几何体着色器）可能还需要特定配置。 [BasicLoader 的完整代码](complete-code-for-basicloader.md)和 [Direct3D 资源加载示例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)中提供了各种着色器加载方法的完整代码。
 
-## 备注
+## <a name="remarks"></a>备注
 
 此时，你应该已了解并且能够创建或修改用于异步加载常用游戏资源（如网格、纹理以及编译的着色器）的方法。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [Direct3D 资源加载示例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [BasicLoader 的完整代码](complete-code-for-basicloader.md)
@@ -706,10 +713,5 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

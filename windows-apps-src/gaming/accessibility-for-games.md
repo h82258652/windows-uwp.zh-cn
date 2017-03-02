@@ -3,18 +3,25 @@ author: joannaleecy
 title: "使游戏成为辅助游戏"
 description: "了解如何使游戏成为辅助游戏。 使用非独占游戏设计原则实现游戏辅助功能。"
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
+ms.author: joanlee
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 辅助功能, 游戏"
 translationtype: Human Translation
-ms.sourcegitcommit: d61b834adb50e71ba67ea32662069f257c33a676
-ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 74a3e3bf3b4f614a112bedd8a2777f8d641237a9
+ms.lasthandoff: 02/07/2017
 
 ---
-#  使游戏成为辅助游戏
+#  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
-辅助功能可支持地球上的每个人和每个组织实现更多目标，并且这也适用于使游戏更具辅助性。 本文面向游戏开发人员编写；尤其是游戏设计人员、生产商和管理人员。 它提供了从各种组织（在下方的参考部分中列出）派生的游戏辅助功能指南的概述，并介绍了创建更易于使用的游戏的非独占游戏设计原则。
+辅助功能可以使地球上的每个人和每个组织实现更多目标，并且还适用于使游戏更易于使用。 本文面向游戏开发人员编写；尤其是游戏设计人员、生产商和管理人员。 它提供了从各种组织（在下方的参考部分中列出）派生的游戏辅助功能指南的概述，并介绍了创建更易于使用的游戏的非独占游戏设计原则。
 
-##  为什么使游戏成为辅助游戏？
+##  <a name="why-make-games-accessible"></a>为什么使游戏成为辅助游戏？
 
-### 增加游戏受众
+### <a name="increased-gamer-base"></a>增加游戏受众
 
 在最基本的层面上，辅助功能的商业理由很简单：
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 有关更多商业理由，请参阅[使视频游戏成为辅助游戏](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
 
-### 更好的游戏
+### <a name="better-games"></a>更好的游戏
 
 创建更易于使用的游戏最终有利于创建更好的游戏。 
 
@@ -34,11 +41,11 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 最终，用于提高游戏辅助性的思维过程通常会产生更好的游戏，因为你设计出了更用户友好、更容易自定义的体验来供玩家享受。
 
-### 社交空间
+### <a name="a-social-space"></a>社交空间
 
 游戏是一种娱乐形式，可以提供几个小时的快乐。 对于某些人来说，游戏不仅是一种娱乐形式，还是一种从病床、慢性疼痛或使人衰弱的社交焦虑的逃避。 玩家被转移到另一个世界，在这个世界中他们可以成为视频游戏中的主角。 通过玩游戏，他们可以为自己创造社交空间并参与其中，从而使他们从由他们的障碍所引发的日常痛苦中解脱出来，并且得到与无法通过其他方式进行互动的人交流的机会。
 
-##  你现在正在制作的游戏是辅助游戏吗？
+##  <a name="is-the-game-you-are-making-today-accessible"></a>你现在正在制作的游戏是辅助游戏吗？
 
 如果你正在考虑第一次使你的游戏成为辅助游戏，下面是你需要自问的问题：
 
@@ -51,39 +58,39 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 如果你的答案大部分都是否，或者你不知道答案，那么是时候设置辅助功能并将其放到你的游戏中了。
 
-## 定义残障
+## <a name="defining-disability"></a>定义残障
 
 残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 （[非独占视频](https://www.microsoft.com/design/inclusive)，Microsoft.com。）这意味着任何人都可能体验残障，它可以是短期或情境式的状况。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
 
-### 视觉
+### <a name="vision"></a>视觉
 
 *   医学的、长期的状况，如青光眼、白内障、色盲、近视和糖尿病视网膜病
 *   短期的、情境式的状况，如监视器或屏幕尺寸较小、屏幕分辨率低，或者由监视器上的明亮光源产生的屏幕炫光
         
-### 听觉
+### <a name="hearing"></a>听觉
 
 * 医学的、长期的状况，如由疾病或遗传引发的完全失聪或部分听力损失
 * 短期的、情境式的状况，如背景噪音过大，或为避免打扰他人而限制了音量
         
-### 运动
+### <a name="motor"></a>运动
 
 * 医学的、长期的状况，如帕金森病、肌萎缩侧索硬化 (ALS)、关节炎和肌肉萎缩症
 * 短期的、情境式的状况，如手受伤、拿着饮料或手臂中怀抱孩子
   
-### 认知
+### <a name="cognitive"></a>认知
 
 * 医学的、长期的状况，如诵读困难、癫痫、注意缺陷多动障碍、痴呆和健忘症
 * 短期的、情境式状况，如缺乏睡眠或者由房屋旁边驶过的紧急车辆发出的鸣笛等所引发的暂时分心
 
-### 发言
+### <a name="speech"></a>发言
 
 * 医学的、长期的状况，如声带损伤、构音障碍和失用症
 * 短期的、情境式的状况，如牙科工作或正在吃饭和喝水
 
 
-## 如何提高游戏的辅助性？
+## <a name="how-to-make-games-more-accessible"></a>如何提高游戏的辅助性？
 
-### 设计转变：非独占游戏设计方法
+### <a name="design-shift-inclusive-game-design-approach"></a>设计转变：非独占游戏设计方法
 
 非独占设计侧重于创建更容易供更广泛的消费者（包括残障人士）使用的产品和服务。
 
@@ -93,19 +100,19 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 此额外步骤有助于识别原始设计中的差异。 通过识别差异，你可以迭代原始设计概念，并使其更好。 当你花时间在游戏设计过程中更具包含性时，你最终的游戏也会变得更具辅助性。
 
-### 支持玩家：为玩家提供选择
+### <a name="empower-gamers-give-gamers-options"></a>支持玩家：为玩家提供选择
 
 辅助功能的关键在于提供选择。 为你的玩家提供自定义其游戏体验的选择。 如果你已经有大量粉丝群体，你的受众可能有很大一部分不希望体验发生任何形式的变化。 没关系。 为你的玩家提供打开和关闭这些功能的功能，并使这些功能可以单独配置。
 
-### 创新：有创意
+### <a name="innovate-be-creative"></a>创新：有创意
 
 提高游戏的辅助性有许多有创意的方式。 戴上有创意的帽子，向现存的其他辅助游戏学习。 如果你已经有一个现有的游戏，请学会识别可进行改进的当前游戏功能，同时使核心游戏机制和体验保持设计原样。 如上所述，游戏中的辅助功能的关键在于为玩家提供自定义其游戏体验的选项。
 
-### 布道：使辅助功能成为游戏工作室中的优先事项
+### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>布道：使辅助功能成为游戏工作室中的优先事项
 
 游戏开发始终按照紧凑的时间线进行，因此优先安排辅助功能将使此过程更轻松。 一种方法是从一开始是就带着辅助功能的思维。 与你的团队分享关于辅助功能的知识，并分享商业理由。
 
-### 审核：经常评估你的游戏
+### <a name="review-constantly-evaluate-your-game"></a>审核：经常评估你的游戏
 
 在开发期间，你可以引入一个审核过程来确保你在途中的每个步骤都思考辅助功能。 制作类似如下的清单来帮助你的团队经常评估你正在创建的内容是否具有辅助性。
 
@@ -118,19 +125,19 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 | HUD 屏幕                                       | 可调整的屏幕位置、可调整的字体大小、色盲友好的选项                                                  |        
 | 控制输入                                     | 输入设备的可映射控制、自定义控制器支持、简化所允许游戏的输入                               |        
 
-### 试玩和迭代：获取玩家的反馈
+### <a name="playtest-and-iterate-get-gamers-feedback"></a>试玩和迭代：获取玩家的反馈
 
 在组织试玩会议时，邀请具有你的游戏设计所面向的残障的试玩人员，并使他们玩你的游戏。 观察他们如何玩，并获取他们的反馈。 确定为了使游戏更好需要进行哪些更改。
 
-### 大声宣布：让全世界知道你的游戏是辅助游戏
+### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>大声宣布：让全世界知道你的游戏是辅助游戏
 
 客户将希望知道具有残障的玩家是否可以玩你的游戏。 在游戏网站和包装上清楚地陈述游戏的辅助功能，以确保消费者在购买游戏时知道应该期待哪些内容。 记得使你的游戏的网站和所有销售渠道也具有辅助性。 最重要的是，向外扩展到游戏社区，告诉他们关于你的游戏的信息。
 
-## 游戏辅助功能
+## <a name="game-accessibility-features"></a>游戏辅助功能
 
 本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)中的指南，这些指南代表了由工作室、专家和学者组成的合作团体的研究成果。 有关详细信息，请参阅[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)。 
 
-### 色盲友好图形和用户界面
+### <a name="colorblind-friendly-graphics-and-user-interface"></a>色盲友好图形和用户界面
 
 眼睛的视网膜具有两种类型的感光细胞：用于查看光所在位置的视锥细胞和用于在弱光条件下查看的视杆细胞。 有三种类型的视锥细胞（红色、蓝色和蓝色）来使我们能够正确查看颜色。 当这三种类型的光视锥细胞中的一种或多种无法按预期运作时，会发生色盲现象。 色盲程度的范围是，从几乎正常的颜色识别（仅对红色、绿色或蓝色光的敏感度较低），到完全无法识别红色、绿色或蓝色。 由于对蓝色光敏感度低的现象较少见，因此在针对色盲进行设计时，颜色的选择通常面向红色或绿色色盲：
  
@@ -141,7 +148,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
     
   + 不要单单依靠颜色区分游戏对象 - 还要使用形状和图案
   
-### 隐藏式字幕和字幕
+### <a name="closed-captioning-and-subtitles"></a>隐藏式字幕和字幕
 
 在为游戏设计隐藏式字幕和字幕时，目标是提供可读的描述文字作为一个选项，以便没有音频也可以享受你的游戏。 应该可以将游戏对话、游戏音频和音效等游戏组件在屏幕上以文字的形式显示。
 
@@ -154,7 +161,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 *   区分制造声音的物体或说话的人。 （示例：“Daniel：嗨！”）
 *   提供打开和关闭隐藏式和字幕的选项。 （其他功能：基于重要性选择显示多少声音信息的功能。）
 
-### 声音反馈
+### <a name="sound-feedback"></a>声音反馈
 
 声音可以向玩家提供视觉反馈之外的反馈。 出色的游戏音频设计可以使具有视觉障碍的玩家更容易使用。 下面是要考虑的某些指南：
 
@@ -163,7 +170,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 *   设计为玩家提供有意义信息的语音。 （示例：“敌人正在靠近我们”与“敌人正在从后门进入”。）
 *   确保以合理的速率说出语音，并提供语速控件以提高辅助性。
 
-### 完全可映射控制
+### <a name="fully-mappable-controls"></a>完全可映射控制
 
 有些公司和组织（如 [Special Effect](http://www.specialeffect.org.uk/)）设计可与各种游戏系统（如 Windows 和 Xbox One）结合使用的自定义游戏控制器。 此自定义使具有不同形式的残障的人士能够玩本来不能玩的游戏。 有关现在由于自定义控制器而能够独立玩游戏的人员的详细信息，请参阅[它们帮助了谁](http://www.specialeffect.org.uk/who-we-helped)。
 
@@ -171,13 +178,13 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 标准 Xbox One 和 Xbox Elite 控制器都提供控制器的自定义用于精确游戏。 有关详细信息，请参阅 [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
 
-### 较广的难度级别选择
+### <a name="wider-selection-of-difficulty-levels"></a>较广的难度级别选择
 
 视频游戏提供娱乐。 对游戏开发人员的挑战是调整难度级别，以便玩家体验适量的挑战。 首先，并非所有玩家都有相同的技巧水平和能力，因此设计较广的难度选项选择可增加为玩家提供适量挑战的几率。 同时，这种较广的选择还可使你的视频游戏更具辅助性，因为它可能会使更多的残障人士来玩你的游戏。 请记住，玩家希望在游戏中克服挑战，并为此获得奖赏。 他们不需要不能赢的游戏。
 
 调整游戏的难度级别是一个微秒的过程。 如果太简单，玩家可能会无聊。 如果太难，玩家可能会放弃，并且不再从该点继续玩下去。 权衡的过程同时具有艺术性和科学性。 有多种方法可使游戏关卡具有适量的挑战。 某些游戏提供简化的输入（如其游戏的单按钮游戏选项）、提供倒回和重玩的选项来使游戏玩法更宽松，或者在多次尝试后减少和弱化敌人以便更容易前进。
 
-### 光敏性癫痫测试
+### <a name="photosensitivity-epilepsy-testing"></a>光敏性癫痫测试
 
 光敏性癫痫 (PSE) 是一种由视觉刺激（如暴露在闪光灯或特定的移动视觉形式和模式下）触发病情发作的病症。 大约 3% 的人会出现此病症，并且在儿童和青少年中更常见。
 
@@ -189,34 +196,29 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 *   使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/)。） 
 *   在游戏关卡之间设计中断，鼓励玩家休息，避免不间断地玩。
 
-## 其他辅助功能资源
+## <a name="other-accessibility-resources"></a>其他辅助功能资源
 
 下面是一些提供关于游戏辅助功能的其他信息的外部站点。
 
-### 游戏辅助功能指南
+### <a name="game-accessibility-guidelines"></a>游戏辅助功能指南
 * [游戏辅助功能指南](http://gameaccessibilityguidelines.com/)
 * [AbleGamers Foundation 指南](http://www.includification.com/)
 * [设计通用辅助 (UA) 游戏](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
-### 自定义输入控制器
+### <a name="custom-input-controllers"></a>自定义输入控制器
 * [特殊效果](http://www.specialeffect.org.uk/)
 * [参战的战争斗士](http://www.warfighterengaged.org/)
 
-## 使用的参考
+## <a name="references-used"></a>使用的参考
 * [游戏辅助功能指南](http://gameaccessibilityguidelines.com/)
 * [AbleGamers Foundation 指南](http://www.includification.com/)
 * [Color Blind Awareness，一家社区利益公司](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [如何良好地添加字幕 - Gamasutra 上的一篇博客文章，作者 Ian Hamilton](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [面向所有人的创新计划](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 
-## 相关链接
+## <a name="related-links"></a>相关链接
 * [非独占设计](https://www.microsoft.com/design/inclusive)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发辅助 UWP 应用](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
 * [针对辅助功能设计软件电子书](https://www.microsoft.com/download/details.aspx?id=19262)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

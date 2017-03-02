@@ -3,18 +3,25 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "合成可视化树"
 description: "合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e6e40d60708189235c02a21df7e232d52ecfbfe4
+ms.lasthandoff: 02/07/2017
 
 ---
-# 合成可视化树
+# <a name="composition-visual-tree"></a>合成可视化树
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
 
-## 视觉对象
+## <a name="visuals"></a>视觉对象
 
 可视树结构的组成部分包括以下三种视觉类型，以及影响视觉对象内容的多个子类的基本画笔类：
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) 并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
 -   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – 允许应用程序在可视对象的内容上创建某种效果。 存在大量 CompositionBrush 的子类。
 
-## CompositionVisual 示例
+## <a name="the-compositionvisual-sample"></a>CompositionVisual 示例
 
 在该示例中，提供大量可以在屏幕上单击和拖动的纯色正方形。 在单击某一正方形后它将凸显， 将其旋转 45 度，然后在拖动该正方形时它将变为不透明。
 
@@ -44,7 +51,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 
 尽管此示例不介绍诸如动画或更复杂的效果等概念，但它包含所有这些系统需要使用的构成要素。
 
-## 创建合成器
+## <a name="creating-a-compositor"></a>创建合成器
 
 创建 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 并存储它以用作某一变量中的工厂对象是一项简单的任务。 以下代码段演示了如何创建新的 **Compositor**：
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 _compositor = new Compositor();
 ```
 
-## 创建 SpriteVisual 和 ColorBrush
+## <a name="creating-a-spritevisual-and-colorbrush"></a>创建 SpriteVisual 和 ColorBrush
 
 使用 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 可随时根据需要轻松创建对象， 如 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 和 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)：
 
@@ -63,7 +70,7 @@ visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xF
 
 虽然该代码段只有几行代码，但它演示了一个强大的概念，即 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 对象，此类对象是效果系统的核心。 在创建颜色、图形和效果方面，**SpriteVisual** 具有出色的灵活性和互动性。 **SpriteVisual** 是单一视觉对象类型，该对象可以使用画笔填充 2D 矩形；在本示例中为纯色。
 
-## 剪裁可视对象
+## <a name="clipping-a-visual"></a>剪裁可视对象
 
 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 还可以用于创建 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 剪裁可视对象每一侧的示例：
 
@@ -78,7 +85,7 @@ _currentVisual.Clip = clip;
 
 注意：与 API 中的其他对象一样，[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 也可以将动画应用到其属性。
 
-## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪裁
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪裁
 
 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
 
@@ -88,7 +95,7 @@ child.RotationAngleInDegrees = 45.0f;
 
 Rotation 仅仅是 API 提供一组转换组件以供简化这些任务的示例之一。 此外，还包括 Offset、Scale、Orientation、RotationAxis 和 4x4 TransformMatrix。
 
-## 设置不透明度
+## <a name="setting-opacity"></a>设置不透明度
 
 使用浮点值可轻松设置视觉对象的不透明度。 例如，在该示例中所有正方形的不透明度一开始都为 .8：
 
@@ -98,7 +105,7 @@ visual.Opacity = 0.8f;
 
 与 Rotation 一样，[**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) 属性也进行动画处理。
 
-## 更改集合中视觉对象的位置
+## <a name="changing-the-visuals-position-in-the-collection"></a>更改集合中视觉对象的位置
 
 借助合成 API，可以采用多种方式在 [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) 中更改视觉对象的位置： 使用 [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove) 可将该对象放置在其他视觉对象的上方、使用 [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow) 可放置在下方、 使用 [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) 可移动到顶部，而使用 [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom) 可移动到底部。
 
@@ -108,7 +115,7 @@ visual.Opacity = 0.8f;
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
-## 完整示例
+## <a name="full-example"></a>完整示例
 
 在完整示例中，上述所有概念可一起用于构造和浏览 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 对象的一个简单树，以便可以在不使用 XAML、WWA 或 DirectX 的情况下更改不透明度。 此示例显示了如何创建和添加子 **Visual** 对象，以及如何更改属性。
 
@@ -504,10 +511,5 @@ namespace compositionvisual
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

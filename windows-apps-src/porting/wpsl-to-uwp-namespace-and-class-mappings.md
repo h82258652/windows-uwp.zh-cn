@@ -3,23 +3,30 @@ author: mcleblanc
 description: "本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。"
 title: "Windows Phone Silverlight 到 UWP 命名空间和类映射"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 751c0c0355e8f6c02248c6f6d61f8c62c709cd95
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="windows-phone-silverlight-to-uwp-namespace-and-class-mappings"></a>Windows Phone Silverlight 到 UWP 命名空间和类映射
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。 但是，通常不存在一对一的功能映射：任一平台都可能比其在命名空间或类中的对应平台具有更多或更少的功能。
 
 当你要在 UWP 项目中工作并重复使用 Windows Phone Silverlight 项目中的源代码时，映射表将提供帮助。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 在其他情况下，映射需要处理更多工作，而在极少数情况下需要更改方法。
 
-**如何使用该表：**首先，搜索你要使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，类就会在此处列出。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
+**如何使用该表：**首先，搜索你要使用的类名称。 只要进行映射比仅更改命名空间名称更复杂，类就会在此处列出。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
 
-**注意** Windows 10 支持的 .NET Framework 数目远远超过 Windows Phone 应用商店应用支持的数目。 例如，Windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、System.Net.NetworkInformation 和 System.Net.Sockets。
+**注意**  Windows 10 支持的 .NET Framework 数目远远超过 Windows Phone 应用商店应用支持的数目。 例如，Windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、System.Net.NetworkInformation 和 System.Net.Sockets。
 此外，在 Windows 10 应用中，你将受益于 .NET Native，这是一种先进的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
 
 | Windows Phone Silverlight | Windows 运行时 |
@@ -245,10 +252,5 @@ ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
  
 
 下一主题是[移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

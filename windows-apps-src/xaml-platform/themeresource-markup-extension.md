@@ -3,31 +3,38 @@ author: jwmsft
 description: "使用根据当前处于活动状态的主题检索不同资源的附加系统逻辑，通过计算对某个资源的引用来为任何 XAML 属性提供值。"
 title: "ThemeResource 标记扩展"
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
-ms.openlocfilehash: 803c62987c3a019fc576c6f1d0c343e042ba947b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9175c998aa0dffb861697c2206c4202193b9bd9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {ThemeResource} 标记扩展
+# <a name="themeresource-markup-extension"></a>{ThemeResource} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用根据当前处于活动状态的主题检索不同资源的附加系统逻辑，通过计算对某个资源的引用来为任何 XAML 属性提供值。 与 [{StaticResource} 标记扩展](staticresource-markup-extension.md)类似，资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，并且 **ThemeResource** 用法引用 **ResourceDictionary** 中的该资源的键。
 
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object property="{ThemeResource key}" .../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 术语 | 说明 |
 |------|-------------|
 | 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
  
-## 备注
+## <a name="remarks"></a>备注
 
 **ThemeResource** 是用于获取在 XAML 资源字典中的其他地方定义的 XAML 属性值的技术。 该标记扩展提供与 [{StaticResource} 标记扩展](staticresource-markup-extension.md)相同的基本用途。 与 {StaticResource} 标记扩展的行为差异在于 **ThemeResource** 引用可以根据系统当前在使用哪个主题动态使用不同的字典作为主要查找位置。
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 803c62987c3a019fc576c6f1d0c343e042ba947b
 
 **ThemeResource** 是一个标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“{”和“}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
-### 何时以及如何使用 {ThemeResource} 而不是 {StaticResource}
+### <a name="when-and-how-to-use-themeresource-rather-than-staticresource"></a>何时以及如何使用 {ThemeResource} 而不是 {StaticResource}
 
 **ThemeResource** 解析为资源字典中的项时所遵循的规则通常与 **StaticResource** 相同。 **ThemeResource** 查找可以扩展到 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 集合中引用的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 文件，但 **StaticResource** 也可以这样做。 区别是 **ThemeResource** 在运行时可以重新计算，而 **StaticResource** 不能。
 
@@ -64,17 +71,17 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 每当存在可能会因主题更改而更改的基础资源时，控件模板中的可视状态的 XAML 定义都应当使用 **ThemeResource** 引用。 系统主题更改通常也不会导致可视状态更改。 在这种情况下，资源需要使用 **ThemeResource** 引用，以便可以为仍然处于活动状态的可视状态重新计算值。 例如，如果你具有更改特定 UI 部件的画笔颜色及其属性之一的可视状态，并且该画笔颜色对于每个主题是不同的，则你应当使用 **ThemeResource** 引用在默认模板中提供该属性的值以及对该默认模板进行任何可视状态修改。
 
-可能会在一系列具有依赖关系的值中看到 **ThemeResource** 用法。 例如，由同时还是键控资源的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)值可能会使用 **ThemeResource** 引用。 但是，任何使用键控 **SolidColorBrush** 资源的 UI 属性也将使用 **ThemeResource** 引用，以便每个启用了动态值的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 类型属性在主题更改时会随之更改。
+可能会在一系列具有依赖关系的值中看到 **ThemeResource** 用法。 例如，由同时还是键控资源的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/hh673723) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242962)值可能会使用 **ThemeResource** 引用。 但是，任何使用键控 **SolidColorBrush** 资源的 UI 属性也将使用 **ThemeResource** 引用，以便每个启用了动态值的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 类型属性在主题更改时会随之更改。
 
-**注意** 在 Windows 8.1 XAML 中支持 `{ThemeResource}` 和主题切换时的运行时资源评估，但在面向 Windows 8 的应用的 XAML 中则不支持。
+**注意**  在 Windows 8.1 XAML 中支持 `{ThemeResource}` 和主题切换时的运行时资源评估，但在面向 Windows 8 的应用的 XAML 中则不支持。
 
-### 系统资源
+### <a name="system-resources"></a>系统资源
 
 某些主题资源引用系统资源值作为基础子值。 系统资源是不存在于任何 XAML 资源字典中的特殊资源值。 这些值依赖于 Windows 运行时 XAML 支持中的行为转发来自系统本身的值，并以 XAML 资源可以引用的形式表示它们。 例如，有一个名为“SystemColorButtonFaceColor”的系统资源，它提供了一种 RGB 颜色。 此颜色来自非仅特定于 Windows 运行时和 Windows 运行时应用的系统颜色和主题的外表。
 
 系统资源通常是某个高对比度主题的基础值。 用户可以控制其高对比度主题的颜色选择，并且用户使用同样非特定于 Windows 运行时应用的系统功能执行这些选择。 通过将系统资源引用为 **ThemeResource** 引用，Windows 运行时应用的高对比度主题的默认行为可以使用这些由用户控制的且由系统公开的特定于主题的值。 另外，这些引用现在已标记为当系统检测到运行时主题更改时进行重新计算。
 
-### 示例 {ThemeResource} 用法
+### <a name="an-example-themeresource-usage"></a>示例 {ThemeResource} 用法
 
 下面是摘自默认的 generic.xaml 和 themeresources.xaml 文件的某个示例 XAML，它展示了如何使用 **ThemeResource**。 我们将只查看一个模板（默认的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)）并了解如何将两个属性（[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)）声明为对主题更改做出响应。
 
@@ -135,27 +142,22 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 在此处，[**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 值是对某个系统资源的另一个 **ThemeResource** 引用。 如果你引用了某个系统资源，并且希望它发生更改以响应主题更改，则应当使用 **ThemeResource** 进行该引用。
 
-## Windows 8 行为
+## <a name="windows-8-behavior"></a>Windows 8 行为
 
 Windows 8 不支持 **ThemeResource** 标记扩展，该扩展从 Windows 8.1 开始提供支持。 此外，Windows 8 也不支持动态切换 Windows 运行时应用的主题相关资源。 必须重新启动应用，才能应用针对 XAML 模板和样式的主题更改。 这种用户体验并不理想，因此强烈建议应用重新编译和定位 Windows 8.1，使其能通过 **ThemeResource** 用法使用样式，并且能在用户执行相应操作时动态切换主题。 对于针对 Windows 8 编译的应用，如果它在 Windows 8.1 上运行，将继续使用 Windows 8 行为。
 
-## 设计时工具支持 **{ThemeResource}** 标记扩展
+## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>设计时工具支持 **{ThemeResource}** 标记扩展
 
 当你在 XAML 页面中使用 **{ThemeResource}** 标记扩展时，Microsoft Visual Studio 2013 可在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，键入“{ThemeResource”时会立即显示来自 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)的任何资源键。
 
 在资源键作为任何 **{ThemeResource}** 用法的一部分存在后，**转到定义** (F12) 功能可以解析该资源并向你显示设计时 generic.xaml、定义主题资源的位置。 由于多次定义了主题资源（每个主题），“转到定义”****会将你转到文件中找到的第一个定义（**Default** 的定义）。 如果你需要其他定义，可以在该文件中搜索键名并找到其他主题的定义。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 属性](x-key-attribute.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

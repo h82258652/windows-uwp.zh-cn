@@ -3,21 +3,28 @@ author: jwmsft
 description: "模板设置类"
 title: "模板设置类"
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 8a52535e54a321bab6b34b6a73c53222e88d2151
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 983158dfa258eeac6305a7aa000afba7311500d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 模板设置类
+# <a name="template-settings-classes"></a>模板设置类
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 我们假定你可以将控件添加到 UI，设置控件的属性以及连接事件处理程序。 有关将控件添加到应用的说明，请参阅[添加控件和处理事件](https://msdn.microsoft.com/library/windows/apps/mt228345)。 我们还假设你了解如何通过创建默认模板的副本并对其进行编辑来定义控件的自定义模板的基础知识。 有关详细信息，请参阅[快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
-## 适用于 **TemplateSettings** 类的方案
+## <a name="the-scenario-for-templatesettings-classes"></a>适用于 **TemplateSettings** 类的方案
 
 **TemplateSettings** 类提供一组可在为控件定义新控件模板时使用的属性。 这些属性具有诸如特定 UI 元素部件大小的像素度量之类的值。 这些值有时是来自于通常难以覆盖甚至访问的控件逻辑的经计算的值。 其中一些属性旨在作为控制部件的过渡和动画的 **From** **To** 值，因此也是成对出现的相关 **TemplateSettings** 属性。
 
@@ -34,7 +41,7 @@ ms.openlocfilehash: 8a52535e54a321bab6b34b6a73c53222e88d2151
 
 **TemplateSettings** 属性始终旨在用于 XAML 中，而不是用于代码。 它们是父控件的只读 **TemplateSettings** 属性的只读子属性。 对于高级自定义控件方案，在此方案中你要创建新的基于 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的类并且可以影响控件逻辑，请在控件上定义一个自定义 **TemplateSettings** 属性，以传送可能对任何正在为控件重新创建模板的人有用的信息。 作为该属性的只读值，请定义与你的控件相关的新 **TemplateSettings** 类，此类具有与模板度量、动画位置等相关的每个信息项的只读属性，并且向调用方提供使用你的控件逻辑初始化的该类的运行时实例。 **TemplateSettings** 类派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)，因此这些属性可以使用依赖属性系统进行更改属性的回调。 但是这些属性的依赖属性标识符将不公开为公共 API，因为 **TemplateSettings** 属性旨在对调用方只读。
 
-## 如何在控件模板中使用 **TemplateSettings**
+## <a name="how-to-use-templatesettings-in-a-control-template"></a>如何在控件模板中使用 **TemplateSettings**
 
 下面是来自初始默认 XAML 控件模板的示例。 此特定的示例来自 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的默认模板：
 
@@ -95,13 +102,8 @@ ms.openlocfilehash: 8a52535e54a321bab6b34b6a73c53222e88d2151
 **注意**  
 当你使用 **TemplateSettings** 值作为控件模板的一部分时，请确保你设置的是与值的类型匹配的属性。 如果不是，你可能需要为绑定创建一个值转换器，以便可以从 **TemplateSettings** 值的不同源类型转换为绑定的目标类型。 有关详细信息，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

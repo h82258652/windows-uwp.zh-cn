@@ -1,22 +1,29 @@
 ---
 author: mtoepke
 title: "从 OpenGL ES 2.0 移植到 Direct3D 11"
-description: "包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。"
+description: "包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。"
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, opengl, direct3d 11, 移植, 图形"
 translationtype: Human Translation
-ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 14ed2be84f295570dc95b3f1d28dfdd3720bada4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 从 OpenGL ES 2.0 移植到 Direct3D 11
+# <a name="port-from-opengl-es-20-to-direct3d-11"></a>从 OpenGL ES 2.0 移植到 Direct3D 11
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
 
-> **注意**：移植 OpenGL ES 2.0 项目的中间步骤是使用适用于 Windows 应用商店的 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。 有关 ANGLE 的详细信息，请转到[适用于 Windows 应用商店的 ANGLE Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)。
+> **注意**   移植 OpenGL ES 2.0 项目的中间步骤是使用适用于 Windows 应用商店的 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。 有关 ANGLE 的详细信息，请转到[适用于 Windows 应用商店的 ANGLE Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)。
 
  
 
@@ -60,10 +67,5 @@ ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。"
+description: "本文介绍如何访问和使用设备灯（如果存在）。 灯功能的管理独立于设备的相机和相机闪光灯功能。"
 title: "独立于相机的手电筒"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
-ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54251b965f94da70614bcd81f70b9af53cb6168d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 独立于相机的手电筒
+# <a name="camera-independent-flashlight"></a>独立于相机的手电筒
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何访问和使用设备灯（如果存在）。 灯功能的管理独立于设备的相机和相机闪光灯功能。 除了获取对灯的引用和调整其设置以外，本文还介绍了在不使用灯资源时如何正确地释放灯资源，以及在灯正由另一个应用使用时，如何检测灯的可用性更改。
 
-## 获取设备的默认灯
+## <a name="get-the-devices-default-lamp"></a>获取设备的默认灯
 
 若要获取设备的默认灯设备，请调用 [**Lamp.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/dn894327)。 灯 API 位于 [**Windows.Devices.Lights**](https://msdn.microsoft.com/library/windows/apps/dn894331) 命名空间中。 在尝试访问这些 API 之前，请务必为此命名空间添加一个 using 指令。
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 如果返回的对象是 **null**，则该设备不支持 **Lamp** API。 即使某些设备上实际存在灯，它们也可能不支持 **Lamp** API。
 
-## 使用灯选择器字符串获取特定灯
+## <a name="get-a-specific-lamp-using-the-lamp-selector-string"></a>使用灯选择器字符串获取特定灯
 
 某些设备可以具有多个灯。 若要获取设备上可用灯的列表，请通过调用 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328) 获取设备选择器字符串。 然后，此选择器字符串可以传递到 [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 中。 此方法用于枚举多种不同类型的设备，而选择器字符串可指示该方法仅返回灯设备。 从 **FindAllAsync** 返回的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) 对象是表示设备上的可用灯的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 对象的集合。 选择列表中的某个对象，然后将 [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) 属性传递给 [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326)，以获取对请求的灯的引用。 此示例使用 **System.Linq** 命名空间中的 **GetFirstOrDefault** 扩展方法选择 **DeviceInformation** 对象，其中，[**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 属性的值为 **Back**，可选择位于设备外壳背面的灯（如果存在）。
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 [!code-cs[GetLampWithSelectionString](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetLampWithSelectionString)]
 
-## 调整灯设置
+## <a name="adjust-lamp-settings"></a>调整灯设置
 
 拥有 [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) 类的实例后，请通过将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) 属性设置为 **true** 来打开灯。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 [!code-cs[LampSettingsColor](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsColor)]
 
-## 注册，以在灯可用性发生更改时获得通知
+## <a name="register-to-be-notified-if-the-lamp-availability-changes"></a>注册，以在灯可用性发生更改时获得通知
 
 灯访问权限将授予最近请求访问的应用。 因此，如果另一个应用已启动并请求使用你的应用当前在使用的灯资源，则在其他应用释放资源之前，你的应用将不再能够控制灯。 若要在灯的可用性发生更改时收到通知，请注册 [**Lamp.AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) 事件的处理程序。
 
@@ -64,23 +71,18 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 [!code-cs[AvailabilityChangedHandler](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChangedHandler)]
 
-## 适当地处理不处于使用状态的灯资源
+## <a name="properly-dispose-of-the-lamp-resource-when-not-in-use"></a>适当地处理不处于使用状态的灯资源
 
 当你不再使用灯时，你应该将其禁用，然后调用 [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) 来释放该资源并允许其他应用访问该灯。 如果你使用的是 C#，此属性将映射到 **Dispose** 方法。 如果你已注册 [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317)，则应当在处理灯资源时注销该处理程序。 代码中用于处理灯资源的正确位置取决于你的应用。 若要将灯访问限制到单个页面，请在 [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) 事件中释放该资源。
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 - [媒体播放](media-playback.md)
 
  
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "Windows.Media.Editing 命名空间中的 API 允许你快速开发应用，从而使用户从音频和视频源文件创建媒体合成。"
 title: "媒体合成和编辑"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
-ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d31cb88d1cea00bd291478b612b1759b1d6fd0b4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 媒体合成和编辑
+# <a name="media-compositions-and-editing"></a>媒体合成和编辑
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你介绍如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间中的 API 来快速开发应用，从而使用户从音频和视频源文件创建媒体合成。 框架的功能包括以编程方式同时追加多个视频剪辑、添加视频和图像覆盖、添加后台音频，以及同时应用音频和视频效果。 创建媒体合成后，可在平面媒体文件中进行呈现以供播放或共享，但合成还可通过磁盘进行序列化和反序列化，从而允许用户加载并修改之前创建的合成。 这一完整功能将在易于使用的 Windows 运行时接口中提供，与低级别 [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 相比，它可大大减少执行这些任务所需的代码数量和复杂性。
 
-## 创建新的媒体合成
+## <a name="create-a-new-media-composition"></a>创建新的媒体合成
 
 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 类是包含组成合成的所有媒体剪辑的容器，用于负责呈现最终合成、将合成加载并保存到光盘，以及提供合成的预览流，以便用户可以在 UI 中查看它。 若要在你的应用中使用 **MediaComposition**，需包括 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间以及提供你将需要的相关 API 的 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空间。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 [!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
 
-## 将媒体剪辑添加到合成
+## <a name="add-media-clips-to-a-composition"></a>将媒体剪辑添加到合成
 
 媒体合成通常包含一个或多个视频剪辑。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) 以允许用户选择某个视频文件。 选择文件后，通过调用 [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) 创建新的 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 对象以包含视频剪辑。 然后，将该剪辑添加到 **MediaComposition** 对象的 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 列表。
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   通过调用 [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) 并指定该剪辑的图面和持续时间，从 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 创建 **MediaClip**。
 
-## 在 MediaElement 中预览合成
+## <a name="preview-the-composition-in-a-mediaelement"></a>在 MediaElement 中预览合成
 
 若要使用户能够查看媒体合成，将 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 添加到定义 UI 的 XAML 文件中。
 
@@ -77,7 +84,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-## 将合成呈现到视频文件
+## <a name="render-the-composition-to-a-video-file"></a>将合成呈现到视频文件
 
 若要将媒体合成呈现到平面视频文件，以便在其他设备上进行共享和查看，你将需要使用 [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) 命名空间中的 API。 若要在异步操作过程中更新 UI，你还需要使用 [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) 命名空间中的 API。
 
@@ -89,7 +96,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 允许你设置转换代码操作的速度与剪裁相邻媒体剪辑的精度的优先级。 **Fast** 导致转换代码的速度更快，但剪裁精度较低，**Precise** 导致转换代码的速度较慢，但剪裁精度较高。
 
-## 剪裁视频剪辑
+## <a name="trim-a-video-clip"></a>剪裁视频剪辑
 
 通过设置 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 对象的 [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) 属性、[**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) 属性或同时设置两者，剪裁合成中视频剪辑的持续时间。
 
@@ -100,7 +107,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 -   通过 [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 属性，你可以在应用剪裁后知道媒体剪辑的持续时间。
 -   指定一个大于剪辑原始持续时间的剪裁值不会引发错误。 但是，如果合成仅包含单个剪辑，并且通过指定较大的剪裁值将其长度剪裁为零，则对 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的后续调用将返回 null，就像合成没有剪辑一样。
 
-## 将后台音轨添加到合成
+## <a name="add-a-background-audio-track-to-a-composition"></a>将后台音轨添加到合成
 
 若要将后台音轨添加到合成，请加载音频文件，然后通过调用工厂方法 [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561) 创建 [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) 对象。 然后，将 **BackgroundAudioTrack** 添加到合成的 [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) 属性。
 
@@ -116,7 +123,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   默认情况下，后台音轨在合成的开头开始播放。 如果存在多个后台音轨，将在合成的开头开始播放所有音轨。 若要使后台音轨在其他时间开始播放，请将 [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) 属性设置为所需的时间偏移。
 
-## 将覆盖添加到合成
+## <a name="add-an-overlay-to-a-composition"></a>将覆盖添加到合成
 
 覆盖允许你在合成中各个覆盖顶部堆栈多层视频。 合成可以包含多个覆盖层，每个覆盖层可以包含多个覆盖。 通过将 **MediaClip** 传入其构造函数中来创建 [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) 对象。 设置覆盖的位置和不透明度，然后创建新的 [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) 并将 **MediaOverlay** 添加到其 [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) 列表。 最后，将 **MediaOverlayLayer** 添加到合成的 [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) 列表。
 
@@ -126,19 +133,19 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   因为覆盖将在各个覆盖顶部堆栈，而不是按顺序播放，因此默认情况下，所有覆盖都将在合成的开头开始播放。 若要使覆盖在其他时间开始播放，请将 [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) 属性设置为所需的时间偏移。
 
-## 将效果添加到媒体剪辑
+## <a name="add-effects-to-a-media-clip"></a>将效果添加到媒体剪辑
 
 合成中的每个 **MediaClip** 都具有音频和视频效果列表，可向其中添加多个效果。 效果必须分别实现 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 以下示例使用当前 **MediaPlayerElement** 位置选择当前查看的 **MediaClip**，然后创建 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新实例并将其追加到媒体剪辑的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 列表。
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
-## 将合成保存到文件
+## <a name="save-a-composition-to-a-file"></a>将合成保存到文件
 
 媒体合成可序列化为要在以后修改的文件。 选取输出文件，然后调用 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 方法 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) 以保存合成。
 
 [!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
 
-## 从文件中加载合成
+## <a name="load-a-composition-from-a-file"></a>从文件中加载合成
 
 媒体合成可从文件中进行反序列化，以允许用户查看和修改合成。 选取合成文件，然后调用 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 方法 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) 以加载合成。
 
@@ -152,10 +159,5 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

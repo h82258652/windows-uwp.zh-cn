@@ -1,29 +1,36 @@
 ---
 author: mtoepke
 title: "交换链缩放和覆盖"
-description: "了解如何创建已缩放的交换链以提高在移动设备上的呈现速度，以及如何使用覆盖交换链（可用时）来提高视觉质量。"
+description: "了解如何创建已缩放的交换链以提高在移动设备上的渲染速度，以及如何使用覆盖交换链（如果可用）来提高视觉质量。"
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 交换链缩放, 覆盖, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 02088fce03c88b4166d49cd36754ac956f254199
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 交换链缩放和覆盖
+# <a name="swap-chain-scaling-and-overlays"></a>交换链缩放和覆盖
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何创建已缩放的交换链以提高在移动设备上的呈现速度，以及如何使用覆盖交换链（可用时）来提高视觉质量。
 
-## DirectX 11.2 中的交换链
+## <a name="swap-chains-in-directx-112"></a>DirectX 11.2 中的交换链
 
 
 Direct3D 11.2 使你可以使用从非原生（已降低）分辨率放大的交换链创建通用 Windows 平台 (UWP) 应用，从而实现更快速的填充率。 Direct3D 11.2 中还引入了用于通过硬件覆盖进行呈现的 API，这样你就可以在另一个交换链中使用原生分辨率显示 UI。 它允许你的游戏能够完全使用原始分辨率来绘制 UI，同时还能维持较高的帧速率，从而能够充分发挥移动设备和高 DPI 屏幕（如 3840 X 2160）的优势。 本文说明了如何使用覆盖交换链。
 
 Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的新功能。 请参阅[利用 DXGI 1.3 交换链减少延迟](reduce-latency-with-dxgi-1-3-swap-chains.md)。
 
-## 使用交换链缩放
+## <a name="use-swap-chain-scaling"></a>使用交换链缩放
 
 
 当你的游戏在下层硬件上或在已经为节能进行了优化的硬件上运行时，使用比屏幕自身能够提供的分辨率更低的分辨率渲染实时游戏内容有很多好处。 为此，用于渲染游戏内容的交换链必须小于原始分辨率，否则必须使用交换链的一个子区域。
@@ -113,7 +120,7 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
 
 4.  如果正在使用 Direct2D，需要对旋转转换进行调整以补偿源区域。
 
-## 为 UI 元素创建一个硬件覆盖交换链。
+## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>为 UI 元素创建一个硬件覆盖交换链。
 
 
 使用交换链缩放时，固有的一点不足是 UI 也随之缩小，可能会导致 UI 模糊和难于使用。 在硬件支持覆盖交换链的设备上，通过在与实时游戏内容不同的交换链中使用原生分辨率来呈现 UI，完全解决了这个问题。 请注意，此技术只适用于 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 交换链，不能用于 XAML 互操作。
@@ -325,10 +332,5 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

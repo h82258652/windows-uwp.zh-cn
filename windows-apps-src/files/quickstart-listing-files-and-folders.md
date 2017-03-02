@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "枚举和查询文件和文件夹"
 description: "访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: def5e4e75f4208eb91f129160807728e57322064
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
@@ -18,7 +25,7 @@ ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 有关如何存储通用 Windows 平台应用数据的详细指南，请参阅 [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) 类。
 
-**注意** 另请参阅[文件夹枚举示例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
+**注意**  另请参阅[文件夹枚举示例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
 
  
 ## <a name="prerequisites"></a>先决条件
@@ -33,7 +40,7 @@ ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ## <a name="enumerate-files-and-folders-in-a-location"></a>枚举某个位置中的文件和文件夹
 
-> **注意** 记得声明 **picturesLibrary** 功能。
+> **注意**  请记住，要声明 **picturesLibrary** 功能。
 
 在此示例中，我们首先使用 [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) 方法获取 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根文件夹（而不是在子文件夹）中的所有文件，并列出每个文件的名称。 接下来，我们使用 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) 方法获取 **PicturesLibrary** 中的所有子文件夹并列出每个子文件夹的名称。
 
@@ -138,7 +145,7 @@ ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 > ```
 
 
-> **注意** 在 C# 或 Visual Basic 中，请记得在使用 **await** 运算符的任何方法的方法声明中放入 **async** 关键字。
+> **注意**  在 C# 或 Visual Basic 中，请记得在使用 **await** 运算符的任何方法的方法声明中放入 **async** 关键字。
  
 
 或者，你可以使用 [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) 方法获取某个特定位置中的所有项（文件和子文件夹）。 以下示例使用 **GetItemsAsync** 方法获取 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根文件夹（而不是在子文件夹）中的所有文件和子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
@@ -323,9 +330,4 @@ July ‎2015 (2)
    MyImage1.png
    MyImage2.png
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

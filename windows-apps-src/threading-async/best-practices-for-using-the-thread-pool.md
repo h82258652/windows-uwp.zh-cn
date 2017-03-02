@@ -3,19 +3,26 @@ author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "使用线程池的最佳做法"
 description: "本主题介绍了使用线程池的最佳做法。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 线程, 线程池"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3b45da6a11bab926812682c209207bbbb436bf1
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用线程池的最佳做法
+# <a name="best-practices-for-using-the-thread-pool"></a>使用线程池的最佳做法
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主题介绍了使用线程池的最佳做法。
 
-## 应做事项
+## <a name="dos"></a>应做事项
 
 
 -   使用线程池在应用中执行并行工作。
@@ -34,7 +41,7 @@ ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 -   如果无法忍受资源分配在使用时失败，请使用预分配的工作项。
 
-## 禁止事项
+## <a name="donts"></a>禁止事项
 
 
 -   不要创建 *period* 值为&lt;1 毫秒（包括 0）的定期计时器。 这样将使工作项像单次计时器一样操作。
@@ -47,16 +54,10 @@ ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 -   不要在未重新初始化的情况下尝试运行预分配的工作项多次。 [创建定期工作项](create-a-periodic-work-item.md)
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [创建定期工作项](create-a-periodic-work-item.md)
 * [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

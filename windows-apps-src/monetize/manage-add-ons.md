@@ -3,17 +3,26 @@ author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: "在 Windows 应用商店提交 API 中使用这些方法，管理已注册到 Windows 开发人员中心帐户的应用的加载项。"
 title: "使用 Windows 应用商店提交 API 管理加载项"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项, 应用内产品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 058d11938dd6efc961da58a9d937be76beac5978
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 55a6b548246e801c9fcc0392265263123f24de00
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="manage-add-ons-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 管理加载项
 
-在 Windows 应用商店提交 API 中使用以下方法，管理应用的加载项（也称为应用内产品或 IAP）。 有关 Windows 应用商店提交 API 的介绍，请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+在 Windows 应用商店提交 API 中使用以下方法，管理应用的加载项（也称为应用内产品或 IAP）。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 这些方法仅可用于获取、创建或删除加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
+>**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
+
+这些方法仅可用于获取、创建或删除加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
 
 <table>
 <colgroup>
@@ -157,9 +166,4 @@ ms.openlocfilehash: 058d11938dd6efc961da58a9d937be76beac5978
 * [获取加载项](get-an-add-on.md)
 * [创建加载项](create-an-add-on.md)
 * [删除加载项](delete-an-add-on.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -5,12 +5,19 @@ title: "按功能列出控件"
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e665814f2d65affd89973879332ba0a2732e1509
+ms.lasthandoff: 02/07/2017
 
 ---
-# 按功能列出控件
+# <a name="controls-by-function"></a>按功能列出控件
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,14 +27,14 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 下面是按功能列出的可在应用中使用的常见 XAML 控件列表。 
 
-## 应用栏和命令
+## <a name="appbars-and-commands"></a>应用栏和命令
 
-### 应用栏
+### <a name="app-bar"></a>应用栏
 用于显示特定于应用程序的命令的工具栏。 请参阅“命令栏”。
 
 参考：[AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx) 
 
-### 应用栏按钮
+### <a name="app-bar-button"></a>应用栏按钮
 使用应用栏样式显示命令的按钮。
 
 ![应用栏按钮图标](images/controls/app-bar-buttons.png) 
@@ -38,21 +45,21 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-### 应用栏分隔符
+### <a name="app-bar-separator"></a>应用栏分隔符
 在视觉上分隔命令栏中的命令组。
 
 参考：[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
 示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-### 应用栏切换按钮
+### <a name="app-bar-toggle-button"></a>应用栏切换按钮
 用于在命令栏中切换命令的按钮。
 
 参考：[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
 示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-### 命令栏
+### <a name="command-bar"></a>命令栏
 一个特殊的应用栏，用于调整应用栏按钮元素的大小。
 
 ![命令栏控件](images/command-bar-compact.png)
@@ -70,9 +77,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-## 按钮
+## <a name="buttons"></a>按钮
 
-### 按钮
+### <a name="button"></a>按钮
 响应用户输入和引发 **Click** 事件的控件。
 
 ![标准按钮](images/controls/button.png)
@@ -86,10 +93,10 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[按钮控件指南](buttons.md) 
 
-### 超链接
+### <a name="hyperlink"></a>超链接
 请参阅“超链接”按钮。
 
-### “超链接”按钮
+### <a name="hyperlink-button"></a>“超链接”按钮
 显示为标记文本并在浏览器中打开指定 URI 的按钮。
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
@@ -103,7 +110,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[超链接控件指南](hyperlinks.md)
 
-### 重复按钮
+### <a name="repeat-button"></a>重复按钮
 从按下到释放为止重复引发 **Click** 事件的按钮。 
 
 ![重复按钮控件](images/controls/repeat-button.png) 
@@ -117,9 +124,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[按钮控件指南](buttons.md) 
 
-## 集合/数据控件
+## <a name="collectiondata-controls"></a>集合/数据控件
 
-### 翻转视图
+### <a name="flip-view"></a>翻转视图
 显示用户可逐一浏览的项目集合的控件。
 
 ```xaml
@@ -134,7 +141,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[翻转视图控件指南](flipview.md) 
 
-### 网格视图
+### <a name="grid-view"></a>网格视图
 显示可在行和列中水平滚动的项目集合的控件。
 
 ```xaml
@@ -150,7 +157,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[ListView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 
-### 项目控件
+### <a name="items-control"></a>项目控件
 显示数据模板所指定 UI 中项目集合的控件。 
 
 ```xaml
@@ -159,7 +166,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 
 
-### 列表视图
+### <a name="list-view"></a>列表视图
 显示可在列表中垂直滚动的项目集合的控件。
 
 ```xaml
@@ -175,9 +182,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[ListView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 
-## 日期和时间控件
+## <a name="date-and-time-controls"></a>日期和时间控件
 
-### 日历日期选取器
+### <a name="calendar-date-picker"></a>日历日期选取器
 允许用户使用下拉日历显示选择日期的控件。
 
 ![日历视图打开的日历日期选取器](images/controls/calendar-date-picker-open.png)
@@ -190,7 +197,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md)
  
-### 日历视图
+### <a name="calendar-view"></a>日历视图
 允许用户选择单个或多个日期的可配置日历屏幕。
 
 ```xaml
@@ -201,7 +208,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md) 
 
-### 日期选取器
+### <a name="date-picker"></a>日期选取器
 使用户可以选择日期的控件。
 
 ![日期选取器控件](images/controls/date-picker.png)
@@ -214,7 +221,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md)
  
-### 时间选取器
+### <a name="time-picker"></a>时间选取器
 使用户可以设置时间值的控件。
 
 ![TimePicker 控件](images/controls/time-picker.png) 
@@ -227,12 +234,12 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[日历、日期和时间控件](date-and-time.md)
 
-## 浮出控件
+## <a name="flyouts"></a>浮出控件
 
-### 上下文菜单
+### <a name="context-menu"></a>上下文菜单
 请参阅菜单浮出控件和弹出菜单。
 
-### 浮出控件
+### <a name="flyout"></a>浮出控件
 显示要求用户交互的消息。 （与对话框不同，浮出控件不创建一个单独的窗口，而且不阻止其他用户交互。）
 
 ![浮出控件控制](images/controls/flyout.png)
@@ -250,7 +257,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[上下文菜单和对话框](dialogs-popups-menus.md) 
 
-### 菜单浮出控件
+### <a name="menu-flyout"></a>菜单浮出控件
 临时显示与用户当前正在执行的操作相关的命令或选项的列表。
 
 ![菜单浮出控件控制](images/controls/menu-flyout.png) 
@@ -272,14 +279,14 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 上下文菜单示例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
-### 弹出菜单
+### <a name="popup-menu"></a>弹出菜单
 一个自定义菜单，用于显示你所指定的命令。
 
 参考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
 设计和操作方法：[上下文菜单和对话框](dialogs-popups-menus.md) 
 
-### 工具提示
+### <a name="tooltip"></a>工具提示
 显示元素信息的弹出窗口。 
  
 ![工具提示控件](images/controls/tool-tip.png)
@@ -293,9 +300,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作指南：工具提示指南 
 
-## 图像
+## <a name="images"></a>图像
 
-### 图像
+### <a name="image"></a>图像
 显示图像的控件。
 
 ```xaml
@@ -308,9 +315,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 图像示例](http://go.microsoft.com/fwlink/p/?linkid=226867)
 
-## 图形和墨迹
+## <a name="graphics-and-ink"></a>图形和墨迹
 
-### InkCanvas
+### <a name="inkcanvas"></a>InkCanvas
 接收和显示墨迹笔划的控件。
 
 ```xaml
@@ -319,7 +326,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
 
-### 形状
+### <a name="shapes"></a>形状
 可以显示的各种保留模式图形对象，例如椭圆、矩形、直线、贝塞尔曲线等。
 
 ![多边形](images/controls/shapes-polygon.png) 
@@ -337,9 +344,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[基于 XAML 矢量的绘图示例](http://go.microsoft.com/fwlink/p/?linkid=226866)
 
-## 布局控件
+## <a name="layout-controls"></a>布局控件
 
-### 边框
+### <a name="border"></a>边框
 绘制另一对象周围的边框、背景或二者的容器控件。
 
 ![2 个矩形周围的边框](images/controls/border.png) 
@@ -357,7 +364,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
 
-### 画布
+### <a name="canvas"></a>画布
 一个布局面板，支持相对于画布左上角的子元素的绝对位置。
  
 ![画布布局面板](images/controls/canvas.png) 
@@ -373,7 +380,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
-### 网格
+### <a name="grid"></a>网格
 一个布局面板，支持以行和列方式排列子元素。
 
 ![网格布局面板](images/controls/grid.png) 
@@ -397,10 +404,10 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
  
-### 平移滚动查看器
+### <a name="panning-scroll-viewer"></a>平移滚动查看器
 请参阅滚动查看器。
 
-### RelativePanel
+### <a name="relativepanel"></a>RelativePanel
 允许你放置子对象并使其相互对齐或与父面板对齐的面板。
 
 ![相对面板布局面板](images/controls/relative-panel.png) 
@@ -414,12 +421,12 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
 
-### 滚动条
+### <a name="scroll-bar"></a>滚动条
 请参阅“滚动查看器”。 （ScrollBar 是 ScrollViewer 的元素。 你通常不会将其用作独立控件。）
 
 参考：[ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
-### 滚动查看器
+### <a name="scroll-viewer"></a>滚动查看器
 可让用户平移和缩放其内容的容器控件。
 
 ```xaml
@@ -437,7 +444,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 滚动、平移和缩放示例](http://go.microsoft.com/fwlink/p/?linkid=238577)
 
-### 堆栈面板
+### <a name="stack-panel"></a>堆栈面板
 可以将子元素按水平或垂直方向排列到单行中的布局面板。
 
 ![堆叠面板布局控件](images/controls/stack-panel.png) 
@@ -453,7 +460,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)
  
-### VariableSizedWrapGrid
+### <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 一个布局面板，支持以行和列方式排列子元素。 每个子元素都可以跨越多行和多列。
 
 ![大小可变的包围式网格布局面板](images/controls/variable-sized-wrap-grid.png) 
@@ -473,7 +480,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)
 
-### Viewbox
+### <a name="viewbox"></a>Viewbox
 可以将其内容缩放至指定大小的容器控件。
 
 ![Viewbox 控件](images/controls/view-box.png) 
@@ -492,15 +499,15 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 参考：[Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)
  
-### 缩放滚动查看器
+### <a name="zooming-scroll-viewer"></a>缩放滚动查看器
 请参阅滚动查看器。
 
-## 媒体控件
+## <a name="media-controls"></a>媒体控件
 
-### 音频
+### <a name="audio"></a>音频
 请参阅媒体元素。
 
-### 媒体元素
+### <a name="media-element"></a>媒体元素
 可播放音频和视频内容的控件。
 
 ```xaml
@@ -511,7 +518,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[媒体元素控件指南](media-playback.md)
 
-### MediaTransportControls
+### <a name="mediatransportcontrols"></a>MediaTransportControls
 可为 MediaElement 提供播放控件的控件。
 
 ![具有传输控件的媒体元素](images/controls/media-transport-controls.png) 
@@ -526,12 +533,12 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)
 
-### 视频
+### <a name="video"></a>视频
 请参阅媒体元素。
 
-## 导航
+## <a name="navigation"></a>导航
 
-### Hub
+### <a name="hub"></a>Hub
 一个容器控件，使用户可以查看并导航至内容的不同部分。
 
 ```xaml
@@ -551,7 +558,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 中心控件示例](http://go.microsoft.com/fwlink/p/?LinkID=309828)
 
-### Pivot
+### <a name="pivot"></a>Pivot
 全屏容器和导航模型还提供了一种在不同透视表（视图或筛选器）之间移动的快速方式，它们通常位于相同的数据集中。
 
 可以将透视控件的样式设置为具有“选项卡”布局。
@@ -562,7 +569,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[透视表示例](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
 
-### 语义式缩放
+### <a name="semantic-zoom"></a>语义式缩放
 让用户在项目集合的两个视图之间缩放的容器控件。
 
 ```xaml
@@ -582,7 +589,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML GridView 组和 SemanticZoom 示例](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
-### SplitView
+### <a name="splitview"></a>SplitView
 具有两个视图的容器控件；一个视图用于主内容，另一个视图通常用于导航菜单。
 
 ![拆分视图控件](images/controls/split-view.png) 
@@ -602,7 +609,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[拆分视图控件指南](split-view.md)
 
-### Web 视图
+### <a name="web-view"></a>Web 视图
 可托管 Web 内容的容器控件。
 
 ```xaml
@@ -616,9 +623,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML WebView 控件示例](http://go.microsoft.com/fwlink/p/?linkid=238582)
 
-## 进度控件
+## <a name="progress-controls"></a>进度控件
 
-### 进度条
+### <a name="progress-bar"></a>进度条
 通过显示一个长条来指示进度的控件。
 
 ![进度条控件](images/controls/progress-bar-determinate.png)
@@ -641,7 +648,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[进度控件指南](progress-controls.md) 
 
-### 进度环
+### <a name="progress-ring"></a>进度环
 通过显示一个 环来指示不确定进度的控件。 
 
 ![进度环控件](images/controls/progress-ring.png) 
@@ -654,9 +661,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[进度控件指南](progress-controls.md) 
 
-## 文本控件
+## <a name="text-controls"></a>文本控件
 
-### 自动建议框
+### <a name="auto-suggest-box"></a>自动建议框
 提供建议文本作为用户键入的文本输入框。
 
 ![用于搜索的自动建议框](images/controls/auto-suggest-box.png) 
@@ -667,10 +674,10 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[AutoSuggestBox 迁移示例](http://go.microsoft.com/fwlink/p/?LinkId=619996)
 
-### 多行文本框
+### <a name="multi-line-text-box"></a>多行文本框
 请参阅文本框。
 
-### 密码框
+### <a name="password-box"></a>密码框
 用于输入密码的一种控件。
 
  ![密码框](images/controls/password-box.png)
@@ -686,7 +693,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?linkid=251417)
 
-### 富编辑框
+### <a name="rich-edit-box"></a>富编辑框
 使用户可以编辑带有格式化文本、超链接和图像等内容的富文本文档的控件。
 
 ```xaml
@@ -699,16 +706,16 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-### 搜索框
+### <a name="search-box"></a>搜索框
 请参阅自动建议框
 
-### 单行文本框
+### <a name="single-line-text-box"></a>单行文本框
 请参阅文本框。
 
-### 静态文本/段落
+### <a name="static-textparagraph"></a>静态文本/段落
 请参阅文本块。
 
-### 文本块
+### <a name="text-block"></a>文本块
 显示文本的控件。
 
 ![文本块控件](images/controls/text-block.png) 
@@ -723,7 +730,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-### 文本框
+### <a name="text-box"></a>文本框
 单行或多行纯文本字段。
 
 ![文本框控件](images/controls/text-box.png) 
@@ -739,9 +746,9 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-## 选择控件
+## <a name="selection-controls"></a>选择控件
 
-### 复选框
+### <a name="check-box"></a>复选框
 用户可以选中或清除的一种控件。
 
 ![3 种状态的复选框](images/templates-checkbox-states-default.png)
@@ -755,7 +762,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[复选框控件指南](checkbox.md) 
 
-### 组合框
+### <a name="combo-box"></a>组合框
 用户可以从中进行选择的项目下拉列表。
 
 ![开放式组合框](images/controls/combo-box-open.png) 
@@ -773,7 +780,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[列表](lists.md) 
 
-### 列表框
+### <a name="list-box"></a>列表框
 显示用户可以从中进行选择的嵌入式项列表的控件。 
 
 ![列表框控件](images/controls/list-box.png)
@@ -791,7 +798,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[列表](lists.md) 
 
-### 单选按钮
+### <a name="radio-button"></a>单选按钮
 允许用户从一组选项中选择单个选项的控件。 将单选按钮分组到一起时，它们互相排斥。
 
 ![单选按钮控件](images/controls/radio-button.png)
@@ -809,7 +816,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[单选按钮控件指南](radio-button.md)
  
-### 滑块
+### <a name="slider"></a>滑块
 一种可让用户通过沿轨迹移动 Thumb 控件从一组值中进行选择的控件。
 
 ![滑块控件](images/controls/slider.png)
@@ -822,7 +829,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[滑块控件指南](slider.md) 
 
-### 切换按钮
+### <a name="toggle-button"></a>切换按钮
 可以在 2 种状态之间进行切换的一种按钮。
 
 ```xaml
@@ -834,7 +841,7 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 
 设计和操作方法：[切换控件指南](toggles.md) 
 
-### 切换开关
+### <a name="toggle-switch"></a>切换开关
 可以在 2 种状态之间进行切换的一种开关。
 
 ![切换开关控件](images/controls/toggle-switch.png) 
@@ -848,9 +855,4 @@ ms.openlocfilehash: 3310a661fe709c4b818630f6b6a49b90b99c837d
 参考：[ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
 设计和操作方法：[切换控件指南](toggles.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

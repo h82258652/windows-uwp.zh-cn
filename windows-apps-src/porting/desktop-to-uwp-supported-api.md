@@ -3,12 +3,20 @@ author: awkoren
 Description: "本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。"
 Search.Product: eADQiWindows 10XVcnh
 title: "已转换的桌面应用支持的 UWP API"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 translationtype: Human Translation
-ms.sourcegitcommit: 3751b16837a1e12f68954b2dec7dfaf0fb8554b6
-ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
+ms.lasthandoff: 02/08/2017
 
 ---
-# 使用桌面桥转换的应用支持的 UWP API
+# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>使用桌面桥转换的应用支持的 UWP API
 
 已转换的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用。 本文列出了已转换的应用可以使用的可用类。 
 
@@ -38,14 +46,14 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 
 已转换的应用不支持某些可用于完整桌面应用程序的 UWP API。 如果你的桌面应用程序在转换之前使用了 UWP API，应验证这些 API 是否仍受支持。 有关详细信息，请参阅[适用于桌面应用的 Windows 运行时 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
 
-## API 列表
+## <a name="list-of-apis"></a>API 列表
 
 下面是在已转换的应用中受支持的 UWP API 的完整列表。 你可以查看[在已转换的应用中最新受支持的 API](#new) 或[在已转换的应用和桌面应用程序中均受支持的 API](#both)。 
 
-有关如何使用 WinRT API 的示例，请参阅 GitHub 上的[到 UWP 的桌面应用桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。
+有关如何使用 WinRT API 的示例，请参阅 GitHub 上的 [UWP 的桌面应用桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。 你还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)，了解应用生成。 
 
 <span id="new" />
-### 在新转换的应用中受支持的 API
+### <a name="apis-supported-in-newly-converted-apps"></a>在新转换的应用中受支持的 API
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -371,7 +379,7 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### APIs supported in both converted apps and desktop applications
+### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>APIs supported in both converted apps and desktop applications
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -1037,9 +1045,4 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

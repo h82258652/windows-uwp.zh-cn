@@ -2,26 +2,34 @@
 author: mukin
 Description: "本教程式文章将向读者介绍创建基本应用程序用户界面的步骤。 文章将说明并演示网格和 StackPanel 的使用，这是两个最常见的 XAML 元素。"
 title: "通过使用网格和 StackPanel 创建一个简单的天气应用"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 translationtype: Human Translation
-ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
-ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 87947b5bd1c1db008a21828c3940475c2b53fd6d
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>通过使用网格和 StackPanel 创建一个简单的天气应用
 
-使用 XAML 并使用**网格**和 **StackPanel** 元素创建一个简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
+使用 XAML 为使用**网格**和 **StackPanel** 元素的简单的天气应用创建布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
 ## <a name="prerequisites"></a>先决条件
 - Windows 10 和 Microsoft Visual Studio 2015。 [单击此处了解如何设置 Visual Studio](../get-started/get-set-up.md)。
 - 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还没有，[请单击此处以了解如何创建一个“Hellow World”应用](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="step-1-create-a-blank-app"></a>步骤 1：创建空白应用
-1. 在 Visual Studio 菜单中，选择“文件” > “新建项目”。
-2. 在“新建项目”对话框的左侧窗格中，依次选择“Visual C#” > “Windows” > “通用”，或者依次选择“Visual C++” > “Windows” > “通用”。
-3. 在中心窗格中，选择“空白应用”。
-4. 在“名称”框中，输入“WeatherPanel”并选择“确定”。
-5. 若要运行程序，请从菜单中依次选择“调试” > “开始调试”，或选择 F5。
+1. 在 Visual Studio 菜单中，选择**文件** > **新建项目**。
+2. 在**新建项目**对话框的左侧窗格中，依次选择 **Visual C#** > **Windows** > **通用**，或者依次选择 **Visual C++** > **Windows** > **通用**。
+3. 在中心窗格中，选择**空白应用**。
+4. 在**名称**框中，输入 **WeatherPanel** 并选择**确定**。
+5. 若要运行程序，请从菜单中依次选择**调试** > **开始调试**，或选择 F5。
 
 ## <a name="step-2-define-a-grid"></a>步骤 2：定义网格
 在 XAML 中，**网格**由一系列行和列组成。 通过指定**网格**内某个元素的行和列，你可以在用户界面内放置和间隔其他元素。 使用 **RowDefinition** 和 **ColumnDefinition** 元素定义行和列。
@@ -41,7 +49,7 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 </Grid>
 ```
 
-新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的“宽度”为“3\ *”，第二列为“5\ *”，除以比率为 3:5 的两列之间的水平空间。 与此方式相同，两行的“高度”分别为“3\ *”和“\ *”，因此相对于第二行，**网格**为第一行分配三倍空间（“\ *”等同于“1 *”）。 即使在调整窗口大小或更改设备时，都会保留这些比率。
+新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的**宽度**为“3\ *”，第二列为“5\ *”，除以比率为 3:5 的两列之间的水平空间。 与此方式相同，两行的**高度**分别为“3\ *”和“\ *”，因此相对于第二行，**网格**为第一行分配三倍空间（“\ *”等同于“1 *”）。 即使在调整窗口大小或更改设备时，都会保留这些比率。
 
 若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 
@@ -95,7 +103,7 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 
 ![局部多云](images/partially-cloudy.PNG)
 
-在“解决方案资源管理器”中，右键单击“资源”文件夹，然后选择“添加” -> “现有项...”，在弹出的浏览器中查找 partially-cloudy.png，选择它，然后单击“添加”。
+在**解决方案资源管理器**中，右键单击**资源**文件夹，然后选择**添加** -> **现有项...**，在弹出的浏览器中查找 partially-cloudy.png，选择它，然后单击**添加**。
 
 接下来，在 **MainPage.xaml** 中，添加第 4 步中 StackPanels 下的以下**映像**元素。
 
@@ -115,9 +123,4 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 有关设计 UWP 应用布局的简介，请参阅 [UWP 应用设计简介](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

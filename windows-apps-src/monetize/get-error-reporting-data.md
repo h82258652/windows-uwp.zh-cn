@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。"
 title: "获取错误报告数据"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 错误"
 translationtype: Human Translation
-ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
-ms.openlocfilehash: 800405bcac9b05af0e0295c88c27cbe3d2387947
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0d99318a2a8deba78503163c76a425c132e7de01
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-error-reporting-data"></a>获取错误报告数据
 
-在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取此信息。
+使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取此信息。
 
 通过使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)和[获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)方法，可以检索其他错误信息。
 
@@ -169,9 +176,4 @@ Authorization: Bearer <your access token>
 * [获取加载项购置](get-in-app-acquisitions.md)
 * [获取应用评分](get-app-ratings.md)
 * [获取应用评价](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

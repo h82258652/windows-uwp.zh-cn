@@ -3,13 +3,20 @@ author: jnHs
 Description: "当你提交应用时，你可以选择使用“认证说明”页面向认证测试人员提供额外信息。 此信息有助于确保正确测试你的应用。"
 title: "认证说明"
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a110879f6ff92b3e1e41964ff6acea6b7cb5ec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 认证说明
+# <a name="notes-for-certification"></a>认证说明
 
 
 当你提交应用时，你可以选择使用“认证说明”****页面向认证测试人员提供额外信息。 此信息有助于确保正确测试你的应用。
@@ -44,10 +51,5 @@ ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

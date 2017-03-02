@@ -1,18 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。"
+description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的评价数据。"
 title: "获取应用评价"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 评价"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-app-reviews"></a>获取应用评价
 
 
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评价报告](../publish/reviews-report.md)中获取此信息。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的评价数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评价报告](../publish/reviews-report.md)中获取此信息。
+
+在检索评价后，可使用 Windows 应用商店评价 API 中的[获取应用评价的回复信息](get-response-info-for-app-reviews.md)和[提交对应用评价的回复](submit-responses-to-app-reviews.md)方法以可编程方式回复评价。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -82,7 +91,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 | notHelpfulCount  | eq, ne  | 评价标记为无用的次数。  |
 | responseDate  | eq, ne  | 回复的提交时间。  |
 | responseText  | eq, ne, contains  | 回复的文本内容。  |
-
+| id  | eq, ne  | 评价的 ID（这是一个 GUID）。        |
 
 <span/> 
 
@@ -139,12 +148,13 @@ Authorization: Bearer <your access token>
 | notHelpfulCount        | 数字  | 评价标记为无用的次数。               |
 | responseDate           | 字符串  | 回复的提交时间。                 |
 | responseText           | 字符串  | 回复的文本内容。        |
+| id                     | 字符串  | 评价的 ID（这是一个 GUID）。 你可以在[获取应用评价的回复信息](get-response-info-for-app-reviews.md)和[提交对应用评价的回复](submit-responses-to-app-reviews.md)方法中使用此 ID。       |
 
 <span/> 
 
-### <a name="response-example"></a>响应示例
+### <a name="response-example"></a>回复示例
 
-以下示例举例说明此请求的 JSON 响应正文。
+以下示例展示了此请求的 JSON 回复正文。
 
 ```json
 {
@@ -171,7 +181,8 @@ Authorization: Bearer <your access token>
       "helpfulCount": 0,
       "notHelpfulCount": 0,
       "responseDate": "2015-08-07T01:50:22.9874488Z",
-      "responseText": "1"
+      "responseText": "1",
+      "id": "6be543ff-1c9c-4534-aced-af8b4fbe0316"
     }
   ],
   "@nextLink": null,
@@ -183,13 +194,10 @@ Authorization: Bearer <your access token>
 
 * [评价报告](../publish/reviews-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
+* [获取应用评价的回复信息](get-response-info-for-app-reviews.md)
+* [提交对应用评价的回复](submit-responses-to-app-reviews.md)
 * [获取应用购置](get-app-acquisitions.md)
 * [获取加载项购置](get-in-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用评分](get-app-ratings.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

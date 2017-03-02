@@ -3,17 +3,24 @@ author: mcleblanc
 title: "选择编程语言"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "选择编程语言"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 入门：选择编程语言
+# <a name="getting-started-choosing-a-programming-language"></a>入门：选择编程语言
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 选择编程语言
+## <a name="choosing-a-programming-language"></a>选择编程语言
 
 在执行下一步操作之前，你应知道在开发通用 Windows 平台 (UWP) 应用时可从中选择的编程语言。 尽管本文中的演练使用的是 C#，但你可以使用一种或多种编程语言开发 UWP 应用（请参阅[语言、工具和框架](https://msdn.microsoft.com/library/windows/apps/dn465799)）。
 
@@ -27,13 +34,13 @@ ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 -   [使用 C# 或 Visual Basic 创建你的第一个 Windows Phone 应用商店应用](http://go.microsoft.com/fwlink/p/?LinkID=397877)
 -   [Windows Phone 8.1 上的 WinJS](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**注意** 对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准本质上不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解**“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
+**注意**  对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准在本地不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解**“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
 -   [角度](https://code.google.com/p/angleproject/)
 -   [使用 DirectX 创建你的首个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [使用 DirectX 的 Windows 应用商店应用示例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 在哪里？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## 尝试 C#
+## <a name="giving-c-a-go"></a>尝试 C#
 
 作为 iOS 开发人员，你已习惯使用 Objective-C 和 Swift。 C# 是与 Objective-C 和 Swift 最相似的 Microsoft 编程语言。 对于大多数开发人员和大多数应用而言，我们认为 C# 是可供学习和使用的最容易、最快速的语言，因此本文的信息和演练将以该语言为主。 若要了解有关 C# 的详细信息，请参阅以下内容：
 
@@ -139,12 +146,7 @@ int result = mySampleClass.AddTwoNumbers(1, 2);
 
 C# 是一种简单易学的语言，并附带构成 .NET 的许多支持类和框架。 在任何时间，你都将愉快地编写代码，并且看不到方括号。
 
-## 下一步
+## <a name="next-step"></a>下一步
 
 [入门：熟悉 Visual Studio 环境](getting-started-getting-around-in-visual-studio.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

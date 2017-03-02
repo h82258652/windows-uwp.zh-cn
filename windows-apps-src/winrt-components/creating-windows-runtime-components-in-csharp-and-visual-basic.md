@@ -3,13 +3,20 @@ author: msatranjr
 title: "使用 C# 和 Visual Basic 创建 Windows 运行时组件"
 description: "从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 31fddae1c163f46a56fb78f5ac29e11a84e2ddd9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 C# 和 Visual Basic 创建 Windows 运行时组件
+# <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,7 +27,7 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 本文包含以下部分：
 
-## 声明 Windows 运行时组件中的类型
+## <a name="declaring-types-in-windows-runtime-components"></a>声明 Windows 运行时组件中的类型
 
 
 在内部，组件中的 Windows 运行时类型可以使用任何通用 Windows 应用中允许的 .NET Framework 功能。 （有关详细信息，请参阅[适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)。）在外部，类型成员仅可以为其参数公开 Windows 运行时类型并返回值。 下表介绍 Windows 运行时组件公开的 .NET Framework 类型的限制。
@@ -36,19 +43,19 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
     -   从 Windows 运行时之外的类型（例如 System.Exception 和 System.EventArgs）进行派生。
 -   所有公共类型必须具有匹配程序集名的根命名空间，并且程序集名不得以“Windows”开头。
 
-    > **提示** 默认情况下，Visual Studio 项目具有匹配程序集名的命名空间名称。 在 Visual Basic 中，此默认命名空间的命名空间声明不会显示在代码中。
+    > **提示**  默认情况下，Visual Studio 项目具有匹配程序集名的命名空间名称。 在 Visual Basic 中，此默认命名空间的命名空间声明不会显示在代码中。
 
 -   公共结构无法具有公共字段以外的任何成员，并且这些字段必须是值类型或字符串。
 -   公共类必须是 **sealed**（在 Visual Basic 中是 **NotInheritable**）。 如果编程模型要求具有多形性，你可以创建公共接口，并且在必须为多形性的类上实现该接口。
 
-## 调试组件
+## <a name="debugging-your-component"></a>调试组件
 
 
 如果通用 Windows 应用和组件均通过托管代码生成，你可以同时调试它们。
 
 如果要作为使用 C++ 的通用 Windows 应用的一部分测试你的组件，你可以同时调试托管代码和本机代码。 默认情况下仅调试本机代码。
 
-## **调试本机 C++ 代码和托管代码**
+## **<a name="to-debug-both-native-c-code-and-managed-code"></a>调试本机 C++ 代码和托管代码**
 
 1.  打开 Visual C++ 项目的快捷菜单，并选择“属性”****。
 2.  在属性页面的“配置属性”****下，选择“调试”****。
@@ -57,14 +64,14 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 如果要作为使用 JavaScript 的通用 Windows 应用的一部分测试你的组件，解决方案默认处于 JavaScript 调试模式下。 在 Visual Studio 中，无法同时调试 JavaScript 和托管代码。
 
-## **调试托管代码而非 JavaScript**
+## **<a name="to-debug-managed-code-instead-of-javascript"></a>调试托管代码而非 JavaScript**
 
 1.  打开 JavaScript 项目的快捷菜单，并选择“属性”****。
 2.  在属性页面的“配置属性”****下，选择“调试”****。
 3.  选择“调试器类型”****，并在下拉列表框中将“仅限脚本”****更改为“仅限托管”****。 选择“确定”****。
 4.  在托管代码中设置断点，并像往常一样调试。
 
-## 将 Windows 运行时类型传递到托管代码
+## <a name="passing-windows-runtime-types-to-managed-code"></a>将 Windows 运行时类型传递到托管代码
 
 
 如之前在“声明 Windows 运行时组件中的类型”部分中所述，某些 .NET Framework 类型可以显示在公共类成员的签名中。 这是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分。 它包含基元类型以及某些类和接口。 在通过 JavaScript 或 C++ 代码使用组件时，请务必知晓向调用方显示 .NET Framework 类型的方式。 有关使用 JavaScript 的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 本部分讨论常用类型。
@@ -100,18 +107,18 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将 Dictionary&lt;int, string&gt;（在 Visual Basic 中是 Dictionary(Of Integer, String)）传递或返回为 IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt; 或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;。
 
-**重要提示** JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**重要提示**  JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
 在 Windows 运行时中，IMap&lt;K, V&gt; 和 IMapView&lt;K, V&gt; 使用 IKeyValuePair 进行迭代。 在将它们传递到托管代码时，它们显示为 IDictionary&lt;TKey, TValue&gt; 和 IReadOnlyDictionary&lt;TKey, TValue&gt;，所以自然而然地，你会使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 枚举它们。
 
 接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如，PropertySet 类实现 IMap&lt;K, V&gt;，而它在托管代码中显示为 IDictionary&lt;TKey, TValue&gt;。 PropertySet 显示为好像实现了 IDictionary&lt;TKey, TValue&gt; 而非 IMap&lt;K, V&gt;，所以在托管代码中，它似乎具有 Add 方法，其行为类似于 .NET Framework 字典上的 Add 方法。 它不会显示为具有 Insert 方法。 你可以在文章[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中查看此示例。
 
-## 将托管的类型传递到 Windows 运行时
+## <a name="passing-managed-types-to-the-windows-runtime"></a>将托管的类型传递到 Windows 运行时
 
 
 如前面部分中所述，一些 Windows 运行时类型可在组件成员的签名或 Windows 运行时成员的签名中显示为 .NET Framework 类型（如果你在 IDE 中使用这些类型）。 在你将 .NET Framework 类型传递到这些成员或将它们用作组件成员的返回值时，它们将作为相应的 Windows 运行时类型显示为另一侧的代码。 有关此操作在通过 JavaScript 调用组件时产生的影响的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中的“从组件返回托管的类型”部分。
 
-## 重载的方法
+## <a name="overloaded-methods"></a>重载的方法
 
 
 在 Windows 运行时中，可重载方法。 但是，如果使用相同数量的参数声明多个重载，你必须将 [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 属性仅应用到其中一个重载。 该重载是唯一能够通过 JavaScript 调用的重载。 例如，在以下代码中，接受 **int**（在 Visual Basic 中是 **Integer**）的重载是默认重载。
@@ -138,11 +145,11 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 > End Function
 > ```
 
- **警告** JavaScript 允许你将任何值传递到 OverloadExample，并且将该值强制转换为参数所需的类型。 你可以通过“四十二”、“42”或“42.3”调用 OverloadExample，但所有这些值均会传递到默认重载。 之前示例中的默认重载分别返回 0、42 和 42。
+ **警告**  JavaScript 允许你将任何值传递到 OverloadExample，并且将该值强制转换为参数所需的类型。 你可以通过“四十二”、“42”或“42.3”调用 OverloadExample，但所有这些值均会传递到默认重载。 之前示例中的默认重载分别返回 0、42 和 42。
 
 你无法将 DefaultOverloadAttribute 属性应用到构造函数。 类中的所有构造函数必须具有不同数量的参数。
 
-## 实现 IStringable
+## <a name="implementing-istringable"></a>实现 IStringable
 
 
 从 Windows 8.1 开始，Windows 运行时包括 IStringable 接口，该接口的一项方法 IStringable.ToString 提供的基本格式支持可与 Object.ToString 提供的格式支持相媲美。 如果你确实选择在 Windows 运行时组件中导出的公共托管类型中实现 IStringable，将会应用以下限制：
@@ -178,7 +185,7 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 请注意，在许多情况下，对实现 IStringable 或隐藏其 ToString 实现的托管类型的本地代码调用会产生意外行为。
 
-## 异步操作
+## <a name="asynchronous-operations"></a>异步操作
 
 
 若要在组件中实现异步方法，请将“Async”添加到方法名称的末尾并返回一个表示异步操作的 Windows 运行时接口：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
@@ -253,7 +260,7 @@ function asyncExample(id) {
 
 如果你创建可以选择支持取消或进度报告的异步方法，请考虑添加缺少取消令牌或 IProgress&lt;T&gt; 接口的参数的重载。
 
-## 引发异常
+## <a name="throwing-exceptions"></a>引发异常
 
 
 你可以引发任何包括在适用于 Windows 应用的 .NET 中的异常类型。 你无法在 Windows 运行时组件中声明自己的公共异常类型，但可以声明并引发非公共类型。
@@ -262,16 +269,16 @@ function asyncExample(id) {
 
 -   在 JavaScript 中，异常显示为堆栈跟踪替换异常消息的对象。 在 Visual Studio 中调试应用时，你可以看到显示在调试器异常对话框中标识为“WinRT 信息”的原始消息文本。 无法从 JavaScript 代码访问原始消息文本。
 
-    > **提示** 目前，堆栈跟踪包含托管的异常类型，但我们不推荐分析跟踪来标识异常类型。 改为使用 HRESULT 值，如本部分后面所述。
+    > **提示**  目前，堆栈跟踪包含托管的异常类型，但我们不推荐分析跟踪来标识异常类型。 改为使用 HRESULT 值，如本部分后面所述。
 
 -   在 C++ 中，异常显示为平台异常。 如果托管异常的 HResult 属性能够映射到特定平台异常的 HRESULT，将使用该特定异常；否则，将引发 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 异常。 托管异常的消息文本不适用于 C++ 代码。 如果已引发特定平台异常，将显示该异常类型的默认消息文本；否则，将不显示任何消息文本。 请参阅[异常 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
 -   在 C# 或 Visual Basic 中，异常是正常的托管异常。
 
 在从组件引发异常时，你可以使 JavaScript 或 C++ 调用方处理异常变得更简单，方法是引发其 HResult 属性值特定于你的组件的非公共异常类型。 HRESULT 通过异常对象的编号属性提供给 JavaScript 调用方，并通过 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 属性提供给 C++ 调用方。
 
-> **注意** 为 HRESULT 使用负值。 正值解释为成功，并且在 JavaScript 或 C++ 调用方中没有引发任何异常。
+> **注意**  为 HRESULT 使用负值。 正值解释为成功，并且在 JavaScript 或 C++ 调用方中没有引发任何异常。
 
-## 声明和引发事件
+## <a name="declaring-and-raising-events"></a>声明和引发事件
 
 在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 作为事件类型，并将事件参数类型用作泛型类型参数。 就像在 .NET Framework 应用程序中一样引发该事件。
 
@@ -279,21 +286,16 @@ function asyncExample(id) {
 
 如果要实现自定义事件访问器（在 Visual Basic 中通过 **Custom** 关键字声明事件），必须在实现中遵循 Windows 运行时事件模式。 请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。 请注意，在通过 C# 或 Visual Basic 代码处理事件时，它仍显示为普通的 .NET Framework 事件。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 在创建了 Windows 运行时组件以供自己使用后，你可能会发现它封装的功能对其他开发人员也很有用。 若要打包组件以分配给其他开发人员，你有两个选择。 请参阅[分配托管的 Windows 运行时组件](https://msdn.microsoft.com/library/jj614475.aspx)。
 
 有关 Visual Basic 和 C# 语言功能以及 Windows 运行时的 .NET Framework 支持的详细信息，请参阅 [Visual Basic 和 C# 语言参考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

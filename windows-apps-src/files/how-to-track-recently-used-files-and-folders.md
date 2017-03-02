@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "跟踪最近使用的文件和文件夹"
 description: "通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="track-recently-used-files-and-folders"></a>跟踪最近使用的文件和文件夹
@@ -13,7 +20,7 @@ ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
@@ -22,7 +29,7 @@ ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
 你的应用的 MRU 由 [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) 类表示，你可从静态 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 属性获取该类。 MRU 项存储为 [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) 对象，这意味着 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象（代表文件）和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 对象（代表文件夹）都可以添加到 MRU 中。
 
-**注意** 另请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+**注意**  另请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
  
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
     将重载 [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476)。 此示例中使用了 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，这样便可将元数据与文件关联。 设置元数据可以记录项目的用途，例如“用户头像”。 你还可以通过调用 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480) 将文件添加到不包含元数据的 MRU 中。 当你向 MRU 中添加项时，该方法会返回一个唯一标识的字符串（称为令牌），用于检索该项。
 
-    **提示** 你将需要该令牌从 MRU 中检索项，因此请将它保留在某处。 有关应用数据的详细信息，请参阅[管理应用程序数据](https://msdn.microsoft.com/library/windows/apps/hh465109)。
+    **提示**   你将需要该令牌从 MRU 中检索项，因此请将它保留在某处。 有关应用数据的详细信息，请参阅[管理应用程序数据](https://msdn.microsoft.com/library/windows/apps/hh465109)。
 
      
 
@@ -103,9 +110,4 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

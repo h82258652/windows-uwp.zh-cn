@@ -1,13 +1,20 @@
 ---
 author: Jwmsft
-Description: "显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。"
+Description: "显示集合中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。"
 title: "翻转视图控件指南"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5266c1aaeeb2ecd009b8ee4dac6218fcb8b2f31b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="flip-view"></a>翻转视图
@@ -218,9 +225,4 @@ stackPanel1.Children.Add(flipView1);
 
 - [列表指南](lists.md)
 - [**FlipView 类**](https://msdn.microsoft.com/library/windows/apps/br242678)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

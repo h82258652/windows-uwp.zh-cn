@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "文件、文件夹和库"
 description: "了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库的特殊“沙盒式”位置的信息。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
+ms.lasthandoff: 01/19/2017
 
 ---
  # <a name="files-folders-and-libraries"></a>文件、文件夹和库
@@ -18,7 +25,7 @@ ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
 |-------|--------------|
 | [枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md) | 访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。 |
 | [创建、写入和读取文件](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 对象读取和写入文件。 |
-| [获取文件属性](quickstart-getting-file-properties.md) | 获取由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件的属性：顶级、基本和扩展属性。 |
+| [获取文件属性](quickstart-getting-file-properties.md) | 获取由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件属性：顶级、基本和扩展。 |
 | [使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md) | 通过让用户选取器交互来访问文件和文件夹。 你可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 来获取对文件夹的访问权限。 |
 | [使用选取器保存文件](quickstart-save-a-file-with-a-picker.md) | 使用 [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) 让用户指定名称和他们要让应用保存文件的位置。 |
 | [访问家庭组内容](quickstart-accessing-homegroup-content.md) | 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。 |
@@ -37,9 +44,4 @@ ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

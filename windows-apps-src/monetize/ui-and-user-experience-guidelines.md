@@ -3,21 +3,28 @@ author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解应用中广告的 UI 和用户体验指南。"
 title: "应用中广告的 UI 和用户体验指南"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 指南, 最佳做法"
 translationtype: Human Translation
-ms.sourcegitcommit: e44392a1dc69a98655ba7e576d2af102a608acaa
-ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>应用中广告的 UI 和用户体验指南
 
-本文将简要介绍如何使用应用中的横幅广告和间隙广告提供出色的体验。 有关如何设计应用外观的通用指南，请参阅 [设计和 UI](https://developer.microsoft.com/windows/design)。
+本文将简要介绍如何使用应用中的横幅广告和间隙广告提供出色的体验。 有关如何设计应用外观的通用指南，请参阅 [设计和 UI](https://developer.microsoft.com/windows/apps/design)。
 
->**重要**&nbsp;&nbsp;对应用内广告的任何使用均必须符合 Windows 应用商店策略，包括但不限于[策略 10.10](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10)（广告行为和内容）。 特别是，应用的横幅广告或间隙广告实现必须满足 Windows 应用商店策略 [策略 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 中的要求。 本文将举例说明违反此策略的一些实现。 这些示例仅供参考，以此方式帮助你更好地理解策略。 这些示例并不全面，可能有许多其他违反 Windows 应用商店策略的方式未在本文列出。
+>**重要**&nbsp;&nbsp;对应用内广告的任何使用均必须符合 Windows 应用商店策略，包括但不限于[策略 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10)（广告行为和内容）。 特别是，应用的横幅广告或间隙广告实现必须满足 Windows 应用商店策略 [策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的要求。 本文将举例说明违反此策略的一些实现。 这些示例仅供参考，以此方式帮助你更好地理解策略。 这些示例并不全面，可能有许多其他违反 Windows 应用商店策略的方式未在本文列出。
 
 ## <a name="guidelines-for-banner-ads"></a>横幅广告指南
 
-以下部分针对如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 在应用中实施横幅广告提供了一些建议，以及违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的实现示例。
+以下部分针对如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 在应用中实施横幅广告提供了一些建议，以及违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的实现示例。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -49,7 +56,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 <span />
 ### <a name="examples-of-policy-violations"></a>策略违反示例
 
-本部分提供了违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的横幅广告场景示例。 这些示例仅供教学，以此方式帮助你更好地理解策略。 这些示例并不完善，可能有许多其他违反策略 10.10.1 的方式未在此处列出。
+本部分提供了违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的横幅广告场景示例。 这些示例仅供教学，以此方式帮助你更好地理解策略。 这些示例并不完善，可能有许多其他违反策略 10.10.1 的方式未在此处列出。
 
 * 通过一些处理来干扰用户查看横幅广告的能力，例如，更改 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的不透明度或将其他控件置于 **AdControl** 之上（不会先调用 [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)）。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 
 如果使用得当，间隙视频广告可极大提高应用的收益，而不会对用户满意度带来负面影响。 如果使用不当，此类广告可能会产生相反的效果。
 
-以下部分针对如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在应用中实施间隙广告提供了一些建议，以及违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
+以下部分针对如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在应用中实施间隙广告提供了一些建议，以及违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -132,7 +139,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 <span />
 ### <a name="examples-of-policy-violations"></a>策略违反示例
 
-本部分提供了违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的间隙广告场景示例。 这些示例仅供教学，以此方式帮助你更好地理解策略。 这些示例并不完善，可能有许多其他违反策略 10.10.1 的方式未在此处列出。
+本部分提供了违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的间隙广告场景示例。 这些示例仅供教学，以此方式帮助你更好地理解策略。 这些示例并不完善，可能有许多其他违反策略 10.10.1 的方式未在此处列出。
 
 * 将所有 UI 元素放在间隙广告容器上。
 
@@ -153,9 +160,4 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
  
 
  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

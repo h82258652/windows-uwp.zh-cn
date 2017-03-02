@@ -3,23 +3,30 @@ description: "本文介绍如何支持在通用 Windows 平台 (UWP) 应用中�
 title: "复制和粘贴"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0dceeb53737cc790e1c3810b0487e0a839968bef
-ms.openlocfilehash: 2655dc67b14ba665deabc879f13340202d97c494
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9cef41c5c4671d85854f3daf79cb7d6fd51a6f8
+ms.lasthandoff: 02/07/2017
 
 ---
-#复制和粘贴
+#<a name="copy-and-paste"></a>复制和粘贴
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何支持在通用 Windows 平台 (UWP) 应用中通过使用剪贴板进行复制和粘贴。 复制和粘贴是在应用之间或在应用内交换数据的传统方法，并且在一定程度上，几乎每个应用都可以支持剪贴板操作。
 
-## 检查内置剪贴板支持
+## <a name="check-for-built-in-clipboard-support"></a>检查内置剪贴板支持
 
 许多情况下，你无需编写用于支持剪贴板操作的代码。 可用于创建应用的许多默认 XAML 控件已经支持剪贴板操作。 
 
-## 准备工作
+## <a name="get-set-up"></a>准备工作
 
 首先，将 [**Windows.ApplicationModel.DataTransfer**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer) 命名空间包含在你的应用中。 然后，添加一个 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象实例。 该对象同时包含用户希望复制的数据和你希望包含的所有属性（如描述）。
 
@@ -30,7 +37,7 @@ DataPackage dataPackage = new DataPackage();
 
 <!-- AuthenticateAsync-->
 
-## 复制和剪切
+## <a name="copy-and-cut"></a>复制和剪切
 
 复制和剪切（也称为*移动*）的工作原理几乎完全相同。 使用 [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation) 属性选择所需操作。
 
@@ -40,7 +47,7 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-## 拖放
+## <a name="drag-and-drop"></a>拖放
 
 接下来，你可以将用户已选择的数据添加到 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象。 如果 **DataPackage** 类支持该数据，则可以在 **DataPackage** 对象中使用其中一种相应的方法。 添加文本的方法如下：
 
@@ -53,7 +60,7 @@ dataPackage.SetText("Hello World!");
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
-## 粘贴
+## <a name="paste"></a>粘贴
 
 若要获取剪贴板的内容，请调用静态 [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent) 方法。 此方法将返回一个包含该内容的 [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView)。 该对象几乎与 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象完全相同，只不过其内容为只读。 通过该对象，你可以使用 [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) 或 [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) 方法来确定哪些格式可用。 然后，你可以调用相应的 [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) 方法来获取数据。
 
@@ -67,7 +74,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 }
 ```
 
-## 跟踪对剪贴板的更改
+## <a name="track-changes-to-the-clipboard"></a>跟踪对剪贴板的更改
 
 除了复制和粘贴命令以外，你可能还想要跟踪剪贴板更改。 可通过处理剪贴板的 [**ContentChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.ContentChanged) 事件来执行此操作。
 
@@ -84,7 +91,7 @@ Clipboard.ContentChanged += (s, e) =>
 }
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 * [App-to-app communication](index.md)
 * [DataTransfer](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.aspx)
@@ -102,10 +109,5 @@ Clipboard.ContentChanged += (s, e) =>
 * [AvailableFormats](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.availableformats.aspx)
 * [Contains](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.contains.aspx)
 * [ContentChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.contentchanged.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

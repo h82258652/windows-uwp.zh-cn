@@ -2,18 +2,26 @@
 author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法终止软件包外部测试版的软件包推出。"
 title: "使用 Windows 应用商店提交 API 终止软件包外部测试版的软件包推出"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 外部测试版提交, 终止"
+ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ad63a543027ca0a1927eb72c1a7a227788770998
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 终止软件包外部测试版的软件包推出
+# <a name="halt-the-package-rollout-for-a-package-flight-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 终止软件包外部测试版的软件包推出
 
 
 使用 Windows 应用商店提交 API 中的此方法[终止软件包外部测试版提交的软件包推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -22,9 +30,9 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 * 使用你的开发人员中心帐户为应用创建提交。 可以使用开发人员中心仪表板执行此操作，也可以使用[创建应用提交](create-an-app-submission.md)方法执行此操作。
 * 启用提交的逐步软件包推出。 可以使用[开发人员中心仪表板](../publish/gradual-package-rollout.md)执行此操作，也可以[使用 Windows 应用商店提交 API](manage-flight-submissions.md#manage-gradual-package-rollout) 执行此操作。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求参数的使用示例和描述。
 
@@ -35,7 +43,7 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 <span/>
  
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +51,7 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -53,11 +61,11 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何终止软件包外部测试版提交的软件包推出。
 
@@ -66,7 +74,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 有关响应正文中这些值的更多详细信息，请参阅[软件包推出资源](manage-flight-submissions.md#package-rollout-object)。
 
@@ -79,7 +87,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -91,14 +99,9 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [逐步软件包推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 应用商店提交 API 管理软件包外部测试版提交](manage-flight-submissions.md)
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

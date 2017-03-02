@@ -5,13 +5,20 @@ ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: "自定义自动化对等"
 label: Custom automation peers
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9e1a458fa7ec51d621156e3ec6ed97b0361a6217
-ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cd196547f78e896c25ee11c955146868cefd5f96
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 自定义自动化对等  
+# <a name="custom-automation-peers"></a>自定义自动化对等  
 
 介绍 Microsoft UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。
 
@@ -32,7 +39,7 @@ UI 自动化不仅支持辅助功能应用和辅助技术（如屏幕阅读器�
 <span id="Determining_the_existing_state_of_UI_Automation_support_for_your_custom_UI_class"/>
 <span id="determining_the_existing_state_of_ui_automation_support_for_your_custom_ui_class"/>
 <span id="DETERMINING_THE_EXISTING_STATE_OF_UI_AUTOMATION_SUPPORT_FOR_YOUR_CUSTOM_UI_CLASS"/>
-## 确定对于自定义 UI 类的现有 UI 自动化支持状态  
+## <a name="determining-the-existing-state-of-ui-automation-support-for-your-custom-ui-class"></a>确定对于自定义 UI 类的现有 UI 自动化支持状态  
 在尝试为自定义控件实现自动化对等之前，应测试基类及其自动化对等是否已经提供你所需的辅助功能或自动化支持。 在许多情况下，将 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 实现、特定的对等以及它们所实现的模式组合在一起可以提供一个基本但令人满意的辅助功能体验。 是否如此取决于你对暴露给控件的对象模型相对于其基类进行的更改量。 而且，这取决于你为基类功能添加的功能是否与模板合约中的新 UI 元素或者控件的视觉外观相关联。 在某些情况下，你的更改可能会在用户体验中引入新的、要求提供其他辅助功能支持的方面。
 
 即使使用现有的基本对等类可以提供基本的辅助功能支持，定义对等仍然是最佳做法，以便你可以针对自动测试方案向 UI 自动化报告精确的 **ClassName** 信息。 如果你正在编写旨在供第三方使用的控件，则此注意事项尤为重要。
@@ -40,7 +47,7 @@ UI 自动化不仅支持辅助功能应用和辅助技术（如屏幕阅读器�
 <span id="Automation_peer_classes__"/>
 <span id="automation_peer_classes__"/>
 <span id="AUTOMATION_PEER_CLASSES__"/>
-## 自动化对等类  
+## <a name="automation-peer-classes"></a>自动化对等类  
 UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Presentation Foundation (WPF) 和 Microsoft Silverlight）所使用的现有 UI 自动化技术与约定而构建。 许多控件类及其功能和用途也是源自先前的 UI 框架。
 
 按照合约，对等类名称以控件类名称开头，以“AutomationPeer”结尾。 例如，[**ButtonAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242458) 是 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 控件类的对等类。
@@ -51,7 +58,7 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 <span id="Peers__patterns_and_control_types"/>
 <span id="peers__patterns_and_control_types"/>
 <span id="PEERS__PATTERNS_AND_CONTROL_TYPES"/>
-## 对等、模式和控件类型  
+## <a name="peers-patterns-and-control-types"></a>对等、模式和控件类型  
 *控件模式*是一种控件实现，用来向 UI 自动化客户端暴露控件功能的特定方面。 UI 自动化客户端使用通过控件模式暴露的属性和方法，检索有关控件功能的信息或者在运行时操作控件的行为。
 
 控件模式提供一种分类和暴露控件功能的方式，与控件类型或控件外观无关。 例如，显示表格界面的控件使用 **Grid** 控件模式暴露表格中的行数和列数并允许 UI 自动化客户端从表格中检索项目。 以其他示例相同，UI 自动化客户端可以针对可调用的控件（如按钮）使用 **Invoke** 控件模式，针对具有滚动条的控件（如列表框、列表视图或组合框）使用 **Scroll** 控件模式。 每个控件模式代表一个单独的功能类型，并且可以结合使用多个控件模式来描述特定控件支持的全套功能。
@@ -76,7 +83,7 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 <span id="Guidance_for_how_to_implement_control_patterns"/>
 <span id="guidance_for_how_to_implement_control_patterns"/>
 <span id="GUIDANCE_FOR_HOW_TO_IMPLEMENT_CONTROL_PATTERNS"/>
-### 如何实现控件模式指南  
+### <a name="guidance-for-how-to-implement-control-patterns"></a>如何实现控件模式指南  
 控件模式及其用途包含在 UI 自动化框架的较大定义中，不只适用于 Windows 应用商店应用的辅助功能支持。 实现控件模式时，应确保采用与 MSDN 上记录的指南匹配并位于 UI 自动化规范中的方式来实现它。 如果你正在查找指南，通常可以使用 MSDN 主题，无需参考该规范。 此处记录了有关每个模式的指南：[实现 UI 自动化控制模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)。 你会注意到此区域下方的每个主题都具有“实现指南和约定”部分以及“所需成员”部分。 本指南通常参考[适用于提供程序的控件模式接口](https://msdn.microsoft.com/library/windows/desktop/Ee671201)参考中的相关控件模式接口的特定 API。 这些接口是本机/COM 接口（其 API 使用 COM 样式的语法）。 你也可以在 [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) 命名空间中看到此处显示的所有内容。
 
 如果你使用的是默认自动化对等并针对其行为进行扩展，则这些对等已遵照 UI 自动化指南进行编写。 如果它们支持控件模式，则你可以依赖符合[实现 UI 自动化控件模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)中的指南的这一模式支持。 如果控件对等报告它代表的控件类型由 UI 自动化定义，则该控件遵循的是在[支持 UI 自动化控件类型](https://msdn.microsoft.com/library/windows/desktop/Ee671633)上记录的指南。
@@ -88,19 +95,19 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 <span id="Built-in_automation_peer_classes"/>
 <span id="built-in_automation_peer_classes"/>
 <span id="BUILT-IN_AUTOMATION_PEER_CLASSES"/>
-## 内置的自动化对等类  
+## <a name="built-in-automation-peer-classes"></a>内置的自动化对等类  
 通常，如果元素接受来自用户的 UI 活动，或者元素中包含辅助技术（表示应用的交互或有意义 UI）的用户所需的信息，则元素将实现自动化对等类。 并非所有的 UWP 视觉元素都有自动化对等。 实现自动化对等的类的示例包括 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)。 不实现自动化对等的类的示例包括 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 和基于 [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511) 的类（如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 和 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267)）。 **Panel** 没有对等，因为它提供仅可见的布局行为。 用户无法通过任何辅助功能相关方法与 **Panel** 交互。 **Panel** 包含的任何子元素会转而作为树中下一个具有对等或元素表示形式的可用父元素的子元素，报告给 UI 自动化树。
 
 <span id="UI_Automation_and_UWP_process_boundaries"/>
 <span id="ui_automation_and_uwp_process_boundaries"/>
 <span id="UI_AUTOMATION_AND_UWP_PROCESS_BOUNDARIES"/>
-## UI 自动化和 UWP 进程边界  
+## <a name="ui-automation-and-uwp-process-boundaries"></a>UI 自动化和 UWP 进程边界  
 通常，访问 UWP 应用的 UI 自动化客户端代码在进程外运行。 UI 自动化框架基础结构使信息能够跨进程边界。 此概念在 [UI 自动化基础](https://msdn.microsoft.com/library/windows/desktop/Ee684007)中进行详细介绍。
 
 <span id="OnCreateAutomationPeer"/>
 <span id="oncreateautomationpeer"/>
 <span id="ONCREATEAUTOMATIONPEER"/>
-## OnCreateAutomationPeer  
+## <a name="oncreateautomationpeer"></a>OnCreateAutomationPeer  
 所有派生自 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的类都包含受保护的虚拟方法 [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)。 自动化对等的对象初始化序列调用 **OnCreateAutomationPeer** 以获取每个控件的自动化对等对象，从而构造一个 UI 自动化树以供运行时使用。 UI 自动化代码可以使用对等来获取有关控件的特征和功能的信息并借助控件的控件模式来模拟交互用法。 支持自动化的自定义控件必须替代 **OnCreateAutomationPeer** 并返回从 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 派生的类的实例。 例如，如果自定义控件派生自 [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/BR227736) 类，则 **OnCreateAutomationPeer** 返回的对象应当派生自 [**ButtonBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242460)。
 
 如果要编写自定义控件类而且打算还提供一个新的自动化对等，则应当替代自定义控件的 [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) 方法，以便它返回对等的新实例。 你的对等类必须从 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 直接或间接派生。
@@ -160,7 +167,7 @@ protected:
 <span id="Choosing_the_correct_peer_base_class"/>
 <span id="choosing_the_correct_peer_base_class"/>
 <span id="CHOOSING_THE_CORRECT_PEER_BASE_CLASS"/>
-### 选择正确的对等基类  
+### <a name="choosing-the-correct-peer-base-class"></a>选择正确的对等基类  
 请确保你的 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 派生自一个基类，该基类为要作为派生来源的控件类的现有对等逻辑提供最佳匹配。 在上例情况下，由于 `NumericUpDown` 派生自 [**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863)，所以有一个 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 类可用，应将对等基于该类。 通过使用与你派生控件本身的方式最接近匹配的对等类，你可以至少避免替代某些 [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 功能，因为基本对等类已经实现它。
 
 基本 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 类没有相应的对等类。 如果你需要使对等类与派生自 **Control** 的自定义控件相对应，请从 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 派生自定义对等类。
@@ -173,7 +180,7 @@ protected:
 <span id="Initialization_of_a_custom_peer_class"/>
 <span id="initialization_of_a_custom_peer_class"/>
 <span id="INITIALIZATION_OF_A_CUSTOM_PEER_CLASS"/>
-## 自定义对等类的初始化  
+## <a name="initialization-of-a-custom-peer-class"></a>自定义对等类的初始化  
 自定义对等应当定义一个类型安全构造函数，该构造函数使用所有者控件的实例来进行基本初始化。 在下一个示例中，该实现将 *owner* 值传递给 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 基类，但最终将是 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 实际使用 *owner* 设置 [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner)。
 
 C#
@@ -200,7 +207,7 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 <span id="Core_methods_of_AutomationPeer"/>
 <span id="core_methods_of_automationpeer"/>
 <span id="CORE_METHODS_OF_AUTOMATIONPEER"/>
-## AutomationPeer 的核心方法  
+## <a name="core-methods-of-automationpeer"></a>AutomationPeer 的核心方法  
 出于 UWP 基础结构的原因，自动化对等的可替代方法属于下面的两个方法：UI 自动化提供程序用作 UI 自动化客户端转发点的公共访问方法；UWP 类可以替代以影响行为的受保护的“Core”自定义方法。 这两个方法在默认情况下绑定在一起，方法是在调用访问方法时始终调用并行的、具有提供程序实现的“Core”方法，或者从基类调用默认实现来进行回退。
 
 在为自定义控件实现对等时，替代自动化对等基类中你希望展示你的自定义控件所独有行为的所有“Core”方法。 UI 自动化代码通过调用对等类的公共方法来获取有关你的控件的信息。 要提供有关你的控件的信息，请在你的控件实现和设计创建不同于自动化对等基类所支持方案的辅助功能方案或其他 UI 自动化方案时，替代名称结尾为“Core”的每个方法。
@@ -240,7 +247,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 <span id="GetPattern_and_GetPatternCore"/>
 <span id="getpattern_and_getpatterncore"/>
 <span id="GETPATTERN_AND_GETPATTERNCORE"/>
-### GetPattern 和 GetPatternCore  
+### <a name="getpattern-and-getpatterncore"></a>GetPattern 和 GetPatternCore  
 对等中实现的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 所返回的对象支持在输入参数中请求的模式。 具体来说，UI 自动化客户端调用一个转发到提供程序的 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 方法的方法，并指定用来对所请求的模式进行命名的 [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 枚举值。 你替代的 **GetPatternCore** 应当返回一个实现特定模式的对象。 该对象就是对等本身，因为对等在任何时候报告它支持某个模式时，应实现相应的模式接口。 如果你的对等没有对某个模式的自定义实现，但是你知道对等的基类一定会实现该模式，则你可以从 **GetPatternCore** 调用基本类型的 **GetPatternCore** 实现。 如果对等不支持某个模式，则该对等的 **GetPatternCore** 应返回 **null**。 但是，这并不是直接从你的实现返回 **null**，而通常是通过调用基本实现来为任何不受支持的模式返回 **null**。
 
 如果某个模式受支持，则 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 实现会返回 **this** 或 **Me**。 预期结果是 UI 自动化客户端将任何不为 **null** 的 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 返回值转换为所请求的模式接口。
@@ -288,7 +295,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Forwarding_patterns_from_sub-elements"/>
 <span id="forwarding_patterns_from_sub-elements"/>
 <span id="FORWARDING_PATTERNS_FROM_sub-elementS"/>
-### 从子元素转发模式  
+### <a name="forwarding-patterns-from-sub-elements"></a>从子元素转发模式  
 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 方法实现还可以将某个子元素或部分指定为其主机的模式提供程序。 此示例模拟说明 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 如何将滚动模式处理转移到其内部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 控件的对等。 若要为模式处理指定子元素，此代码将获取子元素对象、使用 [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) 方法为该子元素创建一个对等，然后返回新对等。
 
 C#
@@ -325,7 +332,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Other_Core_methods"/>
 <span id="other_core_methods"/>
 <span id="OTHER_CORE_METHODS"/>
-### 其他核心方法  
+### <a name="other-core-methods"></a>其他核心方法  
 你的控件可能需要为主要方案支持键盘等效功能；有关为什么可能必须支持键盘等效功能的详细信息，请参阅[键盘辅助功能](keyboard-accessibility.md)。 实现键盘支持必定属于控件代码而不是对等代码，因为这是控件逻辑的一部分，但是你的对等类应替代 [**GetAcceleratorKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getacceleratorkeycore) 和 [**GetAccessKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getaccesskeycore) 方法以便向使用键盘的 UI 自动化客户端报告。 请考虑，报告键盘信息的字符串可能需要进行本地化，因此应当来自资源（而非硬编码字符串）。
 
 如果你为支持集合的类提供对等，最好从已经支持这类集合的函数类和对等类派生。 如果无法这样做，则用来维护子集合的控件的对等可能必须替代与父集合相关的对等方法 [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore) 才能向 UI 自动化树正确地报告父-子关系。
@@ -343,7 +350,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Base_implementation_in_FrameworkElementAutomationPeer"/>
 <span id="base_implementation_in_frameworkelementautomationpeer"/>
 <span id="BASE_IMPLEMENTATION_IN_FRAMEWORKELEMENTAUTOMATIONPEER"/>
-### FrameworkElementAutomationPeer 中的基本实现  
+### <a name="base-implementation-in-frameworkelementautomationpeer"></a>FrameworkElementAutomationPeer 中的基本实现  
 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 的基本实现提供一些 UI 自动化信息，可从在框架级别定义的各种布局和行为属性中解释这些信息。
 
 * [**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore)：根据已知的布局特征返回 [**Rect**](https://msdn.microsoft.com/library/windows/apps/BR225994) 结构。 如果 [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) 为 **true**，则返回 0 值 **Rect**。
@@ -362,7 +369,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Peers_and_AutomationProperties"/>
 <span id="peers_and_automationproperties"/>
 <span id="PEERS_AND_AUTOMATIONPROPERTIES"/>
-## 对等和 AutomationProperties  
+## <a name="peers-and-automationproperties"></a>对等和 AutomationProperties  
 自动化对等应当为控件的辅助功能相关信息提供合适的默认值。 请注意，使用控件的任何应用代码都可以通过在控件实例上包括 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加属性值来替代该行为的一部分。 调用方既可以针对默认控件也可以针对自定义控件执行此操作。 例如，下面的 XAML 创建一个按钮，该按钮具有两个自定义的 UI 自动化属性： `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
 
 有关 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加属性的详细信息，请参阅[基本辅助功能信息](basic-accessibility-information.md)。
@@ -372,7 +379,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Implementing_patterns"/>
 <span id="implementing_patterns"/>
 <span id="IMPLEMENTING_PATTERNS"/>
-## 实现模式  
+## <a name="implementing-patterns"></a>实现模式  
 让我们看一下如何通过实现展开折叠的控件模式接口，为用来实现展开折叠行为的控件编写对等。 每当用值 [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496) 调用 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 时，该对等应当能够通过返回其自身来针对展开折叠行为启用辅助功能。 然后，该对等应当继承此模式的提供程序接口 ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider))，并为该提供程序接口的每个成员提供实现。 在这种情况下，该接口有三个需要替代的成员：[**Expand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expand)、[**Collapse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.collapse) 和 [**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expandcollapsestate)。
 
 在该类本身的 API 设计中提前为辅助功能进行规划非常有用。 只要存在一个行为可能会由于与在 UI 中工作的用户进行典型交互或者通过自动化提供程序模式进行请求，就需要提供一个能够由 UI 响应或由自动化模式调用的方法。 例如，如果你的控件有按钮部分而且该部分绑定了可展开或折叠该控件的事件处理程序，并且你的控件中还包含这些操作的键盘等效功能，请让这些事件处理程序调用你从该对等中 [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242) 的 [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570) 或 [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569) 实现的主体中调用的相同方法。 为了确保控件的视觉状态进行更新以按照统一的方式显示逻辑状态，而不考虑行为的调用方式，使用常见的逻辑方法也可能非常有用。
@@ -395,7 +402,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 <span id="UI_Automation_events"/>
 <span id="ui_automation_events"/>
 <span id="UI_AUTOMATION_EVENTS"/>
-## UI 自动化事件  
+## <a name="ui-automation-events"></a>UI 自动化事件  
 
 UI 自动化事件属于以下类别。
 
@@ -409,13 +416,13 @@ UI 自动化事件属于以下类别。
 <span id="AutomationEvents_identifiers"/>
 <span id="automationevents_identifiers"/>
 <span id="AUTOMATIONEVENTS_IDENTIFIERS"/>
-### AutomationEvents 标识符  
+### <a name="automationevents-identifiers"></a>AutomationEvents 标识符  
 UI 自动化事件通过 [**AutomationEvents**](https://msdn.microsoft.com/library/windows/apps/BR209183) 值标识。 枚举值将唯一标识事件种类。
 
 <span id="Raising_events"/>
 <span id="raising_events"/>
 <span id="RAISING_EVENTS"/>
-### 引发事件  
+### <a name="raising-events"></a>引发事件  
 UI 自动化客户端可以订阅自动化事件。 在自动化对等模型中，自定义控件的对等必须通过调用 [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raiseautomationevent) 方法，报告对控件进行的、与辅助功能相关的更改。 同样，当某个键的 UI 自动化属性值发生更改时，自定义控件对等应当调用 [**RaisePropertyChangedEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raisepropertychangedevent) 方法。
 
 接下来的代码示例显示如何从控件定义代码中获取对等对象，以及如何调用用来从该对等触发事件的方法。 最佳方法是由代码确定对于该事件类型是否存在任何侦听器。 仅当存在侦听器时才触发事件和创建对等对象可避免不必要的开销，并帮助使控件保持响应状态。
@@ -439,13 +446,13 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Peer_navigation"/>
 <span id="peer_navigation"/>
 <span id="PEER_NAVIGATION"/>
-## 对等导航  
+## <a name="peer-navigation"></a>对等导航  
 在找到自动化对等之后，UI 自动化客户端可以通过调用该对等对象的 [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildren) 和 [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent) 方法来在应用的对等结构中进行导航。 可通过在对等中实现 [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore) 方法来支持在控件中的各个 UI 元素之间进行导航。 UI 自动化系统调用此方法以生成一个由控件中包含的子元素（如列表框中的列表项）组成的树。 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 中的默认 **GetChildrenCore** 方法会遍历元素的视觉树以生成自动化对等树。 自定义控件可以替代此方法以便向自动化客户端暴露子元素的不同表示形式，并返回可传达信息或允许用户交互的元素的自动化对等。
 
 <span id="Native_automation_support_for_text_patterns"/>
 <span id="native_automation_support_for_text_patterns"/>
 <span id="NATIVE_AUTOMATION_SUPPORT_FOR_TEXT_PATTERNS"/>
-## 对文本模式的本机自动支持  
+## <a name="native-automation-support-for-text-patterns"></a>对文本模式的本机自动支持  
 某些默认的 UWP 应用自动化对等提供对文本模式的控件模式支持 ([**PatternInterface.Text**](https://msdn.microsoft.com/library/windows/apps/BR242496))。 但是它们通过本机方法提供这一支持，所涉及的对等不会在（托管）继承中注意到 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) 接口。 如果托管或非托管 UI 自动化客户端查询对等的模式，则它将报告对文本模式的支持，当调用客户端 API 时，它还提供模式各个部分的行为。
 
 如果你打算从某一个 UWP 应用文本控件派生自定义对等，并创建派生自某一个文本关联对等的自定义对等，请检查对等的“备注”部分，以了解有关模式的任何本机级别支持的详细信息。 如果你从托管提供程序接口实现调用基本实现，则可在自定义对等中访问本机基本行为，但很难修改基本实现的操作，因为对等及其所有者控件上的本机接口没有公开。 通常，你应该按原样使用基本实现（仅调用基本实现），或者使用自己的托管代码来完全替换功能，而不调用基本实现。 后者是一个高级应用场景，你将需要很好地熟悉由你的控件使用的文本服务框架，以便在使用该框架时支持辅助功能要求。
@@ -453,7 +460,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="AutomationProperties.AccessibilityView"/>
 <span id="automationproperties.accessibilityview"/>
 <span id="AUTOMATIONPROPERTIES.ACCESSIBILITYVIEW"/>
-## AutomationProperties.AccessibilityView  
+## <a name="automationpropertiesaccessibilityview"></a>AutomationProperties.AccessibilityView  
 除提供自定义对等外，你还可以通过在 XAML 中设置 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) 来调整任何控件实例的树视图表示。 此过程不会作为对等类的一部分实现，但由于它与自定义控件或自定义模板的辅助功能整体支持密切相关，我们将在此处提及它。
 
 使用 **AutomationProperties.AccessibilityView** 的主要方案有意省略 UI 自动化视图模板中的某些控件，因为它们对整个控件的辅助功能视图并无实质作用。 为避免发生此类情况，请将 **AutomationProperties.AccessibilityView** 设置为“Raw”。
@@ -461,7 +468,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Throwing_exceptions_from_automation_peers"/>
 <span id="throwing_exceptions_from_automation_peers"/>
 <span id="THROWING_EXCEPTIONS_FROM_AUTOMATION_PEERS"/>
-## 从自动化对等中引发异常  
+## <a name="throwing-exceptions-from-automation-peers"></a>从自动化对等中引发异常  
 你为自动化对等支持实现的 API 会引发异常。 正常情况下，侦听的任何 UI 自动化客户端都足够强大，能够在引发大多数异常后继续运行。 该侦听器很可能正在查找包含应用而非你自身的全方位自动化树。如果仅仅因为树的某个区域在客户端调用其 API 时引发了基于对等的异常就关闭整个客户端，这样的客户端设计是不可接受的。
 
 对于传递到对等中的参数，可使用它来验证输入，例如，如果传递了 **null**，会引发 [**ArgumentNullException**](https://msdn.microsoft.com/library/windows/apps/system.argumentnullexception)，并且对于你的实现，该参数不是有效值。 但是，如果你的对等执行了后续操作，请记住对等与托管控件的交互将向其传入某些异步字符。 对等执行的任何操作不一定会阻止控件中的 UI 线程（而且它可能不应该执行此操作）。 因此，当创建了对等或首次调用了自动化对等方法时，会出现以下情况：对象可用或具有某些属性，但同时控件状态也会发生更改。 在这些情况下，提供程序会引发两种专门的异常：
@@ -472,16 +479,11 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 除此之外，对等还应该是它们从其对等支持中引发的相对保守的相关异常。 大多数客户端无法处理对等中的异常，也无法将其转换为当与客户端交互时其用户可以选择的可操作选项。 因此，与在每次对等尝试执行的某些操作不起作用时即引发异常相比，有时 no-op 以及捕获异常（不会在对等实现中重新引发异常）是一个较好的策略。 同时还需考虑到，大多数 UI 自动化客户端均不会采用托管代码编写。 大多数客户端将采用 COM 编写，并仅用于在调用最终会访问对等的 UI 自动化客户端方法时，在 **HRESULT** 中检查 **S\_OK**。
 
 <span id="related_topics"/>
-## 相关主题  
+## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)
 * [控件模式和接口](control-patterns-and-interfaces.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,31 +3,38 @@ author: jwmsft
 description: "为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。"
 title: "xUid 指令"
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c94db1dc1095f53dc836f78768ecc826470343d5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3fa6cf80bf569703a7fbbc532c9114bee89c7403
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Uid 指令
+# <a name="xuid-directive"></a>x:Uid 指令
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。
 
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object x:Uid="stringID".../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 术语 | 说明 |
 |------|-------------|
 | stringID | 一个唯一标识应用中的 XAML 元素并且是资源文件中资源路径一部分的字符串。 请参阅备注。| 
 
-## 备注
+## <a name="remarks"></a>备注
 
 使用 **x:Uid** 可以标识 XAML 中的对象元素。 此对象元素通常是 UI 中显示的控件类或其他元素的实例。 用在 **x:Uid** 中的字符串与用在资源文件中的字符串之间的关系是：资源文件字符串包括 **x:Uid**，其后面是一个点 (.)，然后是正本地化的元素的特定属性名。 考虑此示例：
 
@@ -46,10 +53,5 @@ UWP XAML 在 **x:Uid** 唯一性上使用的规则不同于以前利用 XAML 的
 在某些情况下，你将使用资源路径，而不是数据包资源索引 (PRI) 系统的内置功能。 用作 **x:Uid** 值的任何字符串都会定义一个资源路径，该路径以 ms-resource:///Resources/ 开头并包括 **x:Uid** 字符串。 该路径以你在资源文件中指定的属性名或者在其他情况下作为目标的属性名结尾。
 
 请勿将 **x:Uid** 放在属性元素上，Windows 运行时 XAML 中不允许这样做。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

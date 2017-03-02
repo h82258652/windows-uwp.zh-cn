@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "使用后台任务支持应用"
 description: "此部分中的主题介绍了如何使在后台运行的轻型代码响应触发器。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此部分中的主题介绍了如何使在后台运行的轻型代码响应触发器。 你可以使用后台任务在应用暂停或未运行时提供功能。 也可以将后台任务用于实时通信应用，例如 VOIP、邮件和 IM。
 
 ## <a name="playing-media-in-the-background"></a>在后台播放媒体
 
-从 Windows 10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
+从 Windows 10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>进程内后台任务和进程外后台任务
 
@@ -162,7 +169,7 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 **相关的后台任务指南**
 
-* [在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
@@ -179,9 +186,4 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Windows 应用商店设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

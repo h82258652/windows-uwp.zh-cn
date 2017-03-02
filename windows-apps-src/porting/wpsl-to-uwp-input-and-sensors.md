@@ -3,9 +3,16 @@ author: mcleblanc
 description: "与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。"
 title: "针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP"
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: fedba87189e6ee5b6f8f81dfa06703b2011adf6a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 975f364fec4edfcf90ee65912f509741bd1f80dd
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: fedba87189e6ee5b6f8f81dfa06703b2011adf6a
 
 为了可以进行逻辑删除并随后进行重新激活操作，Windows Phone Silverlight 应用包含代码，用于保存和还原其应用程序状态及其视图状态。 通用 Windows 平台 (UWP) 应用的应用生命周期与 Windows Phone Silverlight 应用的应用生命周期有诸多相似之处，因为它们都旨在随时最大程度地为前台中用户所选择的应用提供资源。 你会发现你的代码可以相当轻松地适应新系统。
 
-**注意** 按下硬件的**“后退”**按钮可自动终止 Windows Phone Silverlight 应用。 按下移动设备上的硬件**“后退”**按钮*不会*自动终止 UWP 应用。 但是，它将处于暂停状态，然后可能会被终止。 但是，对于对应用程序生命周期事件做出相应响应的应用，这些详细信息是透明的。
+**注意**   按下硬件的“后退”****按钮可自动终止 Windows Phone Silverlight 应用。 按下移动设备上的硬件**“后退”**按钮*不会*自动终止 UWP 应用。 但是，它将处于暂停状态，然后可能会被终止。 但是，对于对应用程序生命周期事件做出相应响应的应用，这些详细信息是透明的。
 
 在应用处于非活动状态以及系统引发暂停事件期间，将出现一个“防止误动作窗口”。 对于 UWP 应用而言，并不存在防止误动作窗口；因为只要应用处于非活动状态，便会引发暂停事件。
 
@@ -39,9 +46,9 @@ Windows Phone Silverlight 相机捕获代码使用 **Microsoft.Devices.Camera**�
 
 介绍 Windows 10 中面向应用所做的更改。 新增的概念模型是，应用面向通用 Windows 平台 (UWP)，并且可跨所有 Windows 设备运行。 这样它便可以选择充分利用特定设备系列所独有的功能。 特别是，该应用还可以选择自行限制为面向一个或多个设备系列（如果需要）。 有关具体设备系列（以及如何确定要面向哪一个设备系列）的详细信息，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-**注意** 我们不建议你使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](wpsl-to-uwp-porting-to-a-uwp-project.md)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
+**注意**   我们不建议你使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](wpsl-to-uwp-porting-to-a-uwp-project.md)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
 
-若要定制你的应用的 UI 以适应不同的设备，可以使用我们建议的多种技术。 可以像往常那样继续使用可自动调整大小的元素和动态布局面板。 在 XAML 标记中，继续使用以有效像素（之前称为视图像素）为单位的大小，以便 UI 能适应不同的分辨率和比例系数（请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)）。 并且，通过使用视觉状态管理器的自适应触发器和设置器，让 UI 能适应相应的窗口大小（请参阅 [UWP App 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)）。
+若要定制你的应用的 UI 以适应不同的设备，可以使用我们建议的多种技术。 不过，你也可以像往常那样继续使用可自动调整大小的元素和动态布局面板。 在 XAML 标记中，继续使用以有效像素（之前称为视图像素）为单位的大小，以便 UI 能适应不同的分辨率和比例系数（请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)）。 并且，通过使用视觉状态管理器的自适应触发器和设置器，让 UI 能适应相应的窗口大小（请参阅 [UWP App 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)）。
 
 但是，在遇到必须检测设备系列的情况时，你可以执行此操作。 在本示例中，我们将使用 [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) 类导航到为移动设备系列定制的页面（如果适用），并且我们保证可通过其他方式回退到默认页面。
 
@@ -92,10 +99,5 @@ Windows Phone Silverlight 应用可以使用 **Microsoft.Phone.Info.DeviceStatus
 不过，我们鼓励你设计自己的 UWP 应用的 UI，无论设备方向和屏幕大小如何，都应使其保持美观。 再下个主题[针对外形规格和用户体验进行移植](wpsl-to-uwp-form-factors-and-ux.md)中提供了有关该内容的详细信息。
 
 下一主题是[移植业务和数据层](wpsl-to-uwp-business-and-data.md)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

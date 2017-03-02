@@ -1,13 +1,20 @@
 ---
 author: Jwmsft
-Description: "在为 UWP 应用选择字体并指定字体大小和颜色时，请遵循以下指南。"
+Description: "在为 UWP 应用选择字体并指定字号和颜色时，请遵循以下指南。"
 title: "适用于 UWP 应用的字体"
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9e09569eaad194c6b945444579dc37dec0fdc76c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -311,10 +318,5 @@ Serif 字体适合用于显示大量文本。
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

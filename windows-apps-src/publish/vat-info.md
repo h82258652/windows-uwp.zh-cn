@@ -3,23 +3,30 @@ author: jnHs
 Description: "如果在开发人员中心注册过程中要求你提供 VAT ID 号码，可通过下面的信息来了解该号码。"
 title: "VAT 信息"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9ff913999f0697b379df868277fb45597150aa6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a26cb43d230cd7dbb050254cceb70d3158c3af5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# VAT 信息
+# <a name="vat-info"></a>VAT 信息
 
 
 如果在开发人员中心注册过程中要求你提供 VAT ID 号码，可通过下面的信息来了解该号码。
 
-## 了解 VAT 号码
+## <a name="understanding-vat-numbers"></a>了解 VAT 号码
 
 
 增值税 (VAT) 号码是一种在欧盟 (EU) 国家或地区使用的标识符。 有关详细信息，请参阅欧盟的官方 [VIES 站点](http://go.microsoft.com/fwlink/p/?LinkId=258372)。
 
-## 接受的 VAT 号码格式
+## <a name="accepted-formats-for-vat-numbers"></a>接受的 VAT 号码格式
 
 
 请注意，Microsoft 不提供税收建议，下表仅供参考。 如果该指南不足以帮助你向 Microsoft 提供 VAT 号码，请咨询当地税务机构，查看最近是否有任何更改。
@@ -247,10 +254,5 @@ ms.openlocfilehash: 9ff913999f0697b379df868277fb45597150aa6e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

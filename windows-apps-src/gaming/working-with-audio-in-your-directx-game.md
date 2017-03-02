@@ -1,18 +1,25 @@
 ---
 author: mtoepke
 title: "游戏音频"
-description: "了解如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。"
+description: "学习如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。"
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 音频, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2fd568b8424585106c83d128a55f85909f35f2b8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 游戏音频
+# <a name="audio-for-games"></a>游戏音频
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
 
 你还可以使用 [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197)实现简单的声音和音乐播放。 Microsoft Media Foundation 专门为播放媒体文件和音频和视频流而设计，但也可以用于游戏，而且对游戏的影院场景或非交互式组件非常有用。
 
-## 简要介绍相关的概念
+## <a name="concepts-at-a-glance"></a>简要介绍相关的概念
 
 
 下面是我们在此部分中使用的一些音频编程概念。
@@ -33,17 +40,17 @@ ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
 -   声音发射器（或源）。 在 XAudio2 中，声音发射器是发出声音的位置，它可能是暂时的背景噪音或者是游戏内唱机播放的摇滚乐曲。 可以通过世界坐标指定发射器。
 -   声音侦听器。 声音侦听器通常是播放器，在更高级的游戏中也可能是处理从侦听器中收到的声音的 AI 实体。 你可以将该声音再混合到音频流中以发送到播放器，也可以使用它执行特定的游戏内操作，如唤醒标记为侦听器的 AI。
 
-## 设计时的注意事项
+## <a name="design-considerations"></a>设计时的注意事项
 
 
 音频是游戏设计和开发中非常重要的部分。 许多游戏玩家还记得从普通游戏提升到传奇地位就是因为一段难忘的配乐，或优秀的语音作品和声音混合，或者全部是一流的音频作品。 音乐和声音定义游戏的个性，并确立定义该游戏的主要动机，使之从其他类似的游戏中脱颖而出。 花些精力设计和开发游戏的音频配置文件非常值得。
 
 专业 3D 音频可以添加 3D 图形提供之外的沉浸级别。 如果你在开发模拟世界或需要 电影风格的复杂游戏，请考虑使用 3D 专业音频技术真正将玩家带到你的游戏世界中。
 
-## DirectX 音频开发路线图
+## <a name="directx-audio-development-roadmap"></a>DirectX 音频开发路线图
 
 
-### XAudio2 概念资源
+### <a name="xaudio2-conceptual-resources"></a>XAudio2 概念资源
 
 XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游戏引擎。 对于要向其现代游戏中添加声音效果和背景音乐的游戏开发人员，XAudio2 提供了音频图和混合引擎，该引擎具有低延迟且支持动态缓冲、同步采样准确播放以及隐式源速率转换。
 
@@ -104,7 +111,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 
  
 
-### XAudio2“操作方法”资源
+### <a name="xaudio2-how-to-resources"></a>XAudio2“操作方法”资源
 
 <table>
 <colgroup>
@@ -191,7 +198,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 
  
 
-### Media Foundation 资源
+### <a name="media-foundation-resources"></a>Media Foundation 资源
 
 Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 可以使用 Media Foundation API 对使用各种算法进行编码和压缩的音频和视频进行流式处理。 它不是为实时游戏播放方案设计的；而是为音频和视频组件更具线性的捕获和呈现提供强大的工具和广泛的编解码器支持。
 
@@ -252,7 +259,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 
  
 
-### Windows 运行时 XAML 媒体类型
+### <a name="windows-runtime-xaml-media-types"></a>Windows 运行时 XAML 媒体类型
 
 如果使用 [DirectX-XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)，你可以将 Windows 运行时 XAML 媒体 API 合并到使用 DirectX 和 C++ 的 Windows 应用商店应用中，从而获得更简单的游戏方案。
 
@@ -293,7 +300,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 
  
 
-## 参考
+## <a name="reference"></a>参考
 
 
 -   [XAudio2 简介](https://msdn.microsoft.com/library/windows/desktop/ee415813)
@@ -305,7 +312,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 -   [XAudio2 编程指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)
@@ -316,10 +323,5 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

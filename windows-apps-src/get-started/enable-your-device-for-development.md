@@ -10,27 +10,31 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc1bf476c93ef9843c20244f24a199c7888eb4a5
+ms.lasthandoff: 02/07/2017
 
 ---
+
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
-在可以编写应用之前，需要在你的开发电脑上以及要用于测试代码的任何设备上启用开发人员模式。
+在可以编写应用之前，需要在你的开发电脑上以及要用于测试代码的任何设备上启用开发人员模式。 
+
+![启用设备进行开发](images/developer-poster.png)
 
 ## <a name="use-developer-features"></a>使用开发人员功能
 
 ### <a name="develop-your-app-with-microsoft-visual-studio"></a>使用 Microsoft Visual Studio 开发应用
 
-必须先在你的电脑上启用开发人员模式，然后才可以在 Visual Studio 中打开 UWP 应用项目。 如果打开 UWP 项目，但未启用开发人员模式，“面向开发人员”设置页会自动打开。 按照下一部分中的说明操作，启用开发人员模式。
+必须先在你的电脑上启用开发人员模式，然后才可以在 Visual Studio 中打开 UWP 应用项目。 如果打开 UWP 项目，但未启用开发人员模式，**面向开发人员**设置页会自动打开。 按照下一部分中的说明操作，启用开发人员模式。
 
 当在 Windows 10 版本 1511 或更早版本中的 Visual Studio 中打开 UWP 应用项目时，会在 Visual Studio 中看到此对话框。 
 
 ![启用在 Visual Studio 中显示的开发人员模式对话框](images/latestenabledialog.png)
 
-当看到此对话框时，请单击“开发人员设置”打开“面向开发人员”设置页，然后启用开发人员模式。
+当看到此对话框时，请单击**开发人员设置**打开**面向开发人员**设置页，然后启用开发人员模式。
 
-> 可以随时转到“面向开发人员”页面启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“开发人员设置”。
+> 可以随时转到**面向开发人员**页面启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“开发人员设置”。
 
 ### <a name="enable-your-windows-10-devices"></a>启用 Windows 10 设备
 
@@ -40,7 +44,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 -   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。 
 
     启用开发人员模式时，会安装选项包，其中包括：
-    - 安装 Windows Device Portal。 仅当“启用 Device Portal”选项打开时，才会启用 Device Portal，并为它配置防火墙规则。
+    - 安装 Windows Device Portal。 仅当**启用 Device Portal**选项打开时，才会启用 Device Portal，并为它配置防火墙规则。
     - 安装、启用允许远程安装应用的 SSH 服务，并为其配置防火墙规则。
     - （仅限桌面设备）允许启用适用于 Linux 的 Windows 子系统。 有关详细信息，请参阅[关于装有 Ubuntu 的 Windows 上的 Bash](https://msdn.microsoft.com/commandline/wsl/about)。
 
@@ -48,9 +52,9 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 **使用开发人员功能**
 
-1.  在要启用的设备上，转到“设置”。 依次选择“更新和安全”和“对于开发人员”。
-2.  选择所需的访问级别 - 若要开发 UWP 应用，请选择“开发人员模式”。 
-3.  阅读所选设置的免责声明，然后单击“是”以接受更改。
+1.  在要启用的设备上，转到**设置**。 依次选择**更新和安全**和**对于开发人员**。
+2.  选择所需的访问级别 - 若要开发 UWP 应用，请选择**开发人员模式**。 
+3.  阅读所选设置的免责声明，然后单击**是**以接受更改。
 
 > [!NOTE]
 > 如果你的设备为组织所有，你的组织可能会禁用某些选项，如以下所示。
@@ -77,7 +81,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 有关特定于设备的设置说明，请参阅：
 - [适用于桌面设备的 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [适用于 HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [适用于 HoloLens 的 Device Portal](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [适用于 IoT 的 Device Portal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [适用于移动设备的 Device Portal](../debug-test-perf/device-portal-mobile.md)
 - [适用于 Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
@@ -109,7 +113,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
 
- 在桌面设备系列上，“面向开发人员”设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页。 
+ 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。 
 
 ## <a name="which-settings-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
 
@@ -215,9 +219,4 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 在这之后你需要启用设备用于开发（如本题中所述），以便可以继续在此设备上进行开发。 如果你不执行此操作，则可能在调试应用或为其创建程序包时遇到错误。 以下是此错误的示例：
 
 错误：DEP0700：应用注册失败。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

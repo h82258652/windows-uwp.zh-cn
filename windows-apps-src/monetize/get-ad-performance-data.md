@@ -1,22 +1,29 @@
 ---
 author: mcleanbyron
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的广告性能聚合数据。"
+description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的广告性能聚合数据。"
 title: "获取广告性能数据"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 广告, 性能"
 translationtype: Human Translation
-ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
-ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9d6226ebb06c1a9322ab44c3001a8b86aab1e5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 获取广告性能数据
+# <a name="get-ad-performance-data"></a>获取广告性能数据
 
 
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内你的应用程序的广告性能聚合数据。 此方法返回采用 JSON 格式的数据。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用程序的广告性能聚合数据。 此方法返回采用 JSON 格式的数据。
 
 此方法返回 Windows 开发人员中心仪表板上的[广告性能报告](../publish/advertising-performance-report.md)提供的相同数据。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 若要使用此方法，首先需要执行以下操作：
@@ -26,10 +33,10 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 有关详细信息，请参阅[使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)。
 
-## 请求
+## <a name="request"></a>请求
 
 
-### 请求语法
+### <a name="request-syntax"></a>请求语法
 
 | 方法 | 请求 URI                                                              |
 |--------|--------------------------------------------------------------------------|
@@ -37,7 +44,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
 
-### 请求头
+### <a name="request-header"></a>请求头
 
 | 标头        | 类型   | 说明           |
 |---------------|--------|--------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 若要检索特定应用的广告性能数据，请使用 *applicationId* 参数。 若要检索与你的开发者帐户关联的所有应用的广告性能数据，请忽略 *applicationId* 参数。
 
@@ -63,7 +70,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
  
-### 筛选器字段
+### <a name="filter-fields"></a>筛选器字段
 
 请求正文中的 *filter* 参数包含的一条或多条语句用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一个 *filter* 参数的示例：
 
@@ -82,7 +89,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span /> 
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示用于获取广告性能数据的多个请求。 将 *applicationId* 值替换为你的应用的应用商店 ID。
 
@@ -94,10 +101,10 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/adsperformance?appl
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 
-### 响应正文
+### <a name="response-body"></a>响应正文
 
 | 值      | 类型   | 说明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,7 +113,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                             |
 
 <span id="ad-performance-values" />
-### 广告性能值
+### <a name="ad-performance-values"></a>广告性能值
 
 *Value* 数组中的元素包含以下值。
 
@@ -130,7 +137,7 @@ Authorization: Bearer <your access token>
 
 <span />
 
-### 响应示例
+### <a name="response-example"></a>响应示例
 
 以下示例举例说明此请求的 JSON 响应正文。
 
@@ -172,13 +179,8 @@ Authorization: Bearer <your access token>
 
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [广告性能报告](../publish/advertising-performance-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

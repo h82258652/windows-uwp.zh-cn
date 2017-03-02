@@ -5,9 +5,16 @@ title: "Windows 推送通知服务 (WNS) 概述"
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 43f708d8baa379049837074f62e61e9e243513df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: adc09ec19572d190bc756dee63d3e735d512f4f1
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -145,7 +152,7 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 -   当设备脱机时，WNS 将默认为每个通道 URI 存储至多 5 个磁贴通知（如果启用了队列；否则只能存储 1 个磁贴通知）和 1 个锁屏提醒通知，不存储原始通知。 可以通过 [X-WNS-Cache-Policy 标头](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache)更改这种默认缓存行为。 请注意，当设备离线时，永远不会存储 Toast 通知。
 -   在对用户个性化通知内容的方案中，WNS 建议云服务在收到这些更新时立即发送这些更新。 此方案的示例包括社交媒体源更新、即时通信邀请、新消息通知或警报。 作为备用方法，你可以使用向大部分用户频繁提供相同的通用更新的方案；例如，天气、股票和新闻更新。 WNS 指南中指定这些更新的频率最高为每 30 分钟一个。 最终用户或 WNS 可以将超过该频率的例常更新确定为滥发更新。
 
-## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知过期时间
+## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知到期时间
 
 
 默认情况下，磁贴和徽标通知在下载完成时的三天后过期。 通知过期时，此内容将从磁贴或队列中删除，且不再向用户显示。 最佳做法是在所有磁贴和锁屏提醒通知上设置过期时间（使用对你的应用有意义的时间），以便使磁贴的内容不会在它不相关时继续保留。 对于具有已定义的使用寿命的内容来说，显式过期时间是必需的。 这还确保在你的云服务停止发送通知或用户在长时间内与网络断开连接时删除过时的内容。
@@ -260,10 +267,5 @@ async public void CheckForEnergySaving()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

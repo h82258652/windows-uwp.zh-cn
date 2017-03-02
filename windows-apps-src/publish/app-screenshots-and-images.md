@@ -3,13 +3,20 @@ author: jnHs
 Description: "你的应用需要包含各种徽标、屏幕截图和图像。"
 title: "应用屏幕截图和图像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
-ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2fbbaac1b6b0f3133b9d541d6887ceb6c379f520
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 应用屏幕截图和图像
+# <a name="app-screenshots-and-images"></a>应用屏幕截图和图像
 
 
 你的应用需要包含各种徽标、屏幕截图和图像。 其中某些项目为必备项目，其他则为可选项目。 请牢记，图像是展示你的应用的主要途径之一。 设计精良的图像十分有助于吸引客户使用你的应用。
@@ -18,10 +25,10 @@ ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
 
 应用商店还会使用你包含在你的应用包中的应用磁贴以及其他图像。 运行 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/mt186449)可确定你是否缺少任何必需的图像。 有关这些图像的指南和建议，请参阅[磁贴和图标资源](../controls-and-patterns/tiles-and-notifications-app-assets.md)。
 
-> **注意** 在应用商店中、客户的“开始”屏幕上以及在应用本身内使用图像的方式可能有所不同，具体取决于客户的操作系统以及其他因素。
+> **注意**  在应用商店中、客户的“开始”屏幕上以及在应用本身内使用图像的方式可能有所不同，具体取决于客户的操作系统以及其他因素。
 
 
-## 在提交过程中所提供的图像
+## <a name="images-provided-during-the-submission-process"></a>在提交过程中所提供的图像
 
 在输入应用的应用商店一览信息时，你可以选择提供多张屏幕截图（至少需要一张屏幕截图）和促销插图。 这些图像并非来自应用包；你将需要在**应用商店一览**步骤中为每种语言提供它们。
 
@@ -38,7 +45,7 @@ ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
 | [促销图像：Windows 8.1 及更早版本](#promotional-artwork)        | 414 x 180                            | 可用在 Windows 8.1 的应用商店中的促销布局中。                                                                                                                       | 适合面向 Windows 8.1 或更早版本的所有应用。                                                                                                 |
  
 
-## 屏幕截图
+## <a name="screenshots"></a>屏幕截图
 
 屏幕截图是你的应用在应用的应用商店一览中显示给你的客户的图像。
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
 
 你的提交过程只需要一张屏幕截图（不过你也可以提供多张屏幕截图；最多可为桌面设备提供 9 张屏幕截图，而最多可为移动设备和全息设备提供 8 张屏幕截图）。 你不需要为每个设备系列提供单独的屏幕截图，但我们建议为应用支持的每个设备系列都提供相应的屏幕截图，以便客户看到图像就可以了解应用在其设备上的外观。
 
-> **注意** Microsoft Visual Studio 提供了一个[可帮助你捕获屏幕截图的工具](http://go.microsoft.com/fwlink/p/?LinkId=221135)。
+> **注意**  Microsoft Visual Studio 提供了一个[可帮助你捕获屏幕截图的工具](http://go.microsoft.com/fwlink/p/?LinkId=221135)。
 
 每张屏幕截图都必须是 .png 文件，采用横向或纵向布局，且文件大小不能大于 2 MB。
 
@@ -57,10 +64,10 @@ ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
 
 你可以提供一段简短描述，最多使用 200 个字符介绍每张屏幕截图。
 
-> **注意** 如果你创建了[多种语言](supported-languages.md)的应用商店一览，你将为每种语言提供一个“应用商店一览”****页面。 你将需要为每种语言单独上传图像（即使你使用相同的图像），并提供要用于每种语言的描述文字。
+> **注意**  如果你创建了[多种语言](supported-languages.md)的应用商店一览，你将为每种语言提供一个**应用商店一览**页面。 你将需要为每种语言单独上传图像（即使你使用相同的图像），并提供要用于每种语言的描述文字。
 
 
-## 应用磁贴图标
+## <a name="app-tile-icon"></a>应用磁贴图标
 
 并非所有提交都需要此图标，但当你的应用在 Windows Phone 8.1 或更早版本上运行时，强烈建议你提供此图标。 当在 Windows Phone 8.1 及更早版本上向客户显示你的应用的应用商店一览时，需使用应用磁贴图标。 如果不提供此图像，Windows Phone 8.1 或更早版本上的客户将在你的应用一览中看到空白图标。 （如果你的应用仅包含面向 Windows Phone 8.1 或更早版本的程序包，这也适用于 Windows 10 上的客户。）
 
@@ -68,11 +75,11 @@ ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
 
 此应用磁贴图标必须是大小为 300 x 300 像素的 .png 文件。
 
-## 促销插图
+## <a name="promotional-artwork"></a>促销插图
 
 Windows 应用商店编辑团队使用不同图像在应用商店中展示应用。 借助提交促销插图，Windows 应用商店团队可以考虑将你的应用包含在促销布局中。
 
-> **重要提示** 为你的应用提供促销图像并不能保证你的应用获得特别推荐，但不提供促销图像则意味着我们不会考虑为其提供任何促销机会。 （有关详细信息，请参阅[轻松推广你的应用](make-your-app-easier-to-promote.md)。）
+> **重要提示**  为你的应用提供促销图像并不能保证你的应用获得特别推荐，但不提供促销图像则意味着我们不会考虑为其提供任何促销机会。 （有关详细信息，请参阅[轻松推广你的应用](make-your-app-easier-to-promote.md)。）
 
 你可能需要提交不同大小的促销插图，具体视你的应用所面向的操作系统版本而定。 对于所有大小，图像必须采用 .png 格式。
 
@@ -86,7 +93,7 @@ Windows 应用商店编辑团队使用不同图像在应用商店中展示应用
 -   请勿提供包含以下内容的图像：无礼手势、裸体、赌博、货币、毒品、烟草或酒精。
 -   请勿使用指向观众的武器或过度暴力和血腥内容。
 
-### 对于 Windows 10：2400 x 1200
+### <a name="for-windows-10-2400-x-1200"></a>对于 Windows 10：2400 x 1200
 
 在 Windows 10 的应用商店中，“应用和游戏”类别页面的顶部将显示一个旋转的聚焦图像，用于提供推广内容。 若要使你的应用适合此聚焦布局，请务必提交 2400 x 1200 图像。
 
@@ -97,18 +104,13 @@ Windows 应用商店编辑团队使用不同图像在应用商店中展示应用
 ![聚焦图像指南](images/spotlight1.jpg) 以下示例中显示的设计良好的聚焦图像遵循了这些指南。 （该图像上的线条用于指示如何将插图放置到指定区域中，它们不会包含在最终图像中。）
 
 ![设计良好的聚焦图像](images/spotlight2.jpg)
-### 对于 Windows Phone 8.1 及更早版本：1000 x 800、358 x 358
+### <a name="for-windows-phone-81-and-earlier-1000-x-800-358-x-358"></a>对于 Windows Phone 8.1 及更早版本：1000 x 800、358 x 358
 
 在 Windows Phone 8.1 及更早版本的应用商店中，可以在促销布局中使用两种图像大小：1000 x 800 像素和 358 x 358 像素。 如果你的应用运行在 Windows Phone 8.1 或更早版本上，出于促销考虑，我们建议提供这两种大小的图像。
 
-> **提示** 此外，请务必提供 300 x 300 [应用磁贴图标图像](#app-tile-icon)，以确保你的应用在应用商店中不会显示为带有空白图标的应用。
+> **提示**   此外，请务必提供 300 x 300 [应用磁贴图标图像](#app-tile-icon)，以确保你的应用在应用商店中不会显示为带有空白图标的应用。
 
-### 对于 Windows 8.1 及更早版本：414 x 180
+### <a name="for-windows-81-and-earlier-414-x-180"></a>对于 Windows 8.1 及更早版本：414 x 180
 
 在 Windows 8.1 及更早版本上的应用商店中，促销布局可以使用大小为 414 x 180 像素的图像。 如果你的应用运行在 Windows 8.1 或更早版本上，出于促销考虑，我们建议提供此大小的图像。
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

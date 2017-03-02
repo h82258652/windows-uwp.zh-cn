@@ -3,19 +3,26 @@ author: jwmsft
 description: "了解 XAML 中使用的空格处理规则。"
 title: "XAML 与空格"
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3b8b68ae8823ec23105d5f92e533d271ab3dcc88
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 260aa6c4bae2f7e9d051e172f83563f430e4e6c4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# XAML 与空格
+# <a name="xaml-and-whitespace"></a>XAML 与空格
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解 XAML 中使用的空格处理规则。
 
-## 空格处理
+## <a name="whitespace-processing"></a>空格处理
 
 与 XML 一样，XAML 中的空格字符是空白、换行和制表符。 它们分别对应于 Unicode 值 0020、000A 和 0009。 默认情况下，在 XAML 处理器遇到 XAML 文件中各元素之间的任何内部文本时，会执行以下空格规范化操作：
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: 3b8b68ae8823ec23105d5f92e533d271ab3dcc88
 
 “默认”对应于 **xml:space** 属性的默认值所表示的状态。
 
-### 内部文本中的空格和字符串原语
+### <a name="whitespace-in-inner-text-and-string-primitives"></a>内部文本中的空格和字符串原语
 
 上面的规范化规则适用于 XAML 元素中的内部文本。 规范化后，一个 XAML 处理器将任何内部文本转换为合适的类型，如下所示：
 
@@ -37,23 +44,18 @@ ms.openlocfilehash: 3b8b68ae8823ec23105d5f92e533d271ab3dcc88
 -   如果属性的类型是 **Object**，那么内部文本会分析为单个 **String**。 如果中间没有元素标记，这将导致 XAML 分析器错误，因为 **Object** 类型标识单个对象（**String** 或其他对象）。
 -   如果属性类型是一个集合，并且内部文本不是连续的，那么第一个子字符串转换为一个 **String** 并添加为一个集合项，中间元素添加为一个集合项，最后的结尾子字符串（如果有）作为第三个 **String** 项添加到集合中。
 
-### 空格和文本内容模型
+### <a name="whitespace-and-text-content-models"></a>空格和文本内容模型
 
 在实际中，保留空格仅是所有可能的内容模型的一个子集。 该子集包含可接受某种形式的单独 **String** 类型的内容模型、一个专用的 **String** 集合，或者 **String** 和列表、集合或词典中的其他类型的组合。
 
 甚至对于可接受字符串的内容模型，这些内容模型内的默认行为也不会重视任何保留的空格。
 
-### 保留空格
+### <a name="preserving-whitespace"></a>保留空格
 
 可以采用多种技术在源 XAML 中保留空格，使最终表示不会受 XAML 处理器空格规范化的影响。
 
 `xml:space="preserve"`：在希望保留空格的元素级别上指定此属性。 请注意，这会保留所有空格，包括可能由代码编辑器或设计界面添加的，使标记元素以一种直观嵌套方式对齐的空格。 是否显示这些空格由包含元素的内容模型负责。 我们不建议在根级别指定 `xml:space="preserve"`，因为大部分对象模型都不会将空格视为一种重要的方式。 一种更好的做法是，仅在呈现字符串内的空格的元素级别上专门设置该属性，或者在空格很重要的集合中设置该属性。
 
 实体和不间断空白：XAML 支持在一个文本对象模型中放置任何 Unicode 实体。 你可以使用专门的实体，例如不间断空白（在 UTF-8 编码中）。 你也可以使用支持不间断空白字符的富文本控件。 如果使用实体来模拟缩进等布局字符，请保持谨慎，因为不同于一般的布局工具（例如面板和边距的适当使用），基于大量因素，实体的运行时输出将不同。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

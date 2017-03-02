@@ -3,20 +3,27 @@ author: mtoepke
 title: "添加声音"
 description: "在此步骤中，我们将探讨射击游戏示例如何使用 XAudio2 API 创建声音播放对象。"
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 声音"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e44bc1046310b57cffa3eb4009e91885c61470eb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11553a22274a36094a3e839e8fda648f78cfaaf8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 添加声音
+# <a name="add-sound"></a>添加声音
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在此步骤中，我们将探讨射击游戏示例如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 创建声音播放对象。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) 添加声音输出。
@@ -27,7 +34,7 @@ ms.openlocfilehash: e44bc1046310b57cffa3eb4009e91885c61470eb
 -   **MediaReader.h/.cpp**。 此代码定义从本地存储中读取 .wav 音频文件的方法。
 -   **SoundEffect.h/.cpp**。 此代码定义一个用于游戏内声音播放的对象。
 
-## 定义音频引擎
+## <a name="defining-the-audio-engine"></a>定义音频引擎
 
 
 在游戏示例开始时，它将创建一个 **Audio** 对象用于为游戏分配音频资源。 声明此对象的代码如下所示：
@@ -54,7 +61,7 @@ protected:
 
 **Audio::MusicEngine** 和 **Audio::SoundEffectEngine** 方法返回用于为每个音频类型定义主语音的 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象。 主语音是用于播放的音频设备。 声音数据缓存无法直接提交到主语音，但提交到其他语音类型的数据必须定向到主语音才能听到。
 
-## 初始化音频资源
+## <a name="initializing-the-audio-resources"></a>初始化音频资源
 
 
 该示例通过调用 [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 为音乐和声音效果引擎初始化 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象。 在初始化引擎之后，它将通过调用 [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048) 为每个引擎创建主语音，如下所示：
@@ -91,7 +98,7 @@ void Audio::CreateDeviceIndependentResources()
 
 在加载音乐或声音效果音频文件时，此方法在主语音上调用 [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607)，后者创建用于播放的源语音实例。 在讨论游戏示例如何加载音频文件之后，就立即研究此代码。
 
-## 读取音频文件
+## <a name="reading-an-audio-file"></a>读取音频文件
 
 
 在游戏示例中，用于读取音频格式文件的代码在 **MediaReader.cpp** 中定义。 读入编码的 .wav 音频文件 **MediaReader::LoadMedia** 的具体方法如下所示：
@@ -264,7 +271,7 @@ myTarget->HitSound()->Initialize(
 
 现在，示例游戏在内存中有一个音频文件，我们看一下在游戏过程中它是如何播放的！
 
-## 播放音频文件
+## <a name="playing-back-an-audio-file"></a>播放音频文件
 
 
 ```cpp
@@ -306,14 +313,14 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 现在，每当弹药与目标发生冲突时，调用 **SoundEffect::PlaySound** 将导致播放爆炸声。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 这就是通用 Windows 平台 (UWP) DirectX 游戏开发的快速教程！ 到目前为止，你已经了解使你针对 Windows 8 开发的自己的游戏获得良好体验所需的工作。 请记住，你的游戏可以在多种 Windows 8 设备和平台上运行，因此请为尽快可能多的配置集设计自己的组件：你的图形、控件、用户界面 和音频！
 
 有关如何修改这些文档中提供的游戏示例的详细信息，请参阅[扩展游戏示例](tutorial-resources.md)。
 
-## 此部分的完整示例代码
+## <a name="complete-sample-code-for-this-section"></a>此部分的完整示例代码
 
 
 Audio.h
@@ -560,10 +567,5 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

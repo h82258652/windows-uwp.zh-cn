@@ -3,22 +3,29 @@ author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
 title: "设计面图上以及用于原型制作的示例数据"
 description: "也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
-ms.openlocfilehash: 6f157688cba014ffc1f8d09c2a291d62c564c8c9
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 35df3de9b56b9539a559e161e80658c23a9d0480
+ms.lasthandoff: 01/19/2017
 
 ---
-设计面图上以及用于原型制作的示例数据
+<a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**注意** 你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)还是使用 [{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
+**注意**  你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)还是使用 [{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
 
 也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。 为了使你的控件填充数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你正要生成一个草图（或原型）应用，则示例数据可能真的非常有用而且节省时间。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。
 
-在标记中设置 DataContext
+<a name="setting-datacontext-in-markup"></a>在标记中设置 DataContext
 -----------------------------
 
 使用命令性代码（在代码隐藏中）设置页面或用户控件的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 来查看模型实例是相当常见的开发人员的做法。
@@ -67,7 +74,7 @@ else
 
 如果你需要将参数传递到你的初始化代码，则可以使用视图模型定位器。 视图模型定位器是一个类，你可以将其放入应用资源中。 它具有公开视图模型的属性，而且你的页面的 **DataContext** 会绑定到该属性。 定位器或视图模型可以使用的另一种模式是依存关系注入，如果适用的话，它可以构造设计时或运行时数据提供程序（其中每个都实现一个共用接口）。
 
-“来自类中的示例数据”，和设计时属性。
+<a name="sample-data-from-class-and-design-time-attributes"></a>“来自类中的示例数据”，和设计时属性。
 ---------------------------------------------------------------------------------------
 
 不管出于何种原因，如果上一部分中的选项没有一个适合你，则通过 XAML 工具的功能和设计时属性，你仍有足够的设计时数据选项可用。 其中一种不错的选择就是 Blend for Visual Studio 中的**“从类中创建示例数据”**功能。 你可以在“数据”****面板顶部的其中一个按钮中找到该命令。
@@ -132,7 +139,7 @@ else
 
 **IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 在此情况下，设计工具所做的只是为该类的可绑定属性而分析该类，并将这些显示在“数据”****面板中和“创建数据绑定”****对话框中。
 
-用于原型制作的示例数据
+<a name="sample-data-for-prototyping"></a>用于原型制作的示例数据
 --------------------------------------------------------
 
 对于原型制作，设计时和运行时的两种示例数据，你都会需要。 对于此种使用情况，Blend for Visual Studio 具有“新示例数据”****功能。 你可以在“数据”****面板顶部的其中一个按钮中找到该命令。
@@ -142,9 +149,4 @@ else
 由于“新示例数据”****功能使用 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 而不使用 **d:DataContext**，所以当你运行草图或原型并同时对其进行设计时，示例数据仍可用。 而且“数据”****面板真的会加快你的设计和绑定任务。 例如，只需将集合属性从“数据”****面板中拖动到设计图面上就会生成数据绑定的项目控件和必要的模板，而且全部都已为生成和运行准备就绪。
 
 ![用于原型制作的示例数据。](images/displaying-data-in-the-designer-04.png)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "适用于游戏的项目模板和工具"
 description: "向你显示开始为通用 Windows 平台 (UWP) 编写 DirectX 游戏所需的内容。"
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 模板, 工具, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2991efd40862eb1cd8842432b3eed3bbe49c8eb2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 适用于游戏的项目模板和工具
+# <a name="project-templates-and-tools-for-games"></a>适用于游戏的项目模板和工具
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,7 +26,7 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
 首先，你需要 Visual Studio。
 
-## 获取 Visual Studio
+## <a name="get-visual-studio"></a>获取 Visual Studio
 
 
 [下载并安装 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
@@ -53,7 +60,7 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
  
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 如果你要移植现有游戏，请参阅下列主题。
@@ -77,10 +84,5 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

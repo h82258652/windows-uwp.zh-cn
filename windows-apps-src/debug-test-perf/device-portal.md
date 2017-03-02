@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概述"
 description: "了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8dfbdad7604e3aa7fad60ed777d16b4acd56b5ab
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
@@ -73,21 +80,21 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 
 **安装应用**
 
-1.  [创建应用包](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)后，可以将其远程安装到设备上。 在 Visual Studio 中生成它后，将生成一个输出文件夹。
+1.    [创建应用包](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)后，可以将其远程安装到设备上。 在 Visual Studio 中生成它后，将生成一个输出文件夹。
 
     ![应用安装](images/device-portal/iot-installapp0.png)
-2.  单击“浏览”并找到你的应用包 \(.appx\)。
-3.  单击“浏览”并找到证书文件 \(.cer\)。 （并非在所有设备上都需要。）
-4.  添加依赖项。 如果你有多个依赖项，请分别添加每一个。     
-5.  在“部署”下，单击“转到”。 
-6.  若要安装另一个应用，请单击“重置”按钮来清除字段。
+2.    单击“浏览”并找到你的应用包 \(.appx\)。
+3.    单击“浏览”并找到证书文件 \(.cer\)。 （并非在所有设备上都需要。）
+4.    添加依赖项。 如果你有多个依赖项，请分别添加每一个。     
+5.    在**部署**下，单击**转到**。 
+6.    若要安装另一个应用，请单击**重置**按钮来清除字段。
 
 
 **卸载应用**
 
-1.  确保应用未在运行。 
-2.  如果正在运行，请转到“正在运行的应用”并关闭它。 如果你尝试在应用正在运行时卸载，它将在尝试重新安装应用时导致问题。 
-3.  准备就绪后，单击“卸载”。
+1.    确保应用未在运行。 
+2.    如果正在运行，请转到“正在运行的应用”并关闭它。 如果你尝试在应用正在运行时卸载，它将在尝试重新安装应用时导致问题。 
+3.    准备就绪后，单击**卸载**。
 
 ### <a name="processes"></a>进程
 
@@ -116,7 +123,7 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 
 ![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-etw.png)
 
-选中“隐藏提供程序”以仅显示“事件”列表。
+选中**隐藏提供程序**以仅显示“事件”列表。
 - **注册的提供程序**：选择 ETW 提供程序和跟踪级别。 跟踪级别是以下值之一：
     1. 异常退出或终止
     2. 严重错误
@@ -124,11 +131,11 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
     4. 非错误警告
     5. 详细跟踪 \(*\)
 
-单击或点击“启用”以开始跟踪。 提供程序将添加到“已启用的提供程序”下拉列表。
+单击或点击**启用**以开始跟踪。 提供程序将添加到**已启用的提供程序**下拉列表。
 - **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不要在 GUID 中包含括号。
-- **已启用的提供程序**：列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击“禁用”来停止跟踪。 单击或点击“全部停止”来暂停所有跟踪。
-- **提供程序历史记录**：显示已在当前会话期间启用的 ETW 提供程序。 单击或点击“启用”来激活已禁用的提供程序。 单击或点击“清除”来清除历史记录。
-- **事件**：以表格的形式列出来自选定提供程序的 ETW 事件。 此表将实时更新。 在该表下方，单击“清除”按钮可删除表中的所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击“保存到文件”来将当前收集的 ETW 事件本地导出到 CSV 文件。
+- **已启用的提供程序**：列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击**禁用**来停止跟踪。 单击或点击**全部停止**来暂停所有跟踪。
+- **提供程序历史记录**：显示已在当前会话期间启用的 ETW 提供程序。 单击或点击**启用**来激活已禁用的提供程序。 单击或点击**清除**来清除历史记录。
+- **事件**：以表格的形式列出来自选定提供程序的 ETW 事件。 此表将实时更新。 在该表下方，单击**清除**按钮可删除表中的所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**来将当前收集的 ETW 事件本地导出到 CSV 文件。
 
 有关使用 ETW 跟踪的更多详细信息，请参阅关于将其用于从你的应用收集实时日志的[博客文章](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)。 
 
@@ -138,10 +145,10 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 
 ![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **可用配置文件**：从下拉列表中选择 WPR 配置文件，然后单击或点击“开始”以开始跟踪。
-- **自定义配置文件**：单击或点击“浏览”以从电脑中选择 WPR 配置文件。 单击或点击“上载并启动”以开始跟踪。
+- **可用配置文件**：从下拉列表中选择 WPR 配置文件，然后单击或点击**开始**以开始跟踪。
+- **自定义配置文件**：单击或点击**浏览**以从电脑中选择 WPR 配置文件。 单击或点击**上载并启动**以开始跟踪。
 
-若要停止跟踪，请单击“停止”。 停留在此页面上，直到跟踪文件 \(.ETL\) 完成下载。
+若要停止跟踪，请单击**停止**。 停留在此页面上，直到跟踪文件 \(.ETL\) 完成下载。
 
 可以打开捕获的 ETL 文件以供在 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) 中进行分析。
 
@@ -197,9 +204,4 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>跨站点 WebSocket 劫持 (CSWSH) 保护
 
 若要防止受到 [CSWSH 攻击](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，用于打开对 Device Portal 的 WebSocket 连接的所有客户端还必须提供与主机头匹配的 Origin 标头。  这向 Device Portal 证明了请求来自 Device Portal UI 或有效的客户端应用程序。  如果没有 Origin 标头，将拒绝你的请求。 
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

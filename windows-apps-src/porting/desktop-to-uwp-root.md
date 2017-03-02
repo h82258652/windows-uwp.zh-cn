@@ -3,9 +3,17 @@ author: awkoren
 Description: "开始使用桌面到 UWP 桥将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: "使用桌面桥将桌面应用引入通用 Windows 平台 (UWP)"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 translationtype: Human Translation
-ms.sourcegitcommit: 462d2b13cefc6abb4d7c6f814ec4ee659e4afde8
-ms.openlocfilehash: 1ef54c3c45113e434333058d0f039e213ea8eed2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: dd9f45b0ddcc201053ed8e35908da66443e47d72
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -87,14 +95,10 @@ ms.openlocfilehash: 1ef54c3c45113e434333058d0f039e213ea8eed2
 | [使用桌面桥手动将你的应用转换到 UWP](desktop-to-uwp-manual-conversion.md) | 了解如何手动创建应用包和清单。 |
 | [桌面桥应用扩展](desktop-to-uwp-extensions.md) | 通过扩展增强你的已转换应用，以支持启动任务和文件资源管理器集成等功能。 |
 | [使用桌面桥转换的应用支持的 UWP API](desktop-to-uwp-supported-api.md) | 查看哪些 UWP API 可供已转换的桌面应用使用。 |
+| [适用于使用 Visual Studio 创建的 .NET 桌面应用的桌面桥打包指南](desktop-to-uwp-packaging-dot-net.md) | 配置 Visual Studio 解决方案，以便编辑、调试和打包.NET 应用。 | 
 | [调试使用桌面桥转换的应用](desktop-to-uwp-debug.md) | 说明用于调试已转换应用的选项。 | 
 | [对使用桌面桥转换的应用签名](desktop-to-uwp-signing.md) | 了解如何使用证书对已转换的应用包签名。 |
 | [分配使用桌面桥转换的应用](desktop-to-uwp-distribute.md) | 查看可如何向用户分配已转换的应用。  |
 | [在桌面桥幕后](desktop-to-uwp-behind-the-scenes.md) | 深入研究桌面到 UWP 桥深层次的工作原理。 | 
 | [桌面桥的已知问题](desktop-to-uwp-known-issues.md) | 列出桌面到 UWP 桥的已知问题。 | 
 | [UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上演示已转换应用的功能的代码示例。 |
-
-
-<!--HONumber=Dec16_HO3-->
-
-

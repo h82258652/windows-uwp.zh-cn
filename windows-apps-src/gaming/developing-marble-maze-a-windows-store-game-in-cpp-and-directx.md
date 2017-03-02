@@ -3,13 +3,20 @@ author: mtoepke
 title: "开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏"
 description: "文档的这部分介绍了如何使用 DirectX 和 Visual C++ 创建 3D 通用 Windows 平台 (UWP) 游戏。"
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 示例, directx, 3d"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d660e05ab43f1c45f21b028a78c6cfa3e0897164
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 738be6a129158fbd6058ff7407aca0b8ece7ea3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏
+# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,15 +24,15 @@ ms.openlocfilehash: d660e05ab43f1c45f21b028a78c6cfa3e0897164
 
 文档的这部分介绍了如何使用 DirectX 和 Visual C++ 创建 3D 通用 Windows 平台 (UWP) 游戏。 本文档介绍了如何创建一个名为 Marble Maze 的 3D 游戏，它支持平板电脑等新外形规格，也适用于传统的台式机和笔记本电脑。
 
-> **注意** 若要下载 Marble Maze 源代码，请参阅 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)。
+> **注意**   若要下载 Marble Maze 源代码，请参阅 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)。
 
  
 
-> **重要提示** Marble Maze 演示了我们认为是创建 UWP 游戏的最佳做法的设计模式。 你可修改许多实现细节，以符合你自己的做法和你所开发游戏的独特需求。 你可随意使用更适合你的需求的不同技术或库。 （但是，始终要确保你的代码通过 Windows 应用认证工具包。）在我们认为 Marble Maze 实现对成功的游戏开发至关重要时，我们会在本文中着重介绍它。
+> **重要提示**  Marble Maze 演示了我们认为是创建 UWP 游戏的最佳做法的设计模式。 你可修改许多实现细节，以符合你自己的做法和你所开发游戏的独特需求。 你可随意使用更适合你的需求的不同技术或库。 （但是，始终要确保你的代码通过 Windows 应用认证工具包。）在我们认为 Marble Maze 实现对成功的游戏开发至关重要时，我们会在本文中着重介绍它。
 
  
 
-## Marble Maze 简介
+## <a name="introducing-marble-maze"></a>Marble Maze 简介
 
 
 我们选择 Marble Maze 是因为它相对基本，但仍然演示了大多数游戏中包含的丰富功能。 它展示了如何使用图形、输入处理和音频。 它还演示了规则和目标等游戏构成。
@@ -36,7 +43,7 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 
 ![Marble Maze 游戏的屏幕截图。](images/marblemaze.png)
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   Windows 10
@@ -45,14 +52,14 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 -   熟悉 DirectX 和 DirectX 术语
 -   COM 的基础知识
 
-## 谁应该阅读本文？
+## <a name="who-should-read-this"></a>谁应该阅读本文？
 
 
 如果你对为 Windows 10 创建 3D 游戏或其他图形密集型应用程序感兴趣，那么本文适合你。 我们希望你使用本文列出的原则和实践来创建自己的 UWP 游戏。 如果你了解一定的 C++ 和 DirectX 编程背景知识或对其有着强烈的兴趣，这将帮助你充分利用本文档。 如果你没有 DirectX 方面的经验，而有类似的 3D 图形编程环境方面的经验，仍将从本文档受益。
 
 文档[操作实例：使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)描述了 另一个使用 DirectX 和 C++ 实现基本 3D 射击游戏的示例。
 
-## 本文档所涵盖的内容
+## <a name="what-this-documentation-covers"></a>本文档所涵盖的内容
 
 
 本文档将介绍如何：
@@ -62,7 +69,7 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 -   集成各种输入机制，例如触摸、加速计和 Xbox 360 控制器。
 -   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 合并音乐和声音效果。
 
-## 本文未涵盖的内容
+## <a name="what-this-documentation-does-not-cover"></a>本文未涵盖的内容
 
 
 本文未涵盖游戏开发的以下方面。 这些方面将由其他资源介绍。
@@ -78,12 +85,12 @@ Marble Maze 还使用 [DirectXMath](https://msdn.microsoft.com/library/windows/d
 
 尽管 Marble Maze 提供了许多可重用的组件，但它不是一个完整的游戏开发框架。 在我们认为 Marble Maze 组件可在游戏中重用时，我们会在本文档中着重介绍它。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 我们建议你首先从 Marble Maze 示例基础入手，了解 Marble Maze 结构和 Marble Maze 源代码遵循的一些编码和风格指南。 下表列出了本节中的文档，以便你更容易查阅它们。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 | 标题                                                                                                                    | 描述                                                                                                                                                                                                                                        |
@@ -102,10 +109,5 @@ Marble Maze 还使用 [DirectXMath](https://msdn.microsoft.com/library/windows/d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "保持 UI 线程有响应"
 description: "用户期望应用在执行计算时保持响应，无论计算机的类型如何都是如此。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: eae6c26979f3aa6b1c9fabf217f6a49ed89dd38b
+ms.lasthandoff: 02/07/2017
 
 ---
-# 保持 UI 线程有响应
+# <a name="keep-the-ui-thread-responsive"></a>保持 UI 线程有响应
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 > **注意** 有一个例外是存在一个单独的呈现线程，该线程可以应用不会影响输入的处理方式或基本布局的 UI 更改。 例如，许多不会影响布局的动画和过渡都可以在此呈现线程上运行。
 
-## 延迟元素实例化
+## <a name="delay-element-instantiation"></a>延迟元素实例化
 
 应用中的某些最慢阶段可能包含启动以及切换视图。 请勿执行不必要的工作从而避免调用用户会首先看到的 UI。 例如，不要创建逐步显示 UI 和弹出窗口内容的 UI。
 
@@ -29,11 +36,11 @@ ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 队列适用于在不忙时进行处理的 UI。
 
-## 使用异步 API
+## <a name="use-asynchronous-apis"></a>使用异步 API
 
 若要帮助应用保持响应状态，则平台提供许多 API 的异步版本。 异步 API 确保你的活动执行线程永远不会占用大量时间。 从 UI 线程调用 API 时，使用异步版本（如果可用）。 有关使用 **async** 模式编程的详细信息，请参阅[异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187335)或[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。
 
-## 将工作卸载至后台线程
+## <a name="offload-work-to-background-threads"></a>将工作卸载至后台线程
 
 编写事件处理程序以便快速返回。 在需要执行大量工作的情况下，将工作安排在后台线程并返回。
 
@@ -99,13 +106,8 @@ public class AsyncExample
 
 > **注意** 还存在适用于 UWP 的 [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) 和 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API，可用于类似方案。 有关详细信息，请参阅[线程和异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

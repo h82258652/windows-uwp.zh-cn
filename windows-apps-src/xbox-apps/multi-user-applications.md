@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "多用户应用程序简介"
 description: "对 Xbox 多用户模型进行一次高级别的简单介绍。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 translationtype: Human Translation
-ms.sourcegitcommit: 098683ae1ad594eee3cb3b197431ddfa3998a30d
-ms.openlocfilehash: e9696cb20fa53b2fb5fe7f2cb06d4e5585639faf
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 31866c400683c61b432c3fe620487f93a9187771
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 多用户应用程序简介
+# <a name="introduction-to-multi-user-applications"></a>多用户应用程序简介
 
 本主题旨在对 Xbox 多用户模型进行一次高级别的简单介绍。
 
@@ -22,10 +30,10 @@ ms.openlocfilehash: e9696cb20fa53b2fb5fe7f2cb06d4e5585639faf
 
 使用 Xbox One 用户模型的每位用户都受本地用户帐户支持。 此本地用户帐户与 Xbox Live 帐户（以及 Microsoft 帐户）相关联。 这意味着从 Xbox 用户帐户到 Xbox Live 帐户和 Microsoft 帐户存在严格的一对一映射。
 
-## 单用户应用程序
+## <a name="single-user-applications"></a>单用户应用程序
 默认情况下，通用 Windows 平台 (UWP) 应用在启动该应用程序的用户的上下文中运行。 这些“单用户应用程序”**(SUA) 仅了解此单个用户，并在与其他 Windows 设备上的用户模型兼容的模式下运行。 Xbox 用户模型对与应用相关联的用户进行管理，并且保证在应用启动时用户可进行登录。 在此模型中，UWP 应用和游戏创作人员无需执行任何特殊操作便可在 Xbox 上运行。 
 
-## 多用户应用程序
+## <a name="multi-user-applications"></a>多用户应用程序
 UWP 游戏可以选择采用 Xbox One 多用户模型。 这些“多用户应用程序”**(MUA) 在系统帐户（称为“默认帐户”）的上下文中运行，并且可以充分利用 Xbox One 用户模型的灵活性和强大功能。 对于这些游戏，Xbox 用户模型不会对与游戏相关联的用户进行管理，甚至不需要用户登录即可使游戏运行。 这意味着必须写明用户要求，以使用户明确了解其内容并对内容进行管理，例如，是否需要用户登录、是否实现当前用户的概念以及是否允许多个用户同时输入等等。
    
 若要选择进入多用户模型：   
@@ -38,21 +46,16 @@ UWP 游戏可以选择采用 Xbox One 多用户模型。 这些“多用户应�
 <uap:SupportedUsers>multiple</uap:SupportedUsers>
 ```
 
-### 标识用户和输入
+### <a name="identifying-users-and-inputs"></a>标识用户和输入
 开发人员可以使用 KeyUp 和 KeyDown 路由事件所用的 KeyRoutedEventArgs.DeviceId，来区分不同输入生成的事件。
 使用 Windows.System.UserDeviceAssociation.FindUserFromDeviceId 方法将有助于识别与特定输入关联的用户。
 
-有关详细信息，请参阅 [KeyRoutedEventArgs.DeviceId](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.input.keyroutedeventargs.deviceid) 主题。
+有关详细信息，请参阅 [KeyRoutedEventArgs.DeviceId](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.keyroutedeventargs.deviceid) 主题。
 
 
-## 有关要选择的模型的指南
+## <a name="guidance-on-which-model-to-choose"></a>有关要选择的模型的指南
 所有 UWP 应用和大多数单用户游戏可以编写成 SUA。 我们建议仅合作的多玩家游戏考虑选择采用 Xbox One 多用户模型。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

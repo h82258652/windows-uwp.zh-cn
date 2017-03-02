@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "了解 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。"
 title: "XAML 和 C# 疑难解答指南"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0d5ba07f3a77f360dcb45c7139a7301cdb623dbb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -29,7 +36,7 @@ ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
 <span id="xaml-notappearing"/>
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”****功能。
+1.  确保在 Package.appxmanifest 中选择 **Internet（客户端）**功能。
 
 2.  检查应用程序 ID 和广告单元 ID。 这些 ID 必须匹配在 Windows 开发人员中心中获取的应用程序 ID 和广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md)。
 
@@ -166,7 +173,7 @@ ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
 <span id="csharp-adcontrolnotappearing"/>
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择“Internet (客户端)”****功能。
+1.  确保在 Package.appxmanifest 中选择**Internet (客户端)**功能。
 
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化，它将不可用。
 
@@ -270,9 +277,4 @@ ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

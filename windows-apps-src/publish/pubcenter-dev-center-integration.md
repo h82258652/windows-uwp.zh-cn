@@ -3,13 +3,20 @@ author: jnHs
 Description: "pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。"
 title: "pubCenter 开发人员中心集成"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 609d1dd2b154b8096871ef5fbf3e26245f46dc5c
-ms.openlocfilehash: 5a7fb36d22b4f30465602c96ddc252602e462207
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e29476296eb1fc8288cc37dd5ca71ef78476727a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# pubCenter 开发人员中心集成
+# <a name="pubcenter-dev-center-integration"></a>pubCenter 开发人员中心集成
 
 pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。 **截止 2016 年 10 月 1 日，pubCenter 访问已禁用，如今可在开发人员中心中管理 Microsoft Advertising 收益的所有付款信息。** 有关详细信息，请参阅以下常见问题。
 
@@ -19,11 +26,11 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 
 **如何在开发人员中心中创建广告单元？**
 
-从开发人员中心中的应用页面，单击“盈利”&gt;“通过广告盈利”。 有关在开发人员中心中创建广告单元的详细信息，请参阅[通过广告盈利](monetize-with-ads.md)。
+从开发人员中心中的应用页面，单击**盈利 &gt; 通过广告盈利**。 有关在开发人员中心中创建广告单元的详细信息，请参阅[通过广告盈利](monetize-with-ads.md)。
 
 **如何在开发人员中心中查看广告性能报告？**
 
-pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[广告性能报告](advertising-performance-report.md)中提供，报告位于它们所属的应用下。 注意：如果无法在“广告性能报告”上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请从仪表板概述页面访问[帐户级别的广告性能报告](advertising-performance-report.md#account-level-advertising-performance-report)。 
+pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[广告性能报告](advertising-performance-report.md)中提供，报告位于它们所属的应用下。 注意：如果无法在**广告性能报告**上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请从仪表板概述页面访问[帐户级别的广告性能报告](advertising-performance-report.md#account-level-advertising-performance-report)。 
 
 **如何在开发人员中心中管理付款方式和税收详细信息？**
 
@@ -31,7 +38,7 @@ pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[
 
 **可以在哪里找到开发人员中心中的付款报告？**
 
-在开发人员中心中单击“付款”可查看或下载付款报告。 有关详细信息，请参阅[付款摘要](payout-summary.md)。
+在开发人员中心中单击**付款**可查看或下载付款报告。 有关详细信息，请参阅[付款摘要](payout-summary.md)。
 
 **收益达到多少才能收到付款，付款又会在什么时候打入帐户？**
 
@@ -39,11 +46,11 @@ pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[
 
 **如何在开发人员中心中创建推广？**
 
-从开发人员中心中的应用页面，依次单击“盈利”&gt;“推广你的应用”。 有关详细信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
+从开发人员中心中的应用页面，依次单击**盈利 &gt; 推广你的应用**。 有关详细信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
 
 **我没有在使用广告单元的应用下看到广告单元。 可以在哪里找到它们？**
 
-如果无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果在多个应用中使用了该广告单元、在不属于同一个开发人员中心帐户的应用中使用了该广告单元，或者该广告单元在过去几天内未提供任何广告，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级“广告性能”报告并选择 pubCenter 应用名称。 
+如果无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果在多个应用中使用了该广告单元、在不属于同一个开发人员中心帐户的应用中使用了该广告单元，或者该广告单元在过去几天内未提供任何广告，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级**广告性能报告**并选择 pubCenter 应用名称。 
 
 **我曾经在开发人员中心帐户中的应用下看到过我的广告单元，但我现在找不到它们了。 这是怎么回事？**
 
@@ -54,9 +61,4 @@ pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[
 
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

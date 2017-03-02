@@ -3,20 +3,27 @@ author: TylerMSFT
 title: "启动 Windows 应用商店应用"
 description: "本主题介绍了 ms-windows-store URI 方案。 你的应用可以使用此 URI 方案将 Windows 应用商店应用启动到应用商店中的特定页面。"
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b66ae37adec1b68653c0fe7d552a84f61d57acd9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d80055e8c8ca1e8586cb8f2a54612206301282a1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 启动 Windows 应用商店应用
+# <a name="launch-the-windows-store-app"></a>启动 Windows 应用商店应用
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍了 **ms-windows-store:** URI 方案。 你的应用可以使用此 URI 方案将 Windows 应用商店应用启动到应用商店中的特定页面。
 
-## ms-windows-store: URI 方案引用
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI 方案引用
 
 <table>
 <tr><th>说明</th><th></th><th>URI 方案</th></tr>
@@ -129,9 +136,4 @@ ms.openlocfilehash: b66ae37adec1b68653c0fe7d552a84f61d57acd9
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

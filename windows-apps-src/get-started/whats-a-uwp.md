@@ -3,27 +3,34 @@ author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "什么是通用 Windows 平台 (UWP) 应用？"
 description: "了解我们称之为“通用 Windows 应用”的不同应用类型：Windows 应用商店应用、Windows Phone 应用商店应用和 Windows 运行时应用。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6be8bb0a78b614e160fb40629601bdab2d7fc71a
-ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0507086a7c7ea67f43f61feef6dc5c8de5afe2e5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 什么是通用 Windows 平台 (UWP) 应用？
+# <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
 如果不熟悉 Windows 平台，或来自 .NET、Windows Forms 或 Silverlight 领域，可能会对 UWP 应用实际上*是*什么感到疑惑。 
 
-正如名著中所说：“不必惊慌！”。 所有一切很快便会清清楚楚。 
+正如名著中所说：“不必惊慌！”，因为所有一切很快便会清清楚楚。 
 
 通用 Windows 平台 (UWP) 应用是一种基于通用 Windows 平台 (UWP) 生成的 Windows 体验，它首次作为 Windows 运行时在 Windows 8 中引入。 用户希望其*体验*在所有设备上均为移动版，并且希望使用现有的最方便或最高效的设备完成任务，此理念是 UWP 应用的核心。
 
-通过 Windows 10，你可以更加轻松地开发适用于 UWP 的应用，并且只需一个 API 集、一个应用包和一个应用商店，即可访问所有 Windows 10 设备 – PC、平板电脑、手机、Xbox、HoloLens、Surface Hub 等。 对许多屏幕大小以及各种交互模型（无论是触控、鼠标和键盘、游戏控制器还是笔）的支持也更加轻松。
+通过 Windows 10，你可以更加轻松地开发适用于 UWP 的应用，并且只需一个 API 集、一个应用包和一个应用商店，即可访问所有 Windows 10 设备 – PC、平板电脑、手机、Xbox、HoloLens、Surface Hub 等。 对许多屏幕大小以及各种交互模型（无论是触控、鼠标和键盘、游戏控制器还是笔）的支持也更加轻松。 并了解：您无需使用 C# 和 XAML（如果您不想这样做）。 是否要在 Unity 或 MonoGame 中开发？ 更喜欢 JavaScript？ 这不是问题，使用所有所需的项目。
 
-总而言之：完全可以在单个项目中使用你属性的编程语言和 API，将几乎相同的代码运行在现存的大量 Windows 硬件上。
+总而言之：完全可以在单个项目中使用你熟悉的编程语言、框架和 API，将几乎相同的代码运行在现存的大量 Windows 硬件上。 在编写 UWP 应用后，你可以将此应用发布到应用商店以供全球客户浏览。
 
 ![Windows 支持的设备](images/1894834-hig-device-primer-01-500.png)
 
-##那么，UWP 应用*确切*的定义是什么？
+##<a name="so-what-exactly-is-a-uwp-app"></a>那么，UWP 应用*确切*的定义是什么？
 
 
 什么使 UWP 应用与众不同？ 以下特性使 Windows 10 上的 UWP 应用与众不同。
@@ -54,7 +61,7 @@ ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
 
 有关 UWP 的详细信息，请参阅[通用 Windows 平台应用指南](universal-application-platform-guide.md)。
 
-## 使用一种你已知道的语言
+## <a name="use-a-language-you-already-know"></a>使用一种你已知道的语言
 
 
 你可以使用最熟悉的编程语言（如 C# 或 Visual Basic 和 XAML、JavaScript 和 HTML，或 C++ 和 DirectX 和/或 Extensible Application Markup Language (XAML)）创建 UWP 应用。 你甚至可以采用一种语言编写组件，然后在采用另一种语言编写的应用中使用这些组件。
@@ -63,7 +70,7 @@ UWP 应用可以使用 Windows 运行时，它是一个内置于操作系统的�
 
 Microsoft Visual Studio 2015 为每种语言提供 UWP 应用模板，该模板允许你为所有设备创建单个项目。 完成工作后，你可以生成应用包，并将其从 Visual Studio 提交到 Windows 应用商店，以向任何 Windows 10 设备上的客户提供你的应用。
 
-## 在 Windows 上构建 UWP 应用
+## <a name="uwp-apps-come-to-life-on-windows"></a>在 Windows 上构建 UWP 应用
 
 
 在 Windows 上，你的应用可以向用户提供相关且实时的信息，并且吸引他们再次访问更多信息。 在现代应用经济中，你的应用必须具有足够的吸引力才能受到用户的青睐。 Windows 为你提供了大量资源，使你的用户会回过头来使用你的应用：
@@ -79,7 +86,7 @@ Microsoft Visual Studio 2015 为每种语言提供 UWP 应用模板，该模板�
 
 最后，你可以使用漫游数据和 Windows 凭据保险箱，在用户运行你的应用的所有 Windows 屏幕上提供一致的漫游体验。 通过漫游数据可以方便地在云中存储用户的首选项和设置，而无需生成你自己的同步基础结构。 另外，你可以将用户凭据存储在凭据保险箱中，该功能最为重视安全性和可靠性。
 
-##  以你自己的方式销售应用
+##  <a name="monetize-your-app-your-way"></a>以你自己的方式销售应用
 
 
 在 Windows 上，你可以选择以何种方式销售自己的应用—通过手机、平板电脑、PC 以及其他设备。 我们提供了多种方式让你通过自己的应用及其提供的服务来获得收益。 你只需选择最适合自身的方式即可。
@@ -88,25 +95,20 @@ Microsoft Visual Studio 2015 为每种语言提供 UWP 应用模板，该模板�
 -   试用是一种绝佳的销售方式，即允许用户在购买前先试用你的应用，与更传统的“免费模式”选项相比，用户更易于发现你的应用并转而使用该应用。
 -   应用内购买是通过自己的应用获得收益的最灵活选项。
 
-## 让我们开始吧
+## <a name="lets-get-started"></a>让我们开始吧
 
 
 有关 UWP 详细信息，请参阅[通用 Windows 平台应用指南](universal-application-platform-guide.md)。 然后，请查看[准备工作](get-set-up.md)以下载开始创建应用所需的工具。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [通用 Windows 平台应用指南](universal-application-platform-guide.md)
 * [准备工作](get-set-up.md)
 
-## 更多高级主题
+## <a name="more-advanced-topics"></a>更多高级主题
 
 * [.NET 本机 - 对于通用 Windows 平台 (UWP) 开发人员的意义](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
 * [.NET 中的通用 Windows 应用](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
 * [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

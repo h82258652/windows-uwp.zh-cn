@@ -2,10 +2,17 @@
 author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "文件访问权限"
-description: "默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。"
+description: "默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或声明功能访问其他位置。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3a5069620fa665d4508af70df5543a2d42744210
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="file-access-permissions"></a>文件访问权限
@@ -102,7 +109,7 @@ ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 
     当然，还可以通过调用文件选取器（使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)）并让用户选取供你的应用访问的文件和文件夹，以获得对可移动设备上的文件和文件夹的访问权。 通过[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)了解如何使用文件选取器。
 
-    **注意** 有关从移动应用访问 SD 卡的详细信息，请参阅[访问 SD 卡](access-the-sd-card.md)。
+    **注意**  有关从移动应用访问 SD 卡的详细信息，请参阅[访问 SD 卡](access-the-sd-card.md)。
 
      
 
@@ -158,13 +165,8 @@ ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 | 音乐     | MusicLibrary <br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | 图片  | PicturesLibrary<br> 另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | 视频    | VideosLibrary<br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
-| 可移动设备  | RemovableDevices <br><br>请注意，必须将文件类型关联（该关联声明你的应用可以在此位置中访问的特定文件类型）添加到你的应用清单。 <br><br>另请参阅[访问 SD 卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
+| 可移动设备  | RemovableDevices <br><br>注意  必须将文件类型关联（该关联声明你的应用可以在此位置中访问的特定文件类型）添加到你的应用清单。 <br><br>另请参阅[访问 SD 卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | 家庭组库  | 至少需要下列功能之一。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | 媒体服务器设备 (DLNA) | 至少需要下列功能之一。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | 通用命名约定 (UNC) 文件夹 | 需要下列功能组合。 <br><br>家庭和工作网络功能： <br>- PrivateNetworkClientServer <br><br>至少一个 Internet 和公共网络功能： <br>- InternetClient <br>- InternetClientServer <br><br>域凭据功能（如果适用）：<br>- EnterpriseAuthentication <br><br>注意：必须将文件类型关联（该关联声明你的应用可以在此位置中访问的特定文件类型）添加到你的应用清单。 | 使用以下项检索文件夹： <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>使用以下项检索文件： <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

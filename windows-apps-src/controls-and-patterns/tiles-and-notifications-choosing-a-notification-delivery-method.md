@@ -1,13 +1,20 @@
 ---
 author: mijacobs
-Description: "本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项&amp;\\#8212;本地、计划、定期和推送&amp;\\#8212;。"
+Description: "本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。"
 title: "选择通知传递方法"
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: 71b1255c25adcb4a99d082ba5e83af60b316abe1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 42cb565c9cb1592d90d9f46d2faf783117d0a8bd
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
@@ -168,10 +175,5 @@ ms.openlocfilehash: 71b1255c25adcb4a99d082ba5e83af60b316abe1
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,13 +3,20 @@ author: msatranjr
 title: "将数组传递到 Windows 运行时组件"
 description: "在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。"
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 04ecb16faf39e5dfc2f8ad8c5049c696615a449a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将数组传递到 Windows 运行时组件
+# <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,7 +26,7 @@ ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
 
 -   对于返回值或输出参数（在 Visual Basic 中为带有 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性的 **ByRef** 参数），数组始终仅用于输出。 不会应用 ReadOnlyArrayAttribute 属性。 输出参数上允许有 WriteOnlyArrayAttribute 属性，但是多余的。
 
-    > **注意** Visual Basic 编译器不强制执行仅输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
+    > **注意**  Visual Basic 编译器不强制执行仅输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
  
 -   不允许具有 **ref** 修饰符（在 Visual Basic 中为 **ByRef**）的参数。 Winmdexp.exe 会生成错误。
 -   对于通过值传递的参数，必须通过应用 [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性或 [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性来指定数组内容是用于输入还是用于输出。 同时指定这两个属性是一个错误。
@@ -47,7 +54,7 @@ ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
 
 我们建议你立即创建输入数组的副本，并处理该副本。 这有助于确保不管你的组件是否由 .NET Framework 代码调用，该方法具有相同的行为。
 
-## 使用来自托管和非托管代码的组件
+## <a name="using-components-from-managed-and-unmanaged-code"></a>使用来自托管和非托管代码的组件
 
 
 对于具有 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性的参数，其行为会有所不同，具体取决于调用方是在本机代码中编写还是在托管代码中编写。 如果调用方为本机代码（JavaScript 或 Visual C++ 组件扩展），对数组内容的处理如下所示：
@@ -57,14 +64,9 @@ ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
 
 如果调用方为托管代码，则原始数组可用于调用的方法，就像在 .NET Framework 中使用任何方法调用那样。 数组内容在 .NET Framework 代码中具有可变性，因此该方法对数组所做的任何更改对调用方均可见。 记住这一点很重要，因为它会影响为 Windows 运行时组件编写的单元测试。 如果测试在托管代码中编写，数组的内容将在测试期间显示为可变。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
 * [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

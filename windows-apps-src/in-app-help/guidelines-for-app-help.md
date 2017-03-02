@@ -4,9 +4,17 @@ Description: "以下指南描述了如何为你的应用设计有效的“帮助
 title: "应用帮助指南"
 label: Guidelines for app help
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: c978e805fa7d746baf299058c8d98fc04ad7c81b
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 64cb4871178ad712189e672bbde9f0ca9ffc6d26
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -62,10 +70,5 @@ ms.openlocfilehash: c978e805fa7d746baf299058c8d98fc04ad7c81b
 
 [请参阅外部帮助指南](external-help.md)
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

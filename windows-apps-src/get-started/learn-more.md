@@ -10,8 +10,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bf7959be6278577cc8fe93011591e4523bee623
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,9 +20,9 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 # <a name="whats-next"></a>后续步骤是什么？
 
-你想要编写应用，并将其发布到 Windows 应用商店：从何处着手？ 如果你完全不熟悉 UWP 平台，请尝试一些<a href="https://channel9.msdn.com/">第 9 频道</a>视频和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 课程。 如果你已经熟悉 XAML 和 C#，即可开始阅读下面的主题，或直接[下载一些示例](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+你想要编写应用，并将其发布到 Windows 应用商店：从何处着手？ 如果你完全不熟悉 UWP 平台，请尝试一些<a href="https://channel9.msdn.com/">第 9 频道</a>视频和 <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> 课程。 如果你已经熟悉 XAML 和 C#，即可开始阅读下面的主题，或直接[下载一些示例](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
 
-有许多工具和框架可帮助你编写的应用，其中许多支持跨平台开发。 例如，如果你想要编写 2D 游戏，可能想要看一下 <a href="http://www.monogame.net">Monogame</a>。 对于 3D 游戏，已有 <a href="http://www.unity3d.com">Unity</a>，但如果关注重点是移动设备，则不要忘记 <a href="http://www.xamarin.com">Xamarin</a>。
+有许多工具和框架可帮助你编写的应用，其中许多支持跨平台开发。 例如，如果你想要编写 2D 游戏，可以参阅 <a href="http://www.monogame.net">Monogame</a> 或一些 [JavaScript/HTML 框架](https://html5gameengine.com/)。 对于 3D 游戏，已有 <a href="http://www.unity3d.com">Unity</a>，但如果关注重点是移动设备，则不要忘记 <a href="http://www.xamarin.com">Xamarin</a>。
 
 如果你刚开始使用，我们建议你查看整个 UWP 主题来熟悉该平台，然后了解如何通过使用并自定义 XAML 控件创建用户界面。 你将使用 XAML 来布置应用（[此教程](../layout/grid-tutorial.md)将指导你完成它），但 XAML 的主要优势是使用*数据绑定*（可将控件与你的应用要显示的信息连接起来）：如果你不熟悉 Windows 平台，这将是一个需要了解的重要概念。 
 <table class="wdg-noborder">
@@ -94,7 +95,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 ## <a name="finding-help-in-the-dev-center"></a>在开发人员中心中查找帮助
 
-[Microsoft 开发人员中心](http://devcenter.microsoft.com)包含大量有关许多不同的工具、框架和平台的文档。 如果你要搜索主题和示例，应确保你正在阅读 UWP 特定内容。 如何确保你正在阅读的是合适的内容？
+[Microsoft 开发人员中心](http://developer.microsoft.com)包含大量有关许多不同的工具、框架和平台的文档。 如果你要搜索主题和示例，应确保你正在阅读 UWP 特定内容。 如何确保你正在阅读的是合适的内容？
 概念性内容（即非 API 参考内容）将具有主题 URL 中的 UWP。 API 内容将具有包含 Windows 运行时 API 的路径。 
 
 ![示例 UWP 概念性主题](images/devcenter-topic2.png)
@@ -147,7 +148,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 <td align="left"><strong>移植</strong></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">利用你的 Android 和 iOS 技能快速创建 UWP 应用。</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>Windows 桥</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/bridges">用于将较旧的应用和 iOS 应用更新到 UWP 的工具。</a></td>
 </tr>
@@ -155,13 +156,17 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 <td align="left"><strong>Xamarin</strong></td>
 <td align="left"><a href="https://www.xamarin.com">使用 C# 编写适用于 iOS、Android 和 Windows 10 的应用。</a></td>
 </tr>
-<tr class="odd" style="background-color: #ffffff">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>任务代码段</strong></td>
 <td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">完成较小但有用任务的现成代码。</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>操作方法主题</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/develop">包含特定 UWP 功能的示例代码。</a></td>
+</tr>
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>硬件</strong></td>
+<td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev">Microsoft 官方商城销售的适用于开发人员的硬件。</a></td>
 </tr>
 </table>
 
@@ -169,10 +174,5 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -1,17 +1,24 @@
 ---
 author: DelfCo
 Description: "准备将应用本地化到其他市场、语言或地区。"
-title: "准备将应用本地化"
+title: "准备你的应用以供进行本地化"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a56e0940539928723f6fb3b906d1212f80676768
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="prepare-your-app-for-localization"></a>准备将应用本地化
+# <a name="prepare-your-app-for-localization"></a>准备你的应用以供进行本地化
 
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -170,10 +177,5 @@ ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

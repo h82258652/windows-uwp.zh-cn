@@ -3,46 +3,53 @@ author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "了解 Microsoft Store Services SDK 中当前版本的 Microsoft Advertising 库的已知问题。"
 title: "Microsoft Advertising 库的已知问题"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 已知问题"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising 库的已知问题
+# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising 库的已知问题
 
 
 
 
 本主题列出了 Microsoft Store Services SDK（适用于 UWP 应用）以及适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK（适用于 Windows 8.1 和 Windows Phone 8.x 应用）中当前版本的 Microsoft Advertising 库的已知问题。
 
-## 安装 Microsoft Store Services SDK 需要适用于通用 Windows 应用的 Visual Studio Tools
+## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>安装 Microsoft Store Services SDK 需要适用于通用 Windows 应用的 Visual Studio Tools
 
 若要使用 Visual Studio 2015 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)，必须安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关详细信息，请参阅 Visual Studio [发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
 
-## Windows Phone 8.x Silverlight 项目
+## <a name="windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight 项目
 
 适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 有限支持 Windows Phone 8.x Silverlight 项目。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md#silverlight_support)。
 
-若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到“项目”**** > “添加连接的服务”**** > “广告中介”****即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到**项目** > **添加连接的服务** > **广告中介**即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
-## XAML 中的 AdControl 接口未知
+## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML 中的 AdControl 接口未知
 
 适用于 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的 XAML 标记可能会错误显示暗示接口未知的蓝色曲线。 这仅在面向 x86 时发生，并且可能会被省略。
 
-## 之前广告请求的 lastError
+## <a name="lasterror-from-previous-ad-request"></a>之前广告请求的 lastError
 
 如果之前广告请求还留有 **lastError**，则在下一次广告调用期间，可能会引发该事件两次。 尽管还是会提出新的广告请求，而且可能也会产生有效广告，但此行为可能会引起混淆。
 
-## 手机上的间隙广告和导航按钮
+## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>手机上的间隙广告和导航按钮
 
 在拥有软件“后退”****、“开始”****以及“搜索”****按钮而非硬件按钮的手机（仿真器）上，倒计时器和单击视频间隙广告的按钮可能会被遮住。
 
-## 未向你的应用投放最近创建的广告
+## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>未向你的应用投放最近创建的广告
 
 如果你最近（少于一天）创建了广告，可能不会立即可用。 如果广告的编辑内容已经过批准，则在广告服务器已对其进行处理并且该广告作为库存可用时会立即投放。
 
-## 你的应用中没有显示任何广告
+## <a name="no-ads-are-shown-in-your-app"></a>你的应用中没有显示任何广告
 
 你没有看到广告的原因有很多，其中包括网络错误。 其他原因可能包括：
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 你还可在[论坛](http://go.microsoft.com/fwlink/p/?LinkId=401266)发布问题。
 
-## 应用中显示的是测试广告而非实时广告
+## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>应用中显示的是测试广告而非实时广告
 
 可以显示测试广告，即使你希望显示实时广告。 这可在以下方案中发生：
 
@@ -66,7 +73,7 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 当实时广告单元服务测试广告时，该广告单元的状态会在 Windows 开发人员中心中显示“活动并服务测试广告”****。 这当前不适用于手机应用。
 
-## 广告单元 ID 和应用程序 ID 的过时测试值不再有用。
+## <a name="obsolete-test-values-for-ad-unit-id-and-application-id-no-longer-working"></a>广告单元 ID 和应用程序 ID 的过时测试值不再有用。
 
 Windows Phone Silverlight 应用的以下测试值已过时，并且不再有用。 如果你拥有使用这些测试值的现有项目，请将项目更新为使用[测试模式值](test-mode-values.md)中提供的值。
 
@@ -78,7 +85,7 @@ Windows Phone Silverlight 应用的以下测试值已过时，并且不再有用
 | test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
-## 项目中通过面向任何 CPU 引起的引用错误
+## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>项目中通过面向任何 CPU 引起的引用错误
 
 在使用 Microsoft Advertising 库时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能在添加类似于此引用的引用后会看到警告。
 
@@ -94,21 +101,21 @@ Windows Phone Silverlight 应用的以下测试值已过时，并且不再有用
 
 ![createapppackages](images/13-16280cb1-a838-42b9-9256-eac7f33f5603.png)
 
-## JavaScript/HTML 应用中的 Z 顺序
+## <a name="z-order-in-javascripthtml-apps"></a>JavaScript/HTML 应用中的 Z 顺序
 
 JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 唯一的例外是中断覆盖层，例如 Skype 应用的入站呼叫通知。
 
 <span id="bkmk-ui"/>
-## 不要使用边框
+## <a name="do-not-use-borders"></a>不要使用边框
 
 设置由 **AdControl** 从父类继承的边框相关的属性将引起广告位置出错。
 
-## 详细信息
+## <a name="more-information"></a>详细信息
 
 
 有关最新的已知问题和发布与 Microsoft Advertising 库相关的问题的详细信息，请访问[论坛](http://go.microsoft.com/fwlink/p/?LinkId=401266)。
 
-## 支持
+## <a name="support"></a>支持
 
 
 若要联系产品支持人员询问有关 Microsoft Advertising 库的问题，请访问[支持页面](https://go.microsoft.com/fwlink/p/?LinkId=331508)，然后选择“应用内广告”****。
@@ -116,9 +123,4 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
  
 
  
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

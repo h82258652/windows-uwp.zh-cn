@@ -6,9 +6,16 @@ ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 324bdcd8ae61826a2be765f6a6a93441036d6984
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: 324bdcd8ae61826a2be765f6a6a93441036d6984
 1.  在 Microsoft Visual Studio 菜单上，依次选择“文件”&gt;“新建项目”****。
 2.  在“新建项目”****对话框的左侧窗格中，依次选择“Visual C#”-&gt;“Windows”-&gt;“通用”****节点，或者依次选择“Visual C++”-&gt;“Windows”-&gt;“通用”****节点。
 3.  在中心窗格中，选择“空白应用”****。
-4.  在“名称”****框中，输入 **NavApp1**，然后选择“确定”****按钮。
+4.  在**名称**框中，输入 **NavApp1**，然后选择**确定**按钮。
 
     解决方案已创建并且项目文件显示在“解决方案资源管理器”****中。
 
@@ -367,10 +374,5 @@ Page1::Page1()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

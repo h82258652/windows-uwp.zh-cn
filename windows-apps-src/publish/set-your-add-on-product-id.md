@@ -3,19 +3,26 @@ author: jnHs
 Description: "在 Windows 开发人员中心仪表板中创建新的加载项时，需要指定产品类型并为其分配产品 ID。"
 title: "设置加载项产品类型和产品 ID"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e59324aca65cf8baacb085da22a20d952fdb8c9a
-ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: abd6c27367476e5f1da11cde14b7d7f08105ad3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 设置加载项产品类型和产品 ID
+# <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
 加载项必须与已在仪表板中创建的应用（即使你并未提交）关联。 你可以在应用的“概述”****页面或“加载项”****页面找到“创建新加载项”****的按钮。
 
 单击该按钮后，你将看到“创建新加载项”****页面。 需要在此处指定产品类型并为其分配产品 ID。
 
-## 产品类型
+## <a name="product-type"></a>产品类型
 
 首先，你将需要指示所提供的加载项类型。 该选择是指客户使用加载项的方式。
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
 
 如果产品只能购买一次，应选择“耐用型”****。 持久型加载项通常用于解锁应用中的额外功能。 持久型加载项不会消耗用尽，但你可以设置“产品生命周期”****，使它们在一段时间后（可选择 1 至 365 天）过期。 持久型加载项的默认“产品生命周期”****为“永久”****，这意味着加载项永不过期。 你可以在加载项提交过程的[加载项属性](enter-add-on-properties.md)步骤中，将产品生命周期更改为不同的持续时间。
 
-## 产品 ID
+## <a name="product-id"></a>产品 ID
 
 输入加载项的唯一产品 ID。 这就是你将在[用于调用加载项的应用代码](https://msdn.microsoft.com/library/windows/apps/mt219684)中需要引用的相同标识符。
 
@@ -46,10 +53,5 @@ ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

@@ -1,16 +1,24 @@
 ---
 author: msatranjr
 title: "蓝牙广告"
-description: "本部分包含有关如何通过 AdvertisementWatcher 和 AdvertisementPublisher API 的用户将蓝牙低功耗 (LE) 广告集成到通用 Windows 平台 (UWP) 应用的文章。"
+description: "此部分包含几篇关于如何通过 AdvertisementWatcher 和 AdvertisementPublisher API 的用户将蓝牙低能耗 (LE) 广告集成到通用 Windows 平台 (UWP) 应用的文章。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 translationtype: Human Translation
-ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
-ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bfdb1b218676503699674c97fc962ad8161769dd
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="bluetooth-le-advertisements"></a>蓝牙 LE 广告
+# <a name="bluetooth-le-advertisements"></a>蓝牙低能耗广告
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -22,8 +30,10 @@ ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
 
 开发人员可以使用 LE 广告 API 执行以下两项主要功能：
 
--   [广告观察程序](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx)：侦听附近信标并根据负载或邻近感应将它们过滤掉。  
--   [广告发布程序](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx)：定义负载使 Windows 能够以开发人员的名义发布广告。  
+-   
+              [广告观察程序](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx)：侦听附近信标并根据负载或邻近感应将它们过滤掉。  
+-   
+              [广告发布程序](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx)：定义负载使 Windows 能够以开发人员的名义发布广告。  
 
 Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=619990)中有完整的示例代码。
 
@@ -39,7 +49,8 @@ Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=61999
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-**注意** 出于用户隐私，广告的生命周期被绑定到应用的生命周期。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
+
+              **注意** 出于用户隐私，广告的生命周期被绑定到应用的生命周期。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本发布
 
@@ -69,7 +80,7 @@ manufacturerData.Data = writer.DetachBuffer();
 publisher.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-现在，已创建和设置了发布者，你可以调用“开始”来开始发布广告。
+现在，已创建和设置了发布者，你可以调用**开始**来开始发布广告。
 
 ```csharp
 publisher.Start();
@@ -85,7 +96,7 @@ publisher.Start();
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
 watcher.Received += OnAdvertisementReceived;
 watcher.Start();
-``` 
+```    
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -153,8 +164,3 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 这可以大致转换为距离，但不应用来测量真正的距离，因为每个单独的无线收发器是不同的。 不同的环境因素可以导致难以测量距离（如墙壁、无线收发器的外盒，甚至空气湿度）。
 
 判断纯距离的一个替代方法是定义“类别”。 无线电设备在非常接近时通常会报告 0 至 -50 DBm，在中等距离时报告 -50至 -90，在很远时报告低于 -90。 试用和错误最适合用来确定要用于应用的类别。
-
-
-<!--HONumber=Dec16_HO3-->
-
-

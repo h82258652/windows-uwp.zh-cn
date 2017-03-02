@@ -1,10 +1,18 @@
 ---
 author: TylerMSFT
 title: "启动远程设备上的应用"
-description: Learn how to launch an app on a remote device using Project "Rome".
+description: "了解如何使用“Rome”项目在远程设备上启动应用。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 translationtype: Human Translation
-ms.sourcegitcommit: 4e94ee5b3c56f3ec20e3592b97348c291297a670
-ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
 
 ## <a name="add-the-remotesystem-capability"></a>添加 RemoteSystem 功能
 
-为了让你的应用启动远程设备上的应用，必须将 `remoteSystem` 功能添加到应用包清单。 可以通过选择“功能”选项卡上的“远程系统”来使用程序包清单设计器添加它，也可以手动将以下行添加到项目的 Package.appxmanifest 文件。
+为了让你的应用启动远程设备上的应用，必须将 `remoteSystem` 功能添加到应用包清单。 可以通过选择**功能**选项卡上的**远程系统**来使用程序包清单设计器添加它，也可以手动将以下行添加到项目的 Package.appxmanifest 文件。
 
 ``` xml
 <Capabilities>
@@ -59,13 +67,8 @@ ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
 
 ## <a name="related-topics"></a>相关主题
 
-[远程系统 API 参考](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
+[远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [连接的应用和设备（项目“Rome”）概述](connected-apps-and-devices.md)  
 [发现远程设备](discover-remote-devices.md)  
 [远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在运行在两个系统上的应用之间发送消息。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

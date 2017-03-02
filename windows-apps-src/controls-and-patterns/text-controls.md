@@ -5,9 +5,16 @@ title: "文本控件"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 04f8e82f05c46d41657dae0b30e04f49341bb5db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 41c5b771440a3ad88b3c1fcc2aec57b2e080741b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="text-controls"></a>文本控件
@@ -190,9 +197,4 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -14,8 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: caaa6228f2d5b2bb6566ccb285d90a396a1caf01
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -262,9 +263,4 @@ phoneNumberTextBox.InputScope = new InputScope()
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![默认 Windows 触摸键盘](images/input-scopes/kbdpcdefault.png)<br>与 **Default** 的布局相同。| ![可输入名称或电话号码的 Windows Phone 触摸键盘](images/input-scopes/kbdwpnameorphonenumber.png)<br>包括“;”****和“@”****键。 用“123”****键来替换“&amp;123”****键，前者可用于打开电话数字小键盘（请参阅 **TelephoneNumber**）。|
 |功能的可用性：<ul><li>拼写检查：默认情况下处于启用状态，可以禁用</li><li>自动更正：始终处于禁用状态</li><li>首字母自动大写：始终处于启用状态</li><li>文本预测：始终处于禁用状态</li></ul> | 功能的可用性：<ul><li>拼写检查：默认情况下处于禁用状态，可以启用</li><li>自动更正：默认情况下处于禁用状态，可以启用</li><li>首字母自动大写：默认情况下处于禁用状态，可以启用。 每个单词的首字母均大写。</li><li>文本预测：默认情况下处于禁用状态，可以启用</li></ul> |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

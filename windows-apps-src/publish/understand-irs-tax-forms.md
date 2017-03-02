@@ -1,10 +1,18 @@
 ---
 author: jnHs
-Description: "了解 Microsoft 发出的税单，包括谁将收到它们，以及何时提供。"
+Description: "了解 Microsoft 发出的税单，包括税单接收方和税单提供时间。"
 title: "了解 Microsoft 发出的 IRS 税单"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 translationtype: Human Translation
-ms.sourcegitcommit: 684a76a503a0adefb1754059ffa6aa8d4d8d940b
-ms.openlocfilehash: 2927588bc096ef1ed9e8451cea73ba78efa9d7c0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5f51e1c5a44767e49b5c3dc5f578c2532da11008
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -54,10 +62,10 @@ EIN：\*\*\*\*\*4442<br>
     <td valign="top">以上内容都不适用。</td>
     <td valign="top">无</td>
   </tr>
-</table>
-
-
-<table>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
   <tr>
      <th>如果我是销售付费应用的美国开发人员 </th>
      <th> 我应该收到此表单</th>
@@ -119,9 +127,4 @@ EIN：\*\*\*\*\*0505<br>
 
 
 > **注意**如果你有与 **IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](http://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

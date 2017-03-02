@@ -2,10 +2,17 @@
 author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: "性能"
-description: "用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。"
+description: "用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
-ms.openlocfilehash: b9395e80bca7a46076e20e42fa7ceee5df7cc0d5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 38a78b8af1555bdb4409c967bd27e5967b5c40aa
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="performance"></a>性能
@@ -33,10 +40,5 @@ ms.openlocfilehash: b9395e80bca7a46076e20e42fa7ceee5df7cc0d5
 | [优化文件访问](optimize-file-access.md) | 创建可高效访问文件系统的 UWP 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。 |
 | [Windows 运行时组件和优化的互操作](windows-runtime-components-and-optimizing-interop.md) | 创建使用 UWP 组件的 UWP 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。 |
 | [用于分析和性能的工具](tools-for-profiling-and-performance.md) | Microsoft 提供了多种工具来帮助你改进 UWP 应用的性能。|
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

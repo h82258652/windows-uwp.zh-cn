@@ -3,13 +3,20 @@ author: mtoepke
 title: "游戏移植指南"
 description: "提供将现有游戏移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。"
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 移植, direct3d 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3cfc483052d12b89cf2707e7b9ebd666e5c49e3d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5d5dd570dca35bc06c69ba18a986d240ee2a54a5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 游戏移植指南
+# <a name="game-porting-guides"></a>游戏移植指南
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -41,7 +48,7 @@ ms.openlocfilehash: 3cfc483052d12b89cf2707e7b9ebd666e5c49e3d
 
  
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**  本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -51,10 +58,5 @@ ms.openlocfilehash: 3cfc483052d12b89cf2707e7b9ebd666e5c49e3d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

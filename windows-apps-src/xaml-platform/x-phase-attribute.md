@@ -3,39 +3,46 @@ author: jwmsft
 title: "xPhase 属性"
 description: "将 xPhase 与 xBind 标记扩展结合使用，以便能以增量方式呈现 ListView 和 GridView 项并改进平移体验。"
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 873da2adeea277e0f8f869703aac782c21b0419e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Phase 属性
+# <a name="xphase-attribute"></a>x:Phase 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 将 **x:Phase** 与 [{x:Bind} 标记扩展](x-bind-markup-extension.md)结合使用，以便能以增量方式呈现 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 项并改进平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 
 | 术语 | 说明 |
 |------|-------------|
 | PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 | 
 
-## 备注
+## <a name="remarks"></a>备注
 
 如果列表既能借助触摸快速平移又能使用鼠标滚轮实现，则该列表可能无法以足够快地速度呈现项目以跟上滚动速度，具体取决于数据模板的复杂程度。 这对于带有节能 CPU 的便携式设备（如手机或平板电脑）尤其如此。
 
 阶段支持递增式呈现数据模板，以便可为内容设定优先级，即最重要的元素最先呈现。 这使列表能够在平移速度较快时为每个项显示相应内容，并且将在时间允许的情况下为每个模板呈现更多的元素。
 
-## 示例
+## <a name="example"></a>示例
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -77,10 +84,5 @@ ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
 阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
 
 仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

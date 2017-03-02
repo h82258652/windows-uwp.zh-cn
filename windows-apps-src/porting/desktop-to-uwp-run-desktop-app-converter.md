@@ -3,9 +3,17 @@ author: awkoren
 Description: "运行桌面转换器应用以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop App Converter
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 translationtype: Human Translation
-ms.sourcegitcommit: bf6da2f4d780774819fe7a4abf6367345304767c
-ms.openlocfilehash: 3ffd664892fe5ee589d3bf5704e2eeed178bf5f3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 046a3b474aa281b1b09002a922dc2acdb7833599
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -21,72 +29,11 @@ Desktop App Converter 现已在 [Windows 应用商店](https://aka.ms/converter)
 
 ## <a name="whats-new"></a>新增功能
 
-本部分概述 Desktop App Converter 的各版本之间的更改。 
+DAC 的最新版本是 v1.0.6.0。 本更新中的新增功能：
 
-### <a name="12142016-v104"></a>12/14/2016 (v1.0.4)
-
-* 改进了基本映像验证，可检查无效的 .wim 文件。 
-* 针对 ```-Publisher``` 参数中特殊字符的 bug 修复。 
-* 更新的资源。
-
-### <a name="1122016-v101"></a>11/2/2016 (v1.0.1)
-
-* 改进了清单架构验证。 
-* 改进了错误消息。 
-* 添加了受支持 Windows 版本的验证。 
-* 注册表筛选器测试的 bug 修复。
-
-### <a name="9142016-v10"></a>9/14/2016 (v1.0)
-
-* Desktop App Converter 现可在 [Windows 应用商店](https://aka.ms/converter) 中下载！ 
-* 在[下载中心](https://aka.ms/converterimages)获取最新的 Windows 10 基本映像 (.wim) 以供与 DAC 一起使用。
-* 通过应用商店应用，你现在可以使用新入口点 *DesktopAppConverter.exe <arguments>* 在提升的命令提示符下或 PowerShell 窗口中从任意位置运行转换器。  
-
-
-### <a name="922016-v0125"></a>9/2/2016 (v0.1.25)
-
-* 集成了最新的 dotnet-computervirtualization NuGet 包。
-* 在 common.dll 上添加了新引入的依赖项。
-* 多个 Bug 修复。
-
-### <a name="842016-v0124"></a>8/4/2016 (v0.1.24)
-
-* 添加了对自动签署 DAC 生成的已转换应用以供测试的支持。 查看 ```–Sign``` 标识，试一试。 
-* 添加了虚拟注册表配置单元中的 COM 注册在打包的 AppX 内不受支持时的警告。  
-* 添加了对在 VC++ 库上自动检测应用依赖项并随后将其转换为 AppX 清单依赖项的支持。 请注意，为了使用 VC++ 运行时旁加载和测试应用，你需要下载 VCLib 框架包，如博客文章[在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)所述。 在你的计算机上的文件夹 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下查找程序包、导航到你所依赖的版本（例如 11.0、12.0、14.0），然后双击相应的体系结构程序包（x64、x86）进行安装。
-* 更新了清单框架以与 Windows 10 周年更新 (10.0.14393.0) 一致。 
-* 多个 Bug 修复和改进的输出布局。 
-
-### <a name="772016-v0122"></a>7/7/2016 (v0.1.22)
-
-* 添加了对从桌面应用程序自动检测外壳扩展以及在 UWP 程序包的 AppXManifest 中声明这些扩展的支持。 若要了解有关桌面扩展的详细信息，请参阅[**已转换的桌面应用扩展**](desktop-to-uwp-extensions.md)。 
-* 改进了大量应用的 AppExecutable 检测。 
-
-### <a name="6162016-v0120"></a>6/16/2016 (v0.1.20)
-
-* 解决了最新 Windows 10 Insider Preview 版本上阻碍成功转换的问题。 
-* 使用 ```–PackageArch``` 替换了 ```–CreateX86Package```，这允许你指定生成的程序包的体系结构。 
-
-### <a name="682016"></a>6/8/2016
-
-* 添加了对在运行转换器的 AMD64 主机上生成 x86 appx 程序包的支持。
-* 通过删除所有以前扩展的基本映像降低了磁盘空间使用率。
-* 添加了对清除临时文件和所有不必要的基本映像的支持。
-* 改进了对检测文件类型和协议关联的支持。
-* 改进了用于检测大量应用的 AppExecutable 属性的逻辑。
-* 添加了对为基于 MSI 的安装程序提供其他 –InstallerArguments 的支持。
-* 针对转换过程中所有 PathTooLongException 错误的 bug 修复。
-
-### <a name="5122016"></a>5/12/2016
-
-- 还原了对 Windows 专业版的支持。 
-- 转换器 ```-Setup``` 标志现在启用 Windows 容器功能，并处理基本映像扩展。 从提升的 PowerShell 提示符运行以下命令来执行一次性设置： ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
-- 添加了应用安装路径的自动检测并将应用程序根移到 VFS 之外，以在运行时减少任何不必要的文件系统重定向。
-- 添加了作为转换过程的一部分的扩展基本映像的自动检测。
-- 添加了文件类型关联和协议的自动检测。
-- 改进了检测“开始”菜单快捷方式的逻辑。
-- 改进了文件系统筛选以保留应用安装的 MUI 文件。
-- 在清单中更新了最低受支持桌面版本 (10.0.14342.0)。
+* 图标提取：DAC 使用桌面应用中的图标生成供转换的应用包使用的视觉资源。
+* 改进了对扩展的基本映像、临时文件以及容器网络和功能的清理功能。
+* 多个 Bug 修复。 
 
 ## <a name="system-requirements"></a>系统要求
 
@@ -108,11 +55,11 @@ Desktop App Converter 现已在 [Windows 应用商店](https://aka.ms/converter)
 
 Desktop App Converter 依靠最新的 Windows 10 功能。 请确保你使用的是 Windows 10 周年更新 (14393.0) 或更高版本。
 
-1.  [从 Windows 应用商店下载 StoreDesktopAppConverter](https://aka.ms/converter) 和[与你的版本匹配的基本映像 .wim 文件](https://aka.ms/converterimages)。  
-2.  以管理员身份运行 DesktopAppConverter。 可从“开始”菜单执行此操作，方法是右键单击磁贴并从“更多”下选择“以管理员身份运行”，或者从任务栏执行此操作，方法是右键单击磁贴、第二次右键单击弹出的应用名称，然后选择“以管理员身份运行”。
-3.  从应用控制台窗口中，运行 ```Set-ExecutionPolicy bypass```。
-4.  通过从控制台窗口运行 ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 来设置转换器。
-5.  如果运行以前的命令后提示你重启，请重新启动计算机。
+1.    [从 Windows 应用商店下载 StoreDesktopAppConverter](https://aka.ms/converter) 和[与你的版本匹配的基本映像 .wim 文件](https://aka.ms/converterimages)。  
+2.    以管理员身份运行 DesktopAppConverter。 可从“开始”菜单执行此操作，方法是右键单击磁贴并从*更多*下选择*以管理员身份运行*，或者从任务栏执行此操作，方法是右键单击磁贴、第二次右键单击弹出的应用名称，然后选择*以管理员身份运行*。
+3.    从应用控制台窗口中，运行 ```Set-ExecutionPolicy bypass```。
+4.    通过从控制台窗口运行 ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 来设置转换器。
+5.    如果运行以前的命令后提示你重启，请重新启动计算机。
 
 ## <a name="run-the-desktop-app-converter"></a>运行 Desktop App Converter
 
@@ -308,8 +255,3 @@ Desktop App Converter 不支持 Unicode；因此，没有用于该工具的任�
 
 + [使用 Desktop App Converter 将桌面应用发布到 UWP](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial：将现有桌面应用程序发布到通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
-
-
-<!--HONumber=Dec16_HO3-->
-
-

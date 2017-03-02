@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
 title: "企业共享的存储"
 description: "企业共享的存储为要共享数据的业务线应用定义本地数据位置。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6a6ad55a134a45bf3feb7092cdad78d9f6ee196b
+ms.lasthandoff: 02/07/2017
 
 ---
-# 企业共享的存储
+# <a name="enterprise-shared-storage"></a>企业共享存储
 
 共享的存储包含两个位置，其中的应用具有受限功能 **enterpriseDeviceLockdown**，而企业证书具有完整的读写访问权限。 请注意，**enterpriseDeviceLockdown** 功能允许应用使用设备锁定 API 和访问企业共享的存储文件夹。 有关该 API 的详细信息，请参阅 [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) 命名空间。  
 
@@ -16,7 +23,7 @@ ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
-## 方案
+## <a name="scenarios"></a>方案
 
 企业共享的存储为以下方案提供支持。
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
 - 你可以将本地硬盘驱动器上的数据存储在 \Data\SharedData\Enterprise\Persistent 文件夹中，即使重置了设备，仍然会保留该数据。
 - 在设备上通过移动设备管理 (MDM) 服务操作文件，包括读取、写入和删除文件。 有关如何通过 MDM 服务使用企业共享存储的详细信息，请参阅 [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333)。
 
-## 访问企业共享的存储
+## <a name="access-enterprise-shared-storage"></a>访问企业共享的存储
 
 下面的示例演示了如何在程序包清单中声明访问企业共享存储的功能，以及如何通过使用 Windows.Storage.StorageFolder 类访问共享的存储文件夹。
 
@@ -70,10 +77,5 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

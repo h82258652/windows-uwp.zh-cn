@@ -2,9 +2,17 @@
 author: Mtoepke
 title: "Xbox One 开发人员模式停用"
 description: "如何停用开发人员模式。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 translationtype: Human Translation
-ms.sourcegitcommit: 0eee645f068614d2368623859dec4e16f3190169
-ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 857b1529a933f416a1c61f3afd844f6cb820f3f3
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -20,8 +28,8 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 ## <a name="switch-to-retail-mode"></a>切换到零售模式
 首先，将你的 Xbox One 主机返回到零售模式。
 
-1. 打开“开发人员主页”。
-2. 单击“退出开发人员模式”。  主机将在零售模式下重新启动。  
+1. 打开**开发人员主页**。
+2. 单击**退出开发人员模式**。  主机将在零售模式下重新启动。  
 
    ![退出开发人员模式](images/deactivation-leave-dev-mode.png)
 
@@ -31,12 +39,12 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 在主机上停用开发人员模式的首选方法是使用“开发人员模式激活”应用。 
 
-1. 导航到“我的游戏和应用” > “应用”。
+1. 导航到**我的游戏和应用** > **应用**。
   
    ![激活步骤 3](images/activation-step-3.png)    
    
 2.  打开“开发人员模式激活”应用。    
-3.  单击“停用”。
+3.  单击**停用**。
   
 ![停用主机](images/deactivation-app.png)
 
@@ -49,18 +57,18 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 若要重置主机，请执行以下步骤：
 
-1.  转到“我的游戏和应用”。  
-2.  选择“应用”，然后选择“设置”。  
-3.  转到左侧窗格中的“系统”，然后选择右侧窗格中的“主机信息和更新”。  
-4.  转到“主机信息和更新”。  
+1.  转到**我的游戏和应用**。  
+2.  选择**应用**，然后选择**设置**。  
+3.  转到左侧窗格中的**系统**，然后选择右侧窗格中的**主机信息和更新**。  
+4.  转到**主机信息和更新**。  
    
     ![主机信息和更新](images/deactivation-console-info-updates.png)  
     
-5.  单击“重置主机”。
+5.  单击**重置主机**。
     
     ![重置主机](images/deactivation-reset-console.png)
     
-6.  接下来，单击“重置和删除所有内容”。 此选项用于将主机重置为其原始零售状态。  将删除所有应用、游戏和本地保存数据。 请注意，如果选择另一选项“重置并保留我的游戏和应用”，将无法从开发人员计划中删除你的主机。  
+6.  接下来，单击**重置和删除所有内容**。 此选项用于将主机重置为其原始零售状态。  将删除所有应用、游戏和本地保存数据。 请注意，如果选择另一选项**重置并保留我的游戏和应用**，将无法从开发人员计划中删除你的主机。  
    
     ![重置和删除所有内容](images/deactivation-reset-remove.png)
 
@@ -71,23 +79,18 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 1. 转到 [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices)。    
 2. 使用你的开发人员中心帐户登录到开发人员中心。    
 3. 通过匹配序列号、主机 ID 或设备 ID，在主机列表中找到要停用的主机。  
-4. 单击“停用”。  
+4. 单击**停用**。  
   
 ![使用 DevCenter 执行停用](images/deactivation-devcenter.png)
 
 如果你之前未将 Xbox One 主机返回到零售模式，请立即执行此操作。
 
-1. 启动“开发人员主页”。
-2. 单击“退出开发人员模式”。  主机将在零售模式下重新启动。
+1. 启动**开发人员主页**。
+2. 单击**退出开发人员模式**。  主机将在零售模式下重新启动。
 
 ![激活步骤 13](images/deactivation-leave-dev-mode.png)
 
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 开发人员模式激活](devkit-activation.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

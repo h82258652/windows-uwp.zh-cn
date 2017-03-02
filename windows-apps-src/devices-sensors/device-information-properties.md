@@ -3,19 +3,26 @@ author: DBirtolo
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "设备信息属性"
 description: "每台设备都具有相关联的 DeviceInformation 属性，在你需要特定的信息或生成设备选择器时可以使用这些属性。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dbe72dd476903083518dcf4b9d299b04e87f6e85
+ms.lasthandoff: 02/07/2017
 
 ---
-# 设备信息属性
+# <a name="device-information-properties"></a>设备信息属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 每台设备都具有相关联的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 属性，在你需要特定的信息或生成设备选择器时可以使用这些属性。 这些属性可以指定为 AQS 筛选器来限制你要枚举的设备，以便查找带有指定特征的设备。 你还可以使用这些属性指示你想要为每个设备返回的信息。 这样可以让你指定返回到应用程序的设备信息。
 
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象由标识 ([**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id))、种类 ([**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)) 和属性包 ([**DeviceInformation.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx)) 组成。 **DeviceInformation** 对象的所有其他属性都派生自 **Properties** 属性包。 例如，[**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) 派生自 **System.ItemNameDisplay**。 这意味着属性包始终包含用于确定其他属性的必要信息。
 
-## 请求属性
+## <a name="requesting-properties"></a>请求属性
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象具有一些基本属性（如 [**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)），但其中大部分属性都存储在 [**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) 下的属性包中。 因此，该属性包包含用于查找属性包中属性来源的属性。 例如，使用 [System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) 查找 [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) 属性来源。 这就是具有用户友好名称的常用和已知属性的一种情况。 为了更容易查询属性，Windows 提供了若干个用户友好名称。
 
 当请求属性时，你并不局限于具有用户友好名称的常用属性。 你可以通过指定基础 GUID 和属性 ID (PID) 来请求任何可用的属性，甚至请求由单个设备或驱动程序提供的自定义属性。 用于指定自定义属性的格式是“`{GUID} PID`”。 例如：“`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`”
 
-某些属性对于所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) 对象都是常用属性，但大多数属性是特定种类的唯一属性。 下面部分列出了一些常用属性，按单个 **DeviceInformationKind** 排序。 有关不同种类之间的相关方式的详细信息，请参阅 **DeviceInformationKind**。
+某些属性对于所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 对象都是常用属性，但大多数属性是特定种类的唯一属性。 下面部分列出了一些常用属性，按单个 **DeviceInformationKind** 排序。 有关不同种类之间的相关方式的详细信息，请参阅 **DeviceInformationKind**。
 
-## DeviceInterface 属性
+## <a name="deviceinterface-properties"></a>DeviceInterface 属性
 
-**DeviceInterface** 是应用方案中使用的最常用的默认 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) 对象。 除非设备 API 表示另一种特定的 **DeviceInformationKind**，否则这就是你应使用的对象种类。
+**DeviceInterface** 是应用方案中使用的最常用的默认 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 对象。 除非设备 API 表示另一种特定的 **DeviceInformationKind**，否则这就是你应使用的对象种类。
 
 | 名称                                  | 类型    | 说明                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +55,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## 设备属性
+## <a name="device-properties"></a>设备属性
 
 | 名称                                  | 类型       | 说明                                                                                                                                                                                                                                                                              |
 |---------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,7 +73,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## DeviceContainer 属性
+## <a name="devicecontainer-properties"></a>DeviceContainer 属性
 
 | 名称                              | 类型       | 说明                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +93,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## DeviceInterfaceClass 属性
+## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass 属性
 
 | 名称                       | 类型   | 说明                            |
 |----------------------------|--------|----------------------------------------|
@@ -94,7 +101,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpoint 属性
+## <a name="associationendpoint-properties"></a>AssociationEndpoint 属性
 
 | 名称                                  | 类型       | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +122,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpointContainer 属性
+## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer 属性
 
 | 名称                                                | 类型       | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-----------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +144,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpointService 属性
+## <a name="associationendpointservice-properties"></a>AssociationEndpointService 属性
 
 | 名称                                            | 类型    | 说明                                                                                                      |
 |-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
@@ -154,13 +161,4 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

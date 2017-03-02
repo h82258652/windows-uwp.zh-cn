@@ -5,33 +5,41 @@ MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "自定义视频效果"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 translationtype: Human Translation
-ms.sourcegitcommit: 26ed53934ab9237731deda544b8830a26e5ad914
-ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 60ab406a5908b1a21c7a0f579664b7632722dd4e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 自定义视频效果
+# <a name="custom-video-effects"></a>自定义视频效果
 
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何创建可实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的 Windows 运行时组件，用于为视频流创建自定义效果。 自定义效果可以与若干不同的 Windows 运行时 API 一起使用，包括提供设备相机的访问权限的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124) 和允许你从媒体剪辑创建复杂合成的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
 
-## 将自定义效果添加到应用
+## <a name="add-a-custom-effect-to-your-app"></a>将自定义效果添加到应用
 
 
 自定义视频效果在实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的类中定义。 此类不能直接包含在应用的项目中。 必须改用 Windows 运行时组件来托管视频效果类。
 
 **为视频效果添加 Windows 运行时组件**
 
-1.  在 Microsoft Visual Studio 中，打开解决方案后，转到“文件”菜单并依次选择“添加”-&gt;“新建项目...”。
-2.  选择“Windows 运行时组件(通用 Windows)”项目类型。
+1.  在 Microsoft Visual Studio 中，打开解决方案后，转到**文件**菜单并依次选择**添加-&gt;新建项目**。
+2.  选择 **Windows 运行时组件（通用 Windows）**项目类型。
 3.  对于此示例，将项目命名为*VideoEffectComponent*。 此名称稍后将在代码中引用。
-4.  单击“确定”。
-5.  项目模板将创建一个名为 Class1.cs 的类。 在“解决方案资源管理器”中，右键单击 Class1.cs 的图标并选择“重命名”。
-6.  将文件重命名为*ExampleVideoEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击“是”。
+4.  单击**确定**。
+5.  项目模板将创建一个名为 Class1.cs 的类。 在**解决方案资源管理器**中，右键单击 Class1.cs 的图标并选择**重命名**。
+6.  将文件重命名为*ExampleVideoEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击**是**。
 7.  打开**ExampleVideoEffect.cs**，并更新类定义以实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -42,19 +50,19 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
 
-## 使用软件处理实现 IBasicVideoEffect 接口
+## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>使用软件处理实现 IBasicVideoEffect 接口
 
 
 你的视频效果必须实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的所有方法和属性。 本部分将引导你完成使用软件处理简单实现该接口的过程。
 
-### Close 方法
+### <a name="close-method"></a>Close 方法
 
-当效果关闭时，系统将对你的类调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 你应当使用此方法来处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
+当效果关闭时，系统将对你的类调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 你应当使用此方法处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
-### DiscardQueuedFrames 方法
+### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames 方法
 
 当效果应重置时，将调用 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此方法的一个典型方案是当你的效果之前存储了处理后的帧以供在处理当前帧时使用的情况。 当调用此方法时，你应当处理保存的上一组帧。 此方法可用于重置与之前的帧（而不仅仅是累计的视频帧）相关的任何状态。
 
@@ -63,7 +71,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 
 
-### IsReadOnly 属性
+### <a name="isreadonly-property"></a>IsReadOnly 属性
 
 
             [
@@ -76,14 +84,14 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
 
-### SetEncodingProperties 方法
+### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
 系统会对你的效果调用 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884)，以便让你知道要应用该效果的视频流的编码属性。 此方法还提供了对用于硬件呈现的 Direct3D 设备的引用。 此设备的用法会在本文后面的硬件处理示例中介绍。
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
 
-### SupportedEncodingProperties 属性
+### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties 属性
 
 系统将检查 [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) 属性以确定你的效果支持哪些编码属性。 请注意，如果你的效果的使用者无法使用你指定的属性对视频进行编码，它将对你的效果调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 并且会从视频管道中删除你的效果。
 
@@ -96,7 +104,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
  
 
-### SupportedMemoryTypes 属性
+### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes 属性
 
 系统将检查 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系统会将使图像数据包含在 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象中的输入和输出帧传递给你的效果。 如果你返回 **MediaMemoryTypes.Gpu**，系统会将使图像数据包含在 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 对象中的输入和输出帧传递给你的效果。
 
@@ -108,7 +116,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
  
 
-### TimeIndependent 属性
+### <a name="timeindependent-property"></a>TimeIndependent 属性
 
 
             [
@@ -117,7 +125,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
-### SetProperties 方法
+### <a name="setproperties-method"></a>SetProperties 方法
 
 
             [
@@ -133,7 +141,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
 
-### ProcessFrame 方法
+### <a name="processframe-method"></a>ProcessFrame 方法
 
 
             [
@@ -154,9 +162,9 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 > [!NOTE]
 > 由于此技术访问本机非托管的图像缓冲区，所以你需要将项目配置为允许不安全的代码。
-> 1.  在“解决方案资源管理器”中，右键单击 VideoEffectComponent 项目，并选择“属性”。
-> 2.  选择“生成”选项卡。
-> 3.  选中“允许不安全代码”复选框。
+> 1.  在“解决方案资源管理器”中，右键单击 VideoEffectComponent 项目，并选择**属性**。
+> 2.  选择**生成**选项卡。
+> 3.  选中**允许不安全代码**复选框。
 
  
 
@@ -167,20 +175,20 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
 
-## 使用硬件处理实现 IBasicVideoEffect 接口
+## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬件处理实现 IBasicVideoEffect 接口
 
 
 使用硬件 (GPU) 处理创建自定义视频效果与使用上述软件处理几乎完全相同。 本部分介绍使用硬件处理的效果中的几点不同之处。 此示例使用 Win2D Windows 运行时 API。 有关使用 Win2D 的详细信息，请参阅 [Win2D 文档](http://go.microsoft.com/fwlink/?LinkId=519078)。
 
-使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的[向应用添加自定义效果](#addacustomeffect)部分中所述。
+使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的**向应用添加自定义效果**部分中所述。
 
 **将 Win2D NuGet 程序包添加到你的效果项目**
 
-1.  在“解决方案资源管理器”中，右键单击**VideoEffectComponent** 项目，并选择“管理 NuGet 程序包”。
-2.  在窗口顶部，选择“浏览”选项卡。
+1.  在**解决方案资源管理器**中，右键单击 **VideoEffectComponent** 项目，并选择**管理 NuGet 程序包**。
+2.  在窗口顶部，选择**浏览**选项卡。
 3.  在搜索框中，输入 **Win2D**。
-4.  选择“Win2D.uwp”，然后选择右侧窗格中的“安装”。
-5.  “查看更改”对话框将向你显示要安装的程序包。 单击“确定”。
+4.  选择 **Win2D.uwp**，然后选择右侧窗格中的**安装**。
+5.  **查看更改**对话框将向你显示要安装的程序包。 单击**确定”**。
 6.  接受程序包许可证。
 
 除了基本项目设置中包含的命名空间外，你还需要包含 Win2D 提供的以下命名空间。
@@ -220,21 +228,20 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
 
-## 向应用添加自定义效果
+## <a name="adding-your-custom-effect-to-your-app"></a>向应用添加自定义效果
 
 
 若要从应用中使用你的视频效果，必须向应用添加对效果项目的引用。
 
-1.  在“解决方案资源管理器”中，在你的项目下，右键单击“引用”，然后选择“添加引用”。
-2.  展开“项目”选项卡、选择“解决方案”，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent*。
-3.  单击“确定”。
+1.  在“解决方案资源管理器”中，在你的应用项目下，右键单击**引用**，然后选择**添加引用**。
+2.  展开**项目**选项卡、选择**解决方案**，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent*。
+3.  单击**确定**。
 
-### 向相机视频流添加自定义效果
+### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>向相机视频流添加自定义效果
 
 你可以按照[简单的相机预览访问](simple-camera-preview-access.md)文章中的步骤，从相机设置一个简单的预览流。 按照这些步骤操作将为你提供一个已初始化的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象，该对象用于访问相机的视频流。
 
-若要将你的自定义视频效果添加到相机流，首先要创建一个新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而为你的效果传入命名空间和类名称。 接下来，调用 **MediaCapture** 对象的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以将你的效果添加到指定的流。 此示例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值来指定应将效果添加到预览流。 如果你的应用支持视频捕获，你也可以使用 **MediaStreamType.VideoRecord** 将效果添加到捕获流。 
-            **AddVideoEffect** 将返回表示你的自定义效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 对象。 你可以使用 SetProperties 方法设置效果的配置。
+若要将你的自定义视频效果添加到相机流，首先要创建一个新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而为你的效果传入命名空间和类名称。 接下来，调用 **MediaCapture** 对象的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以将你的效果添加到指定的流。 此示例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值来指定应将效果添加到预览流。 如果你的应用支持视频捕获，你也可以使用 **MediaStreamType.VideoRecord** 将效果添加到捕获流。 **AddVideoEffect** 将返回表示你的自定义效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 对象。 你可以使用 SetProperties 方法设置效果的配置。
 
 添加效果后，将调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 来启动预览流。
 
@@ -242,7 +249,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 
 
-### 向 MediaComposition 中的一段剪辑添加自定义效果
+### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>向 MediaComposition 中的一段剪辑添加自定义效果
 
 有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 通过调用 [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607)、传入用户通过 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 选择的视频文件创建一个 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 对象，并将剪辑添加到新的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。 接下来，创建新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 **MediaClip** 对象的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 集合。
 
@@ -250,7 +257,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 * [简单相机预览访问](simple-camera-preview-access.md)
 * [媒体合成和编辑](media-compositions-and-editing.md)
 * [Win2D 文档](http://go.microsoft.com/fwlink/p/?LinkId=519078)
@@ -259,10 +266,5 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
  
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

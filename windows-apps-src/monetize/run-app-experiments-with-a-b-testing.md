@@ -3,19 +3,26 @@ author: mcleanbyron
 Description: "使用 Windows 开发人员中心仪表板通过 A/B 测试运行通用 Windows 平台 (UWP) 应用的实验。"
 title: "通过 A/B 测试运行应用实验"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验"
 translationtype: Human Translation
-ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
-ms.openlocfilehash: f6c8e830a3ffcff8db9c280b6a9df5b515b1a356
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 02e6ebbe6d3c02d08ae21ea71e7daa38b7e77255
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 通过 A/B 测试运行应用实验
+# <a name="run-app-experiments-with-ab-testing"></a>通过 A/B 测试运行应用实验
 
 可以使用 Windows 开发人员中心仪表板定义可在运行时从通用 Windows 平台 (UWP) 应用检索的远程变量，还可以测试这些值的变量以供用户标识用于驱动所需用户行为的最有效的值。 应用可以使用远程变量配置应用体验，例如应用内购买、注册流程、描述文字和广告发布。
 
 A/B 测试的目标应该是标识远程变量值的变体，该变体可能会通过提供更具吸引力的应用体验提高转换率（例如更多应用内购买）。 在标识成功变体后，可以立即结束实验并在开发人员中心仪表板中为整个用户受众启用该变体，而无需重新发布你的应用。
 
-## 创建并运行 A/B 测试
+## <a name="create-and-run-an-ab-test"></a>创建并运行 A/B 测试
 
 若要创建并运行 A/B 测试，请执行以下步骤：
 
@@ -26,16 +33,16 @@ A/B 测试的目标应该是标识远程变量值的变体，该变体可能会�
 
 有关演示端到端过程的演练，请参阅[通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
-## 要求
+## <a name="requirements"></a>要求
 
 Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 
 在可以通过 A/B 测试运行实验之前，必须设置你的开发计算机：
 
 * 按照[此处](../get-started/get-set-up.md)的说明为 UWP 开发设置你的开发计算机。
-* [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了实验的 API，此 SDK 还提供了其他功能（例如，可在应用上显示广告并引导你的客户到“反馈中心”收集反馈）的 API。 
+* [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了实验的 API，此 SDK 还提供了其他功能（例如，可在应用上显示广告并引导你的客户到“反馈中心”收集反馈）的 API。
 
-## 最佳做法
+## <a name="best-practices"></a>最佳做法
 
 对于最有用的结果，我们建议在通过 A/B 测试运行实验时遵循以下建议：
 
@@ -43,7 +50,7 @@ Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 * 运行实验至少需要 2 – 4 周才能收集统计上重要且可操作的有效数据。
 
 <span id="terms" />
-## 相关术语
+## <a name="related-terms"></a>相关术语
 
 |  术语  |  定义  |
 |--------|--------------|
@@ -55,16 +62,11 @@ Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 | 视图事件    |  表示用户开始查看作为实验一部分的变体时，某项活动的任意字符串。 通常，这是你的代码中的某个事件的名称。 当用户开始查看变体时，你的应用代码会将此视图事件字符串发送到开发人员中心。 有关详细信息，请参阅[针对实验为应用编码](code-your-experiment-in-your-app.md)。
 | 转换事件    |  表示实验目标的目的的任意字符串。 通常，这是你的代码中的某个事件的名称。 当用户达成此目的时，你的应用代码会将此转换事件字符串发送到开发人员中心。 有关详细信息，请参阅[针对实验为应用编码](code-your-experiment-in-your-app.md)。  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [在开发人员中心仪表板中创建项目和定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [针对实验为应用编码](code-your-experiment-in-your-app.md)
 * [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
 * [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
 * [通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

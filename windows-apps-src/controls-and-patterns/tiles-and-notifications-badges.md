@@ -5,9 +5,16 @@ title: "磁贴、锁屏提醒和通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9ee0379b394aaa40535cd204664f6c3626428321
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>适用于 UWP 应用的锁屏提醒通知
@@ -198,8 +205,3 @@ private void clearBadge()
 * [自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [创建磁贴](tiles-and-notifications-creating-tiles.md)
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

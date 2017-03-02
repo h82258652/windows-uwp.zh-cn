@@ -1,13 +1,20 @@
 ---
 author: Xansky
-Description: "了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。"
+Description: "了解如何开发辅助 Windows 10 UWP 应用，该应用包含键盘导航、颜色和对比度设置以及对辅助技术的支持。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: "开发非独占 Windows 10 应用"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 47c28e0629150ccbdf532afc645fe973c3dc8804
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
 * 控件在 UI 中如何布局或分组？
 * 是否存在一些重要的控件组？
     * 如果是，这些组是否包含其他级别的组？
-*   在对等控件之间，应通过按 Tab 键、通过特殊导航（如箭头键）还是同时使用两者来进行导航？
+*     在对等控件之间，应通过按 Tab 键、通过特殊导航（如箭头键）还是同时使用两者来进行导航？
 
 目标是帮助用户了解 UI 的布局方式并识别可操作的控件。 如果你发现在用户完成导航循环前有太多制表位，请考虑将相关的控件分组在一起。 某些相关的控件（如混合控件）可能需要在此早期探索阶段进行处理。 在开始开发产品后，很难重新制定键盘导航，因此请尽早进行周密计划！  
 
@@ -83,9 +90,4 @@ XAML
 * [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
 * [辅助功能](accessibility.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

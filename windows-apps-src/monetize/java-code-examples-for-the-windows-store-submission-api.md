@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
-description: "使用此部分中的 Java 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
+description: "使用本节中的 Java 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
 title: "Windows 应用商店提交 API 的 Java 代码示例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
 <span id="create-package-flight" />
 ## <a name="create-a-package-flight"></a>创建软件包外部测试版
 
-以下示例演示了如何[创建](create-a-flight.md)和[删除](delete-a-flight.md)软件包外部测试版。
+以下示例演示了如何[创建](create-a-flight.md) 和[删除](delete-a-flight.md) 软件包外部测试版。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L185-L221)]
 
@@ -66,7 +73,7 @@ ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
 
 1. 首先，此方法[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
-3. 然后，此方法[会创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
+3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
 5. 接下来，它会[更新](update-an-app-submission.md)并将新提交[提交](commit-an-app-submission.md)到 Windows 开发人员中心。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
@@ -121,9 +128,4 @@ ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
 ## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

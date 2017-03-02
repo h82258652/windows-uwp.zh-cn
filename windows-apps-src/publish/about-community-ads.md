@@ -3,15 +3,22 @@ author: jnHs
 Description: "你可以使用其他开发人员发布的应用交叉推广你的应用。 我们将此功能称为社区广告。"
 title: "有关社区广告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 13963ddf9f745c6de2e6d7ef7d948f649b2f6f5e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 有关社区广告
+# <a name="about-community-ads"></a>有关社区广告
 
-如果你的应用使用 **AdMediatorControl** 或 **AdControl** 显示横幅广告，可以在 Windows 应用商店中通过应用与其他开发人员一起免费交叉推广你的应用。 我们将此功能称为*社区广告*。  
+如果你的应用使用 **AdMediatorControl** 或 **AdControl** 显示横幅广告，你可以通过 Windows 应用商店中的应用与其他开发人员一起免费交叉推广你的应用。 我们将此功能称为*社区广告*。  
 
 以下是此计划的运作方式：
 
@@ -22,24 +29,19 @@ ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 * 你的信用会在所有活动社区广告市场活动中平均分配，并且会根据你的社区广告市场活动面向的国家/地区的当前市场行情 eCPM 值转换为应用广告印象。
 * 若要在应用中跟踪社区广告的性能，请参阅[帐户级别的广告性能报告](advertising-performance-report.md#account-level-advertising-performance-report)。
 
-## 如何选择加入社区广告
+## <a name="how-to-opt-in-to-community-ads"></a>如何选择加入社区广告
 
 若要选择加入社区广告，请执行以下操作：
 
 1. 在 Windows 开发人员中心仪表板中转到“盈利”****&gt;“利用广告来盈利”****页。
 2. 在“社区广告”****部分中，选中“在我的应用中显示社区广告”****框。
-   > **注意** 选中或取消选中此框后，无需重新发布应用即可使更改生效。
+   > **注意**  选中或取消选中此框后，无需重新发布应用来使更改生效。
 
 3. 为你的应用[创建广告市场活动](create-an-ad-campaign-for-your-app.md)。 对于市场活动类型，选择“免费社区广告”****。
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [利用广告来盈利](monetize-with-ads.md)
 * [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

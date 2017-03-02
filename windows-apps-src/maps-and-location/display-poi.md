@@ -3,9 +3,16 @@ author: msatranjr
 title: "在地图上显示兴趣点 (POI)"
 description: "使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 地图, 位置, 图钉"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -27,10 +34,10 @@ ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
 
 总结：
 
--   [向地图添加 MapIcon](#mapicon) 以显示图像（例如，图钉）和可选文本。
--   [向地图添加 MapPolygon](#mappolygon) 以显示多点图形。
--   [向地图添加 MapPolyline](#mappolyline) 以在地图上显示线条。
--   [向地图添加 XAML](#mapxaml) 以显示自定义 UI 元素。
+-   [向地图添加 MapIcon](#add-a-mapicon) 以显示图像（例如，图钉）和可选文本。
+-   [向地图添加 MapPolygon](#add-a-mappolygon) 以显示多点图形。
+-   [向地图添加 MapPolyline](#add-a-mappolyline) 以在地图上显示线条。
+-   [向地图添加 XAML](#add-xaml) 以显示自定义 UI 元素。
 
 如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)。
 
@@ -104,7 +111,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
 
    });
-           
+
    mapPolygon.ZIndex = 1;
    mapPolygon.FillColor = Colors.Red;
    mapPolygon.StrokeColor = Colors.Blue;
@@ -129,7 +136,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
          new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
    });
-              
+
    mapPolyline.StrokeColor = Colors.Black;
    mapPolyline.StrokeThickness = 3;
    mapPolyline.StrokeDashed = true;
@@ -226,11 +233,4 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -2,28 +2,42 @@
 author: mcleanbyron
 description: "了解如何更新应用以使用最新的受支持 Microsoft 广告库，并确保应用继续收到横幅广告。"
 title: "将应用更新到最新的 Microsoft Advertising 库"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移"
+ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>将应用更新到最新的 Microsoft Advertising 库
 
-从 2017 年 1 月开始，我们将不再向使用较早的 Microsoft 广告 SDK 版本的应用提供横幅广告。 如果你有使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告的现有应用（已经在应用商店中或仍然在开发中），则可能需要将应用更新为使用最新的广告 SDK，以便使应用在 2017 年 1 月继续接收横幅广告。 按照本文中的说明确定应用是否受此更改影响，并了解如何在必要时更新应用。
+仅下列 SDK 支持使用 **AdControl** 或 **AdMediatorControl** 在你的应用中显示 Microsoft Advertising 中的横幅广告：
 
-如果应用受此更改影响，并且你未将应用更新为使用最新的广告 SDK，则从 2017 年 1 月开始，你将看到以下行为：
+* [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）
+* [适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用）
+
+在推出这些 SDK 之前，我们推出了多种适用于 Windows 和 Windows Phone 应用的旧版广告 SDK。 这些较旧的广告 SDK 版本不再受支持。 将来，我们计划停止为使用这些旧版 SDK 的应用提供横幅广告。
+
+如果你有使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告的现有应用（已在应用商店中提供或仍在开发中），则可能需要将应用更新为使用你的目标平台中的最新广告 SDK，以便你的应用将来继续接收横幅广告。 按照本文中的说明确定应用是否受此更改影响，并了解如何在必要时更新应用。
+
+如果你的应用受此更改影响，并且你未将应用更新为使用最新的广告 SDK，则在我们停止为使用不受支持的广告 SDK 版本的应用提供横幅广告时，您将看到以下行为：
 
 * 将不再向应用中的任何 **AdControl** 或 **AdMediatorControl** 控件提供横幅广告，并且你将不再从这些控件中获取任何广告收益。
 
 * 当应用中的 **AdControl** 或 **AdMediatorControl** 请求新广告时，将引发控件的 **ErrorOccurred** 事件，并且事件参数的 **ErrorCode** 属性将具有值 **NoAdAvailable**。
 
-为了提供有关此更改的某些其他上下文，我们将删除对不支持最低功能集的较早广告 SDK 版本的支持，包括通过互动广告局 (IAB) 的[移动富媒体广告界面定义 (MRAID) 1.0 规范](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，我们进行此更改是为了增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
+为了提供有关此更改的某些其他上下文，我们将不再支持不支持最低功能集的较早广告 SDK 版本，包括通过互动广告局 (IAB) 的[移动富媒体广告界面定义 (MRAID) 1.0 规范](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，我们进行此更改是为了增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
 
 如果你遇到任何问题或需要帮助，请[联系支持人员](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
->**注意**&nbsp;&nbsp;如果你之前已将应用更新以便使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用），则应用已使用最新的可用广告 SDK，并且你无需对应用进行任何进一步的更改。
+>**注意**&nbsp;&nbsp;如果你的应用已使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用），或者你之前已将应用更新为使用这些 SDK 之一，则应用已使用最新的可用广告 SDK，你无需对应用进行任何进一步的更改。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -123,13 +137,13 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
 **Windows 8.0 应用**
 
-* 从 2017 年 1 月开始，不再向面向 Windows 8.0 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 8.0 应用流量现在在使用 Windows 10 的设备上运行。
+* 将来，可能不再向面向 Windows 8.0 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 8.0 应用流量现在在使用 Windows 10 的设备上运行。
 
 <span/>
 
 **Windows Phone 7.x 应用**
 
-* 从 2017 年 1 月开始，不再向面向 Windows Phone 7.x 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows Phone 8.1 应用或转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 7.x 应用流量现在在使用 Windows Phone 8.1 或 Windows 10 的设备上运行。
+* 将来，可能不再向面向 Windows Phone 7.x 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows Phone 8.1 应用或转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 7.x 应用流量现在在使用 Windows Phone 8.1 或 Windows 10 的设备上运行。
 
 <span/>
 
@@ -167,9 +181,9 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
   >**注意**&nbsp;&nbsp;如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
 
-1.  从开发计算机中卸载 Microsoft Advertising SDK 和广告中介 SDK 的所有以前版本。
+1.    从开发计算机中卸载 Microsoft Advertising SDK 和广告中介 SDK 的所有以前版本。
 
-2.  打开“命令提示符”窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何 SDK 版本：
+2.    打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何 SDK 版本：
 
   > [!div class="tabbedCodeSnippets"]
   ```syntax
@@ -178,7 +192,7 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  为应用安装最新的 SDK：
+3.    为应用安装最新的 SDK：
   * 对于 Windows 10 上的 UWP 应用，请安装 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)。
   * 对于面向较早操作系统版本的应用，请安装 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)。
 
@@ -230,7 +244,7 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
 * 可保留现有 XAML 标记和代码。
 
-* 从“解决方案资源管理器”，检查项目中 **Microsoft.Advertising.Mobile.UI** 引用的属性。 它应为版本 6.2.40501.0（如果项目面向 Windows Phone 8.0）或 8.1.50112.0（如果应用面向 Windows Phone 8.1）。
+* 从**解决方案资源管理器**，检查项目中 **Microsoft.Advertising.Mobile.UI** 引用的属性。 它应为版本 6.2.40501.0（如果项目面向 Windows Phone 8.0）或 8.1.50112.0（如果应用面向 Windows Phone 8.1）。
 
 * 对于 Windows Phone 8.x Silverlight 应用，不支持在仿真程序上测试生产单位。 我们建议在设备上测试。
 
@@ -238,16 +252,11 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
 测试应用以确保它按预期显示横幅广告。
 
-如果应用的以前版本已经在应用商店中提供，请在 Windows 开发人员中心仪表板中为已更新的应用[创建新提交](https://msdns.microsoft.com/windows/uwp/publish/app-submissions)以重新发布应用。
+如果应用的以前版本已经在应用商店中提供，请在 Windows 开发人员中心仪表板中为已更新的应用[创建新提交](../publish/app-submissions.md)以重新发布应用。
 
 
 
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。"
 title: "检测图像或视频中的人脸"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
-ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 检测图像或视频中的人脸
+# <a name="detect-faces-in-images-or-videos"></a>检测图像或视频中的人脸
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 文本中的代码源自[基本人脸检测](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本人脸跟踪](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)示例。 你可以下载这些示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
-## 检测单张图像中的人脸
+## <a name="detect-faces-in-a-single-image"></a>检测单张图像中的人脸
 
 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 类允许你检测静止图像中的一张或多张人脸。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## 在帧序列中跟踪人脸
+## <a name="track-faces-in-a-sequence-of-frames"></a>在帧序列中跟踪人脸
 
 如果你希望检测视频中的人脸，尽管实现步骤非常相似，但使用 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 类比 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 类更有效。 **FaceTracker** 使用有关以前处理的帧的信息来优化检测过程。
 
@@ -84,7 +91,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 计时器将以异步方式调用 **ProcessCurrentVideoFrame** 帮助程序，因此该方法首先调用信号灯的 **Wait** 方法来查看跟踪操作是否正在进行；如果正在进行，该方法将在不尝试检测人脸的情况下返回。 在此方法结束时，将调用信号灯的 **Release** 方法，该方法允许继续执行对 **ProcessCurrentVideoFrame** 的后续调用。
 
-[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 类作用于 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 对象。 有多种获取 **VideoFrame** 的方法，包括从正在运行的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象捕获预览帧，或通过实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法。 此示例使用未定义的帮助程序方法，该方法返回视频帧 **GetLatestFrame** 作为此操作的占位符。 有关从正在运行的媒体捕获设备的预览流获取视频帧的信息，请参阅[获取预览帧](get-a-preview-frame.md)。
+[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 类作用于 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 对象。 有多种获取 **VideoFrame** 的方法，包括从正在运行的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象捕获预览帧，或通过实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788)的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法。 此示例使用未定义的帮助程序方法，该方法返回视频帧 **GetLatestFrame** 作为此操作的占位符。 有关从正在运行的媒体捕获设备的预览流获取视频帧的信息，请参阅[获取预览帧](get-a-preview-frame.md)。
 
 和 **FaceDetector** 一样，**FaceTracker** 支持一组有限的像素格式。 如果所提供的帧未采用 Nv12 格式，则此示例将放弃人脸检测。
 
@@ -92,7 +99,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
 * [基本人脸检测示例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
@@ -100,9 +107,4 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 * [Camera](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒体播放](media-playback.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

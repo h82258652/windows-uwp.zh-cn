@@ -2,18 +2,25 @@
 author: mcleblanc
 title: "动画入门"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: "在此项目中，我们将移动一个矩形、应用淡出效果，然后再使其显示在视图中。"
+description: "在此项目中，我们将移动一个矩形，应用淡出效果，然后再使其显示在视图中。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 入门：动画
+# <a name="getting-started-animation"></a>入门：动画
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 添加动画
+## <a name="adding-animations"></a>添加动画
 
 在 iOS 中，通常可以以编程方式创建动画效果。 例如，你可以使用由基于块的 **UIView** 类的 **animateWithDuration** 方法提供的动画，也可以使用由基于非块的旧方法提供的动画。 或者，你可以明确使用 **CALayer** 类，对层进行动画处理。 Windows 应用中的动画可以使用编程方式创建，但也可以使用 Extensible Application Markup Language (XAML) 以声明方式定义。 可直接使用 Microsoft Visual Studio 编辑 XAML 代码，但是 Visual Studio 还附带了一个名为“Blend”****的工具，当你在设计器中处理动画时，你可以使用该工具创建 XAML 代码。 事实上，Blend 允许你以图形方式打开、设计、构建和运行完整的 Visual Studio 项目。 你可以在以下操作实例中尝试此操作。
 
@@ -123,14 +130,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 可手动编辑此 XAML，或返回到 Blend 以继续在其上执行操作。 Blend 使创建有趣的用户界面变得很有意思，并且使用图形工具设置界面动画的能力可极大加快开发速度。 有关动画的详细信息，请参阅[动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**注意** 有关采用 JavaScript 和 HTML 的 Windows 应用商店应用的动画信息，请参阅[设置 UI 动画 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**注意**  有关采用 JavaScript 和 HTML 的 Windows 应用商店应用的动画信息，请参阅[设置 UI 动画 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
-### 下一步
+### <a name="next-step"></a>下一步
 
 [入门：下一步是什么？](getting-started-what-next.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

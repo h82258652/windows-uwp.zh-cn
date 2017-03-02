@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: "绑定分层数据和创建大纲/细节视图"
 description: "你可以通过将项目控件绑定到 CollectionViewSource 实例（它们绑定在同一个链中），来生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 107d4a9778b377370632b6e8d37ad3216858d251
+ms.lasthandoff: 02/07/2017
 
 ---
-# 绑定分层数据和创建大纲/细节视图
+# <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>绑定分层数据和创建大纲/细节视图
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> **注意** 另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **注意**  另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 你可以通过将项目控件绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
@@ -23,15 +30,15 @@ ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
 
 ![体育运动层次结构的主视图/详细信息视图](images/xaml-masterdetails.png)
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 此主题假设你知晓如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
 
-## 创建项目
+## <a name="create-the-project"></a>创建项目
 
 创建一个新的“空白应用程序(Windows 通用)”****项目。 将其命名为“MasterDetailsBinding”。
 
-## 创建数据模型
+## <a name="create-the-data-model"></a>创建数据模型
 
 向项目添加一个新类、将其命名为 ViewModel.cs，并向其中添加此代码。 这将是你的绑定源类。
 
@@ -104,7 +111,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-## 创建视图
+## <a name="create-the-view"></a>创建视图
 
 接下来，从表示标记页的类公开绑定源类。 我们通过将类型 **LeagueList** 的属性添加到 **MainPage** 来执行此操作。
 
@@ -221,10 +228,5 @@ namespace MasterDetailsBinding
  
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

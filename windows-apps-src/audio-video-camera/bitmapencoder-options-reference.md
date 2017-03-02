@@ -3,15 +3,22 @@ author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "本文列出了可用于 BitmapEncoder 的编码选项。"
 title: "BitmapEncoder 选项参考"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c29c05e7397e87851ebb0fa5fa29df3b9b58907b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BitmapEncoder 选项参考
+# <a name="bitmapencoder-options-reference"></a>BitmapEncoder 选项参考
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文列出了可用于 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 的编码选项。 编码选项由其名称（其名称是一个字符串）和一个采用特定数据类型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) 的值定义。 有关使用图像的信息，请参阅[创建、编辑和保存位图图像](imaging.md)。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建、编辑和保存位图图像](imaging.md)
 * [支持的编解码器](supported-codecs.md)
@@ -40,10 +47,5 @@ ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

@@ -8,9 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 57c29414deadcf4f1ba5c462b8fe81faa0b38d49
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="design-downloads-for-uwp-apps"></a>适用于 UWP 应用的设计下载
@@ -98,8 +100,3 @@ ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
 </div>
 </div>
 <b>想要更多代码？</b> 有关我们的所有 UWP 应用示例的完整列表，请查看 Windows 示例页。 [转到示例门户](https://developer.microsoft.com/samples)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

@@ -1,14 +1,21 @@
 ---
 author: DelfCo
-Description: "在将你的应用全球化使其适用于更广泛的用户以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。"
+Description: "在将你的应用全球化使其适用于更广泛的用户，以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。"
 Search.Refinement.TopicID: 180
 title: "全球化和本地化指南"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -189,10 +196,5 @@ ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

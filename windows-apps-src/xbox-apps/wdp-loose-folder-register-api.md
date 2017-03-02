@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "Device Portal Loose 文件夹注册 API 参考"
 description: "了解如何以编程方式访问 Loose 文件夹注册 API。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 translationtype: Human Translation
-ms.sourcegitcommit: ef0f1339b77a8d1f60a677b2ff19a63b68f0d6cd
-ms.openlocfilehash: 42dc5e16065f1a2252f63743269970cf85fb0b95
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5d1926655f44fb54b07e7222911c94ef0e526cd0
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 注册 Loose 文件夹中的应用  
+# <a name="register-an-app-in-a-loose-folder"></a>注册 Loose 文件夹中的应用  
 
 **请求**
 
@@ -58,10 +66,5 @@ HTTP 状态代码      | 说明
 第二种方法是通过对 /api/filesystem/apps/file 执行 POST，将各文件复制到正确的位置，其中 knownfolderid 为 DevelopmentFiles、packagefullname 为空，并正确地提供了文件名和路径（路径应该以 LooseApps 开头）。
 
 第三种方法是通过 [/api/app/packagemanager/upload](wdp-folder-upload.md) 一次性复制整个文件夹，其中 destinationFolder 为要放在 d:\developmentfiles\looseapps 下面的文件夹的名称，有效负载是目录内容的多部分一致性 http 正文。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

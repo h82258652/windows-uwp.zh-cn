@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 5080fe9496b7a13336b42a83fd569e44f43ba2db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -93,21 +94,21 @@ ms.openlocfilehash: 5080fe9496b7a13336b42a83fd569e44f43ba2db
 
 -   预定义语法（听写或 Web 搜索）
 
-    -   “侦听”屏幕。
-    -   “思考”屏幕。
-    -   “听到你说”屏幕或错误屏幕。
+    -   **侦听**屏幕。
+    -   **思考**屏幕。
+    -   **听到你说**屏幕或错误屏幕。
 -   字词或短语列表，或者 SRGS 语法文件
 
-    -   “侦听”屏幕。
-    -   “你说的是”屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
-    -   “听到你说”屏幕或错误屏幕。
+    -   **侦听**屏幕。
+    -   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+    -   **你说的是**屏幕或错误屏幕。
 
-在“侦听”屏幕上，你可以：
+在**侦听**屏幕上，你可以：
 
 -   自定义标题文本。
 -   提供用户可以说出的示例文本。
--   指定是否显示“听到你说”屏幕。
--   在“听到你说”屏幕上向用户读出已识别的字符串。
+-   指定是否显示**听到你说**屏幕。
+-   在**听到你说**屏幕上向用户读出已识别的字符串。
 
 以下示例显示了使用 SRGS 定义的约束的语音识别器的内置识别流程。 在本例中，语音识别是成功的。
 
@@ -239,10 +240,5 @@ TTS 从纯文本或 SSML 生成语音输出。
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

@@ -1,18 +1,25 @@
 ---
 title: "安全"
-description: "本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。"
+description: "本节包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。"
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
-ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e769a9aa7d381a527c1e1504efc52c2ead031c70
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="security"></a>安全
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。
 
@@ -51,9 +58,4 @@ ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
 | [MAC、哈希以及签名](macs-hashes-and-signatures.md)               | 本文讨论如何在应用中使用消息验证代码 (MAC)、哈希以及签名来检测消息篡改。                                                                                                                                                                                                                                                                                                                                                                                |
 | [有关加密的导出限制](export-restrictions-on-cryptography.md) | 使用此信息可以确定应用使用加密的方式是否会阻止其在 Windows 应用商店中列出。                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [常见的加密任务](common-cryptography-tasks.md)                     | 这些文章提供常见的加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。                                                                                                                                                                                                                                                                                    |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: "使用应用服务"
 description: "本部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。"
+ms.assetid: 30003e60-492b-4511-b426-24b97d70694a
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4bed68e280d789b55f6f3b97be4ce1d663d13b07
-ms.openlocfilehash: d3d32ec35d4d3483beb58d36a3addf7e01718ecd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 63c0634905b14ca9f9546c9fcc678c05edb67780
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,8 +27,3 @@ ms.openlocfilehash: d3d32ec35d4d3483beb58d36a3addf7e01718ecd
 
 ## <a name="related-topics"></a>相关主题
 * [与远程应用服务通信](communicate-with-a-remote-app-service.md)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

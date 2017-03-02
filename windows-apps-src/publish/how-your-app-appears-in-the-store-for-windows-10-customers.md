@@ -1,36 +1,43 @@
 ---
 author: jnHs
-Description: "如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，客户同样也可以通过 Windows 10 设备获取这些应用。"
+Description: "如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，则客户同样也可以通过 Windows 10 设备获取这些应用。"
 title: "你的应用如何显示在面向 Windows 10 客户的应用商店中"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4a7c10d93a3145466007bfe4fac63422400a9830
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 你的应用如何显示在面向 Windows 10 客户的应用商店中
+# <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>你的应用如何显示在面向 Windows 10 客户的应用商店中
 
 
 如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，则客户同样也可以通过 Windows 10 设备获取这些应用。 由于应用商店向运行 Windows 10 的客户提供应用的方式以及对应用进行分类的方式发生更改，本主题将帮助你了解哪些内容可能已更改。
 
-**注意** 如果你希望更改其中的任何详细信息，请[创建一个新提交](app-submissions.md)并进行更改，然后将更新提交到应用商店。
+**注意**  如果你希望更改其中的任何详细信息，请[创建一个新提交](app-submissions.md)并进行更改，然后将更新提交到应用商店。
 
  
 
-## 用于在 Windows 应用商店和 Windows Phone 应用商店中共享标识的应用的注意事项
+## <a name="consideration-for-apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>用于在 Windows 应用商店和 Windows Phone 应用商店中共享标识的应用的注意事项
 
 
 如果你已为同时发布到这两个应用商店的应用使用了相同的保留名称（通常称之为“共享你的应用的标识”），此时这两个应用将被视为一个应用，而不是两个应用。 在仪表板中，你可以将它们视为具有 Windows 和 Windows Phone 程序包的单个应用。
 
 大多数开发人员已为每个应用商店中的应用和任何加载项设置了相同定价和其他属性，但如果其中某些值有所不同，则了解向 Windows 10 客户显示了哪些值非常重要。
 
-### 定价
+### <a name="pricing"></a>定价
 如果你已在每个应用商店中为你的应用（或加载项）选择了不同的基本价格，将使用 Windows 应用商店中的基本价格。
 
-**注意** 如果你在 Windows Phone 应用商店中设置了按市场定价，则 Windows 10 客户同样也能看到自定义价格。
+**注意**  如果你在 Windows Phone 应用商店中设置了按市场定价，则 Windows 10 客户同样也能看到自定义价格。
 
-### 免费试用
+### <a name="free-trials"></a>免费试用
 试用选项在上述这两个应用商店中有所不同，因此如果你已使用它们，则很可能你已为每个应用商店选择了不同的选项。 向 Windows 10 客户具体提供了哪些试用选项由下表确定。
 
 | Windows 8 应用       | Windows Phone 应用   | 适用于 Windows 10 的试用设置                                                  |
@@ -42,32 +49,32 @@ ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 | 限期试用  | 试用永不过期 | Windows Phone 8.1 和早期版本上没有免费试用；只提供限期试用 |
 | 限期试用  | 没有免费试用       | Windows Phone 8.1 和早期版本上没有免费试用；只提供限期试用 |
 
-### 市场
+### <a name="markets"></a>市场
 你的应用将在你之前发布它的每个市场中提供给 Windows 10 客户。 即使你为每个应用商店选择了不同的市场，也是如此。
 
-### 类别
+### <a name="categories"></a>类别
 如果你的应用以不同的类别显示在这两个应用商店中，我们将使用 Windows 应用商店中的类别来确定其新类别。 请注意，面向 Windows 10 客户的某些类别在应用商店中有所不同，所以请务必查看下[表](#cat)。
 
-### 年龄分级
+### <a name="age-rating"></a>年龄分级
 如果你提供了不同的年龄分级，将使用更严格的（更高的年龄）分级。
 
-### 隐私策略
+### <a name="privacy-policy"></a>隐私策略
 如果你的应用具有隐私策略，还会向 Windows 10 客户显示随 Windows 8 应用一同提交的隐私策略。
 
-### 屏幕截图
+### <a name="screenshots"></a>屏幕截图
 我们会保留你已提交的所有屏幕截图，并使用适当的版本将其显示给 Windows 10 客户，具体取决于他们所使用的设备类型。 在每个应用商店的支持语言不相同的罕见情况下，一些客户可能会看到采用其他语言形式的屏幕截图，因为该语言能最好地体现出他们在购买应用时将获得的体验。
 
-### 应用商店一览
+### <a name="store-listings"></a>应用商店一览
 我们将根据 Windows 10 客户所使用的语言，尝试向他们展示最合适的应用商店一览。 当采用相同语言的多个源都提供应用商店一览时，将为你的 Windows 10 客户展示 Windows 应用商店应用中的一览。 在支持的语言在每个应用商店中不相同的罕见情况下，如果你仅使用该语言提供了一种应用商店一览，则一些客户可能会从 Windows Phone 应用看到该应用商店一览。
 
 如果你希望更新 Windows 10 客户所能看到的应用商店一览，以便他们可了解跨多个设备工作的体验，你可以通过更新[应用提要](create-app-store-listings.md)来实现此目的。 Windows 10 客户将看到你的应用的默认描述，不过，如果你希望展示给使用不同操作系统版本的客户的应用商店一览有所不同，则还可以[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)。
 
-## 类别更改
+## <a name="category-changes"></a>类别更改
 
 
 在许多情况下，应用和游戏的新[类别和子类别](category-and-subcategory-table.md)与它们在适用于以前操作系统版本的应用商店中的类别和子类别相同。 但稍作了些变动。 查看下表，以了解你的应用基于其上一类别在面向 Windows 10 客户的应用商店中的分类方式。
 
-**注意** 当在提交的[“应用属性”](enter-app-properties.md)页中查看[“应用类别”](category-and-subcategory-table.md)时，你将看到在仪表板中列出的新类别，而正在通过 Windows 10 设备查看该应用商店的客户将在新类别下看到你的应用。 而通过早期操作系统查看应用商店的客户将继续看到该应用列在其原始类别下。
+**注意**  当在提交的[应用属性](enter-app-properties.md)页中查看[应用类别](category-and-subcategory-table.md)时，你将看到在仪表板中列出的新类别，而正在通过 Windows 10 设备查看该应用商店的客户将在新类别下看到你的应用。 而通过早期操作系统查看应用商店的客户将继续看到该应用列在其原始类别下。
 
 
 **面向 Windows Phone 应用的类别更改：**
@@ -119,9 +126,4 @@ ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 | 游戏 &gt; 家庭           | 游戏 &gt; 家庭 + 儿童             |
 | 游戏 &gt; 拼图           | 游戏 &gt; 拼图 + 益智           |
 | 游戏 &gt; 赛车           | 游戏 &gt; 赛车 + 飞行类           |
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

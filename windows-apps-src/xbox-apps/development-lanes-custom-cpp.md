@@ -2,12 +2,20 @@
 author: JordanEllis6809
 title: "在 Xbox 上使用通用 Windows 平台 (UWP) 进行 C++ 游戏开发"
 description: "在 Xbox 上进行 C++ UWP 游戏开发。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 translationtype: Human Translation
-ms.sourcegitcommit: 1902dd7e47d6d257a90313014ba85d9ae3880493
-ms.openlocfilehash: 585f8a38cec698110f5ba7e23fa6c0f14d19d5bb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ff4686aeefbce41330a0fb3bf112a30ffe2b504e
+ms.lasthandoff: 02/08/2017
 
 ---
-# 将自定义 C++ 游戏移植到 Xbox 上的 UWP
+# <a name="bringing-custom-c-games-to-uwp-on-xbox"></a>将自定义 C++ 游戏移植到 Xbox 上的 UWP
 
 如果你要编写一个自定义 C++ 引擎，Xbox One 完全支持 C++。 
 
@@ -21,13 +29,8 @@ ms.openlocfilehash: 585f8a38cec698110f5ba7e23fa6c0f14d19d5bb
 > Xbox One 目前不支持 DirectX 12。
 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [将现有游戏移植到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

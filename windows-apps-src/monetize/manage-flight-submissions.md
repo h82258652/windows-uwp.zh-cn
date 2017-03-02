@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 应用商店提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。"
 title: "使用 Windows 应用商店提交 API 管理软件包外部测试版提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 41203bffb65de3d4d6cc0fec2c7436e0b9d5821b
-ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
 
 Windows 应用商店提交 API 提供可用于管理针对应用的软件包外部测试版提交的方法，包括逐步软件包推出。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法创建或管理软件包外部测试版的提交前，该软件包外部测试版必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或者使用[管理软件包外部测试版](manage-flights.md)中所述的 Windows 应用商店提交 API 方法，可以创建软件包外部测试版。
+>**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
+
+>**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建程序包外部测试版提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将不再能够使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
 
-使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。
+使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 在使用这些方法之前，程序包外部测试版必须已存在于你的开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或者使用[管理软件包外部测试版](manage-flights.md)中所述的 Windows 应用商店提交 API 方法，可以创建软件包外部测试版。
 
 <table>
 <colgroup>
@@ -30,7 +39,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -144,6 +153,8 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 * [Java 代码示例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 代码示例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注意**&nbsp;&nbsp;除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
+
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理软件包外部测试版提交的逐步软件包推出
 
@@ -152,7 +163,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 若要以编程方式启用软件包外部测试版提交的逐步软件包推出，请遵循此过程使用 Windows 应用商店提交 API 中的以下方法：
 
   1. [创建软件包外部测试版提交](create-a-flight-submission.md)或[获取软件包外部测试版提交](get-a-flight-submission.md)。
-  2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将“isPackageRollout”字段设置为 true，然后将“packageRolloutPercentage”字段设置为应获取已更新的软件包的应用客户百分比。
+  2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将 *isPackageRollout* 字段设置为 true，然后将 *packageRolloutPercentage* 字段设置为应获取已更新的软件包的应用客户百分比。
   3. 将已更新的软件包外部测试版提交数据传递到[更新软件包外部测试版提交](update-a-flight-submission.md)方法。
 
 针对软件包外部测试版提交启用逐步软件包推出后，你可以使用以下方法以编程方式获取、更新、终止或完成逐步推出。
@@ -411,9 +422,4 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 * [确认软件包外部测试版提交](commit-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
 * [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

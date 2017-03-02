@@ -4,9 +4,17 @@ Description: "对话框和浮出控件显示当用户请求这些元素或发生
 title: "对话框和浮出控件"
 label: Dialogs
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e76ae1e85f1512a939f2b7ee50ed205c0c55605b
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
@@ -306,9 +314,4 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 - [菜单和上下文菜单](menus.md)
 - [**Flyout 类**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**ContentDialog 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

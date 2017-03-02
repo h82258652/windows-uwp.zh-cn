@@ -2,9 +2,17 @@
 author: QuinnRadich
 title: "选择 UWP 版本"
 description: "在 Microsoft Visual Studio 中编写 UWP 应用时，可以选择要面向的版本。 了解不同的 UWP 版本之间的区别，以及如何在新项目和现有项目中配置你的选择。"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 translationtype: Human Translation
-ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
-ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e2bc7b4a12aed40093985000486b9f3f78967524
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -28,19 +36,14 @@ Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改�
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>选择要用于你的应用的版本
 
-在 Visual Studio 的“新的通用 Windows 项目”对话框中，可以选择一个版本作为“目标版本”和“最低版本”。
+在 Visual Studio 的**新的通用 Windows 项目**对话框中，可以选择一个版本作为**目标版本**和**最低版本**。
 
 * **目标版本**。 这将在你的项目文件中设置 *TargetPlatformVersion* 设置。 还可确定你的应用包清单中的 *TargetDeviceFamily@MaxVersionTested* 属性的值。 所选值指定你的项目面向的 UWP 平台版本（以及适用于你的应用的 API 集），因此我们建议你选择最新版本。 有关你的应用包清单的详细信息以及手动配置 TargetDeviceFamily 的一些指南，请参阅 [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903)。
 * **最低版本**。 这将在你的项目文件中设置 *TargetPlatformMinVersion* 设置。 还可确定你的应用包清单中的 *TargetDeviceFamily@MinVersion* 属性的值。 所选值指定你的项目所适用的 UWP 平台的最低版本。
 
-请注意，你在声明应用于从“最低版本”到“目标版本”范围中适用的任何 Windows 版本。 如果这两个版本为同一版本，则无需执行任何特殊操作。 如果版本不同，请注意以下一些事项。
+请注意，你在声明应用于从**最低版本**到**目标版本**范围中适用的任何 Windows 版本。 如果这两个版本为同一版本，则无需执行任何特殊操作。 如果版本不同，请注意以下一些事项。
 
-* 在代码中，可随意（即无需条件检查）调用“最低版本”指定的版本中存在的任何 API。
-* 确保在运行“最低版本”的设备上测试你的代码，以便它无需仅在“目标版本”中的 API 即可正常运行。
-* 使用“目标版本”的值标识用于编译项目的所有参考（合约 WinMD）。 但是这些参考使你通过对 API 的调用编译代码，这些 API 并不一定存在于你已声明支持的设备上（通过“最低版本”）。 因此，在“最低版本”后引入的任何 API 都需要通过自适应代码调用。 有关自适应代码的详细信息，请参阅[通用 Windows 平台 (UWP) 应用指南](../get-started/universal-application-platform-guide.md)。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+* 在代码中，可随意（即无需条件检查）调用**最低版本**指定的版本中存在的任何 API。
+* 确保在运行**最低版本**的设备上测试你的代码，以便它无需仅在**目标版本**中的 API 即可正常运行。
+* 使用**目标版本**的值标识用于编译项目的所有参考（合约 WinMD）。 但是这些参考使你通过对 API 的调用编译代码，这些 API 并不一定存在于你已声明支持的设备上（通过**最低版本**）。 因此，在**最低版本**后引入的任何 API 都需要通过自适应代码调用。 有关自适应代码的详细信息，请参阅[通用 Windows 平台 (UWP) 应用指南](../get-started/universal-application-platform-guide.md)。
 

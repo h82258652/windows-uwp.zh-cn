@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "了解如何在将应用提交到应用商店之前，从 Windows 开发人员中心仪表板向应用添加应用程序 ID 和广告单元 ID 值。"
 title: "在应用中设置广告单元"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 广告, 投放广告, 广告单元"
 translationtype: Human Translation
-ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
-ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 32a934f1d113d561c72ab3ac48a8ef3d0820c176
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在应用中设置广告单元
+# <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 
 
 
@@ -32,7 +38,7 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 [测试模式值](test-mode-values.md)
 
@@ -40,9 +46,4 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

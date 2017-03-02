@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: "本文介绍如何使用手动设备控件实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。"
 title: "用于照片和视频捕获的手动相机控件"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c6a7aabb39b3835e042481ccae7da60e899e7cf
-ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be3c421c2b8d7b4bb71ddaa984ff925f0563f1f6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 用于照片和视频捕获的手动相机控件
+# <a name="manual-camera-controls-for-photo-and-video-capture"></a>用于照片和视频捕获的手动相机控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## Exposure
+## <a name="exposure"></a>Exposure
 
 [**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 允许你设置照片或视频捕获期间所使用的快门速度。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 > [!IMPORTANT]
 > 自动曝光模式仅在预览流运行时才受支持。 在打开自动曝光之前，检查以确保预览流正在运行。
 
-## 曝光补偿
+## <a name="exposure-compensation"></a>曝光补偿
 
 [**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 允许你设置照片或视频捕获期间所使用的曝光补偿。
 
@@ -74,7 +81,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
 
-## Flash
+## <a name="flash"></a>Flash
 
 [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 允许你启用或禁用闪光灯或者启用自动闪光灯（系统会动态确定是否使用闪光灯）。 在支持该控件的设备上，使用它还可以启用自动消除红眼。 这些设置均适用于捕获照片。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是单独的控件，用于针对视频捕获打开或关闭聚光。
 
@@ -101,11 +108,11 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 > [!NOTE] 
 >  在某些设备上，除非设备正在运行预览流并且正在主动捕获视频，否则即使 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 设置为 true，手电筒也不会发光。 建议按如下顺序执行操作：先打开视频预览，然后通过将 **Enabled** 设置为 true 打开手电筒，最后启动视频捕获。 在某些设备上，手电筒将在预览启动后亮起。 在其他设备上，在视频捕获启动后，聚光才会亮起。
 
-## 对焦
+## <a name="focus"></a>对焦
 
 受 [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 对象支持的用于调整相机对焦的常用方法有三种：连续自动对焦、点按对焦和手动对焦。 相机应用支持以上三种方法，但为了便于阅读，本文将分开讨论每种技术。 本部分还将讨论如何启用对焦辅助灯。
 
-### 连续自动对焦
+### <a name="continuous-autofocus"></a>连续自动对焦
 
 启用连续自动对焦将指示相机动态调整对焦，以尝试将焦点集中在照片或视频的捕获对象上。 该示例使用单选按钮打开或关闭连续自动对焦。
 
@@ -124,7 +131,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 > [!IMPORTANT]
 > 自动对焦模式仅在预览流运行时才受支持。 在打开连续自动对焦之前，检查以确保预览流正在运行。
 
-### 点按对焦
+### <a name="tap-to-focus"></a>点按对焦
 
 点按对焦技术使用 [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) 和 [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) 来指定捕获设备应对焦的捕获帧的子区域。 对焦区域由用户通过点按显示预览流的屏幕来确定。
 
@@ -187,7 +194,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[ConvertUiTapToPreviewRect](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetConvertUiTapToPreviewRect)]
 
-### 手动对焦
+### <a name="manual-focus"></a>手动对焦
 
 手动对焦技术使用 **Slider** 控件来设置捕获设备的当前对焦深度。 使用单选按钮来打开或关闭手动对焦。
 
@@ -209,7 +216,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[FocusSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusSlider)]
 
-### 启用对焦灯
+### <a name="enable-the-focus-light"></a>启用对焦灯
 
 你可以在支持对焦辅助灯的设备上启用该灯，以帮助设备对焦。 此示例使用复选框来启用或禁用对焦辅助灯。
 
@@ -223,7 +230,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
 
-## ISO 感光度
+## <a name="iso-speed"></a>ISO 感光度
 
 [**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 允许你设置照片或视频捕获期间所使用的 ISO 感光度。
 
@@ -247,7 +254,7 @@ ISO 感光度值必须在设备支持的范围内，且必须是受支持步长�
 
 [!code-cs[IsoCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoCheckBox)]
 
-## 光学图像防抖动
+## <a name="optical-image-stabilization"></a>光学图像防抖动
 
 光学图像防抖动 (OIS) 通过机械地操作硬件捕获设备来稳定捕获的视频流，它可以提供比数字防抖动更优越的结果。 在不支持 OIS 的设备上，你可以使用 VideoStabilizationEffect，以便在捕获的视频上执行数字防抖动。 有关详细信息，请参阅[视频捕获的效果](effects-for-video-capture.md)。
 
@@ -259,14 +266,14 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
-## Powerline frequency
+## <a name="powerline-frequency"></a>Powerline frequency
 某些相机设备支持防闪烁处理，该功能依赖于获知当前环境中的电力线 AC 频率。 某些设备支持自动确定电力线频率，而另一些设备需要手动设置该频率。 以下代码示例显示如何确定设备上的电力线频率支持以及如何手动设置该频率（如果需要）。 
 
 首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，从而传入 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) 并传入值 **Auto** 来执行此操作。 如果调用成功，这意味着你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
-## 白平衡
+## <a name="white-balance"></a>白平衡
 
 [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 允许你设置照片或视频捕获期间所使用的白平衡。
 
@@ -296,7 +303,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 > [!IMPORTANT]
 > **ColorTemperaturePreset.Auto** 预设值指示系统自动调整白平衡级别。 在某些情况（如捕获照片序列，其中每个帧的平衡级别均相同）下，你需要将控件锁定为当前自动值。 为此，请调用 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 并指定 **Manual** 预设，但不要在控件上使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 设置值。 这样做会导致设备锁定当前值。 请不要尝试读取当前控件值，并将该值传递给 **SetValueAsync**，因为不能保证该值是正确的。
 
-## 缩放
+## <a name="zoom"></a>缩放
 
 [**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 允许你设置照片或视频捕获期间所使用的缩放级别。
 
@@ -318,7 +325,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-cs[ZoomSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomSlider)]
 
-### 借助收缩手势的平滑缩放
+### <a name="smooth-zoom-using-pinch-gesture"></a>借助收缩手势的平滑缩放
 
 正如上一部分中所讨论的那样，在支持它的设备上，平滑缩放模式允许捕获设备在不同的数字缩放级别之间平滑过渡，以便用户可以在捕获操作期间动态调整缩放级别，而不会导致离散和不和谐过渡。 本部分将介绍如何调整缩放级别以响应收缩手势。
 
@@ -338,13 +345,8 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

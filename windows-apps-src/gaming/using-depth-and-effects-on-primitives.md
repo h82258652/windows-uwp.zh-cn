@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "对基元使用深度和效果"
-description: "下面，我们将向你介绍如何对基元使用深度、透视、颜色和其他效果。"
+description: "下面我们将向你介绍如何对基元使用深度、透视、颜色和其他效果。"
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 深度, 效果, 基元, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 对基元使用深度和效果
+# <a name="use-depth-and-effects-on-primitives"></a>对基元使用深度和效果
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,7 +25,7 @@ ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
 
 **目标：**创建一个 3D 对象并向其应用基本顶点照明和着色。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
@@ -27,10 +34,10 @@ ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
 
 **完成所需时间：**20 分钟。
 
-说明
+<a name="instructions"></a>说明
 ------------
 
-### 1. 定义立方体变量
+### <a name="1-defining-cube-variables"></a>1. 定义立方体变量
 
 首先，我们需要为立方体定义 **SimpleCubeVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置和颜色以及查看立方体的方式。 使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 声明 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) 并声明 **ConstantBuffer** 的实例。
 
@@ -62,7 +69,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. 创建深度模具视图
+### <a name="2-creating-a-depth-stencil-view"></a>2. 创建深度模具视图
 
 除了创建呈现器目标视图之外，还需要创建深度模具视图。 深度模具视图让 Direct3D 可以高效地在离相机较远的对象前面呈现离相机较近的对象。 在创建深度模具缓冲区视图之前，必须先创建深度模具缓冲区。 填充 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 来描述深度模具缓冲区，然后调用 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 来创建深度模具缓冲区。 要创建深度模具视图，需填充 [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) 来描述深度模具视图，并将深度模具视图描述和深度模具缓冲区传递到 [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507)。
 
@@ -109,7 +116,7 @@ private:
             );
 ```
 
-### 3. 通过窗口更新透视
+### <a name="3-updating-perspective-with-the-window"></a>3. 通过窗口更新透视
 
 根据窗口大小更新常量缓冲区的透视投影参数。 将参数固定为 70 度视区，深度范围从 0.01 到 100。
 
@@ -142,7 +149,7 @@ private:
             );
 ```
 
-### 4. 使用颜色元素创建顶点着色器和像素着色器
+### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. 使用颜色元素创建顶点着色器和像素着色器
 
 在此应用中，我们将创建比上一教程[创建着色器和绘制基元](creating-shaders-and-drawing-primitives.md)中介绍的更为复杂的顶点着色器和像素着色器。 此应用的顶点着色器会将每个顶点位置转换为投影空间，并将顶点颜色传递到像素着色器中。
 
@@ -332,7 +339,7 @@ private:
         
 ```
 
-### 5. 旋转和绘制立方体并显示呈现的图像
+### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. 旋转和绘制立方体并显示呈现的图像
 
 我们将进入一个不断呈现和显示场景的无限循环。 调用 **rotationY** 内嵌函数 (BasicMath.h)，使用旋转量设置使立方体模型矩阵绕 Y 轴旋转的值。 然后，调用 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 来更新常量缓冲区并旋转立方体模型。 调用 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 以将呈现器目标指定为输出目标。 在此 **OMSetRenderTargets** 调用中，传递深度模具视图。 调用 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 将呈现器目标清空为纯蓝色，并调用 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 清空深度缓冲区。
 
@@ -439,7 +446,7 @@ private:
                 );
 ```
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 
 我们已对基元使用了深度、透视、颜色和其他效果。
@@ -454,10 +461,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

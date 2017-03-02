@@ -2,21 +2,28 @@
 author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取加载项提交的状态。"
-title: "使用 Windows 应用商店提交 API 获取加载项的状态"
+title: "使用 Windows 应用商店提交 API 获取加载项提交的状态"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 状态"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 41fc9b5597b5331fc6221575e0601f2414f4c778
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 获取加载项的状态
+# <a name="get-the-status-of-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取加载项提交的状态
 
 
 
 
 在 Windows 应用商店提交 API 中使用此方法，可获取加载项（也称为应用内产品或 IAP）提交的状态。 有关通过使用 Windows 应用商店提交 API 创建加载项提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -24,9 +31,9 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 使用你的开发人员中心帐户为应用创建加载项提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建加载项提交](create-an-add-on-submission.md)方法。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 <span/>
  
 
-### 请求头
+### <a name="request-header"></a>请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,11 +61,11 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何获取加载项提交的状态。
 
@@ -67,7 +74,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/su
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 响应正文包含指定提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅以下部分。
 
@@ -82,7 +89,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 响应正文
+### <a name="response-body"></a>响应正文
 
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -91,7 +98,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -103,7 +110,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取加载项提交](get-an-add-on-submission.md)
@@ -111,9 +118,4 @@ Authorization: Bearer <your access token>
 * [确认加载项提交](commit-an-add-on-submission.md)
 * [更新加载项提交](update-an-add-on-submission.md)
 * [删除加载项提交](delete-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

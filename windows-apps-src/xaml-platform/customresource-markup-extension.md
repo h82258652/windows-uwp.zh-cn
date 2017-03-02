@@ -3,31 +3,38 @@ author: jwmsft
 description: "通过计算对来源于自定义资源查找实现的资源的引用，为任何 XAML 属性提供值。 资源查找是通过 CustomXamlResourceLoader 类实现执行的。"
 title: "CustomResource 标记扩展"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1203987a3003c9f78bbed52b00a81cc3832a1abe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {CustomResource} 标记扩展
+# <a name="customresource-markup-extension"></a>{CustomResource} 标记扩展
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 通过计算对来源于自定义资源查找实现的资源的引用，为任何 XAML 属性提供值。 资源查找是通过 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 类实现执行的。
 
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 术语 | 说明 |
 |------|-------------|
 | 键 | 所请求资源的键。 键的初始分配方式特定于当前注册使用的 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 类的实现。 |
 
-## 备注
+## <a name="remarks"></a>备注
 
 **CustomResource** 这种技术可获取在自定义资源存储库中的其他地方定义的值。 此技术相对比较高级，大多数 Windows 运行时应用方案都没有使用此技术。
 
@@ -43,15 +50,10 @@ ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
 
 **CustomResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“\{”和“\}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

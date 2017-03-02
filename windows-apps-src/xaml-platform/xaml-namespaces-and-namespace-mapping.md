@@ -3,9 +3,16 @@ author: jwmsft
 description: "本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。"
 title: "XAML 命名空间和命名空间映射"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 626af2ba6e1b8616f8d23419d94e621f3ce7d043
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11a99a1a68a37b8c60974193c8cab51247a25711
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -30,7 +37,7 @@ XAML 处理器在创建运行时对象表示时，可查找与该 XAML 命名空
 
 ## <a name="xaml-namespaces-in-typical-xaml-markup-usage"></a>典型 XAML 标记中使用的 XAML 命名空间
 
-XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀来限定即可声明哪些元素。 例如，如果声明一个元素 `<Balloon />`，XAML 分析器期望一个 **Balloon** 元素存在并且在默认的 XAML 命名空间中是有效的。 相反，如果 **Balloon** 不在已定义的默认 XAML 命名空间中，就必须使用一个前缀限定该元素名称，例如 `<party:Balloon />`。 该前缀表明该元素存在于与默认命名空间不同的 XAML 命名空间中，必须将一个 XAML 命名空间映射到前缀 **party**，然后才能使用此元素。 XAML 命名空间适用于在其中声明它们的特定元素，也适用于该元素在 XAML 结构中包含的任何元素。 出于此原因，XAML 命名空间几乎总是在 XAML 文件的根元素上声明，以充分利用这种继承性。
+XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀限定即可声明的元素。 例如，如果声明一个元素 `<Balloon />`，XAML 分析器期望一个 **Balloon** 元素存在并且在默认的 XAML 命名空间中是有效的。 相反，如果 **Balloon** 不在已定义的默认 XAML 命名空间中，就必须使用一个前缀限定该元素名称，例如 `<party:Balloon />`。 该前缀表明该元素存在于与默认命名空间不同的 XAML 命名空间中，必须将一个 XAML 命名空间映射到前缀 **party**，然后才能使用此元素。 XAML 命名空间适用于在其中声明它们的特定元素，也适用于该元素在 XAML 结构中包含的任何元素。 出于此原因，XAML 命名空间几乎总是在 XAML 文件的根元素上声明，以充分利用这种继承性。
 
 ## <a name="the-default-and-xaml-language-xaml-namespace-declarations"></a>默认和 XAML 语言 XAML 命名空间声明
 
@@ -57,7 +64,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 -   **d:DesignHeight 和 d:DesignWidth 属性：**这些属性有时应用于 Visual Studio 或其他 XAML 设计器图面为你创建的 XAML 文件的根。 例如，如果你向应用项目中添加了新的 **UserControl**，则这些属性是针对所创建的 XAML 的 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 根设置的。 这些属性更便于设计 XAML 内容组合，以便在将该 XAML 内容用于控件示例或更大 UI 页面的其他部分之后，你能够预测可能存在的布局约束。
 
-   **注意** 如果要从 Microsoft Silverlight 迁移 XAML，代表整个 UI 页面的根元素上可能存在下列特性。 在这种情况下，你可能希望删除这些特性。 与使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小页面布局相比，XAML 设计器的其他功能（如模拟器）对于设计能够很好地处理缩放和视图状态的页面布局或许更有用。
+   **注意**  如果要从 Microsoft Silverlight 迁移 XAML，代表整个 UI 页面的根元素上可能存在下列特性。 在这种情况下，你可能希望删除这些特性。 与使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小页面布局相比，XAML 设计器的其他功能（如模拟器）对于设计能够很好地处理缩放和视图状态的页面布局或许更有用。
 
 -   **d:DataContext 特性：**可以针对页面根或控件设置此特性，以便替代该对象所拥有的任何显式或继承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
 -   **d:DesignSource 特性：**为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 指定设计时数据源，并替代 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
@@ -69,7 +76,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 ### <a name="local-and-common"></a>**local:** 和 **common:**
 
-“local:”是一个前缀，通常会在模板化 Windows 应用商店应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 Windows 应用商店应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在“解决方案资源管理器”视图的“Common”文件夹中找到定义。
+“local:”是一个前缀，通常会在模板化 Windows 应用商店应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 Windows 应用商店应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在**解决方案资源管理器**视图的“Common”文件夹中找到定义。
 
 ### **<a name="vsm"></a>vsm:**
 
@@ -111,10 +118,5 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 * [适用于 Windows 运行时应用的 C#、VB 和 C++ 项目模板](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://msdn.microsoft.com/library/windows/apps/br229571)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

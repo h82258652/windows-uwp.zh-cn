@@ -3,13 +3,20 @@ author: mtoepke
 title: "图形诊断工具"
 description: "了解如何在 Visual Studio 中获取和使用图形诊断功能，包括图形调试、图形框架分析和 GPU 使用率。"
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 图形, 诊断, 工具, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 765cde8afe32cef6515ee6ca9750365aa35984a2
-ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 076020d88889a9cc8b417befa2dd54b41d688e5e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 图形诊断工具
+# <a name="graphics-diagnostics-tools"></a>图形诊断工具
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +33,7 @@ ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
 -   Visual Studio 中的图形框架分析在图形调试日志上运行，并收集 Direct3D 绘图调用的基线计时。 然后它通过修改各种图形设置来执行一组实验，并生成计时结果的表格。 你可以使用此数据了解应用中的图形性能问题，并且可以查看各种实验的结果，以确定性能改善的机会。
 -   Visual Studio 中的 GPU 使用情况使你可以实时监视 GPU 使用。 它收集和分析 CPU 和 GPU 正在处理的工作负载的计时数据，以便你可以确定哪里存在瓶颈。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 [Visual Studio 中的图形诊断概述](http://go.microsoft.com/fwlink/p/?LinkID=526382)
@@ -37,10 +44,5 @@ ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,21 +3,28 @@ author: msatranjr
 title: "分配托管的 Windows 运行时组件"
 description: "你可以通过文件副本分配 Windows 运行时组件。"
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 3a82ee44b748c2c8748ed063cbc67e02200a4e31
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9ce20fbfc1289eb02faf8868415feda054d6f691
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# 分配托管的 Windows 运行时组件
+# <a name="distributing-a-managed-windows-runtime-component"></a>分配托管的 Windows 运行时组件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你可以通过文件副本分配 Windows 运行时组件。 但是，如果组件包括许多文件，安装对用户而言会很繁琐。 另外，放置文件错误或无法设置引用可能会给他们造成问题。 为了便于安装和使用，你可以将复杂的组件打包为 Visual Studio 扩展 SDK。 用户仅需为整个程序包设置一个引用即可。 通过使用“扩展和更新”****对话框，他们可以轻松找到和安装组件，如 MSDN 库中的[查找和使用 Visual Studio 扩展](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)所述。
 
-## 计划可分配的 Windows 运行时组件
+## <a name="planning-a-distributable-windows-runtime-component"></a>计划可分配的 Windows 运行时组件
 
 为二进制文件（例如 .winmd 文件）选择唯一的名称。 我们建议使用以下格式以确保唯一性：
 
@@ -37,15 +44,15 @@ For example: Microsoft.Cpp.Build.dll
 
 如果出现上述多种情况，扩展 SDK 会极其有用。
 
-> **注意** 对于复杂组件，NuGet 程序包管理系统向扩展 SDK 提供开源替换选项。 像扩展 SDK 一样，NuGet 支持创建可简化复杂组件安装的程序包。 有关 NuGet 程序包和 Visual Studio 扩展 SDK 的比较，请参阅 MSDN 库中的[使用 NuGet 与扩展 SDK 添加引用](https://msdn.microsoft.com/library/jj161096.aspx)。
+> **注意**  对于复杂组件，NuGet 程序包管理系统向扩展 SDK 提供开源替换选项。 像扩展 SDK 一样，NuGet 支持创建可简化复杂组件安装的程序包。 有关 NuGet 程序包和 Visual Studio 扩展 SDK 的比较，请参阅 MSDN 库中的[使用 NuGet 与扩展 SDK 添加引用](https://msdn.microsoft.com/library/jj161096.aspx)。
 
-## 通过文件副本进行分配
+## <a name="distribution-by-file-copy"></a>通过文件副本进行分配
 
 如果组件包括单个 .winmd 文件或 .winmd 文件和资源索引 (.pri) 文件，你只需使 .winmd 文件可供用户复制即可。 用户可以将文件放置在项目中的任何所需位置、使用“添加现有项”****对话框将 .winmd 文件添加到项目，然后使用“引用管理器”对话框创建引用。 如果包括 .pri 文件或 .xml 文件，请指示用户使用 .winmd 文件放置这些文件。
 
-> **注意** Visual Studio 会始终在生成 Windows 运行时组件时生成 .pri 文件，即使你的项目不包括任何资源。 如果组件具有测试应用，你可以确定 .pri 文件是否已使用，方法是在 bin\debug\AppX 文件夹中检查应用包的内容。 如果此处未显示组件中的 .pri 文件，则无需分配它。 或者，你可以使用 [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) 工具从 Windows 运行时组件项目中转储资源文件。 例如，在“Visual Studio 命令提示符”窗口中，键入： makepri dump /if MyComponent.pri /of MyComponent.pri.xml 你可以在[资源管理系统 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx) 中阅读有关 .pri 文件的详细信息。
+> **注意**  Visual Studio 会始终在生成 Windows 运行时组件时生成 .pri 文件，即使你的项目不包括任何资源。 如果组件具有测试应用，你可以确定 .pri 文件是否已使用，方法是在 bin\debug\AppX 文件夹中检查应用包的内容。 如果此处未显示组件中的 .pri 文件，则无需分配它。 或者，你可以使用 [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) 工具从 Windows 运行时组件项目中转储资源文件。 例如，在“Visual Studio 命令提示符”窗口中，键入： makepri dump /if MyComponent.pri /of MyComponent.pri.xml 你可以在[资源管理系统 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx) 中阅读有关 .pri 文件的详细信息。
 
-## 通过扩展 SDK 进行分配
+## <a name="distribution-by-extension-sdk"></a>通过扩展 SDK 进行分配
 
 复杂组件通常包括 Windows 资源，但请查看之前部分中关于检测空 .pri 文件的说明。
 
@@ -66,16 +73,11 @@ For example: Microsoft.Cpp.Build.dll
 4.  创建 SDK 清单文件。 该清单指定名称和版本休息、SDK 支持的体系结构、.NET Framework 版本和其他有关 Visual Studio 使用 SDK 的方式的信息。 你可以在[如何：创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)中找到详细信息和示例。
 5.  生成和分配扩展 SDK。 有关深入信息，包括本地化 VSIX 程序包和对其进行签名的信息，请参阅 MSDN 库中的“VSIX 部署”。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)
 * [NuGet 程序包管理系统](https://github.com/NuGet/Home)
 * [资源管理系统 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
 * [查找和使用 Visual Studio 扩展](https://msdn.microsoft.com/library/dd293638.aspx)
 * [MakePRI.exe 命令选项](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
-ms.assetid: 
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取应用中的错误堆栈跟踪。"
+ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
+description: "在 Windows 应用商店分析 API 中使用此方法，可获取应用中的错误的堆栈跟踪。"
 title: "获取应用中的错误的堆栈跟踪"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 堆栈跟踪, 错误"
 translationtype: Human Translation
-ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
-ms.openlocfilehash: 90481b5f85d010a142e86ca67ac94c3ec25d89c6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8b10c7f9e2de962aca719055a26d8c3954ea052f
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>获取应用中的错误的堆栈跟踪
 
-使用 Windows 应用商店分析 API 中的此方法，可获取应用中的错误堆栈跟踪。 此方法仅可以下载过去 30 天内发生的应用错误的堆栈跟踪。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取堆栈跟踪。
+在 Windows 应用商店分析 API 中使用此方法，可获取应用中的错误的堆栈跟踪。 此方法仅可以下载过去 30 天内发生的应用错误的堆栈跟踪。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取堆栈跟踪。
 
 在可以使用此方法之前，必须首先使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件 ID。
 
@@ -125,9 +132,4 @@ Authorization: Bearer <your access token>
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

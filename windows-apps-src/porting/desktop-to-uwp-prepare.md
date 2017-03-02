@@ -3,9 +3,17 @@ author: awkoren
 Description: "本文列出了在使用桌面到 UWP 桥转换应用前你需要知道的事项。 你可能不需要执行很多操作即可使应用为转换过程做好准备。"
 Search.Product: eADQiWindows 10XVcnh
 title: "为桌面到 UWP 桥准备应用"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 translationtype: Human Translation
-ms.sourcegitcommit: d22d51d52c129534f8766ab76e043a12d140e8b7
-ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 238d3520bc4890a030327ad0bc799ab90b83ef40
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -68,13 +76,14 @@ ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
 在从 Windows 应用商店安装期间，将在安装应用之前先安装 VCLibs 11 框架的适当版本（x86 或 x64）。  
 如果通过旁加载安装应用，将不安装这些依赖项。 若要在计算机上手动安装这些依赖项，必须下载并安装[桌面应用桥的 VC 11.0 框架包](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)。 有关这些方案的详细信息，请参阅 [在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)。
 
-+ __你的应用创建跳转列表条目并调用 [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) 或 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__。 不要在代码中以编程方式设置你的 AppID。 否则，将会导致不显示你的跳转列表条目。 如果你的应用需要自定义 ID，请使用清单文件进行指定。 请参阅 [使用桌面桥手动将你的应用转换到 UWP](desktop-to-uwp-manual-conversion.md) 获取说明。 应用程序的 AppID 在 *YOUR_PRAID_HERE* 部分中指定。 
++ __你的应用包含自定义跳转列表__。 使用跳转列表时需要注意到几个问题和注意事项。 
 
-+ __你的应用添加跳转列表 shell 链接，该链接引用程序包中的可执行文件__。 你不能通过跳转列表直接启动程序包中的可执行文件（应用自身 .exe 的绝对路径除外）。 相反，改为注册应用执行别名（此别名允许通过关键字启动转换的应用，就像它在该路径上一样），并设置到别名的链接目标路径。 有关如何使用 appExecutionAlias 扩展的详细信息，请参阅 [桌面桥应用扩展](desktop-to-uwp-extensions.md)。 注意，如果要求跳转列表中的链接资源与原始 .exe 匹配，你将需要使用 [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) 和 PKEY_Title 的显示名称设置图标等资源，就像设置其他自定义条目那样。 
+    - __你的应用的体系结构与操作系统不匹配。__  如果应用与操作系统体系结构不匹配（例如在 x64 Windows 上运行 x86 应用），则跳转列表目前不能正常工作。 此时，没有其他解决方法，只能重新编译你的应用，使其匹配体系结构。
 
-+ __你的应用可添加跳转列表条目，该列表通过绝对路径引用应用程序包中的资源__。 应用的程序包更新时，应用的安装路径可能会更改，从而更改资源的位置（例如图标、文档、可执行文件等）。 如果跳转列表条目通过绝对路径引用此类资源，则应用应定期刷新其跳转列表（例如应用启动时）以确保正确解析路径。 或者，改用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，使你可以使用程序包相对的 ms-resource URI 方案（也与语言、DPI 和高对比度相关）来引用字符串和图像资源。 
+    - __你的应用创建跳转列表条目并调用 [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) 或 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__。 不要在代码中以编程方式设置你的 AppID。 否则，将会导致不显示你的跳转列表条目。 如果你的应用需要自定义 ID，请使用清单文件进行指定。 请参阅 [使用桌面桥手动将你的应用转换到 UWP](desktop-to-uwp-manual-conversion.md) 获取说明。 应用程序的 AppID 在 *YOUR_PRAID_HERE* 部分中指定。 
 
+    - __你的应用添加跳转列表 shell 链接，该链接引用程序包中的可执行文件__。 你不能通过跳转列表直接启动程序包中的可执行文件（应用自身 .exe 的绝对路径除外）。 相反，改为注册应用执行别名（此别名允许通过关键字启动转换的应用，就像它在该路径上一样），并设置到别名的链接目标路径。 有关如何使用 appExecutionAlias 扩展的详细信息，请参阅 [桌面桥应用扩展](desktop-to-uwp-extensions.md)。 注意，如果要求跳转列表中的链接资源与原始 .exe 匹配，你将需要使用 [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) 和 PKEY_Title 的显示名称设置图标等资源，就像设置其他自定义条目那样。 
 
-<!--HONumber=Dec16_HO1-->
+    - __你的应用可添加跳转列表条目，该列表通过绝对路径引用应用程序包中的资源__。 应用的程序包更新时，应用的安装路径可能会更改，从而更改资源的位置（例如图标、文档、可执行文件等）。 如果跳转列表条目通过绝对路径引用此类资源，则应用应定期刷新其跳转列表（例如应用启动时）以确保正确解析路径。 或者，改用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，使你可以使用程序包相对的 ms-resource URI 方案（也与语言、DPI 和高对比度相关）来引用字符串和图像资源。
 
 

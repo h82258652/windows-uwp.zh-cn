@@ -2,10 +2,17 @@
 author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: "利用电池节省功能"
-description: "创建 UWP 应用，这些应用与系统一起以电池高效方式使用后台任务。"
+description: "创建与系统兼容的 UWP 应用，以便以低电池能耗使用后台任务。"
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
-ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 045dfeb4696a4854b114d88da2a2cbb75d621a58
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,11 +20,11 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 通用 Windows 应用应跨所有设备系列一致地执行。 在电池供电的设备上，电源消耗在应用的用户整体体验中是一个关键因素。 全天的电池使用时间对每个用户都是想要的功能，但它要求设备上安装的所有软件（包括你自己的软件）都可节电。 
 
-后台任务行为可以说是应用的总能耗成本的最大因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 请参阅[创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)以获取详细信息。
+后台任务行为可以说是应用的总能耗成本的最大因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 请参阅[创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)以获取详细信息。
 
 ## <a name="background-activity-allowance"></a>后台活动余量
 
-在 Windows 10 版本 1607 中，用户可以在“设置”应用的“电池”部分查看其“按应用查看电池使用情况”。 此处，他们将看到应用列表和每个应用已使用的电池使用时间百分比（占自上次冲电以来已使用的电池使用时间量的百分比）。 
+在 Windows 10 版本 1607 中，用户可以在“设置”应用的**电池**部分查看其“按应用查看电池使用情况”。 此处，他们将看到应用列表和每个应用已使用的电池使用时间百分比（占自上次冲电以来已使用的电池使用时间量的百分比）。 
 
 ![按应用查看电池使用情况](images/battery-usage-by-app.png)
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 使用维护触发器。 可以使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) 对象而不是 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) 对象来确定后台任务的启动时间。 当设备连接到交流电源且允许它们运行较长时间时，使用维护触发器的任务才会运行。 有关说明，请参阅[使用维护触发器](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
 
-使用 **BackgroundWorkCostNotHigh** 系统条件类型。 必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 将设备插入到交流电源时运行的任务会标记为“低”（少/不影响电池）。 当设备使用电池电源且屏幕关闭时运行的任务会标记为“高”，因为可能当时在设备上运行的程序活动很少，因此后台任务有更高的相对成本。 当设备使用电池电源且屏幕“打开”时运行的任务会标记为“中等”，因为可能已有某些程序活动在运行，而且后台任务将增加一点能源成本。 **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
+使用 **BackgroundWorkCostNotHigh** 系统条件类型。 必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 将设备插入到交流电源时运行的任务会标记为**低**（少/不影响电池）。 当设备使用电池电源且屏幕关闭时运行的任务会标记为**高**，因为可能当时在设备上运行的程序活动很少，因此后台任务有更高的相对成本。 当设备使用电池电源且屏幕*打开*时运行的任务会标记为**中等**，因为可能已有某些程序活动在运行，而且后台任务将增加一点能源成本。 **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
 
 ## <a name="test-battery-efficiency"></a>测试电池效率
 
@@ -47,12 +54,7 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
+* [创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [规划性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,13 +3,20 @@ author: mcleblanc
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
 title: "数据绑定"
 description: "数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
-ms.openlocfilehash: e26b9753b3169e124c710a3f2e20907c749e5ec3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1680ceb9d9fdaf9cd2f9aa5d66f78b95e5da41e1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 数据绑定
+# <a name="data-binding"></a>数据绑定
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,12 +26,7 @@ ms.openlocfilehash: e26b9753b3169e124c710a3f2e20907c749e5ec3
 |-------|-------------|
 | [数据绑定概述](data-binding-quickstart.md) | 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。 此外，我们还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 有关更多详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。 | 
 | [深入了解数据绑定](data-binding-in-depth.md) | 本主题详细介绍数据绑定功能。 |
-| [设计面图上以及用于原型制作的示例数据](displaying-data-in-the-designer.md) | 为了使你的控件填充 Visual Studio 设计器中的数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你要生成一个草图（或原型）应用，示例数据也可能非常有用并且省时。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。 |
+| [设计面图上以及用于原型制作的示例数据](displaying-data-in-the-designer.md) | 为了使你的控件填充 Visual Studio 设计器中的数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你正要生成一个草图（或原型）应用，则示例数据可能真的非常有用而且节省时间。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。 |
 | [绑定分层数据和创建大纲/细节视图](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | 你可以通过将项目控件绑定到 [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中）来生成分层数据的多级大纲/细节（也称为列表详细信息）视图。 |
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

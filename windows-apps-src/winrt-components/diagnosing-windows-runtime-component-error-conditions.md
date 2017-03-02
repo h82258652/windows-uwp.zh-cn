@@ -3,13 +3,20 @@ author: msatranjr
 title: "诊断 Windows 运行时组件错误条件"
 description: "本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da02ed10336ea2381213fd5fada153db4cc06ab1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 诊断 Windows 运行时组件错误条件
+# <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,7 +26,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
 本文没有涵盖所有错误。 此处讨论的错误按照常规类别分组，并且每个类别包括关联的错误消息表。 请搜索消息文本（省略占位符的特定值）或搜索消息编号。 如果你在此处没有找到所需信息，请使用本文末尾的“反馈”按钮帮助我们改进这篇文档。 包括错误消息。 或者，你可以在 Microsoft Connect 网站上提交 Bug。
 
-## 实现异步接口的错误消息提供错误类型
+## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>实现异步接口的错误消息提供错误类型
 
 
 托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)）。 相反，.NET Framework 提供用于在 Windows 运行时组件中生成异步操作的 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
@@ -34,7 +41,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## 缺少对 mscorlib.dll 或 System.Runtime.dll 的引用
+## <a name="missing-references-to-mscorlibdll-or-systemruntimedll"></a>缺少对 mscorlib.dll 或 System.Runtime.dll 的引用
 
 
 此问题仅在从命令行使用 Winmdexp.exe 时发生。 我们建议使用 /reference 选项包括对 .NET Framework 核心引用程序集的 mscorlib.dll 和 System.Runtime.dll 的引用，这些引用位于“%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5”（在 32 位计算机上位于“%ProgramFiles%\...”）中。
@@ -46,7 +53,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## 不允许运算符重载
+## <a name="operator-overloading-is-not-allowed"></a>不允许运算符重载
 
 
 在使用托管代码编写的 Windows 运行时组件中，无法在公共类型上公开重载的运算符。
@@ -61,7 +68,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## 类上的构造函数具有相同数量的参数
+## <a name="constructors-on-a-class-have-the-same-number-of-parameters"></a>类上的构造函数具有相同数量的参数
 
 
 在 UWP 中，类只能拥有带有指定数量参数的一个构造函数；例如，不能是一个构造函数具有类型 **String** 的单个参数，而另一个构造函数具有类型 **int**（在 Visual Basic 中是 **Integer**）的单个参数。 唯一的解决方法是为每个构造函数使用不同数量的参数。
@@ -72,7 +79,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## 必须为具有相同数量的参数的重载指定默认值。
+## <a name="must-specify-a-default-for-overloads-that-have-the-same-number-of-parameters"></a>必须为具有相同数量的参数的重载指定默认值。
 
 
 在 UWP 中，重载的方法仅在一个重载指定为默认重载时才能具有相同数量的参数。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中的“重载的方法”。
@@ -84,12 +91,12 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## 输出文件的命名空间错误和无效名称
+## <a name="namespace-errors-and-invalid-names-for-the-output-file"></a>输出文件的命名空间错误和无效名称
 
 
 在通用 Windows 平台中，Windows 元数据 (.winmd) 文件中的所有公共类型必须位于共享 .winmd 文件名的命名空间或文件名的子命名空间中。 例如，如果你的 Visual Studio 项目名称为 A.B（即，Windows 运行时组件为 A.B.winmd），它可以包含公共类 A.B.Class1 和 A.B.C.Class2，但无法包含 A.Class3 (WME0006) 或 D.Class4 (WME1044)。
 
-> **注意** 这些限制仅适用于公共类型，而不适用于在实现中使用的专用类型。
+> **注意**  这些限制仅适用于公共类型，而不适用于在实现中使用的专用类型。
 
  
 
@@ -103,7 +110,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
 Windows 运行时组件中的类型无法具有与命名空间相同的名称 (WME1068)。
 
-> **警告** 如果你直接调用 Winmdexp.exe 并且不使用 /out 选项指定 Windows 运行时组件的名称，Winmdexp.exe 会尝试生成在组件中包括所有命名空间的名称。 为命名空间重命名会更改组件的名称。
+> **警告**  如果你直接调用 Winmdexp.exe 并且不使用 /out 选项指定 Windows 运行时组件的名称，Winmdexp.exe 会尝试生成在组件中包括所有命名空间的名称。 为命名空间重命名会更改组件的名称。
 
  
 
@@ -118,7 +125,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
  
 
-## 导出无效的通用 Windows 平台类型
+## <a name="exporting-types-that-arent-valid-universal-windows-platform-types"></a>导出无效的通用 Windows 平台类型
 
 
 组件的公共接口必须仅公开 UWP 类型。 但是，.NET Framework 为许多在 .NET Framework 和 UWP 中稍有不同的常用类型提供映射。 这使 .NET Framework 开发人员可以使用熟悉的类型，而无需了解新类型。 你可以在组件的公共接口中使用这些映射的 .NET Framework 类型。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和 [Windows 运行时类型的.NET Framework 映射](net-framework-mappings-of-windows-runtime-types.md)中的“在 Windows 运行时组件中声明类型”和“将通用 Windows 平台类型传递到托管代码”。
@@ -127,9 +134,9 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
 通常情况下，最好选择最接近类型的接口。 例如，对于 Dictionary&lt;int, string&gt;，最好选择最接近的 IDictionary&lt;int, string&gt;。
 
-> **重要提示** JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+> **重要提示**  JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-> **警告** 如果 JavaScript 将使用你的组件，请避免使用非泛型 [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) 和 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 接口。 这些接口分别映射到 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
+> **警告**  如果 JavaScript 将使用你的组件，请避免使用非泛型 [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) 和 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 接口。 这些接口分别映射到 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
 
  
 
@@ -156,7 +163,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>方法“{0}”在其签名中具有类型“{1}”的参数。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 {2}</p>
-> **注意** 对于 {2}，Winmdexp.exe 会附加备用项列表，例如“请考虑改为将方法签名中的类型‘System.Collections.Generic.List&lt;T&gt;’更改为以下类型之一：‘System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;’。”
+> **注意**  对于 {2}，Winmdexp.exe 会附加备用项列表，例如“请考虑改为将方法签名中的类型‘System.Collections.Generic.List&lt;T&gt;’更改为以下类型之一：‘System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;’。”
 </td>
 </tr>
 <tr class="even">
@@ -168,7 +175,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
  
 
-## 包含禁止类型的字段的结构
+## <a name="structures-that-contain-fields-of-disallowed-types"></a>包含禁止类型的字段的结构
 
 
 在 UWP 中，结构仅可以包含字段，并仅结构可以包含字段。 这些字段必须是公共字段。 有效字段类型包括枚举、结构和基元类型。
@@ -179,7 +186,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
  
 
-## 对成员签名中数组的限制
+## <a name="restrictions-on-arrays-in-member-signatures"></a>对成员签名中数组的限制
 
 
 在 UWP 中，成员签名中的数组必须是一维数组，并且下限为 0（零）。 不允许嵌套的数组类型，例如 `myArray[][]`（在 Visual Basic 中是 `myArray()()`）。
@@ -196,7 +203,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
  
 
-## 数组参数必须指定数组内容是可读还是可写。
+## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>数组参数必须指定数组内容是可读还是可写。
 
 
 在 UWP 中，参数必须是只读或只写。 参数无法标记 **ref**（在 Visual Basic 中是缺少 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性的 **ByRef**）。 这适用于数组内容，因此数组参数必须指示数组内容是只读还是只写。 **out** 参数（在 Visual Basic 中是带有 OutAttribute 属性的 **ByRef** 参数）具有清晰的方向，但必须标记通过值（在 Visual Basic 中是 ByVal）传递的数组参数。 请参阅[将数组传递到 Windows 运行时组件](passing-arrays-to-a-windows-runtime-component.md)。
@@ -211,7 +218,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 | WME1106      | 方法“{0}”具有参数“{1}”，该参数是数组。 在 Windows 运行时中，数组参数的内容必须是可读或可写。 请将 {2} 或 {3} 应用到“{1}”。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
-## 具有名为“value”的参数的成员
+## <a name="member-with-a-parameter-named-value"></a>具有名为“value”的参数的成员
 
 
 在 UWP 中，将返回值视为输出参数，并且参数名称必须唯一。 默认情况下，Winmdexp.exe 将返回值命名为“value”。 如果方法具有名为“value”的参数，将收到错误 WME1092。 有两种方法可以更正此错误：
@@ -235,23 +242,18 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **注意** 如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。
+> **注意**  如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。
 
 JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。
 
 | 错误编号 | 消息文本 |
 |---------------|------------|
 | WME1091 | 方法“\{0}”将返回值命名为与参数名相同的“\{1}”。 Windows 运行时方法参数和返回值的名称必须唯一。 |
-| WME1092 | 方法“\{0}”将参数命名为与默认返回值名相同的“\{1}”。 请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。<br/>**注意** 属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。 |
+| WME1092 | 方法“\{0}”将参数命名为与默认返回值名相同的“\{1}”。 请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。<br/>**注意**  属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。 |
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

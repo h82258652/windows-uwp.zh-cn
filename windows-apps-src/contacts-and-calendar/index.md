@@ -3,15 +3,22 @@ author: Xansky
 description: "如何在 UWP 应用中使用联系人和日历信息。"
 title: "联系人和日历"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 联系人, 日历, 约会, 电子邮件"
 translationtype: Human Translation
-ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
-ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f0e61f5c586ccd1225fb9e4edf5ab93580cfd043
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 联系人和日历
+# <a name="contacts-and-calendar"></a>联系人和日历
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你可以让你的用户访问其联系人和约会，以便他们可以彼此共享内容、电子邮件、日历信息或消息，或共享你设计的任何功能。
 
@@ -27,16 +34,11 @@ ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [约会 API 示例](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [联系人管理器 API 示例](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [联系人选取器应用示例](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [处理联系人操作示例](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

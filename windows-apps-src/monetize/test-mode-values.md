@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
 description: "请使用本文中的测试应用程序 ID 和广告单元 ID 值，查看应用在测试期间如何呈现广告。"
 title: "测试模式值"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 测试"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: dcc83c3d654cfb290981f27ec2923fd3b37c5a8f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89818e91ff1c1b8fee2ca82951742ed7e55a2a5a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -69,9 +76,4 @@ ms.openlocfilehash: dcc83c3d654cfb290981f27ec2923fd3b37c5a8f
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

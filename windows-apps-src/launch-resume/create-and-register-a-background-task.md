@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "创建和注册进程外后台任务"
 description: "创建一个进程外后台任务类并注册它，以便在应用不在前台运行时运行。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b052e84d284c173b21be1759e2645f4f99589c5e
-ms.openlocfilehash: 868fb7f1285ddd4f3e5120779ccf81a9ba55f8db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="create-and-register-an-out-of-process-background-task"></a>创建和注册进程外后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -348,9 +355,4 @@ ms.openlocfilehash: 868fb7f1285ddd4f3e5120779ccf81a9ba55f8db
 **后台任务 API 引用**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -1,16 +1,24 @@
 ---
 author: PatrickFarley
 title: "使用 URI 启动应用"
-description: "本部分介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。"
+description: "本节介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。"
+ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: dfbfe75d19c08e549263b97350dfca1dbfb96447
-ms.openlocfilehash: e4b070db5180538732e08b10ace1aaa196ae5eaa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6dceda60b60b29f772ec4fab8b142b45cc387e75
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launch-an-app-with-a-uri"></a>使用 URI 启动应用
 
-本部分介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用，从而支持有用的应用到应用方案。
+本节介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用，从而支持有用的应用到应用方案。
 
 | 主题 | 描述 |
 |-------|-------------|
@@ -26,8 +34,3 @@ ms.openlocfilehash: e4b070db5180538732e08b10ace1aaa196ae5eaa
 
 ## <a name="related-topics"></a>相关主题
 * [启动远程设备上的应用](launch-a-remote-app.md)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

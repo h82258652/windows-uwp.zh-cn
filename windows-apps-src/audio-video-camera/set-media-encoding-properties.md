@@ -3,9 +3,16 @@ author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "本文介绍如何使用 IMediaEncodingProperties 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。"
 title: "为 MediaCapture 设置格式、分辨率和帧速率"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
-ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c8defd41ea1b65ac78d159b52eea926c7252e9e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -86,10 +93,5 @@ ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

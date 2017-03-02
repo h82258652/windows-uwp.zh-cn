@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "使用测斜仪"
 description: "了解如何使用测斜仪确定俯仰、滚转和偏航。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8ebfaf4c294fccf61534203bce0326f9dbec977
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用测斜仪
+# <a name="use-the-inclinometer"></a>使用测斜仪
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**测斜仪**](https://msdn.microsoft.com/library/windows/apps/BR225766)
@@ -21,17 +28,17 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 
 一些三维游戏应用需要将测斜仪作为输入设备。 一个常见的示例是飞行模拟器，它将测斜仪的三条轴（X、Y 和 Z）映射到飞行器的升降舵、副翼和方向舵输入。
 
- ## 先决条件
+ ## <a name="prerequisites"></a>先决条件
 
 你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
 你使用的设备或仿真器必须支持测斜仪。
 
- ## 创建简单的测斜仪应用
+ ## <a name="create-a-simple-inclinometer-app"></a>创建简单的测斜仪应用
 
 此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的测斜仪应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-###  说明
+###  <a name="instructions"></a>说明
 
 -   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
@@ -65,7 +72,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
         {
             private Inclinometer _inclinometer;
 
-            // This event handler writes the current inclinometer reading to 
+            // This event handler writes the current inclinometer reading to
             // the three text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, InclinometerReadingChangedEventArgs e)
@@ -83,7 +90,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
             {
                 this.InitializeComponent();
                 _inclinometer = Inclinometer.GetDefault();
-     
+
 
                 if (_inclinometer != null)
                 {
@@ -134,7 +141,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  描述
+###  <a name="explanation"></a>说明
 
 前面的示例演示了，只需要写入极少的代码即可将测斜仪输入集成到你的应用。
 
@@ -155,7 +162,7 @@ _inclinometer.ReportInterval = reportInterval;
 在 **ReadingChanged** 方法中捕获新的测斜仪数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
 
 ```csharp
-_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
+_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -170,13 +177,7 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## 相关主题
+ ## <a name="related-topics"></a>相关主题
 
 * [测斜仪示例](http://go.microsoft.com/fwlink/p/?linkid=241380)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "启动文件的默认应用"
 description: "了解如何启动文件的默认应用。"
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: c87f66a39e6ae7733ecc75006510b6aede699d4f
-ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 启动文件的默认应用
+# <a name="launch-the-default-app-for-a-file"></a>启动文件的默认应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -21,7 +28,7 @@ ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 了解如何启动文件的默认应用。 很多应用需要使用它们自身无法处理的文件。 例如，电子邮件应用接收大量文件类型并且需要使用一种方式在其默认处理程序中启动这些文件。 这些步骤显示了如何使用 [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API 为应用自身无法处理的文件启动默认处理程序。
 
-## 获取文件对象
+## <a name="get-the-file-object"></a>获取文件对象
 
 
 首先，获取该文件的 [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象。
@@ -30,7 +37,7 @@ ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 如果该文件在已知的文件夹中，则可以使用 [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 类的属性获取 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 并且使用 [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法获取 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象。
 
-## 启动该文件
+## <a name="launch-the-file"></a>启动该文件
 
 
 Windows 提供了用于为文件启动默认处理程序的多个不同选项。 这些选项将在此图表中和以下各节中进行介绍。
@@ -42,7 +49,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 | 使用推荐的应用反馈启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用默认处理程序启动指定的文件。 如果系统上未安装处理程序，则向用户推荐应用商店中的应用。 |
 | 以所需的其余视图启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465)（仅适用于 Windows） | 使用默认处理程序启动指定的文件。 指定首选项以便在启动后停留于屏幕上，然后请求特定窗口大小。 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 在移动设备系列上不受支持。   |
  
-### 默认启动
+### <a name="default-launch"></a>默认启动
 
 调用 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) 方法以启动默认的应用。 此示例使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法启动应用包中包含的图像文件 test.png。
 
@@ -128,9 +135,9 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > }
 > ```
 
-### 打开方式启动
+### <a name="open-with-launch"></a>打开方式启动
 
-在 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 设置为 **true** 的情况下调用 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法以启动用户从**“打开方式”**对话框中选择的应用。
+在 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 设置为 **true** 的情况下调用 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法以启动用户从**打开方式**对话框中选择的应用。
 
 当用户希望针对某个特定文件选择默认应用以外的应用时，我们建议你使用**“打开方式”**对话框。 例如，如果你的应用允许用户启动某个图像文件，则默认的处理程序将可能是查看器应用。 在某些情况下，用户可能需要编辑图像而不只是查看图像。 使用**“打开方式”**选项及**“应用程序栏”**或上下文菜单中的备用命令，让用户在此类情况下打开**“打开方式”**对话框并选择编辑器应用。
 
@@ -342,7 +349,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > }
 > ```
 
-### 使用所需的其余视图启动（仅适用于 Windows）
+### <a name="launch-with-a-desired-remaining-view-windows-only"></a>使用所需的其余视图启动（仅适用于 Windows）
 
 调用 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) 的源应用可请求在文件启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该文件的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 以指示源应用在文件启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
@@ -418,7 +425,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > }
 > ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 你的应用不能选择要启动的应用。 用户确定启动哪个应用。 用户可以选择通用 Windows 平台 (UWP) 应用或 Windows 桌面应用。
 
@@ -428,10 +435,10 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 如果你尝试启动受限制的文件类型，则启动将失败，且会调用错误回调。 如果你的应用处理许多不同类型的文件，并且你预计会遇到该错误，则应该为你的用户提供回退体验。 例如，你可以为用户提供将文件保存到桌面的选项，然后用户可以从桌面打开该文件。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**  本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 **任务**
@@ -451,9 +458,4 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

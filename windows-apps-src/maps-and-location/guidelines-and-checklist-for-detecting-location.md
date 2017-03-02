@@ -3,13 +3,20 @@ author: msatranjr
 Description: "本主题描述需要访问用户位置信息的应用的性能指南。"
 title: "位置感知应用指南"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 位置, 地图, 地理位置"
 translationtype: Human Translation
-ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
-ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f52f2f7a33edcbb0bd360c7b336cc3988abb80f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 位置感知应用指南
+# <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,7 +29,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 本主题描述需要访问用户位置信息的应用的性能指南。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 
 -   仅在应用需要位置数据时开始使用位置对象。
@@ -72,7 +79,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
         提供位置数据的设备可跟踪不同应用所请求的报告间隔，并以请求的最小间隔提供数据报告。 这样，对准确性要求最高的应用就会接收到其所需的数据。 因此，如果其他应用请求的更新频率更高，则定位程序可能以高于你的应用所请求的频率生成更新。
 
-        **注意** 不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
+        **注意**  不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
 
     -   为了帮助节省电耗，请设置 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 属性，以向位置平台指示你的应用是否需要高精度的数据。 如果应用都不需要高精度的数据，则系统可以不打开 GPS 提供程序以节省电耗。
 
@@ -100,13 +107,13 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
     Windows 运行时 API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
-**连接待机** 
+**连接待机**
 - 当电脑处于连接待机状态时，始终可以实例化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 但是，**Geolocator** 对象将找不到任何可聚合的传感器，因此对 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的调用将在 7 秒后超时，[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件侦听器将永远不会被调用，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件侦听器将在 **NoData** 状态下被调用一次。
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
 
-### 检测定位设置中的更改
+### <a name="detecting-changes-in-location-settings"></a>检测定位设置中的更改
 
 用户可以使用“设置”****应用中的“位置隐私设置”****来关闭位置功能。
 
@@ -119,7 +126,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 请注意，在定位服务可用时，它将返回数据。 它可能先返回一个带有较大误差半径的位置，然后在更准确的信息可用时使用它更新该位置。 显示用户位置的应用通常要在更准确的信息可用时更新该位置。
 
-### 位置信息的图形表示形式
+### <a name="graphical-representations-of-location"></a>位置信息的图形表示形式
 
 让你的应用使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 在地区上清晰地指示用户的当前位置。 精度有三个主要区段：大约 10 米的误差半径，大约 100 米的误差半径，以及大于 1 千米的误差半径。 通过使用精度信息，你可以确保自己的应用在可用数据的上下文中精确显示位置。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)。
 
@@ -140,7 +147,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 -   让过渡动画更平滑，使过渡保持快速流畅。
 -   等待一些连续的报告确认精度更改，以防止不必要的和过于频繁的缩放。
 
-### 位置信息的文本表示形式
+### <a name="textual-representations-of-location"></a>位置信息的文本表示形式
 
 某些类型的应用（例如，天气应用或本地信息应用），需要在不同的精度区段以文本方式表示位置的方法。 请确保清楚地显示位置，并且只详细到该数据中提供的精度级别。
 
@@ -148,7 +155,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 -   对于约等于 100 米（Wi-Fi 分辨率）的精度，接收到的位置数据的准确度适中，因此我们建议你显示的信息可以详细到城市名。 避免使用街区名。
 -   对于大于 1 千米（IP 分辨率）的精度，仅显示州名、省名或国家/地区名。
 
-### 隐私注意事项
+### <a name="privacy-considerations"></a>隐私注意事项
 
 用户的地理位置属于个人身份信息 (PII)。 下列网站提供保护用户隐私的指南。
 
@@ -156,7 +163,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
@@ -166,13 +173,4 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

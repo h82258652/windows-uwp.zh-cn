@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
 description: "本文介绍如何使用手动设备控件实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。"
 title: "用于视频捕获的手动相机控件"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: daeb92e51a005825f1e410da9c924afc723297f1
-ms.openlocfilehash: 5a51ee9c67eb421c2478ca46f415879afb609210
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cd6326ebad94c33fd03bf39f2dfd11f1c27e9b37
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 用于视频捕获的手动相机控件
+# <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 5a51ee9c67eb421c2478ca46f415879afb609210
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-## HDR 视频
+## <a name="hdr-video"></a>HDR 视频
 
 高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过选择 [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) 属性来确定 HDR 视频是否受支持。
 
@@ -35,7 +42,7 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
-## 曝光优先级
+## <a name="exposure-priority"></a>曝光优先级
 
 启用 [**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) 时，将评估来自捕获设备的视频帧以确定视频是否正在捕获光线较暗的场景。 如果是，该控件将降低已捕获视频的帧速率，以便增加每个帧的曝光时间并改进已捕获视频的视觉质量。
 
@@ -45,7 +52,7 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -55,10 +62,5 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

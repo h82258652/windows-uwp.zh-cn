@@ -3,15 +3,22 @@ author: DelfCo
 description: "作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 Windows.Networking.Sockets 与 Winsock 结合使用，以与其他设备通信。"
 title: "套接字"
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 套接字
+# <a name="sockets"></a>套接字
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
 
 >**注意** 作为[网络隔离](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)的一部分，系统禁止在通过本地环回地址 (127.0.0.0) 或明确指定本地 IP 地址运行于同一台计算机的两个 UWP 应用之间建立套接字连接（Sockets 或 WinSock）。 这意味着你无法使用套接字在两个 UWP 应用之间进行通信。 UWP 提供了其他可用于应用间通信的机制。 请参阅[应用到应用的通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)以了解详细信息。
 
-## 基本的 TCP 套接字操作
+## <a name="basic-tcp-socket-operations"></a>基本的 TCP 套接字操作
 
 TCP 套接字对于长时间的连接提供双向低级网络数据传输。 TCP 套接字是由大部分网络协议在 Internet 上使用的基础功能。 本部分显示了如何借助将 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 和 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 类用作 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间一部分的 TCP 流套接字使 UWP 应用可以发送和接收数据。 在本部分中，我们将创建一个非常简单的应用，该应用将用作回显服务器和客户端来演示基本的 TCP 操作。
 
@@ -104,7 +111,7 @@ catch (Exception e)
 }
 ```
 
-## 基本的 UDP 套接字操作
+## <a name="basic-udp-socket-operations"></a>基本的 UDP 套接字操作
 
 UDP 套接字为不需要已建立连接的网络通信提供了双向低级网络数据传输。 因为 UDP 套接字不会在两个端点上保持连接，所以它们会为远程计算机之间的网络提供快速而简单的解决方案。 然而，UDP 套接字根本不能确保网络数据包的完整性，也不能确保它们是否能使其实现远程目标。 使用 UDP 的应用程序的一些示例包括本地网络发现和本地聊天客户端。 本部分演示了通过创建简单的回显服务器和客户端将 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 类用于发送和接收 UDP 消息。
 
@@ -190,11 +197,11 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## 后台操作和套接字代理
+## <a name="background-operations-and-the-socket-broker"></a>后台操作和套接字代理
 
 如果你的应用根据套接字来接收连接或数据，则你必须为应用不在前台运行时正确执行这些操作做好准备。 为此，请使用套接字代理。 有关如何使用套接字代理的详细信息，请参阅[后台网络通信](network-communications-in-the-background.md)。
 
-## 批量发送
+## <a name="batched-sends"></a>批量发送
 
 从 Windows 10 开始，Windows.Networking.Sockets 支持批量发送，这为你一次性发送多个数据缓冲区提供了一个途径，此时你所使用的上下文切换开销要比你分开发送每个缓冲区低很多。 如果你的应用正在执行 VoIP、VPN 或涉及需最大效率地移动大量数据的其他任务，此做法将特别有用。
 
@@ -264,11 +271,11 @@ await outputStream.FlushAsync();
 -   **FlushAsync** 模式适仅用于 Windows 10 以及更高版本。
 -   在其他情况下，用 **Task.WaitAll** 来代替 **FlushAsync** 模式。
 
-## DatagramSocket 的端口共享
+## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的端口共享
 
 Windows 10 引入了一个新 [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) 属性 [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368)，以便你可以指定相关 **DatagramSocket** 能与绑定到同一地址/端口的其他 Win32 或 WinRT 多播套接字共存。
 
-## 通过 StreamSocket 类提供客户端证书
+## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
 
 [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，你可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
@@ -281,7 +288,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Windows.Networking.Sockets 中的异常
+## <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets 中的异常
 
 如果传递的字符串不是有效的主机名（包含主机名中不允许的字符），则与套接字一起使用的 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 类的构造函数会引发异常。 如果应用获取 **HostName** 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
 
@@ -293,14 +300,9 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大部分参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
 
-## Winsock API
+## <a name="the-winsock-api"></a>Winsock API
 
 也可以在 UWP 应用中使用 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)。 支持的 Winsock API 基于 Windows Phone 8.1 的成员 Microsoft Silverlight 8.1，并继续支持大部分的类型、属性和方法（一些被视为过时的 API 已被删除）。 [此处](https://msdn.microsoft.com/library/windows/desktop/ms740673)提供了有关 Winsock 编程的详细信息。
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

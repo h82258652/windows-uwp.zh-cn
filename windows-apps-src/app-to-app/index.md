@@ -1,11 +1,18 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
+description: "本节介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
 title: "应用到应用的通信"
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
-ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -21,7 +28,9 @@ ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 除了“共享”合约外，应用还可以集成用于传输数据的传统技术，如拖放或复制和粘贴。 除了在 UWP 应用之间通信外，这些方法还支持在桌面应用程序之间共享。
 
-## <a name="in-this-section"></a>本部分内容
+
+
+## <a name="in-this-section"></a>本节内容
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -32,9 +41,4 @@ ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 ## <a name="see-also"></a>另请参阅
 - [开发 UWP 应用](https://developer.microsoft.com/windows/develop)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

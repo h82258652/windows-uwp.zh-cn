@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "访问家庭组内容"
 description: "访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 04d34aa8f1cff2460462fff8100ab345a04d9000
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="accessing-homegroup-content"></a>访问家庭组内容
@@ -13,7 +20,7 @@ ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Storage.KnownFolders 类**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
@@ -29,7 +36,7 @@ ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 
     若要访问家庭组内容，用户的计算机必须已设置家庭组，且你的应用必须至少具有以下功能之一：**picturesLibrary**、**musicLibrary** 或 **videosLibrary**。 当你的应用访问“家庭组”文件夹时，它将仅看到与在你的应用清单中声明的功能相对应的库。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
 
-    **注意** 无论在你的应用清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。
+    **注意**  无论在你的应用清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。
 
      
 
@@ -208,9 +215,4 @@ ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

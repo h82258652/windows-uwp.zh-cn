@@ -5,9 +5,16 @@ title: "Web 视图"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 9fa226beed09e79ef3e5a294e36f615fa179c470
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9f7f786007a6e251a76fe5c4fcbad5c81b879c53
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="web-view"></a>Web 视图
@@ -330,10 +337,5 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

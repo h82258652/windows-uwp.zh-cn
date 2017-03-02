@@ -8,9 +8,16 @@ title: "ResourceDictionary 和 XAML 资源引用"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 7af5c6635ae659ce033f377a9eed4b819287b384
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e24b411c5a966d48e4db07a4ddfce1248454e78d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
@@ -422,7 +429,7 @@ sealed partial class App : Application
 ## <a name="xaml-resources-must-be-shareable"></a>XAML 资源必须可共享
 
 
-对于存在于 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的对象，该对象必须“可共享”**。
+对于存在于 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的对象，该对象必须*可共享*。
 
 可共享是必要的，因为在构造以及在运行时使用应用的对象树时，对象不能存在于树中的多个位置。 就内部而言，在请求所有 XAML 资源时，资源系统会为在资源的对象图中使用的资源值创建副本。
 
@@ -491,10 +498,5 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

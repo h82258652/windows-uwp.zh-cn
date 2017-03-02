@@ -1,20 +1,27 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳实践。"
-title: "定向"
+Description: "本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳做法。"
+title: "确定目标"
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 9710e3060410428e1a4b7cfe89442c7df8602ed2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fd4ba842a1d6f9eec6012a930a5dda5d7ff7c249
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="guidelines-for-targeting"></a>目标指南
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-在 Windows 中确定触摸目标需使用触控数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
+Windows 中的触摸定位使用触摸数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
@@ -173,10 +180,5 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "打包你的通用 Windows 平台 (UWP) DirectX 游戏"
 description: "较大的通用 Windows 平台 (UWP) 游戏可能会轻易地膨胀得很大，尤其是那些支持具有特定于区域的资源的多语言游戏或具有可选的高清晰度资源的游戏。"
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx, 打包"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: db31338d908f4c18eaa6b5090b8cf35ac5305655
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  打包你的通用 Windows 平台 (UWP) DirectX 游戏
+#  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>打包你的通用 Windows 平台 (UWP) DirectX 游戏
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -27,7 +34,7 @@ ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
 若要使用 UWP 应用安装程序中的此功能，重要的是需要在早期游戏开发时考虑用于应用和资源打包的目录布局和文件命名约定， 以便你的工具和源可以正确输出它们，同时使打包变得简单。 当你开发或配置资源创建、管理工具和脚本，以及编写用于加载或引用资源的代码时，都请遵循此文档中概括的规则。
 
-## 为什么要创建资源包？
+## <a name="why-create-resource-packs"></a>为什么要创建资源包？
 
 
 当你创建应用时，尤其是创建可以在许多区域设置中或在广泛的 UWP 硬件平台中出售的游戏应用时， 经常需要包含许多文件的多个版本来支持这些区域设置或平台。 例如，如果你要在 美国和日本发布游戏，你可能需要一组用于“en-us”区域设置的采用英语的语音文件，以及另一组用于“jp-jp”区域设置的采用日语的语音文件。 或者，如果你希望针对 ARM 设备以及 x86 和 x64 平台使用游戏中的图像，则必须将相同的图像资源上载三次，每种 CPU 体系结构各一次。
@@ -42,7 +49,7 @@ ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
 所有内容都在作为 UWP 项目的一部分的 package.appxmanifest 中定义，并位于最终包的目录结构中。 由于新的 Visual Studio UI，如果你遵循此文档中的过程，应该不需要手动编辑它。
 
-> **重要提示** 通过 **Windows.ApplicationModel.Resources**\* API 来处理这些资源的加载和管理。 如果你使用这些应用模型资源 API 来加载适用于区域设置、比例系数或 DirectX 功能级别的正确文件，你不需要使用显式文件路径来加载资源；相反，你可以只使用所需资源的一般化文件名来提供资源 API，并让资源管理系统获取适用于用户的当前平台和区域设置配置（同样可以使用相同的 API 直接指定）的资源的正确变体。
+> **重要提示**   这些资源的加载和管理通过 **Windows.ApplicationModel.Resources**\* API 来处理。 如果你使用这些应用模型资源 API 来加载适用于区域设置、比例系数或 DirectX 功能级别的正确文件，你不需要使用显式文件路径来加载资源；相反，你可以只使用所需资源的一般化文件名来提供资源 API，并让资源管理系统获取适用于用户的当前平台和区域设置配置（同样可以使用相同的 API 直接指定）的资源的正确变体。
 
  
 
@@ -50,7 +57,7 @@ ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
 -   资产文件具有相同的文件名，并且资源包的特定版本均放置在特定的命名目录中。 系统将保留这些目录名称。 例如，\\en-us、\\scale-140、\\dxfl-dx11。
 -   虽然资源文件采用任意名称存储在文件夹中，但这些文件名中都带有共同的标签，其中附加了系统保留的字符串以表示语言或其他限定符。 具体来说，限定符字符串会紧跟一般化文件名后的下划线字符（“\_”）。 例如，\\assets\\menu\_option1\_lang-en-us.png、\\assets\\menu\_option1\_scale-140.png、\\assets\\coolsign\_dxfl-dx11.dds。 你也可以合并这些字符串。 例如，\\assets\\menu\_option1\_scale-140\_lang-en-us.png。
-    > **注意** 当用于文件名而不是单独用于目录名称时，语言限定符必须采用形式“lang-<tag>”（例如“lang-en-us”），如[如何使用限定符命名资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)中所述。
+    > **注意**   当用于文件名而不是单独用于目录名称时，语言限定符必须采用形式“lang-<tag>”（例如“lang-en-us”），如[如何使用限定符命名资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)中所述。
 
      
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
  
 
-## 定义本地化语言资源包
+## <a name="defining-localized-language-resource-packs"></a>定义本地化语言资源包
 
 
 特定于区域设置的文件均放置在以语言命名的项目目录中（例如，“en”）。
@@ -78,14 +85,14 @@ ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 -   为希望支持的每种语言和区域设置（例如，en-us、jp-jp、zh-cn 和 fr-fr 等）创建应用子目录（或文件版本）。
 -   在开发期间，请将所有资产（例如，本地化的音频文件、纹理和菜单图形）的副本放置在相应的语言区域设置子目录中，即使它们在各种语言或区域设置中没有差别。 为了提供最佳用户体验，请确保如果用户未获取适用于其区域设置的可用语言资源包（或者，如果他们在下载和安装后意外删除了它），将向用户发出警报。
 -   请确保每个资源或字符串资源文件 (.resw) 在每个目录中具有相同名称。 例如，menu\_option1.png 在 \\en-us 和 \\jp-jp 目录中应该具有相同名称，即使该文件的内容适用于不同的语言。 在本例中，你会看到它们的名称为 \\en-us\\menu\_option1.png 和 \\jp-jp\\menu\_option1.png。
-    > **注意** 你可以选择将区域设置附加到文件名，并将其存储在相同的目录中；例如，\\assets\\menu\_option1\_lang-en-us.png、\\assets\\menu\_option1\_lang-jp-jp.png。
+    > **注意**   你可以选择将区域设置附加到文件名，并将其存储在相同的目录中；例如，\\assets\\menu\_option1\_lang-en-us.png、\\assets\\menu\_option1\_lang-jp-jp.png。
 
      
 
 -   在 [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 和 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来为你的应用指定和加载特定于区域设置的资源。 同样，使用不包含指定区域设置的资源引用，因为这些 API 将根据用户设置确定正确的区域设置，然后为用户检索正确的资源。
--   在 Microsoft Visual Studio 2015 中，请选择“项目 -&gt; 存储 -&gt; 创建应用包...”****，然后创建此程序包。
+-   在 Microsoft Visual Studio 2015 中，请选择**“项目”-&gt;“存储”-&gt;“创建应用包...”**，然后创建此程序包。
 
-## 定义比例系数资源包
+## <a name="defining-scaling-factor-resource-packs"></a>定义比例系数资源包
 
 
 Windows 10 提供 3 种用户界面比例系数：1.0x、1.4x 和 1.8x。 在安装期间基于许多组合因素为每个屏幕设置比例值： 屏幕大小、屏幕分辨率，以及假定的用户与屏幕的平均距离。 用户也可调整比例因子以提高可读性。 为了尽可能提供最佳体验，你的游戏应该可以感知 DPI 和比例因子。 此类感知的部分涵义是为三种比例系数分别创建重要可见资源的版本。 它还包含指针交互和点击测试！
@@ -95,14 +102,14 @@ Windows 10 提供 3 种用户界面比例系数：1.0x、1.4x 和 1.8x。 在安
 -   为要支持的每种比例系数（scale-100、scale-140 和 scale-180）创建应用子目录（或文件版本）。
 -   在开发期间，请将所有资源的具有合适比例系数的副本放置在每个比例系数资源目录中，即使它们在不同的比例系数之间没有差别。
 -   请确保每个资源在每个目录中具有相同名称。 例如，menu\_option1.png 在 \\scale-100 和 \\scale-180 目录中应该具有相同名称，即使该文件的内容不同。 在本例中，你会看到它们的名称为 \\scale-100\\menu\_option1.png 和 \\scale-140\\menu\_option1.png。
-    > **注意** 同样，你可以选择将比例系数后缀附加到文件名，并将其存储在相同的目录中；例如，\\assets\\menu\_option1\_scale-100.png、\\assets\\menu\_option1\_scale-140.png。
+    > **注意**   同样，你可以选择将比例系数后缀附加到文件名，并将其存储在相同的目录中；例如，\\assets\\menu\_option1\_scale-100.png、\\assets\\menu\_option1\_scale-140.png。
 
      
 
 -   在 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来加载资源。 资源引用应该一般化（无后缀），且不带特定的比例变体。 系统将检索适用于屏幕和用户设置的适当的比例资源。
--   在 Visual Studio 2015 中，请选择“项目 -&gt; 存储 -&gt; 创建应用包...”****，然后创建此程序包。
+-   在 Visual Studio 2015 中，请选择**“项目”-&gt;“存储”-&gt;“创建应用包...”**，然后创建此程序包。
 
-## 定义 DirectX 功能级别资源包
+## <a name="defining-directx-feature-level-resource-packs"></a>定义 DirectX 功能级别资源包
 
 
 DirectX 功能级别与用于之前和当前版本的 DirectX（特别是 Direct3D）的 GPU 功能集对应。 包括着色器模型规格和功能、 着色器语言支持、纹理压缩支持和整体图形管道功能。
@@ -128,7 +135,7 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 -   为你要支持的每个 DirectX 功能级别（dxfl-dx9、dxfl-dx10 和 dxfl-dx11）创建应用子目录（或文件版本）。
 -   在开发期间，将特定于功能级别的资源放置在各个功能级别资源目录中。 与区域设置和比例系数不同，你的游戏中的每个功能级别都可以具有不同的呈现代码分支，并且如果纹理、编译着色器或其他资源仅用于一个受支持的功能级别，或者仅用于所有受支持的功能级别的子集，则仅将相应资源放置在使用它们的功能级别的目录中。 对于在所有功能级别上加载的资源，请确保每个功能级别资源目录中都包含其具有相同名称的版本。 例如，对于名为“coolsign.dds”的功能级别独立纹理，请将使用 BC3 格式压缩的版本放置到 \\dxfl-dx9 目录中，并将使用 BC7 格式压缩的版本放置到 \\dxfl-dx11 目录中。
 -   确保各个目录中的每个资源（如果它可用于多种功能级别）都具有相同的名称。 例如，coolsign.dds 在 \\dxfl-dx9 和 \\dxfl-dx11 目录中应该具有相同名称，即使该文件的内容不相同。 在本例中，你会看到它们的名称为 \\dxfl-dx9\\coolsign.dds 和 \\dxfl-dx11\\coolsign.dds。
-    > **注意** 同样，你可以选择将比例系数后缀附加到文件名，并将其存储在相同的目录中；例如，\\textures\\coolsign\_dxfl-dx9.dds、\\textures\\coolsign\_dxfl-dx11.dds。
+    > **注意**   同样，你可以选择将功能级别后缀附加到文件名，并将其存储在相同的目录中；例如，\\textures\\coolsign\_dxfl-dx9.dds、\\textures\\coolsign\_dxfl-dx11.dds。
 
      
 
@@ -186,7 +193,7 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **注意** 在你的代码中，直接按名称（或功能级别目录下的路径）加载纹理。 不要包含功能级别目录名称或后缀。 例如，加载“textures\\coolsign.dds”，而不是“dxfl-dx11\\textures\\coolsign.dds”或“textures\\coolsign\_dxfl-dx11.dds”。
+    > **注意**   在你的代码中，直接按名称（或功能级别目录下的路径）加载纹理。 不要包含功能级别目录名称或后缀。 例如，加载“textures\\coolsign.dds”，而不是“dxfl-dx11\\textures\\coolsign.dds”或“textures\\coolsign\_dxfl-dx11.dds”。
 
      
 
@@ -212,7 +219,7 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 -   在 Visual Studio 2015 中，选择**“项目”-&gt;“存储”-&gt;“创建应用包...”**，然后创建此程序包。
 -   请确保在 package.appxmanifest 清单设置中启用应用程序包。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
@@ -225,10 +232,5 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

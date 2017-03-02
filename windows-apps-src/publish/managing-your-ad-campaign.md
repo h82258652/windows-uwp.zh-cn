@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "若要管理应用的广告市场活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”&gt;“推广你的应用”。"
-title: "管理广告市场活动"
+Description: "若要管理应用的广告活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”&gt;“推广你的应用”。"
+title: "管理广告活动"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b73b8c1ac467bce3d1edcec3582d247e7a90bd29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 管理广告市场活动
+# <a name="managing-your-ad-campaign"></a>管理广告活动
 
 
-若要管理应用的广告市场活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”****&gt;“推广你的应用”****。 “推广你的应用”****页面将列出与你的应用相关联的所有广告市场活动，并将显示每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)中关于这些术语的定义。
+若要管理应用的广告活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”****&gt;“推广你的应用”****。 “推广你的应用”****页面将列出与你的应用相关联的所有广告市场活动，并将显示每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)中关于这些术语的定义。
 
 若要筛选广告市场活动列表，请单击“部分筛选器”****下拉菜单，然后从以下筛选器中进行选择：
 
@@ -24,17 +31,17 @@ ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
     -   **需要注意**表示广告市场活动存在需要你注意的问题（如计费失败或者自定义广告设计未通过验证）。 若要修复问题，请单击广告市场活动表的“操作”****列中的文本。
 -   **市场活动类型**：此筛选器指定是显示付费广告市场活动，还是显示[自家](about-house-ads.md)广告市场活动。
 
-## 报告
+## <a name="report"></a>报告
 
 
 若要查看你的广告市场活动效果，请在仪表板的导航窗格中依次单击“分析”****&gt;“应用安装广告”****。 有关此报告的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)。
 
-## 编辑广告市场活动
+## <a name="edit-an-ad-campaign"></a>编辑广告市场活动
 
 
 若要更改广告市场活动，请单击该广告市场活动的名称，以转到其详细信息页。 进行更改后，单击“查看”****、查看详细信息，然后单击“确认”****。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
@@ -47,10 +54,5 @@ ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,18 @@
 ---
 author: msatranjr
 title: "使用 C++ 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C 调用此组件#"
-description: "本演练演示了如何创建一个可通过 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。"
+description: "本演练演示了如何创建一个可从 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。"
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: e02d7fabf6337fa23ab97858046c3b089c39a087
+ms.lasthandoff: 01/19/2017
 
 ---
 
@@ -16,13 +23,13 @@ ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 本演练演示了如何创建一个可从 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。 在开始本演练之前，请确保你已了解抽象二进制接口 (ABI)、ref 类以及简化使用 ref 类的 Visual C++ 组件扩展等概念。 有关详细信息，请参阅[使用 C++ 创建 Windows 运行时组件](creating-windows-runtime-components-in-cpp.md)和 [Visual C++ 语言参考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
 
-## 创建 C++ 组件 DLL
+## <a name="creating-the-c-component-dll"></a>创建 C++ 组件 DLL
 
 在本例中，我们首先创建组件项目，但你可以首先创建 JavaScript 项目。 顺序无关紧要。
 
 请注意，组件的主类包含属性和方法定义以及事件声明的示例。 只是为了向你演示如何实现该目的才提供它们。 它们不是必需的，并且在本例中，我们将使用自己的代码替换所有生成的代码。
 
-## **创建 C++ 组件项目**
+## **<a name="to-create-the-c-component-project"></a>创建 C++ 组件项目**
 
 在 Visual Studio 菜单栏上，依次选择“文件”、“新建”、“项目”****。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 选择**“确定”**按钮。
 
-## **将可激活类添加到组件**
+## **<a name="to-add-an-activatable-class-to-the-component"></a>将可激活类添加到组件**
 
 可激活类是客户端代码可以使用 **new** 表达式（Visual Basic 中为 **New**，C++ 中为 **ref new**）创建的类。 在你的组件中，将其声明为 **public ref class sealed**。 其实，Class1.h 和 .cpp 文件中已具有一个 ref 类。 你可以更改名称，但在本例中我们将使用默认名称 Class1。 你可以根据需要在组件中定义额外的 ref 类或常规类。 有关 ref 类的详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
@@ -47,7 +54,7 @@ ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 collection.h 是 C++ 具体类（例如 Platform::Collections::Vector 类和 Platform::Collections::Map 类）的头文件，可实现由 Windows 运行时定义的中性语言接口。 amp 头文件用于在 GPU 上运行计算。 它们没有 Windows 运行时等效项，但没有关系，因为它们是私有的。 通常出于性能原因，应在组件内部使用 ISO C++ 代码和标准库；这只是必须采用 Windows 运行时类型表示的 Windows 运行时接口。
 
-## 在命名空间作用域添加委托
+## <a name="to-add-a-delegate-at-namespace-scope"></a>在命名空间作用域添加委托
 
 委托是一种定义参数和方法返回类型的构造。 事件是特定委托类型的实例，任何订阅事件的事件处理程序方法都必须具有委托中指定的签名。 下面的代码定义采用 int 并返回 void 的委托类型。 接下来，代码声明此类型的公共事件；这使客户端代码能够提供在触发事件时调用的方法。
 
@@ -59,7 +66,7 @@ public delegate void PrimeFoundHandler(int result);
 
 将代码粘贴到 Visual Studio 时如果代码未正确对齐，只需按 Ctrl+K+D 即可修复整个文件的缩进。
 
-## 添加公共成员
+## <a name="to-add-the-public-members"></a>添加公共成员
 
 该类公布了三个公共方法和一个公共事件。 第一个方法是同步的，因为它的执行始终非常快速。 由于其他两个方法可能会花费一些时间，因此它们是异步方法，这样便不会阻止 UI 线程。 这些方法将返回 IAsyncOperationWithProgress 和 IAsyncActionWithProgress。 前者定义返回结果的异步方法，后者定义返回 void 的异步方法。 这些接口还可以使客户端代码接收操作的进度更新。
 
@@ -78,7 +85,7 @@ public:
         event PrimeFoundHandler^ primeFoundEvent;
 
 ```
-## 添加私有成员
+## <a name="to-add-the-private-members"></a>添加私有成员
 
 该类包含三个私有成员：两个用于数值计算的帮助程序方法，以及用于将来自 worker 线程的事件调用封送回 UI 线程的 CoreDispatcher 对象。
 
@@ -88,7 +95,7 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## 添加头文件和命名空间指令
+## <a name="to-add-the-header-and-namespace-directives"></a>添加头文件和命名空间指令
 
 在 Class1.cpp 中，添加以下 #include 指令：
 
@@ -107,7 +114,7 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 ```
 
-## 添加 ComputeResult 的实现
+## <a name="to-add-the-implementation-for-computeresult"></a>添加 ComputeResult 的实现
 
 在 Class1.cpp 中，添加以下方法实现。 此方法在调用线程上同步执行，但它的速度非常快，因为它使用 C++ AMP 在 GPU 上并行处理计算。 有关详细信息，请参阅 C++ AMP 概述。 结果将附加到 Platform::Collections::Vector<T> 具体类型，它将在返回时隐式转换为 Windows::Foundation::Collections::IVector<T>。
 
@@ -141,7 +148,7 @@ IVector<double>^ Class1::ComputeResult(double input)
     return res;
 }
 ```
-## 添加 GetPrimesOrdered 的实现及其帮助程序方法
+## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>添加 GetPrimesOrdered 的实现及其帮助程序方法
 
 在 Class1.cpp 中，添加 GetPrimesOrdered 的实现和 is_prime helper 方法。 GetPrimesOrdered 使用 concurrent_vector 类和 parallel_for 函数循环来划分工作，并使用运行该程序的计算机的最大资源来生成结果。 在结果完成计算、存储和排序后，它们将添加到 Platform::Collections::Vector<T> 并作为 Windows::Foundation::Collections::IVector<T> 返回到客户端代码。
 
@@ -211,7 +218,7 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 }
 ```
 
-## 添加 GetPrimesUnordered 的实现
+## <a name="to-add-the-implementation-for-getprimesunordered"></a>添加 GetPrimesUnordered 的实现
 
 创建 C++ 组件的最后一步是在 Class1.cpp 中添加 GetPrimesUnordered 的实现。 此方法只要找到一个结果便将其返回，而不是直到找到所有结果才返回。 每个结果都在事件处理程序中返回，并实时显示在 UI 中。 同样，请注意已使用进度报告器。 此方法还使用了 is_prime 帮助程序方法。
 
@@ -273,11 +280,11 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## 创建 JavaScript 客户端应用
+## <a name="creating-a-javascript-client-app"></a>创建 JavaScript 客户端应用
 
 如果你只想要创建 C# 客户端，你可以跳过此部分。
 
-## 创建 JavaScript 项目
+## <a name="to-create-a-javascript-project"></a>创建 JavaScript 项目
 
 在“解决方案资源管理器”中，打开“解决方案”节点的快捷菜单，然后依次选择“添加”、“新建项目”****。
 
@@ -295,7 +302,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 
 在中心窗格中，选择 WinRT_CPP，然后选择“确定”****按钮
 
-## 添加调用 JavaScript 事件处理程序的 HTML
+## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>添加调用 JavaScript 事件处理程序的 HTML
 
 将此 HTML 粘贴到 default.html 页面的 <body> 节点：
 
@@ -333,7 +340,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
  </div>
 ```
 
-## 添加样式
+## <a name="to-add-styles"></a>添加样式
 
 在 default.css 中，删除正文样式，然后添加以下样式：
 
@@ -368,7 +375,7 @@ font-size:smaller;
 }
 ```
 
-## 添加调用组件 DLL 的 JavaScript 事件处理程序
+## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>添加调用组件 DLL 的 JavaScript 事件处理程序
 
 在 default.js 文件的末尾添加以下功能。 当选择主页面上的按钮时调用这些功能。 请注意 JavaScript 如何激活 C++ 类，然后调用其方法并使用返回值填充 HTML 标签。
 
@@ -450,9 +457,9 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 按 F5 运行应用。
 
-## 创建 C# 客户端应用
+## <a name="creating-a-c-client-app"></a>创建 C# 客户端应用
 
-## 创建 C# 项目
+## <a name="to-create-a-c-project"></a>创建 C# 项目
 
 在“解决方案资源管理器”中，打开“解决方案”节点的快捷菜单，然后依次选择“添加”、“新建项目”****。
 
@@ -470,7 +477,7 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 在中心窗格中，选择 WinRT_CPP，然后选择“确定”****按钮。
 
-## 添加定义用户界面的 XAML
+## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>添加定义用户界面的 XAML
 
 将以下代码复制到 MainPage.xaml 中的 Grid 元素。
 
@@ -492,7 +499,7 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 </ScrollViewer>
 ```
 
-## 为按钮添加事件处理程序
+## <a name="to-add-the-event-handlers-for-the-buttons"></a>为按钮添加事件处理程序
 
 在“解决方案资源管理器”中，打开MainPage.xaml.cs。 （文件可能嵌套在 MainPage.xaml 下。）为 System.Text 添加 using 指令，然后在 MainPage 类中为对数计算添加事件处理程序。
 
@@ -593,25 +600,25 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 运行该应用
+## <a name="running-the-app"></a>运行该应用
 
 选择 C# 项目或 JavaScript 项目作为启动项目，方法是在“解决方案资源管理器”中打开项目节点的快捷菜单，然后选择“设置为启动项目”****。 然后按 F5 运行并调试，或按 Ctrl+F5 运行但不调试。
 
-## 在“对象浏览器”中检查组件（可选）
+## <a name="inspecting-your-component-in-object-browser-optional"></a>在“对象浏览器”中检查组件（可选）
 
 在“对象浏览器”中，可以检查在 .winmd 文件中定义的所有 Windows 运行时类型。 这包括 Platform 命名空间和默认命名空间中的类型。 但是，由于 Platform::Collections 命名空间在头文件 collections.h 而非 winmd 文件中定义，因此它们不会显示在“对象浏览器”中。
 
-## **检查组件**
+## **<a name="to-inspect-a-component"></a>检查组件**
 
 在菜单栏上，依次选择**“视图”、“对象浏览器”** (Ctrl+Alt+J)。
 
 在“对象浏览器”的左侧窗格中，展开 WinRT\_CPP 节点以显示在你的组件上定义的类型和方法。
 
-## 调试提示
+## <a name="debugging-tips"></a>调试提示
 
 为实现更好的调试体验，请从公共 Microsoft 符号服务器下载调试符号：
 
-## **下载调试符号**
+## **<a name="to-download-debugging-symbols"></a>下载调试符号**
 
 在菜单栏上，依次选择“工具”&gt;“选项”****。
 
@@ -629,12 +636,7 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 
 如果你从某个解决方案中删除 C++ Windows 运行时组件项目，还必须从 JavaScript 项目中手动删除项目引用。 如果此操作无法完成，将阻止后续调试或生成操作。 如有必要，你可以稍后向 DLL 添加程序集引用。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 C++ 创建 Windows 运行时组件](creating-windows-runtime-components-in-cpp.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

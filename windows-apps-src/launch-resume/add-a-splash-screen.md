@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "添加初始屏幕"
 description: "使用 Microsoft Visual Studio 2015 设置你的应用的初始屏幕图像和背景色。"
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b8d8b81b1807681d3aa3c5ed61359a5da64dfac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 添加初始屏幕
+# <a name="add-a-splash-screen"></a>添加初始屏幕
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 使用 Microsoft Visual Studio 2015 设置你的应用的初始屏幕图像和背景色。
 
-## 在 Visual Studio 2015 中设置初始屏幕图像和背景色
+## <a name="set-the-splash-screen-image-and-background-color-in-visual-studio-2015"></a>在 Visual Studio 2015 中设置初始屏幕图像和背景色
 
 
 使用 Visual Studio 2015 模板创建你的应用，一个默认的图像已添加到你的项目并设置为初始屏幕图像。 初始屏幕的背景色默认为浅灰色。 如果要更改应用初始屏幕的默认图像或颜色，请按照以下步骤进行操作：
@@ -38,13 +45,13 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
 4.  若要选择适用于 UWP 应用的新初始屏幕图像，请按下在“比例资源”****下的“1240 x 600 px”****标签旁边显示的带省略号的按钮。 选择你要用于初始屏幕图像的 1240 x 600 像素图像（.png、.jpg 或 .jpeg）。
 
-    **重要提示** 所选初始屏幕图像必须为使用 1 倍比例系数的 620 x 300 像素。 此外，在设计你的初始屏幕时，请注意它比屏幕小，并且居中。 它不像 Windows Phone 应用商店应用的初始屏幕一样会填满屏幕。
+    **重要提示**  所选初始屏幕图像必须为使用 1 倍比例系数的 620 x 300 像素。 此外，在设计你的初始屏幕时，请注意它比屏幕小，并且居中。 它不像 Windows Phone 应用商店应用的初始屏幕一样会填满屏幕。
 
      
 
 5.  若要选择适用于 Windows Phone 应用商店应用的新初始屏幕图像，请按下在“比例资源”****下的“1152 x 1920 px”****标签旁边显示的带省略号的按钮。 选择你要用于初始屏幕图像的 1152 x 1920 像素图像（.png、.jpg 或 .jpeg）。
 
-    **重要提示** 所选初始屏幕图像必须为 1152 x 1920 像素，即 2.4 倍比例系数的正确大小。 如果这是你提供的唯一资源，那么它将缩小为 1.4 倍和 1 倍比例系数。
+    **重要提示**  所选初始屏幕图像必须为 1152 x 1920 像素，即 2.4 倍比例系数的正确大小。 如果这是你提供的唯一资源，那么它将缩小为 1.4 倍和 1 倍比例系数。
 
      
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
     你也可以为初始屏幕设置背景色。 如果你未为 UWP 应用指定颜色，则初始屏幕背景色默认为浅灰色（十六进制值 \#464646）。 这与默认的“磁贴”****背景色相同（请参阅“可视资源”****选项卡的“磁贴图像和徽标”****部分中的“背景色”****字段）。 如果你未为 Windows Phone 指定颜色，或将其设置为“透明”，则初始屏幕背景色将为透明。
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 
 如果应用加载所需的时间较长，请考虑添加一个延长的初始屏幕。 有关分步指南，请参阅[创建自定义初始屏幕](create-a-customized-splash-screen.md)。
@@ -62,7 +69,7 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建自定义初始屏幕](create-a-customized-splash-screen.md)
 
@@ -74,9 +81,4 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

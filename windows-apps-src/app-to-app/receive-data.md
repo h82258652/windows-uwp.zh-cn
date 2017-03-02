@@ -3,28 +3,35 @@ description: "本文介绍如何接收使用“共享”合约从另一个应用
 title: "接收数据"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10，uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
-ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d15bfb6bfed16d1b71313fd5a5f29ceeef3bd3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 接收数据
+# <a name="receive-data"></a>接收数据
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。
 
-## 将应用声明为共享目标
+## <a name="declare-your-app-as-a-share-target"></a>将应用声明为共享目标
 
 在用户调用“共享”时，系统将显示可能的目标应用列表。 为了显示在列表中，你的应用需要声明它支持“共享”合约。 这让系统知道你的应用可用于接收内容。
 
 1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
-2.  打开“声明”****选项卡。
-3.  从“可用声明”****列表中，选择“共享目标”****，然后选择“添加”****。
+2.  打开**声明**选项卡。
+3.  从**可用声明**列表中，选择**共享目标**，然后选择**添加**。
 
-## 选择文件类型和格式
+## <a name="choose-file-types-and-formats"></a>选择文件类型和格式
 
 接下来，确定你支持的文件类型和数据格式。 共享 API 支持多种标准格式，如文本、HTML 和位图。 你还可以指定自定义文件类型和数据格式。 指定时，请记住源应用必须明确这些类型和格式；否则它们无法使用这些格式来共享数据。
 
@@ -33,16 +40,16 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 若要设置文件类型：
 
 1.  打开清单文件。 该文件的名称应类似于 **package.appxmanifest**。
-2.  在“声明”****页的“支持的文件类型”****部分，选择“新增”****。
-3.  键入要支持的文件扩展名，例如“.docx”。 你需要包括句点。 如果希望支持所有文件类型，请选中**SupportsAnyFileType** 复选框。
+2.  在**声明**页的**支持的文件类型**部分，选择**新增**。
+3.  键入要支持的文件扩展名，例如“.docx”。 你需要包括句点。 如果希望支持所有文件类型，请选中 **SupportsAnyFileType** 复选框。
 
 若要设置数据格式：
 
 1.  打开清单文件。
-2.  打开“声明”****页的“数据格式”****部分，然后选择“新增”****。
+2.  打开**声明**页的**数据格式**部分，然后选择**新增**。
 3.  键入支持的数据格式的名称，例如“Text”。
 
-## 处理共享激活
+## <a name="handle-share-activation"></a>处理共享激活
 
 当用户选择你的应用时（通常从共享 UI 中可用目标应用的列表中进行选择），将引发 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) 事件。 你的应用需要处理此事件才能处理用户要共享的数据。
 
@@ -68,7 +75,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 } 
 ```
 
-## 报告共享状态
+## <a name="report-sharing-status"></a>报告共享状态
 
 在某些情况下，你的应用可能需要花费一定时间来处理要共享的数据。 示例包括用户共享文件或图像的集合。 这些项目比简单文本字符串更大，因此处理时间较长。
 
@@ -96,9 +103,9 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择“共享”****按钮之前不调用 **ReportStarted**。
+在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择**共享**按钮之前不调用 **ReportStarted**。
 
-## 如果共享成功，则返回 QuickLink
+## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果共享成功，则返回 QuickLink
 
 当用户选择你的应用来接收内容时，我们建议你创建一个 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 类似于快捷方式，可让用户更轻松地使用你的应用共享信息。 例如，你可以创建一个 **QuickLink**，用来打开预配置了好友电子邮件地址的新邮件。
 
@@ -128,7 +135,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## 另请参阅 
+## <a name="see-also"></a>另请参阅 
 
 * [App-to-app communication](index.md)
 * [共享数据](share-data.md)
@@ -140,9 +147,4 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

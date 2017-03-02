@@ -3,23 +3,30 @@ author: Jwmsft
 title: "关键帧动画以及缓动函数动画"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "线性关键帧动画、具有 KeySpline 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2eb40a8787479e6abd03ef2f0adb2d7462bfef16
+ms.lasthandoff: 02/07/2017
 
 ---
-# 关键帧动画以及缓动函数动画
+# <a name="key-frame-animations-and-easing-function-animations"></a>关键帧动画以及缓动函数动画
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 线性关键帧动画、具有 **KeySpline** 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术：创建从某个起始状态到结束状态使用非线性动画行为的更为复杂的情节提要动画。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 确保你已经阅读[情节提要动画](storyboarded-animations.md)主题。 本主题在[情节提要动画](storyboarded-animations.md)中解释过的动画概念的基础上生成，并且不会重新复习这些概念。 例如，[情节提要动画](storyboarded-animations.md)介绍了如何定位动画、作为资源的情节提要、[**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性值（例如 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)、[**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)）等。
 
-## 使用关键帧动画创建动画
+## <a name="animating-using-key-frame-animations"></a>使用关键帧动画创建动画
 
 关键帧动画允许沿动画时间线到达一个点的多个目标值。 换句话说，每个关键帧可以指定一个不同的中间值，并且到达的最后一个关键帧为最终动画值。 通过指定多个值来创建动画，你可以做出更复杂的动画。 关键帧动画还会启用不同的内插逻辑，每个内插逻辑根据动画类型作为不同的 **KeyFrame** 子类实现。 确切地说，每个关键帧动画类型具有其 **KeyFrame** 类的 **Discrete**、**Linear**、**Spline** 和 **Easing** 变体，用于指定其关键帧。 例如，若要指定以 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 为目标并使用关键帧的动画，可声明具有 [**DiscreteDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243130)、[**LinearDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210316)、[**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446) 和 [**EasingDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210269) 的关键帧。 你可以在一个 **KeyFrames** 集合中使用任一和所有这些类型，以更改每次新关键帧到达时的内插。
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
     -   如果设置为 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，则时间线在到达该时间前一直重复。 如果该数不是时间线的隐式持续时间的整数倍数，则这可能会截断关键帧序列中的部分动画。
 -   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty)（不常使用）
 
-### 线性关键帧
+### <a name="linear-key-frames"></a>线性关键帧
 
 线性关键帧在帧的 **KeyTime** 达到前，产生该值的简单线性内插。 此内插行为与[情节提要动画](storyboarded-animations.md)主题中介绍的更为简单的 **From**/**To**/**By** 动画非常相似。
 
@@ -62,7 +69,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 </StackPanel>
 ```
 
-### 离散式关键帧
+### <a name="discrete-key-frames"></a>离散式关键帧
 
 离散式关键帧根本不使用任何内插。 在 **KeyTime** 到达后，只是简单地应用新的 **Value**。 根据要创建动画的 UI 属性，这种方式常常会产生动画仿佛在“跳”的感觉。 请确保这正是你确实需要的艺术行为。 你可以通过增加声明的关键帧数目来最大程度地减少明显的跳跃感，但如果你需要流畅的动画效果，最好是改为使用线性或样条关键帧。
 
@@ -70,7 +77,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
  
 
-### 样条关键帧
+### <a name="spline-key-frames"></a>样条关键帧
 
 样条关键帧根据 **KeySpline** 属性的值在值之间创建可变的过渡。 此属性指定贝塞尔曲线的第一个控制点和第二个控制点，可描述动画的加速。 基本上，[**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) 定义了一个时间函数关系，其中函数-时间图形采用贝塞尔曲线的形状。 通常，你在 XAML 速记属性字符串中指定一个 **KeySpline** 值，该字符串具有四个以空格或逗号分隔的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这些值是用作贝塞尔曲线的两个控制点的“X,Y”对。 “X”是时间，而“Y”是对值的函数修饰符。 每个值应始终介于 0 到 1 之间（包含这两个值）。 如果不将控制点修改为 **KeySpline**，则从 0,0 到 1,1 的直线是线性内插的时间函数的表示形式。 控制点更改该曲线的形状，并因此更改样条动画的时间函数的行为。 最好是在图形上以可视化方式查看此方法。 你可以在浏览器中运行 [Silverlight 主曲线可视化工具示例](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)以查看控制点如何修改曲线以及示例动画在将其用作 **KeySpline** 值时如何运行。
 
@@ -104,7 +111,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 </Storyboard>
 ```
 
-### 缓动关键帧
+### <a name="easing-key-frames"></a>缓动关键帧
 
 缓动关键帧是一种以下形式的关键帧，其中应用了插入，并且插入的随时间变化的函数由多个预定义数学公式控制。 在你可以使用某些缓动函数类型时，实际可以实现与使用样条关键帧产生的结果相同的结果，但也存在某些缓动函数（例如 [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)），这些函数无法再现与使用样条相同的结果。
 
@@ -139,7 +146,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 这仅仅是一个缓动函数示例。 我们将在下一节对此进行更多讨论。
 
-## 缓动函数
+## <a name="easing-functions"></a>缓动函数
 
 缓动函数支持你将自定义数学公式应用到动画。 数学运算通常对于制作在 2-D 坐标系中模拟真实物理效果的动画非常有用。 例如，你可能想要某个对象以理想的方式弹跳或表现，就好像在弹簧上运动一样。 你可以使用关键帧或 **From**/**To**/**By** 动画来模拟这些效果，但是这样工作量很大，而且动画比起使用数学公式来说准确性要低。
 
@@ -191,7 +198,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 当缓动函数应用到 **From**/**To**/**By** 动画时，它会更改时间函数的特性，该特性确定值如何随着动画的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 内插到 **From** 与 **To** 值之间。 如果没有缓动函数，则该内插将为线性内插。
 
-## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散式对象值动画
+## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散式对象值动画
 
 有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有任何内插，因此只有一种关键帧用于 **ObjectAnimationUsingKeyFrames** 关键帧集合：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
 
@@ -264,14 +271,9 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 你可以将多个 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 用于一个 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 帧集。 作为其中多个对象值可能有用的示例方案，这是通过创建 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) 的值的动画来创建“幻灯片放映”动画的一种有趣方法。
 
- ## 相关主题
+ ## <a name="related-topics"></a>相关主题
 
 * [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
 * [依赖关系属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)
 * [**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

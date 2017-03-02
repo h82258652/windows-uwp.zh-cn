@@ -5,16 +5,23 @@ title: "键盘交互"
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+keywords: "键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 1226d097e911e79c800a16c33fcbb9bd524bd17a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 53ee08b33bcbbd895d0c6ea6cd621eeec2af40f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="keyboard-interactions"></a>键盘交互
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-键盘输入是应用的所有用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。 例如，用户应可以使用 Tab 和箭头键导航应用，使用空格键和 Enter 键激活 UI 元素，并使用键盘快捷方式访问命令。  
+键盘输入是应用的整体用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。 例如，用户应可以使用 Tab 和箭头键导航应用，使用空格键和 Enter 键激活 UI 元素，并使用键盘快捷方式访问命令。  
 
 ![键盘 Hero 图像](images/input-patterns/input-keyboard-small.jpg)
 
@@ -737,9 +744,4 @@ public class CustomGridView : GridView
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

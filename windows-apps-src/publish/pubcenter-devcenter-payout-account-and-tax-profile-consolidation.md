@@ -3,13 +3,20 @@ author: jnHs
 Description: "所有 Microsoft Advertising 收益均通过开发人员中心付款帐户支付。"
 title: "pubCenter-DevCenter 付款帐户和税务资料整合"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: baf488ac70ea2937a8bfda8a47d679a23053578d
-ms.openlocfilehash: e71c038575f1779c0a8d14306b0e4b8fd8eaf959
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b93669adff4acfe791a2f607e9d8475e6213a31
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# pubCenter-DevCenter 付款帐户和税务资料整合
+# <a name="pubcenter-devcenter-payout-account-and-tax-profile-consolidation"></a>pubCenter-DevCenter 付款帐户和税务资料整合
 
 从 2016 年 4 月 1 日起，通过开发人员中心付款帐户支付所有 Microsoft Advertising 收益。 若要获取所有广告管理和付款报告，请访问 [Windows 开发人员中心仪表板](https://developer.microsoft.com/dashboard/apps/overview)。 
 
@@ -27,9 +34,4 @@ ms.openlocfilehash: e71c038575f1779c0a8d14306b0e4b8fd8eaf959
 如果需要进一步帮助，请打开[支持票证](http://go.microsoft.com/fwlink/p/?LinkId=733342)。
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,19 +3,26 @@ author: mcleblanc
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: "规划性能"
 description: "用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f66617e3131399a1cfcac17f258cc3b42c6810d2
+ms.lasthandoff: 02/07/2017
 
 ---
-# 规划性能
+# <a name="planning-for-performance"></a>规划性能
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。
 
-## 指定目标
+## <a name="specifying-goals"></a>指定目标
 
 用户体验是定义良好性能的一个基本方法。 应用的启动时间可能会影响用户对应用性能的感知。 用户可能会认为应用启动时间少于 1 秒为优秀，少于 5 秒为良好，而超过 5 秒则为较差。
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 最好设置初始目标，后续再加以修订，而不要根本就没有目标。 应用的性能目标应为具体且可衡量的，并且应分为以下三类：用户或应用完成任务需要花费多长时间（时间）；应用本身为响应用户交互进行重绘的速率和连续性（流畅性）；应用能够在多大程度上节约系统资源，包括电池电源（效率）。
 
-## 时间
+## <a name="time"></a>时间
 
 考虑用户若要在应用中完成其任务，（*交互类*）所用时间的可接受范围。 为每个交互类分配一个标签、感知的用户情绪以及理想和最长持续时间。 下面是一些建议。
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 指定目标后，现在可以更好地测试、分析并优化应用。
 
-## 流畅性
+## <a name="fluidity"></a>流畅性
 
 应用的具体可衡量的流畅性目标可能包括：
 
@@ -63,7 +70,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 -   动画以 60 帧/秒 (FPS) 呈现。
 -   当用户平移/滚动时，应用每秒显示 3 到 6 页的内容。
 
-## 效率
+## <a name="efficiency"></a>效率
 
 应用的具体可衡量的效率目标可能包括：
 
@@ -71,7 +78,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 -   当应用处于非活动状态时，对于应用进程而言，*N* 和 *M* 均为零。
 -   在使用电池电源时，应用可以有效使用 *X* 小时；当应用处于非活动状态时，设备将保留 *Y* 小时的电量。
 
-## 针对性能设计应用
+## <a name="design-your-app-for-performance"></a>针对性能设计应用
 
 你现在可以使用性能目标来影响你的应用设计。 以餐饮应用为例，当用户导航到食谱页面后，你可以选择[以增量方式更新](optimize-gridview-and-listview.md#update-items-incrementally)，这样便首先呈现食谱名称、原料延后显示，图像再进一步延后显示。 这样在平移/滚动时可保持响应速度和流畅的 UI，在交互后高保真的呈现速度将会减慢以使 UI 线程跟上步伐。 下面是要考虑的某些其他方面。
 
@@ -110,7 +117,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 准备好性能相关的设计后，你便可以开始对应用进行编码。
 
-## 性能检测
+## <a name="instrument-for-performance"></a>性能检测
 
 在编写代码时，添加用于在应用运行的某些时刻记录消息和事件的代码。 之后，在测试应用时，你可以使用 Windows Performance Recorder 和 Windows Performance Analyzer（均包含在 [Windows Performance Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx) 中）等分析工具，以创建和查看有关你的应用的性能报告。 在此报告中，可以查找以下消息和事件以帮助你更加轻松地分析报告的结果。
 
@@ -152,7 +159,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 检测应用之后，你可以测试和衡量应用的性能。
 
-## 参照性能目标进行测试和衡量
+## <a name="test-and-measure-against-performance-goals"></a>参照性能目标进行测试和衡量
 
 你的性能计划的一部分是在开发过程中定义所有要进行性能衡量的点。 这些目标将会不同，具体取决于是在原型设计期间、开发期间还是在部署期间进行衡量。 在原型设计的早期阶段中衡量性能会非常有价值，因此我们建议你在编写完具有工作意义的代码后便立即衡量性能。 早期衡量可以让你很好地了解在你的应用中重要的开销在哪些位置，并可为设计决策提供信息。 这会产生扩展性良好的高性能应用。 通常，较早更改设计的成本与较晚时候相比成本更低。 在产品周期的后期才测量性能会导致在最后关头做出匆忙修改而因此带来较差的性能。
 
@@ -161,9 +168,9 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 若要执行此操作，请依次从 Windows 中的“开始”菜单中选择“设置”****&gt;“个性化”****&gt;“锁屏界面”****。 选择每个活动应用，然后选择“无”****。
+    -   在测试设备上关闭后台应用。 若要执行此操作，请依次从 Windows 中的开始菜单中选择**“设置”**&gt;**“个性化”**&gt;**“锁屏界面”**。 选择每个活动应用，然后选择**无**。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
-    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”****。 在“维护”****区域的“自动维护”****下，选择“开始维护”****并等待状态从“正在进行维护”****发生变化。
+    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的开始菜单中，搜索**安全和维护**。 在**维护**区域的**自动维护**下，选择**开始维护**并等待状态从**正在进行维护**发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
@@ -177,7 +184,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   //build/ 会话 [XAML 性能](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   //build/ 会话 [Visual Studio 2015 中新增的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697)
 
-## 响应性能测试结果
+## <a name="respond-to-the-performance-test-results"></a>响应性能测试结果
 
 分析性能测试结果后，确定是否需要进行任何更改，例如：
 
@@ -187,13 +194,8 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 如果需要任何更改，请进行更改，然后重新检测或测试并重复。
 
-## 优化
+## <a name="optimizing"></a>优化
 
 仅优化代码中性能关键型代码路径：花费时间最多的地方。 分析将会告知你是哪些部分。 通常，在创建遵循良好设计实践的软件与编写以最高优化程度执行的代码之间，存在一个权衡取舍。 通常，在不关注性能的方面，优先考虑开发人员生产效率和良好的软件设计会更好。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 
