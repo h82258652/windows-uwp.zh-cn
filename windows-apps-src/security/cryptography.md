@@ -3,21 +3,28 @@ title: "加密"
 description: "本文概述了通用 Windows 平台 (UWP) 应用可用的加密功能。 有关特定任务的详细信息，请参阅本文末尾的表。"
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3329a873b0e86a606d6e8899dcaca62c2e127c29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 加密
+# <a name="cryptography"></a>加密
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文概述了通用 Windows 平台 (UWP) 应用可用的加密功能。 有关特定任务的详细信息，请参阅本文末尾的表。
 
-## 术语
+## <a name="terminology"></a>术语
 
 
 以下术语通常用于加密和公钥基础结构 (PKI)。
@@ -40,11 +47,11 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 | X.509 证书           | 一个数字文档，通常由证书颁发机构颁发，用于向其他相关方验证个人、系统或实体的身份。                                            |
 
  
-## 命名空间
+## <a name="namespaces"></a>命名空间
 
 以下命名空间可以用在应用中。
 
-### Windows.Security.Cryptography
+### <a name="windowssecuritycryptography"></a>Windows.Security.Cryptography
 
 包含 CryptographicBuffer 类和静态方法，可让你：
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 -   编码消息进行网络传输
 -   在传输之后解码消息
 
-### Windows.Security.Cryptography.Certificates
+### <a name="windowssecuritycryptographycertificates"></a>Windows.Security.Cryptography.Certificates
 
 包含类、接口和枚举类型，可让你：
 
@@ -62,7 +69,7 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 -   导入 PFX 文件形式的证书
 -   指定并检索证书请求属性
 
-### Windows.Security.Cryptography.Core
+### <a name="windowssecuritycryptographycore"></a>Windows.Security.Cryptography.Core
 
 包含类和枚举类型，可让你：
 
@@ -76,19 +83,19 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 -   使用计算机身份验证代码 (MAC) 算法提供程序
 -   使用密钥派生算法提供程序
 
-### Windows.Security.Cryptography.DataProtection
+### <a name="windowssecuritycryptographydataprotection"></a>Windows.Security.Cryptography.DataProtection
 
 包含类，可让你：
 
 -   异步加密和解密静态数据
 -   异步加密和解密数据流
 
-## 加密和 PKI 应用程序功能
+## <a name="crypto-and-pki-application-capabilities"></a>加密和 PKI 应用程序功能
 
 
 利用为应用提供的简化应用程序编程接口，可以实现以下加密和公钥基础结构 (PKI) 功能。
 
-### 加密支持
+### <a name="cryptography-support"></a>加密支持
 
 你可以执行以下加密任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) 命名空间。
 
@@ -106,11 +113,11 @@ SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此
 -   静态数据的异步保护
 -   数据流的异步保护
 
-### 编码支持
+### <a name="encoding-support"></a>编码支持
 
 应用可以编码加密数据以在网络上传输，也可以解码从网络资源收到的数据。 有关详细信息，请参阅 [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) 命名空间中可用的静态方法。
 
-### PKI 支持
+### <a name="pki-support"></a>PKI 支持
 
 应用可以执行以下 PKI 任务。 有关详细信息，请参阅 [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) 命名空间。
 
@@ -131,7 +138,7 @@ SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此
     -   与一组指定的颁发者关联的证书
     -   从应用程序存储中自动选择证书
 
-## 详细文章
+## <a name="detailed-articles"></a>详细文章
 
 
 以下文章提供有关安全方案的更多详细信息：
@@ -146,8 +153,3 @@ SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此
 | [常见的加密任务](common-cryptography-tasks.md)                     | 这些文章提供常见的 UWP 加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。                                                                                                                                                                                                                                                                                    |
 
  
-
-
-<!--HONumber=Aug16_HO3-->
-
-

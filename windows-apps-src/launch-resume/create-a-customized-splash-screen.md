@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "延长显示初始屏幕的时间"
 description: "通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。"
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 220e2e1bee237120acd35d2a4111bf7390b8e619
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 延长显示初始屏幕的时间
+# <a name="display-a-splash-screen-for-more-time"></a>延长显示初始屏幕的时间
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 通过为你的应用创建延长的初始屏幕，使初始屏幕显示的时间更长。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。 无论你是要显示实时加载信息还是想要简单地为应用提供更多时间来准备其初始 UI，延长的初始屏幕允许你定义启动体验。
 
-> **注意** 本主题中的短语“延长的初始屏幕”是指在屏幕上保留延长时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
+> **注意**  本主题中的短语“延长的初始屏幕”是指在屏幕上保留延长时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
 
  
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 使用以下步骤创建一个延长的初始屏幕，该屏幕可有效地模仿默认初始屏幕。
 
-## 将“空白页”****项目添加到你的现有应用
+## <a name="add-a-blank-page-item-to-your-existing-app"></a>将“空白页”****项目添加到你的现有应用
 
 
 本主题假设你希望将延长的初始屏幕添加到使用 C#、Visual Basic 或 C++ 的现有通用 Windows 平台 (UWP) 应用。
@@ -47,14 +54,14 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 添加**“空白页”**项目将生成两个文件，一个用于标记 (ExtendedSplash.xaml)，另一个用于代码 (ExtendedSplash.xaml.cs)。
 
-## 延长的初始屏幕的必需 XAML
+## <a name="essential-xaml-for-an-extended-splash-screen"></a>延长的初始屏幕的必需 XAML
 
 
 请按照以下步骤将图像和进度控件添加到你的延长的初始屏幕。
 
 在你的 ExtendedSplash.xaml 文件中，执行以下操作：
 
--   更改默认 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 元素的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) 属性，使其匹配你在应用清单（在 Package.appxmanifest 文件中的**“可见资源”**部分）中为应用的初始屏幕设置的背景色。 默认的初始屏幕颜色为浅灰色（十六进制值为 \#464646）。 请注意，在你创建新的**“空白页”**时，将默认提供此 **Grid** 元素。 你不必使用 **Grid**；它只是为构建延长的初始屏幕提供了一个方便。
+-   更改默认 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 元素的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) 属性，使其匹配你在应用清单（在 Package.appxmanifest 文件中的**可见资源**部分）中为应用的初始屏幕设置的背景色。 默认的初始屏幕颜色为浅灰色（十六进制值为 \#464646）。 请注意，在你创建新的**“空白页”**时，将默认提供此 **Grid** 元素。 你不必使用 **Grid**；它只是为构建延长的初始屏幕提供了一个方便。
 -   将 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素添加到 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)。 你将使用此 **Canvas** 来放置你的延长的初始屏幕图像。
 -   将 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素添加到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)。 将你为默认初始屏幕选择的 600 x 320 像素图像用于延长的初始屏幕。
 -   （可选）添加一个进度控件，以向用户显示正在加载的应用。 此主题添加了一个 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)，而非一个确定或不确定的 [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)。
@@ -70,11 +77,11 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
     </Grid>
 ```
 
-**注意** 此代码将 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的宽度设置为 20 像素。 你可以将其宽度手动设置为对你的应用有效的值，但是，该控件无法以小于 20 像素的宽度呈现。
+**注意**  此代码将 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的宽度设置为 20 像素。 你可以将其宽度手动设置为对你的应用有效的值，但是，该控件无法以小于 20 像素的宽度呈现。
 
  
 
-## 延长的初始屏幕类的必需代码
+## <a name="essential-code-for-an-extended-splash-screen-class"></a>延长的初始屏幕类的必需代码
 
 
 你的延长的初始屏幕需要在每次窗口大小（仅限 Windows）或方向发生更改时作出响应。 你使用的图像的位置必须进行更新，这样你的延长的初始屏幕将看起来很好，而不管窗口大小如何改变。
@@ -214,7 +221,7 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
     }
     ```
 
-    **注意** 在你尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效的 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 对象，如该示例中所示。
+    **注意**  在你尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效的 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 对象，如该示例中所示。
 
      
 
@@ -234,7 +241,7 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
     在你修改 App.xaml.cs 中的启动激活处理程序时，如果应用之前的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 为 **Terminated**，你还需要将 `loadstate` 设置为 true。 如果出现这种情况，`RestoreStateAsync` 方法会将应用还原到其之前的状态。 有关应用启用、暂停和终止的概述，请参阅[应用生命周期](app-lifecycle.md)。
 
-## 修改启动激活处理程序
+## <a name="modify-the-launch-activation-handler"></a>修改启动激活处理程序
 
 
 启动应用时，系统将初始屏幕信息传递给应用的启动激活事件处理程序。 你可以使用该信息将图像正确放置在延长的初始屏幕页面上。 你可以从传递给你的应用的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 处理程序的激活事件参数获取此初始屏幕信息（请参阅以下代码中的 `args` 变量）。
@@ -257,10 +264,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## 完成代码
+## <a name="complete-code"></a>完成代码
 
 
-> **注意** 以下代码与之前步骤中显示的代码段稍有不同。
+> **注意**  以下代码与之前步骤中显示的代码段稍有不同。
 -   ExtendedSplash.xaml 包括一个 `DismissSplash` 按钮。 单击此按钮时，事件处理程序 `DismissSplashButton_Click` 将调用 `DismissExtendedSplash` 方法。 在你的应用中，在应用完成资源加载或初始化其 UI 后调用 `DismissExtendedSplash`。
 -   此应用还会使用 UWP 应用项目模板，该模板使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航。 因此，在 App.xaml.cs 中，启动激活处理程序 ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) 将定义一个 `rootFrame` 并使用它来设置应用窗口的内容。
 
@@ -416,7 +423,7 @@ namespace SplashScreenExample
 
 App.xaml.cs：此项目是在 Visual Studio 2015 中使用 UWP 应用**“空白应用 (XAML)”**项目模板创建的。 `OnNavigationFailed` 和 `OnSuspending` 事件处理程序均自动生成并且无需进行任何更改即可实现延长的初始屏幕。 此主题将仅修改 `OnLaunched`。
 
-如果你没有为应用使用项目模板，请参阅步骤 4：[修改启动激活处理程序](#modify_the_launch_activation_handler)以获取不使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航的已修改 `OnLaunched` 的示例。
+如果你没有为应用使用项目模板，请参阅步骤 4：[修改启动激活处理程序](#modify-the-launch-activation-handler)以获取不使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航的已修改 `OnLaunched` 的示例。
 
 ```cs
 using System;
@@ -533,7 +540,7 @@ namespace SplashScreenExample
 }
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [应用生命周期](app-lifecycle.md)
@@ -548,9 +555,4 @@ namespace SplashScreenExample
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

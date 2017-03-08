@@ -1,15 +1,22 @@
 ---
 author: jnHs
-Description: "若要查看应用中广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的广告性能报告。"
+Description: "若要查看应用中的广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的广告性能报告。"
 title: "广告性能报告"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6b354b1b009bf9e4f2899f7ef97ef8791712f52b
-ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 广告性能报告
+# <a name="advertising-performance-report"></a>广告性能报告
 
 
 若要查看你的应用中的广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用以下报告：
@@ -24,7 +31,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 以下部分提供有关这些报告的更多详细信息。
 
-## 应用级别的广告性能报告
+## <a name="app-level-advertising-performance-report"></a>应用级别的广告性能报告
 
 此页在仪表板中以图形、世界地图和表形式提供当前所选应用中 Microsoft 广告单元的性能数据。 若要查看此报告，请选择仪表板中的一款应用，并在导航窗格中依次单击“分析“****&gt;“广告性能”****。
 
@@ -46,13 +53,13 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 若要对数据进行更深入的分析，请选择“下载报告”****，然后在 Microsoft Excel 或类似程序中打开 CSV（逗号分隔值）文件。
 
-## 帐户级别的广告性能报告
+## <a name="account-level-advertising-performance-report"></a>帐户级别的广告性能报告
 
 此页面提供在注册到开发人员帐户的所有应用中使用的 Microsoft 广告单元和社区广告的性能数据。 若要查看此报告，请转到仪表板概述页面，然后单击导航窗格中的“广告性能”****。
 
 本页面包含下列部分：
 
-### Microsoft Advertising
+### <a name="microsoft-advertising"></a>Microsoft Advertising
 
 此报告提供在应用中使用的所有 Microsoft 广告单元的性能数据。 此报告还包括任何未成功映射到开发人员中心应用的 pubCenter 广告单元的性能数据。
 
@@ -70,7 +77,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 若要对数据进行更深入的分析，请选择“下载报告”****，然后在 Microsoft Excel 或类似程序中打开 CSV（逗号分隔值）文件。
 
-### Microsoft 社区广告
+### <a name="microsoft-community-ads"></a>Microsoft 社区广告
 
 本部分在仪表板中以图形和世界地图的形式提供当前所选应用中社区广告的性能数据。 有关社区广告的详细信息，请参阅[有关社区广告](about-community-ads.md)。
 
@@ -85,7 +92,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 若要分析图形或世界地图视图中其中一个指标的数据，请单击“图形”****或“地图”****。 单击图形或地图上方的标头以在不同的指标之间切换。 在地图视图中，较深色调表示较高的值，而较浅色调表示较低的值。 可以悬停在地图上的某个特定国家或地区，以分析所选指标的值。 还可以放大地图的任何区域，以查看较小国家/地区的数据。
 
-## 关于这些报告的说明
+## <a name="notes-about-the-reports"></a>关于这些报告的说明
 
 下面是使用广告性能报告时应牢记的一些事项。
 
@@ -96,9 +103,4 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

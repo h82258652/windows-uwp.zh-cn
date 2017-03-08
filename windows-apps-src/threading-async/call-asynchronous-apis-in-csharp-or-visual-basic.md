@@ -3,12 +3,19 @@ author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: "使用 C# 或 Visual Basic 调用异步 API"
 description: "通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, C#, Visual Basic, 异步"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bafeaf66ec95732d2444debcfdca7b9406ddc4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用 C# 或 Visual Basic 调用异步 API
+# <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>使用 C# 或 Visual Basic 调用异步 API
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保了解如何在通用 Windows 平台 (UWP) 应用中一同使用异步 API 与 C# 或 Visual Basic。 下面将显示如何调用 UWP 的异步 API。
 
-## 使用异步 API
+## <a name="using-asynchronous-apis"></a>使用异步 API
 
 
 按照惯例，异步方法的名称应以“Async”结尾。 通常调用异步 API 是为了响应用户的操作，如在用户单击某个按钮时。 在事件处理程序中调用异步方法是使用异步 API 的最简单方法之一。 下面使用 **await** 运算符作为一个示例。
@@ -40,7 +47,7 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 有关使用 **await** 运算符的好处是代码看上去与使用想象的 `RetrieveFeed` 方法的代码没有多大的不同。 可以在不使用 **await** 运算符的情况下，采用 C# 或 Visual Basic 编写异步代码，但所得到的代码通常会强调异步执行的机制。 这使得异步代码难以编写、理解和维护。 通过使用 **await** 运算符，你可以获得异步应用的优势，同时又不会使代码复杂。
 
-## 返回异步 API 的类型和结果
+## <a name="return-types-and-results-of-asynchronous-apis"></a>返回异步 API 的类型和结果
 
 
 如果你跟随指向 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的链接，那么你可能会注意到 **RetrieveFeedAsync** 的返回类型不是 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485)， 而是 `IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>`。 从原始语法看，异步 API 返回其中包含结果的对象。 尽管该对象很常见，但有时却很有用，若要将异步方法视为可等待的方法，**await** 运算符实际上是对该方法的返回值执行操作，而不是对该方法执行操作。 当你应用 **await** 运算符时，你得到的内容即为在该方法返回的对象上调用 **GetResult** 的结果。 在该示例中，**SyndicationFeed** 就是 **RetrieveFeedAsync.GetResult()** 的结果。
@@ -68,16 +75,16 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 [**适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
 
-## 处理错误
+## <a name="handling-errors"></a>处理错误
 
 
 当你使用 **await** 运算符从异步方法检索结果时，可以使用一个 **try/catch** 块来处理异步方法中发生的错误，与处理同步方法中的错误一样。 上一个示例将 **RetrieveFeedAsync** 方法和 **await** 操作包装到一个 **try/catch** 块中，以便在引发异常时处理错误。
 
 当异步方法调用其他异步方法时，所有引发异常的异步方法都将被传播到外部方法。 这意味着你可以将一个 **try/catch** 块放在最外层的方法中，以便为嵌套异步方法捕获错误。 这同样与你为同步方法捕获异常的方式类似。 但不能在 **catch** 块中使用 **await**。
 
-**提示** 从 Microsoft Visual Studio 2005 中的 C# 开始，可以在 **catch** 块中使用 **await**。
+**提示**  从 Microsoft Visual Studio 2005 中的 C# 开始，可以在 **catch** 块中使用 **await**。
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 下面我们介绍的调用异步方法的模式就是在事件处理程序中调用异步 API 时使用的最简单方法。 当在返回 **void** 或 Visual Basic 中的 **Sub** 的替代方法中调用异步方法时，也可以使用此模式。
 
@@ -109,9 +116,4 @@ Tech Tuesdays Live Twitter Chats: Photography Tips, Tricks and Essentials, 7/25/
 How to: Buy a Green PC, 7/22/2011 9:13:22 AM -07:00
 Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -07:00
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

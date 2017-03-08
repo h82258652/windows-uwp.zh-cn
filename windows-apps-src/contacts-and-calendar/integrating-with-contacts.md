@@ -3,13 +3,21 @@ author: normesta
 description: "显示如何将你的应用添加到联系人卡片中的操作旁边"
 MSHAttr: PreferredLib:/library/windows/apps
 title: "将你的应用与联系人卡片上的操作关联起来"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 联系人, 联系人卡片, 注释"
+ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 将你的应用与联系人卡片上的操作关联起来
+# <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 
 你的应用可以显示在联系人卡片或微型联系人卡片上的操作旁边。 用户可以选择你的应用来执行某项操作，如打开个人资料页面、打电话或发送消息。
 
@@ -19,11 +27,11 @@ ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
 
 有关更完整的示例，请参阅[联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)。
 
-## 查找或创建联系人
+## <a name="find-or-create-a-contact"></a>查找或创建联系人
 
 如果你的应用帮助用户联系其他人，请在 Windows 中搜索联系人，然后为他们添加批注。 如果你的应用管理联系人，可以将他们添加到 Windows 联系人列表，然后为他们添加批注。
 
-### 查找联系人
+### <a name="find-a-contact"></a>查找联系人
 
 使用姓名、电子邮件地址或电话号码来查找联系人。
 
@@ -37,7 +45,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### 创建联系人
+### <a name="create-a-contact"></a>创建联系人
 
 如果你的应用更类似于通讯簿，请创建联系人，然后将他们添加到联系人列表。
 
@@ -71,7 +79,7 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## 使用批注标记每个联系人
+## <a name="tag-each-contact-with-an-annotation"></a>使用批注标记每个联系人
 
 使用你的应用可执行的操作（例如，视频通话和消息传送）列表来标记每个联系人。
 
@@ -101,7 +109,7 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## 为每个操作注册
+## <a name="register-for-each-operation"></a>为每个操作注册
 
 在程序包清单中，为你在批注中列出的每个操作注册。
 
@@ -135,7 +143,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 ![清单设计器的“声明”选项卡](images/manifest-designer-protocols.png)
 
-## 在联系人卡片中的操作旁边找到你的应用
+## <a name="find-your-app-next-to-actions-in-a-contact-card"></a>在联系人卡片中的操作旁边找到你的应用
 
 打开“人脉”应用。 你的应用显示在你在批注和程序包清单中指定的每个操作旁边。
 
@@ -143,7 +151,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 如果用户为某个操作选择你的应用，当用户下次打开联系人卡片时，它将显示为该操作的默认应用。
 
-## 在微型联系人卡片中的操作旁边找到你的应用
+## <a name="find-your-app-next-to-actions-in-a-mini-contact-card"></a>在微型联系人卡片中的操作旁边找到你的应用
 
 在微型联系人卡片中，你的应用显示在表示操作的选项卡中。
 
@@ -174,7 +182,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 和联系人卡片一样，每个选项卡都会记住用户上次使用的应用，因此用户可以轻松地返回到你的应用。
 
-## 当用户在联系人卡片中选择你的应用时执行操作
+## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>当用户在联系人卡片中选择你的应用时执行操作
 
 在 **App.cs** 文件中替代 [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) 方法，并将用户导航到你的应用中的页面。 [联系人卡片集成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)演示了执行该操作的一种方法。
 
@@ -209,9 +217,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 ```args.uri.scheme``` 属性包含操作名称，而 ```args.uri.Query``` 属性包含用户 ID。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

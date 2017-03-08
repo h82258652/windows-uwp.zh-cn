@@ -1,17 +1,24 @@
 ---
 author: Xansky
-Description: "基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍了可帮助应用公开辅助技术所需的基本信息的代码。"
+Description: "基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍可帮助应用公开辅助技术所需的基本信息的代码。"
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: "公开基本的辅助功能信息"
 label: Expose basic accessibility information
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 05fa9bb674839c255d8b63da04a018e397c84490
-ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 123776d100b0308248e6d715d8253b69f700f1d8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 公开基本的辅助功能信息  
+# <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
 
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
 
 <span id="accessible_name"/>
 <span id="ACCESSIBLE_NAME"/>
-## 辅助名称  
+## <a name="accessible-name"></a>辅助名称  
 辅助名称是屏幕阅读器用于述说 UI 元素的简短且具有描述性的文本字符串。 请为这样的 UI 元素设置辅助名称，以使其意义对于了解内容或与 UI 交互而言非常重要。 这类元素通常包括图像、输入域、按钮、控件和区域。
 
 下表描述了如何为 XAML UI 中各种类型的元素定义或获取辅助名称。
@@ -35,7 +42,7 @@ ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
 
 <span id="role_value"/>
 <span id="ROLE_VALUE"/>
-## 角色和值  
+## <a name="role-and-value"></a>角色和值  
 属于 XAML 词汇的控件和其他 UI 元素都实现了对于 UI 自动化的支持，可以在元素的定义中报告角色和值。 你可以使用 UI 自动化工具检查控件的角色和值信息，也可以读取每个控件的 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 实现文档。 UI 自动化框架中的可用角色在 [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 枚举中定义。 通过调用 UI 自动化框架使用控件的 **AutomationPeer** 公开的方法，UI 自动化客户端（例如，辅助技术）可以获取角色信息。
 
 并非所有的控件都有值。 有值的控件将通过该控件支持的对等和模式来向 UI 自动化报告此信息。 例如，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 窗体元素有值。 辅助技术可以是 UI 自动化客户端，而且既能发现值的存在，又能发现值是多少。 在此特定情况下，**TextBox** 通过 [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) 定义支持 [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) 模式。
@@ -46,14 +53,14 @@ ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
 <span id="Influencing_the_UI_Automation_tree_views"/>
 <span id="influencing_the_ui_automation_tree_views"/>
 <span id="INFLUENCING_THE_UI_AUTOMATION_TREE_VIEWS"/>
-## 影响 UI 自动化树视图  
+## <a name="influencing-the-ui-automation-tree-views"></a>影响 UI 自动化树视图  
 UI 自动化框架包含树视图概念，在这里 UI 自动化客户端可以使用以下三种可能的视图检索 UI 中元素之间的关系：原始视图、控件视图和内容视图。 控件视图是 UI 自动化客户端经常会使用的视图，因为它可以很好地表示和组织 UI 中的交互元素。 在测试工具显示元素的组织结构时，你通常可以选择使用哪种树视图。
 
 默认情况下，当 UI 自动化框架表示通用 Windows 平台 (UWP) 应用的 UI 时，控件视图中将会显示所有由 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 派生的类以及少量其他元素。 但有些时候，出于 UI 组合的原因，你可能不希望某个元素显示在控件视图中（因为该元素复制的信息或显示的信息对于辅助功能方案无足轻重）。 使用附加属性 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/Dn251788) 更改将元素公开给树视图的方式。 如果你将某个元素放置在 **Raw** 树中，则大多数辅助技术都不会将该元素报告为其视图的一部分。 若要查看此操作在现有控件中的工作原理的某些示例，请在文本编辑器中打开 generic.xaml 设计参考 XAML 文件，并在模板中搜索 **AutomationProperties.AccessibilityView**。
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
-## 根据内部文本命名  
+## <a name="name-from-inner-text"></a>根据内部文本命名  
 为了更便于将可见 UI 中已经存在的字符串用于辅助名称值，许多控件和其他 UI 元素都支持以下功能：基于元素中的内部文本或者内容属性的字符串值自动确定默认辅助名称。
 
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 和 **RichTextBlock** 各自将 **Text** 属性的值提升为默认的辅助名称。
@@ -64,7 +71,7 @@ UI 自动化框架包含树视图概念，在这里 UI 自动化客户端可以�
 
 <span id="images"/>
 <span id="IMAGES"/>
-## 图像的辅助名称
+## <a name="accessible-names-for-images"></a>图像的辅助名称
 为了支持屏幕阅读器并为 UI 中的每个元素提供基本的标识信息，你有时必须为非文本信息（如图像和图表，不包括纯装饰性或结构化元素）提供文本替换选项。 这些元素没有内部文本，因此辅助名称将不包含计算的值。 可以通过设置 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 附加属性（如下面的示例中所示）来直接设置辅助名称。
 
 XAML
@@ -85,7 +92,7 @@ XAML
 
 <span id="labels"/>
 <span id="LABELS"/>
-## 标签和 LabeledBy  
+## <a name="labels-and-labeledby"></a>标签和 LabeledBy  
 将标签与窗体元素相关联的首选方法是针对标签文本结合使用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 **x:Name**，然后将窗体元素上的 [**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 附加属性设置为按其 XAML 名称引用标签 **TextBlock**。 如果你使用此模式，当用户单击该标签时，焦点会移动到相关的控件上，辅助技术可以使用标签文本作为窗体字段的辅助名称。 以下示例显示此技术。
 
 XAML
@@ -108,7 +115,7 @@ XAML
 
 <span id="accessible_description"/>
 <span id="ACCESSIBLE_DESCRIPTION"/>
-## 辅助说明（可选）  
+## <a name="accessible-description-optional"></a>辅助说明（可选）  
 辅助说明提供了有关特定 UI 元素的其他辅助功能信息。 通常在仅有辅助名称不足以传递元素用途的情况下提供辅助说明。
 
 仅当用户通过按 CapsLock + F 请求有关某个元素的更多信息时，讲述人屏幕阅读器才会读取该元素的辅助说明。
@@ -118,7 +125,7 @@ XAML
 <span id="Testing_accessibility_early_and_often"/>
 <span id="testing_accessibility_early_and_often"/>
 <span id="TESTING_ACCESSIBILITY_EARLY_AND_OFTEN"/>
-## 提前并经常测试辅助功能  
+## <a name="testing-accessibility-early-and-often"></a>提前并经常测试辅助功能  
 最后，支持屏幕阅读器的最佳方法是自己使用屏幕阅读器测试应用。 这将说明屏幕阅读器的行为方式以及应用中可能缺少辅助功能的基本信息。 然后，可以相应调整 UI 或 UI 自动化属性值。 有关详细信息，请参阅[辅助功能测试](accessibility-testing.md)。
 
 可用于测试辅助功能的工具之一是 **AccScope**。 **AccScope** 工具十分有用，因为你可以查看 UI 的视觉表示，它们将会呈现辅助技术如何将你的应用视为自动化树。 特别要说明的是，其中提供了讲述人模式，你可以通过它来了解讲述人如何从你的应用中获取文本以及如何组织 UI 中的元素。 还设计了 AccScope，以供在整个应用开发周期中有效地使用，甚至在初步设计阶段也不例外。 有关详细信息，请参阅 [AccScope](https://msdn.microsoft.com/library/windows/desktop/Dn433239)。
@@ -126,26 +133,21 @@ XAML
 <span id="Accessible_names_from_dynamic_data"/>
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
-## 动态数据中的辅助名称  
+## <a name="accessible-names-from-dynamic-data"></a>动态数据中的辅助名称  
 Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)中的“方案 4”。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
-## 辅助名称和本地化  
+## <a name="accessible-names-and-localization"></a>辅助名称和本地化  
 为了确保辅助名称同时还是已本地化的元素，应当使用正确的技术将可本地化字符串作为资源进行存储，然后引用具有 [x:Uid 指令](https://msdn.microsoft.com/library/windows/apps/Mt204791)值的资源连接。 如果辅助名称来自显式设置的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 用法，请确保该用法中的字符串同样本地化。
 
 请注意，附加属性（如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 属性）对资源名称使用特定的限定语法，以便资源在应用到特定元素时引用该附加属性。 例如，应用到名为 `MediumButton` 的 UI 元素 时，[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 的资源名称为 `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
 
 <span id="related_topics"/>
-## 相关主题  
+## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能测试](accessibility-testing.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

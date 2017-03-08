@@ -1,21 +1,28 @@
 ---
 author: Xansky
-Description: "介绍了有关在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用的要求。"
+Description: "介绍在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用应满足的要求。"
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: "应用商店中的辅助功能"
 label: Accessibility in the Store
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
-ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d3a2ce095b4250f5bdc1fdac8b1646184bc3e1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 应用商店中的辅助功能  
+# <a name="accessibility-in-the-store"></a>应用商店中的辅助功能  
 
 
 
-介绍要在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用需满足的要求。
+介绍在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用应满足的要求。
 
 将你的应用提交至 Windows 应用商店进行认证时，可以将你的应用声明为辅助应用。 将你的应用声明为辅助应用，这样可使关注辅助应用的用户（如视力受损的用户）更轻松地发现该应用。 用户在搜索 Windows 应用商店时使用**辅助**筛选器发现辅助应用。 将你的应用声明为辅助应用还可以将**“辅助”**标记添加到应用的说明中。
 
@@ -42,11 +49,6 @@ ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
 请参阅[辅助功能清单](accessibility-checklist.md)，以查看这些过程以及有助于实现辅助功能的资源的链接。
 
 <span id="related_topics"/>
-## 相关主题    
+## <a name="related-topics"></a>相关主题    
 * [辅助功能](accessibility.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

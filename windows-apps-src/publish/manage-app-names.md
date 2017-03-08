@@ -3,18 +3,25 @@ author: jnHs
 Description: "查看为应用保留的名称、保留其他名称（用于其他语言或者更改应用名），并删除不再需要的已保留名称。"
 title: "管理应用名称"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
-ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b34723eb6d336eeacb7437a926cae7f1d3ca871
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 管理应用名称
+# <a name="manage-app-names"></a>管理应用名称
 
 
 查看为应用保留的所有名称、保留其他名称（用于其他语言或者更改应用名），并删除不需要的名称。 若要执行此操作，请转到 Windows 开发人员中心仪表板中任意应用的“应用管理”****部分中的“管理应用名称”****页。
 
-## 为你的应用保留其他名称
+## <a name="reserve-additional-names-for-your-app"></a>为你的应用保留其他名称
 
 可以保留多个应用名称以用于同一应用。 如果你以多种语言提供应用，而且要为不同的语言使用不同的名称，则该选项特别有用。 也可以使用它来更改你尚未发布的应用的名称。
 
@@ -24,15 +31,15 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 如果需要，你可以继续在此处保留其他应用名称。
 
-## 删除应用名称
+## <a name="delete-app-names"></a>删除应用名称
 
 如果你不再希望使用以前保留的名称，则可以通过在此处删除来释放它。 在执行此操作之前，请确保你确定要执行此操作，因为这意味着该名称将立即变为可供别人保留和使用的名称。
 
-若要删除应用的保留名称之一，请找到你不再希望使用的名称，然后单击“删除”****。 在确认对话框中，再次单击“删除”****以确认。
+若要删除应用的保留名称之一，请找到你不再希望使用的名称，然后单击**删除**。 在确认对话框中，再次单击**删除**以确认。
 
 请注意，你的应用需要至少具有一个保留名称。 若要从仪表板完全删除应用（这也会释放你已为该应用保留的所有内容），可以从其“概述”****页面单击“删除此应用”****。
 
-## 重命名已发布的应用
+## <a name="rename-an-app-that-has-already-been-published"></a>重命名已发布的应用
 
 如果你的应用已经在 Windows 应用商店中，而且你要重命名它，则可以通过为它保留一个新名称（通过按照上述步骤操作）执行此操作，然后创建用于该应用的新提交。 请注意，你将需要更新你的程序包来包含新名称，才能使应用商店在新名称下显示该应用。 请确保在应用清单的 [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 元素中使用新名称，并更新包含应用名称的任何图形或文本。 如果你在该元素中的任何位置提起它，则还要查看应用提要并更改名称。
 
@@ -44,10 +51,5 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

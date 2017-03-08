@@ -5,9 +5,16 @@ title: "通知可视化工具"
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f7269e3fde1f5dbca278b2b9047b392049ee452c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="notifications-visualizer"></a>通知可视化工具
@@ -56,8 +63,3 @@ ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
 * [自适应磁贴模板：架构和文档](tiles-and-notifications-adaptive-tiles-schema.md)
 * [磁贴和 Toast（MSDN 博客）](http://blogs.msdn.com/b/tiles_and_toasts/)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

@@ -2,9 +2,17 @@
 author: TylerMSFT
 title: "创建和注册进程内后台任务"
 description: "创建和注册在前台应用所在的同一进程中运行的进程内任务。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 translationtype: Human Translation
-ms.sourcegitcommit: b9acb35645ee4f069f2ddb999865c3fd087fb792
-ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1955f4981f09c2632fe2236ebd6a772e7b0ed8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 
 本主题演示了如何创建和注册在你的应用所在的同一进程中运行的后台任务。
 
-与进程外后台任务相比，进程内后台任务更易于实现。 但是，它们不够灵活。 如果在进程内后台任务中运行的代码崩溃，这将降低你的应用的性能。 另请注意，[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask** 无法与进程内模型一起使用。 也无法在你的应用程序内激活 VoIP 后台任务。 这些触发器和任务仍支持使用进程外后台任务模型。
+与进程外后台任务相比，进程内后台任务更易于实现。 但是，它们不够灵活。 如果在进程内后台任务中运行的代码崩溃，这将降低你的应用的性能。 另请注意，[DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask** 无法与进程内模型一起使用。 也无法在你的应用程序内激活 VoIP 后台任务。 这些触发器和任务仍支持使用进程外后台任务模型。
 
 请注意，如果后台活动的运行时间超过执行时间限制，即使在应用的前台进程内运行，后台活动也会终止。 出于某些目的，复原将工作分离到可在单独进程中运行的后台任务仍然有用。 对于不需要与前台应用程序通信的工作，最好是使后台任务作为独立于前台应用程序的任务工作。
 
@@ -107,9 +115,4 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 **后台任务 API 引用**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

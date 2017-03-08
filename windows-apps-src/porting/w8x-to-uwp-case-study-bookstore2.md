@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "此案例研究（基于 Bookstore1 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 SemanticZoom 控件中显示分组数据。"
 title: "Windows 运行时 8.x 到 UWP 案例研究：Bookstore2"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 34762d74ba34ed3c5cee4da4809c2c509f3932e9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 401ab153ec737a0a82825dc3b2065156b50d4589
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 34762d74ba34ed3c5cee4da4809c2c509f3932e9
 
 此案例研究（基于 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件中显示分组数据。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **SemanticZoom** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的步骤。
 
-**注意** 在 Visual Studio 中打开 Bookstore2Universal\_10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中的步骤进行操作。
+**注意**   在 Visual Studio 中打开 Bookstore2Universal\_10 时，如果看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中的步骤进行操作。
 
 ## <a name="downloads"></a>下载
 
@@ -54,7 +61,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 **从“共享项目”中**
 
--   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击“包括在项目中”。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹、每个副本时，请在“解决方案资源管理器”中单击“刷新”，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
+-   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击**包括在项目中**。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹、每个副本时，请在**解决方案资源管理器**中单击**刷新**，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
@@ -81,7 +88,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 [SemanticZoom 更改](w8x-to-uwp-porting-xaml-and-ui.md)部分中描述了 Windows 10 中对 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件的设计更改。 在此部分中，我们无需为响应这些更改而进行任何工作。
 
-[GridView/ListView 设计更改](w8x-to-uwp-porting-xaml-and-ui.md)部分中描述了对 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的更改。 为了适应这些更改，我们需要进行一些非常微小的调整，如下所述。
+[GridView/ListView](w8x-to-uwp-porting-xaml-and-ui.md) 设计更改部分中描述了对 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的更改。 为了适应这些更改，我们需要进行一些非常微小的调整，如下所述。
 
 -   在 SeZoUC.xaml 中，在 `ZoomedInItemsPanelTemplate` 中设置 `Orientation="Horizontal"` 和 `GroupPadding="0,0,0,20"`。
 -   在 SeZoUC.xaml 中，从缩小视图中删除 `ZoomedOutItemsPanelTemplate` 并移除 `ItemsPanel` 属性。
@@ -171,9 +178,4 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 在此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 和上一个案例研究一样，此特定视图模型不需要进行任何工作，我们的主要工作集中在重构用户界面。 某些更改是将两个项目组合为一个项目同时仍然支持许多外形规格（事实上，比我们以前所能支持的多很多）的必然结果。 一些更改与对平台进行的更改有关。
 
 下一个案例研究是 [QuizGame](w8x-to-uwp-case-study-quizgame.md)，我们将从中了解有关访问和显示分组数据的信息。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

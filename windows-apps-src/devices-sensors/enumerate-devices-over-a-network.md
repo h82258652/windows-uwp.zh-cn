@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: "通过网络枚举设备"
 description: "除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
-ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70362ebd77f62aea3bba694b9f6592771d4ad273
+ms.lasthandoff: 02/07/2017
 
 ---
-# 通过网络枚举设备
+# <a name="enumerate-devices-over-a-network"></a>通过网络枚举设备
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 除了发现本地连接的设备以外，还可以使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 通过无线和网络协议来枚举设备。
 
-## 通过网络或无线协议枚举设备
+## <a name="enumerating-devices-over-networked-or-wireless-protocols"></a>通过网络或无线协议枚举设备
 
 有时你需要枚举未进行本地连接而且只有通过无线或网络协议才能发现的设备。 为此，[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 拥有三个不同种类的设备对象：**AssociationEndpoint** (AEP)、**AssociationEndpointContainer**（AEP 容器）和 **AssociationEndpointService**（AEP 服务）。 它们统称为 AEP 或 AEP 对象。
 
@@ -45,7 +52,7 @@ ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
 
  
 
-## AQS 示例
+## <a name="aqs-examples"></a>AQS 示例
 
 每个 AEP 种类都具有一个可用于将枚举限制到特定协议的属性。 请记住，在 AQS 筛选器中，你可以使用 OR 操作符来合并多个协议。 下面是一些说明如何查询 AEP 设备的 AQS 筛选器字符串示例。
 
@@ -58,7 +65,7 @@ System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 此 AQS 会在 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpoint** 时查询所有 UPnP 和 WSD **AssociationEndpoint** 对象。
 
 ``` syntax
-System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR 
+System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
@@ -77,13 +84,4 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

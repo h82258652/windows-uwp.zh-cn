@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。"
 title: "XAML 和 .NET 中的 AdControl"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 广告, AdControl, XAML, .net, 演练"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -31,17 +38,17 @@ ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
 
 2.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
 
-    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    -   对于通用 Windows 平台 (UWP) 项目：展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft Advertising SDK**（版本 10.0）旁边的复选框。
 
-    -   对于 Windows 8.1 项目：展开“Windows 8.1”、单击“扩展”，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows 8.1 项目：展开 **Windows 8.1**、单击**扩展**，然后选中**适用于 Windows 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”、单击“扩展”，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows Phone 8.1 项目：展开**Windows Phone 8.1**、单击**扩展**，然后选中**适用于 Windows Phone 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
     > **注意**&nbsp;&nbsp; 此图像适用于生成 Windows 10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows 8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
 
-3.  在“引用管理器”中，单击“确定”。
+3.  在**引用管理器**中，单击“确定”。
 4.  修改你要在其中嵌入广告的页面的 XAML，以包含 **Microsoft.Advertising.WinRT.UI** 命名空间。 例如，在由 Visual Studio 生成的默认示例应用中（即，在应用 MyAdFundedWindows10AppXAML 中），XAML 页面是 **MainPage.XAML**。
 
   由 Visual Studio 生成的 MainPage.xaml 文件的**页面**部分具有以下代码。
@@ -79,7 +86,7 @@ ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
   </Page>
   ```
 
-5. 在“网格”标记中，为 **AdControl** 添加代码。 将**页面**中的 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 属性分配给[测试模式值](test-mode-values.md)中提供的测试值。 另外还要调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
+5. 在**网格**标记中，为 **AdControl** 添加代码。 将**页面**中的 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 属性分配给[测试模式值](test-mode-values.md)中提供的测试值。 另外还要调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
   > **注意**&nbsp;&nbsp;在提交应用之前，你需要将这些测试应用程序 ID 和广告单元 ID 值替换为实时值。
 
@@ -148,9 +155,4 @@ ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

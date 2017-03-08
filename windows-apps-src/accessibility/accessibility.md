@@ -5,13 +5,20 @@ ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: "辅助功能"
 label: Accessibility
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
-ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 辅助功能  
+# <a name="accessibility"></a>辅助功能  
 
 
 
@@ -39,11 +46,6 @@ ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 | [控件模式和接口](control-patterns-and-interfaces.md) | 列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。 |
 
 <span id="related_topics"/>
-## 相关主题  
+## <a name="related-topics"></a>相关主题  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

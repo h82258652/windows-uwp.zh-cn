@@ -3,25 +3,32 @@ author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: "AEP 服务类 ID"
 description: "关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
+ms.lasthandoff: 02/07/2017
 
 ---
-# AEP 服务类 ID
+# <a name="aep-service-class-ids"></a>AEP 服务类 ID
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+**重要的 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。 这些合约通过 **System.Devices.AepService.ServiceClassId** 属性标识。 本主题列出了几个众所周知的 AEP 服务类 ID。 AEP 服务类 ID 也可应用于具有客户类 ID 的协议。
 
 应用开发人员应使用基于这些类 ID 的高级查询语法 (AQS) 筛选器来将其查询限制于其打算使用的 AEP 服务。 这既会将查询限制于相关服务，又会显著提高设备的性能、电池寿命和服务质量。 例如，应用程序可以通过这些服务类 ID 将设备用作 Miracast 同步或 DLNA 苏自媒体呈现器 (DMR)。 有关其他设备和服务彼此如何交互的详细信息，请参阅[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。
 
-## 蓝牙和蓝牙 LE 服务
+## <a name="bluetooth-and-bluetooth-le-services"></a>蓝牙和蓝牙 LE 服务
 
 蓝牙服务属于蓝牙协议或蓝牙 LE 协议这两种协议之一。 这些协议的标识符是：
 
@@ -70,13 +77,13 @@ ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
 
 有关可用蓝牙服务的更完整列表，请参阅[此处](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](http://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API 获取一些常见的 GATT 服务。
 
-## 自定义蓝牙 LE 服务
+## <a name="custom-bluetooth-le-services"></a>自定义蓝牙 LE 服务
 
 自定义蓝牙 LE 服务使用以下协议标识符：{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
 自定义配置文件通过其各自定义的 GUID 来定义。 此自定义 GUID 应该用于 **System.Devices.AepService.ServiceClassId**。
 
-## UPnP 服务
+## <a name="upnp-services"></a>UPnP 服务
 
 UPnP 服务使用以下协议标识符：{0e261de4-12f0-46e6-91ba428607ccef64}
 
@@ -99,7 +106,7 @@ UPnP 服务使用以下协议标识符：{0e261de4-12f0-46e6-91ba428607ccef64}
 
  
 
-## WSD 服务
+## <a name="wsd-services"></a>WSD 服务
 
 WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971baedc551346b0}
 
@@ -112,25 +119,16 @@ WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971baedc551346b0}
 
  
 
-## AQS 示例
+## <a name="aqs-sample"></a>AQS 示例
 
 此 AQS 将对支持 DIAL 的所有 UPnP **AssociationEndpointService** 对象进行筛选。 在此情况下，[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpointService**。
 
 ``` syntax
-System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
+System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}"
 ```
 
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

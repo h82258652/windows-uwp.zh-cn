@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "处理 URI 激活"
 description: "了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
-ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 233044095bc8e994ef1a425ec7069fc7fdc93b86
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 处理 URI 激活
+# <a name="handle-uri-activation"></a>处理 URI 激活
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,9 +33,9 @@ ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
 
 这些步骤介绍了如何注册自定义 URI 方案名称 alsdk://，以及在用户启动 alsdk:// URI 时如何激活你的应用。
 
-> **注意** 在 UWP 应用中，保留某些 URI 和文件扩展以供内置应用和操作系统使用。 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取无法注册为 UWP 应用的 URI 方案（因为它们为保留或禁止的文件类型）的字母顺序列表。
+> **注意**  在 UWP 应用中，保留某些 URI 和文件扩展以供内置应用和操作系统使用。 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取无法注册为 UWP 应用的 URI 方案（因为它们为保留或禁止的文件类型）的字母顺序列表。
 
-## 步骤 1：指定程序包清单中的扩展点
+## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>步骤 1：指定程序包清单中的扩展点
 
 
 应用仅接收程序包清单中列出的 URI 方案名称的激活事件。 下面是指示应用处理 `alsdk` URI 方案名称的方式。
@@ -42,13 +49,13 @@ ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
 | **徽标** | 指定用于标识“控制面板”****的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
 | **显示名称** | 指定用于标识“控制面板”****的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的显示名称。 |
 | **名称** | 为 URI 方案选择名称。 |
-|  | **注意**“名称”必须全部为小写字母。 |
+|  | **注意**  “名称”必须全部为小写字母。 |
 |  | **保留和禁止的文件类型** 请参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取不能注册为 UWP 应用的 URI 方案（因为它们是保留或禁止的文件类型）的字母顺序列表。 |
 | **可执行文件** | 为该协议指定默认的启动可执行文件。 如果未指定，将使用应用的可执行文件。 如果已指定，字符串长度必须是 1 到 256 个字符、必须以“.exe”结尾，并且不能包含以下字符：&gt;、&lt;、:、"、&#124;、? 或 \*。 如果已指定，还将使用“入口点”****。 如果未指定“入口点”****，将使用为应用定义的入口点。 |
 | **入口点** | 指定用于处理协议扩展的任务。 这通常是 Windows 运行时类型的完全命名空间限定名称。 如果未指定，将使用应用的入口点。 |
 | **“开始”页面** | 处理扩展点的网页。 |
 | **资源组** | 可用于一起分组扩展激活以实现资源管理目的的标记。 |
-| “所需视图”****（仅适用于 Windows） | 指定“所需视图”****字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 “所需视图”****的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意** Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置“所需视图”****并不保证为目标应用设定具体的窗口化行为。<br/> **移动设备系列：所需视图**在移动设备系列上不受支持。 |
+| “所需视图”****（仅适用于 Windows） | 指定“所需视图”****字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 “所需视图”****的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意**  Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置“所需视图”****并不保证为目标应用设定具体的窗口化行为。<br/> **移动设备系列：所需视图**在移动设备系列上不受支持。 |
 2.  输入 `images\Icon.png` 作为“徽标”****。
 3.  输入 `SDK Sample URI Scheme` 作为“显示名称”****
 4.  输入 `alsdk` 作为“名称”****。
@@ -67,7 +74,7 @@ ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
           </Extensions>
     ```
 
-## 步骤 2：添加适当的图标
+## <a name="step-2-add-the-proper-icons"></a>步骤 2：添加适当的图标
 
 
 成为 URI 方案名称默认应用的应用在整个系统的多个位置中显示其图标，例如在“默认程序”控制面板中。
@@ -76,7 +83,7 @@ ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
 
 ![带有图像文件夹中的文件视图的解决方案资源管理器。 “icon.targetsize”和“smalltile-sdk”都有 16、32、48 和 256 像素版本](images/seviewofimages.png)
 
-## 步骤 3：处理激活的事件
+## <a name="step-3-handle-the-activated-event"></a>步骤 3：处理激活的事件
 
 
 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件处理程序接收所有激活事件。 **Kind** 属性指示激活事件的类型。 此示例设置为处理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 激活事件。
@@ -120,30 +127,30 @@ ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
 > }
 > ```
 
-> **注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
+> **注意**  通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
 
 建议应用为打开新页面的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。 确定针对启动和文件合约使用单个 XAML **Frame** 的应用在导航到新页面之前，应该清除 **Frame** 导航日志上的页面。
 
 通过协议激活启动后，应用应该考虑包括允许用户返回到应用顶部页面的 UI。
 
-## 备注
+## <a name="remarks"></a>备注
 
 
 任何应用或网站（包括恶意应用或网站）都可以使用你的 URI 方案名称。 因此，在 URI 中获得的任何数据都可能来自不受信任的来源。 建议千万不要基于在 URI 中接收的参数执行永久性操作。 例如，可以使用 URI 参数将应用启动到用户的帐户页面，但建议永远不要将其用于直接修改用户的帐户。
 
-> **注意** 如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。 这样会确保你的名称符合 URI 方案的标准。
+> **注意**  如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。 这样会确保你的名称符合 URI 方案的标准。
 
-> **注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
+> **注意**  通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
 
 我们建议应用为打开新 URI 目标的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。
 
 如果你确定希望你的应用针对启动和协议合约使用单个 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，在导航到新页面之前，应该清除 **Frame** 导航日志上的页面。 通过协议合约启动后，请考虑在应用中包括允许用户返回到应用顶部的 UI。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**  本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 **完整示例**
@@ -173,9 +180,4 @@ ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

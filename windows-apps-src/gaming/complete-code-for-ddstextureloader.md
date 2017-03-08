@@ -3,13 +3,20 @@ author: mtoepke
 title: "DDSTextureLoader 的完整代码"
 description: "从内存中加载 DDS 纹理的类和方法的完整代码。"
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, ddstextureloader"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7daf10ad577b2b67c6ca5554f6555deb89f16229
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DDSTextureLoader 的完整代码
+# <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader 的完整代码
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,27 +30,27 @@ ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
 -   [查看代码 (C++)](#view-the-code-c)
 
 
-## 下载位置
+## <a name="download-location"></a>下载位置
 
 
 此示例无法下载。
 
-## 技术
+## <a name="technologies"></a>技术
 
 **编程语言** - C++    
 **编程模型** - Windows 运行时
 
-## 要求
+## <a name="requirements"></a>要求
 
 **最低受支持的客户端** - Windows 10                               
 **最低受支持的服务器** - Windows Server 2016 Technical Preview
 
 
 
-## 查看代码 (C++)
+## <a name="view-the-code-c"></a>查看代码 (C++)
 
 
-## DDSTextureLoader.h
+## <a name="ddstextureloaderh"></a>DDSTextureLoader.h
 
 
 ```cpp
@@ -76,7 +83,7 @@ void CreateDDSTextureFromMemory(
     );
 ```
 
-## DDSTextureLoader.cpp
+## <a name="ddstextureloadercpp"></a>DDSTextureLoader.cpp
 
 
 ```cpp
@@ -1222,10 +1229,5 @@ void CreateDDSTextureFromMemory(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

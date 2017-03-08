@@ -2,19 +2,27 @@
 author: jwmsft
 title: "版本自适应代码"
 description: "了解如何在保持与以前版本的兼容性的同时利用新 API"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 translationtype: Human Translation
-ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
-ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f8d6c28daea2a3d5be67ad2b5da5a05a46f736cc
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 版本自适应代码：在保持与以前版本的兼容性的同时使用新 API
+# <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应代码：在保持与以前版本的兼容性的同时使用新 API
 
 每个 Windows 10 SDK 版本都添加你会想要利用的精彩的新功能。 然而，并非所有客户都会同时将其设备更新为最新版本的 Windows 10，因此你希望确保你的应用所适用的设备范围能够尽可能的广泛。 我们在此处显示如何设计应用，以便它不仅可以在较早版本的 Windows 10 上运行，还可以在应用运行在装有最新更新的设备上运行时利用新功能。
 
 若要确保你的应用支持最广泛的 Windows 10 设备，需采取 2 个步骤。 首先，配置要面向最新 API 的 Visual Studio 项目。 这将影响编译应用时发生的情况。 其次，执行运行时检查，以确保仅调用正在运行应用的设备上存在的 API。
 
-## 配置 Visual Studio 项目
+## <a name="configure-your-visual-studio-project"></a>配置 Visual Studio 项目
 
 支持多个 Windows 10 版本的第一步是在 Visual Studio 项目中指定*目标*和*最低*支持的操作系统/SDK 版本。
 - *目标*：Visual Studio 编译应用代码和运行所有工具所面向的 SDK 版本。 编译时，此 SDK 版本中的所有 API 和资源均可在你的应用代码中使用。
@@ -44,11 +52,11 @@ ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 
 可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
 
-## 编写自适应代码
+## <a name="write-adaptive-code"></a>编写自适应代码
 
 你可以考虑编写自适应代码，这与考虑如何[创建自适应 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 类似。 当你检测到自己的应用在较大的屏幕上运行时，你可以设计基本的 UI 以在最小的屏幕上运行，然后移动或添加元素。 借助自适应代码，可编写基础代码以在最低的操作系统版本上运行，并且可以在检测到应用运行所在的较高版本上提供新功能时，添加精心挑选的功能。
 
-### 运行时 API 检查
+### <a name="runtime-api-checks"></a>运行时 API 检查
 
 有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 这将允许你编写版本自适应代码，以便创建相关应用，它们使用仅在特定操作系统版本上提供的 API。
 
@@ -57,7 +65,7 @@ ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 > [!TIP]
 > 许多运行时 API 检查可能会影响你的应用的性能。 在这些示例中，我们将以内联形式演示检查。 在生产代码中，应执行检查一次并缓存结果，然后在整个应用中使用缓存的结果。 
 
-### 不受支持的方案
+### <a name="unsupported-scenarios"></a>不受支持的方案
 
 在大多数情况下，你可以将应用的最低版本设置为 SDK 版本 10240 并使用运行时检查，以便在应用运行在更高的版本上时启用任何新的 API。 但在某些情况下，必须提高应用的最低版本才能使用新功能。
 
@@ -65,7 +73,7 @@ ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 - 需要一项在较早版本中并未提供的功能的新 API。 必须将受支持的最低版本提高到包含该功能的版本。 有关详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。
 - 任何已添加到 generic.xaml 并且在早期版本中不可用的新资源键。 运行时所使用的 generic.xaml 版本由设备运行所在的操作系统版本确定。 无法使用运行时 API 检查来确定是否存在 XAML 资源。 因此，你只能使用应用支持的最低版本中提供的资源键，否则 [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) 将导致应用在运行时崩溃。
 
-### 自适应代码选项
+### <a name="adaptive-code-options"></a>自适应代码选项
 
 有两种方法创建自适应代码。 在大多数情况下，编写要在最低版本上运行的应用标记，然后通过应用代码来利用较新的操作系统功能（如果有）。 但是，如果你需要在视觉状态中更新某一属性，并且操作系统版本之间仅有一个属性或枚举值更改，则可以创建可扩展的状态触发器，该触发器根据是否存在 API 进行激活。
 
@@ -96,11 +104,11 @@ ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 - 必须使用 Setter 指定值更改，因此仅允许简单的更改。
 - 自定义状态触发器在设置和使用时相当繁琐。
 
-## 自适应代码示例
+## <a name="adaptive-code-examples"></a>自适应代码示例
 
 在本部分中，我们将显示多个使用 Windows 10 版本 1607 (Windows Insider Preview) 中新增 API 的自适应代码的示例。
 
-### 示例 1：新的枚举值
+### <a name="example-1-new-enum-value"></a>示例 1：新的枚举值
 
 Windows 10 版本 1607 向 [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) 枚举添加了一个新值：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
 
@@ -183,7 +191,7 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 如果要在不检查的情况下在 XAML 或代码中使用 ChatWithoutEmoji 值，它将编译且不会出现错误，因为它存在于目标操作系统版本中。 它还将在具有目标操作系统版本的系统上运行且不会出现错误。 但是，当应用在使用最低操作系统版本的系统上运行时，它将在运行时崩溃，因为 ChatWithoutEmoji 枚举值不存在。 因此，你只能在代码中使用此值，并将其封装在运行时 API 检查中，以便它仅在当前系统上受支持时才调用。
 
-### 示例 2：新控件
+### <a name="example-2-new-control"></a>示例 2：新控件
 
 新的 Windows 版本通常会将新控件引入到 UWP API 图面，进而为平台引入新功能。 若要利用存在的新控件，请使用 [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法。
 
@@ -326,13 +334,13 @@ public MainPage()
 > [!IMPORTANT]
 > 请记住，此检查仅将 `mediaControl` 对象设置为 `MediaPlayerUserControl` 或 `MediaElementUserControl`。 要求在代码中需确定是使用 MediaPlayerElement API 还是使用 MediaElement API 的任何其他位置执行这些条件检查。 应执行检查一次并缓存结果，然后在整个应用中使用缓存的结果。
 
-## 状态触发器示例
+## <a name="state-trigger-examples"></a>状态触发器示例
 
 借助可扩展状态触发器，你可以结合使用标记和代码来基于检查代码的条件触发视觉状态更改；在此情况下，基于是否存在特定 API。 对于常见自适应代码方案，因涉及到开销以及仅限视觉状态而不推荐状态触发器。 
 
 应仅当不同操作系统版本之间的较小 UI 更改不影响其余 UI （例如控件上的属性或枚举值更改）时，才将状态触发器用于自适应代码。
 
-### 示例 1：新属性
+### <a name="example-1-new-property"></a>示例 1：新属性
 
 设置可扩展状态触发器的第一步是子类化 [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) 类来创建自定义触发器，该触发器将基于是否存在 API 来激活。 此示例演示了在存在属性与 XAML 中设置的 `_isPresent` 变量匹配时激活的触发器。
 
@@ -400,7 +408,7 @@ Windows 10 版本 1607 在 [FrameworkElement](https://msdn.microsoft.com/library
 </Grid>
 ```
 
-### 示例 2：新的枚举值
+### <a name="example-2-new-enum-value"></a>示例 2：新的枚举值
 
 此示例演示了如何基于是否存在某个值设置不同的枚举值。 它使用自定义状态触发器来实现与之前的 chat 示例相同的效果。 在此示例中，使用新的 ChatWithoutEmoji 输入范围（如果设备运行的是 Windows 10 版本 1607），否则使用 **Chat** 输入范围。 使用此触发器的视觉状态可采用 *if-else* 样式进行设置，其中输入范围基于是否存在新的枚举值进行选择。
 
@@ -471,13 +479,8 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [UWP 应用指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

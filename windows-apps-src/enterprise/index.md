@@ -3,16 +3,23 @@ ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: "此路线图提供适用于 Windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。"
 title: "企业"
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8f4b9e7b1b30beb8974a17af77e4d7138bd8f829
-ms.openlocfilehash: 75a7723fb8934a59d44da2f075184dd6bbd85d45
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ffbccf88cd00331b622c158a7e46773ae62197e2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 企业
+# <a name="enterprise"></a>企业
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。 Windows 10 可使你编写一次即可在所有设备上部署，创建可适应任何设备的单个应用。 这使你可以在对组织所需的安全性、管理和配置提供控制的同时，打造用户期望的出色体验。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 75a7723fb8934a59d44da2f075184dd6bbd85d45
 
  
 
-## 安全
+## <a name="security"></a>安全
 
 
 Windows 10 为应用开发人员提供一套用于保护用户身份、公司网络安全和存储在设备上的任何业务数据的功能。 Windows 10 的新增功能是 Microsoft Passport，它是一种易于部署的双重密码替代项，可通过使用 PIN 或 Windows Hello 访问，提供企业级安全并支持基于指纹、面部和虹膜的识别。
@@ -34,7 +41,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
  
 
-## 数据绑定和数据库
+## <a name="data-binding-and-databases"></a>数据绑定和数据库
 
 
 数据绑定是你的应用 UI 用于从外部源（如数据库）显示数据以及与该数据保持同步（可选）的一种方法。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
@@ -47,7 +54,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
  
 
-## 网络和数据序列化
+## <a name="networking-and-data-serialization"></a>网络和数据序列化
 
 
 业务线应用经常需要与各种其他系统上的数据通信或存储它们。 这通常通过以下方式实现：连接到网络服务（使用 REST 或 SOAP 等协议），然后将数据序列化或反序列化为通用格式。 在 UWP 应用中使用网络和数据序列化类似于 WPF、WinForms 和 ASP.NET 应用程序。 有关详细信息，请参阅以下文章。
@@ -61,7 +68,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
  
 
-## 设备
+## <a name="devices"></a>设备
 
 
 为了与业务线工具（如打印机、条形码扫描仪或智能卡读卡器）集成，你可能会发现有必要将外部设备或传感器集成到应用中。 下面是一些功能示例，你可以使用本节所述技术将其添加到你的应用中。
@@ -75,7 +82,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
  
 
-## 设备定位
+## <a name="device-targeting"></a>设备定位
 
 
 如今许多用户携带自己的手机或平板电脑上班，这些设备的外形规格和屏幕大小各异。 使用通用 Windows 平台 (UWP)，你可以编写可在所有不同类型的设备上无缝运行的单个业务线应用，这些设备包括桌面电脑和 PPI 屏幕，从而允许你最大程度地扩大应用的受众和提高代码效率。
@@ -87,7 +94,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
  
 
-## 部署
+## <a name="deployment"></a>部署
 
 
 你可以选择将应用分配给组织的用户。 你可以使用适用于企业的 Windows 应用商店、现有移动设备管理，或者可以将应用旁加载到设备。 你还可以通过发布到 Windows 应用商店向公众提供你的应用。
@@ -100,7 +107,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
  
 
-## 模式和实践
+## <a name="patterns-and-practices"></a>模式和实践
 
 
 大规模的企业级应用的基本代码可能变得不实用。 Prism 是用于在 WPF、Windows 10 UWP 和 Xamarin Forms 中生成松散耦合、可维护且可测试的 XAML 应用程序的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
@@ -110,9 +117,4 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
  
 
  
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

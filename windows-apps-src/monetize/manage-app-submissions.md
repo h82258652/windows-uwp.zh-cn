@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "在 Windows 应用商店提交 API 中使用这些方法，来管理已注册到 Windows 开发人员中心帐户的应用提交。"
 title: "使用 Windows 应用商店提交 API 管理应用提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 21a421b057a55120865c01cc3dffb80318ab38ed
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
 
 Windows 应用商店提交 API 提供可用于管理应用提交的方法，包括逐步软件包推出。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
+
+>**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建应用提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将不再能够使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-app-submissions" />
 ## <a name="methods-for-managing-app-submissions"></a>管理应用提交的方法
 
-使用以下方法获取、创建、更新、提交或删除应用提交。
+使用以下方法获取、创建、更新、提交或删除应用提交。 在使用这些方法之前，应用必须已存在于你的开发人员中心帐户中，并且你必须先在仪表板中创建此应用的提交。 有关详细信息，请参阅[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
 <table>
 <colgroup>
@@ -30,7 +39,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -146,6 +155,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 * [Java 代码示例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 代码示例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注意**&nbsp;&nbsp;除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
+
 <span id="manage-gradual-package-rollout">
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>管理逐步软件包推出的方法
 
@@ -212,7 +223,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -330,7 +342,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 | enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔值   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
 | allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
-| friendlyName           |   字符串  |  用于显示的应用友好名称。       |  
+| friendlyName           |   字符串  |  提交的友好名称，如开发人员中心仪表板中所示。 当你创建提交时，系统会为你生成此值。       |  
 
 
 <span id="listing-object" />
@@ -353,8 +365,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 |  copyrightAndTrademarkInfo                |   字符串      |  可选的[版权和/或商标信息](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
 |  keywords                |  数组       |  [关键字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)数组，用于帮助应用出现在搜索结果中。    |
 |  licenseTerms                |    字符串     | 可选的应用[许可条款](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms)。     |
-|  privacyPolicy                |   字符串      |   应用的[隐私策略](https://msdn.microsoft.com/windows/uwp/publish/privacy-policy)的 URL。    |
-|  supportContact                |   字符串      |  应用的[支持人员联系信息](https://msdn.microsoft.com/windows/uwp/publish/support-contact-info)的 URL 或电子邮件地址。     |
+|  privacyPolicy                |   字符串      |   应用的[隐私策略](../publish/create-app-store-listings.md#privacy-policy)的 URL。    |
+|  supportContact                |   字符串      |  应用的[支持人员联系信息](../publish/create-app-store-listings.md#support-contact-info)的 URL 或电子邮件地址。     |
 |  websiteUrl                |   字符串      |  应用的[网页](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website) URL。    |    
 |  description               |    字符串     |   应用一览的[说明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)。   |     
 |  features               |    数组     |  一个最多 20 个字符串的数组，用于列出应用的[功能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)。     |
@@ -387,7 +399,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 |  trialPeriod               |    字符串     |  一个指定应用试用期的字符串。 这可以是以下值之一： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。      |     
 |  sales               |   数组      |  **已弃用**。 包含应用销售信息的[销售资源](#sale-object)数组。   |     
-|  priceId               |   字符串      |  用于指定应用[基价](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[价格段](#price-tiers)。   |
+|  priceId               |   字符串      |  用于指定应用[基价](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[价格段](#price-tiers)。   |     
+|  isAdvancedPricingModel               |   布尔型      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
 
 <span id="sale-object" />
@@ -547,14 +560,14 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 <span id="price-tiers" />
 ### <a name="price-tiers"></a>价格段
 
-以下值表示应用提交的可用价格段。
+以下值表示应用提交的[定价资源](#pricing-object)中可用的价格段。
 
-| 值           | 说明        |
+| 值           | 描述        |
 |-----------------|------|
 |  Base               |   未设置价格段；使用应用的基价。      |     
 |  NotAvailable              |   应用在特定区域中不可用。    |     
 |  Free              |   应用是免费的。    |    
-|  Tier2 到 Tier194               |   Tier2 表示 0.99 美元价格段。 每个附加价格段表示附加增量（1.29 美元、1.49 美元、1.99 美元等）。    |
+|  Tier*xxx*               |   一个字符串，用于为应用指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>要查看可用于你的开发人员帐户的完整价格段表（包括与每个价格段关联的特定于市场的价格），请在开发人员中心仪表板中前往你的任意应用提交的**定价和可用性**页面，然后单击**市场与自定义价格**部分中的**查看表格**链接（对于某些开发人员帐户，此链接位于**定价**部分中）。    |
 
 
 <span id="enterprise-licensing" />
@@ -598,9 +611,4 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 应用商店提交 API 获取应用数据](get-app-data.md)
 * [开发人员中心仪表板中的应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

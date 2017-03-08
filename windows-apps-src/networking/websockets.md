@@ -3,15 +3,22 @@ author: DelfCo
 description: "WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信。"
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ff2429e1e9ea56c414978c126497551b1e1864b8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# WebSockets
+# <a name="websockets"></a>WebSockets
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -36,7 +43,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 若要加密 WebSocket 连接，请使用 wss: URI 方案，例如 `wss://www.contoso.com/mywebservice`。
 
-## 使用 MessageWebSocket
+## <a name="using-messagewebsocket"></a>使用 MessageWebSocket
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 允许由每个读取操作读取消息的各部分。 **MessageWebSocket** 通常在消息不是非常大的应用场景中使用。 UTF-8 和二进制文件均受支持。
 
@@ -114,7 +121,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 在初始化 WebSocket 连接后，你的代码必须执行以下活动才能正常发送和接收数据。
 
-### 为 MessageWebSocket.MessageReceived 事件实现回调
+### <a name="implement-a-callback-for-the-messagewebsocketmessagereceived-event"></a>为 MessageWebSocket.MessageReceived 事件实现回调
 
 在使用 WebSocket 建立连接和发送数据前，你的应用需要先注册事件回调，然后才能在接收数据后收到通知。 当发生 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) 事件时， 会调用所注册的回调并接收来自 [**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) 的数据。 此示例编写时假定当前发送的消息采用的是 UTF-8 格式。
 
@@ -145,7 +152,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 >}
 >```
 
-###  为 MessageWebSocket.Closed 事件实现回调
+###  <a name="implement-a-callback-for-the-messagewebsocketclosed-event"></a>为 MessageWebSocket.Closed 事件实现回调
 
 在使用 WebSocket 建立连接和发送数据前，你的应用需要先注册事件回调，然后才能在 WebSocket 被 WebSocket 服务器关闭时收到 通知。 当发生 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) 事件时， 将调用已注册的回调，以指示连接已被 WebSocket 服务器关闭。
 
@@ -172,11 +179,11 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 >}
 >```
 
-###  通过 WebSocket 发送消息
+###  <a name="send-a-message-on-a-websocket"></a>通过 WebSocket 发送消息
 
 在建立连接后，WebSocket 客户端可以将数据发送到该服务器。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) 方法将返回 一个映射到无符号整数的参数。 与建立连接的任务相比，这将更改我们定义发送消息的任务的方式。
 
-**注意** 当你使用 MessageWebSocket 的 OutputStream 创建新的 DataWriter 对象时，DataWriter 将获取 OutputStream 的所有权，并且将在 DataWriter 超出范围时收回 Outputstream。 这会导致使用 OutputStream 的任何后续尝试失败，并显示 HRESULT 值 0x80000013。 若要避免收回 OutputStream，则可通过此代码调用 DataWriter 的 DetachStream 方法， 从而返回 WebSocket 对象的流的所有权。
+**注意**   当你使用 MessageWebSocket 的 OutputStream 创建新的 DataWriter 对象时，DataWriter 将获取 OutputStream 的所有权，并且将在 DataWriter 超出范围时收回 Outputstream。 这会导致使用 OutputStream 的任何后续尝试失败，并显示 HRESULT 值 0x80000013。 若要避免收回 OutputStream，则可通过此代码调用 DataWriter 的 DetachStream 方法， 从而返回 WebSocket 对象的流的所有权。
 
 以下函数将给定的字符串发送到连接的 WebSocket，并在调试程序输出窗口中打印验证消息。
 
@@ -224,7 +231,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 >}
 >```
 
-## 将高级控件与 WebSocket 结合使用
+## <a name="using-advanced-controls-with-websockets"></a>将高级控件与 WebSocket 结合使用
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 类在使用高级控件时均遵循相同的模型。 与上述主类对应的是访问高级控件的相关类。
 
@@ -241,7 +248,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 -   对于 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上的所有高级控件，应用都必须始终在发出连接操作之前设置属性。 基于此要求，最佳做法是在创建 **StreamWebSocket** 对象后立即设置所有控件属性。 请勿在 [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) 方法调用后尝试设置控件属性。
 -   对于 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 上的所有高级控件（消息类型除外），必须在发出连接操作之前设置属性。 最佳做法是在创建 **MessageWebSocket** 对象后立即设置所有控件属性。 请勿在调用 [**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) 后尝试更改控件属性，消息类型除外。
 
-## WebSocket 信息类
+## <a name="websocket-information-classes"></a>WebSocket 信息类
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 都具有相应的类，用于提供有关 WebSocket 实例的其他信息。
 
@@ -251,13 +258,13 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 请注意，这两个信息类上的所有属性均为只读形式，并且你能够在 Web 套接字对象的生存期内随时检索当前信息。
 
-## 处理网络异常
+## <a name="handling-network-exceptions"></a>处理网络异常
 
 在进行 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作时发生的错误将以 **HRESULT** 值的形式返回。 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法用于将来自 WebSocket 操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
+对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
 
-## 对 WebSocket 操作设置超时
+## <a name="setting-timeouts-on-websocket-operations"></a>对 WebSocket 操作设置超时
 
 MessageWebSocket 和 StreamWebSocket 类使用内部系统服务，发送 WebSocket 客户端请求并从服务器接收响应。 WebSocket 连接操作使用的 默认超时值为 60 秒。 如果支持 WebSocket 的 HTTP 服务器临时关闭 或因网络中断而被阻止，且服务器不对或无法对 WebSocket 连接请求做出响应，则内部系统 服务将先等待默认 60 秒，然后返回一个错误，这将导致在 WebSocket ConnectAsync 方法上引发异常。 如果对 URI 中 HTTP 服务器名称进行名称查询时返回该名称的多个 IP 地址，则 内部系统将为该站点尝试最多 5 个 IP 地址，并且在每次尝试失败前都默认超时 60 秒。 在返回 错误和引发异常之前，发出 WebSock 连接请求的应用可能为尝试连接到多个 IP 地址而等待几分钟。 此行为可能会使用户以为应用已停止工作。 建立 WebSocket 连接后，用于发送和接收操作的 默认超时为 30 秒。
 
@@ -341,10 +348,5 @@ MessageWebSocket 和 StreamWebSocket 类使用内部系统服务，发送 WebSoc
         });
     }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

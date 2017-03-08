@@ -3,16 +3,23 @@ title: "数据保护"
 description: "本文介绍了如何在 UWP 应用中使用 Windows.Security.Cryptography.DataProtection 命名空间中的 DataProtectionProvider 类加密和解密数字数据。"
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b023cdc0671195f7c32d2e65568d5f947ecf4144
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 数据保护
+# <a name="data-protection"></a>数据保护
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍了如何在 UWP 应用中使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类加密和解密数字数据。
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
 
 为保护数据，在创建 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 对象时，必须在调用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 或 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 之前指定保护描述符。 以下示例显示了可能的示例保护描述符。
 
-## 保护静态数据
+## <a name="protecting-static-data"></a>保护静态数据
 
 
 以下示例说明了如何使用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 和 [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) 方法以非对称方式针对当前用户的 SID 保护静态数据。
@@ -110,7 +117,7 @@ namespace SampleProtectAsync
 }
 ```
 
-## 保护流数据
+## <a name="protecting-stream-data"></a>保护流数据
 
 
 以下示例显示了如何使用 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 和 [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) 方法以异步方式针对当前用户的 SID 保护流数据。
@@ -262,8 +269,3 @@ namespace SampleProtectStreamAsync
     }
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

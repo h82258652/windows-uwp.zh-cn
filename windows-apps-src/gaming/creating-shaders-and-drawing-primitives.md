@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "创建着色器和绘制基元"
-description: "在此处，我们将向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在显示器上绘制基元。"
+description: "我们将在此向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在屏幕上绘制基元。"
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 着色器, 基元, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 创建着色器和绘制基元
+# <a name="create-shaders-and-drawing-primitives"></a>创建着色器和绘制基元
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,7 +27,7 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **目标：**创建着色器并绘制基元。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
@@ -29,9 +36,9 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **完成所需时间：**20 分钟。
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 1. 编译 HLSL 源文件
+### <a name="1-compiling-hlsl-source-files"></a>1. 编译 HLSL 源文件
 
 Microsoft Visual Studio 使用 [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL 代码编译器将 .hlsl 源文件（SimpleVertexShader.hlsl 和 SimplePixelShader.hlsl）编译为 .cso 二进制着色器对象文件（SimpleVertexShader.cso 和 SimplePixelShader.cso）。 有关 HLSL 代码编译器的详细信息，请参阅效果编译器工具。 有关编译着色器代码的详细信息，请参阅[编译着色器](https://msdn.microsoft.com/library/windows/desktop/bb509633)。
 
@@ -74,11 +81,11 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. 从磁盘读取数据
+### <a name="2-reading-data-from-disk"></a>2. 从磁盘读取数据
 
 我们使用 DirectX 11 应用（通用 Windows）模板中的 DirectXHelper.h DX::ReadDataAsync 函数以异步方式从磁盘上的文件中读取数据。
 
-### 3. 创建顶点着色器和像素着色器
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. 创建顶点着色器和像素着色器
 
 从 SimpleVertexShader.cso 文件读取数据，并将该数据分配给 *vertexShaderBytecode* 字节数组。 使用字节数组调用 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 来创建顶点着色器 ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641))。 在 SimpleVertexShader.hlsl 源中将顶点深度值设置为 0.5，以保证绘制出三角形。 填充 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 结构数组来描述顶点着色器代码的布局，然后调用 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 来创建布局。 该数组仅有一个定义顶点位置的布局元素。 从 SimplePixelShader.cso 文件读取数据，并将该数据分配给 *pixelShaderBytecode* 字节数组。 使用字节数组调用 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) 来创建像素着色器 ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576))。 在 SimplePixelShader.hlsl 源中将像素值设置为 (1,1,1,1)，使三角形变为黄色。 你可以通过更改此值来更改颜色。
 
@@ -197,7 +204,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 使用顶点着色器和像素着色器、顶点着色器布局以及顶点缓冲区和索引缓冲区来缓制一个黄色三角形。
 
-### 4. 绘制三角形并显示呈现的图像
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. 绘制三角形并显示呈现的图像
 
 我们将进入一个不断呈现和显示场景的无限循环。 调用 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 以将呈现器目标指定为输出目标。 调用 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388)，通过 { 0.071f, 0.04f, 0.561f, 1.0f } 将呈现器目标清空为纯蓝色。
 
@@ -277,7 +284,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
                 );
 ```
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 
 我们已使用顶点着色器和像素着色器创建并绘制出一个黄色的三角形。
@@ -292,10 +299,5 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

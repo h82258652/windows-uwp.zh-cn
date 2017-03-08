@@ -3,16 +3,23 @@ author: msatranjr
 title: "请求地图身份验证密钥"
 description: "通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。"
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 地图身份验证密钥, 地图控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 841a3bf42faaaa12df94ad9be2ffc9eb3a833ae5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 请求地图身份验证密钥
+# <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [通用 Windows 应用](https://msdn.microsoft.com/library/windows/apps/dn894631)必须先经过验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
@@ -21,7 +28,7 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 -   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 获取密钥
+## <a name="get-a-key"></a>获取密钥
 
 
 使用[必应地图开发人员中心](https://www.bingmapsportal.com/)创建并管理你的通用 Windows 应用的地图验证密钥。
@@ -53,12 +60,12 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 8.  在单击**“创建”**后，新的密钥将显示在**“创建密钥”**表格的下方。 将该密钥复制到安全位置或立即将其添加到你的应用，如下一步中所述。
 
-## 将密钥添加到你的应用
+## <a name="add-the-key-to-your-app"></a>将密钥添加到你的应用
 
 
 若要在你的通用 Windows 应用中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务 ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979))，则需要地图验证密钥。 将该密钥添加到地图控件和地图服务对象（如果适用）。
 
-### 将密钥添加到地图控件
+### <a name="to-add-the-key-to-a-map-control"></a>将密钥添加到地图控件
 
 要验证 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)，请将 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) 属性设置为身份验证密钥值。 你可以在代码中设置该属性，也可以在 XAML 标记中设置它，具体取决于你的偏好。 有关使用 **MapControl** 的详细信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
 
@@ -74,7 +81,7 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
     <Maps:MapControl x:Name="MapControl1" MapServiceToken="abcdef-abcdefghijklmno"/>
     ```
 
-### 将密钥添加到地图服务
+### <a name="to-add-the-key-to-map-services"></a>将密钥添加到地图服务
 
 若要在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用服务，请将 [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) 属性设置为身份验证密钥值。 有关使用地图服务的详细信息，请参阅[显示路线和方向](routes-and-directions.md)和[执行地理编码和反向地理编码](geocoding.md)。
 
@@ -84,18 +91,11 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
 * [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

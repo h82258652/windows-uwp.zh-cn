@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "在计时器上运行后台任务"
 description: "了解如何计划一次性后台任务，或运行定期后台任务。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 488bbbf1dbe99d653dded0af78a8fd22c7429cde
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3708a9b7768d4fb7fbb6af0e55836471a2ba29ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -120,9 +127,4 @@ ms.openlocfilehash: 488bbbf1dbe99d653dded0af78a8fd22c7429cde
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

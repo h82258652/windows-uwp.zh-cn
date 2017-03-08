@@ -3,23 +3,30 @@ author: jwmsft
 description: "介绍 XAML 中的附加属性概念，并提供一些示例。"
 title: "附加属性概述"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5185eb704f94e33031684aef761c701398c0dbd7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 附加属性概述
+# <a name="attached-properties-overview"></a>附加属性概述
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 *附加属性*是一种 XAML 概念。 使用附加属性，可以在对象上设置其他属性/值对，但这些属性并不是原始对象定义的组成部分。 附加属性通常定义为一种专门形式的依赖属性，在所有者类型的对象模型中没有传统的属性包装器。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 我们假设你理解依赖属性的基本概念，并且已阅读[依赖属性概述](dependency-properties-overview.md)。
 
-## XAML 中的附加属性
+## <a name="attached-properties-in-xaml"></a>XAML 中的附加属性
 
 在 XAML 中，可使用语法 _AttachedPropertyProvider.PropertyName_ 设置附加属性。 以下是如何在 XAML 中设置 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的一个示例。
 
@@ -29,9 +36,9 @@ ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
 </Canvas>
 ```
 
-**注意** 我们仅将 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 用作示例附加属性，而不完全介绍使用它的原因。 如果你希望了解有关 **Canvas.Left** 的目的以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何处理其布局子项的详细信息，请参阅 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 参考主题或[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+**注意**  我们仅将 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 用作示例附加属性，而不完全介绍使用它的原因。 如果你希望了解有关 **Canvas.Left** 的目的以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何处理其布局子项的详细信息，请参阅 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 参考主题或[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
-## 为什么使用附加属性？
+## <a name="why-use-attached-properties"></a>为什么使用附加属性？
 
 使用附加属性，可以避开可能会防止一个关系中的不同对象在运行时相互传递信息的编码约定。 一定可以针对常见的基类设置属性，以便每个对象只需获取和设置该属性即可。 但是，你可能希望在很多情况下这样做，这会使你的基类最终充斥着大量可共享的属性。 它甚至可能会引入以下情况：在数百个后代中，只有两个后代尝试使用一个属性。 这样的类设计很糟糕。 为了解决此问题，我们使用附加属性概念来允许对象为不是由它自己的类结构定义的属性赋值。 在对象树中完成创建各个对象之后，定义类可以在运行时从子对象中读取此值。
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
 
 为了实现附加属性，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 类定义一个名为 [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272) 的静态 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 字段。 然后，**Canvas** 提供 [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) 和 [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 方法作为附加属性的公共访问器，以同时支持 XAML 设置和运行时值访问。 对于 XAML 和依赖属性系统，这组 API 实现了一种模式，支持为附加属性使用特定的 XAML 语法并将值存储在依赖属性存储中。
 
-## 拥有类型如何使用附加属性
+## <a name="how-the-owning-type-uses-attached-properties"></a>拥有类型如何使用附加属性
 
 尽管附加属性可在任何 XAML 元素（或任何基础 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)）上设置，但这不会自动表明设置该属性将生成实际的结果，或者该值将会被访问。 定义附加属性的类型通常采用下列方案之一：
 
@@ -49,13 +56,13 @@ ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
 
 有关这些方案和拥有类型的详细信息，请参阅[自定义的附加属性](custom-attached-properties.md)的“有关 Canvas.Left 的详细信息”部分。
 
-## 代码中的附加属性
+## <a name="attached-properties-in-code"></a>代码中的附加属性
 
 与其他依赖属性不同，附加属性没有典型的属性包装器用于简化获取和设置访问。 这是因为附加属性不一定是设置属性的实例的以代码为中心的对象模型。 （允许[但不常用]定义这样一个属性，它既是其他类型可在自身上设置的附加属性，也在拥有类型上有一种方便的属性用法。）
 
 有两种在代码中设置附加属性的方式：使用属性系统 API 或使用 XAML 模式访问器。 这些技术的最终结果大体相同，所以决定使用哪种技术主要在于编码风格。
 
-### 使用属性系统
+### <a name="using-the-property-system"></a>使用属性系统
 
 Windows 运行时的附加属性实现为依赖属性，以便这些值可以由属性系统存储在共享依赖属性存储中。 因此附加属性在拥有类上公开一个依赖属性标识符。
 
@@ -63,7 +70,7 @@ Windows 运行时的附加属性实现为依赖属性，以便这些值可以由
 
 若要在代码中获得附加属性的值，你可以调用 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 方法，再次传递用作标识符的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 字段。
 
-### 使用 XAML 访问器模式
+### <a name="using-the-xaml-accessor-pattern"></a>使用 XAML 访问器模式
 
 XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值。 附加属性的所有者类型必须以 **Get***PropertyName* 和 **Set***PropertyName* 的形式实现专用的访问器方法。 这些专用的访问器方法也是一种在代码中获取或设置附加属性的方式。 从代码角度讲，附加属性类似于拥有方法访问器而不是属性访问器的支持字段，并且该支持字段可存在于任何对象上，而不需要专门定义。
 
@@ -95,21 +102,21 @@ XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值
     //Canvas::SetTop(myCheckBox, 75);
 ```
 
-## 自定义附加属性
+## <a name="custom-attached-properties"></a>自定义附加属性
 
 有关定义自定义附加属性的代码示例，以及有关使用附加属性的场景的详细信息，请参阅[自定义附加属性](custom-attached-properties.md)。
 
-## 附加属性引用的特殊语法
+## <a name="special-syntax-for-attached-property-references"></a>附加属性引用的特殊语法
 
 附加属性名称中的点是标识模式的一个关键部分。 在某种语法或情况认为点拥有其他某种含义时，就会导致多义性。 例如，一个点可视为对绑定路径的对象模型遍历。 在大部分涉及这种歧义性的情况下，附加属性有一种特殊语法，使内部点仍被分析为附加属性的 *owner***.***property* 分隔符。
 
 - 若要将一个附加属性指定为动画目标路径的一部分，可以将附加属性名称放在圆括号（“()”）中，例如“(Canvas.Left)”。 有关详细信息，请参阅 [Property-path 语法](property-path-syntax.md)。
 
-**警告** 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
+**警告**  不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
  
 - 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假设存在一个元素“<TextBlock x:Uid="Title" />”，资源文件中定位该实例上 **Canvas.Top** 值的资源键是“Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top”。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [自定义附加属性](custom-attached-properties.md)
 * [依赖属性概述](dependency-properties-overview.md)
@@ -117,10 +124,5 @@ XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值
 * [快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/hh943060)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
 * [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

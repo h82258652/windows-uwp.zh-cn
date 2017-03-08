@@ -3,18 +3,25 @@ author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: "Microsoft Store Services SDK 提供几种通过广告从应用中获取收益的方法。"
 title: "在应用中显示广告"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 广告, 横幅, 间隙"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b6343d8a011a3e62a3b714c7dab280c9d9a8f81d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在应用中显示广告
+# <a name="display-ads-in-your-app"></a>在应用中显示广告
 
 
 通用 Windows 平台 (UWP) 和 Windows 应用商店提供几种通过广告从应用中获取收益的方法。
 
-## 显示使用 Microsoft Advertising 库的横幅和视频间隙广告
+## <a name="display-banner-and-video-interstitial-ads-using-the-microsoft-advertising-libraries"></a>显示使用 Microsoft Advertising 库的横幅和视频间隙广告
 
 将横幅和视频间隙广告包括在应用中，从 UWP 应用以及 Windows 8.1 和 Windows Phone 8.x 应用中获取收益。 在适用于 PC、平板电脑和手机的 Windows 应用中显示广告。 你可以通过使用 Windows 开发人员中心仪表板中的[广告性能报告](../publish/advertising-performance-report.md)实时监视广告性能。
 
@@ -29,7 +36,7 @@ ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 | 在 XAML/C# 应用中显示横幅广告。     | 请参阅 [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)。        |
 | 在 HTML/JavaScript 应用中显示横幅广告。     | 请参阅 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。        |
 | 在 Windows Phone Silverlight 8.x 应用中显示横幅广告。     | 请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。        |
-| 在应用中显示视频间隙广告。     | 请参阅[间隙广告](interstitial-ads.md)。       |
+| 在应用中显示间隙广告。     | 请参阅[间隙广告](interstitial-ads.md)。       |
 | 在使用 JavaScript 与 HTML 编写的通用 Windows 平台 (UWP) 应用中，向视频内容添加广告。   |  请参阅[使用 HTML 5 和 JavaScript 向视频内容添加广告](add-advertisements-to-video-content.md)。  |
 | 下载演示如何向应用添加横幅和间隙广告的示例项目。     |请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。       |
 | 处理应用中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 错误。     | 请参阅[错误处理](error-handling-with-advertising-libraries.md)和 [AdControl 错误处理](adcontrol-error-handling.md)下的演练。       |
@@ -38,14 +45,14 @@ ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 
                             
 
-## 使用横幅广告的广告中介（Windows 8.1 和 Windows Phone 8.x）
+## <a name="use-ad-mediation-for-banner-ads-windows-81-and-windows-phone-8x"></a>使用横幅广告的广告中介（Windows 8.1 和 Windows Phone 8.x）
 
 对于 Windows 8.1 和 Windows Phone 8.x 应用，可以使用 **AdMediatorControl** 类以通过显示多个广告网络的横幅广告以优化广告收益。 将此控件添加到应用后，在 Windows 开发人员中心仪表板上配置广告中介设置，我们将负责调解所选广告网络提出的横幅广告请求。 有关详细信息，请参阅[使用广告中介使广告收益最大化](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
 
->**注意**  Windows 10 的 UWP 应用当前不支持使用 **AdMediatorControl** 类的广告中介。 即将使用与用于横幅广告 (**AdControl**) 和视频间隙广告 (**InterstitialAd**) 相同的 API 推出用于 UWP 应用的服务器端中介。 有关在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的指南，请参阅[针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
+>**注意**&nbsp;&nbsp;Windows 10 的 UWP 应用当前不支持使用 **AdMediatorControl** 类的广告中介。 即将使用与用于横幅广告 (**AdControl**) 和视频间隙广告 (**InterstitialAd**) 相同的 API 推出用于 UWP 应用的服务器端中介。 有关在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的指南，请参阅[针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
 
 <span id="silverlight_support"/>
-## 用于 Windows Phone 8.x Silverlight 项目的广告支持
+## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>用于 Windows Phone 8.x Silverlight 项目的广告支持
 
 某些开发人员方案已不再受 Windows Phone 8.x Silverlight 项目支持。 有关详细信息，请参阅下表。
 
@@ -54,14 +61,9 @@ ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 | Windows Phone 8.0 Silverlight     |  如果现有的 Windows Phone 8.0 Silverlight 项目已在使用之前版本的通用广告客户端 SDK 或 Microsoft Advertising 的 **AdControl** 或 **AdMediatorControl**，并且此应用已在 Windows 应用商店中发布，则可以修改和重建该项目，并且可以在设备上调试或测试更改。 不支持在仿真器中调试或测试项目。  |  不支持。  |
 | Windows Phone 8.1 Silverlight    |  如果现有的 Windows Phone 8.1 Silverlight 项目使用之前 SDK 的 **AdControl** 或 **AdMediatorControl**，则可以修改和重建该项目。 但是，若要调试或测试应用，必须在仿真器中运行该应用，并且将[测试模式值](test-mode-values.md)用于应用程序 ID 和广告单元 ID。 在不受支持的设备上调试或测试应用。  |   可以将 **AdControl** 或 **AdMediatorControl** 添加到新的 Windows Phone 8.1 Silverlight 项目。 但是，若要调试或测试应用，必须在仿真器中运行该应用，并且将[测试模式值](test-mode-values.md)用于应用程序 ID 和广告单元 ID。 在不受支持的设备上调试或测试应用。 |
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
 * [通过广告获取应用收益](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [广告性能报告](../publish/advertising-performance-report.md)
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

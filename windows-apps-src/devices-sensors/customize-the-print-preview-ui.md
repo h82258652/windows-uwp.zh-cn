@@ -3,17 +3,24 @@ author: DBirtolo
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: "自定义打印预览 UI"
 description: "本部分介绍了如何在打印预览 UI 中自定义打印选项和设置。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fa1a8c487d3fef2b0caa322d81c0ebdbdfe3865f
+ms.lasthandoff: 02/07/2017
 
 ---
-# 自定义打印预览 UI
+# <a name="customize-the-print-preview-ui"></a>自定义打印预览 UI
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
@@ -21,11 +28,11 @@ ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
 本部分介绍了如何在打印预览 UI 中自定义打印选项和设置。 有关打印的详细信息，请参阅[从应用打印](print-from-your-app.md)。
 
-**提示** 本主题中的大多数示例都基于打印示例。 若要查看完整的代码，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
+**提示**  本主题中的大多数示例都基于打印示例。 若要查看完整的代码，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
 
  
 
-## 自定义打印选项
+## <a name="customize-print-options"></a>自定义打印选项
 
 默认情况下，打印预览 UI 将显示 [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478)、[**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) 和 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) 打印选项。 除上述打印选项外，还有其他几种常见打印机选项，你也可以将它们添加到打印预览 UI：
 
@@ -44,11 +51,11 @@ ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
 但是，通过使用此方法所进行的修改将仅影响打印预览 UI。 通过在打印预览 UI 中点击“更多设置”****，用户始终可以访问打印机支持的所有选项。
 
-**注意** 尽管你的应用可以指定要显示的任何打印选项，但只有所选打印机支持的那些选项才会在打印预览 UI 中显示。 打印 UI 不会显示所选打印机不支持的选项。
+**注意**  尽管你的应用可以指定要显示的任何打印选项，但只有所选打印机支持的那些选项才会在打印预览 UI 中显示。 打印 UI 不会显示所选打印机不支持的选项。
 
  
 
-### 定义要显示的选项
+### <a name="define-the-options-to-display"></a>定义要显示的选项
 
 加载应用的屏幕时，该屏幕将注册打印合约。 定义 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序是注册的一部分。 会将用于自定义在打印预览 UI 中显示的选项的代码添加到 **PrintTaskRequested** 事件处理程序中。
 
@@ -92,9 +99,9 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要提示** 调用 [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() 将删除打印预览 UI 中的所有打印选项，包括“更多设置”****链接。 请务必附加你希望在打印预览 UI 上显示的选项。
+**重要提示**  调用 [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() 将删除打印预览 UI 中的所有打印选项，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
 
-### 指定默认选项
+### <a name="specify-default-options"></a>指定默认选项
 
 你还可以在打印预览 UI 中设置选项的默认值。 在上一示例的以下代码行中，设置 [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483) 选项的默认值。
 
@@ -103,7 +110,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
          printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
 ```         
 
-## 添加新的打印选项
+## <a name="add-new-print-options"></a>添加新的打印选项
 
 本部分显示了如何创建一个新打印选项，定义该选项支持的值列表，然后将该选项添加到打印预览。 像上一部分那样，在 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序中添加新的打印选项。
 
@@ -179,15 +186,9 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [打印的设计指南](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 视频：开发可在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

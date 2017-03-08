@@ -1,15 +1,22 @@
 ---
 author: jwmsft
 title: "xDeferLoadStrategy 属性"
-description: "xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将向内存使用量添加大约 600 个字节。"
+description: "xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将使内存使用量增加大约 600 个字节。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:DeferLoadStrategy 属性
+# <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,13 +24,13 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 但保持延迟的书籍会为每个受影响的元素向内存使用量添加约 600 个字节 你延迟的元素树越大，将节省的时间也就越多，不过内存占用也会有所增加。 因此，在性能降低至这种程度的情况下，可以过分使用此属性。
 
-## XAML 属性用法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 使用 **x:DeferLoadStrategy** 时的限制是：
 
@@ -59,7 +66,7 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 一般原则是在确保获得所需的性能之前和之后测量你的应用程序。
 
-## 示例
+## <a name="example"></a>示例
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -86,10 +93,5 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

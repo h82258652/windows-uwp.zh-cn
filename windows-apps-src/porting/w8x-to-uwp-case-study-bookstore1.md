@@ -3,9 +3,16 @@ author: mcleblanc
 title: "Windows 运行时 8.x 到 UWP 案例研究：Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: "本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 348012b4a23e60e24d2185baf71cbe147e30053a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7299138cb45e9eb5e0e1b7eb349a68034e66ee3b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,11 +22,11 @@ ms.openlocfilehash: 348012b4a23e60e24d2185baf71cbe147e30053a
 
 本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是为 Windows 8.1 生成一个应用包，并为 Windows Phone 8.1 生成另一个应用包的应用。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将“生成操作”设置为“内容”，并将“复制到输出目录”设置为“不要复制”。
+我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
 本部分中之前的主题介绍了平台之间的差异，并且提供有关将应用的各个方面从 XAML 标记移植到访问数据（通过绑定到视图模型）这一过程的详细信息和指南。 案例研究旨在通过在真实示例中实际显示指南来补充该指南。 案例研究假设你已阅读该指南，因此不会重复该指南。
 
-**注意** 在 Visual Studio 中打开 Bookstore1Universal\_10 时，如果看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中的步骤进行操作。
+**注意**   在 Visual Studio 中打开 Bookstore1Universal\_10 时，如果看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中的步骤进行操作。
 
 ## <a name="downloads"></a>下载
 
@@ -53,7 +60,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 **从“共享项目”中**
 
--   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击“包括在项目中”。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹、每个副本时，请在“解决方案资源管理器”中单击“刷新”，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
+-   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击**包括在项目中**。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹、每个副本时，请在**解决方案资源管理器**中单击**刷新**，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
@@ -61,7 +68,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 -   复制 BookstoreStyles.xaml。 我们将使用此文件作为一个合适的起始点，因为此文件中的所有资源键都将在 Windows 10 应用中解析；而等效的 WindowsPhone 文件中的某些资源键不会解析。
 
-编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1\_81 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用“在文件中替换”功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本，请将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1\_81”更改为“BOOKSTORE1UNIVERSAL\_10”。
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1\_81 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本，请将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1\_81”更改为“BOOKSTORE1UNIVERSAL\_10”。
 
 现在，你可以执行生成和运行操作。 新的 UWP 应用的外观如下，当前尚未完成任何明确的工作以将其移植到 Windows 10。
 
@@ -126,9 +133,4 @@ Bookstore1\_81 应用使用了两个不同的资源词典 (BookstoreStyles.xaml)
 我们还看到了移植视图模型过程通常很顺利的证据。 用户界面和外形规格支持是我们在移植时可能更需要注意的方面。
 
 下一个案例研究是 [Bookstore2](w8x-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

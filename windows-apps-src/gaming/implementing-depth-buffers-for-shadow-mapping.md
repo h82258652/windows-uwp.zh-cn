@@ -3,13 +3,20 @@ author: mtoepke
 title: "操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷"
 description: "本操作实例演示如何使用深度映射呈现阴影卷，并在所有 Direct3D 功能级别的设备上使用 Direct3D 11。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx, 阴影卷, 深度缓冲区, directx 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
+# <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -49,7 +56,7 @@ ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
 
  
 
-## 阴影映射应用程序到 Direct3D 9 桌面的移植
+## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>阴影映射应用程序到 Direct3D 9 桌面的移植
 
 
 Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，你可以将具有阴影卷的呈现代码迁移到 DirectX 11，并且 Direct3D 11 呈现器将是与功能级别 9 设备兼容的下一级设备。 本操作实例介绍任何 Direct3D 11 应用或游戏如何使用深度测试实现传统的阴影卷。 代码包含以下过程：
@@ -62,12 +69,12 @@ Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，
 
 完成本操作实例之后，你应该会熟悉如何在与功能级别 9\_1 以及更高功能级别兼容的 Direct3D 11 中实现基本的兼容阴影卷技术。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 应该[准备通用 Windows 平台 (UWP) DirectX 游戏开发的开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 目前，你还不需要模板，但需要使用 Microsoft Visual Studio 2015 为此操作实例生成代码示例。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 **Direct3D**
@@ -86,10 +93,5 @@ Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,31 +3,38 @@ author: jwmsft
 description: "唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。"
 title: "xName 属性"
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 1a70bffd6e6990ece4565b919846503b95ae8f61
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a80a5cdeae5adc2af59072400aa42428eac28431
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Name 属性
+# <a name="xname-attribute"></a>x:Name 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。 应用于支持的编程模型之后，**x:Name** 可视为等效于持有一个对象引用（由一个构造函数返回）的变量。
 
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object x:Name="XAMLNameValue".../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 术语 | 说明 |
 |------|-------------|
 | XAMLNameValue | 一个符合 XamlName 语法限制的字符串。 |
 
-##  XamlName 语法
+##  <a name="xamlname-grammar"></a>XamlName 语法
 
 以下是在此 XAML 实现中作为密钥使用的字符串的规范语法：
 
@@ -44,7 +51,7 @@ CombiningCharacter::= none
 -   不支持 Unicode 字符范围。
 -   名称不能以数字开头。 某些工具实现会在用户以数字作为起始字符时在字符串前附加一个下划线 (\_)，工具也可以根据包含数字的其他值自动生成 **x:Name** 值。
 
-## 备注
+## <a name="remarks"></a>备注
 
 当处理 XAML 时，指定的 **x:Name** 变成一个在基础代码中创建的字段的名称，该字段持有该对象的引用。 创建此字段的过程由 MSBuild 目标步骤执行，这些步骤还负责连接一个 XAML 文件和它的代码隐藏的分部类。 此行为不一定是由 XAML 语言指定的，它是通用 Windows 平台 (UWP) XAML 编程的特定实现，应用在其编程和应用程序模型中使用 **x:Name**。
 
@@ -54,23 +61,18 @@ CombiningCharacter::= none
 
 无法在 XAML 属性元素语法中或在代码中使用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 设置 **x:Name**。 只能在元素上使用 XAML 属性语法来设置 **x:Name**。
 
-**注意** **x:Name** 引用的支持字段是专为 C++/CX 应用创建的，而不是为 XAML 文件或页面的根元素创建的。 如果你需要从 C++ 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**注意**  **x:Name** 引用的支持字段专为 C++/CX 应用而创建，并非专为 XAML 文件或页面的根元素而创建。 如果你需要从 C++ 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
-### x:Name 和其他 Name 属性
+### <a name="xname-and-other-name-properties"></a>x:Name 和其他 Name 属性
 
 UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例如，[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 和 [**TextElement.Name**](https://msdn.microsoft.com/library/windows/apps/hh702125)。
 
 如果 **Name** 可用作一个元素上的可设置属性，**Name** 和 **x:Name** 可在 XAML 中交替使用，但如果在相同元素上指定了这两个属性，会发生错误。 有时，会存在一个只读的 **Name** 属性（如 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)）。 如果出现这种情况，请在 XAML 中始终使用 **x:Name** 对该元素进行命名，而且对于一些少见的代码方案使用只读的 **Name**。
 
-**注意** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 通常不应当用于更改最初由 **x:Name** 设置的值，但这个一般规则有一些例外的场景。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
+**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 通常不应当用于更改最初由 **x:Name** 设置的值，但这个一般规则有一些例外的场景。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
 
-### x:Name 和 x:Key
+### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 
 **x:Name** 可以作为一个属性应用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内的元素，以充当 [x:Key 属性](x-key-attribute.md)的替代属性。 （通常，要求 **ResourceDictionary** 中的所有元素都必须具有一个 x:Key 或 x:Name 属性。）这常见于[情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)部分。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

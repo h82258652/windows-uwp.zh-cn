@@ -1,38 +1,45 @@
 ---
-title: "创建 Microsoft Passport 登录服务"
-description: "这是有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。"
+title: "创建 Windows Hello 登录服务"
+description: "这是有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Windows Hello 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。"
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7dbc74ff80441e0b128a2f5da53c809145b37325
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="create-a-microsoft-passport-login-service"></a>创建 Microsoft Passport 登录服务
+# <a name="create-a-windows-hello-login-service"></a>创建 Windows Hello 登录服务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-这是有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。 本文将接着第 1 部分 [Microsoft Passport 登录应用](microsoft-passport-login.md)进行介绍，并扩展相关功能来演示如何将 Microsoft Passport 集成到现有应用程序中。
+这是有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Windows Hello 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。 本文将接着第 1 部分 [Windows Hello 登录应用](microsoft-passport-login.md)进行介绍，并扩展相关功能来演示如何将 Windows Hello 集成到现有应用程序中。
 
 为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要在 Windows 10 计算机上使用 Visual Studio 2015（社区版或更高版本）。
 
 ## <a name="exercise-1-server-side-logic"></a>练习 1：服务器端逻辑
 
 
-在本练习中，你将从第一个实验中生成的 Passport 应用程序开始操作，并创建一个本地 mock 服务器和数据库。 本动手实验设计用来教你如何将 Microsoft Passport 集成到现有系统中。 通过使用 mock 服务器和 mock 数据库，将消除大量不相关的设置。 在你自己的应用程序中，你需要将 mock 对象替换为真实的服务和数据库。
+在本练习中，你将从第一个实验中生成的 Windows Hello 应用程序开始操作，并创建一个本地 mock 服务器和数据库。 本动手实验设计用来教你如何将 Windows Hello 集成到现有系统中。 通过使用 mock 服务器和 mock 数据库，将消除大量不相关的设置。 在你自己的应用程序中，你需要将 mock 对象替换为真实的服务和数据库。
 
 -   若要开始操作，请从第一个 Passport 动手实验打开 PassportLogin 解决方案。
 -   首先实现 mock 服务器和 mock 数据库。 创建一个名为“AuthService”的新文件夹。 在“解决方案资源管理器”中，右键单击解决方案“PassportLogin (通用 Windows)”，然后依次选择“添加”&gt;“新文件夹”。
 -   针对要保存在 mock 数据库中的数据创建将用作模型的 UserAccount 和 PassportDevices 类。 UserAccount 类似于在传统身份验证服务器上实现的用户模型。 右键单击 AuthService 文件夹，并添加名为“UserAccount.cs”的新类。
 
-    ![passport 授权创建文件夹](images/passport-auth-1.png)
+    ![Windows Hello 授权创建文件夹](images/passport-auth-1.png)
 
-    ![passport 授权创建类](images/passport-auth-2.png)
+    ![Windows Hello 授权创建类](images/passport-auth-2.png)
 
 -   更改类定义以使其成为公共类，然后添加以下公共属性。 你将需要以下引用。
 
@@ -53,9 +60,9 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
-    你可能已经注意到，已注释 PassportDevices 列表。 这是一项你需要对当前实现中的现有用户模型进行的修改。 PassportDevices 列表将包含 deviceID（从 Microsoft Passport 中获取的公钥）以及 [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034)。 对于本动手实验，你将需要实现 keyAttestationResult，因为它们仅由 Microsoft Passport 在具有 TPM（受信任的平台模块）芯片的设备上提供。 **KeyCredentialAttestationResult** 是多个属性的组合，并且将需要进行拆分，以便可以使用数据库保存和加载它们。
+    你可能已经注意到，已注释 PassportDevices 列表。 这是一项你需要对当前实现中的现有用户模型进行的修改。 PassportDevices 列表将包含 deviceID（从 Windows Hello 中获取的公钥）以及 [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034)。 对于本动手实验，你将需要实现 keyAttestationResult，因为它们仅由 Windows Hello 在具有 TPM（受信任的平台模块）芯片的设备上提供。 **KeyCredentialAttestationResult** 是多个属性的组合，并且将需要进行拆分，以便可以使用数据库保存和加载它们。
 
--   在名为“PassportDevice.cs”的 AuthService 文件夹中创建新类。 这是适用于上述 Passport 设备的模型。 更改类定义以使其成为公共类，并添加以下属性。
+-   在名为“PassportDevice.cs”的 AuthService 文件夹中创建新类。 这是适用于上述 Windows Hello 设备的模型。 更改类定义以使其成为公共类，并添加以下属性。
 
     ```cs
     namespace PassportLogin.AuthService
@@ -74,7 +81,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   返回到 UserAccount.cs 并取消 Passport 设备列表的注释。
+-   返回到 UserAccount.cs 并取消 Windows Hello 设备列表的注释。
 
     ```cs
     using System.Collections.Generic;
@@ -95,9 +102,8 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 
 -   在创建 UserAccount 和 PassportDevice 的模型后，你需要在用作 mock 数据库的 AuthService 中创建另一个新类。 因为这是将在其中本地保存和加载用户帐户列表的 mock 数据库。 在现实世界中，这将是你的数据库实现。 在称为“MockStore.cs”的 AuthService 中创建新类。 将该类定义更改为公共。
 -   由于 mock 存储将本地保存和加载用户帐户列表，因此你可以使用 XmlSerializer 来实现用于保存和加载该列表的逻辑。 你还需要记住文件名和保存位置。 在 MockStore.cs 中，实现以下项：
--   
 
-    ```cs
+```cs
     using System.IO;
     using System.Linq;
     using System.Xml.Serialization;
@@ -113,7 +119,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
                 ApplicationData.Current.LocalFolder.Path, USER_ACCOUNT_LIST_FILE_NAME);
             private List<UserAccount> _mockDatabaseUserAccountsList;
      
-#region Save and Load Helpers
+    #region Save and Load Helpers
             /// <summary>
             /// Create and save a useraccount list file. (Replacing the old one)
             /// </summary>
@@ -180,10 +186,10 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
                 TextReader textreader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(listAsXml)));
                 return _mockDatabaseUserAccountsList = (xmlizer.Deserialize(textreader)) as List<UserAccount>;
             }
-#endregion
+    #endregion
         }
     }
-    ```
+```
 
 -   在加载方法中，你可能已注意到 InitializeSampleUserAccounts 方法已有注释。 你将需要在 MockStore.cs 中创建此方法。 此方法将填充用户帐户列表，以便可进行登录。 在现实世界中，用户数据库已填充。 在此步骤中，你还将创建一个构造函数，用于初始化用户列表和调用加载。
 
@@ -207,7 +213,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
             private void InitializeSampleUserAccounts()
             {
                 // Create a sample Traditional User Account that only has a Username and Password
-                // This will be used initially to demonstrate how to migrate to use Microsoft Passport
+                // This will be used initially to demonstrate how to migrate to use Windows Hello
 
                 UserAccount sampleUserAccount = new UserAccount()
                 {
@@ -248,7 +254,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   现在可以保存和加载 mock 存储中的用户帐户列表。 由于应用程序的其他部分需要具有对此列表的访问权限，因此需要采用一些方法来检索此数据。 在 InitializeSampleUserAccounts 方法的下方，添加以下 get 方法。 借助这些方法，你不仅可以针对特定 Passport 设备获取 userid、单个用户和用户列表，还可以针对特定设备上的用户获取公钥。
+-   现在可以保存和加载 mock 存储中的用户帐户列表。 由于应用程序的其他部分需要具有对此列表的访问权限，因此需要采用一些方法来检索此数据。 在 InitializeSampleUserAccounts 方法的下方，添加以下 get 方法。 借助这些方法，你不仅可以针对特定 Windows Hello 设备获取 userid、单个用户和用户列表，还可以针对特定设备上的用户获取公钥。
 
     ```cs
     public Guid GetUserId(string username)
@@ -298,7 +304,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   要实现的后续方法将处理添加帐户、删除帐户以及删除设备的简单操作。 删除设备是必需的，因为 Microsoft Passport 特定于设备。 对于要登录的每台设备，Microsoft Passport 将创建新的公钥和私钥对。 这与登录的每台设备具有不同密码的情况类似，唯一的区别是你无需记住所有这些密码（服务器会记住）。 将以下方法添加到 MockStore.cs 中
+-   要实现的后续方法将处理添加帐户、删除帐户以及删除设备的简单操作。 删除设备是必需的，因为 Windows Hello 特定于设备。 对于要登录的每台设备，Windows Hello 将创建新的公钥和私钥对。 这与登录的每台设备具有不同密码的情况类似，唯一的区别是你无需记住所有这些密码（服务器会记住）。 将以下方法添加到 MockStore.cs 中
 
     ```cs
     public UserAccount AddAccount(string username)
@@ -361,7 +367,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   在 MockStore 类中，添加一个将 Passport 相关信息添加到现有 UserAccount 的方法。 此方法将命名为 PassportUpdateDetails，并采用参数来标识用户和 Passport 详细信息。 在创建 PassportDevice 时，KeyAttestationResult 已有注释，不过在现实应用程序中，你需要此项。
+-   在 MockStore 类中，添加一个将 Windows Hello 相关信息添加到现有 UserAccount 的方法。 此方法将命名为 PassportUpdateDetails，并采用参数来标识用户和 Windows Hello 详细信息。 在创建 PassportDevice 时，KeyAttestationResult 已有注释，不过在现实应用程序中，你需要此项。
 
    ```cs
    using Windows.Security.Credentials;
@@ -508,7 +514,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   AuthService 类需要一个请求质询方法来将质询返回到客户端，从而验证用户的身份是否就是其所声明的那样。 随后，在 AuthService 类中需要使用一种方法，以便从客户端重新接收已签名的质询。 在本动手实验中，确定已签名质询是否已完成的方法并不完整。 Microsoft Passport 到现有身份验证系统的每个实现将略有不同。 存储在服务器上的公钥需要与客户端返回到服务器的结果匹配。 将这两种方法添加到 AuthService.cs。
+-   AuthService 类需要一个请求质询方法来将质询返回到客户端，从而验证用户的身份是否就是其所声明的那样。 随后，在 AuthService 类中需要使用一种方法，以便从客户端重新接收已签名的质询。 在本动手实验中，确定已签名质询是否已完成的方法并不完整。 Windows Hello 到现有身份验证系统的每个实现将略有不同。 存储在服务器上的公钥需要与客户端返回到服务器的结果匹配。 将这两种方法添加到 AuthService.cs。
 
     ```cs
     using Windows.Security.Cryptography;
@@ -541,7 +547,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 ## <a name="exercise-2-client-side-logic"></a>练习 2：客户端逻辑
 
 
-在本练习中，你将更改来自第一个实验的客户端视图和帮助程序类，以便使用 AuthService 类。 在现实世界中，AuthService 即为身份验证服务器，并且你需要使用 Web API 发送数据并从服务器接收数据。 为方便起见，本动手实验中的客户端和服务器都是本地的。 目标是了解如何使用 Microsoft Passport API。
+在本练习中，你将更改来自第一个实验的客户端视图和帮助程序类，以便使用 AuthService 类。 在现实世界中，AuthService 即为身份验证服务器，并且你需要使用 Web API 发送数据并从服务器接收数据。 为方便起见，本动手实验中的客户端和服务器都是本地的。 目标是了解如何使用 Windows Hello API。
 
 -   在 MainPage.xaml.cs 中，可以删除加载方法中的 AccountHelper.LoadAccountListAsync 方法调用，因为 AuthService 类创建了一个可用于加载帐户列表的 MockStore 的实例。 现在，加载的方法应如下所示。 请注意，异步方法定义已删除，因为没有任何项处于等待状态。
 
@@ -552,7 +558,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   更新需要输入 Passport 的登录页界面。 本动手实验演示了如何迁移现有系统以便使用 Microsoft Passport，以及现有帐户将具有用户名和密码。 此外，更新 XAML 底部的说明以包含默认密码。 在 Login.xaml 中更新以下 XAML
+-   更新需要输入 Passport 的登录页界面。 本动手实验演示了如何迁移现有系统以便使用 Windows Hello，以及现有帐户将具有用户名和密码。 此外，更新 XAML 底部的说明以包含默认密码。 在 Login.xaml 中更新以下 XAML
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -591,7 +597,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 
         <Border x:Name="PassportStatus" Background="#22B14C"
                    Margin="0,20" Height="100">
-          <TextBlock x:Name="PassportStatusText" Text="Microsoft Passport is ready to use!"
+          <TextBlock x:Name="PassportStatusText" Text="Windows Hello is ready to use!"
                  Margin="4" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         </Border>
 
@@ -622,7 +628,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 
             protected override async void OnNavigatedTo(NavigationEventArgs e)
             {
-                //Check Microsoft Passport is setup and available on this machine
+                //Check Windows Hello is setup and available on this machine
                 if (await MicrosoftPassportHelper.MicrosoftPassportAvailableCheckAsync())
                 {
                     if (e.Parameter != null)
@@ -657,7 +663,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
         //Calling OpenAsync will allow the user access to what is available in the app and will not require user credentials again.
         //If you wanted to force the user to sign in again you can use the following:
         //var consentResult = await Windows.Security.Credentials.UI.UserConsentVerifier.RequestVerificationAsync(account.Username);
-        //This will ask for the either the password of the currently signed in Microsoft Account or the PIN used for Microsoft Passport.
+        //This will ask for the either the password of the currently signed in Microsoft Account or the PIN used for Windows Hello.
 
         if (openKeyResult.Status == KeyCredentialStatus.Success)
         {
@@ -666,7 +672,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
             //e.g. RequestSignAsync(openKeyResult);
-            //Refer to the second Microsoft Passport sample for information on how to do this.
+            //Refer to the second Windows Hello sample for information on how to do this.
 
             //For this sample there is not concept of a server implemented so just return true.
             return true;
@@ -674,13 +680,13 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
         else if (openKeyResult.Status == KeyCredentialStatus.NotFound)
         {
             //If the _account is not found at this stage. It could be one of two errors. 
-            //1. Microsoft Passport has been disabled
-            //2. Microsoft Passport has been disabled and re-enabled cause the Microsoft Passport Key to change.
-            //Calling CreatePassportKey and passing through the account will attempt to replace the existing Microsoft Passport Key for that account.
-            //If the error really is that Microsoft Passport is disabled then the CreatePassportKey method will output that error.
+            //1. Windows Hello has been disabled
+            //2. Windows Hello has been disabled and re-enabled cause the Windows Hello Key to change.
+            //Calling CreatePassportKey and passing through the account will attempt to replace the existing Windows Hello Key for that account.
+            //If the error really is that Windows Hello is disabled then the CreatePassportKey method will output that error.
             if (await CreatePassportKeyAsync(account.UserId, account.Username))
             {
-                //If the Passport Key was again successfully created, Microsoft Passport has just been reset.
+                //If the Passport Key was again successfully created, Windows Hello has just been reset.
                 //Now that the Passport Key has been reset for the _account retry sign in.
                 return await GetPassportAuthenticationMessageAsync(account);
             }
@@ -713,7 +719,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
                 bool isSuccessful = await MicrosoftPassportHelper.CreatePassportKeyAsync(userId, UsernameTextBox.Text);
                 if (isSuccessful)
                 {
-                    Debug.WriteLine("Successfully signed in with Microsoft Passport!");
+                    Debug.WriteLine("Successfully signed in with Windows Hello!");
                     //Navigate to the Welcome Screen. 
                     _account = AuthService.AuthService.Instance.GetUserAccount(userId);
                     Frame.Navigate(typeof(Welcome), _account);
@@ -735,7 +741,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   由于 Microsoft Passport 将对每台设备上的每个帐户创建不同的公钥和私钥对，因此欢迎页将需要对已登录帐户显示已注册设备列表，并允许忘记所有设备。 在 Welcome.xaml 中，在 ForgetButton 的下方添加以下 XAML。 这将实现一个忘记设备按钮、一个错误文本区域以及一个用于显示所有设备的列表。
+-   由于 Windows Hello 将对每台设备上的每个帐户创建不同的公钥和私钥对，因此欢迎页将需要对已登录帐户显示已注册设备列表，并允许忘记所有设备。 在 Welcome.xaml 中，在 ForgetButton 的下方添加以下 XAML。 这将实现一个忘记设备按钮、一个错误文本区域以及一个用于显示所有设备的列表。
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -813,7 +819,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
     {
-        //Remove it from Microsoft Passport
+        //Remove it from Windows Hello
         MicrosoftPassportHelper.RemovePassportAccountAsync(_activeAccount);
 
         Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
@@ -828,7 +834,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     ```cs
     public static async void RemovePassportAccountAsync(UserAccount account)
     {
-        //Open the account with Passport
+        //Open the account with Windows Hello
         KeyCredentialRetrievalResult keyOpenResult = await KeyCredentialManager.OpenAsync(account.Username);
 
         if (keyOpenResult.Status == KeyCredentialStatus.Success)
@@ -859,7 +865,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
         PassportDevice selectedDevice = UserListView.SelectedItem as PassportDevice;
         if (selectedDevice != null)
         {
-            //Remove it from Microsoft Passport
+            //Remove it from Windows Hello
             MicrosoftPassportHelper.RemovePassportDevice(_activeAccount, selectedDevice.DeviceId);
 
             Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
@@ -988,11 +994,11 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   生成并运行应用程序 (F5)。 使用凭据“sampleUsername”和“samplePassword”登录到示例用户帐户。 在欢迎屏幕上，你可能会注意到忽略设备按钮已显示，但未显示任何设备。 当你创建或迁移用户以便使用 Microsoft Passport 时，Passport 信息不会推送至 AuthService。
+-   生成并运行应用程序 (F5)。 使用凭据“sampleUsername”和“samplePassword”登录到示例用户帐户。 在欢迎屏幕上，你可能会注意到忽略设备按钮已显示，但未显示任何设备。 当你创建或迁移用户以便使用 Windows Hello 时，Passport 信息不会推送至 AuthService。
 
-    ![passport 登录屏幕](images/passport-auth-3.png)
+    ![Windows Hello 登录屏幕](images/passport-auth-3.png)
 
-    ![passport 登录成功](images/passport-auth-4.png)
+    ![Windows Hello 登录成功](images/passport-auth-4.png)
 
 -   若要将 Passport 信息传递到 AuthService，需要更新 MicrosoftPassportHelper.cs。 在 CreatePassportKeyAsync 方法中，不仅要在成功时返回 true，还需要调用尝试获取 KeyAttestation 的新方法。 尽管此动手实验不会在 AuthService 中记录此信息，但你将在客户端上了解获取此信息的方法。 更新 CreatePassportKeyAsync 方法。
 
@@ -1011,8 +1017,8 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
                 Debug.WriteLine("User cancelled sign-in process.");
                 break;
             case KeyCredentialStatus.NotFound:
-                // User needs to setup Microsoft Passport
-                Debug.WriteLine("Microsoft Passport is not setup!\nPlease go to Windows Settings and set up a PIN to use it.");
+                // User needs to setup Windows Hello
+                Debug.WriteLine("Windows Hello is not setup!\nPlease go to Windows Settings and set up a PIN to use it.");
                 break;
             default:
                 break;
@@ -1022,7 +1028,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   在 MicrosoftPassportHelper.cs 中创建 GetKeyAttestationAsync 方法。 此方法将展示如何获取 Microsoft Passport 为特定设备上的每个帐户提供的所有必要信息。
+-   在 MicrosoftPassportHelper.cs 中创建 GetKeyAttestationAsync 方法。 此方法将展示如何获取 Windows Hello 为特定设备上的每个帐户提供的所有必要信息。
 
     ```cs
     using Windows.Storage.Streams;
@@ -1064,7 +1070,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   你可能在刚才添加的 GetKeyAttestationAsync 方法中注意到了最后一行有注释。 此最后一行将是你创建的新方法，可将所有 Microsoft Passport 信息发送到 AuthService。 在真实世界中，你需要将此信息发送到带有 Web API 的真实服务器。
+-   你可能在刚才添加的 GetKeyAttestationAsync 方法中注意到了最后一行有注释。 此最后一行将是你创建的新方法，可将所有 Windows Hello 信息发送到 AuthService。 在真实世界中，你需要将此信息发送到带有 Web API 的真实服务器。
 
     ```cs
     using System.Runtime.InteropServices.WindowsRuntime;
@@ -1073,7 +1079,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     {
         //In the real world you would use an API to add Passport signing info to server for the signed in _account.
         //For this tutorial we do not implement a WebAPI for our server and simply mock the server locally 
-        //The CreatePassportKey method handles adding the Microsoft Passport account locally to the device using the KeyCredential Manager
+        //The CreatePassportKey method handles adding the Windows Hello account locally to the device using the KeyCredential Manager
 
         //Using the userId the existing account should be found and updated.
         AuthService.AuthService.Instance.PassportUpdateDetails(userId, deviceId, publicKey, keyAttestationResult);
@@ -1081,10 +1087,10 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
     }
     ```
 
--   在 GetKeyAttestationAsync 方法中取消最后一行的注释，以便 Microsoft Passport 信息可以发送到 AuthService。
+-   在 GetKeyAttestationAsync 方法中取消最后一行的注释，以便 Windows Hello 信息可以发送到 AuthService。
 -   像以前一样，生成和运行应用程序，并使用默认凭据登录。 现在，在欢迎屏幕上，你将看到显示设备 ID。 如果登录了也会在此处显示的另一台设备（如果你拥有云托管的身份验证服务）。 在本动手实验中，将显示实际设备 ID。 在实际实现中，你会想要显示用户可以理解并用于确定每台设备的友好名称。
 
-    ![passport 登录成功设备 ID](images/passport-auth-5.png)
+    ![Windows Hello 登录成功设备 ID](images/passport-auth-5.png)
 
 -   21. 若要完成本动手实验，在用户从用户选择页面进行选择并重新登录时，你需要用户的请求和质询。 AuthService 具有两种你为请求质询而创建的方法，其中一种方法使用签名的质询。 在 MicrosoftPassportHelper.cs 中，创建名为“RequestSignAsync”的新方法。此方法会从 AuthService 请求质询、在本地使用 Passport API 对该质询进行签名，并将已签名的质询发送到 AuthService。 在本动手实验中，AuthService 将接收已签名的质询并返回 true。 在实际实现中，你需要实现验证机制，以确定该质询是否已在正确的设备上由正确的用户进行签名。 将以下方法添加到 MicrosoftPassportHelper.cs
 
@@ -1107,19 +1113,19 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
         }
         else if (signResult.Status == KeyCredentialStatus.UserCanceled)
         {
-            // User cancelled the Passport PIN entry.
+            // User cancelled the Windows Hello PIN entry.
         }
         else if (signResult.Status == KeyCredentialStatus.NotFound)
         {
-            // Must recreate Passport key
+            // Must recreate Windows Hello key
         }
         else if (signResult.Status == KeyCredentialStatus.SecurityDeviceLocked)
         {
-            // Can't use Passport right now, remember that hardware failed and suggest restart
+            // Can't use Windows Hello right now, remember that hardware failed and suggest restart
         }
         else if (signResult.Status == KeyCredentialStatus.UnknownError)
         {
-            // Can't use Passport right now, try again later
+            // Can't use Windows Hello right now, try again later
         }
 
         return false;
@@ -1135,7 +1141,7 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
         // Calling OpenAsync will allow the user access to what is available in the app and will not require user credentials again.
         // If you wanted to force the user to sign in again you can use the following:
         // var consentResult = await Windows.Security.Credentials.UI.UserConsentVerifier.RequestVerificationAsync(account.Username);
-        // This will ask for the either the password of the currently signed in Microsoft Account or the PIN used for Microsoft Passport.
+        // This will ask for the either the password of the currently signed in Microsoft Account or the PIN used for Windows Hello.
 
         if (openKeyResult.Status == KeyCredentialStatus.Success)
         {
@@ -1144,43 +1150,38 @@ ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
             //e.g. RequestSignAsync(openKeyResult);
-            //Refer to the second Microsoft Passport sample for information on how to do this.
+            //Refer to the second Windows Hello sample for information on how to do this.
 
             return await RequestSignAsync(account.UserId, openKeyResult);
         }
         else if (openKeyResult.Status == KeyCredentialStatus.NotFound)
         {
             //If the _account is not found at this stage. It could be one of two errors. 
-            //1. Microsoft Passport has been disabled
-            //2. Microsoft Passport has been disabled and re-enabled cause the Microsoft Passport Key to change.
-            //Calling CreatePassportKey and passing through the account will attempt to replace the existing Microsoft Passport Key for that account.
-            //If the error really is that Microsoft Passport is disabled then the CreatePassportKey method will output that error.
+            //1. Windows Hello has been disabled
+            //2. Windows Hello has been disabled and re-enabled cause the Windows Hello Key to change.
+            //Calling CreatePassportKey and passing through the account will attempt to replace the existing Windows Hello Key for that account.
+            //If the error really is that Windows Hello is disabled then the CreatePassportKey method will output that error.
             if (await CreatePassportKeyAsync(account.UserId, account.Username))
             {
-                //If the Passport Key was again successfully created, Microsoft Passport has just been reset.
+                //If the Passport Key was again successfully created, Windows Hello has just been reset.
                 //Now that the Passport Key has been reset for the _account retry sign in.
                 return await GetPassportAuthenticationMessageAsync(account);
             }
         }
 
-        // Can't use Passport right now, try again later
+        // Can't use Windows Hello right now, try again later
         return false;
     }
     ```
 
 -   在此整个练习中，你更新了客户端应用程序以使用 AuthService。 执行此操作后，不需要再使用 Account 类和 AccountHelper 类。 在 Utils 文件夹中删除 Account 类、Models 文件夹和 AccountHelper 类。 成功生成解决方案之前，你需要删除对整个应用程序内 Models 命名空间的所有引用。
--   生成和运行该应用程序，然后尽情使用带有 mock 服务和数据库的 Microsoft Passport。
+-   生成和运行该应用程序，然后尽情使用带有 mock 服务和数据库的 Windows Hello。
 
-在本动手实验中，你了解了如何在从 Windows 10 计算机使用身份验证时使用 Passport API 替换密码。 当你思考用户为在现有系统中维护密码和支持丢失的密码而花费多少精力时，你应该看到移动到此全新的用于身份验证的 Microsoft Passport 系统的优势。
+在本动手实验中，你了解了如何在从 Windows 10 计算机使用身份验证时使用 Windows Hello API 替换密码。 当你思考用户为在现有系统中维护密码和支持丢失的密码而花费多少精力时，你应该看到移动到此全新的用于身份验证的 Windows Hello 系统的优势。
 
-我们为你保留了有关如何在服务和服务器端实现身份验证的详细信息作为练习。 预计你们中的大多数的现有系统都需要迁移才可以开始使用 Microsoft Passport，并且每个系统的详细信息都各不相同。
+我们为你保留了有关如何在服务和服务器端实现身份验证的详细信息作为练习。 预计你们中的大多数的现有系统都需要迁移才可以开始使用 Windows Hello，并且每个系统的详细信息都各不相同。
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
-* [Microsoft Passport 登录应用](microsoft-passport-login.md)
-
-
-<!--HONumber=Dec16_HO1-->
-
-
+* [Windows Hello](microsoft-passport.md)
+* [Windows Hello 登录应用](microsoft-passport-login.md)

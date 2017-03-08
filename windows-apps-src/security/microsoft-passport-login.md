@@ -1,27 +1,34 @@
 ---
-title: "创建 Microsoft Passport 登录应用"
-description: "这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。"
+title: "创建 Windows Hello 登录应用"
+description: "这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Windows Hello 作为传统用户名和密码身份验证系统的替代项。"
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 126811b615117c0204e3ac4326d810c986a51e55
-ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ffec3d72ab0b3ca87a5cc0ec9325fe805ae9b6f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="create-a-microsoft-passport-login-app"></a>创建 Microsoft Passport 登录应用
+# <a name="create-a-windows-hello-login-app"></a>创建 Windows Hello 登录应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。 该应用将用户名用于登录并为每个帐户创建 Passport 密钥。 这些帐户在配置 Microsoft Passport 时将受在 Windows 设置中设置的 PIN 保护。
+这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Windows Hello 作为传统用户名和密码身份验证系统的替代项。 该应用将用户名用于登录并为每个帐户创建 Hello 密钥。 这些帐户在配置 Windows Hello 时将受在 Windows 设置中设置的 PIN 的保护。
 
-本演练分为两个部分：生成应用和连接后端服务。 当你完成此文章时，请继续执行第 2 部分：[Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)。
+本演练分为两个部分：生成应用和连接后端服务。 当你完成此文章时，请继续执行第 2 部分：[Windows Hello 登录服务](microsoft-passport-login-auth-service.md)。
 
-在开始之前，你应阅读 [Microsoft Passport 和 Windows Hello](microsoft-passport.md) 概述，以便大致了解 Microsoft Passport 的工作原理。
+在开始之前，你应阅读 [Windows Hello](microsoft-passport.md) 概述，以便大致了解 Windows Hello 的工作原理。
 
 ## <a name="get-started"></a>入门
 
@@ -33,20 +40,20 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 -   选择“空白应用（通用 Windows）”并将你的应用程序命名为“PassportLogin”。
 -   生成并运行新的应用程序 (F5)，然后你应该看到屏幕上显示的空白窗口。 关闭该应用程序。
 
-![passport 新项目](images/passport-login-1.png)
+![Windows Hello 新项目](images/passport-login-1.png)
 
 ## <a name="exercise-1-login-with-microsoft-passport"></a>练习 1：使用 Microsoft Passport 登录
 
 
-在本练习中，你将了解如何检查 Microsoft Passport 是否在计算机上设置，以及如何使用 Microsoft Passport 登录到某一帐户。
+在本练习中，你将了解如何检查 Windows Hello 是否在计算机上设置，以及如何使用 Windows Hello 登录到某一帐户。
 
 -   在新项目中，在解决方案中创建一个名为“Views”的新文件夹。 在本示例中，此文件夹包含将导航到的页面。 在解决方案资源管理器中右键单击该项目、依次选择“添加”&gt;“新文件夹”，然后将该文件夹重命名为 Views。
 
-    ![passport 添加文件夹](images/passport-login-2.png)
+    ![Windows Hello“添加”文件夹](images/passport-login-2.png)
 
 -   右键单击新的 Views 文件夹、依次选择“添加”&gt;“新项目”，然后选择“空白页”。 将此页面命名为“Login.xaml”。
 
-    ![passport 添加空白页](images/passport-login-3.png)
+    ![Windows Hello 添加空白页](images/passport-login-3.png)
 
 -   若要为新的登录页定义用户界面，请添加以下 XAML。 此 XAML 定义 StackPanel 以便对齐以下子元素：
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     -   用于错误消息的 TextBlock。
     -   用于要输入的用户名的文本框。
     -   用于导航至注册页的按钮。
-    -   包含 Microsoft Passport 状态的 TextBlock。
+    -   包含 Windows Hello 状态的 TextBlock。
     -   用于解释登录页的 TextBlock（当没有任何后端或已配置的用户时）。
 
     ```xml
@@ -132,7 +139,7 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     }
     ```
 
--   在登录页中，你需要处理 OnNavigatedTo 事件来验证 Microsoft Passport 在此计算机上是否可用。 在 Login.xaml.cs 中，实现以下项。 你会注意到 MicrosoftPassportHelper 对象标记一个错误。 这是因为我们尚未实现它。
+-   在登录页中，你需要处理 OnNavigatedTo 事件来验证 Windows Hello 在此计算机上是否可用。 在 Login.xaml.cs 中，实现以下项。 你会注意到 MicrosoftPassportHelper 对象标记一个错误。 这是因为我们尚未实现它。
 
     ```cs
     public sealed partial class Login : Page
@@ -165,7 +172,7 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     ![passport 创建帮助程序类](images/passport-login-5.png)
 
 -   右键单击 Utils 文件夹，然后依次单击“添加”&gt;“类”。 将此类命名为“MicrosoftPassportHelper.cs”。
--   将 MicrosoftPassportHelper 的类定义更改为公共静态，然后添加以下方法以通知用户 Microsoft Passport 是否可供使用。 你将需要添加所需的命名空间。
+-   将 MicrosoftPassportHelper 的类定义更改为公共静态，然后添加以下方法以通知用户 Windows Hello 是否可供使用。 你将需要添加所需的命名空间。
 
     ```cs
     using System;
@@ -207,11 +214,11 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     using PassportLogin.Utils;
     ```
 
--   生成并运行应用程序 (F5)。 你将导航到登录页，Microsoft Passport 横幅将指示 Passport 是否可供使用。 你应该看到绿色或蓝色横幅，这指示你的计算机上的 Microsoft Passport 状态。
+-   生成并运行应用程序 (F5)。 你将导航到登录页，Windows Hello 横幅将指示 Hello 是否可供使用。 你应该看到绿色或蓝色横幅，这指示你的计算机上的 Windows Hello 状态。
 
-    ![passport 登录屏幕准备就绪](images/passport-login-6.png)
+    ![Windows Hello 登录屏幕就绪](images/passport-login-6.png)
 
-    ![passport 登录屏幕未设置](images/passport-login-7.png)
+    ![Windows Hello 登录屏幕未设置](images/passport-login-7.png)
 
 -   接下来你需要执行的操作是生成用于登录的逻辑。 创建名为“Models”的新文件夹。
 -   在 Models 文件夹中，创建名为“Account.cs”的新类。 此类将用作你的帐户模型。 由于这是一个示例，因此它将仅包含一个用户名。 将类定义更改为公共，并添加 Username 属性。
@@ -417,7 +424,7 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     }
     ```
 
--   你可能已经注意到，注释代码引用了 MicrosoftPassportHelper 中的方法。 在 MicrosoftPassportHelper.cs 中，添加名为 CreatePassportKeyAsync 的新方法。 此方法使用 [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) 中的 Microsoft Passport API。 调用 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 将创建特定于 *accountId* 和本地计算机的 Passport 密钥。 如果你对在真实应用场景中进行实现感兴趣，请注意 switch 语句中的注释。
+-   你可能已经注意到，注释代码引用了 MicrosoftPassportHelper 中的方法。 在 MicrosoftPassportHelper.cs 中，添加名为 CreatePassportKeyAsync 的新方法。 此方法使用 [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) 中的 Windows Hello API。 调用 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 将创建特定于 *accountId* 和本地计算机的 Passport 密钥。 如果你对在真实应用场景中进行实现感兴趣，请注意 switch 语句中的注释。
 
     ```cs
     /// <summary>
@@ -484,14 +491,14 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     }
     ```
 
--   生成并运行应用程序。 你将转到登录页。 键入“sampleUsername”，然后单击“登录”。 系统将通过一条 Microsoft Passport 提示信息提示你输入 PIN。 在正确输入 PIN 之后，CreatePassportKeyAsync 方法将能够创建 Passport 密钥。 监视输出窗口，以查看是否显示指示已成功的消息。
+-   生成并运行应用程序。 你将转到登录页。 键入“sampleUsername”，然后单击“登录”。 系统将通过一条 Windows Hello 提示信息提示你输入 PIN。 在正确输入 PIN 之后，CreatePassportKeyAsync 方法将能够创建 Windows Hello 密钥。 监视输出窗口，以查看是否显示指示已成功的消息。
 
-    ![passport 登录 PIN 提示](images/passport-login-8.png)
+    ![Windows Hello 登录 PIN 提示](images/passport-login-8.png)
 
 ## <a name="exercise-2-welcome-and-user-selection-pages"></a>练习 2：欢迎页和用户选择页
 
 
-在本练习中，你将从上一练习继续操作。 当用户成功登录时，他们应该进入可从中注销或删除其帐户的欢迎页。 当 Passport 为每台计算机创建密钥时，将创建一个用户选择屏幕，该屏幕上将显示已登录这台计算机的所有用户。 然后，用户可以选择这些帐户之一并直接转至欢迎屏幕，而无需重新输入密码，因为已针对这些用户进行身份验证，以便访问该计算机。
+在本练习中，你将从上一练习继续操作。 当用户成功登录时，他们应该进入可从中注销或删除其帐户的欢迎页。 当 Windows Hello 为每台计算机创建密钥时，将创建一个用户选择屏幕，该屏幕上将显示已登录这台计算机的所有用户。 然后，用户可以选择这些帐户之一并直接转至欢迎屏幕，而无需重新输入密码，因为已针对这些用户进行身份验证，以便访问该计算机。
 
 -   在 Views 文件夹中，添加名为“Welcome.xaml”的新空白页。 添加以下 XAML 来完成用户界面。 这将显示一个标题、登录的用户名以及两个按钮。 其中一个按钮将向后导航到用户列表（将在稍后创建），另一个按钮将处理忘记此用户的情况。
 
@@ -557,7 +564,7 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
     }
     ```
 
--   你可能已注意到，某行在忘记用户单击事件中已有注释。 该帐户将从你的本地列表中删除，不过当前没有从 Passport 删除的方法。 你需要在 MicrosoftPassportHelper.cs 中实现一个新方法，以便处理 Passport 用户的删除操作。 此方法将使用其他 Microsoft Passport API 来打开和删除帐户。 实际上，在删除帐户后，应通知服务器或数据库，以便用户数据库保持有效。 你将需要一个对 Models 文件夹的引用。
+-   你可能已注意到，某行在忘记用户单击事件中已有注释。 该帐户将从你的本地列表中删除，不过当前没有从 Windows Hello 删除的方法。 你需要在 MicrosoftPassportHelper.cs 中实现一个新方法，以便处理 Windows Hello 用户的删除操作。 此方法将使用其他 Windows Hello API 打开和删除该帐户。 实际上，在删除帐户后，应通知服务器或数据库，以便用户数据库保持有效。 你将需要一个对 Models 文件夹的引用。
 
     ```cs
     using PassportLogin.Models;
@@ -624,7 +631,7 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 -   生成并运行应用程序。 使用“sampleUsername”登录，然后单击“登录”。 输入你的 PIN，如果成功，你应导航到欢迎屏幕。 尝试单击“忘记用户”，并监视输出窗口以查看是否已删除该用户。 请注意，在用户删除后，你将仍位于欢迎页上。 你需要创建应用可以导航到的用户选择页。
 
-    ![passport 欢迎屏幕](images/passport-login-9.png)
+    ![Windows Hello 欢迎屏幕](images/passport-login-9.png)
 
 -   在 Views 文件夹中，创建名为“UserSelection.xaml”的新空白页，然后添加以下 XAML 来定义用户界面。 此页面将包含一个用于在本地帐户列表中显示所有用户的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及一个用于导航到登录页的 Button，从而让用户可以添加其他帐户。
 
@@ -872,12 +879,12 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 -   生成并运行应用程序。 使用“sampleUsername”登录。 键入你的 PIN，如果成功，你将导航到欢迎屏幕。 通过单击返回到用户列表。 你现在应该可以在列表中看到用户。 通过单击此 Passport，你可以重新登录，而无需重新输入任何密码等。
 
-    ![passport 选择用户列表](images/passport-login-10.png)
+    ![Windows Hello 选择用户列表](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-passport-user"></a>练习 3：注册新的 Passport 用户
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a>练习 3：注册新 Windows Hello 用户
 
 
-在本练习中，将为你创建一个新页面，将在该页面中使用 Passport 创建一个新帐户。 这将与登录页的工作原理类似。 登录页将针对迁移的现有用户进行实现，以便使用 Passport。 PassportRegister 页将为新用户创建 Passport 注册。
+在本练习中，将为你创建一个新页面，将在该页面中使用 Windows Hello 创建一个新帐户。 这将与登录页的工作原理类似。 登录页将针对迁移的现有用户进行实现，以便使用 Windows Hello。 PassportRegister 页将为新用户创建 Windows Hello 注册。
 
 -   在 Views 文件夹中，创建名为“PassportRegister.xaml”的新空白页。 在 XAML 中，添加以下内容来设置用户界面。 此处的界面类似于登录页。
 
@@ -961,18 +968,11 @@ ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 -   生成并运行应用程序。 尝试注册新用户。 然后返回到用户列表并验证你可以选择该用户和登录信息。
 
-    ![passport 注册新用户](images/passport-login-11.png)
+    ![Windows Hello 注册新用户](images/passport-login-11.png)
 
-在本实验中，你已经掌握了使用新 Microsoft Passport API 对现有用户进行身份验证和为新用户创建帐户时所需的基本技能。 借助此新知识，你的用户现在不再需要记住你的应用程序密码，不过请放心，你的应用程序仍然受用户身份验证保护。 Windows 10 使用 Passport 技术来支持 Windows Hello 的生物识别登录。 如果你使用的计算机支持 Windows Hello，你将看到这组练习已支持 Windows Hello。
-
-作为一名开发人员，你无需执行任何额外的工作，即可在实现对 Microsoft Passport 的支持之后支持 Windows Hello。
+在本实验中，你已经掌握了使用新 Windows Hello API 对现有用户进行身份验证和为新用户创建帐户时所需的基本技能。 借助此新知识，你的用户现在不再需要记住你的应用程序密码，不过请放心，你的应用程序仍然受用户身份验证保护。 Windows 10 使用 Windows Hello 的新身份验证技术来支持其生物识别登录选项。
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
-* [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
-
-
-<!--HONumber=Dec16_HO2-->
-
-
+* [Windows Hello](microsoft-passport.md)
+* [Windows Hello 登录服务](microsoft-passport-login-auth-service.md)

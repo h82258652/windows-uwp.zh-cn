@@ -3,9 +3,17 @@ author: awkoren
 Description: "使用桌面到 UWP 桥部署和调试从 Windows 桌面应用程序（Win32、WPF 和 Windows 窗体）转换的通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: "调试使用桌面桥转换的应用"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 translationtype: Human Translation
-ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
-ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9660d14a1ca28929a213d4ed5a59cdcda73ccc39
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -15,7 +23,7 @@ ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
 
 ## <a name="attach-to-process"></a>附加到进程
 
-当 Microsoft Visual Studio“以管理员身份”运行时，“开始调试”和“开始执行”命令将适用于转换应用的项目，但已启动的应用将以[中等完整性级别](https://msdn.microsoft.com/library/bb625963)运行（即，它不会具有提升的权限）。 若要向已启动的应用授予管理员权限，首先你需要通过快捷方式或磁贴启动“以管理员身份”。 应用运行后，从“以管理员身份”运行的 Microsoft Visual Studio 的实例调用__附加到进程__，然后从对话框中选择应用的进程。
+当 Microsoft Visual Studio“以管理员身份”运行时，*开始调试*和*开始执行*命令将适用于转换应用的项目，但已启动的应用将以[中等完整性级别](https://msdn.microsoft.com/library/bb625963)运行（即，它不会具有提升的权限）。 若要向已启动的应用授予管理员权限，首先你需要通过快捷方式或磁贴启动“以管理员身份”。 应用运行后，从“以管理员身份”运行的 Microsoft Visual Studio 的实例调用__附加到进程__，然后从对话框中选择应用的进程。
 
 ## <a name="f5-debug"></a>F5 调试
 
@@ -53,7 +61,7 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
 
     将 PackageLayout 设置为转换器（上述）所创建的 AppX 的根位置。 然后选取要执行的磁贴。
 
-8.  打开并编辑 AppXFileList.xml。 此文件定义如何将 Win32 调试生成的输出复制到转换器所生成的 AppX 布局中。 默认情况下，文件中有一个带有示例标签和注释的占位符：
+8.    打开并编辑 AppXFileList.xml。 此文件定义如何将 Win32 调试生成的输出复制到转换器所生成的 AppX 布局中。 默认情况下，文件中有一个带有示例标签和注释的占位符：
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -118,9 +126,9 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10. 最后，你现在可以在 Win32 代码中设置断点，并按 F5 启动调试程序。 它会将你对 Win32 应用程序所做的所有更新复制到 AppX 程序包，并允许你直接从 Visual Studio 内进行调试。
+10.    最后，你现在可以在 Win32 代码中设置断点，并按 F5 启动调试程序。 它会将你对 Win32 应用程序所做的所有更新复制到 AppX 程序包，并允许你直接从 Visual Studio 内进行调试。
 
-11. 如果你更新应用程序，将需要使用 MakeAppX 重新打包你的应用。 有关详细信息，请参阅[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
+11.    如果你更新应用程序，将需要使用 MakeAppX 重新打包你的应用。 有关详细信息，请参阅[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
 
 如果你有多个生成配置（例如用于发布和调试），可以将以下内容添加到 AppXFileList.xml 文件以从不同的位置复制 Win32 生成：
 
@@ -134,7 +142,7 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
 
 如果你将应用程序更新到 UWP，但仍然希望也针对 Win32 生成它，则还可以使用条件编译来启用特定代码路径。 
 
-1.  在以下示例中，代码仅针对 DesktopUWP 进行编译，并且将使用 WinRT API 显示磁贴。 
+1.    在以下示例中，代码仅针对 DesktopUWP 进行编译，并且将使用 WinRT API 显示磁贴。 
 
     ```C#
     [Conditional("DesktopUWP")]
@@ -148,17 +156,17 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     }
     ```
 
-2.  你可以使用“配置管理器”添加新的生成配置：
+2.    你可以使用“配置管理器”添加新的生成配置：
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  然后在项目属性下，添加对条件编译符号的支持：
+3.    然后在项目属性下，添加对条件编译符号的支持：
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  如果要面向你添加的 UWP API 进行生成，你现在可以将生成目标切换为 DesktopUWP。
+4.    如果要面向你添加的 UWP API 进行生成，你现在可以将生成目标切换为 DesktopUWP。
 
 ## <a name="plmdebug"></a>PLMDebug 
 
@@ -174,9 +182,4 @@ PLMDebug 包含在 Windows SDK 中。 有关详细信息，请参阅 [**PLMDebug
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

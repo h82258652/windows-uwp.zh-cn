@@ -1,17 +1,24 @@
 ---
 author: jnHs
-Description: "使用 Windows 开发人员中心仪表板中的反馈报告，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。"
+Description: "使用 Windows 开发人员中心仪表板中的反馈报告，你可以看到 Windows 10 客户通过反馈中心提交的问题、建议和投票。"
 title: "反馈报告"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
-ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 反馈报告
+# <a name="feedback-report"></a>反馈报告
 
-使用 Windows 开发人员中心仪表板中的“反馈报告”****，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。 你可以在仪表板中查看此数据，或导出该数据以供脱机查看。
+使用 Windows 开发人员中心仪表板中的**反馈报告**，你可以看到 Windows 10 客户通过反馈中心提交的问题、建议和投票。 你可以在仪表板中查看此数据，或导出该数据以供脱机查看。
 
 鼓励客户向你提供有关你的应用的反馈是了解对客户来说非常重要的问题和功能的绝佳方法。 当你的客户知道他们可以直接向你发送反馈时，他们不太可能留下负面评论的反馈。
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
 
 > **提示** 如果你使用的是[软件包外部测试](package-flights.md)，反馈将变得尤为重要；因为当客户留下反馈时，反馈报告将向你显示每个客户已在其设备上安装的特定程序包。
 
-## 查看反馈详细信息
+## <a name="viewing-feedback-details"></a>查看反馈详细信息
 
 在此报告的“详细信息”****部分中，你将找到客户留下的单个反馈。 在反馈文本的左侧，你将看到其他客户通过“反馈中心”对该反馈的投票数。 你可以采用以下三种方法对反馈进行分类：
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
 在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场、客户留下反馈时他们所用设备上安装的你的应用的特定程序包、该设备的类型和 **Windows 预览体验成员**（如果提交反馈的客户是 Windows 预览体验计划的成员）。
 
 
-## 应用筛选器
+## <a name="apply-filters"></a>应用筛选器
 
 在页面顶部附近，可以展开“应用筛选器”****筛选此页上的所有数据。
 
@@ -45,18 +52,13 @@ ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
 - **市场**：默认设置为“所有市场”****。 你可以选择一个特定市场，以便仅显示来自该市场中的客户的反馈。
 - **组**：默认设置是“全部”****。 你可以选择只查看 [Windows 预览体验成员](http://insider.windows.com)提交的反馈。
 
-## 翻译反馈
+## <a name="translating-feedback"></a>翻译反馈
 
 默认情况下，将为你翻译未使用你的首选语言撰写的评论。 如果需要，可以通过在反馈列表的上方取消选中右上角的“翻译评论”****复选框来禁用反馈翻译。
 
 请注意，反馈将由自动翻译系统翻译，所以翻译结果可能不一定是准确的。 如果你想要对照翻译或者通过其他方式进行翻译，会旧提供原始文本。
 
-## 直接从应用启动“反馈中心”
+## <a name="launching-feedback-hub-directly-from-your-app"></a>直接从应用启动“反馈中心”
 
 如上所述，我们建议直接将“反馈中心”的链接包含你的应用中，以便鼓励客户提供反馈。 有关详细信息，请参阅[从应用启动“反馈中心”](../monetize/launch-feedback-hub-from-your-app.md)。
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

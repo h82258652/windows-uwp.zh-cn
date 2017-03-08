@@ -1,17 +1,24 @@
 ---
 author: TylerMSFT
 title: "调试后台任务"
-description: "了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。"
+description: "了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="debug-a-background-task"></a>调试后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
@@ -37,12 +44,12 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
 
     在 C++ 中，在后台类的 Run 函数中放置一个断点（对于进程内后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 编写调试输出。
 
-2.  在调试程序中运行你的应用程序，然后使用“生命周期事件”工具栏触发该后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
+2.  在调试程序中运行你的应用程序，然后使用**生命周期事件**工具栏触发该后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
 
     若要此功能正常运行，则后台任务必须已注册并且必须仍等待触发。 例如，如果后台任务已使用一次性 TimeTrigger 注册，并且该触发器已引发，则通过 Visual Studio 启动该任务将无效。
 
 > [!Note]
-> 使用以下触发器的后台任务以及使用触发器类型为 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的后台任务均无法采用此方式激活：[**Application trigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、 [**MediaProcessing trigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)。  
+> 使用以下触发器的后台任务以及使用触发器类型为 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的后台任务均无法采用此方式激活：[**Application trigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、 [**MediaProcessing trigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)。  
 > **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。     
 
     ![debugging background tasks](images/debugging-activation.png)
@@ -77,7 +84,7 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
     2.  在事件查看器中转到**应用程序和服务日志** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure**
     3.  在操作窗格中，选择**查看** -&gt; **显示分析和调试日志**以启用诊断日志记录。
-    4.  选择“诊断日志”并单击“启用日志”。
+    4.  选择**诊断日志**并单击**启用日志**。
     5.  现在尝试使用你的应用再次注册并激活后台任务。
     6.  查看诊断日志以了解更详细的错误信息。 这将包括为后台任务注册的入口点。
 
@@ -113,9 +120,4 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

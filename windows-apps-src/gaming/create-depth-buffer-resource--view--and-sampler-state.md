@@ -3,13 +3,20 @@ author: mtoepke
 title: "创建深度缓冲区设备资源"
 description: "了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。"
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, direct3d, 深度缓冲区"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 创建深度缓冲区设备资源
+# <a name="create-depth-buffer-device-resources"></a>创建深度缓冲区设备资源
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
 
 了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 1 部分。
 
-## 所需资源
+## <a name="resources-youll-need"></a>所需资源
 
 
 呈现阴影卷的深度映射需要以下与 Direct3D 设备有关的资源：
@@ -32,7 +39,7 @@ ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
 
 请注意，这些资源的创建需要包含在与设备有关的资源创建例程中，这样你的呈现器便可以在安装新的设备驱动程序时或者用户将你的应用移动到与其他图形适配器连接的监视器时重新创建它们。
 
-## 检查功能支持
+## <a name="check-feature-support"></a>检查功能支持
 
 
 创建深度映射之前，在 Direct3D 设备上调用 [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 方法，请求 **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** 并提供一个 [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 结构。
@@ -54,7 +61,7 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 如果不支持此功能，请勿尝试加载与调用示例比较函数的着色器模型 4 级别 9\_x 兼容的着色器。 在大多数情况下，缺乏对该功能的支持意味着 GPU 是一款旧设备，其驱动器未更新至支持 WDDM 1.2。 如果设备支持至少功能级别 10\_0，则可加载与着色器模型 4\_0 兼容的示例比较函数作为替代。
 
-## 创建深度缓冲区
+## <a name="create-depth-buffer"></a>创建深度缓冲区
 
 
 首先，尝试使用精度较高的深度格式创建深度映射。 首先设置匹配的着色器资源视图属性。 如果资源创建失败，例如由于设备内存不足或者存在硬件不支持的格式，请尝试精度较低的格式并更改要匹配的属性。
@@ -107,7 +114,7 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## 创建比较状态
+## <a name="create-comparison-state"></a>创建比较状态
 
 
 现在创建比较采样器状态对象。 功能级别 9\_1 仅支持 D3D11\_COMPARISON\_LESS\_EQUAL。 [在硬件范围内支持阴影映射](target-a-range-of-hardware.md)中详细介绍了筛选选项，或者只是选取点筛选以便快速获得阴影映射。
@@ -146,7 +153,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 创建呈现器状态
+## <a name="create-render-states"></a>创建呈现器状态
 
 
 现在，创建你可以用来启用正面剔除的呈现器状态。 请注意，功能级别 9\_1 设备要求将 **DepthClipEnable** 设置为 **true**。
@@ -182,7 +189,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 创建常量缓冲区
+## <a name="create-constant-buffers"></a>创建常量缓冲区
 
 
 不要忘记创建一个用于从光线的角度呈现的常量缓冲区。 你还可以使用该常量缓冲区指定着色器的光线位置。 对点光源使用透视矩阵，对定向光源（太阳光）使用正交矩阵。
@@ -239,7 +246,7 @@ context->UpdateSubresource(
     );
 ```
 
-## 创建视区
+## <a name="create-a-viewport"></a>创建视区
 
 
 你需要一个单独的视区来呈现到阴影映射。 视区不是基于设备的资源；你可以在代码中的其他地方创建视区。 创建具有阴影映射的视口可便于将视口的尺寸与阴影映射的尺寸保持一致。
@@ -261,10 +268,5 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

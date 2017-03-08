@@ -3,13 +3,20 @@ author: mcleblanc
 description: "适用于 iOS 开发人员的 UWP 入门"
 title: "适用于 iOS 开发人员的 UWP 入门"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 适用于 iOS 开发人员的 UWP 入门
+# <a name="getting-started-with-uwp-for-ios-developers"></a>适用于 iOS 开发人员的 UWP 入门
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
 
 不要单单移植应用，而是要**重新构建**应用，并且利用新功能和新设备，这是底线。 不要满足于最低的提供共同特性的做法，而是要创建使用 Windows 10 独特功能（如动态磁贴、通知和与 Cortana 交互）的丰富体验。
 
-要开始这些操作实例，你需要一台装有 Windows 10 和 Microsoft Visual Studio 的计算机。 你可以从[用于 Windows 应用商店应用编程的开发人员下载](http://go.microsoft.com/fwlink/p/?LinkId=302144)来下载它们。 没有 PC？ 不要担心，你可以使用 Mac：请参阅[在 Mac 上安装 Windows 和开发人员工具](setting-up-your-mac-with-windows-10.md)。
+要开始这些操作实例，你需要一台装有 Windows 10 和 Microsoft Visual Studio 的计算机。 你可以从[用于 Windows 应用商店应用编程的开发人员下载](https://developer.microsoft.com/en-us/windows/downloads)来下载它们。 没有 PC？ 不要担心，你可以使用 Mac：请参阅[在 Mac 上安装 Windows 和开发人员工具](setting-up-your-mac-with-windows-10.md)。
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -39,9 +46,4 @@ ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

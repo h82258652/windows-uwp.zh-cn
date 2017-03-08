@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "使用选取器保存文件"
 description: "使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 46f79b34762eeb3424b887662418105e2e8a3ec2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 让用户指定名称和他们想让应用保存文件的位置。
 
-> **注意** 另请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+> **注意**  另请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
 
  
 
@@ -58,14 +65,14 @@ savePicker.SuggestedFileName = "New Document";
 
 此示例设置了三个属性：[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880)[**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) 和 [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。
 
-> **注意** [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 对象使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) 显示文件选取器。
+> **注意**  [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 对象使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) 显示文件选取器。
 
      
 - 由于我们的用户正在保存文档或文本文件，因此该示例通过使用 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) 设置为应用的本地文件夹。 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为适用于被保存的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 
 - 由于我们希望确保我们的应用可以在其保存后能打开该文件，我们将使用 [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875).指定支持该示例的文件类型（Microsoft Word 文档和文本文件）。 确保你的应用支持你指定的所有文件类型。 用户将能够以你指定的任意文件类型保存他们的文件。 他们还可以通过选择另一个你指定的文件类型更改文件类型。 默认情况下，将选择列表中的第一个文件类型选项：若要控制该选项，请设置 [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) 属性。
 
-> **注意** 文件选取器还使用当前选中的文件类型筛选显示的文件，以便仅向用户显示与选中的文件类型匹配的文件类型。
+> **注意**  文件选取器还使用当前选中的文件类型筛选其显示的文件，以便仅向用户显示与选中的文件类型匹配的文件类型。
 
 - 为了给用户省去一些键入，示例设置了 [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。 请确保你建议的文件名与正在保存的文件相关。 例如，和 Word 一样，你可以建议现有的文件名（如果有），或者文档的第一行（如果用户正在保存还没有名称的文件）。
 
@@ -104,16 +111,11 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 该示例检查了文件是否有效并将其自己的文件名写入其中。 另请参阅[创建、写入和读取文件](quickstart-reading-and-writing-files.md)。
 
-**提示** 应始终检查已保存的文件，以确保在执行任何其他处理之前该文件有效。 然后，你可以将内容保存到适合你的应用的文件，并在已选取的文件无效时提供相应的行为。
+**提示**  应始终检查已保存的文件，以确保在执行任何其他处理之前该文件有效。 然后，你可以将内容保存到适合你的应用的文件，并在已选取的文件无效时提供相应的行为。
 
      
 
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

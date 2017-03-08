@@ -3,9 +3,16 @@ author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "创建 NFC 智能卡应用"
 description: "Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: c5a7293874bd71b50aa31d6af9a687d289d07ce5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee62e0d1ddd41ce1cce61bc854168f0cac6ad038
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-an-nfc-smart-card-app"></a>创建 NFC 智能卡应用
@@ -36,7 +43,7 @@ Windows 10 支持智能卡的仿真，这些智能卡基于 ISO-DEP (ISO-IEC 144
 
 仅 Windows 10 移动版设备才支持卡仿真功能。 基于 SIM 卡和基于 HCE 的卡仿真不适用于其他版本的 Windows 10。
 
-在下图中显示了基于 HCE 和 SIM 卡的卡仿真支持的体系结构。 
+在下图中显示了基于 HCE 和 SIM 卡的卡仿真支持的体系结构。
 
 ![HCE 和 SIM 卡枚举的体系结构](./images/nfc-architecture.png)
 
@@ -220,7 +227,7 @@ public static byte[] AID_PPSE =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Host);
@@ -237,7 +244,7 @@ public static byte[] AID_OTHER =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_OTHER.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -296,7 +303,7 @@ public static byte[] AID_Foreground =
         {};
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_Foreground.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -341,15 +348,15 @@ case Never:
 // you can take the user to the NFC settings to turn "tap and pay" on
 await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings-nfctransactions:"));
 break;
- 
- case Always: 
+
+ case Always:
 return "Card emulation always on";
 
  case ScreenOn:
  return "Card emulation on only when screen is on";
 
  case ScreenUnlocked:
- return "Card emulation on only when screen unlocked"; 
+ return "Card emulation on only when screen unlocked";
 }
 ```
 
@@ -363,7 +370,7 @@ return "Card emulation always on";
         {
             // Launch above the lock with some arguments
             var result = await eventDetails.TryLaunchSelfAsync("app-specific arguments", SmartCardLaunchBehavior.AboveLock);
-        } 
+        }
 ```
 
 ## <a name="aid-registration-and-other-updates-for-sim-based-apps"></a>适用于基于 SIM 卡应用的 AID 注册和其他更新
@@ -372,7 +379,7 @@ return "Card emulation always on";
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Uicc);
@@ -380,12 +387,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 ** 重要提示 **  
 Windows Phone 8.1 中的传统二进制短信拦截已删除并替换为 Windows 10 移动版中更广泛的新短信支持，但任何依赖于前者的传统 Windows Phone 8.1 应用都必须更新为使用新的 Windows 10 移动版短信 API。
-
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

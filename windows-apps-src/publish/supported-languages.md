@@ -3,20 +3,27 @@ author: jnHs
 Description: "你可以用 100 多种语言向 Windows 应用商店提交应用。"
 title: "支持的语言"
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b9d0720ee56430320cfc4ca2725fb3e0ac8049e5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支持的语言
+# <a name="supported-languages"></a>支持的语言
 
 
 你可以用 100 多种语言向 Windows 应用商店提交应用。
 
 若要了解有关在应用中配置语言的详细信息，请参阅[全球化和本地化](../globalizing/globalizing-portal.md)以及[管理语言和区域](../globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370)，用于帮助你编写支持多种语言的应用。
 
-## 支持的语言
+## <a name="supported-languages"></a>支持的语言
 
 
 以下是 Windows 应用商店支持的语言。 你的应用必须支持至少其中一种语言，并且它不得指定未包含在此处的任何语言代码。
@@ -135,10 +142,5 @@ ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

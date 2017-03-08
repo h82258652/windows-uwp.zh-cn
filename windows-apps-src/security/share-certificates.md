@@ -3,23 +3,30 @@ title: "在应用之间共享证书"
 description: "要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。"
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ca4c7b82fdb7f950d3f68323dec37c2f31e02c87
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在应用之间共享证书
+# <a name="share-certificates-between-apps"></a>在应用之间共享证书
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 对用户进行身份验证时，证书身份验证将提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
+要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 当对用户进行身份验证时，认证身份验证提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
 
 应用可使用证书对 Web 服务进行身份验证，并且多个应用可使用来自证书存储的单个证书对相同的用户进行身份验证。 如果存储中不存在证书，可将代码添加到应用以从 PFX 文件导入证书。
 
-## 启用 Microsoft Internet 信息服务 (IIS) 和客户端证书映射
+## <a name="enable-microsoft-internet-information-services-iis-and-client-certificate-mapping"></a>启用 Microsoft Internet 信息服务 (IIS) 和客户端证书映射
 
 
 本文以 Microsoft Internet 信息服务 (IIS) 为例。 默认情况下不启用 IIS。 可通过使用控制面板来启用 IIS。
@@ -29,7 +36,7 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 3.  展开“Internet 信息服务”****，然后展开“万维网服务”****。 展开“应用程序开发功能”****并选择“ASP.NET 3.5”****和“ASP.NET 4.5”****。 做出这些选择将自动启用 **Internet 信息服务**。
 4.  单击“确定”****以应用更改。
 
-## 创建并发布安全的 Web 服务
+## <a name="create-and-publish-a-secured-web-service"></a>创建并发布安全的 Web 服务
 
 
 1.  作为管理员运行 Microsoft Visual Studio 并从起始页选择“新建项目”****。 将 Web 服务发布到 IIS 服务器需要管理员访问权限。 在“新建项目”对话框中，将框架更改为“.NET Framework 3.5”****。 依次选择“Visual C#”**** -&gt;“Web”**** -&gt;“Visual Studio”**** -&gt;“ASP.NET Web 服务应用程序”****。 将应用程序命名为“FirstContosoBank”。 单击“确定”****以创建项目。
@@ -51,7 +58,7 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 5.  在“发布 Web”****对话框中，创建新的配置文件并将其命名为“ContosoProfile”。 单击“下一步”****。
 6.  在下一个页面上，为你的 IIS 服务器输入服务器名并指定“默认 Web 站点/FirstContosoBank”的站点名。 单击“发布”****以发布你的 Web 服务。
 
-## 配置你的 Web 服务以使用客户端认证身份验证。
+## <a name="configure-your-web-service-to-use-client-certificate-authentication"></a>配置你的 Web 服务以使用客户端认证身份验证。
 
 
 1.  运行“Internet 信息服务 (IIS) 管理器”****。
@@ -64,14 +71,14 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 
 你可以重复之前的步骤以创建多个可使用相同客户端证书访问的 Web 服务。
 
-## 创建使用证书身份验证的 Windows 应用商店应用
+## <a name="create-a-windows-store-app-that-uses-certificate-authentication"></a>创建使用证书身份验证的 Windows 应用商店应用
 
 
 现在你已拥有一个或多个安全 Web 服务，应用可使用证书来验证这些 Web 服务。 在使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 对象发出对经过身份验证的 Web 服务的请求时，初始请求将不包含客户端证书。 经过身份验证的 Web 服务将以对客户端身份验证的请求进行响应。 当此情况发生时，Windows 客户端将自动查询证书存储以获取可用的客户端证书。 用户可以从这些证书中选择以对 Web 服务进行身份验证。 一些证书受密码保护，所以你将需要向用户提供输入证书密码的方法。
 
 如果没有可用的客户端证书，则用户将需要将证书添加到证书存储。 可将代码包括在 Windows 应用商店应用中，此应用使用户能够选择包含客户端证书的 PFX 文件，然后将该证书导入到客户端证书存储中。
 
-**提示** 你可以使用 makecert.exe 创建 PFX 文件以用于此快速入门。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
+**提示**：你可以使用 makecert.exe 创建 PFX 文件以用于此快速入门。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
 
  
 
@@ -203,8 +210,3 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 8.  运行应用并登录到安全 Web 服务以及将 PFX 文件导入到本地证书存储中。
 
 可使用这些步骤创建多个应用，这些应用使用同一个用户证书访问相同或不同的安全 Web 服务。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

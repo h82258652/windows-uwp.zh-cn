@@ -3,13 +3,20 @@ author: jwmsft
 description: "列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。"
 title: "XAML 固有数据类型"
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 60e328ca8652baeb226e78f5a9d99fbf8c4f5208
-ms.openlocfilehash: a204f1d000dd28a9159b4ca795107046ca4ef92e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f6a1ca4850ffbc19afc8defa6d2d373dbfbf2b2b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# XAML 固有数据类型
+# <a name="xaml-intrinsic-data-types"></a>XAML 固有数据类型
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +26,7 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 用于 Windows 运行时的 XAML 提供了对以下类型的语言级支持。
 
-| XAML 原语 | 描述 |
+| XAML 原语 | 说明 |
 |-------|-------------|
 | **x:Boolean**  | 对于 CLR 支持，对应于 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 分析 **x:Boolean** 的值时区分大小写。 请注意，“x:Bool”不是可接受的替代原语。 |
 | **x:String**   | 对于 CLR 支持来说，原语对应于 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 对字符串的编码默认采用包围 XML 编码。 |
@@ -28,24 +35,19 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 这些 XAML 语言原语一般是在 XAML 中定义使用 **x:** 前缀的对象元素的唯一情形。 所有其他 XAML 语言特性通常以属性或标记扩展的形式使用。
 
-**注意** 根据惯例，我们给出了 XAML 语言原语和所有其他 XAML 语言元素，包括“x:”前缀。 这是在真实标记中使用 XAML 语言元素的典型方式。 XAML 文档和 XAML 规范中都采用了这一惯例。
+**注意**  根据惯例，我们给出了 XAML 语言原语和所有其他 XAML 语言元素，包括“x:”前缀。 这是在真实标记中使用 XAML 语言元素的典型方式。 XAML 文档和 XAML 规范中都采用了这一惯例。
 
-## 其他 XAML 原语
+## <a name="other-xaml-primitives"></a>其他 XAML 原语
 
 XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 **x:Single**。 除本节表格中所列项目外，适用于 Windows 运行时的 XAML 当前不支持其他 XAML 词汇表或 XAML 2009 规格所定义的 XAML 语言原语。
 
-**注意** 日期和时间（使用 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 或 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) 或 [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) 的属性）不可使用 XAML 原语设置。 总体而言，这些属性根本不可以采用 XAML 设置，因为 Windows 运行时 XAML 分析程序中没有用于日期和时间的从字符串转换的默认行为。 若要获取任何日期和时间属性的初始化值，必须使用在页面或元素加载时运行的代码隐藏文件。
+**注意**  日期和时间（使用 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 或 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) 或 [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) 的属性）不可使用 XAML 原语设置。 总体而言，这些属性根本不可以采用 XAML 设置，因为 Windows 运行时 XAML 分析程序中没有用于日期和时间的从字符串转换的默认行为。 若要获取任何日期和时间属性的初始化值，必须使用在页面或元素加载时运行的代码隐藏文件。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [XAML 概述](xaml-overview.md)
 * [XAML 语法指南](xaml-syntax-guide.md)
 * [情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

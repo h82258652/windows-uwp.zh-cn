@@ -1,32 +1,39 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 3848cd72-eccd-400e-93ff-13649cd81b6c
 description: "本文提供对使用传统后台媒体模型进行播放的应用的支持，并提供有关迁移到新模型的指南。"
 title: "传统后台媒体播放"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 545841e00af8324ae023378e666b71ef49a4a3b5
-ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9c66df378534825d191740d5eea4beb0f560687e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 传统后台媒体播放
+# <a name="legacy-background-media-playback"></a>传统后台媒体播放
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍了传统双进程模型，用于向 UWP 应用添加后台音频支持。 从 Windows 10 版本 1607 开始，后台音频的单进程模型更易于实现。 有关后台音频的当前建议的详细信息，请参阅[在后台播放媒体](background-audio.md)。 本文旨在为已使用传统双进程模型进行开发的应用提供支持。
 
-## 后台音频体系结构
+## <a name="background-audio-architecture"></a>后台音频体系结构
 
 执行后台播放的应用包含两个进程。 第一个进程是在前台运行的主要应用，包含了应用 UI 和客户端逻辑。 第二个进程是后台播放任务，可实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)，如所有 UWP 应用后台任务。 后台任务包含音频播放逻辑和后台服务。 后台任务通过系统媒体传输控件与系统通信。
 
 下图是系统设计方式的概述。
 
 ![Windows 10 后台音频体系结构](images/backround-audio-architecture-win10.png)
-## MediaPlayer
+## <a name="mediaplayer"></a>MediaPlayer
 
 [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空间包含用于在后台播放音频的 API。 每个应用都存在一个用于进行播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 实例。 你的后台音频应用将调用 **MediaPlayer** 类上的方法并设置相关属性，以设置当前曲目、开始播放、暂停、快进、快退等等。 始终可通过 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 属性访问媒体播放器对象实例。
 
-## MediaPlayer 代理和存根
+## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer 代理和存根
 
 当从应用的后台进程访问 **BackgroundMediaPlayer.Current** 时，将激活后台任务主机中的 **MediaPlayer** 实例并且可对其进行直接操作。
 
@@ -34,19 +41,19 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 前台和后台进程都可以访问 **MediaPlayer** 实例的大多数属性，但 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 和 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 是例外，仅可从后台进程访问它们。 前台应用和后台进程都可以接收特定于媒体的事件（例如 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603) 和 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606)）的通知。
 
-## 播放列表
+## <a name="playback-lists"></a>播放列表
 
 后台音频应用程序的常见方案是连续播放多个项目。 这最容易通过使用 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 对象在你的后台进程中完成，可通过将该对象分配给 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 属性来将其设置为 **MediaPlayer** 上的源。
 
 不可以从前台进程访问在后台进程中设置的 **MediaPlaybackList**。
 
-## 系统媒体传输控件
+## <a name="system-media-transport-controls"></a>系统媒体传输控件
 
 用户可以通过蓝牙设备、SmartGlass 和系统媒体传输控件等方式，在不直接使用你的应用 UI 的情况下控制音频播放。 你的后台任务使用 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 类订阅这些用户引发的系统事件。
 
 若要从后台进程中获取 **SystemMediaTransportControls** 实例，请使用 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 属性。 前台应用通过调用 [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取类的实例，但返回的实例是与后台任务无关的仅限于前台的实例。
 
-## 在任务之间发送消息
+## <a name="sending-messages-between-tasks"></a>在任务之间发送消息
 
 有时，你将希望在后台音频应用的两个进程之间进行通信。 例如，你可能希望后台任务在开始播放新歌曲时通知前台任务，然后将新歌曲标题发送到要在屏幕上显示的前台任务。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 可将数据作为参数传递给发送消息方法，这些方法随后会传入消息接收的事件处理程序中。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 类传递数据。 此类是一个字典，包含了作为键的字符串和作为值的其他值类型。 你可以传递整数、字符串和布尔值等简单的值类型。
 
-## 后台任务生命周期
+## <a name="background-task-life-cycle"></a>后台任务生命周期
 
 后台任务的生命周期与应用的当前播放状态紧密相连。 例如，当用户暂停音频播放时，系统可能会根据情况终止或取消你的应用。 在音频播放停止一段时间后，系统可能会自动关闭后台任务。
 
@@ -80,15 +87,15 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 -   任务取消或完成操作不会顺利结束。
 
-## 适用于后台音频任务生命周期的系统策略
+## <a name="system-policies-for-background-audio-task-lifetime"></a>适用于后台音频任务生命周期的系统策略
 
 以下策略将帮助确定系统管理后台音频任务生命周期的方式。
 
-### 独有性
+### <a name="exclusivity"></a>独有性
 
 如果启用，则此子策略会将在任何给定时间的后台音频任务数上限都限制为 1。 它在移动 SKU 和其他非桌面 SKU 上处于启用状态。
 
-### 不活动超时
+### <a name="inactivity-timeout"></a>不活动超时
 
 由于资源限制，系统可能会在后台任务处于非活动状态一段时间后终止它。
 
@@ -100,7 +107,7 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 如果同时满足这两个条件，则后台媒体系统策略将启动一个计时器。 如果在计时器到期时这两个条件都未发生更改，则后台媒体系统策略将终止后台任务。
 
-### 共享生命周期
+### <a name="shared-lifetime"></a>共享生命周期
 
 如果启用，则此子策略将强制后台任务依赖前台任务的生命周期。 如果前台任务关闭（无论是由用户还是由系统关闭），后台任务也会关闭。
 
@@ -121,10 +128,5 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

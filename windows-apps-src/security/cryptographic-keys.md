@@ -3,21 +3,28 @@ title: "加密密钥"
 description: "本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。"
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
-ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1396382c90b370aa9d610749a92dd256c92dedab
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 加密密钥
+# <a name="cryptographic-keys"></a>加密密钥
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。 
 
-## 对称密钥
+## <a name="symmetric-keys"></a>对称密钥
 
 
 对称密钥加密又称为密钥加密，它要求用来解密的密钥与用来加密的密钥相同。 可使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 类指定对称算法、创建密钥或导入密钥。 可将 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类上的静态方法与算法和密钥结合使用来加密和解密数据。
@@ -42,7 +49,7 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 以下示例说明如何使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 类创建对称密钥并使用其加密和解密数据。
 
-## 不对称密钥
+## <a name="asymmetric-keys"></a>不对称密钥
 
 
 不对称密钥加密也称为公钥加密，使用公钥和私钥执行加密和解密。 这两种密钥虽然不同，但在算术上相关。 通常，私钥秘密保存并用于解密数据，而公钥会分发到感兴趣的各方并用于加密数据。 不对称加密也用于对数据进行签名。
@@ -61,7 +68,7 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 可使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象指定不对称算法或签名算法、创建或导入短暂密钥对，或者导入密钥对的公钥部分。
 
-## 派生密钥
+## <a name="deriving-keys"></a>派生密钥
 
 
 通常有必要从共享机密派生附加密钥。 你可以使用 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) 类以及 [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) 类中的以下特殊方法之一来派生密钥。
@@ -73,9 +80,4 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 创建一个 KeyDerivationParameters 对象以在 SP800-56A 密钥派生函数中使用。                                                 |
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

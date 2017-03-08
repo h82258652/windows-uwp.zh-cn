@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "监视后台任务进度和完成"
 description: "了解应用如何识别后台任务报告的进度和完成情况。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 709f3da69e95985512835994a9bb7cf5e0e91a7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成情况
+# <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -210,9 +217,4 @@ ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

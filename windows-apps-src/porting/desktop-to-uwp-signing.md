@@ -3,21 +3,29 @@ author: awkoren
 Description: "本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。"
 Search.Product: eADQiWindows 10XVcnh
 title: "对使用桌面到 UWP 桥转换的应用签名。"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 232c3012-71ff-4f76-a81e-b1758febb596
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b5936030f09e52933053f2465659157083b9eec2
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 对使用桌面桥转换的应用签名
+# <a name="sign-an-app-converted-with-the-desktop-bridge"></a>对使用桌面桥转换的应用签名
 
 本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。 你必须先使用证书对 .appx 程序包进行签名，然后才能部署它。
 
-## 使用桌面应用转换器 (DAC) 自动签名
+## <a name="automatically-sign-using-the-desktop-app-converter-dac"></a>使用桌面应用转换器 (DAC) 自动签名
 
 运行 DAC 自动对 .appx 程序包进行签名时，请使用 ```-Sign``` 标志。 有关详细信息，请参阅[桌面应用转换器预览](desktop-to-uwp-run-desktop-app-converter.md)。
 
-## 使用 SignTool.exe 手动签名
+## <a name="manually-sign-using-signtoolexe"></a>使用 SignTool.exe 手动签名
 
 首先，使用 MakeCert.exe 创建一个证书。 如果系统要求你输入密码，请选择“无”。 
 
@@ -38,11 +46,11 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 有关其他详细信息，请参阅[如何使用 SignTool 对应用包进行签名](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)。 
 
-所有三个工具都随附在 Microsoft Windows10 SDK 中。 若要直接调用它们，请从命令提示符调用 ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` 脚本。
+所有三个工具都随附在 Microsoft Windows 10 SDK 中。 若要直接调用它们，请从命令提示符调用 ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` 脚本。
 
-## 常见错误
+## <a name="common-errors"></a>常见错误
 
-### 发布者和证书不匹配导致 Signtool 错误“错误: SignerSign() 失败”(-2147024885/0x8007000b)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>发布者和证书不匹配导致 Signtool 错误“错误: SignerSign() 失败”(-2147024885/0x8007000b)
 
 Appx 清单中的发布者条目必须与要签名的证书的使用者匹配。  可使用以下任一方法查看证书的使用者。 
 
@@ -56,17 +64,17 @@ Appx 清单中的发布者条目必须与要签名的证书的使用者匹配。
 
 **选项 2：文件资源管理器**
 
-在文件资源管理器中双击证书、选择“详细信息”选项卡，然后在列表中选择“使用者”字段。 接着，就可以复制内容。 
+在文件资源管理器中双击证书、选择*详细信息*选项卡，然后在列表中选择*使用者*字段。 接着，就可以复制内容。 
 
 **选项 3：CertUtil**
 
-从命令行对 PFX 文件运行 **certutil**，然后从输出中复制“使用者”字段。 
+从命令行对 PFX 文件运行 **certutil**，然后从输出中复制*使用者*字段。 
 
 ```cmd
 certutil -dump <cert_file.pfx>
 ```
 
-### 已损坏或格式不正确的验证码签名
+### <a name="corrupted-or-malformed-authenticode-signatures"></a>已损坏或格式不正确的验证码签名
 
 本部分包含有关如何在可能包含已损坏或格式不正确的验证码签名的 AppX 程序包中标识可移植可执行 (PE) 文件的问题。 PE 文件中的无效验证码签名可能采用任何二进制格式（如 .exe、.dll、.chm 等），并且会阻止程序包正确签名，从而使其无法从 AppX 程序包部署。 
 
@@ -87,13 +95,8 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 
 若要修复这些格式不正确的二进制文件，请确保它们符合上述要求。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 - [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [如何使用 SignTool 对应用包进行签名](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。"
 title: "在后台处理媒体文件"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
-ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7f3262c30797c8ce447b3e97a5cb7dd6d2ea025
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在后台处理媒体文件
+# <a name="process-media-files-in-the-background"></a>在后台处理媒体文件
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你显示了如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。
@@ -27,16 +34,16 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 -   [启动和恢复后台任务](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [磁贴、锁屏提醒和通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## 创建用于处理后台任务的媒体
+## <a name="create-a-media-processing-background-task"></a>创建用于处理后台任务的媒体
 
 若要在 Microsoft Visual Studio 中将后台任务添加到现有解决方案，请输入你的组件的名称
 
-1.  在“文件”菜单上，依次选择“添加”和“新建项目...”。
-2.  选择“Windows 运行时组件(通用 Windows)”项目类型。
+1.  在**文件**菜单上，依次选择**添加**和**新建项目...**。
+2.  选择**Windows 运行时组件(通用 Windows)**项目类型。
 3.  输入新的组件项目的名称。 此示例使用 **MediaProcessingBackgroundTask** 项目名称。
 4.  单击“确定”。
 
-在“解决方案资源管理器”，右键单击默认情况下创建的“Class1.cs”文件的图标，然后选择“重命名”。 将该文件重命名为“MediaProcessingTask.cs”。 当 Visual Studio 询问是否想要重命名对此类的所有引用时，请单击**“是”**。
+在**解决方案资源管理器**，右键单击默认情况下创建的“Class1.cs”文件的图标，然后选择**重命名**。 将该文件重命名为“MediaProcessingTask.cs”。 当 Visual Studio 询问是否想要重命名对此类的所有引用时，请单击**是**。
 
 在重命名的类文件中，添加以下 **using** 指令以在你的项目中包含这些命名空间。
                                   
@@ -97,22 +104,22 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 [!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
-## 注册和启动后台任务
+## <a name="register-and-launch-the-background-task"></a>注册和启动后台任务
 
 可以从前台应用启动后台任务之前，你必须更新前台应用的 Package.appmanifest 文件，才能让系统知道你的应用可以使用后台任务。
 
-1.  在“解决方案资源管理器”中，双击 Package.appmanifest 文件图标以打开清单编辑器。
-2.  选择“声明”选项卡。
-3.  在**“可用声明”**中，选择**“后台任务”**，然后单击**“添加”**。
-4.  在**“支持的声明”**下，确保已选择**“后台任务”**项。 在**“属性”**下，选中**“媒体处理”**的复选框。
-5.  在**“入口点”**文本框中，为你的后台测试指定命名空间和类名称，以句点分隔。 对于此示例，该项是：
+1.  在**解决方案资源管理器**中，双击 Package.appmanifest 文件图标以打开清单编辑器。
+2.  选择**声明**选项卡。
+3.  在**可用声明**中，选择**后台任务**，然后单击**添加**。
+4.  在**支持的声明**下，确保已选择**后台任务**项。 在**属性**下，选中**媒体处理**的复选框。
+5.  在**入口点**文本框中，为你的后台测试指定命名空间和类名称，以句点分隔。 对于此示例，该项是：
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
 接下来，你需要将对后台任务的引用添加到前台应用。
-1.  在“解决方案资源管理器”的前台应用项目下，右键单击“引用”文件夹，然后选择“添加引用...”。
-2.  展开“项目”节点，然后选择“解决方案”。
-3.  选中后台任务项目旁边的框，然后单击“确定”。
+1.  在**解决方案资源管理器**的前台应用项目下，右键单击**引用**文件夹，然后选择**添加引用...**。
+2.  展开**项目**节点，然后选择**解决方案**。
+3.  选中后台任务项目旁边的框，然后单击**确定**。
 
 应将此示例中代码的其余部分添加到前台应用。 首先，需要将以下命名空间添加到你的项目。
 
@@ -156,10 +163,5 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

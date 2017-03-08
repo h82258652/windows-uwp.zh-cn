@@ -1,13 +1,20 @@
 ---
 author: Jwmsft
-Description: "切换开关表示允许用户打开或关闭选项的物理开关。"
+Description: "切换开关表示用户用于打开或关闭选项的物理开关。"
 title: "切换开关控件指南"
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 685ef17e17fb17fa620eea84335ce6688a5cfb3e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3d98936788057d4bd16f1ef44841ef0d8fb0648b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="toggle-switches"></a>切换开关
@@ -161,8 +168,3 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [单选按钮](radio-button.md)
 - [切换开关](toggles.md)
 - [复选框](checkbox.md)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

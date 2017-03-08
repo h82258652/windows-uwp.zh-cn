@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "确定 Microsoft OneDrive 文件的可用性"
 description: "使用 StorageFile.IsAvailable 属性确定 Microsoft OneDrive 文件是否可用。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 2289b85a8b26e1827446709e1db97c447b3b7964
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dcc1104fb50b926c76d2c9d28983f91dc76edef0
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>确定 Microsoft OneDrive 文件的可用性
@@ -13,7 +20,7 @@ ms.openlocfilehash: 2289b85a8b26e1827446709e1db97c447b3b7964
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**FileIO 类**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
 -   [**StorageFile 类**](https://msdn.microsoft.com/library/windows/apps/BR227171)
@@ -89,9 +96,4 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

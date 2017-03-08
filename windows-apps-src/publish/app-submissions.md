@@ -4,13 +4,19 @@ Description: "通过保留名称创建应用后，你可以开始着手其发布
 title: "应用提交"
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: "清单"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 应用提交
+# <a name="app-submissions"></a>应用提交
 
 
 [通过保留名称创建应用](create-your-app-by-reserving-a-name.md)后，你可以开始着手其发布工作。 第一步是创建**提交**。
@@ -19,16 +25,16 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要创建应用的新提交，单击在“应用概述”页面上显示的最新提交旁边的“更新”****。
 
-> **注意**  文档的此部分介绍了如何在开发人员中心仪表板上创建应用提交。 此外，你也可以使用 [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动创建应用提交。
+> **注意**&nbsp;&nbsp;文档的此部分介绍了如何在开发人员中心仪表板上创建应用提交。 此外，你也可以使用 [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动创建应用提交。
 
-## 应用提交清单
+## <a name="app-submission-checklist"></a>应用提交清单
 
 
 以下是你在创建应用提交时可以提供的详细信息，其中包含指向更多信息的链接。
 
 下面标出了你需要提供或指定的项目。 某些区域是可选的，或已提供你可以按需更改的默认值。
 
-### 定价和可用性页面
+### <a name="pricing-and-availability-page"></a>定价和可用性页面
 | 字段名称                    | 注意                                       | 有关详细信息                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **基价**                | 必需                                    | [基价](set-app-pricing-and-availability.md#base-price)              |
@@ -41,7 +47,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### 应用属性页面
+### <a name="app-properties-page"></a>应用属性页面
 
 | 字段名称                    | 注意                                       | 有关详细信息                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
@@ -51,7 +57,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### 年龄分级页面
+### <a name="age-ratings-page"></a>年龄分级页面
 
 | 字段名称                    | 注意                                       | 有关详细信息                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
@@ -59,7 +65,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### 程序包页面
+### <a name="packages-page"></a>程序包页面
 
 | 字段名称                    | 注意                                  | 有关详细信息                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
@@ -70,7 +76,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### 应用商店一览
+### <a name="store-listings"></a>应用商店一览
 
 你需要你的应用支持的至少一种语言的所有必需信息。 我们建议你提供应用支持的所有语言的[应用商店一览](create-app-store-listings.md)，你还可以[提供其他语言的应用商店一览](create-app-store-listings.md#store-listing-languages)。
 
@@ -93,7 +99,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### 认证说明页面
+### <a name="notes-for-certification-page"></a>认证说明页面
 
 | 字段名称                    | 注意                                       | 有关详细信息                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
@@ -101,10 +107,5 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-**注意**  有关直接向企业发布业务线 (LOB) 应用的信息，请参阅[向企业分配 LOB 应用](distribute-lob-apps-to-enterprises.md)。
-
-
-
-<!--HONumber=Aug16_HO5-->
-
+**注意**&nbsp;&nbsp;有关直接向企业发布业务线 (LOB) 应用的信息，请参阅[向企业分配 LOB 应用](distribute-lob-apps-to-enterprises.md)。
 

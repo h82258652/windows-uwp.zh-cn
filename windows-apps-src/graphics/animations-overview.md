@@ -3,19 +3,26 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "动画概述"
 description: "使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2a08d1def7c4d2fde0ae08eb26076526058e8aae
-ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f7e56f1bca5ecea6078dd70840d083eab6e30dd
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="animations-overview"></a>动画概述
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Windows 运行时中的动画可通过添加动作和交互性来增强你的应用。 通过使用 Windows 运行时动画库中的动画，你可以将其 Windows 外观集成到你的应用中。 本主题提供了使用每个动画的典型方案的动画和示例汇总。
 
-**提示** 用于 XAML 的 Windows 运行时控件包含某些类型的动画作为动画库中的内置行为。 通过在你的应用中使用这些控件，无需自己编程，即可获得动画外观。
+**提示**  用于 XAML 的 Windows 运行时控件包含某些类型的动画作为动画库中的内置行为。 通过在你的应用中使用这些控件，无需自己编程，即可获得动画外观。
 
 来自 Windows 运行时动画库的动画提供以下优势：
 
@@ -341,7 +348,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 与过渡动画不同，主题动画没有自动运行的内置触发器（过渡）。 你必须使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 来包含主题动画，才能在 XAML 中定义它。 还可以更改动画的默认表现方式。 例如，可以通过增加 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 时间值来放缓淡出。
 
-**注意** 有关显示基本动画技术的用途，我们将通过调用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 方法来使用应用代码启动动画。 你可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 和 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
+**注意**  为便于显示基本动画技术，我们将通过调用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 方法来使用应用代码启动动画。 你可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 和 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
 
  
 
@@ -380,10 +387,5 @@ XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

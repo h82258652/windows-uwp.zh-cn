@@ -5,17 +5,24 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: "辅助功能清单"
 label: Accessibility checklist
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 1c569df0684506f703d3ca5707314a96b035fcf6
-ms.openlocfilehash: 5220255a29da9a42bb82df5f450961b5c1b34942
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c5db2b89c52f77cb92da06c246e07a215fd2d02d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 辅助功能清单
+# <a name="accessibility-checklist"></a>辅助功能清单
 
 
 
-提供了一个帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
+提供了一个可帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
 
 我们在此提供了一个清单，你可以用它来确保你的应用是辅助应用。
 
@@ -61,13 +68,8 @@ ms.openlocfilehash: 5220255a29da9a42bb82df5f450961b5c1b34942
     有关详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
 
 <span id="related_topics"/>
-## 相关主题  
+## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [要避免的做法](practices-to-avoid.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

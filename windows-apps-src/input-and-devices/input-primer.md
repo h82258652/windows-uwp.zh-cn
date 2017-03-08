@@ -5,9 +5,16 @@ title: "交互入门"
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: b754e3f039e4dca0949bb31fe1da52f6a404dfb4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d11efb262dfbdd604dc249f19ae35e4110369654
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -347,9 +354,4 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

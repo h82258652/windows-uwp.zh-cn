@@ -2,9 +2,17 @@
 author: jnHs
 Description: "转移支付的预计时间、适用的付款阈值和可以收到付款的 Microsoft 市场可能会有所不同，具体取决于你所在的国家/地区和付款帐户类型。"
 title: "付款阈值、方法和时间范围"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 translationtype: Human Translation
-ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
-ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -24,7 +32,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 | 付款方式 | 到达付款帐户的天数 |
 |--------------------|--------------------------------------------|
-| PayPal | 1 个工作日 | 
+| PayPal | 1 个工作日 |    
 | ACH/SEPA |2 到 3 个工作日 |
 | 电汇 | 7 到 10 个工作日 |
 
@@ -619,7 +627,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫马其顿共和国</td>
+    <td>前南斯拉夫（马其顿共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -941,7 +949,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -1681,7 +1689,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫马其顿共和国</td>
+    <td>前南斯拉夫（马其顿共和国）</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -2003,7 +2011,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>50 USD</td>
@@ -2736,7 +2744,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>前南斯拉夫马其顿共和国</td>
+    <td>前南斯拉夫（马其顿共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -3051,7 +3059,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -3741,7 +3749,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫马其顿共和国</td>
+    <td>前南斯拉夫（马其顿共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -4042,7 +4050,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>中国台湾</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -4161,9 +4169,4 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>不适用</td>
   </tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

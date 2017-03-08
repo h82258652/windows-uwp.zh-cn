@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。"
+description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。"
 title: "获取应用评分"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 评分"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-app-ratings"></a>获取应用评分
 
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评分报告](../publish/ratings-report.md)中获取此信息。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评分报告](../publish/ratings-report.md)中获取此信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -156,9 +163,4 @@ Authorization: Bearer <your access token>
 * [获取加载项购置](get-in-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用评价](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

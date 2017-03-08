@@ -4,12 +4,20 @@ Description: "使用嵌套的 UI 来支持列表项上的多个操作"
 title: "列表项中嵌套的 UI"
 label: Nested UI in list items
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: cfda479d2a05dfac4125688d3666abfb23bc45a2
+ms.lasthandoff: 02/08/2017
 
 ---
-# 列表项中嵌套的 UI
+# <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,9 +34,9 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 ![嵌套的 UI 部分](images/nested-ui-example-1.png)
 
-> 注意   ListView 和 GridView 都派生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 类，因此它们的功能相同，但数据显示方法不同。 在本文中，当涉及到列表时，信息会同时应用到 ListView 和 GridView 控件。
+> 注意&nbsp;&nbsp; ListView 和 GridView 都派生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 类，因此它们的功能相同，但数据显示方法不同。 在本文中，当涉及到列表时，信息会同时应用到 ListView 和 GridView 控件。
 
-## 主要操作和辅助操作
+## <a name="primary-and-secondary-actions"></a>主要操作和辅助操作
 
 在使用列表创建 UI 时，请考虑用户可以从这些列表项目执行哪些操作。  
 
@@ -43,7 +51,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 *辅助操作*通常是与列表项目关联的快捷键。 这些快捷键可用于列表管理或与列表项目相关的操作。
 
-## 辅助操作的选项
+## <a name="options-for-secondary-actions"></a>辅助操作的选项
 
 当创建列表 UI 时，首先需要确保考虑到 UWP 支持的所有输入方法。 有关不同类型的输入的详细信息，请参阅[输入基础版](../input-and-devices/input-primer.md)。
 
@@ -53,13 +61,13 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 如果确认将辅助操作放在主列表 UI 中并非必需项，则可以使用其他方法向用户公开它们。 以下是放置辅助操作时可以考虑的一些选项。
 
-### 将辅助操作放置在详细信息页面上
+### <a name="put-secondary-actions-on-the-detail-page"></a>将辅助操作放置在详细信息页面上
 
 将辅助操作放置在该页面上，当按下列表项目时可以导航到该页面。 当使用大纲/细节模式时，详细信息页面通常是适合放置辅助操作的位置。
 
 有关详细信息，请参阅[大纲/细节模式](master-details.md)。
 
-### 将辅助操作放置在上下文菜单中
+### <a name="put-secondary-actions-in-a-context-menu"></a>将辅助操作放置在上下文菜单中
 
 将辅助操作放置在上下文菜单中，用户可通过右键单击或长按进行访问。 这有利于让用户执行操作（例如删除电子邮件），而不必加载详细信息页面。 这是一个不错的做法，同时使这些选项在详细信息页面上可用，因为上下文菜单专用于快捷键而不是主 UI。
 
@@ -67,7 +75,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 有关详细信息，请参阅[上下文菜单和浮出控件](menus.md)。
 
-### 将辅助操作放置在悬停 UI 中以针对指针输入进行优化
+### <a name="put-secondary-actions-in-hover-ui-to-optimize-for-pointer-input"></a>将辅助操作放置在悬停 UI 中以针对指针输入进行优化
 
 如果预期应用经常会与指针输入（如鼠标和笔）结合使用，并希望辅助操作仅供这些输入随时访问，则可以仅在悬停时显示辅助操作。 此快捷键仅在使用指针输入时才可见，因此请确保还使用其他选项来支持其他输入类型。
 
@@ -76,7 +84,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 有关详细信息，请参阅[鼠标交互](../input-and-devices/mouse-interactions.md)。
 
-## 主要操作和辅助操作的 UI 放置
+## <a name="ui-placement-for-primary-and-secondary-actions"></a>主要操作和辅助操作的 UI 放置
 
 如果你确定辅助操作应在主列表 UI 中公开，建议使用以下指南。
 
@@ -84,15 +92,15 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 在这些示例中，我们将讨论列表 UI，其中项目倾向于以水平方式排列（其宽度大于高度）。 但是，可能会有列表项目在形状上更接近方形，或者其高度大于宽度。 通常，这些项目都是在网格中使用的项目。 对于这些项目，如果无法垂直滚动列表，可以将辅助操作放置在列表项目底部，而不是放置在右侧。
 
-## 考虑所有输入
+## <a name="consider-all-inputs"></a>考虑所有输入
 
 当确定使用嵌套的 UI 时，还需根据所有输入类型评估用户体验。 如前面所述，嵌套的 UI 非常适用于某些输入类型。 但是，它并非始终适用于其他一些输入类型。 特别是，键盘、控制器和远程输入可能难以访问嵌套的 UI 元素。 请务必遵循下面的指南以确保你的 UWP 适用于所有输入类型。
 
-## 嵌套的 UI 处理
+## <a name="nested-ui-handling"></a>嵌套的 UI 处理
 
 如果你有多个操作嵌套在列表项目中，建议使用本指南来处理使用键盘、游戏板、遥控器或其他非指针输入进行的导航。
 
-### 列表项目执行某项操作的嵌套的 UI
+### <a name="nested-ui-where-list-items-perform-an-action"></a>列表项目执行某项操作的嵌套的 UI
 
 如果带嵌套元素的列表 UI 支持调用、选择（单选或多选）或拖放操作之类的操作，建议使用这些箭头技术在嵌套的 UI 元素中导航。
 
@@ -130,7 +138,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 有关用于实现此目的的代码，请参阅本文的[示例](#example)部分。
 
-### 列表项不执行某项操作的嵌套的 UI
+### <a name="nested-ui-where-list-items-do-not-perform-an-action"></a>列表项不执行某项操作的嵌套的 UI
 
 你可能会使用列表视图，因为它提供虚拟化和优化的滚动行为，但不具有与列表项关联的操作。 通常，这些 UI 仅使用列表项对元素进行分组，并确保它们作为一组进行滚动。
 
@@ -175,7 +183,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 - 在某一嵌套的 UI 项目中，按 Tab 键可按 Tab 键顺序遍历嵌套的 UI 项目。  在遍历所有嵌套的 UI 项目后，它会按 Tab 键顺序将焦点放在 ListView 后面的下一控件上。
 - 如果按 Shift+Tab 键，将按照与 Tab 键相反的方向运行。
 
-## 示例
+## <a name="example"></a>示例
 
 此示例展示了如何实现[列表项执行某项操作的嵌套的 UI](#nested-ui-where-list-items-perform-an-action)。
 
@@ -302,9 +310,4 @@ public static class DependencyObjectExtensions
     }
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,15 +3,22 @@ author: DelfCo
 description: "针对任何支持网络的应用的必做事项。"
 title: "网络基础知识"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
-ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d24d1ff9408585246aae4c4849d3af5e8f4846be
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="networking-basics"></a>网络基础知识
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 针对任何支持网络的应用的必做事项。
 
@@ -418,10 +425,5 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 * [Windows 10 中的网络 API 改进](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

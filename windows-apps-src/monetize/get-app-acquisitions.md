@@ -1,18 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。"
+description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。"
 title: "获取应用购置"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 应用购置"
 translationtype: Human Translation
-ms.sourcegitcommit: ce6535508136f8f7bfc8e0da599eea10a936908d
-ms.openlocfilehash: 2e35da3b3033ecbad8c48184d831ca9465142322
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-app-acquisitions"></a>获取应用购置
 
 
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置聚合数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md)中获取此信息。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md)中获取此信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -160,9 +167,4 @@ Authorization: Bearer <your access token>
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用评分](get-app-ratings.md)
 * [获取应用评价](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

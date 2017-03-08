@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: "了解如何使用 Windows.Services.Store 命名空间获取当前应用或其中一项加载项的与应用商店相关的产品信息。"
 title: "获取应用和加载项的产品信息"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用内购买, IAP, 加载项, Windows.Services.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7e486c451174cd24429dc35cda07d22fe2b28745
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,7 +20,7 @@ ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 
 面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，来访问当前应用或其中一项加载项（亦称为应用内产品或 IAP）的与应用商店相关的信息。 本文中的以下示例展示了如何针对不同的情况执行此操作。 有关完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
->**注意**   本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+>**注意**&nbsp;&nbsp;本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 
 有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
->**注意**  如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
+>**注意**&nbsp;&nbsp;如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
 
 ## <a name="get-info-for-the-current-app"></a>获取当前应用的信息
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 
 ## <a name="get-info-for-products-with-known-store-ids"></a>使用已知应用商店 ID 获取产品信息
 
-若要获取你已知道其[应用商店 ID](in-app-purchases-and-trials.md#store_ids) 的应用或加载项的应用商店产品信息，请使用 [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) 方法。 这是一种异步方法，可返回一组代表每一个应用或加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 除了应用商店 ID 之外，还必须向此方法传递一列字符串，用于标识加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
+若要获取你已知道其[应用商店 ID](in-app-purchases-and-trials.md#store_ids) 的应用或加载项的应用商店产品信息，请使用 [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) 方法。 这是一种异步方法，可返回代表每一个应用或加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象的集合。 除了应用商店 ID 之外，还必须向此方法传递一列字符串，用于标识加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
 
 以下示例使用指定的应用商店 ID 检索持久型加载项的信息。
 
@@ -48,9 +55,9 @@ ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 
 ## <a name="get-info-for-add-ons-that-are-available-for-the-current-app"></a>获取适用于当前应用的加载项的信息
 
-若要获取适用于当前应用的加载项的应用商店产品信息，请使用 [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) 方法。 这是一种异步方法，可返回一组代表每一个可用加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 必须向此方法传递一列字符串，用于标识你想要检索的加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
+若要获取适用于当前应用的加载项的应用商店产品信息，请使用 [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) 方法。 这是一种异步方法，可返回代表每一个可用加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象的集合。 必须向此方法传递一列字符串，用于标识你想要检索的加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
 
->**注意**  如果应用具有许多加载项，你也可以使用 [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) 方法分页返回加载项结果。
+>**注意**&nbsp;&nbsp;如果应用具有许多加载项，你也可以使用 [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) 方法分页返回加载项结果。
 
 以下示例检索所有持久型加载项、应用商店管理的易耗型加载项和开发人员管理的可消耗加载项的信息。
 
@@ -60,9 +67,9 @@ ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 
 ## <a name="get-info-for-add-ons-for-the-current-app-that-the-current-user-is-entitled-to-use"></a>获取当前用户有权使用的当前应用的加载项信息
 
-若要获取当前用户有权使用的加载项的应用商店产品信息，请使用 [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) 方法。 这是一种异步方法，可返回一组代表每一个加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 必须向此方法传递一列字符串，用于标识你想要检索的加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
+若要获取当前用户有权使用的加载项的应用商店产品信息，请使用 [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) 方法。 这是一种异步方法，可返回代表每一个加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象的集合。 必须向此方法传递一列字符串，用于标识你想要检索的加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
 
->**注意**  如果应用具有许多加载项，你也可以使用 [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) 方法分页返回加载项结果。
+>**注意**&nbsp;&nbsp;如果应用具有许多加载项，你也可以使用 [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) 方法分页返回加载项结果。
 
 以下示例使用指定的应用商店 ID 检索持久型加载项的信息。
 
@@ -77,9 +84,4 @@ ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 * [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
 * [实现应用的试用版](implement-a-trial-version-of-your-app.md)
 * [应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

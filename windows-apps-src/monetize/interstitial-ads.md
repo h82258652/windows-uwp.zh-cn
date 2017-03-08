@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。"
 title: "间隙广告"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 间隙"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1cdd018ed496b59290825ee84d10ac70a0e46d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -51,11 +58,11 @@ ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
 
 2. 在**引用管理器**中，根据你的项目类型选择以下引用之一：
 
-  * 对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+  * 对于通用 Windows 平台 (UWP) 项目：展开**通用 Windows**、单击 **扩展**，然后选中**适用于 XAML 的 Microsoft Advertising SDK**（版本 10.0）旁边的复选框。
 
-  * 对于 Windows 8.1 项目：展开“Windows 8.1”、单击“扩展”，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+  * 对于 Windows 8.1 项目：展开 **Windows 8.1**、单击**扩展**，然后选中**适用于 Windows 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-  * 对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”、单击“扩展”，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+  * 对于 Windows Phone 8.1 项目：展开 **Windows Phone 8.1**、单击**扩展**，然后选中**适用于 Windows Phone 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
 3.  在应用的相应代码文件中（例如，在 MainPage.xaml.cs 或部分其他页面的代码文件中）添加以下命名空间引用。
 
@@ -98,11 +105,11 @@ ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
 
 2.  在**引用管理器**中，根据你的项目类型选择以下引用之一：
 
-  * 对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
+  * 对于通用 Windows 平台 (UWP) 项目：展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft Advertising SDK**（版本 10.0）旁边的复选框。
 
-  * 对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 Native (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
+  * 对于 Windows 8.1 项目：展开 **Windows 8.1**、单击**扩展**，然后选中**适用于 Windows 8.1 Native (JS) 的 Microsoft Advertising SDK** 旁边的复选框。
 
-  * 对于 Windows 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 Native (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
+  * 对于 Windows 8.1 项目：展开 **Windows Phone 8.1**、单击**扩展**，然后选中**适用于 Windows Phone 8.1 Native (JS) 的 Microsoft Advertising SDK** 旁边的复选框。
 
 3.  在项目的 HTML 文件的**&lt;标题&gt;**部分中，在项目的 JavaScript 引用 default.css 和 default.js 之后，添加对 ad.js 的引用。 在 UWP 项目中，添加以下引用。
 
@@ -154,11 +161,11 @@ ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
 
 1.  在**引用管理器**中，根据你的项目类型选择以下引用之一：
 
-  * 对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+  * 对于通用 Windows 平台 (UWP) 项目：展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft Advertising SDK**（版本 10.0）旁边的复选框。
 
-  * 对于 Windows 8.1 项目：展开“Windows 8.1”、单击“扩展”，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+  * 对于 Windows 8.1 项目：展开**Windows 8.1**、单击**扩展**，然后选中**适用于 Windows 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-  * 对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”、单击“扩展”，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+  * 对于 Windows Phone 8.1 项目：展开 **Windows Phone 8.1**、单击**扩展**，然后选中**适用于 Windows Phone 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
 2.  在应用的相应头文件（例如，DirectXPage.xaml.h）中，声明 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 对象和相关的事件处理程序方法。  
 
@@ -230,9 +237,4 @@ ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

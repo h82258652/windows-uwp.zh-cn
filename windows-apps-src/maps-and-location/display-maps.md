@@ -3,9 +3,16 @@ author: msatranjr
 title: "使用 2D、3D 和街景视图方式显示地图"
 description: "通过使用 MapControl 类，在应用中显示可自定义的地图。 本主题还介绍了鸟瞰图 3D 视图和街景视图。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 地图, 位置, 地图控件, 地图视图"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -26,7 +33,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
 
 通过添加 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 在 XAML 页面上显示地图。 若要使用 **MapControl**，你必须在 XAML 页面或代码中声明 [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空间。 如果你从工具箱中拖动控件，此命名空间声明将自动添加。 如果你手动将 **MapControl** 添加到 XAML 页面，则必须在该页面顶部手动添加命名空间声明。
 
-以下示例显示基本地图控件，以及配置地图以便除了接受触摸输入之外，还显示缩放和倾斜控件。 有关自定义地图外观的详细信息，请参阅[配置地图](#mapconfig)。
+以下示例显示基本地图控件，以及配置地图以便除了接受触摸输入之外，还显示缩放和倾斜控件。 有关自定义地图外观的详细信息，请参阅[配置地图](#configure-the-map)。
 
 ```xml
 <Page
@@ -46,7 +53,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
        ZoomInteractionMode="GestureAndControl"
        TiltInteractionMode="GestureAndControl"   
        MapServiceToken="EnterYourAuthenticationKeyHere"/>
-  
+
  </Grid>
 </Page>
 ```
@@ -137,7 +144,7 @@ switch (accessStatus)
 
 若要更改在 2D 地图中显示的位置，请调用其中一个 [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) 方法的重载。 使用该方法以指定 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)、[**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068)、[**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) 和 [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044) 的新值。 你也可以在查看更改时，通过提供一个来自 [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 枚举的常数，指定要使用的可选动画。
 
-若要更改 3D 地图的位置，请改为使用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 有关详细信息，请参阅[显示 3D 视图](#display3d)。
+若要更改 3D 地图的位置，请改为使用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 有关详细信息，请参阅[显示 3D 视图](#display-aerial-3d-views)。
 
 调用 [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) 方法以在地图上显示 [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) 的内容。 例如，使用此方法可在地图上显示路线或部分路线。 有关详细信息，请参阅[在地图上显示路线和方向](routes-and-directions.md)。
 
@@ -316,11 +323,4 @@ private async void display3DLocation()
 * [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

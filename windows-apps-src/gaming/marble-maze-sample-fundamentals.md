@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "Marble Maze 示例基础"
-description: "本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 WIndows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。"
+description: "本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 Windows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。"
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 示例, directx, 基础知识"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cc155d7a454cabe5c0d820f5d74313dfeaf01830
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Marble Maze 示例基础
+# <a name="marble-maze-sample-fundamentals"></a>Marble Maze 示例基础
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 
 本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 WIndows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。 本文档还介绍了代码中使用的一些约定。
 
-> **注意** 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
+> **注意**   与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011) 中。
 
  
 ## 
@@ -29,7 +36,7 @@ ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 -   在大多数情况下，使用异常处理而不是结果代码来处理意外错误。
 -   结合使用 SAL 注释和代码分析工具来帮助发现应用中的错误。
 
-## 创建 Visual Studio 项目
+## <a name="creating-the-visual-studio-project"></a>创建 Visual Studio 项目
 
 
 如果已下载并解压缩了该示例，则可以在 Visual Studio 中打开 MarbleMaze.sln 解决方案文件，这些代码会展现在你的面前。 你还可以通过单击“浏览代码”****选项卡在 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN 示例库页面上查看源代码。
@@ -44,7 +51,7 @@ ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 
 你从 Windows 应用商店获取的每个 UWP 应用都以应用包的形式提供。 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单文件还允许指定项目属性，例如支持哪些设备旋转方向、磁贴图像和欢迎屏幕。 有关应用包的详细信息，请参阅[打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)。
 
-##  生成、部署和运行游戏
+##  <a name="building-deploying-and-running-the-game"></a>生成、部署和运行游戏
 
 
 像生成标准项目一样生成 UWP 应用项目。 （在菜单栏上，选择“生成”、“生成解决方案”****。）此生成步骤会编译代码，还会打包它以用作 UWP 应用。
@@ -53,7 +60,7 @@ ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 
 部署项目后，选取 Marble Maze 磁贴以运行游戏。 也可以从 Visual Studio 的菜单栏中选择“调试”、“开始调试”****。
 
-###  控制游戏
+###  <a name="controlling-the-game"></a>控制游戏
 
 可使用触摸、加速计、Xbox 360 控制器或鼠标来控制 Marble Maze。
 
@@ -65,7 +72,7 @@ ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 -   使用控制器上的“后退”按钮或键盘上的 Home 键重新启动游戏。
 -   高分表可见时，使用“后退”按钮或 Home 键清除所有分数。
 
-##  代码转换
+##  <a name="code-conventions"></a>代码转换
 
 
 Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UWP 应用的编程接口。 此类应用使用经授权的函数、数据类型和设备，并且从 Windows 应用商店进行分配。 在最低级别上，Windows 运行时由一个应用程序二进制接口 (ABI) 组成。 ABI 是一个低级二进制合约，它使得 Windows 运行时 API 能够访问多种编程语言，例如 JavaScript、.NET 语言和 Visual C++。
@@ -81,7 +88,7 @@ Marble Maze 结合使用 **^** 和 [**Microsoft::WRL::ComPtr**](https://msdn.mic
 
 有关可用于 UWP 应用的语言扩展的详细信息，请参阅 [Visual C++ 语言参考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871)。
 
-###  错误处理
+###  <a name="error-handling"></a>错误处理
 
 Marble Maze 使用异常处理作为处理意外错误的主要方式。 尽管游戏代码在传统上使用日志记录或错误代码（例如 **HRESULT** 值）来表示错误，但异常处理有两个主要优势。 首先，它可以使代码更易于读取和维护。 从代码角度讲，错误处理可将错误更方便地传播到可以处理该错误的例程。 使用错误代码通常需要每个函数明确传播错误。 第二个优势是，可以将 Visual Studio 调试器配置为在发生异常时中断，以便你可以在该错误的位置和上下文处立即停下。 Windows 运行时也广泛使用了异常处理。 因此，通过在你的代码中使用异常处理，你可以将所有错误处理组合到一个模型中。
 
@@ -104,7 +111,7 @@ Marble Maze 使用异常处理作为处理意外错误的主要方式。 尽管�
 
 -   尽管我们建议避免使用 **HRESULT** 处理意外错误，但更重要的是避免使用异常处理来控制代码流。 因此，最好在必要时使用 **HRESULT** 返回值来控制代码流。
 
-###  SAL 注释
+###  <a name="sal-annotations"></a>SAL 注释
 
 结合使用 SAL 注释和代码分析工具来帮助发现应用中的错误。
 
@@ -126,12 +133,12 @@ void LoadMesh(
 
 可用注释的完整列表在 sal.h 中定义。 有关详细信息，请参阅 [SAL 注释](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 有关如何构建 Marble Maze 应用程序代码，以及 DirectX UWP 应用的结构与传统桌面应用程序有何不同的信息，请参阅 [Marble Maze 应用程序结构](marble-maze-application-structure.md)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [Marble Maze 应用程序结构](marble-maze-application-structure.md)
@@ -143,10 +150,5 @@ void LoadMesh(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

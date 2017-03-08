@@ -3,29 +3,36 @@ author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: "在 Windows 应用商店提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的所有应用的相关信息。"
 title: "使用 Windows 应用商店提交 API 获取所有应用"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 6180cc4ef94df3e28af4843685e16f2d1fdfa7ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 12466a50c6cabe5ceca907cdd2f0d600ec95121f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 获取所有应用
+# <a name="get-all-apps-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取所有应用
 
 
 
 
 在 Windows 应用商店提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的所有应用的相关数据。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: 6180cc4ef94df3e28af4843685e16f2d1fdfa7ac
 <span/>
  
 
-### 请求头
+### <a name="request-header"></a>请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: 6180cc4ef94df3e28af4843685e16f2d1fdfa7ac
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 此方法的所有请求参数均为选填。 如果不填写参数即调用此方法，则响应将包含注册到帐户的所有应用的数据。
  
@@ -55,11 +62,11 @@ ms.openlocfilehash: 6180cc4ef94df3e28af4843685e16f2d1fdfa7ac
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-examples"></a>请求示例
 
 以下示例演示了如何检索注册到帐户的所有应用的相关信息。
 
@@ -75,7 +82,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了注册到开发人员帐户前 10 个应用（应用总数为 21 个）的成功请求返回的 JSON 响应正文。 为简便起见，此示例仅显示该请求返回的前两个应用。 有关响应正文中这些值的详细信息，请参阅以下部分。
 
@@ -113,7 +120,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 响应正文
+### <a name="response-body"></a>响应正文
 
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -123,7 +130,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -134,15 +141,10 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取应用](get-an-app.md)
 * [获取应用的软件包外部测试版](get-flights-for-an-app.md)
 * [获取应用的加载项](get-add-ons-for-an-app.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "BasicReaderWriter 的完整代码"
 description: "一般用来读取和写入二进制数据文件的类和方法的完整代码。"
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, basicreaderwriter"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BasicReaderWriter 的完整代码
+# <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter 的完整代码
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,29 +27,29 @@ ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 -   [技术](#technologies)
 -   [要求](#requirements)
--   [查看代码 (C++)](#view-the-code-c-)
+-   [查看代码 (C++)](#view-the-code-c)
 
 
-## 下载位置
+## <a name="download-location"></a>下载位置
 
 此示例无法下载。
 
 
-## 技术
+## <a name="technologies"></a>技术
 
 **编程语言** - C++  
 **编程模型** - Windows 运行时
 
 
-## 要求
+## <a name="requirements"></a>要求
 
  **最低受支持的客户端** - Windows 10       
  **最低受支持的服务器** - Windows Server 2016 Technical Preview 
 
-## 查看代码 (C++)
+## <a name="view-the-code-c"></a>查看代码 (C++)
 
 
-## BasicReaderWriter.h
+## <a name="basicreaderwriterh"></a>BasicReaderWriter.h
 
 
 ```cpp
@@ -91,7 +98,7 @@ internal:
 };
 ```
 
-## BasicReaderWriter.cpp
+## <a name="basicreaderwritercpp"></a>BasicReaderWriter.cpp
 
 
 ```cpp
@@ -262,10 +269,5 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

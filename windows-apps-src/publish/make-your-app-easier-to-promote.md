@@ -1,20 +1,27 @@
 ---
 author: jnHs
 Description: "让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。"
-title: "使你的应用更易于推广"
+title: "更方便地推广你的应用"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 07cca18b97a50fe8ced8b76094d358b948d18535
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使你的应用更易于推广
+# <a name="make-your-app-easier-to-promote"></a>更方便地推广你的应用
 
 
 让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。
 
-## Windows 应用商店针对特别推荐的应用的要求
+## <a name="windows-store-requirements-for-featured-apps"></a>Windows 应用商店针对特别推荐的应用的要求
 
 
 Windows 应用商店中展示了各种应用，按类别或主题分组。 好的应用实在太多，因此无法全部都做特别推荐，也没有办法保证你的应用会被选中。 然而，你也可以采取一些措施，以确保你的应用在应用商店中有资格获得促销推广的机会。
@@ -45,10 +52,5 @@ Windows 应用商店中展示了各种应用，按类别或主题分组。 好�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

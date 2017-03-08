@@ -4,13 +4,20 @@ description: "介绍了为确保通用 Windows 平台 (UWP) 应用在高对比�
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "高对比度主题"
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f3da82cab8813653a6ee999976983937649b42b2
-ms.openlocfilehash: 30785998d11f09ef94f33789e3e74b0933d9c83e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b75d36d6a537f465545729cf90b36fdde1f552e0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 高对比度主题  
+# <a name="high-contrast-themes"></a>高对比度主题  
 
 Windows 支持面向操作系统和应用的用户可能会选择启用的高对比度主题。 高对比度主题使用一块小型的对比色调色板，使界面看起来更加适宜。
 
@@ -38,7 +45,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 在第二个示例中，[**{ThemeResource} 标记扩展**](../xaml-platform/themeresource-markup-extension.md)用来引用 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx)（[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 元素中的一个专用属性）集合中的颜色。 ThemeDictionaries 允许 XAML 根据用户的当前主题自动为你切换颜色。
 
-## 主题字典
+## <a name="theme-dictionaries"></a>主题字典
 
 当你需要从其系统默认值更改颜色时，可为你的应用创建 ThemeDictionaries 集合。
 
@@ -77,7 +84,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 > [!NOTE]
 > HighContrast 不是唯一可用的项名。 另外，还有 HighContrastBlack、HighContrastWhite 和 HighContrastCustom。 在大多数情况下，只需使用 HighContrast。
 
-## 高对比度颜色
+## <a name="high-contrast-colors"></a>高对比度颜色
 
 在“设置”&gt;“轻松使用”&gt;“高对比度”**页面上，默认有 4 个高对比度主题。 
 
@@ -152,7 +159,7 @@ SystemColorWindowColor | 页面、窗格、弹出窗口和栏的背景
 
 请注意 `{ThemeResource}` 的两次用法，一次用于引用 `SystemColorWindowColor`，另一次用于引用 `BrandedPageBackgroundBrush`。 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
 
-## 何时使用边框
+## <a name="when-to-use-borders"></a>何时使用边框
 
 在高对比度模式下，页面、窗格、弹出窗口和栏应该都使用 `SystemColorWindowColor` 作为它们的背景。 必要时，请只添加高对比度边框来保留 UI 中的重要边界。
 
@@ -160,7 +167,7 @@ SystemColorWindowColor | 页面、窗格、弹出窗口和栏的背景
 
 ![从页面其余部分分离的导航窗格](images/high-contrast-actions-content.png)
 
-## 列表项
+## <a name="list-items"></a>列表项
 
 在高对比度模式下，当将光标悬停在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 中的项目上、按下或选择它们时，它们会将自己的背景设置为 `SystemColorHighlightColor`。 复杂的列表项通常有一个 bug，即当将光标悬停在某项上、按下或选择该项时，该列表项的内容无法反转颜色。 这导致无法读取该项。
 
@@ -170,7 +177,7 @@ SystemColorWindowColor | 页面、窗格、弹出窗口和栏的背景
 
 
 
-### 带有彩色文本的列表项
+### <a name="list-items-with-colored-text"></a>带有彩色文本的列表项
 
 在 ListView 的 [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 中设置 TextBlock.Foreground 是原因之一。 这样做的目的通常是为了构建视觉层次结构。 Foreground 属性在 [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 上设置，当将光标悬停在该项上、按下或选择该项时，DataTemplate 中的 TextBlocks 继承正确的前景色。 但是，设置 Foreground 将打断这种继承关系。
 
@@ -221,7 +228,7 @@ SystemColorWindowColor | 页面、窗格、弹出窗口和栏的背景
 </DataTemplate>
 ```
 
-### 带有按钮和链接的列表项
+### <a name="list-items-with-buttons-and-links"></a>带有按钮和链接的列表项
 
 有时，列表项中包含着更加复杂的控件，如 [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.hyperlinkbutton.aspx) 或 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)。 这些控件在有光标悬停、按下或选择时有各自的状态，这在列表项上不起作用。 超链接在高对比度黑色模式下也是黄色，这导致当某个列表项上有光标悬停、按下或选择时，很难读取这些超链接。
 
@@ -284,22 +291,17 @@ SystemColorWindowColor | 页面、窗格、弹出窗口和栏的背景
 
 
 
-## 检测高对比度
+## <a name="detecting-high-contrast"></a>检测高对比度
 
 你可以使用 [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) 类的成员，以编程方式检查当前主题是否为高对比度主题。
 
 > [!NOTE]
 > 确保从初始化应用且已经显示内容的范围内调用 **AccessibilitySettings** 构造函数。
 
-## 相关主题  
+## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [UI 对比度和设置示例](http://go.microsoft.com/fwlink/p/?linkid=231539)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [XAML 高对比度示例](http://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

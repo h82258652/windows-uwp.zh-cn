@@ -1,40 +1,47 @@
 ---
 author: mtoepke
 title: "创建和显示基本网格"
-description: "3D 通用 Windows 平台 (UWP) 游戏通常使用多边形来表示游戏中的对象和图面。"
+description: "3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。"
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 网格, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b8795438053adebfbd36cada86a8ef13afb3eef2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 创建和显示基本网格
+# <a name="create-and-display-a-basic-mesh"></a>创建和显示基本网格
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。 构成这些多边形对象和图面的结构的顶点列表称为网格。 在这里，我们为立方体对象创建一个基本网格并为其提供用于呈现和显示的着色器管道。
 
-> **重要提示** 此处包含的示例代码使用在 DirectXMath.h 中声明的类型（如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4）和内联方法。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
+> **重要提示**   此处包含的示例代码使用在 DirectXMath.h 中声明的类型（如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4）和内联方法。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
 
  
 
-## 你需要了解的内容
+## <a name="what-you-need-to-know"></a>你需要了解的内容
 
 
-### 技术
+### <a name="technologies"></a>技术
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### 先决条件
+### <a name="prerequisites"></a>先决条件
 
 -   线性代数和三维坐标系的基础知识
 -   Visual Studio 2015 Direct3D 模板
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 步骤 1：为模型构造网格
+### <a name="step-1-construct-the-mesh-for-the-model"></a>步骤 1：为模型构造网格
 
 在大多数游戏中，游戏对象的网格都从包含特定顶点数据的文件加载。 这些顶点的排序与应用相关，但它们通常被序列化为带或扇形。 顶点数据可以来自任何软件源，也可以手动创建。 游戏采用顶点着色器可以高效处理的方式解释数据。
 
@@ -63,7 +70,7 @@ SimpleCubeVertex cubeVertices[] =
 
 因此，你拥有 8 个顶点，每个顶点都具有特定的颜色。 在我们的示例中，每个顶点/颜色对都是顶点的完整数据。 当你指定我们的顶点缓冲区时，必须记住这个特定的布局。 我们将此输入布局提供给顶点着色器以便它可以理解你的顶点数据。
 
-### 步骤 2：设置输入布局
+### <a name="step-2-set-up-the-input-layout"></a>步骤 2：设置输入布局
 
 现在，你在内存中已拥有顶点。 但你的图形设备拥有其自己的内存，并且你使用 Direct3D 来访问该内存。 若要使你的顶点数据进入图形设备以便进行处理，你需要扫除障碍，因为你必须声明顶点数据的布局方式，以便图形设备从你的游戏获取顶点数据时图形设备可以对其进行解释。 若要执行该操作，需要使用 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)。
 
@@ -102,7 +109,7 @@ m_d3dDevice->CreateInputLayout(
 
 在 Direct3D 设备上，调用 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 并创建输入布局。 现在，你需要创建一个可以实际包含数据的缓冲区！
 
-### 步骤 3：填充顶点缓冲区
+### <a name="step-3-populate-the-vertex-buffers"></a>步骤 3：填充顶点缓冲区
 
 顶点缓冲区包含网格中每个三角形的顶点列表。 每个顶点都必须在该列表中唯一。 在我们的示例中，立方体有 8 个顶点。 顶点着色器在图形设备上运行并从顶点缓冲区中读取，并且它根据你在上一步中指定的输入布局来解释数据。
 
@@ -135,7 +142,7 @@ m_d3dDevice->CreateBuffer(
 
 加载顶点。 但处理这些顶点有什么顺序吗？ 当你为顶点提供索引列表时进行处理时，这些索引的顺序即为顶点着色器处理它们的顺序。
 
-### 步骤 4：填充索引缓冲区
+### <a name="step-4-populate-the-index-buffers"></a>步骤 4：填充索引缓冲区
 
 现在，你为每个顶点提供一个索引列表。 这些索引与顶点缓冲区中顶点的位置相对应，从 0 开始。 为了帮助你看到这种情况，考虑为网格中的每个唯一顶点都分配一个唯一的数字，如分配一个 ID。 这个 ID 是顶点缓冲区中顶点的整数位置。
 
@@ -179,7 +186,7 @@ unsigned short cubeIndices[] =
 
 有关不同索引列表技术的详细信息，请参阅[基元拓扑](https://msdn.microsoft.com/library/windows/desktop/bb205124)。
 
-### 步骤 5：为你的转换矩阵创建一个恒定的缓冲区
+### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>步骤 5：为你的转换矩阵创建一个恒定的缓冲区
 
 开始处理顶点之前，你需要提供运行时将应用于（相乘）每个顶点的转换矩阵。 对于大多数 3-D 游戏，包含其中三个：
 
@@ -193,7 +200,7 @@ unsigned short cubeIndices[] =
 
 在该示例中，我们只有一个从不更改的恒定缓冲区：三个矩阵的 DirectX::XMFLOAT4X4 数据。
 
-> **注意** 此处呈现的示例代码使用列主序矩阵。 可以通过在 HLSL 中使用 **row\_major** 关键字并且确保源矩阵数据也是行主序来使用行主序矩阵。 DirectXMath 使用行主序矩阵，并且可以直接用于使用 **row\_major** 关键字定义的 HLSL 矩阵。
+> **注意**   此处呈现的示例代码使用列主序矩阵。 可以通过在 HLSL 中使用 **row\_major** 关键字并且确保源矩阵数据也是行主序来使用行主序矩阵。 DirectXMath 使用行主序矩阵，并且可以直接用于使用 **row\_major** 关键字定义的 HLSL 矩阵。
 
  
 
@@ -245,7 +252,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **注意** 通常当设置特定于设备的资源时声明投影矩阵，因为与它相乘的结果必须与当前 2D 视口大小参数（通常与显示器的像素高度和宽度相对应）匹配。 如果这些内容发生改变，则必须相应地缩放 x 和 y 坐标值。
+> **注意**  通常当设置特定于设备的资源时声明投影矩阵，因为与它相乘的结果必须与当前 2D 视口大小参数（通常与显示器的像素高度和宽度相对应）匹配。 如果这些内容发生改变，则必须相应地缩放 x 和 y 坐标值。
 
  
 
@@ -300,7 +307,7 @@ m_d3dDeviceContext->IASetIndexBuffer(
 
 非常好！ 输入程序集已完成。 所有内容都可用于呈现。 让我们开始使用顶点着色器。
 
-### 步骤 6：使用顶点着色器处理网格
+### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>步骤 6：使用顶点着色器处理网格
 
 现在，你已经拥有一个顶点缓冲区（它的顶点定义网格）以及定义处理顶点顺序的索引缓冲区，将它们发送到顶点着色器。 以编译的高级着色器语言表示的顶点着色器代码为顶点缓冲区中的每个顶点运行一次，从而允许你执行每个顶点的转换。 最终结果通常是一个 2-D 投影。
 
@@ -369,7 +376,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 
 **PixelShaderInput** 指定顶点着色器的 main 函数返回的数据的布局。 当你完成处理某个顶点时，你将返回 2-D 投影空间中的某个顶点位置以及用于每个顶点照明的颜色。 图形卡使用着色器的数据输出来计算当在管道的下一阶段中运行像素着色器时必须着色的“分段”（可能的像素）。
 
-### 步骤 7：通过像素着色器传递网格
+### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>步骤 7：通过像素着色器传递网格
 
 通常，在在图形管道的这个阶段，需要在项目的可见投影面上执行每像素操作。 （人们喜欢纹理。）但出于示例的目的，你只是在该阶段传递它。
 
@@ -398,7 +405,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 将该代码放置在不同于顶点着色器 HLSL 的 HLSL 文件（如 SimplePixelShader.hlsl）中。 该代码为视口中的每个可见像素运行一次（你正在绘制到的屏幕部分的内存中表示），在这种情况下，映射到整个屏幕。 现在，你的图形管道已完全定义！
 
-### 步骤 8：对网格进行光栅化并显示
+### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>步骤 8：对网格进行光栅化并显示
 
 让我们运行管道。 该操作非常简单：调用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565)。
 
@@ -426,7 +433,7 @@ m_swapChain->Present(1, 0);
 
 已完成！ 若要查看充满模型的场景，请使用多个顶点和索引缓冲区，并且不同的模型类型可以拥有不同的着色器。 请记住，每个模型都有其自己的坐标系，你需要使用在恒定缓冲区中定义的矩阵将其转换为共享的世界坐标系。
 
-## 备注
+## <a name="remarks"></a>备注
 
 本主题介绍创建以及显示你自己创建的简单几何体。 有关从文件中加载更复杂的几何图形以及将其转换为特定于示例的顶点缓冲区对象 (.vbo) 格式的详细信息，请参阅[如何在 DirectX 游戏中加载资源](load-a-game-asset.md)。
 
@@ -435,7 +442,7 @@ m_swapChain->Present(1, 0);
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [如何在 DirectX 游戏中加载资源](load-a-game-asset.md)
@@ -446,10 +453,5 @@ m_swapChain->Present(1, 0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

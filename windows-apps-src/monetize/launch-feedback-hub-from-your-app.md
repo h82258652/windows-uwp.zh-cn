@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "你可以通过从应用启动“反馈中心”来鼓励客户留下反馈。"
 title: "从应用启动“反馈中心”"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 反馈中心, 启动"
 translationtype: Human Translation
-ms.sourcegitcommit: a3c4ebc9bfda5ed41363de139d43a6a2c7934e0e
-ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 65a54d96b556b58a83af58b3d52d666372f337bb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -23,9 +30,9 @@ ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
 
 1. [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了用于启动“反馈中心”的 API 外，此 SDK 还提供用于其他功能的 API，例如通过 A/B 测试运行实验和显示广告。
 2. 在 Visual Studio 中打开你的项目。
-3. 在“解决方案资源管理器”中，右键单击你的项目的“引用”节点，然后单击“添加引用”。
-4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
-5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
+3. 在“解决方案资源管理器”中，右键单击你的项目的**引用**节点，然后单击**添加引用**。
+4. 在**引用管理器**中，展开**通用 Windows** 并单击**扩展**。
+5. 在 SDK 列表中，单击 **Microsoft 协议框架**旁边的复选框，然后单击 **确定**。
 6. 在项目中，添加要向用户显示的用于启动“反馈中心”的控件，如按钮。 我们建议你按如下方式配置该控件：
   * 将控件中显示的内容的字体设置为 **Segoe MDL2 Assets**。
   * 将控件中的文本设置为十六进制的 Unicode 字符代码 E939。 这是 **Segoe MDL2 Assets** 字体中推荐的反馈图标的字符代码。
@@ -76,9 +83,4 @@ ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
 ## <a name="related-topics"></a>相关主题
 
 * [反馈报告](../publish/feedback-report.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

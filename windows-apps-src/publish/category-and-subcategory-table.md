@@ -3,20 +3,27 @@ author: jnHs
 Description: "将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。"
 title: "类别和子类别表"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
-ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a69521d9ff9adb682a370b421458269507e9befe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 类别和子类别表
+# <a name="category-and-subcategory-table"></a>类别和子类别表
 
 
 将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
 
 选择最能描述你的应用的类别。 然后选择一个子类别（如果可用）。
 
-> **注意** 如果选择**游戏**作为类别，则子类别是必需的。
+> **注意**  如果选择**游戏**作为类别，则子类别是必需的。
 
 应用只能列在一个类别（以及一个子类别，如果有的话）中。如果你不确定要使用哪一类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
 
@@ -59,11 +66,6 @@ Windows 应用商店将应用整理为以下类别和子类别。
 | 实用工具 + 工具           | 备份 + 管理 <br> 文件管理器                |
  
 
-> **注意** 有关在 Windows 8.1 及更早版本的 Windows 应用商店和 Windows Phone 应用商店中所使用的类别，以及它们与以上所列类别的关系等信息，请参阅[你的应用如何显示在面向 Windows 10 客户的应用商店中](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
+> **注意**  有关在 Windows 8.1 及更早版本的 Windows 应用商店和 Windows Phone 应用商店中所使用的类别，以及它们与以上所列类别的关系等信息，请参阅[你的应用如何显示在面向 Windows 10 客户的应用商店中](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
 
 

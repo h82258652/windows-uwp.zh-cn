@@ -3,16 +3,23 @@ author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用选取器打开文件和文件夹"
 description: "通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 99a21818fc3b8552de18792f408da860bf6dea22
-ms.openlocfilehash: 08782286228fa25dc492b0e7ccc90958bdec5a7f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96a1cdbf5420978ae8889c86eeafd7825d568261
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -175,8 +182,3 @@ else
 ```
 
 **提示** 不论何时，只要你的应用通过选取器访问文件或文件夹，就将它添加到应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便对进行跟踪。 你可以在[如何跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md)中了解有关使用这些列表的详细信息。
-
-
-<!--HONumber=Jan17_HO1-->
-
-

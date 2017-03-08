@@ -5,12 +5,19 @@ title: "磁贴和图标资源"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fa195ab35b0d6b1825adb8ce18ae1666d0bf1581
+ms.lasthandoff: 02/07/2017
 
 ---
-# 磁贴和图标资源指南
+# <a name="guidelines-for-tile-and-icon-assets"></a>磁贴和图标资源指南
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,14 +26,14 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ![Windows 10“开始”菜单和磁贴](images/assetguidance01.jpg)
 
-## 自适应缩放
+## <a name="adaptive-scaling"></a>自适应缩放
 
 
 首先，简要概述自适应缩放可以更好地了解缩放如何与资源一起使用。 Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外，还有一系列统一的比例系数，用于在各种屏幕大小和显示分辨率中为 UI 元素提供一致的大小。 比例系数还与其他操作系统（如 iOS 和 Android）的比例系数兼容，这使在这些平台之间共享资源变得更容易。
 
 应用商店选择要下载的资源在一定程序上取决于设备的 DPI。 仅下载最匹配设备的资源。
 
-## 磁贴元素
+## <a name="tile-elements"></a>磁贴元素
 
 
 “开始”菜单磁贴的基本组件由背板、图标、品牌栏、边距和应用标题构成：
@@ -65,7 +72,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
  
 
-## 磁贴资源
+## <a name="tile-assets"></a>磁贴资源
 
 
 每个磁贴资源的大小与在其上放置的磁贴大小相同。 可以通过两种不同的资源表示形式标记你的应用磁贴的品牌：
@@ -134,7 +141,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ![带有过紧边距的全出血磁贴](images/assetguidance15.png)
 
-## 列表视图中的磁贴资源
+## <a name="tile-assets-in-list-views"></a>列表视图中的磁贴资源
 
 
 磁贴也可以显示在列表视图中。 显示在列表视图中的磁贴资源大小调整指南与之前所述的磁贴资源略有不同。 本节详细介绍这些大小调整细节。
@@ -161,7 +168,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ![对于磁贴而言太小的图标](images/assetguidance20b.png)
 
-## 基于目标的资源
+## <a name="target-based-assets"></a>基于目标的资源
 
 
 基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 无需向这些资源添加填充；Windows 会根据需要添加填充。 这些资源应占据最少 16 pixel 的占用空间。 以下是这些资源在 Windows 任务栏上的图标中显示时的示例：
@@ -194,7 +201,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26b.png)
 
-## 初始屏幕资源
+## <a name="splash-screen-assets"></a>初始屏幕资源
 
 
 初始屏幕图像可以作为指向图像文件的直接路径或作为资源提供。 通过使用资源引用，你可以提供不同比例的图像，以便 Windows 可以选择适合设备和屏幕分辨率的最佳大小。 你还可以提供辅助功能的高对比度图像和本地化图像，以匹配不同的 UI 语言。
@@ -212,7 +219,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ![初始屏幕资源的大小调整](images/assetguidance27.png)
 
-## 高对比度资源
+## <a name="high-contrast-assets"></a>高对比度资源
 
 
 高对比度模式将单独的资源集用于高对比度白（白色背景搭配黑色文本）和高对比度黑（黑色背景搭配白色文本）。 如果未向你的应用提供高对比度资源，将使用标准资源。
@@ -223,7 +230,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 如果你决定提供高对比度资源，需要包含两组 - 黑底白字和白底黑字。 在将这些资源包含在你的程序包后，可以为上白下黑资源创建“contrast-black”文件夹，并为上黑下白资源创建“contrast-white”文件夹。
 
-## 资源大小表
+## <a name="asset-size-tables"></a>资源大小表
 
 
 我们强烈建议你至少为 100、200 和 400 比例系数提供资源。 为所有比例系数提供资源将提供最佳的用户体验。
@@ -291,7 +298,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 \* 提交这些资源大小作为基线
 
-## 资源类型
+## <a name="asset-types"></a>资源类型
 
 
 此处列出所有资源类型、用途和建议的文件名。
@@ -372,7 +379,7 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 
@@ -383,10 +390,5 @@ ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

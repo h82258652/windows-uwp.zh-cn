@@ -1,26 +1,27 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。"
-title: "存储和检索 Windows 笔划墨迹数据"
+Description: "支持 Windows 墨迹的 UWP 应用可以在墨迹笔划和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。"
+title: "存储和检索 Windows 墨迹笔划数据"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keywords: "Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas, ISF, 墨迹序列化格式"
+keywords: "Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 墨迹序列化格式, 用户交互, 输入"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 11bd4c1d8c4f675fb1dad38e249d64324fa29ecf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7c4f0ac39decede933f10fc94ebeb09fa41415e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows 笔划墨迹数据
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows Ink 笔划数据
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
+支持 Windows Ink 的 UWP 应用可以在墨迹笔划和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
@@ -93,7 +94,7 @@ public MainPage()
     }
 ```
 
-3.  最终，我们将墨迹保存在“保存”按钮的单击事件处理程序中。
+3.  最终，我们将墨迹保存在**保存**按钮的单击事件处理程序中。
 
     [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 允许用户选择保存墨迹数据的文件和位置。
 
@@ -222,7 +223,7 @@ public MainPage()
     }
 ```
 
-3.  最终，我们将墨迹加载到“加载”按钮的单击事件处理程序中。
+3.  最终，我们将墨迹加载到**加载**按钮的单击事件处理程序中。
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 允许用户选择检索已保存墨迹数据的文件和位置。
 
@@ -371,7 +372,7 @@ public MainPage()
     }
 ```
 
-3.  最终，在添加笔划选择支持后，我们在“剪切”、“复制”和“粘贴”按钮的单击事件处理程序中实现剪贴板功能。
+3.  最终，在添加笔划选择支持后，我们在**剪切**、**复制**和**粘贴**按钮的单击事件处理程序中实现剪贴板功能。
 
     对于剪切，我们首先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/br244232) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上调用 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/dn922011)。
 
@@ -450,10 +451,5 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

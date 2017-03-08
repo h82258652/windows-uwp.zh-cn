@@ -3,9 +3,16 @@ author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "使用 C++ 创建“Hello World”应用 (Windows 10)"
 description: "借助 Microsoft Visual Studio 2015，可以使用 C++ 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 351feda6d9b12b44b0711fe7f4665e08e320580d
-ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 34a1d665bc98a5224ef7707994138ba40d70763b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -22,9 +29,8 @@ ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
 ## <a name="before-you-start"></a>开始之前...
 
 -   若要完成本教程，在运行 Windows 10 或 Windows 8.1 的计算机上，你必须使用 Visual Studio 2015 社区版或更高版本，或者任一非社区版 Visual Studio 2015。 若要进行下载，请参阅[获取工具](http://go.microsoft.com/fwlink/p/?LinkId=532666)。
--   安装适当的 [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) 用于 Windows 通用平台开发。
 -   我们假设你已基本了解 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)中的标准 C++、XAML 和概念。
--   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，依次选择“窗口” > “重置窗口布局”。
+-   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，依次选择**窗口** > **重置窗口布局**。
 
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>将 C++ 桌面应用与 Windows 应用比较
@@ -71,11 +77,11 @@ ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
 
 **首先，在 Visual Studio 中创建一个解决方案**
 
-1.  在 Visual Studio 的菜单栏上，依次选择“文件” > “新建” > “项目”。
+1.  在 Visual Studio 的菜单栏上，依次选择**文件** > **新建** > **项目**。
 
-2.  在“新建项目”对话框的左侧窗格中，依次展开“已安装” > “Visual C++” > “Windows” > “通用”。
+2.  在**新建项目**对话框的左侧窗格中，依次展开**已安装** > **Visual C++** > **Windows** > **通用**。
 
-3.  在中心窗格中，选择“空白应用(通用 Windows)”。
+3.  在中心窗格中，选择**空白应用（通用 Windows）**。
 
    （如果你没有看到这些选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
 
@@ -83,7 +89,7 @@ ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
 
  ![“新建项目”对话框中的 C++ 项目模板 ](images/vs2015-newuniversalproject-cpp.png)
 
-5.  选择“确定”按钮。
+5.  选择**确定**按钮。
 
    如果这是你所创建的第一个 UWP 项目，并且你未在计算机上启用开发人员模式，则“启用开发人员”模式对话框将显示。 单击链接以调出设置页面，该页面可让你设置开发人员模式。 开发人员模式允许本地部署和运行应用。
 
@@ -101,7 +107,7 @@ ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
 
 -   **App.xaml、App.xaml.h、App.xaml.cpp：**代表应用程序对象，这是应用的入口点。 App.xaml 不包含特定于页面的 UI 标记，但是你可以添加希望可以从任何页面访问的 UI 样式和其他元素。 代码隐藏文件包含 **OnLaunched** 和 **OnSuspending** 事件的处理程序。 通常，你在此处添加自定义代码以在应用启动时初始化应用并在它暂停或终止时执行清理。
 -   **MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：**包含应用中的默认“开始”页面的 XAML 标记和代码隐藏。 它没有导航支持或内置控件。
--   **pch.h, pch.cpp：**预编译标头文件和在你的项目中包含它的文件。 在 pch.h 中，你可以在解决方案中包含任何不经常更改且包含在其他文件中的标头。
+-   **pch.h、pch.cpp：**预编译标头文件和在你的项目中包含它的文件。 在 pch.h 中，你可以在解决方案中包含任何不经常更改且包含在其他文件中的标头。
 -   **package.appxmanifest：**描述应用所需的设备功能、应用版本信息以及其他元数据的 XML 文件。 要在**清单设计器**中打开此文件，只需双击它。
 -   **HelloWorld\_TemporaryKey.pfx：**支持在此计算机上从 Visual Studio 部署应用的密钥。
 
@@ -248,8 +254,8 @@ MainPage::MainPage()
 
 （如果你没有看到这些仿真器，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
 
-最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.0.0 WVGA 4 英寸 512MB”选项。
-**提示** 有关使用手机仿真器的详细信息，请参阅[在仿真器中运行 Windows Phone 应用](http://go.microsoft.com/fwlink/p/?LinkId=394233)。
+最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用**仿真器 10.0.0.0 WVGA 4 英寸 512MB** 选项。
+**提示**  有关使用手机仿真器的详细信息，请参阅[在仿真器中运行 Windows Phone 应用](http://go.microsoft.com/fwlink/p/?LinkId=394233)。
 
 若要在物理设备上调试你的应用，必须具有已注册用于开发的设备。 有关详细信息，请参阅[注册你的 Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128)。
 
@@ -260,7 +266,7 @@ MainPage::MainPage()
 
    -或者-
 
-   在“调试”菜单中，单击“开始调试”。
+   在**调试**菜单中，单击**开始调试**。
 
    -或者-
 
@@ -292,11 +298,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
     如果在呈现期间发生未经处理的异常，则设计器将无法加载。 在设计器中呈现涉及到运行该页面的设计时版本。 它可能有助于禁用运行用户代码。 你可以通过在**“工具, 选项”**对话框中更改设置来执行此操作。 在**“XAML 设计器”**下，取消选中**“在 XAML 设计器中运行项目代码 (如果支持)”**。
 
-5.  在 MainPage.xaml.cpp 中，将以下代码添加到刚创建的 **Button\_Click** 事件处理程序。 此代码将从 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件检索用户名并使用该用户名创建问候语。 
-            `greetingOutput`
-            [
-              **TextBlock**
-            ](https://msdn.microsoft.com/library/windows/apps/BR209652) 将显示相关结果。
+5.  在 MainPage.xaml.cpp 中，将以下代码添加到刚创建的 **Button\_Click** 事件处理程序。 此代码从 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件检索用户名并使用该用户名创建问候语。 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 将显示相关结果。
 
     ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -341,7 +343,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 你应使用哪个主题？ 你需要的任何一个。 以下我们的观点：对于主要显示图像或视频的应用，我们建议深色主题；对于包含大量文本的应用，我们建议浅色主题。 如果你使用的是自定义配色方案，则请使用最适合应用外观和感觉的主题。 在本教程的其余部分中，我们使用屏幕截图中的浅色主题。
 
-**注意** 主题在应用启动时应用，并且无法在应用运行时更改主题。
+**注意**  主题在应用启动时应用，并且无法在应用运行时更改主题。
 
 ### <a name="using-system-styles"></a>使用系统样式
 
@@ -353,8 +355,8 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 2.  在 XAML 或设计视图中，选择以前添加的“你叫什么名字？”[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)。
 3.  在**“属性”** 窗口 (**F4**) 中，选择右上角的“属性”按钮（![“属性”按钮](images/propertiesbutton.png)）。
 4.  展开**“文本”**组，并将字体大小设置为 18 px。
-5.  展开“其他”组并找到 **Style** 属性。
-6.  单击属性标记（“样式”属性右侧的绿色框），然后在菜单上，依次选择“系统资源” > BaseTextBlockStyle。
+5.  展开**其他**组并找到 **Style** 属性。
+6.  单击属性标记（**样式**属性右侧的绿色框），然后在菜单上，依次选择**系统资源** > **BaseTextBlockStyle**。
 
      **BaseTextBlockStyle**为在 <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 中的[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794)中定义的资源。
 
@@ -368,7 +370,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 7.  重复该过程可设置字体大小并将 **BaseTextBlockStyle** 分配到 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 元素。
 
-    **提示** 尽管此 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
+    **提示**  尽管此 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
 
     现在的 XAML 如下所示：
 
@@ -438,13 +440,8 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 ## <a name="next-steps"></a>后续步骤
 
-如果你具有一个面向 Windows 8.1 和/或 Windows Phone 8.1 的通用 Windows 应用项目，可以将它移植到 Windows 10 中。 虽然没有针对移植的自动操作过程，但你可以很轻松地手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)。
+如果你具有一个面向 Windows 8.1 和/或 Windows Phone 8.1 的通用 Windows 应用项目，可以将它移植到 Windows 10 中。 虽然没有针对移植的自动操作过程，但你可以手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)。
 
 如果你有要与 UWP 应用集成的现有 C++ 代码，例如用于为现有应用程序创建新的 UWP UI，请参阅[操作方法：在通用 Windows 项目中使用现有 C++ 代码](http://go.microsoft.com/fwlink/p/?LinkId=619623)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

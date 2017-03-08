@@ -3,25 +3,32 @@ author: mtoepke
 title: "添加用户界面"
 description: "你已经了解示例游戏如何实现主游戏对象以及基本呈现框架。"
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 用户界面, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cb8cb8eae3328a9010553b7f3e041b8f2dbd8c02
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 添加用户界面
+# <a name="add-a-user-interface"></a>添加用户界面
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你已经了解示例游戏如何实现主游戏对象以及基本呈现框架。 现在介绍示例游戏如何向玩家提供有关游戏状态的反馈。 在此，你将学习如何在三维图形管道输出上添加简单的菜单选项和抬头显示组件。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   将基本用户界面图形和行为添加到 Windows 平台 (UWP) DirectX 游戏。
 
-## 用户界面覆盖层
+## <a name="the-user-interface-overlay"></a>用户界面覆盖层
 
 
 尽管可以使用许多方法在 DirectX 游戏中显示文本和用户界面元素，但我们将重点介绍一种方法，即 [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)（文本元素的 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)）。
@@ -34,7 +41,7 @@ Direct2D 是一组二维绘图 API，用于绘制基于像素的基元和效果�
 
 在本游戏示例中，我们有两个主要 UI 组件：一个是用于显示分数和游戏内控件的提醒显示， 一个是用于显示游戏状态文本和选项（例如暂停信息和级别开始选项）的覆盖层。
 
-### 对抬头显示使用 Direct2D
+### <a name="using-direct2d-for-a-heads-up-display"></a>对抬头显示使用 Direct2D
 
 这是该游戏示例的游戏内提醒显示，无游戏视觉显示。 它简单整齐，可让玩家专注于在三维世界中导航、射击目标。 良好的界面或提醒显示决不会干扰玩家处理和响应游戏中事件的能力。
 
@@ -173,11 +180,11 @@ void GameHud::Render(
 
 在此代码中，更新了为覆盖层建立的 Direct2D 呈现器目标，以反映命中次数、剩余时间和关卡数的更改。 矩形通过调用 [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902) 绘制，而十字准线通过一对 [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895) 调用绘制。
 
-> **注意** 你也许注意到，对 **GameHud::Render** 的调用采用 [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 参数，该参数包含主窗口矩形的大小。 这里演示了 UI 编程的一个重要组成部分：采用名为 DIP（与设备无关的像素）的度量获取窗口的大小，其中 DIP 定义为一英寸的 1/96。 在开始绘图时，Direct2D 将绘图单位缩放到实际像素，它通过使用 Windows 每英寸的点数 (DPI) 设置进行此操作。 同样，在使用 DirectWrite 绘制文本时，指定的是 DIP 而不是字号大小的点数。 DIP 表示为浮点数字。
+> **注意**   你也许注意到，对 **GameHud::Render** 的调用采用 [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 参数，该参数包含主窗口矩形的大小。 这里演示了 UI 编程的一个重要组成部分：采用名为 DIP（与设备无关的像素）的度量获取窗口的大小，其中 DIP 定义为一英寸的 1/96。 在开始绘图时，Direct2D 将绘图单位缩放到实际像素，它通过使用 Windows 每英寸的点数 (DPI) 设置进行此操作。 同样，在使用 DirectWrite 绘制文本时，指定的是 DIP 而不是字号大小的点数。 DIP 表示为浮点数字。
 
  
 
-### 使用覆盖层显示游戏状态信息
+### <a name="displaying-game-state-information-with-an-overlay"></a>使用覆盖层显示游戏状态信息
 
 除提醒显示外，该游戏示例还有一个用于表示游戏的五个状态的覆盖层，其中所有状态显示有一个大的黑色矩形基元，附带供玩家阅读的文本。 （注意，未绘制移动观看控制器矩形，因为它们在这些状态下不处于活动状态。）这些覆盖层状态为：
 
@@ -203,7 +210,7 @@ void GameHud::Render(
 
 下面我们了解如何初始化和绘制这五个状态的覆盖层。
 
-### 初始化和绘制覆盖层
+### <a name="initializing-and-drawing-the-overlay"></a>初始化和绘制覆盖层
 
 这五个显式状态具有一些共同特征：第一，它们都在屏幕中心使用黑色矩形作为背景；第二，显示的文本是标题文本或者正文文本；第三，文本使用 Segoe UI 字体并在背景矩形顶部绘制。 因此，它们所需的资源和实现它们的方法非常类似。
 
@@ -370,7 +377,7 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 现在，覆盖层所需的仅仅是一些要显示的文本！
 
-### 在覆盖层中显示游戏状态
+### <a name="representing-game-state-in-the-overlay"></a>在覆盖层中显示游戏状态
 
 该游戏示例中的五个覆盖层状态在 **GameInfoOverlay** 对象中均有一个对应的方法。 这些方法绘制覆盖层的变体，以向玩家传达游戏本身的显式信息。 传递的信息当然表示为两个字符串：一个标题字符串和一个正文字符串。 因为该示例已经在 **RecreateDeviceResources** 方法中为此信息配置了资源和布局，因此只需提供特定于覆盖层状态的字符串。
 
@@ -502,11 +509,11 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 
 现在，游戏示例提供了一种根据游戏状态向玩家传达文本信息的方式。
 
-### 后续步骤
+### <a name="next-steps"></a>后续步骤
 
 在下一主题[添加控件](tutorial--adding-controls.md)中，我们将介绍玩家如何与游戏示例交互以及输入如何更改游戏状态。
 
-### 这部分的完整示例代码
+### <a name="complete-sample-code-for-this-section"></a>这部分的完整示例代码
 
 GameHud.h
 
@@ -1478,7 +1485,7 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 [使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1489,10 +1496,5 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

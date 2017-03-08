@@ -4,9 +4,17 @@ Description: "设计说明性用户界面 (UI)，可向用户解释如何使用�
 title: "设计说明性 UI 指南"
 label: Instructional UI
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 179f70a1c421d3d5a73813a9b9675353a8d5f8c2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9734304b813794d615eca4d0c9d852dc8df31c1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -69,9 +77,4 @@ ms.openlocfilehash: 179f70a1c421d3d5a73813a9b9675353a8d5f8c2
 ## <a name="related-articles"></a>相关文章
 
 * [应用帮助指南](guidelines-for-app-help.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

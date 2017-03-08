@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "适用于桌面设备的 Device Portal"
 description: "了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b5d259172a7e3975d48a5ba669cfbe345869aebf
-ms.openlocfilehash: 3436a95124071045c8ec89ed8ddf644ccc80c29f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
+ms.lasthandoff: 02/07/2017
 
 ---
-# 适用于桌面设备的 Device Portal
+# <a name="device-portal-for-desktop"></a>适用于桌面设备的 Device Portal
 
 从 Windows 10 版本 1607 开始，附加的开发人员功能可用于桌面设备。 这些功能仅在启用了“开发人员模式”时才可用。
 
@@ -23,9 +30,9 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 - 收集 ETW 跟踪 
 - 操作旁加载应用的独立存储
 
-## 在 Windows 桌面上设置 Device Portal
+## <a name="set-up-device-portal-on-windows-desktop"></a>在 Windows 桌面上设置 Device Portal
 
-### 打开 Device Portal
+### <a name="turn-on-device-portal"></a>打开 Device Portal
 
 在“开发人员设置”**** 菜单中，在启用开发人员模式的情况下，你可以启用 Device Portal。  
 
@@ -51,7 +58,7 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 如果在信任本地网络上的所有用户、设备上没有任何私人信息并且具有独特要求的受保护环境（例如测试实验室）中使用 Device Portal，你可以禁用身份验证。 这支持未加密的通信，并允许任何拥有你的计算机 IP 地址的用户控制通信。
 
-## Device Portal 页面
+## <a name="device-portal-pages"></a>Device Portal 页面
 
 桌面上的 Device Portal 提供了一组标准页面。 有关详细说明，请参阅 [Windows Device Portal 概述](device-portal.md)。
 
@@ -65,7 +72,7 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 - 网络
 - 应用文件资源管理器 
 
-## 设置端口号
+## <a name="setting-port-numbers"></a>设置端口号
 
 如果你希望为 Device Portal 选择端口号（如 80 和 443），你可以设置以下 RegKey：
 
@@ -74,12 +81,12 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
     - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。  
     - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
 
-## 无法安装开发人员程序包或启动 Device Portal
+## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>无法安装开发人员程序包或启动 Device Portal
 有时，由于网络或兼容性问题，开发人员模式无法正确安装。 开发人员模式程序包对**远程**部署是必需的（Device Portal 和 SSH），但对本地部署并非如此。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用。 
 
 请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。 
 
-### 无法找到该程序包
+### <a name="failed-to-locate-the-package"></a>无法找到该程序包
 
 “无法在 Windows 更新中找到开发人员模式程序包。 错误代码 0x001234 了解详细信息”   
 
@@ -89,13 +96,13 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 1. 确保你的计算机连接到 Internet。 
 2. 如果你位于加入域的计算机上，请与网络管理员联系。 
-3. 在“设置”&gt;“更新和安全”&gt;[“Windows 更新”](ms-settings:windowsupdate)中检查 Windows 更新。
-4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;[“管理可选功能”](ms-settings:optionalfeatures)&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。 
+3. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
+4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。 
 
 在执行上述任意步骤后，禁用并随后重新启用“开发人员模式”以验证是否解决该问题。 
 
 
-### 无法安装程序包
+### <a name="failed-to-install-the-package"></a>无法安装程序包
 
 “开发人员模式程序包无法安装。 错误代码 0x001234 了解详细信息”
 
@@ -103,11 +110,6 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 若要解决此问题：
 
-1. 在“设置”&gt;“更新和安全”&gt;[“Windows 更新”](ms-settings:windowsupdate)中检查 Windows 更新。
+1. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
 2. 重启计算机以确保所有更新都已应用。
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

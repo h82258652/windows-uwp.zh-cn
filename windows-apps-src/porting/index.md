@@ -3,13 +3,20 @@ author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: "本部分介绍如何将现有应用移植到通用 Windows 平台 (UWP)，你可以在该平台中创建可供客户安装到所有类型的设备的单个 Windows 10 应用包。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。"
 title: "将应用移植到 Windows 10"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
-ms.openlocfilehash: 777542dd6a105b432e25db082cb0e1b7b87101f2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cbb3b501fcaf1e51ca313423e812a4119ffca49c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将应用移植到 Windows 10
+# <a name="porting-apps-to-windows-10"></a>将应用移植到 Windows 10
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -29,14 +36,9 @@ Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用�
 | [从桌面版移动到 UWP](desktop-to-uwp-root.md) | 将 Win32 和 .NET 4.6.1 桌面应用程序转换为通用 Windows 平台 (UWP) 应用。 |
 | [将 Web 应用移到 UWP](hwa-to-uwp-root.md) | 将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用。 *包括使用 Windows 或 Mac 作为开发平台的说明，以及将 Chrome 应用转换为使用 UWP 的说明。 |
  
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [从 WPF 和 Silverlight 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
 * [从 Android 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
 * [从 Web 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "数据绑定概述"
 description: "本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e89580ef62d5d6ae095aa27628181181aaac9666
-ms.openlocfilehash: d452751fd4ab0cc422c3eae94507923440ec45df
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 3abf2b7e9ff59099dafaa753f3a8ccf257dbc19a
+ms.lasthandoff: 01/19/2017
 
 ---
-数据绑定概述
+<a name="data-binding-overview"></a>数据绑定概述
 =====================
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -16,17 +23,17 @@ ms.openlocfilehash: d452751fd4ab0cc422c3eae94507923440ec45df
 
 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。 此外，我们还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 有关更多详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
-先决条件
+<a name="prerequisites"></a>先决条件
 -------------------------------------------------------------------------------------------------------------
 
-此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅 [Windows 应用入门](https://developer.microsoft.com/en-us/windows/getstarted)。
+此主题假设你知道如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅 [Windows 应用入门](https://developer.microsoft.com/windows/getstarted)。
 
-创建项目
+<a name="create-the-project"></a>创建项目
 ---------------------------------------------------------------------------------------------------------------------------------
 
 创建一个新的“空白应用程序(Windows 通用)”****项目。 将它命名为“Quickstart”。
 
-绑定到单个项目
+<a name="binding-to-a-single-item"></a>绑定到单个项目
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 每个绑定均由一个绑定目标和一个绑定源构成。 通常，绑定目标是控件或其他 UI 元素的属性，而绑定源是类实例（数据模型或视图模型）的属性。 本示例演示了如何将控件绑定到单个项目。 绑定目标是 **TextBlock** 的 **Text** 属性。 绑定源是一个名为 **Recording** 的简单类的实例，该类表示音频录制。 我们先来看一下类。
@@ -181,7 +188,7 @@ namespace Quickstart
 
 ![绑定文本块](images/xaml-databinding0.png)
 
-绑定到项目集合
+<a name="binding-to-a-collection-of-items"></a>绑定到项目集合
 ------------------------------------------------------------------------------------------------------------------
 
 一个常见情形是绑定到业务对象的集合。 在 C# 和 Visual Basic 中，通用 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 类是数据绑定的一个很好的集合选择，因为它实现了 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 接口。 当添加或删除项目或者列表本身的属性更改时，这些接口将向绑定提供更改通知。 如果你希望你的绑定控件使用集合中的对象属性更改进行更新，则业务对象也应该实现 **INotifyPropertyChanged**。 有关详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
@@ -301,7 +308,7 @@ namespace Quickstart
 
 有关 XAML 语法的详细信息，请参阅[使用 XAML 创建 UI](https://msdn.microsoft.com/library/windows/apps/Mt228349)。 有关控件布局的详细信息，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/Mt228350)。
 
-添加详细信息视图
+<a name="adding-a-details-view"></a>添加详细信息视图
 -----------------------------------------------------------------------------------------------------
 
 你可以选择在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 项目中显示 **Recording** 对象的所有详细信息。 但这样做会占用大量空间。 不过，你可以在该项目中仅显示足够多的数据来标识它，然后在用户做出选择时，你可以在 UI 的单个部分（即，详细信息视图）中显示选定项的所有详细信息。 这种排列也称为主视图/详细信息视图或列表/详细信息视图。
@@ -375,7 +382,7 @@ namespace Quickstart
 
 ![绑定列表视图](images/xaml-databinding4.png)
 
-设置数据值的格式或对其进行转换，以供显示
+<a name="formatting-or-converting-data-values-for-display"></a>设置数据值的格式或对其进行转换，以供显示
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 以上呈现有一个小问题。 **ReleaseDateTime** 属性不仅仅是一个日期，还可以是 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)，因此应以高于所需精度的精度来显示它。 一个解决方案是，将字符串属性添加到返回 `this.ReleaseDateTime.ToString("d")` 的 **Recording** 类。 将该属性命名为 **ReleaseDate** 可指示它将返回一个日期，而不是返回日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
@@ -431,13 +438,8 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![显示具有自定义格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [数据绑定](index.md)
-
-
-
-<!--HONumber=Sep16_HO1-->
-
 

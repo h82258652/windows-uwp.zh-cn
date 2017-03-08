@@ -1,20 +1,27 @@
 ---
 author: Jwmsft
-Description: "单选按钮允许用户从两个或多个选项中选择一个选项。"
+Description: "单选按钮允许用户从两个或更多选项中选择一个选项。"
 title: "单选按钮指南"
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 95ddb1ddd1dfd318a5c491504c95f7833f98115e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: aa53060a281a452d47461602866d1b67edc161aa
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="radio-buttons"></a>单选按钮
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-单选按钮允许用户从两个或多个选项中选择一个选项。 每个选项都表示为一个单选按钮；用户只能选择单选按钮组中的一个单选按钮。
+单选按钮允许用户从两个或更多选项中选择一个选项。 每个选项都表示为一个单选按钮；用户只能选择单选按钮组中的一个单选按钮。
 
 （如果你对名称感到好奇，单选按钮根据收音机上的频道预设按钮命名。）
 
@@ -189,9 +196,4 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 **对于开发人员 (XAML)**
 - [**Windows.UI.Xaml.Controls RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

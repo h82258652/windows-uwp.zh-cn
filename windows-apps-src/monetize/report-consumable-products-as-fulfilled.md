@@ -2,17 +2,21 @@
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。"
-title: "将可消费产品报告为已完成。"
+title: "将可消费产品报告为已完成"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店收集 API, 完成, 可消费"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将可消费产品报告为已完成
-
-
-
+# <a name="report-consumable-products-as-fulfilled"></a>将可消费产品报告为已完成
 
 使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。
 
@@ -21,20 +25,20 @@ ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 * 提供消费品的项目 ID（如[查询产品](query-for-products.md)的 **itemId** 参数中返回所示）和你提供的唯一跟踪 ID。 如果将同一跟踪 ID 用于多次尝试，那么即使该项目已经使用过，也仍然会返回相同的结果。 如果你不确定消耗请求是否成功，你的服务应重新提交具有同一跟踪 ID 的消耗请求。 跟踪 ID 始终与该消耗请求关联并且可以无限期地重新提交。
 * 提供产品 ID（如[查询产品](query-for-products.md)的 **productId** 参数中返回所示）和从以下请求正文部分中的 **transactionId** 参数的描述中所列的源之一获取的事务 ID。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 若要使用此方法，你需要：
 
 * 使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
-* [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。
+* 表示你要为其将可消费产品报告为已完成的用户身份的 Windows 应用商店 ID 密钥。
 
-有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
+有关详细信息，请参阅[管理来自服务的产品授权](view-and-grant-products-from-a-service.md)。
 
-## 请求
+## <a name="request"></a>请求
 
 
-### 请求语法
+### <a name="request-syntax"></a>请求语法
 
 | 方法 | 请求 URI                                                   |
 |--------|---------------------------------------------------------------|
@@ -42,7 +46,7 @@ ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 <span/> 
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -53,30 +57,30 @@ ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 | 参数     | 类型         | 说明         | 必需 |
 |---------------|--------------|---------------------|----------|
-| 受益人   | UserIdentity | 正在使用此项目的用户。                                                                                                                                                                                                                                                                 | 是      |
-| ItemID        | 字符串       | [查询产品](query-for-products.md)返回的 itemID 值。 将此参数与 trackingId 一起使用                                                                                                                                                                                                  | 否       |
-| trackingId    | Guid         | 由开发人员提供的唯一跟踪 ID。 将此参数与 itemId 一起使用。                                                                                                                                                                                                                                     | 否       |
-| productId     | 字符串       | [查询产品](query-for-products.md)返回的 productId 值。 将此参数与 transactionId 一起使用                                                                                                                                                                                            | 否       |
-| transactionId | Guid         | 从以下源之一获取的事务 ID 值。 将此参数与 productId 一起使用。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 类的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 属性。</li><li>由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 返回的应用或产品收据。</li><li>[查询产品](query-for-products.md)返回的 transactionId 参数。</li></ul>                                                                                                                                                                                                                                   | 否       |
+| 受益人   | UserIdentity | 正在使用此项目的用户。 有关详细信息，请参阅下表。        | 是      |
+| itemId        | string       | [查询产品](query-for-products.md)返回的 *itemId* 值。 将此参数与 *trackingId* 一起使用      | 否       |
+| trackingId    | guid         | 由开发人员提供的唯一跟踪 ID。 将此参数与 *itemId* 一起使用。         | 否       |
+| productId     | string       | [查询产品](query-for-products.md)返回的 *productId* 值。 将此参数与 *transactionId* 一起使用   | 否       |
+| transactionId | guid         | 从以下源之一获取的事务 ID 值。 将此参数与 *productId* 一起使用。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 类的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 属性。</li><li>由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 返回的应用或产品收据。</li><li>[查询产品](query-for-products.md)返回的 *transactionId* 参数。</li></ul>   | 否       |
 
  
 <span/>
 
 UserIdentity 对象包含以下参数。
 
-| 参数            | 类型   | 说明                                                                                                                                 | 必需 |
-|----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| IdentityType         | 字符串 | 指定字符串值 **b2b**。                                                                                                           | 是      |
-| identityValue        | 字符串 | [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。                                                                                                   | 是      |
-| localTicketReference | 字符串 | 已返回响应的请求标识符。 我们建议你使用与 Windows 应用商店 ID 密钥中的 *userId* 声明相同的值。 | 是      |
+| 参数            | 类型   | 说明       | 必需 |
+|----------------------|--------|-------------------|----------|
+| IdentityType         | 字符串 | 指定字符串值 **b2b**。    | 是      |
+| identityValue        | string | 表示你要为其将可消费产品报告为已完成的用户身份的 [Windows 应用商店 ID 密钥](view-and-grant-products-from-a-service.md#step-4)。      | 是      |
+| localTicketReference | string | 已返回响应的请求标识符。 建议你使用与 Windows 应用商店 ID 密钥中的 *userId* [claim](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) 相同的值。 | 是      |
 
 <span/> 
 
-### 请求示例
+### <a name="request-examples"></a>请求示例
 
 以下示例使用 *itemId* 和 *trackingId*。
 
@@ -118,12 +122,12 @@ Host: collections.md.mp.microsoft.com
 }
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 
 如果已成功执行消耗，将不返回任何内容。
 
-### 响应示例
+### <a name="response-example"></a>响应示例
 
 ```syntax
 HTTP/1.1 204 No Content
@@ -135,29 +139,21 @@ MS-ServerId: 030011326
 Date: Tue, 22 Sep 2015 20:40:55 GMT
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 
-| 代码 | 错误        | 内部错误代码           | 描述                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 代码 | 错误        | 内部错误代码           | 描述           |
+|------|--------------|----------------------------|-----------------------|
 | 401  | 未授权 | AuthenticationTokenInvalid | Azure AD 访问令牌无效。 在某些情况下，ServiceError 的详细信息包含更多信息，例如令牌到期或 *appid* 声明丢失的时间。 |
 | 401  | 未授权 | PartnerAadTicketRequired   | 在授权标头中，Azure AD 访问令牌不会 传递到服务。                                                                                                   |
 | 401  | 未授权 | InconsistentClientId       | 请求正文的 Windows 应用商店 ID 密钥中的 *clientId* 声明与授权标头的 Azure AD 访问令牌中的 *appid* 声明不匹配。                     |
 
 <span/> 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
-* [从服务查看和授予产品](view-and-grant-products-from-a-service.md)
+* [管理来自服务的产品授权](view-and-grant-products-from-a-service.md)
 * [查询产品](query-for-products.md)
 * [授予免费产品](grant-free-products.md)
 * [续订 Windows 应用商店 ID 密钥](renew-a-windows-store-id-key.md)
- 
-
- 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

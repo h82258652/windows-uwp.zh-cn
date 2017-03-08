@@ -3,38 +3,45 @@ author: jwmsft
 description: "将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。"
 title: "TemplateBinding 标记扩展"
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f279590cc1351efee2552e237ab095674768463
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {TemplateBinding} 标记扩展
+# <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 **TemplateBinding** 只能在 XAML 中的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定义中使用。
 
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 属性使用方法（针对模板或样式中的 Setter 属性）
+## <a name="xaml-attribute-usage-for-setter-property-in-template-or-style"></a>XAML 属性使用方法（针对模板或样式中的 Setter 属性）
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 术语 | 说明 |
 |------|-------------|
 | propertyName | 在 setter 语法中设置的属性的名称。 这必须是一个依赖属性。 |
 | sourceProperty | 存在于模板化的类型上的其他依赖属性的名称。 |
 
-## 备注
+## <a name="remarks"></a>备注
 
 如果你是自定义控件的作者或者要替换现有控件的控件模板，使用 **TemplateBinding** 是如何定义控件模板的基础部分。 有关详细信息，请参阅[快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 
 **注意** 在 Windows 运行时 XAML 处理器实现中，**TemplateBinding** 没有支持类表示。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
@@ -60,10 +67,5 @@ ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 * [XAML 概述](xaml-overview.md)
 * [依赖属性概述](dependency-properties-overview.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

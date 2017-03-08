@@ -1,18 +1,25 @@
 ---
 author: PatrickFarley
 title: "从应用进行 3D 打印"
-description: "了解如何向通用 Windows 应用添加 3D 打印功能。 本主题介绍如何启动 3D 打印对话框，但要先确保 3D 模型可打印并且格式正确。"
+description: "了解如何向通用 Windows 应用添加 3D 打印功能。 本主题介绍在确保 3D 模型可打印并且格式正确之后，如何启动 3D 打印对话框。"
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e2b88b0eb88d0a3d8d1a5fb944bd4d00a50012e0
-ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89ab7a65df0a8415d508e5831a22b2c522308f95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 从应用进行 3D 打印
+# <a name="3d-printing-from-your-app"></a>从应用进行 3D 打印
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -24,7 +31,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 > [!NOTE]
 > 在本指南中的示例代码中，为了简洁而极大简化了错误报告和处理。
 
-## 类设置
+## <a name="class-setup"></a>类设置
 
 
 在将具有 3D 打印功能的类中，添加 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169) 命名空间。
@@ -39,7 +46,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
-## 创建一个简单的 UI
+## <a name="create-a-simple-ui"></a>创建一个简单的 UI
 
 此示例介绍三个用户控件：一个加载按钮（将文件移入程序内存中）、一个修复按钮（将在必要时修改文件）和一个打印按钮（将启动打印作业）。 以下代码会在类的 XAML 文件中创建这些按钮（及其单击事件处理程序）：
 
@@ -51,7 +58,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 
 
-## 获取 3D 数据
+## <a name="get-the-3d-data"></a>获取 3D 数据
 
 
 应用获取 3D 几何图形数据的方法将有所不同。 应用可能从 3D 扫描检索数据、从 Web 资源下载模型数据或者使用公式或用户输入以编程方式生成 3D 网格。 为了简便起见，本指南将介绍如何从设备存储将 3D 数据文件（几种常见文件类型的任意一种）加载到程序内存中。 [3D Builder 模型库](https://developer.microsoft.com/windows/hardware/3d-builder-model-library)提供各种可供你轻松下载到设备的模型。
@@ -60,7 +67,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
-## 使用 3D Builder 转换为 3D 制造格式 (.3mf)
+## <a name="use-3d-builder-to-convert-to-3d-manufacturing-format-3mf"></a>使用 3D Builder 转换为 3D 制造格式 (.3mf)
 
 现在，你可以将 3D 数据文件加载到应用的内存中。 但是，3D 几何图形数据可以有很多不同的格式，而且并非都适合 3D 打印。 Windows 10 针对所有 3D 打印任务都使用 3D 制造格式 (.3mf) 文件类型。
 
@@ -74,7 +81,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
-## 修复模型数据以供 3D 打印
+## <a name="repair-model-data-for-3d-printing"></a>修复模型数据以供 3D 打印
 
 并非所有 3D 模型都可以打印，即使采用 .3mf 类型也是如此。 为了使打印机能够正确地确定哪些空间要填充和哪些空间要留空，要打印的模型必须（各自）是一个单一无缝的复杂模型、具有面向外部的表面法线并具有流形几何图形。 这些方面的问题可能会以各种各样的形式突然出现，而且在复杂的形状中难以发现。 幸运的是，现代软件解决方案通常足以将原始几何图形转换为可打印的 3D 形状。 这称为*修复*模型，此操作将在 `OnFixClick` 方法中完成。
 
@@ -86,7 +93,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
-## 执行打印任务：创建一个 TaskRequested 处理程序
+## <a name="execute-printing-task-create-a-taskrequested-handler"></a>执行打印任务：创建一个 TaskRequested 处理程序
 
 
 稍后，在向用户显示 3D 打印对话框并且用户选择开始打印时，应用将需要向 3D 打印管道传递所需的参数。 3D 打印 API 将引发 **TaskRequested** 事件。 必须编写一种方法来适当地处理此事件。 如往常一样，处理程序方法必须与其事件的类型相同：**TaskRequested** 事件具有参数 [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029)（对其发送方对象的引用）和一个 [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) 对象，该对象包含大部分相关信息。 它的返回类型是 **void**。
@@ -112,7 +119,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 > [!NOTE]  
 > 必须实现 `Task_Submitting` 和 `Task_Completed` 方法才能向这些事件注册它们。
 
-## 执行打印任务：打开 3D 打印对话框
+## <a name="execute-printing-task-open-3d-print-dialog"></a>执行打印任务：打开 3D 打印对话框
 
 
 所需的最后一部分代码是启动 3D 打印对话框的代码。 与传统打印对话框窗口一样，3D 打印对话框提供了许多最后一分钟打印选项，并允许用户选择要使用的打印机（无论通过 USB 连接还是通过网络连接）。
@@ -129,20 +136,11 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 [生成 3MF 程序包](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
 [3D 打印 UWP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

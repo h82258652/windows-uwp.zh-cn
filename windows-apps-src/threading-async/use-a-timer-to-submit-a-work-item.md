@@ -3,12 +3,19 @@ author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: "使用计时器提交工作项"
 description: "了解如何创建在经过计时器时间后运行的工作项。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 计时器, 线程"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 984571c0b059a989477d99c4f823ed839dd8bff4
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用计时器提交工作项
+# <a name="use-a-timer-to-submit-a-work-item"></a>使用计时器提交工作项
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,11 +26,11 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 
 了解如何创建在经过计时器时间后运行的工作项。
 
-## 创建单次计时器
+## <a name="create-a-single-shot-timer"></a>创建单次计时器
 
 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 结构指定延迟。
 
-> **注意** 你可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 并显示工作项的进度。
+> **注意**  你可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 并显示工作项的进度。
 
 以下示例创建三分钟后运行的工作项：
 
@@ -34,54 +41,54 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 > ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Work
->         // 
+>         //
 >         
->         // 
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(
 >             CoreDispatcherPriority.High,
 >             () =>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
->                 // 
-> 
+>                 //
+>
 >             });
-> 
+>
 >     }, delay);
 > ```
 > ``` cpp
 > TimeSpan delay;
 > delay.Duration = 3 * 60 * 10000000; // 10,000,000 ticks per second
-> 
+>
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
 >         ref new TimerElapsedHandler([this](ThreadPoolTimer^ source)
 >         {
->             // 
+>             //
 >             // TODO: Work
->             // 
+>             //
 >             
->             // 
+>             //
 >             // Update the UI thread by using the UI core dispatcher.
->             // 
+>             //
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([this]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                     ExampleUIUpdateMethod("Timer completed.");
-> 
+>
 >                 }));
-> 
+>
 >         }), delay);
 > ```
 
-## 提供完成处理程序
+## <a name="provide-a-completion-handler"></a>提供完成处理程序
 
 如果需要，使用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) 处理工作项的取消和完成。 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 重载以提供其他 lambda。 它在计时器被取消或工作项完成时运行。
 
@@ -92,48 +99,48 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 > TimeSpan delay = TimeSpan.FromMinutes(3);
 >             
 > bool completed = false;
-> 
+>
 > ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Work
->         // 
-> 
->         // 
+>         //
+>
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(
 >                 CoreDispatcherPriority.High,
 >                 () =>
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                 });
-> 
+>
 >         completed = true;
 >     },
 >     delay,
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Handle work cancellation/completion.
->         // 
-> 
-> 
->         // 
+>         //
+>
+>
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(
 >             CoreDispatcherPriority.High,
 >             () =>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
->                 // 
-> 
+>                 //
+>
 >                 if (completed)
 >                 {
 >                     // Timer completed.
@@ -142,52 +149,52 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 >                 {
 >                     // Timer cancelled.
 >                 }
-> 
+>
 >             });
 >     });
 > ```
 > ``` cpp
 > TimeSpan delay;
 > delay.Duration = 3 * 60 * 10000000; // 10,000,000 ticks per second
-> 
+>
 > completed = false;
-> 
+>
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
 >         ref new TimerElapsedHandler([&](ThreadPoolTimer ^ source)
 >         {
->             // 
+>             //
 >             // TODO: Work
->             // 
-> 
->             // 
+>             //
+>
+>             //
 >             // Update the UI thread by using the UI core dispatcher.
->             // 
+>             //
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([&]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                 }));
-> 
+>
 >             completed = true;
-> 
+>
 >         }),
 >         delay,
 >         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
->             // 
+>             //
 >             // TODO: Handle work cancellation/completion.
->             // 
-> 
+>             //
+>
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([&]()
 >                 {
->                     // 
+>                     //
 >                     // Update the UI thread by using the UI core dispatcher.
->                     // 
-> 
+>                     //
+>
 >                     if (completed)
 >                     {
 >                         // Timer completed.
@@ -196,12 +203,12 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 >                     {
 >                         // Timer cancelled.
 >                     }
-> 
+>
 >                 }));
 >         }));
 > ```
 
-## 取消计时器
+## <a name="cancel-the-timer"></a>取消计时器
 
 如果计时器仍在倒计时，但是已不再需要工作项，调用 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 计时器会取消，而工作项不会提交到线程池。
 
@@ -213,7 +220,7 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 > DelayTimer->Cancel();
 > ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 通用 Windows 平台 (UWP) 应用无法使用 **Thread.Sleep**，因为它会阻止 UI 线程。 你可以改为使用 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 创建工作项，这将延迟工作项完成的任务，但不会阻止 UI 线程。
 
@@ -221,7 +228,7 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 
 有关重复计时器的信息，请参阅[创建定期工作项](create-a-periodic-work-item.md)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
@@ -229,10 +236,4 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
  
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

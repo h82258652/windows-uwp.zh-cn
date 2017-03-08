@@ -3,13 +3,20 @@ author: mtoepke
 title: "通过深度测试呈现场景"
 description: "通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。"
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 呈现, 场景, 深度测试, direct3d, 阴影"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 通过深度测试呈现场景
+# <a name="render-the-scene-with-depth-testing"></a>通过深度测试呈现场景
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
 
 通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 3 部分。
 
-## 包括用于光锥的转换
+## <a name="include-transformation-for-light-frustum"></a>包括用于光锥的转换
 
 
 顶点着色器需要计算每个顶点的转换光线空间位置。 使用常量缓冲区提供光线空间模型、视图以及投影矩阵。 也可以使用该常量缓冲区为光线计算提供光线位置和法线。 在深度测试期间将使用光线空间中的转换位置。
@@ -61,7 +68,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 接下来，像素着色器将使用顶点着色器提供的差值光线空间位置来测试像素是否处于阴影中。
 
-## 测试位置是否位于光锥之内
+## <a name="test-whether-the-position-is-in-the-light-frustum"></a>测试位置是否位于光锥之内
 
 
 首先，通过将 X 和 Y 坐标规范化来检查像素是否位于视锥之内。 如果它们都在 \[0, 1\] 范围内，那么该像素有可能位于阴影中。 否则，你可以跳过深度测试。 通过调用 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 并将结果与原始值进行比较来快速对着色器进行此项测试。
@@ -83,7 +90,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## 针对阴影映射进行深度测试
+## <a name="depth-test-against-the-shadow-map"></a>针对阴影映射进行深度测试
 
 
 使用示例比较函数（[SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) 或 [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)）来针对深度映射测试像素在光线空间中的深度。 计算标准化光线空间深度值（即 `z / w`），并将该值传递给比较函数。 由于我们使用 LessOrEqual 示例比较测试，则比较测试通过时固有函数会返回零；这表示像素位于阴影中。
@@ -115,7 +122,7 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## 计算阴影内外的照明
+## <a name="compute-lighting-in-or-out-of-shadow"></a>计算阴影内外的照明
 
 
 如果像素不在阴影内，则像素阴影应计算直接照明并将其添加到像素值中。
@@ -161,10 +168,5 @@ return float4(input.color * ambient, 1.f);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

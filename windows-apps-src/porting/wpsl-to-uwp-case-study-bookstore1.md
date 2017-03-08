@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: "本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
 title: "从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 14003238ead3af2d796bab4f96dadfb050f7d595
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,11 +22,11 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将“生成操作”设置为“内容”，并将“复制到输出目录”设置为“不要复制”。
+我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
 本部分中之前的主题介绍了平台之间的差异，并且提供有关将应用的各个方面从 XAML 标记移植到访问数据（通过绑定到视图模型）这一过程的详细信息和指南。 案例研究旨在通过在真实示例中实际显示指南来补充该指南。 案例研究假设你已阅读该指南，因此不会重复该指南。
 
-**注意** 在 Visual Studio 中打开 Bookstore1Universal\_10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md) 中用于设置目标平台版本的步骤进行操作。
+**注意**   在 Visual Studio 中打开 Bookstore1Universal\_10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md) 中用于设置目标平台版本的步骤进行操作。
 
 ## <a name="downloads"></a>下载
 
@@ -37,13 +44,13 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 可快速完成以下任务：在 Visual Studio 中创建新项目、将文件从 Bookstore1WPSL8 复制到其中并将已复制的文件包含在新项目中。 首先创建一个新的空白应用程序（Windows 通用）项目。 将它命名为 Bookstore1Universal\_10。 这些是要从 Bookstore1WPSL8 复制到 Bookstore1Universal\_10 的文件。
 
--   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击“包括在项目中”。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹时，请在“解决方案资源管理器”中单击“刷新”，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
+-   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击**包括在项目中**。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹时，请在**解决方案资源管理器**中单击**刷新**，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
 我们可以将 Visual Studio 生成的 App.xaml 和 App.xaml.cs 保存在 Windows 10 项目中。
 
-编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用“在文件中替换”功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
 
 -   将 `System.ComponentModel.DesignerProperties` 更改为 `DesignMode`，然后对其使用 **Resolve** 命令。 删除 `IsInDesignTool` 属性并使用 IntelliSense 添加正确的属性名称：`DesignModeEnabled`。
 -   对 `ImageSource` 使用 **Resolve** 命令。
@@ -73,7 +80,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>支付债务项和一些初始样式设置
 
-默认情况下，支持所有方向。 但是，Windows Phone Silverlight 应用将自身明确约束为仅限纵向，因此债务项 \#1 和 \#2 通过转到新项目中的应用包清单中并选中“支持的方向”下的“纵向”来支付。
+默认情况下，支持所有方向。 但是，Windows Phone Silverlight 应用将自身明确约束为仅限纵向，因此债务项 \#1 和 \#2 通过转到新项目中的应用包清单中并选中**支持的方向**下的**纵向**来支付。
 
 对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 和 \#5，我们需要找到与已在使用的 Windows Phone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock** 样式。 可以在仿真器中运行 Windows Phone Silverlight 应用并将其与[文本](wpsl-to-uwp-porting-xaml-and-ui.md)部分中的图示并排比较。 通过执行该操作以及查看 Windows Phone Silverlight 系统样式的属性，我们可以生成此表。
 
@@ -84,7 +91,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 若要执行该操作，请右键单击“TextBlock”，然后单击“编辑样式”&gt;&gt;“应用资源”。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击“ListBox”，然后依次单击“编辑其他模板”&gt;“编辑生成的项 (ItemTemplate)”。
+若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 若要执行该操作，请右键单击**TextBlock**，然后单击**编辑样式** &gt; **应用资源**。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击 **ListBox**，然后依次单击**编辑其他模板** &gt; **编辑生成的项 (ItemTemplate)**。
 
 项目后有一个 80% 不透明的白色背景，因为 **ListBox** 控件的默认样式将其背景设置为 `ListBoxBackgroundThemeBrush` 系统资源。 在 **ListBox** 上设置 `Background="Transparent"` 以清除该背景。 若要使项模板中的 **TextBlock** 向左对齐，请采用上述的相同方式再次编辑它，并在两个 **TextBlock** 上都设置 `"9.6,0"` 的 **Margin**。
 
@@ -133,9 +140,4 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 此案例研究介绍了移植非常简单的应用（可以认为是一个过分简单的应用）的过程。 例如，列表控件可用于选择或者用于建立导航的上下文；应用导航到具有有关所点击的项的更多详细信息的页面。 根据用户的选择，此特定应用不执行任何操作，并且它没有导航。 即便如此，案例研究仍可用于打破僵局、介绍移植过程以及演示可在真实的 UWP 应用中使用的重要技术。
 
 下一个案例研究是 [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

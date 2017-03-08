@@ -3,25 +3,32 @@ author: mtoepke
 title: "定义游戏的通用 Windows 平台 (UWP) 应用框架"
 description: "为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。"
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9dea19c87c4049c73a938b1cd5576644f7b0f8b9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 82a44a3499297b3988815ad10091cd351a194cbd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  定义游戏的通用 Windows 平台 (UWP) 应用框架
+#  <a name="define-the-games-universal-windows-platform-uwp-app-framework"></a>定义游戏的通用 Windows 平台 (UWP) 应用框架
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。 这包括 Windows 运行时属性，如暂停/恢复事件处理、窗口焦点和贴靠，以及用户界面的事件、交互和过渡。 我们将了解该示例游戏是如何构建的，以及它如何为玩家与系统交互定义高级状态机。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   为 UWP DirectX 游戏设置框架，以及实现定义整个游戏流的状态机。
 
-## 初始化和启动视图提供程序
+## <a name="initializing-and-starting-the-view-provider"></a>初始化和启动视图提供程序
 
 
 在任何 UWP DirectX 游戏中，必须获取应用单一实例（即定义运行应用的实例的 Windows 运行时对象） 能够访问其所需图形资源的视图提供程序。 通过 Windows 运行时，你的应用可以直接与图形界面连接，但需要指定所需的资源和处理资源的方式。
@@ -38,7 +45,7 @@ ms.openlocfilehash: 9dea19c87c4049c73a938b1cd5576644f7b0f8b9
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-在 DirectX11 应用（通用 Windows）模板中，这 5 种方法在 [App.h](#code_sample) 中的 **App** 对象中定义。 让我们看一下它们在此游戏中的实现方式。
+在 DirectX11 应用（通用 Windows）模板中，这 5 种方法在 [App.h](#complete-sample-code-for-this-section) 中的 **App** 对象中定义。 让我们看一下它们在此游戏中的实现方式。
 
 视图提供程序的初始化方法
 
@@ -237,7 +244,7 @@ void App::Uninitialize()
 
 我们在本教程中会再次提到这 5 种方法，因此请记住它们。 现在，我们了解一下游戏引擎的总体结构以及定义它的状态机。
 
-## 初始化游戏引擎状态
+## <a name="initializing-the-game-engine-state"></a>初始化游戏引擎状态
 
 
 由于用户可以随时从暂停状态恢复 UWP 游戏应用，因此应用可以有任意数量的可能状态。
@@ -289,12 +296,12 @@ void App::InitializeGameState()
 
 该游戏示例不区分本身冷启动的游戏（即首次启动的无暂停事件的游戏）和从暂停状态恢复的游戏。 这是任何 UWP 应用的正确设计。
 
-## 处理事件
+## <a name="handling-events"></a>处理事件
 
 
 我们的示例代码为 **Initialize**、**SetWindow** 和 **Load** 中的特定事件注册了大量处理程序。 你可能猜到这些是重要的事件，因为代码示例在转到任何游戏机或图形开发之前运行状况良好。 你猜对了！ 这些事件是获得正确的 UWP 应用体验的基础，由于 UWP 应用可随时激活、停用、调整大小、贴靠、取消贴靠、暂停 或恢复，因此游戏必须尽快注册这些事件，并且处理这些事件的方式应保证玩家获得流畅和可预期的体验。
 
-下面是示例中的事件处理程序，以及它们处理的事件。 你可以在[此部分的完整代码](#code_sample)中找到这些事件处理程序的完整代码。
+下面是示例中的事件处理程序，以及它们处理的事件。 你可以在[此部分的完整代码](#complete-sample-code-for-this-section)中找到这些事件处理程序的完整代码。
 
 <table>
 <colgroup>
@@ -316,7 +323,7 @@ void App::InitializeGameState()
 <td align="left">OnLogicalDpiChanged</td>
 <td align="left">处理 [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150)。 主游戏窗口的 DPI 已更改，游戏应用相应地调整其资源。
 <div class="alert">
-<strong>注意</strong> [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 坐标以 DIP 为单位（与设备无关的像素），和在 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) 中一样。 因此，要正确显示任何 2D 资源或基元，必须通知 Direct2D 关于 DPI 的更改。
+<strong>注意</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 坐标以 DIP 为单位（与设备无关的像素），和在 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) 中一样。 因此，要正确显示任何 2D 资源或基元，必须通知 Direct2D 关于 DPI 的更改。
 </div>
 <div>
  
@@ -353,7 +360,7 @@ void App::InitializeGameState()
 
 你自己的游戏必须处理这些事件，因为它们是 UWP 应用设计的一部分。
 
-## 更新游戏引擎
+## <a name="updating-the-game-engine"></a>更新游戏引擎
 
 
 在 **Run** 的游戏循环中，示例已实现了一个基本状态机，用于处理玩家可以采取的所有主要操作。 此状态机的最高级别处理加载游戏、玩特定关卡，或者在游戏暂停之后继续某个关卡（通过系统或玩家）。
@@ -364,7 +371,7 @@ void App::InitializeGameState()
 -   **Waiting for press**。 游戏循环正在执行，正在等待特定的用户输入。 此输入是玩家加载游戏、开始某个级别或继续某个级别的操作。 示例代码引用这些子状态作为 PressResultState 枚举值。
 -   **Dynamics**。 在用户玩游戏过程中游戏循环正在运行。 在用户玩游戏过程中，游戏检查其可以转换的 3 个条件：某个级别的设定时间到期、玩家完成某个级别或者玩家完成所有级别。
 
-下面是代码结构。 完整代码在[此部分的完整代码](#code_sample)中提供。
+下面是代码结构。 完整代码在[此部分的完整代码](#complete-sample-code-for-this-section)中提供。
 
 用于更新游戏引擎的状态机的结构
 
@@ -473,7 +480,7 @@ void App::Update()
 
 当然，我们已经说过，有的状态机存在于状态机内部。 控制器有一个状态机，用于处理玩家可能生成的所有可接受的输入。 在图中，点按是用户输入的一种形式。 此状态机在较高级别工作，不关心是哪种输入；它假定控制器的状态机将处理影响运动和射击行为的任何转换，以及相关的呈现更新。 我们将在[添加控件](tutorial--adding-controls.md)中讨论管理输入状态。
 
-## 更新用户界面
+## <a name="updating-the-user-interface"></a>更新用户界面
 
 
 我们需要通知玩家系统的状态，并允许玩家根据游戏规则更改高级状态。 对于大多数游戏，包括此游戏示例，这通过提醒显示实现，其中包含游戏状态的显示以及其他特定于游戏的信息，如得分、弹药或剩余的机会数。 我们将此显示称为覆盖层，因为它独立于主图形管道呈现，并放在 3D 投影的顶部。 在该示例游戏中，我们使用 Direct2D API 创建此覆盖层。 我们还可以使用 XAML 创建此覆盖层，这在[扩展游戏示例](tutorial-resources.md)中讨论。
@@ -525,14 +532,14 @@ void App::SetGameInfoOverlay(GameInfoOverlayState state)
 
 将用户界面与游戏的图形管道分开可以独立于游戏的图形呈现引擎来使用用户界面，并显著降低游戏代码的复杂性。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 综上所述，我们介绍了游戏示例的基本结构，并为使用 DirectX 进行 UWP 游戏应用开发提供了一个很好的模型。 当然，它的内容实际上远不止这些。 我们只是对游戏的 skeleton 大致过了一遍而已。 现在，我们将深入讨论游戏及其技术，以及这些技术如何实现为核心游戏对象。 我们将在[定义主游戏对象](tutorial--defining-the-main-game-loop.md)中介绍该部分。
 
 还需要更详细地了解示例游戏的图形引擎。 该部分将在[装配呈现管道](tutorial--assembling-the-rendering-pipeline.md)中介绍。
 
-## 这部分的完整示例代码
+## <a name="complete-sample-code-for-this-section"></a>这部分的完整示例代码
 
 
 App.h
@@ -1423,10 +1430,5 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

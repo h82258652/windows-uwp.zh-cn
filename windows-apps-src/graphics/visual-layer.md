@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "可视化层"
 description: "Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
-ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d1c676808b8b63f42b89a22862eaab63ddc94141
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="visual-layer"></a>可视化层
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在 Windows 10 中，已针对创建适用于所有 Windows 应用程序（桌面版或移动版）的全新统一的合成器和呈现引擎完成了大量工作。 该工作生成了称为 Windows.UI.Composition 的统一合成 WinRT API，用于提供对新的轻型合成对象以及 受动画和效果驱动的全新合成器的访问权限。
 
@@ -30,7 +37,7 @@ XAML 开发人员可以使用 WinRT“下拉”到采用 C# 的合成层，以�
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象。 大部分属性均位于此处且继承自其他视觉对象。
 -   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了插入子视觉对象的功能。
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，并包含图像、效果和交换链形式的内容。
--   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx) - 其子级平展到单个层中的 ContainerVisual。  
+-   [**LayerVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.layervisual.aspx) - 其子级平展到单个层中的 ContainerVisual。  
 -   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – 用于管理应用程序和系统合成器进程之间关系的对象工厂。
 
 对于其他一些合成对象而言，合成器也是一个工厂，可用于剪裁或转换树中的视觉对象以及丰富的动画和效果集。
@@ -66,7 +73,7 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 -   阅读 Kenny Kerr 的关于此 API 的 MSDN 文章：[图形和动画 - Windows 合成支持 10 倍缩放](https://msdn.microsoft.com/magazine/mt590968)
 -   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和合成示例。
 -   [**API 的完全参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
--   [已知问题](http://go.microsoft.com/fwlink/?LinkId=823237)。
+
 
  
 
@@ -74,10 +81,5 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -1,32 +1,36 @@
 ---
 author: jwmsft
-description: "Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。"
-title: "Binding 标记扩展&quot;"
+description: "Binding 标记扩展是在 XAML 加载时间被转换为 Binding 类的一个实例的。"
+title: "绑定标记扩展’"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49
-ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {Binding} 标记扩展
+# <a name="binding-markup-extension"></a>{Binding} 标记扩展
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+              **注意**  Windows 10 提供了一种新的绑定机制，该机制针对性能和开发人员的工作效率进行了优化。 请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)。
 
-            **注意** 新的绑定机制可用于 Windows10，该机制已针对性能和开发人员工作效率进行优化。 请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)。
-
-
-            **注意** 有关将应用中的数据绑定与 **{Binding}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+              **注意**  有关将你的应用中的数据绑写与 **{Binding}** 一起使用的一般信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较的一般信息），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 
             **{Binding}** 标记扩展用于将控件上的属性数据绑定到来自数据源（例如代码）的值。 
             **{Binding}** 标记扩展会在 XAML 加载时转换为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类的实例。 此绑定对象可获取来自数据源上的某个属性的值，并将其推送到控件上的该属性。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行更新。 该对象也可以配置为将对控件值的更改推送回源属性。 作为数据绑定目标的属性必须是依赖属性。 有关详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
+              **{Binding}** 具有与本地值相同的依赖属性优先级，并且在命令性代码中设置一个本地值会消除在标记中设置的任何 **{Binding}** 的效果。
 
-            **{Binding}** 具有与本地值相同的依赖属性优先级，而在强制性代码中设置本地值将删除在标记中设置的任何 **{Binding}**。
-
-## XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 
 ``` syntax
@@ -43,18 +47,15 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 |------|-------------|
 | *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | *bindingProperties* | 
-            *propName*
-            =
-            *value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
+              *propName*=*value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 |
 | *value* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-binding)部分的属性。 |
 
-## 属性路径
+## <a name="property-path"></a>属性路径
 
 
-            [
-              **Path**
-            ](https://msdn.microsoft.com/library/windows/apps/br209830) 介绍要绑定到的属性（源属性）。 Path 是位置参数，这意味着可显式使用参数名称 (`{Binding Path=EmployeeID}`)，或者将其指定为第一个未命名的参数 (`{Binding EmployeeID}`)。
+              [
+              **路径**](https://msdn.microsoft.com/library/windows/apps/br209830)描述你要绑定到的属性（源属性）。 Path 是位置参数，这意味着可显式使用参数名称 (`{Binding Path=EmployeeID}`)，或者将其指定为第一个未命名的参数 (`{Binding EmployeeID}`)。
 
 
             [
@@ -65,17 +66,16 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如“Teams\[0\].Players”，其中文本“\[\]”中包含 “0”，用于指定集合中的第一个项目。
 
-当使用绑定到现有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 时，你可以使用附加属性作为属性路径的一部分。 若要消除附加属性的多义性，以使附加属性名称中的中间点不被视为属性路径中的一个步骤，可以将所有者限定的附加属性名称放在圆括号中；例如 `(AutomationProperties.Name)`。
+当使用绑定到现有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)的 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 时，你可以使用附加属性作为属性路径的一部分。 若要消除附加属性的多义性，以使附加属性名称中的中间点不被视为属性路径中的一个步骤，可以将所有者限定的附加属性名称放在圆括号中；例如 `(AutomationProperties.Name)`。
 
 属性路径中间对象作为 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 对象存储在运行时表示形式中，但大多数情况不需要与代码中的 **PropertyPath** 对象交互。 通常，可以使用 XAML 来指定所需的绑定信息。
 
 有关属性路径的字符串语法、动画功能区域中的属性路径和构造 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 对象的详细信息，请参阅 [Property-path 语法](property-path-syntax.md)。
 
-## 可使用 {Binding} 设置的 Binding 类的属性
+## <a name="properties-of-the-binding-class-that-can-be-set-with-binding"></a>可使用 {Binding} 设置的 Binding 类的属性
 
 
-
-            **{Binding}** 通过 *bindingProperties* 占位符语法来解释，因为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 中存在多个可在标记扩展中进行设置的读/写属性。 这些属性可按任何顺序设置，并带有以逗号分隔的 *propName*=*value* 对。 由于其中一些属性需要不具有类型转换的类型，因此它们需要一些自己嵌套在 **{Binding}** 内的标记扩展。
+              **{Binding}** 是使用 *bindingProperties* 占位符语法进行说明的，因为一个[**绑定**](https://msdn.microsoft.com/library/windows/apps/br209820)有多个可以在标记扩展中设置的读/写属性。 这些属性可按任何顺序设置，并带有以逗号分隔的 *propName*=*value* 对。 由于其中一些属性需要不具有类型转换的类型，因此它们需要一些自己嵌套在 **{Binding}** 内的标记扩展。
 
 | 属性 | 说明 |
 |----------|-------------|
@@ -92,26 +92,23 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定绑定源更新的定时。 如果没有指定，则默认值为 **Default**。 |
 
+              **注意**  如果你要将标记从 **{x:Bind}** 转换为 **{Binding}**，那么请注意**模式**属性的默认值中的差异。
 
-            **注意** 如果你要将标记从 **{x:Bind}** 转换为 **{Binding}**，请注意在 **Mode** 属性默认值方面的差异。
 
-
-            [
-              **Converter**
-            ](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
+              [
+              **Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 
 > [!NOTE]
-> 从 Windows10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 
-            [
-              **Source**
-            ](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 和 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可指定绑定源，因此它们相互排斥。
+              [
+              **Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 和 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 指定一个绑定源，因此它们是互斥的。
 
 
-            **提示** 如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在其前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
+            **提示**  如果你需要为某个值指定单个花括号（例如在 [**路径**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在其前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
-## 示例
+## <a name="examples"></a>示例
 
 ```XML
 <!-- binding a UI element to a view model -->    
@@ -138,19 +135,14 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 </Page>
 ```
 
-第二个示例设置了以下四个不同的 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 属性：[**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828)、[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830)、[**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) 和 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。 本例中显示的 **Path** 明确命名为 **Binding** 属性。 
+第二个示例设置了以下四个不同的 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 属性：[**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828)、[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830)、[**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) 和 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。               在此情形下，**Path** 会显式显示出来，被命名为一个 **Binding** 属性。 
             **Path** 的求值结果是一个数据绑定源，该绑定源是同一个运行时对象树中的另一个对象（即，名为 `sliderValueConverter` 的 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614)）。
 
 请注意 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) 属性值如何使用另一个标记扩展 [{StaticResource} 标记扩展](staticresource-markup-extension.md)，以便在这里有两个嵌套标记扩展用法。 内部嵌套先求值，以便在获取资源之后，有一个可以由绑定使用的实际 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)（一个由资源中的 `local:S2Formatter` 元素实例化的自定义类）。
 
-## 工具支持
+## <a name="tools-support"></a>工具支持
 
-当在 XAML 标记编辑器中创作 **{Binding}** 时，Microsoft Visual Studio 中的 Microsoft IntelliSense 将显示数据上下文的相关属性。 只要你键入“{Binding”，适合 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的数据上下文属性便会显示在下拉列表中。 IntelliSense 对 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他属性也能起到帮助作用。 为实现此操作，你必须在标记页中设置数据上下文或设计时数据上下文。 “转到定义”(F12) 也适用于 **{Binding}**。 或者，你也可以使用数据绑定对话框。
+当在 XAML 标记编辑器中创作 **{Binding}** 时，Microsoft Visual Studio 中的 Microsoft IntelliSense 将显示数据上下文的相关属性。 只要你键入“{Binding”，适合 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的数据上下文属性便会显示在下拉列表中。 IntelliSense 对 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他属性也能起到帮助作用。 为实现此操作，你必须在标记页中设置数据上下文或设计时数据上下文。               **Go To Definition** (F12) 也可以与 **{Binding}** 一起使用。 或者，你也可以使用数据绑定对话框。
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

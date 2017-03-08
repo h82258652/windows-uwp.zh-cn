@@ -2,9 +2,17 @@
 author: mcleanbyron
 Description: "了解如何注册 UWP 应用，以接收从 Windows 开发人员中心发送的推送通知。"
 title: "配置应用以接收开发人员中心推送通知"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Microsoft Store Services SDK, 定向推送通知, 开发人员中心"
+ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a7a4c9800d5053e4b20cea578ff03a970179c7bf
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -20,9 +28,9 @@ ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
 
 1. 如果先前尚未这样做，请在开发计算机上[安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了用于注册应用接收通知的 API 外，此 SDK 还提供了用于其他功能的 API，例如在应用中通过 A/B 测试运行实验和显示广告。
 2. 在 Visual Studio 中打开你的项目。
-3. 在“解决方案资源管理器”中，右键单击你的项目的“引用”节点，然后单击“添加引用”。
-4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
-5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
+3. 在“解决方案资源管理器”中，右键单击你的项目的**引用**节点，然后单击**添加引用**。
+4. 在**引用管理器**中，展开**通用 Windows** 并单击**扩展**。
+5. 在 SDK 列表中，单击 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 
 ## <a name="register-for-push-notifications"></a>注册推送通知
 
@@ -42,9 +50,9 @@ ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
 
     <span/>
-    >**重要信息**  如果应用还会调用 [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) 为 WNS 创建通知通道，请确保代码不会同时调用 [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) 和 [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 重载。 如果需要调用这两个方法，请确保按序调用它们，即等待一个方法返回，然后再调用另一个方法。
+    >**重要信息**&nbsp;&nbsp;如果应用还会调用 [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) 为 WNS 创建通知通道，请确保代码不会同时调用 [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) 和 [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 重载。 如果需要调用这两个方法，请确保按序调用它们，即等待一个方法返回，然后再调用另一个方法。
 
-  * 如果想要从开发人员中心指定用于定向推送通知的通道 URI，请调用 [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx) 重载。 例如，在应用已使用 Windows 推送通知服务 (WNS) 并且想要使用同一通道 URI 时，可能希望这样做。 必须先创建 [StoreServicesNotificationChannelParameters](https://msdns.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) 对象，并将 [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) 属性分配给你的通道 URI。
+  * 如果想要从开发人员中心指定用于定向推送通知的通道 URI，请调用 [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx) 重载。 例如，在应用已使用 Windows 推送通知服务 (WNS) 并且想要使用同一通道 URI 时，可能希望这样做。 必须先创建 [StoreServicesNotificationChannelParameters](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) 对象，并将 [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) 属性分配给你的通道 URI。
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
@@ -61,13 +69,13 @@ ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
 
 ## <a name="notify-dev-center-of-your-app-launch"></a>通知开发人员中心应用启动
 
-如果选择开发人员中心推送通知的“跟踪应用启动速率”选项，请从应用的相应入口点中调用 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，以通知开发人员中心，应用为响应推送通知已启动。
+如果选择开发人员中心推送通知的**跟踪应用启动速率**选项，请从应用的相应入口点中调用 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，以通知开发人员中心，应用为响应推送通知已启动。
 
 该方法还会返回应用的原始启动参数。 在选择跟踪开发人员中心推送通知的应用启动速率后，会将不透明跟踪 ID 添加到启动参数，以帮助在开发人员中心跟踪应用启动。 必须将应用的启动参数传递到 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，该方法将向开发人员中心发送跟踪 ID、从启动参数中删除跟踪 ID，然后将原始启动参数返回到你的代码。
 
 调用此方法的方式取决于定向推送通知的激活类型：
 
-* 如果推送通知中含有前台激活类型，请从应用的 [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) 方法重写中调用此方法，然后传递在向此方法传递的 [ToastNotificationActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.toastnotificationactivatedeventargs.aspx) 对象中可用的参数。 以下代码示例假设你的代码文件中已有 **Microsoft.Services.Store.Engagement** 和 **Windows.ApplicationModel.Activation** 命名空间的 **using** 语句。
+* 如果推送通知中含有前台激活类型，请从应用的 [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) 方法重写中调用此方法，然后传递在向此方法传递的 [ToastNotificationActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.toastnotificationactivatedeventargs.aspx) 对象中可用的参数。 以下代码示例假设你的代码文件中 **Microsoft.Services.Store.Engagement** 和 **Windows.ApplicationModel.Activation** 命名空间具有 **using** 语句。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/App.xaml.cs#OnActivated)]
@@ -90,11 +98,6 @@ ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
 
 * [向应用客户发送推送通知](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [如何请求、创建和保存通知通道](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868221)
+* [如何请求、创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

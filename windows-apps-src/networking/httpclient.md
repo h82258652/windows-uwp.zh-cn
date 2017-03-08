@@ -3,15 +3,22 @@ author: DelfCo
 description: "依据 HTTP 2.0 和 HTTP 1.1 协议，使用 HttpClient 和其余的 Windows.Web.Http 命名空间 API 发送和接收信息。"
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fad4c4c215c209971d2a76b4c1ac6f160f8ebced
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# HttpClient
+# <a name="httpclient"></a>HttpClient
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
 
 依据 HTTP 2.0 和 HTTP 1.1 协议，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和其余的 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间 API 发送和接收信息。
 
-## HttpClient 和 Windows.Web.Http 命名空间概述
+## <a name="overview-of-httpclient-and-the-windowswebhttp-namespace"></a>HttpClient 和 Windows.Web.Http 命名空间概述
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间及相关 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 和 [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) 命名空间中的类为充当 HTTP 客户端的通用 Windows 平台 (UWP) 应用提供了一个编程接口，以便于执行基本 GET 请求或实现下面列出的更高级的 HTTP 功能。
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
 
 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 命名空间支持创建 HTTP 标头和 Cookie，然后再将生成的 HTTP 标头和 Cookie 作为属性与 [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 和 [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 对象相关联。
 
-## 通过 HTTP 发送简单的 GET 请求
+## <a name="send-a-simple-get-request-over-http"></a>通过 HTTP 发送简单的 GET 请求
 
 正如本文前面提到的，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间允许 UWP 应用发送 GET 请求。 以下代码段演示了如何使用 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 类读取来自 GET 请求的响应，来将 GET 请求发送到 http://www.contoso.com。
 
@@ -97,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-## Windows.Web.Http 中的异常
+## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的异常
 
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 对象的构造函数时，将引发异常。
 
@@ -114,10 +121,5 @@ catch (Exception ex)
 在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来基于异常原因修改应用行为。
 
 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

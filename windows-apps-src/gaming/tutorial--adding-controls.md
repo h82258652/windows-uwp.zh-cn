@@ -3,25 +3,32 @@ author: mtoepke
 title: "添加控件"
 description: "现在，我们了解该游戏示例如何在 3D 游戏中实现移动观看控件，以及如何开发基本的触摸、鼠标和游戏控制器控件。"
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 控件, 输入"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d70e9ef8efffd2a78f6c49596e716770a9162b5c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 添加控件
+# <a name="add-controls"></a>添加控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 现在，我们了解该游戏示例如何在 3D 游戏中实现移动观看控件，以及如何开发基本的触摸、鼠标和游戏控制器控件。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   在使用 DirectX 的通用 Windows 平台 (UWP) 游戏中实现鼠标/键盘、触摸和 Xbox 控制器控件。
 
-## UWP 游戏应用和控件
+## <a name="uwp-game-apps-and-controls"></a>UWP 游戏应用和控件
 
 
 优秀的 UWP 游戏支持多种界面。 潜在玩家可能将 Windows 10 安装在没有物理按钮的平板电脑、 连接了 Xbox 控制器的媒体电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏设备上。 如果游戏设计允许，你的游戏应支持所有这些设备。
@@ -30,7 +37,7 @@ ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
 
 有关控件 （尤其是移动观看控件）的详细信息， 请参阅[适用于游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md) 和[适用于游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)。
 
-## 常用控件行为
+## <a name="common-control-behaviors"></a>常用控件行为
 
 
 触摸控件和鼠标/键盘控件具有非常类似的核心实现。 在 UWP 应用中，指针只是屏幕上的点。 你可以滑动鼠标或在触摸屏上滑动手指来移动指针。 因此，你可以注册单个事件集，而不用担心玩家使用鼠标或触摸屏移动或点按指针。
@@ -197,11 +204,11 @@ bool MoveLookController::IsFiring()
 
 如果玩家将指针移出游戏主窗口或者按下暂停按钮（P 键或 Xbox 控制器开始按钮），则游戏必须暂停。 **MoveLookController** 已注册点按操作，并在它调用 **IsPauseRequested** 方法时通知游戏循环。 此时，如果 **IsPauseRequested** 返回 **true**，游戏循环将对 **MoveLookController** 调用 **WaitForPress** 以将控制器转入 **WaitForInput** 状态。 然后，**MoveLookController** 等待玩家选择菜单项之一来加载、继续或退出游戏，并停止处理游戏播放输入事件，直到它返回 **Active** 状态。
 
-请参阅[本部分的完整代码示例](#code_sample)。
+请参阅[本部分的完整代码示例](#complete-sample-code-for-this-section)。
 
 现在，我们将较为详细地讨论这三种控件类型中每个类型的实现。
 
-## 实现相对鼠标控件
+## <a name="implementing-relative-mouse-controls"></a>实现相对鼠标控件
 
 
 如果检测到鼠标移动，我们希望利用该移动确定相机的新的俯仰和偏航。 我们通过实现相对鼠标控件实现此目的，在该控件中我们处理鼠标所移动的相对距离（移动开始到停止之间的增量），与记录运动的绝对 x-y 像素坐标相反。
@@ -250,7 +257,7 @@ void MoveLookController::OnMouseMoved(
 }
 ```
 
-## 实现触摸控件
+## <a name="implementing-touch-controls"></a>实现触摸控件
 
 
 触摸控件的开发最需要技巧，因为它们最复杂，需要最精细的调整才能奏效。 在该游戏示例中，屏幕左下区的矩形用作方向板，在此空间左右滑动拇指可左右移动相机，上下滑动拇指可前后移动相机。 按屏幕右下区的矩形可以对视区射击。 瞄准（俯仰和偏航）通过在屏幕区域（为移动和射击保留的屏幕区域除外）上滑动手指控制；在移动手指时，相机（具有固定的十字准线）将执行类似的移动。
@@ -471,7 +478,7 @@ void MoveLookController::OnPointerReleased(
 
 这便是如何在游戏示例中实现触摸屏控件的基础知识。 现在我们继续了解鼠标和键盘控件。
 
-## 实现鼠标和键盘控件
+## <a name="implementing-mouse-and-keyboard-controls"></a>实现鼠标和键盘控件
 
 
 游戏示例实现如下鼠标和键盘控件：
@@ -664,7 +671,7 @@ void MoveLookController::OnPointerReleased(
 
 现在，我们讨论最后一个控制类型：Xbox 控制器。 它独立于触摸控件和鼠标控件进行处理，因为它不使用指针对象。
 
-## 实现 Xbox 控制器控件
+## <a name="implementing-xbox-controller-controls"></a>实现 Xbox 控制器控件
 
 
 在游戏示例中，Xbox 控制器支持是通过调用 [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) API 添加的， 这是一组旨在简化游戏控制器编程工作的 API。 在游戏示例中，我们将 Xbox 控制器的左摇杆用于玩家移动， 将右摇杆用于观看控件，将右触发器用于射击。 我们使用开始按钮暂停和恢复游戏。
@@ -805,12 +812,12 @@ void MoveLookController::UpdateGameController()
 
 这就是此示例实现一组完整的控制选项的方式。 此外，请记住，一个优秀的 UWP 应用将支持各种控制选项， 以便使用不同外观设置和设备的玩家都能够用他们喜欢的方式来玩！
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 我们已查看了 UWP DirectX 游戏的每个主要组件，但音频除外！ 对于任何游戏而言，音乐和声音效果都非常重要， 下面我们讨论[添加声音](tutorial--adding-sound.md)！
 
-## 这部分的完整示例代码
+## <a name="complete-sample-code-for-this-section"></a>这部分的完整示例代码
 
 
 MoveLookController.h
@@ -1905,7 +1912,7 @@ void MoveLookController::UpdateGameController()
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 [使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1916,10 +1923,5 @@ void MoveLookController::UpdateGameController()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

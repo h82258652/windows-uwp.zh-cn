@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: "Epson ESC/POS（可进行格式设置）"
 description: "了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: b645e41d7456f1dff664e3f61721a3564d554202
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70b737625f5301d3147f4570b4e6f7216c2212c7
+ms.lasthandoff: 02/07/2017
 
 ---
-# Epson ESC/POS（可进行格式设置）
+# <a name="epson-escpos-with-formatting"></a>Epson ESC/POS（可进行格式设置）
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
--   [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [**PointofService 打印机**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
 了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。
 
-## ESC/POS 用法
+## <a name="escpos-usage"></a>ESC/POS 用法
 
 Windows 服务点提供使用各种打印机，包括多个 Epson TM 系列打印机（有关受支持打印机的完整列表，请参阅 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)页面）。 Windows 支持使用 ESC/POS 打印机控制语言的打印，该语言为与你的打印机通信提供高效且功能丰富的命令。
 
@@ -29,14 +36,14 @@ ESC/POS 是由 Epson 创建的命令系统，适用于各种 POS 打印机系统
 
 [**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 通过 **Print()** 或 **PrintLine()** 方法为你提供大部分功能。 但是，若要获取特定格式或发送特定命令，则必须使用 ESC/POS 命令、生成为字符串并发送到打印机。
 
-## 使用粗体和双倍大小字符的示例
+## <a name="example-using-bold-and-double-size-characters"></a>使用粗体和双倍大小字符的示例
 
 以下示例介绍如何使用 ESC/POS 命令以粗体和双倍大小字符进行打印。 请注意，每个命令都会生成为字符串，然后插入到 printJob 调用中。
 
 ```csharp
 // … prior plumbing code removed for brevity
 // this code assumed you've already created a receipt print job (printJob)
-// and also that you've already checked the PosPrinter Capabilities to 
+// and also that you've already checked the PosPrinter Capabilities to
 // verify that the printer supports Bold and DoubleHighDoubleWide print modes
 
 const string ESC = "\u001B";
@@ -56,11 +63,4 @@ printJob.ExecuteAsync();
 ```
 
 有关 ESC/POS（包括可用命令）的详细信息，请查看 [Epson ESC/POS 常见问题](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 有关 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 和所有可用功能的详细信息，请参阅 MSDN 上的 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)。
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

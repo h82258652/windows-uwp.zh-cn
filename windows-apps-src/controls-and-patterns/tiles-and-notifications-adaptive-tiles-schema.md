@@ -5,9 +5,16 @@ title: "自适应磁贴架构和模板"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 70c06949ee9ac8f9a3f914fc4e020de0460124fa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 47f40261b3829400c06c4ff071404e5d06cdbf7d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>自适应磁贴模板：架构和指南
@@ -143,10 +150,5 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

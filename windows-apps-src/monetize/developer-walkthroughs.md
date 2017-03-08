@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: "使用本部分中的演练了解如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。"
 title: "Microsoft Advertising 库的开发人员演练"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 广告, 演练"
 translationtype: Human Translation
-ms.sourcegitcommit: 20baef9a06b6cdb4ca4f48f71a8e9e2a34192b0f
-ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1d2e8ea3a5747523f77106b98d033b70df5a95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising 库的开发人员演练
+# <a name="developer-walkthroughs-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising 库的开发人员演练
 
 
 
@@ -18,7 +25,7 @@ ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和视频间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
-## 本部分内容
+## <a name="in-this-section"></a>本部分内容
 
 |  主题    | 描述 |               
 |----------|-------|
@@ -33,9 +40,4 @@ ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,14 +1,21 @@
 ---
 author: Jwmsft
-Description: "带有内容区域和命令区域的单视图应用或模式体验模式，例如照片查看器/编辑器、文档查看器、地图、绘画或使用自由滚动视图的其他应用。"
+Description: "带有内容区域和命令区域的单视图应用或模式体验，例如照片查看器/编辑器、文档查看器、地图、绘画或使用自由滚动视图的其他应用。"
 title: "活动画布布局模式"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: b38d7664a8a874743c5307e44e81104ce512454e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 56b2a2c5a00ee81da296e724ed883e974f5796c1
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="active-canvas-layout-pattern"></a>活动画布布局模式
@@ -39,9 +46,4 @@ ms.openlocfilehash: b38d7664a8a874743c5307e44e81104ce512454e
 ## <a name="related-articles"></a>相关文章
 
 -   [**应用栏和命令栏**](../controls-and-patterns/app-bars.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -1,32 +1,39 @@
 ---
 author: mtoepke
 title: "设置游戏项目"
-description: "装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。"
+description: "装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便将基础架构正常工作所需的代码量减至最小。"
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 设置, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fd8e676e66c1df530aca41e05f2ea68d96d01a32
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3bf9e6f70f71dc0b70a2f8af148c44acc1a329fb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 设置游戏项目
+# <a name="set-up-the-game-project"></a>设置游戏项目
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。 通过使用正确的模板和专门为游戏开发配置项目，可以节省大量的时间和减少不必要的麻烦。 我们将指导你完成设置和配置简单游戏项目的步骤。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   了解如何在 Visual Studio 中设置 Direct3D 游戏项目。
 
-## 设置游戏项目
+## <a name="setting-up-the-game-project"></a>设置游戏项目
 
 
 你可以仅使用一个方便的文本编辑器、几个示例和一些原始创意，从头编写一款游戏。 但这可能不是最高效地使用时间的方法。 如果你不熟悉通用 Windows 平台 (UWP) 开发，那么何不让 Visual Studio 帮你完成一些任务？ 下面是让你的项目隆重快速开始所需的操作。
 
-## 1. 选取正确的模板
+## <a name="1-pick-the-right-template"></a>1. 选取正确的模板
 
 
 Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio 2015 中，你可以找到许多模板，这可以大大简化游戏和图形应用的开发。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
@@ -120,7 +127,7 @@ void App::Run()
 
 如果游戏窗口没有关闭，则发送所有事件，更新计时器，并呈现和提供图形管道的结果。 我们将在[定义游戏的 UWP 框架](tutorial--building-the-games-metro-style-app-framework.md)和[装配呈现管道](tutorial--assembling-the-rendering-pipeline.md)中详细讨论此内容。 现在，你应了解 UWP DirectX 游戏的基本代码结构。
 
-## 2. 检查和更新 package.appxmanifest 文件
+## <a name="2-review-and-update-the-packageappxmanifest-file"></a>2. 检查和更新 package.appxmanifest 文件
 
 
 代码文件并不是模板的全部内容。 **package.appxmanifest** 文件包含有关项目的元数据，这些元数据用于打包和启动游戏以及提交到 Windows 应用商店。 它还包含玩家系统用于提供对运行游戏所需的系统资源的访问权限的重要信息。
@@ -137,7 +144,7 @@ void App::Run()
 
 现在，我们看一下 **DirectX 11 应用（通用 Windows）**模板附带的其他文件。
 
-## 3. 查看包括的库和头文件
+## <a name="3-review-the-included-libraries-and-headers"></a>3. 查看包括的库和头文件
 
 
 有一些文件我们还没有碰到过。 这些文件提供 Direct3D 游戏开发场景通用的附加工具和支持。
@@ -153,7 +160,7 @@ void App::Run()
 
  
 
-### 后续步骤
+### <a name="next-steps"></a>后续步骤
 
 到目前为止，你可以创建使用 DirectX 的 UWP 游戏项目，并确定 DirectX 11 应用（通用 Windows）提供的组件和文件。
 
@@ -165,10 +172,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

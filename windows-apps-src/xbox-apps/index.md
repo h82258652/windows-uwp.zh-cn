@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "Xbox One 上的 UWP"
 description: "如何在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 translationtype: Human Translation
-ms.sourcegitcommit: 7a53a7a9e786ebe04963a827bdfbc5beb69819eb
-ms.openlocfilehash: d46add99bccd41b4d278e58f79b356714fa4a038
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 36d19f660bc3c03377f864b1d659a19396917130
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox One 上的 UWP
+# <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
 在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用入门。
 
@@ -34,14 +42,9 @@ Xbox One 上的 UWP 支持开发应用和游戏。 你无需是 [ID@Xbox](http:/
 |[在 Xbox One 上禁用开发人员模式](devkit-deactivation.md)| 解释如何在 Xbox One 上禁用开发人员模式。 |
 |[Xbox One 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  介绍了在 Xbox One 上尚不能正常运行的 UWP 功能区域。|  
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP 应用概述](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
 - [自动启动 Windows 10 UWP 应用](automate-launching-uwp-apps.md)
 - [适用于游戏开发的 CPUSets](cpusets-games.md)
   
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

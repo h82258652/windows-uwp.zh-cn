@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f64a2bf36786e1f7bb38755e1a6b8bbaa22862a7
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -78,7 +80,7 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 
 ## <a name="user-customization"></a>用户自定义
 
-用户可以通过“Windows 设置”&gt;”设备”&gt;“Wheel”自定义其 Dial 体验的某些方面，其中包括默认工具、振动（或触觉反馈）和书写（或惯用）手。 
+用户可以通过 **Windows 设置 &gt; 设备 &gt; Wheel** 自定义其 Dial 体验的某些方面，其中包括默认工具、振动（或触觉反馈）和书写（或惯用）手。 
 
 自定义 Surface Dial 用户体验时，应始终确保特定功能或行为可用，并且受用户支持。
 
@@ -297,7 +299,7 @@ Surface Dial 主要设计用于对涉及模拟值或控制的平滑、增量调�
 该设备可以顺时针和逆时针旋转，还可以提供触觉反馈以指示离散距离。
 
 > [!NOTE]
-> 用户可以在“Windows 设置”&gt;“设备”&gt;“Wheel”页中禁用触觉反馈。
+> 用户可以在 **Windows 设置 &gt; 设备 &gt; Wheel** 页中禁用触觉反馈。
 
 #### <a name="ux-guidance"></a>UX 指南
 
@@ -307,7 +309,7 @@ Surface Dial 主要设计用于对涉及模拟值或控制的平滑、增量调�
 
 **惯用手不应该影响基于旋转的交互**
 
-Surface Dial 无法检测到正在使用哪只手，但用户可以在“Windows 设置”&gt;“设备”&gt;“笔和 Windows Ink”中设置书写（或惯用手）。
+Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows 设置 &gt; 设备 &gt; 笔和 Windows Ink** 中设置书写（或惯用手）。
 
 **应该为所有旋转交互考虑区域设置。**
 
@@ -411,7 +413,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 除了硬件阻挡，用户的手和臂在用户使用设备时可能会阻挡部分屏幕。 
 
-已阻挡区域取决于正在使用设备的手。 由于设备设计为主要与非惯用手配合使用，因此与 Surface Dial 有关的 UI 应针对用户指定（“Windows 设置”&gt;“设备”&gt;“笔和 Windows Ink”&gt;“选择书写时使用哪只手”设置）的另一只手进行调整。
+已阻挡区域取决于正在使用设备的手。 由于设备设计为主要与非惯用手配合使用，因此与 Surface Dial 有关的 UI 应针对用户指定（**Windows 设置 &gt; 设备 &gt; 笔和 Windows Ink &gt; 选择书写时使用哪只手**设置）的另一只手进行调整。
 
 **交互应响应 Surface Dial 的位置，而不是移动。**
 
@@ -666,8 +668,3 @@ private void ActivateGridAtLocation(Point Location)
 [通用 Windows 平台示例（C# 和 C++）](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)
-
-
-<!--HONumber=Dec16_HO3-->
-
-

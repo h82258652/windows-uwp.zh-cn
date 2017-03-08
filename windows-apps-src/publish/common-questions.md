@@ -1,11 +1,18 @@
 ---
-author: jnHs
+author: shawjohn
 Description: "有关广告市场活动的常见问题"
 title: "有关广告市场活动的常见问题"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
-ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -33,11 +40,11 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 ## <a name="where-will-my-ad-appear"></a>我的广告将出现在哪个位置？
 
-您的广告将出现在共享您的应用年龄分级和操作系统版本的应用中。 当您在 Windows 应用商店中发布应用时，可以设置这些属性。
+你的广告将出现在共享你的应用年龄分级和操作系统版本的应用中。 当你在 Windows 应用商店中发布应用时，可以设置这些属性。 对于“通用”市场活动，你的广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。
 
 广告市场活动当前在以下国家和地区中受支持：
 
-阿尔及利亚、阿根廷、澳大利亚、奥地利、巴哈马、巴林、巴巴多斯、比利时、伯利兹、玻利维亚、巴西、加拿大、智利、中国、哥伦比亚、丹麦、多米尼加共和国、厄瓜多尔、埃及、萨尔瓦多、芬兰、法国、德国、危地马拉、海地、洪都拉斯、香港特別行政区、印度、印度尼西亚、伊拉克、爱尔兰、意大利、牙买加、约旦、科威特、黎巴嫩、马来西亚、墨西哥、摩洛哥、新西兰、荷兰、尼加拉瓜、挪威、阿曼、巴拿马、巴拉圭、秘鲁、菲律宾、波多黎各、卡塔尔、沙特阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台湾、泰国、特立尼达和多巴哥、突尼斯、阿拉伯联合酋长国、英国、美国、乌拉圭、委内瑞拉、越南。
+阿尔及利亚、阿根廷、澳大利亚、奥地利、巴哈马、巴林、巴巴多斯、比利时、伯利兹、玻利维亚、巴西、加拿大、智利、中国、哥伦比亚、丹麦、多米尼加共和国、厄瓜多尔、埃及、萨尔瓦多、芬兰、法国、德国、危地马拉、海地、洪都拉斯、香港特別行政区、印度、印度尼西亚、伊拉克、爱尔兰、意大利、牙买加、约旦、科威特、黎巴嫩、马来西亚、墨西哥、摩洛哥、新西兰、荷兰、尼加拉瓜、挪威、阿曼、巴拿马、巴拉圭、秘鲁、菲律宾、波多黎各、卡塔尔、沙特阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台湾地区、泰国、特立尼达和多巴哥、突尼斯、阿拉伯联合酋长国、英国、美国、乌拉圭、委内瑞拉、越南。
 
 ## <a name="what-languages-are-supported-for-ad-campaigns"></a>广告市场活动支持哪些语言？
 
@@ -51,7 +58,7 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 如果你的帐户在你的最后计费日期之后的 30 天时间内获得小于 50 美元的费用，将在下个月月初针对这些费用对你计费。 这有助于确保你的帐户不会维持广告市场活动费用的收支状态超过一个月。
 
-如果不想等待帐单，可以通过选择“帐单摘要”页面（“促销” > “帐单历史记录”）上的“立即支付帐单”来支付帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
+如果不想等待帐单，可以通过选择**帐单摘要**页面（**促销** > **帐单历史记录**）上的**立即支付帐单**来支付帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
 
 ## <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>如何删除信用卡或编辑信用卡详细信息？
 
@@ -64,9 +71,4 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 * [关于自家广告](about-house-ads.md)
 * [关于社区广告](about-community-ads.md)
 * [应用安装广告报告](app-install-ads-reports.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

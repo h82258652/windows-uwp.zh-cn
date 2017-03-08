@@ -3,23 +3,30 @@ author: mcleblanc
 description: "在开发跨平台应用时，应该作何选择？"
 title: "选择一种方法进行 iOS 和 UWP 应用开发"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 选择一种方法进行 iOS 和 UWP 应用开发
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在开发跨平台应用时，应该作何选择？
 
-## 同时支持 iOS 和 Windows 的最佳方式是什么？
+## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>同时支持 iOS 和 Windows 的最佳方式是什么？
 
 Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这两个平台（Android 亦然）的应用，越来越多的工具和技术都可以为你提供很大帮助。 最佳的解决方案取决于你所编写的应用类型以及你是从零开始编写还是移植现有项目。
 
-## 编写新应用
+## <a name="writing-a-new-app"></a>编写新应用
 
 若从零开始，有许多选项可供你随意使用，其中包括：
 
@@ -39,7 +46,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     XNA 的精神继任者。 现在它是开源跨平台框架，这意味着你可以采用 C# 面向各种支持物理引擎以及 2D 与 3D 图形的平台编写应用。
 
-## 适应现有应用
+## <a name="adapting-an-existing-app"></a>适应现有应用
 
 使用现有的 iOS 应用，你的选项将受到稍多限制。 但是，一切都肯定不会丢失。
 
@@ -55,7 +62,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用平移到 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
 
-## 其他跨平台创作工具
+## <a name="other-cross-platform-authoring-tools"></a>其他跨平台创作工具
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
@@ -92,10 +99,5 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     一个基于 HTML 的游戏开发工具。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

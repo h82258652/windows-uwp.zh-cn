@@ -3,9 +3,16 @@ author: mcleblanc
 description: "与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。"
 title: "针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: c3fb6a76800198c15ef05da9ba198ac5e73b35a8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 69fdeed812eb6add3eeacb0e776e7477e061979f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -38,7 +45,7 @@ ms.openlocfilehash: c3fb6a76800198c15ef05da9ba198ac5e73b35a8
 
 如果你在通用 8.1 应用中具有代码（可检测到运行它的操作系统），你可能需要做一些更改，具体取决于理性逻辑。 如果应用正在通过操作系统传递值，但没有在该系统上执行任何操作，你可能需要继续收集该操作系统的相关信息。
 
-**注意** 我们不建议你使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](w8x-to-uwp-porting-to-a-uwp-project.md)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
+**注意**   我们不建议你使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](w8x-to-uwp-porting-to-a-uwp-project.md)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
 
  
 
@@ -74,10 +81,5 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

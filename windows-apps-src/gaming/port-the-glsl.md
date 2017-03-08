@@ -3,16 +3,23 @@ author: mtoepke
 title: "移植 GLSL"
 description: "转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。"
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, glsl, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植 GLSL
+# <a name="port-the-glsl"></a>移植 GLSL
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -53,10 +60,10 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 在此处，常量缓冲区使用寄存器 b0 来包含打包的缓冲区。 所有寄存器都采用 b\# 格式。 有关常量缓冲区、寄存器以及数据打包的 HLSL 实现的详细信息，请阅读[着色器常量 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
 
-说明
+<a name="instructions"></a>说明
 ------------
 
-### 步骤 1：移植顶点着色器
+### <a name="step-1-port-the-vertex-shader"></a>步骤 1：移植顶点着色器
 
 在我们的简单 OpenGL ES 2.0 示例中，顶点着色器具有三个输入：一个常量模型视图投影 4x4 矩阵和两个 4 坐标矢量。 这两个矢量包含顶点位置及其颜色。 着色器将位置矢量转换为透视坐标，并将其分配给 gl\_Position 内部函数以进行光栅化。 还需要将顶点颜色复制到 varying 变量以在光栅化期间进行内插。
 
@@ -115,7 +122,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 在光栅化期间填充输出数据类型 PixelShaderInput 并将其提供给片段（像素）着色器。
 
-### 步骤 2：移植片段着色器
+### <a name="step-2-port-the-fragment-shader"></a>步骤 2：移植片段着色器
 
 GLSL 中的示例片段着色器极其简单：提供具有内插颜色值的 gl\_FragColor 内部函数。 OpenGL ES 2.0 会将其写入到默认的呈现目标。
 
@@ -150,7 +157,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 像素在位置处的颜色将写入到呈现目标。 现在，让我们在[绘制到屏幕](draw-to-the-screen.md)中看一看如何显示该呈现目标的内容！
 
-## 上一步
+## <a name="previous-step"></a>上一步
 
 
 [移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md) 下一步
@@ -168,7 +175,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 -   确保你了解每个着色器的目标 Direct3D 功能级别。 功能级别 9\_\* 的语义与 11\_1 的语义有所不同。
 -   SV\_POSITION 语义将关联的内插后位置数据解析为坐标值，其中 x 介于 0 和呈现目标宽度之间，y 介于 0 和呈现目标高度之间，z 为除以原始齐次坐标 w 值 (z/w)，w 为 1 除以原始 w 值 (1/w)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -185,10 +192,5 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

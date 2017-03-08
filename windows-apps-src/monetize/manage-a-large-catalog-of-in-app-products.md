@@ -1,20 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
-description: "如果你的应用提供较大的应用内产品目录，你可以选择按照本主题中描述的过程来帮助管理你的目录。"
+description: "如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。"
 title: "管理应用内产品的大目录"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用内购买, IAP, 加载项, 目录, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e8e4e55ab08900457e4f847ccea705838169c39c
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理应用内产品的大目录
 
 
->**注意**  本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理附加内容（也称为应用内产品或 IAP），而非使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+>**注意**&nbsp;&nbsp;本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理附加内容（也称为应用内产品或 IAP），而非使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 
-如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。 在 Windows 10 之前的版本中，应用商店限制每个开发者帐户可以列出 200 个产品，并且本主题中所述的过程可以用于解决此限制。 从 Windows 10 开始，应用商店将不会限制每个开发者帐户所列出的产品数量，在本文中描述的流程也不再必需。 
+如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。 在 Windows 10 之前的版本中，应用商店限制每个开发者帐户可以列出 200 个产品，并且本主题中所述的过程可以用于解决此限制。 从 Windows 10 开始，应用商店将不会限制每个开发者帐户所列出的产品数量，在本文中描述的流程也不再必需。
 
 若要启用此功能，你将创建少量特定价格段的产品条目，每个条目都能表示目录中数以百计的产品。 使用 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382) 方法重载，它指定了与应用商店中列出的应用内产品相关联的应用定义的产品/服务。 除了在调用期间指定付费内容和产品关联之外，你的应用还应当传递包含大目录付费内容详细信息的 [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384) 对象。 如果未提供上述详细信息，则将改用已列出产品的详细信息。
 
@@ -51,9 +58,4 @@ ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
 * [应用商店示例（演示试用版和应用内购买）](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -6,9 +6,16 @@ title: "全球化和本地化"
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 3149eb8275cc74c61ff0e35963f3fd1dbdc4e833
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fa7757a8657abfc84ee905cb05b0b3addc59f64e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -93,10 +100,5 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

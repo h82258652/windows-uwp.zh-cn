@@ -3,23 +3,30 @@ author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: "蓝牙 RFCOMM"
 description: "本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 97b5128f8543ea8eab24be5aa8c6a71811e97896
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8342d53c5d53e06f6793ce1d125c26f0e3880c07
+ms.lasthandoff: 02/07/2017
 
 ---
-# 蓝牙 RFCOMM
+# <a name="bluetooth-rfcomm"></a>蓝牙 RFCOMM
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
 
 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
 
-## 概述
+## <a name="overview"></a>概述
 
 [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空间中的 API 基于面向 Windows.Devices 的现有模式生成，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 数据读取和编写旨在充分利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的对象。 服务发现协议 (SDP) 属性有一个值和一个预期类型。 但是，一些常用的设备具有错误的 SDP 属性实现，其中的值不属于预期类型。 此外，RFCOMM 的许多用法完全不需要其他 SDP 属性。 因此，此 API 提供对未解析 SDP 数据的访问权限，开发人员可从这里获取所需的信息。
 
@@ -28,7 +35,7 @@ RFCOMM API 使用服务标识符的概念。 尽管服务标识符只是一个 1
 应用可在后台任务中执行多步设备操作，即使系统将应用移到后台并暂停，操作也能继续运行至完成。 这可实现可靠的设备服务（例如对永久性设置或固件的更改）和内容同步，并且无需用户坐在旁边盯着进度栏。 将 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) 用于设备服务，将 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) 用于内容同步。 请注意，这些后台任务对应用可在后台运行的时间长度有所限制，并不允许无限期操作或无限同步。
 
 有关详细介绍 RFCOMM 操作的完整代码示例，请参阅 Github 上的[**蓝牙 Rfcomm 聊天示例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat)。  
-## 作为客户端发送文件
+## <a name="send-a-file-as-a-client"></a>作为客户端发送文件
 
 发送文件时，最基本的方案是基于所需服务连接到配对设备。 这包括以下步骤：
 
@@ -49,7 +56,7 @@ async void Initialize()
             RfcommDeviceService.GetDeviceSelector(
                 RfcommServiceId.ObexObjectPush));
 
-    if (services.Count > 0) 
+    if (services.Count > 0)
     {
         // Initialize the target Bluetooth BR device
         auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
@@ -143,7 +150,7 @@ void Initialize()
                 RfcommServiceId::ObexObjectPush)))
     .then([](DeviceInformationCollection^ services)
     {
-        if (services->Size > 0) 
+        if (services->Size > 0)
         {
             // Initialize the target Bluetooth BR device
             create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
@@ -232,7 +239,7 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 }
 ```
 
-## 作为服务器接收文件
+## <a name="receive-file-as-a-server"></a>作为服务器接收文件
 
 另一个常用的 RFCOMM 应用方案是，在电脑上托管服务并将其公开以用于其他设备。
 
@@ -277,7 +284,7 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider provider)
     writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
     // Then write the data
     writer.WriteUint32(SERVICE_VERSION);
-    
+
     auto data = writer.DetachBuffer();
     provider.SdpRawAttributes.Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
@@ -340,7 +347,7 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider^ provider)
     writer->WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
     // Then write the data
     writer->WriteUint32(SERVICE_VERSION);
-    
+
     auto data = writer->DetachBuffer();
     provider->SdpRawAttributes->Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
@@ -364,10 +371,4 @@ void OnConnectionReceived(
     });
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

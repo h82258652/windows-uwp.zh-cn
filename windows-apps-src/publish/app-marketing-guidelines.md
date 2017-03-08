@@ -3,35 +3,42 @@ author: jnHs
 Description: "了解如何推广你的应用和 Windows 应用商店中的内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。"
 title: "Windows 应用商店应用营销指南"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b6662344996a83c3f1460af8b7387bf7cfd4b087
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows 应用商店应用营销指南
+# <a name="windows-store-app-marketing-guidelines"></a>Windows 应用商店应用营销指南
 
 了解如何推广你的应用和 Windows 应用商店中的内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。
 
-## 应用商店锁屏提醒
+## <a name="store-badges"></a>应用商店锁屏提醒
 
 我们创建了特殊的促销锁屏提醒，帮助你带动更多客户查看 Windows 应用商店中的应用一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
 [![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows 应用商店营销指南（英语版本的 PDF 文件）
 
-## 锁屏提醒生成器和图像
+## <a name="badge-generator-and-images"></a>锁屏提醒生成器和图像
 
 你可以使用[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)生成显示（使用所选语言）应用商店锁屏提醒的 HTML 和直接指向应用的应用商店列表的链接。 你也可以从以下链接中下载完整的锁屏提醒图像集（格式为 PNG 和 PDF）。
 
 [![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) 所有锁屏提醒图像
 
-## 设备图像
+## <a name="device-images"></a>设备图像
 
 若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 可在 [Windows 应用商店营销指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中查找有关如何使用这些图像的最佳实践和技术规范。
 
 [![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows 设备插图
 
-## Microsoft 商标授权
+## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 
 *Microsoft 商标*表示[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页上所述的 *Microsoft 锁屏提醒*和 *Windows 应用商店磁贴*。 若要使用这些锁屏提醒，必须满足以下条件：
 
@@ -51,10 +58,5 @@ Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 M
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

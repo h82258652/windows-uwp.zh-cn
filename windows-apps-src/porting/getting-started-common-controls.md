@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: "常见控件入门"
 title: "常见控件入门"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2cd4b7344074c795f14a56cddbe7807c9ffefafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 入门：常见控件
+# <a name="getting-started-common-controls"></a>入门：常见控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 常见控件列表
+## <a name="common-controls-list"></a>常见控件列表
 
 在前面的部分中，你仅使用了两个控件：按钮和文本块。 当然，还有许多控件可供你使用。 下面是一些可在你的应用和与其等效的 iOS 中使用的常用控件。 iOS 控件按字母顺序列出，后跟最为相似的通用 Windows 平台 (UWP) 控件。
 
@@ -22,7 +29,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | iOS 控件（类/协议） | 等效的 Windows 应用商店应用控件 |
 |------------------------------|--------------------------------------|
 | 活动指示器 (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 另请参阅[快速入门：添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| 广告横幅视图 (**ADBannerView**) 和广告横幅视图委托 (**ADBannerViewDelegate**) | 请参阅 [Microsoft Advertising SDK](http://go.microsoft.com/fwlink/p/?LinkId=263494) |
+| 广告横幅视图 (**ADBannerView**) 和广告横幅视图委托 (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 另请参阅[在应用中显示广告](../monetize/display-ads-in-your-app.md) |
 | 按钮 (UIButton) | [按钮](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另请参阅[快速入门：添加按钮控件](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | 日期选取器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 图像视图 (UIDatePicker) | [图像](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
@@ -48,20 +55,15 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 
 有关其他更多控件，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-**注意** 有关使用 JavaScript 和 HTML 的 Windows 应用商店应用的控件列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
+**注意**  有关使用 JavaScript 和 HTML 的 Windows 应用商店应用的控件列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
 
-### 下一步
+### <a name="next-step"></a>下一步
 
 [入门：导航](getting-started-navigation.md)
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [版本 2014：XAML UI 和控件如何？](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [版本 2014：使用常见 XAML UI 框架开发应用](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [版本 2014：使用 Visual Studio 构建 XAML 融合应用](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

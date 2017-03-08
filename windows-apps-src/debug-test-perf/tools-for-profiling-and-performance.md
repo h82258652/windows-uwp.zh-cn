@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: "用于分析和性能的工具"
 description: "Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的工具。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
+ms.lasthandoff: 02/07/2017
 
 ---
-# 用于分析和性能的工具
+# <a name="tools-for-profiling-and-performance"></a>用于分析和性能的工具
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -26,10 +33,5 @@ Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows 评估和部署工具包 (Windows ADK) 中随附的 Windows Performance Analyzer (WPA) 工具可以创建由 Windows Performance Recorder (WPR)、Xperf 或运行在评估平台中的评估记录的 Windows 事件跟踪 (ETW) 事件的图形和数据表格。 WPA 可以打开任何事件跟踪日志 (ETL) 文件进行分析。 |
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

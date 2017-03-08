@@ -3,22 +3,29 @@ author: mtoepke
 title: "向基元应用纹理"
 description: "下面，我们将使用之前在“对基元使用深度和效果”中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。"
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, 纹理, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 向基元应用纹理
+# <a name="apply-textures-to-primitives"></a>向基元应用纹理
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 下面，我们将使用之前在[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。 我们还将介绍一个简单的点乘积照明模型，其中，立方体的图面将基于其相对于照明源的距离和角度而变浅或变深。
 
 **目标：**向基元应用纹理。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
@@ -27,10 +34,10 @@ ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
 
 **完成所需时间：**20 分钟。
 
-说明
+<a name="instructions"></a>说明
 ------------
 
-### 1. 为纹理化的立方体定义变量
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. 为纹理化的立方体定义变量
 
 首先，我们需要为纹理化的立方体定义 **BasicVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置、方向和纹理以及查看立方体的方式。 或者，按照上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)的类似方法来声明变量。
 
@@ -63,7 +70,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. 使用图面和纹理元素创建顶点着色器和像素着色器
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. 使用图面和纹理元素创建顶点着色器和像素着色器
 
 下面，我们将创建比上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中介绍的更为复杂的顶点着色器和像素着色器。 此应用的顶点着色器会将每个顶点位置转换为投影空间，并将顶点纹理坐标传递到像素着色器中。
 
@@ -267,7 +274,7 @@ private:
        });
 ```
 
-### 3. 创建纹理和取样器
+### <a name="3-creating-textures-and-samplers"></a>3. 创建纹理和取样器
 
 下面，将纹理数据应用到立方体（而不是像上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中那样着色）。
 
@@ -391,7 +398,7 @@ private:
         float degree = 0.0f;
 ```
 
-### 4. 旋转和绘制纹理化立方体并显示呈现的图像
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. 旋转和绘制纹理化立方体并显示呈现的图像
 
 如前面的教程所述，我们进入了一个持续呈现和显示场景的无限循环。 调用 **rotationY** 内嵌函数 (BasicMath.h)，使用旋转量设置使立方体模型矩阵绕 Y 轴旋转的值。 然后，调用 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 来更新常量缓冲区并旋转立方体模型。 接着，调用 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 以指定呈现目标和深度模具视图。 调用 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 以将呈现目标清空为纯蓝色，并调用 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 清空深度缓冲区。
 
@@ -512,7 +519,7 @@ private:
                 );
 ```
 
-## 摘要
+## <a name="summary"></a>摘要
 
 
 我们已加载原始纹理数据并将该数据应用到 3D 基元。
@@ -523,10 +530,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

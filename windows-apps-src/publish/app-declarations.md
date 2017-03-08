@@ -3,23 +3,30 @@ author: jnHs
 Description: "在提交过程中，你可以在“应用属性”页面的“应用声明”部分中提供有关你的应用的附加信息。"
 title: "应用声明"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: feacd96ca2fa0cc4cd3d1087a982f61bc18d4604
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 应用声明
+# <a name="app-declarations"></a>应用声明
 
-在[提交过程](app-submissions.md)中，你可以在“应用属性”****页面的“应用声明”****部分中提供有关你的应用的附加信息。 这些声明可以帮助确保你的应用以适当的方式显示并交付给正确的客户群，也可以指示客户使用你的应用的方式。
+在[提交过程](app-submissions.md)中，你可以在**应用属性**页面的**应用声明**部分中提供有关你的应用的附加信息。 这些声明可以帮助确保你的应用以适当的方式显示并交付给正确的客户群，也可以指示客户使用你的应用的方式。
 
 以下部分描述了每个声明，以及在确定是否每个声明都适用于你的应用时的注意事项。
 
-## 此应用使用户可以进行购买，但不使用 Windows 应用商店商务系统。
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-windows-store-commerce-system"></a>此应用使用户可以进行购买，但不使用 Windows 应用商店商务系统。
 
 大部分应用都应使此框保持未选中状态，因为提供应用内购买机会的应用通常使用 Microsoft 应用内购买 API 创建和[提交加载项](add-on-submissions.md)。 根据[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前创建和提交的应用可在不使用 Microsoft 商务引擎的情况下继续提供应用内购买功能，前提是该购买功能符合 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
 
-## 已对此应用进行辅助功能指南符合度测试。
+## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>已对此应用进行辅助功能指南符合度测试。
 
 勾选此框可使你的应用能够被在应用商店中特意寻找辅助应用的客户发现。
 
@@ -35,9 +42,9 @@ ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 有关详细信息，请参阅 [Windows 运行时应用的辅助功能](https://msdn.microsoft.com/library/windows/apps/dn263101)、[辅助功能测试](https://msdn.microsoft.com/library/windows/apps/mt297664)和[应用商店中的辅助功能](https://msdn.microsoft.com/library/windows/apps/mt297663)。
 
-> **重要提示** 除非已针对此目的特别设计和测试过你的应用，否则不要将该应用列为辅助应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
+> **重要提示**  除非已针对此目的特别设计和测试过你的应用，否则不要将该应用列为辅助应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
 
-## 客户可以将此应用安装到备用驱动器或可移动存储。
+## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
 此框在默认情况下处于选中状态，从而允许客户将你的应用安装到 SD 卡等可移动存储媒体上，或非系统卷驱动器（如外部驱动器）上。
 
@@ -45,15 +52,15 @@ ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 请注意，如果没有限制安装的选项，则应用只能安装到可移动存储媒体上。
 
-> **注意** 对于 Windows Phone 8.1，这之前通过 StoreManifest.xml 指示。
+> **注意**  对于 Windows Phone 8.1，之前已通过 StoreManifest.xml 作出此说明。
 
-## Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。
+## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。
 
 此框在默认情况下处于选中状态，从而允许在客户选择使用 Windows 创建 OneDrive 自动备份时，将你的应用的数据包含在内。
 
 如果要防止你的应用数据包含在自动备份中，请取消选中此框。
 
-> **注意** 对于 Windows Phone 8.1，这之前通过 StoreManifest.xml 指示。
+> **注意**  对于 Windows Phone 8.1，之前已通过 StoreManifest.xml 作出此说明。
 
  
 
@@ -63,10 +70,5 @@ ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

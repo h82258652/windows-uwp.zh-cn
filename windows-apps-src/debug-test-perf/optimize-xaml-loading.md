@@ -2,17 +2,24 @@
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: "优化 XAML 标记"
-description: "在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间以及内存效率。"
+description: "在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以通过以下措施为你的应用缩短 XAML 标记分析和加载时间及提高内存效率。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
+ms.lasthandoff: 02/07/2017
 
 ---
-# 优化 XAML 标记
+# <a name="optimize-your-xaml-markup"></a>优化 XAML 标记
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间效率以及内存效率。
+在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以通过以下措施为你的应用缩短 XAML 标记分析和加载时间及提高内存效率。
 
 在应用启动时进行限制，即仅加载初始 UI 所需的 XAML 标记。 检查初始页面中的标记，确认该页面不包含任何不需要的内容。 如果页面引用在其他文件中定义的用户控件或资源，则框架还会分析该文件。
 
@@ -84,7 +91,7 @@ ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
 
 若要使上述计数器示例更有效率，可以将 `SecondPageTextBrush` 移动到 SecondPage.xaml 中，然后将 `ThirdPageTextBrush` 移动到 ThirdPage.xaml 中。 `InitialPageTextBrush` 可以保留在 App.xaml 中，因为在任何情况下，应用程序资源都必须在应用启动时进行分析。
 
-## 最大程度减少元素计数
+## <a name="minimize-element-count"></a>最大程度减少元素计数
 
 尽管 XAML 平台能够显示大量元素，但你可以使用最少数量的元素实现所需的视觉效果，从而使应用布局设置和呈现速度更快。
 
@@ -106,7 +113,7 @@ ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
 
 -   如果重用同一基于矢量的元素的次数足够多，则改为使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素将会更加高效。 基于矢量的元素更加耗费资源，因为 CPU 必须分别创建每个单独的元素。 图像文件仅需要解码一次。
 
-## 将看起来相同的多个画笔整合到一个资源中
+## <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>将看起来相同的多个画笔整合到一个资源中
 
 XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这些对象。 但是，XAML 难以判断在一部分标记中声明的画笔是否与在另一部分的标记中声明的画笔相同。 此处的示例使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 进行演示，但使用 [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) 的情况可能性更大也更为重要。
 
@@ -146,7 +153,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 </Page>
 ```
 
-## 尽量减少过度绘制
+## <a name="minimize-overdrawing"></a>尽量减少过度绘制
 
 过度绘制是指采用同一屏幕像素绘制多个对象。 请注意，有时本指南与最大程度减少元素数目的需求之间会存在权衡关系。
 
@@ -240,9 +247,9 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 将 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) 用作视觉诊断。 你可能会在场景中发现你未注意到的要进行绘制的对象。
 
-## 缓存静态内容
+## <a name="cache-static-content"></a>缓存静态内容
 
-过度绘制的另一个来源是由许多重叠元素形成的形状。 如果针对包含合成形状的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，将 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 设置为 **BitmapCache**，平台会将该元素作为位图呈现一次，然后每帧使用该位图而不是过度绘制。
+过度绘制的另一个来源是由许多重叠元素形成的形状。 如果针对包含合成形状的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，将 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 设置为 **BitmapCach**e，平台会将该元素作为位图呈现一次，然后每帧使用该位图而不是过度绘制。
 
 **低效。**
 
@@ -272,7 +279,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 请注意 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 的使用。 如果任意子形状具有动画效果，请不要使用此技术，因为可能需要在每一帧重新生成位图缓存，这违背了原本目的。
 
-## ResourceDictionary
+## <a name="resourcedictionaries"></a>ResourceDictionary
 
 ResourceDictionary 通常用于存储几乎全局级别的资源。 你的应用想要在多个位置引用的资源。 例如，样式、画笔、模板等等。 一般情况下，我们优化了 ResourceDictionary，以便不实例化资源（除非另有要求）。 但是有一些你需要注意的地方。
 
@@ -280,17 +287,12 @@ ResourceDictionary 通常用于存储几乎全局级别的资源。 你的应用
 
 **UserControl 中的 ResourceDictionary**。 在 UserControl 内部定义的 ResourceDictionary 会产生负面影响。 平台将为 UserControl 的每个实例创建此类 ResourceDictionary 的副本。 如果你有经常使用的 UserControl，那么请将ResourceDictionary 移出 UserControl，并将其放在页面级别。
 
-## 使用 XBF2
+## <a name="use-xbf2"></a>使用 XBF2
 
 XBF2 是在运行时避免所有文本分析成本的 XAML 标记的二进制表示形式。 它还为加载和树创建优化了你的二进制文件，并允许适用于 XAML 类型的“快速路径”改进堆和对象创建成本，例如 VSM、ResourceDictionary、Styles 等。 由于它完全由内存映射，因此没有可用于加载和读取 XAML 页面的堆占用。 此外，它可以减少以 appx 格式存储的 XAML 页面的磁盘占用。 XBF2 是更紧凑的表示形式，并且它可以减少多达 50%的比较 XAML/XBF1 文件的磁盘占用。 例如，在转换为 XBF2 后，内置的“照片”应用会减少大约 60%，即从约 ~1MB 的 XBF1 资源下降到约 ~400KB 的 XBF2 资源。 我们还看到了应用在 CPU 方面受益了 15% 到 20%，在 Win32 堆方面受益了 10% 到 15%。
 
 框架提供的 XAML 内置控件和字典已完全支持 XBF2。 对于你自己的应用，请确保你的项目文件可声明 TargetPlatformVersion 8.2 或更高版本。
 
 若要检查你是否具有 XBF2，请在二进制编辑器中打开你的应用；如果有 XBF2，则第 12 个和第 13 个字节为 00 02。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

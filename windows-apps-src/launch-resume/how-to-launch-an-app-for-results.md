@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "针对结果启动应用"
 description: "了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是针对结果启动应用。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ec46f3287deefca67dab96fe12b3380c7dbd6ed9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 针对结果启动应用
+# <a name="launch-an-app-for-results"></a>针对结果启动应用
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +33,7 @@ ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 
 将针对结果启动的应用称为启动应用。 启动应用的应用称为调用应用。 针对此示例，将编写调用应用和启动应用。
 
-## 步骤 1：注册将在针对结果所启动的应用中处理的协议
+## <a name="step-1-register-the-protocol-to-be-handled-in-the-app-that-youll-launch-for-results"></a>步骤 1：注册将在针对结果所启动的应用中处理的协议
 
 
 在启动应用的 Package.appxmanifest 文件中，将协议扩展添加到 **&lt;Application&gt;** 部分。 下面的示例使用了一个名为 **test-app2app** 的虚构协议。
@@ -55,7 +62,7 @@ ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 </Applications>
 ```
 
-## 步骤 2：重写针对结果启动的应用中的 Application.OnActivated
+## <a name="step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results"></a>步骤 2：重写针对结果启动的应用中的 Application.OnActivated
 
 
 如果此方法尚未存在于该启动应用中，请在 App.xaml.cs 中定义的 `App` 类内创建它。
@@ -87,7 +94,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 因为 Package.appxmanifest 文件中的协议扩展已将 **ReturnResults** 指定为 **always**，所以上述代码可以直接将 `args` 转换为 [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905)，并确信对于此应用，只有 **ProtocolForResultsActivatedEventArgs** 将会发送到 **OnActivated**。 如果你的应用可以采用不同于针对结果进行启动的方式进行激活，则你可以通过检查 [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 属性是否返回 [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) 来确定该应用是否针对结果而启动。
 
-## 步骤 3：向针对结果启动的应用添加一个 ProtocolForResultsOperation 字段
+## <a name="step-3-add-a-protocolforresultsoperation-field-to-the-app-you-launch-for-results"></a>步骤 3：向针对结果启动的应用添加一个 ProtocolForResultsOperation 字段
 
 
 ```cs
@@ -96,7 +103,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 
 当启动应用可以随时将结果返回给调用应用时，你将使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 字段进行指示。 在此示例中，需要将该字段添加到 **LaunchedForResultsPage** 类，因为将通过该页面完成针对结果启动操作，并且将需要访问它。
 
-## 步骤 4：重写针对结果启动的应用中的 OnNavigatedTo()
+## <a name="step-4-override-onnavigatedto-in-the-app-you-launch-for-results"></a>步骤 4：重写针对结果启动的应用中的 OnNavigatedTo()
 
 
 重写页面（该页面将在针对结果启动应用时显示）上的 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果此方法尚未存在，请为页面在 &lt;pagename&gt;.xaml.cs 中定义的类内创建它。 确保以下 **using** 语句包含在该文件顶部：
@@ -127,7 +134,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## 步骤 5：编写代码以将数据返回到调用应用
+## <a name="step-5-write-code-to-return-data-to-the-calling-app"></a>步骤 5：编写代码以将数据返回到调用应用
 
 
 在启动应用中，请使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 将数据返回给调用应用。 在此示例代码中，将创建一个 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)，其中包含要返回给调用应用的值。 然后，使用 **ProtocolForResultsOperation** 字段将该值发送到调用应用。
@@ -138,7 +145,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
     _operation.ReportCompleted(result);
 ```
 
-## 步骤 6：编写代码以针对结果启动应用并获取返回的数据
+## <a name="step-6-write-code-to-launch-the-app-for-results-and-get-the-returned-data"></a>步骤 6：编写代码以针对结果启动应用并获取返回的数据
 
 
 从调用应用的 async 方法内启动应用，如此示例代码中所示。 注意 **using** 语句，编译代码时不可缺少此类语句：
@@ -180,7 +187,7 @@ async Task<string> LaunchAppForResults()
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 
 本操作方法中的示例将通过“hello world”介绍针对结果启动应用。 需要注意的重要事项是，新的 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API 允许你异步启动应用并通过 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 类通信。 通过 **ValueSet** 传递的数据量被限制为 100KB。 如果需要传递更多数据，可以通过使用 [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) 类创建可在应用之间传递的文件标记来共享文件。 例如，存在一个名为 `inputData` 的 **ValueSet**，你可以将该标记存储到要与启动应用共享的文件中：
@@ -191,7 +198,7 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 然后通过 **LaunchUriForResultsAsync** 将其传递到启动应用。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
@@ -201,9 +208,4 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

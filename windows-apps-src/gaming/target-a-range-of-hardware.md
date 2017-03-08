@@ -1,23 +1,30 @@
 ---
 author: mtoepke
 title: "在许多硬件上支持阴影图"
-description: "在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。"
+description: "在速度更快的设备上提升阴影渲染保真度，在功能不够强大的设备上更快地渲染阴影。"
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 阴影图, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: a2e2ed02025352bd5583abeed8856a216eab4ead
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在许多硬件上支持阴影图
+# <a name="support-shadow-maps-on-a-range-of-hardware"></a>在许多硬件上支持阴影图
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。 [演练：使用 Direct3D 11 中的深度缓冲区实现阴影体](implementing-depth-buffers-for-shadow-mapping.md)的第 4 部分。
+在速度更快的设备上提升阴影渲染保真度，在功能不够强大的设备上更快地渲染阴影。 [演练：使用 Direct3D 11 中的深度缓冲区实现阴影体](implementing-depth-buffers-for-shadow-mapping.md)的第 4 部分。
 
-## 比较筛选器类型
+## <a name="comparison-filter-types"></a>比较筛选器类型
 
 
 只有设备可以承担性能损失时，才使用线性筛选。 通常，Direct3D 功能级别 9\_1 设备没有足够的能力来容纳阴影的线性筛选。 在这些设备上改为使用点筛选。 在使用线性筛选时，请调整像素着色器，以便它能混合阴影边缘。
@@ -102,17 +109,17 @@ float3 shadow = (1.0f - lighting) * ambient;
 return float4(input.color * (light + shadow), 1.f);
 ```
 
-## 阴影缓冲区大小
+## <a name="shadow-buffer-size"></a>阴影缓冲区大小
 
 
 较大的阴影图看起来不会呈块状，但它们将在图形内存中占用更多空间。 在你的游戏中使用不同的阴影图试验，并观察在不同类型的设备和不同显示尺寸中的效果。 考虑一个类似级联阴影图的优化情况，以用较少的显存内存获得更好的效果。 请参见[改进阴影深度图的常见技术](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
 
-## 阴影缓冲区深度
+## <a name="shadow-buffer-depth"></a>阴影缓冲区深度
 
 
 更精确的阴影缓冲区会带来更准确的深度测试结果，从而有助于避免 Z 缓冲争夺之类的问题。 但和更大的阴影图一样，更精确将占用更多内存。 在你的游戏中使用不同深度精度类型 - DXGI\_FORMAT\_R24G8\_TYPELESS 与 DXGI\_FORMAT\_R16\_TYPELESS - 试验，并观察在不同功能级别下的速度和质量。
 
-## 优化预编译的着色器
+## <a name="optimizing-precompiled-shaders"></a>优化预编译的着色器
 
 
 通用 Windows 平台 (UWP) 应用可以使用动态着色器编译，但使用动态着色器链接会更快。 也可使用编译器指令和 `#ifdef` 块来创建不同的着色器版本。 这可通过在文本编辑器中打开 Visual Studio 项目文件并为 HLSL 添加多个 `<FxcCompiler>` 条目（每个都具有相应的预处理器定义）来实现。 请注意，这需要不同的文件名；在这种情况下，Visual Studio 会将 _point 和 _linear 附加到不同的着色器版本。
@@ -175,10 +182,5 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

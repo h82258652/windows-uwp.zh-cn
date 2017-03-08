@@ -3,13 +3,20 @@ title: "编码和解码数据"
 description: "此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中对 Base64 和十六进制数据进行编码和解码。"
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: b07a040cafd2248f12fee571552632080e117692
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cdf4ee8d67048111b1e5e76bfd99ac555fb749ca
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 编码和解码数据
+# <a name="encode-and-decode-data"></a>编码和解码数据
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -41,9 +48,4 @@ public void EncodeDecodeHex()
     String strHexNew = CryptographicBuffer.EncodeToHexString(buffer);
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

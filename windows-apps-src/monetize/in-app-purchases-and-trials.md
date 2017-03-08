@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: "了解如何在 UWP 应用中启用应用内购买和试用。"
 title: "应用内购买和试用"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用内购买, IAP, 加载项, 试用, 消耗品, 耐用型"
 translationtype: Human Translation
-ms.sourcegitcommit: ebac7d8edf9787ad810b84f3855fe23ae3007dcf
-ms.openlocfilehash: 33004b5229167bedd4cbafe5279709f1225ed02c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ade314f79edf73527f29e937f8eab987c902802f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -136,7 +143,7 @@ UWP 应用可提供以下类型的加载项。
 
   * 如果要在应用的试用版中排除或限制某些功能，请[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)。
 
-3. 在项目在 Visual Studio 中打开的情况下，单击“项目菜单”、指向“应用商店”，然后单击“将应用与应用商店关联”。 完成向导中的说明以将应用项目与 Windows 开发人员中心帐户中要用于测试的应用关联。
+3. 在项目在 Visual Studio 中打开的情况下，单击**项目菜单**、指向**应用商店**，然后单击**将应用与应用商店关联**。 完成向导中的说明以将应用项目与 Windows 开发人员中心帐户中要用于测试的应用关联。
 
   >**注意**&nbsp;&nbsp;如果你未将项目与应用商店中的应用关联，则 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法会将其返回值的 **ExtendedError** 属性设置为错误代码值 0x803F6107。 此值指示应用商店并不了解关于该应用的任何信息。
 
@@ -218,9 +225,4 @@ UWP 应用可提供以下类型的加载项。
 * [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
 * [实现应用的试用版](implement-a-trial-version-of-your-app.md)
 * [使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

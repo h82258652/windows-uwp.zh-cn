@@ -5,9 +5,16 @@ title: "多个输入设计指南"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4311ab1c817beaac5a57b12a4426f26ac8710fdf
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -42,10 +49,5 @@ ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
 用户通过长按选择照片，然后说出“发送照片”。
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

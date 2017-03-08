@@ -5,9 +5,16 @@ title: "日期和时间控件指南"
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bb881fb0120401047c77a2d1e64a1e1555a9ced0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 127bf79ebe17e6156a95d4aae168e42b7ff53aa1
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="calendar-date-and-time-controls"></a>日历、日期和时间控件
@@ -120,9 +127,4 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 - [**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn950083)
 - [**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn298584)
 - [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn299280)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

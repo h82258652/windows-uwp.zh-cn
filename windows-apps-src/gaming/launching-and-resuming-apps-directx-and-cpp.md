@@ -3,13 +3,20 @@ author: mtoepke
 title: "启动和恢复应用（DirectX 和 C++）"
 description: "了解如何启动、暂停和恢复你的通用 Windows 平台 (UWP) DirectX 应用。"
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx, 启动, 恢复"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 启动和恢复应用（DirectX 和 C++）
+# <a name="launching-and-resuming-apps-directx-and-c"></a>启动和恢复应用（DirectX 和 C++）
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -29,10 +36,5 @@ ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

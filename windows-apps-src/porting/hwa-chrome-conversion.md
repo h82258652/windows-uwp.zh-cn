@@ -3,9 +3,17 @@ author: seksenov
 title: "托管 Web 应用 - 将 Chrome 应用转换为通用 Windows 平台应用"
 description: "将 Chrome 应用或 Chrome 扩展转换为适用于 Windows 应用商店的通用 Windows 平台 (UWP) 应用。"
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "适用于 Windows 的 Chrome 扩展, 适用于 Windows 的 Chrome 应用, hwa-cli, 将 .crx 转换为 .AppX"
+ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -46,11 +54,12 @@ ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
 ![Windows 开发人员中心仪表板保留名称](images/hwa-to-uwp/reserve_a_name.png)
- - 接下来，在“应用管理”部分下，单击左侧菜单中的“应用标识”。
-    ![Windows 开发人员中心仪表板应用标识](images/hwa-to-uwp/app_identity.png)
- - 你应该看到页面上列出的用于提示你的三个值：1. 标识名称：`Package/Identity/Name`
- 2. 发布者标识：`Package/Identity/Publisher`
- 3. 发布者显示名称： `Package/Properties/PublisherDisplayName`
+    - 接下来，点击“应用管理”部分下的左侧菜单中的“应用身份”。
+    ![Windows 开发人员中心仪表板应用身份](images/hwa-to-uwp/app_identity.png)
+    - 你应该会看到页面上列出的三个值： 
+        1. 标识名称： `Package/Identity/Name`
+        2. 发布者标识： `Package/Identity/Publisher`
+        3. 发布者显示名称： `Package/Properties/PublisherDisplayName`
 
 
 ## <a name="guide-for-migrating-your-hosted-web-app"></a>迁移托管 Web 应用的指南
@@ -59,13 +68,13 @@ ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
 
 ### <a name="application-content-uri-rules"></a>应用程序内容 URI 规则
 
-[应用程序内容 URI 规则 (ACUR)](/hwa-access-features.md) 或内容 URI 通过你的应用包清单中的 URL 允许列表定义你的托管 Web 应用的作用域。 为了控制与远程内容之间的通信，你必须在该列表中定义要包括和/或要排除的 URL。 如果用户单击一个未明确包含的 URL，Windows 会使用默认浏览器打开目标路径。 通过使用 ACUR，你还可以授予 URL 访问[通用 Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) 的权限。
+[应用程序内容 URI 规则 (ACUR)](./hwa-access-features.md) 或内容 URI 通过你的应用包清单中的 URL 允许列表定义你的托管 Web 应用的作用域。 为了控制与远程内容之间的通信，你必须在该列表中定义要包括和/或要排除的 URL。 如果用户单击一个未明确包含的 URL，Windows 会使用默认浏览器打开目标路径。 通过使用 ACUR，你还可以授予 URL 访问[通用 Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) 的权限。
 
 你的规则至少应该包括你的应用的起始页。 转换工具将基于你的起始页及其域自动为你创建一组 ACUR。 但是，如果存在任何编程方式的重定向，无论是在服务器上还是在客户端上，都需要将这些目标添加到允许列表。
 
 *注意：ACUR 仅适用于页面导航。 图像、JavaScript 库和其他类似资源不受这些限制的影响。*
 
-许多应用将第三方站点用于其登录流程，例如 Facebook 和 Google。 转换工具将基于最受欢迎的站点自动为你创建一组 ACUR。 如果身份验证方法未包括在该列表中，并且它是重定向流，你需要将其路径添加为 ACUR。 还可以考虑使用 [Web 身份验证代理](/hwa-access-features.md)。
+许多应用将第三方站点用于其登录流程，例如 Facebook 和 Google。 转换工具将基于最受欢迎的站点自动为你创建一组 ACUR。 如果身份验证方法未包括在该列表中，并且它是重定向流，你需要将其路径添加为 ACUR。 还可以考虑使用 [Web 身份验证代理](./hwa-access-features.md)。
 
 ### <a name="flash"></a>Flash
 
@@ -95,12 +104,7 @@ Chrome 会向应用提供可以作为后台脚本运行的[专用 API](https://d
 
 ## <a name="related-topics"></a>相关主题
 
-- [通过访问通用 Windows 平台 (UWP) 功能增强你的 Web 应用](/hwa-access-features.md)
+- [通过访问通用 Windows 平台 (UWP) 功能增强你的 Web 应用](./hwa-access-features.md)
 - [通用 Windows 平台 (UWP) 应用指南](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [下载 Windows 应用商店应用的设计资源](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

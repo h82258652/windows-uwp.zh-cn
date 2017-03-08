@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "合成效果"
 description: "效果 API 使开发人员可以自定义其 UI 的呈现方式。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
-ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf1c8a35838c1a05fabb5d76a2d0574c90a98db
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="composition-effects"></a>合成效果
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 允许将实时效果应用于图像和附带动画效果属性的 UI。 在此概述中，我们将详细描述可用于允许效果应用于合成视觉效果的功能。
 
@@ -244,10 +251,5 @@ brush.Surface = imageSource.Surface;
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

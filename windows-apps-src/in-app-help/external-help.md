@@ -4,9 +4,17 @@ Description: "针对有关你的应用的详细说明和建议设计外部帮助
 title: "设计外部帮助页指南"
 label: External help
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9733608c7212ab1e26511c33034ad2b626cc5887
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: dbe54f5c033a14ad6f9d8acae6b1ec3e62eead67
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -40,9 +48,4 @@ ms.openlocfilehash: 9733608c7212ab1e26511c33034ad2b626cc5887
 ## <a name="related-articles"></a>相关文章
 
 * [应用帮助指南](guidelines-for-app-help.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,9 +3,16 @@ author: mcleblanc
 description: "我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。"
 title: "将 Windows Phone Silverlight 移植到 UWP 疑难解答"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3b7e68803a0391ea850b513014aa56a380df4d5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae120cedbf0ab42fcb091ba5b01b58e8796d6a4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 3b7e68803a0391ea850b513014aa56a380df4d5c
 
 上一主题是[移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md)。
 
-我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。 阅读到该末尾后，你可以注释或排除非必要的代码，然后稍后返回支付该债务，从而临时加快进度。 本主题中的疑难解答症状和补救办法的表格可能在此阶段对你有用，尽管它无法替代阅读接下来的一些主题。 在你执行到以后的主题时，你可以一直重新参考该表。
+我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。 阅读到该末尾后，你可以注释或排除非必要的代码，然后稍后返回支付该债务，从而临时加快进度。 本主题中的疑难解答症状和补救办法的表格可能在此阶段对你有用，尽管它无法替代阅读接下来的一些主题。 在你进行到以后的主题时，你可以随时重新参考该表。
 
 ## <a name="tracking-down-issues"></a>跟踪问题
 
@@ -58,10 +65,5 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 | 当在 xaml.cs 文件中调用 InitializeComponent 时，将引发 System.InvalidCastException。 | 当你有多个 xaml 文件（至少其中一个受 MRT 限定）共享同一个 xaml.cs 文件并且元素具有在两个 xaml 文件之间不一致的 x:Name 属性时，可能会发生这种情况。 尝试将相同名称添加到两个 xaml 文件中的相同元素，或全部省略名称。 | 
 
 下一主题是[移植 XAML 和 UI](wpsl-to-uwp-porting-xaml-and-ui.md)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

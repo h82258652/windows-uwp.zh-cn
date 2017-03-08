@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "了解有关支持间隙和横幅广告的国家和地区。"
 title: "Microsoft Advertising 的受支持市场"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, 市场"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6150c885c4159911932bf8d7c3848b1e182b2f61
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising 的受支持市场
+# <a name="supported-markets-for-microsoft-advertising"></a>Microsoft Advertising 的受支持市场
 
 
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 以下国家和地区支持间隙广告和横幅广告。
 
 <span id="interstitialads"/>
-## 间隙广告
+## <a name="interstitial-ads"></a>间隙广告
 
 -   澳大利亚
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 -   美国
 
 <span id="bannerads"/>
-## 横幅广告
+## <a name="banner-ads"></a>横幅广告
 
 
 -   阿富汗
@@ -61,7 +68,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 -   奥地利
 
--   埃塞拜疆
+-   阿塞拜疆
 
 -   巴林
 
@@ -103,9 +110,9 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 -   科摩罗
 
--   刚果
+-   刚果（布）
 
--   刚果民主共和国
+-   刚果（金）
 
 -   哥斯达黎加
 
@@ -271,7 +278,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 -   瑞士
 
--   台湾
+-   中国台湾
 
 -   塔吉克斯坦
 
@@ -312,9 +319,4 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

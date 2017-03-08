@@ -1,27 +1,34 @@
 ---
 author: mtoepke
 title: "装配呈现框架"
-description: "现在，我们开始讨论示例游戏如何使用该结构和状态显示其图形。"
+description: "现在，我们开始讨论该示例游戏如何使用该结构和状态显示其图形。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 呈现"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 装配呈现框架
+# <a name="assemble-the-rendering-framework"></a>装配呈现框架
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 到目前为止，你已经了解如何生成使用 Windows 运行时的通用 Windows 平台 (UWP) 游戏，以及如何定义状态机来处理游戏流。 现在，我们开始讨论该示例游戏如何使用该结构和状态显示其图形。 下面我们通过演示屏幕的图形对象看看如何实现呈现框架、 如何实现从初始化图形设备开始操作。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   了解如何设置基本呈现框架，以为 UWP DirectX 游戏显示图形输出。
 
-> **注意** 此处不讨论以下代码文件，但提供本主题中引用的类和方法，并[在本主题末尾以代码形式提供](#code_sample)：
+> **注意**   此处不讨论以下代码文件，但提供本主题中引用的类和方法，并[在本主题末尾以代码形式提供](#complete-sample-code-for-this-section)：
 -   **Animate.h/.cpp**。
 -   **BasicLoader.h/.cpp**。 提供同步和异步加载网格、着色器和纹理的方法。 非常有用！
 -   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 和 **WorldMesh.h/.cpp**。 包含游戏中使用的对象基元的定义，如弹药球体、圆柱和圆锥障碍以及射击场的墙壁。 （本主题中简单介绍了 **GameObject.cpp**，它包含呈现这些基元的方法。）
@@ -32,7 +39,7 @@ ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
 
  
 
-此部分介绍游戏示例中的三个关键文件（[在本主题末尾作为代码提供](#code_sample)）：
+此部分介绍游戏示例中的三个关键文件（[在本主题末尾作为代码提供](#complete-sample-code-for-this-section)）：
 
 -   **Camera.h/.cpp**
 -   **GameRenderer.h/.cpp**
@@ -41,7 +48,7 @@ ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
 同时，我们假定你熟悉基本 3D 编程概念，如网格、顶点和纹理。 有关 Direct3D 11 常规编程知识的更多信息，请参阅 [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
 下面我们介绍将我们的游戏搬上屏幕必须完成的任务。
 
-## Windows 运行时和 DirectX 概述
+## <a name="an-overview-of-the-windows-runtime-and-directx"></a>Windows 运行时和 DirectX 概述
 
 
 DirectX 是 Windows 运行时和 Windows 10 体验的基础部分。 Windows 10 的所有视觉效果都以 DirectX 为基础生成，你与相同的低级别的图形界面 [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) 具有相同的直接关系，它为图形硬件及其驱动程序提供一个抽象层。 所有提供给你的 Direct3D 11 API 都可以与 DXGI 直接对接。 这样可以利用所有最新的图形硬件功能在游戏中实现快速、高性能的图形。
@@ -50,7 +57,7 @@ DirectX 是 Windows 运行时和 Windows 10 体验的基础部分。 Windows 10 
 
 在[定义游戏的 UWP 框架](tutorial--building-the-games-metro-style-app-framework.md)中，我们已了解呈现器如何适应游戏示例的应用框架。 现在，我们了解游戏呈现器如何连接到视图，并生成定义游戏外观的图形。
 
-## 定义呈现器
+## <a name="defining-the-renderer"></a>定义呈现器
 
 
 **GameRenderer** 抽象类型继承自 **DirectXBase** 呈现器类型、添加立体 3D 支持并为创建和定义图形基元的着色器声明常量缓冲区和资源。
@@ -143,7 +150,7 @@ protected private:
 
 现在，我们将了解如何创建此对象！
 
-## 初始化呈现器
+## <a name="initializing-the-renderer"></a>初始化呈现器
 
 
 示例游戏调用此 **Initialize** 方法，作为 **App::SetWindow** 中 CoreApplication 初始化序列的一部分。
@@ -179,7 +186,7 @@ void GameRenderer::Initialize(
 
 当 DirectXBase 初始化完成时，将初始化 **GameInfoOverlay** 对象。 在初始化完成之后，可以介绍为游戏创建和加载图形资源的方法。
 
-## 创建和加载 DirectX 图形资源
+## <a name="creating-and-loading-directx-graphics-resources"></a>创建和加载 DirectX 图形资源
 
 
 任何游戏中的第一个业务顺序都是建立与图形界面的连接，创建绘制图形所需的资源， 然后设置可向其中绘制这些图形的呈现器目标。 在该游戏示例（和 Microsoft Visual Studio**DirectX 11 应用（通用 Windows）**模板）中，此过程使用三种方法实现：
@@ -689,7 +696,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 该游戏有一些用于在当前窗口中显示图形的资源，并且它可以在窗口发生更改时重新创建这些资源。 现在，我们介绍用于在该窗口中定义玩家场景视图的相机。
 
-## 实现相机对象
+## <a name="implementing-the-camera-object"></a>实现相机对象
 
 
 该游戏有现成的代码用于更新本身坐标系中的世界（有时称为世界空间或场景空间）。 所有对象（包括相机）都在此空间定位和确定方向。 在示例游戏中，相机的位置和观看矢量（从相机直接进入场景的“观看”矢量和与其垂直向上的“仰望”矢量）定义相机空间。 投影参数定义该空间在最终场景实际显示多少；视区 (FoV)、纵横比和剪切平面定义投影转换。 顶点着色器使用以下算法执行从模型坐标到设备坐标的转换（其中 V 是一个矢量，M 是一个矩阵）：
@@ -851,7 +858,7 @@ void Camera::SetProjParams(
 
 现在，让我们看一下游戏如何使用相机创建框架以绘制游戏图形。 这包括定义构成游戏世界及其元素的基元。
 
-## 定义基元
+## <a name="defining-the-primitives"></a>定义基元
 
 
 在该游戏示例代码中，我们定义并实现两个基类中的基元以及每个基元类型的相应特殊化。
@@ -963,7 +970,7 @@ protected private:
 
 让我们看一下游戏示例中基元的基本呈现。
 
-## 呈现基元
+## <a name="rendering-the-primitives"></a>呈现基元
 
 
 该游戏示例中的基元使用在父 **GameObject** 类中实现的基本 **Render** 方法，如下所示：
@@ -1008,7 +1015,7 @@ void GameObject::Render(
 
 下面介绍了 **Material::RenderSetup** 如何配置常量缓冲区和分配着色器资源。 请再次注意，常量缓冲区是专门用于更新对基元的更改的缓冲区。
 
-> **注意** **Material** 类在 **Material.h/.cpp**. 中定义。
+> **注意**   **Material** 类是在 **Material.h/.cpp**. 中定义的。
 
  
 
@@ -1048,7 +1055,7 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 
 这发生在实际呈现过程中！
 
-## 创建顶点和像素着色器
+## <a name="creating-the-vertex-and-pixel-shaders"></a>创建顶点和像素着色器
 
 
 这时，游戏示例已定义要绘制的基元和定义其呈现的常量缓冲区。 这些常量缓冲区用作在图形设备上运行的着色器的参数集。 这些着色器程序分为两个类型：
@@ -1181,7 +1188,7 @@ float4 main(PixelShaderInput input) : SV_Target
 
 现在，我们将所有这些想法（基元、相机和着色器）综合在一起，并了解示例游戏如何生成完整的呈现过程。
 
-## 呈现用于输出的帧
+## <a name="rendering-the-frame-for-output"></a>呈现用于输出的帧
 
 
 我们在[定义主游戏对象](tutorial--defining-the-main-game-loop.md)中简单讨论了此方法。 现在，我们更进一步讨论此方法。
@@ -1348,12 +1355,12 @@ void GameRenderer::Render()
 
 游戏已更新屏幕！ 总之，这是实现游戏图形框架的基本过程。 当然，游戏越大，越需要更多的抽象来处理复杂性（例如对象类型和动画行为的整个层次结构，并需要更复杂的方法来加载和管理资源（如网格和纹理）。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 接下来，我们将了解仅附带讨论的游戏示例的一些重要部分：[用户界面覆盖层](tutorial--adding-a-user-interface.md)、[输入控件](tutorial--adding-controls.md)和[声音](tutorial--adding-sound.md)。
 
-## 这部分的完整示例代码
+## <a name="complete-sample-code-for-this-section"></a>这部分的完整示例代码
 
 
 Camera.h
@@ -6311,7 +6318,7 @@ void Material::RenderSetup(
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)
@@ -6322,10 +6329,5 @@ void Material::RenderSetup(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

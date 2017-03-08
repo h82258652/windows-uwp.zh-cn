@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: "本文介绍如何将自适应流多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。"
 title: "自适应流式处理"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d0941887ebc17f3665302fae6c7b0a124dfb5a0b
-ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3afd0440d8e552ebc3459c5fe30dd766db3ae8b9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 自适应流式处理
+# <a name="adaptive-streaming"></a>自适应流式处理
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍如何将自适应流多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > 本文中的代码改编自 UWP [自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)。
 
-## 使用 MediaPlayer 和 MediaPlayerElement 的简单自适应流式处理
+## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>使用 MediaPlayer 和 MediaPlayerElement 的简单自适应流式处理
 
 若要在 UWP 应用中播放自适应流式处理媒体，请创建一个指向 DASH 或 HLS 清单文件的 **Uri** 对象。 创建 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类的实例。 调用 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以创建一个新的 **MediaSource** 对象，然后将该对象设置为 **MediaPlayer** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) 属性。 调用 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) 以开始播放媒体内容。
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > 从 Windows 10 版本 1607 开始，建议你使用 **MediaPlayer** 类播放媒体项。 **MediaPlayerElement** 是一种轻型 XAML 控件，用于在 XAML 页面中呈现 **MediaPlayer** 的内容。 为了实现向后兼容性，继续支持 **MediaElement** 控件。 有关使用 **MediaPlayer** 和 **MediaPlayerElement** 播放媒体内容的详细信息，请查阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。 有关使用 **MediaSource** 和相关 API 处理媒体内容的信息，请参阅[媒体项、播放列表和轨](media-playback-with-mediasource.md)。
 
-## 使用 AdaptiveMediaSource 的自适应流式处理
+## <a name="adaptive-streaming-with-adaptivemediasource"></a>使用 AdaptiveMediaSource 的自适应流式处理
 
 如果你的应用需要更多高级自适应流式处理功能（如提供自定义 HTTP 标头、监视当前下载和播放比特率或调整用于确定系统何时切换自适应流的比特率的时间），请使用 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 对象。
 
@@ -67,7 +74,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
 * [HLS 标记支持](hls-tag-support.md) 
 * [使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
@@ -76,10 +83,5 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

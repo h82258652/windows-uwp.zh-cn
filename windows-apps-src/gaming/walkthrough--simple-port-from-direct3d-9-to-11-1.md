@@ -3,13 +3,20 @@ author: mtoepke
 title: "演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)"
 description: "此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。"
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, directx, 端口, direct3d 9, direct3d 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1e3f9b7fbfaa110661ebb111c60d0089757dc885
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -62,36 +69,23 @@ ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 
 请注意，此演练使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 进行简化，并不涉及 XAML 互操作。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 尚不需要模板，但需要 Microsoft Visual Studio 2015 来加载此操作实例的代码示例。
 
 访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此演练中显示的 DirectX 11 和 UWP 编程概念。
 
-## 相关主题
-
+## <a name="related-topics"></a>相关主题
 
 **Direct3D**
-[在 Direct3D 9 中编写 HLSL 着色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
-[创建面向 UWP 的新 DirectX 11 项目](user-interface.md)
+* [在 Direct3D 9 中编写 HLSL 着色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [DirectX 游戏项目模板](user-interface.md)
 
 **Windows 应用商店**
-[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
-[**对象运算符的句柄 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
-
- 
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+* [**对象运算符的句柄 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 
 

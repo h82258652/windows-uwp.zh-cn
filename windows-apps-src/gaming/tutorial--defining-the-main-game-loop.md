@@ -1,27 +1,34 @@
 ---
 author: mtoepke
 title: "定义主游戏对象"
-description: "现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换与游戏世界的交互。"
+description: "现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换为与游戏世界的交互。"
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 主对象"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8af939fee50540e5213e624703400d99cbb6785f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f81b3eaa9b896295386232f99b789dc3857b3bad
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 定义主游戏对象
+# <a name="define-the-main-game-object"></a>定义主游戏对象
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 目前，我们介绍了该示例游戏的基本框架，并实现了处理高级用户和系统行为的状态机。 但我们还没有介绍构成游戏示例和实际游戏的部分：规则和技术，以及它们的实现方式！ 现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换为游戏世界中的交互。
 
-## 目标
+## <a name="objective"></a>目标
 
 
 -   在实现使用 DirectX 的简单通用 Windows 平台 (UWP) 游戏的规则和技术时，可应用基本开发技巧。
 
-## 考虑游戏的流
+## <a name="considering-the-games-flow"></a>考虑游戏的流
 
 
 游戏的大部分基本结构在以下文件中定义：
@@ -33,11 +40,11 @@ ms.openlocfilehash: 8af939fee50540e5213e624703400d99cbb6785f
 
 **Simple3DGame.cpp** 提供 **Simple3DGame** 类的代码，该类指定游戏执行本身的实现。 最初，我们将示例游戏视为一个 UWP 应用。 现在，我们来了解构成游戏的代码。
 
-**Simple3DGame.h/.cpp** 的完整代码在[此部分的完整示例代码](#code_sample)中提供。
+**Simple3DGame.h/.cpp** 的完整代码在[此部分的完整示例代码](#complete-code-sample-for-this-section)中提供。
 
 我们看一下 **Simple3DGame** 类的定义。
 
-## 定义核心游戏对象
+## <a name="defining-the-core-game-object"></a>定义核心游戏对象
 
 
 当应用单一实例启动时，视图提供程序的 **Initialize** 方法将创建主游戏类的实例 **Simple3DGame** 对象。 此对象包含将游戏状态中的更改传达到应用框架中定义的状态机或者从应用传达到游戏对象本身的方法。 还包含返回信息以更新游戏覆盖层位图和提醒显示，以及更新游戏中动画和物理特性（动态）的方法。 用于获取游戏所用的图形设备资源的代码可在 GameRenderer.cpp 中找到，我们将在接下来的[装配呈现框架](tutorial--assembling-the-rendering-pipeline.md)中进行讨论。
@@ -100,11 +107,11 @@ private:
 -   **LoadSavedState** 和 **SaveState**。 分别加载和保存游戏的当前状态。
 -   **SaveHighScore** 和 **LoadHighScore**。 分别保存和加载游戏中的高分。
 -   **InitializeAmmo**。 在每一轮开始时，将用作弹药的各范围对象的状态重置回其初始状态。
--   **UpdateDynamics**。 这是一个重要方法，因为它将根据封装的动画例程、物理特性和控件输入更新所有游戏对象。 这是定义游戏的交互性的核心。 我们将在[更新游戏](#update_game)部分详细介绍。
+-   **UpdateDynamics**。 这是一个重要方法，因为它将根据封装的动画例程、物理特性和控件输入更新所有游戏对象。 这是定义游戏的交互性的核心。 我们将在[更新游戏](#updating-the-game-world)部分详细介绍。
 
 其他公共方法是属性 getter，用于将游戏执行和特定于覆盖层的信息返回到应用框架进行显示。
 
-## 定义游戏状态变量
+## <a name="defining-the-game-state-variables"></a>定义游戏状态变量
 
 
 游戏对象的功能之一是用作定义游戏会话、级别或生命期的数据容器，具体取决于在较高级别定义游戏的方式。 在此情况下，游戏状态数据用于游戏的生命期，在用户启动游戏时初始化一次。
@@ -155,7 +162,7 @@ private:
 
 其余游戏变量包含基元列表及其相应的游戏内数量，以及特定于游戏执行的数据和约束。 我们看一下在游戏初始化时该示例如何配置这些变量。
 
-## 初始化和启动游戏
+## <a name="initializing-and-starting-the-game"></a>初始化和启动游戏
 
 
 当玩家启动游戏时，游戏对象必须初始化其状态，创建和添加覆盖层，设置用于跟踪玩家成绩的变量，并实例化将用于构建级别的对象。
@@ -378,14 +385,14 @@ void Simple3DGame::Initialize(
 
 游戏现在已有全部关键组件的实例：游戏世界、玩家、障碍物、目标和弹药范围。 还有各级别的实例，表示上述所有组件的配置以及每个特定级别的行为。 现在让我们了解游戏如何构建级别。
 
-## 生成和加载游戏关卡
+## <a name="building-and-loading-the-games-levels"></a>生成和加载游戏关卡
 
 
 大多数重要的关卡构建都在 **Level.h/.cpp** 文件中完成，这不在我们的讨论范围，因为它侧重于非常具体的实现。 重要的是每个关卡的代码都作为单独的 **LevelN** 对象运行。 如果你希望扩展游戏，则可以创建一个 **Level** 对象，采用分配的数字作为参数并随机放置障碍物和目标。 或者，你可以让其从源文件甚至 Internet 加载关卡配置数据！
 
-**Level.h/.cpp** 的完整代码在[此部分的完整示例代码](#code_sample)中提供。
+**Level.h/.cpp** 的完整代码在[此部分的完整示例代码](#complete-code-sample-for-this-section)中提供。
 
-## 定义游戏执行
+## <a name="defining-the-game-play"></a>定义游戏执行
 
 
 这时，我们已经有了装配游戏所需的全部组件。 已经在内存中从基元构建了级别，玩家可随时以某种方式开始与之交互。
@@ -649,7 +656,7 @@ GameState Simple3DGame::RunGame()
 
 下面是重要调用：`UpdateDynamics()`。 它可以使游戏世界富有生命。 下面我们了解一下！
 
-## 更新游戏世界
+## <a name="updating-the-game-world"></a>更新游戏世界
 
 
 快速和流畅的游戏体验使人感到游戏世界像*活*的一样，游戏本身的运动独立于玩家输入。 树木在风中摇摆，海浪拍打着海岸溅起朵朵浪花，机器烟雾缭绕并闪闪发光，外星怪物伸着懒腰、流着口水。 可以想像一下，如果所有景物一动不动，图形只在玩家提供输入时才移动，这样的游戏会是什么情况。 这会非常怪异，不会让人有身临其境的感觉。 对玩家而言，沉浸其中的体验要源于感觉自己处于一个活生生的世界中。
@@ -844,7 +851,7 @@ void Simple3DGame::UpdateDynamics()
 
 现在我们来看一下呈现方法。
 
-## 呈现游戏世界的图形
+## <a name="rendering-the-game-worlds-graphics"></a>呈现游戏世界的图形
 
 
 我们建议游戏中的图形最多在主游戏循环每次迭代时更新一次。 无论玩家是否输入，在循环迭代时都更新游戏。 这可以流畅地显示计算的动画和行为。 可以想像一个简单的水流场景，而水流仅在玩家按某个按钮时才移动会是什么情况。 这会造成一个非常乏味的视觉效果。 优秀的游戏看上去应该平滑流畅。
@@ -1041,12 +1048,12 @@ void GameRenderer::Render()
 
 注意，示例游戏的 Direct2D 覆盖层有两个状态：在一个状态中游戏显示包含暂停菜单的位图的游戏信息覆盖层，在另一状态中游戏显示触摸屏移动观看控制器的十字准线和矩形。 得分文本在两个状态中绘制。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 到目前为止，你可能对实际的呈现引擎感到好奇：在更新基元上对 **Render** 方法的调用如何转换为屏幕上的像素。 我们将在[装配呈现框架](tutorial--assembling-the-rendering-pipeline.md)中详细介绍此内容。 如果你对玩家控件如何更新游戏状态更感兴趣，请参阅[添加控件](tutorial--adding-controls.md)。
 
-## 这部分的完整代码示例
+## <a name="complete-code-sample-for-this-section"></a>这部分的完整代码示例
 
 
 Simple3DGame.h
@@ -3610,7 +3617,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 [使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)
@@ -3621,10 +3628,5 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

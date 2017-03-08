@@ -5,9 +5,16 @@ title: "表和透视表"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 865969a7c965a502acd9fe24df28128399efd380
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 93df9051bc0ae724e2c47f5ce5f73da3910c30ce
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="pivot-and-tabs"></a>透视表和表
@@ -136,9 +143,4 @@ ms.openlocfilehash: 865969a7c965a502acd9fe24df28128399efd380
 ## <a name="related-topics"></a>相关主题
 - [导航设计基础知识](../layout/navigation-basics.md)
 - [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

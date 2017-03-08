@@ -2,16 +2,24 @@
 author: payzer
 title: "如何禁用鼠标模式"
 description: "禁用默认鼠标模式说明。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 translationtype: Human Translation
-ms.sourcegitcommit: b4df1f944d909640791e4ed7e3bcf8d8bdf7a0d1
-ms.openlocfilehash: 91e530a3313d53c4e693b88a64b849f3188a72de
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 6848d1783df4489571fcf493a55447f67e5d6fd9
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 如何禁用鼠标模式
+# <a name="how-to-disable-mouse-mode"></a>如何禁用鼠标模式
 默认情况下，所有应用程序的鼠标模式都处于打开状态，这意味着未选择退出的所有应用程序将收到鼠标指针（类似于该主机的 Edge 浏览器中的情形）。 我们强烈建议你关闭此模式，并针对方向控制器导航进行优化。   
    
-## HTML   
+## <a name="html"></a>HTML   
 若要在 JavaScript 通用 Windows 平台 (UWP) 应用中打开方向控制器导航，请使用 [TVHelpers 方向导航](https://github.com/Microsoft/TVHelpers/wiki/Using-DirectionalNavigation) JavaScript 库。 将方向导航 JavaScript 文件包含在你的应用包中，并在需要方向控制器导航的所有 HTML 页面中添加对它的引用。
 
 ```code
@@ -27,7 +35,7 @@ navigator.gamepadInputEmulation = "gamepad";
 
    此属性默认为 `mouse`，可启用鼠标模式。 将它设置为 `keyboard` 可关闭鼠标模式，但游戏板输入将生成 DOM 键盘事件。 将它设置为 `gamepad` 可关闭鼠标模式，也不会生成 DOM 键盘事件，只允许你使用 DOM 或 WinRT 游戏板 API。
 
-## XAML    
+## <a name="xaml"></a>XAML    
 若要关闭鼠标模式，请将以下内容添加到应用的构造函数：   
    
 ```code
@@ -38,16 +46,11 @@ public App() {
 }
 ```
 
-## C++/DirectX   
+## <a name="cdirectx"></a>C++/DirectX   
 如果你要编写 C++/DirectX 应用，则无需执行任何操作。 鼠标模式仅适用于 HTML 和 XAML 应用程序。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [适用于 Xbox 的最佳做法](tailoring-for-xbox.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

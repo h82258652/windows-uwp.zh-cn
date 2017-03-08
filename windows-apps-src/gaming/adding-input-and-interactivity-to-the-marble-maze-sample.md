@@ -3,21 +3,28 @@ author: mtoepke
 title: "向 Marble Maze 示例添加输入和交互性"
 description: "通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, 输入, 示例"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc667be326950151b08bbaded6d4e9a0b109523b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 向 Marble Maze 添加输入和交互性示例
+# <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>向 Marble Maze 添加输入和交互性示例
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。 一台设备可拥有广泛的输入和控制机制。 支持多种输入设备，使你的游戏能够适应更广泛的客户偏好和能力。 本文档介绍了在使用输入设备时要记住的重要实践，并展示了 Marble Maze 如何应用这些实践。
 
-> **注意** 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
+> **注意**   与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011) 中。
 
  
 本文档讨论了在游戏中使用输入时的一些重要事项：
@@ -29,20 +36,20 @@ ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
 -   Xbox 360 控制器和加速计支持轮询。 也就是说，你可在需要数据时轮询它。 对于触摸，在可供你的输入处理代码访问的数据结构中记录各种触摸事件。
 -   考虑是否将输入值规范化为一种通用格式。 这么做可简化游戏的其他组件如何解释输入内容，例如力学模拟，还可以使编写适用于不同屏幕分辨率的游戏更容易。
 
-## Marble Maze 支持的输入设备
+## <a name="input-devices-supported-by-marble-maze"></a>Marble Maze 支持的输入设备
 
 
 Marble Maze 支持通过 Xbox 360 通用控制器设备、鼠标和触摸来选择菜单项，支持通过 Xbox 360 控制器、鼠标、触摸和加速计来控制游戏。 Marble Maze 使用 XInput API 在控制器中轮询输入。 触摸让应用能够跟踪和响应指尖输入。 加速计是一种度量力量的传感器，它沿 x、y 和 z 轴应用。 通过使用 Windows 运行时，可轮询加速计设备的当前状态，以及通过 Windows 运行时事件处理机制接收触摸事件。
 
-> **注意** 本文档使用触摸表示触摸和鼠标输入，使用指针表示任何使用指针事件的设备。 因为触摸和鼠标使用标准指针事件，所以你可使用任何一种设备来选择菜单项和控制游戏。
+> **注意**  本文档使用触摸表示触摸和鼠标输入，使用指针表示任何使用指针事件的设备。 因为触摸和鼠标使用标准指针事件，所以你可使用任何一种设备来选择菜单项和控制游戏。
 
  
 
-> **注意** 程序包清单将 Landscape 设置为支持的游戏方向，以免在旋转设备来滚动弹珠时更改方向。
+> **注意**  程序包清单将 Landscape 设置为支持的旋转方向，以免在旋转设备来滚动弹珠时更改方向。
 
  
 
-## 初始化输入设备
+## <a name="initializing-input-devices"></a>初始化输入设备
 
 
 Xbox 360 控制器不需要初始化。 要初始化触摸，必须注册窗口事件，例如指针被激活（例如，用户按下鼠标按钮或触摸屏幕）、释放和移动时。 若要初始化加速计，必须在初始化应用程序时创建一个 [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) 对象。
@@ -79,10 +86,10 @@ Accelerometer 对象在 MarbleMaze::Initialize 方法中初始化，如下面的
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  导航菜单
+##  <a name="navigating-the-menus"></a>导航菜单
 
 
-###  跟踪 Xbox 360 控制器输入
+###  <a name="tracking-xbox-360-controller-input"></a>跟踪 Xbox 360 控制器输入
 
 可使用鼠标、触摸或 Xbox 360 控制器导航菜单，如下所示：
 
@@ -91,7 +98,7 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 -   使用“开始”按钮暂停或恢复游戏。
 -   使用鼠标单击一个菜单项可选择该操作。
 
-###  跟踪触摸和鼠标输入
+###  <a name="tracking-touch-and-mouse-input"></a>跟踪触摸和鼠标输入
 
 为了跟踪 Xbox 360 控制器输入，**MarbleMaze::Update** 方法定义一个可定义输入行为的按钮数组。 XInput 仅提供控制器的当前状态。 因此，无论是否已在前一帧中按下每个按钮，以及无论是否目前已按下每个按钮，**MarbleMaze::Update** 还可定义两个数组，分别跟踪每个可能的 Xbox 360 控制器。
 
@@ -243,7 +250,7 @@ case GameState::InGamePaused:
 memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 ```
 
-### 跟踪触摸和鼠标输入
+### <a name="tracking-touch-and-mouse-input"></a>跟踪触摸和鼠标输入
 
 对于触摸和鼠标输入，用户可通过触摸或单击一个菜单项来选择它。 下面的示例展示了 **MarbleMaze::Update** 方法如何处理指针输入来选择菜单项。 **m\_pointQueue** 成员变量跟踪用户在屏幕上触摸或单击的位置。 Marble Maze 收集指针输入的方式将在本文档后面“处理指针输入”一节中详细介绍。
 
@@ -277,7 +284,7 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### 更新游戏状态
+### <a name="updating-the-game-state"></a>更新游戏状态
 
 在 **MarbleMaze::Update** 方法处理控制器和触摸输入后，如果按下任何按钮，它会更新游戏状态。
 
@@ -295,7 +302,7 @@ if (m_highScoreButton.IsPressed())
 }
 ```
 
-##  控制游戏
+##  <a name="controlling-game-play"></a>控制游戏
 
 
 游戏循环和 **MarbleMaze::Update** 方法一起更新游戏对象的状态。 如果游戏接受来自多台设备的输入，你可将来自所有设备的输入累积到一个变量集中，以便能编写更易于维护的代码。 **MarbleMaze::Update** 方法定义一个可累积来自所有设备的运动的变量集。
@@ -307,7 +314,7 @@ float combinedTiltY = 0.0f;
 
 不同输入设备的输入机制可能不同。 例如，指针输入使用 Windows 运行时事件处理模型来处理。 相反，在需要时轮询来自 Xbox 360 控制器的输入数据。 我们建议你始终遵循为给定设备规定的输入机制。 本节介绍 Marble Maze 如何从每个设备读取输入，它如何更新组合的输入值，以及它如何使用组合的输入值更新游戏的状态。
 
-###  处理指针输入
+###  <a name="processing-pointer-input"></a>处理指针输入
 
 处理指针输入时，可调用 [**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) 方法来处理窗口事件。 在更新或呈现场景之前，在游戏循环中调用此方法。 Marble Maze 将 **CoreProcessEventsOption::ProcessAllIfPresent** 传递到此方法以处理所有排队的事件，然后立即返回。 在处理事件后，Marble Maze 呈现并显示下一帧。
 
@@ -391,7 +398,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 }
 ```
 
-### 处理加速计输入
+### <a name="processing-accelerometer-input"></a>处理加速计输入
 
 若要处理加速计输入，**MarbleMaze::Update** 方法会调用 [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) 方法。 此方法返回一个 [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) 对象，它表示一个加速计读数。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 属性具有分别沿 x 和 y 轴的 G-Force 加速。
 
@@ -415,7 +422,7 @@ if (m_accelerometer != nullptr)
 
 因为无法确保用户计算机上是否有加速计，所以始终要在轮询加速计之前确保你有一个有效的 Accelerometer 对象。
 
-### 处理 Xbox 360 控制器输入
+### <a name="processing-xbox-360-controller-input"></a>处理 Xbox 360 控制器输入
 
 下面的示例展示了 **MarbleMaze::Update** 方法如何从 Xbox 360 控制器读取数据并更新组合的输入值。 **MarbleMaze::Update** 方法使用一个 for 循环来支持从任何连接的控制器接收输入。 **XInputGetState** 方法在一个 XINPUT_STATE 对象中填入控制器的当前状态。 根据左操纵杆的 x 和 y 值来更新 **combinedTiltX** 和 **combinedTiltY** 值。
 
@@ -446,15 +453,15 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 
 XInput 定义左操纵杆的 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** 常量。 这是大多数游戏的一个合适的死区阈值。
 
-> **重要提示** 使用 Xbox 360 控制器时，始终要考虑死区。 死区指各个游戏板在对初始移动的敏感性上的差异。 在一些控制器中，较小的运动可能不会生成读数，但在其他控制器中，它可能生成明显的读数。 若要在游戏中考虑此情形，可为初始操纵杆运动创建一个不运动区域。 有关死区的详细信息，请参阅 [XInput 入门](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
+> **重要提示**  使用 Xbox 360 控制器时，请始终考虑死区。 死区指各个游戏板在对初始移动的敏感性上的差异。 在一些控制器中，较小的运动可能不会生成读数，但在其他控制器中，它可能生成明显的读数。 若要在游戏中考虑此情形，可为初始操纵杆运动创建一个不运动区域。 有关死区的详细信息，请参阅 [XInput 入门](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
 
  
 
-###  将输入应用到游戏状态
+###  <a name="applying-input-to-the-game-state"></a>将输入应用到游戏状态
 
 设备以不同方式报告输入值。 例如，指针输入可能采用屏幕坐标格式，而控制器输入可能采用完全不同的格式。 将来自多台设备的输入组合到一组输入值中的一项挑战是标准化，或者将值转换为通用格式。 Marble Maze 通过在 \[-1.0, 1.0\] 区间内缩放这些值来规范化它们。 若要规范化 Xbox 360 控制器输入，Marble Maze 将输入值除以 32768，因为操纵杆输入值始终位于 -32768 与 32767 之间。 **PointToTouch** 函数（本节前面已介绍）通过将屏幕坐标转换为大体在 -1.0 与 +1.0 之间的规范化值，实现一种类似的结果。
 
-> **提示** 即使你的应用程序仅使用一种输入方法，我们也建议你始终规范化输入值。 执行此操作可简化游戏的其他组件如何解释输入（例如力学模拟），以及使编写适用于不同屏幕分辨率的游戏更容易。
+> **提示**  即使你的应用程序仅使用一种输入方法，我们也建议你始终规范输入值。 执行此操作可简化游戏的其他组件如何解释输入（例如力学模拟），以及使编写适用于不同屏幕分辨率的游戏更容易。
 
  
 
@@ -505,12 +512,12 @@ if (marblePosition.z >= resetDepth)
 
 本节没有介绍力学模拟的工作原理。 有关这方面的细节，请参阅 Marble Maze 源代码中的 Physics.h 和 Physics.cpp。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 查阅[向 Marble Maze 添加音频示例](adding-audio-to-the-marble-maze-sample.md)，了解在使用音频时要记住的一些重要实践。 本文档讨论了 Marble Maze 如何使用 Microsoft 媒体基础和 XAudio2 来加载、混合和播放音频资源。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [向 Marble Maze 添加音频示例](adding-audio-to-the-marble-maze-sample.md)
@@ -523,10 +530,5 @@ if (marblePosition.z >= resetDepth)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

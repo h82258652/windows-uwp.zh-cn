@@ -5,18 +5,25 @@ title: "磁贴"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11640527ffdb6883885345646310e5e4b786ad2b
+ms.lasthandoff: 02/07/2017
 
 ---
-# 适用于 UWP 应用的磁贴
+# <a name="tiles-for-uwp-apps"></a>适用于 UWP 应用的磁贴
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 *磁贴*是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。 应用首次安装时，Windows 将显示此磁贴。 应用安装后，可通过通知更改磁贴内容，例如，可更改磁贴以将新信息传递给用户（如头条新闻或最近未读邮件的主题）。
 
-## 配置默认磁贴
+## <a name="configure-the-default-tile"></a>配置默认磁贴
 
 
 当在 Visual Studio 中创建新项目时，它将创建显示应用名称和徽标的简单默认磁贴。
@@ -76,7 +83,7 @@ ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
       </Applications>
 ```
 
-## 使用通知自定义磁贴
+## <a name="use-notifications-to-customize-your-tile"></a>使用通知自定义磁贴
 
 
 应用安装后，可使用通知自定义磁贴。 可在首次启动应用或响应某个事件（如推送通知）时执行此操作。
@@ -100,10 +107,5 @@ ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

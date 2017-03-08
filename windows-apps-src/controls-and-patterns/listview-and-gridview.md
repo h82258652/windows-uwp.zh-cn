@@ -4,9 +4,17 @@ Description: "使用列表视图或网格视图控件显示和操控数据组，
 title: "列表视图和网格视图"
 label: List view and grid view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 2887e2aed2c3b638343f2bd211c32f99b3c7da1a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fd8d538e6431bbff011c99ce8d17736d70f0c0ea
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="listview-and-gridview"></a>ListView 和 GridView
@@ -514,9 +522,4 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 - [列表](lists.md)
 - [列表视图项模板](listview-item-templates.md)
 - [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

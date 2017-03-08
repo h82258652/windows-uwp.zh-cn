@@ -3,16 +3,23 @@ author: mtoepke
 title: "Marble Maze 应用程序结构"
 description: "DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。"
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 示例, directx, 结构"
 translationtype: Human Translation
-ms.sourcegitcommit: 931d790ea54ff9ff27202f6c92d415b17e2215ed
-ms.openlocfilehash: 696d4227bcd3ff4238d81e6f951a61e098fbc2f6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1045bed8d7e4e8f9ead1c144dda02f900d0eb996
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 **HWND**）和函数（如 **CreateWindow**）。 文档的这一部分介绍了如何构造 Marble Maze 应用程序代码。
@@ -374,10 +381,5 @@ void MarbleMaze::LoadState()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

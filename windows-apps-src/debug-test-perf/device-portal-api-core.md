@@ -3,9 +3,16 @@ author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 参考"
 description: "了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
-ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 10d8799b73a941a4a0eb89fd369d67b2fc6a68c2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -222,7 +229,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="device-manager"></a>设备管理器
+## Device manager
 ---
 ### <a name="get-the-installed-devices-on-the-machine"></a>获取计算机上已安装的设备
 
@@ -281,7 +288,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="dump-collection"></a>转储集合
+## Dump collection
 ---
 ### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>获取应用的所有故障转储列表
 
@@ -865,7 +872,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="etw"></a>ETW
+## ETW
 ---
 ### <a name="create-a-realtime-etw-session-over-a-websocket"></a>通过 WebSocket 创建实时 ETW 会话
 
@@ -925,7 +932,7 @@ HTTP 状态代码      | 说明
     "Events":[
         {
             "Timestamp": int,
-            "Provider": string,
+            "ProviderName": string,
             "ID": int, 
             "TaskName": string,
             "Keyword": int,
@@ -1060,7 +1067,7 @@ GET | /api/etw/customproviders
 * IoT
 
 ---
-## <a name="os-information"></a>操作系统信息
+## OS information
 ---
 ### <a name="get-the-machine-name"></a>获取计算机名称
 
@@ -1268,7 +1275,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="performance-data"></a>性能数据
+## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>获取正在运行的进程列表
 
@@ -1410,7 +1417,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="power"></a>电源
+## Power
 ---
 ### <a name="get-the-current-battery-state"></a>获取当前的电池状态
 
@@ -1523,7 +1530,7 @@ HTTP 状态代码      | 说明
  
 方法      | 请求 URI
 :------     | :-----
-GET | /api/power/cfg/
+GET | /api/power/cfg/*<power scheme path>*
 <br />
 选项：
 - SCHEME_CURRENT
@@ -1658,7 +1665,7 @@ HTTP 状态代码      | 说明
  
 方法      | 请求 URI
 :------     | :-----
-POST | /api/power/cfg/
+POST | /api/power/cfg/*<power scheme path>*
 <br />
 
 **URI 参数**
@@ -1831,7 +1838,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="remote-control"></a>远程控制
+## Remote control
 ---
 ### <a name="restart-the-target-computer"></a>重新启动目标计算机
 
@@ -1919,7 +1926,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="task-manager"></a>任务管理器
+## Task manager
 ---
 ### <a name="start-a-modern-app"></a>启动现代应用
 
@@ -2019,7 +2026,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="networking"></a>网络
+## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>获取当前的 IP 配置
 
@@ -2336,7 +2343,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="windows-error-reporting-wer"></a>Windows 错误报告 (WER)
+## Windows Error Reporting (WER)
 ---
 ### <a name="download-a-windows-error-reporting-wer-file"></a>下载 Windows 错误报告 (WER) 文件
 
@@ -2502,7 +2509,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
+## Windows Performance Recorder (WPR) 
 ---
 ### <a name="start-tracing-with-a-custom-profile"></a>使用自定义配置文件开始跟踪
 
@@ -2965,7 +2972,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## <a name="dns-sd-tags"></a>DNS-SD 标记 
+## DNS-SD Tags 
 ---
 ### <a name="view-tags"></a>查看标记
 
@@ -3465,8 +3472,3 @@ HTTP 状态代码      | 说明
 * HoloLens
 * Xbox
 * IoT
-
-
-<!--HONumber=Dec16_HO1-->
-
-

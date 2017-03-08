@@ -3,13 +3,20 @@ author: mtoepke
 title: "将阴影映射呈现到深度缓冲区"
 description: "从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。"
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 呈现, 阴影映射, 深度缓冲区, direct3d"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将阴影映射呈现到深度缓冲区
+# <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
 
 从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 2 部分。
 
-## 清除深度缓冲区
+## <a name="clear-the-depth-buffer"></a>清除深度缓冲区
 
 
 呈现到深度缓冲区之前，始终清除深度缓冲区。
@@ -27,7 +34,7 @@ context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## 将阴影映射呈现到深度缓冲区
+## <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 
 
 对于阴影呈现通道，指定深度缓冲区，但不指定呈现目标。
@@ -124,7 +131,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 
 **优化视锥：**确保你的实现计算一个严密的视锥，以便在深度缓冲区之外获得最大精度。 有关阴影技术的更多提示，请参阅[改进阴影深度映射的常用技术](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
 
-## 阴影通道的顶点着色器
+## <a name="vertex-shader-for-shadow-pass"></a>阴影通道的顶点着色器
 
 
 使用简化版的顶点着色器在光线空间中仅呈现顶点位置。 不要包含任何照明法线、二次转换等。
@@ -153,10 +160,5 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,13 +3,20 @@ title: "指纹生物识别"
 description: "本文介绍了如何将指纹生物识别添加到通用 Windows 平台 (UWP) 应用中。"
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 指纹生物识别
+# <a name="fingerprint-biometrics"></a>指纹生物识别
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
 
 本文介绍了如何将指纹生物识别添加到通用 Windows 平台 (UWP) 应用中。 在用户必须同意特定操作时将指纹身份验证请求囊括在内，将提升应用的安全性。 例如，可在授权应用内购买或对受限资源的访问权限之前要求指纹身份验证。 指纹身份验证使用 [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空间中的 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 类进行管理。
 
-## 检查设备以寻找指纹读取器
+## <a name="check-the-device-for-a-fingerprint-reader"></a>检查设备以寻找指纹读取器
 
 
 若要查找设备是否安装了指纹读取器，请调用 [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138)。 即使设备支持指纹身份验证，应用仍应当在“设置”中向用户提供相应选项，以便启用或禁用指纹身份验证。
@@ -64,7 +71,7 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## 请求同意并返回结果
+## <a name="request-consent-and-return-results"></a>请求同意并返回结果
 
 
 若要请求来自指纹扫描的用户同意，请调用 [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) 方法。 要使指纹身份验证起效，用户必须预先将指纹“签名”添加到指纹数据库中。
@@ -123,8 +130,3 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
     return returnMessage;
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

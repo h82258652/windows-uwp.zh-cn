@@ -3,17 +3,24 @@ author: mcleblanc
 description: "熟悉 Visual Studio 环境"
 title: "熟悉 Visual Studio 环境"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 入门：熟悉 Visual Studio 环境
+# <a name="getting-started-getting-around-in-visual-studio"></a>入门：熟悉 Visual Studio 环境
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 熟悉 Microsof Visual Studio 环境
+## <a name="getting-around-in-microsoft-visual-studio"></a>熟悉 Microsof Visual Studio 环境
 
 现在让我们回到先前创建的项目，并且看看如何在 Microsoft Visual Studio 集成开发环境 (IDE) 中进行开发。
 
@@ -27,7 +34,7 @@ Microsoft Visual Studio 与此非常相似，只不过默认视图的控件在�
 
 如果你对此感到些许陌生，那么你一定很高兴地知道，在 Visual Studio 中可以重新排列窗格、将源文件放置在屏幕左侧并将工具箱放置在屏幕右侧。 实际上，可单击并拖动任何窗格的标题栏，以将其重新放置，而且 Visual Studio 将显示告诉你标题栏在释放后会停靠在哪里的阴影框。 许多窗格在其标题栏上还有一个细小的绘图固定图标。 此图标可让你按其现在的样子固定面板，即锁定在某个位置。 取消固定窗格，而且它可以折叠以节省空间：如果显示器的尺寸较小，这一点将很有用。 如果扰乱了操作（不必担心，我们都做过这事），请选择“窗口”****菜单中的“重置窗口布局”****以还原顺序。
 
-## 添加控件、设置控件属性并响应事件
+## <a name="adding-controls-setting-their-properties-and-responding-to-events"></a>添加控件、设置控件属性并响应事件
 
 现在让我们将一些控件添加到你的项目中。 然后，我们将更改控件的一些属性，并编写一些代码来响应某个控件的事件。
 
@@ -119,13 +126,8 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 要退出该应用，返回到 Visual Studio，请点击“调试”****菜单，然后点击“停止调试”****（或者直接按 Shift + F5）。 请注意，Visual Studio 可让你在多种不同的设备上尝试应用，以查看其在每台设备的执行方式。
 
-## 下一步
+## <a name="next-step"></a>下一步
 
 [入门：常见控件](getting-started-common-controls.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

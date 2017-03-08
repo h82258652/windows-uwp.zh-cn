@@ -3,13 +3,20 @@ author: mtoepke
 title: "移植着色器对象"
 description: "移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。"
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 移植, 着色器, direct3d, opengl"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f683e8b6ad04b1350adae1c962da09e2f15f5cec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植着色器对象
+# <a name="port-the-shader-objects"></a>移植着色器对象
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,16 +29,16 @@ ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
 
 移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。
 
-> **注意** 是否创建了新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
+> **注意**   是否创建了新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
 
  
 
 与 OpenGL ES 2.0 非常相似，必须将 Direct3D 中已编译的着色器与绘制上下文相关联。 但是，Direct3D 本身没有着色器程序对象的概念，你必须将着色器直接分配给 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)。 该步骤遵循 OpenGL ES 2.0 创建和绑定着色器对象的过程，并且为你提供了 Direct3D 中的相应 API 行为。
 
-说明
+<a name="instructions"></a>说明
 ------------
 
-### 步骤 1：编译着色器
+### <a name="step-1-compile-the-shaders"></a>步骤 1：编译着色器
 
 在这个简单的 OpenGL ES 2.0 示例中，着色器存储为文本文件，并作为字符串数据进行加载以供在运行时编译。
 
@@ -75,7 +82,7 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 在 Direct3D 中，着色器不是在运行时期间编译的，当编译程序的其余部分时，它们始终被编译为 CSO 文件。 当使用 Microsoft Visual Studio 编译应用时，HLSL 文件被编译为应用必须加载的 CSO (.cso) 文件。 确保在打包时将这些 CSO 文件与你的应用包含在一起。
 
-> **注意** 以下示例使用 **auto** 关键字和 lambda 语法异步执行着色器加载和编译。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
+> **注意**   以下示例使用 **auto** 关键字和 lambda 语法异步执行着色器加载和编译。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
 
  
 
@@ -102,7 +109,7 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### 步骤 2：创建和加载顶点着色器和片段（像素）着色器
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>步骤 2：创建和加载顶点着色器和片段（像素）着色器
 
 OpenGL ES 2.0 包含着色器“程序”的概念，该程序充当在 CPU 上运行的主程序与在 CPU 上执行的着色器之间的接口。 通过一个能够在 GPU 上执行的程序来编译（或从编译的源加载）和关联着色器。
 
@@ -181,7 +188,7 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### 步骤 3：定义要提供给着色器的数据
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>步骤 3：定义要提供给着色器的数据
 
 在我们的 OpenGL ES 2.0 示例中，我们有一个要为着色器管道声明的 **uniform**：
 
@@ -298,11 +305,11 @@ m_d3dContext->UpdateSubresource(
 
 创建和更新顶点缓冲区非常类似，下一步[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)中对此进行了介绍。
 
-下一步
+<a name="next-step"></a>下一步
 ---------
 
 [移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -319,10 +326,5 @@ m_d3dContext->UpdateSubresource(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

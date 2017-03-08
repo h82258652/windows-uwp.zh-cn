@@ -2,13 +2,20 @@
 author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: "图形和动画"
-description: "本部分中的主题帮助你开始在应用商店应用中使用图形和动画。"
+description: "本节中的主题帮助你开始在应用商店应用中使用图形和动画。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fafb0e013e1eef5fba2c5ec24b235df5c3c8429a
+ms.lasthandoff: 02/07/2017
 
 ---
-# 图形和动画
+# <a name="graphics-and-animation"></a>图形和动画
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -35,10 +42,5 @@ ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

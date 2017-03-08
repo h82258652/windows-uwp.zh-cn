@@ -3,31 +3,38 @@ author: jnHs
 Description: "应用提交过程的“应用属性”页允许你定义应用类别并指示硬件首选项或其他声明。"
 title: "输入应用属性"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 345350cea16b850e49f6f958e304654aba1299bb
-ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 008c073844332aadbc17def774aae16f3ae01513
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 输入应用属性
+# <a name="enter-app-properties"></a>输入应用属性
 
-[应用提交过程](app-submissions.md)的“应用属性”****页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
+[应用提交过程](app-submissions.md)的**应用属性**页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
 
-> **注意** 年龄分级现在位于提交过程中的单独页面上。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
+> **注意**  年龄分级现在位于提交过程中的单独页面上。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
 
-## 类别和子类别
+## <a name="category-and-subcategory"></a>类别和子类别
 
 在本部分中，你将指示应用商店用于对应用进行归类的类别（和子类别，如适用）。 提交应用需要指定类别。
 
 有关详细信息，请参阅[类别和子类别表](category-and-subcategory-table.md)。
 
-## 产品声明
+## <a name="product-declarations"></a>产品声明
 
 你可以在本部分中选中相应复选框以指示任意声明是否适用于你的应用。 无论应用是否提供给某些客户，这都会影响应用的显示方式，或客户使用应用的方式。
 
 有关详细信息，请参阅[应用声明](app-declarations.md)。
 
-## 系统要求
+## <a name="system-requirements"></a>系统要求
 
 在本部分中，你可以选择指示是否需要或推荐某些硬件功能以使应用正常运行并与之正确交互。 可以选中每个想要指定“最低硬件要求”****和/或“推荐的硬件要求”****的硬件项的框（或指示相应选项）。
 
@@ -48,12 +55,7 @@ ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
 
 我们还建议将针对指定硬件的运行时检查添加到应用中，因为应用商店可能并不总是能够检测到客户的设备缺少所选功能，而且即使已显示警告，他们仍然能够下载应用。
 
-> **提示** 如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 StoreManifest XML 文件中指定最低要求。 有关详细信息，请参阅 [StoreManifest 架构 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
+> **提示**  如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 StoreManifest XML 文件中指定最低要求。 有关详细信息，请参阅 [StoreManifest 架构 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

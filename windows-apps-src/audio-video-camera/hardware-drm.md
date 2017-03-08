@@ -3,15 +3,22 @@ author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: "本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。"
 title: "硬件 DRM"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 56d79a93704021fc18d3e72d00738d0ce7acba91
-ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a6d2ea23cb0720d8fe6c7aa581c42db6e025d146
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 硬件 DRM
+# <a name="hardware-drm"></a>硬件 DRM
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
 
 越来越多的内容提供商选择基于硬件的保护，以授权在应用中播放完整高值内容。 为满足此要求，已向 PlayReady 添加了针对加密核心硬件实现的可靠支持。 此支持可以使多个设备平台安全播放高清 (1080p) 和超高清 (UHD) 内容。 利用硬件安全保护密钥材料（包括私钥、内容密钥和任何其他用于派生或解锁上述密钥的密钥材料）以及解密的压缩和未压缩视频示例。
 
-## Windows TEE 实现
+## <a name="windows-tee-implementation"></a>Windows TEE 实现
 
 本主题简要概述了 Windows 10 如何实现受信任的执行环境 (TEE)。
 
@@ -28,7 +35,7 @@ Windows TEE 实现的详细信息不在本文档范围内。 但是，简要讨�
 
 ![Windows TEE 组件图](images/windowsteecomponentdiagram720.jpg)
 
-## 使用硬件 DRM 的注意事项
+## <a name="considerations-for-using-hardware-drm"></a>使用硬件 DRM 的注意事项
 
 本主题提供在开发旨在使用硬件 DRM 的应用时应考虑的事项的简短列表。 如 [PlayReady DRM](playready-client-sdk.md#output-protection) 中所述，使用适用于 Windows 10 的 PlayReady HWDRM 时，所有输出保护均可从 Windows TEE 实现中强制执行，从而对输出保护行为产生一些影响：
 
@@ -54,7 +61,7 @@ Windows TEE 实现的详细信息不在本文档范围内。 但是，简要讨�
 
 为了防止播放由于硬件无法解密许可证而失败，PlayReady 为其遇到的每个图形卡使用单独的 HDS。 这将导致 PlayReady 尝试为一部分内容获取许可证，但 PlayReady 已经具有该部分内容的许可证（即，在软件 DRM 的情况下或任何其他没有硬件更改的情况下，PlayReady 无需重新获取许可证）。 因此，如果应用在使用硬件 DRM 时获取了持久性许可证，它必须能够在最终用户安装（或卸载）显卡时，处理该许可证有效“丢失”的情况。 由于这不是常见情况，当硬件更改后内容不再播放时，你可能会决定处理支持电话，而不是搞清楚如何在客户端/服务器代码中处理硬件更改。
 
-## 替代硬件 DRM
+## <a name="override-hardware-drm"></a>替代硬件 DRM
 
 本部分介绍如何在要播放的内容不支持硬件 DRM 时替代硬件 DRM (HWDRM)。
 
@@ -82,7 +89,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 -   如果你具有另一个 \*.hds 文件，则使用的是硬件 DRM。
 -   也可以删除整个 PlayReady 文件夹，然后重新进行测试。
 
-## 检测硬件 DRM 的类型
+## <a name="detect-the-type-of-hardware-drm"></a>检测硬件 DRM 的类型
 
 本部分介绍如何检测系统上支持哪些类型的硬件 DRM。
 
@@ -96,11 +103,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 还可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 属性获取客户端证书的安全级别，以确定硬件 DRM 是否受支持。 除非返回的证书安全级别大于或等于3000，否则将不个性化或预配客户端（在这种情况下此属性返回值为 0），或者硬件 DRM 将处于未使用状态（在这种情况下该属性将返回小于 3000 的值）。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

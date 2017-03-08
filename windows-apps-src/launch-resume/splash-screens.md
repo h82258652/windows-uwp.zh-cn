@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: "初始屏幕"
 description: "此部分介绍如何设置和配置应用的初始屏幕。"
+ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 023e37bb6f9b8d8d780bb0a536cb469c87a31ed4
-ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51add4631b807940e051a8f4cbaca92063e41d4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,8 +36,3 @@ ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |
-
-
-<!--HONumber=Dec16_HO1-->
-
-

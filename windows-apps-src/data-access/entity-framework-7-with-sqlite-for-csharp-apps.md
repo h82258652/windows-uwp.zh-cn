@@ -3,15 +3,22 @@ author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: "Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于域的对象处理关系数据。"
 title: "面向 C# 应用的带有 SQLite 的 Entity Framework 7"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, SQLite, C#, EF, 实体框架"
 translationtype: Human Translation
-ms.sourcegitcommit: a4680f50b8ef45e4e995d0b9997c0266478fe233
-ms.openlocfilehash: 07244b35b2ec20227bccc43638b56b9fda88956a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ab2a12f6c2bc2f0f8853b404afaf13bf80635b7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 面向 C# 应用的带有 SQLite 的 Entity Framework Core 1
+# <a name="entity-framework-core-1-with-sqlite-for-c-apps"></a>面向 C# 应用的带有 SQLite 的 Entity Framework Core 1
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于域的对象处理关系数据。 本文介绍如何在通用 Windows 应用中使用带有 SQLite 数据库的 Entity Framework Core 1。
 
@@ -25,10 +32,4 @@ Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于�
 -   创建模型
 -   创建数据库
 -   使用模型
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

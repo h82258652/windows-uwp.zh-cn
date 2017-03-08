@@ -5,9 +5,17 @@ MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 信息保护 (WIP)"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用"
+ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 translationtype: Human Translation
-ms.sourcegitcommit: 8a0ce7282ffaf76bcea94eec5ec3e3ceb99aa5ac
-ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -17,6 +25,7 @@ ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
   __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
 
 WIP 通过强制执行组织定义的策略来保护属于组织的数据。 如果你的应用包括在这些策略中，则你的应用生成的所有数据都将受到策略限制。 本主题帮助你生成可更流畅地强制执行这些策略的应用，而不对用户的个人数据造成任何影响。
+<iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="first-what-is-wip"></a>首先，什么是 WIP？
 
@@ -92,9 +101,4 @@ END
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

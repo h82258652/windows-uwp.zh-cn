@@ -3,19 +3,26 @@ description: "本文将说明如何在通用 Windows 平台 (UWP) 应用中支�
 title: "共享数据"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 554a2cd1db0f950b8a04a5d562f6a6ba43f1be23
-ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59039fbd2cc54c757acabba7f0c981059ef95c56
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 共享数据
+# <a name="share-data"></a>共享数据
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文将说明如何在通用 Windows 平台 (UWP) 应用中支持“共享”合约。 “共享”合约是一种在应用之间快速共享文本、链接、照片和视频等数据的简便方法。 例如，用户可能希望使用社交网络应用与其好友共享网页，或者将链接保存在笔记应用中以供日后参考。
 
-## 设置事件处理程序
+## <a name="set-up-an-event-handler"></a>设置事件处理程序
 
 添加 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件处理程序以在用户每次调用共享时调用。 这种情况既会在用户点击应用中的控件（例如按钮或应用栏命令）时发生，也会在特定情况下（例如，如果用户完成某一关并获得了较高分数）自动发生。
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## 选择数据
+## <a name="choose-data"></a>选择数据
 
 你可以共享各种类型的数据，包括：
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## 设置属性
+## <a name="set-properties"></a>设置属性
 
 当你打包数据进行共享时，可以给出各种可提供与共享内容相关的其他信息的属性。 这些属性帮助目标应用改善用户体验。 例如，当用户通过多个应用共享内容时，可提供说明帮助。 共享图像或指向网页的链接时，添加一个缩略图可为用户提供直观的参考。 有关详细信息，请参阅 [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)。
 
@@ -50,17 +57,17 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## 启动共享 UI
+## <a name="launch-the-share-ui"></a>启动共享 UI
 
 用于共享的 UI 由系统提供。 若要启动它，请调用 [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI) 方法。
 
 [!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## 处理错误
+## <a name="handle-errors"></a>处理错误
 
 在大多数情况下，共享内容是一个简单直接的过程。 然而，意外总是有可能发生。 例如，应用可能需要用户选择用于共享的内容，但用户未选择任何内容。 若要处理这些情况，请使用 [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)) 方法，它将在出现问题时向用户显示一条消息。
 
-## 通过委托延迟共享
+## <a name="delay-share-with-delegates"></a>通过委托延迟共享
 
 有时，它可能不宜立即准备用户要共享的数据。 例如，如果你的应用支持以几种可能的不同格式发送一个较大的图像文件，在用户进行选择之前，创建所有这些图像的效率非常低。
 
@@ -91,7 +98,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## 另请参阅 
+## <a name="see-also"></a>另请参阅 
 
 * [App-to-app communication](index.md)
 * [接收数据](receive-data.md)
@@ -102,10 +109,5 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
 * [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

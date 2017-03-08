@@ -1,34 +1,41 @@
 ---
 author: TylerMSFT
-ms.assetid: 
+ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: "本文介绍了如何在将应用移动到后台时减少内存。"
 title: "在应用移动到后台状态时减少内存使用量"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: bf0cb8f072a2a6974ab582329d8b482add37f1d9
-ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 在将应用移动到后台时释放内存
+# <a name="free-memory-when-your-app-moves-to-the-background"></a>在将应用移动到后台时释放内存
 
-本文介绍了如何在将应用移至后台状态时减少应用使用的内存量，以便它不会暂停和终止。
+本文介绍了如何在将应用移至后台状态时减少应用使用的内存量，以防止应用暂停和可能发生的终止。
 
-## 新的后台事件
+## <a name="new-background-events"></a>新的后台事件
 
 Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 借助这些事件，应用将知道进入和退出后台的时间。
 
 当应用进入后台时，由系统强制执行的内存约束可能会更改。 使用这些事件检查当前的内存占用，以便保持在限制以下，这样当应用在后台运行时，它将不会暂停和终止。
 
-### 控制应用内存使用量的事件
+### <a name="events-for-controlling-your-apps-memory-usage"></a>控制应用内存使用量的事件
 
-[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) 仅在应用可以使用的总内存限制更改时引发。 例如，当应用进入后台，Xbox 上的内存限制从 1024MB 更改为 128MB 时。  
+[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) 仅在应用可以使用的总内存限制更改时引发。 例如，当应用进入后台，Xbox 上的内存限制从 1024MB 更改为 128MB 时。  
 为防止平台暂停或终止应用，这是需要处理的最重要的事件。
 
-当应用的内存占用增加到了 [AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.appmemoryusagelevel.aspx) 枚举中的较高值时，将引发 [MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx)。 例如，从**低**到**中**。 处理此事件是可选项，但建议这样做，因为应用程序仍负责保持在限制以下。
+当应用的内存占用增加到了 [AppMemoryUsageLevel](https://msdn.microsoft.com/library/windows/apps/windows.system.appmemoryusagelevel.aspx) 枚举中的较高值时，将引发 [MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx)。 例如，从**低**到**中**。 处理此事件是可选项，但建议这样做，因为应用程序仍负责保持在限制以下。
 
-当应用的内存占用降低到了 **AppMemoryUsageLevel** 枚举中的较低值时，将引发 [MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx)。 例如，从**高**到**低**。 处理此事件是可选项，但指示应用程序可以根据需要分配额外的内存。
+当应用的内存占用降低到了 **AppMemoryUsageLevel** 枚举中的较低值时，将引发 [MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx)。 例如，从**高**到**低**。 处理此事件是可选项，但指示应用程序可以根据需要分配额外的内存。
 
-## 处理前台和后台之间的转换
+## <a name="handle-the-transition-between-foreground-and-background"></a>处理前台和后台之间的转换
 
 当应用从前台移至后台时，将引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件。 当应用返回到前台时，将引发 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件。 可以在创建应用时为这些事件注册处理程序。 在默认项目模板中，这将在 App.xaml.cs 的 **App** 类构造函数中完成。
 
@@ -76,9 +83,9 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
-## 指南
+## <a name="guidelines"></a>指南
 
-### 从前台移动到后台
+### <a name="moving-from-the-foreground-to-the-background"></a>从前台移动到后台
 
 当应用从前台移动到后台时，系统将代表应用工作，来释放在后台不需要使用的资源。 例如，UI 框架会刷新缓存的纹理，并且视频子系统会代表应用释放分配的内存。 但是，应用将仍然需要仔细监视其内存使用量，以避免被系统暂停或终止。
 
@@ -91,19 +98,14 @@ Windows 10 版本 1607 引入了两个新的应用程序生命周期事件：[**
 - 作为一种性能优化，请**考虑**在 **AppMemoryUsageLimitChanging** 事件处理程序中释放 UI 资源，而不是在 **EnteredBackground** 处理程序中释放。 使用 **EnteredBackground/LeavingBackground** 事件处理程序中设定的布尔值，来跟踪应用是在后台还是在前台运行。 然后在 **AppMemoryUsageLimitChanging** 事件处理程序中，如果 **AppMemoryUsage** 超出限制并且应用在后台运行（基于布尔值），则可以释放 UI 资源。
 - **不要**在 **EnteredBackground** 事件中执行长时间运行的操作，因为可能会导致用户感觉应用程序之间的过渡较慢。
 
-### 从后台移动到前台
+### <a name="moving-from-the-background-to-the-foreground"></a>从后台移动到前台
 
 当应用从后台移动到前台时，应用将先获取 **AppMemoryUsageLimitChanging** 事件，然后获取 **LeavingBackground** 事件。
 
 - **使用** **LeavingBackground** 事件，重新创建应用在进入后台时丢弃的 UI 资源。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [后台媒体播放示例](http://go.microsoft.com/fwlink/p/?LinkId=800141) - 介绍了如何在将应用移动到后台状态时释放内存。
 * [诊断工具](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 使用诊断工具，可以观察垃圾回收事件，并验证应用是否按预期方式释放内存。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

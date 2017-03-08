@@ -3,13 +3,20 @@ author: mtoepke
 title: "DirectX 游戏的 2D 图形"
 description: "我们将讨论 2D 位图图形的使用和效果，以及如何在游戏中使用它们。"
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 游戏, directx, 2d, 图形"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 702b47d4002e9a2d0d62cc67e71432bb630e21d4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX 游戏的 2D 图形
+# <a name="2d-graphics-for-directx-games"></a>DirectX 游戏的 2D 图形
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,7 +27,7 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 你可以使用 Direct2D 或 Direct3D 或者一些组件在 DirectX 中开发 2D 游戏图形。 用于 2D 游戏开发的许多较有用的类（如 [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) 类）都在 Direct3D 中。 Direct2D 是一组 API，主要定位到需要绘制基元（如圆、线和平面多边形）支持的用户界面和应用。 除此之外，它还为创建游戏图形提供了一组功能强大和性能优异的类和方法，尤其是创建游戏覆盖层、界面和抬头显示 (HUD) 时 - 或用于创建从简单到相当详细的各种 2D 游戏。 但创建 2D 游戏最有效的方法是使用两个库中的元素，这是本主题中处理 2D 图形开发的方法。
 
-## 简要介绍相关的概念
+## <a name="concepts-at-a-glance"></a>简要介绍相关的概念
 
 
 在现代 3D 图形和支持它的硬件出现之前，游戏主要是 2D 形式，并且其许多图形技术涉及移动内存块 - 通常是颜色数据数组，将以 1:1 的方式平移或转换为屏幕上的像素。
@@ -39,7 +46,7 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 -   剪切是删除不在显示屏可视区域内或被较高视图优先级的对象隐藏的位图或几何图形部分。
 -   帧缓冲区是内存中的一个区域（通常在图形硬件本身的内存中），其中包含要绘制到屏幕上的最终光栅映射。 交换链是一个缓冲区集合，在这里绘入一个后台缓冲区，当准备好图像时，将其“交换”到前台并显示出来。
 
-## 设计时的注意事项
+## <a name="design-considerations"></a>设计时的注意事项
 
 
 2D 图形开发是熟悉使用 Direct3D 开发的良好方法，并且可让你将更多的时间用在游戏开发的其他关键方面：音频、控件和游戏机制。
@@ -50,7 +57,7 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 对于视觉效果而言，优秀的艺术作品就是你的最大资产。 尽管你的位图图形可能缺少使用最新着色器模型功能的 3D 效果带来的视觉冲击力，但高分辨率的艺术作品通常可以传达同样或更多的风格和个性 - 且性能损失要低得多。
 
-## 参考
+## <a name="reference"></a>参考
 
 
 -   [Direct2D 概述](https://msdn.microsoft.com/library/windows/desktop/dd370987)
@@ -68,10 +75,5 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

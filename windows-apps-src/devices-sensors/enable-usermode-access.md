@@ -2,12 +2,20 @@
 author: JordanRh1
 title: "启用对 Windows 10 IoT 核心版的用户模式访问"
 description: "本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ced83940fb49f5812343fee34cb11582683bd672
+ms.lasthandoff: 02/08/2017
 
 ---
-# 启用对 Windows 10 IoT 核心版的用户模式访问
+# <a name="enable-usermode-access-on-windows-10-iot-core"></a>启用对 Windows 10 IoT 核心版的用户模式访问
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -22,7 +30,7 @@ Windows 10 IoT 核心版包含的新 API 可用于直接通过用户模式访问
 Windows 上低级别总线的用户模式访问通过现有 `GpioClx` 和 `SpbCx` 框架实现。 称为 *RhProxy*、仅适用于 Windows 10 IoT 核心版的新驱动程序会向用户模式公开 `GpioClx` 和 `SpbCx` 资源。 若要启用这些 API，必须在 ACPI 表（内含应向用户模式公开的每个 GPIO 和 SPB 资源）中声明用于 RhProxy 的设备节点。 本文档演示了编写和验证 ASL。 
 
 
-## ASL 示例
+## <a name="asl-by-example"></a>ASL 示例
 
 演示 Raspberry Pi 2 上的 RhProxy 设备节点声明。 首先，在 \\_SB 作用域中创建 ACPI 设备声明。  
 
@@ -41,7 +49,7 @@ Device(RHPX)
 
 接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 和 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 的 `GetDefaultAsync()` 方法返回的实例。 
 
-### SPI 
+### <a name="spi"></a>SPI 
 
 Raspberry Pi 具有两条公开的 SPI 总线。 SPI0 有两条硬件芯片选择线，SPI1 有一条硬件芯片选择线。 每条总线的每条芯片选择线需要一个 SPISerialBus\(\) 资源声明。 以下两个 SPISerialBus 资源声明适用于 SPI0 上的两条芯片选择线。 DeviceSelection 字段包含驱动程序将其解释为硬件芯片选择线标识符的唯一值。 放入 DeviceSelection 字段中的确切值取决于驱动程序解释 ACPI 连接描述符的这一字段的方式。  
 
@@ -152,7 +160,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 
 这会创建名为“SPI1”的总线，并将其与资源索引 2 关联。  
 
-#### SPI 驱动程序要求 
+#### <a name="spi-driver-requirements"></a>SPI 驱动程序要求 
 
 * 必须使用 `SpbCx` 或与 SpbCx 兼容 
 * 必须已通过 [MITT SPI 测试](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
@@ -160,7 +168,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 * 必须支持 8 位数据长度 
 * 必须支持所有 SPI 模式：0、1、2、3 
 
-### I2C 
+### <a name="i2c"></a>I2C 
 
 接下来，声明 I2C 资源。 Raspberry Pi 公开了引脚 3 和 5 上的一条 I2C 总线。 
 
@@ -197,7 +205,7 @@ I2CSerialBus\(\) 描述符的以下字段是固定的：
 * ConnectionSpeed 
 * AddressingMode 
 
-#### I2C 驱动程序要求 
+#### <a name="i2c-driver-requirements"></a>I2C 驱动程序要求 
 
 * 必须使用 SpbCx 或与 SpbCx 兼容 
 * 必须已通过 [MITT I2C 测试](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
@@ -205,7 +213,7 @@ I2CSerialBus\(\) 描述符的以下字段是固定的：
 * 必须支持 100kHz 时钟速度 
 * 必须支持 400kHz 时钟速度 
 
-### GPIO 
+### <a name="gpio"></a>GPIO 
 
 接下来，声明向用户模式公开的所有 GPIO 引脚。 提供以下用于确定要公开的引脚的指南： 
 
@@ -243,7 +251,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 如果公开的引脚具有多个备用功能，则由固件负责使用正确的复用配置初始化引脚，以供操作系统后续使用。 动态改变引脚的功能（即“复用”）当前在 Windows 上不受支持。 
 
-#### 支持的驱动器模式 
+#### <a name="supported-drive-modes"></a>支持的驱动器模式 
 
 如果你的 GPIO 控制器除了支持内置的上拉和下拉电阻器之外，还支持高阻抗输入和 CMOS 输出，则必须使用可选 SupportedDriveModes 属性进行指定。 
 
@@ -264,7 +272,7 @@ SupportedDriveModes 属性指示哪些驱动器模式受 GPIO 控制器支持。
 
 如果 GPIO 信号在到达公开的标头之前经过电平位移器，请声明受 SOC 支持的驱动器模式，即使在外部标头上观察不到驱动器模式也是如此。 例如，如果引脚经过使引脚表现为具有电阻式上拉的开漏的双向电平位移器，你将永远不会在公开的标头上观察到高阻抗状态，即使该引脚配置为高阻抗输入也是如此。 你仍应声明引脚支持高阻抗输入。 
 
-#### 引脚编号 
+#### <a name="pin-numbering"></a>引脚编号 
 
 Windows 支持两种引脚编号方案： 
 
@@ -287,13 +295,13 @@ Package (2) { “GPIO-PinCount”, 54 },
 
 选择与你的开发板的现有发布文档最兼容的编号方案。 例如，Raspberry Pi 使用本机引脚编号，因为许多现有的引出线图使用 BCM2835 引脚编号。 MinnowBoardMax 使用顺序引脚编号（因为有几个现有的引出线图），并且顺序引脚编号简化了开发人员体验（因为超过 200 个引脚中只公开了 10 个引脚）。 决定使用顺序引脚编号还是使用本机引脚编号应以减少开发人员混淆为目标。 
 
-#### GPIO 驱动程序要求 
+#### <a name="gpio-driver-requirements"></a>GPIO 驱动程序要求 
 
 * 必须使用 `GpioClx`
 * 必须是 SOC 上的内存映射 
 * 必须使用模拟 ActiveBoth 中断处理 
 
-### UART 
+### <a name="uart"></a>UART 
 
 编写时，UART 在 Raspberry Pi 上不受支持，因此以下 UART 声明来自 MinnowBoardMax。 
 
@@ -326,7 +334,7 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 这会将友好名称“UART2”分配给控制器，该名称是用户将用于从用户模式访问总线的标识符。  
 
-## 运行时引脚复用 
+## <a name="runtime-pin-muxing"></a>运行时引脚复用 
 
 引脚复用可以将同一物理引脚用于不同功能。 多个不同的芯片上外围设备（例如 I2C 控制器、SPI 控制器和 GPIO 控制器）可以路由到 SOC 上的同一物理引脚。 复用块控制哪项功能在任何给定时间在引脚上处于活动状态。 通常，固件负责在启动时建立功能分配，此分配通过启动会话保持静态。 运行时引脚复用允许在运行时重新配置引脚功能分配。 支持用户在运行时选择引脚的功能可加速开发（方法是支持用户快速重新配置开发板的引脚），同时使硬件可以支持范围更广的应用程序（相较于静态配置而言）。 
 
@@ -336,7 +344,7 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 本文档首先介绍引脚复用所涉及的基础接口和协议，然后介绍如何将对引脚复用的支持添加到 GpioClx、SpbCx 和 SerCx 控制器驱动程序。 
 
-### 引脚复用体系结构 
+### <a name="pin-muxing-architecture"></a>引脚复用体系结构 
 
 本部分介绍引脚复用所涉及的基础接口和协议。 支持 GpioClx/SpbCx/SerCx 驱动程序的引脚复用不一定非要了解基础协议的知识。 有关如何支持 GpioCls/SpbCx/SerCx 驱动程序的引脚复用的详细信息，请参阅[在 GpioClx 客户端驱动程序中实现引脚复用支持](#supporting-muxing-support-in-GpioClx-client-drivers)和[在 SpbCx 和 SerCx 控制器驱动程序中使用复用支持](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers)。 
 
@@ -352,21 +360,21 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 ![引脚复用客户端服务器交互](images/usermode-access-diagram-1.png)
 
-1.  客户端在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回调中从 ACPI 固件接收 MsftFunctionConfig 资源。
-2.  客户端使用资源中心帮助程序函数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 从资源 ID 创建路径，然后打开路径句柄（使用 [ZwCreateFile\(\)](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer\(\)](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)）。
-3.  服务器使用资源中心帮助程序函数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件路径提取资源中心 ID，然后查询资源中心以获取资源描述符。
-4.  服务器为描述符中的每个引脚执行共享仲裁，然后完成 IRP_MJ_CREATE 请求。
-5.  客户端在收到的句柄上发出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求。
-6.  为响应 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，服务器通过使每个引脚上的特定功能处于活动状态来执行硬件复用操作。
-7.  客户端将继续执行取决于所请求的引脚复用配置的操作。
-8.  当客户端不再需要复用引脚时，它会关闭句柄。
-9.  为响应要关闭的句柄，服务器会将引脚恢复回其初始状态。
+1.    客户端在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回调中从 ACPI 固件接收 MsftFunctionConfig 资源。
+2.    客户端使用资源中心帮助程序函数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 从资源 ID 创建路径，然后打开路径句柄（使用 [ZwCreateFile\(\)](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer\(\)](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)）。
+3.    服务器使用资源中心帮助程序函数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件路径提取资源中心 ID，然后查询资源中心以获取资源描述符。
+4.    服务器为描述符中的每个引脚执行共享仲裁，然后完成 IRP_MJ_CREATE 请求。
+5.    客户端在收到的句柄上发出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求。
+6.    为响应 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，服务器通过使每个引脚上的特定功能处于活动状态来执行硬件复用操作。
+7.    客户端将继续执行取决于所请求的引脚复用配置的操作。
+8.    当客户端不再需要复用引脚时，它会关闭句柄。
+9.    为响应要关闭的句柄，服务器会将引脚恢复回其初始状态。
 
-### 引脚复用客户端的协议描述
+###    <a name="protocol-description-for-pin-muxing-clients"></a>引脚复用客户端的协议描述
 
 本部分介绍了客户端如何使用引脚复用功能。 这不适用于 `SerCx` 和 `SpbCx` 控制器驱动程序，因为框架会代表控制器驱动程序实现此协议。
 
-####    解析资源
+####    <a name="parsing-resources"></a>解析资源
 
 WDF 驱动程序在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 例程中接收 `MsftFunctionConfig()` 资源。 MsftFunctionConfig 资源可以由以下字段来标识：
 
@@ -430,7 +438,7 @@ evtDevicePrepareHardware (
 }
 ```
 
-####    保留和提交资源
+####    <a name="reserving-and-committing-resources"></a>保留和提交资源
 
 当客户端想要复用管脚时，它会保留并提交 MsftFunctionConfig 资源。 以下示例演示客户端会如何保留并提交 MsftFunctionConfig 资源。
 
@@ -511,11 +519,11 @@ NTSTATUS AcquireFunctionConfigResource (
 
 当客户端关闭其资源句柄时，引脚将复用回其初始状态，现在可以由其他客户端获取。
 
-### 引脚复用服务器的协议描述
+###    <a name="protocol-description-for-pin-muxing-servers"></a>引脚复用服务器的协议描述
 
 本部分介绍引脚复用服务器如何向客户端公开其功能。 这不适用于 `GpioClx` 微型端口驱动程序，因为框架会代表客户端驱动程序实现此协议。 有关如何在 `GpioClx` 客户端驱动程序中支持引脚复用的详细信息，请参阅[在 GpioClx 客户端驱动程序中实现复用支持](#supporting-muxing-support-in-GpioClx-client-drivers)。
 
-####    处理 IRP_MJ_CREATE 请求
+####    <a name="handling-irpmjcreate-requests"></a>处理 IRP_MJ_CREATE 请求
 
 当客户端想要保留引脚复用资源时，它们会打开资源句柄。 引脚复用服务器通过资源中心的重分析操作来接收 *IRP_MJ_CREATE* 请求。 *IRP_MJ_CREATE* 请求的尾随路径组件包含资源中心 ID，该 ID 是十六进制格式的 64 位整数。 服务器应使用 reshub.h 中的 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件名中提取资源中心 ID，然后向资源中心发送 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 以获取 `MsftFunctionConfig()` 描述符。
 
@@ -523,22 +531,22 @@ NTSTATUS AcquireFunctionConfigResource (
 
 如果对引脚列表中的每个引脚成功执行共享仲裁，则共享仲裁总体成功。 应按如下方式对每个引脚进行仲裁：
 
-*   如果尚未保留引脚，则共享仲裁成功。
-*   如果引脚已保留为独占，则共享仲裁失败。
-*   在引脚已保留为共享时，
-  * 如果传入的请求是共享的，则共享仲裁成功。
-  * 如果传入的请求是独占的，则共享仲裁失败。
+*    如果尚未保留引脚，则共享仲裁成功。
+*    如果引脚已保留为独占，则共享仲裁失败。
+*    在引脚已保留为共享时，
+  *    如果传入的请求是共享的，则共享仲裁成功。
+  *    如果传入的请求是独占的，则共享仲裁失败。
 
 如果共享仲裁失败，应使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成请求。 如果共享仲裁成功，应使用 *STATUS_SUCCESS* 完成请求。
 
 请注意，应从 MsftFunctionConfig 描述符而不是从 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) 中获取传入请求的共享模式。
 
-####    处理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 请求
+####    <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>处理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 请求
 
 在客户端通过打开句柄成功保留了 MsftFunctionConfig 资源后，它可以发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 以请求服务器执行实际的硬件复用操作。 当服务器接收 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 时，对于引脚列表中的每个引脚，它应该 
 
-*   将在 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 PinConfiguration 成员中指定的拉模式设置到硬件。
-*   将引脚复用到由 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 FunctionNumber 成员指定的功能。
+*    将在 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 PinConfiguration 成员中指定的拉模式设置到硬件。
+*    将引脚复用到由 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 FunctionNumber 成员指定的功能。
 
 然后服务器应使用 *STATUS_SUCCESS* 完成请求。
 
@@ -546,11 +554,11 @@ FunctionNumber 的含义由服务器定义，据了解，MsftFunctionConfig 描�
 
 请记住，当关闭该句柄时，服务器必须将引脚恢复为收到 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 时引脚所使用的配置，因此服务器在修改引脚之前，可能需要保存这些引脚的状态。
 
-####    处理 IRP_MJ_CLOSE 请求
+####    <a name="handling-irpmjclose-requests"></a>处理 IRP_MJ_CLOSE 请求
 
 当客户端不再需要复用资源时，它会关闭其句柄。 当服务器接收 *IRP_MJ_CLOSE* 请求时，它应该将引脚恢复为收到 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 时引脚所处的状态。 如果客户端从未发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，则无需执行任何操作。 接下来，服务器应该在执行共享仲裁后将引脚标记为可用，然后使用 *STATUS_SUCCESS* 完成请求。 请确保正确同步 *IRP_MJ_CLOSE* 处理与 *IRP_MJ_CREATE* 处理。
 
-### ACPI 表的编写指南
+###    <a name="authoring-guidelines-for-acpi-tables"></a>ACPI 表的编写指南
 
 本部分介绍如何将复用资源提供给客户端驱动程序。 请注意，你需要 Microsoft ASL 编译器版本 14327 或更高版本来编译包含 `MsftFunctionConfig()` 资源的表。 `MsftFunctionConfig()` 资源提供给引脚复用客户端作为硬件资源。 `MsftFunctionConfig()` 应将资源提供给需要更改引脚复用的驱动程序，这些驱动程序通常是 SPB 和串行控制器驱动程序；但不应将资源提供给 SPB 和串行外设驱动程序，因为该控制器驱动程序将处理复用配置。
 `MsftFunctionConfig()` ACPI 宏按如下方式定义：
@@ -606,7 +614,7 @@ Device(I2C1)
 
 除了控制器驱动程序通常所需的内存和中断资源，还要指定 `MsftFunctionConfig()` 资源。 此资源允许 I2C 控制器驱动程序将引脚 2 和 3（由 \\_SB.GPIO0 处的设备节点进行管理）置于已启用上拉电阻器的功能 4 中。 
 
-### 在 GpioClx 客户端驱动器中支持复用支持 
+### <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>在 GpioClx 客户端驱动器中支持复用支持 
 
 `GpioClx` 具有对引脚复用的内置支持。 GpioClx 微型端口驱动程序（也称为“GpioClx 客户端驱动程序”），驱动 GPIO 控制器硬件。 从 Windows 10 内部版本 14327 开始，GpioClx 微型端口驱动程序可以通过实现两个新的 DDI 添加对引脚复用的支持： 
 
@@ -622,7 +630,7 @@ Device(I2C1)
 
 例如，假设引脚的默认复用配置为 UART，则也可以将引脚用作 GPIO。 调用 CLIENT_ConnectIoPins 以连接用于 GPIO 的引脚时，它应该将该引脚复用为 GPIO；在 CLIENT_DisconnectIoPins 中，它应该将该引脚复用回 UART。 一般情况下，_Disconnect 例程应撤消 _Connect 例程执行的操作。 
 
-### 在 SpbCx 和 SerCx 控制器驱动程序中支持复用 
+### <a name="supporting-muxing-in-spbcx-and-sercx-controller-drivers"></a>在 SpbCx 和 SerCx 控制器驱动程序中支持复用 
 
 从 Windows 10 内部版本 14327 开始，`SpbCx` 和 `SerCx` 框架包含对引脚复用的内置支持，这允许在无需更改 `SpbCx` 和 `SerCx` 控制器驱动程序自身的任何代码的情况下，就可以使这些控制器驱动程序成为引脚复用客户端。 通过扩展，连接到支持复用的 SpbCx/SerCx 控制器驱动程序的任何 SpbCx/SerCx 外设驱动程序将触发引脚复用活动。 
 
@@ -645,11 +653,11 @@ Device(I2C1)
 * EvtDevicePrepareHardware/EvtDeviceReleaseHardware 
 * EvtDeviceD0Entry/EvtDeviceD0Exit 
 
-## 验证 
+## <a name="verification"></a>验证 
 
 在完成编写你的 ASL 时，应运行 [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) 测试，以验证所有资源已正确公开，并且基础总线满足 API 功能合约。 以下部分介绍在不重新编译你的固件的情况下如何加载 rhproxy 设备节点进行测试，以及如何运行 HLK 测试。 
 
-### 使用 ACPITABL.dat 编译和加载 ASL 
+### <a name="compile-and-load-asl-with-acpitabldat"></a>使用 ACPITABL.dat 编译和加载 ASL 
 
 第一步是将 ASL 文件编译并加载到你的在测系统。 我们建议在开发和验证期间使用 ACPITABL.dat，因为它不需要重新生成完整的 UEFI 即可测试 ASL 更改。 
 
@@ -666,24 +674,24 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.  下载 WDK 并获取 asl.exe
-3.  运行以下命令以生成 ACPITABL.dat：
+2.    下载 WDK 并获取 asl.exe
+3.    运行以下命令以生成 ACPITABL.dat：
 ```
 asl.exe yourboard.asl
 ```
-4.  将生成的 ACPITABL.dat 文件复制到在测系统上的 c:\windows\system32。
-5.  在在测系统上打开 testsigning：
+4.    将生成的 ACPITABL.dat 文件复制到在测系统上的 c:\windows\system32。
+5.    在在测系统上打开 testsigning：
 ```
 bcdedit /set testsigning on
 ```
-6.  重启在测系统： 系统会将 ACPITABL.dat 中定义的 ACPI 表附加到系统固件表。 
-7.  验证 RHPX 设备节点是否已添加到系统：
+6.    重启在测系统： 系统会将 ACPITABL.dat 中定义的 ACPI 表附加到系统固件表。 
+7.    验证 RHPX 设备节点是否已添加到系统：
 ```
 devcon status *msft8000
 ```
 如果需要编写的 ASL 中存在多个 Bug，devcon 的输出应表示该设备存在，尽管驱动程序可能无法进行初始化。
 
-### 运行 HLK 测试
+### <a name="run-the-hlk-tests"></a>运行 HLK 测试
 
 当在 HLK 管理器中选择 rhproxy 设备节点时，将自动选择适用的测试。
 
@@ -697,41 +705,41 @@ devcon status *msft8000
 
 单击“运行所选项”。 通过右键单击某个测试，然后单击“测试描述”可以获得有关每个测试的进一步文档。
 
-### 更多测试资源
+###    <a name="more-testing-resources"></a>更多测试资源
 
 在 ms-iot github 示例存储库 (https://github.com/ms-iot/samples) 上提供了适用于 Gpio、I2c、Spi 和 Serial 的简单命令行工具。 这些工具对于手动调试很有帮助。
 
 | 工具 | 链接 |
 |------|------|
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
-## 资源
+## <a name="resources"></a>资源
 
 | 目标 | 链接 |
 |-------------|------|
 | ACPI 5.0 规范 | http://acpi.info/spec.htm |
 | Asl.exe（Microsoft ASL 编译器） | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
-| Windows.Devices.Gpio  | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
+| Windows.Devices.Gpio    | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
 | Windows.Devices.I2c | https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx |
 | Windows.Devices.Spi | https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.aspx |
 | Windows.Devices.SerialCommunication | https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.aspx |
 | 测试授权和执行框架 (TAEF) | https://msdn.microsoft.com/library/windows/hardware/hh439725.aspx |
 | SpbCx | https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx |
-| GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
+| GpioClx    | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 测试 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## 附录
+## <a name="apendix"></a>附录
 
-### 附录 A - Raspberry Pi ASL 一览
+### <a name="appendix-a---raspberry-pi-asl-listing"></a>附录 A - Raspberry Pi ASL 一览
 
 标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
@@ -893,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### 附录 B - MinnowBoardMax ASL 一览
+### <a name="appendix-b---minnowboardmax-asl-listing"></a>附录 B - MinnowBoardMax ASL 一览
 
 标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
@@ -928,7 +936,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     
                 // Index 1     
                 I2CSerialBus(            // Pin 13, 15 of JP1, for SIO_I2C5 (signal)
-                    0xFF,                  // SlaveAddress: bus address (TBD)
+                    0xFF,                  // SlaveAddress: bus address
                     ,                      // SlaveMode: default to ControllerInitiated
                     400000,                // ConnectionSpeed: in Hz
                     ,                      // Addressing Mode: default to 7 bit
@@ -1048,7 +1056,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### 附录 C - 生成 GPIO 资源的示例 PowerShell 脚本
+### <a name="appendix-c---sample-powershell-script-to-generate-gpio-resources"></a>附录 C - 生成 GPIO 资源的示例 PowerShell 脚本
 
 以下脚本可用于生成适用于 Raspberry Pi 的 GPIO 资源声明：
 
@@ -1083,9 +1091,4 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
     $resourceIndex += 2;
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

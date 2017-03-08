@@ -3,18 +3,25 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "使用此方法续订 Windows 应用商店密钥。"
 title: "续订 Windows 应用商店 ID 密钥"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店收集 API, Windows 应用商店购买 API, Windows 应用商店 ID 密钥, 续订"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 续订 Windows 应用商店 ID 密钥
+# <a name="renew-a-windows-store-id-key"></a>续订 Windows 应用商店 ID 密钥
 
 
 使用此方法续订 Windows 应用商店密钥。 [生成 Windows 应用商店 ID 密钥时](view-and-grant-products-from-a-service.md#step-4)，该密钥在 90 天内有效。 在密钥过期后，你可以通过此方法使用已过期的密钥重新协商一个新密钥。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 若要使用此方法，你需要：
@@ -22,11 +29,11 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 * 使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
 * [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的过期 Windows 应用商店 ID 密钥。
 
-有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
+有关详细信息，请参阅[管理来自服务的产品授权](view-and-grant-products-from-a-service.md)。
 
-## 请求
+## <a name="request"></a>请求
 
-### 请求语法
+### <a name="request-syntax"></a>请求语法
 
 | 密钥类型    | 方法 | 请求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
@@ -35,7 +42,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头         | 类型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 | 参数     | 类型   | 说明                       | 必需 |
 |---------------|--------|-----------------------------------|----------|
@@ -54,7 +61,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/> 
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -68,10 +75,10 @@ Host: collections.mp.microsoft.com
 }
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 
-### 响应正文
+### <a name="response-body"></a>响应正文
 
 | 参数 | 类型   | 说明                                                                                                            | 必需 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
@@ -79,7 +86,7 @@ Host: collections.mp.microsoft.com
 
 <span/>
 
-### 响应示例
+### <a name="response-example"></a>响应示例
 
 ```syntax
 HTTP/1.1 200 OK
@@ -96,7 +103,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 
 | 代码 | 错误        | 内部错误代码           | 描述                                                                                                                                                                           |
@@ -106,16 +113,11 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
-* [从服务查看和授予产品](view-and-grant-products-from-a-service.md)
+* [管理来自服务的产品授权](view-and-grant-products-from-a-service.md)
 * [查询产品](query-for-products.md)
 * [将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)
 * [授予免费产品](grant-free-products.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

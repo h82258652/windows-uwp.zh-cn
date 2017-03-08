@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。"
 title: MIDI
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MIDI
+# <a name="midi"></a>MIDI
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。
 
-## 枚举 MIDI 设备
+## <a name="enumerate-midi-devices"></a>枚举 MIDI 设备
 
 在枚举和使用 MIDI 设备之前，将以下命名空间添加到你的项目。
 
@@ -34,7 +41,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
 
-## 创建设备观察程序帮助程序类
+## <a name="create-a-device-watcher-helper-class"></a>创建设备观察程序帮助程序类
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间提供了 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可在设备已在系统中添加或删除时，或者设备的信息已更新时通知你的应用。 因为支持 MIDI 的应用通常会关注输入和输出设备，所以此示例将创建可实现 **DeviceWatcher** 模式的帮助程序类，以便可针对 MIDI 输入和 MIDI 输出设备使用相同的代码，从而避免重复。
 
@@ -84,7 +91,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
 
-## 创建 MIDI 端口以发送和接收消息
+## <a name="create-midi-ports-to-send-and-receive-messages"></a>创建 MIDI 端口以发送和接收消息
 
 在页面的代码隐藏中，声明成员变量以保留 **MyMidiDeviceWatcher** 帮助程序类的两个实例：一个用于输入设备，一个用于输出设备。
 
@@ -122,7 +129,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
 
-## 使用内置的 Windows 通用 MIDI 合成器
+## <a name="using-the-built-in-windows-general-midi-synth"></a>使用内置的 Windows 通用 MIDI 合成器
 
 当你使用上面所述的技术枚举输出 MIDI 设备时，你的应用会发现一个名为“Microsoft GS 波形表合成器”的 MIDI 设备。 这是一款你可以从应用中使用的内置通用 MIDI 合成器。 但是，如果没有将该内置合成器的 SDK 扩展包含在你的项目中，将无法为此设备创建 MIDI 输出端口。
 
@@ -133,7 +140,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 3.  选择**“扩展”**。
 4.  从扩展列表中，选择“适用于通用 Windows 应用的 Microsoft 通用 MIDI DLS”****。
     > [!NOTE] 
-    > 如果存在多个版本的扩展，请务必选择与应用所面向的目标匹配的版本。 你可以在项目“属性”的“应用程序”****选项卡上查看应用所面向的 SDK 版本。
+    > 如果存在多个版本的扩展，请务必选择与应用所面向的目标匹配的版本。 你可以在项目“属性”的**应用程序**选项卡上查看应用所面向的 SDK 版本。
 
  
 
@@ -141,10 +148,5 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

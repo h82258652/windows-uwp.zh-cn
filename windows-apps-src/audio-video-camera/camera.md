@@ -1,30 +1,37 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
 description: "本文列出了 UWP 应用可用的相机功能以及指向显示如何使用这些功能的操作方法文章的链接。"
 title: "相机"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f9f85359bd24e0a642bf9cbe3c76f6bfac7866f8
-ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 0b2b421c2619c1649b3a6c9afb6b0ccafafc473b
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 相机
+# <a name="camera"></a>相机
 
 本节提供有关创建使用相机或麦克风捕获照片、视频或音频的通用 Windows 平台 (UWP) 应用的指南。
 
-##使用 Windows 内置相机 UI
+##<a name="use-the-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI
 | 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [使用 Windows 内置相机 UI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md) | 展示如何使用 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) 类来使用内置于 Windows 的相机 UI 捕获照片或视频。 如果仅希望使用户能够捕获照片或视频，并将结果返回到应用，这就是达到此目的的最快且最简单的方法。  |
-##MediaCapture 基本任务
+##<a name="basic-mediacapture-tasks"></a>MediaCapture 基本任务
 | 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [显示相机预览](simple-camera-preview-access.md) | 展示如何在 UWP 应用的 XAML 页面内快速显示相机预览流。 |
 | [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md) | 展示使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 类捕获照片和视频的最简单方法。 **MediaCapture** 类公布了一组强大的 API，可提供捕获管道的低级别控制和启用高级捕获方案，但本文旨在帮助你将基本的媒体捕获快速且轻松地添加到应用。 |
 | [移动设备的相机 UI 功能](camera-ui-features-for-mobile-devices.md) | 展示如何利用仅在移动设备上提供的特殊相机 UI 功能。  |
                                                                                                                
-##MediaCapture 高级任务   
+##<a name="advanced-mediacapture-tasks"></a>MediaCapture 高级任务   
                                                                                                                
 | 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,7 +48,7 @@ ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
 | [获取预览帧](get-a-preview-frame.md) | 展示如何从媒体捕获预览流获取单个预览帧。  |                                                                                                   
 
 
-## 相机的 UWP 应用示例
+## <a name="uwp-app-samples-for-camera"></a>相机的 UWP 应用示例
 
 * [相机人脸检测示例](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
 * [相机预览帧示例](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
@@ -52,7 +59,7 @@ ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
 * [相机初学者工具包](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
 * [相机视频防抖动示例](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [音频、视频和相机](index.md)
  
@@ -61,10 +68,5 @@ ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

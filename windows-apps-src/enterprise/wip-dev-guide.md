@@ -4,16 +4,24 @@ Description: "本指南帮助你启发你的应用，以处理由 Windows 信息
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "生成使用企业数据和个人数据的启发式应用"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用"
+ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 translationtype: Human Translation
-ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
-ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 生成使用企业数据和个人数据的启发式应用
+# <a name="build-an-enlightened-app-that-consumes-both-enterprise-data-and-personal-data"></a>生成使用企业数据和个人数据的启发式应用
 
 
-  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows10 版本 1607。
+  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
 
 *启发式*应用可区分公司和个人数据，并且知道应基于管理员定义的 Windows 信息保护 (WIP) 策略保护哪些数据。
 
@@ -25,15 +33,15 @@ ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
 
 如果你已准备好完成每个任务，那我们开始吧。
 
-## 首先，收集所需内容
+## <a name="first-gather-what-you-need"></a>首先，收集所需内容
 
 你将需要以下内容：
 
-* 运行 Windows10 版本 1607 的测试虚拟机 (VM)。 你将针对此测试 VM 调试你的应用。
+* 运行 Windows 10 版本 1607 的测试虚拟机 (VM)。 你将针对此测试 VM 调试你的应用。
 
-* 运行 Windows10 版本 1607 的开发计算机。 这可能是你的测试 VM，前提是你已在其上安装了 Visual Studio。
+* 运行 Windows 10 版本 1607 的开发计算机。 这可能是你的测试 VM，前提是你已在其上安装了 Visual Studio。
 
-## 设置你的开发环境
+## <a name="setup-your-development-environment"></a>设置你的开发环境
 
 你将执行以下操作：
 
@@ -111,7 +119,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
 ```
 
-## 确定运行你的应用的操作系统是否支持 WIP
+## <a name="determine-whether-the-operating-system-that-runs-your-app-supports-wip"></a>确定运行你的应用的操作系统是否支持 WIP
 
 使用 [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) 函数确定此情况。
 
@@ -128,9 +136,9 @@ else
 }
 ```
 
-Windows 信息保护在 Windows10 版本 1607 上受支持。
+Windows 信息保护在 Windows 10 版本 1607 上受支持。
 
-## 读取企业数据
+## <a name="read-enterprise-data"></a>读取企业数据
 
 文件、网络终结点、剪贴板数据和你从“共享”合约中接受的数据都有企业 ID。
 
@@ -138,7 +146,7 @@ Windows 信息保护在 Windows10 版本 1607 上受支持。
 
 我们从文件开始。
 
-### 从文件中读取数据
+### <a name="read-data-from-a-file"></a>从文件中读取数据
 
 **步骤 1：获取文件句柄**
 
@@ -195,7 +203,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
 
-### 从网络终结点读取数据
+### <a name="read-data-from-a-network-endpoint"></a>从网络终结点读取数据
 
 创建受保护的线程上下文，以从企业终结点读取。
 
@@ -329,7 +337,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-### 从剪贴板中读取数据
+### <a name="read-data-from-the-clipboard"></a>从剪贴板中读取数据
 
 **获取从剪贴板中使用数据的权限**
 
@@ -426,7 +434,7 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
 
-### 从“共享”合约读取数据
+### <a name="read-data-from-a-share-contract"></a>从“共享”合约读取数据
 
 当员工选择你的应用来共享他们的信息时，你的应用将打开包含该内容的新项目。
 
@@ -480,11 +488,11 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-## 保护企业数据
+## <a name="protect-enterprise-data"></a>保护企业数据
 
 保护离开应用的企业数据。 当你在页面中显示数据、将数据保存到文件或网络终结点或者通过“共享”合约时，数据会离开你的应用。
 
-### <a id="display-data"></a>保护显示在页面中的数据
+### <a name="a-iddisplay-dataaprotect-data-that-appears-in-pages"></a><a id="display-data"></a>保护显示在页面中的数据
 
 当你在页面中显示数据时，请通知 Windows 它所属的数据类型（个人还是企业）。 若要执行此操作，请*标记*当前的应用视图或标记整个应用进程。
 
@@ -530,7 +538,7 @@ bool result =
 > **API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-### 将数据保护到文件
+### <a name="protect-data-to-a-file"></a>将数据保护到文件
 
 创建受保护的文件，然后对该文件进行写入。
 
@@ -601,7 +609,7 @@ FileProtectionInfo fileProtectionInfo =
 
 
 
-### 将数据作为后台进程保护到文件
+### <a name="protect-data-to-a-file-as-a-background-process"></a>将数据作为后台进程保护到文件
 
 当设备屏幕处于锁定状态时，此代码可以运行。 如果管理员配置了安全的“锁屏下的数据保护”(DPL) 策略，则 Windows 会从设备内存中删除访问受保护的资源所需的加密密钥。 这可以防止数据在设备丢失时泄露。 此相同功能还会在受保护的文件句柄关闭时删除与之关联的密钥。
 
@@ -665,7 +673,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
-### 保护文件的一部分
+### <a name="protect-part-of-a-file"></a>保护文件的一部分
 
 在大多数情况下，单独存储企业和个人数据更简洁，但你也可以将它们存储到同一个文件（如果需要）。 例如，Microsoft Outlook 可以将企业邮件和个人邮件一起存储在单个存档文件中。
 
@@ -741,7 +749,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     "'></EnterpriseDataMarker>");
 ```
 
-### 读取文件的受保护部分
+### <a name="read-the-protected-part-of-a-file"></a>读取文件的受保护部分
 
 下面介绍如何从该文件中读取企业数据。
 
@@ -821,7 +829,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
 
-### 将数据保护到文件夹
+### <a name="protect-data-to-a-folder"></a>将数据保护到文件夹
 
 你可以创建一个文件夹，并保护它。 这样，你添加到该文件夹的任何项目都会自动受到保护。
 
@@ -856,7 +864,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
 
-### 将数据保护到网络终结点
+### <a name="protect-data-to-a-network-end-point"></a>将数据保护到网络终结点
 
 创建受保护的线程上下文以将该数据发送到企业终结点。  
 
@@ -908,7 +916,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-### 保护你的应用通过“共享”合约共享的数据
+### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>保护你的应用通过“共享”合约共享的数据
 
 如果你希望用户从应用共享内容，你将必须实现一个“共享”合约，并处理 [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件。
 
@@ -940,7 +948,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
 
-### 将你复制的文件保护到另一个位置
+### <a name="protect-files-that-you-copy-to-another-location"></a>将你复制的文件保护到另一个位置
 
 ```csharp
 private async void CopyProtectionFromOneFileToAnother
@@ -962,7 +970,7 @@ private async void CopyProtectionFromOneFileToAnother
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
 
-### 在设备屏幕处于锁定状态时保护企业数据
+### <a name="protect-enterprise-data-when-the-screen-of-the-device-is-locked"></a>在设备屏幕处于锁定状态时保护企业数据
 
 当设备锁定时，删除内存中的所有敏感数据。 当用户解锁设备时，你的应用可以安全地添加回该数据。
 
@@ -970,7 +978,7 @@ private async void CopyProtectionFromOneFileToAnother
 
 处理 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) 事件，以便你的应用知道屏幕何时解锁。 无论管理员是否配置锁屏下的安全数据保护策略，都将引发此事件。
 
-#### 当屏幕锁定时，删除内存中的敏感数据
+#### <a name="remove-sensitive-data-in-memory-when-the-screen-is-locked"></a>当屏幕锁定时，删除内存中的敏感数据
 
 保护敏感数据，并关闭任何你的应用在受保护的文件上打开的文件流，以帮助确保系统不会在内存中缓存任何敏感数据。
 
@@ -1016,7 +1024,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 [ProtectedAccessSuspendingEventArgs.GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral.aspx)<br>
 [Deferral.Complete](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx)<br>
 
-#### 当设备解锁时，添加回敏感数据
+#### <a name="add-back-sensitive-data-when-the-device-is-unlocked"></a>当设备解锁时，添加回敏感数据
 
 当设备解锁并且密钥在设备上再次可用时，将引发 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)。
 
@@ -1051,7 +1059,7 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 [DataProtectionManager.UnprotectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.unprotectasync.aspx)<br>
 [BufferProtectUnprotectResult.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.aspx)<br>
 
-## 当吊销受保护的内容时处理企业数据
+## <a name="handle-enterprise-data-when-protected-content-is-revoked"></a>当吊销受保护的内容时处理企业数据
 
 如果你希望你的应用在设备从 MDM 注销或策略管理员显式吊销对企业数据的访问权限时收到通知，请处理 [**ProtectionPolicyManager_ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx) 事件。
 
@@ -1082,15 +1090,10 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 > **API** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx)<br>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 [Windows 信息保护 (WIP) 示例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

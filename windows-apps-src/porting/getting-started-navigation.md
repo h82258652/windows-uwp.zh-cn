@@ -3,17 +3,24 @@ author: mcleblanc
 title: "导航入门"
 description: "导航入门"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: febafd9a36f021bdbf06692a34c8691d1008018f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 入门：导航
+# <a name="getting-started-navigation"></a>入门：导航
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 添加导航
+## <a name="adding-navigation"></a>添加导航
 
 iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和弹出视图，以创建定义应用的**UIViewControllers**层次结构。
 
@@ -78,15 +85,10 @@ public BlankPage()
 
 有关导航的详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 个性化动画示例](http://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
-**注意** 有关采用 JavaScript 和 HTML 的 Windows 应用商店应用的导航信息，请参阅[快速入门：使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
+**注意**  有关采用 JavaScript 和 HTML 的 Windows 应用商店应用的导航信息，请参阅[快速入门：使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  
-### 下一步
+### <a name="next-step"></a>下一步
 
 [入门：动画](getting-started-animation.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

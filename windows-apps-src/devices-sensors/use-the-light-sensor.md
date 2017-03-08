@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "使用光传感器"
 description: "了解如何使用氛围光传感器检测照明变化。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用光传感器
+# <a name="use-the-light-sensor"></a>使用光传感器
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
@@ -21,17 +28,17 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 氛围光传感器是允许应用程序响应用户环境变化的多种类型的环境传感器之一。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
 你使用的设备或仿真器必须支持氛围光传感器。
 
-## 创建一个简单的光传感器应用
+## <a name="create-a-simple-light-sensor-app"></a>创建一个简单的光传感器应用
 
 此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的光传感器应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-###  说明
+###  <a name="instructions"></a>说明
 
 -   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
@@ -65,8 +72,8 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
         public sealed partial class BlankPage : Page
         {
             private LightSensor _lightsensor; // Our app' s lightsensor object
-           
-            // This event handler writes the current light-sensor reading to 
+
+            // This event handler writes the current light-sensor reading to
             // the textbox named "txtLUX" on the app' s main page.
 
             private void ReadingChanged(object sender, LightSensorReadingChangedEventArgs e)
@@ -133,7 +140,7 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  描述
+###  <a name="explanation"></a>说明
 
 前面的示例演示了，只需要写入极少的代码即可将光传感器输入集成到你的应用。
 
@@ -153,7 +160,7 @@ _lightsensor.ReportInterval = reportInterval;
 在 **ReadingChanged** 方法中捕获新的光传感器数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
 
 ```csharp
-_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
+_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,14 +171,8 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [LightSensor 示例](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

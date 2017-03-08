@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "使用后台任务响应系统事件"
 description: "了解如何创建响应 SystemTrigger 事件的后台任务。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 797ee8930a01f9934692067139a3fd5321ae36df
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="respond-to-system-events-with-background-tasks"></a>使用后台任务响应系统事件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -92,9 +99,4 @@ ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,15 +3,22 @@ author: mcleblanc
 description: "以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。"
 title: "将 Windows Phone Silverlight XAML 和 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
+ms.lasthandoff: 02/07/2017
 
 ---
 
 #  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 上一主题是[疑难解答](wpsl-to-uwp-troubleshooting.md)。
@@ -196,7 +203,7 @@ Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空
 | Panorama | Windows Phone Silverlight Panorama 控件映射到 [Windows 应用商店应用中的中心控件指南](https://msdn.microsoft.com/library/windows/apps/dn449149)和“中心控件指南”。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) 部分不会环绕，并且不使用视差。 |
 | Pivot | Windows Phone Silverlight Pivot 控件的 UWP 等效项是 [Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241)。 它适用于所有设备系列。 |
 
-**注意** PointerOver 视觉状态与 Windows 10 应用中的自定义样式/模板有关，但与 Windows Phone Silverlight 应用无关。 存在其他原因导致你的现有自定义样式/模板不适用于 Windows 10 应用，包括你正在使用的系统资源键、对所使用的视觉状态集的更改以及对 Windows 10 默认样式/模板所做的性能改进。 我们建议你为 Windows 10 编辑一个控件默认模板的全新副本，然后对其重新应用你的样式和模板自定义。
+**注意**   PointerOver 视觉状态与 Windows 10 应用中的自定义样式/模板有关，但与 Windows Phone Silverlight 应用无关。 存在其他原因导致你的现有自定义样式/模板不适用于 Windows 10 应用，包括你正在使用的系统资源键、对所使用的视觉状态集的更改以及对 Windows 10 默认样式/模板所做的性能改进。 我们建议你为 Windows 10 编辑一个控件默认模板的全新副本，然后对其重新应用你的样式和模板自定义。
 
 有关 UWP 控件的详细信息，请参阅[按功能列出的控件](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)和[控件指南](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
@@ -238,7 +245,7 @@ Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 属性
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-此处，winrt\_check.png 是采用位图形式的 alpha 蒙板，就像 wpsl\_check.png 一样，并且它完全可以是同一个文件。 但是，你可能会需要提供多个不同大小的 winrt\_check.png 以用于不同的比例系数。 有关详细信息和对 **Width** 和 **Height** 值进行更改的说明，请参阅本主题中的[视图/有效像素、观看距离和比例系数](#view-effective-pixels-viewing-distance-and-scale-factors)。
+此处，winrt\_check.png 是采用位图形式的 alpha 蒙板，就像 wpsl\_check.png 一样，并且它完全可以是同一个文件。 但是，你可能会需要提供多个不同大小的 winrt\_check.png 以用于不同的比例系数。 有关详细信息和对 **Width** 和 **Height** 值进行更改的说明，请参阅本主题中的[视图或有效像素、观看距离和比例系数](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
 
 较常规的方法（适用于位图的浅色和深色主题之间有差异的情况）是使用两个图像资源：一个带有深色前景（用于浅色主题），而另一个带有浅色前景（用于深色主题）。 有关如何为这组位图资源命名的详细信息，请参阅[如何使用限定符为资源命名](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。 为一组图像文件正确命名后，你可以使用它们的根名称在摘要中引用它们，如下所示：
 
@@ -353,11 +360,11 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 使用 **Microsoft.Phone.Shell.ShellToast** 类显示 Toast 的代码应该移植为使用 [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642)、[**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653)、[**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 和/或 [**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) 类。 请注意，在移动设备上，“Toast”的面向消费者的术语是“横幅”。
 
-请参阅[使用磁贴、锁屏提醒和 Toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
+请参阅[使用磁贴、锁屏提醒和 toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
 
-## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>视图/有效像素、观看距离和比例系数
+## <a name="view-or-effective-pixels-viewing-distance-and-scale-factors"></a>视图或有效像素、观看距离和比例系数
 
-Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大小和分辨率抽象表示 UI 元素的大小和布局的方法不同。 Windows Phone Silverlight 应用使用视图像素来执行此操作。 在 Windows 10 中，视图像素的概念已优化为有效像素的概念。 以下是该术语的解释、它的意义以及它所提供的额外价值。
+在脱离设备的实际物理大小和分辨率而抽象表示 UI 元素大小和布局方面，Windows Phone Silverlight 应用和 Windows 10 应用使用的方法有所不同。 Windows Phone Silverlight 应用使用视图像素来执行此操作。 在 Windows 10 中，视图像素的概念已优化为有效像素的概念。 以下是该术语的解释、它的意义以及它所提供的额外价值。
 
 术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，你可以优化用户的体验。
 
@@ -369,7 +376,7 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 这样，应用便可在所有屏幕上提供最佳体验。我们建议你针对各种屏幕大小创建每个位图资源，其中每个资源均适用于特定的比例因子。 在大多数情况下，提供 100% 缩放、200% 缩放和 400% 缩放的资源（按优先级顺序）能在采用所有中间比例系数时均可提供极佳效果。
 
-**注意** 如果出于任何原因无法使用多种大小创建资源，则创建 100% 缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
+**注意**  如果出于任何原因无法使用多种大小创建资源，则创建 100% 缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
 
 如果具有繁复的图案，则可能希望在更多尺寸中提供资源。 如果要从矢量图像开始，则生成采用任意比例系数的高质量资源相对容易。
 
@@ -391,10 +398,5 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 ## <a name="related-topics"></a>相关主题
 
 * [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

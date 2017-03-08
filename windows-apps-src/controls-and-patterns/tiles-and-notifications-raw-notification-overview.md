@@ -1,13 +1,20 @@
 ---
 author: mijacobs
-Description: "原始通知是简短的通用推送通知。"
+Description: "原始通知是简短的一般用途的推送通知。"
 title: "原始通知概述"
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 8aa2c34969b87fbe440c578d93553dbdd6f3d8c4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8d695dbf3aa662a760f162b6fcb818d90f45c38
+ms.lasthandoff: 02/07/2017
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -125,10 +132,5 @@ ms.openlocfilehash: 8aa2c34969b87fbe440c578d93553dbdd6f3d8c4
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

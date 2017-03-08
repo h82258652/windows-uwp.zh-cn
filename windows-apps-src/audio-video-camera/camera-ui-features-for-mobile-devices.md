@@ -1,19 +1,26 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
 description: "本文展示如何利用仅在移动设备上提供的特殊相机 UI 功能。"
 title: "移动设备的相机 UI 功能"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 77d1709cd42253c229b01df21ae3416e57c1c2ab
-ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ab74d720369bd95c10c8804836be1cc747d57931
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#移动设备的相机 UI 功能
+#<a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
 
 本文展示如何利用仅在移动设备上提供的特殊相机 UI 功能。 
 
-## 将移动扩展添加到项目 
+## <a name="add-the-mobile-extension-to-your-project"></a>将移动扩展添加到项目 
 
 若要使用这些功能，必须将对用于通用应用平台的 Microsoft 移动扩展 SDK 的引用添加到你的项目中。
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 3.  选中“适用于通用应用平台的 Microsoft 移动扩展 SDK”****复选框。
 
-## 隐藏状态栏
+## <a name="hide-the-status-bar"></a>隐藏状态栏
 
 移动设备具有向用户提供有关设备的状态信息的 [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 控件。 此控件占用屏幕上的空间，这可能会干扰媒体捕获 UI。 你可以通过调用 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 来隐藏状态栏，但你必须从你使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) 方法以确定 API 是否在其中可用的条件块内执行此调用。 此方法将仅在支持状态栏的移动设备上返回 True。 当应用启动时或当你开始从相机预览时，应该隐藏状态栏。
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-## 使用硬件相机按钮
+## <a name="use-the-hardware-camera-button"></a>使用硬件相机按钮
 
 某些移动设备具有专用硬件相机按钮，相比屏幕控件，一些用户更倾向于使用它们。 若要在按下硬件相机按钮时收到通知，请注册 [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) 事件的处理程序。 由于此 API 仅适用于移动设备，必须再次使用 **IsTypePresent** 以确保在尝试访问该 API 之前，它在当前设备上受支持。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 > [!NOTE]
 > 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。                                                                                   |
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -62,10 +69,5 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

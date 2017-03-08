@@ -3,9 +3,16 @@ title: "安全 Windows 应用开发简介"
 description: "本入门文章可以帮助应用架构师和开发人员更好地了解可加速创建安全通用 Windows 平台 (UWP) 应用的各种 Windows 10 平台功能。"
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1faf53dc2f1d919af072cd52593292fc552317e9
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
 -   如果你实现了自定义代码来覆盖这些安全方案，则所编写、测试和维护的代码要比实际的少。
 -   由于你使用操作系统控制应用访问其资源和本地或远程系统资源的方式，因此应用变得更加稳定和安全。
 
-在身份验证期间，将验证请求访问特定服务的用户的身份。 Microsoft Passport 和 Windows Hello 是 Windows 10 中的组件，可帮助在 Windows 应用中创建更安全的身份验证机制。 通过它们，你可以使用个人标识号 (PIN) 或生物识别（例如用户指纹、面部或虹膜）来为应用实现多重身份验证。
+在身份验证期间，将验证请求访问特定服务的用户的身份。 Windows Hello 是 Windows 10 中的组件，可帮助在 Windows 应用中创建更安全的身份验证机制。 通过它，你可以使用个人标识号 (PIN) 或生物识别（例如用户指纹、面部或虹膜）来为应用实现多重身份验证。
 
 未送达数据是指连接和通过该连接传输的消息。 它的一个示例是使用 Web 服务在远程服务器中检索数据。 使用安全套接字层 (SSL) 和安全超文本传输协议 (HTTPS) 可确保连接的安全性。 阻止中间方访问这些消息，或阻止未经授权的应用与 Web 服务进行通信对保护未送达数据而言很关键。
 
@@ -155,24 +162,24 @@ Azure Active Directory (Azure AD) 是一种基于云的标识和访问权限管�
 
 另外，Azure AD 可用作 OAuth 提供程序，以便向标准用户提供各种平台上应用的身份验证和授权机制。 若要了解详细信息，请参阅 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) 和 [Azure 上的多重身份验证](https://azure.microsoft.com/services/multi-factor-authentication/)。
 
-## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport 和 Windows Hello
+## <a name="24-windows-hello"></a>2.4 Windows Hello
 
 
-在 Windows 10 中，操作系统内置了方便的多重身份验证机制。 所涉及到的两个组件称为 Microsoft Passport 和 Windows Hello。 Windows Hello 是内置于 Windows 10 的新生物识别登录系统。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 Windows 安全凭据存储可保护设备上的生物识别数据。
+在 Windows 10 中，操作系统内置了方便的多重身份验证机制。 Windows Hello 是内置于 Windows 10 的新生物识别登录系统。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 Windows 安全凭据存储可保护设备上的生物识别数据。
 
-Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了用户和请求的服务或数据项之间的路径的第一部分。 在设备已识别该用户后，它仍然必须先对该用户进行身份验证，然后确定是否要授予所请求的资源的访问权限。 Microsoft Passport 提供完全集成到 Windows 的强双因素身份验证 (2FA)，并将可重复使用的密码替换为特定设备和生物识别手势或 PIN 的组合。 该 PIN 在用户的 Microsoft Passport 注册过程中由用户指定。
+Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了用户和请求的服务或数据项之间的路径的第一部分。 在设备已识别该用户后，它仍然必须先对该用户进行身份验证，然后确定是否要授予所请求的资源的访问权限。 Windows Hello 还提供完全集成到 Windows 的强双因素身份验证 (2FA)，并将可重复使用的密码替换为特定设备和生物识别手势或 PIN 的组合。 该 PIN 在用户的 Microsoft 帐户注册过程中由用户指定。
 
-不过，Microsoft Passport 不仅仅是传统 2FA 系统的替代品。 它在概念上类似于智能卡：通过使用加密基元而不是字符串比较来执行身份验证，并且用户的密钥材料在防篡改的硬件内很安全。 Microsoft Passport 也不需要智能卡部署所需的额外基础结构组件。 尤其是，无需公钥基础结构 (PKI) 即可管理证书（如果你当前没有）。 Microsoft Passport 结合了智能卡的主要优点，即虚拟智能卡的部署灵活性和物理智能卡的可靠安全性，而没有它们的任何缺点。
+不过，Windows Hello 不仅仅是传统 2FA 系统的替代品。 它在概念上类似于智能卡：通过使用加密基元而不是字符串比较来执行身份验证，并且用户的密钥材料在防篡改的硬件内很安全。 Microsoft Hello 也不需要智能卡部署所需的额外基础结构组件。 尤其是，无需公钥基础结构 (PKI) 即可管理证书（如果你当前没有）。 Windows Hello 继承了智能卡的主要优点（虚拟智能卡的部署灵活性以及物理智能卡的强大安全性），而摒弃了其所有缺点。
 
-设备必须先向 Microsoft Passport 注册，然后用户才能使用它进行身份验证。 Microsoft Passport 使用非对称（公钥/私钥）加密，其中一方使用公钥对另一方可以使用私钥解密的数据进行加密。 Microsoft Passport 创建一组公钥/私钥对，并且将私钥写入设备的受信任的平台模块 (TPM) 芯片。 设备注册后，UWP 应用可以调用系统 API 检索可用于在服务器上注册用户的用户公钥。
+设备必须先向 Windows Hello 注册，然后用户才能使用它进行身份验证。 Windows Hello 使用非对称（公钥/私钥）加密，其中一方使用公钥对另一方可以使用私钥解密的数据进行加密。 Windows Hello 创建一组公钥/私钥对，并且将私钥写入设备的受信任的平台模块 (TPM) 芯片。 设备注册后，UWP 应用可以调用系统 API 检索可用于在服务器上注册用户的用户公钥。
 
 应用的注册工作流可能如下所示：
 
-![Microsoft Passport 注册](images/secure-passport.png)
+![Windows Hello 注册](images/secure-passport.png)
 
 你收集的注册信息可能比在此简单方案中要包括更多的标识信息。 例如，如果你的应用访问受保护的服务（如银行服务），你需要在注册过程中请求标识证明和其他内容。 满足所有条件后，此用户的公钥将存储在后端，并用于在用户下次使用该服务时进行验证。
 
-有关 Microsoft Passport 和 Windows Hello 的详细信息，请参阅 [Microsoft Passport 指南](https://msdn.microsoft.com/library/mt589441)和 [Microsoft Passport 开发人员指南](microsoft-passport.md)。
+有关 Windows Hello 的详细信息，请参阅 [Windows Hello 指南](https://msdn.microsoft.com/library/mt589441)和 [Windows Hello 开发人员指南](microsoft-passport.md)。
 
 ## <a name="3-data-in-flight-security-methods"></a>3 未送达数据安全方法
 
@@ -447,7 +454,7 @@ public void SampleReusableHash()
 ## <a name="5-summary"></a>5 摘要
 
 
-Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创建更多安全应用的方法。 在不同的身份验证方案（例如单因素、多重或使用 OAuth 标识提供程序的代理身份验证）中，存在 API 以减少最常见的身份验证挑战。 Windows Hello 提供了新的生物识别登录系统，可识别用户并主动挫败绕开正常标识的尝试。 Microsoft Passport 与 Windows Hello 协作来提供永远无法泄露或在受信任的平台模块外使用的多层密钥和证书。 此外，可以选择使用证明标识密钥和证书来增加一层安全性。
+Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创建更多安全应用的方法。 在不同的身份验证方案（例如单因素、多重或使用 OAuth 标识提供程序的代理身份验证）中，存在 API 以减少最常见的身份验证挑战。 Windows Hello 提供了新的生物识别登录系统，可识别用户并主动挫败绕开正常标识的尝试。 它还提供永远无法泄露或在受信任的平台模块外使用的多层密钥和证书。 此外，可以选择使用证明标识密钥和证书来增加一层安全性。
 
 为保护未送达数据，在可能使用 SSL 固定验证服务器的真实性的同时，存在 API 以通过 SSL 安全地与远程系统通信。 Azure API 管理可帮助以可控的安全方式发布 API，方法是使用提供 API 终结点的额外混淆的代理提供在 Web 上公开 API 的强大配置选项。 使用 API 密钥可以保护对这些 API 的访问，并且 API 调用可以限制为控制性能。
 
@@ -459,7 +466,7 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 ### <a name="61-how-to-articles"></a>6.1 操作方法文章
 
 -   [身份验证和用户身份](authentication-and-user-identity.md)
--   [Microsoft Passport](microsoft-passport.md)
+-   [Windows Hello](microsoft-passport.md)
 -   [凭据保险箱](credential-locker.md)
 -   [Web 身份验证代理](web-authentication-broker.md)
 -   [指纹生物识别](fingerprint-biometrics.md)
@@ -499,8 +506,3 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585)
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

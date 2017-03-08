@@ -3,19 +3,27 @@ author: GrantMeStrength
 Description: "比较 iOS、Android 和 Windows 10 之间的平台功能。"
 Search.Product: eADQiWindows 10XVcnh
 title: "适用于 Android 和 iOS 开发人员的 Windows 应用概念映射"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
+ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
 如果你是具有 Android 或 iOS 技能和/或代码的开发人员，并且希望移动到 Windows 10 和通用 Windows 平台 (UWP)，则此资源具有在三个平台之间映射平台功能（以及你的知识）所需的一切。
 
 另请参阅[从 iOS 移动到 UWP](ios-to-uwp-root.md) 中的移植内容。 本文档也可供[下载](https://www.microsoft.com/download/details.aspx?id=52041)。
 
-## 用户界面 (UI)
+## <a name="user-interface-ui"></a>用户界面 (UI)
 
 
 <table style="width:100%">
@@ -166,7 +174,7 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 <td align="left"><strong>语音。</strong> <br><br>语音输入的语音识别和其他语音功能。</td>
 <td align="left">实现 <strong>RecognizerIntent</strong> 的任何应用（如 <strong>Google 语音搜索</strong>）均可以提供语音输入。 <strong>SpeechRecognizer</strong> 类允许应用使用 Google 的语音识别 API。</td>
 <td align="left">不存在任何内置的语音识别或语音输入 API。</td>
-<td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">语音识别</a></strong> API 与前台的应用交互。 你可以使用基于语音的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 交互</a></strong>来启动前台或后台中的应用，以及与后台应用交互。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">语音交互</a></td>
+<td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">语音识别</a></strong> API 与前台的应用交互。 你可以使用基于语音的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 交互</a></strong>来启动前台或后台中的应用，并与后台应用交互。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">语音交互</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>自定义用户输入。</strong> <br><br>处理键盘、鼠标、触笔和其他输入。</td>
@@ -662,9 +670,4 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 </tr>
 </tbody>
 </table>
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

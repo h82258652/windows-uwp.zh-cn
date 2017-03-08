@@ -3,13 +3,20 @@ author: msatranjr
 title: "Windows 运行时组件"
 description: "Windows 运行时组件是自包含对象，可将其实例化，并可采用任一语言使用它，包括 C#、Visual Basic、JavaScript 和 C++。"
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: e0dfdce921ee910d0440f01b4f816598499925f5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 853bd782ca9b5495aeb74a4aaf3dc53f23d7c282
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows 运行时组件
+# <a name="windows-runtime-components"></a>Windows 运行时组件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -33,10 +40,5 @@ Windows 运行时组件是自包含对象，可将其实例化，并可采用任
  
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

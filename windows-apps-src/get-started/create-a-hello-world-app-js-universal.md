@@ -1,11 +1,18 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
+title: "创建“Hello, world”应用 (JS)"
 description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&amp;\\#0034;Hello, world&amp;\\#0034;应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
-ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 915f77e308d6384aa539f78cc307842dd51cd9f4
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
@@ -24,32 +31,32 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 -   [什么是通用 Windows 应用](whats-a-uwp.md)？
 -   若要完成本教程，你需要 Windows 10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
--   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
+-   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在**窗口**菜单中，通过使用**重置窗口布局**命令来重置它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目
 
 我们来创建名为 `HelloWorld` 的新应用。 以下是操作方法：
 1.  启动 Visual Studio 2015。
 
-2.  在“文件”菜单中，依次选择“新建”&gt;“项目...”以打开“新建项目”对话框。
+2.  在**文件**菜单中，依次选择**新建 > 项目...**以打开*新建项目*对话框。
 
-3.  在左侧的模板列表中，依次展开“已安装”&gt;“模板”&gt;“JavaScript”&gt;“Windows”，然后选择“通用”以查看 UWP 项目模板列表。 选择“WinJS App(通用 Windows)”。
+3.  在左侧的模板列表中，依次展开**已安装 > 模板 > JavaScript > Windows**，然后选择**通用**以查看 UWP 项目模板列表。 选择 **WinJS App（通用 Windows）**。
 
     ![“新建项目”窗口 ](images/winjs-tut-newproject.png)
 
-    在本教程中，我们使用“WinJS App”模板。 此模板创建一个最基本的 UWP 应用，该应用能够编译和运行，但不包含用户界面控件或数据。 本教程中的课程将指导你向应用中添加控件和数据。
+    在本教程中，我们使用 **WinJS App** 模板。 此模板创建一个最基本的 UWP 应用，该应用能够编译和运行，但不包含用户界面控件或数据。 本教程中的课程将指导你向应用中添加控件和数据。
 
    （如果你没有看到这些选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
 
-4.  在“名称”文本框中，键入“HelloWorld”。
-5.  单击“确定”以创建项目。
-6.  系统将要求你选择 Windows 支持的“目标版本”和“最低版本”。 默认设置都合适，因此单击“确定”。
+4.  在**名称**文本框中，键入“HelloWorld”。
+5.  单击**确定**以创建项目。
+6.  系统将要求你选择 Windows 支持的**目标版本**和**最低版本**。 默认设置都合适，因此单击**确定**。
 
-    Visual Studio 将创建项目并在“解决方案资源管理器”中显示该项目。
+    Visual Studio 将创建项目并在**解决方案资源管理器**中显示该项目。
 
     ![HelloWorld 项目的 Visual Studio 解决方案资源管理器](images/winjs-tut-helloworld.png)
 
-尽管“WinJS App”是最基本的模板，但该模板仍包含少量文件：
+尽管 **WinJS App** 是最基本的模板，但该模板仍包含少量文件：
 
 -   介绍应用（它的名称、说明、磁贴、起始页、初始屏幕等等）并列出应用包含的文件的清单文件 (package.appxmanifest)。
 -   用于在“开始”菜单中显示的一组徽标图像（images/Square150x150Logo.scale-200.png、images/Square44x44Logo.scale-200.png 和 images/Wide310x150Logo.scale-200.png）。
@@ -57,7 +64,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 -   用于在应用启动时显示的初始屏幕 (images/SplashScreen.scale-200.png)。
 -   用于在应用启动时运行的起始页 (index.html) 和附带的 JavaScript 文件 (main.js)。
 
-若要查看和编辑文件，请双击“解决方案资源管理器”中的文件。
+若要查看和编辑文件，请双击**解决方案资源管理器**中的文件。
 
 这些文件是所有使用 JavaScript 的 UWP 应用必不可少的文件。 在 Visual Studio 中创建的所有项目都包含这些文件。
 
@@ -83,7 +90,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
    -或者-
 
-   在“调试”菜单中，单击“开始调试”。
+   在**调试**菜单中，单击**开始调试**。
 
    -或者-
 
@@ -105,7 +112,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
    -或者-
 
-   在“调试”菜单中，单击“停止调试”。
+   在**调试**菜单中，单击**停止调试**。
 
    -或者-
 
@@ -124,19 +131,19 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 （如果你没有看到这些仿真器，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
 
-最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”选项。
+最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用**仿真器 10.0.14393.0 WVGA 4 英寸 512MB** 选项。
 
 **在移动设备仿真器上开始调试**
 
-1.  在“标准”工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”。
-2.  单击工具栏中的“开始调试”按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
+1.  在**标准**工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取**仿真器 10.0.14393.0 WVGA 4 英寸 512MB**。
+2.  单击工具栏中的**开始调试**按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
 
    -或者-
 
    在**“调试”**菜单中，单击**“开始调试”**。
 
 
-Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 在初始启动时，仿真器可能需要一些时间来启动。 你可能会看到有关 HyperV 的错误，单击“重试”应该可以解决此问题。 在移动设备仿真器上，应用外观如下所示。
+Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 在初始启动时，仿真器可能需要一些时间来启动。 你可能会看到有关 HyperV 的错误，单击**重试**应该可以解决此问题。 在移动设备仿真器上，应用外观如下所示。
 
 ![移动设备上的初始应用屏幕](images/helloworld-1-winjs-phone.png)
 
@@ -264,7 +271,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 在 UWP 应用中，你无需担心触控、鼠标与其他指针输入形式之间的区别。 你只需使用你了解的事件（如 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312)），这些事件适用于所有输入形式。
 
-**提示** 应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控、鼠标以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
+**提示**   应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控、鼠标以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
 
 我们继续并创建事件处理程序。
 
@@ -298,7 +305,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 我们对 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 激活感兴趣。 只要应用未在运行而后由用户激活，就会*启动*该应用。 不论应用过去是否关闭，或者是否属于首次启动，激活都会调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在对 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的调用中，这样可确保初始屏幕不会在应用页面准备就绪前停止。
 
-**提示** **WinJS.UI.processAll** 函数扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便在以后需要时进行添加。
+**提示**   **WinJS.UI.processAll** 函数扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便在以后需要时进行添加。
 
 为非 WinJS 控件注册事件处理程序的较好时机是在调用 **WinJS.UI.processAll** 之后。
 
@@ -324,7 +331,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 运行应用。 当你在文本框中输入姓名并单击按钮时，应用会显示个性化问候。
 
-**注意** 如果你想知道我们为何在代码中使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 注册事件而不是在 HTML 中设置 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，请参阅[基本应用编码](https://msdn.microsoft.com/library/windows/apps/Hh780660)以获得详细说明。
+**注意**   如果你想知道我们为何在代码中使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 注册事件而不是在 HTML 中设置 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，请参阅[基本应用编码](https://msdn.microsoft.com/library/windows/apps/Hh780660)以获得详细说明。
 
 ## <a name="step-6-add-a-windows-library-for-javascript-control"></a>步骤 6：添加 Windows JavaScript 库控件
 
@@ -493,10 +500,5 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 祝贺你，你已使用 JavaScript 和 HTML创建了你的第一款适用于 Windows 10 和 UWP 的应用！
 
-后续步骤是什么？ [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) 文档将帮助你使用 Windows JavaScript 库。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+后续步骤是什么？ [WinJS](https://developer.microsoft.com/windows/develop/winjs) 文档将引导你使用 Windows JavaScript 库或直接跳至[后续步骤](learn-more.md)。
 

@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "在 Windows 应用商店分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一加载项的聚合购置数据。"
+description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一加载项的聚合购置数据。"
 title: "获取加载项购置"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 加载项购置"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be69a45586f4b7d66740d141dcc350eafd16bb53
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -14,7 +21,7 @@ ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
 
 
 
-在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用的加载项（也称为应用内产品或 IAP）购置聚合数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[加载项购置报告](../publish/add-on-acquisitions-report.md)中获取此信息。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用的加载项（也称为应用内产品或 IAP）聚合购置数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[加载项购置报告](../publish/add-on-acquisitions-report.md)中获取此信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -177,9 +184,4 @@ Authorization: Bearer <your access token>
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

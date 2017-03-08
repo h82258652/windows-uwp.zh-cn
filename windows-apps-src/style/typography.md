@@ -1,12 +1,19 @@
 ---
 author: mijacobs
-description: "作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。"
+description: "作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）还对该设计的用户体验有着重大作用。"
 title: "版式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: e13e9c8b559c16676628ab6e77ddad019a4c22e0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -211,9 +218,4 @@ Green shows where all caps should be used. Red shows where it should not.
 * [文本控件](../controls-and-patterns/text-controls.md)
 * [字体](fonts.md)
 * [Segoe MDL2 图标](segoe-ui-symbol-font.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

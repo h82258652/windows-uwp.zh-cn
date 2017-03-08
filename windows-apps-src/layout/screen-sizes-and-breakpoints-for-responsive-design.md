@@ -1,14 +1,21 @@
 ---
 author: mijacobs
 title: "响应式设计的屏幕大小和断点"
-description: "。"
+description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 7189987209e894d81b2574aff576c64fb5f7a97a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7c992aa651069f6876aa920da88ada659480132e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -100,9 +107,4 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 
 [**适用于手机的 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431) 是兼容 Windows 10 移动版设备的新体验，用户可以使用它将手机连接到监视器、鼠标和键盘来使手机像笔记本电脑一样工作。 针对特定断点进行设计时请记住这一新功能 - 移动手机将不会始终保持在较小尺寸级别。
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,17 +3,24 @@ author: mcleblanc
 title: "入门：下一步是什么"
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: "凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 入门：下一步是什么？
+# <a name="getting-started-what-next"></a>入门：下一步是什么？
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。 在后续步骤中，请先通读以下主题，然后启动 Microsoft Visual Studio 并开始编写代码！
 
@@ -24,20 +31,15 @@ ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
 -   [创建你的第一个使用 C# 或 Visual Basic 的 Windows 运行时应用](http://go.microsoft.com/fwlink/p/?LinkID=394138)：该主题重点介绍 Windows Phone 开发。
 -   [适用于 iOS 和 Android 开发人员的视频](https://msdn.microsoft.com/library/windows/apps/dn393982)：以视频的形式提供更多帮助。
 
-此外，请确保访问我们的[社区资源](http://go.microsoft.com/fwlink/p/?LinkId=263513)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
+此外，请确保访问我们的[社区资源](https://developer.microsoft.com/en-us/windows/support)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
 
 我们认为，Windows 10 将为你开启新的应用构建机会。 我们期待看到你即将生成的所有优秀应用！
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 **适用于 iOS 开发人员的主题**
 * [适用于 iOS 开发人员的资源](https://msdn.microsoft.com/library/windows/apps/jj945493)
 * [适用于 iOS 开发人员的 Windows 控件](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [适用于 iOS 开发人员的 Windows Cookbook](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [生成适用于 Windows 的应用博客](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

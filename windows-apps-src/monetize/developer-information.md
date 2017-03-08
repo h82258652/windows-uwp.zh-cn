@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
 description: "获取有关 Microsoft Store Services SDK 中的 Microsoft Advertising 库的一般开发人员信息。"
 title: "有关 Microsoft Advertising 库的开发人员信息"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 广告, 广告"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 44b5266a104b2f706537cea2167b395487f275d2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 有关 Microsoft Advertising 库的开发人员信息
+# <a name="developer-information-about-the-microsoft-advertising-libraries"></a>有关 Microsoft Advertising 库的开发人员信息
 
 
 
@@ -18,7 +24,7 @@ ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 本部分中的该主题向开发人员提供有关 Microsoft Store Services SDK（适用于 UWP 应用）以及适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK（适用于 Windows 8.1 和 Windows Phone 8.x 应用）中的 Microsoft Advertising 库的有用信息。
 
 
-## 本部分内容
+## <a name="in-this-section"></a>本部分内容
 
 | 主题                                                                                                       | 描述                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -35,9 +41,4 @@ ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
  
 
  
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

@@ -1,11 +1,21 @@
 ---
 author: Jwmsft
+Description: "命令栏使用户能够轻松地访问应用的最常见任务。"
+title: "应用栏和命令栏"
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
+ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 translationtype: Human Translation
-ms.sourcegitcommit: a652189d0595bb6dffbc5228a91a68261eb7e5ef
-ms.openlocfilehash: c6d295a21825d1e89eaafcba59ca3a1b85669da9
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b14f83d9e834fcefbb3f9d1f9870f81686b44084
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="app-bar-and-command-bar"></a>应用栏和命令栏
@@ -298,9 +308,4 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 * [UWP 应用的命令设计基础知识](../layout/commanding-basics.md)
 * [**CommandBar 类**](https://msdn.microsoft.com/library/windows/apps/dn279427)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: "优化文件访问"
 description: "创建可高效访问文件系统的通用 Windows 平台 (UWP) 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 31869b116096052bed9e1c462de3f93e4d1335c2
+ms.lasthandoff: 02/07/2017
 
 ---
-# 优化文件访问
+# <a name="optimize-file-access"></a>优化文件访问
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -125,9 +132,9 @@ ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 > ```
 如果要对 Windows.Storage 对象（如 `Windows.Storage.ApplicationData.Current.LocalFolder`）执行多个操作，请创建一个本地变量以引用该存储源，这样你每次访问它时就不必重新创建中间对象。
 
-## C# 和 Visual Basic 中的数据流性能
+## <a name="stream-performance-in-c-and-visual-basic"></a>C# 和 Visual Basic 中的数据流性能
 
-### UWP 与 .NET 数据流之间的缓冲
+### <a name="buffering-between-uwp-and-net-streams"></a>UWP 与 .NET 数据流之间的缓冲
 
 当你希望将 UWP 数据流（例如 [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) 或 [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)）转换为 .NET 数据流 ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)) 时，可以使用多种方案。 例如，在编写 UWP 应用并希望将在数据流上可用的现有 .NET 代码用于 UWP 文件系统时，这非常有用。 为了实现此目的，适用于 Windows 应用商店应用的 .NET API 提供允许在 .NET 与 UWP 流类型间转换的扩展方法。 有关详细信息，请参阅 [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)。
 
@@ -188,11 +195,11 @@ ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 
 在将 UWP 数据流转换为 .NET 数据流的大部分情况中，均预期使用此默认缓冲行为。 但是，在某些情况下，你可能希望调整缓冲行为以便提高性能。
 
-### 使用大型数据集
+### <a name="working-with-large-data-sets"></a>使用大型数据集
 
 在读取或写入较大的数据集时，你可以通过为 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法提供较大的缓冲区大小来提高读取或写入吞吐量。 这将为数据流适配器提供较大的内部缓冲区大小。 例如，将来自大型文件的数据流传递给 XML 分析程序时，分析程序可以从数据流中执行多个连续的小读取操作。 大型缓冲区可以减少对基础 UWP 流的调用次数并提高性能。
 
-> **注意** 在设置大于 80 KB 的缓冲区大小时应非常小心，因为这可能导致在垃圾回收器堆栈上产生碎片（[请参阅改进垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
+> **注意**   在设置大于约 80 KB 的缓冲区大小时应非常小心，因为这可能导致垃圾回收器堆上产生碎片（请参阅[改进垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -228,16 +235,11 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 同时使用大量流时，你可能希望减少或消除缓冲区的内存开销。 你可以指定较小的缓冲区，或者将 *bufferSize* 参数设置为 0 以完全关闭该流适配器的缓冲。 如果对托管流执行大型读取和写入操作，仍可以不通过缓冲而获得不错的吞吐量性能。
 
-### 执行延迟敏感操作
+### <a name="performing-latency-sensitive-operations"></a>执行延迟敏感操作
 
 如果你希望低延迟地读取和写入并且不希望在基础 UWP 数据流之外的大型数据块中进行读取操作，则也可能希望避免使用缓冲。 例如，如果你使用数据流进行网络通信，则可能希望低延迟地读取和写入。
 
 在聊天应用中，你可以使用数据流通过网络接口以便发送来往消息。 在这种情况下，你希望在准备好后立即发送消息，而不等待填满缓冲区。 如果在调用 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法时将缓冲区大小设置为 0，则所得的适配器将不分配缓冲区，并且所有调用直接操作基础 UWP 数据流。
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

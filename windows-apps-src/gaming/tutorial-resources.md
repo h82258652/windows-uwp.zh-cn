@@ -5,13 +5,19 @@ description: "恭喜你！ 此时，你已了解基本的通用 Windows 平台 (
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - DirectX, XAML
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e3f4abdb0a0f42d1b25a3adc1a78ab414affa77a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 扩展游戏示例
+# <a name="extend-the-game-sample"></a>扩展游戏示例
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,7 +28,7 @@ ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 -   [Direct3D 11 概述](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 -   [Direct3D 11 参考](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
-## 扩展游戏示例：将 XAML 用于覆盖层
+## <a name="extending-the-game-sample-using-xaml-for-the-overlay"></a>扩展游戏示例：将 XAML 用于覆盖层
 
 
 还有一种方法我们未深入讨论，即使用 XAML 代替 Direct2D 作为覆盖层。 与 Direct2D 相比，XAML 在绘制用户界面元素方面有许多优势， 最重要的一点是它可以更方便地将 Windows 10 外观和感觉融入到 DirectX 游戏中。 许多用于定义 UWP 应用的常用元素、 样式和行为都紧密集成到 XAML 模型中，大幅减少了游戏开发人员的实现工作。 如果你自己设计的游戏有一个复杂的用户界面，请考虑使用 XAML 代替 Direct2D。
@@ -191,7 +197,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ /* args */)
 
 有关此过程的详细信息，请参阅 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。
 
-## XAML 游戏示例 XAML 代码隐藏的完整代码
+## <a name="complete-code-for-the-xaml-game-sample-xaml-codebehinds"></a>XAML 游戏示例 XAML 代码隐藏的完整代码
 
 
 下面是 XAML 版本的 Direct3D 11.1 射击游戏示例中的代码隐藏的完整代码。
@@ -1517,10 +1523,5 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

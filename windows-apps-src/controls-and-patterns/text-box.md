@@ -1,18 +1,27 @@
 ---
 author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
+Description: "通过 TextBox 控件，用户可以在应用中输入文本。"
+title: "文本框"
 label: Text box
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 3cbfa4a2896e5e7453d9fe1793f422d2f7b60c79
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 205903636b6486d80ccffde9b32818e02e5ac7ea
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="text-box"></a>文本框
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单行文本，但可配置为捕获多行文本。 文本以简单、统一、纯文本的格式显示在屏幕上。
+通过 TextBox 控件，用户可以在应用中键入文本。 它通常用于捕获单行文本，但可配置为捕获多行文本。 文本以简单、统一、纯文本的格式显示在屏幕上。
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
@@ -278,9 +287,4 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

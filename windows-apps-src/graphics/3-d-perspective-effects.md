@@ -2,15 +2,22 @@
 author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
 title: "XAML UI 的 3D 透视效果"
-description: "你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的对象接近和远离你的视觉效果，如此处所示。"
+description: "你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的物体接近和远离你的视觉效果，如此处所示。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
-ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
+ms.lasthandoff: 02/07/2017
 
 ---
-# XAML UI 的 3D 透视效果
+# <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透视效果
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的物体接近和远离你的视觉效果，如此处所示。
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 [运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
-## PlaneProjection 类
+## <a name="planeprojection-class"></a>PlaneProjection 类
 
 通过使用 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 来设置 UIElement 的 [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) 属性，你可以对任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 应用 3D 效果。 **PlaneProjection** 定义在空间内呈现转换的方式。 下一个示例显示了一个简单情况。
 
@@ -141,7 +148,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 [运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236112)，体验围绕不同位置的旋转中心转动对象。
 
-## 定位对象
+## <a name="positioning-an-object"></a>定位对象
 
 至此，你了解了如何在一个空间内转动对象。 通过以下属性，你可以相对于其他对象定位一个空间内的旋转对象。
 
@@ -180,12 +187,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 注意，在此示例中，对象在旋转时不会改变转向。 这是因为该对象沿着屏幕的 x 轴移动，与对象的旋转无关。
 
-## 定位对象
+## <a name="positioning-an-object"></a>定位对象
 
-对于比 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 更复杂的半 3D 方案，你可以使用 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+对于比 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 更复杂的半 3D 方案，你可以使用 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 和 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。
 

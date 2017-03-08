@@ -2,16 +2,24 @@
 author: WilliamsJason
 title: "Device Portal Fiddler API 参考"
 description: "了解如何以编程方式启用/禁用 Fiddler 跟踪。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 translationtype: Human Translation
-ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
-ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Fiddler 设置 API 参考   
+# <a name="fiddler-settings-api-reference"></a>Fiddler 设置 API 参考   
 可以使用此 REST API 在开发工具包上启用和禁用 Fiddler 网络跟踪。
 
-## 启用 Fiddler 跟踪
+## <a name="enable-fiddler-tracing"></a>启用 Fiddler 跟踪
 
 **请求**
 
@@ -54,7 +62,7 @@ HTTP 状态代码      | 说明
 4XX | 错误代码
 5XX | 错误代码
 
-## 在开发工具包上禁用 Fiddler 跟踪
+## <a name="disable-fiddler-tracing-on-the-devkit"></a>在开发工具包上禁用 Fiddler 跟踪
 
 **请求**
 
@@ -95,12 +103,7 @@ HTTP 状态代码      | 说明
 
 * Windows Xbox
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [为 Xbox 上的 UWP 配置 Fiddler](uwp-fiddler.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

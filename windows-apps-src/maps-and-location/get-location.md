@@ -3,13 +3,20 @@ author: PatrickFarley
 title: "获取用户位置"
 description: "查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。"
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 地图, 位置, 位置功能"
 translationtype: Human Translation
-ms.sourcegitcommit: bdb6cbd0b0ccb7b6aa04cf6ba98bb154af325515
-ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fec870534c7e028ea85e8aa5242f09569e082b96
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 获取用户位置
+# <a name="get-the-users-location"></a>获取用户位置
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,7 +28,7 @@ ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
 
 -   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 启用位置功能
+## <a name="enable-the-location-capability"></a>启用位置功能
 
 
 1.  在“解决方案资源管理器”****中，双击“package.appxmanifest”****并选择“功能”****选项卡。
@@ -34,12 +41,12 @@ ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
   </Capabilities>
 ```
 
-## 获取当前位置
+## <a name="get-the-current-location"></a>获取当前位置
 
 
 此部分介绍如何使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空间中的 API 检测用户的地理位置。
 
-### 步骤 1：请求访问用户的位置
+### <a name="step-1-request-access-to-the-users-location"></a>步骤 1：请求访问用户的位置
 
 除非你的应用具有 Consentless Location 功能（参见备注），否则在尝试访问用户的位置之前，必须使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法请求对该位置的访问权限。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
 
@@ -53,9 +60,9 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
 
->注意：Consentless Location 功能使应用在未获得用户明确许可的情况下就可以获取有意模糊（不精确）的位置（但系统级的位置开关仍必须为“开”****）。 若要了解如何在应用中利用 Consentless Location，请参阅 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 类中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
+>注意：Consentless Location 功能使应用在未获得用户明确许可的情况下就可以获取有意模糊（不精确）的位置（但系统级的位置开关仍必须为**开**）。 若要了解如何在应用中利用 Consentless Location，请参阅 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 类中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
 
-### 步骤 2：获取用户的位置并注册位置权限的更改
+### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步骤 2：获取用户的位置并注册位置权限的更改
 
 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 方法执行当前位置的一次读取。 在此处，**switch** 语句将与 **accessStatus**（来自上一示例）结合使用以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象、注册位置权限的更改，并请求用户位置。
 
@@ -70,7 +77,7 @@ switch (accessStatus)
 
         // Subscribe to the StatusChanged event to get updates of location status changes.
         _geolocator.StatusChanged += OnStatusChanged;
-                        
+
         // Carry out the operation.
         Geoposition pos = await geolocator.GetGeopositionAsync();
 
@@ -91,7 +98,7 @@ switch (accessStatus)
 }
 ```
 
-### 步骤 3：处理位置权限的更改
+### <a name="step-3-handle-changes-in-location-permissions"></a>步骤 3：处理位置权限的更改
 
 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象触发 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件以指示用户位置设置已更改。 该事件通过参数的 **Status** 属性（类型为 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
 
@@ -114,7 +121,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
                 break;
 
             case PositionStatus.Initializing:
-                // Location platform is attempting to acquire a fix. 
+                // Location platform is attempting to acquire a fix.
                 ScenarioOutput_Status.Text = "Initializing";
                 _rootPage.NotifyUser("Location platform is attempting to obtain a position.", NotifyType.StatusMessage);
                 break;
@@ -138,7 +145,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
                 break;
 
             case PositionStatus.NotInitialized:
-                // The location platform is not initialized. This indicates that the application 
+                // The location platform is not initialized. This indicates that the application
                 // has not made a request for location data.
                 ScenarioOutput_Status.Text = "Not initialized";
                 _rootPage.NotifyUser("No request for location is made yet.", NotifyType.StatusMessage);
@@ -159,14 +166,14 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 }
 ```
 
-## 响应位置更新
+## <a name="respond-to-location-updates"></a>响应位置更新
 
 
 本部分介绍如何使用 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件来接收一段时间内的用户的位置更新。 由于用户随时可能会取消对位置的访问，请务必调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 和使用 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，如上一部分中所示。
 
 本部分假定你已启用位置功能并且已从前台应用的 UI 线程调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)。
 
-### 步骤 1：定义报告间隔和注册位置更新
+### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>步骤 1：定义报告间隔和注册位置更新
 
 在本示例中，将一个 **switch** 语句与 **accessStatus**（来自上一示例）一起使用，以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象、指定跟踪类型并注册位置更新。
 
@@ -192,7 +199,7 @@ switch (accessStatus)
 
         // Subscribe to StatusChanged event to get updates of location status changes.
         _geolocator.StatusChanged += OnStatusChanged;
-                    
+
         _rootPage.NotifyUser("Waiting for update...", NotifyType.StatusMessage);
         LocationDisabledMessage.Visibility = Visibility.Collapsed;
         StartTrackingButton.IsEnabled = false;
@@ -211,7 +218,7 @@ switch (accessStatus)
 }
 ```
 
-### 步骤 2：处理位置更新
+### <a name="step-2-handle-location-updates"></a>步骤 2：处理位置更新
 
 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象通过触发 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件以指示用户的位置更改或时间已过，具体取决于配置它的方式。 该事件通过参数的 **Position** 属性（属于类型 [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)）来传递相应的位置信息。 在此示例中，该方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
 
@@ -228,14 +235,14 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 }
 ```
 
-## 更改位置隐私设置
+## <a name="change-the-location-privacy-settings"></a>更改位置隐私设置
 
 
 如果位置隐私设置不允许你的应用访问用户位置，我们建议提供一个指向**“设置”**应用中的**“位置隐私设置”**的便捷链接。 在此示例中，“超链接”控件用于导航到 `ms-settings:privacy-location` URI。
 
 ```xml
 <!--Set Visibility to Visible when access to location is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access Location. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-location">
@@ -253,7 +260,7 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## 对应用进行故障排除
+## <a name="troubleshoot-your-app"></a>对应用进行故障排除
 
 
 在你的应用可以访问用户位置之前，必须在设备上启用**“位置”**。 在“设置”****应用中，检查以下“位置隐私设置”****是否已打开：
@@ -262,16 +269,9 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 -   位置服务设置（“位置”****）已“打开”****
 -   在**“选择可以使用你的位置的应用”**下，你的应用已设置为**“打开”**
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理围栏设计指南](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

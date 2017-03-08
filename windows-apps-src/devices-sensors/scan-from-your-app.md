@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: "从应用扫描"
 description: "在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2dc8ef975c58ba5eb1d8b59bee773c7b6219a03c
+ms.lasthandoff: 02/07/2017
 
 ---
-# 从应用扫描
+# <a name="scan-from-your-app"></a>从应用扫描
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
 -   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
@@ -20,13 +27,13 @@ ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
 
 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 
-**重要提示** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用仅可以在桌面版的 Windows 10 上使用这些 API。
+**重要提示**：[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用仅可以在桌面版的 Windows 10 上使用这些 API。
 
 若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象并获取 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
 
 在应用列出可用的扫描仪后，它可以使用基于扫描仪类型的自动配置的扫描设置，或使用可用的平板或送纸器扫描源进行扫描。 要使用自动配置的设置，扫描仪必须启用自动配置，并且不可同时配备平板和送纸器扫描仪。 有关详细信息，请参阅[自动配置的扫描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)。
 
-## 枚举可用扫描仪
+## <a name="enumerate-available-scanners"></a>枚举可用扫描仪
 
 Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与该扫描仪进行通信。 在本示例中，使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间进行扫描仪设备枚举。
 
@@ -80,7 +87,7 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
     }
 ```
 
-## 扫描
+## <a name="scan"></a>扫描
 
 1.  **获取 ImageScanner 对象**
 
@@ -94,10 +101,10 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
 
 要以默认设置进行扫描，你的应用将依靠 [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 命名空间选择一个扫描仪并从该来源进行扫描。 未更改扫描设置。 可能的扫描仪为自动配置、平板或送纸器。 此类型的扫描最有可能产生成功的扫描操作，即使它从错误的来源进行扫描，如从平板扫描仪而不是从送纸器。
 
-**注意** 如果用户在送纸器中放置要扫描的文档，扫描仪将改为从平板扫描仪进行扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
+**注意**：如果用户在送纸器中放置要扫描的文档，扫描仪将改为从平板扫描仪进行扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
  
 ```csharp
-    var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
+    var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
@@ -105,7 +112,7 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
 
 应用可以使用设备的[自动配置的扫描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)来以最佳的扫描设置进行扫描。 使用此选项，设备本身可以根据要扫描的内容确定最佳扫描设置，例如颜色模式和扫描分辨率。 设备在运行时为每个新的扫描作业选择扫描设置。
 
-**注意** 并非所有扫描仪支持此功能，因此应用必须在使用此设置前检查扫描仪是否支持此功能。
+**注意**：并非所有扫描仪支持此功能，因此应用必须在使用此设置前检查扫描仪是否支持此功能。
 
 在本示例中，应用首先检查扫描仪是否可以进行自动配置，然后进行扫描。 要指定平板扫描仪或送纸器扫描仪，只需使用 **Flatbed** 或 **Feeder** 替换 **AutoConfigured**。
 
@@ -113,14 +120,14 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
     {
         ...
-        // Scan API call to start scanning with Auto-Configured settings. 
+        // Scan API call to start scanning with Auto-Configured settings.
         var result = await myScanner.ScanFilesToFolderAsync(
             ImageScannerScanSource.AutoConfigured, folder).AsTask(cancellationToken.Token, progress);
         ...
     }
 ```
 
-## 预览扫描
+## <a name="preview-the-scan"></a>预览扫描
 
 你可以在扫描到文件夹之前添加代码以预览该扫描。 在以下示例中，应用检查 **Flatbed** 扫描仪是否支持预览，然后预览该扫描。
 
@@ -133,7 +140,7 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## 取消扫描
+## <a name="cancel-the-scan"></a>取消扫描
 
 你可以让用户在扫描中途取消扫描作业，如下所示。
 
@@ -153,7 +160,7 @@ void CancelScanning()
 }
 ```
 
-## 显示进度的扫描
+## <a name="scan-with-progress"></a>显示进度的扫描
 
 1.  创建 **System.Threading.CancellationTokenSource** 对象。
 
@@ -168,13 +175,7 @@ cancellationToken = new CancellationTokenSource();
     var progress = new Progress<UInt32>(ScanProgress);
 ```
 
-## 扫描到图片库
+## <a name="scanning-to-the-pictures-library"></a>扫描到图片库
 
 用户可以使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) 类动态扫描到任何文件夹，但是你必须在清单中声明*图片库*功能以允许用户扫描到该文件夹。 有关应用功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

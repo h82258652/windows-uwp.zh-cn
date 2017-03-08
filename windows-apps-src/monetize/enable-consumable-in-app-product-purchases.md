@@ -3,17 +3,23 @@ author: mcleanbyron
 Description: "通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。"
 title: "启用可消费应用内产品购买"
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: "应用内付费内容代码示例"
+keywords: "uwp, 易耗品, 加载项, 应用内购买, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7395cf28f96b2f7aa9bc6a1d4c461385d50fcbf6
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="enable-consumable-in-app-product-purchases"></a>启用可消费应用内产品购买
 
 
->**注意**  本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理附加内容（也称为应用内产品或 IAP），而非使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+>**注意**&nbsp;&nbsp;本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理附加内容（也称为应用内产品或 IAP），而非使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 
 通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。 这对游戏内货币（金子、金币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。
 
@@ -36,7 +42,7 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
 
 当授权客户访问易耗型应用内产品时，持续跟踪实施的产品 (*productId*) 以及跟踪与实施相关联的交易 (*transactionId*) 非常重要。
 
->**重要提示**  应用负责向应用商店准确报告实施情况。 对于维护客户公平、可靠的购买体验来说，此步骤非常重要。
+>**重要提示**&nbsp;&nbsp;应用负责向应用商店准确报告实施情况。 对于维护客户公平、可靠的购买体验来说，此步骤非常重要。
 
 以下示例说明了使用上一步骤中 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381) 调用的 [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 属性，标识要实施的已购买产品。 使用一个集合将产品信息存储在可供稍后引用的位置中，以便确认成功完成本地的实施。
 
@@ -45,7 +51,7 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
 
 下一个示例显示了如何使用上一个示例的数组来访问产品 ID/交易 ID 对，稍后将使用它们向应用商店报告实施情况。
 
->**重要提示**  无论应用使用何种方法来跟踪和确认实施，应用都必须恪尽职守，确保客户不会为没有收到的项目付费。
+>**重要提示**&nbsp;&nbsp;无论应用使用何种方法来跟踪和确认实施，应用都必须恪尽职守，确保客户不会为没有收到的项目付费。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
@@ -54,7 +60,7 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
 
 完成本地实施后，应用必须调用 [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/dn263380)，其中包含 *productId* 和包括产品购买在内的交易。
 
->**重要提示**  如果无法向应用商店报告已实施的易耗型应用内产品，则会导致在上次购买的实施情况得到报告之前，用户无法再次购买该产品。
+>**重要提示**&nbsp;&nbsp;如果无法向应用商店报告已实施的易耗型应用内产品，则会导致在上次购买的实施情况得到报告之前，用户无法再次购买该产品。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
@@ -76,9 +82,4 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

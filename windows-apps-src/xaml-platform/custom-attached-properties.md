@@ -3,29 +3,36 @@ author: jwmsft
 description: "介绍如何将一个 XAML 附加属性实现为依赖属性，以及如何定义让附加属性可用于 XAML 所必需的访问器约定。"
 title: "自定义附加属性"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
-ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 自定义附加属性
+# <a name="custom-attached-properties"></a>自定义附加属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 *附加属性*是一种 XAML 概念。 附加属性通常定义为一种特殊形式的依赖属性。 本主题介绍如何将一个 XAML 附加属性实现为依赖属性，如何定义让附加属性可用于 XAML 所必需的访问器约定。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 我们假设你能从现有依赖属性的客户角度理解依赖属性，并且已阅读了[依赖属性概述](dependency-properties-overview.md)。 你还应该阅读了[附加属性概述](attached-properties-overview.md)。 要理解本主题中的示例，你还应该理解 XAML，知道如何编写使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用。
 
-## 附加属性的使用场景
+## <a name="scenarios-for-attached-properties"></a>附加属性的使用场景
 
 除了定义类，如果有理由提供其他属性设置机制，则可以创建一个附加属性。 最常见的情况是布局和服务支持。 现有布局属性的示例包括 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)。 在布局场景中，以布局控制元素的子元素形式存在的元素可单独向其父元素表达布局需求，每个元素设置一个被其父元素定义为附加属性的属性值。 Windows 运行时 API 中服务支持方案的一个示例是 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的一组附加属性，例如 [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561)。
 
-**警告** Windows 运行时 XAML 实现的一个现有限制是，你无法为自定义附加属性创建动画。
+**警告**  Windows 运行时 XAML 实现的一个现有限制是，你无法为自定义附加属性创建动画。
 
-## 注册自定义附加属性
+## <a name="registering-a-custom-attached-property"></a>注册自定义附加属性
 
 如果将附加属性严格定义为在其他类型上使用，在其中注册该属性的类不必派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 但是，如果你采用将附加属性也用作依赖属性的典型模型，则需要让访问器的目标参数使用 **DependencyObject**，以便你可以使用支持属性存储。
 
@@ -33,9 +40,9 @@ ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 并不使用[自定义依赖属性](custom-dependency-properties.md)中介绍的包装器技术，你还必须提供静态的 **Get***PropertyName* 和 **Set***PropertyName* 方法作为附加属性的访问器。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
 
-**重要提示** 如果未正确定义访问器，XAML 处理器将无法访问你的附加属性，尝试使用它的任何人都可能会得到一个 XAML 分析器错误。 另外，在引用的程序集中遇到自定义依赖属性时，设计和编码工具常常依赖于“\*Property”约定来命名标识符。
+**重要提示**  如果未正确定义访问器，XAML 处理器将无法访问你的附加属性，尝试使用它的任何人都可能会得到一个 XAML 分析器错误。 另外，在引用的程序集中遇到自定义依赖属性时，设计和编码工具常常依赖于“\*Property”约定来命名标识符。
 
-## 访问器
+## <a name="accessors"></a>访问器
 
 **Get**_PropertyName_ 访问器的签名必须如下所示。
 
@@ -57,9 +64,9 @@ ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 *target* 对象可以是实现中的一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 对象和它的 *valueType* 可以是你的实现中一种更为具体的类型。 请记住，此方法的值是 XAML 处理器在标记中遇到你的附加属性时提供的输入。 你使用的类型必须具有类型转换或现有的标记扩展支持，这样才能通过该特性值（最终是一个字符串）创建合适的类型。 基本的 **Object** 类型也可接受，但通常希望进一步增强类型安全性。 为此，请在取值函数中增加类型增强措施。
 
-**注意** 还可以定义附加属性，它旨在通过属性元素语法使用。 在此情况下，你不需要对值进行类型转换，但需要确保所需的值可采用 XAML 构造。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是一个现有的附加属性示例，它仅支持属性元素用法。
+**注意**  还可以定义附加属性，它旨在通过属性元素语法使用。 在此情况下，你不需要对值进行类型转换，但需要确保所需的值可采用 XAML 构造。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是一个现有的附加属性示例，它仅支持属性元素用法。
 
-## 代码示例
+## <a name="code-example"></a>代码示例
 
 此示例展示了依赖属性注册（使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法），以及一个自定义附加属性的 **Get** 和 **Set** 访问器。 在此示例中，附加属性名称为 `IsMovable`。 因此，访问器必须命名为 `GetIsMovable` 和 `SetIsMovable`。 附加属性的所有者是自身不具有 UI 的名为 `GameService` 服务类；其目的只是在使用 **GameService.IsMovable** 附加属性时提供附加属性服务。
 
@@ -174,7 +181,7 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## 在 XAML 中使用自定义附加属性
+## <a name="using-your-custom-attached-property-in-xaml"></a>在 XAML 中使用自定义附加属性
 
 定义附加属性并将它的支持成员包含在一个自定义类型中后，你必须让这些定义可供 XAML 使用。 为此，你必须映射一个 XAML 命名空间，它将引用其中包含相关类的代码命名空间。 如果在一个库中定义了附加属性，必须将该库包含在应用的应用程序包中。
 
@@ -200,9 +207,9 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 <uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
 ```
 
-**注意** 如果使用 C++ 编写 XAML UI，只要一个 XAML 页面使用一种自定义类型，就必须包含定义附加属性的该类型的标头文件。 每个 XAML 页面都有一个与之关联的 .xaml.h 代码隐藏标头文件。 你应该在这里包含（使用 **\#include**）附加属性的所有者类型定义的标头文件。
+**注意**  如果使用 C++ 编写 XAML UI，只要一个 XAML 页面使用一种自定义类型，就必须包含定义附加属性的该类型的标头文件。 每个 XAML 页面都有一个与之关联的 .xaml.h 代码隐藏标头文件。 你应该在这里包含（使用 **\#include**）附加属性的所有者类型定义的标头文件。
 
-## 自定义附加属性的值类型
+## <a name="value-type-of-a-custom-attached-property"></a>自定义附加属性的值类型
 
 用作自定义附加属性的值类型的类型会影响附加属性使用、定义或同时影响二者。 附加属性的值类型在多个位置声明：在 **Get** 和 **Set** 访问器方法的签名中，以及作为 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 调用的 *propertyType* 参数。
 
@@ -211,7 +218,7 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 - 你可以将附加属性保持不变，但附加属性只能在它是一个属性元素并且它的值声明为对象元素时才支持使用。 在此情况下，属性类型必须支持用作对象元素的 XAML 用法。 对于现有的 Windows 运行时引用类，请检查 XAML 语法，确保该类型支持 XAML 对象元素用法。
 - 你可以将附加属性保持不变，但只能通过一种 XAML 引用技术和特性用法来使用它，例如可表示为一个字符串的 **Binding** 或 **StaticResource**。
 
-## 有关 **Canvas.Left** 示例的详细信息
+## <a name="more-about-the-canvasleft-example"></a>有关 **Canvas.Left** 示例的详细信息
 
 在先前的附加属性用法示例中，我们显示了几种用来设置 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加属性的方法。 但是，这对于 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 与你的对象的交互方式有何更改，这是在何时发生的？ 我们将在这个特定示例中深入介绍，原因在于：如果你实现了一个附加属性，则会发现一个有趣的情况，那就是当典型的附加属性所有者类在其他对象上发现了它的附加属性值时，它应当会对这些值进行处理。
 
@@ -235,18 +242,13 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
     }
 ```
 
-**注意** 有关面板工作原理的详细信息，请参阅 [XAML 自定义面板概述](https://msdn.microsoft.com/library/windows/apps/mt228351)。
+**注意**  有关面板工作原理的详细信息，请参阅 [XAML 自定义面板概述](https://msdn.microsoft.com/library/windows/apps/mt228351)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
 * [附加属性概述](attached-properties-overview.md)
 * [自定义依赖属性](custom-dependency-properties.md)
 * [XAML 概述](xaml-overview.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

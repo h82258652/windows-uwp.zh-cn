@@ -3,13 +3,20 @@ author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "用于访问网络和 Web 服务的技术。"
 title: "网络和 Web 服务"
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1bb0e25e9368a6e2f7568ac51620c7a064a01ce3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 网络和 Web 服务
+# <a name="networking-and-web-services"></a>网络和 Web 服务
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -25,9 +32,4 @@ ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 | [HttpClient](httpclient.md)                                                             | 依据 HTTP 2.0 和 HTTP 1.1 协议，使用 [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间 API 发送和接收信息。             |
 | [RSS/Atom 源](web-feeds.md)                                                          | 使用综合源检索或创建最新和最热门的 Web 内容，这些源通过 [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的功能根据 RSS 和 Atom 标准生成。                   |
 | [后台传输](background-transfers.md)                                         | 使用后台传输 API 通过网络可靠地复制文件。           |
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

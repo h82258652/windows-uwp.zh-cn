@@ -2,17 +2,24 @@
 author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: "带外配对"
-description: "带外配对允许应用不被发现即可连接到服务点外设。"
+description: "带外配对使应用无需发现即可连接到服务点外围设备。"
+ms.author: ivorb
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc0bad7d8625817cfffcc84f89afeed96a07a21f
+ms.lasthandoff: 02/07/2017
 
 ---
-# 带外配对
+# <a name="out-of-band-pairing"></a>带外配对
 
-带外配对允许应用不被发现即可连接到服务点外设。 应用必须使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空间并将特定格式的字符串（带外 blob）传递给外设所需的相应的 **FromIdAsync** 方法。 当执行 **FromIdAsync** 时，在该操作返回到调用方之前，主机设备要进行配对并连接到外设。
+带外配对使应用无需发现即可连接到服务点外围设备。 应用必须使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空间并将特定格式的字符串（带外 blob）传递给外设所需的相应的 **FromIdAsync** 方法。 当执行 **FromIdAsync** 时，在该操作返回到调用方之前，主机设备要进行配对并连接到外设。
 
-## 带外 blob 格式
+## <a name="out-of-band-blob-format"></a>带外 blob 格式
 
 ```json
     "connectionKind":"Network",
@@ -60,7 +67,7 @@ ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
 | 收银机 | CashDrawerProtocolProvider.dll |
 | 扫描仪 | BarcodeScannerProtocolProvider.dll |
 
-## 使用示例：网络打印机
+## <a name="usage-example-network-printer"></a>使用示例：网络打印机
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +81,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## 使用示例：蓝牙打印机
+## <a name="usage-example-bluetooth-printer"></a>使用示例：蓝牙打印机
 
 ```csharp
 string oobBlobBTPrinter =
@@ -87,9 +94,4 @@ string oobBlobBTPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

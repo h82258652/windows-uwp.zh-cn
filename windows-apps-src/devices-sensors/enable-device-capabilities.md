@@ -3,19 +3,26 @@ author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "启用设备功能"
 description: "本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 15b12bfafea71705a9c18464461a73e3e2f05563
+ms.lasthandoff: 02/07/2017
 
 ---
-# 启用设备功能
+# <a name="enable-device-capabilities"></a>启用设备功能
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。
 
-## 指定你的应用将使用的设备功能
+## <a name="specify-the-device-capabilities-your-app-will-use"></a>指定你的应用将使用的设备功能
 
 
 当你使用某些类型的设备时，Windows 应用要求你在应用包清单中进行指定。 在 Visual Studio 中，你可以使用[清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)声明大多数功能，也可以按照[如何在程序包清单中指定设备功能（手动）](https://msdn.microsoft.com/library/windows/apps/Dn263092)所述手动添加它们。 本教程假定你使用清单设计器。
@@ -56,7 +63,7 @@ ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 | 蓝牙 RFCOMM |  | 提供对支持基本速率/扩展数据速率 (BR/EDR) 传输的 API 的访问，并且允许你的 Windows 应用商店应用访问实现了串行端口配置文件 (SPP) 的设备。 此功能需要子元素。 有关详细信息，请参阅[如何为蓝牙指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263090)。 |
 | 服务点 |  | 提供对服务点 (POS) 条码扫描仪和磁条阅读器的访问。 该功能在 Windows Phone 上不受支持。 | 
 
-## 使用 Windows 运行时 API 与你的设备进行通信
+## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>使用 Windows 运行时 API 与你的设备进行通信
 
 下表会将某些功能连接到 Windows 运行时 API。
 
@@ -73,10 +80,5 @@ ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 | Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
 | 服务点 (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

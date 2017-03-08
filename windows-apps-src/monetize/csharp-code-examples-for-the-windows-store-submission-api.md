@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "使用此部分中的 C# 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
 title: "Windows 应用商店提交 API 的 C# 代码示例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c71555eb854e5dcf6cbccf89e9b0b8ffe35ab0e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -52,11 +59,11 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 
 以下示例实现了一个类，该类使用 Windows 应用商店提交 API 中的多种方法更新应用提交。 该类中的 ```RunAppSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunAppSubmissionUpdateSample``` 方法执行以下任务：
 
-1. 首先，该方法会 [获取指定应用的数据](get-an-app.md)。
-2. 接下来，该方法会 [删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
-3. 然后，该方法会 [创建新的应用提交](create-an-app-submission.md)（新提交是上次发布的提交的副本）。
-4. 该方法会更改新提交的部分详细信息并将新的提交包上传至 Azure Blob 存储。
-5. 接下来，该方法会 [更新](update-an-app-submission.md) 并将新提交 [提交](commit-an-app-submission.md) 到 Windows 开发人员中心。
+1. 首先，此方法[获取指定应用的数据](get-an-app.md)。
+2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
+3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
+4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
+5. 接下来，它会[更新](update-an-app-submission.md)并将新提交[提交](commit-an-app-submission.md)到 Windows 开发人员中心。
 6. 最后，该方法会定期 [检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]
@@ -81,8 +88,8 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 
 以下示例实现了一个类，该类使用 Windows 应用商店提交 API 中的多种方法更新现有的加载项提交。 该类中的 ```RunInAppProductSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunInAppProductSubmissionUpdateSample``` 方法执行以下任务：
 
-1. 首先，该方法会 [获取指定加载项的数据](get-an-add-on.md)。
-2. 接下来，该方法会 [删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
+1. 首先，此方法[获取指定加载项的数据](get-an-add-on.md)。
+2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)（新提交是上次发布的提交的副本）。
 5. 接下来，该方法会 [更新](update-an-add-on-submission.md)并将新提交 [提交](commit-an-add-on-submission.md) 到 Windows 开发人员中心。
 6. 最后，该方法会定期 [检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
@@ -95,11 +102,11 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 
 以下示例实现了一个类，该类使用 Windows 应用商店提交 API 中的多种方法更新软件包外部测试版提交。 该类中的 ```RunFlightSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunFlightSubmissionUpdateSample``` 方法执行以下任务：
 
-1. 首先，该方法会 [获取指定软件包外部测试版的数据](get-a-flight.md)。
-2. 接下来，该方法会 [删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
-3. 然后，该方法会 [创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交是上次发布的提交的副本）。
-4. 该方法会将新的提交程序包上传至 Azure Blob 存储。
-5. 接下来，该方法会 [更新](update-a-flight-submission.md)并将新提交 [提交](commit-a-flight-submission.md) 到 Windows 开发人员中心。
+1. 首先，此方法[获取指定软件包外部测试版的数据](get-a-flight.md)。
+2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
+3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
+4. 它会将新的提交程序包上载到 Azure Blob 存储。
+5. 接下来，它会[更新](update-a-flight-submission.md)并将新提交[提交](commit-a-flight-submission.md)到 Windows 开发人员中心。
 6. 最后，该方法会定期 [检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]
@@ -120,9 +127,4 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 ## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

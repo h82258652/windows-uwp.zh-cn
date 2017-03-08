@@ -2,13 +2,21 @@
 author: TylerMSFT
 title: "ms-tonepicker 方案"
 description: "本主题介绍了 ms-tonepicker URI 方案，以及如何使用它显示音调选取器，以便选择音调、保存音调和获取音调的友好名称。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 translationtype: Human Translation
-ms.sourcegitcommit: 4c7037cc91603af97a64285fd6610445de0523d6
-ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bc3a34d16f8245ef2e932c46e76ce965ce8755b7
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 ms-tonepicker URI 方案选择并保存音调
+# <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>使用 ms-tonepicker URI 方案选择并保存音调
 
 本主题介绍了如何使用 **ms-tonepicker:** URI 方案。 此 URI 方案可用于：
 - 确定音调选取器在设备上是否可用。
@@ -16,13 +24,13 @@ ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
 - 显示音调保存器，可将声音文件标记用作输入并将其保存到设备。 保存的音调随后可通过音调选取器提供。 用户还可以为音调提供友好名称。
 - 将音调标记转换为其友好名称。
 
-## ms-tonepicker: URI 方案引用
+## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker: URI 方案引用
 
 此 URI 方案不会通过 URI 方案字符串传递参数，而是通过 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) 传递参数。 所有字符串均区分大小写。
 
 以下部分指示应传递哪些参数，以便完成指定的任务。
 
-## 任务：确定音调选取器在设备上是否可用
+## <a name="task-determine-if-the-tone-picker-is-available-on-the-device"></a>任务：确定音调选取器在设备上是否可用
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -34,7 +42,7 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## 任务：显示音调选取器
+## <a name="task-display-the-tone-picker"></a>任务：显示音调选取器
 
 可传递用于显示音调选取器的参数如下所示：
 
@@ -44,7 +52,7 @@ if (status != LaunchQuerySupportStatus.Available)
 | CurrentToneFilePath | 字符串 | 否 | 现有音调标记。 | 在音调选取器中显示为当前音调的音调。 如果未设置此值，默认情况下将选择列表上的第一个音调。<br>严格来讲，这不是文件路径。 你可以在从音调选取器中返回的 `ToneToken` 值中，为 `CurrenttoneFilePath` 获取一个适合的值。  |
 | TypeFilter | 字符串 | 否 | “Ringtones”、“Notifications”、“Alarms”、“None” | 选择要添加到选取器的音调。 如果未指定筛选器，将显示所有音调。 |
 
-<br>在 [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
+<br>在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
 
 | 返回值 | 类型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
@@ -80,7 +88,7 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## 任务：显示音调保存器
+## <a name="task-display-the-tone-saver"></a>任务：显示音调保存器
 
 可传递用于显示音调保存器的参数如下所示：
 
@@ -90,7 +98,7 @@ if (result.Status == LaunchUriStatus.Success)
 | ToneFileSharingToken | 字符串 | 是 | 用于要保存的铃声文件的 [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) 文件共享标记 | 将特定的声音文件另存为铃声。 支持的文件内容类型为 mpeg 音频和 x-ms-wma 音频。 |
 | DisplayName | 字符串 | 否 | 指定的音调的友好名称。 | 设置要在保存指定铃声时使用的友好名称。 |
 
-<br>在 [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
+<br>在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
 
 | 返回值 | 类型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
@@ -144,7 +152,7 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## 任务：将音调标记转换为其友好名称
+## <a name="task-convert-a-tone-token-to-its-friendly-name"></a>任务：将音调标记转换为其友好名称
 
 可传递用于获取音调的友好名称的参数如下所示：
 
@@ -153,7 +161,7 @@ if (result.Status == LaunchUriStatus.Success)
 | Action | 字符串 | 是 | “GetToneName” | 指示你想要获取音调的友好名称。 |
 | ToneToken | 字符串 | 是 | 音调标记 | 从中获取显示名称的音调标记。 |
 
-<br>在 [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
+<br>在 [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) 中返回的值：
 
 | 返回值 | 类型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
@@ -194,9 +202,4 @@ using (var connection = new AppServiceConnection())
     }
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

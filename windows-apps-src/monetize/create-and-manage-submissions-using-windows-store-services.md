@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 应用商店提交 API，以编程方式创建和管理已注册到 Windows 开发人员中心帐户的应用的提交。"
 title: "使用 Windows 应用商店服务创建和管理提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -17,14 +24,16 @@ ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 以下步骤介绍了使用 Windows 应用商店提交 API 的端到端过程：
 
 1.  确保已完成所有[先决条件](#prerequisites)。
-3.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成一个。
+3.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成新令牌。
 4.  [调用 Windows 应用商店提交 API](#call-the-windows-store-submission-api)。
 
 
 <span id="not_supported" />
->**重要提示**
+>**重要说明**
 
-> * 此 API 只可以用于已授权使用该 API 的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的“反馈”、选择反馈区域的“提交 API”，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
+> * 此 API 只可以用于已授权使用该 API 的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
+<br/><br/>
+>* 如果你使用此 API 创建应用提交、程序包外部测试版或加载项，请务必仅使用此 API 而非开发人员重心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 <br/><br/>
 > * 此 API 不可用于使用以下功能的应用或加载项：2016 年 8 月引入开发人员中心仪表板的功能，包括但不限于强制应用更新和应用商店管理的可消费加载项。 如果将 Windows 应用商店提交 API 用于使用以下功能之一的应用或加载项，该 API 会返回错误代码 409。 在这种情况下，必须使用仪表板管理应用或加载项的提交。
 
@@ -57,13 +66,13 @@ ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 >**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
-1.  在开发人员中心中，转到“帐户设置”、单击“管理用户”，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在“管理用户”页面中，单击“添加 Azure AD 应用程序”、添加 Azure AD 应用程序（是指要用于访问你的开发人员中心帐户的提交的应用或服务），然后为其分配“管理者”角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加 Azure AD 应用程序（是指要用于访问你的开发人员中心帐户的提交的应用或服务），然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  返回到“管理用户”页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”和“客户端 ID”值。
+3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
-4. 单击“添加新密钥”。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>步骤 2：获取 Azure AD 访问令牌
@@ -111,18 +120,20 @@ grant_type=client_credentials
 * [Java 代码示例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 代码示例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注意**&nbsp;&nbsp;除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
+
 ## <a name="troubleshooting"></a>疑难解答
 
 | 问题      | 解决方法                                          |
 |---------------|---------------------------------------------|
-| 在通过 PowerShell 调用 Windows 应用商店提交 API 后，如果使用 [ConvertFrom-Json](https://technet.microsoft.com/en-us/library/hh849898.aspx) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Windows 应用商店提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
+| 在通过 PowerShell 调用 Windows 应用商店提交 API 后，如果使用 [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) cmdlet 将该 API 的响应数据从 JSON 格式转换为 PowerShell 对象，然后使用 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet 将响应数据转换回为 JSON 格式，该响应数据会损坏。 |  默认情况下，[ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet 的 *-Depth* 参数设置为 2 级对象，这对于大多数由 Windows 应用商店提交 API 返回的 JSON 对象而言深度不够。 调用 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet 时，请将 *-Depth* 参数设置为较大数值（如 20）。 |
 
 ## <a name="additional-help"></a>其他帮助
 
 如果你对 Windows 应用商店提交 API 有疑问或需要使用此 API 管理你的提交的帮助，请使用以下资源：
 
-* 在我们的[论坛](https://social.msdn.microsoft.com/Forums/windowsapps/en-us/home?forum=wpsubmit)上提问。
-* 访问我们的[支持页面](https://developer.microsoft.com/windows/support)，请求一个开发人员中心仪表板的辅助支持选项。 如果系统提示你选择问题类型和类别，请分别选择“应用提交和认证”和“提交应用”。  
+* 在我们的[论坛](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)上提问。
+* 访问我们的[支持页面](https://developer.microsoft.com/windows/support)，请求一个开发人员中心仪表板的辅助支持选项。 如果系统提示你选择问题类型和类别，请分别选择**应用提交和认证**和**提交应用**。  
 
 ## <a name="related-topics"></a>相关主题
 
@@ -133,9 +144,4 @@ grant_type=client_credentials
 * [管理软件包外部测试版](manage-flights.md)
 * [管理软件包外部测试版提交](manage-flight-submissions.md)
  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

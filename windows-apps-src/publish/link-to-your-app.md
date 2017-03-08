@@ -3,18 +3,25 @@ author: jnHs
 Description: "可以通过将你的应用链接到应用的应用商店一览来帮助客户发现它。"
 title: "链接到你的应用"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
-ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59f19dbf0cd66679805a9fcf3054427a22fb0e8f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 链接到你的应用
+# <a name="link-to-your-app"></a>链接到你的应用
 
 
 可以通过将你的应用链接到应用的应用商店一览来帮助客户发现它。
 
-## 获取指向你的应用的应用商店一览的链接
+## <a name="getting-the-link-to-your-apps-store-listing"></a>获取指向你的应用的应用商店一览的链接
 
 
 在仪表板中的每个应用的**应用管理**部分中，你可以在[应用标识](view-app-identity-details.md)页面上找到应用的应用商店一览的链接。
@@ -27,7 +34,7 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
  
 
-## 链接到具有 Windows 应用商店锁屏提醒的应用的应用商店一览
+## <a name="linking-to-your-apps-store-listing-with-the-windows-store-badge"></a>链接到具有 Windows 应用商店锁屏提醒的应用的应用商店一览
 
 
 你可以直接链接到具有自定义锁屏提醒的应用一览，以让客户知道你的应用在 Windows 应用商店中。
@@ -38,7 +45,7 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
  
 
-## 直接链接到 Windows 应用商店中的应用
+## <a name="linking-directly-to-your-app-in-the-windows-store"></a>直接链接到 Windows 应用商店中的应用
 
 
 你可以创建一个链接，该链接启动 Windows 应用商店并直接转到应用的一览页，而无需通过使用 **ms-windows-store:** URI 方案来打开浏览器。
@@ -57,10 +64,5 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

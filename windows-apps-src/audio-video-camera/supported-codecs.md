@@ -3,22 +3,29 @@ author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "本文将列出 UWP 应用的音频和视频编解码器以及格式支持。"
 title: "支持的编解码器"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
-ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支持的编解码器
+# <a name="supported-codecs"></a>支持的编解码器
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文将列出 UWP 应用的音频、视频和图像编解码器以及格式支持。
 
 在下表中，“D”表示解码器支持，而“E”表示编码器支持。
 
-## 音频编解码器和格式支持
+## <a name="audio-codec--format-support"></a>音频编解码器和格式支持
 
 下表显示每个设备系列的音频编解码器和格式支持。
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 桌面
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -338,7 +345,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 移动体验
+### <a name="mobile"></a>移动体验
 
 <table>
 <colgroup>
@@ -649,7 +656,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -960,7 +967,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (ARM)
+### <a name="iot-core-arm"></a>IoT Core (ARM)
 
 <table>
 <colgroup>
@@ -1271,7 +1278,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### XBox
+### <a name="xbox"></a>XBox
 
 <table>
 <colgroup>
@@ -1582,7 +1589,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-## 视频编解码器和格式支持
+## <a name="video-codec--format-support"></a>视频编解码器和格式支持
 
 下表显示每个设备系列的视频编解码器和格式支持。
 
@@ -1592,7 +1599,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 桌面
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -1811,7 +1818,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 移动体验
+### <a name="mobile"></a>移动体验
 
 <table>
 <colgroup>
@@ -2030,7 +2037,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -2249,7 +2256,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT (ARM)
+### <a name="iot-arm"></a>IoT (ARM)
 
 <table>
 <colgroup>
@@ -2468,7 +2475,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### XBox
+### <a name="xbox"></a>XBox
 
 <table>
 <colgroup>
@@ -2685,7 +2692,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 </tbody>
 </table>
 
-## 图像编解码器和格式支持 
+## <a name="image-codec--format-support"></a>图像编解码器和格式支持 
 
 <table>
 <colgroup>
@@ -2757,8 +2764,3 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 <sup>3</sup> 仅支持某些相机 RAW 格式。  
 
 有关图像编解码器的详细信息，请参阅[本机 WIC 编解码器](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)。
-
-
-<!--HONumber=Nov16_HO1-->
-
-

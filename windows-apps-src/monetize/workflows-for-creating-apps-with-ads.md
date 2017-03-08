@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
 description: "了解有关开发和发布带广告的应用的端到端过程。"
 title: "用于创建带广告的应用的工作流"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 广告, AdControl, InterstitialAd"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f01b69502d41a7128ac5f59589f6d014d92f52a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 用于创建带广告的应用的工作流
+# <a name="workflows-for-creating-apps-with-ads"></a>用于创建带广告的应用的工作流
 
 
 
@@ -31,13 +37,13 @@ ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 有关每个步骤的详细信息，请阅读其以下相应部分。
 
-## 设置 Windows 开发人员中心帐户
+## <a name="set-up-your-windows-dev-center-account"></a>设置 Windows 开发人员中心帐户
 
-你需要有 Windows 开发人员中心帐户才能发布应用和接收广告。 无论你是否使用广告中介，都是如此。 与广告相关的应用管理也在 Windows 开发人员中心中完成。 如果你已使用 Microsoft pubCenter 来管理应用中的广告，这会替换为 Windows 开发人员中心中的功能
+你需要有 Windows 开发人员中心帐户才能发布应用和接收广告。 与广告相关的应用管理也在 Windows 开发人员中心中完成。 如果你已使用 Microsoft pubCenter 来管理应用中的广告，这会替换为 Windows 开发人员中心中的功能
 
-若要设置 Windows 开发人员中心帐户，请访问[主页](https://dev.windows.com/windows-apps)。 Windows 开发人员中心[帮助页面](https://dev.windows.com/develop)提供了其他信息。
+若要设置 Windows 开发人员中心帐户，请访问[此页](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
 
-## 使用测试模式值开发应用
+## <a name="develop-your-app-using-test-mode-values"></a>使用测试模式值开发应用
 
 使用以下演练中的说明添加 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 以在应用中显示广告：
 
@@ -50,11 +56,11 @@ ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和间隙视频广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
-## 配置应用以接收实时广告
+## <a name="configure-your-app-to-receive-live-ads"></a>配置应用以接收实时广告
 
 在你完成应用测试并准备将其提交到 Windows 开发人员中心时，必须更新你的应用代码才能使用 [Windows 开发人员中心仪表板](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)中的应用程序 ID 和广告单元 ID 值。 如果你尝试在动态应用中使用测试值，你的应用不会收到实时广告。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md)。
 
-## 提交应用
+## <a name="submit-your-app"></a>提交应用
 
 在应用开发完成后，你可以通过使用 Windows 开发人员中心仪表板在 Windows 应用商店中发布应用。 除了要符合 Windows 应用商店中所有应用的要求外，显示广告的应用还必须满足几项附加要求。 有关详细信息，请参阅[将带广告的应用提交到 Windows 应用商店](submit-an-app-with-ads-to-the-windows-store.md)。
 
@@ -63,9 +69,4 @@ ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

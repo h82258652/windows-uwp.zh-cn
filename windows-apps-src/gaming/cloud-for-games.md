@@ -3,21 +3,28 @@ author: joannaleecy
 title: "使用适用于 UWP 游戏的云服务"
 description: "了解有关实现云作为 UWP 游戏后端的详细信息。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
+ms.author: joanlee
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 云服务"
 translationtype: Human Translation
-ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
-ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72f357cbf8e370512f9230978de546aa3d54c660
+ms.lasthandoff: 02/07/2017
 
 ---
-#  使用适用于 UWP 游戏的云服务
+#  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
-Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发跨 Microsoft 设备的游戏。 当开发跨平台和设备的游戏时，可以充分利用云后端来帮助你根据需求扩展游戏。
+Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发跨 Microsoft 设备的游戏。 当开发跨平台和设备的游戏时，可以充分利用云后端来帮助你根据需求扩展游戏。
 
-##  什么是云计算？
+##  <a name="what-is-cloud-computing"></a>什么是云计算？
 
 云计算基于 Internet 按需使用 IT 资源和应用程序，来存储和处理设备的数据。 术语_云_是在 Internet 上提供大量资源（非本地资源）的一种比喻说法，可供你从任意位置进行访问。
 云计算的本质是提供一种可使用资源和软件的全新方式。 用户不再需要事先购买整套产品和资源，只需要能够使用作为服务提供的平台、软件和资源即可。 云提供商通常根据其客户的使用情况或服务计划产品向他们收取费用。
 
-##  为什么要使用云服务？
+##  <a name="why-use-cloud-services"></a>为什么要使用云服务？
 
 使用适用于游戏的云服务的一个好处是，事先无需在物理硬件服务器方面投入资金，只需事后根据使用情况或服务计划支付费用即可。 它是有助于管理在开发全新游戏时所涉及风险的一种方法。 
 
@@ -29,7 +36,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 
 此外，可以使用云服务实现需要具备密集游戏数据管理功能的游戏，如具有多玩家异步机制的社交游戏。
 
-##  游戏公司以什么方式使用云技术
+##  <a name="how-game-companies-use-the-cloud-technology"></a>游戏公司以什么方式使用云技术
 
 了解其他开发商在其游戏中实现云解决方案的方式。
 
@@ -103,23 +110,23 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 </table>
 
     
-### 其他链接
+### <a name="other-links"></a>其他链接
 
 * [Hitcents、Game Troopers 和 InnoSpark 的秘密武器 Azure](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [基于 Bizspark 计划使用 Azure 的游戏初创公司](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
-## 如何设计云后端
+## <a name="how-to-design-your-cloud-backend"></a>如何设计云后端
 
 制作方和游戏设计人员在讨论游戏中需要具备哪些游戏特性和功能的同时，最好一开始就考虑想要如何设计游戏基础架构。 如果想要开发适用于各种设备和跨不同主流平台的游戏，可以将 Azure 用作你的游戏后端。
 
-### 分步学习指南
+### <a name="step-by-step-learning-guides"></a>分步学习指南
 
 * [Build 2016 Codelabs：使用 Microsoft Azure App Service 和 Microsoft SQL Azure 后端来保存游戏分数](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
 * [设计游戏的移动用户参与策略](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
 * [使用适用于 Unity iOS 的 Azure Mobile Engagement 部署](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
 
-### 了解 IaaS、PaaS 或 SaaS
+### <a name="understanding-iaas-paas-or-saas"></a>了解 IaaS、PaaS 或 SaaS
 
 首选，需要考虑最适合你的游戏的服务级别。 了解以下三类服务之间的差异可以帮助你确定构建后端所要采用的方法。
 
@@ -136,7 +143,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
     软件即服务通常是已为你生成并托管在现有云平台上的应用程序。 旨在使你更轻松地基于已提供的服务开始运行你的游戏。
 
 
-### 使用 Azure 设计游戏的基础架构
+### <a name="design-your-game-infrastructure-using-azure"></a>使用 Azure 设计游戏的基础架构
 
 以下是一些 Azure 云服务/产品适用于游戏的方式。 Azure 适用于 Windows、Linux 以及诸如 Ruby、Python、Java 和 PHP 等熟悉的开源技术。 有关详细信息，请参阅[面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)。
 
@@ -162,7 +169,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 | 创建市场营销活动以增加用法和保留  | 根据数据分析，向目标玩家发送推送通知以引起兴趣，并鼓励执行特定游戏操作 | [移动用户参与度](https://azure.microsoft.com/services/mobile-engagement/) |  增加所有主流平台（iOS、Android、Windows、Windows Phone）上的游戏时间和用户保留 |
 
 
-##  初创公司和开发商资源
+##  <a name="startup-and-developer-resources"></a>初创公司和开发商资源
 
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 
@@ -170,9 +177,9 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    如果你想要将诸如多玩家游戏玩法、跨平台配对、玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox 以获取用于发挥你的创造力以及尽最大可能获得成功所需的工具和支持。 在申请 ID@Xbox 之前，请在 [Windows 开发人员中心](https://developer.microsoft.com/windows/programs/join)注册开发人员帐户。
+    如果你想要将诸如多玩家游戏玩法、跨平台配对、玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox 以获取用于发挥你的创造力以及尽最大可能获得成功所需的工具和支持。 在申请 ID@Xbox 之前，请在 [Windows 开发人员中心](https://developer.microsoft.com/windows/programs/join)注册开发人员帐户。
 
-## 适用于游戏后端的软件即服务
+## <a name="software-as-a-service-for-game-backend"></a>适用于游戏后端的软件即服务
 
 有一些公司基于主要云服务提供商提供适用于游戏的云后端，使你只需专注于游戏开发即可。
 
@@ -188,9 +195,9 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 
     Playfab 向你的移动设备、电脑和主机游戏提供世界级的实时游戏管理和后端技术，方便而又迅速。
 
-## 相关链接
+## <a name="related-links"></a>相关链接
 
-* [Windows10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
 * [面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
@@ -199,9 +206,4 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "设置后台任务的运行条件"
 description: "了解如何设置控制何时运行后台任务的条件。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 486e0cd3938a09c663e8e805092377709672359f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 
 有时，除了触发该任务的事件之外，后台任务还需要满足某些条件，才可以使后台任务继续进行。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件；后台任务将进入队列，但在满足所有所需条件之前不会运行。
 
-对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU 运行时。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去以及 Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
+对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU 运行时。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
 
 还可以通过在同一 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次调用 AddCondition 组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
 
@@ -178,9 +185,4 @@ ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

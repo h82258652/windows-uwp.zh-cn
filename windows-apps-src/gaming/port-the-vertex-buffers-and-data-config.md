@@ -3,13 +3,20 @@ author: mtoepke
 title: "移植顶点缓冲区和数据"
 description: "在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。"
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, 移植, 顶点缓冲区, 数据, direct3d"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 85e8a47da525c0f5de7e957a0048e245e374dedc
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植顶点缓冲区和数据
+# <a name="port-the-vertex-buffers-and-data"></a>移植顶点缓冲区和数据
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -107,9 +114,9 @@ unsigned short cubeIndices[] =
 
 假定我们已经成功地将立方体网格从右手 OpenGL ES 2.0 坐标系移动到左手 Direct3D 坐标系，下面我们介绍一下如何在这两种模型中加载立方体数据以便进行处理。
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 步骤 1：创建输入布局
+### <a name="step-1-create-an-input-layout"></a>步骤 1：创建输入布局
 
 在 OpenGL ES 2.0 中，你的顶点数据以属性的形式提供，属性将提供给着色器对象并由着色器对象进行读取。 通常你会将包含在着色器的 GLSL 中使用的属性名称的字符串提供给着色器程序对象，并得到一个你可以提供给着色器的内存位置。 在此示例中，顶点缓冲区对象包含一个自定义的矢量结构列表，该列表是按照如下方式进行定义并设置格式的：
 
@@ -172,7 +179,7 @@ m_d3dDevice->CreateInputLayout(
 
 我们已经定义了输入布局。 现在，我们将创建一个使用该布局的缓冲区并将其与立方体网格数据一起加载。
 
-### 步骤 2：创建和加载顶点缓冲区
+### <a name="step-2-create-and-load-the-vertex-buffers"></a>步骤 2：创建和加载顶点缓冲区
 
 在 OpenGL ES 2.0 中，创建一对缓冲区，一个用于位置数据，一个用于颜色数据。 （也可以创建一个包含两者和单个缓冲区的结构。）绑定每个缓冲区并向其中写入位置和颜色数据。 然后，在呈现函数期间，再次绑定缓冲区并为着色器提供缓冲区中数据的格式，以便它可以正确解释该数据。
 
@@ -217,7 +224,7 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### 步骤 3：创建和加载索引缓冲区
+### <a name="step-3-create-and-load-the-index-buffer"></a>步骤 3：创建和加载索引缓冲区
 
 索引缓冲区是允许顶点着色器查找各个顶点的有效方法。 尽管不需要，但我们还是在该示例呈现器中使用它们。 同 OpenGL ES 2.0 中的顶点缓冲区一样，创建一个索引缓冲区并作为常规用途缓冲区绑定，将你之前创建的顶点索引复制到该缓冲区中。
 
@@ -287,20 +294,20 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## 上一步
+## <a name="previous-step"></a>上一步
 
 
 [移植着色器对象](port-the-shader-config.md)
 
-## 下一步
+## <a name="next-step"></a>下一步
 
 [移植 GLSL](port-the-glsl.md)
 
-## 备注
+## <a name="remarks"></a>备注
 
 当构造你的 Direct3D 时，将在 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 上调用方法的代码分离成一个当需要重新创建设备资源时调用的方法。 （在 Direct3D 项目模板中，该代码位于呈现器对象的 **CreateDeviceResource** 方法中。） 另一方面，更新设备上下文 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 的代码位于 **Render** 方法中，因为这是你实际构造着色器阶段以及绑定数据的位置。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -314,10 +321,5 @@ m_d3dContext->DrawIndexed(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

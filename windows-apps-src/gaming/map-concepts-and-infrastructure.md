@@ -3,13 +3,20 @@ author: mtoepke
 title: "将 OpenGL ES 2.0 映射到 Direct3D 11"
 description: "首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉一下 API 之间的主要差别。"
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 游戏, opengl, direct3d, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1298f165444b31c75ca9d98f04eb82a58be46e5b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 将 OpenGL ES 2.0 映射到 Direct3D 11
+# <a name="map-opengl-es-20-to-direct3d-11"></a>将 OpenGL ES 2.0 映射到 Direct3D 11
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -49,7 +56,7 @@ ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
 
  
 
-## 有关特定 OpenGL ES 2.0 提供商的说明
+## <a name="notes-on-specific-opengl-es-20-providers"></a>有关特定 OpenGL ES 2.0 提供商的说明
 
 
 这些主题都使用 Khronos OpenGL ES 2.0 规范，该规范使用与平台无关的 C 程序。iOS 和 Android 使用相同的规范，为这些平台开发的 OpenGL ES 2.0 代码与我们将介绍的代码片段非常相似，尽管它们通常显示为面向对象的 API。 此外，由于每个平台的复杂性和语言差异性，可能存在细微的差别，特别是在方法参数类型或常规的语言语法方面。 例如，iOS 使用 Objective-C。 Android 能够使用 C++；但是，某些开发人员可能依赖纯 Java 实现。 鉴于这一点，这些主题应该依然有用，因为 OpenGL ES API 的总体概念、结构以及用法并没有什么不同。
@@ -60,10 +67,5 @@ ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

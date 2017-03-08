@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: "使用加速计"
 description: "了解如何使用加速计响应用户移动。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f8236a68fd7628f1f53eebc13731a72414e3217
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用加速计
+# <a name="use-the-accelerometer"></a>使用加速计
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 一个简单的游戏应用依赖于单个传感器，即加速计，作为输入设备。 这些应用通常只使用单轴或双轴进行输入，但它们也会将抖动事件作为另一个输入源使用。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
 你使用的设备或仿真器必须支持加速计。
 
-## 创建简单的加速计应用
+## <a name="create-a-simple-accelerometer-app"></a>创建简单的加速计应用
 
 此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的加速计应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-### 说明
+### <a name="instructions"></a>说明
 
 -   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
@@ -67,7 +74,7 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
             // Sensor and dispatcher variables
             private Accelerometer _accelerometer;
 
-            // This event handler writes the current accelerometer reading to 
+            // This event handler writes the current accelerometer reading to
             // the three acceleration text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, AccelerometerReadingChangedEventArgs e)
@@ -136,7 +143,7 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”****&gt;“停止调试”****来停止应用。
 
-### 说明
+### <a name="explanation"></a>说明
 
 前面的示例演示了，只需要写入极少的代码即可将加速计输入集成到你的应用。
 
@@ -157,7 +164,7 @@ _accelerometer.ReportInterval = reportInterval;
 在 **ReadingChanged** 方法中捕获新的加速计数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
 
 ```csharp
-_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
+_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -168,13 +175,7 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [加速计示例](http://go.microsoft.com/fwlink/p/?linkid=241377)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

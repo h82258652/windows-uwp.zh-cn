@@ -3,19 +3,26 @@ author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: "SQLite 数据库"
 description: "SQLite 是一种无服务器的嵌入式数据库引擎。 本文介绍了如何使用包含在 SDK 中的 SQLite 库、如何将自己的 SQLite 库打包在通用 Windows 应用中或从源生成该库。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, SQLite, 数据库"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 33148e8cfe301c6016d3f8a16bbcc904ca403d0e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70f0ae8d4f67e0b24199d7dd56ddebe5a643fae5
+ms.lasthandoff: 02/07/2017
 
 ---
-# SQLite 数据库
+# <a name="sqlite-databases"></a>SQLite 数据库
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 SQLite 是一种无服务器的嵌入式数据库引擎。 本文介绍了如何使用包含在 SDK 中的 SQLite 库、如何将自己的 SQLite 库打包在通用 Windows 应用中或从源生成该库。
 
-## SQLite 是什么以及何时使用它
+## <a name="what-sqlite-is-and-when-to-use-it"></a>SQLite 是什么以及何时使用它
 
 SQLite 是一个开源的无服务器嵌入式数据库。 这些年来，它已作为面向存储在许多平台和设备上的数据的主要设备端技术出现。 通用 Windows 平台 (UWP) 支持并建议使用 SQLite 实现跨所有 Windows 10 设备系列的本地存储。
 
@@ -23,7 +30,7 @@ SQLite 最适用于手机应用、面向 Windows 10 IoT 核心版（IoT 核心�
 
 在媒体播放和游戏应用程序中，SQLite 还可用作文件格式来存储目录或其他资源（例如游戏级别），可以从 Web 服务器按原样下载该文件格式。
 
-## 向 UWP 应用项目添加 SQLite
+## <a name="adding-sqlite-to-a-uwp-app-project"></a>向 UWP 应用项目添加 SQLite
 
 有三种方法将 SQLite 添加到 UWP 项目。
 
@@ -31,7 +38,7 @@ SQLite 最适用于手机应用、面向 Windows 10 IoT 核心版（IoT 核心�
 2.  [将 SQLite 包含在应用包内](#including-sqlite-in-the-app-package)
 3.  [从 Visual Studio 中的源生成 SQLite](#building-sqlite-from-source-in-visual-studio)
 
-### 使用 SDK SQLite
+### <a name="using-the-sdk-sqlite"></a>使用 SDK SQLite
 
 你可能想要使用包含在 UWP SDK 中的 SQLite 库来减小应用程序包的大小，并依赖于该平台来定期更新库。 使用 SDK SQLite 还可能带来性能优势（例如提供更快的启动时间），SQLite 库很有可能已加载在内存中以供系统组件使用。
 
@@ -39,9 +46,9 @@ SQLite 最适用于手机应用、面向 Windows 10 IoT 核心版（IoT 核心�
 
 `#include <winsqlite/winsqlite3.h>`
 
-配置要链接到 winsqlite3.lib 的项目。 在“解决方案资源管理器”****中，右键单击你的项目并依次选择“属性”****&gt;“链接器”****&gt;“输入”****，然后将 winsqlite3.lib 添加到“其他依赖项”****。
+配置要链接到 winsqlite3.lib 的项目。 在**解决方案资源管理器**中，右键单击你的项目并依次选择**属性** &gt; **链接器** &gt; **输入**，然后将 winsqlite3.lib 添加到**其他依赖项**。
 
-### 2. 将 SQLite 包括在应用包中
+### <a name="including-sqlite-in-the-app-package"></a>将 SQLite 包含在应用包内
 
 你有时可能想要打包自己的库而非使用 SDK 版本，例如，你可能想要在跨平台客户端中使用与 SDK 中所含 SQLite 版本不同的特定版本。
 
@@ -53,7 +60,7 @@ SQLite 最适用于手机应用、面向 Windows 10 IoT 核心版（IoT 核心�
 
 `#include <sqlite3.h>`
 
-### 3. 从 Visual Studio 中的源生成 SQLite
+### <a name="building-sqlite-from-source-in-visual-studio"></a>从 Visual Studio 中的源生成 SQLite
 
 你有时可能想要编译自己的 SQLite 二进制文件来使用[各编译器选项](http://www.sqlite.org/compile.html)减小文件大小、调整库的性能或定制为你的应用程序设置的功能。 SQLite 提供的选项可用于进行平台配置、设置默认参数值、设置大小限制、控制操作特点、启用正常情况下的功能关闭状态、禁用正常情况下的功能打开状态、省略功能、启用分析和调试以及在 Windows 上管理内存分配行为。
 
@@ -67,7 +74,7 @@ SQLite 源代码可在 [SQLite.org 下载页面](https://www.sqlite.org/download
 
 ![“SQLite 属性页”屏幕](./images/property-pages.png)
 
-## 管理 SQLite 数据库
+## <a name="managing-a-sqlite-database"></a>管理 SQLite 数据库
 
 可以使用 SQLite C API 创建、更新和删除 SQLite 数据库。 SQLite C API 的详细信息位于 SQLite.org [SQLite C/C++ 接口简介](http://www.sqlite.org/cintro.html)页面。
 
@@ -88,13 +95,4 @@ SQLite 源代码可在 [SQLite.org 下载页面](https://www.sqlite.org/download
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

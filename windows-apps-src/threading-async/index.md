@@ -3,12 +3,19 @@ author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: "线程和异步编程"
 description: "线程和异步编程可让你的应用在并行线程中以异步方式完成工作。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, 异步, 线程, 线程"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
+ms.lasthandoff: 02/07/2017
 
 ---
-# 线程和异步编程
+# <a name="threading-and-async-programming"></a>线程和异步编程
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -35,13 +42,4 @@ ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 | [创建定期工作项](create-a-periodic-work-item.md)                                                   | 了解如何创建定期重复的工作项。 |
 | [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)                               | 了解如何通过向线程池提交工作项，在单独的线程中完成工作。 |
 | [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)                                       | 了解如何创建在经过计时器时间后运行的工作项。 |
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: "本文向你演示如何捕获可变照片序列，允许你快速连续捕获图像的多个帧，并将每个帧配置为使用不同的焦点、闪光灯、ISO、曝光和曝光补偿设置。"
 title: "可变照片序列"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 780ee8a28f0c272b4cbf7e4fe770784aa4f11b9d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 可变照片序列
+# <a name="variable-photo-sequence"></a>可变照片序列
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-## 设置你的应用以使用可变照片序列捕获
+## <a name="set-up-your-app-to-use-variable-photo-sequence-capture"></a>设置你的应用以使用可变照片序列捕获
 
 除了基本媒体捕获所需的命名空间，实现可变照片序列捕获还需要以下命名空间。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
-## 准备可变照片序列捕获
+## <a name="prepare-the-variable-photo-sequence-capture"></a>准备可变照片序列捕获
 
 初始化你的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 之后，通过从媒体捕获的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 获取 [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) 的实例并检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) 属性，确保可变照片序列在当前设备上受支持。
 
@@ -58,37 +65,37 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 [!code-cs[PrepareVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPrepareVPS)]
 
-## 启动可变照片序列捕获
+## <a name="start-the-variable-photo-sequence-capture"></a>启动可变照片序列捕获
 
 若要启动可变照片序列捕获，请调用 [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577)。 请务必初始化用于存储捕获的图像和帧控件值的数组，并将当前索引设置为 0。 设置你的应用的录制状态变量并更新你的 UI，以禁止在执行此捕获时启动另一个捕获。
 
 [!code-cs[StartVPSCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
 
-## 接收捕获的帧
+## <a name="receive-the-captured-frames"></a>接收捕获的帧
 
 针对每个捕获的帧引发 [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) 事件。 保存帧控件值和该帧的已捕获图像，然后增加当前帧索引。 此示例显示了如何获取每个帧的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示形式。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[图像处理](imaging.md)。
 
 [!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
-## 处理可变照片序列捕获的完成
+## <a name="handle-the-completion-of-the-variable-photo-sequence-capture"></a>处理可变照片序列捕获的完成
 
 当已捕获序列中的所有帧时，将引发 [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) 事件。 更新你的应用的录制状态并更新你的 UI，以允许用户启动新的捕获。 此时，你可以将捕获的图像和帧控件值传递给图像处理代码。
 
 [!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
-## 更新帧控制器
+## <a name="update-frame-controllers"></a>更新帧控制器
 
 如果你想要使用不同的每帧设置执行另一个可变照片序列捕获，无需完全重新初始化 **VariablePhotoSequenceCapture**。 你可以清除 [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) 集合并添加新的帧控制器，也可以修改现有的帧控制器值。 以下示例将检查 [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) 对象，以验证当前设备是否支持可变照片序列帧的闪光灯和闪光电源。 如果支持，将更新每个帧，以便在电源已满时启用闪光灯。 之前为每个帧设置的曝光补偿值仍然处于活动状态。
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
-## 清理可变照片序列捕获
+## <a name="clean-up-the-variable-photo-sequence-capture"></a>清理可变照片序列捕获
 
 当你完成捕获可变照片序列或你的应用暂停时，通过调用 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/dn652569) 清理可变照片序列对象。 取消注册对象的事件处理程序，并将其设置为 null。
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -98,10 +105,5 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

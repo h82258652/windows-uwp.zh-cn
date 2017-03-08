@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: "在 Windows 应用商店提交 API 中使用此方法，获取现有软件包外部测试版提交的数据。"
 title: "使用 Windows 应用商店提交 API 获取软件包外部测试版提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a989e9d081ec9cb709b59e1ff4ceff2d517ae48f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 应用商店提交 API 获取软件包外部测试版提交
+# <a name="get-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取软件包外部测试版提交
 
 
 
 
 在 Windows 应用商店提交 API 中使用此方法，获取现有软件包外部测试版提交的数据。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -24,9 +31,9 @@ ms.openlocfilehash: e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 使用你的开发人员中心帐户为应用创建软件包外部测试版提交。 可以使用开发人员中心仪表板执行此操作，也可以使用[创建软件包外部测试版提交](create-a-flight-submission.md)方法执行此操作。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6
 <span/>
  
 
-### 请求头
+### <a name="request-header"></a>请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -55,11 +62,11 @@ ms.openlocfilehash: e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何为具有应用商店 ID 9WZDNCRD91MD 的应用获取软件包外部测试版提交。
 
@@ -68,7 +75,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 响应正文包含指定提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅[软件包外部测试版提交资源](manage-flight-submissions.md#flight-submission-object)。
 
@@ -111,7 +118,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -123,7 +130,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理软件包外部测试版提交](manage-flight-submissions.md)
@@ -131,9 +138,4 @@ Authorization: Bearer <your access token>
 * [确认软件包外部测试版提交](commit-a-flight-submission.md)
 * [更新软件包外部测试版提交](update-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
