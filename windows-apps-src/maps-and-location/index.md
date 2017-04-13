@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 地图服务"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ab167cb032cffba11e7e90e3aefe91bd1c21d74
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="maps-and-location-overview"></a>地图和位置概述
 
 
@@ -86,4 +83,3 @@ ms.lasthandoff: 02/07/2017
 * [隐私感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

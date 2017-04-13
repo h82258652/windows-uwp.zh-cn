@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 53b130c3f97440bd381adda5c40532d46823ce02
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 27d3de280201d92ee98f6e8a17afd85f76acd7d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
@@ -36,7 +34,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="how-to-send-a-tile-notification"></a>如何发送磁贴通知
 
-请阅读我们的[发送本地磁贴通知的快速入门](tiles-and-notifications-create-adaptive-tiles.md)。 在此页面上的文档介绍使用自适应磁贴时所具有的所有视觉 UI 可能性。
+请阅读我们的[发送本地磁贴通知的快速入门](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)。 在此页面上的文档介绍使用自适应磁贴时所具有的所有视觉 UI 可能性。
 
 
 ## <a name="usage-guidance"></a>用法指南
@@ -1397,13 +1395,12 @@ TileWide = new TileBinding()
 
 
 * [自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)
-* [快速入门：发送本地磁贴通知](tiles-and-notifications-create-adaptive-tiles.md)
+* [快速入门：发送本地磁贴通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)
 * [GitHub 上的通知库](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [特殊磁贴模板目录](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
-
 
 
 

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: de1c06d67db78cdc4638c27220d25f769912308e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af636e445d2cad70922b8f846140e0886cf7ef28
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="3d-printing"></a>3D 打印
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分介绍了如何利用 [3D 打印 API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) 向你的通用 Windows 应用添加 3D 打印功能。  
 
@@ -37,4 +35,3 @@ ms.lasthandoff: 02/07/2017
 * [通过 Unity 实现 UWP 3D 打印示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  
-

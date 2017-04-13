@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f67d3ea2293e50a04bdbb4277fa4ad9e46834473
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 390e7255e381bdbb004bfe5e0e95f3ccbcbeb490
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>将进程外后台任务转换为进程内后台任务
 
 将进程外后台活动转换为进程内活动的最简单方法是将 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) 方法代码加入应用程序，并从 [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 中启动它。
@@ -28,4 +25,3 @@ ms.lasthandoff: 02/08/2017
 
 * 进程内后台任务不支持激活 VoIP 后台任务。
 * 进程内后台任务不支持以下触发器：[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask**。
-

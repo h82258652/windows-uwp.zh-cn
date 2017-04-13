@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 市场"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6150c885c4159911932bf8d7c3848b1e182b2f61
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 822c8a3bc9b427edbadb47293bfa1f75aa94a880
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="supported-markets-for-microsoft-advertising"></a>Microsoft Advertising 的受支持市场
 
 
@@ -68,7 +65,7 @@ ms.lasthandoff: 02/07/2017
 
 -   奥地利
 
--   阿塞拜疆
+-   埃塞拜疆
 
 -   巴林
 
@@ -110,9 +107,9 @@ ms.lasthandoff: 02/07/2017
 
 -   科摩罗
 
--   刚果（布）
+-   刚果共和国
 
--   刚果（金）
+-   刚果民主共和国
 
 -   哥斯达黎加
 
@@ -210,7 +207,7 @@ ms.lasthandoff: 02/07/2017
 
 -   墨西哥
 
--   摩纳哥
+-   摩纳哥公国
 
 -   蒙古
 
@@ -319,4 +316,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

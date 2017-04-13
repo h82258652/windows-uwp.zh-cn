@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d65d09349850f580d8bcee2d3875b38b8ed189f1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5e6a38c34f080310eeca7e904ef21e399639de71
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-the-camera-preview"></a>显示相机预览
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文描述了如何在通用 Windows 平台 (UWP) 应用的 XAML 页面内快速显示相机预览流。 创建可使用相机捕获照片和视频的应用需要你执行如下任务：处理设备和相机方向或者设置捕获文件的编码选项。 有关某些应用方案，可能只需显示来自相机的预览流，而无需担心其他注意事项。 本文将向你显示如何使用最少的代码执行相关操作。 请注意，在你使用它按照下列步骤完成操作时，应当始终正确关闭预览流。
 
@@ -63,7 +60,8 @@ ms.lasthandoff: 02/07/2017
 
 创建 **MediaCapture** 类的一个新实例并调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 以初始化捕获设备。 例如，此方法在没有相机的设备上可能会失败，所以你应当从 **try** 块内调用它。 如果用户已在该设备的隐私设置中禁用相机访问，则在尝试初始化相机时会引发 **UnauthorizedAccessException**。 如果你忘记将合适的功能添加到你的应用清单，在开发期间也会看到此异常。
 
-**重要提示**：对于某些设备系列，在授予应用访问设备相机的权限前，会向用户显示用户同意提示。 出于此原因，必须从主 UI 线程仅调用 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 尝试从其他线程初始化相机可能会导致初始化失败。
+
+            **重要提示** 对于某些设备系列，在授予应用访问设备相机的权限前，会向用户显示用户同意提示。 出于此原因，必须从主 UI 线程仅调用 [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598)。 尝试从其他线程初始化相机可能会导致初始化失败。
 
 通过设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) 属性来将 **MediaCapture** 连接到 **CaptureElement**。 通过调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 启动预览。 调用 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestActive) 确保在运行预览时设备不会进入睡眠状态。 最后，将 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) 属性设为 [**Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations)，防止 UI 和 **CaptureElement** 在用户更改设备方向时旋转。 有关处理设备方向更改的详细信息，请参阅[**使用 MediaCapture 处理设备方向**](handle-device-orientation-with-mediacapture.md)。  
 
@@ -100,4 +98,3 @@ ms.lasthandoff: 02/07/2017
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [获取预览帧](get-a-preview-frame.md)
-

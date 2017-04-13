@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较"
+title: "将 OpenGL ES 2.0 缓冲区、uniform、顶点移植到 Direct3D"
 description: "在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。"
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, opengl, direct3d, 缓冲区, uniform, 顶点属性"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 43b568b046246931e24ded5f40f56d3f24d1b05a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d25495b282dce38c3dcad0ec996c185e64165b13
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
 
 
@@ -302,7 +299,6 @@ struct VertexShaderInput
  
 
  
-
 
 
 

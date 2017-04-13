@@ -2,21 +2,17 @@
 title: "基元"
 description: "3D 基元是单个 3D 实体中的顶点的集合。"
 ms.assetid: A1FE6F49-B0D4-4665-90E1-40AD98E668B1
-keywords:
-- "基元"
+keywords: "基元"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e6734ff8534302d3866374adba45c34d70ae440a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 22f143030d3973cf77cd3b0857cf9b67ff5503fb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="primitives"></a>基元
 
 
@@ -51,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[三角形列表](triangle-lists.md)</p></td>
-<td align="left"><p>三角形列表是隔离的三角形的列表。 隔离的三角形可能互相靠近，也可能不互相靠近。 三角形列表必须至少拥有 3 个顶点且顶点总数必须能被 3 整除。</p></td>
+<td align="left"><p>三角形列表是隔离的三角形的列表。 各个隔离的三角形可能相隔很近，也可能相隔不近。 三角形列表必须至少拥有 3 个顶点且顶点总数必须能被 3 整除。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[三角形带](triangle-strips.md)</p></td>
@@ -70,7 +66,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: mtoepke
 title: "定义主游戏对象"
-description: "现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换为与游戏世界的交互。"
+description: "现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换与游戏世界的交互。"
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 主对象"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f81b3eaa9b896295386232f99b789dc3857b3bad
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="define-the-main-game-object"></a>定义主游戏对象
 
 
@@ -3625,7 +3622,6 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
  
 
  
-
 
 
 

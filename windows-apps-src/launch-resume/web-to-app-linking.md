@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 225f0d2bd5d8a2434c3e548064960f44f1df530e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: df5d232cc997c0c888b3a2f092efeb937e991a85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-web-to-app-linking-with-app-uri-handlers"></a>支持使用应用 URI 处理程序的 Web 到应用链接
 
 了解如何通过支持 Web 到应用链接来推动用户与应用的互动。 Web 到应用链接允许你将应用与网站关联。 当用户打开指向你的网站的 http 或 https 链接时，将启动你的应用，而不是打开浏览器。 如果未安装你的应用，则将提供在浏览器中打开你的网站的链接。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。
@@ -80,7 +77,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 ### <a name="multiple-apps"></a>多个应用
 
-如果你有两个应用要链接到你的网站，请在 **windows-app-web-link** JSON 文件中列出这两个应用程序程序包系列名称。 这两个应用都可以受支持。 如果同时安装这两个应用，用户将需要选择哪个应用是默认链接。 如果他们希望在以后更改默认链接，可以在**设置 &gt; 应用网站**中更改它。 开发人员还可以随时更改 JSON 文件，并且最早在更新当天最晚在更新八天后就能看到更改。
+如果你有两个应用要链接到你的网站，请在 **windows-app-web-link** JSON 文件中列出这两个应用程序程序包系列名称。 这两个应用都可以受支持。 如果同时安装这两个应用，用户将需要选择哪个应用是默认链接。 如果他们希望在以后更改默认链接，可以在**“设置”&gt;“应用网站”**中更改它。 开发人员还可以随时更改 JSON 文件，并且最早在更新当天最晚在更新八天后就能看到更改。
 
 ``` JSON
 [{
@@ -168,7 +165,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果你的网站地址为“msn.com”，并且支持路径之一为“path1”，你将使用 `http://msn.com/path1`
 
-验证你的应用是否已关闭。 按 **Windows 键 + R** 打开**运行**对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
+验证你的应用是否已关闭。 按 **Windows 键 + R** 打开**“运行”**对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
 
 此外，你可以通过使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
 
@@ -199,4 +196,3 @@ protected override void OnActivated(IActivatedEventArgs e)
 [处理 URI 激活](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
-

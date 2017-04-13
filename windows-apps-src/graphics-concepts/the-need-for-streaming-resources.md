@@ -2,21 +2,17 @@
 title: "需要流式资源"
 description: "流式资源可保证 GPU 内存不会浪费无法访问的表面存储区域，并告知硬件如何跨相邻的磁贴进行筛选。"
 ms.assetid: A88BE65B-104F-4176-9809-C12580A3684C
-keywords:
-- "需要流式资源"
+keywords: "需要流式资源"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdd98fcf0772cdcd1e2a75ecaf7d2e0b661e134b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5060d0076d93f8bca7e1547c4d9fb05ad4b1a3f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-need-for-streaming-resources"></a>需要流式资源
 
 
@@ -83,7 +79,6 @@ Direct3D 的纹理筛选路径以及呈现路径充分支持 16K 纹理并满足
  
 
  
-
 
 
 

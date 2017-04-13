@@ -1,6 +1,6 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "本节介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
+description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
 title: "应用到应用的通信"
 author: awkoren
 ms.author: alkoren
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d700c707a3a3cdebe338ac51c8ebb5b37d94da3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-to-app-communication"></a>应用到应用的通信
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 
 
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -41,4 +38,3 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="see-also"></a>另请参阅
 - [开发 UWP 应用](https://developer.microsoft.com/windows/develop)
-

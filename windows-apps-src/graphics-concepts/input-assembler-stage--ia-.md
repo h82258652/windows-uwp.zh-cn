@@ -2,21 +2,17 @@
 title: "输入装配器 (IA) 阶段"
 description: "输入装配器 (IA) 阶段向管道提供基元和邻接数据，例如三角形、线和点，包括语义 ID，以减少对尚未处理基元的处理，从而提高着色器的效率。"
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
-keywords:
-- "输入装配器 (IA) 阶段"
+keywords: "输入装配器 (IA) 阶段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bdabf3a49417974acb6a134da07e9702573bf2d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3093fc58a3432fae64e9324773a9277d907a15fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="input-assembler-ia-stage"></a>输入装配器 (IA) 阶段
 
 
@@ -79,7 +75,6 @@ IA 阶段将数据装配成基元并附加系统生成的值，然后将其输�
  
 
  
-
 
 
 

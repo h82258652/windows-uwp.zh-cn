@@ -11,17 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f8b063f45afadda50fa9ea091bf6cba71a25e8c1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4a9a1b18984ed418fc31061ff2ee392230117609
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>适用于 UWP 应用的磁贴、锁屏提醒和通知
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
+了解如何使用磁贴、锁屏提醒、Toast 和通知提供应用入口点并使用户了解最新信息。
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
 磁贴是应用在“开始”菜单上的表示形式。 每个 UWP 应用都有一个磁贴。 你可以启用不同的磁贴大小（小、中等、宽形和大）。</p>
@@ -87,7 +85,7 @@ ms.lasthandoff: 02/07/2017
 <tbody>
 <tr class="odd">
 <td align="left"><p>[自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)</p></td>
-<td align="left"><p>借助自适应和交互式 Toast 通知，你可以创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。</p></td>
+<td align="left"><p>自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[通知可视化工具](tiles-and-notifications-notifications-visualizer.md)</p></td>
@@ -125,7 +123,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

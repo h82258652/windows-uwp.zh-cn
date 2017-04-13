@@ -8,12 +8,11 @@ title: "XAML 样式"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
 ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# XAML 样式
+# <a name="xaml-styles"></a>XAML 样式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -21,7 +20,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 可以使用 XAML 框架通过多种方式自定义应用的外观。 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。
 
-## 样式基础知识
+## <a name="style-basics"></a>样式基础知识
 
 使用样式可将属性设置提取到可重复使用的资源中。 下面的示例显示了具有设置 [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397)、[**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 属性样式的 3 个按钮。 通过应用样式可以使控件具有相同外观，而无需单独为每个控件设置这些属性。
 
@@ -60,7 +59,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 </StackPanel>
 ```
 
-## 应用隐式或显式样式
+## <a name="apply-an-implicit-or-explicit-style"></a>应用隐式或显式样式
 
 如果你将样式定义为资源，有两种方法可将其应用到控件：
 
@@ -105,7 +104,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 </Grid>
 ```
 
-## 基于样式使用
+## <a name="use-based-on-styles"></a>基于样式使用
 
 为了使样式便于维护以及优化样式的重复使用，你可以创建从其他样式继承的样式。 使用 [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) 属性可创建继承的样式。 从其他样式继承的样式必须应用到同一类型的控件，或者从基本样式的目标类型派生出来的控件。 例如，如果基本样式的目标类型为 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365)，则基于此样式的样式可应用到 **ContentControl** 或从 **ContentControl** 派生的类型（如 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 和 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)）。 如果基于样式的值没有设置，则从基本样式继承。 要从基本样式更改值，基于样式会覆盖该值。 下一个示例演示了具有从同一基本样式继承的样式的 **Button** 和 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)。
 
@@ -141,11 +140,11 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 </StackPanel>
 ```
 
-## 使用工具轻松处理样式
+## <a name="use-tools-to-work-with-styles-easily"></a>使用工具轻松处理样式
 
-将样式应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML 设计界面上，右键单击控件并选择“编辑样式”或“编辑模板”（取决于右键单击的控件）。 然后，通过选择“应用资源”来应用现有样式，或通过选择“创建空项”来定义一个新样式。 如果创建空白样式，可以使用相应的选项在该页面、App.xaml 文件或一个单独的资源字典中进行定义。
+将样式应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML 设计界面上，右键单击控件并选择**编辑样式**或**编辑模板**（取决于右键单击的控件）。 然后，通过选择**应用资源**来应用现有样式，或通过选择**创建空项**来定义一个新样式。 如果创建空白样式，可以使用相应的选项在该页面、App.xaml 文件或一个单独的资源字典中进行定义。
 
-## 轻型样式设置
+## <a name="lightweight-styling"></a>轻型样式设置
 
 通常在应用级别或页面级别上替代系统画笔，在任意情况下，颜色替代都将影响引用该画笔的所有控件；在 XAML 中，许多控件可以引用相同的系统画笔。
 
@@ -169,7 +168,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 在 **App.Resources** 级别上放置这些画笔替代将更改整个应用（而不是单个页面）内的所有按钮。
 
-### 每个控件的样式设置
+### <a name="per-control-styling"></a>每个控件的样式设置
 
 在其他情况下，需要仅以特定方式更改一个页面上的单个控件，而不更改该控件的任何其他版本：
 
@@ -202,16 +201,10 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 这仅影响存在该控件的页面上的一个“特殊复选框”。
 
-## 修改默认系统样式
+## <a name="modify-the-default-system-styles"></a>修改默认系统样式
 
 在可以使用来自 Windows 运行时默认 XAML 资源的样式时，应使用这些样式。 在必须定义自己的样式时，如果可能，请尝试以默认样式为基础（如前所述，使用基于样式，或先编辑最初默认样式的副本）。
 
-## template 属性
+## <a name="the-template-property"></a>template 属性
 
 样式 setter 可用于 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 属性，实际上，此样式构成了多数典型的 XAML 样式和应用的 XAML 资源。 此内容将在主题[控件模板](control-templates.md)中更详细地讨论。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
-

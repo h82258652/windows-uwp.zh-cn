@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9727aa78a4df0ab204574b12e827f279144d3fe1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-default-app-for-a-file"></a>启动文件的默认应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -137,7 +134,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 ### <a name="open-with-launch"></a>打开方式启动
 
-在 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 设置为 **true** 的情况下调用 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法以启动用户从**打开方式**对话框中选择的应用。
+在 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 设置为 **true** 的情况下调用 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法以启动用户从**“打开方式”**对话框中选择的应用。
 
 当用户希望针对某个特定文件选择默认应用以外的应用时，我们建议你使用**“打开方式”**对话框。 例如，如果你的应用允许用户启动某个图像文件，则默认的处理程序将可能是查看器应用。 在某些情况下，用户可能需要编辑图像而不只是查看图像。 使用**“打开方式”**选项及**“应用程序栏”**或上下文菜单中的备用命令，让用户在此类情况下打开**“打开方式”**对话框并选择编辑器应用。
 
@@ -435,7 +432,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 如果你尝试启动受限制的文件类型，则启动将失败，且会调用错误回调。 如果你的应用处理许多不同类型的文件，并且你预计会遇到该错误，则应该为你的用户提供回退体验。 例如，你可以为用户提供将文件保存到桌面的选项，然后用户可以从桌面打开该文件。
 
-> **注意**  本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**  本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 ## <a name="related-topics"></a>相关主题
@@ -458,4 +455,3 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
  
 
  
-

@@ -2,21 +2,17 @@
 title: "Mipmap 打包"
 description: "可将一定数量的 mip（每个数组切片）打包到一定数量的磁贴中，这取决于流式资源的尺寸、格式、mipmap 的数量和数组切片。"
 ms.assetid: 906C3CAC-4E84-4947-B508-06788551BE85
-keywords:
-- "Mipmap 打包"
+keywords: "Mipmap 打包"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4d9f8d62ee19cd92b543359413fc09e6053c1ed5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 720e8ff5fd6dee2a67bd7a1bf7de02a8f5c34583
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mipmap-packing"></a>Mipmap 打包
 
 
@@ -40,7 +36,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

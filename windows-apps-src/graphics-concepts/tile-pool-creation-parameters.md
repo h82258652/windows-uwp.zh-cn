@@ -2,21 +2,17 @@
 title: "磁贴池创建参数"
 description: "创建缓冲区时，使用此部分中的参数定义磁贴池。"
 ms.assetid: FDC1AD88-BC41-49EE-881E-F21743D407DB
-keywords:
-- "磁贴池创建参数"
+keywords: "磁贴池创建参数"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 42a4fb1bf03aaa9962520d249bb9395ab681f747
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7bf3a83641c09f557c021b216f7422d7eaf5ea56
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-pool-creation-parameters"></a>磁贴池创建参数
 
 
@@ -39,7 +35,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

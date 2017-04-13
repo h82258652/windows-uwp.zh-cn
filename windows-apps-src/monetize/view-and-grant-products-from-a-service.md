@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店收集 API, Windows 应用商店购买 API, 查看产品, 授予产品"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f4f74c887509e772fd01dbdcfe28d86c583fbc1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1f5930a9917933937a1a0103fe118a2ccdf2d47f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-product-entitlements-from-a-service"></a>管理服务中的产品权益
 
 如果你有应用和加载项（也称为应用内产品或 IAP）的目录，你可以使用 *Windows 应用商店收集 API* 和 *Windows 应用商店购买 API* 访问你的服务中的这些产品的权益信息。 *权益*表示客户使用通过 Windows 应用商店发布的应用或加载项的权利。
@@ -40,7 +37,7 @@ ms.lasthandoff: 02/07/2017
 以下部分提供有关其中每个步骤的更多详细信息。
 
 <span id="step-1"/>
-### <a name="step-1-configure-a-web-application-in-azure-ad"></a>步骤 1：在 Azure AD 中配置 Web 应用程序
+## <a name="step-1-configure-a-web-application-in-azure-ad"></a>步骤 1：在 Azure AD 中配置 Web 应用程序
 
 你必须先创建 Azure AD Web 应用程序，检索应用程序的租户 ID 和客户端 ID 并生成一个密钥，然后才能使用 Windows 应用商店收集 API 或购买 API。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店收集 API 或购买 API 的应用或服务。 你需要租户 ID、客户端 ID 和密钥以获取传递给 API 的 Azure AD 访问令牌。
 
@@ -48,11 +45,11 @@ ms.lasthandoff: 02/07/2017
 
 1.  按照[将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)中的说明将 Web 应用程序添加到 Azure AD。
 
-    > **注意**&nbsp;&nbsp;在“向我们说明你的应用程序”****页上，确保你选择“Web 应用程序和/或 Web API”****。 这是必需的，以便你可以为你的应用程序检索密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
+    > **注意**&nbsp;&nbsp;在**向我们说明你的应用程序**页上，确保你选择 **Web 应用程序和/或 Web API**。 这是必需的，以便你可以为你的应用程序检索密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
 
-2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到“Active Directory”****。 选择你的目录、单击顶部的“应用程序”****选项卡，然后选择你的应用程序。
-3.  单击“配置”****选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
-4.  在屏幕底部，单击“管理清单”****。 下载你的 Azure AD 应用程序清单并使用以下文本替换 `"identifierUris"` 部分。
+2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到 **Active Directory**。 选择你的目录、单击顶部的**应用程序**选项卡，然后选择你的应用程序。
+3.  单击**配置**选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
+4.  在屏幕底部，单击**管理清单**。 下载你的 Azure AD 应用程序清单并使用以下文本替换 `"identifierUris"` 部分。
 
     ```json
     "identifierUris" : [                                
@@ -67,22 +64,22 @@ ms.lasthandoff: 02/07/2017
 5.  保存你的应用程序清单，并在 [Azure 管理门户](http://manage.windowsazure.com/)中将其上传到你的应用程序。
 
 <span id="step-2"/>
-### <a name="step-2-associate-your-azure-ad-client-id-with-your-app-in-windows-dev-center"></a>步骤 2：在 Windows 开发人员中心中将你的 Azure AD 客户端 ID 与应用相关联
+## <a name="step-2-associate-your-azure-ad-client-id-with-your-app-in-windows-dev-center"></a>步骤 2：在 Windows 开发人员中心中将你的 Azure AD 客户端 ID 与应用相关联
 
-你必须先在 Windows 开发人员中心仪表板中将 Azure AD 客户端 ID 与应用关联，然后才能使用 Windows 应用商店收集 API 或购买 API 在应用或加载项上操作。
+你必须先在开发人员中心仪表板中将 Azure AD 客户端 ID 与此应用（或者包含加载项的应用）关联，然后才能使用 Windows 应用商店收集 API 或购买 API 以在应用或加载项上操作。
 
 >**注意**&nbsp;&nbsp;你只需执行一次此任务。
 
-1.  登录 [Windows 开发人员中心仪表板](https://dev.windows.com/overview)并选择你的应用。
-2.  转到“服务”****&gt;“产品收集和购买”****页并将你的 Azure AD 客户端 ID 输入到可用字段之一。
+1.  登录[开发人员中心仪表板](https://dev.windows.com/overview)并选择你的应用。
+2.  转到**服务**&gt;**产品收集和购买**页并将你的 Azure AD 客户端 ID 输入到可用字段之一。
 
 <span id="step-3"/>
-### <a name="step-3-create-azure-ad-access-tokens"></a>第 3 步：创建 Azure AD 访问令牌
+## <a name="step-3-create-azure-ad-access-tokens"></a>第 3 步：创建 Azure AD 访问令牌
 
 你的服务必须先创建几个不同的表示你的发布者标识的 Azure AD 访问令牌，然后你才能检索 Windows 应用商店 ID 密钥或调用 Windows 应用商店收集 API 或购买 API。 每个令牌将与不同的 API 一起使用。 每个令牌的生命周期为 60 分钟，你可以在它们到期后进行刷新。
 
 <span id="access-tokens" />
-#### <a name="understanding-the-different-tokens-and-audience-uris"></a>了解不同的令牌和受众 URI
+### <a name="understanding-the-different-tokens-and-audience-uris"></a>了解不同的令牌和受众 URI
 
 根据你希望在 Windows 应用商店收集 API 或购买 API 中调用的方法，你必须创建两个或三个不同的令牌。 每个访问令牌都与不同的受众 URI（即你之前添加到 Azure AD 应用程序清单的 `"identifierUris"` 部分的 URI）关联。
 
@@ -95,7 +92,7 @@ ms.lasthandoff: 02/07/2017
   * 如果你想要在 Windows 应用商店购买 API 中调用某个方法以[向用户授予免费产品](grant-free-products.md)，则还必须使用 `https://onestore.microsoft.com/b2b/keys/create/purchase` 受众 URI 创建令牌。 在稍后的步骤中，你要将此令牌传递到 Windows SDK 中的客户端方法，以请求可与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥。
 
 <span />
-#### <a name="how-to-create-the-tokens"></a>如何创建令牌
+### <a name="create-the-tokens"></a>创建令牌
 
 若要创建访问令牌，请按照[使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service)中的说明在服务中使用 OAuth 2.0 API，以便将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
@@ -121,16 +118,16 @@ grant_type=client_credentials
 > **重要提示**&nbsp;&nbsp;应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
 
 <span id="step-4"/>
-### <a name="step-4-create-a-windows-store-id-key"></a>第 4 步：创建 Windows 应用商店 ID 密钥
+## <a name="step-4-create-a-windows-store-id-key"></a>第 4 步：创建 Windows 应用商店 ID 密钥
 
-你的服务必须先创建 Windows 应用商店 ID 密钥，然后你才能调用 Windows 应用商店收集 API 或购买 API 中的任何方法。 这是 JSON Web 令牌 (JWT)，表示你想要访问其产品所有权信息的用户的标识。 有关此密钥中的声明的详细信息，请参阅 [Windows 应用商店 ID 密钥中的声明](#claims)。
+你的应用必须先创建 Windows 应用商店 ID 密钥并将其发送给服务，然后你才能调用 Windows 应用商店收集 API 或购买 API 中的任何方法。 此密钥是 JSON Web 令牌 (JWT)，表示你想要访问其产品所有权信息的用户的标识。 有关此密钥中的声明的详细信息，请参阅 [Windows 应用商店 ID 密钥中的声明](#claims)。
 
 当前，创建 Windows 应用商店 ID 密钥的唯一方法是通过你的应用中的客户端代码调用通用 Windows 平台 (UWP) API。 生成的密钥表示当前在设备上登录到 Windows 应用商店的用户的身份。
 
-> **注意**&nbsp;&nbsp;每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
+> **注意**&nbsp;&nbsp;每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订该密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
 
 <span />
-#### <a name="to-create-a-windows-store-id-key-for-the-windows-store-collection-api"></a>为 Windows 应用商店收集 API 创建 Windows 应用商店 ID 密钥
+### <a name="to-create-a-windows-store-id-key-for-the-windows-store-collection-api"></a>为 Windows 应用商店收集 API 创建 Windows 应用商店 ID 密钥
 
 按照以下步骤创建可与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥，以[查询用户拥有的产品](query-for-products.md)或[将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)。
 
@@ -144,10 +141,10 @@ grant_type=client_credentials
 
   将 Azure AD 访问令牌传递给该方法的 *serviceTicket* 参数。 可以选择将 ID 传递给在服务上下文中标识当前用户的 *publisherUserId* 参数。 如果你为服务维护用户 ID，可以使用此参数将这些用户 ID 与对 Windows 应用商店收集 API 进行的调用关联起来。
 
-3.  在应用成功检索 Windows 应用商店 ID 密钥后，请将该密钥传递回服务。
+3.  在应用成功创建 Windows 应用商店 ID 密钥后，请将该密钥传递回服务。
 
 <span />
-#### <a name="to-create-a-windows-store-id-key-for-the-windows-store-purchase-api"></a>为 Windows 应用商店购买 API 创建 Windows 应用商店 ID 密钥
+### <a name="to-create-a-windows-store-id-key-for-the-windows-store-purchase-api"></a>为 Windows 应用商店购买 API 创建 Windows 应用商店 ID 密钥
 
 按照以下步骤创建可与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥，以[向用户授予免费产品](grant-free-products.md)。
 
@@ -161,10 +158,10 @@ grant_type=client_credentials
 
   将 Azure AD 访问令牌传递给该方法的 *serviceTicket* 参数。 可以选择将 ID 传递给在服务上下文中标识当前用户的 *publisherUserId* 参数。 如果你为服务维护用户 ID，可以使用此参数将这些用户 ID 与对 Windows 应用商店购买 API 进行的调用关联起来。
 
-3.  在应用成功检索 Windows 应用商店 ID 密钥后，请将该密钥传递回服务。
+3.  在应用成功创建 Windows 应用商店 ID 密钥后，请将该密钥传递回服务。
 
 <span id="step-5"/>
-### <a name="step-5-call-the-windows-store-collection-api-or-purchase-api-from-your-service"></a>步骤 5：从你的服务调用 Windows 应用商店收集 API 或购买 API
+## <a name="step-5-call-the-windows-store-collection-api-or-purchase-api-from-your-service"></a>步骤 5：从你的服务调用 Windows 应用商店收集 API 或购买 API
 
 在你的服务具有允许其访问特定用户的产品所有权信息的 Windows 应用商店 ID 密钥后，你的服务可通过遵循以下说明调用 Windows 应用商店收集 API 或购买 API：
 
@@ -227,4 +224,3 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 * [将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)
 * [了解 Azure Active Directory 应用程序清单]( http://go.microsoft.com/fwlink/?LinkId=722500)
 * [支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)
-

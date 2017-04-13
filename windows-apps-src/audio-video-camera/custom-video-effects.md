@@ -12,17 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 60ab406a5908b1a21c7a0f579664b7632722dd4e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5a2e44448877ddc7906a8d4e41ec9c0b809f9a7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-video-effects"></a>自定义视频效果
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何创建可实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的 Windows 运行时组件，用于为视频流创建自定义效果。 自定义效果可以与若干不同的 Windows 运行时 API 一起使用，包括提供设备相机的访问权限的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124) 和允许你从媒体剪辑创建复杂合成的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
@@ -35,7 +32,7 @@ ms.lasthandoff: 02/08/2017
 **为视频效果添加 Windows 运行时组件**
 
 1.  在 Microsoft Visual Studio 中，打开解决方案后，转到**文件**菜单并依次选择**添加-&gt;新建项目**。
-2.  选择 **Windows 运行时组件（通用 Windows）**项目类型。
+2.  选择 **Windows 运行时组件(通用 Windows)** 项目类型。
 3.  对于此示例，将项目命名为*VideoEffectComponent*。 此名称稍后将在代码中引用。
 4.  单击**确定**。
 5.  项目模板将创建一个名为 Class1.cs 的类。 在**解决方案资源管理器**中，右键单击 Class1.cs 的图标并选择**重命名**。
@@ -57,7 +54,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="close-method"></a>Close 方法
 
-当效果关闭时，系统将对你的类调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 你应当使用此方法处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
+当效果关闭时，系统将对你的类调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 你应当使用此方法来处理你创建的任何资源。 该方法的参数是 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，该参数使你知道效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
@@ -188,7 +185,7 @@ ms.lasthandoff: 02/08/2017
 2.  在窗口顶部，选择**浏览**选项卡。
 3.  在搜索框中，输入 **Win2D**。
 4.  选择 **Win2D.uwp**，然后选择右侧窗格中的**安装**。
-5.  **查看更改**对话框将向你显示要安装的程序包。 单击**确定”**。
+5.  **查看更改**对话框将向你显示要安装的程序包。 单击**确定**。
 6.  接受程序包许可证。
 
 除了基本项目设置中包含的命名空间外，你还需要包含 Win2D 提供的以下命名空间。
@@ -233,7 +230,7 @@ ms.lasthandoff: 02/08/2017
 
 若要从应用中使用你的视频效果，必须向应用添加对效果项目的引用。
 
-1.  在“解决方案资源管理器”中，在你的应用项目下，右键单击**引用**，然后选择**添加引用**。
+1.  在“解决方案资源管理器”中，在你的项目下，右键单击**引用**，然后选择**添加引用**。
 2.  展开**项目**选项卡、选择**解决方案**，然后选中效果项目名称对应的复选框。 对于此示例，名称为 *VideoEffectComponent*。
 3.  单击**确定**。
 
@@ -264,7 +261,6 @@ ms.lasthandoff: 02/08/2017
 * [媒体播放](media-playback.md)
 
  
-
 
 
 

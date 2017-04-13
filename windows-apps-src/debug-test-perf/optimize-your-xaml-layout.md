@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d4eae4379fb74d36a97db9be9a100408825682a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-layout"></a>优化 XAML 布局
 
@@ -23,7 +21,7 @@ ms.lasthandoff: 02/07/2017
 
 -   [**面板**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
-布局是为 UI 定义可视结构的过程。 描述 XAML 中的布局的主要机制是通过面板，面板是可使你在其中定位和安排 UI 元素的容器对象。 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可提高 XAML 应用的布局性能的简单步骤。
+布局是为 UI 定义可视结构的过程。 描述 XAML 中的布局的主要机制是通过面板，面板是可使你在其中定位和安排 UI 元素的容器对象。 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
 
 ## <a name="reduce-layout-structure"></a>减少布局结构
 
@@ -189,5 +187,4 @@ ms.lasthandoff: 02/07/2017
 在个别面板之间进行选择时，性能通常不是一个注意事项。 进行该选择时通常考虑哪个面板提供最接近与你要实现的 UI 的布局行为。 例如，如果你正在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 和 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 之间进行选择，你应该选择提供最接近于你对该实现的心理模型的面板。
 
 优化每个 XAML 面板以实现良好性能，并且所有面板都为相似的 UI 提供相似的性能。
-
 

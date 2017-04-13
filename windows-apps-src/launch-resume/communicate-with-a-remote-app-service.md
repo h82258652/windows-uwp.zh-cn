@@ -1,21 +1,18 @@
 ---
 author: PatrickFarley
 title: "与远程应用服务通信"
-description: "使用项目 &quot;Rome&quot; 与在远程设备上运行的应用服务交换消息。"
+description: "使用项目“Rome”与在远程设备上运行的应用服务交换消息。"
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0cac219625fbc7b6526c81cf11f010589d2bf000
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows 10，uwp"
+ms.openlocfilehash: 3848ab99538ab198f92890ac06da733169084f6a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 
 除了在远程设备上使用 URI 启动应用，还可以在远程设备上运行*应用服务*并与之通信。 任何基于 Windows 的设备均可用作客户端或主设备。 这可使你使用几乎无限种方法与已连接的设备交互，而无需在前台显示应用。
@@ -94,4 +91,3 @@ ms.lasthandoff: 02/07/2017
 [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)  
 [远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
-

@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "定义游戏的通用 Windows 平台 (UWP) 应用框架"
+title: "定义游戏的 UWP 应用框架"
 description: "为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。"
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.author: mtoepke
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 82a44a3499297b3988815ad10091cd351a194cbd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9c19c2ca89b2d38929ade8596c10beb3c3a16104
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="define-the-games-universal-windows-platform-uwp-app-framework"></a>定义游戏的通用 Windows 平台 (UWP) 应用框架
 
 
@@ -1427,7 +1424,6 @@ int main(Platform::Array<Platform::String^>^)
  
 
  
-
 
 
 

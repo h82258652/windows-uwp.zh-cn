@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 87e52894a0746ecd716487a0e91d7d5974199ab8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7915f626d5e86aed0c47f4d2f1efc61348385ba8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="devices-sensors-and-power"></a>设备、传感器和电源
 
@@ -38,5 +36,4 @@ ms.lasthandoff: 02/07/2017
 | [3D 打印](3d-printing.md) | 本部分介绍了如何在通用 Windows 应用中使用 3D 打印功能。 |
 | [创建 NFC 智能卡应用](host-card-emulation.md) | Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。 这限制了未与 MNO 密切合作的其他商户或开发人员提供的各种可能的支付解决方案。 在 Windows 10 移动版中，我们引入了称为主机卡仿真 (HCE) 的新的卡仿真技术。 HCE 技术使你的应用可以直接与 NFC 读卡器通信。 本主题演示了主机卡仿真 (HCE) 在 Windows 10 移动版设备上的工作原理以及如何开发 HCE 应用，以便你的客户无需与 MNO 协作即可通过他们的手机而非物理卡访问你的服务。 |
 | [获取电池信息](get-battery-info.md) | 了解如何使用 [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) 命名空间中的 API 获取电池的详细信息。 |
-
 

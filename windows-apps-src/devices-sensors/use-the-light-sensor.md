@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4bfe0e3904695edd848ef4c9a7b960d8cc01d4c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-light-sensor"></a>使用光传感器
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -140,7 +138,7 @@ ms.lasthandoff: 02/07/2017
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  <a name="explanation"></a>说明
+###  <a name="explanation"></a>描述
 
 前面的示例演示了，只需要写入极少的代码即可将光传感器输入集成到你的应用。
 
@@ -175,4 +173,3 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 * [LightSensor 示例](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-

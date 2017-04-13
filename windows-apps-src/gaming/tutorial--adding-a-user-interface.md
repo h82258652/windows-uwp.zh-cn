@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 用户界面, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cb8cb8eae3328a9010553b7f3e041b8f2dbd8c02
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-a-user-interface"></a>添加用户界面
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你已经了解示例游戏如何实现主游戏对象以及基本呈现框架。 现在介绍示例游戏如何向玩家提供有关游戏状态的反馈。 在此，你将学习如何在三维图形管道输出上添加简单的菜单选项和抬头显示组件。
 
@@ -1493,7 +1490,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
  
 
  
-
 
 
 

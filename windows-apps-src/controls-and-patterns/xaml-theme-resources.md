@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51e5a3dac6ab8682cd9d10efafb7e1e38f9d53d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a591600ac31b1582d4ce133a6539884d4616639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -446,6 +444,5 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 ```
 
 请注意，[{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)仍在“HighContrast”字典而不是 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)中使用。 此情况属于在指南中的前面部分所给定的异常情况。 用于“高对比度”主题的大多数画笔值使用由系统全局控制的颜色选择，但会作为特别命名的资源暴露给 XAML（名称中带有“SystemColor”前缀）。 系统使用户可以通过“轻松访问中心”设置应该用于其高对比度设置的特定颜色。 这些颜色选择将应用于特殊命名的资源中。 当 XAML 框架检测到画笔在系统级别上发生更改时，它也将使用相同的主题更改事件更新这些画笔。 这就是在此处使用 {ThemeResource} 标记扩展的原因。
-
 
 

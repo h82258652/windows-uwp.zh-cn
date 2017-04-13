@@ -2,21 +2,17 @@
 title: "流式资源纹理采样功能"
 description: "流式资源纹理采样功能包括获取有关映射区域的着色器状态反馈，检查正在访问的所有数据是否已在资源中映射，进行固定以帮助着色器避开 Mip 映射流式资源中已知的非映射区域，以及发现为整个纹理筛选器足迹完全映射的最小 LOD。"
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
-keywords:
-- "流式资源纹理采样功能"
+keywords: "流式资源纹理采样功能"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bcd4ec264dce2962b9057e1f04309d54f3bf3d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resources-texture-sampling-features"></a>流式资源纹理采样功能
 
 
@@ -81,7 +77,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

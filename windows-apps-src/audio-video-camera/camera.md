@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 0b2b421c2619c1649b3a6c9afb6b0ccafafc473b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 883a8977839d8f93ff878b075a52df8b9a587aa9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera"></a>相机
 
 本节提供有关创建使用相机或麦克风捕获照片、视频或音频的通用 Windows 平台 (UWP) 应用的指南。
@@ -65,7 +62,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

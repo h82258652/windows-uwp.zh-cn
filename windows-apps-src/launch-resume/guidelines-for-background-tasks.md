@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5e03fbb7971e5526d542d409bccb1c7fee6fd3ee
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c9bf682e6818f7c9854604448e52aa0111605a05
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 确保你的应用满足运行后台任务的要求。
 
@@ -26,10 +23,10 @@ ms.lasthandoff: 02/07/2017
 
 在开发后台任务时以及发布应用之前，考虑以下指南。
 
-如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows 10 版本 1607 中使此操作更加简单的改进信息。
+如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows10 版本 1607 中使此操作更加简单的改进信息。
 
 
-  **进程内与进程外后台任务：**Windows 10 版本 1607 引入了[进程内后台任务](create-and-register-an-inproc-background-task.md)，使你能够在与前台应用相同的进程中运行后台代码。 当决定执行进程内后台任务还是执行进程外后台任务时，请考虑以下因素：
+  **进程内与进程外后台任务：**Windows10 版本 1607 引入了[进程内后台任务](create-and-register-an-inproc-background-task.md)，使你能够在与前台应用相同的进程中运行后台代码。 当决定执行进程内后台任务还是执行进程外后台任务时，请考虑以下因素：
 
 |注意事项 | 影响 |
 |--------------|--------|
@@ -54,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 
 **请求执行后台任务：**
 
-> **重要提示**  从 Windows 10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
+> **重要提示**  从 Windows10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
 
 通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用必须在注册任何类型的后台任务之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如果用户在设备设置中显式拒绝了应用的后台任务权限，此方法将返回 [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439)。
 ## <a name="background-task-checklist"></a>后台任务清单
@@ -94,7 +91,7 @@ ms.lasthandoff: 02/07/2017
 -   包括使用 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 注册并在应用清单中声明的后台任务。 确保入口点和触发器类型正确。 这是认证所需的内容，它使得用户能够将应用置于锁屏界面上。
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -116,4 +113,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

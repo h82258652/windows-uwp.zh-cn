@@ -2,21 +2,17 @@
 title: "不透明和 1 位 alpha 纹理"
 description: "纹理格式 BC1 用于不透明或透明色为一种的纹理。"
 ms.assetid: 8C53ACDD-72ED-4307-B4F3-2FCF9A9F53EC
-keywords:
-- "不透明和 1 位 alpha 纹理"
+keywords: "不透明和 1 位 alpha 纹理"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3718785527cd3d686fd81c3706f3f9284b96fba
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 56a63e5536523eaf290465bba73a436008bee2f7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位 alpha 纹理
 
 
@@ -171,7 +167,6 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
  
 
  
-
 
 
 

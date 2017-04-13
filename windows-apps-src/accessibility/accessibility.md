@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d8240af0a610541cea5352ed841a08eb7093db96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility"></a>辅助功能  
 
 
@@ -45,7 +42,6 @@ ms.lasthandoff: 02/07/2017
 | [自定义自动化对等](custom-automation-peers.md) | 介绍 UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。 |
 | [控件模式和接口](control-patterns-and-interfaces.md) | 列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。 |
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>相关主题  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
+* [讲述人入门](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

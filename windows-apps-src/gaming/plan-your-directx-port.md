@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, directx, 移植"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="plan-your-directx-port"></a>规划 DirectX 移植
 
 
@@ -68,7 +65,6 @@ UWP 应用的生命周期与桌面应用的生命周期大相径庭。 需要经
  
 
  
-
 
 
 

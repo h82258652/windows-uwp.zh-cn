@@ -15,13 +15,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1925d6b10eb23a6382bd63e812cade1311da178a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aeea966a40b551bf4fc54901e622f57745720c43
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-custom-panels-overview"></a>XAML 自定义面板概述
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -210,4 +207,3 @@ protected override Size ArrangeOverride(Size finalSize)
 
 **概念**
 * [对齐、边距和填充](alignment-margin-padding.md)
-

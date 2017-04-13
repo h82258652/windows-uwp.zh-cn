@@ -2,21 +2,17 @@
 title: "基元拓扑"
 description: "Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列表和三角形带）将如何解释和呈现顶点。"
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
-keywords:
-- "基元拓扑"
+keywords: "基元拓扑"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 487de51420cd6ce747d0257920429e9015bc1864
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d0d6bed3cbccd37fcd4fc835273099e8d26f671d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="primitive-topologies"></a>基元拓扑
 
 
@@ -28,7 +24,7 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 支持以下基本基元拓扑（或基元类型）：
 
 -   [点列表](point-lists.md)
--   [线列表](line-lists.md)
+-   [行列表](line-lists.md)
 -   [线条带](line-strips.md)
 -   [三角形列表](triangle-lists.md)
 -   [三角形带](triangle-strips.md)
@@ -88,7 +84,6 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
  
 
  
-
 
 
 

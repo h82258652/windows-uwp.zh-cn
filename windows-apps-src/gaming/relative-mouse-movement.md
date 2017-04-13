@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 鼠标, 输入"
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f207c1b7de4fd4a885c05c6988ecf685359d1d8b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dff08052af7f005366f9cb5154b307c13a316953
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="relative-mouse-movement-and-corewindow"></a>相对鼠标移动和 CoreWindow
 
 在游戏中，鼠标是许多玩家都熟悉的一种常见控制选项，也是许多游戏类型的基本工具，包括第一人称和第三人称射击游戏和实时战略游戏。 下面我们将讨论相对鼠标控件的实现，这些控件不使用系统光标且不返回绝对屏幕坐标，而是会跟踪鼠标移动之间的像素增量。

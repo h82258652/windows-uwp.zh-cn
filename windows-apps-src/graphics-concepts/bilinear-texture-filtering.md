@@ -2,28 +2,24 @@
 title: "双线性纹理筛选"
 description: "双线性筛选计算最接近取样点的 4 个纹素的加权平均值。"
 ms.assetid: 0851AD28-8246-4547-A663-47884DDDFC3E
-keywords:
-- "双线性纹理筛选"
+keywords: "双线性纹理筛选"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 635ca5b2e09c32c8d9644b1f3196ef888ef5ebc2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f2b23fc0665695663875125f4e226e233c3ef7e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bilinear-texture-filtering"></a>双线性纹理筛选
 
 
-              *双线性筛选*计算最接近取样点的 4 个纹素的加权平均值。 与最近点筛选相比，此筛选方法更加准确和通用。 此方法很有效，因为它是在现代图形硬件中实现的。
+*双线性筛选*计算最接近取样点的 4 个纹素的加权平均值。 与最近点筛选相比，此筛选方法更加准确和通用。 此方法很有效，因为它是在现代图形硬件中实现的。
 
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a>              <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
 
 
 纹理始终是从左上角的 (0.0, 0.0) 向右下角的 (1.0, 1.0) 进行线性寻址的。 纹理的线性寻址如下图所示。
@@ -89,7 +85,7 @@ UV: (0.375, 0.375)
 
 ![在每个纹理地址处执行双线性筛选的 4x4 纹理的图示](images/bilinear-fig7c.jpg)
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a>              <span id="related-topics"></span>相关主题
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [纹理筛选](texture-filtering.md)
@@ -97,7 +93,6 @@ UV: (0.375, 0.375)
  
 
  
-
 
 
 

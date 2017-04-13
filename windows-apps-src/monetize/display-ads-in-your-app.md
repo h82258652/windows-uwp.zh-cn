@@ -9,24 +9,25 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 广告, 横幅, 间隙"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b6343d8a011a3e62a3b714c7dab280c9d9a8f81d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ceae17d34ba400876f912ba9932d76f59d773e63
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="display-ads-in-your-app"></a>在应用中显示广告
 
 
 通用 Windows 平台 (UWP) 和 Windows 应用商店提供几种通过广告从应用中获取收益的方法。
 
-## <a name="display-banner-and-video-interstitial-ads-using-the-microsoft-advertising-libraries"></a>显示使用 Microsoft Advertising 库的横幅和视频间隙广告
+## <a name="display-banner-and-interstitial-ads-using-the-microsoft-advertising-libraries"></a>显示使用 Microsoft Advertising 库的横幅和间隙广告
 
-将横幅和视频间隙广告包括在应用中，从 UWP 应用以及 Windows 8.1 和 Windows Phone 8.x 应用中获取收益。 在适用于 PC、平板电脑和手机的 Windows 应用中显示广告。 你可以通过使用 Windows 开发人员中心仪表板中的[广告性能报告](../publish/advertising-performance-report.md)实时监视广告性能。
+将横幅或间隙广告包括在应用中，以获取收益。
+
+* *横幅广告*是一种使用应用中的部分页面的小型广告，通常位于页面顶部或底部。
+* *间隙广告*是一种全屏广告，通常会强制用户观看视频或通过单击它们来继续运行应用或游戏。 UWP 应用支持两类间隙广告：视频和横幅。
 
 若要在应用中包含这些类型的广告，请使用分配在 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)（适用于 UWP 应用）和[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用）广告库中的 **AdControl** 和 **InterstitialAd** 控件。
 
+你可以通过使用 Windows 开发人员中心仪表板中的[广告性能报告](../publish/advertising-performance-report.md)实时监视广告性能。
 
 以下主题提供有关涉及 Windows 广告库的常见任务的信息。
 
@@ -49,7 +50,8 @@ ms.lasthandoff: 02/07/2017
 
 对于 Windows 8.1 和 Windows Phone 8.x 应用，可以使用 **AdMediatorControl** 类以通过显示多个广告网络的横幅广告以优化广告收益。 将此控件添加到应用后，在 Windows 开发人员中心仪表板上配置广告中介设置，我们将负责调解所选广告网络提出的横幅广告请求。 有关详细信息，请参阅[使用广告中介使广告收益最大化](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
 
->**注意**&nbsp;&nbsp;Windows 10 的 UWP 应用当前不支持使用 **AdMediatorControl** 类的广告中介。 即将使用与用于横幅广告 (**AdControl**) 和视频间隙广告 (**InterstitialAd**) 相同的 API 推出用于 UWP 应用的服务器端中介。 有关在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的指南，请参阅[针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
+> [!NOTE]
+> Windows 10 中的 UWP 应用当前不支持使用 **AdMediatorControl** 类的广告中介。 即将使用与用于横幅广告 (**AdControl**) 和间隙广告 (**InterstitialAd**) 相同的 API 推出用于 UWP 应用的服务器端中介。 有关在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的指南，请参阅[针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
 
 <span id="silverlight_support"/>
 ## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>用于 Windows Phone 8.x Silverlight 项目的广告支持
@@ -66,4 +68,3 @@ ms.lasthandoff: 02/07/2017
 * [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
 * [通过广告获取应用收益](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [广告性能报告](../publish/advertising-performance-report.md)
-

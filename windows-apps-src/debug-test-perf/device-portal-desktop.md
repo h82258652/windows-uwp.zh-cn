@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="device-portal-for-desktop"></a>适用于桌面设备的 Device Portal
 
@@ -78,7 +76,7 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 - 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service 下
     - UseDynamicPorts：一个必需的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
-    - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。  
+    - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
     - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
 
 ## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>无法安装开发人员程序包或启动 Device Portal
@@ -112,4 +110,3 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 1. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
 2. 重启计算机以确保所有更新都已应用。
-

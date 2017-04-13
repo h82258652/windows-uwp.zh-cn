@@ -4,16 +4,14 @@ ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "使用 WinAppDeployCmd.exe 工具安装应用"
 description: "Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9148a26b813d99ca04ae2e5a050bbc9b590d5f6e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: eb4ad93f60c2e5062c2f5d99d852538484f965da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
@@ -29,27 +27,29 @@ Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可�
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd 语法和选项
 
-以下是适用于 **WinAppDeployCmd.exe** 的语法
+这是用于 **WinAppDeployCmd.exe** 的常规语法：
+```syntax
+WinAppDeployCmd command -option <argument>
+```
 
-``` syntax
-WinAppDeployCmd command -option <argument> ...
-    WinAppDeployCmd devices
-    WinAppDeployCmd devices <x>
-    WinAppDeployCmd install -file <path> -ip <address>
-    WinAppDeployCmd install -file <path> -guid <address> -pin <p>
-    WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> ...
-    WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b> ...
-    WinAppDeployCmd uninstall -file <path>
-    WinAppDeployCmd uninstall -package <name>
-    WinAppDeployCmd update -file <path>
-    WinAppDeployCmd list -ip <address>
-    WinAppDeployCmd list -guid <address>
-    WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
-    WinAppDeployCmd getcreds -credserver <server> -ip <address>
-    WinAppDeployCmd deletecreds -credserver <server> -ip <address>
-
+下面是关于使用各种命令的一些其他语法示例：
+```syntax
+WinAppDeployCmd devices
+WinAppDeployCmd devices <x>
+WinAppDeployCmd install -file <path> -ip <address>
+WinAppDeployCmd install -file <path> -guid <address> -pin <p>
+WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> 
+WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b>
+WinAppDeployCmd uninstall -file <path>
+WinAppDeployCmd uninstall -package <name>
+WinAppDeployCmd update -file <path>
+WinAppDeployCmd list -ip <address>
+WinAppDeployCmd list -guid <address>
+WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
+WinAppDeployCmd getcreds -credserver <server> -ip <address>
+WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 ```
 
 你可以在目标设备上安装或卸载应用，也可以更新已经安装的应用。 若要保留由已经安装的应用保存的数据或设置，请使用 **update** 选项而非 **install** 选项。
@@ -95,11 +95,11 @@ WinAppDeployCmd command -option <argument> ...
 | **参数**           | **描述**                                                              |
 |------------------------|------------------------------------------------------------------------------|
 | &lt;x&gt;              | 超时（以秒为单位）。 （默认值为 10 秒）                                          |
-| &lt;address&gt;        | 目标设备的 IP 地址或唯一标识符。                        |
+| &lt;地址&gt;        | 目标设备的 IP 地址或唯一标识符。                        |
 | &lt;a&gt;&lt;b&gt; ... | 每个应用包依赖项的依赖项路径。                    |
 | &lt;p&gt;              | 在设备设置中显示的用于建立连接的字母数字引脚。 |
-| &lt;path&gt;           | 文件系统路径。                                                            |
-| &lt;name&gt;           | 要卸载的应用包的完整程序包名称。                          |
+| &lt;路径&gt;           | 文件系统路径。                                                            |
+| &lt;名称&gt;           | 要卸载的应用包的完整程序包名称。                          |
 | &lt;server&gt;         | 文件网络上的服务器。                                                  |
 | &lt;username&gt;       | 有权访问文件网络上的服务器的凭据的用户。      |
 | &lt;password&gt;       | 有权访问文件网络上的服务器的凭据的密码。 |
@@ -156,4 +156,3 @@ WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of ap
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
 ```
-

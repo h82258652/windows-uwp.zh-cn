@@ -2,21 +2,17 @@
 title: "视图"
 description: "术语“视图”用于表示“所需格式的数据”。 例如，常量缓冲区视图 (CBV) 是格式正确的常量缓冲区数据。 本部分介绍最常见和最有用的视图。"
 ms.assetid: 0C7FB99F-7391-472F-BA53-576888DFC171
-keywords:
-- "视图"
+keywords: "视图"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: beaed3bbaf6cab56c826788d0361b1200c73a003
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0091afb549c778f367e12726054cb908eb0c3eba
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="views"></a>视图
 
 
@@ -59,7 +55,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[深度模具视图 (DSV)](depth-stencil-view--dsv-.md)</p></td>
-<td align="left"><p>深度模具视图提供用于保存深度和模具信息的格式和缓冲区。 深度缓冲区用于剔除由于被较近的对象遮挡而对查看者不可见的像素的绘制。 模具缓冲区可用于剔除定义的形状外部的所有绘制。</p></td>
+<td align="left"><p>深度模具视图提供用于保存深度和模具信息的格式和缓冲区。 深度缓冲区用于剔除由较近的对象对其进行遮挡时，对查看者不可见的像素的绘制。 模具缓冲区可用于剔除定义的形状外部的所有绘制。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[流输出视图 (SOV)](stream-output-view--sov-.md)</p></td>
@@ -82,7 +78,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

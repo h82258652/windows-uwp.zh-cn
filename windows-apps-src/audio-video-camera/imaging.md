@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8aa20d434b4ea89d972712e48131e9a965476d1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-edit-and-save-bitmap-images"></a>创建、编辑和保存位图图像
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -132,7 +129,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

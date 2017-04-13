@@ -2,21 +2,17 @@
 title: "块压缩"
 description: "块压缩是一种有损纹理压缩技术，用于减少纹理大小和内存占用，从而提高性能。 块压缩纹理可以比每种颜色 32 位的纹理小。"
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
-keywords:
-- "块压缩"
+keywords: "块压缩"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 45f860a184400f0d50584ae0fa2e5a8a777f1651
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d67ec99494dc0b598d9eeb8c4aa5b29255a415ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="block-compression"></a>块压缩
 
 
@@ -422,4 +418,3 @@ u = f; // 'u' becomes 1.
 
 
 [压缩的纹理资源](compressed-texture-resources.md)
-

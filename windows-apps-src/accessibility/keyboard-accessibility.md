@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b1261de60bf0a45940fe9a284d8a5276b42e0a3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b41e7a03d3ca2ac6d146ed706421699dc66066a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="keyboard-accessibility"></a>键盘辅助功能  
 
 
@@ -245,5 +242,4 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 * [输入：触摸键盘示例](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [响应屏幕键盘外观示例](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
-
 

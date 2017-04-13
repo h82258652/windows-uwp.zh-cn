@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0973195b8777a0154b733ba2625327bb9296bd6b
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="supported-codecs"></a>支持的编解码器
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文将列出 UWP 应用的音频、视频和图像编解码器以及格式支持。
+本文针对每个设备系列列出了默认情况下 UWP 应用的音频、视频以及图像编解码器和格式可用性。 请注意，这些表列出了指定设备系列安装的 Windows 10 所附带的编解码器。 用户和应用可以安装可供使用的其他编解码器。 你可以在运行时查询特定设备当前可用的一组编解码器。 有关详细信息，请参阅[查询设备上所安装的编解码器](codec-query.md)。
 
 在下表中，“D”表示解码器支持，而“E”表示编码器支持。
 

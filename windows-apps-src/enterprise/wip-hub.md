@@ -12,17 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用"
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
 
-  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
+  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows10 版本 1607。
 
 WIP 通过强制执行组织定义的策略来保护属于组织的数据。 如果你的应用包括在这些策略中，则你的应用生成的所有数据都将受到策略限制。 本主题帮助你生成可更流畅地强制执行这些策略的应用，而不对用户的个人数据造成任何影响。
 <iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
@@ -67,11 +64,11 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 **对于使用 C 生成的通用 Windows 平台 (UWP) 应用#**
 
-[生成使用企业和个人数据的启发式应用](wip-dev-guide.md)。
+[Windows 信息保护 (WIP) 开发人员指南](wip-dev-guide.md)。
 
 **对于使用 C++ 生成的桌面应用**
 
-[生成使用企业和个人数据的启发式应用 (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
+[Windows 信息保护 (WIP) 开发人员指南 (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>创建非启发式企业应用
@@ -101,4 +98,3 @@ END
 
 
  
-

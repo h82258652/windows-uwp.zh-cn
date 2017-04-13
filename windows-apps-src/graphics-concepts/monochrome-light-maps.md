@@ -2,21 +2,17 @@
 title: "单色光映射"
 description: "当较旧的 3D 加速器板不支持使用目标像素 Alpha 值的纹理混合时，单色光映射使较旧的适配器能够执行多通道纹理混合。"
 ms.assetid: 60F8F8F6-9DB7-452B-8DC0-407FFAA4BFE1
-keywords:
-- "单色光映射"
+keywords: "单色光映射"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcdb54345298cd5def27707ad473aeb2ea873203
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 088e109cde92515305e474b2b03bd03526aaab87
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monochrome-light-maps"></a>单色光映射
 
 
@@ -34,7 +30,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

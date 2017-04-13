@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: "在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建加载项。"
-title: "使用 Windows 应用商店提交 API 创建加载项"
+title: "创建加载项"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 创建加载项, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 903bbaf0ad515dcf23c4248744b428876805082e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 创建加载项
+# <a name="create-an-add-on"></a>创建加载项
 
 
 
@@ -119,4 +116,3 @@ Content-Type: application/json
 * [获取所有加载项](get-all-add-ons.md)
 * [获取加载项](get-an-add-on.md)
 * [删除加载项](delete-an-add-on.md)
-

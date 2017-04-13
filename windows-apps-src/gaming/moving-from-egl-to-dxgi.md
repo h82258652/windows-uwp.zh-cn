@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, egl, dxgi, direct3d
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>将 EGL 代码与 DXGI 和 Direct3D 进行比较
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -68,7 +65,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 
 现在，下面介绍了在 DXGI 和适用于 UWP 应用的 Direct3D 中设置简单图形显示、资源和上下文的最基本过程。
 
-1.  通过调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来为应用核心 UI 线程获取 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象的句柄。
+1.  通过 调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来为应用核心 UI 线程获取 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象的句柄。
 2.  对于 UWP 应用，使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 从 [**IDXGIAdapter2**](https://msdn.microsoft.com/library/windows/desktop/hh404537) 获取交换链，并向其传递在步骤 1 中获取的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 引用。 反过来，你将获得 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) 实例。 将其范围设置为呈现器对象及其呈现线程。
 3.  通过调用 [**D3D11Device::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 方法获取 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 实例。 还要将它们的范围设置为呈现器对象。
 4.  使用呈现器的 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 对象上的方法创建着色器、纹理和其他资源。
@@ -416,7 +413,6 @@ EGLBoolean eglTerminate(eglDisplay);
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "光栅器 (RS) 阶段"
 description: "未在视图中的光栅器剪辑基元为像素着色器 (PS) 阶段准备基元并确定如何调用像素着色器。"
 ms.assetid: 7E80724B-5696-4A99-91AF-49744B5CD3A9
-keywords:
-- "光栅器 (RS) 阶段"
+keywords: "光栅器 (RS) 阶段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6855529e13bee8c938e9f0663771b25c52ed097
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1226ad54c6af2f064badf2b1e00088e3b1c70a29
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rasterizer-rs-stage"></a>光栅器 (RS) 阶段
 
 
@@ -55,7 +51,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

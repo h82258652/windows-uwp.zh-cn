@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: 35df3de9b56b9539a559e161e80658c23a9d0480
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 4997895e73e7c8bf0f20a2bc504b7b8c17c45339
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
@@ -149,4 +147,3 @@ else
 由于“新示例数据”****功能使用 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 而不使用 **d:DataContext**，所以当你运行草图或原型并同时对其进行设计时，示例数据仍可用。 而且“数据”****面板真的会加快你的设计和绑定任务。 例如，只需将集合属性从“数据”****面板中拖动到设计图面上就会生成数据绑定的项目控件和必要的模板，而且全部都已为生成和运行准备就绪。
 
 ![用于原型制作的示例数据。](images/displaying-data-in-the-designer-04.png)
-

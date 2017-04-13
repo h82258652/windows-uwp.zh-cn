@@ -2,21 +2,17 @@
 title: "资源类型"
 description: "不同类型的资源具有不同的布局（或内存占用量）。"
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
-keywords:
-- "资源类型"
+keywords: "资源类型"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1e21222b97f7a8711de93345623d2d82b3e8e4d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 77f1b408533d37ecf18bdc1c6c364e6d6c88b94d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resource-types"></a>资源类型
 
 
@@ -253,4 +249,3 @@ mip 切片（用白色矩形表示）为数组中的每个纹理包含一个 mip
 
 
 [资源](resources.md)
-

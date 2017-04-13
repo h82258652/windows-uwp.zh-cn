@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
-description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。"
+description: "了解如何使用 AdControl 类在适用于 Windows10 (UWP)、Windows8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。"
 title: "XAML 和 .NET 中的 AdControl"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,24 +9,21 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 广告, AdControl, XAML, .net, 演练"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9db232709d3aa4ca1b7a6c6672cb2d1c1dea5049
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
 
-本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。 本演练不使用 **AdMediatorControl** 或广告中介。
+本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows10 (UWP)、Windows8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。 本演练不使用 **AdMediatorControl** 或广告中介。
 
 有关演示如何使用 C# 和 C++ 将横幅广告添加到 XAML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
 ## <a name="prerequisites"></a>先决条件
 
 * 对于 UWP 应用：使用 Visual Studio 2015 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。
-* 对于 Windows 8.1 或 Windows Phone 8.1 应用：使用 Visual Studio 2015 或 Visual Studio 2013 安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。
+* 对于 Windows8.1 或 Windows Phone 8.1 应用：使用 Visual Studio 2015 或 Visual Studio 2013 安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。
 
 ## <a name="code-development"></a>代码开发
 
@@ -34,19 +31,19 @@ ms.lasthandoff: 02/07/2017
 
 2. 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft Advertising 库的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-1.  在“解决方案资源管理器”****窗口中，右键单击“引用”****，然后选择“添加引用...”****
+1.  在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
 
-2.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
+2.  在**引用管理器**中，根据你的项目类型选择以下引用之一：
 
     -   对于通用 Windows 平台 (UWP) 项目：展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft Advertising SDK**（版本 10.0）旁边的复选框。
 
-    -   对于 Windows 8.1 项目：展开 **Windows 8.1**、单击**扩展**，然后选中**适用于 Windows 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows8.1 项目：展开**Windows8.1**、单击**扩展**，然后选中**适用于 Windows8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
     -   对于 Windows Phone 8.1 项目：展开**Windows Phone 8.1**、单击**扩展**，然后选中**适用于 Windows Phone 8.1 XAML 的广告中介 SDK** 旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
-    > **注意**&nbsp;&nbsp; 此图像适用于生成 Windows 10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows 8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
+    > **注意**&nbsp;&nbsp; 此图像适用于生成 Windows 10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
 
 3.  在**引用管理器**中，单击“确定”。
 4.  修改你要在其中嵌入广告的页面的 XAML，以包含 **Microsoft.Advertising.WinRT.UI** 命名空间。 例如，在由 Visual Studio 生成的默认示例应用中（即，在应用 MyAdFundedWindows10AppXAML 中），XAML 页面是 **MainPage.XAML**。
@@ -132,7 +129,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="release-your-app-with-live-ads-using-windows-dev-center"></a>使用 Windows 开发人员中心发布带有实时广告的应用
 
-1.  在开发人员中心仪表板中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
+1.  在开发人员中心仪表板中，转到应用的**盈利**&gt;**利用广告来盈利**页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
 
 2.  在你的代码中，将测试广告单元值（**ApplicationId** 和 **AdUnitId**）替换为你在开发人员中心生成的实时值。
 
@@ -155,4 +152,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
-

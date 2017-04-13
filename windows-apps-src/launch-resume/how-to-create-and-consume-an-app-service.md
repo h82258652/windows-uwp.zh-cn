@@ -9,28 +9,27 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3dcf6a8191553deac5821346718a202bc362c7ff
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fe6d70394af430e34e26b3fdbce2da61ca0572b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。
 
-从 Windows 10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要就创建在单独后台进程中运行的应用服务进行介绍。 有关在提供程序所在的同一进程中运行的应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
+从 Windows10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要就创建在单独后台进程中运行的应用服务进行介绍。 有关在提供程序所在的同一进程中运行的应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
+
+有关更多应用服务示例，请参阅[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)。
 
 ## <a name="create-a-new-app-service-provider-project"></a>创建新的应用服务提供程序项目
 
 在本操作方法中，我们将创建一个适用于简单解决方案的所有内容。
 
--   在 Microsoft Visual Studio 2015 中，创建一个新的 UWP 应用项目，并将其命名为AppServiceProvider。 （在**新建项目**对话框中，依次选择**模板 &gt; 其他语言 &gt; Visual C# &gt; Windows &gt; Windows 通用 &gt; 空白应用(Windows 通用)**）。 这将是可提供应用服务的应用。
+-   在 Microsoft Visual Studio 2015 中，创建一个新的 UWP 应用项目，并将其命名为AppServiceProvider。 （在**新建项目**对话框中，依次选择**模板&gt;其他语言&gt; Visual C# &gt; Windows &gt; Windows 通用&gt;空白应用(Windows 通用)**）。 这将是可提供应用服务的应用。
 
 ## <a name="add-an-app-service-extension-to-packageappxmanifest"></a>将应用服务扩展添加到 package.appxmanifest
 
@@ -58,7 +57,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="create-the-app-service"></a>创建应用服务
 
-1.  应用服务作为后台任务实现。 这允许前台应用程序调用另一个应用程序中的应用服务以便执行后台任务。 将新的 Windows 运行时组件项目添加到名为MyAppService的解决方案（**文件 &gt; 添加 &gt; 新建项目**）。 （在**添加新项目**对话框中，依次选择**已安装 &gt; 其他语言 &gt; Visual C# &gt; Windows &gt; Windows 通用 &gt; Windows 运行时组件（Windows 通用）**）
+1.  应用服务作为后台任务实现。 这允许前台应用程序调用另一个应用程序中的应用服务以便执行后台任务。 将新的 Windows 运行时组件项目添加到名为MyAppService的解决方案（**文件&gt;添加&gt;新建项目**）。 （在**添加新项目**对话框中，依次选择**已安装&gt;其他语言&gt; Visual C# &gt; Windows &gt; Windows 通用&gt; Windows 运行时组件(Windows 通用)**）
 2.  在 AppServiceProvider 项目中，添加对 MyAppService 项目的引用。
 3.  在 MyappService 项目中，将以下 **using** 语句添加到 Class1.cs 的顶部：
     ```cs
@@ -178,11 +177,11 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 必须先部署应用服务提供程序应用，才可以通过客户端调用它。 还需要应用服务应用的程序包系列名称，以便调用它。
 
 -   获取应用服务应用程序的程序包系列名称的一个方法是从 **AppServiceProvider** 项目内（例如，从 App.xaml.cs 中的 `public App()`）调用 [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) 并记下结果。 若要在 Microsoft Visual Studio 中运行 AppServiceProvider，请在“解决方案资源管理器”窗口中将其设置为启动项目并运行该项目。
--   获取程序包系列名称的另一个方法是部署解决方案（**生成 &gt; 部署解决方案**）并记下输出窗口中的完整程序包名称（**查看 &gt; 输出**）。 必须从输出窗口中的字符串中删除平台信息，以获取程序包名称。 例如，如果输出窗口中呈现的完整程序包名称为“9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra”，可以通过去除“9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra”提取“1.0.0.0\_x86\_\_”作为程序包系列名称。
+-   获取程序包系列名称的另一个方法是部署解决方案（**生成&gt;部署解决方案**）并记下输出窗口中的完整程序包名称（**查看&gt;输出**）。 必须从输出窗口中的字符串中删除平台信息，以获取程序包名称。 例如，如果输出窗口中呈现的完整程序包名称为“9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra”，可以通过去除“9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra”提取“1.0.0.0\_x86\_\_”作为程序包系列名称。
 
 ## <a name="write-a-client-to-call-the-app-service"></a>编写客户端以调用应用服务
 
-1.  将新的空白 Windows 通用应用项目添加到名为 ClientApp 的解决方案（**文件 &gt; 添加 &gt; 新建项目**）。 （在**添加新项目**对话框中，依次选择**已安装 &gt; 其他语言 &gt; Visual C# &gt; Windows &gt; Windows 通用 &gt; 空白应用（Windows 通用）**）。
+1.  将新的空白 Windows 通用应用项目添加到名为 ClientApp 的解决方案（**文件&gt;添加&gt;新建项目**）。 （在**添加新项目**对话框中，依次选择**已安装&gt;其他语言&gt; Visual C# &gt; Windows &gt; Windows 通用&gt;空白应用(Windows 通用)**）。
 2.  在 ClientApp 项目中，将以下 **using** 语句添加到 MainPage.xaml.cs 的顶部：
     ```cs
     >using Windows.ApplicationModel.AppService;
@@ -271,7 +270,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 ## <a name="debug-the-app-service"></a>调试应用服务
 
 
-1.  确保调试之前已部署整个解决方案，因为必须先部署应用服务提供程序应用，服务才可以进行调用。 （在 Visual Studio 中，**生成 &gt; 部署解决方案**。）
+1.  确保调试之前已部署整个解决方案，因为必须先部署应用服务提供程序应用，服务才可以进行调用。 （在 Visual Studio 中，**生成&gt;部署解决方案**）。
 2.  在“解决方案资源管理器”中，右键单击 AppServiceProvider 项目，然后选择**属性**。 在**调试**选项卡上，将**开始操作**更改为**不启动，但在开始时调试我的代码**。
 3.  在 MyAppService 项目的 Class1.cs 文件中，在 OnRequestReceived() 中设置断点。
 4.  将 AppServiceProvider 项目设置为启动项目，并按 F5。
@@ -282,7 +281,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 1.  按照前面步骤中的说明来调试应用服务。
 2.  从“开始”菜单启动 ClientApp。
-3.  将调试程序附加到 ClientApp.exe 进程（而不是 ApplicationFrameHost.exe 进程）。 （在 Visual Studio 中，依次选择**调试 &gt; 附加到进程...**。）
+3.  将调试程序附加到 ClientApp.exe 进程（而不是 ApplicationFrameHost.exe 进程）。 （在 Visual Studio 中，依次选择**调试&gt;附加到进程...**。）
 4.  在 ClientApp 项目的 **button\_Click()** 中设置断点。
 5.  在 ClientApp 的文本框中输入数字 1 并单击按钮时，将立刻命中客户端和应用服务中的断点。
 
@@ -383,4 +382,4 @@ namespace MyAppService
 
 * [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md)
 * [使用后台任务支持应用](support-your-app-with-background-tasks.md)
-
+* [通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

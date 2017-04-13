@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 780ee8a28f0c272b4cbf7e4fe770784aa4f11b9d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4c6a6ef37af9f860e4ff1c77fd8e5e5151bb271e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="variable-photo-sequence"></a>可变照片序列
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -102,7 +99,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

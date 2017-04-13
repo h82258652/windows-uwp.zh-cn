@@ -2,21 +2,17 @@
 title: "复制和访问资源数据"
 description: "用法标志指示应用程序应如何使用资源数据以将资源放置到性能最佳的内存区域。 跨资源复制资源数据，以便 CPU 或 GPU 能够访问数据而不会影响性能。"
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
-keywords:
-- "复制和访问资源数据"
+keywords: "复制和访问资源数据"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1dc6853a5675b6e22300650a5c44519436c391d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e26e6abf4b15584f8c04a837dcc6bd23aad0f1d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="copying-and-accessing-resource-data"></a>复制和访问资源数据
 
 
@@ -139,7 +135,6 @@ Direct3D 中的异步调用（即绝大多数方法，尤其是渲染调用）�
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "创建磁贴池"
 description: "应用程序可以为每个 Direct3D 设备创建一个或多个磁贴池。 每个磁贴池的总大小受到 Direct3D 11 的资源大小限制，大约是图形处理单元 (GPU) RAM 的 1/4。"
 ms.assetid: BD51EDD3-4AD3-4733-B014-DD77B9D743BB
-keywords:
-- "创建磁贴池"
+keywords: "创建磁贴池"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5289bcb57572ede45c6853b0077f5baa82af7ca2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 315c1b2e1a2b8c89b432a89278ae1b3b240c5ad5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-pool-creation"></a>创建磁贴池
 
 
@@ -32,7 +28,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

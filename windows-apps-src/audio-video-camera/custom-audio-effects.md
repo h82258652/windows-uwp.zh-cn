@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1d8ced4a3dfcf0994d969ad045550ea0cc44a2af
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f2754cea4442fd0333b620f82d1db92d8be1c578
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-audio-effects"></a>自定义音频效果
 
 本文介绍如何创建可实现 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 接口的 Windows 运行时组件，以为音频流创建自定义效果。 自定义效果可以与若干不同的 Windows 运行时 API 一起使用，包括提供设备相机的访问权限的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124)、允许你从媒体剪辑创建复杂合成的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 和允许你快速汇编各种音频输入、输出和子混合节点图的 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph)。
@@ -28,10 +25,10 @@ ms.lasthandoff: 02/08/2017
 **为音频效果添加 Windows 运行时组件**
 
 1.  在 Microsoft Visual Studio 中，打开解决方案后，转到**文件**菜单并依次选择**添加-&gt;新建项目**。
-2.  选择 **Windows 运行时组件（通用 Windows）**项目类型。
+2.  选择 **Windows 运行时组件(通用 Windows)** 项目类型。
 3.  对于此示例，将项目命名为 *AudioEffectComponent*。 此名称稍后将在代码中引用。
 4.  单击**确定**。
-5.  项目模板将创建一个名为 Class1.cs 的类。 在“**解决方案资源管理器**中，右键单击 Class1.cs 的图标并选择**重命名**。
+5.  项目模板将创建一个名为 Class1.cs 的类。 在**解决方案资源管理器**中，右键单击 Class1.cs 的图标并选择**重命名**。
 6.  将文件重命名为 *ExampleAudioEffect.cs*。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击**是**。
 7.  打开 **ExampleAudioEffect.cs**，并更新类定义以实现 [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) 接口。
 
@@ -62,7 +59,10 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="setproperties-method"></a>SetProperties 方法
 
-[**SetProperties** ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
+
+            [
+              **SetProperties**
+            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
 
 [!code-cs[SetProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetProperties)]
 
@@ -154,7 +154,6 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 * [媒体播放](media-playback.md)
 
  
-
 
 
 

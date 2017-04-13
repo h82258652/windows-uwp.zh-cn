@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: "在 Windows 应用商店提交 API 中使用此方法，可删除现有应用提交。"
-title: "使用 Windows 应用商店提交 API 删除应用提交"
+title: "删除应用提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交, 删除"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe85515d9baaaf0d36cdcdce12a0e81561bb6787
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 20ac77960c47e21daddec845abef73887ee93710
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 删除应用提交
+# <a name="delete-an-app-submission"></a>删除应用提交
 
 
 
@@ -100,4 +97,3 @@ Authorization: Bearer <your access token>
 * [确认应用提交](commit-an-app-submission.md)
 * [更新应用提交](update-an-app-submission.md)
 * [获取应用提交的状态](get-status-for-an-app-submission.md)
-

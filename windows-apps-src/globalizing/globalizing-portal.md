@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa7757a8657abfc84ee905cb05b0b3addc59f64e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f46a48e6f93dc152a76ab5791d722dbe757a90b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization"></a>全球化和本地化
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -68,7 +65,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 </tr>
 <tr class="odd">
 <td align="left"><p>[使用模式设置日期和时间的格式](use-patterns-to-format-dates-and-times.md)</p></td>
-<td align="left"><p>结合使用 [<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式以严格按照所需模式显示日期和时间。</p></td>
+<td align="left"><p>使用 [<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式严格按照所需模式显示日期和时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)</p></td>
@@ -98,7 +95,6 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
  
 
  
-
 
 
 

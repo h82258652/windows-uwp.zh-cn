@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-register-an-out-of-process-background-task"></a>创建和注册进程外后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -29,7 +26,7 @@ ms.lasthandoff: 02/07/2017
 创建一个后台任务类并注册它，以便在应用不在前台运行时运行。 本主题演示了如何创建和注册在单独进程（而不是应用的进程）中运行的后台任务。 若要直接在前台应用程序中执行后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
 > [!Note]
-> 如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows 10 版本 1607 中使此操作更加简单的改进信息。
+> 如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows10 版本 1607 中使此操作更加简单的改进信息。
 
 ## <a name="create-the-background-task-class"></a>创建后台任务类
 
@@ -37,14 +34,17 @@ ms.lasthandoff: 02/07/2017
 
 以下示例向你展示如何编写用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。 在开始之前，请在你的解决方案中创建用于后台任务的新项目。 添加用于后台任务的空白新类，并导入 [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空间。
 
-1.  为后台任务创建新项目并将其添加到你的解决方案。 若要执行此操作，请在“解决方案资源管理器”****中右键单击你的解决方案节点并依次选择“添加”-&gt;“新建项目”。 然后，选择“Windows 运行时组件(通用 Windows)”****项目类型、为该项目命名，并单击“确定”。
+1.  为后台任务创建新项目并将其添加到你的解决方案。 若要执行此操作，请在**解决方案资源管理器**中右键单击你的解决方案节点并依次选择“添加”-&gt;“新建项目”。 然后，选择 **Windows 运行时组件(通用 Windows)**项目类型、为该项目命名，并单击“确定”。
 2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。
 
-    对于 C++ 应用，请右键单击你的应用项目并选择“属性”****。 然后，转到“通用属性”****并单击“添加新引用”****、选中后台任务项目旁的框，并单击这两个对话框上的“确定”****。
+    对于 C++ 应用，请右键单击你的应用项目并选择**属性**。 然后，转到**通用属性**并单击**添加新引用**、选中后台任务项目旁的框，并单击这两个对话框上的**确定**。
 
-    对于 C# 应用，在你的应用项目中，右键单击“引用”****并选择“添加新引用”****。 在“解决方案”****下，选择“项目”****，然后选择你的后台任务项目名称并单击“确定”****。
+    对于 C# 应用，在你的应用项目中，右键单击**引用**并选择**添加新引用**。 在**解决方案**下，选择**项目**，然后选择你的后台任务项目名称并单击**确定**。
 
-3.  创建一个用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一个需要的入口点，当触发指定事件时，将调用该入口点；每个后台任务都需要该方法。
+3.  创建一个用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。 
+            [
+              **Run**
+            ](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一个需要的入口点，当触发指定事件时，将调用该入口点；每个后台任务都需要该方法。
 
     > [!NOTE]
     > 后台任务类本身和后台任务项目中的所有其他类都需要是处于 **sealed** 状态的 **public** 类。
@@ -224,7 +224,7 @@ ms.lasthandoff: 02/07/2017
 
 3.  （可选）在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在用户存在前运行任务，请使用条件 **UserPresent**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-    以下示例代码指定需要用户存在的条件：
+    以下示例代码分配需要用户存在的条件：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -302,10 +302,10 @@ ms.lasthandoff: 02/07/2017
 必须先在应用清单中声明各个后台任务，你的应用才能运行后台任务。 如果你的应用尝试注册一个后台任务，其中有一个触发器未在清单中列出，那么注册将会失败。
 
 1.  通过打开名为 Package.appxmanifest 的文件打开程序包清单设计器。
-2.  打开“声明”****选项卡。
-3.  在“可用声明”****下拉菜单中，选择“后台任务”****，然后单击“添加”****。
-4.  选中“系统事件”****复选框。
-5.  在“入口点:”****文本框中，输入后台类的命名空间和名称，在此示例中为 RuntimeComponent1.ExampleBackgroundTask。
+2.  打开**声明**选项卡。
+3.  在**可用声明**下拉菜单中，选择**后台任务**，然后单击**添加**。
+4.  选中**系统事件**复选框。
+5.  在**入口点:** 文本框中，输入后台类的命名空间和名称，在此示例中为 RuntimeComponent1.ExampleBackgroundTask。
 6.  关闭清单设计器。
 
     以下 Extensions 元素将添加到 Package.appxmanifest 文件以注册后台任务：
@@ -355,4 +355,3 @@ ms.lasthandoff: 02/07/2017
 **后台任务 API 引用**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-

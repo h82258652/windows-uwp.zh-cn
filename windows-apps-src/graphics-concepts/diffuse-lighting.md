@@ -2,21 +2,17 @@
 title: "漫射照明"
 description: "漫射照明取决于光的方向和物体表面的法线。"
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
-keywords:
-- "漫射照明"
+keywords: "漫射照明"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 256d3ed1dd6236abe4ca93e362c52316eb548bda
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d7916bf421a56125691da9be3505039e9cb1d71d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diffuse-lighting"></a>漫射照明
 
 
@@ -75,7 +71,6 @@ Diffuse Lighting = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</s
  
 
  
-
 
 
 

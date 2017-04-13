@@ -2,21 +2,17 @@
 title: "调整磁贴池的大小"
 description: "如果应用程序需要更多工作集以支持针对其的流式资源映射，可以扩大磁贴池，或者在需要更少空间时缩小磁贴池。"
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
-keywords:
-- "调整磁贴池的大小"
+keywords: "调整磁贴池的大小"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 918b9e7ada2d6c368bb51ff42139504e41c01f15
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 57d2f919b2813e31345e057a515ed9184ae40cd9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-pool-resizing"></a>调整磁贴池的大小
 
 
@@ -38,7 +34,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

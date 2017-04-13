@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "在 Windows 应用商店提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新的软件包外部测试版提交。"
-title: "使用 Windows 应用商店提交 API 创建软件包外部测试版提交"
+title: "创建软件包外部测试版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 创建外部测试版提交"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ff296cbdd5114641a469daab14b940042e9673d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 创建软件包外部测试版提交
+# <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
 在 Windows 应用商店提交 API 中使用此方法，为应用的软件包外部测试版创建新提交。 使用此方法成功创建新提交后，[更新提交](update-a-flight-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-a-flight-submission.md)以供引入和发布。
 
@@ -55,7 +52,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 说明                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要创建软件包外部测试版提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | flightId | 字符串 | 必需。 要添加提交的软件包外部测试版的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。  |
@@ -104,7 +101,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -122,7 +119,7 @@ Authorization: Bearer <your access token>
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  说明   |
+| 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 由于请求无效，无法创建软件包外部测试版提交。 |
 | 409  | 由于应用的当前状态，或者应用使用的开发人员中心仪表板功能[当前不受 Windows 应用商店提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，无法创建软件包外部测试版提交。 |   
@@ -138,4 +135,3 @@ Authorization: Bearer <your access token>
 * [更新软件包外部测试版提交](update-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
 * [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
-

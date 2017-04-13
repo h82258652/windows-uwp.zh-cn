@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a5315534fc305c85dcf410b4808d2f8ebd844b3e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 14b8892790b2a2b486b2ddd3e8cb529545c327bd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>进程周期管理 (PLM) 的测试和调试工具
 
 UWP 应用与传统桌面应用程序的关键差异之一是 UWP 标题位于受进程周期管理 (PLM) 管制的应用容器中。 运行时中转服务可以在所有平台上暂停、恢复或终止 UWP 应用，在你测试或调试处理它们的代码时，可以使用某些专用工具来强制执行这些转换。
@@ -89,4 +86,3 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 ## <a name="related-topics"></a>相关主题
 - [部署和调试 UWP 应用](deploying-and-debugging-uwp-apps.md)
 - [调试、测试和性能](index.md)
-

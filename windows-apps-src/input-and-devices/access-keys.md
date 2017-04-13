@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e866c3afc551cf9604809cf7fec36efd7bfa439c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d62135680e13f866654c168364bb3393651bd2d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="access-keys"></a>访问键
 
 使用鼠标有困难的用户（如行动有障碍的用户），通常依赖键盘在应用中导航并与应用交互。  XAML 框架使你可以实现通过 Tab 键导航和访问键来键盘访问 UI 元素。
@@ -388,4 +385,3 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
-

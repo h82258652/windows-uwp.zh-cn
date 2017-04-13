@@ -5,13 +5,11 @@ title: "交叉滑动指南"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# 交叉滑动指南
+# <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -25,14 +23,14 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 -   对在单个方向上滚动的列表或集合使用横向滑动。
 -   当点击交互用于其他目的时，可为项目选择使用横向滑动。
 -   不要使用横向滑动将项目添加到队列。
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 仅在可以沿一个方向（垂直或水平）平移的内容区域内进行选择和拖动。 要使任何交互发挥效果，必须锁定一个平移方向，并且必须在垂直于该平移方向的方向上执行手势。
@@ -55,7 +53,7 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://msdn.microsoft.com/library/windows/apps/hh465382)。
 
-**注意** 如果内容区域可以在两个方向上平移（如 Web 浏览器或电子阅读器），则长按计时交互应该用于调用诸如图像和超链接之类的对象的上下文菜单。
+**注意**  如果内容区域可以在两个方向上平移（如 Web 浏览器或电子阅读器），则长按计时交互应该用于调用诸如图像和超链接之类的对象的上下文菜单。
 
  
 
@@ -128,7 +126,7 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 如果需要移动多个对象，则让用户选择多个项，然后同时拖动所有选中项。
 
-## <span id="related_topics"></span>相关文章
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相关文章
 
 
 **示例**
@@ -150,11 +148,5 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
  
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 220e2e1bee237120acd35d2a4111bf7390b8e619
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a7a51cdd330bc361b7d0cec3a002c5b1aee9de4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-a-splash-screen-for-more-time"></a>延长显示初始屏幕的时间
 
 
@@ -61,7 +58,7 @@ ms.lasthandoff: 02/07/2017
 
 在你的 ExtendedSplash.xaml 文件中，执行以下操作：
 
--   更改默认 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 元素的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) 属性，使其匹配你在应用清单（在 Package.appxmanifest 文件中的**可见资源**部分）中为应用的初始屏幕设置的背景色。 默认的初始屏幕颜色为浅灰色（十六进制值为 \#464646）。 请注意，在你创建新的**“空白页”**时，将默认提供此 **Grid** 元素。 你不必使用 **Grid**；它只是为构建延长的初始屏幕提供了一个方便。
+-   更改默认 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 元素的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) 属性，使其匹配你在应用清单（在 Package.appxmanifest 文件中的**“可见资源”**部分）中为应用的初始屏幕设置的背景色。 默认的初始屏幕颜色为浅灰色（十六进制值为 \#464646）。 请注意，在你创建新的**“空白页”**时，将默认提供此 **Grid** 元素。 你不必使用 **Grid**；它只是为构建延长的初始屏幕提供了一个方便。
 -   将 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素添加到 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)。 你将使用此 **Canvas** 来放置你的延长的初始屏幕图像。
 -   将 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素添加到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)。 将你为默认初始屏幕选择的 600 x 320 像素图像用于延长的初始屏幕。
 -   （可选）添加一个进度控件，以向用户显示正在加载的应用。 此主题添加了一个 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)，而非一个确定或不确定的 [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)。
@@ -555,4 +552,3 @@ namespace SplashScreenExample
  
 
  
-

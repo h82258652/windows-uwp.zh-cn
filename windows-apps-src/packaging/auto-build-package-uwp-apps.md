@@ -3,17 +3,15 @@ author: rmpablos
 title: "设置 UWP 应用的自动生成"
 description: "如何将自动生成配置为生成旁加载和/或存储软件包。"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 54dcebb0dc4b1a41acdae655b9caf14f72161f36
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -21,7 +19,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="select-the-right-type-of-build-agent"></a>选择正确类型的生成代理
 
-选择你希望 VSTS 在其执行生成过程时使用的生成代理类型。 托管生成代理与大多数常见工具和 SDK 一起部署，并且适用于大多数方案，请参阅[托管生成服务器上的软件](https://www.visualstudio.com/en-us/docs/build/admin/agents/hosted-pool#software)文章。 但是，如果你需要对生成步骤的更多控制权，可创建自定义生成代理。 可使用下表帮助你进行该决策。
+选择你希望 VSTS 在其执行生成过程时使用的生成代理类型。 托管生成代理与大多数常见工具和 SDK 一起部署，并且适用于大多数方案，请参阅[托管生成服务器上的软件](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software)文章。 但是，如果你需要对生成步骤的更多控制权，可创建自定义生成代理。 可使用下表帮助你进行该决策。
 
 |**方案**|**自定义代理**|**托管生成代理**|
 -------------|----------------|----------------------|
@@ -33,13 +31,13 @@ ms.lasthandoff: 02/08/2017
 |运行单元测试|:white_check_mark:||
 |使用增量生成|:white_check_mark:||
 
->注意：如果你计划面向 Windows 周年更新 SDK（版本 14393），你将需要设置自定义生成代理，因为托管生成池仅支持 SDK 10586 和 10240。 用于[选择 UWP 版本](https://msdn.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version)的更多信息
+>注意：如果你计划面向 Windows 周年更新 SDK（版本 14393），你将需要设置自定义生成代理，因为托管生成池仅支持 SDK 10586 和 10240。 用于[选择 UWP 版本](https://msdn.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)的更多信息
 
 #### <a name="create-a-custom-build-agent-optional"></a>创建自定义生成代理（可选）
 
 如果你选择创建自定义生成代理，你将需要通用 Windows 平台工具。 这些工具是 Visual Studio 的一部分。 可使用 Visual Studio 的社区版本。
 
-若要了解详细信息，请参阅[在 Windows 上部署代理。](https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows) 
+若要了解详细信息，请参阅[在 Windows 上部署代理。](https://www.visualstudio.com/docs/build/admin/agents/v2-windows) 
 
 若要运行 UWP 单元测试，你必须执行以下操作：•    部署并启动应用。 •    在交互模式下运行 VSTS 代理。 •    将代理配置为在重启后自动登录。
 
@@ -113,7 +111,7 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，因此项目文件夹包含你上传到应用商店的软件包 (appxupload) 以及启用旁加载的软件包 (appxbundle)。
 
 
->注意：默认情况下，VSTS 代理保留最新的 appx 生成的软件包。 如果你希望仅存储当前生成的项目，请将该生成配置为清除二进制文件目录。 若要执行此操作，请添加一个名为 `Build.Clean` 的变量，然后将其设置为值 `all`。 若要了解详细信息，请参阅[指定存储库。](https://www.visualstudio.com/en-us/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
+>注意：默认情况下，VSTS 代理保留最新的 appx 生成的软件包。 如果你希望仅存储当前生成的项目，请将该生成配置为清除二进制文件目录。 若要执行此操作，请添加一个名为 `Build.Clean` 的变量，然后将其设置为值 `all`。 若要了解详细信息，请参阅[指定存储库。](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
 
 #### <a name="the-types-of-automated-builds"></a>自动生成的类型
 接下来，你将使用生成定义创建自动生成。 下表介绍可创建的每种类型的自动生成。 
@@ -308,8 +306,8 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，然后将安装或更新 appx 文件。
 
-#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows 10 周年更新旁加载应用
-在 Windows 10 周年更新中，你可以双击 appxbundle 文件，然后通过在对话框中选择安装按钮来安装应用。 
+#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
+在 Windows10 周年更新中，你可以双击 appxbundle 文件，然后通过在对话框中选择安装按钮来安装应用。 
 
 
 ![在 rs1 中旁加载](images/building-screen18.png) 
@@ -320,11 +318,11 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>为证书签名的最佳做法 
-Visual Studio 为每个项目都生成证书。 这使维护有效证书的特选列表变得困难。 如果你计划创建多个应用，可创建单个证书来对所有应用签名。 然后，信任你的证书的每台设备都将能够旁加载你的任意应用，而无需安装其他证书。 若要了解详细信息，请参阅[如何创建应用包签名证书。](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)
+Visual Studio 为每个项目都生成证书。 这使维护有效证书的特选列表变得困难。 如果你计划创建多个应用，可创建单个证书来对所有应用签名。 然后，信任你的证书的每台设备都将能够旁加载你的任意应用，而无需安装其他证书。 若要了解详细信息，请参阅[如何创建应用包签名证书。](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
 
 
 #### <a name="create-a-signing-certificate"></a>创建签名证书
-使用 [MakeCert.exe](https://msdn.microsoft.com/en-us/library/windows/desktop/ff548309(%09v=vs.85).aspx) 工具创建证书。 以下示例使用 MakeCert.exe 工具创建证书。
+使用 [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/ff548309.aspx) 工具创建证书。 以下示例使用 MakeCert.exe 工具创建证书。
 
 ```
 MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e expirationDate /sv MyKey.pvk MyKey.cer
@@ -360,8 +358,7 @@ Visual Studio 和 MSBuild 为管理用于为应用签名的证书提供不同的
 注册证书的最简单方法是在 .cer 文件中双击，然后按照向导中的步骤将证书保存在本地计算机和受信任人存储中。
 
 ## <a name="related-topics"></a>相关主题
-* [为 Windows 生成 .NET 应用](https://www.visualstudio.com/en-us/docs/build/get-started/dot-net) 
+* [为 Windows 生成 .NET 应用](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-* [在 Windows 10 中旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [如何创建应用包签名证书](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)
-
+* [在 Windows10 中旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+* [如何创建应用包签名证书](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)

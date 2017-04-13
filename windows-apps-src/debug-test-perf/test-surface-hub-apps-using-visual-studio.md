@@ -9,15 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 426670f9b8d24a770f74aa0bdfaa5abb043c39ef
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ed2f7dc63e478d3dde2eb58b502d373db3181501
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
-Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 (UWP) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 该模拟器不会使用与 Surface Hub 相同的用户界面，但可用于测试应用在 Surface Hub 屏幕大小和分辨率下的外观和行为方式。
+Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 \(UWP\) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 该模拟器不会使用与 Surface Hub 相同的用户界面，但可用于测试应用在 Surface Hub 屏幕大小和分辨率下的外观和行为方式。
 
 有关详细信息，请参阅[在模拟器中运行 Windows 应用商店应用](https://msdn.microsoft.com/library/hh441475.aspx)。
 
@@ -66,7 +63,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 
    > **注意**&nbsp;&nbsp;将文件保存到此文件夹中需要管理权限。
 
-4. 在 Visual Studio 模拟器中运行应用。 单击调色板上的**更改分辨率**按钮，然后从列表中选择 Surface Hub 配置。
+4. 在 Visual Studio 模拟器中运行应用。 单击调色板上的“更改分辨率”****按钮，然后从列表中选择 Surface Hub 配置。
 
     ![Visual Studio 模拟器分辨率](images/vs-simulator-resolutions.png)
 
@@ -80,30 +77,29 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 
 > **注意**&nbsp;&nbsp;在启用开发人员模式后，你需要重置 Surface Hub 才能重新禁用该模式。 重置设备将删除所有本地用户文件和配置，然后重新安装 Windows。
 
-1. 从 Surface Hub 的**开始**菜单中，打开“设置”应用。
+1. 从 Surface Hub 的“开始”****菜单中，打开“设置”应用。
 
    >  **注意**&nbsp;&nbsp;访问“设置”应用需要管理权限。
 
-2. 导航到**更新和安全 > 面向开发人员**。
+2. 导航到“更新和安全”&gt; 对于开发人员”****。
 
-3. 选择**开发人员模式**并接受警告提示。
+3. 选择“开发人员模式”****并接受警告提示。
 
 ### <a name="deploy-your-app-from-visual-studio"></a>从 Visual Studio 部署应用
 有关详细信息，请参阅[部署和调试通用 Windows 平台 \(UWP\) 应用](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
 
    > **注意**&nbsp;&nbsp;此功能需要 **Visual Studio 2015 更新 1** 或以上版本。
 
-1. 导航到**开始调试**按钮旁边的调试目标下拉列表，然后选择**远程计算机**。
+1. 导航到“开始调试”****按钮旁边的调试目标下拉列表，然后选择“远程计算机”****。
 
     <!--lcap: in your screenshot, you have local machine selected-->
 
    ![Visual Studio 调试目标下拉列表](images/vs-debug-target.png)
 
-2. 输入 Surface Hub 的 IP 地址。 确保选择**通用**身份验证模式。
+2. 输入 Surface Hub 的 IP 地址。 确保选择“通用”****身份验证模式。
 
    > **提示**&nbsp;&nbsp;在启用开发人员模式后，你可以在欢迎屏幕上找到 Surface Hub 的 IP 地址。
 
-3. 可选择**开始调试 (F5)**在 Surface Hub 上部署和调试应用，也可按 Ctrl+F5 仅部署应用。
+3. 可选择“开始调试 \(F5\)”****在 Surface Hub 上部署和调试应用，也可按 Ctrl+F5 仅部署应用。
 
    > **提示**&nbsp;&nbsp;如果 Surface Hub 出现在欢迎屏幕上，请选择任意按钮将其消除。
-

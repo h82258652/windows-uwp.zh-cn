@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 46b60f180642e509eca76a68d78b1099008746eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="debug-a-background-task"></a>调试后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
@@ -26,7 +23,7 @@ ms.lasthandoff: 02/07/2017
 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。
 
 ## <a name="debugging-out-of-process-vs-in-process-background-tasks"></a>调试进程外后台任务与进程内后台任务
-本主题主要介绍在单独进程（而非主机应用）中运行的后台任务。 如果你正在调试进程内后台任务，则不会获得单独的后台任务项目，并且可以在 **OnBackgroundActivated()**（进程内后台代码运行时所在的位置）上设置断点，并请查看下面[手动触发后台任务以调试后台任务代码](#Trigger-background-tasks-manually-to-debug-background-task-code)中的步骤 2，了解有关如何触发要执行的后台代码的说明。
+本主题主要介绍在单独进程（而非主机应用）中运行的后台任务。 如果你正在调试进程内后台任务，则不会获得单独的后台任务项目，并且可以在 **OnBackgroundActivated()**（进程内后台代码运行时所在的位置）上设置断点，并请查看下面[手动触发后台任务以调试后台任务代码](#trigger-background-tasks-manually-to-debug-background-task-code)中的步骤 2，了解有关如何触发要执行的后台代码的说明。
 
 ## <a name="make-sure-the-background-task-project-is-set-up-correctly"></a>请确保正确设置了后台任务项目
 
@@ -84,7 +81,7 @@ ms.lasthandoff: 02/07/2017
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
     2.  在事件查看器中转到**应用程序和服务日志** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure**
     3.  在操作窗格中，选择**查看** -&gt; **显示分析和调试日志**以启用诊断日志记录。
-    4.  选择**诊断日志**并单击**启用日志**。
+    4.  选择**诊断日志**并单击“**启用日志**”。
     5.  现在尝试使用你的应用再次注册并激活后台任务。
     6.  查看诊断日志以了解更详细的错误信息。 这将包括为后台任务注册的入口点。
 
@@ -120,4 +117,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

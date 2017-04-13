@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 32badfb6cc2a069370623357ba96800cebd11c03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高动态范围 (HDR) 和低亮度照片捕获
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -74,7 +71,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="capture-an-hdr-photo"></a>捕获 HDR 照片
 
-通过调用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象的 [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) 方法，捕获 HDR 照片。 此方法将返回在其 [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) 属性中提供已捕获照片的 [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378)  对象。
+通过调用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象的 [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) 方法，捕获 HDR 照片。 此方法将返回在其 [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) 属性中提供已捕获照片的 [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378) 对象。
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
@@ -173,4 +170,3 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-

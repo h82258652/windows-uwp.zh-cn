@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: "在 Windows 应用商店提交 API 中使用此方法，更新现有软件包外部测试版提交。"
-title: "使用 Windows 应用商店提交 API 更新软件包外部测试版提交"
+title: "更新软件包外部测试版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交, 更新"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbd8447808c1446805f179fd1181ae88dd847083
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 89ef86cdf3243322f3d8725e40ef13bf43f31a8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="update-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 更新软件包外部测试版提交
+# <a name="update-a-package-flight-submission"></a>更新软件包外部测试版提交
 
 
 在 Windows 应用商店提交 API 中使用此方法，更新现有软件包外部测试版提交。 使用此方法成功更新提交后，必须[确认提交](commit-a-flight-submission.md)才可以实现引入和发布。
@@ -54,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 说明                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要更新软件包外部测试版提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | flightId | 字符串 | 必需。 要更新提交的软件包外部测试版的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。  |
@@ -96,7 +93,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -138,7 +135,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -173,4 +170,3 @@ Content-Type: application/json
 * [确认软件包外部测试版提交](commit-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
 * [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
-

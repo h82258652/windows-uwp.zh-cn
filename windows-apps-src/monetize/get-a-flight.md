@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: "在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用获取软件包外部测试版的数据。"
-title: "使用 Windows 应用商店提交 API 获取软件包外部测试版"
+title: "获取软件包外部测试版"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版, 软件包外部测试版"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae8014dadfb838cfd14202a673654be3a012c8bf
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 921d33c033704de711112c30feae7dbbfebc732b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-a-package-flight-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取软件包外部测试版
+# <a name="get-a-package-flight"></a>获取软件包外部测试版
 
 
 
@@ -139,4 +136,3 @@ Authorization: Bearer <your access token>
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [创建软件包外部测试版](create-a-flight.md)
 * [删除软件包外部测试版](delete-a-flight.md)
-

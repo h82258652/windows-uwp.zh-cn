@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-Description: "地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和路况。"
+Description: "地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和交通。"
 title: "地图指南"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 ms.author: misatran
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 地图控件, 地图, 位置"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad6267e0294e4a62c1e586c066ce9d0489940d7d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fb1bf78d247ca291ee40405d4143cbb6bc85230f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="map-control"></a>地图控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、街景视图、交通、公交和本地企业。
@@ -74,4 +71,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

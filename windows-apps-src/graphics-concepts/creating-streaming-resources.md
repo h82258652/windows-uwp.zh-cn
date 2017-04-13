@@ -2,21 +2,17 @@
 title: "创建流式资源"
 description: "创建资源时通过指定标志即可创建流式资源，指明该资源为流式资源。"
 ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
-keywords:
-- "创建流式资源"
+keywords: "创建流式资源"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 86f19b2afd580a16510fee8e97acfc2a388cad01
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0f42d34251ccd6d9add87808e502ab66dc830905
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="creating-streaming-resources"></a>创建流式资源
 
 
@@ -86,7 +82,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

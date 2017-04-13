@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
-description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内指定应用程序的广告市场活动性能聚合数据。"
+description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内指定应用程序的广告市场活动性能聚合数据。"
 title: "获取广告市场活动性能数据"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 广告市场活动"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca7ba9ad8817a68c8dd5f74a8bf2674d76f9eadf
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2c0e696488af33731459bdef2c8dc24477755078
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
 
@@ -117,7 +114,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>回复示例
 
-以下示例展示了此请求的 JSON 回复正文。
+以下示例举例说明此请求的 JSON 响应正文。
 
 ```json
 {
@@ -159,4 +156,3 @@ Authorization: Bearer <your access token>
 * [为应用创建广告市场活动](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
 * [使用 Windows 应用商店服务开展广告市场活动](run-ad-campaigns-using-windows-store-services.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
-

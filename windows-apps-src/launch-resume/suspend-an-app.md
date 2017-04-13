@@ -9,22 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f51e92c95676d924725d06e70f098965f3c9f5c7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a69bead489f5d155145b7389199e743792f53f85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-app-suspend"></a>处理应用暂停
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
 - [**暂停中**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
-了解当系统暂停你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件并将字符串保存到文件中。
+了解当系统挂起你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件并将字符串保存到文件中。
 
 ## <a name="important-change-introduced-in-windows-10-version-1607"></a>Windows 10 版本 1607 中引入的重要更改
 
@@ -128,7 +125,7 @@ ms.lasthandoff: 02/07/2017
 
 > **注意** 为了改进 Windows 8.1 中的系统响应，在应用暂停时，我们为应用提供低优先级的资源访问。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
 
-> **有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保**调试位置**工具栏显示出来，然后单击**暂停**图标。
+> **有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保**“调试位置”**工具栏正在显示，然后单击**“暂停”**图标。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -141,4 +138,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

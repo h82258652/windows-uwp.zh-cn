@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 云服务"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 72f357cbf8e370512f9230978de546aa3d54c660
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
-Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发跨 Microsoft 设备的游戏。 当开发跨平台和设备的游戏时，可以充分利用云后端来帮助你根据需求扩展游戏。
+Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发跨 Microsoft 设备的游戏。 当开发跨平台和设备的游戏时，可以充分利用云后端来帮助你根据需求扩展游戏。
 
 ##  <a name="what-is-cloud-computing"></a>什么是云计算？
 
@@ -149,7 +147,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
 | 要求                 | 活动方案                            | 产品供应                      | 产品功能                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
-| 在云中托管你的域     | 有效地响应 DNS 查询            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 托管你的域以实现高性能和高可用性  |
+| 在云中托管你的域     | 有效地响应 DNS 查询            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 托管你的域以实现高性能和高可用性    |
 | 登录，身份验证      | 对玩家登录信息和玩家身份进行验证  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 通过多重身份验证单一登录到任何云和本地 Web 应用            |
 | 使用基础结构即服务 (IaaS) 的游戏      | 游戏托管在云中虚拟机上       | [Azure VM](https://azure.microsoft.com/services/virtual-machines/) | 从 1 扩展到数千个虚拟机实例以用作游戏服务器（内置虚拟网络连接和负载平衡）；本地系统的混合一致性           |
 | 使用平台即服务模型 (PaaS) 的 Web 或手机游戏            | 游戏托管在托管平台上                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | 适用于网站或手机游戏的 PaaS（这意味着 Azure VM 与中间件/开发工具/BI/DB 管理相互配合）   |
@@ -159,14 +157,14 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 | 可扩展的关系型游戏数据库| 关系型数据的结构化存储，如数据库中的游戏内事务 | [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)| SQL 数据库即服务（[比较 VM 上的 SQL](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)）  |
 | 可扩展分配的低延迟游戏数据库| 借助模式灵活性快速读、写以及查询游戏和玩家数据 | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| 低延迟 NoSQL 文档数据库即服务   |
 | 借助 Azure 服务使用自己的数据中心 | 从你自己的数据中心检索游戏，并发送到客户端设备 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 使你的组织可以通过自己的数据中心提供 Azure 服务，以助你一臂之力  |
-| 大数据块传输| 可以通过 Azure CDN 从最近的内容分发网络 (CDN) pop 位置向用户发送游戏图像、音频和视频等大型文件。    | [Azure 内容分发网络](https://azure.microsoft.com/services/cdn/) | Azure CDN 基于现代网络拓扑的大型集中式节点构建，用于处理突发的大数据流量和严重负载以显著提升速度和可用性，从而明显改善用户体验  |
+| 大数据块传输| 可以通过 Azure CDN 从最近的内容分发网络 (CDN) pop 位置向用户发送游戏图像、音频和视频等大型文件。     | [Azure 内容分发网络](https://azure.microsoft.com/services/cdn/) | Azure CDN 基于现代网络拓扑的大型集中式节点构建，用于处理突发的大数据流量和严重负载以显著提升速度和可用性，从而明显改善用户体验  |
 | 低延迟               | 执行缓存以生成内含更多控制和保证隔离数据的快速运行且可扩展的游戏；还可用于改善游戏的配对功能。 | [Azure Redis 缓存](https://azure.microsoft.com/services/cache/) | 高吞吐量、一贯的低延迟数据访问，可增强快速运行且可扩展的 Azure 应用程序  |
 | 高可扩展性，低延迟 | 以低延迟的读写处理游戏用户变幻莫测的数量 | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 能够应对最复杂、低延迟、数据密集型情形并且进行可靠扩展，从而实现一次处理较多用户。 Service Fabric 使你无需创建无状态应用所需的单独存储或缓存，即可生成游戏。 |
 | 能够每秒从设备中收集数百万个事件                         | 每秒从设备中记录数百万个事件 | [Azure 事件中心](https://azure.microsoft.com/services/event-hubs/) | 从游戏、网站、应用和设备的云级别遥测引入  |
 | 游戏数据的实时处理  | 执行玩家数据的实时分析以提升游戏可玩性| [Azure 流分析](https://azure.microsoft.com/services/stream-analytics/) | 云中的实时流处理  |
-| 开发预测的游戏玩法         | 基于玩家数据创建自定义的动态游戏玩法  | [Azure 机器学习](https://azure.microsoft.com/services/machine-learning/) | 完全托管的云服务，使你可以轻松生成、部署、和共享预测的分析解决方案  |
+| 开发预测的游戏玩法          | 基于玩家数据创建自定义的动态游戏玩法    | [Azure 机器学习](https://azure.microsoft.com/services/machine-learning/) | 完全托管的云服务，使你可以轻松生成、部署、和共享预测的分析解决方案  |
 | 收集和分析游戏数据| 大规模并行处理来自关系型和非关系型数据库的数据 | [Azure 数据仓库](https://azure.microsoft.com/services/sql-data-warehouse/)| 弹性数据仓库即服务（内含企业类功能）   |
-| 创建市场营销活动以增加用法和保留  | 根据数据分析，向目标玩家发送推送通知以引起兴趣，并鼓励执行特定游戏操作 | [移动用户参与度](https://azure.microsoft.com/services/mobile-engagement/) |  增加所有主流平台（iOS、Android、Windows、Windows Phone）上的游戏时间和用户保留 |
+| 创建市场营销活动以增加用法和保留  |    根据数据分析，向目标玩家发送推送通知以引起兴趣，并鼓励执行特定游戏操作 | [移动用户参与度](https://azure.microsoft.com/services/mobile-engagement/) |  增加所有主流平台（iOS、Android、Windows、Windows Phone）上的游戏时间和用户保留 |
 
 
 ##  <a name="startup-and-developer-resources"></a>初创公司和开发商资源
@@ -177,7 +175,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    如果你想要将诸如多玩家游戏玩法、跨平台配对、玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox 以获取用于发挥你的创造力以及尽最大可能获得成功所需的工具和支持。 在申请 ID@Xbox 之前，请在 [Windows 开发人员中心](https://developer.microsoft.com/windows/programs/join)注册开发人员帐户。
+    如果你想要将诸如多玩家游戏玩法、跨平台配对、玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox 以获取用于发挥你的创造力以及尽最大可能获得成功所需的工具和支持。 在申请 ID@Xbox 之前，请在 [Windows 开发人员中心](https://developer.microsoft.com/windows/programs/join) 注册开发者帐户。
 
 ## <a name="software-as-a-service-for-game-backend"></a>适用于游戏后端的软件即服务
 
@@ -197,7 +195,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
 
 ## <a name="related-links"></a>相关链接
 
-* [Windows 10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
 * [面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
@@ -206,4 +204,3 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开�
  
 
  
-

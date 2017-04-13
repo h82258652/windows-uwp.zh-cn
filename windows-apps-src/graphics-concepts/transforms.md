@@ -2,25 +2,21 @@
 title: "转换"
 description: "转换引擎是 Direct3D 的一部分，用于将几何图形穿过固定函数几何图形管道。"
 ms.assetid: 0DF2A99A-335C-4D14-9720-6D7996DD635A
-keywords:
-- "转换"
+keywords: "转换"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2036573c0a5b2967bda38473b126b85f259c278c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 342dd40bd6cc69ebf1faf93753b91096e7ecfbe9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="transforms"></a>转换
 
 
-转换引擎是 Direct3D 的一部分，用于将几何图形穿过固定函数几何图形管道。 它在世界空间中定位模型和查看器，投影显示在屏幕上的顶点，并将顶点剪裁到视口上。 转换引擎还会执行照明计算来确定每个顶点的漫射和反射组件。
+转换引擎是 Direct3D 的一部分，用于将几何图形穿过固定函数几何图形管道。 它会找到世界中的模型和查看器、投影显示在屏幕上的顶点，并将顶点剪切到视区上。 转换引擎还会执行照明计算来确定每个顶点的漫射和反射组件。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
 
@@ -66,7 +62,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

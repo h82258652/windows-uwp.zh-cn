@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
-description: "在 Windows 应用商店提交 API 中使用此方法，获取现有软件包外部测试版提交的数据。"
-title: "使用 Windows 应用商店提交 API 获取软件包外部测试版提交"
+description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有软件包外部测试版提交的数据。"
+title: "获取软件包外部测试版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a989e9d081ec9cb709b59e1ff4ceff2d517ae48f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2571bb25ce407a9c44ed40aae0a865708e6154d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取软件包外部测试版提交
-
+# <a name="get-a-package-flight-submission"></a>获取软件包外部测试版提交
 
 
 
-在 Windows 应用商店提交 API 中使用此方法，获取现有软件包外部测试版提交的数据。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
+
+在 Windows 应用商店提交 API 中使用此方法，可获取现有软件包外部测试版提交的数据。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -104,7 +101,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -138,4 +135,3 @@ Authorization: Bearer <your access token>
 * [确认软件包外部测试版提交](commit-a-flight-submission.md)
 * [更新软件包外部测试版提交](update-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
-

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca57f50f4827ba5de7a140f1353ba864c5e2fb6c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6c699b357a2c1271f6765514331eb2ca0a6ff0b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="packaging-uwp-apps"></a>打包 UWP 应用
+# <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。 当你创建 appxupload 时，将生成另一个 appx 程序包用于测试和旁加载。 你可以通过将 appx 程序包旁加载到设备来直接分配你的应用。 本文介绍了配置、创建和测试 UWP 应用包的过程。 有关旁加载的详细信息，请参阅 [Windows 10 中的旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)。
 
@@ -38,7 +36,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="configure-an-app-package"></a>配置应用包
 
-应用清单文件 (package.appxmanifest.xml) 中包含创建应用包所需的属性和设置。 例如，清单文件中的属性描述了要用作应用的磁贴的映像和应用在用户旋转设备时支持的方向。
+应用清单文件 (package.appxmanifest) 中包含创建应用包所需的属性和设置。 例如，清单文件中的属性描述了要用作应用的磁贴的映像和应用在用户旋转设备时支持的方向。
 
 Visual Studio 的清单设计器使你可以轻松地更新清单文件，而无需编辑文件的原始 XML。
 
@@ -77,7 +75,7 @@ Visual Studio 可以将你的程序包与应用商店相关联。 当执行此�
 4.  使用你的开发者帐户登录到 Windows 开发人员中心。 （如果你还没有开发者帐户，该向导将帮助你创建一个。）
 5.  为你的程序包选择应用名称，如果你尚未在 Windows 开发人员中心门户中保留应用名称，也可以保留一个新名称。<br/>
     ![使用显示的应用名称选择创建应用包窗口](images/packaging-screen4.jpg)
-6.  请确保选择**选择并配置程序包**对话框中的全部三个体系结构配置（x86、x64 和 ARM）。 这样，你的应用就可以部署到尽可能多的设备上。 在**生成应用程序包**列表框中，选择**始终**。 这使应用商店提交流程更加简单，因为你只需要上传一个文件 (.appxupload)。 单个捆绑包将包含所有要部署到设备（带有各自处理器体系结构）的必需程序包。<br/>
+6.  请确保选择**选择并配置程序包**对话框中的全部三个体系结构配置（x86、x64 和 ARM）。 这样，你的应用就可以部署到尽可能多的设备上。 在**生成应用包**列表框中，选择**始终**。 这使应用商店提交流程更加简单，因为你只需要上传一个文件 (.appxupload)。 单个捆绑包将包含所有要部署到设备（带有各自处理器体系结构）的必需程序包。<br/>
     ![使用显示的程序包配置创建应用包窗口](images/packaging-screen5.jpg)
 7.  最好包括完整的 PDB 符号文件，以便从 Windows 开发人员中心获取最佳的[故障分析](http://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)体验。 你可以通过访问[使用符合调试](https://msdn.microsoft.com/library/windows/desktop/Ee416588)了解有关使用符号调试的详细信息。
 8.  现在你可以配置详细信息来创建你的程序包。 当你准备好发布应用时，你可以从输出位置上传程序包。

@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, directx, 加载资源"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 032cde6294093a2c0a1c582312b9353a146e94da
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（例如着色器、纹理、预先定义的网络或其他图形数据）。 下面，让我们看一看在通用 Windows 平台 (UWP) 游戏中加载要使用的这些文件时必须考虑的一个高级视图。
+大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。 下面，让我们看一看在通用 Windows 平台 (UWP) 游戏中加载要使用的这些文件时必须考虑的一个高级视图。
 
 例如，游戏中的多边形对象网格可能是使用其他工具创建的，并且已导出为某个特定格式。 纹理等也是一样：尽管大多数工具通常可以编写平面的未压缩的位图并且大多数图形 API 都可以理解，但这对于在游戏中的使用来说还远远不够。 下面我们将指导你完成加载三个不同类型的图形资源以便用于 Direct3D 的基本步骤：网格（模型）、纹理（位图）以及编译的着色器对象。
 
@@ -81,7 +78,7 @@ ms.lasthandoff: 02/07/2017
 
 使用并行模式库 (PPL) 中的 **task** 模板处理异步加载。 **task** 包含一个方法调用，后跟完成调用后处理异步调用结果的 lambda，通常遵循以下格式：
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
 
 可以使用 **.then\(\)** 语法将任务链接在一起，以便当一个操作完成后，可以运行依赖之前操作的结果的另一个异步操作。 这样，你便可以在单独的线程上加载、转换和管理复杂的资源，而这种方式玩家几乎看不到。
 
@@ -710,7 +707,6 @@ task<void> BasicLoader::LoadShaderAsync(
  
 
  
-
 
 
 

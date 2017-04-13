@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: "在 Windows 应用商店提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的应用提交。"
-title: "使用 Windows 应用商店提交 API 确认应用提交"
+title: "确认应用提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 确认应用提交"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b22143dc9f64e1f1075b0f9a2851699ca4208673
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bbfaaa016d4c45e20afec8a98a1c1d87b6dd9bd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="commit-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 确认应用提交
+# <a name="commit-an-app-submission"></a>确认应用提交
 
 
 在 Windows 应用商店提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的应用提交。 确认操作向开发人员中心发送提交数据已上传（包括任何相关程序包和图像）的警报。 作为响应，开发人员中心确认对提交数据所做的更改以供引入和发布。 确认操作成功后，对提交所做的更改将显示在开发人员中心仪表板中。
@@ -113,4 +110,3 @@ Authorization: Bearer <your access token>
 * [更新应用提交](update-an-app-submission.md)
 * [删除应用提交](delete-an-app-submission.md)
 * [获取应用提交的状态](get-status-for-an-app-submission.md)
-

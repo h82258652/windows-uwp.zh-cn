@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e665814f2d65affd89973879332ba0a2732e1509
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7082b8f81f45d5035cbe2d9b4bf482d0c985bb8f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -855,4 +853,3 @@ ms.lasthandoff: 02/07/2017
 参考：[ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
 设计和操作方法：[切换控件指南](toggles.md) 
-

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解应用中广告的 UI 和用户体验指南。"
-title: "应用中广告的 UI 和用户体验指南"
+title: "广告的 UI 和用户体验指南"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 指南, 最佳做法"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 75a68977e5edb996a5e2fc1ae9265d11b7492ad9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>应用中广告的 UI 和用户体验指南
+# <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
 本文将简要介绍如何使用应用中的横幅广告和间隙广告提供出色的体验。 有关如何设计应用外观的通用指南，请参阅 [设计和 UI](https://developer.microsoft.com/windows/apps/design)。
 
@@ -75,7 +72,7 @@ ms.lasthandoff: 02/07/2017
 
 如果使用得当，间隙视频广告可极大提高应用的收益，而不会对用户满意度带来负面影响。 如果使用不当，此类广告可能会产生相反的效果。
 
-以下部分针对如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在应用中实施间隙广告提供了一些建议，以及违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
+以下部分针对如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在应用中实施间隙视频广告和间隙横幅广告提供了一些建议，以及违反 Windows 应用商店策略的[策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -91,7 +88,7 @@ ms.lasthandoff: 02/07/2017
 
     * 自定义虚拟形象功能，如纹身或帽子。
 
-* 如果你的应用需要看完整个视频广告，请提前指出这一规则，这样他们就不会对点击关闭按钮时出现错误消息感到意外。
+* 如果你的应用需要看完整个间隙视频广告，请提前指出这一规则，这样他们就不会对点击关闭按钮时出现错误消息感到意外。
 
 * 理想情况下，在你需要显示广告之前，请预取广告（通过调用 [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)）30 至 60 秒。
 
@@ -105,13 +102,13 @@ ms.lasthandoff: 02/07/2017
 
     * 如果你选择保存基于 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 的用户带宽，**ConnectionProfile** 类中的 API 可以提供帮助。
 
-* 如果没有合理的理由，请使用默认（30 秒）超时，否则，在这种情况下，不能低于 10 秒。 与横幅广告相比，视频广告实质上需要花费更长的时间来下载，尤其是在没有高速连接的市场中。
+* 如果没有合理的理由，请使用默认（30 秒）超时，否则，在这种情况下，不能低于 10 秒。 与标准横幅广告相比，间隙视频广告实质上需要花费更长的时间来下载，尤其是在没有高速连接的市场中。
 
 <span/>
 
-* 注意用户的流量套餐。 例如，在接近或超出其流量上限的移动设备上投放视频广告前，不要向用户显示广告，或者向用户发出警告。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 类中的 API 可以提供帮助。
+* 注意用户的流量套餐。 例如，在接近或超出其流量上限的移动设备上投放间隙视频广告前，不要向用户显示广告，或者向用户发出警告。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 类中的 API 可以提供帮助。
 
-* 在初始提交后持续改进你的应用。 查看[广告报告](../publish/advertising-performance-report.md)并对设计进行更改，以提高填充率和视频完成率。
+* 在初始提交后持续改进你的应用。 查看[广告报告](../publish/advertising-performance-report.md)并对设计进行更改，以提高填充率和间隙视频完成率。
 
 <span />
 ### <a name="practices-to-avoid"></a>要避免的做法
@@ -120,13 +117,13 @@ ms.lasthandoff: 02/07/2017
 
 * 请勿过度放置间隙广告。 不要每超过约 5 分钟就强制插入间隙广告，除非用户除了玩游戏以外，明确对某个可选的切实好处感兴趣。
 
-* 请勿在应用启动时显示隙视频广告，这样可能会导致用户认为单击了错误的磁贴。
+* 请勿在应用启动时显示间隙广告，这样可能会导致用户认为单击了错误的磁贴。
 
-* 请勿在退出时显示间隙视频广告。 这是很糟糕的库存，因为完成率接近于零。
+* 请勿在退出时显示间隙广告。 这是很糟糕的库存，因为完成率接近于零。
 
 * 请勿来回播放两个或多个间隙广告。 用户看到广告进度条重置到起始点时会感到非常失望。 许多人会认为这只是代码编写或广告投放 Bug。
 
-* 请勿在调用 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 之前提取一个超过 5 分钟的视频广告。 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
+* 请勿在调用 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 之前提取一个超过 5 分钟的间隙视频广告。 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
 
 * 请勿对广告投放出现故障（如没有可用的广告）的用户进行处罚。 例如，如果你显示“观看广告获取 *xxx*”的 UI 选项，那么在用户看完以后，你应提供 *xxx*。 有两个选项可以考虑：
 
@@ -160,4 +157,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

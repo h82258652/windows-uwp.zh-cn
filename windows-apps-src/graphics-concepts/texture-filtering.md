@@ -2,21 +2,17 @@
 title: "纹理筛选"
 description: "当通过将 3D 基元映射到 2D 屏幕的形式呈现基元时，纹理筛选针对基元的 2D 呈现图像中的每个像素生成一种颜色。"
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
-keywords:
-- "纹理筛选"
+keywords: "纹理筛选"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 97b2dc04c518bfec4b09a50707c08767932f05c6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-filtering"></a>纹理筛选
 
 
@@ -56,11 +52,11 @@ Direct3D 支持以下纹理筛选方法。
 </tr>
 <tr class="even">
 <td align="left"><p>[双线性纹理筛选](bilinear-texture-filtering.md)</p></td>
-<td align="left"><p><em>双线性筛选</em>计算离采样点最近的 4 个纹素的加权平均值。 此筛选方法比最近点筛选方法更准确且更常见。 此方法是借助现代图形硬件实施的，因此十分有效。</p></td>
+<td align="left"><p><em>双线性筛选</em>计算最接近取样点的 4 个纹素的加权平均值。 与最近点筛选相比，此筛选方法更加准确和通用。 此方法是借助现代图形硬件实施的，因此十分有效。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[各向异性纹理筛选](anisotropic-texture-filtering.md)</p></td>
-<td align="left"><p><em>各向异性</em>是 3D 物体（3D 物体表面的方向与屏幕平面成一定角度）纹素中的可见失真。 当各向异性基元中的一个像素被映射到纹素时，会发生变形。</p></td>
+<td align="left"><p><em>各向异性</em>是可见于 3D 对象的纹素中的失真，此 3D 对象的表面面向与屏幕平面相对的角度。 当各向异性基元中的一个像素被映射到纹素时，会发生变形。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[使用 mipmap 进行纹理筛选](texture-filtering-with-mipmaps.md)</p></td>
@@ -79,7 +75,6 @@ Direct3D 支持以下纹理筛选方法。
  
 
  
-
 
 
 

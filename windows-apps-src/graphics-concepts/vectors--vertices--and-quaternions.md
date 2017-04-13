@@ -2,21 +2,17 @@
 title: "矢量、顶点和四元数"
 description: "顶点会在整个 Direct3D 中描述位置和方向。 基元中的每个顶点都由矢量进行描述，矢量会提供其位置、颜色、纹理坐标以及指定其方向的法向矢量。"
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
-keywords:
-- "矢量、顶点和四元数"
+keywords: "矢量、顶点和四元数"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 61017fd2f0d91fb953543857741146bb607a36f3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7b0fa178db12c421f5964f0dec2b8c6391ee1973
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vectors-vertices-and-quaternions"></a>矢量、顶点和四元数
 
 
@@ -42,7 +38,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

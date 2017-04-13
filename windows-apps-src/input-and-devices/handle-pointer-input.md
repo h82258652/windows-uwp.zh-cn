@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d93583c4d6eeaa8e81bda4672d38386f07e7dcc5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5923b02d2d41a9d5311f39cb02f0bc58f5f6188c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-pointer-input"></a>处理指针输入
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -83,14 +80,14 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
-<strong>注意</strong> 不存在相应的指针捕获事件。
+<strong>注意</strong>  不存在相应的指针捕获事件。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>PointerEntered</strong>\](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p>\[<strong>PointerEntered</strong>\](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
 <td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
@@ -1107,7 +1104,6 @@ namespace PointerInput
  
 
  
-
 
 
 

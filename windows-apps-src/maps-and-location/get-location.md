@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 位置功能"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fec870534c7e028ea85e8aa5242f09569e082b96
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-the-users-location"></a>获取用户位置
 
 
@@ -274,4 +271,3 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 * [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理围栏设计指南](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)
-

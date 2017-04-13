@@ -1,7 +1,7 @@
 ---
 author: joannaleecy
 title: "通过游戏盈利"
-description: "在 Windows 10 上实现通用 Windows 平台 (UWP) 游戏的横幅广告、间隙视频广告和应用内购买。"
+description: "在 Windows10 上实现通用 Windows 平台 (UWP) 游戏的横幅广告、间隙视频广告和应用内购买。"
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 盈利"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: eccff6f037890fdd375eb150520db99a67aa718d
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -54,12 +52,12 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 
 你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows 10 版本 1607 中开始提供）。 对于开发人员托管的易耗型加载项，你负责为玩家跟踪商品库存；对于应用商店托管的易耗型加载项，Windows 应用商店为你跟踪商品库存。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 对于开发人员托管的易耗型加载项，你负责为玩家跟踪商品库存；对于应用商店托管的易耗型加载项，Windows 应用商店为你跟踪商品库存。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
-最新应用内购买和许可证信息 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的一部分（从 Windows 10 版本 1607 开始）。 如果你要面向 1607 或更高版本开发新游戏，我们建议你使用 __Windows.Services.Store__ 命名空间，因为它支持最新的加载项类型并且性能更佳。
-它还设计用于与 Windows 开发人员中心和应用商店支持的以后类型的产品和功能兼容。 如果要面向以前版本的 Windows 10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
+最新应用内购买和许可证信息 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的一部分（从 Windows10 版本 1607 开始）。 如果你要面向 1607 或更高版本开发新游戏，我们建议你使用 __Windows.Services.Store__ 命名空间，因为它支持最新的加载项类型并且性能更佳。
+它还设计用于与 Windows 开发人员中心和应用商店支持的以后类型的产品和功能兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
 
 有关详细信息，请转到[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 
@@ -85,7 +83,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 
 #### <a name="create-a-package"></a>创建程序包
 
-对于任何要发布的游戏，必须满足最低 Windows 应用认证要求。 你可以使用 Windows 10 SDK 中包含的 [Windows 应用认证工具包](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)在游戏上运行测试，以帮助确保该应用可供发布到应用商店中。 如果尚未下载包含 Windows 应用认证工具包的 Windows 10 SDK，请转到 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
+对于任何要发布的游戏，必须满足最低 Windows 应用认证要求。 你可以使用 Windows10 SDK 中包含的 [Windows 应用认证工具包](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)在游戏上运行测试，以帮助确保该应用可供发布到应用商店中。 如果尚未下载包含 Windows 应用认证工具包的 Windows10 SDK，请转到 [Windows10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 
 若要创建可上传到应用商店的程序包：
 
@@ -103,7 +101,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 2. 在__仪表板概述__或__所有应用__页面上，单击要使用的应用。 如果尚未创建应用提交，请单击__创建新应用__并保留名称。
 3. 在__应用概述__页面上，单击__开始提交__。
 4. 配置此新提交。 在提交页面上： 
-    * 单击__定价和可用性__。 在__可见性__部分中，选择__隐藏此应用并阻止购置...__ 以确保只有你的开发团队可以访问游戏。 有关更多详细信息，请转到[分发和可见性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
+    * 单击__定价和可用性__。 在__可见性__部分中，选择“__隐藏此应用并阻止购置..__” 以确保只有你的开发团队可以访问游戏。 有关更多详细信息，请转到[分发和可见性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
     * 单击__属性__。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
     * 单击__年龄分级__。 准确填写调查表。
     * 单击__程序包__。 上传在上一步中创建的游戏程序包。
@@ -180,7 +178,7 @@ Microsoft Store Services SDK 中的库和工具有助于你在游戏中设置服
 |AdType             | AdUnitId  | AppId                              |
 |-------------------|-----------|------------------------------------|
 |横幅广告         |10865270   |3f83fe91-d6be-434d-a0ae-7351c5a997f1|
-|间隙广告   |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
+|间隙广告    |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
 
 下面是一些在设计和实现过程中向你提供帮助的最佳做法。
 
@@ -210,11 +208,11 @@ Smaato 可以将横幅广告合并到 UWP 应用和游戏中。 下载 [SDK](htt
 
 AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
-若要了解有关将 AdDuplex 直接集成到 Windows 10 XAML 项目中的详细信息，请转到 AdDuplex 网站：
-* 横幅广告：[适用于 XAML 的 Windows 10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) 
-* 间隙广告：[Windows 10 XAML AdDuplex 间隙广告安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
+若要了解有关将 AdDuplex 直接集成到 Windows10 XAML 项目中的详细信息，请转到 AdDuplex 网站：
+* 横幅广告：[适用于 XAML 的 Windows10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) 
+* 间隙广告：[Windows10 XAML AdDuplex 间隙广告安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
-有关将 AdDuplex SDK 集成到使用 Unity 创建的 Windows 10 UWP 游戏的信息，请参阅[适用于 Unity 应用的 Windows 10 SDK 安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)。
+有关将 AdDuplex SDK 集成到使用 Unity 创建的 Windows10 UWP 游戏的信息，请参阅[适用于 Unity 应用的 Windows10 SDK 安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>通过广告市场活动最大程度地发展游戏的潜在客户
 
@@ -225,8 +223,8 @@ AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 |市场活动类型             | 你的游戏的广告显示在...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |付费                      |与你的游戏的设备或类别匹配的应用。                                                                                                                                                   |
-|免费社区            |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)。|
-|免费自家                |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
+|免费社区               |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)。|
+|免费自家                   |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
 
 ## <a name="related-links"></a>相关链接
 

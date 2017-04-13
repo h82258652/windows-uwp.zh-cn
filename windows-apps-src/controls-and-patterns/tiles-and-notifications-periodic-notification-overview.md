@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f77bdb61fdb596720a857960094c959b344db9af
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -69,7 +67,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="automatic-retry-behavior"></a>自动重试行为
 
-只能在设备联机时轮询 URI。 如果网络可用，但因某种原因无法联系 URI，则轮询间隔此次迭代将被跳过，并将在下个间隔再次轮询 URI。 如果达到轮询间隔时，该设备处于关闭、睡眠或休眠状态，则设备从关闭或睡眠状态恢复时，将轮询 URI。
+只能在设备联机时轮询 URI。 如果网络可用，但因某种原因无法联系 URI，则轮询间隔此次迭代将被跳过，并将在下个间隔再次轮询 URI。 如果达到轮询间隔时，该设备处于关闭、睡眠或休眠状态，则设备从关闭或睡眠状态返回时，将轮询 URI。
 
 ### <a name="handling-app-updates"></a>处理应用更新
 

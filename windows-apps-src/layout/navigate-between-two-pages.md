@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="peer-to-peer-navigation-between-two-pages"></a>两个页面之间的对等导航
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 1.  在 Microsoft Visual Studio 菜单上，依次选择“文件”&gt;“新建项目”****。
 2.  在“新建项目”****对话框的左侧窗格中，依次选择“Visual C#”-&gt;“Windows”-&gt;“通用”****节点，或者依次选择“Visual C++”-&gt;“Windows”-&gt;“通用”****节点。
 3.  在中心窗格中，选择“空白应用”****。
-4.  在**名称**框中，输入 **NavApp1**，然后选择**确定**按钮。
+4.  在“名称”****框中，输入 **NavApp1**，然后选择“确定”****按钮。
 
     解决方案已创建并且项目文件显示在“解决方案资源管理器”****中。
 
@@ -371,7 +368,6 @@ Page1::Page1()
  
 
  
-
 
 
 

@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f84b573a051bca38000d2d480368147110ea22c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a48a18fdb2c75f334a4ac9cb5916cab6b43d8c7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="beta-testing"></a>Beta 测试
 
-\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-
-              *Beta 测试*使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。
+*Beta 测试*使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。
 
 本部分介绍对通用 Windows 应用执行 Beta 测试的选项。
 
@@ -51,7 +48,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

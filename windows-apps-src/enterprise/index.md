@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ffbccf88cd00331b622c158a7e46773ae62197e2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 28d005d76fa8d412eb283e409ea7f5d673bfd857
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enterprise"></a>企业
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。 Windows 10 可使你编写一次即可在所有设备上部署，创建可适应任何设备的单个应用。 这使你可以在对组织所需的安全性、管理和配置提供控制的同时，打造用户期望的出色体验。
 
@@ -117,4 +114,3 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
  
 
  
-

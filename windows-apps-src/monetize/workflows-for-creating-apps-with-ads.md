@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, AdControl, InterstitialAd"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f01b69502d41a7128ac5f59589f6d014d92f52a3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 93b56259314c54a56cd8ebbef89694319a95e41c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="workflows-for-creating-apps-with-ads"></a>用于创建带广告的应用的工作流
 
 
@@ -54,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 
 当你使用 **AdControl** 或 **InterstitialAd** 在应用中显示广告时，必须在代码中指定应用程序 ID 和广告单元 ID，以便将你的应用链接到 Windows 开发人员中心帐户，并投放广告。 当你开发应用时，请使用测试应用程序 ID 和广告单元 ID 值以查看应用在测试期间如何呈现广告。 这样，你便可以在测试期间查看应用如何接收和呈现广告。 有关详细信息，请参阅[测试模式值](test-mode-values.md)。
 
-有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和间隙视频广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
 ## <a name="configure-your-app-to-receive-live-ads"></a>配置应用以接收实时广告
 
@@ -69,4 +66,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

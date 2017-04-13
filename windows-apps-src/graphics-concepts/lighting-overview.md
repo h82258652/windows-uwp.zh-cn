@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cb5391dcd210b28b2971d39cfe8c9f2964889839
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7f4ca6fdbd93d42dbefd955f31bd514b93886d03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lighting-overview"></a>照明概述
 
 使用 Direct3D 照明时，Direct3D 负责为你处理照明细节。 如果需要，高级用户可以自行执行照明。
@@ -81,7 +78,6 @@ Direct3D 用四个分量（红、绿、蓝和 Alpha）描述颜色，这四个�
  
 
  
-
 
 
 

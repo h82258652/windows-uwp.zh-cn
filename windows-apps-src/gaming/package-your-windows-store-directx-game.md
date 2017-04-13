@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, directx, 打包"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: db31338d908f4c18eaa6b5090b8cf35ac5305655
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>打包你的通用 Windows 平台 (UWP) DirectX 游戏
 
 
@@ -90,7 +87,7 @@ ms.lasthandoff: 02/07/2017
      
 
 -   在 [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 和 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来为你的应用指定和加载特定于区域设置的资源。 同样，使用不包含指定区域设置的资源引用，因为这些 API 将根据用户设置确定正确的区域设置，然后为用户检索正确的资源。
--   在 Microsoft Visual Studio 2015 中，请选择**“项目”-&gt;“存储”-&gt;“创建应用包...”**，然后创建此程序包。
+-   在 Microsoft Visual Studio 2015 中，请选择“项目 -&gt; 存储 -&gt; 创建应用包...”****，然后创建此程序包。
 
 ## <a name="defining-scaling-factor-resource-packs"></a>定义比例系数资源包
 
@@ -107,7 +104,7 @@ Windows 10 提供 3 种用户界面比例系数：1.0x、1.4x 和 1.8x。 在安
      
 
 -   在 [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 中使用 API 来加载资源。 资源引用应该一般化（无后缀），且不带特定的比例变体。 系统将检索适用于屏幕和用户设置的适当的比例资源。
--   在 Visual Studio 2015 中，请选择**“项目”-&gt;“存储”-&gt;“创建应用包...”**，然后创建此程序包。
+-   在 Visual Studio 2015 中，请选择“项目 -&gt; 存储 -&gt; 创建应用包...”****，然后创建此程序包。
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>定义 DirectX 功能级别资源包
 
@@ -229,7 +226,6 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
  
 
  
-
 
 
 

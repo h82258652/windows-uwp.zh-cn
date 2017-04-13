@@ -2,21 +2,17 @@
 title: "多通道纹理混合"
 description: "通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用可以实现多个特殊效果。"
 ms.assetid: FB4D6E3F-4EF5-4D20-BF7E-1008E790E30C
-keywords:
-- "多通道纹理混合"
+keywords: "多通道纹理混合"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 81e5683fd630d0c843ee59b26b5715090fdd0cea
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1ea0f10e4cec774a0b7d85bd813b8c4f720d0048
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="multipass-texture-blending"></a>多通道纹理混合
 
 
@@ -45,7 +41,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

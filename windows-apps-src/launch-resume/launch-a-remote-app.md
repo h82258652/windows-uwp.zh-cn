@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 15ab4c39f4da1bb524f912d4e6ab6b3e6a5f34c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 
 本文介绍了如何启动远程设备上的 Windows 应用。
@@ -71,4 +68,3 @@ ms.lasthandoff: 02/08/2017
 [连接的应用和设备（项目“Rome”）概述](connected-apps-and-devices.md)  
 [发现远程设备](discover-remote-devices.md)  
 [远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在运行在两个系统上的应用之间发送消息。
-

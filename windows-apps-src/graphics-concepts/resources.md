@@ -2,21 +2,17 @@
 title: "资源"
 description: "资源是内存中可由 Direct3D 管道访问的区域。"
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
-keywords:
-- "资源"
+keywords: "资源"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a95762696905bcb5e1ae900c96a47ee9fc5d1a73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 361e5e1489e976776015ec9401f1473b9d3c8bdd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resources"></a>资源
 
 
@@ -51,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[选择资源](choosing-a-resource.md)</p></td>
-<td align="left"><p>资源是 3D 管道所使用的数据集合。 创建资源和定义它们的行为是对你的应用程序进行编程的第一步。 本指南介绍了选择应用程序所需资源的基本主题。</p></td>
+<td align="left"><p>资源是 3D 管道所使用的数据集合。 对应用程序进行编程的第一步是创建资源并定义其行为。 本指南介绍了选择应用程序所需资源的基本主题。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[复制和访问资源数据](copying-and-accessing-resource-data.md)</p></td>
@@ -76,4 +72,3 @@ ms.lasthandoff: 02/07/2017
 [浮点规则](floating-point-rules.md)
 
 [数据类型转换](data-type-conversion.md)
-

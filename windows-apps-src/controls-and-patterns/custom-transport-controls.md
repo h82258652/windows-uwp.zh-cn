@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4dc1cd837b7ac7849125e0a1737873fec4a15cd3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 34c3aab3e9a04eb535014182c0dbc8c140670b89
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 
@@ -269,7 +267,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 MediaTransportControls 的“seek”控件由 [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 元素提供。 你可以自定义它的方法之一是更改查找行为的粒度。
 
-由于默认查找滑块分为 100 个部分，因此查找行为仅限于这些若干区域。 可以通过从 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 上的 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 事件处理程序的 XAML 可视化树中获取 Slider 来更改查找滑块的粒度。 此示例介绍如何使用 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) 获取对 Slider 的引用，然后在媒体大于 120 分钟时，将滑块的默认步进频率从 1% 更改为 0.1%（1000 步）。 MediaPlayerElement 名为 `MediaPlayerElement1`。
+由于默认查找滑块分为 100 个部分，因此查找行为仅限于这些若干区域。 可以通过从 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 上的 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 事件处理程序的 XAML 可视化树中获取 Slider 来更改查找滑块的粒度。 此示例介绍如何使用 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) 获取对 Slider 的引用，然后在媒体大于 120 分钟时，将滑块的默认步进频率从 1% 更改为 0.1%（1000 步）。 MediaPlayerElement 名为 `MediaPlayerElement1`。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -292,4 +290,3 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
 ## <a name="related-articles"></a>相关文章
 
 - [媒体播放](media-playback.md)
-

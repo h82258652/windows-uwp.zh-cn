@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b8d8b81b1807681d3aa3c5ed61359a5da64dfac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3fd841f824e09ab74c303571e5d917c56c659b9b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-a-splash-screen"></a>添加初始屏幕
 
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 使用 Microsoft Visual Studio 2015 设置你的应用的初始屏幕图像和背景色。
@@ -81,4 +78,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

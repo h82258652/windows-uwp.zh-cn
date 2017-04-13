@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6be02f9ec4163df510827552e04be78fffe1a8a5
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6bcc81d80bb3e2167b6d6e5ee078279bd830f04c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inputs-and-devices"></a>输入和设备
 
@@ -71,7 +69,7 @@ UWP 应用可自动处理各种各样的输入并在各种设备上运行，例�
 <div class="side-by-side-content-right">
 <p>
 <b>[键盘](keyboard-interactions.md)</b><br/>
-键盘输入是应用的整体用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。
+键盘输入是应用的所有用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。
 </p>
 </div>
 </div>
@@ -99,7 +97,7 @@ UWP 具有多种处理触控输入的不同机制，全部使你能够创建用�
 <div class="side-by-side-content-left">
 <p>
 <b>[鼠标](mouse-interactions.md)</b><br/>
-鼠标输入最适合那些需要精确指向和单击目标的用户交互。 由于 Windows 的 UI 针对触摸的不精确特性进行了优化，因此它自然支持这种固有的精确度。
+鼠标输入最适合那些需要精确指向和单击的用户交互。 由于 Windows 的 UI 针对触摸的不精确特性进行了优化，因此它自然支持这种固有的精确度。
 </p>
 </div>
 <div class="side-by-side-content-right">
@@ -173,7 +171,7 @@ Windows.UI.Text.Core 命名空间中的核心文本 API 支持 UWP 应用通过 
 <div class="side-by-side-content-right">
 <p>
 <b>[旋转](guidelines-for-rotation.md)</b><br/>
-本文介绍用于旋转的新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
+本文介绍用于旋转的全新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
 </p>
 </div>
 </div>
@@ -183,7 +181,7 @@ Windows.UI.Text.Core 命名空间中的核心文本 API 支持 UWP 应用通过 
 <div class="side-by-side-content">
 <div class="side-by-side-content-left">
 <p><b>[定向](guidelines-for-targeting.md)</b><br/>
-在 Windows 中确定触摸目标需使用触控数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
+Windows 中的触摸定位使用触摸数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
 </p>
 </div>
 <div class="side-by-side-content-right">
@@ -210,4 +208,3 @@ Windows.UI.Text.Core 命名空间中的核心文本 API 支持 UWP 应用通过 
   </div>
 </div>
 </div>
-

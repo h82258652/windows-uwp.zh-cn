@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: "必须先在开发人员中心仪表板中创建项目并定义远程变量，才能在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验。"
-title: "在开发人员中心仪表板中创建项目和定义远程变量"
+title: "在仪表板中创建实验项目"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,14 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad24e9a52458b826f3ce1bc7aba3dbdcf302f87d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bc38e5cc7438ff2dede5267b60bc925369defa51
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="create-a-project-and-define-remote-variables-in-the-dev-center-dashboard"></a>在开发人员中心仪表板中创建项目和定义远程变量
+# <a name="create-an-experiment-project-in-the-dashboard"></a>在仪表板中创建实验项目
 
 若要开始实验，请在开发人员中心仪表板中为应用创建实验[项目](run-app-experiments-with-a-b-testing.md#terms)，并定义应用可访问的远程变量。
 
@@ -33,9 +30,10 @@ ms.lasthandoff: 02/07/2017
   1. 如果**远程变量**部分已折叠，请单击本部分标题上的**显示**。
   2. 单击**添加变量**创建每个你希望用于此项目中任何实验的新变量，并键入变量的变量名称和默认值。
   3. 添加变量完成后，请单击**保存**。
-3. 在 **SDK 集成**部分中，记下[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 值。 当你[为实验编写应用代码](code-your-experiment-in-your-app.md)时，必须在代码中引用此项目 ID，以便可以接收变体数据，并将查看和转换事件报告给开发人员中心。
+3. 在 **SDK 集成**部分中，记下[项目 ID](run-app-experiments-with-a-b-testing.md#terms)值。 当你[为实验编写应用代码](code-your-experiment-in-your-app.md)时，必须在代码中引用此项目 ID，以便可以接收变体数据，并将查看和转换事件报告给开发人员中心。
 
->**注意**&nbsp;&nbsp;在项目中的实验处于活动状态时，不可编辑、添加或删除远程变量。 此限制有助于保护活动实验的控件组的数据完整性。
+> [!NOTE]
+> 在项目中的实验处于活动状态时，不可编辑、添加或删除远程变量。 此限制有助于保护活动实验的控件组的数据完整性。
 
 
 ## <a name="next-steps"></a>后续步骤
@@ -49,4 +47,3 @@ ms.lasthandoff: 02/07/2017
 * [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
 * [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
-

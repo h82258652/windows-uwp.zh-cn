@@ -9,39 +9,36 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 38f5ecd06d257553a275fb6d5bb508fcd9fdb94d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此部分中的主题介绍了如何使在后台运行的轻型代码响应触发器。 你可以使用后台任务在应用暂停或未运行时提供功能。 也可以将后台任务用于实时通信应用，例如 VOIP、邮件和 IM。
 
 ## <a name="playing-media-in-the-background"></a>在后台播放媒体
 
-从 Windows 10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
+从 Windows10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>进程内后台任务和进程外后台任务
 
-有两种方法可以实现后台任务：进程内，即应用及其后台进程在同一进程中运行；进程外，即应用及其后台进程分别在单独的进程中运行。 进程内后台支持在 Windows 10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+有两种方法可以实现后台任务：进程内，即应用及其后台进程在同一进程中运行；进程外，即应用及其后台进程分别在单独的进程中运行。 进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 进程外后台任务更容易复原，因为在出现错误时，后台进程不会使应用崩溃。 但复原的代价在于管理跨进程通信的复杂性会升高。
 
 进程外后台任务实现为操作系统在独立进程 (backgroundtaskhost.exe) 中运行的轻型类。 进程外后台任务编写来实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的类。 通过使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
-在 Windows 10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 可以直接在前台应用程序中运行后台代码。
+在 Windows10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 可以直接在前台应用程序中运行后台代码。
 
 若要快速开始使用进程内后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
 若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 从 Windows 10 开始，无需将应用放置在锁屏界面上以充当为该应用注册后台任务的先决条件。
+> 从 Windows10 开始，无需将应用放置在锁屏界面上以充当为该应用注册后台任务的先决条件。
 
 ## <a name="background-tasks-for-system-events"></a>系统事件的后台任务
 
@@ -163,7 +160,7 @@ ms.lasthandoff: 02/07/2017
 
  ## <a name="related-topics"></a>相关主题
 
-**在 Windows 10 中使用多任务的概念指南**
+**在 Windows10 中使用多任务的概念指南**
 
 * [启动、恢复和多任务](index.md)
 
@@ -186,4 +183,3 @@ ms.lasthandoff: 02/07/2017
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Windows 应用商店设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-

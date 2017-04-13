@@ -2,21 +2,17 @@
 title: "第 2 层"
 description: "第 2 层流式资源支持在第 1 层基础上增加了一些功能，如在大小至少为一个标准磁贴形状时保证非环绕纹理的 mipmap；具有用于固定详细信息级别 (LOD) 及用于获取着色器操作相关状态的着色器指令；此外，可读取将采样值视为零的 NULL 映射磁贴。"
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
-keywords:
-- "第 2 层"
+keywords: "第 2 层"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0416d6751a002f51310fe609e862b52fd35623a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c8a1d1c830c201018c3384096d3eeae3b25962b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tier-2"></a>第 2 层
 
 
@@ -72,7 +68,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

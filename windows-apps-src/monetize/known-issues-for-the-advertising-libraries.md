@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "了解 Microsoft Store Services SDK 中当前版本的 Microsoft Advertising 库的已知问题。"
-title: "Microsoft Advertising 库的已知问题"
+title: "Advertising 库的已知问题"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 已知问题"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising 库的已知问题
+# <a name="known-issues-for-the-advertising-libraries"></a>Advertising 库的已知问题
 
 
 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
 适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 有限支持 Windows Phone 8.x Silverlight 项目。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md#silverlight_support)。
 
-若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到**项目** > **添加连接的服务** > **广告中介**即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到“项目”**** > “添加连接的服务”**** > “广告中介”****即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML 中的 AdControl 接口未知
 
@@ -43,7 +40,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>手机上的间隙广告和导航按钮
 
-在拥有软件“后退”****、“开始”****以及“搜索”****按钮而非硬件按钮的手机（仿真器）上，倒计时器和单击视频间隙广告的按钮可能会被遮住。
+在拥有软件“后退”****、“开始”****以及“搜索”****按钮而非硬件按钮的手机（仿真器）上，倒计时器和单击间隙广告的按钮可能会被遮住。
 
 ## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>未向你的应用投放最近创建的广告
 
@@ -123,4 +120,3 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
  
 
  
-

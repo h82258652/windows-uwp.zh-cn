@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2131b6db9d9d72b574a0d0bed7c07aef7fcc4f37
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 51d8a53de21623516d6d582834cf9d854f2a5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -48,7 +46,7 @@ Windows 10 入门应用中的媒体播放器。
 ![Windows 10 入门应用中的媒体元素](images/control-examples/mtc_getstarted_example.png)
 
 ## <a name="create-a-media-player"></a>创建媒体播放器
-通过使用 XAML 创建 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 对象来将媒体添加到你的应用，并将 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为指向某个音频或视频文件的 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx)。
+通过使用 XAML 创建 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 对象来将媒体添加到你的应用，并将 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为指向某个音频或视频文件的 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx)。
 
 该 XAML 将创建一个 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)，并将其 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为应用的某个本地视频文件的 URI。 当加载页面时，**MediaPlayerElement** 开始播放。 若要防止媒体立即启动，可以将 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) 属性设置为 **false**。
 
@@ -88,7 +86,7 @@ Windows 10 入门应用中的媒体播放器。
 
 
 ### <a name="set-the-media-source"></a>设置媒体源
-若要播放网络上的文件或嵌入在应用中的文件，请将 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为带有该文件路径的 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx)。
+若要播放网络上的文件或嵌入在应用中的文件，请将 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为带有该文件路径的 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx)。
 
 **提示**  若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 **Internet（客户端）**功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
@@ -136,7 +134,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-若要将媒体源设置为嵌入在应用中的媒体文件，请初始化一个路径以 **ms-appx:///** 为前缀的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017)、创建带有该 Uri 的 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx)，然后将 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为该 Uri。 例如，对于 **Videos** 子文件夹中名为 **video1.mp4** 的文件，路径将如下所示：**ms-appx:///Videos/video1.mp4**
+若要将媒体源设置为嵌入在应用中的媒体文件，请初始化一个路径以 **ms-appx:///** 为前缀的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017)、创建带有该 Uri 的 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx)，然后将 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为该 Uri。 例如，对于 **Videos** 子文件夹中名为 **video1.mp4** 的文件，路径将如下所示：**ms-appx:///Videos/video1.mp4**
 
 此代码将之前使用 XAML 定义的 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 属性设置为 **ms-appx:///Videos/video1.mp4**。
 
@@ -172,9 +170,9 @@ private void LoadEmbeddedAppFile()
 
     使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 类选择媒体文件。 设置 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 以指定 **FileOpenPicker** 显示哪些文件类型。 调用 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 来启动文件选取器并获取文件。
 
-2.  使用 [**SetSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) 将所选媒体文件设置为 [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。
+2.  使用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) 将所选媒体文件设置为 [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)。
 
-    若要使用从 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br227171) 返回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br207847)，你需要在 [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) 上调用 [**CreateFromStorageFile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) 方法，并将其设置为[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)。 然后对 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) 调用 [**Play**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 以启动媒体。
+    若要使用从 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br227171) 返回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br207847)，你需要在 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) 上调用 [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) 方法，并将其设置为[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)。 然后对 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) 调用 [**Play**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 以启动媒体。
 
 
 此示例演示如何使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 选择文件并将该文件设置为 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)。
@@ -215,8 +213,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ### <a name="set-the-poster-source"></a>设置海报源
 你可以使用 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx) 属性在媒体加载前为 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供可视表示形式。 **PosterSource** 是一个屏幕截图或电影海报之类的图像，用于代替媒体显示。 **PosterSource** 将在以下情况下显示：
 
--   在没有设置有效的源时。 例如，未设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)、**Source** 已设置为 **Null** 或者源无效（类似于发生 [**MediaFailed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) 事件的情况）。
--   加载媒体时。 例如，设置了有效源，但尚未发生 [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 事件。
+-   在没有设置有效的源时。 例如，未设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx)、**Source** 已设置为 **Null** 或者源无效（类似于发生 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) 事件的情况）。
+-   加载媒体时。 例如，设置了有效源，但尚未发生 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 事件。
 -   当媒体流式传输到其他设备时。
 -   当媒体仅限音频时。
 
@@ -251,7 +249,7 @@ private DisplayRequest appDisplayRequest = null;
 
 3.  当视频播放停止、暂停或由于播放错误而中断时，调用 [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) 来释放显示请求。 当你的应用不再包含任何活动的显示请求时，Windows 将在设备未使用时通过降低屏幕亮度（并最终关闭屏幕）来延长电池使用时间。
 
-    每个 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 都有 [**MediaPlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 类型的 [**PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx)，用于控制媒体播放的各个方面，如 [**PlaybackRate**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[**PlaybackState**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) 和 [**Position**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx)。 此处，你在 [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) 上使用 [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 事件检测应释放显示请求的情况。 然后，使用 [**NaturalVideoHeight**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) 属性确定某个音频或视频文件是否正在播放，并且仅在视频正在播放时使屏幕保持活动状态。
+    每个 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 都有 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 类型的 [**PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx)，用于控制媒体播放的各个方面，如 [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[**PlaybackState**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) 和 [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx)。 此处，你在 [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) 上使用 [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) 事件检测应释放显示请求的情况。 然后，使用 [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) 属性确定某个音频或视频文件是否正在播放，并且仅在视频正在播放时使屏幕保持活动状态。
     ```xaml
 <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
@@ -292,10 +290,10 @@ private DisplayRequest appDisplayRequest = null;
     ```
 
 ### <a name="control-the-media-player-programmatically"></a>以编程方式控制媒体播放器
-[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供大量属性、方法和事件用于通过 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性控制音频和视频播放。 有关属性、方法和事件的完整列表，请参阅 [**MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.aspx) 参考页。
+[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 提供大量属性、方法和事件用于通过 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性控制音频和视频播放。 有关属性、方法和事件的完整列表，请参阅 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 参考页。
 
 ### <a name="advanced-media-playback-scenarios"></a>高级媒体播放方案
-对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [**MediaPlaybackItem**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [**MediaPlaybackList**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 有关如何启用各种高级媒体功能的详细信息，请参阅开发人员中心中的[**媒体媒体**](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource)页面。
+对于较复杂的媒体播放方案（如播放一个播放列表、在音频语言之间切换或创建自定义元数据轨），请将 [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 设置为 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) 或 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx)。 有关如何启用各种高级媒体功能的详细信息，请参阅开发人员中心中的[**媒体媒体**](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)页面。
 
 ### <a name="enable-full-window-video-rendering"></a>启用全屏视频呈现
 
@@ -360,9 +358,9 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 ### <a name="enable-low-latency-playback"></a>启用低延迟播放
 
-在 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) 上将 [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性设置为 **true**，使媒体播放器元素能够减少播放时的初始延迟。 这对于双向通信应用很重要，并且适用于某些游戏方案。 请注意，此模式将占用更多资源，并且能源效率较低。
+在 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) 上将 [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 属性设置为 **true**，使媒体播放器元素能够减少播放时的初始延迟。 这对于双向通信应用很重要，并且适用于某些游戏方案。 请注意，此模式将占用更多资源，并且能源效率较低。
 
-此示例创建一个 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)，并将 [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) 设置为 **true**。
+此示例创建一个 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)，并将 [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) 设置为 **true**。
 
 
 ```csharp
@@ -386,4 +384,3 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 - [UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP 应用的内容设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958434)
-

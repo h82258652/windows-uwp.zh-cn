@@ -1,7 +1,7 @@
 ---
 author: mtoepke
 title: "Marble Maze 示例基础"
-description: "本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 Windows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。"
+description: "本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 WIndows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。"
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 示例, directx, 基础知识"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cc155d7a454cabe5c0d820f5d74313dfeaf01830
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 示例基础
 
 
@@ -147,7 +144,6 @@ void LoadMesh(
  
 
  
-
 
 
 

@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2771d7dae6df171855297ab988bbd00ecfa55d1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 491ce616f557d26ad7a5fdf1c068f1c9784bd046
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-suspendresume"></a>优化暂停/恢复
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-创建通用 Windows 平台 (UWP) 应用，以简化其进程生存期系统的使用，从而在暂停或终止后高效地恢复。
+创建通用 Windows 平台 (UWP) 应用，以简化其生存期系统的使用过程，从而在暂停或终止后高效地恢复。
 
 ## <a name="launch"></a>启动
 
@@ -92,7 +90,6 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
  
 
  
-
 
 
 

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b59a4eb056e36156b847c769778b2609863ec1fc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用的启动性能的最佳做法
 
-\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
 
@@ -106,16 +104,13 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 -   用户控件和控件模板将进行扩展，所以应将这些内容考虑在内。
 -   如果你创建了不会在屏幕上显示的任意 XAML，则应判断 XAML 的这些部分是否应在启动期间创建。
 
-
-              [Visual Studio 实时可视化树](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)窗口会显示树中每个节点的子元素计数。
+[Visual Studio 实时可视化树](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)窗口会显示树中每个节点的子元素计数。
 
 ![实时可视化树。](images/live-visual-tree.png)
 
+**使用 x:DeferLoadStrategy**。 无法通过折叠某个元素或将其不透明度设置为 0 来阻止该元素创建。 可使用 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 最好延迟处理在启动屏幕期间不可见的 UI，这样你便可以在需要时加载它，或作为一组延迟逻辑的一部分加载它。 若要触发加载，只需针对元素调用 FindName 即可。 有关示例和详细信息，请参阅 [x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
 
-              **使用 x:DeferLoadStrategy**。 无法通过折叠某个元素或将其不透明度设置为 0 来阻止该元素创建。 可使用 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 最好延迟处理在启动屏幕期间不可见的 UI，这样你便可以在需要时加载它，或作为一组延迟逻辑的一部分加载它。 若要触发加载，只需针对元素调用 FindName 即可。 有关示例和详细信息，请参阅 [x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
-
-
-              **虚拟化**。 如果你的 UI 中有列表或 repeater 内容，强烈建议你使用 UI 虚拟化。 如果未虚拟化列表 UI，则在创建所有元素前需要花费一些开销，而这样可能会减慢启动速度。 请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
+**虚拟化**。 如果你的 UI 中有列表或 repeater 内容，强烈建议你使用 UI 虚拟化。 如果未虚拟化列表 UI，则在创建所有元素前需要花费一些开销，而这样可能会减慢启动速度。 请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
 
 应用程序性能不仅仅是原始性能，还包括感知方面。 更改操作顺序以便先出现视觉方面的内容，通常会让用户觉得应用程序的启动速度更快。 当内容显示在屏幕上时，用户会认为应用程序已加载。 通常情况下，应用程序需要执行多项操作作为启动的一部分，但并非所有这些操作都是显示 UI 所需的操作，因此应当延迟那些不必要的操作或使它们的优先级低于 UI。
 
@@ -357,20 +352,17 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 
 需要注意的帧性能主要围绕日记记录和页面缓存展开。
 
-
-              **帧日记记录**。 当导航到带有 Frame.Navigate() 的页面时，当前页面的 PageStackEntry 将添加到 Frame.BackStack 集合中。 PageStackEntry 相对较小，但并未针对 BackStack 集合的大小内置任何限制。 用户可以循环导航，并且可以无限增大该集合。
+**帧日记记录**。 当导航到带有 Frame.Navigate() 的页面时，当前页面的 PageStackEntry 将添加到 Frame.BackStack 集合中。 PageStackEntry 相对较小，但并未针对 BackStack 集合的大小内置任何限制。 用户可以循环导航，并且可以无限增大该集合。
 
 PageStackEntry 还包括已传递给 Frame.Navigate() 方法的参数。 建议将该参数作为原始可序列化类型（如整数或字符串），以便 Frame.GetNavigationState() 方法可以正常运行。 不过，该参数可能会引用占用大量工作集或其他资源的对象，从而使 BackStack 中每个项所需的开销变得更大。 例如，你可能会将 StorageFile 用作参数，而使得 BackStack 将若干个文件保持打开。
 
 因此，建议使导航参数保持较小，并限制 BackStack 的大小。 BackStack 是一个标准矢量（在 C# 中为 IList，而在 C++/CX 中则为 Platform::Vector），因此可以仅通过删除项来对其进行剪裁。
 
-
-              **页面缓存**。 默认情况下，当使用 Frame.Navigate 方法导航到页面时，将为该页面实例化新的实例。 同样，如果你使用 Frame.GoBack 导航回之前的页面，将为该页面分配新的实例。
+**页面缓存**。 默认情况下，当使用 Frame.Navigate 方法导航到页面时，将为该页面实例化新的实例。 同样，如果你使用 Frame.GoBack 导航回之前的页面，将为该页面分配新的实例。
 
 而帧将提供一个可选的页面缓存来避免这些实例化。 若要将某一页面放入缓存，请使用 Page.NavigationCacheMode 属性。 如果将该模式设置为“Required”，将强制缓存页面；如果将该模式设置为“Enabled”，则允许缓存页面。 默认情况下，缓存大小为 10 个页面，不过可以使用 Frame.CacheSize 属性进行重写。 将缓存所有 Required 页面，如果该缓存的页面数少于 CacheSize Required 页面数，还将缓存 Enabled 页面。
 
 页面缓存通过避免实例化来改善性能，进而提高导航性能。 如果过度缓存，页面缓存可能会降低性能，进而会对工作集造成影响。
 
 因此，建议根据你的应用程序使用页面缓存。 例如，假设你有一个显示帧中的项目列表的应用，则当你点击某一项目时，它会将该帧定位到该项目的详细信息页面。 列表页面应该可以设置为缓存。 如果详细信息页面对所有项目都是相同的，它应该也可以缓存。 但是，如果详细信息页面较为异类，最好关闭缓存。
-
 

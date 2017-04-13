@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c16506ddb58043b5cba9af7989c34c7f453fe6e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透视效果
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的物体接近和远离你的视觉效果，如此处所示。
 
@@ -189,5 +187,4 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="positioning-an-object"></a>定位对象
 
-对于比 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 更复杂的半 3D 方案，你可以使用 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 和 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。
-
+对于比 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 更复杂的半 3D 方案，你可以使用 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。

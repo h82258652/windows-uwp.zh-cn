@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: "Windows 10 UWP 应用生命周期"
-description: "本主题介绍 Windows 10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。"
+title: "Windows10 UWP 应用生命周期"
+description: "本主题介绍 Windows10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。"
 keywords: "已暂停的应用生命周期恢复启动激活"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
@@ -9,24 +9,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 75b7dde9ba658cc427845cb1c1d2cab9c2117d17
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d2dad86795fe97514ff08750fb90a884e93cea02
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows10 通用 Windows 平台 (UWP) 应用生命周期
 
-# <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) 应用生命周期
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 
 ## <a name="a-little-history"></a>简短历史
 
-在 Windows 8 之前，应用的生命周期非常简单。 Win32 和 .NET 应用始终处于运行状态或未运行状态。 当用户最小化应用或离开应用时，它们将继续运行。 随着便携设备和电源管理变得日益重要，这种情况不再可行。
+在 Windows8 之前，应用的生命周期非常简单。 Win32 和 .NET 应用始终处于运行状态或未运行状态。 当用户最小化应用或离开应用时，它们将继续运行。 随着便携设备和电源管理变得日益重要，这种情况不再可行。
 
-Windows 8 引入了新应用程序模型以及 Windows 应用商店应用。 在高级别上，添加了新的已暂停状态。 当用户最小化 Windows 应用商店应用或切换到其他应用后，该应用会立刻处于暂停状态。 这意味着应用的线程已停止，并且应用保留在内存中（除非操作系统需要回收资源）。 当用户切换回该应用时，该应用可快速还原到正在运行状态。
+Windows8 引入了新应用程序模型以及 Windows 应用商店应用。 在高级别上，添加了新的已暂停状态。 当用户最小化 Windows 应用商店应用或切换到其他应用后，该应用会立刻处于暂停状态。 这意味着应用的线程已停止，并且应用保留在内存中（除非操作系统需要回收资源）。 当用户切换回该应用时，该应用可快速还原到正在运行状态。
 
 向需要继续运行的后台应用提供多种方法，如[后台任务](support-your-app-with-background-tasks.md)、[扩展执行](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.aspx)和活动赞助执行（例如，**BackgroundMediaEnabled** 功能，允许应用继续[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍会继续。 有关详细信息，请参阅[如何下载文件](https://msdn.microsoft.com/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)。
 
@@ -34,11 +31,11 @@ Windows 8 引入了新应用程序模型以及 Windows 应用商店应用。 �
 
 已暂停状态对作为开发人员的你提出了新要求，因为操作系统可能会选择终止已暂停的应用，以便释放资源。 已终止的应用仍会显示在任务栏中。 当用户单击该应用时，该应用必须恢复它终止之前所处的状态，因为用户不会意识到系统已关闭该应用。 用户会认为在他们执行其他操作时该应用一直在后台等待，并且希望该应用处于他们离开它之前所处的同一状态。 在本主题中，我们将演示如何实现该目的。
 
-Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行**和**在后台运行**。 我们还会在接下来的部分中演示这些新状态。
+Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**和**在后台运行**。 我们还会在接下来的部分中演示这些新状态。
 
 ## <a name="app-execution-state"></a>应用执行状态
 
-此图显示了从 Windows 10 版本 1607 开始的可能应用模型状态。 演练 Windows 应用商店应用的典型生命周期。
+此图显示了从 Windows10 版本 1607 开始的可能应用模型状态。 演练 Windows 应用商店应用的典型生命周期。
 
 ![显示应用执行状态之间转换的状态图](images/updated-lifecycle.png)
 
@@ -93,7 +90,7 @@ Windows 10 版本 1607 又引入了两个应用模型状态：**在前台运行
 
 ## <a name="running-in-the-background"></a>在后台运行 ##
 
-从 Windows 10 版本 1607 开始，应用可以在应用本身所在的同一进程内运行后台任务。 有关详细信息，请参阅[单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)。 在本文中，我们不会介绍进程内后台处理，但会介绍这如何影响应用生命周期：已添加与应用何时处于后台有关的两个新的事件。 事件如下：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。
+从 Windows10 版本 1607 开始，应用可以在应用本身所在的同一进程内运行后台任务。 有关详细信息，请参阅[单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)。 在本文中，我们不会介绍进程内后台处理，但会介绍这如何影响应用生命周期：已添加与应用何时处于后台有关的两个新的事件。 事件如下：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。
 
 这些事件还反映用户是否可以看到你的应用的 UI。
 
@@ -145,7 +142,7 @@ Running in the foreground 意味着应用 UI 可见。
 
 当用户最小化某个应用时，Windows 会等待数秒，以查看用户是否会切换回该应用。 如果用户在此时间范围内未切换回，并且任何扩展执行、后台任务或活动赞助执行都未处于活动状态，则 Windows 将暂停该应用。 只要应用中不存在任何处于活动状态的扩展执行会话等，该应用也将在出现锁屏界面时暂停。
 
-当暂停应用时，它将调用 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件。 Visual Studio 的 UWP 项目模板为在 **App.xaml.cs** 中称为 **OnSuspending** 的此事件提供处理程序。 在 Windows 10 版本 1607 之前，要在此处添加用于保存状态的代码。 现在建议在进入后台状态时保存状态，如上所述。
+当暂停应用时，它将调用 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件。 Visual Studio 的 UWP 项目模板为在 **App.xaml.cs** 中称为 **OnSuspending** 的此事件提供处理程序。 在 Windows10 版本 1607 之前，要在此处添加用于保存状态的代码。 现在建议在进入后台状态时保存状态，如上所述。
 
 你应释放独占资源和文件句柄，以便其他应用可以在你的应用暂停时访问它们。 独占资源的示例包括相机、I/O 设备、外部设备以及网络资源。 显式释放独占资源和文件句柄有助于确保其他应用可以在你的应用暂停时访问它们。 当恢复应用时，它应该重新获取其独占资源和文件句柄。
 
@@ -187,7 +184,7 @@ Running in the foreground 意味着应用 UI 可见。
 
 通常，用户不需要关闭应用，他们可以让 Windows 管理它们。 但是，用户可以选择以下方法来关闭应用：使用关闭手势、按 Alt+F4，或在 Windows Phone 上使用任务切换程序。
 
-没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows 8.1 和更高版本中，在用户关闭应用之后，该应用将从屏幕和切换列表中删除，但不会显式终止。
+没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 和更高版本中，在用户关闭应用之后，该应用将从屏幕和切换列表中删除，但不会显式终止。
 
 **用户关闭行为：**如果应用在被用户关闭时需要执行不同于被 Windows 关闭时的操作，你可以使用激活事件处理程序确定应用是被用户还是被 Windows 终止的。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
@@ -218,7 +215,7 @@ Running in the foreground 意味着应用 UI 可见。
 -   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -234,4 +231,3 @@ Running in the foreground 意味着应用 UI 可见。
  
 
  
-

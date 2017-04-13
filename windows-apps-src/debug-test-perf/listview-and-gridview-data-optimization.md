@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 722389a7440110eaffa5458e8ef5e85fccb39671
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 和 GridView 数据虚拟化
 
@@ -83,7 +81,6 @@ ms.lasthandoff: 02/07/2017
 -   当查询结果发生变化时，服务将提供哪种类型的通知？ 当项目在索引 33 处插入时你是否要知晓？ 如果你的服务支持基于“键加偏移”的查询，这可能会优于只使用索引。
 -   在预先获取项目方面需要多高的智能程度？ 是否要试图跟踪滚动的方向和速度以预测所需项目？
 -   在清除缓存方面需要多高的积极程度？ 这是内存与体验的权衡。
-
 
 
 

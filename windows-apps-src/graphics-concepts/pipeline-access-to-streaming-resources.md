@@ -2,21 +2,17 @@
 title: "对流式资源的管道访问"
 description: "流式资源可用于着色器资源视图 (SRV)、呈现目标视图 (RTV)、深度模具视图 (DSV) 和无序访问视图 (UAV)，以及未使用视图的某些盲点（如顶点缓冲区绑定）。"
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
-keywords:
-- "对流式资源的管道访问"
+keywords: "对流式资源的管道访问"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5f4fd92e1519579f15b3c3d452ce80e944f0942b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b730a8c15f4327397e945b616c6c1edc2e1ad5a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="pipeline-access-to-streaming-resources"></a>对流式资源的管道访问
 
 
@@ -78,7 +74,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

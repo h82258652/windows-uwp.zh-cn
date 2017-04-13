@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7eeb8b79b3c50593470f62c3eddd29a9f218d528
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-animations-media-and-images"></a>优化动画、媒体和图像
 
@@ -111,7 +109,9 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 当视频处于嵌入模式时，不要在其顶部绘制 XAML 元素。 如果绘制了，则会强制框架执行少量额外的工作来组合场景。 将传输控件放置到某个嵌入式媒体元素下面而不是放置在视频的上面，这是这种情况的优化的一个很好示例。 在此图像中，红色条指示一组传输控件（播放、暂停、停止等）。
 
-![包含重叠元素的 MediaPlayerElement](images/videowithoverlay.png) 不要将这些控件置于非全屏显示的媒体上面。 而要将传输控件放置在呈现媒体的区域之外的某些地方。 在下一张图像中，控件放置在媒体的下面。
+![包含重叠元素的 MediaPlayerElement](images/videowithoverlay.png)
+
+不要将这些控件置于非全屏显示的媒体上面。 而要将传输控件放置在呈现媒体的区域之外的某些地方。 在下一张图像中，控件放置在媒体的下面。
 
 ![包含相邻元素的 MediaPlayerElement](images/videowithneighbors.png)
 
@@ -154,7 +154,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 不要执行以下操作：
 
 ```xaml
-<Image Source="ms-appx:///Assets/highresCar.jpg" 
+<Image Source="ms-appx:///Assets/highresCar.jpg"
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
@@ -163,7 +163,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 ```xaml
 <Image>
     <Image.Source>
-    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg" 
+    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg"
                  DecodePixelWidth="300" DecodePixelHeight="200"/>
     </Image.Source>
 </Image>
@@ -273,14 +273,14 @@ XAML 具有内部优化，使其可以将图像的内容异步解码到硬件中
 > picker.FileTypeFilter.Add(".jpeg");
 > picker.FileTypeFilter.Add(".png");
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-> 
+>
 > StorageFile file = await picker.PickSingleFileAsync();
-> 
+>
 > StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
-> 
+>
 > BitmapImage bmp = new BitmapImage();
 > bmp.SetSource(fileThumbnail);
-> 
+>
 > Image img = new Image();
 > img.Source = bmp;
 > ```
@@ -291,14 +291,14 @@ XAML 具有内部优化，使其可以将图像的内容异步解码到硬件中
 > picker.FileTypeFilter.Add(".jpeg")
 > picker.FileTypeFilter.Add(".png")
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
-> 
+>
 > Dim file As StorageFile = Await picker.PickSingleFileAsync()
-> 
+>
 > Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
-> 
+>
 > Dim bmp As New BitmapImage()
 > bmp.SetSource(fileThumbnail)
-> 
+>
 > Dim img As New Image()
 > img.Source = bmp
 > ```
@@ -306,5 +306,3 @@ XAML 具有内部优化，使其可以将图像的内容异步解码到硬件中
 ### <a name="decode-images-once"></a>解码图像一次
 
 要避免解码图像超过一次，请从 Uri 而不是使用内存流来分配 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) 属性。 XAML 框架可以将多个位置中的同一 Uri 与一个已解码图像相关联，但是它无法对包含相同数据的多个内存流执行相同的操作，它可以为每个内存流创建一个不同的已解码图像。
-
-

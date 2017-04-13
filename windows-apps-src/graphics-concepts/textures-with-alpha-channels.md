@@ -2,25 +2,21 @@
 title: "使用 alpha 通道的纹理"
 description: "有两种方式对展示更复杂的透明度的纹理映射进行编码。"
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
-keywords:
-- "使用 alpha 通道的纹理"
+keywords: "使用 alpha 通道的纹理"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 708f6a7903df2ead18cf40e01675c3d244c7f9b0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1ea2282bb00f309f0dd2616898ce8d4a43215ff4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="textures-with-alpha-channels"></a>使用 alpha 通道的纹理
 
 
-有两种方式对展示更复杂的透明度的纹理映射进行编码。 在每种情况下，描述透明度的块都在已描述透明度的 64 位块之前。 透明度以 4x4 位图表示，每个像素 4 位（显示编码）或者具有更少位和线性内插（与用于颜色编码的类似）。
+有两种方式对展示更复杂的透明度的纹理映射进行编码。 在每种情况下，描述透明度的块都在已描述的 64 位块之前。 透明度以 4x4 位图表示，每个像素 4 位（显示编码）或者具有更少位和线性内插（与用于颜色编码的类似）。
 
 透明数据块和颜色块的排列方式如下表所示。
 
@@ -150,7 +146,6 @@ alpha 块的内存布局如下所示：
  
 
  
-
 
 
 

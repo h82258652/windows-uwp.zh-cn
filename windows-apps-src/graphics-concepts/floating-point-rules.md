@@ -2,21 +2,17 @@
 title: "浮点规则"
 description: "Direct3D 支持多种浮点表示。 所有浮点计算都依照 IEEE 754 32 位单精度浮点规则的既定子集运行。"
 ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
-keywords:
-- "浮点规则"
+keywords: "浮点规则"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c36ef44bf02e6bbfe7a201004b19b2e99c1c27ca
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f802bcc2e70a622e6ce8a80744908cfe185f31b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>浮点规则
 
 
@@ -160,7 +156,6 @@ float11/float10 值 (v) 遵循以下规则：
  
 
  
-
 
 
 

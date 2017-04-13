@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ab74d720369bd95c10c8804836be1cc747d57931
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
 
 本文展示如何利用仅在移动设备上提供的特殊相机 UI 功能。 
@@ -65,7 +62,6 @@ ms.lasthandoff: 02/08/2017
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
 
 
 

@@ -2,21 +2,17 @@
 title: "丢失的设备"
 description: "Direct3D 设备可以处于运行状态或丢失状态。"
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
-keywords:
-- "丢失的设备"
+keywords: "丢失的设备"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8f92ed1f8941147e3cb0f2555b01c26a708ed20
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 625fe26facb8903c36c4efbb38216005b0a4271b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lost-devices"></a>丢失的设备
 
 
@@ -70,7 +66,6 @@ Direct3D 还允许应用程序将生成的或先前写入的图像从视频存�
  
 
  
-
 
 
 

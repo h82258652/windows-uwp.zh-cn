@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: "本文介绍如何将具有 Microsoft PlayReady 内容保护的自适应流式处理多媒体内容添加到通用 Windows 平台 (UWP) 应用。"
+description: "本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。"
 title: "使用 PlayReady 的自适应流式处理"
 ms.author: elcowle
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 861ec2823080192a5b2d9b557af14ca5e3ab43fb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f7bd47c4c8ae7ce5515e3c53571655fd32d36e1a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adaptive-streaming-with-playready"></a>使用 PlayReady 的自适应流式处理
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。 
 
@@ -301,7 +298,6 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 ## <a name="see-also"></a>另请参阅
 - [PlayReady DRM](playready-client-sdk.md)
-
 
 
 

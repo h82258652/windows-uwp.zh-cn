@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0698a01b1f846581422c5ecf4d47a45dd22762c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4c2664f214dca41ad5e7a5f82ca50af02cc45737
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -304,7 +301,6 @@ function foo() {
 
 ## <a name="see-also"></a>另请参阅
 - [PlayReady DRM](playready-client-sdk.md)
-
 
 
 

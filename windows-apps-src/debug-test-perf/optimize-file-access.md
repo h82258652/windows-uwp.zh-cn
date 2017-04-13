@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 31869b116096052bed9e1c462de3f93e4d1335c2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 967ed4b6db682524bd06f81d4c6d7771cc41d84b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-file-access"></a>优化文件访问
 
@@ -240,6 +238,5 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 如果你希望低延迟地读取和写入并且不希望在基础 UWP 数据流之外的大型数据块中进行读取操作，则也可能希望避免使用缓冲。 例如，如果你使用数据流进行网络通信，则可能希望低延迟地读取和写入。
 
 在聊天应用中，你可以使用数据流通过网络接口以便发送来往消息。 在这种情况下，你希望在准备好后立即发送消息，而不等待填满缓冲区。 如果在调用 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法时将缓冲区大小设置为 0，则所得的适配器将不分配缓冲区，并且所有调用直接操作基础 UWP 数据流。
-
 
 

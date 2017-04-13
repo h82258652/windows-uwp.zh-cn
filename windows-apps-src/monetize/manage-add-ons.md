@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: "在 Windows 应用商店提交 API 中使用这些方法，管理已注册到 Windows 开发人员中心帐户的应用的加载项。"
-title: "使用 Windows 应用商店提交 API 管理加载项"
+title: "管理加载项"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 55a6b548246e801c9fcc0392265263123f24de00
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b442f48b7d03f0f972882ec240dbc1f37f018fd9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-add-ons-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 管理加载项
+# <a name="manage-add-ons"></a>管理加载项
 
 在 Windows 应用商店提交 API 中使用以下方法，管理应用的加载项（也称为应用内产品或 IAP）。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -131,7 +128,7 @@ ms.lasthandoff: 02/07/2017
 
 此资源具有以下值。
 
-| 值           | 类型    | 说明        |
+| 值           | 类型    | 描述        |
 |-----------------|---------|-----------|
 | 值            | 对象  |  包含以下值的对象： <br/><br/> <ul><li>*id*。 应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。</li><li>*resourceLocation*。 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索应用的完整数据。</li></ul>   |
 | totalCount   | int  | 响应正文的 *applications* 数组中的应用对象数。                                                                                                                                                 |
@@ -152,7 +149,7 @@ ms.lasthandoff: 02/07/2017
 
 此资源具有以下值。
 
-| 值           | 类型    | 说明     |
+| 值           | 类型    | 描述     |
 |-----------------|---------|------------------|
 | id            | 字符串  | 提交的 ID。    |
 | resourceLocation   | 字符串  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。     |
@@ -166,4 +163,3 @@ ms.lasthandoff: 02/07/2017
 * [获取加载项](get-an-add-on.md)
 * [创建加载项](create-an-add-on.md)
 * [删除加载项](delete-an-add-on.md)
-

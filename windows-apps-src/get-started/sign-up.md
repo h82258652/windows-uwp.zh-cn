@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5b907cf879ebcc804fe804c6419ed4761a5c6c78
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 399a84c10c4e28353f5d229ed3b3226d7cc1a1dc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="ready-to-sign-up"></a>准备好注册了吗？
 
@@ -28,5 +26,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="have-a-name-for-your-app"></a>你的应用有名称吗？
 
 打开开发者帐户后，你可以立即[通过保留名称创建你的应用](https://msdn.microsoft.com/library/windows/apps/JJ657967)。
-
 

@@ -11,13 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 64cb4871178ad712189e672bbde9f0ca9ffc6d26
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ced5455cb910a4872aca23491970688888cff70b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-app-help"></a>应用帮助指南
 
 
@@ -69,6 +66,5 @@ ms.lasthandoff: 02/08/2017
 对于由于太大而无法容纳在应用程序中的详细教程、高级功能或帮助主题库，指向外部网页的链接是理想之选。 应尽量慎用这些链接，因为它们会使用户离开应用程序体验。
 
 [请参阅外部帮助指南](external-help.md)
-
 
 

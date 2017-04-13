@@ -2,21 +2,17 @@
 title: "放射照明"
 description: "放射照明是由物体发出的光；例如，辉光。"
 ms.assetid: 262EB9E2-DF96-401F-93D6-51A7BB60074B
-keywords:
-- "放射照明"
+keywords: "放射照明"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 50bc904e5810340846b3fd84ffca214d07d38750
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6e67a38f1ec7d036646abd06d641e8bf9d900ce3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="emissive-lighting"></a>放射照明
 
 
@@ -59,7 +55,6 @@ Cₑ 的值为颜色 1 或颜色 2。 如果未提供顶点颜色，则使用材
  
 
  
-
 
 
 

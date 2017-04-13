@@ -2,59 +2,66 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "创建“Hello, world”应用 \\(XAML\\)"
-description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
+description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 16622dbd9914907f75c8392f8e4de6e1c10b049c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows 10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows10 设备上运行的应用。
 
 在此处，你将了解如何：
 
--   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
+-   创建面向 **Windows10** 和 **UWP** 的新 **Visual Studio 2017** 项目。
 -   编写 XAML 即可更改起始页上的 UI。
--   在 Visual Studio 中，在本地桌面和手机仿真器中运行该项目。
+-   在 Visual Studio 中，在本地桌面中运行该项目。
 -   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
+
 
 ## <a name="before-you-start"></a>开始之前...
 
 -   [什么是通用 Windows 应用](whats-a-uwp.md)？
--   若要完成本教程，你需要 Windows 10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
+-   若要完成本教程，你需要 Windows 10 和 Visual Studio 2017。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在**窗口**菜单中，通过使用**重置窗口布局**命令来重置它。
 
+> [!NOTE]
+> 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
 
-## <a name="if-you-would-rather-watch-a-video"></a>如果你宁愿观看视频...
+## <a name="video-summary"></a>视频摘要
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-如果你偏爱分步指南的可视化方法，这段视频介绍了相同的资料，但内含精彩的原声带。
+
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目。
 
-1.  启动 Visual Studio 2015。
+1.  启动 Visual Studio 2017。
 
-2.  在**文件**菜单中，依次选择**新建 > 项目...**打开“*新建项目*对话框。
+2.  在**文件**菜单中，依次选择**新建 > 项目...**以打开*新建项目*对话框。
 
-3.  在左侧的模板列表中，依次打开**已安装> 模板> Visual C#> Windows**，然后选择**通用**查看 UWP 项目模板列表。
+3.  在左侧的模板列表中，依次打开**已安装&gt;模板&gt;Visual C#&gt;Windows**，然后选择**通用**查看 UWP 项目模板列表。
 
-    （如果未看到任何通用模板，可能未安装 Visual Studio 2015，也可能缺少用于创建 UWP 应用的组件。 请参阅[准备工作](get-set-up.md)，准备必要工具。）
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[准备工作](get-set-up.md)
+
+    ![如何重复安装流程](images/win10-cs-install.png)
 
 4.  选择**空白应用（通用 Windows）**模板，然后输入“HelloWorld”作为**名称**。 选择**确定**。
 
     ![“新建项目”窗口](images/win10-cs-01.png)
 
-5.  将显示“目标版本/最低版本”对话框。 默认设置都合适，因此选择**确定**以创建项目。
+> [!NOTE]
+> 如果你是首次使用 Visual Studio，则可能会看到要求启用**开发人员模式**的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从应用商店运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择**开发人员模式**，然后单击**是**并关闭对话框。
+
+ ![激活“开发人员模式”对话框](images/win10-cs-00.png)
+
+5.  将显示“目标版本/最低版本”对话框。 默认设置均适用于本教程，因此选择**确定**以创建项目。
 
     ![“解决方案资源管理器”窗口](images/win10-cs-02.png)
 
@@ -62,7 +69,7 @@ ms.lasthandoff: 02/07/2017
 
     ![“解决方案资源管理器”窗口](images/win10-cs-03.png)
 
-尽管**空白应用（通用 Windows）**为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
+尽管**空白应用(通用 Windows)**为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
 
 
 ### <a name="whats-in-the-files"></a>文件中包含哪些内容？
@@ -167,7 +174,7 @@ ms.lasthandoff: 02/07/2017
 
 按 Windows 键以打开**开始**菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到**开始**菜单。 若要稍后再次运行该应用（不是在调试模式下），请在**开始**菜单中点击或单击其磁贴。
 
-它还无法执行很多操作，但祝贺你已构建了第一个 UWP 应用！
+它还无法执行很多操作，但祝贺你已生成了第一个 UWP 应用！
 
 **停止调试**
 
@@ -180,40 +187,6 @@ ms.lasthandoff: 02/07/2017
    -或者-
 
    关闭应用窗口。
-
-### <a name="start-the-app-on-a-mobile-device-emulator"></a>在移动设备仿真器上启动该应用
-
-你的应用可在任何 Windows 10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
-
-除了在桌面设备上执行调试的选项，Visual Studio 还提供用于在连接到计算机的物理移动设备上或移动设备仿真器上部署和调试应用的选项。 你可以为带有不同内存和显示配置的设备在仿真器中进行选择。
-
--   **设备**
--   **仿真器 <SDK version> WVGA 4 英寸 512MB**
--   **仿真器 <SDK version> WVGA 4 英寸 1GB**
--   等（采用其他配置的各种仿真器）
-
-（没有看到仿真器？ 参阅[准备工作](get-set-up.md)，确保已安装通用 Windows 应用开发工具。）
-
-**在移动设备仿真器上开始调试**
-
-1.  最好是在具有较小屏幕和有限内存的设备上测试你的应用，为此在**标准**工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取**仿真器 10.0.14393.0 WVGA 4 英寸 512MB**。
-
-2.  单击工具栏中的**开始调试**按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
-
-   -或者-
-
-   在**调试**菜单中，单击**开始调试**。
-
-   -或者-
-
-   按 F5。
-
-Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 应用首次启动时，可能需要一些时间。 在移动设备仿真器中，应用的外观如下所示。
-
-![移动设备上的初始应用屏幕](images/win10-cs-09.png)
-
-如果你有运行 Windows 10 的 Windows Phone，还可以将它连接到计算机，然后直接在其上部署并运行应用（尽管首选需要[启用开发人员模式](enable-your-device-for-development.md)）。
-
 
 ## <a name="step-3-event-handlers"></a>步骤 3：事件处理程序
 
@@ -228,7 +201,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 3.  编辑 *MainPage.xaml.cs*（即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
 
 ```C#
-private void button_Click(object sender, RouteEventArgs e)
+private void Button_Click(object sender, RouteEventArgs e)
 {
 
 }
@@ -237,7 +210,7 @@ private void button_Click(object sender, RouteEventArgs e)
   让我们更改它，使它如下所示：
 
 ```C#
-private async void button_Click(object sender, RoutedEventArgs e)
+private async void Button_Click(object sender, RoutedEventArgs e)
         {
             MediaElement mediaElement = new MediaElement();
             var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
@@ -259,7 +232,16 @@ private async void button_Click(object sender, RoutedEventArgs e)
 ## <a name="summary"></a>小结
 
 
-祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
+祝贺你，你已创建了自己的第一个适用于 Windows10 和 UWP 的应用！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 
+
+## <a name="see-also"></a>另请参阅
+
+* [你的第一个应用](your-first-app.md)
+* [发布你的 Windows 应用商店应用](https://developer.microsoft.com/store/publish-apps)。
+* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
+* [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
+* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [注册 Windows 帐户](sign-up.md)

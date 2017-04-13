@@ -2,21 +2,17 @@
 title: "压缩的纹理资源"
 description: "纹理贴图是指在三维图形上绘制以添加视觉细节的数字化图像。"
 ms.assetid: 2DD5FF94-A029-4694-B103-26946C8DFBC1
-keywords:
-- "压缩的纹理资源"
+keywords: "压缩的纹理资源"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 16432df29e040455227b5400690d24902fec10d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2bfe93bf5b50fb1206611697113a84cebe0e35d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compressed-texture-resources"></a>压缩的纹理资源
 
 
@@ -82,7 +78,6 @@ Direct3D 提供了压缩用于对 3D 模型进行纹理处理的曲面的服务�
  
 
  
-
 
 
 

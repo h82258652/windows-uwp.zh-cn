@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, advertising, AdControl, HTML, 属性"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: efc94b723b3bfe97b35484882ae784e9ef4d6807
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-html-properties-example"></a>AdControl HTML 属性示例
 
 以下示例演示了如何在 HTML 中分配 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 属性。 **applicationId** 和 **adUnitId** 是必需属性。 其他属性和事件是可选的。 如果没有提供可选属性的值，控件将使用默认值，可创建与应用的用户体验一致的广告。
@@ -44,4 +41,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
-

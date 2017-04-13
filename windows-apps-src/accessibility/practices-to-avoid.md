@@ -11,15 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 27e91fad32818a920f393cba703773ea7fddcf0d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1e8d436e38125378053b92f75f1b2647d7eda8eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="accessibility-practices-to-avoid"></a>要避免的辅助功能做法
 
-如果你要创建辅助通用 Windows 平台 (UWP) 应用，请参阅此应避免做法的列表： 
+如果你要创建辅助通用 Windows 平台 (UWP) 应用，请参阅此应避免的做法列表： 
 
 * 如果你可以使用默认 Windows 控件或已实现 Microsoft UI 自动化支持的控件，**请避免生成自定义 UI 元素**。 标准 Windows 控件默认具有辅助性，并且通常只需添加几个特定于应用的辅助功能属性即可。 相反，为真正的自定义控件实现 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 支持会更为复杂（请参阅[自定义自动化对等](custom-automation-peers.md)）。
 * **不要在 Tab 键顺序中放置静态文本或其他非交互元素**（例如，通过为非交互元素设置 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 属性）。 如果非交互元素在 Tab 键顺序中，这将违背键盘辅助功能指南，因为它会降低用户进行键盘导航的效率。 许多辅助技术使用 Tab 键顺序和元素聚焦功能，以此作为它们向辅助技术用户呈现应用界面的一部分逻辑。 Tab 键顺序中的纯文本元素会对预期 Tab 键顺序中只有交互元素（例如按钮、复选框、文本输入字段、组合框、列表等）的用户造成困惑。
@@ -40,4 +38,3 @@ ms.lasthandoff: 02/07/2017
 * [辅助功能](accessibility.md)
 * [应用商店中的辅助功能](accessibility-in-the-store.md)
 * [辅助功能清单](accessibility-checklist.md)
-

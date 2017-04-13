@@ -2,21 +2,17 @@
 title: "计算着色器 (CS) 阶段"
 description: "计算着色器 (CS) 阶段提供常规目的的高速计算并利用图形处理单元 (GPU) 上的大量并行处理器。"
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
-keywords:
-- "计算着色器 (CS) 阶段"
+keywords: "计算着色器 (CS) 阶段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 43d24876e6773f5e4a9f660e2b2e75b77cffc2c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 910965862f923750a8be6beb59dcd6ac7edf7e69
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compute-shader-cs-stage"></a>计算着色器 (CS) 阶段
 
 
@@ -36,7 +32,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

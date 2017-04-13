@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>规划你的通用 Windows 平台 (UWP) 应用
 
 在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。
@@ -242,4 +239,3 @@ ms.lasthandoff: 02/07/2017
 在进行更深层次的应用开发之前，应该根据指南、用户印象以及要求验证你的设计或原型，以避免以后返工。 每个功能都有一组可帮助你优化应用的 UX 指南以及一组应用商店要求，在 Windows 应用商店中销售你的应用时必须满足这些要求。 你可以使用 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)测试对应用商店要求的技术合规性。 还可以使用 Microsoft Visual Studio 中的性能工具以确保你在所有情况下都为用户提供极佳体验。
 
 使用 [UWP 应用的详细 UX 指南](https://msdn.microsoft.com/library/windows/apps/hh465424)确保你专注于重要功能。 使用 [Visual Studio 性能工具](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)分析每个应用方案的性能。
-

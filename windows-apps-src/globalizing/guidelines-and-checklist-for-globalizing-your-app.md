@@ -1,7 +1,7 @@
 ---
 author: DelfCo
-Description: "在将你的应用全球化使其适用于更广泛的用户，以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。"
-Search.Refinement.TopicID: 180
+Description: "在将你的应用全球化使其适用于更广泛的用户以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。"
+Search.Refinement.TopicID: "180"
 title: "全球化和本地化指南"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84d502b9fd10e82be428cd775cc1225d849b68e1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization-dos-and-donts"></a>全球化和本地化的应做事项和禁止事项
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -80,7 +77,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="odd">
 <td align="left"><p>请勿通过语言假定用户的位置，并且请勿通过位置假定用户的语言。</p></td>
-<td align="left"><p>在 Windows 中，用户的语言和位置是单独的概念。 用户可以使用某种语言的特定区域变体，例如在大不列颠使用的 en-gb 形式的英语，而用户却可以位于完全不同的国家或地区。 请考虑应用是否需要有关用户语言的知识，例如针对 UI 文本、或位置，例如用于许可问题。</p>
+<td align="left"><p>在 Windows 中，用户的语言和位置是单独的概念。 用户可以使用某种语言的特定区域变体，例如在英国使用的 en-gb 形式的英语，而用户却可以位于完全不同的国家或地区。 请考虑应用是否需要有关用户语言的知识，例如针对 UI 文本、或位置，例如用于许可问题。</p>
 <p>有关详细信息，请参阅 [<strong>管理语言和区域</strong>](manage-language-and-region.md)。</p></td>
 </tr>
 <tr class="even">
@@ -194,7 +191,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -3,14 +3,11 @@ Description: "下面是创建可在任何基于 Windows 10 的设备（包括手
 title: "Windows 10 应用的操作方法指南 - Windows 应用开发"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/windows/develop
-translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
 ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
-# Windows 10 应用的操作方法指南
+# <a name="how-to-guides-for-windows-10-apps"></a>Windows 10 应用的操作方法指南
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -45,9 +42,3 @@ ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
 | [线程和异步编程](threading-async/index.md) | 使用异步编程可帮助你的应用保持响应，即当它完成可能花费较长时间的其他工作时允许它继续运行并响应 UI。 |
 | [Windows 运行时组件](winrt-components/index.md) | 了解有关自包含对象的详细信息，可将这些对象实例化，并且可采用包括 C#、Visual Basic、JavaScript 和 C++ 在内的任一语言使用它们。 例如，你可以使用 C++ 创建 Windows 运行时组件，以便可使用第三方库来执行很耗计算的操作，也可以只在你的通用 Windows 应用中重新使用部分 Visual Basic 或 C# 代码。 
 | [XAML 平台](xaml-platform/index.md) | 了解 XAML 编程语言的基本概念。 或者，如果你已熟悉 XAML，可跳至后面部分，了解如何通过使用 Visual Studio 实现采用 XAML 的 Windows 运行时功能，从而创建出色的通用 Windows 应用。 |
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

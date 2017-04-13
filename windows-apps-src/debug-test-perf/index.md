@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 831a29950d8f8658e1a584d8a33256ff4121c706
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ad8a5823d48e2e92ac0e65bbfa73fbc1229e00f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="debugging-testing-and-performance"></a>调试、测试和性能
 
@@ -31,5 +29,4 @@ ms.lasthandoff: 02/07/2017
 | [Windows Device Portal](device-portal.md) | Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 |
 | [Windows 应用认证工具包](windows-app-certification-kit.md) | 为应用提供成为 [Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)的最佳机会。 |
 | [性能](performance-and-xaml-ui.md) | 用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 |
-
 

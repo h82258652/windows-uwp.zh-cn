@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: "在本操作实例中，通过 A/B 测试创建、运行和管理你的第一个实验。"
-title: "通过 A/B 测试创建和运行你的第一个实验"
+title: "创建并运行你的第一个实验"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,14 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb9e93747fa77031fe906d9ab7463fc41b73cdeb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8da21ae0968540cf43994673ceeeefa92cf56b18
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="create-and-run-your-first-experiment-with-ab-testing"></a>通过 A/B 测试创建和运行你的第一个实验
+# <a name="create-and-run-your-first-experiment"></a>创建并运行你的第一个实验
 
 在本操作实例中，你将：
 * 在开发人员中心仪表板上创建实验[项目](run-app-experiments-with-a-b-testing.md#terms)，可定义多个表示应用按钮的文本和颜色的远程变量。
@@ -49,14 +46,13 @@ ms.lasthandoff: 02/07/2017
 
 1. 在 Visual Studio 2015 中，使用 Visual C# 创建新的通用 Windows 平台项目。 将该项目命名为 **SampleExperiment**。
 2. 在“解决方案资源管理器”中，展开项目节点、右键单击**“引用”**，然后选择**“添加引用”**。
-3. 在**引用管理器**中，展开**通用 Windows** 并单击**扩展**.。
+3. 在**引用管理器**中，展开**通用 Windows** 并单击**扩展**。
 4. 在 SDK 列表中，选择 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 5. 在**解决方案资源管理器**中，双击 MainPage.xaml 以在应用中打开主页的设计器。
 6. 将**“按钮”**从**“工具箱”**拖动到该页。
 7. 在设计器上双击按钮以打开代码文件，并为 **Click** 事件添加事件处理程序。  
 8. 将代码文件的所有内容替换为以下代码。 将 ```projectId``` 变量分配给上一部分中从开发人员中心仪表板获取的[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 值。
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 10. 保存代码文件并生成项目。
@@ -73,13 +69,14 @@ ms.lasthandoff: 02/07/2017
   * 在**目标**字段中，选择**最大化**。
 8. 在**远程变量和变体**部分中，确认已选中**平均分配**复选框，以便变体将平均分配到你的应用。
 9. 将变量添加到你的实验：
-  9. 单击下拉列表控件、选择 **buttonText**，然后单击**添加变量”**。 字符串 **Grey Button** 应自动显示在**变体 A** 列中（此值派生自项目设置）。 在**变体 B** 列中，键入 **Blue Button**。
-  9. 再次单击下拉列表控件、选择 **r**，然后单击**添加变量**。 字符串 **128** 应自动显示在**变体 A** 列中。 在**变体 B** 列中，键入 **1**。
+  9. 单击下拉列表控件、选择 **buttonText**，然后单击**添加变量**。 字符串 **Grey Button** 应自动显示在**变体 A** 列中（此值派生自项目设置）。 在**变体 B** 列中，键入 **Blue Button**。
+  9. 再次单击下拉列表控件、选择 **r**，然后单击**添加变量**。 字符串 **128** 应自动显示在**变体 A** 列中。 在**变体 B** 列中，键入**1**。
   9. 再次单击下拉列表控件、选择 **g**，然后单击**添加变量**。 字符串 **128** 应自动显示在**变体 A** 列中。 在**变体 B** 列中，键入 **1**。  
   9. 再次单击下拉列表控件、选择 **b**，然后单击**添加变量**。 字符串 **128** 应自动显示在**变体 A** 列中。 在**变体 B** 列中，键入 **255**。  
 10. 单击**保存**，然后单击**激活**。
 
-> **重要提示**&nbsp;&nbsp;激活实验后，你无法再对实验参数进行修复，除非你在创建实验时，单击了**可编辑实验**复选框。 通常我们建议你在激活实验之前，在应用中为实验编码。
+> [!IMPORTANT]
+> 激活实验后，不可再对实验参数进行修改，除非在创建实验时，选中了**可编辑实验**复选框。 通常我们建议你在激活实验之前，在应用中为实验编码。
 
 ## <a name="run-the-app-to-gather-experiment-data"></a>运行该应用以收集实验数据
 
@@ -91,13 +88,15 @@ ms.lasthandoff: 02/07/2017
 
 完成上一部分后至少等待几小时，然后遵循以下步骤查看实验结果并完成实验。
 
-> **注意**&nbsp;&nbsp;在激活某个实验时，开发人员中心会立即开始从已检测的所有应用中收集数据，从而为你的实验记录数据。 但是，实验数据可能需要几个小时才会显示在仪表板中。
+> [!NOTE]
+> 当激活某个实验时，开发人员中心会立即开始从已检测的所有应用中收集数据，从而为你的实验记录数据。 但是，实验数据可能需要几个小时才会显示在仪表板中。
 
 1. 在开发人员中心中，返回到应用的**实验**页面。
 2. 在**激活实验**部分中，单击**优化按钮单击**转到此实验页面。
 3. 确认在**结果摘要**和**结果详细信息**部分中显示的结果与你期望看到的结果相匹配。 有关这些部分的更多详细信息，请参阅[在开发人员中心仪表板中管理你的实验](manage-your-experiment.md#review-the-results-of-your-experiment)。
+    > [!NOTE]
+    > 开发人员中心在 24 小时时间段内仅向每位用户报告第一个转换事件。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了帮助防止触发很多转换事件的单个用户扭曲一组示例用户得出的实验结果。
 
-  >**注意**&nbsp;&nbsp;开发人员中心在 24 小时时间段内仅向每位用户报告第一个转换事件。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了帮助防止触发很多转换事件的单个用户扭曲一组示例用户得出的实验结果。
 4. 现在，你已准备好结束实验了。 在**结果摘要**部分的**变体 B** 列中，单击**“切换”**。 这会将应用的所有用户切换到蓝色按钮。
 5. 单击**“确定”**以确认你想要结束该实验。
 6. 运行你在上一部分中创建的 **SampleExperiment** 应用。
@@ -110,4 +109,3 @@ ms.lasthandoff: 02/07/2017
 * [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
 * [在开发人员中心仪表板中管理实验](manage-your-experiment.md)
 * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
-

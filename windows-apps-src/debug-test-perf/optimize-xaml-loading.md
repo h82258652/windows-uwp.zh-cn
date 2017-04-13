@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9728eced6de3d246dc1ec9950b90d77fea0d576d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-markup"></a>优化 XAML 标记
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以通过以下措施为你的应用缩短 XAML 标记分析和加载时间及提高内存效率。
+在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间效率以及内存效率。
 
 在应用启动时进行限制，即仅加载初始 UI 所需的 XAML 标记。 检查初始页面中的标记，确认该页面不包含任何不需要的内容。 如果页面引用在其他文件中定义的用户控件或资源，则框架还会分析该文件。
 
@@ -249,7 +247,7 @@ XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这
 
 ## <a name="cache-static-content"></a>缓存静态内容
 
-过度绘制的另一个来源是由许多重叠元素形成的形状。 如果针对包含合成形状的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，将 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 设置为 **BitmapCach**e，平台会将该元素作为位图呈现一次，然后每帧使用该位图而不是过度绘制。
+过度绘制的另一个来源是由许多重叠元素形成的形状。 如果针对包含合成形状的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，将 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 设置为 **BitmapCache**，平台会将该元素作为位图呈现一次，然后每帧使用该位图而不是过度绘制。
 
 **低效。**
 
@@ -294,5 +292,4 @@ XBF2 是在运行时避免所有文本分析成本的 XAML 标记的二进制表
 框架提供的 XAML 内置控件和字典已完全支持 XBF2。 对于你自己的应用，请确保你的项目文件可声明 TargetPlatformVersion 8.2 或更高版本。
 
 若要检查你是否具有 XBF2，请在二进制编辑器中打开你的应用；如果有 XBF2，则第 12 个和第 13 个字节为 00 02。
-
 

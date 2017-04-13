@@ -3,18 +3,17 @@ author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: "适用于 HoloLens 的 Device Portal API 参考"
 description: "了解适用于 HoloLens 的 Windows Device Portal REST API，该 API 可用于访问数据和以编程方式控制设备。"
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# 适用于 HoloLens 的 Device Portal API 参考
+# <a name="device-portal-api-reference-for-hololens"></a>适用于 HoloLens 的 Device Portal API 参考
 
 Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 API 可用于访问数据和以编程方式控制设备。
 
-## 全息操作系统
+## <a name="holographic-os"></a>全息操作系统
 ---
-### 获取 Device Portal 的 HTTPS 要求
+### <a name="get-https-requirements-for-the-device-portal"></a>获取 Device Portal 的 HTTPS 要求
 
 **请求**
 
@@ -46,7 +45,7 @@ GET | /api/holographic/os/webmanagement/settings/https
 - 标准状态代码。
 
 ---
-### 获取已存储的瞳孔间距 (IPD)
+### <a name="get-the-stored-interpupillary-distance-ipd"></a>获取已存储的瞳孔间距 (IPD)
 
 **请求**
 
@@ -78,7 +77,7 @@ GET | /api/holographic/os/settings/ipd
 - 标准状态代码。
 
 ---
-### 获取 HoloLens 特定的 ETW 提供程序列表
+### <a name="get-a-list-of-hololens-specific-etw-providers"></a>获取 HoloLens 特定的 ETW 提供程序列表
 
 **请求**
 
@@ -110,7 +109,7 @@ GET | /api/holographic/os/etw/customproviders
 - 标准状态代码。
 
 ---
-### 返回所有活动服务的状态
+### <a name="return-the-state-for-all-active-services"></a>返回所有活动服务的状态
 
 **请求**
 
@@ -142,7 +141,7 @@ GET | /api/holographic/os/services
 - 标准状态代码。
 
 ---
-### 设置 Device Portal 的 HTTPS 要求。
+### <a name="set-the-https-requirement-for-the-device-portal"></a>设置 Device Portal 的 HTTPS 要求。
 
 **请求**
 
@@ -178,7 +177,7 @@ required   | （**必需**）确定 Device Portal 是否需要 HTTPS。 可能�
 - 标准状态代码。
 
 ---
-### 设置瞳孔间距 (IPD)
+### <a name="set-the-interpupillary-distance-ipd"></a>设置瞳孔间距 (IPD)
 
 **请求**
 
@@ -214,9 +213,9 @@ ipd   | （**必需**）要存储的新 IPD 值。 此值应以毫米为单位�
 - 标准状态代码。
 
 ---
-## 全息感知
+## Holographic perception
 ---
-### 接受 WebSocket 升级并运行发送更新的虚拟客户端
+### <a name="accept-websocket-upgrades-and-run-a-mirage-client-that-sends-updates"></a>接受 WebSocket 升级并运行发送更新的虚拟客户端
 
 **请求**
 
@@ -252,9 +251,9 @@ clientmode   | （**必需**）确定跟踪模式。 视觉跟踪模式无法被
 - 标准状态代码。
 
 ---
-## 全息热
+## Holographic thermal
 ---
-### 获取设备的热阶段
+### <a name="get-the-thermal-stage-of-the-device"></a>获取设备的热阶段
 
 **请求**
 
@@ -291,9 +290,9 @@ GET | /api/holographic/
 - 标准状态代码。
 
 ---
-## HSimulation 控制
+## HSimulation control
 ---
-### 创建控制流或将数据发布到已创建的流
+### <a name="create-a-control-stream-or-post-data-to-a-created-stream"></a>创建控制流或将数据发布到已创建的流
 
 **请求**
 
@@ -330,7 +329,7 @@ streamid   | （**必需，如果要发布到已创建的流**）要发布到的
 - 标准状态代码。
 
 ---
-### 删除控制流
+### <a name="delete-a-control-stream"></a>删除控制流
 
 **请求**
 
@@ -362,7 +361,7 @@ DELETE | /api/holographic/simulation/control/stream
 - 标准状态代码。
 
 ---
-### 获取控制流
+### <a name="get-a-control-stream"></a>获取控制流
 
 **请求**
 
@@ -394,7 +393,7 @@ GET/WebSocket | /api/holographic/simulation/control/stream
 - 标准状态代码。
 
 ---
-### 获取模拟模式
+### <a name="get-the-simluation-mode"></a>获取模拟模式
 
 **请求**
 
@@ -426,7 +425,7 @@ GET | /api/holographic/simulation/control/mode
 - 标准状态代码。
 
 ---
-### 设置模拟模式
+### <a name="set-the-simluation-mode"></a>设置模拟模式
 
 **请求**
 
@@ -462,9 +461,9 @@ mode   | （**必需**）指示模拟模式。 可能的值包括 **default**、
 - 标准状态代码。
 
 ---
-## HSimulation 播放
+## HSimulation playback
 ---
-### 删除录制
+### <a name="delete-a-recording"></a>删除录制
 
 **请求**
 
@@ -500,7 +499,7 @@ recording   | （**必需**）要删除的录制的名称。
 - 标准状态代码。
 
 ---
-### 获取所有录制
+### <a name="get-all-recordings"></a>获取所有录制
 
 **请求**
 
@@ -532,7 +531,7 @@ GET | /api/holographic/simulation/playback/files
 - 标准状态代码。
 
 ---
-### 获取已加载录制中的数据类型
+### <a name="get-the-types-of-data-in-a-loaded-recording"></a>获取已加载录制中的数据类型
 
 **请求**
 
@@ -568,7 +567,7 @@ recording   | （**必需**）感兴趣的录制的名称。
 - 标准状态代码。
 
 ---
-### 获取所有已加载的录制
+### <a name="get-all-the-loaded-recordings"></a>获取所有已加载的录制
 
 **请求**
 
@@ -600,7 +599,7 @@ GET | /api/holographic/simulation/playback/session/files
 - 标准状态代码。
 
 ---
-### 获取录制的当前播放状态 
+### <a name="get-the-current-playback-state-of-a-recording"></a>获取录制的当前播放状态 
 
 **请求**
 
@@ -636,7 +635,7 @@ recording   | （**必需**）感兴趣的录制的名称。
 - 标准状态代码。
 
 ---
-### 加载录制
+### <a name="load-a-recording"></a>加载录制
 
 **请求**
 
@@ -672,7 +671,7 @@ recording   | （**必需**）要加载的录制的名称。
 - 标准状态代码。
 
 ---
-### 暂停录制
+### <a name="pause-a-recording"></a>暂停录制
 
 **请求**
 
@@ -708,7 +707,7 @@ recording   | （**必需**）要暂停的录制的名称。
 - 标准状态代码。
 
 ---
-### 播放录制
+### <a name="play-a-recording"></a>播放录制
 
 **请求**
 
@@ -744,7 +743,7 @@ recording   | （**必需**）要播放的录制的名称。
 - 标准状态代码。
 
 ---
-### 停止录制
+### <a name="stop-a-recording"></a>停止录制
 
 **请求**
 
@@ -780,7 +779,7 @@ recording   | （**必需**）要停止的录制的名称。
 - 标准状态代码。
 
 ---
-### 卸载录制
+### <a name="unload-a-recording"></a>卸载录制
 
 **请求**
 
@@ -816,7 +815,7 @@ recording   | （**必需**）要卸载的录制的名称。
 - 标准状态代码。
 
 ---
-### 上载录制
+### <a name="upload-a-recording"></a>上载录制
 
 **请求**
 
@@ -848,9 +847,9 @@ POST | /api/holographic/simulation/playback/file
 - 标准状态代码。
 
 ---
-## HSimulation 录制
+## HSimulation recording
 ---
-### 获取录制状态
+### <a name="get-the-recording-state"></a>获取录制状态
 
 **请求**
 
@@ -882,7 +881,7 @@ GET | /api/holographic/simulation/recording/status
 - 标准状态代码。
 
 ---
-### 开始录制
+### <a name="start-a-recording"></a>开始录制
 
 **请求**
 
@@ -925,7 +924,7 @@ singleSpatialMappingFrame   | （**可选**）将此值设置为 1，以指示�
 - 标准状态代码。
 
 ---
-### 停止当前录制
+### <a name="stop-the-current-recording"></a>停止当前录制
 
 **请求**
 
@@ -957,9 +956,9 @@ POST | /api/holographic/simulation/recording/stop
 - 标准状态代码。
 
 ---
-## 混合现实捕获
+## Mixed reality capture
 ---
-### 从设备中删除混合现实捕获 (MRC) 录制
+### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>从设备中删除混合现实捕获 (MRC) 录制
 
 **请求**
 
@@ -995,7 +994,7 @@ filename   | （**必需**）要删除的视频文件名称。 该名称应采�
 - 标准状态代码。
 
 ---
-### 下载混合现实捕获 (MRC) 文件
+### <a name="download-a-mixed-reality-capture-mrc-file"></a>下载混合现实捕获 (MRC) 文件
 
 **请求**
 
@@ -1032,7 +1031,7 @@ op   | （**可选**）如果要下载一个流，请将此值设置为 **stream
 - 标准状态代码。
 
 ---
-### 获取混合现实捕获 (MRC) 设置
+### <a name="get-the-mixed-reality-capture-mrc-settings"></a>获取混合现实捕获 (MRC) 设置
 
 **请求**
 
@@ -1064,7 +1063,7 @@ GET | /api/holographic/mrc/settings
 - 标准状态代码。
 
 ---
-### 获取混合现实捕获 (MRC) 录制的状态
+### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>获取混合现实捕获 (MRC) 录制的状态
 
 **请求**
 
@@ -1096,7 +1095,7 @@ GET | /api/holographic/mrc/status
 - 标准状态代码。
 
 ---
-### 获取混合现实捕获 (MRC) 文件列表
+### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>获取混合现实捕获 (MRC) 文件列表
 
 **请求**
 
@@ -1128,7 +1127,7 @@ GET | /api/holographic/mrc/files
 - 标准状态代码。
 
 ---
-### 设置混合现实捕获 (MRC) 设置
+### <a name="set-the-mixed-reality-capture-mrc-settings"></a>设置混合现实捕获 (MRC) 设置
 
 **请求**
 
@@ -1160,7 +1159,7 @@ POST | /api/holographic/mrc/settings
 - 标准状态代码。
 
 ---
-### 开始混合现实捕获 (MRC) 录制
+### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>开始混合现实捕获 (MRC) 录制
 
 **请求**
 
@@ -1192,7 +1191,7 @@ POST | /api/holographic/mrc/video/control/start
 - 标准状态代码。
 
 ---
-### 停止当前混合现实捕获 (MRC) 录制
+### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>停止当前混合现实捕获 (MRC) 录制
 
 **请求**
 
@@ -1224,7 +1223,7 @@ POST | /api/holographic/mrc/video/control/stop
 - 标准状态代码。
 
 ---
-### 拍摄混合现实捕获 (MRC) 照片
+### <a name="take-a-mixed-reality-capture-mrc-photo"></a>拍摄混合现实捕获 (MRC) 照片
 
 **请求**
 
@@ -1256,9 +1255,9 @@ GET | /api/holographic/mrc/photo
 - 标准状态代码。
 
 ---
-## 混合现实流
+## Mixed reality streaming
 ---
-### 启动碎片 mp4 的分块下载
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>启动碎片 mp4 的分块下载
 
 **请求**
 
@@ -1297,7 +1296,7 @@ loopback   | （**可选**）指示是否捕获应用程序音频。 应为 **tr
 - 标准状态代码。
 
 ---
-### 启动碎片 mp4 的分块下载
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>启动碎片 mp4 的分块下载
 
 **请求**
 
@@ -1336,7 +1335,7 @@ loopback   | （**可选**）指示是否捕获应用程序音频。 应为 **tr
 - 标准状态代码。
 
 ---
-### 启动碎片 mp4 的分块下载
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>启动碎片 mp4 的分块下载
 
 **请求**
 
@@ -1375,7 +1374,7 @@ loopback   | （**可选**）指示是否捕获应用程序音频。 应为 **tr
 - 标准状态代码。
 
 ---
-### 启动碎片 mp4 的分块下载
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>启动碎片 mp4 的分块下载
 
 **请求**
 
@@ -1412,9 +1411,3 @@ loopback   | （**可选**）指示是否捕获应用程序音频。 应为 **tr
 **状态代码**
 
 - 标准状态代码。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

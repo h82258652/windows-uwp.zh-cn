@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40c27746a8364ca9f22288b9bfc128dd2b317815
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70dbf24b53a36f7ee55ce387f713ce2abc79a87c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="selecting-text-and-images"></a>选择文本和图像
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -138,7 +135,6 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
  
 
  
-
 
 
 

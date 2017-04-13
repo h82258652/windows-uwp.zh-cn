@@ -10,16 +10,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 984bafe92bf23f13bc206d6b438aa4f3b32bc3d5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 021a88fe80cc270082080ad55bd98b71097cea7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-from-ios-to-uwp"></a>从 iOS 移动到 UWP
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 如果你是 iOS 开发人员，并且想知道如何扩展用户群以将 Windows 10 和通用 Windows 平台 (UWP) 包括在内，则你可以寻求帮助的工具已经越来越多。 你可以采取的方法取决于正在处理的应用类型（游戏、生活方式、企业等）以及你在开发进程中的进度。 例如，严重依赖 OpenGL 或 Cocos2D 的完成或接近完成的游戏是[适用于 iOS 的 Windows 桥](https://dev.windows.com/bridges/ios)的理想候选项，而如果你要规划一款适用于小型企业的跨平台应用，则应该考虑使用 [Xamarin.Forms](https://www.xamarin.com/forms)。 如果你已经使用跨平台工具（例如 Unity）编写应用，[发布到 Windows](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) 会相当简单。
@@ -44,4 +41,3 @@ ms.lasthandoff: 02/07/2017
 * [为所有 Windows 设备生成通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [下载 Windows 应用商店应用的设计资源](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
  
-

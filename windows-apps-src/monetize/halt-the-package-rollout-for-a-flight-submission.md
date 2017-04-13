@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法终止软件包外部测试版的软件包推出。"
-title: "使用 Windows 应用商店提交 API 终止软件包外部测试版的软件包推出"
+title: "终止外部测试版的推出"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,19 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 外部测试版提交, 终止"
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ad63a543027ca0a1927eb72c1a7a227788770998
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 804e447f5b650a986580752fcba2a29014560e98
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="halt-the-rollout-for-a-flight"></a>终止外部测试版的推出
 
-# <a name="halt-the-package-rollout-for-a-package-flight-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 终止软件包外部测试版的软件包推出
+使用 Windows 应用商店提交 API 中的此方法[终止软件包外部测试版提交的推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
+>**注意**&nbsp;&nbsp;如果终止软件包外部测试版提交的推出，然后[创建新的软件包外部测试版提交](create-a-flight-submission.md)，则新提交将是已终止提交的克隆。
 
-使用 Windows 应用商店提交 API 中的此方法[终止软件包外部测试版提交的软件包推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
-
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -81,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutStopped",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +102,3 @@ Authorization: Bearer <your access token>
 * [逐步软件包推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 应用商店提交 API 管理软件包外部测试版提交](manage-flight-submissions.md)
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

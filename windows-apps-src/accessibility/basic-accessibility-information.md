@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍可帮助应用公开辅助技术所需的基本信息的代码。"
+Description: "基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍了可帮助应用公开辅助技术所需的基本信息的代码。"
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: "公开基本的辅助功能信息"
 label: Expose basic accessibility information
@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 123776d100b0308248e6d715d8253b69f700f1d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd873b6d1abd4187f1b8ff1d9040da3242c0ee65
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
 
@@ -150,4 +147,3 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能测试](accessibility-testing.md)
-

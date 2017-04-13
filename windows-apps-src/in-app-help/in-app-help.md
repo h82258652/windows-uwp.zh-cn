@@ -11,13 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 19d4a4e00692bc983a56416951e82f71bf5f6be2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 659a2871e540398d34b93c288d34fb80699c36c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="in-app-help-pages"></a>应用内帮助页
 
 在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。
@@ -51,7 +48,7 @@ ms.lasthandoff: 02/08/2017
 -   **可见性很重要：**因为帮助弹出窗口仅可从一个位置查看，所以请确保用户可以毫无阻碍地清楚看到它们。 如果用户错过了它，他们可能会退出弹出窗口，从而搜索帮助页面。
 -   **不要使用过多资源：**帮助不应减缓速度或使加载缓慢。 在弹出窗口中使用视频或音频文件或者是高分辨率的图像不会帮助用户，反而更有可能令他们失望。
 
-#### <a name="descriptions"></a>说明
+#### <a name="descriptions"></a>描述
 
 有时在用户检查某项功能时，提供有关该功能的详细信息会很有用。 描述类似于说明性 UI，但关键差异在于，说明性 UI 尝试向用户解释和演示他们不知道的功能，而详细的描述却会提高用户对感兴趣的应用功能的理解。
 
@@ -62,4 +59,3 @@ ms.lasthandoff: 02/08/2017
 ## <a name="related-articles"></a>相关文章
 
 * [应用帮助指南](guidelines-for-app-help.md)
-

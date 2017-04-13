@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7394d211b580ad82689a79e7cbe4eb4dbf545f46
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3dabc5ad2833eecfec1f397bdd5bf7f2b807a48d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bluetooth-developer-faq"></a>蓝牙开发人员常见问题
 
@@ -47,5 +45,4 @@ ms.lasthandoff: 02/08/2017
 蓝牙 RFCOMM（传统）设备无需执行此操作。 从 Windows 10 版本 1607 开始，只需查询附近设备即可连接。 更新后的 [RFCOMM 聊天示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)展示了此项功能。 
 
 低耗电蓝牙（GATT 客户端）不支持此功能，因此仍需要通过“设置”页面或使用 [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) API 进行配对才能访问这些设备。
-
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7f46130feac43211bccf57191d940acb8198965
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3fc55919942c1edc82f7c2e5da2608b5f1b1445b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="effects-for-analyzing-camera-frames"></a>分析相机帧的效果
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -124,7 +121,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

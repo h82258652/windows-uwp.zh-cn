@@ -2,21 +2,17 @@
 title: "照明"
 description: "光照用于照亮场景中的对象。 每个对象顶点的颜色基于当前纹理贴图、顶点颜色和光源。"
 ms.assetid: AB16CF5B-47CE-455C-A8BD-36305E54BEA9
-keywords:
-- "照明"
+keywords: "照明"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b2449f6d461acb0cb19b3e5b332bbb6d903fdb6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6102c070a10d44e8882fe72c8168fb244353fd68
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lighting"></a>照明
 
 
@@ -70,7 +66,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

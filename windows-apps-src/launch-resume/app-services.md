@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 63c0634905b14ca9f9546c9fcc678c05edb67780
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1a9647a9b915359f00ac22c88b715c9e938f6110
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-app-services"></a>使用应用服务
 
 本部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。
@@ -27,3 +24,4 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="related-topics"></a>相关主题
 * [与远程应用服务通信](communicate-with-a-remote-app-service.md)
+* [通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) 

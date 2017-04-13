@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-Description: "将你的 UI 的字符串资源放入资源文件中。 随后你可从代码或标记引用这些字符串。"
+Description: "将你的 UI 的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。"
 title: "将 UI 字符串放入资源"
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f10efbf452510e783a646f4c868b65f49e00c15
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f4ebe843b30d5bc408a705cfc9dda5d6731d4d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="put-ui-strings-into-resources"></a>将 UI 字符串放入资源
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -133,7 +130,6 @@ auto str = loader->GetString("Farewell");
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "衰减和聚焦因素"
 description: "全局照明公式的漫射和反射光分量涉及介绍光线衰减和聚焦锥形的术语。"
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
-keywords:
-- "衰减和聚焦因素"
+keywords: "衰减和聚焦因素"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ca596ae1deebadc4bb192c7e2622daa9bf6b348
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 41b2b16e6eea6eb3edceb523b4db7cf207af48fb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="attenuation-and-spotlight-factor"></a>衰减和聚焦因素
 
 
@@ -100,7 +96,6 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
  
 
  
-
 
 
 

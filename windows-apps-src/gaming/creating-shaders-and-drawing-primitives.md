@@ -1,7 +1,7 @@
 ---
 author: mtoepke
 title: "创建着色器和绘制基元"
-description: "我们将在此向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在屏幕上绘制基元。"
+description: "在此处，我们将向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在显示器上绘制基元。"
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 着色器, 基元, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-shaders-and-drawing-primitives"></a>创建着色器和绘制基元
 
 
@@ -296,7 +293,6 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
  
 
  
-
 
 
 

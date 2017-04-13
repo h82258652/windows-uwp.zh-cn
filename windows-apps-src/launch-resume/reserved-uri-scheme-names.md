@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 98735ce2d102c1a0b7b054b9d70038fe5f9dc40c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>保留的文件和 URI 方案名称
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。 但是你无法使用某些 URI 关联，因为它们是保留的关联。 如果你的应用注册为保留的关联，该注册将被忽略。 本主题列出了不可用于应用的保留文件和 URI 方案名称。
+当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。 但是你无法使用某些 URI 关联，因为它们是保留的关联。 如果你的应用注册为保留的关联，该注册将被忽略。 本主题将列出不可用于应用的保留文件和 URI 方案名称。
 
 ## <a name="reserved-file-types"></a>保留文件类型
 
@@ -122,4 +120,3 @@ ms.lasthandoff: 02/07/2017
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-

@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a03953885179cf8e969e3b35a426aa958c528f54
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-overview"></a>辅助功能概述  
 
 
@@ -179,10 +176,9 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>支持 XAML / Microsoft DirectX 互操作的应用中的辅助技术支持  
 默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) 或 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)）。 [XAML SwapChainPanel DirectX 互操作示例](http://go.microsoft.com/fwlink/p/?LinkID=309155)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>相关主题  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [辅助功能](accessibility.md)
-
+* [讲述人入门](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

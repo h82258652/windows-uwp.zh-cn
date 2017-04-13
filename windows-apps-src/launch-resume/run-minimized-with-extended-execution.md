@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b7bda3b25e2c268926223da429abf559524ad38c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: bd9ccaa4cb87a24906c531996d4fc3f88875b060
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="run-while-minimized-with-extended-execution"></a>使用扩展执行最小化运行
 
 本文将为你展示当应用挂起时如何借助扩展执行进行推迟，从而让你的应用在最小化时也可以运行。
@@ -24,7 +21,7 @@ ms.lasthandoff: 02/08/2017
 
 某些情况下，应用在最小化时可能需要保持运行，而不是挂起。 如果应用需要保持运行，操作系统可以让它保持运行，或者它也可以请求保持运行。 例如，在后台播放音频时，如果按照[后台媒体播放](../audio-video-camera/background-audio.md)的以下步骤进行操作，操作系统可以保持应用运行更长时间。 否则，你必须多次手动请求。
 
-创建 [ExtendedExecutionSession](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 来决定。 有三个 **ExtendedExecutionReason** 枚举值：**Unspecified、LocationTracking** 和 **SavingData**。
+创建 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 来决定。 有三个 **ExtendedExecutionReason** 枚举值：**Unspecified、LocationTracking** 和 **SavingData**。
 
 ## <a name="run-while-minimized"></a>最小化时运行
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="track-the-users-location"></a>跟踪用户位置
 
-如果应用需要定期记录 [GeoLocator](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 中的位置，请在创建 **ExtendedExecutionSession** 时指定 **ExtendedExecutionReason.LocationTracking**。 用于健身跟踪和导航的应用，此应用需要定期监控用户的位置并使用该原因。
+如果应用需要定期记录 [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 中的位置，请在创建 **ExtendedExecutionSession** 时指定 **ExtendedExecutionReason.LocationTracking**。 用于健身跟踪和导航的应用，此应用需要定期监控用户的位置并使用该原因。
 
 位置跟踪扩展执行会话可以根据需要尽可能长时间运行。 不过，每个设备上只能运行一个此类会话。 位置跟踪扩展执行会话只能在前台请求，并且应用必须处于**正在运行**状态。 这确保用户了解应用已启动扩展位置跟踪会话。 当应用于后台运行时，仍可以通过后台任务或者应用服务使用 GeoLocator，而无需请求位置跟踪扩展执行会话。
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/08/2017
 
 请在创建 **ExtendedExecutionSession** 时指定 **ExtendedExecutionReason.SavingData** 来保存用户数据，以免因应用终止前未保存数据而导致数据丢失以及负面用户体验。
 
-请勿使用这种会话延长应用生命周期来上载或下载数据。 如果需要上载数据，请在有可用的交流电源时请求 [background transfer](https://msdn.microsoft.com/en-us/windows/uwp/networking/background-transfers) 或注册 **MaintenanceTrigger** 来处理传输。 **ExtendedExecutionReason.SavingData** 扩展执行会话可以在应用位于前台并且处于**正在运行**状态时请求，也可以在应用位于后台并且处于**挂起**状态时请求。
+请勿使用这种会话延长应用生命周期来上载或下载数据。 如果需要上载数据，请在有可用的交流电源时请求 [background transfer](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) 或注册 **MaintenanceTrigger** 来处理传输。 **ExtendedExecutionReason.SavingData** 扩展执行会话可以在应用位于前台并且处于**正在运行**状态时请求，也可以在应用位于后台并且处于**挂起**状态时请求。
 
 应用终止之前，**挂起**状态是应用在生命周期内可以执行任务的最后机会。 当应用处于**挂起**状态时请求 **ExtendedExecutionReason.SavingData** 扩展执行会话会引发潜在问题，你应当引起注意。 如果在应用处于**挂起**状态时请求扩展执行会话，并且用户请求再次启动应用，可能要花很长时间启动。 这是因为必须完成扩展执行会话时段才能关闭应用的旧实例并启动应用的新实例。 牺牲启动性能时间以保证用户状态不丢失。
 
@@ -77,7 +74,7 @@ switch (result)
 
 调用 **RequestExtensionAsync** 会向操作系统核实来了解用户是否已批准应用的后台活动以及系统是否有可用资源来启用后台执行。
 
-你可以事先检查 [BackgroundExecutionManager](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 来确定 [BackgroundAccessStatus](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396)，后者是指示你的应用是否能在后台运行的用户设置。 若要了解这些用户设置的详细信息，请参阅[后台活动和能耗感知](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97)。
+你可以事先检查 [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 来确定 [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396)，后者是指示你的应用是否能在后台运行的用户设置。 若要了解这些用户设置的详细信息，请参阅[后台活动和能耗感知](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97)。
 
 **ExtendedExecutionReason** 指示了应用正在后台执行的操作。 **Description** 字符串是用户可读的字符串，可解释应用需要执行操作的原因。 **Revoked** 事件处理程序为必需项，以便在用户或系统决定应用不可以再在后台运行时正常终止扩展执行会话。
 
@@ -237,16 +234,16 @@ static class ExtendedExecutionHelper
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>确保应用正常使用资源
 
-当应用不再是前台应用时，调整应用内存和能耗使用情况是确保操作系统系统允许应用继续运行的关键。 使用[内存管理 API](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.aspx) 查看应用当前使用的内存量。 当另一个应用在前台运行时，你的应用占用的内存越多，操作系统就越难保持你的应用继续运行。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。
+当应用不再是前台应用时，调整应用内存和能耗使用情况是确保操作系统系统允许应用继续运行的关键。 使用[内存管理 API](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 查看应用当前使用的内存量。 当另一个应用在前台运行时，你的应用占用的内存越多，操作系统就越难保持你的应用继续运行。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。
 
-使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。
+使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。
 
 ## <a name="see-also"></a>另请参阅
 
 [扩展执行示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
-[应用程序生命周期](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/app-lifecycle)  
-[后台内存管理](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/reduce-memory-usage)  
-[后台传输](https://msdn.microsoft.com/en-us/windows/uwp/networking/background-transfers)  [电池感知和后台活动](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[MemoryManager 类](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.aspx)  
-[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)  
-
+[应用程序生命周期](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
+[后台内存管理](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
+[后台传输](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
+[电池感知和后台活动](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[MemoryManager 类](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
+[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

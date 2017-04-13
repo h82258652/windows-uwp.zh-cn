@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dbdc65fb842c6f8d6439f0041a33d991e27bd6b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 捕获基本的照片、视频和音频
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -140,5 +137,4 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 * [使用 MediaCapture 处理设备方向](handle-device-orientation-with-mediacapture.md)
 * [创建、编辑和保存位图图像](imaging.md)
 * [文件、文件夹和库](https://msdn.microsoft.com/windows/uwp/files/index)
-
 

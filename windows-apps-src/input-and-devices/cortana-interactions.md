@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b3adb444389716274f32d1f62af026b625624ea7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9442787d187bab77adc0b24d1f270d7ceffc9092
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="cortana-interactions-in-uwp-apps"></a>UWP 应用中的 Cortana 交互
 
 借助 Cortana 提供的可靠且完整的可扩展性框架，可以将你应用或服务中的功能迁移到 Cortana 体验中。
@@ -43,7 +40,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -12,16 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 74a24121c72144f43045ddf0992d475cecf63766
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interact-with-a-background-app-in-cortana"></a>在 Cortana 中与后台应用交互
 
-本主题已移至 https://msdn.microsoft.com/en-us/cortana/voicecommands/interact-with-a-background-app-in-cortana。
+本主题已移至 https&#58;//msdn.microsoft.com/zh-cn/cortana/voicecommands/interact-with-a-background-app-in-cortana。
 
 Github：https&#58;//github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/interact-with-a-background-app-in-cortana.md
-

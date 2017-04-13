@@ -2,21 +2,17 @@
 title: "照明的数学运算"
 description: "Direct3D 光模型涵盖环境、漫射、高光和放射照明。 它足够灵活，可解决广泛的照明情况。 场景中光的总量称作全局照明。"
 ms.assetid: D0521F56-050D-4EDF-9BD1-34748E94B873
-keywords:
-- "照明的数学运算"
+keywords: "照明的数学运算"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a7745e9a8c15398a3305d32e828e119832d8250c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd26d7253de1422f81ff4c0b9bf94d45cd02b2fc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mathematics-of-lighting"></a>照明的数学运算
 
 
@@ -30,7 +26,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 
 [环境光](ambient-lighting.md)是恒定照明。 环境光在所有方向都是恒定的，并且会无差别地为某个对象的所有像素上色。 这是一种快速计算，但会让对象看上去扁平且不逼真。
 
-[漫射照明](diffuse-lighting.md)取决于光的方向和物体表面的法线。 光方向和表面法线矢量的改变会导致漫射照明在物体表面上发生变化。 计算漫射照明需要更长的时间，因为它随每个对象顶点而变化，但使用它的好处在于它能够为对象着色并赋予它们三维 (3D) 深度。
+[漫射照明](diffuse-lighting.md)取决于光的方向和物体表面的法线。 光方向和表面法向矢量的改变会导致漫射照明在物体表面上发生变化。 计算漫射照明需要更长的时间，因为它随每个对象顶点而变化，但使用它的好处在于它能够为对象着色并赋予它们三维 (3D) 深度。
 
 [高光照明](specular-lighting.md)可标识光照射至物体表面且反射至相机时产生的明亮反射高光。 高光照明比漫射光更强，且可更快照射至物体表面。 虽然计算高光照明的时间长于漫射照明，但高光照明具有可将重要细节添加至物体表面的优势。
 
@@ -65,7 +61,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 </tr>
 <tr class="even">
 <td align="left"><p>[漫射照明](diffuse-lighting.md)</p></td>
-<td align="left"><p><em>漫射照明</em>取决于光的方向和物体表面的法线。 光方向和表面法线矢量的改变会导致漫射照明在物体表面上发生变化。 计算漫射照明需要更长的时间，因为它随每个对象顶点而变化，但使用它的好处在于它能够为对象着色并赋予它们三维 (3D) 深度。</p></td>
+<td align="left"><p><em>漫射照明</em>取决于光的方向和物体表面的法线。 光方向和表面法向矢量的改变会导致漫射照明在物体表面上发生变化。 计算漫射照明需要更长的时间，因为它随每个对象顶点而变化，但使用它的好处在于它能够为对象着色并赋予它们三维 (3D) 深度。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[高光照明](specular-lighting.md)</p></td>
@@ -96,7 +92,6 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
  
 
  
-
 
 
 

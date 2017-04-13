@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 34bac5b7332bcc258c76f15a6005f82f545eef4d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7bf47b166dfd05b906b37deded909d5a3b26ac6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP Live Streaming (HLS) 标记支持
 下表列出了 UWP 应用支持的 HLS 标记。
 
 > [!NOTE] 
 > 以“X-”开头的自定义标记可以作为定时元数据加以访问，如文章[媒体项、播放列表和曲目](media-playback-with-mediasource.md)中所述。
 
-|标记 |已引入 HLS 协议版本中|HLS 协议文档草案版本|客户端要求|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1606 |
+|标记 |已引入 HLS 协议版本中|HLS 协议文档草案版本|客户端要求|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本标记                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必填|支持|支持|支持|
@@ -90,7 +87,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

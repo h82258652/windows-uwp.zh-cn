@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dc0bad7d8625817cfffcc84f89afeed96a07a21f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef9d4c390112be66035ab2ace6b6b799ee9d99ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="out-of-band-pairing"></a>带外配对
 
-带外配对使应用无需发现即可连接到服务点外围设备。 应用必须使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空间并将特定格式的字符串（带外 blob）传递给外设所需的相应的 **FromIdAsync** 方法。 当执行 **FromIdAsync** 时，在该操作返回到调用方之前，主机设备要进行配对并连接到外设。
+带外配对允许应用不被发现即可连接到服务点外设。 应用必须使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空间并将特定格式的字符串（带外 blob）传递给外设所需的相应的 **FromIdAsync** 方法。 当执行 **FromIdAsync** 时，在该操作返回到调用方之前，主机设备要进行配对并连接到外设。
 
 ## <a name="out-of-band-blob-format"></a>带外 blob 格式
 
@@ -94,4 +92,3 @@ string oobBlobBTPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 ```
-

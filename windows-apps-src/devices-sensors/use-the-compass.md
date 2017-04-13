@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 07c6447a2f28c087c18e37e0036b43e7d7b312e5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 04634214aaa32a1beda05b5b127ccc2e0e141bad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-compass"></a>使用指南针
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -141,7 +139,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-### <a name="explanation"></a>说明
+### <a name="explanation"></a>描述
 
 前面的示例演示了，只需要写入极少的代码即可将指南针输入集成到你的应用。
 
@@ -181,4 +179,3 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  
 
  
-

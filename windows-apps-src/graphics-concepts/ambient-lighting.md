@@ -2,21 +2,17 @@
 title: "环境光"
 description: "环境光为场景提供恒定照明。"
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
-keywords:
-- "环境光"
+keywords: "环境光"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77865a483f226fba912c03e2f9abe17eaa7fbee0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c03e3a67af7da1326e254a687c77c9c0fd1d5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ambient-lighting"></a>环境光
 
 
@@ -91,7 +87,6 @@ Ambient.a = 0.0f;
  
 
  
-
 
 
 

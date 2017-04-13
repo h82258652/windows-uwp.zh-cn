@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取软件包外部测试版提交的状态。"
-title: "使用 Windows 应用商店提交 API 获取软件包外部测试版提交的状态"
+title: "获取软件包外部测试版提交的状态"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交, 状态"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5bc88cd8c7cdf2e56ac719d33cc2abf228b0803b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06367fd2110b66fc36babf137a12b482df4f7d40
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取软件包外部测试版提交的状态
+# <a name="get-the-status-of-a-package-flight-submission"></a>获取软件包外部测试版提交的状态
 
 
 
@@ -121,4 +118,3 @@ Authorization: Bearer <your access token>
 * [确认应用提交](commit-an-app-submission.md)
 * [更新应用提交](update-an-app-submission.md)
 * [删除应用提交](delete-an-app-submission.md)
-

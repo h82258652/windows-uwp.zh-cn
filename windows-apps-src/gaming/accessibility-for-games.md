@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 辅助功能, 游戏"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 74a3e3bf3b4f614a112bedd8a2777f8d641237a9
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
-辅助功能可以使地球上的每个人和每个组织实现更多目标，并且还适用于使游戏更易于使用。 本文面向游戏开发人员编写；尤其是游戏设计人员、生产商和管理人员。 它提供了从各种组织（在下方的参考部分中列出）派生的游戏辅助功能指南的概述，并介绍了创建更易于使用的游戏的非独占游戏设计原则。
+辅助功能可支持地球上的每个人和每个组织实现更多目标，并且这也适用于使游戏更具辅助性。 本文面向游戏开发人员编写；尤其是游戏设计人员、生产商和管理人员。 它提供了从各种组织（在下方的参考部分中列出）派生的游戏辅助功能指南的概述，并介绍了创建更易于使用的游戏的非独占游戏设计原则。
 
 ##  <a name="why-make-games-accessible"></a>为什么使游戏成为辅助游戏？
 
@@ -64,8 +62,8 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="vision"></a>视觉
 
-*   医学的、长期的状况，如青光眼、白内障、色盲、近视和糖尿病视网膜病
-*   短期的、情境式的状况，如监视器或屏幕尺寸较小、屏幕分辨率低，或者由监视器上的明亮光源产生的屏幕炫光
+*    医学的、长期的状况，如青光眼、白内障、色盲、近视和糖尿病视网膜病
+*    短期的、情境式的状况，如监视器或屏幕尺寸较小、屏幕分辨率低，或者由监视器上的明亮光源产生的屏幕炫光
         
 ### <a name="hearing"></a>听觉
 
@@ -154,21 +152,21 @@ ms.lasthandoff: 02/07/2017
 
 下面是在设计隐藏式字幕和字幕时需要考虑的一些基本指南：
 
-*   选择简单易读的字体。
-*   选择足够大的字体大小，或者考虑使用可调整的字体大小选项来增加灵活性。 （理想的字体大小取决于屏幕大小、离屏幕的观看的距离等。）
-*   在背景和字体颜色之间创造高对比度。 （有关详细信息，请参阅[关于对比度比率的信息](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
+*    选择简单易读的字体。
+*    选择足够大的字体大小，或者考虑使用可调整的字体大小选项来增加灵活性。 （理想的字体大小取决于屏幕大小、离屏幕的观看的距离等。）
+*    在背景和字体颜色之间创造高对比度。 （有关详细信息，请参阅[关于对比度比率的信息](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
 * 在屏幕上显示较短的句子。 （记得不要在事件发生前就显示文字，从而泄露游戏情节。）
-*   区分制造声音的物体或说话的人。 （示例：“Daniel：嗨！”）
-*   提供打开和关闭隐藏式和字幕的选项。 （其他功能：基于重要性选择显示多少声音信息的功能。）
+*    区分制造声音的物体或说话的人。 （示例：“Daniel：嗨！”）
+*    提供打开和关闭隐藏式和字幕的选项。 （其他功能：基于重要性选择显示多少声音信息的功能。）
 
 ### <a name="sound-feedback"></a>声音反馈
 
 声音可以向玩家提供视觉反馈之外的反馈。 出色的游戏音频设计可以使具有视觉障碍的玩家更容易使用。 下面是要考虑的某些指南：
 
-*   使用 3D 音频提示来提供额外的空间信息。
+*    使用 3D 音频提示来提供额外的空间信息。
 * 将音乐、语音和音效音量控件分离。
-*   设计为玩家提供有意义信息的语音。 （示例：“敌人正在靠近我们”与“敌人正在从后门进入”。）
-*   确保以合理的速率说出语音，并提供语速控件以提高辅助性。
+*    设计为玩家提供有意义信息的语音。 （示例：“敌人正在靠近我们”与“敌人正在从后门进入”。）
+*    确保以合理的速率说出语音，并提供语速控件以提高辅助性。
 
 ### <a name="fully-mappable-controls"></a>完全可映射控制
 
@@ -192,9 +190,9 @@ ms.lasthandoff: 02/07/2017
 
 作为开发人员，下面是一些设计游戏的提示，用于包含具有光敏性癫痫倾向的玩家：
 
-*   避免使用频率为每秒 5 到 30 次闪光（赫兹）的闪光灯，因为该范围内的闪光灯最有可能触发病情发作。
-*   使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/)。） 
-*   在游戏关卡之间设计中断，鼓励玩家休息，避免不间断地玩。
+*    避免使用频率为每秒 5 到 30 次闪光（赫兹）的闪光灯，因为该范围内的闪光灯最有可能触发病情发作。
+*    使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/)。） 
+*    在游戏关卡之间设计中断，鼓励玩家休息，避免不间断地玩。
 
 ## <a name="other-accessibility-resources"></a>其他辅助功能资源
 
@@ -221,4 +219,3 @@ ms.lasthandoff: 02/07/2017
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发辅助 UWP 应用](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
 * [针对辅助功能设计软件电子书](https://www.microsoft.com/download/details.aspx?id=19262)
-

@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 541f7e8c45190cfd597869ad1040801d368b77e8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 50c18f0ef72ad990971323921eae282c76c70be3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
@@ -170,4 +168,3 @@ InkToolbar 由两组不同的按钮类型组成：
 - [UWP 应用中的笔和触笔交互](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
 - [识别笔划墨迹](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
 - [存储和检索笔划墨迹](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
-

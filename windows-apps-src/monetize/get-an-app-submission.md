@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有应用提交的数据。"
-title: "使用 Windows 应用商店提交 API 获取应用提交"
+title: "获取应用提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 1763ba9ebf95c37afbbb219244010f0d6e7cfee4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2ecdb66818c020dc3bc608fbd65a97d43b8688ab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取应用提交
+# <a name="get-an-app-submission"></a>获取应用提交
 
 
 在 Windows 应用商店提交 API 中使用此方法，可获取现有应用提交的数据。 有关通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
@@ -85,7 +82,7 @@ Authorization: Bearer <your access token>
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -94,13 +91,17 @@ Authorization: Bearer <your access token>
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -111,9 +112,13 @@ Authorization: Bearer <your access token>
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -157,7 +162,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -197,4 +202,3 @@ Authorization: Bearer <your access token>
 * [更新应用提交](update-an-app-submission.md)
 * [删除应用提交](delete-an-app-submission.md)
 * [获取应用提交的状态](get-status-for-an-app-submission.md)
-

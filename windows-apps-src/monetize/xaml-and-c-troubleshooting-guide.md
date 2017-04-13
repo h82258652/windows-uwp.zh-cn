@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0d5ba07f3a77f360dcb45c7139a7301cdb623dbb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c48b265ded1ef5030a1e038806751f0f3379679b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 疑难解答指南
 
 本主题包含 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 <span id="xaml-notappearing"/>
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择 **Internet（客户端）**功能。
+1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”****功能。
 
 2.  检查应用程序 ID 和广告单元 ID。 这些 ID 必须匹配在 Windows 开发人员中心中获取的应用程序 ID 和广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md)。
 
@@ -173,7 +170,7 @@ ms.lasthandoff: 02/07/2017
 <span id="csharp-adcontrolnotappearing"/>
 ### <a name="adcontrol-not-appearing"></a>AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中选择**Internet (客户端)**功能。
+1.  确保在 Package.appxmanifest 中选择“Internet (客户端)”****功能。
 
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化，它将不可用。
 
@@ -277,4 +274,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

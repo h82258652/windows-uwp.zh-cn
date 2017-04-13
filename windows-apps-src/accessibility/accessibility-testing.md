@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "为确保通用 Windows 平台 (UWP) 应用成为辅助应用而应遵循的测试过程。"
+Description: "为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。"
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: "辅助功能测试"
 label: Accessibility testing
@@ -11,16 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bf56b564b383ee90e276416bf1dda29f55bb771c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-testing"></a>辅助功能测试  
 
-为确保通用 Windows 平台 (UWP) 应用成为辅助应用而应遵循的测试过程。
+为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
@@ -149,4 +146,3 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [要避免的做法](practices-to-avoid.md)
 * [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
 * [Windows 中的辅助功能](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
-

@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 调试, 测试, 性能"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a7ce6c003c24a1efd03cc48419438b59e4f2ec11
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6f399136be121288dcff4b482f9e022fc0323181
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
-# <a name="deploying-and-debugging-universal-windows-platform-uwp-apps"></a>部署和调试通用 Windows 平台 (UWP) 应用
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文指导你完成针对各种部署和调试目标的步骤。
 
@@ -95,7 +92,7 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 
 若要将它更改为“无身份验证”****，请在“远程调试器”****中依次转到“工具”**** -&gt;“选项”****，然后将它设置为“无身份验证”****。 在设置远程调试器后，你还必须确保已将主机设备设置为[开发人员模式](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。 在这之后，你可以从部署计算机进行部署。
 
-有关详细信息，请参阅[Visual Studio 远程工具](http://go.microsoft.com/fwlink/p/?LinkId=717039)下载页。
+有关详细信息，请参阅 [Visual Studio 下载中心](https://www.visualstudio.com/downloads/) 页面。
 
 ## <a name="authentication-modes"></a>身份验证模式
 
@@ -229,4 +226,3 @@ WinDbg 中最常用的命令之一是 `!analyze -v`，该命令用于检索大�
 ## <a name="related-topics"></a>相关主题
 - [进程周期管理 (PLM) 的测试和调试工具](testing-debugging-plm.md)
 - [调试、测试和性能](index.md)
-

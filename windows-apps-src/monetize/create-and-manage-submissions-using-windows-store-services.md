@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 应用商店提交 API，以编程方式创建和管理已注册到 Windows 开发人员中心帐户的应用的提交。"
-title: "使用 Windows 应用商店服务创建和管理提交"
+title: "创建和管理提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ca8bb623d06da0001b1b0751a5ac1ccc310bbd84
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-# <a name="create-and-manage-submissions-using-windows-store-services"></a>使用 Windows 应用商店服务创建和管理提交
+# <a name="create-and-manage-submissions"></a>创建和管理提交
 
 
 使用 *Windows 应用商店提交 API*，针对你的或组织的 Windows 开发人员中心帐户的应用、加载项（也称为应用内产品或 IAP）和软件包外部测试版，以编程方式查询和创建提交。 如果你的帐户管理多个应用或加载项，并且想要自动执行并优化这些资源的提交过程，此 API 非常有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
@@ -24,7 +21,7 @@ ms.lasthandoff: 02/07/2017
 以下步骤介绍了使用 Windows 应用商店提交 API 的端到端过程：
 
 1.  确保已完成所有[先决条件](#prerequisites)。
-3.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成新令牌。
+3.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成一个。
 4.  [调用 Windows 应用商店提交 API](#call-the-windows-store-submission-api)。
 
 
@@ -143,5 +140,3 @@ grant_type=client_credentials
 * [管理加载项提交](manage-add-on-submissions.md)
 * [管理软件包外部测试版](manage-flights.md)
 * [管理软件包外部测试版提交](manage-flight-submissions.md)
- 
-

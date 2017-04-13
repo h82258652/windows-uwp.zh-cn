@@ -11,32 +11,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5f15129c424c92ac537116458c8433f6c96fa87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
+ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
+translationtype: HT
 ---
 # <a name="nav-panes"></a>导航窗格
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 导航窗格（或简称“导航”窗格）是一种可容纳许多顶级导航项目，同时又节省屏幕空间的导航模式。 导航窗格广泛用于移动应用，但在较大的屏幕上也效果良好。 在用作覆盖层时，该窗格保持折叠状态并且不遮挡内容，直到用户按下按钮（这对于较小的屏幕很方便）。 当在停靠模式下使用窗格时，它保持打开状态，这在有足够屏幕空间的情况下可提高效用。
 
 ![导航窗格示例](images/navHero.png)
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**SplitView 类**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-</ul>
-</div>
 
+**重要的 API**
+
+* [**SplitView 类**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>这是正确的模式吗？
 
@@ -54,9 +42,6 @@ ms.lasthandoff: 02/07/2017
 
 若要试用实现此模式的代码，请从 GitHub 下载 [XAML 导航解决方案](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation)。
 
-<div class="microsoft-internal-note">
-导航窗格和汉堡的红线在 [UNI](http://uni/DesignDepot.FrontEnd/#/Search?c=t&t=Windows%2BRS1%2BControls&f=NavPane_Hamburger) 上可用。
-</div>
 
 ### <a name="pane"></a>窗格
 
@@ -132,4 +117,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

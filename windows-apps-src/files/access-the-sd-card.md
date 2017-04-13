@@ -4,30 +4,26 @@ ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "访问 SD 卡"
 description: "你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fc8bbaa0b665b640974b5342b2b60c9b7f90143
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows 10, uwp, sd 卡, 存储"
+ms.openlocfilehash: 89dfed0cbd8a4a87f432a747e4155cdef3bbc757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="access-the-sd-card"></a>访问 SD 卡
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。
+你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制并且具有 SD 卡插槽的低成本移动设备。
 
 大多数情况下，你必须在应用清单文件中指定 **removableStorage** 功能，然后你的应用才能在 SD 卡上存储和访问文件。 通常，你还需要注册才能处理你的应用存储和访问的文件类型。
 
 你可以通过使用以下方法在可选 SD 卡上存储和访问文件。
-
 - 文件选取器。
-
 - [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 卡上的可访问内容和不可访问内容
@@ -35,15 +31,12 @@ ms.lasthandoff: 02/07/2017
 ### <a name="what-you-can-access"></a>你可以访问的内容
 
 - 你的应用仅可以读取和写入以下类型的文件，该文件类型是应用已注册可在应用部件清单文件中处理的类型。
-
 - 你的应用还可以创建和管理文件夹。
 
 ### <a name="what-you-cant-access"></a>你无法访问的内容
 
 - 你的应用无法查看或访问系统文件夹及其包含的文件。
-
 - 你的应用无法查看使用“隐藏”属性标记的文件。 “隐藏”属性通常用于减少意外删除数据的风险。
-
 - 你的应用无法通过使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 查看或访问文档库。 但是，你可以通过遍历文件系统在 SD 卡上访问文档库。
 
 ## <a name="security-and-privacy-considerations"></a>安全和隐私注意事项
@@ -51,7 +44,6 @@ ms.lasthandoff: 02/07/2017
 当应用将文件保存在 SD 卡上的全局位置中时，这些文件不会加密，因此通常可供其他应用访问。
 
 - 当 SD 卡位于该设备中时，已注册可处理相同文件类型的其他应用可以访问你的文件。
-
 - 当从该设备删除并从电脑中打开 SD 卡时，你的文件将在“文件资源管理器”中可见，并可供其他应用访问。
 
 但是，当安装在 SD 卡上的应用将文件保存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中时，这些文件将会加密，且不可供其他应用访问。
@@ -78,23 +70,24 @@ ms.lasthandoff: 02/07/2017
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
-
-            if (sdCard != null)
-            {
-                // An SD card is present and the sdCard variable now contains a reference to it.
-            }
-            else
-            {
-                // No SD card is present.
-            }
+if (sdCard != null)
+{
+    // An SD card is present and the sdCard variable now contains a reference to it.
+}
+else
+{
+    // No SD card is present.
+}
 ```
+
+> [!NOTE]
+> 如果你的 SD 卡读卡器是嵌入式读卡器（例如，电脑或笔记本电脑本身中的插槽），则可能无法通过 KnownFolders.RemovableDevices 访问它。
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>查询 SD 卡的内容
 
@@ -107,7 +100,6 @@ SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**K
 当你使用派生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路径访问 SD 卡上的文件系统时，下列方法的行为方式如下。
 
 -   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法将返回你要通过注册来处理的文件扩展名和与你指定的任何媒体库功能相关联的文件扩展名的联合。
-
 -   如果你尚未注册即处理正尝试访问的文件的文件扩展名，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法会失败。
 
 ## <a name="identifying-the-individual-sd-card"></a>标识单个 SD 卡
@@ -121,35 +113,32 @@ SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**K
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
+if (sdCard != null)
+{
+    var allProperties = sdCard.Properties;
+    IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
 
-            if (sdCard != null)
-            {
-                var allProperties = sdCard.Properties;
-                IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
+    var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
 
-                var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
+    string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
 
-                string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
-
-                if (...) // If cardID matches the cached ID of a recognized card.
-                {
-                    // Card is recognized. Index contents opportunistically.
-                }
-                else
-                {
-                    // Card is not recognized. Index contents immediately.
-                }
-            }
+    if (...) // If cardID matches the cached ID of a recognized card.
+    {
+        // Card is recognized. Index contents opportunistically.
+    }
+    else
+    {
+        // Card is not recognized. Index contents immediately.
+    }
+}
 ```
 
  
 
  
-

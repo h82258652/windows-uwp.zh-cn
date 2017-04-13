@@ -3,17 +3,16 @@ author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: "适用于 HoloLens 的 Device Portal"
 description: "了解适用于 HoloLens 的 Windows Device Portal 是如何支持你远程配置和管理你的 HoloLens 设备。"
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# 适用于 HoloLens 的 Device Portal
+# <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 
 
-## 在 HoloLens 上设置 Device Portal
+## <a name="set-up-device-portal-on-hololens"></a>在 HoloLens 上设置 Device Portal
 
-### 启用 Device Portal
+### <a name="enable-device-portal"></a>启用 Device Portal
 
 **启用 Device Portal**
 
@@ -26,9 +25,9 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 7. [向下滚动](https://dev.windows.com/holographic/Gestures.html#Navigation)，然后启用 Device Portal。
 
 
-### 配对设备
+### <a name="pair-your-device"></a>配对设备
 
-### 通过 WLAN 连接 
+### <a name="connect-over-wi-fi"></a>通过 WLAN 连接 
 
 1. 将 HoloLens 连接到 WLAN。
 2. 查看设备的 IP 地址，可在设备的“设置”&gt;“网络和 Internet”&gt;“WLAN”&gt;“高级选项”下找到 IP 地址。
@@ -37,18 +36,18 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 3. 通过电脑上的 Web 浏览器，转到 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - 该浏览器会显示以下消息：“此网站的安全证书存在问题”。 由于颁发给 Device Portal 的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
 
-### 通过 USB 连接 
+### <a name="connect-over-usb"></a>通过 USB 连接 
 
 1. 安装工具，以确保 Windows 10 开发人员工具随附的 Visual Studio Update 1 已安装在电脑上。 这支持 USB 连接。
 2. 使用微型 USB 电缆将 HoloLens 连接到电脑。
 3. 通过电脑上的 Web 浏览器，转到 `http://127.0.0.1:10080`。
 
-### 连接到仿真器 
+### <a name="connect-to-an-emulator"></a>连接到仿真器 
 
 也可以将 Device Portal 与仿真器结合使用。 若要连接到 Device Portal，请使用工具栏。 单击此图标：
 - 打开 Device Portal：在仿真器中打开适用于 HoloLens 操作系统的 Windows Device Portal。
 
-### 创建用户名和密码 
+### <a name="create-a-username-and-password"></a>创建用户名和密码 
 
 首次连接到 HoloLens 上的 Device Portal 时，需要创建用户名和密码。
 1. 在电脑上的 Web 浏览器中，输入 HoloLens 的 IP 地址。 将打开“设置访问”页面。
@@ -60,7 +59,7 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 
 如果你希望能随时更改此用户名和密码，可通过以下方式访问设备的安全页面来重复此过程：单击右上角的“安全”链接或导航到 `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
 
-### 安全证书 
+### <a name="security-certificate"></a>安全证书 
 
 如果你在浏览器中看到“证书错误”，可以通过创建与该设备的信任关系来修复该错误。
 
@@ -77,9 +76,9 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 4. 重新启动浏览器。
 
 
-## Device Portal 页面 
+## <a name="device-portal-pages"></a>Device Portal 页面 
 
-### 主页 
+### <a name="home"></a>主页 
 
 Device Portal 会话从主页开始。 可从主页的左侧导航栏访问其他页面。
 
@@ -100,7 +99,7 @@ Device Portal 会话从主页开始。 可从主页的左侧导航栏访问其�
     - **设备名称**：为 HoloLens 分配一个名称。 更改此值后，必须重新启动设备才能使该值生效。 单击“保存”后，对话框将询问是要立即重新启动设备还是稍后重新启动它。
     - **睡眠设置**：当设备已接通电源并使用电池时，设置该设备进入睡眠状态之前要等待的时长。
 
-### 3D 视图 
+### <a name="3d-view"></a>3D 视图 
 
 使用“3D 视图”页面可查看 HoloLens 感知周围环境的方式。 使用鼠标即可导览该视图：
 - **旋转**：左键单击 + 鼠标；
@@ -117,7 +116,7 @@ Device Portal 会话从主页开始。 可从主页的左侧导航栏访问其�
 
 - 图面重构：单击或点击“更新”可显示设备的最新空间映射网格。 完成全面检查可能需要一些时间，最多只需几秒钟。 在 3D 视图中，网格不会自动更新，必须手动单击“更新”才能获取设备的最新网格。 单击“保存”可在电脑上将当前的空间映射网格保存为 obj 文件。
 
-### 混合现实捕获 
+### <a name="mixed-reality-capture"></a>混合现实捕获 
 
 使用“混合现实捕获”页面可保存 HoloLens 中的媒体流。
 - 设置：通过选中以下设置可控制已捕获的媒体流。- 全息图：捕获视频流中的全息内容。 呈现全息图时使用的是单声道，而不是立体声。
@@ -133,7 +132,7 @@ Device Portal 会话从主页开始。 可从主页的左侧导航栏访问其�
 
 请注意，当你正从 Device Portal 中录制或流处理实时预览时，HoloLens 应用将无法捕获 MRC 照片或视频。
 
-### 系统性能 
+### <a name="system-performance"></a>系统性能 
 
 HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。 
 
@@ -142,11 +141,11 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 - **系统电源**：瞬时系统电源使用率，平均超过一分钟
 - **帧速率**：每秒帧数、每秒丢失的垂直消隐数和连续丢失的垂直消隐数
 
-### 应用故障转储页面 
+### <a name="app-crash-dumps-page"></a>应用故障转储页面 
 
 此页面允许你收集旁加载应用的故障转储。 对于要收集其故障转储的每个应用，请选中对应的“故障转储启用”复选框。 返回到此页面可收集故障转储。 可在 Visual Studio 中打开转储文件以供调试。
 
-### 展台模式 
+### <a name="kiosk-mode"></a>展台模式 
 
 展台模式的启用会限制用户启动新应用或更改正在运行的应用。 启用展台模式后，“绽放”手势和 Cortana 处于禁用状态，并且已放置的应用不会显示在用户周围环境中。
 
@@ -154,7 +153,7 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 
 请注意，即使展台模式未启用，该应用也会在启动时运行。 选择“无”可使在启动时不运行任何应用。
 
-### 模拟 
+### <a name="simulation"></a>模拟 
 
 允许你记录和播放用于测试的输入数据。
 - **捕获房间**：用于下载模拟房间文件，该文件包含用于用户周围环境的空间映射网格。 命名该房间，然后单击“捕获”以在电脑上将该数据保存为 .xef 文件。 此房间文件可以加载到 HoloLens 仿真器中。
@@ -163,14 +162,8 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 - **控制模式**：在 HoloLens 上，从下拉列表中选择“默认”或“模拟”，然后单击或点击“设置”按钮以选中该模式。 相反，选择“模拟”会禁用 HoloLens 上的真实传感器，并使用已上载的模拟数据。 如果切换到“模拟”，HoloLens 将不会响应真实用户，除非切换回“默认”。
 
 
-### 虚拟输入 
+### <a name="virtual-input"></a>虚拟输入 
 
 将键盘输入从远程计算机发送到 HoloLens。
 
 单击或点击虚拟键盘下的区域，即可将键击发送到 HoloLens。 在“输入文本”文本框中键入，然后单击或点击“发送”以将键击发送到活动应用。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

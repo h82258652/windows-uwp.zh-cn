@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93dde6fe68275987c16562370ba277072e5467a9
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e576150cd06000405fa4754e147fbc1546cdf703
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="get-the-universal-windows-platform-uwp-samples-from-github"></a>从 GitHub 获取通用 Windows 平台 (UWP) 示例
 UWP 应用示例通过 GitHub 上的存储库提供。 如果这是你首次使用 UWP，你将希望从 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") 存储库开始，其中包含演示了所有 UWP 功能及其 API 使用模式的示例。  
 ![GitHub UWP 示例存储库](images/GitHubUWPSamplesPage.png) 可使用开发人员中心的[示例](https://developer.microsoft.com/windows/samples "Dev Center samples")部分找到其他示例。  
@@ -54,4 +51,3 @@ zip 文件始终具有最新示例。 无需 GitHub 帐户即可下载它。 当
 如果你有难题或问题，只需使用存储库上的“问题”选项卡创建新问题，我们将尽可能提供帮助。
 
 ![反馈图像](images/GitHubUWPSamplesFeedback.png)
-

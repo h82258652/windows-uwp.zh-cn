@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3e609ccaae3806a47b458a3e313c275278985d95
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3d2edd2e26633abacce07a2a6fe9f8c9d14b0afe
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="send-an-sms-message"></a>发送短信
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -63,4 +60,3 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 ## <a name="related-topics"></a>相关主题
 
 * [选择联系人](selecting-contacts.md)
-

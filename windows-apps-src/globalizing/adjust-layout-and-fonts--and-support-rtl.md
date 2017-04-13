@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-Description: "开发你的应用以支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。"
+Description: "开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。"
 title: "调整布局和字体并支持 RTL"
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
@@ -11,17 +11,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b7d34aaf891497af80ed8c94609e6a8fbbd3bec
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9c700928d2ec0da21b518528289034296637eeff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>调整布局和字体并支持 RTL
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-开发你的应用以支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
+开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
 
 ## <a name="layout-guidelines"></a>布局指南
 
@@ -103,11 +100,11 @@ C++：
 ### <a name="rtl-faq"></a>RTL 常见问题 
 
 <dl>
-  <dt> <p><b>问：</b><b>FlowDirection</b> 会根据当前语言选择自动设置吗？ 例如，如果我选择英语，它会从左往右显示，而在选择阿拉伯语时，它又会从右往左显示吗？</p></dt>
+  <dt> <p><b>问：</b> <b>FlowDirection</b> 会根据当前语言选择自动设置吗？ 例如，如果我选择英语，它会从左往右显示，而在选择阿拉伯语时，它又会从右往左显示吗？</p></dt>
 
   <dd><p><b>答：</b> <b>FlowDirection</b> 不会考虑语言种类。 你要为当前显示的语言的选择相应的 <b>FlowDirection</b>。 查看上述示例代码。</p></dd> 
 
-  <dt> <p><b>问：</b>我不太熟悉本地化。 资源是否已经包含流动方向？ 能否根据当前语言确定流动方向？</p></dt>
+  <dt> <p><b>问：</b> 我不太熟悉本地化。 资源是否已经包含流动方向？ 能否根据当前语言确定流动方向？</p></dt>
 
   <dd> <p><b>答：</b>如果你在使用当前的最佳做法，资源不会直接包含流动方向。 必须确定当前语言的流动方向。 有两种方式可执行此操作： </p>
    <p>首选方法是将 LayoutDirection 用于首选语言以设置 RootFrame 的 FlowDirection 属性。 RootFrame 中的所有控件均继承自 RootFrame 的 FlowDirection。</p>
@@ -117,4 +114,3 @@ C++：
 
 ## <a name="related-topics"></a>相关主题
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
-

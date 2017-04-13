@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 广告网络, 应用元数据"
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8ee555d335007a09c61247a929705aa2fff2469d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d377fe7e1eb71132ffa21dd1b11dddf9ca9bb084
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-metadata-api-for-advertising-networks"></a>广告网络的应用元数据 API
 
 网络广告可以使用*应用元数据 API* 以编程方式检索 Windows 应用商店中的应用的相关元数据，其中包括详细信息（如描述和应用的应用商店一览的类别）以及该应用是否面向 13 岁以下的儿童。 对此 API 的访问当前仅限于 Microsoft 授予该 API 访问权限的开发人员。
@@ -77,7 +74,7 @@ ms.lasthandoff: 02/08/2017
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------|
-| app_id | 字符串 | 必需。 要检索元数据的应用的 ID。 这可以是以下值之一：<br/><br/><ul><li>应用的应用商店 ID。 应用商店 ID 的一个示例是  9NBLGGH29DM8。</li><li>最初面向 Windows 8.x 或 Windows Phone 8.x 生成的应用的产品 ID（有时也称为*应用 ID*）。 GUID 的产品 ID。</li></ul> |
+| app_id | 字符串 | 必需。 要检索元数据的应用的 ID。 这可以是以下值之一：<br/><br/><ul><li>应用的应用商店 ID。 应用商店 ID 的一个示例是 9NBLGGH29DM8。</li><li>最初面向 Windows8.x 或 Windows Phone 8.x 生成的应用的产品 ID（有时也称为*应用 ID*）。 GUID 的产品 ID。</li></ul> |
 
 <span/>
 
@@ -115,11 +112,11 @@ Ocp-Apim-Subscription-Key: <subscription key>
 
 | 值      | 类型   | 描述    |
 |------------|--------|--------------------|
-| storeId           | 字符串  | 应用的应用商店 ID。 应用商店 ID 的一个示例是  9NBLGGH29DM8。     |  
+| storeId           | 字符串  | 应用的应用商店 ID。 应用商店 ID 的一个示例是 9NBLGGH29DM8。     |  
 | name           | 字符串  | 应用名称。   |
 | description           | 字符串  | 应用的应用商店一览中的描述。  |
 | phoneStoreGuid           | 字符串  | 应用的产品 ID (Windows Phone 8.x)。 这是一个 GUID。  |
-| windowsStoreGuid           | 字符串  | 应用的产品 ID (Windows 8.x)。 这是一个 GUID。 |
+| windowsStoreGuid           | 字符串  | 应用的产品 ID (Windows8.x)。 这是一个 GUID。 |
 | storeCategory           | 字符串  | 应用在应用商店中的类别。 有关受支持的值，请参阅适用于应用商店中的应用的[类别和子类别表](../publish/category-and-subcategory-table.md)。  |
 | iabCategory           | 字符串  | 由美国互动广告局 (IAB) 定义的应用的内容类别。 例如，**新闻**或**体育**。 有关内容类别的列表，请参阅 IAB 网站上的 [IAB 技术实验室内容分类](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy)页面。   |
 | iabCategoryId           | 字符串  | 应用的内容类别的 ID。 例如，**IAB12** 为新闻类别的 ID，**IAB17** 为体育类别的 ID。 有关内容类别 ID 的列表，请参阅 [OpenRTB API 规范](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)中的 5.1 节。 |
@@ -135,4 +132,3 @@ Ocp-Apim-Subscription-Key: <subscription key>
  
 
  
-

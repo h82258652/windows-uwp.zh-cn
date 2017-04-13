@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f1941a73937db19394e590026a16a023d025bba2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -382,7 +380,7 @@ End Class
 如果你将文本控件绑定到某个值（不是字符串），则数据绑定引擎会将该值转换为字符串。 如果该值是引用类型，数据绑定引擎将通过调用 [**ICustomPropertyProvider.GetStringRepresentation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.icustompropertyprovider.getstringrepresentation) 或 [**IStringable.ToString**](https://msdn.microsoft.com/library/Dn302136)（如果提供）来检索字符串值，否则将调用 [**Object.ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)。 但是请注意，绑定引擎将忽略隐藏基类实现的任何 **ToString** 实现。 子类实现应替代基类 **ToString** 方法。 同样，在本机语言中，也会显示所有托管对象以实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) 和 [**IStringable**](https://msdn.microsoft.com/library/Dn302135)。 但是，对 **GetStringRepresentation** 和 **IStringable.ToString** 的所有调用都路由到 **Object.ToString** 或该方法的替代，从不路由到隐藏基类实现的新 **ToString** 实现。
 
 > [!NOTE]
-> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="function-binding-in-xbind"></a>{x:Bind} 中的函数绑定
 
@@ -667,6 +665,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | 源 | 不支持 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x:Bind}，则改用某一属性或静态路径。 | 
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | 不支持 | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} 可在所有情况下（除 TextBox.Text 等待失去的焦点之外）使用 PropertyChanged 行为更新绑定源。 | 
-
 
 

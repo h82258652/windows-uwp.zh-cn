@@ -4,24 +4,25 @@ ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "准备工作"
 description: "准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96b6b477efd42b46b8aaf553de2482e1946c9cd7
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows 10，uwp"
+ms.openlocfilehash: 202480cd8e9107e18c7fa8c84a17089177f91dcb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="get-set-up"></a>准备工作
+
+![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
+
 
 准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
 
 ## <a name="1-get-windows-10"></a>1. 获取 Windows 10
 
-若要开发 UWP 应用，你需要最新版本的 Windows。
+若要开发 UMP 应用，你需要最新版本的 Windows。
 
 -   [联机获取 Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=619312)
 
@@ -33,17 +34,22 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="2-download-or-update-visual-studio"></a>2. 下载或更新 Visual Studio
 
-Microsoft Visual Studio 2015 可帮助你设计、编码、测试和调试应用。
+Microsoft Visual Studio 2017 可帮助你设计、编码、测试和调试应用。
 
-如果你尚未获得 Visual Studio 2015，请单击此链接安装免费的 Microsoft Visual Studio Community 2015。 此下载包含用于测试应用的设备和手机模拟器：
+如果你尚未获得 Visual Studio 2017，则可以安装免费的 Microsoft Visual Studio Community 2017。 此下载包含用于测试应用的设备模拟器：
 
 -   [下载 Windows 10 开发人员工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
-在安装 Visual Studio 时，使用自定义选项，并确保所有通用 Windows 应用开发工具选项均处于选中状态，如下所示。
+在安装 Visual Studio 时，请确保选择通用 Windows 应用开发工具选项，如下所示：
 
-![适用于 UWP 的 Visual Studio 工具](images/vs-2015-community-setup.png)
+![适用于 UWP 的 Visual Studio 工具](images/vs-2017-community-setup.png)
 
 需要 Visual Studio 方面的帮助吗？ 请参阅 [Visual Studio 入门](https://www.visualstudio.com/vs/getting-started)。
+
+如果你已开始使用 Visual Studio，但发现缺少部分组件，则可以通过*新建项目*对话框再次启动安装程序：
+
+   ![如何重复安装流程](images/win10-cs-install.png)
+
 
 ## <a name="3-enable-your-device-for-development"></a>3. 启用设备进行开发
 
@@ -68,3 +74,11 @@ Microsoft Visual Studio 2015 可帮助你设计、编码、测试和调试应用
 有关工具和下载的完整列表，请参阅[下载](http://go.microsoft.com/fwlink/p/?linkid=285935)。
 
 
+## <a name="see-also"></a>另请参阅
+
+* [你的第一个应用](your-first-app.md)
+* [发布你的 Windows 应用商店应用](https://developer.microsoft.com/store/publish-apps)。
+* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
+* [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
+* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [注册 Windows 帐户](sign-up.md)

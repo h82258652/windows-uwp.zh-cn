@@ -2,21 +2,17 @@
 title: "纹理混合"
 description: "Direct3D 可以在单程内最多将八个纹理融合到基元。"
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
-keywords:
-- "纹理混合"
+keywords: "纹理混合"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 363adc6537fe2c8421f938dbeee7735c9d336771
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1fed6a38121402e1aa0273b9186a9eab80fdf4ea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-blending"></a>纹理混合
 
 
@@ -83,7 +79,6 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
  
 
  
-
 
 
 

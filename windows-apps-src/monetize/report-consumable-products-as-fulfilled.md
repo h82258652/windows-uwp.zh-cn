@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店收集 API, 完成, 可消费"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="report-consumable-products-as-fulfilled"></a>将可消费产品报告为已完成
 
 使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。
@@ -62,7 +59,7 @@ ms.lasthandoff: 02/07/2017
 | 参数     | 类型         | 说明         | 必需 |
 |---------------|--------------|---------------------|----------|
 | 受益人   | UserIdentity | 正在使用此项目的用户。 有关详细信息，请参阅下表。        | 是      |
-| itemId        | string       | [查询产品](query-for-products.md)返回的 *itemId* 值。 将此参数与 *trackingId* 一起使用      | 否       |
+| ItemID        | string       | [查询产品](query-for-products.md)返回的 *itemId* 值。 将此参数与 *trackingId* 一起使用      | 否       |
 | trackingId    | guid         | 由开发人员提供的唯一跟踪 ID。 将此参数与 *itemId* 一起使用。         | 否       |
 | productId     | string       | [查询产品](query-for-products.md)返回的 *productId* 值。 将此参数与 *transactionId* 一起使用   | 否       |
 | transactionId | guid         | 从以下源之一获取的事务 ID 值。 将此参数与 *productId* 一起使用。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 类的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 属性。</li><li>由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 返回的应用或产品收据。</li><li>[查询产品](query-for-products.md)返回的 *transactionId* 参数。</li></ul>   | 否       |
@@ -76,7 +73,7 @@ UserIdentity 对象包含以下参数。
 |----------------------|--------|-------------------|----------|
 | IdentityType         | 字符串 | 指定字符串值 **b2b**。    | 是      |
 | identityValue        | string | 表示你要为其将可消费产品报告为已完成的用户身份的 [Windows 应用商店 ID 密钥](view-and-grant-products-from-a-service.md#step-4)。      | 是      |
-| localTicketReference | string | 已返回响应的请求标识符。 建议你使用与 Windows 应用商店 ID 密钥中的 *userId* [claim](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) 相同的值。 | 是      |
+| localTicketReference | 字符串 | 已返回响应的请求标识符。 建议你使用与 Windows 应用商店 ID 密钥中的 *userId* [claim](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) 相同的值。 | 是      |
 
 <span/> 
 
@@ -156,4 +153,3 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [查询产品](query-for-products.md)
 * [授予免费产品](grant-free-products.md)
 * [续订 Windows 应用商店 ID 密钥](renew-a-windows-store-id-key.md)
-

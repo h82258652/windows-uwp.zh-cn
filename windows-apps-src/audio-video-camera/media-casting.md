@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: "本文介绍如何从通用 Windows 应用将媒体转换到远程设备。"
+description: "本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。"
 title: "媒体转换"
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f399007426f5a973a06d473ef98a9eb7e24184dd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8ba90e1538962fdb7ef1434698ea52845713c634
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="media-casting"></a>媒体转换
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何从通用 Windows 应用将媒体转换到远程设备。
@@ -160,7 +157,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

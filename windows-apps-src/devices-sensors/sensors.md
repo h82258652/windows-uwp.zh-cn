@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a7c1c5e4352f80aee65cd828f8113ac0bd35d49
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="sensors"></a>传感器
 
@@ -28,7 +26,7 @@ ms.lasthandoff: 02/07/2017
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">一份开发备忘录 - 传感器概述</iframe>
 
-| 主题                                                       | 说明  |
+| 主题                                                       | 描述  |
 |-------------------------------------------------------------|--------------|
 | [校准传感器](calibrate-sensors.md)                   | 基于磁力计的设备中的传感器（指南针、测斜仪和方向传感器）因环境因素需要校准。 [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) 枚举可帮助确定设备需要校准时的做法。 |
 | [传感器方向](sensor-orientation.md)                 | 来自 [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。 |
@@ -132,5 +130,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="samples"></a>示例
 
 有关一些演示使用几个不同的传感器的示例，请参阅 [Windows 传感器示例](http://go.microsoft.com/fwlink/?LinkID=616041)。
-
 

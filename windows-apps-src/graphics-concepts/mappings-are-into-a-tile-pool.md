@@ -2,21 +2,17 @@
 title: "映射到磁贴池"
 description: "作为流式资源创建资源时，构成资源的磁贴来自于磁贴池中各位置处的指针。 磁贴池是内存池（由一个或多个分配在后台提供支持 - 对应用程序不可见）。"
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
-keywords:
-- "映射到磁贴池"
+keywords: "映射到磁贴池"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9c8ba46cdd1968fd72307849005f91aa5e872260
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bc5787333c266491e432abbb3c5039f73bdeb1f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mappings-are-into-a-tile-pool"></a>映射到磁贴池
 
 
@@ -86,7 +82,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

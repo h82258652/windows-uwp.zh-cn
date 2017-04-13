@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7f3262c30797c8ce447b3e97a5cb7dd6d2ea025
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d3166b40120799818598300a049a4148a40d2cc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="process-media-files-in-the-background"></a>在后台处理媒体文件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你显示了如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。
@@ -39,7 +36,7 @@ ms.lasthandoff: 02/07/2017
 若要在 Microsoft Visual Studio 中将后台任务添加到现有解决方案，请输入你的组件的名称
 
 1.  在**文件**菜单上，依次选择**添加**和**新建项目...**。
-2.  选择**Windows 运行时组件(通用 Windows)**项目类型。
+2.  选择 **Windows 运行时组件(通用 Windows)** 项目类型。
 3.  输入新的组件项目的名称。 此示例使用 **MediaProcessingBackgroundTask** 项目名称。
 4.  单击“确定”。
 
@@ -160,7 +157,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

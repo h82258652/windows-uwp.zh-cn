@@ -2,21 +2,17 @@
 title: "使用纹理的光映射"
 description: "光照图是包含关于 3D 场景中照明信息的纹理或纹理组。"
 ms.assetid: 5C7518D2-AC92-4A97-B7AF-4469D213D7BD
-keywords:
-- "使用纹理的光映射"
+keywords: "使用纹理的光映射"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1154be19719cc3101c114c0bd700fb735824bcda
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 18e24c1bc60c37a01cb99335e7a8e984697b19b7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="light-mapping-with-textures"></a>使用纹理的光映射
 
 
@@ -63,7 +59,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[漫射光映射](diffuse-light-maps.md)</p></td>
-<td align="left"><p>亚光表面会反射漫射光。 漫射光的亮度取决于与光源的距离以及表面法线与光源方向矢量之间的角度。 纹理光照图可以模拟复杂的漫射照明。</p></td>
+<td align="left"><p>亚光表面会反射漫射光。 漫反射光的亮度取决于与光源的距离以及表面法线与光源方向矢量之间的角度。 纹理光照图可以模拟复杂的漫射照明。</p></td>
 </tr>
 </tbody>
 </table>
@@ -78,7 +74,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

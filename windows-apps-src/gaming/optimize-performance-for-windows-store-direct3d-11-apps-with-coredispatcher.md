@@ -1,7 +1,7 @@
 ---
 author: mtoepke
-title: "优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟"
-description: "输入延迟可能会大大影响游戏体验，将其优化可使游戏的体验更完美。"
+title: "优化 UWP DirectX 游戏的输入延迟"
+description: "输入延迟可能会大大影响游戏体验，将其优化可使游戏更美观。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, directx, 输入延迟"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7cb4b72ed035e77a2054daffa9f105449f3b501
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-输入延迟会大大影响游戏体验，将其优化可使游戏的体验更完美。 此外，适当的输入事件优化可延长电池寿命。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
+输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。 此外，适当的输入事件优化可延长电池使用时间。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
 
 ## <a name="input-latency"></a>输入延迟
 
@@ -261,7 +258,6 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
  
 
  
-
 
 
 

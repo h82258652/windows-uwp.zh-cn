@@ -2,18 +2,16 @@
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: "使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试"
-description: "通过适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。"
+description: "通过适用于 Windows 10 移动版的 Microsoft 仿真器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。"
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c20b64cdc2a1335d4739d6790512eddd76bc8a08
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 26345315e9e09d2fd9134ba7264028c460d888ea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -69,7 +67,7 @@ RAM
 
 ## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>适用于 Windows 10 移动版的 Microsoft 模拟器的新增功能
 
-除了提供对通用 Windows 平台 (UWP) 的支持外，该模拟器还添加了以下功能：
+除了提供对 Universal Windows Platform (UWP) 的支持外，该模拟器还添加了以下功能：
 
 -   鼠标输入模式支持，可区分鼠标输入和单一触摸输入。
 -   NFC 支持。 借助这款模拟器，不仅可以模拟 NFC，还可以测试和开发支持 NFC/邻近感应的通用应用。
@@ -662,5 +660,4 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 * [在模拟器中运行 Windows Phone 应用](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
 * [Windows 和 Windows Phone SDK 存档](https://dev.windows.com/downloads/sdk-archive)
  
-
 

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 游戏, 纹理, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="apply-textures-to-primitives"></a>向基元应用纹理
 
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 下面，我们将使用之前在[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。 我们还将介绍一个简单的点乘积照明模型，其中，立方体的图面将基于其相对于照明源的距离和角度而变浅或变深。
 
@@ -527,7 +524,6 @@ private:
  
 
  
-
 
 
 

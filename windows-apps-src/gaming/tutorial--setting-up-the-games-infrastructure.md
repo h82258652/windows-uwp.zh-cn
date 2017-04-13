@@ -1,7 +1,7 @@
 ---
 author: mtoepke
 title: "设置游戏项目"
-description: "装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便将基础架构正常工作所需的代码量减至最小。"
+description: "装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。"
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 设置, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 3bf9e6f70f71dc0b70a2f8af148c44acc1a329fb
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
 
@@ -169,7 +166,6 @@ void App::Run()
  
 
  
-
 
 
 

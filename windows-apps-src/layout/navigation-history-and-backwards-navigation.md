@@ -3,7 +3,7 @@ author: mijacobs
 Description: "通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。"
 title: "导航历史记录和向后导航（Windows 应用）"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
+isNew: True
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
@@ -13,13 +13,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea937ba237f4b0c58deff2b8d342337512e0de5f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c2037c4b313b45309162ea4c0874418fe9463d17
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -306,7 +303,6 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 * [导航基础知识](navigation-basics.md)
 
  
-
 
 
 

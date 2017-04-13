@@ -2,21 +2,17 @@
 title: "缓冲区平铺"
 description: "一个缓冲区资源分为多个 64KB 的磁贴，如果最后一个磁贴的大小不是 64KB 的倍数，其中会有一些空白空间。"
 ms.assetid: 577DC6B0-F373-4748-AD80-2784C597C366
-keywords:
-- "缓冲区平铺"
+keywords: "缓冲区平铺"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2382974de7146f4ba64c2422a01c4d3d297a8977
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f79d04675722c2bcc84c9c79f4da338c7b46732d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="buffer-tiling"></a>缓冲区平铺
 
 
@@ -32,7 +28,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

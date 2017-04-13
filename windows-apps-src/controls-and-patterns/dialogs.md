@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e76ae1e85f1512a939f2b7ee50ed205c0c55605b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ba29bd309b3fdaeeee5bfa143a0f74a58b8bd1c5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
@@ -314,4 +312,3 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 - [菜单和上下文菜单](menus.md)
 - [**Flyout 类**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**ContentDialog 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-

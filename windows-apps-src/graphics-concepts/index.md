@@ -2,21 +2,17 @@
 title: "Direct3D 图形学习指南"
 description: "介绍 Microsoft Direct3D 所基于的图形概念。"
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
-keywords:
-- "Direct3D 图形学习指南"
+keywords: "Direct3D 图形学习指南"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e62f9cfde35580dd384ef69fe6e5658d927ce3d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9d46a13844fafc5f517fce16c39e33257ff8e9a5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="direct3d-graphics-learning-guide"></a>Direct3D 图形学习指南
 
 
@@ -43,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[顶点和索引缓冲区](vertex-and-index-buffers.md)</p></td>
-<td align="left"><p><em>顶点缓冲区</em>是包含顶点数据的内存缓冲区；处理顶点缓冲区中的顶点以执行转换、照明和剪切。 <em>索引缓冲区</em>是包含索引数据的内存缓冲区，索引数据是到顶点缓冲区的整数偏移量，用于渲染基元。</p></td>
+<td align="left"><p><em>顶点缓冲区</em>是包含顶点数据的内存缓冲区；将处理顶点缓冲区中的顶点以执行转换、照明和剪裁。 <em>索引缓冲区</em>是包含索引数据的内存缓冲区，索引数据是到顶点缓冲区的整数偏移量，用于渲染基元。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[设备](devices.md)</p></td>
@@ -93,4 +89,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

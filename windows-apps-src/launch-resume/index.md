@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40400b8b17da9b010c0f03e9976201a1def025f8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此部分包含有关以下内容的信息：
 
@@ -47,7 +44,7 @@ ms.lasthandoff: 02/07/2017
 
 [启动具有 URI 的应用](launch-app-with-uri.md)部分详细介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [启动 URI 的默认应用](launch-default-app.md) | 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 |
 | [处理 URI 激活](handle-uri-activation.md) | 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 |
@@ -61,7 +58,7 @@ ms.lasthandoff: 02/07/2017
 
 [通过文件激活启动应用](launch-app-from-file.md)部分详细介绍如何将应用设置为在打开特定类型的文件时启动。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [启动文件的默认应用](launch-the-default-app-for-a-file.md) | 了解如何启动文件的默认应用。 |
 | [处理文件激活](handle-file-activation.md) | 了解如何注册你的应用以成为某个文件类型的默认处理程序。 |
@@ -109,7 +106,7 @@ ms.lasthandoff: 02/07/2017
 
 [连接的应用和设备（项目“Rome”）](connected-apps-and-devices.md)介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。  |
@@ -123,4 +120,3 @@ ms.lasthandoff: 02/07/2017
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |
-

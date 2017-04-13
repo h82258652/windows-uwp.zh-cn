@@ -11,18 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c5db2b89c52f77cb92da06c246e07a215fd2d02d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bbdff40a10e61be6be498af65701a026a53a8cf0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-checklist"></a>辅助功能清单
 
 
 
-提供了一个可帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
+提供了一个帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
 
 我们在此提供了一个清单，你可以用它来确保你的应用是辅助应用。
 
@@ -72,4 +69,3 @@ ms.lasthandoff: 02/07/2017
 * [辅助功能](accessibility.md)
 * [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [要避免的做法](practices-to-avoid.md) 
-

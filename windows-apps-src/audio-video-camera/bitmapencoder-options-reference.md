@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c29c05e7397e87851ebb0fa5fa29df3b9b58907b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: adfd360c22fd6737d9e95e6e3153f4e2767a4c99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder 选项参考
 
-\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文列出了可用于 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 的编码选项。 编码选项由其名称（其名称是一个字符串）和一个采用特定数据类型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) 的值定义。 有关使用图像的信息，请参阅[创建、编辑和保存位图图像](imaging.md)。
 
@@ -44,7 +41,6 @@ ms.lasthandoff: 02/07/2017
 * [支持的编解码器](supported-codecs.md)
 
  
-
 
 
 

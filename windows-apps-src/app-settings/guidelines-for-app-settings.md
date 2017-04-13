@@ -11,15 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 493e491bd16b7346046394d66587788caf06db4f
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-
 # <a name="guidelines-for-app-settings"></a>应用设置指南
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 应用设置是应用的用户可自定义部分，并位于应用设置页面内。 例如，新闻阅读器应用中的应用设置可以让用户指定要显示的新闻源或屏幕上要显示的列数，而天气应用的设置则可以让用户在摄氏度和华氏度之间选择默认的测量单位。 本文将介绍有关创建和显示应用设置的最佳做法。
 
@@ -68,11 +66,11 @@ ms.lasthandoff: 02/07/2017
 
 **选项卡/透视表**
 
-对于选项卡或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
+对于表或透视表布局，我们不推荐将应用设置入口点作为顶部项之一放在导航中。 相反，应用设置的入口点应放置在应用栏的“更多”溢出菜单中。
 
 **大纲-细节**
 
-与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为大纲窗格顶级上的最后一个固定项。
+与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
 
 ## <a name="layout"></a>布局
 
@@ -142,7 +140,7 @@ ms.lasthandoff: 02/07/2017
 -   如果加载控件或 Web 内容需要花费时间，请使用不确定的进度控件以指示用户该信息正在加载。 有关详细信息，请参阅[进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469)。
 -   请勿使用导航按钮或提交更改按钮。 使用超链接导航到其他页面（而不是使用提交更改按钮）从而自动保存在用户取消“设置”浮出控件时对应用设置所做的更改。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows�10 的信息。 有关 Windows�8.1 指南，请下载 [Windows�8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## <a name="related-articles"></a>相关文章
 
@@ -150,4 +148,3 @@ ms.lasthandoff: 02/07/2017
 * [进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [存储和检索应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-

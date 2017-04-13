@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: "在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建一个软件包外部测试版。"
-title: "使用 Windows 应用商店提交 API 创建软件包外部测试版"
+title: "创建软件包外部测试版"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 创建外部测试版"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2b2b8acb1cfa2a1eaa0ce586cace250cedb5cf71
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 64064e8eaa7586f3ea8fbf569aa08f8789aa5c52
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-a-package-flight-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 创建软件包外部测试版
+# <a name="create-a-package-flight"></a>创建软件包外部测试版
 
 
 
@@ -55,7 +52,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 说明                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要创建软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
@@ -132,4 +129,3 @@ Content-Type: application/json
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [获取软件包外部测试版](get-a-flight.md)
 * [删除软件包外部测试版](delete-a-flight.md)
-

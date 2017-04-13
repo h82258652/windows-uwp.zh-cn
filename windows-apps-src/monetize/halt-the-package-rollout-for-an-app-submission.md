@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法终止应用提交的软件包推出。"
-title: "使用 Windows 应用商店提交 API 终止应用提交的软件包推出"
+title: "终止应用提交的推出"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,20 +9,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 应用提交, 终止"
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a0da2fe0b8c859a774588d27d12ce3c9e3f24d9b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7bc86db250f27f0785bf505a15975bcf65cb5eff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="halt-the-package-rollout-for-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 终止应用提交的软件包推出
+# <a name="halt-the-rollout-for-an-app-submission"></a>终止应用提交的推出
 
 
 使用 Windows 应用商店提交 API 中的此方法[终止应用提交的软件包推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 有关通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 
+>**注意**&nbsp;&nbsp;如果终止应用提交的推出，然后[创建新的应用提交](create-an-app-submission.md)，则新提交将是已终止提交的克隆。
 
-## <a name="prerequisites"></a>先决条件
+
+## <a name="prerequisites"></a>必备条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -81,7 +80,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutStopped",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +103,3 @@ Authorization: Bearer <your access token>
 * [逐步软件包推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 应用商店提交 API 管理应用提交](manage-app-submissions.md)
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

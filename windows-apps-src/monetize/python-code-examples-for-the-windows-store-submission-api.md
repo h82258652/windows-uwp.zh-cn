@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "使用此部分中的 Python 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
-title: "Windows 应用商店提交 API 的 Python 代码示例"
+title: "提交 API 的 Python 代码示例"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f787fd042982e4e5a965c9bb77ef72a8dabb6ae9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="python-code-examples-for-the-windows-store-submission-api"></a>Windows 应用商店提交 API 的 Python 代码示例
+# <a name="python-code-examples-for-the-submission-api"></a>提交 API 的 Python 代码示例
 
 本文提供了使用 *Windows 应用商店提交 API* 的 Python 代码示例。 有关此 API 的详细信息，请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -95,4 +92,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

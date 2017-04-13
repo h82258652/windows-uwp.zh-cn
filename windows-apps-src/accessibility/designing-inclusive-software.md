@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能思维设计和生成非独占软件。"
+Description: "了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。"
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: "在 Windows 10 中设计非独占软件"
 label: Designing inclusive software
@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 23d5f86377dd88877987a9d149377aaee8a4ac48
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 124c0eb2d8640559c2573c532c8dc6089f75d0e7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="designing-inclusive-software-for-windows-10"></a>针对 Windows 10 设计非独占软件  
 
 了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。
@@ -49,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 大多数计算机用户 (54%) 知道某种形式的辅助技术，44% 的计算机用户使用某种形式的辅助技术，但许多用户未使用对他们有益的辅助技术 (Forrester 2004)。  
 
-由 Microsoft 委托并由 Forrester Research 执行的 2003-2004 研究发现美国超过一半 &mdash;57%&mdash; 的年龄在 18 到 64 岁之间的计算机用户能够从辅助技术中受益。 其中大部分用户不会将自己视为残障或受损人士，但表示在使用计算机时有某些任务相关的困难或障碍。 Forrester (2003) 还发现了以下数量的带有如下特定障碍的用户：四分之一用户有视觉障碍。 四分之一用户的手腕或手有伤痛。 五分之一用户有听力障碍。  
+由 Microsoft 委托并由 Forrester Research 执行的 2003-2004 研究发现美国超过一半 (57%) 的年龄在 18 到 64 岁之间的计算机用户能够从辅助技术中受益。 其中大部分用户不会将自己视为残障或受损人士，但表示在使用计算机时有某些任务相关的困难或障碍。 Forrester (2003) 还发现了以下数量的带有如下特定障碍的用户：四分之一用户有视觉障碍。 四分之一用户的手腕或手有伤痛。 五分之一用户有听力障碍。  
 
 除了永久性残障，个人遇到的困难的严重程度和类型在其一生中可能有所不同。 根本不存在“正常人”。 我们的功能始终在变化。 Margaret Meade 说过：“我们都是独一无二的。 独一无二又会使我们实现统一。”  
 
@@ -114,4 +111,3 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发非独占 Windows 应用](developing-inclusive-windows-apps.md) 
 * [辅助功能](accessibility.md)
-

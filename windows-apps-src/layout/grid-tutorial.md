@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 87947b5bd1c1db008a21828c3940475c2b53fd6d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>通过使用网格和 StackPanel 创建一个简单的天气应用
 
-使用 XAML 为使用**网格**和 **StackPanel** 元素的简单的天气应用创建布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
+使用 XAML 并使用**网格**和 **StackPanel** 元素创建一个简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
 ## <a name="prerequisites"></a>先决条件
 - Windows 10 和 Microsoft Visual Studio 2015。 [单击此处了解如何设置 Visual Studio](../get-started/get-set-up.md)。
@@ -26,7 +23,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="step-1-create-a-blank-app"></a>步骤 1：创建空白应用
 1. 在 Visual Studio 菜单中，选择**文件** > **新建项目**。
-2. 在**新建项目**对话框的左侧窗格中，依次选择 **Visual C#** > **Windows** > **通用**，或者依次选择 **Visual C++** > **Windows** > **通用**。
+2. 在**新建项目**对话框的左侧窗格中，依次选择 **Visual C#** > **Windows** > **通用**，或者依次选择 **Visual C++** > **Windows**  > **通用**。
 3. 在中心窗格中，选择**空白应用**。
 4. 在**名称**框中，输入 **WeatherPanel** 并选择**确定**。
 5. 若要运行程序，请从菜单中依次选择**调试** > **开始调试**，或选择 F5。
@@ -123,4 +120,3 @@ ms.lasthandoff: 02/08/2017
 有关设计 UWP 应用布局的简介，请参阅 [UWP 应用设计简介](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-

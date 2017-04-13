@@ -14,13 +14,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60eb44ab45873b638181bb4b3194e443d21356bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b9bc1e68e26830a283ed49b753f63a8f7ae63637
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="styling-controls"></a>设置控件样式
 
 
@@ -36,7 +33,9 @@ ms.lasthandoff: 02/07/2017
 
 你可以定义在 XAML 中为控件嵌入的样式，或者作为可重复使用的资源。 在单个页面的 XAML 文件中、App.xaml 文件中，或者单独的资源词典 XAML 文件中定义资源。 可以在应用之间共享资源词典 XAML 文件，并且可以将多个资源词典合并到单个应用中。 定义资源的位置决定了该资源可以使用的范围。 页面级资源只在定义了它们的页面中可用。 如果在 App.xaml 和页面中同时定义了具有相同关键字的资源，则页面中的资源将覆盖 App.xaml 中的资源。 如果资源在单独的资源词典文件中定义，则它的范围由引用资源词典的位置确定。
 
-在 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定义中，你需要一个 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 属性和由一个或多个 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素组成的集合。 **TargetType** 属性是一个指定要应用样式的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 类型的字符串。 **TargetType** 值必须指定由 Windows 运行时定义的派生的 **FrameworkElement** 类型或引用的程序集中提供的自定义类型。 如果你试图将某个样式应用到某控件，而此控件的类型与你试图应用的样式的 **TargetType** 属性不匹配，则会发生异常。
+在 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定义中，你需要一个 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 属性和由一个或多个 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素组成的集合。 
+            **TargetType** 属性是一个指定要应用样式的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 类型的字符串。 
+            **TargetType** 值必须指定由 Windows 运行时定义的派生的 **FrameworkElement** 类型或引用的程序集中提供的自定义类型。 如果你试图将某个样式应用到某控件，而此控件的类型与你试图应用的样式的 **TargetType** 属性不匹配，则会发生异常。
 
 每个 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素都需要一个 [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 和一个 [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838)。 这些属性设置用于指示该设置将应用于哪个控件属性，以及为该属性设置的值。 你可以使用特性或属性元素语法设置 **Setter.Value**。 下面的 XAML 显示了应用于前面显示的按钮的样式。 在此 XAML 中，前两个 **Setter** 元素使用特性语法，但是最后一个 **Setter**（用于设置 [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) 属性）使用属性元素语法。 该示例不使用 [x:Key 特性](../xaml-platform/x-key-attribute.md)这一特性，因此该样式已隐式应用到按钮。 隐式或显式应用样式在下一节进行介绍。
 
@@ -148,7 +147,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="use-tools-to-work-with-styles-easily"></a>使用工具轻松处理样式
 
-将样式应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML 设计界面上，右键单击控件并选择“编辑样式”****或“编辑模板”****（取决于右键单击的控件）。 然后，通过选择“应用资源”****来应用现有样式，或通过选择“创建空项”****来定义一个新样式。 如果创建空白样式，则可以使用相应的选项在该页面、App.xaml 文件或一个单独的资源字典中进行定义。
+将样式应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML 设计界面上，右键单击控件并选择**编辑样式**或**编辑模板**（取决于右键单击的控件）。 然后，通过选择**应用资源**来应用现有样式，或通过选择**创建空项**来定义一个新样式。 如果创建空白样式，则可以使用相应的选项在该页面、App.xaml 文件或一个单独的资源字典中进行定义。
 
 ## <a name="modify-the-default-system-styles"></a>修改默认系统样式
 
@@ -157,5 +156,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="the-template-property"></a>Template 属性
 
 样式 setter 可用于 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 属性，实际上，此样式构成了多数典型的 XAML 样式和应用的 XAML 资源。 此内容将在主题[控件模板](control-templates.md)中更详细地讨论。
-
 

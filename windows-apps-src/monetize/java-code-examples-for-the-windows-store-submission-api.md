@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
-description: "使用本节中的 Java 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
-title: "Windows 应用商店提交 API 的 Java 代码示例"
+description: "使用此部分中的 Java 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
+title: "提交 API 的 Java 代码示例"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ff5e857e0f5ce110ab7afc64bd2faa28f7bea517
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="java-code-examples-for-the-windows-store-submission-api"></a>Windows 应用商店提交 API 的 Java 代码示例
+# <a name="java-code-examples-for-the-submission-api"></a>提交 API 的 Java 代码示例
 
 本文提供使用 *Windows 应用商店提交 API* 的 Java 代码示例。 有关此 API 的详细信息，请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -55,7 +52,7 @@ ms.lasthandoff: 02/07/2017
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>创建加载项
 
-以下示例演示了如何[创建](create-an-add-on.md)和[删除](delete-an-add-on.md)加载项（加载项也称为应用内产品或 IAP）。
+以下示例演示了如何[创建](create-an-add-on.md) 和[删除](delete-an-add-on.md) 加载项（加载项也称为应用内产品或 IAP）。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
 
@@ -128,4 +125,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

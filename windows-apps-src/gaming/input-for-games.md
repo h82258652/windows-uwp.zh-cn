@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 输入"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: ee6017648974d5283f59708550092f26d88388ce
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="input-for-games"></a>游戏输入
 
-本节描述了可在 Windows 10 和 Xbox One 的通用 Windows 平台 (UWP) 游戏中使用的不同类型的输入设备，演示了它们的基本用法，并推荐了在游戏中实现有效输入编程的模式和技术。
+本部分描述了可在 Windows 10 和 Xbox One 的通用 Windows 平台 (UWP) 游戏中使用的不同类型的输入设备，演示了它们的基本用法，并推荐了在游戏中实现有效输入编程的模式和技术。
 
 > **注意**    存在可在 UWP 游戏中使用的其他类型的输入设备，例如，可能特定于流派或特定于游戏的自定义输入设备。 本部分不讨论此类设备及其编程。 有关用于加快自定义输入设备的接口的信息，请参阅 [Windows.Gaming.Input.Custom][] 命名空间。
 
@@ -68,4 +65,3 @@ UI 导航控制器是为提供 UI 导航命令的常用词汇而存在的逻辑�
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.Custom]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.custom.aspx
-

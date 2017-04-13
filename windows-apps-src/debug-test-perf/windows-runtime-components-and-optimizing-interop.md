@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 722a14b7fbad2a8914888a6d6a135e88d1aa8095
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a4296c7ba149abce2173e816aa99406a44f75618
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="universal-windows-platform-components-and-optimizing-interop"></a>通用 Windows 平台组件和优化互操作
+# <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。
 
@@ -93,5 +91,4 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 所有在应用中获取良好性能的建议都适用于在组件中获取良好性能。 衡量你的组件，查明哪些 API 具有较高通信模式，并从这些方面考虑提供可让用户使用较少调用来处理工作的 API。 在设计 UWP 时投入极大的努力，以便使应用使用这些设计成果，同时无需频繁地超越互操作边界。
 
  
-
 

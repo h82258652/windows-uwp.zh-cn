@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 0a33aaf71dbf23e991591f790f7327d812b060ef
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 332271894b5e11657bd2b0b1ca40f0bd7620889d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inverted-lists"></a>反转列表
 
@@ -63,4 +61,3 @@ ms.lasthandoff: 02/08/2017
 - 将来自发送方/接收方的消息在两边对齐，使用户可以清楚地了解对话流程。
 - 如果用户已经在对话末尾等待下一条消息，则以动画方式将现有消息移开，以显示最新消息。
 - 如果用户未在对话末尾阅读，请不要移动项，以免干扰用户注意力。
-

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2f00c27ae2248ebe39ed1cf426af640ec9200e73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 392b0b0acf1443b2260a33bbf389d505f8cc7d0e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="sliders"></a>滑块
 
@@ -180,4 +178,3 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 ## <a name="related-topics"></a>相关主题
 - [切换开关](toggles.md)
 - [**Slider 类**](https://msdn.microsoft.com/library/windows/apps/br209614)
-

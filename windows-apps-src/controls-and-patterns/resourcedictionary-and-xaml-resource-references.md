@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e24b411c5a966d48e4db07a4ddfce1248454e78d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 40f1bdad88ebcbd226dc935730766449d40d4595
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -429,7 +427,7 @@ sealed partial class App : Application
 ## <a name="xaml-resources-must-be-shareable"></a>XAML 资源必须可共享
 
 
-对于存在于 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的对象，该对象必须*可共享*。
+对于存在于 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的对象，该对象必须“可共享”**。
 
 可共享是必要的，因为在构造以及在运行时使用应用的对象树时，对象不能存在于树中的多个位置。 就内部而言，在请求所有 XAML 资源时，资源系统会为在资源的对象图中使用的资源值创建副本。
 
@@ -496,7 +494,6 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
  
 
  
-
 
 
 

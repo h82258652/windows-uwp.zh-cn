@@ -11,17 +11,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 0d10a0c7f269cc6c7d0b2e9476a926226fe94f82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pull-to-refresh"></a>下拉刷新
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-下拉刷新模式允许用户使用触摸来下拉数据列表，以便检索更多数据。 下拉刷新已在移动应用上广泛使用，但在任何具有触摸屏的设备上也很有用。 可以处理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)以在应用中实现下拉刷新。
+下拉刷新模式允许用户使用触摸来下拉数据列表，以检索更多数据。 下拉刷新已在移动应用上广泛使用，但在任何具有触摸屏的设备上也很有用。 可以处理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)以在应用中实现下拉刷新。
 
 [下拉刷新示例](http://go.microsoft.com/fwlink/p/?LinkId=620635)展示了如何扩展 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 控件以支持这种模式。 在本文中，我们使用此示例解释实现下拉刷新的关键点。
 

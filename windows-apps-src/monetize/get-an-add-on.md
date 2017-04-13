@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
 description: "在 Windows 应用商店提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的应用的加载项相关信息。"
-title: "使用 Windows 应用商店提交 API 获取加载项"
+title: "获取加载项"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e000c435b8a271085872bfb1ce42dd09352847c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a79c93c1ed7d38b4de1da2bbd05456fd0884692e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取加载项
+# <a name="get-an-add-on"></a>获取加载项
 
 
 
@@ -121,4 +118,3 @@ Authorization: Bearer <your access token>
 * [获取所有加载项](get-all-add-ons.md)
 * [创建加载项](create-an-add-on.md)
 * [删除加载项](delete-an-add-on.md)
-

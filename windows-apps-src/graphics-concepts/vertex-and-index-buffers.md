@@ -2,21 +2,17 @@
 title: "顶点和索引缓冲区"
 description: "顶点缓冲区是包含顶点数据的内存缓冲区；将处理顶点缓冲区中的顶点以执行转换、照明和剪裁。"
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
-keywords:
-- "顶点和索引缓冲区"
+keywords: "顶点和索引缓冲区"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdf65da6504114029c4937ee7db531a1339ed4c2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f06ee013f5c09522df387d69afa0096f7a3f7044
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vertex-and-index-buffers"></a>顶点和索引缓冲区
 
 
@@ -47,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[索引缓冲区](index-buffers.md)</p></td>
-<td align="left"><p><em>索引缓冲区</em> 是包含索引数据的内存缓冲区，索引数据是到顶点缓冲区的整数偏移量，用于渲染基元。</p></td>
+<td align="left"><p><em>索引缓冲区</em>是包含索引数据的内存缓冲区，索引数据是到顶点缓冲区的整数偏移量，用于渲染基元。</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +58,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

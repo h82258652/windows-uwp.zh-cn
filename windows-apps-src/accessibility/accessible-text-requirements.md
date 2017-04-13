@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "本主题介绍了通过确保颜色和背景满足必需的对比率来使应用中的文本具备辅助功能的最佳做法。"
+Description: "本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "辅助文本要求"
 label: Accessible text requirements
@@ -11,19 +11,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4f3bb71d1aef8917e14514521393ef1ba7c782d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessible-text-requirements"></a>辅助文本要求  
 
 
 
 
-本主题介绍了通过确保颜色和背景满足必需的对比率来使应用中的文本具备辅助功能的最佳做法。 本主题还讨论了通用 Windows 平台 (UWP) 应用中的文本元素可以具有的 Microsoft UI 自动化角色，以及图形中的文本的最佳做法。
+本主题通过确保颜色和背景满足必需的对比率来介绍应用中的文本辅助功能最佳做法。 本主题还讨论了通用 Windows 平台 (UWP) 应用中的文本元素可以具有的 Microsoft UI 自动化角色，以及图形中的文本的最佳做法。
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -176,4 +173,3 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?linkid=251417)
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-

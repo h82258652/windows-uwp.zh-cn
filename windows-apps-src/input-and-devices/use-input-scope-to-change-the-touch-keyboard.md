@@ -13,13 +13,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 215cf54a5d6ed1b0c514768817cc11d1a85627e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>使用输入范围更改触摸键盘
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -212,7 +209,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![可输入电话号码的 Windows 触摸键盘](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![可输入电话号码的 Windows Phone 触摸键盘](images/input-scopes/kbdwptelephonenumber.png)<br>键盘可模拟电话数字小键盘。 长按句号键可以显示其他选项 ( , ( ) X。 )。 长按 0 键可以输入 +。 |
+| ![可输入电话号码的 Windows 触摸键盘](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![可输入电话号码的 Windows Phone 触摸键盘](images/input-scopes/kbdwptelephonenumber.png)<br>键盘可模拟电话数字小键盘。 长按句号键可以显示其他选项 ( , ( ) X。 ). 长按 0 键可以输入 +。 |
 |等同于 **CurrencyAmountAndSymbol** 和 **TelephoneNumber**。 | 功能的可用性：<ul><li>拼写检查：始终处于禁用状态</li><li>自动更正：始终处于禁用状态</li><li>首字母自动大写：始终处于禁用状态</li><li>文本预测：始终处于禁用状态</li></ul> |
 
 ### <a name="search"></a>搜索
@@ -243,7 +240,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![可输入电话公式的 Windows 触摸键盘](images/input-scopes/kbdpcformula.png)<br>还包括“%”****、“$”****和“+”****键。| ![可输入公式的 Windows Phone 触摸键盘](images/input-scopes/kbdwpformula.png)<br>长按句号键可以显示其他选项 (- ! ? , )。 长按“=”****键可以显示其他选项 ( ( ) : &lt; &gt; )。 |
+| ![可输入电话公式的 Windows 触摸键盘](images/input-scopes/kbdpcformula.png)<br>还包括“%”****、“$”****和“+”****键。| ![可输入公式的 Windows Phone 触摸键盘](images/input-scopes/kbdwpformula.png)<br>长按句号键可以显示其他选项 (- ! ? , ). 长按“=”****键可以显示其他选项 ( ( ) : &lt; &gt; )。 |
 |功能的可用性：<ul><li>拼写检查：默认情况下处于禁用状态，可以启用</li><li>自动更正：始终处于禁用状态</li><li>首字母自动大写：始终处于禁用状态</li><li>文本预测：始终处于禁用状态</li></ul> | 功能的可用性：<ul><li>拼写检查：默认情况下处于启用状态，可以禁用</li><li>自动更正：默认情况下处于启用状态，可以禁用</li><li>首字母自动大写：始终处于禁用状态</li><li>文本预测：默认情况下处于启用状态，可以禁用</li></ul> |
 
 ### <a name="chat"></a>Chat
@@ -263,4 +260,3 @@ phoneNumberTextBox.InputScope = new InputScope()
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![默认 Windows 触摸键盘](images/input-scopes/kbdpcdefault.png)<br>与 **Default** 的布局相同。| ![可输入名称或电话号码的 Windows Phone 触摸键盘](images/input-scopes/kbdwpnameorphonenumber.png)<br>包括“;”****和“@”****键。 用“123”****键来替换“&amp;123”****键，前者可用于打开电话数字小键盘（请参阅 **TelephoneNumber**）。|
 |功能的可用性：<ul><li>拼写检查：默认情况下处于启用状态，可以禁用</li><li>自动更正：始终处于禁用状态</li><li>首字母自动大写：始终处于启用状态</li><li>文本预测：始终处于禁用状态</li></ul> | 功能的可用性：<ul><li>拼写检查：默认情况下处于禁用状态，可以启用</li><li>自动更正：默认情况下处于禁用状态，可以启用</li><li>首字母自动大写：默认情况下处于禁用状态，可以启用。 每个单词的首字母均大写。</li><li>文本预测：默认情况下处于禁用状态，可以启用</li></ul> |
-

@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ced83940fb49f5812343fee34cb11582683bd672
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d96d01216a37c4e8dbcd0fcd0eb83ccb4859b288
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enable-usermode-access-on-windows-10-iot-core"></a>启用对 Windows 10 IoT 核心版的用户模式访问
 
@@ -277,7 +275,7 @@ SupportedDriveModes 属性指示哪些驱动器模式受 GPIO 控制器支持。
 Windows 支持两种引脚编号方案： 
 
 * 顺序引脚编号 – 用户看到诸如 0、1、2 ... 的数字 一直到公开的引脚数。 0 是 ASL 中声明的第一个 GpioIo 资源，1 是 ASL 中声明的第二个 GpioIo 资源，依此类推。 
-* 本机引脚编号 – 用户看到 GpioIo 描述符中指定的引脚编号，例如 4、5、12、13 … 。  
+* 本机引脚编号 – 用户看到 GpioIo 描述符中指定的引脚编号，例如 4、5、12、13 … .  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
@@ -711,9 +709,9 @@ devcon status *msft8000
 
 | 工具 | 链接 |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/gpiotesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## <a name="resources"></a>资源
@@ -731,9 +729,9 @@ devcon status *msft8000
 | GpioClx    | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 测试 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/GPIOTestTool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -741,7 +739,7 @@ devcon status *msft8000
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>附录 A - Raspberry Pi ASL 一览
 
-标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
+标头引出线：https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -903,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>附录 B - MinnowBoardMax ASL 一览
 
-标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
+标头引出线：https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1091,4 +1089,3 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
     $resourceIndex += 2;
 }
 ```
-

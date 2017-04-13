@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41c5b771440a3ad88b3c1fcc2aec57b2e080741b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="text-controls"></a>文本控件
 
@@ -197,4 +195,3 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length.aspx)
-

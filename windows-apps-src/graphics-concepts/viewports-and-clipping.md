@@ -2,25 +2,21 @@
 title: "视区和剪切"
 description: "视区是将 3D 场景投影到其中的二维 (2D) 矩形。"
 ms.assetid: D0DD646E-13AE-452A-AD22-8C35000D0BA9
-keywords:
-- "视区和剪切"
+keywords: "视区和剪切"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7bbd0c2f2254cb5c65f7ae211124c4b3b1e523ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b392f267c370bd075d5c0d1ac953ee76a9cff0af
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="viewports-and-clipping"></a>视区和剪切
 
 
-*视区*是将 3D 场景投影到其中的二维 (2D) 矩形。 在 Direct3D 中，矩形在被系统用作呈现目标的 Direct3D 图面内作为坐标存在。 投影转换将顶点转换为用于视区的坐标系统。 视区还用于指定将在其中呈现场景的呈现目标图面的深度值范围（通常为 0.0 至 1.0）。
+*视区*是将 3D 场景投影到其中的二维 (2D) 矩形。 在 Direct3D 中，矩形在系统作为渲染目标使用的 Direct3D 表面内作为坐标存在。 投影转换将顶点转换为用于视区的坐标系统。 视区还用于指定将在其中呈现场景的呈现目标图面的深度值范围（通常为 0.0 至 1.0）。
 
 ## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>视锥
 
@@ -90,7 +86,6 @@ Direct3D 使用视区位置和尺寸来缩放顶点，以便将呈现的场景�
  
 
  
-
 
 
 

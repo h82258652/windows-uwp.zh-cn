@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 网格, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-display-a-basic-mesh"></a>创建和显示基本网格
 
 
@@ -450,7 +447,6 @@ m_swapChain->Present(1, 0);
  
 
  
-
 
 
 

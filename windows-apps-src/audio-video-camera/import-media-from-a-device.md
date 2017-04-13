@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4deda6efa9b9b9ea03bee76855e30c8e9a290480
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 588367c1e4c1676641d57bbd33df6bdaf0c854da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="import-media-from-a-device"></a>从设备导入媒体
 
 本文介绍如何从设备导入媒体，包括搜索可用媒体源、导入文件（如视频、照片和 sidecar 文件）以及从源设备中删除导入的文件。
@@ -62,7 +59,7 @@ ms.lasthandoff: 02/08/2017
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 
 
-# <a name="find-available-sources-from-which-media-can-be-imported"></a>查找可从中导入媒体的可用源
+## <a name="find-available-sources-from-which-media-can-be-imported"></a>查找可从中导入媒体的可用源
 
 在查找源按钮的单击处理程序中，调用静态方法 [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) 来针对可从中导入媒体的设备启动系统搜索。 等待该操作完成后，循环访问返回的列表中的每个 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 对象，并向**组合框** 添加一个条目，从而将 **Tag** 属性设置为源对象本身，以便在用户进行选择时可以轻松地检索它。
 
@@ -76,13 +73,13 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
 
-# <a name="find-items-to-import"></a>查找要导入的项
+## <a name="find-items-to-import"></a>查找要导入的项
 
 添加 [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) 和 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 类型的类成员变量，这些变量将在以下步骤中使用。
 
 [!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
 
-在 FindItems 方法中，初始化 **CancellationTokenSource** 变量，以便可以使用它在必要时取消查找操作。 在 **try** 块内，通过在用户选择的 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 对象上调用 [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) 来创建新的导入会话。 创建新的 [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) 对象以提供用于显示查找操作进度的回调。 接下来，调用 [**FindItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession.FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter,Windows.Media.Import.PhotoImportItemSelectionMode) 以启动查找操作。 提供一个 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) 值来指定应返回照片、视频还是两者都返回。 提供一个 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) 值来指定是返回全部媒体项、不返回任何媒体项还是仅返回新的媒体项，同时将它们的 [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) 属性设置为 true。 此属性绑定到我们的 ListBox 项模板中的每个媒体项的复选框。
+在 FindItems 方法中，初始化 **CancellationTokenSource** 变量，以便可以使用它在必要时取消查找操作。 在 **try** 块内，通过在用户选择的 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 对象上调用 [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) 来创建新的导入会话。 创建新的 [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) 对象以提供用于显示查找操作进度的回调。 接下来，调用 [**FindItemsAsync**](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsession#Windows_Media_Import_PhotoImportSession_FindItemsAsync_Windows_Media_Import_PhotoImportContentTypeFilter_Windows_Media_Import_PhotoImportItemSelectionMode_) 以启动查找操作。 提供一个 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) 值来指定应返回照片、视频还是两者都返回。 提供一个 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) 值来指定是返回全部媒体项、不返回任何媒体项还是仅返回新的媒体项，同时将它们的 [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) 属性设置为 true。 此属性绑定到我们的 ListBox 项模板中的每个媒体项的复选框。
 
 **FindItemsAsync** 返回 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)。 扩展方法 [**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) 用于创建可等待、可使用取消令牌取消以及使用所提供的 **Progress** 对象报告进度的任务。
 
@@ -121,6 +118,5 @@ ms.lasthandoff: 02/08/2017
 
 
  
-
 
 

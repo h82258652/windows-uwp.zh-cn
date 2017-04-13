@@ -9,20 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pair-devices"></a>为设备配对
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 某些设备需要先进行配对，然后才能使用。 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间支持三种配对设备的不同方式。
 
@@ -48,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 若要尝试基本配对，首先需要获取感兴趣的设备的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象。 收到该对象后，将与属于 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 对象的 [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 属性进行交互。 若要尝试与之配对，只需调用 [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800) 即可。 你将需要 **await** 结果，以便让应用可以有时间来尝试完成配对操作。 将返回配对操作的结果，并且只要未返回任何错误，就将配对设备。
 
-如果你使用的是基本配对，还可以访问有关设备配对状态的其他信息。 例如，你可以了解配对状态 ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx)) 以及设备是否可以配对 ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx))。 这两者都是 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 对象的属性。 如果你使用的是自动配对，你可能无法访问此信息，除非你获得相关的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象。
+如果你使用的是基本配对，还可以访问有关设备配对状态的其他信息。 例如，你可以了解配对状态 ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_IsPaired)) 以及设备是否可以配对 ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_CanPair))。 这两者都是 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 对象的属性。 如果你使用的是自动配对，你可能无法访问此信息，除非你获得相关的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象。
 
 ## <a name="custom-pairing"></a>自定义配对
 
@@ -76,8 +74,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
-
-
-
-

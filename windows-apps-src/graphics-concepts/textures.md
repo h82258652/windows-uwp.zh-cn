@@ -2,21 +2,17 @@
 title: "纹理"
 description: "纹理是在计算机生成的 3D 图像中创建逼真效果的强大工具。 Direct3D 支持广泛的纹理功能集，使开发人员能够轻松访问高级纹理技术。"
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
-keywords:
-- "纹理"
+keywords: "纹理"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4c78099f6bd30956c45a907a960a595288e0eaf4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef5c72f3c667c63cb48c469349ae26c364050c19
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="textures"></a>纹理
 
 
@@ -45,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[基本纹理概念](basic-texturing-concepts.md)</p></td>
-<td align="left"><p>早期的计算机生成的 3D 图像，尽管在当时通常很先进，往往有一个闪亮的塑料外观。 他们缺少为 3D 对象提供真实的视觉复杂性的标记类型，比如，磨损、裂缝、指纹和污迹。 为了增强计算机生成的 3D 图像的真实性，纹理变得非常流行。</p></td>
+<td align="left"><p>早期的计算机生成的 3D 图像，尽管在当时通常很先进，往往有一个闪亮的塑料外观。 这类图像缺少磨损、裂缝、指纹和污迹等标记类型，所以 3D 对象不具有真实的视觉复杂性。 为了增强计算机生成的 3D 图像的真实性，纹理变得非常流行。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[纹理寻址模式](texture-addressing-modes.md)</p></td>
@@ -69,11 +65,11 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[使用纹理的光映射](light-mapping-with-textures.md)</p></td>
-<td align="left"><p>光照贴图是包含关于 3D 场景中照明信息的纹理或纹理组。 光照贴图将光和阴影的区域映射到基元上。 多纹理混合使你的应用程序能够以比着色技术更逼真的外观渲染场景。</p></td>
+<td align="left"><p>光照贴图是包含关于 3D 场景中照明信息的纹理或纹理组。 光照图将光和阴影的区域映射到基元上。 多纹理混合使你的应用程序能够以比着色技术更逼真的外观渲染场景。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[压缩的纹理资源](compressed-texture-resources.md)</p></td>
-<td align="left"><p>纹理映射是在三维图形上绘制以添加视觉细节的数字化图像。 光栅化期间，它们被映射到这些形状，而此过程会占用大量系统总线和内存。 为了降低纹理占用的内存量，Direct3D 支持压缩纹理表面。 某些 Direct3D 设备支持在本地压缩的纹理表面。</p></td>
+<td align="left"><p>纹理映射是在三维图形上绘制以添加视觉细节的数字化图像。 它们在光栅化期间被贴图到这些形状，而此过程会占用大量系统总线和内存。 为了降低纹理占用的内存量，Direct3D 支持压缩纹理曲面。 某些 Direct3D 设备支持在本地压缩的纹理表面。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +84,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

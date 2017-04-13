@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 呈现"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="assemble-the-rendering-framework"></a>装配呈现框架
 
 
@@ -701,7 +698,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 该游戏有现成的代码用于更新本身坐标系中的世界（有时称为世界空间或场景空间）。 所有对象（包括相机）都在此空间定位和确定方向。 在示例游戏中，相机的位置和观看矢量（从相机直接进入场景的“观看”矢量和与其垂直向上的“仰望”矢量）定义相机空间。 投影参数定义该空间在最终场景实际显示多少；视区 (FoV)、纵横比和剪切平面定义投影转换。 顶点着色器使用以下算法执行从模型坐标到设备坐标的转换（其中 V 是一个矢量，M 是一个矩阵）：
 
-`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `。
+`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
 
 -   `M(model-to-world)` 是模型坐标到世界坐标的转换矩阵。 这由基元提供。 （我们将在有关基元的部分中介绍此内容，位于此处。）
 -   `M(world-to-view)` 是世界坐标到视图坐标的转换矩阵。 这由相机的视图矩阵提供。
@@ -6326,7 +6323,6 @@ void Material::RenderSetup(
  
 
  
-
 
 
 

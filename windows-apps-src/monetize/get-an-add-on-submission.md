@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项提交的数据。"
-title: "使用 Windows 应用商店提交 API 获取加载项提交"
+title: "获取加载项提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 21bed5bd2b0c3b4e1fb2224cce9f6e3c9a2fd6b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取加载项提交
+# <a name="get-an-add-on-submission"></a>获取加载项提交
 
 在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项（也称为应用内产品或 IAP）提交的数据。 有关通过使用 Windows 应用商店提交 API 创建加载项提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
@@ -108,7 +105,7 @@ Authorization: Bearer <your access token>
     },
     "sales": [],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -159,4 +156,3 @@ Authorization: Bearer <your access token>
 * [更新加载项提交](update-an-add-on-submission.md)
 * [删除加载项提交](delete-an-add-on-submission.md)
 * [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
-

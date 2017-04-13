@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 25abea87eaf374a1a8b5432c522d51bd7bbc1c1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f16ea404d4a458949fce7ae0ec8756aa3a17aa01
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-people-app"></a>启动“人脉”应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主题介绍了 **ms-people:** URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
@@ -213,4 +210,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

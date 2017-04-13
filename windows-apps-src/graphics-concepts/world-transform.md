@@ -2,21 +2,17 @@
 title: "世界转换"
 description: "世界转换将坐标从相对模型的本地原点定义顶点的世界空间更改到世界空间。"
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
-keywords:
-- "世界转换"
+keywords: "世界转换"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 45462cf0deb4e0bbf444fd4300a942cf05ad701c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6218747e0522235f1d71510a4ad4b6ce60def4a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="world-transform"></a>世界转换
 
 
@@ -46,7 +42,6 @@ Direct3D 使用你设置的世界矩阵和视图矩阵来配置多个内部数�
  
 
  
-
 
 
 

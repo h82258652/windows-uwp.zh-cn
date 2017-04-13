@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 349a28f1980b863091cedd4515737a48de51b390
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 435c2d7ca1bf2a256356c28a83d51e493d98e014
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向传感器
 
@@ -181,7 +179,7 @@ ms.lasthandoff: 02/07/2017
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  <a name="explanation"></a>说明
+###  <a name="explanation"></a>描述
 
 前面的示例演示了，只需要写入极少的代码即可将方向传感器输入集成到你的应用。
 
@@ -327,7 +325,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-### <a name="explanation"></a>说明
+### <a name="explanation"></a>描述
 
 前面的示例演示了，只需要写入极少的代码即可在应用中集成简单方向传感器输入。
 
@@ -356,4 +354,3 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 * [OrientationSensor 示例](http://go.microsoft.com/fwlink/p/?linkid=241382)
 * [SimpleOrientation 传感器示例](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
-

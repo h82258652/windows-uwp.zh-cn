@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7c992aa651069f6876aa920da88ada659480132e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>响应式设计的屏幕大小和断点
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -107,4 +104,3 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 
 [**适用于手机的 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431) 是兼容 Windows 10 移动版设备的新体验，用户可以使用它将手机连接到监视器、鼠标和键盘来使手机像笔记本电脑一样工作。 针对特定断点进行设计时请记住这一新功能 - 移动手机将不会始终保持在较小尺寸级别。
  
-

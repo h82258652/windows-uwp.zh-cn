@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0175a7ca7e2bbeb97f526dffb3c6fee7b8eb8819
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-interactions"></a>语音交互
 
 
@@ -101,7 +98,7 @@ ms.lasthandoff: 02/07/2017
 
     -   **侦听**屏幕。
     -   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
-    -   **你说的是**屏幕或错误屏幕。
+    -   **听到你说**屏幕或错误屏幕。
 
 在**侦听**屏幕上，你可以：
 
@@ -218,7 +215,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 | --- | --- |
 | [语音识别](speech-recognition.md) | 使用语音识别提供输入内容、指定操作或命令并完成任务。 |
 | [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
@@ -238,7 +235,6 @@ TTS 从纯文本或 SSML 生成语音输出。
  
 
  
-
 
 
 

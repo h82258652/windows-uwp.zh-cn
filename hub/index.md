@@ -1,6 +1,6 @@
 ---
 layout: HubPage
-hide_bc: true
+hide_bc: True
 title: "Windows 文档"
 description: "找到开发人员、硬件以及 IT 专业人员的相关文档，以帮助你构建和维护你的 Windows 解决方案。"
 ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
@@ -8,11 +8,9 @@ ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: hub-page
 ms.prod: windows
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: cb15f417c4254776af4548a5b962392431c9a75b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b04722c101d6647eca8d97ebb33ded7fb3ba8c3a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -108,6 +106,9 @@ ms.lasthandoff: 02/08/2017
                                             <p>
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">盈利</a>
                                             </p>
+                                            <p>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">API 参考</a>
+                                            <p>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +124,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>桌面设备</h3>
+                                            <h3>台式机</h3>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/desktop/getstarted">入门</a>
                                             </p>
@@ -193,7 +194,7 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/windows/iot/samples">示例</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Community">社区</a>
+                                                <a href="https://developer.microsoft.com/windows/iot/Community">Community</a>
                                             </p>
                                             <p>
                                                 <a href="https://www.windowsforiotdevices.com/">商业化</a>
@@ -213,18 +214,18 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>全息</h3>
+                                            <h3>混合现实</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">入门</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">学院</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/academy">学院</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">开发</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/documentation">文档</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">设计</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/community">社区</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">社区和支持</a>
                                             </p>
                                         </div>
                                     </div>
@@ -241,7 +242,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Edge</h3>
+                                            <h3>边缘</h3>
                                             <p>
                                                 <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Microsoft Edge 文档</a>
                                             </p>
@@ -430,7 +431,7 @@ ms.lasthandoff: 02/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows 10 和 Windows 10 移动版</h3>
+                                                <h3>Windows10 和 Windows10 移动版</h3>
                                                 <p>了解如何计划、部署、管理 Windows 10 和 Windows 10 移动版，并增强它们的安全性。</p>
                                             </div>
                                         </div>
@@ -515,7 +516,7 @@ ms.lasthandoff: 02/08/2017
                             </a>
                         </li> 
                         <li>
-                            <a href="https://technet.microsoft.com/en-us/library/mt267544.aspx">
+                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -539,4 +540,3 @@ ms.lasthandoff: 02/08/2017
         </li>
     </ul>
 </div>
-

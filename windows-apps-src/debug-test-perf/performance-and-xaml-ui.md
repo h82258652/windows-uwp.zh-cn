@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 38a78b8af1555bdb4409c967bd27e5967b5c40aa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 51befe8b6b30418599fc1dd04a059f3b053046ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="performance"></a>性能
 
@@ -25,7 +23,7 @@ ms.lasthandoff: 02/07/2017
 
 | 主题 | 描述 |
 |-------|-------------|
-| [规划性能](planning-and-measuring-performance.md) | 用户希望他们的应用保持响应状态、使用感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 |
+| [规划性能](planning-and-measuring-performance.md) | 用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 |
 | [优化后台活动](optimize-background-activity.md) | 创建 UWP 应用，这些应用与系统一起以电池高效方式使用后台任务。 |
 | [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md) | 通过 UI 虚拟化、元素减少和项目的进度更新来改进 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 |
 | [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md) | 通过数据虚拟化改进 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 |
@@ -40,5 +38,4 @@ ms.lasthandoff: 02/07/2017
 | [优化文件访问](optimize-file-access.md) | 创建可高效访问文件系统的 UWP 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。 |
 | [Windows 运行时组件和优化的互操作](windows-runtime-components-and-optimizing-interop.md) | 创建使用 UWP 组件的 UWP 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。 |
 | [用于分析和性能的工具](tools-for-profiling-and-performance.md) | Microsoft 提供了多种工具来帮助你改进 UWP 应用的性能。|
-
 

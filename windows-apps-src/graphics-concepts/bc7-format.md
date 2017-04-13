@@ -2,21 +2,17 @@
 title: "BC7 格式"
 description: "BC7 格式是一种用于对 RGB 和 RGBA 数据进行高质量压缩的纹理压缩格式。"
 ms.assetid: 788B6E8C-9A1F-45F9-BE49-742285E8D8A6
-keywords:
-- "BC7 格式"
+keywords: "BC7 格式"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73b6700a902c33c0af0c9314d2869f98f3f53d21
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ae67966d6f49c9cb97621b4613d61e321c9fdba0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bc7-format"></a>BC7 格式
 
 
@@ -24,14 +20,14 @@ BC7 格式是一种用于对 RGB 和 RGBA 数据进行高质量压缩的纹理�
 
 有关 BC7 格式的块模式的信息，请参阅 [BC7 格式模式参考](https://msdn.microsoft.com/library/windows/desktop/hh308954)。
 
-## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a>              <span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>关于 BC7/DXGI\_FORMAT\_BC7
+## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>关于 BC7/DXGI\_FORMAT\_BC7
 
 
 BC7 由以下 DXGI\_FORMAT 枚举值指定：
 
--                 **DXGI\_FORMAT\_BC7\_TYPELESS**。
--                 **DXGI\_FORMAT\_BC7\_UNORM**。
--                 **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**。
+-   **DXGI\_FORMAT\_BC7\_TYPELESS**。
+-   **DXGI\_FORMAT\_BC7\_UNORM**。
+-   **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**。
 
 BC7 格式可用于 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277)（包括阵列）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源相关联的任何 MIP 贴图表面。
 
@@ -43,7 +39,7 @@ BC7 解码器在应用纹理筛选之前执行解压缩。
 
 BC7 解压缩硬件必须是位精确的；也就是说，该硬件返回的结果必须与此文档中所述的解码器返回的结果相同。
 
-## <a name="span-idbc7-implementationspanspan-idbc7-implementationspanspan-idbc7-implementationspanbc7-implementation"></a>              <span id="BC7-Implementation"></span><span id="bc7-implementation"></span><span id="BC7-IMPLEMENTATION"></span>BC7 实现
+## <a name="span-idbc7-implementationspanspan-idbc7-implementationspanspan-idbc7-implementationspanbc7-implementation"></a><span id="BC7-Implementation"></span><span id="bc7-implementation"></span><span id="BC7-IMPLEMENTATION"></span>BC7 实现
 
 
 BC7 实现可以使用在 16 字节（128 位）块的最低有效位中指定的模式指定 8 种模式之一。 该模式由零或更多位进行编码，使用值 0，后面跟着 1。
@@ -70,7 +66,7 @@ BC7 在两个终结点之间的近似线上定义一个调色板。 该模式值
 
 对于与一对终结点对应的每个索引子集，编码器会修复该子集的压缩索引数据的一位的状态。 它完成此操作的方法是：选择一个终结点顺序，该顺序允许指定的“固定”索引的索引将其最高有效位设置为 0，然后就可以丢弃该最高有效位，为每个子集保存一位。 对于仅有一个子集的块模式，固定索引始终为索引 0。
 
-## <a name="span-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspandecoding-the-bc7-format"></a>              <span id="Decoding-the-BC7-Format"></span><span id="decoding-the-bc7-format"></span><span id="DECODING-THE-BC7-FORMAT"></span>解码 BC7 格式
+## <a name="span-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspandecoding-the-bc7-format"></a><span id="Decoding-the-BC7-Format"></span><span id="decoding-the-bc7-format"></span><span id="DECODING-THE-BC7-FORMAT"></span>解码 BC7 格式
 
 
 以下伪代码概述了对于 16 字节 BC7 块，解压缩 (x,y) 处的像素的步骤。
@@ -227,14 +223,14 @@ bitcount get_color_bitcount(block, mode)
 }
 ```
 
-## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a>              <span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>BC7 格式模式参考
+## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>BC7 格式模式参考
 
 
 此部分包含一个用于 BC7 纹理压缩格式块的 8 个块模式和位分配的列表。
 
 块内的每个子集的颜色由两个显式终结点颜色和它们之间的一组内插颜色表示。 根据块的索引精度，每个子集可以具有 4 种、8 种或 16 种可能的颜色。
 
-### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a>              <span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>模式 0
+### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>模式 0
 
 BC7 模式 0 具有以下特征：
 
@@ -246,7 +242,7 @@ BC7 模式 0 具有以下特征：
 
 ![模式 0 位布局](images/bc7-mode0.png)
 
-### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a>              <span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>模式 1
+### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a><span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>模式 1
 
 BC7 模式 1 具有以下特征：
 
@@ -258,7 +254,7 @@ BC7 模式 1 具有以下特征：
 
 ![模式 1 位布局](images/bc7-mode1.png)
 
-### <a name="span-idmode-2spanspan-idmode-2spanspan-idmode-2spanmode-2"></a>              <span id="Mode-2"></span><span id="mode-2"></span><span id="MODE-2"></span>模式 2
+### <a name="span-idmode-2spanspan-idmode-2spanspan-idmode-2spanmode-2"></a><span id="Mode-2"></span><span id="mode-2"></span><span id="MODE-2"></span>模式 2
 
 BC7 模式 2 具有以下特征：
 
@@ -270,7 +266,7 @@ BC7 模式 2 具有以下特征：
 
 ![模式 2 位布局](images/bc7-mode2.png)
 
-### <a name="span-idmode-3spanspan-idmode-3spanspan-idmode-3spanmode-3"></a>              <span id="Mode-3"></span><span id="mode-3"></span><span id="MODE-3"></span>模式 3
+### <a name="span-idmode-3spanspan-idmode-3spanspan-idmode-3spanmode-3"></a><span id="Mode-3"></span><span id="mode-3"></span><span id="MODE-3"></span>模式 3
 
 BC7 模式 3 具有以下特征：
 
@@ -282,7 +278,7 @@ BC7 模式 3 具有以下特征：
 
 ![模式 3 位布局](images/bc7-mode3.png)
 
-### <a name="span-idmode-4spanspan-idmode-4spanspan-idmode-4spanmode-4"></a>              <span id="Mode-4"></span><span id="mode-4"></span><span id="MODE-4"></span>模式 4
+### <a name="span-idmode-4spanspan-idmode-4spanspan-idmode-4spanmode-4"></a><span id="Mode-4"></span><span id="mode-4"></span><span id="MODE-4"></span>模式 4
 
 BC7 模式 4 具有以下特征：
 
@@ -297,7 +293,7 @@ BC7 模式 4 具有以下特征：
 
 ![模式 4 位布局](images/bc7-mode4.png)
 
-### <a name="span-idmode-5spanspan-idmode-5spanspan-idmode-5spanmode-5"></a>              <span id="Mode-5"></span><span id="mode-5"></span><span id="MODE-5"></span>模式 5
+### <a name="span-idmode-5spanspan-idmode-5spanspan-idmode-5spanmode-5"></a><span id="Mode-5"></span><span id="mode-5"></span><span id="MODE-5"></span>模式 5
 
 BC7 模式 5 具有以下特征：
 
@@ -311,7 +307,7 @@ BC7 模式 5 具有以下特征：
 
 ![模式 5 位布局](images/bc7-mode5.png)
 
-### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a>              <span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>模式 6
+### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>模式 6
 
 BC7 模式 6 具有以下特征：
 
@@ -322,7 +318,7 @@ BC7 模式 6 具有以下特征：
 
 ![模式 6 位布局](images/bc7-mode6.png)
 
-### <a name="span-idmode-7spanspan-idmode-7spanspan-idmode-7spanmode-7"></a>              <span id="Mode-7"></span><span id="mode-7"></span><span id="MODE-7"></span>模式 7
+### <a name="span-idmode-7spanspan-idmode-7spanspan-idmode-7spanmode-7"></a><span id="Mode-7"></span><span id="mode-7"></span><span id="MODE-7"></span>模式 7
 
 BC7 模式 7 具有以下特征：
 
@@ -334,7 +330,7 @@ BC7 模式 7 具有以下特征：
 
 ![模式 7 位布局](images/bc7-mode7.png)
 
-### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a>              <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注释
+### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注释
 
 模式 8（最低有效字节设置为 0x00）会被保留。 请勿在你的编码器中使用此模式。 如果你将此模式传递给硬件，则会返回初始化为全部零的一个块。
 
@@ -350,7 +346,7 @@ BC7 模式 7 具有以下特征：
 
     解码器在解码之后将通道顺序重新排序回到 RGBA，这样，内部块格式会对于开发者不可见。 具有单独的颜色和 alpha 分量的块也有两组索引数据：一组用于矢量通道集，一组用于标量通道。 （在模式 4 的情况下，这些索引具有不同的宽度 \[2 或 3 位\]。 模式 4 还包含一个 1 位选择器，该选择器指定矢量或标量通道是否使用 3 位索引。）
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a>              <span id="related-topics"></span>相关主题
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [纹理块压缩](texture-block-compression.md)
@@ -358,7 +354,6 @@ BC7 模式 7 具有以下特征：
  
 
  
-
 
 
 

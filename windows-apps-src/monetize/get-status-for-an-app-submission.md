@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取应用提交的状态。"
-title: "使用 Windows 应用商店提交 API 获取应用提交的状态"
+title: "获取应用提交的状态"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交, 状态"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 757a5e0d09cc7c8c6838b595dba34670d93a8536
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f8bfae09e44f02b740885709e9c22f370412538c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取应用提交的状态
+# <a name="get-the-status-of-an-app-submission"></a>获取应用提交的状态
 
 
 
@@ -117,4 +114,3 @@ Authorization: Bearer <your access token>
 * [确认应用提交](commit-an-app-submission.md)
 * [更新应用提交](update-an-app-submission.md)
 * [删除应用提交](delete-an-app-submission.md)
-

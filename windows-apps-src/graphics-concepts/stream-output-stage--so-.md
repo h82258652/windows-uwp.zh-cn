@@ -2,21 +2,17 @@
 title: "流输出 (SO) 阶段"
 description: "流输出 (SO) 阶段可将顶点数据从之前的有效阶段输出（或流式传输）至内存中的一个或多个缓冲区。 流出到内存的数据可以作为输入数据再次循环回到管道，或者从 CPU 读回。"
 ms.assetid: DE89E99F-39BC-4B34-B80F-A7D373AA7C0A
-keywords:
-- "流输出 (SO) 阶段"
+keywords: "流输出 (SO) 阶段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52a5e886cb2e5ddd8f9bda459f7bd658fb3f7a1b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 07bc125426854bdd82c7cebaed6f3585197353db
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
 
@@ -61,7 +57,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

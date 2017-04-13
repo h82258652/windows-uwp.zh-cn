@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 赛车方向盘, 力反馈"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: ca8413a857fd4d8925a6767280a32a8336eeba19
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="racing-wheel-and-force-feedback"></a>赛车方向盘和力回馈
 
 此页介绍使用 [Windows.Gaming.Input.RacingWheel][racingwheel] 和通用 Windows 平台 (UWP) 的相关 API 进行 Xbox One 赛车方向盘编程的基本知识。
@@ -387,4 +384,3 @@ else
 [wheelmotor]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.wheelmotor.aspx
 [racingwheelreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelreading.aspx
 [racingwheelbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelbuttons.aspx
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, ads, 广告, AdControl, XAML, 属性"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbcc08b1373c7f73d5b9ebf541ec82bb01fd9df3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3c5dae93ab6ee58fac7d4593257d357f268c241a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-xaml-properties-example"></a>AdControl XAML 属性示例
 
 以下 XAML 示例演示了如何将 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 属性分配给值。 如果某个属性未设置，**AdControl** 将使用默认值来创建与应用的用户体验一致的广告。
@@ -40,4 +37,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
-

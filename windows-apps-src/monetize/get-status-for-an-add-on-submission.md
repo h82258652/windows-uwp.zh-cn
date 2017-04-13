@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取加载项提交的状态。"
-title: "使用 Windows 应用商店提交 API 获取加载项提交的状态"
+title: "获取加载项提交的状态"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 状态"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41fc9b5597b5331fc6221575e0601f2414f4c778
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 691e512c2a072748434d092286f0ab36a90f91f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取加载项提交的状态
+# <a name="get-the-status-of-an-add-on-submission"></a>获取加载项提交的状态
 
 
 
@@ -118,4 +115,3 @@ Authorization: Bearer <your access token>
 * [确认加载项提交](commit-an-add-on-submission.md)
 * [更新加载项提交](update-an-add-on-submission.md)
 * [删除加载项提交](delete-an-add-on-submission.md)
-

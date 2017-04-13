@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2b70356f5d28f9884292d816e71838ec4591dad7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 555e340d55c9a2fec6204ffd4759e17d68d8a746
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="recognize-windows-ink-strokes-as-text"></a>将 Windows 笔划墨迹视作文本
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -223,11 +220,11 @@ Windows 支持的一个语言综合子集可用于手写识别。
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
 **注意**  
-用户可以通过转到**设置 -&gt; 时间和语言**来查看已安装语言的列表。 已安装的语言在**语言**下列出。
+用户可以通过转到**设置-&gt;时间和语言**来查看已安装语言的列表。 已安装的语言在**语言**下列出。
 
 若要安装新语言包并为该语言启用手写识别：
 
-1.  转到**设置 &gt; 时间和语言 &gt; 区域和语言**。
+1.  转到**设置&gt;时间和语言&gt;区域和语言**。
 2.  选择**添加语言**。
 3.  从列表中选择某种语言，然后选择区域版本。 该语言现在在**区域和语言**页面上列出。
 4.  单击该语言，然后选择**选项**。
@@ -683,4 +680,3 @@ string str = "Recognition result\n";
 
 
  
-

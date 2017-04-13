@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f66617e3131399a1cfcac17f258cc3b42c6810d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="planning-for-performance"></a>规划性能
 
@@ -168,9 +166,9 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 若要执行此操作，请依次从 Windows 中的开始菜单中选择**“设置”**&gt;**“个性化”**&gt;**“锁屏界面”**。 选择每个活动应用，然后选择**无**。
+    -   在测试设备上关闭后台应用。 若要执行此操作，请依次从 Windows 中的“开始”菜单中选择“设置”****&gt;“个性化”****&gt;“锁屏界面”****。 选择每个活动应用，然后选择“无”****。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
-    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的开始菜单中，搜索**安全和维护**。 在**维护**区域的**自动维护**下，选择**开始维护**并等待状态从**正在进行维护**发生变化。
+    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”****。 在“维护”****区域的“自动维护”****下，选择“开始维护”****并等待状态从“正在进行维护”****发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
@@ -197,5 +195,4 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 ## <a name="optimizing"></a>优化
 
 仅优化代码中性能关键型代码路径：花费时间最多的地方。 分析将会告知你是哪些部分。 通常，在创建遵循良好设计实践的软件与编写以最高优化程度执行的代码之间，存在一个权衡取舍。 通常，在不关注性能的方面，优先考虑开发人员生产效率和良好的软件设计会更好。
-
 

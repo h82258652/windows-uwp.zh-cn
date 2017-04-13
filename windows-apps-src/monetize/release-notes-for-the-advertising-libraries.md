@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: "查看有关 Microsoft Store Services SDK 中 Microsoft Advertising 库的发行说明。"
-title: "Microsoft Advertising 库的发行说明"
+title: "Advertising 库的发行说明"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, ads, 广告, 发行说明"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 666071bccd562f2f95e8ae69f50797fdc464548b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3d07df6e64c96e9070cb82bd7ac6e96b9cad1ee
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="release-notes-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising 库的发行说明
+# <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
 
 
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/07/2017
 
 Microsoft Advertising 库作为 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)（适用于 UWP 应用）以及[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用的一部分提供。 有关安装该 SDK 以及其中包含的库的详细信息，请参阅[安装 Microsoft Advertising 库](install-the-microsoft-advertising-libraries.md)。
 
-若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到**“项目”** > **“添加连接的服务”** > **“广告中介”**即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到“项目”**** > “添加连接的服务”**** > “广告中介”****即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 
 ## <a name="uninstall-previous-versions"></a>卸载以前版本
@@ -49,13 +46,9 @@ Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** �
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>不再可用的纬度和经度属性
 
-**AdControl** 类不会再有适用于 UWP 应用的**纬度**和**经度**属性。 内置于广告控件的代码将以应用的名义检测这些值，并将它们发送到广告服务器。
+**AdControl** 类不会再有适用于 UWP 应用的“纬度”****和“经度”****属性。 内置于广告控件的代码将以应用的名义检测这些值，并将它们发送到广告服务器。
 
-## <a name="important-notice"></a>重要提示
-
-请务必完整地阅读最终用户许可协议 (EULA)。 请参阅主题[重要提示 - EULA](important-notice-eula.md)。
 
  
 
  
-

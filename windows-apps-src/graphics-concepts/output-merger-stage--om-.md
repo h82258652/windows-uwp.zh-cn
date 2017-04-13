@@ -2,21 +2,17 @@
 title: "输出合并 (OM) 阶段"
 description: "输出合并 (OM) 阶段将各种类型的输出数据（像素着色器值、深度和模具信息）与着色器目标的内容以及深度/模具缓冲区组合在一起，以生成最终的管道结果。"
 ms.assetid: ED2DC4A0-2B92-47AF-884A-BFC2183C78B8
-keywords:
-- "输出合并 (OM) 阶段"
+keywords: "输出合并 (OM) 阶段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1d88d8403a0a91f9eaddcfd7fba46ca3d1fd183a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 35d242502441d9f7539a811fbcd376ac6e0b8794
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="output-merger-om-stage"></a>输出合并 (OM) 阶段
 
 
@@ -127,7 +123,6 @@ OM 阶段将使用以下项的组合生成最终呈现的像素颜色：
  
 
  
-
 
 
 

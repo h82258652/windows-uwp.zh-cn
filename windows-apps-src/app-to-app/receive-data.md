@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10，uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1d15bfb6bfed16d1b71313fd5a5f29ceeef3bd3e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b460a20dd88da1745008ea84fe252137df8a82d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="receive-data"></a>接收数据
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -28,8 +25,8 @@ ms.lasthandoff: 02/07/2017
 在用户调用“共享”时，系统将显示可能的目标应用列表。 为了显示在列表中，你的应用需要声明它支持“共享”合约。 这让系统知道你的应用可用于接收内容。
 
 1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
-2.  打开**声明**选项卡。
-3.  从**可用声明**列表中，选择**共享目标**，然后选择**添加**。
+2.  打开“声明”****选项卡。
+3.  从“可用声明”****列表中，选择“共享目标”****，然后选择“添加”****。
 
 ## <a name="choose-file-types-and-formats"></a>选择文件类型和格式
 
@@ -40,13 +37,13 @@ ms.lasthandoff: 02/07/2017
 若要设置文件类型：
 
 1.  打开清单文件。 该文件的名称应类似于 **package.appxmanifest**。
-2.  在**声明**页的**支持的文件类型**部分，选择**新增**。
-3.  键入要支持的文件扩展名，例如“.docx”。 你需要包括句点。 如果希望支持所有文件类型，请选中 **SupportsAnyFileType** 复选框。
+2.  在“声明”****页的“支持的文件类型”****部分，选择“新增”****。
+3.  键入要支持的文件扩展名，例如“.docx”。 你需要包括句点。 如果希望支持所有文件类型，请选中**SupportsAnyFileType** 复选框。
 
 若要设置数据格式：
 
 1.  打开清单文件。
-2.  打开**声明**页的**数据格式**部分，然后选择**新增**。
+2.  打开“声明”****页的“数据格式”****部分，然后选择“新增”****。
 3.  键入支持的数据格式的名称，例如“Text”。
 
 ## <a name="handle-share-activation"></a>处理共享激活
@@ -103,7 +100,7 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择**共享**按钮之前不调用 **ReportStarted**。
+在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择“共享”****按钮之前不调用 **ReportStarted**。
 
 ## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果共享成功，则返回 QuickLink
 
@@ -147,4 +144,3 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
-

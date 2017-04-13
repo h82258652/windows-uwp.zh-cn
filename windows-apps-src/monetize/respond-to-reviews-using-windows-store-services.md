@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: "使用 Windows 应用商店评价 API，以编程方式在应用商店中提交针对应用评价的回复。"
-title: "使用 Windows 应用商店服务回复评价"
+title: "使用应用商店服务回复评价"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, Windows 应用商店评价 API, 响应评价"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 657149304048a88bf85f0dd6f205e7db0497e591
-ms.lasthandoff: 02/08/2017
-
+keywords: "windows 10, uwp, Windows 应用商店评价 API, 回复评价"
+ms.openlocfilehash: 6a345fe3d8d5f8e9df7a01d94a8101d31aa312e5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="respond-to-reviews-using-windows-store-services"></a>使用 Windows 应用商店服务回复评价
+# <a name="respond-to-reviews-using-store-services"></a>使用应用商店服务回复评价
 
 使用 *Windows 应用商店评价 API* 可以编程方式在应用商店中提交对你的应用评价的回复。 对于想在不使用 Windows 开发人员中心仪表板的情况下批量回复多条评价的开发人员来说，此 API 特别有用。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
@@ -90,4 +87,3 @@ Windows 应用商店评价 API 包含多种方法，可用于确定你是否能�
 * [提交对应用评价的回复](submit-responses-to-app-reviews.md)
 
  
-

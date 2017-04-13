@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea665aee9d8e65f5542de96863dee5b9eec9e346
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9acef8f03bcdd4a9c4d40133ab2507853d4d0145
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循本主题中所述的策略。
@@ -88,7 +85,7 @@ ms.lasthandoff: 02/07/2017
 **重要提示**  
 使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 时，请考虑以下几个要点：
 
--   首次在 Windows 8.1 和 Windows Phone 8.1 中引入了通过编程方式触发可使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
+-   首次在 Windows8.1 和 Windows Phone 8.1 中引入了通过编程方式触发可使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
 
 -   Windows 会强制执行某些策略，从而确保获得用户同意才能更新电脑上的外围设备。
 
@@ -123,9 +120,7 @@ ms.lasthandoff: 02/07/2017
 | 使用受支持的设备外围 API（适用于 USB、HID、蓝牙和传感器等的 Windows 运行时 API）的应用可以访问该设备。 如果你的应用无法访问设备或传感器，则拒绝其访问该后台任务。 | ![策略适用](images/ap-tools.png) |
 | 在应用包部件清单中注册该应用提供的后台任务入口点。 | ![策略适用](images/ap-tools.png) |
 | 每个应用只有一项 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务正在运行。 | ![策略适用](images/ap-tools.png) |
-| [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务的最大数量还未达到设备（在其上运行你的应用）上限。 | 桌面设备系列：可以注册无限数量的任务，并且可以并行运行。 |
-|  |  |
-|  | 移动设备系列：在 512 MB 设备上只能注册 1 个任务；否则，可以注册 2 个任务，并且可以并行运行。 |
+| [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务的最大数量还未达到设备（在其上运行你的应用）上限。 | **桌面设备系列**：可以注册无限数量的任务，并且可以并行运行。 **移动设备系列**：在 512 MB 设备上只能注册 1 个任务；否则，可以注册 2 个任务，并且可以并行运行。 |
 | 当使用受支持的 API/协议时，你的应用可以从单个 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务中访问的最大数量的外围设备或传感器。 | 无限制 |
 | 当屏幕锁定时，你的后台任务每分钟消耗 400 毫秒的 CPU 时间（假设 1GHz CPU），或者当屏幕未锁定时，每五分钟消耗该时间。 未能满足此策略可能导致任务被取消。 | ![策略适用](images/ap-tools.png) |
  
@@ -140,9 +135,7 @@ ms.lasthandoff: 02/07/2017
 | 该设备已连接到系统（或在无线设备覆盖范围内）。 | ![策略检查适用](images/ap-tools.png) |
 | 任务不断对设备执行常规 I/O （每隔 5 秒执行 1 次 I/O）。 | ![策略检查适用](images/ap-tools.png) |
 | 应用未取消任务。 | ![策略检查适用](images/ap-tools.png) |
-| 时钟时间限制 - 你的应用任务可以在后台运行的时间总量。 | 桌面设备系列：10 分钟。 |
-|  |  |
-|  | 移动设备系列：无时间限制。 若要节省资源，不要一次执行多于 1 个或 2 个任务。 |
+| 时钟时间限制 - 你的应用任务可以在后台运行的时间总量。 | **桌面设备系列**：10 分钟。 **移动设备系列**：无时间限制。 若要节省资源，不要一次执行多于 1 个或 2 个任务。 |
 | 应用未退出。 | ![策略检查适用](images/ap-tools.png) |
 
 ## <a name="best-practices"></a>最佳做法
@@ -182,4 +175,3 @@ ms.lasthandoff: 02/07/2017
 此外，[**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) 方法使用布尔值 true 或 false 指示是否应在任务未完成的情况下取消当前运行的后台任务实例。 有关详细信息，请参阅 **Unregister** 的 API 参考。
 
 除了 [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869)，你的应用还需要调用 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 这会通知系统与后台任务关联的异步操作已完成。
-

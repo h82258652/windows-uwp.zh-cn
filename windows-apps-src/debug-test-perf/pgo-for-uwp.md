@@ -1,13 +1,11 @@
 ---
 title: "在通用 Windows 平台 (UWP) 应用上运行按配置优化 (PGO)"
 author: erwals-msft
-translationtype: Human Translation
-ms.sourcegitcommit: cb0c425b9764cb20aeab500a0c47db9f573a0042
 ms.openlocfilehash: 60182879f9cf3d364974d6ec4d3c26ec76e0e105
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# 在通用 Windows 平台应用上运行按配置优化 
+# <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>在通用 Windows 平台应用上运行按配置优化 
  
 本主题提供将按配置优化 (PGO) 应用到通用 Windows 平台 (UWP) 应用的分步指南。 并非适用于经典 win32 应用程序的所有步骤都适用于 UWP 应用，因此我们的目标是介绍合并 PGO 以使优化更轻松并且更易于供 UWP 开发人员访问所必需的过程。
 
@@ -77,14 +75,8 @@ ms.openlocfilehash: 60182879f9cf3d364974d6ec4d3c26ec76e0e105
  
 10. 现在，当项目生成时，链接器将调用 pgomgr.exe 以将所有 `<PGDName>!*.pgc` 文件以默认权重 1 合并到 .pgd 中，生成的应用程序将基于分析数据进行优化。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [性能](performance-and-xaml-ui.md)
 
  
-
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

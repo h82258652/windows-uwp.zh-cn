@@ -6,13 +6,11 @@ ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
-translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
 ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# 触摸设计指南
+# <a name="touch-design-guidelines"></a>触摸设计指南
 
 
 
@@ -20,7 +18,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 -   设计将触摸交互作为预期的主要输入方法的应用程序。
@@ -31,7 +29,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 -   尽量不要使用计时的交互（适当使用的示例：长按）。
 -   尽量不要使用用于区别操作的手指数量。
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 首先，以“触摸将是用户的主要输入方法”的初衷设计应用。 如果你使用平台控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 Windows 8 免费提供此类支持。
@@ -157,13 +155,13 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **注意** 其中的一个例外是使用特定的定时交互来帮助了解和探究（如长按）。
+    **注意**  其中的一个例外是使用特定的定时交互来帮助了解和探究（例如，长按）。
 
      
 
 -   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
-## <span id="related_topics"></span>相关文章
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相关文章
 
 **对于开发人员 (XAML)**
 * [触控交互](https://msdn.microsoft.com/library/windows/apps/mt185617)
@@ -173,11 +171,5 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
  
 
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 
