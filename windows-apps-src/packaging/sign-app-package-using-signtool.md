@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6fbcf24984fde4b86e94481d6ad1104a827a8c31
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5cbff0011a4a96c61d7f7bad7e57bd130e09c39b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**SignTool** 是命令行工具，用于对应用包或带有证书的捆绑包进行数字签名。 证书可以由用户创建（用于测试目的）或由公司颁发（用于分发）。 登录应用包可验证用户登录后应用数据未经更改，并且可确认登录用户或公司的身份。 **SignTool** 可登录已加密或未加密的应用包和捆绑包。
+**SignTool** 是命令行工具，用于对应用包或带有证书的捆绑包进行数字签名。 证书可以由用户创建（用于测试目的）或由公司颁发（用于分发）。 登录应用包可验证用户登录后应用数据未经更改，并且可确认登录用户或公司的身份。 **SignTool** 可对已加密或未加密的应用包和捆绑包进行签名。
+
+> [!IMPORTANT] 
+> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
 有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
 

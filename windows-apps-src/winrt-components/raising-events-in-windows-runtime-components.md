@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 56f4ccfcba0fd378f8cef65debce52341f92a2e1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: abd46f788c8947da4c8704baf0f0ea802fff38ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 
 
@@ -141,11 +138,11 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>创建 Windows 运行时组件
 
-在 Visual Studio 中的菜单栏上，依次选择**“文件”&gt;“新建项目”**。 在**新建项目**对话框中，依次展开**“JavaScript”&gt;“通用 Windows”**，然后选择**空白应用**。 将该项目命名为 ToasterApplication，然后选择**确定**按钮。
+在 Visual Studio 中的菜单栏上，依次选择“文件”&gt;“新建项目”****。 在“新建项目”****对话框中，依次展开JavaScript&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”****按钮。
 
-向解决方案中添加一个 C# Windows 运行时组件：在解决方案资源管理器中，打开解决方案的快捷菜单，然后依次选择**“添加”&gt;“新建项目”**。 依次展开**“Visual C#”&gt;“Windows 应用商店”**，然后选择**“Windows 运行时组件”**。 将该项目命名为 ToasterComponent，然后选择**确定**按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
+向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 依次展开“Visual C#”&gt;“Windows 应用商店”****，然后选择“Windows 运行时组件”****。 将该项目命名为 ToasterComponent，然后选择“确定”****按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
-在解决方案资源管理器中，打开解决方案的快捷菜单，然后选择**属性**。 在**属性页**对话框中，选择左侧窗格中的**配置属性**，然后在该对话框顶部，将**配置**设置为**调试**以及将**平台**设置为 x86、x64 或 ARM。 选择**确定**按钮。
+在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”****对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”****设置为“调试”****以及将“平台”****设置为 x86、x64 或 ARM。 选择“确定”****按钮。
 
 **重要提示** 平台 = 所有 CPU 都停止工作，因为它对你将要在稍后添加到解决方案的本机代码 Win32 DLL 无效。
 
@@ -155,7 +152,7 @@ toastCompletedEventHandler: function (event) {
 
 当你需要代理和存根时，你的组件必须使用接口来显示其公共成员。 在 ToasterComponent.cs 中，为 Toaster 定义一个接口，并为该 Toaster 生成的 Toast 定义另一个接口。
 
-**注意** 在 C# 中，你可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择**“重构”&gt;“提取接口”**。 在生成的代码中，手动提供接口公共辅助功能。
+**注意** 在 C# 中，你可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择“重构”&gt;“提取接口”****。 在生成的代码中，手动提供接口公共辅助功能。
 
 ```csharp
     public interface IToaster
@@ -433,4 +430,3 @@ The project should now build. Run the project and verify that you can make toast
 ## Related topics
 
 * [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
-

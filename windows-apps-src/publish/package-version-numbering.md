@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dfa8191be375998021f233711ae433f8a5d4e44b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 00131a10892e80f3bd81384fa80fe39915b17ec8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="package-version-numbering"></a>程序包版本编号
 
 
@@ -86,4 +83,3 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 | x86，v1.0.0.1 <br> x64，v1.0.0.1 <br> ARM，v1.0.0.1 | x86，v1.0.0.2 <br> x64，v1.0.0.2 <br> ARM，v1.0.0.2 | v1.0.0.2，针对客户计算机的体系结构。  | 对于运行针对其计算机的特定体系结构所生成应用的 v1.0.0.1 的客户，v1.0.0.1 将更新为 v1.0.0.2。 |
  
 > **注意**  与 .appx 程序包不同，当确定向给定客户提供哪个程序包时，不考虑任何 .xap 程序包中的版本号。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e2cdcf5d06fdbe6f510a416bd1da28e7cf6a51d5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 10333de456b913adf1c35a0df08f9b99ad4d4fa0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="setting-up-your-payout-account-and-tax-forms"></a>设置你的付款帐户和税单
 
 
@@ -30,8 +27,8 @@ ms.lasthandoff: 02/07/2017
 
 [设置开发者帐户](opening-a-developer-account.md)后，需要先执行两项操作，然后才能在 Windows 应用商店中出售应用（或加载项）：
 
--   [设置付款帐户](#setting_up_your_payout_account)
--   [填写税单](#paying_taxes)
+-   [设置付款帐户](#payout-account)
+-   [填写税单](#tax-forms)
 
 > **注意**：有关支付应用销售所得款项的方式和时间，请参阅[获得收入](getting-paid-apps.md)。
 
@@ -42,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 
 付款帐户是我们用于为你存入销售收益的银行帐户。 此银行帐户的所在地必须与你注册开发人员帐户的国家/地区相同。
 
-> **注意**：在某些市场中，PayPal 可用于你的付款帐户。 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)以查明某个特定市场是否支持 PayPal，并阅读下面的 [PayPal 信息](#paypal)获取更多详细信息。
+> **注意**：在某些市场中，PayPal 可用于你的付款帐户。 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)以查明某个特定市场是否支持 PayPal，并阅读下面的 [PayPal 信息](#paypal-info)获取更多详细信息。
 
  
 **设置付款帐户**
@@ -124,7 +121,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="tax-forms"></a>税单
 
 
-[注册开发者帐户](opening-a-developer-account.md)并设置[付款帐户](#receiving_payments)后，可以通过完成以下步骤为 Windows 应用商店创建*税务资料*：
+[注册开发者帐户](opening-a-developer-account.md)并设置[付款帐户](#payout-account)后，可以通过完成以下步骤为 Windows 应用商店创建*税务资料*：
 
 -   指定你的居住地和公民身份所属的国家/地区。
 -   填写相应的税单。
@@ -160,7 +157,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

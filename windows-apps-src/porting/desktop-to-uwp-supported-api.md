@@ -1,26 +1,24 @@
 ---
-author: awkoren
+author: normesta
 Description: "本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。"
 Search.Product: eADQiWindows 10XVcnh
-title: "已转换的桌面应用支持的 UWP API"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "桌面到 UWP 桥：受支持的 UWP API"
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>使用桌面桥转换的应用支持的 UWP API
+# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>桌面到 UWP 桥：受支持的 UWP API
 
-已转换的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用。 本文列出了已转换的应用可以使用的可用类。 
+已转换的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用。 本文列出了已转换的应用可以使用的可用类。
 
-大部分 UWP API 都可以在已转换的桌面应用上正常工作。 但是，某些功能区域尚未经过充分测试或当前无法按预期运行。 
+大部分 UWP API 都可以在已转换的桌面应用上正常工作。 但是，某些功能区域尚未经过充分测试或当前无法按预期运行。
 
 <table><tr><th>功能区域</th><th>详细信息</th><tr>
 <tr><td>约会、联系人和电子邮件</td><td>已转换的应用当前并非支持所有 API。</td></tr>
@@ -42,15 +40,15 @@ ms.lasthandoff: 02/08/2017
 </table>
 
 
-有时，这些区域中的 API 可能会正常工作。 但是，如果某个 API 没有明确列为受支持，则应避免使用该 API，因为它可能会有意外的负面影响或行为。 在未来的版本中可能会支持这些 API。 在此期间，你的应用应改为使用相关的 Win32 或 .NET API。 
+有时，这些区域中的 API 可能会正常工作。 但是，如果某个 API 没有明确列为受支持，则应避免使用该 API，因为它可能会有意外的负面影响或行为。 在未来的版本中可能会支持这些 API。 在此期间，你的应用应改为使用相关的 Win32 或 .NET API。
 
 已转换的应用不支持某些可用于完整桌面应用程序的 UWP API。 如果你的桌面应用程序在转换之前使用了 UWP API，应验证这些 API 是否仍受支持。 有关详细信息，请参阅[适用于桌面应用的 Windows 运行时 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
 
 ## <a name="list-of-apis"></a>API 列表
 
-下面是在已转换的应用中受支持的 UWP API 的完整列表。 你可以查看[在已转换的应用中最新受支持的 API](#new) 或[在已转换的应用和桌面应用程序中均受支持的 API](#both)。 
+下面是在已转换的应用中受支持的 UWP API 的完整列表。 你可以查看[在已转换的应用中最新受支持的 API](#new) 或[在已转换的应用和桌面应用程序中均受支持的 API](#both)。
 
-有关如何使用 WinRT API 的示例，请参阅 GitHub 上的 [UWP 的桌面应用桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。 你还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)，了解应用生成。 
+有关如何使用 WinRT API 的示例，请参阅 GitHub 上的[到 UWP 的桌面应用桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。 你还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)，了解应用生成。
 
 <span id="new" />
 ### <a name="apis-supported-in-newly-converted-apps"></a>在新转换的应用中受支持的 API
@@ -1045,4 +1043,3 @@ ms.lasthandoff: 02/08/2017
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-

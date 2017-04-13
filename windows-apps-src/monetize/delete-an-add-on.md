@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
 description: "在 Windows 应用商店提交 API 中使用此方法，可删除注册到 Windows 开发人员中心帐户的应用的加载项。"
-title: "使用 Windows 应用商店提交 API 删除加载项"
+title: "删除加载项"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项, 删除, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 56ae310a13401b733eadf08f2f1992bfe0130884
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 74149837e43b65998069c8724b5cd6c55df8703b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 删除加载项
+# <a name="delete-an-add-on"></a>删除加载项
 
 
 
@@ -96,4 +93,3 @@ Authorization: Bearer <your access token>
 * [获取所有加载项](get-all-add-ons.md)
 * [获取加载项](get-an-add-on.md)
 * [创建加载项](create-an-add-on.md)
-

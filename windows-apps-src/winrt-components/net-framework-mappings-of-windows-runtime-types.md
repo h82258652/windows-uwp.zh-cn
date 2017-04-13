@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a69ad9bdff70dc04f9bdf9eb4f5117a22a005969
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 运行时类型的 .NET framework 映射
 
 
@@ -27,8 +24,6 @@ ms.lasthandoff: 02/07/2017
 
 
 在 UWP 和 .NET Framework 中，大多数具有相同的命名空间名称和类型名称的类型都是结构（或者与结构关联的类型，例如枚举）。 在 UWP 中，结构没有字段以外的成员，并且需要 .NET Framework 隐藏的帮助程序类型。 这些 .NET Framework 版本的结构具有可提供隐藏帮助程序类型的功能的属性和方法。
-
-有关 .NET Framework 使用 Windows 元数据来通过 Windows 运行时简化编程的方式的详细信息，请从 Windows 开发人员中心下载 [CLR 和 Windows 运行时](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx)白皮书。
 
 表 1：使用不同的名称和/或命名空间映射到 .NET Framework 类型的 UWP 类型。
 
@@ -90,4 +85,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相关主题
 
 * [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-

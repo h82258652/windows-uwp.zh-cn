@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9b9ec40eb3411252c46286e44744a8ab7ef9c431
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-attached-properties"></a>自定义附加属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -250,5 +247,4 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 * [附加属性概述](attached-properties-overview.md)
 * [自定义依赖属性](custom-dependency-properties.md)
 * [XAML 概述](xaml-overview.md)
-
 

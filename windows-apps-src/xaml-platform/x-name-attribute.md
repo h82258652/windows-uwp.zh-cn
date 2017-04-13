@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a80a5cdeae5adc2af59072400aa42428eac28431
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9fa472869ed3b81a9f688652a487b1b93986b777
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xname-attribute"></a>x:Name 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。 应用于支持的编程模型之后，**x:Name** 可视为等效于持有一个对象引用（由一个构造函数返回）的变量。
 
@@ -74,5 +71,4 @@ UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例
 ### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 
 **x:Name** 可以作为一个属性应用到 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内的元素，以充当 [x:Key 属性](x-key-attribute.md)的替代属性。 （通常，要求 **ResourceDictionary** 中的所有元素都必须具有一个 x:Key 或 x:Name 属性。）这常见于[情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)部分。
-
 

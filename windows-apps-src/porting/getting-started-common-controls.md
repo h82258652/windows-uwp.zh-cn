@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-common-controls"></a>入门：常见控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -66,4 +63,3 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 * [版本 2014：XAML UI 和控件如何？](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [版本 2014：使用常见 XAML UI 框架开发应用](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [版本 2014：使用 Visual Studio 构建 XAML 融合应用](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-

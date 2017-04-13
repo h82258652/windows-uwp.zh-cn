@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "若要管理应用的广告活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”&gt;“推广你的应用”。"
+Description: "若要管理应用的广告市场活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”&gt;“推广你的应用”。"
 title: "管理广告活动"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b73b8c1ac467bce3d1edcec3582d247e7a90bd29
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 642049a5356ec276b5cf629a7ca1c431e5c00476
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="managing-your-ad-campaign"></a>管理广告活动
 
 
-若要管理应用的广告活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”****&gt;“推广你的应用”****。 “推广你的应用”****页面将列出与你的应用相关联的所有广告市场活动，并将显示每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)中关于这些术语的定义。
+若要管理应用的广告市场活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”****&gt;“推广你的应用”****。 “推广你的应用”****页面将列出与你的应用相关联的所有广告市场活动，并将显示每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)中关于这些术语的定义。
 
 若要筛选广告市场活动列表，请单击“部分筛选器”****下拉菜单，然后从以下筛选器中进行选择：
 
@@ -51,7 +48,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

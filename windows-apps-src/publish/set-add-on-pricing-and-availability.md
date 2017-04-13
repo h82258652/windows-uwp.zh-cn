@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "在提交加载项时，“定价和可用性”页面上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。"
+Description: "在提交加载项时，“定价和可用性”页上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。"
 title: "设置加载项定价和可用性"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e16cd437a1ee2b53a263ad29cd8e93b3d2e40bed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2902b81e777662e0d71bf10553ed82087c5cee9a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-add-on-pricing-and-availability"></a>设置加载项定价和可用性
 
 
-在提交加载项时，**定价和可用性**页面上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。
+在提交加载项时，“定价和可用性”****页上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。
 
 ## <a name="base-price"></a>基价
 
@@ -64,7 +61,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

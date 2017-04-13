@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6841355976d74a21429df1c91dced9b702a3af4a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2546ef6141095a0033f197e1e43e68276253aba3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="age-ratings"></a>年龄分级
 
 [应用提交进程](app-submissions.md)的**年龄分级**页面允许你提供有关应用的信息，以便它可以收到由[国际年龄分级联盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 分级系统管理的相应年龄和内容分级。 这些分级与应用内容的适宜性有关，而与应用的目标受众的年龄无关。
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
 | 12+（适合 12 岁及以上年龄） | 使用此年龄分级的应用可能会包含更多的非性本质的裸露、针对非现实角色的轻微血腥暴力或针对现实人物或动物角色的非血腥暴力。 此年龄分级可能还包含猥亵，但不具有性本质。 另外，使用此年龄分级或更高分级的应用可以允许不受控制地执行以下操作：(i) 访问在线社交网络，或者 (ii) 与第三方共享个人信息，包括其他玩家或在线熟人。 （若要让此类活动被视为受到控制，你的应用必须包含一些家长控制功能 - 要求家长许可才能使用这些共享功能，你还必须在[认证说明](notes-for-certification.md)中指明这些家长控制选项并说明其功能。） |
 | 16+（适合 16 岁及以上年龄） | 具有此年龄分级的应用可以描绘带最低血腥程度的真实暴力，并且它们可以描绘性行为。 它们还可以包含毒品或烟草的使用和犯罪活动以及比 12+ 应用所允许的更多的猥亵，但是处于应用商店策略所制定的限制内。                                                                                                                           |
 | 18+（适合成人）            | 此年龄分级的游戏可能包含仅适合成人用户的激烈、粗俗或特定暴力、血腥内容。 所有内容都必须符合[内容策略](https://msdn.microsoft.com/library/windows/apps/dn764944)标准。                                                                                                                                                            |
-

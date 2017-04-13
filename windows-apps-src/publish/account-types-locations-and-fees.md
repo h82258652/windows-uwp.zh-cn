@@ -4,25 +4,22 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: "帐户类型、位置和费用"
 description: "我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 03/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0e59913e18bdc521eb37b874f90a2ce0442373ce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f6cdace7d619ede77956fb081756e0bc5682e16
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
 我们提供两种类型的开发者帐户：个人帐户和公司帐户。 在许多[国家和地区](#developer-account-and-app-submission-markets)均提供开发者帐户。 任一类型的帐户都向你提供将应用发布到应用商店和参与其他 Microsoft 开发人员计划的访问权限。
 
 > **注意**  无论是为公司还是个人创建帐户，你都只能将一个 Microsoft 帐户与开发者帐户相关联。 当注册帐户时，确保使用你希望用于开发者帐户的 Microsoft 帐户登录。
 
-在[开始注册过程](http://go.microsoft.com/fwlink/p/?LinkId=615100)时，你需要选择是创建个人帐户还是公司帐户。 个人帐户用于自行开发的单个开发人员。 公司帐户用于组织和企业。 公司帐户向你提供访问某些附加应用功能的权限。 在你注册公司帐户后，我们还需要进一步对公司帐户进行验证，以确保已向你授权为公司设置该帐户。 此验证需要几天到几周时间，通常还会致电你的公司。 这两种类型的帐户均允许你提交应用、加载项和服务。
+在[开始注册过程](http://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、加载项和服务。 个人帐户用于自行开发的单个开发人员。 公司帐户用于组织和企业，并且允许访问某些其他应用功能。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 
 
 > **重要提示**  由于在选择后无法更改帐户类型，因此，请务必选择正确的类型。
 
@@ -32,9 +29,7 @@ ms.lasthandoff: 02/07/2017
 |--------------------|-----------------|
 | <ul><li>使用某些应用功能时受到限制</li><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li></ul> | <ul><li>需要通过 Symantec 或 Dun &amp; Bradstreet 进行验证</li><li>更高的应用功能访问权限</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li></ul> |
 
-> **重要提示**   如果你决定创建公司帐户，请确保查看我们的[公司帐户指南](opening-a-developer-account.md#additional-guidelines-for-company-accounts)。
-
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 拥有公司帐户的主要好处之一是能够提交用于声明其他[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)的应用。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 公司帐户还允许你提交应用，以进行其他[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
 
 具体而言，必须拥有公司帐户，才能发布使用以下三项功能的应用：
 
@@ -46,7 +41,11 @@ ms.lasthandoff: 02/07/2017
 
 拥有公司帐户不能保证使用这些功能的应用通过认证。 这些功能针对非常具体的情形，大多数应用不应声明它们。 有关详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
 
-对于公司帐户，我们使用 Symantec 或 Dun &amp; Bradstreet 来验证你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的联系信息是最新的）。 在验证完公司帐户后，你才可以从公司帐户中提交应用，但在等待验证时，你可以[保留应用名称](https://msdn.microsoft.com/library/windows/apps/JJ657967)、访问 Windows 开发人员中心仪表板以及继续生成和测试你的应用。
+## <a name="account-verification"></a>帐户验证
+
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们使用 Symantec 或 Dun &amp; Bradstreet 来验证你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证完公司帐户后，你才可以从公司帐户中提交应用，但在等待验证时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)、访问 Windows 开发人员中心仪表板以及继续生成和测试你的应用。
+
+可在**帐户设置**页上查看验证状态。 
 
 ## <a name="developer-account-and-app-submission-markets"></a>开发者帐户和应用提交市场
 
@@ -56,11 +55,11 @@ ms.lasthandoff: 02/07/2017
 
 > **注意**  当你注册时，我们会在注册费的基础上增加任何适用的税款和费用。 同时，当我们向你付款时，你的银行可能会收取一定的费用才能收到付款。
 
-**付款**列介绍了我们如何支付你通过应用赚取的利润。 你可以选择[付款帐户](setting-up-your-payout-account-and-tax-forms.md)，我们会将你的应用收益存入该帐户。
+**付款**列介绍了我们如何[向你支付](getting-paid-apps.md) 通过应用赚取的利润。 你可以选择[付款帐户](setting-up-your-payout-account-and-tax-forms.md)，我们会将你的应用收益存入该帐户。
 
 > **注意**  某些市场不支持付费应用（**付款**）。 在这些市场中，只能提交免费应用。
 
-**PayPal** 列说明了是否支持[付款帐户](https://msdn.microsoft.com/library/windows/apps/Bg124529)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
+**PayPal** 列说明了是否支持[付款帐户](setting-up-your-payout-account-and-tax-forms.md)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
 
 | 国家/地区 | 个人注册 费用 | 公司注册 费用 | 付款 | PayPal |
 |----------------|---------------------|------------------|--------|--------|
@@ -103,7 +102,7 @@ ms.lasthandoff: 02/07/2017
 |  哥伦比亚 | 36543 COP | 180,000 COP | USD 支付到银行 | 否 | 
 |  科摩罗 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  刚果 | 19 USD | 99 USD | XAF 支付到银行 | 否 | 
-|  刚果（民主共和国） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
+|  刚果（金） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  哥斯达黎加 | 9578 CRC | 49725 CRC | CRC 支付到银行 | 否 | 
 |  科特迪瓦 | 19 USD | 99 USD | XOF 支付到银行 | 否 | 
 |  克罗地亚 | 107 HRK | 500 HRK | HRK 支付到银行 | 否 | 
@@ -166,7 +165,7 @@ ms.lasthandoff: 02/07/2017
 |  立陶宛 | 14 EUR | 75 EUR | EUR 支付到银行 | 否 | 
 |  卢森堡 | 14 EUR | 75 EUR | EUR 支付到银行 | 是 | 
 |  澳门特别行政区 | 19 USD | 99 USD | 未付款 | 否 | 
-|  马其顿（马其顿共和国） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
+|  马其顿（前南斯拉夫共和国） | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  马达加斯加 | 19 USD | 99 USD | USD 支付到银行 | 否 | 
 |  马拉维 | 19 USD | 99 USD | MWK 支付到银行 | 否 | 
 |  马来西亚 | 62 MYR | 300 MYR | USD 支付到银行 | 否 | 
@@ -257,11 +256,4 @@ ms.lasthandoff: 02/07/2017
 |  津巴布韦 | 19 USD | 99 USD | USD 支付到银行 | 否 |
 
 \* 可以在此市场中使用 PayPal 作为付款帐户的付款方式，但不能使用此付款方式支付开发者帐户注册费。
-
-## <a name="related-topics"></a>相关主题
-
-* [开设开发者帐户](opening-a-developer-account.md)
-* [设置你的付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)
-* [获取付款](getting-paid-apps.md)
- 
 

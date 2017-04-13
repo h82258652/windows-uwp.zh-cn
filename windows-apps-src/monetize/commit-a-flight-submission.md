@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: "在 Windows 应用商店提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的软件包外部测试版提交。"
-title: "使用 Windows 应用商店提交 API 确认软件包外部测试版提交"
+title: "确认软件包外部测试版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 确认外部测试版提交"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 305c9280b00fbbd669bee31732e831238054f177
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="commit-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 确认软件包外部测试版提交
+# <a name="commit-a-package-flight-submission"></a>确认软件包外部测试版提交
 
 
 
@@ -117,4 +114,3 @@ Authorization: Bearer <your access token>
 * [更新软件包外部测试版提交](update-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
 * [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
-

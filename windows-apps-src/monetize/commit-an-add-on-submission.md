@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: "在 Windows 应用商店提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的加载项提交。"
-title: "使用 Windows 应用商店提交 API 确认加载项提交"
+title: "确认加载项提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 确认加载项提交, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bb8fb30a8dace9c9e32cc233bf6b73046263a22d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3ab65675822f9b9c88e5c613c4394b295e7430e1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="commit-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 确认加载项提交
+# <a name="commit-an-add-on-submission"></a>确认加载项提交
 
 
 
@@ -115,4 +112,3 @@ Authorization: Bearer <your access token>
 * [更新加载项提交](update-an-add-on-submission.md)
 * [删除加载项提交](delete-an-add-on-submission.md)
 * [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
-

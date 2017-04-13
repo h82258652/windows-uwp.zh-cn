@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: "在 Windows 应用商店提交 API 中使用此方法，可删除现有软件包外部测试版提交。"
-title: "使用 Windows 应用商店提交 API 删除软件包外部测试版提交"
+title: "删除软件包外部测试版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交, 删除, 软件包外部测试版"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e720b8551949335faa0407cbc159c217d4b91343
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1b69fb04742e30a80b258613385b40ce8999306c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 删除软件包外部测试版提交
+# <a name="delete-a-package-flight-submission"></a>删除软件包外部测试版提交
 
 
 
@@ -101,4 +98,3 @@ Authorization: Bearer <your access token>
 * [确认软件包外部测试版提交](commit-a-flight-submission.md)
 * [更新软件包外部测试版提交](update-a-flight-submission.md)
 * [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
-

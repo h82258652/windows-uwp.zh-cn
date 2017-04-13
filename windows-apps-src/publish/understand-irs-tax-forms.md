@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "了解 Microsoft 发出的税单，包括税单接收方和税单提供时间。"
+Description: "了解 Microsoft 发出的税单，包括谁将收到它们，以及何时提供。"
 title: "了解 Microsoft 发出的 IRS 税单"
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5f51e1c5a44767e49b5c3dc5f578c2532da11008
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 068a940a54048b10e8f66bd3267b3a22c42beb50
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
 根据你所在位置以及收到的销售额和/或付款金额，你每年可能会从 Microsoft 收到一份或多份税单。 Microsoft 需要发出这些表单并呈报美国国税局 (IRS)。
@@ -127,4 +124,3 @@ EIN：\*\*\*\*\*0505<br>
 
 
 > **注意**如果你有与 **IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](http://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。
-

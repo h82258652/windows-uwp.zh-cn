@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 329c4c507e94b08f948f4984dfbd96239eb3cd9d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 45c7c541ab278da1f00899a16636337dcdc20d3f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="layout-panels"></a>布局面板
 
@@ -232,4 +230,3 @@ Canvas 不对其子素的大小进行任何调整。 每个元素都必须指定
 ## <a name="panels-for-itemscontrol"></a>ItemsControl 的面板
 
 存在多种只能用作 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) 来显示 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 中的项的特殊用途面板。 它们是 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx)。 你无法将这些面板用于常规 UI 布局。
-

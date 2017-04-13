@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6f928e9d3ad67773f36a0ae8c110df3e17ad88c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b26ee59be9c309326eeb93546d3702bc161513f3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-dependency-properties"></a>自定义依赖属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -62,7 +59,7 @@ Windows 运行时中的依赖属性示例如下：[**Control.Background**](https
 一个依赖属性的定义可视为一组概念。 这些概念不一定是顺序步骤，因为在实现的一行代码中可解决多个概念。 这个列表只是提供了简短概述。 我们将在本主题后面更详细地介绍每个概念，并且显示多种语言的示例代码。
 
 -   向属性系统注册属性名称（调用 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)），指定所有者类型和属性值的类型。 
-    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一个必需的参数需要使用属性元数据。 为 Register 指定 **null**，或者如果你希望通过调用 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 可还原属性已更改的行为或基于元数据的默认值，请指定 [**PropertyMetadata**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.propertymetadata) 的实例。
+    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一个必需的参数需要使用属性元数据。 为 Register 指定 **null**，或者如果你希望通过调用 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 可还原属性已更改的行为或基于元数据的默认值，请指定 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata) 的实例。
 -   将一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符定义为所有者类型上的一个 **public static readonly** 属性成员。
 -   按照你正在实现的语言中所用的属性访问器模型，定义一个包装器属性。 包装器属性名称应该与 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 中使用的 *name* 字符串匹配。 实现 **get** 和 **set** 访问器将包装器与它包装的依赖属性相连接，方法是调用 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 并将你自己的属性标识符作为一个参数传递。
 -   （可选）将 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 等特性放在包装器上。
@@ -380,5 +377,4 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 * [依赖属性概述](dependency-properties-overview.md)
 * [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
-
 

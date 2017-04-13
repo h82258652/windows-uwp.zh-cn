@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Windows 开发人员中心仪表板中的“加载项购置”报告允许你查看已售出多少加载项以及客户统计数据和平台详细信息。"
+Description: "通过 Windows 开发人员中心仪表板中的“加载项购置”报告，你可以查看你已售出多少加载项以及客户统计数据和平台详细信息。"
 title: "加载项购置报告"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 189b15728fd5013a1f976803ffb0e55f57e95142
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1c2001e93fd06cc93fa5cfe9d2a10a029e13c82d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-on-acquisitions-report"></a>加载项购置报告
 
 
-Windows 开发人员中心仪表板中的**加载项购置**报告允许你查看已售出多少加载项以及客户统计数据和平台详细信息。 可在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供离线查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
+通过 Windows 开发人员中心仪表板中的**加载项购置**报告，你可以查看你已售出多少加载项以及客户统计数据和平台详细信息。 可在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供离线查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
 
 在此报告中，加载项购置意味着客户已向你购买了加载项。 同一客户多次购买的同一易耗型加载项的操作计为单独的加载项购置。
 
@@ -34,7 +31,7 @@ Windows 开发人员中心仪表板中的**加载项购置**报告允许你查�
 -   **加载项**：默认筛选器为**所有加载项**。 如果你希望仅显示一个加载项的购置数据，可以在此处选择一个特定加载项。
 -   **设备类型**：默认设置是**所有设备**。 如果你希望仅显示来自某个特定设备类型的加载项购置数据，可以在此处选择一台特定设备。
 
-下面列出的图中的信息将反映在**应用筛选器**部分中所选的时段。
+下面列出的图中的信息将反映**应用筛选器**部分中所选的时段。
 
 以下列出的所有图中的信息将反映在**“应用筛选器”**部分中所选的时段。 除非你已使用**应用筛选器**仅选择一个设备类型，否则在默认情况下，这会包含所有设备类型的数据。
 
@@ -70,4 +67,3 @@ Windows 开发人员中心仪表板中的**加载项购置**报告允许你查�
  
 
  
-

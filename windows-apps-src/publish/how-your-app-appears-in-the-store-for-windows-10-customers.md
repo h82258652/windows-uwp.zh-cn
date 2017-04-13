@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，则客户同样也可以通过 Windows 10 设备获取这些应用。"
+Description: "如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，客户同样也可以通过 Windows 10 设备获取这些应用。"
 title: "你的应用如何显示在面向 Windows 10 客户的应用商店中"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ms.author: wdg-dev-content
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4a7c10d93a3145466007bfe4fac63422400a9830
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef76bf9a26336f89b1b1a93099dec56191823a2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>你的应用如何显示在面向 Windows 10 客户的应用商店中
 
 
@@ -25,7 +22,7 @@ ms.lasthandoff: 02/07/2017
 
  
 
-## <a name="consideration-for-apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>用于在 Windows 应用商店和 Windows Phone 应用商店中共享标识的应用的注意事项
+## <a name="apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>用于在 Windows 应用商店和 Windows Phone 应用商店中共享标识的应用
 
 
 如果你已为同时发布到这两个应用商店的应用使用了相同的保留名称（通常称之为“共享你的应用的标识”），此时这两个应用将被视为一个应用，而不是两个应用。 在仪表板中，你可以将它们视为具有 Windows 和 Windows Phone 程序包的单个应用。
@@ -53,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 你的应用将在你之前发布它的每个市场中提供给 Windows 10 客户。 即使你为每个应用商店选择了不同的市场，也是如此。
 
 ### <a name="categories"></a>类别
-如果你的应用以不同的类别显示在这两个应用商店中，我们将使用 Windows 应用商店中的类别来确定其新类别。 请注意，面向 Windows 10 客户的某些类别在应用商店中有所不同，所以请务必查看下[表](#cat)。
+如果你的应用以不同的类别显示在这两个应用商店中，我们将使用 Windows 应用商店中的类别来确定其新类别。 请注意，面向 Windows 10 客户的某些类别在应用商店中有所不同，所以请务必查看下[表](#category-changes)。
 
 ### <a name="age-rating"></a>年龄分级
 如果你提供了不同的年龄分级，将使用更严格的（更高的年龄）分级。
@@ -126,4 +123,3 @@ ms.lasthandoff: 02/07/2017
 | 游戏 &gt; 家庭           | 游戏 &gt; 家庭 + 儿童             |
 | 游戏 &gt; 拼图           | 游戏 &gt; 拼图 + 益智           |
 | 游戏 &gt; 赛车           | 游戏 &gt; 赛车 + 飞行类           |
-

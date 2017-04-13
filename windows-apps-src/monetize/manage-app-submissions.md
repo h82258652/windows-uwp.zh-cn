@@ -2,27 +2,24 @@
 author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "在 Windows 应用商店提交 API 中使用这些方法，来管理已注册到 Windows 开发人员中心帐户的应用提交。"
-title: "使用 Windows 应用商店提交 API 管理应用提交"
+title: "管理应用提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 21a421b057a55120865c01cc3dffb80318ab38ed
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f6f0342619f91190bf021842c3ac3b0c61964d25
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-app-submissions-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 管理应用提交
+# <a name="manage-app-submissions"></a>管理应用提交
 
 Windows 应用商店提交 API 提供可用于管理应用提交的方法，包括逐步软件包推出。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 >**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
 
->**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建应用提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将不再能够使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+>**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建应用提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-app-submissions" />
 ## <a name="methods-for-managing-app-submissions"></a>管理应用提交的方法
@@ -39,7 +36,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -224,7 +221,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -233,26 +230,35 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+          "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
             "fileName": "contoso.png",
             "fileStatus": "Uploaded",
             "id": "1152921504672272757",
+            "description": "Main page",
             "imageType": "Screenshot"
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -296,7 +302,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -318,7 +324,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 
 此资源具有以下值。
 
-| 值      | 类型   | 说明      |
+| 值      | 类型   | 描述      |
 |------------|--------|-------------------|
 | id            | 字符串  | 提交的 ID。  |
 | applicationCategory           | 字符串  |   为应用指定[类别和/或子类别](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字符串。 通过下划线“_”字符将类别和子类别组合为单个字符串，例如 **BooksAndReference_EReader**。      |  
@@ -328,11 +334,11 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |  
 | listings           |   对象  |  键值对字典，其中每个键为国家/地区代码，而每个值为包含应用列表信息的[列表资源](#listing-object)。       |   
 | hardwarePreferences           |  数组  |   一组用于定义应用的[硬件首选项](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences)的字符串。 这可以是以下值之一： <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  布尔值  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
-| canInstallOnRemovableMedia           |  布尔值  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| isGameDvrEnabled           |  布尔值 |   指示是否可以为应用启用游戏 DVR。    |   
-| hasExternalInAppProducts           |     布尔值          |   指示应用是否允许用户在 Windows 应用商店商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| meetAccessibilityGuidelines           |    布尔值           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
+| automaticBackupEnabled           |  布尔型  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
+| canInstallOnRemovableMedia           |  布尔型  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| isGameDvrEnabled           |  布尔型 |   指示是否可以为应用启用游戏 DVR。    |   
+| hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Windows 应用商店商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | status           |   字符串  |  提交的状态。 这可以是以下值之一： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   对象  | 包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。       |    
@@ -340,8 +346,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 | applicationPackages           |   数组  | 提供有关提交中每个包的详细信息的[应用程序包资源](#application-package-object)数组。 |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置的[软件包递送选项资源](#package-delivery-options-object)。  |
 | enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔值   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
 | friendlyName           |   字符串  |  提交的友好名称，如开发人员中心仪表板中所示。 当你创建提交时，系统会为你生成此值。       |  
 
 
@@ -495,8 +501,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 | languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
 | minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows 10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows 10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows 10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
+| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>无</li><li>Memory2GB</li></ul>   |       
+| targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
 
 <span/>
 
@@ -551,6 +557,8 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 | packageRolloutStatus    |  字符串   |  以下指示逐步软件包推出状态的字符串之一： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字符串   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
 
+>**注意**&nbsp;&nbsp;*packageRolloutStatus* 和 *fallbackSubmissionId* 值由开发人员中心分配，但不是由开发人员设置。 如果已将这些值包括在请求正文中，则忽略这些值。 
+
 <span/>
 
 ## <a name="enums"></a>Enums
@@ -562,7 +570,7 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 
 以下值表示应用提交的[定价资源](#pricing-object)中可用的价格段。
 
-| 值           | 描述        |
+| 值           | 说明        |
 |-----------------|------|
 |  Base               |   未设置价格段；使用应用的基价。      |     
 |  NotAvailable              |   应用在特定区域中不可用。    |     
@@ -611,4 +619,3 @@ Windows 应用商店提交 API 提供可用于管理应用提交的方法，包�
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 应用商店提交 API 获取应用数据](get-app-data.md)
 * [开发人员中心仪表板中的应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
-

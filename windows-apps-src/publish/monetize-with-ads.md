@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "如果你的应用使用广告中介，或者显示来自 Microsoft Advertising 的横幅或间隙视频广告，请使用“盈利”&gt;“利用广告来盈利”页面管理你的广告的使用。"
+Description: "如果你的应用使用广告中介，或者显示来自 Microsoft Advertising 的横幅或间隙广告，请使用“盈利”&gt;“利用广告来盈利”页面管理你的广告的使用。"
 title: "利用广告来盈利"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e82431c9b39999af9fe19ac147a6c031b9a3edc3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6418fe1b47ac89e8decb135aa9a2108b3b95ef82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monetize-with-ads"></a>利用广告来盈利
 
 
-如果你的应用使用 **AdMediatorControl**、**AdControl** 或者 **InterstitialAd** 控件显示横幅或视频间隙广告，请使用“盈利”****&gt;“利用广告来盈利”****页面管理广告的使用。
+如果你的应用使用 **AdMediatorControl**、**AdControl** 或者 **InterstitialAd** 控件显示横幅或间隙广告，请使用**盈利**&gt;**利用广告来盈利**页面管理广告的使用。
 
 ## <a name="windows-ad-mediation"></a>Windows 广告中介
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="microsoft-affiliate-ads"></a>Microsoft 关联广告
 
-如果想要在你的应用中显示 Microsoft 关联广告，请选中此部分中的框。 如果选中此框，当其他广告网络没有可用的广告时，将为你的应用在应用商店中提供这些产品（包括音乐、游戏、电影、应用、硬件和软件）的广告。 当用户在给定属性窗口的应用商店中单击广告和总线产品时，你将赚取已批准购买的佣金。
+如果想要在你的应用中显示 Microsoft 关联广告，请选中此部分中的框。 如果选中此框，当其他广告网络没有可用的广告时，将为你的应用在应用商店中提供这些产品（包括音乐、游戏、电影、应用、硬件和软件）的广告。 当用户在给定属性窗口的应用商店中单击广告和购买产品时，你将赚取已批准购买的佣金。
 
 如果更改此选择，你无需重新发布应用以让更改生效。 有关 Microsoft 关联广告的详细信息，请参阅[关于关联广告](about-affiliate-ads.md)。
 
@@ -52,26 +49,25 @@ ms.lasthandoff: 02/07/2017
 
 使用此部分来创建 Microsoft Advertising 广告单元。 只需要在以下场景中创建广告单元：
 
--   你的应用通过使用 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象显示来自 Microsoft Advertising 的横幅广告。
--   你的应用通过使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象显示来自 Microsoft Advertising 的间隙视频广告。
+-   你的应用会使用 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象显示横幅广告。
+-   你的应用会使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象显示间隙广告。
 
 创建适用于以下场景的广告单元：
 
-1.  即，所谓的广告单元。
-2.  选择广告单元类型（“横幅”****或“间隙视频”****）。
-3.  选择设备类型（“移动设备”****或“PC/平板电脑”****）。
+1.  为广告单元命名。
+2.  选择广告单元类型（**横幅**、**间隙视频**或**间隙横幅**）。
+3.  选择设备类型（**移动设备**或**电脑/平板电脑**）。
 4.  单击“创建广告单元”****。
 
 你的广告单元将显示在本部分底部的表格中。 你将会看到每个广告单元的“应用程序 ID”****和“广告单元 ID”****。 若要在应用中显示广告，需要在你的代码中使用这些值：
 
--   如果你的应用显示横幅广告，请将这些值分配给 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 属性。
--   如果你的应用显示间隙视频广告，请将这些值传递给 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。
+-   如果你的应用显示横幅广告，请将这些值分配给 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 属性。 有关详细信息，请参阅 [XAML 和 .NET 中的 AdControl](../monetize/adcontrol-in-xaml-and--net.md) 以及 [HTML5 和 JavaScript 中的 AdControl](../monetize/adcontrol-in-html-5-and-javascript.md)。
+-   如果你的应用显示间隙广告，请将这些值传递给 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。 有关详细信息，请参阅[间隙广告](../monetize/interstitial-ads.md)。
 
-> **注意** 如果你的应用使用广告中介显示来自 Microsoft Advertising 的横幅广告（即，它使用 **AdMediatorControl** 对象），你不需要请求广告单元。 在此情况下，将为你自动生成 Microsoft Advertising 广告单元。
-
- 
+> **注意** 如果你的应用使用 **AdMediatorControl** 对象显示来自 Microsoft Advertising 的横幅广告，则你不需要请求广告单元。 在此情况下，将为你自动生成 Microsoft Advertising 广告单元。
 
  
 
  
 
+ 

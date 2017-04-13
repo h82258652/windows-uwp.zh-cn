@@ -1,6 +1,6 @@
 ---
 author: Mtoepke
-title: "用于 Xbox One 上 UWP 应用和游戏的系统资源"
+title: "Xbox One 上 UWP 应用和游戏的系统资源"
 description: "Xbox 上的 UWP 系统资源"
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8d6876ee6235546e74341609a55db995a77323d6
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 81a437807332ff60a1401c00abdcff78e41a7496
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>用于 Xbox One 上 UWP 应用和游戏的系统资源
 
 Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源。 因此，UWP 应用和游戏将有权访问以下资源：
@@ -41,4 +38,3 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源。
 
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP](index.md)
-

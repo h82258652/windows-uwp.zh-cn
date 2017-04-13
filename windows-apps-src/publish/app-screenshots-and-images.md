@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2fbbaac1b6b0f3133b9d541d6887ceb6c379f520
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9e9eb88e2208e33e74c273347d66169459330c27
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-screenshots-and-images"></a>应用屏幕截图和图像
 
 
@@ -89,7 +86,7 @@ Windows 应用商店编辑团队使用不同图像在应用商店中展示应用
 -   请勿包含文本（你的品牌标记除外）。
 -   尽可能减少图像中的空白空间。
 -   避免显示你应用的 UI，并且请勿使用任何特定于设备的图像。
--   避免使用政治和国家主题、标志或宗教符号。
+-   避免使用政治和国家/地区主题、标志或宗教符号。
 -   请勿提供包含以下内容的图像：无礼手势、裸体、赌博、货币、毒品、烟草或酒精。
 -   请勿使用指向观众的武器或过度暴力和血腥内容。
 
@@ -113,4 +110,3 @@ Windows 应用商店编辑团队使用不同图像在应用商店中展示应用
 ### <a name="for-windows-81-and-earlier-414-x-180"></a>对于 Windows 8.1 及更早版本：414 x 180
 
 在 Windows 8.1 及更早版本上的应用商店中，促销布局可以使用大小为 414 x 180 像素的图像。 如果你的应用运行在 Windows 8.1 或更早版本上，出于促销考虑，我们建议提供此大小的图像。
-

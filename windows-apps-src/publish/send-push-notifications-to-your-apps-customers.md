@@ -1,28 +1,32 @@
 ---
-author: shawjohn
+author: JnHs
 Description: "了解如何将目标推送通知从 Windows 开发人员中心发送到应用，鼓励客户采取行动，例如为应用评分或购买加载项。"
 title: "将目标推送通知发送到应用客户"
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 02/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a2bd3308863b6343a7616bf86e0b0036f1631bcd
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ca57ff45d440ebd68f7fb85b7d6a5da0a9f1995c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="send-targeted-push-notifications-to-your-apps-customers"></a>将目标推送通知发送到应用客户
 
-在正确的时间，通过正确的消息吸引客户是应用开发人员取得成功的关键。 Windows 开发人员中心提供以数据驱动的客户参与平台，可用于将推送通知发送到所有客户或仅发送到符合在[客户类别](create-customer-segments.md)中定义的条件的 Windows 10 客户子集。
+在正确的时间，通过正确的消息吸引客户是作为应用开发人员取得成功的关键。 Windows 开发人员中心提供以数据驱动的客户参与平台，可用于将推送通知发送到所有客户或仅发送到符合在[客户类别](create-customer-segments.md)中定义的条件的 Windows10 客户子集。
 
 可使用目标推送通知鼓励客户采取行动，例如为应用评分、购买加载项、试用新功能或下载其他应用。
 
-> **重要提示** 目标推送通知仅可与 UWP 应用一起使用。
+> **重要提示** 定向推送通知仅可与 UWP 应用一起使用。
+
+当考虑通知的内容时，请记住：
+- 通知内容必须符合应用商店[内容策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)。
+- 通知内容不应包含机密信息或潜在敏感信息。
+- 虽然我们将尽力按计划提供你的通知，但有时可能存在影响交付的延迟问题。
+- 请确保不要太频繁发送通知。 频率高于每 30 分钟一次似乎会产生干扰（在很多情况下，最好不要超过该频率）。
+- 请注意，如果使用你的应用（并且在确定类别成员身份时使用 Microsoft 帐户登录）的客户稍后会将其设备给其他人使用，则其他用户可能会看到面向原始客户的通知。 有关详细信息，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers)。
 
 ## <a name="getting-started-with-push-notifications"></a>推送通知入门
 
@@ -31,20 +35,23 @@ ms.lasthandoff: 02/08/2017
 2. **创建一个或多个希望面向的客户类别。** 可根据人口统计或收益条件将客户分组到各个类别中。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
 3. **创建推送通知，并将其发送到特定的客户类别中。** 例如，发送鼓励新客户为应用评分的通知，或者发送带有购买加载项的特殊交易的通知。
 
-## <a name="to-create-and-send-a-targeted-push-notification"></a>创建和发送目标推送通知
+## <a name="to-create-and-send-a-targeted-push-notification"></a>创建和发送定向推送通知
 
-1. 如果尚未创建和发送目标推送通知，请在应用中安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)，并在启动代码中调用 [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 方法，注册应用以接收通知。 有关如何调用此方法的详细信息，请参阅[配置应用以接收开发人员中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
-2.    在 [Windows 开发人员中心仪表板](https://developer.microsoft.com/dashboard/overview)中，选择应用。
-3.    在左侧导航菜单中，展开**服务**，然后选择**推送通知**。
-4.    在**目标推送通知**页上，选择**新通知**。
-5.    在**选择模板**部分，选择希望发送的通知类型。 有关详细信息，请参阅[通知模板类型](#notification-template-types)。
+请按照以下步骤在仪表板中创建推送通知，并将其发送给特定的客户类别。
+
+> **注意** 在你的应用可以从开发人员中心接收定向推送通知之前，你必须先在你的应用中调用 [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 方法，为接收通知注册你的应用。 此方法在 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中可用。 有关如何调用此方法的详细信息以及代码示例，请参阅[配置应用以接收开发人员中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+
+1.    在 [Windows 开发人员中心仪表板](https://developer.microsoft.com/dashboard/overview)中，选择应用。
+2.    在左侧导航菜单中，展开**服务**，然后选择**推送通知**。
+3.    在**定向推送通知**页上，选择**新通知**。
+4.    在**选择模板**部分，选择希望发送的通知类型。 有关详细信息，请参阅[通知模板类型](#notification-template-types)。
   ![通知模板](images/push-notifications-template.png)
-6.    在**通知设置**区域，选择通知**名称**，并选择通知发送目标的**客户组**。
+5.    在**通知设置**区域，选择通知**名称**，并选择通知发送目标的**客户组**。
 如果尚未创建类别，请选择**创建新客户组**。 请注意，新类别 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
-7.    如果希望指定发送通知的时间，请清除**立即发送通知**复选框，然后选择特定日期和时间。
-8.    如果希望通知在某个时间点过期，请清除**通知永远不会过期**复选框，然后选择特定过期日期和时间。
-9.    在**通知内容**部分的**语言**菜单中，选择显示通知的语言。 有关详细信息，请参阅[翻译通知](#translate-your-notifications)。
-10.    在**选项**部分中，输入文本，然后配置其他任何要配置的选项。 如果首先使用的是模板，有些模板已默认提供，但可进行任何所需更改。
+6.    如果希望指定发送通知的时间，请清除**立即发送通知**复选框，然后选择特定日期和时间。
+7.    如果希望通知在某个时间点过期，请清除**通知永远不会过期**复选框，然后选择特定过期日期和时间。
+8.    在**通知内容**部分的**语言**菜单中，选择显示通知的语言。 有关详细信息，请参阅[翻译通知](#translate-your-notifications)。
+9.    在**选项**部分中，输入文本，然后配置其他任何要配置的选项。 如果首先使用的是模板，有些模板已默认提供，但可进行任何所需更改。
    可用选项各不相同，具体取决于所使用的通知类型。 一些选项为：
    - **激活类型**（交互式 Toast 类型）。 可选择**前台**、**后台**或**协议**。
    - **启动**（交互式 Toast 类型）。 可选择使通知打开某个应用或网站。
@@ -59,9 +66,7 @@ ms.lasthandoff: 02/08/2017
 
    > **提示** 尝试使用[通知可视化工具](https://www.microsoft.com/store/apps/9nblggh5xsl1)应用设计并测试自适应磁贴和交互式 Toast 通知。
 
-11.    选择**保存为草稿**，稍后继续处理该通知，或者在全部操作完成时选择**发送**。
-
-> **注意** 通知内容必须符合应用商店[内容策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)。
+10.    选择**保存为草稿**，稍后继续处理该通知，或者在全部操作完成时选择**发送**。
 
 ## <a name="notification-template-types"></a>通知模板类型
 
@@ -75,7 +80,7 @@ ms.lasthandoff: 02/08/2017
 
    ![反馈 Toast 启动框](images/push-notifications-feedback-toast-launch-box.png)
 -    **交叉推广 (Toast)。** 推广所选其他应用的 Toast 通知。 当客户选择此通知时，将显示其他应用的应用商店一览。
-  > **注意** 如果选择此模板类型，则在**启动**框中，请记住使用要交叉推广的商品的实际应用商店 ID 替换 **{要在此处推广的 ProductId}** 占位符值。 可在 [应用标识](view-app-identity-details.md)页查找应用商店 ID（**应用管理** > **应用标识**）。
+  > **注意** 如果选择此模板类型，则在**启动**框中，请记住使用要交叉推广的商品的实际应用商店 ID 替换 **{要在此处推广的 ProductId}** 占位符值。 可在[应用标识](view-app-identity-details.md)页查找应用商店 ID（**应用管理** > **应用标识**）。
 
   ![交叉推广 Toast 启动框](images/push-notifications-promote-toast-launch-box.png)
 -    **推广促销 (Toast)。** 用于宣布达成应用交易的 Toast 通知。 当客户选择此通知时，将显示应用的应用商店一览。
@@ -96,7 +101,7 @@ ms.lasthandoff: 02/08/2017
 
 1.  在仪表板上选择一个应用。
 2.  在左侧菜单中展开**服务**部分，然后选择**推送通知**，查看与该应用关联的通知。
-3.    在**目标推送通知**页面上，选择**进行中**或**已完成**，然后查看**传送速率**和**应用启动率**列，了解每个通知的高级性能。
+3.    在**定向推送通知**页面上，选择**进行中**或**已完成**，然后查看**传送速率**和**应用启动率**列，了解每个通知的高级性能。
 4.  若要查看更详细的性能细节，请选择通知名称。 显示**交货统计**部分，并显示以下通知**状态**类型的**计数**和**百分比**信息：
  - **失败**：由于某些原因，通知未发送。 这可能会在 Windows 通知服务发生问题时出现。
  - **通道过期失败**：通知由于应用和开发人员中心之间的通道过期而无法发送。 这可能会在客户长时间没有打开应用的情况下发生。
@@ -126,4 +131,3 @@ ms.lasthandoff: 02/08/2017
 - [通知可视化工具应用](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() 方法](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [客户细分市场和推送通知：新 Windows 开发人员中心会员计划功能（博客文章）](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)
-

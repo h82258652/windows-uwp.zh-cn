@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: e02d7fabf6337fa23ab97858046c3b089c39a087
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: cff0af6b2cebbc28ab5641b1b0571cb6b01ce885
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 <h1>演练：使用 C++ 创建一个 Windows 运行时组件并从 JavaScript 或 C 中调用此组件#</h1>
 
 
@@ -639,4 +636,3 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ## <a name="related-topics"></a>相关主题
 
 * [使用 C++ 创建 Windows 运行时组件](creating-windows-runtime-components-in-cpp.md)
-

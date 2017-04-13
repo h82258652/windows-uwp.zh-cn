@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: "在 Windows 应用商店提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用检索数据。"
-title: "使用 Windows 应用商店提交 API 获取应用数据"
+title: "获取应用数据"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用数据"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 756f11cdc440a891658c2311cc61199dec3d6d1f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-app-data-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取应用数据
+# <a name="get-app-data"></a>获取应用数据
 
 在 Windows 应用商店提交 API 中使用以下方法，可获取开发人员中心帐户中现有应用的数据。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -65,7 +62,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="prerequisites"></a>先决条件
 
-如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有 [先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然后再尝试使用其中的任何方法。
+如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然后再尝试使用其中任何方法。
 
 ## <a name="data-resources"></a>数据资源
 
@@ -97,7 +94,7 @@ ms.lasthandoff: 02/07/2017
 
 此资源具有以下值。
 
-| 值           | 类型    | 说明       |
+| 值           | 类型    | 描述       |
 |-----------------|---------|---------------------|
 | id            | 字符串  | 应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅 [查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
 | primaryName   | 字符串  | 应用的显示名称。      |
@@ -122,7 +119,7 @@ ms.lasthandoff: 02/07/2017
 
 此资源具有以下值。
 
-| 值           | 类型    | 说明         |
+| 值           | 类型    | 描述         |
 |-----------------|---------|----------------------|
 | inAppProductId            | 字符串  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。   |
 
@@ -153,7 +150,7 @@ ms.lasthandoff: 02/07/2017
 
 此资源具有以下值。
 
-| 值           | 类型    | 说明           |
+| 值           | 类型    | 描述           |
 |-----------------|---------|------------------------|
 | flightId            | 字符串  | 软件包外部测试版的 ID。 此值由开发人员中心提供。  |
 | friendlyName           | 字符串  | 软件包外部测试版的名称，如开发人员所指定。   |
@@ -179,7 +176,7 @@ ms.lasthandoff: 02/07/2017
 
 此资源具有以下值。
 
-| 值           | 类型    | 说明                 |
+| 值           | 类型    | 描述                 |
 |-----------------|---------|------------------------------|
 | id            | 字符串  | 提交的 ID。    |
 | resourceLocation   | 字符串  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。            |
@@ -194,4 +191,3 @@ ms.lasthandoff: 02/07/2017
 * [获取应用](get-an-app.md)
 * [获取应用的加载项](get-add-ons-for-an-app.md)
 * [获取应用的软件包外部测试版](get-flights-for-an-app.md)
-

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1aea4f2da584124050665d159b1d83f34368b819
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 38bafd7c63b101e495748c169a1b566115c2a1e6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xbox-dev-mode-companion"></a>Xbox 开发人员模式助手
 
 Xbox 开发人员模式助允许你远程连接到 Xbox One 主机并进行控制。 已使用 Xbox 开发人员模式为开发人员创建此工具。
@@ -27,7 +24,7 @@ Xbox 开发人员模式助允许你远程连接到 Xbox One 主机并进行控�
 若要连接到你的主机：
 
 1. 启动应用。   
-2. 如果没有看到你的主机在连接对话框中列出，请在该对话框底部的文本框中键入主机的 IP 地址，然后选择**连接**。
+2. 如果没有看到你的主机在连接对话框中列出，请在该对话框底部的文本框中键入主机的 IP 地址，然后选择“连接”****。
 
 ## <a name="streaming-controls"></a>流控件
 连接后，你可以通过将鼠标悬停在流区域访问流控件。 这些控件允许你：
@@ -48,4 +45,3 @@ Xbox 开发人员模式助允许你远程连接到 Xbox One 主机并进行控�
 
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP](index.md)
-

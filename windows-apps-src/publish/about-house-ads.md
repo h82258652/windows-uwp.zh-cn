@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8c4f6597ecb262bf93efa02b695221606521a754
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86ba2afa41c414ea9cb604637a40e34cd02cc7a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-house-ads"></a>关于自家广告
 
 
@@ -39,6 +36,5 @@ ms.lasthandoff: 02/07/2017
 * [管理广告市场活动](managing-your-ad-campaign.md)
 * [应用安装广告报告](app-install-ads-reports.md)
 * [常见问题](common-questions.md)
-
 
 

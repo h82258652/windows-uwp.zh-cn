@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3bb487619d7ab1a800224f40ce5eb63ae5d915b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d01cabe3b92e3a1e4df0062334a6c7a1d54beaac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -40,7 +37,7 @@ Windows 运行时应用的一个最常见的编程任务是捕获用户在 UI �
 
 通过生成 XAML 来定义 Windows 运行时应用的 UI。 该 XAML 通常为来自 Visual Studio 设计平面的输出。 此外，也可在纯文本编辑器或第三方 XAML 编辑器中编写 XAML。 生成该 XAML 时，你可以在定义所有其他建立该 UI 元素的 XAML 属性值的同时，连接各个 UI 元素的事件处理程序。
 
-要连接 XAML 中的事件，需指定已在代码隐藏中定义或稍后定义的处理程序方法的字符串形式名称。 例如，该 XAML 会在其他属性（[x:Name attribute](x-name-attribute.md)，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)）分配为特性的情况下定义 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象，并通过引用名为 `showUpdatesButton_Click` 的方法为该按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件连接一个处理程序：
+要连接 XAML 中的事件，需指定已在代码隐藏中定义或稍后定义的处理程序方法的字符串形式名称。 例如，该 XAML 会在其他属性（[x:Name 属性](x-name-attribute.md)，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)）分配为特性的情况下定义 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象，并通过引用名为 `showUpdatesButton_Click` 的方法为该按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件连接一个处理程序：
 
 ```XML
 <Button x:Name="showUpdatesButton"
@@ -295,5 +292,4 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
  
-
 

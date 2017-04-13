@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 265f0f0d9db1a8ae53a8d6561e289f8e303e08b1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a2d2582150146ed8f7eb416e9d6e2c8f990ff818
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="export-restrictions-on-cryptography"></a>有关加密的导出限制
 
 
@@ -64,4 +61,3 @@ ms.lasthandoff: 02/07/2017
 如果应用为不在此列表中的任何任务调用、支持、包含或使用加密，则它需要出口商品分类编号 (ECCN)。
 
 如果没有 ECCN，请参阅 [ECCN 问题与答案](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
-

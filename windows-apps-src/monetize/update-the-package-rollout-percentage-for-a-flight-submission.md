@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法更新软件包外部测试版提交的软件包推出百分比。"
-title: "使用 Windows 应用商店提交 API 更新软件包外部测试版提交的软件包推出百分比"
+title: "更新外部测试版提交的推出百分比"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,14 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 外部测试版提交, 更新, 百分比"
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bb09e5ff3c60a56a69c5a52d47e3c791b206a84c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 55b9a67be032e3c2d3497bba0061afcb8218ce33
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="update-the-package-rollout-percentage-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 更新软件包外部测试版提交的软件包推出百分比
+# <a name="update-the-rollout-percentage-for-a-flight-submission"></a>更新外部测试版提交的推出百分比
 
 
 使用 Windows 应用商店提交 API 中的此方法[更新软件包外部测试版提交的推出百分比](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
@@ -82,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -105,4 +102,3 @@ Authorization: Bearer <your access token>
 * [逐步软件包推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 应用商店提交 API 管理软件包外部测试版提交](manage-flight-submissions.md)
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

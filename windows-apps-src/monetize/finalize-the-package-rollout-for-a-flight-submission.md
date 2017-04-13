@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法完成软件包外部测试版提交的软件包推出。"
-title: "使用 Windows 应用商店提交 API 完成软件包外部测试版提交的软件包推出"
+title: "完成外部测试版提交的推出"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,14 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 外部测试版提交, 完成"
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 163ca2144f460a3ff992a19c366b3cf6d9654978
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f6000337efe2ded818a7dac44a61d202e96c1faa
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="finalize-the-package-rollout-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 完成软件包外部测试版提交的软件包推出
+# <a name="finalize-the-rollout-for-a-flight-submission"></a>完成外部测试版提交的推出
 
 
 使用 Windows 应用商店提交 API 中的此方法[完成软件包外部测试版提交的软件包推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 有关通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
@@ -82,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 100,
+    "packageRolloutPercentage": 100.0,
     "packageRolloutStatus": "PackageRolloutComplete",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -105,4 +102,3 @@ Authorization: Bearer <your access token>
 * [逐步软件包推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 应用商店提交 API 管理软件包外部测试版提交](manage-flight-submissions.md)
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 69fdeed812eb6add3eeacb0e776e7477e061979f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2ccc9b0d81b69a06973feac8d554aa0ab47f2af0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
 
 
@@ -78,7 +75,6 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
  
 
  
-
 
 
 

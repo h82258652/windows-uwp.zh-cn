@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 04ecb16faf39e5dfc2f8ad8c5049c696615a449a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e9f0a148238b8f91c4643954c7f575e742f69d5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 
 
@@ -69,4 +66,3 @@ ms.lasthandoff: 02/07/2017
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
 * [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-

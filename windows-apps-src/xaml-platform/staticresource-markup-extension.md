@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 539bc6b0a43491c9ef75701bc574c7e31d2c02e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="staticresource-markup-extension"></a>{StaticResource} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，而 **StaticResource** 用法则在 **ResourceDictionary** 中引用该资源的键。
 
@@ -90,5 +87,4 @@ ms.lasthandoff: 02/07/2017
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 特性](x-key-attribute.md)
 * [{ThemeResource} 标记扩展](themeresource-markup-extension.md)
-
 

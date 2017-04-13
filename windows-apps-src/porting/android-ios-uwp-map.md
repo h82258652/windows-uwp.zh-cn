@@ -2,22 +2,19 @@
 author: GrantMeStrength
 Description: "比较 iOS、Android 和 Windows 10 之间的平台功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: "适用于 Android 和 iOS 开发人员的 Windows 应用概念映射"
+title: "面向 Android 和 iOS 开发人员的 Windows 概念"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
+#<a name="windows-concepts-for-android-and-ios-developers"></a>面向 Android 和 iOS 开发人员的 Windows 概念
 
 如果你是具有 Android 或 iOS 技能和/或代码的开发人员，并且希望移动到 Windows 10 和通用 Windows 平台 (UWP)，则此资源具有在三个平台之间映射平台功能（以及你的知识）所需的一切。
 
@@ -50,9 +47,9 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="even">
 <td align="left"><strong>用户界面标记语言。</strong> <br><br>一种呈现和描述 UI 及其组件的标记语言。 每个平台都提供了用于视觉编辑和标记编辑的编辑器。<br/></td>
-<td align="left"><strong>使用 <strong>Android Studio</strong> 或 <strong>Eclipse</strong> 编辑的 XML 布局</strong>。</td>
-<td align="left"><strong>使用 Xcode 内的 <strong>Interface Builder</strong> 编辑的 XIB</strong> 和<strong>情节提要</strong>。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185595.aspx">使用 <strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong> 编辑的 XAML</a></strong>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228259.aspx">XAML 平台</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228349.aspx">使用 XAML 创建 UI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228350.aspx">使用 XAML 定义布局</a></td>
+<td align="left">使用 <strong>Android Studio</strong> 或 <strong>Eclipse</strong> 编辑的 <strong>XML 布局</strong>。</td>
+<td align="left">使用 Xcode 内的 <strong>Interface Builder</strong> 编辑的 <strong>XIB</strong> 和<strong>情节提要</strong>。</td>
+<td align="left">使用 <strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong> 编辑的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185595.aspx">XAML</a></strong>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228259.aspx">XAML 平台</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228349.aspx">使用 XAML 创建 UI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228350.aspx">使用 XAML 定义布局</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>内置的用户界面控件。</strong> <br><br>由该平台提供的可重用 UI 元素，如按钮、列表控件和文本控件。</td>
@@ -69,12 +66,12 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>数据绑定。</strong> <br><br>允许应用 UI 呈现数据并可以与该数据保持同步的软件设计模式。</td>
 <td align="left">提供了<strong>数据绑定库</strong>，尽管仍是 Beta 版。</td>
-<td align="left">iOS 中没有任何内置绑定系统。 <strong>可以以键值观察</strong>为基础，通过使用第三方库或编写其他代码来执行数据绑定。 控件使用委托/回调方法来获取数据。</td>
+<td align="left">iOS 中没有任何内置绑定系统。 可以以<strong>键值观察</strong>为基础，通过使用第三方库或编写其他代码来执行数据绑定。 控件使用委托/回调方法来获取数据。</td>
 <td align="left">UWP 平台会为你处理<strong>数据绑定</strong>。 使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> 标记扩展可以充分利用高性能绑定，使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> 可以充分利用更多的功能。 这只是你为了选择该平台是使用<strong>单向绑定</strong>在 UI 中显示某个数据源中的值还是当这些值因<strong>双向绑定</strong>发生更改时仍按照这些值更新 UI 而配置绑定的其中一种情况。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">数据绑定</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>UI 自动化。</strong> <br><br>以编程方式访问 UI 元素、使应用可供辅助技术产访问并启用自动测试脚本与 UI 交互。</td>
-<td align="left"><strong>Text labels</strong>、<strong>contentDescription</strong> 和 <strong>hint</strong> 值有助于确保可以自动化找到 UI 元素 Android Studio 允许你使用 <strong>UI Automator</strong> 和 <strong>Espresso</strong> 测试框架编写 UI 测试。</td>
+<td align="left"><strong>Text labels</strong>、<strong>contentDescription</strong> 和 <strong>hint</strong> 值有助于确保可以自动化找到 UI 元素。 Android Studio 允许你使用 <strong>UI Automator</strong> 和 <strong>Espresso</strong> 测试框架编写 UI 测试。</td>
 <td align="left"><strong>自动化检测</strong>允许你使用<strong>辅助功能</strong>设置或<strong>元素层次结构</strong>中的元素位置编写自动 UI 测试脚本来验证元素。</td>
 <td align="left">你可以直接通过 <strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">UI 自动化</a></strong>以编程方式访问 UWP 中内置的 UI 元素。<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">自定义的自动化对等</a></strong>允许你为自己的自定义 UI 类提供自动化支持。 Visual Studio 中<strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">编码的 UI 测试项目</a></strong>允许你通过 UI 自动测试整个应用程序，或者单独测试 UI。</td>
 </tr>
@@ -130,14 +127,14 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>对等导航。</strong> <br><br>通过在具有同等层次结构重要性的页面之间导航向用户呈现。</td>
 <td align="left"><strong>选项卡</strong>、<strong>轻扫视图</strong>和<strong>导航箱</strong>均提供<strong>横向导航</strong>。</td>
-<td align="left"><strong>选项卡栏控制器</strong>、<strong>拆分视图控制器</strong>和<strong>页面视图控制器</strong>允许在同等层次结构的页面之间导航。</td>
+<td align="left"><strong>选项卡栏控制器</strong>、<strong>拆分视图控制器</strong>和<strong>页面视图控制器</strong>允许在同等层次结构的视图之间导航。</td>
 <td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>分层导航。</strong> <br><br>在层次结构的父页面和子页面之间导航。</td>
-<td align="left"><strong>当与<strong>意图</strong>一起用于加载其他<strong>活动</strong>时，列表</strong>、<strong>网格列表</strong>、<strong>按钮</strong>及其他控件提供<strong>下级导航</strong>。</td>
+<td align="left">当与<strong>意图</strong>一起用于加载其他<strong>活动</strong>时，<strong>列表</strong>、<strong>网格列表</strong>、<strong>按钮</strong>及其他控件提供<strong>下级导航</strong>。</td>
 <td align="left"><strong>导航控制器</strong>允许用户在层次结构的各级别之间导航。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中心</a></strong>使你可以向用户展示可以选来用于导航到子页面的内容的预览。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">大纲/细节</a></strong>使用户可以从显示在相应细节部分旁边的项目列表中进行选取。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中心</a></strong>使你可以向用户展示可以选来用于导航到子页面的内容的预览。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">大纲/细节</a></strong>使用户可以从显示在相应细节部分旁边的项目摘要列表中进行选取。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>“后退”按钮导航。</strong> <br><br>在应用中进行后退导航。</td>
@@ -222,12 +219,12 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>云备份服务。</strong> <br><br>应用数据的平台提供的备份服务。</td>
 <td align="left">Android 的 <strong>备份管理器</strong>在 Google 的 <strong>Android 备份服务</strong>中处理应用程序数据的备份。</td>
-<td align="left"><strong>用户可以配置 iCloud 备份</strong>来处理其备份，包括应用数据。 使用 iCloud 兼容<strong>核心数据</strong>、<strong>iCloud 键值应用商店</strong>和 <strong>iCloud 文档存储</strong>的应用。</td>
+<td align="left">用户可以配置 <strong>iCloud 备份</strong>来处理其备份，包括应用数据。 使用 iCloud 兼容<strong>核心数据</strong>、<strong>iCloud 键值应用商店</strong>和 <strong>iCloud 文档存储</strong>的应用。</td>
 <td align="left">你使用漫游 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">ApplicationData API</a></strong>（包括 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> 和 <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a>）存储的任何应用数据将自动同步到云和用户的其他设备。 同步通过用户的 Microsoft 帐户完成。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">漫游应用数据指南</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>HTTP 文件下载。</strong> <br><br>通过 HTTP 下载大型和小型文件。</td>
-<td align="left"><strong>可以使用 URLConnection</strong> 和 <strong>HTTPURLConnection</strong> 通过 HTTP 和 FTP 进行下载，也可以使用系统<strong>下载管理器</strong>在后台进行下载。</td>
+<td align="left">可以使用 <strong>URLConnection</strong> 和 <strong>HTTPURLConnection</strong> 通过 HTTP 和 FTP 进行下载，也可以使用系统<strong>下载管理器</strong>在后台进行下载。</td>
 <td align="left"><strong>NSURLSession</strong> 和 <strong>NSURLConnection</strong> 可以用于通过 HTTP 和 FTP 下载文件。</td>
 <td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">后台传输 API</a></strong> 使你可以可靠地通过 HTTP 和 FTP 传输文件，考虑应用暂停、连接丢失并根据连接和电池使用时间进行调整。 你还可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong>，它非常适合较小的文件。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">选择哪一种网络技术？</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">后台传输</a></td>
 </tr>
@@ -301,7 +298,7 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>应用生命周期。</strong> <br><br>在应用启动、暂停、恢复和关闭时处理事件，以便有机会保存/还原应用程序状态并运行其他任务。</td>
-<td align="left">每个活动都有其自己的<strong>活动生命周期</strong>，具有<strong>已恢复</strong>之类的状态。 <strong>有些生命周期回调</strong>（如 <strong>onResume</strong>）在<strong>活动类</strong>中实现。</td>
+<td align="left">每个活动都有其自己的<strong>活动生命周期</strong>，具有<strong>已恢复</strong>之类的状态。 有些<strong>生命周期回调</strong>（如 <strong>onResume</strong>）在<strong>活动类</strong>中实现。</td>
 <td align="left"><strong>应用程序生命周期</strong>具有<strong>已挂起</strong>之类的状态。 如 <strong>applicationDidEnterBackground:</strong> 之类的方法在<strong>应用程序委托对象</strong>中实现，以便在状态发生更改时运行代码。</td>
 <td align="left">应用程序具有<strong>应用执行状态</strong>，如 NotRunning、Activated、Running、Suspending、Suspended 和 Resuming。<br/><br/>你可以在应用中实现<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">应用程序类</a></strong>方法（如 OnLaunched、OnActivated、Suspending 或 Resuming），以便在状态发生更改时运行代码。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">应用生命周期</a></td>
 </tr>
@@ -394,7 +391,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>测试应用内购买。</strong> <br><br>使你能够测试应用内购买代码，无需将应用放在应用商店中。</td>
 <td align="left">使用<strong>应用内计费沙盒</strong>进行测试。</td>
-<td align="left"><strong>使用沙盒测试人员帐户</strong>进行测试。</td>
+<td align="left"><strong>沙盒测试人员帐户</strong>用于进行测试。</td>
 <td align="left">只需使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> 类代替 CurrentApp 即可测试应用内购买。<br/><br/></td>
 </tr>
 <tr class="even">
@@ -473,8 +470,8 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>磁贴和锁屏提醒。</strong> <br><br>在主屏幕上向用户显示更新。</td>
-<td align="left"><strong>应用小组件</strong>是应用程序中的视图，可以嵌入主屏幕并且可以接收定期更新。 <strong>Android 中没有锁屏提醒系统</strong>。 也没有等同的磁贴系统。</td>
-<td align="left"><strong>iOS 中没有磁贴或小组件</strong>。 你可以向图标添加<strong>锁屏提醒</strong>并加上可以更改的编号，以响应本地或远程通知。</td>
+<td align="left"><strong>应用小组件</strong>是应用程序中的视图，可以嵌入主屏幕并且可以接收定期更新。 Android 中<strong>没有锁屏提醒系统</strong>。 也没有等同的磁贴系统。</td>
+<td align="left">iOS 中<strong>没有磁贴或小组件</strong>。 你可以向图标添加<strong>锁屏提醒</strong>并加上可以更改的编号，以响应本地或远程通知。</td>
 <td align="left">应用的<strong>磁贴</strong>可以固定到“开始”屏幕，并通过字形和编号来显示你选择的文本、图像和<strong>锁屏提醒</strong>。 你可以通过推送通知或按预定义计划从应用更新磁贴的内容。 磁贴具有自适应性，并且可以根据它们显示的位置进行更改。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">创建磁贴</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">创建自适应磁贴</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">选择通知传递方法</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">磁贴和锁屏提醒指南</a></td>
 </tr>
 <tr class="even">
@@ -486,7 +483,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>计划本地通知。</strong> <br><br>在计划时间由应用发送的本地通知。</td>
 <td align="left">通知和操作可使用 <strong>NotificationCompat.Builder</strong> 进行定义，并且可以使用 <strong>AlarmManager</strong> 和 <strong>BroadcastReceiver</strong> 在应用内进行计划和处理。</td>
-<td align="left">本地通知可以使用 <strong>UILocalNotification</strong> 进行创建，并且可以使用 ** UILocalNotification.scheduleLocalNotification:<strong> 进行计划。 你可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> 计划 Toast 通知。 你可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification 类</a><strong>从应用发送磁贴通知，也可以使用 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> 计划磁贴通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">自适应和交互式 Toast 通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">发送本地磁贴通知</a> | | </strong>发送推送通知。**从推送通知服务器发送并且可选择在应用内处理的通知。</td>
+<td align="left">本地通知可以使用 <strong>UILocalNotification</strong> 进行创建，并且可以使用 ** UILocalNotification.scheduleLocalNotification:<strong> 进行计划。| 你可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> 计划 Toast 通知。你可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification 类</a><strong>从应用发送磁贴通知，也可以使用 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> 计划磁贴通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">自适应和交互式 Toast 通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">发送本地磁贴通知</a> | | </strong>发送推送通知。**从推送通知服务器发送并且可选择在应用内处理的通知。</td>
 <td align="left"><strong>Google 云消息</strong>提供对 Android 的推送通知支持。</td>
 </tr>
 </tbody>
@@ -579,7 +576,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>显示地图。</strong> <br><br>显示<strong>交互式内置地图</strong>并添加<strong>目标点</strong>。</td>
 <td align="left"><strong>Google 地图 Android API</strong> 中的 <strong>GoogleMap</strong>、<strong>MapFragment</strong> 和 <strong>MapView</strong> 类允许地图嵌入在应用中。 可以使用<strong>标记</strong>和可自定义的 <strong>Marker</strong> 类显示目标点。</td>
-<td align="left">使用 <strong>MapKit 框架</strong>中的 <strong>MKMapView</strong> 类将地图嵌入 iOS 应用中。 <strong>可以使用对象类（如 <strong>MKPointAnnotation</strong>）和视图类（如 <strong>MKPinAnnotationView</strong>）向应用添加注释</strong>，以显示目标点。</td>
+<td align="left">使用 <strong>MapKit 框架</strong>中的 <strong>MKMapView</strong> 类将地图嵌入 iOS 应用中。 可以使用对象类（如 <strong>MKPointAnnotation</strong>）和视图类（如 <strong>MKPinAnnotationView</strong>）向应用添加<strong>注释</strong>，以显示目标点。</td>
 <td align="left">你可以使用内置的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML 控件（提供 2D、3D 和街景视图）将地图嵌入应用中。 你可以使用类（如 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong>）通过图钉、图像或形状添加目标点。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">使用 2D、3D 和街景视图显示地图</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">在地图上显示目标点 (POI)</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -670,4 +667,3 @@ ms.lasthandoff: 02/08/2017
 </tr>
 </tbody>
 </table>
-

@@ -9,17 +9,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8b55c837e63792e6da4e684602e79d99ad7cff1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: badb14e5c915db68fb262002a8ee3321b62e2778
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>排除或限制试用版中的功能
 
 
->**注意**&nbsp;&nbsp;本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员实现试用版，而不是使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[实现应用的试用版](implement-a-trial-version-of-your-app.md)。
+> [!NOTE]
+> 本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员实现试用版，而不是使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[实现应用的试用版](implement-a-trial-version-of-your-app.md)。
 
 如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。 请在开始编码之前确定哪些功能应受到限制，然后确保你的应用只在已购买完整版许可之后才允许这些功能运作。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
@@ -106,7 +104,8 @@ ms.lasthandoff: 02/07/2017
 
 在使用模拟的许可证服务器测试你的应用后，以及向应用商店提交应用进行认证前，将 **CurrentAppSimulator** 替换为 **CurrentApp**，如下一个代码示例所示。
 
->**重要提示**&nbsp;&nbsp;在将应用提交到应用商店时，你的应用必须使用 **CurrentApp** 对象，否则它将无法通过认证。
+> [!IMPORTANT]
+> 在将应用提交到应用商店时，你的应用必须使用 **CurrentApp** 对象，否则它将无法通过认证。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
@@ -126,4 +125,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

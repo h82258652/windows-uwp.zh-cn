@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e7d13a55ba545758e01452103c3380ac67ad6610
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7de8b6db65bb9ec58f16643dc8b477c274513c9a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-on-submissions"></a>加载项提交
 
 加载项（有时称为应用内产品）是应用的补充项，可供客户购买。 加载项可以是有趣的新附加功能、新的游戏级别或任何你希望用来维系用户的内容。 加载项不但是赚钱的绝佳方法，它们还有助于促进客户互动和参与。
 
 加载项通过 Windows 开发人员中心仪表板发布。 你还需要在你的应用代码中[启用加载项](../monetize/in-app-purchases-and-trials.md)。
 
-加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 然后，你可以创建一个提交，以便你的加载项可以通过 Windows 应用商店购买。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在应用商店中上架后[更新](#updating-an-add-on-after-submission)加载项，而无需重新提交该应用。
+加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 然后，你可以创建一个提交，以便你的加载项可以通过 Windows 应用商店购买。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在应用商店中上架后[更新](#updating-an-add-on-after-publication)加载项，而无需重新提交该应用。
 
 > **注意**&nbsp;&nbsp;文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
 
@@ -80,9 +77,8 @@ ms.lasthandoff: 02/07/2017
 
 你可以随时更改已发布的加载项。 加载项更改会独立于应用提交和发布，因此通常不需要更新整个应用即可对加载项进行更改，如更新其价格或说明。
 
-> **重要提示**&nbsp;&nbsp;如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows 8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows 8.x 的客户将无法看到新的加载项。
+> **重要提示**&nbsp;&nbsp;如果你的应用要提供给使用 Windows8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
 
 若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将使用之前提交中的信息作为起始点，为该加载项创建新的提交。 按需更改信息，然后单击**提交到应用商店**。
 
 如果你希望删除之前提供的加载项，可通过创建新提交并将[分发和可见性](set-add-on-pricing-and-availability.md)选项更改为**不再提供购买。不显示在你的应用一览中**来实现。 请确保按需更新应用代码以同时删除对加载项的引用。
-

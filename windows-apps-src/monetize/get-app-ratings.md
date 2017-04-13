@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: "在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。"
+description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。"
 title: "获取应用评分"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 评分"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ccd3b8660f476ee6734b987c6652d91cf0cd42f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-ratings"></a>获取应用评分
 
-在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评分报告](../publish/ratings-report.md)中获取此信息。
+使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评分报告](../publish/ratings-report.md)中获取此信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -59,7 +56,7 @@ ms.lasthandoff: 02/07/2017
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
 | filter | 字符串  | 在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。 | 否   |
 | aggregationLevel | 字符串 | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。 | 否 |
-| orderby | 字符串 | 对每个评分的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p> |  否  |
+| orderby | 字符串 | 对每个评分的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串：<em>orderby=date,market</em></p> |  否  |
 | groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：<ul><li><strong>日期型</strong></li><li><strong>applicationName</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li></ul><p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>fiveStars</strong></li><li><strong>fourStars</strong></li><li><strong>threeStars</strong></li><li><strong>twoStars</strong></li><li><strong>oneStar</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p> |  否  |
 
 <span/>
@@ -72,10 +69,10 @@ ms.lasthandoff: 02/07/2017
 
 有关支持的字段列表，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
 
-| 字段        |  说明        |
+| 字段        |  描述        |
 |---------------|-----------------|
 | market | 包含对应用评分所在地市场的 ISO 3166 国家/地区代码的字符串。 |
-| osVersion | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
 | isRevised | 指定 <strong>true</strong> 可筛选已修改的评分，否则指定 <strong>false</strong>。 |
 
@@ -163,4 +160,3 @@ Authorization: Bearer <your access token>
 * [获取加载项购置](get-in-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用评价](get-app-reviews.md)
-

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26329304df64689ea7938d4fc838bd730696e4a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6b7f11330c5849d0df4e54c10a71c2a70fc77a08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
@@ -90,6 +88,5 @@ ms.lasthandoff: 02/07/2017
 -   尽管应用仍可供以前购买的客户使用，但你的应用一览将从应用商店中删除。 新用户将无法购买你的应用。
 -   将释放你的应用的名称，以供其他开发人员使用。
 -   如果以前的应用销售中还有欠款，即使所欠金额不符合通常的支付阈值要求，也可以请求支付该欠款。
-
 
 

@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c1bf910303f0c26761a3c63c3e1159dd2d0c6bb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cad84be24836bc6a33a4ab08f1ca4fa2d9e97512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 修改 XAML 编译行为，使指定对象引用的字段被定义有 **public** 访问权限而不是默认的 **private** 行为。
 
@@ -41,5 +38,4 @@ ms.lasthandoff: 02/07/2017
 **x:FieldModifier** 仅适合具有 [x:Name 属性](x-name-attribute.md)的元素，因为一旦该名称是公共的，它将用来引用字段。
 
 **注意**  Windows 运行时 XAML 不支持 **x:ClassModifier** 或 **x:Subclass**。
-
 

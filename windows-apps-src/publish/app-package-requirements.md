@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 59660de0adb6ff1247ea90f0ace3bcca35f19d1a
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-package-requirements"></a>应用包要求
 
 按照以下指南准备要提交到 Windows 应用商店的应用包。
@@ -85,7 +82,6 @@ StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 �
  
 
  
-
 
 
 

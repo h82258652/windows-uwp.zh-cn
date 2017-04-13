@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca4c7b82fdb7f950d3f68323dec37c2f31e02c87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8231d8a531098783a6b62383f4a64d61d0a61902
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="share-certificates-between-apps"></a>在应用之间共享证书
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 当对用户进行身份验证时，认证身份验证提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
+要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 对用户进行身份验证时，证书身份验证将提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
 
 应用可使用证书对 Web 服务进行身份验证，并且多个应用可使用来自证书存储的单个证书对相同的用户进行身份验证。 如果存储中不存在证书，可将代码添加到应用以从 PFX 文件导入证书。
 

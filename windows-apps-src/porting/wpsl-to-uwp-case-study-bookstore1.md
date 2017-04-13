@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 14003238ead3af2d796bab4f96dadfb050f7d595
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0cd284b2cb0ed4170d587cb3b412bc1954496c93
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -91,7 +88,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 若要执行该操作，请右键单击**TextBlock**，然后单击**编辑样式** &gt; **应用资源**。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击 **ListBox**，然后依次单击**编辑其他模板** &gt; **编辑生成的项 (ItemTemplate)**。
+若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 若要执行该操作，请右键单击 **TextBlock**，然后单击**编辑样式** &gt; **应用资源**。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击 **ListBox**，然后依次单击**编辑其他模板** &gt; **编辑生成的项 (ItemTemplate)**。
 
 项目后有一个 80% 不透明的白色背景，因为 **ListBox** 控件的默认样式将其背景设置为 `ListBoxBackgroundThemeBrush` 系统资源。 在 **ListBox** 上设置 `Background="Transparent"` 以清除该背景。 若要使项模板中的 **TextBlock** 向左对齐，请采用上述的相同方式再次编辑它，并在两个 **TextBlock** 上都设置 `"9.6,0"` 的 **Margin**。
 
@@ -140,4 +137,3 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 此案例研究介绍了移植非常简单的应用（可以认为是一个过分简单的应用）的过程。 例如，列表控件可用于选择或者用于建立导航的上下文；应用导航到具有有关所点击的项的更多详细信息的页面。 根据用户的选择，此特定应用不执行任何操作，并且它没有导航。 即便如此，案例研究仍可用于打破僵局、介绍移植过程以及演示可在真实的 UWP 应用中使用的重要技术。
 
 下一个案例研究是 [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
-

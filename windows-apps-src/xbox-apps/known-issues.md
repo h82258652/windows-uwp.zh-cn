@@ -1,7 +1,7 @@
 ---
 author: Mtoepke
-title: "Xbox One 开发人员计划上的 UWP 已知问题"
-description: 
+title: "Xbox 开发人员计划上的 UWP 已知问题"
+description: "列出 Xbox 开发人员计划上的 UWP 已知问题。"
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 203d1abede2607617e0175103f54bf3068d53ff4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 开发人员计划上的 UWP 已知问题
 
 本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
@@ -58,7 +55,17 @@ There is currently no workaround for this issue. Apps should govern their memory
 
 此时，权限是_粘连的_，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
  
-有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为**始终**时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。   
+有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为**始终**时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。
+
+## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>StorageFile.CopyAsync 无法将加密的文件复制到未加密的目标 
+
+使用 StorageFile.CopyAsync 将加密的文件复制到未加密的目标时，调用将失败，并会出现以下异常：
+
+```
+System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070005)
+```
+
+这可能会影响想要将其应用包中部署的文件复制到另一个位置的 Xbox 开发人员。 其原因是程序包内容是在零售模式下在 Xbox 上加密的，但未在开发模式下加密。 因此，应用可能会在开发和测试期间按预期方式工作，但该应用一旦发布然后安装到零售 Xbox 上，就会失败。
 
 <!--### x86 vs. x64
 
@@ -233,4 +240,3 @@ namespace TestDNLA {
 ## <a name="see-also"></a>另请参阅
 - [常见问题](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
-

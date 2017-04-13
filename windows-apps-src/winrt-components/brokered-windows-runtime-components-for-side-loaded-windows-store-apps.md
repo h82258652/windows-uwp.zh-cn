@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8844196503c45e9488d3fa2a543d588229d01cdd
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e3acc609e5db083bda023643ef4dae4c5d9d0248
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="brokered-windows-runtime-components-for-a-side-loaded-windows-store-app"></a>适用于旁加载 Windows 应用商店应用的中转 Windows 运行时组件
 
 本文讨论 Windows 10 支持的面向企业的功能，此功能允许兼容触摸功能的 .NET 应用使用对主要关键业务操作负责的现有代码。
@@ -582,6 +579,5 @@ struct PersonStruct
 -   [如何在 Windows 10 中旁加载应用](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
 -   [将 Windows 应用商店应用部署到企业](http://go.microsoft.com/fwlink/p/?LinkID=264770)
-
 
 

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6848d1783df4489571fcf493a55447f67e5d6fd9
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 980779b110523ceecf608b5077cb8446fb9a1e2b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-disable-mouse-mode"></a>如何禁用鼠标模式
 默认情况下，所有应用程序的鼠标模式都处于打开状态，这意味着未选择退出的所有应用程序将收到鼠标指针（类似于该主机的 Edge 浏览器中的情形）。 我们强烈建议你关闭此模式，并针对方向控制器导航进行优化。   
    
@@ -52,5 +49,4 @@ public App() {
 ## <a name="see-also"></a>另请参阅
 - [适用于 Xbox 的最佳做法](tailoring-for-xbox.md)
 - [Xbox One 上的 UWP](index.md)
-
 

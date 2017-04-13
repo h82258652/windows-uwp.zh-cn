@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 零售演示应用"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 843f98782410559d47bdb8dc0b23b50fa96552d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2fa839c3a559ff0065c98712f73b9bb3ed81b276
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="create-a-retail-demo-experience-rdx-app"></a>创建零售演示体验 (RDX) 应用
 
@@ -107,7 +105,7 @@ Windows 零售商店团队可能直接联系开发人员，以设置有关如何
 
 [
     **RetailInfo**
-  ](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 实用程序类中的 [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx) 属性（作为 Windows 10 SDK 中的 [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) 命名空间的一部分）用作指定应用程序在哪个代码路径上运行的布尔值指示器 - _正常_模式或_零售_模式。
+  ](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 实用程序类中的 [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx) 属性（作为 Windows10 SDK 中的 [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) 命名空间的一部分）用作指定应用程序在哪个代码路径上运行的布尔值指示器 - _正常_模式或_零售_模式。
 
 当 [**RetailInfo.IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 返回 true 时，可使用 [**RetailInfo.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.properties.aspx) 查询一组关于设备的属性，以生成更加自定义的零售演示体验。 这些属性包括 [**ManufacturerName**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.manufacturername.aspx)、[**Screensize**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.screensize.aspx)、[**Memory**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.memory.aspx) 等。
 
@@ -266,4 +264,3 @@ namespace MyCompany.MyApp
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26cf0e8330b9a57d082de7b7255a86ddde3b77d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="background-transfers"></a>后台传输
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -320,5 +317,4 @@ Windows 10 中的新功能可以在完成后台传输时运行应用程序代码
 在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间中的异步方法上发生的错误返回为 **HRESULT** 值。 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法用于将来自后台传送操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 或 FTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
 对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
-
 

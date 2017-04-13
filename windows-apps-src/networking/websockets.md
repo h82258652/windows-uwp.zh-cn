@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: de9b10324d212a92a21f64f1b857cdf465e26b4c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="websockets"></a>WebSockets
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -262,7 +259,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 在进行 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作时发生的错误将以 **HRESULT** 值的形式返回。 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法用于将来自 WebSocket 操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
+对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
 
 ## <a name="setting-timeouts-on-websocket-operations"></a>对 WebSocket 操作设置超时
 
@@ -348,5 +345,4 @@ MessageWebSocket 和 StreamWebSocket 类使用内部系统服务，发送 WebSoc
         });
     }
 ```
-
 

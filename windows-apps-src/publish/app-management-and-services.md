@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1aaab8d122968265ff17b352a53b69081e84f01e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 48e48d1a350b01777c1d7e5ed4ab1f82b1d66d26
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-management-and-services"></a>应用管理和服务
 
 可在 Windows 开发人员中心仪表板中管理和查看与每一个应用相关的详细信息，并配置如推送通知、A/B 测试和地图等服务。
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="push-notifications"></a>推送通知
 
-**推送通知**部分支持创建目标推送通知，并将其发送到应用客户。 可将这些推送通知发送到所有应用客户，或者发送到满足[客户类别](create-customer-segments.md)中所定义条件的 Windows 10 客户的子集。 有关详细信息，请参阅[将目标推送通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
+**推送通知**部分支持创建目标推送通知，并将其发送到应用客户。 可将这些推送通知发送到所有应用客户，或者发送到满足[客户类别](create-customer-segments.md)中所定义条件的 Windows10 客户的子集。 有关详细信息，请参阅[将目标推送通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
 还可在左侧导航菜单中单击 **WNS/MPNS** 页，将以下选项的其中一项用于推送通知，具体取决于应用包类型及其特定要求： 
 
@@ -48,7 +45,7 @@ ms.lasthandoff: 02/07/2017
 
 若要在适用于 Windows Phone 8.1 及更早版本的应用中使用地图服务，需要在应用代码中包含地图服务应用程序 ID 和令牌。 可在**服务**部分的**地图**页面上获取此令牌。
 
-> **注意**  若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关详细信息，请参阅[请求地图身份验证密钥](https://msdn.microsoft.com/library/windows/apps/mt219694)。
+> **注意**  若要在面向 Windows10 或 Windows8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关详细信息，请参阅[请求地图身份验证密钥](https://msdn.microsoft.com/library/windows/apps/mt219694)。
 
 有关详细信息，请参阅[使用地图服务](use-map-services.md)。
 
@@ -87,4 +84,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 975f364fec4edfcf90ee65912f509741bd1f80dd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5df57d0bd5d2104278f653d78b1e478a034a38ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -48,7 +45,7 @@ Windows Phone Silverlight 相机捕获代码使用 **Microsoft.Devices.Camera**�
 
 **注意**   我们不建议你使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](wpsl-to-uwp-porting-to-a-uwp-project.md)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
 
-若要定制你的应用的 UI 以适应不同的设备，可以使用我们建议的多种技术。 不过，你也可以像往常那样继续使用可自动调整大小的元素和动态布局面板。 在 XAML 标记中，继续使用以有效像素（之前称为视图像素）为单位的大小，以便 UI 能适应不同的分辨率和比例系数（请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)）。 并且，通过使用视觉状态管理器的自适应触发器和设置器，让 UI 能适应相应的窗口大小（请参阅 [UWP App 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)）。
+若要定制你的应用的 UI 以适应不同的设备，可以使用我们建议的多种技术。 可以像往常那样继续使用可自动调整大小的元素和动态布局面板。 在 XAML 标记中，继续使用以有效像素（之前称为视图像素）为单位的大小，以便 UI 能适应不同的分辨率和比例系数（请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)）。 并且，通过使用视觉状态管理器的自适应触发器和设置器，让 UI 能适应相应的窗口大小（请参阅 [UWP App 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)）。
 
 但是，在遇到必须检测设备系列的情况时，你可以执行此操作。 在本示例中，我们将使用 [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) 类导航到为移动设备系列定制的页面（如果适用），并且我们保证可通过其他方式回退到默认页面。
 
@@ -99,5 +96,4 @@ Windows Phone Silverlight 应用可以使用 **Microsoft.Phone.Info.DeviceStatus
 不过，我们鼓励你设计自己的 UWP 应用的 UI，无论设备方向和屏幕大小如何，都应使其保持美观。 再下个主题[针对外形规格和用户体验进行移植](wpsl-to-uwp-form-factors-and-ux.md)中提供了有关该内容的详细信息。
 
 下一主题是[移植业务和数据层](wpsl-to-uwp-business-and-data.md)。
-
 

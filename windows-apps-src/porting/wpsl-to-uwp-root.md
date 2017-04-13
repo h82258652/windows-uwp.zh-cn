@@ -1,6 +1,6 @@
 ---
 author: mcleblanc
-description: "如果你是一名 Windows Phone Silverlight 应用的开发人员，你可以在转到 Windows 10 时充分使用你的技能集和源代码。"
+description: "如果你是一名具有 Windows Phone Silverlight 应用的开发人员，你可以在移植到 Windows 10 时充分使用你的技能组合和源代码。"
 title: "从 Windows Phone Silverlight 转到 UWP"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.author: markl
@@ -9,18 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 06409936f37368351f6c8ad47e50a7d980d522f4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d055f576cfa56502da845e849c100f66dd0c7ccf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="move-from-windows-phone-silverlight-to-uwp"></a>从 Windows Phone Silverlight 转到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果你是一名 Windows Phone Silverlight 应用的开发人员，你可以在转到 Windows 10 时充分使用你的技能集和源代码。 借助 Windows 10，你可以创建通用 Windows 平台 (UWP) 应用，该应用是可供客户安装到各种设备的单个应用包。 有关 Windows 10、UWP 应用的更多背景信息以及我们将在此移植指南中提及的自适应代码和自适应 UI 的概念，请参阅[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果你是一名具有 Windows Phone Silverlight 应用的开发人员，你可以在移植到 Windows 10 时充分使用你的技能组合和源代码。 借助 Windows 10，你可以创建通用 Windows 平台 (UWP) 应用，该应用是可供客户安装到各种设备的单个应用包。 有关 Windows 10、UWP 应用的更多背景信息以及我们将在此移植指南中提及的自适应代码和自适应 UI 的概念，请参阅[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 在将 Windows Phone Silverlight 应用移植到 Windows 10 应用时，将能够补充在 [Windows Phone 8.1 中引入](https://msdn.microsoft.com/library/windows/apps/dn632424)的移动功能，并更进一步使用通用 Windows 平台 (UWP)，其应用模型和 UI 框架在所有 Windows 10 设备上都通用。 这使得通过一个基本代码和一个应用包支持 PC、平板电脑、手机和大量其他种类的设备成为可能。 这将大幅增加应用的潜在受众，并通过共享数据、购买消费品等创造新的可能性。 有关新功能的详细信息，请参阅 [Windows 10 中面向开发人员的新增功能](https://dev.windows.com/getstarted/whats-new-windows-10)。
 
@@ -94,5 +91,4 @@ Windows Phone Silverlight 具有基于 Silverlight 4.0 的 XAML UI 框架，并�
 **演示文稿**
 * [有关将 Nokia 音乐从 Windows Phone 带入 Windows 8 的案例](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
-
 

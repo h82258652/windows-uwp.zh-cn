@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 31fddae1c163f46a56fb78f5ac29e11a84e2ddd9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a5fd89757817c06be55020d74e677369725af5a2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
 
 
@@ -298,4 +295,3 @@ function asyncExample(id) {
 * [适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-

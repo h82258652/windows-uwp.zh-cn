@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6c10376854656abe276c53a9b6778665c1d47a4b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b30d26041718a74b9e2f3b9b93440e8fdf02b6c5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>将 Windows 运行时 8.x 移植到 UWP 疑难解答
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -52,10 +49,9 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 |---------|--------|
 | 在 Visual Studio 中打开 Windows 10 项目时，你会看到如下消息：“需要 Visual Studio 更新。 一个或多个项目需要平台 SDK &lt;version&gt;（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。” | 请参阅本主题中的 [TargetPlatformVersion](#targetplatformversion) 部分。 |
 | 当在 xaml.cs 文件中调用 InitializeComponent 时，将引发 System.InvalidCastException。| 当你有多个 xaml 文件（至少其中一个受 MRT 限定）共享同一个 xaml.cs 文件并且元素具有在两个 xaml 文件之间不一致的 x:Name 属性时，可能会发生这种情况。 尝试将相同名称添加到两个 xaml 文件中的相同元素，或全部省略名称。 |
-| 当在设备上运行的应用终止，或从 Visual Studio 中启动时，你将看到错误“无法激活 Windows 应用商店应用 \[…\]。 激活请求失败并显示错误‘Windows 无法与目标应用程序进行通信。’ 这通常指示目标应用的过程已中止。 \[…\]”。 | 问题可能是在初始化过程中，在你自己的页面或绑定属性（或其他类型）中运行的强制性代码。 或者，它可能在分析将要在应用终止时显示的 XAML 文件时发生（如果从 Visual Studio 中启动，这将是启动页）。 查找无效的资源键和/或尝试使用本主题的“跟踪问题”部分中的一些指南。|
+| 当在设备上运行的应用终止，或从 Visual Studio 中启动时，你将看到错误“无法激活 Windows 应用商店应用 \[…\]。 激活请求失败并显示错误‘Windows 无法与目标应用程序进行通信。’ 这通常指示目标应用的过程已中止。 \[…\]”. | 问题可能是在初始化过程中，在你自己的页面或绑定属性（或其他类型）中运行的强制性代码。 或者，它可能在分析将要在应用终止时显示的 XAML 文件时发生（如果从 Visual Studio 中启动，这将是启动页）。 查找无效的资源键和/或尝试使用本主题的“跟踪问题”部分中的一些指南。|
 | XAML 分析程序或编译器或者运行时异常会提供错误“*无法解析资源‘<resourcekey>’。*”。 | 该资源键不适用于通用 Windows 平台 (UWP) 应用（例如，对于某些 Windows Phone 资源，存在此情况）。 找到对应的等效资源并更新你的标记。 例如，你可能立即遇到诸如 `PhoneAccentBrush` 的系统键。 |
 | C# 编译器提供错误“*找不到类型或命名空间名称‘<name>’\[...\]*”或“*类型或命名空间名称‘<name>’在命名空间中不存在 \[...\]*”或“*类型或命名空间名称‘<name>’在当前上下文中不存在*”。 | 这可能意味着，该类型在扩展 SDK 中实现（尽管可能存在这样的情况，即补救措施并非简单易用）。 使用 [Windows API](https://msdn.microsoft.com/library/windows/apps/bg124285) 引用内容确定用于实现 API 的扩展 SDK，然后通过使用 Visual Studio 的 **Add** > **Reference** 命令，将对该 SDK 的引用添加到项目。 如果应用面向称为通用设备系列的 API 集，则须在调用扩展 SDK 之前，先使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类在运行时测试这些 API 是否存在（这称为自适应代码），这一点非常重要。 如果存在通用 API，则它始终优于扩展 SDK 中的 API。 有关详细信息，请参阅[扩展 SDK](w8x-to-uwp-porting-to-a-uwp-project.md)。 |
 
 下一主题是[移植 XAML 和 UI](w8x-to-uwp-porting-xaml-and-ui.md)。
-
 

@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: "作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）还对该设计的用户体验有着重大作用。"
+description: "作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。"
 title: "版式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
@@ -10,13 +10,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="typography"></a>版式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -99,7 +96,7 @@ Segoe 是一种人性化的字样，有着柔和友好的外观和基于手写�
 
 
 >[!NOTE]
->在 XAML 文本控件中，[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 用于控制字距调整，而 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 用于控制字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
+>在 XAML 文本控件中，[Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 用于控制字距调整，而 [FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) 用于控制字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -218,4 +215,3 @@ Green shows where all caps should be used. Red shows where it should not.
 * [文本控件](../controls-and-patterns/text-controls.md)
 * [字体](fonts.md)
 * [Segoe MDL2 图标](segoe-ui-symbol-font.md)
-

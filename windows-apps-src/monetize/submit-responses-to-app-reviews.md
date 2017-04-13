@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: "在 Windows 应用商店评价 API 中使用此方法，提交针对应用评价的回复。"
-title: "提交针对应用评价的回复"
+title: "提交评价回复"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店评价 API, 加载项购置"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1531059831b4c20d11661eb87fceda7b8dcb7f02
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d418e64bf1608591e877da8339d1dda308611285
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="submit-responses-to-app-reviews"></a>提交针对应用评价的回复
+# <a name="submit-responses-to-reviews"></a>提交评价回复
 
 
 在 Windows 应用商店评价 API 中使用此方法，以编程方式回复应用评价。 调用此方法时，必须指定要回复的评价 ID。 评价 ID 位于 Windows 应用商店分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。
@@ -67,9 +64,9 @@ ms.lasthandoff: 02/08/2017
 
 *Responses* 数组中的每个对象包含以下值。
 
-| 值        | 类型   | 描述           |  必需  |
+| 值        | 类型   | 说明           |  必需  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 位于开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)。 应用商店 ID 的一个示例是 9WZDNCRFJ3Q8。   |  是  |
+| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 位于开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。   |  是  |
 | ReviewId | 字符串 |  要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Windows 应用商店分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字符串 | 要提交的回复。 你的回复必须遵循[以下准则](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字符串 | 应用的支持电子邮件地址，客户可以用它来直接与你联系。 必须为有效的电子邮件地址。     |  是  |
@@ -105,7 +102,7 @@ Content-Type: application/json
 
 ## <a name="response"></a>回复
 
-### <a name="response-body"></a>回复正文
+### <a name="response-body"></a>响应正文
 
 | 值        | 类型   | 描述            |
 |---------------|--------|---------------------|
@@ -122,7 +119,7 @@ Content-Type: application/json
 
 ### <a name="response-example"></a>回复示例
 
-以下示例展示了此请求的 JSON 回复正文。
+以下示例举例说明此请求的 JSON 响应正文。
 
 ```json
 {
@@ -149,4 +146,3 @@ Content-Type: application/json
 * [使用 Windows 应用商店服务回复评价](respond-to-reviews-using-windows-store-services.md)
 * [获取应用评价的回复信息](get-response-info-for-app-reviews.md)
 * [获取应用评价](get-app-reviews.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40b3d2b5b4bafac25726e27fd19a2cd5d71c4fa3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 860b42ca05c95768ca694d13971da278e2129142
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>将 Windows Phone Silverlight 业务和数据层移植到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -145,5 +142,4 @@ Windows Phone Silverlight 应用对可选 SD 卡具有只读访问权限。 UWP 
 
 * [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
  
-
 

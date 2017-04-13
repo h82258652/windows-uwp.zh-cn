@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: "使用 Windows 应用商店促销 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式管理促销广告活动。"
-title: "使用 Windows 应用商店服务开展广告活动"
+title: "使用应用商店服务开展广告活动"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店促销 API, 广告活动"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ec245f07098a662c80517de49ba5637a69b30f35
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d1575c686080fb8c4c35c032cdc1beca587aeb37
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="run-ad-campaigns-using-windows-store-services"></a>使用 Windows 应用商店服务开展广告活动
+# <a name="run-ad-campaigns-using-store-services"></a>使用应用商店服务开展广告活动
 
 使用 *Windows 应用商店促销 API*，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式管理促销广告活动。 你可借助该 API 创建、更新和监控你的活动和其他相关资产，如目标市场设定和创意。 该 API 尤其适用于创建了大量活动的开发人员，及希望不借助 Windows 开发人员中心仪表板创建活动的开发人员。 该 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
@@ -35,6 +32,8 @@ ms.lasthandoff: 02/08/2017
 
 在开始编写调用 Windows 应用商店促销 API 的代码之前，确保已完成以下先决条件。
 
+* 使用此 API 成功创建和启动广告活动之前，你必须先[在开发人员中心仪表板中使用**推广你的应用**页面创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并且必须在此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的广告活动的投放渠道将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
+
 * 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店促销 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
@@ -47,7 +46,7 @@ ms.lasthandoff: 02/08/2017
 
 2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加 Azure AD 应用程序以代表将用于管理开发人员中心帐户中促销活动的应用或服务，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
+3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户ID** 和**客户端 ID** 值。
 
 4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
 
@@ -108,8 +107,7 @@ grant_type=client_credentials
 * [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
 * [管理广告活动的目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md)
 * [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
-* [获取广告活动性能数据](get-ad-campaign-performance-data.md)
+* [获取广告活动效果数据](get-ad-campaign-performance-data.md)
 
 
  
-

@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "“广告中介”报告允许你查看有效填充率，以及你所使用的广告网络的相应填充率。"
+Description: "通过“广告中介”报告，你可以查看有效填充率，以及你所使用的广告网络的相应填充率。"
 title: "广告中介报告"
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3f3f3dd3b594e174def693b7decd21a5753172b9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f79c8491c04c21fb3933d6bcde0d942bd1629fb0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ad-mediation-report"></a>广告中介报告
 
 
-**广告中介**报告允许你查看你的有效填充率，以及你所使用的广告网络的相应填充率。 它还显示了你的每个中介配置的采用率，并使你能够看到广告网络和中介报告的错误。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
+通过“广告中介”****报告，你可以查看你的有效填充率，以及你所使用的广告网络的相应填充率。 它还显示了你的每个中介配置的采用率，并使你能够看到广告网络和中介报告的错误。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
 
 **重要提示**  如果你在应用中使用的是 [Windows 广告中介](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359)，则**广告中介**报告仅提供数据。
 
@@ -68,7 +65,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

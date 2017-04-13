@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d44b9fafa0687bdd9f5e507fc7444313eff4ca3b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d3105e8ac345e1eb6f0d974f8ea29e741dae9f58
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xclass-attribute"></a>x:Class 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。
 
@@ -40,7 +37,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remarks"></a>备注
 
-**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根的属性。 在根节点以外的任何元素上，以及在不会使用**页面**生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
+**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根的属性。 在根节点以外的任何元素上，以及在不会使用“页面”****生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
 
 用作 **x:Class** 的类不能是嵌套类。
 
@@ -49,5 +46,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="clr-language-rules"></a>CLR 语言规则
 
 尽管代码隐藏文件可以是 C++ 文件，但一些约定仍然遵守 CLR 语言形式，因此在 XAML 语法上没有区别。 具体来讲，命名空间与任何 **x:Class** 值的类名组件之间的分隔符始终为一个点（“.”），即使与 XAML 关联的 C++ 代码文件中的命名空间和类名称之间的分隔符是“::”也是如此。 如果在 C++ 中声明嵌套的命名空间，那么在指定 **x:Class** 值的 *namespace* 部分时，连续的嵌套命名空间字符串之间的分隔符也应是一个“.”，而不是“::”。
-
 

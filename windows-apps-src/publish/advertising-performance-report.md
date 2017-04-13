@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "若要查看应用中的广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的广告性能报告。"
+Description: "若要查看应用中广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的广告性能报告。"
 title: "广告性能报告"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e12cec828704a839092c1a6cb618ce8a46b83093
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="advertising-performance-report"></a>广告性能报告
 
 
@@ -103,4 +100,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

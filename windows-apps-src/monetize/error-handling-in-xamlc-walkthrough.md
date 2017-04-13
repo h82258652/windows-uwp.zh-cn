@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 广告, 错误处理, XAML, c#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7bfb809f1b5511ba27faf1bdd664c24da109e2f3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d6c048397a5f7fd6c9a6cd625a7ff5ce0b6c29bf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 演练中的错误处理
 
 本主题演示如何在应用中捕获 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 错误。
@@ -91,4 +88,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
-

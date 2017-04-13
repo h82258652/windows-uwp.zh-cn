@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载应用。"
+Description: "出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载它。"
 title: "编写出色的应用提要"
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 632d18270a34a7d975aa8d7216e49769a3cd7b84
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 27848c7aef38999c37c8a2675783d243614f05e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="write-a-great-app-description"></a>编写出色的应用提要
 
 
-出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载应用。 [提交应用时输入的提要](create-app-store-listings.md#description)显示在应用的应用商店一览中。 前几行也可能显示在应用商店中的搜索结果和算法列表中。
+出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载它。 [提交应用时输入的提要](create-app-store-listings.md#description)显示在应用的应用商店一览中。 前几行也可能显示在应用商店中的搜索结果和算法列表中。
 
 
 以下是使应用的提要能成为最好提要的一些提示。
@@ -33,14 +30,13 @@ ms.lasthandoff: 02/07/2017
 -   **清楚说明免费试用和加载项的情况。** 如果你为你的应用提供免费试用版，一定要解释清楚试用版的相关情况，以便让客户了解哪些功能受到限制。 提一下有哪些类型的加载项，这也是一个不错的主意，特别是当它们对你的应用的功能有重大影响时。
 -   **使用标准大写形式和标点符号。** 全部采用大写形式的提要，或使用独特标点符号的提要难以阅读。
 -   **不要忘了检查拼写和语法。** 如果提要中有很多拼写错误的单词或错乱的句子，这就不能很好地反映你的应用的质量。 一定要检查你的提要（或让其他人看一下）以查看是否存在错误。
--   **不要包含链接或其他位置上的信息。** 你在提要字段中输入的 URL 不可单击，因此不要尝试添加诸如隐私策略或支持网站等内容的链接。 而是在**应用商店一览**页面的指定区域中添加这些内容。
+-   **不要包含链接或其他位置上的信息。** 你在提要字段中输入的 URL 不可单击，因此不要尝试添加诸如隐私策略或支持网站等内容的链接。 而是在“应用商店一览”****页面的指定区域中添加这些内容。
 -   **不要尝试使用 HTML 标记。** HTML 或其他代码将不会呈现。 你的提要必须仅为纯文本。
 -   **通过查看应用商店中类似应用的提要来获得灵感。** 看看其他开发者如何描述他们的应用。 这也有助于你找出可加以强调的你的应用的与众不同之处。
 
  
 
  
-
 
 
 

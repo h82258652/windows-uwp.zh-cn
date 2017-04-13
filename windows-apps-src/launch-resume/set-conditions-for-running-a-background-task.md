@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 486e0cd3938a09c663e8e805092377709672359f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3ede40c7241e1652fcb2cd549badb1e33dd234b2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -162,7 +159,7 @@ ms.lasthandoff: 02/07/2017
 
 >  **注意** 为你的后台任务选择条件，以便它仅在需要时运行，不在不应该运行时运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -185,4 +182,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

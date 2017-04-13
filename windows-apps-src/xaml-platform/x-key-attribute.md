@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 67b2b3b60ab6faba5ca30bb585205aba007597ca
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xkey-attribute"></a>x:Key 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一标识作为资源被创建和引用的元素，这些资源存在于一个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
 
@@ -73,5 +70,4 @@ CombiningCharacter::= none
 指定 **x:Key** 的代码等效于任何结合使用一个键和基础 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的操作。 例如，当向一个 **ResourceDictionary** 添加资源时，一个应用于资源标记中的 **x:Key** 等效于 **Insert** 的 *key* 参数的值。
 
 如果资源字典中的某个项是目标 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 或 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)，则它可以省略 **x:Key** 的值；在每一种情况下，该资源项的隐式键都是解释为字符串的 **TargetType** 值。 有关详细信息，请参阅[快速入门：设置控件的样式](https://msdn.microsoft.com/library/windows/apps/hh465498)和 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。
-
 

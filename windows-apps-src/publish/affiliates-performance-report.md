@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3b85abb11049a1e52e9d6a9cc61aebab407207a4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5187a644e4a952a8d3b199c68c2266e6e7c634f1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="affiliates-performance-report"></a>关联性能报告
 
 如果你已经[选择加入了 Microsoft 关联广告计划](about-affiliate-ads.md)，则可以在 Windows 开发人员中心仪表板的以下报告中查看显示在应用中的关联广告的性能数据：
@@ -33,7 +30,7 @@ ms.lasthandoff: 02/07/2017
 
 可通过以下跟踪你的应用中广告的七个性能指标获取数据：
 
--   **预计收入（已批准）**：用户在应用中单击关联广告而达成的经过批准的购买数通过佣金形式收到的预计金额。
+-   **预计收入（已批准）**：以用户在应用中单击关联广告而达成的经过批准的购买所得佣金的形式收到的预计金额。
 -   **预计收入（待批准）**：待批准的购买以佣金形式可能收到的预计金额。
 -   **印象**：应用中显示关联广告的次数。
 -   **点击量**：客户单击应用中关联广告的次数。
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

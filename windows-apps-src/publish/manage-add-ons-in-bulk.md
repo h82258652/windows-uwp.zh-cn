@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 3d7c8f1ab468e4797096e83fbbf256f46b494439
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d5ef4c90aa9bb66ff6589d3dbe7aa6491fbf80a5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-add-ons-in-bulk"></a>批量管理加载项
 
-> **重要信息** 此功能当前仅向已加入[开发人员中心会员计划](dev-center-insider-program.md)的开发人员帐户提供。 在向所有开发人员提供此功能前，此功能的实现可能会有所变化。 此初步文档提供一些有关此功能工作原理的基本信息。
+> **重要信息** 此功能当前仅向已加入[开发人员中心预览体验计划](dev-center-insider-program.md)的开发者帐户提供。 在向所有开发人员提供此功能前，此功能的实现可能会有所变化。 此初步文档提供一些有关此功能工作原理的基本信息。
 
 批量管理加载项允许你同时更改多个加载项，而非逐个提交每个更新。 你也可以通过单击“批量管理加载项”****，在应用的概述页访问此功能。
 
@@ -55,6 +52,5 @@ ms.lasthandoff: 02/08/2017
 
 若要提交新加载项，请添加一个新行并输入新加载项的信息。 请确保输入所有所需信息。 
 
-完成所有更改后，保存 .csv 文件（文件名相同），然后通过将其拖动到指定字段（或单击“浏览文件”****）上传该文件。 将显示更改总结，还会显示在提交前必须修复的任何错误。 在验证信息正确后，单击**提交到应用商店**。 每个加载项都将使用你提供的信息完成提交过程。
-
+完成所有更改后，保存 .csv 文件（文件名相同），然后通过将其拖动到指定字段（或单击“浏览文件”****）上传该文件。 将显示更改总结，还会显示在提交前必须修复的任何错误。 在验证信息正确后，单击“提交到应用商店”****。 每个加载项都将使用你提供的信息完成提交过程。
 

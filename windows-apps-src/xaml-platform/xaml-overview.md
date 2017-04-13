@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 12cb0c8b911c0ddb3a45e49568c5846d4359eeba
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 60b47a2c2c072efbf3ccedfcc48b9cba1611a370
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-overview"></a>XAML 概述
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 我们将向 Windows 运行时应用开发人员介绍 XAML 语言和 XAML 概念，并介绍在使用 XAML 创建 Windows 运行时应用时，在 XAML 中声明对象和设置属性的不同方式。
 
@@ -72,7 +69,7 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 | [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 默认 Windows 运行时激活模型中的 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051)。 |
 | [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
 | [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用 **x:Uid** 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
-| [XAML 固有数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于 XAML 中的该值，可将 **x:Boolean** 固有类型用作对象元素，例如： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [XAML 固有数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于 XAML 中的该值，可将 **x:Boolean** 固有类型用作对象元素，例如：<code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 在 XAML 语言 XAML 命名空间中还存在其他编程结构，但没有这么常用。
 
@@ -243,5 +240,4 @@ XAML 在应用开发过程中发挥着多项重要作用。
 **注意**  针对代码使用 C++/CX 的应用不能获取特定 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
 
 有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。
-
 

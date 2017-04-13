@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 11a99a1a68a37b8c60974193c8cab51247a25711
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5a3a0350a7a28cc31a1207abd4590a0fa3cbbc3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -37,7 +34,7 @@ XAML 处理器在创建运行时对象表示时，可查找与该 XAML 命名空
 
 ## <a name="xaml-namespaces-in-typical-xaml-markup-usage"></a>典型 XAML 标记中使用的 XAML 命名空间
 
-XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀限定即可声明的元素。 例如，如果声明一个元素 `<Balloon />`，XAML 分析器期望一个 **Balloon** 元素存在并且在默认的 XAML 命名空间中是有效的。 相反，如果 **Balloon** 不在已定义的默认 XAML 命名空间中，就必须使用一个前缀限定该元素名称，例如 `<party:Balloon />`。 该前缀表明该元素存在于与默认命名空间不同的 XAML 命名空间中，必须将一个 XAML 命名空间映射到前缀 **party**，然后才能使用此元素。 XAML 命名空间适用于在其中声明它们的特定元素，也适用于该元素在 XAML 结构中包含的任何元素。 出于此原因，XAML 命名空间几乎总是在 XAML 文件的根元素上声明，以充分利用这种继承性。
+XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀来限定即可声明哪些元素。 例如，如果声明一个元素 `<Balloon />`，XAML 分析器期望一个 **Balloon** 元素存在并且在默认的 XAML 命名空间中是有效的。 相反，如果 **Balloon** 不在已定义的默认 XAML 命名空间中，就必须使用一个前缀限定该元素名称，例如 `<party:Balloon />`。 该前缀表明该元素存在于与默认命名空间不同的 XAML 命名空间中，必须将一个 XAML 命名空间映射到前缀 **party**，然后才能使用此元素。 XAML 命名空间适用于在其中声明它们的特定元素，也适用于该元素在 XAML 结构中包含的任何元素。 出于此原因，XAML 命名空间几乎总是在 XAML 文件的根元素上声明，以充分利用这种继承性。
 
 ## <a name="the-default-and-xaml-language-xaml-namespace-declarations"></a>默认和 XAML 语言 XAML 命名空间声明
 
@@ -118,5 +115,4 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 * [适用于 Windows 运行时应用的 C#、VB 和 C++ 项目模板](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://msdn.microsoft.com/library/windows/apps/br229571)
  
-
 

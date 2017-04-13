@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "在 Windows 应用商店提交 API 中使用此方法，更新现有加载项提交。"
-title: "使用 Windows 应用商店提交 API 更新加载项提交"
+title: "更新加载项提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 更新, 应用内产品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8b06973c7c6949851bf786b1fb37026eee4b5fad
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 867a8495d5dea50d5b362822955e7605eddf4bb9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 更新加载项提交
+# <a name="update-an-add-on-submission"></a>更新加载项提交
 
 
 在 Windows 应用商店提交 API 中使用此方法，更新现有加载项（也称为应用内产品或 IAP）提交。 使用此方法成功更新提交后，必须[确认提交](commit-an-add-on-submission.md)才可以实现引入和发布。
@@ -213,4 +210,3 @@ Content-Type: application/json
 * [确认加载项提交](commit-an-add-on-submission.md)
 * [删除加载项提交](delete-an-add-on-submission.md)
 * [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
-

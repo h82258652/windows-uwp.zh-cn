@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c7ebd56205db2674df5da6d64ecc9332aa96230e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: bbf916145107b465ddd2fe7e4805e6139f4597d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One
 
 Fiddler 是一种 Web 调试代理，用于记录 Xbox One 开发工具包和 Internet 之间的所有 HTTP 和 HTTPS 流量。 你将使用它记录和检查与 Xbox 服务和依赖方 Web 服务之间的流量，以便了解和调试 Web 服务调用。 
@@ -81,7 +78,6 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 - [Fiddler 设置 API 参考](wdp-fiddler-api.md)
 - [常见问题](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
-
 
 
 

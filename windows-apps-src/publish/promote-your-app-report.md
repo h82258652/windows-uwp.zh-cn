@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
-ms.openlocfilehash: af719bbb4cc9def4e9b202c8815320698c6148d0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 25127b8f7214a712b10a1beda1e9b277370e6df2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="promote-your-app-report"></a>“推广你的应用”报告
 
 Windows 开发人员中心仪表板中的**推广你的应用**报告可供你查看应用推广广告市场活动的执行方式。
@@ -51,7 +48,7 @@ Windows 开发人员中心仪表板中的**推广你的应用**报告可供你�
 2.  客户已登录 Microsoft 帐户。
 3.  客户满足 [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要求（无法跟踪不满足 COPPA 要求的客户）。
 
-因此，应用安装跟踪有可能*低估*由**推广你的应用**市场活动所产生的实际安装量。 请注意，可通过开发人员中心中的**购置**报告查看应用下载总数。
+因此，应用安装跟踪有可能*低估*由“推广你的应用”****市场活动所产生的实际安装量。 请注意，可通过开发人员中心中的“购置”****报告查看应用下载总数。
 
 ## <a name="account-billing-history"></a>帐户帐单历史记录
 
@@ -70,4 +67,3 @@ Windows 开发人员中心仪表板中的**推广你的应用**报告可供你�
  
 
  
-

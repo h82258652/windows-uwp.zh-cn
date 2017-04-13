@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 23d8c14bfdbfc05a1397fa67cb831d38ec092233
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2ce4ddc5240281618fefa16587067c4ad9382b2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-custom-permissions-for-account-users"></a>为帐户用户设置自定义权限
 
 向帐户添加用户时，可向他们提供[标准角色](manage-account-users.md#roles-and-permissions)，或者可以选择自定义权限，向用户提供相应的访问权限级别。 有些权限适用于整个帐户，有些权限可授予所有产品或限制为授予特定产品。 
@@ -91,7 +88,7 @@ ms.lasthandoff: 02/08/2017
 
 若要向帐户中所有产品授予权限，请在标为**所有产品**的行中选择该权限（切换框，指示**只读**、**读/写**或**无法访问**）。 
  
-> **使用技巧**：为**所有产品**选择的内容将应用到当前在帐户中的所有产品和在帐户中创建的任何未来产品。
+> **使用技巧** 为**所有产品**选择的内容将应用到当前在帐户中的所有产品和在帐户中创建的任何未来产品。
 
 在**所有产品**行下，将看到帐户中每个产品都列在独立一行上。 若仅为特定产品授予权限，请在该产品行中选择该权限。
 
@@ -184,4 +181,3 @@ ms.lasthandoff: 02/08/2017
 </table>
 
 \* 标有星号 (*) 的权限可将访问权限授予不向所有帐户提供的功能。 如果帐户尚未启用这些功能，则选择这些权限不会有任何效果。  
-

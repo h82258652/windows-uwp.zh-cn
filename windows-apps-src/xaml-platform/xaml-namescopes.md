@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: "XAML 名称范围存储 XAML 定义的对象名称和它们的对等实例之间的关系。 此概念类似于其他编程语言和技术中的术语“名称范围”的广泛含义。"
+description: "XAML 名称范围存储 XAML 定义的对象名称和它们的对等实例之间的关系。 此概念类似于其他编程语言和技术中的术语“名称范围”的更广泛的含义。"
 title: "XAML 名称范围"
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.author: jimwalk
@@ -9,18 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9734690f4446d9d5f44013fb370d5a31625473f9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 973207d480327ced18b6136796ef92d5d5b81dd5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-namescopes"></a>XAML 名称范围
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-*XAML 名称范围*存储 XAML 定义的对象名称和它们的对等实例之间的关系。 此概念类似于其他编程语言和技术中的术语*名称范围*的广泛含义。
+*XAML 名称范围*存储 XAML 定义的对象名称和它们的对等实例之间的关系。 此概念类似于其他编程语言和技术中的术语*名称范围*的更广泛的含义。
 
 ## <a name="how-xaml-namescopes-are-defined"></a>定义 XAML 名称范围的方式
 
@@ -90,5 +87,4 @@ XAML 中的模板提供了以一种直观方式重用和重新应用内容的能
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
  
-
 

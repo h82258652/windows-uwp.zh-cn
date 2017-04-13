@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "了解如何更新应用以使用最新的受支持 Microsoft 广告库，并确保应用继续收到横幅广告。"
-title: "将应用更新到最新的 Microsoft Advertising 库"
+title: "将应用更新到最新的 Advertising 库"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,31 +9,32 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移"
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 25435ebf314327db7288ac853819c90ebba35669
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-your-app-to-the-latest-advertising-libraries"></a>将应用更新到最新的 Advertising 库
 
-# <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>将应用更新到最新的 Microsoft Advertising 库
+通过 Microsoft Advertising 显示横幅广告的应用必须通过以下 SDK 之一使用 **AdControl** 或 **AdMediatorControl**，以便在 2017 年 4 月 1 日后继续接收横幅广告：
 
-仅下列 SDK 支持使用 **AdControl** 或 **AdMediatorControl** 在你的应用中显示 Microsoft Advertising 中的横幅广告：
+  * [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）
+  * [适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用）
 
-* [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）
-* [适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用）
+在推出这些 SDK 之前，我们在多种适用于 Windows 和 Windows Phone 应用的旧版广告 SDK 中推出了这些控件。 这些较旧的广告 SDK 版本不再受支持。 2017 年 4 月 1 日后，Microsoft 可能会随时停止对使用旧版广告 SDK 的应用提供横幅广告，而不会发出进一步警告。
 
-在推出这些 SDK 之前，我们推出了多种适用于 Windows 和 Windows Phone 应用的旧版广告 SDK。 这些较旧的广告 SDK 版本不再受支持。 将来，我们计划停止为使用这些旧版 SDK 的应用提供横幅广告。
+如果现有应用（已存在于应用商店中或仍在开发中）使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告，请按照文章中的说明确定你的应用是否首次变更影响，并了解如何更新应用（如需要）。
 
-如果你有使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告的现有应用（已在应用商店中提供或仍在开发中），则可能需要将应用更新为使用你的目标平台中的最新广告 SDK，以便你的应用将来继续接收横幅广告。 按照本文中的说明确定应用是否受此更改影响，并了解如何在必要时更新应用。
+>**注意**&nbsp;&nbsp;此外，在 2017 年 4 月 1 日之后，我们还会停止为用于多个应用的任何广告单元提供横幅广告。 如需为此变更做好准备，请确保你的所有广告单元仅在一个应用中使用：
 
-如果你的应用受此更改影响，并且你未将应用更新为使用最新的广告 SDK，则在我们停止为使用不受支持的广告 SDK 版本的应用提供横幅广告时，您将看到以下行为：
+## <a name="more-details-about-this-change"></a>有关此变更的更多详细信息
+
+为了提供有关此更改的某些其他上下文，我们将删除对不支持最低功能集的较早广告 SDK 版本的支持，包括通过互动广告局 (IAB) 的[移动富媒体广告界面定义 (MRAID) 1.0 规范](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，我们进行此更改是为了增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
+
+如果你的应用受此更改影响，并且你未将应用更新为使用适合目标平台的最新广告 SDK，则在我们停止为使用不受支持的广告 SDK 版本的应用提供横幅广告时，您将看到以下行为：
 
 * 将不再向应用中的任何 **AdControl** 或 **AdMediatorControl** 控件提供横幅广告，并且你将不再从这些控件中获取任何广告收益。
 
 * 当应用中的 **AdControl** 或 **AdMediatorControl** 请求新广告时，将引发控件的 **ErrorOccurred** 事件，并且事件参数的 **ErrorCode** 属性将具有值 **NoAdAvailable**。
-
-为了提供有关此更改的某些其他上下文，我们将不再支持不支持最低功能集的较早广告 SDK 版本，包括通过互动广告局 (IAB) 的[移动富媒体广告界面定义 (MRAID) 1.0 规范](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 富媒体的功能。 我们的许多广告厂商寻求这些功能，我们进行此更改是为了增加我们的应用生态系统对广告厂商的吸引力，并最终为你带来更多收益。
 
 如果你遇到任何问题或需要帮助，请[联系支持人员](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
@@ -56,7 +57,7 @@ ms.lasthandoff: 02/08/2017
 
 如果应用使用 **AdControl** 显示横幅广告，请按照这些说明操作。
 
-**适用于 Windows 10 的 UWP 应用**
+**适用于 Windows10 的 UWP 应用**
 
 1. 创建应用的 .appx 包副本以便不干扰原始软件包包、重命名该副本使其具有 .zip 扩展名，然后提取文件内容。
 
@@ -68,7 +69,7 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-**Windows 8.1 或 Windows Phone 8.x 应用**
+**Windows8.1 或 Windows Phone 8.x 应用**
 
 1. 创建应用的 .appx 或 .xap 包副本以便不干扰原始软件包包、重命名该副本使其具有 .zip 扩展名，然后提取文件内容。
 
@@ -102,7 +103,7 @@ ms.lasthandoff: 02/08/2017
     </thead>
     <tbody>
       <tr class="odd">
-        <td align="left"><p>Windows 8.1 XAML</p></td>
+        <td align="left"><p>Windows8.1 XAML</p></td>
         <td align="left"><p>UniversalXamlAdControl.Windows.dll</p></td>
         <td align="left"><p>8.5.1601.07018</p></td>
       </tr>
@@ -112,7 +113,7 @@ ms.lasthandoff: 02/08/2017
         <td align="left"><p>8.5.1601.07018</p></td>
       </tr>
       <tr class="odd">
-        <td align="left"><p>Windows 8.1 JavaScript/HTML<br/>Windows Phone 8.1 JavaScript/HTML</p></td>
+        <td align="left"><p>Windows8.1 JavaScript/HTML<br/>Windows Phone 8.1 JavaScript/HTML</p></td>
         <td align="left"><p>UniversalSharedLibrary.Windows.dll</p></td>
         <td align="left"><p>8.5.1601.07018</p></td>
       </tr>
@@ -135,15 +136,15 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-**Windows 8.0 应用**
+**Windows8.0 应用**
 
-* 将来，可能不再向面向 Windows 8.0 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 8.0 应用流量现在在使用 Windows 10 的设备上运行。
+* 将来，可能不再向面向 Windows8.0 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows10 的 UWP 应用。 大多数 Windows8.0 应用流量现在在使用 Windows10 的设备上运行。
 
 <span/>
 
 **Windows Phone 7.x 应用**
 
-* 将来，可能不再向面向 Windows Phone 7.x 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows Phone 8.1 应用或转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 7.x 应用流量现在在使用 Windows Phone 8.1 或 Windows 10 的设备上运行。
+* 将来，可能不再向面向 Windows Phone 7.x 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows Phone 8.1 应用或转换为面向 Windows10 的 UWP 应用。 大多数 Windows7.x 应用流量现在在使用 Windows Phone 8.1 或 Windows10 的设备上运行。
 
 <span/>
 
@@ -151,13 +152,13 @@ ms.lasthandoff: 02/08/2017
 
 如果应用使用 **AdMediatorControl** 显示横幅广告，请按照以下说明确定是否需要更新应用。
 
-**适用于 Windows 10 的 UWP 应用**
+**适用于 Windows10 的 UWP 应用**
 
 * UWP 应用不再支持 **AdMediatorControl**。 必须按照以下部分中的说明迁移到使用 **AdControl**。 继续到[第 2 部分](update-your-app-to-the-latest-advertising-libraries.md#part-2)。
 
 <span/>
 
-**Windows 8.1 或 Windows Phone 8.1 应用**
+**Windows8.1 或 Windows Phone 8.1 应用**
 
 1. 创建应用的 .appx 或 .xap 包副本以便不干扰原始软件包包、重命名该副本使其具有 .zip 扩展名，然后提取文件内容。
 
@@ -177,7 +178,7 @@ ms.lasthandoff: 02/08/2017
 
 如果应用使用早期的 SDK 版本，请按照以下说明确保你的开发计算机上具有最新的 SDK。
 
-1. 确保开发计算机已安装 Visual Studio 2015（适用于 UWP、Windows 8.1 或 Windows Phone 8.x 项目）或 Visual Studio 2013（适用于 Windows 8.1 或 Windows Phone 8.x 项目）。
+1. 确保开发计算机已安装 Visual Studio 2015（适用于 UWP、Windows8.1 或 Windows Phone 8.x 项目）或 Visual Studio 2013（适用于 Windows8.1 或 Windows Phone 8.x 项目）。
 
   >**注意**&nbsp;&nbsp;如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
 
@@ -193,14 +194,14 @@ ms.lasthandoff: 02/08/2017
   ```
 
 3.    为应用安装最新的 SDK：
-  * 对于 Windows 10 上的 UWP 应用，请安装 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)。
+  * 对于 Windows10 上的 UWP 应用，请安装 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)。
   * 对于面向较早操作系统版本的应用，请安装 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)。
 
 ## <a name="part-3-update-your-project"></a>第 3 部分：更新项目
 
 按照以下说明更新项目。
 
-### <a name="uwp-projects-for-windows-10"></a>适用于 Windows 10 的 UWP 项目
+### <a name="uwp-projects-for-windows-10"></a>适用于 Windows10 的 UWP 项目
 
 <span/>
 
@@ -210,7 +211,7 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-### <a name="windows-81-or-windows-phone-81-xaml-or-javascripthtml-projects"></a>Windows 8.1 或 Windows Phone 8.1（XAML 或 JavaScript/HTML）项目
+### <a name="windows-81-or-windows-phone-81-xaml-or-javascripthtml-projects"></a>Windows8.1 或 Windows Phone 8.1（XAML 或 JavaScript/HTML）项目
 
 <span/>
 
@@ -259,4 +260,3 @@ ms.lasthandoff: 02/08/2017
 
 
  
-

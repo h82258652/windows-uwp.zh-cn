@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 983158dfa258eeac6305a7aa000afba7311500d3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="template-settings-classes"></a>模板设置类
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -105,5 +102,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相关主题
 
 * [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
 

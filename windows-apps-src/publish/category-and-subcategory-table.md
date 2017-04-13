@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a69521d9ff9adb682a370b421458269507e9befe
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1234a1209f7cc32901b093a44c2b71fc90a6f3b5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 
 
@@ -67,5 +64,4 @@ Windows 应用商店将应用整理为以下类别和子类别。
  
 
 > **注意**  有关在 Windows 8.1 及更早版本的 Windows 应用商店和 Windows Phone 应用商店中所使用的类别，以及它们与以上所列类别的关系等信息，请参阅[你的应用如何显示在面向 Windows 10 客户的应用商店中](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
-
 

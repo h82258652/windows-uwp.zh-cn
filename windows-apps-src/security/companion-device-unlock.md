@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7a6935e61e6f62fce8335651e0cef261ed491507
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 050aa91e8d2a25fa80ec95d2fcdebf886430e37d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 
@@ -689,4 +687,3 @@ Windows Hello 配套设备应用可通过 FindAllRegisteredDeviceInfoAsync 调�
 - 防止克隆 Windows Hello 配套设备
 - 防止在注册期间将 HMAC 密钥发送到电脑时窃听
 - 确保用户存在信号可用
-

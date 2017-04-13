@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b023cdc0671195f7c32d2e65568d5f947ecf4144
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ffead32c2a8c10b1bf46901f3eeee4aba02ecb20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="data-protection"></a>数据保护
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍了如何在 UWP 应用中使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类加密和解密数字数据。
 

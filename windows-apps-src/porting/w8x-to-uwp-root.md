@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a4ee1fd29b276958ed6a18b4eadcd89d5ea914b6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>从 Windows 运行时 8.x 移动到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -63,10 +60,6 @@ ms.lasthandoff: 02/07/2017
 
 在移植之前或移植过程中，应考虑是否可以通过合并应用来改进它，以便可以将具有类似目的的代码集中在图层中，而不是使它们随意地分散。 按照上述步骤将应用重构到图层中，以便你可以更加轻松地更正应用、测试它，随后读取并维护它。 通过遵循模型-视图-视图模型 ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，你可以使功能更容易重复使用。 此模式可使应用的数据、业务和 UI 部分彼此分隔开。 即使是在 UI 中，该模式也可以将状态和行为与视觉效果分隔开并且可分开测试。 借助 MVVM，你可以编写一次数据和业务逻辑并在所有设备上使用它，而不考虑 UI。 你可能还可以跨设备重复使用许多视图模型和视图部分。
 
-## <a name="if-you-have-a-microsoft-visual-studio-2015-rc-project"></a>如果已具有 Microsoft Visual Studio 2015 RC 项目
-
-如果你有使用 Microsoft Visual Studio 2015 RC 创建的 Windows 10 项目，请参阅[将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM](update-your-visual-studio-2015-rc-project-to-rtm.md)。
- 
 | 主题 | 说明 |
 |-------|-------------|
 | [移植项目](w8x-to-uwp-porting-to-a-uwp-project.md) | 在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 |
@@ -83,5 +76,3 @@ ms.lasthandoff: 02/07/2017
 * [Windows 运行时参考](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [为所有 Windows 设备生成通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [为应用设计 UX](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-

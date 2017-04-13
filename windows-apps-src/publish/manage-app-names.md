@@ -4,18 +4,15 @@ Description: "查看为应用保留的名称、保留其他名称（用于其他
 title: "管理应用名称"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5b34723eb6d336eeacb7437a926cae7f1d3ca871
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0dc9582a0a041f6e30a2bebaa22843983d633cee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-app-names"></a>管理应用名称
 
 
@@ -35,20 +32,19 @@ ms.lasthandoff: 02/07/2017
 
 如果你不再希望使用以前保留的名称，则可以通过在此处删除来释放它。 在执行此操作之前，请确保你确定要执行此操作，因为这意味着该名称将立即变为可供别人保留和使用的名称。
 
-若要删除应用的保留名称之一，请找到你不再希望使用的名称，然后单击**删除**。 在确认对话框中，再次单击**删除**以确认。
+若要删除应用的保留名称之一，请找到你不再希望使用的名称，然后单击“删除”****。 在确认对话框中，再次单击“删除”****以确认。
 
-请注意，你的应用需要至少具有一个保留名称。 若要从仪表板完全删除应用（这也会释放你已为该应用保留的所有内容），可以从其“概述”****页面单击“删除此应用”****。
+请注意，你的应用需要至少具有一个保留名称。 若要从仪表板完全删除应用（释放你已为该应用保留的所有名称），可以从其**概述**页面单击**删除此应用**。 如果你正在运行应用提交，则将需要先删除该提交（如果你已将应用发布到应用商店，则无法从你的仪表板中删除它）。
 
 ## <a name="rename-an-app-that-has-already-been-published"></a>重命名已发布的应用
 
-如果你的应用已经在 Windows 应用商店中，而且你要重命名它，则可以通过为它保留一个新名称（通过按照上述步骤操作）执行此操作，然后创建用于该应用的新提交。 请注意，你将需要更新你的程序包来包含新名称，才能使应用商店在新名称下显示该应用。 请确保在应用清单的 [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 元素中使用新名称，并更新包含应用名称的任何图形或文本。 如果你在该元素中的任何位置提起它，则还要查看应用提要并更改名称。
+如果你的应用已经在 Windows 应用商店中，而且你要重命名它，则可以通过为它保留一个新名称（通过按照上述步骤操作）执行此操作，然后创建用于该应用的新提交。 请注意，你将需要更新你的程序包来包含新名称，才能使应用商店在新名称下显示该应用。 请确保在应用清单的 [**Package/Properties/DisplayName**](https://msdn.microsoft.com/en-us/library/windows/apps/dn934748.aspx) 元素中使用新名称，并更新包含应用名称的任何图形或文本。 如果你在该元素中的任何位置提起它，则还要查看应用提要并更改名称。
 
 使用新名称发布应用后，可以删除你不再需要使用的旧名称。
 
  
 
  
-
 
 
 

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 通道, 转换, 报告, 分析"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60f639c6bad73273a6cc7f83cf65fdf321211ba1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cbdd2e530594b97847196941580e2837d71698d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="channels-and-conversions-report"></a>通道和转换报告
 
 
-Windows 开发人员中心仪表板中的**通道和转换**报告可让你查看 Windows 10 客户找到你的应用一览的方式。 它可以让你跟踪应用或其加载项的[自定义促销活动](create-a-custom-app-promotion-campaign.md)，并查看这些访问中有多少可以产生新购买。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
+Windows 开发人员中心仪表板中的“通道和转换”****报告可让你查看 Windows 10 客户找到你的应用一览的方式。 它可以让你跟踪应用或其加载项的[自定义促销活动](create-a-custom-app-promotion-campaign.md)，并查看这些访问中有多少可以产生新购买。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
 
 > **重要提示**   此报告仅显示 Windows 10 客户的页面查看和转换数据。
 
@@ -45,7 +42,7 @@ Windows 开发人员中心仪表板中的**通道和转换**报告可让你查�
 ## <a name="apply-filters"></a>应用筛选器
 
 
-在页面顶部附近，你可以展开**应用筛选器**按日期范围和/或市场筛选此页上的所有数据。
+在页面顶部附近，你可以展开“应用筛选器”****按日期范围和/或市场筛选此页上的所有数据。
 
 -   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 12 个月”****。
 -   **市场**：默认设置为“所有市场”****。 如果你想要此页面仅显示特定市场中客户的详细信息，你可以选择该市场。
@@ -99,4 +96,3 @@ Windows 开发人员中心仪表板中的**通道和转换**报告可让你查�
  
 
  
-

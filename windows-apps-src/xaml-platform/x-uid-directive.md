@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fa6cf80bf569703a7fbbc532c9114bee89c7403
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 21d73b60ba3856f81a6d93331982135e188e122e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xuid-directive"></a>x:Uid 指令
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。
 
@@ -53,5 +50,4 @@ UWP XAML 在 **x:Uid** 唯一性上使用的规则不同于以前利用 XAML 的
 在某些情况下，你将使用资源路径，而不是数据包资源索引 (PRI) 系统的内置功能。 用作 **x:Uid** 值的任何字符串都会定义一个资源路径，该路径以 ms-resource:///Resources/ 开头并包括 **x:Uid** 字符串。 该路径以你在资源文件中指定的属性名或者在其他情况下作为目标的属性名结尾。
 
 请勿将 **x:Uid** 放在属性元素上，Windows 运行时 XAML 中不允许这样做。
-
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83c7f52f0d55773c3bb0d5802eb1166aa6cf40a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7eaddcfc2d02805e60043132328ef482872a9000
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-account-users"></a>管理帐户用户
 
 
@@ -235,7 +232,7 @@ Windows开发人员中心利用 Azure Active Directory 进行多用户管理和�
 
 添加或创建 Azure AD 应用程序后，可以返回到**管理用户**部分，然后单击应用程序名称查看应用程序的设置，包括租户 ID、客户端 ID、回复 URL 和应用 ID URI。
 
-> **注意** 如果你想要使用 [Windows 应用商店服务](../monetize/using-windows-store-services.md)提供的 REST API，将需要此页面上显示的租户 ID 和客户端 ID 值，获取可用于对服务调用进行身份验证的 Azure AD 访问令牌。   
+> **注意** 如果你想要使用 [Windows 应用商店服务](../monetize/using-windows-store-services.md)提供的 REST API，将需要此页面上显示的租户 ID和客户端 ID 值，获取可用于对服务调用进行身份验证的 Azure AD 访问令牌。   
 
 你可以在**管理用户**部分中对你添加到开发人员中心帐户的 Azure AD 应用程序进行更改。 请注意，对“回复 URL”和“应用 ID URI”的更改将反映在组织的目录中，而不只是反映在你的开发人员中心帐户中。 角色更改仅影响开发人员中心内的 Azure AD 应用程序的权限。
 
@@ -279,4 +276,3 @@ Windows开发人员中心利用 Azure Active Directory 进行多用户管理和�
  
 
  
-

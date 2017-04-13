@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7fbe63cba4a825641ea96b39c39d5845758051cb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7a36649701187a795eb6e75df351af69110bee6b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此案例研究以 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的信息为基础，首先研究可显示 **LongListSelector** 中的分组数据的 Windows Phone Silverlight 应用。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的步骤。
 
@@ -306,4 +303,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="conclusion"></a>总结
 
 此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 经发现，Windows Phone Silverlight **LongListSelector** 的所有设施和概念以及其他更多内容都可以采用 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP 应用使用。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
-

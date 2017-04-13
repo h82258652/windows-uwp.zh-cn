@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: c73a1d1695e3b8a2eee8f073a5d25586a24a9d24
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="setting-up-your-mac-with-windows-10"></a>在 Mac 上设置 Windows 10
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -47,5 +44,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="oracle-virtualbox"></a>Oracle VirtualBox
 
 VirtualBox 是一款用于在计算机上运行虚拟机的免费应用程序，它支持在 Mac 上运行 Windows。 它是只提供基本服务的选项，但是价格很具有吸引力。 有关详细信息，请参阅 [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599)。
-
 

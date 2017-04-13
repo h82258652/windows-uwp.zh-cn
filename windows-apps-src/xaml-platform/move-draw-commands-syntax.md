@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e360869cd8406fac057046412fc135a42b3e0ccd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-and-draw-commands-syntax"></a>移动和绘制命令语法
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -113,7 +110,7 @@ ms.lasthandoff: 02/07/2017
 |--------|
 | `H ` _x_ <br/> - 或 - <br/>`h ` _x_ |
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | x | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 x 坐标。 |
 
@@ -214,7 +211,7 @@ ms.lasthandoff: 02/07/2017
 |--------|
 | *x*,*y*<br/> - 或 - <br/>*x* *y* |
 
-| 术语 | 说明 |
+| 术语 | 描述 |
 |------|-------------|
 | *x* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 x 坐标。 |
 | *y* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 y 坐标。 |
@@ -243,5 +240,4 @@ ms.lasthandoff: 02/07/2017
 * [使用画笔](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
 

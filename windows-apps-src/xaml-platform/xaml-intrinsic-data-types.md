@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6a1ca4850ffbc19afc8defa6d2d373dbfbf2b2b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f6c8ebe6285981e0af74448b88e0290de3a66ee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-intrinsic-data-types"></a>XAML 固有数据类型
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +23,7 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 用于 Windows 运行时的 XAML 提供了对以下类型的语言级支持。
 
-| XAML 原语 | 说明 |
+| XAML 原语 | 描述 |
 |-------|-------------|
 | **x:Boolean**  | 对于 CLR 支持，对应于 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 分析 **x:Boolean** 的值时区分大小写。 请注意，“x:Bool”不是可接受的替代原语。 |
 | **x:String**   | 对于 CLR 支持来说，原语对应于 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 对字符串的编码默认采用包围 XML 编码。 |
@@ -49,5 +46,4 @@ XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 *
 * [XAML 语法指南](xaml-syntax-guide.md)
 * [情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
-
 

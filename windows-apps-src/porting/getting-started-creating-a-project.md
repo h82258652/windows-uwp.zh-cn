@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8aba48fba1badcfeebc9868215b904c76ac6b98
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 76307f16fddc094331847f11855d2dbf0467dddf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-creating-a-project"></a>入门：创建项目
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -60,4 +57,3 @@ Visual Studio 与此非常相似。 你将看到“起始页”****，如下图�
 ## <a name="next-step"></a>下一步
 
 [入门：选择一种编程语言](getting-started-choosing-a-programming-language.md)
-

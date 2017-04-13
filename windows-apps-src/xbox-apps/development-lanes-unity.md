@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6c01cc5afa3b3c1266464c9f04c79cea533c9741
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ec26b5533e378cd10517ef8cf766171bc8ef717f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a>将 Unity 游戏引入 Xbox 上的 UWP
 
 
@@ -64,4 +61,3 @@ Unity 现在已创建一个新的 Visual Studio 解决方案，我们将用它�
 ## <a name="see-also"></a>另请参阅
 - [将现有游戏移植到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)
-

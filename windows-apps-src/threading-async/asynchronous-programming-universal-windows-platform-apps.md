@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 异步"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f157db0dc9124ce839f608e5f1a2325c1ce922f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="asynchronous-programming"></a>异步编程
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C++ 组件扩展 (C++/CX) 和 JavaScript 中的表示形式。
@@ -84,4 +82,3 @@ ms.lasthandoff: 02/07/2017
 * [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [使用 Async 和 Await（C# 和 Visual Basic）进行异步编程](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Reversi 示例功能方案：异步代码](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
-

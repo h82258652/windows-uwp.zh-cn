@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6e033ffa-502e-4daa-b5b2-6f853f68b66c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 59090536600e3e45345832c6ca61baa3fe1f5b15
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5b70e6376dbea0e3858a2a12542ff26dfe61ed20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One 上的 UWP 应用开发入门
 
 **注意** 遵循这些步骤以针对通用 Windows 平台 (UWP) 开发成功设置电脑和 Xbox One。 完成设置后，你可以在[适用于 Xbox One 的 UWP](index.md) 页面上了解有关 Xbox One 上的开发人员模式和生成 UWP 应用的详细信息。 
@@ -70,4 +67,3 @@ ms.lasthandoff: 02/08/2017
 - [常见问题](frequently-asked-questions.md)  
 - [已知问题](known-issues.md)
 - [Xbox One 上的 UWP](index.md) 
-

@@ -9,17 +9,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c36f8296f65efcc107ade545c20ab7e3db32c824
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 957caca6fb71cb8cfe5a84e258c0679b0780e6a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
 
-在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留名称，并查找有关[为应用选择出色名称](#choosing-your-app-s-name)的建议。 每个保留的名称在整个应用商店中都必须是唯一的。
+在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留名称，并查找有关[为应用选择出色名称](#choosing-your-apps-name)的建议。 每个保留的名称在整个应用商店中都必须是唯一的。
 
 > **注意**  如果你有一个以前创建的 Windows Phone 应用并且从未为其保留过名称，你仍可以管理并提交该应用。 但是，若要上载它的 .appx 程序包，或[查看应用标识详细信息](view-app-identity-details.md)（特定于 .appx 程序包创建），你将需要按照以下步骤保留唯一名称。 这还可以阻止其他任何用户为其自身保留该名称。
 
@@ -64,7 +61,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

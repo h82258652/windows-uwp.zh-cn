@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: "可以使用 PropertyPath 类和字符串语法来实例化 XAML 或代码中的 PropertyPath 值。"
-title: "Property-path 语法&quot;"
+title: "Property-path 语法"
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 301f411f1911e12163ba123b93f99f5f15b5e479
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3209028f151608c83e69d6750e978132a6c8b83c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="property-path-syntax"></a>Property-path 语法
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -122,5 +119,4 @@ ms.lasthandoff: 02/07/2017
 * [**绑定**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**绑定构造函数**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
-
 

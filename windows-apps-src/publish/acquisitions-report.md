@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Windows 开发人员中心仪表板中的“购置”报告允许你查看哪些用户购置了你的应用，以及客户统计和平台详细信息。"
+Description: "通过 Windows 开发人员中心仪表板中的“购置”报告，你可以查看哪些用户购置了你的应用，以及客户统计和平台详细信息。"
 title: "购置报告"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a668c3d03c11ac4c6c27cddeefafeb3c42caf1e3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3db02d5fc5324f281a8a725511066cfbe5de1e3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="acquisitions-report"></a>购置报告
 
 
-Windows 开发人员中心仪表板中的**购置**报告允许你查看哪些用户购置了你的应用，以及客户统计和平台详细信息。 可在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供离线查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取应用购置](../monetize/get-app-acquisitions.md)方法以编程方式检索此数据。
+通过 Windows 开发人员中心仪表板中的 **Acquisitions** 报告，你可以查看哪些用户购置了你的应用，以及客户统计和平台详细信息。 可在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供离线查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取应用购置](../monetize/get-app-acquisitions.md)方法以编程方式检索此数据。
 
 在此报告中，购置意味着新客户已获得应用许可证（无论你是否收费）。
 
@@ -37,13 +34,12 @@ Windows 开发人员中心仪表板中的**购置**报告允许你查看哪些�
 
 下面列出的图中的信息将反映在**应用筛选器**部分中所选的时段。
 
-以下列出的所有图中的信息将反映在**“应用筛选器”**部分中所选的时段。 除非你已使用**应用筛选器**仅选择一个设备类型，否则在默认情况下，这会包含所有设备类型的数据。
+以下列出的所有图中的信息将反映在**应用筛选器**部分中所选的时段。 除非你已使用**应用筛选器**仅选择一个设备类型，否则在默认情况下，这会包含所有设备类型的数据。
 
 ## <a name="acquisitions"></a>购置
 
 
-
-            **“购置”**图显示了选定时段内应用的日购置数或周购置数。 （当你使用**应用筛选器**筛选更长时间段内的数据时，数据将按周进行分组。）
+**购置**图显示了选定时段内应用的日购置数或周购置数。 （当你使用**应用筛选器**筛选更长时间段内的数据时，数据将按周进行分组。）
 
 你还可以看到购置应用的生命周期。 这将显示从首次发布应用起所有购置的累计总数。
 
@@ -54,7 +50,7 @@ Windows 开发人员中心仪表板中的**购置**报告允许你查看哪些�
 
 **客户统计**图显示有关已购置应用的用户的统计信息。 你可以看到按照特定年龄段内的人以及不同性别（在选定时段内）所进行的购置量。
 
-> **注意**  有些客户选择不共享此信息。 如果我们无法确定年龄段或性别，则购置将归类为**“未知”**。
+> **注意**  有些客户选择不共享此信息。 如果我们无法确定年龄段或性别，则购置将归类为**未知**。
 
  
 
@@ -73,4 +69,3 @@ Windows 开发人员中心仪表板中的**购置**报告允许你查看哪些�
  
 
  
-

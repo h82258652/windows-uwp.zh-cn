@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 19a6ef29265c22d1bb02464a76ab20e487c67ce4
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -488,5 +485,4 @@ Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生�
 ```
 
 下一主题是[针对 I/O、设备和应用模型进行移植](w8x-to-uwp-input-and-sensors.md)。
-
 

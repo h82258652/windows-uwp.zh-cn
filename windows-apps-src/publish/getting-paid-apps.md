@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: af5c30aae3927f901bb93fd2c79bfee202754a1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c27e06491b66fea4f451b70309a9a8c3802aff18
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-paid"></a>获取付款
 下面是一些重要信息，你将需要使用它们来确保你会收到对你的应用和加载项的付款以及 Microsoft Advertising 收入。
 
@@ -61,7 +58,6 @@ Windows 应用商店费用适用于通过 Windows 应用商店收到的所有应
  
 
  
-
 
 
 

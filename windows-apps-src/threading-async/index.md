@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 异步, 线程, 线程"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8b51cf845f7bd9e5efdc5fa9ae611caf4bf7d71f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="threading-and-async-programming"></a>线程和异步编程
 
@@ -42,4 +40,3 @@ ms.lasthandoff: 02/07/2017
 | [创建定期工作项](create-a-periodic-work-item.md)                                                   | 了解如何创建定期重复的工作项。 |
 | [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)                               | 了解如何通过向线程池提交工作项，在单独的线程中完成工作。 |
 | [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)                                       | 了解如何创建在经过计时器时间后运行的工作项。 |
-

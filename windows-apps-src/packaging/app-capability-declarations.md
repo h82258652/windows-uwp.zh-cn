@@ -2,22 +2,20 @@
 author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "应用功能声明"
-description: "必须在你的通用 Windows 平台 (UWP) 应用的程序包清单中声明功能，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。"
+description: "功能必须在你的通用 Windows 平台 (UWP) 应用的程序包清单中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。"
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 29aa2aefda5eebfade2da6b3e2b1e8b71361889f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 16aa93d85856558122e7217f82b881bcdbaea50e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
-\[ 已针对 Windows 10 上的 UWP 应用进行了更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 功能必须在你的通用 Windows 平台 (UWP) 应用的[程序包清单](https://msdn.microsoft.com/library/windows/apps/BR211474)中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。
 
@@ -182,4 +180,3 @@ ms.lasthandoff: 02/07/2017
 * [如何在程序包清单中指定功能](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [如何在包清单中指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
-

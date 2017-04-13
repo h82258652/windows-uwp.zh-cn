@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 83e63d76e0fc1c1b0e8465ad5b5656779ac43f09
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 上一主题是[疑难解答](wpsl-to-uwp-troubleshooting.md)。
@@ -313,7 +310,9 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 文本（或版式）是 UWP 应用的重要方面，并且在移植时，你可能希望回顾你的视图的视觉设计，以便它们与新设计语言相协调。 使用这些图示查找可用的 UWP **TextBlock** 系统样式。 查找对应于你所使用的 Windows Phone Silverlight 样式的样式。 或者，你可以创建自己的通用样式并将 Windows Phone Silverlight 系统样式中的属性复制到这些样式中。
 
-![适用于 Windows 10 应用的 TextBlock 系统样式](images/label-uwp10stylegallery.png) 适用于 Windows 10 应用的 TextBlock 系统样式
+![适用于 Windows 10 应用的 TextBlock 系统样式](images/label-uwp10stylegallery.png)  
+
+适用于 Windows 10 应用的 TextBlock 系统样式
 
 在 Windows Phone Silverlight 应用中，默认字体系列是 Segoe WP。 在 Windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果你希望重新生成 Windows Phone Silverlight 文本的外观，可以使用 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 和 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) 等属性设置你自己的指标。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](http://dev.windows.com/design)。
 
@@ -364,7 +363,7 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 ## <a name="view-or-effective-pixels-viewing-distance-and-scale-factors"></a>视图或有效像素、观看距离和比例系数
 
-在脱离设备的实际物理大小和分辨率而抽象表示 UI 元素大小和布局方面，Windows Phone Silverlight 应用和 Windows 10 应用使用的方法有所不同。 Windows Phone Silverlight 应用使用视图像素来执行此操作。 在 Windows 10 中，视图像素的概念已优化为有效像素的概念。 以下是该术语的解释、它的意义以及它所提供的额外价值。
+Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大小和分辨率抽象表示 UI 元素的大小和布局的方法不同。 Windows Phone Silverlight 应用使用视图像素来执行此操作。 在 Windows 10 中，视图像素的概念已优化为有效像素的概念。 以下是该术语的解释、它的意义以及它所提供的额外价值。
 
 术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，你可以优化用户的体验。
 
@@ -398,5 +397,4 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 ## <a name="related-topics"></a>相关主题
 
 * [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
-
 

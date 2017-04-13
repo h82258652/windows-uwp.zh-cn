@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6f2744a571e7a601eca058957cbe181a14143b68
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 536502316db43ccc04a42b935064294dc5173151
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="introduction-to-xbox-one-tools"></a>Xbox One 工具简介
 
-本节介绍了特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”__。
+本部分介绍了特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”__。
 
 ## <a name="dev-home"></a>开发人员主页
 
@@ -81,7 +78,7 @@ ms.lasthandoff: 02/08/2017
   ![移动或调整大小](images/devhome_move.png)
 
 #### <a name="changing-theme-color-and-background-image"></a>更改主题色和背景图
-在主菜单上，你可以选择“更改主题色”****。 若要更新用于焦点突出显示的主题色，选择一种新颜色，然后单击保存****。
+在主菜单上，你可以选择“更改主题色”****。 若要更新用于焦点突出显示的主题色，选择一种新颜色，然后单击“保存”****。
 
   ![更改主题色](images/devhome_colors.png)
 
@@ -122,7 +119,7 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
 5. 输入__用户名__和__密码__，然后进行保存。 它们用于验证浏览器对开发人员工具包的访问权限。
 6. 关闭“设置”____页面，并记下“远程管理”__工具上列出的要连接的 URL。
 7. 在浏览器中输入 URL，然后使用已配置的凭据登录。
-8. 你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 单击**继续浏览此网站**可访问 Windows Device Portal。
+8. 你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 单击“继续浏览此网站”****可访问 Windows Device Portal。
 
   ![安全证书警告](images/security_cert_warning.jpg)
 
@@ -136,4 +133,3 @@ Xbox 开发人员模式助手是一个工具，使你无需离开电脑就可以
 
 
 ----
-

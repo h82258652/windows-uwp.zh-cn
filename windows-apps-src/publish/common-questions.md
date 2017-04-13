@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8171301a628e173128689765914faea622fd4837
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="common-questions-about-ad-campaigns"></a>有关广告市场活动的常见问题
 
 ## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>为我的应用投放广告需要多少钱？
@@ -40,7 +37,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="where-will-my-ad-appear"></a>我的广告将出现在哪个位置？
 
-你的广告将出现在共享你的应用年龄分级和操作系统版本的应用中。 当你在 Windows 应用商店中发布应用时，可以设置这些属性。 对于“通用”市场活动，你的广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。
+您的广告将出现在共享您的应用年龄分级和操作系统版本的应用中。 当你在 Windows 应用商店中发布应用时，可以设置这些属性。 对于“通用”市场活动，你的广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。
 
 广告市场活动当前在以下国家和地区中受支持：
 
@@ -67,8 +64,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相关主题
 
 * [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
-* [管理广告活动](managing-your-ad-campaign.md)
+* [管理广告市场活动](managing-your-ad-campaign.md)
 * [关于自家广告](about-house-ads.md)
 * [关于社区广告](about-community-ads.md)
 * [应用安装广告报告](app-install-ads-reports.md)
-

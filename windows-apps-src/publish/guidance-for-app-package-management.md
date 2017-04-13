@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54f6d6c786eb0787a441628452d26e46f353b3d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fade9058a1b6bf7896d853745bef4b119c0bff5d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/07/2017
 
 -   [操作系统版本和程序包分发](#os-versions-and-package-distribution)
 -   [将适用于 Windows 10 的程序包添加到以前发布的应用](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [使程序包维持对 Windows Phone 8.1 的兼容性](#maintaining-package-compatibility-for-windows-phone-8-1)
+-   [使程序包维持对 Windows Phone 8.1 的兼容性](#maintaining-package-compatibility-for-windows-phone-81)
 -   [从应用商店中删除应用](#removing-an-app-from-the-store)
 -   [删除以前受支持的设备系列中的程序包](#removing-packages-for-a-previously-supported-device-family)
 
@@ -82,28 +79,27 @@ ms.lasthandoff: 02/07/2017
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>将适用于 Windows 10 的程序包添加到以前发布的应用
 
 
-如果你在应用商店中有一个应用并希望为 Windows 10 更新你的应用，请创建一个新提交并在[程序包](upload-app-packages.md)步骤阶段添加 UWP .appxupload 程序包。 在你的应用完成认证过程后，对于在升级到 Windows 10 之前已拥有你的应用的客户，将能够从应用商店作为更新获取 UWP 程序包。 该 UWP 程序包也适用于使用 Windows 10 的客户进行新的购置。
+如果你在应用商店中有一个面向 Windows 8.x 和/或 Windows Phone 8.x 的应用，并希望为 Windows 10 更新你的应用，请创建一个新提交并在[程序包](upload-app-packages.md) 步骤阶段添加 UWP .appxupload 程序包。 在你的应用完成认证过程后，已拥有你的应用的客户将能够从应用商店作为更新获取 UWP 程序包。 该 UWP 程序包也适用于使用 Windows 10 的客户进行新的购置。
 
 > **重要提示**  使用 Windows 10 的客户获取 UWP 程序包后，你无法使客户回退到使用任何以前操作系统版本的程序包。 在提交 UWP 程序包之前，请确保已在 Windows 10 上对其进行了彻底测试。
 
 你可以同时更新你的任何其他程序包，或对提交进行其他更改（例如，你可能要[创建特定于平台的提要](create-platform-specific-descriptions.md)以向使用较早操作系统版本的客户显示）。 如果你愿意，也可以使其他的一切保持原样。
 
-> **注意**  你的 Windows 10 程序包的版本号必须始终高于那些你正在为相同应用发布的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 程序包（或你以前发布的那些操作系统的程序包）的任一版本号。 有关 Windows 10 版本编号的详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
+> **注意**  你的 Windows 10 程序包的版本号必须始终高于那些你正在为相同应用发布的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 程序包（或你以前发布的那些操作系统的程序包）的任一版本号。 有关详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
 
 新提交完成认证过程后，UWP 程序包以及你向尚未使用 Windows 10 的客户提供的任何其他程序包将可用。
 
 有关打包适用于应用商店的 UWP 应用的详细信息，请参阅[打包适用于 Windows 10 的通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
-> **重要提示**  请谨记，如果你提供面向通用设备系列的程序包，每个已经在任何较早的操作系统（Windows Phone 8、Windows 8.1 等）上拥有你的应用然后升级到 Windows 10 的客户将更新到你的 Windows 10 通用程序包。
+> **重要提示**  请谨记，如果你提供面向通用设备系列的程序包，每个已经在任何较早的操作系统（Windows Phone 8、Windows 8.1 等）上拥有你的应用然后升级到 Windows 10 的客户将更新以获取你的 Windows 10 程序包。
 > 
-> 由于**“设备系列”**选择仅适用于新的购置，因此即使你在提交的[“定价和可用性”](set-app-pricing-and-availability.md#windows-10-device-families)步骤中排除了特定设备系列，也会发生这种情况。 如果你不希望每个以前的客户获取你的新 Windows 10 程序包，请确保在 appx 清单中将 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素更新为仅包含你希望支持的特定设备系列。
+> 由于**设备系列可用性**选择仅适用于新的购置，因此即使你在提交的[“设备系列可用性”](upload-app-packages.md#device-family-availability) 步骤中排除了特定设备系列，也会发生这种情况。 如果你不希望每个以前的客户获取你的新 Windows 10 程序包，请确保在 appx 清单中将 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素更新为仅包含你希望支持的特定设备系列。
 > 
-> 例如，假设你只希望已升级到 Windows 10 的 Windows 8 和 Windows 8.1 客户获取 UWP 应用，并且希望使用 Windows Phone 8.1 和更早版本的客户保留你以前提供的程序包（面向 Windows Phone 8 或 Windows Phone 8.1）。 为此，你将需要确保在 appx 清单中将 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 更新为仅包含 **Windows.Desktop**（面向桌面设备系列），而不是将其保留为 Microsoft Visual Studio 默认包含在 appx 清单中的 **Windows.Universal** 值（面向通用设备系列）。 不要提交任何面向通用或移动设备系列的 UWP 程序包（**Windows.Universal** 或 **Windows.Universal**）。 这样，你的 Windows 10 移动客户将不会获得你的任何 UWP 程序包。
+> 例如，假设你只希望已升级到 Windows 10 的 Windows 8 和 Windows 8.1 客户获取 UWP 应用，并且希望使用 Windows Phone 8.1 和更早版本的客户保留你以前提供的程序包（面向 Windows Phone 8 或 Windows Phone 8.1）。 为此，你将需要确保在 appx 清单中将 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 更新为仅包含 **Windows.Desktop**（面向桌面设备系列），而不是将其保留为 Microsoft Visual Studio 默认包含在 appx 清单中的 **Windows.Universal** 值（面向通用设备系列）。 不要提交任何面向通用或移动设备系列的 UWP 程序包（**Windows.Universal** 或 **Windows.Universal**）。 这样，你的 Windows 10 移动版客户将不会获得你的任何 UWP 程序包。
 > 
-> 有关设备系列的详细信息，请参阅[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+> 有关设备系列的详细信息，请参阅[通用 Windows 平台 (UWP) 应用指南](../get-started/universal-application-platform-guide.md)。
 
 ## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>使程序包维持对 Windows Phone 8.1 的兼容性
-
 
 当更新之前为 Windows Phone 8.1 发布的应用时，会针对程序包类型应用某些要求：
 
@@ -112,10 +108,9 @@ ms.lasthandoff: 02/07/2017
 -   当应用具有已发布的 Windows Phone 8.1 .appx 时，后续更新必须具有 Windows Phone 8.1 .appx 或 Windows Phone 8.1 .appxbundle。 换言之，不允许 Windows Phone 8.1 XAP。 这也适用于包含 Windows Phone 8.1 .appx 的 .appxupload。
 -   在应用具有已发布的 Windows Phone 8.1 .appxbundle 后，后续更新必须具有 Windows Phone 8.1 .appxbundle。 换言之，不允许 Windows Phone 8.1 XAP 或 Windows Phone 8.1 .appx。 这也适用于包含 Windows Phone 8.1 .appxbundle 的 .appxupload。
 
-若未遵循这些规则，将导致程序包上载错误，从而阻止你完成提交。
+若未遵循这些规则，可能导致程序包上载错误，从而阻止你完成提交。
 
 ## <a name="removing-an-app-from-the-store"></a>从应用商店中删除应用
-
 
 有时，你可能想要完全停止向客户提供应用，即有效地“取消发布”它。 若要执行此操作，请从“应用概述”页上单击“禁止提供应用”****。 在你对要禁止提供的应用进行确认后，数小时内它不会再出现在应用商店中，并且新客户将无法通过包含促销充值码在内的任何方法获取它。
 
@@ -129,7 +124,6 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
-
 如果删除您的应用以前支持的某些设备系列中的所有程序包，在“程序包”****页面上保存更改之前将提示您确认您是否要这样做。
 
 当您发布删除您的应用以前支持的某个设备系列中的程序包的提交时，新客户将无法在该设备系列上获取应用。 稍后您可以始终发布其他更新以为该设备系列重新提供程序包。
@@ -139,7 +133,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

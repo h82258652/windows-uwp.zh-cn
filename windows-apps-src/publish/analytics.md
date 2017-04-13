@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 分析, 报告, 仪表板, 应用"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
 ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.lasthandoff: 02/08/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="analytics"></a>分析
 
 你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。 可以通过统计信息和图表了解你的应用的表现（从你已拥有的客户数量到客户使用你的应用的方式）以及他们对你的应用的评价。 你还可以找到应用运行状况、广告使用情况等信息。 在仪表板中查看报告，或[下载所需的报告](download-analytic-reports.md)以脱机分析数据。 我们还为你提供了几种[无需使用仪表板即可访问分析数据](#no-dashboard)的方法。
@@ -80,8 +77,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="dev-center-app"></a>开发人员中心应用
 
-安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows 10 设备上的运行状况和性能的详细信息。
+安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows10 设备上的运行状况和性能的详细信息。
 
 ## <a name="related-topics"></a>相关主题
 - [发布 Windows 应用](index.md)
-

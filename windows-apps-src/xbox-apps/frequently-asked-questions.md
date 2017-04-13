@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ac4a09180a678e8da197bfb030e27fa001eb74f0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="frequently-asked-questions"></a>常见问题
 
 是否未按预期工作？ 查看此常见问题页面。 另外，请查看[已知问题](known-issues.md)主题和[开发通用 Windows 应用](https://go.microsoft.com/fwlink/?linkid=839446)论坛。 
@@ -72,9 +69,7 @@ Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店�
 
 ### <a name="can-i-publish-my-game"></a>我是否可以发布我的游戏？
 
-你可以在开发人员模式下使用 UWP 和你的 Xbox One，在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](http://www.xbox.com/Developers/id)。 
-[ID@XBOX](http://www.xbox.com/Developers/id) 向开发人员提供适用于其游戏的 Xbox Live API 的完整访问权限，包括玩家分数和成就以及在设备之间畅玩多人游戏、云存储和 Xbox One 上 Xbox Live 的所有功能。 
-[ID@XBOX](http://www.xbox.com/Developers/id) 还可以为需要访问 Xbox One 硬件最大潜能的游戏提供对 Xbox One 开发工具包的访问权限。
+你可以在开发人员模式下使用 UWP 和你的 Xbox One，在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](http://www.xbox.com/Developers/id) 或参与 [Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)。 有关详细信息，请参阅[开发人员计划概述](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
 
 ### <a name="will-the-standard-game-engines-work"></a>标准游戏引擎是否工作？
 
@@ -142,4 +137,3 @@ TVHelpers 是一套 JavaScript 和 XAML/C# 示例和库，可帮助你使用 Jav
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP 的已知问题](known-issues.md)
 - [Xbox One 上的 UWP](index.md)
-

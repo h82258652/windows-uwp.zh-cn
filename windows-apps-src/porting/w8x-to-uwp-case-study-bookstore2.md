@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 401ab153ec737a0a82825dc3b2065156b50d4589
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f31d6da73c274fc4f14e0851cf956a43fa441b76
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore2
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -88,7 +85,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 [SemanticZoom 更改](w8x-to-uwp-porting-xaml-and-ui.md)部分中描述了 Windows 10 中对 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件的设计更改。 在此部分中，我们无需为响应这些更改而进行任何工作。
 
-[GridView/ListView](w8x-to-uwp-porting-xaml-and-ui.md) 设计更改部分中描述了对 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的更改。 为了适应这些更改，我们需要进行一些非常微小的调整，如下所述。
+[GridView/ListView 设计更改](w8x-to-uwp-porting-xaml-and-ui.md)部分中描述了对 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的更改。 为了适应这些更改，我们需要进行一些非常微小的调整，如下所述。
 
 -   在 SeZoUC.xaml 中，在 `ZoomedInItemsPanelTemplate` 中设置 `Orientation="Horizontal"` 和 `GroupPadding="0,0,0,20"`。
 -   在 SeZoUC.xaml 中，从缩小视图中删除 `ZoomedOutItemsPanelTemplate` 并移除 `ItemsPanel` 属性。
@@ -178,4 +175,3 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 在此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 和上一个案例研究一样，此特定视图模型不需要进行任何工作，我们的主要工作集中在重构用户界面。 某些更改是将两个项目组合为一个项目同时仍然支持许多外形规格（事实上，比我们以前所能支持的多很多）的必然结果。 一些更改与对平台进行的更改有关。
 
 下一个案例研究是 [QuizGame](w8x-to-uwp-case-study-quizgame.md)，我们将从中了解有关访问和显示分组数据的信息。
-

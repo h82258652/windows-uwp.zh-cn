@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 873da2adeea277e0f8f869703aac782c21b0419e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a629fb07bfa2e3f8bb3d070e9fe4994baba4336b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xphase-attribute"></a>x:Phase 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 将 **x:Phase** 与 [{x:Bind} 标记扩展](x-bind-markup-extension.md)结合使用，以便能以增量方式呈现 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 项并改进平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
@@ -84,5 +81,4 @@ ms.lasthandoff: 02/07/2017
 阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
 
 仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
-
 

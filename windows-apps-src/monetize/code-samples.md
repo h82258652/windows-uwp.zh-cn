@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 广告, 代码示例"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae6e806f8aead387afe55dec2d70c04b7fc21284
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cb10a81c2fac1a14ae6e3a7eec20953d4267164d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="code-samples"></a>代码示例
 
 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/07/2017
 
 本部分向目标用户提供了一些示例，演示了如何使用 Microsoft Advertising 库中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类的属性、方法和事件，如何手动刷新广告以及如何处理事件。 有关演示如何向应用添加这些控件的介绍性演练，请参阅[开发人员演练](developer-walkthroughs.md)。
 
-有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和视频间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
 ## <a name="in-this-section"></a>本部分内容
 
@@ -45,4 +42,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: "本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的任务类来使用异步方法的推荐方式。"
+description: "本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类来使用异步方法的推荐方式。"
 title: "使用 C++ 进行异步编程"
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 线程, 异步, C++"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 112b5d58064ae6cd006d791a2c4534848baee259
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c74a2d18a0852d28cf33715a540356a61438ff48
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="asynchronous-programming-in-c"></a>使用 C++ 进行异步编程
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +23,7 @@ ms.lasthandoff: 02/07/2017
 
 通用 Windows 平台 (UWP) 功能具有一个定义完善的用于调用异步方法的模型，并提供了使用此类方法所需的类型。 如果你对 UWP 异步模型不熟悉，请在阅读本文其余部分之前阅读[异步编程][AsyncProgramming]。
 
-尽管可在 C++ 中直接使用异步 UWP API，但首选方法是使用 [**任务类**][task-class]及其相关类型和函数，它们都包含在[**并发**][concurrencyNamespace]命名空间中且在 `<ppltasks.h>` 中进行了定义。 **concurrency::task** 是一个通用类型，但当使用 **/ZW** 编译器开关（对于通用 Windows 平台 (UWP) 应用和组件而言必不可少）时，任务类将封装 UWP 异步类型，以便更容易地完成以下工作：
+尽管可在 C++ 中直接使用异步 UWP API，但首选方法是使用 [**任务类**][task-class]及其相关类型和函数，它们都包含在[**并发**][concurrencyNamespace]命名空间中且在 `<ppltasks.h>` 中进行了定义。 **concurrency::task** 是一个通用类型，但当使用 **/ZW** 编译器开关（对于通用 Windows 平台 (UWP) 应用和组件而言必不可少）时，task 类将封装 UWP 异步类型，以便更容易地完成以下工作：
 
 -   将多个异步和同步操作结合在一起
 
@@ -323,4 +320,3 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 [taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "任务并行度"
 [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
-

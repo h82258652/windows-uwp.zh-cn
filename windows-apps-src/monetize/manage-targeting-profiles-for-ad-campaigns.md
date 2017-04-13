@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: "在 Windows 应用商店促销 API 中使用此方法管理促销性广告活动的目标市场配置文件。"
-title: "管理广告活动的目标市场配置文件"
+title: "管理目标市场配置文件"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店促销 API, 广告活动"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c737e27df4a911d3fcbdcb3128ece865bda2b703
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 30fb160e389edd18fb3782d332b5603fc6207757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-targeting-profiles-for-ad-campaigns"></a>管理广告活动的目标市场配置文件
+# <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
 
 在 Windows 应用商店促销 API 中使用这些方法为促销性广告活动中的每个投放渠道选择要针对的用户、地理位置和广告资源类型。 可以在多个投放渠道中创建和重复使用目标市场配置文件。
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/08/2017
 若要使用这些方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Windows 应用商店促销 API 的所有[先决条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+* [获取 Azure AD 访问令牌](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 ## <a name="request"></a>请求
 
@@ -43,9 +40,9 @@ ms.lasthandoff: 02/08/2017
 <span/> 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 描述         |
+| 标头        | 类型   | 说明         |
 |---------------|--------|---------------------|
-| Authorization | 字符串 | 必填。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |
 
 
@@ -161,7 +158,7 @@ Authorization: Bearer <your access token>
 
 |  *age* 字段的整数值  |  对应的年龄范围  |  
 |---------------------------------|---------------------------|
-|     621     |            13 到 17             |
+|     651     |            13 到 17             |
 |     652     |           18 到 24             |
 |     653     |            25 到 34             |
 |     654     |            35 到 49             |
@@ -237,7 +234,7 @@ Authorization: Bearer <your access token>
 |     506     |           Windows 8.0             |
 |     507     |           Windows 8.1             |
 |     508     |           Windows 10             |
-|     509     |           Windows 10 移动版             |
+|     509     |           Windows10 移动版             |
 
 要以编程方式获取 *osVersion* 字段的支持值，你可以调用下面的 GET 方法。  对于 ```Authorization``` 标头，请以 **Bearer** &lt;*token*&gt; 形式传递你的 Azure AD 访问令牌。
 
@@ -620,4 +617,3 @@ Authorization: Bearer <your access token>
 * [管理广告活动的投放渠道](manage-delivery-lines-for-ad-campaigns.md)
 * [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
 * [获取广告活动效果数据](get-ad-campaign-performance-data.md)
-

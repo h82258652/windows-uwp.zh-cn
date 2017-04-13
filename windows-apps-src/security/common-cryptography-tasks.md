@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ce185e4bdd247c8b0ac71401a2ff863c64f880a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3a4dfeb102d8db35a6ae032eb5001b4873456b82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="common-cryptography-tasks"></a>常见的加密任务
 
 
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
 | [复制到字节数组并从字节数组复制](copy-to-and-from-byte-arrays.md)                       | 此示例代码显示了如何在 UWP 应用中复制到字节数组并从字节数组复制。                             |
 | [编码和解码数据](encode-and-decode-data.md)                                   | 此示例代码显示了如何在 UWP 应用中对 Base64 和十六进制数据进行编码和解码。            |
  
-

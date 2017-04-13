@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用, 安装, 安装, 报告, 分析"
 ms.assetid: 46c08fd2-00bd-4be5-b29f-01a3b5fea4c2
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9e4dec61e275443db42b50ef9a231b5b3c46ffe4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7912775e17a70c1d6fe9810c780017dcfa2db60e
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="installs-report"></a>安装报告
 
-Windows 开发人员中心仪表板中的**安装**报告可让你查看客户已在 Windows 10 设备上成功安装你的应用的次数。 你可以在自己的仪表板中查看此数据，或[下载报告](download-analytic-reports.md)来离线查看。
+Windows 开发人员中心仪表板中的**安装**报告可让你查看客户已在 Windows 10 设备上成功安装你的应用的次数。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取应用安装](../monetize/get-app-installs.md)方法以编程方式检索此数据。
 
 
 ## <a name="apply-filters"></a>应用筛选器
@@ -65,4 +62,3 @@ Windows 开发人员中心仪表板中的**安装**报告可让你查看客户�
  
 
  
-

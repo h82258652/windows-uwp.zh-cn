@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: da02ed10336ea2381213fd5fada153db4cc06ab1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 55baba42a011197814a01d476fcb062fe6bf2ebf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>诊断 Windows 运行时组件错误条件
 
 
@@ -256,4 +253,3 @@ JavaScript 代码可以按照名称访问方法的输出参数，包括返回值
 
 * [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
-

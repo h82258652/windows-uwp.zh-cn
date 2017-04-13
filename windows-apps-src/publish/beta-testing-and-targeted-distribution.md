@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fd6f16b019326b7deefa110c2f65b30ffd83d10
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 20178a8048cadb733bf1e34996ad46067a8660f3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="beta-testing-and-targeted-distribution"></a>Beta 测试和有针对性的分发
 
 
-无论你如何仔细测试你的应用，都不会有任何方式能像真实测试那样让其他人使用你的应用。 Windows 开发人员中心仪表板为你提供仅向指定人员提供应用的选项，以便可以让测试人员在你向公众提供应用之前试用它。 测试人员可能会发现你所忽略的问题，例如拼写错误、混乱的应用流程或可能导致该应用崩溃的错误。 然后，你将有机会在向公众发布应用之前修复这些问题，从而推出更完善的最终产品。
+无论你如何仔细地测试应用，都不如通过让其他人使用它来进行实际测试。 Windows 开发人员中心仪表板为你提供仅向指定人员提供应用的选项，以便可以让测试人员在你向公众提供应用之前试用它。 测试人员可能会发现你所忽略的问题，例如拼写错误、混乱的应用流程或可能导致该应用崩溃的错误。 然后，你将有机会在向公众发布应用之前修复这些问题，从而推出更完善的最终产品。
 
 我们提供几种方法来限制仅向你的测试人员分发应用，而无需使用不同的名称和程序包标识创建单独的应用版本。 （如果你愿意，当然可以创建单独的应用仅供测试。 如果要这样做，请确保为其指定的名称不同于你打算使用的最终的公共应用名称。）
 
@@ -35,8 +32,7 @@ ms.lasthandoff: 02/07/2017
 
 有关详细信息，请参阅[软件包外部测试版](package-flights.md)。
 
-> 
-              **注意** 若要按指定百分比向随机选择的 Windows 10 客户（而非指定的特定客户组）分配程序包，可以使用[逐步推出程序包](gradual-package-rollout.md)。 如果希望向一个外部测试版组逐步分配更新，还可以将此推出与软件包外部测试版组合起来。
+> **注意** 若要按指定百分比向随机选择的 Windows 10 客户（而非指定的特定客户组）分配程序包，可以使用[逐步推出程序包](gradual-package-rollout.md)。 如果希望向一个外部测试版组逐步分配更新，还可以将此推出与软件包外部测试版组合起来。
 
 ### <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>在应用商店中隐藏应用和使用促销代码
 
@@ -69,28 +65,27 @@ ms.lasthandoff: 02/07/2017
 
 若要使用此选项，请在提交应用时，在**“定价和可用性”**页面的[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)部分中，选择**“在应用商店中隐藏此应用。但是具有指向应用一览的直接链接的客户仍然可以下载它，在 Windows 8 和 Windows 8.1 上除外:”**。
 
->               **重要信息**  此选项不适合 Windows 8 或 Windows 8.1 上的测试人员。
+> **重要信息**  此选项不适合 Windows 8 或 Windows 8.1 上的测试人员。
 
 ### <a name="targeted-distribution-to-customers-with-specified-email-addresses"></a>向具有指定电子邮件地址的客户定向分配
 
 对于**在 Windows Phone 8.1 及更早版本**上进行测试，此选项提供了一种限制应用分发的方式。 仅具有你在框中输入的电子邮件地址（与其 Microsoft 帐户相关联）的用户可以使用指向应用一览的直接链接下载应用。
 
->               **重要信息**  使用您输入的电子邮件地址的人们只能在运行 Windows Phone 8.1 或更早版本的设备上下载该应用。
+> **重要信息**  使用您输入的电子邮件地址的人们只能在运行 Windows Phone 8.1 或更早版本的设备上下载该应用。
  
 你可以在仪表板中的[应用标识](view-app-identity-details.md)页面找到你的应用的直接链接。 任何客户都无法通过搜索或浏览应用商店找到该应用，并且即使他们有指向应用一览的链接，也无法下载该应用，除非他们使用与你在提交此应用时提供的电子邮件地址相关联的 Microsoft 帐户。
 
->               **注意**  如果你使用此选项，那么仍然可以通过[生成如上所述的促销代码](generate-promotional-codes.md)，使应用对 Windows 10 设备上的测试人员可用。 具有其中一个应用促销充值码的任何人都可以在 Windows 10 设备上下载它，即使你未在此处输入其电子邮件。
+> **注意**  如果你使用此选项，那么仍然可以通过[生成如上所述的促销代码](generate-promotional-codes.md)，使应用对 Windows 10 设备上的测试人员可用。 具有其中一个应用促销充值码的任何人都可以在 Windows 10 设备上下载它，即使你未在此处输入其电子邮件。
 
 若要使用此选项，请在提交你的应用时在“定价和可用性”****页面的[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)部分中，选择“隐藏此应用并仅提供给你指定的可在 Windows Phone 8.x 设备上下载此应用的以下用户。促销充值码可用于在 Windows 10 设备上下载此应用”****。
 
 如果你选择此选项，请记住以下事项：
 
 -   仅当你之前从未在将[分发和可见性](set-app-pricing-and-availability.md#distribution-and-visibility)选项设置为**在应用商店中提供此应用**的情况下发布应用时，可以选择此选项。
--   你的应用必须定价为**免费**才能使测试人员免费下载它。
+-   你的应用必须定价为“免费”****才能使测试人员免费下载它。
 -   测试人员只能在 Windows Phone 8.1 和更早版本上下载应用。 测试人员必须拥有零售 Windows Phone 设备才能使用应用，但是无需解锁或注册该设备。
 -   测试人员将需要拥有 Microsoft 帐户，才能访问 Windows 应用商店并下载你的应用。 你将需要知道与每个测试人员的 Microsoft 帐户相关联的电子邮件地址，才能将他们添加到你的列表。 若要创建新的 Microsoft 帐户，测试人员可以转到 [Microsoft 帐户设置](http://go.microsoft.com/fwlink/p/?LinkId=618945)。
 -   你可以在文本框中提供最多 10000 个电子邮件地址。
 -   电子邮件地址必须用分号分隔。
 -   你可以在以后添加其他地址，但是将需要创建一个新提交才能执行此操作。
 -   测试人员下载应用后，你无法撤销对该应用的访问权限。 一旦他们下载了应用，他们便可以继续使用它并且将获取你提交的任何更新。
-

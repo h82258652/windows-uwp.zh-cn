@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcce4d53dd095c634f893d40f87eaf69cf546f1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84b00674e06433625010a976f7237b26ea062d7c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-app-store-listings"></a>创建应用应用商店一览
 
 
-[应用提交过程](app-submissions.md)的**应用商店一览**部分是你提供文本和[图像](app-screenshots-and-images.md)的地方，客户将在应用的应用商店一览中看到这些内容。
+[应用提交过程](app-submissions.md)的“应用商店一览”****部分是你提供文本和[图像](app-screenshots-and-images.md)的地方，客户将在应用的应用商店一览中看到这些内容。
 
 虽然“应用商店一览”****中的许多字段可选，但我们建议提供多张图像以及尽可能详细的信息，以便你的应用一览能脱颖而出。 一个文本描述和至少一张[屏幕截图](app-screenshots-and-images.md)是完成“应用商店一览”****步骤的最低要求。
 
@@ -120,4 +117,3 @@ ms.lasthandoff: 02/07/2017
 如果你有针对你的应用的隐私策略，请在此处输入隐私策略的 URL。 你有责任确保你的应用符合隐私法律法规的相关规定，并提供隐私策略（如果需要）。
 
 **重要提示**  Microsoft 不会为你的应用提供默认的隐私策略。 同样，你的应用也不在任何 Microsoft 隐私策略的涵盖范围之内。 若要确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)和 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)。
-

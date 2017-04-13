@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f77de7b7a3c89a57855afba59028f55d8e8bb39c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e22176049652717af5ad222f7e6c8a30d447ce1b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-hello"></a>Windows Hello
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍了作为 Windows 10 操作系统的一部分随附的新 Windows Hello 技术，并讨论了开发人员可如何实现此技术来保护他们的通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
@@ -65,7 +62,7 @@ Microsoft Passport 使用强双因素身份验证 (2FA) 来替换密码，方法
 ## <a name="2-what-is-windows-hello"></a>2 什么是 Windows Hello？
 
 
-Windows Hello 是 Microsoft 为内置于 Windows 10 的新生物识别登录系统所取的名称。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 当用户提供其唯一生物识别标识符来访问特定于设备的凭据时会发生身份验证，这意味着窃取设备的攻击者无法登录它，除非该攻击者具有 PIN。 Windows 安全凭据存储可保护设备上的生物识别数据。 通过使用 Windows Hello 解锁设备，未经授权的用户可以获取其所有 Windows 体验、应用、数据、网站和服务的访问权限。
+Windows Hello 是 Microsoft 为内置于 Windows10 的新生物识别登录系统所取的名称。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 当用户提供其唯一生物识别标识符来访问特定于设备的凭据时会发生身份验证，这意味着窃取设备的攻击者无法登录它，除非该攻击者具有 PIN。 Windows 安全凭据存储可保护设备上的生物识别数据。 通过使用 Windows Hello 解锁设备，未经授权的用户可以获取其所有 Windows 体验、应用、数据、网站和服务的访问权限。
 
 Windows Hello 验证器称为 Hello。 Hello 特定于单个设备和特定用户的组合。 它不会跨设备漫游、不与服务器或调用应用共享，并且无法轻易地从设备中提取。 如果多个用户共享一台设备，每个用户都需要设置他或她自己的帐户。 每个帐户都获取该设备的唯一 Hello。 你可以将 Hello 视为可用于解锁（或释放）已存储凭据的令牌。 Hello 本身不会针对应用或服务对你进行身份验证，但它会释放可以执行此操作的凭据。 换言之，Hello 不是用户凭据，而是身份验证流程的第二个因素。
 

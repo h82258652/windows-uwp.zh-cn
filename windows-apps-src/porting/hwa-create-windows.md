@@ -10,13 +10,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "托管 Web 应用, 将 Web 应用移植到 Windows 10, 将网站转换为 Windows, 打包适用于 Windows 应用商店的 Web 应用"
 ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b6781883a3e48d35a558798f369e91c4a7ea3bec
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e135b63e2ba5f455dbbf6524e5519a33acd822b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="convert-your-web-application-to-a-universal-windows-platform-uwp-app"></a>将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用
 
 了解只需从网站 URL 入手，即可快速创建适用于 Windows 10 的通用 Windows 平台应用的方法。 
@@ -39,7 +36,7 @@ ms.lasthandoff: 02/08/2017
 启动 Visual Studio。
 1. 单击**文件**。
 2. 单击**新建项目**。
-3. 在 **JavaScript** 下的 **Windows 通用** 中，单击**空白应用\(Windows 通用\)**。
+3. 在 **JavaScript** 下的 **Windows 通用**中，单击**空白应用(Windows 通用)**。
 
 ![步骤 2：创建一个空白 JavaScript 应用](images/hwa-to-uwp/windows_step2.png)
 
@@ -104,4 +101,3 @@ function cameraCapture() {
 - [通过访问通用 Windows 平台 (UWP) 功能增强你的 Web 应用](hwa-access-features.md)
 - [通用 Windows 平台 (UWP) 应用指南](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [下载 Windows 应用商店应用的设计资源](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-

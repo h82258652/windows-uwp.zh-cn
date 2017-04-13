@@ -9,14 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9ce20fbfc1289eb02faf8868415feda054d6f691
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70ef1ab7bc31fde2f0d4744394c1ae69c8caf7fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="distributing-a-managed-windows-runtime-component"></a>分配托管的 Windows 运行时组件
 
 
@@ -59,7 +55,7 @@ For example: Microsoft.Cpp.Build.dll
 **创建扩展 SDK**
 
 1.  请确保已安装 Visual Studio SDK。 你可以从 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页面下载 Visual Studio SDK。
-2.  使用 VSIX 项目模板创建新项目。 你可以在“扩展性”类别的 Visual C# 或 Visual Basic 下找到该模板。 此模板作为 Visual Studio SDK 的一部分进行安装。 （[演练：使用 C# 或 Visual Basic 创建 SDK](https://msdn.microsoft.com/library/jj127119.aspx) 或[演练：使用 C++ 创建 SDK](https://msdn.microsoft.com/library/jj127117.aspx)，通过非常简单的方案展示此模板的用法。 ）
+2.  使用 VSIX 项目模板创建新项目。 你可以在“扩展性”类别的 Visual C# 或 Visual Basic 下找到该模板。 此模板作为 Visual Studio SDK 的一部分进行安装。 （[演练：使用 C# 或 Visual Basic 创建 SDK](https://msdn.microsoft.com/library/jj127119.aspx) 或[演练：使用 C++ 创建 SDK](https://msdn.microsoft.com/library/jj127117.aspx)，通过非常简单的方案展示此模板的用法。 )
 3.  确定 SDK 的文件夹结构。 该文件夹结构和“引用”****、“Redist”****以及DesignTime****文件夹开始于 VSIX 项目的根级别。
 
     -   “引用”****是用户可据以进行编程的二进制文件的位置。 扩展 SDK 在用户的 Visual Studio 项目中创建对这些文件的引用。
@@ -68,7 +64,7 @@ For example: Microsoft.Cpp.Build.dll
 
     在其中每个文件夹中，你都可以创建配置文件夹。 允许的名称为调试、零售和 CommonConfiguration。 CommonConfiguration 文件夹适用于无论是由零售版本还是由调试版本使用都相同的文件。 如果仅分配组件的零售版本，你可以将所有内容置于 CommonConfiguration 内并忽略其他两个文件夹。
 
-    在每个配置文件夹中，你可以为特定于平台的文件提供体系结构文件夹。 如果将相同文件用于所有平台，可以提供一个名为“neutral”的文件夹。 你可以在 MSDN 库中的[如何：创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)中查找文件夹结构的详细信息，包括其他体系结构文件夹名。 （该文讨论平台 SDK 和扩展 SDK。 若要折叠有关平台 SDK 的部分以避免混淆，你会发现该文很有用。 ）
+    在每个配置文件夹中，你可以为特定于平台的文件提供体系结构文件夹。 如果将相同文件用于所有平台，可以提供一个名为“neutral”的文件夹。 你可以在 MSDN 库中的[如何：创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)中查找文件夹结构的详细信息，包括其他体系结构文件夹名。 （该文讨论平台 SDK 和扩展 SDK。 若要折叠有关平台 SDK 的部分以避免混淆，你会发现该文很有用。 )
 
 4.  创建 SDK 清单文件。 该清单指定名称和版本休息、SDK 支持的体系结构、.NET Framework 版本和其他有关 Visual Studio 使用 SDK 的方式的信息。 你可以在[如何：创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)中找到详细信息和示例。
 5.  生成和分配扩展 SDK。 有关深入信息，包括本地化 VSIX 程序包和对其进行签名的信息，请参阅 MSDN 库中的“VSIX 部署”。
@@ -80,4 +76,3 @@ For example: Microsoft.Cpp.Build.dll
 * [资源管理系统 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
 * [查找和使用 Visual Studio 扩展](https://msdn.microsoft.com/library/dd293638.aspx)
 * [MakePRI.exe 命令选项](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
-

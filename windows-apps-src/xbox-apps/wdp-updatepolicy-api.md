@@ -2,22 +2,20 @@
 author: payzer
 title: "Device Portal Xbox 开发人员 devkit 更新策略 API 参考"
 description: "了解如何以编程方式为控制台设置更新策略。"
-translationtype: Human Translation
-ms.sourcegitcommit: 8f02e0c2f6fa30a3ac56945347c5bec253189bd8
 ms.openlocfilehash: f9313d3c8b93ba13074c547f1f63c9f3204f0f58
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 注意：此 API 将在下一个开发人员预览版中推出。
 
-# 系统更新策略 API 参考   
+# <a name="system-update-policy-api-reference"></a>系统更新策略 API 参考   
 可以使用此 API 查看哪个更新策略适用于控制台，并将更新策略更换为新策略。
 
 重要提示：在尝试调用此 API 时，大多数控制台都将收到“访问被拒”的响应。 这是因为并非所有开发控制台均可更改其更新策略。
 
 此 API 可影响开发人员模式下的控制台更新策略，而不能影响零售控制台的更新策略。
 
-## 获取控制台更新策略
+## <a name="get-the-console-update-policy"></a>获取控制台更新策略
 
 **请求**
 
@@ -58,7 +56,7 @@ HTTP 状态代码      | 说明
 4XX | 错误代码
 5XX | 错误代码
 
-## 设置控制台的系统更新策略
+## <a name="set-a-consoles-system-update-policy"></a>设置控制台的系统更新策略
 可以使用此 API 切换控制台的系统更新组成员身份。
 
 注意：控制台一次只能存在于一个系统更新组中。
@@ -109,10 +107,4 @@ HTTP 状态代码      | 说明
 **可用设备系列**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

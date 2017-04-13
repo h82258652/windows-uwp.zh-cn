@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 间隙, javascript, 示例代码"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91a54bdd2e41b3e7df0ee0aad32448ab9ed66ac0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 192ea42e9d55bbafcd6c6dbd463681832ac28c86
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript 中的间隙广告示例代码
 
 本主题提供了显示间隙广告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
@@ -29,6 +26,8 @@ ms.lasthandoff: 02/07/2017
 >**Windows 8.x 和 Windows Phone 8.1 的注意事项**&nbsp;&nbsp;如果你的项目面向 Windows 8.1 或 Windows Phone 8.1，则项目中的默认 HTML 文件名为 default.html 而不是 index.html，且项目中的默认 JavaScript 文件名为 default.js 而不是 main.j。
 
 将应用提交到应用商店之前，将 ```applicationId``` 和 ```adUnitId``` 变量的值替换为 Windows 开发人员中心的实时值。有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md)。
+
+>**注意**&nbsp;&nbsp;若要更改此示例以显示间隙横幅广告而不是间隙视频广告，请将值 **InterstitialAdType.display** 传递至 [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) 方法的第一个参数而不是 **InterstitialAdType.video**。 有关详细信息，请参阅[间隙广告](interstitial-ads.md)。
 
 ### <a name="indexhtml"></a>index.html
 
@@ -53,4 +52,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
-

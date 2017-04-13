@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c114b7fa5c0e6a613a2c5485903d856592f0863e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: de99f73022987410ee95973542d9a80e9e130e39
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-affiliate-ads"></a>关于关联广告
 
-如果你的应用使用 **AdMediatorControl** 或 **AdControl** 显示横幅广告，可通过在应用商店的产品应用中显示 Microsoft 关联广告来提高收益和广告填充率。 当用户在给定属性窗口中单击关联广告并购买产品时，你可以赚取已批准购买的收益。
+如果你的应用使用 **AdMediatorControl** 或 **AdControl** 显示横幅广告，可通过在应用商店产品的应用中显示 Microsoft 关联广告来提高收益和广告填充率。 当用户在给定属性窗口中单击关联广告并购买产品时，你可以赚取已批准购买的收益。
 
 以下是此计划的运作方式：
 
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
 
 * [利用广告来盈利](monetize-with-ads.md)
 * [关联性能报告](affiliates-performance-report.md)
-

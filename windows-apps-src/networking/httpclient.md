@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fad4c4c215c209971d2a76b4c1ac6f160f8ebced
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c29d1d0a9595958aaa2872488f131b59ee278161
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="httpclient"></a>HttpClient
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -121,5 +118,4 @@ catch (Exception ex)
 在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 表示应用执行期间的错误。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来基于异常原因修改应用行为。
 
 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
-
 

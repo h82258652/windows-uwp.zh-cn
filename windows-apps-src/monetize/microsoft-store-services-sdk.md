@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7a8dcb282ea3df16ee8a12247a07af27cbf65b3a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7fa775c319e1d84f8b73e42723d9fb36fdd03b73
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="microsoft-store-services-sdk"></a>Microsoft Store Services SDK
 
 Microsoft Store Services SDK 提供的功能可帮助你在通用 Windows 平台 (UWP) 应用中赚取更多收益和吸引客户，例如在应用中显示广告和运行 A/B 实验。 此 SDK 是 Visual Studio 2015 和更高版本的 Visual Studio 的扩展。
@@ -27,10 +24,10 @@ SDK 当前支持以下适用于 UWP 应用的方案。 此 SDK 将随时间升�
 |  方案  |  说明   |
 |------------|----------------|
 |  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在开发人员中心仪表板中定义某个实验后，请使用 [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) 类在应用中为实验获取变体、使用该数据修改正在测试的功能的性能，然后使用 [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) 方法将视图事件和转换事件发送到开发人员中心。 最后，使用仪表板查看结果并管理实验。  |
-|  [从 UWP 应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 类将 Windows 10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在开发人员中心仪表板的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |
+|  [从 UWP 应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 类将 Windows10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在开发人员中心仪表板的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |
 |  [配置 UWP 应用以接收开发人员中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用 UWP 应用中的 [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) 类注册应用以接收使用 Windows 开发人员中心仪表板发送给客户的定向推送通知。  |
 |   [在开发人员中心中为使用情况报告记录 UWP 应用中的自定义事件](log-custom-events-for-dev-center.md)   |  使用 UWP 应用中的 [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 类在开发人员中心中记录与应用相关联的自定义事件。 然后，在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中查看自定义事件的总发生次数。  |
-|  [在 UWP 应用中显示广告](display-ads-in-your-app.md)    |  使用 UWP 应用中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 控件通过显示横幅广告或间隙广告增加收入。<br/><br/>**注意**&nbsp;&nbsp;Microsoft Store Services SDK 仅支持适用于 Windows 10 的 UWP 应用。 若要在 Windows 8.1 和 Windows Phone 8.x 应用中显示广告，请使用[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。  |
+|  [在 UWP 应用中显示广告](display-ads-in-your-app.md)    |  使用 UWP 应用中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 控件通过显示横幅广告或间隙广告增加收入。<br/><br/>**注意**&nbsp;&nbsp;Microsoft Store Services SDK 仅支持适用于 Windows10 的 UWP 应用。 若要在 Windows8.1 和 Windows Phone 8.x 应用中显示广告，请使用[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。  |
 
 <span id="prerequisites" />
 ## <a name="prerequisites"></a>先决条件
@@ -40,7 +37,8 @@ Microsoft Store Services SDK 需要：
 * Visual Studio 2015 或更高版本。
 * 与你的 Visual Studio 版本一起安装适用于通用 Windows 应用的 Visual Studio Tools。
 
->**注意**&nbsp;&nbsp;若要将该 SDK 与 Visual Studio 2015 一起安装，必须已安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关适用于通用 Windows 应用的 Visual Studio Tools 的此项更新的详细信息，请参阅[发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
+> [!NOTE]
+> 若要将该 SDK 与 Visual Studio 2015 一起安装，必须已安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关适用于通用 Windows 应用的 Visual Studio Tools 的此项更新的详细信息，请参阅[发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
 
 <span id="install" />
 ## <a name="install-the-sdk"></a>安装 SDK
@@ -52,7 +50,8 @@ Microsoft Store Services SDK 需要：
 
 Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Services SDK 新版本。 如果你有使用该 SDK 的现有项目，并且你希望使用最新版本，请在开发计算机上下载并安装最新版本的 SDK。
 
->**注意**&nbsp;&nbsp;若要将该 SDK 与 Visual Studio 2015 一起安装，必须已安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关适用于通用 Windows 应用的 Visual Studio Tools 的此项更新的详细信息，请参阅[发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
+> [!NOTE]
+> 若要将该 SDK 与 Visual Studio 2015 一起安装，必须已安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关适用于通用 Windows 应用的 Visual Studio Tools 的此项更新的详细信息，请参阅[发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
 
 <span id="install-msi" />
 ### <a name="install-via-msi"></a>通过 MSI 安装
@@ -91,14 +90,14 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
   ```
 
 3.  启动 Visual Studio 并打开要使用 Microsoft Store Services SDK 库的项目。
-
-  >**注意**&nbsp;&nbsp;如果项目已经包含来自 SDK 的较早 MSI 安装的库引用，请从项目中删除这些引用。 这些引用的旁边将出现警告图标，因为它们引用的库已在之前的步骤中删除。
+    > [!NOTE]
+    > 如果项目已经包含来自 SDK 的较早 MSI 安装的库引用，请从项目中删除这些引用。 这些引用的旁边将出现警告图标，因为它们引用的库已在之前的步骤中删除。
 
 4. 在 Visual Studio 中，依次单击**项目**和**管理 NuGet 包**。
 
 5. 在搜索框中，键入 **Microsoft.Services.Store.SDK** 并安装 Microsoft.Services.Store.SDK 包。
-
-  >**注意**&nbsp;&nbsp;如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
+    > [!NOTE]
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
 
 6. 关闭项目，然后重新打开它。
 
@@ -112,8 +111,8 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 通过 MSI 安装程序或 NuGet 安装 Microsoft Store Services SDK 后，请按照以下说明在 UWP 项目中引用 SDK 库。
 
 1. 在 Visual Studio 中打开你的项目。
-
-  >**注意**&nbsp;&nbsp;如果项目是面向**任何 CPU** 的 JavaScript 应用，请更新项目以使用特定于体系结构的生成输出（例如，**x86**）。
+    > [!NOTE]
+    > 如果项目是面向**任何 CPU**的 JavaScript 应用，请更新项目以使用特定于体系结构的生成输出（例如，**x86**）。
 
 2. 在**解决方案资源管理器**中，右键单击**引用**，然后选择**添加引用…**
 
@@ -125,7 +124,8 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 3. 单击**确定**。
 
->**注意**&nbsp;&nbsp;如果已通过 NuGet 安装 SDK 库，除了 **Microsoft Advertising SDK for XAML** 或 **Microsoft Advertising SDK for JavaScript**，项目还将包含 **Microsoft.Services.Store.SDK** 引用。 **Microsoft.Services.Store.SDK** 引用表示 NuGet 包（而不是其中的库），并且你可以忽略它。
+> [!NOTE]
+> 如果已通过 NuGet 安装 SDK 库，除了**Microsoft Advertising SDK for XAML** 或 **Microsoft Advertising SDK for JavaScript**，项目还将包含 **Microsoft.Services.Store.SDK** 引用。 **Microsoft.Services.Store.SDK** 引用表示 NuGet 包（而不是其中的库），并且你可以忽略它。
 
 <span id="framework" />
 ## <a name="understanding-framework-packages-in-the-sdk"></a>了解 SDK 中的框架包
@@ -147,4 +147,3 @@ Microsoft Store Services SDK 中的以下库将配置为*框架包*：
 * [配置应用以接收开发人员中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)
 * [记录开发人员中心的自定义事件](log-custom-events-for-dev-center.md)
 * [在应用中显示广告](display-ads-in-your-app.md)
-

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c63668b9699e641bb89fa79f5febc3397aac78a1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 87fc6e35a2a9818478aca4119850ae20165d2a64
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-app-certification-process"></a>应用认证过程
 
 
-当你完成应用提交的创建并单击**提交到应用商店**时，就会进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 在你的提交通过认证后，客户最多可能需要 16 个小时即可在应用商店中看到该应用一览（或你对之前已发布应用的更新）。 在你的提交发布并向客户提供后，你会看到一条通知，并且仪表板中该应用的状态将为“已在应用商店”****。
+当你完成应用提交的创建并单击“提交到应用商店”****时，它将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 在你的提交通过认证后，客户最多可能需要 16 个小时即可在应用商店中看到该应用一览（或你对之前已发布应用的更新）。 在你的提交发布并向客户提供后，你会看到一条通知，并且仪表板中该应用的状态将为“已在应用商店”****。
 
 ## <a name="preprocessing"></a>预处理
 
@@ -56,7 +53,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

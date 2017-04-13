@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5185eb704f94e33031684aef761c701398c0dbd7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e3e4ba56438746c257ac917f61d9f1703f20ecdd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="attached-properties-overview"></a>附加属性概述
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 *附加属性*是一种 XAML 概念。 使用附加属性，可以在对象上设置其他属性/值对，但这些属性并不是原始对象定义的组成部分。 附加属性通常定义为一种专门形式的依赖属性，在所有者类型的对象模型中没有传统的属性包装器。
 
@@ -124,5 +121,4 @@ XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值
 * [快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/hh943060)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
 * [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
-
 

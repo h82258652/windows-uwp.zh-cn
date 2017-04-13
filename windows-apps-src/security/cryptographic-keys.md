@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1396382c90b370aa9d610749a92dd256c92dedab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4026f1fa95261d9b05c8d1e8c7ace12b11503a17
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="cryptographic-keys"></a>加密密钥
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。 
@@ -80,4 +77,3 @@ ms.lasthandoff: 02/07/2017
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 创建一个 KeyDerivationParameters 对象以在 SP800-56A 密钥派生函数中使用。                                                 |
 
  
-

@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: "本主题介绍了在编写使用 C++、C# 或 Visual Basic 的 Windows 运行时应用并为 UI 使用 XAML 定义时可用的依赖属性系统。"
+description: "本主题介绍了在使用 C++、C# 或 Visual Basic 编写 Windows 运行时应用以及 UI 的 XAML 定义时可用的依赖属性系统。"
 title: "依赖属性概述"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ms.author: jimwalk
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: eaf52a930b5419f0c2a53aa14c9dc0fba5b404f6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e46a092298ce183212384155492ea73a79ebe86f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="dependency-properties-overview"></a>依赖属性概述
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -56,7 +53,7 @@ ms.lasthandoff: 02/07/2017
 |------|-------------|
 | 依赖属性 | 存在于 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符上的一个属性（如下所示）。 通常该标识符可用作定义 **DependencyObject** 派生类的一个静态成员。 |
 | 依赖属性标识符 | 用于标识属性的常量值，它通常公开显示且只读。 |
-| 属性包装器 | Windows 运行时属性的可调用 **get** 和 **set** 实现。 或者原始定义的特定于语言的投影。 **get** 属性包装器实现调用 [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx)，传递相关的依赖属性标识符。 | 
+| 属性包装器 | Windows 运行时属性的可调用 **get** 和 **set** 实现。 或者原始定义的特定于语言的投影。 **get** 属性包装器实现调用 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx)，传递相关的依赖属性标识符。 | 
 
 属性包装器不仅给调用方带来了方便，它还向任何为属性使用 Windows 运行时定义的过程、工具或投影公开该依赖属性。
 
@@ -186,7 +183,7 @@ public bool IsSpinning
 
 属性已更改行为是依赖属性术语中“依赖”部分的一个主要原因。 在另一个属性可以影响第一个属性值的情形下，维护一个属性的有效值是许多框架中一个很难的开发问题。 在 Windows 运行时属性系统中，每个依赖属性可指定一个回调，只要它的属性值更改，就会调用该回调。 此回调可用于通知或更改相关的属性值（通常采用一种同步方式）。 许多现有的依赖属性有一个属性已更改行为。 也可以向自定义依赖属性添加类似的回调行为，实现你自己的属性已更改回调。 有关示例，请参阅[自定义依赖属性](custom-dependency-properties.md)。
 
-Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 这使应用程序代码可以注册更改通知（如果指定的依赖属性在 [**DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 的实例上发生更改）。
+Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 这使应用程序代码可以注册更改通知（如果指定的依赖属性在 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 的实例上发生更改）。
 
 ### <a name="default-value-and-clearvalue"></a>默认值和 **ClearValue**
 
@@ -212,5 +209,4 @@ Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 **与依赖属性相关的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
-
 

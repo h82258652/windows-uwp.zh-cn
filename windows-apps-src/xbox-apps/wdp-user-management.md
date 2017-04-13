@@ -1,14 +1,19 @@
----  
+---
 author: WilliamsJason
 title: "Xbox Live 测试用户管理 API 参考"
 description: "了解如何以编程方式访问用户管理 API。"
-translationtype: Human Translation
-ms.sourcegitcommit: 67f158b1d3d5ece14c36483a2513a2db2f478660
-ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
-
----  
-
-#Xbox Live 用户管理#
+ms.author: jaswill
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
+ms.openlocfilehash: c1a2517aa8716cff9201351a12a3c391110aafab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
+---
+#<a name="xbox-live-user-management"></a>Xbox Live 用户管理#
 
 **请求**
 
@@ -41,7 +46,7 @@ ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
   * SponsoredUser（可选）：用于指定是否添加赞助用户的布尔值。
   * 删除（可选）：用于指定是否要从主机中删除此用户的布尔值。
 
-###响应###
+###<a name="response"></a>响应###
 
 **响应正文**
 
@@ -67,11 +72,5 @@ ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
 | 4XX                | 无效请求数据或格式的各种错误 |
 | 5XX                | 意外失败的错误代码 |
 <br>
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

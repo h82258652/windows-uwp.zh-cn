@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0fd1e58549ba19397948864fe5fe0b31fcaf01d7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -24,7 +21,7 @@ ms.lasthandoff: 02/07/2017
 
 但保持延迟的书籍会为每个受影响的元素向内存使用量添加约 600 个字节 你延迟的元素树越大，将节省的时间也就越多，不过内存占用也会有所增加。 因此，在性能降低至这种程度的情况下，可以过分使用此属性。
 
-## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性用法
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 -   需要一个已定义的 [x:Name](x-name-attribute.md)，因为之后需要有一种方法来找到该元素。
 -   仅 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 才能标记为延迟，派生自 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的类型除外。
--   根元素既不能在 [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) 中延迟，也不能在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延迟。
+-   根元素既不能在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 中延迟，也不能在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延迟。
 -   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素不能延迟。
 -   不能用于通过 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 加载的松动 XAML。
 -   移动父元素将清除所有尚未实现的元素。
@@ -93,5 +90,4 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
 

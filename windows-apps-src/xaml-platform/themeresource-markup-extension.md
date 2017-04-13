@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9175c998aa0dffb861697c2206c4202193b9bd9f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3d770bba434a065e5589311e34000006051ab672
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="themeresource-markup-extension"></a>{ThemeResource} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用根据当前处于活动状态的主题检索不同资源的附加系统逻辑，通过计算对某个资源的引用来为任何 XAML 属性提供值。 与 [{StaticResource} 标记扩展](staticresource-markup-extension.md)类似，资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，并且 **ThemeResource** 用法引用 **ResourceDictionary** 中的该资源的键。
 
@@ -71,7 +68,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 每当存在可能会因主题更改而更改的基础资源时，控件模板中的可视状态的 XAML 定义都应当使用 **ThemeResource** 引用。 系统主题更改通常也不会导致可视状态更改。 在这种情况下，资源需要使用 **ThemeResource** 引用，以便可以为仍然处于活动状态的可视状态重新计算值。 例如，如果你具有更改特定 UI 部件的画笔颜色及其属性之一的可视状态，并且该画笔颜色对于每个主题是不同的，则你应当使用 **ThemeResource** 引用在默认模板中提供该属性的值以及对该默认模板进行任何可视状态修改。
 
-可能会在一系列具有依赖关系的值中看到 **ThemeResource** 用法。 例如，由同时还是键控资源的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/hh673723) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242962)值可能会使用 **ThemeResource** 引用。 但是，任何使用键控 **SolidColorBrush** 资源的 UI 属性也将使用 **ThemeResource** 引用，以便每个启用了动态值的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 类型属性在主题更改时会随之更改。
+可能会在一系列具有依赖关系的值中看到 **ThemeResource** 用法。 例如，由同时还是键控资源的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)值可能会使用 **ThemeResource** 引用。 但是，任何使用键控 **SolidColorBrush** 资源的 UI 属性也将使用 **ThemeResource** 引用，以便每个启用了动态值的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 类型属性在主题更改时会随之更改。
 
 **注意**  在 Windows 8.1 XAML 中支持 `{ThemeResource}` 和主题切换时的运行时资源评估，但在面向 Windows 8 的应用的 XAML 中则不支持。
 
@@ -157,7 +154,6 @@ Windows 8 不支持 **ThemeResource** 标记扩展，该扩展从 Windows 8.1 �
 * [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key 属性](x-key-attribute.md)
+* [x:Key 特性](x-key-attribute.md)
  
-
 

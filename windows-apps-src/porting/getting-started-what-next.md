@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-what-next"></a>入门：下一步是什么？
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -42,4 +39,3 @@ ms.lasthandoff: 02/07/2017
 * [适用于 iOS 开发人员的 Windows 控件](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [适用于 iOS 开发人员的 Windows Cookbook](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [生成适用于 Windows 的应用博客](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-

@@ -9,20 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dc5e67823521db455e12fa4b16d8204c20bff621
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7cc8ae05bdf496b9d3a9973f8ebd09a7d3f0210a
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="implement-a-trial-version-of-your-app"></a>实现应用的试用版
 
 如果你[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)，以便客户可以在试用期内免费使用你的应用，可通过在试用期内排除或限制某些功能吸引客户升级到应用的完整版。 请在开始编码之前确定哪些功能应受到限制，然后确保你的应用只在已购买完整版许可之后才允许这些功能运作。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
 面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的成员，确定用户是否有应用的试用许可证，并在应用运行时许可证的状态发生更改的情况下获得通知。
 
->**注意**&nbsp;&nbsp;本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+> [!NOTE]
+> 本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>实现试用版的指南
 
@@ -70,7 +68,8 @@ ms.lasthandoff: 02/07/2017
 * 代码文件有一个适用于 **Windows.Services.Store** 命名空间的 **using** 语句。
 * 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
 
->**注意**&nbsp;&nbsp;如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加不在此示例中显示的额外代码来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
+> [!NOTE]
+> 如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加不在此示例中显示的额外代码来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
 
 ## <a name="code-example"></a>代码示例
 
@@ -91,4 +90,3 @@ ms.lasthandoff: 02/07/2017
 * [支持应用内购买应用和加载项](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
 * [应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-

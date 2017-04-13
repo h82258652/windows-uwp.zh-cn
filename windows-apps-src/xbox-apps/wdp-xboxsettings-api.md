@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a17a489944fdc2d78831549c1afdc2bd87deabdf
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 43e4bb289d12439bbc0f6de347d187b067288d51
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
 
@@ -141,5 +138,4 @@ HTTP 状态代码      | 说明
 **可用设备系列**
 
 * Windows Xbox
-
 

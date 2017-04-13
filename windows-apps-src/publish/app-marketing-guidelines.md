@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-store-app-marketing-guidelines"></a>Windows 应用商店应用营销指南
 
 了解如何推广你的应用和 Windows 应用商店中的内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。
@@ -55,7 +52,6 @@ Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 M
  
 
  
-
 
 
 

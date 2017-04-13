@@ -9,14 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款阈值、方法和时间范围
 
 转移支付的预计时间、适用的付款阈值和可以收到付款的 Microsoft 市场可能会有所不同，具体取决于你所在的国家/地区和付款帐户类型。 本主题介绍了各个国家/地区支持的付款阈值和付款方式。
@@ -43,6 +39,11 @@ ms.lasthandoff: 02/08/2017
 ## <a name="payment-thresholds-and-methods"></a>付款阈值和方法
 
 > **注意** 付款阈值将以 USD 列出。 在某些市场中，使用等值的当地货币。 
+
+- [Windows 应用商店](#windows-store)
+- [Microsoft Advertising](#microsoft-advertising)
+- [Azure 应用商店](#azure-marketplace)
+- [Office 应用商店](#office-store)
 
 ### <a name="windows-store"></a>Windows 应用商店 
 
@@ -627,7 +628,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫（马其顿共和国）</td>
+    <td>马其顿（前南斯拉夫共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -949,7 +950,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>中国台湾</td>
+    <td>台湾地区</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -1689,7 +1690,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫（马其顿共和国）</td>
+    <td>马其顿（前南斯拉夫共和国）</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -2011,7 +2012,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>中国台湾</td>
+    <td>台湾地区</td>
     <td>50 USD</td>
     <td>电汇</td>
     <td>50 USD</td>
@@ -2744,7 +2745,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>前南斯拉夫（马其顿共和国）</td>
+    <td>马其顿（前南斯拉夫共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -3059,7 +3060,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>中国台湾</td>
+    <td>台湾地区</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -3749,7 +3750,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫（马其顿共和国）</td>
+    <td>马其顿（前南斯拉夫共和国）</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>不适用</td>
@@ -4050,7 +4051,7 @@ ms.lasthandoff: 02/08/2017
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>中国台湾</td>
+    <td>台湾地区</td>
     <td>200 USD</td>
     <td>电汇</td>
     <td>25 USD</td>
@@ -4169,4 +4170,3 @@ ms.lasthandoff: 02/08/2017
     <td>不适用</td>
   </tr>
 </table>
-

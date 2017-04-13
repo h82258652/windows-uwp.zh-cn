@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 008c073844332aadbc17def774aae16f3ae01513
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 31385fe3edb9d9f38a4f444c84ef189faed49985
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enter-app-properties"></a>输入应用属性
 
-[应用提交过程](app-submissions.md)的**应用属性**页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
+[应用提交过程](app-submissions.md)的“应用属性”****页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
 
 > **注意**  年龄分级现在位于提交过程中的单独页面上。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
 
@@ -56,6 +53,5 @@ ms.lasthandoff: 02/07/2017
 我们还建议将针对指定硬件的运行时检查添加到应用中，因为应用商店可能并不总是能够检测到客户的设备缺少所选功能，而且即使已显示警告，他们仍然能够下载应用。
 
 > **提示**  如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 StoreManifest XML 文件中指定最低要求。 有关详细信息，请参阅 [StoreManifest 架构 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
-
 
 

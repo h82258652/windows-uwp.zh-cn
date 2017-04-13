@@ -2,27 +2,24 @@
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 应用商店提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。"
-title: "使用 Windows 应用商店提交 API 管理软件包外部测试版提交"
+title: "管理软件包外部测试版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 98240f3a1f40f020474c62537d6b0444fe10bb99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-package-flight-submissions-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 管理软件包外部测试版提交
+# <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
 Windows 应用商店提交 API 提供可用于管理针对应用的软件包外部测试版提交的方法，包括逐步软件包推出。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 >**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
 
->**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建程序包外部测试版提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将不再能够使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+>**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建程序包外部测试版提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
@@ -39,7 +36,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -158,7 +155,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理软件包外部测试版提交的逐步软件包推出
 
-可在软件包外部测试版提交中逐步向 Windows 10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
+可在软件包外部测试版提交中逐步向 Windows10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
 
 若要以编程方式启用软件包外部测试版提交的逐步软件包推出，请遵循此过程使用 Windows 应用商店提交 API 中的以下方法：
 
@@ -240,7 +237,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -256,7 +253,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 
 此资源具有以下值。
 
-| 值      | 类型   | 说明              |
+| 值      | 类型   | 描述              |
 |------------|--------|------------------------------|
 | id            | 字符串  | 提交的 ID。  |
 | flightId           | 字符串  |  提交相关联的软件包外部测试版的 ID。  |  
@@ -339,7 +336,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 | languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
 | minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>无</li><li>Memory2GB</li></ul>   |    
+| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>无</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
@@ -352,7 +349,7 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -381,6 +378,8 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 | packageRolloutPercentage    | 浮点数    |  将在逐步推出中收到软件包的用户百分比。    |  
 | packageRolloutStatus    |  字符串   |  以下指示逐步软件包推出状态的字符串之一： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字符串   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
+
+>**注意**&nbsp;&nbsp;*packageRolloutStatus* 和 *fallbackSubmissionId* 值由开发人员中心分配，但不是由开发人员设置。 如果已将这些值包括在请求正文中，则忽略这些值。 
 
 <span/>
 
@@ -422,4 +421,3 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 * [确认软件包外部测试版提交](commit-a-flight-submission.md)
 * [删除软件包外部测试版提交](delete-a-flight-submission.md)
 * [获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)
-

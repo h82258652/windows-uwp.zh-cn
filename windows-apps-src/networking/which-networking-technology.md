@@ -1,7 +1,7 @@
 ---
 author: DelfCo
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: "适用于 UWP 开发人员的网络技术概述，附带关于如何选择适合应用的技术的建议。"
+description: "适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。"
 title: "选择哪一种网络技术？"
 ms.author: bobdel
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ee88a22fe50fc3d782febafdc82c2a68c386dab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4cbb423d8fdddfc6cc158c1cbca2398b21dc205c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -140,5 +137,4 @@ Windows 10 向广大开发人员受众公开了一些之前只公开给设备制
 ### <a name="sms"></a>短信
 
 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 命名空间用于以低级别实体形式处理短信和相关消息。 提供它供移动运营商作应用定向的短信之用，并使其受某一功能控制，该功能不被大多数应用开发人员批准使用。 如果你要编写一个用于处理消息的应用，应改为使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API，由于其设计初衷并非仅用于处理短信，还能用于处理来自其他来源（如实时聊天应用）的消息，从而能提供更为丰富的聊天/消息传递体验。
-
 

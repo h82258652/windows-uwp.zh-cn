@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ecf24a0a51734d159a412824d6b43d76d92b3002
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d27afd09d5805604a09aba91f57b20625df4d95b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-add-on-store-listings"></a>创建加载项应用商店一览
 
 
-提交加载项时，如果你的客户看到获取加载项的选项，将向他们显示在**应用商店一览**步骤中提供的信息。 请务必仔细考虑应用商店一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义应用商店一览。
+提交加载项时，如果你的客户看到获取加载项的选项，将向他们显示在“应用商店一览”****步骤中提供的信息。 请务必仔细考虑应用商店一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义应用商店一览。
 
 ## <a name="languages"></a>语言
 
@@ -47,7 +44,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

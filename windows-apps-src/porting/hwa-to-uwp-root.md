@@ -8,13 +8,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "托管 Web 应用, 将网站转换为 Windows 应用, Windows 应用商店上的 Web 应用, 适用于 Windows 的 Chrome 应用"
-translationtype: Human Translation
-ms.sourcegitcommit: 2e230e95be01f0b14fa6346be9fa836c66a812cf
 ms.openlocfilehash: c9239f3a3c14bf9da99e60cfef8154eefb4305b4
-ms.lasthandoff: 01/20/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hosted-web-apps---access-windows-10-features-from-your-web-app"></a>托管 Web 应用 - 从 Web 应用访问 Windows 10 功能
 
 你的 Web 应用程序可以具有对通用 Windows 平台 (UWP) 的完全访问权限，包括从托管在服务器上的脚本直接调用 Windows 运行时 API、利用 Cortana 集成，以及使用联机验证提供程序。 混合应用也受支持，因为你可以包含可从托管脚本调用的本地代码，并在远程页面和本地页面之间管理应用导航。
@@ -48,5 +45,4 @@ ms.lasthandoff: 01/20/2017
 ## <a name="demos"></a>演示
 
 - [Contoso 旅行应用](http://contosotravel.azurewebsites.net/)
-
 

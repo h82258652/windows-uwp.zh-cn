@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2ada9038f9bd355bb4ab9f81967ebb2d47701cd8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4e167bf24f1f8362e7bd1e343ae34d9e0d2dde1c
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
 
->**注意**&nbsp;&nbsp;此文章将介绍如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员来获取和验证应用内购买的收据。 如果你使用应用内购买的另一种 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间（在 Windows 10 版本 1607 中引入），则该命名空间不会提供 API 用于获取应用内购买的购买收据。 但是，你可以使用 Windows 应用商店集合 API 中的 REST 方法获取购买交易的数据。 有关详细信息，请参阅[应用内购买的收据](in-app-purchases-and-trials.md#receipts)。
+> [!NOTE]
+> 此文章将介绍如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员来获取和验证应用内购买的收据。 如果你使用应用内购买的另一种 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间（在 Windows 10 版本 1607 中引入），则该命名空间不会提供 API 用于获取应用内购买的购买收据。 但是，你可以使用 Windows 应用商店集合 API 中的 REST 方法获取购买交易的数据。 有关详细信息，请参阅[应用内购买的收据](in-app-purchases-and-trials.md#receipts)。
 
 
 每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。 此收据向客户提供所列出的产品和货币成本的信息。
@@ -148,4 +146,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

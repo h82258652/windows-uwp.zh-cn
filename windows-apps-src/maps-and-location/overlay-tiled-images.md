@@ -1,7 +1,7 @@
 ---
 author: msatranjr
 title: "覆盖地图上的平铺图像"
-description: "使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。"
+description: "使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。"
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 图像, 覆盖"
-translationtype: Human Translation
-ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
 ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
 
@@ -256,7 +253,7 @@ using System.Threading.Tasks;
 若要创建或加载自定义磁贴，请为 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件提供自定义处理程序。 每个单独的磁贴都会引发 **BitmapRequested** 事件。
 
 1.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性进行合并，以创建或检索自定义磁贴。
-2.  在 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128)（它包含在 M[**apTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 属性中）的 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
+2.  在 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128)（它包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 属性中）的 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
 
 以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 和 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性。 尽管这不是真实的示例，但该示例演示了如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
 
@@ -372,4 +369,3 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 * [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

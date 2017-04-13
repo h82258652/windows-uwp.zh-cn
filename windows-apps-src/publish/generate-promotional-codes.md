@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "你可以为已在 Windows 应用商店中发布的应用或加载项生成促销充值码。"
+Description: "你可以为已在 Windows 应用商店中发布的应用或加载项生成促销代码。"
 title: "生成促销充值码"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb97ccb1555e214871603861a3e5edeaaf3a55d7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6aa514190f98be78acf199b586d1ed0db1e5b03f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
 
-你可以为已在 Windows 应用商店中发布的应用或加载项生成促销充值码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用促销代码来使用户免费访问应用或加载项，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
+你可以为已在 Windows 应用商店中发布的应用或加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用促销代码来使用户免费访问应用或加载项，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
 
 每个促销代码都具有对应的唯一可兑换 URL，你可以将其分配给单个用户或一组用户。 用户只需单击 URL 即可兑换充值码并从 Windows 应用商店安装应用或加载项。
 
@@ -140,7 +137,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

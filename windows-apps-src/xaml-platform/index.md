@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: "本节包含解释普遍适用于你编写的任何应用的编程概念的主题。"
+description: "本部分包含解释普遍适用于你编写的任何应用的编程概念的主题。"
 title: "XAML 平台"
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1930f3a215b7bc0980b1fb4a8c83b6cfadd1e373
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3a5a638a2b8caf63cc3353d7bd6a43068ec61119
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-platform"></a>XAML 平台
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分中的主题解释了普遍适用于你编写的任何应用的编程概念（假设你使用 C#、Microsoft Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义）。 这包括基本的编程概念（例如使用属性和事件）以及如何在通用 Windows 平台 (UWP) 应用编程中应用这些概念。 通用 Windows 平台 (UWP) 通过添加依赖属性系统，扩展了 C#、Visual Basic 或 C++/CX 属性概念以及它们的值。 本部分中的主题还介绍了 UWP 所使用的 XAML 语言，并通过介绍一些基本方案和高级主题，说明了如何使用 XAML 定义 UWP 应用的 UI。
  
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
 | [事件和路由事件概述](events-and-routed-events-overview.md) | 我们将介绍在使用 C#、Visual Basic 或 C++/CX 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用的事件的编程概念。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持**路由事件**：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。 |
 
  
-

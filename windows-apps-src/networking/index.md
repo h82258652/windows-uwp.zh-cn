@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1bb0e25e9368a6e2f7568ac51620c7a064a01ce3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 597f78a4048a681dc75b610048a70f7161d0369c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-and-web-services"></a>网络和 Web 服务
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
 | [HttpClient](httpclient.md)                                                             | 依据 HTTP 2.0 和 HTTP 1.1 协议，使用 [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间 API 发送和接收信息。             |
 | [RSS/Atom 源](web-feeds.md)                                                          | 使用综合源检索或创建最新和最热门的 Web 内容，这些源通过 [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的功能根据 RSS 和 Atom 标准生成。                   |
 | [后台传输](background-transfers.md)                                         | 使用后台传输 API 通过网络可靠地复制文件。           |
-

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: "在开发人员中心仪表板中定义实验并在你的应用中为实验编码后，便可以准备激活实验，并使用开发人员中心仪表板查看实验结果。"
-title: "在开发人员中心仪表板中管理你的实验"
+title: "在仪表板中管理实验"
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,18 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bc73d2b63b94f9700fc5013d3ea51a92cabd7ca3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 67f09d20f937d86319e9f27362c69dea21d579ae
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="manage-your-experiment-in-the-dev-center-dashboard"></a>在开发人员中心仪表板中管理你的实验
+# <a name="manage-your-experiment-in-the-dashboard"></a>在仪表板中管理实验
 
 [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)并[针对实验为应用编码](code-your-experiment-in-your-app.md)后，便可以准备激活实验，并使用开发人员中心仪表板查看实验结果。 在获取所需的全部数据后，可以结束你的实验，然后选择是继续使用你的所有应用的控件变体中的变量值还是切换到使用其他变体之一中的变量值。
 
-> **注意**&nbsp;&nbsp;当激活某个实验时，开发人员中心会立即开始从已检测的所有应用中收集数据，从而为你的实验记录数据。 但是，实验数据可能需要几个小时才会显示在仪表板中。
+> [!NOTE]
+> 当激活某个实验时，开发人员中心会立即开始从已检测的所有应用中收集数据，从而为你的实验记录数据。 但是，实验数据可能需要几个小时才会显示在仪表板中。
 
 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
@@ -35,18 +33,19 @@ ms.lasthandoff: 02/07/2017
   * 为你的实验单击**激活**链接。 你的实验已添加到页面顶部附近的**活动实验**部分。
   * 单击实验名称、滚动到实验页面底部，然后单击**激活**。
 
-> **重要提示**&nbsp;&nbsp;激活实验后，你不可再对实验参数进行修改，除非你在创建实验时，单击了**可编辑实验**复选框。 在激活实验之前，我们建议你在应用中为实验编码。
-
+> [!IMPORTANT]
+> 激活实验后，不可再对实验参数进行修改，除非在创建实验时，选中了**可编辑实验**复选框。 在激活实验之前，我们建议你在应用中为实验编码。
 
 ## <a name="review-the-results-of-your-experiment"></a>查看实验结果
 
 1. 在开发人员中心中，返回到应用的**实验**页面。
 2. 在**活动实验**部分中，单击活动实验的名称以转到实验页面。
 3. 有关活动实验或已完成的实验，此页中的前两个部分提供了实验的结果：
-  * **结果摘要**部分列出了实验目标和每个变体的转换率百分比。
+  * **“结果摘要”**部分列出了实验目标和每个变体的转换率百分比。
   * **“结果详细信息”**部分为实验中的所有目标的每个变体提供了更多详细信息，包括视图、转换、独特用户、转换率、增量百分比、置信度和重要性。 *置信度*是用来计算错误边距的估计的可靠性统计度量。 *重要性*是基于示例大小的统计度量，用来确定结果不是偶然得出，而是由于特定原因。
 
-  >**注意**&nbsp;&nbsp;开发人员中心在 24 小时时间段内仅向每位用户报告第一个转换事件。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了帮助防止具有很多转换事件的单个用户扭曲一组用户示例得出的实验结果。
+> [!NOTE]
+> 开发人员中心在 24 小时时间段内仅向每位用户报告第一个转换事件。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了帮助防止具有很多转换事件的单个用户扭曲一组用户示例得出的实验结果。
 
 
 ## <a name="complete-your-experiment"></a>完成实验
@@ -65,4 +64,3 @@ ms.lasthandoff: 02/07/2017
 * [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
 * [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
-

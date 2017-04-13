@@ -2,32 +2,34 @@
 author: mcleanbyron
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: "在 Windows 应用商店促销 API 中使用此方法管理促销性广告活动的投放渠道。"
-title: "管理广告活动的投放渠道"
+title: "管理投放渠道"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店促销 API, 广告活动"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5f9ede6a2e645a644e4650f3af7e5476bd52dd53
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 419dbc2ef8de66b0cb8cf51b483174f5c086a092
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-delivery-lines-for-ad-campaigns"></a>管理广告活动的投放渠道
+# <a name="manage-delivery-lines"></a>管理投放渠道
 
 在 Windows 应用商店促销 API 中使用这些方法可以创建一个或多个*投放渠道*，以便为促销性广告活动购买广告资源和投放广告。 你可以针对每个投放渠道设定目标市场、标价，并通过设定预算及与你希望启用的创意连接来判断你的预期费用。
 
 有关投放渠道与广告活动、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Windows 应用商店服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
-## <a name="prerequisites"></a>先决条件
+>**注意**&nbsp;&nbsp;在使用此 API 为广告活动成功创建投放渠道之前，你必须先[在开发人员中心仪表板中使用**推广你的应用**页面创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并且必须在此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用 API 创建的广告活动将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
+
+## <a name="prerequisites"></a>必备条件
 
 若要使用这些方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Windows 应用商店促销 API 的所有[先决条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+
+  >**注意**&nbsp;&nbsp;作为必备条件的一部分，请确保[在开发人员中心仪表板中创建至少一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)并在仪表板中为广告活动添加至少一种付款方式。 使用此 API 创建的投放渠道将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
+
+* [获取 Azure AD 访问令牌](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 ## <a name="request"></a>请求
 
@@ -42,9 +44,9 @@ ms.lasthandoff: 02/08/2017
 <span/> 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 描述         |
+| 标头        | 类型   | 说明         |
 |---------------|--------|---------------------|
-| Authorization | 字符串 | 必填。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |
 
 <span/>
@@ -160,4 +162,3 @@ Authorization: Bearer <your access token>
 * [管理广告活动的目标市场配置文件](manage-targeting-profiles-for-ad-campaigns.md)
 * [管理广告活动的创意](manage-creatives-for-ad-campaigns.md)
 * [获取广告活动效果数据](get-ad-campaign-performance-data.md)
-

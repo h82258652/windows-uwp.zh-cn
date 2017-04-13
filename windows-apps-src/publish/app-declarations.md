@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: feacd96ca2fa0cc4cd3d1087a982f61bc18d4604
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d17fd77759911e11c2efeaf84058526d8819781f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-declarations"></a>应用声明
 
-在[提交过程](app-submissions.md)中，你可以在**应用属性**页面的**应用声明**部分中提供有关你的应用的附加信息。 这些声明可以帮助确保你的应用以适当的方式显示并交付给正确的客户群，也可以指示客户使用你的应用的方式。
+在[提交过程](app-submissions.md)中，你可以在“应用属性”****页面的“应用声明”****部分中提供有关你的应用的附加信息。 这些声明可以帮助确保你的应用以适当的方式显示并交付给正确的客户群，也可以指示客户使用你的应用的方式。
 
 以下部分描述了每个声明，以及在确定是否每个声明都适用于你的应用时的注意事项。
 
@@ -67,7 +64,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

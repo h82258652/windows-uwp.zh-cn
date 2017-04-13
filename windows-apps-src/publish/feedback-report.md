@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "使用 Windows 开发人员中心仪表板中的反馈报告，你可以看到 Windows 10 客户通过反馈中心提交的问题、建议和投票。"
+Description: "使用 Windows 开发人员中心仪表板中的反馈报告，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。"
 title: "反馈报告"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e861ce5d7c34098616fdc57c884402df4e4b0a7f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="feedback-report"></a>反馈报告
 
-使用 Windows 开发人员中心仪表板中的**反馈报告**，你可以看到 Windows 10 客户通过反馈中心提交的问题、建议和投票。 你可以在仪表板中查看此数据，或导出该数据以供脱机查看。
+使用 Windows 开发人员中心仪表板中的“反馈报告”****，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。 你可以在仪表板中查看此数据，或导出该数据以供脱机查看。
 
 鼓励客户向你提供有关你的应用的反馈是了解对客户来说非常重要的问题和功能的绝佳方法。 当你的客户知道他们可以直接向你发送反馈时，他们不太可能留下负面评论的反馈。
 
@@ -61,4 +58,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="launching-feedback-hub-directly-from-your-app"></a>直接从应用启动“反馈中心”
 
 如上所述，我们建议直接将“反馈中心”的链接包含你的应用中，以便鼓励客户提供反馈。 有关详细信息，请参阅[从应用启动“反馈中心”](../monetize/launch-feedback-hub-from-your-app.md)。
-

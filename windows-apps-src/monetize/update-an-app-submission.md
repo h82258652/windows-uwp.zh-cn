@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "在 Windows 应用商店提交 API 中使用此方法，可更新现有应用提交。"
-title: "使用 Windows 应用商店提交 API 更新应用提交"
+title: "更新应用提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交, 更新"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: df52b5de7751d8428a92bd3892f91159c5fdd518
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a4b7816d0d6e47282864992044eea58eaaa05d1d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="update-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 更新应用提交
+# <a name="update-an-app-submission"></a>更新应用提交
 
 在 Windows 应用商店提交 API 中使用此方法，可更新现有应用提交。 使用此方法成功更新提交后，必须[确认提交](commit-an-app-submission.md)才可以实现引入和发布。
 
@@ -53,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 说明                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要更新提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | 字符串 | 必需。 要更新的提交的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。  |
@@ -73,17 +70,17 @@ ms.lasthandoff: 02/07/2017
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |  
 | listings           |   对象  |  键值对字典，其中每个键为国家/地区代码，而每个值为包含应用一览信息的[一览资源](manage-app-submissions.md#listing-object)对象。       |   
 | hardwarePreferences           |  数组  |   一组用于定义应用的[硬件首选项](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences)的字符串。 这可以是以下值之一： <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
-| automaticBackupEnabled           |  布尔值  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
-| canInstallOnRemovableMedia           |  布尔值  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| isGameDvrEnabled           |  布尔值 |   指示是否可以为应用启用游戏 DVR。    |   
-| hasExternalInAppProducts           |     布尔值          |   指示应用是否允许用户在 Windows 应用商店商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
-| meetAccessibilityGuidelines           |    布尔值           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
+| automaticBackupEnabled           |  布尔型  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
+| canInstallOnRemovableMedia           |  布尔型  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| isGameDvrEnabled           |  布尔型 |   指示是否可以为应用启用游戏 DVR。    |   
+| hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Windows 应用商店商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心填充。   |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅[软件包传递选项对象](manage-app-submissions.md#package-delivery-options-object)部分。  |
 | enterpriseLicensing           |  字符串  |  [企业授权值](manage-app-submissions.md#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔值   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 布尔型   |  指示是否允许应用[以未来 Windows 10 设备系列为目标](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 布尔型   |  指示是否允许应用[以未来 Windows10 设备系列为目标](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
 
 <span/>
 
@@ -110,13 +107,17 @@ Content-Type: application/json
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+          "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -127,9 +128,13 @@ Content-Type: application/json
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -152,7 +157,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -192,13 +197,17 @@ Content-Type: application/json
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -209,9 +218,13 @@ Content-Type: application/json
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1",
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -255,7 +268,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -295,4 +308,3 @@ Content-Type: application/json
 * [确认应用提交](commit-an-app-submission.md)
 * [删除应用提交](delete-an-app-submission.md)
 * [获取应用提交的状态](get-status-for-an-app-submission.md)
-
