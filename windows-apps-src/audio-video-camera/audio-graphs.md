@@ -9,8 +9,8 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 5d98b5366160ca52c02330a05e8b8d749e2296bd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.openlocfilehash: 1b286a9fcfd71bb2dc219fb3c03a363a41d24346
+ms.sourcegitcommit: bccf9bcc39f0c4ee8801d90e2d7fcae3ad6e3b3e
 translationtype: HT
 ---
 # <a name="audio-graphs"></a>音频图
@@ -159,9 +159,12 @@ Windows 运行时音频图 API：
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-当音频图处理完某个音频数据量子时，将引发 [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。 你可以访问来自此事件的处理程序中的音频数据。
+当音频图开始处理某个音频数据量子时，将引发 [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) 事件。 你可以访问来自此事件的处理程序中的音频数据。 
 
-[!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
+> [!NOTE]  
+> 如果你想按照规律的节奏检索与音频图同步的音频帧，可从同步的 **QuantumStarted** 事件处理程序中调用 [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame)。 音频引擎在完成音频处理后，将异步引发 **QuantumProcessed** 事件，这表示其节奏可能没有规律。 因此，你不应使用 **QuantumProcessed** 事件来同步处理音频帧数据。
+
+[!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
 -   调用 [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) 以获取已填充音频图中音频数据的 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 对象。
 -   以下显示了 **ProcessFrameOutput** 帮助程序方法的一个示例实现。
