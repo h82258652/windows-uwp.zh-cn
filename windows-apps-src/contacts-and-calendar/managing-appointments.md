@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "通过 Windows.ApplicationModel.Appointments 命名空间，你可以在用户的日历应用中创建和管理约会。"
 title: "管理约会"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 约会, 日历"
-ms.openlocfilehash: 2f220e8efadfca824a1ec4f41045f18dcc61ffb1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d4bc4832dd489508eabbddd486f782ac8b0191a3
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="manage-appointments"></a>管理约会
 
@@ -391,7 +393,7 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-time-span-for-the-appointments-provider"></a>显示约会提供程序的时间跨度
 
-如果用户单击了“显示”****，则调用 [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法来为默认约会提供程序的主 UI 显示特定时间跨度。 该示例指示默认约会提供程序已显示在屏幕上。
+如果用户单击了**显示**，则调用 [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法来为默认约会提供程序的主 UI 显示特定时间跨度。 该示例指示默认约会提供程序已显示在屏幕上。
 
 ```cs
 private async void Show-Click(object sender, RoutedEventArgs e)

@@ -4,14 +4,16 @@ Description: "加载项通过 Windows 开发人员中心仪表板发布。"
 title: "加载项提交"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7de8b6db65bb9ec58f16643dc8b477c274513c9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 85ad5e297eed8daa5205aedc1253191fcff5fd49
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="add-on-submissions"></a>加载项提交
 
@@ -21,7 +23,8 @@ translationtype: HT
 
 加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 然后，你可以创建一个提交，以便你的加载项可以通过 Windows 应用商店购买。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在应用商店中上架后[更新](#updating-an-add-on-after-publication)加载项，而无需重新提交该应用。
 
-> **注意**&nbsp;&nbsp;文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
+> [!NOTE]
+> 文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
 
 ## <a name="checklist-for-submitting-an-add-on"></a>加载项提交清单
 
@@ -49,16 +52,17 @@ translationtype: HT
 ### <a name="pricing-and-availability-page"></a>定价和可用性页面
 | 字段名称                    | 注意                                       |
 |-------------------------------|---------------------------------------------|
-| [**基价**](set-add-on-pricing-and-availability.md#base-price)                | 必需                                    |
-| [**市场和自定义定价**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | 默认：在所有可能的市场中提供 |
-| [**促销价格**](put-apps-and-add-ons-on-sale.md)               | 可选                             |
-| [**分发和可见性**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | 默认：浏览或搜索应用商店的客户可以找到加载项 |
-| [**发布日期**](set-add-on-pricing-and-availability.md#publish-date)                | 默认：加载项通过认证后立即发布 |
+| [**市场**](set-add-on-pricing-and-availability.md#markets)  | 默认：所有可能的市场 |
+| [**可见性**](set-add-on-pricing-and-availability.md#visibility)   | 默认：可供购买。 可能在应用一览中显示 |
+| [**计划**](set-add-on-pricing-and-availability.md#schedule)    | 默认：尽快发布
+| [**定价**](set-add-on-pricing-and-availability.md#pricing)                | 必填                                    |
+| [**销售定价**](put-apps-and-add-ons-on-sale.md)               | 可选                             |
+| [**发布日期**](set-add-on-pricing-and-availability.md#publish-date)                | 默认：尽快发布 |
 
 <span/>
 
 ### <a name="store-listings"></a>应用商店一览
-需要一个应用商店一览。 我们建议为应用支持的每种[语言](create-add-on-store-listings.md#languages)提供应用商店一览。
+需要一个应用商店一览。 我们建议为应用支持的每种[语言](create-add-on-store-listings.md#store-listing-languages)提供应用商店一览。
 
 | 字段名称                    | 注意                                       |
 |-------------------------------|---------------------------------------------|
@@ -70,14 +74,16 @@ translationtype: HT
 
 当你完成输入此信息时，请单击**提交到应用商店**。 在大多数情况下，认证过程需要大约一个小时。 然后，你的加载项将发布到应用商店并且可供客户购买。
 
->**注意**&nbsp;&nbsp;加载项还必须在应用的代码中实现。 有关详细信息，请参阅[应用内购买和试用](../monetize/in-app-purchases-and-trials.md)。
+> [!NOTE]
+> 加载项还必须在应用的代码中实现。 有关详细信息，请参阅[应用内购买和试用](../monetize/in-app-purchases-and-trials.md)。
 
 
 ## <a name="updating-an-add-on-after-publication"></a>在发布后更新加载项
 
 你可以随时更改已发布的加载项。 加载项更改会独立于应用提交和发布，因此通常不需要更新整个应用即可对加载项进行更改，如更新其价格或说明。
 
-> **重要提示**&nbsp;&nbsp;如果你的应用要提供给使用 Windows8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
+> [!IMPORTANT]
+> 如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
 
 若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将使用之前提交中的信息作为起始点，为该加载项创建新的提交。 按需更改信息，然后单击**提交到应用商店**。
 

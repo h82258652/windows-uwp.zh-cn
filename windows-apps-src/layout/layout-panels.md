@@ -7,14 +7,16 @@ label: Layout panels
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 45c7c541ab278da1f00899a16636337dcdc20d3f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 55b7c431482b171e56e670cd5d2ce0fc9148a5f9
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="layout-panels"></a>布局面板
 
@@ -91,7 +93,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
                RelativePanel.Below="RedRect" 
                RelativePanel.AlignLeftWith="RedRect" 
                RelativePanel.AlignRightWith="BlueRect"/>
-    <Rectangle Fill="Yellow"
+    <Rectangle Fill="Orange"
                RelativePanel.Below="GreenRect" 
                RelativePanel.AlignLeftWith="BlueRect" 
                RelativePanel.AlignRightWithPanel="True"
@@ -106,7 +108,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 以下是一些在调整矩形大小时需要注意的事项。
 - 红色矩形给定 44x44 的显式大小。 它放置在面板的左上角，该位置是默认位置。
 - 绿色矩形给定 44 的显式高度。 它的左边与红色矩形对齐，它的右边与蓝色矩形对齐，这决定了它的宽度。
-- 黄色矩形未给定显式大小。 它的左边与蓝色矩形对齐。 它的右边和底边与面板的边缘对齐。 它的大小由这些对齐来决定，而且它将随着面板调整大小而调整大小。
+- 橙色矩形未给定显式大小。 它的左边与蓝色矩形对齐。 它的右边和底边与面板的边缘对齐。 它的大小由这些对齐来决定，而且它将随着面板调整大小而调整大小。
 
 ## <a name="stackpanel"></a>StackPanel
 
@@ -121,7 +123,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
     <Rectangle Fill="Red" Height="44"/>
     <Rectangle Fill="Blue" Height="44"/>
     <Rectangle Fill="Green" Height="44"/>
-    <Rectangle Fill="Yellow" Height="44"/>
+    <Rectangle Fill="Orange" Height="44"/>
 </StackPanel>
 ```
 
@@ -155,7 +157,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
     <Rectangle Fill="Red" Width="44"/>
     <Rectangle Fill="Blue" Grid.Row="1"/>
     <Rectangle Fill="Green" Grid.Column="1"/>
-    <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
+    <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
 </Grid>
 ```
 
@@ -188,7 +190,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
                VariableSizedWrapGrid.RowSpan="2"/>
     <Rectangle Fill="Green" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
-    <Rectangle Fill="Yellow" 
+    <Rectangle Fill="Orange" 
                VariableSizedWrapGrid.RowSpan="2" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
 </VariableSizedWrapGrid>
@@ -216,7 +218,7 @@ Canvas 不对其子素的大小进行任何调整。 每个元素都必须指定
     <Rectangle Fill="Red" Height="44" Width="44"/>
     <Rectangle Fill="Blue" Height="44" Width="44" Canvas.Left="20" Canvas.Top="20"/>
     <Rectangle Fill="Green" Height="44" Width="44" Canvas.Left="40" Canvas.Top="40"/>
-    <Rectangle Fill="Yellow" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
+    <Rectangle Fill="Orange" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
 </Canvas>
 ```
 

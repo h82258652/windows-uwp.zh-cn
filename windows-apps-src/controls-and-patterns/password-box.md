@@ -7,14 +7,19 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0dee750042edc3c80c993d29c2f6f29cf6b2a130
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 742d72d1d62cdb1bc2cd0397589d167cd6d3cfe2
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="password-box"></a>密码框
 
@@ -22,18 +27,9 @@ translationtype: HT
 
 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。 密码框的外观类似文本框，区别在于它在已输入文本的位置呈现占位符。 可配置占位符。
 
-默认情况下，密码框向用户提供了查看其密码的方法，即按下显示按钮。 你可以禁用显示按钮，或提供显示密码的替代机制，如复选框。
+> **重要 API**：[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)，[Password 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)，[PasswordChar 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)，[PasswordRevealMode 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)，[PasswordChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**Password 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)</li>
-<li>[**PasswordChar 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)</li>
-<li>[**PasswordRevealMode 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)</li>
-<li>[**PasswordChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)</li>
-</ul>
-</div>
+默认情况下，密码框向用户提供了查看其密码的方法，即按下显示按钮。 你可以禁用显示按钮，或提供显示密码的替代机制，如复选框。
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -191,6 +187,6 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

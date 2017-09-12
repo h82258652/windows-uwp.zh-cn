@@ -4,14 +4,16 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取应用的特定错误的详细数据。"
 title: "获取应用中的错误的详细信息"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 错误, 详细信息"
-ms.openlocfilehash: cfab1c8f5149d4c6d02a9fa94287a4e204a11a7f
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: b18a49fd1c035bf83ff7288efef8c71df8faef8f
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>获取应用中的错误的详细信息
 
@@ -164,3 +166,4 @@ Authorization: Bearer <your access token>
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
+* [下载应用中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)

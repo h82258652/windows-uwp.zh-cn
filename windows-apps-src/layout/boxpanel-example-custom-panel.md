@@ -10,18 +10,17 @@ label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a46e26491e909d825ceaff04d008b8cb56c9aff3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4fbc5c2e7bea43c2f18cf9e247b0143795bdfc1a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
-
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，一个自定义面板示例
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -51,11 +50,11 @@ ms.lasthandoff: 02/07/2017
 -   面板何时在其自己的空间中有约束
 -   面板的逻辑如何确定最终呈现子元素的 UI 布局的所有度量、放置、位置和大小
 
-基于这一点，此处显示的 `BoxPanel` 适用于特定方案。 为了保持代码在此示例中的重要性，我们将不详细解释方案，而是专注于所需的步骤和编码模式。 如果你希望首先了解有关方案的详细信息，则跳到[“适用于 `BoxPanel` 的方案”](#scenario)，然后返回到代码。
+基于这一点，此处显示的 `BoxPanel` 适用于特定方案。 为了保持代码在此示例中的重要性，我们将不详细解释方案，而是专注于所需的步骤和编码模式。 如果你希望首先了解有关方案的详细信息，则跳到[“适用于 `BoxPanel` 的方案”](#the-scenario-for-boxpanel)，然后返回到代码。
 
 ## <a name="start-by-deriving-from-panel"></a>由从 **Panel** 派生开始
 
-由从 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生自定义类开始。 执行此操作的最简单方法可能是为此类定义一个独立的代码文件，方法是从 Microsoft Visual Studio 中的“解决方案资源管理器”****中针对项目使用“添加”**** | “新建项”**** | “类”****上下文菜单选项。 将该类（以及文件）命名为 `BoxPanel`。
+由从 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生自定义类开始。 执行此操作的最简单方法可能是为此类定义一个独立的代码文件，方法是从 Microsoft Visual Studio 中的**解决方案资源管理器**中针对项目使用**添加** | **新建项** | **类**上下文菜单选项。 将该类（以及文件）命名为 `BoxPanel`。
 
 类的模板文件不会从许多 **using** 语句开始，因为它不特别适用于通用 Windows 平台 (UWP) 应用。 因此，首先添加 **using** 语句。 模板文件的开头部分还包含一些你可能不需要的 **using** 语句，可以将其删除。 以下是可解析类型的 **using** 语句的建议列表，你将需要将这些语句用于典型的自定义面板代码：
 
@@ -113,15 +112,15 @@ protected override Size MeasureOverride(Size availableSize)
     if (aspectratio > 1)
     {
         rowcount = maxrc;
-        colcount = (maxrc > 2 &amp;&amp; Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        colcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
     } 
     else 
     {
-        rowcount = (maxrc > 2 &amp;&amp; Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        rowcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
         colcount = maxrc;
     }
 
-    // Now that we have a column count, divide available horizontal, that&#39;s our cell width.
+    // Now that we have a column count, divide available horizontal, that's our cell width.
     cellwidth = (int)Math.Floor(availableSize.Width / colcount);
     // Next get a cell height, same logic of dividing available vertical by rowcount.
     cellheight = Double.IsInfinity(availableSize.Height) ? Double.PositiveInfinity : availableSize.Height / rowcount;
@@ -137,7 +136,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 实现的必要模式是循环访问 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每个元素。 始终对这些元素中的每一个调用 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 具有类型 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 的参数。 你在此处传递的内容是，面板致力于获取的适用于该特定子元素的大小。 因此，在你可以进行循环访问并开始调用 **Measure** 之前，你需要知道每个单元格可以提供多少空间。 从 **MeasureOverride** 方法本身，你具有 *availableSize* 值。 它是面板的父元素在调用 **Measure** 时使用的大小，它是最初调用此 **MeasureOverride** 的触发器。 因此典型的逻辑是制定一个方案，每个子元素通过此方案划分面板的整体 *availableSize* 的空间。 然后你将大小的每个划分传递到每个子元素的 **Measure**。
 
-`BoxPanel` 划分大小的方式相当简单：它将它的空间划分为一些框，这些框很大程度上受项目数量的控制。 基于行列计数和可用大小调整框的大小。 有时因为不需要正方形中的一行或一列而将其删除，因此就行列比而言，面板变成了矩形而不是正方形。 有关如何到达此逻辑的详细信息，请跳到[“面向 BoxPanel 的方案”](#scenario)。
+`BoxPanel` 划分大小的方式相当简单：它将它的空间划分为一些框，这些框很大程度上受项目数量的控制。 基于行列计数和可用大小调整框的大小。 有时因为不需要正方形中的一行或一列而将其删除，因此就行列比而言，面板变成了矩形而不是正方形。 有关如何到达此逻辑的详细信息，请跳到[“面向 BoxPanel 的方案”](#the-scenario-for-boxpanel)。
 
 那么度量传递的作用是什么？ 它为在其中调用 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208921) 的每个元素的只读 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208952) 属性设置值。 一旦你进行排列传递，拥有 **DesiredSize** 值可能很重要，因为 **DesiredSize** 传达排列和最终呈现时可以设置和应当设置的大小。 即使你不在你自己的逻辑中使用 **DesiredSize**，系统仍然需要它。
 
@@ -243,4 +242,3 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 **概念**
 
 * [对齐、边距和填充](alignment-margin-padding.md)
-

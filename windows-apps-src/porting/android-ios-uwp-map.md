@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "比较 iOS、Android 和 Windows 10 之间的平台功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: "面向 Android 和 iOS 开发人员的 Windows 概念"
+title: "适用于 Android 和 iOS 开发人员的 Windows 应用概念映射"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,11 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 72bb41939b0676dab7c212770cc9eddaef538c3f
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/28/2017
 ---
-#<a name="windows-concepts-for-android-and-ios-developers"></a>面向 Android 和 iOS 开发人员的 Windows 概念
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 
 如果你是具有 Android 或 iOS 技能和/或代码的开发人员，并且希望移动到 Windows 10 和通用 Windows 平台 (UWP)，则此资源具有在三个平台之间映射平台功能（以及你的知识）所需的一切。
 
@@ -128,13 +130,13 @@ translationtype: HT
 <td align="left"><strong>对等导航。</strong> <br><br>通过在具有同等层次结构重要性的页面之间导航向用户呈现。</td>
 <td align="left"><strong>选项卡</strong>、<strong>轻扫视图</strong>和<strong>导航箱</strong>均提供<strong>横向导航</strong>。</td>
 <td align="left"><strong>选项卡栏控制器</strong>、<strong>拆分视图控制器</strong>和<strong>页面视图控制器</strong>允许在同等层次结构的视图之间导航。</td>
-<td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
+<td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>分层导航。</strong> <br><br>在层次结构的父页面和子页面之间导航。</td>
 <td align="left">当与<strong>意图</strong>一起用于加载其他<strong>活动</strong>时，<strong>列表</strong>、<strong>网格列表</strong>、<strong>按钮</strong>及其他控件提供<strong>下级导航</strong>。</td>
 <td align="left"><strong>导航控制器</strong>允许用户在层次结构的各级别之间导航。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中心</a></strong>使你可以向用户展示可以选来用于导航到子页面的内容的预览。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">大纲/细节</a></strong>使用户可以从显示在相应细节部分旁边的项目摘要列表中进行选取。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中心</a></strong>使你可以向用户展示可以选来用于导航到子页面的内容的预览。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">大纲/细节</a></strong>使用户可以从显示在相应细节部分旁边的项目摘要列表中进行选取。<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>“后退”按钮导航。</strong> <br><br>在应用中进行后退导航。</td>
@@ -170,7 +172,7 @@ translationtype: HT
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>语音。</strong> <br><br>语音输入的语音识别和其他语音功能。</td>
 <td align="left">实现 <strong>RecognizerIntent</strong> 的任何应用（如 <strong>Google 语音搜索</strong>）均可以提供语音输入。 <strong>SpeechRecognizer</strong> 类允许应用使用 Google 的语音识别 API。</td>
-<td align="left">不存在任何内置的语音识别或语音输入 API。</td>
+<td align="left">应用可以使用 <strong>SFSpeechRecognizer</strong> 类来实现语音输入和语音识别。</td>
 <td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">语音识别</a></strong> API 与前台的应用交互。 你可以使用基于语音的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 交互</a></strong>来启动前台或后台中的应用，并与后台应用交互。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">语音交互</a></td>
 </tr>
 <tr class="even">

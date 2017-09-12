@@ -5,15 +5,20 @@ title: "列表项中嵌套的 UI"
 label: Nested UI in list items
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
-ms.openlocfilehash: b3b41e81f48f790c85377208816668ba302d3738
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: chigy
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: a8d7ac9ad5cad6d88c0fac0c1e7bba53eaf0045d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
@@ -22,6 +27,8 @@ translationtype: HT
 嵌套的 UI 是用户界面 (UI)，用于公开包含在容器内嵌套的可操作控件，也可捕获独立的焦点。
 
 你可以使用嵌套的 UI 来向用户显示附加选项，从而有助于促使用户采取重要的操作。 但是，公开的操作越多，UI 就变得越复杂。 在选择使用此 UI 模式时需要格外谨慎。 本文提供了指南来帮助你针对特定 UI 确定最佳做法。
+
+> **重要 API**：[ListView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)，[GridView 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 在本文中，我们将讨论如何在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 项目中创建嵌套的 UI。 尽管本部分不讨论其他嵌套的 UI 情形，但是这些概念是可转移的。 在开始之前，你应当熟悉在 UI 中使用 ListView 或 GridView 控件的常规指南，可在[列表](lists.md)以及[列表视图和网格视图](listview-and-gridview.md)文章中找到它。
 

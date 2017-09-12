@@ -6,14 +6,20 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 07a4b7fdd600c49cf545c69f9d87eb21ef8d9a67
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: d5bde19c1d3dfba375b370cf8aed46979b6173f0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="tooltips"></a>工具提示
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -22,13 +28,8 @@ translationtype: HT
 
 ![工具提示](images/controls/tool-tip.png)
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
-<li>[**ToolTipService 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
-</ul>
-</div>
+> **重要 API**:[工具提示类](https://msdn.microsoft.com/library/windows/apps/br227608)，[ToolTipService 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -75,4 +76,4 @@ translationtype: HT
 
 相关主题
 
-* [**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)
+* [ToolTip 类](https://msdn.microsoft.com/library/windows/apps/br227608)

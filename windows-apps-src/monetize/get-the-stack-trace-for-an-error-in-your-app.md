@@ -4,14 +4,16 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取应用中的错误堆栈跟踪。"
 title: "获取应用中的错误的堆栈跟踪"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 堆栈跟踪, 错误"
-ms.openlocfilehash: fb99c65e91e02e3e60b12258e30083183c213324
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: bec42609ee9441a872415bc270a97bcb21a858f7
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>获取应用中的错误的堆栈跟踪
 
@@ -58,7 +60,7 @@ translationtype: HT
  
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何使用此方法获取堆栈跟踪。 将 *applicationId* 值替换为应用的应用商店 ID。
+以下示例演示如何使用此方法获取堆栈跟踪。 将 *applicationId* 值替换为应用的应用商店 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace?applicationId=9NBLGGGZ5QDR&cabId=1336373323853 HTTP/1.1
@@ -129,3 +131,4 @@ Authorization: Bearer <your access token>
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
+* [下载应用中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)

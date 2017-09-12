@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: PatrickFarley
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: "从应用打印"
 description: "了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。"
-ms.author: dbirtolo
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: b9bf56e9f4fa4632623ae2d644a4e9958ee02443
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0193837a41c4606d03b475ebce5063f05e39f194
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="print-from-your-app"></a>从应用打印
 

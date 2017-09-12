@@ -7,14 +7,16 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a9e7cda7794b3463ffa567bcf36ebec2d2d02687
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 868221cce04688ea2f7ab50e3062579932fbbd80
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
 
@@ -22,8 +24,9 @@ translationtype: HT
 
 在通用 Windows 平台 (UWP) 应用中，*命令元素*是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。 本文将介绍命令元素（如按钮和复选框）、它们支持的交互以及承载它们的命令图面（如命令栏和上下文菜单）。
 
-## <a name="provide-the-right-type-of-interactions"></a>提供正确类型的交互
+> **重要 API**：[ICommand 接口](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand)、[Button 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Button)、[CommandBar 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.commandbar)、[MenuFlyout 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)
 
+## <a name="provide-the-right-type-of-interactions"></a>提供正确类型的交互
 
 在设计命令界面时，最重要的决定是选择用户应该能够执行哪些操作。 例如，如果你要创建一个照片应用，则用户将需要照片编辑工具。 但是，如果你要创建一个偶尔显示照片的社交媒体应用，则可能无需优先考虑图像编辑，因此可以省略编辑工具以节省空间。 确定想要用户完成的操作并提供工具帮助他们完成操作。
 
@@ -64,7 +67,7 @@ translationtype: HT
 
 <tr class="header">
 <th align="left">图面</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 
 <tr class="odd">

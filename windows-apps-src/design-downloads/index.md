@@ -1,61 +1,40 @@
 ---
 description: "获取适用于 UWP 应用用户界面布局和控件设计的最新下载和工具。"
 keywords: "UWP 应用布局, UI, 用户界面设计, 下载, UWP 工具"
-title: "适用于 UWP 应用的设计下载 - Windows 应用开发"
+title: "适用于 UWP 应用的设计工具包和资源"
 author: mijacobs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
-ms.openlocfilehash: 6f6edf982ffd329561b35c51ca19ee7a6fa92bf0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2a92a2160f326bc2a0e576f5e46b652983026d35
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/03/2017
 ---
-# <a name="design-downloads-for-uwp-apps"></a>适用于 UWP 应用的设计下载
+# <a name="design-toolkits-and-resources-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和资源
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 本部分包含适用于 UWP 应用的设计和 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅[我们的主下载页](https://developer.microsoft.com/downloads)。 
 
 
-## <a name="design-templates"></a>设计模板
+## <a name="design-toolkits"></a>设计工具包
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-    <p><b>PowerPoint</b><br/>
-此系列具有快速建立适用于 UWP 应用的线框（包括控件和布局）所需的一切。<br/>[下载适用于 PowerPoint 的设计模板](https://go.microsoft.com/fwlink/p/?LinkId=534632)</p>
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534632"><img src="images/powerpoint.jpg" alt="Download the PowerPoint design templates" /></a>
-  </div>
-</div>
-</div>
+这些工具包提供用于设计 UWP 应用的控件和布局模板。
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Adobe Illustrator</b><br/>
-这些 Adobe Illustrator 模板提供用于设计 UWP 应用的控件和布局。<br/>[下载适用于 Adobe Illustrator 的设计模板](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534634"><img src="images/illustrator.jpg" alt="Download the design templates for Adobe Illustrator" /></a>
-  </div>
-</div>
-</div>
+* [Adobe XD 工具包](http://download.microsoft.com/download/1/3/C/13CE5C92-024E-40C8-A867-83D891CC4D39/Adobe XD design toolkit for UWP apps v1707.zip)
+* [Adobe Illustrator 工具包](http://download.microsoft.com/download/C/C/4/CC478BD5-6469-450D-80EF-52D27EEAD4C4/Adobe Illustrator design toolkit for UWP apps v1705.zip)
+* [Adobe Photoshop 工具包](http://download.microsoft.com/download/C/D/A/CDA7FC2B-D5EA-48A4-906D-C6F4A4B311BB/Adobe Photoshop design toolkit for UWP apps v1705.zip)
+* [Framer 工具包（在 GitHub 上）](https://github.com/Microsoft/windows-framer-toolkit)
+* [Sketch 工具包](http://download.microsoft.com/download/B/4/C/B4C6B0B9-C8BC-4CE2-A833-DCE89399060E/Sketch design toolkit for UWP apps v1707.zip)
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Adobe Photoshop</b><br/>
-在 Adobe Photoshop 中用于设计 UWP 应用的控件和布局。<br/>[下载适用于 Adobe Photoshop 的设计模板](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
-  </div>
-  <div class="side-by-side-content-right">
-<a href="http://go.microsoft.com/fwlink/p/?LinkId=626453"><img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" /></a>
-  </div>
-</div>
-</div>
+## <a name="fonts"></a>字体
+
+* [Segoe UI 和 MDL2 图标字体](http://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe fonts v1705.2.zip)
+* [HoloLens 图标字体](http://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens-font-v1705.zip)
 
 ## <a name="tools"></a>工具
 

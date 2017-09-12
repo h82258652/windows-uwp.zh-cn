@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "地图和位置概述"
 description: "本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本节还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。"
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 地图服务"
-ms.openlocfilehash: 33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 
@@ -35,10 +37,9 @@ translationtype: HT
 | 主题 | 说明 |
 |-------|-------------|
 | [请求地图身份验证密钥](authentication-key.md) | 应用必须先进行身份验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
-| [地图控件](controls-map.md) | 地图控件可以显示路线图和鸟瞰图、路线、搜索结果和路况。 |
-| [使用 2D、3D 和街景视图显示地图](display-maps.md) | 通过使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 类，在应用中显示可自定义的地图。 本主题还介绍了鸟瞰图 3D 视图和街景视图。 |
+| [使用 2D、3D 和 Streetside 方式显示地图](display-maps.md) | 通过使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 类，在应用中显示可自定义的地图。 本主题还介绍了鸟瞰图 3D 视图和街景视图。 |
 | [在地图上显示兴趣点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加兴趣点 (POI)。 |
-| [覆盖地图上的平铺图像](overlay-tiled-images.md) | 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。 |
+| [覆盖地图上的平铺图像](overlay-tiled-images.md) | 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。 |
 
 
 

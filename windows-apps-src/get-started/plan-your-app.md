@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f9e14be4ef0e92378d4b6f1e4f5c1066c56fbdd8
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/11/2017
 ---
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>规划你的通用 Windows 平台 (UWP) 应用
 
@@ -220,7 +222,7 @@ translationtype: HT
 
 ![应用的电脑和移动设备设计](images/ux-budgettracker1-md-notablet.png)
 
-有关针对不同屏幕大小进行设计的详细信息，请参阅<!--[Responsive design 101](designing-in-effective-pixels.md)-->。
+有关针对不同屏幕大小进行设计的详细信息，请参阅[响应式设计的屏幕大小和断点](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)。
 
 ## <a name="make-a-good-first-impression"></a>留下良好的第一印象
 

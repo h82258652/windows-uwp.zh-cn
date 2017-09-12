@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "保持 UI 线程有响应"
 description: "用户期望应用在执行计算时保持响应，无论计算机的类型如何都是如此。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 921af1b7f408bed5f846af631592755d48a37dd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5be2a8ea14f35d048b4402f2cfb1018d5998c3d
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="keep-the-ui-thread-responsive"></a>保持 UI 线程有响应
 
@@ -29,7 +31,7 @@ translationtype: HT
 
 应用中的某些最慢阶段可能包含启动以及切换视图。 请勿执行不必要的工作从而避免调用用户会首先看到的 UI。 例如，不要创建逐步显示 UI 和弹出窗口内容的 UI。
 
--   使用 [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 延迟实例化元素。
+-   使用 [x:Load attribute](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 延迟实例化元素。
 -   以编程方式根据需要将元素插入树中。
 
 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 队列适用于在不忙时进行处理的 UI。
@@ -107,4 +109,3 @@ public class AsyncExample
 ## <a name="related-topics"></a>相关主题
 
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-

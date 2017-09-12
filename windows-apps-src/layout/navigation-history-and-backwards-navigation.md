@@ -8,20 +8,24 @@ label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: c2037c4b313b45309162ea4c0874418fe9463d17
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: cd3184ebe5e94c410d55a725129a38907aa6a01e
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 在 Web 上，个别网站提供其自己的导航系统，如内容表、按钮、菜单、链接的简单列表等。 不同网站上的导航体验可能截然不同。 但是，有一个一致的导航体验：后退。 无论使用何种网站，大多数浏览器都提供运作方式相同的后退按钮。
+
+> **重要的 API**：[SystemNavigationManager 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager)、[BackRequested 事件](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested)、[OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/br227508)
 
 出于类似的原因，通用 Windows 平台 (UWP) 提供一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
 
@@ -111,7 +115,7 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
-        this, &amp;App::App_BackRequested);
+        this, &App::App_BackRequested);
 ```
 
 以下是在应用的根框架上调用 [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn893596) 的相应 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn996568) 事件处理程序。
@@ -129,7 +133,7 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 >
 >    // Navigate back if possible, and if the event has not 
 >    // already been handled .
->    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    if (rootFrame.CanGoBack && e.Handled == false)
 >    {
 >        e.Handled = true;
 >        rootFrame.GoBack();
@@ -158,7 +162,7 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 ## <a name="how-to-enable-the-title-bar-back-button"></a>如何启用标题栏后退按钮
 
 
-支持桌面模式（通常是 PC 和笔记本电脑，但也有一些平板电脑）并启用了设置（“设置”&gt;“系统”&gt;“平板电脑模式”****）的设备不提供带有系统后退按钮的全局导航栏。
+支持桌面模式（通常是 PC 和笔记本电脑，但也有一些平板电脑）并启用了设置（“设置”&gt;“系统”&gt; **平板电脑模式**）的设备不提供带有系统后退按钮的全局导航栏。
 
 在桌面模式下，每个应用都在带有标题栏的窗口中运行。 你可以为在此标题栏中显示的应用提供备用后退按钮。
 

@@ -6,14 +6,18 @@ ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 template: detail.hbs
 extraBodyClass: style-color
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+design-contact: rybick
+doc-status: Published
+ms.openlocfilehash: fd37d69c2e9b20b46c34e6071f302bd55bbbba26
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="color"></a>颜色
 
@@ -132,13 +136,47 @@ translationtype: HT
       </tr>
   </table>
 
+避免将主题色用作背景，尤其在文本和图标方面。 因为主题色会发生更改，因此如果必须将主题色用作背景，则必须完成一些其他工作以确保可以轻松阅读前景文本。 例如，如果文本是白色而主题色是浅灰色，由于白色和浅灰色之间的对比率较小，因此会难以看清文本。 可以测试主题色以确定其是否为深色，从而解决此问题：  
 
-<div class="microsoft-internal-note">
-根据经验，将主题色用作背景时，始终将白色文本置顶。 与白色文本相比，Windows 附带的默认主题色提供的对比度比率很高。 用户可根据其首选项选择与白色对比不强烈的主题色，这样就可以了。 如果无法读取，用户始终可以选择颜色较深的主题色。
-</div>
+使用以下算法以确定背景色是浅色还是深色。
+
+```C#
+void accentColorUpdated(FrameworkElement elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+
+    bool colorIsDark = (5 * c.G + 2 * c.R + c.B) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }
+}
+```
 
 
-当用户选择了某种主题色时，这种主题色会显示为系统主题的一部分。 受影响的区域有“开始”菜单、任务栏、窗口镶边、选择的交互状态以及[常用控件](../controls-and-patterns/index.md)中的超链接。 每个应用可以通过版式、背景和交互进一步合并主题色，或覆盖它以保留它们的特定品牌。
+```JS
+function accentColorUpdated(elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+    var colorIsDark (5 * c.g + 2 * c.r + c.b) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }     
+}
+```
+
+一旦确定主题色是浅色还是深色之后，则可以选择合适的前景色。 我们建议为深色背景使用浅色主题中的 SystemControlForegroundBaseHighBrush，为浅色背景使用该颜色的深色主题版本。
 
 ## <a name="color-palette-building-blocks"></a>颜色调色板构建基块
 
@@ -228,7 +266,7 @@ translationtype: HT
 </Application>
 ```
 
-删除 **RequestedTheme** 意味着应用程序将沿用用户的应用模式设置，可以将这些设置选择为以深色或浅色主题查看你的应用。 
+删除 **RequestedTheme** 意味着应用程序将沿用用户的应用模式设置，可以将这些设置选择为以深色或浅色主题查看你的应用。
 
 确保在创建应用时考虑主题，因为主题对应用外观的影响较大。
 

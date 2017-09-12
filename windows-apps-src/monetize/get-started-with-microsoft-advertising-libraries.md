@@ -4,39 +4,29 @@ ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
 description: "获取所需信息以开始使用 Microsoft Advertising 库向你的应用添加横幅和间隙广告。"
 title: "Advertising 库入门"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 广告, 广告, 入门"
-ms.openlocfilehash: f506fa6145aede8e69aad8c5a7e76f11e5db66d4
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+keywords: "windows 10, uwp, 广告, 入门"
+ms.openlocfilehash: fab1b459d7d736d48a95c22d39bab10bafe060bb
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="get-started-with-the-advertising-libraries"></a>Advertising 库入门
+# <a name="get-started-with-the-microsoft-advertising-sdk"></a>Microsoft 广告 SDK 入门
 
-
-
-
-本主题提供所需信息以开始使用 Microsoft Advertising 库向你的应用添加横幅和间隙广告。 在你已阅读此部分中的主题后，请转到[开发人员演练](developer-walkthroughs.md)以查看有关如何在你的应用中编写用于显示广告的代码的示例。
+本主题提供你开始使用 Microsoft 广告 SDK 向你的应用添加广告所需要的信息。 在你已阅读此部分中的主题后，请转到[开发人员演练](developer-walkthroughs.md)以查看有关如何在你的应用中编写用于显示广告的代码的示例。
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
- 
 
 ## <a name="in-this-section"></a>本部分内容
 
 | 主题                                                                                                       | 描述                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [安装 Microsoft Advertising 库](install-the-microsoft-advertising-libraries.md) |  提供安装详细信息，并当 Microsoft Advertising 库和广告中介库显示在 Visual Studio 中的**引用管理器**对话框中时，列出它们的名称。  |
-| [用于创建带广告的应用的工作流](workflows-for-creating-apps-with-ads.md)     |  提供介绍开发和发布带广告的应用过程的高级步骤。   |
-| [将应用更新到最新的 Microsoft Advertising 库](update-your-app-to-the-latest-advertising-libraries.md)  | 如果你有使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告的现有应用，请按照本文中的说明确定是否需要更新应用来使用最新广告 SDK，才能使应用继续接收横幅广告。  |
-| [针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)  | 提供了在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的相关指南。 使用 **AdMediatorControl** 类的广告中介不再支持使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP 应用。   |
-| [发行说明](release-notes-for-the-advertising-libraries.md)         |  提供了 Microsoft Store Services SDK（适用于 UWP 应用）以及适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK（适用于 Windows8.1 和 Windows Phone 8.x 应用）中当前版本的 Microsoft Advertising 库的发行说明。   |
-| [已知问题](known-issues-for-the-advertising-libraries.md)      |  列出了 Microsoft Store Services SDK（适用于 UWP 应用）以及适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK（适用于 Windows8.1 和 Windows Phone 8.x 应用）中当前版本的 Microsoft Advertising 库的已知问题。   |
-| [其他帮助](additional-help.md)                                    |   提供关于开发带广告的应用的更多资源的链接。  |
-
-
- 
-
- 
+| [安装 Microsoft 广告 SDK](install-the-microsoft-advertising-libraries.md) |  提供 Microsoft 广告 SDK 的安装详细信息。  |
+| [将应用更新到最新的 Microsoft Advertising 库](update-your-app-to-the-latest-advertising-libraries.md)  | 如果你有使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告的现有应用，请按照本文中的说明确定是否需要更新应用来使用最新 SDK，才能使应用继续接收横幅广告。  |
+| [发行说明](release-notes-for-the-advertising-libraries.md)         |  提供当前版本的 Microsoft 广告 SDK 的发行说明。   |
+| [已知问题](known-issues-for-the-advertising-libraries.md)      |  列出当前版本的 Microsoft 广告 SDK 的已知问题。   |

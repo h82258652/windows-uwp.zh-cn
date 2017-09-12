@@ -6,20 +6,23 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4a9a1b18984ed418fc31061ff2ee392230117609
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3c819f5ae605b5bc6955185c1899a6ceee2f74ef
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>适用于 UWP 应用的磁贴、锁屏提醒和通知
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
 了解如何使用磁贴、锁屏提醒、Toast 和通知提供应用入口点并使用户了解最新信息。
+
+> **重要 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
 磁贴是应用在“开始”菜单上的表示形式。 每个 UWP 应用都有一个磁贴。 你可以启用不同的磁贴大小（小、中等、宽形和大）。</p>
@@ -32,98 +35,27 @@ translationtype: HT
 <p><em>推送通知</em>或<em>原始通知</em>是从 Windows 推送通知服务 (WNS) 或后台任务发送到应用的通知。 应用可以通过通知用户发生了某些趣事（借助锁屏提醒更新、磁贴更新或 Toast）来响应这些通知，也可以以你选择的任意方式响应。</p>
 
  
-## <a name="tiles"></a>磁贴 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">主题</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[创建磁贴](tiles-and-notifications-creating-tiles.md)</p></td>
-<td align="left"><p>为你的应用自定义默认磁贴，并提供适用于不同屏幕大小的资源。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
-<td align="left"><p>自适应磁贴模板是 Windows 10 中的一项新功能，允许你使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文介绍了如何为通用 Windows 平台 (UWP) 应用创建自适应动态磁贴。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
-<td align="left"><p>以下是用于创建自适应磁贴的元素和属性。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[特殊磁贴模板](tiles-and-notifications-special-tile-templates-catalog.md)</p></td>
-<td align="left"><p>特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[应用图标资源](tiles-and-notifications-app-assets.md)</p></td>
-<td align="left"><p>应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。</p></td>
-</tr>
-</tbody>
-</table>
+## <a name="tiles"></a>磁贴
+| 文章 | 描述 |
+| --- | --- |
+| [创建磁贴](tiles-and-notifications-creating-tiles.md) | 为你的应用自定义默认磁贴，并提供适用于不同屏幕大小的资源。 |
+| [应用图标资源](tiles-and-notifications-app-assets.md) | 应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。 |
+| [主要磁贴 API 的](tiles-and-notifications-primary-tile-apis.md) | 请求固定你的应用的主磁贴，并检查主磁贴当前是否已固定。 |
+| [磁贴内容](tiles-and-notifications-create-adaptive-tiles.md) | 磁贴通知内容使用 Windows 10 中的自适应新功能来指定，让你可以使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文介绍了如何为通用 Windows 平台 (UWP) 应用创建自适应动态磁贴。 |
+| [磁贴内容架构](tiles-and-notifications-adaptive-tiles-schema.md) | 以下是用于创建自适应磁贴的元素和属性。 |
+| [特殊磁贴模板](tiles-and-notifications-special-tile-templates-catalog.md) | 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 |
+| [发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md) | 了解如何发送本地磁贴通知，同时将丰富的动态内容添加到你的动态磁贴。 |
+
 
 ## <a name="notifications"></a>通知
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">主题</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)</p></td>
-<td align="left"><p>自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[通知可视化工具](tiles-and-notifications-notifications-visualizer.md)</p></td>
-<td align="left"><p>通知可视化工具是[应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[选择通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</p></td>
-<td align="left"><p>本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)</p></td>
-<td align="left"><p>本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[定期通知概述](tiles-and-notifications-periodic-notification-overview.md)</p></td>
-<td align="left"><p>定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</p></td>
-<td align="left"><p>Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[由推送通知向导生成的代码](tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.md)</p></td>
-<td align="left"><p>通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的某种移动服务生成推送通知。 Visual Studio 向导生成代码，以帮助你开始操作。 本主题说明向导如何修改你的项目、生成的代码有何作用、如何使用此代码，以及为了发挥推送通知的最大作用，你接下来可以如何操作。 请参阅 [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[原始通知概述](tiles-and-notifications-raw-notification-overview.md)</p></td>
-<td align="left"><p>原始通知是简短的一般用途的推送通知。 它们完全是说明性的，并且不包含 UI 组件。 与其他推送通知一样，WNS 功能将原始通知从云服务传递到应用。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+| 文章 | 描述 |
+| --- | --- |
+| [Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md) | 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。 |
+| [发送本地 toast 通知](tiles-and-notifications-send-local-toast.md) | 了解如何发送交互式的 toast 通知。 |
+| [通知可视化工具](tiles-and-notifications-notifications-visualizer.md) | 通知可视化工具是[应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。 |
+| [选择通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md) | 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。 |
+| [定期通知概述](tiles-and-notifications-periodic-notification-overview.md) | 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。 |
+| [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md) | Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。 |
+| [由推送通知向导生成的代码](tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.md) | 通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的某种移动服务生成推送通知。 Visual Studio 向导生成代码，以帮助你开始操作。 本主题说明向导如何修改你的项目、生成的代码有何作用、如何使用此代码，以及为了发挥推送通知的最大作用，你接下来可以如何操作。 请参阅 [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)。 |
+| [原始通知概述](tiles-and-notifications-raw-notification-overview.md) | 原始通知是简短的一般用途的推送通知。 它们完全是说明性的，并且不包含 UI 组件。 与其他推送通知一样，WNS 功能将原始通知从云服务传递到应用。 |

@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 9f4ebe843b30d5bc408a705cfc9dda5d6731d4d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a3e224fc51245a5f91c29da2d745a3740029cda9
+ms.sourcegitcommit: 11664964e548a2af30d6e176c515cdbf330934ac
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/28/2017
 ---
 # <a name="put-ui-strings-into-resources"></a>将 UI 字符串放入资源
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -65,10 +67,10 @@ translationtype: HT
 
 对于资源名称，提供 **Uid** 属性值，再指定哪个属性将获得翻译的字符串（在本例中为 Text 属性）。 你可以为不同的语言指定其他属性/值，如 Greeting.Width，但对于此类与布局相关的属性要谨慎处理。 你应该尽力允许控件基于设备的屏幕动态布局。
 
-请注意，附加属性在 resw 文件中的处理方式会有所不同（如 AutomationPeer.Name）。 你需要明确写出命名空间，如下所示：
+请注意，附加属性在 resw 文件中的处理方式会有所不同（如 AutomationProperties.Name）。 你需要明确写出命名空间，如下所示：
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## <a name="add-string-resource-identifiers-to-code-and-markup"></a>向代码和标记中添加资源标识符。
@@ -101,7 +103,9 @@ auto str = loader->GetString("Farewell");
 
 3.  为法语（法国）创建另一个文件夹，命名为“fr-FR”。 创建一个新的资源文件，并添加以下内容：
 
-    strings/fr-FR/Resources.resw ![add resource, french](images/addresource-fr-fr.png)
+    strings/fr-FR/Resources.resw
+    
+    ![添加资源，法语](images/addresource-fr-fr.png)
 
 ## <a name="build-and-run-the-app"></a>构建并运行应用。
 

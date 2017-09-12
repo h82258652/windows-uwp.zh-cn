@@ -4,38 +4,35 @@ ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "使用 C++ 创建“Hello World”应用 (Windows 10)"
 description: "借助 Microsoft Visual Studio 2015，可以使用 C++ 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 34a1d665bc98a5224ef7707994138ba40d70763b
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows 10，uwp"
+ms.openlocfilehash: c6c351227eacf924314cfaa2157135a8a893704d
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/03/2017
 ---
+# <a name="create-a-hello-world-app-in-c"></a>用 C++ 创建“Hello world”应用
 
-# <a name="create-a-hello-world-app-in-c-windows-10"></a>使用 C++ 创建“hello world”应用 (Windows 10)
+借助 Microsoft Visual Studio 2017，可以使用 C++ 开发可在 Windows 10 上运行的应用，且这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。
 
-借助 Microsoft Visual Studio 2015，可以使用 C++ 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。
+> [!NOTE]
+> 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
 
-有关采用其他编程语言的教程，请参阅：
-
--   [使用 JavaScript 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/BR211385)
-
--   [使用 C 创建你的第一个 Windows 应用商店应用#](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
 ## <a name="before-you-start"></a>开始之前...
 
--   若要完成本教程，在运行 Windows 10 或 Windows 8.1 的计算机上，你必须使用 Visual Studio 2015 社区版或更高版本，或者任一非社区版 Visual Studio 2015。 若要进行下载，请参阅[获取工具](http://go.microsoft.com/fwlink/p/?LinkId=532666)。
--   我们假设你已基本了解 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)中的标准 C++、XAML 和概念。
+-   若要完成本教程，在运行 Windows 10 的计算机上，你必须使用 Visual Studio Community 2017 或任一非社区版 Visual Studio 2017。 若要进行下载，请参阅[获取工具](http://go.microsoft.com/fwlink/p/?LinkId=532666)。
+-   我们假设你已基本了解 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595) 中的标准 C++、XAML 和概念。
 -   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，依次选择**窗口** > **重置窗口布局**。
 
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>将 C++ 桌面应用与 Windows 应用比较
 
-如果你习惯使用 C++ 编写 Windows 桌面程序，你可能会发现 Windows 应用商店应用和 Windows Phone 应用编程的某些方面与此类似，但在其他一些方面则需要了解更多知识。
+如果你习惯使用 C++ 编写 Windows 桌面程序，你可能会发现编写适用于 UWP 的应用在某些方面与此类似，但在其他一些方面则需要了解更多知识。
 
 ### <a name="whats-the-same"></a>相同之处
 
@@ -65,11 +62,11 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="hello-world-store-app-in-c"></a>使用 C++ 的 Hello World 应用商店应用
 
-我们的第一个应用是“Hello World”，它演示了交互性、布局和样式的一些基本功能。 我们将通过 Universal Windows App 项目模板创建应用。 如果你之前开发过 Windows 8.1 和 Windows Phone 8.1 应用，你可能还记得在 Visual Studio 中你必须具有三个项目：一个用于 Windows 应用，一个用于手机应用，另一个带有共享代码。 Windows 10 通用 Windows 平台 (UAP) 使只需一个项目成为可能，该项目可在所有设备上运行，包括运行 Windows 10 的台式机和笔记本电脑、诸如平板电脑、手机等设备以及其他设备。
+我们的第一个应用是“Hello World”，它演示了交互性、布局和样式的一些基本功能。 我们将通过 Universal Windows App 项目模板创建应用。 如果你之前开发过 Windows 8.1 和 Windows Phone 8.1 应用，你可能还记得在 Visual Studio 中你必须具有三个项目：一个用于 Windows 应用，一个用于手机应用，另一个带有共享代码。 Windows 10 通用 Windows 平台 (UWP) 使只需一个项目成为可能，该项目可在所有设备上运行，包括运行 Windows 10 的台式机和笔记本电脑，以及诸如平板电脑、手机、VR 设备等。
 
 我们将从基础开始：
 
--   如何在 Visual Studio 2015 或更高版本中创建通用 Windows 项目。
+-   如何在 Visual Studio 2017 中创建通用 Windows 项目。
 
 -   如何了解创建的项目和文件。
 
@@ -79,7 +76,10 @@ ms.lasthandoff: 02/07/2017
 
 1.  在 Visual Studio 的菜单栏上，依次选择**文件** > **新建** > **项目**。
 
-2.  在**新建项目**对话框的左侧窗格中，依次展开**已安装** > **Visual C++** > **Windows** > **通用**。
+2.  在**新建项目**对话框的左侧窗格中，依次展开**已安装** > **Visual C++** > **Windows 通用**。
+
+> [!NOTE]
+> 系统将会提示你安装用于 C++ 开发的 Windows 通用工具。
 
 3.  在中心窗格中，选择**空白应用（通用 Windows）**。
 
@@ -87,17 +87,18 @@ ms.lasthandoff: 02/07/2017
 
 4.  输入项目名称。 我们将其命名为 HelloWorld。
 
- ![“新建项目”对话框中的 C++ 项目模板 ](images/vs2015-newuniversalproject-cpp.png)
+ ![“新建项目”对话框中的 C++ 项目模板 ](images/vs2017-uwp-01.png)
 
 5.  选择**确定**按钮。
 
-   如果这是你所创建的第一个 UWP 项目，并且你未在计算机上启用开发人员模式，则“启用开发人员”模式对话框将显示。 单击链接以调出设置页面，该页面可让你设置开发人员模式。 开发人员模式允许本地部署和运行应用。
+> [!NOTE]
+> 如果你是首次使用 Visual Studio，则可能会看到要求启用**开发人员模式**的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从应用商店运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择**开发人员模式**，然后单击**是**并关闭对话框。
 
    已创建项目文件。
 
 在继续之前，让我们看一下解决方案的内容。
 
-![节点折叠的通用应用解决方案](images/vs2015-solutionexploreruniversal-0-cpp.png)
+![节点折叠的通用应用解决方案](images/vs2017-uwp-02.png)
 
 ### <a name="about-the-project-files"></a>关于项目文件
 
@@ -107,7 +108,7 @@ ms.lasthandoff: 02/07/2017
 
 -   **App.xaml、App.xaml.h、App.xaml.cpp：**代表应用程序对象，这是应用的入口点。 App.xaml 不包含特定于页面的 UI 标记，但是你可以添加希望可以从任何页面访问的 UI 样式和其他元素。 代码隐藏文件包含 **OnLaunched** 和 **OnSuspending** 事件的处理程序。 通常，你在此处添加自定义代码以在应用启动时初始化应用并在它暂停或终止时执行清理。
 -   **MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：**包含应用中的默认“开始”页面的 XAML 标记和代码隐藏。 它没有导航支持或内置控件。
--   **pch.h、pch.cpp：**预编译标头文件和在你的项目中包含它的文件。 在 pch.h 中，你可以在解决方案中包含任何不经常更改且包含在其他文件中的标头。
+-   **pch.h, pch.cpp：**预编译标头文件和在你的项目中包含它的文件。 在 pch.h 中，你可以在解决方案中包含任何不经常更改且包含在其他文件中的标头。
 -   **package.appxmanifest：**描述应用所需的设备功能、应用版本信息以及其他元数据的 XML 文件。 要在**清单设计器**中打开此文件，只需双击它。
 -   **HelloWorld\_TemporaryKey.pfx：**支持在此计算机上从 Visual Studio 部署应用的密钥。
 
@@ -220,7 +221,7 @@ MainPage::MainPage()
         <TextBlock Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say \"Hello\""/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
@@ -242,42 +243,6 @@ MainPage::MainPage()
 
 在应用中，你可以在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中键入，但是单击 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 不执行任何操作。 在以后的步骤中，为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序，该事件会显示个性化问候。
 
-## <a name="start-the-app-on-a-mobile-device-emulator"></a>在移动设备仿真器上启动该应用
-
-你的应用可在任何 Windows 10 设备上运行，让我们看一下它在 Windows Phone 上的外观。 本部分需要一个运行 Windows 10 的 Windows Phone 或Windows Phone 仿真器的访问权限，并且它要求 Visual Studio 在物理计算机（不是虚拟机）上运行，并支持其启用 HyperV。
-
-除了在桌面设备上执行调试的选项，Visual Studio 还提供用于在连接到计算机的物理移动设备上或移动设备仿真器上部署和调试应用的选项。 你可以为带有不同内存和显示配置的设备在仿真器中进行选择。
-
--   **设备**
--   **仿真器 10.0.0.0 WVGA 4 英寸 512MB**
--   采用其他配置的各种仿真器
-
-（如果你没有看到这些仿真器，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
-
-最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用**仿真器 10.0.0.0 WVGA 4 英寸 512MB** 选项。
-**提示**  有关使用手机仿真器的详细信息，请参阅[在仿真器中运行 Windows Phone 应用](http://go.microsoft.com/fwlink/p/?LinkId=394233)。
-
-若要在物理设备上调试你的应用，必须具有已注册用于开发的设备。 有关详细信息，请参阅[注册你的 Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128)。
-
-**在移动设备仿真器上开始调试**
-
-1.  在**“标准”**工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取**“仿真器 10.0.0.0 WVGA 4 英寸 512MB”**。
-2.  单击工具栏中的**“开始调试”**按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
-
-   -或者-
-
-   在**调试**菜单中，单击**开始调试**。
-
-   -或者-
-
-   按 F5。
-
-在移动设备仿真器中，应用的外观如下所示。
-
-![移动设备上的初始应用屏幕](images/hw10-screen1-mob.png)
-
-Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 你会首先注意到，在本地计算机上能正常显示的 120 像素左边距，在屏幕较小的移动设备上会将内容推到屏幕之外。 在本教程的后面部分中，你将了解如何使 UI 适应不同的屏幕大小，以使应用始终保持外观良好。
-
 ## <a name="step-2-create-an-event-handler"></a>步骤 2：创建事件处理程序
 
 1.  在 MainPage.xaml 的 XAML 或设计视图中，在之前添加的 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 中选择“Say Hello”[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。
@@ -291,7 +256,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
    同时，在 MainPage.xaml 中，更新 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的 XAML 以声明 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件处理程序，如下所示：
 
     ```xaml
-    <Button Content="Say \"Hello\" Click="Button_Click"/>
+    <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
     ```
 
     你可以只是手动将其添加到 xaml 代码，如果设计器未加载这可能会很有用。 如果你手动输入此信息，请键入“Click”，然后让 IntelliSense 弹出用于添加新事件处理程序的选项。 这样，Visual Studio 将创建必要的方法声明和存根。
@@ -323,7 +288,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 2.  在开始标记 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) 中，编辑 [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) 属性并将其值设置为 **Dark**：
 
     ```xaml
-    RequestedTheme="Light"
+    RequestedTheme="Dark"
     ```
 
     以下是带有深色主题的完整 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) 标记：
@@ -365,7 +330,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
      在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 XAML 会进行更新：
 
     ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
+    <TextBlock Text="What's your name?" Style="{StaticResource BaseTextStyle}"/>
     ```
 
 7.  重复该过程可设置字体大小并将 **BaseTextBlockStyle** 分配到 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 元素。
@@ -376,12 +341,12 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
     ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say \"Hello\"" Click="Button_Click"/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
         </StackPanel>
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
     </StackPanel>
     ```
 
@@ -443,5 +408,4 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 如果你具有一个面向 Windows 8.1 和/或 Windows Phone 8.1 的通用 Windows 应用项目，可以将它移植到 Windows 10 中。 虽然没有针对移植的自动操作过程，但你可以手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)。
 
 如果你有要与 UWP 应用集成的现有 C++ 代码，例如用于为现有应用程序创建新的 UWP UI，请参阅[操作方法：在通用 Windows 项目中使用现有 C++ 代码](http://go.microsoft.com/fwlink/p/?LinkId=619623)。
-
 

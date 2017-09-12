@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: "使用陀螺测试仪"
 description: "了解如何使用陀螺测试仪检测用户移动变化。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 6f50ad39420f3154c437a58d19971ed01e638528
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b4dc5be2c6e9cd2dfb0b1f8d6f83250430d2c8b
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺测试仪
 
@@ -22,7 +24,11 @@ translationtype: HT
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**陀螺测试仪**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
-\[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+**示例**
+
+-   有关更完整的实现，请参阅[陀螺测试仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
+
+\[在商业发行之前可能会实质性修改与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 了解如何使用陀螺测试仪检测用户移动变化。
 

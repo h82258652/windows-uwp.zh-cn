@@ -6,34 +6,37 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
-ms.date: 02/08/2017
+ms.author: mijacobs
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 629e6b4bc2b192f5e81bf49e2cc4c18fbd9a0d54
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="show-multiple-views-for-an-app"></a>显示应用的多个视图
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-通过让用户在单独窗口中查看应用的多个独立部分，你可以帮助他们提高效率。 一个典型示例就是电子邮件应用，其中主 UI 显示电子邮件列表以及所选电子邮件的预览。 但是，用户还可以在单独窗口中打开消息，并排查看它们。
+通过让用户在单独窗口中查看应用的独立部分，可帮助他们提高效率。 如果你为应用创建多个窗口，每个窗口都独立运作。 任务栏会分别显示每个窗口。 用户可以独立地移动、调整大小、显示和隐藏应用窗口，并且可以在应用窗口间切换，就像它们是单独的应用一样。 每个窗口都在它自己的线程中运行。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)</li>
-<li>[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)</li>
-</ul>
-</div> 
+![使用多个窗口显示应用的线框](images/multi-view.png)
 
-如果你为应用创建多个窗口，每个窗口都独立运作。 任务栏会分别显示每个窗口。 用户可以独立地移动、调整大小、显示和隐藏应用窗口，并且可以在应用窗口间切换，就像它们是单独的应用一样。 每个窗口都在它自己的线程中运行。
+> **重要的 API**：[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)、[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+
+## <a name="when-should-an-app-use-multiple-views"></a>应用应在何时使用多个视图？
+有多种情况可从多个视图中获益。 以下是几个示例：
+ - 电子邮件应用，可让用户在撰写新电子邮件的同时查看收到邮件的列表
+ - 地址簿应用，可让用户并排比较多名人员的联系信息
+ - 音乐播放器应用，可让用户在查看播放内容的同时浏览其他可收听音乐的列表
+ - 记笔记应用，可让用户将信息从笔记的一页复制到另一页
+ - 阅读应用，可让用户在错过细读所有高水平的头条新闻后，打开多篇文章以备以后阅读
 
 ## <a name="what-is-a-view"></a>什么是视图？
-
 
 应用视图是指将线程与应用用来显示内容的窗口进行 1:1 配对。 它由 [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 对象表示。
 
@@ -45,8 +48,9 @@ translationtype: HT
 
 ## <a name="show-a-new-view"></a>显示新视图
 
+虽然每个应用布局都是唯一的，但我们建议在可预测位置加入“新窗口”按钮，如你可以在新窗口中打开的内容右上角。 此外请考虑加入“在新窗口中打开”的上下文菜单选项。
 
-在继续进行操作之前，让我们看看创建新视图的步骤。 在此处，启动新视图以响应按钮单击。
+让我们了解一下创建新视图的步骤。 在此处，启动新视图以响应按钮单击。
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -131,7 +135,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="switch-from-one-view-to-another"></a>从一个视图切换到另一个视图
 
-必须为用户提供一种途径来从辅助窗口导航回主窗口。 要执行此操作，请使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 从要从中切换的窗口的线程调用此方法，并传递要切换到的窗口的视图 ID。
+考虑为用户提供一种途径来从辅助窗口导航回父窗口。 要执行此操作，请使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 从要从中切换的窗口的线程调用此方法，并传递要切换到的窗口的视图 ID。
 
 ```csharp
 await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
@@ -139,10 +143,16 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 当你使用 [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 时，你可以选择是否想要关闭初始窗口，并通过指定 [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105) 的值将它从任务栏中删除。
 
- 
+## <a name="dos-and-donts"></a>应做事项和禁止事项
+
+* 务必利用“打开新窗口”字形为辅助视图提供清晰的入口点。
+* 务必向用户传达辅助视图的用途。
+* 务必确保应用可以在单个视图中充分发挥功能，用户打开辅助视图只是为了方便。
+* 不依靠辅助视图提供通知或其他暂时的显示内容。
+
+## <a name="related-topics"></a>相关主题
+
+* [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
+* [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
  
-
-
-
-

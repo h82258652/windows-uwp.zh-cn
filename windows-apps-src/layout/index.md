@@ -6,20 +6,21 @@ keywords: "uwp 应用布局, 通用 windows 平台, 应用设计, 界面"
 label: Layout
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
-ms.openlocfilehash: 1034588565032301cb0746d79a122e8388dad8f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4c1b4617b3b58cb613bcca8d5df456621af730fa
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="layout-for-uwp-apps"></a>适用于 UWP 应用的布局
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-应用结构、页面布局和导航是应用用户体验的基础。 本节中的文章将帮助你创建在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。
+应用结构、页面布局和导航是应用用户体验的基础。 本节中的文章使用 Fluent 设计系统帮助你创建在各种设备和屏幕大小上易于导航且外观精美的应用。
 
 ## <a name="intro"></a>简介
 
@@ -27,7 +28,7 @@ translationtype: HT
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
   <p><b>[应用 UI 设计简介](design-and-ui-intro.md)</b><br />
-在设计 UWP 应用时，可以创建一个适合具有不同屏幕大小的各种设备的用户界面。 本文概述 UWP 应用的 UI 相关功能和优势，以及用于设计响应式 UI 的一些提示和技巧。 </p>
+在设计 UWP 应用时，可以创建一个适合具有不同屏幕大小的各种设备的用户界面。 本文介绍 Fluent 设计系统，并概述 UWP 应用的 UI 相关功能和优势，以及用于设计响应式 UI 的一些提示和技巧。 </p>
   </div>
   <div class="side-by-side-content-right">
     ![在多台设备上运行的应用](images/rspd-reposition-type1-sm.png)
@@ -60,30 +61,31 @@ UWP 应用中的导航基于导航结构、导航元素和系统级功能的灵�
 ## <a name="page-layout"></a>页面布局 
 这些文章将帮助你创建在不同的屏幕大小、窗口大小、分辨率和方向上外观良好的灵活 UI。 
 
+<div style="column-count: 2; column-gap: 40px; margin-top: 40px;">
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b>[屏幕大小和断点](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+<p style="margin-top: 0px; padding-top: 0px;"><b>[屏幕大小和断点](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
 Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，无法针对每台设备来优化你的 UI。 我们建议应针对一些关键的宽度（也称为“断点”）进行设计：360、640、1024 和 1366 epx。</p>
-  </div>
-  <div class="side-by-side-content-right">
- <p><b>[使用 XAML 定义布局](layouts-with-xaml.md)</b> <br/>
+</div>
+
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+  <p><b>[使用 XAML 定义布局](layouts-with-xaml.md)</b> <br/>
 如何使用 XAML 属性和布局面板使你的应用成为响应式和自适应应用。</p>
-  </div>
 </div>
-</div>
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
    <p><b>[布局面板](layout-panels.md)</b> <br />
-了解每种面板的每种布局类型，并且展示如何使用这些类型设置 XAML UI 元素的布局。</p>
-  </div>
-  <div class="side-by-side-content-right">
+了解每种面板的每种布局类型，并且展示如何使用这些类型设置 XAML UI 元素的布局。</p> 
+</div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
  <p><b>[对齐、边距和填充](alignment-margin-padding.md)</b> <br />
 除了维度属性（宽度、高度和约束），元素还可以具有对齐、边距和填充属性，当元素经过布局传递并在 UI 中呈现时，这些属性可影响布局行为。</p> 
-  </div>
 </div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+ <p><b>[使用网格和 StackPanel 创建布局](grid-tutorial.md)</b> <br />
+使用 XAML 并使用网格和 StackPanel 元素创建一个简单的天气应用的布局。 </p> 
 </div>
+
+</div>
+
 
 

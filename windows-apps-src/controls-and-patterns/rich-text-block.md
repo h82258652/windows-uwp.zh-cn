@@ -6,14 +6,19 @@ ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 464a726f4429eb24ad04acae130c7fc812971b3b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: af9a6883ac20d59c319c663c1f489247e2bb6f2e
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="rich-text-block"></a>富文本块
 
@@ -21,15 +26,7 @@ translationtype: HT
 
 RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**RichTextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li>[**RichTextBlockOverflow 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)</li>
-<li>[**Paragraph 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)</li>
-<li> [**Typography 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[RichTextBlockOverflow 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)、[Paragraph 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)、[Typography 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -50,7 +47,7 @@ RichTextBlock 支持：
 
 ### <a name="paragraphs"></a>Paragraphs
 
-使用 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素定义要在 RichTextBlock 控件中显示的文本块。 每个 RichTextBlock 应至少包括一个 Paragraph。 
+使用 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素定义要在 RichTextBlock 控件中显示的文本块。 每个 RichTextBlock 应至少包括一个 Paragraph。 
 
 通过设置 [RichTextBlock.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) 属性，你可以在 RichTextBlock 中设置所有段落的缩进量。 通过将 [Paragraph.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.textindent.aspx) 属性设置为不同值，你可以在 RichTextBlock 中为特定段落重写此设置。
 
@@ -64,7 +61,7 @@ RichTextBlock 支持：
 
 ### <a name="inline-ui-elements"></a>内联 UI 元素
 
-[**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 类允许你将任何 UIElement 内联嵌入文本中。 常用方案是将 Image 内联置于文本中，但你也可以使用交互式元素，例如 Button 或 CheckBox。
+[InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 类允许你将任何 UIElement 内联嵌入文本中。 常用方案是将 Image 内联置于文本中，但你也可以使用交互式元素，例如 Button 或 CheckBox。
 
 如果你想要在相同位置嵌入多个元素内联，请考虑将面板用作单个 InlineUIContainer 子元素，然后将多个元素放入该面板中。
 
@@ -84,7 +81,7 @@ RichTextBlock 支持：
 
 ## <a name="overflow-containers"></a>溢出容器
 
-你可以将 RichTextBlock 与 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素结合使用，以创建多列或其他高级页面布局。 RichTextBlockOverflow 元素的内容始终来自 RichTextBlock 元素。 链接 RichTextBlockOverflow 元素的方法是将其设置为 RichTextBlock 的 OverflowContentTarget 或另一个 RichTextBlockOverflow。
+你可以将 RichTextBlock 与 [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素结合使用，以创建多列或其他高级页面布局。 RichTextBlockOverflow 元素的内容始终来自 RichTextBlock 元素。 链接 RichTextBlockOverflow 元素的方法是将其设置为 RichTextBlock 的 OverflowContentTarget 或另一个 RichTextBlockOverflow。
 
 以下是创建两列布局的简单示例。 查看示例部分获取更复杂的示例。
 
@@ -150,8 +147,8 @@ RichTextBlock 支持：
 - [文本输入指南](text-controls.md)
 
 **面向开发人员 (XAML)**
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 **对于开发人员（其他）**

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b35b8a9dcd6ea23b734de1041d829f620103fa6e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e05cc939d4a836e2f385a20f63d6ffb2242696db
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-file-activation"></a>处理文件激活
 
@@ -41,7 +43,7 @@ translationtype: HT
 
     以下是清单设计器中每个可以填写的字段的简短描述：
 
-| 字段 | 说明 |
+| 字段 | 描述 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **显示名称** | 为一组文件类型指定显示名称。 该显示名称用于在**控制面板**上的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中标识文件类型。 |
 | **徽标** | 指定用于标识桌面上以及**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中的文件类型的徽标。 如果不指定徽标，则使用应用程序的小徽标。 |
@@ -75,13 +77,12 @@ translationtype: HT
 
 成为文件类型默认应用的应用在整个系统中的各个位置显示其图标。 例如，这些图标显示在以下位置中：
 
--   Windows 资源管理器 ItemsView、上下文菜单以及功能区
+-   Windows 资源管理器项视图、上下文菜单以及功能区
 -   默认程序控制面板
 -   文件选取器
 -   在“开始”屏幕上搜索结果
 
-匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 有关示例图标，请参阅[关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
-![带有图像文件夹中的文件视图的解决方案资源管理器。 “icon.targetsize”和“smalltile-sdk”都有 16、32、48 和 256 像素版本](images/seviewofimages.png)
+在项目中包含一个 44x44 的图标，以便你的徽标可以显示在这些位置。 匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 有关图标的更多详细信息，请参阅[磁贴和图标资源指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)。
 
 ## <a name="step-3-handle-the-activated-event"></a>步骤 3：处理激活的事件
 

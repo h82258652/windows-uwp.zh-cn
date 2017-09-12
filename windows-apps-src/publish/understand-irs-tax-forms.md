@@ -3,15 +3,17 @@ author: jnHs
 Description: "了解 Microsoft 发出的税单，包括谁将收到它们，以及何时提供。"
 title: "了解 Microsoft 发出的 IRS 税单"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: 068a940a54048b10e8f66bd3267b3a22c42beb50
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -26,7 +28,8 @@ translationtype: HT
 |1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印的表单将在 **1 月 31 日**或之前加盖邮戳，并且将同时在开发人员中心（**仪表板 > 帐户设置 > 税务资料**）中提供 .pdf 副本 |
 |1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印的表单将在 **3 月 15 日**或之前加盖邮戳，并且将同时在开发人员中心（**仪表板 > 帐户设置 > 税务资料**）中提供 .pdf 副本 |
 
-> **注意**IRS 税单上列出的地址来自于 [税务资料](setting-up-your-payout-account-and-tax-forms.md#tax-forms) 中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
+> [!NOTE]
+> IRS 税单上列出的地址来自于[税务资料](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
 
 ## <a name="for-developers-located-in-the-united-states"></a>针对位于美国的开发人员
 
@@ -68,7 +71,7 @@ EIN：\*\*\*\*\*4442<br>
      <th> 我应该收到此表单</th>
   </tr>
   <tr> 
-     <td valign="top">在适用的纳税年度中，我从应用中广告 (Microsoft Advertising) 收到的付款金额**至少为 600 美元**</td>
+     <td valign="top">在适用的纳税年度中，我从应用内广告收到的付款金额**至少为 600 美元**</td>
     <td valign="top">**1099-MISC**：<br>
 付款方：Microsoft Online Inc<br>
 EIN：\*\*\*\*\*0505<br>
@@ -76,7 +79,7 @@ EIN：\*\*\*\*\*0505<br>
 **重要提示：**某些业务实体将不会收到 1099-MISC 表单，无论其从 Microsoft 收到的付款金额是多少。  有关详细信息，请咨询税务专业人士。  </td>
   </tr>
   <tr> 
-     <td valign="top">在适用的纳税年度中，我从应用中广告 (Microsoft Advertising) 收到的付款金额**不足 600 美元**</td>
+     <td valign="top">在适用的纳税年度中，我从应用内广告收到的付款金额**不足 600 美元**</td>
      <td valign="top">无</td>
   </tr>
 </table>
@@ -123,4 +126,5 @@ EIN：\*\*\*\*\*0505<br>
 </table>
 
 
-> **注意**如果你有与 **IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](http://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。
+> [!NOTE]
+> 如果你有与**IRS 税单**相关的其他问题或疑虑，请创建一个[支持票证](http://aka.ms/storesupport)。 Microsoft 无法回答与你的具体税务情况相关的问题；对于这些问题，请向税务专业人士寻求建议。

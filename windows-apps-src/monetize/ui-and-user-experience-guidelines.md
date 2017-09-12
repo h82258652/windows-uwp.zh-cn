@@ -9,15 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 广告, 指南, 最佳做法"
-ms.openlocfilehash: 75a68977e5edb996a5e2fc1ae9265d11b7492ad9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8dc9c00bdeb47b5f07af0b9b27ef843e2afd4456
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
 本文将简要介绍如何使用应用中的横幅广告和间隙广告提供出色的体验。 有关如何设计应用外观的通用指南，请参阅 [设计和 UI](https://developer.microsoft.com/windows/apps/design)。
 
->**重要**&nbsp;&nbsp;对应用内广告的任何使用均必须符合 Windows 应用商店策略，包括但不限于[策略 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10)（广告行为和内容）。 特别是，应用的横幅广告或间隙广告实现必须满足 Windows 应用商店策略 [策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的要求。 本文将举例说明违反此策略的一些实现。 这些示例仅供参考，以此方式帮助你更好地理解策略。 这些示例并不全面，可能有许多其他违反 Windows 应用商店策略的方式未在本文列出。
+> [!IMPORTANT]
+> 对应用内广告的任何使用均必须符合 Windows 应用商店策略，包括但不限于策略 [10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10)（广告行为和内容）。 特别是，应用的横幅广告或间隙广告实现必须满足 Windows 应用商店策略 [策略 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的要求。 本文将举例说明违反此策略的一些实现。 这些示例仅供参考，以此方式帮助你更好地理解策略。 这些示例并不全面，可能有许多其他违反 Windows 应用商店策略的方式未在本文列出。
 
 ## <a name="guidelines-for-banner-ads"></a>横幅广告指南
 

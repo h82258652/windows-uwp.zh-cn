@@ -4,19 +4,20 @@ Description: "当你完成应用提交的创建并单击“提交到应用商店
 title: "应用认证过程"
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 87fc6e35a2a9818478aca4119850ae20165d2a64
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f075dc6e112a526d7aee71f0f9aa7d4da570d649
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
-
-当你完成应用提交的创建并单击“提交到应用商店”****时，它将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 在你的提交通过认证后，客户最多可能需要 16 个小时即可在应用商店中看到该应用一览（或你对之前已发布应用的更新）。 在你的提交发布并向客户提供后，你会看到一条通知，并且仪表板中该应用的状态将为“已在应用商店”****。
+当你完成应用提交的创建并单击“提交到应用商店”****时，它将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 在你的提交通过认证后，客户最多可能需要 24 个小时即可在应用商店中看到该应用一览（或你对之前已发布应用的更新）。 在你的提交发布并向客户提供后，你会看到一条通知，并且仪表板中该应用的状态将为“已在应用商店”****。
 
 ## <a name="preprocessing"></a>预处理
 
@@ -40,11 +41,11 @@ translationtype: HT
 
 你的应用包已经过数字签名，目的是防止它们在发布后遭到篡改。 一旦开始执行此阶段，你将再也无法取消提交或更改其发布日期。
 
-当你的应用处于发布阶段时，应用提交的“状态”列中的**“显示详细信息”**链接将通知你新的程序包和应用商店一览详细信息何时可以提供给每个使用受支持操作系统版本的客户。 你的应用将继续处于发布阶段，直到新的程序包和一览详细信息提供给应用的所有潜在客户为止，这最多可能需要 16 个小时。 
+当你的应用处于发布阶段时，应用提交的“状态”列中的**“显示详细信息”**链接将通知你新的程序包和应用商店一览详细信息何时可以提供给每个使用受支持操作系统版本的客户。 你的应用将继续处于发布阶段，直到新的程序包和一览详细信息提供给应用的所有潜在客户为止，这最多可能需要 24 个小时。 
 
 ## <a name="in-the-store"></a>已在应用商店 
 
-在成功完成上述步骤后，提交的状态将从“正在发布”****更改为“已在应用商店”****。 你的提交将在 Windows 应用商店中提供给客户进行下载（除非你选择了另外的[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)选项）。 
+在成功完成上述步骤后，提交的状态将从“正在发布”****更改为“已在应用商店”****。 你的提交将在 Windows 应用商店中提供给客户以供其下载（除非你选择了另外的[可见性](set-app-pricing-and-availability.md#visibility)选项）。 
 
 **注意**  我们还会在应用发布后对应用进行抽查，以便可以找出潜在问题并确保你的应用符合所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我们发现任何问题，将通知你该问题及其解决方法（如果适用）或是否已从应用商店中删除。
 

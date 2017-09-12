@@ -6,14 +6,16 @@ ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e0fccee6ede019b6bb8d8792956d2dca791bf63b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8907b57bce9c39c1c508b97536485a08e8e1bf83
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="tiles-for-uwp-apps"></a>适用于 UWP 应用的磁贴
 
@@ -26,6 +28,8 @@ translationtype: HT
 
 当在 Visual Studio 中创建新项目时，它将创建显示应用名称和徽标的简单默认磁贴。
 
+若要编辑磁贴，请双击主 UWP 项目中的 **Package.appxmanifest** 文件以打开设计器（或者右键单击该文件，然后选择“查看代码”）。
+
 ```XML
   <Applications>
     <Application Id="App"
@@ -33,8 +37,8 @@ translationtype: HT
       EntryPoint="ExampleApp.App">
       <uap:VisualElements
         DisplayName="ExampleApp"
-        Square150x150Logo="Assets\Logo.png"
-        Square44x44Logo="Assets\SmallLogo.png"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ExampleApp"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -49,15 +53,15 @@ translationtype: HT
 -   ShortName：由于磁贴上容纳显示名称的空间有限，我们也建议指定 ShortName，以确保应用名称不会被截断。
 -   徽标图像：
 
-    应用自己的图像替换这些图像。 可选择为不同的缩放提供图像，但无需为所有缩放提供。 若要确保应用在一系列设备上具有良好的外观，我们建议提供每个图像的 100%、200% 和 400% 缩放版本。
+    应用自己的图像替换这些图像。 可选择为不同的缩放提供图像，但无需为所有缩放提供。 若要确保应用在一系列设备上具有良好的外观，我们建议提供每个图像的 100%、200% 和 400% 缩放版本。 请参阅[磁贴和图标资源](tiles-and-notifications-app-assets.md)了解有关生成这些资源的详细信息。
 
-    缩放的图像应遵循此命名约定：测试
+    缩放的图像应遵循此命名约定：
     
     *&lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;* 
 
-    例如：SmallLogo.scale-100.png
+    例如：SplashScreen.scale-100.png
 
-    在引用图像时，将其引用为 *&lt;image name&gt;*.*&lt;image file extension&gt;*（在此示例中是“SmallLogo.png”）。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
+    在引用图像时，将其引用为 *&lt;image name&gt;*.*&lt;image file extension&gt;*（在此示例中是“SplashScreen.png”）。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
 
 -   虽然不是必须的，但我们强烈建议你提供适用于宽磁贴和大磁贴的徽标，以便用户可以将应用磁贴大小调整到这些大小。 若要提供这些附加图像，可创建 `DefaultTile` 元素并使用 `Wide310x150Logo` 和 `Square310x310Logo` 属性指定附加图像：
 ```    XML
@@ -67,13 +71,13 @@ translationtype: HT
           EntryPoint="ExampleApp.App">
           <uap:VisualElements
             DisplayName="ExampleApp"
-            Square150x150Logo="Assets\Logo.png"
-            Square44x44Logo="Assets\SmallLogo.png"
+            Square150x150Logo="Assets\Square150x150Logo.png"
+            Square44x44Logo="Assets\Square44x44Logo.png"
             Description="ExampleApp"
             BackgroundColor="#464646">
             <uap:DefaultTile
-              Wide310x150Logo="Assets\WideLogo.png"
-              Square310x310Logo="Assets\LargeLogo.png">
+              Wide310x150Logo="Assets\Wide310x150Logo.png"
+              Square310x310Logo="Assets\Square310x310Logo.png">
             </uap:DefaultTile>
             <uap:SplashScreen Image="Assets\SplashScreen.png" />
           </uap:VisualElements>
@@ -84,25 +88,6 @@ translationtype: HT
 ## <a name="use-notifications-to-customize-your-tile"></a>使用通知自定义磁贴
 
 
-应用安装后，可使用通知自定义磁贴。 可在首次启动应用或响应某个事件（如推送通知）时执行此操作。
+应用安装后，可使用通知自定义磁贴。 可在首次启动应用或响应事件（如推送通知）时执行此操作。
 
-1.  创建描述磁贴的 XML 负载（以 [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) 的形式）。
-
-    -   Windows 10 引入了可供你使用的新自适应磁贴架构。 有关说明，请参阅[自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)。 有关架构信息，请参阅[自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)。 
-
-    -   可使用 Windows 8.1 磁贴模板定义磁贴。 有关详细信息，请参阅[创建磁贴和锁屏提醒 (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)。
-
-2.  创建磁贴通知对象并将其传递到所创建的 [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)。 通知对象分为以下几类：
-    -   可立即更新磁贴的 [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) 对象。
-    -   在未来某个时间更新磁贴的 [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) 对象。
-
-3.  使用 [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) 创建 [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) 对象。
-4.  调用 [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) 方法，并将其传递到在步骤 2 中创建的磁贴通知对象。
-
- 
-
- 
-
-
-
-
+若要了解如何发送磁贴通知，请参阅[发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)。

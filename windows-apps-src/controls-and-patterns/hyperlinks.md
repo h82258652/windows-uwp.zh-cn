@@ -6,14 +6,20 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 5079d1782188b6d2e49fc14741a23a5651995c67
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="hyperlinks"></a>超链接
 
@@ -21,15 +27,9 @@ translationtype: HT
 
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-![“超链接”按钮](images/controls/hyperlink-button.png)
+> **重要 API**：[Hyperlink 文本元素](https://msdn.microsoft.com/library/windows/apps/dn279356)，[HyperlinkButton 控件](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**Hyperlink 文本元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**HyperlinkButton 控件**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![“超链接”按钮](images/controls/hyperlink-button.png)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -41,12 +41,6 @@ translationtype: HT
 -   在文本控件内使用内联 **Hyperlink** 文本元素。 Hyperlink 元素随其他文本元素流动，你可以在任何 InlineCollection 中使用它。 如果你希望自动文本换行但不一定需要较大的命中目标，请使用文本超链接。 超链接文本可能较小且难以命中，对于触摸尤其如此。
 -   将 **HyperlinkButton** 用于独立超链接。 HyperlinkButton 是一种专用按钮控件，可在需要使用按钮的任何位置使用。
 -   使用带有[图像](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx)的 **HyperlinkButton** 作为其内容，以创建可单击的图像。
-
-## <a name="examples"></a>示例
-
-计算器应用中的超链接。
-
-![计算器应用中的超链接示例](images/control-examples/hyperlinks-calculator.png)
 
 ## <a name="create-a-hyperlink-text-element"></a>创建 Hyperlink 文本元素
 
@@ -150,7 +144,7 @@ translationtype: HT
 ## <a name="recommendations"></a>建议
 
 -   仅使用超链接进行导航；不要使用它们进行其他操作。
--   将字形渐变中的正文样式用于基于文本的超链接。 阅读有关[**fonts and the Windows 10 type ramp**](fonts.md)的内容。
+-   将字形渐变中的正文样式用于基于文本的超链接。 阅读有关[fonts and the Windows 10 type ramp](fonts.md)的内容。
 -   使离散型超链接具有足够的间隔，以便用户可以区分它们，并且可以轻松地选择每个超链接。
 -   将工具提示添加到可指示用户将被定向到的位置的超链接中。 如果用户将被定向到外部站点，则将顶级域名包含在工具提示中，并将文本样式设置为辅助字体颜色。
 
@@ -160,5 +154,5 @@ translationtype: HT
 - [工具提示指南](tooltips.md)
 
 **对于开发人员 (XAML)**
-- [**Windows.UI.Xaml.Documents.Hyperlink 类**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Windows.UI.Xaml.Controls.HyperlinkButton 类**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Documents.Hyperlink 类](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Windows.UI.Xaml.Controls.HyperlinkButton 类](https://msdn.microsoft.com/library/windows/apps/br242739)

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0a7a51cdd330bc361b7d0cec3a002c5b1aee9de4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 83551438a629e39407c24cfd98d4a761ba3c039b
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延长显示初始屏幕的时间
 
@@ -40,7 +42,7 @@ translationtype: HT
 
 使用以下步骤创建一个延长的初始屏幕，该屏幕可有效地模仿默认初始屏幕。
 
-## <a name="add-a-blank-page-item-to-your-existing-app"></a>将“空白页”****项目添加到你的现有应用
+## <a name="add-a-blank-page-item-to-your-existing-app"></a>将**空白页**项目添加到你的现有应用
 
 
 本主题假设你希望将延长的初始屏幕添加到使用 C#、Visual Basic 或 C++ 的现有通用 Windows 平台 (UWP) 应用。
@@ -189,14 +191,14 @@ translationtype: HT
     完成应用设置后，导航离开你的延长的初始屏幕。 以下代码定义了一个称为 `DismissExtendedSplash` 的方法，可用于导航至应用的 MainPage.xaml 文件中定义的 `MainPage`。
 
     ```cs
-    void DismissExtendedSplash()
-    {
-        // Navigate to mainpage
-        rootFrame.Navigate(typeof(MainPage));
-        // Place the frame in the current Window
-        Window.Current.Content = rootFrame;
-    }
-    ```
+    async void DismissExtendedSplash()
+      {
+         await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,() =>            {
+              rootFrame = new Frame();
+              rootFrame.Content = new MainPage(); Window.Current.Content = rootFrame;
+            });
+      }
+      ```
 
 7.  **在该类内，为 Window.SizeChanged 事件定义一个处理程序**
 

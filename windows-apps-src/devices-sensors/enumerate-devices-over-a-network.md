@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: "通过网络枚举设备"
 description: "除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b738ccfbb6d7d3ab3741c224092f698e4d537f6e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4f7f6d9e7e92b7b40e23e835394b372358fb41f9
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="enumerate-devices-over-a-network"></a>通过网络枚举设备
 

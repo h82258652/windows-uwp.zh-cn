@@ -6,14 +6,19 @@ ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b14c775896984095f580aed8cf41d010f408f67e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 2a3f3d6795276df6e3436c5ae6eff42551d03478
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="labels"></a>标签
 
@@ -21,20 +26,9 @@ translationtype: HT
 
 标签是一个控件或一组相关控件的名称或标题。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>Header 属性</li>
-<li>[**TextBlock 类**](https://msdn.microsoft.com/library/windows/apps/br209652)</li>
-</ul>
-</div>
+> **重要 API**：Header 属性，[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-
-在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
-
-
-## <a name="example"></a>示例
-
+在 XAML 中，许多控件都具有用于显示标签的内置 Header 属性。 对于没有 Header 属性的控件，或要为多组控件添加标签，你可以改用 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
 ![说明标准标签控件的屏幕截图](images/label-standard.png)
 
@@ -51,17 +45,15 @@ translationtype: HT
 
 ## <a name="related-topics"></a>相关主题
 * [文本控件](text-controls.md)
-
-**对于开发人员**
-* [**TextBox.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**PasswordBox.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**ToggleSwitch.Header 属性**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**DatePicker.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**TimePicker.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Slider.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**ComboBox.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**RichEditBox.Header 属性**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**TextBlock 类**](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [TextBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [PasswordBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [ToggleSwitch.Header 属性](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [DatePicker.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [TimePicker.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [Slider.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [ComboBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [RichEditBox.Header 属性](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [TextBlock 类](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 

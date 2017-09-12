@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: "异步编程"
 description: "本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\\+\\+ 组件扩展 (C\\+\\+/CX) 和 JavaScript 中的表示形式。"
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 异步"
-ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 042ebc335d0e0a401b3aeb761daed1ba00a43f59
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="asynchronous-programming"></a>异步编程
 

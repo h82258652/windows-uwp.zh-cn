@@ -6,14 +6,20 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7e00ac2aa08033292ba8d3ce1cebe836fdc3808c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 13ca87313835541abffe6190d8a3bc07e67b40f8
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="check-boxes"></a>复选框
 
@@ -21,27 +27,20 @@ translationtype: HT
 
 复选框用于选择或取消选择操作项目。 它可用于单个项目或用户可以选择的多个项目列表。 该控件具有三个选择状态：未选中、已选中和不确定。 在子选择集具有未选中和已选中两种状态时，使用不确定状态。
 
-![复选框状态示例](images/templates-checkbox-states-default.png)
+> **重要 API**：[CheckBox 类](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**CheckBox 类**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
+![复选框状态示例](images/templates-checkbox-states-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-将“单个复选框”****用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
+将**单个复选框**用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
 
 ![为单个选项使用的单个复选框](images/checkbox1.png)
 
-对于二元选项，在“复选框”****和[“切换开关”****](toggles.md)之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
+对于二元选项，**复选框**和[切换开关](toggles.md)之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
 
-使用多选方案的“多个复选框”****，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
+使用多选方案的**多个复选框**，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
 
 当用户需要选择任何选项组合时创建一组复选框。
 
@@ -51,21 +50,12 @@ translationtype: HT
 
 ![用于显示混合选项的复选框](images/checkbox3.png)
 
-“复选框”****和“单选按钮”****控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
+**复选框**和**单选按钮**控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
 
-## <a name="examples"></a>示例
-
-Microsoft Edge 浏览器对话框中的复选框。
-
-![Microsoft Edge 浏览器对话框中的复选框](images/control-examples/check-box-edge.png)
-
-Windows 闹钟和时钟应用中的复选框。
-
-![Windows 闹钟和时钟应用中的复选框](images/control-examples/check-box-alarm.png)
 
 ## <a name="create-a-checkbox"></a>创建复选框
 
-若要为复选框分配标签，请设置 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 属性。 标签显示在复选框旁边。
+若要为复选框分配标签，请设置 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 属性。 标签显示在复选框旁边。
 
 此 XAML 创建用于在提交表格前同意服务条款的单个复选框。 
 
@@ -83,9 +73,9 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>绑定到 IsChecked
 
-使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。 但是，由于 IsChecked 是一个[可空](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)布尔值，所以必须使用值转换器才能将它绑定到某个布尔值。
+使用 [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。 但是，由于 IsChecked 是一个[可空](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)布尔值，所以必须使用值转换器才能将它绑定到某个布尔值。
 
-在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
+在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
 > 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。
 
@@ -128,7 +118,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>处理 Click 和 Checked 事件
 
-若要在复选框状态更改时执行某项操作，可以处理 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件或 [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
+若要在复选框状态更改时执行某项操作，可以处理 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件或 [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
 
 每当选中的状态更改时都会发生 **Click** 事件。 如果你处理 Click 事件，请使用 **IsChecked** 属性确定复选框状态。
 
@@ -189,7 +179,7 @@ CheckBox 控件继承自 [ToggleButton](https://msdn.microsoft.com/library/windo
 取消选中 | IsChecked | **false** 
 不确定 | IsChecked | **null** 
 
-对于报告不确定状态的复选框，必须将 [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) 属性设置为 **true**。 
+对于报告不确定状态的复选框，必须将 [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) 属性设置为 **true**。 
 
 当选项可以分组时，你可以使用不确定复选框来表示整个分组。 当用户选择分组的一些（而非所有）子项时，请使用复选框的不确定状态。
 
@@ -299,7 +289,7 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相关文章
 
--   [**CheckBox 类**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [CheckBox 类](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [单选按钮](radio-button.md)
 -   [切换开关](toggles.md)
 

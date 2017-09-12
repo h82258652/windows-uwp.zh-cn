@@ -6,14 +6,20 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: b033c58fed79db197858db99d71ad6a174a9a662
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: 570aa40b691b6ad259ba381a6ef6060b430787a1
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="calendar-view"></a>日历视图
 
@@ -21,14 +27,7 @@ translationtype: HT
 
 日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可选择单个日期或一组日期。 它没有选取器图面，并且日历始终可见。 
 
-
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**SelectedDatesChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[CalendarView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)、[SelectedDatesChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -40,7 +39,7 @@ translationtype: HT
 
 ## <a name="examples"></a>示例
 
-日历视图由 3 种单独视图构成：月份视图、年份视图和十年期视图。 默认情况下，它先打开月份视图。 可通过设置 [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) 属性来指定开始视图。
+日历视图由 3 种单独视图构成：月份视图、年份视图和十年期视图。 默认情况下，它先打开月份视图。 可通过设置 [DisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) 属性来指定开始视图。
 
 ![日历视图的 3 种视图](images/calendar-view-3-views.png)
 
@@ -60,9 +59,9 @@ translationtype: HT
 
 ### <a name="selecting-dates"></a>选择日期
 
-默认情况下，[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) 属性设置为 **Single**。 这让用户能够在日历中选取单个日期。 将 SelectionMode 设置为 **None** 以禁用日期选择。 
+默认情况下，[SelectionMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) 属性设置为 **Single**。 这让用户能够在日历中选取单个日期。 将 SelectionMode 设置为 **None** 以禁用日期选择。 
 
-将 SelectionMode 设置为 **Multiple** 以让用户选择多个日期。 可通过将 [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 对象添加到 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合来以编程方式选择多个日期，如下所示：
+将 SelectionMode 设置为 **Multiple** 以让用户选择多个日期。 可通过将 [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 对象添加到 [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合来以编程方式选择多个日期，如下所示：
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -71,7 +70,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 用户可通过在日历网格中单击或点击已选择的日期来取消选择。
 
-你可以处理 [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合发生变化时收到通知。
+可处理 [SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在 [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合更改时收到通知。
 
 > [!NOTE]
 > 有关日期值的重要信息，请参阅日期和时间控件一文中的 [Datetime 和日历值](date-and-time.md#datetime-and-calendar-values)。
@@ -80,9 +79,9 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 日历视图由在 ControlTemplate 中定义的 XAML 元素和直接由该控件呈现的视觉元素构成。 
 - 在控件模板中定义的 XAML 元素包括围绕控件的边框、标题、上一步和下一步按钮以及 DayOfWeek 元素。 你可以像任何 XAML 控件一样设置这些元素的样式并重新为它们制定模板。 
-- 日历网格由 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 对象构成。 你无法设置这些元素的样式或重新为它们制定模板，但可使用提供的各种属性自定义它们的外观。
+- 日历网格由 [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 对象构成。 你无法设置这些元素的样式或重新为它们制定模板，但可使用提供的各种属性自定义它们的外观。
 
-此图显示了构成日历月份视图的元素。 有关详细信息，请参阅 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 类上的“备注”。
+此图显示了构成日历月份视图的元素。 有关详细信息，请参阅 [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 类上的“备注”。
 
 ![日历月份视图的元素](images/calendar-view-month-elements.png)
 
@@ -100,9 +99,9 @@ FirstofYearDecadeLabel（在年份和十年期视图中相当于 FirstOfMonthLab
 OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx)、[OutOfScopeBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx)、[OutOfScopeForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
 今天 | [IsTodayHighlighted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx)、[TodayFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx)、[TodayForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
 
- 默认情况下，月份视图一次显示 6 个星期。 你可通过设置 [**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx) 属性来更改显示的星期数。 显示的最小星期数是 2 周，最大数是 8 周。
+ 默认情况下，月份视图一次显示 6 个星期。 你可通过设置 [NumberOfWeeksInView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx) 属性来更改显示的星期数。 显示的最小星期数是 2 周，最大数是 8 周。
 
-默认情况下，年份和十年期视图按 4x4 网格显示。 若要更改行数或列数，请使用所需的行数和列数调用 [**SetYearDecadeDisplayDimensions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx)。 这将更改年份和十年期视图的网格。
+默认情况下，年份和十年期视图按 4x4 网格显示。 若要更改行数或列数，请使用所需的行数和列数调用 [SetYearDecadeDisplayDimensions](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx)。 这将更改年份和十年期视图的网格。
 
 年份和十年视图在此设置为按 3x4 网格显示。
 
@@ -110,7 +109,7 @@ OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/ap
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-默认情况下，日历视图显示的最小日期比当前日期早 100 年，而显示的最大日期比当前日期晚 100 年。 可以通过设置 [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) 和 [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx) 属性来更改日历显示的最小日期和最大日期。
+默认情况下，日历视图显示的最小日期比当前日期早 100 年，而显示的最大日期比当前日期晚 100 年。 可以通过设置 [MinDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) 和 [MaxDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx) 属性来更改日历显示的最小日期和最大日期。
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -119,11 +118,11 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ### <a name="updating-calendar-day-items"></a>更新日历日期项目
 
-日历中的每一天均由 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 对象表示。 若要访问单独的日期项目并使用其属性和方法，请处理 [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) 事件并使用事件参数的项目属性来访问 CalendarViewDayItem。
+日历中的每一天均由 [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 对象表示。 若要访问单独的日期项目并使用其属性和方法，请处理 [CalendarViewDayItemChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) 事件并使用事件参数的项目属性来访问 CalendarViewDayItem。
 
-通过将某个日期的 [**CalendarViewDayItem.IsBlackout**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) 属性设置为 **true**，可使该日期无法选择。 
+通过将某个日期的 [CalendarViewDayItem.IsBlackout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) 属性设置为 **true**，可使该日期无法选择。 
 
-通过调用 [**CalendarViewDayItem.SetDensityColors**](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) 方法，可显示有关一天中事件密度的上下文信息。 你可以为每个日期显示 0 到 10 个密度条，并设置每个密度条的颜色。 
+通过调用 [CalendarViewDayItem.SetDensityColors](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) 方法，可显示有关一天中事件密度的上下文信息。 你可以为每个日期显示 0 到 10 个密度条，并设置每个密度条的颜色。 
 
 以下是日历中的某些日常项目。 第 1 和 2 天已排除。 第 2、3、4 天设置了不同的密度条。
 

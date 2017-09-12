@@ -9,14 +9,16 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 825b6a8b2689143b5a68b9e7e1862ac2e6e92d28
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 44f272f3c93ab56623897e5d9c801256a12f0a18
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -24,13 +26,8 @@ translationtype: HT
 
 通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 以及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件的外观。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**ControlTemplate 类**](https://msdn.microsoft.com/library/windows/apps/br209391)</li>
-<li>[**Control.Template 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[**ControlTemplate 类**](https://msdn.microsoft.com/library/windows/apps/br209391)、[**Control.Template 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+
 
 ## <a name="custom-control-template-example"></a>自定义控件模板示例
 
@@ -189,7 +186,7 @@ translationtype: HT
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>使用工具轻松处理主题
 
-将主题应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML“文档大纲”****上右键单击控件，然后选择“编辑主题”****或“编辑样式”****（具体取决于你所右键单击的控件）。 然后，通过选择“应用资源”****来应用现有主题，或通过选择“创建空项”****来定义一个新主题。
+将主题应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML**文档大纲**上右键单击控件，然后选择**编辑主题**或**编辑样式**（具体取决于你所右键单击的控件）。 然后，通过选择**应用资源**来应用现有主题，或通过选择**创建空项**来定义一个新主题。
 
 ## <a name="controls-and-accessibility"></a>控件和辅助功能
 
@@ -201,7 +198,7 @@ translationtype: HT
 
 ## <a name="learn-more-about-a-controls-default-template"></a>了解有关控件默认模板的详细信息
 
-记录了 XAML 控件样式和模板的主题向你显示的起始 XAML 摘录与使用之前介绍的“编辑主题”****或“编辑样式”****技术时看到的相同。 每个主题都将列出视觉状态的名称、使用的主题资源，以及包含该模板的样式的完整 XAML。 如果你已开始修改模板并要查看原始模板的外观，或者想要验证你的新模板是否具有所有所需的命名视觉状态，这些主题将是非常有用的指南。
+记录了 XAML 控件样式和模板的主题向你显示的起始 XAML 摘录与使用之前介绍的**编辑主题**或**编辑样式**技术时看到的相同。 每个主题都将列出视觉状态的名称、使用的主题资源，以及包含该模板的样式的完整 XAML。 如果你已开始修改模板并要查看原始模板的外观，或者想要验证你的新模板是否具有所有所需的命名视觉状态，这些主题将是非常有用的指南。
 
 ## <a name="theme-resources-in-control-templates"></a>控件模板中的主题资源
 

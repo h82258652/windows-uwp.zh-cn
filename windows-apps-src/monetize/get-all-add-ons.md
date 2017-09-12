@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项, 应用内产品, IAP"
-ms.openlocfilehash: bb31d8cbe60703aff179913648556f408ba65586
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 82d05e49f087dda903a0bc5c1010df98ae64c016
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="get-all-add-ons"></a>获取所有加载项
 
 
 
 
-在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的所有应用检索所有加载项（也称为应用内产品或 IAP）数据。
+在 Windows 应用商店提交 API 中使用这些方法，检索注册到 Windows 开发人员中心帐户的所有应用的所有加载项的数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -26,8 +28,6 @@ translationtype: HT
 
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 ## <a name="request"></a>请求
 
@@ -42,7 +42,7 @@ translationtype: HT
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -65,14 +65,14 @@ translationtype: HT
 
 ### <a name="request-examples"></a>请求示例
 
-以下示例演示了如何检索注册到帐户的所有应用的所有加载项数据。
+以下示例演示如何检索注册到帐户的所有应用的所有加载项数据。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-以下示例演示了如何仅检索前 10 个加载项。
+以下示例演示如何仅检索前 10 个加载项。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1

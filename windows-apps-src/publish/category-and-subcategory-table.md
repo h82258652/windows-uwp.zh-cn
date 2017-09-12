@@ -4,29 +4,30 @@ Description: "将你的应用列在正确的类别和子类别中，可帮助客
 title: "类别和子类别表"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1234a1209f7cc32901b093a44c2b71fc90a6f3b5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 88971766290288f6badb611e6b27c58641020005
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 
 
 将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
 
-选择最能描述你的应用的类别。 然后选择一个子类别（如果可用）。
+你需要选择最能描述你的应用的类别。 可以选择一个子类别（如果可用）。 （如果选择**游戏**作为类别，则子类别（流派）是必需的。）
 
-> **注意**  如果选择**游戏**作为类别，则子类别是必需的。
+应用只能列在一个类别（以及一个子类别，如果有的话）中。如果你不确定要使用哪一类别或子类别，或者无法找到看起来完全相符的类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
 
-应用只能列在一个类别（以及一个子类别，如果有的话）中。如果你不确定要使用哪一类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
+若要更改应用商店中已有的应用的类别或子类别，请[创建新提交](app-submissions.md)并选择新类别或子类别。
 
-如果要更改已存在于应用商店中的某个应用的类别或子类别，可以通过[创建新提交](app-submissions.md)和选择新类别来实现。
-
-> **重要提示** 如果以**游戏**类别发布应用，将无法在新提交中选取其他类别。 还无法在之前以其他类别发布的应用的更新中选择**游戏**类别。
+> [!IMPORTANT] 
+> 如果以**游戏**类别发布应用，将无法在新提交中选取其他类别。 还无法在之前以其他类别发布的应用的更新中选择**游戏**类别。
 
 Windows 应用商店将应用整理为以下类别和子类别。
 
@@ -55,7 +56,7 @@ Windows 应用商店将应用整理为以下类别和子类别。
 | 个性化             | 铃声 + 声音 <br> 主题 <br> 壁纸 + 锁屏界面 |
 | 照片 + 视频               | （无）                                            |
 | 工作效率                | （无）                                            |
-| 安全                    | 电脑保护 <br> 个人安全 <br>         |
+| 安全                    | 电脑保护 <br> 个人安全              |
 | 购物                    | （无）                                            |
 | 社交                      | （无）                                            |
 | 体育                      | （无）                                            |
@@ -63,5 +64,6 @@ Windows 应用商店将应用整理为以下类别和子类别。
 | 实用工具 + 工具           | 备份 + 管理 <br> 文件管理器                |
  
 
-> **注意**  有关在 Windows 8.1 及更早版本的 Windows 应用商店和 Windows Phone 应用商店中所使用的类别，以及它们与以上所列类别的关系等信息，请参阅[你的应用如何显示在面向 Windows 10 客户的应用商店中](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
+> [!NOTE] 
+> 对于 Windows 8.1 及更早版本的 Windows 应用商店和 Windows Phone 应用商店中使用的一些类别和子类别，其显示可能会与上面列出的类别的显示不同。 
 

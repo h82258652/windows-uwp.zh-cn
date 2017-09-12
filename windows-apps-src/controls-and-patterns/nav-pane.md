@@ -1,21 +1,26 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: "提供了顶级导航，同时节省屏幕空间。"
 title: "导航窗格指南"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
-ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
-translationtype: HT
+ms.openlocfilehash: d5c838675eb8cb568f0dabd1c6b776a8a53d3bf4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nav-panes"></a>导航窗格
+
+本文已移至此处：[Navigation 视图](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview)。
 
 导航窗格（或简称“导航”窗格）是一种可容纳许多顶级导航项目，同时又节省屏幕空间的导航模式。 导航窗格广泛用于移动应用，但在较大的屏幕上也效果良好。 在用作覆盖层时，该窗格保持折叠状态并且不遮挡内容，直到用户按下按钮（这对于较小的屏幕很方便）。 当在停靠模式下使用窗格时，它保持打开状态，这在有足够屏幕空间的情况下可提高效用。
 
@@ -24,7 +29,7 @@ translationtype: HT
 
 **重要的 API**
 
-* [**SplitView 类**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+* [SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>这是正确的模式吗？
 
@@ -114,6 +119,3 @@ translationtype: HT
 * [拆分视图控件](split-view.md)
 * [大纲/细节](master-details.md)
 * [导航基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
- 
-
- 

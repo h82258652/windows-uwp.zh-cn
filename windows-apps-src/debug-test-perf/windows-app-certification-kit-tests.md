@@ -1,19 +1,21 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Windows 应用认证工具包测试"
 description: "Windows 应用认证工具包包含大量测试，可以帮助确保应用已准备好，可在 Windows 应用商店中发布。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5e3ae74ba4392b5021159f9fcb825009137701d3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
-## <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
+# <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -668,8 +670,8 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
 
 > **注意**  本文适用于编写 UWP 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
+## <a name="related-topics"></a>相关主题
 
- 
-
+* [Windows 桌面桥应用测试](windows-desktop-bridge-app-tests.md)
+* [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

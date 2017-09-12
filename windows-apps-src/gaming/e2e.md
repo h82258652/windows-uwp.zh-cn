@@ -1,24 +1,26 @@
 ---
-author: mtoepke
+author: joannaleecy
 title: "Windows10 游戏开发指南"
 description: "开发通用 Windows 平台 (UWP) 游戏的资源和信息的端到端指南。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: joanlee
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 游戏开发"
-ms.openlocfilehash: 9398efedb5d4818e247be42132bdb752067b5426
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f84f33f4e30391624ae8d2615cb9c27442e168fb
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
 
 欢迎使用 Windows10 游戏开发指南！
 
-本指南提供开发通用 Windows 平台 (UWP) 游戏所需的资源和信息的端到端集合。
+本指南提供开发通用 Windows 平台 (UWP) 游戏所需的资源和信息的端到端集合。 英语（美国）版的本指南提供 [PDF](http://download.microsoft.com/download/3/E/8/3E8F6376-D239-41A3-989C-DA1494C0024D/Windev_Game_Dev_Guide_May_2017.pdf) 格式。
 
 ## <a name="introduction-to-game-development-for-the-universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP) 游戏开发简介
 
@@ -29,13 +31,15 @@ translationtype: HT
 
 若要开始操作，[游戏开发资源](#game-development-resources)部分提供有关文档、程序和其他有助于创建游戏的资源的高级调查。
 
-本指南在其他 Windows10 游戏开发资源和材料可用时会进行更新。
+本指南在其他 Windows10 游戏开发资源和材料可用时会进行更新。  
 
 ## <a name="game-development-resources"></a>游戏开发资源
 
-从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开发 Windows10 游戏时要了解的资源综述。
+从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开始开发 Windows10 游戏时要了解的资源综述。
 
-> **注意**   Xbox One 开发和精选 Windows 10 游戏功能（例如 Xbox Live 服务）通过各类计划进行管理。 本指南涵盖大范围资源，因此你可能会发现有些资源无法访问，具体取决于所属计划或特定的开发角色。 示例是解析为 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或游戏开发人员网络 (GDN) 的链接。 有关与 Microsoft 合作的信息，请参阅[开发人员计划](#developer-programs)。
+> [!Note]
+> 某些功能通过各种计划进行管理。 本指南涵盖大范围资源，因此你可能会发现有些资源无法访问，具体取决于所属计划或特定的开发角色。 示例是解析为 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或游戏开发人员网络 (GDN) 的链接。 有关与 Microsoft 合作的信息，请参阅[开发人员计划](#developer-programs)。
+
 
 ### <a name="game-development-documentation"></a>游戏开发文档
 
@@ -80,7 +84,7 @@ translationtype: HT
     </tr>
     <tr>
         <td>Xbox Live 文档</td>
-        <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
+        <td>[Xbox Live 开发人员指南](../xbox-live/index.md)</td>
     </tr>
     <tr>
         <td>Xbox One 开发人员文档 (GDN)</td>
@@ -89,16 +93,18 @@ translationtype: HT
     <tr>
         <td>Xbox One 开发人员白皮书 (GDN)</td>
         <td>[白皮书](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
-    </tr>     
+    </tr>
+    <tr>
+        <td>Mixer Interactive 文档</td>
+        <td>[为游戏添加交互性](https://dev.mixer.com/reference/interactive/index.html)</td>
+    </tr>        
 </table>
 
-### <a name="developer-programs"></a>开发人员计划
+### <a name="windows-dev-center"></a>Windows 开发人员中心
 
-Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 若要在 Windows 应用商店中发布游戏，你需要在 Windows 开发人员中心上创建开发者帐户。 其他计划可能会引起你的兴趣，具体取决于游戏和工作室需要，并可以创造 Xbox One 开发和 Xbox Live 集成的机遇。
+在 Windows 开发人员中心中注册开发人员帐户是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Windows 应用商店。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。 
 
-#### <a name="windows-dev-center"></a>Windows 开发人员中心
-
-在 Windows 开发人员中心中注册开发人员帐户是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Windows 应用商店。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。
+Microsoft 还提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 我们建议在注册开发人员中心帐户之前查看是否有适合你的任何内容。 有关详细信息，请转到[开发人员计划](#developer-programs)
 
 <table>
     <colgroup>
@@ -106,14 +112,18 @@ Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows �
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>注册开发人员帐户</td>
+        <td>注册开发者帐户</td>
         <td>[准备好注册了吗？](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
     </tr> 
 </table>
 
+### <a name="developer-programs"></a>开发人员计划
+
+Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Windows 应用商店中发布游戏，你还需要在 Windows 开发人员中心创建开发者帐户。 
+
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 在申请 ID@Xbox 之前，请在 Windows 开发人员中心注册开发人员帐户。
+ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 建议你先申请 ID@Xbox，然后在 Windows 开发人员中心注册开发者帐户。
 
 <table>
     <colgroup>
@@ -130,11 +140,11 @@ ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xb
     </tr>
 </table>
 
-#### <a name="xbox-live-creators-program"></a>Xbox Live Creators 计划
+#### <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
 
-Xbox Live Creators 计划目前处于预览状态。 此计划使任何人均能够将 Xbox Live 集成到其游戏中并发布到 Xbox One 和 Windows 10。 若要开始开发 Xbox Live Creators 计划，请马上注册进行预览。 此预览计划的登录目前已被限制，但会定期提供更多空间。
+利用 Xbox Live 创意者计划，任何人都可以将 Xbox Live 集成到其游戏中并发布到 Xbox One 和 Windows 10。 若要开始借助 Xbox Live 创意者计划进行开发，请马上注册。
 
-如果想访问主 Xbox One 应用商店中具有的更多 Xbox Live 功能或接收专门的营销和开发支持，则你可以申请 [ID@Xbox](http://www.xbox.com/Developers/id) 计划。
+如果想访问主 Xbox One 应用商店中特别推荐的更多 Xbox Live 功能、专门的营销和开发支持和机会，则你可以申请 [ID@Xbox](http://www.xbox.com/Developers/id) 计划。
 
 <table>
     <colgroup>
@@ -142,7 +152,7 @@ Xbox Live Creators 计划目前处于预览状态。 此计划使任何人均能
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Xbox Live Creators 计划预览</td>
+        <td>Xbox Live 创意者计划</td>
         <td>[将 Xbox Live 集成到你的游戏](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
     </tr>
 </table>
@@ -298,8 +308,12 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
         <td>[Visual C++ 团队博客](http://blogs.msdn.com/b/vcblog/)</td>
     </tr>
     <tr>
-        <td>ID@Xbox 开发人员博客</td>
-        <td>[ID@XBOX 开发人员博客](http://www.idatxbox.com/category/developer-blog/)</td>
+        <td>PIX 团队博客</td>
+        <td>[在 Windows 和 Xbox 上针对 DirectX 12 游戏进行性能调整和调试](https://blogs.msdn.microsoft.com/pix/)</td>
+    </tr>
+    <tr>
+        <td>通用 Windows 应用部署团队博客</td>
+        <td>[生成和部署 UWP 应用团队博客](https://blogs.msdn.microsoft.com/appinstaller/)</td>
     </tr>
 </table>
  
@@ -534,7 +548,7 @@ Windows JavaScript 应用可以采用一种简单而又直观的方式访问 Uni
     </colgroup>
     <tr>
         <td>如何创建 Windows 运行时组件</td>
-        <td>[创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/hh441572.aspx)</td>
+        <td>[创建 Windows 运行时组件](https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)</td>
     </tr>
 </table>
 
@@ -577,16 +591,8 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>适用于 Windows10 的桥和游戏引擎（博客文章）</td>
-        <td>[将代码移植到快速发展的 Windows10 应用商店的更多方法](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
-    </tr>
-    <tr>
         <td>使用中间件开发游戏（视频）</td>
         <td>[使用中间件加速 Windows 应用商店游戏的开发](https://channel9.msdn.com/Events/Build/2013/3-187)</td>
-    </tr>
-    <tr>
-        <td>Visual Studio、Unity、Unreal 以及 Cocos2d（博客文章）</td>
-        <td>[用于游戏开发的 Visual Studio：与 Unity、Unreal Engine 和 Cocos2d 的新合作关系](http://blogs.msdn.com/b/somasegar/archive/2015/04/17/visual-studio-for-game-development-new-partnerships-with-unity-unreal-engine-and-cocos2d.aspx)</td>
     </tr>
     <tr>
         <td>游戏中间件简介（博客文章）</td>
@@ -644,10 +650,22 @@ Unity 5 是备受赞誉的下一代开发平台，用于创建 2D 和 3D 游戏�
     </tr>
     <tr>
         <td>Windows 的 Unity 文档</td>
-        <td>[Unity 手册 / Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
+        <td>[Unity 手册/Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
     </tr>
     <tr>
-        <td>将你的游戏发布到 Windows 应用商店</td>
+        <td>如何使用 Mixer Interactive 为游戏添加交互性</td>
+        <td>[入门指南](https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started)</td>
+    </tr>
+    <tr>
+        <td>适用于 Unity 的 Mixer SDK</td>
+        <td>[Mixer Unity 插件](https://www.assetstore.unity3d.com/en/#!/content/88585)</td>
+    </tr>
+    <tr>
+        <td>适用于 Unity 的 Mixer SDK 参考文档</td>
+        <td>[Mixer Unity 插件的 API 参考](https://dev.mixer.com/reference/interactive/csharp/index.html)</td>
+    </tr>
+    <tr>
+        <td>将你的 Unity 游戏发布到 Windows 应用商店</td>
         <td>[移植指南](https://unity3d.com/partners/microsoft/porting-guides)</td>
     </tr>
     <tr>
@@ -793,7 +811,7 @@ BabylonJS 是一个完整的 JavaScript 框架，供使用 HTML5、WebGL 和 Web
         <td>[开发人员中心合作伙伴](https://developer.microsoft.com/windows/app-middleware-partners)</td>
     </tr>
 </table>
- 
+
 
 ### <a name="porting-your-game"></a>移植游戏
 
@@ -949,7 +967,7 @@ UWP 的目标是拥有：
 
 ### <a name="windows-desktop-apis-to-uwp"></a>UWP 的 Windows 桌面 API
 
-下面是帮你将 Windows 桌面游戏移动到 UWP 的链接。
+下面是帮你将 Windows 桌面游戏移动到 UWP 的一些链接。
 
 <table>
     <colgroup>
@@ -957,8 +975,12 @@ UWP 的目标是拥有：
     <col width="50%" />
     </colgroup>
     <tr>
+        <td>使用现有的 C++ 代码进行 UWP 游戏开发</td>
+        <td>[操作方法：在 UWP 应用中使用现有的 C++ 代码](https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app)</td>
+    </tr>
+    <tr>
         <td>适用于 Win32 的 UWP API 和 COM API</td>
-        <td>[Win32 和适用于 UWP 应用的 COM API](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx)</td>
+        <td>[Win32 和适用于 UWP 应用的 COM API](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)</td>
     </tr>
     <tr>
         <td>UWP 中不受支持的 CRT 功能</td>
@@ -1010,12 +1032,16 @@ UWP 的目标是拥有：
     </tr>
     <tr>
         <td>设计应用生命周期状态</td>
-        <td>[启动、暂停和恢复的用户体验指南](https://msdn.microsoft.com/library/windows/apps/dn611862)</td>
+        <td>[启动、暂停和恢复的 UX 指南](https://msdn.microsoft.com/library/windows/apps/dn611862)</td>
+    </tr>
+    <tr>
+        <td>设计适用于 Xbox One 和电视屏幕的 UWP 应用</td>
+        <td>[针对 Xbox 和电视进行设计](https://docs.microsoft.com/windows/uwp/input-and-devices/designing-for-tv)</td>
     </tr>
     <tr>
         <td>面向多个设备外形规格（视频）</td>
         <td>[为 Windows Core World 设计游戏](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World)</td>
-    </tr>
+    </tr>   
 </table>
  
 
@@ -1065,7 +1091,41 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
         <td>[最佳实践：UI 地图](http://go.microsoft.com/fwlink/?LinkId=535008)</td>
     </tr>
 </table>
- 
+
+### <a name="game-audio"></a>游戏音频
+
+关于使用 XAudio2、XAPO 和 Windows Sonic 在游戏中实现音频的指南和参考。 XAudio2 是一款低级别音频 API，可为开发高性能音频引擎提供信号处理和混合的基础。 XAPO API 允许创建跨平台音频处理对象 (XAPO) 以在 Windows 和 Xbox 上用于 XAudio2。 利用 Windows Sonic 音频支持，你可以为游戏或流媒体应用程序添加 Dolby Atmos for Home Theater、Dolby Atmos for Headphones 和 Windows HRTF 支持。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>XAudio2 API</td>
+        <td>[XAudio2 编程指南和 API 参考](https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx)</td>
+    </tr>
+    <tr>
+        <td>创建跨平台音频处理对象</td>
+        <td>[XAPO 概述](https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx)</td>
+    </tr>
+    <tr>
+        <td>音频概念简介</td>
+        <td>[游戏音频](working-with-audio-in-your-directx-game.md)</td>
+    </tr>
+    <tr>
+        <td>Windows Sonic 概述</td>
+        <td>[空间音效](https://msdn.microsoft.com/library/windows/desktop/mt807491.aspx)</td>
+    </tr>
+    <tr>
+        <td>Windows Sonic 空间音效示例</td>
+        <td>[Xbox 高级技术组音频示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/Audio)</td>
+    </tr>
+    <tr>
+        <td>了解如何将 Windows Sonic 集成到你的游戏中（视频）</td>
+        <td>[Xbox 和 Windows 的空间音频功能简介](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002)</td>
+    </tr>
+</table>
 
 ### <a name="directx-development"></a>DirectX 开发
 
@@ -1276,15 +1336,21 @@ IAP（应用内产品）是供玩家在游戏中购买的补充项。 IAP 可以
     </tr>
 </table>
  
-### <a name="debugging-and-performance-monitoring-tools"></a>调试和性能监视工具
+### <a name="debugging-performance-optimization-and-monitoring"></a>调试、性能优化和监视
 
-Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具可生成有关 Windows 操作系统和应用程序的详细性能概况。 该工具包在监视内存使用量和改善游戏性能方面尤其有用。 Windows Performance Toolkit 包含在 Windows10 SDK 和 Windows ADK 中。 该工具包包含两个独立的工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 用于生成转储文件以调查游戏崩溃的另一有用工具是 ProcDump，它是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部分。
+若要优化性能，请利用 Windows 10 中的游戏模式，通过充分利用当前硬件的能力，为玩家提供可能最佳的游戏体验。
+
+Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具可生成有关 Windows 操作系统和应用程序的详细性能概况。 该工具包在监视内存使用量和改善游戏性能方面尤其有用。 Windows Performance Toolkit 包含在 Windows10 SDK 和 Windows ADK 中。 该工具包包含两个独立的工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 ProcDump 是 [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default) 的一部分，也是监视 CPU 峰值的命令行实用程序，并且会在游戏崩溃期间生成转储文件。 
 
 <table>
     <colgroup>
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>使用游戏模式 API 独占访问或优先访问硬件资源来提高性能</td>
+        <td>[游戏模式](https://msdn.microsoft.com/library/windows/desktop/mt808808)</td>
+    </tr>
     <tr>
         <td>从 Windows10 SDK 获取 Windows Performance Toolkit (WPT)</td>
         <td>[Windows10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
@@ -1320,6 +1386,14 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>Windows 上的 PIX</td>
+        <td>[Windows 上适用于 DirectX 12 的性能调整和调试工具](https://blogs.msdn.microsoft.com/pix/2017/01/17/introducing-pix-on-windows-beta/)</td>
+    </tr>
+    <tr>
+        <td>用于 D3D12 开发的调试和验证工具（视频）</td>
+        <td>[使用 PIX 和 GPU 验证进行 D3D12 性能调整和调试](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003)</td>
+    </tr>
     <tr>
         <td>优化图形和性能（视频）</td>
         <td>[DirectX 12 高级图形和性能](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)</td>
@@ -1365,7 +1439,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
 
 以下指南和信息可帮助你尽可能顺利地完成发布和提交过程。
 
-### <a name="packaging-and-uploading"></a>打包和上载
+### <a name="publishing"></a>发布
 
 你将使用新的统一 Windows 开发人员中心仪表板发布和管理游戏程序包。
 
@@ -1381,14 +1455,43 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     <tr>
         <td>Windows 开发人员中心高级发布 (GDN)</td>
         <td>[Windows 开发人员中心仪表板高级发布指南](https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx)</td>
-    </tr>    
+    </tr>
+    <tr>
+        <td>使用 Azure Active Directory (AAD) 将用户添加到开发人员中心帐户</td>
+        <td>[管理帐户用户](https://docs.microsoft.com/windows/uwp/publish/manage-account-users)</td>
+    </tr>   
     <tr>
         <td>对你的游戏分级（博客文章）</td>
         <td>[使用 IARC 系统分配年龄分级的单一工作流](https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/)</td>
     </tr>
+</table>
+
+#### <a name="packaging-and-uploading"></a>打包和上载
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
     <tr>
-        <td>打包游戏</td>
-        <td>[打包 UWPDirectX 游戏](package-your-windows-store-directx-game.md)</td>
+        <td>了解如何使用流式安装和可选包（视频）</td>
+        <td>[Nextgen UWP 应用分发：生成可扩展且可流式传输的组件化应用](https://channel9.msdn.com/Events/Build/2017/B8093)</td>
+    </tr>
+    <tr>
+        <td>划分和组合内容以启用流式安装</td>
+        <td>[UWP 应用流式安装](../packaging/streaming-install.md)</td>
+    </tr>
+    <tr>
+        <td>创建 DLC 游戏内容等可选包</td>
+        <td>[可选包和相关集的创作](../packaging/optional-packages.md)</td>
+    </tr>
+    <tr>
+        <td>打包 UWP 游戏</td>
+        <td>[打包应用](../packaging/index.md)</td>
+    </tr>
+    <tr>
+        <td>打包 UWP DirectX 游戏</td>
+        <td>[打包 UWP DirectX 游戏](package-your-windows-store-directx-game.md)</td>
     </tr>
     <tr>
         <td>以第三方开发人员身份打包游戏（博客文章）</td>
@@ -1396,18 +1499,18 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </tr>
     <tr>
         <td>使用 MakeAppx 创建应用包和应用包捆绑包</td>
-        <td>[使用应用包生成工具 MakeAppx.exe 创建程序包](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+        <td>[使用应用包生成工具 MakeAppx.exe 创建程序包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)</td>
     </tr>
     <tr>
         <td>使用 SignTool 对你的文件进行数字签名</td>
         <td>[使用 SignTool 对文件进行签名并验证文件中的签名](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
-    </tr>      
+    </tr>    
     <tr>
         <td>上载游戏和控制游戏版本</td>
         <td>[上载应用包](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
     </tr>
 </table>
- 
+
 
 ### <a name="policies-and-certification"></a>策略和认证
 
@@ -1498,6 +1601,40 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
         <td>[适用于 Windows Phone 和应用商店应用的 Application Insights](https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/)</td>
     </tr>
 </table>
+
+
+### <a name="third-party-solutions-for-analytics-and-promotion"></a>第三方分析和推广解决方案
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>使用 GameAnalytics 了解玩家行为</td>
+        <td>[GameAnalytics](http://www.gameanalytics.com/)</td>
+    </tr>
+    <tr>
+        <td>将 UWP 游戏连接到 Google Analytics</td>
+        <td>[获取适用于 Google Analytics 的 Windows SDK](https://github.com/dotnet/windows-sdk-for-google-analytics)</td>
+    </tr>
+    <tr>
+        <td>了解如何使用适用于 Google Analytics 的 Windows SDK（视频）</td>
+        <td>[适用于 Google Analytics 的 Windows SDK 入门](https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics)</td>
+    </tr>    
+    <tr>
+        <td>使用 Facebook 应用安装广告向 Facebook 用户推广游戏</td>
+        <td>[获取适用于 Facebook 的 Windows SDK](https://github.com/Microsoft/winsdkfb)</td>
+    </tr>
+    <tr>
+        <td>了解如何使用 Facebook 应用安装广告（视频）</td>
+        <td>[适用于 Facebook 的 Windows SDK 入门](https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-Facebook-App-Install-Ads)</td>
+    </tr>
+    <tr>
+        <td>使用 Vungle 将视频广告添加到游戏中</td>
+        <td>[获取适用于 Vungle 的 Windows SDK](https://v.vungle.com/sdk)</td>
+    </tr>
+</table>
  
 
 ### <a name="creating-and-managing-content-updates"></a>创建和管理内容更新
@@ -1522,8 +1659,7 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
 
 ## <a name="adding-xbox-live-to-your-game"></a>将 Xbox Live 添加到游戏
 
-
-> **注意**   Xbox Live 开发通过各种计划进行管理。 本指南涵盖范围广泛的资源，你可能会发现有些资源无法访问，具体取决于你所参与的计划或特定的开发角色。 示例是解析为 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或游戏开发人员网络 (GDN) 的链接。 有关与 Microsoft 合作的信息，请参阅[开发人员计划](#developer-programs)。
+> **注意**   如果你要开发启用 Xbox Live 的作品，则面临着多种选择。 有关各种计划的信息，请参阅[开发人员计划概述](../xbox-live/developer-program-overview.md)。
 
 <table>
     <colgroup>
@@ -1531,15 +1667,66 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>下载最新的 Xbox Live SDK</td>
-        <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
+        <td>Xbox Live 概述</td>
+        <td>[Xbox Live 开发人员指南](../xbox-live/index.md)</td>
     </tr>
     <tr>
-        <td>将 Xbox Live 添加到通用 Windows 平台应用</td>
-        <td>[操作方法：将 Xbox Live SDK 添加到通用 Windows 平台 (UWP) 应用](http://aka.ms/xsapi2uwp)</td>
+        <td>了解可根据计划使用哪些功能</td>
+        <td>[开发人员计划概述：功能表格](../xbox-live/developer-program-overview.md#feature-table)</td>
     </tr>
     <tr>
-        <td>使用 Xbox Live 的游戏的要求</td>
+        <td>了解如何从 Xbox Live 服务获取信息</td>
+        <td>[Xbox Live API 简介](../xbox-live/introduction-to-xbox-live-apis.md)</td>
+    </tr>
+</table>
+
+
+### <a name="for-developers-in-the-xbox-live-creators-program"></a>适合 Xbox Live 创意者计划中的开发人员
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>概述</td>
+        <td>[Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)</td>
+    </tr>
+    <tr>
+        <td>将 Xbox Live 添加到游戏</td>
+        <td>[集成 Xbox Live 创意者计划的分步指南](../xbox-live/get-started-with-creators/creators-step-by-step-guide.md)</td>
+    </tr>
+    <tr>
+        <td>将 Xbox Live 添加到使用 Unity 创建的 UWP 游戏</td>
+        <td>[使用 Unity 游戏引擎开发 Xbox Live 创意者计划作品入门](../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md)</td>
+    </tr>
+    <tr>
+        <td>了解如何将跨平台的 Xbox Live 体验集成到 UWP 游戏中（视频）</td>
+        <td>[Xbox Live 创意者计划](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005)</td>
+    </tr>
+</table>
+
+### <a name="for-managed-partners-and-developers-in-the-idxbox-program"></a>适用于 ID@Xbox 计划中托管的合作伙伴和开发人员
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>概述</td>
+        <td>[以托管的合作伙伴或 ID 开发人员的身份开始使用 Xbox Live](../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md)</td>
+    </tr>
+    <tr>
+        <td>将 Xbox Live 添加到游戏</td>
+        <td>[为托管的合作伙伴和 ID 成员集成 Xbox Live 的分步指南](../xbox-live/get-started-with-partner/partners-step-by-step-guide.md)</td>
+    </tr>
+    <tr>
+        <td>将 Xbox Live 添加到使用 Unity 创建的 UWP 游戏</td>
+        <td>[为 ID 和托管的合作伙伴添加对适用于带有 IL2CPP 脚本后端的 UWP 的 Unity 的 Xbox Live 支持](../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md)</td>
+    </tr>
+    <tr>
+        <td>使用 Xbox Live 的游戏的要求 (GDN)</td>
         <td>[Windows10 Xbox Live 的 Xbox 要求](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
     </tr>
     <tr>
@@ -1559,7 +1746,7 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
         <td>[在 Xbox Live 中利用基于云的用户统计数据和成就的最佳实践](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live)</td>
     </tr>
 </table>
- 
+
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -1568,6 +1755,10 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>游戏开发视频</td>
+        <td>[来自各种大型会议（如 GDC）和版本的视频](https://docs.microsoft.com/windows/uwp/gaming/game-development-videos)</td>
+    </tr>
     <tr>
         <td>独立的游戏开发（视频）</td>
         <td>[独立开发人员的新机遇](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers)</td>

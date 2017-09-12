@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: "Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于域的对象处理关系数据。"
 title: "面向 C# 应用的带有 SQLite 的 Entity Framework Core"
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, SQLite, C#, EF, entity framework
-ms.openlocfilehash: 015030774c7d148d3a9be757c80de827987347a9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9d447b8a197ed7eaea0f991749064912dffb66d7
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="entity-framework-core-with-sqlite-for-c-apps"></a>面向 C# 应用的带有 SQLite 的 Entity Framework Core
 

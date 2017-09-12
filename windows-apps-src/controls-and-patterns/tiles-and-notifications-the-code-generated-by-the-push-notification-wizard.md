@@ -6,14 +6,16 @@ ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 3aadc2c4d7e40b2d5df6bc32c5c040c5f5cc1e56
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5cd3b285b435f8ca43c67cc7c6360e557de7dc14
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -123,11 +125,11 @@ void mymobileservice1234Push::UploadChannel()
     create_task(PushNotificationChannelManager::CreatePushNotificationChannelForApplicationAsync()).
     then([] (PushNotificationChannel^ newChannel) 
     {
-        return mymobileservice1234MobileService::GetClient().get_push().register_native(newChannel-&amp;gt;Uri-&amp;gt;Data());
+        return mymobileservice1234MobileService::GetClient().get_push().register_native(newChannel->Uri->Data());
     }).then([]()
     {
         return mymobileservice1234MobileService::GetClient().invoke_api(L"notifyAllUsers");
-    }).then([](task&amp;lt;json::value&amp;gt; result)
+    }).then([](task<json::value> result)
     {
         try
         {
@@ -183,7 +185,7 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 
 ```JavaScript
 exports.post = function(request, response) {
-    response.send(statusCodes.OK,{ message : &#39;Hello World!&#39; })
+    response.send(statusCodes.OK,{ message : 'Hello World!' })
     
     // The following call is for illustration purpose only
     // The call and function body should be moved to a script in your app
@@ -193,12 +195,12 @@ exports.post = function(request, response) {
 
 // The following code should be moved to appropriate script in your app where notification is sent
 function sendNotifications(request) {
-    var payload = &#39;<?xml version="1.0" encoding="utf-8"?><toast><visual><binding template="ToastText01">&#39; +
-        &#39;<text id="1">Sample Toast</text></binding></visual></toast>&#39;;
+    var payload = '<?xml version="1.0" encoding="utf-8"?><toast><visual><binding template="ToastText01">' +
+        '<text id="1">Sample Toast</text></binding></visual></toast>';
     var push = request.service.push; 
     push.wns.send(null,
         payload,
-        &#39;wns/toast&#39;, {
+        'wns/toast', {
             success: function (pushResponse) {
                 console.log("Sent push:", pushResponse);
             }
@@ -234,7 +236,7 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](http://go.microsoft.com/fwlink/p/?linkid=301694)。
 
-**警告**  运行推送通知向导一次后，请不要再次运行该向导来为其他移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
+**警告**  运行推送通知向导一次后，请不要再次运行该向导来为其他移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.\* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
 
  
 

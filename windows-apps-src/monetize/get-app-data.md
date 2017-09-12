@@ -4,20 +4,20 @@ ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: "在 Windows 应用商店提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用检索数据。"
 title: "获取应用数据"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用数据"
-ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0bb01250756c464113570ece433afe11506a5399
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="get-app-data"></a>获取应用数据
 
 在 Windows 应用商店提交 API 中使用以下方法，可获取开发人员中心帐户中现有应用的数据。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
-
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
 
 在使用这些方法之前，应用必须已存在于你的开发人员中心帐户中。 若要创建或管理应用提交，请参阅[管理应用提交](manage-app-submissions.md)中的方法。
 
@@ -88,7 +88,8 @@ translationtype: HT
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 
@@ -103,7 +104,8 @@ translationtype: HT
 | publisherName       | 字符串  | 与应用相关联的 Windows 发布者 ID。 这对应于 Windows 开发人员中心仪表板中应用的[应用标识](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)页上显示的 **Package/Identity/Publisher** 值。       |
 | firstPublishedDate      | 字符串  | 应用的首次发布日期，采用 ISO 8601 格式。   |
 | lastPublishedApplicationSubmission       | 对象 | 提供有关应用的上次发布提交信息的 [提交资源](#submission_object)。    |
-| pendingApplicationSubmission        | 对象  |  提供有关应用的当前挂起提交信息的 [提交资源](#submission_object)。   |   |
+| pendingApplicationSubmission        | 对象  |  提供有应用的当前挂起提交信息的 [提交资源](#submission_object)。   |   
+| hasAdvancedListingPermission        | object  |  指示你是否可以配置[gamingOptions](manage-app-submissions.md#gaming-options-object)或[预告片](manage-app-submissions.md#trailer-object)以针对该应用提交。 有关详细信息，请参阅[此部分](manage-app-submissions.md#advanced-listings)。 |  |
 
 
 <span id="add-on-object" />

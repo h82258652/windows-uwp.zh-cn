@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8679dfd073a3b756e37059a5b0bf35cc6b000e6a
+ms.sourcegitcommit: bfa61aae632cca0c68dbfb0168424d38fd607f84
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>创建、编辑和保存位图图像
 
@@ -118,7 +120,7 @@ translationtype: HT
 
 ## <a name="transcode-an-image-file"></a>转换图像文件的代码
 
-你可以将图像文件的代码直接从 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 转换为 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206)。 从要转换代码的文件创建 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 从输入流创建一个新的 **BitmapDecoder**。 为编码器创建一个新的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 以写入并调用 [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214)，从而传入内存中的流和解码器对象。 设置所需的编码属性。 输入图像文件中未在编码器上专门设置的任何属性都将写入到未更改的输出文件中。 调用 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) 以使编码器对内存中的流进行编码。 最后，在开始处查找文件流和内存中的流，并调用 [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) 以将内存中的流写出到文件流。
+你可以将图像文件的代码直接从 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 转换为 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206)。 从要转换代码的文件创建 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 从输入流创建一个新的 **BitmapDecoder**。 为编码器创建一个新的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 以写入并调用 [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214)，从而传入内存中的流和解码器对象。 转换代码时不支持编码选项；相反，你应使用 [**CreateAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.bitmapencoder#Windows_Graphics_Imaging_BitmapEncoder_CreateAsync_System_Guid_Windows_Storage_Streams_IRandomAccessStream_Windows_Foundation_Collections_IIterable_Windows_Foundation_Collections_IKeyValuePair_System_String_Windows_Graphics_Imaging_BitmapTypedValue___)。 输入图像文件中未在编码器上专门设置的任何属性都将写入到未更改的输出文件中。 调用 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) 以使编码器对内存中的流进行编码。 最后，在开始处查找文件流和内存中的流，并调用 [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) 以将内存中的流写出到文件流。
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 

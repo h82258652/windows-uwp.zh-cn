@@ -6,14 +6,20 @@ description: "拆分视图控件具有一个可展开/可折叠的窗格和一�
 label: Split view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: b7488f19109925faa2c9e6b3be528cb2d19846e8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: tpaine
+doc-status: Published
+ms.openlocfilehash: 126fab3db9a0728626289788757f576648a43856
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="split-view-control"></a>拆分视图控件
 
@@ -21,12 +27,7 @@ translationtype: HT
 
 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**SplitView 类**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-</ul>
-</div>
+> **重要 API**：[SplitView 类](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 
@@ -53,7 +54,7 @@ translationtype: HT
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-拆分视图控件可用于创建[导航窗格](nav-pane.md)。 若要生成此模式，需要添加一个展开/折叠按钮（“汉堡包”按钮）和一个表示导航项目的列表视图。
+拆分视图控件可用于创建[导航窗格](navigationview.md)。 若要生成此模式，需要添加一个展开/折叠按钮（“汉堡包”按钮）和一个表示导航项目的列表视图。
 
 拆分视图控件还可以用于创建任何“抽屉”体验，其中用户可以打开和关闭补充窗格。
 
@@ -83,7 +84,7 @@ translationtype: HT
 
 
 ## <a name="related-topics"></a>相关主题
-* [导航窗格模式](nav-pane.md)
+* [导航窗格模式](navigationview.md)
 * [列表视图](lists.md)
  
 

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b655bea614f1c395959a12e9c3b8a5b1af61d694
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40c70770028853d5912ef63f84259245252ce881
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-uri-activation"></a>处理 URI 激活
 
@@ -37,25 +39,25 @@ translationtype: HT
 
 应用仅接收程序包清单中列出的 URI 方案名称的激活事件。 下面是指示应用处理 `alsdk` URI 方案名称的方式。
 
-1.  在“解决方案资源管理器”****中，双击 package.appxmanifest 以打开清单设计器。 选择“声明”****选项卡，并在“可用声明”****下拉列表中选择“协议”****，然后单击“添加”****。
+1.  在**解决方案资源管理器**中，双击 package.appxmanifest 以打开清单设计器。 选择**声明**选项卡，并在**可用声明**下拉列表中选择**协议**，然后单击**添加**。
 
     以下是该协议的清单设计器中每个可以填写的字段的简短描述（有关详细信息，请参阅 [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/dn934791)）：
 
-| 字段 | 说明 |
+| 字段 | 描述 |
 |-------|-------------|
-| **徽标** | 指定用于标识“控制面板”****的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
-| **显示名称** | 指定用于标识“控制面板”****的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的显示名称。 |
+| **徽标** | 指定用于标识**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
+| **显示名称** | 指定用于标识**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的显示名称。 |
 | **名称** | 为 URI 方案选择名称。 |
 |  | **注意**  “名称”必须全部为小写字母。 |
 |  | **保留和禁止的文件类型** 请参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取不能注册为 UWP 应用的 URI 方案（因为它们是保留或禁止的文件类型）的字母顺序列表。 |
-| **可执行文件** | 为该协议指定默认的启动可执行文件。 如果未指定，将使用应用的可执行文件。 如果已指定，字符串长度必须是 1 到 256 个字符、必须以“.exe”结尾，并且不能包含以下字符：&gt;、&lt;、:、"、&#124;、? 或 \*。 如果已指定，还将使用“入口点”****。 如果未指定“入口点”****，将使用为应用定义的入口点。 |
+| **可执行文件** | 为该协议指定默认的启动可执行文件。 如果未指定，将使用应用的可执行文件。 如果已指定，字符串长度必须是 1 到 256 个字符、必须以“.exe”结尾，并且不能包含以下字符：&gt;、&lt;、:、"、&#124;、? 或 \*。 如果已指定，还将使用**入口点**。 如果未指定**入口点**，将使用为应用定义的入口点。 |
 | **入口点** | 指定用于处理协议扩展的任务。 这通常是 Windows 运行时类型的完全命名空间限定名称。 如果未指定，将使用应用的入口点。 |
 | **“开始”页面** | 处理扩展点的网页。 |
 | **资源组** | 可用于一起分组扩展激活以实现资源管理目的的标记。 |
-| “所需视图”****（仅适用于 Windows） | 指定“所需视图”****字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 “所需视图”****的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意**  Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置“所需视图”****并不保证为目标应用设定具体的窗口化行为。<br/> **移动设备系列：所需视图**在移动设备系列上不受支持。 |
-2.  输入 `images\Icon.png` 作为“徽标”****。
-3.  输入 `SDK Sample URI Scheme` 作为“显示名称”****
-4.  输入 `alsdk` 作为“名称”****。
+| **所需视图**（仅适用于 Windows） | 指定**所需视图**字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 **所需视图**的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意**  Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置**所需视图**并不保证为目标应用设定具体的窗口化行为。<br/> **移动设备系列：所需视图**在移动设备系列上不受支持。 |
+2.  输入 `images\Icon.png` 作为**徽标**。
+3.  输入 `SDK Sample URI Scheme` 作为**显示名称**
+4.  输入 `alsdk` 作为**名称**。
 5.  按 Ctrl+S 保存对 package.appxmanifest 的更改。
 
     这会向程序包清单中添加一个类似于此的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素。 **windows.protocol** 类别指示应用处理 `alsdk` URI 方案名称。
@@ -73,12 +75,7 @@ translationtype: HT
 
 ## <a name="step-2-add-the-proper-icons"></a>步骤 2：添加适当的图标
 
-
-成为 URI 方案名称默认应用的应用在整个系统的多个位置中显示其图标，例如在“默认程序”控制面板中。
-
-我们建议在项目中包含合适的图标，这样所有这些位置中的徽标都很美观。 匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 有关示例图标，请参阅[关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
-
-![带有图像文件夹中的文件视图的解决方案资源管理器。 “icon.targetsize”和“smalltile-sdk”都有 16、32、48 和 256 像素版本](images/seviewofimages.png)
+成为 URI 方案名称默认应用的应用在整个系统的多个位置中显示其图标，例如在“默认程序”控制面板中。 为实现此目的，请在项目中包含一个 44x44 的图标。 匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 有关图标的更多详细信息，请参阅[磁贴和图标资源指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)。
 
 ## <a name="step-3-handle-the-activated-event"></a>步骤 3：处理激活的事件
 

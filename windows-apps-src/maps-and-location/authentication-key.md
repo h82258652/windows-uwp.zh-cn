@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "请求地图身份验证密钥"
 description: "通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。"
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 地图身份验证密钥, 地图控件"
-ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
@@ -34,17 +36,17 @@ translationtype: HT
 
 1.  在你的浏览器中，导航到必应地图开发人员中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
-2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击“登录”****。
+2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击**登录**。
 
-3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击**“是”**。 否则，请单击“使用其他帐户登录”****。
+3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击**“是”**。 否则，请单击**使用其他帐户登录**。
 
-4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入**“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”**和**“电话号码”**。 在接受使用条款后，单击“创建”****。
+4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入**“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”**和**“电话号码”**。 在接受使用条款后，单击**创建**。
 
-5.  在**“我的帐户”**菜单下，单击**“创建或查看密钥”**。
+5.  在**我的帐户**菜单上，单击**我的密钥**。
 
-6.  单击链接“创建新的密钥”****。
+6.  如果之前创建了密钥，请单击链接以创建新密钥。 否则继续前进到“创建密钥”窗体。
 
-7.  完成“创建密钥”****表格，然后单击“创建”****。
+7.  完成**创建密钥**窗体，然后单击**创建**。
 
     -   **应用程序名称：**你的应用程序的名称。
     -   **应用程序 URL（可选）：**你的应用程序的 URL。

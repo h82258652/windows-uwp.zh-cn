@@ -3,15 +3,17 @@ author: mcleanbyron
 description: "使用 Windows 应用商店提交 API 中的此方法终止软件包外部测试版的软件包推出。"
 title: "终止外部测试版的推出"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 软件包推出, 外部测试版提交, 终止"
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
-ms.openlocfilehash: 804e447f5b650a986580752fcba2a29014560e98
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5a05b33a96e5f4b19fdfdf8d6cad04e247a46c8
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>终止外部测试版的推出
 
@@ -28,8 +30,6 @@ translationtype: HT
 * 使用你的开发人员中心帐户为应用创建提交。 可以使用开发人员中心仪表板执行此操作，也可以使用[创建应用提交](create-an-app-submission.md)方法执行此操作。
 * 启用提交的逐步软件包推出。 可以使用[开发人员中心仪表板](../publish/gradual-package-rollout.md)执行此操作，也可以[使用 Windows 应用商店提交 API](manage-flight-submissions.md#manage-gradual-package-rollout) 执行此操作。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
-
 ## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求参数的使用示例和描述。
@@ -43,7 +43,7 @@ translationtype: HT
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -54,7 +54,7 @@ translationtype: HT
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要终止软件包推出的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要终止软件包推出的提交）的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要终止软件包推出的提交）的 ID。 [创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中包含此 ID。  |
 | submissionId | 字符串 | 必需。 要终止软件包推出的提交的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。  |
 
 <span/>
@@ -65,7 +65,7 @@ translationtype: HT
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何终止软件包外部测试版提交的软件包推出。
+以下示例演示如何终止软件包外部测试版提交的软件包推出。
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243680/haltpackagerollout HTTP/1.1

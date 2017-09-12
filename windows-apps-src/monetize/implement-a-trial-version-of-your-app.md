@@ -3,24 +3,26 @@ author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: "了解如何使用 Windows.Services.Store 命名空间实现应用的试用版。"
 title: "实现应用的试用版"
-keywords: "windows 10, uwp, 试用, 应用内购买, IAP, Windows.Services.Store"
+keywords: "windows 10, uwp, 试用, 应用内购买, Windows.Services.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7cc8ae05bdf496b9d3a9973f8ebd09a7d3f0210a
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 2419c78e74a69d986ae23e70ced86683a7543cb4
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>实现应用的试用版
 
 如果你[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)，以便客户可以在试用期内免费使用你的应用，可通过在试用期内排除或限制某些功能吸引客户升级到应用的完整版。 请在开始编码之前确定哪些功能应受到限制，然后确保你的应用只在已购买完整版许可之后才允许这些功能运作。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
-面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的成员，确定用户是否有应用的试用许可证，并在应用运行时许可证的状态发生更改的情况下获得通知。
+本文介绍如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的成员来确定用户是否有应用的试用许可证，以及在应用运行时许可证的状态发生更改的情况下是否获得通知。 面向 Windows 10 版本 1607 或更高版本的应用可以使用该命名空间。 
 
 > [!NOTE]
-> 本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+> 本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文章](exclude-or-limit-features-in-a-trial-version-of-your-app.md)。
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>实现试用版的指南
 
@@ -61,7 +63,7 @@ translationtype: HT
 
 本示例有以下先决条件：
 * 适用于面向 Windows 10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中创建了一个应用（已配置为[免费试用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，没有时间限制），并且该应用已发布，可在应用商店中上架。 该应用可以是你想要发布给客户的应用，也可以是符合 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、仅用于测试目的的基本应用。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你已在 Windows 开发人员中心仪表板中创建了一个应用（已配置为[免费试用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，没有时间限制），并且该应用已在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
 
 此示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。

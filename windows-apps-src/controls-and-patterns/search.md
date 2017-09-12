@@ -6,14 +6,19 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: b85d14b037fc65f10a6a24ed6c1a04b4be3ff6d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 9a12e7490cc1cf7bd1aa65b694a3aeb345ba1128
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="search-and-find-in-page"></a>搜索和在页面中查找
 
@@ -21,12 +26,7 @@ translationtype: HT
 
 搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**AutoSuggestBox class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> **重要 API**：[AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>搜索体验的要素
 
@@ -148,10 +148,10 @@ translationtype: HT
 -   在具有“在页面中查找”功能的应用中放置命令栏，使用户能搜索页面上的文本。 有关放置详细信息，请参阅“示例”部分。
 
     -   提供“在页面中查找”的应用应该在命令栏中具有所有必要的控件。
-    -   如果你的应用包含除“在页面中查找”之外的大量功能，你可以在顶层命令栏中提供一个“查找”****按钮，将此按钮作为到另一个命令栏（该命令栏包含所有“在页面中查找”控件）的入口。
+    -   如果你的应用包含除“在页面中查找”之外的大量功能，你可以在顶层命令栏中提供一个**查找**按钮，将此按钮作为到另一个命令栏（该命令栏包含所有“在页面中查找”控件）的入口。
     -   当用户与触摸键盘交互时，在页面中查找命令栏应该保持可见。 当用户点击输入框时，将显示触摸键盘。 在页面中查找命令栏应该向上移动，以使其不被触摸键盘遮盖住。
 
-    -   当用户与视图交互时，在页面中查找应该保持可用。 用户需要在使用在页面中查找时与视图中的文本交互。 例如，用户可能会需要放大或缩小文档或平移视图以阅读文本。 用户开始使用在页面中查找之后，命令栏应该保持可用，并且提供一个用于退出在页面中查找的“关闭”****按钮。
+    -   当用户与视图交互时，在页面中查找应该保持可用。 用户需要在使用在页面中查找时与视图中的文本交互。 例如，用户可能会需要放大或缩小文档或平移视图以阅读文本。 用户开始使用在页面中查找之后，命令栏应该保持可用，并且提供一个用于退出在页面中查找的**关闭**按钮。
 
     -   启用键盘快捷方式 (CTRL+F)。 实施键盘快捷方式 CTRL+F，以使用户能够快速调用在页面中查找命令栏。
 
@@ -161,7 +161,7 @@ translationtype: HT
         -   “上一个”和“下一个”按钮
         -   匹配计数
         -   关闭（仅限桌面）
-    -   该视图应该突出显示匹配项并滚动以显示屏幕上的下一个匹配项。 通过使用“上一个”****和“下一个”****按钮并通过使用滚动栏或通过直接使用触摸操纵，用户可以快速在文档中移动。
+    -   该视图应该突出显示匹配项并滚动以显示屏幕上的下一个匹配项。 通过使用**上一个**和**下一个**按钮并通过使用滚动栏或通过直接使用触摸操纵，用户可以快速在文档中移动。
 
     -   查找与替换功能应该与基本在页面中查找功能一起使用。 对于具有“查找与替换”功能的应用，请确保“在页面中查找”不会干扰“查找与替换”功能。
 
@@ -209,23 +209,12 @@ translationtype: HT
 
 有关向命令栏添加命令的详细信息，请参阅[命令栏](app-bars.md)。
 
-<div class="microsoft-internal-note">
-## 全球化和本地化清单
-
-<table>
-<tr>
-<th>垂直间距</th><td>为垂直间距使用非拉丁字符以确保非拉丁脚本能够正确显示，包括数字。</td>
-</tr>
-<tr>
-<th>双向注意事项</th><td>放大镜图标不应以 bidi 形式显示在镜像表中。</td>
-</tr>
-</table>
-</div>
+ 
 
 
 ## <a name="related-articles"></a>相关文章
 
-* [**自动建议框**](auto-suggest-box.md)
+* [自动建议框](auto-suggest-box.md)
 
 
  

@@ -5,15 +5,17 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 信息保护 (WIP) 开发人员指南"
 ms.author: normesta
-ms.date: 02/24/2017
+ms.date: 06/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用"
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
-ms.openlocfilehash: a2888b804e66e2630e4ae93b0be31974740d9f99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 23604e4ca549bbb11885e681500f4f41531c2b6f
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 信息保护 (WIP) 开发人员指南
 
@@ -72,10 +74,9 @@ __注意__ 本指南有助于启发你创建 UWP 应用。 如果你想要启发
 
     ![添加 UWP 扩展](images/extensions.png)
 
-3. 将这些功能添加到程序包清单文件：
+3. 将此功能添加到程序包清单文件：
 
     ```xml
-       <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
    >*可选阅读*：“rescap”前缀表示*受限功能*。 请参阅[特殊和受限功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。

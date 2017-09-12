@@ -6,14 +6,16 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 14186f0623f16426a98b5184020736bd4321857d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 566f43b83f410ccd690abca95b9de2323fd2631d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
@@ -21,7 +23,9 @@ translationtype: HT
 
 在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用按钮、文本框和组合框等控件来显示数据和获取用户输入，你可以为你的应用创建 UI。
 
-*模式*是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[导航窗格](nav-pane.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，你可以自定义 [Pivot](tabs-pivot.md) 控件的模板来实现选项卡模式。
+> **重要 API**：[Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+
+*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[导航窗格](navigationview.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，你可以自定义 [Pivot](tabs-pivot.md) 控件的模板来实现选项卡模式。
 
 在许多情况下，你可以按原样使用控件。 但 XAML 控件将函数与结构和外观分离开来，因此你可以进行各种级别的修改来使它们符合你的需求。 在[样式](../style/index.md)部分中，你可以了解如何使用 [XAML 样式](xaml-styles.md)和[控件模板](control-templates.md)来修改控件。
 

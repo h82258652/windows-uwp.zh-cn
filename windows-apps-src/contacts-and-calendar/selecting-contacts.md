@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。"
 title: "选择联系人"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: "联系人，选择 选择单个联系人 选择多个联系人 联系人，选择多个 选择特定联系人数据 联系人，选择特定数据 联系人，选择特定字段"
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 5a375851f5b9be63c9780b806dd45721b0f8291f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 861d3d7a68596cbec289050391775d665ac6979d
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="select-contacts"></a>选择联系人
 

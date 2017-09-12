@@ -4,18 +4,18 @@ ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: "在 Windows 应用商店提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的特定应用的相关信息。"
 title: "获取应用"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用"
-ms.openlocfilehash: 6087bf65ac297b12f92a9082db4e6a12e93130ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 71081cd4a42ecb085c82432d1a24a5cd2dd92715
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="get-an-app"></a>获取应用
-
-
 
 
 在 Windows 应用商店提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的特定应用的相关信息。
@@ -26,8 +26,6 @@ translationtype: HT
 
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 ## <a name="request"></a>请求
 
@@ -42,7 +40,7 @@ translationtype: HT
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -64,7 +62,7 @@ translationtype: HT
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何检索应用商店 ID 值为 9WZDNCRD91MD 的应用的相关信息。
+以下示例演示如何检索应用商店 ID 值为 9WZDNCRD91MD 的应用的相关信息。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1
@@ -90,7 +88,8 @@ Authorization: Bearer <your access token>
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 

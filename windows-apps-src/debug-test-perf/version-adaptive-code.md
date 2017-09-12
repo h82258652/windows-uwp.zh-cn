@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: "版本自适应代码"
-description: "了解如何在保持与以前版本的兼容性的同时利用新 API"
+description: "使用 ApiInformation 类以在保持与以前版本的兼容性的同时利用新 API"
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,49 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
-ms.openlocfilehash: 4076bd9edf26108e896e3a7734c2108a00577cd0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5b9a3b02c5acbb2ad7bcd00b9af4f7d6edd91de
+ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/27/2017
 ---
-# <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应代码：在保持与以前版本的兼容性的同时使用新 API
-
-每个 Windows 10 SDK 版本都添加你会想要利用的精彩的新功能。 然而，并非所有客户都会同时将其设备更新为最新版本的 Windows 10，因此你希望确保你的应用所适用的设备范围能够尽可能的广泛。 我们在此处显示如何设计应用，以便它不仅可以在较早版本的 Windows 10 上运行，还可以在应用运行在装有最新更新的设备上运行时利用新功能。
-
-若要确保你的应用支持最广泛的 Windows 10 设备，需采取 2 个步骤。 首先，配置要面向最新 API 的 Visual Studio 项目。 这将影响编译应用时发生的情况。 其次，执行运行时检查，以确保仅调用正在运行应用的设备上存在的 API。
-
-## <a name="configure-your-visual-studio-project"></a>配置 Visual Studio 项目
-
-支持多个 Windows 10 版本的第一步是在 Visual Studio 项目中指定*目标*和*最低*支持的操作系统/SDK 版本。
-- *目标*：Visual Studio 编译应用代码和运行所有工具所面向的 SDK 版本。 编译时，此 SDK 版本中的所有 API 和资源均可在你的应用代码中使用。
-- *最低*：支持可在其上运行应用的最早操作系统版本的 SDK 版本（并且将通过应用商店部署到它），以及 Visual Studio 编译应用标记代码时所面向的版本。 
-
-在运行时，你的应用将针对其部署到的操作系统版本运行，因此如果使用资源或调用 API（它们在该版本中并未提供），应用将引发异常。 我们将在本文的后面部分介绍如何使用运行时检查来调用正确的 API。
-
-“目标”和“最低”设置指定操作系统/SDK 版本范围的限度。 但是，如果你在最低版本上测试你的应用，则能够确定它将在“最低”和“目标”之间的任意版本上运行。
-
-> [!TIP]
-> Visual Studio 不会向你发出有关 API 兼容性的警告。 由你负责测试并确保你的应用在“最低”和“目标”（包含这两者）之间的所有操作系统版本上按预期方式执行。
-
-当你在 Visual Studio 2015 Update 2 或更高版本中创建新项目时，系统将提示你设置应用支持的目标版本和最低版本。 默认情况下，目标版本是安装的最高 SDK 版本，最低版本是安装的最低 SDK 版本。 你只能从安装在你的计算机上的 SDK 版本中选择“目标”和“最低”。 
-
-![在 Visual Studio 中设置目标 SDK](images/vs-target-sdk-1.png)
-
-我们通常建议你保留默认值。 但是，如果你已安装了 SDK 的预览版本，并且要编写生产代码，则应将目标版本从预览版 SDK 更改为最新的官方 SDK 版本。 
-
-若要更改已在 Visual Studio 中创建的项目的最低版本和目标版本，请转到“项目”-&gt;“属性”-&gt;“应用程序”选项卡 -&gt;“目标”。
-
-![在 Visual Studio 中更改目标 SDK](images/vs-target-sdk-2.png) 
-
-为便于参考，提供了每个 SDK 的内部版本号：
-- Windows 10，版本 1506：SDK 版本 10240
-- Windows 10，版本 1511（11 月更新）：SDK 版本 10586
-- Windows 10，版本 1607（周年更新）：SDK 版本 14393。
-
-可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
-
-## <a name="write-adaptive-code"></a>编写自适应代码
+# <a name="version-adaptive-code"></a>版本自适应代码
 
 你可以考虑编写自适应代码，这与考虑如何[创建自适应 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 类似。 当你检测到自己的应用在较大的屏幕上运行时，你可以设计基本的 UI 以在最小的屏幕上运行，然后移动或添加元素。 借助自适应代码，可编写基础代码以在最低的操作系统版本上运行，并且可以在检测到应用运行所在的较高版本上提供新功能时，添加精心挑选的功能。
+
+有关 ApiInformation、API 协定和配置 Visual Studio 的重要背景信息，请参阅[版本自适应应用](version-adaptive-apps.md)。
 
 ### <a name="runtime-api-checks"></a>运行时 API 检查
 
@@ -476,6 +444,7 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
+
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 应用指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)

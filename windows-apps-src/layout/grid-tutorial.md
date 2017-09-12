@@ -2,24 +2,29 @@
 author: mukin
 Description: "本教程式文章将向读者介绍创建基本应用程序用户界面的步骤。 文章将说明并演示网格和 StackPanel 的使用，这是两个最常见的 XAML 元素。"
 title: "通过使用网格和 StackPanel 创建一个简单的天气应用"
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+template: detail.hbs
+ms.author: mukin
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 12a48ec9e907a65abbbd9ec1e9f9c60c3519fa20
+ms.sourcegitcommit: 2de58584a42e580dbc0d19bdecee12bfee7fd7e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/23/2017
 ---
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>通过使用网格和 StackPanel 创建一个简单的天气应用
 
 使用 XAML 并使用**网格**和 **StackPanel** 元素创建一个简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
-## <a name="prerequisites"></a>先决条件
+> **重要 API**：[Grid 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+
+## <a name="prerequisites"></a>必备条件
 - Windows 10 和 Microsoft Visual Studio 2015。 [单击此处了解如何设置 Visual Studio](../get-started/get-set-up.md)。
-- 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还没有，[请单击此处以了解如何创建一个“Hellow World”应用](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+- 了解如何通过使用 XAML 和 C# 创建一个基本的“Hello World”应用。 如果还没有，[请单击此处以了解如何创建一个“Hello World”应用](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="step-1-create-a-blank-app"></a>步骤 1：创建空白应用
 1. 在 Visual Studio 菜单中，选择**文件** > **新建项目**。
@@ -46,7 +51,7 @@ translationtype: HT
 </Grid>
 ```
 
-新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的**宽度**为“3\ *”，第二列为“5\ *”，除以比率为 3:5 的两列之间的水平空间。 与此方式相同，两行的**高度**分别为“3\ *”和“\ *”，因此相对于第二行，**网格**为第一行分配三倍空间（“\ *”等同于“1 *”）。 即使在调整窗口大小或更改设备时，都会保留这些比率。
+新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的**宽度**为“3\*”，第二列为“5\*”，除以比率为 3:5 的两列之间的水平空间。 与此方式相同，两行的**高度**分别为“2\*”和“\*”，因此相对于第二行，**网格**为第一行分配二倍空间（“\*”等同于“1\*”）。 即使在调整窗口大小或更改设备时，都会保留这些比率。
 
 若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 

@@ -1,28 +1,30 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "传感器方向"
 description: "来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 05/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 78a155aecdf7cb98f8742380dae62a0a9025149a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a91e38aa11f7fa25804d6d6f11cc030ee1613311
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="sensor-orientation"></a>传感器方向
 
 \[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-来自 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 和 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。 如果你的应用支持自动旋转，会在用户旋转设备时自行重定向以适应设备，则必须先调整关于旋转的传感器数据才能使用它。
+来自 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 和 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 类的传感器数据由其参考轴定义。 这些轴由设备的参考帧定义，并在用户转动设备时与其一起旋转。 如果你的应用支持自动旋转，会在用户旋转设备时自行重定向以适应设备，则必须先调整关于旋转的传感器数据才能使用它。
 
 ## <a name="display-orientation-vs-device-orientation"></a>显示方向和设备方向对比
 
@@ -48,7 +50,7 @@ translationtype: HT
 |-------------|-----------------|----------------|
 | **Landscape** | ![采用 Landscape 方向的优先横向设备](images/sensor-orientation-0.PNG) | ![采用 Landscape 方向的优先纵向设备](images/sensor-orientation-1.PNG) |
 | **Portrait** | ![采用 Portrait 方向的优先横向设备](images/sensor-orientation-2.PNG) | ![采用 Portrait 方向的优先纵向设备](images/sensor-orientation-3.PNG) |
-| **LandscapeFlipped ** | ![采用 LandscapeFlipped 方向的优先横向设备](images/sensor-orientation-4.PNG) | ![采用 LandscapeFlipped 方向的优先纵向设备](images/sensor-orientation-5.PNG) | 
+| **LandscapeFlipped** | ![采用 LandscapeFlipped 方向的优先横向设备](images/sensor-orientation-4.PNG) | ![采用 LandscapeFlipped 方向的优先纵向设备](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![采用 PortraitFlipped 方向的优先横向设备](images/sensor-orientation-6.PNG)| ![采用 PortraitFlipped 方向的优先纵向设备](images/sensor-orientation-7.PNG) |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>广播屏幕和无外设设备的设备
@@ -162,9 +164,14 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 必须采用不同的方式更改 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 数据。 请考虑逆时针旋转到 Z 轴时的不同方向，因此我们需要反向旋转以重新获取用户的方向。 对于四元数数据，我们可以使用欧拉公式定义参考四元数的旋转，也可以使用参考旋转矩阵。
 
-![欧拉公式](images/eulers-formula.png) 若要获取所需的相对方向，请用参考对象乘以绝对对象。 请注意，此数学算法不可应用交换律。
+![欧拉公式](images/eulers-formula.png)
 
-![用参考对象乘以绝对对象](images/orientation-formula.png) 在之前的表达式中，绝对对象由传感器数据返回。
+若要获取所需的相对方向，请用参考对象乘以绝对对象。 请注意，此数学算法不可应用交换律。
+
+![用参考对象乘以绝对对象](images/orientation-formula.png)
+
+在之前的表达式中，绝对对象由传感器数据返回。
+
 
 | 显示方向  | 围绕 Z 进行逆时针旋转 | 参考四元数（反向旋转） | 参考旋转矩阵（反向旋转） | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|

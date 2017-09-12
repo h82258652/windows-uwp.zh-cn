@@ -1,27 +1,29 @@
 ---
 author: TylerMSFT
 description: "了解如何使用扩展执行让你的应用在最小化时保持运行"
-title: "使用扩展执行最小化运行"
+title: "使用扩展执行来推迟应用挂起"
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: "windows 10, uwp, 扩展执行, 最小化, ExtendedExecutionSession, 后台任务, 应用程序生命周期, 锁屏界面"
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
-ms.openlocfilehash: bd9ccaa4cb87a24906c531996d4fc3f88875b060
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f82fa37ade38d6a92fa1fec427079f75057a1a4a
+ms.sourcegitcommit: e7e8de39e963b73ba95cb34d8049e35e8d5eca61
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/16/2017
 ---
-# <a name="run-while-minimized-with-extended-execution"></a>使用扩展执行最小化运行
+# <a name="postpone-app-suspension-with-extended-execution"></a>使用扩展执行来推迟应用挂起
 
-本文将为你展示当应用挂起时如何借助扩展执行进行推迟，从而让你的应用在最小化时也可以运行。
+本文将为你展示当应用挂起时如何借助扩展执行进行推迟，从而让你的应用在最小化时或在锁屏界面中也可以运行。
 
 当用户最小化或者离开应用时，应用会进入挂起状态。  其内存会保留，但是其代码不运行。 对于具有可视用户界面的所有操作系统版本均是如此。 有关应用何时挂起的更多详细信息，请参阅[应用程序生命周期](app-lifecycle.md)。
 
-某些情况下，应用在最小化时可能需要保持运行，而不是挂起。 如果应用需要保持运行，操作系统可以让它保持运行，或者它也可以请求保持运行。 例如，在后台播放音频时，如果按照[后台媒体播放](../audio-video-camera/background-audio.md)的以下步骤进行操作，操作系统可以保持应用运行更长时间。 否则，你必须多次手动请求。
+某些情况下，应用在最小化时可能需要保持运行，而不是挂起。 如果应用需要保持运行，操作系统可以让它保持运行，或者它也可以请求保持运行。 例如，在后台播放音频时，如果按照[后台媒体播放](../audio-video-camera/background-audio.md)的以下步骤进行操作，操作系统可以保持应用运行更长时间。 否则，你必须多次手动请求。 你用来执行后台执行的时间可能只有几分钟，但你必须随时准备处理被吊销的会话。
 
-创建 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 来决定。 有三个 **ExtendedExecutionReason** 枚举值：**Unspecified、LocationTracking** 和 **SavingData**。
+创建 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 来多次请求在后台完成操作。 你创建的 **ExtendedExecutionSession** 种类由你在创建它时提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 来决定。 有三个 **ExtendedExecutionReason** 枚举值：**Unspecified、LocationTracking** 和 **SavingData**。 任何时候只能请求一个 **ExtendedExecutionSession**；如果在一个会话当前处于活动状态时尝试创建另一个会话，将则导致 **ExtendedExecutionSession** 构造函数出现异常。 不要使用 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) 和 [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx)；它们需要受限功能，并且不能在应用商店应用程序中使用。
 
 ## <a name="run-while-minimized"></a>最小化时运行
 
@@ -35,7 +37,7 @@ translationtype: HT
 
 如果应用需要定期记录 [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 中的位置，请在创建 **ExtendedExecutionSession** 时指定 **ExtendedExecutionReason.LocationTracking**。 用于健身跟踪和导航的应用，此应用需要定期监控用户的位置并使用该原因。
 
-位置跟踪扩展执行会话可以根据需要尽可能长时间运行。 不过，每个设备上只能运行一个此类会话。 位置跟踪扩展执行会话只能在前台请求，并且应用必须处于**正在运行**状态。 这确保用户了解应用已启动扩展位置跟踪会话。 当应用于后台运行时，仍可以通过后台任务或者应用服务使用 GeoLocator，而无需请求位置跟踪扩展执行会话。
+位置跟踪扩展执行会话可以根据需要尽可能长时间运行，在移动设备上锁定屏幕时也是如此。 不过，每个设备上只能运行一个此类会话。 位置跟踪扩展执行会话只能在前台请求，并且应用必须处于**正在运行**状态。 这确保用户了解应用已启动扩展位置跟踪会话。 当应用于后台运行时，仍可以通过后台任务或者应用服务使用 GeoLocator，而无需请求位置跟踪扩展执行会话。
 
 ## <a name="save-critical-data-locally"></a>本地保存关键数据
 
@@ -43,7 +45,7 @@ translationtype: HT
 
 请勿使用这种会话延长应用生命周期来上载或下载数据。 如果需要上载数据，请在有可用的交流电源时请求 [background transfer](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) 或注册 **MaintenanceTrigger** 来处理传输。 **ExtendedExecutionReason.SavingData** 扩展执行会话可以在应用位于前台并且处于**正在运行**状态时请求，也可以在应用位于后台并且处于**挂起**状态时请求。
 
-应用终止之前，**挂起**状态是应用在生命周期内可以执行任务的最后机会。 当应用处于**挂起**状态时请求 **ExtendedExecutionReason.SavingData** 扩展执行会话会引发潜在问题，你应当引起注意。 如果在应用处于**挂起**状态时请求扩展执行会话，并且用户请求再次启动应用，可能要花很长时间启动。 这是因为必须完成扩展执行会话时段才能关闭应用的旧实例并启动应用的新实例。 牺牲启动性能时间以保证用户状态不丢失。
+应用终止之前，**挂起**状态是应用在生命周期内可以执行任务的最后机会。 **ExtendedExecutionReason.SavingData** 是唯一一种可在**挂起**状态下请求的 **ExtendedExecutionSession**。 当应用处于**挂起**状态时请求 **ExtendedExecutionReason.SavingData** 扩展执行会话会引发潜在问题，你应当引起注意。 如果在应用处于**挂起**状态时请求扩展执行会话，并且用户请求再次启动应用，可能要花很长时间启动。 这是因为必须完成扩展执行会话时段才能关闭应用的旧实例并启动应用的新实例。 牺牲启动性能时间以保证用户状态不丢失。
 
 ## <a name="request-disposal-and-revocation"></a>请求、处置和吊销
 
@@ -54,7 +56,6 @@ translationtype: HT
 ```csharp
 var newSession = new ExtendedExecutionSession();
 newSession.Reason = ExtendedExecutionReason.Unspecified;
-newSession.Description = "Raising periodic toasts";
 newSession.Revoked += SessionRevoked;
 ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
 
@@ -163,7 +164,6 @@ static class ExtendedExecutionHelper
 
         var newSession = new ExtendedExecutionSession();
         newSession.Reason = ExtendedExecutionReason.Unspecified;
-        newSession.Description = "Running multiple tasks";
         newSession.Revoked += SessionRevoked;
 
         if(revoked != null)

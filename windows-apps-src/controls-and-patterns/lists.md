@@ -6,18 +6,25 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 0249132942cbb15a009c85c929185bffcba23cd9
+ms.sourcegitcommit: 690320e6cbfc16ed9e935a136fecc44d68e95719
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="lists"></a>列表
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 列表显示并启用与基于集合的内容交互。 本文中介绍的四种列表模式如下：
 
@@ -26,16 +33,15 @@ translationtype: HT
 -   下拉列表，用于让用户从展开式列表中选择某一项
 -   列表框，用于让用户从可滚动的框中选择一个或多个项
 
-已为每种列表模式提供了设计指南、功能和示例。 本文末尾处提供了指向相关主题及 API 的链接。
+已为每种列表模式提供了设计指南、功能和示例。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **重要 API**：[ListView 类](https://msdn.microsoft.com/library/windows/apps/br242878)、[GridView 类](https://msdn.microsoft.com/library/windows/apps/br242705)、[ComboBox 类](https://msdn.microsoft.com/library/windows/apps/br209348)
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">预发行版。</span> 秋季创意者更新（Windows 10 Insider Preview 版本 16215 及更高版本）- 行为变化</strong>
+> </div>
+> 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 请参阅 [ScrollViewer 类] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API 参考主题，以了解详细信息。
 
 ## <a name="list-views"></a>列表视图
 
@@ -69,7 +75,7 @@ translationtype: HT
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -132,7 +138,7 @@ translationtype: HT
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -180,10 +186,12 @@ translationtype: HT
 
 -   将组合框的文本内容限制为单行。
 -   以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
+-   若要创建可在用户使用箭头键（如字体所选内容下拉列表）时实时更新的组合框，请将 SelectionChangedTrigger 设置为“Always”。  
 
 ### <a name="text-search"></a>文本搜索
 
-组合框自动支持其集合内的搜索。 当焦点位于打开或关闭的组合框上时，如果用户在物理键盘上键入字符，与用户的字符串匹配的候选项将引入视图。 当在长列表中导航时，此功能尤其有用。 例如，当与包含状态列表的下拉列表交互时，用户可以按“w”键来将“Washington”引入视图，以供快速选择。 
+组合框自动支持其集合内的搜索。 当焦点位于打开或关闭的组合框上时，如果用户在物理键盘上键入字符，与用户的字符串匹配的候选项将引入视图。 当在长列表中导航时，此功能尤其有用。 例如，当与包含状态列表的下拉列表交互时，用户可以按“w”键来将“Washington”引入视图，以供快速选择。
+
 
 ## <a name="list-boxes"></a>列表框
 
@@ -252,12 +260,12 @@ translationtype: HT
 
 - [中心](hub.md)
 - [大纲/细节](master-details.md)
-- [导航窗格](nav-pane.md)
+- [导航窗格](navigationview.md)
 - [语义式缩放](semantic-zoom.md)
 - [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **对于开发人员**
-- [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox 类**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView 类](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [GridView 类](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [ComboBox 类](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [ListBox 类](https://msdn.microsoft.com/library/windows/apps/br242868)

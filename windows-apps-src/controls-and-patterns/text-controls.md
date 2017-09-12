@@ -6,14 +6,19 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 16b019678e94e131ba1105bb92d7ea3ab301828c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-controls"></a>文本控件
 
@@ -24,17 +29,8 @@ translationtype: HT
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
 - 用于文本输入和编辑的控件是 [TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md) 和 [RichEditBox](rich-edit-box.md)。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**AutoSuggestBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**RichEditBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**RichTextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li> [**TextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -73,7 +69,7 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 -   **高效枚举所有有效值是否可行？** 如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
 -   **有效值集是否非常小？** 如果是，请考虑使用[下拉列表](lists.md)或列表框，在值的长度超过几个字符的情况下尤其如此。
 -   **有效数据是否完全不受限制？ 或者有效数据是否仅受格式限制（长度或字符类型受限制）？** 如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
--   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681)（而非文本输入控件）接受日期输入。
+-   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681)（而非文本输入控件）接受日期输入。
 -   如果数据完全为数值：
     -   **输入的值是否为近似值，并且/或者与同一页面的另一个数量相关？** 如果是，请使用[滑块](slider.md)。
     -   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
@@ -97,18 +93,18 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 有关特定于每个文本控件的信息和示例，请参阅以下文章。
 
--   [**AutoSuggestBox**](auto-suggest-box.md)
--   [**PasswordBox**](password-box.md)
--   [**RichEditBox**](rich-edit-box.md)
--   [**RichTextBlock**](rich-text-block.md)
--   [**TextBlock**](text-block.md)
--   [**TextBox**](text-box.md)
+-   [AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>字体和样式指南
 有关字体指南，请参阅以下文章：
 
-- [**字体指南**](fonts.md)
-- [**Segoe MDL2 图标列表和指南**](segoe-ui-symbol-font.md)
+- [字体指南](fonts.md)
+- [Segoe MDL2 图标列表和指南](segoe-ui-symbol-font.md)
 
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>为文本控件选择正确的键盘
@@ -144,7 +140,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 ![带有颜色字体的文本块](images/text-block-color-fonts.png)
 
-有关详细信息，请参阅 [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) 属性。
+有关详细信息，请参阅 [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) 属性。
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行和段落分隔符指南
 
@@ -187,11 +183,11 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 ## <a name="related-articles"></a>相关文章
 
 **面向设计人员**
-- [**字体指南**](fonts.md)
-- [**Segoe MDL2 图标列表和指南**](segoe-ui-symbol-font.md)
+- [字体指南](fonts.md)
+- [Segoe MDL2 图标列表和指南](segoe-ui-symbol-font.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **面向开发人员 (XAML)**
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length.aspx)

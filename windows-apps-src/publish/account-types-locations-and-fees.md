@@ -4,60 +4,71 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: "帐户类型、位置和费用"
 description: "我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。"
 ms.author: wdg-dev-content
-ms.date: 03/07/2017
+ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 9f6cdace7d619ede77956fb081756e0bc5682e16
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 25ae63638a76df2d064dbbc6334d5793cdadbedf
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
 我们提供两种类型的开发者帐户：个人帐户和公司帐户。 在许多[国家和地区](#developer-account-and-app-submission-markets)均提供开发者帐户。 任一类型的帐户都向你提供将应用发布到应用商店和参与其他 Microsoft 开发人员计划的访问权限。
 
-> **注意**  无论是为公司还是个人创建帐户，你都只能将一个 Microsoft 帐户与开发者帐户相关联。 当注册帐户时，确保使用你希望用于开发者帐户的 Microsoft 帐户登录。
+> [!NOTE]
+> 当注册帐户时，确保使用你希望用于开发者帐户的 Microsoft 帐户登录。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
-在[开始注册过程](http://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、加载项和服务。 个人帐户用于自行开发的单个开发人员。 公司帐户用于组织和企业，并且允许访问某些其他应用功能。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 
+在[开始注册过程](http://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 
-> **重要提示**  由于在选择后无法更改帐户类型，因此，请务必选择正确的类型。
+公司帐户用于组织和企业，并且允许访问某些其他应用功能。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
+
+> [!IMPORTANT]
+> 由于在选择后无法更改帐户类型，因此，请务必选择正确的类型。
 
 以下是这两种帐户类型之间的基本差异。
 
 | 个人帐户 | 公司帐户 |
 |--------------------|-----------------|
-| <ul><li>使用某些应用功能时受到限制</li><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li></ul> | <ul><li>需要通过 Symantec 或 Dun &amp; Bradstreet 进行验证</li><li>更高的应用功能访问权限</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li></ul> |
+| <ul><li>使用某些应用功能时受到限制</li><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li></ul> | <ul><li>需要更高的帐户验证</li><li>更高的应用功能访问权限</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 公司帐户还允许你提交应用，以进行其他[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 公司帐户还允许你提交应用，以进行其他[应用功能声明](../packaging/app-capability-declarations.md)。
 
 具体而言，必须拥有公司帐户，才能发布使用以下三项功能的应用：
 
 -   **enterpriseAuthentication** - 使用 Windows 凭据来访问公司内部网。 这通常用在连接到企业内服务器的业务线应用中。 （对于一般的 Internet 通信，无需使用此功能。）
 -   **sharedUserCertificates** - 支持应用访问软件和硬件证书，例如存储在智能卡上的证书。 这通常用于需要智能卡进行身份验证的财务或企业应用。
--   **documentsLibrary** - 允许以编程方式访问用户的文档，这些文档按照程序包清单中声明的文件类型关联进行筛选。 （使用[文件选取器](https://msdn.microsoft.com/library/windows/apps/Hh465174)访问用户的文档不需要声明此功能）。 请注意，面向 Windows Phone 8.1 或更早版本的应用无法使用 documentsLibrary 功能。
+-   **documentsLibrary** - 允许以编程方式访问用户的文档，这些文档按照程序包清单中声明的文件类型关联进行筛选。 （使用[文件选取器](../files/quickstart-using-file-and-folder-pickers.md)访问用户的文档不需要声明此功能）。 请注意，面向 Windows Phone 8.1 或更早版本的应用无法使用 documentsLibrary 功能。
 
-> **注意**  此外，还必须先联系支持人员并获取批准，然后才能提交用于声明 **documentsLibrary** 功能的应用。
+> [!NOTE]
+> 此外，还必须先联系支持人员并获取批准，然后才能提交用于声明 **documentsLibrary** 功能的应用。
 
-拥有公司帐户不能保证使用这些功能的应用通过认证。 这些功能针对非常具体的情形，大多数应用不应声明它们。 有关详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
+拥有公司帐户不能保证使用这些功能的应用通过认证。 这些功能针对非常具体的情形，大多数应用不应声明它们。 有关详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。
+
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们使用 Symantec 或 Dun &amp; Bradstreet 来验证你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证完公司帐户后，你才可以从公司帐户中提交应用，但在等待验证时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)、访问 Windows 开发人员中心仪表板以及继续生成和测试你的应用。
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证完公司帐户后，你才可以从公司帐户中提交应用，但在等待验证时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)、访问 Windows 开发人员中心仪表板以及继续生成和测试你的应用。
 
 可在**帐户设置**页上查看验证状态。 
+
 
 ## <a name="developer-account-and-app-submission-markets"></a>开发者帐户和应用提交市场
 
 如果你居住在下面列出的国家或地区或在这些地方开展业务，你将能够注册你的开发者帐户并提交应用。
 
-在下表中，**注册费**是你当前注册开发者帐户时需支付的费用。 价格可能会随时发生变化。
+在下表中，**注册费**是你当前注册开发者帐户时需支付的费用。 这是一次性费用，之后不会收取任何费用。 请注意，以下价格可能会随时发生变化。
 
-> **注意**  当你注册时，我们会在注册费的基础上增加任何适用的税款和费用。 同时，当我们向你付款时，你的银行可能会收取一定的费用才能收到付款。
+> [!NOTE]
+> 当你注册时，我们会在注册费的基础上增加任何适用的税款和费用。 同时，当我们向你付款时，你的银行可能会收取一定的费用才能收到付款。
 
 **付款**列介绍了我们如何[向你支付](getting-paid-apps.md) 通过应用赚取的利润。 你可以选择[付款帐户](setting-up-your-payout-account-and-tax-forms.md)，我们会将你的应用收益存入该帐户。
 
-> **注意**  某些市场不支持付费应用（**付款**）。 在这些市场中，只能提交免费应用。
+> [!NOTE]
+> 某些市场不支持付费应用（**付款**）。 在这些市场中，只能提交免费应用。
 
 **PayPal** 列说明了是否支持[付款帐户](setting-up-your-payout-account-and-tax-forms.md)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
 

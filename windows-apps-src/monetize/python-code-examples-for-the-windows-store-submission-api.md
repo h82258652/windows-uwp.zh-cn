@@ -2,22 +2,22 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "使用此部分中的 Python 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
-title: "提交 API 的 Python 代码示例"
+title: "Python 示例 - 应用、加载项和外部测试版的提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例"
-ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例, python"
+ms.openlocfilehash: 01d40aa31531aa4d5b75f02627bc7e6234963c7e
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="python-code-examples-for-the-submission-api"></a>提交 API 的 Python 代码示例
+# <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 示例：应用、加载项和外部测试版的提交
 
-本文提供了使用 *Windows 应用商店提交 API* 的 Python 代码示例。 有关此 API 的详细信息，请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
-
-这些代码示例演示了以下任务：
+本文提供 Python 代码示例演示如何使用 [Windows 应用商店提交 API](create-and-manage-submissions-using-windows-store-services.md) 执行以下任务：
 
 * [获取 Azure AD 访问令牌](#token)
 * [创建加载项](#create-add-on)
@@ -29,21 +29,21 @@ translationtype: HT
 <span id="token" />
 ## <a name="obtain-an-azure-ad-access-token"></a>获取 Azure AD 访问令牌
 
-以下示例演示了如何[获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，你可以使用此令牌在 Windows 应用商店提交 API 中调用方法。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成一个。
+以下示例演示如何[获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，你可以使用此令牌在 Windows 应用商店提交 API 中调用方法。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成一个。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>创建加载项
 
-以下示例演示了如何[创建](create-an-add-on.md) 和[删除](delete-an-add-on.md) 加载项（加载项也称为应用内产品或 IAP）。
+以下示例演示如何[创建](create-an-add-on.md)再[删除](delete-an-add-on.md)加载项。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
 ## <a name="create-a-package-flight"></a>创建软件包外部测试版
 
-以下示例演示了如何[创建](create-a-flight.md) 和[删除](delete-a-flight.md) 软件包外部测试版。
+以下示例演示如何[创建](create-a-flight.md) 和[删除](delete-a-flight.md) 软件包外部测试版。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 

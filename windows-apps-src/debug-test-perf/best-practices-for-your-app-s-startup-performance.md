@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "应用启动性能的最佳实践"
 description: "通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用的启动性能的最佳做法
 
@@ -108,7 +110,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 
 ![实时可视化树。](images/live-visual-tree.png)
 
-**使用 x:DeferLoadStrategy**。 无法通过折叠某个元素或将其不透明度设置为 0 来阻止该元素创建。 可使用 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 最好延迟处理在启动屏幕期间不可见的 UI，这样你便可以在需要时加载它，或作为一组延迟逻辑的一部分加载它。 若要触发加载，只需针对元素调用 FindName 即可。 有关示例和详细信息，请参阅 [x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
+**使用延迟**。 无法通过折叠某个元素或将其不透明度设置为 0 来阻止该元素创建。 可使用 x:Load 或 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 最好延迟处理在启动屏幕期间不可见的 UI，这样你便可以在需要时加载它，或作为一组延迟逻辑的一部分加载它。 若要触发加载，只需针对元素调用 FindName 即可。 有关示例和详细信息，请参阅 [x:Load 属性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
 
 **虚拟化**。 如果你的 UI 中有列表或 repeater 内容，强烈建议你使用 UI 虚拟化。 如果未虚拟化列表 UI，则在创建所有元素前需要花费一些开销，而这样可能会减慢启动速度。 请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
 
@@ -365,4 +367,3 @@ PageStackEntry 还包括已传递给 Frame.Navigate() 方法的参数。 建议�
 页面缓存通过避免实例化来改善性能，进而提高导航性能。 如果过度缓存，页面缓存可能会降低性能，进而会对工作集造成影响。
 
 因此，建议根据你的应用程序使用页面缓存。 例如，假设你有一个显示帧中的项目列表的应用，则当你点击某一项目时，它会将该帧定位到该项目的详细信息页面。 列表页面应该可以设置为缓存。 如果详细信息页面对所有项目都是相同的，它应该也可以缓存。 但是，如果详细信息页面较为异类，最好关闭缓存。
-

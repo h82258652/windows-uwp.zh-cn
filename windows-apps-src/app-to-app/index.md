@@ -2,16 +2,18 @@
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
 description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
 title: "应用到应用的通信"
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8d700c707a3a3cdebe338ac51c8ebb5b37d94da3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 938c2d20067dc99a84939c8501971a06fa702515
+ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/19/2017
 ---
 # <a name="app-to-app-communication"></a>应用到应用的通信
 

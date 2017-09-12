@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: "规划性能"
 description: "用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="planning-for-performance"></a>规划性能
 
@@ -85,7 +87,7 @@ translationtype: HT
 -   通过[优化 XAML 标记](optimize-xaml-loading.md)最大程度地为应用每个页面（尤其初始页面）的 UI 提高分析和加载时间效率以及内存效率。 简而言之，在需要 UI 和代码之前先将其延迟加载。
 -   对于 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)，使所有项目都保持相同大小并尽可能多地使用 [ListView 和 GridView 优化技术](optimize-gridview-and-listview.md)。
 -   采用框架可以在区块中加载并重用的标记形式声明 UI，而不是在代码中以命令方式构建。
--   在用户需要 UI 元素之前先将其折叠。 请参阅 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 属性。
+-   在用户需要 UI 元素之前延迟创建这些元素。 请参阅 [**x:Load**](../xaml-platform/x-load-attribute.md) 属性。
 -   首选主题过渡和动画而不是情节提要动画。 有关详细信息，请参阅[动画概述](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 请记住，情节提要动画需要持续更新屏幕，并保持 CPU 和图形管道处于活动状态。 若要维持电池电量，当用户未与应用交互时，请不要运行动画。
 -   你加载的图像的大小应适合将使用 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 方法显示它的视图。
 
@@ -195,4 +197,3 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 ## <a name="optimizing"></a>优化
 
 仅优化代码中性能关键型代码路径：花费时间最多的地方。 分析将会告知你是哪些部分。 通常，在创建遵循良好设计实践的软件与编写以最高优化程度执行的代码之间，存在一个权衡取舍。 通常，在不关注性能的方面，优先考虑开发人员生产效率和良好的软件设计会更好。
-

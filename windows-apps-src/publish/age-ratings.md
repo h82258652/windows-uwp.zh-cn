@@ -4,14 +4,16 @@ Description: "应用提交进程的年龄分级页面允许你提供有关应用
 title: "年龄分级"
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 2546ef6141095a0033f197e1e43e68276253aba3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4adac59c0508bcdd9c21180a1c6dcb70fc4532b3
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="age-ratings"></a>年龄分级
 
@@ -21,7 +23,8 @@ translationtype: HT
 
 首次提交应用（或首次更新使用较早的年龄分级过程发布的应用）时，系统将提示你完成多选问卷调查来确定你的应用的年龄分级。
 
-> **重要提示**  如果你已针对其他店面的应用完成了问卷调查并拥有 IARC 分级 ID，可以选择此选项来向我们提供你的分级 ID。 我们将使用你的 ID 将现有分级与 Windows 应用商店中的应用相关联。
+> [!IMPORTANT]
+> 如果你已针对其他店面的应用完成了问卷调查并拥有 IARC 分级 ID，可以选择此选项来向我们提供你的分级 ID。 我们将使用你的 ID 将现有分级与 Windows 应用商店中的应用相关联。
 
 你需要准确回答这些问题。 在此过程中，我们与 IARC 共享你的发布者显示名称和电子邮件地址。 完成填写问卷调查后，IARC 分级系统将根据你的回复提供年龄和内容分级信息。 我们将在不同市场中向客户显示你的应用时使用此分级信息。 在应用发布后，你还将收到一封来自 IARC 的电子邮件，确认应用的分级事宜。
 
@@ -31,16 +34,20 @@ translationtype: HT
 
 下次更新应用时，你将在该页面上看到应用的所有已分配分级。 如果应用更改在某种程度上需要你调整任何答案，也可以单击**编辑**重新填写问卷调差。 IARC 有时还可能会更新问题。 如果发生这种情况，可能会在你提交更新时提示你重新完成填写问卷调查。
 
-> **注意**  韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会 ](http://go.microsoft.com/fwlink/p/?LinkId=228256) 进行分级。 如果你的应用是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
+<span id="boards" />
 
+> [!NOTE]
+> 韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会](http://go.microsoft.com/fwlink/p/?LinkId=228256)进行分级。 如果你的应用是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
+
+<span id="appeal" />
 ## <a name="appealing-ratings-or-refused-classifications"></a>对分级进行申诉或拒绝分类
 
 如果你对你的应用收到的年龄分级有疑问或希望对其进行申诉，可以通过显示在分级认证电子邮件中的链接联系 IARC，你将在发布应用后收到该电子邮件。
 
 在某些情况下，你的应用的分级可能导致其被归类为不适合特定的国家或地区使用。 如果发生这种情况，你将看到一条消息，指示哪些市场无法提供你的应用。 如果你不同意该分类（或有关此事的任何其他异议），可以使用显示在分级认证电子邮件中的链接请求申诉，你将从 IARC 收到该电子邮件。
 
-## <a name="previous-windows-store-age-ratings"></a>以前的 Windows 应用商店年龄分级
 
+## <a name="previous-windows-store-age-ratings"></a>以前的 Windows 应用商店年龄分级
 
 以前由开发人员为其应用指定年龄分级，而不是通过完成问卷调查。 在下面查找以前的 Windows 应用商店年龄分级细目：
 

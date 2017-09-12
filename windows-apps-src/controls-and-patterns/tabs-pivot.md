@@ -6,31 +6,32 @@ ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 197feb30f769f4e34a576abeb52bd17d4006bb42
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: llongley
+doc-status: Published
+ms.openlocfilehash: 263236b4c3ef61afc963544017588cbf3027496d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="pivot-and-tabs"></a>透视表和表
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 透视表控件和相关的表模式用于导航经常访问的不同内容类别。 透视表允许在两个或多个内容窗格之间进行导航，并且依靠文本标题来表明内容的不同部分。
 
+> **重要 API**：[Pivot 类](https://msdn.microsoft.com/library/windows/apps/dn608241)
+
 ![表示例](images/pivot_Hero_main.png)
 
-表是透视表的视觉变体，它使用图标和文本的组合或纯图标来表明部分内容。 表使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件生成。 [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903) 显示如何将透视表控件自定义为表模式。
-
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**透视表类**](https://msdn.microsoft.com/library/windows/apps/dn608241)</li>
-</ul>
-</div>
+表是透视表的视觉变体，它使用图标和文本的组合或纯图标来表明部分内容。 表使用 [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件生成。 [透视表示例](http://go.microsoft.com/fwlink/p/?LinkId=619903)显示如何将透视表控件自定义为表模式。
 
 
 ## <a name="the-pivot-pattern"></a>透视表模式
@@ -39,7 +40,7 @@ translationtype: HT
 
 - **标题标签。**  标题可以是带有文本的图标、纯图标或纯文本。
 - **标题对齐方式。**  标题可以左对齐，也可以居中对齐。
-- **顶级或次级导航。**  透视表可以用于任一级别的导航。 （可选）[导航窗格](nav-pane.md)可充当主要级别，而透视表可作为辅助级别。
+- **顶级或次级导航。**  透视表可以用于任一级别的导航。 （可选）[导航窗格](navigationview.md)可充当主要级别，而透视表可作为辅助级别。
 - **触摸手势支持。**  对于支持触摸手势的设备，你可以使用以下两组交互之一在不同的内容类别之间进行导航：
     1. 点击表/透视表标题以导航到该类别。
     2. 在内容区域上向左或向右轻扫，以导航到相邻类别。
@@ -56,7 +57,7 @@ translationtype: HT
 
 ## <a name="create-a-pivot-control"></a>创建透视表控件
 
-[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件随附本部分中所述的基本功能。
+[Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件随附本部分中所述的基本功能。
 
 此 XAML 使用 3 个部分的内容创建基本透视表控件。
 
@@ -79,13 +80,13 @@ translationtype: HT
 
 ### <a name="pivot-items"></a>透视表项目
 
-透视表是一个 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目集合。 你添加到透视表的任何非显式 [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) 的项目都隐式包装在 PivotItem 中。 由于透视表经常用于在内容页面之间导航，因此通常使用 XAML UI 元素直接填充 [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合。 或者，你可以将 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。 ItemsSource 中绑定的项目可以属于任何类型，但如果它们不是显式 PivotItems，则必须定义 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 和 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) 来指定这些项目的显示方式。
+透视表是一个 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目集合。 你添加到透视表的任何非显式 [PivotItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) 的项目都隐式包装在 PivotItem 中。 由于透视表经常用于在内容页面之间导航，因此通常使用 XAML UI 元素直接填充 [Items](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合。 或者，你可以将 [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。 ItemsSource 中绑定的项目可以属于任何类型，但如果它们不是显式 PivotItems，则必须定义 [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 和 [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) 来指定这些项目的显示方式。
 
-你可以使用 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) 属性获取或设置透视表的活动项目。 使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) 属性获取或设置活动项目的索引。
+你可以使用 [SelectedItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) 属性获取或设置透视表的活动项目。 使用 [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) 属性获取或设置活动项目的索引。
 
 ### <a name="pivot-headers"></a>透视表标题
 
-你可以使用 [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) 和 [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) 属性将其他控件添加到透视表标题。
+你可以使用 [LeftHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) 和 [RightHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) 属性将其他控件添加到透视表标题。
 
 ### <a name="pivot-interaction"></a>透视表交互
 
@@ -103,9 +104,8 @@ translationtype: HT
 -   当所有透视表标题都适合所允许的空间时，透视表将固定不动。
 -   点击某个透视表标签即可导航到相应的页面，即使透视表无法自行移动也是如此。 活动透视表将突出显示。
 
-<div class="microsoft-internal-note">
-我们特别建议阻止项目在 10 英尺的环境中旋转。 如果要在 Xbox 上运行应用，请将新的 `IsHeaderItemsCarouselEnabled` 属性设置为 False。
-</div>
+> 注意&nbsp;&nbsp; 透视表标题不应在 [10 英尺环境](../input-and-devices/designing-for-tv.md)中旋转。 如果你的应用将在 Xbox 上运行，请将 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot#Windows_UI_Xaml_Controls_Pivot_IsHeaderItemsCarouselEnabled) 属性设置为 **false**。
+
 
 **旋转**
 
@@ -113,17 +113,15 @@ translationtype: HT
 -   点击某个透视表标签即可导航到相应的页面，并且活动透视表标签将旋转至第一个位置。
 -   从最后一个到第一个透视表部分的旋转循环中的透视表项目。
 
-<div class="microsoft-internal-note">
-### 透视表焦点
+### <a name="pivot-focus"></a>透视表焦点
 
 默认情况下，透视表标题上的键盘焦点使用下划线表示。
 
 ![默认焦点为选择的标题添加下划线](images/pivot_focus_selectedHeader.png)
 
-自定义透视表和将下划线合并到标题选择视觉的应用可以使用新的 `HeaderFocusVisualPlacement` 属性，以更改默认属性。 当为 `HeaderFocusVisualPlacement=\"ItemHeaders\"` 时，将在整个标题窗格外围绘制焦点。
+自定义透视表和将下划线合并到标题选择视觉的应用可以使用 [HeaderFocusVisualPlacement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot#Windows_UI_Xaml_Controls_Pivot_HeaderFocusVisualPlacement) 属性更改默认值。 当为 `HeaderFocusVisualPlacement="ItemHeaders"` 时，将在整个标题窗格外围绘制焦点。
 
 ![ItemsHeader 选项在所有透视表标题外围绘制焦点矩形](images/pivot_focus_headers.png)
-</div>
 
 ## <a name="recommendations"></a>建议
 
@@ -140,4 +138,3 @@ translationtype: HT
 
 ## <a name="related-topics"></a>相关主题
 - [导航设计基础知识](../layout/navigation-basics.md)
-- [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)

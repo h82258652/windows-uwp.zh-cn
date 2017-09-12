@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: "传感器"
 description: "传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eee6bb0c70c39a6676639f5b6da0f5465811dbad
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="sensors"></a>传感器
 
@@ -65,17 +67,25 @@ translationtype: HT
 
 可能使用加速计传感器的应用包含一款游戏，在该游戏中，屏幕上的弹珠会随着你倾斜设备的方向（重力矢量）进行滚动。 此类功能密切反映了 [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 功能，并且也可通过使用俯仰和滚动这一组合操作借助该传感器实现该功能。 使用加速计的重力矢量通过针对设备倾斜提供轻松进行数学运算的矢量而稍微简化了这一点。 另一个示例是一个应用，当用户在空中轻弹该设备（线性加速度矢量）时，该应用会发出抽打鞭子的声音。
 
+有关实现的示例，请参阅[加速计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
+
 ## <a name="activity-sensor"></a>活动传感器
 
 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 传感器将确定连接到传感器的设备的当前状态。 此传感器经常在健身应用程序中用于跟踪携带设备的用户是在跑步还是步行。 有关可通过此传感器 API 检测到的可能活动列表，请参阅 [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128)。
 
+有关实现的示例，请参阅[活动传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ActivitySensor)。
+
 ## <a name="altimeter"></a>高度计
 
-[**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) 传感器将返回一个指示该传感器高度的值。 这使你能够按照米数跟踪相对于海平面的高度变化。 可能使用此传感器的一个示例是，跟踪跑步期间的海拔高度变化以计算消耗的热量的跑步应用。 在此情况下，此传感器数据可能会与 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 传感器组合起来，提供更精确的跟踪信息。
+[**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) 传感器将返回一个指示该传感器高度的值。 这使你能够按照米数跟踪相对于海平面的高度变化。 可能使用此传感器的一个示例是，跟踪跑步期间的海拔高度变化以计算消耗的热量的跑步应用。 在此情况下，此传感器数据可能会与[**活动**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 传感器组合起来，提供更精确的跟踪信息。
+
+有关实现的示例，请参阅[高度计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Altimeter)。
 
 ## <a name="barometer"></a>气压计
 
 [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) 传感器使应用程序能够获取气压读数。 天气应用程序可以使用此信息来提供当前大气压力。 这可用于提供更详细的信息和预测潜在天气变化。
+
+有关实现的示例，请参阅[气压计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Barometer)。
 
 ## <a name="compass"></a>指南针
 
@@ -85,6 +95,8 @@ translationtype: HT
 
 想要显示指南针刻度盘或导航某个地图的应用通常会使用指南针传感器。
 
+有关实现的示例，请参阅[指南针示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)。
+
 ## <a name="gyrometer"></a>陀螺测试仪
 
 [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) 传感器将测量沿 X、Y 和 Z 轴的角速度。 这些角速度在基于运动的简单应用中非常有用，这些应用不关心设备方向，但却关注以不同速度旋转的设备。 陀螺测试仪可能受到沿一个或多个轴的数据杂音或恒定偏置的影响。 你应该查询加速计以验证是否移动设备，以便确定陀螺测试仪是否受偏置的影响，然后在你的应用中进行相应地修正。
@@ -92,6 +104,8 @@ translationtype: HT
 ![具有俯仰、倾斜和偏航的陀螺测试仪](images/gyrometer.png)
 
 可使用陀螺测试仪传感器的应用的一个示例是一款游戏，该游戏基于设备的快速旋转操作旋转轮盘。
+
+有关实现的示例，请参阅[陀螺测试仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Gyrometer)。
 
 ## <a name="inclinometer"></a>测斜仪
 
@@ -101,9 +115,13 @@ translationtype: HT
 
 更改其视野以匹配设备方向的应用可以使用测斜仪传感器。 同样，可显示飞机（匹配设备的偏航、俯仰和倾斜）的应用还将使用测斜仪读数。
 
+有关实现的示例，请参阅测斜仪示例 [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
+
 ## <a name="light-sensor"></a>光传感器
 
 [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) 传感器能够确定传感器周围的环境光。 这使应用能够确定设备周围的光环境发生更改的时间。 例如，配备平板电脑设备的用户可能会在晴天从室内走到户外。 智能应用程序可以使用此值来增加背景和要呈现字体之间的对比度。 这样，内容在更明亮的户外环境中仍可读取。
+
+有关实现的示例，请参阅[光传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor)。
 
 ## <a name="orientation-sensor"></a>方向传感器
 
@@ -113,13 +131,19 @@ translationtype: HT
 
 方向传感器通常用于先进的增强现实应用，这些应用可基于指向的设备的后方在你的周围绘制一个覆盖物。
 
+有关实现的示例，请参阅[方向传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)。
+
 ## <a name="pedometer"></a>步程计
 
 [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) 传感器跟踪携带已连接设备的用户所走的步数。 该传感器将配置为跟踪给定时段内的步数。 多个健身应用程序都会跟踪用户所走步数，以帮助用户设置并达到各种目标。 然后可以收集并存储此信息，以显示时间进度。
 
+有关实现的示例，请参阅[步程计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Pedometer)。
+
 ## <a name="proximity-sensor"></a>邻近感应传感器
 
 [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) 传感器可用于指示该传感器是否检测到对象。 除了确定对象是否位于设备范围内以外，邻近感应传感器还可以确定到受检测对象的距离。 可以使用此传感器的一个示例是，当用户出现在指定的范围内时，要脱离睡眠状态的应用程序。 在邻近感应传感器检测到对象之前，设备可能处于低功耗睡眠状态，接着可以进入更活动的状态。
+
+有关实现的示例，请参阅[邻近感应传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ProximitySensor)。
 
 ## <a name="simple-orientation"></a>简单方向
 
@@ -127,7 +151,4 @@ translationtype: HT
 
 可根据平行或垂直于地面的设备更改其显示的阅读器应用将使用 SimpleOrientationSensor 中的值，以确定如何定位该设备。
 
-## <a name="samples"></a>示例
-
-有关一些演示使用几个不同的传感器的示例，请参阅 [Windows 传感器示例](http://go.microsoft.com/fwlink/?LinkID=616041)。
-
+有关实现的示例，请参阅[简单方向传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)。

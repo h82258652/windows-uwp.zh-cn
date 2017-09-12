@@ -4,20 +4,22 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。"
 title: "获取应用的错误报告数据"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 应用商店服务, Windows 应用商店分析 API, 错误"
-ms.openlocfilehash: dc5c4092368c0b395e42be122a9e0e7feec8f03e
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: 68e54c955d865669907c68d7cf1ef5a0f8986d8d
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>获取应用的错误报告数据
 
 在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取此信息。
 
-通过使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)和[获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)方法，可以检索其他错误信息。
+你可以使用[获取错误详细信息](get-details-for-an-error-in-your-app.md)、[获取堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)和[下载 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)获取其他错误信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -168,6 +170,7 @@ Authorization: Bearer <your access token>
 * [运行状况报告](../publish/health-report.md)
 * [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
 * [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
+* [下载应用中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取应用购置](get-app-acquisitions.md)
 * [获取加载项购置](get-in-app-acquisitions.md)

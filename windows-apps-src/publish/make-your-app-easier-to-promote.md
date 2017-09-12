@@ -4,34 +4,36 @@ Description: "让你的应用得到关注！ 除了尽量改进你的应用，�
 title: "更方便地推广你的应用"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 9dee8e05dbf2384fc87c1974a732ff36459fa229
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8976e616910246366048cffa3c971b93b974e09d
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="make-your-app-easier-to-promote"></a>更方便地推广你的应用
 
 
 让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。
 
-## <a name="windows-store-requirements-for-featured-apps"></a>Windows 应用商店针对特别推荐的应用的要求
 
+## <a name="windows-store-requirements-for-featured-apps"></a>Windows 应用商店针对特别推荐的应用的要求
 
 Windows 应用商店中展示了各种应用，按类别或主题分组。 好的应用实在太多，因此无法全部都做特别推荐，也没有办法保证你的应用会被选中。 然而，你也可以采取一些措施，以确保你的应用在应用商店中有资格获得促销推广的机会。
 
 -   **包括出色的屏幕截图和促销图像**
 
-    在使应用具有特色时，Windows 应用商店可能会在各种布局中使用你的[应用屏幕截图和图像](app-screenshots-and-images.md)。 请确保设计代表你的应用的出色屏幕截图，并确保第一张屏幕截图特别具有代表性和吸引力。
+    在使应用具有特色时，Windows 应用商店可能会在各种布局中使用你的[应用屏幕截图和图像](app-screenshots-and-images.md)。 请确保设计代表你的应用的出色屏幕截图，并确保第一张屏幕截图特别具有代表性和吸引力。 可以提供不同的屏幕截图，以展示应用在其支持的每种设备类型上的外观。
 
-    若要在应用商店中最大限度地获取机会来使你的应用具有特色，你还将需要在应用的提交中至少提供一张促销图像。 提供 2400 x 1200 像素大小最重要，因为我们可以采用多种方式在面向 Windows 10 客户的应用商店中使用该图像。 请记住，我们可能会采用某些布局来裁剪此图像，以便图片中心可以包含你的应用的关键视觉元素和品牌/徽标。 如果你的应用在较早的操作系统版本上运行，你可能还需要提供其他图像大小。 有关详细信息和指南，请参阅[促销插图](app-screenshots-and-images.md#promotional-artwork)。
+    若要在应用商店中最大限度地获取机会来使应用获得特别推荐，还应在应用的提交中包括促销图像。 有关详细信息和指南，请参阅[促销图像](app-screenshots-and-images.md#promotional-images)。
 
--   **只为你的应用生成一个版本，而不会生成一个免费版本和另外一个付费版本**
+-   **只为应用生成一个版本，而不生成一个免费版本和另外一个付费版本**
 
-    与其分别发布同一应用的免费版本和付费版本，不如为付费应用提供免费试用版，或使付费应用成为免费应用，提供应用内购买来添加增强功能。 这样你的应用将具有一个适用于所有用户的列表：既包括只对免费下载感兴趣的用户，也包括可能准备购买应用的用户。
+    与其分别发布同一应用的免费版本和付费版本，不如为付费应用提供免费试用版，或使付费应用成为免费应用，并提供加载项以让客户购买增强功能。 这样你的应用将具有一个适用于所有用户的列表：既包括只对免费下载感兴趣的用户，也包括可能准备购买应用的用户。
 
 -   **针对包含 16+ 和 18+ 内容的应用启用筛选器**
 

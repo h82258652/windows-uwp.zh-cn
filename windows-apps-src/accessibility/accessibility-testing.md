@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73fe48744346b2fd784b36d1fa29bd419c0fea02
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -82,16 +84,19 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## <a name="verify-your-app-with-display-settings"></a>使用显示设置验证你的应用  
+
 使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 （某些用户可采用辅助功能选项方式更改 dpi 值，该选项可从“轻松使用”****以及屏幕属性中获得。）如果发现任何问题，请遵循[布局缩放指南](https://msdn.microsoft.com/library/windows/apps/Dn611863)，并提供其他资源以用于不同的缩放因素。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>使用“讲述人”验证主应用方案  
-通过执行以下步骤，使用“讲述人”测试应用的屏幕阅读体验：
+使用“讲述人”测试应用的屏幕阅读体验。
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 **使用以下步骤，配合鼠标和键盘使用“讲述人”测试你的应用：**
-1.  按 _Windows 徽标键 + Enter_ 启动“讲述人”。
-2.  使用键盘上的 _Tab_ 键、箭头键、_Caps Lock 和箭头键_在你的应用中导航。
+1.  按 _Windows 徽标键 + Ctrl + Enter_ 启动“讲述人”。 在 Windows 10 版本 1607 之前的版本中，使用 _Windows 徽标键 + Enter_ 启动“讲述人”。
+2.  使用键盘上的 _Tab_ 键、箭头键、_Caps Lock + 箭头键_在你的应用中导航。
 3.  在应用中导航时，听“讲述人”读 UI 元素，验证下列项：
     * 对于每个控件，确保“讲述人”读出所有可见内容。 还需要确保“讲述人”读出每个控件的名称、所有适用的状态（已选中、已选择，等等）、控件类型（按钮、复选框、列表项，等等）。
     * 如果相应元素可交互，请验证是否可以使用“讲述人”通过按 _Caps Lock + Enter_ 调用其操作。
@@ -145,4 +150,5 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [辅助功能](accessibility.md)
 * [要避免的做法](practices-to-avoid.md)
 * [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows 中的辅助功能](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
+* [Windows 中的辅助功能](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [讲述人入门](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

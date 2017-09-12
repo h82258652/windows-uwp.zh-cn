@@ -6,30 +6,27 @@ title: "文本块"
 label: Text block
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 904f0982deb596783ae886c26fee03c180d51987
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 0ee72a3111fd64fc4cd17a9a0a4283255ce2d3ff
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-block"></a>文本块
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
  文本块是应用中用于显示只读文本的主要控件。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。
-
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**TextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**Text 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)</li>
-<li>[**Inlines 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)</li>
-</ul>
-</div>
-
+ 
+ > **重要 API**：[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[Text 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)、[Inlines 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -76,14 +73,14 @@ textBlock1.Text = "Hello, world!";
 XAML 应尽可能地使用更有效的布局文本的代码路径。 此快速路径既能降低总体内存使用率，又能大幅减少执行文本测量和排列的 CPU 时间。 此快速路径仅适用于 TextBlock，因此应仅在基于 RichTextBlock 时首选它。
 
 某些条件要求 TextBlock 回退到具有更多功能的 CPU 密集型代码路径，以便进行文本呈现。 若要使文本呈现在快速路径上，请确保在设置此处列出的属性时遵循以下指南。
-- [**Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)：最重要的条件是，快速路径仅在你通过在 XAML 或代码中显式设置 Text 属性来设置文本（如前面的示例所示）时使用。 由于多种格式的潜在复杂性，通过 TextBlock 的 Inlines 集合（例如 `<TextBlock>Inline text</TextBlock>`）设置文本将禁用快速路径。
-- [**CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx)：仅默认值 0 是快速路径。
-- [**TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx)：仅 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值是快速路径。 **Clip** 值将禁用快速路径。
+- [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)：最重要的条件是，快速路径仅在你通过在 XAML 或代码中显式设置 Text 属性来设置文本（如前面的示例所示）时使用。 由于多种格式的潜在复杂性，通过 TextBlock 的 Inlines 集合（例如 `<TextBlock>Inline text</TextBlock>`）设置文本将禁用快速路径。
+- [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx)：仅默认值 0 是快速路径。
+- [TextTrimming](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx)：仅 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值是快速路径。 **Clip** 值将禁用快速路径。
 
 > **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他属性也会影响快速路径。 如果应用在早期版本的 Windows 上运行，这些条件也会导致文本在慢速路径上呈现。 有关版本的详细信息，请参阅版本自适应代码。
-- [**Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)：仅各个 Typography 属性的默认值是快速路径。
-- [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx)：如果 [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) 不为 0，**BaselineToBaseline** 或 **MaxHeight** 值将禁用快速路径。
-- [**IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx)：仅 **false** 是快速路径。 通过将此属性设置为 **true**，禁用快速路径。
+- [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)：仅各个 Typography 属性的默认值是快速路径。
+- [LineStackingStrategy](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx)：如果 [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) 不为 0，**BaselineToBaseline** 或 **MaxHeight** 值将禁用快速路径。
+- [IsTextSelectionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx)：仅 **false** 是快速路径。 通过将此属性设置为 **true**，禁用快速路径。
 
 你可以在调试期间将 [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) 属性设置为 **true** 来确定文本是否正在使用快速路径呈现。 当此属性设置为 true 时，快速路径上的文本将显示为亮绿色。
 
@@ -136,18 +133,18 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 下面介绍如何通过使用 LineBreak 分隔的 Run 对象在 TextBlock 中定义多个具有不同格式的文本字符串。
 ```xaml
-<TextBlock FontFamily="Arial" Width="400" Text="Sample text formatting runs">
+<TextBlock FontFamily="Segoe UI" Width="400" Text="Sample text formatting runs">
     <LineBreak/>
-    <Run Foreground="Gray" FontFamily="Courier New" FontSize="24">
-        Courier New 24
+    <Run Foreground="Gray" FontFamily="Segoe UI Light" FontSize="24">
+        Segoe UI Light 24
     </Run>
     <LineBreak/>
-    <Run Foreground="Teal" FontFamily="Times New Roman" FontSize="18" FontStyle="Italic">
-        Times New Roman Italic 18
+    <Run Foreground="Teal" FontFamily="Georgia" FontSize="18" FontStyle="Italic">
+        Georgia Italic 18
     </Run>
     <LineBreak/>
-    <Run Foreground="SteelBlue" FontFamily="Verdana" FontSize="14" FontWeight="Bold">
-        Verdana Bold 14
+    <Run Foreground="Black" FontFamily="Arial" FontSize="14" FontWeight="Bold">
+        Arial Bold 14
     </Run>
 </TextBlock>
 ```
@@ -183,6 +180,6 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](search.md)
 - [文本输入指南](text-controls.md)
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

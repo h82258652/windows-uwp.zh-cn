@@ -4,19 +4,18 @@ ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "在 Windows 应用商店提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新提交。"
 title: "创建应用提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 创建应用提交"
-ms.openlocfilehash: 13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6ed90a764701e40ed513b623a9ddb5aa6a2be466
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="create-an-app-submission"></a>创建应用提交
-
-
-
 
 在 Windows 应用商店提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新提交。 使用此方法成功创建新提交后，[更新提交](update-an-app-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-app-submission.md)以供引入和发布。
 
@@ -31,8 +30,6 @@ translationtype: HT
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 确保应用至少有一个已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息的提交。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
-
 ## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
@@ -46,7 +43,7 @@ translationtype: HT
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -66,7 +63,7 @@ translationtype: HT
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何为应用创建新提交。
+以下示例演示如何为应用创建新提交。
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
@@ -131,6 +128,7 @@ Authorization: Bearer <your access token>
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -182,7 +180,8 @@ Authorization: Bearer <your access token>
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

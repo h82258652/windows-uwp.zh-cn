@@ -6,14 +6,16 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 35268ea199c139680c4a11c30744ecf54867e592
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 16c5092c8eb3c6d7460dd94c61c85522ef68a2fb
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -37,7 +39,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>注册你的应用，并为你的云服务接收凭据
 
 
-在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请转到 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=511146)并选择“仪表板”****。
+在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请转到 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=511146)并选择**仪表板**。
 
 每个应用都有其各自的一组云服务凭据。 这些凭据无法用于向其他任何应用发送通知。
 
@@ -154,27 +156,27 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 
 默认情况下，磁贴和徽标通知在下载完成时的三天后过期。 通知过期时，此内容将从磁贴或队列中删除，且不再向用户显示。 最佳做法是在所有磁贴和锁屏提醒通知上设置过期时间（使用对你的应用有意义的时间），以便使磁贴的内容不会在它不相关时继续保留。 对于具有已定义的使用寿命的内容来说，显式过期时间是必需的。 这还确保在你的云服务停止发送通知或用户在长时间内与网络断开连接时删除过时的内容。
 
-你的云服务可以为每个通知设置一个过期时间，方法是设置 X-WNS-Expires HTTP 标头以指定通知在发送后保持有效的时间（以秒为单位）。 有关详细信息，请参阅[推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)。
+你的云服务可以为每个通知设置一个过期时间，方法是设置 X-WNS-TTL HTTP 标头以指定通知在发送后保持有效的时间（以秒为单位）。 有关详细信息，请参阅[推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)。
 
 例如，股票市场活跃交易日期间，你可将股票价格更新到期时间设置为发送间隔的两倍（例如，如果是每半小时发送一次通知，则将股票价格更新到期时间设置为一小时）。 另一个示例是，新闻应用可确定每日新闻磁贴更新的适当到期时间为一天。
 
 ## <a name="push-notifications-and-battery-saver"></a>推送通知和节电模式
 
 
-节电模式可通过限制设备上的后台活动，延长电池使用时间。 Windows 10 允许用户设置在电量降低至特定阈值时，自动打开节电模式。 在节电模式处于打开状态时，将禁用推送消息接收，以节省电量。 但是也有几种例外情况。 以下 Windows 10 节电模式设置（见“设置”****应用）允许应用即使在节电模式打开时，也可以接收推送通知。
+节电模式可通过限制设备上的后台活动，延长电池使用时间。 Windows 10 允许用户设置在电量降低至特定阈值时，自动打开节电模式。 在节电模式处于打开状态时，将禁用推送消息接收，以节省电量。 但是也有几种例外情况。 以下 Windows 10 节电模式设置（见**设置**应用）允许应用即使在节电模式打开时，也可以接收推送通知。
 
 -   **允许在节电模式下接收任何应用的推送通知**：此设置允许所有应用在节电模式处于打开状态时接收推送通知。 请注意，此设置仅适用于 Windows 10 桌面版（家庭版、专业版、企业版和教育版）。
 -   **始终允许**：此设置允许在节电模式处于打开状态时在后台运行特定应用，包括接收推送通知。 此列表由用户手动维护。
 
 此两种设置的状态无法检查，但可以检查节电模式的状态。 在 Windows 10 中，使用 [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) 属性检查节电模式状态。 应用也可以使用 [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) 事件侦听对节电模式的更改。
 
-如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整“节电模式设置”****。 通过在 Windows 10 `ms-settings:batterysaver-settings` 中使用节电模式设置 URI 架构，可以提供指向“设置”应用的简便链接。
+如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整**节电模式设置**。 通过在 Windows 10 `ms-settings:batterysaver-settings` 中使用节电模式设置 URI 架构，可以提供指向“设置”应用的简便链接。
 
 **提示**   通知用户有关节电模式设置的事项时，我们建议提供在未来阻止消息的方法。 例如，以下示例中的 `dontAskMeAgainBox` 复选框保留用户在 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中的首选项。
 
  
 
-下面是如何检查 Windows 10 中的节电模式是否已打开的示例。 此示例将通知用户，并将“设置”应用启动到“节电模式设置”****。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
+下面是如何检查 Windows 10 中的节电模式是否已打开的示例。 此示例将通知用户，并将“设置”应用启动到**节电模式设置**。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
 
 ```cs
 using System;
@@ -200,9 +202,9 @@ async public void CheckForEnergySaving()
       dontAskAgain = Convert.ToBoolean(dontAskSetting);
    }
    
-   // Check if battery saver is on and that it&#39;s okay to raise dialog
+   // Check if battery saver is on and that it's okay to raise dialog
    if ((PowerManager.EnergySaverStatus == EnergySaverStatus.On)
-         &amp;&amp; (dontAskAgain == false))
+         && (dontAskAgain == false))
    {
       // Check dialog results
       ContentDialogResult dialogResult = await saveEnergyDialog.ShowAsync();
@@ -214,7 +216,7 @@ async public void CheckForEnergySaving()
 
       // Save reminder preference
       if (dontAskAgainBox.IsChecked == true)
-      {  // Don&#39;t raise dialog again
+      {  // Don't raise dialog again
          localSettings.Values["dontAskAgainSetting"] = "true";
       }
    }

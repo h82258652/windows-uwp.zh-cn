@@ -4,14 +4,16 @@ ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: "在 Windows 应用商店提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的软件包外部测试版提交。"
 title: "确认软件包外部测试版提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 确认外部测试版提交"
-ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e0fd115dc5e394abe6c0353ba41ebc35fde086c4
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="commit-a-package-flight-submission"></a>确认软件包外部测试版提交
 
@@ -30,8 +32,6 @@ translationtype: HT
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * [创建软件包外部测试版提交](create-a-flight-submission.md)，然后通过对提交数据所做的任何必要更改[更新提交](update-a-flight-submission.md)。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
-
 ## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
@@ -45,7 +45,7 @@ translationtype: HT
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -56,7 +56,7 @@ translationtype: HT
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要确认的软件包外部测试版提交）的应用商店 ID。 开发人员中心仪表板上会提供应用的应用商店 ID。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要确认的提交）的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要确认的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。  |
 | submissionId | 字符串 | 必需。 要确认的提交的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。  |
 
 <span/>
@@ -67,7 +67,7 @@ translationtype: HT
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何确认软件包外部测试版提交。
+以下示例演示如何确认软件包外部测试版提交。
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649/commit HTTP/1.1

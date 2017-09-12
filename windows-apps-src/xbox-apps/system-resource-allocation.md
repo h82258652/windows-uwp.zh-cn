@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
-ms.openlocfilehash: 81a437807332ff60a1401c00abdcff78e41a7496
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 76c9d372cdfd98ef86f123862c35d238b24fe2ed
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>用于 Xbox One 上 UWP 应用和游戏的系统资源
 
@@ -35,6 +37,12 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源。
 对于**应用程序开发**，请务必记住，相对于标准电脑，可用的资源可能会受到限制。
 
 对于**游戏开发**，请务必记住，Xbox One 与其他游戏主机一样，是一个专业化的硬件，它需要专门的基于硬件的开发工具来访问其全部潜能。 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，你可以注册 [ID@Xbox](http://www.xbox.com/Developers/id) 计划来获取 Xbox One 开发工具包的访问权限（包括 DirectX 12 支持）。
+
+
+有关 Xbox One 上的 UWP 应用的系统资源的更详细的阐述，请观看此视频的第一部分。
+</br>
+</br>
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="see-also"></a>另请参阅
 - [Xbox One 上的 UWP](index.md)

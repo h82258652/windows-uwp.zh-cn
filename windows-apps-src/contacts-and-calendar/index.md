@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "如何在 UWP 应用中使用联系人和日历信息。"
 title: "联系人和日历"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 联系人, 日历, 约会, 电子邮件"
-ms.openlocfilehash: 395b9fabd1481715e21ba65151d63f4b7f74a3bc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2d90823c60f9a86bcff2228763911aaf7f5049a1
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="contacts-and-calendar"></a>联系人和日历
 
@@ -21,7 +23,7 @@ translationtype: HT
 
 若要查看你的应用访问联系人和约会的几种不同方法，请参阅以下主题：
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [选择联系人](selecting-contacts.md) | [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用于选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。 |
 | [发送电子邮件](sending-email.md) | 显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。 |

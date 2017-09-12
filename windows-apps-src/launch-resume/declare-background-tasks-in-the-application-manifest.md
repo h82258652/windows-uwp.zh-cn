@@ -9,17 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
+ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/24/2017
 ---
-
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -62,8 +61,7 @@ ms.lasthandoff: 02/07/2017
  </Application>
 ```
 
-## <a name="add-a-background-task-extension"></a>添加背景任务扩展
-
+## <a name="add-a-background-task-extension"></a>添加背景任务扩展  
 
 声明你的第一个后台任务。
 
@@ -108,8 +106,7 @@ ms.lasthandoff: 02/07/2017
 </Extension>
 ```
 
-
-## <a name="add-additional-background-task-extensions"></a>添加其他后台任务扩展
+### <a name="add-multiple-background-task-extensions"></a>添加多个后台任务扩展
 
 对你的应用注册的每个额外的后台任务类重复步骤 2。
 
@@ -154,17 +151,22 @@ ms.lasthandoff: 02/07/2017
 </Applications>
 ```
 
-## <a name="declare-your-background-task-to-run-in-a-different-process"></a>声明要在不同进程中运行后台任务
+## <a name="declare-where-your-background-task-will-run"></a>声明将运行后台任务的位置
 
-Windows 10 版本 1507 中的新功能允许你在不同于 BackgroundTaskHost.exe 的进程（默认情况下运行后台任务的进程）中运行后台任务。  有两个选项：在前台应用程序所处的同一进程中运行；在独立于同一应用程序的其他后台任务实例的 BackgroundTaskHost.exe 实例中运行。  
+你可以指定运行后台任务的位置：
 
-### <a name="run-in-the-foreground-application"></a>在前台应用程序中运行
+* 默认情况下，它们在 BackgroundTaskHost.exe 进程中运行。
+* 与前台应用程序在同一进程内。
+* 使用`ResourceGroup`将多个后台任务放到同一宿主进程中，或将其划分到不同进程中。
+* 使用 `SupportsMultipleInstances` 在新进程中运行后台进程，每次触发新触发器时，该进程都会获取自己的资源限制（内存、cpu）。
 
-下面的示例 XML 声明了在前台应用程序所处的同一进程中运行的后台任务。 注意 `Executable` 属性：
+### <a name="run-in-the-same-process-as-your-foreground-application"></a>与前台应用程序在同一进程内运行
+
+下面的示例 XML 声明了在前台应用程序所处的同一进程中运行的后台任务。
 
 ```xml
 <Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask">
         <BackgroundTasks>
             <Task Type="systemEvent" />
         </BackgroundTasks>
@@ -172,12 +174,11 @@ Windows 10 版本 1507 中的新功能允许你在不同于 BackgroundTaskHost.
 </Extensions>
 ```
 
-> [!Note]
-> 仅将 Executable 元素与需要它的后台任务结合使用，例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。  
+当你指定 **EntryPoint** 时，你的应用程序将在触发器触发时接收对指定方法的回调。 如果你没有指定 **EntryPoint**，应用程序将通过 [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 接收回调。  有关详细信息，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
-### <a name="run-in-a-different-background-host-process"></a>在不同的后台主机进程中运行
+### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 属性指定运行后台任务的位置。
 
-下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，可标识将同时运行哪些后台任务。
+下面的示例 XML 声明了在独立于同一应用的其他后台任务实例的 BackgroundTaskHost.exe 进程中运行。 注意 `ResourceGroup` 属性，该属性可标识将同时运行哪些后台任务。
 
 ```xml
 <Extensions>
@@ -209,11 +210,33 @@ Windows 10 版本 1507 中的新功能允许你在不同于 BackgroundTaskHost.
 </Extensions>
 ```
 
+### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次用 SupportsMultipleInstances 属性触发新触发器时，在新进程中运行
+
+此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 要使用此属性，你必须面向 SDK 版本“10.0.15063”（Windows 10 创意者更新）或更高版本。
+
+```xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application ...>
+            ...
+            <Extensions>
+                <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
+                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                        <Task Type="timer" />
+                    </BackgroundTasks>
+                </Extension>
+            </Extensions>
+        </Application>
+    </Applications>
+```
+
+> [!NOTE]
+> 不能与 `SupportsMultipleInstances` 一起指定 `ResourceGroup` 或 `ServerName`。
 
 ## <a name="related-topics"></a>相关主题
-
 
 * [调试后台任务](debug-a-background-task.md)
 * [注册后台任务](register-a-background-task.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-

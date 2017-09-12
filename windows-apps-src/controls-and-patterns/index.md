@@ -6,19 +6,23 @@ keywords: "UWP 控件, 用户界面, 应用控件"
 label: Controls & patterns
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 09/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
-ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0946a32df990f08f00f07ad0094125709b45dcaf
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
+在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
+
+我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。  这些控件是 Fluent 设计系统的一部分，并且可以帮助你创建一个加粗、可缩放的 UI，此 UI 在所有设备和屏幕大小上都具有出色的外观。 
 
 本部分中的文章提供了有关向 UWP 应用添加控件和模式的设计指南和编码说明。 
 
@@ -43,141 +47,83 @@ translationtype: HT
 
 ## <a name="alphabetical-index"></a>按字母顺序排序的索引 
 
-有关特定控件和模式的详细信息。
+有关特定控件和模式的详细信息。 （有关按功能排序的列表，请参阅[按功能排序的控件索引](controls-by-function.md)。）
 
-（有关按功能排序的列表，请参阅[按功能排序的控件索引](controls-by-function.md)。）
+<div style="column-count: 2; column-gap: 40px; margin-top: 40px;" >
+<ul style="margin-top: 0px; padding-top: 0px; list-style-type: none;">
+<li style="list-style-type: none;">[自动建议框](auto-suggest-box.md)</li>
 
-<div class="uwpd-list-of-links">
-<ul>
+<li style="list-style-type: none;">[栏](app-bars.md)</li>
 
-<li>[自动建议框](auto-suggest-box.md)</li>
+<li style="list-style-type: none;">[按钮](buttons.md)</li>
 
-<li>[栏](app-bars.md)</li>
+<li style="list-style-type: none;">[复选框 ](checkbox.md)</li>
 
-<li>[按钮](buttons.md)</li>
+<li style="list-style-type: none;">[颜色选取器](color-picker.md)</li>
 
-<li>[复选框 ](checkbox.md)</li>
-
-<li>[日期和时间控件](date-and-time.md)
-<ul>
-
-<li>[日历日期选取器](calendar-date-picker.md)</li>
-
-<li>[日历视图](calendar-view.md)</li>
-
-<li>[日期选取器](date-picker.md)</li>
-
-<li>[时间选取器](time-picker.md)</li>
-</ul>
-</li>
+<li style="list-style-type: none;">[日期和时间控件](date-and-time.md)</li>
 
 
-<li>[对话框和浮出控件](dialogs.md)</li>
+<li style="list-style-type: none;">[对话框和浮出控件](dialogs.md)</li>
 
-<li>[翻转视图](flipview.md)</li>
+<li style="list-style-type: none;">[翻转视图](flipview.md)</li>
 
-<li>[中心](hub.md)</li>
+<li style="list-style-type: none;">[中心](hub.md)</li>
 
-<li>[超链接](hyperlinks.md)</li>
+<li style="list-style-type: none;">[超链接](hyperlinks.md)</li>
 
-<li>[图像和图像画笔](images-imagebrushes.md)</li>
+<li style="list-style-type: none;">[图像和图像画笔](images-imagebrushes.md)</li>
 
-<li>[列表](lists.md)</li>
+<li style="list-style-type: none;">[墨迹书写控件](inking-controls.md)</li>
 
-<li>[地图控件](../maps-and-location/controls-map.md)</li>
+<li style="list-style-type: none;">[列表](lists.md)</li>
 
-<li>[大纲/细节](master-details.md)</li>
+<li style="list-style-type: none;">[地图控件](../maps-and-location/controls-map.md)</li>
 
-<li>[媒体播放](media-playback.md)
-<ul>
-<li>[自定义传输控件](custom-transport-controls.md)</li>
-</ul>
-</li>
+<li style="list-style-type: none;">[大纲/细节](master-details.md)</li>
 
-<li>[菜单和上下文菜单](menus.md)</li>
+<li style="list-style-type: none;">[媒体播放](media-playback.md)</li>
 
-<li>[导航窗格](nav-pane.md)</li>
+<li style="list-style-type: none;">[菜单和上下文菜单](menus.md)</li>
 
-<li>[进度控件](progress-controls.md)</li>
+<li style="list-style-type: none;">[导航视图](navigationview.md)</li>
 
-<li>[单选按钮](radio-button.md)</li>
+<li style="list-style-type: none;">[个人图片](person-picture.md)</li>
 
-<li>[滚动和平移控件](scroll-controls.md)</li>
+<li style="list-style-type: none;">[进度控件](progress-controls.md)</li>
 
-<li>[搜索](search.md)</li>
+<li style="list-style-type: none;">[单选按钮](radio-button.md)</li>
 
-<li>[语义式缩放](semantic-zoom.md)</li>
+<li style="list-style-type: none;">[评分控件](rating.md)</li>
 
-<li>[滑块](slider.md)</li>
+<li style="list-style-type: none;">[滚动和平移控件](scroll-controls.md)</li>
 
-<li>[拆分视图](split-view.md)</li>
+<li style="list-style-type: none;">[搜索](search.md)</li>
 
-<li>[表和透视表](tabs-pivot.md)</li>
+<li style="list-style-type: none;">[语义式缩放](semantic-zoom.md)</li>
 
-<li>[文本控件](text-controls.md)
-<ul>
+<li style="list-style-type: none;">[滑块](slider.md)</li>
 
-<li>[标签](labels.md)</li>
+<li style="list-style-type: none;">[拆分视图](split-view.md)</li>
 
-<li>[密码框](password-box.md)</li>
+<li style="list-style-type: none;">[表和透视表](tabs-pivot.md)</li>
 
-<li>[可编辑对话框](rich-edit-box.md)</li>
+<li style="list-style-type: none;">[文本控件](text-controls.md)</li>
 
-<li>[RTF 块](rich-text-block.md)</li>
-
-<li>[拼写检查和预测](spell-checking-and-prediction.md)</li>
-
-<li>[文本块](text-block.md)</li>
-
-<li>[文本框](text-box.md)</li>
-</ul>
-</li>
+<li style="list-style-type: none;">[磁贴、锁屏提醒和通知](tiles-badges-notifications.md)</li>
 
 
+<li style="list-style-type: none;">[切换](toggles.md)</li>
+<li style="list-style-type: none;">[工具提示](tooltips.md)</li>
 
-<li>[磁贴、锁屏提醒和通知](tiles-badges-notifications.md)
-<ul>
+<li style="list-style-type: none;">[树视图](tree-view.md)</li>
 
-<li>[磁贴](tiles-and-notifications-creating-tiles.md)</li>
-
-<li>[自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)</li>
-
-<li>[自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)</li>
-
-<li>[资源指南](tiles-and-notifications-app-assets.md)</li>
-
-<li>[特殊磁贴模板](tiles-and-notifications-special-tile-templates-catalog.md)</li>
-
-<li>[自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
-
-<li>[锁屏提醒通知](tiles-and-notifications-badges.md)</li>
-
-<li>[通知可视化工具](tiles-and-notifications-notifications-visualizer.md)</li>
-
-<li>[通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
-
-<li>[本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)</li>
-
-<li>[定期通知](tiles-and-notifications-periodic-notification-overview.md)</li>
-
-<li>[WNS](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</li>
-
-<li>[原始通知](tiles-and-notifications-raw-notification-overview.md)</li>
-</ul>
-</li>
-
-
-<li>[切换](toggles.md)</li>
-<li>[工具提示](tooltips.md)</li>
-
-<li>[Web 视图](web-view.md)</li>
+<li style="list-style-type: none;">[Web 视图](web-view.md)</li>
 </ul>
 </div>
 
-## <a name="additional-controls-options"></a>其他控件选项
+## <a name="additional-controls"></a>其他控件
 
-可以从 [Telerik](http://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](http://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](http://www.actiprosoftware.com/products/controls/universal)等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。  
+可以从 [Telerik](http://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](http://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](http://www.actiprosoftware.com/products/controls/universal) 等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。  
 
 如果你有兴趣了解有关这些控件的详细信息，请查看 GitHub 上的[客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database)示例。 此示例使用了 Telerik 的数据网格控件和数据输入验证功能，它们是 Telerik 的 UI for UWP 套件的一部分。 UI for UWP 套件是一个包含 20 多个控件的集合，通过 .NET Foundation 以开源项目的形式提供。
-
-![客户订单数据库图像](images/customerOrdersDataGrid.png)

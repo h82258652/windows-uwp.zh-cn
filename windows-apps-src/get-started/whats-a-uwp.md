@@ -3,15 +3,17 @@ author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "什么是通用 Windows 平台 (UWP) 应用？"
 description: "了解通用 Windows 应用的不同应用类型：Windows 应用商店应用、Windows Phone 应用商店应用和 Windows 运行时应用。"
-ms.author: susanw
+ms.author: jken
 ms.date: 03/22/2017
 ms.topic: article
 pms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2afb5cbc74b381e85fa861562e7de57d877b0c7f
-ms.sourcegitcommit: 253ed634522773e15199084a6f74a3a465c2b218
-translationtype: HT
+ms.openlocfilehash: 3bbced2db33210952b6c8a45f98e36582330d7d9
+ms.sourcegitcommit: 214a1dcb24e0811811bd7a4a07bfe707ecd93b18
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/15/2017
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
@@ -103,4 +105,4 @@ Microsoft Visual Studio 2017 为每种语言提供 UWP 应用模板，该模板�
 
 * [.NET 本机 - 对于通用 Windows 平台 (UWP) 开发人员的意义](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
 * [.NET 中的通用 Windows 应用](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
-* [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
+* [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/mt185501.aspx)

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: c9bf682e6818f7c9854604448e52aa0111605a05
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 457c31a0657839632cbc60db0c908dca2cc4fafd
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 
@@ -35,6 +37,8 @@ translationtype: HT
 |可用的触发器 | 进程内后台任务不支持以下触发器：[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask**。 |
 |VoIP | 进程内后台任务不支持在应用程序中激活 VoIP 后台任务。 |  
 
+**限制触发器实例数：**应用可注册的某些触发器的实例数存在限制。 对于应用的每个实例，应用只能注册一次 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)。 如果应用超出此限制，注册会引发异常。
+
 **CPU 配额：**后台任务受其基于触发器类型获取的时钟时间使用的限制。 大多数触发器限制为 30 秒的时钟时间使用，而另一些触发器在完成耗时任务时最多可以运行 10 分钟。 为了延长电池使用时间并为前台应用提供最佳用户体验，后台任务应该是轻量级任务。 有关适用于后台任务的资源限制，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 **管理后台任务：**你的应用应该获取已注册后台任务的列表，注册进度和完成处理程序以及相应地处理这些事件。 你的后台任务类应该报告进度、取消以及完成。 有关详细信息，请参阅[处理取消的后台任务](handle-a-cancelled-background-task.md)和[监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)。
@@ -53,7 +57,7 @@ translationtype: HT
 
 > **重要提示**  从 Windows10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
 
-通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用必须在注册任何类型的后台任务之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如果用户在设备设置中显式拒绝了应用的后台任务权限，此方法将返回 [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439)。
+通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用必须在注册任何类型的后台任务之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如果用户在设备设置中显式拒绝了应用的后台任务权限，此方法将返回 [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439)。 有关后台活动和节电模式的相关用户选项的详细信息，请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>后台任务清单
 
 *既适用于进程内后台任务，也适用于进程外后台任务*
@@ -79,16 +83,6 @@ translationtype: HT
 - 当取消任务时，请确保 `BackgroundActivated` 事件处理程序退出后再取消，否则整个进程都将终止。
 -   编写生存时间较短的后台任务。 后台任务限制为在 30 秒的时钟时间内使用。
 -   不要依赖后台任务中的用户交互。
-
-## <a name="windows-background-task-checklist-for-lock-screen-capable-apps"></a>Windows：支持锁屏界面的应用的后台任务清单
-
-当开发可以使用锁屏的应用的后台任务时，请遵循此指南。 遵循[锁屏磁贴指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465403)中的指南。
-
--   在将你的应用作为可锁屏应用进行开发之前，确保该应用位于锁屏上。 有关详细信息，请参阅[锁屏概述](https://msdn.microsoft.com/library/windows/apps/hh779720)。
-
--   确保你的应用在未置于锁屏界面上时也能工作。
-
--   包括使用 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 注册并在应用清单中声明的后台任务。 确保入口点和触发器类型正确。 这是认证所需的内容，它使得用户能够将应用置于锁屏界面上。
 
 **注意**  
 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。

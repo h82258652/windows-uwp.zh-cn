@@ -2,27 +2,27 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "使用此部分中的 C# 代码示例了解有关使用 Windows 应用商店提交 API 的详细信息。"
-title: "提交 API 的 C# 代码示例"
+title: "C# 示例 - 应用、加载项和外部测试版的提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例"
-ms.openlocfilehash: 59b9c0b2cc503a56e0a1c9a75ce5ef471983c699
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "windows 10, uwp, Windows 应用商店提交 API, 代码示例, C#"
+ms.openlocfilehash: 77c0f2ddbe0e76ede2580129d7d0a0ae118b3554
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="c-code-examples-for-the-submission-api"></a>提交 API 的 C\# 代码示例
+# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 示例：应用、加载项和外部测试版的提交
 
-本文提供使用 *Windows 应用商店提交 API* 的 C# 代码示例。 有关此 API 的详细信息，请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+本文提供 C# 代码示例演示如何使用 [Windows 应用商店提交 API](create-and-manage-submissions-using-windows-store-services.md) 执行以下任务：
 
-这些代码示例演示了以下任务：
-
-* [更新应用提交](#update-app-submission)
-* [创建新加载项提交](#create-add-on-submission)
+* [创建应用提交](#create-app-submission)
+* [创建加载项提交](#create-add-on-submission)
 * [更新加载项提交](#update-add-on-submission)
-* [更新软件包外部测试版提交](#update-flight-submission)
+* [创建软件包外部测试版提交](#create-flight-submission)
 
 你可以查看每个示例，了解有关它所演示的任务的详细信息，也可以将本文中的所有代码示例生成到控制台应用程序。 若要构建示例，请在 Visual Studio 中创建名为 **DeveloperApiCSharpSample** 的 C# 控制台应用程序、将每个示例复制到项目中单独的代码文件，然后构建该项目。
 
@@ -31,13 +31,13 @@ translationtype: HT
 这些示例使用以下库：
 
 * Microsoft.WindowsAzure.Storage.dll。 此库在[用于 .NET 的 Azure SDK](https://azure.microsoft.com/downloads/) 中提供，或者可以通过安装 [WindowsAzure.Storage NuGet 程序包](https://www.nuget.org/packages/WindowsAzure.Storage)获取。
-* Newtonsoft 的 [Json.NET](http://www.newtonsoft.com/json)。
+* [Newtonsoft.Json](http://www.newtonsoft.com/json) 来自 Newtonsoft 的 NuGet 程序包。
 
 ## <a name="main-program"></a>主计划
 
 以下示例实现了一个命令行计划，该计划可调用本文中的其他示例方法演示使用 Windows 应用商店提交 API 的不同方法。 若要调整此程序以供自己使用，请执行以下操作：
 
-* 为你想管理的应用 ID、加载项（加载项也称为应用内产品或 IAP）和软件包外部测试版分配 ```ApplicationId```、```InAppProductId``` 和 ```FlightId``` 属性。 开发人员中心仪表板中会提供这些 ID。
+* 为你想管理的应用 ID、加载项和软件包外部测试版分配 ```ApplicationId```、```InAppProductId``` 和 ```FlightId``` 属性。
 * 将 ```ClientId``` 和 ```ClientSecret``` 属性指定为你应用的客户端 ID 和密钥，并将 ```TokenEndpoint``` URL 中的 *tenantid* 字符串更换为你应用的租户 ID。 有关详细信息，请参阅 [如何将 Azure AD 应用程序与你的 Windows 开发人员中心帐户相关联](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
 
 > [!div class="tabbedCodeSnippets"]
@@ -51,8 +51,8 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
-<span id="update-app-submission" />
-## <a name="update-an-app-submission"></a>更新应用提交
+<span id="create-app-submission" />
+## <a name="create-an-app-submission"></a>创建应用提交
 
 以下示例实现了一个类，该类使用 Windows 应用商店提交 API 中的多种方法更新应用提交。 该类中的 ```RunAppSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunAppSubmissionUpdateSample``` 方法执行以下任务：
 
@@ -67,7 +67,7 @@ translationtype: HT
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
-## <a name="create-a-new-add-on-submission"></a>创建新加载项提交
+## <a name="create-an-add-on-submission"></a>创建加载项提交
 
 以下示例实现了一个类，该类使用 Windows 应用商店提交 API 中的多种方法创建新的加载项提交。 该类中的 ```RunInAppProductSubmissionCreateSample``` 方法执行以下任务：
 
@@ -94,8 +94,8 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
-<span id="update-flight-submission" />
-## <a name="update-a-package-flight-submission"></a>更新软件包外部测试版提交
+<span id="create-flight-submission" />
+## <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
 以下示例实现了一个类，该类使用 Windows 应用商店提交 API 中的多种方法更新软件包外部测试版提交。 该类中的 ```RunFlightSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunFlightSubmissionUpdateSample``` 方法执行以下任务：
 

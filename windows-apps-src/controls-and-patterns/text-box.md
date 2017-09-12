@@ -6,14 +6,19 @@ title: "文本框"
 label: Text box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 29ab04588088907a851700fcbd04a64bcea77d63
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: e3b39208db6cd0cb8954d773b704b68888cc5ff0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-box"></a>文本框
 
@@ -23,26 +28,20 @@ TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单�
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-<li>[**Text 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、[Text 属性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用 **TextBox** 控件允许用户输入和编辑无格式文本（例如在表单中）。 你可以使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性在 TextBox 中获取和设置文本。
 
-你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 [**TextBlock**](text-block.md)。
+你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 [TextBlock](text-block.md)。
 
-使用 [**PasswordBox**](password-box.md) 控件收集密码或其他隐私数据，如身份证号。 密码框看起来像文本输入框，区别在于它呈现项目符号来代替已输入的文本。
+使用 [PasswordBox](password-box.md) 控件收集密码或其他隐私数据，如身份证号。 密码框看起来像文本输入框，区别在于它呈现项目符号来代替已输入的文本。
 
-使用 [**AutoSuggestBox**](auto-suggest-box.md) 控件允许用户输入搜索词或向用户显示建议列表以供他们在键入时从其中选择。
+使用 [AutoSuggestBox](auto-suggest-box.md) 控件允许用户输入搜索词或向用户显示建议列表以供他们在键入时从其中选择。
 
-使用 [**RichEditBox**](rich-edit-box.md) 显示和编辑 RTF 文件。
+使用 [RichEditBox](rich-edit-box.md) 显示和编辑 RTF 文件。
 
 有关选择正确文本控件的详细信息，请参阅 [文本控件](text-controls.md) 文章。
 
@@ -104,8 +103,8 @@ IsEnabled
 ### <a name="enable-multi-line-input"></a>启用多行输入
 
 有两个可用于控制文本框是否在多行上显示文本的属性。 通常同时设置这两个属性来创建多行文本框。
-- 若要使文本框允许和显示新行或返回字符，请将 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 属性设置为 **true**。
-- 若要启用文本换行，请将 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 属性设置为 **Wrap**。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
+- 若要使文本框允许和显示新行或返回字符，请将 [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 属性设置为 **true**。
+- 若要启用文本换行，请将 [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 属性设置为 **Wrap**。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的 **WrapWholeWords** 值。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
@@ -282,6 +281,6 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 类](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

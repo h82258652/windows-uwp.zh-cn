@@ -4,11 +4,22 @@ Description: "内容过渡动画可让你更改屏幕区域的内容，同时保
 title: "内容过渡动画指南"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
-ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10，uwp"
+pm-contact: stmoy
+design-contact: conrwi
+doc-status: Published
+ms.openlocfilehash: 881059e8ec15ec1006a15f453e5f488ed8d04bed
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="content-transition-animations"></a>内容过渡动画
+# <a name="content-transition-animations"></a>内容转换动画
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 

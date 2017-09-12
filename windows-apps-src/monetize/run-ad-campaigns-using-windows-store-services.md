@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店促销 API, 广告活动"
-ms.openlocfilehash: d1575c686080fb8c4c35c032cdc1beca587aeb37
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4db2904ff23d52eb58fbe74f7591f7f05f2e4961
+ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/17/2017
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用应用商店服务开展广告活动
 
@@ -25,7 +27,8 @@ translationtype: HT
 
 或者，你可以使用 Windows 开发人员中心仪表板创建和管理广告活动，也可以在仪表板中访问通过 Windows 应用商店促销 API 以编程方式创建的任何广告活动。 有关在仪表板中管理广告活动的详细信息，请参阅[为你的应用创建广告活动](../publish/create-an-ad-campaign-for-your-app.md)。
 
->**注意**&nbsp;&nbsp;任何拥有 Windows 开发人员中心帐户的开发人员均可使用 Windows 应用商店促销 API 管理其应用的广告活动。 媒体机构还可以请求访问该 API 代表他们的广告商开展广告活动。 如果你是希望了解该 API 详情或请求其访问权限的媒体机构，请将请求发送至 storepromotionsapi@microsoft.com。
+> [!NOTE]
+> 任何拥有 Windows 开发人员中心帐户的开发人员均可使用 Windows 应用商店促销 API 管理其应用的广告活动。 媒体机构还可以请求访问该 API 代表他们的广告商开展广告活动。 如果你是希望了解该 API 详情或请求其访问权限的媒体机构，请将请求发送至 storepromotionsapi@microsoft.com。
 
 <span id="prerequisites" />
 ## <a name="step-1-complete-prerequisites-for-using-the-windows-store-promotions-api"></a>步骤 1：完成使用 Windows 应用商店促销 API 的先决条件
@@ -34,21 +37,21 @@ translationtype: HT
 
 * 使用此 API 成功创建和启动广告活动之前，你必须先[在开发人员中心仪表板中使用**推广你的应用**页面创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并且必须在此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的广告活动的投放渠道将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)。
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店促销 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
-
-  >**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+    > [!NOTE]
+    > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
 若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
 
-1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后[将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加 Azure AD 应用程序以代表将用于管理开发人员中心帐户中促销活动的应用或服务，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加 Azure AD 应用程序以代表将用于管理开发人员中心帐户中促销活动的应用或服务，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[将 Azure AD 应用程序添加到你的开发人员中心帐户](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
 
-3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户ID** 和**客户端 ID** 值。
+3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
-4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>步骤 2：获取 Azure AD 访问令牌
@@ -96,9 +99,8 @@ grant_type=client_credentials
 
 ## <a name="code-example"></a>代码示例
 
-以下代码示例演示了如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店促销 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店促销 API 返回的 JSON 数据。
+以下代码示例演示如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店促销 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店促销 API 返回的 JSON 数据。
 
-> [!div class="tabbedCodeSnippets"]
 [!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 
 ## <a name="related-topics"></a>相关主题

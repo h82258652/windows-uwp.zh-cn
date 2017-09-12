@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 位置功能"
-ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
@@ -28,8 +30,8 @@ translationtype: HT
 ## <a name="enable-the-location-capability"></a>启用位置功能
 
 
-1.  在“解决方案资源管理器”****中，双击“package.appxmanifest”****并选择“功能”****选项卡。
-2.  在**“功能”**列表中，选择**“功能”**选项卡。 这将向程序包清单文件中添加 `Location` 设备功能。
+1.  在**解决方案资源管理器**中，双击 **package.appxmanifest** 并选择**功能**选项卡。
+2.  在**功能**列表中，选中**位置**框。 这将向程序包清单文件中添加 `location` 设备功能。
 
 ```XML
   <Capabilities>
@@ -260,10 +262,10 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ## <a name="troubleshoot-your-app"></a>对应用进行故障排除
 
 
-在你的应用可以访问用户位置之前，必须在设备上启用**“位置”**。 在“设置”****应用中，检查以下“位置隐私设置”****是否已打开：
+在你的应用可以访问用户位置之前，必须在设备上启用**“位置”**。 在**设置**应用中，检查以下**位置隐私设置**是否已打开：
 
 -   **“此设备的位置...”**已**“打开”**（在 Windows 10 移动版中不适用）
--   位置服务设置（“位置”****）已“打开”****
+-   位置服务设置（**位置**）已**打开**
 -   在**“选择可以使用你的位置的应用”**下，你的应用已设置为**“打开”**
 
 ## <a name="related-topics"></a>相关主题

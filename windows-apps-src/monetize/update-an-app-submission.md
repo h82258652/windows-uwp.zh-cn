@@ -4,14 +4,16 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "在 Windows 应用商店提交 API 中使用此方法，可更新现有应用提交。"
 title: "更新应用提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 应用提交, 更新"
-ms.openlocfilehash: a4b7816d0d6e47282864992044eea58eaaa05d1d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b3c071c0d4f070c1a0ac95d6f35c73fcbb4e0455
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="update-an-app-submission"></a>更新应用提交
 
@@ -27,8 +29,6 @@ translationtype: HT
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 使用你的开发人员中心帐户为应用创建提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建应用提交](create-an-app-submission.md)方法。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
-
 ## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
@@ -42,7 +42,7 @@ translationtype: HT
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -73,6 +73,7 @@ translationtype: HT
 | automaticBackupEnabled           |  布尔型  |   指示 Windows 是否可以将应用的数据包含在 OneDrive 的自动备份中。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
 | canInstallOnRemovableMedia           |  布尔型  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | isGameDvrEnabled           |  布尔型 |   指示是否可以为应用启用游戏 DVR。    |   
+| gamingOptions           |  object |   一个包含[游戏选项资源](manage-app-submissions.md#gaming-options-object)的数组，用于为应用定义游戏相关设置。<br/><br/>**注意：**&nbsp;&nbsp;部分开发者帐户目前还不能使用此 API 配置游戏选项。 如果你的帐户无法访问此资源，则 *gamingOptions* 值为 null。     |   
 | hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Windows 应用商店商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
@@ -80,13 +81,14 @@ translationtype: HT
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅[软件包传递选项对象](manage-app-submissions.md#package-delivery-options-object)部分。  |
 | enterpriseLicensing           |  字符串  |  [企业授权值](manage-app-submissions.md#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 布尔型   |  指示是否允许应用[以未来 Windows10 设备系列为目标](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
+| allowTargetFutureDeviceFamilies           | 布尔型   |  指示是否允许应用[以未来 Windows10 设备系列为目标](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |   
+| trailers           |  array |   一个包含[预告片资源](manage-app-submissions.md#trailer-object)的数组，用于表示应用一览的视频预告片。 <br/><br/>**注意：**&nbsp;&nbsp;部分开发者帐户目前还不能使用此 API 提交应用提交的预告片。 如果你的帐户无法访问此资源，则 *trailers* 值为 null。  |   
 
 <span/>
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了如何更新应用提交。
+以下示例演示如何更新应用提交。
 
 ```json
 PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621230023 HTTP/1.1
@@ -108,16 +110,16 @@ Content-Type: application/json
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
         "keywords": [
-          "epub"
-        ],
+              "epub"
+            ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
         "features": [
-          "Free ebook reader"
-        ],
+              "Free ebook reader"
+            ],
         "releaseNotes": "",
         "images": [
           {
@@ -143,6 +145,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -172,7 +175,8 @@ Content-Type: application/json
     "Holographic": true,
     "Xbox": false,
     "Team": true
-  }
+  },
+  "trailers": []
 }
 ```
 
@@ -233,6 +237,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -284,7 +289,8 @@ Content-Type: application/json
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

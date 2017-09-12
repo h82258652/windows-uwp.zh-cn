@@ -3,15 +3,17 @@ author: jnHs
 Description: "转移支付的预计时间、适用的付款阈值和可以收到付款的 Microsoft 市场可能会有所不同，具体取决于你所在的国家/地区和付款帐户类型。"
 title: "付款阈值、方法和时间范围"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0d0e421108de5daecb552c606b3f2c00b722fb89
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款阈值、方法和时间范围
 
@@ -23,14 +25,15 @@ translationtype: HT
 
 我们通常在指定月的第 15 日发送该月的所有到期付款，但该付款到达你的帐户需要一些时间。 天数可能有所不同，具体取决于我们针对你的帐户使用的付款方式，如以下所述。 
 
-> **注意** 以下所示的天数都是估计值；任何给定的付款所需到账天数可能长于或短于所示天数。
+> [!NOTE]
+> 以下所示的天数都是估计值；任何给定的付款所需到账天数可能长于或短于所示天数。
 
 
-| 付款方式 | 到达付款帐户的天数 |
+| 付款方式     | 到达付款帐户的天数     |
 |--------------------|--------------------------------------------|
-| PayPal | 1 个工作日 |    
-| ACH/SEPA |2 到 3 个工作日 |
-| 电汇 | 7 到 10 个工作日 |
+| PayPal             | 1 个工作日                             | 
+| ACH/SEPA           | 2 到 3 个工作日                          |
+| 电汇      | 7 到 10 个工作日                         |
 
 &nbsp;
 
@@ -38,7 +41,8 @@ translationtype: HT
 
 ## <a name="payment-thresholds-and-methods"></a>付款阈值和方法
 
-> **注意** 付款阈值将以 USD 列出。 在某些市场中，使用等值的当地货币。 
+> [!NOTE]
+> 付款阈值将以美元列出。 在某些市场中，使用等值的当地货币。 
 
 - [Windows 应用商店](#windows-store)
 - [Microsoft Advertising](#microsoft-advertising)

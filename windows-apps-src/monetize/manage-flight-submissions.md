@@ -4,22 +4,23 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 应用商店提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。"
 title: "管理软件包外部测试版提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 外部测试版提交"
-ms.openlocfilehash: 98240f3a1f40f020474c62537d6b0444fe10bb99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 046eba917d66f28567a9e58a8fc29b3313816fbb
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
 Windows 应用商店提交 API 提供可用于管理针对应用的软件包外部测试版提交的方法，包括逐步软件包推出。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
-
->**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建程序包外部测试版提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> [!IMPORTANT]
+> 如果你使用 Windows 应用商店提交 API 创建程序包外部测试版提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
@@ -84,38 +85,32 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 
 3. 通过执行 Windows 应用商店提交 API 中的以下方法[创建软件包外部测试版提交](create-a-flight-submission.md)。 此方法创建新的正在进行的提交，这是你上次发布的提交的副本。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
+    ```
 
-  响应正文包含三个项目：新的提交 ID、新的提交数据（包括所有列表和定价信息），以及用于将提交的任意程序包上载到 Azure Blob 存储的共享访问签名 (SAS) URI。
+    响应正文包含[外部测试版提交](#flight-submission-object)资源（包括新提交的 ID、用于将提交的任何程序包上传到 Azure Blob 存储的共享访问签名 (SAS) URI）和新提交的数据（包括所有应用一览和定价信息）。
+        > [!NOTE]
+        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-  >**注意**&nbsp;&nbsp;SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 以及借助 Azure Blob 使用这些 URI 的背景信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+4. 若要为提交添加新的程序包，请[准备程序包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)并将它们添加到 ZIP 存档。
 
-4. 如果要为提交添加新的软件包，请[准备软件包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) 并将它们添加到 ZIP 存档。
+5. 使用新提交所需的任何更改修订[外部测试版提交](#flight-submission-object)数据，并执行以下方法来[更新软件包外部测试版提交](update-a-flight-submission.md)。
 
-5. 使用新提交所需的任何更改修订提交数据，并执行以下方法来[更新软件包外部测试版提交](update-a-flight-submission.md)。
-
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
-  ```
-
-  <span/>
-  >**注意**&nbsp;&nbsp;如果要为提交添加新软件包，请确保更新提交数据，以便在 ZIP 存档中引用这些文件的名称和相对路径。
+    ```
+    PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
+    ```
+      > [!NOTE]
+      > 如果要为提交添加新的软件包，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新包，请使用 SAS URI 将 ZIP 存档上载到 [Azure Blob 存储](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)，该 URI 已在之前调用的 POST 方法的响应正文中提供。 你可以使用不同的 Azure 库在多个平台上进行此操作，包括：
 
-  * [适用于 .NET 的 Azure 存储客户端库](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-  * [适用于 Java 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-  * [适用于 Python 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [适用于 .NET 的 Azure 存储客户端库](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [适用于 Java 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [适用于 Python 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-  <span/>
+  以下 C# 代码示例演示如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
 
-  以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
-
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
@@ -125,19 +120,17 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 
 5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将向开发人员中心发出警报：已完成提交，更新现在应该应用到了帐户。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
+    ```
 
 6. 通过执行以下方法来检查提交状态以[获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
-  ```
+    ```
+    GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
+    ```
 
-  若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
+    若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
 
 7. 在提交成功完成之后，提交会发送至应用商店以供引入。 可以通过使用前面的方法，或者通过访问开发人员中心仪表板，继续监视提交进度。
 
@@ -150,7 +143,8 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 * [Java 代码示例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 代码示例](python-code-examples-for-the-windows-store-submission-api.md)
 
->**注意**&nbsp;&nbsp;除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
+> [!NOTE]
+> 除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
 
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理软件包外部测试版提交的逐步软件包推出
@@ -324,7 +318,8 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 
 此资源具有以下值。
 
->**注意**&nbsp;&nbsp;当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
+> [!NOTE]
+> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
 
 | 值           | 类型    | 说明              |
 |-----------------|---------|------|
@@ -379,7 +374,8 @@ Windows 应用商店提交 API 提供可用于管理针对应用的软件包外�
 | packageRolloutStatus    |  字符串   |  以下指示逐步软件包推出状态的字符串之一： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字符串   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
 
->**注意**&nbsp;&nbsp;*packageRolloutStatus* 和 *fallbackSubmissionId* 值由开发人员中心分配，但不是由开发人员设置。 如果已将这些值包括在请求正文中，则忽略这些值。 
+> [!NOTE]
+> *packageRolloutStatus* 和 *fallbackSubmissionId* 值由开发人员中心分配，但不是由开发人员设置。 如果已将这些值包括在请求正文中，则忽略这些值。
 
 <span/>
 

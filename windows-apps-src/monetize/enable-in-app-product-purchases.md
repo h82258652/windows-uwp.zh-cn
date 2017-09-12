@@ -1,28 +1,29 @@
 ---
 author: mcleanbyron
-Description: "无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 我们在此处显示了如何在应用中启用这些产品。"
+Description: "无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。"
 title: "启用应用内产品购买"
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: "uwp, 加载项, 应用内购买, IAP, Windows.ApplicationModel.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b7cd3f5d2c566958aaf83b8f633418ce444a2eaa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1f7d4c60d077e3c556f0d369cc41d2e50ab9092b
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
-
 # <a name="enable-in-app-product-purchases"></a>启用应用内产品购买
 
->**注意**&nbsp;&nbsp;本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理附加内容（也称为应用内产品或 IAP），而非使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+> [!NOTE]
+> 本文介绍如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员来支持应用内产品购买。 如果你的应用面向 Windows10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[此文](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
-无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关卡）。 我们在此处显示了如何在应用中启用这些产品。
+无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。
 
-> **注意**&nbsp;&nbsp;试用版应用不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
+> [!NOTE]
+> 试用版应用不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -41,17 +42,19 @@ ms.lasthandoff: 02/07/2017
 
 针对你希望通过应用内产品提供的每项功能，创建一个付费内容并将它添加到你的应用中。
 
-> **重要提示**&nbsp;&nbsp;向应用商店提交你的应用之前，必须将你希望呈现给客户的所有应用内产品都添加到应用中。 如果你稍后需要添加新的应用内产品，则必须更新应用并重新提交新版本。
+> [!IMPORTANT]
+> 向应用商店提交你的应用之前，必须将你希望呈现给客户的所有应用内产品都添加到应用中。 如果你稍后需要添加新的应用内产品，则必须更新应用并重新提交新版本。
 
 1.  **创建应用内付费内容标记**
 
     通过标记来标识应用中的每个应用内产品。 此标记是一个字符串，在你的应用和应用商店中定义和使用它来标识特定的应用内产品。 为它提供一个独特（对于你的应用）且有意义的名称，以便你可以在编码时快速标识它所表示的正确功能。 下面是一些名称示例：
 
-    -   “SpaceMissionLevel4”
+    * “SpaceMissionLevel4”
+    * “ContosoCloudSave”
+    * “RainbowThemePack”
 
-    -   “ContosoCloudSave”
-
-    -   “RainbowThemePack”
+  > [!NOTE]
+  > 你在代码中使用的应用内优惠标记必须与你在[开发人员中心仪表板中为你的应用定义相应加载项](../publish/add-on-submissions.md)时指定的[产品 ID](../publish/set-your-add-on-product-id.md#product-id) 值相匹配。
 
 2.  **在条件块中编码功能**
 
@@ -77,7 +80,10 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>步骤 4：在应用商店中配置应用内产品付费内容
 
-在开发人员中心仪表板中为应用内产品定义产品 ID、类型、价格和其他属性。 请确保完全按照测试时在 WindowsStoreProxy.xml 中设置的配置来配置它。 有关详细信息，请参阅 [IAP 提交](https://msdn.microsoft.com/library/windows/apps/mt148551)。
+在开发人员中心仪表板中，导航到你的应用并[创建加载项](../publish/add-on-submissions.md)，使之与你的应用内产品优惠相匹配。 为你的加载项定义产品 ID、类型、价格以及其他属性。 请确保完全按照测试时在 WindowsStoreProxy.xml 中设置的配置来配置它。
+
+  > [!NOTE]
+  > 你在代码中使用的应用内优惠标记必须与你在仪表板中为相应加载项指定的[产品 ID](../publish/set-your-add-on-product-id.md#product-id) 值相匹配。
 
 ## <a name="remarks"></a>备注
 
@@ -92,4 +98,3 @@ ms.lasthandoff: 02/07/2017
 * [管理应用内产品的大目录](manage-a-large-catalog-of-in-app-products.md)
 * [使用收据验证产品购买](use-receipts-to-verify-product-purchases.md)
 * [应用商店示例（演示试用版和应用内购买）](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-

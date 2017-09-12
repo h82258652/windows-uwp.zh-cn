@@ -6,14 +6,16 @@ ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 54ad78d5799a96ddcec7b060704ee198e0bf8db5
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>磁贴和图标资源指南
 
@@ -123,7 +125,7 @@ translationtype: HT
 
 ![宽磁贴大小调整比率](images/assetguidance11.png)
 
-对于大磁贴，将图标宽度和高度限制为磁贴大小的 50%：
+对于大磁贴，将图标宽度限制为磁贴大小的 66%，将高度限制为 50%：
 
 ![大磁贴大小比率](images/assetguidance12.png)
 
@@ -181,24 +183,6 @@ translationtype: HT
 
 ![基于目标的资源大小调整（比例为 100%）](images/assetguidance23.png)
 
-**图标模板应用资源**
-
-图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 的手机版和平板电脑/桌面版都支持该模板。 （在[特殊磁贴模板文章](tiles-and-notifications-special-tile-templates-catalog.md)中了解如何创建图标磁贴。）
-
-使用图标模板的应用（如消息、手机和应用商店）具有的基于目标的资源可以展示锁屏提醒（带有动态计数器）。 与其他基于目标的资源一样，不需要进行填充。 图标资源不是应用清单的一部分，但是动态磁贴负载的一部分。 缩放资源以使其适合 3:2 比率的容器并居中放置：
-
-![带有和不带有锁屏提醒的资源的大小调整](images/assetguidance24.png)
-
-对于方形资源，在容器内自动居中放置：
-
-![方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance25.png)
-
-对于非方形资源，会自动进行水平/垂直居中放置并贴靠到容器的宽度/高度：
-
-![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26a.png)
-
-![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26b.png)
-
 ## <a name="splash-screen-assets"></a>初始屏幕资源
 
 
@@ -233,38 +217,217 @@ translationtype: HT
 
 我们强烈建议你至少为 100、200 和 400 比例系数提供资源。 为所有比例系数提供资源将提供最佳的用户体验。
 
-**基于比例的资源**
+<br/>
 
-| 类别             | 元素名称      | 100% 缩放比例 | 125% 缩放比例 | 150% 缩放比例 | 200% 缩放比例 | 400% 缩放比例 |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| 小                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
-| 中               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
-| 宽                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
-| 大（仅限桌面） | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
-| 应用列表（图标）      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
+<table>
+<thead>
+<tr><th colspan="3">小磁贴 (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 缩放比例</td>
+    <td width="20%">71x71</td>
+    <td>Square71x71Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 缩放比例</td>
+    <td>89x89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 缩放比例</td>
+    <td>107x107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 缩放比例</td>
+    <td>142x142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 缩放比例</td>
+    <td>284x284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-**基于缩放的资源的文件名示例**
+<table>
+<thead>
+<tr><th colspan="3">中等磁贴 (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 缩放比例</td>
+    <td width="20%">150x150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 缩放比例</td>
+    <td>188x188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 缩放比例</td>
+    <td>225x225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 缩放比例</td>
+    <td>300x300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 缩放比例</td>
+    <td>600x600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| 类别             | 元素名称      | 100% 缩放比例                  | 125% 缩放比例                  | 150% 缩放比例                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| 小                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| 中               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| 宽                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| 大（仅限桌面） | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| 应用列表（图标）      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">宽磁贴 (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 缩放比例</td>
+    <td width="20%">310x150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 缩放比例</td>
+    <td>388x188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 缩放比例</td>
+    <td>465x225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 缩放比例</td>
+    <td>620x300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 缩放比例</td>
+    <td>1240x600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| 类别             | 元素名称      | 200% 缩放比例                  | 400% 缩放比例                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| 小                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| 中               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| 宽                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| 大（仅限桌面） | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| 应用列表（图标）      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+<br/>
 
+<table>
+<thead>
+<tr><th colspan="3">大磁贴 (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 缩放比例</td>
+    <td width="20%">310x310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 缩放比例</td>
+    <td>388x388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 缩放比例</td>
+    <td>465x465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 缩放比例</td>
+    <td>620x620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 缩放比例</td>
+    <td>1240x1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">应用列表图标 (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 缩放比例</td>
+    <td width="20%">44x44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 缩放比例</td>
+    <td>55x55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 缩放比例</td>
+    <td>66x66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 缩放比例</td>
+    <td>88x88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 缩放比例</td>
+    <td>176x176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">初始屏幕 (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 缩放比例</td>
+    <td width="20%">620x300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 缩放比例</td>
+    <td>775x375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 缩放比例</td>
+    <td>930x450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 缩放比例</td>
+    <td>1240x600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 缩放比例</td>
+    <td>2480x1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
  
 
 **基于目标的资源**
@@ -275,22 +438,22 @@ translationtype: HT
 
 下表列出了所有基于目标的资源大小和相应的文件名示例：
 
-| 资源大小 | 文件名示例                 |
-|------------|-----------------------------------|
-| 16x16\*    | AppNameAppList.targetsize-16.png  |
-| 24x24\*    | AppNameAppList.targetsize-24.png  |
-| 32x32\*    | AppNameAppList.targetsize-32.png  |
-| 48x48\*    | AppNameAppList.targetsize-48.png  |
-| 256x256\*  | AppNameAppList.targetsize-256.png |
-| 20x20      | AppNameAppList.targetsize-20.png  |
-| 30x30      | AppNameAppList.targetsize-30.png  |
-| 36x36      | AppNameAppList.targetsize-36.png  |
-| 40x40      | AppNameAppList.targetsize-40.png  |
-| 60x60      | AppNameAppList.targetsize-60.png  |
-| 64x64      | AppNameAppList.targetsize-64.png  |
-| 72x72      | AppNameAppList.targetsize-72.png  |
-| 80x80      | AppNameAppList.targetsize-80.png  |
-| 96x96      | AppNameAppList.targetsize-96.png  |
+| 资源大小 | 文件名示例                  |
+|------------|------------------------------------|
+| 16x16\*    | Square44x44Logo.targetsize-16.png  |
+| 24x24\*    | Square44x44Logo.targetsize-24.png  |
+| 32x32\*    | Square44x44Logo.targetsize-32.png  |
+| 48x48\*    | Square44x44Logo.targetsize-48.png  |
+| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 20x20      | Square44x44Logo.targetsize-20.png  |
+| 30x30      | Square44x44Logo.targetsize-30.png  |
+| 36x36      | Square44x44Logo.targetsize-36.png  |
+| 40x40      | Square44x44Logo.targetsize-40.png  |
+| 60x60      | Square44x44Logo.targetsize-60.png  |
+| 64x64      | Square44x44Logo.targetsize-64.png  |
+| 72x72      | Square44x44Logo.targetsize-72.png  |
+| 80x80      | Square44x44Logo.targetsize-80.png  |
+| 96x96      | Square44x44Logo.targetsize-96.png  |
 
  
 
@@ -304,7 +467,7 @@ translationtype: HT
 **磁贴资源**
 
 -   通常在“开始”菜单上使用居中放置的资源来展示你的应用。
--   文件名格式：\*Tile.scale-\*.PNG
+-   文件名格式：[Square\Wide]\*x\*Logo.scale-\*.png
 -   受影响的应用：每个 UWP 应用
 -   使用：
     -   默认“开始”磁贴（桌面和移动）
@@ -317,7 +480,7 @@ translationtype: HT
 **着色的可扩展列表资源**
 
 -   这些资源用于请求比例系数的图面。 资源通过系统进行着色，或附带其自己的背景色（如果应用包含该背景色）。
--   文件名格式：\*AppList.scale-\*.PNG
+-   文件名格式：Square44x44Logo.scale-\*.png
 -   受影响的应用：每个 UWP 应用
 -   使用：
     -   “开始”菜单所有应用列表（桌面）
@@ -330,7 +493,7 @@ translationtype: HT
 **着色的目标大小列表资源**
 
 -   这些是固定的资源大小，不会随比例进行缩放。 主要用于传统体验。 系统会检查资源。
--   文件名格式：\*AppList.targetsize-\*.PNG
+-   文件名格式：Square44x44Logo.targetsize-\*.png
 -   受影响的应用：每个 UWP 应用
 -   使用：
     -   “开始”菜单跳转列表（桌面）
@@ -341,7 +504,7 @@ translationtype: HT
 **未着色的目标大小列表资源**
 
 -   这些资源未通过系统进行着色或缩放。
--   文件名格式：\*AppList.targetsize-\*\_altform-unplated.PNG
+-   文件名格式：Square44x44Logo.targetsize-\*\_altform-unplated.png
 -   受影响的应用：每个 UWP 应用
 -   使用：
     -   任务栏和任务栏缩略图（桌面）
@@ -352,7 +515,7 @@ translationtype: HT
 **文件扩展名资源**
 
 -   这些是特定于文件扩展名的资源。 它们显示在文件资源管理器中的 Win32 样式文件关联图标旁，并且必须独立于主题。 大小调整在桌面平台和移动平台上是不同的。
--   文件名格式：\*LogoExtensions.targetsize-\*.PNG
+-   文件名格式：\*LogoExtensions.targetsize-\*.png
 -   受影响的应用：音乐、视频、照片、Microsoft Edge、Microsoft Office
 -   使用：
     -   文件资源管理器
@@ -362,30 +525,7 @@ translationtype: HT
 **初始屏幕**
 
 -   显示在你的应用的初始屏幕上的资源。 在桌面平台和移动平台上自动缩放。
--   文件名格式：\*SplashScreen.screen-100.PNG
+-   文件名格式：SplashScreen.scale-*.png
 -   受影响的应用：每个 UWP 应用
 -   使用：
     -   应用的初始屏幕
-
-**图标磁贴资源**
-
--   这些是使用图标模板的应用的资源。
--   文件名格式：不适用
--   受影响的应用：Messaging、手机、应用商店等
--   使用：
-    -   图标磁贴
-
-
-
-## <a name="related-topics"></a>相关主题
-
-
-
-* [特殊磁贴模板](tiles-and-notifications-special-tile-templates-catalog.md)
- 
-
- 
-
-
-
-

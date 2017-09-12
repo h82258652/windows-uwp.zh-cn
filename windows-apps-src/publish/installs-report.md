@@ -1,64 +1,11 @@
 ---
-author: shawjohn
-Description: "Windows 开发人员中心仪表板中的“安装”报告可让你查看你的应用在 Windows 10 设备上已成功安装的次数。"
-title: "安装报告"
-ms.author: johnshaw
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: "windows 10, uwp, 应用, 安装, 安装, 报告, 分析"
-ms.assetid: 46c08fd2-00bd-4be5-b29f-01a3b5fea4c2
-ms.openlocfilehash: 7912775e17a70c1d6fe9810c780017dcfa2db60e
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/acquisitions-report
+ms.openlocfilehash: eed31983dcdc1f008e0d91b491e8a995e6f33631
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="installs-report"></a>安装报告
 
-Windows 开发人员中心仪表板中的**安装**报告可让你查看客户已在 Windows 10 设备上成功安装你的应用的次数。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取应用安装](../monetize/get-app-installs.md)方法以编程方式检索此数据。
-
-
-## <a name="apply-filters"></a>应用筛选器
-
-
-在页面顶部附近，你可以展开**应用筛选器**按日期、设备类型和/或按程序包版本筛选此页上的所有数据。
-
--   **日期**：默认筛选器为**最近 30 天”**，但是你可以将此条件扩大到**最近 12 个月**。
--   **设备类型**：默认筛选器为**所有设备**，但你可以选择特定的设备类型（**电脑**、**电话**、**平板电脑**、**虚拟机**、**IoT**、**全息**、**控制台**、**其他**或**未知**）。
--   **程序包版本**：默认筛选器为**所有版本**，但你可以选择特定的程序包版本。
-
-
-## <a name="installs-daily"></a>每日安装次数
-
-
-**每日安装次数**图表显示你的应用在选定时间段内的每日安装总数。
-
-安装总数包括：
--   **在多部 Windows 10 设备上的安装次数。** 例如，如果客户在两台 Windows 10 电脑和一部 Windows 10 手机上安装了你的应用，则计作三次安装。
--   **重新安装次数。** 例如，如果客户今天安装了你的应用，明天卸载了你的应用，然后下个月重新安装了你的应用，则计作两次安装。
-
-安装总数不包括或不反映：
--   **在非 Windows 10 设备上的安装次数。** 例如，如果客户在不运行 Windows 10 的设备上安装了你的应用，我们不计入此次安装。
--   **卸载次数。** 例如，如果客户卸载了你的应用，我们不从安装总数中减去此次数。
--   **更新次数。** 例如，如果客户今天安装了你的应用，然后在一周后安装了应用更新，这只计作一次安装（不是两次）。
--   **预安装次数。** 例如，如果客户购买的设备已预安装了你的应用，我们不计入此安装。
--   **系统初始化安装次数。** 例如，如果 Windows 出于某种原因自动安装了你的应用，我们不计入此安装。
-
-> **注意**当前，你无法通过 API 以编程方式检索**每日安装次数**数据。
-
-## <a name="markets"></a>市场
-
-
-**市场**图表按市场顺序显示选定时间段内的安装总数。 默认情况下，我们显示所有市场的数据。 但是，你可以按特定市场筛选此数据。
-
-
-## <a name="package-version"></a>程序包版本
-
-
-**程序包版本**图表按程序包版本显示选定时间段内的安装总数。
-
-
-
- 
-
- 
+本主题已重定向到：购置报告

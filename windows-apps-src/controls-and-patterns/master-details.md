@@ -6,20 +6,24 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 49a586aac0c846cdad02f8448532238bd3eb8551
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 大纲/细节模式具有一个大纲窗格（通常带有[列表视图](lists.md)）和一个用于内容的细节窗格。 当选择大纲列表中的项时，将更新细节窗格。 此模式通常用于电子邮件和通讯簿。
+
+> **重要 API**：[ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)，[SplitView 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![大纲细节模式的示例](images/HIGSecOne_MasterDetail.png)
 
@@ -73,17 +77,11 @@ translationtype: HT
 
 对于细节窗格，使用意义最明确的内容元素。 如果你有大量的单独字段，请考虑使用网格布局将元素排列为一个表单。
 
-## <a name="examples"></a>示例
+## <a name="get-the-code-samples"></a>获取代码示例
 
-此跟踪股票市场的应用的设计使用大纲/细节模式。 在此应用示例中，它将显示在手机上，大纲窗格/列表位于左侧，细节窗格位于右侧。
+有关显示大纲/细节模式的示例代码，请参阅以下示例： 
 
-![手机上使用大纲细节模式的应用示例](images/uap-finance-phone-masterdetails-600.png)
-
-此跟踪股票市场的应用的设计使用大纲/细节模式。 在此应用示例中，它将显示在桌面上，大纲窗格/列表和细节窗格均可见且全屏显示。 大纲窗格在顶部带有一个搜索框，在底部带有一个命令栏。
-
-![使用大纲/细节模式的应用（桌面版）的示例](images/uap-finance-desktop700.png)
-
-有关显示大纲/细节模式的示例代码，请参阅
+- [客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [ListView 和 GridView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [RSS 阅读器示例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -92,4 +90,4 @@ translationtype: HT
 - [列表](lists.md)
 - [搜索](search.md)
 - [应用和命令栏](app-bars.md)
-- [**ListView 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [ListView 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

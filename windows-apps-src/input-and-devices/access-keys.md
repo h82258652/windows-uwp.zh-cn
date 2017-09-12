@@ -1,387 +1,328 @@
 ---
-author: Karl-Bridge-Microsoft
-Description: "支持使用 Tab 键导航和访问键的键盘访问，以便用户可以使用键盘在 UI 元素之间导航。"
-title: "访问键"
-ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
-label: Access keys
+author: kbridge
+Description: "了解如何通过键盘而不是指针设备（如触摸或鼠标）为用户提供直观方式来快速导航并与应用的可视 UI 进行交互，以此提高 UWP 应用的实用功能和辅助功能。"
+title: "访问键设计指南"
+label: Access keys design guidelines
+keywords: "键盘, 访问键, 键提示, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互"
 template: detail.hbs
-keywords: "访问键, 键盘, 辅助功能, 用户交互, 输入"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8d62135680e13f866654c168364bb3393651bd2d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
+ms.openlocfilehash: ae8bd60311bc7ead44ee3c9a137a233888be55f3
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="access-keys"></a>访问键
 
-使用鼠标有困难的用户（如行动有障碍的用户），通常依赖键盘在应用中导航并与应用交互。  XAML 框架使你可以实现通过 Tab 键导航和访问键来键盘访问 UI 元素。
-
-- Tab 键导航是基本的键盘辅助功能提示（默认情况下已启用），允许用户使用键盘上的 Tab 键和箭头键在 UI 元素之间移动焦点。
-- 访问键是补充的辅助功能提示（在应用中实现），以实现使用键盘修饰符（Alt 键）和一个或多个字母数字键（通常为与命令关联的字母）的组合来快速访问应用命令。 常用访问键包括用于打开“文件”菜单的 _Alt+F_ 以及用于执行左对齐的 _Alt+AL_。  
-
-有关键盘导航和辅助功能的详细信息，请参阅[键盘交互](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)和[键盘辅助功能](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)。 文本假定你了解这些文章中所讨论的概念。
-
-## <a name="access-key-overview"></a>访问键概述
-
-借助访问键，用户使用键盘就可以直接调用按钮或设置焦点，无需他们反复按箭头键和 Tab 键。 访问键要易于发现，因此应该将它们直接公布在 UI 中；例如，基于访问键控制的浮动锁屏提醒。
-
-![Microsoft Word 中的访问键以及关联的键提示的示例](images/keyboard/accesskeys-keytips.png)
-
-_图 1：Microsoft Word 中的访问键以及关联的键提示的示例。_
-
-访问键是与 UI 元素关联的一个或多个字母数字字符。 例如，Microsoft Word 将 _H_ 用于“主页”选项卡、将 _2_ 用于“撤销”按钮或将 _JI_ 用于“绘制”选项卡。
-
-**访问键作用域**
-
-一个访问键属于一个特定作用域。 例如，在图 1 中，_F_、_H_、_N_ 和 _JI_ 属于页面作用域。  当用户按下 _H_ 时，该作用域将变更为“主页”选项卡作用域，同时会显示其访问键，如图 2 所示。 访问键 _V_、_FP_、_FF_ 和 _FS_ 属于“主页”选项卡作用域。
-
-![Microsoft Word 中“主页”选项卡作用域的访问键以及关联的键提示的示例](images/keyboard/accesskeys-keytips-hometab.png)
-
-_图 2：Microsoft Word 中“主页”选项卡作用域的访问键以及关联的键提示的示例。_
-
-如果两个元素属于不同作用域，这两个元素可以具有相同的访问键。 例如，_2_ 是页面作用域中“撤销”的访问键（图 1），也是“主页”选项卡作用域中“斜体”的访问键（图 2）。 除非另行指定作用域，否则所有访问键都属于默认作用域。
-
-**访问键序列**
-
-实现操作的访问键组合通常一次按下一个键，而不是同时按下多个键。 （我们会在下一节中介绍相关例外情况。）实现操作所需的击键序列即为_访问键序列_。 用户按下 Alt 键以启动访问键序列。 在用户按下访问键序列的最后一个键时，将调用该访问键。 例如，若要在 Word 中打开“视图”选项卡，用户将按 _Alt, W_ 访问键序列。
-
-用户可以在一个访问键序列中调用多个访问键。 例如，若要在 Word 文档中打开“格式刷”，用户按下 Alt 以启动该序列，然后按下 _H_ 以导航到“主页”部分（同时更改访问键作用域），最后依次按下 _F_ 和 _P_。_H_ 和 _FP_ 分别为“主页”选项卡和“格式刷”按钮的访问键。
-
-某些元素会在被调用后结束访问键序列（如“格式刷”按钮），而其他元素则不会（如“主页”选项卡）。 调用访问键可能会导致执行命令、移动焦点、更改访问键作用域或相关联的某些其他操作。
-
-## <a name="access-key-user-interaction"></a>访问键用户交互
-
-若要了解访问键 API，首先需要了解用户交互模型。 可以从下面找到访问键用户交互模型的摘要：
-
-- 当用户按下 Alt 键时，会启动访问键序列，即使焦点位于输入控件上也是如此。 然后，用户可以按访问键来调用关联的操作。 此用户交互要求你在带有某些可视化提示的 UI（例如会在按下 Alt 键时显示的浮动锁屏提醒）内公布可用访问键
-- 当用户同时按下 Alt 键以及访问键时，会立即调用该访问键。 这类似于由 Alt+_访问键_定义的键盘快捷方式。 在这种情况下，不会显示访问键可视化提示。 但是，调用访问键可能会导致更改访问键作用域。 在这种情况下，会启动访问键序列，针对新作用域显示可视化提示。
-    > [!NOTE]
-    > 仅具有一个字符的访问键可以充分利用此用户交互。 针对具有多个字符的访问键，不支持 Alt+_访问键_组合。    
-- 当存在多个共享某些字符的多字符访问键时，如果用户按下共享的字符时，会筛选这些访问键。 例如，假定具有如下所示的三个访问键：_A1_、_A2_ 和 _C_。如果用户按下 _A_，将仅显示 _A1_ 和 _A2_ 访问键，隐藏 C 的可视化提示。
-- Esc 键会删除筛选的一个级别。 例如，如果存在访问键 _B_、_ABC_、_ACD_ 和 _ABD_，当用户按下 _A_ 时，将仅显示 _ABC_、_ACD_ 和 _ABD_。 如果用户接着按下 _B_，将仅显示 _ABC_ 和 _ABD_。 如果用户按 Esc，会删除筛选的一个级别，同时显示 _ABC_、_ACD_ 和 _ABD_ 访问键。 如果用户再次按 Esc，将删除另一筛选级别，同时启用所有访问键（即 _B_、_ABC_、_ACD_ 和 _ABD_），并显示其可视化提示。
-- Esc 键会导航回前一个作用域。 访问键可以属于不同作用域，以使其更轻松地在具有许多命令的应用间导航。 访问键序列始终起始于主作用域。 除了指定特定 UI 元素为其作用域所有者的访问键之外，其他所有访问键都属于主作用域。 当用户调用为作用域所有者的元素的访问键时，XAML 框架会自动将该作用域移动给它，然后将它添加到内部的访问键导航堆栈。 Esc 键会反向移动访问键导航堆栈。
-- 有多种方法可消除访问键序列：
-    - 用户可以按下 Alt 消除正在进行的访问键序列。 请记住，按下 Alt 也会启动访问键序列。
-    - 如果访问键位于主作用域并且未经过筛选，则 Esc 键将消除访问键序列。
-        > [!NOTE]
-        > 还会将 Esc 击键传递到 UI 层以在该位置进行处理。
-    - Tab 键消除访问键序列，并返回到 Tab 键导航。
-    - Enter 键消除访问键序列，并将击键发送到具有焦点的元素。
-    - 箭头键消除访问键序列，并将击键发送到具有焦点的元素。
-    - 指针向下事件（如鼠标单击或触摸）消除访问键序列。
-    - 默认情况下，当调用访问键时，访问键序列将会消除。  不过，你可以通过将 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 属性设置为 **false** 来替代此行为。
-- 当确定性的有限自动化不可能实现时，会发生访问键冲突。 不希望发生访问键冲突，但大量的命令、本地化问题或访问键的运行时生成可能会导致此问题。
-
- 在两种情况下会发生冲突：
- - 当两个 UI 元素具有相同的访问键值并且属于相同的访问键作用域时。 例如，属于默认作用域的以下两个访问键：`button1` 的 _A1_ 和 `button2` 的 _A1_。 在此情况下，系统会按以下方式解决该冲突：处理已添加到可视化树的第一个元素的访问键。 忽略其余元素的访问键。
- - 当相同的访问键作用域中存在多个计算选项时。 例如，_A_ 和 _A1_。 当用户按下 _A_ 时，系统有两个选项：调用 _A_ 访问键或继续执行并使用 _A1_ 访问键中的 A 字符。 在此情况下，系统将仅处理自动机已到达的第一个访问键调用。 例如，_A_ 和 _A1_，系统将仅调用 _A_ 访问键。
--     当用户按下访问键序列中的无效访问键值时，什么也不会发生。 有两种类别的键视为访问键序列中的有效访问键：
- - 用于退出访问键序列的特殊键：即 Esc、Alt、箭头键、Enter 和 Tab。
- - 已分配给访问键的字母数字字符。
-
-## <a name="access-key-apis"></a>访问键 API
-
-为了支持访问键用户交互，XAML 框架提供了此处所述的 API。
-
-**AccessKeyManager**
-
-[AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) 是一个帮助程序类，可用于在显示或隐藏访问键时管理 UI。 每当应用进入和退出访问键序列时，就会引发 [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) 事件。 可以查询 [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) 属性以确定可视化提示是处于显示状态，还是处于隐藏状态。  还可以调用 [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) 以强制消除访问键序列。
+访问键可以为用户提供一种直观的方式，使其能够通过键盘而非指针设备（如触摸或鼠标）进行快速导航并与应用的可视 UI 进行交互，以此提高 Windows 应用的实用功能和辅助功能。
 
 > [!NOTE]
-> 并未内置访问键的可视化实现；必须提供该可视化。  
+> 对于残疾人士用户而言，键盘是必不可少的工具（请参阅[键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)），并且对于将键盘认为是与应用交互的较有效方法的用户而言，键盘也非常重要。
 
-**AccessKey**
+通用 Windows 平台 (UWP) 通过视觉提示（称为键提示）为基于键盘的访问键和关联的 UI 反馈提供内置的跨平台支持。
 
-借助 [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 属性，你可以指定 UIElement 或 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx) 上的访问键。 如果两个元素具有相同的访问键和相同的作用域，将仅处理已添加到可视化树的第一个元素。
+## <a name="overview"></a>概述
 
-若要确保 XAML 框架能够处理访问键，必须在可视化树中实现 UI 元素。 如果具有访问键的可视化树中没有任何元素，则不会引发任何访问键事件。
+访问键是 Alt 键与一个或多个字母数字键（有时称为*助记键*）的组合，通常是按顺序按下，而不是同时按下。
 
-访问键 API 不支持需要生成两个击键的字符。 单个字符必须对应于特定语言的本地键盘布局上的键。  
-
-**AccessKeyDisplayRequested/Dismissed**
-
-当应显示或消除访问键可视化提示时，将引发 [AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) 和 [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) 事件。 不会为其 [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) 属性设置为 **Collapsed** 的元素引发这些事件。 每次用户按下访问键使用的字符时，都在访问键序列期间引发 AccessKeyDisplayRequested 事件。 例如，如果访问键设置为 _AB_，当用户按下 Alt 时会引发此事件，当用户按下 _A_ 时会再次引发此事件。当用户按下 _B_ 时，会引发 AccessKeyDisplayDismissed 事件
-
-**AccessKeyInvoked**
-
-当用户到达访问键的最后一个字符时，会引发 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件。 访问键可以具有一个或多个字符。 例如，对于访问键 _A_ 和 _BC_，当用户按下 _Alt, A_ 或 _Alt, B, C_ 时，将引发该事件；但当用户仅按下 _Alt, B_ 时，不会引发该事件。该事件在按下键而不是释放键时引发。
-
-**IsAccessKeyScope**
-
-[IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) 属性使你可以指定 UIElement 是否是访问键作用域的根。 针对此元素引发 AccessKeyDisplayRequested 事件，但不会针对其子元素引发该事件。 当用户调用此元素时，XAML 框架会自动更改作用域，并针对其子元素引发 AccessKeyDisplayRequested 事件，针对其他 UI 元素（包括父元素）引发 AccessKeyDisplayDismissed 事件。  作用域发生更改时，不会退出访问键序列。
-
-**AccessKeyScopeOwner**
-
-若要使某个元素加入可视化树中不是其父元素的另一个元素（源）的作用域，可以设置 [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) 属性。 与 AccessKeyScopeOwner 属性绑定的元素必须将 IsAccessKeyScope 设置为 **true**。 否则，会引发异常。
-
-**ExitDisplayModeOnAccessKeyInvoked**
-
-默认情况下，当调用访问键但元素不是作用域所有者时，会结束该访问键序列，并引发 [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) 事件。 可以将 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 属性设置为 **false** 以替代此行为，并阻止在调用访问键后退出该访问键序列。 （[UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 和 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx) 具有此属性）。
+键提示是在控件旁边显示的锁屏提醒，在用户按下 Alt 键时，这些控件支持访问键。 每个键提示包含用于激活相关控件的字母数字键。
 
 > [!NOTE]
-> 如果元素为作用域所有者 (`IsAccessKeyScope="True"`)，应用将进入新的访问键作用域，不会引发 IsDisplayModeEnabledChanged 事件。
+> 带有单个字母数字字符的访问键自动支持键盘快捷方式。 例如，在 Word 中同时按下 Alt+F 将会打开“文件”菜单，而不显示键提示。
 
-**本地化**
+按 Alt 键将初始化访问键功能并在键提示中显示当前可用的所有键组合。 后续击键由访问键框架处理，在按下有效访问键或者按下 Enter、Esc、Tab 或箭头键禁用访问键并将击键处理返回至应用之前，它将拒绝无效键。
 
-访问键可以本地化为多种语言，并在运行时使用 [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API 进行加载。
+Microsoft Office 应用可为访问键提供广泛的支持。 下图所示为 Word 里面的“主页”选项卡及已激活的访问键（记录对数字和多个击键的支持）。
 
-## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>调用访问键时所用的控件模式
+![Microsoft Word 访问键的 KeyTip 锁屏提醒](images/accesskeys/keytip-badges-word.png)
 
-控件模式是公开常见控件功能的接口实现；例如，按钮实现 **Invoke** 控件模式，这将引发 **Click** 事件。 当调用访问键时，XAML 框架会查找已调用的元素是否实现控件模式并执行它（如果要执行）。 如果元素具有多个控件模式，将仅调用一个控件模式，忽略其余控件模式。 按以下顺序搜索控件模式：
+_Microsoft Word 访问键的键提示锁屏提醒_
 
-1.    调用。 例如，一个按钮。
-2.    切换。 例如，一个复选框。
-3.    选择。 例如，一个单选按钮。
-4.    展开/折叠。 例如，一个组合框。
+若要为控件添加访问键，请使用 **AccessKey 属性**。 此属性值用于指定访问键序列、快捷方式（如果是单个字母数字）和键提示。
 
-如果未找到控件模式，访问键调用将显示为空操作，会记录调试消息以帮助你调试此种情况：“未找到此组件的任何自动化模式。 在 AccessKeyInvoked 的事件处理程序中实现所需行为。 在事件处理程序中将 Handled 设置为 true 会取消显示此消息。”
+``` xaml
+<Button Content="Accept" AccessKey="A" Click="AcceptButtonClick" />
+```
 
-> [!NOTE]
-> 在 Visual Studio 调试设置中，调试器的应用程序处理类型必须为_混合(托管和本机)_或_本机_才可以看到此消息。
+## <a name="when-to-use-access-keys"></a>使用访问键时
 
-如果不希望访问键执行其默认控件模式，或者如果元素不具有控件模式，则应该处理 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件并实现所需行为。
-```csharp
-private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+我们建议你在 UI 的合适位置指定访问键并在所有自定义控制中支持访问键。
+
+1.  对于行动有障碍的用户，包括一次只能按一个键或者使用鼠标有困难的用户，**访问键可以让他们更容易地访问应用**。
+
+    具有良好设计的键盘 UI 是软件辅助功能的一个重要方面。 它使具有视力缺陷或行动有障碍的用户能够在应用中导航并与应用的功能交互。 这些用户可能无法操作鼠标，而是依靠各种辅助技术，如键盘增强工具、屏幕键盘、屏幕放大器、屏幕阅读器、语音输入实用工具。 对于这些用户，广泛的命令覆盖面非常重要。
+
+2.  对于喜欢通过键盘进行交互的高级用户，**访问键可以让他们更轻松地使用应用**。
+
+    有经验的用户通常强烈倾向于使用键盘，因为可以更为快速地输入可让基于键盘的命令，而无需将双手从键盘上挪开。 对于这些用户，效率性和一致性体验至关重要；综合性体验仅对常用命令十分重要。
+
+## <a name="set-access-key-scope"></a>设置访问键作用域
+
+当支持访问键的屏幕上具有许多元素时，我们建议设置访问键的作用域，以降低**认知负荷**。 这可以减少屏幕上的访问键数量，从而可以更容易地进行定位并提高效率和生产力。
+
+例如，Microsoft Word 提供两个访问键作用域：一个用于“功能区”选项卡的主作用域和一个用于选定选项卡上的命令的辅助作用域。
+
+下图所示为 Word 中的两个作用域。 第一个显示可让用户选择选项卡和其他顶级命令的主访问键，第二个显示“主页”选项卡的辅助访问键。
+
+![Microsoft Word 中的主访问键](images/accesskeys/primary-access-keys-word.png)
+
+_Microsoft Word 中的主访问键_
+
+![Microsoft Word 中的辅助访问键](images/accesskeys/secondary-access-keys-word.png)
+
+Microsoft Word 中的辅助访问键
+
+可以为不同域中的元素复制访问键。 在前面的示例中，“2”既是主域中“撤销”的访问键，也是辅助域中“斜体”的访问键。
+
+某些控件（如 CommandBar）尚不支持内置访问键作用域，因此，需要你亲自实施。 以下示例展示了如何在调用父命令后通过可用的访问键支持 CommandBar 的 SecondaryCommands（与 Word 中的“功能区”相似）。
+
+``` C#
+public class CommandBarHack : CommandBar
 {
-    args.Handled = true;
-    //Do something
+    CommandBarOverflowPresenter secondaryItemsControl;
+    Popup overflowPopup;
+
+    public CommandBarHack()
+    {
+        this.ExitDisplayModeOnAccessKeyInvoked = false;
+        AccessKeyInvoked += OnAccessKeyInvoked;
+    }
+
+    protected override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        Button moreButton = GetTemplateChild("MoreButton") as Button;
+        moreButton.SetValue(Control.IsTemplateKeyTipTargetProperty, true);
+        moreButton.IsAccessKeyScope = true;
+
+        // SecondaryItemsControl changes
+        secondaryItemsControl = GetTemplateChild("SecondaryItemsControl") as CommandBarOverflowPresenter;
+        secondaryItemsControl.AccessKeyScopeOwner = moreButton;
+
+        overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
+
+    }
+    private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+    {
+
+        if (overflowPopup != null)
+        {
+            overflowPopup.Opened += SecondaryMenuOpened;
+        }
+    }
+
+    private void SecondaryMenuOpened(object sender, object e)
+    {
+        //This is not neccesay given we are automatically pushing the scope.
+        var item = secondaryItemsControl.Items.First();
+        if (item != null && item is Control)
+        {
+            (item as Control).Focus(FocusState.Keyboard);
+        }
+        overflowPopup.Opened -= SecondaryMenuOpened;
+    }
 }
 ```
 
-有关控件模式的详细信息，请参阅 [UI 自动化控件模式概述](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)。
+
+``` xaml
+<local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
+    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
+    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
+    <AppBarSeparator/>
+    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+        <AppBarButton.Flyout>
+            <MenuFlyout>
+                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
+                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            </MenuFlyout>
+        </AppBarButton.Flyout>
+    </AppBarButton>
+    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
+    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
+    <AppBarSeparator/>
+    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <CommandBar.SecondaryCommands>
+        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
+        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+    </CommandBar.SecondaryCommands>
+</local:CommandBarHack>
+```
+
+![CommandBar 的主访问键](images/accesskeys/primary-access-keys-commandbar.png)
+
+_CommandBar 主作用域和受支持的访问键_
+
+![CommandBar 的辅助访问键](images/accesskeys/secondary-access-keys-commandbar.png)
+
+_CommandBar 辅助作用域和受支持的访问键_
+
+## <a name="avoid-access-key-collisions"></a>避免访问键冲突
+
+当相同作用域中的两个或更多元素具有相同的访问键或者以相同的字母数字字符开头时，将会发生访问键冲突。
+
+系统将会处理添加到虚拟树的第一个元素的访问键，忽略所有其他访问键，以此解决访问键重复问题。
+
+当多个访问键以相同字符（如“A”、“A1”和“AB”）开头时，系统将会处理单个字符访问键并忽略所有其他访问键。
+
+使用唯一的访问键或限定命令的作用域来避免冲突。
+
+## <a name="choose-access-keys"></a>选择访问键
+
+选择访问键时，请考虑以下事项：
+
+-   使用单个字符来减少击键并支持默认的快捷键 (Alt+AccessKey)
+-   避免使用两个以上字符
+-   避免访问键冲突
+-   避免使用难于与其他字符区分的字符，例如字母“I”与数字“1”或者字母“O”与数字“0”
+-   使用其他常用应用（如 Word）中的大家熟知的先例（“F”代表“文件”，“H”代表“主页”等）
+-   使用命令名称的第一个字符或者与命令最相关、有助于记起的字符
+    -   如果第一个字母已分配，请使用与命令名称的第一个字母最接近的字母（“N”代表“插入”）
+    -   使用与其他命令名称不同的辅音（“W”代表“视图”）
+    -   使用命令名称中的元音。
+
+## <a name="localize-access-keys"></a>本地化访问键
+
+如果你的应用将被本地化成多种语言，则你还应**考虑本地化访问键**。 例如，“H”代表英语中的“主页”，“I”代表西班牙语中的“主页”。
+
+在标记中使用 x:Uid 扩展，以应用已本地化的资源，如此处所示。
+
+``` xaml
+<Button Content="Home" AccessKey="H" x:Uid="HomeButton" />
+```
+每种语言的资源将添加到项目中对应的字符串文件夹：
+
+![英语和西班牙语资源字符串文件夹](images/accesskeys/resource-string-folders.png)
+
+_英语和西班牙语资源字符串文件夹_
+
+在项目的 resources.resw 文件中指定已本地化的访问键：
+
+![指定已在 resources.resw 文件中指定的 AccessKey 属性](images/accesskeys/resource-resw-file.png)
+
+_指定已在 resources.resw 文件中指定的 AccessKey 属性_
+
+有关更多信息，请参阅[翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
+
+## <a name="position-key-tips"></a>定位键提示
+
+键提示显示为与其对应的 UI 元素相关的浮动锁屏提醒，以考虑存在的其他 UI 元素、其他键提示和屏幕边缘。
+
+通常情况下，默认的键提示位置已足够并为自适应 UI 提供内置支持。
+
+![自动键提示放置示例](images/accesskeys/auto-keytip-position.png)
+
+_自动键提示放置示例_
+
+但是，如果你需要更好地控制键提示放置，我们的建议如下：
+
+1.  **明显关联原则**：用户可以轻松地将控件与键提示关联在一起。
+
+    a.  KeyTip 应**靠近**具有访问键的元素（所有者）。  
+    b.  KeyTip 应**避免覆盖具有访问键的已启用元素**。   
+    c.  如果无法将键提示置于其所有者附近，则应覆盖其所有者。 
+
+2.  **可发现性**：用户可以通过键提示快速发现控件。
+
+    a.  键提示不得**覆盖**其他键提示。  
+
+3.  **轻松扫描**：用户可以轻松地浏览键提示。
+
+    a.  键提示相互之间以及与 UI 元素之间应**对齐**。
+    b.  应尽可能多地将键提示**分组**。 
+
+### <a name="relative-position"></a>相对位置
+
+使用 **KeyTipPlacementMode** 属性以每个元素或每个组为基础自定义键提示的放置。
+
+放置模式包括：顶部、底部、右侧、左侧、隐藏、居中和自动。
+
+![键提示放置模式](images/accesskeys/keytip-postion-modes.png)
+
+_键提示放置模式_
+
+控件的中心线用于计算键提示的垂直和水平对齐。
+
+以下示例展示了如何使用 StackPanel 容器的 KeyTipPlacementMode 属性设置一组控件的键提示放置。
+
+``` xaml
+<StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyTipPlacementMode="Top">
+  <Button Content="File" AccessKey="F" />
+  <Button Content="Home" AccessKey="H" />
+  <Button Content="Insert" AccessKey="N" />
+</StackPanel>
+```
+
+### <a name="offsets"></a>偏移量
+
+使用元素的 KeyTipHorizontalOffset 和 KeyTipVerticalOffset 属性更精确地控制键提示的位置。
+
+> [!NOTE]
+> 当 KeyTipPlacementMode 设为自动时，无法设置偏移量。
+
+KeyTipHorizontalOffset 属性表示键提示向左或向右移动的距离。 示例展示了如何设置按钮的键提示偏移量。
+
+![键提示放置模式](images/accesskeys/keytip-offsets.png)
+
+_设置键提示的垂直和水平偏移量_
+
+``` xaml
+<Button
+  Content="File"
+  AccessKey="F"
+  KeyTipPlacementMode="Bottom"
+  KeyTipHorizontalOffset="20"
+  KeyTipVerticalOffset="-8" />
+```
+
+### <a name="screen-edge-alignment-screen-edge-alignment-listparagraph"></a>屏幕边缘对齐 {#screen-edge-alignment .ListParagraph}
+
+键提示的位置将会根据屏幕边缘自动调整，以确保键提示完全可见。 发生此情况下，控件与键提示对齐点之间的距离可能与指定的水平和垂直偏移量值不同。
+
+![键提示放置模式](images/accesskeys/keytips-screen-edge.png)
+
+_屏幕边缘导致键提示自动重新定位自身_
+
+## <a name="style-key-tips"></a>设置键提示样式
+
+我们建议为平台主题使用内置的键提示支持，包括高对比度。
+
+如果你需要指定自己的键提示样式，请使用应用程序资源，如 KeyTipFontSize（字体大小）、KeyTipFontFamily（字体系列）、KeyTipBackground（背景）、KeyTipForeground（前景）、KeyTipPadding（填充）、KeyTipBorderBrush（边框颜色）和 KeyTipBorderThemeThickness（边框厚度）。
+
+![键提示放置模式](images/accesskeys/keytip-customization.png)
+
+_键提示自定义选项_
+
+此示例展示了如何更改应用程序资源：
+
+ ```xaml  
+<Application.Resources>
+  <SolidColorBrush Color="DarkGray" x:Key="MyBackgroundColor" />
+  <SolidColorBrush Color="White" x:Key="MyForegroundColor" />
+  <SolidColorBrush Color="Black" x:Key="MyBorderColor" />
+  <StaticResource x:Key="KeyTipBackground" ResourceKey="MyBackgroundColor" />
+  <StaticResource x:Key="KeyTipForeground" ResourceKey="MyForegroundColor" />
+  <StaticResource x:Key="KeyTipBorderBrush" ResourceKey="MyBorderColor"/>
+  <FontFamily x:Key="KeyTipFontFamily">Consolas</FontFamily>
+  <x:Double x:Key="KeyTipContentThemeFontSize">18</x:Double>
+  <Thickness x:Key="KeyTipBorderThemeThickness">2</Thickness>
+  <Thickness x:Key="KeyTipThemePadding">4,4,4,4</Thickness>
+</Application.Resources>
+```
 
 ## <a name="access-keys-and-narrator"></a>访问键和讲述人
 
-Windows 运行时具有的 UI 自动化提供程序会公开 Microsoft UI 自动化元素上的属性。 通过这些属性，UI 自动化客户端应用程序可以发现有关用户界面部分的信息。 通过 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 属性，客户端（如“讲述人”）可以发现与某个元素关联的访问键。 每当元素获得焦点时，“讲述人”都会读取此属性。 如果 AutomationProperties.AccessKey 未赋值，XAML 框架会返回 UIElement 或 TextElement 的 [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 属性值。 如果 AccessKey 属性已赋值，则不需要设置 AutomationProperties.AccessKey。
+XAML 框架公开了自动化属性，支持 UI 自动化客户端发现与用户界面中的元素相关的信息。
 
-## <a name="example-access-key-for-button"></a>示例：按钮的访问键
-
-本示例演示如何为按钮创建访问键。 它将工具提示用作可视化提示来实现包含访问键的浮动锁屏提醒。
-
-> [!NOTE]
-> 为简单起见，使用了工具提示，但我们建议你自行创建用于显示访问键的控件（例如，[Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx)）。
-
-XAML 框架会自动调用 Click 事件的处理程序，因此无需处理 AccessKeyInvoked 事件。 该示例仅为用于通过使用 [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) 属性调用访问键的保留字符提供可视化提示。 例如，如果有三个已显示的访问键：_A1_、_A2_ 和 _C_，用户按下 _A_，仅 _A1_ 和 _A2_ 访问键未被筛选掉，并显示为 _1_ 和 _2_，而不是 _A1_ 和 _A2_。
-
-```xaml
-<StackPanel
-        VerticalAlignment="Center"
-        HorizontalAlignment="Center"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Press"
-                AccessKey="PB"
-                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                Click="DoSomething" />
-        <TextBlock Text="" x:Name="textBlock" />
-    </StackPanel>
-```
-
-```csharp
- public sealed partial class ButtonSample : Page
-    {
-        public ButtonSample()
-        {
-            this.InitializeComponent();
-        }
-
-        private void DoSomething(object sender, RoutedEventArgs args)
-        {
-            textBlock.Text = "Access Key is working!";
-        }
-
-        private void OnAccessKeyDisplayRequested(UIElement sender, AccessKeyDisplayRequestedEventArgs args)
-        {
-            var tooltip = ToolTipService.GetToolTip(sender) as ToolTip;
-
-            if (tooltip == null)
-            {
-                tooltip = new ToolTip();
-                tooltip.Background = new SolidColorBrush(Windows.UI.Colors.Black);
-                tooltip.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                tooltip.Padding = new Thickness(4, 4, 4, 4);
-                tooltip.VerticalOffset = -20;
-                tooltip.Placement = PlacementMode.Bottom;
-                ToolTipService.SetToolTip(sender, tooltip);
-            }
-
-            if (string.IsNullOrEmpty(args.PressedKeys))
-            {
-                tooltip.Content = sender.AccessKey;
-            }
-            else
-            {
-                tooltip.Content = sender.AccessKey.Remove(0, args.PressedKeys.Length);
-            }
-
-            tooltip.IsOpen = true;
-        }
-        private void OnAccessKeyDisplayDismissed(UIElement sender, AccessKeyDisplayDismissedEventArgs args)
-        {
-            var tooltip = ToolTipService.GetToolTip(sender) as ToolTip;
-            if (tooltip != null)
-            {
-                tooltip.IsOpen = false;
-                //Fix to avoid show tooltip with mouse
-                ToolTipService.SetToolTip(sender, null);
-            }
-        }
-    }
-```
-
-## <a name="example-scoped-access-keys"></a>示例：限定作用域的访问键
-
-本示例演示如何创建限定作用域的访问键。 当用户按下 Alt 时，PivotItem 的 IsAccessKeyScope 属性会阻止显示 PivotItem 子元素的访问键。 仅当用户调用 PivotItem 时才会显示这些访问键，因为 XAML 框架会自动切换作用域。 该框架还会隐藏其他作用域的访问键。
-
-本示例还演示如何处理 AccessKeyInvoked 事件。 由于 PivotItem 未实现任何控件模式，因此默认情况下，XAML 框架不会调用任何操作。 本实现演示如何使用访问键选择已调用的 PivotItem。
-
-最后，本示例演示显示模式更改时，可以在其中执行某些操作的 IsDisplayModeChanged 事件。 在此示例中，透视控件处于折叠状态，直到用户按下 Alt。 当用户结束与透视的交互时，它会重新折叠起来。 可以使用 IsDisplayModeEnabled 检查访问键显示模式处于启用状态，还是处于禁用状态。
-
-```xaml   
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot x:Name="MyPivot" VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <Pivot.Items>
-                <PivotItem
-                    x:Name="PivotItem1"
-                    AccessKey="A"
-                    AccessKeyInvoked="OnAccessKeyInvoked"
-                    AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                    AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                    IsAccessKeyScope="True">
-                    <PivotItem.Header>
-                        <TextBlock Text="A Options"/>
-                    </PivotItem.Header>
-                    <StackPanel Orientation="Horizontal" >
-                        <Button Content="ButtonAA" AccessKey="A"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested" />
-                        <Button Content="ButtonAD1" AccessKey="D1"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button Content="ButtonAD2" AccessKey="D2"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"/>
-                    </StackPanel>
-                </PivotItem>
-                <PivotItem
-                    x:Name="PivotItem2"
-                    AccessKeyInvoked="OnAccessKeyInvoked"
-                    AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                    AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                    AccessKey="B"
-                    IsAccessKeyScope="true">
-                    <PivotItem.Header>
-                        <TextBlock Text="B Options"/>
-                    </PivotItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Button AccessKey="B" Content="ButtonBB"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button AccessKey="F1" Content="ButtonBF1"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button AccessKey="F2" Content="ButtonBF2"  
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"/>
-                    </StackPanel>
-                </PivotItem>
-            </Pivot.Items>
-        </Pivot>
-    </Grid>
-```
-
-```csharp
-public sealed partial class ScopedAccessKeys : Page
-    {
-        public ScopedAccessKeys()
-        {
-            this.InitializeComponent();
-            AccessKeyManager.IsDisplayModeEnabledChanged += OnDisplayModeEnabledChanged;
-            this.Loaded += OnLoaded;
-        }
-
-        void OnLoaded(object sender, object e)
-        {
-            //To let the framework discover the access keys, the elements should be realized
-            //on the visual tree. If there are no elements in the visual
-            //tree with access key, the framework won't raise the events.
-            //In this sample, if you define the Pivot as collapsed on the constructor, the Pivot
-            //will have a lazy loading and the access keys won't be enabled.
-            //For this reason, we make it visible when creating the object
-            //and we collapse it when we load the page.
-            MyPivot.Visibility = Visibility.Collapsed;
-        }
-
-        void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
-        {
-            args.Handled = true;
-            MyPivot.SelectedItem = sender as PivotItem;
-        }
-        void OnDisplayModeEnabledChanged(object sender, object e)
-        {
-            if (AccessKeyManager.IsDisplayModeEnabled)
-            {
-                MyPivot.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MyPivot.Visibility = Visibility.Collapsed;
-
-            }
-        }
-
-        DependencyObject AdjustTarget(UIElement sender)
-        {
-            DependencyObject target = sender;
-            if (sender is PivotItem)
-            {
-                PivotItem pivotItem = target as PivotItem;
-                target = (sender as PivotItem).Header as TextBlock;
-            }
-            return target;
-        }
-
-        void OnAccessKeyDisplayRequested(UIElement sender, AccessKeyDisplayRequestedEventArgs args)
-        {
-            DependencyObject target = AdjustTarget(sender);
-            var tooltip = ToolTipService.GetToolTip(target) as ToolTip;
-
-            if (tooltip == null)
-            {
-                tooltip = new ToolTip();
-                tooltip.Background = new SolidColorBrush(Windows.UI.Colors.Black);
-                tooltip.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                tooltip.Padding = new Thickness(4, 4, 4, 4);
-                tooltip.VerticalOffset = -20;
-                tooltip.Placement = PlacementMode.Bottom;
-                ToolTipService.SetToolTip(target, tooltip);
-            }
-
-            if (string.IsNullOrEmpty(args.PressedKeys))
-            {
-                tooltip.Content = sender.AccessKey;
-            }
-            else
-            {
-                tooltip.Content = sender.AccessKey.Remove(0, args.PressedKeys.Length);
-            }
-
-            tooltip.IsOpen = true;
-        }
-        void OnAccessKeyDisplayDismissed(UIElement sender, AccessKeyDisplayDismissedEventArgs args)
-        {
-            DependencyObject target = AdjustTarget(sender);
-
-            var tooltip = ToolTipService.GetToolTip(target) as ToolTip;
-            if (tooltip != null)
-            {
-                tooltip.IsOpen = false;
-                //Fix to avoid show tooltip with mouse
-                ToolTipService.SetToolTip(target, null);
-            }
-        }
-    }
-```
+如果你在 UIElement 或 TextElement 控件上指定了 AccessKey 属性，则可以通过 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 属性来获得此值。 每当元素获得焦点时，辅助功能客户端（如讲述人）将会读取分此属性值。

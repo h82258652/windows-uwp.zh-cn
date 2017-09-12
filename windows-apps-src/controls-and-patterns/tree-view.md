@@ -4,18 +4,16 @@ Description: "使用树视图示例代码创建可扩展树。"
 title: "树视图"
 label: Tree view
 template: detail.hbs
-ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c7ad99d20fe30ea4b94ad62de45b3832aae3805e
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="hierarchical-layout-with-treeview"></a>带有树视图的层次结构布局
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<div class="microsoft-internal-note">
-树视图红线位于设计仓库中：http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
-</div>
-
-树视图是一种分层列表模式，带有包含嵌套项的展开和折叠节点。 嵌套项可以是其他节点，也可以是常规列表项。 你可以使用 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 生成一个树视图，以演示 UI 中的文件夹结构或嵌套关系。
+树视图是一种层次结构列表模式，带有包含嵌套项的展开和折叠节点。 嵌套项可以是其他节点，也可以是常规列表项。 你可以使用 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 生成一个树视图，以演示 UI 中的文件夹结构或嵌套关系。
 
 [树视图示例](http://go.microsoft.com/fwlink/?LinkId=785018)是使用 **ListView** 生成的参考实现。 它不是单独的控件。 Microsoft Edge 浏览器中的“收藏夹”窗格中看到的树视图使用此参考实现。
 

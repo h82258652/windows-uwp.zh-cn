@@ -6,14 +6,16 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 11c8fbdfd8653fe93ab712c865dc1d23e7a76581
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ebeac8bb4d2787514c788ecfa0ab1381ff40820b
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -35,13 +37,25 @@ translationtype: HT
 
 **步骤 1：创建采用 PNG 格式的图像资源**
 
-为磁贴创建图标资源，然后将其放置在包含其他资源的项目资源中。 至少创建一个 200x200 像素的图标，这可用于手机和台式机上的小磁贴和中等磁贴。 若要提供最佳用户体验，请为每种大小创建一个图标。 请参阅下图中的调整大小详细信息。
+为磁贴创建图标资源，然后将其放置在包含其他资源的项目资源中。 至少创建一个 200x200 像素的图标，这可用于手机和台式机上的小磁贴和中等磁贴。 若要提供最佳用户体验，请为每种大小创建一个图标。 这些资源上不需要填充。 请参阅下图中的调整大小详细信息。
 
 采用 PNG 格式保存为透明的图标资源。 在 Windows Phone 上，每个非透明像素都显示为白色 (RGB 255, 255, 255)。 为了一致性和简单起见，同样为桌面图标使用白色。
 
 平板电脑、笔记本电脑和台式机上的 Windows 10 仅支持方形图标资源。 手机支持方形资源和高度超过宽度的资源，最多支持 2:3 的宽度:高度比，这非常有利于手机图标之类的图像。
 
 ![手机和台式机的小磁贴以及中磁贴上的图标大小调整](images/iconic-template-sizing-info.png)
+
+![带有和不带有锁屏提醒的资源的大小调整](images/assetguidance24.png)
+
+对于方形资源，在容器内自动居中放置：
+
+![方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance25.png)
+
+对于非方形资源，会自动进行水平/垂直居中放置并贴靠到容器的宽度/高度：
+
+![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26a.png)
+
+![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26b.png)
 
 **步骤 2：创建基本磁贴**
 

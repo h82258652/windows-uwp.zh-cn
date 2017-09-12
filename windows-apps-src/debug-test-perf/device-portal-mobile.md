@@ -1,19 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "适用于移动设备的 Device Portal"
 description: "了解 Windows Device Portal 是如何支持你远程配置和管理你的移动设备。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54660777706fbfdc54b08da025c2f280f194c010
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d0a85a780bf71bd43a0482494a1de939582a4b56
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>打开设备发现和配对
 
-若要连接 Device Portal，必须启用设备发现和 Device Portal。 这允许你将手机与电脑或其他 Windows 10 设备进行配对。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。
+若要连接到 Device Portal，必须在手机设置中启用设备发现和 Device Portal。 这允许你将手机与电脑或其他 Windows 10 设备进行配对。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。
 
 首次连接 Device Portal 时，要求输入区分大小写的 6 个字符的安全代码。 这可确保你对手机拥有访问权限，并且使你的手机免受攻击。 在手机上按“配对”按钮将生成和显示 6 个字符的代码，然后在浏览器的文本框中输入该代码。
 

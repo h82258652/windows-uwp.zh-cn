@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: bf0abd41262704ccf634350ae53e8f428d412bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 288cca64cc93438c8f8c0000cfeba1fdda918733
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -82,8 +84,13 @@ translationtype: HT
 
 ## <a name="additional-usage-guidance"></a>其他使用指南
 
-
 与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除了在 API 中进行区别，或受到特定于设备的 Windows UI 要求以为，我们将两种交互都称为平移。
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">预发行版。</span> 秋季创意者更新（Windows 10 Insider Preview 版本 16215 及更高版本）- 行为变化</strong>
+> </div>
+> 默认情况下，主动笔现在可在 UWP 应用中滚动/平移，而不是进行文本选择（与触摸、触摸板和被动笔一样）。  
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 请参阅 [ScrollViewer 类] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API 参考主题，以了解详细信息。
 
 根据输入设备的不同，用户使用以下方式之一在可平移区域内进行平移：
 

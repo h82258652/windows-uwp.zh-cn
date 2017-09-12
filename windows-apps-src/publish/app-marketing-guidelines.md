@@ -4,14 +4,16 @@ Description: "了解如何推广你的应用和 Windows 应用商店中的内容
 title: "Windows 应用商店应用营销指南"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e953bf1b7392a93ddb8323167ca1bf191e162076
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="windows-store-app-marketing-guidelines"></a>Windows 应用商店应用营销指南
 
@@ -21,19 +23,23 @@ translationtype: HT
 
 我们创建了特殊的促销锁屏提醒，帮助你带动更多客户查看 Windows 应用商店中的应用一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
-[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows 应用商店营销指南（英语版本的 PDF 文件）
+[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Windows 应用商店营销指南（英语版本的 PDF 文件）**
+
 
 ## <a name="badge-generator-and-images"></a>锁屏提醒生成器和图像
 
-你可以使用[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)生成显示（使用所选语言）应用商店锁屏提醒的 HTML 和直接指向应用的应用商店列表的链接。 你也可以从以下链接中下载完整的锁屏提醒图像集（格式为 PNG 和 PDF）。
+你可以使用[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)生成显示（使用所选语言）应用商店锁屏提醒的 HTML 和直接指向应用的应用商店列表的链接。
 
-[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) 所有锁屏提醒图像
+你也可以从以下链接中下载完整的锁屏提醒图像集（格式为 PNG 和 PDF）。
+
+[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **所有锁屏提醒图像**
+
 
 ## <a name="device-images"></a>设备图像
 
 若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 可在 [Windows 应用商店营销指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中查找有关如何使用这些图像的最佳实践和技术规范。
 
-[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows 设备插图
+[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows 设备插图**
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 

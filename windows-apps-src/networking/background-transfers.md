@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8b55968a93f09dae396353e73d72566feb188a89
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="background-transfers"></a>后台传输
 
@@ -36,6 +38,10 @@ translationtype: HT
 ### <a name="how-does-the-background-transfer-feature-work"></a>后台传输功能如何工作？
 
 当应用使用后台传输来启动传输时，该请求将使用 [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) 或 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 类对象进行配置和初始化。 每个传输操作都由系统单独处理，并与正在调用的应用分开。 如果你希望在应用 UI 中向用户提供状态，系统提供了进程信息；在发生传输时，你的应用可以暂停、恢复和取消传输，甚至可以读取数据。 这种由系统处理的传输方式可以促进智能化的电源使用，并防止应用在联网状态下因遇到类似如下事件而可能带来的问题：应用挂起、终止或网络状态突然更改。
+
+此外，后台传输将使用“系统事件代理”事件。 因此，下载数将受系统中可用的事件数限制。 默认为 500 个事件，但这些事件是在所有进程间共享的。 因此，单个应用程序一次创建的后台传输数不应超过 100 个。
+
+当应用程序启动后台传输时，该应用程序必须对所有现有的 [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) 对象调用 [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_)。 否则可能导致这些事件的泄漏，并因此使后台传输功能毫无用处。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用后台传输执行经过身份验证的文件请求
 
@@ -182,6 +188,8 @@ function uploadFiles() {
 
 如果你下载的是可能快速完成的小型资源，应该使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API 而不是后台传输。
 
+由于每个应用资源所限，应用在任何时刻的传输数均不应多于 200 (DownloadOperations + UploadOperations)。 超出该限制可能会将应用的传输队列置于无法恢复的状态。
+
 以下示例将指导你完成基本下载的创建和初始化，以及如何枚举和重新引入以前应用会话中保持的操作。
 
 ### <a name="configure-and-start-a-background-transfer-file-download"></a>配置和启动后台传输文件下载
@@ -228,7 +236,7 @@ Windows 10 中的新功能可以在完成后台传输时运行应用程序代码
 
 使用后处理启动后台传输，如下所示。
 
-1.  创建 [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) 对象。 然后，创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象。 将生成器对象的 **Trigger** 属性设置为完成组对象，并将生成器的 **TaskEngtyPoint** 属性设置为应该在传输完成时执行的后台任务的入口点。 最后，调用 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法以注册后台任务。 请注意，许多完成组可以共享一个后台任务入口点，但是每个后台任务注册只能有一个完成组。
+1.  创建 [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) 对象。 然后，创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象。 将生成器对象的 **Trigger** 属性设置为完成组对象，并将生成器的 **TaskEntryPoint** 属性设置为应该在传输完成时执行的后台任务的入口点。 最后，调用 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法以注册后台任务。 请注意，许多完成组可以共享一个后台任务入口点，但是每个后台任务注册只能有一个完成组。
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -297,10 +305,10 @@ Windows 10 中的新功能可以在完成后台传输时运行应用程序代码
 -   你用于创建新项目的应用名称与现有项目相同，但语言不同（例如从 C++ 改为 C#）。
 -   你更改了现有项目中的目标体系结构（例如，从 x86 改为 x64）。
 -   你更改了现有项目中的区域性（例如，从中性改为 en-US）。
--   你在现有项目的程序包清单中添加或删除了一项功能（例如，添加“企业身份验证”****）。
+-   你在现有项目的程序包清单中添加或删除了一项功能（例如，添加**企业身份验证**）。
 
 常规应用服务（包含可添加或删除功能的清单更新）不会在应用的最终用户部署时导致该问题。
-若要解决该问题，请彻底卸载应用的所有版本，并采用新的语言、体系结构、区域性或功能重新部署。 可通过“开始”****屏幕或使用 PowerShell 和 **Remove-AppxPackage** cmdlet 完成此操作。
+若要解决该问题，请彻底卸载应用的所有版本，并采用新的语言、体系结构、区域性或功能重新部署。 可通过**开始**屏幕或使用 PowerShell 和 **Remove-AppxPackage** cmdlet 完成此操作。
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的异常
 

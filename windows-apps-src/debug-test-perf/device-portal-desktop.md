@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "适用于桌面设备的 Device Portal"
 description: "了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 32155bfbb676a5f79dd4b1629f0a88368da36828
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="device-portal-for-desktop"></a>适用于桌面设备的 Device Portal
 
@@ -76,37 +78,11 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 - 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service 下
     - UseDynamicPorts：一个必需的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
-    - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
+    - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。  
     - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
 
-## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>无法安装开发人员程序包或启动 Device Portal
-有时，由于网络或兼容性问题，开发人员模式无法正确安装。 开发人员模式程序包对**远程**部署是必需的（Device Portal 和 SSH），但对本地部署并非如此。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用。 
+## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
+有时，由于网络或兼容性问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到电脑的必需条件 - 使用来自浏览器的 Device Portal 或设备发现启用 SSH - 但不用于本地部署。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用。 
 
-请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。 
+请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛和[开发人员模式页](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)，查找这些问题的解决方法以及其他内容。 
 
-### <a name="failed-to-locate-the-package"></a>无法找到该程序包
-
-“无法在 Windows 更新中找到开发人员模式程序包。 错误代码 0x001234 了解详细信息”   
-
-发生此错误可能是由于网络连接问题、企业设置，或者程序包可能丢失。 
-
-若要解决此问题：
-
-1. 确保你的计算机连接到 Internet。 
-2. 如果你位于加入域的计算机上，请与网络管理员联系。 
-3. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
-4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。 
-
-在执行上述任意步骤后，禁用并随后重新启用“开发人员模式”以验证是否解决该问题。 
-
-
-### <a name="failed-to-install-the-package"></a>无法安装程序包
-
-“开发人员模式程序包无法安装。 错误代码 0x001234 了解详细信息”
-
-发生此错误可能是由于 Windows 的内部版本和开发人员模式程序包之间不兼容。 
-
-若要解决此问题：
-
-1. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
-2. 重启计算机以确保所有更新都已应用。

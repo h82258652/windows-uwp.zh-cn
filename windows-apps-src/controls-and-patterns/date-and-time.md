@@ -6,14 +6,20 @@ ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 5da40bb4c680416f0766cf0d1a171f95358ea63e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: f2ffe1fa42f3202ee3fce8850d151b40af2e486a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="calendar-date-and-time-controls"></a>日历、日期和时间控件
 
@@ -21,15 +27,7 @@ translationtype: HT
 
 日期和时间控件向你提供了标准的本地化方法，可供用户在你的应用中查看并设置日期和时间值。 本文提供设计指南，并帮助你选取正确的控件。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
-<li>[**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
-<li>[**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[CalendarView 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)，[CalendarDatePicker 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)，[DatePicker 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)，[TimePicker 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
 
 
 ## <a name="which-date-or-time-control-should-you-use"></a>应使用哪个日期或时间控件？
@@ -90,27 +88,27 @@ translationtype: HT
 
 有关特定于每个日期和时间控件的信息和示例，请参阅以下这些文章。
 
-- [**日历视图**](calendar-view.md)
-- [**日历日期选取器**](calendar-date-picker.md)
-- [**日期选取器**](date-picker.md)
-- [**时间选取器**](time-picker.md)
+- [日历视图](calendar-view.md)
+- [日历日期选取器](calendar-date-picker.md)
+- [日期选取器](date-picker.md)
+- [时间选取器](time-picker.md)
 
 ### <a name="globalization"></a>全球化
 
-XAML 日期控件支持 Windows 支持的各种日历系统。 这些日历均在 [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) 类中指定。 每个控件均使用与应用的默认语言对应的正确日历，还可以设置 **CalendarIdentifier** 属性以使用特定的日历系统。
+XAML 日期控件支持 Windows 支持的各种日历系统。 这些日历均在 [Windows.Globalization.CalendarIdentifiers](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) 类中指定。 每个控件均使用与应用的默认语言对应的正确日历，还可以设置 **CalendarIdentifier** 属性以使用特定的日历系统。
 
-时间选取器控件支持在 [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) 类中指定的每个时钟系统。 若要使用 12 小时制时钟或 24 小时制时钟，可以设置 [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) 属性。 该属性的类型是字符串，但必须使用对应于 ClockIdentifiers 类的静态字符串属性的值。 如下所示：TwelveHour（字符串“12HourClock”）和TwentyFourHour（字符串“24HourClock”）。 “12HourClock”是默认值。
+时间选取器控件支持在 [Windows.Globalization.ClockIdentifiers](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) 类中指定的每个时钟系统。 若要使用 12 小时制时钟或 24 小时制时钟，可以设置 [ClockIdentifier](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) 属性。 该属性的类型是字符串，但必须使用对应于 ClockIdentifiers 类的静态字符串属性的值。 如下所示：TwelveHour（字符串“12HourClock”）和TwentyFourHour（字符串“24HourClock”）。 “12HourClock”是默认值。
 
 
 ### <a name="datetime-and-calendar-values"></a>DateTime 和日历值
 
 XAML 日期和时间控件中所使用的日期对象具有不同的表示形式，具体取决于你的编程语言。 
-- C# 和 Visual Basic 使用 [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 结构，它是 .NET 的一部分。 
-- C++/CX 使用 [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) 结构。 
+- C# 和 Visual Basic 使用 [System.DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 结构，它是 .NET 的一部分。 
+- C++/CX 使用 [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) 结构。 
 
-相关概念是 Calendar 类，它对在上下文中解释日期的方式产生影响。 所有 Windows 运行时应用都可以使用 [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 类。 C# 和 Visual Basic 应用还可以使用 [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 类，该类具有非常类似的功能。 （Windows 运行时应用可使用 .NET 日历基类而非诸如 GregorianCalendar 的特定实现。）
+相关概念是 Calendar 类，它对在上下文中解释日期的方式产生影响。 所有 Windows 运行时应用都可以使用 [Windows.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 类。 C# 和 Visual Basic 应用还可以使用 [System.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 类，该类具有非常类似的功能。 （Windows 运行时应用可使用 .NET 日历基类而非诸如 GregorianCalendar 的特定实现。）
 
-.NET 还支持名为 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的类型，该类型可隐式转换为 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，可能会看到要在 .NET 代码中用于设置实际上是 DateTimeOffset 的值的“DateTime”类型。 有关 DateTime 和 DateTimeOffset 之间的区别的详细信息，请参阅 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 类中的“备注”。
+.NET 还支持名为 [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的类型，该类型可隐式转换为 [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，可能会看到要在 .NET 代码中用于设置实际上是 DateTimeOffset 的值的“DateTime”类型。 有关 DateTime 和 DateTimeOffset 之间的区别的详细信息，请参阅 [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 类中的“备注”。
 
 > **注意**&nbsp;&nbsp;获取日期对象的属性不可以设置为 XAML 属性字符串，因为 Windows 运行时 XAML 解析器不具有用于将字符串转换为日期（作为 DateTime/DateTimeOffset 对象）的转换逻辑。 通常使用代码设置这些值。 另一个可行的方法是定义可用作数据对象或在数据上下文中可用的日期，然后将该属性设置为引用 [\{Binding\} 标记扩展](../xaml-platform/binding-markup-extension.md)表达式的 XAML 属性，以便可以将该日期作为数据访问。
 
@@ -121,7 +119,7 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 ## <a name="related-topics"></a>相关主题
 
 **面向开发人员 (XAML)**
-- [**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/dn890052)
-- [**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn950083)
-- [**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn298584)
-- [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn299280)
+- [CalendarView 类](https://msdn.microsoft.com/library/windows/apps/dn890052)
+- [CalendarDatePicker 类](https://msdn.microsoft.com/library/windows/apps/dn950083)
+- [DatePicker 类](https://msdn.microsoft.com/library/windows/apps/dn298584)
+- [TimePicker 类](https://msdn.microsoft.com/library/windows/apps/dn299280)

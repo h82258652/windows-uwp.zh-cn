@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: "优化动画、媒体和图像"
 description: "创建具备流畅动画、高帧速率和高性能媒体捕获与播放的通用 Windows 平台 (UWP) 应用。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 74f8b5a47a0ebee123ccad13bee2177870630a27
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="optimize-animations-media-and-images"></a>优化动画、媒体和图像
 
@@ -37,7 +39,8 @@ UWP 应用的一个重要方面就是流畅的交互。 这包括“粘住你的
 -   针对这些返回值类型的子属性时下列 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 属性的动画：
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
-    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
+    -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
+    -   [**投影**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**剪辑**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
 从属动画影响布局，因此没有来自 UI 线程的额外输入就无法进行计算。 从属动画包括对 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 和 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 等属性的修改。 默认情况下，从属动画不会运行，需要应用开发人员选择性加入。 启用后，如果 UI 线程保持解除阻止，那么从属动画会流畅地运行，但是如果框架或应用正在 UI 线程上执行许多其他工作，从属动画将开始抖动。

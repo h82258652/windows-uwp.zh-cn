@@ -7,14 +7,16 @@ label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b56cdeeb9a3c3d3ca89e19d8057e3d93241e6c3c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>响应式设计的屏幕大小和断点
 
@@ -78,7 +80,7 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 <li>窗口底部的扩展坞[应用栏](../controls-and-patterns/app-bars.md)用于改进可访问性</li>
 <li>一次使用一个列/区域</li>
 <li>使用图标表示搜索（不显示搜索框）。</li>
-<li>使[导航窗格](../controls-and-patterns/nav-pane.md)处于覆盖模式，以节省屏幕空间。</li>
+<li>使[导航窗格](../controls-and-patterns/navigationview.md)处于覆盖模式，以节省屏幕空间。</li>
 <li>如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -87,7 +89,7 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 <li>将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。</li>
 <li>最多两个列/区域</li>
 <li>显示搜索框。</li>
-<li>使[导航窗格](../controls-and-patterns/nav-pane.md)处于长条模式，以便始终显示窄带的图标。</li>
+<li>使[导航窗格](../controls-and-patterns/navigationview.md)处于长条模式，以便始终显示窄带的图标。</li>
 <li>请考虑针对[电视体验](http://go.microsoft.com/fwlink/?LinkId=760736)进行进一步定制。</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -96,7 +98,7 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 <li>将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。</li>
 <li>最多三个列/区域</li>
 <li>显示搜索框。</li>
-<li>使[导航窗格](../controls-and-patterns/nav-pane.md)处于停靠模式，以使其始终显示。</li>
+<li>使[导航窗格](../controls-and-patterns/navigationview.md)处于停靠模式，以使其始终显示。</li>
 </ul></td>
 </tr>
 </tbody>

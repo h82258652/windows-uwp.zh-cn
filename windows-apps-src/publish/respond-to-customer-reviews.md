@@ -4,36 +4,41 @@ Description: "可以直接回复应用的相关评价，让客户知道你正在
 title: "回复客户评价"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7de4e53df32979d87a19b7d0556ef716b901687b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c43304d9902727fb8f5c4d0854efb09a0f0f5196
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评价
 
 
 可以直接回复应用的相关评论，让客户知道你正在听取他们的反馈。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 你还可以选择让你的回复显示在应用商店中以供所有 Windows 10 客户查看。
 
-> **重要提示**  你无法直接回复选择不接收评价回复的客户所编写的评价。 也无法为客户在美国以外通过 Windows Phone 8 设备创建的任何评价留下回复。
+> [!IMPORTANT]
+> 无法直接回复选择不接收评论回复的客户所撰写的评论。 也无法为客户在美国以外通过 Windows Phone 8 设备创建的任何评价留下回复。
 
-若要查看应用的相关评价并提供回复，请在 Windows 开发人员中心仪表板中找到相应的应用。 在左侧导航菜单中，展开**分析**，然后单击**评价**以显示[评价报告](reviews-report.md)。
+若要查看应用的相关评论并提供回复，请在 Windows 开发人员中心仪表板中找到应用。 在左侧导航菜单中，展开**分析**，然后单击**评价**以显示[评价报告](reviews-report.md)。 选择**回复评论**提供回复。
 
-> **注意** 除了使用此方法回复评价之外，你还可[以编程方式](../monetize/submit-responses-to-app-reviews.md)或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)回复评价。 
+> [!TIP]
+> 除了使用仪表板回复评论之外，还可[以编程方式](../monetize/submit-responses-to-app-reviews.md)或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)回复评论。 
 
 当你发送评价回复时，客户将收到一封来自 Microsoft 的电子邮件，他们可通过该邮件查看你的回复。 此电子邮件也会包括应用的支持电子邮件地址，客户可以用它来直接与你联系。 如果在提交过程中未为应用添加支持电子邮件地址，你需要先添加一个才能回复。
 
 默认情况下，只有你回复的客户才能看到你的回复。 如果你想让其他客户查看你的回复，请选中**公开此回复**框，以允许我们在应用的应用商店列表中的客户评价正下方显示你的回复。 公开回复将对在 Windows 10 设备上查看应用商店的任何客户可见。
 
-> **重要提示**  你将无法在以后更改公开回复（除非客户修改其原始评价），因此在选择将其公开之前，请仔细检查你的回复。 如果客户修改了其原始评价，你的回复将会被删除。 然后你可以根据需要针对已修改的评价提交新的回复。
+> [!IMPORTANT] 
+> 随后，你将无法更改公开回复（除非客户修改其原始评论），因此在选择将其公开之前，请仔细检查你的回复。 如果客户修改了其原始评论，回复将会被删除。 可以根据需要选择**更新回复**，提交对修改后评论的新回复。
+
 
 ## <a name="guidelines-for-responses"></a>回复准则
 
-
-在回复客户的评论时，必须遵循以下准则： 这些准则适用于所有回复，无论你是否选择将其公开。
+在回复客户的评论时，必须遵循以下准则： 这些准则适用于所有回复，无论是否选择将其公开。
 
 -   回复不得超过 1000 个字符。
 -   不得向用户提供任何类型的补偿（包括数字应用项目）来更改应用评分。 请记住，根据[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)，不允许尝试操控评分。
@@ -42,12 +47,14 @@ translationtype: HT
 -   你的回复必须与特定的应用和评论直接相关。 如果一稿多用的回复不针对相同问题，不允许将相同的回复复制给大量用户。
 -   请勿在你的回复中包含任何不文明、攻击性、个人或恶意的评论。 请始终使用礼貌用语并请牢记：满意的客户将很有可能成为你应用的最大推动者。
 
-> **注意**  客户可以将开发人员不恰当的评价回复报告给 Microsoft。 他们也可以选择不接收评价回复。
-Microsoft 保留出于任何原因（包括以下情形：你的回复引发了非常多的不恰当评论报告，或非常多的客户选择不接收评论回复）撤消开发人员发送回复权限的权利。
+> [!NOTE]
+> 客户可以将开发人员不恰当的评论回复报告给 Microsoft。 他们也可以选择不接收评价回复。 
+>
+> Microsoft 保留出于任何原因（包括以下情形：回复引发了非常多的不恰当评论报告，或导致非常多的客户选择不接收评论回复）撤消开发人员发送回复权限的权利。
 
-你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果应用评价包含冒犯性、亵渎或侮辱性语言，请提交[支持票证](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
+你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果应用评论包含冒犯性、亵渎或侮辱性语言，请提交[支持票证](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
 
-## <a name="use-customer-feedback-to-improve-your-app"></a>利用客户反馈改善你的应用
 
+## <a name="use-customer-reviews-to-improve-your-app"></a>利用客户评论改善应用
 
 聆听和回复客户仅仅是开始而已。 针对他们的反馈采取行动也很关键。 如果你进行了重大的改进，请通过[创建新提交](app-submissions.md)更新应用，然后自信地在应用商店中进行展示。

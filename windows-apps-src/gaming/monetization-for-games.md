@@ -9,35 +9,38 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, 盈利"
-ms.openlocfilehash: eccff6f037890fdd375eb150520db99a67aa718d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/08/2017
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
 作为游戏开发人员，你需要知道盈利方式，以便你可以维持你的业务并一直做感兴趣的事：创建出色游戏。 本文概述了通用 Windows 平台 (UWP) 游戏的盈利方法以及如何实现它们。
 
-过去，你只是为游戏设置一个价格，然后等待用户在应用商店中购买该游戏。 但是，今天你有多种选项。 你可以选择将游戏分配给“实体”应用商店、在线销售游戏（通过物理复制或软复制），也可以让所有人免费玩游戏，但融入某种形式的广告或可供购买的应用内商品。 游戏也不再仅是单独的产品。 除了主游戏，它们通常还附带可供购买的额外内容。 
+过去，你只是为游戏设置一个价格，然后等待用户在应用商店中购买该游戏。 但是，今天你有多种选项。 你可以选择将游戏分配给“实体”应用商店、在线销售游戏（通过物理复制或软复制），也可以让所有人免费玩游戏，但融入某种形式的广告或可供购买的应用内商品。 游戏也不再仅是单独的产品。 除了主游戏，它们通常还附带可供购买的额外内容。
 
 你可以通过以下一种或多种方式，推广 UWP 游戏并通过其盈利。
 * 将你的游戏放置在 Windows 应用商店中，它是一个支持[全球分配](#worldwide-distribution-channel)的安全在线商店。 世界各地的玩家均可以[你设置的价格](#set-a-price-for-your-game)在线购买你的游戏。
 * 使用 Windows SDK 中的 API 创建[游戏内购买](#in-game-purchases)。 玩家可以从你的游戏内购买商品，或购买装备、皮肤、地图或游戏关卡等额外内容。
-* 使用 [Microsoft Store Services SDK](https://visualstudiogallery.msdn.microsoft.com/229b7858-2c6a-4073-886e-cbb79e851211) 中的 API 从广告网络显示广告。 你可以[在你的游戏中显示广告](#display-ads-in-your-game)并向玩家提供观看视频广告换取游戏内奖励的选项。
+* 使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中的 API 从广告网络显示广告。 你可以[在你的游戏中显示广告](#display-ads-in-your-game)并向玩家提供观看视频广告换取游戏内奖励的选项。
 * [通过广告市场活动最大程度地发展游戏的潜在客户](#maximize-your-games-potential-through-ad-campaigns)。 使用付费、社区（免费）或自家（免费）广告推广你的游戏，以扩大其用户群。
- 
+
 ## <a name="worldwide-distribution-channel"></a>全球分配渠道
 
 Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供下载，并支持通过各种付款形式（包括 Visa、MasterCard 和 PayPal）支付费用。 有关国家和地区的完整列表，请参阅[市场和自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
 
-## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格 
+## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
 发布到应用商店的 UWP 游戏可以是_付费_游戏，也可以是_免费_游戏。 付费游戏允许你预先向玩家收取你设置的游戏价格，而免费游戏允许用户在未支付游戏的情况下下载和玩游戏。
 
 下面是与在应用商店中设置你的游戏价格相关的一些重要概念。
 
-### <a name="base-price"></a>基价 
+### <a name="base-price"></a>基价
 
-游戏基价可确定你的游戏属于_付费_还是_免费_类别。 你可以使用[开发人员中心仪表板](https://developer.microsoft.com/windows)根据国家和地区配置基价。 确定价格的过程可能包括[销往其他国家/地区时的税收义务](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)和[特定市场的成本注意事项](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 还可以[为特定市场设置自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 有关详细信息，请参阅[定义价格和市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+游戏基价可确定你的游戏属于_付费_还是_免费_类别。 你可以使用[开发人员中心仪表板](https://developer.microsoft.com/windows)根据国家和地区配置基价。
+确定价格的过程可能包括[销往其他国家/地区时的税收义务](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)和[特定市场的成本注意事项](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 还可以[为特定市场设置自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 有关详细信息，请参阅[定义价格和市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ### <a name="sale-price"></a>售价
 
@@ -75,7 +78,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 因为加载项必须与游戏一起创建，因此你的游戏必须在应用商店中发布并提供。 本部分中的步骤显示了如何在游戏仍处于开发阶段创建加载项。
 （如果你的完成游戏已在应用商店中上架，可先跳过这三个步骤，然后直接转到[在应用商店中创建加载项](#create-an-add-on-in-the-store)。）
 
-在游戏仍处于开发阶段创建加载项： 
+在游戏仍处于开发阶段创建加载项：
 1. [创建程序包](#create-a-package)
 2. [将游戏发布为已隐藏](#publish-the-game-as-hidden)
 3. [将 Visual Studio 中的游戏解决方案与应用商店相关联](#associate-your-game-solution-with-the-store)
@@ -100,7 +103,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 1. 转到[开发人员中心](https://developer.microsoft.com/store)并登录。
 2. 在__仪表板概述__或__所有应用__页面上，单击要使用的应用。 如果尚未创建应用提交，请单击__创建新应用__并保留名称。
 3. 在__应用概述__页面上，单击__开始提交__。
-4. 配置此新提交。 在提交页面上： 
+4. 配置此新提交。 在提交页面上：
     * 单击__定价和可用性__。 在__可见性__部分中，选择“__隐藏此应用并阻止购置..__” 以确保只有你的开发团队可以访问游戏。 有关更多详细信息，请转到[分发和可见性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
     * 单击__属性__。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
     * 单击__年龄分级__。 准确填写调查表。
@@ -141,60 +144,56 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 
 ## <a name="display-ads-in-your-game"></a>在游戏中显示广告
 
-Microsoft Store Services SDK 中的库和工具有助于你在游戏中设置服务，以从广告网络接收广告。 将向你的玩家显示实时广告，当他们查看或与显示的广告交互时，你将从广告商处获得收益。 有关详细信息，请参阅[用于创建带广告的应用的工作流](https://msdn.microsoft.com/windows/uwp/monetize/workflows-for-creating-apps-with-ads)。
+Microsoft 广告 SDK 中的库和工具有助于你在游戏中设置服务，以从广告网络接收广告。 将向你的玩家显示实时广告，当他们查看或与显示的广告交互时，你将从广告商处获得收益。
+有关详细信息，请参阅[在应用中显示广告](../monetize/display-ads-in-your-app.md)。
 
 ### <a name="ad-formats"></a>广告格式
 
-可通过使用 Microsoft Store Services SDK 显示两种类型的广告：
+可使用 Microsoft 广告 SDK 显示一些类型的广告：
 
 * 横幅广告 &mdash; 占用部分游戏屏幕并且通常放置在游戏内的广告。
 * 间隙视频广告 &mdash; 全屏显示广告，在两个关卡之间使用时非常有效。 正确实现后，它们不会像横幅广告那样显眼。
+* 本机广告 &mdash; 基于组件的广告，其中每一个广告创意元素（如标题、图像、说明和行动号召文字）都作为可集成到应用中的单独元素提供给你的应用。
 
 ### <a name="which-ads-are-displayed"></a>显示哪些广告？
 
-使用 Microsoft Store Services SDK 时，当前通过我们的合作伙伴网络提供广告。 有关当前产品/服务的详细信息，请参阅[通过广告让应用获利](https://developer.microsoft.com/store/monetize/ads-in-apps)。
-如果你使用 AdControl 显示广告，可以选择通过扩展在你的游戏中显示的产品广告显示[关联广告](https://msdn.microsoft.com/windows/uwp/publish/about-affiliate-ads)。
+默认情况下，你的应用将显示来自 Microsoft 付费广告网络的广告。 若要最大化你的广告收益，你可以为你的广告单元启用广告中介，以显示来自其他付费广告网络的广告。 有关当前产品/服务的详细信息，请参阅[广告中介](../publish/monetize-with-ads.md#ad-mediation)指南。
 
 ### <a name="which-markets-allow-ads-to-be-displayed"></a>哪些市场允许显示广告？
 
-可向选定国家/地区的用户显示横幅广告和间隙视频广告。 有关支持广告的国家和地区的完整列表，请参阅 [Microsoft Advertising 的受支持市场](https://msdn.microsoft.com/windows/uwp/monetize/supported-markets-for-microsoft-advertising)。
+有关支持广告的国家和地区的完整列表，请参阅[广告网络支持的市场](../publish/monetize-with-ads.md#network-markets)。
 
 ### <a name="apis-for-displaying-ads"></a>用于显示广告的 API
 
-属于 [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 命名空间的 Microsoft Store Services SDK 中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类有助于在游戏中显示广告。
+Microsoft 广告 SDK 中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 和 [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) 类用于帮助在游戏中显示广告。
 
-若要开始操作，使用 Visual Studio 2015 下载并安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。 有关详细信息，请参阅 [SDK 中可用的功能](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk#features-available-in-the-sdk)。
+若要开始操作，请使用 Visual Studio 2015 或更高版本下载并安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 有关详细信息，请参阅[安装 Microsoft 广告 SDK](../monetize/install-the-microsoft-advertising-libraries.md)。
 
 #### <a name="implementation-guides"></a>实现指南
 
-这些演练介绍了如何使用 __AdControl__ 和 __InterstitialAd__ 实现广告：
+这些演练介绍了如何使用 __AdControl__、__InterstitialAd__ 和 __NativeAd__ 实现广告：
 
-* [通过使用 XAML 和 .NET 中的 AdControl 类创建横幅广告](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
-* [通过使用 HTML5 和 JavaScript 中的 AdControl 类创建横幅广告](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
-* [通过使用 InterstitialAd 类创建间隙视频广告](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [在 XAML 和 .NET 中创建横幅广告](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
+* [在 HTML5 和 JavaScript 中创建横幅广告](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
+* [创建间隙广告](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [创建本机广告](https://msdn.microsoft.com/windows/uwp/monetize/native-ads)
 
-在开发期间，你可以使用这些测试值查看广告的呈现方式。 这些相同的值也在上述演练中使用。
-
-|AdType             | AdUnitId  | AppId                              |
-|-------------------|-----------|------------------------------------|
-|横幅广告         |10865270   |3f83fe91-d6be-434d-a0ae-7351c5a997f1|
-|间隙广告    |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
+在开发期间，你可以使用[测试广告单元值](../monetize/test-mode-values.md)查看广告的呈现方式。 这些测试广告单元值也在上述演练中使用。
 
 下面是一些在设计和实现过程中向你提供帮助的最佳做法。
 
-* [用于使用 AdControl 类的横幅广告的最佳做法](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
-* [用于使用 InterstitialAd 类的间隙广告的最佳做法](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
+* [横幅广告的最佳做法](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
+* [间隙广告的最佳做法](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
 
-有关常见开发问题（不显示广告、黑盒闪烁并消失或广告不刷新）的解决方案，请参阅[疑难解答指南](https://msdn.microsoft.com/windows/uwp/monetize/troubleshooting-guides)。
+有关常见开发问题（如不显示广告、黑盒闪烁并消失或广告不刷新）的解决方案，请参阅[疑难解答指南](https://msdn.microsoft.com/windows/uwp/monetize/troubleshooting-guides)。
 
 ### <a name="prepare-for-release-by-replacing-ad-unit-test-values"></a>通过替换广告单元测试值准备发布
 
-准备好移动到实时测试或在发布的游戏中接收广告时，必须将测试广告单元值更新为针对你的游戏提供的实际值。
-若要为你的游戏创建广告单元，请参阅[在应用中设置广告单元](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app)。
+准备好移动到实时测试或在发布的游戏中接收广告时，必须将测试广告单元值更新为针对你的游戏提供的实际值。 若要为你的游戏创建广告单元，请参阅[在应用中设置广告单元](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app)。
 
 ### <a name="other-ad-networks"></a>其他广告网络
 
-这些网络是其他支持向 UWP 应用和游戏提供广告服务的广告网络。
+这些网络是其他广告网络，它们提供的 SDK 用于向 UWP 应用和游戏提供广告服务。
 
 #### <a name="vungle"></a>Vungle
 
@@ -209,22 +208,22 @@ Smaato 可以将横幅广告合并到 UWP 应用和游戏中。 下载 [SDK](htt
 AdDuplex 可用于在你的游戏中实现横幅或间隙广告。
 
 若要了解有关将 AdDuplex 直接集成到 Windows10 XAML 项目中的详细信息，请转到 AdDuplex 网站：
-* 横幅广告：[适用于 XAML 的 Windows10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) 
+* 横幅广告：[适用于 XAML 的 Windows10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
 * 间隙广告：[Windows10 XAML AdDuplex 间隙广告安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
 有关将 AdDuplex SDK 集成到使用 Unity 创建的 Windows10 UWP 游戏的信息，请参阅[适用于 Unity 应用的 Windows10 SDK 安装和使用](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>通过广告市场活动最大程度地发展游戏的潜在客户
 
-执行下一步，使用广告推广你的应用。 当为你的游戏[创建广告市场活动](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)时，其他应用和游戏将显示可推广你的游戏的广告。 
+执行下一步，使用广告推广你的应用。 当为你的游戏[创建广告市场活动](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)时，其他应用和游戏将显示可推广你的游戏的广告。
 
 从多个市场活动类型中进行选择，这些活动可帮助增加你的玩家群。
 
 |市场活动类型             | 你的游戏的广告显示在...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |付费                      |与你的游戏的设备或类别匹配的应用。                                                                                                                                                   |
-|免费社区               |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)。|
-|免费自家                   |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
+|免费社区            |由已选择加入社区广告市场活动的其他开发人员发布的应用。 有关详细信息，请参阅[关于社区广告](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)。|
+|免费自家                |仅你发布的应用。 有关详细信息，请参阅[关于自家广告](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
 
 ## <a name="related-links"></a>相关链接
 

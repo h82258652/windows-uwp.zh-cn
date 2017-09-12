@@ -4,20 +4,20 @@ Description: "应用提交过程的“应用属性”页允许你定义应用类
 title: "输入应用属性"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 31385fe3edb9d9f38a4f444c84ef189faed49985
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 
-[应用提交过程](app-submissions.md)的“应用属性”****页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
-
-> **注意**  年龄分级现在位于提交过程中的单独页面上。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
+[应用提交过程](app-submissions.md)的**属性**页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
 
 ## <a name="category-and-subcategory"></a>类别和子类别
 
@@ -25,11 +25,20 @@ translationtype: HT
 
 有关详细信息，请参阅[类别和子类别表](category-and-subcategory-table.md)。
 
+## <a name="game-settings"></a>游戏设置
+
+仅当选择**游戏**作为你的产品类别时，才显示此选项。 可在此处指定你的游戏支持的功能。 此部分中提供的所有信息将显示在产品的应用商店一览中。
+
+如果你的游戏支持多人游戏选项，请务必指示一个会话的最小玩家数量和最大玩家数量。 输入的最小玩家数量和最大玩家数量不能超过 1,000。
+
+**跨平台多人游戏**指的是游戏支持 Windows 10 电脑和 Xbox 玩家之间的多人游戏会话。
+
+
 ## <a name="product-declarations"></a>产品声明
 
 你可以在本部分中选中相应复选框以指示任意声明是否适用于你的应用。 无论应用是否提供给某些客户，这都会影响应用的显示方式，或客户使用应用的方式。
 
-有关详细信息，请参阅[应用声明](app-declarations.md)。
+有关详细信息，请参阅[产品声明](app-declarations.md)。
 
 ## <a name="system-requirements"></a>系统要求
 
@@ -52,6 +61,7 @@ translationtype: HT
 
 我们还建议将针对指定硬件的运行时检查添加到应用中，因为应用商店可能并不总是能够检测到客户的设备缺少所选功能，而且即使已显示警告，他们仍然能够下载应用。
 
-> **提示**  如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 StoreManifest XML 文件中指定最低要求。 有关详细信息，请参阅 [StoreManifest 架构 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
+> [!TIP]
+> 如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 StoreManifest XML 文件中指定最低要求。 有关详细信息，请参阅 [StoreManifest 架构 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
 
 

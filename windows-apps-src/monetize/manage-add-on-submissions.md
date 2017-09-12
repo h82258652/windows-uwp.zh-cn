@@ -4,22 +4,23 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 应用商店提交 API 中使用这些方法，来管理已注册到 Windows 开发人员中心帐户的应用的加载项提交。"
 title: "管理加载项提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 应用商店提交 API, 加载项提交, 应用内产品, IAP"
-ms.openlocfilehash: 7743faa9e2fda84d85468193ff46c87bab267a6c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a69857f6df3b23e9cf31fb1c7cc3ec52e95da7ae
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
 Windows 应用商店提交 API 将提供可用于管理针对应用的加载项（也称为应用内产品或 IAP）提交的方法。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的**反馈**、选择反馈区域的**提交 API**，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
-
->**重要提示**&nbsp;&nbsp;如果你使用 Windows 应用商店提交 API 创建加载项提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> [!IMPORTANT]
+> 如果你使用 Windows 应用商店提交 API 创建加载项提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-add-on-submissions" />
 ## <a name="methods-for-managing-add-on-submissions"></a>管理加载项提交的方法
@@ -84,60 +85,52 @@ Windows 应用商店提交 API 将提供可用于管理针对应用的加载项�
 
 3. 在 Windows 应用商店提交 API 中执行以下方法。 此方法会创建新的正在进行的提交，这是你上一发布的提交副本。 有关详细信息，请参阅[创建加载项提交](create-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
+    ```
 
-  响应正文包含三个项目：新的提交 ID、新的提交数据（包括所有列表和定价信息），以及用于将提交的任何加载项图标的共享访问签名 (SAS) URI 上载到 Azure Blob 存储。
+    响应正文包含[加载项提交](#add-on-submission-object)资源，该资源包括新的提交 ID、共享访问签名 (SAS) URI（用于将提交的所有加载项图标上载到 Azure Blob 存储）以及所有新的提交数据（如列表和定价信息）。
+        > [!NOTE]
+        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-  >**注意**&nbsp;&nbsp;SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 以及借助 Azure Blob 使用这些 URI 的背景信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+4. 如果要为提交添加新的图标，请[准备图标](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)并将它们添加到 ZIP 存档。
 
-4. 如果要为提交添加新的图标，请[准备图标](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) 并将它们添加到 ZIP 存档。
+5. 使用新提交所需的任何更改来更新[加载项提交](#add-on-submission-object)数据，并执行以下方法来更新提交。 有关详细信息，请参阅[更新加载项提交](update-an-add-on-submission.md)。
 
-5. 使用新提交所需的任何更改来更新提交数据，并执行以下方法来更新提交。 有关详细信息，请参阅[更新加载项提交](update-an-add-on-submission.md)。
-
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
-  ```
-
-  <span/>
-  >**注意**&nbsp;&nbsp;如果要为提交添加新的图标，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
+    ```
+    PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
+    ```
+      > [!NOTE]
+      > 如果要为提交添加新的图标，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新的图标，请使用 SAS URI 将 ZIP 存档上载到 [Azure Blob 存储](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)，该 URI 已在之前调用的 POST 方法的响应正文中提供。 你可以使用不同的 Azure 库在多个平台上进行此操作，包括：
 
-  * [适用于 .NET 的 Azure 存储客户端库](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-  * [适用于 Java 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-  * [适用于 Python 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [适用于 .NET 的 Azure 存储客户端库](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [适用于 Java 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [适用于 Python 的 Azure 存储 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-  <span/>
+  以下 C# 代码示例演示如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
 
-  以下 C# 代码示例演示了如何在用于 .NET 的 Azure 存储客户端库中使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 类将 ZIP 存档上载到 Azure Blob 存储。 此示例假定 ZIP 存档已写入流对象。
-
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+    new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
   await blockBob.UploadFromStreamAsync(stream);
   ```
 
 5. 通过执行以下方法确认提交。 这将向开发人员中心发出警报：已完成提交，更新现在应该应用到了帐户。 有关详细信息，请参阅[确认加载项提交](commit-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
+    ```
 
 6. 通过执行以下方法来检查提交状态。 有关详细信息，请参阅[获取加载项提交的状态](get-status-for-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
-  ```
+    ```
+    GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
+    ```
 
-  若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
+    若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
 
 7. 在提交成功完成之后，提交会发送至应用商店以供引入。 可以通过使用前面的方法，或者通过访问开发人员中心仪表板，继续监视提交进度。
 
@@ -150,7 +143,8 @@ Windows 应用商店提交 API 将提供可用于管理针对应用的加载项�
 * [Java 代码示例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 代码示例](python-code-examples-for-the-windows-store-submission-api.md)
 
->**注意**&nbsp;&nbsp;除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
+> [!NOTE]
+> 除了上面列出的代码示例，我们还提供在 Windows 应用商店提交 API 顶部实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Windows 应用商店提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
 
 <span/>
 ## <a name="data-resources"></a>数据资源
@@ -283,12 +277,10 @@ Windows 应用商店提交 API 将提供可用于管理针对应用的加载项�
 
 此资源包含加载项的销售信息。
 
->**重要信息**&nbsp;&nbsp; **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据：
-
-   > * 调用 [GET 方法以获取加载项提交](get-an-add-on-submission.md)后，*销售*值将为空。 你可以继续使用开发人员中心仪表板获取加载项提交的销售数据。
-   > * 调用 [PUT 方法以更新加载项提交](update-an-add-on-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用开发人员中心仪表板更改加载项提交的销售数据。
-
-> 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式访问加载项提交的销售信息的新方法。
+> [!IMPORTANT]
+> **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据。 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式访问加载项提交的销售信息的新方法。
+>    * 调用 [GET 方法以获取加载项提交](get-an-add-on-submission.md)后，*销售*值将为空。 你可以继续使用开发人员中心仪表板获取加载项提交的销售数据。
+>    * 调用 [PUT 方法以更新加载项提交](update-an-add-on-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用开发人员中心仪表板更改加载项提交的销售数据。
 
 此资源具有以下值。
 

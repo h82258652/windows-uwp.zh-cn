@@ -5,14 +5,16 @@ title: "版式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0609622053d0ae25b5039766137db1b195c0d69d
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="typography"></a>版式
 
@@ -50,7 +52,7 @@ translationtype: HT
          puts the baseline of the body text exactly 24px
          below the baseline of the header. 24px is the
          recommended line height for a 20px font size,
-         which is what's set in SubtitleTextBlockStyle.
+         which is what’s set in SubtitleTextBlockStyle.
          The bottom margin will be different for
          different font size pairings. -->
     <TextBlock
@@ -172,9 +174,11 @@ Segoe 提供了各种各样的字符，其设计目的是在小字体和大字�
 >大多数级别的渐变都可用作遵循 `*TextBlockStyle` 命名约定（`HeaderTextBlockStyle` 除外）的 XAML [静态资源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)。
 
 
+<!--
 <div class="microsoft-internal-note">
-当前不包括 SubtitleAlt、BaseAlt 和 CaptionAlt。 你可以按照上述链接中的代码段创建自己应用的样式。 另请注意，XAML 当前不完全匹配行高度。
+SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## <a name="primary-and-secondary-text"></a>主要文字和次要文字
@@ -205,7 +209,7 @@ Green shows where all caps should be used. Red shows where it should not.
 * 对大部分文字使用“Body”
 * 对空间受限的标题使用“Base”
 * 合并 SubtitleAlt 以便通过强调顶级内容来创建对比和层次结构
-* 请勿对长字符串或任何主要操作使用“大写”
+* 请勿对长字符串或任何主要操作使用“Caption”
 * 如果文字需要换行，请勿使用“Header”或“Subheader”
 * 请勿在同一页面上合并 Subtitle 和 SubtitleAlt
 

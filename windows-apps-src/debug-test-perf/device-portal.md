@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概述"
 description: "了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e729236ae7d506eb59af1a38506931865eff4f14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f22600f2bbd5dc43996550c853c6defd04565ad4
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
@@ -41,7 +43,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 \ * 并非始终是这种情况，桌面上的 Device Portal 声明短暂范围 (&gt; 50000) 内的端口以防止与设备上的现有端口声明冲突。  若要了解详细信息，请参阅适用于桌面的[端口设置](device-portal-desktop.md#setting-port-numbers)部分。  
 
 有关特定于设备的设置说明，请参阅：
-- [适用于 HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [适用于 HoloLens 的 Device Portal](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
 - [适用于 IoT 的 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [适用于移动设备的 Device Portal](device-portal-mobile.md)
 - [适用于 Xbox 的 Device Portal](device-portal-xbox.md)
@@ -71,28 +73,28 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 ![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-apps.png)
 
 - **已安装的应用**：删除和启动应用。
-- **正在运行的应用**：列出当前正在运行的应用。
+- **正在运行的应用**：列出当前正在运行的应用，并提供用于关闭它们的选项。
 - **安装应用**：从计算机或网络上的文件夹中选择应用包进行安装。
 - **依赖项**：为要安装的应用添加依赖项。
 - **部署**：将选定的应用和依赖项部署到设备。
 
 **安装应用**
 
-1.    [创建应用包](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)后，可以将其远程安装到设备上。 在 Visual Studio 中生成它后，将生成一个输出文件夹。
+1.  [创建应用包](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)后，可以将其远程安装到设备上。 在 Visual Studio 中生成它后，将生成一个输出文件夹。
 
     ![应用安装](images/device-portal/iot-installapp0.png)
-2.    单击“浏览”并找到你的应用包 \(.appx\)。
-3.    单击“浏览”并找到证书文件 \(.cer\)。 （并非在所有设备上都需要。）
-4.    添加依赖项。 如果你有多个依赖项，请分别添加每一个。     
-5.    在**部署**下，单击**转到**。 
-6.    若要安装另一个应用，请单击**重置**按钮来清除字段。
+2.  单击“浏览”并找到你的应用包 \(.appx\)。
+3.  单击“浏览”并找到证书文件 \(.cer\)。 （并非在所有设备上都需要。）
+4.  添加依赖项。 如果你有多个依赖项，请分别添加每一个。     
+5.  在**部署**下，单击**转到**。 
+6.  若要安装另一个应用，请单击**重置**按钮来清除字段。
 
 
 **卸载应用**
 
-1.    确保应用未在运行。 
-2.    如果正在运行，请转到“正在运行的应用”并关闭它。 如果你尝试在应用正在运行时卸载，它将在尝试重新安装应用时导致问题。 
-3.    准备就绪后，单击**卸载**。
+1.  确保应用未在运行。 
+2.  如果正在运行，请转到“正在运行的应用”并关闭它。 如果你尝试在应用正在运行时卸载，它将在尝试重新安装应用时导致问题。 
+3.  准备就绪后，单击**卸载**。
 
 ### <a name="processes"></a>进程
 

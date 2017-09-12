@@ -5,117 +5,58 @@ title: "启用设备进行开发"
 description: "配置 Windows 10 设备进行开发和调试。"
 keywords: "入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dc1bf476c93ef9843c20244f24a199c7888eb4a5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8a7b01205acf12d4a0ab6d3d7024311b3944f103
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
-在可以编写应用之前，需要在你的开发电脑上以及要用于测试代码的任何设备上启用开发人员模式。 
+## <a name="activate-developer-mode-sideload-apps-and-access-other-developer-features"></a>启用开发人员模式、旁加载应用和使用其他开发人员功能
 
 ![启用设备进行开发](images/developer-poster.png)
 
-## <a name="use-developer-features"></a>使用开发人员功能
+如果你正在使用计算机进行一般的日常活动，如玩游戏、进行 Web 浏览、收发电子邮件或使用 Office 应用，则*不*需要激活开发人员模式，并且实际上不应该激活该模式。 此页面上的其余信息对你来说并不重要，你可以放心地重新执行你正在执行的任何操作。 谢谢拜访！
 
-### <a name="develop-your-app-with-microsoft-visual-studio"></a>使用 Microsoft Visual Studio 开发应用
-
-必须先在你的电脑上启用开发人员模式，然后才可以在 Visual Studio 中打开 UWP 应用项目。 如果打开 UWP 项目，但未启用开发人员模式，**面向开发人员**设置页会自动打开。 按照下一部分中的说明操作，启用开发人员模式。
-
-当在 Windows 10 版本 1511 或更早版本中的 Visual Studio 中打开 UWP 应用项目时，会在 Visual Studio 中看到此对话框。 
+但是，如果你是首次在计算机上使用 Visual Studio 编写软件，则*将*需要在开发电脑和用于测试代码的所有设备上启用开发人员模式。 如果未启用开发人员模式，则打开 UWP 项目将会打开**面向开发人员**设置页，或导致在 Visual Studio 中出现以下对话框：
 
 ![启用在 Visual Studio 中显示的开发人员模式对话框](images/latestenabledialog.png)
 
-当看到此对话框时，请单击**开发人员设置**打开**面向开发人员**设置页，然后启用开发人员模式。
-
-> 可以随时转到**面向开发人员**页面启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“开发人员设置”。
-
-### <a name="enable-your-windows-10-devices"></a>启用 Windows 10 设备
-
-你可以启用设备以进行开发，或仅进行旁加载。
-
--   *旁加载*是指安装未经 Windows 应用商店认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
--   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。 
-
-    启用开发人员模式时，会安装选项包，其中包括：
-    - 安装 Windows Device Portal。 仅当**启用 Device Portal**选项打开时，才会启用 Device Portal，并为它配置防火墙规则。
-    - 安装、启用允许远程安装应用的 SSH 服务，并为其配置防火墙规则。
-    - （仅限桌面设备）允许启用适用于 Linux 的 Windows 子系统。 有关详细信息，请参阅[关于装有 Ubuntu 的 Windows 上的 Bash](https://msdn.microsoft.com/commandline/wsl/about)。
-
-有关选项的更多详细信息，请参阅[应选择哪些设置：旁加载应用还是开发人员模式？](https://msdn.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#which-settings-should-i-choose-sideload-apps-or-developer-mode)
-
-**使用开发人员功能**
-
-1.  在要启用的设备上，转到**设置**。 依次选择**更新和安全**和**对于开发人员**。
-2.  选择所需的访问级别 - 若要开发 UWP 应用，请选择**开发人员模式**。 
-3.  阅读所选设置的免责声明，然后单击**是**以接受更改。
+当看到此对话框时，请单击**开发人员设置**打开**面向开发人员**设置页。
 
 > [!NOTE]
-> 如果你的设备为组织所有，你的组织可能会禁用某些选项，如以下所示。
+> 可以随时转到**面向开发人员**页面启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“面向开发人员”。
 
-下面是桌面设备系列的设置页。
+## <a name="accessing-settings-for-developers"></a>使用面向开发人员的设置
+
+若要启用开发人员模式或使用其他设置：
+
+1.  从**面向开发人员**设置对话框中，选择需要的访问级别。
+2.  阅读所选设置的免责声明，然后单击**是**以接受更改。
+
+> [!NOTE]
+> 如果你的设备为组织所有，你的组织可能会禁用某些选项。
+
+下面是桌面设备系列的设置页：
 
 ![转到“设置”、选择“更新和安全”，然后选择“面向开发人员”来查看你的选项](images/devmode-pc-options.png)
 
-下面是移动设备系列的设置页。
+下面是移动设备系列的设置页：
 
 ![在手机上的“设置”中，选择“更新和安全”](images/devmode-mob.png)
 
-## <a name="developer-mode-features"></a>开发人员模式功能
+## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
 
-对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了开发人员模式时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
+ 你可以启用设备以进行开发，或仅进行旁加载。
 
-此图显示了适用于版本 1511 Windows 10 移动设备系列的开发人员功能。
-
-![适用于移动设备的开发人员模式选项](images/devmode-mob-options.png) 
-
-### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Device Portal
-
-若要了解有关设备发现和 Device Portal 的详细信息，请参阅 [Windows Device Portal 概述](../debug-test-perf/device-portal.md)。
-
-有关特定于设备的设置说明，请参阅：
-- [适用于桌面设备的 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [适用于 HoloLens 的 Device Portal](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
-- [适用于 IoT 的 Device Portal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
-- [适用于移动设备的 Device Portal](../debug-test-perf/device-portal-mobile.md)
-- [适用于 Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
-
-如果启用开发人员模式或 Device Portal 时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛查找这些问题的解决方法。 
-
-###<a name="ssh"></a>SSH
-
-在你的设备上启用开发人员模式时，会启用 SSH 服务。  当你的设备成为 UWP 应用程序的部署目标时，会使用该服务。   服务名称为“SSH Server Broker”和“SSH Server Proxy”。
-
-> [!NOTE]
-> 这不是 Microsoft 的 OpenSSH 实现，可以在 [GitHub](https://github.com/PowerShell/Win32-OpenSSH) 上找到该实现。
-
-为了充分利用 SSH 服务，可以启用设备发现来支持固定配对。 如果想要运行另一个 SSH 服务，可以在其他端口上设置该服务或关闭开发人员模式 SSH 服务。 若要关闭 SSH 服务，只需禁用开发人员模式即可。  
-
-### <a name="device-discovery"></a>设备发现
-
-启用设备发现时，将允许你的设备通过 mDNS 对于网络上的其他设备可见。  此功能还允许你获取与此设备配对的 SSH 固定。  
-
-![固定配对](images/devmode-pc-pinpair.PNG)
-
-仅当想要使设备成为部署目标时，才应该启用设备发现。 例如，如果使用 Device Portal 将应用部署到手机进行测试，只需要在手机上启用设备发现，并不需要在开发电脑上启用。
-
-### <a name="error-reporting-mobile-only"></a>错误报告（仅限移动设备）
-
-设置此值以指定在手机上保存的故障转储量。
-
-通过收集手机上的故障转储，你可以在故障发生后直接快速访问重要的故障信息。 仅为开发人员签名的应用收集转储。 你可以在“Documents\\Debug folder”文件夹的手机存储中查找转储。 有关转储文件的详细信息，请参阅[使用转储文件](https://msdn.microsoft.com/library/d5zhxt22.aspx)。
-
-### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
-
- 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。 
-
-## <a name="which-settings-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
+-   *Windows 应用商店应用*为默认设置。 如果你未正在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
+-   *旁加载*是指安装未经 Windows 应用商店认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
+-   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。 
 
 默认情况下，你只能从 Windows 应用商店安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
 
@@ -144,7 +85,7 @@ ms.lasthandoff: 02/07/2017
 
     启用开发人员模式以在 Visual Studio 开发和调试应用。 正如前面所述，如果未启用开发人员模式，你将在 Visual Studio 中收到提示。
 
-    允许启用适用于 Linux 的 Windows 子系统。 有关详细信息，请参阅[关于装有 Ubuntu 的 Windows 上的 Bash](https://msdn.microsoft.com/commandline/wsl/about)。
+    在运行秋季创意者更新的之前版本的电脑上，可以针对 Linux 启用 Windows 子系统。 有关详细信息，请参阅[关于装有 Ubuntu 的 Windows 上的 Bash](https://msdn.microsoft.com/commandline/wsl/about)。  从秋季创意者更新开始，WSL 不再需要开发人员模式。  
 
 -   对于移动设备系列：
 
@@ -152,11 +93,99 @@ ms.lasthandoff: 02/07/2017
 
     你可以点击文件以安装通过电子邮件收到的或 SD 卡上的任何 .appx。 请不要从未经验证的源安装应用。
 
+## <a name="additional-developer-mode-features"></a>其他开发人员模式功能
+
+对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了开发人员模式时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
+
+启用开发人员模式时，会安装选项包，其中包括：
+- Windows Device Portal。 仅当**启用 Device Portal** 选项打开时，才会启用 Device Portal，并为它配置防火墙规则。
+- 安装、启用允许远程安装应用的 SSH 服务，并为其配置防火墙规则。
+
+
+此图显示了适用于 Windows 10 移动设备系列的开发人员功能：
+
+![适用于移动设备的开发人员模式选项](images/devmode-mob-options.png) 
+
+### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Device Portal
+
+若要了解有关 Device Portal 的详细信息，请参阅 [Windows Device Portal 概述](../debug-test-perf/device-portal.md)。
+
+有关特定于设备的设置说明，请参阅：
+- [适用于桌面设备的 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [适用于 HoloLens 的 Device Portal](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [适用于 IoT 的 Device Portal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
+- [适用于移动设备的 Device Portal](../debug-test-perf/device-portal-mobile.md)
+- [适用于 Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
+
+如果在启用开发人员模式或 Device Portal 时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。 
+
+###<a name="ssh"></a>SSH
+
+在你的设备上启用开发人员模式时，会启用 SSH 服务。  当你的设备成为 UWP 应用程序的部署目标时，会使用该服务。   服务名称为“SSH Server Broker”和“SSH Server Proxy”。
+
+> [!NOTE]
+> 这不是 Microsoft 的 OpenSSH 实现，可以在 [GitHub](https://github.com/PowerShell/Win32-OpenSSH) 上找到该实现。
+
+为了充分利用 SSH 服务，可以启用设备发现来支持固定配对。 如果想要运行另一个 SSH 服务，可以在其他端口上设置该服务或关闭开发人员模式 SSH 服务。 若要关闭 SSH 服务，只需禁用开发人员模式即可。  
+
+### <a name="device-discovery"></a>设备发现
+
+启用设备发现时，将允许你的设备通过 mDNS 对于网络上的其他设备可见。  此功能还允许你获取与此设备配对的 SSH 固定。  
+
+![固定配对](images/devmode-pc-pinpair.PNG)
+
+仅当想要使设备成为部署目标时，才应该启用设备发现。 例如，如果使用 Device Portal 将应用部署到手机进行测试，只需要在手机上启用设备发现，并不需要在开发电脑上启用。
+
+### <a name="error-reporting-mobile-only"></a>错误报告（仅限移动设备）
+
+设置此值以指定在手机上保存的故障转储量。
+
+通过收集手机上的故障转储，你可以在故障发生后直接快速访问重要的故障信息。 仅为开发人员签名的应用收集转储。 你可以在“Documents\\Debug folder”文件夹的手机存储中查找转储。 有关转储文件的详细信息，请参阅[使用转储文件](https://msdn.microsoft.com/library/d5zhxt22.aspx)。
+
+### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
+
+ 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。 
+
+
+
 **提示**  
 有多个工具可用来将应用从 Windows 10 电脑部署到 Windows 10 移动设备。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。 所列的任意一种方法仅会安装应用包 (.appx)，不安装证书。
 
 -   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)的详细信息。
--   从 Windows 10 版本 1511 开始，你可以使用 [Device Portal](#device_portal) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用**[应用](../debug-test-perf/device-portal.md#apps)**页上传应用包 (.appx) 并在设备上安装它。
+-   从 Windows 10 版本 1511 开始，你可以使用 [Device Portal](../debug-test-perf/device-portal-desktop.md) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用**[应用](../debug-test-perf/device-portal.md#apps)**页上传应用包 (.appx) 并在设备上安装它。
+
+## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
+有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到此电脑的必需条件 - 使用来自浏览器的 Device Portal 或设备发现启用 SSH - 但不用于本地部署。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。 
+
+请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。 
+
+### <a name="failed-to-locate-the-package"></a>无法找到该程序包
+
+“无法在 Windows 更新中找到开发人员模式程序包。 错误代码 0x80004005 了解详细信息”   
+
+发生此错误可能是由于网络连接问题、企业设置，或者程序包可能丢失。 
+
+若要解决此问题：
+
+1. 确保你的计算机连接到 Internet。 
+2. 如果你位于加入域的计算机上，请与网络管理员联系。 默认情况下，WSUS 中阻止了开发人员模式程序包，如所有按需功能。 2.1. 为了在当前和之前的版本中解除阻止开发人员模式程序包，应该允许在 WSUS 中使用以下 KB：4016509、3180030、3197985  
+3. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
+4. 在“设置”&gt;“系统”&gt;“应用和功能”&gt;“管理可选功能”&gt;“添加功能”中验证 Windows 开发人员模式是否存在。 如果缺少，Windows 无法为计算机找到正确的程序包。 
+
+在执行上述任意步骤后，禁用并随后重新启用“开发人员模式”以验证是否解决该问题。 
+
+
+### <a name="failed-to-install-the-package"></a>无法安装程序包
+
+“开发人员模式程序包无法安装。 错误代码 0x80004005 了解详细信息”
+
+发生此错误可能是由于 Windows 的内部版本和开发人员模式程序包之间不兼容。 
+
+若要解决此问题：
+
+1. 在“设置”&gt;“更新和安全”&gt;“Windows 更新”中检查 Windows 更新。
+2. 重启计算机以确保所有更新都已应用。
+
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>使用组策略或注册表项启用设备
 
@@ -220,3 +249,11 @@ ms.lasthandoff: 02/07/2017
 
 错误：DEP0700：应用注册失败。
 
+## <a name="see-also"></a>另请参阅
+
+* [你的第一个应用](your-first-app.md)
+* [发布你的 Windows 应用商店应用](https://developer.microsoft.com/store/publish-apps)。
+* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
+* [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
+* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [注册 Windows 帐户](sign-up.md)

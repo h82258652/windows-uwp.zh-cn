@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "使用测斜仪"
 description: "了解如何使用测斜仪确定俯仰、滚转和偏航。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 6544d4a598edb12d8d114bb27fac84831ce31d14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b0fcc9e45d1a9e1921e77ce8b59817a5ca1c0dd2
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-inclinometer"></a>使用测斜仪
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**测斜仪**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+
+**示例**
+
+-   有关更完整的实现，请参阅[测斜仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
 
 了解如何使用测斜仪确定俯仰、滚转和偏航。
 
@@ -164,7 +170,7 @@ _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-这些新值写入项目 XAML 中的 TextBlock 中。
+这些新值将写入位于项目 XAML 中的 TextBlock。
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -175,6 +181,3 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## <a name="related-topics"></a>相关主题
-
-* [测斜仪示例](http://go.microsoft.com/fwlink/p/?linkid=241380)

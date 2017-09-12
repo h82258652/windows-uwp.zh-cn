@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "覆盖地图上的平铺图像"
 description: "使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。"
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 图像, 覆盖"
-ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d6def6405c8a5d731259b4522dff10cb996d178c
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
@@ -97,13 +99,12 @@ translationtype: HT
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Web 服务必须支持包含可替换参数 {x}、{y} 和 {zoomlevel} 的 Uri。 大多数 Web 服务（例如，Nokia、必应和 Google）支持这种格式的 URI。 如果 Web 服务需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#provide-a-custom-uri) 部分。
+    Web 服务必须支持包含可替换参数 {x}、{y} 和 {zoomlevel} 的 Uri。 大多数 Web 服务（例如，Nokia、必应和 Google）支持这种格式的 URI。 如果 Web 服务需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
 
-3.  然后，按照之前在[平铺图像概述](#tiled-image-overview)中介绍的剩余步骤操作。
+3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
 
 以下示例将覆盖北美地区地图上来自虚拟 Web 服务的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的构造函数中指定。 在此示例中，磁贴仅显示在由可选的 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 属性指定的地理边界内。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
         private void AddHttpMapTileSource()
         {
@@ -129,6 +130,7 @@ translationtype: HT
             MapControl1.TileSources.Add(tileSource);
         }
 ```
+
 ```cpp
 void MainPage::AddHttpMapTileSource()
 {
@@ -160,9 +162,9 @@ void MainPage::AddHttpMapTileSource()
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果文件名的格式需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#provide-a-custom-uri) 部分。
+    如果文件名的格式需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
 
-3.  然后，按照之前在[平铺图像概述](#tiled-image-overview)中介绍的剩余步骤操作。
+3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
 
 可以使用以下协议和位置从本地存储加载磁贴：
 
@@ -255,7 +257,7 @@ using System.Threading.Tasks;
 1.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性进行合并，以创建或检索自定义磁贴。
 2.  在 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128)（它包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 属性中）的 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
 
-以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 和 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性。 尽管这不是真实的示例，但该示例演示了如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
+以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 和 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性。 尽管这不是真实的示例，但该示例演示如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;

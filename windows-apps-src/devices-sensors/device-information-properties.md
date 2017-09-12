@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "设备信息属性"
 description: "每台设备都具有相关联的 DeviceInformation 属性，在你需要特定的信息或生成设备选择器时可以使用这些属性。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 68e427a4d94b7c599e1fec375f0f66b5ff2704e0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 37b88b501c3bdb0f38b04f2f7b6d936cb0d201b4
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="device-information-properties"></a>设备信息属性
 
@@ -77,7 +79,7 @@ translationtype: HT
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Category**       | String\[\] | 设备所属类别的描述列表。 将以单数类别的形式提供此列表。 例如，“Display”、“Phone”或“Audio device”。  |
 | **System.Devices.CategoryIds**    | String\[\] | 包含此设备所属类别的列表。 例如，**Audio.Headphone**、**Display.Monitor** 或 **Input.Gaming**。                                  |
-| **System.Devices.CateogryPlural** | String\[\] | 设备所属类别的描述列表。 将以复数类别的形式提供此列表。 例如，“Displays”、“Phones”或“Audio devices”。 |
+| **System.Devices.CategoryPlural** | String\[\] | 设备所属类别的描述列表。 将以复数类别的形式提供此列表。 例如，“Displays”、“Phones”或“Audio devices”。 |
 | **System.Devices.CompatibleIds**  | String\[\] | 所有子 **DeviceInformationKind.Device** 对象的兼容 ID 集合。                                                                       |
 | **System.Devices.Connected**      | 布尔值    | 指示设备当前是否已连接到系统。                                                                                          |
 | **System.Devices.GlyphIcon**      | 字符串     | 字形的图标路径。                                                                                                                                           |

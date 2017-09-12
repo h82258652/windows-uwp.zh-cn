@@ -1,17 +1,19 @@
 ---
-author: rmpablos
+author: laurenhughes
 title: "设置 UWP 应用的自动生成"
-description: "如何将自动生成配置为生成旁加载和/或存储软件包。"
-ms.author: wdg-dev-content
-ms.date: 02/15/2017
+description: "如何配置自动生成以生成旁加载和/或应用商店程序包。"
+ms.author: lahugh
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c8c1765e2983484ddc57e47a995867aa3b401ad4
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -39,7 +41,7 @@ translationtype: HT
 
 若要了解详细信息，请参阅[在 Windows 上部署代理。](https://www.visualstudio.com/docs/build/admin/agents/v2-windows) 
 
-若要运行 UWP 单元测试，你必须执行以下操作：•    部署并启动应用。 •    在交互模式下运行 VSTS 代理。 •    将代理配置为在重启后自动登录。
+要运行 UWP 单元测试，你必须执行以下操作：•    部署并启动应用。 •   在交互模式下运行 VSTS 代理。 •   将代理配置为在重启后自动登录。
 
 现在我们将讨论如何设置自动生成。
 
@@ -104,14 +106,14 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 若要查看所有预定义的变量，请参阅[使用生成变量](https://www.visualstudio.com/docs/build/define/variables)。
 
 #### <a name="configure-the-publish-artifact-build-task"></a>配置发布项目生成任务 
-此任务将生成的项目存储在 VSTS 中。 可以在生成结果页面的“项目”选项卡中看到它们。 VSTS 使用我们之前定义的 `$Build.ArtifactStagingDirectory)\AppxPackages` 文件夹。
+此任务将生成的项目存储在 VSTS 中。 可以在生成结果页面的“项目”选项卡中看到它们。 VSTS 使用我们之前定义的 `$(Build.ArtifactStagingDirectory)\AppxPackages` 文件夹。
 
 ![项目](images/building-screen6.png)
 
-由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，因此项目文件夹包含你上传到应用商店的软件包 (appxupload) 以及启用旁加载的软件包 (appxbundle)。
+由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，项目文件夹将包含建议提交到应用商店的程序包 (.appxupload)。 请注意，还可以将常规应用包 (.appx) 或应用程序包 (.appxbundle) 提交到应用商店。 为了这篇文章，我们将使用 .appxupload 文件。
 
 
->注意：默认情况下，VSTS 代理保留最新的 appx 生成的软件包。 如果你希望仅存储当前生成的项目，请将该生成配置为清除二进制文件目录。 若要执行此操作，请添加一个名为 `Build.Clean` 的变量，然后将其设置为值 `all`。 若要了解详细信息，请参阅[指定存储库。](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
+>注意：默认情况下，VSTS 代理保留最新的 appx 生成的程序包。 如果你希望仅存储当前生成的项目，请将该生成配置为清除二进制文件目录。 若要执行此操作，请添加一个名为 `Build.Clean` 的变量，然后将其设置为值 `all`。 若要了解详细信息，请参阅[指定存储库。](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
 
 #### <a name="the-types-of-automated-builds"></a>自动生成的类型
 接下来，你将使用生成定义创建自动生成。 下表介绍可创建的每种类型的自动生成。 
@@ -120,9 +122,9 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 |-----------------|------------|-------------------------|---------------|
 |连续集成|生成日志、测试结果|每个提交|此类型的生成很快，并且一天运行多次。|
 |用于旁加载的连续部署生成|部署包|每天 |此类型的生成包含单元测试，但需要较长时间。 它允许手动测试，并且你可以将其与其他工具（如 HockeyApp）集成。|
-|将软件包提交到应用商店的连续部署生成|发布软件包|按需|此类型的生成创建可发布到应用商店的软件包。|
+|将程序包提交到应用商店的连续部署生成|发布程序包|按需|此类型的生成创建可发布到应用商店的程序包。|
 
-让我们来查看如何配置其中每一个。
+我们来看看如何配置每种生成。
 
 
 ## <a name="set-up-a-continuous-integration-ci-build"></a>设置连续集成 (CI) 生成 
@@ -172,10 +174,10 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.Un
 如果要将 CI 生成仅用于监视签入的质量，可以缩短生成时间。
 
 #### <a name="to-improve-the-speed-of-a-ci-build"></a>提高 CI 生成的速度
-1.    仅针对单个平台生成。
-2.    编辑 BuildPlatform 变量以仅使用 x86。 ![配置 CI](images/building-screen10.png) 
-3.    在生成步骤中，将 /p:AppxBundle=Never 添加到 MSBuild Arguments 属性，然后设置 Platform 属性。 ![配置平台](images/building-screen11.png)
-4.    在单元测试项目中，禁用 .NET 本机。 
+1.  仅针对单个平台生成。
+2.  编辑 BuildPlatform 变量以仅使用 x86。 ![配置 CI](images/building-screen10.png) 
+3.  在生成步骤中，将 /p:AppxBundle=Never 添加到 MSBuild Arguments 属性，然后设置 Platform 属性。 ![配置平台](images/building-screen11.png)
+4.  在单元测试项目中，禁用 .NET 本机。 
 
 若要执行此操作，请打开项目文件，然后在项目属性中将 `UseDotNetNativeToolchain` 属性设置为 `false`。
 
@@ -259,9 +261,9 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 我们将在本指南[后面部分](#sideloading-best-practices)中帮助你安装并运行旁加载软件包。 
 
-## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将软件包提交到应用商店的连续部署生成 
+## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将程序包提交到应用商店的连续部署生成 
 
-若要生成应用商店提交软件包，请在 Visual Studio 中使用应用商店关联向导将应用与应用商店关联起来。
+要生成应用商店提交程序包，请在 Visual Studio 中使用应用商店关联向导将应用与应用商店关联起来。
 
 ![关联到应用商店](images/building-screen16.png) 
 
@@ -275,16 +277,16 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-这将生成可提交到应用商店的 appxupload 文件。
+这将生成可提交到应用商店的 .appxupload 文件。
 
 
 #### <a name="configure-automatic-store-submission"></a>配置自动应用商店提交
 
-为 Windows 应用商店使用 Visual Studio Team Services 扩展以便与应用商店 API 集成，并将 appxupload 包发送到应用商店。
+对 Windows 应用商店使用 Visual Studio Team Services 扩展以便与应用商店 API 集成，并将应用包发送到应用商店。
 
 你需要将开发人员帐户与 Azure Active Directory (AD) 连接起来，然后在 AD 中创建一个应用以对请求进行身份验证。 可按照扩展页中的指南完成该操作。 
 
-配置该扩展后，可添加生成任务，并使用应用 ID 和 appxupload 文件的位置配置它。
+配置该扩展后，可添加生成任务，并使用应用 ID 和 .appxupload 文件的位置配置它。
 
 ![配置开发人员中心](images/building-screen17.png) 
 
@@ -302,7 +304,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 <span id="sideloading-best-practices"/>
 ### <a name="best-practices-for-sideloading-apps"></a>旁加载应用的最佳做法
 
-如果要分配应用而不将其发布到应用商店，可以将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。 
+如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。 
 
 使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，然后将安装或更新 appx 文件。
 
@@ -318,7 +320,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>为证书签名的最佳做法 
-Visual Studio 为每个项目都生成证书。 这使维护有效证书的特选列表变得困难。 如果你计划创建多个应用，可创建单个证书来对所有应用签名。 然后，信任你的证书的每台设备都将能够旁加载你的任意应用，而无需安装其他证书。 若要了解详细信息，请参阅[如何创建应用包签名证书。](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+Visual Studio 为每个项目都生成证书。 这使维护有效证书的特选列表变得困难。 如果你计划创建多个应用，可创建单个证书来对所有应用签名。 然后，信任你的证书的每台设备都将能够旁加载你的任意应用，而无需安装其他证书。 要了解详细信息，请参阅[为程序包签名创建证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
 
 
 #### <a name="create-a-signing-certificate"></a>创建签名证书
@@ -361,4 +363,4 @@ Visual Studio 和 MSBuild 为管理用于为应用签名的证书提供不同的
 * [为 Windows 生成 .NET 应用](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [在 Windows10 中旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [如何创建应用包签名证书](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [为程序包签名创建证书](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

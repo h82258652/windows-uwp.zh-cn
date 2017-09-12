@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bc0cfc468613429d7989c9c0d93bd98246c0195b
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -155,6 +157,47 @@ translationtype: HT
 > 为了在 **SoftwareBitmap** 图像上操作像素，必须访问本机内存缓冲区。 为此，必须使用包括在以下代码列表中的 IMemoryBufferByteAccess COM 接口，并且必须更新项目属性，以支持编译不安全代码。 有关详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
+
+## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>使用 MultiSourceMediaFrameReader 从多个源获取与时间关联的帧
+从 Windows 10 版本 1607 开始，你可以使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 从多个源接收与时间关联的帧。 此 API 便于更加轻松地执行在接近时间获取的多个源的帧的处理，例如使用 [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper) 类。 使用此新方法的一个限制是，只有以最慢的捕获源速率，才能引发帧到达事件。 来自更快的源的额外帧将被丢弃。 此外，由于系统预计来自不同源的帧以不同的速率到达，因此它不会自动识别一个源是否已完全停止生成帧。 此部分的示例代码显示如何使用事件自行创建在关联的帧在应用定义的时间限制内未到达时调用的超时逻辑。
+
+使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 的步骤与本文前面所述的使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 的步骤类似。 此示例中将使用色源和深度源。 声明一些字符串变量以存储将被用来从每个源选择帧的媒体帧源 ID。 下一步，声明将用来实施示例中的超时逻辑的 [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7)、[**CancellationTokenSource**](https://msdn.microsoft.com/library/system.threading.cancellationtokensource.aspx) 和 [**EventHandler**](https://msdn.microsoft.com/library/system.eventhandler.aspx)。 
+
+[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+
+使用本文前面所述的方法，查询包含此示例方案所需的颜色和深度源的 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup)。 选择所需的帧源组后，获取每个帧源的 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo)。
+
+[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+
+创建并初始化 **MediaCapture** 对象，在初始化设置中传递所选的帧源组。
+
+[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+
+初始化 **MediaCapture** 对象后，检索颜色和深度相机的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 对象。 存储每个源的 ID，以便可以选择相应源的到达帧。
+
+[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+
+通过调用 [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_CreateMultiSourceFrameReaderAsync_Windows_Foundation_Collections_IIterable_Windows_Media_Capture_Frames_MediaFrameSource__) 和传递阅读器将使用的一组帧源创建并初始化 **MultiSourceMediaFrameReader**。 为 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_FrameArrived) 事件注册事件处理程序。 此示例创建本文前面所述的 **FrameRenderer** 帮助程序类的实例，以将帧呈现给**图像**控件。 通过调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_StartAsync) 启动帧阅读器。
+
+为在此示例前面所声明的 **CorellationFailed** 事件注册事件处理程序。 如果正在使用的其中一个媒体帧源停止生成帧，我们将发出此事件的信号。 最后调用 [**Task.Run**](https://msdn.microsoft.com/en-us/library/hh195051.aspx) 以在单独的线程上调用超时帮助程序方法 **NotifyAboutCorrelationFailure**。 本文稍后将展示此方法的实现方式。
+
+[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+
+每当由 **MultiSourceMediaFrameReader** 管理的所有媒体帧源都提供可用的新帧时，引发 **FrameArrived** 事件。 这意味着事件将按照最慢的媒体源的节奏引发。 如果一个源在较慢的源生成一个帧的时间内生成多个帧，则来自快源的额外帧将被丢弃。 
+
+通过调用 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_TryAcquireLatestFrame) 获取与事件关联的 [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference)。 通过调用 [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference#Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId_System_String_) 获取与每个媒体帧源相关联的 **MediaFrameReference**，同时在初始化帧阅读器时在存储的 ID 字符串中传递。
+
+调用 **ManualResetEventSlim** 对象的[**设置**](https://msdn.microsoft.com/library/system.threading.manualreseteventslim.set.aspx) 方法以发出帧已到达的信号。 我们将在单独的线程中运行的 **NotifyCorrelationFailure** 方法中检查此事件。 
+
+最后，对与时间关联的媒体帧执行任何处理。 此示例仅显示来自深度源的帧。
+
+[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+
+在启动帧阅读器后，**NotifyCorrelationFailure** 帮助程序方法在单独的线程上运行。 在此方法中，检查以查看是否已发出帧已收到事件的信号。 请记住，在 **FrameArrived** 处理程序中，每当一组关联的帧到达时，我们都将设置此事件。 如果在某些应用定义的时间期限（5 秒是合理的值）内未发出事件信号，且未使用 **CancellationToken** 取消任务，则有可能其中一个媒体帧源已停止阅读帧。 在这种情况下，你通常需要关闭帧阅读器，以便引发应用定义的 **CorrelationFailed** 事件。 在此事件的处理程序中，你可以按照本文前面所述停止帧阅读器并清理与它关联的资源。
+
+[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+
+[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
 ## <a name="related-topics"></a>相关主题
 

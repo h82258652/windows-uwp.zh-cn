@@ -3,21 +3,23 @@ author: Mtoepke
 title: "Xbox One 上的 UWP"
 description: "如何在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用。"
 ms.author: mtoepke
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
-ms.openlocfilehash: 82c8fd0945ed49f8accf5e101acfbea151caa3a1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c34788b8de9ed0b90aa963be453d28258fc51671
+ms.sourcegitcommit: f8e5a6bebbbb266bfe2c6b6a7c41b3d3cc7bf831
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/12/2017
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
 在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用入门。
 
-Xbox One 上的 UWP 支持开发应用和游戏。 你不必参与开发人员计划，便可在 Xbox 上试用、创建和测试游戏。 当你准备在 Xbox One 上发布和出售游戏或利用 Windows 10 上的 Xbox Live 时，你需要加入 [Xbox Live Creators 计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)或者需要是 [ID@Xbox](http://www.xbox.com/Developers/id) 开发人员。 有关详细信息，请参阅[开发人员计划概述](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
+Xbox One 上的 UWP 支持开发应用和游戏。 你不必参与开发人员计划，便可在 Xbox 上试用、创建和测试游戏。 你只需要在 Windows 开发人员中心上拥有[开发人员帐户](https://developer.microsoft.com/en-us/store/register)。 当你准备在 Xbox One 上发布和出售游戏或利用 Windows 10 上的 Xbox Live 时，你需要加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator) 或者需要是 [ID@Xbox](http://www.xbox.com/Developers/id) 开发人员。 如果你计划成为 [ID@Xbox](http://www.xbox.com/Developers/id) 开发人员，我们建议在注册开发人员帐户前先申请加入该计划。 有关详细信息，请参阅[开发人员计划概述](../xbox-live/developer-program-overview.md)。
 
 本部分包括设置步骤、身份验证过程指南、有关安装所需的 Visual Studio 版本和 Windows 10 工具的信息，以及生成、运行和调试你的第一个简单应用程序的步骤。 
 

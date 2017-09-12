@@ -4,20 +4,26 @@ title: "概念审批"
 description: "了解如何提交产品以供概念审批，产品需要通过该审批才能在 Xbox 上运行或使用 Xbox Live。"
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
-ms.date: 02/08/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 概念审批"
-ms.openlocfilehash: f05789d87f3260aa02d1e0dd33490b248efb42a7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f49e27ad5753a8f4074ca3b55bd7cde47a7e6600
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="concept-approval"></a>概念审批
 
-开始创建将在 Xbox 上运行的游戏时，需要向 Microsoft 提交与该游戏相关的建议以供*概念审批*，然后才能发布该游戏。 这一前期高级提交使 Microsoft 和你都受益，方法是在此过程的最开始标识整体游戏计划中的任何可能的难题或缺点。 尽量确保你的内容没有过于粗俗、无礼或令人反感，并在目标平台上感觉舒适自然。 提交建议后，Microsoft 将进行查看，然后通知你相关结果。
+概念审批是向 Microsoft 提交游戏建议的过程。 这一前期高级提交使 Microsoft 和你都受益，方法是在此过程的最开始标识整体游戏计划中的任何可能的难题或缺点。 尽量确保你的内容没有过于粗俗、无礼或令人反感，并在目标平台上感觉舒适自然。 提交建议后，Microsoft 将进行查看，然后通知你相关结果。
 
-如果你要开发通用 Windows 平台 (UWP) 游戏，只需进行概念审批，即可允许客户在 Xbox 设备上下载它或启用 Xbox Live 功能。 如果你仅想要将 UWP 游戏提供给 Windows 桌面设备或移动设备（或者如果你要向任何设备发布*非*游戏 UWP 应用）并且将不使用 Xbox Live，只需使用[开发者帐户](https://go.microsoft.com/fwlink/?LinkId=817223)，即可通过仪表板随意配置你的应用并将其提交到应用商店。
+## <a name="who-needs-concept-approval"></a>谁需要概念审批？
+
+仅当你通过 [ID@Xbox](http://www.xbox.com/Developers/id) 或作为托管合作伙伴将游戏发布到 Xbox 时，才需要完成此过程。 如果你加入 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，并制作以后可自行发布到 Xbox 的通用 Windows 平台 (UWP) 游戏，则无需完成此过程。 但是，通过该计划制作的游戏将在应用商店的单独部分中予以特别推荐。 如果你希望你的游戏与大型 AAA 游戏一起被特别推荐，或者你想使用 Xbox 开发套件 (XDK) 创建更加精彩的游戏，则将需要完成概念审批过程。
+
+如果你要开发适用于 Windows 桌面或移动设备的 UWP 游戏（或者你要发布的 UWP 应用*不*是一款面向任何设备的游戏），则你也不需要概念审批。 你只需要一个[开发者帐户](https://go.microsoft.com/fwlink/?LinkId=817223)，并且可以通过仪表板自由配置应用并将应用提交至应用商店。
 
 ## <a name="submit-your-concept-for-approval"></a>提交概念以供审批
 

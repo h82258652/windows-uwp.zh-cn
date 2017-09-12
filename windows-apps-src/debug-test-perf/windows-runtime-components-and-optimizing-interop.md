@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: "通用 Windows 平台组件和优化互操作"
 description: "创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a4296c7ba149abce2173e816aa99406a44f75618
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8562454b976362ebc65884203775b3891216d8b7
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 

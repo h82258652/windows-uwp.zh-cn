@@ -6,14 +6,16 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0ea40ff57bf6923b8fea05de6d07863e13e5ad9c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 1c5ea35d7f074dedebc434b1c7566e966ddb45db
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="raw-notification-overview"></a>原始通知概述
@@ -38,7 +40,7 @@ translationtype: HT
 所有原始通知都是推送通知。 因此，发送和接收推送通知所需的设置也适用于原始通知：
 
 -   必须具有有效的 WNS 通道才能发送原始通知。 有关获取推送通知通道的详细信息，请参阅[如何请求、创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在“功能”****选项卡下看到此选项，即“Internet (客户端)”****。 有关详细信息，请参阅[**功能**](https://msdn.microsoft.com/library/windows/apps/br211422)。
+-   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在**功能**选项卡下看到此选项，即 **Internet (客户端)**。 有关详细信息，请参阅[**功能**](https://msdn.microsoft.com/library/windows/apps/br211422)。
 
 通知的正文采用应用定义的格式。 客户端收到只需应用理解的以 null 终止的字符串 (**HSTRING**) 形式的数据。
 

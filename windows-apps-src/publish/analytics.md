@@ -1,62 +1,50 @@
 ---
-author: shawjohn
-Description: "你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。"
-title: "分析"
+author: JnHs
+Description: "在仪表板中或通过其他方法获取 Windows 应用的详细分析。"
+title: "分析应用性能"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 分析, 报告, 仪表板, 应用"
-ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 57e4a30258fa25411bb461cac56aa18d2f74981d
+ms.sourcegitcommit: a93b1da07b386a682435de58a8129d7b4ee90c14
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/29/2017
 ---
-# <a name="analytics"></a>分析
+# <a name="analyze-app-performance"></a>分析应用性能
 
-你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。 可以通过统计信息和图表了解你的应用的表现（从你已拥有的客户数量到客户使用你的应用的方式）以及他们对你的应用的评价。 你还可以找到应用运行状况、广告使用情况等信息。 在仪表板中查看报告，或[下载所需的报告](download-analytic-reports.md)以脱机分析数据。 我们还为你提供了几种[无需使用仪表板即可访问分析数据](#no-dashboard)的方法。
+你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。 可以通过统计信息和图表了解你的应用的表现（从你已拥有的客户数量到客户使用你的应用的方式）以及他们对你的应用的评价。 你还可以找到应用运行状况、广告使用情况等有关指标。
 
-> [!NOTE]
-> 除仪表板报告之外，你也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式访问某些分析数据。
+可以在仪表板中查看分析报告，或[下载所需的报告](download-analytic-reports.md)以脱机分析数据。 我们还为你提供了几种[无需使用仪表板即可访问分析数据](#no-dashboard)的方法。
 
-## <a name="analytics-for-all-your-apps"></a>针对所有应用的分析
+## <a name="view-key-analytics-for-all-your-apps"></a>查看所有应用的关键分析
 
-若要查看下载量最多的应用的关键分析，请在顶部导航菜单中选择**分析** > **概述**。 默认情况下，**分析概述**页显示有关五个在生命周期内购置量最多的应用的信息。 若要选择用于显示的不同应用，请选择**更改筛选器**。
+若要查看下载量最多的应用的关键分析，请展开**分析**并选择**概述**。 默认情况下，**分析概述**页显示有关五个在生命周期内购置量最多的应用的信息。 若要选择用于显示的不同的已发布应用，请选择**筛选器**。
 
-## <a name="available-reports-for-each-app"></a>每个应用的可用报告
+## <a name="view-individual-reports-for-each-app"></a>查看每个应用的单独报告
 
 在本部分中，你将看到以下每个报告中所显示信息的详情：
 
 -   [购置报告](acquisitions-report.md)
 -   [加载项购置报告](add-on-acquisitions-report.md)
--   [安装报告](installs-report.md)
 -   [使用情况报告](usage-report.md)
 -   [运行状况报告](health-report.md)
--   [分级报告](ratings-report.md)
 -   [评价报告](reviews-report.md)
 -   [反馈报告](feedback-report.md)
--   [渠道和转换报告](channels-and-conversions-report.md)
--   [广告中介报告](ad-mediation-report.md)
 -   [广告性能报告](advertising-performance-report.md)
--   [关联性能报告](affiliates-performance-report.md)
--   [推广你的应用报告](promote-your-app-report.md)
+-   [广告市场活动报告](promote-your-app-report.md)
 
 > [!NOTE]
 > 你可能不会在所有这些报告中看到数据，具体取决于应用的特定功能和实现。
 
-## <a name="page-and-section-filters"></a>页面和部分筛选器
-
-每个报告都包含可用于深入了解数据的筛选器。 你将在页面顶部附近看到**应用筛选器**。 你可以使用这些筛选器限制或扩展页面上所有图表和信息的范围。
-
-在每个特定图表中，你可能还会看到个别部分筛选器。 这些筛选器将限制为仅针对该特定图表显示数据。
-
-特定筛选器因报告而异。 本部分中的主题将介绍哪些筛选器可用，以及每个报告页面上的其他数据。
-
 <span id="no-dashboard"/>
 ## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>不使用开发人员中心仪表板访问分析数据
 
-除了仪表板上的分析报告，还有其他几种方法可以访问你的分析数据。
+除了仪表板中的分析报告，还有其他几种方法可以访问你的分析数据。
 
 ### <a name="windows-store-analytics-api"></a>Windows 应用商店分析 API
 
@@ -77,7 +65,5 @@ translationtype: HT
 
 ### <a name="dev-center-app"></a>开发人员中心应用
 
-安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows10 设备上的运行状况和性能的详细信息。
+安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows 10 设备上的运行状况和性能的详细信息。
 
-## <a name="related-topics"></a>相关主题
-- [发布 Windows 应用](index.md)

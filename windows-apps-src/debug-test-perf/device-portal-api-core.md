@@ -1,17 +1,19 @@
 ---
-author: dbirtolo
+author: mukin
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 参考"
 description: "了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 347d658f346ab14c60a4468c4a9935e555c2e016
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b6df8f361df82ef65098877027cf1857fa575b0b
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
@@ -1272,6 +1274,69 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
+## User information
+---
+### <a name="get-the-active-user"></a>获取活动用户
+
+**请求**
+
+可以通过使用以下请求格式来获取设备上的活动用户的名称。
+ 
+方法      | 请求 URI
+:------     | :-----
+GET | /api/users/activeuser
+<br />
+
+**URI 参数**
+
+- 无
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**回复**
+
+该响应包含采用以下格式的用户信息。 
+
+成功时： 
+```
+{
+    "UserDisplayName" : string, 
+    "UserSID" : string
+}
+```
+失败时：
+```
+{
+    "Code" : int, 
+    "CodeText" : string, 
+    "Reason" : string, 
+    "Success" : bool
+}
+```
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 桌面版
+* HoloLens
+* IoT
+
+---
 ## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>获取正在运行的进程列表
@@ -2023,6 +2088,52 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
+### <a name="kill-process-by-pid"></a>终止 PID 进程
+
+**请求**
+
+可以使用以下请求格式终止进程。
+ 
+方法      | 请求 URI
+:------     | :-----
+DELETE | /api/taskmanager/process
+<br />
+
+**URI 参数**
+
+可以在请求 URI 上指定以下附加参数：
+
+URI 参数 | 说明
+:---          | :---
+pid   | （**必需**）要终止的进程的唯一进程 ID。
+<br />
+**请求头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 桌面版
+* HoloLens
+* IoT
+
+---
 ## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>获取当前的 IP 配置
@@ -2262,7 +2373,7 @@ URI 参数 | 说明
 :---          | :---
 interface   | （**必需**）用于连接到网络的网络接口的 GUID。
 op   | （**必需**）指示要执行的操作。 可能的值为 connect 或 disconnect。
-ssid   | （**如果 *op* == connect**，则为必需项）要连接到的 SSID。
+ssid   | （**如果 *op* == connect，则为必需项**）要连接到的 SSID。
 key   | （**如果 *op* == connect 并且网络需要身份验证，则为必需项**）共享的密钥。
 createprofile | （**必需**）在设备上为网络创建配置文件。  这将导致设备在将来自动连接到该网络。 这可以是**是**或**否**。 
 

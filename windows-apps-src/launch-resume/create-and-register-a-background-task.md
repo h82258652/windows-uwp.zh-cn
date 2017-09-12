@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 1974c90b89a34f3252face47b9f18786b638adf8
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>创建和注册进程外后台任务
 
@@ -26,7 +28,7 @@ translationtype: HT
 创建一个后台任务类并注册它，以便在应用不在前台运行时运行。 本主题演示了如何创建和注册在单独进程（而不是应用的进程）中运行的后台任务。 若要直接在前台应用程序中执行后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
 > [!Note]
-> 如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows10 版本 1607 中使此操作更加简单的改进信息。
+> 如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows10 版本 1607 中使此操作更加简单的改进信息。
 
 ## <a name="create-the-background-task-class"></a>创建后台任务类
 
@@ -241,7 +243,7 @@ translationtype: HT
     > [!div class="tabbedCodeSnippets"]
     > ```cs
     >     BackgroundTaskRegistration task = builder.Register();
-    >     ```
+    > ```
     > ```cpp
     >     BackgroundTaskRegistration^ task = builder->Register();
     > ```

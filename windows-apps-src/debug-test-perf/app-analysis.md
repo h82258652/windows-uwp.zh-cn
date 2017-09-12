@@ -1,3 +1,19 @@
+---
+author: jwmsft
+title: "应用分析"
+description: "分析应用的性能问题。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10，uwp"
+ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/10/2017
+---
 # <a name="app-analysis-overview"></a>应用分析概述
 
 应用分析是一种工具，可为开发人员提供关于性能问题的提醒通知。 应用分析参照一组性能指南和最佳做法运行应用代码。
@@ -105,7 +121,7 @@ myImage.Source = bitmapImage;
 
 ## <a name="collapsed-elements-at-load-time"></a>加载时折叠的元素
 
-应用中的常见模式是最初在 UI 中隐藏元素，并在以后显示它们。 在大多数情况下，应使用 x:DeferLoadStrategy 延迟这些元素，以避免支付在加载时创建元素的成本。
+应用中的常见模式是最初在 UI 中隐藏元素，并在以后显示它们。 在大多数情况下，应使用 x:Load 或 x:DeferLoadStrategy 延迟这些元素，以避免支付在加载时创建元素的成本。
 
 这包括使用布尔值到可见性转换器来隐藏项目直到某个稍后时间的情况。
 
@@ -119,9 +135,9 @@ myImage.Source = bitmapImage;
 
 ### <a name="solution"></a>解决方案
 
-可使用 x:DeferLoadStrategy 来延迟部分 UI 的加载，并在需要时加载它。 延迟处理在第一帧中不可见的 UI 是一个好方法。 你可以选择在需要时或作为一组延迟逻辑的一部分加载元素。 若要触发加载，请在你希望加载的元素上调用 findName。
+可使用 [x:Load attribute](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 来延迟部分 UI 的加载，并在需要时加载它。 延迟处理在第一帧中不可见的 UI 是一个好方法。 你可以选择在需要时或作为一组延迟逻辑的一部分加载元素。 若要触发加载，请在你希望加载的元素上调用 findName。 x:Load 扩展了 x:DeferLoadStrategy 的功能，从而使元素可以进行卸载，并使加载状态可以通过 x:Bind 进行控制。
 
-在某些情况下，使用 findName 显示部分 UI 可能并非答案。 如果你希望使用非常低的延迟在按钮单击时实现大量 UI，则确实如此。 在此情况下，你应使用 x:DeferLoadStrategy，并在你希望实现的元素上将 Visibility 设置为 Collapsed。 在页面已加载并且 UI 线程可用后，你可以在必要时调用 findName 来加载元素。 在将元素的 Visibility 设置为 Visible 前，元素对用户不可见。
+在某些情况下，使用 findName 显示部分 UI 可能并非答案。 如果你希望使用非常低的延迟在按钮单击时实现大量 UI，则确实如此。 在此情况下，可能要以额外内存为代价来实现更快的 UI 延迟，此时应使用 x:DeferLoadStrategy 并对要实现的元素将 Visibility 设置为 Collapsed。 在页面已加载并且 UI 线程可用后，你可以在必要时调用 findName 来加载元素。 在将元素的 Visibility 设置为 Visible 前，元素对用户不可见。
 
 ## <a name="listview-is-not-virtualized"></a>ListView 未虚拟化。
 

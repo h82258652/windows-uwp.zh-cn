@@ -1,121 +1,213 @@
 ---
 author: normesta
-Description: "介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）手动转换为通用 Windows 平台 (UWP) 应用。"
+Description: "演示如何手动打包用于 Windows 10 的 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）。"
 Search.Product: eADQiWindows 10XVcnh
-title: "桌面到 UWP 桥：手动转换"
+title: "手动打包应用（桌面桥）"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
-ms.openlocfilehash: 8d09a0349620e071f5c4d680df18f716e3b10a8e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e8a09b6e362662b9bb207117d8a3fcc905da6ef4
+ms.sourcegitcommit: ae93435e1f9c010a054f55ed7d6bd2f268223957
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/10/2017
 ---
-# <a name="desktop-to-uwp-bridge-manual-conversion"></a>桌面到 UWP 桥：手动转换
+# <a name="package-an-app-manually-desktop-bridge"></a>手动打包应用（桌面桥）
 
-使用 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) 方便并且自动，如果你不确定安装程序的用途，则它很有用。 但是，如果应用使用 xcopy 安装，或者你熟悉应用的安装程序对系统所做的更改，可能想要手动创建应用包和清单。 此文章包含开始使用的步骤。 它还介绍了如何将 DAC 未包含的更新的资源添加到你的应用中。
+本主题演示如何在不使用 Visual Studio 或 Desktop App Converter (DAC) 等工具的情况下打包应用。
 
-下面介绍如何开始手动转换。 或者，如果你具备 .NET 应用并将使用 Visual Studio，请参阅文章[适用于使用 Visual Studio 创建的 .NET 桌面应用的桌面桥打包指南](desktop-to-uwp-packaging-dot-net.md)。  
+<div style="float: left; padding: 10px">
+    ![手动流程](images/desktop-to-uwp/manual-flow.png)
+</div>
 
-## <a name="create-a-manifest-by-hand"></a>手动创建清单
+若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-你的 _appxmanifest.xml_ 文件需要具有以下内容（至少）。 将格式类似于 \*\*\*THIS\*\*\* 的占位符更改为应用程序的实际值。
+如果使用 xcopy 命令安装应用，或者熟悉应用的安装程序对系统进行的更改并且想要更精确地控制进程，请考虑手动打包。
+
+如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
+
+## <a name="first-consider-how-youll-distribute-your-app"></a>首先考虑如何分发应用
+如果打算将应用发布到 [Windows 应用商店](https://www.microsoft.com/store/apps)中，请先填写[此表单](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。 Microsoft 将联系你以开始加入过程。 在此过程中，你需要在应用商店中预留一个名称，然后获取对应用打包所需的信息。
+
+## <a name="create-a-package-manifest"></a>创建程序包清单
+
+创建文件，将其命名为 **appxmanifest.xml**，然后向其添加此 XML。
+
+这是一个基本模板，其中包含程序包需要的元素和特性。 我们将在下一步部分中对它们添加值。
 
 ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Package
-       xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-       xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-       xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-      <Identity Name="***YOUR_PACKAGE_NAME_HERE***"
-        ProcessorArchitecture="x64"
-        Publisher="CN=***COMPANY_NAME***, O=***ORGANIZATION_NAME***, L=***CITY***, S=***STATE***, C=***COUNTRY***"
-        Version="***YOUR_PACKAGE_VERSION_HERE***" />
-      <Properties>
-        <DisplayName>***YOUR_PACKAGE_DISPLAY_NAME_HERE***</DisplayName>
-        <PublisherDisplayName>Reserved</PublisherDisplayName>
-        <Description>No description entered</Description>
-        <Logo>***YOUR_PACKAGE_RELATIVE_DISPLAY_LOGO_PATH_HERE***</Logo>
-      </Properties>
-      <Resources>
-        <Resource Language="en-us" />
-      </Resources>
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="" Version="" Publisher="" ProcessorArchitecture="" />
+    <Properties>
+       <DisplayName></DisplayName>
+       <PublisherDisplayName></PublisherDisplayName>
+             <Description></Description>
+      <Logo></Logo>
+    </Properties>
+    <Resources>
+      <Resource Language="" />
+    </Resources>
       <Dependencies>
-        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+      <TargetDeviceFamily Name="Windows.Desktop" MinVersion="" MaxVersionTested="" />
       </Dependencies>
       <Capabilities>
         <rescap:Capability Name="runFullTrust"/>
       </Capabilities>
-      <Applications>
-        <Application Id="***YOUR_PRAID_HERE***" Executable="***YOUR_PACKAGE_RELATIVE_EXE_PATH_HERE***" EntryPoint="Windows.FullTrustApplication">
-          <uap:VisualElements
-           BackgroundColor="#464646"
-           DisplayName="***YOUR_APP_DISPLAY_NAME_HERE***"
-           Square150x150Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Square44x44Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Description="***YOUR_APP_DESCRIPTION_HERE***" />
-        </Application>
-      </Applications>
-    </Package>
+    <Applications>
+      <Application Id="" Executable="" EntryPoint="Windows.FullTrustApplication">
+        <uap:VisualElements DisplayName="" Description=""   Square150x150Logo=""
+                   Square44x44Logo=""   BackgroundColor="" />
+      </Application>
+     </Applications>
+  </Package>
 ```
 
-是否有要添加的未着色资源？ 请稍后参阅本文中的[未着色资源](#unplated-assets)部分获取如何操作的详细信息。
+## <a name="fill-in-the-package-level-elements-of-your-file"></a>填写文件的程序包级别元素
 
-## <a name="run-the-makeappx-tool"></a>运行 MakeAppX 工具
+在此模板中填写描述程序包的信息。
 
-使用[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) 为你的项目生成 Windows 应用包。 MakeAppx.exe 包含在 Windows10 SDK 中。
+### <a name="identity-information"></a>标识信息
 
-若要运行 MakeAppx，请先确保你已创建清单文件，如上所述。
+下面是一个带特性占位符文本的示例 **Identity** 元素。 可将 ``ProcessorArchitecture`` 特性设置为 ``x64`` 或 ``x86``。
 
-接下来，创建一个映射文件。 该文件应以 **[Files]** 开头，然后列出磁盘上的每个源文件，后跟其在程序包中的目标路径。 下面是一个示例：
-
+```XML
+<Identity Name="MyCompany.MySuite.MyApp"
+          Version="1.0.0.0"
+          Publisher="CN=MyCompany, O=MyCompany, L=MyCity, S=MyState, C=MyCountry"
+                ProcessorArchitecture="x64">
 ```
-[Files]
-"C:\MyApp\StartPage.htm"     "default.html"
-"C:\MyApp\readme.txt"        "doc\readme.txt"
-"\\MyServer\path\icon.png"   "icon.png"
-"MyCustomManifest.xml"       "AppxManifest.xml"
+> [!NOTE]
+> 如果在 Windows 应用商店中预留了应用名称，则可以使用 Windows 开发人员中心仪表板获取“名称”和“发布者”。 如果打算将应用旁加载到其他系统中，只要选择的发布者名称与用于对应用进行签名的证书上的名称相匹配，就可以提供自己的名称。
+
+### <a name="properties"></a>属性
+
+[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName** 是在应用商店中预留的应用名称，用于上传到应用商店的应用。
+
+```XML
+<Properties>
+  <DisplayName>MyApp</DisplayName>
+  <PublisherDisplayName>MyCompany</PublisherDisplayName>
+  <Logo>images\icon.png</Logo>
+</Properties>
 ```
 
-最后，运行以下命令：
+### <a name="resources"></a>资源
 
-```cmd
-MakeAppx.exe pack /f mapping_filepath /p filepath.appx
+下面是一个示例[资源](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources)节点。
+
+```XML
+<Resources>
+  <Resource Language="en-us" />
+</Resources>
+```
+### <a name="dependencies"></a>依存关系
+
+对于桌面桥应用，请始终将 ``Name`` 特性设置为 ``Windows.Desktop``。
+
+```XML
+<Dependencies>
+<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.15063.0" />
+</Dependencies>
 ```
 
-## <a name="sign-your-appx-package"></a>对 AppX 程序包进行签名
+### <a name="capabilities"></a>功能
+对于桌面桥应用，必须添加 ``runFullTrust`` 功能。
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows10 SDK 附带的 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) 对 Windows 应用包进行签名。
-
-示例用法：
-
-```cmd
-C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
-C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
-C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
+```XML
+<Capabilities>
+  <rescap:Capability Name="runFullTrust"/>
+</Capabilities>
 ```
-当你运行 MakeCert.exe 并且系统要求你输入密码时，请选择**无**。 有关证书和签名的详细信息，请参阅以下内容：
+## <a name="fill-in-the-application-level-elements"></a>填写应用程序级别元素
 
-- [操作方法：创建在部署期间使用的临时证书](https://msdn.microsoft.com/library/ms733813.aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-- [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+在此模板中填写描述应用的信息。
 
-<span id="unplated-assets" />
-## <a name="add-unplated-assets"></a>添加更新的资源
+### <a name="application-element"></a>应用程序元素
 
-下面介绍了如何选择性地为应用配置显示在任务栏中的 44x44 资源。
+对于桌面桥应用，应用程序元素的 ``EntryPoint`` 特性始终为 ``Windows.FullTrustApplication``。
 
-1. 获取正确的 44x44 图像并将它们复制到包含图像（即资源）的文件夹。
+```XML
+<Applications>
+  <Application Id="MyApp"     
+        Executable="MyApp.exe" EntryPoint="Windows.FullTrustApplication">
+   </Application>
+</Applications>
+```
 
-2. 对于每个 44x44 图像，在相同的文件夹中创建副本，并将 *.targetsize 44_altform unplated* 附加到文件名。 你应该有每个图标的两个副本，每个都以特定方式命名。 例如，完成该过程后，你的资源文件夹可能包含 *MYAPP_44x44.png* 和 *MYAPP_44x44.targetsize-44_altform unplated.png*（注意：前者是在 VisualElements 属性 *Square44x44Logo* 下的 appxmanifest 中引用的图标）。
+### <a name="visual-elements"></a>可视元素
 
-3.    在 AppXManifest 中，为每个固定为透明的图标设置 BackgroundColor。 此属性可在每个应用程序的 VisualElements 下找到。
+下面是一个示例 [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) 节点。
 
-4.    打开 CMD，将目录更改为程序包的根文件夹，并通过运行命令 ```makepri createconfig /cf priconfig.xml /dq en-US``` 创建 priconfig.xml 文件。
+```XML
+<uap:VisualElements
+    BackgroundColor="#464646"
+    DisplayName="My App"
+    Square150x150Logo="images\icon.png"
+    Square44x44Logo="images\small_icon.png"
+    Description="A useful description" />
+```
 
-5.    使用 CMD 并保持在程序包的根文件夹中，使用命令 ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` 创建 resources.pri 文件。 例如，应用的命令可能如下所示 ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```。
+## <a name="optional-add-target-based-unplated-assets"></a>（可选）添加基于目标的未着色资产
 
-6.    使用下一步中的说明打包 Windows 应用包以查看结果。
+基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 可在[此处](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets)了解相关详细信息。
+
+1. 获取正确的 44x44 图像，然后将它们复制到包含图像（即资产）的文件夹。
+
+2. 对于每个 44x44 图像，在相同的文件夹中创建副本，并将 **.targetsize 44_altform unplated** 附加到文件名。 你应该有每个图标的两个副本，每个都以特定方式命名。 例如，完成该过程后，资产文件夹可能包含 **MYAPP_44x44.png** 和 **MYAPP_44x44.targetsize-44_altform unplated.png**。
+
+   > [!NOTE]
+   > 在此示例中，**MYAPP_44x44.png** 就是将在 Windows 应用包的 ``Square44x44Logo`` 徽标特性中引用的图标。
+
+3.  在 Windows 应用包中，将制作的每个图标的 ``BackgroundColor`` 设置为透明。
+
+4.  打开 CMD，将目录更改为程序包的根文件夹，然后运行命令 ``makepri createconfig /cf priconfig.xml /dq en-US`` 创建 priconfig.xml 文件。
+
+5.  使用命令 ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` 创建 resources.pri 文件。
+
+    例如，应用的命令可能如下所示：``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
+
+6.  使用下一步中的说明打包 Windows 应用包以查看结果。
+
+<span id="make-appx" />
+## <a name="generate-a-windows-app-package"></a>生成 Windows 应用包
+
+使用 **MakeAppx.exe** 为项目生成 Windows 应用包。 它随 Windows 10 SDK 提供，如果你已安装 Visual Studio，则可通过用于 Visual Studio 版本的开发人员命令提示符轻松访问它。
+
+请参阅[使用 MakeAppx.exe 工具创建应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
+
+## <a name="run-the-packaged-app"></a>运行打包的应用
+
+可运行应用在本地进行测试，无需获得证书并对其进行签名。 只需运行此 PowerShell cmdlet：
+
+```Add-AppxPackage –Register AppxManifest.xml```
+
+若要更新应用的 .exe 或 .dll 文件，请将程序包中的现有文件替换为新文件、增加 AppxManifest.xml 中的版本号，然后再次运行上述命令。
+
+> [!NOTE]
+> 打包的应用始终作为交互用户运行，任何安装已打包应用的驱动器都必须格式化为 NTFS 格式。
+
+## <a name="next-steps"></a>后续步骤
+
+**逐步执行代码/查找并解决问题**
+
+请参阅[运行、调试和测试打包的桌面应用（桌面桥）](desktop-to-uwp-debug.md)
+
+**对应用进行签名，然后分发**
+
+请参阅[分发打包的桌面应用（桌面桥）](desktop-to-uwp-distribute.md)
+
+**查找特定问题的答案**
+
+我们的团队会监视这些 [StackOverflow 标记](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。
+
+**提供关于本文的反馈**
+
+请使用下面的评论区。

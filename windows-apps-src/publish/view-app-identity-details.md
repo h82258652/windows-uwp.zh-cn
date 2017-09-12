@@ -1,56 +1,58 @@
 ---
 author: jnHs
-Description: "当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。"
+Description: "可通过 Windows 应用商店查看与分配给应用的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。"
 title: "查看应用标识的详细信息"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b48f99d4146bfa5e4d9b2af3184e1ce3c1aea491
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d509189ae6392be3d4335732965b70fbc9c77436
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。
+当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息。 此外，你还可以获取指向应用的应用商店一览的链接。
 
-若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的“应用管理”****。 单击“应用标识”****查看这些详细信息。
-
-> **注意**  你需要拥有应用的[保留名称](create-your-app-by-reserving-a-name.md)才能查看大部分标识的详细信息。
-
-## <a name="values-to-include-in-your-appx-manifest"></a>要包含在 APPX 清单中的值
+若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
 
 
-以下值必须包含在 APPX 清单中。 如果你使用 Microsoft Visual Studio 生成程序包，并使用与你的开发人员帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将这些信息添加到程序包中。
+## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
+
+以下值必须包含在 .appx 程序包清单中。 如果[使用 Microsoft Visual Studio 生成程序包](../packaging/packaging-uwp-apps.md)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
 
 -   **程序包/标识/名称**
 -   **程序包/标识/发布者**
+-   **程序包/属性/发行商显示名称**
 
-有关详细信息，请参阅[程序包清单架构参考](https://msdn.microsoft.com/library/windows/apps/br211473)中的 [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441)。
+有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/schema-root)中的[**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity)。
 
 同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
 
-## <a name="additional-values-for-package-family"></a>程序包系列的其他值
 
+## <a name="additional-values-for-package-family"></a>程序包系列的其他值
 
 以下值是指应用的程序包系列的其他值，但不包含在清单内。
 
 -   **程序包系列名称 (PFN)**：此值与某些 Windows API 结合使用。
--   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/library/windows/apps/mt187203)。
+-   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)。
+
 
 ## <a name="link-to-your-apps-listing"></a>链接到应用一览
 
-可以共享应用的页面链接来帮助客户在应用商店中查找该应用。 此链接采用格式 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。
-
-> **注意**  此 URL 适用于可运行你的应用的任何 OS 版本。 你还可能会看到适用于 Windows 8.1 及更早版本和/或 Windows Phone 8.1 及更早版本的其他链接，它们仅适用于指定的操作系统版本。
-
-当客户单击此链接时，它将打开基于 Web 的应用一览页。 如果你的应用适用于客户的 Windows 设备，应用商店应用还将启动并显示你的应用一览。
+可以共享应用的页面直接链接来帮助客户在应用商店中查找该应用。 此链接采用格式 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。 当客户单击此链接时，它将打开基于 Web 的应用一览页。 在 Windows 设备上，应用商店应用还将启动并显示应用一览。
 
 你的应用的**应用商店 ID** 也会在本部分中显示。 此应用商店 ID 可以用来[生成应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkId=534236)或标识你的应用。
+
+**应用商店协议链接**可直接链接到应用商店中你的应用，无需打开浏览器，例如可从应用内部链接至你的应用。 有关详细信息，请参阅[链接到你的应用](link-to-your-app.md)。
+
+
 
  
 

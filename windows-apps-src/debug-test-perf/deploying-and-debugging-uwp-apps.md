@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: "本文指导你完成针对各种部署和调试目标的步骤。"
 title: "部署和调试通用 Windows 平台 (UWP) 应用"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 调试, 测试, 性能"
-ms.openlocfilehash: 6f399136be121288dcff4b482f9e022fc0323181
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2d4f49b0b9756162a22adf5c52910102d4a37281
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -70,7 +72,7 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 
 ![“调试”选项卡](images/debug-remote-machine-config.png)
 
-若要将应用部署到远程电脑，你还需要在目标电脑上下载并安装 Visual Studio 远程工具。 有关完整说明，请参阅[远程电脑说明](#remote-pc-instructions)。
+若要将应用部署到创意者更新之前的远程电脑，你还需要在目标电脑上下载并安装 Visual Studio 远程工具。 有关完整说明，请参阅[远程电脑说明](#remote-pc-instructions)。  但是，从创意者更新开始，电脑还支持远程部署。  
 
 ### <a name="c-and-javascript"></a>C++ 和 JavaScript
 
@@ -86,7 +88,10 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 
 ### <a name="remote-pc-instructions"></a>远程电脑说明
 
-若要部署到远程电脑，目标电脑上必须已安装 Visual Studio 远程工具。 远程电脑上运行的 Windows 版本还必须大于或等于你的应用的“目标平台最小版本”****属性。 在安装远程工具后，必须在目标电脑上启动远程调试器。
+> [!NOTE]
+> 仅 Windows 10 的较早版本需要这些说明。  从创意者更新开始，可以将电脑视为一个 Xbox。  即通过启用电脑的开发人员模式菜单中的“设备发现”和使用通用身份验证进行 PIN 配对和连接电脑。 
+
+若要部署到创意者更新之前的远程电脑，目标电脑上必须已安装 Visual Studio 远程工具。 远程电脑上运行的 Windows 版本还必须大于或等于你的应用的“目标平台最小版本”****属性。 在安装远程工具后，必须在目标电脑上启动远程调试器。
 
 若要执行此操作，请在“开始”****菜单中搜索“远程调试器”****、打开它，然后在系统提示时允许该调试器配置你的防火墙设置。 默认情况下，调试器启动时会执行 Windows 身份验证。 如果两台电脑上的登录用户不是同一人，这将要求用户提供凭据。
 
@@ -94,13 +99,31 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 
 有关详细信息，请参阅 [Visual Studio 下载中心](https://www.visualstudio.com/downloads/) 页面。
 
+## <a name="passing-command-line-debug-arguments"></a>传递命令行调试参数 
+在 Visual Studio 2017 中，可以在开始调试 UWP 应用程序时传递命令行调试参数。 可以通过 [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 类的 **OnLaunched** 方法中的 *args* 参数访问命令行调试参数。 若要指定命令行调试参数，请打开项目的属性并导航到**调试**选项卡。 
+
+> [!NOTE]
+> 这在适用于 C#、VB 和 C++ 的 Visual Studio 2017（版本 15.1）中可用。 JavaScript 在 Visual Studio 2017 的更高版本中可用。 命令行调试参数可用于所有部署类型（模拟器除外）。
+
+对于 C# 和 VB UWP 项目，你会在**启动选项**下看到**参数命令行:** 字段。 
+
+![命令行参数](images/command-line-arguments.png)
+
+对于 C++ 和 JS UWP 项目，你会在**调试属性**中看到**命令行参数**字段。
+
+![命令行参数 C++ 和 JS](images/command-line-arguments-cpp.png)
+
+指定命令行参数之后，可以在应用的 **OnLaunched** 方法中访问参数值。 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 对象 *args* 的 **Arguments** 属性值设置为**命令行参数**字段中的文本。 
+
+![命令行参数 C++ 和 JS](images/command-line-arguments-debugging.png)
+
 ## <a name="authentication-modes"></a>身份验证模式
 
 有三个身份验证模式可用于远程计算机部署：
 
-- **通用(未加密协议)**：每当部署到非 Windows 电脑（台式机或笔记本电脑）的远程设备时，使用此身份验证模式。 当前，这适用于 IoT 设备、Xbox 设备和 HoloLens 设备。 仅应在受信任的网络上使用通用（未加密协议）。 调试连接对于恶意用户来说容易遭受攻击，这些用户可以截获和更改在开发与远程计算机之间传递的数据。
-- **Windows**：此身份验证模式仅适用于远程电脑部署（台式机或笔记本电脑）。 当你有权访问目标计算机的登录用户的凭据时，使用此身份验证模式。 这是适用于远程部署的最安全通道。
-- **无**：此身份验证模式仅适用于远程电脑部署（台式机或笔记本电脑）。 当在有一个登录的测试帐户的环境中设置测试计算机并且无法输入凭据时，使用此身份验证模式。 确保远程调试器设置已设置为接受“无身份验证”。
+- **通用（未加密协议）**：每当部署到远程设备时，使用此身份验证模式。 当前，这适用于 IoT 设备、Xbox 设备和 HoloLens 设备，以及创意者更新或更新的设备。 仅应在受信任的网络上使用通用（未加密协议）。 调试连接对于恶意用户来说容易遭受攻击，这些用户可以截获和更改在开发与远程计算机之间传递的数据。
+- **Windows**：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当你有权访问目标计算机的登录用户的凭据时，使用此身份验证模式。 这是适用于远程部署的最安全通道。
+- **无**：此身份验证模式仅适用于运行 Visual Studio 远程工具的远程电脑（台式机或笔记本电脑）。 当在有一个登录的测试帐户的环境中设置测试计算机并且无法输入凭据时，使用此身份验证模式。 确保远程调试器设置已设置为接受“无身份验证”。
 
 ## <a name="advanced-remote-deployment-options"></a>高级远程部署选项
 随着 Visual Studio 2015 更新 3 和 Windows 10 周年更新的发布，某些 Windows 10 设备具有新的高级远程部署选项。 可以在项目属性的“调试”****菜单上找到高级远程部署选项。
@@ -113,7 +136,7 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 ### <a name="requirements"></a>要求
 若要利用高级远程部署选项，你必须满足以下要求：
 * 已将 Visual Studio 2015 更新 3 与 Windows 10 Tools 1.4.1 一起安装（其中包括 Windows 10 周年更新 SDK）
-* 面向 Windows 10 周年更新 Xbox 远程设备
+* 面向 Windows 10 周年更新 Xbox 远程设备或 Windows 10 创意者更新电脑 
 * 使用通用身份验证模式
 
 ### <a name="properties-pages"></a>“属性”页面
@@ -131,10 +154,10 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 你在“将文件复制到设备”****时所指定的“程序包注册路径”****是在远程设备上复制文件的物理位置。 此路径可以指定为任何相对路径。 部署这些文件的位置将相对于部署文件根目录，此根目录取决于目标设备。 指定此路径对于共享同一台设备的多个开发人员，并且适用于具有某些版本差异的程序包。
 
 > [!NOTE]
-> “将文件复制到设备”****当前在运行 Windows 10 周年更新的 Xbox 上受支持。
+> **将文件复制到设备**当前在运行 Windows 10 周年更新的 Xbox 上和运行 Windows 10 创意者更新的电脑上受支持。
 
-在远程设备上，布局复制到以下默认位置，具体取决于设备系列：
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
+在远程设备上，布局复制到以下默认位置：
+  `\\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
 
 ### <a name="register-layout-from-network"></a>从网络注册布局
 当你选择从网络注册布局时，可以将程序包布局生成到网络共享，然后在远程设备上直接从网络注册该布局。 这需要你指定可从远程设备上访问的布局文件夹路径（网络共享）。 “布局文件夹路径”****属性是相对于运行 Visual Studio 的电脑设置的路径，而“程序包注册路径”****属性是相同的路径，但相对于远程设备指定。
@@ -156,10 +179,10 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 当你从网络注册布局时，你无法选择“在设备上保留所有文件“****，因为没有任何文件在物理上复制到远程设备。
 
 > [!NOTE]
-> “从网络注册布局”****当前在运行 Windows 10 周年更新的 Xbox 上受支持。
+> **从网络注册布局**当前在运行 Windows 10 周年更新的 Xbox 上和运行 Windows 10 创意者更新的电脑上受支持。
 
-在远程设备上，布局注册到以下默认位置，具体取决于设备系列：
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
+在远程设备上，布局注册到下面的默认位置，具体取决于设备系列：  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` - 这是链接到**程序包注册路径**的符号链接
+电脑不会使用符号链接，而是改用直接注册**程序包注册路径**
 
 
 ## <a name="debugging-options"></a>调试选项

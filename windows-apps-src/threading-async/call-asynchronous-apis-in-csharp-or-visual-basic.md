@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: "使用 C# 或 Visual Basic 调用异步 API"
 description: "通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。"
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, C#, Visual Basic, 异步"
-ms.openlocfilehash: a97db371702d3e498f91a3176840f44fd8a7534b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ad5d3432595761470a679bac690fe14711f9fdba
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>使用 C# 或 Visual Basic 调用异步 API
 
@@ -34,8 +36,7 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 以下示例通过调用异步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 并等待结果，从而获取某个博客的博客文章列表。
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+[!code-csharp[主要](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)] [!code-vb[主要](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 有关该示例，有几个重要事项。 首先，对异步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的调用，行 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 使用 **await** 运算符。 你可以将 **await** 运算符视为告知编译器你正在调用某个异步方法，该方法会导致编译器执行某些额外的工作，以便你无需进行这些工作。 接下来，事件处理程序的声明包含关键字 **async**。 必须将该关键字包含在其中使用 **await** 运算符的任何方法的方法声明中。
 

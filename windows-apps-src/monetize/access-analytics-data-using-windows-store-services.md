@@ -4,14 +4,16 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
 title: "使用应用商店服务访问分析数据"
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 应用商店服务, Windows 应用商店分析 API"
-ms.openlocfilehash: aa33af63a49d890b3c60ec1bee32528cfc78af93
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: f739676d02ae5af4c3960fdde6461779c1533885
+ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -28,21 +30,21 @@ translationtype: HT
 
 在开始编写调用 Windows 应用商店分析 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)。
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
-
-  >**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+    > [!NOTE]
+    > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
 若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
 
-1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后[将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[将 Azure AD 应用程序添加到你的开发人员中心帐户](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
 
 3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
-4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
+4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>步骤 2：获取 Azure AD 访问令牌
@@ -73,14 +75,14 @@ grant_type=client_credentials
 
 | 方案       | 方法      |
 |---------------|--------------------|
-| 购置和安装 |  <ul><li>[获取应用购置](get-app-acquisitions.md)</li><li>[获取加载项购置](get-in-app-acquisitions.md)</li><li>[获取应用安装](get-app-installs.md)</li></ul> |
+| 购置、转换和安装 |  <ul><li>[获取应用购置](get-app-acquisitions.md)</li><li>[获取应用购置漏斗数据](get-acquisition-funnel-data.md)</li><li>[通过通道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取加载项购置](get-in-app-acquisitions.md)</li><li>[通过通道获取加载项转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li></ul> |
 | 应用错误 | <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
 | 评分和评价 | <ul><li>[获取应用评分](get-app-ratings.md)</li><li>[获取应用评价](get-app-reviews.md)</li></ul> |
 | 应用内广告和广告活动 | <ul><li>[获取广告性能数据](get-ad-performance-data.md)</li><li>[获取广告活动性能数据](get-ad-campaign-performance-data.md)</li></ul> |
 
 以下其他方法供属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户使用。
 
-| 方案       | 描述      |
+| 方案       | 方法      |
 |---------------|--------------------|
 | Windows 10 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 10 驱动程序的错误报告数据](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[获取 Windows 10 驱动程序错误的详细信息](get-details-for-a-windows-10-driver-error.md)</li><li>[下载 Windows 10 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
 | Windows 7/Windows 8.x 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
@@ -88,7 +90,7 @@ grant_type=client_credentials
 
 ## <a name="code-example"></a>代码示例
 
-以下代码示例演示了如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店分析 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店分析 API 返回的 JSON 数据。
+以下代码示例演示如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店分析 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店分析 API 返回的 JSON 数据。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]

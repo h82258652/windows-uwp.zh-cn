@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows 10 版本 1607 之前的版本）。"
+description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows10 版本 1607 之前的版本）。"
 title: "使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,13 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "uwp, 应用内购买, IAP, 加载项, 试用, Windows.ApplicationModel.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06ee6eba5e4dc2f13b1ca8f8555b0e29770d1ec8
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/09/2017
 ---
-
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 
 可以使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间中的成员，将应用内购买和试用功能添加到通用 Windows 平台 (UWP) 应用，以帮助通过应用盈利。 这些 API 还提供应用的许可证信息访问权限。
@@ -24,15 +23,15 @@ ms.lasthandoff: 02/07/2017
 
 有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
->**注意**&nbsp;&nbsp;
->
-> * 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
-<br/><br/>
-> * **Windows.ApplicationModel.Store** 命名空间在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序中不受支持。 这些应用程序必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
+> [!NOTE]
+> 如果你的应用面向 Windows10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+
+> [!NOTE]
+> **Windows.ApplicationModel.Store** 命名空间在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序中不受支持。 这些应用程序必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>开始使用 CurrentApp 和 CurrentAppSimulator 类
 
-**Windows.ApplicationModel.Store** 命名空间的主要入口点是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类。 此类提供的静态属性和方法可用于获取当前应用及其可用加载项（也称为应用内产品或 IAP）的信息、获取当前应用或其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。
+**Windows.ApplicationModel.Store** 命名空间的主要入口点是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类。 此类提供的静态属性和方法可用于获取当前应用及其可用加载项的信息、获取当前应用或其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。
 
 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类从 Windows 应用商店获取其数据，因此必须拥有一个开发人员帐户，而且必须在应用商店中发布应用，才能在你的应用中成功使用此类。 在将应用提交到应用商店之前，可以使用此类的模拟版本（称为 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx)）测试代码。 测试应用后，并将其提交到 Windows 应用商店之前，必须将 **CurrentAppSimulator** 的实例替换为 **CurrentApp**。 如果应用使用 **CurrentAppSimulator**，则无法通过认证。
 
@@ -57,7 +56,8 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 尽管可以修改此文件中的值，但我们建议创建自己的 WindowsStoreProxy.xml 文件（在 Visual Studio 项目的数据文件夹中）以供 **CurrentAppSimulator** 改用。 模拟交易时，调用 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 以加载文件。 如果不调用 **ReloadSimulatorAsync** 加载你自己的 WindowsStoreProxy.xml 文件， **CurrentAppSimulator** 将创建/加载（但不是会覆盖）默认 WindowsStoreProxy.xml 文件。
 
->**注意**&nbsp;&nbsp;请注意，**CurrentAppSimulator** 不会完全初始化，直到 **ReloadSimulatorAsync** 完成。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
+> [!NOTE]
+> 请注意，**CurrentAppSimulator** 在 **ReloadSimulatorAsync** 完成之前不会完全初始化。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
 
 
 <span id="proxy-examples" />
@@ -153,11 +153,11 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 本部分列出的 XSD 文件定义 WindowsStoreProxy.xml 文件的结构。 若要在使用 WindowsStoreProxy.xml 文件时将此架构应用到 Visual Studio 中的 XML 编辑器，请执行以下操作：
 
 1. 在 Visual Studio 中打开 WindowsStoreProxy.xml 文件。
-2. 在 **XML** 菜单上，单击**创建架构**。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
+2. 在**XML**菜单上，单击**创建架构**。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
 3. 将该 .xsd 文件的内容替换为以下架构。
 4. 将文件保存到可以将其应用到多个应用项目的位置。
 5. 在 Visual Studio 中切换到 WindowsStoreProxy.xml 文件。
-6. 在 **XML** 菜单上，单击**架构**，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击**添加**。 导航到正确的文件，然后单击**确定**。 你现在应该可以在列表中看到该文件。 确保在该架构的**使用**列中出现复选标记。
+6. 在**XML**菜单上，单击**架构**，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击**添加**。 导航到正确的文件，然后单击**确定**。 你现在应该可以在列表中看到该文件。 确保在该架构的**使用**列中出现复选标记。
 
 一旦完成这些操作，对 WindowsStoreProxy.xml 进行的编辑将遵循该架构。 有关详细信息，请参阅[如何：选择要使用的 XML 架构](http://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
@@ -424,7 +424,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |    包含应用用来标识加载项的字符串。           |
 |  **LicenseDuration**  |    否        |    指示已购买商品后，许可证有效的天数。 由产品购买创建的新许可证的过期日期是购买日期加许可证持续时间。 此属性仅在 **ProductType** 属性是 **Durable** 时使用；对于易耗型加载项，将忽略此属性。           |
-|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation)元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
+|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
 
 <span id="marketdata-child-of-product"/>
 #### <a name="marketdata-element-child-of-product"></a>MarketData 元素（Product 的子元素）
@@ -466,7 +466,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 |  要模拟的条件  |  IsActive  |  IsTrial  | ExpirationDate   |
 |-------------|------------|--------|--------|
-|  完全授权  |    true   |  false  |    不存在。 它实际上可能会出现并指定将来的日期，但我们建议您从 XML 文件省略该元素。 如果它存在并指定过去的日期，那么 **IsActive** 将被忽略并为 false。          |
+|  完全授权  |    true   |  false  |    不存在。 它实际上可能会出现并指定将来的日期，但我们建议你从 XML 文件省略该元素。 如果它存在并指定过去的日期，那么 **IsActive** 将被忽略并为 false。          |
 |  在试用期内  |    true  |  true   |      &lt;将来的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解要设置的日期时间距离现在多久，以便获取想要的剩余试用期。         |
 |  试用过期  |    false  |  true   |      &lt;过去的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解“过去”的 UTC 时间。         |
 |  无效  |    false  | false       |     &lt;任何值或省略&gt;          |  |
@@ -544,4 +544,3 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 |  **TransactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |
 |  **状态**  |      是      |  包含应用用于指示易耗品的实施状态的字符串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
 |  **OfferID**  |     否       |    包含应用用来标识易耗品所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
-

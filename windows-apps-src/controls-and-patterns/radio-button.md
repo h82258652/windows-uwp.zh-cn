@@ -6,14 +6,20 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 33a8b62a378e4a9abe20be04a49c94d886144cc5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 370c5266277ff442f26c9aeb951d869ec70b31c5
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="radio-buttons"></a>单选按钮
 
@@ -21,19 +27,11 @@ translationtype: HT
 
 单选按钮允许用户从两个或多个选项中选择一个选项。 每个选项都表示为一个单选按钮；用户只能选择单选按钮组中的一个单选按钮。
 
-（如果你对名称感到好奇，单选按钮根据收音机上的频道预设按钮命名。）
+> **重要 API**：[RadioButton 类](https://msdn.microsoft.com/library/windows/apps/br227544)、[Checked 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+
+（如果你对名称感到好奇，单选按钮是根据收音机上的频道预设按钮命名的。）
 
 ![单选按钮](images/controls/radio-button.png)
-
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
-<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
-</ul>
-</div>
-
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -68,7 +66,7 @@ Microsoft Edge 浏览器设置中的单选按钮。
 
 单选按钮成组工作。 可通过以下两种方法组合单选按钮控件：
 - 将它们放在同一个父容器内。
-- 在每个单选按钮上将 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 属性设置为相同的值。
+- 在每个单选按钮上将 [GroupName](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 属性设置为相同的值。
 
 > **注意**&nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
 
@@ -158,7 +156,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![两个组中的单选按钮](images/radio-button-groups.png)
 
-单选按钮有两个状态：*已选择*或*已清除*。 当选择单选按钮时，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 属性为 **true**。 当清除单选按钮时，其 **IsChecked** 属性为 **false**。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，你可以通过将单选按钮的 IsChecked 属性设置为 **false** 以编程方式清除它。
+单选按钮有两个状态：*已选择*或*已清除*。 当选择单选按钮时，其 [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 属性为 **true**。 当清除单选按钮时，其 **IsChecked** 属性为 **false**。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，你可以通过将单选按钮的 IsChecked 属性设置为 **false** 以编程方式清除它。
 
 ## <a name="recommendations"></a>建议
 
@@ -193,4 +191,4 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 **对于开发人员 (XAML)**
-- [**Windows.UI.Xaml.Controls RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)
+- [Windows.UI.Xaml.Controls RadioButton 类](https://msdn.microsoft.com/library/windows/apps/br227544)

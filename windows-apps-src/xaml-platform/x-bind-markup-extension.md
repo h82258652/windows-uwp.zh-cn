@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: ba08e426fea4c494276978d96cf0b36f6956bdb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0adc0789c4e52e8b9943f774d786aea6efb60c91
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
@@ -182,7 +184,8 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 | **FallbackValue** | 指定要在无法解析源或路径时显示的值。 |
 | **模式** | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
 | **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 |
-| **BindBack** | 指定要用于双向绑定的相反方向的函数。 | 
+| **BindBack** | 指定要用于双向绑定的相反方向的函数。 |
+| **UpdateSourceTrigger** | 指定何时将更改从控件推送回 TwoWay 绑定中的模式。 除 TextBox.Text 以外的所有属性默认为 PropertyChanged，TextBox.Text 默认为 LostFocus。| 
 
 **注意** 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}**，请注意在 **Mode** 属性默认值方面的差异。
  

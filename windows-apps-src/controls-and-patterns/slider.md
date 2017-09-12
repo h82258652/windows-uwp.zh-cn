@@ -6,14 +6,20 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 392b0b0acf1443b2260a33bbf389d505f8cc7d0e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: c705c2fc4d53c77391236604f8edb86e164a1177
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="sliders"></a>滑块
 
@@ -21,16 +27,9 @@ translationtype: HT
 
 滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
 
-![滑块控件](images/controls/slider.png)
+> **重要 API**：[Slider 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)、[Value 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)、[ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**Slider 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
-<li>[**Value 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
-<li>[**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
-</ul>
-</div>
+![滑块控件](images/controls/slider.png)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -89,7 +88,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-从 [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 属性中获取并设置滑块的值。 若要响应值更改，可使用数据绑定以绑定到 Value 属性或处理 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
+从 [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 属性中获取并设置滑块的值。 若要响应值更改，可使用数据绑定以绑定到 Value 属性或处理 [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -177,4 +176,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="related-topics"></a>相关主题
 - [切换开关](toggles.md)
-- [**Slider 类**](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Slider 类](https://msdn.microsoft.com/library/windows/apps/br209614)

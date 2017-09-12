@@ -1,53 +1,12 @@
 ---
-author: jnHs
-Description: "若要查看应用中关联广告的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的关联性能报告。"
-title: "关联性能报告"
-ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 5187a644e4a952a8d3b199c68c2266e6e7c634f1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/advertising-performance-report
+ms.openlocfilehash: 647bbb3cf211ecaa7872a11f5cb654112abfcbe9
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/21/2017
 ---
-# <a name="affiliates-performance-report"></a>关联性能报告
+# <a name="affiliates-performance-report"></a>联盟性能报告
 
-如果你已经[选择加入了 Microsoft 关联广告计划](about-affiliate-ads.md)，则可以在 Windows 开发人员中心仪表板的以下报告中查看显示在应用中的关联广告的性能数据：
-
--   [应用级别的关联性能报告](#app-level-affiliate-ads-performance-report)。 此报告在仪表板中提供当前所选应用中关联广告的性能数据。
--   [仪表板级别的关联性能报告](#dashboard-level-affiliate-ads-performance-report)。 此报告总结了已选择加入 Microsoft 关联广告计划的所有应用中的关联广告的性能数据。
-
-这些报告每天都会更新。 默认情况下，针对所有设备上最近 30 天的性能筛选报告。 若要更改这些筛选器，请单击**页面筛选器**并选择不同的时间帧或单个设备类型。 请注意，所有数据均根据所使用的 UTC 而非特定时区进行聚合。
-
-以下部分提供有关这些报告的更多详细信息。
-
-## <a name="app-level-affiliate-ads-performance-report"></a>应用级别的关联广告性能报告
-
-此报告在仪表板中以图形和表形式提供当前所选应用中关联广告的性能数据。 若要查看此报告，请选择仪表板中的一款应用，并在导航窗格中依次单击**分析**&gt;**关联性能**。
-
-可通过以下跟踪你的应用中广告的七个性能指标获取数据：
-
--   **预计收入（已批准）**：以用户在应用中单击关联广告而达成的经过批准的购买所得佣金的形式收到的预计金额。
--   **预计收入（待批准）**：待批准的购买以佣金形式可能收到的预计金额。
--   **印象**：应用中显示关联广告的次数。
--   **点击量**：客户单击应用中关联广告的次数。
--   **CTR**：点击率，是指单击关联广告的次数与关联广告印象数之比。
--   **购买（已批准）**：用户在应用中单击关联广告达成的经过批准的购买数。
--   **购买（待批准）**：用户在应用中单击关联广告达成的待批准的购买数。
-
-> **注意**  用户在应用商店中购买某个产品后，需要等待 45 天，然后才能批准此次购买用于关联广告计划。 由于存在此等候期，给定日期内的**预计收入（已批准）**、**预计收入（待批准）**、**购买（已批准）**以及**购买（待批准）**可能会在批准或拒绝购买后发生更改。
-
-## <a name="dashboard-level-affiliate-ads-performance-report"></a>仪表板级别的关联广告性能报告
-
-**仪表板概述**页面上的**关联性能**部分以图形和表形式总结了已选择加入 Microsoft 关联广告计划的所有应用的关联广告性能数据。 此报告显示与上面所述的应用级别关联性能报告相同的性能指标和筛选器。
-
-## <a name="related-topics"></a>相关主题
-
-* [关于关联广告](about-affiliate-ads.md)
-* [利用广告来盈利](monetize-with-ads.md)
- 
-
+本主题已重定向到：广告性能报告
  

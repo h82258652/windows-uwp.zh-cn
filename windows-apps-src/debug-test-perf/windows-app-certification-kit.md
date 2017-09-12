@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: "Windows 应用认证工具包"
 description: "若要为你的应用提供最好的机会从而在 Windows 应用商店中发布，或通过 Windows 认证，请在提交应用进行认证之前先在本地进行验证和测试。 本主题显示了如何安装并运行 Windows 应用认证工具包。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 118d4643c3d4fcb8549549e9d58d4b64d64f0885
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -26,7 +28,7 @@ translationtype: HT
 
 -   必须安装并运行 Windows 10。
 -   必须安装 [Windows 应用认证工具包版本 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，该版本包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
--   计算机上必须有一个有效的开发人员许可证。 请参阅[获取开发人员许可证](https://msdn.microsoft.com/library/windows/apps/Hh974578)，了解操作方法。
+-   必须[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 -   必须将要测试的 Windows 应用部署到计算机。
 
 **有关就地升级的注意事项**

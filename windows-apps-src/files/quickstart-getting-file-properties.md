@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4412ccd88c73854c193e24e0ac4e3f03730a9f39
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e564c44a99419f1900ab6c322af4ea6dedb195cb
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-file-properties"></a>获取文件属性
 
@@ -97,6 +99,8 @@ foreach (Windows.Storage.StorageFile file in files)
 除了顶级和基本文件属性之外，还有一些与文件内容有关的属性。 这些扩展属性可以通过调用 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 方法来访问。 （通过调用 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 属性可以获得 [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 对象。）尽管顶级和基本文件属性可以分别作为类的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **BasicProperties** 属性进行访问，但扩展属性只能通过以下方法获得：将代表将要检索的属性名称的 [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) 对象的 [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) 集合传递到 **BasicProperties.RetrievePropertiesAsync** 方法。 此方法随后会返回一个 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然后，可以按名称或按索引从该集合中检索每个扩展属性。
 
 以下示例枚举了图片库中的所有文件，并指定了一个 [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) 对象中所需属性（**DataAccessed** 和 **FileOwner**）的名称，将该 [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) 对象传递到 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 以检索这些属性，然后按名称从返回的 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 对象中检索这些属性。
+
+有关文件扩展属性的完整列表，请参阅 [Windows 核心属性](https://msdn.microsoft.com/library/windows/desktop/mt805470)。
 
 ```csharp
 const string dateAccessedProperty = "System.DateAccessed";

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: cfaa7c96a3ec8bf50f19ee699ff74b037500a838
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3d36708b5b11a089ffa126b760f0990f2da39e38
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
@@ -19,7 +21,7 @@ translationtype: HT
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何从你的应用启动 Windows 地图应用。 本主题介绍了 **bingmaps:、ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 统一资源标识符 (URI) 方案。 使用这些 URI 方案来将 Windows 地图应用启动为特定的地图、路线和搜索结果或从“设置”应用下载 Windows 地图离线地图。
+了解如何从你的应用启动 Windows 地图应用。 本主题介绍了 **bingmaps:、*ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 统一资源标识符 (URI) 方案。 使用这些 URI 方案来将 Windows 地图应用启动为特定的地图、路线和搜索结果或从“设置”应用下载 Windows 地图离线地图。
 
 **提示** 若要了解有关从你的应用启动 Windows 地图应用的详细信息，请从 GitHub 上的 [Windows 通用示例存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
@@ -68,37 +70,37 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="display-known-locations"></a>显示已知的位置
 
-提供多种方法来控制地图中心点和缩放级别。 使用 *cp*（中心点）和 *lvl*（缩放级别）参数是最直接的方法，并且它们会产生可预测的结果。 使用 *bb* 参数（指定由纬度和经度值界定的区域）不如前两者可预测，因为它会考虑屏幕分辨率，然后根据所提供的坐标来确定地图中心点和缩放级别。 当所有三个参数（*bb*、*cp* 和 *lvl*）都存在时，*bb* 参数将被忽略。
+可以使用许多选项来控制要显示的地图部分。 你可以将 *cp*（中心点）参数与 *rad*（半径）或 *lvl*（缩放级别）参数配合使用，以显示位置，并选择接近度以对其进行放大。 当你使用 *cp* 参数时，你还可以指定 *hdg*（标题）和 *pit*（倾斜）以控制要查看的方向。 另一种方法是使用 *bb*（边界框）参数来提供你想要显示的区域的最大东、南、西、北坐标。
 
-若要控制视图类型，请使用 *ss*（街景）和 *sty*（样式）参数。 *ss* 参数将地图置于街景视图。 *sty* 参数允许你在路线图、鸟瞰图和 3D 视图之间切换。 使用 3D 样式时，可以使用 *hdg*、*pit* 和 *rad* 参数指定 3D 视图。 *hdg* 指定视图的方位，*pit* 指定视图的俯仰以及 *rad* 指定与要显示在视图中的中心点之间的间距。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps-param-reference)。
+若要控制视图类型，请使用 *sty*（样式）和 *ss*（Streetside）参数。 *sty* 参数允许你在路线图和鸟瞰图之间切换。 *ss* 参数将地图置于 Streetside 视图。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps-param-reference)。
 
-| 示例 URI                                                                 | 结果                                                                                                                                                                                                   |
-|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | 打开地图应用。                                                                                                                                                                                       |
-| bingmaps:?cp=40.726966~-74.006076                                          | 显示以纽约市为中心的地图。                                                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 使用缩放级别 10 显示以纽约市为中心的地图。                                                                                                                                       |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 通过将屏幕的大小作为边界框来显示纽约市的地图。                                                                                                                          |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122                        | 显示纽约市（使用边界框参数指定的区域）的地图。 将忽略使用 **cp** 参数为西雅图指定的中心点。                                      |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122&amp;lvl=8                  | 显示纽约市（**bb** 参数中指定的区域）的地图。 将忽略 **cp** 参数（用于指定西雅图），因为在指定 **bb** 时，将忽略 **cp** 和 **lvl**。 |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16 | 显示名为恺撒王宫酒店的某个点（位于拉斯维加斯）的地图并将缩放级别设置为 16。                                                                                                            |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | 显示带有名为 Some\_Business（位于拉斯维加斯）的点的地图。                                                                                                                                          |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 显示纽约市的地图并已启用路况和鸟瞰图样式。                                                                                                                                               |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 显示 Space Needle 的 3D 视图。                                                                                                                                                                   |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 显示 Space Needle 的 3D 视图（半径 200 米、俯仰 75 度和方位 165 度）。                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | 显示 Space Needle 的街景视图。                                                                                                                                                           |
 
- 
+| 示例 URI                                                                 | 结果                                                                                                                                                                                        |
+|----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bingmaps:?                                                                 | 打开地图应用。                                                                                                                                                                            |
+| bingmaps:?cp=40.726966~-74.006076                                          | 显示以纽约市为中心的地图。                                                                                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 使用缩放级别 10 显示以纽约市为中心的地图。                                                                                                                            |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 显示纽约市（**bb** 参数中指定的区域）的地图。                                                                                                           |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | 显示纽约市（使用边界框参数指定的区域）的地图。 将忽略使用 **cp** 参数为西雅图指定的中心点，因为指定了 *bb*。 |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | 显示名为恺撒王宫酒店的某个点（位于拉斯维加斯）的地图并将缩放级别设置为 16。                                                                                                 |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | 显示带有名为 Some\_Business（位于拉斯维加斯）的点的地图。                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | 显示纽约市的地图并已启用路况和鸟瞰图样式。                                                                                                                          |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | 显示 Space Needle 的 3D 视图。                                                                                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 显示 Space Needle 的 3D 视图（半径 200 米、俯仰 75 度和方位 165 度）。                                                                             |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | 显示 Space Needle 的街景视图。                                                                                                                                                |
+
+
 ## <a name="display-search-results"></a>显示搜索结果
 
-我们建议在使用 *q* 参数进行商家搜索时，尽可能使用特定搜索词，并将其与 *cp* 或 *where* 参数之一结合使用以指定位置。 如果用户未向地图应用授予可使用其位置的权限，并且未为商家搜索指定位置，则可能会在国家/地区级别执行该搜索且不会返回有意义的结果。 搜索结果将显示在最合适的地图视图中，因此除非需要设置 *lvl*（缩放级别），否则我们建议将决定权交给地图应用。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps-param-reference)。
+使用 *q* 参数搜索位置时，我们建议尽可能使用特定搜索词，并使用 *cp*、*bb* 或 *where* 参数指定搜索位置。 如果你未指定搜索位置，并且用户的当前位置不可用，则搜索可能不会返回有意义的结果。 搜索结果将显示在最合适的地图视图中。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps-param-reference)。
 
-| 示例 URI                                                    | 结果                                                                                                                                         |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | 显示地图并搜索位于华盛顿哥伦比亚特区的白宫的地址。                                                              |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10&amp;where=New%20York     | 在指定中心点的附近搜索纽约、在地图上显示结果，并将缩放级别设置为 10。                            |
-| bingmaps:?lvl=10&amp;where=New%20York                             | 搜索纽约并以缩放级别 10 显示结果。                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=14.5&amp;q=pizza            | 在指定中心点的附近搜索比萨店（位于纽约市）、在地图上显示结果，并将缩放级别设置为 14.5。 |
-| bingmaps:?q=coffee&amp;where=Seattle                              | 搜索西雅图的咖啡馆。                                                                                                                 |
+
+| 示例 URI                                                    | 结果                                                                            |
+|---------------------------------------------------------------|------------------------------------------------------------------------------------|
+| bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | 显示地图并搜索位于华盛顿哥伦比亚特区的白宫的地址。 |
+| bingmaps:?q=coffee&where=Seattle                              | 搜索西雅图的咖啡馆。                                                    |
+| bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 在指定的中心点附近搜索纽约。                             |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | 在指定的边框（即在纽约市）搜索比萨。      |
 
  
 ## <a name="display-multiple-points"></a>显示多个点
@@ -119,7 +121,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## <a name="display-directions-and-traffic"></a>显示路线和路况
 
 
-你可以使用 *rtp* 参数显示两个点之间的路线；这些点可以是地址或纬度和经度坐标。 使用 *trfc* 参数显示路况信息。 若要指定路线的类型：驾车、步行或公交，请使用 *mode* 参数。 如果未指定 *mode*，将使用交通首选项的用户的模式提供路线。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps-param-reference)。
+你可以使用 *rtp* 参数显示两个点之间的路线；这些点可以是地址或纬度和经度坐标。 使用 *trfc* 参数显示路况信息。 若要指定路线的类型：驾车、步行或公交，请使用 *mode* 参数。 如果未指定 *mode*，将使用用户的首选交通模式提供路线。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps-param-reference)。
 
 ![路线的示例](images/windowsmapgcdirections.png)
 
@@ -292,7 +294,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 **ss** 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 **cp** 参数结合使用，指定街道级视图的位置。</p>
 <div class="alert">
-> **注意** 并不是所有地区都提供街道级图像。
+**注意** 并不是所有地区都提供街道级图像。
 </div>
 <div>
  
@@ -306,7 +308,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
 <div class="alert">
-> **注意** 并不是所有地区都提供路况数据。
+**注意** 并不是所有地区都提供路况数据。
 </div>
 <div>
  
@@ -330,8 +332,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>定义要在地图上绘制的路线起点和终点，由波形符 (**~**) 分隔。 每个经过点可能是通过使用纬度和经度的位置定义的，也可能是通过可选标题或地址标识符定义的。</p>
 <p>一条完整的路线正好包含两个经过点。 例如，包含两个经过点的路线由 <code>rtp="A"~"B"</code> 定义。</p>
-<p>还可以指定不完整的路线。 例如，你可以仅定义包含 <code>rtp="A"~</code> 的路线起点。 在此情况下，显示路线输入时将在“出发地”****字段中带有所提供的经过点，并且“目的地”****字段具有焦点。</p>
-<p>如果指定路线终点，与 <code>rtp=~"B"</code> 相同，路线面板上的“目的地”****字段中将显示所提供的经过点。 如果提供精确的当前位置，当前位置将预先填写在具有焦点的“出发地”****字段中。</p>
+<p>还可以指定不完整的路线。 例如，你可以仅定义包含 <code>rtp="A"~</code> 的路线起点。 在此情况下，显示路线输入时将在**出发地**字段中带有所提供的经过点，并且**目的地**字段具有焦点。</p>
+<p>如果指定路线终点，与 <code>rtp=~"B"</code> 相同，路线面板上的**目的地**字段中将显示所提供的经过点。 如果提供精确的当前位置，当前位置将预先填写在具有焦点的**出发地**字段中。</p>
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
@@ -375,14 +377,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>用波形符 (**~**) 分隔名称和多个点。</p>
 <p>如果你指定的项目中包含波形符，请确保已将该波形符编码为 <code>%7E</code>。 如果不带有“中心点”和“缩放级别”参数，则集合将提供最佳地图视图。</p>
 
-<p>**重要提示** 如果你指定的项目中包含下划线，请确保将该下划线双编码为 %255F。</p>
-
-<p>如果你指定的项目中包含下划线，请确保将该下划线双编码为 %255F。</p></td>
+<p>**重要提示** 如果你指定的项目中包含下划线，请确保将该下划线双编码为 %255F。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+  
 <span id="ms-drive-to-param-reference"/>
 ## ms-drive-to: 参数引用
 
@@ -407,7 +407,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 用于启动逐向导航步行路线请求的 URI 无需编码，并且具有以下格式。
 
 > **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#display-directions-and-traffic)。
-
  
 
 | 参数 | 定义 | 示例 | 详细信息 |

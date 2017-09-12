@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6eed2ecb5766edea8678ea2af10c02332d5a5928
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
@@ -24,13 +26,14 @@ translationtype: HT
 - 如何使用应用服务，从而允许通用 Windows 平台 (UWP) 应用与其他应用共享数据和功能。
 - 如何使用后台任务，从而允许 UWP 应用在应用自身不在前台时也能执行工作。
 - 如何发现连接的设备、在其他设备上启动应用，以及与远程设备上的应用服务通信，以便你可以创建跨设备流动的用户体验。
+- 如何选择正确的技术来扩展你的应用并实现应用组件化。
 - 如何为应用添加和配置初始屏幕。
 
 ## <a name="the-app-lifecycle"></a>应用生命周期
 
 本部分详细介绍 Windows 10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [应用生命周期](app-lifecycle.md)               | 了解有关 UWP 应用的生命周期，以及在 Windows 启动、暂停和恢复你的应用时会发生什么情况。 |
 | [处理应用预启动](handle-app-prelaunch.md) | 了解如何处理应用预启动。                                                                              |
@@ -65,7 +68,7 @@ translationtype: HT
 
 请参阅下面与启动应用相关的其他主题。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [保留的文件和 URI 方案名称](reserved-uri-scheme-names.md) | 本主题列出了不可用于应用的保留文件和 URI 方案名称。 |
 | [使用自动播放自动启动](auto-launching-with-autoplay.md) | 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 |
@@ -74,33 +77,38 @@ translationtype: HT
 
 [应用服务](app-services.md)部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
 | [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |
+| [用应用服务、扩展和包扩展应用](extend-your-app-with-services-extensions-packages.md) | Windows 10 中有不同的技术可以帮助你扩展应用和实现应用组件化。 本主题将帮助你确定哪些技术是可以使用的正确技术，并提供每种技术的简短概述。 |
 
 ## <a name="background-tasks"></a>后台任务
 
 [后台任务](support-your-app-with-background-tasks.md)部分显示了如何使在后台运行的轻型代码响应触发器。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
-| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
-| [后台任务指南](guidelines-for-background-tasks.md)                                           | 确保你的应用符合运行后台任务的要求。                                                                                                                          |
-| [创建和注册进程外后台任务](create-and-register-a-background-task.md)                               | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。                                                                                                 |
-| [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)                               | 创建和注册在前台应用所在的同一进程中运行的后台任务。                                                                                                 |
-| [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)                               | 了解如何将进程外后台任务转换为在前台应用所在的同一进程中运行的进程内后台任务。
-| [调试后台任务](debug-a-background-task.md)                                                           | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。                                                                        |
-| [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。                                                                                                       |
-| [处理取消的后台任务](handle-a-cancelled-background-task.md)                                     | 介绍如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。                                     |
-| [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)           | 了解应用可以识别后台任务进度和完成的方式。                                                                                                                     |
-| [注册后台任务](register-a-background-task.md)                                                     | 了解如何创建可以重新使用以安全注册大部分后台任务的函数。                                                                                                  |
-| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)             | 了解如何创建响应 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的后台任务。                                                                         |
-| [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)                                        | 了解如何计划一次性后台任务，或运行周期性后台任务。                                                                                                          |
-| [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)                 | 了解如何设置控制何时运行后台任务的条件。                                                                                                                  |
-| [在后台传输数据](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | 使用后台传输 API 以便在后台复制文件。                                                                                                                              |
-| [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                       | 使用后台任务，以最新内容更新应用的动态磁贴。                                                                                                                      |
-| [使用维护触发器](use-a-maintenance-trigger.md)                                                       | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。                             |
+| [后台任务指南](guidelines-for-background-tasks.md)                                       | 确保你的应用满足运行后台任务的要求。 |
+| [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)       | 创建和注册在前台应用所在的同一进程中运行的后台任务。 |
+| [创建和注册进程外后台任务](create-and-register-a-background-task.md)           | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。 |
+| [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md) | 了解如何将进程外后台任务转换为在前台应用所在的同一进程中运行的进程内后台任务。|
+| [调试后台任务](debug-a-background-task.md)                                                       | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。 |
+| [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。 |
+| [分组后台任务注册](group-background-tasks.md)                                             | 通过分组隔离后台任务注册。 |
+| [处理取消的后台任务](handle-a-cancelled-background-task.md)                                 | 介绍如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。 |
+| [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)       | 了解应用可以识别后台任务进度和完成的方式。 |
+| [注册后台任务](register-a-background-task.md)                                                 | 了解如何创建可以重新使用以安全注册大部分后台任务的函数。 |
+| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)         | 了解如何创建响应 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的后台任务。 |
+| [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)                                    | 了解如何计划一次性后台任务，或运行周期性后台任务。 |
+| [从你的应用中触发后台任务](trigger-background-task-from-app.md) | 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 从你的应用中激活后台任务。|
+| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
+| [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)             | 了解如何设置控制何时运行后台任务的条件。 |
+| [在后台传输数据](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | 使用后台传输 API 以便在后台复制文件。 |
+| [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                   | 使用后台任务，以最新内容更新应用的动态磁贴。 |
+| [使用维护触发器](use-a-maintenance-trigger.md)                                                   | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。 |
+### <a name="see-also"></a>另请参阅
+* [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) - 了解如何减少后台中使用的能量并与后台活动的用户设置进行交互。
 
 ## <a name="remote-systems"></a>远程系统
 
@@ -116,7 +124,7 @@ translationtype: HT
 
 [初始屏幕](splash-screens.md)部分介绍如何设置和配置应用的初始屏幕。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |

@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "在地图上显示兴趣点 (POI)"
 description: "使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.author: misatran
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 08/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 地图, 位置, 图钉"
-ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 280a651df949018dc9cf490e14d72d167fee0858
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="display-points-of-interest-poi-on-a-map"></a>在地图上显示目标点 (POI)
 
@@ -31,10 +33,10 @@ translationtype: HT
 
 总结：
 
--   [向地图添加 MapIcon](#add-a-mapicon) 以显示图像（例如，图钉）和可选文本。
--   [向地图添加 MapPolygon](#add-a-mappolygon) 以显示多点图形。
--   [向地图添加 MapPolyline](#add-a-mappolyline) 以在地图上显示线条。
--   [向地图添加 XAML](#add-xaml) 以显示自定义 UI 元素。
+-   [向地图添加 MapIcon](#mapicon) 以显示图像（例如，图钉）和可选文本。
+-   [向地图添加 MapPolygon](#mappolygon) 以显示多点图形。
+-   [向地图添加 MapPolyline](#mappolyline) 以在地图上显示线条。
+-   [向地图添加 XAML](#mapxaml) 以显示自定义 UI 元素。
 
 如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)。
 
@@ -55,18 +57,20 @@ translationtype: HT
          Geopoint snPoint = new Geopoint(snPosition);
 
          // Create a MapIcon.
-         MapIcon mapIcon1 = new MapIcon();
-         mapIcon1.Location = snPoint;
-         mapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
-         mapIcon1.Title = "Space Needle";
-         mapIcon1.ZIndex = 0;
+         var mapIcon1 = new MapIcon
+         {
+             Location = snPoint,
+             NormalizedAnchorPoint = new Point(0.5, 1.0),
+             Title = "Space Needle",
+             ZIndex = 0,
+         };
 
          // Add the MapIcon to the map.
-         MapControl1.MapElements.Add(mapIcon1);
+         myMap.MapElements.Add(mapIcon1);
 
          // Center the map over the POI.
-         MapControl1.Center = snPoint;
-         MapControl1.ZoomLevel = 14;
+         myMap.Center = snPoint;
+         myMap.ZoomLevel = 14;
       }
 ```
 
@@ -90,31 +94,77 @@ translationtype: HT
 -   [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637088) 的可选 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637077) 并不一定会显示。 如果你没有看到此文本，通过减少 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637068) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637004) 属性的值来缩小显示。
 -   当你显示指向地图上特定位置的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 图像时（例如，图钉或箭头），考虑将 [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) 属性的值设置为图像上指针的大致位置。 如果你将 **NormalizedAnchorPoint** 的值保留为默认值 (0, 0)（表示图像的左上角），地图的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 中的更改可能会导致图像指向其他位置。
 
-## <a name="add-a-mappolygon"></a>添加 MapPolygon
+## <a name="add-a-mapbillboard"></a>添加 MapBillboard
 
+显示与地图位置相关的大图像（如餐馆或地标图片）。 当用户缩小时，此图像将按比例收缩，使用户可以从地图上看到更大的地理范围。 这与 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 略有不同，后者标记特定的位置，大小通常很小，并且用户放大和缩小地图时，其大小也保持不变。
+
+![MapBillboard 图像](images/map-billboard.png)
+
+下面的代码显示上图中所示的 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)。
+
+```csharp
+private void mapBillboardAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+{
+    RandomAccessStreamReference mapBillboardStreamReference =
+        RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/billboard.jpg"));
+
+        var mapBillboard = new MapBillboard(myMap.ActualCamera)
+        {
+            Location = myMap.Center,
+            NormalizedAnchorPoint = new Point(0.5, 1.0),
+            Image = mapBillboardStreamReference
+        };
+
+        myMap.MapElements.Add(mapBillboard);
+}
+```
+这段代码中有三个部分值得更仔细地进行检查：图像、参考照相机，以及 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) 属性。
+
+### <a name="image"></a>图像
+
+此示例显示在项目的**资源**文件夹中保存的自定义图像。 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Image) 属性需要类型 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 的值。 此类型需要 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 命名空间的 **using** 声明。
+
+>[!NOTE]
+>如果将同一图像用于多个地图图标，请声明页面级别或应用级别的 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 以获得最佳性能。
+
+### <a name="reference-camera"></a>参考照相机
+
+ 因为 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 图像随 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ZoomLevel) 的变化而缩放，请务必定义正常的一倍尺寸图像以哪个 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ZoomLevel) 显示。 该位置在 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的参考照相机中定义，为了设置它，你必须将 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象传递到 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的构造函数中。
+
+ 你可以在 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 中定义任意位置，然后使用该 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 来创建一个 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象。  但是，在此示例中，我们只需使用地图控件的 [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ActualCamera) 属性返回的 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象。 这是地图内部照相机。 该照相机的当前位置成为参考照相机位置；[**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 图像以 1 倍尺寸显示的位置。
+
+ 如果你的应用允许用户缩小地图，图像将缩小，因为地图内部照相机的高度将上升，而 1 倍大小的图像将仍然保持在参考照相机的位置上不动。
+
+### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
+
+[**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) 是图像上锚定到 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) 属性的点。 点 0.5,1 是图像的底部中心。 由于我们已经将 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) 属性设置为图像控件的中心，该图像的底部中心将锚定到图像控件的中心。
+
+## <a name="add-a-mappolygon"></a>添加 MapPolygon
 
 通过使用 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 类在地图上显示多点形状。 以下 [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一个具有蓝色边框的红色框。
 
 ```csharp
 private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 {
-   double centerLatitude = myMap.Center.Position.Latitude;
-   double centerLongitude = myMap.Center.Position.Longitude;
-   MapPolygon mapPolygon = new MapPolygon();
-   mapPolygon.Path = new Geopath(new List<BasicGeoposition>() {
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+    double centerLatitude = myMap.Center.Position.Latitude;
+    double centerLongitude = myMap.Center.Position.Longitude;
 
-   });
+    var mapPolygon = new MapPolygon()
+    {
+        Path = new Geopath(new List<BasicGeoposition>() {
+        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+        }),
+        ZIndex = 1,
+        FillColor = Colors.Red,
+        StrokeColor = Colors.Blue,
+        StrokeThickness = 3,
+        StrokeDashed = false,
+    };
 
-   mapPolygon.ZIndex = 1;
-   mapPolygon.FillColor = Colors.Red;
-   mapPolygon.StrokeColor = Colors.Blue;
-   mapPolygon.StrokeThickness = 3;
-   mapPolygon.StrokeDashed = false;
-   myMap.MapElements.Add(mapPolygon);
+    myMap.MapElements.Add(mapPolygon);
 }
 ```
 
@@ -126,23 +176,24 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 ```csharp
 private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 {
-   double centerLatitude = myMap.Center.Position.Latitude;
-   double centerLongitude = myMap.Center.Position.Longitude;
-   MapPolyline mapPolyline = new MapPolyline();
-   mapPolyline.Path = new Geopath(new List<BasicGeoposition>() {                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
-   });
+    double centerLatitude = myMap.Center.Position.Latitude;
+    double centerLongitude = myMap.Center.Position.Longitude;
+    var mapPolyline = new MapPolyline
+    {
+        Path = new Geopath(new List<BasicGeoposition>() {
+            new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+            new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+        }),
+        StrokeColor = Colors.Black,
+        StrokeThickness = 3,
+        StrokeDashed = true,
+    };
 
-   mapPolyline.StrokeColor = Colors.Black;
-   mapPolyline.StrokeThickness = 3;
-   mapPolyline.StrokeDashed = true;
-   myMap.MapElements.Add(mapPolyline);
+    myMap.MapElements.Add(mapPolyline);
 }
 ```
 
 ## <a name="add-xaml"></a>添加 XAML
-
 
 通过使用 XAML 在地图上显示自定义 UI 元素。 通过指定 XAML 的位置和标准化的定位点在地图上放置 XAML。
 

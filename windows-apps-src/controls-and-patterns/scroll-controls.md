@@ -1,50 +1,58 @@
 ---
 author: Jwmsft
 Description: "平移和滚动使用户可以获取超出屏幕边界的内容。"
-title: "滚动条指南"
+title: "滚动查看器控件"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-label: Scroll bars
+label: Scrollbars
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 8e167fd07d589b8ad159fe3cb535dd884eeab0ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: Abarlow, pagildea
+design-contact: ksulliv
+dev-contact: regisb
+doc-status: Published
+ms.openlocfilehash: b60842d25c54c15c7c478e1e5183ecd3317bb82c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="scroll-bars"></a>滚动栏
+# <a name="scroll-viewer-controls"></a>滚动查看器控件
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-平移和滚动使用户可以获取超出屏幕边界的内容。
+当 UI 内容超出一个区域的容量时，可以使用滚动查看器控件。
 
-滚动查看器控件包含的内容量以适合视区为准，并具有一个或两个滚动条。 触摸手势可用于平移和缩放（滚动条仅在操作期间淡入），指针可用于滚动。 轻拂手势可以利用惯性平移。
+> **重要 API**：[ScrollViewer 类](https://msdn.microsoft.com/library/windows/apps/br209527)，[ScrollBar 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
-**注意**Windows 具有两种滚动条可视化，它们基于用户的输入模式：使用触摸或游戏板时的滚动指示器；以及用于其他输入设备（包括鼠标、键盘和笔）的交互式滚动条。
+滚动查看器允许内容延伸到视区（可见区域）边界外。 用户可以通过触摸、鼠标滚轮、键盘或游戏板操作滚动查看器图面或者使用鼠标或笔光标操作滚动查看器滚动条查看此内容。 此图显示了滚动查看器控件的几个示例。
 
-![标准滚动栏和平移指示器控件的外观示例](images/SCROLLBAR.png)
+![说明标准滚动条控件的屏幕截图](images/ScrollBar_Standard.jpg)
 
+根据情况，滚动查看器的滚动条使用两种不同的可视化效果，如下图所示：平移指示器（左）和传统滚动条（右）。
+
+![标准滚动条和平移指示器控件的外观示例](images/SCROLLBAR.png)
+
+滚动查看器注意用户输入法，并用它来确定以哪种可视化效果显示。
+
+* 当通过触摸等方式不直接操作滚动条滚动区域时，平移指示器就会出现，显示当前滚动位置。
+* 将鼠标或笔光标移动到平移指示器上方时，它会变为传统滚动条。  拖动滚动条滑块可操作滚动区域。
+
+<!--
 <div class="microsoft-internal-note">
-请参阅[设计仓库](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805)中的完整红线
+See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/0/dv/?t=Windows|Controls|ScrollControls&f=RS2
 </div>
+-->
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li>[**ScrollViewer 类**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
-<li>[**ScrollBar 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
-</ul>
-</div>
+![操作中的滚动条](images/conscious-scroll.gif)
 
+> [!NOTE]
+> 当滚动条可见时，它以 16px 叠加在 ScrollViewer 中内容的上方。 为确保好的 UX 设计，你会希望保证这一叠加不会遮挡任何交互式内容。 此外，如果你不希望有 UX 重叠，可以在视区边缘为滚动条保留 16px 的填充。
 
-## <a name="examples"></a>示例
-
-[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 能让内容按比其实际大小更小的区域显示。 当滚动查看器内容并非完全可见时，它会显示用户可以移动可见内容区域的滚动条。 包括滚动查看器所有内容在内的区域是*范围*。 内容的可见区域是*视口*。
-
-![说明标准滚动栏控件的屏幕截图](images/ScrollBar_Standard.jpg)
 
 ## <a name="create-a-scroll-viewer"></a>创建滚动查看器
 若要向页面添加垂直滚动，请将页面内容打包在滚动查看器中。
@@ -64,6 +72,7 @@ translationtype: HT
     </ScrollViewer>
 </Page>
 ```
+
 此 XAML 显示如何在滚动查看器中放置图像并启用缩放。
 
 ```xaml
@@ -76,15 +85,16 @@ translationtype: HT
 
 ## <a name="scrollviewer-in-a-control-template"></a>控件模板中的 ScrollViewer
 
-ScrollViewer 控件作为其他控件复合部分的形式存在是普遍情况。 仅在主机控件的布局空间限制为比扩展的内容大小更小的时候，ScrollViewer 部件和提供支持的 [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) 类才会显示视口和滚动条。 列表经常会发生此情况，因此 [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 模板始终会包括 ScrollViewer。 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 也在其模板中包括了 ScrollViewer。
+ScrollViewer 控件作为其他控件复合部分的形式存在是普遍情况。 仅在主机控件的布局空间限制为比扩展的内容大小更小的时候，ScrollViewer 部件和提供支持的 [ScrollContentPresenter](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) 类才会显示视口和滚动条。 列表经常会发生此情况，因此 [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 模板始终会包括 ScrollViewer。 [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 和 [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 也在其模板中包括了 ScrollViewer。
 
-当 **ScrollViewer** 部件存在于控件中时，主机控件通常对某些能够使内容滚动的输入事件和操作内置了事件处理。 例如，GridView 解释轻扫手势，而这会使内容水平滚动。 主机控件接收的输入事件和原始操作视作由该控件处理，并且低级别事件（例如 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx)）不会引发，也不会浮升到任何父容器。 你可以更改某些内置控件处理，方法是覆盖控件类和事件的 **On*** 虚拟方法，或重新模板化控件。 但这两种情况要重现原始默认行为都不简单，这种行为通常已存在，以便控件以预期方式对事件以及用户输入操作和手势做出反应。 因此应该考虑是否正需要引发该输入事件。 你可能想调查是否有不受控件处理的其他输入事件或手势，并在应用或控件交互设计中使用它们。
+当 **ScrollViewer** 部件存在于控件中时，主机控件通常对某些能够使内容滚动的输入事件和操作内置了事件处理。 例如，GridView 解释轻扫手势，而这会使内容水平滚动。 主机控件接收的输入事件和原始操作视作由该控件处理，并且低级别事件（例如 [PointerPressed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx)）不会引发，也不会浮升到任何父容器。 你可以更改某些内置控件处理，方法是覆盖控件类和事件的 **On*** 虚拟方法，或重新模板化控件。 但这两种情况要重现原始默认行为都不简单，这种行为通常已存在，以便控件以预期方式对事件以及用户输入操作和手势做出反应。 因此应该考虑是否正需要引发该输入事件。 你可能想调查是否有不受控件处理的其他输入事件或手势，并在应用或控件交互设计中使用它们。
 
 为让包括 ScrollViewer 的控件能够影响 ScrollViewer 部件的某些行为和属性，ScrollViewer 定义了大量能够在样式中设置并在模板绑定中使用的 XAML 附加属性。 有关附加属性的详细信息，请参阅[附加属性概述](../xaml-platform/attached-properties-overview.md)。
 
 **ScrollViewer XAML 附加属性**
 
 ScrollViewer 定义以下 XAML 附加属性：
+
 - [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
 - [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
@@ -103,6 +113,7 @@ ScrollViewer 定义以下 XAML 附加属性：
 这些 XAML 附加属性计划用于 ScrollViewer 处于隐式状态的情况，例如 ScrollViewer 存在于 ListView 或 GridView 的默认模板中，并且你想要在不访问模板部件的情况下影响控件的滚动行为。
 
 例如，下面是如何使 ListView 内置滚动查看器的垂直滚动条始终可见的示例。
+
 ```xaml
 <ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
@@ -123,4 +134,5 @@ ScrollViewer 定义以下 XAML 附加属性：
 ## <a name="related-topics"></a>相关主题
 
 **对于开发人员 (XAML)**
-* [**ScrollViewer 类**](https://msdn.microsoft.com/library/windows/apps/br209527)
+
+* [ScrollViewer 类](https://msdn.microsoft.com/library/windows/apps/br209527)

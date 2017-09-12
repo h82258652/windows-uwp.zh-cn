@@ -4,20 +4,30 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "了解如何使用 AdControl 类在适用于 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight 应用中显示横幅广告。"
 title: "Windows Phone Silverlight 中的 AdControl"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10 , uwp, 广告, AdControl, Silverlight, Windows Phone"
-ms.openlocfilehash: 743b9faccaa120f1904b592fc09a965dc7878e03
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f1582639757abfb6de156bf88ce8af71ba3eaacd
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="adcontrol-in-windows-phone-silverlight"></a>Windows Phone Silverlight 中的 AdControl
 
 本演练介绍了如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 类在适用于 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight 应用中显示横幅广告。
 
-> **Windows Phone Silverlight 8.0 说明**&nbsp;&nbsp;横幅广告仍受使用早期版本的 Universal Ad Client SDK 或 Microsoft Advertising SDK 中的 **AdControl** 并已在应用商店中提供的现有 Windows Phone 8.0 Silverlight 应用支持。 但是，横幅广告在新的 Windows Phone 8.0 Silverlight 项目中不再受支持。 此外，某些调试和测试方案限制在 Windows Phone 8.x Silverlight 项目中。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md#silverlight_support)。
+<span id="silverlight_support"/>
+## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>用于 Windows Phone 8.x Silverlight 项目的广告支持
+
+某些开发人员方案已不再受 Windows Phone 8.x Silverlight 项目支持。 有关详细信息，请参阅下表。
+
+|  平台版本  |  现有项目    |   新建项目  |
+|-----------------|----------------|--------------|
+| Windows Phone 8.0 Silverlight     |  如果现有的 Windows Phone 8.0 Silverlight 项目已在使用之前版本的通用广告客户端 SDK 或 Microsoft Advertising 的 **AdControl** 或 **AdMediatorControl**，并且此应用已在 Windows 应用商店中发布，则可以修改和重建该项目，并且可以在设备上调试或测试更改。 不支持在仿真器中调试或测试项目。  |  不支持。  |
+| Windows Phone 8.1 Silverlight    |  如果现有的 Windows Phone 8.1 Silverlight 项目使用之前 SDK 的 **AdControl** 或 **AdMediatorControl**，则可以修改和重建该项目。 但是，若要调试或测试应用，必须在仿真器中运行该应用，并且将[测试模式值](test-mode-values.md)用于应用程序 ID 和广告单元 ID。 在不受支持的设备上调试或测试应用。  |   可以将 **AdControl** 或 **AdMediatorControl** 添加到新的 Windows Phone 8.1 Silverlight 项目。 但是，若要调试或测试应用，必须在仿真器中运行该应用，并且将[测试模式值](test-mode-values.md)用于应用程序 ID 和广告单元 ID。 在不受支持的设备上调试或测试应用。 |
 
 ## <a name="add-the-advertising-assemblies-to-your-project"></a>将广告程序集添加到你的项目
 
@@ -25,20 +35,18 @@ translationtype: HT
 
 1.  在 Visual Studio 中打开你的项目。
 
-2.  单击“工具”****、指向“NuGet 包管理器”****，然后单击“程序包管理器控制台”****。
+2.  单击**工具**、指向 **NuGet 包管理器**，然后单击**程序包管理器控制台**。
 
-3.  在“程序包管理器控制台”****窗口中，输入以下命令之一。
+3.  在**程序包管理器控制台**窗口中，输入以下命令之一。
 
   * 如果你的项目面向 Windows Phone 8.0，请输入此命令。
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
   * 如果你的项目面向 Windows Phone 8.1，请输入此命令。
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
       ```
@@ -48,18 +56,16 @@ translationtype: HT
 ## <a name="code-your-app"></a>对你的应用进行编码
 
 
-1.  将以下功能添加到 WMAppManifest.xml 文件中的“功能”****节点。
+1.  将以下功能添加到 WMAppManifest.xml 文件中的**功能**节点。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capability Name="ID_CAP_IDENTITY_USER"/>
   <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
   <Capability Name="ID_CAP_PHONEDIALER"/>
   ```
 
-  在此示例中，你的“功能”****节点如下所示：
+  在此示例中，你的**功能**节点如下所示：
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
@@ -73,37 +79,34 @@ translationtype: HT
   </Capabilities>
   ```
 
-2.  （可选）保存你的项目。 单击“全部保存”****图标，或者在“文件”****菜单下，单击“全部保存”****。
+2.  （可选）保存你的项目。 单击**全部保存**图标，或者在**文件**菜单下，单击**全部保存**。
 
-3.  将“Internet (客户端和服务器)”****功能添加到项目中的 Package.appxmanifest 文件。 在“解决方案资源管理器”****中，双击“Package.appxmanifest”****。
+3.  将 **Internet (客户端和服务器)**功能添加到项目中的 Package.appxmanifest 文件。 在**解决方案资源管理器**中，双击 **Package.appxmanifest**。
 
     ![wp81silverlightmarkup\-solutionexplorer\-packageappxmanifest](images/13-b98c2a1a-69c3-4018-be0a-6ce010e703e7.jpg)
 
-    在“编辑器”****中，打开“功能”****选项卡。 选中“Internet (客户端和服务器)”****框。
+    在**编辑器**中，打开**功能**选项卡。 选中 **Internet (客户端和服务器)**框。
 
-4.  （可选）保存你的项目。 单击“全部保存”****图标，或者在“文件”****菜单下，单击“全部保存”****。
+4.  （可选）保存你的项目。 单击**全部保存**图标，或者在**文件**菜单下，单击**全部保存**。
 
 5.  修改 MainPage.xaml 文件中的 Silverlight 标记，以包含 **Microsoft.Advertising.Mobile.UI** 命名空间。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
   ```
 
   你的页面标头将具有以下代码：
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
   x:Class="PhoneApp1.MainPage"
   ```
 
-6.  在“网格”****标记中，为 **AdControl** 添加以下代码。 将 **ApplicationId** 和 **AdUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整 **Height** 和 **Width** 属性以适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)之一。
+6.  在**网格**标记中，为 **AdControl** 添加以下代码。 将 **ApplicationId** 和 **AdUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整 **Height** 和 **Width** 属性以适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)之一。
 
   > **注意**&nbsp;&nbsp;在提交应用之前，你需要将这些测试 **ApplicationId** 和 **AdUnitId** 值替换为实时值。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   <Grid x:Name="ContentPanel" Grid.Row="1">
       <UI:AdControl
@@ -122,7 +125,7 @@ translationtype: HT
 
 ## <a name="release-your-app-with-live-ads-using-dev-center"></a>使用开发人员中心发布带有实时广告的应用
 
-1.  在开发人员中心仪表板中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
+1.  在开发人员中心仪表板中，转到应用的**盈利**&gt;**通过广告盈利**页面，然后[创建独立的广告单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
 
 2.  在你的代码中，将测试广告单元值（**applicationId** 和 **adUnitId**）替换为你在开发人员中心生成的实时值。
 

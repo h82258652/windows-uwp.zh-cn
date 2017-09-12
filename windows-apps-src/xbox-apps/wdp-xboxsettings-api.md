@@ -1,5 +1,5 @@
 ---
-author: payzer
+author: m-stahl
 title: "Device Portal Xbox 开发人员设置 API 参考"
 description: "了解如何访问 Xbox 开发人员设置。"
 ms.author: wdg-dev-content
@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-ms.openlocfilehash: 43e4bb289d12439bbc0f6de347d187b067288d51
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: dfde4c45a4aa5a520e0aa98cd7f31f7d84854e08
+ms.sourcegitcommit: 0e44f197e7e649d542ec3f67cd790a61dbe1226f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/07/2017
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
@@ -39,12 +41,20 @@ GET | /ext/settings
 - 无
 
 **响应**   
-该响应是一个设置 JSON 数组，包含所有设置。 每个设置对象都包含以下字段：   
+该响应是一个设置 JSON 数组，包含所有设置。 每个设置对象都包含以下字段：
 
-Name -（字符串）设置的名称。   
-Value -（字符串）设置的值。   
+Name -（字符串）设置的名称。
+Value -（字符串）设置的值。
 RequiresReboot -（“Yes”|“No”）此字段指示该设置是否需要重新启动才能生效。
-Category -（字符串）设置的类别
+Disabled - ("Yes" | "No") 此字段指示设置是否已禁用且无法进行编辑。
+Category -（字符串）设置的类别。
+Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
+
+如果设置为数字：Min - (Number) 此字段表示设置的最小数值。
+Max - (Number) 此字段指示设置的最大数值。
+
+如果已选择设置：OptionsVariable - ("Yes" | "No") 此字段指示设置选项是否可变，或者说，是否可以在不重启的情况下更改有效选项。
+选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
 
@@ -80,12 +90,20 @@ GET | /ext/settings/\&lt;setting name\&gt;
 - 无
 
 **响应**   
-该响应是一个具有以下字段的 JSON 对象：   
+该响应是一个具有以下字段的 JSON 对象：
 
-Name -（字符串）设置的名称。   
-Value -（字符串）设置的值。   
+Name -（字符串）设置的名称。
+Value -（字符串）设置的值。
 RequiresReboot -（“Yes”|“No”）此字段指示该设置是否需要重新启动才能生效。
-Category -（字符串）设置的类别
+Disabled - ("Yes" | "No") 此字段指示设置是否已禁用且无法进行编辑。
+Category -（字符串）设置的类别。
+Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
+
+如果设置为数字：Min - (Number) 此字段表示设置的最小数值。
+Max - (Number) 此字段指示设置的最大数值。
+
+如果已选择设置：OptionsVariable - ("Yes" | "No") 此字段指示设置选项是否可变，或者说，是否可以在不重启的情况下更改有效选项。
+选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
 
@@ -138,4 +156,3 @@ HTTP 状态代码      | 说明
 **可用设备系列**
 
 * Windows Xbox
-
