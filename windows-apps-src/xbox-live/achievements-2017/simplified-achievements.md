@@ -8,68 +8,67 @@ ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox live, xbox, 游戏, uwp, windows 10, xbox one"
-ms.openlocfilehash: c9a309ff6341711bfdd62fa6641bc239eeefd651
-ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: dca2603dacd827127cb4bba7f485d277ea682560
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
-Achievements 2017 系统支持游戏开发人员使用直接调用模型来解锁 Xbox One、Windows 10、Windows 10 Phone、Android 和 iOS 上的新 Xbox Live 游戏成就。
+The Achievements 2017 system enables game developers to use a direct calling model to unlock achievements for new Xbox Live games on Xbox One, Windows 10, Windows 10 Phone, Android, and iOS.
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>Introduction
 
-在 Xbox One 上，我们引入了基于云的新成就系统，它使游戏开发人员只需发送游戏内遥测事件即可驱动其 Xbox Live 功能数据，如用户统计数据、成就、完整状态和多人游戏。 这带来了大量新的好处 – 通过单个事件即可更新多个 Xbox Live 功能的数据；Xbox Live 配置依赖于服务器而不是客户端，等等。
+With Xbox One, we introduced a new Cloud-Powered Achievements system that empowers game developers to drive the data for their Xbox Live capabilities, such as user stats, achievements, rich presence, and multiplayer, by simply sending in-game telemetry events. This has opened up a multitude of new benefits – a single event can update data for multiple Xbox Live features; Xbox Live configuration lives on the server instead of in the client; and much more.
 
-自 Xbox One 发布以来，我们密切听取了游戏开发人员的反馈，开发人员一致反应以下情况：
+In the years following the Xbox One launch, we have listened closely to game developer feedback, and developers have consistently shared the following:
 
-1.  **希望能够通过直接调用模式解锁成就。** 许多开发人员在不同的平台上构建游戏，包括以前版本的 Xbox，这些平台上的成就类系统使用的是直接调用方法。 在 Xbox One 和其他最新一代 Xbox 平台上支持直接解锁调用可以缓解跨平台游戏开发需求并降低开发时间成本。
+1.  **Desire to unlock achievements via a direct calling pattern.** Many developers build games for various platforms, including previous versions of Xbox, and the achievement-like systems on those platforms use a direct calling method. Supporting direct unlock calls on Xbox One and other current-gen Xbox platforms would ease their cross-platform game development needs and development time costs.
 
-2.  **最小化配置复杂性。** 在支持云的成就系统上，必须在 Xbox Live 中配置成就的解锁逻辑，使服务知道如何解释游戏的统计数据以及何时为用户解锁成就。 这通过成就配置中的成就规则部分（先前没有）完成。 尽管在云中拥有解锁逻辑非常强大，但这一额外配置要求为游戏成就的设计和开发增加了复杂性。
+2.  **Minimize configuration complexity.** With the Cloud-Powered Achievements system, an achievement’s unlock logic must be configured in Xbox Live so that the services know how to interpret the title’s stats data and when to unlock the achievement for a user. This was done via a new Achievement Rules section of an achievement’s configuration that did not previously exist. While having unlock logic in the cloud can be quite powerful, this additional configuration requirement adds complexity into the design & creation of a title’s achievements.
 
-3.  **难以进行疑难解答。** 尽管支持云的成就系统进入了许多有用功能，但游戏开发人员也难以验证和解决与成就相关的问题，因为成就解锁是由服务上的规则间接触发，而不是由游戏本身直接控制。
+3.  **Difficult to troubleshoot.** While the Cloud-Powered Achievements system introduces a variety of helpful capabilities, it can also be more difficult for game developers to validate and troubleshoot issues with their achievements since achievement unlocks are triggered indirectly by rules that live on the service rather than directly controlled by the game itself.
 
-值得注意的是，游戏开发人员也多次反应了他们欣赏和喜欢支持云的成就系统所带来的以下功能：
+It is worth noting that game developers have also repeatedly shared feedback that they appreciate and value certain features that were introduced along with the Cloud-Powered Achievements system:
 
-1.  新的用户体验功能，如成就进度、实时更新、概念艺术作品奖励以及将解锁插入活动源中。
+1.  New user experience features such as achievement progression, real-time updates, concept art rewards, and posting unlocks into activity feed.
 
-2.  配置改进，例如服务配置而不是必须包括在游戏包中的本地配置（即 gameconfig、XLAST、SPA 等），以及在游戏发行后可以轻松编辑成就字符串和图像的功能。
+2.  Configuration improvements such as a service config instead of a local config that must be included in the game package (i.e. gameconfig, XLAST, SPA, etc.) and the ability to easily edit achievement strings & images after the game has shipped.
 
-在 Achievements 2017 中，我们开发了现有支持云的成就系统的替代系统，供未来的游戏使用，这使得 Xbox 游戏开发人员可以更轻松地配置成就、将成就解锁和更新集成到游戏代码中以及验证成就是否按照预期工作。
+With Achievements 2017, we are building a replacement of the existing Cloud-Powered Achievements system for future titles to use that makes it even easier for Xbox game developers to configure achievements, integrate achievement unlocks & updates into the game code, and validate that the achievements are working as expected.
 
-## <a name="whats-different-with-achievements-2017"></a>与 Achievements 2017 的不同之处
+## <a name="whats-different-with-achievements-2017"></a>What’s Different with Achievements 2017
 
-|                          | Achievements 2017 系统        | 支持云的成就系统      |
+|                          | Achievements 2017 system        | Cloud-Powered Achievements system      |
 |--------------------------|---------------------------------------|----------------------------------------|
-| 解锁触发           | 通过 API 调用直接触发                 | 通过遥测事件间接触发        |
-| 解锁所有者             | 游戏                                 | Xbox Live                              |
-| 配置            | 字符串、图像、奖励              | 字符串、图像、奖励、解锁规则 \[+ 统计数据，+ 事件\]                    |
-| 进度              | 受支持 <br>*通过 API 调用直接支持*                | 受支持 <br> *通过遥测事件间接支持*       |
-| 实时活动 (RTA) | 受支持                             | 受支持                              |
-| 挑战               | 不支持   | 受支持                      |
-| 测试 API             | 受支持                             | 不支持                          |
+| Unlock Trigger           | Directly via API call                 | Indirectly via telemetry events        |
+| Unlock Owner             | Title                                 | Xbox Live                              |
+| Configuration            | Strings, images, rewards              | Strings, images, rewards, unlock rules  \[+ stats, +events\]                    |
+| Progression              | Supported <br>*directly via API call*                | Supported <br> *indirectly via telemetry events*       |
+| Real-Time Activity (RTA) | Supported                             | Supported                              |
+| Challenges               | Not Supported   | Supported                      |
 
 ## <a name="title-requirements"></a>游戏要求
 
-以下是对使用 Achievements 2017 系统的任何游戏的要求。
+The following are the requirements of any title that will use the Achievements 2017 system.
 
-1.  **必须为新（未发布的）游戏。** 已发布并且使用支持云的成就系统的游戏不符合条件。 有关详细信息，请参阅[为什么不能将现有游戏“迁移”至新的 Achievements 2017 系统？](#_Why_can’t_existing)
+1.  **Must be a new (unreleased) title.** Titles that have already been released and are using the Cloud-Powered Achievements system are ineligible. For more, see [Why can’t existing titles “migrate” onto the new Achievements 2017 system?](#_Why_can’t_existing)
 
-2.  **必须使用 2016 年 8 月的 XDK 或更高版本。** 简化的成就 API 已在 2016 年 8 月的 XDK 中发布。
+2.  **必须使用 2016 年 8 月的 XDK 或更高版本。** Update_Achievement API 已在 2016 年 8 月的 XDK 中发布。
 
 3.  **必须为 XDK 或 UWP 游戏。** Achievements 2017 系统不可用于传统平台，包括 Xbox 360、Windows 8.x 或更早版本或者 Windows Phone 8 或更早版本。
 
-## <a name="updateachievement-api"></a>UpdateAchievement API
+## <a name="updateachievement-api"></a>Update_Achievement API
 
-通过 [XDP](achievements-in-xdp.md) 或 [UDC](achievements-in-udc.md) 配置完成就并将其发布到开发沙盒后，你的游戏即可通过调用 UpdateAchievement API 解锁成就。
+通过 [XDP](achievements-in-xdp.md) 或 [UDC](achievements-in-udc.md) 配置完成就并将其发布到开发沙盒后，你的游戏即可通过调用 Update_Achievement API 解锁成就。
 
 此 API 在 XDK 和 Xbox Live SDK 中均有提供。
 
-### <a name="api-signature"></a>API 签名
+### <a name="api-signature"></a>API Signature
 
-API 签名如下所示：
+The API signature is as follows:
 
 ```c++
 /// <summary>
@@ -97,89 +96,67 @@ API 签名如下所示：
         );
 ```
 
-`xbox::services::xbox_live_result<T>` 为所有 C++ Xbox Live 服务 API 调用的返回调用。
+`xbox::services::xbox_live_result<T>` is the return call for all C++ Xbox Live Services API calls.
 
-有关详细信息，请参阅 Xfest 2015 访谈，“XSAPI：C++，无异常！”<br>
+For more information, check out the Xfest 2015 talk, “XSAPI: C++, No Exceptions!”<br>
 [视频](http://go.microsoft.com/?linkid=9888207) |  [幻灯片](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
 
-### <a name="unlocking-via-updateachievement-api"></a>通过 UpdateAchievement API 解锁
+### <a name="unlocking-via-updateachievement-api"></a>通过 Update_Achievement API 解锁
 
 若要解锁成就，请将 *percentComplete* 设为 100。
 
-如果用户处于联机状态，则请求将会立即发送至 Xbox Live 成就服务并触发以下用户体验：
+If the user is online, the request will be immediately sent to the Xbox Live Achievements service and will trigger the following user experiences:
 
--   用户将会收到一则成就解锁通知；
+-   The user will receive an Achievement Unlocked notification;
 
--   指定的成就将在用户的游戏成就列表中显示为已解锁；
+-   The specified achievement will appear as Unlocked in the user’s achievement list for the title;
 
--   解锁的成就将添加到用户的活动源中。
+-   The unlocked achievement will be added to the user’s activity feed.
 
-> *注意：使用 Achievements 2017 系统和使用支持云的成就系统的用户体验没有明显差别。*
+> *Note: There will be no visible difference in user experiences for achievements that use the Achievements 2017 system and the Cloud-Powered Achievements.*
 
-如果用户处于脱机状态，则解锁请求将在用户设备上进行本地排队。 在用户设备重新建立网络连接后，请求将会自动发送至成就服务 – 注意：游戏无需任何操作即可触发此事件 – 并且将会按照所述发生以上用户体验。
+If the user is offline, the unlock request will be queued locally on the user’s device. When the user’s device has reestablished network connectivity, the request will automatically be sent to the Achievements service – note: no action is required from the game to trigger this – and the above user experiences will occur as described.
 
-### <a name="updating-completion-progress-via-updateachievement-api"></a>通过 UpdateAchievement API 更新完成进度
+### <a name="updating-completion-progress-via-updateachievement-api"></a>通过 Update_Achievement API 更新完成进度
 
 若要更新用户距离解锁成就的进度，请将 *percentComplete* 设为 1-100 之间的相应整数。
 
-成就进度只能增加。 如果将 *percentComplete* 设为小于成就的最后 *percentComplete* 值的数字，则更新将被忽略。 例如，如果先前已将成就的 *percentComplete* 设为 75，则发送值为 25 的更新将被忽略并且成就仍将显示为 75% 完整。
+An achievement’s progress can only increase. If *percentComplete* is set to a number less than the achievement’s last *percentComplete* value, the update will be ignored. For example, if the achievement’s *percentComplete* had previously been set to 75, sending an update with a value of 25 will be ignored and the achievement will still be displayed as 75% complete.
 
-如果将 *percentComplete* 设为 100，则成就将解锁。
+If *percentComplete* is set to 100, the achievement will unlock.
 
 如果将 *percentComplete* 设为大于 100 的数字，则 API 将按照设为 100 一样运行。
 
-## <a name="testing-achievements"></a>测试成就
-
-在开发过程中验证成就时，我们通常会听到开发人员谈论两大任务：
-
-1.  我想要为测试用户重置成就。
-
-2.  我想要为测试用户添加已解锁的成就（和玩家分数）。
-
-在 Achievements 2017 系统中，我们构建了支持这两种情形并且允许游戏开发人员在其开发沙盒中更轻松地测试游戏成就的 API。
-
-*详细信息即将推出！*
-
 ## <a name="frequently-asked-questions"></a>常见问题
 
-### <a name="span-idwhyarechallenges-classanchorspancan-i-ship-my-title-using-the-achievements-2017-system-before-the-mandatory-date"></a><span id="_Why_are_Challenges" class="anchor"></span>是否可以在强制日期之前使用 Achievements 2017 系统交付游戏？
+### <a name="span-idwhyarechallenges-classanchorspancan-i-ship-my-title-using-the-achievements-2017-system-yet"></a><span id="_Why_are_Challenges" class="anchor"></span>我还可以使用 Achievements 2017 系统交付游戏吗？
 
-没问题！ 在第一个批准日期开始时，欢迎并鼓励所有新游戏使用 Achievements 2017 系统来代替支持云的成就系统。
+没问题！ 欢迎并鼓励所有新游戏使用 Achievements 2017 系统来代替支持云的成就系统。
 
 ### <a name="why-are-challenges-not-supported-in-the-achievements-2017-system"></a>为什么在 Achievements 2017 系统中不支持挑战？
 
-Xbox 游戏中的使用数据已显示当前的挑战实施和演示不符合大部分游戏开发人员的需求。 我们将继续收集开发人员在此空间的输入和反馈，并尝试在未来提供更符合开发人员需求的功能。 新发布的 Xbox Arena 是一项示例功能，用于以全新、简单的方向为 Xbox 游戏引入一些具有竞争力的新功能。
+Usage data across Xbox games has shown that the current implementation and presentation of challenges does not fulfill a need for most game developers. We will continue gathering developer input and feedback in this space and endeavor to deliver future features that are more on point with developer needs. The newly released Xbox Arena is an example of a feature that introduces new competitive capabilities for Xbox games a new, but similar, direction.
 
-### <a name="can-i-still-add-new-achievements-every-calendar-quarter-if-my-title-is-using-the-achievements-2017-system"></a>如果我的游戏使用的是 Achievements 2017 系统，那么我是否仍然可以在每个日历季度添加新的成就？
+### <a name="can-i-still-add-new-achievements-every-calendar-quarter-if-my-title-is-using-the-achievements-2017-system"></a>Can I still add new achievements every calendar quarter if my title is using the Achievements 2017 system?
 
-可以。 成就策略并未改变。
+Yes. The Achievements policy is unchanged.
 
-### <a name="span-idwhycantexisting-classanchorspanwhy-cant-existing-titles-migrate-onto-the-new-achievements-2017-system"></a><span id="_Why_can’t_existing" class="anchor"></span>为什么不能将现有游戏“迁移”至新的 Achievements 2017 系统？
+### <a name="span-idwhycantexisting-classanchorspanwhy-cant-existing-titles-migrate-onto-the-new-achievements-2017-system"></a><span id="_Why_can’t_existing" class="anchor"></span>Why can’t existing titles “migrate” onto the new Achievements 2017 system?
 
-对于绝大多数现有游戏，“迁移”至 Achievements 2017 系统并不限于简单地更新其服务配置并将每次写入操作交换为成就解锁调用，但这些更改非常昂贵并且将会带来重大错误风险和异常行为，可能为成就带来无法修复的破坏。 更确切地说，大部分现有游戏也让用户拥有现有数据。 尝试转换已使用支持云的成就系统的实时游戏不仅对于开发人员和 Xbox 来说代价昂贵，而且还会严重危及现有用户的个人资料和/或游戏体验。
+For the vast majority of existing titles, a ‘migration’ to the Achievements 2017 system would not be limited to simply updating their service configurations and swapping out event writes for achievement unlock calls – although these changes alone would be very costly and would carry significant risk of error and unintended behavior that could result in the achievements being irreparably broken. Rather, most existing titles also have users with existing data. Attempting to convert a live game that is already using the Cloud-Powered Achievements system would not only be a very costly effort, for both the developer and Xbox, but would significantly jeopardize existing users’ profiles and/or game experiences.
 
-### <a name="if-my-title-was-released-using-the-cloud-powered-achievements-system-can-any-future-dlc-for-the-title-switch-to-achievements-2017"></a>如果发布的游戏使用的是支持云的成就系统，该游戏的任何未来 DLC 是否能够切换至 Achievements 2017？
+### <a name="if-my-title-was-released-using-the-cloud-powered-achievements-system-can-any-future-dlc-for-the-title-switch-to-achievements-2017"></a>If my title was released using the Cloud-Powered Achievements system, can any future DLC for the title switch to Achievements 2017?
 
-游戏的所有成就必须使用相同的成就系统。 基本游戏成就使用的成就系统即为该游戏的所有未来成就必须使用的系统。
+All achievements for a title must use the same Achievements system. Whichever Achievements system is used by the base game’s achievements is the system that must be used for all future achievements for the title.
 
-### <a name="while-testing-achievements-in-my-dev-sandbox-can-i-mix-and-match-between-using-the-achievements-2017-system-and-the-cloud-powered-achievements-system"></a>在我的开发人员沙盒中测试成就时，是否可以混合搭配使用 Achievements 2017 系统和支持云的成就系统？
+### <a name="while-testing-achievements-in-my-dev-sandbox-can-i-mix-and-match-between-using-the-achievements-2017-system-and-the-cloud-powered-achievements-system"></a>While testing achievements in my dev sandbox, can I mix-and-match between using the Achievements 2017 system and the Cloud-Powered Achievements system?
 
-不可以。 游戏的所有成就必须使用相同的成就系统。
-
-### <a name="if-i-want-to-try-out-each-achievements-system-after-the-first-approved-date-can-i-use-different-achievements-systems-between-different-dev-sandboxes"></a>如果我想要在第一个批准日期之后尝试每个成就系统，我能否在不同的开发人员沙盒之间使用不同的成就系统？
-
-游戏使用的成就系统在产品级别进行设置。 如果你的游戏服务配置尚未发布到“零售”，则你可以在开发人员沙盒中尝试每个成就系统。 有关详细信息，请参阅[启用 Achievements 2017 (XDP)](#_Enable_Simplified_Achievements)。 请注意，更改成就系统将导致删除所有沙盒中已配置和发布的所有游戏成就。
+No. 游戏的所有成就必须使用相同的成就系统。
 
 ### <a name="does-achievements-2017-also-include-offline-unlocks"></a>Achievements 2017 是否也包括脱机解锁？
 
-如果游戏在设备处于脱机状态时解锁成就，则 UpdateAchievement API 会将脱机解锁请求自动排队并在设备重新建立网络连接时自动同步至 Xbox Live，类似于当前支持云的成就系统的脱机体验。 用户处于脱机状态时不会发生成就解锁。
+如果游戏在设备处于脱机状态时解锁成就，则 Update_Achievement API 会将脱机解锁请求自动排队并在设备重新建立网络连接时自动同步至 Xbox Live，类似于当前支持云的成就系统的脱机体验。 用户处于脱机状态时不会发生成就解锁。
 
-### <a name="i-see-a-new-achievementupdate-event-in-xdp-if-my-title-uses-that-event-does-that-mean-it-has-achievements-2017"></a>我在 XDP 中看到新的“AchievementUpdate”事件。 如果我的游戏使用此事件，这是否意味着它采用了 Achievements 2017？
+### <a name="i-see-a-new-achievementupdate-event-in-xdp-if-my-title-uses-that-event-does-that-mean-it-has-achievements-2017"></a>I see a new “AchievementUpdate” event in XDP. If my title uses that event, does that mean it has Achievements 2017?
 
-出于后端目的，Xbox Live 需要使用 *AchievementUpdate* 基本事件。 你可以安全地忽略它。 如果你的游戏使用此基本事件类型配置事件，则 Xbox Live 将会忽略这些事件写入操作。 在支持云的成就系统上构建的游戏应该会继续使用其他基本事件类型配置其事件。 在 Achievements 2017 系统上构建的游戏无需为成就配置*任何*事件。
-
-### <a name="how-do-i-disable-achievements-2017-for-my-title"></a>如何为我的游戏禁用 Achievements 2017？
-
-如果你的游戏已设置为使用 Achievements 2017 系统但你想要改用支持云的成就系统，请遵循[启用 Achievements 2017 (XDP)](#_Enable_Simplified_Achievements) 中的说明，*除了*将**成就配置系统**切换按钮设置为 *Achievements 2013*。
-
-如果你的游戏是在强制日期之后创建，则无法为你的游戏禁用 Achievements 2017 系统。
+The *AchievementUpdate* base event is required by Xbox Live for backend purposes. You can safely ignore it. If your title configures an event using this base event type, those event writes will be ignored by Xbox Live. Titles that are built on the Cloud-Powered Achievements system should continue to configure their events by using the other base event types. 在 Achievements 2017 系统上构建的游戏无需为成就配置*任何*事件。

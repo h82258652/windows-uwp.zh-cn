@@ -1,44 +1,38 @@
 ---
-title: "成就"
+title: Achievements
 author: KevinAsgari
-description: "成就"
+description: Achievements
 ms.assetid: 35e055c2-3c84-4d73-bb86-fc776327d901
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one"
-ms.openlocfilehash: b8ebae9c12723f9fedc054f6f1d8be7f18aeadf1
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: 3e1e91bd6bdb4740af71b403a4db9fe931cab319
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/12/2017
 ---
-# <a name="achievements"></a>成就
+# <a name="achievements"></a>Achievements
 
-2005 年，Xbox LIVE 将成就概念引入游戏行业，这是一种系统范围机制，用于在所有游戏中以一致的方式引导和奖励用户的游戏内行为。
+In 2005, Xbox LIVE introduced the gaming industry to the notion of an achievement, a system-wide mechanism for directing and rewarding users' in-game actions in a consistent manner across all games.
 
-借助 Xbox One，成就系统进行了扩展，以吸引更广泛活动、设备和方案中的用户。 现在，成就比以往更包罗万象、更友善且更具吸引力！ 开发人员和发布者可以在 Xbox LIVE 上为每种类型的活动（游戏、视频、音乐或社交）创建成就以及超出玩家分数的新成就类型和奖励。 但是，玩家分数仍是一种重要的奖励，因此，即便没有发布新的内容，开发人员现在也可以在游戏的整个生命周期内添加更多成就和玩家分数。 Xbox One 上的成就已经过全面重新设计，为游戏提供服务实时灵活性，从而支持游戏即服务。
+With Xbox One, the achievement system expands to engage users across a broader range of activities, devices, and scenarios. Achievements are now more inclusive, more social, and more engaging than ever before! 开发人员和发布者可以创建新的成就类型以及玩家分数范畴之外的奖励。 Gamerscore is still a key reward, however, so developers can now add more achievements and gamerscore over the lifetime of the title, even without a new content release. Xbox One 上的成就经过全面重新设计，能够让游戏实现如服务般的灵活性。
 
-## <a name="feature-summary"></a>功能摘要 ##
-此列表提供了与 Xbox One 上的成就系统相关的主要功能和组件的概述。
+## <a name="feature-summary"></a>Feature Summary ##
+This list provides a summary of the key features and components that contribute to the achievement system on Xbox One.
 
-功能 | 描述
+Feature | Description
 --- | ---
-永久性成就（成就） | 此类成就存在于应用程序的整个生命周期中。 用户可以随时解锁它们。 永久性成就的所需活动必须始终对用户可用才能完成，并且其奖励必须始终可赢取。
-挑战性成就（成就） | 此类成就仅在有限时间内可用。 发布者决定可以在该时间段内解锁挑战性成就的日期，用户必须在预定义的时间范围内进行解锁才能收到识别及其奖励。
-由云支持 | 游戏不再直接调用解锁成就；相反，成就服务将基于通过 XDP 配置的预定义规则和通过数据平台发送的状态触发解锁。 现在，跟踪用于游戏或商业智能的相同数据还可用于确定何时解锁成就。
-启动后成就 | 在游戏启动后添加成就，无需任何其他代码。
-成就进度 | 现在，用户甚至可以通过仪表板看到他们距离解锁成就还剩多远，给他们更多启动游戏的理由。
-解锁切实奖励 | 除了玩家分数（仍是 Xbox 游戏体验的重要部分）外，Xbox One 用户现在还可以解锁与游戏相关的特殊奖励，如数字插图、新地图、可解锁的字符和通过 Xbox LIVE 成就提供的临时状态宝物。 这不限于游戏！ 其他的 Xbox One 应用程序（如视频和音乐应用）现在可通过成就为你带来先睹为快的内容、提前访问权限或订阅延期。 请注意，只有游戏为你提供玩家分数。
+Persistent Achievements (achievements) | 此类成就存在于游戏的整个生命周期中。 Users may unlock them at any time. A persistent achievement’s required activity must always be available for users to complete and its reward must always be earnable.
+Challenge Achievements (challenges) | This type of achievement is only available for a limited time. The publisher determines the dates during which a challenge achievement is available to unlock, and users must unlock it within that predefined timeframe to receive the recognition and its reward.
+启动后成就 | Add achievements after title launch with no additional code required.
+Achievement Progression | Now users can see how far along they are toward unlocking the achievement, even from the dashboard, giving them more reasons to fire up your title.
+解锁切实奖励 | 除了玩家分数（是 Xbox 游戏体验的重要部分）外，Xbox One 用户还可以解锁与游戏相关的特殊奖励，如数字插图、新地图、可解锁的字符和通过 Xbox Live 成就提供的临时状态宝物。
 成就活动源 | 用户可以轻松发现好友中近期最为热门的成就以及可赢取的奖励。
-面向所有应用的成就 | 每个 Xbox LIVE 游戏、应用程序和中心现在均具有成就，以便为体验增加额外的交互性和乐趣。
 一个玩家分数 | 用户在传统平台或现代平台上赢取的任何玩家分数均将计入单个玩家分数中。
-跨游戏挑战 | 发布者可以创建跨多个游戏的挑战。 例如，游戏开发人员可以设计“在游戏 1 或游戏 2 中杀敌 100 个”。
 
-## <a name="making-achievements-work-well-with-the-achievements-snap"></a>让成就与成就贴靠良好协作 ##
-尝试让你的游戏成就与 Xbox One 的成就贴靠（成就应用的贴靠视图）协同工作时，需要记住两个主要指导原则：
-
-1. 当成就逐渐递增（与“二进制”增量不同，如锁定/解锁）时，它们将整齐地显示并按进度排序。
-2. 对玩家来说，比起将具体状态绑定至一个大更新（如在游戏结束后），更新成就所处的实时状态通产更加有趣。 即便游戏成就是基于进度，也是如此。
+## <a name="making-achievements-work-well-with-the-guide-ui"></a>实现成就与指南 UI 的完美配合 ##
+Xbox One 主机上的指南 UI 突出显示用户的实时成就活动。 若要充分利用这一内置功能，你的游戏应该及时更新用户解锁成就的进度。 借助游戏的成就进度跟踪特性，用户能够更加详细并实用地了解距离解锁每个游戏成就的当前进度。 此外，指南 UI 还会按进度百分比自动为游戏成就排序，让用户可以更轻松地找出有可能快速突破下一个游戏会话的成就。

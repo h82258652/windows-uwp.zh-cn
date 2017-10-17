@@ -1,29 +1,31 @@
 ---
-title: "多人游戏操作指南"
+title: Multiplayer how-tos
 author: KevinAsgari
-description: "介绍如何在 Xbox Live 多人游戏 2015 中实现常见任务。"
+description: Describes how to implement common tasks in Xbox Live Multiplayer 2015.
 ms.assetid: 99c5b7c4-018c-4f7a-b2c9-0deed0e34097
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 08-29-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015"
-ms.openlocfilehash: 88502ba729ba5c11f70bcad41e89da77cfceb54d
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer 2015
+ms.openlocfilehash: 932a61bbdf3dc6e1bd3584f1487fd8341b98df20
+ms.sourcegitcommit: bf5cbc3c1fda6ba2dab2a198ede7b9b1b54583e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/11/2017
 ---
-# <a name="multiplayer-how-tos"></a>多人游戏操作指南
+# <a name="multiplayer-how-tos"></a>Multiplayer how-to's
 
-本文包含以下部分
+本主题包含有关如何实现与使用多人游戏 2015 相关的特定任务的信息。
+
 * 订阅 MPSD 会话更改通知
 * 创建 MPSD 会话
 * 为 MPSD 会话设置仲裁程序
-* 管理游戏激活
+* Manage Title Activation
 * 让用户可加入
 * 发送游戏邀请
+* 从大厅会话加入游戏会话
 * 从游戏激活加入 MPSD 会话
 * 设置用户的当前活动
 * 更新 MPSD 会话
@@ -36,19 +38,19 @@ ms.lasthandoff: 07/06/2017
 
 | 注意                                                                                                                                                                                                                                                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 订阅会话更改需要关联的玩家在会话中处于活动状态。 此外，connectionRequiredForActiveMembers 字段还必须在会话的 /constants/system/capabilities 对象中设置为 true。 此字段通常在会话模板中设置。 请参阅 [MPSD 会话模板](multiplayer-session-directory.md)。 |
+| Subscribing for changes to a session requires the associated player to be active in the session. The connectionRequiredForActiveMembers field must also be set to true in the /constants/system/capabilities object for the session. This field is usually set in the session template. See [MPSD Session Templates](multiplayer-session-directory.md). |
 
 
 
-若要接收 MPSD 会话更改通知，游戏可以按照以下过程进行操作。
+To receive MPSD session change notifications, the title can follow the procedure below.
 
-1.  为同一个用户的所有调用使用相同的 **XboxLiveContext 类**对象。 将订阅绑定到这个对象的生存期。 如果有多个本地用户，请为每个用户使用一个单独的 **XboxLiveContext** 对象。
-2.  为 **RealTimeActivityService.MultiplayerSessionChanged 事件**和 **RealTimeActivityService.MultiplayerSubscriptionsLost 事件**实现事件处理程序。
-3.  如果为多个用户订阅更改，请将代码添加到你的 **MultiplayerSessionChanged** 事件处理程序以避免不必要的工作。 使用 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch 属性**和 **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**。 使用这些属性可以跟踪看到的最新更改并忽略较旧的更改。
-4.  调用 **RealTimeActivityService.EnableMultiplayerSubscriptions 方法**以允许订阅。
-5.  创建本地会话对象，并以活动状态加入该会话。
-6.  为每个用户调用 **MultiplayerSession.SetSessionChangeSubscription 方法**，传递要接收通知的会话更改类型。
-7.  现在将会话写入 MPSD，如**操作方法：更新多人游戏会话**中所述。
+1.  Use the same **XboxLiveContext Class** object for all calls by the same user. Subscriptions are tied to the lifetime of this object. If there are multiple local users, use a separate **XboxLiveContext** object for each user.
+2.  Implement event handlers for the **RealTimeActivityService.MultiplayerSessionChanged Event** and the **RealTimeActivityService.MultiplayerSubscriptionsLost Event**.
+3.  If subscribing to changes for more than one user, add code to your **MultiplayerSessionChanged** event handler to avoid unnecessary work. Use the **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** and the **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**. Use of these properties allows tracking of the last change seen and ignoring of older changes.
+4.  Call the **RealTimeActivityService.EnableMultiplayerSubscriptions Method** to allow subscriptions.
+5.  Create a local session object and join that session as active.
+6.  Make calls for each user to the **MultiplayerSession.SetSessionChangeSubscription Method**, passing the session change type for which to be notified.
+7.  Now write the session to MPSD as described in **How to: Update a Multiplayer Session**.
 
 以下流程图说明如何通过订阅此过程中所述的事件开始多人游戏。
 
@@ -57,35 +59,35 @@ ms.lasthandoff: 07/06/2017
 
 ### <a name="parsing-duplicate-session-change-notifications"></a>分析重复会话更改通知
 
-当有多个用户订阅了同一个会话的通知时，对该会话的每项更改都将为每个用户触发即时点击。 除一个通知以外的所有通知都将是重复的。 虽然仍建议游戏为会话中的每个用户订阅通知，游戏仍应该忽略已经发出通知的任何更改；你可以使用 Branch 和 ChangeNumber 属性来实现此目的。
+When there are multiple users subscribed to notifications for the same session, every change to that session will trigger a shoulder tap for each user. All but one of these will be duplicates. While it's still recommended that a title subscribe every user in a session to notifications, a title should ignore any changes that it's already been notified of; you can do this using the Branch and ChangeNumber properties.
 
-若要检测多个即时点击，游戏应该：
+To detect multiple shoulder taps, a title should:
 
--   对于看到的每个 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch 属性**值，请存储最新的 **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**。
--   如果即时点击所有的 **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**比最后一次看到的 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch 属性**的该属性更高，请对其进行处理，并更新最新的 **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**。
--   如果即时点击没有该 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch 属性**的更高的 **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**，请跳过。 此更改已经被处理。
+-   For each **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** value seen, store the latest **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**.
+-   If a shoulder tap has a higher **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** than the last seen for that **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property**, process it and update the latest **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**.
+-   If a shoulder tap does not have a higher **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** for that **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property**, skip it. That change has already been handled.
 
-| 注意                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**值需要由 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch 属性**跟踪，而不是由会话。 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch 属性**值有可能在会话生存期内更改（**RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber 属性**有可能重置）。 |
+| **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** values need to be tracked by **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property**, not by session. It's possible for the **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** value to change (and the **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** to reset) within the lifetime of a session. |
 
 ## <a name="create-an-mpsd-session"></a>创建 MPSD 会话
 
 
 | 注意                                                                                                                                                                                                                           |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 默认情况下，MPSD 会话在第一个成员加入时创建。 如果你的游戏希望游戏在加入时存在或不存在，它可以在更新期间将适当的写入模式值传递到写入方法中。 |
+| By default, an MPSD session is created when the first member joins it. If your title logic expects the title to exist or not exist at join time, it can pass an appropriate write mode value to the write method during the session update. |
 
 
 
-游戏必须执行以下步骤来创建新会话：
+The title must do the following to create a new session:
 
-1.  创建新的 **XboxLiveContext Class** 对象。 你的游戏创建此对象一次、存储它，并根据需要在整个源代码中重新使用它。 特别是在处理会话订阅时，有必要使用完全相同的上下文。
-2.  创建新的 **MultiplayerSession 类**对象以准备 MPSD 创建新会话所需的所有会话数据。
-3.  在将会话写入 MPSD 前进行所需的更改。 例如，当通过调用 **MultiplayerSession.Join 方法**将成员加入会话时，客户端会添加告知 MPSD 在调用后加入的隐藏的本地请求数据，以更新会话。
-4.  在完成后本地更改后，将这些更改写入 MPSD，如**操作方法：更新多人游戏会话**中所述。
-5.  从 MPSD 接收新的 **MultiplayerSession** 对象，其中的很多字段已经填充。
-6.  使用新会话对象继续，并放弃旧副本，其中包含了创建新会话的隐藏请求。
+1.  Create a new **XboxLiveContext Class** object. Your title creates this object once, stores it, and reuses it as required throughout the source code. Especially when working with session subscriptions, it is necessary to use exactly the same context.
+2.  Create a new **MultiplayerSession Class** object to prepare all the session data that the MPSD needs to create a new session.
+3.  Make required changes before writing the session to MPSD. For example, when joining a member to the session with a call to **MultiplayerSession.Join Method**, the client adds hidden local request data that tells MPSD to join upon the call to update the session.
+4.  When finished making local changes, write them to MPSD as described in **How to: Update a Multiplayer Session**.
+5.  Receive the new **MultiplayerSession** object from MPSD, with many fields filled in.
+6.  Use the new session object going forward, and discard the old copy, which contains a hidden request to create a new session.
 
 ### <a name="example"></a>示例
 
@@ -125,45 +127,45 @@ ms.lasthandoff: 07/06/2017
 
 游戏使用以下过程为已创建的会话设置仲裁程序。
 
-| 注意                                                                                                                                       |
+| Note                                                                                                                                       |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 成员（潜在主机）的设备令牌在成员加入会话并提供其安全设备地址前不可用。 |
+| Device tokens for the members (potential hosts) are not available until the members have joined the session and included their secure device addresses. |
 
-1.  使用 **MultiplayerSession.Members 属性**从 MPSD 检索候选主机的设备令牌。
+1.  Retrieve the device tokens for host candidates from the MPSD by using the **MultiplayerSession.Members Property**.
 
-| 注意                                                                                                                                                                                                                     |
+| Note                                                                                                                                                                                                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | 如果会话是通过 SmartMatch 匹配创建的，你的客户端可以通过 **MultiplayerSession.HostCandidates 属性**使用 MPSD 提供的候选主机。 |
+    | If the session was created by SmartMatch matchmaking, your clients can use the host candidates available from MPSD through the **MultiplayerSession.HostCandidates Property**. |
 
-2.  从候选主机列表中选择所需的主机。
-3.  调用 **MultiplayerSession.SetHostDeviceToken 方法**在 MPSD 的本地缓存中设置设备令牌。 如果设置主机设备令牌的调用成功，本地设备令牌将替换主机令牌。
-4.  如果在尝试设置主机设备令牌时收到 HTTP/412 状态代码，请查询会话数据，并查看主机设备令牌是否用于本地主机。 如果不是用于本地主机，则表明另一台主机已被指定为仲裁程序。
+2.  Select the required host from the list of host candidates.
+3.  Call the **MultiplayerSession.SetHostDeviceToken Method** to set the device token in the local cache of the MPSD. If the call to set the host device token succeeds, the local device token replaces the host's token.
+4.  If an HTTP/412 status code is received when trying to set the host device token, query the session data and see if the host device token is for the local console. If it is not for the local console, another console has been designated as the arbiter.
 
-| 注意                                                                                                                                                                                                                              |
+| Note                                                                                                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 你的客户端应将 HTTP/412 状态代码与其他 HTTP 代码分开单独处理，因为 HTTP/412 不指示标准故障。 有关此状态代码的详细信息，请参阅[多人游戏会话状态代码](multiplayer-session-status-codes.md)。 |
+| Your client should handle the HTTP/412 status code separately from other HTTP codes, since HTTP/412 does not indicate a standard failure. For more about the status code, see [Multiplayer Session Status Codes](multiplayer-session-status-codes.md). |
 
-5.  在 MPSD 中更新会话，如**操作方法：更新多人游戏会话**中所述。
+5.  Update the session in MPSD, as described in **How to: Update a Multiplayer Session**.
 
-| 注意                                                                                                                                                                                                                                           |
+| Note                                                                                                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 如果你没有更好的算法，客户端可以实现贪婪算法，在此算法中，如果尚未设置主机，每个候选主机都将尝试将自己设置为主机。 有关详细信息，请参阅[会话仲裁程序](mpsd-session-details.md)。 |
+| If you have no better algorithm, the client can implement a greedy algorithm in which each host candidate attempts to set itself as the host if nobody else has done it yet. 有关详细信息，请参阅[会话仲裁程序](mpsd-session-details.md)。 |
 
 ## <a name="manage-title-activation"></a>管理游戏激活
 
-Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。 在多人游戏 API 的上下文中，此事件在用户接受邀请或加入另一个用户时触发。 这些操作通过将正在加入的用户引入包含目标用户的游戏来触发游戏必须作出响应的激活。
+Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。 In the context of the multiplayer API, this event is fired when a user accepts an invite or joins another user. These actions trigger an activation that the title must react to by bringing the joining user into game play with the target user.
 
-| 注意                                                                                       |
+| Note                                                                                       |
 |---------------------------------------------------------------------------------------------------------|
-| 你的游戏在任何时候都应获得新的激活参数，并且永远不应按照长度编码。 |
+| Your title should expect new activation arguments at any time and should never be coded against length. |
 
-游戏必须执行以下主要步骤来处理游戏激活。
+The title must perform the following main steps to handle title activation.
 
-1.  为 **CoreApplicationView.Activated 事件**设置事件处理程序。 此处理程序在每次发生协议激活时触发，即使游戏已经在运行。
-2.  在游戏激活时，开始会话并订阅会话更改通知。 请参阅**操作方法：订阅 MPSD 会话更改通知**。
-3.  将用户以活动状态加入会话。 请参阅**操作方法：从游戏激活加入 MPSD 会话**。
-4.  将大厅会话设置为活动会话，通过个人资料 UI 显示。 请参阅**操作方法：设置用户的当前活动**。
-5.  将用户以活动状态加入游戏会话。 现在，用户可以连接到对等方，并进入游戏或大厅。
+1.  Set up an event handler for the **CoreApplicationView.Activated Event**. This handler triggers every time protocol activation occurs, even if the title is already running.
+2.  At title activation, begin a session and subscribe for session change notifications. See **How to: Subscribe for MPSD Session Change Notifications**.
+3.  Join the user to the session as active. See **How to: Join an MPSD Session from a Title Activation**.
+4.  Set the lobby session as the activity session, exposed through the profile UI. See **How to: Set the User's Current Activity**.
+5.  Join the user to the game session as active. Now the user can connect to peers and enter game play or the lobby.
 
 以下流程图说明如何处理游戏激活。
 
@@ -173,13 +175,13 @@ Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。
 
 若要让用户可以加入，游戏必须执行以下操作：
 
-1.  创建会话对象，并根据需要修改属性。
-2.  将用户以活动状态加入会话。 请参阅**操作方法：从游戏激活加入 MPSD 会话**。
-3.  确定用户是否已被指定为会话仲裁程序。
-4.  如果用户不是仲裁程序，请转到步骤 7。
-5.  如果用户是仲裁程序，调用 **MultiplayerSession.SetHostDeviceToken 方法**。
-6.  尝试使用 **MultiplayerService.TryWriteSessionAsync 方法**的调用写入会话。
-7.  将会话设置为活动会话。 请参阅**操作方法：设置用户的当前活动**。
+1.  Create a session object, and modify the attributes as required.
+2.  Join the user to the session as active. See **How to: Join an MPSD Session from a Title Activation**.
+3.  Determine if the user has been designated as the session arbiter.
+4.  If the user is not the arbiter, go to step 7.
+5.  If the user is the arbiter, call the **MultiplayerSession.SetHostDeviceToken Method**.
+6.  Attempt to write the session using a call to the **MultiplayerService.TryWriteSessionAsync Method**.
+7.  Set the session as the active session. See **How to: Set the User's Current Activity**.
 
 以下流程图说明为让用户可以在游戏期间由其他玩家加入所采取的步骤。
 
@@ -189,59 +191,73 @@ Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。
 
 游戏可以支持玩家通过以下方式发送游戏邀请：
 
--   为大厅会话发送邀请。
--   使用具有游戏会话引用的通用 Xbox 平台发送邀请。
+-   Send the invites for the lobby session.
+-   Send the invites using the generic Xbox platform invite UI with the game session reference.
 
-若要为玩家发送游戏邀请，游戏必须执行以下操作：
+To send game invites for a player, the title must do the following:
 
-1.  让邀请游戏玩家可以加入。 请参阅**操作方法：让用户可加入**。
-2.  确定是通过大厅会话还是使用邀请 UI 发送邀请。
-3.  如果使用大厅会话，则使用 **MultiplayerService.SendInvitesAsync 方法**的调用发送邀请。 此方法可能需要使用 **SystemUI.ShowPeoplePickerAsync 方法**或 **PartyChat.GetPartyChatViewAsync 方法**构建游戏内 UI 名单。
-4.  如果使用邀请 UI，则调用 **SystemUI.ShowSendGameInvitesAsync 方法**来显示邀请 UI。
-5.  在远程玩家加入后为本地玩家处理 **RealTimeActivityService.MultiplayerSessionChanged 事件**。
-6.  对于远程玩家，应实现游戏激活代码。 请参阅**操作方法：管理游戏激活**。
+1.  Make the inviting game player joinable. See **How to: Make the User Joinable**.
+2.  Determine if the invites are to be sent via the lobby session or using the invite UI.
+3.  If using the lobby session, send the invites using a call to **MultiplayerService.SendInvitesAsync Method**. This method might require the building of an in-game UI roster using the **SystemUI.ShowPeoplePickerAsync Method** or the **PartyChat.GetPartyChatViewAsync Method**.
+4.  If using the invite UI, call the **SystemUI.ShowSendGameInvitesAsync Method** to show the invite UI.
+5.  Handle the **RealTimeActivityService.MultiplayerSessionChanged Event** for the local player after the remote player joins.
+6.  For the remote player, implement title activation code. See **How to: Manage Title Activation**.
 
 以下流程图说明如何发送邀请。
 
 ![](../../images/multiplayer/Multiplayer_2015_Send_Invites.png)
 
+## <a name="join-a-game-session-from-a-lobby-session"></a>从大厅会话加入游戏会话
+
+如果 Windows 10 设备上的游戏会话不是大型会话，则必须将 `userAuthorizationStyle` 功能设置为 **true**。 这意味着 `joinRestriction` 属性不能为“无”，即会话无法直接公开加入。
+
+常用方案是创建大厅会话来召集玩家，然后将这些玩家移至游戏会话或匹配会话。 但如果游戏会话不能公开加入，那么游戏客户端将无法加入游戏会话，除非它们符合要求的 `joinRestriction` 设置，这在大多数情况下都对此方案限制过多。
+
+解决办法是使用转移句柄来链接大厅会话和游戏会话。  游戏可以按照以下方法来执行此操作：
+
+1. 在创建游戏会话时，使用 `multiplayer_service::set_transfer_handle(gameSessionRef, lobbySessionRef)` API 来创建链接大厅会话和游戏会话的转移句柄。
+2. 在大厅会话而不是游戏会话的会话引用中存储转移句柄 GUID。
+3. 当游戏想要将成员从大厅会话移到游戏会话时，每个客户端将使用 `multiplayer_service::write_session_by_handle(multiplayerSession, multiplayerSessionWriteMode, handleId)` API 利用来自大厅会话的转移句柄来加入游戏。
+4. MPSD 将查找大厅会话以验证尝试使用转移句柄加入游戏会话的成员也在大厅会话中。
+5. 如果成员在大厅会话中，他们将可以访问游戏会话。
+
 ## <a name="join-an-mpsd-session-from-a-title-activation"></a>从游戏激活加入 MPSD 会话
 
-当用户选择使用 Xbox shell UI 加入好友的活动或接受邀请时，使用指示用户想要加入的会话的参数激活游戏。 游戏必须处理此激活并将用户添加到相应的会话中。
+When a user chooses to join a friend's activity or accept an invite using Xbox shell UI, the title is activated with parameters that indicate what session the user would like to join. The title must handle this activation and add the user to the corresponding session.
 
-下面是游戏应遵循的步骤：
+Here are the steps the title should follow:
 
-1.  为 **CoreApplicationView.Activated 事件**实现事件处理程序。 此事件通知游戏的激活。
-2.  当处理程序触发时，检查 **IActivatedEventArgs.Kind 属性**。 如果它被设置为“协议”，则将此事件参数转换为 **ProtocolActivatedEventArgs 类**。
-3.  检查 **ProtocolActivatedEventArgs** 对象。 如果 **ProtocolActivatedEventArgs.Uri 属性**中指示的 URI 匹配 inviteHandleAccept（对应接受的邀请）或 activityHandleJoin（对应通过 shell UI 的加入），则分析 URI 的查询字符串，其格式被设置为包含键/值对的普通 URI 查询字符串，并提取以下字段：
-    -   对于接受的邀请：
-        1.  句柄
+1.  Implement an event handler for the **CoreApplicationView.Activated Event**. This event notifies of activations for the title.
+2.  When the handler fires, examine the **IActivatedEventArgs.Kind Property**. If it is set to Protocol, cast the event arguments to **ProtocolActivatedEventArgs Class**.
+3.  Examine the **ProtocolActivatedEventArgs** object. If the URI indicated in the **ProtocolActivatedEventArgs.Uri Property** matches either inviteHandleAccept (corresponding to an accepted invite) or activityHandleJoin (corresponding to a join via shell UI), parse the query string of the URI, which is formatted as a normal URI query string with key/value pairs, extracting the following fields:
+    -   For an accepted invite:
+        1.  handle
         2.  invitedXuid
         3.  senderXuid
-    -   对于加入：
-        1.  句柄
+    -   For a join:
+        1.  handle
         2.  joinerXuid
         3.  joineeXuid
 
-4.  启动游戏的多人游戏代码，这应该包括调用 **RealTimeActivityService.EnableMultiplayerSubscriptions 方法**。
-5.  使用 **MultiplayerSession 构造函数 (XboxLiveContext)** 创建本地 **MultiplayerSession 类**对象。
-6.  调用 **MultiplayerSession.Join 方法（字符串、布尔值、布尔值）**来加入会话。 请使用以下参数设置，以便将加入设置为活动：
+4.  Start the title's multiplayer code, which should include calling the **RealTimeActivityService.EnableMultiplayerSubscriptions Method**.
+5.  Create a local **MultiplayerSession Class** object, using the **MultiplayerSession Constructor (XboxLiveContext)**.
+6.  Call the **MultiplayerSession.Join Method (String, Boolean, Boolean)** to join the session. Use the following parameter settings so that the join is set as active:
     -   *memberCustomConstantsJson* = null
     -   *initializeRequested* = false
     -   *joinWithActiveStatus* = true
 
-7.  调用 **MultiplayerSession.SetSessionChangeSubscription 方法**以当会话在加入后更改时接收即时点击。
-8.  调用 **MultiplayerService.WriteSessionByHandleAsync 方法**，使用按照步骤 3 中所述所获得的句柄。 现在，用户是会话的成员了，可以使用会话中的数据连接到游戏。
+7.  Call the **MultiplayerSession.SetSessionChangeSubscription Method** to be shoulder-tapped when the session changes after joining.
+8.  Call the **MultiplayerService.WriteSessionByHandleAsync Method**, using the handle acquired as described in step 3. 现在，用户是会话的成员了，可以使用会话中的数据连接到游戏。
 
 ## <a name="set-the-users-current-activity"></a>设置用户的当前活动
 
-用户的当前活动显示在游戏的 Xbox 仪表板用户体验中。 用户的活动可以通过会话或通过游戏激活设置。 在后面的情况下，用户通过匹配或通过开始游戏来进入会话。
+用户的当前活动显示在游戏的 Xbox 仪表板用户体验中。 Activity for a user can be set through a session or through title activation. In the latter case, the user enters a session through matchmaking or by starting a game.
 
-| 注意                                                                                                                                                  |
+| Note                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 通过会话设置的活动可以使用 **MultiplayerService.ClearActivityAsync 方法**的调用删除。 |
+| Activity set through a session can be deleted with a call to the **MultiplayerService.ClearActivityAsync Method**. |
 
-若要将会话设置为用户的当前活动，游戏调用 **MultiplayerService.SetActivityAsync 方法**，传递会话的会话引用。
+To set a session as the user's current activity, the title calls the **MultiplayerService.SetActivityAsync Method**, passing the session reference for the session.
 
 若要通过游戏激活设置用户的当前活动，请参阅**操作方法：从游戏激活加入 MPSD 会话**。
 
@@ -249,32 +265,32 @@ Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。
 
 | 注意                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 当你的游戏使用多人游戏 API 更新现有会话时，请记住，在进行写入会话调用前，它处理的一直是本地副本。 |
+| When your title updates an existing session using the multiplayer API, remember that it is working with a local copy, until it makes a call to write the session. |
 
-若要更新现有会话，游戏必须：
+To update an existing session, the title must:
 
-1.  根据需要对当前会话进行更改，例如，通过调用 **MultiplayerSession.Leave 方法**。
-2.  当进行所有更改时，将本地更改写入 MPSD，使用下列任一方法：
+1.  Make changes to the current session as required, for example, by calling the **MultiplayerSession.Leave Method**.
+2.  When all changes are made, write the local changes to MPSD, using any of these methods:
 
-    -   **MultiplayerService.WriteSessionAsync 方法**
-    -   **MultiplayerService.WriteSessionByHandleAsync 方法**。
-    -   **MultiplayerService.TryWriteSessionAsync 方法**
-    -   **MultiplayerService.TryWriteSessionByHandleAsync 方法**
+    -   **MultiplayerService.WriteSessionAsync Method**
+    -   **MultiplayerService.WriteSessionByHandleAsync Method**.
+    -   **MultiplayerService.TryWriteSessionAsync Method**
+    -   **MultiplayerService.TryWriteSessionByHandleAsync Method**
 
-    如果写入到其他游戏也可以修改的共享部分，请将写入模式设置为 **SynchronizedUpdate**。 请参阅[会话更新的同步](multiplayer-session-directory.md)了解详细信息。
+    Set the write mode to **SynchronizedUpdate** if writing to a shared portion that other titles can also modify. See [Synchronization of Session Updates](multiplayer-session-directory.md) for more information.
 
-    写入方法将加入写入服务器并获取最新会话，从此最新会话发现其他会话成员及其主机的安全设备地址 (SDA)。 有关在这些主机之间建立网络连接的详细信息，请参阅 **Xbox One 上的 Winsock 简介**。
+    The write method writes the join to the server and gets the latest session, from which to discover other session members and the secure device addresses (SDAs) of their consoles. For more information about establishing a network connection among these consoles, see **Introduction to Winsock on Xbox One**.
 
-3.  放弃旧的本地会话对象，使用新检索到的会话对象，以便基于最新的已知会话状态决定未来的操作。
+3.  Discard the old local session object, and use the newly retrieved session object so that future actions are based on the latest known session state.
 
 ## <a name="leave-an-mpsd-session"></a>离开 MPSD 会话
 
 若要允许用户离开会话，游戏必须执行以下操作。
 
-1.  为游戏会话调用 **MultiplayerSession.Leave 方法**。
-2.  在 MPSD 中更新游戏会话，如**操作方法：更新多人游戏会话**中所述。
-3.  如有必要，为大厅会话调用 **Leave** 方法，并更新该会话。
-4.  如果对于大厅会话是必要的，通过取消注册 **RealTimeActivityService.MultiplayerSubscriptionsLost 事件**和 **RealTimeActivityService.MultiplayerSessionChanged 事件**关闭多人游戏 API。
+1.  Call the **MultiplayerSession.Leave Method** for the game session.
+2.  Update the game session in MPSD, as described in **How to: Update a Multiplayer Session**.
+3.  If necessary, call **Leave** method for the lobby session, and update that session.
+4.  If necessary for the lobby session, shut down the multiplayer API by unregistering the **RealTimeActivityService.MultiplayerSubscriptionsLost Event** and the **RealTimeActivityService.MultiplayerSessionChanged Event**.
 
 以下流程图说明如何离开会话并关闭。
 
@@ -284,12 +300,12 @@ Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。
 
 若要在匹配期间填充票证会话的空位，游戏必须按照以下类似步骤操作：
 
-1.  访问匹配期间创建的票证会话的最新会话状态。
-2.  从大厅会话为游戏添加可用玩家。
-3.  确定票证会话是否已满。
-4.  如果会话已满，继续游戏。
-5.  如果会话未满，创建匹配票证，如**操作方法：创建匹配票证**中所述。 请务必创建将 *preserveSession* 参数设置为“始终”的票证。
-6.  继续匹配。 请参阅[使用 SmartMatch 匹配](using-smartmatch-matchmaking.md)。
+1.  Access the latest session state for the ticket session created during matchmaking.
+2.  Add available players for game play from the lobby session.
+3.  Determine if the ticket session is full.
+4.  If the session is full, continue game play.
+5.  If the session is not yet full, create the match ticket as described in **How to: Create a Match Ticket**. Be sure to create the ticket with the *preserveSession* parameter set to Always.
+6.  Continue with matchmaking. See [Using SmartMatch Matchmaking](using-smartmatch-matchmaking.md).
 
 以下流程图说明如何在匹配期间填充会话空位。
 
@@ -299,16 +315,16 @@ Xbox One 在协议激活期间触发 **CoreApplicationView.Activated 事件**。
 
 若要创建匹配票证，匹配侦察兵必须：
 
-1.  调用 **MatchmakingService.CreateMatchTicketAsync 方法**，传入对票证会话的引用。 此方法从 MPSD 读取票证会话，并在会话中开始用户匹配。 此方法内部调用 **POST (/serviceconfigs/{scid}/hoppers/{hoppername})**。
-2.  如果匹配服务将会话成员匹配到新会话或另一个现有会话中，请将 *preserveSession* 参数设置为“从不”。 将 *preserveSession* 参数设置为“始终”以允许游戏重新使用现有游戏会话作为票证会话来继续游戏。 匹配服务然后便可以确保提交的会话将保留，且任何匹配的玩家将添加到该会话。
+1.  Call the **MatchmakingService.CreateMatchTicketAsync Method**, passing in a reference to the ticket session. The method reads the ticket session from MPSD, and starts matchmaking for the users in the session. Internally the method calls the **POST (/serviceconfigs/{scid}/hoppers/{hoppername})**.
+2.  Set the *preserveSession* parameter to Never if the matchmaking service is to match the members of the session into a new session or another existing session. Set the *preserveSession* parameter to Always to allow the title to reuse an existing game session as a ticket session to continue game play. The matchmaking service can then ensure that the submitted session is preserved and any matched players are added to that session.
 
-3.  使用 **CreateMatchTicketResponse 类**对象中返回的 **CreateMatchTicketResponse.EstimatedWaitTime 属性**设置匹配时间的用户期望。
-4.  如果需要，通过删除票证，使用响应对象中返回的 **CreateMatchTicketResponse.MatchTicketId 属性**取消会话的匹配。 票证删除使用 **MatchmakingService.DeleteMatchTicketAsync 方法**。
+3.  Use the **CreateMatchTicketResponse.EstimatedWaitTime Property** returned in the **CreateMatchTicketResponse Class** object to set user expectations of matchmaking time.
+4.  Use the **CreateMatchTicketResponse.MatchTicketId Property** returned in the response object to cancel matchmaking for the session if needed, by deleting the ticket. 票证删除使用 **MatchmakingService.DeleteMatchTicketAsync 方法**。
 
 ## <a name="get-match-ticket-status"></a>获取匹配票证状态
 
 你的游戏应该执行以下操作来检索匹配票证状态：
 
-1.  获取票证会话的 **MultiplayerSession 类**对象。
-2.  使用 **MultiplayerSession.MatchmakingServer 属性**访问匹配中使用的 **MatchmakingServer 类**对象。
-3.  如果已找到匹配，检查 **MatchmakingServer** 对象以确定匹配过程的状态、会话的一般等待时间，以及目标会话引用。
+1.  Obtain the **MultiplayerSession Class** object for the ticket session.
+2.  Use the **MultiplayerSession.MatchmakingServer Property** to access the **MatchmakingServer Class** object used in matchmaking.
+3.  Check the **MatchmakingServer** object to determine the status of the matchmaking process, the typical wait time for the session, and the target session reference, if a match has been found.

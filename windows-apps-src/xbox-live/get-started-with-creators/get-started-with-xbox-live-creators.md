@@ -1,42 +1,60 @@
 ---
-title: "Xbox Live 创意者计划入门"
+title: Get started with Xbox Live Creators Program
 author: KevinAsgari
-description: "提供了帮你开始使用 Xbox Live 创意者计划的链接。"
+description: Provides links to help you get started with the Xbox Live Creators Program.
 ms.assetid: 2a744405-7ee4-42b4-8f36-9916e8c3a530
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one"
-ms.openlocfilehash: d53e7baf6ebcf47c8689e32a9b391d47899edcb4
-ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: 84e23fa904412fd1cc9900943b67b8df849b57be
+ms.sourcegitcommit: 5bd030abc783aa78575190fae93056ad1f560bb7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2017
+ms.lasthandoff: 09/08/2017
 ---
-# <a name="get-started-with-the-xbox-live-creators-program"></a>Xbox Live 创意者计划入门
+# <a name="get-started-with-the-xbox-live-creators-program"></a>Get started with the Xbox Live Creators Program
+ 
+Xbox Live 创意者计划让你可以通过简化的认证流程将你的游戏快速地直接发布到 Xbox One 和 Windows10，并且无需任何概念审批。 如果你的游戏集成了 Xbox Live 且遵循我们的[标准应用商店策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)，你已经可以发布了。 本文将概括介绍通过 Xbox Live 集成发布和运行游戏所需要的操作。 
 
-本部分介绍了 Xbox Live 创意者计划入门。
+Xbox Live 创意者计划游戏必须属于通用 Windows 平台 (UWP) 应用程序。 对于 Xbox One，请参阅 [Xbox One 上的 UWP](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)，尤其是 [Xbox One 上 UWP 应用和游戏的系统资源](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)。 通过 Xbox Live 创意者计划发布的游戏没有访问成就或多人游戏联机服务的权限。 有关支持的服务的完整列表，请参阅[开发人员计划概述功能表](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview#feature-table)。
 
-## <a name="why-should-you-use-the-xbox-live-creators-program"></a>为什么要使用 Xbox Live 创意者计划？
+## <a name="1-ensure-you-have-a-title-created-on-dev-center"></a>1. 确保你已在开发人员中心上创建了一个主题作品
+Every Xbox Live title must be defined on Dev Center before you will be able to sign-in and make Xbox Live Service calls.  [创建新的创意者主题作品](create-and-test-a-new-creators-title.md)将为你介绍如何执行此操作。
+
+## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>2. 遵循相应指南设置 IDE 或游戏引擎
+你可以遵循适用于自己平台和引擎的相应“入门指南”，并在过程中了解 Xbox Live 的基础知识：
+
+* [Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.
+* [使用 Unity 开发创意者主题作品](develop-creators-title-with-unity.md)将为你介绍如何创建支持 Xbox Live 的新 Unity 游戏、处理单用户和多用户登录、添加排行榜和统计信息等功能，以及如何生成本机 Visual Studio 项目。
+
+## <a name="3-xbox-live-concepts--testing"></a>3. Xbox Live 概念和测试
+创建主题作品后，你应会了解一些将影响开发主题作品体验的 Xbox Live 概念。 此外，你还需要在游戏计划支持的所有平台上测试游戏，以确保游戏能够按预期运行。
+
+- [创意者计划的 Xbox Live 服务配置](xbox-live-service-configuration-creators.md)
+- [Xbox Live 测试环境](../xbox-live-sandboxes.md)
+- [授权 Xbox Live 帐户](authorize-xbox-live-accounts.md)
+
+## <a name="4-enable-xbox-live-sign-in"></a>4. 启用 Xbox Live 登录
+所有 Xbox Live 创意者计划游戏都必须集成 Xbox Live 登录并显示用户身份（玩家代号、玩家头像等）。 你可以选择自动登录用户或允许用户利用按钮来启动登录进程。 登录后必须显示玩家代号，以便玩家验证使用的配置文件正确无误。
+
+- [Xbox Live 社交平台 - 个人资料、好友、状态](../social-platform/social-platform.md)
+
+## <a name="5-add-optional-xbox-live-features"></a>5. 添加可选的 Xbox Live 功能
 
 Xbox Live 创意者计划提供了一系列功能，旨在帮助你推广游戏和吸引玩家：
 
-- 通过 Xbox Live 社交平台，可让玩家与好友联系，还能讨论你的游戏。
-- 使用 Xbox Live 排行榜功能，可通过让玩家竞相击败其好友并提高排名来提升你的游戏参与度。
-- Xbox Live 连接存储提供跨设备的免费游戏进度漫游，因此，玩家可以轻松地在 Xbox One 和 Windows 电脑之间延续游戏进度。
+- [Xbox Live 数据平台 - 统计信息、排行榜](../data-platform/data-platform.md)可通过让玩家竞相击败其好友并提高排名来提升你的游戏参与度。
+- [Xbox Live 存储平台 - 连接存储、主题作品存储](../storage-platform/storage-platform.md)提供跨设备的免费游戏进度漫游，因此，玩家可以轻松地在 Xbox One 和 Windows 电脑之间延续游戏进度。
+- [Xbox Live 社交平台 - 个人资料、好友、状态](../social-platform/social-platform.md)可让玩家与好友联系，还能讨论你的游戏。
 
-## <a name="in-this-section"></a>本部分内容
+请务必注意，Xbox Live 创意者计划不支持联机多人游戏、成就或玩家分数。
 
-[集成 Xbox Live 的分步指南](creators-step-by-step-guide.md)
+## <a name="6-release-your-game"></a>6. 发布游戏
 
-[创建新主题作品并发布到测试环境](create-and-test-a-new-creators-title.md)
+如果你使用的是 Xbox Live 创意者计划，则该过程与发布任何其他 UWP 应用程序的过程相同：
 
-[使用 Visual Studio 开发创意者主题作品](develop-creators-title-with-visual-studio.md)
-
-[使用 Unity 开发创意者主题作品](develop-creators-title-with-unity.md)
-
-[Xbox Live 服务配置](xbox-live-service-configuration-creators.md)
-
-[在你的环境中授权 Xbox Live 帐户以进行测试](authorize-xbox-live-accounts.md)
+- [Windows 应用商店策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)，包括[游戏和 Xbox 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)
+- [发布 Windows 应用](https://developer.microsoft.com/en-us/store/publish-apps)

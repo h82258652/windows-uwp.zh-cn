@@ -1,135 +1,137 @@
 ---
-title: "Xbox Live 多人游戏概念"
+title: Xbox Live multiplayer concepts
 author: KevinAsgari
-description: "了解 Xbox Live 多人游戏系统使用的常见多人游戏概念。"
+description: Learn about common multiplayer concepts used by Xbox Live multiplayer systems.
 ms.assetid: 1e765f19-1530-4464-b5cf-b00259807fd3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 08-25-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏"
-ms.openlocfilehash: 6c79140100cdfb174f5467f1f82fb116eb2dc221
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer
+ms.openlocfilehash: 3ed77e9fb9e4120fd73622541cc2d48d9f6b5af5
+ms.sourcegitcommit: b185729f0bb73569740d03be67dff9f59a4c4968
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/01/2017
 ---
-# <a name="xbox-live-multiplayer-concepts"></a>Xbox Live 多人游戏概念
+# <a name="xbox-live-multiplayer-concepts"></a>Xbox Live multiplayer concepts
 
-本主题介绍了大量常用于 Xbox Live 文档的重要的多人游戏术语和概念。 熟练掌握这些概念将帮助你理解 Xbox Live 多人游戏的工作原理。
+This topic discusses a number of important multiplayer terms and concepts that are used frequently in the Xbox Live documentation. Having a good grasp of these concepts will help you understand how Xbox Live multiplayer works.
 
-## <a name="multiplayer-session"></a>多人游戏会话
-多人游戏会话表示一组 Xbox Live 用户和与其关联的属性。 此会话由游戏创建和维护，并表现为驻留在 Xbox Live 云端的安全 JSON 文档。 会话文档本身包含有关连接到会话的 Xbox Live 用户、可用位置数量、自定义元数据（适用于会话和各会话成员）以及与游戏会话相关的其他信息。
+## <a name="multiplayer-session"></a>Multiplayer session
+A multiplayer session represents a group of Xbox Live users and properties associated with them. The session is created and maintained by titles, and is represented as a secure JSON document that resides in the Xbox Live cloud. The session document itself contains information about the Xbox Live users that are connected to the session, how many spots are available, custom metadata (for the session as well as for each session member), and other information related to the game session.
 
-每个会话都基于会话模板，该模板由游戏开发人员定义，并在 Xbox Live 服务配置中针对游戏实例进行配置。
+Each session is based on a session template, which are defined by the game developer, and are configured in the Xbox Live service configuration for a title instance.
+
+尽管游戏可以创建和更新会话，但不能直接删除会话。  相反，一旦会话中的所有玩家都被删除，Xbox Live 多人游戏服务将在指定的超时时间后自动删除会话。 有关会话的详细信息，请参阅 [MPSD 会话详细信息](multiplayer-appendix/mpsd-session-details.md)。
 
 游戏可以选择使用多个会话，但通常实现多人游戏会使用两个会话：
-* 大厅会话 - 表示一组好友的会话，这些好友想在游戏的多个回合、等级和地图等中始终在一起。
-* 游戏会话 - 表示在游戏的特定会话实例（如回合、比赛、等级等）中游戏的玩家的会话。该会话可以包括已加入会话实例的多个大厅会话中的成员（通常通过匹配服务）。
+* Lobby session - this is a session that represents a group of friends that want to remain together across multiple rounds, levels, maps, etc., of the game.
+* Game session - this is a session that represents the people that are playing in a specific session instance of a game, such as a round, match, level, etc. This session can include members from multiple lobby sessions that have joined the session instance together, typically through a matchmaking service.
 
-下面是示例场景：  
-Sally 想和她的朋友 John 和 Lisa 进行多人游戏。 Sally 启动一个游戏，并邀请 John 和 Lisa 进入她的游戏。 加入后，Sally、John 和 Lisa 都在大厅会话中。 在此会话中，他们决定在线和其他玩家比赛。 该游戏创建游戏会话，并使用 Xbox Live 匹配服务和其他 Xbox Live 玩家一起填补剩余空位。
+Here is an example scenario:  
+Sally wants to play some multiplayer with her friends, John and Lisa. Sally starts up a game, and invites John and Lisa into her game. After they join, Sally, John, and Lisa are all in a lobby session. In this session, they decide to play in an online match with other people. The game creates a game session, and uses the Xbox Live matchmaking service to fill the remaining player slots with other Xbox Live players.
 
-假设匹配到 Bob 和 Joe 与他们一起，那么就是他们这五个人在这一回合中一起玩。 这一回合结束后，Sally、John 和 Lisa 离开游戏会话，但仍然都位于大厅会话中（没有 Bob 和 Joe），并且可以选择开始另一回合或切换到其他游戏模式。
+Let's say that Bob and Joe are matched up with them, and the five of them play the round together. After the round ends, Sally, John, and Lisa leave the game session, but are still together in the lobby session (without Bob and Joe), and can choose to play another round, or switch to different game mode.
 
-### <a name="session-member"></a>会话成员
-会话成员是处于会话中的 Xbox Live 用户。
+### <a name="session-member"></a>Session member
+A session member is an Xbox Live user that is part of a session.
 
-### <a name="arbiter"></a>仲裁程序
-仲裁程序是管理游戏会话状态的控制台或设备。 例如，为了找到更多玩家，仲裁程序会负责播发游戏会话进行匹配。
+### <a name="arbiter"></a>Arbiter
+An arbiter is a console or device that manages the state of the session for a game. For example, the arbiter would be responsible for advertising a game session to matchmaking in order to find more players.
 
-仲裁程序由游戏设置。 它可能会与游戏的主机相同，但没有必要一定相同。
+The arbiter is set by the title. It may be the same as the host of the game, but does not have to be the same.
 
-### <a name="session-host"></a>会话主机
-会话主机是运行玩游戏模拟的控制台或设备，此模拟适用于在基于主机的对等网络体系结构上生成的游戏。 此控制台或设备通常与仲裁程序相同，但没有必要一定相同。
+### <a name="session-host"></a>Session host
+The session host is the console or device that runs the game play simulation for titles built on a host-based peer-to-peer network architecture. This console or device is typically the same as the arbiter, but it does not have to be the same.
 
-## <a name="multiplayer-service-session-directory"></a>多人游戏服务会话目录
-Xbox Live 多人游戏服务在 Xbox Live 云端运行，并跨多个客户端集中游戏的多人游戏系统元数据。 跟踪此元数据的系统称为多人游戏会话目录，或简称 MPSD。 你可以将 MPSD 视为活动游戏会话库。 你的游戏可以添加、搜索、修改或删除与你的游戏相关的活动会话。 在必要时，MPSD 还管理会话状态和更新会话。
+## <a name="multiplayer-service-session-directory"></a>Multiplayer service session directory
+The Xbox Live Multiplayer service operates in the Xbox Live cloud, and centralizes a game's multiplayer system metadata across multiple clients. The system that tracks this metadata is known as the Multiplayer Session Directory, or MPSD for short. You can think of MPSD as a library of active game sessions. Your game can add, search, modify, or remove active sessions relating to your title. The MPSD also manages session state and updates sessions when necessary.
 
-MPSD 允许游戏分享连接用户组所需的基本信息。 它确保会话功能已同步并保持一致。 它与 shell 和 Xbox One 主机操作系统协调发送/接受邀请和通过玩家卡加入游戏。
+MPSD allows titles to share the basic information needed to connect a group of users. It ensures that session functionality is synchronized and consistent. It coordinates with the shell and Xbox One console operating system in sending/accepting invites and in being joined via the gamer card.
 
-### <a name="session-handles"></a>会话句柄
+### <a name="session-handles"></a>Session handles
 
-使用数据块组合在 MPSD 中唯一地标识会话：
+A session is uniquely identified in MPSD by a combination of pieces of data:
 
-* 游戏的服务配置 ID (SCID)
-* 用于创建会话的会话模板名称
-* 会话名称
+* The service configuration ID (SCID) of the title
+* The name of the session template that was used to create the session
+* The name of the session
 
-会话句柄是包含对存在于 MPSD 中的特定会话的引用的 JSON 对象。 会话句柄使 Xbox Live 成员可加入现有会话。
+A session handle is a JSON object that contains a reference to a specific session that exists in MPSD. Session handles enable Xbox Live members to join existing sessions.
 
-每个会话句柄包括唯一标识句柄的 GUID，它允许允许游戏使用单个 GUID 引用会话。
+Each session handle includes a guid that uniquely identifies the handle, which allows titles to reference the session by using a single guid.
 
-以下是几种类型的会话句柄：
+There are several types of session handles:
 
-* 邀请句柄
-* 搜索句柄
-* 活动句柄
-* 相关句柄
-* 转移句柄
+* invite handle
+* search handle
+* activity handle
+* correlation handle
+* transfer handle
 
-#### <a name="invite-handle"></a>邀请句柄
-当成员被邀请加入游戏时，邀请句柄将传递给他。 邀请句柄包含可让受邀成员的游戏加入正确会话的信息。
+#### <a name="invite-handle"></a>Invite handle
+An invite handle is passed to a member when they are invited to join a game. The invite handle contains information that lets the invited member's game join the correct session.
 
-#### <a name="search-handle"></a>搜索句柄
-搜索句柄包含与会话相关的其他元数据，而且它允许游戏搜索符合选定标准的会话。
+#### <a name="search-handle"></a>Search handle
+A search handle includes additional metadata about the session, and allows titles to search for sessions that meet the selected criteria.
 
-#### <a name="activity-handle"></a>活动句柄
-活动句柄可让成员查看其社交网络上的其他成员在玩的游戏，还可用于加入好友的游戏。
+#### <a name="activity-handle"></a>Activity handle
+An activity handle lets members see what other members on their social network are playing, and can be used join a friend's game.
 
-#### <a name="correlation-handle"></a>相关句柄
-相关句柄可有效地作为会话别名使用，这样可使游戏通过使用相关句柄的 ID 引用会话。
+#### <a name="correlation-handle"></a>Correlation handle
+A correlation handle effectively works as an alias for a session, allowing a game to refer to a session by only using the id of the correlation handle.
 
-### <a name="transfer-handle"></a>转移句柄
-转移句柄用于将玩家从一个会话移到另一个会话。
+### <a name="transfer-handle"></a>Transfer handle
+A transfer handle is used to move players from one session to another session.
 
 
-### <a name="invites"></a>邀请
-Xbox Live 提供多人游戏服务支持的邀请系统。 它允许玩家邀请其他玩家加入自己的游戏会话。 受邀玩家收到游戏邀请，游戏使用此信息加入现有会话和多人游戏体验。 游戏控制邀请流程和可以发送邀请的时间。
+### <a name="invites"></a>Invites
+Xbox Live provides an invite system that is supported by the Multiplayer service. It enables players to invite other players to their game sessions. Invited players receive a game invite and a title uses this information to join an existing session and multiplayer experience. Titles control invite flow and when invites can be sent.
 
-用户可通过 shell 或直接从游戏发送邀请。 可通过游戏动态设置邀请的通知文本，向受邀玩家提供更多信息。 邀请还可包含对玩家不可见的游戏的其他数据，同时也可用于传递其他信息。
+Invites can be sent through the shell by the user or directly from the title. The notification text for an invite can be dynamically set by a title to provide more information to the invited player. Invites can also include additional data for the title that is not visible to the player and can be used to carry additional information.
 
-### <a name="join-in-progress"></a>加入进程
-除了具有邀请功能，Xbox Live 还为玩家提供了 shell 选项以加入好友或其他认识的玩家的活动游戏会话。 这使得加入活动游戏会话的另一条路径成为可能，且仍然由 MPSD 驱动。 游戏控制何时可以加入会话和公开哪一会话可加入进程。
+### <a name="join-in-progress"></a>Join-in-progress
+In addition to invites, Xbox Live also provides a shell option for players to join an active gameplay session of friends or other known players. This enables another path into an active game session and is also driven by the MPSD. Titles control when sessions are joinable and which session to expose for join-in-progress.
 
-### <a name="protocol-activation"></a>协议激活
-如果 Sally 邀请 Lisa 加入她的游戏，Lisa 会在设备上收到通知，她可以选择接受还是拒绝。
+### <a name="protocol-activation"></a>Protocol activation
+If Sally sends an invite to Lisa to join her game, Lisa receives a notification on her device that she can choose to accept or decline.
 
-如果她接受邀请，操作系统将尝试启动游戏，如果游戏尚未运行，则触发激活事件，该事件包含激活游戏的原因以及其他详细信息（如果是邀请，例如，详细信息包括受邀玩家的 ID 和已邀请成员加入的会话。）
+If she accepts the invitation, the OS attempts to launch the game, if the game is not already running, and triggers an activation event that contains information about why the game was activated, and any additional details (in the case of an invite, for example, the details include the ID of the player that invited, as well as the session that the member has been invited to.)
 
-处理此事件的过程称为协议激活，表明游戏应自动进入某个特定状态，这将在激活事件参数中作详细介绍。 如果成员正在加入多人游戏，则将会话句柄 ID 指定为参数之一。
+The process of handling this event is known as protocol activation, and indicates that the game should automatically go into a specific state, which is detailed in the activation event arguments. If the member is joining a multiplayer game, the session handle id is specified as one of the arguments.
 
-在 Lisa 的例子中，接受邀请会自动开始游戏（如果需要）并使她与 Sally 加入到同一游戏会话，无需 Lisa 采取任何进一步的操作。
+In Lisa's case, accepting the invite should automatically start the game (if needed), and join her to the same game session as Sally, without Lisa needing to take any further actions.
 
-可通过接受邀请、通过成员的个人资料卡加入另一个成员的游戏或单击深层链接的成就触发协议激活。
+Protocol activation can be triggered by accepting an invite, joining another member's gamer via their profile card, or clicking a deep linked achievement.
 
 <div id="SmartMatch"/>
-## SmartMatch 匹配 SmartMatch 是适用于匿名匹配的 Xbox Live 服务的名称。 该服务基于可配置的匹配规则集匹配相同游戏的玩家。
+## SmartMatch matchmaking SmartMatch is the name of the Xbox Live service for anonymous matchmaking. This service matches up players of the same game based on configurable a match rule set.
 
-匹配服务与 MPSD 紧密协作并将会话用于匹配输入和输出。 在该服务上执行匹配，从而可使游戏在匹配流程中轻松地提供其他体验，例如游戏内的单人玩家。
+The matchmaking service works closely with the MPSD and uses sessions for matchmaking input and output. Matchmaking is performed on the service, which allows titles to easily do provide other experiences during the matchmaking flow, for example single-player within the title.
 
-想要进入匹配的个人或小组创建匹配票证会话，然后请求匹配服务查找其他要开始与其建立匹配的玩家。 这会导致在一段时间内创建驻留在匹配服务内（在匹配漏斗上）的临时“匹配票证”。
+Individuals or groups that want to enter matchmaking create a match ticket session, then request the matchmaking service to find other players with whom to set up a match. This results in the creation of a temporary "match ticket" residing within the matchmaking service (on a match hopper) for a period of time.
 
-匹配服务基于规则配置、为各玩家存储的数据以及在匹配请求时给定的任何其他信息选择会话以共同游戏。 然后，该服务创建匹配目标会话，此会话包含已匹配的所有玩家，并向用户的游戏告知匹配。
+The matchmaking service chooses sessions to play together based on rule configuration, statistics stored for each player, and any additional information given at the time of the match request. The service then creates a match target session that contains all players who have been matched, and notifies the users' titles of the match.
 
-目标会话准备就绪后，游戏可执行服务质量 (QoS) 检查以确认该组是否可以共同游戏，和/或将玩家加入会话以开始游戏。 在 QoS 过程和匹配游戏期间，游戏在 MPSD 内使会话状态保持最新并从 MPSD 接收关于会话更改的通知。 此类更改包括用户加入或离开，以及对会话仲裁程序的更改。
+When the target session is ready, titles may perform quality of service (QoS) checks to confirm that the group can play together, and/or join players to the session to begin gameplay. During the QoS process and matchmade game play, titles keep the session state up to date within MPSD, and they receive notifications from MPSD about changes to the session. Such changes include users joining or leaving, and changes to the session arbiter.
 
-### <a name="match-ticket-session"></a>匹配票证会话
-匹配票证会话表示适用于想要进行匹配的玩家的客户端。 通常基于同时位于大厅的一组玩家或其他游戏特定的玩家分组。 在某些情况下，票证会话可能是已在进行中并在寻找更多玩家的游戏会话。
+### <a name="match-ticket-session"></a>Match ticket session
+A match ticket session represents the clients for the players who want to make a match. It is typically created based on a group of players who are in a lobby together, or on other title-specific groupings of players. In some cases, the ticket session might be a game session already in progress that is looking for more players.
 
-### <a name="match-ticket"></a>匹配票证
+### <a name="match-ticket"></a>Match ticket
 
-向匹配提交票证会话会创建跟踪匹配尝试的匹配票证。 可以将属性添加到票证，例如，游戏地图或玩家等级。 这些内容连同票证会话中的玩家属性均用于确定匹配。
+Submitting a ticket session to matchmaking results in the creation of a match ticket that tracks the matchmaking attempt. Attributes can be added to the ticket, for example, game map or player level. These, along with attributes of the players in the ticket session, are used to determine the match.
 
-### <a name="hoppers"></a>漏斗
-漏斗是在匹配开始时收集并指定票证的逻辑位置。 仅可匹配同一漏斗内的票证。 游戏可能具有多个漏斗，但每次只能对一个开始匹配。 例如，游戏可以创建一个漏斗，对于该漏斗来说，玩家技能是最重要的匹配项目。 它可以使用另一个漏斗，在该漏斗中，只有玩家购买了相同的可下载内容才会匹配。
+### <a name="hoppers"></a>Hoppers
+Hoppers are logical places where match tickets are collected and specified at the start of matchmaking. Only tickets within the same hopper can be matched. A title can have multiple hoppers but can only start matchmaking on one at a time. For example, a title might create one hopper for which player skill is the most important item for matching. It might use another hopper in which players are only matched if they have purchased the same downloadable content.
 
-在服务配置中配置漏斗以进行匹配。 待定。
+You configure hoppers for matchmaking in the service configuration. TBD.
 
-## <a name="quality-of-service-qos"></a>服务质量 (QoS)
-当玩家在线进行多人游戏时，游戏质量受到正在托管游戏的设备之间的网络通信的影响。 糟糕的网络可能会造成不愉快的游戏体验，例如带宽不足或延迟导致滞后或断开连接。
+## <a name="quality-of-service-qos"></a>Quality of service (QoS)
+When gamers play a multiplayer game online, the quality of the game is affected by the quality of the network communication between the devices which are hosting the games. A poor network can result in undesirable game experiences like lag or connection drops due to insufficient bandwidth or latency.
 
-QoS 是指测量玩家之间的在线连接强度（带宽和延迟），以确保所有玩家享有足够好的网络连接质量。 这对于在匹配期间进行匹配以保证良好体验（由于网络）的玩家尤为重要。 不太适用于好友共同游戏且通常愿意接受连接较差导致的后果的邀请情况。
+QoS refers to measuring the strength of an online connection (bandwidth and latency) between players to ensure that all players have a sufficient network connection quality. This is specifically important for players that are matched during matchmaking to guarantee a good experience due to net. It is less applicable for invites where friends play together and are usually willing to accept the consequences of a poor connection.
 
-你可以配置会话以基于特定标准自动处理 QoS，或每当有人加入该会话时，你的游戏都能处理 QoS 评估。
+You can configure the session to handle QoS automatically based on specific criteria, or your game can handle measuring the QoS whenever anyone joins the session.

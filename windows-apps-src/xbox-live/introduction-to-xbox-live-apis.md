@@ -1,70 +1,70 @@
 ---
-title: "Xbox Live API 简介"
+title: Introduction to Xbox Live APIs
 author: KevinAsgari
-description: "了解各种可用来与 Xbox Live 服务交互的 API 模型。"
+description: Learn about the various API models that you can use to interact with the Xbox Live service.
 ms.assetid: 5918c3a2-6529-4f07-b44d-51f9861f91ec
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one"
-ms.openlocfilehash: 1ea910f0c6889934133c212ee2fe69e8aefd2a36
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: ebf37e9e7f75fc72dd2e1234e10006daebc07356
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/12/2017
 ---
-# <a name="introduction-to-xbox-live-apis"></a>Xbox Live API 简介
+# <a name="introduction-to-xbox-live-apis"></a>Introduction to Xbox Live APIs
 
-## <a name="use-xbox-live-services"></a>使用 Xbox Live 服务
+## <a name="use-xbox-live-services"></a>Use Xbox Live services
 
-可以使用两种方法从 Xbox Live 服务获取信息：
+There are two ways to get information from the Xbox Live services:
 
-- 使用客户端 API，即 Xbox Live 服务 API (**XSAPI**)
-- 直接调用 **Xbox Live REST 终结点**
+- Use a client side API called Xbox Live Services API (**XSAPI**)
+- Call the **Xbox Live REST endpoints** directly
 
-使用 Xbox Live 服务 API (**XSAPI**) 的优点包括：
+The advantages of using the Xbox Live Services API (**XSAPI**) include:
 
-- 系统将为你处理身份验证、编码和 HTTP 发送和接收的详细信息。
-- 包装器 API 的参数，以及从该 API 返回的数据，采用本机数据类型处理。因此，你无需执行 JSON 编码和解码。
-- 直接调用 Web 服务涉及多个异步步骤，这些步骤由包装器 API 封装；这可以简化作品代码的读写过程。
-- 某些功能，例如写入游戏事件，仅在 XSAPI 中提供。
+- Details of authentication, encoding, and HTTP sending and receiving are taken care of for you.
+- Arguments to, and data returned from, the wrapper API is handled in native data types; so, you don't need to perform JSON encoding and decoding.
+- Calling web services directly involves multiple asynchronous steps, which the wrapper API encapsulates; this makes title code easier to read and write.
+- Some functionality, such as writing game events, is only available in XSAPI.
 
-直接使用 **Xbox Live REST 终结点**的优点包括：
+The advantages of using the **Xbox Live REST endpoints** directly include:
 
-- 可从 Web 服务调用 Xbox Live 终结点
-- 可调用不包括在 XSAPI 中的终结点。  XSAPI 仅包括我们认为游戏将使用的 API，因此，如果缺少你需要调用的内容，请通过论坛告知我们。
-- 某些通过 REST 终结点提供的功能可能没有相应的 XSAPI 包装器。
+- Able to call Xbox Live endpoints from a web service
+- Able to call endpoints which aren't included in XSAPI.  XSAPI only includes APIs that we believe games will use, so if there's anything missing you need to call let us know via the forums.
+- Some functionality available via the REST endpoints may not have a corresponding XSAPI wrapper.
 
-你的游戏和应用并不仅限于使用这些方法之一。 你可以使用 XSAPI 包装器，并且仍可根据需要直接调用 REST 终结点。
+Your games and apps are not limited to using just one of these methods. You can use the XSAPI wrapper and still call the REST endpoints directly if needed.
 
-## <a name="xbox-live-services-api-overview"></a>Xbox Live 服务 API 概述 ##
+## <a name="xbox-live-services-api-overview"></a>Xbox Live Services API Overview ##
 
-Xbox Live 服务 API (**XSAPI**) 公开两组支持各种客户方案的客户端 API：
+The Xbox Live Services API (**XSAPI**) exposes two sets of client side APIs that support a wide range of customer scenarios:
 
 - XSAPI WinRT API
-- 基于 XSAPI C++11 的 API
+- XSAPI C++11 based API
 
-比较两个 API:
+Comparing the two APIs:
 
-**基于 XSAPI WinRT 的 API**
+**XSAPI WinRT based API**
 
-- 支持使用 C++/CX、C# 和 JavaScript 编写的应用程序。
-    - C++/CX 是一项 Microsoft C++ 扩展，可简化 WinRT 编程，例如将 ^ 用作 WinRT 指针。
-- 支持面向 Xbox One XDK 平台和通用 Windows 平台 (UWP) 的应用程序  
-- 通过例外以包括 C++/CX 在内的所有语言处理错误。
-- 还支持 C++/WinRT。  有关 C++/WinRT 的更多信息可在 [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/) 上找到
+- Supports applications written with C++/CX, C#, and JavaScript.
+    - C++/CX is a Microsoft C++ extension to make WinRT programming easy for example using ^ as WinRT pointers.
+- 支持面向 Xbox One XDK 平台和通用 Windows 平台 (UWP) x86、x64 及 ARM 体系结构的应用程序。
+- Errors are handled via exceptions in all languages including C++/CX.
+- C++/WinRT is also supported.  More information about C++/WinRT can be found at [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
-下面是使用 C++/WinRT 调用 XSAPI WinRT API 的示例：
+Here's an example of calling the XSAPI WinRT API using C++/WinRT:
 
 ```c++
 winrt::Windows::Xbox::System::User cppWinrtUser = winrt::Windows::Xbox::System::User::Users().GetAt(0);
 winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 ```
 
-如果你要在迁移代码时组合使用 C++/CX 和 C++/WinRT，则也可以这样做，但是稍微有点复杂。  
-下面是使用 C++/WinRT（如果是 C++/CX User^ 对象）调用 XSAPI WinRT API 的示例。
+If you want to mix C++/CX and C++/WinRT as you are migrating code you can do this too but is a little more complex.  
+Here's an example of calling the XSAPI WinRT API using C++/WinRT given C++/CX User^ object.
 
 ```c++
 ::Windows::Xbox::System::User^ user1 = ::Windows::Xbox::System::User::Users->GetAt(0);
@@ -74,30 +74,30 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 ```
 
 
-**基于 XSAPI C++11 的 API**
+**XSAPI C++11 based API**
 
-- 使用跨平台 ISO 标准 C++11
-- 支持使用 C++ 编写的应用程序
-- 支持面向 Xbox One XDK 平台和通用 Windows 平台 (UWP) 的应用程序  
-- 通过 std::error_code 处理错误。
-- 基于 C++11 的 API 是推荐的 API，适用于 C++ 游戏引擎，可提高性能和改进调试。
-- 如果你已加入 Xbox Live 创意者计划，在包括 XSAPI 标头之前，请先定义 XBOX_LIVE_CREATORS_SDK。 这样一来，会将 API 图面区域仅限于可供 Xbox Live 创意者计划中的开发人员使用的区域，并更改登录方法以适用于创意者计划中的作品。  例如：
+- Uses cross platform ISO standard C++11
+- Supports applications written with C++
+- 支持面向 Xbox One XDK 平台和通用 Windows 平台 (UWP) x86、x64 及 ARM 体系结构的应用程序。 
+- Errors are handled via std::error_code.
+- The C++11 based API is the recommended API to use for C++ game engines for better performance, and better debugging.
+- If you are in the Xbox Live Creators Program, before including the XSAPI header define XBOX_LIVE_CREATORS_SDK. This limits the API surface area to only those that are usable by developers in the Xbox Live Creators Program and changes the sign-in method to work for titles in the Creators program.  For example:
 
 ```c++
 #define XBOX_LIVE_CREATORS_SDK
 #include "xsapi\services.h"
 ```
 
-- 还支持 C++/WinRT。  有关 C++/WinRT 的更多信息可在 [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/) 上找到
+- C++/WinRT is also supported.  More information about C++/WinRT can be found at [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
-若要将 C++/WinRT 与 XSAPI C++ API 结合使用，在包括 XSAPI 标头之前，请先定义 XSAPI_CPPWINRT。  例如：
+To use C++/WinRT with the XSAPI C++ API, before including the XSAPI header define XSAPI_CPPWINRT.  For example:
 
 ```c++
 #define XSAPI_CPPWINRT
 #include "xsapi\services.h"
 ```
 
-下面是使用 C++/WinRT 调用 XSAPI C++ API 的示例:
+Here's an example of calling the XSAPI C++ API using C++/WinRT:
 
 ```c++
 winrt::Windows::Xbox::System::User cppWinrtUser = winrt::Windows::Xbox::System::User::Users().GetAt(0);

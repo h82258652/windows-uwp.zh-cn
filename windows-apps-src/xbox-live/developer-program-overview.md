@@ -1,274 +1,274 @@
 ---
-title: "开发人员计划概述"
+title: Developer program overview
 author: KevinAsgari
-description: "了解可供使用 Xbox Live 的各种开发人员计划。"
+description: Learn about the different developer programs available to use Xbox Live.
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者"
-ms.openlocfilehash: e0b24a75e2c7e5850e146dc4797f91906540d5aa
-ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program, creators
+ms.openlocfilehash: ea88b7db1a00837d750bbf12093c3af3603ac839
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2017
+ms.lasthandoff: 09/12/2017
 ---
-# <a name="developer-program-overview"></a>开发人员计划概述
+# <a name="developer-program-overview"></a>Developer program overview
 
-如果你要开发支持 Xbox Live 的作品，则可以在若干选项中选择。 对于每种选项，你都可以选择不同级别的时间投入、可供你使用的功能以及支持选项。
+If you would like to develop Xbox Live enabled titles, there are several options available to you. Each offers varying levels of time investment on your part, features available to you, and support options.
 
-## <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
+## <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
 
-如果你希望熟悉 Xbox Live 开发，最好将 Xbox Live 创意者计划作为使用 Xbox Live 的起点。 此计划无需经过 Microsoft 的审批流程即可加入，并且认证和发布要求也最低。 
+The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development. No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements. 
 
-Xbox Live 创意者计划仅支持创建适用于[通用 Windows 平台](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide)(UWP) 的作品。  这些作为 UWP 游戏创建的作品可在 Windows 10 电脑和 Xbox One 主机上运行。  有关在 Xbox One 上运行 UWP 游戏的更多详细信息，请参阅 [Xbox One 上的 UWP](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index)。  
+The Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP games run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWP games on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).  
 
-Xbox One 为玩家提供策展式应用商店体验，玩家可以在应用商店的全新 Creators Collection 版块中购买通过 Xbox Live 创意者计划发布的游戏。 这样，便在确保人人都能基于开放式平台开发并交付游戏与主机玩家逐步了解并期待获得特选应用商店体验之间达成平衡。 在 Windows 10 上，你的作品将与其他所有 Xbox Live 游戏一起发布在 Windows 应用商店中。
+On Xbox One, which offers gamers a curated store experience, games published through the Xbox Live Creators Program will be sold in the new Creators Collection section of the Store. This offers a balance between ensuring an open platform where anyone can develop and ship a game, and a curated store experience consoles gamers have come to know and expect. On Windows 10, your title will be published among all of the other Xbox Live games in the Windows Store.
 
-### <a name="publishing-and-certification"></a>发布和认证
-作为 Xbox Live 创意者计划的一部分，你必须通过注册[开发人员中心开发人员计划](https://developer.microsoft.com/store/register)发布游戏。 你的游戏必须符合下面两组要求：
+### <a name="publishing-and-certification"></a>Publishing and Certification
+You must be enrolled in the [Dev Center developer program](https://developer.microsoft.com/store/register) to release a game as part of the Xbox Live Creators Program. There are two sets of requirements that your game must follow:
 
-1. 集成 Xbox Live 登录并显示用户身份（玩家代号、玩家头像等）。 所有其他 Xbox Live 服务都是可选的。
-2. 遵循标准的 [Windows 应用商店策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)。
+1. Integrate Xbox Live Sign-In and display the user identity (Gamertag, Gamerpic, etc.). All other Xbox Live services are optional.
+2. Follow to the standard [Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx).
 
-### <a name="supported-xbox-live-services"></a>支持的 Xbox Live 服务
-通过 Xbox Live 创意者计划创建的作品，可以使用排行榜、特别推荐的统计数据、作品存储、连接存储，以及一组受限的社交功能。 通过 Xbox Live 创意者计划创建的作品**不**支持成就、多人在线游戏和多项社交功能。 
+### <a name="supported-xbox-live-services"></a>Supported Xbox Live Services
+Titles enabled under the Xbox Live Creators Program can use Leaderboards, Featured Stats, Title Storage, Connected Storage, and a restricted set of social features. Achievements, online multiplayer, and many social features are **not** supported for titles in the Xbox Live Creators Program. 
 
-有关支持的服务的完整列表，请参阅[功能表](#feature-table)。
+For a full list of supported services, see the [Feature Table](#feature-table).
 
-### <a name="support-and-feedback"></a>支持和反馈
-你可能遇到的任何问题都可以在 [MSDN 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)上得到解答。  你也可以使用“xbox-live”标记在 [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) 上提出编程相关问题。  Xbox Live 团队将与社区合作，并且将根据在此处收到的反馈不断改进我们的 API、工具和文档。
+### <a name="support-and-feedback"></a>Support and Feedback
+Any questions you might have can be answered on the [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev).  You can also ask programming related questions to [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) using the "xbox-live" tag.  The Xbox Live team will be engaged with the community and be continually improving our APIs, tools, and documentation based on the feedback received there.
 
-对于 Xbox Live Creators 计划中的开发人员，你可以在我们的 [Xbox Live 创意者计划用户反馈](https://aka.ms/xblcpuv)中提交新的想法或对现有想法进行表决
+For developers in the Xbox Live Creators Program, you can submit a new idea or vote on existing idea at our [Xbox Live Creators Program User Voice](https://aka.ms/xblcpuv)
 
 ## <a name="idxbox"></a>ID@Xbox
 
-Xbox Live 创意者计划非常适用于大量游戏和开发人员。 但是，如果你希望访问完整的 Xbox Live 堆栈，包括多人在线游戏、成就和游戏得分，或者想要利用硬件开发工具包获得 Xbox One 系列设备的完整功能，则 [ID@Xbox](http://www.xbox.com/en-US/developers/id) 计划适合你。
+The Xbox Live Creators Program is great for lots of games and developers. But if you’d like to access the full Xbox Live stack, including online multiplayer, achievements and Gamerscore, or you want to access the full power of the Xbox One family of devices using hardware dev kits, the [ID@Xbox](http://www.xbox.com/en-US/developers/id) program is for you.
 
-ID@Xbox 计划中的游戏必须是获批的概念，并通过基于 Xbox One 和 Windows 10 的完整认证，这需要贵方投入更多的时间。
-相对于 Creators Collection，ID@Xbox 作品放置在应用商店的主要版块中，这样做可以增加客户看到的机会。
+Games in the ID@Xbox program must be concept approved and go through full certification on Xbox One and Windows 10, which is a greater time commitment on your part.
+ID@Xbox titles get placement in the primary section of the Store, versus the Creators Collection, which may allow for greater exposure to customers.
 
-ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员支持和促销帮助，以及一整套免费的专属白皮书，并访问开发人员技术论坛。 你可以继续使用 [MSDN 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)，也可以使用“xbox live”标记在 [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) 上提出编程相关问题（如果你愿意）。
+Developers in the ID@Xbox program also gain access to developer support and promotional assistance from Microsoft, as well as the full complement of private whitepapers and developer technical forums. You can continue to use [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev) or ask programming related questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) using the "xbox-live" tag if you like.
 
-## <a name="microsoft-partners"></a>Microsoft 合作伙伴
+## <a name="microsoft-partners"></a>Microsoft Partners
 
-开发人员如果与作为 Microsoft 合作伙伴的游戏发布者合作，则可以获得一整套 Xbox Live 功能，并联系专门的 Microsoft 代表，为你的开发、认证和发布过程提供帮助。
+Developers working with a game publisher that is a Microsoft Partner have access to the full set of Xbox Live features and dedicated Microsoft representatives to assist in your development, certification, and release process.
 
-## <a name="feature-table"></a>功能表
+## <a name="feature-table"></a>Feature Table
 
-下表说明了适用于 Xbox Live 创意者计划和 [ID@Xbox](http://www.xbox.com/en-US/developers/id) 计划的功能。  
+The below table illustrates the features available to the Xbox Live Creators Program, and [ID@Xbox](http://www.xbox.com/en-US/developers/id) programs.  
 
 <table>
 
 <tr>
-<th>功能区域</th>
-<th>功能</th>
-<th>描述</th>
+<th>Feature Area</th>
+<th>Feature</th>
+<th>Description</th>
 <th> ID@Xbox </th>
-<th>Xbox Live 创意者计划</th>
+<th>Xbox Live Creators Program</th>
 </tr>
 
 <tr>
-<td rowspan="2" class="dev-program-feature-name">标识</td>
-<td>登录/注册</td>
-<td>允许玩家在你的作品中登录到 Xbox Live，或根据需要创建新的 Xbox Live 帐户</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-required">必填</td>
+<td rowspan="2" class="dev-program-feature-name">Identity</td>
+<td>Sign-in / Sign-up</td>
+<td>Allow players to sign-in to Xbox Live within your title, or create a new Xbox Live account if necessary</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-required">Required</td>
 </tr>
 
 <tr>
-<td>用户标识</td>
-<td>通过显示玩家代号和玩家头像等利用 Xbox Live 标识</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-required">必填</td>
+<td>User Identity</td>
+<td>Utilize Xbox Live identity by displaying the Gamertag, Gamerpic, etc</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-required">Required</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="13" class="dev-program-feature-name">社交</td>
+<td rowspan="13" class="dev-program-feature-name">Social</td>
 
-<td>基本状态</td>
-<td>显示基本状态字符串，说明作品中的用户活动。  例如：“Steve 正在玩‘我的世界’”</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Basic Presence</td>
+<td>Display basic presence strings showing user activity within a title.  Eg: "Steve is playing Minecraft"</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>最近玩过</td>
-<td>显示在 Xbox 应用或 Xbox One 的最近玩过的作品中</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Recently Played</td>
+<td>Appear in recently played titles in the Xbox App or Xbox One</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>活动源</td>
-<td>显示在 Xbox 应用或 Xbox One 的活动源中</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Activity Feed</td>
+<td>Appear in the activity feed in the Xbox App or Xbox One</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>游戏中心</td>
-<td>使游戏中心与你的作品关联，以显示统计数据、视频和特定于作品的源中的其他内容</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Games Hub</td>
+<td>Have a Game Hub associated with your title displaying stats, videos, and other content in a feed specific to your title</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>俱乐部</td>
-<td>玩家可以使用 Xbox 应用或 Xbox One 创建俱乐部，这些俱乐部可有选择地与你的作品关联。</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Clubs</td>
+<td>Players can use the Xbox App or Xbox One to create clubs that can be optionally associated with your title.</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>查找组 (LFG)</td>
-<td>LFG 允许玩家查找游戏外的其他人，以计划多人游戏。</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Looking For Group (LFG)</td>
+<td>LFG allows players to find others out-of-game to schedule a multiplayer game.</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
 <td>GameDVR</td>
-<td>玩家可以捕获其游戏玩法会话视频，并在活动源中共享这些内容。</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Players can capture video of their gameplay sessions and share these on the activity feed.</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>广播</td>
-<td>玩家可以通过 Mixer 和 Twitch 等流服务实时广播其游戏玩法</td>
-<td class="xbl-features-automatic">自动</td>
-<td class="xbl-features-automatic">自动</td>
+<td>Broadcast</td>
+<td>Players can live broadcast their gameplay via streaming services like Mixer and Twitch</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>完整状态</td>
-<td>显示与你的作品中的玩家有关的更多详细信息。  “基本状态”可显示“用户正在玩赛车游戏”，而“完整状态”用于指定更详细的字符串，例如“用户正驾驶超级跑车穿越雨林”</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Rich Presence</td>
+<td>Shows more detailed information about players in your title.  Whereas Basic Presence might show "User is in Car Racing Game", Rich Presence lets you specify a more detailed string like "User is driving SuperCar in RainyForest"</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>好友</td>
-<td>检索登录用户的好友列表，以支持你的作品中的社交游戏玩法方案。</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-limited">可选/受限（仅显示玩你的作品的好友）</td>
+<td>Friends</td>
+<td>Retrieve the sign-in user's friends list to enable social gameplay scenarios in your title.</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-limited">Optional / Limited (only friends who have played your title are exposed)</td>
 </tr>
 
 <tr>
-<td>隐私</td>
-<td>允许玩家对其他玩家进行静音或阻止</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-optional">可选</td>
+<td>Privacy</td>
+<td>Allow players to mute or block or other players</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional</td>
 </tr>
 
 <tr>
-<td>信誉</td>
-<td>玩家因其行为获得或丧失信誉。 行为在匹配中使用，并可供你的作品以自定义方式使用。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Reputation</td>
+<td>Players gain or lose reputation through their behavior. Behavior is used in Matchmaking and can be used by your title in custom ways.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>社交管理器</td>
-<td>高效检索有关玩家的社交图片的信息</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-limited">可选/受限（仅显示玩你的作品的好友）</td>
+<td>Social Manager</td>
+<td>Efficiently retrieve information about a player's social graph</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-limited">Optional / Limited (only friends who have played your title are exposed)</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="4" class="dev-program-feature-name">数据平台</td>
+<td rowspan="4" class="dev-program-feature-name">Data Platform</td>
 
-<td>玩家统计数据</td>
-<td>上传有关玩家的统计数据，这些统计数据可在排行榜中使用。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-optional">可选（仅限 Data Platform 2017）</td>
+<td>Player Stats</td>
+<td>Upload statistics about players which can be used in Leaderboards.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
 
 <tr>
-<td>特别推荐的统计数据</td>
-<td>将某些统计数据指定为将在游戏中心显示的“特别推荐的统计数据”。</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-optional">可选（仅限 Data Platform 2017）</td>
+<td>Featured Stats</td>
+<td>Designate certain stats as "Featured Stats" that will show up in the Game Hub.</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
 
 <tr>
-<td>排行榜</td>
+<td>Leaderboards</td>
 <td>检索玩家统计数据，并以排序方式显示，以鼓励竞争。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-optional">可选（仅限 Data Platform 2017）</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
 
 <tr>
-<td>成就与玩家分数</td>
-<td>将某些统计数据指定为将在游戏中心显示的“特别推荐的统计数据”。</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Achievements with Gamerscore</td>
+<td>Designate certain stats as "Featured Stats" that will show up in the Game Hub.</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="1" class="dev-program-feature-name">媒体</td>
+<td rowspan="1" class="dev-program-feature-name">Media</td>
 
-<td>上下文搜索</td>
-<td>使用关键字为 GameDVR 剪辑添加注释，以使玩家更容易找到与他们要关注的内容对应的剪辑。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Contextual Search</td>
+<td>Annotate GameDVR clips with keywords to make it easier for players to find clips corresponding to what they want to watch.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 
 <tr class="dev-program-feature-start">
-<td rowspan="2" class="dev-program-feature-name">存储</td>
+<td rowspan="2" class="dev-program-feature-name">Storage</td>
 
-<td>连接存储</td>
-<td>在 Xbox One 主机和电脑之间漫游游戏保存内容</td>
-<td class="xbl-features-required">必填</td>
-<td class="xbl-features-optional">可选</td>
+<td>Connected Storage</td>
+<td>Roaming game saves across Xbox One Consoles and PCs</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-optional">Optional</td>
 </tr>
 
 <tr>
-<td>作品存储</td>
-<td>用于存储大量每用户或每作品数据的云存储。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-optional">可选</td>
+<td>Title Storage</td>
+<td>Cloud storage for large amounts of per-user or per-title data.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="6" class="dev-program-feature-name">多人在线游戏</td>
+<td rowspan="6" class="dev-program-feature-name">Online Multiplayer</td>
 
-<td>多人游戏会话目录 (MPSD)</td>
-<td>存储与多人游戏会话有关的信息，例如玩家列表和状态等</td>
-<td class="xbl-features-optional">必填</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Multiplayer Session Directory (MPSD)</td>
+<td>Stores information about a multiplayer session, such as list of players, state, etc.</td>
+<td class="xbl-features-optional">Required</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>匹配</td>
-<td>Xbox Live 可将多人游戏会话中的不同玩家匹配在一起。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Matchmaking</td>
+<td>Xbox Live can match different players together for a multiplayer session.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Arena</td>
-<td>玩家可以在锦标赛中互相竞争。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Players can compete against each other tournament style.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>游戏聊天</td>
-<td>多人游戏中的玩家可进行语音聊天</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Game Chat</td>
+<td>Voice chat for players in a multiplayer game</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Xbox Live Compute</td>
-<td>部署可与你的作品进行通信的可执行文件和资产，以解除客户端的计算工作。</td>
-<td class="xbl-features-optional">可选</td>
-<td class="xbl-features-notavailable">不支持</td>
+<td>Deploy executables and assets which your title can communicate with, to offload computation from the client.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 </table>
