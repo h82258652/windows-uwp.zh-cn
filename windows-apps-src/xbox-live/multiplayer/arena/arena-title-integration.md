@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛"
-ms.openlocfilehash: 6800795797fdc588fc8619894fb535b68bcfd1f0
-ms.sourcegitcommit: 6c2a2646aad7f4e7a09aa8b90d1eee0de79c1254
+localizationpriority: medium
+ms.openlocfilehash: f777751b9e18407a102188ec641808af43621664
+ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 
@@ -309,6 +310,8 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 * 将锦标赛限制为仅在具有固定最大时长的模式下比赛。
 * 告知用户时间限制，并在 **arbitrationTimeout** 前基于比赛中的决胜局报告结果。
 
+由于 **arbitrationTimeout** 到期将触发比赛自动生成结果，因此请在整个 **arbitrationTimeout** 期间结束前报告游戏结果。  可以在时间缓冲区（例如，**arbitrationTimeout** - 1000ms）中生成结果，或使用单独的值来控制最大匹配长度。
+
 #### <a name="other-cases"></a>其他情况
 
 对于任何其他失败的情况，一般指导原则是告知用户错误并使用户返回到 Xbox Arena UI。
@@ -316,6 +319,11 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 ## <a name="experience-requirements-and-best-practices"></a>体验要求和最佳做法
 
 由于 Arena 仅显示你的游戏的单场比赛，因此可随着时间的推移而引入新的格式，无需更新你的游戏。 因此，Arena 集成的游戏的基准用户体验必须简单且能充分灵活地使用多种竞争格式。
+
+（可选）可以利用游戏“锦标赛中心”中的数据让锦标赛更好地融入游戏体验。  可在“xbox::services::tournaments”下找到此功能。  借助这些 API，你可以：
+* 在游戏 UI 中突出显示锦标赛详细信息（锦标赛名称、团队名称等）
+* 在游戏中提供用于发现锦标赛的功能
+* 让用户在 Arena 比赛间隙留在游戏中
 
 ## <a name="configuring-a-title-for-arena"></a>为 Arena 配置游戏
 
