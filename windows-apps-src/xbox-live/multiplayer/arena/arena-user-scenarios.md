@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux"
-localizationpriority: medium
-ms.openlocfilehash: 2fdf4bba54c5eb8448cd230c58cab44aef451753
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: 7fba27dd7a5726161e82869f44746ba3bfe4261e
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="participant-user-scenarios"></a>参与者用户方案
 
