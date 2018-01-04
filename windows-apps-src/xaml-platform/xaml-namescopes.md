@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: 973207d480327ced18b6136796ef92d5d5b81dd5
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="xaml-namescopes"></a>XAML 名称范围
 

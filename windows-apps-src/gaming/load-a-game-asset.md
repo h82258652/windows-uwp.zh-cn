@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, directx, 加载资源"
 ms.openlocfilehash: 032cde6294093a2c0a1c582312b9353a146e94da
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 

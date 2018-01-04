@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, ui, 导航"
 ms.openlocfilehash: 5b5789b90cefb6ba22c2a3d8b5ebbb45be5b0dad
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="ui-navigation-controller"></a>UI 导航控制器
 

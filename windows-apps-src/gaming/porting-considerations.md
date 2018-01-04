@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 游戏, directx 9, directx 11, 移植"
 ms.openlocfilehash: ea89fe1e87099f96b78e06664bd2a252d18ddc26
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>从 DirectX 9 移动至 DirectX 11 和通用 Windows 平台 (UWP)
 

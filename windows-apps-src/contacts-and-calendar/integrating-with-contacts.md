@@ -12,7 +12,8 @@ keywords: "windows 10, uwp, 联系人, 联系人卡片, 注释"
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.openlocfilehash: e882566fcc81941669dd4844235bcbd899ea3079
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 

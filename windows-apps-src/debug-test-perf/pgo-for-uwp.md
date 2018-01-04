@@ -3,7 +3,8 @@ title: "在通用 Windows 平台 (UWP) 应用上运行按配置优化 (PGO)"
 author: erwals-msft
 ms.openlocfilehash: 60182879f9cf3d364974d6ec4d3c26ec76e0e105
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>在通用 Windows 平台应用上运行按配置优化 
  

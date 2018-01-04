@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, uwp, 游戏, 纹理, directx"
 ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="apply-textures-to-primitives"></a>向基元应用纹理
 

@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.openlocfilehash: ccacfc1257af529fcc2363285c6dd9e4ab2315ac
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-CN
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
