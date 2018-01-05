@@ -3,15 +3,18 @@ title: "取样器"
 description: "取样是读取纹理或其他资源输入值的过程。 \\ 0034;取样器\\ 0034;是从资源中读取的任何对象。"
 ms.assetid: 7ECE13BB-9FC5-44A3-B1B2-2FE163F1D627
 keywords: "取样器"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 919de99d9f0680ea63f70a027344c49f3fbd093e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ec409f734e2f3e338f6bfe064a0bed29936980f6
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sampler"></a>取样器
 

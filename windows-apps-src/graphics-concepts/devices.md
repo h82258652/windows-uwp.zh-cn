@@ -3,15 +3,18 @@ title: "设备"
 description: "Direct3D 设备是 Direct3D 的渲染组件。 设备封装并存储渲染状态，执行转换和照明操作，并将图像光栅化到表面。"
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
 keywords: "设备"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e95c1e1cc9cf1b26553ec9e148438ae837dbdf0e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5b45f7289660ae59745660d8f8cfa42ce41f969c
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="devices"></a>设备
 

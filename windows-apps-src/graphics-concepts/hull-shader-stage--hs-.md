@@ -3,15 +3,18 @@ title: "外壳着色器 (HS) 阶段"
 description: "外壳着色器 (HS) 阶段是分割阶段之一，其有效地将模型的单个表面分解为许多三角形。"
 ms.assetid: C62F6F15-CAD7-4C72-9735-00762E346C4C
 keywords: "外壳着色器 (HS) 阶段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: ea1aaea93e585259eba141c5d23c7a7dcb0dd4c3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8236ccc1e4f6366778293dfa5b55d7f186d8c48f
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hull-shader-hs-stage"></a>外壳着色器 (HS) 阶段
 

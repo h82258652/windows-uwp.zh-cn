@@ -3,15 +3,18 @@ title: "细化器 (TS) 阶段"
 description: "细化器 (TS) 阶段创建代表几何图形修补程序的域的采样模式，并生成连接这些样本的一组较小对象（三角形、点或线）。"
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
 keywords: "细化器 (TS) 阶段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 0a18a2ba4172fb4c7aad1d4e8a071bf077afeead
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tessellator-ts-stage"></a>细化器 (TS) 阶段
 

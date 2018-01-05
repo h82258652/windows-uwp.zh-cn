@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1eb756c794e23a17420c14af7e27ec315305f232
-ms.sourcegitcommit: c5c96ec4b6ccef57f69eb341b06e6280994c9767
+ms.localizationpriority: medium
+ms.openlocfilehash: 2aae0e634ea219ef602eafdb1516d1d42b9c7913
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 
@@ -187,15 +188,15 @@ Device Portal 提供程序提供的静态内容会在与核心 Device Portal 服
 若要调试后台任务，必须更改 Visual Studio 运行代码的方式。 请按照以下用于调试应用服务连接的步骤以检查提供程序如何处理 HTTP 请求：
 
 1.  从“调试”菜单中，选择 DevicePortalProvider 属性。 
-1.  在“调试”选项卡下的“启动操作”部分中，选择“不启动，但在启动时调试代码”。  
+2.  在“调试”选项卡下的“启动操作”部分中，选择“不启动，但在启动时调试代码”。  
 ![将插件置于调试模式](images/device-portal/plugin-debug-mode.png)
-1.  在 RequestReceived 处理程序函数中设置断点。
+3.  在 RequestReceived 处理程序函数中设置断点。
 ![requestreceived 处理程序中的断点](images/device-portal/plugin-requestreceived-breakpoint.png)
-    > [!NOTE]
-    > 请确保该版本体系结构完全匹配目标的体系结构。  如果你使用的是 64 位电脑，则必须使用 AMD64 版本进行部署。
-1.  按 F5 部署应用
-1.  关闭 Device Portal，然后重新打开它，以便它可找到你的应用（仅当更改应用清单时才需要 - 其余时候只需重新部署并跳过此步骤）。 
-1.  在浏览器中，访问提供程序的命名空间，应命中断点。
+> [!NOTE] 
+> 请确保该版本体系结构完全匹配目标的体系结构。 如果你使用的是 64 位电脑，则必须使用 AMD64 版本进行部署。 
+4.  按 F5 部署应用
+5.  关闭 Device Portal，然后重新打开它，以便它可找到你的应用（仅当更改应用清单时才需要 - 其余时候只需重新部署并跳过此步骤）。 
+6.  在浏览器中，访问提供程序的命名空间，应命中断点。
 
 ## <a name="related-topics"></a>相关主题
 * [Windows Device Portal 概述](device-portal.md)

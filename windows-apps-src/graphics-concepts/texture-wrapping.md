@@ -3,15 +3,18 @@ title: "纹理环绕"
 description: "纹理环绕通过使用为每个顶点指定的纹理坐标，改变 Direct3D 光栅化纹理多边形的基本方式。"
 ms.assetid: C28FB369-9A91-4D57-A96D-4A5D36484B35
 keywords: "纹理环绕"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: a5c53a4a9fdaf166e9010da1e72f43b8dccf81e2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: bd24fc0ad14657e503feeab2a89ec7e6d4eb7ee0
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-wrapping"></a>纹理环绕
 

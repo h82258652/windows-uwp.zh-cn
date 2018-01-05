@@ -3,15 +3,18 @@ title: "HLSL 流式资源暴露"
 description: "支持 Shader 模型 5 中的流式资源需要特定 Microsoft 高级着色器语言 (HLSL) 语法。"
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
 keywords: "HLSL 流式资源暴露"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 143e2379e64b38cc30384bd0fb4c983eeacb7f37
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 49e199c06cd3d1e4bd1eb9596e392116d896f993
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL 流式资源暴露
 

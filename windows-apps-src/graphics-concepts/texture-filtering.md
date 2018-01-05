@@ -3,15 +3,18 @@ title: "纹理筛选"
 description: "当通过将 3D 基元映射到 2D 屏幕的形式呈现基元时，纹理筛选针对基元的 2D 呈现图像中的每个像素生成一种颜色。"
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
 keywords: "纹理筛选"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 42d184b15de4fdeac18549b41447da81580d6b99
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-filtering"></a>纹理筛选
 

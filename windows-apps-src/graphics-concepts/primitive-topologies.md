@@ -3,15 +3,18 @@ title: "基元拓扑"
 description: "Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列表和三角形带）将如何解释和呈现顶点。"
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
 keywords: "基元拓扑"
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: d0d6bed3cbccd37fcd4fc835273099e8d26f671d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: cf14efc4c4ec29c98ebebff91493623d55267db5
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="primitive-topologies"></a>基元拓扑
 

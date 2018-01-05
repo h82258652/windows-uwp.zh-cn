@@ -3,15 +3,18 @@ title: "几何着色器 (GS) 阶段"
 description: "几何着色器 (GS) 阶段处理整个基元、三角形、线和点，以及它们的相邻顶点。"
 ms.assetid: 8A1350DD-B006-488F-9DAF-14CD2483BA4E
 keywords: "几何着色器 (GS) 阶段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 05ef26d8ad596a89cb1e9f2bb44d0e1b062097ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: c04f07da60e6814703a8aff27eb038b43a2b5ad4
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="geometry-shader-gs-stage"></a>几何着色器 (GS) 阶段
 

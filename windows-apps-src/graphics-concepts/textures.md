@@ -3,15 +3,18 @@ title: "纹理"
 description: "纹理是在计算机生成的 3D 图像中创建逼真效果的强大工具。 Direct3D 支持广泛的纹理功能集，使开发人员能够轻松访问高级纹理技术。"
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
 keywords: "纹理"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: ef5c72f3c667c63cb48c469349ae26c364050c19
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b52aeb2c697389d9d5d15cb05701082ad11c94e8
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textures"></a>纹理
 

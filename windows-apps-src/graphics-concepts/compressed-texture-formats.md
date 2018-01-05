@@ -3,15 +3,18 @@ title: "压缩的纹理格式"
 description: "此部分包含有关压缩纹理格式的内部组织的信息。"
 ms.assetid: 24D17B9F-8CA7-4006-9E0F-178C6B3CAEC9
 keywords: "压缩的纹理格式"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1bf94307093913c3b89b1d2a80e1e77d8dec81eb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a37246ff409b0a18992af32172bd4f6a8e535da7
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compressed-texture-formats"></a>压缩的纹理格式
 

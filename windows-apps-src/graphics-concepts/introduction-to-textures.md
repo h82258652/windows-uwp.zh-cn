@@ -3,15 +3,18 @@ title: "纹理简介"
 description: "纹理资源是存储纹素的数据结构，纹素是可以读取或写入的纹理的最小单位。 在着色器读取纹理时，可以通过纹理采样器对纹理进行过滤。"
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
 keywords: "纹理简介"
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: d642668a9af1e62f232e13e411e51e6d850de7f5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d2390568efc43e89da8aa8df73767bbd7b752538
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-textures"></a>纹理简介
 

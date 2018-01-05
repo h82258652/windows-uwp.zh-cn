@@ -3,15 +3,18 @@ title: "状态对象"
 description: "设备状态被分为状态对象，这些状态对象可大大降低状态变化的成本。 状态对象有多个，每一个状态对象旨在对特定管道阶段的一组状态进行初始化。 状态对象因 Direct3D 的版本而异。"
 ms.assetid: D998745C-2B75-4E59-9923-AD1A17A92E05
 keywords: "状态对象"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: f046ab40ef4e05a8542f259330269e75ceb06f5f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 763df332ab64fcc536f5358df8b22eecc08e7527
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="state-objects"></a>状态对象
 

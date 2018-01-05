@@ -3,15 +3,18 @@ title: "相机空间转换"
 description: "通过使用通用视图矩阵转换对象顶点来计算相机空间中的顶点。"
 ms.assetid: 86EDEB95-8348-4FAA-897F-25251B32B076
 keywords: "相机空间转换"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 907df69fdd0c785294283de858a0fcebd0c63513
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 032518fe793db99309d098b28f2f8e94bbb072ba
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="camera-space-transformations"></a>相机空间转换
 

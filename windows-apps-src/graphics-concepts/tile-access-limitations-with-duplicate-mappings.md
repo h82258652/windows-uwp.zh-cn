@@ -3,15 +3,18 @@ title: "使用重复映射的磁贴访问限制"
 description: "使用重复映射的磁贴访问存在着限制，例如在复制源区域和目标区域重叠的流式资源时，或者在渲染至在渲染区内共享的磁贴时。"
 ms.assetid: 6E40B1DC-BCF1-4B09-82A8-7B2D9B209A61
 keywords: "使用重复映射的磁贴访问限制"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 13895acb5bb14cb1f0e5b91a2060e4eed9265a1c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e66fd373f2c1aaa18ca7cd0a7e8a463fce024e14
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>使用重复映射的磁贴访问限制
 

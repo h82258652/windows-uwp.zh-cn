@@ -3,15 +3,18 @@ title: "光栅化规则简介"
 description: "通常，为顶点指定的点不与屏幕上的像素精确匹配。 发生这种情况时，Direct3D 应用三角形光栅化规则来决定将哪些像素应用到给定的三角形。"
 ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
 keywords: "光栅化规则简介"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1c22f17991462ddf190ece2baa0360fa3e1d12a5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 6eea8810fd1fec9df405e4c16272a468d4272210
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-rasterization-rules"></a>光栅化规则简介
 

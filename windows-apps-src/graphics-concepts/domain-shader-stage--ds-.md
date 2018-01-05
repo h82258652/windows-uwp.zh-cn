@@ -3,15 +3,18 @@ title: "域着色器 (DS) 阶段"
 description: "域着色器 (DS) 阶段计算输出修补程序中细分点的顶点位置；它计算与每个域样本对应的顶点位置。"
 ms.assetid: 673CC04A-A74F-495F-AFB7-49157538749C
 keywords: "域着色器 (DS) 阶段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 3a94f30af955853a87958ae65a548f63c78b83ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a1d229f38511196e96c2282a1665071e8e74af72
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="domain-shader-ds-stage"></a>域着色器 (DS) 阶段
 

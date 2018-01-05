@@ -3,15 +3,18 @@ title: "跨进程和设备共享的流式资源"
 description: "磁贴池可与传统资源等其他进程共享。 涉及无法跨设备和进程共享磁贴池的流式资源。"
 ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords: "跨进程和设备共享的流式资源"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8f383805759e099144f13a5924b5da90240b4ef0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d08153588ce596af1228fd5bb1e6989396f993c3
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>跨进程和设备共享的流式资源
 

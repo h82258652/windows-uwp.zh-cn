@@ -1,21 +1,23 @@
 ---
-author: DelfCo
+author: stevewhims
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
 description: "适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。"
 title: "选择哪一种网络技术？"
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4cbb423d8fdddfc6cc158c1cbca2398b21dc205c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 70ac6eb26c13d8fca3196fa64bfce2bb76f9d1b2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。
 

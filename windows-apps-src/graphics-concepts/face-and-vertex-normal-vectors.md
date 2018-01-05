@@ -3,15 +3,18 @@ title: "面和顶点的法向矢量"
 description: "网格的每个面都有垂直单位法向矢量。 矢量方向取决于顶点的定义顺序和坐标系统是左手坐标还是右手坐标。"
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords: "面和顶点的法向矢量"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 04725508694370c1fff20ae34736fbd05948328c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7f8a38eeca0516082a64f5b4d2778f74436bbdb7
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="face-and-vertex-normal-vectors"></a>面和顶点的法向矢量
 

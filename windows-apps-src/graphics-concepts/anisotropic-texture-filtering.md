@@ -3,15 +3,18 @@ title: "各向异性纹理筛选"
 description: "各向异性是可见于 3D 对象的纹素中的失真，此 3D 对象的表面面向与屏幕平面相对的角度。 当各向异性基元中的像素映射到纹素时，其形状就会失真。"
 ms.assetid: 58923809-EF76-4C16-BCE7-922A66425F83
 keywords: "各向异性纹理筛选"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: a185caebf2067afcacf5f287b3b6af320894f6f6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b6f4b74d64b7a3f9768697b5b6f495a322686c59
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="anisotropic-texture-filtering"></a>各向异性纹理筛选
 
