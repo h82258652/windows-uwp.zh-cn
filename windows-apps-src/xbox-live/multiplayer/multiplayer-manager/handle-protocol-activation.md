@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/06/2017
 ---
-# 处理协议激活
+# <a name="handle-protocol-activation"></a>处理协议激活
 
 当系统自动开始游戏响应其他操作时执行协议激活（通常是在一名玩家接受另一名玩家的游戏邀请时）。
 

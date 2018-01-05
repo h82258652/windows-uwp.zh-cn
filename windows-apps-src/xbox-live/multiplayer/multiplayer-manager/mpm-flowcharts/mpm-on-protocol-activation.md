@@ -15,10 +15,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/06/2017
 ---
-# 流程图 - 处理协议激活
+# <a name="flowchart---handle-protocol-activation"></a>流程图 - 处理协议激活
 
 下面的流程图显示了响应游戏邀请，或通过成员的个人资料卡加入游戏的流程。
 
-## 处理协议激活
+## <a name="handle-protocol-activation"></a>处理协议激活
 
 ![SmartMatch 匹配](../../../images/multiplayer/mpm-on-activation.png)
