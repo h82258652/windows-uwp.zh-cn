@@ -1,27 +1,29 @@
 ---
 author: jnHs
-Description: "无需使用开发人员中心仪表板即可为应用创建应用商店一览，以 .csv 文件格式导出应用商店一览，输入信息和资产后导入更新后文件即可。"
-title: "导入和导出应用商店一览"
+Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
+title: "导入和导出 Store 一览"
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 12/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 691074727bab67e616541b393468eb70f0b20a05
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: "windows 10, uwp, 导入 store 一览, 导出 store 一览, 导入导出, store 一览 csv"
+ms.localizationpriority: high
+ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="import-and-export-store-listings"></a>导入和导出应用商店一览
+# <a name="import-and-export-store-listings"></a>导入和导出 Store 一览
+无需[在仪表板中直接输入 Store 一览的信息](create-app-store-listings.md)，你可以选择通过这种方式添加或更新信息：以 .csv 文件格式导出一览，输入信息和资产，然后导入更新后文件。 可以通过这种方法从头开始创建一览，或者更新早已创建的一览。
 
-无需使用开发人员中心仪表板即可为应用创建[应用商店一览](create-app-store-listings.md)，以 .csv 文件格式导出应用商店一览，输入信息和资产后导入更新后文件即可。 可以通过这种方法从头开始创建一览，或者更新早已创建的一览。 
-
-请注意，无法通过这种方法为应用创建或更新[特定于平台的应用商店一览](create-platform-specific-store-listings.md)。
+当你想要为产品创建或更新多语言 Store 一览时，此选项非常有用，因为你可以将相同信息复制/粘帖到多个字段，并且可以轻松地对特定语言进行更改。 但是，无法通过这种方法为应用创建或更新[特定于平台的 Store 一览](create-platform-specific-store-listings.md)。 
 
 > [!TIP]
 > 还可以通过此功能为加载项导入和导出应用商店一览详细信息。 对于加载项，相应流程相同，不过[仅包含与加载项有关的字段](#add-ons)。
+
+请记住，你可以始终在开发人员中心仪表板中直接创建或更新一览（即便你先前已使用导入/导出方法）。 如果只是进行了简单更改，在仪表板中直接更新可能更方便，不过你可以在任何时候使用任何一种方法。
 
 ## <a name="export-listings"></a>导出一览
 

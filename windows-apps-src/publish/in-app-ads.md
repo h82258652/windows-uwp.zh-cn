@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: "如果你的应用使用 Microsoft 广告 SDK 显示广告，请使用开发人员中心仪表板的应用内广告页面管理广告的使用。"
+Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
 title: "应用内广告"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: high
-ms.openlocfilehash: eb835269cd9df7385d8d03e032d8b41cb7f92a19
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: high
+ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -120,10 +120,13 @@ ms.lasthandoff: 10/31/2017
 | AOL 和 AppNexus |  这是一个可通过我们的合作伙伴网络提供广告的 Microsoft 托管的广告网络，即 AOL 和 AppNexus。<p/>**注意**：对于横幅广告单元，AOL 和 AppNexus 始终在**付费广告网络**列表中排名第一，且针对这些类型的广告不能更改为更低排名。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以提供来自 [AppNexus](https://www.appnexus.com) 的视频间隙广告。 | 视频间隙、本机  |
 | Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
+| Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅  |
+| Revcontent |  选择此选项以提供来自 [Revcontent](http://www.revcontent.com/) 的广告。 |  横幅  |
 | Smaato |  选择此选项以提供来自 [Smaato](https://www.smaato.com/) 的广告。 |  横幅  |
 | smartclip |  选择此选项以提供来自 [smartclip](http://www.smartclip.com/) 的广告。 |  视频间隙  |
 | SpotX |  选择此选项以提供来自 [SpotX](https://www.spotx.tv/) 的广告。 |  视频间隙  |
 | Taboola |  选择此选项以提供来自 [Taboola](https://www.taboola.com/) 的广告。 |  横幅  |
+
 
 <span id="other-networks" />
 ### <a name="other-ad-networks"></a>其他广告网络
@@ -143,12 +146,18 @@ ms.lasthandoff: 10/31/2017
 
 |  广告网络  |  支持的市场  |
 |--------------|---------------------|
+| Revcontent | 巴西、加拿大、法国、德国、印度、日本、西班牙、英国、美国  |
 | Smaato | 巴西、加拿大、法国、德国、印度、日本、西班牙、英国、美国 |
 | smartclip | 奥地利、比利时、丹麦、芬兰、德国、意大利、荷兰、挪威、瑞典、瑞士  |
 
 <span id="coppa" />
 ## <a name="coppa-compliance"></a>COPPA 合规性
 
-根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须通知 Microsoft。 如果你使用开发人员中心向 Microsoft 指示你的应用将会面向13 岁以下的儿童，则 Microsoft 将采取措施在向你的应用发送广告时禁用其行为广告服务。 如果你的应用面向 13 岁以下的儿童，则你承担 COPPA 规定的某些义务。
+在[创建广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)时，如果针对广告单元选定的应用至少有一个提交已到达应用认证过程中的[已在 Store 中发布](../publish/the-app-certification-process.md#in-the-store)步骤，那么 **COPPA 合规性**部分将显示在仪表板页面底部。
 
-有关 COPPA 规定的义务的详细信息，请参阅[此页面](http://go.microsoft.com/fwlink/p/?linkid=536558)。
+根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须在这个部分选择**此应用程序面向 13 岁以下的儿童**。 如果选择此选项，则 Microsoft 将采取措施以在向你的应用发送广告时禁用其行为广告服务。
+
+你选择的 **COPPA 合规性**设置将自动应用于所选应用的所有广告单元。
+
+> [!IMPORTANT]
+> 如果你的应用面向 13 岁以下的儿童，则你承担 COPPA 规定的某些义务。 有关你的义务的详细信息，请参阅[此页面](http://go.microsoft.com/fwlink/p/?linkid=536558)。

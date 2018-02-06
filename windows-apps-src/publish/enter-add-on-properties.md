@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "在提交加载项时，“属性”页面上的选项有助于确定在提供给客户时加载项的行为。"
+Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: "输入加载项属性"
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 253e008d3622094dcfe765531d71e5f37b7777b0
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+keywords: "windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品"
+ms.localizationpriority: high
+ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
@@ -29,28 +30,31 @@ ms.lasthandoff: 08/17/2017
 
 在此页面上看到的字段会有所不同，具体取决于加载项的产品类型。
 
-## <a name="product-lifetime"></a>产品生命周期
 
+## <a name="product-lifetime"></a>产品生命周期
 
 如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果你愿意，可以设置“产品生命周期”****，以使加载项在设置的持续时间后（可选择 1 至 365 天）过期。
 
-## <a name="quantity"></a>数量
 
+## <a name="quantity"></a>数量
 
 如果选择的产品类型为**应用商店管理的易耗品**，此处将显示**数量**。 将需要输入一个 1 到 1000000 之间的数字。 此数量将在客户获取你的加载项时授予他们，并且应用商店将在应用报告客户使用该加载项时跟踪平衡。
 
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 将需要选择一个可用选项（**每月**、**3 个月**、**6 个月**、**每年**或 **24 个月**）以表明向客户收取订阅费用的频率。 请注意，加载项发布之后，将无法更改**订阅期限**选择。
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项为**每月，不过你也可以选择 **3 个月**、**6 个月**、**每年**或 **24 个月** 
 
-> [!NOTE]
-> 目前，只有参加了早期采用者计划的开发者帐户才能创建订阅加载项。 我们将在以后让所有开发者帐户都能够使用订阅加载项，并且，目前我们正在提供初步文档，让开发人员能够预览此功能。 有关详细信息，请参阅[为应用启用订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)。
+> [!IMPORTANT]
+> 加载项发布之后，将无法更改**订阅期限**选择。
 
 
 ## <a name="free-trial"></a>免费试用
 
-对于订阅加载项，此处还将显示**免费试用**。 必须选择是否允许客户在一段时间内（**1 周**或 **1 个月**）免费使用加载项，或者是否表明**没有免费试用**。 请注意，加载项发布之后，将无法更改**免费试用**选择。
+如果选择的产品类型为**订阅**，此处还将显示**免费试用**。 默认选项为**没有免费试用**。 如果你愿意，可以让客户在设定的时间段（**1 周**或 **1 个月**）内免费使用加载项。 
+
+> [!IMPORTANT]
+> 加载项发布之后，将无法更改**免费试用**选择。
 
 
 ## <a name="content-type"></a>内容类型

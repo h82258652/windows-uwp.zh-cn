@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "在 Windows 开发人员中心仪表板中创建新的加载项时，需要指定产品类型并为其分配产品 ID。"
+Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
 title: "设置加载项产品类型和产品 ID"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
-ms.date: 06/28/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
-ms.openlocfilehash: 136077edcf4704f3ea71416719e7c37db43dafda
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: "windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品"
+ms.localizationpriority: high
+ms.openlocfilehash: 24731a378ddc0defada7a94282afd790dfb5b780
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
@@ -49,14 +50,11 @@ ms.lasthandoff: 08/09/2017
 
 若希望定期向客户收取加载项费用，则选择**订阅**。
 
-> [!NOTE]
-> 目前，只有参加了早期采用者计划的开发者帐户才能创建订阅加载项。 我们将在以后让所有开发者帐户都能够使用订阅加载项，并且，目前我们正在提供初步文档，让开发人员能够预览此功能。 有关详细信息，请参阅[为应用启用订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)。
-
 客户最初获取订阅加载项后，将定期支付费用以继续使用此加载项。 客户可以随时取消订阅，以免日后继续产生费用。 你需要指定订阅期，以及是否在提交中的**属性**步骤提供免费试用版。
 
 订阅加载项仅适用于运行 Windows 10、版本 1607 或更高版本的客户。 必须使用 Windows 10 SDK 版本 14393 或更高版本编译父应用，并且必须使用 **Windows.Services.Store** 命名空间（而不是 **Windows.ApplicationModel.Store** 命名空间）中的应用内购买 API。 有关这些命名空间之间的差异的详细信息，请参阅[应用内购买和试用](../monetize/in-app-purchases-and-trials.md)。
 
-在将订阅加载项发布到应用商店之前，必须提交父产品（但可以在仪表板中创建提交，并可随时处理）。
+在将订阅加载项发布到 Store 之前，必须提交父产品（但你可以在仪表板中创建提交，并且可随时处理）。
 
 ## <a name="product-id"></a>产品 ID
 
@@ -69,5 +67,5 @@ ms.lasthandoff: 08/09/2017
 -   产品 ID 的长度不可超过 100 个字符。
 -   产品 ID 不可包含以下任何字符：**&lt; &gt; \* % & : \\ ? + ,**
 -   若要在所有操作系统版本中提供加载项，必须只使用字母数字字符、句点和/或下划线。 如果你使用任何其他类型的字符，该加载项将不可供运行 Windows Phone 8.1 或更早版本的客户购买。
--   产品 ID 无需在 Windows 应用商店中是唯一的，但它必须对于你的开发人员帐户是唯一的。
+-   产品 ID 在 Microsoft Store 中无需是唯一的，但对于你的开发人员帐户必须是唯一的。
  

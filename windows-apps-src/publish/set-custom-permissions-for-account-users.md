@@ -1,21 +1,22 @@
 ---
 author: jnHs
-Description: "为帐户用户设置自定义权限。"
+Description: Set custom permissions for account users.
 title: "为帐户用户设置自定义权限"
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
-ms.openlocfilehash: d45ae4001dbb14a11e2beeecc3f98fb72bbc8a86
-ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+keywords: "windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色"
+ms.localizationpriority: high
+ms.openlocfilehash: 1fdde4be606abae849ff3350d27afbbced157f75
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色和自定义权限
+# <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
 [将用户添加到开发人员中心帐户](add-users-groups-and-azure-ad-applications.md)时，将需要指定他们的帐户中有哪些访问权限。 可以通过将适用于整个帐户的[标准角色](#roles)分配给用户以实现此目的，或者可以选择[自定义权限](#custom)，向用户提供相应的访问权限级别。 有些自定义权限适用于整个帐户，有些权限限制于一个或多个特定产品（如果你愿意，可授予所有产品）。
 
@@ -26,6 +27,9 @@ ms.lasthandoff: 07/17/2017
 -   用户（包括组和 Azure AD 应用程序）将能够使用与其分配角色关联的权限访问整个开发人员中心帐户，除非[自定义权限](#custom)并分配[产品级别的权限](#product-level-permissions)，这样他们只能使用特定的应用和/或加载项。
 -   可以通过选择多个角色或使用自定义权限授予想要授予的访问权限，允许用户、组或 Azure AD 应用程序访问多个角色的功能。
 -   具有某个角色（或自定义权限集）的用户还可加入具有其他角色（或权限集）的组。 在该情况下，用户可访问与组和个人帐户关联的所有功能。
+
+> [!TIP]
+> 本主题特定于 Windows 应用开发人员计划。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。
 
 
 <span id="roles" />
@@ -41,7 +45,7 @@ ms.lasthandoff: 07/17/2017
 
 | 角色                 | 描述              |
 |----------------------|--------------------------|
-| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在开发人员中心中管理用户，但请注意，创建和删除用户的功能取决于帐户在 Azure AD 中的权限。 即，如果用户分配了管理员角色，但在组织的 Azure AD 中没有管理员权限，他们将无法创建新用户或从目录中删除用户（尽管他们可以更改用户的开发人员中心角色）。 |
+| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在开发人员中心中管理用户，但请注意，在 Azure AD 租户中创建和删除用户的功能取决于帐户在 Azure AD 中的权限。 即，如果用户分配了管理员角色，但在组织的 Azure AD 中没有全局管理员权限，他们将无法创建新用户或从目录中删除用户（尽管他们可以更改用户的开发人员中心角色）。 <p> 注意，如果开发人员中心帐户与多个 Azure AD 租户关联，则管理员无法查看完整的用户详细信息（包括名字、姓氏、密码恢复电子邮件，以及他们是否为 Azure AD 全局管理员），除非使用拥有该用户所在租户的全局管理员权限的帐户登录该租户。 不过，管理员可以在与开发人员中心帐户关联的任何租户中添加和删除用户。 |
 | 开发人员            | 可以上传程序包并提交应用和加载项，并且可以查看[使用情况报告](usage-report.md)获取遥测详细信息。 无法查看财务信息或帐户设置。   |
 | 业务参与者 | 可查看[运行状况](health-report.md)和[使用情况](usage-report.md)报告。 无法创建或提交产品、更改帐户设置或查看财务信息。                                         |
 | 财务参与者  | 可查看[付款报告](payout-summary.md)、财务信息和购置报告。 无法对应用、加载项或帐户设置进行任何更改。                                                                                                                                   |
@@ -99,19 +103,19 @@ ms.lasthandoff: 07/17/2017
     </thead>
     <tbody>
 <tr><td align="left">    **帐户设置**                    </td><td align="left">  可查看**帐户设置**部分中的所有页面，包括[联系人信息](managing-your-profile.md)。       </td><td align="left">  可查看**帐户设置**部分中的所有页面。 可更改[联系人信息](managing-your-profile.md)和其他页面，但无法更改付款帐户或税务配置文件（除非单独授予该权限）。            </td></tr>
-<tr><td align="left">    **帐户用户**                       </td><td align="left">  可查看在**管理用户**部分中添加到帐户的用户。          </td><td align="left">  可将用户添加到帐户，并更改**管理用户**部分中的现有用户。             </td></tr>
+<tr><td align="left">    **帐户用户**                       </td><td align="left">  可在**用户**部分查看已添加到帐户的用户。          </td><td align="left">  可将用户添加到帐户，并在**用户**部分更改现有的用户。             </td></tr>
 <tr><td align="left">    **帐户级别的广告性能报告** </td><td align="left">  可查看帐户级的[广告性能报告](advertising-performance-report.md)。      </td><td align="left">  不适用   </td></tr>
 <tr><td align="left">    **广告市场活动**                        </td><td align="left">  可查看在帐户中创建的[广告市场活动](create-an-ad-campaign-for-your-app.md)。      </td><td align="left">  可在帐户中创建、管理和查看[广告市场活动](create-an-ad-campaign-for-your-app.md)。          </td></tr>
 <tr><td align="left">    **广告中介**                        </td><td align="left">  可查看帐户中所有产品的[广告中介配置](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx)。    </td><td align="left">  可查看和更改帐户中所有产品的[广告中介配置](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx)。        </td></tr>
 <tr><td align="left">    **广告中介报告**                </td><td align="left">  可查看帐户中所有产品的[广告中介报告](ad-mediation-report.md)。    </td><td align="left">  不适用    </td></tr>
 <tr><td align="left">    **广告性能报告**              </td><td align="left">  可查看帐户中所有产品的[广告性能报告](advertising-performance-report.md)。       </td><td align="left">  不适用         </td></tr>
-<tr><td align="left">    **广告单元**                            </td><td align="left">  可查看为帐户创建的[广告单元](monetize-with-ads.md)。    </td><td align="left">  可创建、管理和查看帐户[广告单元](monetize-with-ads.md)。             </td></tr>
+<tr><td align="left">    **广告单元**                            </td><td align="left">  可查看为帐户创建的[广告单元](in-app-ads.md)。    </td><td align="left">  可创建、管理和查看帐户[广告单元](in-app-ads.md)。             </td></tr>
 <tr><td align="left">    **联盟广告**                       </td><td align="left">  可查看帐户中所有产品的[联盟广告](about-affiliate-ads.md)使用情况。    </td><td align="left">  可管理和查看帐户中所有产品的[联盟广告](about-affiliate-ads.md)使用情况。                </td></tr>
 <tr><td align="left">    **联盟性能报告**      </td><td align="left">  可查看帐户中所有产品的[联盟性能报告](affiliates-performance-report.md)。   </td><td align="left">  不适用   </td></tr>
 <tr><td align="left">    **应用安装广告报告**             </td><td align="left">  可查看[广告活动报告](promote-your-app-report.md)。           </td><td align="left">  不适用   </td></tr>
 <tr><td align="left">    **社区广告**                       </td><td align="left">  可查看帐户中所有产品的免费[社区广告](about-community-ads.md)使用情况。          </td><td align="left">  可创建、管理和查看帐户中所有产品的免费[社区广告](about-community-ads.md)使用情况。               </td></tr>
 <tr><td align="left">    **联系人信息**                        </td><td align="left">  可查看“帐户设置”部分中的[联系人信息](managing-your-profile.md)。        </td><td align="left">  可编辑和查看“帐户设置”部分中的[联系人信息](managing-your-profile.md)。            </td></tr>
-<tr><td align="left">    **COPPA 合规性**                    </td><td align="left">  可查看帐户中所有产品的 [COPPA 合规性](monetize-with-ads.md#coppa-compliance)选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 [COPPA 合规性](monetize-with-ads.md#coppa-compliance) 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
+<tr><td align="left">    **COPPA 合规性**                    </td><td align="left">  可查看帐户中所有产品的 [COPPA 合规性](in-app-ads.md#coppa-compliance)选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 [COPPA 合规性](in-app-ads.md#coppa-compliance) 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
 <tr><td align="left">    **客户组**                     </td><td align="left">  可查看**客户**部分中的[客户组](create-customer-groups.md)（类别和外部测试版组）。      </td><td align="left">  可创建、编辑和查看**客户**部分中的[客户组](create-customer-groups.md)（类别和外部测试版组）。       </td></tr>
 <tr><td align="left">    **新应用**                            </td><td align="left">  可查看新应用创建页面，但实际上无法在帐户中创建新应用。    </td><td align="left">  在帐户中预留新应用名称可[创建新应用](create-your-app-by-reserving-a-name.md)，并可创建新提交，然后将应用提交到应用商店。     </td></tr>
 <tr><td align="left">    **新捆绑包**&nbsp;*                       </td><td align="left">  可查看新捆绑包创建页面，但实际上无法在帐户中创建新捆绑包。     </td><td align="left">  可创建产品的新捆绑包。          </td></tr>

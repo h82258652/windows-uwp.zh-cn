@@ -1,27 +1,25 @@
 ---
 author: jnHs
-Description: "在提交加载项时，“定价和可用性”页上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。"
+Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: "设置加载项定价和可用性"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
-ms.openlocfilehash: 09671148e670acbfdbc944558a2738712f848dd5
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+keywords: "windows 10, uwp, 加载项, iap, 价格"
+ms.localizationpriority: high
+ms.openlocfilehash: 8eb2321ec6d2bc8602438e2dc66ca1d96690a3f8
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-add-on-pricing-and-availability"></a>设置加载项定价和可用性
 
 
-在提交加载项时，“定价和可用性”****页上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。
-
-> [!NOTE]
-> 我们近期已更新此页面上的可用选项。 如果在此类选项提供之前存在进行中的提交，则你的提交可能仍显示之前的选项。 可以删除该提交，如果要使用最新选项，可创建一个新提交。 否则，发布进行中的提交后，下一次更新时将提供最新选项。
+在提交加载项时，**定价和可用性**页上的选项决定了你的加载项的付费内容以及应向客户提供它的方式。
 
 ## <a name="markets"></a>市场
 
@@ -78,7 +76,7 @@ ms.lasthandoff: 08/17/2017
 选择**不早于 \[日期\]**来确保在特定日期之前不发布提交。 使用此选项，你的提交将在你指定的日期当天或之后立即发布。 该日期必须为 24 小时之后的一个日期。 除了日期，还可指定开始发布提交的时间。
  
 > [!NOTE]
-> 认证或发布期间的延迟可能导致实际发布日期晚于请求的日期。 Windows 应用商店不能保证你的加载项（或更新）将在特定的日期可用。  
+> 认证或发布期间的延迟可能导致实际发布日期晚于请求的日期。 Microsoft Store 不能保证你的加载项（或更新）将在特定的日期可用。  
 
 
 

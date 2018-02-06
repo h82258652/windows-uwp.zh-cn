@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "可以在应用提交的“组织许可”部分中指示是否提供应用以及如何提供应用，以便通过适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店批量购买应用。"
+Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
 title: "组织许可选项"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
-ms.date: 06/14/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 适用于企业的应用商店, 适用于教育的应用商店, 组织, 批量许可"
-ms.openlocfilehash: 8bb44a65f2ded280cfe8eda39663b64ef2edb3c8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: "windows 10, uwp, 适用于企业的 store, 适用于教育的 store, 组织, 批量许可, 企业, 教育 store, 企业 store, 批量购买, 批量"
+localizationpriority: high
+ms.openlocfilehash: 7437b087c0966939bb5f5d8110d310f4dd5e73df
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="organizational-licensing-options"></a>组织许可选项
 
@@ -22,10 +23,14 @@ ms.lasthandoff: 06/21/2017
 
 借助这些设置，可以选择允许将应用提供给要为其用户获取和部署多个许可证的组织（企业和教育），从而为跨 Windows 10 设备类型（包括电脑、平板电脑和手机）扩大组织的覆盖面提供了机遇。
 
+还需要允许直接发布给企业的任何[业务线 (LOB) 应用](distribute-lob-apps-to-enterprises.md)的组织许可。
+
 > [!NOTE]
 > 每个应用的选项配置是相互独立的。 可通过创建新的提交来随时更改应用的首选项，而你的更改将在提交完成[认证过程](the-app-certification-process.md)后生效。
 
-还需要允许直接发布给企业的任何[业务线 (LOB) 应用](distribute-lob-apps-to-enterprises.md)的组织许可。
+> [!IMPORTANT]
+> 使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 的提交不会提供给适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store。 若要让组织可以批量购买你的应用，必须使用 Windows 开发人员中心仪表板来创建和提交你的提交。
+
 
 ## <a name="allowing-your-app-to-be-offered-to-organizations"></a>允许将你的应用提供给组织
 
@@ -57,7 +62,7 @@ ms.lasthandoff: 06/21/2017
 目前，位于某些市场中的开发者帐户可以提供通过适用于企业的 Microsoft 应用商店批量购置的付费应用。 
 
 > [!NOTE]
-> 在某些市场中，同一价格段内的应用在适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店中显示的价格可能不同于 Windows 应用商店中向零售客户显示的价格。 组织购买应用的收益付款计算方式与消费者购买应用的收益付款计算方式相同。 有关详细信息，请参阅[获得收入](getting-paid-apps.md)和[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)。 有关支持适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店的市场列表，请参阅[适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店概述](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets)。
+> 在某些市场中，同一价格段内的应用在适用于企业的 Microsoft Store 或适用于教育的 Microsoft Store 中显示的价格可能不同于 Microsoft Store 中向零售客户显示的价格。 组织购买应用的收益付款计算方式与消费者购买应用的收益付款计算方式相同。 有关详细信息，请参阅[获得收入](getting-paid-apps.md)和[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)。 有关支持适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店的市场列表，请参阅[适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店概述](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets)。
 
 如果下面未列出你所在的国家或地区，你的付费应用当前将不能在适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店中提供。 如果是这样，你为付费应用选择的组织许可可能在以后应用，因为我们可能会在将来添加对来自其他开发者帐户市场的提交的支持。
 

@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。"
+Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 title: "将 LOB 应用分配到企业"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的应用商店, 适用于教育的应用商店"
-ms.openlocfilehash: 5dab364d495334d102e73550e5d879d2f530d44e
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+keywords: "windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业"
+ms.localizationpriority: high
+ms.openlocfilehash: 3857e8e6e494700233d41832fb9edce6c65b89bc
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 
@@ -21,7 +22,10 @@ ms.lasthandoff: 07/20/2017
 可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。
 
 > [!NOTE]
-> 目前，仅免费应用可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店专门分配到企业。 如果你提交某个付费应用作为 LOB，它此时不会向企业提供。 
+> 目前，仅免费应用可以通过适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店专门分配到企业。 如果你提交了作为 LOB 的某个付费应用，它不会向企业提供。 
+
+> [!IMPORTANT]
+> 你无法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 直接向企业发布 LOB 应用。 LOB 应用的所有提交都必须使用 Windows 开发人员中心仪表板进行。
 
 
 ## <a name="set-up-the-enterprise-association"></a>设置企业关联
@@ -29,16 +33,16 @@ ms.lasthandoff: 07/20/2017
 将 LOB 应用专门发布到企业的第一步是建立你的帐户和企业的专用应用商店之间的关联。
 
 > [!IMPORTANT]
-> 此关联过程必须由企业启动，并且必须使用你的帐户的**联系人信息**下的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
+> 此关联过程必须由企业启动，并且必须使用与用于创建开发人员帐户的 Microsoft 帐户关联的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
 
-在企业选择邀请你发布供其专门使用的应用时，你将收到包含确认该关联的链接的电子邮件。 你还可以通过转到“帐户设置”****的“企业关联”****部分确认这些关联。
+在企业选择邀请你发布供其专门使用的应用时，你将收到包含确认该关联的链接的电子邮件。 你还可以通过转到**帐户设置**的**企业关联**部分来确认这些关联（只要你已使用用于打开开发人员帐户的 Microsoft 帐户登录）。
 
-若要确认关联，请单击“接受”****。 随后你的帐户将能够发布供该企业专门使用的应用。
+若要确认关联，请单击**接受**。 随后你的帐户将能够发布供该企业专门使用的应用。
 
 
 ## <a name="submit-lob-apps"></a>提交 LOB 应用
 
-在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的[认证过程](the-app-certification-process.md)，并且必须遵循所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 仅有数个部分过程不同。
+在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的[认证过程](the-app-certification-process.md)，并且必须遵循所有 [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 仅有数个部分过程不同。
 
 
 ### <a name="visibility"></a>可见性
