@@ -1,29 +1,32 @@
 ---
 author: jnHs
-Description: "应用提交过程的“应用属性”页允许你定义应用类别并指示硬件首选项或其他声明。"
-title: "输入应用属性"
+Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
+title: 输入应用属性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件
+ms.localizationpriority: high
+ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
+ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 
-[应用提交过程](app-submissions.md)的**属性**页允许你定义应用类别并指示硬件首选项或其他声明。 此处，我们将演练此页面上的选项以及你在输入此信息时应考虑的事项。
+使用[应用提交过程](app-submissions.md)的**属性**页，你可以定义应用类别并输入其他信息和声明。 请务必在此页面上提供有关你的应用的完整准确的详细信息。
+
 
 ## <a name="category-and-subcategory"></a>类别和子类别
 
-在本部分中，你将指示应用商店用于对应用进行归类的类别（和子类别，如适用）。 提交应用需要指定类别。
+你必须指示 Microsoft Store 用于对应用进行归类的类别（和子类别/种类，如适用）。 提交应用需要指定类别。
 
 有关详细信息，请参阅[类别和子类别表](category-and-subcategory-table.md)。
+
 
 ## <a name="game-settings"></a>游戏设置
 
@@ -32,6 +35,17 @@ ms.lasthandoff: 08/03/2017
 如果你的游戏支持多人游戏选项，请务必指示一个会话的最小玩家数量和最大玩家数量。 输入的最小玩家数量和最大玩家数量不能超过 1,000。
 
 **跨平台多人游戏**指的是游戏支持 Windows 10 电脑和 Xbox 玩家之间的多人游戏会话。
+
+
+## <a name="display-mode"></a>显示模式
+
+此部分让你可以指示产品是否是要在电脑和/或 HoloLen 设备上的 [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) 沉浸式（不是 2D）视图中运行。 如果你指示为是，则还需要：
+- 在显示于**属性**页面下方的[系统要求](#system-requirements)部分，为 **Windows Mixed Reality 沉浸式头戴显示设备**选择**最低硬件**或**推荐硬件**。
+- 指定**边界设置**（如果已选择电脑），以便用户了解它是只能在坐下或站立时使用，还是允许（或要求）用户在使用时四处移动。 
+
+如果选择了**游戏**作为产品类别，你将看到**显示模式**选择中的其他选项，让你可以指示你的产品是支持 4K 分辨率视频输出、高动态范围 (HDR) 视频输出还是变量刷新频率显示。
+
+如果你的产品不支持这些显示模式选项的任何一个，则所有复选框都保持不选。
 
 
 ## <a name="product-declarations"></a>产品声明
@@ -59,9 +73,12 @@ ms.lasthandoff: 08/03/2017
 - **对于使用 Windows 8.x 和较早版本或 Windows Phone 8.x 和较早版本的客户：**
      - 如果选中“触摸屏”****的“最低硬件要求”****框，此要求将显示在应用的应用商店一览中，并且使用缺少触摸屏的客户将在尝试下载该应用时看到警告。 应用商店一览不会验证或显示其他要求。
 
-我们还建议将针对指定硬件的运行时检查添加到应用中，因为应用商店可能并不总是能够检测到客户的设备缺少所选功能，而且即使已显示警告，他们仍然能够下载应用。
+我们还建议将针对指定硬件的运行时检查添加到应用中，因为应用商店可能并不总是能够检测到客户的设备缺少所选功能，而且即使已显示警告，他们仍然能够下载应用。 如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 [StoreManifest XML 文件](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root)中指定最低要求。
 
 > [!TIP]
-> 如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 StoreManifest XML 文件中指定最低要求。 有关详细信息，请参阅 [StoreManifest 架构 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
+> 如果你的产品需要使用本部分中未列出的其他项才可正常运行，例如 3D 打印机或 USB 设备，则也可以在创建应用商店一览时输入[其他系统要求](create-app-store-listings.md#additional-system-requirements)。
+
+
+
 
 

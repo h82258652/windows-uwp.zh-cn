@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
-title: "将 Azure Active Directory 与开发人员中心帐户相关联"
+title: 将 Azure Active Directory 与开发人员中心帐户相关联
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, azure ad, azure 租户, aad 租户, azure ad 租户, 租户管理, 租户"
+keywords: windows 10, uwp, azure ad, azure 租户, aad 租户, azure ad 租户, 租户管理, 租户
 ms.localizationpriority: high
-ms.openlocfilehash: ef53a8b339f7f6444373d7445721b641926f00a3
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>将 Azure Active Directory 与开发人员中心帐户相关联
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/12/2018
 Windows 开发人员中心利用 Azure AD 进行多用户帐户访问和管理。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以免费在开发人员中心中创建新的 Azure AD 租户。
 
 > [!TIP]
-> 本主题具体介绍 Windows 应用开发人员计划，不过租户关联和用户管理流程与 Windows 硬件开发人员计划中的帐户类似。 此部分中提到的**管理员**角色相关内容也适用于硬件开发人员计划帐户的**管理员**角色。 有关硬件开发人员计划中用户管理的详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)。
+> 本部分具体介绍 Windows 应用开发人员计划，不过租户关联和用户管理流程与 Windows 桌面应用程序计划（请参阅 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)了解详细信息）和 Windows 硬件开发人员计划（其中对**管理员 (Manager)** 角色的引用也适用于具有**管理员 (Administrator)** 角色的“硬件”帐户；请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)了解详细信息）中的帐户类似。
 
 一个 Azure AD 租户可与多个开发人员中心帐户相关联。 你只需拥有一个与你的开发人员中心帐户相关联的 Azure AD 租户，即可添加多个帐户用户；不过，你也可以选择将多个 Azure AD 租户添加到一个开发人员中心帐户。 任何在开发人员中心帐户中拥有**管理员**角色的用户均可选择添加和删除 Azure AD 租户。
 

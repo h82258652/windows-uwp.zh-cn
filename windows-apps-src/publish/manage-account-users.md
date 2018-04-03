@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: Add users to your Dev Center account and assign them roles with specific permissions.
-title: "管理帐户用户"
+title: 管理帐户用户
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 01/10/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 帐户用户, 管理用户, azure ad, 多用户"
+keywords: windows 10, uwp, 帐户用户, 管理用户, azure ad, 多用户
 ms.localizationpriority: high
-ms.openlocfilehash: e9a08225f0eac5018b3634df3bfb055d38ccb895
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: efc7ad17a7a018b86748c31bc7423e4d841a0b6d
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="manage-account-users"></a>管理帐户用户
 
@@ -29,4 +29,4 @@ ms.lasthandoff: 01/12/2018
 -   [为帐户用户设置角色和自定义权限](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> 本部分具体介绍 Windows 应用开发人员计划，不过租户关联和用户管理流程与 Windows 硬件开发人员计划中的帐户类似。 有关硬件开发人员计划中用户管理的详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)。
+> 本部分具体介绍 Windows 应用开发人员计划，不过租户关联和用户管理流程与 Windows 硬件开发人员计划（请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)了解详细信息）或 Windows 桌面应用程序计划（请参阅 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)了解详细信息）中的帐户类似。

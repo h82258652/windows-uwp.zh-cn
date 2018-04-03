@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
-title: "设置加载项产品类型和产品 ID"
+title: 设置加载项产品类型和产品 ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品"
+keywords: windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品
 ms.localizationpriority: high
-ms.openlocfilehash: 24731a378ddc0defada7a94282afd790dfb5b780
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 12ed8eb58f9f7f7a5fec55c62f19afe0bf6fa2d5
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 01/12/2018
 <span id="consumable" />
 ### <a name="consumable"></a>易耗型产品
 
-如果加载项可以购买、使用（消耗），并且可以重新购买，你将希望选择一种**易耗型**产品类型。 易耗型加载项通常用于客户可按固定数量购买然后会使用完毕的产品，例如游戏货币（金币、硬币等）。 有关将易耗型加载项包含在应用中的详细信息，请参阅[支持购买易耗型加载项](../monetize/enable-consumable-add-on-purchases.md)。
+如果加载项可以购买、使用（消耗），并且可以重新购买，你将希望选择一种**易耗型**产品类型。 易耗型加载项通常用于客户可按固定数量购买然后会使用完毕的产品，例如游戏货币（金币、硬币等）。 有关详细信息，请参阅[支持购买易耗型加载项](../monetize/enable-consumable-add-on-purchases.md)。
 
 易耗型加载项的类型有两种：
 - **开发人员管理的易耗品**：必须在应用中管理平衡和实施情况。 所有的操作系统版本都支持。
@@ -52,9 +52,9 @@ ms.lasthandoff: 01/12/2018
 
 客户最初获取订阅加载项后，将定期支付费用以继续使用此加载项。 客户可以随时取消订阅，以免日后继续产生费用。 你需要指定订阅期，以及是否在提交中的**属性**步骤提供免费试用版。
 
-订阅加载项仅适用于运行 Windows 10、版本 1607 或更高版本的客户。 必须使用 Windows 10 SDK 版本 14393 或更高版本编译父应用，并且必须使用 **Windows.Services.Store** 命名空间（而不是 **Windows.ApplicationModel.Store** 命名空间）中的应用内购买 API。 有关这些命名空间之间的差异的详细信息，请参阅[应用内购买和试用](../monetize/in-app-purchases-and-trials.md)。
+订阅加载项仅适用于运行 Windows 10、版本 1607 或更高版本的客户。 必须使用 Windows 10 SDK 版本 14393 或更高版本编译父应用，并且必须使用 **Windows.Services.Store** 命名空间（而不是 **Windows.ApplicationModel.Store** 命名空间）中的应用内购买 API。 有关详细信息，请参阅[为应用启用订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
-在将订阅加载项发布到 Store 之前，必须提交父产品（但你可以在仪表板中创建提交，并且可随时处理）。
+在将订阅加载项发布到 Microsoft Store 之前，必须提交父产品（但你可以在仪表板中创建提交，并且可随时处理）。
 
 ## <a name="product-id"></a>产品 ID
 

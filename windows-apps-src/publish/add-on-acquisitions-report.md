@@ -1,26 +1,27 @@
 ---
 author: jnHs
-Description: "通过 Windows 开发人员中心仪表板中的“加载项购置”报告，你可以查看你已售出多少加载项以及客户统计数据和平台详细信息。"
-title: "加载项购置报告"
+Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+title: 加载项购置报告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 46d5ee3d0e0ac9c2a3599f51e17ea4d7425ab5af
-ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+keywords: Windows 10, uwp, 加载项销售, 加载项购置, iap 销售, 应用内产品, iap, 加载项
+ms.localizationpriority: high
+ms.openlocfilehash: 5b8d0bb140206612a5096f48d87029b2285a0770
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="add-on-acquisitions-report"></a>加载项购置报告
 
 
-通过 Windows 开发人员中心仪表板中的**加载项购置**报告，你可以查看你已售出多少加载项以及客户统计数据和平台详细信息。 它还允许你获取 Windows 10 上的客户的转换信息。
+通过 Windows 开发人员中心仪表板中的**加载项购置**报告，你可以查看你已售出多少加载项以及客户统计数据和平台详细信息。 你还可以通过该报告获取 Windows 10（包括 Xbox）上的客户的转换信息。
 
-可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
+可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
 
 在此报告中，加载项购置意味着客户已向你购买了某个加载项（或者当你免费提供时免费获得）。 同一客户多次购买的同一易耗型加载项的操作计为单独的加载项购置。
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 08/04/2017
 
 -   **加载项**：默认筛选器是**所有加载项**，但你可以将数据限制为应用的一个或多个加载项。
 -   **市场**：默认筛选器是**所有市场**，但可以将数据限制为一个或多个市场中的购置情况。
--   **设备类型**：默认设置是**所有设备**。 如果要显示仅来自某个特定设备类型的购置数据，可以在此选择一个特定设备。
+-   **设备类型**：默认设置是**所有设备**。 如果你希望仅显示来自某个特定设备类型（如电脑、控制台或平板电脑）的购置数据，可以在此处选择一台特定设备。
 
 下面列出的所有图表中的信息将反映所选的日期范围和任何筛选器。 某些部分还允许应用其他筛选器。
 
@@ -67,7 +68,7 @@ ms.lasthandoff: 08/04/2017
 
 ## <a name="add-on-page-views-and-conversions-by-campaign-id"></a>按市场活动 ID 的加载项页面查看次数和转换数量
 
-**按市场活动 ID 的加载项页面查看次数和转换数量**图表向你显示在选定时间段内按市场活动 ID 的加载项转换（购置）的总数，从而帮助你跟踪来自 Windows 10 上的客户对每个[自定义推广市场活动](create-a-custom-app-promotion-campaign.md)的转换数量和页面查看次数。 仅加载项转换显示在此图表中。
+**按市场活动 ID 的加载项页面查看次数和转换数量**图表向你显示在选定时间段内每个市场活动 ID 所对应的加载项总转换次数（购置次数），从而帮助你跟踪每个[自定义推广市场活动](create-a-custom-app-promotion-campaign.md)中 Windows 10（包括 Xbox）上的客户的转换数量和页面查看次数。 仅加载项转换显示在此图表中。
 
 > [!NOTE]
 > 客户可以通过单击不是你创建的自定义市场活动找到你的应用一览。 我们会为会话中的每次页面查看都加盖客户首次进入应用商店时的市场活动 ID 戳记。 然后我们在 24 小时内将转换归因于所有购置的市场活动 ID。 因此，你看到的总转换数可能比你的市场活动 ID 的总转换数多，并且你可能会有页面查看次数为零的转换或加载项转换。 

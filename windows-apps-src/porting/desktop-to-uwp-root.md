@@ -2,7 +2,7 @@
 author: normesta
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monitization.
 Search.Product: eADQiWindows 10XVcnh
-title: "桌面桥"
+title: 桌面桥
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: b8a70a249a91f654354d27faeffdf5f605fd9c26
-ms.sourcegitcommit: 12cc05b59b2a249a7683a8692ed453da03a91b28
+ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
+ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="desktop-bridge"></a>桌面桥
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 除了用于添加 Windows 10 体验的代码之外，你的应用将保持不变，你可以继续将它分发给你现有的 Windows 7、Windows Vista 或 Windows XP 用户群。 在 Windows 10 上，你的应用将继续像如今的情形一样，以完全信任用户模式运行。
 
 >[!IMPORTANT]
->桌面桥是在 Windows 10 版本 1607 中引入，它仅可用于面向 Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio 更高版本的项目中。
+>桌面桥是在 Windows 10 版本 1607 中引入，它仅可用于面向 Windows 10 周年更新（10.0；版本 14393）或 Visual Studio 更高版本的项目中。
 
 > [!NOTE]
 > 请观看 Microsoft Virtual Academy 发布的<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>的视频短片。 这些视频演示了将桌面应用引入通用 Windows 平台 (UWP) 的整个过程。

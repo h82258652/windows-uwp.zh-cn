@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
-title: "Xbox 分析报告"
+title: Xbox 分析报告
 ms.author: wdg-dev-content
-ms.date: 10/30/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据"
+keywords: windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据
 ms.localizationpriority: high
-ms.openlocfilehash: ad40d33d51287126cd1940eb830b1be0c5ba7812
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析报告
 
@@ -55,7 +55,6 @@ Windows 开发人员中心仪表板中的 **Xbox 分析报告**向你显示了�
 此部分包含一些选项卡，你可以选择这些选项卡以显示游戏客户的不同数据。 请注意，此部分中的统计信息指的是总体功能使用情况，而不是你的特定产品内的功能使用情况。
 
 - **Social usage** 选项卡显示与你的客户社交情况相关的数据。
-   - **游戏中心**显示利用游戏中心进行交互的客户的百分比。 此数据仅适用于 Xbox 上的产品，指的是使用一般游戏中心而非专门使用你产品的游戏中心的客户数量。
    - **游戏邀请**显示（针对任何游戏）发出邀请的客户的百分比。
    - **群聊天**显示（针对任何游戏）使用群聊天的客户的百分比。
    - **文本消息**显示（针对任何游戏）通过 Xbox shell 发送消息的客户的百分比。

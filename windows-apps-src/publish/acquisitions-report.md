@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "通过 Windows 开发人员中心仪表板中的“购置”报告，你可以查看哪些用户购置并安装了你的应用，以及客户统计和平台详细信息。"
-title: "购置报告"
+Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+title: 购置报告
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: d6540db7a3d0a045fa6a2c8fec617f045f4a1bf4
-ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+keywords: Windows 10, uwp, 购置, 应用销售, 应用下载, 安装, 漏斗, 购置, 转换, 渠道, 应用页面视图
+ms.localizationpriority: high
+ms.openlocfilehash: d1675b3a2ffe879585ea2fd3792b47e7bdc7a8af
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="acquisitions-report"></a>购置报告
 
 
-通过 Windows 开发人员中心仪表板中的**购置**报告，你可以查看哪些用户购置并安装了你的应用，以及客户统计和平台详细信息。 你还可以使用该报告获取有关 Windows 10 客户如何查找你的应用一览的信息。
+通过 Windows 开发人员中心仪表板中的**购置**报告，你可以查看哪些用户购置并安装了你的应用，以及客户统计和平台详细信息。 你还可以使用该报告获取有关 Windows 10（包括 Xbox）客户如何找到你的应用一览的相关信息。
 
 可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 08/18/2017
 你还可以展开**筛选器**，以按照市场和/或设备类型筛选该页面上的所有数据。
 
 -   **市场**：默认筛选器是**所有市场**，但可以将数据限制为一个或多个市场中的购置情况。
--   **设备类型**：默认设置是**所有设备**。 如果要显示仅来自某个特定设备类型的购置数据，可以在此选择一个特定设备。
+-   **设备类型**：默认设置是**所有设备**。 如果你希望仅显示来自某个特定设备类型（如电脑、控制台或平板电脑）的购置数据，可以在此处选择一台特定设备。
 
 下面列出的所有图表中的信息将反映所选的日期范围和任何筛选器。 某些部分还允许应用其他筛选器。
 
@@ -55,10 +56,10 @@ ms.lasthandoff: 08/18/2017
 
 ## <a name="installs"></a>安装次数
 
-**安装次数**图表显示了我们检测到客户在选定时段内已在 Windows 10 设备上成功安装应用的次数。 显示总数量以及按日或周（取决于你所选的时间段）显示安装次数的图表。 可以选择按特定的软件包版本筛选结果。
+**安装次数**图表显示了我们检测到客户在选定时段内已在 Windows 10 设备（包括 Xbox One 主机）上成功安装应用的次数。 显示总数量以及按日或周（取决于你所选的时间段）显示安装次数的图表。 可以选择按特定的软件包版本筛选结果。
 
 安装总数包括：
--   **在多台 Windows 10 设备上的安装次数。** 例如，如果同一客户在两台 Windows 10 电脑和一部 Windows 10 手机上安装了你的应用，则计作三次安装。
+-   **在多台 Windows 10 设备上的安装次数。** 例如，如果同一客户在两台 Windows 10 电脑和一部 Xbox One 主机上安装了你的应用，则计作三次安装。
 -   **重新安装次数。** 例如，如果客户今天安装了你的应用，明天卸载了你的应用，然后下个月重新安装了你的应用，则计作两次安装。
 
 安装总数不包括或不反映：
@@ -76,9 +77,9 @@ ms.lasthandoff: 08/18/2017
 **购置漏斗**向你显示完成漏斗每个步骤的客户数量，包括从查看应用商店页面到使用应用以及转换率。 此数据可以帮助你确定可能需要花费更多以增加购置次数、安装次数或使用情况的区域。
 
 > [!IMPORTANT]
-> **购置漏斗**仅为客户显示过去 90 天内 Windows 10 的相关数据。
+> **购置漏斗**仅显示过去 90 天内 Windows 10（包括 Xbox）上的客户的相关数据。
 
-漏斗中的步骤为：
+以下内容定义了漏斗中的各个步骤：
 
 - **页面查看次数**：此数值表示你的应用的应用商店一览的总查看次数，其中包括未使用 Microsoft 帐户登录的用户进行的查看。 不包括拒绝为 Microsoft 提供此信息的客户的数据。
 - **购置次数**：在查看应用商店一览的 48 小时内获得你的应用（使用其 Microsoft 帐户登录时）许可证的新客户数量。
@@ -123,7 +124,7 @@ ms.lasthandoff: 08/18/2017
 页面查看和转换数量不是独特客户的计数。 有关转换率信息，请参阅[购置漏斗](#acquisition-funnel)图表。
 
 > [!NOTE]
-> 客户可以通过单击不是你创建的自定义市场活动找到你的应用一览。 我们会为会话中的每次页面查看加盖客户首次进入应用商店时的市场活动 ID 戳记。 然后我们在 24 小时内将转换归因于所有购置的市场活动 ID。 因此，你看到的总转换数可能比你的市场活动 ID 的总转换数多，并且你可能会有页面查看次数为零的转换或加载项转换。
+> 客户可以通过单击不是你创建的自定义市场活动找到你的应用一览。 我们会为会话中的每次页面查看都加盖客户首次进入应用商店时的市场活动 ID 戳记。 然后我们在 24 小时内将转换归因于所有购置的市场活动 ID。 因此，你看到的总转换数可能比你的市场活动 ID 的总转换数多，并且你可能会有页面查看次数为零的转换或加载项转换。
 
 > [!NOTE]
 > 你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[通过通道获取应用转换](../monetize/get-app-conversions-by-channel.md)方法以编程方式检索此数据。

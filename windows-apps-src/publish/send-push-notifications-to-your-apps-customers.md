@@ -1,25 +1,26 @@
 ---
 author: JnHs
-Description: "了解如何将通知从 Windows 开发人员中心发送到应用，鼓励客户群采取行动，例如为应用评分或购买加载项。"
-title: "将目标推送通知发送到应用客户"
+Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
+title: 将目标推送通知发送到应用客户
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, uwp, 目标通知, 推送通知, toast, 磁贴
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-ms.openlocfilehash: e1103639cd324ec0dab9e43159cab57c39747d17
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: f7b4558b6c5ea2cc9dbc30cb605f1cb06432504f
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>向应用客户发送通知
 
-在正确的时间，通过正确的消息吸引客户是作为应用开发人员取得成功的关键。 Windows 开发人员中心提供以数据驱动的客户参与平台，可用于将通知发送到所有客户，或仅面向符合[客户类别](create-customer-segments.md)中定义的条件的 Windows10 客户子集发送。
+在正确的时间，通过正确的消息吸引客户是作为应用开发人员取得成功的关键。 通知可以鼓励客户采取行动，例如为应用评分、购买加载项、试用新功能或下载其他应用（或许可通过你提供的[促销代码](generate-promotional-codes.md)免费获取）。
 
-可使用通知鼓励客户采取行动，例如为应用评分、购买加载项、试用新功能或下载其他应用（或许可通过你提供的[促销代码](generate-promotional-codes.md)免费获取）。
+Windows 开发人员中心提供以数据驱动的客户参与平台，可用于将通知发送到所有应用客户，或仅面向符合[客户类别](create-customer-segments.md)中所定义条件的应用的 Windows10 客户子集发送。 <!-- You can also send a single notification to all of the customers for multiple apps. -->
 
 > [!IMPORTANT]
 > 此类通知仅可与 UWP 应用一起使用。
@@ -30,13 +31,17 @@ ms.lasthandoff: 06/21/2017
 - 虽然我们将尽力按计划提供你的通知，但有时可能存在影响交付的延迟问题。
 - 请确保不要太频繁发送通知。 频率高于每 30 分钟一次似乎会产生干扰（在很多情况下，最好不要超过该频率）。
 - 请注意，如果使用你的应用（并且在确定类别成员身份时使用 Microsoft 帐户登录）的客户稍后会将其设备给其他人使用，则其他用户可能会看到面向原始客户的通知。 有关详细信息，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers)。
+<!-- - If you send the same notification to customers of multiple apps, you can't target a segment; the notification will be sent to all customers for the apps you select. -->
+
 
 ## <a name="getting-started-with-notifications"></a>通知入门
 
 在高级别上，需要完成三件事才能使用通知与客户接洽。
+
 1. **注册应用以接收推送通知。** 在应用中添加 Microsoft Store Services SDK 引用，然后添加几行在开发人员中心和应用之间注册通知通道的代码，可完成此操作。 我们将使用该通道向你的客户传递通知。 有关详细信息，请参阅[针对定向推送通知配置应用](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
-2. **创建一个或多个希望面向的客户类别。** 可根据人口统计或收益条件将客户分组到各个类别中。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。 如果你愿意，也可以向所有的应用客户发送通知。
-3. **创建推送通知，并将其发送到特定的客户类别中。** 例如，发送鼓励新客户为应用评分的通知，或者发送带有购买加载项的特殊交易的通知。
+2. **确定目标客户。** 你可以向所有应用客户，或（对于为单个应用创建的通知）称为*段*的客户组发送通知，具体可以根据人口统计或收入条件来定义。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。 
+3. **创建通知内容并发送。**例如，你可以创建鼓励新客户为应用评分的通知，或者发送促进购买加载项的特别优惠的通知。
+
 
 ## <a name="to-create-and-send-a-notification"></a>创建并发送通知
 
@@ -47,14 +52,13 @@ ms.lasthandoff: 06/21/2017
 
 1.  展开 [Windows 开发人员中心仪表板](https://developer.microsoft.com/dashboard/overview)中的**参与**部分，然后选择**通知**。
 2.  在**通知**页上，选择**新通知**。
-3.      从下拉菜单中，选择希望针对其生成通知的应用。
-4.  在**选择模板**部分，选择希望发送的通知类型。 有关详细信息，请参阅[通知模板类型](#notification-template-types)。
-  ![通知模板](images/push-notifications-template.png)
-5.  在**通知设置**区域，选择通知**名称**，并选择通知发送目标的**客户组**。
-如果尚未创建类别，请选择**创建新客户组**。 请注意，新类别 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
-6.  如果希望指定发送通知的时间，请清除**立即发送通知**复选框，然后选择特定日期和时间。
-7.  如果希望通知在某个时间点过期，请清除**通知永远不会过期**复选框，然后选择特定过期日期和时间。
-8.  如果要筛选收件人，以便通知仅发送给使用特定语言或位于特定时区的人员，请勾选**筛选器**复选框。 然后可选择用于筛选收件人的语言和/或时区。
+3.  在**选择模板**部分，选择希望发送的通知类型。 有关详细信息，请参阅[通知模板类型](#notification-template-types)。 <!-- ![Notification templates](images/push-notifications-template.png) -->
+4.      在下一页，<!-- use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. -->选择某个应用<!-- or apps -->（必须将应用配置为使用 Microsoft Store Services SDK 接收通知）。
+5.  在**通知设置**部分，选择通知**名称**，并选择通知发送目标的**客户组**（如果适用）。 <!-- (Notifications sent to multiple apps can only be sent to all customers of those apps.) --> 如果你希望使用尚未创建的段，请选择**创建新客户组**。 请注意，新段 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
+6.  如果你想要指定何时发送通知，清除**立即发送通知**复选框并选择特定的日期和时间（除非指定为使用每个客户的当地时区，否则所有客户均使用 UTC 时间）。
+7.  如果希望通知在某个时间点过期，请清除**通知永远不会过期**复选框，然后选择特定过期日期和时间（UTC 时间）。
+8.  <!-- For notifications to a single app: --> If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the **Use filters** checkbox. You can then specify the language and/or time zone options you want to use.
+<!-- and don't forget to update numbers when this comes back... 9.      For notifications to multiple apps: Specify whether to send the notification only to the last active app on each device (per customer), or to all apps on each device. -->
 9.  在**通知内容**部分的**语言**菜单中，选择显示通知的语言。 有关详细信息，请参阅[翻译通知](#translate-your-notifications)。
 10. 在**选项**部分中，输入文本，然后配置其他任何要配置的选项。 如果首先使用的是模板，有些模板已默认提供，但可进行任何所需更改。
    可用选项各不相同，具体取决于所使用的通知类型。 一些选项为：
@@ -66,13 +70,14 @@ ms.lasthandoff: 06/21/2017
    - **基本 URI**（交互式 Toast 类型）。 有关详细信息，请参阅 [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712)。
    - **添加图像查询**（交互式 Toast 类型）。 有关详细想信息，请参阅 [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847)。
    - **可视**。 图像、视频或声音。 有关详细信息，请参阅[视觉](https://msdn.microsoft.com/library/windows/apps/br230847)。
-   - **输入**/**操作**/**选择**（交互式 Toast 类型）。 允许你让用户通过通知交互。 有关详细信息，请参阅[自适应和交互式 Toast 通知](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)。
+   - **输入**/**操作**/**选择**（交互式 Toast 类型）。 允许你让用户通过通知交互。 有关详细信息，请参阅[自适应和交互式 Toast 通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)。
    - **绑定**（交互式磁贴类型）。 Toast 模板。 有关详细信息，请参阅[绑定](https://msdn.microsoft.com/library/windows/apps/br230843)。
 
    > [!TIP]
    > 请尝试使用[通知可视化工具](https://www.microsoft.com/store/apps/9nblggh5xsl1)应用设计并测试自适应磁贴和交互式 Toast 通知。
 
 11. 选择**保存为草稿**，稍后继续处理该通知，或者在全部操作完成时选择**发送**。
+
 
 ## <a name="notification-template-types"></a>通知模板类型
 
@@ -93,31 +98,34 @@ ms.lasthandoff: 06/21/2017
 
   ![交叉推广 Toast 启动框](images/push-notifications-promote-toast-launch-box.png)
 -   **推广促销 (Toast)。** 用于宣布达成应用交易的 Toast 通知。 当客户选择此通知时，将显示应用的应用商店一览。
--   **更新提示 (Toast)。** 鼓励运行旧版应用的客户安装最新版本的 Toast 通知。 当客户选择此通知时，将显示“应用商店”应用中的**下载和更新**列表。 请注意，使用此模板无需创建客户类别。 我们计划在 24 小时内发送此通知，并尽最大努力面向所有未运行最新版应用的用户。
+-   **更新提示 (Toast)。** 鼓励运行旧版应用的客户安装最新版本的 Toast 通知。 当客户选择此通知时，Microsoft Store 应用将启动，并显示**下载和更新**列表。 请注意，此模板仅用于单个应用，你无法针对特定的客户段或定义发送时间；我们始终会安排在 24 小时内发送此通知，并会尽最大努力覆盖尚未运行应用最新版本的所有用户。
+
 
 ## <a name="measure-notification-performance"></a>测量通知性能
 
 可测量通过每条通知与客户的交流程度。
+
 
 ###<a name="to-measure-notification-performance"></a>测量通知性能
 
 1.  创建通知时，请在**通知内容**部分中选中**跟踪应用启动率**复选框。
 2.  在应用中，为响应针对性通知，请调用 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法通知开发人员中心应用已启动。 此方法由 Microsoft Store Services SDK 提供。 有关如何调用此方法的详细信息，请参阅[配置应用以接收开发人员中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
+
 ###<a name="to-view-notification-performance"></a>查看通知性能
 
-如上所述配置通知和应用，使之可[测量通知性能](#measure-notification-performance)后，可使用仪表板查看通知执行的程度。
+如上所述配置通知和应用，使之可测量通知性能后，可使用仪表板查看通知执行的程度。
 
-1.  在仪表板上选择一个应用。
-2.  在左侧菜单中展开**服务**部分，然后选择**推送通知**，查看与该应用关联的通知。
-3.  在**定向推送通知**页面上，选择**进行中**或**已完成**，然后查看**传送速率**和**应用启动率**列，了解每个通知的高级性能。
-4.  若要查看更详细的性能细节，请选择通知名称。 显示**交货统计**部分，并显示以下通知**状态**类型的**计数**和**百分比**信息：
+1.  展开 [Windows 开发人员中心仪表板](https://developer.microsoft.com/dashboard/overview)中的**参与**部分，然后选择**通知**。
+2.  在**定向推送通知**页面上，选择**进行中**或**已完成**，然后查看**传送速率**和**应用启动率**列，了解每个通知的高级性能。
+3.  若要查看更详细的性能细节，请选择通知名称。 在**交货统计**部分，可以查看以下通知**状态**类型的**计数**和**百分比**信息：
  - **失败**：由于某些原因，通知未发送。 这可能会在 Windows 通知服务发生问题时出现。
  - **通道过期失败**：通知由于应用和开发人员中心之间的通道过期而无法发送。 这可能会在客户长时间没有打开应用的情况下发生。
  - **正在发送**：通知排在待发送队列中。
  - **已发送**：通知已发送。
  - **启动数**：通知已发送、客户已点击该通知，最后应用也打开。 请注意，这仅跟踪应用启动数。 此状态不包含邀请客户执行其他操作的通知，例如启动应用商店以留下评分。
  - **未知**：我们无法确定此通知的状态。
+
 
 ## <a name="translate-your-notifications"></a>翻译通知
 
@@ -134,8 +142,8 @@ ms.lasthandoff: 06/21/2017
  - 如果在通知翻译后更改英文文本，我们将自动更新翻译的通知以匹配更改。 但是，如果之前已选择覆盖初始译文，这种情况将不会发生。
 
 ## <a name="related-topics"></a>相关主题
-- [适用于 UWP 应用的磁贴、锁屏提醒和通知](../controls-and-patterns/tiles-badges-notifications.md)
-- [Windows 推送通知服务 (WNS) 概述](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+- [适用于 UWP 应用的磁贴](../design/shell/tiles-and-notifications/creating-tiles.md)
+- [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [通知可视化工具应用](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() 方法](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [客户细分市场和推送通知：新 Windows 开发人员中心会员计划功能（博客文章）](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)

@@ -1,28 +1,27 @@
 ---
 author: jnHs
-Description: "在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留应用名称，并查找有关为应用选择出色名称的的建议。"
-title: "通过保留名称创建应用"
-keywords: windows 10, uwp
+Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+title: 通过保留名称创建应用
+keywords: Windows 10, uwp, 预留名称, 应用名称, 应用名, 名称, 产品名称, 命名
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 55bd36cf1a84cc8d79d7e7373da22e97e571542e
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 960acceb9f665b9d2f2d1def680626876c3aa29b
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
 
-在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留名称，并查找有关[为应用选择出色名称](#choosing-your-apps-name)的建议。 每个保留的名称在整个应用商店中都必须是唯一的。
+在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留名称，并查找有关[为应用选择出色名称](#choosing-your-apps-name)的建议。 每个保留的名称在 Microsoft Store 中都必须是唯一的。
 
 在[上载应用程序包](upload-app-packages.md)时，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) 值必须与为应用所保留的名称相匹配。 如果使用 Microsoft Visual Studio 创建应用程序包，则将为你填充此特性。
-
-如果有一个在早期版本的 Windows Phone 仪表板中创建的 Windows Phone 应用，并且从未为其保留过名称，则仍可以管理和提交该应用。 但是，若要上载它的 .appx 程序包，或[查看应用标识详细信息](view-app-identity-details.md)（特定于 .appx 程序包），将需要按照以下步骤保留唯一名称。 这还可以阻止其他任何用户为其自身保留该名称。
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>通过保留新名称创建应用
 
@@ -35,9 +34,12 @@ ms.lasthandoff: 06/21/2017
 现在已为你保留该名称，只要你准备就绪，就可以开始进行[提交](app-submissions.md)。
 
 > [!NOTE]
-> 可能会发现自己无法保留某个名称，即使在应用商店中并没有看到任何以该名称命名的应用也是如此。 这通常是因为其他开发人员已为其应用保留该名称，但尚未提交该应用。 如果你拥有某个名称的商标权或其他法律权利，但却无法保留该名称，或发现 Windows 应用商店中的其他应用在使用该名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
+> 可能会发现自己无法保留某个名称，即使在 Microsoft Store 中并没有看到任何以该名称命名的应用也是如此。 这通常是因为其他开发人员已为其应用保留该名称，但尚未提交该应用。 如果你拥有某个名称的商标权或其他法律权利，但却无法保留该名称，或发现 Microsoft Store 中的其他应用在使用该名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
 
-在保留某个名称后，有一年的时间来提交应用。 如果在一年内未提交该应用，保留的名称将过期，其他开发人员将可以使用该名称命名应用。 如果你尝试采用已任其过期的名称提交应用，你可能会遇到错误。
+在保留某个名称后，有一年的时间来提交应用。 如果在一年内未提交该应用，保留的名称将过期，其他开发人员将可以使用该名称命名应用。 如果你尝试采用已任其过期的名称提交应用，则可能会遇到错误。
+
+> [!NOTE]
+> 如果有一个在早期版本的 Windows Phone 仪表板中创建的 Windows Phone 应用，并且从未为其保留名称，则你必须进行此操作以上载它的 .appx 程序包，或[查看应用标识详细信息](view-app-identity-details.md)（特定于 .appx 程序包）。 保留唯一名称还可以阻止其他任何用户私自保留该名称。 但是，如果未保留名称，也仍可以为你的 Windows Phone 8.x 客户管理和提交该应用。
 
 
 ## <a name="choosing-your-apps-name"></a>选择应用名称
@@ -52,6 +54,8 @@ ms.lasthandoff: 06/21/2017
 -   **保持独创性。** 确保使用与众不同的应用名称，这样不易与现有应用产生混淆。
 -   **请勿使用其他人注册商标的名称。** 确保你有权使用你保留的名称。 如果其他人将该名称注册为商标，他们有权投诉侵权，你将无法继续使用该名称。 如果在你的应用发布后发生这种情况，我们会将其从应用商店中删除。 你将需要更改你的应用名称以及出现在应用及其内容中该名称的所有实例，然后才能再次[提交你的应用](app-submissions.md)进行认证。
 -   **避免在名称末尾添加区别性信息。** 如果将用于区分多个应用的信息添加到名称末尾，则客户可能会忽略此信息，尤其是在名称很长的情况下；这样所有应用看上去似乎都采用了相同名称。 如果这不可避免，请使用不同的徽标和应用图像，这样会更容易区分应用。
+-   **不要在名称中添加表情符号。** 你不能保留包含表情符号或其他不受支持的字符的名称。
+
 
 ## <a name="manage-additional-app-names"></a>管理其他应用名称
 

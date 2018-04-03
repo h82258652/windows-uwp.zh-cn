@@ -1,19 +1,19 @@
 ---
 author: QuinnRadich
-title: "面向开发人员的 Windows 10 中的新增工具和功能"
-description: "Windows 10 版本 16299 和新开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。"
-keywords: "最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新, 开发人员, 16299, Fall Creators"
+title: 面向开发人员的 Windows 10 中的新增工具和功能
+description: Windows 10 版本 16299 和新开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
+keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新, 开发人员, 16299, Fall Creators
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 852d59433f3dfe24da6509e588e350dbe1011bbf
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 1e61ede3d16d9c92c28a0e40a0dd65951444ef3a
+ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 版本 16299 中的最近更新
 
@@ -31,6 +31,8 @@ Fluent 设计效果 | 这些新增效果是 Fluent 设计系统的一部分，�
 键盘快捷方式 | 使用[键盘快捷方式](../design/input/keyboard-accelerators.md)增强应用的辅助功能和可用性。 键盘快捷方式使用户能够直观地调用常见的操作或命令，而无需浏览应用 UI，并且可以通过相关配置实现功能的适用性。
 墨迹书写 | [CoreIncrementalInkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreincrementalinkstroke) API 支持使用单独的 **InkPoint** 对象创建能够以增量方式呈现的单独墨迹笔划。 </br></br> [CoreInkPresenterHost](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreinkpresenterhost) API 使你能够托管无相关 **InkCanvas** 控件的 **InkPresenter** 对象。
 射线控制器 | [RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration) API 已更新，能够将 **RadialController** 菜单的范围控制到应用的视图或进程。
+动态磁贴 | [从桌面桥 Win32 应用固定辅助磁贴](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md)。
+Toast 通知 | 使用按钮上的[挂起的更新](../design/shell/tiles-and-notifications/toast-pending-update.md)在 Toast 内创建多步骤交互。
 UI 控件 | 使用这些新控件能够更快速轻松地构建美观的 UI。 </br>* [颜色选取器控件](../design/controls-and-patterns/color-picker.md)使用户能够浏览和选择颜色。 </br>* 使用[导航视图控件](../design/controls-and-patterns/navigationview.md)可轻松向应用添加顶级导航。 </br>* [个人图片控件](../design/controls-and-patterns/person-picture.md)显示个人头像。 </br>* 使用[评分控件](../design/controls-and-patterns/rating.md)，用户能够轻松查看和设置反映内容和服务满意度的评分。
 语音和声调 | 我们添加了新的 [UWP 应用中的语音和声调指南](../design/style/voice-and-tone.md)，为你提供了有关在应用中编写文本的建议。 无论你创建什么内容，用语应亲切、友好并提供有用信息。
 

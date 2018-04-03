@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "了解 Microsoft 发出的税单，包括谁将收到它们，以及何时提供。"
-title: "了解 Microsoft 发出的 IRS 税单"
+Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
+title: 了解 Microsoft 发出的 IRS 税单
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 03/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 0bdae8a8489ddf4f2ec7eb7a619631bd4fa26e9e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 06/21/2017
      <th> 我应该收到此表单</th>
   </tr>
   <tr> 
-     <td valign="top">在适用的纳税年度中，我**销售了 200 多个应用**，总购买金额**超过 20,000 美元**（**未**计算通过 Windows 10 应用商店在巴西和中国完成的销售额）。</td>
+     <td valign="top">在适用的纳税年度中，我**销售了 200 多个应用**，总购买金额**超过 20,000 美元**（**未**计算通过 Windows 10 上的 Microsoft Store 在巴西和中国完成的销售额）。</td>
     <td valign="top">**1099-K**：<br>
 归档方：Microsoft Corporation<br>
 EIN：\*\*\*\*\*4442<br>
@@ -47,7 +48,7 @@ EIN：\*\*\*\*\*4442<br>
 **重要提示：**1099-K 表单包含**总购买**金额，而不是你收到的付款金额。</td>
   </tr>
   <tr> 
-     <td valign="top">通过 Windows 10 应用商店，我在巴西和中国完成的应用销售**付款金额至少为 10 美元**。<br>
+     <td valign="top">(i) 通过 Windows 10 上的 Microsoft Store 完成的巴西和中国应用销售或 (ii) 在 Minecraft（我的世界）卖场中的销售，我收到的**付款金额至少为 10 美元**。<br>
 <br>
 **或者**<br>
 <br>

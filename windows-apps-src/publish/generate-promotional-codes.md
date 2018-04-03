@@ -1,28 +1,29 @@
 ---
 author: jnHs
-Description: "你可以为已在 Windows 应用商店中发布的应用或加载项生成促销代码。"
-title: "生成促销充值码"
+Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
+title: 生成促销代码
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 97d0cb79a00140a7255923131f78c2b3fecff1d9
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
+ms.localizationpriority: high
+ms.openlocfilehash: 634c0857982924ca1b588519172d77d97dd74791
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
 
-你可以为已在 Windows 应用商店中发布的应用或加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用促销代码来使用户免费访问应用或加载项，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
+你可以为已在 Microsoft Store 中发布的应用或加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用促销代码来使用户免费访问应用或加载项，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
 
-每个促销代码都具有对应的唯一可兑换 URL，你可以将其分配给单个用户或一组用户。 用户只需单击 URL 即可兑换充值码并从 Windows 应用商店安装应用或加载项。
+每个促销代码都具有对应的唯一可兑换 URL，你可以将其分配给单个客户或一组客户。 客户只需单击 URL 即可兑换充值码并从 Microsoft Store 安装应用或加载项。
 
-> [!TIP] 
+> [!TIP]
 > 可使用[定向推送通知](send-push-notifications-to-your-apps-customers.md)向细分市场客户分发促销代码。 执行此操作时，请务必使用允许多个客户使用同一代码的促销代码。
 
 在 Windows 开发人员中心仪表板上，可以：
@@ -36,29 +37,29 @@ ms.lasthandoff: 06/21/2017
 
 请注意，你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，客户才能兑换促销代码以安装应用。
 
-## <a name="promotional-code-policies"></a>促销充值码策略
 
+## <a name="promotional-code-policies"></a>促销充值码策略
 
 请注意以下促销代码策略：
 
--   你可以为已发布到 Windows 应用商店的任何应用或加载项生成促销代码。 客户可以在你的应用或加载项支持的任何版本的 Windows 上兑换这些代码。
+-   你可以为已发布到 Microsoft Store 的任何应用或加载项（订阅加载项除外）生成促销代码。 客户可以在你的应用或加载项支持的任何版本的 Windows 上兑换这些代码。
 -   在预订日期 6 个月后，促销代码过期（除非你选择较早的过期日期）。
 -   对于每个应用或加载项，可生成每 6 个月允许最多 1600 次兑换的代码。 6 个月的时段从提交第一个促销代码订单开始计算，即使选择了更早的到期日期，也是如此。 每个产品共 1600 次兑换的规定适用于一次性代码和可多次使用的代码。
--   必须按照[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)中定义的要求进行操作，包括 **3k. 促销代码**部分。
+-   必须按照[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定义的要求进行操作，包括 **3k. 促销代码**部分。
+
 
 ## <a name="order-promotional-codes"></a>预订促销代码
 
+若要为已发布到 Microsoft Store 的应用或加载项预订促销代码：
 
-若要为已发布到 Windows 应用商店的应用或加载项预订促销代码：
-
-1.  在 Windows 开发人员中心仪表板的左侧导航菜单中，展开**吸引**，然后选择**促销代码。**
+1.  在 Windows 开发人员中心仪表板的左侧导航菜单中，展开**吸引**，然后选择**促销代码**。
 
 2.   在**促销代码**页面上，单击**预订代码**。
 
 3.  在“新促销代码订单”****页面上，输入以下内容：
-    -   选择要为其生成充值码的应用或加载项。
+    -   选择要为其生成充值码的应用或加载项。 （请注意，你不能为订阅加载项生成促销代码。）
     -   为订单指定名称。 在查看促销代码使用情况数据时，你可以使用此名称区分不同的代码订单。
-    -   选择订单类型。 你可以选择生成一组每个仅使用一次的促销代码，或者选择生成一个可以多次使用的促销代码。 
+    -   选择订单类型。 你可以选择生成一组每个仅使用一次的促销代码，或者选择生成一个可以多次使用的促销代码。
     -   指定要订购的代码数量（如果要生成一组代码）或代码可兑换的次数（如果要生成一个将使用多次的代码）。
     -   指定促销代码应处于活动状态的时间。 若要选择特定开始日期和时间，请清除**立即激活代码**复选框。 否则，代码会立即激活。
     -   指定促销充值码应到期的时间。 若要选择早于 6 个月的特定到期日期和时间，请清除**代码 6 个月后到期**复选框。
@@ -93,6 +94,7 @@ ms.lasthandoff: 06/21/2017
     -   代码的可兑换 URL。
     -   指导客户访问可兑换 URL、使用其 Microsoft 帐户登录并按照说明下载和安装应用的说明。
 
+
 ## <a name="code-redemption-user-experience"></a>代码兑换用户体验
 
 向客户分发促销代码（或其可兑换 URL）后，客户可使用此 URL 免费获取产品。 单击可兑换 URL 将打开经过身份验证的**兑换代码**页面（位于 <https://account.microsoft.com/billing/redeem>）。 此页面包含用户即将兑换的应用的描述。 如果客户没有使用其 Microsoft 帐户登录，系统将提示其登录。 客户也可访问 <https://account.microsoft.com/billing/redeem>，直接输入代码。
@@ -100,7 +102,7 @@ ms.lasthandoff: 06/21/2017
 > [!IMPORTANT]
 > 建议不要在产品尚未完成发布过程时向客户分发促销代码（即使你已选择**在应用商店中提供此产品，同时使其不可被发现**，也是如此）。 当客户尝试将促销代码用于尚未发布的产品时，将看到错误消息。
 
-客户单击**兑换**后，Windows 应用商店将打开到应用的概览页面（如果客户使用 Windows 10 或 Windows 8.1 设备），在此页面中，客户可单击**安装**以免费下载和安装应用。 如果客户使用未安装 Windows 应用商店的计算机或设备，则此链接将打开此应用的 Windows 应用商店网页。 此代码将应用于客户的 Microsoft 帐户，以便其稍后在 Windows 设备（与同一个 Microsoft 帐户相关联）上免费下载此应用。
+客户单击**兑换**后，Microsoft Store 将打开到应用的概览页面（如果客户使用 Windows 10 或 Windows 8.1 设备），在此页面中，客户可单击**安装**以免费下载和安装应用。 如果客户使用未安装 Microsoft Store 的计算机或设备，则此链接将打开此应用的 Microsoft Store 网页。 此代码将应用于客户的 Microsoft 帐户，以便其稍后在 Windows 设备（与同一个 Microsoft 帐户相关联）上免费下载此应用。
 
 > [!NOTE]
 > 在某些情况下，客户可能看到的是**购买**按钮而不是**安装**，即使此应用已通过促销代码成功兑换，也是如此。 客户可单击**购买**来免费安装此应用。
@@ -108,7 +110,7 @@ ms.lasthandoff: 06/21/2017
 
 ## <a name="review-your-promotional-codes"></a>查看促销代码
 
-若要查看应用及其加载项的促销代码订单的详细摘要，请导航到应用的**促销代码**页面（展开**盈利**并单击**促销代码**）。 可以查看该应用的所有当前和非活动促销代码的以下详细信息：
+若要查看应用及其加载项的促销代码订单的详细摘要，请导航到应用的**促销代码**页面（在开发人员中心仪表板的左侧导航菜单，展开**推广**然后选择**促销代码**）。 可以查看所有当前和非活动促销代码的以下详细信息：
     -   订单名称
     -   应用或加载项
     -   开始日期
@@ -116,10 +118,6 @@ ms.lasthandoff: 06/21/2017
     -   可用
     -   已兑换
 
-如上所述，还可以从此表中下载订单。 
+你还可以从此表中[下载](#download-and-distribute-promotional-codes)订单。
 
  
-
-
-
-

@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: Set custom permissions for account users.
-title: "为帐户用户设置自定义权限"
+Description: Set roles or custom permissions for account users.
+title: 为帐户用户设置角色或自定义权限
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色"
+keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: high
-ms.openlocfilehash: 1fdde4be606abae849ff3350d27afbbced157f75
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 3c62ff8a028af62512936e51bd81d3f3e229bd24
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/12/2018
 -   具有某个角色（或自定义权限集）的用户还可加入具有其他角色（或权限集）的组。 在该情况下，用户可访问与组和个人帐户关联的所有功能。
 
 > [!TIP]
-> 本主题特定于 Windows 应用开发人员计划。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。
+> 本主题特定于 Windows 应用开发人员计划。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 有关 Windows 桌面应用程序计划中的用户角色的信息，请参阅 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)。
 
 
 <span id="roles" />
@@ -86,7 +86,7 @@ ms.lasthandoff: 01/12/2018
 
 ## <a name="account-level-permissions"></a>帐户级权限
 
-此部分中权限不限于特定产品。 向这些权限授予访问权限可支持用户访问整个帐户。
+此部分中权限不限于特定产品。 向这些权限之一授予访问权限可支持用户访问整个帐户。
 
 <table>
     <colgroup>
@@ -117,6 +117,7 @@ ms.lasthandoff: 01/12/2018
 <tr><td align="left">    **联系人信息**                        </td><td align="left">  可查看“帐户设置”部分中的[联系人信息](managing-your-profile.md)。        </td><td align="left">  可编辑和查看“帐户设置”部分中的[联系人信息](managing-your-profile.md)。            </td></tr>
 <tr><td align="left">    **COPPA 合规性**                    </td><td align="left">  可查看帐户中所有产品的 [COPPA 合规性](in-app-ads.md#coppa-compliance)选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 [COPPA 合规性](in-app-ads.md#coppa-compliance) 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
 <tr><td align="left">    **客户组**                     </td><td align="left">  可查看**客户**部分中的[客户组](create-customer-groups.md)（类别和外部测试版组）。      </td><td align="left">  可创建、编辑和查看**客户**部分中的[客户组](create-customer-groups.md)（类别和外部测试版组）。       </td></tr>
+<tr><td align="left">    **管理产品组**&nbsp;\*                            </td><td align="left">  可查看新产品组创建页面，但实际上无法创建新产品组。    </td><td align="left">  可以创建并编辑产品组。     </td></tr>
 <tr><td align="left">    **新应用**                            </td><td align="left">  可查看新应用创建页面，但实际上无法在帐户中创建新应用。    </td><td align="left">  在帐户中预留新应用名称可[创建新应用](create-your-app-by-reserving-a-name.md)，并可创建新提交，然后将应用提交到应用商店。     </td></tr>
 <tr><td align="left">    **新捆绑包**&nbsp;*                       </td><td align="left">  可查看新捆绑包创建页面，但实际上无法在帐户中创建新捆绑包。     </td><td align="left">  可创建产品的新捆绑包。          </td></tr>
 <tr><td align="left">    **合作伙伴服务**&nbsp;*                  </td><td align="left">  可查看检索 XTokens 服务的安装证书。     </td><td align="left">  可管理和查看检索 XTokens 服务的安装证书。       </td></tr>
@@ -125,6 +126,7 @@ ms.lasthandoff: 01/12/2018
 <tr><td align="left">    **依赖方**&nbsp;*                   </td><td align="left">  可查看依赖方，检索 XTokens。    </td><td align="left">  可管理和查看依赖方，检索 XTokens。     </td></tr>
 <tr><td align="left">    **光盘请求**&nbsp;*                   </td><td align="left">  可查看游戏光盘请求。    </td><td align="left">  可生成并查看游戏光盘请求。     </td></tr>
 <tr><td align="left">    **沙盒**&nbsp;*                         </td><td align="left">  可访问**沙盒**页，并查看帐户中的沙盒以及这些沙盒的任何适用配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。 </td><td align="left">  可访问**沙盒**页，并查看和管理帐户中的沙盒，包括创建和删除沙盒以及管理它们的配置。 无法查看每个沙盒的产品和提交，除非授予相应的产品级别权限。    </td></tr>
+<tr><td align="left">    **Microsoft Store 促销活动**&nbsp;\*                            </td><td align="left">  不适用    </td><td align="left">  可以将选项配置为在 Microsoft Store 促销活动中自动加入产品。     </td></tr>
 <tr><td align="left">    **税务配置文件**                         </td><td align="left">  可查看**帐户设置**中的[税务配置文件信息和表单](setting-up-your-payout-account-and-tax-forms.md#tax-forms)。     </td><td align="left">  可填写税单和更新**帐户设置**中的[税务配置文件信息](setting-up-your-payout-account-and-tax-forms.md#tax-forms)。     </td></tr>
 <tr><td align="left">    **测试帐户**&nbsp;*                     </td><td align="left">  可查看测试 Xbox Live 配置的帐户。      </td><td align="left">  可创建、管理和查看测试 Xbox Live 配置的帐户。      </td></tr>
 <tr><td align="left">    **Xbox 设备**                        </td><td align="left">  可在**帐户设置**部分查看为帐户启用的 Xbox 开发主机。       </td><td align="left">  可在**帐户设置**部分查看为帐户添加、删除和启用的 Xbox 开发主机。     </td></tr>
@@ -191,6 +193,7 @@ ms.lasthandoff: 01/12/2018
     <tr><td align="left">    **定向优惠**     </td><td>    可查看产品的[定向优惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)。         </td><td>    可查看、管理和创建产品的[定向优惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)。          </td><td>    不适用     </td><td>    不适用      </td></tr>
     <tr><td align="left">    **联系客户**  </td><td>    可查看[客户反馈响应](respond-to-customer-feedback.md)和[客户评论响应](respond-to-customer-reviews.md)，前提是还授予了**客户反馈**权限。 还可查看为产品创建的[目标通知](send-push-notifications-to-your-apps-customers.md)。    </td><td>    可[响应客户反馈](respond-to-customer-feedback.md)和[响应客户评论](respond-to-customer-reviews.md)，前提是还授予了**客户反馈**权限。 还可为产品[创建和发送目标通知](send-push-notifications-to-your-apps-customers.md)。                   </td><td>    不适用         </td><td>    不适用                          </td></tr>
     <tr><td align="left">    **实验**</td><td>    可查看产品的[实验（A/B 测试）](../monetize/run-app-experiments-with-a-b-testing.md)和实验数据。   </td><td>    可为产品创建、管理和查看[实验（A/B 测试）](../monetize/run-app-experiments-with-a-b-testing.md)，还可查看实验数据。     </td><td>    不适用  </td><td>    不适用                 </td></tr>
+    <tr><td align="left">    **Microsoft Store 促销活动**&nbsp;\*</td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td></tr>
 
     </tbody>
     </table>

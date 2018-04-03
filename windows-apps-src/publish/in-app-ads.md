@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
-title: "应用内广告"
+title: 应用内广告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 12/04/2017
+ms.date: 2/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -78,6 +78,8 @@ ms.lasthandoff: 12/12/2017
 
 若要编辑 UWP 广告单元的[中介设置](#mediation)或此广告单元所用于的应用的 [COPPA 合规性](#coppa)，请单击广告单元的名称。
 
+请注意，如果广告单元过去六个月没有任何活动，我们会将其标记为**停用**，并且最终会将其从你的仪表板中删除。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
+
 <span id="mediation" />
 ## <a name="mediation-settings"></a>中介设置
 
@@ -120,8 +122,8 @@ ms.lasthandoff: 12/12/2017
 | AOL 和 AppNexus |  这是一个可通过我们的合作伙伴网络提供广告的 Microsoft 托管的广告网络，即 AOL 和 AppNexus。<p/>**注意**：对于横幅广告单元，AOL 和 AppNexus 始终在**付费广告网络**列表中排名第一，且针对这些类型的广告不能更改为更低排名。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以提供来自 [AppNexus](https://www.appnexus.com) 的视频间隙广告。 | 视频间隙、本机  |
 | Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
-| Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅  |
-| Revcontent |  选择此选项以提供来自 [Revcontent](http://www.revcontent.com/) 的广告。 |  横幅  |
+| Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅、横幅间隙  |
+| Revcontent |  选择此选项以提供来自 [Revcontent](http://www.revcontent.com/) 的广告。 |  横幅、本机  |
 | Smaato |  选择此选项以提供来自 [Smaato](https://www.smaato.com/) 的广告。 |  横幅  |
 | smartclip |  选择此选项以提供来自 [smartclip](http://www.smartclip.com/) 的广告。 |  视频间隙  |
 | SpotX |  选择此选项以提供来自 [SpotX](https://www.spotx.tv/) 的广告。 |  视频间隙  |

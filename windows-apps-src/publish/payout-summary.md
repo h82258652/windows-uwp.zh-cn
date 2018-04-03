@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "“付款摘要”会向你显示有关通过应用和加载项获得的收益的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。"
-title: "付款摘要"
+Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+title: 付款摘要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: d6a069bab6bc24c6f6388eec7ad63c0c79525fd9
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
+ms.localizationpriority: high
+ms.openlocfilehash: 5be84a7fe6918a0ba272aead83ec26e68669c477
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="payout-summary"></a>付款摘要
 
@@ -29,6 +30,7 @@ ms.lasthandoff: 06/21/2017
 >
 > 月付（如果已达到任何适用的付款阈值）。 我们以后通常在每月的第 15 日支付指定月的任何到期付款。 请注意，付款通常需要 3 到 10 个工作日才会到达你的付款帐户。 有关详细信息，请参阅[付款阈值、方法和时间范围](payment-thresholds-methods-and-timeframes.md)。
 
+若要查看**付款摘要**，单击开发人员中心右上角附近显示的**付款**图标，然后选择**付款摘要**。
 
 ## <a name="current-proceeds-and-payments"></a>当前收益和付款
 
@@ -56,7 +58,7 @@ ms.lasthandoff: 06/21/2017
 
 在每份明细表顶部，你将看到每月的付款总额。 在紧接下方的“已付款项”****中，你将会看到付款金额的计算方式摘要。
 
-在下方的“收益细分”****部分中，你可以按应用查看每个市场以及每个收入来源（例如 Windows Phone 应用商店、Windows 应用商店 8 和 Windows 应用商店等）的盈利金额的详细信息。 你还可以查看有关所作[调整](#proceeds-by-app-and-adjustments)的详细信息，包括调整的日期、金额和原因。
+在下方的**收益细分**部分中，你可以按应用查看每个市场以及每个收入来源（例如 Microsoft Store、Windows 应用商店 8 和 Windows Phone 应用商店等）的盈利金额的详细信息。 你还可以查看有关所作[调整](#proceeds-by-app-and-adjustments)的详细信息，包括调整的日期、金额和原因。
 
 请注意，上述部分仅显示有关来自应用销售的收益（和调整）的信息；如果你已通过广告获得盈利，则你将看到一个单独的 Microsoft Advertising 部分，其中带有有关付款和货币兑换的详细信息。
 
@@ -80,7 +82,7 @@ ms.lasthandoff: 06/21/2017
 
 | 字段名称              | 描述                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 收入来源          | 收入的来源，基于交易发生的位置（例如 Windows 应用商店、Windows Phone 应用商店、Windows 应用商店 8、广告等） |
+| 收入来源          | 收入的来源，基于交易发生的位置（例如 Microsoft Store、Windows Phone 应用商店、Windows 应用商店 8、广告等） |
 | 订单编码                |  唯一订单标识符。 此 ID 允许你通过各自的非购买交易（如退款、拒付等）标识购买交易。 两者将具有相同订单编码。 此外，在拆分付费（已针对单个购买使用了多种付款方式）时，它将允许你链接购买交易。                                                                                                          |
 | 交易 ID          |       唯一交易标识符。  |
 | 交易日期时间   | 进行交易的日期和时间 (UTC)。                                                                                        |
@@ -89,7 +91,7 @@ ms.lasthandoff: 06/21/2017
 | 父产品名称     | 父产品的名称。 请注意：如果没有用来交易的父产品，则父产品名称 = 产品名称。   |
 | 产品名称            | 产品的名称。                                                                                                                     |
 | 产品类型            | 产品的类型（如应用、加载项、游戏等）                                                                                        |
-| 数量                | 当收入来源为适用于企业的 Windows 应用商店时，数量表示已购买的许可证数量。 对于所有其他收入来源，数量将始终为 1。 注意：即使当单笔交易因使用了两种不同的付款方式而拆分为两个明细项目时，每个明细项目都将显示数量为 1。    |
+| 数量                | 当收入来源为适用于企业的 Microsoft Store 时，数量表示已购买的许可证数量。 对于所有其他收入来源，数量将始终为 1。 注意：即使当单笔交易因使用了两种不同的付款方式而拆分为两个明细项目时，每个明细项目都将显示数量为 1。    |
 | 交易类型        | 交易的类型（如购买、退款、冲销、拒付等）                                                                |
 | 付款方式          | 客户用于交易的付款方式（如信用卡、移动运营商结算、PayPal 等）                                 |
 | 国家/地区        | 进行交易的国家/地区。                                                                                            |
