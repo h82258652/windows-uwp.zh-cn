@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
-ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
+ms.openlocfilehash: a16f86512a3c33055cb4825966282f1487ea158d
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="desktop-bridge"></a>桌面桥
 
@@ -58,6 +58,7 @@ ms.lasthandoff: 02/15/2018
 接下来，请查看文章[准备将桌面应用打包](desktop-to-uwp-prepare.md)，并首先解决应用存在的任何问题，然后再为应用创建 Windows 应用包。 在创建包之前，可能不需要对应用进行很多更改。 但是，在一些情况下可能需要你在创建包之前对应用进行调整。
 
 <a id="convert" />
+
 ## <a name="package"></a>包
 
 以下是一些可用于为应用创建 Windows 应用包的工具。
@@ -114,6 +115,9 @@ Desktop App Converter 还与 Hyper-V 和 [VMware](http://www.vmware.com/) 集成
 Advanced Installer 还提供用于 Visual Studio 2017 和 2015 的扩展，可用于[生成和调试桌面桥应用](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html)。
 
 请观看此[视频](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be)进行简要了解。
+
+> [!TIP]
+> 请务必检查最近发布的 [Advanced Installer Express Edition](https://www.advancedinstaller.com/express-edition.html)。
 
 #### <a name="cloudhouse-compatibility-containers"></a>Cloudhouse 兼容性容器
 

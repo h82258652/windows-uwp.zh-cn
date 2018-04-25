@@ -1,18 +1,19 @@
 ---
 author: jnHs
-Description: "你可以精确设置应用应该在应用商店中推出的日期和时间，从而能够针对不同市场更灵活地自定义日期。"
-title: "配置精确的发布计划"
+Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
+title: 配置精确的发布计划
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 03/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10，uwp"
-ms.openlocfilehash: 77e954e3d8b85c0cf517a154447957a2d81d5bcf
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
+ms.localizationpriority: high
+ms.openlocfilehash: 7c6f39622c4b64e787a7d9a226121dac7dcefdfa
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 
@@ -23,14 +24,14 @@ ms.lasthandoff: 08/03/2017
 
 此外，你还可以选择设置产品在应用商店中下架的日期。 请注意，这表示不再能够通过搜索或浏览在应用商店中找到该产品，但具有直接链接的任何客户可以看到该产品的应用商店一览。 如果他们已经拥有该产品，或者如果他们拥有[促销代码](generate-promotional-codes.md)并且使用 Windows 10 设备，则仅可以下载该产品。
 
-默认情况下（除非在[可见性](set-app-pricing-and-availability.md#visibility)部分选择了**在应用商店中提供此应用，但它不可被发现**选项中的一个），你的应用一旦通过认证并完成发布流程，客户即可获取。 若要选择其他日期，请选择**显示选项**以展开此部分。
+默认情况下（除非在[可见性](choose-visibility-options.md#discoverability)部分选择了**在应用商店中提供此应用，但它不可被发现**选项中的一个），你的应用一旦通过认证并完成发布流程，客户即可获取。 若要选择其他日期，请选择**显示选项**以展开此部分。
 
-请注意，如果在[可见性](set-app-pricing-and-availability.md#visibility)部分选择了**在应用商店中提供此应用，但它不可被发现**选项中的一个，你将无法在**计划**部分配置日期，因为你的应用不会发布给客户，所以没有要配置的发布日期。
+请注意，如果在[可见性](choose-visibility-options.md#discoverability)部分选择了**在应用商店中提供此应用，但它不可被发现**选项中的一个，你将无法在**计划**部分配置日期，因为你的应用不会发布给客户，所以没有要配置的发布日期。
 
 > [!IMPORTANT]
 > 在“计划”部分指定的日期仅适用于 Windows 10 的客户。
 >
->如果你的应用支持较早的操作系统版本，即使你已选择靠后的发布日期，只要传递认证并完成发布过程，使用这些操作系统版本的客户都将看到应用的列表。 你所选择的任何**停止获取**日期将不适用于这些客户；他们仍然能够获取应用（除非你通过[可用性](set-app-pricing-and-availability.md#visibility)部分的新选项提交更新，或者如果你从**应用概述**页选择了**禁止提供应用**）。
+>如果你的应用支持较早的操作系统版本，即使你已选择靠后的发布日期，只要传递认证并完成发布过程，使用这些操作系统版本的客户都将看到应用的列表。 你所选择的任何**停止获取**日期将不适用于这些客户；他们仍然能够获取应用（除非你通过[可用性](choose-visibility-options.md#discoverability)部分的新选项提交更新，或者如果你从**应用概述**页选择了**禁止提供应用**）。
 
 
 ## <a name="base-schedule"></a>基准计划
@@ -39,7 +40,7 @@ ms.lasthandoff: 08/03/2017
 
 你将看到以下两个选项：**发布**和**停止获取**。 
 
-### <a name="release"></a>发布
+## <a name="release"></a>发布
 
 在**发布**下拉列表中，可以设置你希望你的应用在应用商店中推出的时间。 这表示通过搜索或浏览可以在应用商店中发现该应用，并且客户可以查看其应用商店一览以及获取该应用。
 
@@ -56,20 +57,20 @@ ms.lasthandoff: 08/03/2017
 > [!TIP]
 > 你还可以选择[输入其他发布日期](set-app-pricing-and-availability.md#display-release-date)，显示在应用的应用商店一览中。 
 
-### <a name="stop-acquisition"></a>停止获取
+## <a name="stop-acquisition"></a>停止获取
 
 在**停止获取**下拉列表中，可以设置你想要停止允许新客户从应用商店获取应用或发现应用列表的日期和时间。 如果你想要精确地控制不再向新客户提供应用的时间（例如当你在协调多个应用之间的可用性时），该选项就非常有用。
 
 默认情况下，**停止获取**设置为永不。 若要更改此设置，请在下拉列表中选择**在某个时间**，然后指定日期和时间，如上所述。 在你选定的日期和时间，客户将不再能够获取该应用。
 
-请务必了解，此选项的影响等同于在[可见性](set-app-pricing-and-availability.md#visibility)部分选择**在应用商店中提供此应用，但它不可被发现**以及选择**停止获取：任何具有直接链接的客户均可看到产品的应用商店一览，但仅当曾经拥有过该产品或拥有一个促销代码，同时使用的是 Windows 10 设备时，这些客户才能够下载该产品**。 若要完全停止向新客户提供应用，请从“应用概述”页面中单击**禁止提供应用**。 有关详细信息，请参阅[从应用商店中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+请务必了解，此选项的影响等同于在[可见性](choose-visibility-options.md#discoverability)部分选择**在应用商店中提供此应用，但它不可被发现**以及选择**停止获取：任何具有直接链接的客户均可看到产品的应用商店一览，但仅当曾经拥有过该产品或拥有一个促销代码，同时使用的是 Windows 10 设备时，这些客户才能够下载该产品**。 若要完全停止向新客户提供应用，请从“应用概述”页面中单击**禁止提供应用**。 有关详细信息，请参阅[从应用商店中删除应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 > [!TIP]
 > 如果选择了**停止获取**的日期，而后来你想要再次提供该应用，则可以创建一个新的提交并将**停止获取**改回**从不**。 在发布更新的提交后，可以再次提供你的应用。
 
-### <a name="customize-the-schedule-for-specific-markets"></a>针对特定市场自定义计划 
+## <a name="customize-the-schedule-for-specific-markets"></a>针对特定市场自定义计划 
 
-默认情况下，上述所选选项将应用于所有提供应用的市场。 若要针对特定市场自定义价格，请单击**针对特定市场自定义**。 随即将出现**市场选择**弹出窗口，其中列出了所有你选择要提供应用的市场。 如果在[市场](define-pricing-and-market-selection.md)部分中排除了某些市场，则此处将不会显示这些市场。 
+默认情况下，上述所选选项将应用于所有提供应用的市场。 若要针对特定市场自定义价格，请单击**针对特定市场自定义**。 随即将出现**市场选择**弹出窗口，其中列出了所有你选择要提供应用的市场。 如果在[市场](define-pricing-and-market-selection.md)部分中排除了某些市场，则将不会显示这些市场。 
 
 若要针对一个市场添加计划，请选中该市场，然后单击**保存**。 然后将出现上述相同的**发布**和**停止获取**选项，但所做选择将仅应用于该市场。
 

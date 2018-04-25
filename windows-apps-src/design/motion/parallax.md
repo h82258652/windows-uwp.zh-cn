@@ -1,8 +1,8 @@
 ---
 author: mijacobs
 Description: Use the ParallaxView control to add depth and movement to your app.
-title: "如何使用 ParallaxView 控件向你的应用添加深度和移动效果。"
-ms.assetid: 
+title: 如何使用 ParallaxView 控件向你的应用添加深度和移动效果。
+ms.assetid: ''
 label: Parallax View
 template: detail.hbs
 ms.author: mijacobs
@@ -16,17 +16,17 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: ae11bb0c3d2d3230f4111a08d33b4fa839ffedd7
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 69bb202a7e13f087ead7ea2a379f803219bbd2d4
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="parallax"></a>视差
 
 视差是一种视觉效果，即靠近观察者的物体比背景中的物体移动得更快。 视差可产生一种深度、透视和移动感。 在 UWP 应用中，你可以使用 ParallaxView 控件来创建视差效果。  
 
-> **重要的 API**：[ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、[VerticalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_VerticalShift)、[HorizontalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_HorizontalShift)
+> **重要的 API**：[ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、[VerticalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、[HorizontalShift 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>示例
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/08/2018
 
 要创建视差效果，你可以使用 [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 控件。 该控件将前景元素（如列表）的滚动位置与背景元素（如图像）关联到一起。 当你滚动前景元素时，它会为背景元素创建动画以创建视差效果。 
 
-要使用 ParallaxView 控件，你需要提供源元素、背景元素，并将 [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_VerticalShift)（针对垂直滚动）和/或  [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_HorizontalShift)（针对水平滚动）属性设置为大于零的值。 
+要使用 ParallaxView 控件，你需要提供源元素、背景元素，并将 [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)（针对垂直滚动）和/或  [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)（针对水平滚动）属性设置为大于零的值。 
 * 源属性参考前景元素。 为了让视差效果出现，前景应为 [ScrollViewer](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 或一个包含 ScrollViewer 的元素，例如 [ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview) 或 [RichTextBox](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)。 
 
 * 要设置背景元素，你需要将该元素添加为 ParallaxView 控件的子元素。 背景元素可以是任何 [UIElement](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement)，如[图像](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Image)或包含其他 UI 元素的面板。 

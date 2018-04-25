@@ -1,23 +1,24 @@
 ---
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: "开设开发者帐户"
-description: "有关如何为 Windows 应用商店和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。"
+title: 开设开发者帐户
+description: 有关如何为 Microsoft Store 和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 726c2edebe5c12120c0f034414516b3076bf3795
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 5a82afad1c56a5e06e3d82d6b6e6e381fa8934dd
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
-有关如何为 Windows 应用商店和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。
+有关如何为 Microsoft Store 和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。
 
 > [!NOTE]
 > 当你注册开发者帐户时，我们将使用你在联系人信息中提供的电子邮件地址，以发送与你的帐户相关的电子邮件通信。 有时，其中可能包括有关我们的计划的信息性电子邮件。 如果你通过单击[退出](http://go.microsoft.com/fwlink/p/?LinkId=533280)选择不接收这些信息电子邮件，则请注意，我们仍然会向你发送交易电子邮件（例如，为了让你知道你的应用已经通过认证，或付款已在路上）。 这些电子邮件是你的帐户的必要组成部分，除非关闭你的帐户，否则你将继续收到这些交易电子邮件。
@@ -35,7 +36,8 @@ ms.lasthandoff: 06/21/2017
 
   > [!NOTE]
   > 确保有权使用在此输入的名称。 如果其他人拥有所选名称的商标或版权，帐户可能会关闭。 有关详细信息，请参阅[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/Hh694058)。 如果其他人正在使用你对其持有商标或其他法定权利的发布者显示名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
-6.  输入希望用于开发者帐户的联系人信息。
+
+  6.  输入希望用于开发者帐户的联系人信息。
 
   > [!NOTE]
   > 遇到帐户相关事宜时，我们将通过此信息与你联系。 例如，完成注册后，你将会收到一封确认电子邮件。 在这之后，我们将在向你支付时或你需要使用你的帐户修复某些内容时发送电子邮件。 我们还可能发送上述信息之类的电子邮件，除非你选择了接收非交易类电子邮件。
@@ -59,7 +61,7 @@ ms.lasthandoff: 06/21/2017
 > [!IMPORTANT]
 > 若要允许多位用户访问开发人员中心帐户，建议使用 Azure Active Directory 为每位用户分配角色。 之后每位用户可以使用自己的单独 Azure AD 凭据进行登录，从而访问开发人员中心帐户。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
 
--   使用尚未属于你或其他个人的电子邮件地址创建 Microsoft 帐户，如 MyCompany_DevCenter@outlook.com。 你可能无法在你的公司的域中使用某个电子邮件地址，尤其是当你的公司已经使用 Azure AD 时。
+-   使用尚未属于你或其他个人的电子邮件地址创建 Microsoft 帐户，如 MyCompany_DevCenter@outlook.com。你可能无法在你的公司的域中使用某个电子邮件地址，尤其是当你的公司已经使用 Azure AD 时。
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户。
 -   设置企业电子邮件分发列表，其中包括每位需要访问开发者帐户的人员，并将该电子邮件地址添加到你的安全信息中。 这允许列表上的所有员工在需要时接收安全代码。 如果不可以设置分发列表，各个电子邮件帐户的所有者需要能够在收到提示时（例如将新的安全信息添加到帐户时，或者从新设备访问帐户时）访问和共享安全代码。
 -   添加无需分机号的公司电话号码，该号码可供关键团队成员使用。
@@ -83,7 +85,7 @@ Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码
 
 开发人员帐户不会过期，因此无需续订你的帐户即可使其保持开设状态。 如果你决定完全关闭你的帐户，你可以通过联系技术支持人员来执行此操作。
 
-当关闭你的帐户时，务必了解你在 Windows 应用商店中发布的任何应用会发生什么情况：
+当关闭你的帐户时，务必了解你在 Microsoft Store 中发布的任何应用会发生什么情况：
 
 -   应用的当前客户仍然可以使用该应用。 不过，他们将无法执行应用内购买。
 -   尽管应用仍可供以前购买的客户使用，但你的应用一览将从应用商店中删除。 新用户将无法购买你的应用。

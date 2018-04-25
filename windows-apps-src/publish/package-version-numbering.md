@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "Windows 应用商店强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。"
-title: "程序包版本编号"
+Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+title: 程序包版本编号
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 67c90f87fe0d02a0a906392409103e93e83103c3
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: a5c9c676a3ccd8ff7f1e7d53d9019d722fefa722
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
 
-你提供的每个程序包都必须具有一个版本号（采用应用清单中 **Package/Identity** 元素的 **Version** 属性值进行提供）。 Windows 应用商店强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
+你提供的每个程序包都必须具有一个版本号（采用应用清单中 **Package/Identity** 元素的 **Version** 属性值进行提供）。 Microsoft Store 强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
 
 > [!NOTE]
 > 本主题提及“程序包”，但除非另有说明，否则对 .appx 和 .appxbundle 文件的版本号应用相同的规则。
@@ -26,12 +27,12 @@ ms.lasthandoff: 06/21/2017
 
 ## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 程序包的版本编号
 
-任何 Windows 10 程序包的版本号均必须始终高于你正在为相同应用发布的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 程序包（或你以前发布的那些操作系统版本的程序包）的任一版本号。 （有关详细信息，请参阅[将适用于 Windows 10 的程序包添加到以前发布的应用](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。）
+任何 Windows 10 程序包的版本号均必须始终高于你正在为相同应用发布的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 程序包（或你以前发布的那些操作系统版本的程序包）的任一版本号。 （有关详细信息，请参阅[将适用于 Windows 10 的程序包添加到以前发布的应用](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app)。）
 
 > [!IMPORTANT]
 > 生成程序包时，会保留版本号的最后（第四个）部分以供应用商店使用，并且必须保留为 0（尽管应用商店可能会更改此部分的值）。
 
-从已发布的提交中选择 Windows 10 程序包后，Windows 应用商店将始终使用适用于客户设备的版本最高的程序包。 这将为你提供更大的灵活性，并让你可以控制在特定设备类型上提供给客户的程序包。 重要的是，你可以按任意顺序提交这些程序包；你将并不局限于提供每个后续提交中的更高版本的程序包。
+从已发布的提交中选择 Windows 10 程序包后，Microsoft Store 将始终使用适用于客户设备的版本最高的程序包。 这将为你提供更大的灵活性，并让你可以控制在特定设备类型上提供给客户的程序包。 重要的是，你可以按任意顺序提交这些程序包；你将并不局限于提供每个后续提交中的更高版本的程序包。
 
 你甚至可以提供多个具有相同版本号的 Windows 10 程序包。 但是，共享一个版本号的程序包也不能拥有相同的体系结构，因为应用商店用于每个程序包的完整标识必须是唯一的。 有关详细信息，请参阅 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity)。
 
@@ -65,11 +66,12 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 
 若要为已收到有问题程序包的客户解决此问题，你应尽快提交一个版本号高于有问题程序包的新 Windows 10 程序包。 在该提交完成认证过程后，所有客户的程序包都将更新为新程序包，因为它具有更高的版本号。
 
+
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>适用于 Windows 8.1（和更早版本）以及 Windows Phone 8.1 程序包的版本编号
 
 对于面向 Windows Phone 8.1 的 .appx 程序包，新提交中的程序包版本号必须始终大于上一提交（或之前任意提交）中所含的程序包版本号。
 
-对于面向 Windows 8 和 Windows 8.1.的 .appx 程序包，将对每个体系结构应用相同的规则：新提交中的程序包版本号必须始终大于同一体系结构下上次交付至 Windows 应用商店的程序包版本号。
+对于面向 Windows 8 和 Windows 8.1.的 .appx 程序包，将对每个体系结构应用相同的规则：新提交中的程序包版本号必须始终大于同一体系结构下上次发布至 Microsoft Store 的程序包版本号。
 
 此外，Windows 8.1 程序包的版本号必须始终大于相同应用的任何 Windows 8 程序包的版本号。 换言之，你提交的任何 Windows 8 程序包的版本号都必须低于你已为相同应用提交的任何 Windows 8.1 程序包的版本号。
 
@@ -78,7 +80,7 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 
 下面是 Windows 8 和 Windows 8.1 不同版本号更新方案中会引发的结果的一些示例。
 
-| 应用商店中存在该版本的应用  | 并且上传该版本 | 在新版本位于 Windows 应用商店中之后，将在新的购置中安装此版本 | 在新版本位于 Windows 应用商店中之后，如果客户已经拥有该应用，只需更新便可。 |
+| 应用商店中存在该版本的应用  | 并且上传该版本 | 在新版本位于 Microsoft Store 中之后，将在新的购置中安装此版本 | 在新版本位于 Microsoft Store 中之后，如果客户已经拥有该应用，只需更新便可。 |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | 无                                     | x86，v1.0.0.0               | x86，v1.0.0.0，在 x86 和 x64 计算机上                                                | 无。 |
 | x86，v1.0.0.0                               | x64，v1.0.0.0               | v1.0.0.0，针对客户的体系结构                                                   | 无。 版本号相同。 |
@@ -87,6 +89,6 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 | 中性，v1.0.0.1                           | x86，v1.0.0.0 <br> x64，v1.0.0.0 <br> ARM，v1.0.0.0 | v1.0.0.0，针对客户计算机的体系结构。          | 无。 拥有体系结构为 Neutral 的 v1.0.0.1 版本应用的客户将继续使用它。 |
 | Neutral，v1.0.0.1 <br> x86，v1.0.0.0 <br> x64，v1.0.0.0 <br> ARM，v1.0.0.0 | x86，v1.0.0.1 <br> x64，v1.0.0.1 <br> ARM，v1.0.0.1 | v1.0.0.1，针对客户计算机的体系结构。 | 无，针对运行中性，v1.0.0.1 版本应用的客户。 <br> 对于运行为其计算机的特定体系结构所构建应用的 v1.0.0.0 的客户，v1.0.0.0 将更新为 v1.0.0.1。 |
 | x86，v1.0.0.1 <br> x64，v1.0.0.1 <br> ARM，v1.0.0.1 | x86，v1.0.0.2 <br> x64，v1.0.0.2 <br> ARM，v1.0.0.2 | v1.0.0.2，针对客户计算机的体系结构。  | 对于运行针对其计算机的特定体系结构所生成应用的 v1.0.0.1 的客户，v1.0.0.1 将更新为 v1.0.0.2。 |
- 
+
 > [!NOTE]
 > 与 .appx 程序包不同，当确定向给定客户提供哪个程序包时，不考虑任何 .xap 程序包中的版本号。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。

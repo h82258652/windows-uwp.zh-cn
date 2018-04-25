@@ -13,11 +13,11 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: high
-ms.openlocfilehash: 0a5f3dca3c8310bddbcd63c814d2d883151ff1f3
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: f545cf38897e44dc2b3da9fac139f37bf10fc50a
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 03/08/2018
 （若要了解突出显示交互性元素的灯光效果“突出显示效果”，请参阅[突出显示文章](/windows/uwp/design/style/reveal)。）
 
 
-> **重要 API**：[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_FocusVisualKind)、[FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_UseSystemFocusVisuals)
+> **重要 API**：[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>工作原理
 显示焦点通过在元素边框周围添加动画的明亮辉光来引起对聚焦元素的注意：
@@ -54,8 +54,8 @@ ms.lasthandoff: 03/08/2018
 ## <a name="how-to-use-it"></a>如何使用
 
 默认情况下，“显示焦点”处于关闭状态。 如何启用：
-1. 在应用的构造函数中，调用 [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo#Windows_System_Profile_AnalyticsVersionInfo_DeviceFamily) 属性，并检查当前设备系列是否是 `Windows.Xbox`。
-2. 如果设备系列是 `Windows.Xbox`，将 [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_FocusVisualKind) 属性设置为 `FocusVisualKind.Reveal`。 
+1. 在应用的构造函数中，调用 [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo.DeviceFamily) 属性，并检查当前设备系列是否是 `Windows.Xbox`。
+2. 如果设备系列是 `Windows.Xbox`，将 [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) 属性设置为 `FocusVisualKind.Reveal`。 
 
 ```csharp
     if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
@@ -64,14 +64,14 @@ ms.lasthandoff: 03/08/2018
     }
 ```
 
-设置 **FocusVisualKind** 属性后，系统会自动对 [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_UseSystemFocusVisuals) 属性设置为 **True**（大多数控件的默认值）的所有控件应用显示焦点效果。 
+设置 **FocusVisualKind** 属性后，系统会自动对 [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) 属性设置为 **True**（大多数控件的默认值）的所有控件应用显示焦点效果。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>为何“显示焦点”默认不是打开状态？ 
 如你所见，当应用检测到“显示焦点”在 Xbox 上运行时，将它打开很容易。 那么，系统为何不为你打开它？ 因为“显示焦点”会增加焦点视觉对象的大小，这可能导致 UI 布局问题。 在某些情况下，你会希望自定义“显示焦点”效果以针对你的应用对其进行优化。
 
 ## <a name="customizing-reveal-focus"></a>自定义“显示焦点”
 
-你可以通过修改每个控件的焦点视觉属性来自定义“显示焦点”效果：[FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryThickness)、[FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryThickness)、[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
+你可以通过修改每个控件的焦点视觉属性来自定义“显示焦点”效果：[FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、[FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
 
 在开始自定义之前，最好先对构成“显示焦点”的组件多一些了解。
 
@@ -87,8 +87,8 @@ ms.lasthandoff: 03/08/2018
 
 | 边框类型 | 属性 |
 | --- | --- |
-| 主边框、明亮辉光   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryThickness)<br/> （更改主边框将按比例改变明亮辉光的粗细。）   |
-| 辅助边框   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryThickness)   |
+| 主边框、明亮辉光   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> （更改主边框将按比例改变明亮辉光的粗细。）   |
+| 辅助边框   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
 
 
 此示例中更改按钮焦点视觉的边框粗细：
@@ -99,7 +99,7 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="customize-the-margin"></a>自定义边距
 
-边距是控件的视觉边界与焦点视觉辅助边框的开始部分之间的间距。 默认边距与控件边界的距离为 1px。 可以通过更改 [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualMargin) 属性来基于每个控件编辑此边距：
+边距是控件的视觉边界与焦点视觉辅助边框的开始部分之间的间距。 默认边距与控件边界的距离为 1px。 可以通过更改 [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) 属性来基于每个控件编辑此边距：
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -109,12 +109,12 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="customize-the-color"></a>自定义颜色
 
-若要更改显示焦点视觉的颜色，请使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryBrush) 属性。
+若要更改显示焦点视觉的颜色，请使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) 属性。
 
 | 属性 | 默认资源 | 默认资源值 |
 | ---- | ---- | --- | 
-| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
-| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
+| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
+| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
 
 （当 **FocusVisualKind** 设置为**显示**时，FocusPrimaryBrush 属性仅默认使用 **SystemControlRevealFocusVisualBrush** 资源。 否则，它将使用 **SystemControlFocusVisualPrimaryBrush**。）
 
@@ -151,7 +151,7 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="show-just-the-glow"></a>只显示明亮辉光
 
-如果你想要只使用明亮辉光，而不要主边框或辅助边框焦点视觉，只需将控件的 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) 属性设置为 `Transparent`，并将 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryThickness) 设置为 `0`。 在此情况下，明亮辉光将采用控件背景的颜色来提供无边框感觉。 你可以使用 [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryThickness) 来修改明亮辉光的粗细。
+如果你想要只使用明亮辉光，而不要主边框或辅助边框焦点视觉，只需将控件的 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 属性设置为 `Transparent`，并将 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) 设置为 `0`。 在此情况下，明亮辉光将采用控件背景的颜色来提供无边框感觉。 你可以使用 [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) 来修改明亮辉光的粗细。
 
 ```xaml
 

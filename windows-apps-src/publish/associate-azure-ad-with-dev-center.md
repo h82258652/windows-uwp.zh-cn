@@ -9,11 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, azure ad, azure 租户, aad 租户, azure ad 租户, 租户管理, 租户
 ms.localizationpriority: high
-ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: f488a72b916e2950a46a5b48e79be2795806a900
+ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>将 Azure Active Directory 与开发人员中心帐户相关联
 
@@ -51,9 +51,9 @@ Windows 开发人员中心利用 Azure AD 进行多用户帐户访问和管理�
 1.  转到你的**帐户设置**并单击**租户**。
 2.  选择**创建新 Azure AD**。
 3.  输入新的 Azure AD 的目录信息：
- - **域名**：用于 Azure AD 域的唯一名称，包含“.onmicrosoft.com”。 例如，如果你输入“example”，则 Azure AD 域将为“example.onmicrosoft.com”。
- - **联系人电子邮件**：我们在必要时就帐户情况与你联系的电子邮件地址。
- - **全局管理员用户帐户信息**：要用于新全局管理员帐户的名字、姓氏、用户名和密码。
+    - **域名**：用于 Azure AD 域的唯一名称，包含“.onmicrosoft.com”。 例如，如果你输入“example”，则 Azure AD 域将为“example.onmicrosoft.com”。
+    - **联系人电子邮件**：我们在必要时就帐户情况与你联系的电子邮件地址。
+    - **全局管理员用户帐户信息**：要用于新全局管理员帐户的名字、姓氏、用户名和密码。
 4.  单击**创建**以确认新域和帐户信息。
 5.  使用新的 Azure AD 全局管理员用户名和密码登录，以开始[添加和管理其他帐户用户](add-users-groups-and-azure-ad-applications.md)。
 

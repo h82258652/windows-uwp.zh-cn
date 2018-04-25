@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: "准备工作"
-description: "准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。"
+title: 准备工作
+description: 准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10，uwp"
-ms.openlocfilehash: 202480cd8e9107e18c7fa8c84a17089177f91dcb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10，uwp
+ms.localizationpriority: high
+ms.openlocfilehash: 85c949307183cf71f8b770d190d983db28b61a9f
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="get-set-up"></a>准备工作
 
@@ -29,7 +32,6 @@ translationtype: HT
 你是一位 MSDN 订户吗？ 可以从此处获取 ISO 下载：
 
 -   从 [MSDN 订户下载](http://go.microsoft.com/fwlink/p/?LinkId=266384)获取 Windows 10
-
 
 
 ## <a name="2-download-or-update-visual-studio"></a>2. 下载或更新 Visual Studio
@@ -65,7 +67,7 @@ Microsoft Visual Studio 2017 可帮助你设计、编码、测试和调试应用
 
 ## <a name="whats-next"></a>下一步操作
 
-在安装工具并获取开发人员许可证或开发人员帐户后，请使用我们的教程来创建第一个应用：
+在安装工具并启用用于开发的设备后，请使用我们的教程来创建第一个应用：
 
 -   [创建你的第一个应用](your-first-app.md)教程
 
@@ -77,8 +79,8 @@ Microsoft Visual Studio 2017 可帮助你设计、编码、测试和调试应用
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布你的 Windows 应用商店应用](https://developer.microsoft.com/store/publish-apps)。
+* [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
 * [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
-* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [UWP 应用是什么？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

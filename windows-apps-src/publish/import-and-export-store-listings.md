@@ -1,21 +1,22 @@
 ---
 author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
-title: "导入和导出 Store 一览"
+title: 导入和导出 Store 一览
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 导入 store 一览, 导出 store 一览, 导入导出, store 一览 csv"
+keywords: windows 10, uwp, 导入 store 一览, 导出 store 一览, 导入导出, store 一览 csv
 ms.localizationpriority: high
-ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: fb9a3e6fd93600392ef724226368d33ed1585c76
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="import-and-export-store-listings"></a>导入和导出 Store 一览
+
 无需[在仪表板中直接输入 Store 一览的信息](create-app-store-listings.md)，你可以选择通过这种方式添加或更新信息：以 .csv 文件格式导出一览，输入信息和资产，然后导入更新后文件。 可以通过这种方法从头开始创建一览，或者更新早已创建的一览。
 
 当你想要为产品创建或更新多语言 Store 一览时，此选项非常有用，因为你可以将相同信息复制/粘帖到多个字段，并且可以轻松地对特定语言进行更改。 但是，无法通过这种方法为应用创建或更新[特定于平台的 Store 一览](create-platform-specific-store-listings.md)。 

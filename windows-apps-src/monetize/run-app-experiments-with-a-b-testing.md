@@ -1,17 +1,20 @@
 ---
 author: mcleanbyron
-Description: "使用 Windows 开发人员中心仪表板通过 A/B 测试运行通用 Windows 平台 (UWP) 应用的实验。"
-title: "通过 A/B 测试运行应用实验"
+Description: You can use the Windows Dev Center dashboard to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
+title: 通过 A/B 测试运行应用实验
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验"
-ms.openlocfilehash: d95f42d7a57c191e371f06b21427d52c5c51773e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
+ms.localizationpriority: high
+ms.openlocfilehash: 0ed6fab97d5e4172601b3c2e549e8feab4f8db57
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>通过 A/B 测试运行应用实验
 
@@ -47,6 +50,7 @@ Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 * 运行实验至少需要 2 – 4 周才能收集统计上重要且可操作的有效数据。
 
 <span id="terms" />
+
 ## <a name="related-terms"></a>相关术语
 
 |  术语  |  定义  |

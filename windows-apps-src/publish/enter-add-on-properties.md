@@ -1,25 +1,25 @@
 ---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
-title: "输入加载项属性"
+title: 输入加载项属性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品"
+keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: high
-ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c3f5de17dc090989572d72c30bd9d8b85e385316
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
 
-在提交加载项时，“属性”****页面上的选项有助于确定在提供给客户时加载项的行为。
+在提交加载项时，“属性”**** 页面上的选项有助于确定在提供给客户时加载项的行为。
 
 ## <a name="product-type"></a>产品类型
 
@@ -80,16 +80,18 @@ ms.lasthandoff: 01/12/2018
 这些字段是所有类型的加载项的可选字段。
 
 <span id="keywords" />
+
 ### <a name="keywords"></a>关键字
 
 可以选择为每个提交的加载项提供最多十个关键字，每个关键字最多 30 个字符。 然后，你的应用便可查询匹配这些字词的加载项。 你可以使用此功能在应用中生成可加载加载项的屏幕，而无需直接在应用的代码中指定产品 ID。 然后，可以随时更改加载项关键字，而无需在应用中更改代码或重新提交应用。
 
-若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting#Windows_ApplicationModel_Store_ProductListing_Keywords) 属性。）
+若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
 
 > [!NOTE]
 > 关键字不适用于面向 Windows 8 和 Windows 8.1 的程序包。
 
 <span id="custom-developer-data" />
+
 ### <a name="custom-developer-data"></a>自定义开发人员数据
 
 你可以在**自定义开发人员数据**字段（之前被称为**标记**）中输入最多 3000 个字符来为应用内产品提供额外的上下文。 在大多数情况下，它采用的是 XML 字符串的形式，但是可以在此字段中输入需要的任何内容。 然后应用可以查询此字段以读取其内容（尽管应用无法编辑数据并将更改传回。）

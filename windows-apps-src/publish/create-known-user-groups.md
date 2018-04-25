@@ -1,33 +1,33 @@
 ---
 author: JnHs
-Description: "了解如何创建用于软件包外部测试版等的已知用户组。"
-title: "创建已知用户组"
+Description: Learn how to create known user groups to use for package flighting and more.
+title: 创建已知用户组
 ms.author: wdg-dev-content
-ms.date: 08/08/2017
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 类别, 类别, 目标组, 客户"
-ms.openlocfilehash: fc3986520e55ae0c636eb2db731df065463002b5
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
+ms.localizationpriority: high
+ms.openlocfilehash: 06922ba9cde98f4bdf678dc281d261dda3bce2b0
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 
-通过使用与其 Microsoft 帐户关联的电子邮件地址，可借助已知用户组向某个组添加特定用户。 这些已知用户组最常与[软件包外部测试版](package-flights.md)结合使用，以将特定软件包分配给所选的一组用户。 它们还可用于向一组特定客户发送[目标通知](send-push-notifications-to-your-apps-customers.md)或[定向优惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)，这是参与市场活动的一部分。
+通过使用与其 Microsoft 帐户关联的电子邮件地址，可借助已知用户组向某个组添加特定用户。 这些已知用户组最常用于通过[软件包外部测试版](package-flights.md)向选定的一组人分发特定软件包，或向[私人受众](choose-visibility-options.md#audience)分发提交。 它们还可用于进行市场活动，如向一组特定客户发送[目标通知](send-push-notifications-to-your-apps-customers.md)或[定向优惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)。
 
-为了被视为组成员，每个用户必须使用与所提供的电子邮件地址关联的 Microsoft 帐户在应用商店中进行身份验证。 对于软件包外部测试版，他们必须使用[支持软件包外部测试版的 Windows 10 设备](package-flights.md)下载应用。
-
+为了被视为组成员，每个用户必须使用与所提供的电子邮件地址关联的 Microsoft 帐户在应用商店中进行身份验证。 若要通过软件包外部测试版下载应用，组成员必须使用支持软件包外部测试版的 Windows 10 版本（Windows.Desktop 版本 10586 或更高版本；Windows.Mobile 版本 10586.63 或更高版本；或 Xbox One）。 对于私人受众提交，组成员必须使用 Windows 10 版本 1607 或更高版本（包括 Xbox One）。
 
 ## <a name="to-create-a-known-user-group"></a>创建已知用户组
 
-1.  在 Windows 开发人员中心仪表板中，展开左侧导航菜单中的**参与**，然后选择**客户组**。 
-2.  在**我的客户组**部分中选择**创建新组**。
-3.  在下一页上，选择**已知用户组**单选按钮。
-4.  在**组名称**框中，输入已知用户组的名称。
-5.  输入要添加到组中的用户的电子邮件地址。 必须包括至少一个电子邮件地址，最多 10,000 个。 你可以直接将电子邮件地址输入该字段中（使用空格、逗号、分号或换行符分隔），或者单击**导入 .csv** 链接以从 .csv 文件中的电子邮件地址列表创建外部测试版组。
+1. 在 Windows 开发人员中心仪表板中，展开左侧导航菜单中的**参与**，然后选择**客户组**。 
+2. 在**我的客户组**部分中选择**创建新组**。
+3. 在下一页上，在**组名称**框中，输入组名称。
+4. 确保选择**已知用户组**单选按钮。
+5. 输入要添加到组中的用户的电子邮件地址。 必须包括至少一个电子邮件地址，最多 10,000 个。 你可以直接将电子邮件地址输入该字段中（使用空格、逗号、分号或换行符分隔），或者单击**导入 .csv** 链接以从 .csv 文件中的电子邮件地址列表创建外部测试版组。
 6. 选择**保存**。
 
 该组现在可供使用。
@@ -47,7 +47,7 @@ ms.lasthandoff: 08/09/2017
 
 对于较大的更改，请选择**导出 .csv**，以将组成员身份信息保存为 .csv 文件。 在此文件中进行更改，然后单击**导入 .csv**，以使用新版本更新组成员身份。
 
-请注意，实现组成员身份更改可能需要 30 分钟。 如果你在为该组发布软件包外部测试版后向已知用户组添加人员，该软件包将自动发送给新的人员；你无需为该软件包外部测试版创建和发布新的提交。 
+请注意，实现组成员身份更改可能需要 30 分钟。 无需通过发布新提交的方式来让新组成员利用软件包外部测试版或私人受众访问你的提交；更改实施后他们自然可进行访问。 
 
 
 

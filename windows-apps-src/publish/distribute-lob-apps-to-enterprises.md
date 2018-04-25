@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
-title: "将 LOB 应用分配到企业"
+title: 将 LOB 应用分配到企业
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业"
+keywords: windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业
 ms.localizationpriority: high
-ms.openlocfilehash: 3857e8e6e494700233d41832fb9edce6c65b89bc
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 97a56ec68e2aa51f0ee733c2eedaee18dc3cedb9
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 
@@ -54,11 +54,12 @@ ms.lasthandoff: 01/12/2018
 必须至少选择一家企业才能将应用作为业务线应用发布。
 
 <span id="organizational" />
+
 ### <a name="organizational-licensing"></a>组织授权
 
 默认情况下，在提交应用时，**应用商店托管（联机）批量许可**框已选中。 在发布 LOB 应用时，此框必须保持选中状态，以便企业可以批量购置你的应用。 此操作将可保证在**分配和可见性**部分中选择的企业之外的任何人均无法使用应用。
 
-如果你想要通过断开连接（离线）许可使企业能够使用应用，也可以选中“断开连接(离线)许可”****框。
+如果你想要通过断开连接（离线）许可使企业能够使用应用，也可以选中“断开连接(离线)许可”**** 框。
 
 有关详细信息，请参阅[组织授权选项](organizational-licensing.md)。
 
@@ -70,7 +71,7 @@ ms.lasthandoff: 01/12/2018
 
 ## <a name="enterprise-deployment-of-lob-apps"></a>LOB 应用的企业部署
 
-单击“提交到应用商店”****后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店门户中将应用添加到其专用应用商店。 企业稍后可以将应用部署到其用户。
+单击“提交到应用商店”**** 后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Microsoft 应用商店或适用于教育的 Microsoft 应用商店门户中将应用添加到其专用应用商店。 企业稍后可以将应用部署到其用户。
 
 > [!NOTE]
 > 为了获取 LOB 应用，组织必须位于[受支持的市场](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)中，并且不得在提交应用时[排除该市场](define-pricing-and-market-selection.md)。 
@@ -82,7 +83,7 @@ ms.lasthandoff: 01/12/2018
 
 若要发布对已经发布为 LOB 的应用的更新，只需创建新的提交即可。 可以上载新程序包或进行任何其他更改，然后单击**提交到应用商店**使更新的版本可用。 请确保使**可见性**中的企业选择保持不变，除非希望更改这些选择，例如选择可购置应用的其他企业，或者删除之前分配了应用的企业。
 
-如果想要停止提供之前作为业务线应用发布的应用，并阻止任何新的购置，你需要创建新的提交。 首先，需要将**可见性**选择从**业务线 (LOB) 分配**更改为**零售分配**。 然后，在**可见性**部分，选择**使此产品在应用商店中可用，但不可被发现**和**停止购置**选项。
+如果想要停止提供之前作为业务线应用发布的应用，并阻止任何新的购置，你需要创建新的提交。 首先，需要将**可见性**选择从**业务线 (LOB) 分配**更改为**零售分配**。 然后，在[可发现性](choose-visibility-options.md#discoverability)部分，选择**使此产品在 Microsoft Store 中可用，但不可被发现**和**停止购置**选项。
 
 提交完成认证过程后，应用将不再用于新的购置（虽然任何已拥有该应用的用户可以继续使用它）。
 

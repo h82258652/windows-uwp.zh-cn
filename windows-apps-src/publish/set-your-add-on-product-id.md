@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品
 ms.localizationpriority: high
-ms.openlocfilehash: 12ed8eb58f9f7f7a5fec55c62f19afe0bf6fa2d5
-ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
+ms.openlocfilehash: f3611f74a33aaed0867df343829312c82dd16785
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
@@ -30,6 +30,7 @@ ms.lasthandoff: 01/22/2018
 > 在保存此创建加载项的页面后，将无法更改该产品类型。 如果选择了错误的产品类型，可以随时删除正在提交的加载项，然后从头开始创建新的加载项。
 
 <span id="durable" />
+
 ### <a name="durable"></a>耐用品
 
 如果加载项通常只需要购买一次，则选中**耐用品**作为产品类型。 此类加载项通常用于解锁应用中的额外功能。
@@ -37,6 +38,7 @@ ms.lasthandoff: 01/22/2018
 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 可以在加载项提交过程的[属性](enter-add-on-properties.md)步骤中，选择将**产品生命周期**更改为不同的持续时间。 若执行此操作，则加载项的过期时间将晚于你指定的持续时间（可选择 1 至 365 天），这种情况下，客户可在加载项过期后再次购买。
 
 <span id="consumable" />
+
 ### <a name="consumable"></a>易耗型产品
 
 如果加载项可以购买、使用（消耗），并且可以重新购买，你将希望选择一种**易耗型**产品类型。 易耗型加载项通常用于客户可按固定数量购买然后会使用完毕的产品，例如游戏货币（金币、硬币等）。 有关详细信息，请参阅[支持购买易耗型加载项](../monetize/enable-consumable-add-on-purchases.md)。
@@ -46,6 +48,7 @@ ms.lasthandoff: 01/22/2018
 - **应用商店管理的易耗品：**Microsoft 会跟踪运行 Windows 10 版本 1607 或更高版本的所有客户设备的平衡；所有较早的操作系统版本不支持此功能。 若要使用此选项，父产品必须使用 Windows 10 SDK 版本 14393 或更高版本编译。 另请注意，在发布父产品前，无法将应用商店管理的易耗型加载项添加到应用商店（但可以在仪表板中创建提交，并可随时处理）。 需要在提交的**属性**步骤中输入应用商店管理的易耗型加载项数量。
 
 <span id="subscription" />
+
 ### <a name="subscription"></a>订阅
 
 若希望定期向客户收取加载项费用，则选择**订阅**。

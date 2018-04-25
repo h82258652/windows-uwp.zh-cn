@@ -1,19 +1,20 @@
 ---
 author: JnHs
-Description: "可以使用开发人员中心仪表板来创建广告活动，从而有助于推广你的应用并扩大使用你的应用的用户群。"
-title: "为应用创建广告市场活动"
+Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+title: 为应用创建广告市场活动
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 广告, 市场活动, 推广"
-ms.openlocfilehash: 04074261b7efd38f0309f08910e4ee1350302e4c
-ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+keywords: windows 10, uwp, 广告, 市场活动, 推广
+ms.localizationpriority: high
+ms.openlocfilehash: 7506ee6e793e38a7babbf88ef4f63467fc044182
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 06/22/2017
 你可以仅为通过[应用认证过程](the-app-certification-process.md) 的最终发布阶段的应用创建广告市场活动。
 
 > [!NOTE]
-> 文档的此部分介绍了如何在开发人员中心仪表板上创建市场活动。 或者，你可以使用 [Windows 应用商店促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
+> 文档的此部分介绍了如何在开发人员中心仪表板上创建市场活动。 或者，你可以使用 [Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
 
 ## <a name="instructions"></a>说明
 
@@ -37,9 +38,9 @@ ms.lasthandoff: 06/22/2017
 4.  选择要使用此市场活动进行推广的应用。 请注意，该应用必须已经在应用商店中提供。
 5.  在**市场活动名称**字段中查看为你的市场活动提供的名称，然后根据需要进行更改。
 6.  在**市场活动类型**下，选择以下其中一个选项：
-        -   **付费广告**：这些广告将在与应用的设备和类别相匹配的任何应用中运行。 对于在 2017 年 1 月 9 日之后创建的新市场活动，这些广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。 面向应用和 Microsoft 高级属性的应用推广市场活动也被称为*通用*市场活动。
-        -   **社区广告（免费）**：这些广告将在也创建社区广告市场活动的其他开发人员发布的应用中运行。 在能够选择此选项前，必须已选择在应用的**利用广告来盈利**页面中显示社区广告。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
-        -   **自家广告（免费）**：这些广告仅在你的应用（与所宣传应用的设备类型相匹配）中运行。 自家广告不收取任何费用。 有关详细信息，请参阅[关于自家广告](about-house-ads.md)。
+    -   **付费广告**：这些广告将在与应用的设备和类别相匹配的任何应用中运行。 对于在 2017 年 1 月 9 日之后创建的新市场活动，这些广告也会在 MSN.com、Outlook.com、Skype 和其他 Microsoft 高级属性中显示。 面向应用和 Microsoft 高级属性的应用推广市场活动也被称为*通用*市场活动。
+    -   **社区广告（免费）**：这些广告将在也创建社区广告市场活动的其他开发人员发布的应用中运行。 必须先选择在**通过应用内广告****盈利** -> 页面中显示社区广告，然后才能选择此选项。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
+    -   **自家广告（免费）**：这些广告仅在你的应用（与所宣传应用的设备类型相匹配）中运行。 自家广告不收取任何费用。 有关详细信息，请参阅[关于自家广告](about-house-ads.md)。
 
 7.  对于付费广告市场活动，请确认**市场活动持续时间**（将花费市场活动预算的时间段）。 默认选项是**每月**，这表示市场活动预算将在每个月定期使用，直到市场活动停止。 如果你有高级帐户，则可以选择性地选择**自定义**来指定将花费市场活动预算的自定义日期和时间范围。 有关高级帐户的详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)。
 
@@ -75,8 +76,8 @@ ms.lasthandoff: 06/22/2017
 
 10.  在**广告设计**页面中，选择以下选项之一：
     -   **自动生成**。 这是默认选项，可用于通过我们的默认模板创建广告。 你可以进行选择以自定义广告内容，我们将根据你的选择（进行选择时自动更新）预览广告外观。
-        -   在**语言**下拉列表中，选择广告语言。 Windows 应用商店锁屏提醒的文本将以选择的语言显示。
-        -   若要向你的广告添加额外的文本行，可在**自定义标志行**字段中输入文本。
+        -   在**语言**下拉列表中，选择广告语言。 Microsoft Store 锁屏提醒的文本消息将以选择的语言显示。
+        -   若要向你的广告添加额外的文本消息行，可在**自定义标志行**字段中输入文本消息。
             > [!NOTE]
             > 必须将此处输入的文本本地化为所选语言。 如果文本违反[必应广告策略](http://go.microsoft.com/fwlink?LinkId=398341)，将拒绝该自定义标志行。 有关样式和禁止内容的指南，请参考此页面。
 
@@ -94,11 +95,11 @@ ms.lasthandoff: 06/22/2017
 
 11.  如果你有[高级帐户](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)，则可以使用**目标 URL** 框控制当客户单击你的广告时会发生什么情况。
     - 如果不选中此框，当客户单击你的广告，将显示应用的应用商店一览。
-    - 如果使用 Kochava 或 Tune 测量应用的安装分析，请输入 Kochava 或 Tune 中的安装跟踪 URL。 当你保存市场活动时，将验证跟踪 URL 以确保它在 Windows 应用商店中解析为应用的一览页。 有关 Kochava 和 Tune 的安装跟踪的详细信息，请参阅 [Kochava](http://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文档。
+    - 如果使用 Kochava 或 Tune 测量应用的安装分析，请输入 Kochava 或 Tune 中的安装跟踪 URL。 当你保存市场活动时，将验证跟踪 URL 以确保它在 Microsoft Store 中解析为应用的一览页。 有关 Kochava 和 Tune 的安装跟踪的详细信息，请参阅 [Kochava](http://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文档。
     - 如果你选择**增加应用参与**作为市场活动目标，可以指定[深层链接 URI](../launch-resume/handle-uri-activation.md) 将所选客户群中的客户重定向到应用中的特定页面。
     - 如果你指定不是应用描述页或应用内页面的任何目标，将自动暂停市场活动。
 
-13.  最后，单击**查看**以确认广告市场活动设置及其预算和付款信息（如果为付费广告市场活动）。 单击**确认**，你的广告通常会在数小时内开始出现在设备上。
+12.  最后，单击**查看**以确认广告市场活动设置及其预算和付款信息（如果为付费广告市场活动）。 单击**确认**，你的广告通常会在数小时内开始出现在设备上。
 
 ## <a name="review-ad-campaign-performance"></a>查看广告市场活动性能
 

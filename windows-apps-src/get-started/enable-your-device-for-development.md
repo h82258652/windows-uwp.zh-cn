@@ -1,19 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: "启用设备进行开发"
-description: "配置 Windows 10 设备进行开发和调试。"
-keywords: "入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备"
+title: 启用设备进行开发
+description: 配置 Windows 10 设备进行开发和调试。
+keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
 ms.author: jken
 ms.date: 03/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8a7b01205acf12d4a0ab6d3d7024311b3944f103
-ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.localizationpriority: high
+ms.openlocfilehash: 09a5fd69d0a2f38adc6ba5f1b241df06211465b6
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -54,15 +55,15 @@ ms.lasthandoff: 08/07/2017
 
  你可以启用设备以进行开发，或仅进行旁加载。
 
--   *Windows 应用商店应用*为默认设置。 如果你未正在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
--   *旁加载*是指安装未经 Windows 应用商店认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
+-   *UWP 应用*是默认设置。 如果你未正在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
+-   *旁加载*是指安装未经 Microsoft Store 认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
 -   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。 
 
-默认情况下，你只能从 Windows 应用商店安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
+默认情况下，你只能从 Microsoft Store 安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
 
 ### <a name="sideload-apps"></a>旁加载应用
 
-旁加载应用设置通常由需要在未通过 Windows 应用商店认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用 *Windows 应用商店应用*设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)和 [Microsoft Intune 中的应用部署入门](https://technet.microsoft.com/library/dn646955.aspx)。
+旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用 *UWP 应用*设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)和 [Microsoft Intune 中的应用部署入门](https://technet.microsoft.com/library/dn646955.aspx)。
 
 设备系列特定信息
 
@@ -70,41 +71,29 @@ ms.lasthandoff: 08/07/2017
 
 -   对于移动设备系列：如果已安装了必需的证书，你可以点击文件以安装任何通过电子邮件收到的或 SD 卡上的 .appx。
 
+
 **旁加载应用**是比开发人员模式更安全的选项，因为你无法在缺少可信任证书的设备上安装应用。
 
 > [!NOTE]
-> 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Windows 应用商店认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅 Windows &gt; 此[隐私声明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Windows 应用商店部分。
+> 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Microsoft Store 认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅 Windows &gt; 此[隐私声明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Microsoft Store 部分。
+
 
 ### <a name="developer-mode"></a>开发人员模式
 
 开发人员模式将替换 Windows 8.1 对于开发人员许可证的要求。  除了旁加载外，开发人员模式设置还支持调试和其他部署选项。 这包括启动 SSH 服务允许部署该设备。 为了停止运行此服务，必须禁用开发人员模式。
 
-设备系列特定信息
+在桌面上启用开发人员模式时，会安装功能包，其中包括：
+- Windows Device Portal。 仅当**启用 Device Portal** 选项打开时，才会启用 Device Portal，并为它配置防火墙规则。
+- 安装允许远程安装应用的 SSH 服务，并为其配置防火墙规则。 启用**设备发现**将打开 SSH 服务器。
 
--   对于桌面设备系列：
-
-    启用开发人员模式以在 Visual Studio 开发和调试应用。 正如前面所述，如果未启用开发人员模式，你将在 Visual Studio 中收到提示。
-
-    在运行秋季创意者更新的之前版本的电脑上，可以针对 Linux 启用 Windows 子系统。 有关详细信息，请参阅[关于装有 Ubuntu 的 Windows 上的 Bash](https://msdn.microsoft.com/commandline/wsl/about)。  从秋季创意者更新开始，WSL 不再需要开发人员模式。  
-
--   对于移动设备系列：
-
-    启用开发人员模式以从 Visual Studio 部署应用并在设备上调试它们。
-
-    你可以点击文件以安装通过电子邮件收到的或 SD 卡上的任何 .appx。 请不要从未经验证的源安装应用。
 
 ## <a name="additional-developer-mode-features"></a>其他开发人员模式功能
 
 对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了开发人员模式时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
 
-启用开发人员模式时，会安装选项包，其中包括：
-- Windows Device Portal。 仅当**启用 Device Portal** 选项打开时，才会启用 Device Portal，并为它配置防火墙规则。
-- 安装、启用允许远程安装应用的 SSH 服务，并为其配置防火墙规则。
+此图显示了 Windows 10 的开发人员功能：
 
-
-此图显示了适用于 Windows 10 移动设备系列的开发人员功能：
-
-![适用于移动设备的开发人员模式选项](images/devmode-mob-options.png) 
+![开发人员模式选项](images/devmode-mob-options.png) 
 
 ### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Device Portal
 
@@ -119,40 +108,40 @@ ms.lasthandoff: 08/07/2017
 
 如果在启用开发人员模式或 Device Portal 时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。 
 
-###<a name="ssh"></a>SSH
+### <a name="ssh"></a>SSH
 
-在你的设备上启用开发人员模式时，会启用 SSH 服务。  当你的设备成为 UWP 应用程序的部署目标时，会使用该服务。   服务名称为“SSH Server Broker”和“SSH Server Proxy”。
+在你的设备上启用设备发现时，会启用 SSH 服务。  当你的设备成为 UWP 应用程序的远程部署目标时，会使用该服务。   服务名称为“SSH Server Broker”和“SSH Server Proxy”。
 
 > [!NOTE]
-> 这不是 Microsoft 的 OpenSSH 实现，可以在 [GitHub](https://github.com/PowerShell/Win32-OpenSSH) 上找到该实现。
+> 这不是 Microsoft 的 OpenSSH 实现，可以在 [GitHub](https://github.com/PowerShell/Win32-OpenSSH) 上找到该实现。  
 
-为了充分利用 SSH 服务，可以启用设备发现来支持固定配对。 如果想要运行另一个 SSH 服务，可以在其他端口上设置该服务或关闭开发人员模式 SSH 服务。 若要关闭 SSH 服务，只需禁用开发人员模式即可。  
+为了充分利用 SSH 服务，可以启用设备发现来支持固定配对。 如果想要运行另一个 SSH 服务，可以在其他端口上设置该服务或关闭开发人员模式 SSH 服务。 若要关闭 SSH 服务，请关闭设备发现。  
+
+SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身份验证。  此密码是在按设备发现“配对”按钮后显示在设备上的 PIN，且仅在 PIN 显示时有效。  SFTP 子系统也将启用，用于手动管理从 Visual Studio 安装松散文件部署的 DevelopmentFiles 文件夹。 
+
+#### <a name="caveats-for-ssh-usage"></a>SSH 使用的注意事项
+在 Windows 中使用的现有 SSH 服务器尚不兼容协议，因此，使用 SFTP 或 SSH 客户端可能需要特殊配置。  特别是，SFTP 子系统在版本 3 或更低版本上运行，因此，任何连接的客户端均应配置为需要旧服务器。  较旧设备上的 SSH 服务器使用 `ssh-dss` 进行公钥身份验证，其已弃用 OpenSSH。  若要连接到此类设备，SSH 客户端必须手动配置为接受 `ssh-dss`。  
 
 ### <a name="device-discovery"></a>设备发现
 
-启用设备发现时，将允许你的设备通过 mDNS 对于网络上的其他设备可见。  此功能还允许你获取与此设备配对的 SSH 固定。  
+启用设备发现时，将允许你的设备通过 mDNS 对于网络上的其他设备可见。  此功能还允许你获取用来配对此设备的 SSH PIN，方法是按启用设备发现后出现的“配对”按钮。  该 PIN 提示必须在屏幕上显示，以完成针对设备的首次 Visual Studio 部署。  
 
 ![固定配对](images/devmode-pc-pinpair.PNG)
 
 仅当想要使设备成为部署目标时，才应该启用设备发现。 例如，如果使用 Device Portal 将应用部署到手机进行测试，只需要在手机上启用设备发现，并不需要在开发电脑上启用。
-
-### <a name="error-reporting-mobile-only"></a>错误报告（仅限移动设备）
-
-设置此值以指定在手机上保存的故障转储量。
-
-通过收集手机上的故障转储，你可以在故障发生后直接快速访问重要的故障信息。 仅为开发人员签名的应用收集转储。 你可以在“Documents\\Debug folder”文件夹的手机存储中查找转储。 有关转储文件的详细信息，请参阅[使用转储文件](https://msdn.microsoft.com/library/d5zhxt22.aspx)。
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
 
  在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击**应用**或单击**显示设置**链接打开该选项的设置页。 
 
 
+## <a name="notes"></a>注释
+在早期版本的 Windows 10 Mobile 中，“开发人员设置”菜单中有“故障转储”选项。  这已经移到 [Device Portal](../debug-test-perf/device-portal.md)，以便可以远程使用而不只是通过 USB。  
 
-**提示**  
-有多个工具可用来将应用从 Windows 10 电脑部署到 Windows 10 移动设备。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。 所列的任意一种方法仅会安装应用包 (.appx)，不安装证书。
+有多个工具可用来将应用从 Windows 10 电脑部署到 Windows 10 设备。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。 所列的两种方法仅会安装应用包 (.appx/.appxbundle)，不安装证书。
 
 -   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)的详细信息。
--   从 Windows 10 版本 1511 开始，你可以使用 [Device Portal](../debug-test-perf/device-portal-desktop.md) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用**[应用](../debug-test-perf/device-portal.md#apps)**页上传应用包 (.appx) 并在设备上安装它。
+-   你可以使用 [Device Portal](../debug-test-perf/device-portal.md) 从浏览器部署到运行 Windows 10 版本 1511 或更高版本的移动设备。 在 Device Portal 中使用**[应用](../debug-test-perf/device-portal.md#apps-manager)** 页上传应用包 (.appx) 并在设备上安装它。
 
 ## <a name="failure-to-install-developer-mode-package"></a>无法安装开发人员模式程序包。
 有时，由于网络或管理问题，开发人员模式无法正确安装。 开发人员模式程序包是**远程**部署到此电脑的必需条件 - 使用来自浏览器的 Device Portal 或设备发现启用 SSH - 但不用于本地部署。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用，或者从本设备向其他设备部署。 
@@ -189,7 +178,7 @@ ms.lasthandoff: 08/07/2017
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>使用组策略或注册表项启用设备
 
-对于大多数开发人员而言，希望使用“设置”应用启用设备进行调试。 在诸如自动执行测试等方案中，可以使用其他方法启用 Windows 10 桌面设备进行开发。
+对于大多数开发人员而言，希望使用“设置”应用启用设备进行调试。 在诸如自动执行测试等方案中，可以使用其他方法启用 Windows 10 桌面设备进行开发。  请注意，这些步骤不会启用 SSH 服务器或允许面向设备进行远程部署和调试。 
 
 可以使用 gpedit.msc 设置组策略来启用设备，除非你拥有 Windows 10 家庭版。 如果你有 Windows 10 家庭版，则需要使用 regedit 或 PowerShell 命令直接设置注册表项以启用设备。
 
@@ -206,7 +195,7 @@ ms.lasthandoff: 08/07/2017
     若要启用开发人员模式，请编辑策略以启用以下两项：
 
     -   **允许安装所有受信任的应用**
-    -   **允许开发 Windows 应用商店应用并从集成开发环境 (IDE) 安装这些应用**
+    -   **允许开发 UWP 应用并从集成开发环境 (IDE) 安装这些应用**
 
 4.  重新启动计算机。
 
@@ -252,8 +241,8 @@ ms.lasthandoff: 08/07/2017
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布你的 Windows 应用商店应用](https://developer.microsoft.com/store/publish-apps)。
+* [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
 * [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
-* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [UWP 应用是什么？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)

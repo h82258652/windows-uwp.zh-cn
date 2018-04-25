@@ -4,17 +4,17 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: 生成促销代码
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 01/22/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
 ms.localizationpriority: high
-ms.openlocfilehash: 634c0857982924ca1b588519172d77d97dd74791
-ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
+ms.openlocfilehash: 7043b12dc3b9d6e7a9813fb1d7b81b836902f92f
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/22/2018
 -   查看促销代码的使用情况。
 
 > [!NOTE]
-> 即使已选择[可见性](set-app-pricing-and-availability.md#visibility)选项，也可生成促销代码。**停止获取：任何具有直接链接的客户均可看到产品的应用商店一览，但仅当曾经拥有过该产品或拥有一个促销代码，同时使用的是 Windows 10 设备时，这些客户才能够下载该产品。**
+> 即使你通过提交的[可发现性](choose-visibility-options.md#discoverability)部分中的**停止购置：任何具有直接链接的客户均可看到产品的 Microsoft Store 一览，但仅当曾经拥有过该产品或拥有一个促销代码，同时使用的是 Windows 10 设备时，这些客户才能够下载该产品**选项选择了**使此产品在 Microsoft Store 中可用，但不可被发现**，也可生成促销代码。
 
 请注意，你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，客户才能兑换促销代码以安装应用。
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/22/2018
 
 2.   在**促销代码**页面上，单击**预订代码**。
 
-3.  在“新促销代码订单”****页面上，输入以下内容：
+3.  在“新促销代码订单”**** 页面上，输入以下内容：
     -   选择要为其生成充值码的应用或加载项。 （请注意，你不能为订阅加载项生成促销代码。）
     -   为订单指定名称。 在查看促销代码使用情况数据时，你可以使用此名称区分不同的代码订单。
     -   选择订单类型。 你可以选择生成一组每个仅使用一次的促销代码，或者选择生成一个可以多次使用的促销代码。
@@ -80,7 +80,7 @@ ms.lasthandoff: 01/22/2018
     -   **产品名称**：代码相关联的应用或加载项的名称。
     -   **订单名称**：生成此代码的订单的名称。
     -   **促销代码**：代码本身。 这是由连字符分隔、字母数字字符组成的 5x5 字符串。 例如：DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
-    -   **可兑换 URL**：客户可用于兑换代码并安装应用或加载项的 URL。 URL 具有以下格式：http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;promotional_code>
+    -   **可兑换 URL**：客户可用于兑换代码并安装应用或加载项的 URL。 URL 采用以下格式：http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;promotional_code>
     -   **开始日期**：此代码的激活日期。
     -   **到期日期**：此代码的到期日期。
     -   **代码 ID**：此代码的唯一 ID。
@@ -97,7 +97,7 @@ ms.lasthandoff: 01/22/2018
 
 ## <a name="code-redemption-user-experience"></a>代码兑换用户体验
 
-向客户分发促销代码（或其可兑换 URL）后，客户可使用此 URL 免费获取产品。 单击可兑换 URL 将打开经过身份验证的**兑换代码**页面（位于 <https://account.microsoft.com/billing/redeem>）。 此页面包含用户即将兑换的应用的描述。 如果客户没有使用其 Microsoft 帐户登录，系统将提示其登录。 客户也可访问 <https://account.microsoft.com/billing/redeem>，直接输入代码。
+向客户分发促销代码（或其可兑换 URL）后，客户可使用此 URL 免费获取产品。 单击可兑换 URL 将打开经过身份验证的**兑换代码**页面（位于 <https://account.microsoft.com/billing/redeem>）。 此页面包含用户即将兑换的应用的描述。 如果客户没有使用其 Microsoft 帐户登录，系统将提示其登录。 你的客户也可以访问 <https://account.microsoft.com/billing/redeem>，直接输入代码。
 
 > [!IMPORTANT]
 > 建议不要在产品尚未完成发布过程时向客户分发促销代码（即使你已选择**在应用商店中提供此产品，同时使其不可被发现**，也是如此）。 当客户尝试将促销代码用于尚未发布的产品时，将看到错误消息。
@@ -111,12 +111,12 @@ ms.lasthandoff: 01/22/2018
 ## <a name="review-your-promotional-codes"></a>查看促销代码
 
 若要查看应用及其加载项的促销代码订单的详细摘要，请导航到应用的**促销代码**页面（在开发人员中心仪表板的左侧导航菜单，展开**推广**然后选择**促销代码**）。 可以查看所有当前和非活动促销代码的以下详细信息：
-    -   订单名称
-    -   应用或加载项
-    -   开始日期
-    -   过期日期
-    -   可用
-    -   已兑换
+-   订单名称
+-   应用或加载项
+-   开始日期
+-   过期日期
+-   可用
+-   已兑换
 
 你还可以从此表中[下载](#download-and-distribute-promotional-codes)订单。
 

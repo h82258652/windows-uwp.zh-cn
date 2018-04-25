@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 04d4ca665a8f0dff495b144868767506d7a210f8
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -26,6 +26,7 @@ ms.lasthandoff: 03/08/2018
 有关如何将这些 SDK 与你的应用集成以显示广告的详细信息，请参阅[使用 Microsoft 广告 SDK 在你的应用中显示广告](../monetize/display-ads-in-your-app.md)。
 
 <span id="create-ad-unit" />
+
 ## <a name="create-ad-units"></a>创建广告单元
 
 若要在你的应用中为[横幅广告](../monetize/banner-ads.md)、[间隙广告](../monetize/interstitial-ads.md)或[本机广告](../monetize/native-ads.md)创建广告单元，请执行以下操作：
@@ -61,6 +62,7 @@ ms.lasthandoff: 03/08/2018
 创建新的广告单元后，它将显示在**盈利** &gt; **应用内广告**页面内的可用广告单元表中。
 
 <span id="available-ad-units" />
+
 ## <a name="review-and-edit-ad-units"></a>查看和编辑广告单元
 
 在你的帐户中为一个或多个应用创建广告单元后，这些广告单元会显示在**盈利** &gt; **应用内广告**页面底部的表中。 此表显示每个广告单元的**应用程序 ID** 和**广告单元 ID** 以及其他信息。 若要在应用中显示广告，需要在你的代码中使用这些值。 有关详细信息，请参阅[在应用中设置广告单元](../monetize/set-up-ad-units-in-your-app.md)。
@@ -81,6 +83,7 @@ ms.lasthandoff: 03/08/2018
 请注意，如果广告单元过去六个月没有任何活动，我们会将其标记为**停用**，并且最终会将其从你的仪表板中删除。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
 
 <span id="mediation" />
+
 ## <a name="mediation-settings"></a>中介设置
 
 当你[创建一个新的 UWP 广告单元](#create-ad-unit)或[编辑现有的 UWP 广告单元](#available-ad-units)时，请使用此部分中的选项配置广告单元的广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络）的广告以及 Microsoft 应用促销活动的非盈利性广告，能够最大化广告收益和应用促销能力。 我们负责调停来自所选广告网络的横幅广告请求。 如果已在应用中拥有与横幅广告、间隙广告或本机广告相关联的 UWP 广告单元，则启用广告中介无需在应用中进行任何代码更改。
@@ -113,6 +116,7 @@ ms.lasthandoff: 03/08/2018
 10. 单击**创建广告单元**（如果你要创建新的广告单元）或**保存**（如果正在编辑现有广告单元）。
 
 <span id="paid-networks" />
+
 ### <a name="supported-paid-ad-networks"></a>支持的付费广告网络
 
 下表列出了我们当前针对每种广告类型支持的付费网络。 请注意，这之中的某些网络[并非适用于所有市场](#network-markets)。
@@ -131,6 +135,7 @@ ms.lasthandoff: 03/08/2018
 
 
 <span id="other-networks" />
+
 ### <a name="other-ad-networks"></a>其他广告网络
 
 下表列出了我们当前针对每种广告类型支持的其他网络。
@@ -142,6 +147,7 @@ ms.lasthandoff: 03/08/2018
 
 
 <span id="network-markets" />
+
 ### <a name="supported-markets-for-ad-networks"></a>广告网络支持的市场
 
 可用的广告网络在所有[支持的市场](define-pricing-and-market-selection.md#microsoft-store-consumer-markets)中提供广告，以下市场例外。
@@ -153,6 +159,7 @@ ms.lasthandoff: 03/08/2018
 | smartclip | 奥地利、比利时、丹麦、芬兰、德国、意大利、荷兰、挪威、瑞典、瑞士  |
 
 <span id="coppa" />
+
 ## <a name="coppa-compliance"></a>COPPA 合规性
 
 在[创建广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)时，如果针对广告单元选定的应用至少有一个提交已到达应用认证过程中的[已在 Store 中发布](../publish/the-app-certification-process.md#in-the-store)步骤，那么 **COPPA 合规性**部分将显示在仪表板页面底部。

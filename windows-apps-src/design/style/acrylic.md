@@ -14,17 +14,17 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: 21fccc72081d1825cad91e9d44bdc458c62d99d4
-ms.sourcegitcommit: 9666ef4cf5bb63dd62ee95f89a6ad0ac1bf7ac9d
+ms.openlocfilehash: 3f42a839f29b13d7245770675b1f3eea84ffa5d5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
 亚克力是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将亚克力应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, Acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Background)
+> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
 
 ![亚克力在浅色主题中的应用](images/Acrylic_DarkTheme_Base.png)
@@ -143,7 +143,7 @@ ms.lasthandoff: 02/28/2018
     <tr>
         <th align="center">资源键</th>
         <th align="center">色调不透明度</th>
-        <th align="center">[回退颜色](color.md)</th>
+        <th align="center"><a href="color.md">回退颜色</a> </th>
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowBrush、SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush、SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush、SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush、SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltHighAcrylicWindowBrush、SystemControlAltHighAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush、SystemControlAltLowAcrylicElementBrush </td>
@@ -151,7 +151,7 @@ ms.lasthandoff: 02/28/2018
         <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltHigh <br/><br/> AltLow </td>
     </tr>
     </tr>
-        <td> **建议用法：**下面列出了适用于各种使用情况的常规亚克力资源。 如果你的应用使用 AltMedium 颜色的次级文本且文本大小小于 18 像素，将 80% 亚克力资源放在文本后即可[满足对比率要求](../accessibility/accessible-text-requirements.md)。 </td>
+        <td> <b>建议用法：</b>下面列出了适用于各种使用情况的常规亚克力资源。 如果你的应用使用 AltMedium 颜色的次级文本且文本大小小于 18 像素，将 80% 亚克力资源放在文本后即可<a href="../accessibility/accessible-text-requirements.md">满足对比率要求</a>。 </td>
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowMediumHighBrush、SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush、SystemControlBaseHighAcrylicElementMediumHighBrush </td>
@@ -159,7 +159,7 @@ ms.lasthandoff: 02/28/2018
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> **建议用法：**如果你的应用使用 AltMedium 颜色的次级文本且文本大小不小于 18 像素，可将透明度更高的 70% 亚克力资源放在文本后。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的次级文本且文本大小不小于 18 像素，可将透明度更高的 70% 亚克力资源放在文本后。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -167,7 +167,7 @@ ms.lasthandoff: 02/28/2018
         <td> ChromeHigh <br/><br/> ChromeMedium <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
     </tr>
     <tr>
-        <td> **建议用法：**仅在亚克力上放置 AltHigh 颜色的主要文本时，你的应用可以使用这些 60% 资源。 我们建议你使用 60% 亚克力绘制应用的[垂直导航窗格](../controls-and-patterns/navigationview.md)，即汉堡菜单。 </td>
+        <td> <b>建议用法：</b>仅在亚克力上放置 AltHigh 颜色的主要文本时，你的应用可以使用这些 60% 资源。 我们建议你使用 60% 亚克力绘制应用的<a href="../controls-and-patterns/navigationview.md">垂直导航窗格</a>，即汉堡菜单。 </td>
     </tr>
 </table>
 
@@ -176,7 +176,7 @@ ms.lasthandoff: 02/28/2018
     <tr>
         <th align="center">资源键</th>
         <th align="center">色调不透明度</th>
-        <th align="center">[色调和回退颜色](color.md)</th>
+        <th align="center"><a href="color.md">色调和回退颜色</a> </th>
     </tr>
     <tr>
         <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
@@ -264,7 +264,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>将亚克力扩展到标题栏
 
-若要创建无缝的应用窗口外观，可以将亚克力应用到标题栏区域。 此示例中将亚克力扩展到标题栏的方式是将 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 对象的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar#Windows_UI_ViewManagement_ApplicationViewTitleBar_ButtonBackgroundColor) 和 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar#Windows_UI_ViewManagement_ApplicationViewTitleBar_ButtonInactiveBackgroundColor) 属性设置为 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors#Windows_UI_Colors_Transparent)。 
+若要创建无缝的应用窗口外观，可以将亚克力应用到标题栏区域。 此示例中将亚克力扩展到标题栏的方式是将 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 对象的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 和 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 属性设置为 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)。 
 
 ```csharp
 /// Extend acrylic into the title bar. 
@@ -277,7 +277,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_Activate) 的调用后（如此处所示），或应用的第一页中。 
+此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的调用后（如此处所示），或应用的第一页中。 
 
 
 ```csharp

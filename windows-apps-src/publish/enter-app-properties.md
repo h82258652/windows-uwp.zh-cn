@@ -4,17 +4,17 @@ Description: The App properties page of the app submission process lets you defi
 title: 输入应用属性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 01/24/2018
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件
+keywords: Windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件, 隐私策略, 支持联系人信息, 应用网站, 支持信息
 ms.localizationpriority: high
-ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
-ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
+ms.openlocfilehash: 35d7be3aa88ca17219c2f2e4024bd2e692fb1abc
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 
@@ -26,6 +26,37 @@ ms.lasthandoff: 01/24/2018
 你必须指示 Microsoft Store 用于对应用进行归类的类别（和子类别/种类，如适用）。 提交应用需要指定类别。
 
 有关详细信息，请参阅[类别和子类别表](category-and-subcategory-table.md)。
+
+
+## <a name="support-info"></a>支持信息
+
+此部分让你提供帮助客户更多了解你的应用以及如何获取支持的信息。
+
+### <a name="privacy-policy-url"></a>隐私策略 URL
+
+你有责任确保你的应用符合隐私法律法规的相关规定，并在此处提供有效的隐私策略 URL（如果需要）。
+
+在此部分中，你必须指明你的应用是否访问、收集或传输任何[个人信息](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information)。 如果你的回答为**是**，则必需提供隐私策略 URL。 否则，则为可选信息（但是，如果我们确定你的应用需要隐私策略，但你未提供，你的提交可能无法通过认证）。
+
+> [!NOTE]
+> 如果我们检测到你的程序包声明的[功能](../packaging/app-capability-declarations.md)可能允许访问、传输或收集个人信息，我们会将这个问题标记为**是**，你将需要输入隐私策略 URL。
+
+若要帮助你确定应用是否需要隐私策略，请查看[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information)。 
+
+> [!NOTE]
+> Microsoft 不会为你的应用提供默认的隐私策略。 同样，你的应用也不在任何 Microsoft 隐私策略的涵盖范围之内。 
+
+
+### <a name="website"></a>网站
+
+输入你的应用的网页 URL。 该 URL 必须指向你自己网站上的某个页面，而不是 Microsoft Store 中你的应用的 Web 一览。 此字段是可选的，但建议使用它。
+
+### <a name="support-contact-info"></a>支持联系人信息
+
+输入你的客户可以从中获得应用支持的网页 URL 或客户可以联系技术支持人员的电子邮件地址。 我们建议在所有提交中加入此信息，以便你的客户了解如何在需要时获取支持。 请注意，Microsoft 不会为你的客户提供对你的应用的支持。
+
+> [!IMPORTANT]
+> 如果你的应用或游戏在 Xbox 上提供，**支持联系人信息**字段是必填字段。 否则为可选字段（推荐）。
 
 
 ## <a name="game-settings"></a>游戏设置
@@ -56,11 +87,11 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="system-requirements"></a>系统要求
 
-在本部分中，你可以选择指示是否需要或推荐某些硬件功能以使应用正常运行并与之正确交互。 可以选中每个想要指定“最低硬件要求”****和/或“推荐的硬件要求”****的硬件项的框（或指示相应选项）。
+在本部分中，你可以选择指示是否需要或推荐某些硬件功能以使应用正常运行并与之正确交互。 可以选中每个想要指定“最低硬件要求”**** 和/或“推荐的硬件要求”**** 的硬件项的框（或指示相应选项）。
 
-如果选择“推荐的硬件要求”****中的内容，这些项目将作为向使用 Windows 10 版本 1607 或更高版本的客户推荐的硬件而显示在产品的应用商店一览中。 使用较早的操作系统版本的客户将无法看到此信息。
+如果选择“推荐的硬件要求”**** 中的内容，这些项目将作为向使用 Windows 10 版本 1607 或更高版本的客户推荐的硬件而显示在产品的应用商店一览中。 使用较早的操作系统版本的客户将无法看到此信息。
 
-如果选择“最低硬件要求”****中的内容，这些项目将作为使用 Windows 10 版本 1607 或更高版本的客户所必需的硬件而显示在产品的应用商店一览中。 使用较早的操作系统版本的客户将无法看到此信息。 应用商店可能还会向在缺少所需硬件的设备上查看应用一览的客户显示一条警告。 这不会阻止用户将你的应用下载到不具有相应硬件的设备，但他们无法在这些设备上对你的应用进行评分或评价。 
+如果选择“最低硬件要求”**** 中的内容，这些项目将作为使用 Windows 10 版本 1607 或更高版本的客户所必需的硬件而显示在产品的应用商店一览中。 使用较早的操作系统版本的客户将无法看到此信息。 应用商店可能还会向在缺少所需硬件的设备上查看应用一览的客户显示一条警告。 这不会阻止用户将你的应用下载到不具有相应硬件的设备，但他们无法在这些设备上对你的应用进行评分或评价。 
 
 客户的行为将各有不同，具体取决于特定要求和客户的 Windows 版本：
 
@@ -69,9 +100,9 @@ ms.lasthandoff: 01/24/2018
      - 应用商店将检查所有最低要求，并且将向所用设备不符合这些要求的客户显示一条警告。
 - **对于使用较早版本的 Windows 10 的客户：**
      - 对于大多数客户而言，所有最低和推荐的硬件要求都将显示在应用商店一览中（查看较早版本的应用商店客户端的客户将只能看到最低硬件要求）。
-     - 应用商店将尝试验证指定为“最低硬件要求”****的项目，“内存”****、“DirectX”****、“视频内存”****、“图形”****和“处理器”****除外；这些项目不会得到验证，客户也将不会在不符合这些要求的设备上看到任何警告。 
+     - 应用商店将尝试验证指定为“最低硬件要求”**** 的项目，“内存”****、“DirectX”****、“视频内存”****、“图形”**** 和“处理器”**** 除外；这些项目不会得到验证，客户也将不会在不符合这些要求的设备上看到任何警告。 
 - **对于使用 Windows 8.x 和较早版本或 Windows Phone 8.x 和较早版本的客户：**
-     - 如果选中“触摸屏”****的“最低硬件要求”****框，此要求将显示在应用的应用商店一览中，并且使用缺少触摸屏的客户将在尝试下载该应用时看到警告。 应用商店一览不会验证或显示其他要求。
+     - 如果选中“触摸屏”**** 的“最低硬件要求”**** 框，此要求将显示在应用的应用商店一览中，并且使用缺少触摸屏的客户将在尝试下载该应用时看到警告。 应用商店一览不会验证或显示其他要求。
 
 我们还建议将针对指定硬件的运行时检查添加到应用中，因为应用商店可能并不总是能够检测到客户的设备缺少所选功能，而且即使已显示警告，他们仍然能够下载应用。 如果想要完全阻止 UWP 应用下载到不满足内存或 DirectX 级别最低要求的设备上，可以在 [StoreManifest XML 文件](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root)中指定最低要求。
 

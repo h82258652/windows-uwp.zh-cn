@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
-title: "设备系列可用性"
+title: 设备系列可用性
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 程序包, 上传, 设备系列可用性"
+keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: high
-ms.openlocfilehash: a3ae23a08ec305285569de8b6d55e805beaa86ba
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 44c20c05457669edb31067b6d7ac8bc60f09e72e
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -36,6 +36,7 @@ ms.lasthandoff: 12/12/2017
 如果你的应用支持它们，建议你将所有复选框保持选中状态，除非你有特殊原因需要限制可以获取你的应用的 Windows 10 设备类型。 例如，如果你知道你的应用不会在 [Surface Hub](https://developer.microsoft.com/windows/surfacehub) 和/或 [Microsoft HoloLens](http://dev.windows.com/holographic/development_overview) 上提供良好的体验，则可以取消选中 **Windows 10 协同版**和/或 **Windows 10 全息版**复选框。 这将阻止任何新客户在这些设备上获取应用。 如果你之后决定已准备好将该应用提供给那些客户，可通过选中这些复选框来新建提交。
 
 <span id="xbox" />
+
 **Windows 10 Xbox** 是唯一一个默认情况下未针对 Windows.Universal 程序包选中的 Windows 10 设备系列。 如果你的应用并非游戏（或者它是游戏并且你启用了 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或者已通过[概念审批](../gaming/concept-approval.md)过程），而你的提交包含使用 Windows 10 SDK 版本 14393 或更高版本编译的非特定程序包和/或 x64 UWP 程序包，则可以选中 **Windows 10 Xbox** 复选框，来将该应用提供给 Xbox One 上的客户。
 
 > [!IMPORTANT]
@@ -44,9 +45,11 @@ ms.lasthandoff: 12/12/2017
 > 若要解决此错误，可以执行以下操作之一：
 > - 将适用的程序包替换为使用 Windows SDK 版本 14393 或更高版本编译的新程序包。
 > - 如果已有的程序包支持 Xbox 并使用 Windows SDK 版本 14393 或更高版本进行了编译，则增加它的版本号，以便它提交中版本最高的程序包。
-> - 取消选中“Windows 10 Xbox”****复选框。
+> - 取消选中“Windows 10 Xbox”**** 复选框。
 >   
 > 如果仍然无法解决该问题，请联系支持人员。
+
+如果要为 Windows 10 IoT 核心版提交 UWP 应用，你不应该在上载软件包后对默认选择进行更改；Windows 10 IoT 没有单独的复选框。 有关发布 IoT 核心版 UWP 应用的详细信息，请参阅 [IoT 核心版 UWP 应用的 Microsoft Store 支持](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)。
 
 如果你的提交包含可以在 **Windows 8/8.1** 和 **Windows Phone 8.x 及更早版本**上运行的程序包，那么这些程序包将提供给客户，如表中所示。 这些操作系统版本没有对应的复选框。 若要停止向这些客户提供应用，请从提交中删除相应的程序包。
 
@@ -55,10 +58,9 @@ ms.lasthandoff: 12/12/2017
 
 请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至适用于在升级到 Windows 10 之前获取你的应用的客户。
 
-例如，如果你先发布了一个带有 Windows Phone 8.1 程序包的应用，而在以后又将 Windows 10 (UWP) 程序包添加到面向通用设备系列的同一应用，将会向已拥有你的 Windows Phone 8.1 程序包的 Windows 10 移动客户提供此 Windows 10 (UWP) 程序包的更新，即使你已取消选中“Windows 10 移动版”****复选框也是如此（因为这并不是全新购买，而是一次更新）。 但是，如果你没有提供面向通用或移动设备系列的任何 Windows 10 (UWP) 程序包，则你的 Windows 10 移动客户将继续使用 Windows Phone 8.1 程序包。
+例如，如果你先发布了一个带有 Windows Phone 8.1 程序包的应用，而在以后又将 Windows 10 (UWP) 程序包添加到面向通用设备系列的同一应用，将会向已拥有你的 Windows Phone 8.1 程序包的 Windows 10 移动客户提供此 Windows 10 (UWP) 程序包的更新，即使你已取消选中“Windows 10 移动版”**** 复选框也是如此（因为这并不是全新购买，而是一次更新）。 但是，如果你没有提供面向通用或移动设备系列的任何 Windows 10 (UWP) 程序包，则你的 Windows 10 移动客户将继续使用 Windows Phone 8.1 程序包。
 
-有关设备系列的详细信息，请参阅[通用 Windows 平台简介](../get-started/universal-application-platform-guide.md)和 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)。
-
+有关设备系列的详细信息，请参阅[**设备系列概述**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 ## <a name="understanding-ranking"></a>了解分级
 

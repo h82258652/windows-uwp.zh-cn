@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: "你还可以通过限时折扣在 Windows 应用商店中促销你的应用或加载项。"
-title: "打折出售应用和加载项"
+Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
+title: 打折出售应用和加载项
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
 ms.date: 08/21/2017
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d17394808232aeffbe81404427e668fb9c06e677
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.localizationpriority: high
+ms.openlocfilehash: 0cc26403c10e9300e983275d28a1a969af513dc3
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
-你还可以通过限时折扣在 Windows 应用商店中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。
+你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。
 
 使用提交的**定价和可用性**页的**促销价**部分暂时降低应用或加载项的价格时，查看“应用商店一览”的客户将看到删除线定价，指示价格降低（与[计划的价格更改](set-and-schedule-app-pricing.md#schedule-price-changes)不同，后者可以在不在应用商店中显示更改的情况下降低或提高价格）。 
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 08/21/2017
 
 > [!NOTE]
 > 可选择高于你的应用基价的价格段。 但是，如果促销价格低于该市场中应用的常规价格，该促销价格将仅显示给客户。
-
+>
 > 如果你已在某些市场中设置了高于你的应用基价的自定义价格，并且你想要在这些市场中临时调低价格（但促销价格仍高于应用基价），则选择一个高于应用基价的价格或许适合此次促销。 如果你的选择导致某些市场中该应用的价格出现了提升，我们不会将该价格（较高价）显示给该市场中的客户；他们仍将看到该应用之前的价格（较低价）。 如果你计划在单个的重叠促销中推出不同的促销价格，我们还会向客户显示可用的最低价格。
 
 ## <a name="changing-or-canceling-a-scheduled-sale"></a>更改或取消计划的促销

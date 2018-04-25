@@ -1,24 +1,27 @@
 ---
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
-title: "管理帐户设置和个人资料信息"
-description: "你可以在统一 Windows 开发人员中心仪表板的“帐户设置”部分中，查看和更新你的开发者帐户设置和个人资料信息。"
+title: 管理帐户设置和个人资料信息
+description: 你可以在统一 Windows 开发人员中心仪表板的“帐户设置”部分中，查看和更新你的开发者帐户设置和个人资料信息。
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 03/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置"
+keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: high
-ms.openlocfilehash: 840eb445eaf5cac05201a58140a7ea7f505d7e14
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 5bedc2bb91478d86af95f45d57369f5409e7cea1
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
-你可以在 [Windows 开发人员中心仪表板](using-the-windows-dev-center-dashboard.md)的“帐户设置”****部分中，查看和更新你的开发者帐户设置和个人资料信息。 
+你可以在 [Windows 开发人员中心仪表板](using-the-windows-dev-center-dashboard.md)的“帐户设置”**** 部分中，查看和更新你的开发者帐户设置和个人资料信息。 
+
+> [!NOTE]
+> 可以在**消息中心**（你可以选择仪表板顶部附近的消息图标来访问）管理通知首选项（如接收的通知类型及如何接收）。
 
 ## <a name="account-settings"></a>帐户设置
 

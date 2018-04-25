@@ -1,20 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
-title: "为你的应用下载并安装程序包更新"
-description: "了解如何在开发人员中心仪表板中将程序包标记为必需，以及如何在应用中编写代码以下载并安装程序包更新。"
+title: 为你的应用下载并安装程序包更新
+description: 了解如何在开发人员中心仪表板中将程序包标记为必需，以及如何在应用中编写代码以下载并安装程序包更新。
 ms.author: mcleans
-ms.date: 03/15/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 62dc1cf81bd26ca5ba4adf181cc9f710e41565c2
-ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.openlocfilehash: ce2f6d6607f09186a3969f37b6808fa1f04fb338
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="download-and-install-package-updates-for-your-app"></a>为你的应用下载并安装程序包更新
 
@@ -29,9 +29,9 @@ ms.lasthandoff: 12/22/2017
 
 |  方法  |  说明  |
 |----------|---------------|
-| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetAppAndOptionalStorePackageUpdatesAsync) | 调用此方法来获取可用的包更新列表。 注意，软件包通过认证过程时和 **GetAppAndOptionalStorePackageUpdatesAsync** 方法识别包更新可用于应用时之间的延迟可能长达一天。 |
-| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | 调用此方法来下载（但不安装）可用的包更新。 此操作系统显示询问用户下载更新的权限的对话框， |
-| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadAndInstallStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | 调用此方法来下载并安装可用的包更新。 操作系统显示询问用户下载并安装更新的权限的对话框。 如果已通过调用 **RequestDownloadStorePackageUpdatesAsync** 下载包更新，此方法将跳过下载过程并仅安装更新。  |
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppAndOptionalStorePackageUpdatesAsync) | 调用此方法来获取可用的包更新列表。 注意，软件包通过认证过程时和 **GetAppAndOptionalStorePackageUpdatesAsync** 方法识别包更新可用于应用时之间的延迟可能长达一天。 |
+| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) | 调用此方法来下载（但不安装）可用的包更新。 此操作系统显示询问用户下载更新的权限的对话框， |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) | 调用此方法来下载并安装可用的包更新。 操作系统显示询问用户下载并安装更新的权限的对话框。 如果已通过调用 **RequestDownloadStorePackageUpdatesAsync** 下载包更新，此方法将跳过下载过程并仅安装更新。  |
 
 <span/>
 
@@ -39,8 +39,8 @@ ms.lasthandoff: 12/22/2017
 
 |  属性  |  说明  |
 |----------|---------------|
-| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Mandatory) | 使用此属性确定软件包是否已在开发人员中心仪表板中标记为必需。 |
-| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Package) | 使用此属性访问基础软件包相关数据。 |
+| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Mandatory) | 使用此属性确定软件包是否已在开发人员中心仪表板中标记为必需。 |
+| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Package) | 使用此属性访问基础软件包相关数据。 |
 
 <span/>
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/22/2017
 * 代码在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的上下文中运行。
 * **Page** 包含名为 ```downloadProgressBar``` 的 [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx)，可提供下载操作的状态。
 * 代码文件具有一个适用于 **Windows.Services.Store**、**Windows.Threading.Tasks** 和 **Windows.UI.Popups** 命名空间的 **using** 语句。
-* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetForUser_Windows_System_User_) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetDefault) 方法）获取 **StoreContext** 对象。
+* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 对于[多用户应用](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法（而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法）获取 **StoreContext** 对象。
 
 <span/>
 
@@ -221,11 +221,12 @@ private void HandleMandatoryPackageError()
 
 ### <a name="display-progress-info-for-the-download-and-install"></a>显示下载和安装的进度信息
 
-当你调用 **RequestDownloadStorePackageUpdatesAsync** 或**RequestDownloadAndInstallStorePackageUpdatesAsync** 时，你可以指定一个[进度](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 处理程序，系统会为此请求中每个程序包的下载（或下载和安装）过程中的每个步骤调用一次该程序。 此处理程序接收 [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) 对象，该对象提供有关发出进度通知的更新程序包的信息。 前面的示例使用 **StorePackageUpdateStatus** 对象的 **PackageDownloadProgress** 字段显示下载和安装过程的进度。
+当你调用 **RequestDownloadStorePackageUpdatesAsync** 或**RequestDownloadAndInstallStorePackageUpdatesAsync** 时，你可以指定一个[进度](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) 处理程序，系统会为此请求中每个程序包的下载（或下载和安装）过程中的每个步骤调用一次该程序。 此处理程序接收 [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) 对象，该对象提供有关发出进度通知的更新程序包的信息。 前面的示例使用 **StorePackageUpdateStatus** 对象的 **PackageDownloadProgress** 字段显示下载和安装过程的进度。
 
 请注意，当你调用 **RequestDownloadAndInstallStorePackageUpdatesAsync** 在单一操作中下载和安装程序包更新时，**PackageDownloadProgress** 字段会在程序包下载过程中从 0.0 增加到 0.8，然后在安装过程中从 0.8 增加到 1.0。 因此，如果你将自定义进度 UI 中所显示的百分比直接映射到 **PackageDownloadProgress** 字段的值，则当程序包完成下载并且操作系统显示安装对话框时，你的 UI 将显示 80%。 如果你希望在程序包已下载并且可以安装时自定义进度 UI 显示 100%，则可以修改代码，以在 **PackageDownloadProgress** 字段达到 0.8 时将 100% 分配给你的进度 UI。
 
 <span id="mandatory-dashboard" />
+
 ## <a name="make-a-package-submission-mandatory-in-the-dev-center-dashboard"></a>在开发人员中心仪表板中使程序包提交为必需
 
 当为面向 Windows10 版本 1607 或更高版本的应用创建程序包提交时，可以将该程序包标记为必需并标记变为必需的日期/时间。 当设置此属性，并且你的应用发现可使用本文前面部分中所述的 API 提供包更新时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。

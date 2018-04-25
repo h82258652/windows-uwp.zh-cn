@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: high
-ms.openlocfilehash: 35bc42e8a65441d9ee4387b65c60c3a51903142c
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 68e9643093aa4f5b777f3e5c430edc394838766a
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="usage-report"></a>使用情况报告
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 03/08/2018
 > 此报告中仅包括使用 Windows 10（包括 Xbox）且参与遥测信息提供的客户的使用情况数据。 无论客户是否登录到 Xbox Live，Xbox 游戏的使用情况数据都放在此处。 
 
 
-##<a name="usage"></a>使用情况
+## <a name="usage"></a>使用情况
 
 **使用情况**图表显示了客户在选定时段内如何使用你的应用的详细信息。 请注意，此图表不跟踪你的应用的不同用户数会话（即，无论客户使用你的应用一次还是多次，都将在此图表中表示为一个客户）。
 

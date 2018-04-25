@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 754fa7c1fe805b45b33be1d560d07c22646d497c
-ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
+ms.openlocfilehash: 1810cf1568ab40621ccc981a6ec1f561d0e8a296
+ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="handle-uri-activation"></a>处理 URI 激活
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 01/29/2018
 
 应用仅接收程序包清单中列出的 URI 方案名称的激活事件。 下面是指示应用处理 `alsdk` URI 方案名称的方式。
 
-1.  在**解决方案资源管理器**中，双击 package.appxmanifest 以打开清单设计器。 选择**声明**选项卡，并在**可用声明**下拉列表中选择**协议**，然后单击**添加**。
+1. 在**解决方案资源管理器**中，双击 package.appxmanifest 以打开清单设计器。 选择**声明**选项卡，并在**可用声明**下拉列表中选择**协议**，然后单击**添加**。
 
     以下是该协议的清单设计器中每个可以填写的字段的简短描述（有关详细信息，请参阅 [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/dn934791)）：
 
@@ -50,11 +50,12 @@ ms.lasthandoff: 01/29/2018
 | **入口点** | 指定用于处理协议扩展的任务。 这通常是 Windows 运行时类型的完全命名空间限定名称。 如果未指定，将使用应用的入口点。 |
 | **“开始”页面** | 处理扩展点的网页。 |
 | **资源组** | 可用于一起分组扩展激活以实现资源管理目的的标记。 |
-| **所需视图**（仅适用于 Windows） | 指定**所需视图**字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 **所需视图**的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意**  Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置**所需视图**并不保证为目标应用设定具体的窗口化行为。<br/> **移动设备系列：所需视图**在移动设备系列上不受支持。 |
-2.  输入 `images\Icon.png` 作为**徽标**。
-3.  输入 `SDK Sample URI Scheme` 作为**显示名称**
-4.  输入 `alsdk` 作为**名称**。
-5.  按 Ctrl+S 保存对 package.appxmanifest 的更改。
+| **所需视图**（仅适用于 Windows） | 指定**所需视图**字段以指示当为该 URI 方案名称启动应用的窗口时所需的空间量。 **所需视图**的可能值为 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。<br/>**注意**  Windows 在确定目标应用的最终窗口尺寸时会考虑多个不同因素，例如源应用的首选项、屏幕上的应用数量、屏幕方向等。 设置**所需视图**并不保证为目标应用设定具体的窗口化行为。<br/>**移动设备系列：所需视图**在移动设备系列上不受支持。 |
+
+2. 输入 `images\Icon.png` 作为**徽标**。
+3. 输入 `SDK Sample URI Scheme` 作为**显示名称**
+4. 输入 `alsdk` 作为**名称**。
+5. 按 Ctrl+S 保存对 package.appxmanifest 的更改。
 
     这会向程序包清单中添加一个类似于此的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素。 **windows.protocol** 类别指示应用处理 `alsdk` URI 方案名称。
 
@@ -142,7 +143,6 @@ ms.lasthandoff: 01/29/2018
 任何应用或网站（包括恶意应用或网站）都可以使用你的 URI 方案名称。 因此，在 URI 中获得的任何数据都可能来自不受信任的来源。 建议千万不要基于在 URI 中接收的参数执行永久性操作。 例如，可以使用 URI 参数将应用启动到用户的帐户页面，但建议永远不要将其用于直接修改用户的帐户。
 
 > **注意**  如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。 这样会确保你的名称符合 URI 方案的标准。
-
 > **注意**  通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
 
 我们建议应用为打开新 URI 目标的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。
@@ -153,28 +153,24 @@ ms.lasthandoff: 01/29/2018
 
 **完整示例**
 
-* [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 **概念**
 
-* [默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [文件类型和 URI 关联模型](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+- [默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+- [文件类型和 URI 关联模型](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
 **任务**
 
-* [启动 URI 的默认应用](launch-default-app.md)
-* [处理文件激活](handle-file-activation.md)
+- [启动 URI 的默认应用](launch-default-app.md)
+- [处理文件激活](handle-file-activation.md)
 
 **指南**
 
-* [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
+- [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
 **参考**
 
-* [AppX 程序包清单](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)~~
-
- 
-
- 
+- [AppX 程序包清单](https://msdn.microsoft.com/library/windows/apps/dn934791)
+- [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
+- [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)

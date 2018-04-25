@@ -8,17 +8,17 @@ ms.date: 1/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 入门, 开始, c#, c++, JavaScript
+keywords: Windows 10, uwp, 第一个应用, c#, c++, JavaScript
 ms.localizationpriority: high
-ms.openlocfilehash: 39c9a6c65f5eb6ca828b782e6550d92601165481
-ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
+ms.openlocfilehash: 124c5e89923945ae740dfdc3e658b8d20bbd1286
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-your-first-app"></a>创建你的第一个应用
 
-欢迎使用 UWP（[再次问一下 UWP 是什么？](whats-a-uwp.md)）平台！ 这些教程将帮助你使用你选择的语言创建你的第一个 UWP 应用。
+欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 这些教程将帮助你使用你选择的语言创建你的第一个 UWP 应用。
 
 若要开始操作，请选择你最喜爱的语言！
 
@@ -84,6 +84,6 @@ Web 应用可以作为托管的 Web 应用轻松地打包到 UWP 框架中，并
 * [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
 * [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
-* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [UWP 应用是什么？](universal-application-platform-guide.md)
 * [准备工作](get-set-up.md)
 * [注册 Windows 帐户](sign-up.md)

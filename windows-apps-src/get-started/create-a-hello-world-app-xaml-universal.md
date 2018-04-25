@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: "创建“Hello, world”应用 \\(XAML\\)"
-description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
+title: 了解如何创建“Hello, world”应用 (XAML)
+description: 使用 Extensible Application Markup Language (XAML) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: Windows 10, uwp, 第一个应用, Hello World
+ms.localizationpriority: high
+ms.openlocfilehash: e6fb25572213947aa7c536cde552aca3c572f0cf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -27,8 +30,8 @@ translationtype: HT
 
 ## <a name="before-you-start"></a>开始之前...
 
--   [什么是通用 Windows 应用](whats-a-uwp.md)？
--   若要完成本教程，你需要 Windows 10 和 Visual Studio 2017。 [准备工作](get-set-up.md)。
+-   [什么是通用 Windows 应用？](universal-application-platform-guide.md)
+-   [下载 Visual Studio 2017（和 Windows 10）](https://developer.microsoft.com/windows/downloads)。 如果需要帮助，请了解如何[设置](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在**窗口**菜单中，通过使用**重置窗口布局**命令来重置它。
 
 > [!NOTE]
@@ -44,7 +47,7 @@ translationtype: HT
 
 1.  启动 Visual Studio 2017。
 
-2.  在**文件**菜单中，依次选择**新建 > 项目...**以打开*新建项目*对话框。
+2.  在**文件**菜单中，依次选择**新建 > 项目...** 以打开*新建项目*对话框。
 
 3.  在左侧的模板列表中，依次打开**已安装&gt;模板&gt;Visual C#&gt;Windows**，然后选择**通用**查看 UWP 项目模板列表。
 
@@ -69,7 +72,7 @@ translationtype: HT
 
     ![“解决方案资源管理器”窗口](images/win10-cs-03.png)
 
-尽管**空白应用(通用 Windows)**为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
+尽管**空白应用(通用 Windows)** 为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
 
 
 ### <a name="whats-in-the-files"></a>文件中包含哪些内容？
@@ -97,7 +100,7 @@ translationtype: HT
 
 *一组徽标图像*
 -   Assets/Square150x150Logo.scale-200.png 表示“开始”菜单中的应用。
--   Assets/StoreLogo.png 表示 Windows 应用商店中的应用。
+-   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
 
 ## <a name="step-2-adding-a-button"></a>步骤 2：添加按钮
@@ -188,7 +191,7 @@ translationtype: HT
 
    关闭应用窗口。
 
-## <a name="step-3-event-handlers"></a>步骤 3：事件处理程序
+## <a name="step-4-event-handlers"></a>步骤 4：事件处理程序
 
 “事件处理程序”听起来很复杂，但它只是事件发生（如用户单击按钮）时调用的代码的另一个名称。
 
@@ -231,17 +234,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>小结
 
-
 祝贺你，你已创建了自己的第一个适用于 Windows10 和 UWP 的应用！
 
-若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
-
+若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 * [你的第一个应用](your-first-app.md)
-* [发布你的 Windows 应用商店应用](https://developer.microsoft.com/store/publish-apps)。
+* [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
 * [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
 * [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
-* [什么是通用 Windows 应用？](whats-a-uwp.md)
+* [什么是通用 Windows 应用？](universal-application-platform-guide.md)
 * [注册 Windows 帐户](sign-up.md)
