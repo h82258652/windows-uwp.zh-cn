@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。 这包括如下任务：选择支持特定分辨率或帧速率的配置文件、选择支持同时访问多台相机的配置文件，以及选择支持 HDR 的配置文件。"
-title: "通过相机配置文件发现和选择相机功能"
+description: 本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。 这包括如下任务：选择支持特定分辨率或帧速率的配置文件、选择支持同时访问多台相机的配置文件，以及选择支持 HDR 的配置文件。
+title: 通过相机配置文件发现和选择相机功能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f45fea396c775a7d9e783be1d0a821ff68716279
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832251"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>通过相机配置文件发现和选择相机功能
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。 这包括如下任务：选择支持特定分辨率或帧速率的配置文件、选择支持同时访问多台相机的配置文件，以及选择支持 HDR 的配置文件。
@@ -29,7 +32,7 @@ translationtype: HT
 
 不同设备上的相机支持不同的功能，包括一组支持的捕获分辨率、视频捕获的帧速率，以及是否支持 HDR 或可变帧速率捕获。 通用 Windows 平台 (UWP) 媒体捕获框架将此功能集存储在 [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) 中。 由 [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) 对象表示的相机配置文件具有三组媒体描述；一组用于照片捕获，一组用于视频捕获，另一组用于视频预览。
 
-在初始化你的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象之前，你可以在当前设备上查询捕获设备，以查看支持哪些配置文件。 当你选择某个受支持的配置文件时，你知道捕获设备支持该配置文件的媒体说明中的所有功能。 这便无需使用用于确定特定设备支持哪些功能组合的试错方法。
+在初始化你的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象之前，你可以在当前设备上查询捕获设备，以查看支持哪些配置文件。 当你选择某个受支持的配置文件时，你知道捕获设备支持该配置文件的媒体说明中的所有功能。 这样就无需采用试错方法来确定特定设备支持哪些功能组合。
 
 [!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
 
@@ -43,7 +46,7 @@ translationtype: HT
 
 [!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
 
-如果从 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法返回的设备 ID 为 null 或是一个空字符串，则指定面板上不存在支持相机配置文件的设备。 在此情况下，你应在不使用配置文件的情况下初始化媒体捕获设备。
+如果从 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法返回的设备 ID 为 null 或是一个空字符串，则指定面板上不存在支持相机配置文件的设备。 在此情况下，应在不使用配置文件的情况下初始化媒体捕获设备。
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
@@ -61,23 +64,20 @@ translationtype: HT
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## <a name="select-a-profile-that-supports-concurrence"></a>选择支持并发的配置文件
+## <a name="use-media-frame-source-groups-to-get-profiles"></a>使用媒体帧源组来获取配置文件
 
-你可以使用相机配置文件来确定设备是否支持同时从多个相机捕获视频。 在此方案中，你需要创建两组捕获对象，一组用于前置相机，一组用于后置相机。 请为每个相机都创建一个 **MediaCapture**、一个 **MediaCaptureInitializationSettings**，和一个用于保留捕获设备 ID 的字符串。 此外，添加一个将跟踪是否支持并发的布尔变量。
+自 Windows 10 版本 1803 起，可在初始化 **MediaCapture** 对象之前，通过特定功能使用 [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup) 类获取相机配置文件。 借助帧源组，设备制造商可将传感器组或捕获功能作为单个虚拟设备。 这样一来，即可实现计算摄影方案（如同时使用深度和彩色相机），也可以选择简单捕获方案的相机配置文件。 若要详细了解如何使用 **MediaFrameSourceGroup**，请参阅[使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)。
 
-[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+以下示例方法演示了如何使用 **MediaFrameSourceGroup** 对象查找支持已知视频配置文件的相机配置文件，例如支持 HDR 或可变照片序列的相机配置文件。 首先，通过调用 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) 获取当前设备上可用的所有媒体帧源组的列表。 循环访问每个源组，并通过调用 [**MediaCapture.FindKnownVideoProfiles**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) 获取当前源组中支持特定配置文件（本例中为带 WCG 照片的 HDR）的所有视频配置文件的列表。 如果找到符合条件的配置文件，则新建一个 **MediaCaptureInitializationSettings** 对象，将 **VideoProfile** 设置为选择配置文件并将 **VideoDeviceId** 设置为当前媒体帧源组的 **Id** 属性。 这样一来，你可以将 **KnownVideoProfile.HdrWithWcgVideo** 值代入此方法来获取支持 HDR 视频的媒体捕获设置。 通过代入 **KnownVideoProfile.VariablePhotoSequence** 获取支持可变照片序列的设置。
 
-静态方法 [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) 将返回受指定捕获设备（还可以支持并发）支持的相机配置文件的列表。 使用 Linq 查询来查找支持并发且同时受前置和后置相机支持的配置文件。 如果找到了符合这些要求的配置文件，请将每个 **MediaCaptureInitializationSettings** 对象的配置文件都设置为 true，并将布尔并发跟踪变量设置为 true。
+ [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
 
-[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video-legacy-technique"></a>使用已知的配置文件来查找支持 HDR 视频的配置文件（旧技术）
 
-在你的应用方案中，为主相机调用 **MediaCapture.InitializeAsync**。 如果支持并发，请同样初始化第二台相机。
+> [!NOTE] 
+> 自 Windows 10 版本 1803 起弃用本节中介绍的 API。 详情请参阅上一节：**使用媒体帧源组获取配置文件**。
 
-[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
-
-## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>使用已知的配置文件来查找支持 HDR 视频的配置文件
-
-选择支持 HDR 的配置文件的开始方法与其他方案类似。 创建一个 **MediaCaptureInitializationSettings** 和一个用于保留捕获设备 ID 的字符串。 添加一个将跟踪是否支持 HDR 视频的布尔变量。
+在选择支持 HDR 的配置文件时，最初的操作与其他方案类似。 创建一个 **MediaCaptureInitializationSettings** 和一个用于保留捕获设备 ID 的字符串。 添加一个将跟踪是否支持 HDR 视频的布尔变量。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
@@ -97,7 +97,7 @@ translationtype: HT
 
 [!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
 
-你可以优化此查询，查找支持特定分辨率或支持除同时录制视频功能外的其他功能的配置文件。 你还可以使用 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 并指定 [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值，以检索支持同时捕获的配置文件，但查询所有配置文件将提供更完整的结果。
+可优化此查询，查找支持特定分辨率或支持除同时录制视频功能外的其他功能的配置文件。 你还可以使用 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 并指定 [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值，以检索支持同时捕获的配置文件，但查询所有配置文件将提供更完整的结果。
 
 ## <a name="related-topics"></a>相关主题
 

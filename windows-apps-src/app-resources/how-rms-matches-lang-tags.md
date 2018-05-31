@@ -1,30 +1,31 @@
 ---
 author: stevewhims
-Description: "上一个主题（资源管理系统如何匹配和选择资源）对限定符匹配进行总体概括。 本主题主要对语言标记匹配进行详细介绍。"
-title: "资源管理系统匹配语言标记的方式"
+Description: The previous topic (How the Resource Management System matches and chooses resources) looks at qualifier-matching in general. This topic focuses on language-tag-matching in more detail.
+title: 资源管理系统匹配语言标记的方式
 template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 资源, 图像, 资产, MRT, 限定符"
-localizationpriority: medium
-ms.openlocfilehash: ae1c4a3093e978cc054934d991d37c31264f128d
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
+ms.localizationpriority: medium
+ms.openlocfilehash: 6c01b3efe77f1933c8d9a8620a60757e14d94bd5
+ms.sourcegitcommit: dd1a2e22eadd2304afee0912fd21772a9d2d8fda
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/13/2017
+ms.locfileid: "1437738"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-language-tags"></a>资源管理系统匹配语言标记的方式
 
 上一个主题（[资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)）对限定符匹配进行总体概括。 本主题主要对语言标记匹配进行详细介绍。
 
 ## <a name="introduction"></a>简介
 
-具有语言标记限定符的资源基于由最终用户指定优先级的首选语言列表进行比较和评分。 评分机制使用在 [BCP 47](http://go.microsoft.com/fwlink/p/?linkid=227302) 子标记注册表和其他数据源中包含的数据。 它允许存在具有不同匹配度的评分梯度，而且当存在多个候选项时，它会选择具有最佳匹配分数的候选项。
+具有语言标记限定符的资源基于应用运行时语言列表进行比较和评分。 有关不同语言列表的定义，请参阅[了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)。 在与列表中的首个语言匹配之后才会与列表中第二个语言匹配，对于其他区域变体也是如此。 例如，如果应用运行时语言为 en-US，则会先于 fr-CA 资源选择用于 en-GB 的资源。 只有当没有 en 形式的资源时，才会选择 fr-CA 的资源（请注意：在这种情况下，应用的默认语言不能设置为任何形式的 en）。
+
+评分机制使用 [BCP 47](http://go.microsoft.com/fwlink/p/?linkid=227302) 子标记注册表和其他数据源中包含的数据。 它允许存在具有不同匹配度的评分梯度，而且当存在多个候选项时，它会选择具有最佳匹配分数的候选项。
 
 因此，你可以在通用词条中标记语言内容，但在需要时仍然可以指定特定的内容。 例如，你的应用可能具有美国、英国和其他地区通用的许多英语字符串。 将这些字符串标记为“en”（英语）可以节省空间和本地化开销。 当需要进行区分时，如在含有“颜色/色彩”一词的字符串中，可以分别使用语言和地区子标记（如“en-US”和“en-GB”）单独标记美国版本和英国版本。
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/03/2017
 
 ## <a name="matching-two-languages"></a>匹配两种语言
 
-每当 Windows 比较两种语言时，通常在一个更大进程的上下文中完成。 可能是在评估多种语言的上下文中，如当 Windows 生成应用程序语言列表时（请参阅[管理语言和区域](../globalizing/manage-language-and-region.md)。 Windows 执行此操作的方式是将来自用户首选项的多种语言匹配到在应用的清单中指定的语言。 也可能在评估语言和用于特定资源的其他限定符的上下文中进行比较。 一个示例是当 Windows 将一个特定的文件资源解析到一个特定的资源上下文时；用户的主位置或设备的当前比例或 DPI 作为在选择资源时要考虑的其他因素（除语言外）。
+每当 Windows 比较两种语言时，通常在一个更大进程的上下文中完成。 可能是在评估多种语言的上下文中，如当 Windows 生成应用程序语言列表时（请参阅[了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)）。 Windows 执行此操作的方式是将来自用户首选项的多种语言匹配到应用清单中指定的语言。 也可能在评估语言和用于特定资源的其他限定符的上下文中进行比较。 一个示例是当 Windows 将一个特定的文件资源解析到一个特定的资源上下文时；用户的主位置或设备的当前比例或 DPI 作为在选择资源时要考虑的其他因素（除语言外）。
 
 比较两种语言标记时，基于匹配的接近程度为比较指定一个分数。
 
@@ -61,7 +62,7 @@ ms.lasthandoff: 11/03/2017
 
 ### <a name="exact-match"></a>精确匹配
 
-标记完全相等（所有子标记元素均匹配）。 比较可以从变体或地区匹配提升到此匹配类型。
+标记完全相等（所有子标记元素均匹配）。 比较可以从变体或地区匹配提升到此匹配类型。 例如，en-US 与 en-US 匹配。
 
 ### <a name="variant-match"></a>变体匹配
 
@@ -69,11 +70,11 @@ ms.lasthandoff: 11/03/2017
 
 ### <a name="region-match"></a>地区匹配
 
-标记在语言、脚本和地区子标记上匹配，但在一些其他方面有所不同。
+标记在语言、脚本和地区子标记上匹配，但在一些其他方面有所不同。 例如，de-DE-1996 与 de-DE 匹配，以及 en-US-x-Pirate 与 en-US 匹配。
 
 ### <a name="partial-matches"></a>部分匹配
 
-标记在语言和脚本子标记上匹配，但在地区或一些其他子标记上有所不同。
+标记在语言和脚本子标记上匹配，但在地区或一些其他子标记上有所不同。 例如，en-US 与 en 匹配，或 en-US 与 en-\* 匹配。
 
 #### <a name="macro-region-match"></a>宏地区匹配
 
@@ -93,7 +94,7 @@ ms.lasthandoff: 11/03/2017
 
 #### <a name="preferred-region-match"></a>首选地区匹配
 
-标记在语言和脚本子标记上匹配，且其中一个地区子标记是该语言的默认地区子标记。 例如，“FR-FR”是“fr”子标记的默认地区。 这依赖于在 Windows 中维护的、定义每种 Windows 本地化语言的默认地区的数据。
+标记在语言和脚本子标记上匹配，且其中一个地区子标记是该语言的默认地区子标记。 例如，“fr-FR”是“fr”子标记的默认地区。 因此，fr-FR 比 fr-CA 更匹配 fr-BE。 这依赖于在 Windows 中维护的、定义每种 Windows 本地化语言的默认地区的数据。
 
 #### <a name="sibling-match"></a>同级匹配
 
@@ -109,19 +110,19 @@ ms.lasthandoff: 11/03/2017
 
 ### <a name="no-match"></a>不匹配
 
-如果主要语言子标记不匹配，其评分将低于有效匹配的级别。
+如果主要语言子标记不匹配，其评分将低于有效匹配的级别。 例如，zh-Hant 与 zh-Hans 不匹配。
 
 ## <a name="examples"></a>示例
 
 用户语言“zh-Hans-CN”（简体中文（中国））按所示的优先级顺序匹配以下资源： X 表示不匹配。
 
-[!匹配简体中文（中国）](/images/language_matching_1.png)
+![匹配简体中文（中国）](images/language_matching_1.png)
 
 1. 精确匹配；2. & 3. 区域匹配；4. 父匹配；5. 同级匹配。
 
-当语言子标记具有在 BCP-47 子标记注册表中定义的禁止脚本值时，将发生相应的匹配，呈现禁止脚本代码的值。 在接下来的此示例中，用户语言为“en-AU”（英语（澳大利亚））。
+当语言子标记具有在 BCP-47 子标记注册表中定义的禁止脚本值时，将发生相应的匹配，呈现禁止脚本代码的值。 例如，en-Latn-US 与 en-US 匹配。 在接下来的此示例中，用户语言为“en-AU”（英语（澳大利亚））。
 
-[!匹配英语（澳大利亚）](/images/language_matching_2.png)
+![匹配英语（澳大利亚）](images/language_matching_2.png)
 
 1. 精确匹配；2. 宏地区匹配；3. 非特定地区匹配；4. 正交相关性匹配；5. 首选区域匹配；6. 同级匹配。
 
@@ -193,5 +194,5 @@ ms.lasthandoff: 11/03/2017
 
 * [资源管理系统如何匹配和选择资源](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [管理语言和区域](../globalizing/manage-language-and-region.md)
+* [了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)
 * [宏地理（大陆）区域、地理子区域和所选经济和其他分组的构成](http://go.microsoft.com/fwlink/p/?LinkId=247929)

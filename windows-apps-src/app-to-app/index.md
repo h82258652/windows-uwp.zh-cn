@@ -1,7 +1,7 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
-title: "应用到应用的通信"
+description: 本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。
+title: 应用到应用的通信
 author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 938c2d20067dc99a84939c8501971a06fa702515
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: 6cc0b8fb9d1388db0e79e5f029ae69bfae1e4c69
+ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 04/05/2018
+ms.locfileid: "1706962"
 ---
 # <a name="app-to-app-communication"></a>应用到应用的通信
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 07/19/2017
 | [共享数据](share-data.md) | 本文将说明如何在 UWP 应用中支持“共享”合约。 “共享”合约是一种在应用之间快速共享文本、链接、照片和视频等数据的简便方法。 例如，用户可能希望使用社交网络应用与其好友共享网页，或者将链接保存在笔记应用中以供日后参考。 |
 | [接收数据](receive-data.md) | 本文介绍如何接收使用“共享”合约从另一个应用共享的 UWP 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。 |
 | [复制和粘贴](copy-and-paste.md) | 本文介绍如何支持在 UWP 应用中通过使用剪贴板进行复制和粘贴。 复制和粘贴是在应用之间或在应用内交换数据的传统方法，并且在一定程度上，几乎每个应用都可以支持剪贴板操作。 |
-| [拖放](drag-and-drop.md) | 本文说明如何将拖放操作添加到你的通用 UWP 应用中。 拖放是一种与内容（例如图像和文件）交互的经典且自然的方法。 实现后，拖放会在所有方向上无缝运行，包括应用到应用、应用到桌面和桌面到应用。 |
+| [拖放](../design/input/drag-and-drop.md) | 本文说明如何将拖放操作添加到你的通用 UWP 应用中。 拖放是一种与内容（例如图像和文件）交互的经典且自然的方法。 实现后，拖放会在所有方向上无缝运行，包括应用到应用、应用到桌面和桌面到应用。 |
 
 ## <a name="see-also"></a>另请参阅
 - [开发 UWP 应用](https://developer.microsoft.com/windows/develop)

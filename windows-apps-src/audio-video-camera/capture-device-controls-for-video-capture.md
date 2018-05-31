@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: "本文介绍如何使用手动设备控件实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。"
-title: "用于视频捕获的手动相机控件"
+description: 本文介绍如何使用手动设备控件实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。
+title: 用于视频捕获的手动相机控件
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: cd2adcffa233b76563e47f93f298cf954154adef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e4bad8d38676c8298026e66be31e2493ae7d4117
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816032"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何使用手动设备控件实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。
@@ -49,12 +52,48 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
+## <a name="temporal-denoising"></a>临时降噪
+自 Windows 10 版本 1803 起，可在支持临时降噪的设备上为视频启用此功能。 此功能实时融合来自多个相邻帧的图像数据，生成视觉噪音较少的视频帧。
+
+应用可通过 [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 确定当前设备是否支持临时降噪，如果支持，则还确定设备支持哪种降噪模式。 三种可用的降噪模式为：[**关**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**开**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)和[**自动**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)。设备可能不支持所有模式，但每台设备必须支持**自动**或支持**开**和**关**。
+
+以下示例使用简单的 UI 来提供单选按钮，让用户切换降噪模式。
+
+[!code-cs[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+
+以下方法检查了 [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 属性以确定当前设备是否支持临时降噪。 如果支持，则检查确保设备支持**关**和**自动**或**开**模式，我们将在此情况下将单选按钮设置为可见。 接下来，如果设备支持这些模式，则**自动**和**开**按钮为可见状态。
+
+[!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
+
+在单选按钮的 **Checked** 事件处理程序中，已选中按钮名称，并通过设置 [**VideoTemporalDenoisingControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) 属性设置了相应模式。
+
+[!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
+
+### <a name="disabling-temporal-denoising-while-processing-frames"></a>处理帧时禁用临时降噪
+使用临时降噪处理的视频的视觉效果更棒。 但是临时降噪会影响图像一致性并减少帧中的细节数量，因此对帧执行图像处理（如注册或光学字符识别）的应用可能会在启用图像处理时以编程方式禁用降噪功能。
+
+以下示例确定设备支持的降噪模式并将此信息存储在某些类变量中。
+
+[!code-cs[SnippetDenoiseFrameReaderVars](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseFrameReaderVars)]
+
+[!code-cs[SnippetDenoiseCapabilitiesForFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseCapabilitiesForFrameProcessing)]
+
+应用启用帧处理后，会将降噪模式设置为**关**（如果支持该模式），让帧处理能够使用未经过降噪的原始帧。
+
+[!code-cs[SnippetEnableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEnableFrameProcessing)]
+
+应用禁用帧处理后，会根据设备支持的模式将降噪模式设置为**开**或**自动**。
+
+[!code-cs[SnippetDisableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDisableFrameProcessing)]
+
+若要详细了解如何获取用于图像处理的视频帧，请参阅[使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)。
+
 ## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
-
+* [使用 MediaCapture 进行照片、视频和音频的基本捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
+*  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 
 
