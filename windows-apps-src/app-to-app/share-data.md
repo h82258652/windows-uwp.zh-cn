@@ -1,6 +1,6 @@
 ---
-description: "本文将说明如何在通用 Windows 平台 (UWP) 应用中支持“共享”合约。"
-title: "共享数据"
+description: 本文将说明如何在通用 Windows 平台 (UWP) 应用中支持“共享”合约。
+title: 共享数据
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: fe6da350fbfe006b55e90aee8c12da90967f5711
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: d283ce0211b28f9d41e4689c978e8731c677698d
+ms.sourcegitcommit: c11e7163010cb7547aeaca96e9b90a3c3a8ef31e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 01/25/2018
+ms.locfileid: "1541110"
 ---
 # <a name="share-data"></a>共享数据
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文将说明如何在通用 Windows 平台 (UWP) 应用中支持“共享”合约。 “共享”合约是一种在应用之间快速共享文本、链接、照片和视频等数据的简便方法。 例如，用户可能希望使用社交网络应用与其好友共享网页，或者将链接保存在笔记应用中以供日后参考。
 
@@ -25,11 +26,11 @@ ms.lasthandoff: 07/19/2017
 
 添加 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件处理程序以在用户每次调用共享时调用。 这种情况既会在用户点击应用中的控件（例如按钮或应用栏命令）时发生，也会在特定情况下（例如，如果用户完成某一关并获得了较高分数）自动发生。
 
-[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-当发生 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件时，你的应用会收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 对象。 该对象包含 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可用来提供用户要共享的内容。 你必须提供标题和要共享的数据。 描述是可选的，但建议提供。
+发生 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件时，应用会收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 对象。 该对象包含 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可用来提供用户要共享的内容。 你必须提供标题和要共享的数据。 描述是可选的，但建议提供。
 
-[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## <a name="choose-data"></a>选择数据
 
@@ -40,27 +41,26 @@ ms.lasthandoff: 07/19/2017
 -   HTML
 -   格式化的文本
 -   位图
--   纯文本
 -   文件
 -   自定义开发人员定义的数据
 
-[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示了如何共享文本。
+[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示如何共享文本。
 
-[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## <a name="set-properties"></a>设置属性
 
 当你打包数据进行共享时，可以给出各种可提供与共享内容相关的其他信息的属性。 这些属性帮助目标应用改善用户体验。 例如，当用户通过多个应用共享内容时，可提供说明帮助。 共享图像或指向网页的链接时，添加一个缩略图可为用户提供直观的参考。 有关详细信息，请参阅 [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)。
 
-除了 Title，所有属性都是可选的。 Title 属性具有强制性，必须进行设置。
+除了 Title，所有属性都是可选的。 Title 属性是强制性的，必须进行设置。
 
-[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## <a name="launch-the-share-ui"></a>启动共享 UI
 
 用于共享的 UI 由系统提供。 若要启动它，请调用 [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI) 方法。
 
-[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## <a name="handle-errors"></a>处理错误
 

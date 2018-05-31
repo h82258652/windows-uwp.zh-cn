@@ -1,6 +1,6 @@
 ---
-description: "本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。"
-title: "接收数据"
+description: 本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。
+title: 接收数据
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: msatranjr
 ms.author: misatran
@@ -8,16 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10，uwp"
-ms.openlocfilehash: 9c3054d161e45bd614e8ef42ea6f21aeb937f582
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+keywords: windows 10，uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 3b44b3d693f6e9675f0b60e667bc434a7485eed8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832531"
 ---
 # <a name="receive-data"></a>接收数据
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。
@@ -27,8 +28,8 @@ ms.lasthandoff: 07/19/2017
 在用户调用“共享”时，系统将显示可能的目标应用列表。 为了显示在列表中，你的应用需要声明它支持“共享”合约。 这让系统知道你的应用可用于接收内容。
 
 1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
-2.  打开“声明”****选项卡。
-3.  从“可用声明”****列表中，选择“共享目标”****，然后选择“添加”****。
+2.  打开“声明”**** 选项卡。
+3.  从“可用声明”**** 列表中，选择“共享目标”****，然后选择“添加”****。
 
 ## <a name="choose-file-types-and-formats"></a>选择文件类型和格式
 
@@ -39,13 +40,13 @@ ms.lasthandoff: 07/19/2017
 若要设置文件类型：
 
 1.  打开清单文件。 该文件的名称应类似于 **package.appxmanifest**。
-2.  在“声明”****页的“支持的文件类型”****部分，选择“新增”****。
+2.  在“声明”**** 页的“支持的文件类型”**** 部分，选择“新增”****。
 3.  键入要支持的文件扩展名，例如“.docx”。 你需要包括句点。 如果希望支持所有文件类型，请选中**SupportsAnyFileType** 复选框。
 
 若要设置数据格式：
 
 1.  打开清单文件。
-2.  打开“声明”****页的“数据格式”****部分，然后选择“新增”****。
+2.  打开“声明”**** 页的“数据格式”**** 部分，然后选择“新增”****。
 3.  键入支持的数据格式的名称，例如“Text”。
 
 ## <a name="handle-share-activation"></a>处理共享激活
@@ -79,7 +80,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 在某些情况下，你的应用可能需要花费一定时间来处理要共享的数据。 示例包括用户共享文件或图像的集合。 这些项目比简单文本字符串更大，因此处理时间较长。
 
 ```cs
-shareOperation.ReportDataRetreived(); 
+shareOperation.ReportStarted(); 
 ```
 
 在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之后，将不再有任何与你的应用所进行的用户交互。 因此，你不应该调用它，除非你的应用处于可以由用户关闭的位置。
@@ -102,13 +103,13 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择“共享”****按钮之前不调用 **ReportStarted**。
+在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 但是，某些时候目标应用可能会在调用 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 之前调用 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)。 例如，应用可能在激活处理程序中执行任务时检索数据，但在用户选择“共享”**** 按钮之前不调用 **ReportStarted**。
 
 ## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果共享成功，则返回 QuickLink
 
 当用户选择你的应用来接收内容时，我们建议你创建一个 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 类似于快捷方式，可让用户更轻松地使用你的应用共享信息。 例如，你可以创建一个 **QuickLink**，用来打开预配置了好友电子邮件地址的新邮件。
 
-**QuickLink** 必须包含标题、图标和 ID。 当用户点击“共享”超级按钮时，会显示标题（类似“Email Mom”）和图标。 你的应用使用 ID 来访问任何自定义信息，如电子邮件地址或登录凭据。 当你的应用创建 **QuickLink** 时，该应用会通过调用 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted)，将 **QuickLink** 返回到系统。
+**QuickLink** 必须有标题、图标以及 ID。用户点击“共享”超级按钮时显示标题（如“向妈妈发送电子邮件”）和图标。 你的应用使用 ID 来访问任何自定义信息，如电子邮件地址或登录凭据。 当你的应用创建 **QuickLink** 时，该应用会通过调用 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted)，将 **QuickLink** 返回到系统。
 
 **QuickLink** 实际上并不存储数据。 而是包含一个标识符，如果选中该标识符，则会将该标识符发送至你的应用。 你的应用负责存储 **QuickLink** 的 ID 及相应的用户数据。 当用户点击 **QuickLink** 时，你可以通过 [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) 属性获取其 ID。
 

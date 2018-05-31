@@ -1,35 +1,41 @@
 ---
 author: drewbatgit
 ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
-description: "本文列出了 UWP 应用可用的相机功能以及指向显示如何使用这些功能的操作方法文章的链接。"
-title: "相机"
+description: 本文列出了 UWP 应用可用的相机功能以及指向显示如何使用这些功能的操作方法文章的链接。
+title: 相机
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 883a8977839d8f93ff878b075a52df8b9a587aa9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a1b8a63609bbc9caa452093517ca43f71e8d5ccc
+ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.lasthandoff: 03/19/2018
+ms.locfileid: "1664697"
 ---
 # <a name="camera"></a>相机
 
 本节提供有关创建使用相机或麦克风捕获照片、视频或音频的通用 Windows 平台 (UWP) 应用的指南。
 
-##<a name="use-the-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI
-| 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
+## <a name="use-the-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI
+
+| 主题 | 说明 |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [使用 Windows 内置相机 UI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md) | 展示如何使用 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) 类来使用内置于 Windows 的相机 UI 捕获照片或视频。 如果仅希望使用户能够捕获照片或视频，并将结果返回到应用，这就是达到此目的的最快且最简单的方法。  |
-##<a name="basic-mediacapture-tasks"></a>MediaCapture 基本任务
-| 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
+
+## <a name="basic-mediacapture-tasks"></a>MediaCapture 基本任务
+
+| 主题 | 说明 |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [显示相机预览](simple-camera-preview-access.md) | 展示如何在 UWP 应用的 XAML 页面内快速显示相机预览流。 |
 | [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md) | 展示使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 类捕获照片和视频的最简单方法。 **MediaCapture** 类公布了一组强大的 API，可提供捕获管道的低级别控制和启用高级捕获方案，但本文旨在帮助你将基本的媒体捕获快速且轻松地添加到应用。 |
 | [移动设备的相机 UI 功能](camera-ui-features-for-mobile-devices.md) | 展示如何利用仅在移动设备上提供的特殊相机 UI 功能。  |
                                                                                                                
-##<a name="advanced-mediacapture-tasks"></a>MediaCapture 高级任务   
+## <a name="advanced-mediacapture-tasks"></a>MediaCapture 高级任务   
                                                                                                                
 | 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

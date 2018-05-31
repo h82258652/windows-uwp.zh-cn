@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "MakePri.exe 具有命令集 createconfig、dump、new、resourcepack 和 versioned。 本主题详细介绍它们的用途。"
-title: "MakePri.exe 命令行选项"
+Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+title: MakePri.exe 命令行选项
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/18/2017
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 资源, 图像, 资产, MRT, 限定符"
-localizationpriority: medium
-ms.openlocfilehash: e269984134c7313b6ea6464cd04a3ef60254d537
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
+ms.localizationpriority: medium
+ms.openlocfilehash: fbfb5f6626f799878c294b0a4e21efb673147a50
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1817538"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。
@@ -113,6 +112,9 @@ Help:
 ## <a name="dump-command"></a>Dump 命令
 
 `dump` 命令输入一个转储文件，该文件包含指定 PRI 文件中的所有资源的列表。 运行 `MakePri.exe dump /?` 以查看关于此命令的详细帮助。
+
+> [!NOTE]
+> 无模式资源包是在 PRI 配置文件中使用 *omitSchemaFromResourcePacks* 开关创建的资源包。 若要转储无模式资源包，请使用开关 `/es <main_package_PRI_file>`。 如果不指定主文件，则会看到错误消息“*程序包中的 resources.pri 已损坏，因此加密失败（错误 PRI222：0xdef0000f - 发生未知错误）*”。
 
 ```
 C:\>makepri dump /?

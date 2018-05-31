@@ -1,6 +1,6 @@
 ---
-description: "本文介绍如何支持在通用 Windows 平台 (UWP) 应用中通过使用剪贴板进行复制和粘贴。"
-title: "复制和粘贴"
+description: 本文介绍如何支持在通用 Windows 平台 (UWP) 应用中通过使用剪贴板进行复制和粘贴。
+title: 复制和粘贴
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: msatranjr
 ms.author: misatran
@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f49a417e87199a625a023f7aa867f855cbd5d3c9
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: ca01be87619dc88cc39b0c2906d9689768c0fa46
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 03/17/2018
+ms.locfileid: "1662567"
 ---
-#<a name="copy-and-paste"></a>复制和粘贴
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+# <a name="copy-and-paste"></a>复制和粘贴
 
 本文介绍如何支持在通用 Windows 平台 (UWP) 应用中通过使用剪贴板进行复制和粘贴。 复制和粘贴是在应用之间或在应用内交换数据的传统方法，并且在一定程度上，几乎每个应用都可以支持剪贴板操作。
 
