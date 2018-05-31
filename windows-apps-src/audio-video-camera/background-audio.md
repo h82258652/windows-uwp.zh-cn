@@ -1,17 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
-description: "本文将向你介绍当应用在后台运行时如何播放媒体。"
-title: "在后台播放媒体"
+description: 本文将向你介绍当应用在后台运行时如何播放媒体。
+title: 在后台播放媒体
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f8fdc99355ef5a024757cc2e415b1d259965c1ce
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690493"
 ---
 # <a name="play-media-in-the-background"></a>在后台播放媒体
 本文介绍了如何配置应用，以便在应用从前台移至后台后，媒体可以继续播放。 这意味着，即使在用户已最小化你的应用、返回到主屏幕，或已以其他方式离开你的应用后，你的应用仍可继续播放音频。 
@@ -19,10 +23,10 @@ translationtype: HT
 后台音频播放的方案包括：
 
 -   
-            **长期运行的播放列表：**用户可以简单地弹出前台应用以选择并启动一个播放列表，在此之后，用户期望该播放列表在后台继续播放。
+            **长期运行的播放列表：** 用户可以简单地弹出前台应用以选择并启动一个播放列表，在此之后，用户期望该播放列表在后台继续播放。
 
 -   
-            **使用任务切换器：**用户可以简单地打开前台应用以开始播放音频，然后使用任务切换程序切换到另一个打开的应用。 用户期望该音频在后台继续播放。
+            **使用任务切换器：** 用户可以简单地打开前台应用以开始播放音频，然后使用任务切换程序切换到另一个打开的应用。 用户期望该音频在后台继续播放。
 
 本文所述的后台音频实现将使你的应用通常在所有 Windows 设备（包括移动设备、桌面设备和 Xbox）上运行。
 
@@ -71,7 +75,7 @@ Windows10 版本 1607 引入的全新单进程模型极大地简化了启用后�
 </Capabilities>
 ```
 
-##<a name="handle-transitioning-between-foreground-and-background"></a>处理前台和后台之间的转换
+## <a name="handle-transitioning-between-foreground-and-background"></a>处理前台和后台之间的转换
 当应用从前台移至后台时，将引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件。 并且当应用返回前台时，将引发 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件。 由于这些事件都是应用生命周期事件，因此应该在创建应用时为这些事件注册处理程序。 在默认项目模板中，这意味着将它添加到 App.xaml.cs 中的 **App** 类构造函数。 
 
 [!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
@@ -80,7 +84,7 @@ Windows10 版本 1607 引入的全新单进程模型极大地简化了启用后�
 
 [!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
 
-当引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件时，请设置跟踪变量以表明你当前在后台运行。 不得在 **EnteredBackground** 事件中执行长时间运行的任务，因为这可能会导致用户感觉过渡到后台非常慢。
+当引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件时，请设置跟踪变量以指示当前正在后台运行。 不得在 **EnteredBackground** 事件中执行长时间运行的任务，因为这可能会导致用户感觉过渡到后台非常慢。
 
 [!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
@@ -94,7 +98,7 @@ Windows10 版本 1607 引入的全新单进程模型极大地简化了启用后�
 ## <a name="network-availability-for-background-media-apps"></a>后台媒体应用的网络可用性
 不会从流或文件创建的所有网络感知的媒体源将使网络连接保持活动状态（在检索远程内容时），不需要检索时会释放网络连接。 尤其是 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource)，依赖应用程序使用 [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762) 向平台正确报告已正确缓存的范围。 完全缓存整个内容后，网络不再以应用的名义保留。
 
-如果需要在媒体不在下载时在后台执行网络调用，则必须在诸如 [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger) 等相应任务中包括这些网络调用。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+如果需要在媒体不在下载时在后台执行网络调用，则必须在诸如 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger) 等相应任务中包括这些网络调用。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)

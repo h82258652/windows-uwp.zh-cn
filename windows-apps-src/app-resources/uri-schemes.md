@@ -1,26 +1,25 @@
 ---
 author: stevewhims
-Description: "你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 你还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。"
-title: "URI 方案"
+Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+title: URI 方案
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 资源, 图像, 资产, MRT, 限定符"
-localizationpriority: medium
-ms.openlocfilehash: 7cbd4a6fea3ca7d179eae9857c6e98010d11439e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
+ms.localizationpriority: medium
+ms.openlocfilehash: 445f053b0243f1b9c2e54e6e9fcfa332d49cbec5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 03/22/2018
+ms.locfileid: "1674514"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="uri-schemes"></a>URI 方案
 
-你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 你还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。 你可以在代码中、在 XAML 标记中、在应用包清单中或磁贴和 toast 通知模板中使用这些 URI 方案。
+你可以使用几种 URI（统一资源标识符）方案引用来自应用包、应用的数据文件夹或云的文件。 你还可以使用 URI 方案引用从应用的资源文件 (.resw) 加载的字符串。 你可以在代码中、在 XAML 标记中、在应用包清单中或在磁贴和 toast 通知模板中使用这些 URI 方案。
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 方案的常见功能
 
@@ -28,7 +27,7 @@ ms.lasthandoff: 11/03/2017
 
 所有 URI 方案均按照 [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) 定义作为 URI 颁发机构和路径组件的层次结构部分。
 
-```
+```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 hier-part   = "//" authority path-abempty
             / path-absolute
@@ -38,7 +37,7 @@ hier-part   = "//" authority path-abempty
 
 这意味着 URI 基本上有三个组件。 URI *方案*的两个正斜杠后紧跟着名称为*颁发机构*的组件（可以为空）。 之后紧跟*路径*。 以 URI `http://www.contoso.com/welcome.png` 为例，方案为“`http://`”，颁发机构为“`www.contoso.com`”，路径为“`/welcome.png`”。 另一个示例是 URI `ms-appx:///logo.png`，其中颁发机构组件为空并采用默认值。
 
-本主题中所述的具体方案的 URI 处理忽略了片段组件。 在资源检索和比较过程中，片段组件没有任何影响。 但是，特定实现层可以解释片段以检索辅助资源。
+本主题中所述的具体方案的 URI 处理忽略了片段组件。 在资源检索和比较过程中，片段组件没有任何影响。 但是，特定实现上方的层可以解释片段以检索辅助资源。
 
 对所有 IRI 组件进行标准化后按字节进行比较。
 
@@ -50,7 +49,7 @@ hier-part   = "//" authority path-abempty
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx 和 ms-appx-web
 
-使用 `ms-appx` 或 `ms-appx-web` URI 方案引用来自应用包的文件（请参阅[打包应用](../packaging/index.md)）。 应用包中的文件通常为静态图像、数据、代码和布局文件。 `ms-appx-web` 方案获取相同文件作为 `ms-appx`，但是发生在 Web 隔离舱中。 有关示例和详细信息，请参阅[引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
+使用 `ms-appx` 或 `ms-appx-web` URI 方案引用来自应用包的文件（请参阅[打包应用](../packaging/index.md)）。 应用包中的文件通常为静态图像、数据、代码和布局文件。 `ms-appx-web` 方案与 `ms-appx` 访问相同的文件，但是前者在 Web 隔离舱中访问。 有关示例和详细信息，请参阅[引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
 
 ### <a name="scheme-name-ms-appx-and-ms-appx-web"></a>方案名称（ms-appx 和 ms-appx-web）
 
@@ -107,10 +106,9 @@ ms-appx:///images/logo.png
 \Images\fr-FR\logo.scale-100_contrast-white.png
 ```
 
-当然，你也可以通过直接引用全名的方式检索该相同的物理文件。
+当然，也可以通过直接引用全名的方式检索该相同的物理文件。
 
-**XAML**
-```xml
+```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 
@@ -128,9 +126,9 @@ ms-appx:///Hello%23World.html
 
 ## <a name="ms-appdata"></a>ms-appdata
 
-使用 `ms-appdata` URI 方案引用来自应用的本地、漫游和临时数据文件夹的文件。 有关这些应用数据文件夹的详细信息，请参阅[存储和检索设置以及其他应用数据](../app-settings/store-and-retrieve-app-data.md)。
+使用 `ms-appdata` URI 方案引用来自应用的本地、漫游和临时数据文件夹的文件。 有关这些应用数据文件夹的详细信息，请参阅[存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)。
 
-`ms-appdata` URI 方案不执行 [ms appx 和 ms appx web](#ms-appx-and-ms-appx-web) 所执行的运行时内容协商。 但你可以响应 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) 的内容并使用它们在 URI 中的完整物理文件名加载相应资产。
+`ms-appdata` URI 方案不执行 [ms appx 和 ms appx web](#ms-appx-and-ms-appx-web) 所执行的运行时内容协商。 但你可以响应 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的内容并使用它们在 URI 中的完整物理文件名加载相应资产。
 
 ### <a name="scheme-name-ms-appdata"></a>方案名称 (ms-appdata)
 
@@ -253,9 +251,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>路径 (ms-resource)
 
-路径标识 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 子树（请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)）和其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResourcebranch=live) 的分层位置。 通常情况下，它对应资源文件 (.resw) 的文件名（不包括扩展）和其中的字符串资源的标识符。
+路径标识 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 子树（请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)）和其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) 的分层位置。 通常情况下，它对应资源文件 (.resw) 的文件名（不包括扩展）和其中的字符串资源的标识符。
 
-有关示例和详细信息，请参阅[本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)和[磁贴和 toast 通知的语言、比例和高对比度支持](tile-toast-language-scale-contrast.md)。
+有关示例和详细信息，请参阅[本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)和[磁贴和 toast 通知的语言、比例和高对比度支持](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
 `ms-resource` 的路径组件同通用 URI 一样区分大小写。 但是，当基础检索执行 [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) 时，*ignoreCase* 设置为 `true`。
 
@@ -276,7 +274,7 @@ ms-resource:///Hello%23World/String1
 * [统一资源标识符 (URI)：通用语法](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [打包应用](../packaging/index.md)
 * [引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [存储和检索设置以及其他应用数据](../app-settings/store-and-retrieve-app-data.md)
+* [存储和检索设置以及其他应用数据](../design/app-settings/store-and-retrieve-app-data.md)
 * [本地化 UI 和应用包清单中的字符串](localize-strings-ui-manifest.md)
 * [资源管理系统](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [磁贴和 toast 通知的语言、比例和高对比度支持](tile-toast-language-scale-contrast.md)
+* [磁贴和 toast 通知的语言、比例和高对比度支持](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

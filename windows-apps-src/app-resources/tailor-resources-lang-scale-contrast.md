@@ -1,30 +1,29 @@
 ---
 author: stevewhims
-Description: "本主题说明限定符的常规概念、如何使用它们以及每个限定符名称的用途。"
-title: "定制语言、比例、高对比度和其他限定符的资源"
+Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+title: 定制语言、比例、高对比度和其他限定符的资源
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 资源, 图像, 资产, MRT, 限定符"
-localizationpriority: medium
-ms.openlocfilehash: 930a49ab3d9bab034f771a323b17484ae6aa0e16
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
+ms.localizationpriority: medium
+ms.openlocfilehash: 5309b33e0f65a1a06e1a3c0060a84e4c4a88ef9d
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/03/2018
+ms.locfileid: "1700793"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
-本主题说明资源限定符的常规概念、如何使用它们以及每个限定符名称的用途。 有关所有可能的限定符值的参考表，请参阅 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)。
+本主题说明资源限定符的常规概念、如何使用它们以及每个限定符名称的用途。 有关所有可能的限定符值的参考表，请参阅 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)。
 
-你的应用可加载按运行时环境（例如显示语言、高对比度、[显示比例系数](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)以及许多其他项）定制的资产和资源。 执行此操作的方法是命名资源的文件夹或文件，以匹配与这些环境相对应的限定符名称和限定符值。 例如，你可能想让应用在高对比度模式下加载另一组图像资产。
+你的应用可加载按运行时环境（例如显示语言、高对比度、[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)以及许多其他项）定制的资产和资源。 执行此操作的方法是命名资源的文件夹或文件，以匹配与这些环境相对应的限定符名称和限定符值。 例如，你可能想让应用在高对比度模式下加载另一组图像资产。
 
-有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../globalizing/globalizing-portal.md)。
+有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
 
 ## <a name="qualifier-name-qualifier-value-and-qualifier"></a>限定符名称、限定符值和限定符
 
@@ -69,7 +68,7 @@ ms.lasthandoff: 11/03/2017
 请参阅[引用 XAML 标记中的字符串资源标识符](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup)、[引用代码中的字符串资源标识符](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code)以及[引用 XAML 标记和代码中的图像或其他资产](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>实际与中性限定符匹配项
-你无需为*每个*限定符值提供资源文件。 例如，如果你发现高对比度和标准对比度都只需要一个视觉资产，则可以按如下所示命名这些资产。
+你无需为*每个*限定符值都提供资源文件。 例如，如果你发现高对比度和标准对比度都只需要一个视觉资产，则可以按如下所示命名这些资产。
 
 ```
 \Assets\Images\logo.contrast-high.png
@@ -89,7 +88,7 @@ ms.lasthandoff: 11/03/2017
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
 
-有关限定符匹配的工作原理的更多详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)。
+有关限定符匹配的工作原理的更多详细信息，请参阅[资源管理系统](resource-management-system.md)。
 
 ## <a name="multiple-qualifiers"></a>多个限定符
 
@@ -135,9 +134,8 @@ ms.lasthandoff: 11/03/2017
 
 ## <a name="custom"></a>Custom
 
-你的应用可以为 `custom` 限定符设置值，以后系统会加载与该值最佳匹配的资源。 例如，你可能希望根据你的应用许可证来加载资源。 当你的应用启动时，它会检查其许可证，并将其用作 `custom` 限定符的值，所采用的方法是调用 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)，如代码示例中所示。
+你的应用可以为 `custom` 限定符设置值，以后系统会加载与该值最佳匹配的资源。 例如，你可能希望根据你的应用许可证来加载资源。 当你的应用启动时，它会检查其许可证，并将其用作 `custom` 限定符的值，所采用的方法是调用[SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)，如代码示例中所示。
 
-**C#**
 ```csharp
 public void SetLicenseLevel(BrandID brand)
 {
@@ -156,11 +154,11 @@ public void SetLicenseLevel(BrandID brand)
 }
 ```
 
-在此方案中，你将为你的资源提供包括 `custom-premium`、`custom-standard` 和 `custom-trial` 限定符的名称。
+在此情况下，你将为你的资源提供包括 `custom-premium`、`custom-standard` 和 `custom-trial` 限定符的名称。
 
 ## <a name="devicefamily"></a>DeviceFamily
 
-需要 `devicefamily` 限定符名称的可能性较低。 你可以并且应该尽可能避免使用它，因为可以改用更加方便和可靠的方法。 [检测应用的运行平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)和[编写代码](../get-started/universal-application-platform-guide.md#writing-code)中介绍了这些方法。
+需要 `devicefamily` 限定符名称的可能性较低。 你可以并且应该尽可能避免使用它，因为可以改用更加方便和可靠的方法。 [检测正运行应用的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)和[版本自适应代码](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)中介绍了这些方法。
 
 但是，万不得已时，可以使用 devicefamily 限定符来命名包含 XAML 视图的文件夹（XAML 视图是包含 UI 布局和控件的 XAML 文件）。
 
@@ -230,11 +228,11 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="layoutdirection"></a>LayoutDirection
 
-`layoutdirection` 限定符对应于显示语言设置的布局方向。 例如，像阿拉伯语或希伯来语这样从右到左阅读的语言，可能需要镜像图像。 如果设置了 [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) 属性，则 UI 中的布局面板和图像将相应地响应布局方向（请参阅[调整布局和字体并支持 RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)）。 但是，`layoutdirection` 限定符适用于简单翻转无法满足要求的情况，可以采用更常规的方式响应特定阅读顺序和文本对齐的方向性。
+`layoutdirection` 限定符对应于显示语言设置的布局方向。 例如，像阿拉伯语或希伯来语这样从右到左阅读的语言，可能需要镜像图像。 如果设置了 [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 属性，则 UI 中的布局面板和图像将相应地响应布局方向（请参阅[调整布局和字体并支持 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)）。 但是，`layoutdirection` 限定符适用于简单翻转无法满足要求的情况，可以采用更常规的方式响应特定阅读顺序和文本对齐的方向性。
 
 ## <a name="scale"></a>比例
 
-Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为每个显示器选择一个缩放比例。 请参阅[有效像素和缩放比例](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)。 你应该创建多个建议大小（至少包括 100、200 和 400）的图像，使 Windows 可以选择理想的大小或使用最近大小并进行缩放。 这样一来，Windows 可以识别哪个物理文件包含适合显示比例系数的正确大小的图像，你使用 `scale` 限定符。 资源的比例与 [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale) 或下一个最大比例资源的值匹配。
+Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为每个显示器选择一个缩放比例。 请参阅[有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)。 你应该创建多个建议大小（至少包括 100、200 和 400）的图像，使 Windows 可以选择理想的大小或使用最近大小并进行缩放。 这样一来，Windows 可以识别哪个物理文件包含适合显示比例系数的正确大小的图像，你使用 `scale` 限定符。 资源的比例与 [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale) 或下一个最大比例资源的值匹配。
 
 下面是在文件夹级别设置限定符的示例。
 
@@ -252,33 +250,34 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 \Assets\Images\logo.scale-400.png
 ```
 
-有关针对 `scale` 和 `targetsize` 限定资源的信息，请参阅[限定目标大小的图像资源](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
+有关限定资源的 `scale` 和 `targetsize` 的信息，请参阅[限定图像资源的目标大小](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
 
 ## <a name="targetsize"></a>TargetSize
 
 `targetsize` 限定符主要用于指定要在文件资源管理器中显示的[文件类型关联图标](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh127427)或[协议图标](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bb266530)。 限定符值表示以原始（物理）像素为单位的正方形图像的边长。 系统会加载其值与文件资源管理器中的“视图”设置匹配的资源；或者在缺少完全匹配的情况下加载具有下一个最大值的资源。
 
-你可以在应用包清单设计器的“可见资产”选项卡中定义资产，以表示应用图标 (`/Assets/Square44x44Logo.png`) 的 `targetsize` 限定符值的一些大小。
+你可以在应用程序包清单设计器的“可见资产”选项卡中定义资产，以表示应用图标 (`/Assets/Square44x44Logo.png`) 的 `targetsize` 限定符值的一些大小。
 
-有关针对 `scale` 和 `targetsize` 限定资源的信息，请参阅[限定目标大小的图像资源](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
+有关限定资源的 `scale` 和 `targetsize` 的信息，请参阅[限定图像资源的目标大小](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
 
 ## <a name="theme"></a>主题
 
-`theme` 限定符用于提供与默认应用模式设置最匹配的资源，或使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master#Windows_UI_Xaml_Application_RequestedTheme) 的应用替代。
+`theme` 限定符用于提供与默认应用模式设置最匹配的资源，或使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme) 的应用替代。
 
 ## <a name="important-apis"></a>重要的 API
 
+* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 
 ## <a name="related-topics"></a>相关主题
 
-* [有效像素和缩放比例](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
-* [资源管理系统](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)
+* [有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [资源管理系统](resource-management-system.md)
 * [如何为本地化做好准备](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
-* [检测正运行你的应用的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [编写代码](../get-started/universal-application-platform-guide.md#writing-code)
-* [本地化你的 UI 字符串](localize-strings-ui-manifest.md)
+* [检测正运行应用的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [本地化 UI 字符串](localize-strings-ui-manifest.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [联合国统计部门 M49 区域代码构成](http://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA 语言子标记注册表](http://go.microsoft.com/fwlink/p/?linkid=227303)
-* [调整布局和字体并支持 RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)
+* [调整布局和字体并支持 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)
