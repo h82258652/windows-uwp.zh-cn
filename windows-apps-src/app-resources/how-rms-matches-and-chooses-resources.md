@@ -1,30 +1,30 @@
 ---
 author: stevewhims
-Description: "请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有这些候选项，并确定要返回的最佳候选项。 本主题详细介绍该过程，并提供了示例。"
-title: "资源管理系统如何匹配和选择资源"
+Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+title: 资源管理系统如何匹配和选择资源
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 资源, 图像, 资产, MRT, 限定符"
-localizationpriority: medium
-ms.openlocfilehash: 4731ae7add7d5b969ab98da60b3f6740dbbbee1b
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
+ms.localizationpriority: medium
+ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690423"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>资源管理系统如何匹配和选择资源
-
 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有候选资源，然后确定要返回的最佳候选资源。 为此，需考虑所有限定符，以便对所有候选资源评级。
 
-在此评级过程中，会为不同限定符提供不同优先级：语言对整体评级的影响最大，其次是对比度，然后是比例等。 对于每个限定符，均需将候选限定符与上下文限定符值比较，以便确定匹配的程度。 比较如何取决于限定符。
+在此评级过程中，会为不同限定符提供不同优先级：语言对整体评级的影响最大，其次是对比度，然后是比例等。 对于每个限定符，均需将候选限定符与上下文限定符值比较，以便确定匹配的程度。 如何进行比较取决于限定符。
 
-对于有些限定符，如缩放比例和对比度，始终有一些最低的匹配度。 例如，限定为“缩放比例-100”的候选项在一定程度上匹配“缩放比例-400”的上下文，但匹配度不如限定为“缩放比例-200”或“缩放比例-400”（完全匹配）的候选项。
+有关如何完成语言标记匹配的详细信息，请参阅[资源管理系统如何匹配语言标记](how-rms-matches-lang-tags.md)。
+
+对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，限定为“缩放比例-100”的候选项在一定程度上匹配“缩放比例-400”的上下文，但匹配度不如限定为“缩放比例-200”或“缩放比例-400”（完全匹配）的候选项。
 
 但是，对于其他限定符（例如语言或住宅区域），可能有非匹配比较（以及匹配度）。 例如，语言限定为“en-US”的候选项与“en-GB”的上下文部分匹配，但限定为“fr”的候选项完全不匹配。 同样，主区域限定为“155”（西欧）的候选项在一定程度上匹配主区域设置为“FR”的用户的上下文，但限定为“US”的候选项完全不匹配。
 
@@ -41,7 +41,6 @@ ms.lasthandoff: 10/31/2017
 如果存在关联，则检查次高优先级上下文限定符值且继续执行该过程，直到找到最佳匹配。
 
 ## <a name="example-of-choosing-a-resource-candidate"></a>选择候选资源的示例
-
 考虑这些文件。
 
 ```
@@ -85,7 +84,7 @@ en/images/logo.scale-100.jpg
 en/images/logo.scale-400.jpg
 ```
 
-你可以使用高级 [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) 方法，按照候选项与上下文设置的匹配度顺序检索所有候选项。 在我们刚刚演示的示例中，**ResolveAll** 按照该顺序返回候选项。
+你可以使用高级 [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) 方法，按照候选项与上下文设置的匹配度顺序检索所有候选项。 在我们刚刚演示的示例中，**ResolveAll** 按照该顺序返回候选项。
 
 ```
 en/images/logo.scale-400.jpg
@@ -95,7 +94,6 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## <a name="example-of-producing-a-fallback-choice"></a>生成回退选择的示例
-
 考虑这些文件。
 
 ```
@@ -138,9 +136,7 @@ de/images/contrast-standard/logo.jpg
 ```
 
 ## <a name="important-apis"></a>重要的 API
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>相关主题
-
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)

@@ -1,26 +1,34 @@
 ---
 author: stevewhims
-Description: "MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用来手动或使用自定义生成系统创建包。"
-title: "使用 MakePri.exe 手动编译资源"
+Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+title: 使用 MakePri.exe 手动编译资源
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 资源, 图像, 资产, MRT, 限定符"
-localizationpriority: medium
-ms.openlocfilehash: 16d2a270a69497bc66f7b17109bc28b062f14b5e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
+ms.localizationpriority: medium
+ms.openlocfilehash: 261a2b747d25284351bb6f4e51f108158b6e2bc5
+ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/05/2018
+ms.locfileid: "1707022"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="compile-resources-manually-with-makepriexe"></a>使用 MakePri.exe 手动编译资源
 
 MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用来手动或使用自定义生成系统创建包。
+
+PRI 文件的大小限制为 64 千字节。
+
+## <a name="in-this-section"></a>本部分内容
+|主题|描述|
+|-|-|
+| [MakePri.exe 命令行选项](makepri-exe-command-options.md) | MakePri.exe 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。 |
+| [MakePri.exe 配置文件](makepri-exe-configuration.md) | 本主题介绍 MakePri.exe XML 配置文件架构。 |
+| [MakePri.exe 特定格式索引器](makepri-exe-format-specific-indexers.md) | 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。 |
 
 ## <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
@@ -59,7 +67,6 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 为其他组件、类库、程序集、DLL 和 SDK 生成 PRI 文件时，应使用 **initialPath** 配置确保组件资源具有自己的子资源地图，且不与其所在的应用相冲突。
 
 ## <a name="related-topics"></a>相关主题
-
 * [MakePri.exe 命令行选项](makepri-exe-command-options.md)
 * [MakePri.exe 配置](makepri-exe-configuration.md)
 * [MakePri.exe 特定格式索引器](makepri-exe-format-specific-indexers.md)

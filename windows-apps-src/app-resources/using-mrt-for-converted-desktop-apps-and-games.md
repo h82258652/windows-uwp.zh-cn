@@ -1,19 +1,20 @@
 ---
 author: ptorr-msft
-title: "为已转换的桌面应用和游戏使用 MRT"
-description: "通过将你的 .NET 或 Win32 应用或游戏打包为 AppX 包，你可以利用资源管理系统加载为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。"
+title: 为已转换的桌面应用和游戏使用 MRT
+description: 通过将你的 .NET 或 Win32 应用或游戏打包为 AppX 包，你可以利用资源管理系统加载为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集"
+keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
 ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1396476"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
@@ -209,7 +210,7 @@ ms.lasthandoff: 12/12/2017
 如果你想要使用 Visual Studio 中的设计器：
 
 0. 在你的项目中创建 `Strings\en-us` 文件夹（或视情况使用其他语言），将**新项目**添加到你的项目的根文件夹中（使用默认名称） `resources.resw`
- * 请务必选择**资源文件 (.resw)**而非**资源字典** -“资源字典”是 XAML 应用程序使用的文件
+ * 请务必选择**资源文件 (.resw)** 而非**资源字典** -“资源字典”是 XAML 应用程序使用的文件
 0. 使用设计器，输入以下字符串（使用同一个 `Names`，但将 `Values` 替换为你的应用程序的相应文本）：
 
 <img src="images\editing-resources-resw.png"/>
@@ -307,7 +308,7 @@ ms.lasthandoff: 12/12/2017
  * `/p` 设置输出程序包名称
  * `/o` 设置为“覆盖输出文件”（如果存在）
 0. 创建程序包后，必须对它进行签名。 获取签名证书的最简单方法是在 Visual Studio 中创建一个空的通用 Windows 项目，并复制项目创建的 `.pfx` 文件，不过你可以使用 `MakeCert` 和 `Pvk2Pfx` 实用程序手动创建，如 [MSDN 中的**如何创建应用包签名证书**主题] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)中所述。 
- * **重要提示：**如果你手动创建签名证书，请确保将文件放在不同于源项目或包源的目录中，否则它可能会被作为程序包的一部分，包括私钥！
+ * **重要提示：** 如果你手动创建签名证书，请确保将文件放在不同于源项目或包源的目录中，否则它可能会被作为程序包的一部分，包括私钥！
 0. 若要对包签名，请使用以下命令。 请注意，`AppxManifest.xml` 的 `Identity` 元素中指定的 `Publisher` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
 
     `signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx`
@@ -724,7 +725,7 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 
 要使用捆绑包生成器工具，为包创建的 PRI 配置文件需要手动更新，以删除 `<packaging>` 部分。
 
-如果你使用 Visual Studio，请参阅 [MSDN 中的**确保已安装资源…**主题](https://msdn.microsoft.com/en-us/library/dn482043.aspx)，了解有关如何通过创建文件 `priconfig.packaging.xml` 和 `priconfig.default.xml` 将所有语言生成到主包中的信息。
+如果你使用 Visual Studio，请参阅 [MSDN 中的**确保已安装资源…** 主题](https://msdn.microsoft.com/en-us/library/dn482043.aspx)，了解有关如何通过创建文件 `priconfig.packaging.xml` 和 `priconfig.default.xml` 将所有语言构建到主包中的信息。
 
 如果你手动编辑文件，请按照下列步骤操作： 
 
