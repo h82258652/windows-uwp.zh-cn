@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: low
-ms.openlocfilehash: ade9bc58a17525a9a6eb503a82abe46cdd5159b6
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 1f0bba16aa7e53db329bcf4058d7a062ec65fe4c
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018444"
 ---
 # <a name="xbox-live-storage-platform---connected-storage-title-storage"></a>Xbox Live 存储平台 - 连接存储、标题存储
 
@@ -22,6 +23,6 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="in-this-section"></a>本部分内容
 
-[连接存储](connected-storage/connected-storage-overview.md)采用连接存储 API 存储的数据会自动漫游，可供用户跨电脑和多个 Xbox One 主机使用，并且还能脱机使用。
+[连接存储](connected-storage/connected-storage-overview.md)采用每用户连接存储 API 存储的数据会自动漫游，可供用户跨电脑和多个 Xbox One 主机使用，并且还能脱机使用。 使用该服务允许在设备之间切换后重新启动标题时游戏顺利继续。 应使用该连接存储服务以经常保存游戏进度数据，如清单、游戏状态及游戏中的当前位置。 连接存储服务是容错能力更强的云存储服务，相对不易受到网络和电源故障的影响。
 
-[Xbox Live 标题存储](xbox-live-title-storage/xbox-live-title-storage.md)Xbox Live 标题存储服务提供了一种在云中存储标题游戏信息的方法。 所有平台上运行的游戏均可使用此服务。
+[Xbox Live 标题存储](xbox-live-title-storage/xbox-live-title-storage.md)Xbox Live 标题存储服务提供了一种在云中存储并共享游戏数据和标题资源的方法。 所有平台上运行的游戏均可在线使用此服务。 此服务为消费者对数据可见性提供了更多的控制，除每个用户数据外，还包括每个标题的全局数据。 标题存储非常适合存储玩家统计数据、玩家排名以及标题资产（如可解锁的插图和新的地图）。

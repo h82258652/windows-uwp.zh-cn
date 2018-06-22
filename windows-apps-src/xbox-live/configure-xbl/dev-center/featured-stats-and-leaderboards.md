@@ -10,17 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: low
 keywords: Xbox Live, Xbox, 游戏, uwp, Windows 10, Xbox one, 特别推荐的统计数据和排行榜, 排行榜, 统计数据 2017, Windows 开发人员中心
-ms.openlocfilehash: dda7604b52420d03bc8dc21aacb8a26b9496ccad
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: a1fbf30e4b78f3160190815911298cf3522845c5
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018550"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>在 Windows 开发人员中心上配置 2017 特别推荐的统计数据和排行榜
 
-若要让游戏与统计数据服务交互，需要在 [Windows 开发人员中心](https://developer.microsoft.com/dashboard)上定义统计数据。 所有特别推荐的统计数据都将显示在游戏中心内，因而它可以自动充当排行榜。 我们将存储原始值，但是游戏拥有可确定是否应提供新值的逻辑。
+若要让游戏与统计数据服务交互，需要在 [Windows 开发人员中心](https://developer.microsoft.com/dashboard)上定义统计数据。 所有特别推荐的统计数据都将显示在游戏中心内，因而它可以自动充当排行榜。 我们将存储原始值，但是游戏具备可确定是否应提供新值的逻辑。
 
-![游戏中心成就页面的屏幕截图](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png)
+![游戏中心成就页面的屏幕截图](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png)上图显示特别推荐的统计数据在标题 GameHub 中的效果。 特别推荐的统计数据带红色方框显示。
 
 使用 Data Platform 2017，只需要配置用于精选到玩家游戏中心页面中的全球排行榜的统计数据。
 
@@ -36,6 +37,14 @@ ms.lasthandoff: 02/24/2018
 **ID** 字段是统计数据名称，也是你通过代码更新统计数据时对其引用的方式。 有关更多详细信息，请参阅[更新统计数据](../../leaderboards-and-stats-2017/player-stats-updating.md)。
 
 **格式**是统计数据的数据格式。选项包括整数、小数、百分比、短时间跨度、长时间跨度和字符串。
+
+每个**格式**选项选中后将在下拉列表中提供有关接受值或缩进格式的信息。
+
+* 整数统计数据接受整数，如 1、2 或 100。
+* 小数统计数据接受小数点后面两位的分数，如 1.05 或 12.00
+* 百分比统计数据接受 0 到 100 之间的整数。 后跟“%”。 （例如 0%、100%）
+* 短时间跨度统计数据遵循 HH:MM:SS 格式（如 02:10:30），并要求你提供统计数据的时间单位。可用的时间单位有毫秒、秒、分钟、小时和天。
+* 长时间跨度统计数据遵循 Xd Xh Xm 格式（如 1d 2h 10m），还要求提供统计数据的时间单位。
 
 **排序**字段让你可以将排行榜的排序顺序更改为升序或降序。
 
