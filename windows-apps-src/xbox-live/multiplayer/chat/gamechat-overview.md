@@ -10,18 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: low
-ms.openlocfilehash: aa926ce695a538d5019ff5571cada093ab262c70
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 4ea89114dc7b1d24f3e92a5b60f3ba189d44347e
+ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1893643"
 ---
 # <a name="game-chat-overview"></a>游戏聊天概述
 
  游戏聊天是一种技术，你可以使用这种技术在远程主机上启用单个主题作品的用户之间的语音通信。 它不包括主机用户之间更广泛的独立通信。
 
  > [!Note]
- > 新游戏应使用[游戏聊天 2](game-chat-2-overview.md) 而不是“游戏聊天”。 原来的“游戏聊天”将于 2017 年年底前弃用。
+ > 新游戏应使用[游戏聊天 2](game-chat-2-overview.md) 而不是“游戏聊天”。 原来的“游戏聊天”已于 2017 年年底弃用。 使用原游戏聊天的作品可以使用[游戏聊天 2 迁移指南](game-chat-2-migration.md)将游戏聊天概念和调用模式映射到游戏聊天 2。
 
  Xbox One 拥有专门的硬件加速语音聊天编码解码器，可用于编码和解码，并通过 `Microsoft.Xbox.GameChat` 命名空间公开。 此编码解码器支持主题作品网络带宽灵活性的多种质量设置，且由主机传输的所有语音聊天通信都需要使用此编码解码器。 不支持其他编码解码器。
 

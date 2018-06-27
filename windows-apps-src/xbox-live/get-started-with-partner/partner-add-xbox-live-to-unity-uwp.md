@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: low
-ms.openlocfilehash: 4931d5f8dd48199c3f8bacf06342c669dc0c72c1
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 71fc747dd024c8c22d962a5b14b3e6976599a3da
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983537"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-net-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 UWP 带有 .NET 脚本后端的 Unity 添加 Xbox Live 支持
 
@@ -28,9 +29,9 @@ ms.lasthandoff: 02/24/2018
 
 它可以是 3D 或 2D 项目。 两种类型都适用于 Xbox Live SDK。
 
-**3) 导入最新版本的 Xbox Live WinRT Unity 资源包，这可以在 https://github.com/Microsoft/xbox-live-api/releases 中找到**
+**3) 导入最新版本的 Xbox Live WinRT Unity 资源包，位置在 https://github.com/Microsoft/xbox-live-api/releases**
 
-**4) 将新的 C\# 脚本添加并附加到 Unity 对象中。**
+**4) 将新的 C\# 脚本添加并附加到 Unity 对象。**
 
 例如，单击“主相机”等 Unity 对象，然后依次单击“添加组件”\|“新建脚本”\| C\# Script \|，然后将其命名为“XboxLiveScript”。 可对任何游戏对象执行此操作。
 
@@ -72,7 +73,7 @@ Unity 将打开资源管理器中的输出项目文件夹。  忽略此处的 .s
 
 将此 Xbox Live 代码示例复制/粘贴到已附加到游戏对象的脚本中。 此脚本将显示在“Assembly-CSharp”项目中。 你可以根据需要更改代码。
 
-```cpp
+```csharp
 #if NETFX_CORE
 
 using UnityEngine;

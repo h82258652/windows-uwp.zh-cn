@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: low
-ms.openlocfilehash: 8b30b7d5ac644f7787bb58461f6fb26a60c3d095
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 9452956e85c5156503ae15fb2c0880fa06642cfd
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917643"
 ---
 # <a name="leaderboards"></a>排行榜
 
@@ -120,7 +121,7 @@ pplx::task<xbox_live_result<leaderboard_result>> get_leaderboard_skip_to_xuid(
 
 然后，你可以设置要在该服务返回排行榜结果后调用的回调。  我们将在下面介绍此过程的示例。
 
-如果你不熟悉要从这些 API 返回的 `pplx::task`，则这是来自 Microsoft 并行编程库 (PPL) 的异步任务对象。  你可以在 [https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks](https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks) 上了解更多信息。
+如果你不熟悉要从这些 API 返回的 `pplx::task`，则这是来自 Microsoft 并行编程库 (PPL) 的异步任务对象。  你可以到 [https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks](https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks) 了解更多。
 
 以下部分介绍如何检索和使用排行榜结果。
 
@@ -153,7 +154,7 @@ asyncTask.then([this](xbox::services::xbox_live_result<xbox::services::leaderboa
 
 #### <a name="3-display-leaderboard"></a>3. 显示排行榜
 
-排行榜数据包含在 ``leaderboard_result``` 中，并且字段具有自解释性。  有关示例，请参阅下文。
+排行榜数据包含在 ```leaderboard_result``` 中，并且字段具有自解释性。  有关示例，请参阅下文。
 
 ```cpp
 auto leaderboard = result.payload();
@@ -169,4 +170,4 @@ for (const xbox::services::leaderboard::leaderboard_row& row : leaderboard.rows(
     m_console->Format(L"%18s %8d %14f %10s\n", row.gamertag().c_str(), row.rank(), row.percentile(), colValues.c_str());
 }
 
-````
+```

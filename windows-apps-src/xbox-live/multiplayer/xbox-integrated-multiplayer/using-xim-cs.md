@@ -3,17 +3,18 @@ title: 使用 XIM (C#)
 author: KevinAsgari
 description: 了解如何将 Xbox 集成多人游戏 (XIM) 与 C# 结合使用。
 ms.author: kevinasg
-ms.date: 01/24/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox 集成多人游戏
 ms.localizationpriority: low
-ms.openlocfilehash: f5455667a51d12eda66a72751474d9d66631c58e
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 2dc9adf4cdb1b1366fd265ad40fabefbc3b05801
+ms.sourcegitcommit: aa7eab04a24c58d43d63cec1e1e99dbf9aab59f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1913935"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C#)
 
@@ -42,8 +43,9 @@ ms.lasthandoff: 02/24/2018
     - [将玩家静音](#muting-players)
     - [使用玩家团队配置聊天目标](#configuring-chat-targets-using-player-teams)
     - [玩家空位的自动后台填充（“回填”匹配）](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [查询可加入的网络](#querying-joinable-networks)
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 开始使用 XIM 编码之前，有两个先决条件。
 
@@ -51,9 +53,9 @@ ms.lasthandoff: 02/24/2018
 
     AppXManifest 功能和网络清单在平台文档中的对应部分中进行了详细介绍；[XIM 项目配置](xim-manifest.md) 中提供了要粘贴的特定于 XIM 的典型 XML。
 
-1. 你需要提供两个应用程序标识信息：
+1. 你需要使两条应用程序标识信息可用：
 
-    * 已分配的 Xbox Live 作品 ID。
+    * 已分配的 Xbox Live 标题 ID。
     * 作为预配访问 Xbox Live 服务的应用程序的一部分提供的服务配置 ID。
 
     有关获取这些信息的详细信息，请询问 Microsoft 代表。 将在初始化期间使用这些信息。
@@ -75,7 +77,7 @@ XboxIntegratedMultiplayer.SetIntendedLocalXboxUserIds(new List<string>() { myXui
 
 调用 `XboxIntegratedMultiplayer.SetIntendedLocalXboxUserIds()` 会立即设置与应添加到 XIM 网络中的本地用户关联的 Xbox 用户 ID。 以后的所有网络操作都将使用此 Xbox 用户 ID 列表，直到通过其他对 `XboxIntegratedMultiplayer.SetIntendedLocalXboxUserIds()` 的调用更改列表。
 
-在不存在任何 XIM 网络的情况下，第一步是移动到 XIM 网络以便开始该过程。 如果用户没有记住具体的 XIM 网络，最佳做法是，只需移动到一个新的空网络。 这样，用户的好友便可以加入此网络并将其作为某种“大厅”，在“大厅”中，他们可以进行协作，选择下一个多人游戏活动（例如，一起进入匹配）。
+在不存在任何 XIM 网络的情况下，第一步是移动到 XIM 网络以便开始该过程。 如果用户没有记住具体的 XIM 网络，最佳做法是，只需移动到新的空网络。 这样，用户的好友便可以加入此网络并将其作为某种“大厅”，在“大厅”中，他们可以进行协作，选择下多人游戏活动（例如，一起进入匹配）。
 
 下面的示例显示了如何将先前使用 `XboxIntegratedMultiplayer.SetIntendedLocalXboxUserIds()` 添加的本地用户移动到空 XIM 网络（拥有最多能容纳共 8 位玩家的空间）：
 
@@ -87,7 +89,7 @@ XboxIntegratedMultiplayer.MovetoNewNetwork(8, XimPlayersToMove.BringOnlyLocalPla
 
 ## <a name="asynchronous-operations-and-processing-state-changes"></a>异步操作和处理状态更改
 
-XIM 的核心是应用对 `XboxIntegratedMultiplayer.GetStateChanges()` 方法的定期且频繁的调用。 此方法是，如何通知 XIM 应用已准备好处理多人游戏状态的更新，以及 XIM 如何通过返回包含所有已排队更新的 `XimStateChangeCollection` 对象来提供这些更新。 `XboxIntegratedMultiplayer.GetStateChanges()` 旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了一个方便的位置来检索所有已排队更改，而不必担心网络计时的不可预测性或多线程回调的复杂性。 XIM API 实际上已针对此单线程模式进行了优化。 它保证其状态在 `XimStateChangeCollection` 对象被处理且尚未释放之前将保持不变。
+XIM 的核心是应用对 `XboxIntegratedMultiplayer.GetStateChanges()` 方法的定期且频繁的调用。 此方法是，如何通知 XIM 应用已准备好处理多人游戏状态的更新，以及 XIM 如何通过返回包含所有已排队更新的 `XimStateChangeCollection` 对象来提供这些更新。 `XboxIntegratedMultiplayer.GetStateChanges()` 旨在加快运行速度，以便在 UI 呈现循环中对每个图形帧执行调用。 这提供了方便的位置来检索所有已排队更改，而不必担心网络计时的不可预测性或多线程回调的复杂性。 XIM API 实际上已针对此单线程模式进行了优化。 它保证其状态在 `XimStateChangeCollection` 对象被处理且尚未释放之前将保持不变。
 
 `XimStateChangeCollection` 是 `IXimStateChange` 对象的集合。
 应用应该：
@@ -148,15 +150,17 @@ myPlayerStateObject = (MyPlayerState)(newXimPlayer.CustomPlayerContext);
 
 ## <a name="enabling-friends-to-join-and-inviting-them"></a>允许好友加入并邀请他们
 
-出于隐私和安全性目的，默认情况下，所有新 XIM 网络都会自动配置为任何其他玩家都不可加入，就绪后，由应用决定是否明确允许其他玩家加入。 以下示例说明如何使用 `XboxIntegratedMultiplayer.SetAllowedPlayerJoins()` 允许新的本地用户，以及其他已经收到邀请或受到“关注”（一种 Xbox Live 社交关系）的用户以玩家身份加入：
+出于隐私和安全性目的，默认情况下，所有新 XIM 网络都会自动配置为仅可由本地玩家加入，就绪后，由应用负责明确允许其他玩家加入。 下面的示例显示如何使用 `XboxIntegratedMultiplayer.NetworkConfiguration` 检索当前网络配置，并使用 `XboxIntegratedMultiplayer.SetNetworkConfiguration()` 更新网络的可加入性，以开始允许新的本地用户作为玩家加入，以及已经获得邀请或正被 XIM 网络中现有玩家“关注”（一种 Xbox Live 社交关系）的其他用户作为玩家加入：
 
 ```cs
-XboxIntegratedMultiplayer.SetAllowedPlayerJoins(XimAllowedPlayerJoins.LocalInvitedOrFollowed);
+XimNetworkConfiguration currentConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+currentConfiguration.AllowedPlayerJoins = XimAllowedPlayerJoins.Local | XimAllowedPlayerJoins.Invited | XimAllowedPlayerJoins.Followed;
+XboxIntegratedMultiplayer.SetNetworkConfiguration(currentConfiguration);
 ```
 
-`XboxIntegratedMultiplayer.SetAllowedPlayerJoins()` 异步执行。 完成前一代码示例调用后，将会提供 `XimAllowedPlayerJoinsChangedStateChange` 以通知应用，可加入性值已更改，不再是默认值 `XimAllowedPlayerJoins.None`。 然后，你可以通过检查 `XboxIntegratedMultiplayer.AllowedPlayerJoins` 的值来查询新值。
+`XboxIntegratedMultiplayer.SetNetworkConfiguration()` 异步执行。 完成前一代码示例调用后，将会提供 `XimNetworkConfigurationChangedStateChange` 以通知应用，可加入性值已更改，不再是默认值 `XimAllowedPlayerJoins.None`。 然后，你可以通过检查 `XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` 的值来查询新值。
 
-`XboxIntegratedMultiplayer.AllowedPlayerJoins` 可以随时检查，以便确定网络上的可加入性设置。
+`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` 当设备在 XIM 网络中时，可以通过检查该值确定该网络的可加入性。
 
 如果其中一个本地玩家向远程用户发送加入此 XIM 网络的邀请，则应用可以调用 `XimLocalPlayer.ShowInviteUI()` 以启动系统邀请 UI。 此处，本地用户可以选择他们希望邀请的人并发送邀请。
 
@@ -202,12 +206,11 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingProtocolActivatedEventArgs(uriString
 下面的示例通过使用一种匹配配置启动移动，该配置设置为寻找共 8 个玩家参与无团队自由竞赛。 如果找不到共 8 个玩家，系统可能仍会将 2-7 个玩家匹配在一起。 此示例使用应用定义的 uint 类型的常量，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式。 XIM 的匹配只会将此网络与指定相同值的其他玩家匹配，当第二个参数 `XimPlayersToMove.BringExistingSocialPlayers` 指定为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 时，会从当前 XIM 网络中带走以社交方式加入的所有玩家。
 
 ```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-    TeamMatchmakingMode = XimTeamMatchmakingMode.NoTeams8PlayersMinimum2;
-    CustomGameMode = MYGAMEMODE_DEATHMATCH;
-};
-
+var matchmakingConfiguration = new XimMatchmakingConfiguration();
+matchmakingConfiguration.TeamConfiguration.TeamCount = 1;
+matchmakingConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 2;
+matchmakingConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+matchmakingConfiguration.CustomGameMode = MYGAMEMODE_DEATHMATCH;
 XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking(matchmakingConfiguration, XimPlayersToMove.BringExistingSocialPlayers);
 ```
 
@@ -221,7 +224,7 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking(matchmakingConfiguration
 
 当你选择通过使用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 再次启动匹配时，如果指定 `XimPlayersToMove.BringExistingSocialPlayers`，则在进行新匹配时，通过社交入口点（`XboxIntegratedMultiplayer.MoveToNetworkUsingProtocolActivatedEventArgs()` 或 `xXboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId`）加入的玩家将会保留。 或者，指定 `XimPlayersToMove.BringOnlyLocalPlayers` 将会使以社交方式连接的远程玩家断开连接，只保留本地玩家。 在两种情况下，第二次移动操作完成后，将添加另一组陌生人。
 
-你也可以在决定下一个匹配配置/多人游戏活动时，选择将非匹配玩家（或仅本地玩家）移动到全新的 XIM 网络。
+你也可以在决定下匹配配置/多人游戏活动时，选择将非匹配玩家（或仅本地玩家）移动到全新的 XIM 网络。
 
 下面的示例演示了设备如何对拥有最多 8 个玩家的 XIM 网络调用 `XboxIntegratedMultiplayer.MoveToNewNetwork()`，但是，这次还包含以社交方式加入的现有玩家：
 
@@ -237,7 +240,7 @@ XboxIntegratedMultiplayer.MovetoNewNetwork(8, XimPlayersToMove.BringExistingSoci
 
 ## <a name="disabling-matchmaking-nat-rule-for-debugging-purposes"></a>禁用匹配 NAT 规则以进行调试
 
-如果网络管理员无法进行必要的环境更改以支持 XIM 的 NAT 规则，通过将 XIM 配置为允许在没有至少一个“开放 NAT”设备的情况下匹配“严格 NAT”设备，你可以取消阻止 Xbox One 开发工具包上的匹配测试。 可通过在所有 Xbox One 主机上的“游戏草稿”的根目录下放置名为“xim_disable_matchmaking_nat_rule”（内容不重要）的文件完成此操作。 示例操作方法是，在启动应用前，从 XDK 命令提示符执行以下内容，根据需要，替换每个控制台的“{console_name_or_ip_address}”占位符：
+如果网络管理员无法进行必要的环境更改以支持 XIM 的 NAT 规则，通过将 XIM 配置为允许在没有至少“开放 NAT”设备的情况下匹配“严格 NAT”设备，你可以取消阻止 Xbox One 开发工具包上的匹配测试。 可通过在所有 Xbox One 主机上的“游戏草稿”的根目录下放置名为“xim_disable_matchmaking_nat_rule”（内容不重要）的文件完成此操作。 示例操作方法是，在启动应用前，从 XDK 命令提示符执行以下内容，根据需要，替换每个控制台的“{console_name_or_ip_address}”占位符：
 
 ```bat
 echo.>%TEMP%\emptyfile.txt
@@ -316,7 +319,7 @@ string propertyValue = localPlayer.GetPlayerCustomProperty("model");
 
 ## <a name="sharing-data-using-network-custom-properties"></a>使用网络自定义属性共享数据
 
-网络自定义属性作为一种便捷方式，旨在同步特定于 XIM 网络的不频繁更改的数据。 网络自定义属性的工作方式与[玩家自定义属性](#sharing-data-using-player-custom-properties)完全相同，只不过它们是使用 `XboxIntegratedMultiplayer.SetNetworkCustomProperty()` 在 XIM 单一实例对象上设置的。 以下示例设置了“地图”属性，使其拥有“要塞”一值:
+网络自定义属性旨在方便同步特定于不频繁更改的 XIM 网络的数据。 网络自定义属性的工作方式与[玩家自定义属性](#sharing-data-using-player-custom-properties)完全相同，只不过它们是使用 `XboxIntegratedMultiplayer.SetNetworkCustomProperty()` 在 XIM 单一实例对象上设置的。 以下示例设置了“地图”属性，使其拥有“要塞”一值:
 
 ```cs
 XboxIntegratedMultiplayer.SetNetworkCustomProperty("map", "stronghold");
@@ -334,70 +337,68 @@ string property = XboxIntegratedMultiplayer.GetNetworkCustomProperty("map")
 
 ## <a name="matchmaking-using-per-player-skill"></a>使用按玩家技能匹配
 
-在某个应用指定的游戏模式下，按共同兴趣匹配玩家是一个不错的基本策略。 当可用玩家池扩大时，你还应该考虑基于玩家的个人技能或游戏体验匹配玩家，以便资深玩家可以享受与其他资深玩家的良性竞争带来的挑战，而新玩家可以通过与能力相似的玩家进行竞争来获得成长。
+在某个应用指定的游戏模式下，按共同兴趣匹配玩家是不错的基本策略。 当可用玩家池扩大时，你还应该考虑基于玩家的个人技能或游戏体验匹配玩家，以便资深玩家可以享受与其他资深玩家的良性竞争带来的挑战，而新玩家可以通过与能力相似的玩家进行竞争来获得成长。
 
-要执行此操作，在使用匹配开始移动到 XIM 网络前，请先在对 `XimLocalPlayer.SetMatchmakingConfiguration()` 的调用中指定的按玩家匹配配置结构中提供所有本地玩家的技能等级。 技术等级是特定于应用的概念，且 XIM 不会解释数字，不过，匹配会首先尝试查找具有相同技能值的玩家，然后定期以 +/- 10 的增量扩大搜索范围，以尝试查找其他在此技能附近范围内声明技能值的玩家。 以下示例假定本地 `XimLocalPlayer` 对象（其变量为“localPlayer”）有一个关联的特定于应用的整数技能值，该值从本地或 Xbox Live 存储检索到名为“playerSkillValue”的变量中：
+要执行此操作，在使用匹配开始移动到 XIM 网络前，请先在对 `XimLocalPlayer.SetRolesAndSkillConfiguration()` 的调用中指定的按玩家角色和技能配置结构中提供所有本地玩家的技能等级。 技术等级是特定于应用的概念，且 XIM 不会解释数字，不过，匹配会首先尝试查找具有相同技能值的玩家，然后定期以 +/- 10 的增量扩大搜索范围，以尝试查找其他在此技能附近范围内声明技能值的玩家。 以下示例假定本地 `XimLocalPlayer` 对象（其变量为“localPlayer”）有一个关联的特定于应用的整数技能值，该值从本地或 Xbox Live 存储检索到名为“playerSkillValue”的变量中：
 
 ```cs
-var config = new XimPlayerMatchmakingConfiguration();
+var config = new XimPlayerRolesAndSkillConfiguration();
 config.Skill = playerSkillValue;
-localPlayer.SetMatchmakingConfiguration(config);
+localPlayer.SetRolesAndSkillConfiguration(config);
 ```
 
-此操作完成时，会向所有参与者提供 `PlayerMatchmakingConfigurationStateChange`，以指示此 `IXIMPlayer` 已更改其按玩家匹配配置。 可通过调用 `IXIMPlayer.MatchmakingConfiguration` 检索新值。 当所有玩家都应用非 null 匹配配置时，你可以使用匹配将其移动到 XIM 网络，并为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 指定 `MatchmakingConfiguration` 结构的 `RequirePlayerMatchmakingConfiguration` 字段中的 true 值。
+此操作完成时，会向所有参与者提供 `XimPlayerRolesAndSkillConfigurationChangedStateChange`，以指示此 `IXIMPlayer` 已更改其按玩家角色和技能配置。 可通过调用 `IXIMPlayer.RolesAndSkillConfiguration` 检索新值。 当所有玩家都应用非 null 匹配配置时，你可以使用匹配将其移动到 XIM 网络，并为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 指定 `XimMatchmakingConfiguration` 结构的 `RequirePlayerRolesAndSkillConfiguration` 字段中的 true 值。
 
-下面的示例填充一个匹配配置，以便寻找共 2-8 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 Uint64，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式。 这将配置匹配，以将 XIM 网络的玩家与指定这些相同值以及需要按玩家匹配配置的其他玩家相匹配。
+下面的示例填充一个匹配配置，以便寻找共 2-8 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 Uint64，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式。 这将配置匹配，将 XIM 网络的玩家与指定这些相同值的其他玩家相匹配，并且需要按玩家匹配配置。
 
 ```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-    TeamMatchmakingMode = XimTeamMatchmakingMode.NoTeams8PlayersMinimum2;
-    CustomGameMode = MYGAMEMODE_DEATHMATCH;
-    RequirePlayerMatchmakingConfiguration = true;
-};
+XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration();
+matchmakingConfiguration.TeamConfiguration.TeamCount = 1;
+matchmakingConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 2;
+matchmakingConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+matchmakingConfiguration.CustomGameMode = MYGAMEMODE_DEATHMATCH;
+matchmakingConfiguration.RequirePlayerRolesAndSkillConfiguration = true;
 ```
 
-为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 提供此结构时，只要移动的玩家已通过非 null `XimPlayerMatchmakingConfiguration` 对象调用 `XimLocalPlayer.SetMatchmakingConfiguration()`，移动操作将正常开始。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `WaitingForPlayerMatchmakingConfiguration` 的 `XimMatchmakingProgressUpdatedStateChange`。 这包括在匹配完成后，通过以前发送的邀请或通过其他社交方式（例如，调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`）加入 XIM 网络的玩家。 所有玩家都提供其 `XimPlayerMatchmakingConfiguration` 对象后，匹配将继续。
+为 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 提供此结构时，只要移动的玩家已通过非 null `XimPlayerRolesAndSkillConfiguration` 对象调用 `XimLocalPlayer.SetRolesAndSkillConfiguration()`，移动操作将正常开始。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `WaitingForPlayerRolesAndSkillConfiguration` 的 `XimMatchmakingProgressUpdatedStateChange`。 这包括在匹配完成后，通过以前发送的邀请或通过其他社交方式（例如，调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`）加入 XIM 网络的玩家。 所有玩家都提供其 `XimPlayerRolesAndSkillConfiguration` 对象后，匹配将继续。
 
-如下一节中所述，使用按玩家技能匹配也可以与按玩家角色匹配用户结合使用。 如果只需要其中一个，可将另一个的值指定为 0。 这是因为声明 `xim_player_matchmaking_configuration` 技能值为 0 的所有玩家始终会彼此匹配。
+如下一节中所述，使用按玩家技能匹配也可以与按玩家角色匹配用户结合使用。 如果只需要其中一个，你可以将另一个的值指定为 0。 这是因为声明 `XimPlayerRolesAndSkillConfiguration` 技能值为 0 的所有玩家始终会彼此匹配。
 
-`xim::move_to_network_using_matchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `xim_player_matchmaking_configuration` 结构自动清理为 null 指针（附带 `xim_player_matchmaking_configuration_changed_state_change` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则你需要通过一个包含最新信息的新结构指针再次调用 `xim_player::xim_local::set_matchmaking_configuration()`。
+`XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `XimPlayerRolesAndSkillConfiguration` 结构自动清理为 null 指针（附带 `XimPlayerRolesAndSkillConfigurationChangedStateChange` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则需要通过一个包含最新信息的对象再次调用 `XimLocalPlayer.SetRolesAndSkillConfiguration()`。
 
 ## <a name="matchmaking-using-per-player-role"></a>使用按玩家角色匹配
 
-使用按玩家匹配配置改进用户的匹配体验的另一种方法是使用所需的玩家角色。 这非常适合提供可选角色类型，从而鼓励各种合作游戏风格的游戏。 这些角色类型不是单纯地改变游戏内图形表示形式，而是改变玩家的游戏风格。 用户可能想要以某个特长进行游戏。 但是，如果游戏设计为当没有至少一个履行每个角色的用户时，则在功能上不可能完成目标，有时，最好先将这些玩家匹配到一起，再将任意玩家匹配到一起，并在集合后要求其协商他们之间的游戏风格。 你可以通过先定义表示要在给定玩家的 `XimPlayerMatchmakingConfiguration` 结构中指定的每个角色的唯一位标志来执行此操作。
+使用按玩家角色和技能配置改进用户匹配体验的另一种方法是使用所需的玩家角色。 这非常适合提供可选角色类型的游戏，这些角色可以鼓励各种合作游戏风格。 这些角色类型不是单纯地改变游戏内图形表示形式，而是改变玩家的游戏风格。 用户可能想要以某个特长进行游戏。 但是，如果游戏设计为每个角色必须不少于一个玩家才能实际完成目标，有时需要先将这些玩家而非任意玩家匹配到一起，并在集合后要求其协商他们之间的游戏风格。 你可以通过先定义表示要在给定玩家的 `XimPlayerRolesAndSkillConfiguration` 结构中指定的每个角色的唯一位标志来执行此操作。
 
 下面的示例为本地 `XimLocalPlayer` 对象（其指针为“localPlayer”）设置特定于应用的角色值，其类型为字节，名为 MYROLEBITFLAG_HEALER：
 
 ```cs
-var config = new XimPlayerMatchmakingConfiguration();
+var config = new XimPlayerRolesAndSkillConfiguration();
 config.Roles = MYROLEBITFLAG_HEALER;
-localPlayer.SetMatchmakingConfiguration(config);
+localPlayer.SetRolesAndSkillConfiguration(config);
 ```
 
-此操作完成时，会向所有参与者提供 `PlayerMatchmakingConfigurationChangedStateChange`，以指示此 `IXimPlayer` 已更改其按玩家匹配配置。 可通过调用 `IXimPlayer.MatchmakingConfiguration` 检索新值。
+此操作完成时，会向所有参与者提供 `XimPlayerRolesAndSkillConfigurationChangedStateChange`，以指示此 `IXimPlayer` 已更改其按玩家角色和技能配置。 可通过调用 `IXimPlayer.RolesAndSkillConfiguration` 检索新值。
 
-然后，指定给 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的全局 `XimMatchmakingConfiguration` 结构应使用按位 OR 和 `RequirePlayerMatchmakingConfiguration` 字段的 true 值合并所有需要的角色标记。
+然后，指定给 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的全局 `XimMatchmakingConfiguration` 结构应使用按位 OR 和 `RequirePlayerRolesAndSkillConfiguration` 字段的 true 值合并所有需要的角色标记。
 
-使用按玩家角色匹配也可以与按玩家技能匹配用户结合使用。 如果只需要其中一个，可将另一个的值指定为 0。 这是因为，所有声明其 `PlayerMatchmakingConfiguration` 技能值为 0 的玩家始终互相匹配，如果 `Player` required_roles 字段中均为零位，则不需要角色位就能匹配。
+使用按玩家角色匹配也可以与按玩家技能匹配用户结合使用。 如果只需要其中一个，可将另一个的值指定为 0。 这是因为，所有声明其 `XimPlayerRolesAndSkillConfiguration` 技能值为 0 的玩家始终互相匹配，如果 `XimMatchmakingConfiguration.RequiredRoles` 字段中均为零位，则不需要角色位就能匹配。
 
-`XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 或任何其他 XIM 网络移动操作完成后，会将所有玩家的 `XimPlayerMatchmakingConfiguration` 对象自动清理为 null（附带 `XimPlayerMatchmakingConfigurationChangedStateChange` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则需要通过一个包含最新信息的对象再次调用 `XimLocalPlayer.SetMatchmakingConfiguration()`。
+`XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 或任何其他 XIM 网络移动操作完成后，会将所有玩家的 `XimPlayerRolesAndSkillConfiguration` 对象自动清理为 null（附带 `XimPlayerRolesAndSkillConfigurationChangedStateChange` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则需要通过一个包含最新信息的对象再次调用 `XimLocalPlayer.SetRolesAndSkillConfiguration()`。
 
 ## <a name="how-xim-works-with-player-teams"></a>XIM 如何与玩家团队配合工作
 
-多人游戏通常涉及到组织到对方团队的玩家。 通过使用在指定配置中请求两个或以上团队的 `XimTeamMatchmakingMode` 值，XIM 可轻松地在匹配时分配团队。 下面的示例将启动使用所配置匹配的移动，以便寻找总共 8 个玩家的两支队伍（每队 4 人，如果找不到 4 个，1-3 个也可以接受）。 此外，此示例使用应用定义的常量，该常量的类型为 uint，名为 MYGAMEMODE_CAPTURETHEFLAG，表示要筛除的游戏模式。  此外，设置配置，以从当前 XIM 网络中带走所有以社交方式加入的玩家：
+多人游戏通常涉及到组织到对方团队的玩家。 XIM 可通过设置 `XimMatchmakingConfiguration.TeamConfiguration` 简化匹配时的团队分配。 以下示例通过使用经过配置以寻找共 8 个玩家来编入两个 4 人团队（如果找不到 4 个玩家，1-3 个玩家也可接受）的匹配发起移动。 此外，此示例使用应用定义的常量，该常量的类型为 uint，名为 MYGAMEMODE_CAPTURETHEFLAG，表示要筛除的游戏模式。  此外，配置设置为从当前 XIM 网络中带走所有以社交方式加入的玩家：
 
 ```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-     TeamMatchmakingMode = XimTeamMatchmakingMode.TwoTeams4v4Minimum1PerTeam;
-     CustomGameMode = MYGAMEMODE_CAPTURETHEFLAG;
-};
-
+var matchmakingConfiguration = new XimMatchmakingConfiguration();
+matchmakingConfiguration.TeamConfiguration.TeamCount = 2;
+matchmakingConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 1;
+matchmakingConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 4;
 XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking(matchmakingConfiguration, XimPlayersToMove.BringExistingSocialPlayers);
 ```
 
-完成此 XIM 网络移动操作后，将通过 {n}（与请求的 {n} 个团队对应）为玩家分配团队索引值 1。 通过 `IXIMPlayer.TeamIndex` 检索玩家的团队索引值。 将 `XimTeamMatchmakingMode` 与两个或以上团队一起使用时，绝不会通过调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 来为玩家分配团队索引值 0。 这与通过任意其他移动操作配置或类型（例如通过接受邀请导致的协议激活）添加到 XIM 网络的玩家相反，他们将始终拥有 0 团队索引。 它可能有助于将团队索引 0 视为特殊的“未分配”团队。
+完成此 XIM 网络移动操作后，将通过 {n}（与请求的 {n} 个团队对应）为玩家分配团队索引值 1。 通过 `IXIMPlayer.TeamIndex` 检索玩家的团队索引值。 将 `XimMatchmakingConfiguration.TeamConfiguration` 与两个或以上团队一起使用时，绝不会通过调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 来为玩家分配团队索引值 0。 这与通过任意其他移动操作配置或类型（例如通过接受邀请导致的协议激活）添加到 XIM 网络的玩家相反，他们将始终拥有 0 团队索引。 它可能有助于将团队索引 0 视为特殊的“未分配”团队。
 
 以下示例检索 XIM 玩家对象（存储在“ximPlayer”变量中）的团队索引：
 
@@ -440,11 +441,11 @@ localPlayer.SendChatText(text);
 例如，由 `IXimPlayer.ChatIndicator` 报告的值预计会在玩家开始和停止说话时频繁改变。 它旨在支持应用在每个 UI 框架将其作为结果进行轮询。
 
 > [!NOTE]
-> 如果本地用户因其设备设置而没有足够的通信权限，`XimLocalPlayer.ChatIndicator` 将返回一个值为 `XIM_PLAYER_CHAT_INDICATOR_PLATFORM_RESTRICTED` 的 `XboxIntegratedMultiplayer.XimPlayerChatIndicator`。 对平台满足要求的期望指的是：应用可显示指示语音聊天或发送消息的平台限制的图标，以及指示问题的用户消息。 我们建议的一个示例消息为：“抱歉，当前不允许你聊天。”
+> 如果本地用户因其设备设置而没有足够的通信权限，`XimLocalPlayer.ChatIndicator` 将返回一个值为 `XIM_PLAYER_CHAT_INDICATOR_PLATFORM_RESTRICTED` 的 `XboxIntegratedMultiplayer.XimPlayerChatIndicator`。 对平台满足要求的期望指的是：应用可显示指示语音聊天或发送消息的平台限制的图标，以及指示问题的用户消息。 我们建议的示例消息为：“抱歉，当前不允许聊天。”
 
 ## <a name="muting-players"></a>将玩家静音
 
-另一个最佳做法是支持将玩家静音。 XIM 通过玩家卡自动处理由用户启动的系统静音，但应用应该支持可在游戏 UI 内通过 `IXimPlayer.ChatMuted` 属性执行的特定于游戏的短暂性静音。 以下示例开始静音变量“remotePlayer”指向的远程 `IXIMPlayer` 对象，以便不会从中听到语音聊天或收到文字聊天：
+另一个最佳做法是支持静音玩家。 XIM 通过玩家卡自动处理由用户启动的系统静音，但应用应该支持可在游戏 UI 内通过 `IXimPlayer.ChatMuted` 属性执行的特定于游戏的短暂性静音。 以下示例开始静音变量“remotePlayer”指向的远程 `IXIMPlayer` 对象，以便不会从中听到语音聊天或收到文字聊天：
 
 ```cs
 remotePlayer.ChatMuted = true;
@@ -478,30 +479,89 @@ XboxIntegratedMultiplayer.SetChatTargets(XimChatTargets.AllPlayers)
 
 ## <a name="automatic-background-filling-of-player-slots-backfill-matchmaking"></a>玩家空位的自动后台填充（“回填”匹配）
 
-同时调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的不同玩家组会为 Xbox Live 匹配服务提供最大的灵活性，以便将玩家快速整理到最优的新 XIM 网络。 但是，某些游戏场景想要将某个 XIM 网络保持原样，只匹配其他玩家，仅仅是为了填充空白玩家空位。 XIM 支持使用 `XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration()` 方法配置要在自动后台填充模式（或“回填”）下操作的匹配。
+同时调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的不同玩家组会为 Xbox Live 匹配服务提供最大的灵活性，以便将玩家快速整理到最优的新 XIM 网络。 但是，某些游戏场景想要将某个 XIM 网络保持原样，只匹配其他玩家，仅仅是为了填充空白玩家空位。 XIM 通过以 `XimNetworkConfiguration` （其 `XimNetworkConfiguration.AllowedPlayerJoins` 属性上设置了 `XimAllowedPlayerJoins.Matchmade` 标志）调用 `XboxIntegratedMultiplayer.SetNetworkConfiguration()`，支持配置匹配以在自动背景填充（“回填”）模式下操作。
 
-下面的示例填充匹配配置，并配置回填匹配，以便尝试查找总共 8 个玩家进行无团队自由竞赛（如果找不到 8 个，2-7 个玩家也是可以接受的）。 此外，此示例使用应用定义的常量，该常量的类型为 uint，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式：
-
-```cs
-XimMatchmakingConfiguration matchmakingConfiguration = new XimMatchmakingConfiguration()
-{
-     TeamMatchmakingMode = XimTeamMatchmakingMode.NoTeams8PlayersMinimum2;
-     CustomGameMode = MYGAMEMODE_DEATHMATCH;
-};
-
-XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration(matchmakingConfiguration);
-```
-
-这会使现有 XIM 网络适用于以正常方式调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的设备。 这些设备不会看到任何行为更改。 回填 XIM 网络中的参与者不会移动，但会向其提供表明回填打开的 `XimBackfillMatchmakingConfigurationChangedStateChange`，以及多个 `XimMatchmakingProgressUpdatedStateChange` 通知（如果适用）。 将使用正常的 `XimPlayerJoinedStateChange` 将所有匹配的玩家添加到 XIM 网络。
-
-默认情况下，回填匹配会保持无限期启用，但它不会在 XIM 网络已经有由 `TeamMatchmakingMode` 值指定的最大玩家数时尝试添加玩家。 通过使用 null 再次调用 `XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration()` 可禁用回填：
+以下示例使用特定于应用的游戏模式常量 uint64_t 配置了回填匹配，以尝试为无团队自由竞赛寻找共 8 个玩家（如果找不到 8 个玩家，2-7 个玩家也可接受），该常量由仅与指定相同值的其他玩家匹配的值 MYGAMEMODE_DEATHMATCH 定义：
 
 ```cs
-XboxIntegratedMultiplayer.SetBackfillMatchMakingConfiguration(null);
+var networkConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+networkConfiguration.AllowedPlayerJoins |= XimAllowedPlayerJoins.Matchmade;
+networkConfiguration.TeamConfiguration.TeamCount = 1;
+networkConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 2;
+networkConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+networkConfiguration.CustomGameMode = MYGAMEMODE_DEATHMATCH;
+XboxIntegratedMultiplayer.SetNetworkConfiguration(networkConfiguration);
 ```
 
-将向所有设备提供相应的 `XimBackfillMatchmakingConfigurationChangedStateChange`，并且，完成此异步过程后，将提供最终 `XimMatchmakingProgressUpdatedStateChange` 和 `MatchmakingStatus.None`，表明不会再向 XIM 网络提供任何匹配的玩家。
+这会使现有 XIM 网络适用于以正常方式调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingMatchmaking()` 的设备。 这些设备不会看到任何行为更改。 回填 XIM 网络中的参与者不会移动，但会向其提供表明回填打开的 `XimNetworkConfigurationChangedStateChange`，以及多个 `XimMatchmakingProgressUpdatedStateChange` 通知（如果适用）。 将使用正常的 `XimPlayerJoinedStateChange` 将所有匹配的玩家添加到 XIM 网络。
 
-当通过声明两个或以上团队的 `XimTeamMatchmakingMode` 值启用回填匹配时，所有现有玩家的有效团队索引必须在 1 到团队数之间。 这包括调用 `XimLocalPlayer.SetTeamIndex()` 来指定自定义值，或使用邀请或通过其他社交方式（例如，调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`）加入，并通过默认团队索引值 0 添加的玩家。 如果任意玩家没有有效的团队索引，则会暂停匹配过程，并为所有参与者提供值为 `MatchmakingStatus.WaitingForPlayerTeamIndex` 的 `XimMatchmakingProgressUpdatedStateChange`。 在所有玩家通过 `XimLocalPlayer.SetTeamIndex()` 提供或更正其团队索引值后，回填匹配将继续。 有关详细信息，请参阅本文档 [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)部分。
+默认情况下，回填匹配会保持无限期启用，但它不会在 XIM 网络已经有由 `XimNetworkConfiguration.TeamConfiguration` 设置指定的最大玩家数时尝试添加玩家。 可以通过设置 `XimNetworkConfiguration.AllowedPlayerJoins`（但不带 `XimAllowedPlayerJoins.Matchmade`）来禁用回填：
 
-同样，当通过 `MatchmakingConfiguration` 结构启用回填匹配，并将角色或技能的 `RequirePlayerMatchmakingConfiguration` 字段设置为 true 时，所有玩家必须指定非 null 按玩家匹配配置。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `XimMatchMakingStatus.WaitingForPlayerMatchmakingConfiguration` 的 `XimMatchmakingProgressUpdatedStateChange`。 所有玩家都提供其 `XimPlayerMatchmakingConfiguration` 对象后，回填匹配将继续。 有关详细信息，请参阅本文档[使用按玩家技能匹配](#matchmaking-using-per-player-skill)和[使用按玩家角色匹配](#matchmaking-using-per-player-role)部分。
+```cs
+var networkConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+networkConfiguration.AllowedPlayerJoins &= ~XimAllowedPlayerJoins.Matchmade;
+XboxIntegratedMultiplayer.SetNetworkConfiguration(networkConfiguration);
+```
+
+将向所有设备提供相应的 `XimNetworkConfigurationChangedStateChange`，并且，完成此异步过程后，将提供最终 `XimMatchmakingProgressUpdatedStateChange` 和 `MatchmakingStatus.None`，表明不会再向 XIM 网络提供任何匹配的玩家。
+
+当通过声明两个或更多团队的 `XimNetworkConfiguration.TeamConfiguration` 设置启用回填匹配时，所有现有玩家的有效团队索引必须在 1 到团队数之间。 这包括调用 `XimLocalPlayer.SetTeamIndex()` 来指定自定义值，或使用邀请或通过其他社交方式（例如，调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableXboxUserId()`）加入，并通过默认团队索引值 0 添加的玩家。 如果任意玩家没有有效的团队索引，则会暂停匹配过程，并为所有参与者提供值为 `MatchmakingStatus.WaitingForPlayerTeamIndex` 的 `XimMatchmakingProgressUpdatedStateChange`。 在所有玩家通过 `XimLocalPlayer.SetTeamIndex()` 提供或更正其团队索引值后，回填匹配将继续。 有关详细信息，请参阅本文档 [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)部分。
+
+同样，当通过 `XimNetworkConfiguration` 结构启用回填匹配，并将 `RequirePlayerRolesAndSkillConfiguration` 字段设置为 true 时，所有玩家必须已指定非 null 按玩家匹配配置。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `XimMatchMakingStatus.WaitingForPlayerRolesAndSkillConfiguration` 的 `XimMatchmakingProgressUpdatedStateChange`。 所有玩家都提供其 `XimPlayerRolesAndSkillConfiguration` 对象后，回填匹配将继续。 有关详细信息，请参阅本文档[使用按玩家技能匹配](#matchmaking-using-per-player-skill)和[使用按玩家角色匹配](#matchmaking-using-per-player-role)部分。
+
+## <a name="querying-joinable-networks"></a>查询可加入的网络
+
+匹配是将玩家快速连接在一起的一种很好的方法，有时最好允许玩家通过使用自定义搜索条件发现可加入的网络，并选择他们希望加入的网络。 这在游戏会话可能有大量可配置游戏规则和玩家首选项时尤具优势。 为此，必须先将现有网络设置为可查询，方法是启用 `XimAllowedPlayerJoins.Queried` 可加入性，并通过调用 `XboxIntegratedMultiplayer.SetNetworkConfiguration()` 配置可供网络外部的其他人访问的网络信息。
+
+下面的示例启用 `XimAllowedPlayerJoins.Queried` 可加入性，设置以下网络配置：一个允许总共 1-8 位玩家加入 1 个团队的团队配置；一个特定于应用的游戏模式常量 uint64_t（由 GAME_MODE_BRAWL 值定义）；一个描述 "cat and sheep's boxing match"；一个特定于应用的地图索引常量 uint32_t（由 MAP_KITCHEN 值定义）；并包含三个标记 "chatrequired"、"easy"、"spectatorallowed"：
+
+```cs
+string[] tags = { "chatrequired", "easy", "spectatorallowed" };
+var networkConfiguration = new XimNetworkConfiguration(XboxIntegratedMultiplayer.NetworkConfiguration);
+networkConfiguration.AllowedPlayerJoins |= XimAllowedPlayerJoins.Queried;
+networkConfiguration.TeamConfiguration.TeamCount = 1;
+networkConfiguration.TeamConfiguration.MinPlayerCountPerTeam = 1;
+networkConfiguration.TeamConfiguration.MaxPlayerCountPerTeam = 8;
+networkConfiguration.CustomGameMode = GAME_MODE_BRAWL;
+networkConfiguration.Description = "Cat and sheep's boxing match";
+networkConfiguration.MapIndex = MAP_KITCHEN;
+networkConfiguration.SetTags(tags);
+XboxIntegratedMultiplayer.SetNetworkConfiguration(networkConfiguration);
+```
+
+然后，网络外部的其他玩家可以通过一组与前面 xim::set_network_configuration() 调用中的网络信息匹配的筛选器来调用 xim::start_joinable_network_query()，从而找到该网络。 下面的示例启动一个可加入网络查询，其中的游戏模式筛选器选项将只查询使用由 GAME_MODE_BRAWL 值定义的应用特定游戏模式的网络：
+
+```cs
+XimJoinableNetworkQueryFilters queryFilters = new XimJoinableNetworkQueryFilters();
+queryFilters.CustomGameModeFilter = GAME_MODE_BRAWL;
+XboxIntegratedMultiplayer.StartJoinableNetworkQuery(queryFilters);
+```
+
+下面是另一个示例，它使用标记筛选器选项查询在公共可查询配置中包含 "easy" 和 "spectatorallowed" 标记的网络：
+
+```cs
+string[] tagFilters = { "easy", "spectatorallowed" };
+XimJoinableNetworkQueryFilters queryFilters = new XimJoinableNetworkQueryFilters();
+queryFilters.SetTagFilters(tagFilters);
+XboxIntegratedMultiplayer.StartJoinableNetworkQuery(queryFilters);
+```
+
+可以结合使用不同的筛选器选项。 下面的示例同时使用游戏模式筛选器选项和标记筛选器选项启动一个查询，以查询既有应用特定游戏模式常量 GAME_MODE_BRAWL 又包含 "easy" 标记的网络：
+
+```cs
+string[] tagFilters = { "easy" };
+XimJoinableNetworkQueryFilters queryFilters = new XimJoinableNetworkQueryFilters();
+queryFilters.CustomGameModeFilter = GAME_MODE_BRAWL;
+queryFilters.SetTagFilters(tagFilters);
+XboxIntegratedMultiplayer.StartJoinableNetworkQuery(queryFilters);
+```
+
+如果查询操作成功，应用将收到一个 xim_start_joinable_network_query_completed_state_change，该应用可以从中检索可加入网络的列表。 该应用将会继续接收其他可加入网络的 `XimJoinableNetworkUpdatedStateChange` 或是返回的可加入网络列表发生的任何更改，直到手动或自动停止查询。 可以通过调用 `XboxIntegratedMultiplayer.StopJoinableNetworkQuery()` 手动停止进行中的查询。 当调用 `XboxIntegratedMultiplayer.StartJoinableNetworkQuery()` 以启动新查询时，查询将自动停止。
+
+应用可以通过调用 `XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation()` 尝试加入可加入网络列表中的网络。 下面的示例假定你想要加入 'selectedNetwork' 所引用的网络（无密码保护，因此我们向第二个参数传入空字符串）：
+
+```cs
+XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation(selectedNetwork, "");
+```
+
+当通过 `XimNetworkConfiguration.TeamConfiguration`（声明了两个或更多团队）启用网络查询时，通过调用 XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation() 加入的玩家将拥有默认团队索引值 0。

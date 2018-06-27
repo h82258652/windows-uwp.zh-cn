@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: low
-ms.openlocfilehash: 12f80d26cea90f89e2c6ea872df13728e31642a3
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 284eb836d2575a762bdfbf1c24f530e81bc2fe16
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983472"
 ---
 # <a name="add-xbox-live-support-to-unity-for-xdk-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 XDK 带有 IL2CPP 脚本后端的 Unity 添加 Xbox Live 支持
 
@@ -24,7 +25,7 @@ Windows 运行时对 Unity 中 IL2CPP 的支持
 
 在 Unity 5.6f3 发布后，该引擎已加入了一项新功能，开发人员通过在游戏项目中直接包含 Windows 运行时 (WinRT) 组件即可直接在脚本中进行使用。 在 Unity 5.6 之前的版本中，开发人员需要使用插件或 dll 来支持游戏脚本中的任何平台功能（包括 Xbox Live SDK）。 这个新的投影层不仅消除了对插件的要求，还引入了一种新的简化工作流（只有选择了 IL2CPP 脚本后端的游戏才可使用此工作流）。
 
-有关入门详细信息，请参阅 Unity 文档：https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html
+有关如何开始使用的详细信息，请参阅 Unity 文档：https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html
 
 ## <a name="steps"></a>步骤
 
@@ -32,7 +33,7 @@ Windows 运行时对 Unity 中 IL2CPP 的支持
 
 安装 Unity 5.6 或更高版本，并确保你已安装 Xbox One 编辑器扩展。
 
-**2) 安装适用于 Unity 3.1 及更高版本的 Visual Studio Tools，以便在使用 WinMD 时支持 IntelliSense。** 对于 Visual Studio 2015，这可以在 https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity 中找到。  对于 Visual Studio 2017，该组件可以添加到 Visual Studio 2017 安装程序中。
+**2) 安装 Visual Studio Tools for Unity 3.1 或更高版本，以在使用 WinMD 时获得 IntelliSense 支持** 对于 Visual Studio 2015，可以到 https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity 获取该组件。  对于 Visual Studio 2017，可以在 Visual Studio 2017 安装程序内部添加该组件。
 
 **3) 打开新的或现有的 Unity 项目**
 
@@ -61,7 +62,7 @@ Windows 运行时对 Unity 中 IL2CPP 的支持
 
 **10) 将以下 Xbox Live 代码添加到 XboxLiveTest.cs 源文件中**
 
-```cpp
+```csharp
 
 using System.Collections;
 using System.Collections.Generic;

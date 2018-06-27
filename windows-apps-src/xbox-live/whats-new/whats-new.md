@@ -1,6 +1,6 @@
 ---
 title: Xbox Live 的新增功能
-author: staceyhaffner
+author: PhillipLucas
 description: Xbox Live SDK 的新增功能
 ms.author: sthaff
 ms.date: 10/04/2017
@@ -9,11 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: low
-ms.openlocfilehash: df7cfaff8eb4f3129b3effc2ba3c7acc1b65c003
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 02c0acdb252ce9e86b2635fa4845427c92ef8964
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935654"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
@@ -120,7 +121,7 @@ API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些
 
 #### <a name="github"></a>GitHub
 
-Xbox Live API (XSAPI) 现已在 GitHub（位于 [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)）中提供。  仍建议使用 XDK 附带的二进制文件或将其用作 NuGet 程序包，不过，欢迎你使用源，我们乐于接收有关源代码的反馈。  
+Xbox Live API (XSAPI) 现已在 GitHub 上提供，位置在 [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)。  仍建议使用 XDK 附带的二进制文件或将其用作 NuGet 程序包，不过，欢迎你使用源，我们乐于接收有关源代码的反馈。  
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
 
@@ -152,4 +153,3 @@ Xbox Live 创意者计划是一项开发人员计划，为更广大的开发人�
 * [2015 年 9 月](1509-whats-new.md)
 * [2015 年 8 月](1508-whats-new.md)
 * [2015 年 6 月](1506-whats-new.md)
-

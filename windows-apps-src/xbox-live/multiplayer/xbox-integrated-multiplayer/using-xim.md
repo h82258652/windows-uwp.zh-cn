@@ -3,17 +3,18 @@ title: 使用 XIM (C++)
 author: KevinAsgari
 description: 了解如何将 Xbox 集成多人游戏 (XIM) 与 C++ 结合使用。
 ms.author: kevinasg
-ms.date: 01/24/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, xbox one, xbox 集成多人游戏
 ms.localizationpriority: low
-ms.openlocfilehash: a2768fb34e2552af4699b106380591e584ec9977
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 6b333c58c996419f561d37cbc34d80406484cbf9
+ms.sourcegitcommit: aa7eab04a24c58d43d63cec1e1e99dbf9aab59f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1913937"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C++)
 
@@ -43,8 +44,9 @@ ms.lasthandoff: 02/24/2018
     - [将玩家静音](#muting-players)
     - [使用玩家团队配置聊天目标](#configuring-chat-targets-using-player-teams)
     - [玩家空位的自动后台填充（“回填”匹配）](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [查询可加入的网络](#querying-joinable-networks)
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 开始使用 XIM 编码之前，有两个先决条件。
 
@@ -161,15 +163,17 @@ myPlayerStateObject = reinterpret_cast<MyPlayerState *>(newXimPlayer->custom_pla
 
 ## <a name="enabling-friends-to-join-and-inviting-them"></a>允许好友加入并邀请他们
 
-出于隐私和安全性目的，默认情况下，所有新 XIM 网络都会自动配置为任何其他玩家都不可加入，就绪后，由应用决定是否明确允许其他玩家加入。 以下示例说明如何使用 `xim::set_allowed_player_joins()` 允许新的本地用户，以及其他已经收到邀请或受到“关注”（一种 Xbox Live 社交关系）的用户以玩家身份加入：
+出于隐私和安全性目的，默认情况下，所有新 XIM 网络都会自动配置为仅可由本地玩家加入，就绪后，由应用负责明确允许其他玩家加入。 下面的示例显示如何使用 `xim::network_configuration()` 检索当前网络配置，并使用 `xim::set_network_configuration()` 更新网络的可加入性，以开始允许新的本地用户作为玩家加入，以及已经获得邀请或正被 XIM 网络中现有玩家“关注”（一种 Xbox Live 社交关系）的其他用户作为玩家加入：
 
 ```cpp
-xim::singleton_instance().set_allowed_player_joins(xim_allowed_player_joins::local_invited_or_followed);
+xim_network_configuration networkConfiguration = *xim::singleton_instance.network_configuration();
+networkConfiguration.allowed_player_joins = xim_allowed_player_joins::local | xim_allowed_player_joins::invited | xim_allowed_player_joins::followed;
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-`xim::set_allowed_player_joins()` 异步执行。 完成前一代码示例调用后，将会提供 `xim_allowed_player_joins_changed_state_change` 以通知应用，可加入性值已更改，不再是默认值 `xim_allowed_player_joins::none`。 然后你可以使用 `xim::allowed_player_joins()` 查询新值。
+`xim::set_network_configuration()` 异步执行。 完成前一代码示例调用后，将会提供 `xim_network_configuration_changed_state_change` 以通知应用，可加入性值已更改，不再是默认值 `xim_allowed_player_joins::none`。 然后，你可以通过检查 `xim::network_configuration()` 返回 `xim_network_configuration` 的 `allowed_player_joins` 属性来查询新值。 
 
-`xim::allowed_player_joins()` 可以随时调用，以便确定网络上的可加入性设置。
+当设备在 XIM 网络中时，可以通过检查 `allowed_player_joins` 确定该网络的可加入性。
 
 如果其中一个本地玩家向远程用户发送加入此 XIM 网络的邀请，则应用可以调用 `xim_player::xim_local::show_invite_ui()` 以启动系统邀请 UI。 此时，本地用户可以选择他们希望邀请的人并发送邀请。 以下示例演示了此操作，并假定变量“ximPlayer”指向有效的本地 `xim_player`：
 
@@ -213,7 +217,9 @@ xim::singleton_instance().move_to_network_using_protocol_activated_event_args(ur
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 2;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 8;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
 
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
@@ -356,79 +362,82 @@ PCWSTR mapName = xim::singleton_instance().get_network_custom_property(L"map");
 
 在某个应用指定的游戏模式下，按共同兴趣匹配玩家是不错的基本策略。 当可用玩家池扩大时，你还应该考虑基于玩家的个人技能或游戏体验匹配玩家，以便资深玩家可以享受与其他资深玩家的良性竞争带来的挑战，而新玩家可以通过与能力相似的玩家进行竞争来获得成长。
 
-要执行此操作，在使用匹配开始移动到 XIM 网络前，请先在对 `xim_player::xim_local::set_matchmaking_configuration()` 的调用中指定的按玩家匹配配置结构中提供所有本地玩家的技能等级。 技术等级是特定于应用的概念，且 XIM 不会解释数字，不过，匹配会首先尝试查找具有相同技能值的玩家，然后定期以 +/- 10 的增量扩大搜索范围，以尝试查找其他在此技能附近范围内声明技能值的玩家。 以下示例假定本地 `xim_player` 对象（其指针为“localPlayer”）有一个关联的特定于应用的 uint32_t 技能值，该值从本地或 Xbox Live 存储检索到名为“playerSkillValue”的变量中：
+要执行此操作，在使用匹配开始移动到 XIM 网络前，请先在对 `xim_player::xim_local::set_roles_and_skill_configuration()` 的调用中指定的按玩家角色和技能配置结构中提供所有本地玩家的技能等级。 技术等级是特定于应用的概念，且 XIM 不会解释数字，不过，匹配会首先尝试查找具有相同技能值的玩家，然后定期以 +/- 10 的增量扩大搜索范围，以尝试查找其他在此技能附近范围内声明技能值的玩家。 以下示例假定本地 `xim_player` 对象（其指针为“localPlayer”）有一个关联的特定于应用的 uint32_t 技能值，该值从本地或 Xbox Live 存储检索到名为“playerSkillValue”的变量中：
 
 ```cpp
- xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
- playerMatchmakingConfiguration.skill = playerSkillValue;
+xim_player_roles_and_skill_configuration playerRolesAndSkillConfiguration = { 0 };
+playerRolesAndSkillConfiguration.skill = playerSkillValue;
 
- localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
+localPlayer->local()->set_roles_and_skill_configuration(&playerRolesAndSkillConfiguration);
 ```
 
-此操作完成时，会向所有参与者提供 `xim_player_matchmaking_configuration_changed_state_change`，以指示此 `xim_player` 已更改其按玩家匹配配置。 可通过调用 `xim_player::matchmaking_configuration()` 检索新值。 当所有玩家都应用非 null 匹配配置时，你可以将 `xim_matchmaking_configuration` 结构的 `require_player_matchmaking_configuration` 字段中的 true 值传递到 `xim::move_to_network_using_matchmaking()`，通过使用匹配来移动到 XIM 网络。
-
-下面的示例填充匹配配置，以便寻找共 2-8 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 uint64_t，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式。 这将配置匹配，将 XIM 网络的玩家与指定这些相同值的其他玩家相匹配，并且需要按玩家匹配配置。
+此操作完成时，会向所有参与者提供 `xim_player_roles_and_skill_configuration_changed_state_change`，以指示此 `xim_player` 已更改其按玩家角色和技能配置。 可通过调用 `xim_player::roles_and_skill_configuration()` 检索新值。 当所有玩家都应用非 null 角色和技能配置时，你可以使用匹配将其移动到 XIM 网络，并为 `xim::move_to_network_using_matchmaking()` 指定 `xim_matchmaking_configuration` 结构的 `require_player_roles_and_skill_configuration` 字段中的 true 值。 以下示例使用由 MYGAMEMODE_DEATHMATCH 值（该值仅与指定相同值、或需要按玩家角色和技能配置的其他玩家匹配）定义的特定于应用的游戏模式常量 uint64_t 填充匹配配置，此配置将为无团队自由竞赛寻找共 2-8 个玩家：
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 2;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 8;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
-matchmakingConfiguration.require_player_matchmaking_configuration = true;
+matchmakingConfiguration.require_player_roles_and_skill_configuration = true;
 ```
 
-为 `xim::move_to_network_using_matchmaking()` 提供此结构时，只要移动的玩家已通过非 null `xim_player_matchmaking_configuration` 指针调用 `xim_player::xim_local::set_matchmaking_configuration()`，移动操作将正常开始。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `xim_matchmaking_status::waiting_for_player_matchmaking_configuration` 的 `xim_matchmaking_progress_updated_state_change`。 这包括在匹配完成后，通过以前发送的邀请或通过其他社交方式（例如，调用 `xim::move_to_network_using_joinable_xbox_user_id`）加入 XIM 网络的玩家。 所有玩家都提供其 `xim_player_matchmaking_configuration` 结构后，匹配将会继续。
+为 `xim::move_to_network_using_matchmaking()` 提供此结构时，只要移动的玩家已通过非 null `xim_player_roles_and_skill_configuration` 指针调用 `xim_player::xim_local::set_roles_and_skill_configuration()`，移动操作将正常开始。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `xim_matchmaking_status::waiting_for_player_roles_and_skill_configuration` 的 `xim_matchmaking_progress_updated_state_change`。 这包括在匹配完成前，通过以前发送的邀请或通过其他方式（例如，调用 `xim::move_to_network_using_joinable_xbox_user_id()`）后续加入 XIM 网络的玩家。 所有玩家都提供其 `xim_player_roles_and_skill_configuration` 结构后，匹配将会继续。
 
-如下一节中所述，使用按玩家技能匹配也可以结合匹配用户按玩家角色使用。 如果只需要其中一个，你可以将另一个的值指定为 0。 这是因为声明 `xim_player_matchmaking_configuration` 技能值为 0 的所有玩家始终会彼此匹配。
+如下一节中所述，使用按玩家技能匹配也可以结合匹配用户按玩家角色使用。 如果只需要其中一个，你可以将另一个的值指定为 0。 这是因为声明 `xim_player_roles_and_skill_configuration` 技能值为 0 的所有玩家始终会彼此匹配。
 
-`xim::move_to_network_using_matchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `xim_player_matchmaking_configuration` 结构自动清理为 null 指针（附带 `xim_player_matchmaking_configuration_changed_state_change` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则你需要通过一个包含最新信息的新结构指针再次调用 `xim_player::xim_local::set_matchmaking_configuration()`。
+`xim::move_to_network_using_matchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `xim_player_roles_and_skill_configuration` 结构自动清理为 null 指针（附带 `xim_player_roles_and_skill_configuration_changed_state_change` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则你需要通过一个包含最新信息的新结构指针再次调用 `xim_player::xim_local::set_roles_and_skill_configuration()`。
 
 ## <a name="matchmaking-using-per-player-role"></a>使用按玩家角色匹配
 
-使用按玩家匹配配置改进用户的匹配体验的另一种方法是使用所需的玩家角色。 这非常适合提供可选角色类型的游戏，这些角色可以鼓励各种合作游戏风格。 这些角色类型不是单纯地改变游戏内图形表示形式，而是改变玩家的游戏风格。 用户可能想要以某个特长进行游戏。 但是，如果游戏设计为每个角色必须不少于一个玩家才能实际完成目标，有时需要先将这些玩家而非任意玩家匹配到一起，并在集合后要求其协商他们之间的游戏风格。 你可以通过先定义表示要在给定玩家的 `xim_player_matchmaking_configuration` 结构中指定的每个角色的唯一位标志来执行此操作。
+使用按玩家角色和技能配置改进用户匹配体验的另一种方法是使用所需的玩家角色。 这最适合于提供可选择的人物类型的游戏，这种类型可鼓励不同的合作游戏风格；即，这种类型不是仅更改游戏内的图形表示，而是控制互补、有影响力的特性（例如，防御性“医师”与近距离“格斗”与远“距离”攻击支持）。 用户的个性意味着他们可能想要以某个特长进行游戏。 但是，如果游戏设计为当没有至少一个履行每个角色的用户时，则在功能上不可能完成目标，有时，最好先将这些玩家匹配到一起，再将任意玩家匹配到一起，并在集合后要求其协商他们之间的游戏风格。 你可以通过先定义表示要在给定玩家的 `xim_player_roles_and_skill_configuration` 结构中指定的每个角色的唯一位标志来执行此操作。
 
-以下示例为本地 `xim_player` 对象（其指针为“localPlayer”）设置了特定于应用的角色值，其类型为 uint8_t，名称为 MYROLEBITFLAG_HEALER：
+以下示例为本地 xim_player 对象（其指针为 'localPlayer'）设置了特定于应用的 MYROLEBITFLAG_HEALER uint8_t 角色值：
 
 ```cpp
+xim_player_roles_and_skill_configuration playerRolesAndSkillConfiguration = { 0 };
+playerRolesAndSkillConfiguration.roles = MYROLEBITFLAG_HEALER;
 
-xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
-playerMatchmakingConfiguration.roles = MYROLEBITFLAG_HEALER;
-localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
-
+localPlayer->local()->set_roles_and_skill_configuration(&playerRolesAndSkillConfiguration);
 ```
 
-此操作完成时，会向所有参与者提供 `xim_player_matchmaking_configuration_changed_state_change`，以指示此 `xim_player` 已更改其按玩家匹配配置。 可通过调用 `xim_player::matchmaking_configuration()` 检索新值。
+此操作完成时，会向所有参与者提供 `xim_player_roles_and_skill_configuration_changed_state_change`，以指示此 `xim_player` 已更改其按玩家角色配置。 可通过调用 `xim_player::roles_and_skill_configuration()` 检索新值。
 
 指定给 `xim::move_to_network_using_matchmaking()` 的全局 `xim_matchmaking_configuration` 结构应使用按位 OR 和 require_player_matchmaking_configuration 字段的 true 值合并所有需要的角色标记。
 
-下面的示例填充匹配配置，以便寻找共 3 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 uint64_t，名为 MYGAMEMODE_COOPERATIVE，表示要筛除的游戏模式。 此外，将配置设置为需要按玩家匹配配置，其中至少一个玩家满足每个应用特定的 uint8_t 角色，这些角色均执行按位 OR 运算并被放置于配置（MYROLEBITFLAG_HEALER、MYROLEBITFLAG_MELEE 和 MYROLEBITFLAG_RANGE）中：
+下面的示例填充匹配配置，以便寻找共 3 个玩家参与无团队自由竞赛。 此外，此示例使用应用定义的常量，该常量的类型为 uint64_t，名为 MYGAMEMODE_COOPERATIVE，表示要筛除的游戏模式。 此外，将配置设置为需要按玩家角色和技能配置，其中至少一个玩家满足每个应用特定的 uint8_t 角色，这些角色均执行按位 OR 运算并被放置于配置（MYROLEBITFLAG_HEALER、MYROLEBITFLAG_MELEE 和 MYROLEBITFLAG_RANGE）中：
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_3_players_minimum_3;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 3;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 3;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_COOPERATIVE;
 matchmakingConfiguration.required_roles = MYROLEBITFLAG_HEALER | MYROLEBITFLAG_MELEE | MYROLEBITFLAG_RANGE;
-matchmakingConfiguration.require_player_matchmaking_configuration = true;
+matchmakingConfiguration.require_player_roles_and_skill_configuration = true;
 ```
 
 向 `xim::move_to_network_using_matchmaking()` 提供此结构时，将开始移动操作，如上所述。
 
-使用按玩家角色匹配也可以与按玩家技能匹配用户结合使用。 如果只需要其中一个，可将另一个的值指定为 0。 这是因为，所有声明其 `xim_player_matchmaking_configuration` 技能值为 0 的玩家始终互相匹配，如果 `xim_matchmaking_configuration` required_roles 字段中均为零位，则不需要角色位就能匹配。
+使用按玩家角色匹配也可以与按玩家技能匹配用户结合使用。 如果只需要其中一个，可将另一个的值指定为 0。 这是因为，所有声明其 `xim_player_roles_and_skill_configuration` 技能值为 0 的玩家始终互相匹配，如果 `xim_matchmaking_configuration` required_roles 字段中均为零位，则不需要角色位就能匹配。
 
-`xim::move_to_network_using_matchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `xim_player_matchmaking_configuration` 结构自动清理为 null 指针（附带 `xim_player_matchmaking_configuration_changed_state_change` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则你需要通过一个包含最新信息的新结构指针再次调用 `xim_player::xim_local::set_matchmaking_configuration()`。
+`xim::move_to_network_using_matchmaking()` 或其他 XIM 网络移动操作完成后，将把所有玩家的 `xim_player_roles_and_skill_configuration` 结构自动清理为 null 指针（附带 `xim_player_roles_and_skill_configuration_changed_state_change` 通知）。 如果你计划使用需要按玩家配置的匹配移动到另一个 XIM 网络，则你需要通过一个包含最新信息的新结构指针再次调用 `xim_player::xim_local::set_roles_and_skill_configuration()`。
 
 ## <a name="how-xim-works-with-player-teams"></a>XIM 如何与玩家团队配合工作
 
-多人游戏通常涉及到组织到对方团队的玩家。 通过使用在指定配置中请求两个或以上团队的 `xim_team_matchmaking_mode` 值，XIM 可轻松地在匹配时分配团队。 以下示例通过使用经过配置以寻找共 8 个玩家来编入两个 4 人团队（如果找不到 4 个玩家，1-3 个玩家也可接受）的匹配发起移动。 此外，此示例使用应用定义的常量，该常量的类型为 uint64_t，名为 MYGAMEMODE_CAPTURETHEFLAG，表示要筛除的游戏模式。  此外，配置设置为从当前 XIM 网络中带走所有以社交方式加入的玩家：
+多人游戏通常涉及到组织到对方团队的玩家。 XIM 可通过设置 `xim_team_configuration` 简化匹配时的团队分配。 以下示例通过使用经过配置以寻找共 8 个玩家来编入两个同样的 4 人团队（如果找不到 4 个玩家，1-3 个玩家也可接受）的匹配发起移动，方法是，使用特定于应用的游戏模式常量 uint64_t（该常量由仅与指定相同值的其他玩家匹配的值 MYGAMEMODE_CAPTURETHEFLAG 定义），并将当前 XIM 网络中的所有以社交方式加入的玩家聚到一起：
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = two_teams_4v4_minimum_1_per_team;
+matchmakingConfiguration.team_configuration.team_count = 2;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 1;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 4;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_CAPTURETHEFLAG;
 
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
 ```
 
-完成此 XIM 网络移动操作后，将通过 {n}（与请求的 {n} 个团队对应）为玩家分配团队索引值 1。 任何特定团队索引值的真实意义都取决于应用。 通过 `xim_player::team_index()` 检索玩家的团队索引值。 将 `xim_team_matchmaking_mode` 与两个或以上团队一起使用时，绝不会通过调用 `xim::move_to_network_using_matchmaking()` 来为玩家分配团队索引值 0。 这与通过任意其他移动操作配置或类型（例如通过接受邀请导致的协议激活）添加到 XIM 网络的玩家相反，他们将始终拥有 0 团队索引。 它可能有助于将团队索引 0 视为特殊的“未分配”团队。
+完成此 XIM 网络移动操作后，将通过 {n}（与请求的 {n} 个团队对应）为玩家分配团队索引值 1。 任何特定团队索引值的真实意义都取决于应用。 通过 `xim_player::team_index()` 检索玩家的团队索引值。 将 `xim_team_configuration` 与两个或以上团队一起使用时，绝不会通过调用 `xim::move_to_network_using_matchmaking()` 来为玩家分配团队索引值 0。 这与通过任意其他移动操作配置或类型（例如通过接受邀请导致的协议激活）添加到 XIM 网络的玩家相反，他们将始终拥有 0 团队索引。 它可能有助于将团队索引 0 视为特殊的“未分配”团队。
 
 以下示例检索 xim_player 对象（其指针位于“ximPlayer”变量中）的团队索引：
 
@@ -533,28 +542,97 @@ xim::singleton_instance().set_chat_targets(xim_chat_targets::all_players);
 
 ## <a name="automatic-background-filling-of-player-slots-backfill-matchmaking"></a>玩家空位的自动后台填充（“回填”匹配）
 
-同时调用 `xim::move_to_network_using_matchmaking()` 的不同玩家组会为 Xbox Live 匹配服务提供最大的灵活性，以便将玩家快速整理到最优的新 XIM 网络。 但是，某些游戏场景想要将某个 XIM 网络保持原样，只匹配其他玩家，仅仅是为了填充空白玩家空位。 XIM 支持使用 `xim::set_backfill_matchmaking_configuration()` 方法配置要在自动后台填充模式（或“回填”）下操作的匹配。
+同时调用 `xim::move_to_network_using_matchmaking()` 的不同玩家组会为 Xbox Live 匹配服务提供最大的灵活性，以便将玩家快速整理到最优的新 XIM 网络。 但是，某些游戏场景想要将某个 XIM 网络保持原样，只匹配其他玩家，仅仅是为了填充空白玩家空位。 XIM 通过以 `xim_network_configuration` （其 `xim_network_configuration::allowed_player_joins` 属性上设置了 `xim_allowed_player_joins::matchmade` 标志）调用 `xim::set_network_configuration()`，支持配置匹配以在自动背景填充（“回填”）模式下操作。
 
-下面的示例填充匹配配置，并配置回填匹配，以便尝试查找总共 8 个玩家进行无团队自由竞赛（如果找不到 8 个，2-7 个玩家也是可以接受的）。 此外，此示例使用应用定义的常量，该常量的类型为 uint64_t，名为 MYGAMEMODE_DEATHMATCH，表示要筛除的游戏模式：
-
-```cpp
- xim_matchmaking_configuration matchmakingConfiguration = { 0 };
- matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
- matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
-
- xim::singleton_instance().set_backfill_matchmaking_configuration(&matchmakingConfiguration);
-```
-
-这会使现有 XIM 网络适用于以正常方式调用 `xim::move_to_network_using_matchmaking()` 的设备。 这些设备不会看到任何行为更改。 回填 XIM 网络中的参与者不会移动，但会向其提供表明回填打开的 `xim_backfill_matchmaking_configuration_changed_state_change`，以及多个 `xim_matchmaking_progress_updated_state_change` 通知（如果适用）。 将使用正常的 `xim_player_joined_state_change` 将所有匹配的玩家添加到 XIM 网络。
-
-默认情况下，回填匹配会保持无限期启用，但它不会在 XIM 网络已经有由 `xim_team_matchmaking_mode` 值指定的最大玩家数时尝试添加玩家。 通过使用 null 指针调用 `xim::set_backfill_matchmaking_configuration()` 可禁用回填：
+以下示例使用特定于应用的游戏模式常量 uint64_t 配置了回填匹配，以尝试为无团队自由竞赛寻找共 8 个玩家（如果找不到 8 个玩家，2-7 个玩家也可接受），该常量由仅与指定相同值的其他玩家匹配的值 MYGAMEMODE_DEATHMATCH 定义：
 
 ```cpp
- xim::singleton_instance().set_backfill_matchmaking_configuration(nullptr);
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins |= xim_allowed_player_joins::matchmade;
+networkConfiguration.team_configuration.team_count = 1;
+networkConfiguration.team_configuration.min_player_count_per_team = 2;
+networkConfiguration.team_configuration.max_player_count_per_team = 8;
+networkConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
+
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-将向所有设备提供相应的 `xim_backfill_matchmaking_configuration_changed_state_change`，并且，完成此异步过程后，将提供最终 `xim_matchmaking_progress_updated_state_change` 和 `xim_matchmaking_status::none`，表明不会再向 XIM 网络提供任何匹配的玩家。
+这会使现有 XIM 网络适用于以正常方式调用 `xim::move_to_network_using_matchmaking()` 的设备。 这些设备不会看到任何行为更改。 回填 XIM 网络中的参与者不会移动，但会向其提供表明回填打开的 `xim_network_configuration_changed_state_change`，以及多个 `xim_matchmaking_progress_updated_state_change` 通知（如果适用）。 将使用正常的 `xim_player_joined_state_change` 将所有匹配的玩家添加到 XIM 网络。
 
-当通过声明两个或以上团队的 `xim_team_matchmaking_mode` 值启用回填匹配时，所有现有玩家的有效团队索引必须在 1 到团队数之间。 这包括调用 `xim_player::xim_local::set_team_index()` 来指定自定义值，或使用邀请或通过其他社交方式（例如，调用 `xim::move_to_network_using_joinable_xbox_user_id`）加入，并通过默认团队索引值 0 添加的玩家。 如果任意玩家没有有效的团队索引，则会暂停匹配过程，并为所有参与者提供值为 `xim_matchmaking_status::waiting_for_player_team_index` 的 `xim_matchmaking_progress_updated_state_change`。 在所有玩家通过 `xim_player::xim_local::set_team_index()` 提供或更正其团队索引值后，回填匹配将继续。 有关详细信息，请参阅本文档 [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)部分。
+默认情况下，回填匹配会保持无限期进行，但它不会在 XIM 网络已经有由 xim_team_configuration 设置指定的最大玩家数时尝试添加玩家。 可以通过设置 xim_allowed_player_joins 不允许匹配来禁用回填。 下面的示例通过以下方式禁用回填：清除 xim_allowed_player_joins::matchmade 标记，同时保留所有其他现有标记和网络配置设置。
 
-同样，当通过 `xim_matchmaking_configuration` 结构启用回填匹配，并将角色或技能的 require_player_matchmaking_configuration 字段设置为 true 时，所有玩家必须指定非 null 按玩家匹配配置。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `xim_matchmaking_status::waiting_for_player_matchmaking_configuration` 的 `xim_matchmaking_progress_updated_state_change`。 所有玩家都提供其 `xim_player_matchmaking_configuration` 结构后，回填将会继续。 有关详细信息，请参阅本文档[使用按玩家技能匹配](#matchmaking-using-per-player-skill)和[使用按玩家角色匹配](#matchmaking-using-per-player-role)部分。
+```cpp
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins &= ~xim_allowed_player_joins::matchmade;
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
+```
+
+将向所有设备提供相应的 `xim_network_configuration_changed_state_change`，并且，完成此异步过程后，将提供最终 `xim_matchmaking_progress_updated_state_change` 和 `xim_matchmaking_status::none`，表明不会再向 XIM 网络提供任何匹配的玩家。
+
+当通过声明两个或更多团队的 `xim_team_configuration` 设置启用回填匹配时，所有现有玩家的有效团队索引必须在 1 到团队数之间。 这包括调用 `xim_player::xim_local::set_team_index()` 来指定自定义值，或使用邀请或通过其他社交方式（例如，调用 `xim::move_to_network_using_joinable_xbox_user_id`）加入，并通过默认团队索引值 0 添加的玩家。 如果任意玩家没有有效的团队索引，则会暂停匹配过程，并为所有参与者提供值为 `xim_matchmaking_status::waiting_for_player_team_index` 的 `xim_matchmaking_progress_updated_state_change`。 在所有玩家通过 `xim_player::xim_local::set_team_index()` 提供或更正其团队索引值后，回填匹配将继续。 有关详细信息，请参阅本文档 [XIM 如何与玩家团队配合工作](#how-xim-works-with-player-teams)部分。
+
+同样，当通过 `xim_network_configuration` 结构启用回填匹配，并将角色或技能的 `require_player_roles_and_skill_configuration` 字段设置为 true 时，所有玩家必须指定非 null 按玩家匹配配置。 如果任意玩家未执行此操作，则会暂停匹配过程，并为所有参与者提供值为 `xim_matchmaking_status::waiting_for_player_roles_and_skill_configuration` 的 `xim_matchmaking_progress_updated_state_change`。 所有玩家都提供其 `xim_player_roles_and_skill_configuration` 结构后，回填将会继续。 有关详细信息，请参阅本文档[使用按玩家技能匹配](#matchmaking-using-per-player-skill)和[使用按玩家角色匹配](#matchmaking-using-per-player-role)部分。
+
+## <a name="querying-joinable-networks"></a>查询可加入的网络
+
+匹配是将玩家快速连接在一起的一种很好的方法，有时最好允许玩家通过使用自定义搜索条件发现可加入的网络，并选择他们希望加入的网络。 这在游戏会话可能有大量可配置游戏规则和玩家首选项时尤具优势。 为此，必须先将现有网络设置为可查询，方法是启用 `xim_allowed_player_joins::queried` 可加入性，并通过调用 `xim::set_network_configuration()` 配置可供网络外部的其他人访问的网络信息。
+
+下面的示例启用 `xim_allowed_player_joins::queried` 可加入性，设置以下网络配置：一个允许总共 1-8 位玩家加入 1 个团队的团队配置；一个特定于应用的游戏模式常量 uint64_t（由 GAME_MODE_BRAWL 值定义）；一个描述 "cat and sheep's boxing match"；一个特定于应用的地图索引常量 uint32_t（由 MAP_KITCHEN 值定义）；并包含三个标记 "chatrequired"、"easy"、"spectatorallowed"：
+
+```cpp
+PCWSTR tags[] = { L"chatrequired", L"easy", L"spectatorallowed" };
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins |= xim_allowed_player_joins::queried;
+networkConfiguration.team_configuration.team_count = 1;
+networkConfiguration.team_configuration.min_player_count_per_team = 1;
+networkConfiguration.team_configuration.max_player_count_per_team = 8;
+networkConfiguration.custom_game_mode = GAME_MODE_BRAWL;
+networkConfiguration.description = L"cat and sheep's boxing match";
+networkConfiguration.map_index = MAP_KITCHEN;
+networkConfiguration.tag_count = _countof(tags);
+networkConfiguration.tags = tags;
+
+xim::set_network_configuration(&networkConfiguration);
+```
+
+然后，网络外部的其他玩家可以通过一组与前面 `xim::set_network_configuration()` 调用中的网络信息匹配的筛选器来调用 `xim::start_joinable_network_query()`，从而找到该网络。 下面的示例启动一个可加入网络查询，其中的游戏模式筛选器选项将只查询使用由 GAME_MODE_BRAWL 值定义的应用特定游戏模式的网络：
+
+```cpp
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.custom_game_mode_filter = GAME_MODE_BRAWL;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+下面是另一个示例，它使用标记筛选器选项查询在公共可查询配置中包含 "easy" 和 "spectatorallowed" 标记的网络：
+
+```cpp
+PCWSTR tagFilters[] = { L"easy", L"spectatorallowed" };
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.tag_filter_count = _countof(tagFilters);
+queryFilters.tag_filters = tagFilters;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+可以结合使用不同的筛选器选项。 下面的示例同时使用游戏模式筛选器选项和标记筛选器选项启动一个查询，以查询既有应用特定游戏模式常量 GAME_MODE_BRAWL 又包含 "easy" 标记的网络：
+
+```cpp
+PCWSTR tagFilters[] = { L"easy" };
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.custom_game_mode_filter = GAME_MODE_BRAWL;
+queryFilters.tag_filter_count = _countof(tagFilters);
+queryFilters.tag_filters = tagFilters;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+如果查询操作成功，应用将收到一个 `xim_start_joinable_network_query_completed_state_change`，该应用可以从中检索可加入网络的列表。 该应用将会继续接收其他可加入网络的 `xim_joinable_network_query_updated_state_change` 或是返回的可加入网络列表发生的任何更改，直到手动或自动停止查询。 可以通过调用 `xim::stop_joinable_network_query()` 手动停止进行中的查询。 当调用 `xim::start_joinable_network_query()` 以启动新查询时，查询将自动停止。
+
+应用可以通过调用 `xim::move_to_network_using_joinable_network_information()` 尝试加入可加入网络列表中的网络。 下面的示例假定你想要加入 'selectedNetwork' 指针所指向的 `xim_joinable_network_information`（无密码保护，因此我们向第二个参数传入 nullptr）：
+
+```cpp
+xim::move_to_network_using_joinable_network_information(selectedNetwork, nullptr);
+```
+
+当通过 xim_team_configuration（声明了两个或更多团队）启用网络查询时，通过调用 `xim::move_to_network_using_joinable_network_information()` 加入的玩家将拥有默认团队索引值 0。

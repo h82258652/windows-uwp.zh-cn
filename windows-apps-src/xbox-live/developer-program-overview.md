@@ -4,17 +4,18 @@ author: KevinAsgari
 description: 了解可供使用 Xbox Live 的各种开发人员计划。
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
 ms.author: kevinasg
-ms.date: 12/13/2017
+ms.date: 5/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: low
-ms.openlocfilehash: 6d3aa30d711d903c287c395784540e9cdc6e20ed
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: dc839c6ebbb5dc754da84c5084cdff17b9aa0bb9
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935676"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
 
-如果你希望熟悉 Xbox Live 开发，最好将 Xbox Live 创意者计划作为使用 Xbox Live 的起点。 此计划无需经过 Microsoft 的审批流程即可加入，并且认证和发布要求也最低。 
+如果你希望熟悉 Xbox Live 开发，最好将 Xbox Live 创意者计划作为使用 Xbox Live 的起点。 此计划无需经过 Microsoft 的审批流程即可加入，并且认证和发布要求也最低。
 
 Xbox Live 创意者计划仅支持创建适用于[通用 Windows 平台](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide)(UWP) 的作品。  这些作为 UWP 游戏创建的作品可在 Windows 10 电脑和 Xbox One 主机上运行。  有关在 Xbox One 上运行 UWP 游戏的更多详细信息，请参阅 [Xbox One 上的 UWP](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index)。  
 
@@ -42,11 +43,11 @@ Xbox One 为玩家提供策展式 Microsoft Store 体验，玩家可以用 Xbox 
 ### <a name="supported-third-party-game-development-engines"></a>受支持的第三方游戏开发引擎
 Xbox Live 创意者计划作品是可以通过一些热门游戏引擎构建的 UWP 游戏。 Microsoft 提供了一个文档，介绍如何将 Xbox Live 服务集成到用 [Unity 游戏引擎](https://unity.com)构建的 UWP 游戏中。 你可以在本网站上找到详细介绍 Xbox Live 与 Unity 游戏集成的[文档](get-started-with-creators/develop-creators-title-with-unity.md)，还可以下载和了解 Microsoft 构建的 [Xbox Live Unity 插件](https://github.com/Microsoft/xbox-live-unity-plugin)。
 
-Xbox Live 创意者计划作品也可以使用游戏引擎 [Construct（2 和 3）](https://www.scirra.com/construct2)和 [Game Maker Studio](https://www.yoyogames.com/gamemaker) 构建。 这两个游戏引擎都增加了 Xbox Live 支持，但是，该支持由游戏引擎创建者而非 Microsoft 提供。 有关将 Xbox Live 添加到你的 Construct 或 Game Maker Studio 项目中的详细信息和支持，需要分别参阅每个游戏引擎文档。
+Xbox Live 创意者计划作品也可以使用游戏引擎 [Construct（2 和 3）](https://www.scirra.com/construct2)和 [GameMaker Studio 2](https://www.yoyogames.com/gamemaker) 构建。 这两个游戏引擎都增加了 Xbox Live 支持，但是，该支持由游戏引擎创建者而非 Microsoft 提供。 有关将 Xbox Live 添加到你的 Construct 或 GameMaker Studio 2 项目中的详细信息和支持，需要分别参阅每个游戏引擎文档。
 
 [了解如何将 Xbox Live 集成到 Construct 项目。](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
 
-[了解如何将 Xbox Live 集成到 Game Maker Studio 项目。](https://www.yoyogames.com/gamemaker/xblc)
+[了解如何将 Xbox Live 集成到 GameMaker Studio 2 项目。](https://www.yoyogames.com/gamemaker/xblc)
 
 对于不支持 Xbox Live 功能或插件的其他游戏开发引擎，如 [MonoGame](http://www.monogame.net/) 或 [Xenko](https://xenko.com/)，仍然可以使用 Xbox Live API 将 Xbox Live 添加到你的作品中。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
 
@@ -156,7 +157,7 @@ ID@Xbox 计划中的开发人员还可以获得 Microsoft 提供的开发人员�
 </tr>
 
 <tr>
-<td>Rich Presence</td>
+<td>完整状态</td>
 <td>显示与你的作品中的玩家有关的更多详细信息。  Basic Presence 可显示“用户正在玩赛车游戏”，而 Rich Presence 用于指定更详细的字符串，例如“用户正驾驶超级跑车穿越雨林”</td>
 <td class="xbl-features-required">必填</td>
 <td class="xbl-features-notavailable">不支持</td>

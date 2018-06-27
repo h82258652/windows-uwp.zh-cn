@@ -1,6 +1,6 @@
 ---
 title: 玩家统计数据
-author: StaceyHaffner
+author: KevinAsgari
 description: 了解如何在 Xbox Live 中设置玩家统计数据。
 ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
 ms.author: kevinasg
@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, 排行榜
 ms.localizationpriority: low
-ms.openlocfilehash: 252dd93c0382f19d0135345434ab197137add141
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: c3a6f5ec0cbe983d07bc98f5cf4fd7c92f10614c
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935608"
 ---
 # <a name="player-stats"></a>玩家统计数据
 
@@ -51,5 +52,3 @@ ms.lasthandoff: 02/24/2018
 ## <a name="next-steps"></a>后续步骤
 
 现在，你已配置了一些玩家统计数据和特别推荐的统计数据。 你可以随时创建排行榜。 请参阅[排行榜](leaderboards.md)以开始操作。
-
-

@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, stats 2017
 ms.localizationpriority: low
-ms.openlocfilehash: 36e0a8fe2b9909d2825462dcd56dfef6a97e7790
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: ebe10ba743cba6c26b9d2c4d0531296314c04e95
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862990"
 ---
 # <a name="updating-stats-2017"></a>更新 Stats 2017
 
@@ -24,8 +25,6 @@ ms.lasthandoff: 02/24/2018
 
 > **注意** 不要太频繁地刷新统计数据。  否则，你的作品将受到速率限制。  最佳做法是最多每 5 分钟刷新一次。
 
-如果你不刷新统计数据，则这些统计数据将由操作系统发送到该服务。  因此，即使玩家离开你的作品，并且统计数据更新暂停，你也可以确信，这些统计数据将被更新，并反映在所有相关排行榜或特别推荐的统计数据中。
-
 ### <a name="multiple-devices"></a>多台设备
 
 玩家可在多台设备上玩你的作品。  在这种情况下，你需要做些努力，让内容保持同步。
@@ -34,15 +33,12 @@ ms.lasthandoff: 02/24/2018
 
 为此，你可以采用下面几种方法：
 
-1. 在玩家启动你的作品或新会话时，通过 `StatsManager` 从 Xbox Live 中检索最新的统计数据。  在本地缓存这些值，并根据需要对其进行修改，然后再上传。
-2. 使用[连接存储](../storage-platform/connected-storage/connected-storage-technical-overview.md)存储它们。  通常，你可以使用连接存储来存储每个用户的保存数据。  对于给定用户，此数据将在不同设备之间保持同步。
-3. 如果你已经使用 Web 服务为你的作品执行辅助任务，请使用你自己的 Web 服务使统计数据保持同步。
+1. 使用[连接存储](../storage-platform/connected-storage/connected-storage-technical-overview.md)存储它们。  通常，你可以使用连接存储来存储每个用户的保存数据。  对于给定用户，此数据将在不同设备之间保持同步。
+2. 如果你已经使用 Web 服务为你的作品执行辅助任务，请使用你自己的 Web 服务使统计数据保持同步。
 
 ### <a name="offline"></a>脱机
 
-正如上文所述，即使你不刷新，操作系统也负责将事件同步到该服务。
-
-因此，即使玩家在没有 Internet 连接的情况下玩你的作品，你也不需要执行任何特殊的操作。
+如上所述，你的作品负责跟踪玩家统计数据，因此负责支持脱机场景。 
 
 ### <a name="examples"></a>示例
 
@@ -53,20 +49,18 @@ ms.lasthandoff: 02/24/2018
 你的作品应在用户的游戏会话期间跟踪其单圈时间。  仅当他们的单圈时间少于其以前最快时间时，你才需要更新统计数据管理器。
 
 你可以采用以下方式之一跟踪以前最佳时间：
-1. 在玩家启动作品时通过 `StatsManager` 从该服务中检索它。
-2. 使用连接存储从保存文件中执行此操作。
-3. 使用你自己的 Web 服务。
+1. 使用连接存储从保存文件中执行此操作。
+2. 使用你自己的 Web 服务。
 
 无论如何，该服务将替换统计数据值。  因此，即使你要使用大于以前最快时间的单圈时间更新，也将覆盖其以前最快时间。
 
-因此，请确保在你的作品中，你仅根据你的作品玩法方案发送正确的统计数据值。  在某些情况下，值越低可能就越好；在另一些情况下，值越高可能就越好，或完全是其他情况。
+因此，请确保在你的作品中，你仅根据你的游戏玩法方案发送正确的统计数据值。  在某些情况下，值越低可能就越好；在另一些情况下，值越高可能就越好，或完全是其他情况。
 
 ## <a name="programming-guide"></a>编程指南
 
 通常，统计数据的使用流程如下：
 
 1. 通过传入本地用户初始化 `StatsManager` API。
-1. 在游戏玩法会话启动时，从 Xbox Live 服务中检索最新的值。
 1. 当用户在你的作品中玩游戏时，请使用 `set_stat` 函数更新统计数据值。
 1. 这些统计数据更新将定期刷新并写入到 Xbox Live。  你还可以手动执行此操作。
 
@@ -90,7 +84,7 @@ statsManager->do_work();  // returns stat_event_type::local_user_added
 * `set_stat_integer` 整数。
 * `set_stat_string` 字符串。
 
-在调用这些函数时，统计数据更新将在设备上本地缓存。  这些更新将定期刷新到 Xbox Live。  即使用户退出作品。
+在调用这些函数时，统计数据更新将在设备上本地缓存。  这些更新将定期刷新到 Xbox Live。
 
 你可以选择通过 `stats_manager::request_flush_to_service` API 手动刷新统计数据。  请注意，如果你太频繁地调用此函数，则你将受到速率限制。  这并不意味着将不更新统计数据。  这只意味着超时到期时将会进行更新。
 

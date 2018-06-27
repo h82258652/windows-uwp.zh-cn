@@ -1,6 +1,6 @@
 ---
 title: 向 UWP 项目添加 Xbox Live API 二进制文件
-author: StaceyHaffner
+author: KevinAsgari
 description: 了解如何使用 NuGet 向 UWP 项目添加 Xbox Live API 二进制文件包。
 ms.assetid: 1e77ce9f-8a0e-402c-9f46-e37f9cda90ed
 ms.author: kevinasg
@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, nuget
 ms.localizationpriority: low
-ms.openlocfilehash: 2440fc0d0362820e9ca21caca4c09412ec6e87e3
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 9f274e26638ca2b37bdca778c50e6bf787b949f2
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935846"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>向 UWP 项目添加 Xbox Live API 二进制文件包
 
@@ -26,12 +27,12 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="add-the-binary-package-via-nuget"></a>通过 NuGet 添加二进制文件包
 
-要从项目使用 Xbox Live API，可以通过使用 NuGet 程序包添加对二进制文件的引用或添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。 本文将演示如何使用 NuGet 程序包。 如果要使用源，请参阅[在 UWP 项目中编译 Xbox Live API 源](add-xbox-live-apis-source-to-a-uwp-project.md)。 
+要从项目使用 Xbox Live API，可以通过使用 NuGet 程序包添加对二进制文件的引用或添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。 本文将演示如何使用 NuGet 程序包。 如果要使用源，请参阅[在 UWP 项目中编译 Xbox Live API 源](add-xbox-live-apis-source-to-a-uwp-project.md)。
 
-Xbox 服务 API 同时支持 UWP 和 XDK 以及 C++ 和 WinRT，它们的命名空间结构为 **Microsoft.Xbox.Live.SDK.*.UWP** 和 **Microsoft.Xbox.Live.SDK.*.XboxOneXDK**。 
+Xbox 服务 API 同时支持 UWP 和 XDK 以及 C++ 和 WinRT，它们的命名空间结构为 **Microsoft.Xbox.Live.SDK.*.UWP** 和 **Microsoft.Xbox.Live.SDK.*.XboxOneXDK**。
 
-1. **UWP** 适用于生成可在电脑、Xbox One 或 Windows Phone 上运行的 UWP 游戏的开发人员。 
-2. **XboxOneXDK** 适用于 ID@Xbox 和使用 Xbox One XDK 的托管开发人员。 
+1. **UWP** 适用于生成可在电脑、Xbox One 或 Windows Phone 上运行的 UWP 游戏的开发人员。
+2. **XboxOneXDK** 适用于 ID@Xbox 和使用 Xbox One XDK 的托管开发人员。
 3. C++ SDK 可用于 C++ 游戏引擎，而 WinRT SDK 用于以 C++、C# 或 JavaScript 编写的游戏引擎。
 4. 在将 WinRT 与 C++ 引擎结合使用时，应使用有乘幂号 (^) 的 C++/CX。 C++ 是建议用于 C++ 游戏引擎的 API。  
 
@@ -41,9 +42,9 @@ Xbox 服务 API 同时支持 UWP 和 XDK 以及 C++ 和 WinRT，它们的命名�
 可通过以下方式添加 Xbox Live SDK NuGet 程序包：
 
 1. 在 Visual Studio 中，转到**工具** > **NuGet 包管理器** > **管理解决方案的 NuGet 程序包...**。
-2. 在 NuGet 包管理器中，单击**浏览**并在搜索框中输入 **Xbox.Live.SDK**。 
-3. 从左侧列表中选择要使用的 Xbox Live SDK 版本。 
-3. 在窗口右侧，选中项目旁的复选框并单击**安装**。 
+2. 在 NuGet 包管理器中，单击**浏览**并在搜索框中输入 **Xbox.Live.SDK**。
+3. 从左侧列表中选择要使用的 Xbox Live SDK 版本。
+3. 在窗口右侧，选中项目旁的复选框并单击**安装**。
 
 > [!NOTE]
 > Xbox Live 创意者计划开发人员必须使用 Xbox Live SDK UWP 版本之一，因为 XDK 不受支持。
@@ -51,4 +52,4 @@ Xbox 服务 API 同时支持 UWP 和 XDK 以及 C++ 和 WinRT，它们的命名�
 ![通过 NuGet 添加 XBL](../images/getting_started/vs-add-nuget-xbl.gif)
 
 > [!IMPORTANT]
-> 对于基于 `Microsoft.Xbox.Live.SDK.Cpp.*` 的项目，请确保在项目的源中包含标头 `#include <xsapi\services.h>`。 
+> 对于基于 `Microsoft.Xbox.Live.SDK.Cpp.*` 的项目，请确保在项目的源中包含标头 `#include <xsapi\services.h>`。

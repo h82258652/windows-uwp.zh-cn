@@ -1,6 +1,6 @@
 ---
 title: Achievements 2017
-author: StaceyHaffner
+author: PhillipLucas
 description: 介绍如何在 Microsoft 开发人员中心配置成就以提供奖励。
 ms.assetid: ''
 ms.author: kevinasg
@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: low
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
-ms.openlocfilehash: 96db61ec7aed330bb22bbee49e4b571864c71f34
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: da6cba94a7f230941489a99408dd2e0c1f494250
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935794"
 ---
 # <a name="configure-achievements-2017-on-dev-center"></a>在开发人员中心上配置 Achievements 2017
 

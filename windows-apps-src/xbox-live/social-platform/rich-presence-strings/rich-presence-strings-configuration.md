@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: low
-ms.openlocfilehash: 2dc4e928d1b082c8d884f6c4c799595045438673
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 1fb60a2c98695eae1445017beb6736dc6a56dae8
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989288"
 ---
 # <a name="rich-presence-configuration"></a>“完整状态”配置
 
@@ -80,42 +81,41 @@ Xbox 开发人员门户 (XDP) 将有一个部分专门用于配置“完整状�
 枚举 | 相关统计信息 | 友好名称 | 区域设置 | 字符串
 ----------- | ----------------- | ------------- | ------ | ----
 地图 | CurrentMap | Map_Mountains | 默认 | 山脉
-    |            |               | zh | 山脉
- |  |  | zh-CN | 山脉
- |  |  | en-GB | Mountains
- |  |  |  de | Gebirge
- | |  | 等 |
- | | Map_Desert | 默认 | 沙漠
- |  ||  zh | 沙漠
- |  ||  zh-CN | 沙漠
- |  ||   en-GB | Desert
- |  ||  de | Wuste
- |  ||  等 |
-| |  Map_Beach | 默认 | 海滩
- ||    | zh | 海滩
- ||    | zh-CN | 海滩
- ||    | en-GB | Beach
- ||    | de | Strand
- | |   | 等 |
+ |  |  |  | zh | 山脉
+ |  |  |  | zh-CN | 山脉
+ |  |  |  | en-GB | Mountains
+ |  |  |  |  de | Gebirge
+ | |  |  | 等 |
+ | |  | Map_Desert | 默认 | 沙漠
+ |  ||  |  zh | 沙漠
+ |  ||  |  zh-CN | 沙漠
+ |  ||  |   en-GB | Desert
+ |  ||  |  de | Wuste
+ |  ||  |  等 |
+| |  |  Map_Beach | 默认 | 海滩
+ ||    |  | zh | 海滩
+ ||    |  | zh-CN | 海滩
+ ||    |  | en-GB | Beach
+ ||    |  | de | Strand
+ | |   |  | 等 |
 靴子 | CurrentWeapon | Boot_Light | 默认 | 轻薄
- |  ||  zh | 轻薄
- |  ||   zh-CN | 轻薄
- |  ||   en-GB | Light
- |  ||   de | Leicht
- |  ||   等  |
- |  | Boot_Medium | 默认 | 中等
- |  |  | zh | 中等
- |  |  | zh-CN | 中等
- |  |  | en-GB | Medium
- |  |  | de | Mittel
- |  |  | 等 |
- |  | Boot_Strong | 默认 | 坚固
- |  |  | zh | 坚固
- |  |  | zh-CN | 坚固
- |  |  | en-GB | Strong
- |  |  | de | Stark
- |  ||  | 等
-等 | | | |
+ |  ||  |  zh | 轻薄
+ |  ||  |   zh-CN | 轻薄
+ |  ||  |   en-GB | Light
+ |  ||  |   de | Leicht
+ |  ||  |   等  |
+ |  | |  Boot_Medium | 默认 | 中等
+ |  |  |  | zh | 中等
+ |  |  |  | zh-CN | 中等
+ |  |  |  | en-GB | Medium
+ |  |  |  | de | Mittel
+ |  |  |  | 等 |
+ |  | |  Boot_Strong | 默认 | 坚固
+ |  |  |  | zh | 坚固
+ |  |  |  | zh-CN | 坚固
+ |  |  |  | en-GB | Strong
+ |  |  |  | de | Stark
+ |  ||  | 其他
 
 ## <a name="string-configuration-example"></a>字符串配置示例
 
@@ -131,24 +131,24 @@ Xbox 开发人员门户 (XDP) 将有一个部分专门用于配置“完整状�
 
 友好名称 | 区域设置 | 字符串 | 参数
 --- | --- | --- | ---
-playingMap | 默认 | 在地图:{0} 中玩 | CurrentMap
- | zh | 在地图:{0} 中玩 |
- | zh-CN | 在地图:{0} 中玩 |
- | en-GB | Playing on map:{0} |
- | de | Spielt auf Karte: {0} |
- | 等 | |
-totalKicked | 默认 | 踢了 {0} 个桶！ | BucketsKicked
- | zh | 踢了 {0} 个桶！ |
- | zh-CN | 踢了 {0} 个桶！ |
- | en-GB | Kicked {0} Buckets! |
- | de | {0} Eimer getreten! |
- | 等 | |
+playingMap | 默认值 | Playing on map:{0} | CurrentMap
+ |  | en | Playing on map:{0} |
+ |  | en-US | Playing on map:{0} |
+ |  | en-GB | Playing on map:{0} |
+ |  | de | Spielt auf Karte: {0} |
+ |  | 其他 | |
+totalKicked | 默认值 | Kicked {0} Buckets! | BucketsKicked
+ |  | en | Kicked {0} Buckets! |
+ |  | en-US | Kicked {0} Buckets! |
+ |  | en-GB | Kicked {0} Buckets! |
+ |  | de | {0} Eimer getreten! |
+ |  | 其他 | |
 多人游戏 | 默认 | 玩多人游戏 |
- | zh | 玩多人游戏 |
- | zh-CN | 玩多人游戏 |
- | en-GB | Playing multiplayer |
- | de | Spielt Mehrspieler |
- | 等 | | 
+ |  | zh | 玩多人游戏 |
+ |  | zh-CN | 玩多人游戏 |
+ |  | en-GB | Playing multiplayer |
+ |  | de | Spielt Mehrspieler |
+ |  | 等 | 
 
 对于可以创建多少个字符串没有限制，但必须至少为标题创建一个字符串。
 
