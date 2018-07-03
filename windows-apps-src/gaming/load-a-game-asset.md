@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, 加载资源
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cd2ca426f5a73a6cf8953ab599f8a7332be43a4
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655609"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983550"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
 
 
-大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。 下面，让我们看一看在通用 Windows 平台 (UWP) 游戏中加载要使用的这些文件时必须考虑的一个高级视图。
+大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。 下面，让我们看一看在 DirectX C/C++ 通用 Windows 平台 (UWP) 游戏中加载要使用的这些文件时必须考虑的一个高级视图。
 
 例如，游戏中的多边形对象网格可能是使用其他工具创建的，并且已导出为某个特定格式。 纹理等也是一样：尽管大多数工具通常可以编写平面的未压缩的位图并且大多数图形 API 都可以理解，但这对于在游戏中的使用来说还远远不够。 下面我们将指导你完成加载三个不同类型的图形资源以便用于 Direct3D 的基本步骤：网格（模型）、纹理（位图）以及编译的着色器对象。
 

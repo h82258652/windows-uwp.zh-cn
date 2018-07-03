@@ -6,18 +6,18 @@ title: 辅助功能测试
 label: Accessibility testing
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 02/08/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b059a3088f3f8f9491cb3cccfdddee0a3eeb707
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 02ba4a94bdca7ae9964cc40e7aba40f72beb5429
+ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655216"
+ms.lasthandoff: 05/28/2018
+ms.locfileid: "1924350"
 ---
 # <a name="accessibility-testing"></a>辅助功能测试  
 
@@ -30,7 +30,9 @@ ms.locfileid: "1655216"
 Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例如 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)。 这些工具可帮助你验证应用的辅助功能。 确保验证所有应用方案和 UI 元素。
 
 可从 Microsoft Visual Studio 命令提示符或从 Windows SDK 工具文件夹（你的开发计算机上安装 Windows SDK 的 bin 子目录）启动辅助功能测试工具。
-
+  
+> [!VIDEO https://www.youtube.com/embed/ce0hKQfY9B8]
+  
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>

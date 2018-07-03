@@ -4,18 +4,18 @@ ms.assetid: BAC79A64-445D-4702-8E96-7727FF180245
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的 Windows 10 驱动程序聚合错误报告数据。 此方法仅用于 IHV。
 title: 获取 Windows 10 驱动程序的错误报告数据
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 9590c307cbbb45c4f177704d1cd4cd3d22e03c7d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: e87a836c08f29e1e7279c19566ead8a8d7e36453
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663387"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989401"
 ---
 # <a name="get-error-reporting-data-for-windows-10-drivers"></a>获取 Windows 10 驱动程序的错误报告数据
 
@@ -43,7 +43,7 @@ ms.locfileid: "1663387"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | 值      | array   | 包含聚合错误报告数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。     |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的错误超过 10000 行时，就会返回此值。 |
-| TotalCount | inumber | 查询的数据结果中的行总数。     |
+| TotalCount | 整数 | 查询的数据结果中的行总数。     |
 
 
 *Value* 数组中的元素包含以下值。
@@ -108,7 +108,7 @@ Authorization: Bearer <your access token>
 | oemName | 字符串 | 发生错误的设备的 OEM 名称。 |
 | oemModel | 字符串 | 发生错误的设备型号的名称。 |
 | flightRing | 字符串 | 发生错误的操作系统外部测试版的名称。 |
-| eventCount      | inumber | 归因于指定聚合级别的该错误的事件数目。      |
+| eventCount      | 整数 | 归因于指定聚合级别的该错误的事件数目。      |
 
 
 ### <a name="response-example"></a>回复示例

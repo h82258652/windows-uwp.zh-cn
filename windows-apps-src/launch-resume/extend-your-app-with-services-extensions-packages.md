@@ -3,39 +3,41 @@ author: TylerMSFT
 title: 用服务、扩展和包扩展应用
 description: 了解如何创建在通用 Windows 平台 (UWP) 应用商店应用更新时运行的后台任务。
 ms.author: twhitney
-ms.date: 05/21/2017
+ms.date: 05/7/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 扩展, 组件化, 应用服务, 包, 扩展
 ms.localizationpriority: medium
-ms.openlocfilehash: 2721f9d8f768cabb0e07c0cd2cfcfcbf9255cd70
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 6920b448146f25433335234ec67fde473e096cbd
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689613"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843650"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>用服务、扩展和包扩展应用
 
 Windows 10 中有不同的技术可以帮助你扩展应用和实现应用组件化。 此表可帮助你确定对你的方案使用哪种技术。 后面是方案和技术的简要说明。
 
+| 方案                           | 资源包   | 资产包      | 可选包   | 平面捆绑包        | 应用扩展      | 应用服务        | 流式安装  |
+|------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
+| 第三方代码插件            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
+| 进程内代码插件              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
+| UX 资产（字符串/映像）         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| 按需内容 <br/> （例如其他级别） |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| 单独许可和购买 |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
+| 应用内购买                 |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    |
+| 优化安装时间              | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| 减少磁盘占用空间              | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    |                    |                    |
+| 优化打包                 |                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |
+| 缩短发布时间             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |
 
-| 方案                           | 资源包 | 可选包 | 应用扩展    | 应用服务      | 流式安装 |
-|------------------------------------|:----------------:|:----------------:|:----------------:|:----------------:|:-----------------:|
-| 第三方代码插件            |                  |                  | :heavy_check_mark: |                  |                   |
-| 进程内代码插件              |                  | :heavy_check_mark: |                  |                  |                   |
-| UX 资产（字符串/映像）         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                  | :heavy_check_mark: |
-| 按需内容 <br/> （例如其他级别） |    | :heavy_check_mark: | :heavy_check_mark: |                  | :heavy_check_mark: |
-| 单独许可和购买 |                  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                   |
-| 应用内购买                 |                  | :heavy_check_mark: | :heavy_check_mark: |                  |                   |
-| 优化安装时间              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                  | :heavy_check_mark: |
-
-## <a name="scenario-descriptions-rows-in-the-table"></a>方案说明（表中的行）
+## <a name="scenario-descriptions-the-rows-in-the-table-above"></a>方案说明（上表中的行）
 
 **第三方插件**  
 
-你可以从应用商店下载并从应用内运行的代码。 例如，Microsoft Edge 浏览器的扩展。
+你可以从 Microsoft Store 下载并从应用内运行的代码。 例如，Microsoft Edge 浏览器的扩展。
 
 **进程内代码插件**  
 
@@ -59,17 +61,28 @@ Windows 10 中有不同的技术可以帮助你扩展应用和实现应用组件
 
 **优化安装时间**
 
-提供功能用于减少从应用商店获取应用并开始运行所需的时间。
+提供功能用于减少从 Microsoft Store 获取应用并开始运行所需的时间。
 
-## <a name="technology-descriptions-columns-in-the-table"></a>技术说明（表中的列）
+**减少磁盘占用空间** 通过只包含必要的应用或资源来减少应用大小。
+
+**优化打包** 优化大型或复杂应用的应用打包过程。
+
+**缩短发布时间** 最大限度减少在 Microsoft Store、本地共享或 Web 服务器中发布应用所需的时间。
+
+## <a name="technology-descriptions-the-columns-in-the-table-above"></a>技术说明（上表中的列）
 
 **资源包**
 
 资源包是仅资产包，使你的应用能够适应多个屏幕大小和系统语言。 资源包面向用户语言、系统规模和 DirectX 功能，使应用可根据多种用户方案进行定制。 尽管应用包可以包含若干资源，但操作系统只根据用户设备下载相关资源，从而节省带宽和磁盘空间。
 
+**资产包** 资产包是应用使用的可执行文件或非可执行文件的公用集中源。 这些通常是非处理器或语言特定的文件。 例如，可以在一个资产包中包含一系列图片，在另一个资产包中包含视频，两种资产都由同一个应用使用。 例如，可以在一个资产包中包含一系列图片，在另一个资产包中包含视频。 如果应用支持多种体系结构和多种语言，则可以将这些资产包含在体系结构包或资源包中，但这也意味着资产将在不同的体系结构包中重复包含多次，占用更多的磁盘空间。 如果使用资产包，则只需将其包含在整个应用包中一次。 有关详细信息，请参阅[资产包简介](../packaging/asset-packages.md)。
+
 **可选包**
 
 可选包用于补充或扩展应用包的原始功能。 可先发布应用，晚些时候再发布可选包，或同时发布应用和可选包。 通过可选包来扩展应用，你将拥有将内容作为单独的应用包来分发和盈利的优势。 可选包通常由原始应用开发人员来开发，因为它们用主应用的标识来运行（与应用扩展不同）。 根据定义可选包的方式，你可以从可选包向主应用中加载代码、资产或代码和资产。 如果你要通过可以单独盈利、许可和分发的内容来增强应用，那么可选包是你的正确选择。 有关实现详细信息，请参阅[可选包和相关集创作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)。
+
+**平面捆绑包**
+[平面捆绑应用包](../packaging/flat-bundles.md)与常规应用程序包相似，不同之处在于平面捆绑包不在文件夹中包含所有应用包，而是只包含这些应用包的*引用*。 由于平面捆绑包包含应用包的引用而不是文件本身，因而可减少打包和下载应用所需的时间。
 
 **应用扩展**
 
@@ -92,7 +105,11 @@ Windows 应用服务通过允许 UWP 应用向其他通用 Windows 应用提供�
 ## <a name="see-also"></a>另请参阅
 
 [创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
-[可选包和相关的集创作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
-[Windows.ApplicationModel.Extensions 命名空间](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  
+[资产包简介](../packaging/asset-packages.md)  
+[使用包布局创建包](../packaging/packaging-layout.md)  
+[可选包和相关集创作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
+[用资产包和包折叠进行开发](../packaging/package-folding.md)  
 [UWP 应用流式安装](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
-[Windows.ApplicationModel.AppService 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)    
+[平面捆绑应用包](../packaging/flat-bundles.md)  
+[Windows.ApplicationModel.AppService 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
+[Windows.ApplicationModel.Extensions 命名空间](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  

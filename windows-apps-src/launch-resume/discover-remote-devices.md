@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b30e9fe2fb4f3bfbec81366a920cd74a19dcec
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673874"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018491"
 ---
 # <a name="discover-remote-devices"></a>发现远程设备
 你的应用可以使用无线网络、蓝牙和云连接来发现使用发现设备的相同 Microsoft 帐户登录的 Windows 设备。 无需安装任何特殊软件，即可发现远程设备。
@@ -33,9 +33,12 @@ ms.locfileid: "1673874"
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-> [!TIP]
+> [!NOTE]
 > “proximal”筛选器值不能保证位置邻近的程度。 对于需要可靠的位置邻近的情形，请在你的筛选器中使用值 [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype)。 当前，此筛选器只允许通过蓝牙发现的设备。 当支持新发现机制和保证位置邻近的协议时，此处也会将其包括进来。  
 [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) 类中还有一个属性用于指示已发现的设备是否实际处于邻近位置：[**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity)。
+
+> [!NOTE]
+> 如果打算通过本地网络发现设备（由发现类型筛选条件选择决定），则网络需要使用“私有”或“域”配置文件。 你的设备不会通过“公共”网络发现其他设备。
 
 创建 [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) 对象列表后，可以将其传入 **RemoteSystemWatcher** 的构造函数。
 
@@ -65,9 +68,6 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 ```
 
 ## <a name="cross-user-discovery"></a>跨用户发现
-
-> [!WARNING]
-> 本部分中的功能当前对开发人员不可用。
 
 开发人员可以指定发现邻近客户端设备的_所有_设备，而不仅仅是已向同一用户注册的设备。 这是通过特殊的 **IRemoteSystemFilter** - [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter) 来实现的。 其实现与其他筛选器类型相似：
 

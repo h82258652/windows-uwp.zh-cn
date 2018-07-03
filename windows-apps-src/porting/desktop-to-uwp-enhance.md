@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dc29758a4622f810a02e7e5bb0ec117e4dbc2a
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: aafe2d09fc27a2693ccf2c4c9d8f189aa0164a3c
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638551"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976505"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
@@ -54,16 +54,14 @@ ms.locfileid: "1638551"
 
 在 **C/C++** 设置组的**常规**设置中，将**使用 Windows 运行时扩展**字段设置为**是 (/ZW)**。
 
-   ![使用 Windows 运行时扩展](images/desktop-to-uwp/enable-winrt-objects.png)
+   ![使用 Windows 运行时扩展](images/desktop-to-uwp/consume-runtime-extensions.png)
 
 打开**其他 #using 目录**对话框，并添加这些目录。
 
-* C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcpackages
+* %VSInstallDir%\Common7\IDE\VC\vcpackages
 * C:\Program Files (x86)\Windows Kits\10\UnionMetadata
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*最新版本*>
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*最新版本*>
-
-![其他 using 目录](images/desktop-to-uwp/additional-using.png)
 
 打开**附加包含目录**对话框，并添加此目录：C:\Program Files (x86)\Windows Kits\10\Include\<*最新版本*>\um
 

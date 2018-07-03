@@ -10,21 +10,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e119a161d054a88665494d76b03a3c5fd8f331d1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: d6590b9bfa036211e8f5c771ef8a37ce59644786
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656152"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862176"
 ---
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 
+应用服务是可向其他 UWP 应用提供服务的 UWP 应用。 它们与设备上的 Web 服务类似。 应用服务作为后台任务在主机应用中运行，并可向其他应用提供其服务。 例如，应用服务可能会提供其他应用可能使用的条形码扫描仪服务。 应用的企业套件中可能有一个通用的拼写检查应用服务，该服务可供套件中的其他应用使用。  应用服务允许你创建应用可在同一设备上调用的无 UI 服务，从 Windows 10 版本 1607 开始，应用可在远程设备上调用这些服务。 
 
-了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用该服务。
+从 Windows10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要介绍如何在单独后台进程中创建和使用应用服务。 有关在提供程序所在的同一进程中运行应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
 
-从 Windows10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要就创建在单独后台进程中运行的应用服务进行介绍。 有关在提供程序所在的同一进程中运行应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
-
-有关更多应用服务示例，请参阅[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)。
+有关应用服务代码示例，请参阅[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)。
 
 ## <a name="create-a-new-app-service-provider-project"></a>创建新的应用服务提供程序项目
 

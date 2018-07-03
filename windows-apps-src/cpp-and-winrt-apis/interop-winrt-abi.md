@@ -3,30 +3,32 @@ author: stevewhims
 description: 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。
 title: 实现 C++/WinRT 与 ABI 之间的互操作
 ms.author: stwhi
-ms.date: 05/01/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f9f557134e69c396ed63ace3474325856c6cd0
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: af9c14043fdfcc10828f87e8c954430f8f587412
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832040"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912895"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>实现 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 与 ABI 之间的互操作
-本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
+本主题介绍了如何在 SDK 应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
 
-## <a name="what-are-windows-runtime-abi-types"></a>Windows 运行时 ABI 类型有哪些？
-文件夹“%WindowsSdkDir%Include\10.0.17134.0\winrt”（必要时根据情况调整 SDK 版本号）中的 Windows SDK 标头是 Windows 运行时 ABI 标头文件。 它们由 MIDL 编译器生成。 下面是包含这些标头之一的示例。
+## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>什么是 Windows 运行时 ABI？什么是 ABI 类型？
+Windows 运行时类（运行时类）实际上是一种抽象。 这种抽象定义了一个二进制接口（应用程序二进制接口，或 ABI），它允许各种编程语言与一个对象进行交互。 不管使用何种编程语言，客户端代码与 Windows 运行时对象的交互发生在最低级别，在此客户端语言构造被转换为对象的 ABI 调用。
+
+文件夹“%WindowsSdkDir%Include\10.0.17134.0\winrt”（必要时根据情况调整 SDK 版本号）中的 Windows SDK 头文件是 Windows 运行时 ABI 头文件。 它们由 MIDL 编译器生成。 下面是包含这些标头之一的示例。
 
 ```
 #include <windows.foundation.h>
 ```
 
-下面是你将在该特定标头发现的 ABI 类型之一的简化示例。
+下面是你将在该特定 SDK 头文件发现的 ABI 类型之一的简化示例。 注意，**ABI** 命名空间、**Windows::Foundation** 和所有其他 Windows 命名空间由 **ABI** 命名空间中的 SDK 头文件声明。
 
 ```
 namespace ABI::Windows::Foundation
@@ -65,8 +67,10 @@ namespace winrt::Windows::Foundation
 
 此处的接口是新式标准 C++。 它去掉了 **HRESULT**（必要时，C++/WinRT 将引发异常）。 此外，访问器函数返回了一个简单字符串对象，该对象在其作用域的末端被清除。
 
+本主题适用于希望与在应用程序二进制接口 (ABI) 层工作的代码进行互操作或进行移植的情况。
+
 ## <a name="converting-to-and-from-abi-types-in-code"></a>在代码中转换到/自 ABI 类型
-为安全和简单起见，对于两个方向的转换，你都可以使用 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)、[**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) 和 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 下面是代码示例（基于**控制台应用**项目模板），该示例说明了如何处理投影与 ABI 之间的命名空间冲突。
+为安全和简单起见，对于两个方向的转换，你都可以使用 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)、[**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) 和 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 下面是代码示例（基于**控制台应用**项目模板），该示例说明了如何使用不同岛的命名空间别名处理 C++/WinRT 投影与 ABI 之间潜在的命名空间冲突。
 
 ```cppwinrt
 // main.cpp
@@ -88,7 +92,7 @@ namespace abi
 int main()
 {
     winrt::init_apartment();
-    
+
     winrt::Uri uri(L"http://aka.ms/cppwinrt");
 
     // Convert to an ABI type.
@@ -124,11 +128,11 @@ int main()
 
 ```cppwinrt
     ...
-    
+
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning = nullptr;
     winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
-    
+
     // Copy from a raw ABI pointer.
     uri = nullptr;
     winrt::copy_from_abi(uri, owning);
@@ -139,13 +143,13 @@ int main()
 
 ```cppwinrt
     ...
-    
+
     // Lowest-level conversions that only copy addresses
-    
+
     // Convert to a non-owning ABI object with get_abi.
     abi::IStringable* non_owning = static_cast<abi::IStringable*>(winrt::get_abi(uri));
     WINRT_ASSERT(non_owning);
-    
+
     // Avoid interlocks this way.
     owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
     WINRT_ASSERT(!uri);

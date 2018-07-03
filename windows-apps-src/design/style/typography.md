@@ -9,16 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd5e6f3dbddca2f6a944ee18e32463afe029f89
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816772"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843367"
 ---
 # <a name="typography"></a>版式
 
-![板式标头图像](images/type/header-typography.svg)
+![主图](images/header-typography.svg)
 
 作为语言的视觉表示形式，版式的主要任务是传达信息。 它的样式应永远不妨碍该目标。 本文介绍如何在 UWP 应用中设计版式以帮助用户轻松高效地了解内容。
 

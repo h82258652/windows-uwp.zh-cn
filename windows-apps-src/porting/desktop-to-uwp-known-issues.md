@@ -4,19 +4,19 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: 已知问题（桌面桥）
 ms.author: normesta
-ms.date: 07/18/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e5ffddfa1c5005bb640baeafed7023ebdd74a3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662847"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905378"
 ---
 # <a name="known-issues-desktop-bridge"></a>已知问题（桌面桥）
 
@@ -97,7 +97,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 
 如果更新未解决问题或者你不确定如何恢复电脑，请联系 [Microsoft 支持](https://support.microsoft.com/contactus/)。
 
-如果你是开发人员，你可能希望阻止在不包含此更新的 Windows 版本上安装桌面桥应用。 请注意，通过执行此操作，应用将对尚未安装该更新的用户不可用。 若要限制应用对已安装此更新的用户的可用性，请修改 AppxManifest.xml 文件，如下所示：
+如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，应用将对尚未安装该更新的用户不可用。 若要限制应用对已安装此更新的用户的可用性，请修改 AppxManifest.xml 文件，如下所示：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 

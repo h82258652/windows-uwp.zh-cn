@@ -3,18 +3,18 @@ author: normesta
 title: 在 UWP 应用中使用 SQLite 数据库
 description: 在 UWP 应用中使用 SQLite 数据库。
 ms.author: normesta
-ms.date: 11/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: d10347bb1bd2eb33bfc58a7bc09b6eb5d1ac7a58
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 01cac3c1b8c18e968c35acb01b3d3918d9efe60d
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663617"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018593"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 你可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
@@ -145,13 +145,13 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ![数据访问类库](images/ref-class-library.png)
 
-在你的 UWP 项目中，将以下 ``using`` 语句添加到 **App.xaml.cs** 和 **MainPage.xaml** 文件。
+在 UWP 项目中，将以下 ``using`` 语句添加到 **App.xaml.cs** 和 **MainPage.xaml.cs** 文件。
 
 ```csharp
 using DataAccessLibrary;
 ```
 
-在你的 **DataAccessLibrary** 解决方案中打开 **DataAccess** 类并将该类设为静态。
+在 **DataAccessLibrary** 解决方案中打开 **DataAccess** 类并将其设为静态。
 
 >[!NOTE]
 >尽管我们的示例将数据访问代码放在静态类中，但这只是一个设计选择，并且是全凭自愿。
@@ -188,7 +188,7 @@ public static void InitializeDatabase()
         db.Open();
 
         String tableCommand = "CREATE TABLE IF NOT " +
-            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, " +
             "Text_Entry NVARCHAR(2048) NULL)";
 
         SqliteCommand createTable = new SqliteCommand(tableCommand, db);

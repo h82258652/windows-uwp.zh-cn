@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, windows, 机器学习
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aea463503c53d7533354412e5840f94619fd056
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 49af45236d262f682c5f5f28e57120c0bb209e81
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689363"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842684"
 ---
 # <a name="windows-ml-samples"></a>Windows ML 示例
 
@@ -30,4 +30,4 @@ ms.locfileid: "1689363"
 
 ## <a name="windows-machine-learning-explorer"></a>Windows 机器学习资源管理器
 
-[此示例](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer)是一个通用数据驱动型应用程序，引导可从图片或实时相机源中检测电路板中缺陷的 ML 模型。 您可以在博客文章[三行代码和 Windows 机器学习如何使得 .NET 开发人员能够在 Windows 10 设备本地运行 AI](https://aka.ms/winmlfordevsblog) 中进行更详细的了解。 
+[此示例](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer)是一个通用数据驱动型应用程序，引导可从图片或实时相机源中检测电路板中缺陷的 ML 模型。 您可以在博客文章[三行代码和 Windows 机器学习如何使得 .NET 开发人员能够在 Windows 10 设备本地运行 AI](https://aka.ms/winmlfordevsblog) 中进行更详细的了解。

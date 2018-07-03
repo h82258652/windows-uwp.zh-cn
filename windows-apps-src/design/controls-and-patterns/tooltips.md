@@ -16,22 +16,20 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b60b06d9dbe8c0eb6216c2c909cc5184855056d5
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: dfd702f9ba6e28e1902ea8e595287ba10b46f4bb
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493604"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895279"
 ---
 # <a name="tooltips"></a>工具提示
- 
 
 工具提示是链接到另一个控件或对象的简短描述。 工具提示可帮助用户了解未在 UI 中直接描述的不熟悉的对象。 它们会在用户将焦点移动到控件、长按控件或将鼠标指针停在控件上时自动显示。 几秒钟后或者当用户移动手指、指针或键盘/游戏板焦点时，工具提示将消失。
 
 ![工具提示](images/controls/tool-tip.png)
 
-> **重要 API**:[工具提示类](https://msdn.microsoft.com/library/windows/apps/br227608)，[ToolTipService 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
-
+> **重要 API**:[工具提示类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)，[ToolTipService 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -39,25 +37,25 @@ ms.locfileid: "1493604"
 
 应在何时使用工具提示？ 在决定之前，请考虑以下问题：
 
--   **信息是否应当基于指针悬停显示？**
+- **信息是否应当基于指针悬停显示？**
     如果不是，请使用其他控件。 仅在与用户交互时显示提示，工具提示从来不会自行显示。
 
--   **控件是否有文本标签？**
+- **控件是否有文本标签？**
     如果没有，请使用工具提示提供标签。 比较好的 UX 设计做法是以内联方式为大多数控件添加标签，对于这些控件，你不需要使用工具提示。 仅显示图标的工具栏控件和命令按钮需要工具提示。
 
--   **对象是否受益于相关说明或更详细的信息？**
+- **对象是否受益于相关说明或更详细的信息？**
     如果是，请使用工具提示。 但是，文本必须是补充性的文本，也就是说不是主要任务必需的文本。 如果是必需的文本，请将它直接放在 UI 中，这样用户便不必查找或搜寻它。
 
--   **补充信息是否为错误、警告或状态？**
+- **补充信息是否为错误、警告或状态？**
     如果是，请使用其他 UI 元素（如弹出窗口）。
 
--   **用户是否需要与提示进行交互？**
+- **用户是否需要与提示进行交互？**
     如果是，请使用其他控件。 用户不能与提示进行交互，因为移动鼠标会导致提示消失。
 
--   **用户是否需要打印补充信息？**
+- **用户是否需要打印补充信息？**
     如果是，请使用其他控件。
 
--   **用户是否会觉得提示令人厌烦或者让人分心？**
+- **用户是否会觉得提示令人厌烦或者让人分心？**
     如果是，请考虑使用其他解决方案（包括不执行任何操作）。 如果你的确使用了可能会让人分心的提示，请允许用户关闭它们。
 
 ## <a name="example"></a>示例
@@ -79,6 +77,56 @@ ms.locfileid: "1493604"
 “必应地图”应用中的工具提示。
 
 ![“必应地图”应用中的工具提示](images/control-examples/tool-tip-maps.png)
+
+## <a name="create-a-tooltip"></a>创建工具提示
+
+[工具提示](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)必须分配到其所有者的其他 UI 元素。 [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice) 类提供用于显示工具提示的静态方法。
+
+在 XAML 中，可使用 **ToolTipService.Tooltip** 附加属性将工具提示分配给所有者。
+
+```xaml
+<Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
+```
+
+在代码中，可使用 [ToolTipService.SetToolTip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip) 方法将工具提示分配给所有者。
+
+```xaml
+<Button x:Name="submitButton" Content="Submit"/>
+```
+
+```csharp
+ToolTip toolTip = new ToolTip();
+toolTip.Content = "Click to submit";
+ToolTipService.SetToolTip(submitButton, toolTip);
+```
+
+### <a name="content"></a>内容
+
+可以使用任何对象作为工具提示的[内容](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)。 下面是一个在工具提示中使用[图像](/uwp/api/windows.ui.xaml.controls.image)的示例。
+
+```xaml
+<TextBlock Text="store logo">
+    <ToolTipService.ToolTip>
+        <Image Source="Assets/StoreLogo.png"/>
+    </ToolTipService.ToolTip>
+</TextBlock>
+```
+
+### <a name="placement"></a>放置
+
+默认情况下，工具提示在指针上方居中显示。 工具提示的放置位置不受应用窗口的约束，因此工具提示可能部分或完全显示在应用窗口边界的外部。
+
+如果工具提示遮盖了它所指的内容，可以调整工具提示的位置。 可以使用 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) 属性或 **ToolTipService.Placement** 附加属性将工具提示放置在指针的上方、下方、左方或右方。 可以通过设置 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) 和 [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) 属性更改指针与工具提示之间的距离。
+
+```xaml
+<!-- A TextBlock with an offset ToolTip. -->
+<TextBlock Text="TextBlock with an offset ToolTip.">
+    <ToolTipService.ToolTip>
+        <ToolTip Content="Offset ToolTip."
+                 HorizontalOffset="20" VerticalOffset="30"/>
+    </ToolTipService.ToolTip>
+</TextBlock>
+```
 
 ## <a name="recommendations"></a>建议
 

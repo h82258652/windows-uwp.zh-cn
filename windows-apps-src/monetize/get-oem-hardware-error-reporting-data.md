@@ -4,18 +4,18 @@ ms.assetid: AE3E003F-BDEC-438B-A80A-3CE1675B369C
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合硬件错误报告数据。 此方法仅用于 OEM。
 title: 获取 OEM 硬件的错误报告数据
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1e7d83b8094a79cb87a6611e2e6d8b8f05159e
-ms.sourcegitcommit: b7032f083bcbb71f5a7dd1a200dcc81dba496a81
+ms.openlocfilehash: f8d7a85a37272eb7046ca1e7f64476f94d9556e2
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "1527335"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989451"
 ---
 # <a name="get-oem-hardware-error-reporting-data"></a>获取 OEM 硬件的错误报告数据
 
@@ -44,7 +44,7 @@ ms.locfileid: "1527335"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | 值      | array   | 包含聚合错误报告数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。     |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的错误超过 10000 行时，就会返回此值。 |
-| TotalCount | inumber | 查询的数据结果中的行总数。     |
+| TotalCount | 整数 | 查询的数据结果中的行总数。     |
 
 <span/>
 
@@ -112,7 +112,7 @@ Authorization: Bearer <your access token>
 | modelFamily | 字符串 | 发生错误的设备型号系列的名称。 |
 | flightRing | 字符串 | 发生错误的操作系统外部测试版的名称。 |
 | mode | 字符串 | 此值始终是 *kernel*。 |
-| eventCount      | inumber | 归因于指定聚合级别的该错误的事件数目。      |
+| eventCount      | 整数 | 归因于指定聚合级别的该错误的事件数目。      |
 
 <span/> 
 

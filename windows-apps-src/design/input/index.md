@@ -13,12 +13,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: d1e28445a665e9d805b8633963784c08b63af6ca
-ms.sourcegitcommit: 4e39a2bdb5b895ed09b64957dc1a86ccf1f8e1af
+ms.openlocfilehash: 1699efed48c4b62a4c7d145bb2f0903cddd5897e
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "1718747"
+ms.lasthandoff: 05/18/2018
+ms.locfileid: "1896917"
 ---
 # <a name="input-and-interactions"></a>输入和交互
 
@@ -63,8 +63,8 @@ UWP 应用可自动处理各种各样的输入并在各种设备上运行，例�
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="identify-input-devices.md">标识输入设备</a></h3>
-                        <p>标识连接到 UWP 设备的输入设备，并标识其功能和属性。</p>
+                        <h3><a href="gaze-interactions.md">新增功能！ 凝视输入</a></h3>
+                        <p>根据用户眼睛和头部的位置及移动，跟踪用户的注视位置。</p>
                     </div>
                 </div>
             </div>
@@ -85,6 +85,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>输入</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">标识输入设备</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">指针</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">笔和 Windows Ink</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">触控</a></p>
@@ -94,6 +95,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">触摸板</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">多个输入</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">输入注入</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">自定义文本输入</a></p>                        
                     </div>
                 </div>

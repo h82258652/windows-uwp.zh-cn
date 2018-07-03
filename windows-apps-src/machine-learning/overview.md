@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, windows, 机器学习
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef6ea1a4e1dab23f5ff6a09aec9b8c49c135f5e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: a2470cff6b5c7f07c720a38d0bff00486e4c6b27
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817658"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842867"
 ---
 # <a name="windows-ml-overview"></a>Windows ML 概述
 
@@ -54,7 +54,7 @@ Windows ML 一些重要功能包括：
 
 ### <a name="system-requirements"></a>系统要求
 
-要生成使用 Windows ML 的应用程序，你将需要 [Windows SDK - 版本 17110 或更高版本](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)。
+要生成使用 Windows ML 的应用程序，你将需要 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) - 版本 17110 或更高版本。
 
 ### <a name="onnx-models"></a>ONNX 模型
 
@@ -76,6 +76,8 @@ Windows ML 一些重要功能包括：
 - LibSVM
 
 若要了解如何安装和使用 WinMLTools，请参阅[转换模型](conversion-samples.md)。
+
+借助 Visual Studio Tools for AI 扩展，还可以在 Visual Studio IDE 中使用 WinMLTools，获得更友好的点击式体验，将模型转换为 ONNX 格式。 要了解详细信息，请访问 [VS Tools for AI](https://github.com/Microsoft/vs-tools-for-ai/)。
 
 ### <a name="onnx-operators"></a>ONNX 运算符
 
@@ -106,7 +108,7 @@ Windows ML 支持所有 ONNX v1.0 文档中定义的所有运算符，但有以�
 
 对于 ONNX 型号文件，Windows ML 的代码生成器会创建一个接口与你的应用中的模型交互。 生成的接口包括表示模型、输入和输出的包装类。 生成的代码为你调用 [Windows ML API](/uwp/api/windows.ai.machinelearning.preview)，这样你就可以轻松在项目中加载、绑定和评估模型。 代码生成器目前支持 C# 和 C + + / CX。
 
-对于 UWP 开发人员，Windows ML 的自动代码生成器在本机与 [Visual Studio（版本 15.7 - Preview 1）](https://www.visualstudio.com/vs/preview/)集成。 (**注意**：在 Visual Studio 安装程序内，你将需要查看可选 Windows 10 Insider 预览版 SDK，版本 17110 ），在 Visual Studio 项目中，只需将你的 ONNX 文件添加为现有项目，VS 将在新接口文件中生成 Windows ML 包装类。
+对于 UWP 开发人员，Windows ML 的自动代码生成器在本机与 [Visual Studio](https://developer.microsoft.com/windows/downloads) 集成。 在 Visual Studio 项目中，只需将你的 ONNX 文件添加为现有项目，VS 将在新接口文件中生成 Windows ML 包装类。
 
 你还可以使用 Windows SDK 附带的命令行工具 `mlgen.exe` 以生成 Windows ML 包装类。 该工具位于`(SDK_root)\bin\<version>\x64` 或 `(SDK_root)\bin\<version>\x86`，其中 SDK_root 是 SDK 安装目录。 要允许该工具，请使用以下命令。
 

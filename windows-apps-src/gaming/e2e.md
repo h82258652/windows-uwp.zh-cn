@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: de899d95e25489fa815f099d696752389cc3f94e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: b351b5072c6bba228d81a65b51656a81bd564daf
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817448"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862256"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -93,12 +93,12 @@ ms.locfileid: "1817448"
         <td><a href="../xbox-live/index.md">Xbox Live 开发人员指南</a></td>
     </tr>
     <tr>
-        <td>Xbox One 开发人员文档 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx">Xbox One XDK 文档</a></td>
+        <td>Xbox One 开发文档 (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Xbox One 开发</a></td>
     </tr>
     <tr>
-        <td>Xbox One 开发人员白皮书 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx">白皮书</a></td>
+        <td>Xbox One 开发白皮书 (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">白皮书</a></td>
     </tr>
     <tr>
         <td>Mixer Interactive 文档</td>
@@ -227,11 +227,11 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
         <td><a href="https://github.com/Microsoft/xbox-live-samples">Xbox Live 示例</a></td>
     </tr>
     <tr>
-        <td>Xbox One 游戏示例 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx">示例</a></td>
+        <td>Xbox One 游戏示例 (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">示例</a></td>
     </tr>
     <tr>
-        <td>Windows游戏示例（MSDN 代码库）</td>
+        <td>Windows 游戏示例（MSDN 代码库）</td>
         <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Microsoft Store 游戏示例</a></td>
     </tr>
     <tr>

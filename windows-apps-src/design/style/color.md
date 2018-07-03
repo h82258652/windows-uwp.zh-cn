@@ -10,16 +10,16 @@ ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ab0d375971bc006cd477341fc51f3e6d6d91f78
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: fc348dc4f4733feae86a94e0ada1693326a201d8
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816722"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843187"
 ---
 # <a name="color"></a>颜色
 
-![标题图像](images/color/header-color.svg)
+![主图](images/header-color.svg)
 
 通过颜色，可在应用中向用户直观传达信息：颜色可用于指示交互性、针对用户操作提供反馈并保证应用界面的视觉连续性。 
 

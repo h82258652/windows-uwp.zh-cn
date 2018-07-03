@@ -4,18 +4,18 @@ Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: 使用 Windows UI 和组件扩展桌面应用程序
 ms.author: normesta
-ms.date: 03/22/2018
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef20366092a5f284c39f4e43d4412c69b60f12fa
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691326"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018563"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -27,6 +27,8 @@ ms.locfileid: "1691326"
 >本指南假设你已使用桌面桥为桌面应用程序创建了 Windows 应用包。 如果你尚未完成此操作，请参阅[桌面桥](desktop-to-uwp-root.md)。
 
 如果你已准备就绪，那我们开始吧。
+
+<a id="setup" />
 
 ## <a name="first-setup-your-solution"></a>首先，设置你的解决方案
 
@@ -78,27 +80,63 @@ ms.locfileid: "1691326"
 
 例如，借助少量 XAML 标记，即可为用户提供与地图相关的强大可视化功能。
 
-此图像显示 VB6 应用程序，该应用程序可打开包含地图控件的、基于 XAML 的新式 UI。
+此图像显示 Windows 窗体应用程序，该应用程序可打开包含地图控件的、基于 XAML 的新式 UI。
 
 ![自适应设计](images/desktop-to-uwp/extend-xaml-ui.png)
-
-### <a name="have-a-closer-look-at-this-app"></a>详细了解该应用
-
-:heavy_check_mark: [获取应用](https://www.microsoft.com/en-us/store/p/vb6-app-with-xaml-sample/9n191ncxf2f6)
-
-:heavy_check_mark: [浏览代码](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
 
 ### <a name="the-design-pattern"></a>设计模式
 
 要显示基于 XAML 的 UI，请执行以下操作：
 
-:one: [向该项目添加协议扩展](#protocol)
+:one: [设置解决方案](#solution-setup)
 
-:two: [从桌面应用启动 UWP 应用](#start)
+:two: [创建 XAML UI](#xaml-UI)
 
-:three: [在 UWP 项目中，显示所需页面](#parse)
+:three: [向 UWP 项目添加协议扩展](#protocol)
 
-<a id="protocol" />
+:four: [从桌面应用启动 UWP 应用](#start)
+
+:five: [在 UWP 项目中，显示所需页面](#parse)
+
+<a id="solution-setup" />
+
+### <a name="setup-your-solution"></a>设置解决方案
+
+有关如何设置解决方案的一般指导，请参阅本指南开头的[首先，设置解决方案](#setup)部分。
+
+解决方案将如下所示：
+
+![XAML UI 解决方案](images/desktop-to-uwp/xaml-ui-solution.png)
+
+在该示例中，Windows 窗体项目被命名为 **Landmarks**，包含 XAML UI 的 UWP 项目被命名为 **MapUI**。
+
+<a id="xaml-UI" />
+
+### <a name="create-a-xaml-ui"></a>创建 XAML UI
+
+向 UWP 项目添加 XAML UI。 以下是基本地图的 XAML。
+
+```xml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,20,12,14">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <maps:MapControl x:Name="myMap" Grid.Column="0" Width="500" Height="500"
+                     ZoomLevel="{Binding ElementName=zoomSlider,Path=Value, Mode=TwoWay}"
+                     Heading="{Binding ElementName=headingSlider,Path=Value, Mode=TwoWay}"
+                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"    
+                     HorizontalAlignment="Left"               
+                     MapServiceToken="<Your Key Goes Here" />
+    <Grid Grid.Column="1" Margin="12">
+        <StackPanel>
+            <Slider Minimum="1" Maximum="20" Header="ZoomLevel" Name="zoomSlider" Value="17.5"/>
+            <Slider Minimum="0" Maximum="360" Header="Heading" Name="headingSlider" Value="0"/>
+            <Slider Minimum="0" Maximum="64" Header=" DesiredPitch" Name="desiredPitchSlider" Value="32"/>
+        </StackPanel>
+    </Grid>
+</Grid>
+```
 
 ### <a name="add-a-protocol-extension"></a>添加协议扩展
 
@@ -106,13 +144,10 @@ ms.locfileid: "1691326"
 
 ```xml
 <Extensions>
-      <uap:Extension
-          Category="windows.protocol"
-          Executable="MapUI.exe"
-          EntryPoint=" MapUI.App">
-        <uap:Protocol Name="desktopbridgemapsample" />
-      </uap:Extension>
-    </Extensions>     
+  <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
+    <uap:Protocol Name="xamluidemo" />
+  </uap:Extension>
+</Extensions>    
 ```
 
 为协议给定名称，提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。
@@ -120,8 +155,6 @@ ms.locfileid: "1691326"
 还可以在设计器中打开 **package.appxmanifest**，选择**声明**选项卡，然后在此处添加扩展名。
 
 ![“声明”选项卡](images/desktop-to-uwp/protocol-properties.png)
-
-
 
 > [!NOTE]
 > 地图控件可从 Internet 下载数据，因此如果你使用一个地图控件，则必须还要向清单中添加“Internet 客户端”功能。
@@ -132,61 +165,23 @@ ms.locfileid: "1691326"
 
 首先，在桌面应用程序中，创建一个 [Uri](https://msdn.microsoft.com/library/system.uri.aspx)，其中包含协议名称和要传入 UWP 应用的任何参数。 然后，调用 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
-下面是 C# 基本示例。
-
 ```csharp
 
-private async void showMap(double lat, double lon)
+private void Statue_Of_Liberty_Click(object sender, EventArgs e)
 {
-    string str = "desktopbridgemapsample://";
+    ShowMap(40.689247, -74.044502);
+}
+
+private async void ShowMap(double lat, double lon)
+{
+    string str = "xamluidemo://";
 
     Uri uri = new Uri(str + "location?lat=" +
         lat.ToString() + "&?lon=" + lon.ToString());
 
     var success = await Windows.System.Launcher.LaunchUriAsync(uri);
 
-    if (success)
-    {
-        // URI launched
-    }
-    else
-    {
-        // URI launch failed
-    }
 }
-```
-在我们的示例中，我们将以更加间接的方式执行一些操作。 我们已将该调用包装在一个名为 ``LaunchMap`` 的 VB6 可调用互操作函数中。 该函数是使用 C++ 编写的。
-
-以下是 VB 块：
-
-```VB
-Private Declare Function LaunchMap Lib "UWPWrappers.dll" _
-  (ByVal lat As Double, ByVal lon As Double) As Boolean
- 
-Private Sub EiffelTower_Click()
-    LaunchMap 48.858222, 2.2945
-End Sub
-```
-
-以下是 C++ 函数：
-
-```C++
-
-DllExport bool __stdcall LaunchMap(double lat, double lon)
-{
-  try
-  {
-    String ^str = ref new String(L"desktopbridgemapsample://");
-    Uri ^uri = ref new Uri(
-      str + L"location?lat=" + lat.ToString() + L"&?lon=" + lon.ToString());
- 
-    // now launch the UWP component
-    Launcher::LaunchUriAsync(uri);
-  }
-  catch (Exception^ ex) { return false; }
-  return true;
-}
-
 ```
 
 <a id="parse" />
@@ -195,25 +190,54 @@ DllExport bool __stdcall LaunchMap(double lat, double lon)
 
 在 UWP 项目的**应用**类中，覆盖 **OnActivated** 事件处理程序。 如果应用已通过协议激活，则分析参数并打开所需页面。
 
-```C++
-void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ e)
+```csharp
+protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs e)
 {
-  if (e->Kind == ActivationKind::Protocol)
-  {
-    ProtocolActivatedEventArgs^ protocolArgs = (ProtocolActivatedEventArgs^)e;
-    Uri ^uri = protocolArgs->Uri;
-    if (uri->SchemeName == "desktopbridgemapsample")
+    if (e.Kind == ActivationKind.Protocol)
     {
-      Frame ^rootFrame = ref new Frame();
-      Window::Current->Content = rootFrame;
-      rootFrame->Navigate(TypeName(MainPage::typeid), uri->Query);
-      Window::Current->Activate();
+        ProtocolActivatedEventArgs protocolArgs = (ProtocolActivatedEventArgs)e;
+        Uri uri = protocolArgs.Uri;
+        if (uri.Scheme == "xamluidemo")
+        {
+            Frame rootFrame = new Frame();
+            Window.Current.Content = rootFrame;
+            rootFrame.Navigate(typeof(MainPage), uri.Query);
+            Window.Current.Activate();
+        }
     }
-  }
 }
 ```
 
+重载 ``OnNavigatedTo`` 方法以使用传递给页面的参数。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
+
+```csharp
+protected override void OnNavigatedTo(NavigationEventArgs e)
+ {
+     if (e.Parameter != null)
+     {
+         WwwFormUrlDecoder decoder = new WwwFormUrlDecoder(e.Parameter.ToString());
+
+         double lat = Convert.ToDouble(decoder[0].Value);
+         double lon = Convert.ToDouble(decoder[1].Value);
+
+         BasicGeoposition pos = new BasicGeoposition();
+
+         pos.Latitude = lat;
+         pos.Longitude = lon;
+
+         myMap.Center = new Geopoint(pos);
+
+         myMap.Style = MapStyle.Aerial3D;
+
+     }
+
+     base.OnNavigatedTo(e);
+ }
+```
+
 ### <a name="similar-samples"></a>相似示例
+
+[向 VB6 应用程序添加 UWP XAML 用户体验](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
 
 [Northwind 示例：UWA UI & Win32 传统代码的端到端示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
 

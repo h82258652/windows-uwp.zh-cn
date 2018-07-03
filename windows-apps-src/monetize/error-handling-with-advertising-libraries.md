@@ -4,22 +4,22 @@ ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: 了解如何处理由 Microsoft Advertising 库中的 AdControl 类生成的错误。
 title: 处理广告错误
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 广告, 投放广告, 错误处理, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bdbf33cba031bfbeca2216affe7c560b5521b24
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: fb60f870aa220a123bab185ef98ccca1f6a8881a
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654116"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880968"
 ---
 # <a name="handle-ad-errors"></a>处理广告错误
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 和 [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) 类均具有 **ErrorOccurred** 事件，该时间在发生广告相关错误时引发。 应用代码可以处理此事件并检查事件参数对象的 [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) 和  [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) 属性，以帮助确定错误原因。
+[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 和 **NativeAdsManagerV2** 类均具有 **ErrorOccurred** 事件，该时间在发生广告相关错误时引发。 应用代码可以处理此事件并检查事件参数对象的 [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) 和  [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) 属性，以帮助确定错误原因。
 
 <span id="bkmk-dotnet"/>
 
@@ -27,7 +27,7 @@ ms.locfileid: "1654116"
 
 若要在 XAML 应用中处理与广告相关的错误：
 
-1. 将 **AdControl**、**InterstitialAd** 或 **NativeAdsManager** 对象的 **ErrorOccurred** 事件分配到事件处理程序委托的名称。
+1. 将 **AdControl**、**InterstitialAd** 或 **NativeAdsManagerV2** 对象的 **ErrorOccurred** 事件分配到事件处理程序委托的名称。
 
 2. 对错误事件处理委托进行编码，以便它可以处理两个参数：发送者的 **Object** 和 [AdErrorEventArgs](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.aspx) 对象。
 

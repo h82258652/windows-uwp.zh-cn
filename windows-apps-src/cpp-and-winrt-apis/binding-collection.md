@@ -3,18 +3,18 @@ author: stevewhims
 description: 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。
 title: XAML 项目控件; 绑定到 C++/WinRT 集合
 ms.author: stwhi
-ms.date: 03/07/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 2384dd385208574276dc0b6d03a56f838aad7b84
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 3d9f74e6d0c755e0a247a65751bdab65964ac1f7
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832301"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935723"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 项目控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -33,10 +33,13 @@ ms.locfileid: "1832301"
 XAML 项目控件可检索更新的集合然后将自行更新以显示当前元素，从而绑定到这些事件并处理事件。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的当前可用性的信息，请参阅 [Visual Studio 支持 C++/WinRT 和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 ## <a name="implement-singlethreadedobservablevectorlttgt"></a>实现 **single_threaded_observable_vector&lt;T&gt;**
-这将有利于让可观测矢量模板用作 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 的有用的通用实现。 以下是称为 **single_threaded_observable_vector&lt;T&gt;** 的类的列表。 在将来，如果这变为了 C++/WinRT 类型，它将轻松切换为使用其官方版本。
+这将有利于让可观测矢量模板用作 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 的有用的通用实现。 以下是称为 **single_threaded_observable_vector\<T\>** 的类的列表。
+
+> [!NOTE]
+> 如果你已安装了 [Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) 或更高版本，那么你可以直接使用 **winrt::single_threaded_observable_vector\<T\>** 类型，而不是下面的代码列表。 如果你还未使用该版本的 SDK，当你进入该版本后，便可以轻松地从使用代码列表版本切换到 **winrt** 类型。
 
 ```cppwinrt
 // single_threaded_observable_vector.h

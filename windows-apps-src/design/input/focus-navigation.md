@@ -15,14 +15,16 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1737408386628ea7ecf1bb42256976c5fd28cb77
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 73b1c73fdd971eb4448aea62bc8c64ceac17a2b4
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707238"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843347"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>适用于键盘、手柄、遥控器和辅助功能工具的焦点导航
+
+![键盘、遥控器和方向键](images/dpad-remote/dpad-remote-keyboard.png)
 
 使用焦点导航可以在你的 UWP 应用中提供全面且一致的交互体验，并可为使用键盘的超级用户、残障人士及具有其他辅助功能要求的用户提供自定义控件，还可提供 10 英尺电视屏幕和 Xbox One 体验。
 

@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cce355ab6f571f932d9dc10a1b185821118266c
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: a6442857f8d7914ab423c0981ae97598084f0068
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690313"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862839"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 开发人员模式激活
 
@@ -61,9 +61,9 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
 ## <a name="switch-between-retail-and-developer-mode"></a>在零售模式和开发人员模式之间切换
 在主机上启用了开发人员模式后，可使用**开发人员主页**在零售模式和开发人员模式之间切换。 若要了解有关启动和使用开发人员主页的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
 
-* 若要切换到零售模式，请打开**开发人员主页**，然后导航到**设置**选项卡。在**主机设置**下选择**退出开发人员模式**。 这将在零售模式下重新启动主机。    
+* 若要切换到零售模式，请打开**开发人员主页**。 在**快速操作**下选择**退出开发人员模式**。 这将在零售模式下重启主机。    
 
-  ![激活步骤 13](images/activation-step-13-rs2.png)  
+  ![激活步骤 13](images/activation-step-13-rs4.png)  
   
 * 若要切换到开发人员模式，请使用“开发人员模式激活”应用。 打开该应用，然后选择**切换并重启**。 这将在开发人员模式下重新启动你的主机。  
 

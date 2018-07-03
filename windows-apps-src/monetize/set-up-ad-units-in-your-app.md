@@ -4,26 +4,32 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: 了解如何在将应用提交到应用商店之前，从 Windows 开发人员中心仪表板向应用添加应用程序 ID 和广告单元 ID 值。
 title: 在应用中设置广告单元
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 广告, 投放广告, 广告单元, 测试
 ms.localizationpriority: medium
-ms.openlocfilehash: 6473d571ed44f60f8001b8a565d70c58d43407d1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 978f0599ec783b5dcfade82b97c92d1dec9fb541
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654656"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880948"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 
-通用 Windows 平台 (UWP) 应用中的每个广告控件都有一个相应的*广告单元*，我们的服务使用它们向控件提供广告。 每个广告单元都由*广告单元 ID* 和*应用程序 ID* 组成，你必须将这两者分配给应用中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 或 [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx)。
+通用 Windows 平台 (UWP) 应用中的每个广告控件都有一个相应的*广告单元*，我们的服务使用它们向控件提供广告。 每个广告单元都由*广告单元 ID* 和*应用程序 ID* 组成，你必须将这两者分配给应用中的代码。
 
-我们提供了[测试广告单元值](#test-ad-units)，你可以在测试过程中使用这些值来确定你的应用是否显示测试广告。 这些测试值只能在应用的测试版本中使用。 如果你尝试在发布动态应用后在其中使用测试值，应用将不会收到广告。
+我们提供了[测试广告单元值](#test-ad-units)，你可以在测试过程中使用这些值来确定应用是否显示测试广告。 这些测试值只能在应用的测试版本中使用。 如果你尝试在发布动态应用后在其中使用测试值，应用将不会收到广告。
 
 完成 UWP 应用测试并准备提交到 Windows 开发人员中心后，必须通过 Windows 开发人员中心仪表板的[应用内广告](../publish/in-app-ads.md)页面[创建实时广告单元](#live-ad-units)，并更新应用代码以使用此广告单元的应用程序 ID 和广告单元 ID 值。
+
+有关在应用代码中分配应用程序 ID 和广告单元 ID 值的详细信息，请参阅以下文章：
+* [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
+* [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
+* [间隙广告](../monetize/interstitial-ads.md)
+* [本机广告](../monetize/native-ads.md)
 
 <span id="test-ad-units" />
 
@@ -58,17 +64,15 @@ ms.locfileid: "1654656"
     > [!NOTE]
     > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在仪表板中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用的 Store ID（例如 Store ID 值类似于 9NBLGGH4R315）匹配。
 
-3.  在应用的代码中指定**应用程序 ID** 和**广告单元 ID** 值：
-
-    * 如果你的应用显示横幅广告，请将这些值分配给 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 属性。 有关详细信息，请参阅 [XAML 和 .NET 中的 AdControl](../monetize/adcontrol-in-xaml-and--net.md) 以及 [HTML5 和 JavaScript 中的 AdControl](../monetize/adcontrol-in-html-5-and-javascript.md)。
-
-    * 如果你的应用显示间隙广告，请将这些值传递给 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。 有关详细信息，请参阅[间隙广告](../monetize/interstitial-ads.md)。
-
-    * 如果应用显示本机广告，请将这些值传递给 [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) 构造函数的 *applicationId* 和 *adUnitId* 参数。 有关详细信息，请参阅[本机广告](../monetize/native-ads.md)。
+3.  在应用的代码中指定应用程序 ID 和广告单元 ID 值。 有关详细信息，请参阅以下文章：
+    * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
+    * [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
+    * [间隙广告](../monetize/interstitial-ads.md)
+    * [本机广告](../monetize/native-ads.md)
 
 <span id="manage" />
 
-## <a name="manage-ad-units-for-multiple-ad-controls-in-your-app"></a>管理你的应用中多个广告控件的广告单元
+## <a name="manage-ad-units-for-multiple-ad-controls-in-your-app"></a>在应用中管理多个广告控件的广告单元
 
 你可以在单个应用中使用多个横幅广告、间隙广告和本机广告控件。 在此情况下，我们建议你为每个控件分配不同的广告单元。 对每个控件使用不同的广告单元使你可以分别[配置中介设置](../publish/in-app-ads.md#mediation)并获取每个控件的独立[报告数据](../publish/advertising-performance-report.md)。 这还使我们的服务能够更好地优化我们为你的应用提供的广告。
 

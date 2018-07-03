@@ -3,18 +3,18 @@ author: laurenhughes
 title: 使用应用安装程序来安装 UWP 应用
 description: 此部分包含或链接至有关应用安装程序及其功能如何使用的文章。
 ms.author: lahugh
-ms.date: 10/10/2017
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ccb50e3c1a97a69041ca2d3b4de59a550e3399
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 0f82c319ca812af9296895711f2b546a8b0332c5
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831801"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992103"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>使用应用安装程序来安装 UWP 应用
 
@@ -30,3 +30,14 @@ ms.locfileid: "1831801"
 | [使用应用安装程序文件安装相关集](install-related-set.md) | 在此部分中，可了解如何通过应用安装程序来安装相关集。 我们还将详述有关构建可定义相关集的应用安装程序文件的相应步骤。 |
 | [使用应用安装程序文件遇到的安装问题的疑难解答](troubleshoot-appinstaller-issues.md) | 使用应用安装程序文件旁加载应用程序时的常见问题和解决方案。 |
 | [应用安装程序文件 (.appinstaller) 参考](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file) | 查看应用安装程序文件的完整 XML 架构。 |
+
+## <a name="tutorials"></a>教程 
+
+学习下面的教程，了解如何从各种分发平台托管和安装 UWP 应用。 这些教程适用于不希望或不需要将应用发布到 Microsoft Store，但仍希望利用 Windows 10 打包和部署平台的企业和开发人员。
+
+| 教程 | 说明 |
+|----------|-------------|
+| [从 Azure Web 应用安装 UWP 应用](web-install-azure.md) | 创建 Azure Web 应用并用它来托管和分发 UWP 应用包。 |
+| [从 IIS 服务器安装 UWP 应用](web-install-IIS.md) | 安装 IIS 服务器，验证 Web 应用可以托管应用包，并有效使用应用安装程序。 |
+| [在 AWS 上为 Web 安装托管 UWP 应用包](web-install-aws.md) | 了解如何设置 Amazon 简单存储服务来从网站托管 UWP 应用包。 |
+

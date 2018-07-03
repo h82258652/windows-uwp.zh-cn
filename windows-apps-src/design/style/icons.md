@@ -6,7 +6,7 @@ ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,174 +14,146 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 61157ad23eb55447137531922ea23fa0120e2b98
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 077967c37f76c8f1d0942f365344de65db13b041
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653916"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983570"
 ---
 # <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
 
+![图标标题图像](images/icons/header-icons.png)
+
+图标提供操作、概念或产品的视觉速记。 通过将含义压缩到符号图像中，图标可以跨越语言障碍，帮助节省非常宝贵的资源：屏幕空间。 
+
+图标可以显示在应用中，也可以显示在应用外： 
+
+:::行::: :::列::: **应用内的图标**
+
+        ![icons inside the app](images/icons/inside-icons.png)
+        Inside your app, you use icons to represent an action, such as copying text or navigating to the settings page.
+    :::column-end:::
+    :::column:::
+        **Icons outside the app**
+
+        ![icons outside the app](images/icons/outside-icons.jpg)
+         Outside your app, Windows uses an icon to represent your app in the start menu and in the taskbar. If the user chooses to pin your app to the start menu, your app's start tile can feature your app's icon. Your app's icon appears in the title bar and you can choose to create a splash screen with your app's logo.
+    :::column-end:::
+:::行末:::
+
+本文介绍应用内的图标。 若要了解应用外的图标（应用图标），请参阅[应用和磁贴图标文章](/windows/uwp/design/shell/tiles-and-notifications/app-assets)。
+
+## <a name="when-to-use-icons"></a>何时使用图标
+
+图标可以节省空间，但应在何时使用？ 
+
+:::行::: :::列::: ![应做事项](images/do.svg) ![标准图标图像](images/icons/icons-standard.svg)<br>
+
+        Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        ![icons concept image](images/icons/icons-concept.svg)<br>
+
+        Use an icon if one already exists for the concept you want to represent. (To see whether an icon exists, check the Segoe icon list.)
+    :::column-end:::
+:::行末:::
+
+:::行::: :::列::: ![应做事项](images/do.svg) ![购物车图标](images/icons/icon-shopping-cart.svg)<br>
+
+        Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
+    :::column-end:::
+    :::column:::
+        ![dont](images/dont.svg)
+        ![icons concept image](images/icons/icon-bad-example.png)<br>
+
+        Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.
+    :::column-end:::
+:::行末:::
 
 
-良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。 
 
-## <a name="linear-scaling-size-ramps"></a>线性缩放大小渐变 
+## <a name="using-the-right-type-of-icon"></a>使用正确的图标类型
 
-<table>
-    <tr> 
-        <td>16px x 16px</td>
-        <td>24px x 24px</td>
-        <td>32px x 32px</td>
-        <td>48px x 48px</td>
-    </tr>
-    <tr> 
-        <td><img src="images/icons-16x16.png" alt="Icons at 16x16 effective pixels" /></td>
-        <td><img src="images/icons-24x24.png" alt="Icons at 24x24 effective pixels" /></td>
-        <td><img src="images/icons-32x32.png" alt="Icons at 32x32 effective pixels" /></td>
-        <td><img src="images/icons-48x48.png" alt="Icons at 48x48 effective pixels" /></td>
-    </tr>
-</table>
+可通过多种方式创建图标。 你可以使用诸如 Segoe MDL2 Assets 这样的符号字体。 你可以创建自己的基于矢量的图像。 你甚至可以使用位图图像，不过我们不建议这样做。 下面是可以将图标添加到应用的不同方法的摘要。 
 
-## <a name="common-shapes"></a>常见的形状
+### <a name="use-a-predefined-icon"></a>使用预定义的图标。
+:::行::: :::列::: Microsoft 提供 1000 多个 Segoe MDL2 Assets 字体格式的图标。 从字体获取图标可能不直观，但我们的字体显示技术意味着这些图标在任何显示、任何分辨率、任何尺寸下都能够有简洁、清晰的外观。 :::列末::: :::列::: ![预定义的图标图像](images/icons/predefined-icon.png) :::列末::: :::行末:::
 
-图标通常应无需太多填充即可最大化给定的空间。 这些形状提供起始点以调整基本形状的大小。 
+### <a name="use-a-font"></a>使用字体。
+:::行::: :::列::: 不必一定使用 Segoe MDL2 Assets 字体 - 你可以使用用户在其系统上安装的任何字体，如 Wingdings 或 Webdings。
+:::列末::: :::列::: ![wingdings 图像](images/icons/wingdings.png) :::列末::: :::行末:::
 
-![32px × 32px 网格](images/icons-common-shapes.png)
+### <a name="use-a-scalable-vector-graphics-svg-file"></a>使用可缩放的向量图形 (SVG) 文件。
+::: 行::: :::列::: SVG 资源非常适合图标，因为它们在任何尺寸或分辨率下看起来都很清晰。 大多数绘图应用程序都可以导出到 SVG。 :::列末::: :::列::: ![SVG 图像](images/icons/icon-scale.gif) :::列末::: :::行末:::
 
-使用对应于图标方向的形状，并围绕这些基本参数进行撰写。 图标并不一定要填充或完全适合形状内部，并且可能根据需要进行调整以确保最佳平衡。 
+### <a name="use-geometry-objects"></a>使用几何图形对象。
+:::行::: :::列::: 与 SVG 文件一样，几何图形也是一种基于矢量的资源，所以始终看起来会很清晰。 不过，创建几何图形比较复杂，因为必须单独指定每个点和曲线。 如果你需要在应用运行时修改图标（例如，动画处理），这确实是唯一的好选择。 有关说明，请参阅[移动和绘制几何图形的命令](../../xaml-platform/move-draw-commands-syntax.md)。 :::列末::: :::列::: ![几何图形对象图像](images/icons/geometry-objects.png) :::列末::: :::行末:::
 
-<table class="uwpd-noborder">
-    <tr>
-        <td>圆形<td>
-        <td>正方形</td>
-        <td>三角形</td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-common-shapes-examples-1.png" alt="A circle" /><td>
-        <td><img src="images/icons-common-shapes-examples-2.png" alt="A square" /></td>
-        <td><img src="images/icons-common-shapes-examples-3.png" alt="A triangle " /></td>
-    </tr>
-        <tr>
-        <td>水平矩形<td>
-        <td colspan="2">垂直矩形</td>        
-        </tr>
-    <tr>
-        <td><img src="images/icons-common-shapes-examples-4.png" alt="A horizontal rectangle" /><td>
-        <td colspan="2"><img src="images/icons-common-shapes-examples-5.png" alt="A vertical rectangle" /></td>
-         
-    </tr>
+### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>你也可以使用位图图像（如 PNG、GIF 或 JPEG），不过我们不建议这样做。
+:::行::: :::列::: 位图图像以特定尺寸创建，因此它们必须根据你需要的图标大小和屏幕分辨率放大或缩小。 当图像缩小（收缩）时，它可能显示得比较模糊；当放大时，它可能显示得斑驳且像素化。 如果你必须使用位图图像，建议使用 PNG 或 GIF 而不是 JPEG。 :::列末::: :::列::: ![禁止事项](images/dont.svg) ![位图图像](images/icons/bitmap-image.png) :::列末::: :::行末:::
 
-</table>
+## <a name="make-the-icon-do-something"></a>让图标发挥作用
 
-## <a name="angles"></a>角度
+有了图标后，下一步是通过将图标与命令或导航操作关联来让它发挥作用。 实现此目的的最佳方法是将图标添加到按钮或命令栏。 
 
-除了使用相同的网格和线条粗细外，图标也使用常见元素构建。 
+![命令栏图像](images/icons/app-bar-desktop.svg)
 
-在生成形状时仅使用这些角度会在所有图标上产生一致性，并确保图标正确呈现。 
+## <a name="create-an-icon-button"></a>创建图标按钮
 
-在创建图标时，可以组合、连接、旋转和反射这些线条。 
+你可以在标准按钮中放置一个图标。 因为你可以在更广泛的位置使用按钮，这让你在选择操作图标显示位置时有了更多一些的灵活性。 
 
-<table>
-    <tr>
-        <td><b>1:1</b><br/>45°</td>
-        <td><b>1:2</b><br />26.57°（垂直）<br/>63.43°（水平）</td>
-        <td><b>1:3</b><br/>18.43°（垂直）<br/>71.57°（水平）</td>
-        <td><b>1:4</b><br/>14.04°（垂直）<br/>75.96°（水平）</td>
-    </tr>
-    <tr>
-        
-        <td><img src="images/icons-grid-1-1.png" alt="1:1" /></td>
-        <td><img src="images/icons-grid-1-2.png" alt="1:2" /></td>
-        <td><img src="images/icons-grid-1-3.png" alt="1:3" /></td>
-        <td><img src="images/icons-grid-1-4.png" alt="1:4" /></td>
-    </tr>  
-</table>
+将图标添加到按钮有几种方法：
 
-<p>下面提供了一些示例：</p>
+:::行::: :::列范围="2"::: <b>步骤 1</b><br>
+        将按钮的字体系列设置为 `Segoe MDL2 Assets` 并将其内容属性设置为你想要使用的字形的 unicode 值：:::列末::: :::列::: ![创建图标按钮步骤 1](images/icons/create-icon-step-1.svg) :::列末::: :::行末:::
 
-<table>
-    <tr>
-        <td><img src="images/icons-angles-examples-1.png" alt="A 1:1 angle example" /></td>
-        <td><img src="images/icons-angles-examples-2.png" alt="A 1:2 angle example" /></td>
-        <td><img src="images/icons-angles-examples-3.png" alt="A 1:3 angle example" /></td>
-        <td><img src="images/icons-angles-examples-4.png" alt="A 1:4 angle example" /></td>
-    </tr>
-</table>
+```xaml 
+<Button FontFamily="Segoe MDL2 Assets" Content="&#xE102;" />
+```
 
-## <a name="curves"></a>曲线
+:::行::: :::列范围="2"::: <b>步骤 2</b><br>
+        你可以使用其中一个图标元素对象：[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon)。 这为你提供了更多图标类型可供选择，并在你希望执行以下任务时，让你能够将图标和其他内容类型（如文本）组合起来：:::列末::: :::列::: ![创建图标按钮步骤 2](images/icons/icon-text-step-2.svg) :::列末::: :::行末:::
 
-曲线构建于整个圆的各个部分，并且在不需要贴靠到像素网格时不应扭曲。 
+```xaml 
+<Button>
+    <StackPanel>
+        <SymbolIcon Symbol="Play" />
+        <TextBlock>Play the movie</TextBlock>
+    </StackPanel>
+</Button>
+```
 
-<table>
-    <tr>
-        <td>1/4 圆形</td>
-        <td>1/8 圆形</td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-curves-14circle.png" alt="1/4 circle" /></td>
-        <td><img src="images/icons-curves-18circle.png" alt="1/8 circle" /></td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-curves-examples-1.png" alt="1/4 cirlce example" /></td>
-        <td><img src="images/icons-curves-examples-2.png" alt="1/8 circle example" /></td>
-    </tr>    
-</table>
+## <a name="create-a-series-of-icons-in-a-command-bar"></a>在命令栏中创建一系列图标
 
-## <a name="geometric-construction"></a>几何构造
+:::行::: :::列范围::: 当你有一系列要组合使用的命令（如剪切/复制/粘贴）或一组照片编辑程序的绘图命令时，可以在[命令栏](../controls-and-patterns/app-bars.md)上将它们放在一起。 命令栏采用一个或多个应用栏按钮或应用栏切换按钮，每个按钮表示一项操作。 每个按钮有一个[图标](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)属性，你用它来控制要显示哪个图标。 可以通过多种方式指定图标。 :::列末::: :::列::: ![带图标的命令栏示例](images/icons/create-icon-command-bar.svg) :::列末::: :::行末:::
 
-我们建议在构建图标时仅使用纯几何形状。
+最简单的方法是使用我们提供的预定义图标列表 - 只需指定图标名称，如“返回”或“停止”，系统便可以进行绘制： 
 
-![带有几何覆盖的吉他图标 ](images/icons-geometric-construction.png)
+``` xaml
+<CommandBar>
+    <AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
+    <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>
+    <AppBarSeparator/>
+    <AppBarButton Icon="Back" Label="Back" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Stop" Label="Stop" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Forward" Label="Forward" Click="AppBarButton_Click"/>
+</CommandBar>
 
-## <a name="filled-shapes"></a>填充的形状 
+```
+要获得图标名称的完整列表，请参阅 [Symbol 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)。 
 
-图标在需要时可以包含填充的形状，但它们在 32px × 32px 上不应超过 4px。 实心圆不应大于 6px × 6px。 
+为命令栏中的按钮提供图标还有其他一些方法：
 
-![5px × 8px 填充 ](images/icons-filled-shapes.png)
++ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - 此图标基于指定的字体系列的字形。
++ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - 此图标基于具有指定 **Uri** 的位图图像文件。
++ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - 此图标基于[路径](/uwp/api/windows.ui.xaml.shapes.path)数据。
 
-## <a name="badges"></a>锁屏提醒
+若要了解有关命令栏的详细信息，请参阅[命令栏文章](../controls-and-patterns/app-bars.md)。 
 
-“锁屏提醒”是用于描述添加到不会与基本图标元素集成的图标的元素的通用术语。 这些通常会传达关于图标的其他信息，例如状态或操作。 其他常用术语包括：覆盖、批注或修饰符。 
 
-![状态锁屏提醒 ](images/icons-badge-status.png)
-
-![操作锁屏提醒 ](images/icons-badge-action.png)
-
-状态锁屏提醒使用图标顶部填充的、有颜色的对象，而操作锁屏提醒集成到单色样式和线条粗细都相同的图标。
-
-<table>
-<tr>
-    <td>常见的状态锁屏提醒</td>
-    <td>常见的操作锁屏提醒</td>
-</tr>
-<tr>
-    <td><img src="images/icons-badge-common-states-1.png" alt="Status badge " /></td>
-    <td><img src="images/icons-badge-common-states-2.png" alt="Action badge " /></td>
-</tr>
-</table>
-<p></p>
-
-### <a name="badge-color"></a>锁屏提醒颜色 
-
-颜色锁屏提醒应仅用于传达图标状态。 在状态锁屏提醒中使用的颜色会向用户传达特定的情感消息。 
-
-<table>
-<tr><td>绿色 - #128B44</td><td>蓝色 - #2C71B9</td><td>黄色 - #FDC214</td></tr>
-<tr><td>积极：完结、完成 </td><td>中性：帮助、通知 </td><td>警告：警报、警告 </td></tr>
-<tr><td><img src="images/icons-color-inbadging-1.png" alt="Green status" /></td><td><img src="images/icons-color-inbadging-2.png" alt="Blue status" /></td>
-<td><img src="images/icons-color-inbadging-3.png" alt="Yellow status" /></td></tr>
-</table>
-<p></p>
-
-### <a name="badge-position"></a>锁屏提醒位置
-
-任何状态或操作的默认位置都在右下方。 仅在设计不允许该位置时才使用其他位置。 
-
-### <a name="badge-sizing"></a>锁屏提醒大小调整
-
-在 32 px × 32 px 网格上，锁屏提醒大小应设置为 10 - 18 px。 
 
 ## <a name="related-articles"></a>相关文章
 

@@ -9,17 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Windows 机器学习, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d8b50b6b8779b98de1d93f449aa560b5dcda893
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 1b54b0665a2483b8a0be710f505e928c852f4dba
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690213"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842664"
 ---
 # <a name="how-to-train-a-model-for-windows-ml-in-visual-studio"></a>如何在 Visual Studio 中训练 Windows ML 模型
+
 在本教程中，我们将使用 [Visual Studio Tools for AI](http://aka.ms/vstoolsforai)（一个用于生成、测试和部署深度学习与 AI 解决方案的开发扩展）来为[入门](get-started.md)中的 MNIST 示例应用训练模型。
 
-我们将使用 [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) 框架和 [MNIST 数据集](http://yann.lecun.com/exdb/mnist/)来训练该模型，该数据集包含 60,000 个示例的训练集和 10,000 个手写数字示例的测试集。 然后我们将使用[开放神经网络交换 (ONNX)](https://onnx.ai/)格式保持该模型，以与 Windows ML 一起使用。 
+我们将使用 [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) 框架和 [MNIST 数据集](http://yann.lecun.com/exdb/mnist/)来训练该模型，该数据集包含 60,000 个示例的训练集和 10,000 个手写数字示例的测试集。 然后我们将使用[开放神经网络交换 (ONNX)](https://onnx.ai/)格式保持该模型，以与 Windows ML 一起使用。
 
 ## <a name="prerequisites"></a>先决条件
 ### <a name="install-visual-studio-tools-for-ai"></a>安装 Visual Studio Tools for AI
@@ -49,19 +50,15 @@ Visual Studio 重启后，扩展将处于活动状态。 如果你遇到问题�
 
 ## <a name="2-train-the-model"></a>2. 训练模型
 
-若要将 MNIST 项目设置为启动项目，请右键单击该 python 项目，然后选择 **设为启动项目**。
+若要将 MNIST 项目设置为启动项目，请右键单击该 python 项目，然后选择**设为启动项目**。
 
 ![打开解决方案](images/mnist-startup.png)
 
-接下来，打开 ConvNet_MNIST.py 文件，按 F5 或绿色的运行按钮**运行**该项目。
+接下来，打开 train_mnist_onnx.py 文件，按 F5 或绿色的运行按钮**运行**该项目。
 
-## <a name="3-view-the-model-and-add-it-to-your-app"></a>3. 查看该模型，并将其添加到你的应用
+## <a name="3-view-the-model-and-add-it-to-your-app"></a>3. 查看模型，并将其添加到应用
 
-打开 AI 存储库中的实例中的 **output/Models** 文件夹。 训练实验中的每个时段都会有一个经过培训的 DNN 模型，最后一步将写入 **MNIST.onnx** 模型文件。 
-
-![打开解决方案](images/onnx-model-output.png)
-
-现在，你可以使用此经过训练的 **MNIST.onnx** 模型文件来生成[入门](get-started.md)中的那个 MNIST 示例应用了！ 
+现在，经过训练的 **mnist.onnx** 模型文件应该放入了 samples-for-ai/examples/cntk/python/MNIST 文件夹中。 你可以使用此经过训练的 **mnist.onnx** 模型文件来生成[入门](get-started.md)中的 MNIST 示例应用了！ 
 
 ## <a name="4-learn-more"></a>4. 了解详细信息
 若要了解如何通过使用 [Azure GPU 虚拟机](https://docs.microsoft.com/en-us/visualstudio/ai/tensorflow-vm)等加快培训深度学习模型的速度，请访问 [Microsoft 人工智能](https://www.microsoft.com/ai)和 [Microsoft 机器学习技术](https://docs.microsoft.com/en-us/azure/machine-learning/#More-Microsoft-Machine-Learning-Technologies)。

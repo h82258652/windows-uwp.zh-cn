@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a85512eacf880b61b3245726f4d15bb359a7ad
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: f0bed75a8201b9875f79419c0a77c8a35918b77e
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674884"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877149"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -39,23 +39,24 @@ UWP 应用的订阅加载项支持以下功能：
 
 1. 在开发人员中心仪表板中为你的订阅[创建加载项提交](../publish/add-on-submissions.md)，并发布此提交。 在你执行加载项提交流程时，请密切注意以下属性：
 
-  * [产品类型](../publish/set-your-add-on-product-id.md#product-type)：确保选择**订阅**。
+    * [产品类型](../publish/set-your-add-on-product-id.md#product-type)：确保选择**订阅**。
 
-  * [订阅期](../publish/enter-add-on-properties.md#subscription-period)：为你的订阅选择定期帐单期间。 在发布加载项之后，你将不能更改订阅期。
+    * [订阅期](../publish/enter-add-on-properties.md#subscription-period)：为你的订阅选择定期帐单期间。 在发布加载项之后，你将不能更改订阅期。
 
-    每个订阅加载项都支持单个订阅期和试用期。 你必须在应用中为你想要提供的每种订阅创建不同的订阅加载项。 例如，如果你想要提供按月订阅无试用、按月订阅送一个月试用、按年订阅无试用以及按年订阅送一个月试用，则需要创建四个订阅加载项。
+        每个订阅加载项都支持单个订阅期和试用期。 你必须在应用中为你想要提供的每种订阅创建不同的订阅加载项。 例如，如果你想要提供按月订阅无试用、按月订阅送一个月试用、按年订阅无试用以及按年订阅送一个月试用，则需要创建四个订阅加载项。
 
-  * [试用期间](../publish/enter-add-on-properties.md#free-trial)：考虑为你的订阅选择 1 周或 1 个月的试用期，让用户可以在购买之前先试用。 在发布订阅加载项之后，你将不能更改或删除试用期。
+    * [试用期间](../publish/enter-add-on-properties.md#free-trial)：考虑为你的订阅选择 1 周或 1 个月的试用期，让用户可以在购买之前先试用。 在发布订阅加载项之后，你将不能更改或删除试用期。
 
-    要免费试用你的订阅，用户必须通过标准的应用内购买流程（包括有效的付款方式）购买你的订阅。 在试用期内不收取任何费用。 在试用期结束时，订阅自动将转换为完全订阅，并将按用户的支付方式收取第一期的付费订阅费用。 如果用户在试用期内选择取消订阅，则订阅在试用期结束之前仍然会保持有效。 一些试用期并非对所有订阅期都可用。
+        要免费试用你的订阅，用户必须通过标准的应用内购买流程（包括有效的付款方式）购买你的订阅。 在试用期内不收取任何费用。 在试用期结束时，订阅自动将转换为完全订阅，并将按用户的支付方式收取第一期的付费订阅费用。 如果用户在试用期内选择取消订阅，则订阅在试用期结束之前仍然会保持有效。 一些试用期并非对所有订阅期都可用。
+
         > [!NOTE]
-        > Each customer can acquire a free trial for a subscription add-on only one time. After a customer acquires a free trial for a subscription, the Store prevents the same customer from ever acquiring the same free trial subscription again.
+        > 每位客户一次只能获取一个订阅加载项的免费试用版。 客户获得某项订阅的免费试用版后，Microsoft Store 将阻止该客户再次获取相同的免费试用订阅。
 
-  * [可见性](../publish/set-add-on-pricing-and-availability.md#visibility)：如果要创建测试加载项并且仅用它来测试订阅的应用内购买体验，建议你选择一个**在 Microsoft Store 中隐藏**选项。 否则，你可以选择最适合你的情形的可见性选项。
+    * [可见性](../publish/set-add-on-pricing-and-availability.md#visibility)：如果要创建测试加载项并且仅用它来测试订阅的应用内购买体验，建议你选择一个**在 Microsoft Store 中隐藏**选项。 否则，你可以选择最适合你的情形的可见性选项。
 
-  * [定价](../publish/set-add-on-pricing-and-availability.md?#pricing)：在此部分中选择你的订阅的价格。 在发布加载项之后，你将不能提高订阅价格。 不过，可以在以后降价。
-      > [!IMPORTANT]
-      > 默认情况下，当你创建任何加载项时，价格最初都设置为**免费**。 因为你在完成加载项提交之后不能提高订阅加载项的价格，请确保在此处选择你的订阅的价格。
+    * [定价](../publish/set-add-on-pricing-and-availability.md?#pricing)：在此部分中选择你的订阅的价格。 在发布加载项之后，你将不能提高订阅价格。 不过，可以在以后降价。
+        > [!IMPORTANT]
+        > 默认情况下，当你创建任何加载项时，价格最初都设置为**免费**。 因为你在完成加载项提交之后不能提高订阅加载项的价格，请确保在此处选择你的订阅的价格。
 
 2. 在你的应用中，使用 [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的 API 来确定当前用户是否已获取你的订阅加载项，然后以应用内购买的形式将它提供给用户。 请参阅本文中的[代码示例](#code-examples)以了解更多详细信息。
 

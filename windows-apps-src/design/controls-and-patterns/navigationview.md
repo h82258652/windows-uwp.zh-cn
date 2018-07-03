@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fc365a7dbc69819ce88a22db2490b327412c8b4
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: c7817bf7ff60a52ea48c988bdebd6d4d2eeacdb7
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675364"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992146"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -151,9 +151,9 @@ NavigationView 窗格可以打开或关闭，并且有三个显示模式选项�
 
 NavigationView 会根据可用屏幕空间大小自动更改其显示模式。
 
-> [!NOTE] 
-NavigationView 应该用作应用的根容器，因为此控件可跨越应用窗口的整个宽度和高度。
-你可以使用 [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) 和 [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth) 属性覆盖导航视图更改显示模式所依据的宽度。 
+> [!NOTE]
+> NavigationView 应该用作应用的根容器，因为此控件可跨越应用窗口的整个宽度和高度。
+你可以使用 [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) 和 [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth) 属性覆盖导航视图更改显示模式所依据的宽度。
 
 请考虑以下情形，其中阐明了你可能要自定义显示模式行为的情况。
 
@@ -448,13 +448,13 @@ viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
 
 ```xaml
 <Grid>
-
-    <TextBlock x:Name="AppTitle" 
+    <TextBlock x:Name="AppTitle"
         xmlns:appmodel="using:Windows.ApplicationModel"
-        Text="{x:Bind appmodel:Package.Current.DisplayName}" 
-        Style="{StaticResource CaptionTextBlockStyle}" 
-        IsHitTestVisible="False" 
+        Text="{x:Bind appmodel:Package.Current.DisplayName}"
+        Style="{StaticResource CaptionTextBlockStyle}"
+        IsHitTestVisible="False"
         Canvas.ZIndex="1"/>
+    
 
     <NavigationView Canvas.ZIndex="0" ... />
 
@@ -464,6 +464,10 @@ viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
 你还需要根据后退按钮是否可见来调整 AppTitle 边距。 当应用处于 FullScreenMode 时，你需要删除后退箭头的空间，即使 TitleBar 为它保留了空间。
 
 ```csharp
+var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+Window.Current.SetTitleBar(AppTitle);
+coreTitleBar.ExtendViewIntoTitleBar = true;
+
 void UpdateAppTitle()
 {
     var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);

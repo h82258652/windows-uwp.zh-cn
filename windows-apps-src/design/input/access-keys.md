@@ -6,7 +6,7 @@ label: Access keys design guidelines
 keywords: 键盘, 访问键, 键提示, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b335068762dd3999e07526962b0d6629825ad68d
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707052"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018511"
 ---
 # <a name="access-keys"></a>访问键
 
@@ -77,12 +77,10 @@ _Microsoft Word 访问键的键提示锁屏提醒_
 下图所示为 Word 中的两个作用域。 第一个显示可让用户选择选项卡和其他顶级命令的主访问键，第二个显示“主页”选项卡的辅助访问键。
 
 ![Microsoft Word 中的主访问键](images/accesskeys/primary-access-keys-word.png)
-
 _Microsoft Word 中的主访问键_
 
 ![Microsoft Word 中的辅助访问键](images/accesskeys/secondary-access-keys-word.png)
-
-Microsoft Word 中的辅助访问键
+_Microsoft Word 中的辅助访问键_
 
 可以为不同域中的元素复制访问键。 在前面的示例中，“2”既是主域中“撤销”的访问键，也是辅助域中“斜体”的访问键。
 
@@ -122,10 +120,11 @@ _CommandBar 主作用域和受支持的访问键_
 
 _CommandBar 辅助范围和受支持的访问键_
 
-> [!NOTE]
-> 在 Windows 10 Fall Creators Update 之前，某些控件（例如 CommandBar）不支持内置访问键范围。 在这种情况下，必须按以下示例所示实现访问键范围。   
->
-> 此处，我们演示了如何通过调用父命令后可用的访问键支持 CommandBar SecondaryCommands（与 Word 中的“功能区”相似）。
+### <a name="windows-10-creators-update-and-older"></a>Windows 10 创意者更新和早期版本
+
+在 Windows 10 Fall Creators Update 之前，某些控件（例如 CommandBar）不支持内置访问键范围。
+
+以下示例展示了如何通过可用的访问键支持 CommandBar 的 SecondaryCommands，访问键在父命令被调用后可用（与 Word 中的“功能区”相似）。
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -178,11 +177,10 @@ public class CommandBarHack : CommandBar
         secondaryItemsControl.AccessKeyScopeOwner = moreButton;
 
         overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-
     }
+
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;

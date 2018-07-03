@@ -3,94 +3,77 @@ author: QuinnRadich
 title: 使用通用 Windows 平台创建应用
 description: 创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用比想象中要更简单。
 ms.author: quradic
-ms.date: 08/24/2017
+ms.date: 5/7/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
-ms.openlocfilehash: 66536a3059ea6d9b17709c836f4149b1ec583165
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: c31a659b7584bec5a8f71307c40a220e17d62b53
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692708"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843530"
 ---
-# <a name="create-apps-for-windows-10"></a>创建适用于 Windows 10 的应用
+# <a name="start-coding"></a>开始编写代码
 
-![生成你的应用](images/build-your-app.png)
+![生成应用](images/build-your-app.png)
 
-欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 无论你是想要开始使用第一款 UWP 应用，还是想要使用更高级的功能，这些教程都将使你步入正轨。你将学习如何：
+欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在本页面上，我们将为你提供开始编写你要创建的 Windows 10 应用的代码所需的适当信息。
 
--   在 Microsoft Visual Studio 中创建 UWP 项目。
--   将 UI 元素和代码添加到项目。
--   使用 XAML、数据绑定和其他基本 UWP 元素。
--   将独特的 UWP 功能（如墨迹和 Dial）整合到你的应用中。
--   使用第三方库添加新功能。
--   在你的本地计算机上生成和调试应用。
+开始开发之前，你应该已完成[准备工作](get-set-up.md)。
 
-## <a name="ask-a-bot"></a>询问机器人！
+## <a name="learning-tracks"></a>学习轨迹
 
-如果你遇到问题或者需要一些帮助来查找正确的文档，请尝试询问下面的实验性聊天机器人。 例如，询问“我可以在何处下载 Visual Studio？” 或者“告诉我 Fluent 设计的相关信息”。 如果未得到有用的回答，请尝试稍微改写一下你的查询。
+以下学习轨迹介绍完成一些基本任务所要了解的内容，以及在哪里能够找到这些信息。 它们不是教程，但提供了参考代码，可帮助你步入正轨。
 
-<iframe src='https://webchat.botframework.com/embed/DocBot4?s=T2nP6qZUXC8.cwA.lvc.AR-ZBwtULpaITu6_dAhMwrmg4R2GSLNzIoiMNFL8M7M' height="400" width="400"></iframe>
+| 任务 | 描述 |
+| --- | --- |
+| [构建表单](construct-form-learning-track.md) | 了解如何创建易于使用并且能够适应任何屏幕大小的表单。 | 
+| [以列表形式显示客户](display-customers-in-list-learning-track.md) | 了解如何在 UI 中显示和编辑数据。 | 
+| [保存并加载设置](settings-learning-track.md) | 了解如何以及在何处保存和检索设置。 |
+| [使用文件](fileio-learning-track.md) | 了解如何读取和写入文件，以及你可以访问和无法访问哪些文件夹。 | 
 
-## <a name="write-your-first-uwp-app-in-your-favorite-programming-language"></a>使用你最喜爱的编程语言编写你的第一款 UWP 应用
+我们所有的学习轨迹都是为熟悉 Windows 10 的经验丰富的开发人员编写的。 如果是初学者，请从[开发入门](#For-new-developers)开始。
 
-如果你是新开发人员或者熟悉 Windows 平台，并且希望开始使用 UWP，请查看这些基础教程：
+## <a name="for-new-developers"></a>开发入门
 
-* [用 C#、Visual C++ 或 JavaScript 创建你的第一款 UWP 应用](your-first-app.md)
+如果是开发初学者，Microsoft 有很多资源可以帮助你了解如何使用进行 Windows 10 开发所需的代码和工具。 
 
-你是 IOS 开发人员吗？
+* [创建“Hello World”应用](your-first-app.md)
 
-* [适用于 iOS 的 Windows 桥](https://developer.microsoft.com/windows/bridges/ios)可用于将现有代码转换为 UWP 应用，使后续开发使用 Objective-C。
+如果要更深入地演练编写代码、C# 语言、Visual Studio 的基础知识或通用 Windows 平台的功能，请参阅以下资源：
 
-如果你仍在学习或者需要回忆一下，请尝试阅读以下外部资源：
+**文档：**
 
-* [Windows 10 的开发人员指南](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [C# 入门](https://docs.microsoft.com/dotnet/csharp/getting-started/)
+* [C# 快速入门](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [Visual Studio 入门](https://docs.microsoft.com/visualstudio/ide/)
 
-## <a name="customize-your-apps-layout-and-appearance-with-xaml"></a>使用 XAML 自定义你的应用布局和外观
+**视频**
 
-大多数 UWP 应用使用 XAML 标记语言创建其 UI。 了解如何使用其核心功能自定义应用的可视化表示形式，并探索本指南了解如何为你的应用创建独特外观。
+* [Microsoft virtual academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
+* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
-* [应用 UI 设计简介](../design/basics/design-and-ui-intro.md)
-* [教程：在 XAML 中创建用户界面](../design/basics/xaml-basics-ui.md)
-* [适用于 UWP 应用的布局](../design/layout/index.md)
-* [UWP 应用的控件和模式](../design/controls-and-patterns/index.md)
+## <a name="using-the-docs"></a>使用文档
 
-## <a name="use-features-unique-to-windows-10"></a>使用 Windows 10 所特有的功能
+如果浏览过我们的学习轨迹，或对学习轨迹未涉及的内容感兴趣，请自行浏览我们的文档。 下面简要介绍你可以在各个区域找到的内容：
 
-什么使 Windows 10 与众不同？ 学习只使用其部分独特功能。
+| 区域 | 描述 |
+| --- | --- |
+| **新增功能？** | 每次发布 Windows 10 的主要更新，我们的文档库都会增加一些新的指南。 这些文档包含有关我们为每个版本添加的功能和开发人员指南的信息，以及新 API 的列表： </br>   [最新的 Windows 10 版本中面向开发人员的新增功能](../whats-new/windows-10-version-latest.md) </br> 但是，我们不是只在发布主要版本时才更新文档。 我们不断添加新的信息供你浏览，并且帮助你了解最新动向： </br>   [文档中的新增内容](../whats-new/windows-docs-latest.md) |
+| **设计和 UI** | 有关应用的可视化表示形式和 UI 的所有信息均包含在文档的此区域中。如果对 XAML 标记语言的细节感兴趣，或只是想为文档创建独特的外观，请从这里开始： </br>   [UWP 应用的设计基础知识](../design/basics/index.md) |
+| **开发应用** | 如果要了解特定的 Windows 10 功能的详细信息，或只是想了解可以通过 UWP 开发做些什么事情，请查看文档的这一区域： </br>   [UWP 应用功能](../develop/index.md)。 </br> Windows 10 应用的 API 参考托管在一组相关的文档中，可以在这里找到它们： </br>   [Windows UWP 命名空间](https://docs.microsoft.com/en-us/uwp/api/) </br>   [文件和 XML 架构](https://docs.microsoft.com/uwp/schemas/) |
+| **开发游戏** | 这些文档包含有关如何在 Windows 或 Xbox 上开发游戏的信息。 这包括设置说明、开发人员计划以及使用 DirectX 或 Xbox 功能进行编程的说明。 </br>   [游戏开发入门](../gaming/getting-started.md) |
+| **发布** | 这些文档包含有关如何将应用发布到 Microsoft Store（从应用提交到定价再到推广和客户互动）的信息： </br>   [将应用发布到 Microsoft Store](../publish/index.md) |
 
-* [教程：在 UWP 应用中支持墨迹](../design/input/ink-walkthrough.md)
-* [教程：支持 Surface Dial](../design/input/radialcontroller-walkthrough.md)
-* [浏览最新版本的 Windows 中的新增功能](../whats-new/windows-10-version-latest.md)
+## <a name="other-docs"></a>其他文档
 
-浏览有关 Windows 10 开发的操作方法文章和详细文档：
+某些专门的 Windows 10 平台（例如 Web 开发或混合现实）有自己的文档集。 如果有兴趣使用这些功能开发应用，请查看其文档：
 
-* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
-* [UWP 应用的 API 参考](https://docs.microsoft.com/en-us/uwp/)
-
-## <a name="develop-javascript-and-web-apps"></a>开发 JavaScript 和 Web 应用
-
-UWP 是一个非常灵活的平台，并且支持多种语言和框架。 使用 JavaScript 构建 UWP 应用，并使用你的技能来构建可在 Microsoft Store 中特别推荐的托管 Web 应用。
-
-* [利用 Web 技能来使用 HTML5、CSS3 和 JavaScript 生成应用。](your-first-app.md#javascript-and-html)
-
-有兴趣了解关于构建 Web 应用的详细信息吗？
-
-* [Microsoft Edge 开发人员文档](https://docs.microsoft.com/microsoft-edge/)
-
-## <a name="cross-platform-and-mobile-development"></a>跨平台和移动开发
-
-* 需要以 Android 和 iOS 为目标？ 请参阅 [Xamarin](https://www.xamarin.com)。
-
-## <a name="see-also"></a>另请参阅
-
-* [发布 UWP 应用](https://developer.microsoft.com/store/publish-apps)。
-* [有关开发 UWP 应用的操作方法文章](https://developer.microsoft.com/windows/apps/develop)
-* [适用于 UWP 开发人员的代码示例](https://developer.microsoft.com/windows/samples)
-* [UWP 应用是什么？](universal-application-platform-guide.md)
-* [准备工作](get-set-up.md)
-* [注册 Windows 帐户](sign-up.md)
+| 文档 | 描述 |
+| --- | --- |
+| **Microsoft Azure** | 可以在 [Microsoft Azure 开发人员文档](https://docs.microsoft.com/azure/)中找到有关云开发和 Microsoft Azure 的信息。 |
+| **Web 开发** | 可以在 [Microsoft Edge 开发人员文档](https://docs.microsoft.com/microsoft-edge/)中找到有关 Microsoft Edge、WebVR 和其他 Windows Web 开发功能的信息。 |
+| **Windows Mixed Reality** | 混合现实将现实世界和虚拟内容融合到真实对象与数字对象共存的体验之中。 可以在 [Windows Mixed Reality 文档](https://docs.microsoft.com/en-us/windows/mixed-reality/)中找到有关为 Microsoft HoloLens 和其他沉浸式头戴显示设备构建应用的信息。|

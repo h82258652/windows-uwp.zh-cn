@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取桌面应用程序的特定错误的详细数据。
 title: 获取桌面应用程序中的错误的详细信息
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e24d3c44743cae77fdbf2c42dcf0792d0ce11b4
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 5c7836119b99e885bd0328a8ea313409a6fcf6dc
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663823"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989541"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的详细信息
 
@@ -83,7 +83,7 @@ Authorization: Bearer <your access token>
 |------------|---------|------------|
 | 值      | array   | 包含详细错误数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[错误详细信息值](#error-detail-values)部分。          |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |
-| TotalCount | inumber | 查询的数据结果中的行总数。        |
+| TotalCount | 整数 | 查询的数据结果中的行总数。        |
 
 
 <span id="error-detail-values"/>
@@ -104,9 +104,9 @@ Authorization: Bearer <your access token>
 | osBuild         | 字符串  | 发生错误的操作系统的版本号。       |
 | applicationVersion         | string  |   发生错误的应用程序可执行文件的版本。     |
 | deviceModel           | 字符串  | 指定发生错误时，运行应用的设备型号的字符串。   |
-| osVersion       | string  | 用于指定在其上安装桌面应用程序的操作系统版本的以下字符串之一：<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Unknown</strong></li></ul>    |
-| osRelease       | string  |  用于指定安装了桌面应用程序的操作系统版本或外部测试 Ring（作为操作系统版本内的亚组）的以下字符串之一。<p/><p>对于 Windows 10：</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>预览体验成员 - 快</strong></li><li><strong>预览体验成员 - 慢</strong></li></ul><p/><p>对于 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>对于 Windows Server 2016：</p><ul><li><strong>Version 1607</strong></li></ul><p>对于 Windows 8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>对于 Windows 7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果操作系统版本或外部测试 Ring 未知，则此字段的值为 <strong>Unknown</strong>。</p>    |
-| deviceType      | string  | 用于指示发生了错误的设备类型的以下字符串之一： <p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Unknown</strong></li></ul>     |
+| osVersion       | string  | 用于指定在其上安装桌面应用程序的操作系统版本的以下字符串之一：<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Unknown</strong></li></ul>    |
+| osRelease       | string  |  用于指定发生了错误的操作系统版本或外部测试 Ring（作为操作系统版本内的亚组）的以下字符串之一。<p/><p>对于 Windows 10：</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>预览体验成员 - 快</strong></li><li><strong>预览体验成员 - 慢</strong></li></ul><p/><p>对于 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>对于 Windows Server 2016：</p><ul><li><strong>Version 1607</strong></li></ul><p>对于 Windows 8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>对于 Windows 7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果操作系统版本或外部测试 Ring 未知，则此字段的值为 <strong>Unknown</strong>。</p>    |
+| deviceType      | 字符串  | 用于指示发生了错误的设备类型的以下字符串之一： <p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Unknown</strong></li></ul>     |
 | cabDownloadable           | 布尔值  | 指示是否可为此用户下载 CAB 文件。   |
 | fileName           | string  | 为其检索错误详细信息的桌面应用程序的可执行文件名称。  |
 

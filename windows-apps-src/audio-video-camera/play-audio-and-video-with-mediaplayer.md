@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b54e202835bb3dba9098591ae08527e12565bf
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: c06a4348ba1f974aaf7151456267ce7585b56a10
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832581"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983602"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音频和视频
 
@@ -23,6 +23,8 @@ ms.locfileid: "1832581"
 
 本文将向你介绍典型的媒体播放应用所使用的 **MediaPlayer** 功能。 请注意，**MediaPlayer** 将 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 类用作所有媒体项目的容器。 此类允许你加载并播放来自许多不同源的媒体，这些来源包括本地文件、内存流和网络源等，但使用的都是同一界面。 此外，还有更高级的类能够与 **MediaSource** 一同使用，例如 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList)，这些类提供更加高级的功能，例如播放列表，以及通过音频、视频和元数据多轨道管理媒体源的功能。 有关 **MediaSource** 和相关 API 的详细信息，请参阅[媒体项、播放列表和曲目](media-playback-with-mediasource.md)。
 
+> [!NOTE] 
+> Windows 10 N 和 Windows 10 KN 版本不包括使用 **MediaPlayer** 进行播放所需的媒体功能。 可以手动安装这些功能。 有关详细信息，请参阅 [Windows 10 N 和 Windows 10 KN 版本的媒体功能包](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions)。
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>使用 MediaPlayer 播放媒体文件  
 通过 **MediaPlayer** 进行基本媒体播放非常易于实现。 首先，创建 **MediaPlayer** 类的新实例。 应用可以同时使用多个 **MediaPlayer** 实例。 接下来，将播放器的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) 属性设为实现 [**IMediaPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.IMediaPlaybackSource) 的对象，例如 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource)、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 或 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList)。 在本例中，**MediaSource** 创建于应用本地存储中的文件，**MediaPlaybackItem** 创建于源，随后分配到播放器的 **Source** 属性。
@@ -78,6 +80,10 @@ ms.locfileid: "1832581"
 下一个示例介绍通过设置会话的 [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.PlaybackRate) 属性，使用切换按钮在正常播放速度和 2 倍播放速度之间切换。
 
 [!code-cs[SpeedChecked](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSpeedChecked)]
+
+从 Windows 10 版本 1803 开始，可以对在 **MediaPlayer** 中显示的视频设置旋转（以 90 度为增量）。
+
+[!code-cs[SetRotation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetRotation)]
 
 ### <a name="detect-expected-and-unexpected-buffering"></a>检测预期和非预期缓冲
 上一节中所述的 **MediaPlaybackSession** 对象提供了两个事件（**[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** 和 **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)**）用于检测当前播放的媒体文件何时开始和结束缓冲。 这允许更新 UI 以向用户显示正在发生缓冲。 当媒体文件首次打开或用户切换到播放列表中的新项时，需要进行初始缓冲。 当网络速度降低或提供内容的内容管理系统遇到技术问题时，可能会发生非预期缓冲。 从 RS3 开始，可以使用 **BufferingStarted** 事件来确定缓冲事件是预期的还是非预期的并会中断播放。 此信息可以用作应用或媒体传送服务的遥测数据。 

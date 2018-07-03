@@ -14,12 +14,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cefcefc9df85b512456c5fb2e556ad95e56d4999
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 824f0e83408893bf95d856067282b1fea1313876
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831981"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895404"
 ---
 #  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -190,16 +190,16 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，无屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 没有始终存在的导航元素（例如选项卡/透视表或停靠的导航窗格）可提供到两个页面的直接导航。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 没有始终存在的导航元素（例如顶部导航窗格或停靠的左侧导航窗格）可提供到两个页面的直接导航。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
-<p>在下图中，用户在同一对等组中的两个页面之间导航。 这些页面不使用表或停靠的导航窗格，因此该导航将添加到导航历史记录。</p>
+<p>在下图中，用户在同一对等组中的两个页面之间导航。 这些页面不使用顶部导航栏或停靠的左侧导航窗格，因此该导航将添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，带有屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中。 例如，两个页面使用相同的选项卡/透视表元素，或者两个页面都显示在停靠的导航窗格中。</p></td>
-<td style="vertical-align:top;"><strong>否</strong>
-<p>当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。</p>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中。 例如，两个页面使用相同的顶部导航元素，或者两个页面都显示在停靠的左侧导航窗格中。</p></td>
+<td style="vertical-align:top;"><strong>视情况而定</strong>
+<p>是的，添加到导航历史记录，但有 2 个明显例外。 如果预计应用的用户经常在对等组中的页面之间切换，或者希望在对等组的页面中保留导航状态/历史记录，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 556234eb4047418b0798a432d917268fb3634996
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: d7c620d5e6a45d48442a2761285f8509db91961d
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691003"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1863163"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 
@@ -71,7 +71,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 > 此代码可放在应用的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法 (_App.xaml.cs_) 中、对 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的调用的后面，或应用的第一页中。
 
 > [!TIP]
-> UWP 社区工具包提供了允许你在 XAML 中设置这些颜色属性的扩展。 有关详细信息，请参阅 [UWP 社区工具包文档](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)。
+> Windows 社区工具包提供的扩展可用于在 XAML 中设置这些颜色属性。 有关详细信息，请参阅 [Windows 社区工具包文档](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)。
 
 设置标题栏颜色时需要注意以下几点：
 

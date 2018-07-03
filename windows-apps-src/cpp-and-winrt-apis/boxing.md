@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 装箱, 标量, 值
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d5c7a35fb7a6ff9952f3fe768f4faa3f6c6347
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 9548776fe1be06c9b622870c4d3331b04a943789
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832001"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935785"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱 
 [**IInspectable 接口**](https://msdn.microsoft.com/library/windows/desktop/br205821)是 Windows 运行时 (WinRT) 中每个运行时类的根接口。 这类似于位于每个 COM 接口和类的根处的 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)；而且类似于位于每个[通用类型系统](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system)类的根处的**System.Object**。
@@ -30,7 +30,7 @@ C++/WinRT 提供了 [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 函
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     ...
-    rootFrame.Navigate(xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
+    rootFrame.Navigate(winrt::xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
     ...
 }
 ```
@@ -41,13 +41,13 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 Button().Content(winrt::box_value(L"Clicked"));
 ```
 
-首先，**hstring** 转换构造函数将此字符串参数转换为 **hstring**。 然后，调用采用 **hstring** 的 **winrt::box_value** 的重载。
+首先，[**hstring**](/uwp/cpp-ref-for-winrt/hstring) 转换构造函数将此字符串参数转换为 **hstring**。 然后，调用采用 **hstring** 的 **winrt::box_value** 的重载。
 
 ## <a name="examples-of-unboxing-an-iinspectable"></a>取消 IInspectable 装箱的示例
 在自己的需要 **IInspectable** 的函数中，你可以使用 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 取消装箱，也可以使用 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 通过默认值取消装箱。
 
 ```cppwinrt
-void Unbox(Windows::Foundation::IInspectable const& object)
+void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 {
     hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
     hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
@@ -55,8 +55,19 @@ void Unbox(Windows::Foundation::IInspectable const& object)
 }
 ```
 
-## <a name="important-apis"></a>重要的 API
+## <a name="determine-the-type-of-a-boxed-value"></a>确定装箱值的类型
+如果收到装箱值但不确定它所包含的类型（需要知道类型以便取消装箱），可以查询装箱值的 [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) 接口，然后对其调用 **Type**。 下面是代码示例。
+
+```cppwinrt
+float pi = 3.14f;
+auto piInspectable = winrt::box_value(pi);
+auto piPropertyValue = piInspectable.as<winrt::Windows::Foundation::IPropertyValue>();
+WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType::Single);
+```
+
+## <a name="important-apis"></a>重要 API
 * [IInspectable 接口](https://msdn.microsoft.com/library/windows/desktop/br205821)
 * [winrt::box_value 函数模板](/uwp/cpp-ref-for-winrt/box-value)
+* [winrt::hstring 结构](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::unbox_value 函数模板](/uwp/cpp-ref-for-winrt/unbox-value)
 * [winrt::unbox_value_or 函数模板](/uwp/cpp-ref-for-winrt/unbox-value-or)

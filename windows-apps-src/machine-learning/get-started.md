@@ -9,23 +9,21 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, windows 机器学习, winml, windows ML
 ms.localizationpriority: medium
-ms.openlocfilehash: e30786f775a66bcf5c8e6dce0b4aab4f1f239be6
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: eec2ada8e3aadad134381a93bca2652133912b2e
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816582"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843620"
 ---
 # <a name="get-started-with-windows-ml"></a>Windows ML 入门
 
-在此教程中，我们将生成一个简单的 UWP 应用，使用经过训练的机器学习模型来识别用户绘制的数字。 此教程主要侧重于讲述在你的应用中加载和使用 Windows ML 的方法。
+在此教程中，我们将生成一个简单的 UWP 应用，使用经过训练的机器学习模型来识别用户绘制的数字。 此教程主要介绍如何在应用中加载和使用 Windows ML。
 
 ## <a name="prerequisites"></a>必备软件
 
-- [Windows SDK - 版本 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (v15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/) 
-
-    **注意**：在 Visual Studio 安装程序中，你将需要查看可选的 Windows 10 Preview SDK (10.0.17110.0)。
+- [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)（版本 17110 或更高版本）
+- [Visual Studio](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="1-download-the-sample"></a>1. 下载示例
 
@@ -69,7 +67,7 @@ GitHub 中还有一个完整的 MNIST 示例可供下载。
 
 ## <a name="5-add-the-model"></a>5. 添加模型
 
-下载 MNIST 模型之后，请在解决方案资源管理器中右键单击“资源”文件夹，然后选择**添加** > **现有项目**。 将文件选取器指向 ONNX 模型的位置，然后单击“添加”。 
+下载 MNIST 模型之后，请在解决方案资源管理器中右键单击“资源”文件夹，然后选择**添加** > **现有项目**。 将文件选取器指向 ONNX 模型的位置，然后单击“添加”。
 
 该项目现在应该有两个新文件：
 

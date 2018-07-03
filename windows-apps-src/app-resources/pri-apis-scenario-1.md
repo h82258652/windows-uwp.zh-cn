@@ -4,23 +4,20 @@ Description: In this scenario, we'll make a new app to represent our custom buil
 title: 方案 1 从字符串资源和资产文件生成 PRI 文件
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 7071c6e6eea3e4484f1ce416654d30d90d905325
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
+ms.openlocfilehash: 22a648d9366a3abcedd9fd75328cf0f504a9f84c
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658151"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992073"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>方案 1：从字符串资源和资产文件生成 PRI 文件
-> [!NOTE]
-> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
-
 在此方案中，我们使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。
 
 ## <a name="new-project"></a>新建项目
@@ -31,7 +28,7 @@ ms.locfileid: "1658151"
 ## <a name="headers-static-library-and-dll"></a>标题、静态库和 dll
 MrmResourceIndexer.h 标头文件（该文件安装到 `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\um\`）中已声明 PRI API。 打开文件 `CBSConsoleApp.cpp` 并将标头与需要的其他标头一同包括在内。
 
-```cpp
+```cppwinrt
 #include <string>
 #include <windows.h>
 #include <MrmResourceIndexer.h>
@@ -43,7 +40,7 @@ API 是在 MrmSupport.dll 中实现的，可通过链接到静态库 MrmSupport.
 
 将下面的 helper 函数添加到 `CBSConsoleApp.cpp`，因为我们需要它。
 
-```cpp
+```cppwinrt
 inline void ThrowIfFailed(HRESULT hr)
 {
     if (FAILED(hr))
@@ -56,7 +53,7 @@ inline void ThrowIfFailed(HRESULT hr)
 
 在 `main()` 函数中，添加对初始化和取消初始化 COM 的调用。
 
-```cpp
+```cppwinrt
 int main()
 {
     ::ThrowIfFailed(::CoInitializeEx(nullptr, COINIT_MULTITHREADED));
@@ -117,7 +114,7 @@ int main()
 ## <a name="index-the-resources-and-create-a-pri-file"></a>为资源编制索引并创建 PRI 文件
 在 `main()` 函数中，调用初始化 COM 之前，声明某些我们需要的字符串，并创建将在其中生成 PRI 文件输出文件夹。
 
-```cpp
+```cppwinrt
 std::wstring projectRootFolderUWPApp{ L"UWPAppProjectRootFolder" };
 std::wstring generatedPRIsFolder{ projectRootFolderUWPApp + L"\\Generated PRIs" };
 std::wstring filePathPRI{ generatedPRIsFolder + L"\\resources.pri" };
@@ -128,7 +125,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 
 调用初始化 COM 后立即声明资源索引器图柄，然后调用 [**MrmCreateResourceIndexer**]() 以创建资源索引器。
 
-```cpp
+```cppwinrt
 MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmCreateResourceIndexer(
     L"OurUWPApp",
@@ -148,7 +145,7 @@ MrmResourceIndexerHandle indexer;
 
 下一步是将资源添加到刚刚创建的资源索引器中。 `resources.resw` 是一个包含目标 UWP 应用中性字符串的资源文件 (.resw)。 如果想查看其内容，请向上滚动（在本主题中）。 `de-DE\resources.resw` 包含德语字符串，`en-US\resources.resw` 包含英语字符串。 若要将资源文件内的字符串资源添加到资源索引器，请调用 [**MrmIndexResourceContainerAutoQualifiers**]()。 第三步，向包含资源索引器中性图像资源的文件调用 [**MrmIndexFile**]() 函数。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"de-DE\\resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"en-US\\resources.resw"));
@@ -159,19 +156,19 @@ MrmResourceIndexerHandle indexer;
 
 在简要介绍了有关资源文件的资源索引器之后，是时候让它通过调用 [**MrmCreateResourceFile**]() 函数在磁盘上生成 PRI 文件了。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
 此时，在一个名为 `Generated PRIs` 的文件夹中已创建了名为 `resources.pri` 的 PRI 文件。 现在我们已经完成了资源索引器，调用 [**MrmDestroyIndexerAndMessages**]() 来破坏其图柄并释放其分配的任何计算机资源。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
 由于 PRI 文件是二进制的，如果将二进制 PRI 文件转储为等效 XML，就更易于查看刚才生成的内容。 调用 [**MrmDumpPriFile**]() 即可实现该操作。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
 ```
 

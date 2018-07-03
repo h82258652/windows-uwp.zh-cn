@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ae77c499cb8398aa5557f0d422899fbe8b252d
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 5e3dce1950de907462b62967291d456fb062bd9c
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816252"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989261"
 ---
 # <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>使用 Visual Studio 打包应用（桌面桥）
 
@@ -27,11 +27,9 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 >[!IMPORTANT]
 >桌面桥是在 Windows 10 版本 1607 中引入，它仅可用于面向 Windows 10 周年更新（10.0；版本 14393）或 Visual Studio 更高版本的项目中。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>首先，请考虑要如何分发应用
+## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
-如果打算将应用发布到 [Microsoft Store](https://www.microsoft.com/store/apps)，请先填写[此表单](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。 Microsoft 将联系你以开始上架过程。 在此过程中，你需要在 Microsoft Store 中预留一个名称，然后获取对应用打包所需的信息。
-
-此外，请确保在开始为应用程序创建程序包之前查看本指南：[准备打包应用（桌面桥）](desktop-to-uwp-prepare.md)。
+在开始为应用程序创建程序包之前查看本指南：[准备打包应用（桌面桥）](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -72,7 +70,8 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 **视频**
 
-<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## <a name="next-steps"></a>后续步骤
 

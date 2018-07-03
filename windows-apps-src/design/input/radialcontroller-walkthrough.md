@@ -10,28 +10,28 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd24bb951619e086a69a5bb0dd7752bfa3fe41dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: e08208b7086023654b0b2404cccc8664e123d9ec
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707112"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983612"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教程：在 UWP 应用中支持 Surface Dial（和其他滚轮设备）
 
 ![适配 Surface Studio 的 Surface Dial 的图像](images/radialcontroller/dial-pen-studio-600px.png)  
 *适配 Surface Studio 和 Surface 触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacedial)购买）。
 
-此教程逐步介绍如何自定义 Surface Dial 等滚轮设备支持的用户交互体验。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) API。
+此教程逐步介绍如何自定义 Surface Dial 等滚轮设备支持的用户交互体验。 我们使用可以从 GitHub 下载的示例应用中的代码段（参阅[示例代码](#sample-code)），来展示各个步骤所讨论的各种功能和关联的 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) API。
 
 我们主要介绍以下内容：
-* 指定哪些内置工具在 [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) 菜单中显示
+* 指定哪些内置工具在 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 菜单中显示
 * 将自定义工具添加到菜单
 * 控制触觉反馈
 * 自定义单击交互
 * 自定义旋转交互
 
-有关实现这些及其他功能的详细信息，请参阅 [UWP 应用中的 Surface Dial 交互](https://docs.microsoft.com/en-us/windows/uwp/input/windows-wheel-interactions)。
+有关实现这些及其他功能的详细信息，请参阅 [UWP 应用中的 Surface Dial 交互](windows-wheel-interactions.md)。
 
 ## <a name="introduction"></a>简介
 
@@ -46,11 +46,11 @@ Dial 支持三种基本手势：
 
 * 运行 Windows 10 创意者更新或更高版本的计算机（或虚拟机）
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 滚轮设备（现在仅限 [Surface Dial](https://aka.ms/purchasesurfacedial)）
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
-    * [准备工作](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
-    * [创建“Hello, world”应用 \(XAML\)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
+    * [创建“Hello, world”应用 \(XAML\)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>设置你的设备
 
@@ -67,7 +67,7 @@ Dial 支持三种基本手势：
 > [!NOTE]
 > 可以通过**滚轮**设置配置滚轮设备：
 > 1. 在**开始**菜单上，选择**设置**。
-> 选择**设备** > **滚轮**。    
+> 2. 选择**设备** > **滚轮**。    
 > ![滚轮设置屏幕](images/radialcontroller/wheel-settings.png)
 
 现在，你已准备好开始此教程了。 
@@ -177,7 +177,7 @@ Dial 支持三种基本手势：
         using Windows.UI.Input;
         ```
 
-    - 这些全局对象（[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)、[RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)、[RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem)）用于整个应用。
+    - 这些全局对象（[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)、[RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)、[RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)）用于整个应用。
     
         ```csharp
         private RadialController radialController;
@@ -192,7 +192,7 @@ Dial 支持三种基本手势：
         { InitializeSample(sender, args); };
         ``` 
 
-    - 接下来，我们初始化 [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 对象，并设置 [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件的处理程序。
+    - 接下来，我们初始化 [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 对象，并设置 [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件的处理程序。
 
         ```csharp
         // Set up the app UI and RadialController.
@@ -210,7 +210,7 @@ Dial 支持三种基本手势：
         }
         ```
 
-    - 在这里，我们初始化自定义 RadialController 菜单项。 我们使用 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) 获取对 [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 对象的引用，使用 [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) 属性将旋转灵敏度设置为“1”，然后使用 [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) 创建 [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem)，我们将菜单项添加到 **RadialController** 菜单项集合，最后，我们使用 [SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) 清除默认菜单项，只保留我们的自定义工具。 
+    - 在这里，我们初始化自定义 RadialController 菜单项。 我们使用 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) 获取对 [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) 对象的引用，使用 [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) 属性将旋转灵敏度设置为“1”，然后使用 [CreateFromFontGlyph](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) 创建 [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)，我们将菜单项添加到 **RadialController** 菜单项集合，最后，我们使用 [SetDefaultMenuItems](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) 清除默认菜单项，只保留我们的自定义工具。 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -444,14 +444,14 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
         using Windows.Devices.Haptics;
         ```
 
-    - 在这里，我们指定选择自定义 **RadialController** 菜单项时触发的 [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 事件的处理程序。
+    - 在这里，我们指定选择自定义 **RadialController** 菜单项时触发的 [ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 事件的处理程序。
 
         ```csharp
         radialController.ControlAcquired += (rc_sender, args) =>
         { RadialController_ControlAcquired(rc_sender, args); };
         ``` 
 
-    - 接下来，我们定义 [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 处理程序，在这个过程中我们禁用默认的触觉反馈并初始化我们的触觉 UI。
+    - 接下来，我们定义 [ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) 处理程序，在这个过程中我们禁用默认的触觉反馈并初始化我们的触觉 UI。
 
         ```csharp
         private void RadialController_ControlAcquired(
@@ -520,7 +520,7 @@ Surface Dial 和其他滚轮设备可以向用户提供与当前交互对应的�
         }
         ```
 
-    - 在 [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件处理程序中，我们将相应的滑块和切换按钮控件连接到我们的自定义触觉。 
+    - 在 [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) 和 [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) 事件处理程序中，我们将相应的滑块和切换按钮控件连接到我们的自定义触觉。 
 
         ```csharp
         // Connect wheel device rotation to slider control.

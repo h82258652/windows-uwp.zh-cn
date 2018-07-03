@@ -4,26 +4,26 @@ Description: Distribute a packaged desktop app (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: 将打包的桌面应用发布到 Microsoft Store 或将其旁加载到一台或多台设备上。
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aff2635094064c0758f9d0d2ca56b7aa73cfda1
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816832"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989621"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>分发打包的桌面应用（桌面桥）
 
-将打包的桌面应用发布到 Windows 应用商店或将其旁加载到一台或多台设备上。  
+将打包的桌面应用发布到 Microsoft Store 或将其旁加载到一台或多台设备上。  
 
 > [!NOTE]
-> 是否有计划如何将用户切换到打包的应用？ 分发应用前，请参阅本指南的[将用户切换到桌面桥应用](#transition-users)部分，获得一些参考。
+> 是否有计划如何将用户切换到打包的应用？ 分发应用前，请参阅本指南的[将用户切换到打包的应用](#transition-users)部分，获得一些参考。
 
 ## <a name="distribute-your-app-by-publishing-it-to-the-microsoft-store"></a>通过将应用发布到 Microsoft Store 来进行发布
 
@@ -31,12 +31,12 @@ ms.locfileid: "1816832"
 
 将应用发布到 Microsoft Store 供最广泛的受众使用。 此外，组织客户还可通过[适用于企业的 Microsoft Store](https://www.microsoft.com/business-store) 获取应用以分发到企业内部。
 
-如果计划发布到 Microsoft Store，但尚未联系我们，请填写[此表单](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)，Microsoft 将联系你开始上架过程。
+如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html)。
 
 将应用提交到 Microsoft Store 前无需对其进行签名。
 
 >[!IMPORTANT]
-> 如果你打算将应用发布到 Microsoft Store，请确保它可在运行 Windows 10 S 的设备上正常运行。这是应用商店的要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](desktop-to-uwp-test-windows-s.md)。
+> 如果你打算将应用发布到 Microsoft Store，请确保它可在运行 Windows 10 S 的设备上正常运行。这是 Microsoft Store 的要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](desktop-to-uwp-test-windows-s.md)。
 
 <a id="side-load" />
 
@@ -46,7 +46,7 @@ ms.locfileid: "1816832"
 
 如果要更好地控制分发体验，或者不想涉及 Microsoft Store 证书过程，这很有意义。
 
-若将应用到分发到其他设备而不将其置于应用商店中，则需要获取一个证书，使用该证书对应用进行签名，然后将应用旁加载到这些设备上。
+若将应用到分发到其他设备而不将其置于 Microsoft Store 中，则需要获取一个证书，使用该证书对应用进行签名，然后将应用旁加载到这些设备上。
 
 你可以[创建证书](../packaging/create-certificate-package-signing.md)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
@@ -69,19 +69,19 @@ ms.locfileid: "1816832"
 
 <a id="transition-users" />
 
-## <a name="transition-users-to-your-desktop-bridge-app"></a>将用户切换到桌面桥应用
+## <a name="transition-users-to-your-packaged-app"></a>让用户切换到打包后的应用
 
-分发应用前，请考虑向程序包清单添加几个扩展，以便帮助用户养成使用桌面桥应用的习惯。 下面是一些可以执行的操作。
+分发应用前，请考虑向程序包清单添加几个扩展，以便帮助用户养成使用打包的应用的习惯。 下面是一些可以执行的操作。
 
-* 将现有“开始”磁贴和任务栏按钮指向桌面桥应用。
+* 将现有“开始”磁贴和任务栏按钮指向打包后的应用。
 * 将打包的应用与一组文件类型相关联。
-* 使桌面桥应用默认打开特定类型的文件。
+* 使打包的应用默认打开特定类型的文件。
 
 有关扩展的完整列表以及如何使用它们的指南，请参阅[将用户切换到应用](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
 
-此外，请考虑向完成这些任务的桌面桥应用添加代码：
+此外，请考虑向完成这些任务的打包的应用添加代码：
 
-* 将与桌面应用关联的用户数据迁移至桌面桥应用的相应文件夹位置。
+* 将与桌面应用关联的用户数据迁移至打包的应用的相应文件夹位置。
 * 为用户提供卸载桌面版应用的选项。
 
 下面逐个谈谈这些任务。 首先是迁移用户数据。
@@ -90,7 +90,7 @@ ms.locfileid: "1816832"
 
 如果要添加迁移用户数据的代码，最好只在首次启动应用时运行该代码。 迁移用户数据前，向用户显示一个对话框，解释将发生的情况、建议执行此操作的原因以及他们的现有数据会出现的情况。
 
-下面的示例介绍如何在基于 .NET 的桌面桥应用中执行此操作。
+下面的示例介绍如何在基于 .NET 的打包的应用中执行此操作。
 
 ```csharp
 private void MigrateUserData()
@@ -100,11 +100,9 @@ private void MigrateUserData()
 
     if (sourceDir != null)
     {
-        String migrateMessage =
-            "Would you like to migrate your data from the previous version of this app?";
-
         DialogResult migrateResult = MessageBox.Show
-            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+            ("Would you like to migrate your data from the previous version of this app?",
+             "Data Migration", MessageBoxButtons.YesNo);
 
         if (migrateResult.Equals(DialogResult.Yes))
         {
@@ -131,7 +129,7 @@ private void MigrateUserData()
 
 事先征得用户同意前，最好不要卸载用户桌面应用。 显示一个对话框，向用户征得该权限。 用户可能会决定不卸载桌面版应用。 如果发生这种情况，则需要确定是想要阻止桌面应用的使用还是支持并行使用两个应用。
 
-下面的示例介绍如何在基于 .NET 的桌面桥应用中执行此操作。
+下面的示例介绍如何在基于 .NET 的打包的应用中执行此操作。
 
 要查看此代码片段的完整上下文，请参阅此示例的 **MainWindow.cs** 文件[使用转换/迁移/卸载的 WPF 图片查看器](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)。
 
@@ -146,11 +144,10 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, consider uninstalling the "
-            +" previous version of this app. Would you like to do that now?";
-
         DialogResult uninstallResult = MessageBox.Show
-            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+            ("To have the best experience, consider uninstalling the "
+              + " previous version of this app. Would you like to do that now?",
+              "Uninstall the previous version", MessageBoxButtons.YesNo);
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {

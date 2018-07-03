@@ -4,23 +4,20 @@ Description: With the package resource indexing (PRI) APIs, you can develop a cu
 title: 包资源索引 (PRI) API 和自定义生成系统
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 8947f9305829e5045a418ac2fdd2d6c327acb2a1
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 58473101f0972040fe80c7f7f582ad33eafeb009
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707348"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862496"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>包资源索引 (PRI) API 和自定义生成系统
-> [!NOTE]
-> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
-
 通过[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，你可以为 UWP 应用的资源开发自定义生成系统。 生成系统可以创建、改编和转储（作为 XML）包资源索引 (PRI) 文件，以适应 UWP 应用所需的任何级别的复杂性。 如果具有当前使用 MakePri.exe 命令行工具的自定义生成系统（请参阅[使用 MakePri.exe 手动编译资源](makepri-exe-command-options.md)），为了提供更佳的性能和控制，我们建议更改为调用 PRI API，而不是调用 MakePri.exe。
 
 适用于 Windows 10 版本 1803 的 Windows SDK 中引入了 PRI API。 该 API 采用 Win32 Windows API 的形式，这意味着你拥有一些用于调用它们的选项。 可以直接从 Win32 应用中对它们进行调用，也可以从 .NET 应用或甚至从 UWP 应用通过[平台调用](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)对它们进行调用。

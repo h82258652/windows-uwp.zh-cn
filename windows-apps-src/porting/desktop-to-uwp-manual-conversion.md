@@ -4,19 +4,19 @@ Description: Shows how to manually package a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: 手动打包应用（桌面桥）
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d5b9b0b52ef0f7529b277215e7fe0b95683f0a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: eeadd41debcfcf5cfde23948c52bdfe1ce32e9df
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689763"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989641"
 ---
 # <a name="package-an-app-manually-desktop-bridge"></a>手动打包应用（桌面桥）
 
@@ -31,8 +31,9 @@ ms.locfileid: "1689763"
 >[!IMPORTANT]
 >桌面桥是在 Windows 10 版本 1607 中引入，它仅可用于面向 Windows 10 周年更新（10.0；版本 14393）或 Visual Studio 更高版本的项目中。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>首先，请考虑要如何分发应用
-如果打算将应用发布到 [Microsoft Store](https://www.microsoft.com/store/apps)，请先填写[此表单](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。 Microsoft 将联系你以开始上架过程。 在此过程中，你需要在应用商店中预留一个名称，然后获取对应用打包所需的信息。
+## <a name="first-prepare-your-application"></a>首先，准备应用程序
+
+在开始为应用程序创建程序包之前查看本指南：[准备打包应用（桌面桥）](desktop-to-uwp-prepare.md)。
 
 ## <a name="create-a-package-manifest"></a>创建程序包清单
 
@@ -109,9 +110,9 @@ ms.locfileid: "1689763"
   <Resource Language="en-us" />
 </Resources>
 ```
-### <a name="dependencies"></a>依存关系
+### <a name="dependencies"></a>依赖关系
 
-对于桌面桥应用，请始终将 ``Name`` 特性设置为 ``Windows.Desktop``。
+对于使用桌面桥打包的桌面应用，始终将 ``Name`` 属性设置为 ``Windows.Desktop``。
 
 ```XML
 <Dependencies>
@@ -120,7 +121,7 @@ ms.locfileid: "1689763"
 ```
 
 ### <a name="capabilities"></a>功能
-对于桌面桥应用，必须添加 ``runFullTrust`` 功能。
+对于使用桌面桥打包的桌面应用，必须添加 ``runFullTrust`` 功能。
 
 ```XML
 <Capabilities>
@@ -133,7 +134,7 @@ ms.locfileid: "1689763"
 
 ### <a name="application-element"></a>应用程序元素
 
-对于桌面桥应用，应用程序元素的 ``EntryPoint`` 特性始终为 ``Windows.FullTrustApplication``。
+对于使用桌面桥打包的桌面应用，Application 元素的 ``EntryPoint`` 属性始终为 ``Windows.FullTrustApplication``。
 
 ```XML
 <Applications>

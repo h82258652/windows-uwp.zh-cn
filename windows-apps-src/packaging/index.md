@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: cdb49ba0082c24c00bc77d8ce2a392d9a6090ce2
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 263a0b7ce4eaeb3bac132789d4970fbf2c7ccc1f
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815582"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842484"
 ---
 # <a name="packaging-apps"></a>打包应用
 
@@ -31,6 +31,7 @@ ms.locfileid: "1815582"
 | [应用包体系结构](device-architecture.md) | 详细了解在生成你的 UWP 应用包时应使用哪些处理器体系结构。 |
 | [UWP 应用流式安装](streaming-install.md) | 借助通用 Windows 平台 (UWP) 应用流式安装，可指定希望 Microsoft Store 首先下载应用的哪些部分。 当首先下载了该应用的基本文件后，用户就可以启动该应用并与其进行交互，而应用的其余部分则会在后台完成下载。 |
 | [可选包和相关集的创作](optional-packages.md) | 可选包中包含可与主要包相集成的内容。 这些内容可用于可下载内容 (DLC)，因为大小限制而划分大型应用，或者用于随附从原始应用中单独分隔出来的任何其他内容。 |
+| [包含可执行代码的可选包](optional-packages-with-executable-code.md) | 了解如何使用 Visual Studio 创建包含可执行代码的可选包。 |
 | [使用应用安装程序安装 UWP 应用](appinstaller-root.md) | 利用应用安装程序，可以通过双击应用包来安装 UWP 应用。 |
 | [使用 WinAppDeployCmd.exe 工具安装应用](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将 UWP 应用从 Windows10 计算机部署到任意 Windows10 移动版设备。 当 Windows10 移动版设备通过 USB 进行连接或无需 Microsoft Visual Studio 或该应用的解决方案即可连接到同一子网时，可使用此工具部署 .appx 程序包。 本文介绍如何使用此工具安装 UWP 应用。 |
 | [设置 UWP 应用的自动生成](auto-build-package-uwp-apps.md) | 如果你希望在自动生成过程中打包应用，本主题介绍如何使用 Visual Studio Team Services (VSTS) 执行此操作。 |

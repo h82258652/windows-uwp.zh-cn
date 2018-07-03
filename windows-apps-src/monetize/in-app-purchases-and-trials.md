@@ -4,18 +4,18 @@ ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: 了解如何在 UWP 应用中启用应用内购买和试用。
 title: 应用内购买和试用
 ms.author: mcleans
-ms.date: 08/25/2017
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 试用, 消耗品, 耐用型, 订阅
 ms.localizationpriority: medium
-ms.openlocfilehash: 28e28c5db19d9a2b397a04cc326867605d796aac
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 7b5b889dfd1dae69cbe4234bf0606127c1190522
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691236"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874295"
 ---
 # <a name="in-app-purchases-and-trials"></a>应用内购买和试用
 
@@ -33,7 +33,7 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 
 有两个不同的命名空间可用于向 UWP 应用添加应用内购买和试用功能，具体取决于应用面向 Windows10 的哪个版本。 尽管这些命名空间中的 API 用于相同目标，但它们的设计完全不同，并且代码在两个 API 之间并不兼容。
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;从 Windows 10 版本 1607 开始，应用可使用此命名空间中的 API 实现应用内购买和试用。 如果应用项目在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，我们建议你使用此命名空间中的成员。 此命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 有关此命名空间的详细信息，请参阅本文中的[使用 Windows.Services.Store 命名空间进行应用内购买和试用](#api_intro)部分。
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;从 Windows 10 版本 1607 开始，应用可使用此命名空间中的 API 实现应用内购买和试用。 如果应用项目在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，我们建议你使用此命名空间中的成员。 此命名空间支持最新的加载项类型（如 Microsoft Store 管理的易耗型加载项），并且设计为与 Windows 开发人员中心和 Microsoft Store 将来支持的产品和功能类型兼容。 有关此命名空间的详细信息，请参阅本文中的[使用 Windows.Services.Store 命名空间进行应用内购买和试用](#api_intro)部分。
 
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Windows 10 的所有版本还支持此命名空间中用于应用内购买和试用的较早 API。 有关 **Windows.ApplicationModel.Store** 命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
@@ -44,20 +44,20 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 
 ## <a name="basic-concepts"></a>基本概念
 
-应用商店中提供的每一个项目通常称为*产品*。 大多数开发人员只处理以下类型的产品：*应用*和*加载项*。
+Microsoft Store 中提供的每一个项目通常称为*产品*。 大多数开发人员只处理以下类型的产品：*应用*和*加载项*。
 
 加载项是指你在应用的上下文中向客户提供的产品或功能：例如，要在应用或游戏中使用的货币、游戏的新地图或武器、使用无广告应用的功能，或数字内容，如应用的音乐或视频（前提是应用能够提供此类内容）。 每个应用和加载项都有关联的许可证，用于指示用户是否有权使用该应用或加载项。 如果用户有权将该应用或加载项作为试用来使用，则许可证还提供关于该试用的其他信息。
 
-若要在应用中向客户提供加载项，必须[在开发人员中心仪表板中为应用定义加载项](../publish/add-on-submissions.md)以便使应用商店知道它。 然后，应用可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空间中的 API 提供加载项，作为应用内购买向用户销售。
+若要在应用中向客户提供加载项，必须[在开发人员中心仪表板中为应用定义加载项](../publish/add-on-submissions.md)以便使 Microsoft Store 知道它。 然后，应用可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空间中的 API 提供加载项，作为应用内购买向用户销售。
 
 UWP 应用可提供以下类型的加载项。
 
 | 加载项类型 |  说明  |
 |---------|-------------------|
 | 耐用品  |  持续时间为你在 [Windows 开发人员仪表板](../publish/enter-iap-properties.md)中所指定生存期的加载项。 <p/><p/>默认情况下，耐用型加载项永远不会过期，在此情况下只能购买它们一次。 如果你为加载项指定特定的持续时间，则用户可以在它过期后重新购买该加载项。 |
-| 开发人员管理的易耗品  |  可以购买、使用并再次购买的加载项。 此类型的加载项通常用于获取应用内收入。 <p/><p/>对于此类型的易耗品，你负责跟踪加载项所表示的商品的用户余量，并在用户消耗完所有商品后向应用商店将加载项购买报告为已完成。 在你的应用将之前的加载项购买报告为已完成前，用户无法再次购买该加载项。 <p/><p/>例如，如果你的加载项表示游戏中的 100 个硬币，并且用户消耗了 10 个硬币，则你的用户或服务必须为该用户保留 90 个硬币的新剩余余额。 在用户消耗完全部 100 个硬币后，你的应用必须将加载项报告为已完成，然后用户才可以再次购买 100 个硬币的加载项。    |
-| 应用商店管理的易耗品  |  可以购买、使用并再次购买的加载项。 此类型的加载项通常用于获取应用内收入。<p/><p/>对于此类型的易耗品，应用商店会跟踪用户拥有的加载项所表示商品的余量。 当用户消耗任何商品时，你负责向应用商店报告这些商品已完成，然后应用商店会更新用户的余量。 你的应用可以随时查询用户的当前余量。 用户消耗完所有商品后，可以再次购买加载项。  <p/><p/> 例如，如果你的加载项在游戏中表示 100 个硬币的初始数量，并且用户消耗了 10 个硬币，则你的应用将向应用商店报告 10 个单位的加载项已完成，然后应用商店会更新剩余余额。 用户消耗完全部 100 个硬币后，可以再次购买 100 个硬币的加载项。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的易耗品，应用必须在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间，而不是 **Windows.ApplicationModel.Store** 命名空间。  |
-| 订阅 | 一种持久型加载项，客户需要按重复时间间隔付费才能继续使用此加载项。 客户可以随时取消订阅，以免日后继续产生费用。 <p/><p/>**注意**&nbsp;&nbsp;订阅加载项目前只适用于参加了早期采用者计划的开发人员。 若要使用订阅加载项，应用必须在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间，而不是 **Windows.ApplicationModel.Store** 命名空间。  |
+| 开发人员管理的易耗品  |  可以购买、使用并在用完后再次购买的加载项。 你负责跟踪用户拥有的加载项所表示商品的余量。<p/><p/>当用户使用与该加载项关联的任何商品时，你负责维护加载项所表示的商品的用户余量，并在用户消耗完所有商品后向 Microsoft Store 将加载项购买报告为已完成。 在你的应用将之前的加载项购买报告为已完成前，用户无法再次购买该加载项。 <p/><p/>例如，如果你的加载项表示游戏中的 100 个硬币，并且用户消耗了 10 个硬币，则你的用户或服务必须为该用户保留 90 个硬币的新剩余余额。 在用户消耗完全部 100 个硬币后，你的应用必须将加载项报告为已完成，然后用户才可以再次购买 100 个硬币的加载项。    |
+| Microsoft Store 管理的易耗品  |  可以随时购买、使用并再次购买的加载项。 Microsoft Store 会跟踪用户拥有的加载项所表示商品的余量。<p/><p/>当用户消耗任何与加载项关联的商品时，你负责向 Microsoft Store 报告这些商品已完成，然后 Microsoft Store 会更新用户的余量。 用户可以根据需要多次购买加载项（他们不需要首先使用这些项目）。 你的应用可以随时查询用户的当前余量。 <p/><p/> 例如，如果你的加载项在游戏中表示 100 个硬币的初始数量，并且用户消耗了 50 个硬币，则你的应用将向 Microsoft Store 报告 50 个单位的加载项已完成，然后 Microsoft Store 会更新剩余余额。 如果用户再次购买你的加载项（增加 100 个硬币），他们现在总共有 150 个硬币。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的易耗品，应用必须在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间，而不是 **Windows.ApplicationModel.Store** 命名空间。  |
+| 订阅 | 一种持久型加载项，客户需要按重复时间间隔付费才能继续使用此加载项。 客户可以随时取消订阅，以免日后继续产生费用。 <p/><p/>**注意**&nbsp;&nbsp;若要使用订阅加载项，应用必须在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间，而不是 **Windows.ApplicationModel.Store** 命名空间。  |
 
 <span />
 
@@ -80,7 +80,7 @@ UWP 应用可提供以下类型的加载项。
 * [应用内购买的收据](#receipts)
 * [通过桌面桥使用 StoreContext 类](#desktop)
 * [产品、SKU 和可用性](#products-skus)
-* [应用商店 ID](#store-ids)
+* [Store ID](#store-ids)
 
 <span id="video" />
 
@@ -113,7 +113,7 @@ UWP 应用可提供以下类型的加载项。
 > [!NOTE]
 > 使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序必须执行额外步骤来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象，然后才可以使用此对象。 有关详情，请参阅[本部分](#desktop)。
 
-拥有 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象后，可开始调用此对象的方法来获取当前应用以及加载项的应用商店产品信息、检索当前应用及其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。 有关可使用此对象执行的常见任务的详细信息，请参阅以下文章：
+拥有 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象后，可开始调用此对象的方法来获取当前应用以及加载项的 Microsoft Store 产品信息、检索当前应用及其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。 有关可使用此对象执行的常见任务的详细信息，请参阅以下文章：
 
 * [获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)
 * [获取应用和加载项的许可证信息](get-license-info-for-apps-and-add-ons.md)
@@ -122,7 +122,7 @@ UWP 应用可提供以下类型的加载项。
 * [为应用启用订阅加载项](enable-subscription-add-ons-for-your-app.md)
 * [实现应用的试用版](implement-a-trial-version-of-your-app.md)
 
-有关演示如何使用 **StoreContext** 和 **Windows.Services.Store** 命名空间中的其他类型的示例应用，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+有关演示如何使用 **StoreContext** 和 **Windows.Services.Store** 命名空间中的其他类型的示例应用，请参阅[ Microsoft Store 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 <span id="implement-iap" />
 
@@ -170,19 +170,19 @@ UWP 应用可提供以下类型的加载项。
     * 如果应用提供一个可供客户购买的加载项，[请在开发人员中心仪表板中为应用创建加载项提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
     * 如果要在应用的试用版中排除或限制某些功能，请[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)。
 
-3. 在项目在 Visual Studio 中打开的情况下，单击**项目菜单**、指向**应用商店**，然后单击**将应用与应用商店关联**。 完成向导中的说明以将应用项目与 Windows 开发人员中心帐户中要用于测试的应用关联。
+3. 在项目在 Visual Studio 中打开的情况下，单击**项目菜单**、指向** Microsoft Store**，然后单击**将应用与 Microsoft Store 关联**。 完成向导中的说明以将应用项目与 Windows 开发人员中心帐户中要用于测试的应用关联。
     > [!NOTE]
-    > 如果你未将项目与应用商店中的应用关联，则 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法会将其返回值的 **ExtendedError** 属性设置为错误代码值 0x803F6107。 此值指示应用商店并不了解关于该应用的任何信息。
-4. 如果你尚未关联，请从应用商店安装你在上一步中指定的应用、运行该应用一次，然后关闭此应用。 这可确保将应用的有效许可证安装到你的开发设备。
+    > 如果你未将项目与 Microsoft Store 中的应用关联，则 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法会将其返回值的 **ExtendedError** 属性设置为错误代码值 0x803F6107。 此值指示 Microsoft Store 并不了解关于该应用的任何信息。
+4. 如果你尚未关联，请从 Microsoft Store 安装你在上一步中指定的应用、运行该应用一次，然后关闭此应用。 这可确保将应用的有效许可证安装到你的开发设备。
 
-5. 在 Visual Studio 中，开始运行或调试你的项目。 你的代码应从与你的本地项目关联的应用商店应用中检索应用和加载项数据。 如果系统提示你重新安装该应用，请按照说明操作，然后运行或调试项目。
+5. 在 Visual Studio 中，开始运行或调试你的项目。 你的代码应从与你的本地项目关联的 Microsoft Store 应用中检索应用和加载项数据。 如果系统提示你重新安装该应用，请按照说明操作，然后运行或调试项目。
     > [!NOTE]
-    > 完成这些步骤后，你可以继续更新应用代码并在开发计算机上调试更新的项目，而无需将新的应用包提交到应用商店。 获取将要用于测试的本地许可证后，只需要将应用的应用商店版本下载到开发计算机。 完成测试后，只需要将新的应用包提交到应用商店，并允许客户使用应用内购买或应用中的试用相关功能。
+    > 完成这些步骤后，你可以继续更新应用代码并在开发计算机上调试更新的项目，而无需将新的应用包提交到 Microsoft Store。 获取将要用于测试的本地许可证后，只需要将应用的 Microsoft Store 版本下载到开发计算机。 完成测试后，只需要将新的应用包提交到 Microsoft Store，并允许客户使用应用内购买或应用中的试用相关功能。
 
-如果你的应用使用的是 **Windows.ApplicationModel.Store** 命名空间，则在将应用提交到应用商店之前，你可以在应用中使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 类模拟许可证信息进行测试。 有关详细信息，请参阅[开始使用 CurrentApp 和 CurrentAppSimulator 类] (in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)。  
+如果你的应用使用的是 **Windows.ApplicationModel.Store** 命名空间，则在将应用提交到 Microsoft Store 之前，你可以在应用中使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 类模拟许可证信息进行测试。 有关详细信息，请参阅[开始使用 CurrentApp 和 CurrentAppSimulator 类] (in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)。  
 
 > [!NOTE]
-> **Windows.Services.Store** 命名空间不提供可用于在测试期间模拟许可证信息的类。 如果使用 **Windows.Services.Store** 命名空间实现应用内购买或试用，你必须将应用发布到应用商店，然后将此应用下载到开发设备上以使用其许可证进行测试（如上所述）。
+> **Windows.Services.Store** 命名空间不提供可用于在测试期间模拟许可证信息的类。 如果使用 **Windows.Services.Store** 命名空间实现应用内购买或试用，你必须将应用发布到 Microsoft Store，然后将此应用下载到开发设备上以使用其许可证进行测试（如上所述）。
 
 <span id="receipts" />
 
@@ -198,7 +198,7 @@ UWP 应用可提供以下类型的加载项。
 
 使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序可使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类实现应用内购买和试用。 但是，如果你有 Win32 桌面应用程序或具有与呈现框架（如 WPF 应用程序）相关联的窗口句柄 (HWND) 的桌面应用程序，则该应用程序必须配置 **StoreContext** 对象以为该对象所显示的模式对话框指定哪个应用程序窗口是所有者窗口。
 
-许多 **StoreContext** 成员（以及通过 **StoreContext** 对象访问的其他相关类型的成员）针对应用商店相关的操作（如购买产品）向用户显示模式对话框。 如果桌面应用程序未配置 **StoreContext** 对象以指定模式对话框的所有者窗口，则此对象将返回不准确的数据或错误。
+许多 **StoreContext** 成员（以及通过 **StoreContext** 对象访问的其他相关类型的成员）针对 Microsoft Store 相关的操作（如购买产品）向用户显示模式对话框。 如果桌面应用程序未配置 **StoreContext** 对象以指定模式对话框的所有者窗口，则此对象将返回不准确的数据或错误。
 
 若要在使用桌面桥的桌面应用程序中配置 **StoreContext** 对象，请按照这些步骤操作。
 
@@ -229,32 +229,32 @@ UWP 应用可提供以下类型的加载项。
 
 ### <a name="products-skus-and-availabilities"></a>产品、SKU 和可用性
 
-应用商店中的每个产品都至少有一个 *SKU*，而每个 SKU 都至少有一个*可用性*。 这些概念抽象自 Windows 开发人员中心仪表板中的大多数开发人员，并且大多数开发人员永远不需要为其应用或加载项定义 SKU 或可用性。 但是，由于 **Windows.Services.Store** 命名空间中的应用商店产品的对象模型包括 SKU 和可用性，因此大致了解这些概念对于某些情况可能很有帮助。
+Microsoft Store 中的每个产品都至少有一个 *SKU*，而每个 SKU 都至少有一个*可用性*。 这些概念抽象自 Windows 开发人员中心仪表板中的大多数开发人员，并且大多数开发人员永远不需要为其应用或加载项定义 SKU 或可用性。 但是，由于 **Windows.Services.Store** 命名空间中的 Microsoft Store 产品的对象模型包括 SKU 和可用性，因此大致了解这些概念对于某些情况可能很有帮助。
 
 | 对象 |  说明  |
 |---------|-------------------|
-| 产品  |  *产品*是指在应用商店中提供的任何类型的产品，包括应用或加载项。 <p/><p/> 应用商店中的每个产品都有相应的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 此类提供可用于访问数据的属性，如产品的应用商店 ID、应用商店列表的图像和视频以及定价信息。 它还提供可用于购买产品的方法。 |
-| SKU |  *SKU* 是带有其自己的说明、价格和其他独特产品详细信息的产品特定版本。 每个应用或加载项都有默认的 SKU。 大多数开发人员拥有针对一个应用的多个 SKU 的唯一情况是，他们要发布应用的完整版和试用版（在应用商店目录中，其中每一个版本都是同一个应用的不同 SKU）。 <p/><p/> 某些发布者能够定义他们自己的 SKU。 例如，大型游戏发布者可能发布具有以下两个 SKU 的游戏：一个 SKU 在不允许红色血液的市场中显示绿色血液，另一个 SKU 在所有其他市场中显示红色血液。 另外，销售数字视频内容的发布者可能针对一个视频发布两个 SKU，一个 SKU 用于高清版本，另一个 SKU 用于标清版本。 <p/><p/> 应用商店中的每个 SKU 都有相应的 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 对象。 每个 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 都有可用于访问产品 SKU 的 [Skus](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.skus) 属性。 |
-| 可用性  |  *可用性*是带有自己独特定价信息的 SKU 的特定版本。 每个 SKU 都有默认的可用性。 某些发布者能够定义他们自己的可用性来为给定 SKU 引入不同的价格选项。 <p/><p/> 应用商店中的每个可用性都有相应的 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 对象。 每个 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 都有可用于访问 SKU 可用性的 [Availabilities](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.availabilities) 属性。 对于大多数开发人员来说，每个 SKU 都有单个默认可用性。  |
+| 产品  |  *产品*是指在 Microsoft Store 中提供的任何类型的产品，包括应用或加载项。 <p/><p/> Microsoft Store 中的每个产品都有相应的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 此类提供可用于访问数据的属性，如产品的 Store ID、Store 一览的图像和视频以及定价信息。 它还提供可用于购买产品的方法。 |
+| SKU |  *SKU* 是带有其自己的说明、价格和其他独特产品详细信息的产品特定版本。 每个应用或加载项都有默认的 SKU。 大多数开发人员拥有针对一个应用的多个 SKU 的唯一情况是，他们要发布应用的完整版和试用版（在 Microsoft Store 目录中，其中每一个版本都是同一个应用的不同 SKU）。 <p/><p/> 某些发布者能够定义他们自己的 SKU。 例如，大型游戏发布者可能发布具有以下两个 SKU 的游戏：一个 SKU 在不允许红色血液的市场中显示绿色血液，另一个 SKU 在所有其他市场中显示红色血液。 另外，销售数字视频内容的发布者可能针对一个视频发布两个 SKU，一个 SKU 用于高清版本，另一个 SKU 用于标清版本。 <p/><p/> Microsoft Store 中的每个 SKU 都有相应的 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 对象。 每个 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 都有可用于访问产品 SKU 的 [Skus](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.skus) 属性。 |
+| 可用性  |  *可用性*是带有自己独特定价信息的 SKU 的特定版本。 每个 SKU 都有默认的可用性。 某些发布者能够定义他们自己的可用性来为给定 SKU 引入不同的价格选项。 <p/><p/> Microsoft Store 中的每个可用性都有相应的 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 对象。 每个 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 都有可用于访问 SKU 可用性的 [Availabilities](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.availabilities) 属性。 对于大多数开发人员来说，每个 SKU 都有单个默认可用性。  |
 
 <span id="store_ids" />
 
-### <a name="store-ids"></a>应用商店 ID
+### <a name="store-ids"></a>Store ID
 
-应用商店中的每个应用、加载项或其他产品都有关联的**应用商店 ID**（有时也称为*产品应用商店 ID*）。 许多 API 都需要应用商店 ID 才能执行有关应用或加载项的操作。
+Microsoft Store 中的每个应用、加载项或其他产品都有关联的** Store ID**（有时也称为*产品 Store ID*）。 许多 API 都需要 Store ID 才能执行有关应用或加载项的操作。
 
-应用商店中的任何产品的应用商店 ID 都是 12 个字符的字母数字字符串，例如 ```9NBLGGH4R315```。 有多种不同的方法可用于获取应用商店中某个产品的应用商店 ID：
+Microsoft Store 中的任何产品的 Store ID 都是 12 个字符的字母数字字符串，例如 ```9NBLGGH4R315```。 有多种不同的方法可用于获取 Microsoft Store 中某个产品的 Store ID：
 
-* 对于应用，你可以在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上获取应用商店 ID。
-* 对于加载项，你可以在开发人员仪表板的加载项概述页面上获取应用商店 ID。
-* 对于任何产品，还可以使用表示此产品的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) 属性以编程方式获取应用商店 ID。
+* 对于应用，你可以在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上获取 Store ID。
+* 对于加载项，你可以在开发人员仪表板的加载项概述页面上获取 Store ID。
+* 对于任何产品，还可以使用表示此产品的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) 属性以编程方式获取 Store ID。
 
-对于具有 SKU 和可用性的产品，SKU 和可用性还有自己的具有不同格式的应用商店 ID。
+对于具有 SKU 和可用性的产品，SKU 和可用性还有自己的具有不同格式的 Store ID。
 
-| 对象 |  应用商店 ID 格式  |
+| 对象 |  Store ID 格式  |
 |---------|-------------------|
-| SKU |  对于 SKU，应用商店 ID 的格式为 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 个字符的字母数字字符串，用于标识产品的 SKU。 例如，```9NBLGGH4R315/000N```。 此 ID 由 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 属性返回，并且有时称为 *SKU 应用商店 ID*。 |
-| 可用性  |  对于可用性，应用商店 ID 的格式为 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是标识产品 SKU 的 4 字符数字字母字符串，而 ```yyyyyyyyyyyy``` 是标识 SKU 可用性的 12 字符字母数字字符串。 例如，```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 此 ID 由 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 属性返回，并且有时称为*可用性应用商店 ID*。  |
+| SKU |  对于 SKU，Store ID 的格式为 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 个字符的字母数字字符串，用于标识产品的 SKU。 例如，```9NBLGGH4R315/000N```。 此 ID 由 [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 属性返回，并且有时称为 *SKU Store ID*。 |
+| 可用性  |  对于可用性，Store ID 的格式为 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是标识产品 SKU 的 4 字符数字字母字符串，而 ```yyyyyyyyyyyy``` 是标识 SKU 可用性的 12 字符字母数字字符串。 例如，```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 此 ID 由 [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 属性返回，并且有时称为*可用性 Store ID*。  |
 
 <span id="product-ids" />
 
@@ -263,14 +263,14 @@ UWP 应用可提供以下类型的加载项。
 如果要在应用上下文中向客户提供加载项，你必须在开发人员中心仪表板中[创建加载项提交](../publish/add-on-submissions.md)时为加载项[输入唯一产品 ID](../publish/set-your-add-on-product-id.md#product-id)。 你可以使用此产品 ID 在代码中引用加载项，但可以使用产品 ID 的特定方案取决于你在应用中实现应用内购买所用的命名空间。
 
 > [!NOTE]
-> 你在开发人员中心仪表板中为加载项输入的产品 ID 不同于此加载项的[应用商店 ID](#store-ids)。 应用商店 ID 由开发人员中心生成。
+> 你在开发人员中心仪表板中为加载项输入的产品 ID 不同于此加载项的[ Store ID](#store-ids)。 Store ID 由开发人员中心生成。
 
 ### <a name="apps-that-use-the-windowsservicesstore-namespace"></a>使用 Windows.Services.Store 命名空间的应用
 
 如果应用使用的是 **Windows.Services.Store** 命名空间，你可以借助产品 ID 轻松识别表示加载项的 [StoreProduct](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) 或表示加载项许可证的 [StoreLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense)。 产品 ID 由 [StoreProduct.InAppOfferToken](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct.InAppOfferToken) 和 [StoreLicense.InAppOfferToken](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.InAppOfferToken) 属性公开。
 
 > [!NOTE]
-> 虽然产品 ID 是在代码中识别加载项的有用方式，但 **Windows.Services.Store** 命名空间中的大多数操作使用的是加载项的[应用商店 ID](#store-ids)，而不是产品 ID。 例如，要以编程方式检索某应用的一个或多个已知加载项，可以向 [GetStoreProductsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstoreproductsasync) 方法传递加载项的应用商店 ID（而不是产品 ID）。 同样，要报告易耗型加载项已完成，可以向 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.reportconsumablefulfillmentasync) 方法传递加载项的应用商店 ID（而不是产品 ID）。
+> 虽然产品 ID 是在代码中识别加载项的有用方式，但 **Windows.Services.Store** 命名空间中的大多数操作使用的是加载项的[ Store ID](#store-ids)，而不是产品 ID。 例如，要以编程方式检索某应用的一个或多个已知加载项，可以向 [GetStoreProductsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstoreproductsasync) 方法传递加载项的 Store ID（而不是产品 ID）。 同样，要报告易耗型加载项已完成，可以向 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.reportconsumablefulfillmentasync) 方法传递加载项的 Store ID（而不是产品 ID）。
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用
 

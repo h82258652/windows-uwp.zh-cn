@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84530c1a7c3795c566495c1eae121691b0766a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 0c61b4076ed2529fddfcec53264c95c8290297a0
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1688933"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843027"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
@@ -29,14 +29,14 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 ## <a name="breakpoints"></a>断点
 此表描述了不同的大小级别和断点。
 
-![响应式设计断点](images/rsp-design/rspd-breakpoints.png)
+![响应式设计断点](images/breakpoints/size-classes.svg)
 
 <table>
 <thead>
 <tr class="header">
 <th align="left">大小级别</th>
 <th align="left">断点</th>
-<th align="left">屏幕大小（对角线）</th>
+<th align="left">典型屏幕大小（对角线）</th>
 <th align="left">设备</th>
 <th align="left">窗口大小</th>
 </tr>
@@ -45,15 +45,15 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 <tr class="even">
 <td style="vertical-align:top;">小</td>
 <td style="vertical-align:top;">640px 或更小</td>
-<td style="vertical-align:top;">4&quot; 到 6&quot;</td>
-<td style="vertical-align:top;">手机</td>
+<td style="vertical-align:top;">4&quot; 到 6&quot;；20&quot; 到 65&quot;</td>
+<td style="vertical-align:top;">手机、电视</td>
 <td style="vertical-align:top;">320x569、360x640、480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">中等</td>
+<td style="vertical-align:top;">中</td>
 <td style="vertical-align:top;">641px 到 1007px</td>
 <td style="vertical-align:top;">7&quot; 到 12&quot;</td>
-<td style="vertical-align:top;">平板手机、平板电脑、电视</td>
+<td style="vertical-align:top;">平板电脑</td>
 <td style="vertical-align:top;">960x540</td>
 </tr>
 <tr class="even">
@@ -65,6 +65,17 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 </tr>
 </tbody>
 </table>
+
+## <a name="why-are-tvs-considered-small"></a>为什么将电视归入“小”类别？ 
+
+虽然大多数电视体积相当大（一般为 40 到 65 英寸）并且具有高分辨率（HD 或 4k），但在 10 英尺远处观看的 1080P 电视采取的设计与坐在 1 英尺远的桌前使用的 1080p 显示器是不同的。 考虑到距离，1080 像素电视的观看效果相当于 540 像素的显示器。
+
+UWP 的有效像素系统会自动替你解决观看距离问题。 当你为控件或断点范围指定大小时，实际上使用的是“有效”像素。 例如，为 1080 像素或更高像素创建响应代码时，1080 像素显示器将使用该代码，但 1080p 电视不会 - 因为虽然 1080p 电视具有 1080 个物理像素，但它的有效像素数只有 540 个。 这使得面向电视的设计类似于面向手机的设计。
+
+## <a name="effective-pixels-and-scale-factor"></a>有效像素和缩放比例
+
+UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都清晰可见。 Windows 会根据其 DPI（每英寸点数）和设备的观看距离为每台显示器自动缩放。 用户可以通过转到**设置** > **显示器** > **缩放和布局**设置页覆盖默认值。 
+
 
 ## <a name="general-recommendations"></a>常规建议
 
@@ -94,6 +105,4 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 >[!TIP] 
 > 借助[**适用于手机的 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将兼容的 Windows 10 移动版设备连接至监视器、鼠标和键盘，使手机像笔记本电脑一样工作。 针对特定断点进行设计时请记住这一新功能 - 移动手机将不会始终保持在尺寸级别。
 
-## <a name="effective-pixels-and-scale-factor"></a>有效像素和缩放比例
 
-UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都清晰可见。 Windows 会根据其 DPI（每英寸点数）和设备的观看距离为每台显示器自动缩放。 用户可以通过转到**设置** > **显示器** > **缩放和布局**设置页覆盖默认值。 

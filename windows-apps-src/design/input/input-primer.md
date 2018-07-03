@@ -12,15 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 910920c1f5eb5bdc3e55b51d7886be1632559c14
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396606"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862096"
 ---
 # <a name="interaction-primer"></a>交互入门
-
 
 ![Windows 输入类型](images/input-interactions/icons-inputdevices03.png)
 
@@ -30,14 +29,34 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 当与特定的外形规格配对时，自行熟悉每个输入设备类型及其行为、功能和限制。 这可以帮助你决定平台控件和提示是足够用于应用，还是要求你提供自定义的交互体验。
 
-## <a name="surface-dial"></a>Surface Dial
+## <a name="gaze"></a>凝视
 
-对于 Windows10 周年更新，我们引入了称为 Windows Wheel 的新输入设备类别。 Surface Dial 是此类设备中的第一项。 
+对于 **Windows 10 2018 年 4 月更新**，我们使用眼睛和头部跟踪输入设备引入了对凝视输入的支持。 
+
+> [!NOTE]
+> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。
 
 ### <a name="device-support"></a>设备支持
 
--   平板电脑
--   电脑和笔记本电脑
+- 平板电脑
+- 电脑和笔记本电脑
+
+### <a name="typical-usage"></a>典型用法
+
+根据用户眼睛的位置及移动，跟踪用户的凝视、注意和状态。 这一使用 UWP 应用并与之交互的新方式对于以下用户是特别有用的辅助技术：患有神经肌肉疾病（如 ALS），以及有其他受损肌肉或神经功能方面的残障。 凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
+
+### <a name="more-info"></a>详细信息
+
+[凝视交互和目视跟踪](gaze-interactions.md)
+
+## <a name="surface-dial"></a>Surface Dial
+
+对于 **Windows 10 周年更新**，我们引入了 Windows Wheel 输入设备类别。 Surface Dial 是此类设备中的第一项。
+
+### <a name="device-support"></a>设备支持
+
+- 平板电脑
+- PC 和笔记本电脑
 
 ### <a name="typical-usage"></a>典型用法
 
@@ -46,7 +65,6 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 ### <a name="more-info"></a>详细信息
 
 [Surface Dial 设计指南](windows-wheel-interactions.md)
-
 
 ## <a name="cortana"></a>Cortana
 

@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Test your app for Windows 10 S without having to install Windows 10 S.
+Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: 测试适用于 Windows 10 S 的 Windows 应用
 ms.author: normesta
@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5810789ab2457ed14964a61bf278c84e7deb416
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 69cceb86710cea0e9066454fba4ef4e1746633d1
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662707"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874315"
 ---
-# <a name="test-your-windows-app-for-windows-10-s"></a>测试适用于 Windows 10 S 的 Windows 应用
+# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>在 S 模式下测试适用于 Windows 10 的 Windows 应用
 
-你可以测试你的 Windows 应用以确保它可在运行 Windows 10 S 的设备上正常运行。实际上，如果你打算将应用发布到 Microsoft Store，则必须执行此操作，因为这是 Microsoft Store 要求。 若要测试你的应用，可以在运行 Windows 10 专业版的设备上应用 Device Guard 代码完整性策略。
+可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试你的应用，可以在运行 Windows 10 专业版的设备上应用 Device Guard 代码完整性策略。
 
 > [!NOTE]
 > 应用 Device Guard 代码完整性策略的设备必须运行 Windows 10 创意者版本（10.0；内部版本 15063）或更高版本。
@@ -80,12 +80,12 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 如果想要将这些策略应用于本地计算机，最好从审核模式策略开始。 使用此策略，你可以查看代码完整性事件日志，以确保在强制执行的策略中不会阻止任何关键操作。
 
-当你准备好应用策略时，找到所选策略的 .P7B 文件，将其重命名为 **SIPolicy.P7B**，然后将该文件保存到系统上的此位置：**C:\Windows\System32\CodeIntegrity\**。
+准备好应用策略时，找到所选策略的 .P7B 文件，将其重命名为 **SIPolicy.P7B**，然后将该文件保存到系统上的此位置：**C:\Windows\System32\CodeIntegrity\\**。
 
 然后，重启系统。
 
 >[!NOTE]
->若要从你的系统中删除策略，请先删除 .P7B 文件，然后重新启动系统。
+>若要从系统中删除策略，请先删除 .P7B 文件，然后重启系统。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -101,6 +101,6 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 请参阅[使用桌面桥移植和测试 Windows 10 上的经典桌面应用程序](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)。
 
-**了解让测试 Windows S 变得更轻松的工具**
+**了解让测试以 S 模式运行的 Windows 变得更轻松的工具**
 
 请参阅[对 APPX 进行解压缩、修改、重新打包、签名](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)。

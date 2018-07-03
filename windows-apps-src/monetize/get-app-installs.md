@@ -4,25 +4,25 @@ ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: 在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合安装数据。
 title: 获取应用安装
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 应用安装
 ms.localizationpriority: medium
-ms.openlocfilehash: 162678fef3b431483a36d1de89c7adf2811b8d9f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: fe2e9a012a094a5eeb5bc60510fc8fb115c57fb0
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663327"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1975969"
 ---
 # <a name="get-app-installs"></a>获取应用安装
 
 
-在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合安装数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[安装报告](../publish/installs-report.md)中获取此信息。
+在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合安装数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md)中获取此信息。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 若要使用此方法，首先需要执行以下操作：
@@ -42,7 +42,7 @@ ms.locfileid: "1663327"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 | applicationName     | 字符串 | 应用的显示名称。     |
 | deviceType          | 字符串 | 用于指定完成安装的设备类型的以下字符串之一：<p/><ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>  |
 | packageVersion           | 字符串 | 已安装的程序包版本。  |
-| osVersion           | 字符串 | 用于指定在其上进行安装的操作系统版本的以下字符串之一：<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>未知</strong></li></ul>   |
+| osVersion           | 字符串 | 用于指定在其上进行安装的操作系统版本的以下字符串之一：<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>   |
 | market              | 字符串 | 发生安装行为的市场的 ISO 3166 国家/地区代码。    |
 | successfulInstallCount | 数字 | 在指定的聚合级别内发生的成功安装数。     |
 

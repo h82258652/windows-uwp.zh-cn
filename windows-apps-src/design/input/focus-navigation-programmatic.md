@@ -14,16 +14,18 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68767e564055eb26d0ab7f6232082a6f7387c3d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 0a2892e6f4382f231299e8ef2307c70cdbebb46c
+ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817345"
+ms.lasthandoff: 05/19/2018
+ms.locfileid: "1903161"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 
-若要在你的 UWP 应用程序中以编程方式移动焦点，你可以使用 [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法或 [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法。
+![键盘、遥控器和方向键](images/dpad-remote/dpad-remote-keyboard.png)
+
+若要在 UWP 应用程序中以编程方式移动焦点，可以使用 [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法或 [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法。
 
 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 将会尝试将焦点从具有焦点的元素更改到指定方向的下一个可聚焦元素，而 [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 将会根据指定的导航方向检索将获得焦点的元素（作为 [DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject)）（仅限定向导航，不能用于模仿 Tab 键导航）。
 
@@ -244,11 +246,11 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
             FocusState.Keyboard && 
             args.NewFocusedElement != selectedContainer)
         {
-            args.NewFocusedElement = 
-                MyListView.ContainerFromItem(MyListView.SelectedItem);
+            args.TryRedirect(
+                MyListView.ContainerFromItem(MyListView.SelectedItem));
             args.Handled = true;
         }
-    }        
+    }
 }
 ```
 
@@ -274,8 +276,10 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     if (MyCommandBar.IsOpen == true && 
         IsNotAChildOf(MyCommandBar, args.NewFocusedElement))
     {
-        args.Cancel = true;
-        args.Handled = true;
+        if (args.TryCancel())
+        {
+            args.Handled = true;
+        }
     }
 }
 ```
@@ -324,9 +328,9 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     }
 }
 ```
+
 ## <a name="related-articles"></a>相关文章
 
 - [适用于键盘、手柄、遥控器和辅助功能工具的焦点导航](focus-navigation.md)
 - [键盘交互](keyboard-interactions.md)
-- [键盘辅助功能](../accessibility/keyboard-accessibility.md) 
-
+- [键盘辅助功能](../accessibility/keyboard-accessibility.md)

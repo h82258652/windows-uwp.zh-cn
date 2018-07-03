@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 加载项购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6da2ae68ab2b40f11d1a9d092eb8ff447f2844
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: b881d3bdaa9adec28b78a72e127dcebd49ee1df6
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664007"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976422"
 ---
 # <a name="get-add-on-acquisitions"></a>获取加载项购置
 
@@ -40,7 +40,7 @@ ms.locfileid: "1664007"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明          |
+| 标头        | 类型   | 描述          |
 |---------------|--------|--------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -80,7 +80,7 @@ ms.locfileid: "1664007"
 | gender | 以下字符串之一：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | 包含购置行为所在地市场的 ISO 3166 国家/地区代码的字符串。 |
 | osVersion | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceType | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
+| deviceType | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
 | orderName | 指定促销充值码（用于获取加载项）订单名称的字符串（仅当用户通过兑换促销充值码获取加载项后才可用）。 |
 
 
@@ -132,7 +132,7 @@ Authorization: Bearer <your access token>
 | gender              | 字符串  | 进行购置的用户的性别。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
 | ageGroup            | 字符串  | 进行购置的用户的年龄组。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                 |
 | acquisitionType     | 字符串  | 购置类型（免费、付费等）。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
-| acquisitionQuantity | inumber | 发生的购置数。                        |
+| acquisitionQuantity | 整数 | 发生的购置数。                        |
 
 
 ### <a name="response-example"></a>响应示例

@@ -3,25 +3,25 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法获取 Xbox Live 成就数据。
 title: 获取 Xbox Live 成就数据
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 成就
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cbe9abf3b6d668bb157e40f3e61aff885e3cbb
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 09800229b45b9eb1a0a456e8e421412ca1a88f8d
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816012"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976049"
 ---
 # <a name="get-xbox-live-achievements-data"></a>获取 Xbox Live 成就数据
 
 在 Microsoft Store 分析 API 中使用此方法获取在成就数据可用的最近一天内、到那天的前 30 天，游戏的总存在时间内到那天为止已经解锁你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的每个成就的客户的数量。 还可以在 Windows 开发人员中心仪表板的 [Xbox 分析报告](../publish/xbox-analytics-report.md)中获取此信息。
 
 > [!IMPORTANT]
-> 目前，此方法只支持那些支持 Xbox Live 并由 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布或通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 它不会返回通过 [Xbox Live 创意者计划](../xbox-live/developer-program-overview.md#xbox-live-creators-program)提交的游戏的数据。
+> 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -68,7 +68,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/gameanalytics?appli
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>回复
+## <a name="response"></a>响应
 
 | 值      | 类型   | 描述                  |
 |------------|--------|-------------------------------------------------------|

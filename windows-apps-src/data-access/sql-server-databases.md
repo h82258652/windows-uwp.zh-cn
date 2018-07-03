@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 461e3578aad11dea0d9afcd7c93dfda9a246bb10
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 31a173efbe30cffed85336a302ced504a4cad50d
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662177"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983488"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
 通过使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
@@ -68,7 +68,7 @@ sealed partial class App : Application
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
-    public string ConnectionString { get => connectionString; set => connectionString = value;  
+    public string ConnectionString { get => connectionString; set => connectionString = value; }
 
     ...
 }
@@ -222,6 +222,16 @@ public MainPage()
 ![Northwind 产品](images/products-northwind.png)
 
 探索 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间以了解 SQL Server 数据库中的数据的其他作用。
+
+## <a name="trouble-connecting-to-your-database"></a>连接数据库时遇到问题？
+
+在大多数情况下，需要更改 SQL Server 配置的某些方面。 如果能够从其他类型的桌面应用程序（例如 Windows 窗体或 WPF 应用程序）连接到数据库，请确保已为 SQL Server 启用 TCP/IP。 可以在**计算机管理**控制台中执行该操作。
+
+![计算机管理](images/computer-management.png)
+
+然后，确保 SQL Server Browser 服务正在运行。
+
+![SQL Server Browser 服务](images/sql-browser-service.png)
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f867861537ddfb7fe346011cd637156854e2f7d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817182"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989671"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>使用 Desktop App Converter 将应用打包（桌面桥）
 
@@ -60,10 +60,9 @@ ms.locfileid: "1817182"
 
 如果你已准备好创建应用包，那我们开始吧。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>首先，请考虑要如何分发应用
-如果打算将应用发布到 [Microsoft Store](https://www.microsoft.com/store/apps)，请先填写[此表单](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。 Microsoft 将联系你以开始上架过程。 在此过程中，你需要在 Microsoft Store 中预留一个名称，然后获取对应用打包所需的信息。
+## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
-此外，请确保在开始为应用程序创建程序包之前查看本指南：[准备打包应用（桌面桥）](desktop-to-uwp-prepare.md)。
+在开始为应用程序创建程序包之前查看本指南：[准备打包应用（桌面桥）](desktop-to-uwp-prepare.md)。
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>请确保你的系统可以运行转换器
 
@@ -74,7 +73,6 @@ ms.locfileid: "1817182"
 * 硬件辅助虚拟化
 * 二级地址转换 (SLAT)
 * [适用于 Windows10 的 Windows 软件开发工具包 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)。
-
 
 ## <a name="start-the-desktop-app-converter"></a>启动 Desktop App Converter
 
@@ -126,7 +124,7 @@ ms.locfileid: "1817182"
 你将通过使用参数指定应用的包名称、发布者和版本号。
 
 > [!NOTE]
-> 如果你在 Windows 应用商店中预留了应用名称，则可以通过使用 Windows 开发人员中心仪表板获取包名称和发布者名称。 如果你打算将应用旁加载到其他系统上，只要选择的发布者名称与用于对应用进行签名的证书上的名称相匹配，就可以提供自己的名称。
+> 如果你在 Microsoft Store 中预留了应用名称，则可以通过使用 Windows 开发人员中心仪表板获取包名称和发布者名称。 如果你打算将应用旁加载到其他系统上，只要选择的发布者名称与用于对应用进行签名的证书上的名称相匹配，就可以提供自己的名称。
 
 ### <a name="a-quick-look-at-command-parameters"></a>命令参数概览
 
@@ -149,7 +147,7 @@ DesktopAppConverter.exe
 * [将具有安装程序 (.msi) 文件的应用打包](#installer-conversion)
 * [将具有安装程序可执行文件的应用打包](#setup-conversion)
 * [将没有安装程序的应用打包](#no-installer-conversion)
-* [将应用打包、对应用进行签名并为应用商店提交做好准备](#optional-parameters)
+* [将应用打包、对应用进行签名并为 Microsoft Store 提交做好准备](#optional-parameters)
 
 <a id="installer-conversion" />
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 564f59dfd7b27e3ece1aa6811ac667cd438aae68
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
+ms.openlocfilehash: c043b20cb00873bf115ff2d65306bc727d23a02a
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488946"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877219"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 创建简单的通用 Windows 平台 (UWP) 游戏
 
@@ -55,10 +55,9 @@ ms.locfileid: "1488946"
 
 ![正在操作的游戏示例](images/simple-dx-game-overview.png)
 
-
 | 主题 | 说明 |
-|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [设置游戏项目](tutorial--setting-up-the-games-infrastructure.md) | 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。 通过使用正确的模板和专门为游戏开发配置项目，可以节省大量的时间和减少不必要的麻烦。 我们将指导你完成设置和配置简单游戏项目的步骤。 |
+|-------|-------------|
+|[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md) | 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。 通过使用正确的模板和专门为游戏开发配置项目，可以节省大量的时间和减少不必要的麻烦。 我们将指导你完成设置和配置简单游戏项目的步骤。 |
 | [定义游戏的 UWP 应用框架](tutorial--building-the-games-uwp-app-framework.md) | 构建允许 UWP DirectX 游戏对象与 Windows 交互的框架。 这包括 Windows 运行时属性（如暂停/恢复事件处理、窗口焦点和贴靠）。  |
 | [游戏流管理](tutorial-game-flow-management.md) | 定义支持玩家和系统交互的高级状态机。 了解 UI 如何与整个游戏的状态机交互以及如何为 UWP 游戏创建事件处理程序。 |
 | [定义主游戏对象](tutorial--defining-the-main-game-loop.md) | 定义如何通过创建规则进行游戏。 |
@@ -68,12 +67,3 @@ ms.locfileid: "1488946"
 | [添加控件](tutorial--adding-controls.md) | 向游戏添加移动观看控件 &mdash; 基本触控、鼠标和游戏控制器控件。 |
 | [添加声音](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 为游戏创建声音。 |
 | [扩展游戏示例](tutorial-resources.md) | 帮助增加你的 DirectX 游戏开发知识（包括使用 XAML 创建覆盖）的资源。 |
- 
-
- 
-
- 
-
-
-
-

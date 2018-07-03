@@ -12,15 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a986d6de680a3024ae252ba640871f9c5d22141
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 4653e07d6d81f884ee6519206e75350aa47945f8
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707042"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917582"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
-
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
@@ -28,10 +27,13 @@ ms.locfileid: "1707042"
 
 ## <a name="recommendations"></a>建议
 
--   尝试尽可能不修改原始控件模板，以实现控件和应用程序的最佳性能。
--   请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
--   除非绝对有必要，否则不要显示反馈。 除非你要添加的值在其他任何地方都不可用，否则，请不要显示视觉反馈来保持 UI 干净整洁。
--   尽量不要大幅自定义内置 Windows 手势的视觉反馈行为，因为这样会产生不一致的情况，并且会带来混淆的用户体验。
+- 尝试将控件模板的修改限制为与设计意图直接相关的部分，因为大量更改可能会影响控件和应用程序的性能及辅助功能。 
+    - 有关自定义控件属性（包括视觉状态属性）的详细信息，请参阅 [XAML 样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)。
+    - 有关更改控件模板的详细信息，请参阅 [UserControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)
+    - 如果需要对控件模板进行重大更改，请考虑创建自定义模板化控件。 有关自定义模板化控件的示例，请参阅[自定义编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
+- 请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
+- 除非绝对有必要，否则不要显示反馈。 除非你要添加的值在其他任何地方都不可用，否则，请不要显示视觉反馈来保持 UI 干净整洁。
+- 尽量不要大幅自定义内置 Windows 手势的视觉反馈行为，因为这样会产生不一致的情况，并且会带来混淆的用户体验。
 
 ## <a name="additional-usage-guidance"></a>其他使用指南
 
@@ -39,8 +41,8 @@ ms.locfileid: "1707042"
 
 使用可用的默认 XAML 平台控件，可确保你的应用在所有设备上以及在所有输入情形下都可正常工作。 如果你的应用具有需要自定义反馈的自定义交互功能，你应该确保反馈合适、支持各种输入设备并且不会干扰用户执行其任务。 在视觉反馈可能与关键 UI 冲突或者甚至会遮盖关键 UI 的游戏或绘图应用中，这可能会是特殊问题。
 
-> [!Important] 
-> 我们不建议更改内置手势的交互行为。 
+> [!Important]
+> 我们不建议更改内置手势的交互行为。
 
 **跨设备反馈**
 
@@ -59,6 +61,8 @@ ms.locfileid: "1707042"
 ## <a name="high-visibility-focus-visuals"></a>高可见性焦点视觉
 
 所有 Windows 应用都在应用程序内的可互动控件的周围明显定义了许多焦点视觉。 这些新的焦点视觉完全可以根据需要进行自定义以及禁用。
+
+对于 Xbox 和电视通常使用的 **10 英尺体验**，Windows 支持**显示焦点** - 一种灯光效果，当可聚焦元素（例如按钮）通过游戏板或键盘输入获得焦点时，其边框将显示动画效果。 有关详细信息，请参阅[针对 Xbox 和电视进行设计](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus)。
 
 ## <a name="color-branding--customizing"></a>颜色外观方案和自定义
 

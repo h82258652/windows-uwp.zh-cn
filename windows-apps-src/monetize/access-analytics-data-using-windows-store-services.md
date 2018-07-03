@@ -4,18 +4,18 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: 使用 Microsoft Store 分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。
 title: 使用应用商店服务访问分析数据
 ms.author: mcleans
-ms.date: 03/23/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8523acb06a0bda48f85221f384d8a3d554c7dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: f7ca3c23179d97816fc54fdbacb951915aecf71f
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707152"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976392"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -39,13 +39,13 @@ ms.locfileid: "1707152"
     > [!NOTE]
     > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
-若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
+要将 Azure AD 应用程序与开发人员中心帐户相关联并检索所需值，请执行以下操作：
 
-1.  在开发人员中心中，转到**帐户设置**、单击**管理用户**，然后[将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
+1.  在开发人员中心，[将组织的开发人员中心帐户与组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在**管理用户**页面中，单击**添加 Azure AD 应用程序**、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配**管理者**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[将 Azure AD 应用程序添加到你的开发人员中心帐户](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
+2.  然后，从开发人员中心的**帐户设置**部分的**用户**页面[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account)，这里的应用程序表示应用或服务并且将用于访问开发人员中心帐户的分析数据。 请确保为此应用程序分配**管理员**角色。 如果应用程序在 Azure AD 目录中尚不存在，可以[在开发人员中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account)。
 
-3.  返回到**管理用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
+3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
 4. 单击**添加新密钥**。 在接下来的屏幕上，记下**密钥**值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[管理 Azure AD 应用程序的密钥](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
@@ -96,17 +96,7 @@ grant_type=client_credentials
 | 方案       | 方法      |
 |---------------|--------------------|
 | 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
-| 应用程序错误 |  <ul><li>[获取桌面应用程序的错误报告数据](get-desktop-application-error-reporting-data.md)</li><li>[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载桌面应用程序中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-
-### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
-
-属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户可以使用以下分析方法。
-
-| 方案       | 方法      |
-|---------------|--------------------|
-| Windows 10 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 10 驱动程序的错误报告数据](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[获取 Windows 10 驱动程序错误的详细信息](get-details-for-a-windows-10-driver-error.md)</li><li>[下载 Windows 10 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Windows 7/Windows 8.x 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| 硬件错误（适用于 OEM） |  <ul><li>[获取 OEM 硬件的错误报告数据](get-oem-hardware-error-reporting-data.md)</li><li>[获取 OEM 硬件错误的详细信息](get-details-for-an-oem-hardware-error.md)</li><li>[下载 OEM 硬件错误的 CAB 文件](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
+| 应用程序错误 |  <ul><li>[获取桌面应用程序的错误报告数据](get-desktop-application-error-reporting-data.md)</li><li>[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载桌面应用程序中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 
@@ -125,6 +115,16 @@ grant_type=client_credentials
 | 方案       | 方法      |
 |---------------|--------------------|
 | 购置 |  <ul><li>[获取 Xbox One 游戏购置](get-xbox-one-game-acquisitions.md)</li></ul> |
+
+### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
+
+属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户可以使用以下分析方法。
+
+| 方案       | 方法      |
+|---------------|--------------------|
+| Windows 10 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 10 驱动程序的错误报告数据](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[获取 Windows 10 驱动程序错误的详细信息](get-details-for-a-windows-10-driver-error.md)</li><li>[下载 Windows 10 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Windows 7/Windows 8.x 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| 硬件错误（适用于 OEM） |  <ul><li>[获取 OEM 硬件的错误报告数据](get-oem-hardware-error-reporting-data.md)</li><li>[获取 OEM 硬件错误的详细信息](get-details-for-an-oem-hardware-error.md)</li><li>[下载 OEM 硬件错误的 CAB 文件](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## <a name="code-example"></a>代码示例
 

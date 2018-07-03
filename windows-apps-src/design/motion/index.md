@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
-title: UWP 应用中的运动和动画
+title: UWP 应用中的动作和动画
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
@@ -15,107 +15,65 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1423aeff139758c780dcecb079141744931cdd7b
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: ffe26e949be254e85d28dde4a98a1730baa84a3e
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816532"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843480"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
 
-精心设计的有针对性的动作可以使应用变得栩栩如生，并且使体验感觉精良和完美。 动作有助于用户了解上下文变更，及其在应用导航层次结构中所处的位置。 它将体验与视觉转换联系在一起。 动作可为体验添加一种节奏和维度感。
+![主图](images/header-motion2.svg)
 
-## <a name="benefits-of-motion"></a>动作的优势
+Fluent 运动在应用中提供用途。 它基于用户行为提供智能反馈、让 UI 感觉保持生动，并指导用户在你的应用中导航。 Fluent 运动在用户和其数字体验之间引起情感连接。 我们建立了用户已从物理世界中了解的自然运动的基础，并在这个基础上扩展我们的系统。
 
-动作不仅仅在于让事物移动。 动作是一种用于创建物理生态系统的工具，用户可在该系统内驻留并通过鼠标、键盘、触控和手写笔等各式各样的输入类型进行操作。 体验的质量取决于应用对用户的响应程度以及 UI 传达了怎样的个性。
+## <a name="fluent-motion-principles"></a>Fluent 运动原则
 
-请确保动作在应用中具有特定用途。 最佳通用 Windows 平台 (UWP) 应用使用动作使 UI 变的栩栩如生。 动作应该：
+### <a name="physical"></a>物理
 
-- 根据用户行为提供反馈。
-- 指导用户如何与 UI 交互。
-- 指示如何导航到之前或随后的视图。
+运动中的对象展现现实世界中的对象行为。 流畅、响应的运动打造自然的体验，从而建立起情感连接、增加个性化。
 
-随着用户在应用中所用的时间越来越多，或者随着应用中的任务变得更复杂，优质的动作变得越来越重要：它可用于改变用户感受认知负荷和你的应用的易用程度的方式。 动作还有许多其他直接优势：
+![UI 物理运动示例](images/Physical.gif)
+> 在通过触控与 UI 交互时，UI 的移动与交互速度直接相关。 因为触控是直接操作，你与之交互的对象将影响其周围的对象。
 
-- **动作支持交互和路径寻找。**
+### <a name="functional"></a>功能
 
-    动作具有方向性：它会向前和向后移动、移入和移出内容，并留下关于用户如何到达当前视图的心理“痕迹导航”线索。 转换可通过模拟用户熟悉的任务来帮助用户了解如何操作新的应用程序。
+动作提供用途并确认。 它指导用户了解复杂情况，并帮助建立层次结构。 移动为展示带来增强的效果，并通过隐藏感知延迟优化用户体验。
 
-- **动作可以提供性能增强的印象。**
+![UI 功能动作示例](images/functional.gif)
+> 页面过渡是专门构建的。 它们提供有关页面如何彼此相关的提示。 它们以被视为快速的方式移动，即使在效果不佳的情况。
 
-    当网络速度滞后或系统暂停工作时，动画可使用户感觉没有等待太长的时间。 动画可用于让用户了解应用正在处理任务、没有冻结，并且它可以被动地显示用户可能感兴趣的新信息。
+### <a name="continuous"></a>连续
 
-- **动作可增加个性。**
+点到点的流畅运动自然地绘制眼睛并指导用户操作。 它巧妙地将用户任务拼接起来，使其感觉更可用、更友好。
 
-    动作通常是用户经历一项体验时用于传达应用个性的一个常用线程。
+![UI 连续动作示例](images/continuous3.gif)
+> 对象在场景与场景之间移动或在场景内变形以提供连续性，并帮助用户保持上下文。
 
-- **动作可增添优雅魅力。**
+### <a name="contextual"></a>上下文
 
-    流畅、响应，动作打造自然的体验，从而建立起与体验之间的情感联结。
+智能动作以与用户操作 UI 相同的方式向用户提供反馈。 交互以用户为中心。 运动效果适合外形规格并围绕场景设计。 它应该让每个用户都感觉舒适。
 
-## <a name="examples-of-motion"></a>动作示例
+![UI 上下文动作示例](images/Contextual.gif)
+> 动画应绑定到用户交互。 上下文菜单从用户激活它的点部署。 
 
-下面是应用中的一些动作示例。
+## <a name="motion-articles"></a>动作文章
 
-在此，应用使用连贯动画来为一个正在“继续”变成下一页标题中一部分的项目图片创建动画。 该效果有助于在转换过程维持用户上下文。
-
-![连贯动画](images/connected-animations/example.gif)
-
-在此，当 UI 滚动或平移时，视差视觉效果将以不同的速率移动不同的对象，打造一种深度、透视和移动感。
-
-![附带列表和背景图像的一个视差示例](images/_Parallax_v2.gif)
-
-
-## <a name="types-of-motion"></a>动作类型
-
-<table>
-    <tr>
-        <th align="left">动作类型</th>
-        <th align="left">描述</th>
-    </tr>
-    <tr>
-        <td><a href="motion-list.md">添加和删除</a>
-        </td>
-        <td>列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
-        </td>
-    </tr>
-    <tr>
-        <td><a href="connected-animation.md">连贯动画</a>
-        </td>
-        <td>连贯动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态和引入注目的导航体验。 这有助于用户维持其上下文并提供不同视图之间的连贯性。 在连贯动画中，当 UI 内容发生变化时，元素似乎在两种不同视图之间保持“连贯性”，从其在源视图中的位置掠过屏幕，到达其在新视图中的目标位置。 这强调了不同视图之间的共同内容，并创建了转换过程中美观且动态的效果。 
-        </td>
-    </tr>
-    <tr>
-        <td><a href="content-transition-animations.md">内容转换</a>
-        </td>
-        <td>内容转换动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。 </td>
-    </tr>
-    <tr>
-        <td><a href="motion-fade.md">淡化</a>
-        </td>
-        <td>使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。 </td>
-    </tr>
-    <tr>
-        <td><a href="page-transitions.md">页面过渡</a>
-        </td>
-        <td>页面过渡可将用户导航到应用中的各个页面，并提供反馈作为页面之间的关系。
-        </td>
-    </tr>
-    <tr>
-        <td><a href="parallax.md">视差</a>
-        </td>
-        <td>视差视觉效果有助于打造一种深度、透视和移动感。 它可以通过在 UI 滚动或平移时以不同速率移动不同对象来实现这种效果。
-        </td>
-    </tr> 
-    <tr>
-        <td><a href="motion-pointer.md">按下反馈</a>
-        </td>
-        <td>指针按下动画可在用户点击某个项目时向用户提供视觉反馈。 当第一次点击某个项目时，指针向下动画会略微缩小和倾斜所按的项目，并且会进行播放。 当用户释放指针时，会播放指针向上动画，这会将该项目还原到其原始位置。
-        </td>
-    </tr>
-</table>
-
-## <a name="animations-in-xaml"></a>XAML 中的动画
-
-要了解如何使用 XAML 中的内置动画或创建你自己的动画，请查看 [XAML 中的动画](xaml-animation.md)。 
+:::行::: :::列:::
+        ### [Timing and easing](timing-and-easing.md)
+        Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
+    :::column-end:::
+    :::column:::
+        ### [Directionality and gravity](directionality-and-gravity.md)
+        Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
+    :::column-end:::
+:::行末::: :::行::: :::列:::
+        ### [Page transitions](page-transitions.md)
+        Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
+    :::column-end:::
+    :::column:::
+        ### [Connected animation](connected-animation.md)
+        Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
+    :::column-end:::
+:::行末:::

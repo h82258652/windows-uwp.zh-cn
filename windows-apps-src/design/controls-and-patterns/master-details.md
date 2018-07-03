@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c39243217f28dd4f88c4776c058a1b93c145c50
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 68a8a812c6e5080630254014552a8bb05747749b
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393526"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983518"
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 
@@ -99,7 +99,7 @@ ms.locfileid: "1393526"
 以下示例使用自适应布局实现大纲/细节模式并演示到静态数据、数据库和在线资源的数据绑定。 
 - [大纲/细节示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
 - [大纲/细节与选择示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Template Studio 大纲/细节示例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Pages/MasterDetail)
+- [Windows Template Studio 大纲/细节示例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS 阅读器示例](https://github.com/Microsoft/Windows-appsample-rssreader)
 

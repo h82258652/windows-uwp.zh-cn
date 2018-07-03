@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b906970480c7c8bb175e2d7c845dfd6e790b84d6
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: bd703f5ec3fa6a5bc231793f8d004e3941e27b61
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396496"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935645"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透视效果
 
@@ -28,9 +28,9 @@ ms.locfileid: "1396496"
 
 ![堆叠对象以创造三维效果](images/3dstacking.png)
 
-除了创造静态三维效果外，你还可以利用射影转换特性的动画效果，从而创造动态的三维效果。 [运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236111)，查看此特性的实际效果。
+除了创造静态三维效果外，你还可以利用射影转换特性的动画效果，从而创造动态的三维效果。
 
-你只看到射影转换对图像试用，但实际上，你也可以将这些效果应用到所有 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)（包括控件）。 例如，你可以将三维效果应用到控件的整个容器，例如：
+你只看到射影转换对图像适用，但实际上，你也可以将这些效果应用到所有 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)（包括控件）。 例如，你可以将三维效果应用到控件的整个容器，例如：
 
 ![应用到元素容器的三维效果](images/skewedstackpanel.png)
 
@@ -48,8 +48,6 @@ ms.locfileid: "1396496"
 ```
 
 在本文档中，我们重点讲述 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 的属性，用于在三维空间内旋转和移动对象。 下一个示例可以让你体验这些属性，并观看这些属性在对象上产生的效果。
-
-[运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
 ## <a name="planeprojection-class"></a>PlaneProjection 类
 
@@ -91,7 +89,7 @@ ms.locfileid: "1396496"
 
 ![RotateZ 减去 45 度。](images/3drotatezminus35.png)
 
-旋转属性可以指定正值，也可以指定负值，因此可以向两个方向旋转。 绝对值可以大于 360，这样将绕对象旋转多于一周。 [运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236112)以使用不同的 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx)、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 和 [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) 属性值进行实验来查看效果。
+旋转属性可以指定正值，也可以指定负值，因此可以向两个方向旋转。 绝对值可以大于 360，这样将绕对象旋转多于一周。
 
 你可以使用 [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx)、[**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 和 [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) 属性移动旋转中心的位置。 在默认情况下，旋转的轴正好位于对象的中心，所以对象会绕着中心旋转。 但是，如果你将旋转中心移动到对象的外侧边，它将会绕着该侧边进行旋转。 **CenterOfRotationX** 和 **CenterOfRotationY** 的默认值为 0.5，而 **CenterOfRotationZ** 的默认值为 0。 对于 **CenterOfRotationX** 和 **CenterOfRotationY**，0 和 1 之间的值设置对象中某些位置的透视点。 0 值表示对象的一条边，1 表示相对的边。 允许使用超出此范围的值，并且会相应地移动旋转中心。 由于旋转中心的 z 轴穿过对象面板的中心，所以，如果你使用负值，则可以将旋转中心移到对象后；如果你使用正值，则可以将旋转中心移到对象前（面向你的方向）。
 
@@ -147,8 +145,6 @@ ms.locfileid: "1396496"
 
 使用 [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) 可将旋转中心置于对象面板的上面或下面。 这样，你可以让对象围绕一个点旋转，这就类似于行星绕着恒星公转一样。
 
-[运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236112)，体验围绕不同位置的旋转中心转动对象。
-
 ## <a name="positioning-an-object"></a>定位对象
 
 至此，你了解了如何在一个空间内转动对象。 通过以下属性，你可以相对于其他对象定位一个空间内的旋转对象。
@@ -164,17 +160,11 @@ ms.locfileid: "1396496"
 
 [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx)、[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) 和 [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) 属性可以在对象旋转后，沿着对象面板的相应轴转换对象。 因此，对象的旋转决定对象的转换方向。 为了介绍此概念，下一个示例使 **LocalOffsetX** 从 0 转到 400 度，使 [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 从 0 转到 65 度。
 
-[运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236209)
-
 注意，在上述示例中，对象沿着自己的 x 轴移动。 在动画最开始的位置，当 [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 值接近于零（与屏幕平行）时，对象沿着屏幕 x 轴方向移动，但是随着对象向你的方向旋转，对象会沿着面向你的对象面板的 x 轴移动。 另一方面，如果将 **RotationY** 属性转动到 -65 度，则该对象会朝远离你的方向呈曲线移动。
 
 [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) 与 [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) 的工作原理相似，只不过该属性是沿着纵轴移动，所以更改 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) 会影响 **LocalOffsetY** 移动对象的方向。 在下一示例中，**LocalOffsetY** 从 0 转动到 400 度，而 **RotationX** 从 0 转动到 65 度。
 
-[运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236210)
-
 [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) 以垂直于对象平面的方向转换对象，就好像从对象后面直接通过平面中心向你画一条垂线一样。 为了介绍 **LocalOffsetZ** 的工作原理，下一个示例使 **LocalOffsetZ** 从 0 转到 400 度，使 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) 从 0 转到 65 度。
-
-[运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236211)
 
 在动画的开始位置，当 [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) 值接近于零（与屏幕平行）时，对象直接向你移动，但是随着对象的表面向下旋转，该对象会向下移动。
 
@@ -183,8 +173,6 @@ ms.locfileid: "1396496"
 [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx)、[**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety) 和 [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) 属性沿着相对屏幕的轴转换对象。 也就是说，与局部偏移属性不同，对象沿着移动的轴与应用到对象的任何旋转无关。 如果你只想让对象沿着屏幕的 x-、y- 或 z- 轴移动，而不考虑应用到对象的旋转，那么，这些属性会非常有用。
 
 下一个示例将 [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) 从 0 转动到 400 度，而将 [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) 从 0 转动到 65 度。
-
-[运行此示例](http://go.microsoft.com/fwlink/p/?linkid=236213)
 
 注意，在此示例中，对象在旋转时不会改变转向。 这是因为该对象沿着屏幕的 x 轴移动，与对象的旋转无关。
 

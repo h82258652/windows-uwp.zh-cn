@@ -4,18 +4,18 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: 了解应用中广告的 UI 和用户体验指南。
 title: 广告的 UI 和用户体验指南
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eaeacdb24428b8870e941e5f93ca40dfa554903
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690803"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1881068"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -23,6 +23,17 @@ ms.locfileid: "1690803"
 
 > [!IMPORTANT]
 > 对应用内广告的任何使用均必须符合 Microsoft Store 策略，包括但不限于策略 [10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)（广告行为和内容）。 特别是，应用的横幅广告或间隙广告实现必须满足 Microsoft Store 策略 [策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 中的要求。 本文将举例说明违反此策略的一些实现。 这些示例仅供参考，以此方式帮助你更好地理解策略。 这些示例并不全面，可能有许多其他违反 Microsoft Store 策略的方式未在本文列出。
+
+## <a name="general-best-practices"></a>一般最佳做法
+
+在查看本文中针对不同类型广告的指南之前，我们先看一下有助于增加广告收入的一般性最佳做法。
+
+* [仔细计划广告位置](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/)。 请参见我们[优化广告单元可见性](optimize-ad-unit-viewability.md)的相关指南。
+* [使用间隙横幅广告作为间隙视频广告的次选广告](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video)。
+* [了解用户以提供更好的定向广告](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/)。
+* [使用最新的 Advertising 库](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/)。
+* [为应用设置正确 COPPA 设置](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app)。
+
 
 ## <a name="guidelines-for-banner-ads"></a>横幅广告指南
 
@@ -32,19 +43,17 @@ ms.locfileid: "1690803"
 
 建议在应用中实施横幅广告时遵循下列最佳做法：
 
+* [采用美国互动广告局建议尺寸](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes)（契合设备布局）。
+
 * 将大部分应用 UI 投入到功能性空间和内容中。
 
 * 将广告设计与你的体验相融合。 为设计人员提供示例广告，以设计广告的预期外观。 应用中两个精心设计的广告示例是广告即内容布局和拆分布局。
 
   若要在开发和测试阶段查看应用中广告大小的外观差异和运行状况，可以利用我们的 [测试广告单元](set-up-ad-units-in-your-app.md#test-ad-units)。 在结束使用测试后，请记住[使用实时广告单元更新应用](set-up-ad-units-in-your-app.md#live-ad-units)，然后再提交应用以供认证。
 
-* 使用适合运行设备布局的 [广告大小](supported-ad-sizes-for-banner-ads.md)。
-
 * 针对广告不可用时进行规划。 可能会多次出现广告未发送到应用的情况。 设计页面的版式，以使其不管是否显示广告都看起来很精美。 有关详细信息，请参阅[处理错误](error-handling-with-advertising-libraries.md)。
 
 * 如有对用覆盖进行最佳处理的客户发出警报的场景，请在显示覆盖时调用 [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)，并在完成警报场景后调用 [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx)。
-
-<span />
 
 ### <a name="practices-to-avoid"></a>要避免的做法
 
@@ -55,8 +64,6 @@ ms.locfileid: "1690803"
 * 应用中的广告不宜过多。 应用中的广告太多会有损于应用的外观和可用性。 你希望通过广告赚钱，但不应以牺牲应用本身为代价。
 
 * 使用户专注其核心任务。 主要关注点应始终在应用上。 应合并广告空间，使其处于次要关注点。
-
-<span />
 
 ### <a name="examples-of-policy-violations"></a>策略违反示例
 
@@ -74,7 +81,7 @@ ms.locfileid: "1690803"
 
 * 与未记录的界面或 Microsoft Advertising 库创建的子对象（例如，**WebView** 或 **MediaElement**）交互。
 
-<span id="interstitialbestpractices10">
+<span id="interstitialbestpractices10" />
 
 ## <a name="guidelines-for-interstitial-ads"></a>间隙广告指南
 
@@ -112,13 +119,9 @@ ms.locfileid: "1690803"
 
 * 如果没有合理的理由，请使用默认（30 秒）超时，否则，在这种情况下，不能低于 10 秒。 与标准横幅广告相比，间隙视频广告实质上需要花费更长的时间来下载，尤其是在没有高速连接的市场中。
 
-<span/>
-
 * 注意用户的流量套餐。 例如，在接近或超出其流量上限的移动设备上投放间隙视频广告前，不要向用户显示广告，或者向用户发出警告。 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 类中的 API 可以提供帮助。
 
 * 在初始提交后持续改进你的应用。 查看[广告报告](../publish/advertising-performance-report.md)并对设计进行更改，以提高填充率和间隙视频完成率。
-
-<span />
 
 ### <a name="practices-to-avoid"></a>要避免的做法
 
@@ -141,8 +144,6 @@ ms.locfileid: "1690803"
     * 使应用包含内置体验，以产生与真实广告相同的效益。
 
 * 请勿使用间隙广告让用户在多玩家游戏中获得竞争优势。 例如，如果用户看到了间隙广告，请勿在第一人称射击游戏中用一把较好的枪吸引用户。 玩家的虚拟形象穿的定制衬衫很精美，只要不提供伪装就行！
-
-<span />
 
 ### <a name="examples-of-policy-violations"></a>策略违反示例
 
@@ -170,23 +171,23 @@ ms.locfileid: "1690803"
 
 ### <a name="register-the-container-for-your-native-ad"></a>为本机广告注册容器
 
-你必须在代码中调用 **NativeAd** 对象的 [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) 方法注册用作本机广告容器的 UI 元素，并有选择地注册你希望注册为广告的可点击目标的任何特定控件。 要正确跟踪广告曝光数和点击数，就必须执行此操作。
+你必须在代码中调用 **NativeAdV2** 对象的 [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) 方法注册用作本机广告容器的 UI 元素，并有选择地注册你希望注册为广告的可点击目标的任何特定控件。 要正确跟踪广告曝光数和点击数，就必须执行此操作。
 
 **RegisterAdContainer** 方法有两个重载：
 
-* 如果你希望所有单个本机广告元素的整个容器变成可点击状态，请调用 [RegisterAdContainer(FrameworkElement)](https://msdn.microsoft.com/library/windows/apps/mt809188.aspx) 方法并向方法传递容器控件。 例如，你在各个独立控件中显示所有本机广告元素，所有这些控件都托管在 **StackPanel** 中，你希望整个 **StackPanel** 变成可点击状态，请向此方法传递 **StackPanel**。
+* 如果你希望所有单个本机广告元素的整个容器变成可点击状态，请调用 **RegisterAdContainer(FrameworkElement)** 方法并向方法传递容器控件。 例如，你在各个独立控件中显示所有本机广告元素，所有这些控件都托管在 **StackPanel** 中，你希望整个 **StackPanel** 变成可点击状态，请向此方法传递 **StackPanel**。
 
-* 如果你只想让特定本机广告元素变成可点击状态，请调用 [RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))](https://msdn.microsoft.com/library/windows/apps/mt809189.aspx) 方法。 只有你传递给第二个参数的控件会变成可点击状态。
+* 如果你只想让特定本机广告元素变成可点击状态，请调用 **RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))** 方法。 只有你传递给第二个参数的控件会变成可点击状态。
 
 ### <a name="required-native-ad-elements"></a>必需的本机广告元素
 
-在你的本机广告设计中，你必须始终向用户显示以下本机广告元素。 若不包含这些元素，你的广告单元的业绩会很差，收益率也很低。
+在本机广告设计中，至少必须始终向用户显示由 **NativeAdV2** 对象的属性提供的以下本机广告元素。 若不包含这些元素，广告单元的业绩会很差，收益率也很低。
 
-1. 始终显示本机广告的标题（由 **NativeAd** 对象的 [Title](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.title.aspx) 属性提供）。 提供足以显示至少 25 个字符的空间。 如果标题较长，请使用省略号替换其他文字。
+1. 始终显示本机广告的标题（由 **Title** 属性提供）。 提供足以显示至少 25 个字符的空间。 如果标题较长，请使用省略号替换其他文字。
 2. 始终显示以下元素中的至少一种，以帮助区分本机广告体验与你的应用体验，清楚地表明此内容由广告商提供：
-  * 可区分的*广告*图标（由 **NativeAd** 对象的 [AdIcon](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.adicon.aspx) 属性提供）。 此图标由 Microsoft 提供。
-  * *赞助商*文本（由 **NativeAd** 对象的 [SponsoredBy](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.sponsoredby.aspx) 属性提供）。 此文本由广告商提供。
-  * 除了*赞助商*文本以外，你也可以选择显示一些其他的文本，以帮助区分本机广告体验与你的应用体验，例如“赞助内容”、“促销内容”、“推荐内容”等。
+    * 可区分的*广告* 图标（由 **AdIcon** 属性提供）。 此图标由 Microsoft 提供。
+    * *赞助商* 文本（由 **SponsoredBy** 属性提供）。 此文本由广告商提供。
+    * 除了*赞助商*文本以外，你也可以选择显示一些其他的文本，以帮助区分本机广告体验与你的应用体验，例如“赞助内容”、“促销内容”、“推荐内容”等。
 
 ### <a name="user-experience"></a>用户体验
 
@@ -194,11 +195,11 @@ ms.locfileid: "1690803"
 
 ### <a name="description"></a>说明
 
-如果你选择显示广告说明（由 **NativeAd** 对象的 [Description](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.description.aspx) 属性提供），请提供足以显示至少 75 个字符的空间。 我们建议你使用动画显示广告描述的完整内容。
+如果选择显示广告说明（由 **NativeAdV2** 对象的 **Description** 属性提供），请提供足以显示至少 75 个字符的空间。 我们建议你使用动画显示广告描述的完整内容。
 
 ### <a name="call-to-action"></a>行动号召
 
-*行动号召*文本（由 **NativeAd** 对象的 [CallToAction](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.calltoaction.aspx) 属性提供）是广告的重要组成部分。 如果你选择显示此文本，请遵循以下准则：
+*行动号召* 文本（由 **NativeAdV2** 对象的 **CallToAction** 属性提供）是广告的重要组成部分。 如果选择显示此文本，请遵循以下准则：
 
 * 始终在可点击的控件（例如按钮或超链接）上向用户显示*行动号召*文本。
 * 始终显示完整的*行动号召*文本。

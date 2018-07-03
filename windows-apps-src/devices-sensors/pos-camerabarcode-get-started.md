@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbb26fb3c977917732a079f28d274f7f2bfba41
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 861233de6967a6199bae5d81c1a3938bf8645246
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833075"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976029"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>相机条形码扫描仪入门
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>步骤 1：向应用清单中添加功能声明
@@ -84,7 +84,7 @@ DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
 使用 [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) 来获取对相机条形码扫描仪的独占使用。
 
 ## <a name="step-7-system-provided-preview"></a>步骤 7：系统提供的预览
-用户要成功扫描相机的条形码需要使用相机预览。  Windows 提供简单的相机预览，它将启动用于基本控制相机条形码扫描仪的对话框。  只需调用 [ClaimedBarcodeScanner.ShowideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) 即可打开对话框，完成后则调用 [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) 将其关闭。
+用户要成功扫描相机的条形码需要使用相机预览。  Windows 提供简单的相机预览，它将启动用于基本控制相机条形码扫描仪的对话框。  调用 [ClaimedBarcodeScanner.ShowVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) 即可打开对话框，完成后调用 [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) 将其关闭。
 
 > [!TIP]
 > 请参阅[托管预览](pos-camerabarcode-hosting-preview.md)了解如何托管应用程序中相机条形码扫描仪的预览。

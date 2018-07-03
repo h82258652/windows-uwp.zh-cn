@@ -3,27 +3,24 @@ author: stevewhims
 description: 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理委托。
 title: 在 C++/WinRT 中使用委托处理事件
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 44eb49e0e9797ec363c160ef701e19b58f8227a1
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 1cf3c87411bb6d8eb5886e7205f96c466d707220
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832010"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976485"
 ---
-# <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的委托来处理事件
-> [!NOTE]
-> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
-
-本主题介绍如何使用 C++/WinRT 注册和撤销事件处理委托。 你可以使用任何标准 C++ 函数类对象来处理事件。
+# <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的代理来处理事件
+本主题介绍如何使用 C++/WinRT 注册和撤销事件处理代理。 你可以使用任何标准 C++ 函数类对象来处理事件。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的当前可用性的信息，请参阅 [Visual Studio 支持 C++/WinRT 和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>注册用于处理事件的委托
 一个简单示例将处理按钮的单击事件。 使用 XAML 标记注册用于处理该事件的成员函数很常见，如下所示。
@@ -123,7 +120,9 @@ private:
 };
 ```
 
-或者，当你注册委托时，也可以指定 **winrt::auto_revoke**（即 [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 类型的值）以请求一个事件撤销程序。 当该撤销程序超出范围时，它将自动撤销委托。 在本示例中，无需存储事件源，并且不需要析构函数。
+不是如上面示例中的强引用，你可以存储对按钮的弱引用（请参阅 [C++/WinRT 中的弱引用](weak-references.md)）。
+
+或者，当你注册代理时，也可以指定 **winrt::auto_revoke**（即 [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 类型的值）以请求一个事件撤销程序（**winrt::event_revoker** 类型）。 事件撤销程序为你保留对事件源（引发事件的对象）的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -151,7 +150,7 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
     winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
@@ -160,7 +159,7 @@ event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click
 你可以考虑撤销页面-导航方案中的处理程序。 如果你反复进入某个页面然后退出，则可以在离开该页面时撤销任何处理程序。 或者，如果你重复使用同一页面实例，则还可以检查令牌的值并且仅在它尚未被设置时注册它 (`if (!m_token){ ... }`)。 第三个选项是将事件撤销程序作为数据成员存储在页面中。 第四个选项（将在本主题后面描述）是捕获对 lambda 函数中的 *this* 对象的强引用或弱引用。
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>异步操作和运算的委托类型
-前面的示例使用的是 **RoutedEventHandler** 委托类型，但当然还有很多其他委托类型。 例如，异步操作和运算（带进度和不带进度）具有期望相应类型的委托的已完成和/或进度事件。 例如，带进度的异步运算进度事件（可以是实现 [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的任何内容）需要 [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler) 类型的委托。 下面是使用 lambda 函数创作该类型的委托的代码示例。 该示例还演示了如何创作 [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) 委托。
+前面的示例使用的是 **RoutedEventHandler** 委托类型，但当然还有很多其他委托类型。 例如，异步操作和运算（带进度和不带进度）具有期望相应类型的委托的已完成和/或进度事件。 例如，带进度的异步运算进度事件（可以是实现 [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的任何内容）需要 [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler) 类型的委托。 下面是使用 lambda 函数创作该类型的委托的代码示例。 该示例还演示了如何创作 [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) 代理。
 
 ```cppwinrt
 using namespace winrt;
@@ -188,14 +187,24 @@ void ProcessFeedAsync()
         // use syndicationFeed;
     });
     
-    // or (but this function must then return IAsyncAction)
+    // or (but this function must then be a coroutine and return IAsyncAction)
     // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
 }
 ```
 
-如上面的注释所示，与将委托与异步操作和运算的已完成事件结合使用相比，你可能会发现使用协同程序更自然。 有关详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](concurrency.md)。
+如上面的“协同程序”注释所示，与将代理与异步操作和运算的已完成事件结合使用相比，你可能会发现使用协同程序更自然。 有关详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](concurrency.md)。
 
-## <a name="delegate-types-that-return-a-value"></a>返回一个值的委托类型
+但是，如果你确实要继续使用代理，你可以选择更简单的语法。
+
+```cppwinrt
+async_op_with_progress.Completed(
+    [](auto&& /*sender*/, AsyncStatus const)
+{
+    ....
+});
+```
+
+## <a name="delegate-types-that-return-a-value"></a>返回一个值的代理类型
 某些委托类型本身必须返回一个值。 示例：[**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler)，它将返回一个字符串。 下面是创作该类型的委托的示例（请注意，lambda 函数将返回一个值）。
 
 ```cppwinrt
@@ -261,5 +270,5 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 
 ## <a name="related-topics"></a>相关主题
 * [在 C++/WinRT 中创作事件](author-events.md)
+* [利用 C++/WinRT 实现的并发和异步操作](concurrency.md)
 * [C++/WinRT 中的弱引用](weak-references.md)
-

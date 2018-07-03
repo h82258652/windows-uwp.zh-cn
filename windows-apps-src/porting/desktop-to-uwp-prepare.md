@@ -4,19 +4,19 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: 准备打包应用（桌面桥）
 ms.author: normesta
-ms.date: 02/21/2018
+ms.date: 05/18/20188
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4836992675f65773e9b5c890aca243e2a9e172
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 46e71812acdad92a5d017cee44490e7d8cc0de32
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832541"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905388"
 ---
 # <a name="prepare-to-package-an-app-desktop-bridge"></a>准备打包应用（桌面桥）
 
@@ -105,7 +105,7 @@ ms.locfileid: "1832541"
 
 + __应用将启动一个实用工具以执行任务__。 避免启动 PowerShell 和 Cmd.exe 等命令实用工具。 实际上，如果用户将你的应用安装在运行 Windows 10 S 的系统上，那么你的应用将完全无法启动它们。 这可能会使你的应用无法提交至 Microsoft Store，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容。
 
-启动实用工具通常可以提供一种方便的方法，用于从操作系统获取信息、访问注册表或访问系统功能。 但是，你可以改为使用 UWP API 完成这些类型的任务。 这些 API 的性能更强，因为它们无需单独的可执行文件即可运行，但更重要的是，它们会阻止应用到达程序包外部。 应用的设计与桌面桥应用随附的隔离、信任和安全性保持一致，并且你的应用将按预期在运行 Windows 10 S 的系统上运行。
+启动实用工具通常可以提供一种方便的方法，用于从操作系统获取信息、访问注册表或访问系统功能。 但是，你可以改为使用 UWP API 完成这些类型的任务。 这些 API 的性能更强，因为它们无需单独的可执行文件即可运行，但更重要的是，它们会阻止应用到达程序包外部。 应用的设计与通过桌面桥打包的应用随附的隔离、信任和安全性保持一致，并且应用将按预期在运行 Windows 10 S 的系统上运行。
 
 + __应用托管外接程序、插件或扩展__。   在许多情况下，只要尚未对扩展打包并且该扩展以完全信任方式安装，COM 样式的扩展则可能会继续工作。 这是因为那些安装程序可以使用其完全信任的功能修改注册表，并将扩展文件放置在主机应用应找到这些文件的任意位置。
 

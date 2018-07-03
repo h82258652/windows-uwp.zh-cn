@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e5d69c2f86c0d57c0c1be938799d5e81bb8f00
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 81205dc7122c75345b686240f79200d8304704b7
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832271"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843417"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 捕获基本的照片、视频和音频
 
@@ -61,7 +61,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 若要了解如何使用 **BitmapEncoder** 和 **SoftwareBitmap** 对象（包括如何在 XAML 页面显示此类对象），请参阅[**创建、编辑和保存位图图像**](imaging.md)。 
 
-若要详细了解如何设置捕获设备控件值，请参阅[用于照片和视频的捕获设备控件](capture-device-controls-for-photo-and-video.md)。
+若要详细了解如何设置捕获设备控件值，请参阅[用于照片和视频的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
 
 自 Windows 10 版本 1803 起，可通过访问 **MediaCapture** 返回的 **CapturedFrame** 的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 属性，获取以未压缩格式捕获的照片的元数据，如 EXIF 信息。 在以前的版本中，仅能在以压缩文件格式捕获的照片的标题中访问此数据。 手动写入图像文件时，可向 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) 提供此数据。 有关位图编码的详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。  还可通过访问 [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性访问捕获图像时使用的帧控件值，如曝光度和闪光设置。 有关详细信息，请参阅[用于照片和视频捕获的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
 

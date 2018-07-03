@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec676446562d5d97ff2a7020fc494f248323450b
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691936"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018623"
 ---
 # <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>在桌面应用和 UWP 应用之间共享代码
 
@@ -26,8 +26,8 @@ ms.locfileid: "1691936"
 将尽可能多的代码放入 .NET Standard 2.0 类库中。  只要你的代码使用标准中定义的 API，就可以在 UWP 应用中重复使用你的代码。 在 .NET Standard 库中共享代码比以前更容易，因为 .NET Standard 2.0 中包含的 API 相当多。
 
 下面的精彩视频向你介绍相关的详细信息。
-<br><br>
-<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
 
 ### <a name="add-net-standard-libraries"></a>添加 .NET Standard 库
 
@@ -56,10 +56,10 @@ ms.locfileid: "1691936"
 如果你的应用程序使用其中任何一项，请确定它们是否与 .NET Standard 2.0 兼容。 你可以使用 Visual Studio 扩展或命令行实用工具执行该操作。
 
 使用这些相同的工具分析你的代码。 在此处下载工具 ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases))，然后观看此视频以了解如何使用它们。
-<br><br>
-<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
 
- 如果你的代码不符合此标准，请考虑其他可以实现该代码的方法。 首先打开 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 你可以使用该浏览器查看 .NET Standard 2.0 中可用的 API。 请确保将列表作用域限定为 .NET Standard 2.0。
+如果你的代码不符合此标准，请考虑其他可以实现该代码的方法。 首先打开 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 你可以使用该浏览器查看 .NET Standard 2.0 中可用的 API。 请确保将列表作用域限定为 .NET Standard 2.0。
 
 ![.NET 选项](images/desktop-to-uwp/dot-net-option.png)
 
@@ -101,7 +101,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-但是，[.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)向我们显示了另一种方法。 我们可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 类，因为这些类在 .NET Standard 2.0 中可用。  
+不过，我们可以使用 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) 找到另一种方法。 我们可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 类，这些类都在 .NET Standard 2.0 中可用。  
 
 此修订版本使用这些类来获取客户列表，但是，若要创建 ``DbConnection`` 类，我们将需要传递在客户端应用程序中创建的工厂对象。
 
@@ -158,9 +158,9 @@ public partial class Customers : Form
 ## <a name="reach-all-windows-devices"></a>覆盖所有 Windows 设备
 
 现在，你可以将 UWP 应用添加到你的解决方案中。
-<div style="float: left; padding: 10px">
-    ![桌面到 UWP 桥图像](images/desktop-to-uwp/adaptive-ui.png)
-</div>
+
+![桌面到 UWP 桥图像](images/desktop-to-uwp/adaptive-ui.png)
+
 你仍然必须在 XAML 中设计 UI 页面，并编写任何特定于设备或平台的代码，但是当你完成后，你将能够覆盖所有 Windows 10 设备，并且应用页面将具有一种现代感，完全能够适应不同的屏幕大小和分辨率。
 
 你的应用将响应输入机制，而不仅仅是键盘和鼠标，并且功能和设置在各个设备中都将非常直观。 这意味着用户只需了解一次如何执行操作，应用就能以用户非常熟悉的方式运作，不管使用的是何种设备。
@@ -211,9 +211,8 @@ public sealed partial class MainPage : Page
 ## <a name="reach-ios-and-android-devices"></a>覆盖 iOS 和 Android 设备
 
 通过添加 Xamarin 项目，你可以覆盖 Android 和 iOS 设备。  
-<div style="float: left; padding: 10px">
-    ![Xamarin 应用](images/desktop-to-uwp/xamarin-apps.png)
-</div>
+
+![Xamarin 应用](images/desktop-to-uwp/xamarin-apps.png)
 
 利用这些项目，你可以使用 C# 构建 Android 和 iOS 应用，这些应用能够完全访问特定于平台和特定于设备的 API。 这些应用可充分利用特定于平台的硬件加速性能，并且是为本机性能而编译的。
 

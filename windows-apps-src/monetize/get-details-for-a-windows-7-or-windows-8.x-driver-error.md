@@ -4,18 +4,18 @@ ms.assetid: 2FBA0B73-17C6-4F25-A79D-63F2F262491A
 description: 在 Microsoft Store 分析 API 中使用此方法，可获取 Windows 7 或 Windows 8.x 驱动程序错误的详细数据。 此方法仅用于 IHV。
 title: 获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ea23f5989f9b8c6a28b9c355175e28cae7695c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: aa3eaf0915ba7e26d2b27b4f21df95fae8a5c0e1
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663917"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989481"
 ---
 # <a name="get-details-for-a-windows-7-or-windows-8x-driver-error"></a>获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息
 
@@ -45,7 +45,7 @@ ms.locfileid: "1663917"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -75,7 +75,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ihvdriver/failurede
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>回复
+## <a name="response"></a>响应
 
 
 ### <a name="response-body"></a>响应正文
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 |------------|---------|------------|
 | 值      | array   | 包含详细错误数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。          |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |
-| TotalCount | inumber | 查询的数据结果中的行总数。        |
+| TotalCount | 整数 | 查询的数据结果中的行总数。        |
 
 
 *Value* 数组中的元素包含以下值。

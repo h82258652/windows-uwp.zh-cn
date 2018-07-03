@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c61de6dbeb8b1c455c1312cc993d0eee7b1bba7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 40abeae4048784599deadd9a1a62a995447159be
+ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653986"
+ms.lasthandoff: 05/19/2018
+ms.locfileid: "1903191"
 ---
 # <a name="identify-input-devices"></a>标识输入设备
 
@@ -90,8 +90,6 @@ private void GetTouchProperties()
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
 **注意** 此处讨论的属性返回的值基于所有检测到的指针设备：如果至少一个设备支持特定功能，则布尔属性返回非零值，数值属性返回任何一个指针设备公开的最大值。
-
- 
 
 以下代码使用一个表格来显示每个指针设备的属性和值。
 

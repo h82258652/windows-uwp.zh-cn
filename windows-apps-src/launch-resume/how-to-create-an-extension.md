@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e54af14d23b255718f5247605b9bdd611f172308
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663837"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862416"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 
@@ -27,7 +27,7 @@ ms.locfileid: "1663837"
 
 ## <a name="introduction-to-app-extensions"></a>应用扩展简介
 
-插件、外接程序和加载项是你可能熟悉的不同名称，在通用 Windows 平台 (UWP) 中，我们称之为应用扩展。 Microsoft Edge 扩展是 UWP 应用扩展。 Windows 10 周年纪念版（版本 1607，内部版本 10.0.14393）中引入了 UWP 应用扩展。
+在通用 Windows 平台 (UWP) 中，应用扩展提供的功能类似于插件、外接程序和加载项在其他平台上提供的功能。 例如，Microsoft Edge 扩展就属于 UWP 应用扩展。 Windows 10 周年纪念版（版本 1607，内部版本 10.0.14393）中引入了 UWP 应用扩展。
 
 UWP 应用扩展是 UWP 应用，这些应用具有的扩展声明允许它们与主机应用共享内容和部署事件。 扩展应用可以提供多个扩展。
 
@@ -423,6 +423,7 @@ _MathExtension 项目中的 Package.appxmanifest：_
 
 ## <a name="related-topics"></a>相关主题
 
+* [应用扩展简介](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [版本 2016 的应用扩展相关会话](https://channel9.msdn.com/Events/Build/2016/B808)
 * [版本 2016 的应用扩展代码示例](https://github.com/Microsoft/App-Extensibility-Sample)
 * [使用后台任务支持应用](support-your-app-with-background-tasks.md)

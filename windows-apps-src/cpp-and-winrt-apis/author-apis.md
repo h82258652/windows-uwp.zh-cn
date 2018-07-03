@@ -3,23 +3,20 @@ author: stevewhims
 description: 本主题介绍如何直接或间接使用 **winrt::implements** 基结构来创作 C++/WinRT API。
 title: 使用 C++/WinRT 创作 API
 ms.author: stwhi
-ms.date: 04/18/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ee00443e35061fa1c3cc58c268ad0bd0c89c6e
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 0cf5d196d6dfa390fc537a0f14c041049d4ef714
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832231"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877319"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作 API
-> [!NOTE]
-> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
-
 本主题介绍如何直接或间接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基结构来创作 C++/WinRT API。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 - 你*不是*在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用。 在此案例中，你直接从 **winrt::implements** 派生并实现相关函数。
@@ -34,7 +31,7 @@ ms.locfileid: "1832231"
 最简单的方案是你要实现一个 Windows 运行时接口以进行本地使用。 你不需要运行时类；只需一个普通的 C++ 类。 例如，你可能会基于 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 编写一个应用。
 
 > [!NOTE]
-> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的当前可用性的信息，请参阅 [Visual Studio 支持 C++/WinRT 和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[对 C++/WinRT 的 Visual Studio 支持以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 在 Visual Studio 中，**Visual C++ Core 应用 (C++/WinRT)** 项目模板阐释了 **CoreApplication** 模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
 
@@ -127,7 +124,12 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果你正在 Windows 运行时组件中创作一个运行时类
-如果类型打包在一个 Windows 运行时组件中以便从应用程序中使用，则它需要是一个运行时类。 我们建议你通过各自的接口定义语言 (IDL) 文件 (`.idl`) 声明每个运行时类。 下面提供了一个示例。
+如果类型打包在一个 Windows 运行时组件中以便从应用程序中使用，则它需要是一个运行时类。
+
+> [!TIP]
+> 建议通过各自的接口定义语言 (IDL) 文件 (`.idl`) 声明每个运行时类，以便在编辑 IDL 文件时优化生成性能，并使 IDL 文件能与其生成的源代码文件进行逻辑通信。 Visual Studio 将所有生成的 `.winmd` 文件合并为一个与根命名空间同名的文件。 最后生成的 `.winmd` 文件将是组件使用者将参考的文件。
+
+下面是一个示例。
 
 ```idl
 // MyRuntimeClass.idl
@@ -180,11 +182,13 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 在此情况下，你既创作 API *同时又*使用 API。 实现运行时类的过程与实现 Windows 运行时组件的过程实质上是相同的。 因此，[如果你正在 Windows 运行时组件中创作运行时类](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)，请参阅上一节。 唯一不同的细节在于，从 IDL 中， C++/WinRT 工具链不仅生成一个实现类型，而且还生成一个投影类型。 在此情况下只说明“**MyRuntimeClass**”可能是不明确的，认识到这一点很重要，因为有多个具有该名称的不同类型的实体。
 
-- **MyRuntimeClass** 是一个运行时类的名称，在 IDL 中声明，并在部分编程语言中实现。
+- **MyRuntimeClass** 是运行时类的名称。 但这实际上是一种抽象：在 IDL 中声明并以某种编程语言实现。
 - **MyRuntimeClass** 是 c++ 结构 **winrt::MyProject::implementation::MyRuntimeClass**（运行时类的 C++/WinRT 实现）的名称。 正如我们看到的，如果有不同的实现和使用项目，则此结构仅存在于实现项目中。 这是*实现类型*或*实现*。 此类型由`cppwinrt.exe` 工具在文件 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp` 中生成。
-- **MyRuntimeClass** 是采用 C++ 结构 **winrt::MyProject::MyRuntimeClass** 形式的投影类型的名称。 如果有不同的实现和使用项目，则此结构仅存在于使用项目中。 这是*投影类型*或*投影*。 此类型由 `cppwinrt.exe` 在文件 `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h` 中生成。
+- **MyRuntimeClass** 是采用 C++ 结构 **winrt::MyProject::MyRuntimeClass** 形式的投影类型的名称。 如果有不同的实现和使用项目，则此结构仅存在于使用项目中。 这是*投影类型* 或*投影*。 此类型由 `cppwinrt.exe` 在文件 `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h` 中生成。
 
-下面是与本主题相关的投影类型的各个部分。
+![投影类型和实现类型](images/myruntimeclass.png)
+
+下面是与本主题相关的投影类型部分。
 
 ```cppwinrt
 // MyProject.2.h
@@ -207,7 +211,7 @@ namespace winrt::MyProject
 关于我们在上面看到的列表，要记住下面这些要点。
 
 - 你在 IDL 中声明的每个构造函数都会使得在实现类型和投影类型上生成一个构造函数。 将通过 IDL 声明的构造函数来使用*不同*编译单元中的运行时类。
-- 无论你是否有 IDL 声明构造函数，在投影类型上都会生成一个接收 `nullptr` 的构造函数重载。 从*同一*编译单元中使用运行时类需要两个步骤，调用 `nullptr` 构造函数便是*第一步*。 有关更多详细信息和代码示例，请参阅[通过 C++/WinRT 使用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
+- 无论你是否有 IDL 声明构造函数，在投影类型上都会生成一个接收 `nullptr_t` 的构造函数重载。 从*同一*编译单元中使用运行时类需要两个步骤，调用 `nullptr_t` 构造函数便是*第一步*。 有关更多详细信息和代码示例，请参阅[通过 C++/WinRT 使用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
 - 如果你正在从*同一*编译单元使用运行时类，则还可以在实现类型上（请记住，这是在 `MyRuntimeClass.h` 中）直接实现非默认构造函数。
 
 > [!NOTE]
@@ -244,7 +248,7 @@ namespace MyProject
     runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
     {
         MyType();
-    }   
+    }    
 }
 ```
 
