@@ -4,19 +4,19 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: 桌面桥
 ms.author: normesta
-ms.date: 08/30/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4285d6717c27e78c13ac6588fe634c566138d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 321fb71d44e1298b29b6119168f67207e6df4a8d
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832368"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989691"
 ---
 # <a name="desktop-bridge"></a>桌面桥
 
@@ -54,9 +54,7 @@ ms.locfileid: "1832368"
 
 ## <a name="prepare"></a>准备
 
-是否计划将应用发布到 [Microsoft Store](https://www.microsoft.com/store/apps)。 如果是，请先填写[此表单](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。 Microsoft 将联系你以开始加入过程。 在此过程中，你需要在 Store 中预留一个名称，并获取创建 Windows 应用包所需的信息。
-
-接下来，请查看文章[准备将桌面应用打包](desktop-to-uwp-prepare.md)，并首先解决应用存在的任何问题，然后再为应用创建 Windows 应用包。 在创建包之前，可能不需要对应用进行很多更改。 但是，某些情况下可能需要在创建包之前对应用进行调整。
+首先，查看文章[准备打包桌面应用](desktop-to-uwp-prepare.md)，准备应用程序，然后解决应用存在的所有问题，最后再为应用创建 Windows 应用包。 在创建包之前，可能不需要对应用进行很多更改。 但是，某些情况下可能需要在创建包之前对应用进行调整。
 
 <a id="convert" />
 
@@ -186,7 +184,31 @@ InstallShield 提供单一解决方案来开发 MSI 与 EXE 安装程序、创�
 
 #### <a name="rad-studio"></a>RAD Studio
 
-了解 [Embarcadero 的 RAD Studio](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
+查看 [Embarcadero 的 RAD Studio](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
+
+#### <a name="raypack-studio"></a>RayPack Studio
+
+Raynet 的打包解决方案 [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio) 支持桌面桥，将其作为其中一种有效且易于配置的转换和重新打包框架方法。
+
+<img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
+
+现有的虚拟环境（VMware 工作站、Hyper-V）可在不进行长时间环境设置的情形下用于执行自动/批量转换。 RayPack Studio 的组件，[RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)，可利用预转换屏蔽和兼容性测试来验证可用于转换的合格软件。 此外，用户现在可以对多种版本的 Windows 10（包括周年和创意者更新）进行全面的冲突性和兼容性检查。
+
+除创建 Windows 10 APPX/UWP 格式软件包外，RayPack Studio 还可用于创建经典 Windows Installer 包 (MSI)、修补程序 (MSP)、转换程序 (MST) 和 APP-V 包。 此外，此解决方案附带一组软件产品和专业企业软件包组件。 除了软件打包和虚拟化，RayPack Studio 还可以完成所有打包相关任务：软件应用程序及软件包的冲突性和兼容性检查 ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad))、软件评估 ([RayEval](https://raynet.de/Raynet-Products/RayEval)) 和质量保证 ([RayQC](https://raynet.de/Raynet-Products/RayQC))。
+
+通过与 [RayFlow](https://raynet.de/Raynet-Products/RayFlow)（Raynet 的企业工作流系统）结合使用，用户可以通过完整的企业应用程序生命周期（从程序包订购到评估、分析、打包、质量保证、用户接受度测试和部署）高效地开发软件。 所有的程序包和格式可被直接储存和部署到 SCCM 或其他解决方案中。 RayFlow 会对整个应用程序生命周期进程进行追踪和管理。 除此之外，RayFlow 还可以对 ServiceNow 等所有订单系统进行集成。 Raynet 利用面向服务提供者的工具在世界各地构建软件打包工厂。
+
+说服自己获取 Raynet 提供的 RayPack Studio 和 RayFlow [免费试用版许可](https://raynet.de/contact?init=license)。 有关详细信息，请访问 [www.raynet.de](https://raynet.de/home)。
+
+**相关链接**：
+
+* Raynet：[https://raynet.de/home](https://raynet.de/home)
+* RayPack Studio：[https://raynet.de/Raynet-Products/RayPackStudio](https://raynet.de/Raynet-Products/RayPackStudio)
+* RayFlow：[https://raynet.de/Raynet-Products/RayFlow](https://raynet.de/Raynet-Products/RayFlow)
+* RayEval：[https://raynet.de/Raynet-Products/RayEval](https://raynet.de/Raynet-Products/RayEval)
+* RayQC：[https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
+* RayQC Advanced：[https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
+* 免费试用版许可：[https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
 
 ### <a name="manual-packaging"></a>手动打包
 
@@ -228,7 +250,7 @@ InstallShield 提供单一解决方案来开发 MSI 与 EXE 安装程序、创�
 若要在准备分发时在现实环境中测试应用，最好对应用进行签名，然后安装它。 请参阅[测试你的应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)。
 
 >[!IMPORTANT]
-> 如果你打算将应用发布到 Microsoft Store，请确保它可在运行 Windows 10 S 的设备上正常运行。这是应用商店的要求。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](desktop-to-uwp-test-windows-s.md)。
+> 如果你打算将应用发布到 Microsoft Store，请确保它支持运行 S 模式下的 Windows 10 设备。 这是 Microsoft Store 的要求。 请参阅[测试 Windows 应用是否适用于 S 模式下的 Windows 10](desktop-to-uwp-test-windows-s.md)。
 
 ## <a name="validate"></a>验证
 
