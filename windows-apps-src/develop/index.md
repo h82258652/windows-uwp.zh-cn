@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 191bdaed5dafc66882ab44fcc0661216eaa7e51c
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
+ms.openlocfilehash: 2cdeb0b776385d9ba21ab4d8416c442757b0c78e
+ms.sourcegitcommit: d08cf045750617c2c5a91a8777c0a9c6c9b0e6a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842187"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "2225587"
 ---
 <div> 
 <h1>开发 UWP 应用</h1>
@@ -144,7 +144,7 @@ ms.locfileid: "1842187"
             <div style="display:block"  class="cardPadding">
                 <div style="display:block"  class="card">
                     <div style="display:block"  class="cardText">
-                        <h3>数据</h3>
+                        <h3>数据和文件</h3>
                         <p style="display:block"><a href="/windows/uwp/audio-video-camera/">音频、视频和相机</a></p>
                         <p><a href="/windows/uwp/data-access/" style="display:block" >数据访问</a></p>
                         <p><a href="/windows/uwp/data-binding/"style="display:block" >数据绑定</a></p>
@@ -177,7 +177,9 @@ ms.locfileid: "1842187"
                     <div style="display:block" class="cardText">
                         <h3>平台</h3>
                         <p style="display:block"><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></p>
+                        <p style="display:block"><a href="/windows/uwp/launch-resume/">启动、恢复和后台任务</a></p>
                         <p style="display:block"><a href="/windows/uwp/security/">安全性</a></p>
+                        <p style="display:block"><a href="/windows/uwp/threading-async/">线程处理和异步编程</a></p>
                         <p style="display:block"><a href="/windows/uwp/composition/visual-layer">可视化层</a></p>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">Windows 即服务</a></p>
                         <p style="display:block"><a href="/windows/uwp/winrt-components/">Windows 运行时组件</a></p>                 
@@ -200,31 +202,59 @@ ms.locfileid: "1842187"
             </div>
         </div>        
     </li>      
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>进程和线程处理</h3>
-                        <p style="display:block"><a href="/windows/uwp/launch-resume/">启动、恢复和后台任务</a></p>
-                        <p style="display:block"><a href="/windows/uwp/threading-async/">线程处理和异步编程</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>                 
      <li>              
         <div style="display:block" class="cardSize">
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>传感器</h3>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/">设备、传感器和电源</a></p>
+                        <h3>外设、传感器和电源</h3>
+                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">概述</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">启用设备功能</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">设备配对</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">服务点</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/sensors">传感器</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">打印</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">3D 打印</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/nfc">NFC</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/get-battery-info">电池信息</a></p>
                     </div>
                 </div>
             </div>
         </div>        
-    </li>         
+    </li> 
+     <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>移植</h3>
+                        <p style="display:block"><a href="/windows/uwp/porting/">概述</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight 到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows 运行时 8.x 到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">桌面桥</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">在桌面应用和 UWP 之间共享代码</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">针对 Android 和 iOS 开发人员的概念映射</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">从 iOS 移动到 UWP</a></p>
+                        <p style="display:block"><a href="/microsoft-edge/progressive-web-apps">将 Web 应用转换为 PWA</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">基于 ARM 的 Windows 10</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>           
+    <!-- <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Processes and threading</h3>
+                        <p style="display:block"><a href="/windows/uwp/launch-resume/">Launching, resuming, and background tasks</a></p>
+                        <p style="display:block"><a href="/windows/uwp/threading-async/">Threading and async programming</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>                         -->
 </ul>
 
 
