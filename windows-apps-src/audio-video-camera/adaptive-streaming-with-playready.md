@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: "本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。"
-title: "使用 PlayReady 的自适应流式处理"
+description: 本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。
+title: 使用 PlayReady 的自适应流式处理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: aebd2e2de0b1c4991b69b02f1f215ab58feef4a9
 ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/21/2017
+ms.locfileid: "907105"
 ---
 # <a name="adaptive-streaming-with-playready"></a>使用 PlayReady 的自适应流式处理
 
@@ -29,7 +30,7 @@ HLS（Apple 的 HTTP 实时流）不受 PlayReady 支持。
 
 本文仅介绍特定于 PlayReady 的自适应流式处理方面的内容。 有关一般实现自适应流式处理的信息，请参阅[自适应流式处理](adaptive-streaming.md)。
 
-本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”****按钮。
+本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”**** 按钮。
 
 你将需要以下 **using** 语句：
 
