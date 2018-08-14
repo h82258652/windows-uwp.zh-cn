@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
-description: "本文展示如何利用仅在移动设备上提供的特殊相机 UI 功能。"
-title: "移动设备的相机 UI 功能"
+description: 本文展示如何利用仅在移动设备上提供的特殊相机 UI 功能。
+title: 移动设备的相机 UI 功能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.locfileid: "204069"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
 
@@ -23,11 +25,11 @@ translationtype: HT
 
 **添加对硬件相机按钮支持的移动扩展 SDK 的引用**
 
-1.  在“解决方案资源管理器”****中，右键单击“引用”****，然后选择“添加引用”****。
+1.  在“解决方案资源管理器”**** 中，右键单击“引用”****，然后选择“添加引用”****。
 
-2.  展开“Windows 通用”****节点，然后选择“扩展”****。
+2.  展开“Windows 通用”**** 节点，然后选择“扩展”****。
 
-3.  选中“适用于通用应用平台的 Microsoft 移动扩展 SDK”****复选框。
+3.  选中“适用于通用应用平台的 Microsoft 移动扩展 SDK”**** 复选框。
 
 ## <a name="hide-the-status-bar"></a>隐藏状态栏
 

@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。"
-title: "独立于相机的手电筒"
+description: 本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。
+title: 独立于相机的手电筒
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.locfileid: "204189"
 ---
 # <a name="camera-independent-flashlight"></a>独立于相机的手电筒
 
