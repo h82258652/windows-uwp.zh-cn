@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 47df8489364d37c009a56df444aa0fe4f30a443f
-ms.sourcegitcommit: 81c4c44c42c629a7ad5a82abdc2f4bbd6515f314
+ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/14/2018
