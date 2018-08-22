@@ -9,17 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: b606944f19561828297ef48d4aaebe25fd8a6f6f
-ms.sourcegitcommit: 43ce38a4789e0a5194069cc3307cbbc20aa0367e
-ms.translationtype: HT
+ms.openlocfilehash: 3b9afd50b2c360c11b103f676b91d512881eaa71
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "1934471"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795914"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-wrl"></a>从 WRL 移动到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 本主题介绍如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 C++/WinRT 中的等效项。
 
-移植到 C++/WinRT 的第一步是向项目手动添加 C++/WinRT 支持（请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)）。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 如果你在项目中使用 C++/CX，那么你可以让支持保持关闭状态，同时将 C++/CX 代码更新到 C++/WinRT（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。 或者你可以重新打开支持（在项目属性中，**C/C++** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**），并首先关注移植 WRL 代码。
+移植到 C++/WinRT 的第一步是向项目手动添加 C++/WinRT 支持（请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)）。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 所做的更改一个效果是该支持[C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx)处于关闭项目中。 如果你在项目中使用 C++/CX，那么你可以让支持保持关闭状态，同时将 C++/CX 代码更新到 C++/WinRT（请参阅[从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md)）。 或者你可以重新打开支持（在项目属性中，**C/C++** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**），并首先关注移植 WRL 代码。 C + + / CX 和 C + + / WinRT 代码可以共存于同一个项目，除外 XAML 编译器支持和 Windows 运行时组件 (请参阅[将移动到 C + + / WinRT 从 C + + / CX](move-to-winrt-from-cx.md))。
 
 将项目属性**常规** \> **目标平台版本**设置为 10.0.17134.0（Windows 10 版本 1803）或更高版本。
 
@@ -42,6 +42,25 @@ DX::ThrowIfFailed(m_dxgiFactory->EnumAdapters1(0, &previousDefaultAdapter));
 ```cppwinrt
 winrt::com_ptr<IDXGIAdapter1> previousDefaultAdapter;
 winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put()));
+```
+
+> [!IMPORTANT]
+> 您是否已正确安装[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其内部的原始指针已有目标） 和要重新安装它以指向一个不同的对象，则首先需要分配`nullptr`向其&mdash;在下面的代码示例所示。 否则，然后已就位**com_ptr**将绘制问题 （如果您调用[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)或[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 您注意到通过断言其内部指针不为 null。
+
+```cppwinrt
+winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
+...
+// We execute the code below each time the window size changes.
+m_pDXGISwapChain1 = nullptr; // Important because we're about to re-seat 
+winrt::check_hresult(
+    m_pDxgiFactory->CreateSwapChainForHwnd(
+        m_pCommandQueue.get(), // For Direct3D 12, this is a pointer to a direct command queue, and not to the device.
+        m_hWnd,
+        &swapChainDesc,
+        nullptr,
+        nullptr,
+        m_pDXGISwapChain1.put())
+);
 ```
 
 在下一个示例中（*之后*版本），[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) 成员函数检索作为要避免的指针的基础原始指针。
@@ -72,7 +91,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-当你想要将基础原始指针传递到预期 **IUnknown** 指针的函数时，应使用 [**IUnknown::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) 函数，如下一个示例所示。
+当您想要将基础的原始指针传递给需要指向**IUnknown**的指针的函数时，使用[**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)释放函数，该下一个示例中所示。
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;

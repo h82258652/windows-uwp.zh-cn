@@ -4,18 +4,18 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: 应用包要求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 05/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 程序包要求, 程序包, 程序包格式, 受支持的版本, 提交, windows 10, uwp, package requirements, packages, package format, supported version, submit
-ms.localizationpriority: high
-ms.openlocfilehash: 76dd0a5f9ebcb1e92ac7874b535d286cb051df22
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832311"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791372"
 ---
 # <a name="app-package-requirements"></a>应用包要求
 
@@ -41,7 +41,7 @@ ms.locfileid: "1832311"
 
 ### <a name="app-bundles"></a>应用程序包
 
-对于面向 Windows 8.1、Windows Phone 8.1 及更高版本的应用，Visual Studio 可以生成应用程序包 (.appxbundle) 以减少用户所下载应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
+对于面向 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 的应用程序，Visual Studio 可以生成应用程序绑定 (.appxbundle) 以减少用户下载的应用程序的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
 
 > [!NOTE]
 > 一个应用程序包可以包含所有体系结构的程序包。 对于每个目标操作系统，应仅提交一个捆绑包。
@@ -61,16 +61,10 @@ ms.locfileid: "1832311"
 > 清单中的值区分大小写。 空格和其他标点符号也必须匹配。 请小心输入值并进行检查，以确保这些值准确无误。
 
 
-应用程序包使用不同的清单。 查看[捆绑包清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。
+应用程序捆绑 (.appxbundle) 使用不同的清单。 查看[捆绑包清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在.appxbundle，每个.appxmanifest 包含包必须使用相同的元素和属性，[标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**属性除外。
 
 > [!TIP]
 > 在提交软件包之前，请确保运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)。 此操作可帮助你确定你的清单是否存在任何可能导致认证或提交失败的问题。
-
-如果你的应用具有多个程序包，这些应用清单元素必须在每个程序包（每个目标操作系统）中保持相同：
-
--   [**程序包/功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)
--   [**程序包/依赖项**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-dependencies)
--   [**程序包/资源**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources)
 
 
 ## <a name="package-format-requirements"></a>程序包格式要求
@@ -94,7 +88,7 @@ ms.locfileid: "1832311"
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML 文件
 
-StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 StoreManifest.xml 与应用包一起提交，并且必须在应用的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
+StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 如果使用，StoreManifest.xml 提交与应用程序包，并且必须在您的应用程序的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
  
 

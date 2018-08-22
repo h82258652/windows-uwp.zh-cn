@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c826edcd8f7ce625f3cb42df69136f500e93f4e
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: a9177061f70419e2a3b0e3b47f933af75a11ad68
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690353"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788822"
 ---
 # <a name="encode-and-decode-data"></a>编码和解码数据
 

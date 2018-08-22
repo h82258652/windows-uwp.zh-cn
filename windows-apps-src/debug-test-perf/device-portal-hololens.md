@@ -1,30 +1,28 @@
 ---
 author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: 适用于 HoloLens 的设备门户
+title: 适用于 HoloLens 的 Device Portal
 description: 了解适用于 HoloLens 的 Windows 设备门户是如何支持你远程配置和管理你的 HoloLens 设备。
 ms.author: pafarley
 ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e73519f57d9b08e08a7400f322367b6634cf945
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817718"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792477"
 ---
-# <a name="device-portal-for-hololens"></a>适用于 HoloLens 的设备门户
+# <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 
 
 ## <a name="set-up-device-portal-on-hololens"></a>在 HoloLens 上设置设备门户
 
 ### <a name="enable-device-portal"></a>启用设备门户
-
-**启用设备门户**
 
 1. 打开 HoloLens 的电源，然后戴上设备。
 2. 执行[绽放](https://dev.windows.com/holographic/Gestures.html#Bloom)手势来启动主菜单。
@@ -37,7 +35,7 @@ ms.locfileid: "1817718"
 
 ### <a name="pair-your-device"></a>配对设备
 
-### <a name="connect-over-wi-fi"></a>通过 WLAN 连接 
+#### <a name="connect-over-wi-fi"></a>通过 WLAN 连接 
 
 1. 将 HoloLens 连接到 WLAN。
 2. 查看设备的 IP 地址，可在设备的“设置”&gt;“网络和 Internet”&gt;“WLAN”&gt;“高级选项”下找到 IP 地址。
@@ -46,18 +44,21 @@ ms.locfileid: "1817718"
 3. 通过电脑上的 Web 浏览器，转到 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - 该浏览器会显示以下消息：“此网站的安全证书存在问题”。 由于颁发给设备门户的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
 
-### <a name="connect-over-usb"></a>通过 USB 连接 
+#### <a name="connect-over-usb"></a>通过 USB 连接 
 
 1. 安装工具，以确保 Windows 10 开发人员工具随附的 Visual Studio Update 1 已安装在电脑上。 这支持 USB 连接。
 2. 使用微型 USB 电缆将 HoloLens 连接到电脑。
 3. 通过电脑上的 Web 浏览器，转到 `http://127.0.0.1:10080`。
 
-### <a name="connect-to-an-emulator"></a>连接到仿真器 
+> [!IMPORTANT]
+> 如果您的 PC 找不到该设备，请尝试使用实际网络的 IP 地址的 HoloLens 设备，而不是`http://127.0.0.1:10080`。
+
+#### <a name="connect-to-an-emulator"></a>连接到仿真器 
 
 也可以将设备门户与仿真器结合使用。 若要连接到设备门户，请使用工具栏。 单击此图标：
 - 打开设备门户：在仿真器中打开适用于 HoloLens 操作系统的 Windows 设备门户。
 
-### <a name="create-a-username-and-password"></a>创建用户名和密码 
+#### <a name="create-a-username-and-password"></a>创建用户名和密码 
 
 首次连接到 HoloLens 上的设备门户时，需要创建用户名和密码。
 1. 在电脑上的 Web 浏览器中，输入 HoloLens 的 IP 地址。 将打开“设置访问”页面。
@@ -69,7 +70,7 @@ ms.locfileid: "1817718"
 
 如果你希望能随时更改此用户名和密码，可通过以下方式访问设备的安全页面来重复此过程：单击右上角的“安全”链接或导航到 `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
 
-### <a name="security-certificate"></a>安全证书 
+#### <a name="security-certificate"></a>安全证书 
 
 如果你在浏览器中看到“证书错误”，可以通过创建与该设备的信任关系来修复该错误。
 

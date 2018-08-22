@@ -9,19 +9,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, 日志事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
-ms.localizationpriority: high
-ms.openlocfilehash: 9828f948d0245ee23a3e309951b38c61765973e9
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 2b9cd4d7c527001bb382596c9c805be4ad5e7b08
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935567"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792865"
 ---
 # <a name="log-custom-events-for-dev-center"></a>记录开发人员中心的自定义事件
 
 Windows 开发人员中心仪表板中的[使用情况](https://msdn.microsoft.com/windows/uwp/publish/usage-report)报告可使你获取有关在通用 Windows 平台 (UWP) 应用中已定义的自定义事件的信息。 自定义事件是表示应用中的某个事件或活动的任意字符串。 例如，游戏可能定义名为 *firstLevelPassed*、*secondLevelPassed* 等的自定义事件，用户在游戏中通过每个关卡时记录这些事件。
 
-若要记录应用中的自定义事件，请将自定义事件字符串传递到 Microsoft Store Services SDK 提供的 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 方法。 可在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中查看自定义事件的总发生次数。
+若要记录应用中的自定义事件，请将自定义事件字符串传递到 Microsoft Store Services SDK 提供的 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 可在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中查看自定义事件的总发生次数。
 
 > [!NOTE]
 > 你记录到开发人员中心的自定义事件与 [Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)无关，它们不会显示在**事件查看器**中。
@@ -45,7 +45,7 @@ Windows 开发人员中心仪表板中的[使用情况](https://msdn.microsoft.c
 6. 将以下语句添加到要记录自定义事件的每个代码文件的顶部。
     [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
-7. 在要记录自定义事件的每个代码部分中，获取 [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 对象，然后调用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 方法。 将自定义事件字符串传递到该方法。
+7. 在要记录自定义事件的每个代码部分中，获取 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 对象，然后调用 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 将自定义事件字符串传递到该方法。
     [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
@@ -54,5 +54,5 @@ Windows 开发人员中心仪表板中的[使用情况](https://msdn.microsoft.c
 ## <a name="related-topics"></a>相关主题
 
 * [使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
-* [记录方法](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx)
+* [记录方法](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

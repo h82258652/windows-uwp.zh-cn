@@ -7,15 +7,15 @@ ms.date: 12/6/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp 安全
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a072ddc3489ca310875a6fc4a2d00902986277
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674814"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792132"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -173,12 +173,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-在此示例中，我们向_作用域_参数传递字符串“wl.basic”。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。
-
-有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
+在此示例中，我们向_作用域_参数传递字符串“wl.basic”。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
 
 * 有关 Office 365 和 Outlook.com 的作用域，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)。 
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
+
+> [!TIP]
+> （可选） 如果您的应用程序使用的登录提示 （用于填充的默认电子邮件地址的用户字段） 或与登录体验其他特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存 web 帐户，这将防止缓存中的帐户不匹配时忽略此属性。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 

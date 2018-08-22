@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: f7ca3c23179d97816fc54fdbacb951915aecf71f
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: f36facd8ba89fbaccb7c61ad937c2ce005922aa8
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976392"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791202"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -86,6 +86,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | 购置、转换和安装 |  <ul><li>[获取应用购置](get-app-acquisitions.md)</li><li>[获取应用购置漏斗数据](get-acquisition-funnel-data.md)</li><li>[通过通道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取加载项购置](get-in-app-acquisitions.md)</li><li>[获取订阅加载项购置](get-subscription-acquisitions.md)</li><li>[通过通道获取加载项转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li></ul> |
 | 应用错误 | <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下载应用中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
+| 见解 | <ul><li>[您的应用程序获取见解数据](get-insights-data-for-your-app.md)</li></ul>  |
 | 评分和评价 | <ul><li>[获取应用评分](get-app-ratings.md)</li><li>[获取应用评价](get-app-reviews.md)</li></ul> |
 | 应用内广告和广告活动 | <ul><li>[获取广告性能数据](get-ad-performance-data.md)</li><li>[获取广告活动性能数据](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -96,7 +97,9 @@ grant_type=client_credentials
 | 方案       | 方法      |
 |---------------|--------------------|
 | 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
-| 应用程序错误 |  <ul><li>[获取桌面应用程序的错误报告数据](get-desktop-application-error-reporting-data.md)</li><li>[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载桌面应用程序中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
+| 基块 |  <ul><li>[获取桌面应用程序的升级块](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详情](get-desktop-block-data-details.md)</li></ul> |
+| 应用程序错误 |  <ul><li>[获取桌面应用程序的错误报告数据](get-desktop-application-error-reporting-data.md)</li><li>[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载桌面应用程序中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
+| 见解 | <ul><li>[桌面应用程序获取见解数据](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 
@@ -118,13 +121,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
 
-属于 [Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户可以使用以下分析方法。
-
-| 方案       | 方法      |
-|---------------|--------------------|
-| Windows 10 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 10 驱动程序的错误报告数据](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[获取 Windows 10 驱动程序错误的详细信息](get-details-for-a-windows-10-driver-error.md)</li><li>[下载 Windows 10 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Windows 7/Windows 8.x 驱动程序（适用于 IHV）中的错误 |  <ul><li>[获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| 硬件错误（适用于 OEM） |  <ul><li>[获取 OEM 硬件的错误报告数据](get-oem-hardware-error-reporting-data.md)</li><li>[获取 OEM 硬件错误的详细信息](get-details-for-an-oem-hardware-error.md)</li><li>[下载 OEM 硬件错误的 CAB 文件](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
+属于[Windows 硬件开发人员中心程序](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发人员帐户有权访问其他组用于检索有关硬件和驱动程序的分析数据的方法。 有关详细信息，请参阅[硬件仪表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
 
 ## <a name="code-example"></a>代码示例
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf5d196d6dfa390fc537a0f14c041049d4ef714
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877319"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792019"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作 API
 本主题介绍如何直接或间接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基结构来创作 C++/WinRT API。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
@@ -252,14 +252,14 @@ namespace MyProject
 }
 ```
 
-若要从 **MyType** 获得你可以使用或作为投影的一部分返回的 **IStringable** 或 **IClosable** 对象，可以调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函数模板。 [**make**] 将返回实现类型的默认接口。
+若要从 **MyType** 获得你可以使用或作为投影的一部分返回的 **IStringable** 或 **IClosable** 对象，可以调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函数模板。 **使**返回实现类型的默认接口。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> 但是，如果你从 XAML UI 引用类型，则在同一个项目中将会有一个实现类型和一个投影类型。 在这种情况下，[**make**] 将返回投影类型的实例。 有关此情况的代码示例，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
+> 但是，如果你从 XAML UI 引用类型，则在同一个项目中将会有一个实现类型和一个投影类型。 在这种情况下，**使**返回计划类型的实例。 有关此情况的代码示例，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
 我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以对它调用 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 来查询其他接口，你还可以使用或返回这些接口。
 

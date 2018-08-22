@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2ac6ad4de6dc67cc4c661e055ad43ecb143ec
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692798"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789802"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>通过 MediaFrameReader 使用开放源计算机视觉库 (OpenCV)
 
-本文介绍了如何通过 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 类（可同时读取多个源中的媒体帧）使用开放源计算机视觉库 (OpenCV)，后者是一个本机代码库，可提供各类图像处理算法。 本文中的示例代码向你展示了一款简单的应用，该应用可通过颜色传感器获取帧，使用 OpenCV 库模糊每帧，然后在 XAML **Image** 控件中显示经过处理的图像。
+本文介绍了如何通过 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 类（可同时读取多个源中的媒体帧）使用开放源计算机视觉库 (OpenCV)，后者是一个本机代码库，可提供各类图像处理算法。 本文中的示例代码向你展示了一款简单的应用，该应用可通过颜色传感器获取帧，使用 OpenCV 库模糊每帧，然后在 XAML **Image** 控件中显示经过处理的图像。 
+
+>[!NOTE]
+>OpenCV.Win.Core 和 OpenCV.Win.ImgProc 不会定期更新，但仍建议安装这两个包，用于创建 OpenCVHelper，如本页所述。
 
 本文基于其他两篇文章的内容：
 
@@ -29,7 +32,8 @@ ms.locfileid: "1692798"
 
 若要查看和下载本文中所述方案的完整、端到端工作示例，除了这些文章以外，请参阅 Windows 通用示例 GitHub 存储库中的[相机帧 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)。
 
-通过 NuGet 包将 OpenCV 库添加到 UWP 应用项目中。 本文中的示例使用 OpenCV.Win.Core 和 OpenCV.Win.ImgProc NuGet 包。 [使用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)一文中包含将这些包添加到解决方案的相关说明。 使用 OpenCV 进行开发的信息可以在 [http://opencv.org](http://opencv.org) 中找到
+若要开始快速开发，您可以包括 OpenCV 库 UWP 应用程序项目中使用 NuGet 程序包，但这些包可能不会通过应用程序 certficication 过程，因此建议您下载 OpenCV 提交到商店，您的应用程序时库源代码和提交应用程序之前您自己生成二进制文件。 使用 OpenCV 进行开发的信息可以在 [http://opencv.org](http://opencv.org) 中找到
+
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>实施 OpenCVHelper 本机 Windows 运行时组件
 请按照[使用 OpenCV 处理软件位图](process-software-bitmaps-with-opencv.md)中的步骤创建 OpenCV 帮助程序 Windows 运行时组件并向你的 UWP 应用解决方案中添加组件项目引用。

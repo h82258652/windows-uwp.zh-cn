@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed578f40417f72adb080f41703711e47c858c1f
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: 13aa1e61a2d81cfa7faed0236551dad41bd00057
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912945"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791542"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 入门
 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
@@ -51,7 +51,7 @@ int main()
     SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
     for (const SyndicationItem syndicationItem : syndicationFeed.Items())
     {
-        hstring titleAsHstring = syndicationItem.Title().Text();
+        winrt::hstring titleAsHstring = syndicationItem.Title().Text();
         std::wcout << titleAsHstring.c_str() << std::endl;
     }
 }
@@ -103,7 +103,7 @@ for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 [**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) 是一个范围，由从 **begin** 和 **end** 函数（或其常量、反向和常量-反向变体）返回的迭代程序定义。 因此，你可以使用基于范围的 `for` 语句或使用 **std::for_each** 模板函数枚举**项目**。
 
 ```cppwinrt
-hstring titleAsHstring = syndicationItem.Title().Text();
+winrt::hstring titleAsHstring = syndicationItem.Title().Text();
 std::wcout << titleAsHstring.c_str() << std::endl;
 ```
 

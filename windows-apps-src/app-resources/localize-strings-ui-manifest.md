@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c95c530cb8e62b5ac228798d69bfb6d0871218
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989631"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791732"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
@@ -92,7 +92,17 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 可以使用来自类库（通用 Windows）或 [Windows 运行时库（通用 Windows）](../winrt-components/index.md)项目内的相同代码。 在运行时，加载托管库的应用的资源。 我们建议库从托管库的应用加载资源，因为应用的本地化程度可能更高。 如果库确实需要提供资源，该库应向其托管应用提供将这些资源替换为输入的选项。
 
-**注意**你只能使用此方法加载简单字符串资源标识符的值，不能加载属性标识符的值。 因此我们可以使用此类代码加载“Farewell”的值，但我们不能加载“Greeting.Text”的值。 尝试执行此操作会返回空字符串。
+如果分段的资源名称 (它包含"。"字符)，然后替换点线斜线 （"/"） 与资源名称中的字符。 属性标识符，例如，包含点;因此，您需要以加载其中一种从代码中执行此 substition。
+
+```csharp
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
+```
+
+如果有疑问，您可以使用[MakePri.exe](makepri-exe-command-options.md)转储您的应用程序 PRI 文件。 每个资源的`uri`转储文件中显示。
+
+```xml
+<ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
+```
 
 ## <a name="refer-to-a-string-resource-identifier-from-your-app-package-manifest"></a>引用来自应用包清单的字符串资源标识符
 1. 打开应用包清单源文件（`Package.appxmanifest` 文件），默认情况下，应用的显示名称表示为字符串参数。
@@ -164,6 +174,18 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 ```
 
 如果要将“AppDisplayName”资源从 `Resources.resw` 移动到 `ManifestResources.resw`，在应用包清单中，需将 `ms-resource:AppDisplayName` 更改为 `ms-resource:/ManifestResources/AppDisplayName`。
+
+如果分段资源文件名 (它包含"。"字符)，然后在名称保留点时引用它。 **不**替换正斜杠 （"/"） 字符，像资源名称的点。
+
+```csharp
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
+```
+
+如果有疑问，您可以使用[MakePri.exe](makepri-exe-command-options.md)转储您的应用程序 PRI 文件。 每个资源的`uri`转储文件中显示。
+
+```xml
+<ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
+```
 
 ## <a name="load-a-string-for-a-specific-language-or-other-context"></a>为特定语言或其他上下文加载字符串
 默认 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)（从 [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) 获取）包含每个限定符名称的限定符值，表示默认运行时上下文（换言之，即当前用户和计算机的设置）。 根据该运行时上下文中的限定符值匹配资源文件 (.resw) - 基于其名称中的限定符。
@@ -242,12 +264,24 @@ private void RefreshUIText()
 库可以为自己的资源获取 ResourceLoader。 例如，下面的代码说明了库或引用该库的应用如何为库的字符串资源获取 ResourceLoader。
 
 ```csharp
-var resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader("ContosoControl/Resources");
-resourceLoader.GetString("string1");
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
+```
+
+为 Windows 运行库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
+
+```csharp
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
+```
+
+您无需执行的操作的类库 (通用 Windows)。 如果有疑问，您可以使用[MakePri.exe](makepri-exe-command-options.md)转储您的组件或库的 PRI 文件。 每个资源的`uri`转储文件中显示。
+
+```xml
+<NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>从其他包加载字符串
-应用包的资源通过可从当前的 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 获取的包自身的顶级 [ResourceMap](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 进行管理和访问。 在每一个包中，各种组件可以具有自己的 ResourceMap 子树，你可以通过 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 进行访问。
+管理和通过包的访问的应用程序包的资源拥有顶级[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)可从当前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)访问。 在每一个包中，各种组件可以具有自己的 ResourceMap 子树，你可以通过 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 进行访问。
 
 框架包可以使用绝对资源标识符 URI 访问自己的资源。 另请参阅 [URI 方案](uri-schemes.md)。
 

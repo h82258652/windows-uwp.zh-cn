@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 515ac1f9a079e3791be8835f1a33c16198e27362
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: c9aaca0194f57c244bca0d6cb8ccf08e5e4eafda
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935633"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788712"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 利用 C++/WinRT，你可以采用任何符合标准的 C++17 编译器创作和使用 Windows 运行时 API。 Windows SDK 包含 C++/WinRT；它已在版本 10.0.17134.0（Windows 10，版本 1803）中引用。
@@ -35,6 +35,8 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 
 与适用于 Windows 运行时的任何其他语言选择相比，C++/WinRT 的表现更好，生成的二进制文件更小。 它的表现甚至超过了直接使用 ABI 接口手动编写的代码。 这是因为抽象使用了 Visual C++ 编译器能够优化的新式 C++ 习惯用语。 这包括神奇静态变量、空基类、**strlen** 删除以及最新版本的 Visual C++ 中的很多专门用于改善 C++/WinRT 的性能的更新的优化。
 
+### <a name="topics-about-cwinrt"></a>这些主题介绍 C + + / WinRT
+
 | 主题 | 描述 |
 | - | - |
 | [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md) | 对 C++/WinRT（一种适用于 Windows 运行时 API 的标准 C++ 语言投影）的介绍。 |
@@ -53,12 +55,20 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 | [并发和异步操作](concurrency.md) | 本主题介绍你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。 |
 | [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
 | [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
+| [XAML 自定义 （模板） 控件与 C + + / WinRT](xaml-cust-ctrl.md) | 本主题将引导您完成步骤创建一个简单的自定义控件，使用 C + + / WinRT。 您可以生成 info 此处创建您自己的功能的富客户端和可自定义 UI 控件上。 |
+| [使用 DirectX 和其他 COM Api 与 C + + / WinRT](consume-com.md) | 本主题使用完整的 Direct2D 代码示例演示如何使用 C + + / WinRT 以使用 COM 类和接口。 |
 | [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 |
 | [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
 | [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 |
 | [从 WRL 移动到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主题介绍如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 C++/WinRT 中的等效项。 |
 | [弱引用](weak-references.md) | C++/WinRT 弱引用支持是付费使用的，除非针对 [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609) 查询了对象，否则不会向你收取任何费用。 |
 | [敏捷对象](agile-objects.md) | 敏捷对象是可从任何线程访问的对象。 C++/WinRT 类型默认情况下是敏捷对象，但你可以选择退出。 |
+
+### <a name="topics-about-the-c-language"></a>C + + 语言有关的主题
+
+| 主题 | 说明 |
+| - | - |
+| [值类别，并对它们的引用](cpp-value-categories.md) | 本主题介绍各种类别的 c + + 中存在的值。 您肯定会听到左值和 rvalues，但有其他类型，太。 |
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt 命名空间](/uwp/cpp-ref-for-winrt/winrt)

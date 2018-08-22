@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c22c12ac5c5dbd90878e8828160e0f56831898
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: e38e9d61e8546d412cc30bad26680243f3a188e4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638987"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792340"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -78,7 +78,7 @@ ms.locfileid: "1638987"
 <ul>
 <li>具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。</li>
 <li>通常附加到某个按钮或父菜单项。</li>
-<li>通过左键单击（或等效操作，例如用手指点击）进行调用。</li><li>通过 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 或 [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) 属性与元素相关联。</li>
+<li>通过左键单击（或等效操作，例如用手指点击）进行调用。</li><li>通过 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx">Flyout</a> 或 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout</a> 属性与元素相关联。</li>
 </ul>
 </div>
   <div class="side-by-side-content-right">
@@ -86,7 +86,7 @@ ms.locfileid: "1638987"
 
 <ul>
 <li>附加到单个元素并显示辅助命令。</li>
-<li>通过右键单击（或等效操作，例如用手指按住）进行调用。</li><li>通过 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性与元素相关联。</li>
+<li>通过右键单击（或等效操作，例如用手指按住）进行调用。</li><li>通过 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout</a> 属性与元素相关联。</li>
 </ul>
   </div>
 </div>

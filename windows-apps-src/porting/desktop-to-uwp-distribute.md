@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989621"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792676"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>分发打包的桌面应用（桌面桥）
 
@@ -31,7 +31,7 @@ ms.locfileid: "1989621"
 
 将应用发布到 Microsoft Store 供最广泛的受众使用。 此外，组织客户还可通过[适用于企业的 Microsoft Store](https://www.microsoft.com/business-store) 获取应用以分发到企业内部。
 
-如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html)。
+如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
 将应用提交到 Microsoft Store 前无需对其进行签名。
 
