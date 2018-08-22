@@ -1,6 +1,6 @@
 ---
 author: serenaz
-Description: The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: 导航历史记录和向后导航（Windows 应用）
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
@@ -8,32 +8,32 @@ label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: sezhen
-ms.date: 11/22/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 824f0e83408893bf95d856067282b1fea1313876
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895404"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800962"
 ---
-#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
+# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
 > **重要的 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 类](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 通用 Windows 平台 (UWP) 提供了一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
 
-要在应用中实现向后导航，请在应用的 UI 的左上角放置一个[后退按钮](#Back-button)。 如果你的应用使用了 [NavigationView](../controls-and-patterns/navigationview.md) 控件，你可以使用 [NavigationView 的内置后退按钮](../controls-and-patterns/navigationview.md#backwards-navigation)。 
+要在应用中实现向后导航，请在应用的 UI 的左上角放置一个[后退按钮](#Back-button)。 如果你的应用使用了 [NavigationView](../controls-and-patterns/navigationview.md) 控件，你可以使用 [NavigationView 的内置后退按钮](../controls-and-patterns/navigationview.md#backwards-navigation)。
 
 用户预期后退按钮导航到应用导航历史记录中的上一个位置。 请注意，由你来决定要将哪些导航操作添加到导航历史记录以及如何响应后退按钮按下操作。
 
 ## <a name="back-button"></a>后退按钮
 
-要创建后退按钮，请将[按钮](../controls-and-patterns/buttons.md)控件与 `NavigationBackButtonNormalStyle` 样式结合使用，并将按钮放在应用的 UI 的左上角。
+若要创建后退按钮，请使用与[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将按钮放置在您的应用程序 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
 
 ![应用的 UI 的左上角的后退按钮](images/back-nav/BackEnabled.png)
 
@@ -59,6 +59,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 以下代码示例演示如何使用后退按钮实现向后导航行为。 该代码将响应 Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件并在 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)（在导航到新页面时调用）中禁用/启用按钮可见性。 该代码示例还通过为 [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册侦听器来处理来自从硬件和软件系统后退键的输入。
 
 ```xaml
+<!-- MainPage.xaml -->
 <Page x:Class="AppName.MainPage">
 ...
 <Button x:Name="BackButton" Click="Back_Click" Style="{StaticResource NavigationBackButtonNormalStyle}"/>
@@ -69,6 +70,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 代码隐藏：
 
 ```csharp
+// MainPage.xaml.cs
 public MainPage()
 {
     KeyboardAccelerator GoBack = new KeyboardAccelerator();
@@ -111,11 +113,75 @@ private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvoked
 }
 ```
 
-在此处，我们将为 `App.xaml` 代码隐藏文件中的 [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件注册全局侦听器。 如果你想要从后退导航排除特定页面，或想要在显示页面前执行页面级别代码，可以在每个页面中注册此事件。
+```cppwinrt
+// MainPage.cpp
+#include "pch.h"
+#include "MainPage.h"
+
+#include "winrt/Windows.System.h"
+#include "winrt/Windows.UI.Xaml.Controls.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+#include "winrt/Windows.UI.Xaml.Navigation.h"
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::UI::Xaml;
+
+namespace winrt::PageNavTest::implementation
+{
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+
+        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
+        goBack.Key(Windows::System::VirtualKey::GoBack);
+        goBack.Invoked({ this, &MainPage::BackInvoked });
+        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
+        altLeft.Key(Windows::System::VirtualKey::Left);
+        altLeft.Invoked({ this, &MainPage::BackInvoked });
+        KeyboardAccelerators().Append(goBack);
+        KeyboardAccelerators().Append(altLeft);
+        // ALT routes here.
+        altLeft.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
+    }
+
+    void MainPage::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+    {
+        BackButton().IsEnabled(Frame().CanGoBack());
+    }
+
+    void MainPage::Back_Click(IInspectable const&, RoutedEventArgs const&)
+    {
+        On_BackRequested();
+    }
+
+    // Handles system-level BackRequested events and page-level back button Click events.
+    bool MainPage::On_BackRequested()
+    {
+        if (Frame().CanGoBack())
+        {
+            Frame().GoBack();
+            return true;
+        }
+        return false;
+    }
+
+    void MainPage::BackInvoked(Windows::UI::Xaml::Input::KeyboardAccelerator const& sender,
+        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+    {
+        args.Handled(On_BackRequested());
+    }
+}
+```
+
+之上，我们 backwards 处理单个页的导航。 如果您想要排除特定页面后导航栏上，或您想要显示页面前执行页级别代码，您可以处理中每一页的导航。
+
+若要向后处理整个应用程序导航，您将注册[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)事件中的全局侦听器`App.xaml`代码隐藏文件。
 
 App.xaml 代码隐藏：
 
 ```csharp
+// App.xaml.cs
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
 Frame rootFrame = Window.Current.Content;
 rootFrame.PointerPressed += On_PointerPressed;
@@ -127,12 +193,74 @@ private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEvent
 
 private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+    bool isXButton1Pressed =
+        e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
 
     if (isXButton1Pressed)
     {
         e.Handled = On_BackRequested();
     }
+}
+
+private bool On_BackRequested()
+{
+    Frame rootFrame = Window.Current.Content as Frame;
+    if (rootFrame.CanGoBack)
+    {
+        rootFrame.GoBack();
+        return true;
+    }
+    return false;
+}
+```
+
+```cppwinrt
+// App.cpp
+#include <winrt/Windows.UI.Core.h>
+#include "winrt/Windows.UI.Input.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+
+#include "App.h"
+#include "MainPage.h"
+
+using namespace winrt;
+...
+
+    Windows::UI::Core::SystemNavigationManager::GetForCurrentView().BackRequested({ this, &App::App_BackRequested });
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+    rootFrame.PointerPressed({ this, &App::On_PointerPressed });
+...
+
+void App::App_BackRequested(IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& e)
+{
+    e.Handled(On_BackRequested());
+}
+
+void App::On_PointerPressed(IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
+{
+    bool isXButton1Pressed =
+        e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.Handled(On_BackRequested());
+    }
+}
+
+// Handles system-level BackRequested events.
+bool App::On_BackRequested()
+{
+    if (Frame().CanGoBack())
+    {
+        Frame().GoBack();
+        return true;
+    }
+    return false;
 }
 ```
 
@@ -165,7 +293,24 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 
 如果你的应用继续使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，后退按钮将像往常一样在标题栏中呈现。
 
-![标题栏后退按钮](images/nav-back-pc.png)
+- 如果**不选项卡式**您的应用程序，然后将返回按钮呈现内的标题栏。 保持不变从以前版本的后退按钮的视觉体验和用户交互。
+
+    ![标题栏后退按钮](images/nav-back-pc.png)
+
+- 如果应用程序是**选项卡式**，则将返回按钮呈现新系统备份内栏。
+
+    ![系统重新绘制按钮栏](images/back-nav/tabs.png)
+
+### <a name="system-back-bar"></a>系统后栏
+
+> [!NOTE]
+> "系统后栏"是仅说明，而不是正式的名称。
+
+系统后栏是选项卡带和应用程序 s 内容区域之间插入一个带。 此区带横跨整个应用，“后退”按钮位于左边缘。 带具有 32 像素，以确保后退按钮的足够触摸目标大小的垂直高度。
+
+系统后退栏基于“后退”按钮的可见性动态显示。 后退按钮时可见，系统后插入栏，x 32 像素选项卡带以下向下移动应用程序内容。 当隐藏后退按钮、 系统后动态删除栏中，进行应用程序内容切换 x 32 像素以满足选项卡带。 若要避免您的应用程序 UI shift 向上或向下，我们建议绘图[中应用程序后退按钮](#back-button)。
+
+[标题栏自定义](../shell/title-bar.md)将会传送到应用程序选项卡和系统返回栏。 如果您的应用程序指定前景色和背景颜色属性与[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则颜色将应用于选项卡和系统后栏。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>自定义后退导航行为指南
 
@@ -190,16 +335,16 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，无屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 没有始终存在的导航元素（例如顶部导航窗格或停靠的左侧导航窗格）可提供到两个页面的直接导航。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 无屏幕没有提供直接导航到这两个页面的导航元素 （如[NavigationView](../controls-and-patterns/navigationview.md))。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
-<p>在下图中，用户在同一对等组中的两个页面之间导航。 这些页面不使用顶部导航栏或停靠的左侧导航窗格，因此该导航将添加到导航历史记录。</p>
+<p>下图中，在相同的对等方组中，两页之间导航和导航应添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，带有屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中。 例如，两个页面使用相同的顶部导航元素，或者两个页面都显示在停靠的左侧导航窗格中。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 这两个页面相同的导航元素，如[NavigationView](../controls-and-patterns/navigationview.md)所示。</p></td>
 <td style="vertical-align:top;"><strong>视情况而定</strong>
-<p>是的，添加到导航历史记录，但有 2 个明显例外。 如果预计应用的用户经常在对等组中的页面之间切换，或者希望在对等组的页面中保留导航状态/历史记录，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
+<p>是，将添加到导航历史记录，有两个重要的例外。 如果您希望您的应用程序的用户的对等方组中通常情况下，页面之间切换，或者如果您想要保留的导航层次结构，然后不添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
@@ -222,7 +367,7 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 
 ### <a name="resuming"></a>恢复中
 
-当用户切换到其他应用并返回到你的应用时，我们建议返回到导航历史记录中的最后一页
+当用户切换到其他应用并返回到你的应用时，我们建议返回到导航历史记录中的最后一页。
 
 ## <a name="related-articles"></a>相关文章
 
