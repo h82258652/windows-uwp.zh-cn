@@ -4,21 +4,20 @@ description: 我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩
 title: 事件和路由事件概述
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e55fa85e54970ba48413767ccf5a65b05af471
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691186"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788792"
 ---
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
-
 
 **重要的 API**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -40,39 +39,50 @@ Windows 运行时应用的一个最常见的编程任务是捕获用户在 UI �
 
 通过生成 XAML 来定义 Windows 运行时应用的 UI。 该 XAML 通常为来自 Visual Studio 设计平面的输出。 此外，也可在纯文本编辑器或第三方 XAML 编辑器中编写 XAML。 生成该 XAML 时，你可以在定义所有其他建立该 UI 元素的 XAML 属性值的同时，连接各个 UI 元素的事件处理程序。
 
-要连接 XAML 中的事件，需指定已在代码隐藏中定义或稍后定义的处理程序方法的字符串形式名称。 例如，该 XAML 会在其他属性（[x:Name 属性](x-name-attribute.md)，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)）分配为特性的情况下定义 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象，并通过引用名为 `showUpdatesButton_Click` 的方法为该按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件连接一个处理程序：
+要连接 XAML 中的事件，需指定已在代码隐藏中定义或稍后定义的处理程序方法的字符串形式名称。 例如，该 XAML 会在其他属性（[x:Name 属性](x-name-attribute.md)，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)）分配为特性的情况下定义 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象，并通过引用名为 `ShowUpdatesButton_Click` 的方法为该按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件连接一个处理程序：
 
-```XML
+```xaml
 <Button x:Name="showUpdatesButton"
   Content="{Binding ShowUpdatesText}"
-  Click="showUpdatesButton_Click"/>
+  Click="ShowUpdatesButton_Click"/>
 ```
 
 **提示**  *事件连接*是一个编程术语。 它是指进程或代码，凭此你可以指示某个事件的出现应调用命名处理程序方法。 在大部分过程代码模型中，事件连接是隐式或显式的“AddHandler”代码，用于命名事件和方法并通常涉及目标对象实例。 在 XAML 中，“AddHandler”是隐式的，事件连接完全由将事件命名为对象元素的属性名称和将处理程序命名为该属性的值组成。
 
-然后，使用编程语言（用于你所有应用的代码和代码隐藏的语言）编写实际的处理程序。 在属性 `Click="showUpdatesButton_Click"` 中，你创建了一个合约：当对 XAML 进行标记编译和分析时，IDE 的生成操作和最终应用加载时 XAML 分析操作中的 XAML 标记编译步骤都可以找到一个作为该应用的代码的一部分且名为 `showUpdatesButton_Click` 的方法。 `showUpdatesButton_Click` 必须是一个方法，并且该方法要为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何处理程序都实现一个兼容的方法签名（基于一个委托）。 例如，此代码定义 `showUpdatesButton_Click` 处理程序。
+然后，使用编程语言（用于你所有应用的代码和代码隐藏的语言）编写实际的处理程序。 在属性 `Click="ShowUpdatesButton_Click"` 中，你创建了一个合约：当对 XAML 进行标记编译和分析时，IDE 的生成操作和最终应用加载时 XAML 分析操作中的 XAML 标记编译步骤都可以找到一个作为该应用的代码的一部分且名为 `ShowUpdatesButton_Click` 的方法。 `ShowUpdatesButton_Click` 必须是一个方法，并且该方法要为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何处理程序都实现一个兼容的方法签名（基于一个委托）。 例如，此代码定义 `ShowUpdatesButton_Click` 处理程序。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
-private void showUpdatesButton_Click (object sender, RoutedEventArgs e) {
+private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e) 
+{
     Button b = sender as Button;
     //more logic to do here...
 }
 ```
+
 ```vb
-Private Sub showUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+Private Sub ShowUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
     Dim b As Button = CType(sender, Button)
     '  more logic to do here...
 End Sub
 ```
+
+```cppwinrt
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+{
+    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    // More logic to do here.
+}
+```
+
 ```cpp
-void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) {
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+{
     Button^ b = (Button^) sender;
     //more logic to do here...
 }
 ```
 
-此例中，`showUpdatesButton_Click` 方法基于 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委托。 由于该委托以 MSDN 参考页面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的语法进行命名，你便可确认该委托为待使用的委托。
+此例中，`ShowUpdatesButton_Click` 方法基于 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委托。 由于该委托以 MSDN 参考页面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的语法进行命名，你便可确认该委托为待使用的委托。
 
 **提示**  Visual Studio 提供了一种便捷方式，以供你在编辑 XAML 时命名事件处理程序和定义处理程序方法。 当在 XAML 文本编辑器中提供事件的属性名称时，稍等片刻就会显示 Microsoft IntelliSense 列表。 如果单击该列表中的**&lt;新建事件处理程序&gt;**，Microsoft Visual Studio 将基于元素的 **x:Name**（或类型名）、事件名称和数字后缀建议一个方法名称。 然后可以右键单击所选的事件处理程序名称，并单击“导航到事件处理程序”****。 此操作将直接导航到新插入的事件处理程序定义，如 XAML 页面代码隐藏文件的代码编辑器中所示。 事件处理程序已拥有正确的签名，包括 *sender* 参数和该事件所使用的事件数据类。 另外，如果代码隐藏文件中已存在一个具有正确签名的处理程序方法，该方法的名称会与**&lt;新建事件处理程序&gt;** 选项一起显示在自动完成下拉列表中。 此外，也可按下 Tab 键（作为快捷方式）来代替单击 IntelliSense 列表项。
 
@@ -104,7 +114,7 @@ XAML 不是向对象分配事件处理程序的唯一方式。 要在代码中�
 
 如果使用代码向运行时 UI 中显示的对象添加事件处理程序，一种常见的做法是添加这些处理程序来响应对象生存期事件或回调，例如 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 或 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737)，这可使相关对象上的事件处理程序在运行时准备好处理用户发起的事件。 该示例展示了页面结构的 XAML 概括，同时提供了用于将事件处理程序添加到对象的 C# 语言语法。
 
-```xml
+```xaml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
   <StackPanel>
     <TextBlock Name="textBlock1">Put the pointer over this text</TextBlock>
@@ -143,15 +153,19 @@ End Sub
 
 **注意**  Visual Studio 以及其 XAML 设计界面一般都提倡使用实例处理技术代替，而不是 **Handles** 关键字。 这是因为在 XAML 中建立事件处理程序连接是典型的设计人员-开发人员工作流中的一部分，并且 **Handles** 关键字技术与在 XAML 中连接事件处理程序不兼容。
 
-在 C++ 中，你还可使用 **+=** 语法，但请注意与基本 C# 形式有区别：
+在 C + + / CX，您还使用**+=** 语法，但有基本的 C# 窗体中的区别：
 
 -   不存在委托推断，所以必须为委托实例使用 **ref new** 关键字。
 -   委托构造函数有两个参数，并且需要目标对象作为第一个参数。 通常由你指定 **this**。
 -   委托构造函数需将方法地址作为第二个参数，所以 **&** 引用运算符位于方法名称之前。
 
+```cppwinrt
+textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
+```
+
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
+ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 ```
 
 ### <a name="removing-event-handlers-in-code"></a>在代码中删除事件处理程序
@@ -170,10 +184,10 @@ ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
 
 例如，你可以使用以下代码，将名为 **textBlock1\_PointerEntered** 的事件处理程序从目标对象 **textBlock1** 中删除。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
 ```
+
 ```vb
 RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
@@ -294,5 +308,3 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 * [.NET 事件和委托](http://go.microsoft.com/fwlink/p/?linkid=214364)
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
- 
-

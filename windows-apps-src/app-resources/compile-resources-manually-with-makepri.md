@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 261a2b747d25284351bb6f4e51f108158b6e2bc5
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: d065fdffe2fcb32a9d574c90f59eb7115597167a
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707022"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787293"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>使用 MakePri.exe 手动编译资源
 
 MakePri.exe 是可用于创建和转储 PRI 文件的命令行工具。 它作为 MSBuild 的一部分集成到 Microsoft Visual Studio 中，但它可用来手动或使用自定义生成系统创建包。
+
+> [!NOTE]
+> 检查安装 Windows 软件开发工具包**UWP 托管应用程序的 Windows SDK**选项时，将安装 MakePri.exe。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构的名为文件夹中）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 文件的大小限制为 64 千字节。
 

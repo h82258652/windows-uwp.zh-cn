@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f533ab00cd80838d630a78f6f877f65fc1d617ba
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691486"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788622"
 ---
 # <a name="background-transfers"></a>后台传输
 使用后台传输 API 以便在网络上可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
@@ -29,9 +29,10 @@ ms.locfileid: "1691486"
 ### <a name="how-does-the-background-transfer-feature-work"></a>后台传输功能如何工作？
 当应用使用后台传输来启动传输时，该请求将使用 [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) 或 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 类对象进行配置和初始化。 每个传输操作都由系统单独处理，并与正在调用的应用分开。 如果你希望在应用 UI 中向用户提供状态，系统提供了进程信息；在发生传输时，你的应用可以暂停、恢复和取消传输，甚至可以读取数据。 这种由系统处理的传输方式可以促进智能化的电源使用，并防止应用在联网状态下因遇到类似如下事件而可能带来的问题：应用挂起、终止或网络状态突然更改。
 
-此外，后台传输将使用“系统事件代理”事件。 因此，下载数将受系统中可用的事件数限制。 默认为 500 个事件，但这些事件是在所有进程间共享的。 因此，单个应用程序一次创建的后台传输数不应超过 100 个。
+> [!NOTE]
+> 由于每个应用资源所限，应用在任何时刻的传输数均不应多于 200 (DownloadOperations + UploadOperations)。 超出该限制可能会将应用的传输队列置于无法恢复的状态。
 
-当应用程序启动后台传输时，该应用程序必须对所有现有的 [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) 对象调用 [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)。 否则可能导致这些事件的泄漏，并因此使后台传输功能毫无用处。
+应用程序启动时，它必须在所有现有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)对象上调用[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) 。 不执行此操作将导致的已完成传输泄漏，最终将呈现的后台传输功能使用无用。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用后台传输执行经过身份验证的文件请求
 后台传输可提供支持基本的服务器和代理凭据、cookie 的方法，并且还支持每个传输操作使用自定义的 HTTP 头（通过 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)）。
@@ -167,8 +168,6 @@ function uploadFiles() {
 如果使用后台传输，每个下载作为 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 存在，该对象公开一系列用于暂停、恢复、重新启动和取消操作的控制方法。 系统根据 **DownloadOperation** 自动处理应用事件（如暂停或终止）和连接更改；在应用挂起期间或暂停时，下载会继续运行，并且在应用终止后，仍然保持运行。 对于移动网络情况，设置 [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) 属性可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始或继续下载。
 
 如果你下载的是可能快速完成的小型资源，应该使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API 而不是后台传输。
-
-由于每个应用资源所限，应用在任何时刻的传输数均不应多于 200 (DownloadOperations + UploadOperations)。 超出该限制可能会将应用的传输队列置于无法恢复的状态。
 
 以下示例将指导你完成基本下载的创建和初始化，以及如何枚举和重新引入以前应用会话中保持的操作。
 

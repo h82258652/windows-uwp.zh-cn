@@ -12,22 +12,35 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21539d625dc70ded7bec77b9916c7ea4bff72536
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396806"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788522"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
- 
-
 面向 Windows 的 XAML UI 框架提供丰富的控件库，这些控件可支持 UI 开发。 这些控件中的一部分具有直观的表示形式；其他控件发挥作为其他控件或内容（如图像和媒体）的容器的作用。 
 
-通过下载 [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，可以查看许多实际应用的 Windows UI 控件。 
+通过下载 [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，可以查看许多实际应用的 Windows UI 控件。
 
-下面是按功能列出的可在应用中使用的常见 XAML 控件列表。 
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您已安装的<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开应用程序，请参阅在操作 NavigationView</a>到 </p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
+
+下面是按功能列出的可在应用中使用的常见 XAML 控件列表。
 
 ## <a name="appbars-and-commands"></a>应用栏和命令
 
@@ -257,7 +270,7 @@ ms.locfileid: "1396806"
 
 参考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-设计和操作方法：[上下文菜单和对话框](dialogs.md) 
+设计和操作方法：[弹出项目](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>菜单浮出控件
 临时显示与用户当前正在执行的操作相关的命令或选项的列表。
@@ -277,7 +290,7 @@ ms.locfileid: "1396806"
 
 参考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-设计和操作方法：[上下文菜单和对话框](dialogs.md) 
+设计和操作方法：[菜单和上下文菜单](menus.md) 
 
 示例代码：[XAML 上下文菜单示例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -286,7 +299,7 @@ ms.locfileid: "1396806"
 
 参考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-设计和操作方法：[上下文菜单和对话框](dialogs.md) 
+设计和操作方法： [Dialogs](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>工具提示
 显示元素信息的弹出窗口。 
@@ -540,58 +553,16 @@ ms.locfileid: "1396806"
 
 ## <a name="navigation"></a>导航
 
-### <a name="hub"></a>Hub
-一个容器控件，使用户可以查看并导航至内容的不同部分。
+### <a name="navigationview"></a>NavigationView
 
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-</Hub>
-```
+适应容器和实现的左侧的导航窗格、 顶部导航和选项卡模式的灵活导航模型。
 
-参考：[Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+参考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-设计和操作方法：[中心控件指南](hub.md) 
-
-示例代码：[XAML 中心控件示例](http://go.microsoft.com/fwlink/p/?LinkID=309828)
-
-### <a name="pivot"></a>Pivot
-全屏容器和导航模型还提供了一种在不同透视表（视图或筛选器）之间移动的快速方式，它们通常位于相同的数据集中。
-
-可以将透视控件的样式设置为具有“选项卡”布局。
-
-参考：[Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
-
-设计和操作方法：[表和透视表控件指南](tabs-pivot.md) 
-
-示例代码：[透视表示例](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
-
-### <a name="semantic-zoom"></a>语义式缩放
-让用户在项目集合的两个视图之间缩放的容器控件。
-
-```xaml
-<SemanticZoom>
-    <ZoomedInView>
-        <GridView></GridView>
-    </ZoomedInView>
-    <ZoomedOutView>
-        <GridView></GridView>
-    </ZoomedOutView>
-</SemanticZoom>
-```
-
-参考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
-
-设计和操作方法：[语义式缩放控件指南](semantic-zoom.md) 
-
-示例代码：[XAML GridView 组和 SemanticZoom 示例](http://go.microsoft.com/fwlink/p/?linkid=226564)
+设计和操作方法： [NavigationView 控件指南](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
+
 具有两个视图的容器控件；一个视图用于主内容，另一个视图通常用于导航菜单。
 
 ![拆分视图控件](images/controls/split-view.png) 
@@ -612,6 +583,7 @@ ms.locfileid: "1396806"
 设计和操作方法：[拆分视图控件指南](split-view.md)
 
 ### <a name="web-view"></a>Web 视图
+
 可托管 Web 内容的容器控件。
 
 ```xaml
@@ -624,6 +596,27 @@ ms.locfileid: "1396806"
 设计和操作方法：Web 视图指南 
 
 示例代码：[XAML WebView 控件示例](http://go.microsoft.com/fwlink/p/?linkid=238582)
+
+### <a name="semantic-zoom"></a>语义式缩放
+
+让用户在项目集合的两个视图之间缩放的容器控件。
+
+```xaml
+<SemanticZoom>
+    <ZoomedInView>
+        <GridView></GridView>
+    </ZoomedInView>
+    <ZoomedOutView>
+        <GridView></GridView>
+    </ZoomedOutView>
+</SemanticZoom>
+```
+
+参考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+
+设计和操作方法：[语义式缩放控件指南](semantic-zoom.md)
+
+示例代码：[XAML GridView 组和 SemanticZoom 示例](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>进度控件
 

@@ -1,23 +1,23 @@
 ---
 author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: 适用于 Xbox 的设备门户
+title: 适用于 Xbox 的 Device Portal
 description: 了解如何启用适用于 Xbox One 的设备门户。
 ms.author: pafarley
 ms.date: 02/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: fd196c76afe8f8cb1841ba7a7869de725177969a
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816922"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788662"
 ---
-# <a name="device-portal-for-xbox"></a>适用于 Xbox 的设备门户
+# <a name="device-portal-for-xbox"></a>适用于 Xbox 的 Device Portal
 
 ## <a name="set-up-device-portal-on-xbox"></a>在 Xbox 上设置设备门户
 
@@ -196,6 +196,12 @@ Kinect 传感器必须连接到控制台才能更改以下这些设置。
 这是一个空白工作区，你可以根据自己的喜好自定义它。 你可以使用菜单（单击左上角的菜单按钮）添加工具（选择**将工具添加到工作区**，然后选择要添加的工具，然后选择**添加**）。 请注意，你可以使用此菜单将工具添加到任何工作区，以及自行管理工作区。
 
 ![将工具添加到工作区](images/device-portal-xbox-13.png)
+
+### <a name="game-event-data"></a>游戏事件数据
+
+在**游戏事件数据**页上，您可以查看的实时图形的流中的当前在您 Xbox 一个记录的事件跟踪 Windows (ETW) 游戏事件数。 如果没有在系统中记录的游戏事件，您还可以查看详细信息 （事件名称、 事件匹配项和游戏标题） 描述数据关系图下方的模拟运算表中的每个事件。 表才可用时记录的事件。
+
+![游戏事件数据](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>另请参阅
 

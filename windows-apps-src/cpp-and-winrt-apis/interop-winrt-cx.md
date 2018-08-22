@@ -9,15 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1e939f6df9bd35e3717b9cc0ce810e97275494
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: 02aa86231cd611bd20a386d3da2f9d2b6dc5df66
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912915"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788257"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a>实现 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 与 C++/CX 之间的互操作
-本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 你可以借助这些技术，为使用两个语言投影的代码实现互操作，也可以在将代码从 C++/CX 逐步迁移到 C++/WinRT 时使用这些技术。
+本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 可用于使用这两种语言投影，代码之间的互操作，或者您可以使用函数，如逐渐将您的代码移从 C + + / CX 到 C + + / WinRT (请参阅[将移动到 C + + / WinRT 从 C + + / CX](move-to-winrt-from-cx.md))。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函数
 下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) 接口指针。 然后，它对该指针调用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 来查询 C++/WinRT 对象的默认接口。 **QueryInterface** 是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 **IUnknown** 接口指针的地址，使该地址能够设置为其他值。

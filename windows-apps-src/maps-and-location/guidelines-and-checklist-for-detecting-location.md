@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-Description: 本主题描述需要访问用户位置信息的应用的性能指南。
+Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: 位置感知应用指南
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.author: misatran
@@ -9,16 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 位置, 地图, 地理位置
-ms.openlocfilehash: f2035762fe99e1692d8b8b5eea5260aeb39b8d2a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "206020"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2786873"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -50,7 +51,7 @@ ms.locfileid: "206020"
 
     如果用户通过“设置”关闭对位置信息的访问，则释放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 对于任何位置 API 调用，该应用都将收到 **ACCESS\_DENIED** 结果。 如果你的应用保存或缓存了位置数据，则在用户吊销对位置信息的访问时需清除缓存的所有数据。 提供另一种在位置数据无法通过定位服务提供时手动输入位置信息的方法。
 
--   提供用于重新启用定位服务的 UI。 例如，提供重新实例化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象刷并重新尝试获取位置信息的刷新按钮。
+-   提供用于重新启用定位服务的 UI。 例如，提供重新实例化[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)对象并尝试再次获取位置信息的刷新按钮。
 
     使应用提供用于重新启用定位服务的 UI：
 
@@ -90,7 +91,7 @@ ms.locfileid: "206020"
         例如：
 
         -   如果应用要获取位置用于广告调整、天气、新闻，5000 米的精度一般足够。
-        -   如果应用要在街区中显示附近的交易，300 米的精度一般足够用于提供结果。
+        -   如果您的应用程序显示附近邻居中的交易，300 指示器的准确度是通常最好提供结果。
         -   如果用户查找附件餐厅的推荐，我们可能要获取一个街区内的位置，因此 100 米的精度足够了。
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。

@@ -2,26 +2,26 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 应用认证工具包
-description: 若要为你的应用提供最好的机会从而在 Windows 应用商店中发布，或通过 Windows 认证，请在提交应用进行认证之前先在本地进行验证和测试。 本主题显示了如何安装并运行 Windows 应用认证工具包。
+description: 若要为您的应用程序提供对 Microsoft 存储，发布最大限度地或 Windows 认证，验证并对其进行测试本地之前将其提交认证。 本主题显示了如何安装并运行 Windows 应用认证工具包。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+keywords: windows 10，uwp，应用程序证书
+ms.localizationpriority: medium
+ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695461"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788462"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-若要为你的应用提供最好的机会从而[在 Windows 应用商店中发布](https://msdn.microsoft.com/library/windows/apps/Hh694062)，或通过 [Windows 认证](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)，请在提交应用进行认证之前先在本地进行验证和测试。 本主题演示了如何安装并运行 [Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)。
+若要获取您的应用程序[Windows 认证](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)或准备[Microsoft 存储出版物](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您应验证和测试其本地首先。 本主题演示如何安装和运行[Windows 应用程序证书工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)以确保您的应用程序的安全和高效。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -46,7 +46,7 @@ ms.locfileid: "695461"
 
 3.  在已输入或选定要测试的应用后，单击“下一步”****。
 
-4.  在下一屏幕中，你将看到与正在测试的应用类型相对应的测试工作流。 如果列表中的某一测试灰显，则表示该测试不适用于你的环境。 例如，如果你正在 Windows 7 上测试 Windows 10 应用，则只有静态测试才能应用到工作流。 请注意，Windows 应用商店可能会应用来自此工作流的所有测试。 选择要运行的测试，然后单击“下一步”****。
+4.  在下一屏幕中，你将看到与正在测试的应用类型相对应的测试工作流。 如果列表中的某一测试灰显，则表示该测试不适用于你的环境。 例如，如果你正在 Windows 7 上测试 Windows 10 应用，则只有静态测试才能应用到工作流。 请注意，Microsoft 存储可能从此工作流用于所有测试。 选择要运行的测试，然后单击“下一步”****。
 
     Windows App 认证工具包开始验证该应用。
 
@@ -90,14 +90,14 @@ ms.locfileid: "695461"
 
 Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能。
 
-执行测试的计算机的属性会影响测试结果。 为了确定你的应用性能是否符合 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），使用旋转硬盘驱动器（相对于固态硬盘驱动器）。
+执行测试的计算机的属性会影响测试结果。 若要确定您的应用程序性能是否符合[Microsoft 存储策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我们建议您测试的低电源计算机上，如 Intel Atom 处理器基于计算机的屏幕分辨率为 1366 x 768 （或更高版本） 和旋转硬应用程序驱动器 （而不是固态硬盘上）。
 
-随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参考最新的 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，并使用最新版本的 Windows 应用认证工具包测试你的应用，以确保你的应用符合最新性能要求。
+随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参阅最新的[Microsoft 存储策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)和测试应用程序与 Windows 应用程序证书工具包以确保您的应用程序符合的最新的性能要求的最新版本。
 
 ## <a name="related-topics"></a>相关主题
 
 * [Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)
-* [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  

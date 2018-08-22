@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: 转移支付的预计时间、适用的付款阈值和可以收到付款的 Microsoft 市场可能会有所不同，具体取决于你所在的国家/地区和付款帐户类型。
+Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: 付款阈值、方法和时间范围
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
@@ -9,12 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-ms.openlocfilehash: 0d0e421108de5daecb552c606b3f2c00b722fb89
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8a7428b9278e4fc3264f652030f0409cab056d31
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2017
-ms.locfileid: "683797"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787377"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款阈值、方法和时间范围
 
@@ -45,12 +46,12 @@ ms.locfileid: "683797"
 > [!NOTE]
 > 付款阈值将以美元列出。 在某些市场中，使用等值的当地货币。 
 
-- [Windows 应用商店](#windows-store)
+- [Microsoft Store](#microsoft-store)
 - [Microsoft Advertising](#microsoft-advertising)
 - [Azure 应用商店](#azure-marketplace)
 - [Office 应用商店](#office-store)
 
-### <a name="windows-store"></a>Windows 应用商店 
+### <a name="microsoft-store"></a>Microsoft Store 
 
 <table>
   <tr>

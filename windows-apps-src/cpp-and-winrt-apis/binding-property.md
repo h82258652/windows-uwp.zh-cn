@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ea4c4caf5135b13b88eeea6f43bb36bd691c11
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 367bf5d5d554bd094ce3d5b726b818c8c388d398
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1863213"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787154"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>XAML 控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何在 C++/WinRT 中实现可观测属性以及如何将 XAML 控件绑定到这些属性。
@@ -49,7 +49,7 @@ namespace Bookstore
 ```
 
 > [!IMPORTANT]
-> 为了使应用程序能够通过 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试且能够成功地引入 Microsoft Store 中，*在该应用程序中声明的*每个运行时类的最终基类必须为源自 Windows.* 命名空间中的类型。
+> 要传递[Windows 应用程序证书工具包](../debug-test-perf/windows-app-certification-kit.md)应用程序测试由 Microsoft 存储用于验证提交，因此以在成功 ingested 到 Microsoft 存储区，类的每个运行时*ultimate 基类中并声明应用程序*必须源自 Windows.* 命名空间的类型。
 
 要满足该要求，请从 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject) 派生视图模型类。 或者，声明从 **DependencyObject** 中派生的可绑定基类，然后从该基类派生视图模型。 你可以将数据模型声明为 C++ 结构；它们无需在 MIDL 中进行声明（前提是你仅从视图模型中使用它们，而不是将 XAML 直接绑定到它们；在这种情况下，它们无论如何从定义上讲可以是视图模型）。
 
@@ -71,16 +71,16 @@ namespace winrt::Bookstore::implementation
     struct BookSku : BookSkuT<BookSku>
     {
         BookSku() = delete;
-        BookSku(hstring const& title);
+        BookSku(winrt::hstring const& title);
 
         hstring Title();
-        void Title(hstring const& value);
+        void Title(winrt::hstring const& value);
         event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value);
-        void PropertyChanged(event_token const& token);
+        void PropertyChanged(winrt::event_token const& token);
     
     private:
-        hstring title;
-        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> propertyChanged;
+        hstring m_title;
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 ```
@@ -94,33 +94,33 @@ namespace winrt::Bookstore::implementation
 
 namespace winrt::Bookstore::implementation
 {
-    BookSku::BookSku(hstring const& title)
+    hstring BookSku::Title()
+    {
+        return m_title;
+    }
+
+    BookSku::BookSku(winrt::hstring const& title)
     {
         Title(title);
     }
 
-    hstring BookSku::Title()
+    void BookSku::Title(winrt::hstring const& value)
     {
-        return title;
-    }
-
-    void BookSku::Title(hstring const& value)
-    {
-        if (title != value)
+        if (m_title != value)
         {
-            title = value;
-            propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
+            m_title = value;
+            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
         }
     }
 
     event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
     {
-        return propertyChanged.add(handler);
+        return m_propertyChanged.add(handler);
     }
 
-    void BookSku::PropertyChanged(event_token const& token)
+    void BookSku::PropertyChanged(winrt::event_token const& token)
     {
-        propertyChanged.remove(token);
+        m_propertyChanged.remove(token);
     }
 }
 ```
@@ -190,13 +190,13 @@ namespace winrt::Bookstore::implementation
 > `m_bookSku` 的类型是投影类型 (**winrt::Bookstore::BookSku**)，而且你用于 **make** 的模板参数是实现类型 (**winrt::Bookstore::implementation::BookSku**)。 即使如此，**make** 也会返回投影类型的实例。
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>将类型 **BookstoreViewModel** 的属性添加到 **MainPage**
-打开 `MainPage.idl`，这将声明表示主 UI 页面的运行时类。 添加导入语句以导入 `BookstoreViewModel.idl`，然后添加名为类型 **BookstoreViewModel** 的 MainViewModel 的只读属性。
+打开 `MainPage.idl`，这将声明表示主 UI 页面的运行时类。 添加导入语句以导入 `BookstoreViewModel.idl`，然后添加名为类型 **BookstoreViewModel** 的 MainViewModel 的只读属性。 此外删除**MyProperty**属性。 另请注意下面的列表中的**导入**指令。
 
 ```idl
 // MainPage.idl
 import "BookstoreViewModel.idl";
 
-namespace BookstoreCPPWinRT
+namespace Bookstore
 {
     runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
     {
@@ -206,9 +206,13 @@ namespace BookstoreCPPWinRT
 }
 ```
 
-重新生成项目以重新生成源代码文件，在源代码文件中，将实现 **MainPage** 运行时类（`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` 和 `MainPage.cpp`）。 从生成的文件中复制 ViewModel 属性的访问器存根，然后将其复制到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。
+保存文件。 项目将不会生成结束时，但现在构建很有用的事情进行操作，因为它将在其中实现运行时到**MainPage**类的源代码文件重新生成 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此，继续操作，并立即生成。 您可以预期在此阶段，请参阅生成错误是**MainViewModel': 不是 winrt::Bookstore::implementation::MainPage' 的成员**。
 
-对于 `\Bookstore\Bookstore\MainPage.h`，添加私有成员以存储视图模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 该实现类型位于同一项目（编译单元）中，因此，我们通过采用 `nullptr_t` 的构造函数重载构造 m_mainViewModel。
+如果省略的包括`BookstoreViewModel.idl`(的列表，请参阅`MainPage.idl`上方)，然后您将看到错误**预期 \ < near"MainViewModel"**。 另一个提示是确保保留所有类型中的同一命名空间： 所示的代码清单的命名空间。
+
+若要解决我们期望看到此错误，您现在需要复制超出生成的文件和到**MainViewModel**属性的取值存根`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
+
+对于 `\Bookstore\Bookstore\MainPage.h`，添加私有成员以存储视图模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 该实现类型位于同一项目（编译单元）中，因此，我们通过采用 `nullptr_t` 的构造函数重载构造 m_mainViewModel。 此外删除**MyProperty**属性。
 
 ```cppwinrt
 // MainPage.h
@@ -221,18 +225,16 @@ namespace winrt::Bookstore::implementation
 
         Bookstore::BookstoreViewModel MainViewModel();
 
-    private:
         void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
 
+    private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-
-        friend class MainPageT<MainPage>;
     };
 }
 ...
 ```
 
-在 `\Bookstore\Bookstore\MainPage.cpp` 中，包含 `BookstoreViewModel.h`，这将声明该实现类型。 调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)（具有该实现类型）以将投影类型的新实例分配到 m_mainViewModel。 为书籍的标题分配一个初始值。 针对 MainViewModel 属性实现访问器。 最后，在按钮的事件处理程序中更新书籍的标题。
+在 `\Bookstore\Bookstore\MainPage.cpp` 中，包含 `BookstoreViewModel.h`，这将声明该实现类型。 调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)（具有该实现类型）以将投影类型的新实例分配到 m_mainViewModel。 为书籍的标题分配一个初始值。 针对 MainViewModel 属性实现访问器。 最后，在按钮的事件处理程序中更新书籍的标题。 此外删除**MyProperty**属性。
 
 ```cppwinrt
 // MainPage.cpp
@@ -251,14 +253,14 @@ namespace winrt::Bookstore::implementation
         InitializeComponent();
     }
 
-    Bookstore::BookstoreViewModel MainPage::MainViewModel()
-    {
-        return m_mainViewModel;
-    }
-
     void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
     {
         MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
+    }
+
+    Bookstore::BookstoreViewModel MainPage::MainViewModel()
+    {
+        return m_mainViewModel;
     }
 }
 ```
@@ -271,6 +273,9 @@ namespace winrt::Bookstore::implementation
 ```
 
 立即生成并运行该项目。 单击该按钮以执行 **Click** 事件处理程序。 该处理程序调用书籍的标题转变器函数；该转变器引发了让 UI 知道**标题**属性已发生更改的事件；而且按钮重新查询了该属性的值以更新其自己的**内容**值。
+
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 标记扩展 C + + / WinRT
+当前发行版本的 C + + / WinRT，以便能够使用 {绑定} 标记扩展需要实现[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口。
 
 ## <a name="important-apis"></a>重要的 API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

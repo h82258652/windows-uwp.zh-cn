@@ -4,18 +4,18 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: 应用屏幕截图、图像和预告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 4/30/2018
+ms.date: 8/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
-ms.localizationpriority: high
-ms.openlocfilehash: e0ac8e01aab07e68e0a4f22160cb58e558b4dc42
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817778"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788432"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -85,11 +85,13 @@ ms.locfileid: "1817778"
 
 此图像需要在 Windows Phone 8.1 及更早版本上才能正常显示。 如果你的应用支持 Windows Phone 8.1 或更早版本，并且你未提供此图像，这些客户将在你的应用一览中看到空白图标。 （如果你的应用仅有面向 Windows Phone 8.1 或更早版本的软件包，这也适用于 Windows 10 客户。）如果你的提交*仅*包括 UWP 软件包，则无需提供此图像。 （请注意，如果你的提交包含 Windows Phone 8.x 程序包和 UWP 程序包，并提供此图像，它可能会用在 Windows 10 的某些 Microsoft Store 布局中。 若要防止这种情况，你可以为你的应用支持的 Windows Phone 版本创建[特定于平台的一览](create-platform-specific-store-listings.md)，并仅包括该应用磁贴图标。）
 
-向 Windows 10（包括 Xbox）客户显示你的一览时，还可以选择防止 Microsoft Store 使用应用软件包中的徽标图像，而是仅让 Microsoft Store 使用你上传的图像。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。
+### <a name="display-only-uploaded-logo-images-in-the-store"></a>显示仅上载存储区中的徽标图像
 
-若要在 Windows 10（包括 Xbox）的 Microsoft Store 中仅使用上传的图像进行显示，请选中**对于 Windows 10 客户，显示上传的徽标图像，而不是包中的图像**框。 （如果你未选中此框，系统将使用你的应用包中的图像。）
+您必须防止存储时向 Windows 10 （包括 Xbox） 上的客户显示您列出您的应用程序包中使用的徽标图像并改为具有仅使用图像您上载的存储的选项。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果您的产品支持早期操作系统版本，这些客户可能仍会看到图像从程序包，即使您使用此选项。）
 
-选中此框后，名为**上传的 Microsoft Store 徽标**的新部分随即显示。 在这里可以上传 3 张图像，其中包括 300 x 300“应用磁贴图标”大小（如果选中此框，提供该图像的字段将移动到此部分中）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
+在 Windows 10 和 Xbox 客户具有仅使用图像 （适用于在 Windows 10，包括 Xbox 客户），上载不使用任何图像从程序包，检查显示**的框中的存储，请显示上载徽标图像，而不是从我包的图像**.
+
+当您选中此复选框时，将显示一个新的部分，调用**存储显示的图像**。 此处，您可以上载 3 图像，包括**应用程序 1:1 平铺图标 （300 x 300 像素）** 大小 （如果您复选框，要提供该图像将将移到此部分的域）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
 
 
 <span id="promotional-images" />
@@ -209,7 +211,7 @@ ms.locfileid: "1817778"
 - 标题不能超过 255 个字符。 
 - 在你的预告片中不包含年龄分级。
 
-与 Store 一览页中的其他字段相似，预告片必须通过认证才能发布到 Microsoft Store 中。 请确保预告片遵守 [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)。
+与 Store 一览页中的其他字段相似，预告片必须通过认证才能发布到 Microsoft Store 中。 请确保预告片遵守 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 还有其他要求，具体取决于文件类型。
 

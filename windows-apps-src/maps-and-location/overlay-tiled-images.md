@@ -4,18 +4,18 @@ title: 覆盖地图上的平铺图像
 description: 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 07/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 图像, 覆盖
 ms.localizationpriority: medium
-ms.openlocfilehash: fb2fafb3feeb5242c9069ea9e871eebc90351714
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691063"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788632"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
@@ -34,11 +34,9 @@ ms.locfileid: "1691063"
 
 下面是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的示例，并显示了 X 和 Y 坐标及缩放级别的可替换参数。
 
-``` syntax
-    http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
+```syntax
+http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 ```
-
- 
 
 （X 和 Y 坐标以指定级别的详细信息形式表示单个磁贴在世界地图中的位置。 磁贴编号系统从位于地图左上角的 {0, 0} 开始。 例如，坐标为 {1, 2} 的磁贴位于磁贴网格中的第 2 列，第 3 行。）
 
@@ -58,7 +56,7 @@ ms.locfileid: "1691063"
 
     以下示例将实例化 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)。 该示例在 **HttpMapTileDataSource** 的构造函数中指定 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值。
 
-    ```cs
+    ```csharp
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
@@ -67,7 +65,7 @@ ms.locfileid: "1691063"
 
     以下示例在 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的构造函数中指定 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
 
-    ```cs
+    ```csharp
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
@@ -80,7 +78,7 @@ ms.locfileid: "1691063"
 
 3.  将 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 添加到 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) 集合。
 
-    ```cs
+    ```csharp
          MapControl1.TileSources.Add(tileSource);
     ```
 
@@ -93,7 +91,7 @@ ms.locfileid: "1691063"
 2.  根据 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的值，指定 Web 服务预期的 URI 的格式。 若要创建此值，请在基本 Uri 中插入可替换参数。 例如，在以下代码示例中，**UriFormatString** 的值是：
 
     ``` syntax
-        http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
+    http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
     Web 服务必须支持包含可替换参数 {x}、{y} 和 {zoomlevel} 的 Uri。 大多数 Web 服务（例如，Nokia、必应和 Google）支持这种格式的 URI。 如果 Web 服务需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
@@ -103,47 +101,71 @@ ms.locfileid: "1691063"
 以下示例将覆盖北美地区地图上来自虚拟 Web 服务的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的构造函数中指定。 在此示例中，磁贴仅显示在由可选的 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 属性指定的地理边界内。
 
 ```csharp
-        private void AddHttpMapTileSource()
-        {
-            // Create the bounding box in which the tiles are displayed.
-            // This example represents North America.
-            BasicGeoposition northWestCorner =
-                new BasicGeoposition() { Latitude = 48.38544, Longitude = -124.667360 };
-            BasicGeoposition southEastCorner =
-                new BasicGeoposition() { Latitude = 25.26954, Longitude = -80.30182 };
-            GeoboundingBox boundingBox = new GeoboundingBox(northWestCorner, southEastCorner);
+private void AddHttpMapTileSource()
+{
+    // Create the bounding box in which the tiles are displayed.
+    // This example represents North America.
+    BasicGeoposition northWestCorner =
+        new BasicGeoposition() { Latitude = 48.38544, Longitude = -124.667360 };
+    BasicGeoposition southEastCorner =
+        new BasicGeoposition() { Latitude = 25.26954, Longitude = -80.30182 };
+    GeoboundingBox boundingBox = new GeoboundingBox(northWestCorner, southEastCorner);
 
-            // Create an HTTP data source.
-            // This example retrieves tiles from a fictitious web service.
-            HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
+    // Create an HTTP data source.
+    // This example retrieves tiles from a fictitious web service.
+    HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
+        "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
-            // Optionally, add custom HTTP headers if the web service requires them.
-            dataSource.AdditionalRequestHeaders.Add("header name", "header value");
+    // Optionally, add custom HTTP headers if the web service requires them.
+    dataSource.AdditionalRequestHeaders.Add("header name", "header value");
 
-            // Create a tile source and add it to the Map control.
-            MapTileSource tileSource = new MapTileSource(dataSource);
-            tileSource.Bounds = boundingBox;
-            MapControl1.TileSources.Add(tileSource);
-        }
+    // Create a tile source and add it to the Map control.
+    MapTileSource tileSource = new MapTileSource(dataSource);
+    tileSource.Bounds = boundingBox;
+    MapControl1.TileSources.Add(tileSource);
+}
+```
+
+```cppwinrt
+...
+#include <winrt/Windows.Devices.Geolocation.h>
+#include <winrt/Windows.UI.Xaml.Controls.Maps.h>
+...
+void MainPage::AddHttpMapTileSource()
+{
+    Windows::Devices::Geolocation::BasicGeoposition northWest{ 48.38544, -124.667360 };
+    Windows::Devices::Geolocation::BasicGeoposition southEast{ 25.26954, -80.30182 };
+    Windows::Devices::Geolocation::GeoboundingBox boundingBox{ northWest, southEast };
+
+    Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource dataSource{
+        L"http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}" };
+
+    dataSource.AdditionalRequestHeaders().Insert(L"header name", L"header value");
+
+    Windows::UI::Xaml::Controls::Maps::MapTileSource tileSource{ dataSource };
+    tileSource.Bounds(boundingBox);
+
+    MapControl1().TileSources().Append(tileSource);
+}
+...
 ```
 
 ```cpp
 void MainPage::AddHttpMapTileSource()
 {
-       BasicGeoposition northWest = { 48.38544, -124.667360 };
-       BasicGeoposition southEast = { 25.26954, -80.30182 };
-       GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
+    BasicGeoposition northWest = { 48.38544, -124.667360 };
+    BasicGeoposition southEast = { 25.26954, -80.30182 };
+    GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
-       auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
+    auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
+        "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
-       dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
+    dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
-       auto tileSource = ref new Windows::UI::Xaml::Controls::Maps::MapTileSource(dataSource);
-       tileSource->Bounds = boundingBox;
+    auto tileSource = ref new Windows::UI::Xaml::Controls::Maps::MapTileSource(dataSource);
+    tileSource->Bounds = boundingBox;
 
-       this->MapControl1->TileSources->Append(tileSource);
+    this->MapControl1->TileSources->Append(tileSource);
 }
 ```
 
@@ -202,7 +224,6 @@ void MainPage::AddHttpMapTileSource()
 
 ## <a name="provide-a-custom-uri"></a>提供自定义 URI
 
-
 如果没有足够的由 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性或 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性提供的可替换参数来检索磁贴，则必须创建自定义 Uri。 通过为 **UriRequested** 事件提供自定义处理程序创建和返回自定义 Uri。 每个单独的磁贴都会引发 **UriRequested** 事件。
 
 1.  在 **UriRequested** 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 属性进行合并，以创建自定义 Uri。
@@ -247,7 +268,6 @@ using System.Threading.Tasks;
 ```
 
 ## <a name="overlay-tiles-from-a-custom-source"></a>覆盖来自自定义源的磁贴
-
 
 使用 [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983) 覆盖自定义磁贴。 在内存中以编程方式快速创建磁贴，或者编写自己的代码以从其他源加载现有磁贴。
 
@@ -316,47 +336,87 @@ using System.Threading.Tasks;
         }
 ```
 
-```cpp
-InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
+```cppwinrt
+...
+#include <winrt/Windows.Storage.Streams.h>
+...
+Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::InMemoryRandomAccessStream> MainPage::CustomRandomAccessStream()
 {
-       int pixelHeight = 256;
-       int pixelWidth = 256;
-       int bpp = 4;
+    constexpr int pixelHeight{ 256 };
+    constexpr int pixelWidth{ 256 };
+    constexpr int bpp{ 4 };
 
-       Array<byte>^ bytes = ref new Array<byte>(pixelHeight * pixelWidth * bpp);
+    std::array<uint8_t, pixelHeight * pixelWidth * bpp> bytes;
 
-       for (int y = 0; y < pixelHeight; y++)
-       {
-              for (int x = 0; x < pixelWidth; x++)
-              {
-                     int pixelIndex = y * pixelWidth + x;
-                     int byteIndex = pixelIndex * bpp;
+    for (int y = 0; y < pixelHeight; y++)
+    {
+        for (int x = 0; x < pixelWidth; x++)
+        {
+            int pixelIndex{ y * pixelWidth + x };
+            int byteIndex{ pixelIndex * bpp };
 
-                     // Set the current pixel bytes.
-                     bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
-                     bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
-                     bytes[byteIndex + 2] = (byte)(std::rand() % 256);    // Blue
-                     bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
-              }
-       }
+            // Set the current pixel bytes.
+            bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
+            bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
+            bytes[byteIndex + 2] = (byte)(std::rand() % 256);    // Blue
+            bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
+        }
+    }
 
-       // Create RandomAccessStream from byte array.
-       InMemoryRandomAccessStream^ randomAccessStream = ref new InMemoryRandomAccessStream();
-       IOutputStream^ outputStream = randomAccessStream->GetOutputStreamAt(0);
-       DataWriter^ writer = ref new DataWriter(outputStream);
-       writer->WriteBytes(bytes);
+    // Create RandomAccessStream from byte array.
+    Windows::Storage::Streams::InMemoryRandomAccessStream randomAccessStream;
+    Windows::Storage::Streams::IOutputStream outputStream{ randomAccessStream.GetOutputStreamAt(0) };
+    Windows::Storage::Streams::DataWriter writer{ outputStream };
+    writer.WriteBytes(bytes);
 
-       create_task(writer->StoreAsync()).then([writer](unsigned int)
-       {
-              create_task(writer->FlushAsync());
-       });
+    co_await writer.StoreAsync();
+    co_await writer.FlushAsync();
 
-       return randomAccessStream;
+    co_return randomAccessStream;
+}
+...
+```
+
+```cpp
+InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
+{
+    int pixelHeight = 256;
+    int pixelWidth = 256;
+    int bpp = 4;
+
+    Array<byte>^ bytes = ref new Array<byte>(pixelHeight * pixelWidth * bpp);
+
+    for (int y = 0; y < pixelHeight; y++)
+    {
+        for (int x = 0; x < pixelWidth; x++)
+        {
+            int pixelIndex = y * pixelWidth + x;
+            int byteIndex = pixelIndex * bpp;
+
+            // Set the current pixel bytes.
+            bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
+            bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
+            bytes[byteIndex + 2] = (byte)(std::rand() % 256);    // Blue
+            bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
+        }
+    }
+
+    // Create RandomAccessStream from byte array.
+    InMemoryRandomAccessStream^ randomAccessStream = ref new InMemoryRandomAccessStream();
+    IOutputStream^ outputStream = randomAccessStream->GetOutputStreamAt(0);
+    DataWriter^ writer = ref new DataWriter(outputStream);
+    writer->WriteBytes(bytes);
+
+    create_task(writer->StoreAsync()).then([writer](unsigned int)
+    {
+        create_task(writer->FlushAsync());
+    });
+
+    return randomAccessStream;
 }
 ```
 
 ## <a name="replace-the-default-map"></a>替换默认地图
-
 
 使用第三方或自定义磁贴来替换所有默认地图：
 

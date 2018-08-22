@@ -4,18 +4,18 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: 移动运营商结算
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
-ms.localizationpriority: high
-ms.openlocfilehash: 8e10f3d1cdee250e2d9ca140759a90cbdf0a8773
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bfb2fbbea42aaf1ed3c0ffc42f71dc38b2a1ede
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817508"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788112"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -46,14 +46,13 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 荷兰     | KPN                              |
 | 挪威          | Telenor、Telia                   |
 | 波兰          | Orange                           |
-| 罗马尼亚         | Orange                           |
-| 俄罗斯          | Beeline                          |
-| 新加坡       | M1 Limited                       |
+| 新加坡       | M1 有限 StarHub              |
 | 斯洛伐克        | Slovak Telekom                   |
 | 西班牙           | Orange                           |
 | 瑞典          | Telenor、3                       |
 | 瑞士     | Swisscom, 日出                |
 | 土耳其          | Turkcell                         |
+| 阿拉伯联合酋长国 | Etisalat                    |
 | 美国   | Sprint、Verizon                  |
 | 英国  | O2、3 UK、EE                     |
 

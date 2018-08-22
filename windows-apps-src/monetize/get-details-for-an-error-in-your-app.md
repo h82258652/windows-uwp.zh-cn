@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: e44d11b9c97f049f25a6b3e57907c39bf2507bac
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: b3c9994d2738dbcd283ac7458fdde6979d43ee2f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989601"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788612"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>获取应用中的错误的详细信息
 
@@ -55,7 +55,7 @@ ms.locfileid: "1989601"
 |---------------|--------|---------------|------|
 | applicationId | 字符串 | 要检索详细错误数据的应用的 Store ID。 Store ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，请使用[获取错误报告数据](get-error-reporting-data.md)方法，并使用该方法的响应正文中的 **failureHash** 值。 |  是  |
-| startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
+| startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。<p/><p/>**注意：**&nbsp;&nbsp;此方法仅可以检索在过去 30 天内发生的错误的详细信息。 |  否  |
 | endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10 和 skip=0，将检索前 10 行数据；top=10 和 skip=10，将检索之后的 10 行数据，依此类推。 |  否  |
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型    | 描述    |
+| 值      | 类型    | 说明    |
 |------------|---------|------------|
 | 值      | array   | 包含详细错误数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[错误详细信息值](#error-detail-values)部分。          |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |
