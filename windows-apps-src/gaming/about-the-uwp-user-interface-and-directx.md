@@ -10,18 +10,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
-ms.openlocfilehash: b17147d1b4985c08f49a1a5f6de306e5713e7918
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488947"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795994"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
 
 
 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。 相反，因为它们在 Windows 运行时堆栈中的较低级别上运行，所以它们必须以更加基本的方式与用户界面框架互操作： 直接访问应用对象并与之互操作。 了解何时以及如何执行此互操作，以及作为 DirectX 开发人员， 你可以如何在 UWP 应用的开发中高效使用此模型。
+
+请参阅[Direct3D 图形词汇表](../graphics-concepts/index.md)有关不熟悉图形字词或概念读取时遇到的信息。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心用户界面命名空间
 

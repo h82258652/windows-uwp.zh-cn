@@ -4,22 +4,20 @@ ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: 情节提要动画
 description: 情节提要动画不仅仅是视觉动画。
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fad5bdea602767484fa55e943d262e7a1798fa
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675574"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797861"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
-
-
 
 情节提要动画不仅仅是视觉动画。 情节提要动画是更改作为时间函数的依赖属性的值的一种方法。 可能需要该动画库外部的情节提要动画的主要原因之一在于，需要定义控件的视觉状态并将其作为控件模板或页面定义的一部分。
 
@@ -49,17 +47,23 @@ ms.locfileid: "1675574"
 让我们来看个简单示例。 在此 XAML 示例中，在特定的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 对象上为 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性创建动画。
 
 ```xaml
-<!-- Animates the rectangle's opacity. -->
-<Storyboard x:Name="myStoryboard">
-  <DoubleAnimation
-    Storyboard.TargetName="MyAnimatedRectangle"
-    Storyboard.TargetProperty="Opacity"
-    From="1.0" To="0.0" Duration="0:0:1"/>
-</Storyboard>
+<Page ...>
+  <Page.Resources>
+    <!-- Storyboard resource: Animates a rectangle's opacity. -->
+    <Storyboard x:Name="myStoryboard">
+      <DoubleAnimation
+        Storyboard.TargetName="MyAnimatedRectangle"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0" To="0.0" Duration="0:0:1"/>
+    </Storyboard>
+  </Page.Resources>
 
-<!-- A different area of the XAML. -->
-<Rectangle x:Name="MyAnimatedRectangle"
-  Width="300" Height="200" Fill="Blue"/>
+  <!--Page root element, UI definition-->
+  <Grid>
+    <Rectangle x:Name="MyAnimatedRectangle"
+      Width="300" Height="200" Fill="Blue"/>
+  </Grid>
+</Page>
 ```
 
 ### <a name="identifying-the-object-to-animate"></a>确定要实现动画的对象
@@ -213,10 +217,10 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
     </Storyboard>
   </Page.Resources>
   <!--Page root element, UI definition-->
-  <StackPanel>
+  <Grid>
     <Rectangle x:Name="MyAnimatedRectangle"
       Width="300" Height="200" Fill="Blue"/>
-  </StackPanel>
+  </Grid>
 </Page>
 ```
 
@@ -291,6 +295,10 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ```csharp
 myStoryboard.Begin();
+```
+
+```cppwinrt
+myStoryboard().Begin();
 ```
 
 ```cpp

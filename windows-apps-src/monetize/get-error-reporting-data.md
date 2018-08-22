@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 2937d0d9ebfc8c9450692a01e77e57e68c896dba
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989471"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794796"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>获取应用的错误报告数据
 
-在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取此信息。
+在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 此方法仅可以检索在过去 30 天内发生的错误。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取此信息。
 
 你可以使用[获取错误详细信息](get-details-for-an-error-in-your-app.md)、[获取堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)和[下载 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)获取其他错误信息。
 
@@ -43,7 +43,7 @@ ms.locfileid: "1989471"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -53,7 +53,7 @@ ms.locfileid: "1989471"
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
 | applicationId | 字符串 | 要检索错误报告数据的应用的 Store ID。 Store ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
-| startDate | date | 要检索的错误报告数据日期范围中的开始日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。  |  否  |
+| startDate | date | 要检索的错误报告数据日期范围中的开始日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。<p/><p/>**注意：**&nbsp;&nbsp;此方法只能检索在过去 30 天内发生的错误。  |  否  |
 | endDate | date | 要检索的错误报告数据日期范围中的结束日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型    | 描述     |
+| 值      | 类型    | 说明     |
 |------------|---------|--------------|
 | 值      | array   | 包含聚合错误报告数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[错误值](#error-values)部分。     |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的错误超过 10000 行时，就会返回此值。 |

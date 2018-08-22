@@ -4,18 +4,18 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: 帐户类型、位置和费用
 description: 我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
-ms.localizationpriority: high
-ms.openlocfilehash: e337c5fe18089bfd39981c04647ca1386c3a5b40
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832408"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801085"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
@@ -37,11 +37,11 @@ ms.locfileid: "1832408"
 |--------------------|-----------------|
 | <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 根据[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，发布具有某些功能的应用时需要使用公司帐户，如访问财务帐户信息的应用或需要通过身份验证才能访问主要功能的应用（而不使用安全的专用第三方身份验证提供程序）。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[存储策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，应用程序使用某些功能，如访问财务帐户信息或需要身份验证 （不使用安全专用的第三方身份验证提供程序） 访问主要功能仅由公司帐户发布。
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证完公司帐户后，你才可以从公司帐户中提交应用，但在等待验证时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)、访问 Windows 开发人员中心仪表板以及继续生成和测试你的应用。
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 您无法提交从公司帐户的应用程序直到进行验证，但时您正在等待批准，您可以[保留应用程序名称](create-your-app-by-reserving-a-name.md)继续构建和测试应用程序，以及在获取您提交准备工作。
 
 可在**帐户设置**页上查看验证状态。 
 

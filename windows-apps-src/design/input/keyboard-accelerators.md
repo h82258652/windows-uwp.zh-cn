@@ -14,12 +14,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 051d3d5251a135dcb1a41e1cd005f462fb074c3b
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983634"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792195"
 ---
 # <a name="keyboard-accelerators"></a>键盘加速键
 
@@ -355,35 +355,98 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由于 UWP 应用程序的 UI 中一般并不直接说明键盘加速键，因此，你可以通过[工具提示](../controls-and-patterns/tooltips.md)提高可发现性，当用户将焦点移动到某个控件、按住某个控件或将鼠标指针悬停在某个控件上时，会自动显示工具提示。 工具提示可以标识某个控件是否有关联的键盘加速键，如果有，将会标识加速键组合。
 
-从 Windows 10 版本 1803 开始，在声明了 KeyboardAccelerators 的情况下，控件默认在工具提示中显示对应的键组合（除非他们与 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) 和 [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 对象相关联，请参阅 [Labels]()）。 如果某个控件定义了多个加速键，工具提示中只显示第一个加速键。
+**Windows 10，版本 1803年 （2018 年 4 月更新） 和更高版本**
+
+默认情况下，当声明键盘快捷键时，所有控件 （除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对应的组合键会议中都显示工具提示。
+
+> [!NOTE] 
+> 如果控件具有定义的多个加速键，将显示第一个仅。
 
 ![加速键工具提示](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *工具提示中的加速键组合*
 
-对于 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 对象，键盘加速键附加到标签后面。
+[按钮](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，和[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)对象的键盘快捷键追加到控件的默认工具提示。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对象的键盘快捷键显示具有飞出文本。
+
+> [!NOTE]
+> 指定工具提示 （请参阅 Button1 下面的示例） 将覆盖此行为。
 
 ```xaml
-<AppBarButton Label="Save" Icon="Save">
-  <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
-  </Button.KeyboardAccelerators>
+<StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
+    <Button Content="Button1" Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto" 
+            ToolTipService.ToolTip="Tooltip">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="A" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button2"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="B" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button3"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="C" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+</StackPanel>
+```
+
+![加速键工具提示](images/accelerators/accelerators-button-small.png)
+
+*加速键组合追加到按钮的默认工具提示*
+
+```xaml
+<AppBarButton Icon="Save" Label="Save">
+    <AppBarButton.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control"/>
+    </AppBarButton.KeyboardAccelerators>
 </AppBarButton>
 ```
 
 ![加速键工具提示](images/accelerators/accelerators-appbarbutton-small.png)
 
-*加速键组合附加到控件标签后面*
+*加速键组合追加到 AppBarButton 的默认工具提示*
+
+```xaml
+<AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+    <AppBarButton.Flyout>
+        <MenuFlyout>
+            <MenuFlyoutItem AccessKey="A" Icon="Refresh" Text="Refresh A">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="R" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+            <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+            <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            <ToggleMenuFlyoutItem AccessKey="E" Icon="Globe" Text="ToggleMe">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Q" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </ToggleMenuFlyoutItem>
+        </MenuFlyout>
+    </AppBarButton.Flyout>
+</AppBarButton>
+```
+
+![加速键工具提示](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+
+*加速键组合追加到 MenuFlyoutItem 的文本*
 
 通过使用 [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) 属性控制显示行为，该属性接受两个值：[自动](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)或[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)。    
 
 ```xaml
-<Button Content="Save" Click="OnSave">
-  <Button.KeyboardAccelerators> 
-    <KeyboardAccelerator 
-      Key="S" Modifiers="Control" 
-      KeyboardAcceleratorPlacementMode="Hidden" /> 
-  </Button.KeyboardAccelerators>  
+<Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
+    <Button.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control" />
+    </Button.KeyboardAccelerators>
 </Button>
 ```
 
@@ -393,10 +456,12 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ```xaml
 <Grid x:Name="Container" Padding="30">
-  <Button Content="Save" Click="OnSave">
+  <Button Content="Save"
+    Click="OnSave"
+    KeyboardAcceleratorPlacementMode="Auto"
+    KeyboardAcceleratorPlacementTarget="{x:Bind Container}">
     <Button.KeyboardAccelerators>
-      <KeyboardAccelerator  Key="S" Modifiers="Control" 
-        KeyboardAcceleratorPlacementTarget="{x:Bind Container}"/>
+      <KeyboardAccelerator  Key="S" Modifiers="Control" />
     </Button.KeyboardAccelerators>
   </Button>
 </Grid>
@@ -547,3 +612,15 @@ public class MyListView : ListView
   …
 }
 ```
+
+## <a name="related-articles"></a>相关文章
+
+* [键盘交互](keyboard-interactions.md)
+* [访问键](access-keys.md)
+
+**示例**
+* [XAML 控件库 (也称为 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+
+ 
+

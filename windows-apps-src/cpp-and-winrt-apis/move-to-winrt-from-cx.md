@@ -3,26 +3,29 @@ author: stevewhims
 description: 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。
 title: 从 C++/CX 移动到 C++/WinRT
 ms.author: stwhi
-ms.date: 05/30/2018
+ms.date: 07/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: da6226158056cbbf0b51b46be0b17fe7e478dd01
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935745"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800058"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>从 C++/CX 移动到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 本主题介绍如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 代码移植到 C++/WinRT 中的等效项。
 
+> [!IMPORTANT]
+> 如果您想要逐步端口您[C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码 C + + / WinRT，则您可以。 C + + / CX 和 C + + / WinRT 代码可以共存于同一个项目，但 XAML 编译器支持和 Windows 运行时组件除外。 对于这些异常，您需要目标任一 C + + / CX 或 C + + / WinRT 的同一项目中。 但您可以利用 XAML 应用程序使用 Windows 因素代码运行时组件，如您的端口。 将移动尽可能 C + + / CX 代码到组件中，可以和然后将 XAML 项目更改为 C + + / WinRT。 或 else 离开 XAML 项目 C + + / CX，创建新的 C + + / WinRT 组件，并开始移植 C + + / CX 代码超出 XAML 项目并为该组件。 您也可以让 C + + / CX 组件项目一起 C + + / WinRT 组件项目中相同的解决方案中，从您的应用程序项目，引用这两个和逐渐从到另一个端口。
+
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 **Windows** 中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-移植到 C++/WinRT 的第一步是向项目手动添加 C++/WinRT 支持（请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)）。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 让支持处于关闭状态是一个好办法，这样你可以找到并移植 C++/CX 上的所有依赖项，或者你可以将支持重新打开（在项目属性，**C/C++** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**），然后逐渐移植。
+带有记住上面提到的例外的第一步中移植一个项目到 C + + / WinRT 是手动添加 C + + / WinRT 支持 (，请参阅[Visual Studio 支持 C + + / WinRT 和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是最好将保留支持以便生成消息帮助您查找 （以及端口） 关闭所有依赖项的上 C + + / CX，也可以支持在重新打开 (在项目属性**C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，和逐步端口。
 
 将项目属性**常规** \> **目标平台版本**设置为 10.0.17134.0（Windows 10 版本 1803）或更高版本。
 
@@ -201,7 +204,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 不使用 lambda 函数，你可以选择作为自由函数或指向成员函数的指针实现代理。 有关详细信息，请参阅[使用 C++/WinRT 中的代理来处理事件](handle-events.md)。
 
-如果你正在从内部使用（不是跨二进制文件）事件和代理的 C++/CX 基本代码移植，[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 将帮助你复制 C++/WinRT 中的这个模式。 另请参阅 [winrt::delegate&lt;... T&gt;](author-events.md#winrtdelegate-t)。
+如果你正在从内部使用（不是跨二进制文件）事件和代理的 C++/CX 基本代码移植，[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 将帮助你复制 C++/WinRT 中的这个模式。 另请参阅[参数化代理人、 简单信号，和在项目中的回调](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
 
 ## <a name="revoking-a-delegate"></a>撤销代理
 在 C++/CX 中，使用 `-=` 运算符来撤销之前的事件注册。
@@ -223,52 +226,25 @@ C++/CX 在**平台**命名空间中提供了多个数据类型。 这些类型�
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
-| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
+| **平台:: Agile\ ^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
+| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>将 **Platform::Object\^** 移植到 **winrt::Windows::Foundation::IInspectable**
-与所有 C++/WinRT 类型一样，**winrt::Windows::Foundation::IInspectable** 属于值类型。 下面介绍如何初始化类型为 null 的变量。
+### <a name="port-platformagile-to-winrtagileref"></a>端口**平台:: Agile\ ^** 到**winrt::agile_ref**
+**平台:: Agile\ ^** 类型在 C + + / CX 表示一个 Windows Runtime 类，可以从任何线程访问。 C + + / WinRT 等效是[**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)。
 
-```cppwinrt
-winrt::Windows::Foundation::IInspectable var{ nullptr };
-```
-
-### <a name="port-platformstring-to-winrthstring"></a>从 **Platform::String\^** 移植到 **winrt::hstring**
-**Platform::String\^** 等同于 Windows 运行时 HSTRING ABI 类型。 对于 C++/WinRT，等效项是 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，你可以使用 C++ 标准库宽字符串类型（如 **std::wstring**）和/或宽字符串文字调用 Windows 运行时 API。 有关更多详细信息和代码示例，请参阅 [C++/WinRT 中的字符串处理](strings.md)。
-
-通过 C++/CX，你可以访问 [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) 属性来作为 C 样式 **const wchar_t\*** 数组检索字符串（例如，将其传递到 **std::wcout**）。
-
-```C++
-auto var = titleRecord->TitleName->Data();
-```
-
-使用 C++/WinRT 也一样，你可以使用 [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 函数获取 null 结尾的 C 样式字符串版本，就像从 **std::wstring** 获取的一样。
-
-```C++
-auto var = titleRecord.TitleName().c_str();
-```
-
-在实现获取或返回字符串的 API 时，通常要将使用 **Platform::String\^** 的任何 C++/CX 代码更改为使用 **winrt::hstring**。
-
-下面是获取字符串的 C++/CX API 的示例。
+在 C++/CX 中。
 
 ```cpp
-void LogWrapLine(Platform::String^ str);
+Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
-对于 C++/WinRT，你可以像这样在 [MIDL 3.0](/uwp/midl-3) 中声明该 API。
-
-```idl
-// LogType.idl
-void LogWrapLine(String str);
-```
-
-C++/WinRT 工具链随后将为你生成源代码，如下所示。
+在 C++/WinRT 中。
 
 ```cppwinrt
-void LogWrapLine(winrt::hstring const& str);
+winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>将 **Platform::Exception\^** 移植到 **winrt::hresult_error**
@@ -318,6 +294,49 @@ throw ref new Platform::InvalidArgumentException(L"A valid User is required");
 
 ```cppwinrt
 throw winrt::hresult_invalid_argument{ L"A valid User is required" };
+```
+
+### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>将 **Platform::Object\^** 移植到 **winrt::Windows::Foundation::IInspectable**
+与所有 C++/WinRT 类型一样，**winrt::Windows::Foundation::IInspectable** 属于值类型。 下面介绍如何初始化类型为 null 的变量。
+
+```cppwinrt
+winrt::Windows::Foundation::IInspectable var{ nullptr };
+```
+
+### <a name="port-platformstring-to-winrthstring"></a>从 **Platform::String\^** 移植到 **winrt::hstring**
+**Platform::String\^** 等同于 Windows 运行时 HSTRING ABI 类型。 对于 C++/WinRT，等效项是 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，你可以使用 C++ 标准库宽字符串类型（如 **std::wstring**）和/或宽字符串文字调用 Windows 运行时 API。 有关更多详细信息和代码示例，请参阅 [C++/WinRT 中的字符串处理](strings.md)。
+
+通过 C++/CX，你可以访问 [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) 属性来作为 C 样式 **const wchar_t\*** 数组检索字符串（例如，将其传递到 **std::wcout**）。
+
+```C++
+auto var = titleRecord->TitleName->Data();
+```
+
+使用 C++/WinRT 也一样，你可以使用 [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 函数获取 null 结尾的 C 样式字符串版本，就像从 **std::wstring** 获取的一样。
+
+```C++
+auto var = titleRecord.TitleName().c_str();
+```
+
+在实现获取或返回字符串的 API 时，通常要将使用 **Platform::String\^** 的任何 C++/CX 代码更改为使用 **winrt::hstring**。
+
+下面是获取字符串的 C++/CX API 的示例。
+
+```cpp
+void LogWrapLine(Platform::String^ str);
+```
+
+对于 C++/WinRT，你可以像这样在 [MIDL 3.0](/uwp/midl-3) 中声明该 API。
+
+```idl
+// LogType.idl
+void LogWrapLine(String str);
+```
+
+C++/WinRT 工具链随后将为你生成源代码，如下所示。
+
+```cppwinrt
+void LogWrapLine(winrt::hstring const& str);
 ```
 
 ## <a name="important-apis"></a>重要的 API

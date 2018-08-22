@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf3c87411bb6d8eb5886e7205f96c466d707220
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976485"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794638"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的代理来处理事件
 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理代理。 你可以使用任何标准 C++ 函数类对象来处理事件。
@@ -122,7 +122,7 @@ private:
 
 不是如上面示例中的强引用，你可以存储对按钮的弱引用（请参阅 [C++/WinRT 中的弱引用](weak-references.md)）。
 
-或者，当你注册代理时，也可以指定 **winrt::auto_revoke**（即 [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 类型的值）以请求一个事件撤销程序（**winrt::event_revoker** 类型）。 事件撤销程序为你保留对事件源（引发事件的对象）的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
+此外，注册代理时，您可以指定**winrt::auto_revoke** （这是类型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)值） 请求 （的类型[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) 事件 revoker。 事件 revoker 您保留对事件源 （引发事件的对象） 的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -188,7 +188,7 @@ void ProcessFeedAsync()
     });
     
     // or (but this function must then be a coroutine and return IAsyncAction)
-    // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
+    // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 

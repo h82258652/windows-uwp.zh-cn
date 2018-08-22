@@ -4,18 +4,18 @@ Description: The Store listings section of the app submission process is where y
 title: 创建 Microsoft Store 一览
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 06/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
-ms.localizationpriority: high
-ms.openlocfilehash: 871eb3cd8b8bdfd0cf12859dcb401df2158bf5b7
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816942"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795807"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 
@@ -42,12 +42,22 @@ ms.locfileid: "1816942"
 
 在完成选择后，单击**保存**以返回到提交概述页。
 
-> [!NOTE]
-> 当使用一种软件包不支持的语言创建应用商店一览时，你将需要指示在该应用商店一览中应当显示哪一个你保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。 你在此处选择的名称仅适用于该语言的应用商店一览，并且不会影响客户安装应用时显示的名称。
+## <a name="add-and-edit-store-listing-info"></a>添加和编辑存储列表信息
 
-若要编辑应用商店一览，请在提交概述页中单击语言名称。
+若要编辑的商店清单，从提交概述页中选择的语言名称。
 
 **应用商店一览**页面顶部的字段与所选语言的默认应用商店一览相关联。 这些字段将显示给所有客户，除非你有面向较早 OS 版本（Windows 8.x 或更早版本；Windows Phone 8.x 或更早版本）的程序包并创建特定于平台的应用商店一览，以包含要显示给指定 OS 版本的客户的不同屏幕截图或信息。 有关详细信息，请参阅[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)。
+
+## <a name="product-name"></a>产品名称
+
+此下拉列表框中，可以指定应商店列表中使用的名称，（如果您保留了多个应用程序的名称）。
+
+如果您上载以同一种语言作为您正在使用的存储列表的程序包，将选择这些包中使用的名称。 如果您需要重命名[应用程序](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，您可以选择不同的保留的名称此处时使用新名称的包创建新提交。
+
+如果尚未上载的语言包正在处理的和已保留多个名称，您需要选择其中一个保留应用程序名称，因为在从中提取名称该语言没有相关联的程序包。
+
+> [!NOTE]
+> **产品名称**选择仅适用于您正在使用的商店清单中使用的语言。 它不会影响时客户安装应用程序; 显示名称该名称来自获取安装的程序包的清单。 若要避免混淆情况，建议每个语言包和商店列表使用相同的名称。
 
 ## <a name="description"></a>描述
 
@@ -91,8 +101,9 @@ ms.locfileid: "1816942"
 
 有关详细信息，请参阅[其他插图资源](app-screenshots-and-images.md#additional-art-assets)。
 
+<a id="supplemental-information" />
 
-## <a name="supplemental-information"></a>补充信息
+## <a name="supplemental-fields"></a>补充字段
 
 此部分中的字段均为可选字段。 请查看以下信息确定提供此信息是否对你的提交有帮助。 尤其需要指出的是，建议将**简短说明**用于大多数提交。 其他字段可帮助在不同的场景中为产品提供最佳体验。
 
@@ -123,7 +134,7 @@ ms.locfileid: "1816942"
 
 对于游戏，简短说明还可能出现在 Xbox One 上游戏中心的“信息”部分。
 
-此字段的长度限制是 500 个字符。
+为了获得最佳结果，在 270 字符保留您的简短说明。 该字段为 500 字符限制，但在某些视图中，只有先 270 字符将显示 （可用于查看的简短说明其余链接）。
 
 
 ### <a name="additional-system-requirements"></a>其他系统要求
@@ -155,7 +166,7 @@ ms.locfileid: "1816942"
 
 ### <a name="additional-license-terms"></a>附加许可条款
 
-如果你希望按照**标准应用程序许可条款**（可以从[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)进行链接）中的条款向客户授权你的应用，请将此字段留空。
+如果你希望按照**标准应用程序许可条款**（可以从[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)进行链接）中的条款向客户授权你的应用，请将此字段留空。
 
 如果你的许可条款不同于**标准应用程序许可条款**，请在此处输入你的条款。
 

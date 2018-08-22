@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d9f74e6d0c755e0a247a65751bdab65964ac1f7
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 9337c0625c68970d9e68df74fa13228369e8bf41
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935723"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800327"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 项目控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -39,7 +39,7 @@ XAML 项目控件可检索更新的集合然后将自行更新以显示当前元
 这将有利于让可观测矢量模板用作 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 的有用的通用实现。 以下是称为 **single_threaded_observable_vector\<T\>** 的类的列表。
 
 > [!NOTE]
-> 如果你已安装了 [Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) 或更高版本，那么你可以直接使用 **winrt::single_threaded_observable_vector\<T\>** 类型，而不是下面的代码列表。 如果你还未使用该版本的 SDK，当你进入该版本后，便可以轻松地从使用代码列表版本切换到 **winrt** 类型。
+> 如果您已安装[Windows 10 SDK Preview 构建 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后您可以只直接而不是下方列出的代码中使用**winrt::single_threaded_observable_vector\ < T\ >** 工厂函数。 如果您已不在该 SDK 版本，然后将轻松切换后使用**winrt**函数的代码列表版本它。 请记住，而不是调用[**winrt::make**]()与下面列出的类型，而是调用**winrt::single_threaded_observable_vector\ < T\ >** 函数。
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -310,6 +310,8 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 
 ```cppwinrt
 // BookstoreViewModel.h
+...
+#include "single_threaded_observable_vector.h"
 ...
     struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {

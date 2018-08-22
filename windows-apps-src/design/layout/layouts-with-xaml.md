@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a175ad48255c0179335ce9204f51a0a62fd2b4f3
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707218"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795163"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -98,7 +98,8 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
-> **提示**&nbsp;&nbsp;默认情况下，当 UI 中的元素是 **Collapsed** 时，启动时仍会创建这些对象，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> [!Tip]
+> 后默认情况下**折叠**的 UI 元素，创建该对象仍在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>样式资源
 
@@ -112,7 +113,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 下面对 XAML 框架中提供的面板控件的主要功能做一个比较。
 
-面板控件 | 描述
+面板控件 | 说明
 --------------|------------
 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支持动态 UI；控制设置子元素位置和大小的所有方面。 通常将其用于特殊情况（例如创建图形），或用于定义较大自适应 UI 的小静态区域。 可以使用代码或视觉状态来在运行时重新放置元素。<li>元素使用 Canvas.Top 和 Canvas.Left 附加属性进行绝对定位。</li><li>可以使用 Canvas.ZIndex 附加属性明确指定分层。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 如果未显式设置元素的大小，它会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上不会被截断。 </li><li>子内容不受面板边界限制。</li>
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支持对子元素进行动态调整大小。 可以使用代码或视觉状态来重新定位和重新排列元素。<li>元素使用 Grid.Row 和 Grid.Column 附加属性在行和列中进行排列。</li><li>通过使用 Grid.RowSpan 和 Grid.ColumnSpan 附加属性，元素可跨越多行和多列。</li><li>将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未明确设置元素的大小，则该元素会拉伸以填满网格单元格中的可用空间。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
@@ -138,7 +139,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 在此处，[**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) 包含 2 个 VisualState 定义。 第一个 `DefaultState` 为空。 当应用时，将应用 XAML 页面中定义的值。 第二个 `WideState` 将 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) 的 [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 属性更改为 **Inline** 并打开该窗格。 如果窗口宽度大于 640 个有效像素，将在 SizeChanged 事件处理程序中应用此状态。
 
 > [!NOTE]
-Windows 不会提供可使应用检测到运行该应用的特定设备的方法。 但它可以指示运行了该应用的设备系列（移动设备、桌面设备等）、有效分辨率，以及应用的可用屏幕空间大小（应用窗口大小）。 我们建议为[屏幕大小和断点](screen-sizes-and-breakpoints-for-responsive-design.md)定义视觉状态。
+> Windows 不会提供可使应用检测到运行该应用的特定设备的方法。 但它可以指示运行了该应用的设备系列（移动设备、桌面设备等）、有效分辨率，以及应用的可用屏幕空间大小（应用窗口大小）。 我们建议为[屏幕大小和断点](screen-sizes-and-breakpoints-for-responsive-design.md)定义视觉状态。
 
 
 ```xaml
@@ -234,7 +235,8 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 </Page>
 ```
 
-> **重要提示**&nbsp;&nbsp;在上一个示例中，对 **Grid** 元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
+> [!Important]
+> 在上述示例中，**在 Grid**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
 
 ### <a name="attached-property-syntax"></a>附加属性语法
 

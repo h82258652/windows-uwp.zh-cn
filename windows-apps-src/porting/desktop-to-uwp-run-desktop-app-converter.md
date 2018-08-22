@@ -4,19 +4,19 @@ Description: Run the Desktop Converter App to package a Windows desktop applicat
 Search.Product: eADQiWindows 10XVcnh
 title: 使用 Desktop App Converter 将应用打包（桌面桥）
 ms.author: normesta
-ms.date: 09/18/2017
+ms.date: 08/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d03ad8aa066a4d3b8f5aaaf2532f09d9ce0acbe
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2411197"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800561"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>使用 Desktop App Converter 将应用打包（桌面桥）
 
@@ -270,6 +270,8 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-Installer &lt;String&gt; |必需 |适用于应用程序的安装程序的路径 - 必须能够在无人参与/静默的情况下运行。 无安装程序的转换，这是应用文件的根目录的路径。 |
 |-InstallerArguments &lt;String&gt; |可选 |用于强制安装程序在无人参与/静默的情况下运行的参数的以逗号分隔的列表或字符串。 如果安装程序是 msi，则此参数为可选参数。 若要从安装程序中获取日志，请在此处为安装程序提供日志记录参数，并使用路径 &lt;log_folder&gt;，该路径是转换器使用相应路径所替换的标记。 <br><br>**注意**：无人参与/无提示标志和日志参数将因安装程序技术而异。 <br><br>此参数的用法示例：-InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" 另一个不生成日志文件的示例可能如下所示：```-InstallerArguments "/quiet", "/norestart"``` 同样，如果你希望转换器捕获日志并将其放置在最终的日志文件夹中，则必须逐字节地将任何日志直接指向标记路径 &lt;log_folder&gt;。|
 |-InstallerValidExitCodes &lt;Int32&gt; |可选 |指示安装程序成功运行的退出代码的以逗号分隔的列表（例如 0，1234，5678）。  默认情况下，对于非 msi，它为 0，对于 msi，它为 0，1641，3010。|
+|-MakeAppx [&lt;SwitchParameter&gt;]  |可选 |一个告知此脚本对输出调用 MakeAppx 的开关（如果有）。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |可选 |开关，如果存在此参数，告知打包为 MSIX 包的输出此脚本。 |
 |<a id="identity-params" /><strong>程序包标识符参数</strong>||
 |-PackageName &lt;String&gt; |必填 |通用 Windows 应用包的名称。 如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。 |
 |-Publisher &lt;String&gt; |必需 |通用 Windows 应用包的发布者 |
@@ -291,7 +293,6 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-PackageArch &lt;String&gt; |必需 |生成具有指定体系结构的程序包。 有效选项为“x86”或“x64”，例如 -PackageArch x86。 该参数为可选参数。 如果未指定，DesktopAppConverter 将尝试自动检测程序包体系结构。 如果自动检测失败，它将默认为 x64 程序包。 |
 |<a id="other-params" /><strong>其他参数</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |可选 |已展开的基础映像的完整路径。|
-|-MakeAppx [&lt;SwitchParameter&gt;]  |可选 |一个告知此脚本对输出调用 MakeAppx 的开关（如果有）。 |
 |-LogFile &lt;String&gt;  |可选 |指定日志文件。 如果省略此参数，将创建一个日志文件临时位置。 |
 | -Sign [&lt;SwitchParameter&gt;] |可选 |出于测试目的，告知此脚本使用生成的证书对输出 Windows 应用包进行签名。 此开关应该位于开关 ```-MakeAppx``` 的旁边。 |
 |&lt;通用参数&gt; |必需 |此 cmdlet 支持通用参数：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 和 *OutVariable*。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |

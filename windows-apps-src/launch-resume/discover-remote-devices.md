@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，连接设备、 远程系统、 rome 和项目 rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018491"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794658"
 ---
 # <a name="discover-remote-devices"></a>发现远程设备
 你的应用可以使用无线网络、蓝牙和云连接来发现使用发现设备的相同 Microsoft 帐户登录的 Windows 设备。 无需安装任何特殊软件，即可发现远程设备。
@@ -60,7 +60,7 @@ ms.locfileid: "2018491"
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>查询远程系统上的功能
 
-尽管与发现筛选分离，但查询设备功能也是发现过程中的一个重要部分。 使用 [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_) 方法，你可以查询已发现的远程系统是否支持特定功能，如远程会话连接或空间实体（全息）共享。 有关可查询功能的列表，请参阅 [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) 类。
+尽管与发现筛选分离，但查询设备功能也是发现过程中的一个重要部分。 使用 [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync) 方法，你可以查询已发现的远程系统是否支持特定功能，如远程会话连接或空间实体（全息）共享。 有关可查询功能的列表，请参阅 [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) 类。
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests

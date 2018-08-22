@@ -8,14 +8,14 @@ ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，背景任务中，应用程序服务连接的设备，远程系统
 ms.localizationpriority: medium
-ms.openlocfilehash: d43600e4cb12aafb55a78173b7f81a15d1810fdb
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 142eba8eb919ed25632f44a6f185ae40e16dec6b
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816512"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796054"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
@@ -85,7 +85,7 @@ ms.locfileid: "1816512"
 
 [应用服务和扩展](app-services.md)部分介绍如何将应用服务集成到你的 UWP 应用，从而允许跨应用共享数据和功能。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
 | [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |
@@ -134,7 +134,7 @@ ms.locfileid: "1816512"
 
 [初始屏幕](splash-screens.md)部分介绍如何设置和配置应用的初始屏幕。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |

@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018511"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800804"
 ---
 # <a name="access-keys"></a>访问键
 
@@ -358,3 +358,13 @@ _键提示自定义选项_
 XAML 框架公开了自动化属性，支持 UI 自动化客户端发现与用户界面中的元素相关的信息。
 
 如果你在 UIElement 或 TextElement 控件上指定了 AccessKey 属性，则可以通过 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 属性来获得此值。 每当元素获得焦点时，辅助功能客户端（如讲述人）将会读取分此属性值。
+
+## <a name="related-articles"></a>相关文章
+
+* [键盘交互](keyboard-interactions.md)
+* [键盘加速键](keyboard-accelerators.md)
+
+**示例**
+* [XAML 控件库 (也称为 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+

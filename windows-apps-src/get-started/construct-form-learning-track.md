@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
-ms.openlocfilehash: 20146c8a1bae92a46fc8cf878acd4d2dc5d2fb1e
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992093"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795449"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -48,9 +48,9 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="what-goes-in-a-form"></a>表单包含哪些元素？
 
-需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 以下是可以添加的选项的基本列表 - 不必掌握有关它们的一切内容，只需要了解它们的外观及其工作方式。
+需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 这是您无法添加的选项的基本列表 – 不需要阅读有关的一切只足够以便您了解它们的外观和它们的工作方式。
 
-* [TextBox](../design/controls-and-patterns/text-box.md) 让用户向应用中输入文本。
+* [TextBox](../design/controls-and-patterns/text-box.md)到您的应用程序允许用户输入的文本。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 让用户从两个选项中做出选择。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 让用户选择一个日期值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 让用户选择一个时间值。
@@ -71,18 +71,18 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
             <RelativePanel>
-                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0"HorizontalAlignment="Left" />
+                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
                 <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
                     <!--List of valid states-->
                 </ComboBox>
             </RelativePanel>
     </StackPanel>
-    <StackPanel x:Name="Associate" Margin="20" RelativePanel.RightOf="Customer">
+    <StackPanel x:Name="Associate" Margin="20" RelativePanel.Below="Customer">
         <TextBox x:Name="AssociateName" Header= "Associate" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
         <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
     </StackPanel>
-    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Customer">
+    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Associate">
         <Button Content="Save" Margin="24" />
         <Button Content="Cancel" Margin="24" />
     </StackPanel>
@@ -110,9 +110,9 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
             </VisualState.StateTriggers>
 
             <VisualState.Setters>
-                <Setter Target="Associate.(RelativePanel.RightOf)" Value=""/>
-                <Setter Target="Associate.(RelativePanel.Below)" Value="Customer"/>
-                <Setter Target="Save.(RelativePanel.Below)" Value="Associate"/>
+                <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
+                <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
+                <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
             </VisualState.Setters>
         </VisualState>
     </VisualStateGroup>
@@ -136,7 +136,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="going-further"></a>深入探索
 
-虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 请抽时间浏览本文中提供的链接文档，对已有表单进行试验 - 添加新 UI 功能并进一步改进用户体验。 如果需要更详细布局功能的分步指南，请参阅[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)。
+虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 随意返回通过文档我们已链接到您和试验表单已添加新的 UI 功能和进一步优化的用户体验。 如果您希望通过更详细的布局功能的分步指南，请参阅我们[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
 
 表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/tabs-pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 

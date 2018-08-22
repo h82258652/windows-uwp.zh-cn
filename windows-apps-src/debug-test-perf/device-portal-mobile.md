@@ -1,23 +1,23 @@
 ---
 author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: 适用于移动设备的设备门户
+title: 适用于移动设备的 Device Portal
 description: 了解 Windows 设备门户是如何支持你远程配置和管理你的移动设备。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: b03d77389ede6a86e652593c19ddc15ca26d4174
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 0531cbefef509f7bc323829031b366bec3c798d8
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815722"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796459"
 ---
-# <a name="device-portal-for-mobile"></a>适用于移动设备的设备门户
+# <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
 从版本 1511 的 Windows 10 开始，附加的开发人员功能可用于移动设备系列。 这些功能仅在设备上启用了“开发人员模式”时才可用。
 

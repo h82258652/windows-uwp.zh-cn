@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp
+keywords: windows 10，uwp，连接设备、 远程系统、 rome 和项目 rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 0539c9b50196d98809fc01ea3f2a1950cbf27599
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658083"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794880"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>通过远程会话连接设备
 
@@ -124,7 +124,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-若要发送邀请，你必须拥有对接收远程系统的引用（通过正常的远程系统发现来获取）。 只需将此引用传入会话对象的 **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** 方法即可。 会话中的所有参与者都拥有对远程会话的引用（请参阅下一部分），所以任何参与者都可以发送邀请。
+若要发送邀请，你必须拥有对接收远程系统的引用（通过正常的远程系统发现来获取）。 只需将此引用传入会话对象的 **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** 方法即可。 会话中的所有参与者都拥有对远程会话的引用（请参阅下一部分），所以任何参与者都可以发送邀请。
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.

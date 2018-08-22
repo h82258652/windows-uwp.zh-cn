@@ -1,10 +1,21 @@
 ---
-author: TylerMSFT
-Description: "使用事件查看器对 Microsoft 参加测验事件和错误进行疑难解答。"
-title: "使用事件查看器对 Microsoft 参加测验进行疑难解答。"
-ms.openlocfilehash: 1b99b959cfdde997f7995c1bdf40d51921b2f1d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
+title: 使用事件查看器对 Microsoft 参加测验进行疑难解答。
+author: PatrickFarley
+ms.author: pafarley
+ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
+ms.date: 10/06/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10，uwp 教育
+ms.localizationpriority: medium
+ms.openlocfilehash: 3193525316d085e56244d6f03da99e3e07c6539f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792415"
 ---
 # <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>使用事件查看器对 Microsoft 参加测验进行疑难解答
 

@@ -3,18 +3,18 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 选择可见性选项
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 可见性, 私人受众, 可用的, 可检测到的
-ms.localizationpriority: high
-ms.openlocfilehash: 548b25d4e74945eadfcc8ebe8a5cb2f8d870d38f
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832081"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801853"
 ---
 # <a name="choose-visibility-options"></a>选择可见性选项
 
@@ -75,7 +75,7 @@ ms.locfileid: "1832081"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>在 Microsoft Store 中提供此产品，并使其可被发现
 
-这是默认选项。 如果你希望应用在 Microsoft Store 中列出，以便客户通过应用的直接链接和/或其他方法（包括搜索、浏览和包含在特选表中）进行查找，请选中此选项。 
+这是默认选项。 保持选中如果您希望您的应用程序，以使客户能够通过应用程序的直接链接和/或其他方法，包括搜索、 浏览和包含 curated 列表中查找的存储区中列出此选项。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>在 Microsoft Store 中提供此产品，但使其不可被发现
 

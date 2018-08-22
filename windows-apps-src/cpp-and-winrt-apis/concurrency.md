@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8b1676b910e86869a4a60496033a10f4ba40db
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: fe43eaa233d3384eecb5e8755190efc1a109bbb9
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976132"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800387"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的并发和异步操作
 > [!NOTE]
@@ -68,6 +68,9 @@ int main()
 ## <a name="write-a-coroutine"></a>编写协调程序
 C++/WinRT 将 C++ 协同程序集成到编程模型中以提供协作等待结果的自然方式。 你可以通过编写协同程序来生成自己的 Windows 运行时异步操作。 在以下代码示例中，**ProcessFeedAsync** 是协同程序。
 
+> [!NOTE]
+> **获取**函数存在于 C + + / WinRT 投影键入**winrt::Windows::Foundation::IAsyncAction**，以便您可以调用该功能中任何 C + + / WinRT 项目。 因为**获取**不是实际的 Windows Runtime 类型**IAsyncAction**的应用程序二进制接口 (ABI) 表面的一部分，您将无法找到列出该[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)接口的成员身份的函数。
+
 ```cppwinrt
 // main.cpp
 
@@ -92,7 +95,7 @@ IAsyncAction ProcessFeedAsync()
 {
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
     SyndicationClient syndicationClient;
-    SyndicationFeed syndicationFeed = co_await syndicationClient.RetrieveFeedAsync(rssFeedUri);
+    SyndicationFeed syndicationFeed{ co_await syndicationClient.RetrieveFeedAsync(rssFeedUri) };
     PrintFeed(syndicationFeed);
 }
 

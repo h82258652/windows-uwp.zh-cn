@@ -12,29 +12,27 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2355d9f655e1eb4e38557b11797aff1784eb8ea6
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f8f86a6988e68e3ff8d2dfef32512633b3761fd
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393646"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800371"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
-
- 
 
 在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用按钮、文本框和组合框等控件来显示数据和获取用户输入，你可以为你的应用创建 UI。
 
 > **重要 API**：[Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[导航窗格](navigationview.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，你可以自定义 [Pivot](tabs-pivot.md) 控件的模板来实现选项卡模式。
+*模式* 是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[大纲/细节](master-details.md)模式是一种方法，您可以为应用程序导航使用[SplitView](split-view.md)控件。 同样，您可以自定义实现选项卡模式[NavigationView](navigationview.md)控件的模板。
 
 在许多情况下，你可以按原样使用控件。 但 XAML 控件将函数与结构和外观分离开来，因此你可以进行各种级别的修改来使它们符合你的需求。 在[样式](../style/index.md)部分中，你可以了解如何使用 [XAML 样式](xaml-styles.md)和[控件模板](control-templates.md)来修改控件。
 
-在此部分中，我们为可用于生成应用 UI 的每个 XAML 控件提供指南。 首先，本文介绍如何向应用添加控件。 对应用使用控件有 3 个关键步骤： 
+在此部分中，我们为可用于生成应用 UI 的每个 XAML 控件提供指南。 首先，本文介绍如何向应用添加控件。 对应用使用控件有 3 个关键步骤：
 
-- 向应用 UI 添加控件。 
-- 设置控件的属性，如宽度、高度或前景色。 
+- 向应用 UI 添加控件。
+- 设置控件的属性，如宽度、高度或前景色。
 - 将代码添加到控件的事件处理程序，从而使其执行一些任务。 
 
 ## <a name="add-a-control"></a>添加控件
@@ -54,9 +52,9 @@ Visual Studio“工具箱”会显示可在应用中使用的许多控件。 要
 
 还可以将控件从“工具箱”拖动到 XAML 设计器。
 
-## <a name="set-the-name-of-a-control"></a>设置控件的名称 
+## <a name="set-the-name-of-a-control"></a>设置控件的名称
 
-若要在代码中使用某个控件，你可以设置其 [x:Name](../../xaml-platform/x-name-attribute.md) 属性并在代码中通过名称来引用该控件。 你可以在 Visual Studio“属性”窗口或 XAML 中设置名称。 下面是通过使用“属性”窗口顶部的“名称”文本框来设置当前选定控件名称的方法。 
+若要在代码中使用某个控件，你可以设置其 [x:Name](../../xaml-platform/x-name-attribute.md) 属性并在代码中通过名称来引用该控件。 你可以在 Visual Studio“属性”窗口或 XAML 中设置名称。 下面是通过使用“属性”窗口顶部的“名称”文本框来设置当前选定控件名称的方法。
 
 命名控件
 1. 选择要命名的元素。

@@ -7,15 +7,15 @@ ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，应用程序服务
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c0414b7b7e37cf6316504979a70983134f0b18a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015419"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800175"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>将应用服务转换为与其主机应用在同一个进程中运行
 
@@ -42,7 +42,7 @@ ms.locfileid: "1015419"
 >   </Applications>
 > ```
 
-删除`EntryPoint`属性从`<Application>`元素因为现在[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)时调用应用程序服务将使用的入口点。
+删除`EntryPoint`属性从`<Extension>`元素因为现在[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)时调用应用程序服务将使用的入口点。
 
 第二项更改是将服务逻辑从其单独的后台任务项目移动至可从 **OnBackgroundActivated()** 调用的方法。
 

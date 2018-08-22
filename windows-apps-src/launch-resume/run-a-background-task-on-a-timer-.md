@@ -1,0 +1,152 @@
+---
+author: TylerMSFT
+title: 在计时器上运行后台任务
+description: 了解如何计划一次性后台任务，或运行周期性后台任务。
+ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.author: twhitney
+ms.date: 07/06/2018
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10，uwp，背景任务
+ms.localizationpriority: medium
+ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797445"
+---
+# <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
+
+了解如何使用[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)计划一次性背景任务，或运行定期进行后台任务。
+
+请参阅**Scenario4** [背景激活示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)以查看如何在本主题中实现触发的后台任务所述的时间的示例中。
+
+本主题假定您具有背景任务需要定期，或在特定时间运行。 如果您没有背景任务，但没有示例背景任务存储在[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)上。 或者，请按照[创建和注册过程在后台任务](create-and-register-an-inproc-background-task.md)或中[创建和注册的进程外背景任务](create-and-register-a-background-task.md)创建一个步骤。
+
+## <a name="create-a-time-trigger"></a>创建时间触发器
+
+创建新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二个参数 *OneShot* 指定后台任务是仅运行一次还是保持周期性运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，*FreshnessTime* 会指定后台任务的运行频率。
+
+面向桌面或移动设备系列的通用 Windows 平台 (UWP) 应用的内置计时器以 15 分钟的间隔运行后台任务。 （计时器运行在 15 分钟的间隔，以便系统只需要唤醒每 15 分钟一次唤醒应用程序所请求 TimerTriggers-保存电源。）
+
+- 如果 *FreshnessTime* 设置为 15 分钟并且 *OneShot* 为 true，则任务将计划从其注册之时起 15 至 30 分钟内运行一次该任务。 如果设置为 25 分钟并且 *OneShot* 为 true，则任务将计划从其注册之时起 25 至 40 分钟内运行一次该任务。
+
+- 如果 *FreshnessTime* 设置为 15 分钟并且 *OneShot* 为 false，则任务将计划从其注册之时起 15 至 30 分钟内每隔 15 分钟运行一次该任务。 如果设置为 n 分钟并且 *OneShot* 为 false，则任务将计划从其注册之时起 n 至 n + 15 分钟内每隔 n 分钟运行一次该任务。
+
+> [!NOTE]
+> 如果*FreshnessTime*设置为不超过 15 分钟，尝试注册背景任务时，将引发异常。
+ 
+例如，此触发器将导致背景任务运行一次一个小时。
+
+```cs
+TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
+```
+
+```cppwinrt
+Windows::ApplicationModel::Background::TimeTrigger hourlyTrigger{ 60, false };
+```
+
+```cpp
+TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
+```
+
+## <a name="optional-add-a-condition"></a>（可选）添加条件
+
+任务运行时，您可以创建控件的背景任务条件。 条件防止后台任务运行，直到满足的条件。 有关详细信息，请参阅[设置运行背景任务的条件](set-conditions-for-running-a-background-task.md)。
+
+在此示例中，条件设置为 **UserPresent**，以便在触发之后，在用户处于活动状态时才运行一次该任务。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+
+```cs
+SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
+```
+
+```cppwinrt
+Windows::ApplicationModel::Background::SystemCondition userCondition{
+    Windows::ApplicationModel::Background::SystemConditionType::UserPresent };
+```
+
+```cpp
+SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent);
+```
+
+在条件和类型的背景触发器的更多深入信息，请参阅[支持您的应用程序与背景任务](support-your-app-with-background-tasks.md)。
+
+##  <a name="call-requestaccessasync"></a>调用 RequestAccessAsync()
+
+在注册之前**ApplicationTrigger**后台任务，调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)来确定用户允许，因为用户可能已禁用您的应用程序的后台活动的后台活动级别。 请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)的详细信息的方式用户可以控制后台活动的设置。
+
+```cs
+var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
+{
+    // Depending on the value of requestStatus, provide an appropriate response
+    // such as notifying the user which functionality won't work as expected
+}
+```
+
+## <a name="register-the-background-task"></a>注册后台任务
+
+通过调用后台任务注册函数注册后台任务。 注册后台任务，并查看下面的代码示例中的**RegisterBackgroundTask()** 方法的定义的详细信息，请参阅[注册背景任务](register-a-background-task.md)。
+
+> [!IMPORTANT]
+> 背景任务与您的应用程序相同的进程中运行，未设置`entryPoint`。 对于背景任务从您的应用程序在单独的进程中运行，设置`entryPoint`为命名空间，'。，并包含背景任务实现的类的名称。
+
+```cs
+string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+string taskName   = "Example hourly background task";
+
+BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+```
+
+```cppwinrt
+std::wstring entryPoint{ L"Tasks.ExampleBackgroundTaskClass" };
+std::wstring taskName{ L"Example hourly background task" };
+
+Windows::ApplicationModel::Background::BackgroundTaskRegistration task{
+    RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition) };
+```
+
+```cpp
+String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+String ^ taskName   = "Example hourly background task";
+
+BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+```
+
+后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
+
+## <a name="manage-resources-for-your-background-task"></a>管理背景任务的资源
+
+使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。 请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)的详细信息的方式用户可以控制后台活动的设置。
+
+- 内存： 调整您的应用程序的内存和能源使用是确保操作系统将允许您要运行的背景任务关键。 使用的[内存管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)以查看使用后台任务的内存量。 更多内存后台任务使用，以使其在前台另一个应用程序时运行的操作系统是更加复杂。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
+- CPU 时间： 后台任务受到它们获取基于触发器类型时钟使用率时间量的限制。
+
+有关适用于后台任务的资源限制，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+
+## <a name="remarks"></a>备注
+
+从 Windows 10 开始，它不再需要将您的应用程序添加到锁定屏幕上，以便利用后台任务的用户。
+
+后台任务才会运行使用**TimeTrigger** ，如果您必须首先调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 。
+
+## <a name="related-topics"></a>相关主题
+
+* [后台任务指南](guidelines-for-background-tasks.md)
+* [背景任务代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
+* [调试后台任务](debug-a-background-task.md)
+* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [在将应用移动到后台时释放内存](reduce-memory-usage.md)
+* [处理取消的后台任务](handle-a-cancelled-background-task.md)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [使用扩展执行来推迟应用挂起](run-minimized-with-extended-execution.md)
+* [注册后台任务](register-a-background-task.md)
+* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
+* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [使用维护触发器](use-a-maintenance-trigger.md)

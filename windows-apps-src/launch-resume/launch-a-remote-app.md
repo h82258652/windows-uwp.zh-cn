@@ -7,15 +7,15 @@ ms.date: 02/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，连接设备、 远程系统、 rome 和项目 rome
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 146b7e9b642bc196558ce8f1a4da03a70a07a6e8
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658093"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796679"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 

@@ -8,14 +8,14 @@ ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10 uwp、 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 470984ce9f9a3304350a3479a01bc31a403bd8af
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674974"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800311"
 ---
 # <a name="customize-the-print-workflow"></a>自定义打印工作流
 
@@ -221,7 +221,7 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-此外，事件参数公开的 **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** 实例提供了选项来取消打印作业，或指示打印作业成功完成但是无需输出打印作业。 这是通过使用 **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 值调用 **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation#Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedOperation_Complete_Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedStatus_)** 方法完成的。
+此外，事件参数公开的 **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** 实例提供了选项来取消打印作业，或指示打印作业成功完成但是无需输出打印作业。 这是通过使用 **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 值调用 **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** 方法完成的。
 
 > [!NOTE]
 > 如果工作流应用取消打印作业，强烈建议它提供指示取消打印作业原因的 toast 通知。 
@@ -245,9 +245,9 @@ UI 在 **PrintTaskXpsDataAvailable** 事件中完成延迟（或绕过 UI 步骤
 
 ### <a name="set-the-workflow-apps-policy"></a>设置工作流应用的策略
 工作流应用策略通过在要运行工作流应用的设备上的 Powershell 命令设置。 将修改 Set-Printer、Add-Printer（现有端口）和 Add-Printer（新 WSD 端口）命令以允许设置工作流策略。 
-* `Off`：不会激活工作流应用。
-* `Optional`：如果工作流 DCA 已安装在系统中，则将激活工作流应用。 如果未安装该应用，仍将继续进行打印。 
-* `On`：如果工作流 DCA 已安装在系统中，则将激活工作流合同。 如果未安装该应用，打印将失败。 
+* `Disabled`：不会激活工作流应用。
+* `Uninitialized`：如果工作流 DCA 已安装在系统中，则将激活工作流应用。 如果未安装该应用，仍将继续进行打印。 
+* `Enabled`：如果工作流 DCA 已安装在系统中，则将激活工作流合同。 如果未安装该应用，打印将失败。 
 
 以下命令可使工作流应用在指定打印机上成为必需。
 ```Powershell

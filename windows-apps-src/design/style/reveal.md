@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: “展示”是一种灯光效果，有助于重点深入了解应用的交互式元素。
-title: 突出显示
+title: 显示突出显示
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -13,22 +13,24 @@ pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
-ms.localizationpriority: high
-ms.openlocfilehash: b29de0c1d27f852f2292161331401bb185656c17
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816982"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800278"
 ---
-# <a name="reveal-highlight"></a>突出显示
+# <a name="reveal-highlight"></a>显示突出显示
 
-突出显示是当用户在交互式元素（如命令栏）附近移动指针时突出显示这些元素的灯光效果。 
+![主图](images/header-reveal-highlight.svg)
+
+显示突出显示是突出显示交互式元素，例如命令栏，当用户将指针放在其附近的照明效果。 
 
 > **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
-当指针靠近时，突出显示通过显示元素的容器来引起对交互式元素的注意，如此图所示：
+通过显示元素的容器，当指针在附近，如图所示，在此图中显示交互式元素突出显示呼叫注意：
 
 ![显示视觉](images/Nav_Reveal_Animation.gif)
 
@@ -56,7 +58,7 @@ ms.locfileid: "1816982"
 
 ## <a name="how-to-use-it"></a>如何使用
 
-“展示”针对某些控件自动运行。 对于其他控件，你可以通过向控件分配特殊样式来启用“展示”，如本文的[在其他常见控件上启用“展示”](#enabling-reveal-on-other-controls)和[在自定义控件上启用“展示”](#enabling-reveal-on-custom-controls)部分所述。
+“展示”针对某些控件自动运行。 对于其他控件，您可以通过将特殊样式分配给控件，启用 Reveal 这篇文章的[启用显示其他控件](#enabling-reveal-on-other-controls)和[自定义控件上启用显示](#enabling-reveal-on-custom-controls)部分中所述。
 
 ## <a name="controls-that-automatically-use-reveal"></a>自动使用“展示”的控件
 
@@ -67,7 +69,7 @@ ms.locfileid: "1816982"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-这些插图显示几种不同控件的展示效果：
+以下插图显示多个不同的控件上显示突出显示：
 
 ![展示示例](images/RevealExamples_Collage.png)
 
@@ -132,8 +134,8 @@ ms.locfileid: "1816982"
 
 
 这些效果由两个画笔定义： 
-* 边框展示由 **RevealBorderBrush** 定义
-* 悬停展示由 **RevealBackgroundBrush** 定义
+* 边框显示由**RevealBorderBrush**定义
+* 由**RevealBackgroundBrush**定义悬停 Reveal
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -257,17 +259,20 @@ ms.locfileid: "1816982"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>微调自定义控件的“展示”效果 
 
-当你对自定义或重新模板化的控件或自定义命令处理表面启用展示时，这些技巧可帮助你优化此效果：
+自定义或 re 模板控件或自定义命令面上启用 Reveal 时，以下提示可帮助您优化效果：
  
 * 在邻近的未在高度或宽度上对齐（尤其是在列表中）的项目上：删除边框方法行为，并让边框只在悬停时显示。
 * 对于频繁出入禁用状态的命令处理项目：将边框方法画笔放在元素的背板及其边框上，以强调它们的状态。
 * 对于它们接触的非常靠近的邻近命令处理元素：在两个元素之间增加 1px 边距。 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
+### <a name="do"></a>执行操作：
 - 应对用户可以对其执行很多操作的元素使用“展示”（命令栏、导航菜单）
 - 应在默认没有视觉分隔符的交互式元素分组中使用“展示”（列表、功能区）
 - 应在具有高密度交互式元素的区域使用“展示”（命令处理情况）
 - 在“展示”项目之间加入 1px 边距空间
+
+### <a name="dont"></a>禁止事项
 - 不应对静态内容使用“展示”（背景、文本）
 - 不应对弹出窗口、浮出控件或下拉列表使用“展示”
 - 不应在一次性隔离情况中使用“展示”

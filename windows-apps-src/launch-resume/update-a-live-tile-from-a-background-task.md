@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: 使用后台任务更新动态磁贴
-description: 使用后台任务将应用的动态磁贴更新为最新内容。
+description: 使用后台任务，以最新内容更新应用的动态磁贴。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.author: twhitney
@@ -9,14 +9,14 @@ ms.date: 01/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10，uwp，背景任务
 ms.localizationpriority: medium
-ms.openlocfilehash: e4dcfce2e3eba0875968ad52c7c3195c190fcccf
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
-ms.translationtype: HT
+ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2018
-ms.locfileid: "1509174"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799713"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>通过后台任务更新动态磁贴
 
