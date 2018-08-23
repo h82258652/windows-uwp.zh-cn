@@ -3,18 +3,18 @@ author: stevewhims
 description: 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。
 title: XAML 控件; 绑定到 C++/WinRT 属性
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 08/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 367bf5d5d554bd094ce3d5b726b818c8c388d398
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.openlocfilehash: 6343832801926254c64fcefc269ce7fda9ed6dfc
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2787154"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2817504"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>XAML 控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何在 C++/WinRT 中实现可观测属性以及如何将 XAML 控件绑定到这些属性。
@@ -41,24 +41,26 @@ XAML 文本元素或控件可检索更新的值然后将自行更新以显示新
 // BookSku.idl
 namespace Bookstore
 {
-    runtimeclass BookSku : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.INotifyPropertyChanged
+    runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
     {
         String Title;
     }
 }
 ```
 
-> [!IMPORTANT]
-> 要传递[Windows 应用程序证书工具包](../debug-test-perf/windows-app-certification-kit.md)应用程序测试由 Microsoft 存储用于验证提交，因此以在成功 ingested 到 Microsoft 存储区，类的每个运行时*ultimate 基类中并声明应用程序*必须源自 Windows.* 命名空间的类型。
-
-要满足该要求，请从 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject) 派生视图模型类。 或者，声明从 **DependencyObject** 中派生的可绑定基类，然后从该基类派生视图模型。 你可以将数据模型声明为 C++ 结构；它们无需在 MIDL 中进行声明（前提是你仅从视图模型中使用它们，而不是将 XAML 直接绑定到它们；在这种情况下，它们无论如何从定义上讲可以是视图模型）。
+> [!NOTE]
+> 查看模型的类&mdash;实际上，任何您在您的应用程序中声明的运行时类&mdash;不需要一个基类派生。 声明上方的**BookSku**类是该示例。 它实现接口，但它并不从任何基类派生。
+>
+> 应用程序中声明的任何运行时类*执行*从基础派生类称为*可组合*类。 并且没有围绕可组合类的约束。 要通过使用 Visual Studio 和 Microsoft 存储验证提交的[Windows 应用程序证书工具包](../debug-test-perf/windows-app-certification-kit.md)测试应用程序 (因此要成功为 ingested 到 Microsoft 存储的应用程序)，可组合类必须最终从 Windows 基类派生。 这意味着 very 根目录的类继承层次结构的必须源自 Windows.* 命名空间的类型。 如果需要从基类派生的运行时类&mdash;例如，若要实现**BindableBase**类派生从您查看模型的所有&mdash;，然后您可以从[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)派生。
+>
+> 视图模型是视图的抽象，因此它直接绑定到视图 （XAML 标记）。 数据模型是数据的抽象时，它具有消耗只能从您的视图模型，并且未绑定到 XAML 直接。 因此，您可以在不运行时类，但为 c + + 结构或类声明数据模型。 这些人不需要在 MIDL 中, 声明，您可以自由地使用任何您喜欢的继承层次结构。
 
 保存文件并生成项目。 在生成过程中，`midl.exe` 工具会运行以创建描述该运行时类的 Windows 运行时元数据文件 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然后，`cppwinrt.exe` 工具运行以生成源代码文件，从而为你在创作和使用运行时类时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的 **BookSku**运行时类的存根。 这些存根是 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 和 `BookSku.cpp`。
 
 将这些存根文件 `BookSku.h` 和 `BookSku.cpp` 从 `\Bookstore\Bookstore\Generated Files\sources\` 复制到项目文件夹中，即 `\Bookstore\Bookstore\`。 在**解决方案资源管理器**中，确保将**显示所有文件**切换为打开。 右键单击已复制的存根文件，然后单击**包括在项目中**。
 
 ## <a name="implement-booksku"></a>实现 **BookSku**
-现在，让我们打开 `\Bookstore\Bookstore\BookSku.h` 和 `BookSku.cpp` 并实现运行时类。 在 `BookSku.h` 中，添加一个采用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的构造函数、一个用于存储标题字符串的私有成员以及另一个用于标题发生更改时我们将引发的事件的私有成员。 在添加这些内容后， `BookSku.h` 将如下所示。
+现在，让我们打开 `\Bookstore\Bookstore\BookSku.h` 和 `BookSku.cpp` 并实现运行时类。 在 `BookSku.h` 中，添加一个采用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的构造函数、一个用于存储标题字符串的私有成员以及另一个用于标题发生更改时我们将引发的事件的私有成员。 这些更改后您`BookSku.h`将如下所示。
 
 ```cppwinrt
 // BookSku.h
@@ -73,14 +75,14 @@ namespace winrt::Bookstore::implementation
         BookSku() = delete;
         BookSku(winrt::hstring const& title);
 
-        hstring Title();
+        winrt::hstring Title();
         void Title(winrt::hstring const& value);
-        event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value);
+        winrt::event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value);
         void PropertyChanged(winrt::event_token const& token);
     
     private:
-        hstring m_title;
-        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+        winrt::hstring m_title;
+        winrt::event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 ```
@@ -94,14 +96,13 @@ namespace winrt::Bookstore::implementation
 
 namespace winrt::Bookstore::implementation
 {
+    BookSku::BookSku(winrt::hstring const& title) : m_title{ title }
+    {
+    }
+
     hstring BookSku::Title()
     {
         return m_title;
-    }
-
-    BookSku::BookSku(winrt::hstring const& title)
-    {
-        Title(title);
     }
 
     void BookSku::Title(winrt::hstring const& value)
@@ -125,7 +126,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-在**标题**转变器函数中，我们会检查是否将设置不同的值，如果是，我们将更新标题并且引发 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，其中包含一个等于已更改的属性的名称的参数。 这样，用户界面 (UI) 将知道要重新查询的属性的值。
+在**标题**转变器函数中，我们检查是否设置了某个值正在以外的当前值。 和，如果是这样，我们更新标题也引发等于已更改属性的名称的参数的[**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)事件。 这样，用户界面 (UI) 将知道要重新查询的属性的值。
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>声明并实现 **BookstoreViewModel**
 主 XAML 页面将绑定到主视图模型。 而且该视图模型将有多个属性，包括其中一个类型 **BookSku**。 在此步骤中，我们将声明并实现主视图模型运行时类。
@@ -138,14 +139,14 @@ import "BookSku.idl";
 
 namespace Bookstore
 {
-    runtimeclass BookstoreViewModel : Windows.UI.Xaml.DependencyObject
+    runtimeclass BookstoreViewModel
     {
         BookSku BookSku{ get; };
     }
 }
 ```
 
-保存并生成。 将 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 从 `Generated Files` 文件夹复制到项目文件夹中，然后将其包含在项目中。 打开这些文件并实现与此类似的运行时类。
+保存并生成。 将 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 从 `Generated Files` 文件夹复制到项目文件夹中，然后将其包含在项目中。 打开这些文件并实现运行时类，如下所示。 注意如何，在`BookstoreViewModel.h`，我们正在包括`BookSku.h`，其声明的实现类型 (**winrt::Bookstore::implementation::BookSku**)。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -156,9 +157,10 @@ namespace Bookstore
 
 namespace winrt::Bookstore::implementation
 {
-    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
+    struct BookstoreViewModel final : BookstoreViewModelT<BookstoreViewModel>
     {
         BookstoreViewModel();
+
         Bookstore::BookSku BookSku();
 
     private:
@@ -190,7 +192,7 @@ namespace winrt::Bookstore::implementation
 > `m_bookSku` 的类型是投影类型 (**winrt::Bookstore::BookSku**)，而且你用于 **make** 的模板参数是实现类型 (**winrt::Bookstore::implementation::BookSku**)。 即使如此，**make** 也会返回投影类型的实例。
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>将类型 **BookstoreViewModel** 的属性添加到 **MainPage**
-打开 `MainPage.idl`，这将声明表示主 UI 页面的运行时类。 添加导入语句以导入 `BookstoreViewModel.idl`，然后添加名为类型 **BookstoreViewModel** 的 MainViewModel 的只读属性。 此外删除**MyProperty**属性。 另请注意下面的列表中的**导入**指令。
+打开 `MainPage.idl`，这将声明表示主 UI 页面的运行时类。 添加导入语句以导入 `BookstoreViewModel.idl`，然后添加名为类型 **BookstoreViewModel** 的 MainViewModel 的只读属性。 此外删除**MyProperty**属性。 还要注意`import`指令下面的列表中。
 
 ```idl
 // MainPage.idl
@@ -210,12 +212,14 @@ namespace Bookstore
 
 如果省略的包括`BookstoreViewModel.idl`(的列表，请参阅`MainPage.idl`上方)，然后您将看到错误**预期 \ < near"MainViewModel"**。 另一个提示是确保保留所有类型中的同一命名空间： 所示的代码清单的命名空间。
 
-若要解决我们期望看到此错误，您现在需要复制超出生成的文件和到**MainViewModel**属性的取值存根`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
+若要解决我们期望看到此错误，您现在需要复制超出生成的文件的**MainViewModel**属性的取值存根 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 和到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
 
-对于 `\Bookstore\Bookstore\MainPage.h`，添加私有成员以存储视图模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 该实现类型位于同一项目（编译单元）中，因此，我们通过采用 `nullptr_t` 的构造函数重载构造 m_mainViewModel。 此外删除**MyProperty**属性。
+在`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其声明的实现类型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 添加一个私有成员以存储视图模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 实现类型是同一项目 （编译单元） 中为该应用程序，因此我们构造通过所需的构造函数重载 m_mainViewModel `nullptr_t`。 此外删除**MyProperty**属性。
 
 ```cppwinrt
 // MainPage.h
+...
+#include "BookstoreViewModel.h"
 ...
 namespace winrt::Bookstore::implementation
 {
@@ -225,7 +229,7 @@ namespace winrt::Bookstore::implementation
 
         Bookstore::BookstoreViewModel MainViewModel();
 
-        void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
+        void ClickHandler(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
 
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
@@ -234,13 +238,12 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-在 `\Bookstore\Bookstore\MainPage.cpp` 中，包含 `BookstoreViewModel.h`，这将声明该实现类型。 调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)（具有该实现类型）以将投影类型的新实例分配到 m_mainViewModel。 为书籍的标题分配一个初始值。 针对 MainViewModel 属性实现访问器。 最后，在按钮的事件处理程序中更新书籍的标题。 此外删除**MyProperty**属性。
+在`\Bookstore\Bookstore\MainPage.cpp`，呼叫 （带有实现类型） [**winrt::make**](/uwp/cpp-ref-for-winrt/make) m_mainViewModel 中分配的计划类型的新实例。 为书籍的标题分配一个初始值。 针对 MainViewModel 属性实现访问器。 最后，在按钮的事件处理程序中更新书籍的标题。 此外删除**MyProperty**属性。
 
 ```cppwinrt
 // MainPage.cpp
 #include "pch.h"
 #include "MainPage.h"
-#include "BookstoreViewModel.h"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -253,7 +256,7 @@ namespace winrt::Bookstore::implementation
         InitializeComponent();
     }
 
-    void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+    void MainPage::ClickHandler(Windows::Foundation::IInspectable const& /* sender */, Windows::UI::Xaml::RoutedEventArgs const& /* args */)
     {
         MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
     }
@@ -266,7 +269,7 @@ namespace winrt::Bookstore::implementation
 ```
 
 ## <a name="bind-the-button-to-the-title-property"></a>将按钮绑定到**标题**属性
-打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 从按钮中删除名称，然后将其**内容**属性值从文字更改为绑定表达式。 记下绑定表达式上的 `Mode=OneWay` 属性（单向从视图模型到 UI）。 没有该属性，UI 将不会响应属性更改事件。
+打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 下面的列表中所示，从按钮，删除名称，并将其**内容**的属性值从文本更改为绑定表达式。 记下绑定表达式上的 `Mode=OneWay` 属性（单向从视图模型到 UI）。 没有该属性，UI 将不会响应属性更改事件。
 
 ```xaml
 <Button Click="ClickHandler" Content="{x:Bind MainViewModel.BookSku.Title, Mode=OneWay}"/>
