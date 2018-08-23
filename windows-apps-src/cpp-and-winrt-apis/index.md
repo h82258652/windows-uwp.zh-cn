@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: c9aaca0194f57c244bca0d6cb8ccf08e5e4eafda
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.openlocfilehash: 165800f76e78bc9de15e5294a81672d3968b241e
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788712"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2810602"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 利用 C++/WinRT，你可以采用任何符合标准的 C++17 编译器创作和使用 Windows 运行时 API。 Windows SDK 包含 C++/WinRT；它已在版本 10.0.17134.0（Windows 10，版本 1803）中引用。
@@ -29,7 +29,7 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 
 从语言的角度来说，C++ 一直专注于创作和使用类型丰富且轻量的抽象。 但是，由于原始的指针、原始的循环、耗时耗力的内存分配以及 C++98 的发布，该语言已经发生了根本性的改变。 新式 C++（从 C++11 起）可以清楚地表达想法，具有简便性和可读性并且引入 bug 可能性低得多。
 
-对于创作和使用采用 C++ 的 Windows 运行时 API，没有 C++/WinRT。 这是 Microsoft 推荐的 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live) 和 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 的替代品。
+对于创作和使用采用 C++ 的 Windows 运行时 API，没有 C++/WinRT。 这是 Microsoft 的建议的替换[C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)语言投影和[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。
 
 当采用 C++/WinRT 时，你将使用标准 C++ 数据类型、算法和关键字。 投影确实有自己的自定义数据类型，但在大多数情况下，你无需了解它们，因为它们将提供到/自标准类型的相应转换。 这样，你就可以继续使用已用惯的标准 C++ 语言功能和已拥有的源代码。 C++/WinRT 使得在任何 C++ 应用程序（从 Win32 到 UWP）中调用 Windows 运行时 API 变得轻而易举。
 

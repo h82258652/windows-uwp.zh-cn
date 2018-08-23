@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10 uwp、 标准、 c + +、 cpp、 winrt、 投影、 移动、 转接、 值类别、 移动语义，完全转发、 左值、 rvalue、 glvalue、 prvalue，xvalue
 ms.localizationpriority: medium
 ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2796944"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814669"
 ---
 # <a name="value-categories-and-references-to-them"></a>值类别，并对它们的引用
 本主题介绍 c + + 中存在的各种类别的值 （和引用值）。 您将肯定听说过*左值*和*rvalues*，但您可能不认为它们在本主题提供的条款。 和太有其他类型的值。

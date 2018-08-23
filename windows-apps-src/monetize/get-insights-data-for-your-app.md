@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10 uwp、 存储服务、 Microsoft 存储分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2792063"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814579"
 ---
 # <a name="get-insights-data"></a>获取见解数据
 
