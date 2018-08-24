@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a4bba1efb52dc3b25b12c3891d9472f44729c85
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818267"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831119"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -167,14 +167,13 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="key-apis"></a>关键 API
 
-* [UserActivity 命名空间](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities 命名空间](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## <a name="related-topics"></a>相关主题
 
-* [自适应卡片](https://docs.microsoft.com/en-us/adaptive-cards/)
+* [用户活动 （项目 Rome 文档）](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [自适应卡片](https://docs.microsoft.com/adaptive-cards/)
 * [自适应卡片可视化工具，示例](http://adaptivecards.io/)
 * [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、活动源和自适应卡片在任何平台上与客户互动](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)
-* [GitHub 上的 Project Rome](https://github.com/microsoft/project-rome)
-* [Windows 开发人员中心上的 Project Rome](https://aka.ms/projectrome)

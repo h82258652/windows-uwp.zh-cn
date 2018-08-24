@@ -10,15 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98908855acbc341c14464881aeb058a331e7b2a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691206"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831604"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
-
 
 通过使用适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。 该仿真器是一个桌面应用程序，它可以模拟运行 Windows 10 的移动设备。 它提供了一个虚拟环境，你可以在其中调试并测试 Windows App，而无需使用物理设备。 它还为你的应用程序原型提供了隔离的环境。
 
@@ -30,9 +29,9 @@ ms.locfileid: "1691206"
 
 你的计算机必须满足以下要求：
 
-BIOS
+CPU （这些设置，如果可用，可以在启用 BIOS）
 
--   硬件辅助虚拟化。
+-   硬件辅助虚拟化 （[检查兼容性](https://www.microsoft.com/download/details.aspx?id=592)）。
 -   二级地址转换 (SLAT)。
 -   基于硬件的数据执行保护 (DEP)。
 
@@ -50,23 +49,28 @@ RAM
 
 若要查看 RAM 和操作系统的要求，请在“控制面板”中选择“系统和安全”****，然后选择“系统”****。
 
-适用于 Windows 10 移动版的 Microsoft 模拟器要求使用 Visual Studio 2015；它不与早期版本的 Visual Studio 反向兼容。
+Windows 10 Mobile 的 Microsoft 仿真器需要 Visual Studio 2015 或更高版本;不与早期版本的 Visual Studio 的向后兼容。
 
 适用于 Windows 10 移动版的 Microsoft 模拟器无法加载面向 Windows Phone OS 7.1 之前的 Windows Phone 操作系统版本的应用。
 
-## <a name="installing-and-uninstalling"></a>安装和卸载
+## <a name="installing-uninstalling-and-running-the-emulator"></a>安装、 卸载和运行仿真器
 
--   **安装**。
+### <a name="installing"></a>安装
+适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可作为 Visual Studio 安装的一部分进行安装。 请参阅 [Visual Studio 下载页](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
 
-    适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可作为 Visual Studio 安装的一部分进行安装。 请参阅 [Visual Studio 下载页](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
+你还可以使用 [Microsoft 模拟器安装程序](https://go.microsoft.com/fwlink/p/?LinkID=615095)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
 
-    你还可以使用 [Microsoft 模拟器安装程序](https://go.microsoft.com/fwlink/p/?LinkID=615095)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
+### <a name="uninstalling"></a>卸载
 
--   **卸载**。
+你可以使用 Visual Studio 安装程序/修复程序来卸载适用于 Windows 10 移动版的 Microsoft 模拟器。 或者，你也可以使用“控制面板”**** 下的“程序和功能”**** 删除该仿真器。
 
-    你可以使用 Visual Studio 安装程序/修复程序来卸载适用于 Windows 10 移动版的 Microsoft 模拟器。 或者，你也可以使用“控制面板”**** 下的“程序和功能”**** 删除该仿真器。
+当卸载适用于 Windows 10 移动版的 Microsoft 模拟器时，为供该模拟器使用而创建的 Hyper-V 虚拟以太网适配器不会自动删除。 你可以从“控制面板”**** 的“网络连接”**** 中手动删除此虚拟适配器。
 
-    当卸载适用于 Windows 10 移动版的 Microsoft 模拟器时，为供该模拟器使用而创建的 Hyper-V 虚拟以太网适配器不会自动删除。 你可以从“控制面板”**** 的“网络连接”**** 中手动删除此虚拟适配器。
+### <a name="running"></a>Running
+
+要在仿真程序中运行应用程序，只需从 Visual Studio 中的**运行**下拉列表菜单中选择的模拟的设备。
+
+![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 
 ## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>适用于 Windows 10 移动版的 Microsoft 模拟器的新增功能
 
@@ -82,7 +86,7 @@ RAM
 
 -   **屏幕分辨率、屏幕大小和内存**。 通过在各种模拟器图像上测试应用，模拟各种屏幕分辨率、物理大小和内存限制，从而将应用扩展到更广泛的市场。
 
-    ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
+![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 
 -   **屏幕配置**。 将模拟器从纵向模式更改为横向模式。 更改缩放设置以使模拟器适合你的桌面屏幕。
 

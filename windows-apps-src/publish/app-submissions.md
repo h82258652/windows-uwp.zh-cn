@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1e647931b6e7680fb65ddcf200bf2a74be716a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815019"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2832023"
 ---
 # <a name="app-submissions"></a>应用提交
 
@@ -113,7 +113,7 @@ ms.locfileid: "2815019"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **发布暂停选项**     | 默认：通过认证后立即发布此提交（或按照计划部分中选择的日期发布）      | [发布暂停选项](manage-submission-options.md#publishing-hold-options)    
 | **认证说明**     | 推荐          | [认证说明](notes-for-certification.md)             |
-| **受限功能**     | 如果您的产品声明任何 [受限的功能] 所需 (.../packaging/app-capability-declarations.md#restricted-capabilities    | [受限功能](manage-submission-options.md#publishing-hold-options)       
+| **受限功能**     | 如果您的产品声明任何[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 
