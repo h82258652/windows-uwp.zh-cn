@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10 uwp、 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: fe4086cc87699083304594eb4ccc8e7bb137b19f
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2834019"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867296"
 ---
 # <a name="customize-the-print-preview-ui"></a>自定义打印预览 UI
 
