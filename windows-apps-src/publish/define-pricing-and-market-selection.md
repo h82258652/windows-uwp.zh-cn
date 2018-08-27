@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2835114"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867756"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
