@@ -137,13 +137,7 @@
 ### [文件访问权限](../files/file-access-permissions.md)
 ### [快速访问 UWP 中的文件属性](../files/fast-file-properties.md)
 
-## [机器学习](../machine-learning/index.md)
-### [概述](../machine-learning/overview.md)
-### [入门](../machine-learning/get-started.md)
-### [为模型定型](../machine-learning/train-ai-model.md)
-### [转换模型](../machine-learning/conversion-samples.md)
-### [集成模型](../machine-learning/integrate-model.md)
-### [示例应用](../machine-learning/samples.md)
+## [机器学习](https://docs.microsoft.com/windows/ai/)
 
 # 部署
 
@@ -250,6 +244,7 @@
 ####### [获取加载项购置](../monetize/get-in-app-acquisitions.md)
 ####### [获取订阅加载项购置](../monetize/get-subscription-acquisitions.md)
 ####### [通过通道获取加载项转换](../monetize/get-add-on-conversions-by-channel.md)
+###### [获取应用的见解数据](../monetize/get-insights-data-for-your-app.md)
 ###### [获取应用评分](../monetize/get-app-ratings.md)
 ###### [获取应用评价](../monetize/get-app-reviews.md)
 ###### [获取错误报告数据](../monetize/get-error-reporting-data.md)
@@ -260,6 +255,7 @@
 ###### [获取广告活动效果数据](../monetize/get-ad-campaign-performance-data.md)
 ##### 桌面应用
 ###### [获取桌面应用程序安装](../monetize/get-desktop-app-installs.md)
+###### [获取桌面应用程序的见解数据](../monetize/get-insights-data-for-your-desktop-app.md)
 ###### [获取桌面应用程序的升级块](../monetize/get-desktop-block-data.md)
 ###### [获取桌面应用程序的升级块详情](../monetize/get-desktop-block-data-details.md)
 ###### [获取桌面应用程序的错误报告数据](../monetize/get-desktop-application-error-reporting-data.md)
@@ -275,16 +271,6 @@
 ####### [获取 Xbox Live 中心数据](../monetize/get-xbox-live-club-data.md)
 ####### [获取 Xbox Live 多人游戏数据](../monetize/get-xbox-live-multiplayer-data.md)
 ####### [获取 Xbox Live 并发使用情况数据](../monetize/get-xbox-live-concurrent-usage-data.md)
-##### 驱动程序和硬件
-###### [获取 Windows 10 驱动程序的错误报告数据](../monetize/get-error-reporting-data-for-windows-10-drivers.md)
-####### [获取 Windows 10 驱动程序错误的详细信息](../monetize/get-details-for-a-windows-10-driver-error.md)
-####### [下载 Windows 10 驱动程序错误的 CAB 文件](../monetize/download-the-cab-file-for-a-windows-10-driver-error.md)
-###### [获取 Windows 7 和 Windows 8.x 驱动程序的错误报告数据](../monetize/get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)
-####### [获取 Windows 7 或 Windows 8.x 驱动程序错误的详细信息](../monetize/get-details-for-a-windows-7-or-windows-8.x-driver-error.md)
-####### [下载 Windows 7 或 Windows 8.x 驱动程序错误的 CAB 文件](../monetize/download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)
-###### [获取 OEM 硬件的错误报告数据](../monetize/get-oem-hardware-error-reporting-data.md)
-####### [获取 OEM 硬件错误的详细信息](../monetize/get-details-for-an-oem-hardware-error.md)
-####### [下载 OEM 硬件错误的 CAB 文件](../monetize/download-the-cab-file-for-an-oem-hardware-error.md)
 #### [回复评论](../monetize/respond-to-reviews-using-windows-store-services.md)
 ##### [获取评价的回复信息](../monetize/get-response-info-for-app-reviews.md)
 ##### [提交评价回复](../monetize/submit-responses-to-app-reviews.md)
@@ -404,13 +390,17 @@
 ### [创作事件](../cpp-and-winrt-apis/author-events.md)
 ### [并发和异步操作](../cpp-and-winrt-apis/concurrency.md)
 ### [XAML 控件; 绑定到 C++/WinRT 属性](../cpp-and-winrt-apis/binding-property.md)
-### [XAML 项目控件; 绑定到 C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)
+### [XAML 项目控件；绑定到 C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)
+### [XAML 自定义（模板化）控件与 C++/WinRT](../cpp-and-winrt-apis/xaml-cust-ctrl.md)
+### [通过 C++/WinRT 使用 DirectX 和其他 COM API](../cpp-and-winrt-apis/consume-com.md)
 ### [实现 C++/WinRT 与 C++/CX 之间的互操作](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ### [从 C++/CX 移动到 C++/WinRT](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
 ### [实现 C++/WinRT 与 ABI 之间的互操作](../cpp-and-winrt-apis/interop-winrt-abi.md)
 ### [从 WRL 移动到 C++/WinRT](../cpp-and-winrt-apis/move-to-winrt-from-wrl.md)
 ### [弱引用](../cpp-and-winrt-apis/weak-references.md)
 ### [敏捷对象](../cpp-and-winrt-apis/agile-objects.md)
+### C++ 语言
+#### [值类别和引用](../cpp-and-winrt-apis/cpp-value-categories.md)
 
 ## [安全性](../security/index.md)
 ### [安全 Windows 应用开发简介](../security/intro-to-secure-windows-app-development.md)
@@ -724,62 +714,3 @@
 ### [向线程池提交工作项](../threading-async/submit-a-work-item-to-the-thread-pool.md)
 ### [使用计时器提交工作项](../threading-async/use-a-timer-to-submit-a-work-item.md)
 ### [在多线程环境中使用 Windows 运行时对象](../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
