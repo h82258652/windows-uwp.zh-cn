@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Microsoft 存储分析 API 中使用此方法来为桌面应用程序获取见解数据。
-title: 桌面应用程序获取见解数据
+title: 获取桌面应用程序的见解数据
 ms.author: mcleans
 ms.date: 07/31/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10 uwp、 存储服务、 Microsoft 存储分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2857752"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882983"
 ---
-# <a name="get-insights-data-for-your-desktop-application"></a>桌面应用程序获取见解数据
+# <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 
 使用 Microsoft 存储分析 API 中的此方法获取见解数据相关的已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标。 此数据也是针对 Windows 开发人员中心仪表板中的桌面应用程序的[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中提供的。
 

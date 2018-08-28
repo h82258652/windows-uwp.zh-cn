@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cded1be4bd7ca5044a2eee8832545a8d83ee3d4
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2855828"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882590"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 利用 C++/WinRT，你可以采用任何符合标准的 C++17 编译器创作和使用 Windows 运行时 API。 Windows SDK 包含 C++/WinRT；它已在版本 10.0.17134.0（Windows 10，版本 1803）中引用。
@@ -56,8 +56,8 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 | [并发和异步操作](concurrency.md) | 本主题介绍你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。 |
 | [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
 | [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
-| [XAML 自定义 （模板） 控件与 C + + / WinRT](xaml-cust-ctrl.md) | 本主题将引导您完成步骤创建一个简单的自定义控件，使用 C + + / WinRT。 您可以生成 info 此处创建您自己的功能的富客户端和可自定义 UI 控件上。 |
-| [使用 DirectX 和其他 COM Api 与 C + + / WinRT](consume-com.md) | 本主题使用完整的 Direct2D 代码示例演示如何使用 C + + / WinRT 以使用 COM 类和接口。 |
+| [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题将引导您完成步骤创建一个简单的自定义控件，使用 C + + / WinRT。 您可以生成 info 此处创建您自己的功能的富客户端和可自定义 UI 控件上。 |
+| [通过 C++/WinRT 使用 DirectX 和其他 COM API](consume-com.md) | 本主题使用完整的 Direct2D 代码示例演示如何使用 C + + / WinRT 以使用 COM 类和接口。 |
 | [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 |
 | [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
 | [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 |
