@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: f36facd8ba89fbaccb7c61ad937c2ce005922aa8
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867926"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2886246"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -86,7 +86,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | 购置、转换和安装 |  <ul><li>[获取应用购置](get-app-acquisitions.md)</li><li>[获取应用购置漏斗数据](get-acquisition-funnel-data.md)</li><li>[通过通道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取加载项购置](get-in-app-acquisitions.md)</li><li>[获取订阅加载项购置](get-subscription-acquisitions.md)</li><li>[通过通道获取加载项转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li></ul> |
 | 应用错误 | <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下载应用中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| 见解 | <ul><li>[您的应用程序获取见解数据](get-insights-data-for-your-app.md)</li></ul>  |
+| 见解 | <ul><li>[获取应用的见解数据](get-insights-data-for-your-app.md)</li></ul>  |
 | 评分和评价 | <ul><li>[获取应用评分](get-app-ratings.md)</li><li>[获取应用评价](get-app-reviews.md)</li></ul> |
 | 应用内广告和广告活动 | <ul><li>[获取广告性能数据](get-ad-performance-data.md)</li><li>[获取广告活动性能数据](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -99,7 +99,7 @@ grant_type=client_credentials
 | 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
 | 基块 |  <ul><li>[获取桌面应用程序的升级块](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详情](get-desktop-block-data-details.md)</li></ul> |
 | 应用程序错误 |  <ul><li>[获取桌面应用程序的错误报告数据](get-desktop-application-error-reporting-data.md)</li><li>[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)</li><li>[获取桌面应用程序中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下载桌面应用程序中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| 见解 | <ul><li>[桌面应用程序获取见解数据](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| 见解 | <ul><li>[获取桌面应用程序的见解数据](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>适用于 Xbox Live 服务的方法
 

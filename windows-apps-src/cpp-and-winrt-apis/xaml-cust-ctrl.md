@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: 本主题将引导您完成步骤创建一个简单的自定义控件，使用 C + + / WinRT。 您可以生成 info 此处创建您自己的功能的富客户端和可自定义 UI 控件上。
-title: XAML 自定义 （模板） 控件与 C + + / WinRT
+title: XAML 自定义（模板化）控件与 C++/WinRT
 ms.author: stwhi
 ms.date: 08/01/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10 uwp、 标准、 c + +、 cpp、 winrt、 投影，XAML，自定义的模板化控件
 ms.localizationpriority: medium
 ms.openlocfilehash: c108175c66d27b2cdbd910a0f7653ca1befb68e9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2856967"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2885561"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 XAML 自定义 （模板） 控件[C + + / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 

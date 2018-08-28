@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9ff43ac0a3aa4fb0dfdc3353029b60dbf442459
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2865186"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2884330"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -92,7 +92,7 @@ ms.locfileid: "2865186"
 如果您的应用程序声明任何受限的功能，您必须以批准发布到 Microsoft 存储的应用程序[的应用程序提交过程](../publish/app-submissions.md)中提供信息。 您提供此信息在您提交的[提交选项](../publish/manage-submission-options.md#restricted-capabilities)页上解释您的应用程序如何使用它声明每个功能受到限制。
 
 > [!IMPORTANT]
-> 受限的功能被适用于非常特定的方案。 这些功能的使用受严格限制，且受 Microsoft Store 的其他上架政策和评审的约束。 请注意，您可以接收任何审批无须声明受限的功能的 sideload 应用程序。 只有在将此类应用提交到 Microsoft Store 时才需要获得批准。 
+> 受限的功能被适用于非常特定的方案。 这些功能的使用受严格限制，且受 Microsoft Store 的其他上架政策和评审的约束。 请注意，您可以接收任何审批无须声明受限的功能的 sideload 应用程序。 只有在将此类应用提交到 Microsoft Store 时才需要获得批准。
 
 确保未声明这些受到限制功能，除非您的应用程序确实需要它们。 在某些情况下，这些功能是必需的或适宜的，如在使用双因素身份验证开展银行业务时，用户提供带数字签名的智能卡确认其身份。 其他应用可能主要针对企业客户而设计，并可能需要访问一些必须使用用户的域凭据才能访问的企业资源。
 
@@ -119,9 +119,9 @@ ms.locfileid: "2865186"
 
 以前，你需要联系支持部门来获得使用某项功能的批准。 现在，你可以在开发人员中心仪表板中作为[提交过程](../publish/app-submissions.md)的一部分提供该信息。
 
-当您的提交上载包时，我们将检测任何受限的功能是否在声明。 如果我们检测到声明了此类功能，则你需要在[提交选项](../publish/manage-submission-options.md#restricted-capabilities)页面上提供有关你的产品如何使用每项功能的详细信息。 请务必提供尽可能详细的信息，以帮助我们了解你的产品需要声明该功能的原因。 请注意，这可能会给你的提交增加一些额外的时间来完成认证过程。 
+当您的提交上载包时，我们将检测任何受限的功能是否在声明。 如果我们检测到声明了此类功能，则你需要在[提交选项](../publish/manage-submission-options.md#restricted-capabilities)页面上提供有关你的产品如何使用每项功能的详细信息。 请务必提供尽可能详细的信息，以帮助我们了解你的产品需要声明该功能的原因。 请注意，这可能会给你的提交增加一些额外的时间来完成认证过程。
 
-在认证过程中，我们的测试人员将审核你提供的信息，以确定是否批准你的提交使用该功能。 请注意，这可能会给你的提交增加一些额外的时间来完成认证过程。 如果我们批准你使用该功能，你的应用将继续进行认证过程的其余部分。 你向应用提交更新时，通常不必重复功能审批流程（除非你声明了其他功能）。 
+在认证过程中，我们的测试人员将审核你提供的信息，以确定是否批准你的提交使用该功能。 请注意，这可能会给你的提交增加一些额外的时间来完成认证过程。 如果我们批准你使用该功能，你的应用将继续进行认证过程的其余部分。 你向应用提交更新时，通常不必重复功能审批流程（除非你声明了其他功能）。
 
 如果我们不批准你使用该功能，你的提交将无法通过认证，我们将在认证报告中提供反馈。 然后，你可以选择创建新的提交并上传未声明该功能的程序包，或者在适用情况下解决与使用该功能有关的任何问题，然后在新提交中申请批准。
 
@@ -134,14 +134,14 @@ ms.locfileid: "2865186"
 
 ### <a name="restricted-capability-list"></a>受限的功能列表
 
-下表列出了受限制的功能。 你可以按照上述过程为你提交到 Microsoft Store 的应用中的此类功能申请批准。 
+下表列出了受限制的功能。 你可以按照上述过程为你提交到 Microsoft Store 的应用中的此类功能申请批准。
 
 > [!IMPORTANT]
-> 在这些受限功能中，有一些功能只在极其特殊和有限的情况下才获准在提交到 Microsoft Store 的应用中使用。 这些功能在下表中做了特殊标注。 如果你打算通过 Microsoft Store 分发你的应用，我们建议你不要在应用中声明这些功能。 
+> 在这些受限功能中，有一些功能只在极其特殊和有限的情况下才获准在提交到 Microsoft Store 的应用中使用。 这些功能在下表中做了特殊标注。 如果你打算通过 Microsoft Store 分发你的应用，我们建议你不要在应用中声明这些功能。
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
-| **企业** | Windows 域凭据支持用户使用其凭据登录远程资源，其原理类似于用户已提供其用户名和密码。 **EnterpriseAuthentication**功能通常用于连接到企业中的服务器的业务线应用程序中。 <br /><br />对于一般的 Internet 通信，无需使用此功能。<br /><br />**EnterpriseAuthentication**功能旨在支持常见业务线应用程序。 不要在无需访问公司资源的应用中声明此功能。 [**文件选取器**](https://msdn.microsoft.com/library/windows/apps/BR207847)提供了一种强大的 UI 机制，让用户可以打开网络共享中要通过某个应用处理的文件。 仅当您的应用程序方案需要编程访问权限，并且不能实现它们通过使用**文件选取器**时，请声明**enterpriseAuthentication**功能。<br /><br />当在应用的程序包清单中声明 **enterpriseAuthentication** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**enterpriseDataPolicy** 功能允许应用为设备定义和使用特定于企业的策略。 若要使用以下类的所有成员，此功能是必需的。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
+| **企业** | Windows 域凭据支持用户使用其凭据登录远程资源，其原理类似于用户已提供其用户名和密码。 **EnterpriseAuthentication**功能通常用于连接到企业中的服务器的业务线应用程序中。 <br /><br />对于一般的 Internet 通信，无需使用此功能。<br /><br />**EnterpriseAuthentication**功能旨在支持常见业务线应用程序。 不要在无需访问公司资源的应用中声明此功能。 [**文件选取器**](https://msdn.microsoft.com/library/windows/apps/BR207847)提供了一种强大的 UI 机制，让用户可以打开网络共享中要通过某个应用处理的文件。 仅当您的应用程序方案需要编程访问权限，并且不能实现它们通过使用**文件选取器**时，请声明**enterpriseAuthentication**功能。<br /><br />当在应用的程序包清单中声明 **enterpriseAuthentication** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**EnterpriseDataPolicy**功能允许单独处理企业数据的应用程序和安全应用程序管理与 Windows 的信息保护策略 (例如： 移动设备管理和移动应用程序管理系统)。  声明功能受到限制，如下所示。 <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />若要使用以下类的所有成员，此功能是必需的。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
 | **共享用户证书** | **SharedUserCertificates**功能允许应用程序添加和访问软件和中共享用户的基于硬件的证书存储，如存储在智能卡证书。 此功能通常用于需要智能卡来进行身份验证的财经或企业应用。<br /><br />当在应用的程序包清单中声明 **sharedUserCertificates** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**文档**\* | **DocumentsLibrary**功能提供给用户的文档，筛选为声明在程序包清单中，以支持脱机访问 OneDrive 的文件类型关联的编程访问。 例如，如果某个 DOC 阅读器应用仅声明了一个 .doc 文件类型关联，则它可以打开文档中的 .doc 文件，却无法打开其他类型的文件。 <br /><br />声明**documentsLibrary**功能的应用程序无法访问住宅组计算机上的文档。 [文件选取器](https://msdn.microsoft.com/library/windows/apps/Hh465174)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当您不能使用文件选取器声明**documentsLibrary**功能。<br /><br />若要使用的**documentsLibrary**功能，应用程序必须：<ul><li>使用有效的 OneDrive URL 或资源 ID 促进跨平台脱机访问特定 OneDrive 内容</li><li>在脱机时将打开的文件自动保存到用户的 OneDrive</li></ul>也可以选择**documentsLibrary**功能用于以下两种用途的应用程序可能使用功能打开另一个文档中嵌入的内容。 接受仅**documentsLibrary**功能上面使用。<ul><li>你的应用无法访问手机的内部存储中的文档库。 但是，如果另一个应用在可选 SD 卡上创建“文档”文件夹，你的应用可以看到该文件夹。</li></ul>当在应用的程序包清单中声明 **documentsLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **游戏 DVR 设置** | **appCaptureSettings** 受限功能允许应用控制游戏 DVR 的用户设置。<br /><br />若要使用 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 命名空间中的某些 API，则需要该功能。 <br /><br />我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。  |
