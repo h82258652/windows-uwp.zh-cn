@@ -370,7 +370,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>瑞典 *</td>
     <td>瑞士 *</td>
-    <td>台湾 *</td>
+    <td>Taiwan *</td>
     <td>塔吉克斯坦</td>
   </tr>
   <tr>
