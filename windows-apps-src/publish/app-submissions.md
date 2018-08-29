@@ -11,23 +11,23 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888426"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913627"
 ---
 # <a name="app-submissions"></a>应用提交
 
 
 [通过保留名称创建应用](create-your-app-by-reserving-a-name.md)后，你可以开始着手其发布工作。 第一步是创建**提交**。
 
-你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存您对您提交的更新，因此您可以回来和处理对其，只要您已准备好。
+你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，以便你可以回来，并在其上工作，只要你准备就绪。
 
 > [!NOTE]
-> 您必须具有才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft 应用商店的应用程序的[开发人员帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
+> 你必须拥有[开发人员帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft 应用商店的应用。
 
-发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要为已发布的应用创建新的提交，请单击“应用概述”页面上显示的最近提交旁边的**更新**。 您可以[删除应用程序存储区中的](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果您需要时才这样 （，然后将其可用以后，如果需要）。
+发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要为已发布的应用创建新的提交，请单击“应用概述”页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （并让其可再次更高版本，如果你想要）。
 
 > [!NOTE]
 > 此部分文档介绍如何在开发人员中心仪表板上创建应用提交。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行应用提交。
@@ -36,7 +36,7 @@ ms.locfileid: "2888426"
 
 以下是你在创建应用提交时可以提供的详细信息，其中包含指向更多信息的链接。
 
-下面标出了你需要提供或指定的项目。 某些区域是可选的，或已提供你可以按需更改的默认值。 您无需进行这几节此处列出的顺序。
+下面标出了你需要提供或指定的项目。 某些区域是可选的，或已提供你可以按需更改的默认值。 你无需在此处列出的顺序这些部分上工作。
 
 ### <a name="pricing-and-availability-page"></a>定价和可用性页面
 | 字段名称                    | 注意                                       | 有关详细信息                                                             |
@@ -113,7 +113,7 @@ ms.locfileid: "2888426"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **发布暂停选项**     | 默认：通过认证后立即发布此提交（或按照计划部分中选择的日期发布）      | [发布暂停选项](manage-submission-options.md#publishing-hold-options)    
 | **认证说明**     | 推荐          | [认证说明](notes-for-certification.md)             |
-| **受限功能**     | 如果您的产品声明任何[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
+| **受限功能**     | 如果你的产品声明了任何[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

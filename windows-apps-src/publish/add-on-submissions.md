@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, 应用内购买, 应用内产品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884226"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908105"
 ---
 # <a name="add-on-submissions"></a>加载项提交
 
-加载项（有时称为应用内产品）是应用的补充项，可供客户购买。 加载项可以是的有趣的新功能，您认为新游戏级别，或其他任何将保留从事的用户。 加载项不但是赚钱的绝佳方法，它们还有助于促进客户互动和参与。
+加载项（有时称为应用内产品）是应用的补充项，可供客户购买。 加载项可以是的有趣的新功能，新的游戏级别，或任何你认为将保持用户参与度。 加载项不但是赚钱的绝佳方法，它们还有助于促进客户互动和参与。
 
 加载项通过 Windows 开发人员中心仪表板发布。 你还需要在你的应用代码中[启用加载项](../monetize/in-app-purchases-and-trials.md)。
 
-加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 之后，您将创建提交，以便可以通过 Microsoft 存储购买加载项。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在 Store 中上架后[更新](#updating-an-add-on-after-publication)加载项，而无需重新提交该应用。
+加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 在此之后，你将创建提交，以便可以通过 Microsoft 应用商店购买你的加载项。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在 Store 中上架后[更新](#updating-an-add-on-after-publication)加载项，而无需重新提交该应用。
 
 > [!NOTE]
 > 文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
@@ -85,11 +85,11 @@ ms.locfileid: "2884226"
 
 ## <a name="updating-an-add-on-after-publication"></a>在发布后更新加载项
 
-你可以随时更改已发布的加载项。 提交和发布独立于您的应用程序，因此您通常不需要更新才能使更改到加载项，如更新其价格或说明整个应用程序加载项更改。
+你可以随时更改已发布的加载项。 提交和发布独立于应用，因此你通常不需要更新整个应用即可对加载项，如更新其价格或说明进行更改加载项更改。
 
 > [!IMPORTANT]
 > 如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
 
-若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将创建新的加载项，使用从您以前提交的信息作为起点提交。 进行的更改，然后单击**提交存储**。
+若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将创建新的提交的加载项，使用之前提交中的信息作为起始点。 你将等，然后单击**提交到应用商店**，更改。
 
 如果你希望删除之前提供的加载项，可通过创建新提交并通过**停止获取**选项将[分发和可见性](set-add-on-pricing-and-availability.md)选项更改为**在 Microsoft Store 中隐藏**。 请确保视需要将你的应用代码更新为也删除加载项引用（尤其是当你的应用支持 Windows 8.1 或更早版本时；此可见性设置不适用于这些客户）。

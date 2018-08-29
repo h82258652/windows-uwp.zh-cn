@@ -8,23 +8,23 @@ ms.date: 08/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 审阅、 注释和审阅者
+keywords: windows 10，uwp，查看、 注释，审阅者
 ms.localizationpriority: medium
 ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886586"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912405"
 ---
 # <a name="reviews-report"></a>评价报告
 
 
-在 Windows 开发人员中心仪表板中的**审阅**报告，可以查看客户时评估您的应用程序存储区中输入的评论 （注释）。
+在 Windows 开发人员中心仪表板中的**评价**报告可使你可以查看客户在应用商店中的对应用进行评分时输入的评论 （注释）。
 
-可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 此外，您可以通过[Microsoft 存储分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[获取应用程序评论](../monetize/get-app-reviews.md)方法以编程方式检索此数据。
+可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，你可以通过[Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[获取应用评价](../monetize/get-app-reviews.md)的方法以编程方式检索此数据。
 
-您还可以响应客户评论[直接从此页](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft 存储 reviews （英文） API](../monetize/submit-responses-to-app-reviews.md)，或使用[开发人员中心应用程序](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+你还可以响应客户评论[直接通过此页面](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或通过使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
 > [!TIP]
 > 若要快速查看最近 30 天中所有应用的评论、评分和用户反馈，请在左侧导航菜单中展开**参与**，然后选择**评论和反馈。** 
@@ -37,14 +37,14 @@ ms.locfileid: "2886586"
 还可以展开**筛选器**以按下列选项筛选此页面上显示的评论。 这些筛选器将不适用于**评分细目**和**按时间的平均评分**图。
 
 -   **评分**：默认选择所有五星评论，但如果只希望查看与特定星级评分相关联的评论，可以选择和取消选择特定评分（从 1 到 5 星级）。
-- **查看内容**： 的默认设置是**使用评级查看内容**，这意味着将显示与查看内容仅评级。 您可以选择**所有**以显示所有评级，甚至不包含任何编写的查看文本。 请注意**评级细分**图表将始终显示所有评论，无论您所选内容。
+- **查看内容**： 默认设置是**带有评论的评分内容**，这意味着，将显示仅与评论内容分级。 你可以选择**所有**要显示所有评分，即使不包含任何文本，编写的评论。 **评分细目**图将始终显示所有评论，无论你选择的注意。
 -   **操作系统版本**：默认设置为**全部**。 如果希望此页面仅显示使用特定操作系统版本的客户留下的评论，可以选择该操作系统版本。
 -   **程序包版本**：默认设置为**全部**。 如果应用包括多个程序包，可以在此选择一个特定程序包以仅显示拥有该程序包的客户在查看应用时留下的评论。
 -   **回复**：默认设置为**全部**。 可以选择筛选评论以仅显示已在其中[回复客户](respond-to-customer-reviews.md)的评论，或仅显示尚未回复的评论。
 -   **更新**：默认设置为**全部**。 可以选择筛选评论以仅显示在[回复评论](respond-to-customer-reviews.md)后客户已更新的评论，或仅显示客户还未更新的评论。
 -   **市场**：默认设置为**所有市场**。 如果你希望此页面仅显示特定市场中客户的评论，你可以选择该市场。
 -   **设备类型**：默认筛选器为**所有设备**。 如果你想要此页面仅显示使用特定设备类型的客户留下的评论，你可以选择该设备类型。
--   **类别名称**：默认筛选器是**全部**。 您可以选择[查看洞察类别](#review-insight-categories)特定仅显示我们已与此类别相关联的评论。 
+-   **类别名称**：默认筛选器是**全部**。 你可以选择特定[评论见解类别](#review-insight-categories)以仅显示与该类别关联的评论。 
 
 > [!TIP]
 > 如果在该页上未看到任何评论，请检查以确保筛选器并未排除所有评论。 例如，如果按应用不支持的“目标操作系统”进行筛选，将看不到任何评论。
@@ -52,7 +52,7 @@ ms.locfileid: "2886586"
 
 ## <a name="ratings-breakdown"></a>评分细目
 
-这样，您可以获得快速介绍一下以下，**评级细分**图表显示在此报告的顶部： 
+**评分细目**图表将显示在此报告顶部，以便你可以获得快速查看一下以下： 
 - 应用的平均星级评分。
 - 过去 12 个月中应用的评分总数。
 - 每个星级评分的评分总数。
@@ -63,16 +63,16 @@ ms.locfileid: "2886586"
 > [!TIP]
 > 客户在应用商店中看到的平均评分会考虑客户的市场和设备类型，因此可能不同于在此报告中看到的内容。
 
-请注意，此图表始终包括所有审阅，即使您在**查看内容**页面筛选器中选择**与评级查看内容**。
+请注意，此图表始终包括所有评价，即使你选择**查看内容**页面筛选器中的**评论内容的评分**。
 
-此图还可以看到中[评级报表](ratings-report.md)，以及有关您的应用程序分级的更多详细信息。
+此外可以在[评分报告](ratings-report.md)，以及有关你的应用评分的更多详细信息中看到此图。
 
 
-< 范围内的 id ="审阅-洞察-类别 / >
+< 范围 id ="评论见解类别 / >
 
-## <a name="insight-categories"></a>洞察类别
+## <a name="insight-categories"></a>见解类别
 
-**洞察类别**图表组根据我们已确定的类别审阅可能与审阅相关联。
+**见解类别**图表组根据我们确定的类别评论可能与评论关联。
 
 > [!NOTE]
 > 按照类别查看评论时，不包括不足 24 小时和/或采用非英语语言的评论。
@@ -88,7 +88,7 @@ ms.locfileid: "2886586"
 
 -   客户提供的标题和评论文本。 （使用 Windows Phone 8.1 及较早版本的客户所撰写的评论将不带有标题。）
 -   评论的日期。
--   在 Microsoft 存储区中显示它审阅者的名称。
+-   评论者的名称将显示在 Microsoft Store 中。
 -   评论者所在的国家/地区。
 -   客户进行评论时其设备上的应用程序包版本。 （此信息不适用于在线提交的评论或使用 Windows8.1 及较早版本的客户所提交的评论。）
 -   客户进行评论时所使用设备的操作系统版本。
@@ -97,9 +97,9 @@ ms.locfileid: "2886586"
 
 请注意，客户可以对应用进行评分但不添加任何评论，因此通常会看到评论数少于评分数。
 
-可以按日期和/或按评分以升序或降序对页面上的评论进行排序。 单击**排序依据**链接以查看以按**日期**和/或**分级**排序选项。
+可以按日期和/或按评分以升序或降序对页面上的评论进行排序。 单击**排序方式**链接以查看按**日期**和/或**评分**排序的选项。
 
-您可以使用搜索框中搜索您的应用程序 reviews （英文） 中特定单词或短语。 搜索而只有原始查看写入由客户的文本注释，即使审阅编写在不同的语言。 转换后的审阅文本不搜索。
+你可以使用搜索框来搜索特定的字词或短语在你的应用的评价。 请注意，搜索仅原始评论文本撰写的客户，即使采用不同语言编写评价。 不搜索翻译的评论文本。
 
 > [!NOTE]
 > 有时可能会发现此报告中未显示评论。 由于 Microsoft 会从应用商店中删除客户（运行某些预发行版和预览版的 Windows10 ）编写的评论，因此可能会发生此问题。 我们这样做的目的是降低因预发行 Windows 版本中的问题导致可能出现负面评论的可能性。 我们还可能会从应用商店中删除标识为垃圾邮件、不适合、具有冒犯性或违反了其他策略的评论。 我们希望此操作将产生更好的客户体验。
@@ -111,12 +111,12 @@ ms.locfileid: "2886586"
 
 请注意，评论将由自动翻译系统翻译，翻译结果翻译可能并不总是准确。 如果希望对照翻译或者通过其他方式进行翻译，会提供原始文本。
 
-如上所述，当搜索审阅搜索仅原始文本左由客户 （并不是任何已翻译的文本），即使已选中**Translate 审阅**框。
+如上所述，当搜索评论，搜索仅留下的客户的原始文本 （和不任何已翻译的文本），即使你已**翻译评论**框处于选中状态。
 
 
 ## <a name="responding-to-customer-reviews"></a>回复客户评论
 
-您可以使用 Microsoft 存储开发人员中心仪表板、 [Microsoft 存储审阅 API](../monetize/submit-responses-to-app-reviews.md)，或[开发人员中心应用程序](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)发送到多个客户的评论的响应。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
+你可以使用 Microsoft 应用商店开发人员中心仪表板、 [Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)来发送对许多客户评论回复。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
 
 根据你所看到的评分和评论，不妨考虑下面提供的一些其他措施。
 

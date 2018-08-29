@@ -2,25 +2,25 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 应用认证工具包测试
-description: Windows 应用程序证书工具包包含可帮助确保您的应用程序已准备好发布 Microsoft 存储的测试数。
+description: Windows 应用认证工具包包含大量测试，可以帮助确保你的应用已准备好在 Microsoft store 中发布。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，应用程序证书
+keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887646"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906064"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-[Windows 应用程序证书工具包](windows-app-certification-kit.md)包含帮助确保您的应用程序已准备好发布到 Microsoft 存储的测试数。 这些测试下面列出了其标准的详细信息，并建议对于失败的操作。
+[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在故障的情况下操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
@@ -60,7 +60,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 ### <a name="background"></a>背景
 
-操作系统版本信息具有受限的 Microsoft 存储使用情况。 这常被应用误用于检查操作系统版本，使得该应用会向用户提供特定于操作系统版本的相关功能。
+操作系统版本信息已限制的 Microsoft 应用商店的使用情况。 这常被应用误用于检查操作系统版本，使得该应用会向用户提供特定于操作系统版本的相关功能。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -128,7 +128,7 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 -   **进程间通信 (IPC) 验证**
 
-    此测试强制执行 UWP 应用程序不进行通信外部应用程序容器到桌面组件的要求。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的应用无法通过此测试。
+    此测试强制要求的 UWP 应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的应用无法通过此测试。
 
 ### <a name="corrective-action"></a>更正操作
 
@@ -248,7 +248,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 如果原生的可执行文件未通过测试，请确保你使用了最新的编译器和链接器来生成文件，并在链接器上使用了 */appcontainer* 标记。
 
-如果托管可执行文件，则测试失败，请确保您使用的最新的编译器和链接器，如 Microsoft Visual Studio 生成 UWP 应用程序。
+如果托管的可执行文件未通过测试，请确保你使用的最新的编译器和链接器，如 Microsoft Visual Studio 中，生成 UWP 应用。
 
 **备注**
 
@@ -308,22 +308,22 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="background"></a>背景
 
-应用程序必须使用 UWP 应用程序 （Windows Runtime 或受支持的 Win32 Api） 的 Microsoft 存储认证的 Api。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
+应用必须使用适用于 UWP 应用 （Windows 运行时或受支持的 Win32 Api） 的 Microsoft 应用商店认证的 Api。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
 
 ### <a name="test-details"></a>测试详细信息
 
--   验证应用程序包中的每个二进制文件，不会通过检查二进制文件导入地址表不支持用于 UWP 应用程序开发 Win32 API 具有依赖关系。
+-   验证，应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
 -   验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。
 
 ### <a name="corrective-actions"></a>更正操作
 
 确保应用编译为一个发行版本，而不是调试版本。
 
-> **注释** 应用程序的调试版本将失败此测试，即使该应用程序使用仅[UWP 应用程序的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+> **注意** 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
 
-查看错误消息，确定应用程序使用的不是[UWP 应用程序的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
+检查错误消息，识别应用所用的不是[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
 
-> **注释** 在调试配置构建 c + + 应用程序将失败此测试，即使配置仅使用 UWP 应用程序从 Windows SDK Api。 请参阅[Windows Api UWP 应用程序中的替代方案](http://go.microsoft.com/fwlink/p/?LinkID=244022)的详细信息。
+> **注意** 内置于该调试配置中的 c + + 应用将无法通过此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 的替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
 ## <a name="performance-tests"></a>性能测试
 
@@ -433,7 +433,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>“resources.pri”文件不得启用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议这样做您想要分发通过 Microsoft 商店的应用程序。 通过 Microsoft 存储分布式应用程序的 resources.pri 必须为应用程序的程序包的根目录中，并包含应用程序支持的所有语言参考。</p>
+<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。</p>
 </td></tr>
 <tr><td>
 <p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
@@ -485,7 +485,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="branding-validation"></a>品牌验证
 
-期望 UWP 应用程序可完成且功能完备。 使用默认图像（来自模板或 SDK 示例）的应用会带来很差的用户体验，且无法在应用商店目录中方便地标识。
+UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或 SDK 示例）的应用会带来很差的用户体验，且无法在应用商店目录中方便地标识。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -501,7 +501,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="background"></a>背景
 
-认证的 Microsoft 存储，应用程序必须未编译的调试，它们必须不引用调试版本的可执行文件。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过认证的 Microsoft 应用商店，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -509,7 +509,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="corrective-actions"></a>更正操作
 
--   提交到 Microsoft 存储之前，作为发布版本生成应用程序。
+-   提交到 Microsoft Store 之前，将应用编译为发行版本。
 -   确保你安装了正确版本的 .NET Framework。
 -   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 
@@ -537,7 +537,7 @@ HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM)
 
 ### <a name="background"></a>后台
 
-Microsoft 存储需要使用 Direct3D 正确呈现或正常功能级别 9\ 1 图形卡上的所有应用程序。
+Microsoft 应用商店要求使用 Direct3D 正确呈现或正常功能级别 9 \-1 图形卡上的所有应用程序。
 
 由于用户可能会在安装应用后更换设备中的图形硬件，因此如果你选择高于 9\-1 的最低功能级别，你的应用必须在启动时检测当前的硬件是否满足最低要求。 如果不满足最低要求，则应用必须向用户显示一条消息，以详细说明 Direct3D 要求。 此外，如果应用下载到不兼容的设备上，应用应当在启动时检测出该问题并向用户显示一条消息，详细说明这些要求。
 
@@ -551,7 +551,7 @@ Microsoft 存储需要使用 Direct3D 正确呈现或正常功能级别 9\ 1 图
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D 暂停后修正
 
-> **注释** 此测试仅适用于 UWP 应用程序开发 Windows 8.1 及更高版本。
+> **注意** 此测试仅适用于 Windows 8.1 及更高版本开发 UWP 应用。
 
 ### <a name="background"></a>后台
 

@@ -2,26 +2,26 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 应用认证工具包
-description: 若要为您的应用程序提供对 Microsoft 存储，发布最大限度地或 Windows 认证，验证并对其进行测试本地之前将其提交认证。 本主题显示了如何安装并运行 Windows 应用认证工具包。
+description: 若要为你的应用的 Microsoft 应用商店，或通过 Windows 认证中发布的最佳机会，验证在本地和测试之前提交以进行认证。 本主题显示了如何安装并运行 Windows 应用认证工具包。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，应用程序证书
+keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891730"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917023"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
 
 
-若要获取您的应用程序[Windows 认证](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)或准备[Microsoft 存储出版物](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您应验证和测试其本地首先。 本主题演示如何安装和运行[Windows 应用程序证书工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)以确保您的应用程序的安全和高效。
+若要获取[Windows 认证](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)你的应用或准备[发布到 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，你应在验证和测试本地第一次。 本主题介绍了如何安装和运行[Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)以确保你的应用的安全和高效。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -46,7 +46,7 @@ ms.locfileid: "2891730"
 
 3.  在已输入或选定要测试的应用后，单击“下一步”****。
 
-4.  在下一屏幕中，你将看到与正在测试的应用类型相对应的测试工作流。 如果列表中的某一测试灰显，则表示该测试不适用于你的环境。 例如，如果你正在 Windows 7 上测试 Windows 10 应用，则只有静态测试才能应用到工作流。 请注意，Microsoft 存储可能从此工作流用于所有测试。 选择要运行的测试，然后单击“下一步”****。
+4.  在下一屏幕中，你将看到与正在测试的应用类型相对应的测试工作流。 如果列表中的某一测试灰显，则表示该测试不适用于你的环境。 例如，如果你正在 Windows 7 上测试 Windows 10 应用，则只有静态测试才能应用到工作流。 请注意 Microsoft 应用商店可能会应用来自此工作流的所有测试。 选择要运行的测试，然后单击“下一步”****。
 
     Windows App 认证工具包开始验证该应用。
 
@@ -90,9 +90,9 @@ ms.locfileid: "2891730"
 
 Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能。
 
-执行测试的计算机的属性会影响测试结果。 若要确定您的应用程序性能是否符合[Microsoft 存储策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我们建议您测试的低电源计算机上，如 Intel Atom 处理器基于计算机的屏幕分辨率为 1366 x 768 （或更高版本） 和旋转硬应用程序驱动器 （而不是固态硬盘上）。
+执行测试的计算机的属性会影响测试结果。 若要确定你的应用性能是否符合[Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我们建议你测试你的应用在低能耗计算机上，例如基于 Intel Atom 处理器的计算机使用的屏幕分辨率为 1366x768 （或更高版本） 和旋转硬盘驱动器（相对于固态硬盘驱动器） 的驱动器。
 
-随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参阅最新的[Microsoft 存储策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)和测试应用程序与 Windows 应用程序证书工具包以确保您的应用程序符合的最新的性能要求的最新版本。
+随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参阅最新的[Microsoft 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)和测试你的应用最新版本的 Windows 应用认证工具包，以确保应用遵守的最新的性能要求。
 
 ## <a name="related-topics"></a>相关主题
 

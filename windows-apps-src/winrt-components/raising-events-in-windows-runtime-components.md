@@ -2,7 +2,7 @@
 author: msatranjr
 title: 在 Windows 运行时组件中引发事件
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
-description: 如何引发事件的后台线程上的用户定义的委托类型，以便 JavaScript 是能够接收该事件。
+description: 如何引发后台线程上的用户定义的委托类型的事件，以便 JavaScript 能够接收该事件。
 ms.author: misatran
 ms.date: 07/19/2018
 ms.topic: article
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888306"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910956"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 > [!NOTE]
-> 若要了解如何在引发事件[C + + / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 运行时组件，请参阅[创作事件在 C + + / WinRT](../cpp-and-winrt-apis/author-events.md)。
+> 若要了解如何在中引发事件[C + + WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 运行时组件，请参阅[创作事件 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
 
 如果你的 Windows 运行时组件在后台线程（工作线程）中引发了用户定义的委托类型的事件，并且你希望 JavaScript 能够接收该事件，则可以使用以下方法之一实现和/或引发它：
 
@@ -138,7 +138,7 @@ toastCompletedEventHandler: function (event) {
 
 在 Visual Studio 中的菜单栏上，依次选择“文件”&gt;“新建项目”****。 在“新建项目”**** 对话框中，依次展开JavaScript&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”**** 按钮。
 
-向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 展开**Visual C# &gt; Microsoft 存储**，然后选择**Windows 运行时组件**。 将该项目命名为 ToasterComponent，然后选择“确定”**** 按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
+向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 展开**Visual C# &gt; Microsoft Store** ，然后选择**Windows 运行时组件**。 将该项目命名为 ToasterComponent，然后选择“确定”**** 按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
 在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”**** 对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”**** 设置为“调试”**** 以及将“平台”**** 设置为 x86、x64 或 ARM。 选择“确定”**** 按钮。
 
@@ -233,7 +233,7 @@ IToast 接口具有一个字符串，可以检索该字符串来描述 Toast 的
 
 ## <a name="to-program-the-javascript-app"></a>对 JavaScript 应用进行编程
 
-现在我们可以向 JavaScript 应用添加一个按钮，从而使它使用我们刚定义为生成 Toast 的类。 在我们执行此操作之前，必须向我们刚创建的 ToasterComponent 项目添加一个引用。 在解决方案资源管理器，打开 ToasterApplication 项目的快捷菜单，选择**添加&gt;引用**，然后选择**添加新引用**按钮。 在“添加引用”对话框的“解决方案”下的左侧窗格中，选择组件项目，然后在中间窗格中，选择 ToasterComponent。 选择“确定”**** 按钮。
+现在我们可以向 JavaScript 应用添加一个按钮，从而使它使用我们刚定义为生成 Toast 的类。 在我们执行此操作之前，必须向我们刚创建的 ToasterComponent 项目添加一个引用。 在解决方案资源管理器，打开命名为 ToasterApplication 项目的快捷菜单中，选择**添加&gt;引用**，然后选择**添加新引用**按钮。 在“添加引用”对话框的“解决方案”下的左侧窗格中，选择组件项目，然后在中间窗格中，选择 ToasterComponent。 选择“确定”**** 按钮。
 
 在“解决方案资源管理器”中，打开 ToasterApplication 项目的快捷菜单，然后选择“设置为启动项目”****。
 
@@ -273,7 +273,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
     </body>
 ```
 
-如果我们未使用 TypedEventHandler，则现在可以在本地计算机上运行该应用，并单击该按钮来生成 Toast。 但是我们的应用不会发生任何情况。 若要找出原因，可以调试引发 ToastCompletedEvent 的托管代码。 停止项目，然后在菜单栏中，选择**调试&gt;Toaster 应用程序属性**。 将“调试器类型”**** 更改为“仅托管”****。 再次在菜单栏中，选择**调试&gt;例外**，然后选择**公共语言运行时异常**。
+如果我们未使用 TypedEventHandler，则现在可以在本地计算机上运行该应用，并单击该按钮来生成 Toast。 但是我们的应用不会发生任何情况。 若要找出原因，可以调试引发 ToastCompletedEvent 的托管代码。 停止项目，然后在菜单栏上，选择**调试&gt;Toaster 应用程序属性**。 将“调试器类型”**** 更改为“仅托管”****。 同样在菜单栏上，选择**调试&gt;异常**，然后选择**公共语言运行时异常**。
 
 现在运行应用并单击“生成 Toast”按钮。 调试器会捕获一个无效的转换异常。 尽管从其消息中看不是很明显，但发生了该异常，因为该接口的代理丢失。
 
@@ -283,7 +283,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>生成适用于组件接口的 GUID（C# 和其他 .NET 语言）
 
-在菜单栏中，选择工具&gt;创建 GUID。 在该对话框中，选择 5。 \[Guid ("...xxxxxxxx 格式格式) \]。 依次选择“新建 GUID”按钮和“复制”按钮。
+在菜单栏上，选择工具&gt;创建 GUID。 在该对话框中，选择 5。 \[Guid ("xxxxxxxx xxxx...xxxx) \]。 依次选择“新建 GUID”按钮和“复制”按钮。
 
 ![guid 生成器工具](./images/guidgeneratortool.png)
 
@@ -300,7 +300,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c"></a>生成适用于组件接口的 GUID (C++)
 
-在菜单栏中，选择工具&gt;创建 GUID。 在该对话框中，选择 3。 静态构造 GUID = {...}。 依次选择“新建 GUID”按钮和“复制”按钮。
+在菜单栏上，选择工具&gt;创建 GUID。 在该对话框中，选择 3。 静态构造 GUID = {...}。 依次选择“新建 GUID”按钮和“复制”按钮。
 
 将 GUID 粘贴在 IToaster 接口定义的前面。 粘贴后，GUID 应该类似于下面的示例。 （不要使用该示例中的 GUID。 每一个独特接口都应该有其自己的 GUID。）
 ```cpp
@@ -330,10 +330,10 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要** ARM 或 x64 project 配置、 MIDL /env 参数更改为 x64 或 arm32。
+**重要提示** 为 ARM 或 x64 项目配置，更改为 x64 或 arm32 MIDL /env 参数。
 
-若要确保每次更改.winmd 文件时，将重新生成 IDL 文件，更改**运行后生成事件****时生成更新项目输出。**
-生成事件属性页应类似于此：![生成事件](./images/buildevents.png)
+若要确保 IDL 文件时重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
+生成事件的属性页应与此类似：![生成事件](./images/buildevents.png)
 
 重新生成解决方案以生成和编译 IDL。
 
@@ -341,7 +341,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>将代理和存根代码编译到 DLL 中
 
-现在你拥有所需的文件，可以对它们进行编译来生成 DLL（它是 C++ 文件）。 若要使其尽可能简单，请添加一个新项目来支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后依次选择“添加”>“新建项目”****。 在**新建项目**对话框的左侧窗格中，展开**Visual c + + &gt; Windows&gt;通用 Windows**，然后在中间窗格中，选择**DLL （UWP 应用程序）**。 （请注意，这不是 c + + 运行时组件 Windows 项目）。代理将项目命名，然后选择**确定**按钮。 当 C# 类中发生某些更改时，这些文件将通过生成后事件进行更新。
+现在你拥有所需的文件，可以对它们进行编译来生成 DLL（它是 C++ 文件）。 若要使其尽可能简单，请添加一个新项目来支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后依次选择“添加”>“新建项目”****。 在**新建项目**对话框的左侧窗格中，展开**Visual c + + &gt; Windows&gt;通用 Windows**，然后在中间窗格中，选择**DLL （UWP 应用）**。 （请注意，这不是 c + + Windows 运行时组件项目）。代理服务器将项目命名，然后选择**确定**按钮。 当 C# 类中发生某些更改时，这些文件将通过生成后事件进行更新。
 
 默认情况下，代理项目会生成标头 .h 文件和 C++ .cpp 文件。 由于 DLL 从产生于 MIDL 的文件中生成，因此不需要 .h 和 .cpp 文件。 在“解决方案资源管理器”中，打开它们的快捷菜单、选择“删除“****，然后确认删除。
 
@@ -364,7 +364,7 @@ WIN32;_WINDOWS
 ```
 在“C/C++”>“预编译标头”**** 下，将“预编译标头”**** 更改为“不使用预编译标头”****，然后选择“应用”**** 按钮。
 
-在**链接器 > 常规**，将**忽略导入库**更改为**Ye**s，，然后选择**应用**按钮。
+在**链接器 > 常规**，将**忽略导入库**更改为**Ye**s、，然后选择**应用**按钮。
 
 在“链接器”>“输入”**** 下，依次选择“附加依赖项”****、向下箭头按钮和“编辑”****。 在框中添加此文本：
 
@@ -418,7 +418,7 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 -   路径是代理二进制的程序包相对路径。 （在本演练中，proxies.dll 与 ToasterApplication.winmd 在同一个文件夹中。)
 -   GUID 格式正确。 （这很容易出错。）
 -   在清单中的接口 Id 匹配 Iid ToasterComponent\_i.c 文件中。
--   在清单中，接口名称是唯一的。 由于系统不使用它们，因此你可以选择这些值。 最好是选择与你已定义的接口明确匹配的接口名称。 对于生成的接口，名称应当指示生成的接口。 您可以使用 ToasterComponent\_i.c 文件可帮助您生成接口名称。
+-   在清单中，接口名称是唯一的。 由于系统不使用它们，因此你可以选择这些值。 最好是选择与你已定义的接口明确匹配的接口名称。 对于生成的接口，名称应当指示生成的接口。 ToasterComponent\_i.c 文件可用于帮助你生成接口名称。
 
 如果你要尝试立即运行该解决方案，你将收到一个错误：proxies.dll 不是负载的一部分。 打开 ToasterApplication 项目中的“引用”**** 文件夹的快捷菜单，然后选择“添加引用”****。 选中代理项目旁边的复选框。 此外，确保 ToasterComponent 旁边的复选框也选中。 选择“确定”**** 按钮。
 

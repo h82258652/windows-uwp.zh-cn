@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 程序包要求, 程序包, 程序包格式, 受支持的版本, 提交, windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888366"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905280"
 ---
 # <a name="app-package-requirements"></a>应用包要求
 
@@ -41,7 +41,7 @@ ms.locfileid: "2888366"
 
 ### <a name="app-bundles"></a>应用程序包
 
-对于面向 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 的应用程序，Visual Studio 可以生成应用程序绑定 (.appxbundle) 以减少用户下载的应用程序的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
+对于面向 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 的应用，Visual Studio 可以生成应用程序包 (.appxbundle) 来减少用户下载应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
 
 > [!NOTE]
 > 一个应用程序包可以包含所有体系结构的程序包。 对于每个目标操作系统，应仅提交一个捆绑包。
@@ -61,7 +61,7 @@ ms.locfileid: "2888366"
 > 清单中的值区分大小写。 空格和其他标点符号也必须匹配。 请小心输入值并进行检查，以确保这些值准确无误。
 
 
-应用程序捆绑 (.appxbundle) 使用不同的清单。 查看[捆绑包清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在.appxbundle，每个.appxmanifest 包含包必须使用相同的元素和属性，[标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**属性除外。
+应用程序包 (.appxbundle) 使用不同的清单。 查看[捆绑包清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在.appxbundle，每个包含程序包的.appxmanifest 必须使用相同的元素和属性，除了[标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**属性。
 
 > [!TIP]
 > 在提交软件包之前，请确保运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)。 此操作可帮助你确定你的清单是否存在任何可能导致认证或提交失败的问题。
@@ -88,7 +88,7 @@ ms.locfileid: "2888366"
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML 文件
 
-StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 如果使用，StoreManifest.xml 提交与应用程序包，并且必须在您的应用程序的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
+StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 如果使用，StoreManifest.xml 与提交应用包，并且必须在你的应用的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
  
 

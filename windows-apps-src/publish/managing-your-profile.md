@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888276"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907415"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
@@ -26,9 +26,9 @@ ms.locfileid: "2888276"
 
 ## <a name="account-settings"></a>帐户设置
 
-若要查看您的帐户设置，单击您的仪表板的右上角中的齿轮图标，然后选择**开发人员设置**。 此处，您可以找到有关您的帐户和其他页面可在其中查看信息和执行各种帐户相关的任务的链接的详细信息。
+若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和你可以查看信息以及执行多种帐户相关任务其他页面的链接的详细信息。
 
-在**帐户详细信息**部分中，可以查看帐户的状态和类型。 您还可以参见卖家面板 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配来唯一地标识您的开发人员帐户，且不可编辑。
+在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以看到你的卖家 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配以唯一地标识开发者帐户，且无法进行编辑。
 
 > [!NOTE]
 > 可以在每个应用的[应用标识](view-app-identity-details.md)页中查找每个应用的标识详细信息。
@@ -48,14 +48,14 @@ ms.locfileid: "2888276"
 
 以下是**帐户设置**部分中会出现的一些其他项目。
 
-- **验证状态**： 当您的帐户正在进行验证过程 （例如，当您首次注册或后会显著更新您的联系信息），您可以查看您的验证状态。
-- **开发人员中心内幕计划**： 您可以选择或从中注销[开发中心内幕计划](dev-center-insider-program.md)从主**帐户设置**页。
+- **验证状态**： 当你的帐户正在进行验证处理 （例如，当你首次登录或大量更改联系人信息后），你可以在此查看验证状态。
+- **开发人员中心会员计划**： 你可以选择在或退出[开发人员中心会员计划](dev-center-insider-program.md)从主**帐户设置**页面。
 - **付款帐户**和**税务资料**：可在此[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 - **企业关联**：接受希望发布应用以供其独家使用的企业的邀请。 有关详细信息，请参阅[将业务线应用分配到企业](distribute-lob-apps-to-enterprises.md)。
 - **用户**：将用户添加到开发人员中心帐户，并向其分配角色和权限。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
-- **租户**： 管理您的 Azure AD 租户关联。 有关详细信息，请参阅[Azure AD 与您的开发人员中心帐户关联](associate-azure-ad-with-dev-center.md)。
+- **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将 Azure AD 与开发人员中心帐户关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。
-- **开发设备**： 查看和管理[已锁定用于测试的 Windows Phone 8.x 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[一个 Xbox 控制台启用开发](../xbox-apps/devkit-activation.md)。 
+- **开发人员设备**： 查看和管理[已解锁用于测试的 Windows Phone 8.x 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
 
 

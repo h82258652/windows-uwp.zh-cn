@@ -1,24 +1,24 @@
 ---
 author: mcleanbyron
-description: Microsoft 存储分析 API 中使用此方法来为桌面应用程序获取见解数据。
+description: 在 Microsoft Store 分析 API 中使用此方法，可获取桌面应用程序的见解数据。
 title: 获取桌面应用程序的见解数据
 ms.author: mcleans
 ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10 uwp、 存储服务、 Microsoft 存储分析 API，见解
+keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882983"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910795"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 
-使用 Microsoft 存储分析 API 中的此方法获取见解数据相关的已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标。 此数据也是针对 Windows 开发人员中心仪表板中的桌面应用程序的[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中提供的。
+在 Microsoft Store 分析 API 中使用此方法来获取与你已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在 Windows 开发人员中心仪表板的桌面应用程序在[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -48,14 +48,14 @@ ms.locfileid: "2882983"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其获取见解数据桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 如果不指定此参数，响应正文将包含所有应用程序注册到您的帐户的见解数据。  |  否  |
-| startDate | date | 开始日期的见解数据的日期范围内检索。 默认值为当前日期之前 30 天。 |  否  |
-| endDate | date | 结束日期的见解数据的日期范围中进行检索。 默认值为当前日期。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如，*筛选器 = dataType eq 获取*。 <p/><p/>当前此方法仅支持筛选器**运行状况**。  | 否   |
+| applicationId | 字符串 | 要获取的见解数据的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 如果未指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
+| startDate | date | 开始菜单的见解数据日期范围中要检索的日期。 默认值为当前日期之前 30 天。 |  否  |
+| endDate | date | 中的结束日期的见解数据日期范围以检索。 默认值为当前日期。 |  否  |
+| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如， *filter = dataType eq 购置*。 <p/><p/>当前此方法仅支持筛选**运行状况**。  | 否   |
 
 ### <a name="request-example"></a>请求示例
 
-下面的示例演示用于获取见解数据的请求。 *ApplicationId*值替换为您的桌面应用程序的相应值。
+下面的示例演示了一个请求用于获取的见解数据。 *ApplicationId*值替换为桌面应用程序的相应值。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/insights?applicationId=10238467886765136388&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'health' HTTP/1.1
@@ -68,34 +68,34 @@ Authorization: Bearer <your access token>
 
 | 值      | 类型   | 说明                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | array  | 包含见解数据的应用程序的对象的数组。 有关每个对象中的数据的详细信息，请参阅下面的[洞察值](#insight-values)部分。                                                                                                                      |
+| 值      | array  | 包含应用的见解数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[相关的见解值](#insight-values)部分。                                                                                                                      |
 | TotalCount | int    | 查询的数据结果中的行总数。                 |
 
 
-### <a name="insight-values"></a>洞察值
+### <a name="insight-values"></a>相关的见解值
 
 *Value* 数组中的元素包含以下值。
 
 | 值               | 类型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | 字符串 | 为其检索见解数据桌面应用程序的产品 ID。     |
-| insightDate                | 字符串 | 我们在其标识特定指标的更改的日期。 此日期表示在其中我们检测到显著增大周末或减少与之前的周相比指标。 |
-| 数据类型     | 字符串 | 一个字符串，指定此洞察通知的常规分析区域。 当前，此方法仅支持**运行状况**。    |
-| insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前洞察的详细信息。    |
+| applicationId       | 字符串 | 要为其检索的见解数据的桌面应用程序的产品 ID。     |
+| insightDate                | 字符串 | 我们标识特定指标的更改的日期。 此日期表示在其中我们检测到了显著增加本周结束或减少相对于前的一周的指标。 |
+| 数据类型     | 字符串 | 指定此 insight 通知的常规分析区域的字符串。 当前，此方法仅支持**运行状况**。    |
+| insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前见解的详细信息。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
 
 | 值               | 类型   | 说明                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | 字符串 | 指示当前洞察或当前维度介绍指标的字符串。 当前，此方法只支持值**点击次数**。  |
-| SubDimensions         | array |  介绍洞察单个指标的一个或多个对象。   |
-| PercentChange            | 字符串 |  在您的整个客户群之间指标更改百分比。  |
-| 维度           | 字符串 |  当前维度中所述的度量名称。 示例包括**EventType**、**市场**、 **DeviceType**和**PackageVersion**。   |
-| DimensionValue              | 字符串 | 当前维度中描述的度量值。 例如，如果**维度**， **EventType** **DimensionValue**可能**故障**或**挂起**。   |
-| FactValue     | 字符串 | 在检测到洞察日期度量的绝对值。  |
-| Direction | 字符串 |  更改 （**正值**或**负值**） 的方向。   |
-| 日期              | 字符串 |  我们在其标识与当前洞察或当前维度相关更改日期。   |
+| FactName           | 字符串 | 一个字符串，指示当前 insight 或当前维度描述的指标。 当前，此方法仅支持值**点击次数**。  |
+| SubDimensions         | array |  描述见解的单个跃点数的一个或多个对象。   |
+| PercentChange            | 字符串 |  指标跨整个客户群的销售量更改百分比。  |
+| 具有           | 字符串 |  在当前维度中所述的指标的名称。 示例包括**EventType**、**市场**、 **DeviceType**，和**PackageVersion**。   |
+| DimensionValue              | 字符串 | 在当前维度中描述的度量值。 例如，如果**维度**， **EventType** **DimensionValue**可能**崩溃**或**挂起**。   |
+| FactValue     | 字符串 | 绝对的度量值 insight 已检测到的日期。  |
+| Direction | 字符串 |  更改 （**正**或**负**） 的方向。   |
+| 日期              | 字符串 |  我们确定与当前 insight 或当前维度相关的更改的日期。   |
 
 ### <a name="response-example"></a>回复示例
 

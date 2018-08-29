@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886695"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905220"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 
@@ -171,7 +171,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="related-topics"></a>相关主题
 
-* [用户活动 （项目 Rome 文档）](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [用户活动 （项目 rome 文档）](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [自适应卡片](https://docs.microsoft.com/adaptive-cards/)
 * [自适应卡片可视化工具，示例](http://adaptivecards.io/)
 * [处理 URI 激活](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)

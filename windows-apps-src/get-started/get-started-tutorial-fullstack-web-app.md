@@ -10,11 +10,11 @@ ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891898"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2911323"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>创建具有 REST 后端的单页 Web 应用
 
@@ -298,7 +298,7 @@ Azure 文档将引导你完成：
 
  - [Azure DocumentDB 文档](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>第 ii 部分： 构建单页 web 应用程序
+## <a name="part-ii-build-a-single-page-web-application"></a>部分 II： 生成单页 web 应用程序
 
 既然你已在部分 I 中生成（或[下载](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)）了 [REST API 后端](#part-i-build-a-rest-api-backend)，你已准备好使用 [Node](https://nodejs.org/en/)、[Express](http://expressjs.com/) 和 [Bootstrap](http://getbootstrap.com/) 创建单页记忆游戏前端了。
 

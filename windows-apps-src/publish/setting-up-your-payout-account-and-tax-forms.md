@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2895671"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918718"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>设置付款帐户和税单
 
 
-要从 Microsoft 存储区中的应用程序销售接收资金，需要设置付款帐户和填写必要的纳税申报。
+若要从 Microsoft 应用商店中的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。
 
-如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果您改变了主意更高版本，并决定要销售应用程序 （或加载项），您可以设置付款帐户，并填写申报表吗，此时。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
+如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用 （或加载项），你可以设置付款帐户并在该时间填写税单。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
 
 > [!NOTE]
 > 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
 
-[设置您的开发人员帐户](opening-a-developer-account.md)后，您需要执行之前可以销售应用程序 （或加载项） 的两个因素中有 Microsoft 存储：
+[设置开发人员帐户](opening-a-developer-account.md)后，有两个事项你需要执行操作之前，你可以销售应用 （或加载项） 在 Microsoft Store 中：
 
 -   [设置付款帐户](#payout-account)
 -   [填写税单](#tax-forms)
@@ -125,7 +125,7 @@ ms.locfileid: "2895671"
 
 ## <a name="tax-forms"></a>税单
 
-已[注册开发人员帐户](opening-a-developer-account.md)并设置[付款帐户](#payout-account)之后，您可以通过完成以下步骤 Microsoft 存储创建您的*税费配置文件*：
+在具有[开发者帐户注册](opening-a-developer-account.md)并设置[付款帐户](#payout-account)后，你可以通过完成以下步骤的 Microsoft 应用商店创建你的*税务配置文件*：
 
 -   指定你的居住地和公民身份所属的国家/地区。
 -   填写相应的税单。
@@ -133,7 +133,7 @@ ms.locfileid: "2895671"
 可以在仪表板中填写和提交电子税单；在大多数情况下，不需要打印和邮寄任何税单。
 
 > [!IMPORTANT]
-> 不同的国家和地区有不同的纳税要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 另外，你所获得的应用销售收益可能需要缴纳所得税。 我们强烈建议您为您的国家或地区的最佳可帮助您确定您的 Microsoft 存储开发人员活动的右税费信息联系人的相关的证书颁发机构。
+> 不同的国家和地区有不同的纳税要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 另外，你所获得的应用销售收益可能需要缴纳所得税。 我们强烈建议你联系你所在国家或地区最好地帮助你确定你的 Microsoft 应用商店开发人员活动的正确纳税信息的相关机构。
 
  
 **完成税务配置文件**
@@ -148,7 +148,7 @@ ms.locfileid: "2895671"
 4.  回答有关美国公民身份和居住地的问题，然后单击“下一步”****。
 5.  如果显示了你的姓名和地址信息，请进行确认以申报税款。
 
-接下来，将会看到必须填写的电子版本的税单。 无论居住或国籍的国家/地区，您必须填写美国纳税申报销售任何应用程序或通过 Microsoft 存储的加载项。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
+接下来，将会看到必须填写的电子版本的税单。 无论公民居住的国家/地区，你必须填写美国税单销售任何应用或加载项通过 Microsoft 应用商店。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
 
 不需要提供美国个人纳税识别号码（或 ITIN）即可从 Microsoft 接收付款或申请免税待遇。
 
@@ -158,7 +158,7 @@ ms.locfileid: "2895671"
 
 ### <a name="tax-treaty-benefits"></a>免税待遇
 
-如果你在美国境外，你也许能够利用免税待遇。 这些收益有所不同国家，并可能允许您以减少税费预扣 Microsoft 存储量。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
+如果你在美国境外，你也许能够利用免税待遇。 这些优势有所不同随国家，并且可能会允许你减少的 Microsoft 应用商店预缴的。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
 
  
 

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887996"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905510"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
 你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。
 
 > [!NOTE]
-> 订阅加载项不支持销售定价。
+> 订阅加载项不支持的促销定价。
 
 使用提交的**定价和可用性**页的**促销价**部分暂时降低应用或加载项的价格时，查看“应用商店一览”的客户将看到删除线定价，指示价格降低（与[计划的价格更改](set-and-schedule-app-pricing.md#schedule-price-changes)不同，后者可以在不在应用商店中显示更改的情况下降低或提高价格）。 
 

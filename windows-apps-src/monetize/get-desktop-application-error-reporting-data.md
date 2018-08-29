@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 桌面应用程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887776"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905780"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>获取桌面应用程序的错误报告数据
 
-在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的聚合错误报告数据。 此方法仅可以检索在过去 30 天内发生的错误。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中获取桌面应用程序的这些信息。
+在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的聚合错误报告数据。 此方法仅可以检索过去 30 天内发生的错误。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中获取桌面应用程序的这些信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -49,7 +49,7 @@ ms.locfileid: "2887776"
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
 | applicationId | string | 要为其检索错误报告数据的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 |  是  |
-| startDate | date | 要检索的错误报告数据日期范围中的开始日期，格式为 ```mm/dd/yyyy```。 默认值为当前日期。<p/><p/>**注意：**&nbsp;&nbsp;此方法只能检索在过去 30 天内发生的错误。  |  否  |
+| startDate | date | 要检索的错误报告数据日期范围中的开始日期，格式为 ```mm/dd/yyyy```。 默认值为当前日期。<p/><p/>**注意：**&nbsp;&nbsp;此方法仅可以检索过去 30 天内发生的错误。  |  否  |
 | endDate | date | 要检索的错误报告数据日期范围中的结束日期，格式为 ```mm/dd/yyyy```。 默认值为当前日期。   |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |

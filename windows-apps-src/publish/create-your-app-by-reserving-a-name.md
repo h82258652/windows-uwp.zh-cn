@@ -11,22 +11,22 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888166"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913104"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
-在[Windows 开发人员中心仪表板](https://partner.microsoft.com/dashboard)中创建新的应用程序的第一步保留应用程序名称。 每个保留名称（有时被称为应用的*标题*）在整个 Microsoft Store 中必须是唯一的。
+在[Windows 开发人员中心仪表板](https://partner.microsoft.com/dashboard)中创建新的应用的第一步保留应用名称。 每个保留名称（有时被称为应用的*标题*）在整个 Microsoft Store 中必须是唯一的。
 
 即使你尚未开始构建应用，也可以为你的应用保留名称。 我们建议你尽早这样做，这样其他任何人都无法使用该名称。 请注意，你将需要在三个月内提交应用，以便为你保留该名称。
 
 在[上载应用程序包](upload-app-packages.md)时，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 值必须与为应用所保留的名称相匹配。 如果使用 Microsoft Visual Studio 创建应用程序包，则将为你填充此特性。
 
 > [!IMPORTANT]
-> 您可以保留应用程序，其他名称，您可以选择使用您的应用程序的已发布版本中的那些之一而不是保留时您先在仪表板中创建您的应用程序的一个。 但请注意，将某些应用程序的[标识详细信息](view-app-identity-details.md)，如**包系列名称 (PFN)** 使用您在此处输入的第一个名称。 这些值可能看到某些用户，并且无法更改，因此请确保您保留的名称是适用于此，请使用。
+> 你可以保留其他名称的应用，并且你可以选择使用其中一种在你的应用的已发布版本而不是保留时首先在仪表板中创建你的应用的一个。 但是，请注意，将某些你的应用[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)** 中使用你在此处输入的第一个名称。 这些值可能会给某些用户，且不能更改，因此请确保你保留的名称是适用于此，请使用。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>通过保留新名称创建应用

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c7286493e08fd62ad4b207d0e014dd4fbd5318
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889386"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905983"
 ---
 # <a name="handle-uri-activation"></a>处理 URI 激活
 
@@ -170,7 +170,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ## <a name="related-topics"></a>相关主题
 
-### <a name="complete-sample-app"></a>完整的示例应用程序
+### <a name="complete-sample-app"></a>完整的示例应用
 
 - [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 

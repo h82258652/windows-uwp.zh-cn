@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018563"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914095"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -140,7 +140,7 @@ ms.locfileid: "2018563"
 
 ### <a name="add-a-protocol-extension"></a>添加协议扩展
 
-在**解决方案资源管理器**中，打开你的解决方案中 UWP 项目的 **package.appxmanifest** 文件并添加该扩展。
+在**解决方案资源管理器**中，在解决方案中，打开打包项目的**package.appxmanifest**文件并添加此扩展。
 
 ```xml
 <Extensions>
@@ -311,9 +311,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### <a name="add-an-app-service-extension-to-the-uwp-project"></a>向 UWP 项目添加应用服务扩展
+### <a name="add-an-app-service-extension-to-the-packaging-project"></a>将应用服务扩展添加到打包项目
 
-打开 UWP 项目的 **package.appxmanifest** 文件，向 ``<Application>`` 元素添加一个应用服务扩展。
+打开**package.appxmanifest**文件的打包项目中，并添加到应用服务扩展``<Application>``元素。
 
 ```xml
 <Extensions>
@@ -398,7 +398,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>添加共享目标扩展
 
-在**解决方案资源管理器**中，打开你的解决方案中 UWP 项目的 **package.appxmanifest** 文件并添加该扩展。
+在**解决方案资源管理器**中，在你的解决方案中打开打包项目的**package.appxmanifest**文件并添加扩展。
 
 ```xml
 <Extensions>
@@ -512,7 +512,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>配置后台任务
 
-在清单设计器中，打开解决方案中 UWP 项目的 **package.appxmanifest** 文件。
+在清单设计器中打开你的解决方案中的打包项目的**package.appxmanifest**文件。
 
 在**声明**选项卡中，添加一个**后台任务**声明。
 

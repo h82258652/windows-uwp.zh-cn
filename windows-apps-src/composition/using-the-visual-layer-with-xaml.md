@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 643a5abf22bfbeb9e7ace48bc430ab6e0d446ae1
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018573"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914512"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>将可视化层与 XAML 结合使用
 
@@ -43,7 +43,7 @@ XAML 和可视化层互操作功能可用于创建单独使用 XAML API 时无�
 
 **XamlLight** 为使用 **CompositionLight** 对某个区域动态照明的 XAML 照明效果提供基类。
 
-有关使用光（包括对 XAML UI 元素进行照明）的详细信息，请参阅[**照明**](lighting.md)部分。
+有关使用光（包括对 XAML UI 元素进行照明）的详细信息，请参阅[**照明**](xaml-lighting.md)部分。
 
 有关代码示例，请参阅 [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) 的参考页面。
 

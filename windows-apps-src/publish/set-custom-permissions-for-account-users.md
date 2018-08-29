@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889396"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913505"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -119,7 +119,7 @@ ms.locfileid: "2889396"
 <tr><td align="left">    <b>社区广告</b>                       </td><td align="left">  可查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。          </td><td align="left">  可创建、管理和查看帐户中所有产品的免费<a href="about-community-ads.md">社区广告</a>使用情况。               </td></tr>
 <tr><td align="left">    <b>联系人信息</b>                        </td><td align="left">  可查看“帐户设置”部分中的<a href="managing-your-profile.md">联系人信息</a>。        </td><td align="left">  可编辑和查看“帐户设置”部分中的<a href="managing-your-profile.md">联系人信息</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 合规性</b>                    </td><td align="left">  可查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a>选择（指示产品是否面向年龄在 13 岁以下的儿童）。                                            </td><td align="left">  可编辑和查看帐户中所有产品的 <a href="in-app-ads.md#coppa-compliance">COPPA 合规性</a> 选择（指示产品是否面向年龄在 13 岁以下的儿童）。         </td></tr>
-<tr><td align="left">    <b>客户组</b>                     </td><td align="left">  可以查看<a href="create-customer-groups.md">客户组</a>（段和已知的用户组）。      </td><td align="left">  可以创建、 编辑和查看<a href="create-customer-groups.md">客户组</a>（段和已知的用户组）。       </td></tr>
+<tr><td align="left">    <b>客户组</b>                     </td><td align="left">  可以查看<a href="create-customer-groups.md">客户组</a>（类别和已知的用户组）。      </td><td align="left">  可以创建、 编辑和查看<a href="create-customer-groups.md">客户组</a>（类别和已知的用户组）。       </td></tr>
 <tr><td align="left">    <b>管理产品组</b>&nbsp;*                            </td><td align="left">  可查看新产品组创建页面，但实际上无法创建新产品组。    </td><td align="left">  可以创建并编辑产品组。     </td></tr>
 <tr><td align="left">    <b>新应用</b>                            </td><td align="left">  可查看新应用创建页面，但实际上无法在帐户中创建新应用。    </td><td align="left">  在帐户中预留新应用名称可<a href="create-your-app-by-reserving-a-name.md">创建新应用</a>，并可创建新提交，然后将应用提交到应用商店。     </td></tr>
 <tr><td align="left">    <b>新捆绑包</b>&nbsp;*                       </td><td align="left">  可查看新捆绑包创建页面，但实际上无法在帐户中创建新捆绑包。     </td><td align="left">  可创建产品的新捆绑包。          </td></tr>
@@ -170,11 +170,11 @@ ms.locfileid: "2889396"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>购置</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    N/A （父产品设置包含**加载项获取**报表）        </td><td>    不适用                         </td></tr>
+    <tr><td align="left">    <b>购置</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    不适用 （对于父产品的设置包含**加载项购置**报告）        </td><td>    不适用                         </td></tr>
     <tr><td align="left">    <b>使用情况</b> </td><td>    可查看产品的<a href="usage-report.md">使用情况报告</a>。     </td><td>    不适用       </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不适用     </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不适用     </td><td>    不适用         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可以查看[Xbox 分析报表](xbox-analytics-report.md)的产品。    </td><td>    不适用   </td><td>    不适用       </td><td>    不适用          </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可查看产品的[Xbox 分析报告](xbox-analytics-report.md)。    </td><td>    不适用   </td><td>    不适用       </td><td>    不适用          </td></tr>
     <tr><td align="left">    <b>真实数据</b>   </td><td>    可查看产品的实时报告。 （注意：该报告目前仅通过<a href="dev-center-insider-program.md">开发人员中心会员计划</a>提供。）      </td><td>    不适用   </td><td>    不适用     </td><td>    不适用                 </td></tr>
     </tbody>
     </table>
@@ -194,7 +194,7 @@ ms.locfileid: "2889396"
     <tbody>
     <tr><td align="left">    <b>促销代码</b>     </td><td>    可查看产品及其加载项的<a href="generate-promotional-codes.md">促销代码</a>订单和使用信息，并可查看使用情况信息。         </td><td>    可查看、管理和创建产品及其加载项的<a href="generate-promotional-codes.md">促销代码</a>，还可查看使用信息。          </td><td>    不适用（对于父产品的设置适用于所有加载项）     </td><td>    不适用（对于父产品的设置适用于所有加载项）     </td></tr>
     <tr><td align="left">    <b>定向优惠</b>     </td><td>    可查看产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。         </td><td>    可查看、管理和创建产品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">定向优惠</a>。          </td><td>    不适用     </td><td>    不适用      </td></tr>
-    <tr><td align="left">    <b>联系客户</b>  </td><td>    可查看<a href="respond-to-customer-feedback.md">客户反馈响应</a>和<a href="respond-to-customer-reviews.md">客户评论响应</a>，前提是还授予了<b>客户反馈</b>权限。 还可查看为产品创建的<a href="send-push-notifications-to-your-apps-customers.md">目标通知</a>。    </td><td>    只要<b>客户反馈</b>权限授予了以及可以<a href="respond-to-customer-feedback.md">响应客户反馈</a>和<a href="respond-to-customer-reviews.md">响应客户评论</a>。 还可为产品<a href="send-push-notifications-to-your-apps-customers.md">创建和发送目标通知</a>。                   </td><td>    不适用         </td><td>    不适用                          </td></tr>
+    <tr><td align="left">    <b>联系客户</b>  </td><td>    可查看<a href="respond-to-customer-feedback.md">客户反馈响应</a>和<a href="respond-to-customer-reviews.md">客户评论响应</a>，前提是还授予了<b>客户反馈</b>权限。 还可查看为产品创建的<a href="send-push-notifications-to-your-apps-customers.md">目标通知</a>。    </td><td>    只要<b>客户反馈</b>权限授予了也可以<a href="respond-to-customer-feedback.md">响应客户反馈</a>和<a href="respond-to-customer-reviews.md">回复客户评论</a>。 还可为产品<a href="send-push-notifications-to-your-apps-customers.md">创建和发送目标通知</a>。                   </td><td>    不适用         </td><td>    不适用                          </td></tr>
     <tr><td align="left">    <b>实验</b></td><td>    可查看产品的<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>和实验数据。   </td><td>    可为产品创建、管理和查看<a href="../monetize/run-app-experiments-with-a-b-testing.md">实验（A/B 测试）</a>，还可查看实验数据。     </td><td>    不适用  </td><td>    不适用                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store 促销活动</b>&nbsp;*</td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td><td>    可以查看产品的促销活动状态。   </td><td>    可以将产品添加到促销活动并配置折扣。      </td></tr>
     </tbody>

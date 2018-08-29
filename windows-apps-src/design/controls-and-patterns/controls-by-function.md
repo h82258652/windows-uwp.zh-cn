@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887906"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908788"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -30,7 +30,7 @@ ms.locfileid: "2887906"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安装的<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开应用程序，请参阅在操作 NavigationView</a>到 </p>
+    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开该应用，了解 NavigationView 的实际</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -270,7 +270,7 @@ ms.locfileid: "2887906"
 
 参考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-设计和操作方法：[弹出项目](dialogs-and-flyouts/flyouts.md) 
+设计和操作方法：[浮出控件](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>菜单浮出控件
 临时显示与用户当前正在执行的操作相关的命令或选项的列表。
@@ -299,7 +299,7 @@ ms.locfileid: "2887906"
 
 参考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-设计和操作方法： [Dialogs](dialogs-and-flyouts/dialogs.md) 
+设计和操作方法：[对话框](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>工具提示
 显示元素信息的弹出窗口。 
@@ -555,7 +555,7 @@ ms.locfileid: "2887906"
 
 ### <a name="navigationview"></a>NavigationView
 
-适应容器和实现的左侧的导航窗格、 顶部导航和选项卡模式的灵活导航模型。
+适应性容器和实现的左侧的导航窗格中，顶部导航和表模式的灵活的导航模型。
 
 参考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

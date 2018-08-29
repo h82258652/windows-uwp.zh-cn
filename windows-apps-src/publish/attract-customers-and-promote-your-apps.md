@@ -10,21 +10,21 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886746"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918778"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客户并推广应用
 
-Microsoft 存储您的应用程序后，就可以获取尽可能多的客户的前面。 我们提供的很多功能有助于推广产品并扩大客户群，包括广告市场活动、促销代码和销售定价等。
+一旦你的应用在 Microsoft Store 中，是时候尽可能前面尽可能多的客户获取它。 我们提供的很多功能有助于推广产品并扩大客户群，包括广告市场活动、促销代码和销售定价等。
 
 -   [生成促销代码](generate-promotional-codes.md)
 -   [为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
 -   [创建自定义应用促销市场活动](create-a-custom-app-promotion-campaign.md)
 -   [打折出售应用和加载项](put-apps-and-add-ons-on-sale.md)
--   [Microsoft 存储营销应用程序的指南](app-marketing-guidelines.md)
+-   [Microsoft 应用商店营销指南的应用](app-marketing-guidelines.md)
 -   [链接到你的应用](link-to-your-app.md)
 -   [更方便地推广你的应用](make-your-app-easier-to-promote.md)
 

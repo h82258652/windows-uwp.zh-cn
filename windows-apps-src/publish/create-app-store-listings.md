@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882540"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910287"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 
@@ -42,22 +42,22 @@ ms.locfileid: "2882540"
 
 在完成选择后，单击**保存**以返回到提交概述页。
 
-## <a name="add-and-edit-store-listing-info"></a>添加和编辑存储列表信息
+## <a name="add-and-edit-store-listing-info"></a>添加和编辑应用商店一览信息
 
-若要编辑的商店清单，从提交概述页中选择的语言名称。
+若要编辑应用商店一览，请从提交概述页选择语言名称。
 
 **应用商店一览**页面顶部的字段与所选语言的默认应用商店一览相关联。 这些字段将显示给所有客户，除非你有面向较早 OS 版本（Windows 8.x 或更早版本；Windows Phone 8.x 或更早版本）的程序包并创建特定于平台的应用商店一览，以包含要显示给指定 OS 版本的客户的不同屏幕截图或信息。 有关详细信息，请参阅[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)。
 
 ## <a name="product-name"></a>产品名称
 
-此下拉列表框中，可以指定应商店列表中使用的名称，（如果您保留了多个应用程序的名称）。
+此下拉框允许你指定的名称应在应用商店一览 （如果你的应用的多个名称）。
 
-如果您上载以同一种语言作为您正在使用的存储列表的程序包，将选择这些包中使用的名称。 如果您需要重命名[应用程序](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，您可以选择不同的保留的名称此处时使用新名称的包创建新提交。
+如果你已上载程序包中的应用商店一览，你正在为相同的语言，将会选择这些程序包中使用的名称。 如果你需要重命名[该应用](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，你可以使用程序包，使用新名称创建新的提交时选择不同的保留的名称下面。
 
-如果尚未上载的语言包正在处理的和已保留多个名称，您需要选择其中一个保留应用程序名称，因为在从中提取名称该语言没有相关联的程序包。
+如果尚未上载程序包的语言正在努力，并已保留多个名称，你将需要选择其中一个保留的应用名称，因为在要从中提取名称的语言中没有相关联的程序包。
 
 > [!NOTE]
-> **产品名称**选择仅适用于您正在使用的商店清单中使用的语言。 它不会影响时客户安装应用程序; 显示名称该名称来自获取安装的程序包的清单。 若要避免混淆情况，建议每个语言包和商店列表使用相同的名称。
+> **产品名称**选择仅适用于应用商店一览语言中你所使用。 它不会影响客户安装该应用; 时显示的名称该名称来自获取安装的程序包清单。 以避免混淆，我们建议每种语言的程序包和应用商店一览使用相同的名称。
 
 ## <a name="description"></a>描述
 
@@ -134,7 +134,7 @@ ms.locfileid: "2882540"
 
 对于游戏，简短说明还可能出现在 Xbox One 上游戏中心的“信息”部分。
 
-为了获得最佳结果，在 270 字符保留您的简短说明。 该字段为 500 字符限制，但在某些视图中，只有先 270 字符将显示 （可用于查看的简短说明其余链接）。
+为了获得最佳结果，保持简短描述下 270 字符。 字段限制 500 个字符，但在一些视图中，只有首先 270 的字符将显示为 （链接可查看的简短说明的其余部分）。
 
 
 ### <a name="additional-system-requirements"></a>其他系统要求

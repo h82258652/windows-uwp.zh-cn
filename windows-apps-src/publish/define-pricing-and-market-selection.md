@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882683"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906584"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
 
 Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要推出你的应用的市场，按市场或市场组自定义许多[定价和可用性](set-app-pricing-and-availability.md)功能。
 
-若要帮助使您的应用程序世界各地适合客户的信息，请参阅[全球化的指南](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)并[使您可本地化的应用程序](../design/globalizing/prepare-your-app-for-localization.md)。
+为了使你的应用来自世界各地的适用于客户的信息，请参阅[使你的应用可本地化](../design/globalizing/prepare-your-app-for-localization.md)和[全球化指南](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
 
 > [!NOTE]
 > 虽然本主题提及应用，但加载项提交的市场选择也使用同样的过程。
@@ -48,9 +48,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 你还将看到一个复选框，指示是否向应用商店将来可能添加的任何市场推出你的应用。 如果选中此框，我们将来添加新市场时，你的提交的基本价格和公开发布日期将用于你在这些市场的应用。 如果不希望这样做，可取消选中该框，我们将不会在未来添加的市场中发布你的应用（但你可在将来随时添加这些市场）。
  
 
-## <a name="microsoft-store-consumer-markets"></a>Microsoft 存储使用者市场
+## <a name="microsoft-store-consumer-markets"></a>Microsoft 应用商店消费者市场
 
-可以选择在以下一个或多个市场中列出的应用（或加载项）。 带星号的市场支持 Microsoft 存储上 Xbox 一个;您将看到**Xbox** **市场选择**弹出窗口中其名称旁边。
+可以选择在以下一个或多个市场中列出的应用（或加载项）。 带星号的市场支持 Xbox One; 上的 Microsoft 应用商店你将看到**Xbox**旁边**市场选择**弹出窗口中的名称。
 
 
 <table>
@@ -370,7 +370,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>瑞典 *</td>
     <td>瑞士 *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>塔吉克斯坦</td>
   </tr>
   <tr>
@@ -480,7 +480,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果您的应用程序包括面向 Windows 的软件包 8.x，务必要注意的市场被视为客户使用 Windows 上的单个"Rest 的 World"市场 8.x，即使它们如下所示 Windows 开发人员中心中的单个市场仪表板 (而不是早期存储仪表板中，如果出现一个"Rest World"市场选项，可将所有这些市场的组合)。
+如果你的应用包含程序包面向 Windows 8.x 不同，请务必注意大量市场被视为单个"世界其他地区"市场使用的 Windows 应用商店客户 8.x，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中没有一个"世界其他地区"市场选项以将所有这些市场组合)。
 
 如果你在提交应用时保留默认选择，则无需担心此问题，并且你的应用将向所有可能的市场提供。 但是，如果你希望排除特定市场，请记住，即使只排除其中一个“世界其他地区”市场，也意味着将无法在任何“世界其他地区”市场中向使用 Windows 8 或 Windows 8.1 的客户提供你的应用。
 

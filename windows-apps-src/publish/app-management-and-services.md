@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891934"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905440"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -29,9 +29,9 @@ ms.locfileid: "2891934"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-如果您要发布某个游戏，可以启用此页上的[Xbox Live 创建者程序](http://xbox.com/developers/creators-program)。 这样可以开始配置和测试 Xbox Live 功能，并最终发布 Xbox Live 创建者程序游戏。
+如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](http://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布你的 Xbox Live 创意者计划游戏。
 
-有关详细信息，请参阅[入门 Xbox Live 创建者程序](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)并[创建一个新的 Xbox Live 创建者程序标题和发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+有关详细信息，请参阅[Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)和[创建一个新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
 ## <a name="experimentation"></a>实验
 
@@ -50,15 +50,15 @@ ms.locfileid: "2891934"
 
 ## <a name="product-collections-and-purchases"></a>产品收集和购买
 
-若要使用 Microsoft 存储集合 API 和 Microsoft 存储购买 API 访问所有权的应用程序和加载项的信息，您需要输入关联此处 Azure AD 客户 Id。 请注意，需要 16 个小时才能使这些更改生效。
+若要使用 Microsoft Store 收集 API 和 Microsoft 应用商店购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 此处。 请注意，需要 16 个小时才能使这些更改生效。
 
 有关详细信息，请参阅[管理来自服务的产品授权](../monetize/view-and-grant-products-from-a-service.md)。
 
 ## <a name="administrator-consent"></a>管理员同意
 
-您的产品与 Azure AD 集成，并调用请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)，将需要管理员同意的 Api 的 f 输入您的 Azure AD 客户端 ID。 这样可以获取其组织授予同意产品代表租户中的所有用户操作相关应用程序的管理员。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
 
-有关详细信息，请参阅[Requesting consent 整个租户](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+有关详细信息，请参阅[同意整个租户的请求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>应用管理
 
@@ -89,18 +89,18 @@ ms.locfileid: "2891934"
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
-**WNS/MPNS**本节提供选项以帮助您创建和发送到您的应用程序客户的通知。 
+**WNS/MPNS**部分提供了可帮助你创建并向你的应用客户发送通知的选项。 
 
 > [!TIP]
-> 对于 UWP 应用程序，我们建议在仪表板中使用**通知**选项。 此功能允许您将通知发送到的所有应用程序的客户或[客户段](create-customer-segments.md)中已定义的满足条件 Windows 10 客户目标子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
+> 对于 UWP 应用，我们建议你在仪表板中使用**通知**选项。 将通知发送到所有应用的客户，你可以使用此功能或[客户类别](create-customer-segments.md)中所定义的你符合条件的 Windows 10 客户定向子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
-根据您的应用程序包类型和其特定要求，您还可以使用以下选项之一： 
+具体取决于你的应用包类型及其特定要求，你还可以使用以下选项之一： 
 
 -   可使用 **Windows 推送通知服务 (WNS)** 从自己的云服务中发送 Toast、磁贴、锁屏提醒和原始更新。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 -   你可以使用 **Microsoft Azure 移动应用**发送推送通知、验证和管理应用用户，以及将应用数据存储在云中。 有关详细信息，请参阅[“移动应用”文档](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推送通知服务 (MPNS)** 可以和 Windows Phone 的 .xap 程序包结合使用。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果您正在使用 MPNS，您需要将证书上载到**WNS/MPNS**上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推送通知服务 (MPNS)** 可以和 Windows Phone 的 .xap 程序包结合使用。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

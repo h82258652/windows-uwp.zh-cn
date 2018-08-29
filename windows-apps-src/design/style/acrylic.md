@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: 画笔创建半透明纹理类型。
+description: 一种画笔，用于创建半透明纹理。
 title: 亚克力材料
 template: detail.hbs
 ms.author: mijacobs
@@ -15,26 +15,26 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894096"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907764"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
 ![主图](images/header-acrylic.svg)
 
-Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)创建半透明纹理。 你可以将亚克力应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+亚克力是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将亚克力应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
 > **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
-        浅主题中丙烯酸纤维![丙烯酸纤维浅主题中](images/Acrylic_LightTheme_Base.png)
+        在浅色主题亚克力![在浅色主题亚克力](images/Acrylic_LightTheme_Base.png)
     :::column-end:::
     :::column:::
-        深主题中丙烯酸纤维![丙烯酸纤维深主题中](images/Acrylic_DarkTheme_Base.png)
+        在深色主题亚克力![在深色主题亚克力](images/Acrylic_DarkTheme_Base.png)
     :::column-end:::
 :::row-end:::
 
@@ -49,10 +49,10 @@ Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 ## <a name="examples"></a>示例
 
 :::row:::
-    ::: 列跨度:::![某个图像](images/XAML-controls-gallery-app-icon.png)
+    ::: 列范围:::![某些图像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    ::: 列跨度 ="2"::: **XAML 控件库**<br>
-        如果您已安装的 XAML 控件库应用程序，请单击<a href="xamlcontrolsgallery:/item/Acrylic">此处</a>可打开应用程序，请参阅 acrylic 在操作。
+    ::: 列范围 ="2"::: **XAML 控件库**<br>
+        如果你安装了该 XAML 控件库应用，请单击<a href="xamlcontrolsgallery:/item/Acrylic">此处</a>打开该应用并查看操作中的亚克力。
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -77,7 +77,7 @@ Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 
 [NavigationView](../controls-and-patterns/navigationview.md) 是一种新的常用控件，用于在应用中添加导航，其视觉设计采用了亚克力。 NavigationView 的窗格在窗格并排打开并显示主要内容时显示背景亚克力，在窗格以覆盖形式打开时自动转换为应用内亚克力。
 
-如果您的应用程序不能利用 NavigationView 并且您自己添加 acrylic 计划，我们建议使用 60%淡色不透明度相对半透明 acrylic。
+如果你的应用不能使用 NavigationView，而你计划自行添加亚克力，我们建议使用相对透明的亚克力 60%色调不透明度。
  - 窗格以覆盖形式在其他应用内容上打开时，应设置为 [60% 应用内亚克力](#acrylic-theme-resources)
  - 窗格并排打开并显示主要应用内容时，应设置为 [60% 背景亚克力](#acrylic-theme-resources)
 
@@ -106,11 +106,11 @@ Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xa
 ![计算器实用程序将亚克力用作其整个背景](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> 呈现丙烯酸纤维曲面是 GPU 密集型，这可以增加设备能耗并缩短电池寿命。 丙烯酸纤维效果自动被禁用时设备输入电池保护程序模式，用户可以禁用所有应用程序的丙烯酸纤维效果，如果他们的选择。
+> 呈现亚克力图面进行 GPU，从而可以设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
 
 
 ## <a name="acrylic-blend-types"></a>亚克力混合类型
-Acrylic 的最显著特征是其透明度。 有两种亚克力混合类型可改变材料透明度：
+亚克力的最明显特征是其透明度。 有两种亚克力混合类型可改变材料透明度：
  - **背景亚克力**显示桌面壁纸和当前处于活动状态的应用后的其他窗口，增加了应用程序窗口之间的层次感，同时允许用户进行个性化偏好设置。
  - **应用内亚克力**在应用框架内增加层次感，焦点清晰且层次分明。
 
@@ -124,12 +124,12 @@ Acrylic 的最显著特征是其透明度。 有两种亚克力混合类型可�
 ## <a name="usability-and-adaptability"></a>可用性和适应性
 亚克力外观可自动适应各种设备和上下文。
 
-在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景 acrylic 和应用程序内 acrylic 显示为纯色：
+在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力均显示为纯色：
  - 当用户关闭设置中的透明度 > 个性化 > 颜色
- - 当激活电池保护模式
+ - 当激活节电模式
  - 应用在低端硬件上运行时
 
-此外，仅背景 acrylic 将替换其透明度和纹理纯色：
+此外，只有背景亚克力将其透明度和纹理替换为纯色：
  - 桌面上的应用窗口停用时
  - UWP 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
 
@@ -163,7 +163,7 @@ Acrylic 的最显著特征是其透明度。 有两种亚克力混合类型可�
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>推荐使用率：</b>如果您的应用程序使用文本大小或更大的 18px 辅助 AltMedium 颜色的文本，您可以将这些更半透明 70%丙烯酸纤维资源衬于文字下方。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -209,9 +209,9 @@ Acrylic 的最显著特征是其透明度。 有两种亚克力混合类型可�
 ## <a name="custom-acrylic-brush"></a>自定义亚克力画笔
 你可以选择在应用的亚力克中添加颜色色调，以展示个性化设计或实现与页面其他元素之间的视觉平衡。 若要显示颜色而非灰度，你需要使用以下属性定义属于你自己的亚克力画笔。
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
- - **TintOpacity**：色调层不透明度。 建议 80%的不透明度作为起点，尽管不同颜色可能看上去更引入注目在其他 translucencies。
+ - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 替换 acrylic 电池保护程序中的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
@@ -338,7 +338,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="how-we-designed-acrylic"></a>如何设计亚克力
 
-我们微调亚克力的关键组件以凸显其独特外观和属性。 我们开始透明度、 模糊和噪音平面向添加 visual 深度和维度。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
+我们微调亚克力的关键组件以凸显其独特外观和属性。 我们从透明度、 模糊和噪点设置为平滑图面增添视觉深度和维度开始。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
 
 ![亚克力设置](images/AcrylicRecipe_Diagram.jpg)
 <br/>亚克力设置：背景、模糊、排除混合、颜色/色调覆盖、噪点

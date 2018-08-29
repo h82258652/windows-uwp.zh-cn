@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 游戏板, 振动
 ms.localizationpriority: medium
 ms.openlocfilehash: f44d5f4dee8293ed40d22a301f2a3d2a9611e15d
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888146"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909954"
 ---
 # <a name="gamepad-and-vibration"></a>游戏板和振动
 
@@ -27,32 +27,32 @@ ms.locfileid: "2888146"
 * 如何检测是否已添加或删除某个游戏板
 * 如何读取一个或多个游戏板的输入
 * 如何发送振动和脉冲命令
-* 游戏作为 UI 导航设备的行为方式
+* 如何像 UI 导航设备游戏板
 
 ## <a name="gamepad-overview"></a>游戏板概述
 
 Xbox Wireless Controller 和 Xbox Wireless Controller S 等游戏板是通用游戏输入设备。 它们是 Xbox One 上的标准输入设备，不喜欢用键盘和鼠标的 Windows 游戏玩家通常会选择这些设备。 游戏板在 Windows 10 和 Xbox UWP 应用中受 [Windows.Gaming.Input][] 命名空间支持。
 
-一个 Xbox 游戏配有方向拨号盘 （或 D 拨号盘）;**A**、 **B**、 **X**、 **Y**、**视图**和**菜单**按钮;左右 thumbsticks、 缓冲器和触发器;并且总的四个振动汽车公司。 两个操纵杆会在 X 和 Y 轴提供两个模拟读数，并在向内按时还可以充当一个按钮。 每个触发器提供值，该值代表远它的拉是返回模拟阅读。
+Xbox One 游戏板配备有一个方向板 （或方向键）;**A**、 **B**、 **X**、 **Y**、**视图**和**菜单**按钮;左和右操纵杆、 缓冲键和触发器;以及总共 4 个振动电机。 两个操纵杆会在 X 和 Y 轴提供两个模拟读数，并在向内按时还可以充当一个按钮。 每个扳机键会提供一个模拟读数表示它距离返回拉取。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **Paddle** buttons on its underside. These can be used to provide redundant access to game commands that are difficult to use together (such as the right thumbstick together with any of the **A**, **B**, **X**, or **Y** buttons) or to provide dedicated access to additional commands. -->
 
 > [!NOTE]
-> `Windows.Gaming.Input.Gamepad` 此外支持 Xbox 360 游戏，具有与标准 Xbox 一个游戏相同的控件布局。
+> `Windows.Gaming.Input.Gamepad` 此外支持 Xbox 360 游戏板，具有与标准 Xbox One 游戏板相同的控件布局。
 
 ### <a name="vibration-and-impulse-triggers"></a>振动和脉冲扳机键
 
 Xbox One 游戏板针对强烈和细微的游戏板振动提供了两个独立的电机，同时还提供了两个专用电机用于向每个扳机键提供剧烈振动（这一独特功能正是 Xbox One 游戏板扳机键被称为“脉冲扳机键”__ 的原因）。
 
 > [!NOTE]
-> Xbox 360 游戏没有配备_脉冲触发器_。
+> Xbox 360 游戏板未配备_脉冲扳机键_。
 
 有关详细信息，请参阅 [振动和脉冲扳机键概述](#vibration-and-impulse-triggers-overview)。
 
 ### <a name="thumbstick-deadzones"></a>操纵杆死区
 
-理想状态下，中心位置闲置的操纵杆每次都会在 X 和 Y 轴生成相同的中性读数。 但是，由于机械作用力以及操纵杆的敏感性，中心位置的实际读数只能近似于理想的中性值，在后续的读数之间可能会有所不同。 因此，您必须始终使用小型_deadzone_&mdash;附近的理想的中心位置将被忽略的值的范围&mdash;以弥补制造差异、 机械消减或其他游戏板问题。
+理想状态下，中心位置闲置的操纵杆每次都会在 X 和 Y 轴生成相同的中性读数。 但是，由于机械作用力以及操纵杆的敏感性，中心位置的实际读数只能近似于理想的中性值，在后续的读数之间可能会有所不同。 出于此原因，你必须始终使用小_死区_&mdash;一系列被忽略的接近理想中心位置值&mdash;来弥补制造差异、 机械磨损或者其他游戏板问题。
 
 较大的死区可提供一个简单的策略，用于将有意输入和无意输入区分开来。
 
@@ -62,7 +62,7 @@ Xbox One 游戏板针对强烈和细微的游戏板振动提供了两个独立�
 
 为了减轻对用户界面导航提供不同输入设备支持的负担并促进游戏和设备之间的一致性，大多_物理_输入设备同时会充当单独的被称为 [UI 导航控制器](ui-navigation-controller.md)的_逻辑_输入设备。 UI 导航控制器可跨各种输入设备提供通用的 UI 导航命令词汇。
 
-作为 UI 导航控制器，游戏映射到左侧的 thumbstick、 D 拨号盘、**视图**、**菜单**、 **A**和**B**按钮导航命令[所需的设置](ui-navigation-controller.md#required-set)。
+作为 UI 导航控制器，游戏板将导航命令[所需的设置](ui-navigation-controller.md#required-set)映射到左的操纵杆、 方向键、**视图**、**菜单**、 **A**和**B**按钮。
 
 | 导航命令 | 游戏板输入                       |
 | ------------------:| ----------------------------------- |
@@ -98,9 +98,9 @@ Xbox One 游戏板针对强烈和细微的游戏板振动提供了两个独立�
 
 ### <a name="the-gamepads-list"></a>游戏板列表
 
-[Gamepad][] 类会提供一个静态属性 [Gamepads][]，该属性是当前已连接游戏板的只读列表。 因为您仅可能感兴趣的连接游戏一些，建议您保持而不是访问其通过您自己的集合`Gamepads`属性。
+[Gamepad][] 类会提供一个静态属性 [Gamepads][]，该属性是当前已连接游戏板的只读列表。 因为你可能只对某些连接的游戏板感兴趣，建议你保留自己的集合，而访问它们通过`Gamepads`属性。
 
-下面是将所有已连接游戏板复制到一个新集合的示例。 请注意，因为其他在后台线程要访问此集合 （在[GamepadAdded][]和[GamepadRemoved][]事件中），您需要放置锁定包围读取或更新集合的任何代码。
+下面是将所有已连接游戏板复制到一个新集合的示例。 请注意，因为将会在后台中的其他线程访问此集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），你需要放置任何代码的读取或更新集合周围锁定。
 
 ```cpp
 auto myGamepads = ref new Vector<Gamepad^>();
@@ -122,7 +122,7 @@ for (auto gamepad : Gamepad::Gamepads)
 
 ### <a name="adding-and-removing-gamepads"></a>添加和删除游戏板
 
-游戏板中添加或删除时, 引发的[GamepadAdded][]和[GamepadRemoved][]事件。 你可以为这些事件注册处理程序以跟踪当前连接的游戏板。
+当添加或删除游戏板时，会引发的[GamepadAdded][]和[GamepadRemoved][]事件。 你可以为这些事件注册处理程序以跟踪当前连接的游戏板。
 
 下面是开始跟踪已添加的游戏板的示例。
 
@@ -142,7 +142,7 @@ Gamepad::GamepadAdded += ref new EventHandler<Gamepad^>(Platform::Object^, Gamep
 }
 ```
 
-下面的示例停止跟踪游戏板的已删除。 您还需要处理时将其; 正在跟踪游戏时会发生什么情况例如，此代码只跟踪一个游戏板，来自输入，只需将其设置为`nullptr`删除的时间。 您需要检查每个框架，如果您游戏板处于活动状态和哪些游戏板您正在收集来自输入时控制器的连接和断开连接的更新。
+下面的示例停止跟踪已删除游戏板。 你还需要处理时将其; 要跟踪的游戏板会发生什么情况例如，此代码仅跟踪来自一个游戏板输入，只需将其设置为`nullptr`时删除。 你需要检查每个帧，如果你的游戏板处于活动状态，以及哪些游戏板你正在从输入时收集控制器的连接和断开连接的更新。
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -162,7 +162,7 @@ Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gam
 }
 ```
 
-有关详细信息，请参阅[游戏输入操作](input-practices-for-games.md)。
+有关详细信息，请参阅[适用于游戏输入实践](input-practices-for-games.md)。
 
 ### <a name="users-and-headsets"></a>用户和耳机
 
@@ -190,7 +190,7 @@ GamepadReading reading = gamepad->GetCurrentReading();
 
 ### <a name="reading-the-thumbsticks"></a>读取操纵杆
 
-每个操纵杆会在 X 和 Y 轴提供一个介于 -1.0 和 +1.0 之间的模拟读数。 在 X 轴，值 -1.0 对应于操纵杆最左位置；值 +1.0 对应于最右的位置。 在 Y 轴，值 -1.0 对应于操纵杆最下面的位置；值 +1.0 对应于最上面的位置。 在两个轴，值大约是 0.0 时继续有效是在中心位置，但它是正常的精确值改变，甚至之间后续读数;本节中将讨论更高版本的减轻此变体的策略。
+每个操纵杆会在 X 和 Y 轴提供一个介于 -1.0 和 +1.0 之间的模拟读数。 在 X 轴，值 -1.0 对应于操纵杆最左位置；值 +1.0 对应于最右的位置。 在 Y 轴，值 -1.0 对应于操纵杆最下面的位置；值 +1.0 对应于最上面的位置。 在这两个轴，值大约是 0.0，当摇杆处于中心位置，但它是正常的精确值有所不同，即使是在后续读数; 之间在本部分后面讨论减小此误差的策略。
 
 左操纵杆 X 轴的值通过 [GamepadReading][] 结构的 `LeftThumbstickX` 属性读取，Y 轴的值通过 `LeftThumbstickY` 属性来读取。 右操纵杆 X 轴的值通过 `RightThumbstickX` 属性读取，Y 轴的值通过 `RightThumbstickY` 属性读取。
 
@@ -201,7 +201,7 @@ float rightStickX = reading.RightThumbstickX; // returns a value between -1.0 an
 float rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
-读取操纵杆的值时，你会注意到，当操纵杆处于中心位置闲置时，它们不会稳定地生成中性读数 0.0；而是每次移动操纵杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。 使用死区的一种方法是，确定操纵杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 您可以大致计算距离&mdash;因为 thumbstick 读数本质上极、 不平面的值，它并不精确&mdash;只使用勾股定理。 这会生成一个径向死区。
+读取操纵杆的值时，你会注意到，当操纵杆处于中心位置闲置时，它们不会稳定地生成中性读数 0.0；而是每次移动操纵杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。 使用死区的一种方法是，确定操纵杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以大致计算距离&mdash;它它们并不精确，因为操纵杆读数实际上是极值，不是平面值&mdash;只需通过使用勾股定理计算。 这会生成一个径向死区。
 
 下面示例演示如何使用勾股定理计算基本径向死区。
 
@@ -237,7 +237,7 @@ float rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1.
 
 ### <a name="reading-the-buttons"></a>读取按钮
 
-每个游戏板按钮&mdash;的 D 拨号盘、 左右缓冲器、 左右 thumbstick 按、 **A**、 **B**、 **X**、 **Y**、**视图**和**菜单**的四个方向&mdash;提供读取的数字指示它已按下 （向下） 还是发布 （向上）。 为了提高效率，按钮读数不表示为单个的布尔值;相反，它们是所有打包到由[GamepadButtons][]枚举表示单个组标志。
+每个游戏板按钮&mdash;方向键、 左和右缓冲键、 左右操纵杆按键、 **A**、 **B**、 **X**、 **Y**、**视图**和**菜单**的四个方向&mdash;提供阅读该数字指示它是按下 （向下） 还是释放 （向上）。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到的单独位域[GamepadButtons][]枚举表示。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **paddle** buttons on its underside. These buttons are also represented in the `GamepadButtons` enumeration and their values are read in the same way as the standard gamepad buttons. -->
@@ -262,7 +262,7 @@ if (GamepadButtons::None == (reading.Buttons & GamepadButtons::A))
 }
 ```
 
-有时您可能希望确定按钮时从过渡按下为已发布或多个按钮是按还是发布，或一组按钮排列用特定方式发布到按下，&mdash;一些按下，某些不。 有关如何检测这些条件的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有时你可能想要确定从按钮的过渡时按下到释放或多个按钮是按下还是释放，或按特定方式安排一组按钮释放到按下，&mdash;按下，释放一些。 有关如何检测这些条件的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 ## <a name="run-the-gamepad-input-sample"></a>运行游戏板输入示例
 
@@ -272,13 +272,13 @@ if (GamepadButtons::None == (reading.Buttons & GamepadButtons::A))
 
 游戏板内的振动电机用于向用户提供触觉反馈。 游戏可利用此功能打造更为出色的带入感，帮助传达状态信息（如遭受攻击），向重要对象发出邻近信号，或者用于其他有创意的用途。
 
-Xbox One 游戏板共配备有四个独立的振动电机。 两个是位于游戏板正文; 中的大型汽车公司左的机动车提供粗略、 高-幅度振动，而右机动车提供柔和、 更细微振动。 另外两个是小型电机，每个扳机键内一个，直接向用户的扳机键手指提供剧烈的突发性振动，Xbox One 游戏板的这一独特功能，正是其扳机键被称为“脉冲扳机键”__ 的原因。 通过将这些电机编排在一起，可以生成层次丰富的触觉。
+Xbox One 游戏板共配备有四个独立的振动电机。 两个大型电机位于游戏板中;左的电机提供强烈的高幅振动，右电机提供较轻柔更巧妙的振动。 另外两个是小型电机，每个扳机键内一个，直接向用户的扳机键手指提供剧烈的突发性振动，Xbox One 游戏板的这一独特功能，正是其扳机键被称为“脉冲扳机键”__ 的原因。 通过将这些电机编排在一起，可以生成层次丰富的触觉。
 
 ## <a name="using-vibration-and-impulse"></a>使用振动和脉冲
 
 游戏板振动通过 [Gamepad][] 类的 [Vibration][] 属性进行控制。 `Vibration` Vibration 是 [GamepadVibration][] 结构的实例，该结构由四个浮点值组成，每个值代表其中一个电机的强度。
 
-尽管的成员`Gamepad.Vibration`属性可直接修改，则建议您初始化单独`GamepadVibration`实例的值，然后将其复制到与`Gamepad.Vibration`属性同时更改实际运动亮度。
+尽管的成员`Gamepad.Vibration`属性可以直接修改，建议在初始化单独`GamepadVibration`实例与你需的值，然后将其复制到`Gamepad.Vibration`属性来一次性更改实际电机强度。
 
 以下示例演示了如何一次性更改电机强度。
 
@@ -308,7 +308,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 gamepad.Vibration = vibration;
 ```
 
-切记，这两个电机不是完全相同的，所以将这些属性设置为相同的值并不会在一个电机中生成与另一个电机中相同的振动。 对于任何值，左侧的机动车生成更强振动，较低的频率比右演练其中&mdash;相同的值为&mdash;生成柔和振动，较高的频率。 即使是最大值，左电机也无法生成右电机的高频率，右电机也无法生成左电机的高动力。 因为电机通过游戏板刚性连接，所以即使电机具有不同的特性并且能够以不同的强度振动，游戏玩家仍然不能完全独立地体验振动。 相比完全相同的电机，这种布置可以产生更大范围、更丰富的感觉。
+切记，这两个电机不是完全相同的，所以将这些属性设置为相同的值并不会在一个电机中生成与另一个电机中相同的振动。 对于任何值，左的电机会以较低的频率比右电动机的更强振动&mdash;对于相同的值&mdash;生成更轻柔的振动，较高的频率。 即使是最大值，左电机也无法生成右电机的高频率，右电机也无法生成左电机的高动力。 因为电机通过游戏板刚性连接，所以即使电机具有不同的特性并且能够以不同的强度振动，游戏玩家仍然不能完全独立地体验振动。 相比完全相同的电机，这种布置可以产生更大范围、更丰富的感觉。
 
 ### <a name="using-the-impulse-triggers"></a>使用脉冲扳机键
 

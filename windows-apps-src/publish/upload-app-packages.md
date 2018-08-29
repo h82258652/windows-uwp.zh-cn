@@ -8,20 +8,20 @@ ms.date: 5/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 包、 上载、 程序包上载
+keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887836"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909907"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
 你可以在**程序包**页上载要提交的应用的所有程序包文件（.appx、.appxupload、.appxbundle 和/或 .xap）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。 当客户下载应用时，应用商店将自动向每个客户提供最适用于其设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
-有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 您还需要了解[如何版本号可能会影响哪些包传送到特定客户](package-version-numbering.md)，以及[如何将包分布到不同的操作系统](guidance-for-app-package-management.md)。
+有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还将想要了解[如何版本号可能会影响哪些程序包交付给特定客户](package-version-numbering.md)以及[如何将程序包分配给不同的操作系统](guidance-for-app-package-management.md)。
 
 ## <a name="uploading-packages-to-your-submission"></a>将程序包上载到你的提交
 
@@ -32,7 +32,7 @@ ms.locfileid: "2887836"
 
 如果你已为应用创建了任何[软件包外部测试版](package-flights.md)，你将看到一个下拉列表，带有从其中一个软件包外部测试版中复制程序包的选项。 选择具有你想要引入的程序包的软件包外部测试版。 然后，即可选择要包含在此提交中的任何或所有程序包。
 
-如果我们不对其进行验证时检测与程序包的错误，我们将显示一条消息，让您了解什么是错误。 您需要删除包和修复问题，然后再尝试再次上载。 你还可能会看到一条警告，告知你可能导致错误的问题，但不会阻止你继续提交。
+如果验证它时检测到的包的错误，我们将显示一条消息，让你知道什么是错误。 你将需要删除该程序包，修复该问题，然后尝试重新上载。 你还可能会看到一条警告，告知你可能导致错误的问题，但不会阻止你继续提交。
 
 
 ## <a name="device-family-availability"></a>设备系列可用性
@@ -44,7 +44,7 @@ ms.locfileid: "2887836"
 
 ## <a name="package-details"></a>程序包详细信息
 
-按目标操作系统分组此处列出您上载的程序包。 将显示程序包的名称、版本和体系结构。 若想了解详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击**显示详细信息**。
+已上传的程序包将列出，按目标操作系统分组。 将显示程序包的名称、版本和体系结构。 若想了解详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击**显示详细信息**。
 
 如果需要将某个程序包从提交中删除，请单击每个程序包的**详细信息**部分底部的**删除**链接。
 

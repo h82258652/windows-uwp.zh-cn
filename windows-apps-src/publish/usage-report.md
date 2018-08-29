@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894106"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910505"
 ---
 # <a name="usage-report"></a>使用情况报告
 
@@ -50,10 +50,10 @@ ms.locfileid: "2894106"
 - **持续时间**：显示总参与小时数（用户活跃使用你的应用的小时数）。
 - **保持期**：显示选定时间段内的 **DAU/MAU**（每日活动用户/每月活动用户）。
 
-**30 D**选定时间段后，您可能会看到圆形标记，查看**用户**、**设备**或**持续时间**选项卡时。 这些表示显著增加或减少我们认为您需要了解的给定值。 在这个圆将显示该日期表示我们检测显著增大或减小相比于之前的周的一周的末尾。 若要查看有关已更改内容的更多详细信息，请悬停在这个圆。  
+**30d**选定时间段后，你可能会看到圆圈标记，当查看**用户**、**设备**或**持续时间**的选项卡。 这些表示显著增加或减少在我们认为你会想要了解有关为给定值。 出现圆的日期表示一周中，我们检测到了显著增加或减少相对于前的一周结尾。 若要查看更多详细信息的更改，悬停在圆圈。  
 
 > [!TIP]
-> 您可以查看与通过最近 30 天的[见解报表](insights-report.md)中的重大更改的详细见解。
+> 你可以查看过去 30 天内[洞察报告](insights-report.md)中的相关重大更改的更多见解。
 
 
 ## <a name="user-sessions"></a>用户会话

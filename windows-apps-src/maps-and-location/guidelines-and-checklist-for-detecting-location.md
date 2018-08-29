@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881730"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906514"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
@@ -51,7 +51,7 @@ ms.locfileid: "2881730"
 
     如果用户通过“设置”关闭对位置信息的访问，则释放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 对于任何位置 API 调用，该应用都将收到 **ACCESS\_DENIED** 结果。 如果你的应用保存或缓存了位置数据，则在用户吊销对位置信息的访问时需清除缓存的所有数据。 提供另一种在位置数据无法通过定位服务提供时手动输入位置信息的方法。
 
--   提供用于重新启用定位服务的 UI。 例如，提供重新实例化[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)对象并尝试再次获取位置信息的刷新按钮。
+-   提供用于重新启用定位服务的 UI。 例如，提供重新实例化[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)对象，并尝试再次获取位置信息的刷新按钮。
 
     使应用提供用于重新启用定位服务的 UI：
 
@@ -91,7 +91,7 @@ ms.locfileid: "2881730"
         例如：
 
         -   如果应用要获取位置用于广告调整、天气、新闻，5000 米的精度一般足够。
-        -   如果您的应用程序显示附近邻居中的交易，300 指示器的准确度是通常最好提供结果。
+        -   如果你的应用显示附近的街区中的交易，300 米的精度，最好通常提供结果。
         -   如果用户查找附件餐厅的推荐，我们可能要获取一个街区内的位置，因此 100 米的精度足够了。
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。

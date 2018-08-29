@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894063"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916955"
 ---
 # <a name="attached-properties-overview"></a>附加属性概述
 
@@ -40,7 +40,7 @@ ms.locfileid: "2894063"
 ```
 
 > [!NOTE]
-> 我们只需使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)附加的示例属性不完全解释为什么要使用它。 如果你希望了解有关 **Canvas.Left** 的目的以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何处理其布局子项的详细信息，请参阅 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 参考主题或[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+> 我们只需将用作示例附加属性使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) ，而不完全介绍使用它的原因。 如果你希望了解有关 **Canvas.Left** 的目的以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何处理其布局子项的详细信息，请参阅 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 参考主题或[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
 ## <a name="why-use-attached-properties"></a>为什么使用附加属性？
 
@@ -76,7 +76,7 @@ Windows 运行时的附加属性实现为依赖属性，以便这些值可以由
 
 ### <a name="using-the-xaml-accessor-pattern"></a>使用 XAML 访问器模式
 
-XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值。 附加属性的所有者类型必须实现专用的访问器方法在窗体中名为 **获取 *** PropertyName*和 **设置 *** PropertyName*。 这些专用的访问器方法也是一种在代码中获取或设置附加属性的方式。 从代码角度讲，附加属性类似于拥有方法访问器而不是属性访问器的支持字段，并且该支持字段可存在于任何对象上，而不需要专门定义。
+XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值。 附加属性的所有者类型必须实现专用的访问器方法的形式 **获取 *** PropertyName*和 **设置 *** PropertyName*。 这些专用的访问器方法也是一种在代码中获取或设置附加属性的方式。 从代码角度讲，附加属性类似于拥有方法访问器而不是属性访问器的支持字段，并且该支持字段可存在于任何对象上，而不需要专门定义。
 
 下面的示例展示了如何通过 XAML 访问器 API 在代码中设置附加属性。 在此示例中，`myCheckBox` 是 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 类的一个实例。 最后一行是实际设置值的代码，该行之前的行只是建立实例及其父子关系。 未注释掉的最后一行是使用属性系统的语法。 注释掉的最后一行是使用 XAML 访问器模式的语法。
 
@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 运行时 XAML 实现的一个现有限制是，你无法动画处理自定义附加属性。
 
-- 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假定存在一个元素`<TextBlock x:Uid="Title" />`，目标上的实例的**Canvas.Top**值的资源文件中的资源密钥是"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假设存在一个元素`<TextBlock x:Uid="Title" />`，该实例上的**Canvas.Top**值为目标的资源文件中的资源键是"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## <a name="related-topics"></a>相关主题
 

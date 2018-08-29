@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892446"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905120"
 ---
 # <a name="supported-languages"></a>支持的语言
 
 
-您可以提交对 Microsoft 存储的 100 多个语言的应用程序。
+你可以将应用提交到 Microsoft Store 用 100 多种语言。
 
-若要了解有关在您的应用程序中配置语言的详细信息，请参阅[全球化问题和本地化](../design/globalizing/globalizing-portal.md)和[了解用户配置文件语言和应用程序清单的语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
+若要了解有关在应用中配置语言的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)和[了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
 
 ## <a name="supported-languages"></a>支持的语言
 
 
-这些是 Microsoft 存储支持的语言。 你的应用必须支持至少其中一种语言，并且它不得指定未包含在此处的任何语言代码。
+以下是在 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言，并且它不得指定未包含在此处的任何语言代码。
 
 | 语言名称         | 支持的语言代码                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

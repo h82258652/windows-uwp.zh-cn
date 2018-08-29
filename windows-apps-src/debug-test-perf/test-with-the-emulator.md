@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892005"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2904792"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -29,7 +29,7 @@ ms.locfileid: "2892005"
 
 你的计算机必须满足以下要求：
 
-CPU （这些设置，如果可用，可以在启用 BIOS）
+CPU （这些设置，如果可用，可以启用在 BIOS 中）
 
 -   硬件辅助虚拟化 （[检查兼容性](https://www.microsoft.com/download/details.aspx?id=592)）。
 -   二级地址转换 (SLAT)。
@@ -49,11 +49,11 @@ RAM
 
 若要查看 RAM 和操作系统的要求，请在“控制面板”中选择“系统和安全”****，然后选择“系统”****。
 
-Windows 10 Mobile 的 Microsoft 仿真器需要 Visual Studio 2015 或更高版本;不与早期版本的 Visual Studio 的向后兼容。
+适用于 Windows 10 移动版的 Microsoft 模拟器要求 Visual Studio 2015 或更高版本;它不与早期版本的 Visual Studio 反向兼容。
 
 适用于 Windows 10 移动版的 Microsoft 模拟器无法加载面向 Windows Phone OS 7.1 之前的 Windows Phone 操作系统版本的应用。
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>安装、 卸载和运行仿真器
+## <a name="installing-uninstalling-and-running-the-emulator"></a>安装、 卸载，以及运行模拟器
 
 ### <a name="installing"></a>安装
 适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可作为 Visual Studio 安装的一部分进行安装。 请参阅 [Visual Studio 下载页](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
@@ -68,7 +68,7 @@ Windows 10 Mobile 的 Microsoft 仿真器需要 Visual Studio 2015 或更高版�
 
 ### <a name="running"></a>Running
 
-要在仿真程序中运行应用程序，只需从 Visual Studio 中的**运行**下拉列表菜单中选择的模拟的设备。
+若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择一个模拟的设备。
 
 ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 

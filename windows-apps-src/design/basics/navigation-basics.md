@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888256"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909885"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -58,7 +58,7 @@ ms.locfileid: "2888256"
 
 ### <a name="consistency"></a>一致
 
-导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)，用户熟悉和以下标准图标约定位置和样式会使导航可预测且直观的用户。
+导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)，用户所熟悉并且以下标准约定图标、 位置和样式设置用户将觉得导航可预测且直观。
 
 ![页面组件图像](images/nav/page-components.svg)
 
@@ -111,7 +111,7 @@ ms.locfileid: "2888256"
     :::column:::
         ![以平面结构排列的页面](images/nav/flat-lateral-structure.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::
+    ::: 列范围 ="2":::
         ### Flat/lateral
 
         In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
@@ -130,7 +130,7 @@ ms.locfileid: "2888256"
     :::column:::
         ![分层排列的页面](images/nav/hierarchical-structure.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::
+    ::: 列范围 ="2":::
         ### Hierarchical
 
         In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
@@ -150,7 +150,7 @@ ms.locfileid: "2888256"
     :::column:::
         ![带有混合结构的应用](images/nav/combining-structures.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::
+    ::: 列范围 ="2":::
         ### Combining structures
 
         You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
@@ -170,16 +170,16 @@ ms.locfileid: "2888256"
     :::column:::
         ![帧图像](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::[**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    ::: 列范围 ="2":::[**帧**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![选项卡和数据透视表图像](images/nav/thumbnail-tabs-pivot.svg)
+        ![表和透视表图像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::[**顶部导航和选项卡**](../controls-and-patterns/navigationview.md)
+    ::: 列范围 ="2":::[**顶部导航和选项卡**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
@@ -200,7 +200,7 @@ ms.locfileid: "2888256"
     :::column:::
         ![navview 图像](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::[**左侧的导航**](../controls-and-patterns/navigationview.md)
+    ::: 列范围 ="2":::[**左侧的导航**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
@@ -212,9 +212,9 @@ ms.locfileid: "2888256"
 
 :::row:::
     :::column:::
-        ![母版页的详细信息图像](images/nav/thumbnail-master-detail.svg)
+        ![大纲细节图像](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::[**大纲/细节**](../controls-and-patterns/master-details.md)
+    ::: 列范围 ="2":::[**大纲/细节**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         
@@ -228,7 +228,7 @@ ms.locfileid: "2888256"
     :::column:::
         ![超链接和按钮的图像](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
-    ::: 列跨度 ="2":::[**超链接**](../controls-and-patterns/hyperlinks.md)
+    ::: 列范围 ="2":::[**超链接**](../controls-and-patterns/hyperlinks.md)
 
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::

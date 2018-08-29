@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome、 后台任务、 应用程序服务
+keywords: windows 10，uwp，连接设备，远程系统、 rome、 项目 rome、 后台任务，应用服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882658"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909774"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 
@@ -24,7 +24,7 @@ ms.locfileid: "2882658"
 ## <a name="set-up-the-app-service-on-the-host-device"></a>在主设备上设置应用服务
 为了在远程设备上运行应用服务，必须已经在该设备上安装了该应用服务的提供程序。 本指南将使用 [Windows 通用示例存储库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)提供的[随机数字生成器应用服务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) CSharp 版。 有关如何编写你自己的应用服务的说明，请参阅[创建和使用应用服务](how-to-create-and-consume-an-app-service.md)。
 
-无论是使用已制定的应用服务还是编写自己的应用服务，你都将需要执行一些编辑操作，以使该服务与远程系统兼容。 在 Visual Studio 中，转到应用服务提供程序的项目（在示例中称为“AppServicesProvider”），然后选择其 _Package.appxmanifest_ 文件。 右键单击并选择**查看代码**以查看文件的完整内容。 创建主**应用程序**元素中的**扩展**元素 （或查找其如果它已存在）。 然后创建一个**扩展**定义为应用程序服务的项目和引用与其父项目。
+无论是使用已制定的应用服务还是编写自己的应用服务，你都将需要执行一些编辑操作，以使该服务与远程系统兼容。 在 Visual Studio 中，转到应用服务提供程序的项目（在示例中称为“AppServicesProvider”），然后选择其 _Package.appxmanifest_ 文件。 右键单击并选择**查看代码**以查看文件的完整内容。 创建主**应用程序**元素内的**扩展**元素 （或如果它已找到它）。 然后创建一个**扩展**定义为应用服务项目并引用其父项目。
 
 ``` xml
 ...
@@ -44,7 +44,7 @@ ms.locfileid: "2882658"
 ...
 ```
 
-若要使用此**uap3**命名空间中的元素，您必须在顶部的指令清单文件添加命名空间定义如果尚未存在。
+为了使用此**uap3**命名空间中的元素，必须添加命名空间定义的清单文件顶部如果它不是已存在。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -57,7 +57,7 @@ ms.locfileid: "2882658"
 </Package>
 ```
 
-然后构建应用程序服务提供程序项目并将其部署到主机设备。
+然后生成你的应用服务提供程序项目，并将其部署到主设备。
 
 ## <a name="target-the-app-service-from-the-client-device"></a>从客户端设备定向应用服务
 从其中调用远程应用服务的设备需要具有远程系统功能的应用。 此功能可添加到在主设备上提供应用服务的相同应用（在此情况下，需要在两台设备上安装相同应用），或者在完全不同的应用中实现。

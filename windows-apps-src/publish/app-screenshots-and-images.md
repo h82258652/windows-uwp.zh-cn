@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891679"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912381"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -85,13 +85,13 @@ ms.locfileid: "2891679"
 
 此图像需要在 Windows Phone 8.1 及更早版本上才能正常显示。 如果你的应用支持 Windows Phone 8.1 或更早版本，并且你未提供此图像，这些客户将在你的应用一览中看到空白图标。 （如果你的应用仅有面向 Windows Phone 8.1 或更早版本的软件包，这也适用于 Windows 10 客户。）如果你的提交*仅*包括 UWP 软件包，则无需提供此图像。 （请注意，如果你的提交包含 Windows Phone 8.x 程序包和 UWP 程序包，并提供此图像，它可能会用在 Windows 10 的某些 Microsoft Store 布局中。 若要防止这种情况，你可以为你的应用支持的 Windows Phone 版本创建[特定于平台的一览](create-platform-specific-store-listings.md)，并仅包括该应用磁贴图标。）
 
-### <a name="display-only-uploaded-logo-images-in-the-store"></a>显示仅上载存储区中的徽标图像
+### <a name="display-only-uploaded-logo-images-in-the-store"></a>仅显示上传的应用商店中的徽标图像
 
-您必须防止存储时向 Windows 10 （包括 Xbox） 上的客户显示您列出您的应用程序包中使用的徽标图像并改为具有仅使用图像您上载的存储的选项。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果您的产品支持早期操作系统版本，这些客户可能仍会看到图像从程序包，即使您使用此选项。）
+你可以选择防止应用商店使用你的应用程序包中的徽标图像，向 Windows 10 （包括 Xbox） 上的客户显示你的一览时，并改为具有应用商店使用你上传的图像。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果你的产品支持较早操作系统版本，这些客户可能仍会看到图像从你的程序包，即使你使用此选项。）
 
-在 Windows 10 和 Xbox 客户具有仅使用图像 （适用于在 Windows 10，包括 Xbox 客户），上载不使用任何图像从程序包，检查显示**的框中的存储，请显示上载徽标图像，而不是从我包的图像**.
+以 For Windows 10 和 Xbox 上的客户，显示在应用商店仅使用图像上载 （适用于 Windows 10，包括 Xbox 客户），并且不使用你的程序包中的任何图像，请检查框**上传的徽标图像，而不是我程序包中的图像**.
 
-当您选中此复选框时，将显示一个新的部分，调用**存储显示的图像**。 此处，您可以上载 3 图像，包括**应用程序 1:1 平铺图标 （300 x 300 像素）** 大小 （如果您复选框，要提供该图像将将移到此部分的域）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
+选中此框，出现了名为**应用商店显示图像**的新部分。 在这里，你可以上传 3 张图像，其中包括**1:1 应用磁贴图标 （300 x 300 像素）** 大小 （如果你选中此框，提供该图像将移动到此部分的字段）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
 
 
 <span id="promotional-images" />

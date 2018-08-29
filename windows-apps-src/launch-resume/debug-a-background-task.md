@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，背景任务
+keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894086"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909294"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -34,7 +34,7 @@ ms.locfileid: "2894086"
 
 -   在 C# 和 C++ 中，确保主项目引用后台任务项目。 如果此引用没有就位，则后台任务将不包括在应用包中。
 -   在 C# 和 C++ 中，确保后台任务项目的 **Output type** 是“Windows 运行时组件”。
--   必须在程序包清单中的入口点属性中声明的背景类。
+-   在后台类必须在程序包清单中的入口点属性中声明。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>手动触发后台任务以调试后台任务代码
 
@@ -52,7 +52,7 @@ ms.locfileid: "2894086"
 > 使用以下触发器的后台任务以及使用触发器类型为 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的后台任务均无法采用此方式激活：[**Application trigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、 [**MediaProcessing trigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)。  
 > **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。
 
-![调试背景任务](images/debugging-activation.png)
+![调试后台任务](images/debugging-activation.png)
 
 3.  激活后台任务时，调试程序将附加到该后台任务并在 VS 中显示调试输出。
 
@@ -82,8 +82,8 @@ ms.locfileid: "2894086"
     如果你遵循此过程，但事件日志显示后台任务的入口点或触发器有误，则你的应用无法正确注册后台任务。 有关此任务的帮助，请参阅[注册后台任务](register-a-background-task.md)。
 
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
-    2.  转到**应用程序和服务日志** - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure**在事件查看器。
-    3.  在操作窗格中，选择**视图** - &gt; **显示分析和调试日志**启用诊断日志记录。
+    2.  转到**应用程序和服务日志** - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure**在事件查看器中。
+    3.  在操作窗格中，选择**视图** - &gt; **显示分析和调试日志**以启用诊断日志记录。
     4.  选择**诊断日志**并单击“**启用日志**”。
     5.  现在尝试使用你的应用再次注册并激活后台任务。
     6.  查看诊断日志以了解更详细的错误信息。 这将包括为后台任务注册的入口点。
@@ -105,7 +105,7 @@ ms.locfileid: "2894086"
 -   如果后台任务需要锁屏界面访问权限，请确保在尝试调试后台任务之前将应用放在锁屏界面上。 有关为支持锁屏界面的应用指定清单选项的信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 -   后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 
-使用 VS 调试后台任务的详细信息，请参阅[如何触发暂停、 继续和背景 UWP 应用程序中的事件](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
+有关使用 VS 调试后台任务的详细信息，请参阅[如何触发暂停、 恢复和后台事件在 UWP 应用中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -114,8 +114,8 @@ ms.locfileid: "2894086"
 * [注册后台任务](register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [如何触发暂停、 继续和背景 UWP 应用程序中的事件](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [分析 UWP 应用程序使用 Visual Studio 代码分析程序的代码质量](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+* [如何触发暂停、 恢复和后台事件在 UWP 应用](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [分析与 Visual Studio 代码分析的 UWP 应用的代码质量](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  
 

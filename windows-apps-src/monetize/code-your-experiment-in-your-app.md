@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888346"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905860"
 ---
 # <a name="code-your-app-for-experimentation"></a>为实验编写应用代码
 
@@ -29,7 +29,7 @@ ms.locfileid: "2888346"
 以下部分介绍了获取实验变体和将事件记录到开发人员中心的一般过程。 针对实验为你的应用编码后，你可以[在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)。 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 > [!NOTE]
-> 实验存储服务 SDK 中的 Api 的一些使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)从开发人员中心检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
+> 某些实验性 Api 在 Microsoft Store Services SDK 中使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)以从开发人员中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
 
 ## <a name="configure-your-project"></a>配置项目
 
@@ -42,7 +42,7 @@ ms.locfileid: "2888346"
 4. 在 SDK 列表中，选择 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 
 > [!NOTE]
-> 本文中的代码示例假定您的代码文件具有的**System.Threading.Tasks**和**Microsoft.Services.Store.Engagement**命名空间的**using**语句。
+> 本文中的代码示例假设代码文件具有**System.Threading.Tasks**和**Microsoft.Services.Store.Engagement**命名空间的**using**语句。
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>获取变体数据并记录实验的视图事件
 
@@ -60,7 +60,7 @@ ms.locfileid: "2888346"
 
 2. 声明将分配给要检索的实验的[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 的字符串变量。
     > [!NOTE]
-    > 获取项目 ID 何时[创建开发人员中心仪表板中的项目](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 以下所示的项目 ID 仅用作示例。
+    > 获取项目 ID 时你[在开发人员中心仪表板中创建项目](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 以下所示的项目 ID 仅用作示例。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
