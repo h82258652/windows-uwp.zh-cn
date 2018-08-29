@@ -15,11 +15,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888096"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918968"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -33,7 +33,7 @@ ms.locfileid: "2888096"
 
 ## <a name="back-button"></a>后退按钮
 
-若要创建后退按钮，请使用与[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将按钮放置在您的应用程序 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
+若要创建后退按钮，使用具有的[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将按钮放在你的应用的 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
 
 ![应用的 UI 的左上角的后退按钮](images/back-nav/BackEnabled.png)
 
@@ -174,9 +174,9 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-之上，我们 backwards 处理单个页的导航。 如果您想要排除特定页面后导航栏上，或您想要显示页面前执行页级别代码，您可以处理中每一页的导航。
+更高版本，我们向后处理单个页面的导航。 如果你想要从后退导航排除特定页面或你想要显示页面前执行页面级别代码，你可以处理每个页面中的导航。
 
-若要向后处理整个应用程序导航，您将注册[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)事件中的全局侦听器`App.xaml`代码隐藏文件。
+若要处理向后导航的整个应用，你将注册全局侦听器的[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)事件`App.xaml`代码隐藏文件。
 
 App.xaml 代码隐藏：
 
@@ -293,24 +293,24 @@ bool App::On_BackRequested()
 
 如果你的应用继续使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，后退按钮将像往常一样在标题栏中呈现。
 
-- 如果**不选项卡式**您的应用程序，然后将返回按钮呈现内的标题栏。 保持不变从以前版本的后退按钮的视觉体验和用户交互。
+- 如果你的应用**不选项卡**，然后在标题栏呈现后退按钮。 后退按钮的视觉体验和用户交互保持不变从以前版本。
 
     ![标题栏后退按钮](images/nav-back-pc.png)
 
-- 如果应用程序是**选项卡式**，则将返回按钮呈现新系统备份内栏。
+- 如果应用**选项卡**，那么后退按钮呈现在新的系统后退栏。
 
-    ![系统重新绘制按钮栏](images/back-nav/tabs.png)
+    ![系统绘制后退按钮栏](images/back-nav/tabs.png)
 
-### <a name="system-back-bar"></a>系统后栏
+### <a name="system-back-bar"></a>系统后退栏
 
 > [!NOTE]
-> "系统后栏"是仅说明，而不是正式的名称。
+> "系统后退栏"是仅说明，不正式名称。
 
-系统后栏是选项卡带和应用程序 s 内容区域之间插入一个带。 此区带横跨整个应用，“后退”按钮位于左边缘。 带具有 32 像素，以确保后退按钮的足够触摸目标大小的垂直高度。
+系统后退栏是选项卡区带和应用 s 内容区域之间插入的区带。 此区带横跨整个应用，“后退”按钮位于左边缘。 此区带的垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
 
-系统后退栏基于“后退”按钮的可见性动态显示。 后退按钮时可见，系统后插入栏，x 32 像素选项卡带以下向下移动应用程序内容。 当隐藏后退按钮、 系统后动态删除栏中，进行应用程序内容切换 x 32 像素以满足选项卡带。 若要避免您的应用程序 UI shift 向上或向下，我们建议绘图[中应用程序后退按钮](#back-button)。
+系统后退栏基于“后退”按钮的可见性动态显示。 当后退按钮可见时，系统后退栏插入，将应用内容下移到选项卡区带以下 32 像素。 当后退按钮隐藏时，系统后退栏动态删除，通过 32 像素，以满足选项卡区带移动应用内容。 若要避免你的应用的 UI 上移向上或向下，我们建议绘制[应用内后退按钮](#back-button)。
 
-[标题栏自定义](../shell/title-bar.md)将会传送到应用程序选项卡和系统返回栏。 如果您的应用程序指定前景色和背景颜色属性与[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则颜色将应用于选项卡和系统后栏。
+[标题栏自定义](../shell/title-bar.md)会延续到应用选项卡和系统后退栏。 如果你的应用指定后台和前景色属性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则这些颜色将应用到选项卡和系统后退栏。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>自定义后退导航行为指南
 
@@ -335,16 +335,16 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，无屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 无屏幕没有提供直接导航到这两个页面的导航元素 （如[NavigationView](../controls-and-patterns/navigationview.md))。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 没有无屏幕导航元素 （如[NavigationView](../controls-and-patterns/navigationview.md)) 提供到两个页面的直接导航。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
-<p>下图中，在相同的对等方组中，两页之间导航和导航应添加到导航历史记录。</p>
+<p>在下图中，用户在相同的对等组中，两个页面之间导航，导航应添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，带有屏幕导航元素</strong>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 这两个页面相同的导航元素，如[NavigationView](../controls-and-patterns/navigationview.md)所示。</p></td>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面所示的相同的导航元素，如[NavigationView](../controls-and-patterns/navigationview.md)。</p></td>
 <td style="vertical-align:top;"><strong>视情况而定</strong>
-<p>是，将添加到导航历史记录，有两个重要的例外。 如果您希望您的应用程序的用户的对等方组中通常情况下，页面之间切换，或者如果您想要保留的导航层次结构，然后不添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
+<p>是的将添加到导航历史记录，有两个明显例外。 如果你希望你的应用的用户通常情况下，对等组中的页面之间切换，或者如果你想要保留的导航层次结构，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

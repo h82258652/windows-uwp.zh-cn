@@ -11,18 +11,18 @@ keywords: Windows 10, uwp, 版本, 内部版本, Windows, 选择, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb9aad1fa9da79708b3c785da80811006153767
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882249"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918928"
 ---
 # <a name="choose-a-uwp-version"></a>选择 UWP 版本
 
 每个版本的 Windows 10 都具有适用于 UWP 平台的全新和改进功能。 在 Microsoft Visual Studio 中创建 UWP 应用时，可以选择要面向的版本。 使用 [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) 的项目的**最低版本**必须为版本 16299 或更高版本。
 
 > [!WARNING]
-> 不能在 Visual Studio 2015 中打开 UWP 项目在当前版本的 Visual Studio 中创建。
+> 无法在 Visual Studio 2015 中打开在当前版本的 Visual Studio 中创建的 UWP 项目。
 
 下表介绍了 Windows 10 的可用版本。 请注意，此表仅适用于构建只在 Windows 10 上受支持的 UWP 应用。 无法开发适用于 Windows 旧版本的 UWP 应用，并且必须[已安装 SDK 的正确内部版本](http://go.microsoft.com/fwlink/?LinkId=821431) 以面向对应的 Windows 版本。 
 
@@ -43,13 +43,13 @@ Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改�
 
 有关枚举所有设备系列及其版本和所有 API 合约及其版本的参考主题，请参阅[设备系列](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx)和 [API 合约](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx)。
 
-## <a name="net-api-availability-in-uwp-versions"></a>.NET API UWP 版本中的可用性
+## <a name="net-api-availability-in-uwp-versions"></a>在 UWP 版本的.NET API 可用性
 
-UWP 支持有限的.NET Api，无论**目标版本**或项目的**最低版本**可用的子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支持有限的可用无论**目标版本**或你的项目的**最低版本**的.NET Api 子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-如果您想要创建可重用的跨平台库，.NET 标准被支持 UWP。 [.NET 标准的文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供了在其.NET 标准中支持哪些 UWP 版本的信息。
+如果你想要创建可重用的跨平台库，.NET Standard 上是否受支持 UWP。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 中支持的 UWP 版本的信息。
 
-如果要开发桌面应用程序，请参阅改为[.NET Framework 版本和依赖关系](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的详细信息。
+如果你要开发的桌面应用，请参阅改为[.NET Framework 版本和依赖项](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的详细信息。
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>选择要用于你的应用的版本
 

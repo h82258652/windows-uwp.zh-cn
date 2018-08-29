@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885429"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918347"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 项目控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -37,7 +37,7 @@ ms.locfileid: "2885429"
 这将有利于让可观测矢量模板用作 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 的有用的通用实现。 以下是称为 **single_threaded_observable_vector\<T\>** 的类的列表。
 
 > [!NOTE]
-> 如果您已安装[Windows 10 SDK Preview 构建 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后您可以只直接使用**winrt::single_threaded_observable_vector\ < T\ >** 工厂函数而不是下方列出的代码 （我们将介绍的确切代码更高版本在本主题中）。 如果您已不在该 SDK 版本，然后将轻松切换后使用**winrt**函数的代码列表版本它。
+> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以直接使用**winrt::single_threaded_observable_vector\ < 所 >** 工厂函数而不是下面的代码列表 （我们将介绍的确切代码更高版本在本主题）。 如果你不是在该版本的 SDK，然后它会轻松地从使用**winrt**函数的代码列表版本，当你切换。
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -305,7 +305,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 在上述 MIDL 3.0 列表中，请注意， **BookSkus**属性的类型的[**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) 。 在本主题的下一步部分中，我们将绑定[**列表框**](/uwp/api/windows.ui.xaml.controls.listbox)项目的源到**BookSkus**。 列表框项控件，并以正确设置[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，您需要将其设置为类型**IVector** **IInspectable**，或如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)互操作性类型的值。
+> 在上述 MIDL 3.0 列表中，请注意， **BookSkus**属性的类型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)。 在本主题的下一步部分中，我们将绑定[**列表框**](/uwp/api/windows.ui.xaml.controls.listbox)的项目源到**BookSkus**。 列表框的项目控件，而要正确设置[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，你需要将其设置为类型**IVector** **IInspectable**，或者如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)互操作性类型的值。
 
 保存并生成。 人 `Generated Files` 文件夹中的 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 复制访问器存根，然后实现它们。
 
@@ -351,8 +351,8 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 ...
 ```
 
-## <a name="if-you-have-a-windows-10-sdk-preview-build"></a>如果您有 Windows 10 SDK Preview 生成
-如果您已安装[Windows 10 SDK Preview 构建 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后将以下代码行
+## <a name="if-you-have-a-windows-10-sdk-preview-build"></a>如果你有 Windows 10 SDK 预览版本
+如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后将此行代码
 
 ```cppwinrt
 m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
@@ -364,7 +364,7 @@ m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::
 m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
 ```
 
-而不是调用[**winrt::make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，您可以通过调用**winrt::single_threaded_observable_vector\ < T\ >** 工厂函数创建相应集合对象。
+而不是调用[**winrt:: make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，通过调用**winrt::single_threaded_observable_vector\ < 所 >** 工厂函数创建相应集合对象。
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>将 ListBox 绑定到 **BookSkus** 属性
 打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 在与 **Button** 相同的 **StackPanel** 内添加以下标记。

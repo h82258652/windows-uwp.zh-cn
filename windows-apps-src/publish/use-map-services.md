@@ -11,22 +11,22 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881448"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918958"
 ---
 # <a name="use-map-services"></a>使用地图服务
 
-若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从 Bing 地图开发人员中心请求的地图身份验证密钥并将其添加到您的应用程序的信息，请参阅[请求的地图身份验证密钥](../maps-and-location/authentication-key.md)的详细信息。 
+若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图身份验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图身份验证密钥](../maps-and-location/authentication-key.md)。 
 
-若要使用地图服务应用程序的 Windows Phone 8.1 和更早版本中，您需要请求地图服务应用程序 ID 和一个令牌以包含在您的应用程序开发人员中心仪表板中的代码。
+若要在适用于 Windows Phone 8.1 及更早版本的应用中使用地图服务，你需要请求在开发人员中心仪表板中的应用的代码中包含地图服务应用程序 ID 和令牌。
 
-随时后[保留应用程序的名称](create-your-app-by-reserving-a-name.md)，可以在仪表板中导航到该应用程序，展开左侧的导航菜单中的**服务**部分，选择**映射**。 当您单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**)，并将您的应用程序身份验证令牌 (**AuthenticationToken**) 的服务映射。 这些值将保存在此页上，以便可以在任何时候，若要查看其返回。
+后你已[保留你的应用名称](create-your-app-by-reserving-a-name.md)，随时可以导航到该应用在你的仪表板中，展开左侧的导航菜单中的**服务**部分并选择**映射**。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 在此页面上，将保存这些值，因此可以在任何时间，以查看它们返回。
 
 > [!IMPORTANT]
-> 请务必将的**ApplicationID**和**AuthenticationToken**添加到您的代码之前您包和提交应用程序。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
+> 请务必将**ApplicationID**和**AuthenticationToken**添加到你的代码之前你的程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
  
 

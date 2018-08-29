@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885584"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917205"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
@@ -44,7 +44,7 @@ ms.locfileid: "2885584"
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 **每月**，默认选项，但您还可以选择**3 个月**、 **6 个月**、**每年**，或**24 个月**。
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但你还可以选择**3 个月**、 **6 个月**，**每年**，还是**24 个月**。
 
 > [!IMPORTANT]
 > 加载项发布之后，将无法更改**订阅期限**选择。

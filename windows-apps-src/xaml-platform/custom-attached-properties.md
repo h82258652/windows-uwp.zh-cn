@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2890890"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917120"
 ---
 # <a name="custom-attached-properties"></a>自定义附加属性
 
@@ -43,7 +43,7 @@ ms.locfileid: "2890890"
 
 要将附加属性定义为依赖属性，可声明一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public** **static** **readonly** 属性。 你可以使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法的返回值来定义此属性。 属性名称必须与你指定为 **RegisterAttached** *name* 参数的附加属性名称相匹配，并在末尾添加字符串“Property”。 这是相对于其表示的属性来命名依赖属性标识符的既有约定。
 
-定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 而不是使用[自定义依赖项属性](custom-dependency-properties.md)中介绍的包装技术，您还必须提供静态 **获取 *** PropertyName*和 **设置 *** PropertyName*作为访问器方法的附加属性。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
+定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 而不是使用[自定义依赖属性](custom-dependency-properties.md)中所述的包装器技术，你还必须提供静态 **获取 *** PropertyName*和 **设置 *** PropertyName*方法访问器作为附加属性。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
 
 > [!IMPORTANT]
 > 如果未正确定义访问器，XAML 处理器将无法访问你的附加属性，尝试使用它的任何人都可能会得到一个 XAML 分析器错误。 另外，在引用的程序集中遇到自定义依赖属性时，设计和编码工具常常依赖于“\*Property”约定来命名标识符。
@@ -60,7 +60,7 @@ ms.locfileid: "2890890"
 
 *target* 对象可以是实现中的一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *valueType* 返回值也可以是你的实现中一种更为具体的类型。 基本的 **Object** 类型也可接受，但通常希望附加属性执行类型安全性。 getter 和 setter 签名中对类型的使用是一种推荐的类型安全技术。
 
-签名 **设置 *** PropertyName*此值必须是访问器。
+签名 **设置 *** PropertyName*访问器必须如下。
 
 `public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
@@ -77,7 +77,7 @@ ms.locfileid: "2890890"
 
 此示例展示了依赖属性注册（使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法），以及一个自定义附加属性的 **Get** 和 **Set** 访问器。 在此示例中，附加属性名称为 `IsMovable`。 因此，访问器必须命名为 `GetIsMovable` 和 `SetIsMovable`。 附加属性的所有者是自身不具有 UI 的名为 `GameService` 服务类；其目的只是在使用 **GameService.IsMovable** 附加属性时提供附加属性服务。
 
-附加的属性定义在 C + + / CX 是更复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + + / CX 必须定义此属性字段关系明确而不信赖上.NET **readonly**建立关键词和隐式备份的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
+定义附加的属性在 C + + CX 是更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + + CX 必须定义此属性-字段关系显式而不依赖于.NET **readonly**关键字和隐式支持的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
 
 ```csharp
 public class GameService : DependencyObject
@@ -253,7 +253,7 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 
 为了成为实际的面板，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 具有可替代框架级 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 和 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法的行为。 **Canvas** 就是在这里实际检查其子项上的附加属性值。 **Measure** 和 **Arrange** 模式的一部分就是一个遍历任何内容的循环，一个面板具有 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性，通过该属性可以明确假设被视为面板子项的内容。 因此，**Canvas** 布局行为会循环访问这些子项，并针对每个子项进行静态 [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 和 [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) 调用，查看这些附加属性是否包含非默认值（默认值为 0）。 之后，系统将使用这些值，按照由每个子项提供的特定值将每个子项以绝对位置方式放置到 **Canvas** 中的可用布局空间中。然后系统将使用 **Arrange** 提交这些值。
 
-代码类似此伪代码。
+此代码看上去与此伪代码相似。
 
 ```syntax
 protected override Size ArrangeOverride(Size finalSize)
@@ -270,7 +270,7 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 > [!NOTE]
-> 面板的工作方式的详细信息，请参阅[XAML 自定义面板概述](https://msdn.microsoft.com/library/windows/apps/mt228351)。
+> 有关面板工作原理的详细信息，请参阅[XAML 自定义面板概述](https://msdn.microsoft.com/library/windows/apps/mt228351)。
 
 ## <a name="related-topics"></a>相关主题
 
