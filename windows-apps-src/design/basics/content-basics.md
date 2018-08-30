@@ -1,24 +1,24 @@
 ---
-author: serenaz
+author: mijacobs
 Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
 title: 通用 Windows 平台 (UWP) 应用的内容设计基础知识
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: mijacobs
 ms.date: 12/1/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6479d8ed5a0a0f98556f49bf12a30408de052f8a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 91187b176d32fcc53b51faa7e8c42a10fd4908b8
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654326"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3122020"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
 
@@ -82,7 +82,7 @@ ms.locfileid: "1654326"
 <tr class="header">
 <th align="left">类别</th>
 <th align="left">元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

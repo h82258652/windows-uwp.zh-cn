@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905860"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117554"
 ---
 # <a name="code-your-app-for-experimentation"></a>为实验编写应用代码
 
@@ -42,7 +42,7 @@ ms.locfileid: "2905860"
 4. 在 SDK 列表中，选择 **Microsoft 协议框架**旁边的复选框，然后单击**确定**。
 
 > [!NOTE]
-> 本文中的代码示例假设代码文件具有**System.Threading.Tasks**和**Microsoft.Services.Store.Engagement**命名空间的**using**语句。
+> 本文中的代码示例假设代码文件具有**System.Threading.Tasks**和**Microsoft.Services.Store.Engagement**命名空间**使用**语句。
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>获取变体数据并记录实验的视图事件
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905850"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112411"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 问题疑难解答
 > [!NOTE]
@@ -22,7 +22,7 @@ ms.locfileid: "2905850"
 
 将本主题放在前面是为了让你可以立即意识到它，即使你现在尚不需要它。 无论你是要削减新代码还是要移植现有应用，下面的症状排查和补救措施表都可能对你有帮助。 如果你进行移植，并且迫不及待想要取得进展并到达项目生成和运行的阶段，则你可以通过注释掉或去掉任何导致出现问题的非必要代码并在稍后回来进行修补的方式来暂时向前继续。
 
-有关常见问题列表，请参阅[常见问题](faq.md)。
+有关常见问题的列表，请参阅[常见问题](faq.md)。
 
 ## <a name="tracking-down-xaml-issues"></a>跟踪 XAML 问题
 XAML 分析异常可能很难进行诊断，特别是在此类异常中没有含义明确的错误消息时。 请确保已将调试程序配置为捕获第一轮异常（以便试图捕获早期的分析异常）。 你可以检查调试程序中的异常变量，以确定 HRESULT 或消息中是否具有任何有用的信息。 也可以检查 Visual Studio 的输出窗口，以获取由 XAML 分析器输出的错误消息。
@@ -41,16 +41,16 @@ XAML 分析异常可能很难进行诊断，特别是在此类异常中没有含
 | C++ 编译器产生错误“*无法从‘const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;’转换为‘const winrt::param::async_iterable&lt;winrt::hstring&gt; &’*”。|当你将 std::wstring 的 std::vector 传递给需要一个集合的 Windows 运行时 API 时，将会出现此错误。 有关更多信息，请参阅[标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)。|
 | C++ 编译器产生错误“*无法从‘const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;’转换为‘const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*”。|当你将 winrt::hstring 的 std::vector 传递给需要一个集合的异步 Windows 运行时 API 并且你没有将相应的矢量复制或移动到异步被调用方时，将会出现此错误。 有关更多信息，请参阅[标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)。|
 | 当打开项目时，Visual Studio 产生错误“*该项目的应用程序未安装*”。|你需要从 Visual Studio 的**新建项目**对话框中安装 **用于 C++ 开发的 Windows 通用工具**（如果你尚未这样做的话）。 如果上述方法未能解决问题，则项目可能依赖于 C++/WinRT Visual Studio Extension (VSIX)（请参阅 [Visual Studio 对于 C++/WinRT 和 VSIX 的支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)）。|
-| Windows 应用认证工具包测试将产生一个错误，表示一个运行时类“*不是派生自 Windows 基类。所有可组合类必须最终派生自 Windows 命名空间中的类型*”。|任何运行时类 （在你的应用程序中声明） 从基类派生被称为*可组合*类。 可组合类的最终基类必须是源自 windows.* 命名空间; 类型例如， [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。 请参阅[XAML 控件; 绑定到 C + + /winrt 属性](binding-property.md)更多详细信息。|
+| Windows 应用认证工具包测试将产生一个错误，表示一个运行时类“*不是派生自 Windows 基类。所有可组合类必须最终派生自 Windows 命名空间中的类型*”。|任何运行时类 （在你的应用程序中声明） 派生自一个基类，名为*可组合*类。 可组合类的最终基类必须是源自 windows.* 命名空间; 类型例如， [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。 请参阅[XAML 控件; 绑定到 C + + /winrt 属性](binding-property.md)更多详细信息。|
 | 对于 EventHandler 或 TypedEventHandler 委托专用化，C++ 编译器产生“*必须是 WinRT 类型*”错误。|请考虑改为使用 **winrt::delegate&lt;…T&gt;**。 请参阅 [在 C++/WinRT 中创作事件](author-events.md)。|
 | 对于 Windows 运行时异步操作专用化，C++ 编译器产生“*必须是 WinRT 类型*”错误。|请考虑改为返回并行模式库 (PPL) [**任务**](https://msdn.microsoft.com/library/hh750113)。 请参阅[并发操作和异步操作](concurrency.md)。|
 | C++ 编译器产生“*错误 C2220: 视为错误的警告 - 未生成‘object’文件*”。|更正警告，或者将 **C/C++** > **常规** > **将警告视为错误**设置为**否 (/WX-)**。|
 | 应用发生崩溃，因为在 C++/WinRT 对象销毁后调用了其中的一个事件处理程序。|请参阅[在事件处理程序中使用 *this* 对象](handle-events.md#using-the-this-object-in-an-event-handler)。|
 | C++ 编译器产生“*错误 C2338: 此项仅用于弱引用支持*”。|你请求针对某个类型的弱引用，该类型将 **winrt::no_weak_ref** 标记结构作为模板参数传递给其基类。 请参阅[选择退出弱引用支持](weak-references.md#opting-out-of-weak-reference-support)|
 | C + + 链接器产生"*错误 LNK2019： 无法解析的外部符号*"|请参阅[链接器为什么遇到我"LNK2019： 无法解析的外部符号"错误？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)|
-| LLVM 和 Clang 工具链产生错误时使用 C + + WinRT。|我们不支持 LLVM 和 Clang 工具链 C + + WinRT，但如果你想要模拟我们如何使用它在内部，则可以尝试的实验，如一中所述[可以使用 LLVM/Clang 编译使用 C + + WinRT？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
-| C + + 编译器产生"*没有适当的默认构造函数可用*"的投影类型。 | 如果你尝试延迟初始化的运行时类对象，或使用，并可在同一项目中，实现的运行时类，则你将需要调用`nullptr_t`构造函数。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。 |
-| C + + 编译器产生"*错误 C3861: 'from_abi': 找不到标识符*"，以及来自*base.h*其他错误。 你可能会看到此错误，如果你使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)。 | 无论是目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/c + +**  > **语言** > **命令行**下**的其他选项**，然后将其删除)。 |
+| LLVM 和 Clang 工具链产生错误时使用 C + + WinRT。|不支持 LLVM 和 Clang 工具链 C + + WinRT，但如果你想要模拟我们如何使用它在内部，则可以尝试的实验，如一中所述[我可以使用 LLVM/Clang 编译吗 C + + WinRT？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
+| C + + 编译器产生"*上没有适当的默认构造函数*"的投影类型。 | 如果你试图延迟初始化的运行时类对象，或使用，并可在同一项目中，实现运行时类，则你将需要调用`nullptr_t`构造函数。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。 |
+| C + + 编译器产生"*错误 C3861: from_abi： 找不到标识符*"，以及来自*base.h*其他错误。 你可能会看到此错误，如果你使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)。 | 无论是面向更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(此外，如果 **/ 许可的**出现在项目属性**C/c + +**  > **语言** > **命令行**下**其他选项**，然后将其删除)。 |
 
 > [!NOTE]
 > 如果本主题没有解决你的问题，你可以[在 Stack Overflow 上使用 `c++-winrt` 标签](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)查找帮助。

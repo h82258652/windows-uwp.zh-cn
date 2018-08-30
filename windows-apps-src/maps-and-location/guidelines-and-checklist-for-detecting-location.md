@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906514"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118033"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
@@ -91,7 +91,7 @@ ms.locfileid: "2906514"
         例如：
 
         -   如果应用要获取位置用于广告调整、天气、新闻，5000 米的精度一般足够。
-        -   如果你的应用显示附近的街区中的交易，300 米的精度，最好通常提供结果。
+        -   如果你的应用显示附近的街区中的交易，300 米的精度是用于提供结果。
         -   如果用户查找附件餐厅的推荐，我们可能要获取一个街区内的位置，因此 100 米的精度足够了。
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。

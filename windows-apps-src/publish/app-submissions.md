@@ -11,18 +11,18 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913627"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115928"
 ---
 # <a name="app-submissions"></a>应用提交
 
 
 [通过保留名称创建应用](create-your-app-by-reserving-a-name.md)后，你可以开始着手其发布工作。 第一步是创建**提交**。
 
-你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，以便你可以回来，并在其上工作，只要你准备就绪。
+你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，以便你可以返回，并在其上工作，只要你准备就绪。
 
 > [!NOTE]
 > 你必须拥有[开发人员帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft 应用商店的应用。

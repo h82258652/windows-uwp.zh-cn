@@ -15,11 +15,11 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2911724"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3127557"
 ---
 # <a name="xaml-lighting"></a>XAML 照明
 
@@ -29,7 +29,7 @@ ms.locfileid: "2911724"
 
 ## <a name="applying-lights-to-xaml-uielements"></a>将光应用于 XAML UIElement
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 对象用于应用 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) 以动态照明 XAML UIElement。 XamlLight 提供了方法以用于面向 Uielement 或 XAML 画笔、 将光应用于 Uielement 树以及帮助管理 CompositionLight 的生存期资源，具体取决于无论它们是在当前正在使用。
+[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 对象用于应用 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) 以动态照明 XAML UIElement。 XamlLight 提供了方法以用于面向 Uielement 或 XAML 画笔、 将光应用于 Uielement 树以及帮助管理 CompositionLight 生存期资源，具体取决于无论它们是在当前正在使用。
 
 - 如果使用 XamlLight 面向某个 **Brush**，则光会照亮使用该画笔的任何 UIElement 的位置。
 - 如果使用 XamlLight 面向某个 **UIElement**，则光会照亮整个 UIElement 及其子 UIElement。
@@ -38,7 +38,7 @@ ms.locfileid: "2911724"
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 是基类，可以用于创建自定义光。
 
-此示例显示了适用于目标 UIElements 和画笔的彩色的聚焦的自定义 XamlLight 的定义。
+此示例显示了适用于目标 Uielement 和画笔的彩色的聚焦的自定义 XamlLight 的定义。
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -461,10 +461,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-你可以将此光应用于任何 XAML UIElement 或画笔能够增强它们。 此示例显示了不同可能用法。
+你可以将此光应用于任何 XAML UIElement 或画笔，以便它们。 此示例显示了不同的潜在使用情况。
 
 > [!Important]
-> 对于[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，删除的两个实例`local:OrangeSpotLight.IsTarget="True"`从下面的标记。 代码隐藏文件中已设置的附加的属性。
+> 对于[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，删除的两个实例`local:OrangeSpotLight.IsTarget="True"`从下面的标记。 代码隐藏文件中已设置附加的属性。
 
 ```xaml
 <StackPanel Width="100">

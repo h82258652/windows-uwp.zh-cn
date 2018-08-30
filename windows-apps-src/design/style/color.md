@@ -1,8 +1,8 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: 了解如何在 UWP 应用中使用主题色和主题。
 title: UWP 应用中的颜色
-ms.author: sezhen
+ms.author: quradic
 ms.date: 4/7/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: fc348dc4f4733feae86a94e0ada1693326a201d8
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843187"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123426"
 ---
 # <a name="color"></a>颜色
 
@@ -27,17 +27,27 @@ ms.locfileid: "1843187"
 
 ## <a name="color-principles"></a>颜色使用原则
 
-:::行::: :::列:::**有效地使用颜色。**
+:::row:::
+    :::column:::
+        **有效地使用颜色。**
 谨慎地使用颜色突出显示重要元素时，颜色可帮助创建流畅直观的用户界面。
-:::列末::: :::列:::**使用颜色指示交互性。**
+    :::column-end:::
+    :::column:::
+        **使用颜色指示交互性。**
 可选择一种颜色来指示应用程序中处于交互状态的元素。 例如，许多网页使用蓝色文本表示超链接。
-:::列末::: :::行末:::
+    :::column-end:::
+:::row-end:::
 
-:::行::: :::列:::**可自定义颜色。**
+:::row:::
+    :::column:::
+        **颜色为个人。**
 在 Windows 中，用户可选择要在其整个体验中显示的主题色和浅色/深色主题。 可选择按何种方式将用户的主题色及主题纳入应用程序，进而为用户提供个性化体验。
-:::列末::: :::列:::**颜色具有文化性。**
+    :::column-end:::
+    :::column:::
+        **颜色具有文化性。**
 请考虑来自不同文化的人们对所用颜色的解读方式。 例如，蓝色在一些文化中象征着美德和保护，而在另一些文化中代表着哀悼。
-:::列末::: :::行末:::
+    :::column-end:::
+:::row-end:::
 
 ## <a name="themes"></a>主题
 
@@ -96,14 +106,16 @@ ms.locfileid: "1843187"
 
 ### <a name="using-theme-brushes"></a>使用主题画笔
 
-:::行::: :::列:::创建自定义控件的模板时，请使用主题画笔，而不是硬编码颜色值。 这样，应用可轻松适应任何主题。
+:::row:::
+    :::column:::
+        创建自定义控件的模板时，使用主题画笔，而不是硬编码颜色值。 这样，应用可轻松适应任何主题。
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
     :::column:::
          ![double line list item with icon example](images/color/list-view.svg)
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -133,7 +145,14 @@ ms.locfileid: "1843187"
 
 ![Windows 控件](images/color/windows-controls.svg)
 
-:::行::::::列:::![用户选择的主题标题](images/color/user-accent.svg)![用户选择的主题色](images/color/user-selected-accent.svg):::列末::::::列:::![自定义主题标题](images/color/custom-accent.svg)![自定义品牌主题色](images/color/brand-color.svg):::列末::::::行末:::
+:::row:::
+    :::column:::
+        ![用户选择主题色标头](images/color/user-accent.svg)![用户选择主题色](images/color/user-selected-accent.svg)
+    :::column-end:::
+    :::column:::
+        ![自定义主题色标头](images/color/custom-accent.svg)![自定义品牌主题色](images/color/brand-color.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="overriding-the-accent-color"></a>替代主题色
 
@@ -237,25 +256,37 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 ## <a name="usability"></a>可用性
 
-:::行::::::列:::![对比度图](images/color/illo-contrast.svg):::列末::::::列范围="2":::**对比度**
+:::row:::
+    :::column:::
+        ![对比度图](images/color/illo-contrast.svg)
+    :::column-end:::
+    ::: 列范围 ="2":::**对比度**
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
         When considering what colors to use in your application, accessiblity should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
     :::column-end:::
-:::行末:::
+:::row-end:::
 
-:::行::::::列:::![对比度图](images/color/illo-lighting.svg):::列末::::::列范围="2":::**照明**
+:::row:::
+    :::column:::
+        ![对比度图](images/color/illo-lighting.svg)
+    :::column-end:::
+    ::: 列范围 ="2":::**照明**
 
         Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
-:::行末:::
+:::row-end:::
 
-:::行::::::列:::![对比度图](images/color/illo-colorblindness.svg):::列末::::::列范围="2":::**色盲**
+:::row:::
+    :::column:::
+        ![对比度图](images/color/illo-colorblindness.svg)
+    :::column-end:::
+    ::: 列范围 ="2":::**色盲**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ## <a name="related-articles"></a>相关文章
 

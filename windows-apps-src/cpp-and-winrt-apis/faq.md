@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c27332c05e285fdad6b8ec8deddd82d24a6e4a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906353"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118213"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 常见问题
 对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
@@ -87,9 +87,9 @@ Visual Studio 是我们支持和推荐用于 C++/WinRT 的开发工具。 请参
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>为什么没有只读属性的生成的实现函数`const`限定符？
 
-声明中[MIDL 3.0](/uwp/midl-3/)的只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数的`const`-限定 （const 函数将视为 const*此*指针）。
+声明中[MIDL 3.0](/uwp/midl-3/)的只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数是`const`-限定 （const 函数将视为 const*此*指针）。
 
-我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试原因哪一种实现相关函数可能是 const，并且这可能不会。 你可以选择将任何实现函数 const，如本示例中所示。
+我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试有关实现的函数可能是 const，和其不可能的原因。 你可以选择将任何实现功能 const，如本示例所示。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -101,9 +101,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-你可以删除的`const`限定符上**ToString**应你决定，你需要更改其实现中的某些对象状态。 但使每个成员函数 const 或非量，不能同时。 换言之，不重载实现函数`const`。
+你可以删除的`const`上**ToString**限定符应你决定需要更改在其实现中的某些对象状态。 但使每个成员函数 const 或非量，不能同时。 换言之，不重载实现函数`const`。
 
-除了你实现的函数，另其他放置在 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
+除了你实现的函数，其他另一个将放置在 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
 
 ```cppwinrt
 int main()
@@ -113,17 +113,17 @@ int main()
 }
 ```
 
-**ToString**上述调用，在 Visual Studio 中的**转到声明**命令显示的 Windows 运行时**istringable:: Tostring**投影到 C + + WinRT 如下所示。
+为**ToString**上述调用，在 Visual Studio 中的**转到声明**命令显示的 Windows 运行时**istringable:: Tostring**的投影到 C + + WinRT 如下所示。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-无论你选择如何限定实现它们的 const 投影的函数。 在后台，投影调用应用程序二进制接口 (ABI)，通过 COM 接口指针调用的金额。 只有与投影的**ToString**交互的状态是该 COM 接口指针;并且，它的确有无需修改该指针，因此该函数是 const。 这样你保证它不会更改有关正在，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**甚至与 const 引用**IStringable**。
+投影的函数是 const 无论你选择以有资格实现它们。 在后台，投影调用应用程序二进制接口 (ABI) 情况下，通过 COM 接口指针的调用。 只有与投影的**ToString**交互的状态是该 COM 接口指针;并且它当然无需修改该指针，因此该函数是 const。 这样你保证它不会更改有关，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**即使使用常量引用**IStringable**。
 
-了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现;它们构成为您提供方便代码清理。 没有根本不`const`上 COM 和 Windows 运行时 ABI （适用于成员函数）。
+了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现。它们构成为您提供方便代码清理。 没有根本不`const`上 COM 和 Windows 运行时 ABI （适用于成员函数）。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>你有任何建议减少的代码大小为 C + + WinRT 二进制文件？
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>是否有任何建议减少代码大小为 C + + WinRT 二进制文件？
 
 使用 Windows 运行时对象时，应避免的编码模式，因为它可以在你的应用程序产生负面影响，从而比生成所需的更多二进制代码如下所示。
 
@@ -133,7 +133,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-在 Windows 运行时世界中，则编译器将无法缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非干预，产生在多个虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格需要两倍代码。 相反，首选位置可以如下所示的模式。 它生成很少的代码，并且它可以也极大地提高运行的时性能。
+在 Windows 运行时世界中，编译器不能缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非您干预，最终的更多虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，更喜欢位置可以如下所示的模式。 生成很少的代码，并且它可以也极大地缩短运行的时性能。
 
 ```cppwinrt
 auto a{ anobject.b().c() };

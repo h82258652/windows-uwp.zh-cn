@@ -11,11 +11,11 @@ keywords: windows 10，uwp，应用服务
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905993"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123254"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>将应用服务转换为与其主机应用在同一个进程中运行
 
@@ -42,11 +42,11 @@ ms.locfileid: "2905993"
 >   </Applications>
 > ```
 
-删除`EntryPoint`属性`<Extension>`元素是现在[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)时调用应用服务将使用的入口点。
+删除`EntryPoint`属性从`<Extension>`元素因为[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)现在是时调用应用服务将使用的入口点。
 
 第二项更改是将服务逻辑从其单独的后台任务项目移动至可从 **OnBackgroundActivated()** 调用的方法。
 
-此时，应用程序可直接运行应用服务。 例如，在 App.xaml.cs 中：
+此时，应用程序可直接运行应用服务。 例如，在 App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.AppService;

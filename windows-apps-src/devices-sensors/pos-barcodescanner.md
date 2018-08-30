@@ -3,18 +3,18 @@ author: TerryWarwick
 title: 条形码扫描仪
 description: 本文列出了 UWP 应用可用的条形码扫描仪功能以及指向显示如何使用这些功能的操作方法文章的链接。
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 08/29/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: c6021b00b9ec993aa6c09df93b8845dcc789678c
-ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
-ms.translationtype: HT
+ms.openlocfilehash: 1cd6f8391de9375ddd1c20471dd10c37e99f782f
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1874385"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3129091"
 ---
 # <a name="barcode-scanner"></a>条形码扫描仪
 
@@ -24,8 +24,10 @@ ms.locfileid: "1874385"
 
 |主题 |描述 |
 |------|------------|
-| [入门](pos-barcodescanner-get-started.md)  |  |
+| [配置条形码扫描仪](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何配置预期应用程序的条形码扫描仪。 |
+| [使用软件触发器](../devices-sensors/pos-barcodescanner-software-trigger.md) | 了解如何控制从软件进行扫描的操作。 |
 | [使用标志](pos-barcodescanner-symbologies.md) | 了解如何确定条形码扫描仪支持的条形码类型，并控制条形码扫描仪将从应用程序识别哪些条形码类型。 |
+| [获取并了解条形码数据](pos-barcodescanner-scan-data.md) | 了解如何获取和解释扫描条形码数据。 |
 | [相机条形码扫描仪](pos-camerabarcode.md) | 在通用 Windows 平台应用程序中通过标准相机镜头读取条形码。 需要 Windows 10 2018 年 4 月更新（版本 17134 或更高版本）。 |
 |
  

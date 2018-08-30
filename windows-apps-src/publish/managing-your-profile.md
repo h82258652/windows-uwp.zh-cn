@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2907415"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118701"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
@@ -26,9 +26,9 @@ ms.locfileid: "2907415"
 
 ## <a name="account-settings"></a>帐户设置
 
-若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和你可以查看信息以及执行多种帐户相关任务其他页面的链接的详细信息。
+若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和指向可查看信息以及执行多种帐户相关任务其他页面的详细信息。
 
-在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以看到你的卖家 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配以唯一地标识开发者帐户，且无法进行编辑。
+在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以看到你的卖家 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配以唯一地标识你的开发人员帐户，且无法进行编辑。
 
 > [!NOTE]
 > 可以在每个应用的[应用标识](view-app-identity-details.md)页中查找每个应用的标识详细信息。

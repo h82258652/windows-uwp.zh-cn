@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2919062"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3128264"
 ---
-# <a name="tailoring-effects--experiences-using-windows-ui"></a>定制效果和使用 Windows UI 体验
+# <a name="tailoring-effects--experiences-using-windows-ui"></a>定制效果和使用 Windows UI 的体验
 
-Windows UI 提供差异化有关的许多美观效果、 动画和方法。 但是，满足用户期望的性能和自定义仍是创建成功应用程序的必要组成部分。 通用 Windows 平台支持设备，具有不同的特性和功能的大型的、 不同的系列。 若要为所有用户提供的非独占的体验，你需要确保你的应用程序比例跨设备和尊重用户首选项。 UI 定制可以提供一种利用设备的功能，并确保让人愉快和非独占的用户体验的有效方法。
+Windows UI 提供差异化有关的许多美观效果、 动画和方法。 但是，满足用户期望的性能和自定义仍然是创建成功应用程序的必要组成部分。 通用 Windows 平台支持设备，具有不同的特性和功能的大型的、 不同的系列。 若要为所有用户提供的非独占的体验，你需要确保你的应用程序比例跨设备和尊重用户首选项。 UI 定制可以提供一种利用设备的功能，并确保让人愉快和非独占的用户体验的有效方法。
 
 UI 定制很广，包括高性能，相对于以下方面的美观 UI 工作：
 
@@ -30,7 +30,7 @@ UI 定制很广，包括高性能，相对于以下方面的美观 UI 工作：
 
 ## <a name="user-effects-settings"></a>用户效果设置
 
-用户可以自定义各种原因，该应用程序应尊重和调整到其 Windows 体验。 最终用户可以控制的一个区域更改效果他们可看到用于整个其系统的类型。
+用户可以自定义大量的原因，该应用程序应尊重和适应其 Windows 体验。 最终用户可以控制的一个区域更改类型的效果他们看到用于整个系统。
 
 ### <a name="transparency-effects-settings"></a>透明效果设置
 
@@ -95,7 +95,7 @@ CompositionCapabilities 功能已用于功能，如亚克力材料，其中材�
     _capabilities = CompositionCapabilities.GetForCurrentView();
     ```
 
-1. 注册你的应用的功能更改的事件侦听器。
+1. 注册你的应用的功能已更改的事件侦听器。
 
     ```cs
     _capabilities.Changed += HandleCapabilitiesChanged;
@@ -120,13 +120,13 @@ CompositionCapabilities 功能已用于功能，如亚克力材料，其中材�
 
 ## <a name="fast-vs-slow-effects"></a>快速与慢效果
 
-根据反馈 CompositionCapabilties API 中提供的[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast)方法，应用程序可以决定以用于进行了优化所选的其他效果交换耗费资源或不受支持的效果为设备。 某些效果已知的一致地比他人做得更多需要大量资源和应谨慎，使用，并且可以更自由地用于其他效果。 对于所有效果，但是，小心应使用链接和为某些方案或组合创建动画可能会更改效果图的性能特征时。 下面是单个效果一些经验法则性能特征：
+根据反馈 CompositionCapabilties API 中提供的[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast)方法，应用程序可以决定以用于进行了优化所选的其他效果交换耗费资源或不受支持的效果为设备。 某些效果已知的一致地比他人做得更多需要大量资源和应谨慎，使用，并且可以更自由地用于其他效果。 对于所有效果，但是，小心应使用时链接和为某些方案或组合创建动画可能会更改效果图的性能特征。 下面是单个效果一些经验法则性能特征：
 
-- 已知具有高性能影响的效果如下所示 – 高斯模糊、 阴影掩码、 BackDropBrush、 HostBackDropBrush，和可视化层。 这些不推荐用于低端设备[（功能级别 9.1 9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，并且应在高端设备上的谨慎使用。
-- 中等性能影响的效果包括颜色矩阵，某些混合效果 BlendModes （亮度、 颜色、 饱和度和色调） 聚焦、 SceneLightingEffect，和 （取决于方案） BorderEffect。 这些效果可能与某些方案低端在设备上，但链接并进行动画处理时，应使用小心。 建议为两个或更少限制使用和创建仅过渡动画。
-- 所有其他效果很低性能影响，并且在所有合理的方案进行动画处理和链接时起作用。
+- 已知具有高性能影响的效果如下所示 – 高斯模糊、 阴影掩码、 BackDropBrush、 HostBackDropBrush，和可视化层。 这些不推荐用于低端设备[（功能级别 9.1 9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，并且应谨慎使用高端设备上。
+- 中等性能影响的效果包括颜色矩阵，某些混合效果 BlendModes （亮度、 颜色、 饱和度和色调） 聚焦、 SceneLightingEffect，和 （取决于方案） BorderEffect。 这些效果低端在设备上，可以使用某些方案，但链接和进行动画处理时，应使用小心。 建议为两个或更少限制使用和创建仅过渡动画。
+- 所有其他效果具有低性能影响，并且在所有合理情况下，当进行动画处理和链接起作用。
 
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 响应式设计技术](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
-- [UWP 设备的定制](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+- [UWP 设备定制](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

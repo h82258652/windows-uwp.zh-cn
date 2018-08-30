@@ -1,21 +1,21 @@
 ---
-author: serenaz
-Description: An overview of the universal design features that are included in every UWP app to help you build apps that scale beautifully across a range of devices.
+author: mijacobs
+Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: 通用 Windows 平台 (UWP) 应用设计（Windows 应用）简介
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: sezhen
+ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f5d17a9fbdc044c3e1c0fcd152e6bafe2705a7
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877269"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3126744"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -48,9 +48,10 @@ ms.locfileid: "1877269"
 
 ### <a name="multiples-of-four"></a>四的倍数
 
-:::row::: :::column span::: 当系统缩放应用的 UI 时，会按 4 的倍数进行缩放。
+:::row:::
+    ::: 列范围::: 大小、 边距和 UI 元素的位置应始终为**4 epx 的倍数进行缩放**在 UWP 应用中。
 
-        As a result, the sizes, margins, and positions of **UI elements should always be in multiples of 4 epx**. This results in the best rendering by aligning with whole pixels. It also ensures that UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
     :::column:::
         ![grid](images/4epx.svg)
@@ -63,10 +64,18 @@ ms.locfileid: "1877269"
 
 ### <a name="windows-frames-and-pages"></a>窗口、框架和页面
 
-:::row::: :::column::: 在任意 Windows 10 设备上启动 UWP 应用时，它会启动一个包含[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)（可以在[页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例间导航）的[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)。
-:::column-end::: :::column::: ![框架](images/frame.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        在任何 Windows 10 设备上启动 UWP 应用时，它将启动在[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中使用[帧](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航。
+    :::column-end:::
+    :::column:::
+        ![帧](images/frame.svg)
+    :::column-end:::
+:::row-end:::
 
-:::row::: :::column::: 可以将应用的 UI 看作一组页面。 每个页面显示何种内容以及页面之间的关系由你决定。
+:::row:::
+    :::column:::
+        你可以将你的应用的 UI 视为一个页面集合。 每个页面显示何种内容以及页面之间的关系由你决定。
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
@@ -107,7 +116,9 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ## <a name="shell"></a>Shell
 
-:::row::: :::column::: UWP 应用将与 Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md) 中的磁贴和通知进行更广泛的 Windows 体验交互。
+:::row:::
+    :::column:::
+        你的 UWP 应用的磁贴和通知 Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md)中的更广泛的 Windows 体验交互。
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
@@ -120,8 +131,14 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ## <a name="inputs"></a>输入
 
-:::row::: :::column::: UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而无需知道或定义该单击是来自鼠标、触笔还是手指点击。 不过，你也可以针对[特定输入模式](../input/input-primer.md)设计应用。
-:::column-end::: :::column::: ![输入](images/inputs.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而无需知道或定义该单击是来自鼠标、触笔还是手指点击。 不过，你也可以针对[特定输入模式](../input/input-primer.md)设计应用。
+    :::column-end:::
+    :::column:::
+        ![输入](images/inputs.svg)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="devices"></a>设备
 

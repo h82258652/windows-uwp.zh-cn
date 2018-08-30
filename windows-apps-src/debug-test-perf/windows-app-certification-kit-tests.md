@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 应用认证工具包测试
-description: Windows 应用认证工具包包含大量测试，可以帮助确保你的应用已准备好在 Microsoft store 中发布。
+description: Windows 应用认证工具包包含大量测试，可以帮助确保你的应用已准备好发布的 Microsoft 应用商店。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906064"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121021"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在故障的情况下操作。
+[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft 应用商店。 这些测试下面列出了自己的条件的详细信息，并建议在发生故障的操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
@@ -433,7 +433,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>“resources.pri”文件不得启用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。</p>
+<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft 应用商店分发应用的 resources.pri 必须为应用的程序包的根目录中，并包含应用支持的所有语言参考。</p>
 </td></tr>
 <tr><td>
 <p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
@@ -501,7 +501,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="background"></a>背景
 
-要通过认证的 Microsoft 应用商店，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过 Microsoft 应用商店的认证，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -509,7 +509,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="corrective-actions"></a>更正操作
 
--   提交到 Microsoft Store 之前，将应用编译为发行版本。
+-   提交到 Microsoft 应用商店之前，将应用编译为发行版本。
 -   确保你安装了正确版本的 .NET Framework。
 -   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 

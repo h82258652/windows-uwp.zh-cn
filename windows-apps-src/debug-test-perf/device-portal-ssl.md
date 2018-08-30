@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2916754"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121002"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自定义的 SSL 证书预配 Device Portal
 在 Windows 10 创意者更新，Windows Device Portal 添加设备管理员使用自定义的证书安装在 HTTPS 通信的一种方法。 
@@ -27,13 +27,13 @@ ms.locfileid: "2916754"
 ## <a name="overview"></a>概述
 默认情况下，Device Portal 生成自签名的根 CA，并使用的每个终结点正在侦听的 SSL 证书进行签名。 这包括`localhost`， `127.0.0.1`，并`::1`(IPv6 localhost)。
 
-此外包括设备的主机名 (例如， `https://LivingRoomPC`) 和每个链接本地 IP 地址分配给设备 (最多两个 [IPv4、 IPv6] 每个网络适配器)。 你可以通过查看 Device Portal 中的网络工具查看设备的链接本地 IP 地址。 它们将从开始`10.`或`192.`ipv4，或`fe80:`ipv6。 
+此外包括设备的主机名 (例如， `https://LivingRoomPC`) 和分配给设备每个链接本地 IP 地址 (最多两个 [IPv4、 IPv6] 每个网络适配器)。 你可以通过查看 Device Portal 中的网络工具查看设备的链接本地 IP 地址。 它们将从开始`10.`或`192.`ipv4，或`fe80:`ipv6。 
 
-在默认设置中，可能会显示在浏览器中由于不受信任的根 CA 证书警告。 具体来说，提供 Device Portal 的 SSL 证书进行签名的根的浏览器或电脑不信任的 CA。 这可以通过创建新的受信任的根 CA 固定。
+在默认设置中，可能出现在你的浏览器由于不受信任的根 CA 证书警告。 具体来说，提供 Device Portal 的 SSL 证书进行签名的根的浏览器或电脑不信任的 CA。 这可以通过创建新的受信任的根 CA 固定。
 
 ## <a name="create-a-root-ca"></a>创建的根 CA
 
-这仅应如果贵公司 （或主页） 没有证书基础结构设置，并应仅进行一次。 以下 PowerShell 脚本创建的根 CA 调用_WdpTestCA.cer_。 将此文件安装到本地计算机的受信任的根证书颁发机构将导致你的设备信任签名通过该根 CA 的 SSL 证书。 你可以 （且应该） 安装此.cer 文件你想要连接到 Windows Device Portal 每台电脑上。  
+这仅进行如果没有证书基础结构设置，你的公司 （或主页），并应仅进行一次。 以下 PowerShell 脚本创建的根 CA 调用_WdpTestCA.cer_。 将此文件安装到本地计算机的受信任的根证书颁发机构将导致你的设备信任签名通过该根 CA 的 SSL 证书。 你可以 （且应该） 安装此.cer 文件你想要连接到 Windows Device Portal 每台电脑上。  
 
 ```PowerShell
 $CN = "PickAName"
@@ -52,7 +52,7 @@ $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 
 SSL 证书包含两个关键功能： 保护通过加密连接并验证你实际通信的浏览器栏中显示的地址 (Bing.com，192.168.1.37，等) 和不是恶意的第三方。
 
-以下 PowerShell 脚本创建的 SSL 证书`localhost`终结点。 Device Portal 侦听每个终结点需要其自己的证书。你可以替换`$IssuedTo`为你的设备在脚本中使用不同的终结点的每个参数： 主机名、 本地主机和 IP 地址。
+以下 PowerShell 脚本创建的 SSL 证书`localhost`终结点。 Device Portal 侦听每个终结点需要其自己的证书。你可以替换`$IssuedTo`参数与每个不同的终结点脚本中为你的设备： 主机名、 本地主机和 IP 地址。
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -68,7 +68,7 @@ $cert = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -Subj
 $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (ConvertTo-SecureString -String $Password -Force -AsPlainText)
 ```
 
-如果你拥有多台设备，你可以重复使用 localhost.pfx 文件，但你仍需要分别创建每个设备的 IP 地址和主机名证书。
+如果你拥有多台设备，你可以重复使用 localhost.pfx 文件，但你将仍需要分别创建每台设备的 IP 地址和主机名证书。
 
 在生成捆绑包的.pfx 文件后，你将需要将其加载到 Windows Device Portal。 
 

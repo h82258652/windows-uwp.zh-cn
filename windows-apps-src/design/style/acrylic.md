@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2907764"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123673"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -52,7 +52,7 @@ ms.locfileid: "2907764"
     ::: 列范围:::![某些图像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     ::: 列范围 ="2"::: **XAML 控件库**<br>
-        如果你安装了该 XAML 控件库应用，请单击<a href="xamlcontrolsgallery:/item/Acrylic">此处</a>打开该应用并查看操作中的亚克力。
+        如果你安装了该 XAML 控件库应用，请单击<a href="xamlcontrolsgallery:/item/Acrylic">此处</a>打开该应用，了解操作中的亚克力。
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -106,7 +106,7 @@ ms.locfileid: "2907764"
 ![计算器实用程序将亚克力用作其整个背景](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> 呈现亚克力图面进行 GPU，从而可以设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
+> 呈现亚克力图面进行 GPU，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式和用户可以禁用亚克力效果的所有应用，如果他们选择。
 
 
 ## <a name="acrylic-blend-types"></a>亚克力混合类型
@@ -129,7 +129,7 @@ ms.locfileid: "2907764"
  - 当激活节电模式
  - 应用在低端硬件上运行时
 
-此外，只有背景亚克力将其透明度和纹理替换为纯色：
+此外，只有背景亚克力会替换其透明度和纹理使用纯色：
  - 桌面上的应用窗口停用时
  - UWP 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
 
@@ -163,7 +163,7 @@ ms.locfileid: "2907764"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -211,7 +211,7 @@ ms.locfileid: "2907764"
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
  - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)

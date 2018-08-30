@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2916955"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114524"
 ---
 # <a name="attached-properties-overview"></a>附加属性概述
 
@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 运行时 XAML 实现的一个现有限制是，你无法动画处理自定义附加属性。
 
-- 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假设存在一个元素`<TextBlock x:Uid="Title" />`，该实例上的**Canvas.Top**值为目标的资源文件中的资源键是"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假设存在一个元素`<TextBlock x:Uid="Title" />`，面向该实例上的**Canvas.Top**值的资源文件中的资源键是"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909907"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123114"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
@@ -32,7 +32,7 @@ ms.locfileid: "2909907"
 
 如果你已为应用创建了任何[软件包外部测试版](package-flights.md)，你将看到一个下拉列表，带有从其中一个软件包外部测试版中复制程序包的选项。 选择具有你想要引入的程序包的软件包外部测试版。 然后，即可选择要包含在此提交中的任何或所有程序包。
 
-如果验证它时检测到的包的错误，我们将显示一条消息，让你知道什么是错误。 你将需要删除该程序包，修复该问题，然后尝试重新上载。 你还可能会看到一条警告，告知你可能导致错误的问题，但不会阻止你继续提交。
+如果在验证它检测到与包的错误，我们将显示一条消息，让你知道错误。 你将需要删除该程序包、 修复该问题，然后尝试重新上载。 你还可能会看到一条警告，告知你可能导致错误的问题，但不会阻止你继续提交。
 
 
 ## <a name="device-family-availability"></a>设备系列可用性
@@ -44,7 +44,7 @@ ms.locfileid: "2909907"
 
 ## <a name="package-details"></a>程序包详细信息
 
-已上传的程序包将列出，按目标操作系统分组。 将显示程序包的名称、版本和体系结构。 若想了解详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击**显示详细信息**。
+你已上传的程序包将列出，按目标操作系统分组。 将显示程序包的名称、版本和体系结构。 若想了解详细信息（例如每个程序包的支持语言、应用功能和文件大小），请单击**显示详细信息**。
 
 如果需要将某个程序包从提交中删除，请单击每个程序包的**详细信息**部分底部的**删除**链接。
 

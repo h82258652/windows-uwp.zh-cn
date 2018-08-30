@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909754"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123374"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)的 Windows 桌面应用程序转换为使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)的通用 Windows 平台 (UWP) 应用。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)是 Windows 桌面应用程序转换为使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)的通用 Windows 平台 (UWP) 应用。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
 对于 Windows 桌面桥应用的可选测试仅供参考，将不能用于在 Microsoft 应用商店载入过程中评估你的应用。 我们建议调查这些测试结果以生成质量更好的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
@@ -50,13 +50,13 @@ ms.locfileid: "2909754"
 此测试验证 appx 不是调试版本。
  
 **背景**  
-要通过认证的 Microsoft 应用商店，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过 Microsoft 应用商店的认证，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
  
 **测试详细信息**  
 测试应用，确保它不是调试版本并且未链接到任何调试框架。
  
 **更正操作**  
-* 提交到 Microsoft Store 之前，将应用编译为发行版本。
+* 提交到 Microsoft 应用商店之前，将应用编译为发行版本。
 * 确保你安装了正确版本的 .NET Framework。
 * 确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 
@@ -125,7 +125,7 @@ ms.locfileid: "2909754"
 图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。  | 有关详细信息，请参阅有关[响应式设计](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[应用资源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 该程序包缺少一个“resources.pri”文件。  | 如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。 
 “resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射  | 如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。 在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。 为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。 
-“resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。 
+“resources.pri”文件不得启用 AutoMerge。  | MakePRI.exe 支持一个名为 AutoMerge 的选项。 AutoMerge 的默认值为 off。 启用后，AutoMerge 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft 应用商店分发应用的 resources.pri 必须为应用的程序包的根目录中，并包含应用支持的所有语言参考。 
 字符串 {string} 不符合 {number} 个字符的最大长度限制。  | 请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。 
 字符串 {string} 不得包含前导空格/尾随空格。  | 应用部件清单 (manifest) 中元素的架构不允许前导空格或尾随空格字符。 在实际消息中，{string} 替换为有错误的字符串。 确保 resources.pri 中清单字段的任何本地化值都没有前导空格或尾随空格字符。 
 字符串必须非空（长度大于零）  | 有关详细信息，请参阅[应用包要求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -221,7 +221,7 @@ ms.locfileid: "2909754"
 这可以通过确保应用编译为发行版本而不是调试版本来进行更正。 
 
 > [!NOTE]
-> 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息，识别存在的 API 不允许的 UWP 应用的 API。 
+> 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息，识别存在 API 不允许的 API 适用于 UWP 应用。 
 
 > [!NOTE]
 > 内置于该调试配置中的 c + + 应用将无法通过此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 有关详细信息，请参阅[UWP 应用中的 Windows Api 的替代项](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
@@ -273,7 +273,7 @@ Windows 应用认证工具包中“对被禁止文件的检查”当前会对以
 当应用使用“Release Preview”版本的文件而不是最新官方版本时，此检查通常会失败。 
 
 **更正操作**  
-若要解决此问题，适用于 UWP 应用中使用[必应地图 SDK](http://go.microsoft.com/fwlink/p/?linkid=614880)的最新版本。
+若要解决此问题，适用于 UWP 应用使用最新版本的[必应地图 SDK](http://go.microsoft.com/fwlink/p/?linkid=614880) 。
 
 #### <a name="82-private-code-signing"></a>8.2 私有代码签名
 测试应用包中是否存在私有代码签名二进制文件。 

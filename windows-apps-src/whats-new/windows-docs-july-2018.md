@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: 在 2018 年 7 月 Windows 文档中新增功能-开发 UWP 应用
 description: 新功能、 视频、 示例和开发人员指南已添加到 2018 年 7 月 Windows 10 开发人员文档。
-keywords: 新增功能，更新，功能，开发人员指南，Windows 10，7 月
+keywords: 新增功能，更新，功能，开发人员指南，Windows 10 年 7 月
 ms.author: quradic
 ms.date: 7/11/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913599"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115545"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>什么是 Windows 开发人员文档中 2018 年 7 月的新增功能
 
@@ -44,7 +44,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="design-landing-page"></a>设计登录页面
 
-请查看[更新登录页的设计](https://developer.microsoft.com/windows/apps/design)为一个一览概述 UWP 设计区域，并添加到 Fluent 设计的最新功能的信息。
+请查看[更新登录页的设计](https://developer.microsoft.com/windows/apps/design)为 UWP 设计区域，以及有关在最新添加内容为 Fluent Design 信息一览的概述。
 
 ### <a name="design-toolkits"></a>设计工具包
 
@@ -55,7 +55,7 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 我们已添加到[WebVR 文档](https://docs.microsoft.com/microsoft-edge/webvr/
 )的几个新主题：
 
-* [WebVR 是什么？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
+* [什么是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
 ) 说明了什么 WebVR，为什么应使用它，以及如何为其开发入门。
 
 * [渐进式 Web 应用中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)： 了解如何将 WebVR 添加到渐进式 Web 应用 (PWA)。
@@ -74,13 +74,13 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 ## <a name="videos"></a>视频
 
-### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>要开始使用适用于开发人员： 创建和自定义 Windows 10 上的表单
+### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>适用于开发人员入门： 创建和自定义 Windows 10 上的表单
 
-我们的[入门文档](../get-started/index.md)适用于 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过一个这些主题中，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
+我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过这些主题中，并介绍在你的应用中创建表单 UI 的基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后在代码[自行查看本主题。](http://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>增强你的项目个性聊天机器人
 
-项目个性聊天，可以将自定义角色添加到你聊天机器人。 通过与 Microsoft 机器人框架 SDK 集成，你可以添加更谈话地与客户交互的小演讲功能。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何实现它，然后[尝试交互式演示](http://aka.ms/PersonalityChat)动手体验。
+项目个性聊天，可以将自定义角色添加到你聊天机器人。 通过与 Microsoft 机器人框架 SDK 集成，你可以添加更谈话的方式来与客户交互的小访谈的功能。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何实现它，然后[尝试交互式演示](http://aka.ms/PersonalityChat)动手体验。
 
 ### <a name="one-dev-question"></a>一个开发人员的问题
 
@@ -101,4 +101,4 @@ Larry Osterman:
 
 照片编辑器示例应用展示了使用开发[C + + WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)语言投影。 该应用使你从**图片**库检索照片，然后编辑使用关联的照片效果选择的图像。 [克隆或下载下面的示例。](https://github.com/Microsoft/Windows-appsample-photo-editor)
 
-![正在操作的示例的示例](images/photo-editor-banner.png)
+![一种正在操作的示例](images/photo-editor-banner.png)

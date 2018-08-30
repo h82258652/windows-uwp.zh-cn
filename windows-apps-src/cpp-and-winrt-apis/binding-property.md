@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
 ms.openlocfilehash: 31913ae162bfe541d04f304db87b4dff962a8af4
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2910629"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3129109"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>XAML 控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何在 C++/WinRT 中实现可观测属性以及如何将 XAML 控件绑定到这些属性。
@@ -49,11 +49,11 @@ namespace Bookstore
 ```
 
 > [!NOTE]
-> 你的视图模型类&mdash;事实上，在你的应用程序中声明的任何运行时类&mdash;不需要从基类派生。 以上声明的**BookSku**类是这样的示例。 它实现接口，但它不会从任何基类派生。
+> 你的视图模型类&mdash;事实上，在你的应用程序中声明的任何运行时类&mdash;不需要从基类。 以上声明的**BookSku**类是这样的示例。 它实现的接口，但它不会从任何基类派生。
 >
-> 应用程序中声明的任何运行时类*未*从基类派生类被称为*可组合*类。 并且可组合类周围的约束。 要通过使用 Visual studio 和 Microsoft store 来验证提交的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试应用程序 (并因此能够成功地引入 Microsoft Store 的应用程序)，可组合类必须最终派生自 Windows 基类。 这意味着，继承层次结构非常根处的类必须源自 windows.* 命名空间的类型。 如果你需要从基类派生的运行时类&mdash;例如，若要实现视图模型来派生的所有**BindableBase**类&mdash;，然后你可以从[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)派生。
+> 在应用程序中声明的任何运行时类*未*从基本类名为*可组合*类。 并且，可组合类周围的约束。 要通过使用 Visual studio 和 Microsoft store 来验证提交的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试应用程序 (并因此成功地引入 Microsoft 应用商店的应用程序)，可组合类必须最终派生自 Windows 基类。 这意味着非常根目录继承层次结构的类必须源自 windows.* 命名空间中的类型。 如果你需要一个运行时类派生自一个基类，&mdash;例如，若要实现一个**BindableBase**类，用于从派生视图模型的所有&mdash;则可以从[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。
 >
-> 视图模型是视图的一种抽象，因此它直接绑定到视图 （在 XAML 标记）。 数据模型是一种抽象的数据，时，它具有消耗仅从视图模型，并且不直接绑定到 XAML。 因此，你可以将数据模型声明不是作为运行时类，但为 c + + 结构或类。 它们无需在 MIDL 中, 声明，你可以自由地使用你喜欢的任何继承层次结构。
+> 视图模型是视图，一种抽象，因此它直接绑定到视图 （XAML 标记）。 数据模型是一种抽象的数据，时，它具有消耗仅从视图模型，并且不直接绑定到 XAML。 因此，你可以将数据模型声明不是作为运行时类，但为 c + + 结构或类。 它们无需在 MIDL 中, 声明，你可以自由地使用你喜欢的任何继承层次结构。
 
 保存文件并生成项目。 在生成过程中，`midl.exe` 工具会运行以创建描述该运行时类的 Windows 运行时元数据文件 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然后，`cppwinrt.exe` 工具运行以生成源代码文件，从而为你在创作和使用运行时类时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的 **BookSku**运行时类的存根。 这些存根是 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 和 `BookSku.cpp`。
 
@@ -126,7 +126,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-在**标题**转变器函数中，我们会检查是否正在设置值不同于当前值。 并且，如果是这样，我们更新标题引发[**inotifypropertychanged:: Propertychanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)事件等于已更改的属性名称的参数。 这样，用户界面 (UI) 将知道要重新查询的属性的值。
+在**标题**转变器函数中，我们检查是否将设置的值不同于当前值。 并且，如果是这样，我们更新标题引发[**inotifypropertychanged:: Propertychanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)事件，其中包含一个等于已更改的属性名称的参数。 这样，用户界面 (UI) 将知道要重新查询的属性的值。
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>声明并实现 **BookstoreViewModel**
 主 XAML 页面将绑定到主视图模型。 而且该视图模型将有多个属性，包括其中一个类型 **BookSku**。 在此步骤中，我们将声明并实现主视图模型运行时类。
@@ -208,13 +208,13 @@ namespace Bookstore
 }
 ```
 
-保存文件。 该项目将不会生成到时刻，完成，但现在生成很有用，它以执行操作，因为它会重新生成源代码文件在其中实现**MainPage**运行时类 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此继续并立即生成。 你会看到此阶段生成错误**MainViewModel': 不是 winrt::Bookstore::implementation::MainPage 的成员**。
+保存文件。 该项目将不会生成完成时，但现在生成很有用，它以执行操作，因为它会重新生成源代码文件在其中实现**MainPage**运行时类 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此继续操作并立即生成。 你会看到此阶段生成错误是**MainViewModel': 不是 winrt::Bookstore::implementation::MainPage 成员**。
 
-如果忽略的包括`BookstoreViewModel.idl`(的列表，请参阅`MainPage.idl`上方)，然后你将看到错误**预期 \ < 附近"MainViewModel"**。 另一条提示是确保将所有类型都保留在相同的命名空间： 代码一览中显示的命名空间。
+如果忽略的包括`BookstoreViewModel.idl`(的列表，请参阅`MainPage.idl`上面)，则你将看到错误**应为 \ < 附近"MainViewModel"**。 另一条提示是确保将所有类型都保留在相同的命名空间： 代码一览中显示的命名空间。
 
-若要解决我们希望看到此错误，你现在需要复制访问器存根，以从生成的文件的**MainViewModel**属性 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
+若要解决我们希望看到的错误，你现在需要复制访问器存根，以从生成的文件的**MainViewModel**属性 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
 
-在`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，这将声明该实现类型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 添加私有成员以存储视图模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 该实现类型是同一项目 （编译单元） 中为应用程序，因此我们构造 m_mainViewModel 通过构造函数重载`nullptr_t`。 此外删除**MyProperty**属性。
+在`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，这将声明该实现类型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 添加私有成员以存储视图模型。 请注意，属性访问器函数（添加成员 m_mainViewModel）是根据 **Bookstore::BookstoreViewModel** 实现的，后者是投影类型。 实现类型是同一项目 （编译单元） 中为应用程序，因此我们构造 m_mainViewModel 通过构造函数重载`nullptr_t`。 此外删除**MyProperty**属性。
 
 ```cppwinrt
 // MainPage.h
@@ -269,7 +269,7 @@ namespace winrt::Bookstore::implementation
 ```
 
 ## <a name="bind-the-button-to-the-title-property"></a>将按钮绑定到**标题**属性
-打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 下面的列表中所示，从按钮中，删除名称，然后将其**内容**的属性值从文字更改为绑定表达式。 记下绑定表达式上的 `Mode=OneWay` 属性（单向从视图模型到 UI）。 没有该属性，UI 将不会响应属性更改事件。
+打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 下面的列表中所示，从按钮中删除名称，然后将其**内容**的属性值从文字更改为绑定表达式。 记下绑定表达式上的 `Mode=OneWay` 属性（单向从视图模型到 UI）。 没有该属性，UI 将不会响应属性更改事件。
 
 ```xaml
 <Button Click="ClickHandler" Content="{x:Bind MainViewModel.BookSku.Title, Mode=OneWay}"/>

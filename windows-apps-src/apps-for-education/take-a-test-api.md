@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917613"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121890"
 ---
 # <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
-[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是基于浏览器的 UWP 应用，呈现锁定的在线评估为高利害关系测试，使教师能够专注于评估内容，而不是如何提供安全的测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是基于浏览器的 UWP 应用，呈现锁定的在线评估为高利害关系测试，使教师能够专注于评估内容而不是如何提供安全的测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
 有关应用本身的详细信息，请参阅[参加测验应用技术参考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
 

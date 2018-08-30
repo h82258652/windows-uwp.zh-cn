@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
-ms.openlocfilehash: a208e106421cb3126fd0c5002ebb271c1a923037
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675154"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114614"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和 Streetside 视图显示地图
 
@@ -225,6 +225,8 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 ![深色样式地图](images/style-dark.png)
 
 你还可以使用 JSON 来定义自定义样式，然后使用该 JSON 创建 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet)对象。
+
+可以以交互方式使用[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)应用程序创建样式表 JSON。
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"

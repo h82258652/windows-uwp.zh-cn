@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a599fdef47bb681ef4909fe5bba2a01a1687ba66
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918358"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114824"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>创建和注册进程外后台任务
 
@@ -40,12 +40,12 @@ ms.locfileid: "2918358"
 
 以下示例向你展示如何编写用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。
 
-1.  为后台任务创建新项目并将其添加到你的解决方案。 若要执行此操作，在**解决方案资源管理器**中你的解决方案节点上右键单击，然后选择**添加** \> **新建项目**。 选择**Windows 运行时组件**项目类型名称、 该项目，然后单击确定。
-2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。 C# 或 c + + 应用，在应用项目中，**引用**上右键单击并选择**添加新引用**。 在**解决方案**下，选择**项目**，然后选择你的后台任务项目名称并单击**确定**。
-3.  后台任务项目中，添加实现[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口的新类。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是将触发指定的事件; 时调用的所需的入口点每个后台任务，则需要此方法。
+1.  为后台任务创建新项目并将其添加到你的解决方案。 若要执行此操作，你在**解决方案资源管理器**中的解决方案节点中右键单击并选择**添加** \> **新项目**。 选择**Windows 运行时组件**项目类型名称、 该项目，然后单击确定。
+2.  从通用 Windows 平台 (UWP) 应用项目中引用后台任务项目。 C# 或 c + + 应用，在应用项目中，右键单击**引用**并选择**添加新引用**。 在**解决方案**下，选择**项目**，然后选择你的后台任务项目名称并单击**确定**。
+3.  后台任务项目中，添加实现[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口的新类。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是将触发指定的事件; 时调用的所需的入口点每个后台任务都需要该方法。
 
 > [!NOTE]
-> 后台任务类本身&mdash;和后台任务项目中的所有其他类&mdash;需要**密封**（或**最终**） 的**公共**类。
+> 后台任务类本身&mdash;和后台任务项目中的所有其他类&mdash;需要是**密封**（或**最终**） 的**公共**类。
 
 下面的示例代码显示了一个后台任务类的非常基本的起始点。
 
@@ -144,11 +144,11 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-4.  如果你在后台任务中运行任何异步代码，则你的后台任务需要使用延迟。 如果你不使用延迟，则后台任务进程可能会终止意外如果**Run**方法返回之前已完成运行任何异步工作。
+4.  如果你在后台任务中运行任何异步代码，则你的后台任务需要使用延迟。 如果不使用延迟，则后台任务进程可能会终止意外如果**Run**方法返回之前已完成运行任何异步工作。
 
 之前，请求延迟**Run**方法中的调用异步方法。 将延迟保存到类数据成员，以便可以从异步方法访问它。 完成异步代码之后声明延迟完成。
 
-下面的示例代码获取延迟、 保存它，并异步代码完成时释放它。
+下面的示例代码获取延迟、 保存它，并异步代码完成后释放它。
 
 ```csharp
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
@@ -217,7 +217,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 1.  了解是否通过循环[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787)属性已注册后台任务。 此步骤非常重要；如果应用不检查现有后台任务注册，则它可能会轻松多次注册该任务，这会导致性能问题和工作结束前超出任务的最大可用 CPU 时间。
 
-下面的示例**AllTasks**属性上进行迭代，并设置为 true，如果任务已经注册的标志变量。
+以下示例**AllTasks**属性上进行迭代，并设置标志变量为 true，如果尚未注册该任务。
 
 ```csharp
 var taskRegistered = false;

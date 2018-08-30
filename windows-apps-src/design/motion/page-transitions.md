@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to use page transitions in your UWP apps.
 title: UWP 应用中的页面过渡
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 04/08/2018
 ms.topic: article
 ms.prod: windows
@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
-ms.openlocfilehash: cba05cd9106d64f443e87b1e8373b2501d0ce451
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842234"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3116335"
 ---
 # <a name="page-transitions"></a>页面过渡
 
 页面过渡可将用户导航到应用中的各个页面，并提供反馈作为页面之间的关系。 页面过渡可帮助用户了解他们是否处于导航层次结构的顶部、在同级页面之间移动或导航到页面层次结构的更深层。
 
-为应用、*页面刷新* 和*钻取* 内的页面之间的导航提供了两个不同的动画，由 [**NavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.navigationtransitioninfo) 的子类表示。
+为应用、*页面刷新* 和*钻取* 内的页面之间的导航提供了两个不同的动画，由 [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo) 的子类表示。
 
 ## <a name="page-refresh"></a>页面刷新
 
@@ -32,7 +32,7 @@ ms.locfileid: "1842234"
 
 ![页面刷新动画](images/page-refresh.gif)
 
-页面刷新动画由 [**EntranceNavigationTransitionInfoClass**](/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo) 表示。
+页面刷新动画由 [**EntranceNavigationTransitionInfoClass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo) 表示。
 
 ```csharp
 // Explicitly play the page refresh animation
@@ -50,7 +50,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ![钻取动画](images/drill.gif)
 
-钻取动画由 [**DrillInNavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) 类表示。
+钻取动画由 [**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) 类表示。
 
 ```csharp
 // Play the drill in animation
@@ -59,7 +59,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="suppress"></a>禁止显示
 
-要避免在导航期间播放任何动画，请使用位于其他 **NavigationTransitionInfo** 子类型的位置的 [**SuppressNavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)。
+要避免在导航期间播放任何动画，请使用位于其他 **NavigationTransitionInfo** 子类型的位置的 [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)。
 
 ```csharp
 // Suppress the default animation

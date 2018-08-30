@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 可见性, 私人受众, 可用的, 可检测到的
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909969"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112351"
 ---
 # <a name="choose-visibility-options"></a>选择可见性选项
 
@@ -75,7 +75,7 @@ ms.locfileid: "2909969"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>在 Microsoft Store 中提供此产品，并使其可被发现
 
-这是默认选项。 如果你希望你的应用以供客户查找通过应用的直接链接和/或其他方法，包括搜索、 浏览和包含在特选应用商店中列出选择此选项保持。 
+这是默认选项。 如果你希望你的应用客户通过应用的直接链接和/或其他方法，包括搜索、 浏览和包含在特选列表中找到在应用商店中列出选择此选项保持。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>在 Microsoft Store 中提供此产品，但使其不可被发现
 

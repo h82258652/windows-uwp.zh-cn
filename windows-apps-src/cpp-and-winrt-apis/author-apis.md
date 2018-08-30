@@ -9,14 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: a2e475cc39118824dcdfe777b8729fe2b7da1a1b
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2912364"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112715"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作 API
+
+> [!NOTE]
+> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
+
 本主题介绍如何直接或间接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基结构来创作 C++/WinRT API。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 - 你*不是*在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用。 在此案例中，你直接从 **winrt::implements** 派生并实现相关函数。
@@ -252,7 +256,7 @@ namespace MyProject
 }
 ```
 
-若要从 **MyType** 获得你可以使用或作为投影的一部分返回的 **IStringable** 或 **IClosable** 对象，可以调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函数模板。 **使**返回实现类型的默认接口。
+若要从 **MyType** 获得你可以使用或作为投影的一部分返回的 **IStringable** 或 **IClosable** 对象，可以调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函数模板。 **将**返回实现类型的默认接口。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -261,7 +265,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > 但是，如果你从 XAML UI 引用类型，则在同一个项目中将会有一个实现类型和一个投影类型。 在此情况下，**请**返回投影类型的实例。 有关此情况的代码示例，请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以对它调用 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 来查询其他接口，你还可以使用或返回这些接口。
+我们仅可以使用 `istringable`（在上面的代码示例中）来调用 **IStringable** 接口的成员。 但 C++/WinRT 接口（这是投影接口）派生自 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)。 因此，你可以调用[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 在其上查询其他投影的类型或接口，你也可使用或返回。
 
 ```cppwinrt
 istringable.ToString();
@@ -281,7 +285,12 @@ iclosable.Close();
 
 **MyType** 类不是投影的一部分；它是实现。 但是，通过这种方法，你可以直接调用其实现方法，而无需虚拟函数调用的开销。 在上面的示例中，即使 **MyType::ToString** 在 **IStringable** 上使用与投影方法相同的签名，我们也还是直接调用非虚拟方法，而不必跨越应用程序二进制接口 (ABI)。 **com_ptr** 只包含指向 **MyType** 结构的指针，因此你还可以通过 `myimpl` 变量和箭头运算符访问 **MyType** 的任何其他内部细节。
 
-假设你有一个接口对象，并且你恰好知道它是实现上的接口，则可以使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi) 函数模板返回到实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。 下面提供了一个示例。
+假设你有一个接口对象，并且你恰好知道它是实现上的接口，则可以使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi) 函数模板返回到实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。
+
+> [!NOTE]
+> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以调用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+
+下面提供了一个示例。 [实现**BgLabelControl**自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中有另一个示例。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -309,7 +318,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符（前提是实现类型是由 `cppwinrt.exe` 工具生成的），可以帮助完成此工作。
+如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符 (前提是实现类型由`cppwinrt.exe`工具) 的实现此目的。
 
 ## <a name="deriving-from-a-type-that-has-a-non-trivial-constructor"></a>从一个具有特殊构造函数的类型派生
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) 是特殊构造函数的一个示例。 由于没有默认构造函数，因此，若要构造一个 **ToggleButtonAutomationPeer**，你需要传递 *owner*。 因此，如果你从 **ToggleButtonAutomationPeer** 派生，则需要提供一个接受 *owner* 并将它传递给基类的构造函数。 让我们来看看实际的情况。
@@ -373,6 +382,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [winrt::from_abi 函数模板](/uwp/cpp-ref-for-winrt/from-abi)
+* [winrt::get_self 函数模板](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self 函数模板](/uwp/cpp-ref-for-winrt/make-self)

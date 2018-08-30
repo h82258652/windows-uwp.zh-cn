@@ -9,23 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 63f730e5256cb88c04549cc64e36003885e02fb6
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905940"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3113297"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>从 C++/CX 移动到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 本主题介绍如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 代码移植到 C++/WinRT 中的等效项。
 
 > [!IMPORTANT]
-> 如果你想要逐渐移植您[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码与 C + + WinRT，则可以。 C + + /CX 和 C + + WinRT 代码可以在同一项目中，除了 XAML 编译器支持，以及 Windows 运行时组件中共存。 对于这些异常，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。 但你可以使用 XAML 应用退出因素代码 Windows 运行时组件，如将其移植。 将移动尽可能多的 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用两个它们从你的应用程序项目，并逐渐移植到另一个。
+> 如果你想要逐渐移植你[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码与 C + + /winrt 中，则可以。 C + + /CX 和 C + + /winrt 代码可以在同一项目中，除了 XAML 编译器支持，以及 Windows 运行时组件中共存。 对于这些异常，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。 但你可以使用 XAML 应用退出身份代码在 Windows 运行时组件，如将其移植。 将移动尽可能多的 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用从应用程序项目，这两种效果和逐渐移植到另一个。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 **Windows** 中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-对比记住上面提到的异常的第一步中将项目移植到 C + + WinRT 是手动添加 C + + WinRT 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留处于关闭状态，以便生成消息帮助你查找 （和端口） 的支持所有依赖项的 C + + CX，或者你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，并逐渐移植。
+这样做记住上面提到的异常的第一步中将项目移植到 C + + WinRT 是手动添加 C + + /winrt 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意将处于关闭状态，以便生成消息帮助你查找 （和端口） 的支持所有依赖项的 C + + /CX，或你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，和逐渐移植。
 
 将项目属性**常规** \> **目标平台版本**设置为 10.0.17134.0（Windows 10 版本 1803）或更高版本。
 
@@ -67,7 +67,7 @@ if (userList != nullptr)
     ...
 ```
 
-在转换为等效的 C++/WinRT 代码时，你基本上要删除顶帽并将箭头运算符 (-&gt;) 更改为点运算符 (.)，因为 C++/WinRT 投影类型是值，而不是指针。
+时移植到等效的 C + + /winrt 代码时，你基本上要删除顶帽并更改箭头运算符 (-&gt;) 为点运算符 （.），因为 C + + /winrt 投影类型是值，而不是指针。
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -183,6 +183,43 @@ private:
 };
 ```
 
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>从基本的运行时类将转换为一个派生
+它是通常具有引用到的基础，你知道指的是派生类型的对象。 在 C + + /CX 使用`dynamic_cast`到*强制转换*为基准引用到引用派生。 `dynamic_cast`是实际上只是隐藏的[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)调用。 下面是典型示例&mdash;你处理依赖属性更改事件，并且你想要从**DependencyObject**强制转换为实际拥有依赖属性的类型。
+
+```cpp
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
+{
+    BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
+
+    if (theControl != nullptr)
+    {
+        // succeeded ...
+    }
+}
+```
+
+等效的 C + + /winrt 代码替换`dynamic_cast`通过[**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)函数调用，封装**QueryInterface**。 你还可以选择改为调用[**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，将引发异常，如果未返回查询所需的接口 （你请求的类型的默认接口）。 下面是 C + + WinRT 的代码示例。
+
+```cppwinrt
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // succeeded ...
+    }
+
+    try
+    {
+        BgLabelControlApp::BgLabelControl theControl{ d.as<BgLabelControlApp::BgLabelControl>() };
+        // succeeded ...
+    }
+    catch (winrt::hresult_no_interface const&)
+    {
+        // failed ...
+    }
+}
+```
+
 ## <a name="event-handling-with-a-delegate"></a>通过代理进行事件处理
 下面介绍了在 C++/CX 中处理事件的典型示例，在本例中将 lambda 函数用作代理。
 
@@ -204,7 +241,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 不使用 lambda 函数，你可以选择作为自由函数或指向成员函数的指针实现代理。 有关详细信息，请参阅[使用 C++/WinRT 中的代理来处理事件](handle-events.md)。
 
-如果你正在从内部使用（不是跨二进制文件）事件和代理的 C++/CX 基本代码移植，[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 将帮助你复制 C++/WinRT 中的这个模式。 另请参阅[参数化委托、 简单信号，并在项目内的回调](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
+如果你正在从内部使用（不是跨二进制文件）事件和代理的 C++/CX 基本代码移植，[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 将帮助你复制 C++/WinRT 中的这个模式。 另请参阅[参数化委托、 简单信号和在项目内的回调](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
 
 ## <a name="revoking-a-delegate"></a>撤销代理
 在 C++/CX 中，使用 `-=` 运算符来撤销之前的事件注册。
@@ -232,7 +269,7 @@ C++/CX 在**平台**命名空间中提供了多个数据类型。 这些类型�
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>端口**平台:: Agile\ ^** **winrt:: agile_ref**到
+### <a name="port-platformagile-to-winrtagileref"></a>端口**平台:: Agile\ ^** 到**winrt:: agile_ref**
 **平台:: Agile\ ^** 类型在 C + + CX 表示一个 Windows 运行时类，可以从任何线程访问。 C + + /winrt 的等效项是[**winrt:: agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)。
 
 在 C++/CX 中。

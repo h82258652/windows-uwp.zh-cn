@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906197"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118910"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 版本 17134 中的最近更新
 
@@ -38,7 +38,7 @@ Fluent Design 更新 | 我们已经更新了许多 Fluent Design 页面，增加
 导航视图 | [导航视图](../design/controls-and-patterns/navigationview.md)控件通过提供可折叠导航菜单让你的应用拥有顶级导航。 此控件实现导航窗格或汉堡包菜单、模式，并自动使其窗格的显示模式适应不同窗口大小。
 显示焦点 | 新的[显示焦点](../design/style/reveal-focus.md)效果为 Xbox One 等体验和电视屏幕提供照明。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。
 声音 | XAML 现在通过 **SpatialAudioMode** 属性支持 3D 音频。 请参阅[声音](../design/style/sound.md)了解有关如何配置的信息。
-磁贴 | 基于 JavaScript 的 UWP 应用现支持[可追踪磁贴通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)。<br><br>辅助磁贴和锁屏提醒通知是[从桌面桥应用现支持](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
+磁贴 | 基于 JavaScript 的 UWP 应用现支持[可追踪磁贴通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)。<br><br>辅助磁贴和锁屏提醒通知在[从桌面桥应用现在受支持](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
 树状视图 | [树视图](../design/controls-and-patterns/tree-view.md)控件支持分层列表，其中具有包含嵌套项的展开节点和折叠节点。 它可用于说明你的用户界面中的文件夹结构或嵌套关系。
 写入样式 | 我们已升级并扩充了有关语音和声调的文章内容，现在变为[写入样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
 

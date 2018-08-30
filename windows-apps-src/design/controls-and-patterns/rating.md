@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: 使用户能够轻松查看和设置反映内容和服务满意度的评分。
 title: 评分控件
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afd4df6ef6720e426d7513ad0b511c77b5155b7
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 242ecdaf128e1e01b1bdeac4cce649504b8efc74
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672794"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112078"
 ---
 # <a name="rating-control"></a>评分控件
 

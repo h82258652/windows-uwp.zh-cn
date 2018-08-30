@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a82c91aeafa253427d8e526b38b8ac304591a2
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905160"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3128794"
 ---
 # <a name="advertising-performance-report"></a>广告效果报告
 
@@ -62,7 +62,7 @@ ms.locfileid: "2905160"
 | 填充率  | 从显示广告的应用发送广告请求的百分比。  |
 | 点击量  |  客户单击应用中的广告的次数。 |
 | CTR  |  点击率，是指单击广告的次数与曝光数之比。 |
-| 可见性 | 查看你的应用中的广告曝光量的百分比。 有关如何计算此值的更多详细信息，请参阅[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)。 |
+| 可见性 | 在应用中查看广告曝光的百分比。 有关如何计算此值的更多详细信息，请参阅[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)。 |
 | 获取的积分数  | 如果正在开展[社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)活动，那么这表示你通过在应用中展示社区广告提升广告空间而获得的积分数。  |
 | 花费的积分数  | 如果正在开展[社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)活动，那么这表示你已为自己的应用广告花费的积分数。  |
 
