@@ -3,93 +3,119 @@ author: TerryWarwick
 title: 枚举 PointOfService 设备
 description: 了解如何枚举 PointOfService 设备
 ms.author: jken
-ms.date: 06/8/2018
+ms.date: 08/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: be1fdc42295fc03ff86a69e287a4089abe547689
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 4e42ebb2eba7b6465be271e6095100c03798826f
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018435"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3229571"
 ---
 # <a name="enumerating-point-of-service-devices"></a>枚举服务点设备
-在此部分，你将了解如何[**定义设备选择器**](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)（用于向系统提供查询设备），以及如何通过以下方法之一使用此选择器枚举服务点设备：
+在此部分，你将了解如何[定义设备选择器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)（用于向系统提供查询设备），以及如何通过以下方法之一使用此选择器枚举服务点设备：
 
-**方法 1：**[**获取第一个可用设备**](#Method-1:-get-first-available-device)<br />在此部分，你将学习如何使用 **GetDefaultAsync** 访问特定 PointOfService 设备类中的第一个可用设备。
+**方法 1:**[使用设备选取器](#method-1:-use-a-device-picker)
+<br/>
+显示设备选取器 UI，并让用户选择已连接的设备。 此方法处理更新列表，当设备连接并删除，而且简单比其他方法更安全。
 
-**方法 2：**[**设备的快照**](#Method-2:-Snapshot-of-devices)<br />在此部分，你将学会如何枚举在给定的时间点在系统上出现的 PointOfService 设备的快照。 当你想要生成自己的 UI 或需要枚举设备而无需向用户显示 UI 时这会很有用。 FindAllAsync 将保留结果直到整个枚举完成。
+**方法 2:**[获取第一个可用设备](#Method-1:-get-first-available-device)<br />使用[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync)访问特定服务点设备类中的第一个可用设备。
 
-**方法 3：**[**枚举并监视**](#Method-3:-Enumerate-and-watch)<br />在此部分，你将了解更强大、更灵活的枚举模型，让你能够枚举当前存在的设备，还可在向系统添加或删除设备时收到通知。  当你想要在后台维护当前的设备列表以显示在 UI 中而不是等待快照发生时，这非常有用。
- 
+**方法 3:**[设备的快照](#Method-2:-Snapshot-of-devices)<br />枚举服务点设备上存在的给定时刻系统时间的快照。 当你想要生成自己的 UI 或需要枚举设备而无需向用户显示 UI 时这会很有用。 [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)将保留结果直到整个枚举完成。
 
----
+**方法 4:**[枚举并监视](#Method-3:-Enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)是一个更强大更灵活的枚举模型，允许你枚举当前存在的设备，并且还会添加或从系统中删除设备时收到通知。  当你想要在后台维护当前的设备列表以显示在 UI 中而不是等待快照发生时，这非常有用。
+
 ## <a name="define-a-device-selector"></a>定义设备选择器
-设备选择器将使你可以在枚举设备时限制要搜索的设备。  这让你可以只获取相关结果，并减少枚举所需设备使用的时间。  
+设备选择器将使你可以在枚举设备时限制要搜索的设备。  这将允许你可以只获取相关结果，并减少枚举所需的设备所需的时间。
 
-使用 [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector) 将向你提供枚举连接到系统的所有 POSPrinter 的选择器，包括 USB、网络和蓝牙 POSPrinter。
+适用于你正在寻找设备选择器获取该类型的设备类型，可以使用**GetDeviceSelector**方法。 例如，通过使用[PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector)将提供你提供枚举所有[Posprinter](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)的选择器连接到系统，包括 USB、 网络和蓝牙 POS 打印机。
 
 ```Csharp
 using Windows.Devices.PointOfService;
 
-string selector = POSPrinter.GetDeviceSelector();   
-
+string selector = POSPrinter.GetDeviceSelector();
 ```
 
-使用将 [**PosConnectionTypes**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes) 作为参数的 [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector_Windows_Devices_PointOfService_PosConnectionTypes_) 方法，你可以限制选择器来枚举本地、网络或连接蓝牙的 POSPrinter，从而减少完成查询所需的时间。  下面的示例显示如何使用此方法来定义只支持本地连接的 POSPrinter 的选择器。
+不同设备类型的**GetDeviceSelector**方法是：
+
+* [BarcodeScanner.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdeviceselector)
+* [CashDrawer.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.getdeviceselector)
+* [LineDisplay.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.getdeviceselector)
+* [MagneticStripeReader.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.getdeviceselector)
+* [PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector)
+
+可以通过使用**GetDeviceSelector**采用的方法， [PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes)值作为参数，限制你的选择器来枚举本地、 网络或蓝牙连接 POS 设备，从而减少查询来完成所需的时间。  下面的示例演示如何使用此方法来定义选择器支持仅本地连接的 POS 打印机
 
  ```Csharp
 using Windows.Devices.PointOfService;
 
-string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);   
-
+string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 ```
+
 > [!TIP]
-> 请参阅[**生成设备选择器**](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)了解如何生成更高级的筛选器字符串。
+> 请参阅[生成设备选择器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)了解如何生成更高级的筛选器字符串。
 
----
+## <a name="method-1-use-a-device-picker"></a>方法 1： 使用设备选取器
 
-## <a name="method-1-get-first-available-device"></a>方法 1：获取第一个可用设备
+> [!NOTE]
+> 此方法需要最新的[Windows SDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)。
 
-获取 PointOfService 设备的最简单方法是使用 **GetDefaultAsync** 来获取 PointOfService 设备类内的第一个可用设备。 
+[DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker)类允许你显示选取器浮出控件包含用户可选择从设备的列表。 你可以使用[筛选器](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter)属性选择哪些类型的设备选取器中显示。 此属性属于类型[DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter)。 你可以将设备类型添加到使用[SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses)或[SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors)属性的筛选器。
 
-下面的示例显示如何使用 [**GetDefaultAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync) 来获取 BarcodeScanner。 所有 PointOfService 设备类的编码模式都是相似的。
+当你准备好显示设备选取器时，你可以调用[PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync)方法，将显示选取器 UI 并返回所选的设备。 你将需要指定将确定浮出控件显示的位置的[矩形](https://docs.microsoft.com/uwp/api/windows.foundation.rect)。 此方法将返回[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)对象，因此，将其与服务点 Api，你将需要使用**FromIdAsync**方法，为所需的特定设备类。 作为该方法的*deviceId*参数传递[DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)属性和获取的返回值的设备类的一个实例。
+
+下面的代码段创建**DevicePicker**，添加条形码扫描仪筛选器，具有用户选取一个设备，然后创建一个基于设备 ID 的**BarcodeScanner**对象：
+
+```cs
+private async Task<BarcodeScanner> GetBarcodeScanner()
+{
+    DevicePicker devicePicker = new DevicePicker();
+    devicePicker.Filter.SupportedDeviceSelectors.Add(BarcodeScanner.GetDeviceSelector());
+    Rect rect = new Rect();
+    DeviceInformation deviceInformation = await devicePicker.PickSingleDeviceAsync(rect);
+    BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(deviceInformation.Id);
+    return barcodeScanner;
+}
+```
+
+## <a name="method-2-get-first-available-device"></a>方法 2： 获取第一个可用设备
+
+若要获取服务点设备的最简单方法是使用**GetDefaultAsync**获取服务点设备类内的第一个可用设备。 
+
+下面的示例说明了使用[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync)来[获取 BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner)。 编码模式都是类似的所有服务点设备类。
 
 ```Csharp
-
 using Windows.Devices.PointOfService;
 
 BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
-
 ```
 
 > [!CAUTION]
-> GetDefaultAsync 必须小心使用，因为它可能会将一个会话的不同设备返回到下一个会话。 许多事件可能影响此枚举，从而导致出现不同的第一个可用设备，包括： 
+> **GetDefaultAsync**必须小心使用，因为它可能会返回另一台设备从一个会话下一步。 许多事件可能影响此枚举，从而导致出现不同的第一个可用设备，包括： 
 > - 连接到计算机的摄像头更改 
-> - 连接到计算机的 PointOfService 设备更改
-> - 网络中可用的网络连接 PointOfService 设备更改
-> - 计算机范围内的蓝牙 PointOfService 设备更改 
-> - PointOfService 配置更改 
+> - 更改入设备连接到计算机的服务点
+> - 在网络上可用的网络连接服务点设备更改
+> - 计算机的范围内的蓝牙服务点设备更改 
+> - 服务点配置更改 
 > - 安装驱动程序或 OPOS 服务对象
-> - 安装 PointOfService 扩展
+> - 安装服务点扩展
 > - Windows 操作系统更新
 
----
+## <a name="method-3-snapshot-of-devices"></a>方法 3： 设备的快照
 
-## <a name="method-2-snapshot-of-devices"></a>方法 2：设备的快照
-
-在有些情况下，你可能想要生成自己的 UI 或需要枚举设备而无需向用户显示 UI。  在这些情况下，你可以枚举当前使用 [**DeviceInformation.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 连接或与系统配对的设备的快照。  此方法将保留任何结果直到整个枚举完成。
+在有些情况下，你可能想要生成自己的 UI 或需要枚举设备而无需向用户显示 UI。  在这些情况下，你可以枚举当前使用 [DeviceInformation.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 连接或与系统配对的设备的快照。  此方法将保留任何结果直到整个枚举完成。
 
 > [!TIP]
-> 在使用 FindAllAsync 将查询限制为所需的连接类型时，建议使用具有 PosConnectionTypes 参数的 GetDeviceSelector 方法。  网络和蓝牙连接可能延迟结果，因为它们的枚举必须在返回 FindAllAsync 结果前完成。
+> 建议使用**PosConnectionTypes**参数的**GetDeviceSelector**方法，使用**FindAllAsync**来限制你所需的连接类型的查询时。  网络和蓝牙连接可能延迟结果，因为它们的枚举必须在返回**FindAllAsync**结果前完成。
 
->[!CAUTION] 
->FindAllAsync 返回设备数组。  此数组的顺序可能随会话改变，因此，不建议通过使用数组的硬编码索引来依赖特定顺序。  使用 DeviceInformation 属性筛选结果或为用户提供用于选择的 UI。
+> [!CAUTION] 
+> **FindAllAsync**返回设备数组。  此数组的顺序可能随会话改变，因此，不建议通过使用数组的硬编码索引来依赖特定顺序。  使用[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)属性筛选结果或提供用户可供选择的 UI。
 
-此示例使用上方定义的选择器来使用 FindAllAsync 获取设备快照，然后通过集合返回的每个项目枚举，并将设备名称和 ID 写入调试输出。 
+此示例使用上方定义来使用**findallasync 获取**设备快照的选择器然后通过集合返回的项目的每个枚举的设备名称和 ID 写入调试输出。 
 
 ```Csharp
 using Windows.Devices.Enumeration;
@@ -103,18 +129,15 @@ foreach (DeviceInformation devInfo in deviceCollection)
 ```
 
 > [!TIP] 
-> 在使用 [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 时，你经常需要使用 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) 对象来获取有关特定设备的信息。 例如，如果在将来的会话中提供，[**DeviceInformation.ID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) 属性可用于恢复和重复使用同一设备，[**DeviceInformation.Name**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name) 属性可在你的应用中用来显示。  请参阅 [**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) 参考页面了解有关其他可用属性的信息。
+> 在使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API 时，你经常需要使用 [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) 对象来获取有关特定设备的信息。 例如， [DeviceInformation.ID](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)属性可用于恢复和重复使用相同的设备，如果它也可在将来的会话[DeviceInformation.Name](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name)属性可用于在应用中显示目的。  请参阅 [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) 参考页面了解有关其他可用属性的信息。
 
----
+## <a name="method-4-enumerate-and-watch"></a>方法 4： 枚举并监视
 
-## <a name="method-3-enumerate-and-watch"></a>方法 3：枚举并监视
+一种更强大更灵活的枚举设备的方法就是创建 [DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)。  设备观察程序动态枚举设备，以便应用程序在完成初始枚举后在添加、删除或者更改设备的情况下收到通知。  **DeviceWatcher**允许你检测网络连接设备何时在线，蓝牙设备何时处于范围内，以及本地连接的设备是否已拔出，以便你可以在你的应用程序内采取相应操作。
 
-一种更强大更灵活的枚举设备的方法就是创建 [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)。  设备观察程序动态枚举设备，以便应用程序在完成初始枚举后在添加、删除或者更改设备的情况下收到通知。  DeviceWatcher 允许你检测网络连接设备何时在线，蓝牙设备何时处于范围内，以及本地连接设备是否已拔出，以便你可以在应用程序内采取相应的措施。
-
-此示例使用上方定义的选择器来创建 DeviceWatcher，并为“已添加”、“已删除”和“已更新”通知定义事件处理程序。 你需要填写希望对每个通知采取的措施的详细信息。
+此示例使用上方定义来创建**DeviceWatcher**的选择器，以及定义为[添加](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)、[已删除](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed)，和[更新](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated)通知的事件处理程序。 你需要填写希望对每个通知采取的措施的详细信息。
 
 ```Csharp
-
 using Windows.Devices.Enumeration;
 
 DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
@@ -139,4 +162,14 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 ```
 
 > [!TIP]
-> 请参阅[**枚举并监视设备**]( https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices)了解使用 DeviceWatcher 的更多详细信息。
+> 使用**DeviceWatcher**的更多详细信息，请参阅[枚举并监视设备]( https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices)。
+
+## <a name="see-also"></a>另请参阅
+* [服务点入门](pos-basics.md)
+* [DeviceInformation 类](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)
+* [PosPrinter 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)
+* [PosConnectionTypes 枚举](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes)
+* [BarcodeScanner 类](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner)
+* [DeviceWatcher 类](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)
+
+[!INCLUDE [feedback](./includes/pos-feedback.md)]

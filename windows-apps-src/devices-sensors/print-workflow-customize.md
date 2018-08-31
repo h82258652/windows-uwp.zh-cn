@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3121770"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3235679"
 ---
 # <a name="customize-the-print-workflow"></a>自定义打印工作流
 
