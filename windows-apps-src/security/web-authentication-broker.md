@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3396743"
+ms.locfileid: "3411114"
 ---
 # <a name="web-authentication-broker"></a>Web 身份验证代理
 

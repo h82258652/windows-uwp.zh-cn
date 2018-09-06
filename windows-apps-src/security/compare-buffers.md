@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 139514166d623dc9a621b533cd3ce4bb7fdea0c5
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3390203"
+ms.locfileid: "3407909"
 ---
 # <a name="compare-buffers"></a>比较缓冲区
 

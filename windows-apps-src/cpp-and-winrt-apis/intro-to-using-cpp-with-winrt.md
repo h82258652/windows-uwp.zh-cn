@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
 ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3393873"
+ms.locfileid: "3409583"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;

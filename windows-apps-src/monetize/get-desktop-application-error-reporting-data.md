@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的桌面应用程序聚合错误报告数据。
 title: 获取桌面应用程序的错误报告数据
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3382353"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402040"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>获取桌面应用程序的错误报告数据
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | market          | 字符串  | 设备市场的 ISO 3166 国家/地区代码。   |
 | deviceType      | 字符串  | 用于指定在其上发生错误的设备类型的以下字符串之一：<p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unknown</strong></li></ul>    |
 | applicationVersion     | string  |   发生错误的应用程序可执行文件的版本。    |
-| eventCount      | 整数 | 归因于指定聚合级别的该错误的事件数目。      |
+| eventCount      | 数字 | 归因于指定聚合级别的该错误的事件数目。      |
 
 
 ### <a name="response-example"></a>回复示例

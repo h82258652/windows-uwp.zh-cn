@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 02aa86231cd611bd20a386d3da2f9d2b6dc5df66
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3391422"
+ms.locfileid: "3408658"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a>实现 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 与 C++/CX 之间的互操作
 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 你可以使用它们将使用两个语言投影中，代码之间的互操作或你可以使用这些函数将逐步迁移代码从 C + + CX 到 C + + WinRT (请参阅[移动到 C + + WinRT 从 C + + CX](move-to-winrt-from-cx.md))。

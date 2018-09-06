@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 可见性, 私人受众, 可用的, 可检测到的
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3375943"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402118"
 ---
 # <a name="choose-visibility-options"></a>选择可见性选项
 

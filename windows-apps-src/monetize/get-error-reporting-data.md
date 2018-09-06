@@ -4,18 +4,18 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。
 title: 获取应用的错误报告数据
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 15dd4d5febe0b57e164f0aadeeb8d7b816dcdd66
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3381843"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3399245"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>获取应用的错误报告数据
 
@@ -106,8 +106,8 @@ Authorization: Bearer <your access token>
 | deviceType      | 字符串  | 用于指示发生了错误的设备类型的以下字符串之一：<ul><li>**PC**</li><li>**电话**</li><li>**控制台**</li><li>**IoT**</li><li>**全息**</li><li>**未知**</li></ul>    |
 | packageName     | 字符串  | 与此错误相关联的应用包的唯一名称。      |
 | packageVersion  | 字符串  | 与此错误相关联的应用包的版本。   |
-| deviceCount     | 整数 | 对应于指定聚合级别的该错误的唯一设备数目。  |
-| eventCount      | 整数 | 归因于指定聚合级别的该错误的事件数目。      |
+| deviceCount     | 数字 | 对应于指定聚合级别的该错误的唯一设备数目。  |
+| eventCount      | 数字 | 归因于指定聚合级别的该错误的事件数目。      |
 
 
 ### <a name="response-example"></a>回复示例
