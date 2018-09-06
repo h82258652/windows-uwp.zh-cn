@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3233039"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3382383"
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 

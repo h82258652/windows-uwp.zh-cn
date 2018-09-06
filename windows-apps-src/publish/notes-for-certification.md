@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 测试人员说明
 ms.localizationpriority: medium
 ms.openlocfilehash: 741925a3ac49273bd7ba826dfbadd2e18724f307
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3239915"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3377291"
 ---
 # <a name="notes-for-certification"></a>认证说明
 
