@@ -9,13 +9,13 @@ ms.prod: windows
 ms.topic: article
 keywords: 入门, Windows 10, uwp, xaml, c#
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 9e2cd95cfc74273f4c9f6c949a5a618542b99acf
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815742"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3398479"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门 
  
@@ -75,7 +75,7 @@ ms.locfileid: "1815742"
                         <h3>开始编写代码</h3>
                         <p>不论你是经验丰富的开发人员还是刚开始生成第一个应用，都可以通过 Windows 10 平台和文档获取第一手经验。</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">适用于 Windows 的出色应用</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">开始编写代码</a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ ms.locfileid: "1815742"
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">UI 基础知识</a></p>
                     <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">数据绑定</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style">自定义样式</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">自定义样式</a></p>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@ ms.locfileid: "1815742"
                 <div class="card">
                     <div class="cardText">
                         <h3>开发人员工具</h3>
-                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP 社区工具包</a></p>
+                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows 社区工具包</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">虚拟机</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Ubuntu on Windows 上的 Bash</a></p>
                         </div>
