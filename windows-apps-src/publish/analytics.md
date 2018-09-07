@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，分析，报告，仪表板、 应用、 数据指标
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3404969"
+ms.locfileid: "3422161"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: cff96c0b8daf9f3ef32815437b510a5b94641527
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3397039"
+ms.locfileid: "3417896"
 ---
 # <a name="print-from-your-app"></a>从应用打印
 

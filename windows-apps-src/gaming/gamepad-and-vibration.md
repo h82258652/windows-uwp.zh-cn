@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 游戏板, 振动
 ms.localizationpriority: medium
 ms.openlocfilehash: f44d5f4dee8293ed40d22a301f2a3d2a9611e15d
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3400308"
+ms.locfileid: "3421699"
 ---
 # <a name="gamepad-and-vibration"></a>游戏板和振动
 
