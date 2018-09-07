@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 5495649a6b7fad633e24e244aa3f6efbcc05e441
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: dc52274c80f3689d2cb10b98bda38788e3400b4e
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3421095"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3661572"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用集合[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -58,7 +58,7 @@ int main()
 }
 ```
 
-你可以看到在上面的代码示例中，创建集合后可以追加元素，循环访问它们，并通常将该对象，就像你可能已从 API 收到任何 Windows 运行时集合对象。 如果你需要对集合的不可变的视图，然后你可以调用[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)，所示。 如上所示的模式&mdash;的创建和使用集合&mdash;适用于你想要将数据传入，或获取数据，API 的简单方案。
+你可以看到在上面的代码示例中，创建集合后可以追加元素，循环访问它们，并通常将该对象，就像你可能已从 API 收到任何 Windows 运行时集合对象。 如果你需要对集合的不可变的视图，然后你可以调用[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)，所示。 如上所示的模式&mdash;的创建和使用集合&mdash;适用于你想要将数据传入，或获取数据，API 的简单方案。 你可以传递**IVector**或**IVectorView**， [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)预期的任意位置。
 
 ### <a name="general-purpose-collection-primed-from-data"></a>常规用途的集合，从数据 primed
 
@@ -85,7 +85,14 @@ auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>(
 bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
-上面*可以*集合可绑定到 XAML 项目控件;但集合不是可供观察。
+你可以从数据，创建 Windows 运行时集合，并准备要传递至 API 时，所有无需复制任何内容的视图。
+
+```cppwinrt
+std::vector<float> values{ 0.1f, 0.2f, 0.3f };
+IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
+```
+
+在上述示例中，我们创建*可以*的集合可绑定到 XAML 项目控件;但集合不是可供观察。
 
 ### <a name="observable-collection"></a>可观测集合
 

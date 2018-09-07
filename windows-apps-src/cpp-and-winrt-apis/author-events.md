@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b52bf8e33bbf111dd02c695d8c3baf77e1338ac
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3413590"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660649"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中创作事件
 
@@ -28,7 +28,7 @@ ms.locfileid: "3413590"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>创建 Windows 运行时组件 (BankAccountWRC)
 
-首先在 Microsoft Visual Studio 中创建新项目。 创建一个 **Visual C++ Windows 运行时组件 (C++/WinRT)** 项目，然后将其命名为 *BankAccountWRC*（针对“银行帐户 Windows 运行时组件”）。
+首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **Windows 运行时组件 (C + + WinRT)** 项目，然后将其命名为*BankAccountWRC* （针对"银行帐户 Windows 运行时组件"）。
 
 该新建项目包含一个名为 `Class.idl` 的文件。 重命名该文件`BankAccount.idl`(重命名`.idl`文件会自动重命名依赖于`.h`和`.cpp`文件，过)。 内容替换为`BankAccount.idl`与下面的列表。
 
@@ -101,7 +101,7 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>创建核心应用 (BankAccountCoreApp) 以测试 Windows 运行时组件
 
-现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建 **Visual C++ 核心应用 (C++/WinRT)** 项目，然后将其命名为 *BankAccountCoreApp*。
+现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建**Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目，并将其命名为*BankAccountCoreApp*。
 
 添加一个引用，然后浏览到`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或如果两个项目在同一个解决方案中添加项目到项目的引用，）。 单击**添加**，然后单击**确定**。 立即生成 BankAccountCoreApp。 不太可能看到的错误的事件中的负载文件`readme.txt`不存在，从 Windows 运行时组件项目中排除该文件，重新生成它，然后重新生成 BankAccountCoreApp。
 

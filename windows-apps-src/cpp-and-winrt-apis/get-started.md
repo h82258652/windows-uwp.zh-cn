@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: 13aa1e61a2d81cfa7faed0236551dad41bd00057
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: ebb71b91af7e1490099898084f42ce04e698ef20
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3418816"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3658790"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 入门
 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
@@ -23,7 +23,13 @@ ms.locfileid: "3418816"
 > [!NOTE]
 > 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。 按下面所示编辑 `pch.h` 和 `main.cpp`。
+创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
+
+> [!IMPORTANT]
+> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，然后新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: from_abi： 标识符不找到*"，并使用来自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可的**出现在项目属性**C/C++** > **语言** > **命令行**下**其他选项**，然后将其删除)。
+
+
+按下面所示编辑 `pch.h` 和 `main.cpp`。
 
 ```cppwinrt
 // pch.h

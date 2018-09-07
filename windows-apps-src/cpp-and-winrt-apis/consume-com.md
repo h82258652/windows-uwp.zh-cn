@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: 本主题使用完整的 Direct2D 代码示例，介绍如何使用 C + + /winrt 来使用 COM 类和接口。
-title: 通过 C++/WinRT 使用 DirectX 和其他 COM API
+title: 使用 COM 组件通过 C + + WinRT
 ms.author: stwhi
 ms.date: 07/23/2018
 ms.topic: article
@@ -9,14 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，COM、 组件、 类、 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: b87eb90ed5ecf731cc851e81e81ad016956e5fea
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: eba4922240983f76a1f83770e2797063ba30b8b7
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3422528"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3662303"
 ---
-# <a name="consume-directx-and-other-com-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 DirectX 和与其他 COM Api [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用与 COM 组件[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
 你可以使用的功能的 C + + /winrt 库以使用 COM 组件，如高性能的 2d 和 3d 图形的 DirectX Api。 C + + /winrt 是使用 DirectX，而不影响性能的最简单方法。 本主题使用 Direct2D 代码示例，介绍如何使用 C + + /winrt 来使用 COM 类和接口。 当然，可以混合使用 COM 和 Windows 运行时编程中的相同的 C + + WinRT 项目。
 

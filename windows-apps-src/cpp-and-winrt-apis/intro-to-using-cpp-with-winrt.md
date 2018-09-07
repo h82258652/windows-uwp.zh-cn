@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 220c5c7395ed9388b02b74e0cbed5b913971bbba
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3409583"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660912"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -54,7 +54,7 @@ Windows 运行时基于组件对象模型 (COM) API，可通过*语言投影* �
 
 添加该属性后，你将获得对该项目的 C++/WinRT MSBuild 支持，包括调用 `cppwinrt.exe`工具。
 
-由于 C++/WinRT 使用 C++17 标准版中的功能，它需要项目属性 **C/C++** > **语言** > **ISO C++17 标准版(/std:c++17)**。 你可能还希望设置**合规模式: 是(/permissive-)**，它将进一步约束代码以符合标准。
+因为 C + + /winrt 使用 C + + 17 标准的功能，它必须项目属性**C/c + +** > **语言** > **c + + 语言标准** > **ISO C + + 17 标准 (/ std:c + + 17)**。 你可能还希望设置**合规模式: 是(/permissive-)**，它将进一步约束代码以符合标准。
 
 要注意的另一个项目属性是 **C/C++** > **常规** > **将警告视为错误**。 请根据喜好将此项设置为**是(/WX)** 或**否(/WX-)**。 有时候，由 `cppwinrt.exe` 工具生成的源文件会生成警告，除非向其添加实现。
 

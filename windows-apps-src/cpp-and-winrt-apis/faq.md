@@ -9,18 +9,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c27332c05e285fdad6b8ec8deddd82d24a6e4a
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3416852"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3659561"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 常见问题
 对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
 
 > [!NOTE]
 > 如果问题与你看到的错误消息有关，另请参阅 [C++/WinRT 问题疑难解答](troubleshooting.md)主题。
+
+## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
+
+如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，然后新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: from_abi： 标识符不找到*"，并使用来自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可的**出现在项目属性**C/C++** > **语言** > **命令行**下**其他选项**，然后将其删除)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 的要求是什么？
 [VSIX](https://aka.ms/cppwinrt/vsix) 强制执行最低的 Windows SDK 目标版本 10.0.17134.0（Windows 10，版本 1803）。 还需要 Visual Studio 2017（版本不低于 15.6；建议版本不低于 15.7）。 你可以通过 `.vcxproj` 文件 `<PropertyGroup Label="Globals">` 中 `<CppWinRTEnabled>true</CppWinRTEnabled>` 的存在来识别使用 VSIX 的项目。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
