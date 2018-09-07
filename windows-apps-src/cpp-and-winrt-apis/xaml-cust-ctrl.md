@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，XAML，自定义，模板化控件
 ms.localizationpriority: medium
-ms.openlocfilehash: 25e17888c3292cbaf7b84c8a4bdd7c411530b558
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3422192"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3664854"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 XAML 自定义 （模板化） 控件[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -27,7 +27,7 @@ ms.locfileid: "3422192"
 通用 Windows 平台 (UWP) 的最强大功能之一是用户界面 (UI) 堆栈提供如何创建基于 XAML[**控件**](/uwp/api/windows.ui.xaml.controls.control)类型的自定义控件的灵活性。 XAML UI 框架提供了[自定义依赖属性](/windows/uwp/xaml-platform/custom-dependency-properties)和附加的属性和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)，这使其更轻松地创建功能丰富且可自定义控件等功能。 本主题将指导你完成的步骤创建自定义 （模板化） 控件使用 C + + WinRT。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
-首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + + 空白应用 (C + + WinRT)** 项目，并将其命名为*BgLabelControlApp*。
+首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **空白应用 (C + + WinRT)** 项目，并将其命名为*BgLabelControlApp*。
 
 我们将创作新类来表示自定义 （模板化） 控件。 我们正在同一编译单元内创作和使用该类。 但我们希望能够来实例化此类 XAML 标记中的，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
