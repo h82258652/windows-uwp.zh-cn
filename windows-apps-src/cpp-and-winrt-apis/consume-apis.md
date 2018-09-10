@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 50fde5d3683960ab384d823ace70f910fc1045d8
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 136abd5e3312b7a387ccc3b7c993d4e70d8ef0d4
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935735"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3823581"
 ---
 # <a name="consume-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 使用 API
 本主题介绍如何使用 C++/WinRT API，无论它们是 Windows 的一部分、由第三方组件供应商或自行实现。
@@ -245,12 +245,12 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## <a name="important-apis"></a>重要的 API
-* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [RoActivateInstance](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri](/uwp/api/windows.foundation.uri)
+* [QueryInterface 接口](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [RoActivateInstance 函数](https://msdn.microsoft.com/library/br224646)
+* [Windows::Foundation::Uri 类](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory 函数模板](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
 * [在 C++/WinRT 中创作事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)

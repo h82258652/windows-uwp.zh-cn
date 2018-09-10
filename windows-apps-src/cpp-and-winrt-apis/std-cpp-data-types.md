@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
-ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3663964"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3823621"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>标准 C++ 数据类型和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 借助 C++/WinRT，你可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到需要从语义上等效集合 Api。
@@ -156,7 +156,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 你可以继续调用异步 Windows 运行时 Api 时使用[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 。 但是，在许多情况下，c + + 协同程序提供有效，并且更轻松地编码的用法的异步对象交互。 有关详细信息和代码示例，请参阅[并发和异步操作通过 C + + WinRT](concurrency.md)。
 
 ## <a name="important-apis"></a>重要的 API
-* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
+* [IVector&lt;T&gt;接口](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view 结构模板](/uwp/cpp-ref-for-winrt/array-view)
 
 ## <a name="related-topics"></a>相关主题

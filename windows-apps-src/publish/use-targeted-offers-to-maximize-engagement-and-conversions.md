@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp，定向优惠，优惠/产品/服务，通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 727c438bacf51fd2ead03df72421363116c4701b
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3660202"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3822941"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>使用定向优惠最大程度地提高参与度和转换率
 

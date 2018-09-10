@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3661729"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3824301"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 

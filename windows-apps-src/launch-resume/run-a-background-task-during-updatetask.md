@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp、 更新、 后台任务、 updatetask，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3659508"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3824021"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在 UWP 应用更新时运行后台任务
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: ebb71b91af7e1490099898084f42ce04e698ef20
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 1e1bd5f23f40c5d0238f8089c91ee69c6a52313f
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3658790"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3820971"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 入门
 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
@@ -120,10 +120,10 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 也不需要处理 HRESULT 返回代码。 C++/WinRT 会将错误 HRESULT 转换为异常（如 [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)）以实现自然、现代化的编程风格。 有关错误处理以及代码示例的详细信息，请参阅 [C++/WinRT 的错误处理](error-handling.md)。
 
 ## <a name="important-apis"></a>重要的 API
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [Syndicationclient:: Retrievefeedasync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [SyndicationFeed.Items 属性](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring 结构](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::hresult-error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [hresult-error 结构](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

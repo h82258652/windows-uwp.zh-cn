@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e41abffdfa79847353af4de47bcbfa050c00627
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: 332edcf17f2b6bbf595def67c9df7043f21828c7
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912935"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821121"
 ---
 # <a name="string-handling-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的字符串处理
 利用 C++/WinRT，你可以使用 C++ 标准库宽字符串类型（如 **std::wstring**）调用 Windows 运行时 API（注：不要使用窄字符串类型，例如 **std::string**）。 C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
@@ -176,5 +176,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt::hstring 结构](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::to_string](/uwp/cpp-ref-for-winrt/to-string)
-* [winrt::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt:: to_hstring 函数](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt:: to_string 函数](/uwp/cpp-ref-for-winrt/to-string)

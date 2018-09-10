@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: af9c14043fdfcc10828f87e8c954430f8f587412
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912895"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3822551"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>实现 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 与 ABI 之间的互操作
 本主题介绍了如何在 SDK 应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
@@ -234,13 +234,13 @@ int main()
 ```
 
 ## <a name="important-apis"></a>重要的 API
-* [AddRef](https://msdn.microsoft.com/library/windows/desktop/ms691379)
-* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::attach_abi](/uwp/cpp-ref-for-winrt/attach-abi)
+* [AddRef 函数](https://msdn.microsoft.com/library/windows/desktop/ms691379)
+* [QueryInterface 函数](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [winrt:: attach_abi 函数](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 结构模板](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::copy_from_abi](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [winrt::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt::detach_abi](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt:: copy_from_abi 函数](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt:: copy_to_abi 函数](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt:: detach_abi 函数](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi 函数](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::Windows::Foundation::IUnknown::as member 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as member 函数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

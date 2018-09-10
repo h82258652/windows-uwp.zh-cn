@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，XAML，自定义，模板化控件
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664854"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821031"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 XAML 自定义 （模板化） 控件[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -192,10 +192,10 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 *可重写*函数本身以不同方式提供不同的语言投影中。 在 C# 中，例如，可重写函数通常显示为受保护的虚拟函数。 在 C + + /winrt 中，它们既不虚拟，也不受保护，但是仍可以替代它们，并提供你自己的实现，如上所示。
 
 ## <a name="important-apis"></a>重要的 API
-* [控件](/uwp/api/windows.ui.xaml.controls.control)
-* [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
-* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
-* [UIElement](/uwp/api/windows.ui.xaml.uielement)
+* [控件类](/uwp/api/windows.ui.xaml.controls.control)
+* [DependencyProperty 类](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [FrameworkElement 类](/uwp/api/windows.ui.xaml.frameworkelement)
+* [UIElement 类](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>相关主题
 * [控件模板](/windows/uwp/design/controls-and-patterns/control-templates)

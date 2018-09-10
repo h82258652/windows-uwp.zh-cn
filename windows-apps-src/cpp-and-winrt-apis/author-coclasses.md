@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准、 c + +，cpp，winrt，投影，作者，COM，组件
 ms.localizationpriority: medium
-ms.openlocfilehash: 428e1e963c89b7f9061d6b579b3bd5368a3a0ad1
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3659033"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3825224"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 COM 组件中创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -22,8 +22,6 @@ C + + WinRT 可以帮助你创作经典组件对象模型 (COM) 组件 （或组
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
-
 #include "pch.h"
 
 using namespace winrt;
@@ -47,6 +45,8 @@ int main()
 }
 ```
 
+另请参阅[使用 COM 组件与 C + + WinRT](consume-com.md)。
+
 ## <a name="a-more-realistic-and-interesting-example"></a>更逼真更具有趣的示例
 
 本主题的其余部分演示了如何创建的最小控制台应用程序项目中使用 C + + /winrt 来实现基本 coclass 和类工厂。 示例应用程序显示了如何提供一个回调按钮通知，toast 通知，并 coclass （可实现**INotificationActivationCallback** COM 接口） 允许应用程序启动并调用时用户单击 toast 上的该按钮。
@@ -60,8 +60,6 @@ int main()
 打开`main.cpp`，并删除 using 指令的项目模板生成。 在自己的位置，粘贴下面的代码 （其中的库，标头和所需的类型名称，会为我们提供）。
 
 ```cppwinrt
-#pragma comment(lib, "onecore")
-#pragma comment(lib, "propsys")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -80,7 +78,7 @@ using namespace Windows::UI::Notifications;
 
 ## <a name="implement-the-coclass-and-class-factory"></a>实现 coclass 和类工厂
 
-在 C + + /winrt，你通过派生直接从[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基结构来实现 coclass 和类工厂。 三个 using 指令如上所示后立即 (之前`main`)，将此代码来实现 toast 激活器 COM 组件粘贴。
+在 C + + /winrt，你通过派生从[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基结构来实现 coclass 和类工厂。 三个 using 指令如上所示后立即 (之前`main`)，将此代码来实现你的 toast 通知 COM 激活器组件粘贴。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -93,15 +91,22 @@ std::wstring const this_app_name{ L"ToastAndCallback" };
 struct callback : winrt::implements<callback, INotificationActivationCallback>
 {
     HRESULT __stdcall Activate(
-        [[maybe_unused]] LPCWSTR app,
-        [[maybe_unused]] LPCWSTR args,
+        LPCWSTR app,
+        LPCWSTR args,
         [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
         [[maybe_unused]] ULONG count) noexcept final
     {
-        std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
-        std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
-        std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
-        return S_OK;
+        try
+        {
+            std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
+            std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
+            std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
     }
 };
 
@@ -137,9 +142,9 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 ## <a name="best-practices-for-implementing-com-methods"></a>实现 COM 方法的最佳做法
 
-错误处理和资源管理技术可以转手手。 它是更加方便和实际使用比错误代码的异常。 如果你使用资源购置和是初始化 (RAII) 的用法，则可以避免： 显式检查错误代码。然后显式释放资源。 执行此操作可使代码更复杂超出必要，并提供 bug 很多地方隐藏。 但是，使用 RAII 和捕获异常。 这样一来，你的资源分配的异常安全和你的代码很简单。
+错误处理和资源管理技术可以转手手。 它是更加方便和实际使用比错误代码的异常。 并且如果你使用的资源的购置-即-初始化 (RAII) 用法，然后你可以避免显式检查错误代码，然后显式释放资源。 此类显式检查使代码更复杂超出必要，并提供 bug 很多地方隐藏。 相反，使用 RAII，并引发/catch 异常。 这样一来，你的资源分配的异常安全和你的代码很简单。
 
-但是，不允许异常转义 COM 方法实现。 你可以确保使用`noexcept`COM 方法说明符。 只要之前你方法退出时，会处理它们，它是供你方法中，调用关系图中任意位置引发异常。
+但是，不允许异常转义 COM 方法实现。 你可以确保使用`noexcept`COM 方法说明符。 只要之前你方法退出时，会处理它们，它是供你方法中，调用关系图中任意位置引发异常。 如果你使用`noexcept`，但然后允许异常转义你方法中，则将终止你的应用程序。
 
 ## <a name="add-helper-types-and-functions"></a>添加帮助程序类型和函数
 
@@ -376,3 +381,13 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 ## <a name="how-to-test-the-example-application"></a>如何测试示例应用程序
 
 生成应用程序，然后再在以管理员身份进行注册和其他设置，若要运行的代码至少一次运行它。 是否正在运行它作为管理员，然后按 \ 以使一个 toast 以显示。 然后，你可以单击**回调 ToastAndCallback**按钮可以直接从 toast 通知，将启动爆裂声，或从操作中心和你的应用程序、 实例化，coclass 和**INotificationActivationCallback:: 激活**执行方法。
+
+## <a name="important-apis"></a>重要的 API
+* [IInspectable 接口](https://msdn.microsoft.com/library/br205821)
+* [IUnknown 接口](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [winrt::implements 结构模板](/uwp/cpp-ref-for-winrt/implements)
+
+## <a name="related-topics"></a>相关主题
+* [使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 COM 组件通过 C + + WinRT](consume-com.md)
+* [发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
