@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: 通知侦听器
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 00774817574c209826050a084bba77084d404ace
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674614"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850581"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -281,19 +281,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>已添加/已消除的通知的前台事件
 
 > [!IMPORTANT] 
-> 已知问题：前台事件不工作（并且我们当前没有能够解决此问题的计划）。 
+> 已知问题： 前台事件将导致 CPU 循环上最新版本的 Windows，并且之前无法正常工作之前。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
 
-如果有需要前台事件的应用场景，请告知我们。 但是，大多数（如果不是所有）情况下，实际上应该使用后台任务，原因是很可能需要为通知事件在后台唤醒应用。 例如，可穿戴外部设备应用很少在前台运行，需要从后台了解新通知。
-
-此外，由于增加了[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)，从前台应用中使用后台任务触发器非常轻松。 因此，如果需要接收前台事件，通过单进程模型使用后台触发器即可。
+而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
 
 ```csharp
-// Subscribe to foreground event
+// Subscribe to foreground event (DON'T USE THIS)
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event DOES NOT WORK. Use the background task instead.
+    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
 }
 ```
 

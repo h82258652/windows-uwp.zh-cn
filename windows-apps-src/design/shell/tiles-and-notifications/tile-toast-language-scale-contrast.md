@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0992a8d86b17648b748bb792fdf250f29801d0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673214"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849441"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>磁贴和 toast 通知的语言、比例和高对比度支持
 
-你的磁贴和 toast 可以加载为显示语言、[显示比例系数](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高对比度和其他运行时上下文定制的字符串和图像。 有关如何在资源文件的名称中使用限定符的背景，请参阅[定制语言、比例和其他限定符的资源](../../../app-resources/tailor-resources-lang-scale-contrast.md)和[资源大小表](app-assets.md#asset-size-tables)。
+你的磁贴和 toast 可以加载为显示语言、[显示比例系数](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高对比度和其他运行时上下文定制的字符串和图像。 有关如何在资源文件的名称中使用限定符的背景，请参阅[定制语言、 比例和其他限定符的资源](../../../app-resources/tailor-resources-lang-scale-contrast.md)和[应用图标和徽标](/windows/uwp/design/style/app-icons-and-logos)。
 
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../../globalizing/globalizing-portal.md)。
 

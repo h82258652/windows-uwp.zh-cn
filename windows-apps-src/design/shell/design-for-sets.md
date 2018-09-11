@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 43e727100872421ac519a7c00363e6f6eeaf832c
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877129"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849871"
 ---
 # <a name="designing-for-sets"></a>集设计
 
@@ -119,7 +119,7 @@ titleBar.BackgroundColor = Windows.UI.Colors.Green;
 
 若要确保你的应用图标在集中看起来效果最好，则应为应用提供备用的未着色图标。 （在应用的选项卡中使用的应用图标与在任务栏中使用的是同一图标。）备用图标的用途是让它在任何背景颜色下都看起来很美观。 如果提供备用图标，则会使用该图标。
 
-在你的应用清单中，除常规图标外，还应指定备用形式的未着色图标。 有关详细信息，请参阅[磁贴和图标资源指南](./tiles-and-notifications/app-assets.md)。 要指定的图标在文章的[资源类型](./tiles-and-notifications/app-assets.md#asset-types)部分记录为“未着色的目标大小列表资源”。
+在你的应用清单中，除常规图标外，还应指定备用形式的未着色图标。 有关详细信息，请参阅[应用图标和徽标](/windows/uwp/design/style/app-icons-and-logos)。 要指定的图标在文章的[有关应用图标资源的详细信息](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets)部分中记录为"未着色的目标大小列表资源"。
 
 如果你未在应用清单中指定备用图标，系统将使用选项卡颜色为磁贴图标重新着色，并使用该颜色。
 
