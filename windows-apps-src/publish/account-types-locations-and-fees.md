@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825977"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845621"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 

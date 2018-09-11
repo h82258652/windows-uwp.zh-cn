@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Universal Dismiss on your toast notifications.
 title: 全局消除
 label: Universal Dismiss
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, toast, 云中的操作中心, 全局消除, 通知, 跨设备, 一次消除即全部消除
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7d0c55c902f179f0375a63735c7cc3a6a9f96d
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 90ad60949504d4478341ff9455fe0f7da90d78a9
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523195"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847241"
 ---
 # <a name="universal-dismiss"></a>全局消除
 

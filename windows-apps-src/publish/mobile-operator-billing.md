@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
 ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3823931"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851457"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 

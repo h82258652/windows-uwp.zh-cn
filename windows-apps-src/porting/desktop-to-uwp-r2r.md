@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，编译器的本机映像
 ms.localizationpriority: medium
 ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825597"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851097"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>优化你的.NET 桌面应用使用本机映像
 

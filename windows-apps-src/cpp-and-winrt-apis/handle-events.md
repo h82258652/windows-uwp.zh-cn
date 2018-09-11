@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af66c3f0586f2fb99a2a742f6da0144ed69d253
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821991"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851287"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的代理来处理事件
 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理代理。 你可以使用任何标准 C++ 函数类对象来处理事件。

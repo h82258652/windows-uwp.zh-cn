@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825887"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846281"
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 

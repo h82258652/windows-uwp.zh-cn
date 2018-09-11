@@ -10,14 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e070acdfcc6dded12ae48cc34fe46f099da6401
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821061"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846611"
 ---
 # <a name="data-binding-overview"></a>数据绑定概述
+
+> [!NOTE]
+> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
 
 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。 此外，我们还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 有关更多详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
@@ -144,9 +147,9 @@ private:
 Quickstart::Recording RecordingViewModel::DefaultRecording()
 {
     Windows::Globalization::Calendar releaseDateTime;
+    releaseDateTime.Year(1761);
     releaseDateTime.Month(1);
     releaseDateTime.Day(1);
-    releaseDateTime.Year(1761);
     m_defaultRecording = winrt::make<Recording>(L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime);
     return m_defaultRecording;
 }
@@ -203,9 +206,9 @@ namespace Quickstart
         RecordingViewModel()
         {
             Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
+            releaseDateTime->Year = 1761;
             releaseDateTime->Month = 1;
             releaseDateTime->Day = 1;
-            releaseDateTime->Year = 1761;
             this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
         }
         property Recording^ DefaultRecording
@@ -312,7 +315,7 @@ namespace Quickstart
 
 一个常见情形是绑定到业务对象的集合。 在 C# 和 Visual Basic 中，通用 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 类是数据绑定的一个很好的集合选择，因为它实现了 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 接口。 当添加或删除项目或者列表本身的属性更改时，这些接口将向绑定提供更改通知。 如果你希望你的绑定控件使用集合中的对象属性更改进行更新，则业务对象也应该实现 **INotifyPropertyChanged**。 有关详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
-如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，则你可以阅读有关绑定到可观测集合中[XAML 项目控件; 绑定到 C + + /winrt 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)。
+如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以了解有关绑定到可观测集合中的详细信息[XAML 项目控件; 绑定到 C + + /winrt 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)。 如果你阅读该主题第一次，然后意图的 C + + WinRT 如下所示的代码列表将为更清晰。
 
 下面这个示例演示了将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到 `Recording` 对象的集合。 让我们先将该集合添加到视图模型。 只需将这些新成员添加到 **RecordingViewModel** 类。
 
@@ -320,9 +323,9 @@ namespace Quickstart
 public class RecordingViewModel
 {
     ...
-        private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
+    private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
     public ObservableCollection<Recording> Recordings{ get{ return this.recordings; } }
-        public RecordingViewModel()
+    public RecordingViewModel()
     {
         this.recordings.Add(new Recording(){ ArtistName = "Johann Sebastian Bach",
             CompositionName = "Mass in B minor", ReleaseDateTime = new DateTime(1748, 7, 8) });
@@ -332,6 +335,49 @@ public class RecordingViewModel
             CompositionName = "Serse", ReleaseDateTime = new DateTime(1737, 12, 3) });
     }
 }
+```
+
+```cppwinrt
+// RecordingViewModel.idl
+// Add this property:
+...
+Windows.Foundation.Collections.IVector<IInspectable> Recordings{ get; };
+...
+
+// RecordingViewModel.h
+// Change the constructor declaration, and add this property and this field:
+...
+    RecordingViewModel();
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Recordings();
+
+private:
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_recordings;
+...
+
+// RecordingViewModel.cpp
+// Implement like this:
+...
+RecordingViewModel::RecordingViewModel()
+{
+    std::vector<Windows::Foundation::IInspectable> recordings;
+
+    Windows::Globalization::Calendar releaseDateTime;
+    releaseDateTime.Month(7); releaseDateTime.Day(8); releaseDateTime.Year(1748);
+    recordings.push_back(winrt::make<Recording>(L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime));
+
+    releaseDateTime = Windows::Globalization::Calendar{};
+    releaseDateTime.Month(11); releaseDateTime.Day(2); releaseDateTime.Year(1805);
+    recordings.push_back(winrt::make<Recording>(L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime));
+
+    releaseDateTime = Windows::Globalization::Calendar{};
+    releaseDateTime.Month(3); releaseDateTime.Day(12); releaseDateTime.Year(1737);
+    recordings.push_back(winrt::make<Recording>(L"George Frideric Handel", L"Serse", releaseDateTime));
+
+    m_recordings = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>(std::move(recordings));
+}
+
+Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> RecordingViewModel::Recordings() { return m_recordings; }
+...
 ```
 
 ```cpp
@@ -345,21 +391,21 @@ public:
     {
         ...
         releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Year = 1748;
         releaseDateTime->Month = 7;
         releaseDateTime->Day = 8;
-        releaseDateTime->Year = 1748;
         Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
         this->Recordings->Append(recording);
         releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Year = 1805;
         releaseDateTime->Month = 2;
         releaseDateTime->Day = 11;
-        releaseDateTime->Year = 1805;
         recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
         this->Recordings->Append(recording);
         releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Year = 1737;
         releaseDateTime->Month = 12;
         releaseDateTime->Day = 3;
-        releaseDateTime->Year = 1737;
         recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
         this->Recordings->Append(recording);
     }
@@ -393,7 +439,7 @@ public:
 
 ![绑定列表视图](images/xaml-databinding1.png)
 
-为了解决此问题，我们可以重写 [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) 以返回 **OneLineSummary** 的值，或者提供一个数据模板。 数据模板选项更为常见且更为灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
+若要解决此问题，我们可以通过重写[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)返回的值**OneLineSummary**，或我们可以提供一个数据模板。 数据模板选项是一个更常见的解决方案，更灵活的统计信息。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -433,17 +479,31 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 你可以选择在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 项目中显示 **Recording** 对象的所有详细信息。 但这样做会占用大量空间。 不过，你可以在该项目中仅显示足够多的数据来标识它，然后在用户做出选择时，你可以在 UI 的单个部分（即，详细信息视图）中显示选定项的所有详细信息。 这种排列也称为主视图/详细信息视图或列表/详细信息视图。
 
-有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 属性。 或者，可以使用 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)：将 **ListView** 和详细信息视图同时绑定到 **CollectionViewSource**（这将为你处理当前选定的项目）。 下面介绍这两种技术，它们都提供图中所示的相同结果。
+有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 属性。 或者，你可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，你在此情况下绑定到**CollectionViewSource** （为你执行当前选定的项目是采用小心） **ListView**和详细信息视图。 这两种方法如下所示，并且它们都提供相同的结果 （如图所示）。
 
 > [!NOTE]
 > 到目前为止，本主题中我们仅使用了 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，而将在下面介绍的这两种技术要求更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
+> [!IMPORTANT]
+> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，那么 （如下所述） 的[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是只有在你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
 
-如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你将需要实现[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) ，然后才能使用 {Binding} 标记扩展[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口。
-
-如果你使用的是 Visual C++ 组件扩展 (C++/CX)，则因为我们将使用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因此你需要将 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性添加到 **Recording** 类。
+如果你使用 C + + /winrt 或 Visual c + + 组件扩展 (C + + CX) 然后，我们将使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展，因为你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到**录制**类。
 
 首先介绍的是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技术。
+
+```csharp
+// No code changes necessary for C#.
+```
+
+```cppwinrt
+// Recording.idl
+// Add this attribute:
+...
+[Windows.UI.Xaml.Data.Bindable]
+runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+...
+```
+
 ```cpp
 [Windows::UI::Xaml::Data::Bindable]
 public ref class Recording sealed
@@ -493,11 +553,8 @@ public ref class Recording sealed
 
 ```xml
 ...
-
 <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
-
 ...
-
 <StackPanel DataContext="{Binding Source={StaticResource RecordingsCollection}}" ...>
 ...
 ```
@@ -548,11 +605,9 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
     <local:StringFormatter x:Key="StringFormatterValueConverter"/>
 </Page.Resources>
 ...
-
 <TextBlock Text="{Binding ReleaseDateTime,
     Converter={StaticResource StringFormatterValueConverter},
     ConverterParameter=Released: \{0:d\}}"/>
-
 ...
 ```
 
@@ -561,7 +616,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![显示具有自定义格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10，版本 1607年开始，XAML 框架提供内置布尔值到可见性转换器。 转换器将映射**true**到**Visibility.Visible**枚举值和**false**到**Visibility.Collapsed**以便你可以将 Visibility 属性绑定到布尔值而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="see-also"></a>另请参阅
-- [数据绑定](index.md)
+* [数据绑定](index.md)

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824791"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851477"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的并发和异步操作
 > [!NOTE]

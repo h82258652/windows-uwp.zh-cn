@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824081"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846381"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821731"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847621"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 

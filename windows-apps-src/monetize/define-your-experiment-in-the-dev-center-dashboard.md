@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: f690aaede800f76b2eb006355e982ea6b3509b78
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824441"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847551"
 ---
 # <a name="define-your-experiment-in-the-dashboard"></a>在仪表板中定义实验
 

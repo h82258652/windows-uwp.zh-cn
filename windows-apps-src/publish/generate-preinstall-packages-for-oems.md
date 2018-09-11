@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 598a73b291d5f8b3c004f1e9adeddf0b92b841ab
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3820411"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845931"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>生成适用于 OEM 的预安装程序包
 

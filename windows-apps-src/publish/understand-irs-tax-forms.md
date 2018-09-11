@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: ffefc1d645a79296989e95c2fa033b8848e91c3b
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3822891"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846121"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 

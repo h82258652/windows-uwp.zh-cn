@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3820871"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845281"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 

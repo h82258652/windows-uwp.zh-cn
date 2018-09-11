@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821661"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851087"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>通过使用程序包支持框架对 MSIX 程序包应用运行时修复
 

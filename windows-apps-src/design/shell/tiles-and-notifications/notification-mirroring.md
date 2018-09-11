@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use notification mirroring on your toast notifications.
 title: 通知镜像
 label: Notification mirroring
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, toast, 云中的操作中心, 通知镜像, 通知, 跨设备
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eda26c37bc95943691063c3d21d39a6c7a1d7b2
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523208"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845471"
 ---
 # <a name="notification-mirroring"></a>通知镜像
 
@@ -29,7 +29,7 @@ ms.locfileid: "1523208"
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-通知镜像可为开发人员提供两大好处：镜像通知可使更多用户参与服务，也可以帮助用户发现 Windows 应用商店桌面应用！ 用户甚至可能不知道有出色的 UWP 应用可用于他们的 Windows 10 桌面。 当用户从手机接收到镜像通知时，用户可以单击 Toast 通知跳转到 Windows 应用商店，安装 UWP 桌面应用。
+开发人员从通知镜像提供两大好处： 镜像的通知可使更多用户参与你的服务，并且它们还可以帮助用户发现你的 Microsoft 应用商店的桌面应用 ！ 用户甚至可能不知道有出色的 UWP 应用可用于他们的 Windows 10 桌面。 当用户从手机接收到镜像的通知时，用户可单击 toast 通知跳转到 Microsoft 应用商店，安装 UWP 桌面应用。
 
 镜像适用于 Windows Phone 和 Android。 用户需要同时在手机和桌面上登录 Cortana，通知镜像才能运行。
 

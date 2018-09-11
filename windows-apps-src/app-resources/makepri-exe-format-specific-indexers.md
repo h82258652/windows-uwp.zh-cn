@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec6b2a31f4f577de30dac1c96a411c6aee6e9dc
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825091"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846151"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 特定格式索引器
 
