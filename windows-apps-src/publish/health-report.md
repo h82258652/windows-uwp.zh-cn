@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 运行状况, 崩溃, 无响应事件, 应用运行状况康, 运行状况数据, 堆栈跟踪, cab 文件, 失败, 故障, pdb, 符号
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5bf63eae4b1504642e764265a7936bcd67c645
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3822401"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849911"
 ---
 # <a name="health-report"></a>运行状况报告
 
