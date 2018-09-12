@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dfa27115e1c7ebc9be657ff4fb3f6946406dd8b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881402"
+ms.locfileid: "3931420"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
 表示**MultiplayerSessionReference**的 JSON 对象。 
@@ -28,8 +28,8 @@ MultiplayerSessionReference JSON 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。| 
-| 模板名称 | 字符串 | 会话模板的当前实例的名称。 第 2 部分会话标识符。 | 
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
+| templateName | 字符串 | 会话模板的当前实例的名称。 第 2 部分会话标识符。 | 
 | name | 字符串 | 会话名称。 会话标识符的第 3 部分。 | 
   
 <a id="ID4EZ"></a>

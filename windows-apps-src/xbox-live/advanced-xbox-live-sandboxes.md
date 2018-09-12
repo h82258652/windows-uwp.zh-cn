@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
 ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881388"
+ms.locfileid: "3928104"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -45,11 +45,11 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 ## <a name="initial-setup-for-a-title"></a>主题作品的初始设置
 
-主题作品源自于 Xbox 开发人员门户 (XDP) 或 Windows 开发人员中心。 本文档介绍都在 XDP 中的标题。 标题分配主题作品 ID、 产品 ID 和服务配置 ID (SCID)。
+主题作品源自于 Xbox 开发人员门户 (XDP) 或 Windows 开发人员中心。 本文档介绍源自在 XDP 中的主题作品。 标题分配一个作品 ID、 产品 ID 和服务配置 ID (SCID)。
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 
-若要在 XDP 上创建作品，发布者创建一个产品组、 指定产品组的类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
+若要在 XDP 上创建作品，发布者创建一个产品组、 指定产品组，流派，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
 
 图 2. 产品组、产品、产品实例以及沙盒之间的关系。
 
@@ -207,7 +207,7 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 如果主题作品已准备好公开发行，则首先需要进行认证。 CERT 沙盒是 Microsoft 控制的沙盒，只有认证中的个人用户才能访问该沙盒。 发布者可以查看他们拥有的哪些内容将进行认证。
 
-在认证失败的产品实例可召回至开发沙盒进行调试和修复的发布者使用 XDP 或 Windows 开发人员中心。
+无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复的发布者使用 XDP 或 Windows 开发人员中心。
 
 <a name="retail-sandbox"></a>RETAIL 沙盒
 --------------

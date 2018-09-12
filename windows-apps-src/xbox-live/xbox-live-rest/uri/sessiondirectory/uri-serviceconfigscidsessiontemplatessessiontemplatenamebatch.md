@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批处理
+title: /serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次
 assetID: 4f8e1ece-2ba8-9ea4-e551-2a69c499d7b9
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批处理"
+description: " /serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc0850d1fda69eae1c0f3774a3146de33c7b4c8
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881143"
+ms.locfileid: "3929556"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批处理
-支持 POST 操作在会话模板级别创建批处理查询。
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次
+支持在会话模板级别创建批处理查询 POST 操作。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
 <a id="ID4ER"></a>
 
@@ -36,7 +36,7 @@ sessiondirectory.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。|
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
 
 <a id="ID4E2B"></a>

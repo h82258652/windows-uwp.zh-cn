@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c78ca27407a26212e5a778807c0e28ae5fda2f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880476"
+ms.locfileid: "3927850"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} /queryrefiners/ {queryRefiner} / subQueryRefinerValues
-对于给定的查询精选值 (例如，"subgenres 给定流派中") 的访问权限的子值列表。 这些 Uri 的域是`eds.xboxlive.com`。
+对于给定的查询精选值 (例如，"subgenres 在给定流派") 的访问权限的子值列表。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -39,7 +39,7 @@ ms.locfileid: "3880476"
 
 [获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} /queryrefiners/ {queryRefiner} / subQueryRefinerValues)](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervaluesget.md)
 
-&nbsp;&nbsp;对于给定的查询精选值 (例如，"subgenres 给定流派中") 中获取子值的列表。 
+&nbsp;&nbsp;对于给定的查询精选值 (例如，"subgenres 在给定流派") 中获取子值的列表。 
  
 <a id="ID4EAC"></a>
 

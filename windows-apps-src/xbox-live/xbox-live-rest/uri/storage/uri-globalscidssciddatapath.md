@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b091f3bbb5e03808d04a255b204c13eee93f7fdb
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880787"
+ms.locfileid: "3929040"
 ---
 # <a name="globalscidssciddatapath"></a>/ 全局 /data//scid / {scid} {路径}
-列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -30,7 +30,7 @@ ms.locfileid: "3880787"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| scid| guid| 若要查找的服务配置 ID。| 
+| scid| guid| 要查找的服务配置 ID。| 
 | path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
   
 <a id="ID4E3B"></a>
@@ -40,7 +40,7 @@ ms.locfileid: "3880787"
 
 [GET](uri-globalscidssciddatapath-get.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。
+&nbsp;&nbsp;列出了在指定路径的文件信息。
  
 <a id="ID4EGC"></a>
 

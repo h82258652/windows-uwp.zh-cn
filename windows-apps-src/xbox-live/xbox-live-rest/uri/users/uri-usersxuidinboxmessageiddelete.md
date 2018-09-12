@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880769"
+ms.locfileid: "3931290"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>删除 (/users/xuid({xuid})/inbox/{messageId})
 删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
@@ -27,7 +27,7 @@ ms.locfileid: "3880769"
   * [请求正文](#ID4E1B)
   * [HTTP 状态代码](#ID4EHC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EAE)
-  * [资源的隐私设置的效果](#ID4EYF)
+  * [资源上的隐私设置的效果](#ID4EYF)
  
 <a id="ID4EV"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "3880769"
  
 删除操作是幂等。
  
-此 API 支持的仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。 
+此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。 
   
 <a id="ID4ECB"></a>
 
@@ -67,12 +67,12 @@ ms.locfileid: "3880769"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 说明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功。| 
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。| 
+| 403| 不能转换 XUID 或者找不到有效的 XUID 声明。| 
 | 404| 无法分析 URI 中的消息 ID 或 XUID 是 URI 中丢失。| 
 | 500| 常规服务器端错误。| 
   
@@ -81,7 +81,7 @@ ms.locfileid: "3880769"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应 
  
-如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务环境的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
  
 | 属性| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -92,7 +92,7 @@ ms.locfileid: "3880769"
 <a id="ID4EYF"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果 
+## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果 
  
 仅可以删除自己用户的消息。 
   
@@ -112,6 +112,6 @@ ms.locfileid: "3880769"
 <a id="ID4ETG"></a>
 
  
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
 
    

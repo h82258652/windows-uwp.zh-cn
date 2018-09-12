@@ -1,9 +1,9 @@
 ---
-title: GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})
+title: 获取 (/json/users/xuid({xuid})/scids/{scid}/data/{path})
 assetID: ab73c1af-d914-b498-6a12-8f74eec349d0
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapath-get.html
 author: KevinAsgari
-description: " GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})"
+description: " 获取 (/json/users/xuid({xuid})/scids/{scid}/data/{path})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ef285dfa79c47c9bd058d593c1102e581cbe460
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880925"
+ms.locfileid: "3931296"
 ---
-# <a name="get-jsonusersxuidxuidscidssciddatapath"></a>GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})
-列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+# <a name="get-jsonusersxuidxuidscidssciddatapath"></a>获取 (/json/users/xuid({xuid})/scids/{scid}/data/{path})
+列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [可选的查询字符串参数](#ID4ECB)
@@ -36,8 +36,8 @@ ms.locfileid: "3880925"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家的发出请求。| 
-| scid| guid| 若要查找的服务配置 ID。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
+| scid| guid| 要查找的服务配置 ID。| 
 | path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
   
 <a id="ID4ECB"></a>
@@ -47,16 +47,16 @@ ms.locfileid: "3880925"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| skipItems| int| 返回在集合中，例如，N + 1 处开始的项跳过 N 的项目。| 
-| ContinuationToken| 字符串| 返回在给定的延续令牌启动的项。 如果同时提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
-| maxItems| int| 要从集合，它可以结合使用 skipItems 和 continuationToken 返回范围的项目中返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回少于 maxItems，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
+| skipItems| int| 返回在集合中，例如，N + 1 处开始的项目跳过 N 项目。| 
+| ContinuationToken| 字符串| 返回在给定的延续令牌启动的项目。 如果同时提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
+| maxItems| int| 要从该集合，这可以与 skipItems 和 continuationToken 返回项目的范围结合使用返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回少于 maxItems，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
   
 <a id="ID4EUC"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头无效或不存在，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头无效或不存在，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4EBD"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "3880925"
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希]。[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建的授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EKE"></a>
 
@@ -80,27 +80,27 @@ ms.locfileid: "3880925"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
 | 201| 已创建 | 创建实体。| 
-| 400| 错误请求 | 服务无法理解格式不正确的请求。 通常是一个无效的参数。| 
+| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求所花的时间太长，无法完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
+| 408| 请求超时 | 请求时间太长，才能完成。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EKCAC"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回[TitleBlob](../../json/json-titleblob.md)对象的数组。
+如果调用成功，该服务将返回[TitleBlob](../../json/json-titleblob.md)对象的数组。
  
 <a id="ID4EYCAC"></a>
 
@@ -156,7 +156,7 @@ ms.locfileid: "3880925"
 <a id="ID4ESDAC"></a>
 
  
-##### <a name="reference--titleblob-jsonjsonjson-titleblobmd"></a>引用[TitleBlob (JSON)](../../json/json-titleblob.md)
+##### <a name="reference--titleblob-jsonjsonjson-titleblobmd"></a>参考[TitleBlob (JSON)](../../json/json-titleblob.md)
 
  [PagingInfo (JSON)](../../json/json-paginginfo.md)
 

@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a188c3406ad0ca3bfca78d6b45c548c72bf791e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881011"
+ms.locfileid: "3931294"
 ---
 # <a name="title-storage-uris"></a>标题存储 Uri
  
-本部分提供了从*标题存储*的 Xbox Live 服务的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息。
+本部分提供了从 Xbox Live*标题*存储服务的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息。
  
 所有平台上运行的游戏均可使用此服务。
  
@@ -37,15 +37,15 @@ ms.locfileid: "3881011"
 
 [/ 全局 /data//scid / {scid} {路径}](uri-globalscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/global/scids/{scid}/data/{pathAndFileName},{type}](uri-globalscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;下载文件。
 
-[/ json/用户/批处理/scid / {scid} /data/ {pathAndFileName} json](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
+[/ json/用户/批次/scid / {scid} /data/ {pathAndFileName} json](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;从多个用户具有相同的文件名下载多个文件。
 
 [/json/users/xuid({xuid}) /scids/ {scid}](uri-jsonusersxuidscidsscid.md)
 
@@ -53,7 +53,7 @@ ms.locfileid: "3881011"
 
 [/json/users/xuid({xuid}) /scids/ {scid} /data/ {路径}](uri-jsonusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/json/users/xuid({xuid}) /scids/ {scid} /data/ {pathAndFileName} json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
@@ -65,15 +65,15 @@ ms.locfileid: "3881011"
 
 [/sessions/ {sessionId} {scid} /scids/ /data/ {路径}](uri-sessionssessionidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/sessions/ {sessionId} {scid} /scids/ /data/ {pathAndFileName} {类型}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;下载文件。
 
-[/ trustedplatform/用户/批处理/scid / {scid} /data/ {pathAndFileName} {类型}](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
+[/ trustedplatform/用户/批次/scid / {scid} /data/ {pathAndFileName} {类型}](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;从多个用户具有相同的文件名下载多个文件。
 
 [/trustedplatform/users/xuid({xuid}) /scids/ {scid}](uri-trustedplatformusersxuidscidsscid.md)
 
@@ -81,15 +81,15 @@ ms.locfileid: "3881011"
 
 [/trustedplatform/users/xuid({xuid}) /scids/ {scid} /data/ {路径}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;下载、 上传，或删除的文件。
 
-[/ untrustedplatform/用户/批处理/scid / {scid} /data/ {pathAndFileName} {类型}](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
+[/ untrustedplatform/用户/批次/scid / {scid} /data/ {pathAndFileName} {类型}](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;从多个用户具有相同的文件名下载多个文件。
 
 [/untrustedplatform/users/xuid({xuid}) /scids/ {scid}](uri-untrustedplatformusersxuidscidsscid.md)
 
@@ -97,7 +97,7 @@ ms.locfileid: "3881011"
 
 [/untrustedplatform/users/xuid({xuid}) /scids/ {scid} /data/ {路径}](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/untrustedplatform/users/xuid({xuid}) /scids/ {scid} /data/ {pathAndFileName} {类型}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 

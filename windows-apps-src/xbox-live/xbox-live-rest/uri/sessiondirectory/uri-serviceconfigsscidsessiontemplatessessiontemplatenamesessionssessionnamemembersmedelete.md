@@ -1,9 +1,9 @@
 ---
-title: 删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/我)
+title: 删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me)
 assetID: aa5de623-7787-a47c-b7e4-305693b9fe35
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.html
 author: KevinAsgari
-description: " 删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/我)"
+description: " 删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 273819165e5dcf6b6398cd5b62e99be358e5ae9b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880508"
+ms.locfileid: "3927820"
 ---
-# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/我)
+# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me)
 从会话中删除成员。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E3)
@@ -42,7 +42,7 @@ ms.locfileid: "3880508"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。|
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
 | 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
 
@@ -50,7 +50,7 @@ ms.locfileid: "3880508"
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码应用于 MPSD。  
+该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
 <a id="ID4ENB"></a>
 
 

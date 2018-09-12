@@ -1,24 +1,24 @@
 ---
 title: Xbox Live C Api
 author: KevinAsgari
-description: 了解可用于与 Xbox Live 服务交互的平面 C API 模型。
+description: 了解有关你可以使用与 Xbox Live 服务交互的平面 C API 模型。
 ms.author: kevinasg
 ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: xbox live，xbox，游戏，uwp，windows 10，xbox one、 c，xsapi
+keywords: xbox live，xbox，游戏，uwp，windows 10，xbox one，c，xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: ac47d3877c44cfa9891753c49be8a5749fba9185
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880688"
+ms.locfileid: "3927782"
 ---
 # <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live C Api 简介
 
-在 2018 年 6 月，到 XSAPI 添加了新的平面 C API 图层。 此新的 API 层解决了 c + + 和 WinRT API 层出现一些问题。
+在 2018 年 6 月，到 XSAPI 添加了新的平面 C API 图层。 此新的 API 层解决与 c + + 和 WinRT API 层出现一些问题。
 
 C API 不涵盖所有 XSAPI 功能，但正在处理其他功能。 所有 3 个 API 图层、 C、 c + + 和 WinRT 将继续支持，并且随着时间的推移添加了其他功能。
 
@@ -37,23 +37,23 @@ C API 目前支持以下功能和服务：
 
 ## <a name="benefits-of-the-c-api-for-xsapi"></a>XSAPI C API 的好处
 
-- 允许游戏时调用 XSAPI 控制内存分配。
+- 允许游戏时调用 XSAPI 控制的内存分配。
 - 允许游戏获得的线程处理时调用 XSAPI 的完全控制。
 - 使用新 HTTP 库，libHttpClient，面向游戏开发人员。
 
-你可以使用旁边 c + + XSAPI C Api，但不是会获得上面列出的优势，使用 c + + Api。
+你可以使用旁边 c + + XSAPI C Api，但你不会使用 c + + Api 将获得上面列出的优势。
 
 ### <a name="managing-memory-allocations"></a>管理内存分配
 
-使用新 C API，你现在可以指定它时分配的内存，将调用 XSAPI 的回调函数。 如果未指定函数回调，XSAPI 将使用标准的内存分配例程。
+使用新 C API，你现在可以指定每当尝试分配内存时，将调用 XSAPI 的回调函数。 如果未指定函数回调，XSAPI 将使用标准内存分配例程。
 
 若要手动指定内存例程，请执行以下操作：
 
 - 在游戏开始：
   - 调用`XblMemSetFunctions(memAllocFunc, memFreeFunc)`指定用于分配和释放内存分配回调。
-  - 调用`XblInitialize()`来初始化库实例。  
+  - 调用`XblInitialize()`若要初始化的库实例。  
 - 尽管游戏正在运行：
-  - 调用的任何新的 C Api 在 XSAPI 中，分配或可用内存将导致 XSAPI 调用处理回调的指定的内存。  
+  - 调用的任何新的 C Api 在 XSAPI 中的分配或释放内存会导致 XSAPI 调用处理回调的指定的内存。  
 - 当游戏退出：
   - 调用`XblCleanup()`以回收与 XSAPI 库相关联的所有资源。
   - 清理你的游戏的自定义内存管理器。
@@ -64,7 +64,7 @@ C API 引入了新的异步线程调用完全控制的线程模型允许开发�
 
 ## <a name="migrating-code-to-use-c-xsapi"></a>迁移代码以使用 C XSAPI
 
-可以与 XSAPI c + + Api 在项目中，并行使用 XSAPI C Api，因此我们建议你一次迁移一项功能。
+可以与 XSAPI c + + Api 在项目中，并行使用 XSAPI C Api，因此我们建议你一次迁移一个功能。
 
 C Api 和 c + + Api 是周围的常用的核心，只需使用不同的入口点，实际上只是精简包装器，因此功能应保持不变。 但是，仅 C Api 可以充分利用自定义内存和线程管理功能。
 

@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 089aba60b80e629a8068bcf39f009ac97fc6ad66
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880545"
+ms.locfileid: "3929272"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a>POST (/serviceconfigs/ {scid} /hoppers/ {hoppername})
 
 创建指定的匹配票证。
 
 > [!IMPORTANT]
-> 此方法用于使用合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
@@ -57,13 +57,13 @@ ms.locfileid: "3880545"
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
 | 设备类型| 是| 当用户的 deviceType 不存在或设置为非控制台，匹配到标题不能仅控制台标题。 | 403|
-| 主题作品 ID/购买/设备类型的证明| 是| 正在匹配到游戏必须允许指定的主题作品声明，设备类型组合的匹配。 | 403|
+| 作品 ID/购买/设备类型的概念证明| 是| 正在匹配到游戏必须允许指定的标题声明，设备类型组合的匹配。 | 403|
 
 <a id="ID4E3C"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码应用于 MPSD。  
+该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
 <a id="ID4EFD"></a>
 
 
@@ -78,8 +78,8 @@ ms.locfileid: "3880545"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | serviceConfig| GUID| 会话的 SCID。|
 | hopperName| 字符串| 漏斗的名称。|
-| giveUpDuration| 32 位有符号整数| 最大的等待时间 （不可或缺的秒数）。|
-| preserveSession| 枚举| 指示会话重复使用作为以匹配到会话的值。 可能的值是"始终"和"从不"。 |
+| giveUpDuration| 32 位有符号的整数| 最大的等待时间 （不可或缺的秒数）。|
+| preserveSession| 枚举| 指示会话是否重用为以匹配到会话的值。 可能的值是"始终"和"从不"。 |
 | ticketSessionRef| MultiplayerSessionReference| 会话中的玩家或组当前正在播放的的 MultiplayerSessionReference 对象。 |
 | ticketAttributes| 对象的集合| 属性和由有关的玩家组的用户提供的值。|
 
@@ -88,14 +88,14 @@ ms.locfileid: "3880545"
 
 ### <a name="prohibited-members"></a>禁止的成员
 
-所有其他成员被禁止在请求中。
+所有其他成员禁止在请求中。
 
 <a id="ID4ECG"></a>
 
 
 ### <a name="sample-request"></a>示例请求
 
-可以创建匹配票证，并将该会话必须包含玩家匹配，以及其特定于玩家的属性之前，必须创建由**ticketSessionRef**对象引用会话。 每个玩家必须创建或加入针对将相关的匹配属性添加到会话的 MPSD 会话。 匹配属性均放置在每个玩家上调用 matchAttrs 的自定义属性字段。
+可以创建匹配票证，并将该会话必须包含的玩家以进行匹配，以及其特定于玩家的属性之前，必须创建由**ticketSessionRef**对象引用会话。 每个玩家必须创建或加入针对 MPSD，将相关的匹配属性添加到会话的会话。 匹配属性均放置在一个名为每个玩家上 matchAttrs 的自定义属性字段。
 
 创建或加入请求提交到**http://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** 和可能如下所示：
 
@@ -124,7 +124,7 @@ ms.locfileid: "3880545"
 ```
 
 
-会话已创建后，游戏可以调用匹配服务将为该会话创建票证。
+一旦创建会话，游戏可以调用匹配服务将为该会话创建票证。
 
 
 > [!NOTE] 
@@ -159,8 +159,8 @@ POST /serviceconfigs/{scid}/hoppers/{hoppername}
 
 | 成员| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 票证 Id| GUID| 创建票证的 ID。|
-| waitTime| 32 位有符号整数| 平均等待时间漏斗 （不可或缺的秒数）。|
+| 票证 Id| GUID| 正在创建票证的 ID。|
+| waitTime| 32 位有符号的整数| 平均等待时间漏斗 （不可或缺的秒数）。|
 
 
 ```cpp

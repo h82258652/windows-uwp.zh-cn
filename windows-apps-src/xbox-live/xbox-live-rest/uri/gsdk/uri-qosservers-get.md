@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a4787bf6b139d1a638ec783c0293d70a8ee239
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880810"
+ms.locfileid: "3929384"
 ---
 # <a name="get-qosservers"></a>获取 (/ qosservers)
-URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4EBB)
   * [所需的响应标头](#ID4EUC)
@@ -37,7 +37,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求，将需要以下表中所示的标头。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | 
@@ -63,12 +63,12 @@ gameserverds.xboxlive.com
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | qosservers| 服务器信息的数组。| 
-| serverFqdn| 服务器完全限定的域名。| 
+| serverFqdn| 服务器的完全限定的域名。| 
 | serverSecureDeviceAddress| 服务器的安全设备地址。| 
 | targetLocation| 服务器的地理位置。| 
  

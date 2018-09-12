@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f9cc70b51809b1722db875580d6a9ad60c15acf0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880432"
+ms.locfileid: "3927830"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
-允许执行团队以访问指定的用户的信誉评分。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
+使访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
  
   * [URI 参数](#ID4EV)
  
@@ -39,7 +39,7 @@ ms.locfileid: "3880432"
 
 [POST (/users/xuid({xuid})/resetreputation)](uri-usersxuidresetreputationpost.md)
 
-&nbsp;&nbsp;允许执行团队后 （例如） 帐户劫持将指定的用户的信誉评分设置为某些任意值。
+&nbsp;&nbsp;启用后 （例如） 帐户劫持某些任意值设置指定的用户的信誉评分，强制执行团队。
  
 <a id="ID4E6B"></a>
 

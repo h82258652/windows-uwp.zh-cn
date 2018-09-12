@@ -1,9 +1,9 @@
 ---
-title: 获取 （/users/ {ownerId} / 人员/避免）
+title: 获取 （/users/ {ownerId} / 人/避免）
 assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
 author: KevinAsgari
-description: " 获取 （/users/ {ownerId} / 人员/避免）"
+description: " 获取 （/users/ {ownerId} / 人/避免）"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880908"
+ms.locfileid: "3927824"
 ---
-# <a name="get-usersowneridpeopleavoid"></a>获取 （/users/ {ownerId} / 人员/避免）
+# <a name="get-usersowneridpeopleavoid"></a>获取 （/users/ {ownerId} / 人/避免）
 获取用户避免列表。
 
   * [备注](#ID4EQ)
@@ -34,7 +34,7 @@ ms.locfileid: "3880908"
 
 ## <a name="remarks"></a>备注
 
-如果指定目标，仅返回该用户，如果它们是在阻止列表中，也可以为空如果它们不。
+如果给定目标，仅返回该用户，如果它们不在阻止列表中，也可以为空如果它们不。
 
 <a id="ID4EZ"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "3880908"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 所访问的资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
 
 <a id="ID4EEB"></a>
 
@@ -52,7 +52,7 @@ ms.locfileid: "3880908"
 
 使用授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- |
-| Xuid| 64 位有符号整数| 是| 1234567890|
+| Xuid| 64 位有符号的整数| 是| 1234567890|
 
 <a id="ID4EJC"></a>
 
@@ -69,11 +69,11 @@ ms.locfileid: "3880908"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 成功检索会话。|
+| 200| “确定”| 已成功检索会话。|
 | 400| 错误请求| URI 中指定的目标 ID 不正确。|
 | 403| 已禁止| URI 中指定的所有者不是经过身份验证的用户。|
 | 404| 找不到| URI 中指定的所有者不存在。|
@@ -122,4 +122,4 @@ ms.locfileid: "3880908"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 人员/避免](uri-privacyusersxuidpeopleavoid.md)
+[/users/ {ownerId} / 人/避免](uri-privacyusersxuidpeopleavoid.md)

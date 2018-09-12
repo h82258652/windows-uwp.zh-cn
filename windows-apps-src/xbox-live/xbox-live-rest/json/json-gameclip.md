@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 047f7287578f52591c48ee059e72efb559b41c87
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880588"
+ms.locfileid: "3929984"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -34,20 +34,20 @@ GameClip 对象具有以下规范。
 | <b>dateRecorded</b>| DateTime| 日期和时间开始录制，采用 UTC （ISO 8601 格式）。| 
 | <b>lastModified</b>| DateTime| 上次修改时间的游戏剪辑或其元数据，采用 UTC （ISO 8601 格式）。| 
 | <b>userCaption</b>| 字符串| 用户输入非本地化字符串的游戏剪辑。| 
-| <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并将逗号分隔的如果是这样。| 
+| <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并且将为以逗号分隔的如果是这样。| 
 | <b>源</b>| GameClipSource| 如何确定该剪辑的源。| 
 | <b>可见性</b>| GameClipVisibility| 游戏剪辑一旦发布在系统中的可见性。| 
 | <b>durationInSeconds</b>| 32 位无符号的整数| 持续时间的游戏剪辑以秒为单位。| 
 | <b>scid</b>| 字符串| 到游戏剪辑相关联的 SCID。| 
-| <b>rating</b>| 双精度浮点数| 与游戏剪辑，范围介于 0.0 到 5.0 中评分。| 
+| <b>rating</b>| 双精度浮点数| 与游戏剪辑，范围介于 0.0 到 5.0 中相关评分。| 
 | <b>ratingCount</b>| 32 位无符号的整数| 此代码片段进行分级次数。| 
-| <b>视图</b>| 32 位无符号的整数| 游戏剪辑关联的视图的数量。| 
+| <b>视图</b>| 32 位无符号的整数| 与游戏剪辑相关的视图数。| 
 | <b>titleData</b>| 字符串| 特定于游戏的属性包中。| 
 | <b>titleData</b>| 字符串| 特定于控制台的属性包中。| 
 | <b>缩略图</b>| GameClipThumbnail 的数组| GameClipThumbnail 对象数组。| 
 | <b>gameClipUris</b>| GameClipUri 的数组| GameClipUri 对象数组。| 
 | <b>xuid</b>| 字符串| 游戏剪辑，作为字符串封送的所有者的 XUID。| 
-| <b>clipName</b>| 字符串| 本地化的版本的基于将请求作为输入区域设置的剪辑的名称查找从标题管理系统。| 
+| <b>clipName</b>| 字符串| 该剪辑的名称，基于将请求作为输入区域设置的本地化的版本从标题管理系统中查找。| 
   
 <a id="ID4ERH"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f6bcc90cc9758540bd7688e2d54a9f31262116d9
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880431"
+ms.locfileid: "3927700"
 ---
 # <a name="put-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a>PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 将文件上传。 数据类型 json 不支持多块上传。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -37,16 +37,16 @@ ms.locfileid: "3880431"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家的发出请求。| 
-| scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （甚至最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9) 的下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
+| scid| guid| 要查找的服务配置 ID。| 
+| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （达且包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头无效或不存在，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头无效或不存在，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4ERB"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "3880431"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| clientFileTime| DateTime| 日期/时间的任何客户端上的文件最后一次上载文件。| 
+| clientFileTime| DateTime| 日期/时间任何客户端上的文件的最后一次上载文件。| 
 | 显示名称| 字符串| 应该向用户显示的文件的名称。| 
   
 <a id="ID4EXC"></a>
@@ -66,7 +66,7 @@ ms.locfileid: "3880431"
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希]。[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建的授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EAE"></a>
 
@@ -75,7 +75,7 @@ ms.locfileid: "3880431"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 指定必须与要完成此操作的现有项目 ETag。| 
+| If-Match| 指定必须匹配要完成此操作的现有项目 ETag。| 
 | If-None-Match| 指定 ETag，不匹配任何现有项目，以完成此操作。| 
   
 <a id="ID4EDF"></a>
@@ -83,34 +83,34 @@ ms.locfileid: "3880431"
  
 ## <a name="request-body"></a>请求正文 
  
-请求正文中包含要加载的文件的完整内容。 
+请求正文中包含正在上传的文件的完整内容。 
   
 <a id="ID4EOF"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
 | 201| 已创建 | 创建实体。| 
-| 400| 错误请求 | 服务无法理解格式不正确的请求。 通常是一个无效的参数。| 
+| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求所花的时间太长，无法完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
+| 408| 请求超时 | 请求时间太长，才能完成。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EBDAC"></a>
 
  
 ## <a name="response-body"></a>响应正文 
  
-如果成功上传，{} 响应返回 201。
+如果成功上传，{} 响应被返回 201。
   
 <a id="ID4EODAC"></a>
 

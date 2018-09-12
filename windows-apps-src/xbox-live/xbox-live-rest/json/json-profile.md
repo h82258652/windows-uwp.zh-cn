@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880946"
+ms.locfileid: "3930080"
 ---
 # <a name="profile-json"></a>配置文件 (JSON)
 用户的个人配置文件设置。 
@@ -32,8 +32,8 @@ ms.locfileid: "3880946"
 | AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应显示在应用中使用的用户的标识字符串。| 
 | GameDisplayName| 字符串| 用于在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应显示在游戏中使用的用户的标识字符串。| 
 | Gamertag| 字符串| 用户的玩家代号。| 
-| AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （见下方）。| 
-| GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下方）。| 
+| AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （如下所示）。| 
+| GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （如下所示）。| 
 | AccountTier| 字符串| 用户有何种帐户？ 金牌，银牌或 FamilyGold？| 
 | TenureLevel| 32 位无符号的整数| 用户已使用 Xbox Live 多少年？| 
 | 玩家分数| 32 位无符号的整数| 玩家分数的用户。| 
@@ -45,7 +45,7 @@ ms.locfileid: "3880946"
 
 
  
-原始 URL 是可调整大小的 URL。 它可以用于指定以下其中一项调整大小和格式使用通过将`&format={format}&w={width}&h={height}`到 URI:
+原始 URL 是可调整大小的 URL。 它可以用于指定以下值之一调整大小和格式使用通过附加`&format={format}&w={width}&h={height}`为该 URI:
  
 格式： png
  

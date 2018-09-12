@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b451d5aca9e855e204cb1178bf8ae30fb33ed015
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880668"
+ms.locfileid: "3930554"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} {会话名} /sessions/ /servers/ {server name}
 支持删除操作，以删除指定的会话的服务器。
@@ -27,7 +27,7 @@ ms.locfileid: "3880668"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。|
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
 | 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。| 
 

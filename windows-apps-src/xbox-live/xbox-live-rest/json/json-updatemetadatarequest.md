@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b4a7b971647304e08fe52e7696be9fcd39e584
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880726"
+ms.locfileid: "3931467"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
 应更新剪辑元数据。 
@@ -38,7 +38,7 @@ UpdateMetadataRequest 对象具有以下规范。
  
 ## <a name="sample-json-syntax"></a>JSON 语法示例
  
-更改用户剪辑名称和可见性：
+更改剪辑用户名和可见性：
  
 
 ```json
@@ -50,7 +50,7 @@ UpdateMetadataRequest 对象具有以下规范。
 ```
 
  
-更改只需标题属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
+更改只是标题属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
  
 
 ```json

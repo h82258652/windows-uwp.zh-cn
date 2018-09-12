@@ -1,9 +1,9 @@
 ---
-title: /users/ {ownerId} / 人员/xuid
+title: /users/ {ownerId} / 人/xuid
 assetID: db2faec7-9f6c-f240-586a-45d6ed596e88
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuids.html
 author: KevinAsgari
-description: " /users/ {ownerId} / 人员/xuid"
+description: " /users/ {ownerId} / 人/xuid"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 715659b8bb001697fc9386be6ec587b3682793c5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881324"
+ms.locfileid: "3931432"
 ---
-# <a name="usersowneridpeoplexuids"></a>/users/ {ownerId} / 人员/xuid
+# <a name="usersowneridpeoplexuids"></a>/users/ {ownerId} / 人/xuid
 访问用户的 XUID 调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -30,7 +30,7 @@ ms.locfileid: "3881324"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| ownerId| 字符串| 所访问的资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。| 
   
 <a id="ID4EOB"></a>
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bf1a09144bec9cddda1ae2fd9656dc6dc8c51d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880678"
+ms.locfileid: "3928920"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
-包含聚合的数据的用户的适用性会话。 
+为用户的适用性会话包含聚合的数据。 
 <a id="ID4EN"></a>
 
  
@@ -29,10 +29,10 @@ AggregateSessionsResponse 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| totalDurationInSeconds| 64 位有符号整数| 以秒为单位聚合时段的会话的总持续时间。| 
-| totalJoules| 64 位有符号整数| 总能耗刻录-以焦耳为单位，聚合时段。 | 
-| totalSessions| 64 位有符号整数| 聚合时段的会话的总数。| 
-| weightedAverageMets| 单精度浮点数 | 加权聚合时段的任务 （满足） 值的平均新陈代谢等效项。 满足值是相对于静态的个人新陈代谢速率活动期间个人新陈代谢率的比率。 因为停留新陈代谢率是个人的权重，无论 1.0 和满足的值为相对于个人停留新陈代谢速率，它们可以用于比较正在执行的不同粗细个人活动的强度。| 
+| totalDurationInSeconds| 64 位有符号的整数| 以秒为单位聚合时段的会话的总持续时间。| 
+| totalJoules| 64 位有符号的整数| 总能耗刻录 — 以焦耳为单位 — 聚合时段。 | 
+| totalSessions| 64 位有符号的整数| 聚合时段的会话的总数。| 
+| weightedAverageMets| 单精度浮点数 | 聚合时段的任务 （满足） 值的加权平均值新陈代谢等效。 满足值是相对于静态的个人新陈代谢速率活动期间个人新陈代谢率的比率。 因为休眠新陈代谢率是个人的权重，无论 1.0 和满足值是相对于个人休眠新陈代谢速率，它们可以用于比较的活动所执行的不同粗细的个人的强度。| 
   
 <a id="ID4ESC"></a>
 

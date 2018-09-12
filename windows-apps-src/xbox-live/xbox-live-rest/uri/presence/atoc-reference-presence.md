@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c2a34d47f894e2ac9aeaf6228c8ebd41348306
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880915"
+ms.locfileid: "3930980"
 ---
 # <a name="presence-uris"></a>存在 Uri
  
-本部分提供了从 Xbox Live 服务*状态*的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供了从 Xbox Live 服务的*状态*的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
  
-仅运行的 Xbox 360 上、 在 Windows Phone 设备上，或在 Windows 上的游戏均可使用此服务。
+仅在 Xbox 360 上、 在 Windows Phone 设备上，或在 Windows 上运行的游戏可以使用此服务。
  
 这些 Uri 的域是 userpresence.xboxlive.com。
  

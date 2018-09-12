@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ddecacdf77305b6c9449bd5e903a5e4c0fa74d7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881466"
+ms.locfileid: "3927948"
 ---
 # <a name="reward-json"></a>奖励 (JSON)
 与成就关联的奖励。
@@ -29,10 +29,10 @@ ms.locfileid: "3881466"
 
 | 成员| 类型| 说明|
 | --- | --- | --- |
-| name| 字符串| 面向用户的奖励名称。|
+| name| 字符串| 奖励面向用户的名称。|
 | description| 字符串| 奖励面向用户的描述。|
 | 值| 字符串| 奖励的值。|
-| type| RewardType 枚举| 奖励类型： <ul><li>无效 (0): 未知和不受支持的奖励类型已配置。</li><li>玩家分数 (1): 奖励将点添加到玩家的玩家分数。</li><li>inApp (2): 定义和游戏提供奖励。</li><li>插图 (3): 奖励是数字资产。</li></ul> | 
+| type| RewardType 枚举| 奖励类型： <ul><li>无效 (0): 未知和不受支持的奖励类型已配置。</li><li>玩家分数 (1): 奖励将点添加到玩家的玩家分数。</li><li>inApp (2): 定义和游戏提供奖励。</li><li>插图 (3): 奖励是一项数字资产。</li></ul> | 
 | valueType| ProgressValueDataType 枚举| 值的类型。 有关详细信息，请参阅[要求 (JSON)](json-requirement.md) 。|
 
 <a id="ID4EBD"></a>

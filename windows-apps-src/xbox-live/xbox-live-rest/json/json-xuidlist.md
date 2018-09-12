@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3853140ce5e7c3f7710f489709945fc70b6703b4
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880665"
+ms.locfileid: "3929504"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 要对其执行操作的 Xuid 列表。 
@@ -29,7 +29,7 @@ XuidList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 字符串的数组| Xbox 用户 ID (XUID) 值的应执行的操作，或应返回数据的列表。| 
+| xuid| 字符串的数组| 在其应执行的操作，或应返回数据的 Xbox 用户 ID (XUID) 值的列表。| 
   
 <a id="ID4EMB"></a>
 
@@ -67,6 +67,6 @@ XuidList 对象具有以下规范。
  
 ##### <a name="reference"></a>参考 
 
-[POST (/users/ {ownerId} / 人员/xuid)](../uri/people/uri-usersowneridpeoplexuidspost.md)
+[POST (/users/ {ownerId} / 人/xuid)](../uri/people/uri-usersowneridpeoplexuidspost.md)
 
    

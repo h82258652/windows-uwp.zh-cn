@@ -1,9 +1,9 @@
 ---
-title: GET （/users/ {ownerId} / 人员/静音）
+title: 获取 （/users/ {ownerId} / 人/静音）
 assetID: 49b6c830-95f7-3200-0e46-0a1af573971c
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemuteget.html
 author: KevinAsgari
-description: " GET （/users/ {ownerId} / 人员/静音）"
+description: " 获取 （/users/ {ownerId} / 人/静音）"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: af9f52e04a163e0839017e1d051653d968df816d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880526"
+ms.locfileid: "3929628"
 ---
-# <a name="get-usersowneridpeoplemute"></a>GET （/users/ {ownerId} / 人员/静音）
+# <a name="get-usersowneridpeoplemute"></a>获取 （/users/ {ownerId} / 人/静音）
 获取用户的静音的列表。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4EZ)
-  * [资源的隐私设置的效果](#ID4EEB)
+  * [资源上的隐私设置的效果](#ID4EEB)
   * [授权](#ID4ENB)
   * [需的请求标头](#ID4ESC)
   * [请求正文](#ID4EPE)
@@ -36,7 +36,7 @@ ms.locfileid: "3880526"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，则此 URI 将返回仅该用户，如果用户是在静音的列表中，也可以为空，如果用户不是。
+如果给定目标，则此 URI 将返回只允许该用户，如果用户是在静音的列表中，也可以为空，如果用户不是。
 
 <a id="ID4EZ"></a>
 
@@ -45,12 +45,12 @@ ms.locfileid: "3880526"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 所访问的资源的用户的标识符。 可能的值为"我" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"me" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
 
 <a id="ID4EEB"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
 
 无。
 
@@ -61,7 +61,7 @@ ms.locfileid: "3880526"
 
 使用授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- |
-| Xuid| 64 位有符号整数| 是| 1234567890|
+| Xuid| 64 位有符号的整数| 是| 1234567890|
 
 <a id="ID4ESC"></a>
 
@@ -71,7 +71,7 @@ ms.locfileid: "3880526"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权 | 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>Xauth=&lt;authtoken></code>。 最大大小： none。|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到服务验证该标头，授权令牌中的声明的有效性后等。 示例值： <code>1</code>， <code>vnext</code>。 最大大小： none。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，授权令牌中的声明的有效性，依此类推。 示例值： <code>1</code>， <code>vnext</code>。 最大大小： none。|
 | 接受| 字符串| 内容类型可接受。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4EPE"></a>
@@ -86,7 +86,7 @@ ms.locfileid: "3880526"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -116,7 +116,7 @@ ms.locfileid: "3880526"
 
 ### <a name="sample-response"></a>示例响应
 
-请参阅[用户列表](../../json/json-userlist.md)。
+查看[用户列表](../../json/json-userlist.md)。
 
 
 ```cpp
@@ -141,4 +141,4 @@ ms.locfileid: "3880526"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 人员/静音](uri-privacyusersowneridpeoplemute.md)
+[/users/ {ownerId} / 人/静音](uri-privacyusersowneridpeoplemute.md)

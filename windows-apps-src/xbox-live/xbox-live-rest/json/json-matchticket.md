@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9201f6244db108d548ebb9e484380b7d0eb38e3a
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880664"
+ms.locfileid: "3928522"
 ---
 # <a name="matchticket-json"></a>MatchTicket (JSON)
 表示玩家用于查找其他玩家通过多人游戏会话目录 (MPSD) 的匹配票证的 JSON 对象。 
@@ -30,10 +30,10 @@ MatchTicket JSON 对象具有以下规范。
 | --- | --- | --- | 
 | serviceConfig| GUID| 服务配置标识符 (SCID) 的会话。| 
 | hopperName| 字符串| 应在其中放置此票证的漏斗的名称。| 
-| giveUpDuration| 32 位有符号整数| 最大的等待时间 （不可或缺的秒数）。| 
-| preserveSession| 枚举| 指示会话是否必须作为到其中以匹配会话重复使用的值。 可能的值为"始终"，或"从不"。 | 
-| ticketSessionRef| MultiplayerSessionReference| 会话的玩家或组当前正在播放的<b>MultiplayerSessionReference</b>对象。 此成员始终是必需的。 | 
-| ticketAttributes| 对象数组| 玩家的用户提供属性和有关票证的值的集合。| 
+| giveUpDuration| 32 位有符号的整数| 最大的等待时间 （不可或缺的秒数）。| 
+| preserveSession| 枚举| 指示会话是否必须为以匹配到会话重复使用的值。 可能的值为"始终"或"从不"。 | 
+| ticketSessionRef| MultiplayerSessionReference| <b>MultiplayerSessionReference</b>对象中的玩家或组当前正在播放的会话。 此成员始终是必需的。 | 
+| ticketAttributes| 对象数组| 玩家的用户提供属性和值有关票证集合。| 
 | 玩家| 对象数组| 玩家对象的集合，每个都有一个属性包的用户提供的属性。 | 
   
 <a id="ID4EW"></a>
