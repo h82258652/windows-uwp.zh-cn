@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9865d626fe3c07645c8cb51f9bd5fe2274bf23f3
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880774"
+ms.locfileid: "3935365"
 ---
 # <a name="gameclipstate-enumeration"></a>GameClipState 枚举
 详细介绍 GameClipState 枚举。 
@@ -33,7 +33,7 @@ ms.locfileid: "3880774"
 | 已处理 | 游戏剪辑已完成所有处理。| 
 | Processing| 正在处理游戏剪辑 （编码，缩略图等。）。| 
 | 发布| 正在发布游戏剪辑资产。| 
-| Published| 发布游戏剪辑资产 – 此状态指示它是所有组以查看。| 
+| Published| 发布游戏剪辑资产 – 此状态表明它是所有的组，以查看。| 
 | 标记| 被用于强制标记游戏剪辑。| 
 | 禁止| 已禁止游戏剪辑，但尚未删除。| 
 | Uploaded| 游戏剪辑已完成上传。| 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 44102cb2ee1c996be9d0b42626f11a64ffb5c377
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880651"
+ms.locfileid: "3933175"
 ---
 # <a name="peoplelist-json"></a>PeopleList (JSON)
 [用户](json-person.md)对象的集合。 
@@ -29,8 +29,8 @@ PeopleList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 人脉| [人](json-person.md)的数组| [人](json-person.md)对象构成联系人列表。| 
-| totalCount| 32 位无符号的整数| 在组中可用的[人](json-person.md)对象总数。 对于页面因为它代表整个集，而不只是最新的响应的大小，客户端可以使用此值。 示例值： 680。| 
+| 人脉| [人](json-person.md)的数组| [Person](json-person.md)对象构成联系人列表。| 
+| totalCount| 32 位无符号的整数| 可用设置中的[人员](json-person.md)对象总数。 对于页面，因为它代表整个集，而不只是最新的响应的大小，客户端可以使用此值。 示例值： 680。| 
   
 <a id="ID4EAC"></a>
 
@@ -83,8 +83,8 @@ PeopleList 对象具有以下规范。
  
 ##### <a name="reference"></a>参考 
 
-[获取 (/users/ {ownerId} / 用户)](../uri/people/uri-usersowneridpeopleget.md)
+[获取 (/users/ {ownerId} / 个人)](../uri/people/uri-usersowneridpeopleget.md)
 
- [POST (/users/ {ownerId} / 人员/xuid)](../uri/people/uri-usersowneridpeoplexuidspost.md)
+ [POST (/users/ {ownerId} / 人/xuid)](../uri/people/uri-usersowneridpeoplexuidspost.md)
 
    

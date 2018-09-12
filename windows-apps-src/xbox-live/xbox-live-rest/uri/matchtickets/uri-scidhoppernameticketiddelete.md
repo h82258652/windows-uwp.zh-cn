@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881427"
+ms.locfileid: "3932681"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>删除 (/serviceconfigs/ {scid} {hoppername} /hoppers/ /tickets/ {票证 id})
 
 删除匹配票证。
 
 > [!IMPORTANT]
-> 此方法用于使用合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "3881427"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法从在服务配置 ID (SCID) 级别命名漏斗中删除指定的票证 ID。 此方法可以由**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**包装。  
+此 HTTP/REST 方法从在服务配置 ID (SCID) 级别的命名漏斗删除指定的票证 ID。 此方法可以通过**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**换行。  
 <a id="ID4E2"></a>
 
 
@@ -64,7 +64,7 @@ ms.locfileid: "3881427"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回 HTTP 状态代码应用于 MPSD。  
+该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
 <a id="ID4EXC"></a>
 
 

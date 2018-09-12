@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f43dfe64f515772509c5c304b728a896a58f5076
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881145"
+ms.locfileid: "3934605"
 ---
 # <a name="mediarecord-json"></a>MediaRecord (JSON)
  
@@ -31,7 +31,7 @@ MediaRecord 对象具有以下规范。
 | --- | --- | --- | 
 | id| 字符串| 使用必应目录或提供商目录的媒体的标识符。| 
 | idType| 字符串| 如何解释媒体标识符。 可能的值包括"必应"和"提供程序"。| 
-| name| 字符串| 本地化的媒体内容的名称。| 
+| name| 字符串| 媒体内容的本地化的名称。| 
   
 <a id="ID4ECC"></a>
 

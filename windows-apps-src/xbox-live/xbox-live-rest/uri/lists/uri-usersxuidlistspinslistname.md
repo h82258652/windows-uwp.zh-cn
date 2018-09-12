@@ -1,9 +1,9 @@
 ---
-title: / 用户/xuid (xuid) / 列出了/PIN / {listname}
+title: / 用户/xuid (xuid) / 列出/PIN / {listname}
 assetID: b6421b11-fcd1-cfdb-c1fa-6cab3dab89d9
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistname.html
 author: KevinAsgari
-description: " / 用户/xuid (xuid) / 列出了/PIN / {listname}"
+description: " / 用户/xuid (xuid) / 列出/PIN / {listname}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 052a83f47dc2d5b692c811850e41381c4745815c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881268"
+ms.locfileid: "3934197"
 ---
-# <a name="usersxuidxuidlistspinslistname"></a>/ 用户/xuid (xuid) / 列出了/PIN / {listname}
+# <a name="usersxuidxuidlistspinslistname"></a>/ 用户/xuid (xuid) / 列出/PIN / {listname}
 访问列表中的项目。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -31,8 +31,8 @@ ms.locfileid: "3881268"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID)。| 
-| listtype| 字符串| 列表 （如何使用和其工作原理） 的类型。 始终"固定"这些相关的方法。| 
-| listname| 字符串| 列表的名称 （给定 listtype 执行哪些列表）。 始终为"XBLPins"Pin 中的项。| 
+| listtype| 字符串| 列表 （用法和其工作原理） 的类型。 始终"固定"对于这些相关的方法。| 
+| listname| 字符串| 列表的名称 （给定 listtype 执行哪些列表）。 始终为"XBLPins"的 Pin 中的项目。| 
   
 <a id="ID4EGC"></a>
 

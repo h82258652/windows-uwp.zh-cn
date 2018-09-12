@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f67cfd1359a55d109d6e110ec6e5257cb34f3bb
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881099"
+ms.locfileid: "3934959"
 ---
 # <a name="serviceconfigsscidsessiontemplates"></a>/serviceconfigs/{scid}/sessiontemplates
-支持获取操作以检索一组的 MPSD 会话模板。 
+支持 GET 操作以检索一组的 MPSD 会话模板。 
 <a id="ID4EO"></a>
 
  
@@ -32,7 +32,7 @@ sessiondirectory.xboxlive.com
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。| 
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
   
 <a id="ID4EPB"></a>
 
@@ -41,7 +41,7 @@ sessiondirectory.xboxlive.com
 
 [获取 (/serviceconfigs/ {scid} / sessiontemplates)](uri-serviceconfigsscidsessiontemplatesget.md)
 
-&nbsp;&nbsp;检索一组的 MPSD 会话模板。
+&nbsp;&nbsp;检索 MPSD 会话模板的一组。
  
 <a id="ID4EZB"></a>
 

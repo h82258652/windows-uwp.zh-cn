@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad40749e2ef4ab19ba8ef181f9f39c1196b4682
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881002"
+ms.locfileid: "3931637"
 ---
 # <a name="jsonusersxuidxuidscidssciddatapath"></a>/json/users/xuid({xuid}) /scids/ {scid} /data/ {路径}
-列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -30,8 +30,8 @@ ms.locfileid: "3881002"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家的发出请求。| 
-| scid| guid| 若要查找的服务配置 ID。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
+| scid| guid| 要查找的服务配置 ID。| 
 | path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
   
 <a id="ID4EFC"></a>
@@ -41,7 +41,7 @@ ms.locfileid: "3881002"
 
 [GET](uri-jsonusersxuidscidssciddatapath-get.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。
+&nbsp;&nbsp;列出了在指定路径的文件信息。
  
 <a id="ID4EPC"></a>
 

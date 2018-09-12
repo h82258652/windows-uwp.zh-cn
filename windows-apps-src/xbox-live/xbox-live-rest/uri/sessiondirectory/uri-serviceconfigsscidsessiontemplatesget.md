@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ebcc685b2828a5e7639b9a117fe4aed848b60b71
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880604"
+ms.locfileid: "3935349"
 ---
 # <a name="get-serviceconfigsscidsessiontemplates"></a>获取 (/serviceconfigs/ {scid} / sessiontemplates)
-检索一组的 MPSD 会话模板。
+检索 MPSD 会话模板的一组。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
   * [URI 参数](#ID4ET)
   * [HTTP 状态代码](#ID4E5)
@@ -43,7 +43,7 @@ ms.locfileid: "3880604"
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
-该服务返回 HTTP 状态代码应用于 MPSD。  
+该服务返回 HTTP 状态代码，因为它适用于 MPSD。  
 <a id="ID4EFB"></a>
 
 

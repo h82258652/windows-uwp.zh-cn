@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bed703722b6c2d03cbc7b5e9f1b8be08ef38c7f0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880768"
+ms.locfileid: "3936091"
 ---
 # <a name="privacy-uris"></a>隐私 Uri
  
-本部分提供了从 Xbox Live 服务的*隐私*的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供了从出于*隐私*的 Xbox Live 服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
  
 仅在 Windows 8 上运行的游戏，Xbox 360 或 Windows Phone 上设备可以使用此服务。
  
@@ -31,13 +31,13 @@ ms.locfileid: "3880768"
  
 ## <a name="in-this-section"></a>本部分内容
 
-[/users/ {ownerId} / 人员/静音](uri-privacyusersowneridpeoplemute.md)
+[/users/ {ownerId} / 人/静音](uri-privacyusersowneridpeoplemute.md)
 
 &nbsp;&nbsp;访问用户的静音列表。
 
 [/users/ {requestorId} / 权限/验证](uri-privacyusersrequestoridpermissionvalidate.md)
 
-[/users/ {ownerId} / 人员/避免](uri-privacyusersxuidpeopleavoid.md)
+[/users/ {ownerId} / 人/避免](uri-privacyusersxuidpeopleavoid.md)
 
 &nbsp;&nbsp;访问用户避免列表
  

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0af4b1d90ebee7292f935d68b2d401e7a0104a86
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880838"
+ms.locfileid: "3933927"
 ---
 # <a name="thumbnailtype-enumeration"></a>ThumbnailType 枚举
 详细介绍 ThumbnailType 枚举。 
@@ -28,6 +28,6 @@ ms.locfileid: "3880838"
 | <b>枚举器</b>| <b>说明</b>| 
 | --- | --- | 
 | 无| 未指定缩略图的类型。 这是在大多数情况下无效的值。| 
-| 小| 指定小缩略图。 小是 424 像素高度 208 像素的宽度。| 
+| 小| 指定较小缩略图。 小是 424 像素高度 208 像素的宽度。| 
 | 大| 指定较大的缩略图。 大是 856 像素高度 424 像素的宽度。| 
   

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8c61d8afae6788f2f99e4e2beff262c011fc60
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880666"
+ms.locfileid: "3934245"
 ---
 # <a name="eds-tables"></a>EDS 表
 
@@ -35,7 +35,7 @@ ms.locfileid: "3880666"
 | GameType| Xbox360Game、 XboxGameTrial、 Xbox360GameContent、 Xbox360GameDemo、 XboxTheme、 XboxOriginalGame、 XboxGamerTile、 XboxArcadeGame、 XboxGameConsumable、 XboxGameVideo、 XboxGameTrailer、 XboxBundle、 XboxXnaCommunityGame、 XboxMarketplace、 AvatarItem，MobileGame、 XboxMobilePDLC、 XboxMobileConsumable、 WebGame、 MetroGame、 MetroGameContent、 MetroGameConsumable、 DGame、 DGameDemo、 DConsumable、 DDurable|
 | AppType| XboxApp DApp|
 | MovieType| 电影|
-| TVType| TVShow （一次性电视节目） TVEpisode，TVSeries TVSeason|
+| TVType| TVShow （一次性电视节目），TVEpisode，TVSeries TVSeason|
 | MusicType| 唱片集，跟踪，MusicVideo|
 | MusicArtistType| MusicArtist|
 | WebVideoType| WebVideo WebVideoCollection|

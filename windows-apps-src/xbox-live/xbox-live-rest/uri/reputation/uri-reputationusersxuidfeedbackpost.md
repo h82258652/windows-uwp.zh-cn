@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880707"
+ms.locfileid: "3932897"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
-如果你希望在你的游戏，相较于使用 shell 中添加反馈选项，则使用从你的游戏。 这些 Uri 的域是`reputation.xboxlive.com`。
+如果你希望在游戏中，而不是使用 shell 添加反馈选项，用于从你的游戏。 这些 Uri 的域是`reputation.xboxlive.com`。
  
   * [URI 参数](#ID4EZ)
   * [需的请求标头](#ID4EEB)
@@ -46,7 +46,7 @@ ms.locfileid: "3880707"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 101。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 101。| 
   
 <a id="ID4ENC"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "3880707"
  
 ### <a name="prohibited-members"></a>禁止的成员 
  
-所有其他成员被禁止在请求中。
+所有其他成员禁止在请求中。
   
 <a id="ID4ETD"></a>
 
@@ -101,7 +101,7 @@ ms.locfileid: "3880707"
 | <b>标头</b>| <b>值</b>| <b>Deacription</b>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 101| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希]。[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。| 
 内容类型| 
 应用程序/json| 
 提交的数据的类型。| 
@@ -118,15 +118,15 @@ ms.locfileid: "3880707"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 204| 无内容| 请求已完成，但没有要返回的内容。| 
+| 204| 任何内容| 请求已完成，但没有要返回的内容。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 406| 不允许| 不支持资源版本。| 
-| 408| 请求超时| 请求所花的时间太长，无法完成。| 
+| 408| 请求超时| 请求时间太长，才能完成。| 
 | 409| 冲突| 延续令牌不再有效。| 
   
 <a id="ID4EZH"></a>
@@ -134,7 +134,7 @@ ms.locfileid: "3880707"
  
 ## <a name="response-body"></a>响应正文 
  
-如果在调用成功，此响应中不返回任何对象。 否则，该服务返回[ServiceError](../../json/json-serviceerror.md)对象。
+如果调用成功，此响应中不返回任何对象。 否则，该服务返回[ServiceError](../../json/json-serviceerror.md)对象。
   
 <a id="ID4EOAAC"></a>
 

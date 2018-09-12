@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7e61fe76fc0f322c93d55448d53ee6444ffec5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881094"
+ms.locfileid: "3936025"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me
 支持删除操作，以删除会话成员。
@@ -30,7 +30,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="remarks"></a>备注
 
-所有会话成员资源操作都需要 Xbox 用户 ID (XUID) 用户声明授权。
+所有会话成员资源操作都需要的 Xbox 用户 ID (XUID) 用户声明授权。
 
 <a id="ID4EAB"></a>
 
@@ -39,7 +39,7 @@ sessiondirectory.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。|
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
 | 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
 
@@ -48,7 +48,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有效的方法
 
-[删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/我)](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
+[删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me)](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
 
 &nbsp;&nbsp;从会话中删除成员。
 

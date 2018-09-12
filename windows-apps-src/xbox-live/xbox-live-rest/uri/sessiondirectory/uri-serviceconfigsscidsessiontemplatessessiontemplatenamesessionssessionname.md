@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 43054e909ce6e4a3d472a6a6480cd0812afa5ad4
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880473"
+ms.locfileid: "3931927"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名}
 支持创建和检索会话的 PUT 和 GET 操作。
@@ -32,7 +32,7 @@ sessiondirectory.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID)。 会话标识符的第 1 部分中。|
+| scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
 | 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。| 
 

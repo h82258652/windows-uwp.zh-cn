@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e27eada890bd616fb764ebea7bb43890df1eeb0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880960"
+ms.locfileid: "3934097"
 ---
 # <a name="usersmeinventory"></a>/users/me/inventory
-访问当前与提供的用户相关联的库存组。 这些 Uri 的域是`inventory.xboxlive.com`。
+访问当前与提供的用户相关联的清单的集。 这些 Uri 的域是`inventory.xboxlive.com`。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 （/用户/me/清单）](uri-inventoryget.md)
+[获取 （/用户/me/库存）](uri-inventoryget.md)
 
-&nbsp;&nbsp;提供了清单当前与返回给调用方提供的用户组。
+&nbsp;&nbsp;提供的一套当前与返回给调用方提供的用户相关联的清单。
  
 <a id="ID4E6"></a>
 

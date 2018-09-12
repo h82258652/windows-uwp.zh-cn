@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880881"
+ms.locfileid: "3932317"
 ---
 # <a name="additional-reference"></a>其他参考
 
-此部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 补充参考资料。
+本部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
 
 <a id="ID4EZ"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "3880881"
 
 [数据类型概述](datatypeoverview.md)
 
-&nbsp;&nbsp;介绍 Xbox Live 服务使用的标准标识相关的数据类型。
+&nbsp;&nbsp;介绍 Xbox Live 服务使用标准标识相关的数据类型。
 
 [辅助 EDS Api](eds-apis.md)
 
@@ -63,15 +63,15 @@ ms.locfileid: "3880881"
 
 [分页参数](pagingparameters.md)
 
-&nbsp;&nbsp;介绍在 Xbox Live 服务请求时可能会使用的分页参数。
+&nbsp;&nbsp;介绍了进行 Xbox Live 服务请求时可能会使用的分页参数。
 
-[标准 HTTP 请求和响应标头](httpstandardheaders.md)
+[标准的 HTTP 请求和响应标头](httpstandardheaders.md)
 
-&nbsp;&nbsp;介绍在 Xbox Live 服务请求时使用的标准 HTTP 标头。
+&nbsp;&nbsp;介绍了进行 Xbox Live 服务请求时使用的标准 HTTP 标头。
 
 [标准 HTTP 状态代码](httpstatuscodes.md)
 
-&nbsp;&nbsp;描述该服务返回的标准 HTTP 状态代码。
+&nbsp;&nbsp;描述了由该服务返回的标准 HTTP 状态代码。
 
 <a id="ID4ECC"></a>
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881035"
+ms.locfileid: "3934347"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>获取 (/titles/ {titleId} /sessions/ {sessionId} / allocationStatus)
-返回由其 sessionId sessionhost 的分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+返回由其 sessionId sessionhost 分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4E4)
   * [所需的响应标头](#ID4EEB)
@@ -44,16 +44,16 @@ ms.locfileid: "3881035"
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
 | 成员| 说明| 
 | --- | --- | 
 | description| 返回空字符串 （左中的向后兼容性）。| 
 | clusterId| 返回空字符串 （左中的向后兼容性）。| 
 | 主机名| 会话主机的 URL。| 
-| status| 表示排队、 已完成，或终止。| 
+| status| 指示排队、 已完成，或终止。| 
 | sessionHostId| 会话主机 id。| 
-| sessionId| （在分配时） 提供客户端会话 id。| 
+| sessionId| （在分配时） 提供的客户端会话 id。| 
 | secureContext| 安全设备地址。| 
 | portMappings| 该实例端口映射。| 
 | 区域| 实例的位置。| 
@@ -106,7 +106,7 @@ ms.locfileid: "3881035"
  
 收到以下响应代码时，游戏应仅重试对服务调用：
  
-   * 200 — 成功 
+   * 200-成功 
    * 400-请求包含无效参数 
    * 401-未授权 
    * 404-的主题作品 ID 或票证 ID 已无效，或未找到 

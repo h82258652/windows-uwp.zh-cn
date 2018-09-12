@@ -1,9 +1,9 @@
 ---
-title: GET (/users/xuid({xuid})/inbox/{messageId})
+title: 获取 (/users/xuid({xuid})/inbox/{messageId})
 assetID: d76563d0-2c74-0308-054b-762c80392a02
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageidget.html
 author: KevinAsgari
-description: " GET (/users/xuid({xuid})/inbox/{messageId})"
+description: " 获取 (/users/xuid({xuid})/inbox/{messageId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881017"
+ms.locfileid: "3935005"
 ---
-# <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
+# <a name="get-usersxuidxuidinboxmessageid"></a>获取 (/users/xuid({xuid})/inbox/{messageId})
 检索特定用户消息，将其标记为已在服务上的读的详细的消息文本。
 这些 Uri 的域是`msg.xboxlive.com`。
 
@@ -26,7 +26,7 @@ ms.locfileid: "3881017"
   * [URI 参数](#ID4EEB)
   * [授权](#ID4ERB)
   * [请求正文](#ID4E3B)
-  * [资源的隐私设置的效果](#ID4EJC)
+  * [资源上的隐私设置的效果](#ID4EJC)
   * [HTTP 状态代码](#ID4EUC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EUE)
 
@@ -35,11 +35,11 @@ ms.locfileid: "3881017"
 
 ## <a name="remarks"></a>备注
 
-在 get 操作仅可以执行的用户、 系统和 FriendRequest 消息类型。
+在 get 操作只能执行的用户、 系统和 FriendRequest 消息类型。
 
-此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新读/未读状态，直到用户注销并返回。
+此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新登录。
 
-此 API 支持的仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
+此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
 
 <a id="ID4EEB"></a>
 
@@ -68,31 +68,31 @@ ms.locfileid: "3881017"
 <a id="ID4EJC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
 
-仅可以检索用户邮件。
+仅可以检索自己用户的消息。
 
 <a id="ID4EUC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- |
 | 200| 成功。|
-| 400| 无法正确转换的 XUID。|
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。|
-| 404| 有效的 XUID 丢失，或消息 ID 找不到或正确地分析。|
-| 500| 常规的服务器端错误或消息类型获取无效。|
+| 400| XUID 不能正确转换。|
+| 403| 不能转换 XUID 或者找不到有效的 XUID 声明。|
+| 404| 有效的 XUID 是缺少，或使用消息 ID 找不到或正确地分析。|
+| 500| 常规服务器端错误或消息类型获取无效。|
 
 <a id="ID4EUE"></a>
 
 
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应
 
-如果调用成功，该服务将返回采用 JSON 格式的结果数据。 根对象是 UserMessageHeader 对象。
+如果调用成功，该服务将返回采用 JSON 格式的结果数据。 根对象是一个 UserMessageHeader 对象。
 
 #### <a name="usermessageheader"></a>UserMessageHeader
 
@@ -136,7 +136,7 @@ ms.locfileid: "3881017"
 
 #### <a name="error-response"></a>错误响应
 
-如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务环境的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
 
 | 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -160,4 +160,4 @@ ms.locfileid: "3881017"
 <a id="ID4EMEAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

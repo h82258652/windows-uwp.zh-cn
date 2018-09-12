@@ -1,9 +1,9 @@
 ---
-title: 在 JavaScript 对象表示法 (JSON) 对象中使用的枚举
+title: 使用枚举中的 JavaScript 对象表示法 (JSON) 对象
 assetID: 8aa53782-05fa-9980-87cd-0cac8346756e
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
 author: KevinAsgari
-description: " 在 JavaScript 对象表示法 (JSON) 对象中使用的枚举"
+description: " 使用枚举中的 JavaScript 对象表示法 (JSON) 对象"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5490ec5b940f70180d2830e7caaed9a9926f50
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881333"
+ms.locfileid: "3936087"
 ---
-# <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>在 JavaScript 对象表示法 (JSON) 对象中使用的枚举
+# <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>使用枚举中的 JavaScript 对象表示法 (JSON) 对象
  
-Xbox Live 服务定义的请求和响应从服务中使用的 JSON 对象。 许多服务使用的 JavaScript 对象表示法 (JSON) 对象有关联的指定允许出现在 JavaScript 对象表示法 (JSON) 对象中的字段的值的枚举。 本部分列出了在 JavaScript 对象表示法 (JSON) 对象中使用的枚举。 
+Xbox Live 服务定义中，请求和响应，该服务使用的 JSON 对象。 许多服务使用的 JavaScript 对象表示法 (JSON) 对象有关联的指定允许出现在 JavaScript 对象表示法 (JSON) 对象的字段的值的枚举。 本部分列出了 JavaScript 对象表示法 (JSON) 对象中使用的枚举。 
  
 <a id="ID4EJB"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cf5fc70d2f4b149f7a5c6dd20c5aaf22cafe2a7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880549"
+ms.locfileid: "3933437"
 ---
 # <a name="usersowneridsummary"></a>/users/ {ownerId} / 摘要
 有关从调用方的角度来看所有者访问摘要数据。
@@ -30,7 +30,7 @@ ms.locfileid: "3880549"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 所访问的资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
 <a id="ID4ESB"></a>
 

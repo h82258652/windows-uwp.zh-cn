@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b7c0c664b7fdff7eae607acdc4dd7ef78aeb3caf
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880419"
+ms.locfileid: "3932547"
 ---
 # <a name="publicscidsscidclips"></a>/ 公用/scid / {scid} / 剪辑
-访问公共剪辑。 实际上可以在两个窗体中指定的此 URI`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。 此 uri 域是`gameclipsmetadata.xboxlive.com`。
+访问公共剪辑。 实际上可以在两种形式，指定此 URI`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。
  
   * [URI 参数](#ID4E1)
  
@@ -31,7 +31,7 @@ ms.locfileid: "3880419"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| 字符串| 公共剪辑主要服务配置标识符。| 
-| titleid| 字符串| 公共剪辑的职务 Id。 不能在相同的 URI 的 scid 中指定。 如果已指定，将用于查找主 SCID。| 
+| titleid| 字符串| 公共剪辑的职务 Id。 不能在相同的 URI 的 scid 中指定。 如果已指定，将用于查找的主 SCID。| 
   
 <a id="ID4E6B"></a>
 

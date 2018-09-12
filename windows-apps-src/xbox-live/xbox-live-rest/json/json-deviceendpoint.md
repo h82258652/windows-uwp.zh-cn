@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bfae4eac9ecf0177026183cc25bac5526bbba62f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880757"
+ms.locfileid: "3934183"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
@@ -29,12 +29,12 @@ DeviceEndpoint 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 设备名称| 字符串| 可选。 设备，如果适用的友好名称。 当前未使用此值。| 
+| 设备名称| 字符串| 可选。 设备，如果适用的友好名称。 目前不使用此值。| 
 | endpointUri| 字符串| 必需。 客户端平台 （Windows 或 Windows Phone） 已获得从推送通知服务 （WNS 或 MPNS） URL。| 
 | 区域设置| 字符串| 必需。 发送到此终结点的通知所需的语言。 可以按优先顺序的逗号分隔的列表。 示例:"DE-DE、 EN-US、 en"。| 
-| 平台| 字符串| 可选。 当前受支持的值是"WindowsPhone"和"Windows"。 如果未指定，则将它派生设备令牌。| 
-| platformVersion| 字符串| 可选。 此字符串的格式是特定于每个平台。 当前未使用此值。| 
-| systemId| GUID| 必需。 "应用实例"的唯一标识符 （设备/用户组合）。 最佳做法实施是应用生成一个随机的 GUID，在安装/首次运行时，继续在后续的运行的应用中使用此值。| 
+| 平台| 字符串| 可选。 当前受支持的值为"WindowsPhone"和"Windows"。 如果未指定，则将它派生的设备令牌。| 
+| platformVersion| 字符串| 可选。 此字符串的格式是特定于每个平台。 目前不使用此值。| 
+| systemId| GUID| 必需。 "应用"实例的唯一标识符 （设备/用户组合）。 最佳做法实施应用生成一个随机的 GUID 后安装/首次运行，且继续上后续的运行的应用使用该值。| 
 | titleId| 32 位无符号的整数| 必需。 发出对服务调用的游戏的游戏 ID。| 
   
 <a id="ID4EGD"></a>

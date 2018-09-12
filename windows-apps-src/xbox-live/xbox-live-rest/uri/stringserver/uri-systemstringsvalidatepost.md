@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881408"
+ms.locfileid: "3932397"
 ---
 # <a name="post-systemstringsvalidate"></a>POST （/系统/字符串/验证）
-接受一个用于验证字符串数组并返回数组大小相同的结果。 这些 Uri 的域是`client-strings.xboxlive.com`。
+接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [需的请求标头](#ID4EIB)
@@ -32,7 +32,7 @@ ms.locfileid: "3881408"
  
 ## <a name="remarks"></a>备注
  
-每个结果指示对应的字符串是否在 Xbox LIVE，可接受以及是否包含有问题的字符串，如果适用。
+每个结果指示对应的字符串是可接受的 Xbox LIVE，以及是否包含有问题的字符串，如果适用。
  
 相同的字符串将始终提供相同的结果。 如果你收到未成功结果，分析结果，并相应地修改的字符串。
  
@@ -50,7 +50,7 @@ ms.locfileid: "3881408"
  
 | 标题| 说明| 
 | --- | --- | --- | 
-| 授权| 身份验证令牌。 示例： XBL3.0 x = [哈希]。[令牌]。| 
+| 授权| 身份验证令牌。 示例： XBL3.0 x = [哈希];[令牌]。| 
 | x xbl 协定版本| 整数 API 协定版本。 必须对此 API 为 1 或 2。| 
   
 <a id="ID4ELC"></a>
@@ -85,22 +85,22 @@ ms.locfileid: "3881408"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 所有字符串都已成功都处理。 这并不一定意味着所有字符串都必须积极的 Hresult。| 
+| 200| “确定”| 所有字符串都已成功都处理。 这并不意味着所有字符串都必须积极的 Hresult。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
-| 406| 不允许| 缺少<b>内容类型： 应用程序 /json</b>标头。| 
-| 408| 请求超时| 服务无法理解格式不正确的请求。 通常是一个无效的参数。| 
+| 406| 不允许| 缺少<b>内容类型： 应用程序/json</b>标头。| 
+| 408| 请求超时| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
   
 <a id="ID4ETF"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-返回[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
+返回的[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
   
 <a id="ID4EAG"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4308c148a530233e06d666da5ec446821ba6ee26
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881202"
+ms.locfileid: "3934925"
 ---
 # <a name="quotainfo-json"></a>quotaInfo (JSON)
 包含有关标题组的配额信息。 
@@ -31,15 +31,15 @@ QuotaInfo 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| quotaBytes| 32 位有符号整数 | 最大可用的标题的字节数。| 
-| usedBytes| 32 位有符号整数 | 游戏使用的字节数。| 
+| quotaBytes| 32 位有符号的整数 | 最大可用的标题的字节数。| 
+| usedBytes| 32 位有符号的整数 | 游戏使用的字节数。| 
   
 <a id="ID4EXB"></a>
 
  
 ## <a name="sample-json-syntax"></a>JSON 语法示例
  
-以下示例演示了全局存储的响应：
+下面的示例显示了全局存储的响应：
  
 
 ```json

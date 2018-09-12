@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a94493243178a503ae846608b172af598bf97dd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881304"
+ms.locfileid: "3933461"
 ---
 # <a name="get-inventoryitemid"></a>获取 (/inventory/ {itemID})
-提供特定的清单项的详细信息的一整套。 这些 Uri 的域是`inventory.xboxlive.com`。
+提供特定的清单项完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -30,7 +30,7 @@ ms.locfileid: "3881304"
  
 ## <a name="remarks"></a>备注
  
-没有策略检查，强制执行，或筛选会作为此调用的一部分。
+没有策略检查，强制执行，否则筛选会出现作为此调用的一部分。
   
 <a id="ID4EAB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "3881304"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| itemID| 字符串| 每个用户的单一库存项目的唯一 ID| 
+| itemID| 字符串| 唯一单数库存项目的每个用户的 ID| 
   
 <a id="ID4ELB"></a>
 

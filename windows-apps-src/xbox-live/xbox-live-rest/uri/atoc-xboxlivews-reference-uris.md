@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881189"
+ms.locfileid: "3934121"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 引用
 
@@ -53,7 +53,7 @@ ms.locfileid: "3881189"
 
 [市场 Uri](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri 和关联的 Xbox 应用商店服务的 HTTP 方法。
+&nbsp;&nbsp;Uri 和 Xbox 市场服务相关联的 HTTP 方法。
 
 [匹配 Uri](matchtickets/atoc-reference-matchtickets.md)
 
@@ -83,7 +83,7 @@ ms.locfileid: "3881189"
 
 &nbsp;&nbsp;Uri 和关联的 HTTP 方法的多人游戏会话目录 (MPSD)。
 
-[成就游戏历史记录 Uri](titlehistory/atoc-reference-titlehistoryv2.md)
+[成就标题历史记录 Uri](titlehistory/atoc-reference-titlehistoryv2.md)
 
 &nbsp;&nbsp;Uri 和关联的 HTTP 方法为*游戏历史记录*。
 

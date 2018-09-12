@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b747ea8e576ecbd3723282ffa3a59113b8187428
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880947"
+ms.locfileid: "3935143"
 ---
 # <a name="get-mediamarketplaceidbrowse"></a>获取 (媒体 / {marketplaceId} / 浏览)
-允许浏览的单个媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
+允许浏览单个媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EFB)
@@ -31,9 +31,9 @@ ms.locfileid: "3880947"
  
 ## <a name="remarks"></a>备注
  
-非按顺序而不使用延续令牌使用 skipItems 参数可以访问页面的搜索返回的数据。 此 API 将接受查询精简将。 
+非连续而不使用延续令牌使用 skipItems 参数可以访问页面的搜索返回的数据。 此 API 将接受查询精简将。 
  
- **SandboxId**现在从 XToken 中声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。 
+ **SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。 
   
 <a id="ID4EFB"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "3880947"
  
 ### <a name="sample-response"></a>示例响应
  
-下面的代码 JSON 是为了响应在调用`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`。
+下面的 JSON 代码是为了响应在调用`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`。
  
 
 ```cpp

@@ -1,9 +1,9 @@
 ---
-title: GET (/users/xuid({xuid})/achievements)
+title: 获取 (/users/xuid({xuid})/achievements)
 assetID: 381d49d1-7a4b-4a1e-1baf-cf674f7e0d54
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsgetv2.html
 author: KevinAsgari
-description: " GET (/users/xuid({xuid})/achievements)"
+description: " 获取 (/users/xuid({xuid})/achievements)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ed26a509d75ea7b62705023b0e31850581adc66a
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881194"
+ms.locfileid: "3935887"
 ---
-# <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
-获取在标题、 解锁由用户或用户已在进行中定义的成就的列表。 这些 Uri 的域是`achievements.xboxlive.com`。
+# <a name="get-usersxuidxuidachievements"></a>获取 (/users/xuid({xuid})/achievements)
+获取的成就的标题，这些用户，解锁或这些用户具有正在上定义的列表。 这些 Uri 的域是`achievements.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [查询字符串参数](#ID4ECB)
@@ -45,13 +45,13 @@ ms.locfileid: "3881194"
  
 | 参数| 必需| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| <b>skipItems</b>| 否| 32 位有符号整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
-| <b>ContinuationToken</b>| 否| 字符串| 返回在给定的延续令牌启动的项。 | 
-| <b>maxItems</b>| 否| 32 位有符号整数| 要从集合，它可以结合使用<b>skipItems</b>和<b>continuationToken</b>返回范围的项目中返回的项目的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
-| <b>titleId</b>| 否| 字符串| 针对返回结果筛选器。 接受一个或多个以逗号分隔的十进制作品标识符。| 
+| <b>skipItems</b>| 否| 32 位有符号的整数| 返回从给定的项目数后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
+| <b>ContinuationToken</b>| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
+| <b>maxItems</b>| 否| 32 位有符号的整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项目的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
+| <b>titleId</b>| 否| 字符串| 返回的结果筛选器。 接受一个或多个以逗号分隔的十进制作品标识符。| 
 | <b>unlockedOnly</b>| 否| 布尔值| 返回的结果筛选器。 如果设置为<b>true</b>，将只返回为用户解锁成就。 默认值为<b>false</b>。| 
 | <b>possibleOnly</b>| 否| 布尔值| 返回的结果筛选器。 如果设置为<b>true</b>，将返回所有可能的结果，但不是解锁元数据-只需从 XMS 的成就信息。 默认值为<b>false</b>。| 
-| <b>类型</b>| 否| 字符串| 针对返回结果筛选器。 可以是"持续"挑战"。 默认值为所有受支持的类型。| 
+| <b>类型</b>| 否| 字符串| 返回的结果筛选器。 可以是"持续"挑战"。 默认值为所有受支持的类型。| 
 | <b>orderBy</b>| 否| 字符串| 指定的顺序返回结果。 可以是"无序"、"标题"、"UnlockTime"或"EndingSoon"。 默认值是"无序"。| 
   
 <a id="ID4ENF"></a>
@@ -61,7 +61,7 @@ ms.locfileid: "3881194"
  
 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方必须是 Xbox LIVE 上的有效用户。| 403 已禁止| 
+| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方需要是 Xbox LIVE 上的有效用户。| 403 已禁止| 
   
 <a id="ID4ESG"></a>
 
@@ -79,9 +79,9 @@ ms.locfileid: "3881194"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就将使用此 API 的 V2 版本。 否则为 V1。| 
-| <b>接受的语言</b>| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到之后，它将尝试以匹配来自用户的 IP 地址的用户令牌中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
+| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就会使用此 API 的 V2 版本。 否则为 V1。| 
+| <b>接受的语言</b>| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
   
 <a id="ID4EIBAC"></a>
 
@@ -95,7 +95,7 @@ ms.locfileid: "3881194"
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务返回[成就 (JSON)](../../json/json-achievementv2.md)对象和[PagingInfo (JSON)](../../json/json-paginginfo.md)对象的数组。
+如果调用成功，该服务返回[成就 (JSON)](../../json/json-achievementv2.md)对象和一个[PagingInfo (JSON)](../../json/json-paginginfo.md)对象的数组。
  
 <a id="ID4ECCAC"></a>
 

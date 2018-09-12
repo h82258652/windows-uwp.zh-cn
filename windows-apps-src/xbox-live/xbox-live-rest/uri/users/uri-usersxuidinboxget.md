@@ -1,9 +1,9 @@
 ---
-title: GET (/users/xuid({xuid})/inbox)
+title: 获取 (/users/xuid({xuid})/inbox)
 assetID: c603910d-b430-f157-2634-ceddea89f2bd
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxget.html
 author: KevinAsgari
-description: " GET (/users/xuid({xuid})/inbox)"
+description: " 获取 (/users/xuid({xuid})/inbox)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880583"
+ms.locfileid: "3931641"
 ---
-# <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
+# <a name="get-usersxuidxuidinbox"></a>获取 (/users/xuid({xuid})/inbox)
 从服务检索指定的数量的用户消息摘要。
 这些 Uri 的域是`msg.xboxlive.com`。
 
@@ -26,7 +26,7 @@ ms.locfileid: "3880583"
   * [URI 参数](#ID4EEB)
   * [查询字符串参数](#ID4EIC)
   * [授权](#ID4EGE)
-  * [资源的隐私设置的效果](#ID4ETE)
+  * [资源上的隐私设置的效果](#ID4ETE)
   * [HTTP 状态代码](#ID4E5E)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EMH)
 
@@ -35,11 +35,11 @@ ms.locfileid: "3880583"
 
 ## <a name="remarks"></a>备注
 
-用户的消息摘要包含仅邮件主题。 对于用户生成的消息，这是当前消息文本的前 20 个字符。 系统消息可能会提供另一个使用者，如"LIVE System"。
+用户的消息摘要包含仅邮件主题。 对于用户生成的消息，这是当前的消息文本的前 20 个字符。 系统消息可能会提供另一个使用者，如"实时系统"。
 
-发送; 顺序相反返回消息即，较新消息首先返回。
+发送; 顺序的相反中返回的消息也就是说，首先返回较新消息。
 
-此 API 支持的仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
+此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
 
 <a id="ID4EEB"></a>
 
@@ -58,7 +58,7 @@ ms.locfileid: "3880583"
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- | --- | --- | --- |
 | maxItems| int| 100| 返回的邮件的最大数量。|
-| ContinuationToken| 字符串|  | 在以前的枚举调用; 中返回的字符串使用继续枚举。|
+| ContinuationToken| 字符串|  | 在以前枚举调用; 返回字符串使用继续枚举。|
 | skipItems| int| 100| 消息以跳过; 数忽略 continuationToken 是否存在。|
 
 <a id="ID4EGE"></a>
@@ -71,24 +71,24 @@ ms.locfileid: "3880583"
 <a id="ID4ETE"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
 
-仅可以枚举用户邮件。
+仅可以枚举自己用户的消息。
 
 <a id="ID4E5E"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| 请求已成功。|
-| 400| 服务无法理解格式不正确的请求。 通常是一个无效的参数。|
+| 400| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。|
 | 403| 为用户或服务不允许该请求。|
 | 404| URI 中找不到有效的 XUID。|
-| 409| 基础集合更改具体取决于传递延续令牌。|
+| 409| 根据传递延续令牌基础集合更改。|
 | 416| 跳过的项数大于可用的项目数。|
 | 500| 常规服务器端错误。|
 
@@ -101,7 +101,7 @@ ms.locfileid: "3880583"
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
-| 结果| 消息]| 100| 用户消息的数组|
+| 结果| 消息]| 100| 用户的消息的数组|
 | pagingInfo| PagingInfo|  | 当前的结果集的页面信息|
 
 #### <a name="message"></a>消息
@@ -126,7 +126,7 @@ ms.locfileid: "3880583"
 | hasPhoto| Bool|  | 是否消息包含照片附件。|
 | hasText| Bool|  | 是否消息包含文本。|
 
-#### <a name="paging-info"></a>页面信息
+#### <a name="paging-info"></a>分页信息
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
@@ -168,7 +168,7 @@ ms.locfileid: "3880583"
 
 #### <a name="error-response"></a>错误响应
 
-如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务环境的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
 
 | 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -192,4 +192,4 @@ ms.locfileid: "3880583"
 <a id="ID4EWKAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

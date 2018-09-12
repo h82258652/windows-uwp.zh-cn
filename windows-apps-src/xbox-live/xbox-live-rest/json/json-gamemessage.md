@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 089d2a492c8878e79bd60de1226c948e1eee7e0f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881200"
+ms.locfileid: "3935973"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 一个游戏会话的消息队列中定义为一条消息的数据的 JSON 对象。 
@@ -28,11 +28,11 @@ GameMessage JSON 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 数据| 8 位无符号整数数组| Base64 编码的数据的游戏客户端想要发送到其他游戏客户端。 此值不透明到服务器。 | 
+| 数据| 8 位无符号整数数组| 在游戏的客户端需要发送到其他游戏的客户端 Base64 编码的数据。 此值不透明到服务器。 | 
 | senderXuid| 64 位无符号的整数| 玩家发送消息的 Xbox 用户 ID。 | 
-| 序列号| 32 位有符号整数| 游戏的消息序列号。 服务器分配此值。 序列号保证单调递增，但可能不是连续。 序列号是唯一内消息队列，但不能在消息队列。 | 
-| queueIndex| 32 位有符号整数| 消息的会话消息队列的索引。 可能的值为 0-3。| 
-| 时间戳| DateTime| 游戏的消息队列中创建的服务器，采用 UTC 的时间。 | 
+| 序列号| 32 位有符号的整数| 该游戏的消息的序列号。 由服务器分配此值。 序列号保证单调递增，但可能不连续。 序列号是唯一内消息队列，但不能在消息队列。 | 
+| queueIndex| 32 位有符号的整数| 消息的会话消息队列的索引。 可能的值为 0-3。| 
+| 时间戳| DateTime| 游戏的消息队列中创建的服务器，采用 UTC 时间。 | 
   
 <a id="ID4ERC"></a>
 

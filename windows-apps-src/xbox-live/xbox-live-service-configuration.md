@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置
 ms.localizationpriority: medium
 ms.openlocfilehash: e36e37802855747426184aa9d8cec0e6db77acd7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881245"
+ms.locfileid: "3933731"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live 服务配置
 
@@ -39,10 +39,10 @@ ms.locfileid: "3881245"
 
 对于后续的所有作品，建议使用 Windows 开发人员中心，但是，对于某些功能，你可能仍需要使用 XDP。 此部分将帮助并建议你从何处配置你的作品。
 
-具体取决于你所选的门户，你可以找到有关特定服务配置页信息：
+具体取决于你所选的门户，你可以找到有关特定服务配置页的信息：
 
 * [Windows 开发人员中心配置](configure-xbl/windows-dev-center.md)
-* [Xbox 开发门户配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)-访问此链接，你必须具有一个 Microsoft 帐户 (MSA) 已启用 Xbox Live 完全访问权限。
+* [Xbox 开发门户配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)-若要访问此链接，你必须具有一个 Microsoft 帐户 (MSA) 已启用 Xbox Live 完全访问权限。
 
 如果你已经配置了作品，则可以向下滚动到[获取你的 ID](#get_ids)，以了解如何获取设置你的作品所需的各种标识符。
 

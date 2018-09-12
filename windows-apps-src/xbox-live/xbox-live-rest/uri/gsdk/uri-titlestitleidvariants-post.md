@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881142"
+ms.locfileid: "3934641"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/ {titleId} / 变体)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -37,7 +37,7 @@ URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 
  
 | 参数| 说明| 
 | --- | --- | 
-| titleid| 游戏请求应在其中操作的 ID。| 
+| titleid| 游戏应在其中操作请求 ID。| 
   
 <a id="ID5EG"></a>
 
@@ -51,7 +51,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求，将需要以下表中所示的标头。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
@@ -59,14 +59,14 @@ gameserverds.xboxlive.com
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希]。[令牌]| 身份验证令牌。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| 身份验证令牌。| 
   
 <a id="ID4EED"></a>
 
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-发出请求时, 显示下表中的标头是可选的。
+当发出请求下, 表中所示的标头是可选的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -77,7 +77,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头是无效或不存在，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头无效或不存在，该服务将在响应中返回 401 未经授权。
  
 <a id="ID4EEE"></a>
 
@@ -138,23 +138,23 @@ gameserverds.xboxlive.com
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 变体| 变体的数组。| 
 | variantId| 变体的 Id。| 
-| name| 变体的名称。| 
+| name| 变体名称。| 
 | isPublisher|  | 
 | 排名|  | 
 | gameVariantSchemaId|  | 
-| variantSchemas| 变体的架构的数组。| 
+| variantSchemas| 数组的变体的架构。| 
 | variantSchemaId| 架构的 Id。| 
 | schemaContent| 架构内容| 
 | name| 架构的名称| 
 | gsiSets| GSI 集的数组。| 
 | minRequiredPlayers| 最小的变体的玩家人数。| 
-| maxAllowedPlayers| 最大为变体的玩家人数。| 
+| maxAllowedPlayers| 最大为变体的玩家数。| 
 | gsiSetId| GSI 集的 Id。| 
 | gsiSetName| GSI 集的名称。| 
 | selectionOrder|  | 

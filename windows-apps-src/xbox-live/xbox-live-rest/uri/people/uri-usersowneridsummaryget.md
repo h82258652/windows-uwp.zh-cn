@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880762"
+ms.locfileid: "3932677"
 ---
 # <a name="get-usersowneridsummary"></a>获取 (/users/ {ownerId} / 摘要)
 从调用方的角度来看，获取有关所有者的摘要数据。
@@ -37,7 +37,7 @@ ms.locfileid: "3880762"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 所访问的资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "3880762"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl 协定版本| 字符串| 生成此请求应定向到的服务名称/号。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
+| x xbl 协定版本| 字符串| 生成此请求应定向到的服务名称/号。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
 | 接受| 字符串| 内容类型可接受。 所有回复将都对<code>application/json</code>。|
 
 <a id="ID4EXE"></a>
@@ -79,13 +79,13 @@ ms.locfileid: "3880762"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 成功检索会话。|
+| 200| “确定”| 已成功检索会话。|
 | 400| 错误请求| 用户 Id 的格式不正确。|
-| 403| 已禁止| 在授权标头，无法分析 XUID 声明。|
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。|
 
 <a id="ID4EZG"></a>
 
