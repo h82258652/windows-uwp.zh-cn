@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户、 组、 多个用户，多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846011"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934916"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>向开发人员中心帐户添加用户、组和 Azure AD 应用程序
 
@@ -59,7 +59,7 @@ ms.locfileid: "3846011"
 如果你登录所用的管理员帐户对你使用的 Azure AD 租户还具有[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限，那么在向开发人员中心帐户添加用户时你将有更多选项。 你需要选择其中一个选项：
 
 -   **添加现有用户**： 选择用户已存在于你的组织的目录，并授权他们访问你的开发人员中心帐户，使用上文所述的方法。
--   **创建新用户**： 创建新用户帐户添加到你的组织的目录和开发人员中心帐户
+-   **创建新用户**： 创建全新的用户帐户添加到你的组织的目录和开发人员中心帐户
 -   **邀请外部用户**：向当前不在你的组织目录中的用户发送电子邮件邀请。 他们将受邀访问你的开发人员中心帐户，并且会在你的 Azure AD 租户中为其创建新的[来宾用户](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帐户。
 
 <span id="new-user" />
@@ -169,7 +169,7 @@ ms.locfileid: "3846011"
 > [!TIP]
 > 如果你主要使用此 Azure AD 应用程序进行开发人员中心身份验证，并且不需要用户直接访问它，可以为**回复 URL** 和**应用 ID URI** 输入任何有效地址，只要这些值未由目录中的任何其他 Azure AD 应用程序使用。
 
-1.  在**用户**页面 （下面**帐户设置**），选择**添加 Azure AD 应用程序**。
+1.  从 （在**帐户设置**）**用户**页中，选择**添加 Azure AD 应用程序**。
 2.  在下一页上，选择**新的 Azure AD 应用程序**。
 3.  输入新的 Azure AD 应用程序的**回复 URL**。 这是用户可以登录并使用 Azure AD 应用程序的 URL（有时也称为“应用 URL”或“登录 URL”）。 **回复 URL**不能超过 256 个字符，且在你目录中必须是唯一的。
 4.  输入新 Azure AD 应用程序的**应用程序 ID URI**。 这是 Azure AD 应用程序在向 Azure AD 发送单一登录请求时所显示的逻辑标识符。 请注意，每个 Azure AD 应用程序的**应用 ID URI** 在目录中必须唯一，且长度不得超过 256 个字符。 有关**应用 ID URI** 的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
@@ -221,7 +221,7 @@ ms.locfileid: "3846011"
 
 作为帐户所有者，你可以查看已添加到帐户中的任何其他用户的详细浏览历史记录。
 
-在 （在**帐户设置**）**用户**页面上，选择你想要查看其浏览历史记录的用户显示**上次活动**下的链接。 你可以查看此用户在过去 30 天内访问过的所有网页的 URL。
+在 （下**帐户设置**）**用户**页上，选择你想要查看其浏览历史记录的用户显示**上次活动**下的链接。 你可以查看此用户在过去 30 天内访问过的所有网页的 URL。
 
 <span id="remove" />
 

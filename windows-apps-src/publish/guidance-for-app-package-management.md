@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846631"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936076"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -99,7 +99,7 @@ ms.locfileid: "3846631"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
-如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的支持你的应用之前，系统将提示您确认，这是你的意图，你可以在**程序包**页面上保存更改之前的所有程序包。
+如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的支持你的应用之前，将提示您确认，这是你的意图，你可以在**程序包**页面上保存更改之前的所有程序包。
 
 当发布的提交，删除所有可在你的应用以前支持的设备系列运行的程序包时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
 
@@ -122,9 +122,9 @@ ms.locfileid: "3846631"
 > [!IMPORTANT]
 > 请谨记，如果你提供面向通用设备系列的程序包，每个已经在任何较早的操作系统（Windows Phone 8、Windows 8.1 等）上拥有你的应用然后升级到 Windows 10 的客户将更新以获取你的 Windows 10 程序包。
 > 
-> 发生这种情况即使你排除特定设备系列[设备系列可用性](device-family-availability.md)步骤中的你的提交，因为部分仅适用于新的购置。 如果你不希望每个以前的客户获取你的通用 Windows 10 程序包，请确保在 appx 清单中将 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素更新为仅包含你希望支持的特定设备系列。
+> 发生这种情况即使你排除特定设备系列[设备系列可用性](device-family-availability.md)步骤中的提交，因为部分仅适用于新的购置。 如果你不希望每个以前的客户获取你的通用 Windows 10 程序包，请确保在 appx 清单中将 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素更新为仅包含你希望支持的特定设备系列。
 > 
-> 例如，假设你希望 Windows 8 和 Windows 8.1 客户升级到 Windows 10 桌面版设备，以获取新的 UWP 应用，但你希望现在使你的程序包之前的 Windows 10 移动版设备进行 availabl 任何 Windows Phone 客户e （面向 Windows Phone 8 或 Windows Phone 8.1）。 若要执行此操作，你将需要更新[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)在 appx 清单中包含仅**Windows.Desktop** （适用于桌面设备系列），而不是将其保留为**Windows.Universal**值 （对于通用设备系列）该 Microsoft Visual Studio 默认包含在清单中。 不要提交任何面向通用或移动设备系列的 UWP 程序包（**Windows.Universal** 或 **Windows.Universal**）。 这样，你的 Windows 10 Mobile 客户将不会获得你的任何 UWP 程序包。
+> 例如，假设你希望 Windows 8 和 Windows 8.1 客户已升级到 Windows 10 桌面版设备，以获取新的 UWP 应用，但你希望现在使你的程序包之前的 Windows 10 移动版设备进行 availabl 任何 Windows Phone 客户e （面向 Windows Phone 8 或 Windows Phone 8.1）。 若要执行此操作，你将需要更新[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)在 appx 清单中包含仅**Windows.Desktop** （适用于桌面设备系列），而不是将其保留为**Windows.Universal**值 （面向通用设备系列）默认情况下，Microsoft Visual Studio 包括在清单中。 不要提交任何面向通用或移动设备系列的 UWP 程序包（**Windows.Universal** 或 **Windows.Universal**）。 这样，你的 Windows 10 Mobile 客户将不会获得你的任何 UWP 程序包。
 
 
 ## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>使程序包维持对 Windows Phone 8.1 的兼容性

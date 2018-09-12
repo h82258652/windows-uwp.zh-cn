@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848261"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935406"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 可以使用来自类库（通用 Windows）或 [Windows 运行时库（通用 Windows）](../winrt-components/index.md)项目内的相同代码。 在运行时，加载托管库的应用的资源。 我们建议库从托管库的应用加载资源，因为应用的本地化程度可能更高。 如果库确实需要提供资源，该库应向其托管应用提供将这些资源替换为输入的选项。
 
-如果分段的资源名称 (它包含"。"字符)，然后替换点使用正斜杠 （"/"） 中的资源名称的字符。 属性标识符，例如，包含的点。因此，你需要做此 substition 才能加载其中一种从代码。
+如果分段的资源名称 (它包含"。"字符)，然后替换点使用正斜杠 （"/"） 中的资源名称的字符。 属性标识符，例如，包含点;因此，你需要执行此 substition 操作以便加载其中一种从代码。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
+如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储应用的 PRI 文件。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -175,13 +175,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果要将“AppDisplayName”资源从 `Resources.resw` 移动到 `ManifestResources.resw`，在应用包清单中，需将 `ms-resource:AppDisplayName` 更改为 `ms-resource:/ManifestResources/AppDisplayName`。
 
-如果分段资源文件名 (它包含"。"字符)，然后在名称中保留点时引用它。 **不要**使用正斜杠 （"/"） 字符，像资源名称替换点。
+如果分段资源文件名 (它包含"。"字符)，然后在名称中退出点时引用它。 **不要**使用正斜杠 （"/"） 字符，像资源名称替换点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
+如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储应用的 PRI 文件。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...

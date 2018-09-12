@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851417"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935496"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 
-在 Microsoft Store 分析 API 中使用此方法来获取与已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在 Windows 开发人员中心仪表板的桌面应用程序在[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
+在 Microsoft Store 分析 API 中使用此方法来获取对已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在 Windows 开发人员中心仪表板中的桌面应用程序[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -48,14 +48,14 @@ ms.locfileid: "3851417"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你想要获取的见解数据的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 如果未指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
+| applicationId | 字符串 | 想要获取的见解数据的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 如果不指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
 | startDate | date | 开始菜单的见解数据日期范围中要检索的日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | date | 中的结束日期的见解数据日期范围以检索。 默认值为当前日期。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如，*筛选器 = dataType eq 购置*。 <p/><p/>当前此方法仅支持筛选器**运行状况**。  | 否   |
+| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如，*筛选器 = dataType eq 购置*。 <p/><p/>当前此方法仅支持筛选**运行状况**。  | 否   |
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了一个请求用于获取的见解数据。 *ApplicationId*值替换为桌面应用程序的相应值。
+下面的示例演示了一个请求用于获取的见解数据。 *ApplicationId*值替换为桌面应用程序的相应值。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/insights?applicationId=10238467886765136388&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'health' HTTP/1.1
@@ -68,7 +68,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 类型   | 说明                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | array  | 包含应用的见解数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[相关的见解值](#insight-values)部分。                                                                                                                      |
+| 值      | array  | 包含应用的见解数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[见解值](#insight-values)部分。                                                                                                                      |
 | TotalCount | int    | 查询的数据结果中的行总数。                 |
 
 
@@ -79,21 +79,21 @@ Authorization: Bearer <your access token>
 | 值               | 类型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | 字符串 | 要为其检索见解数据的桌面应用程序的产品 ID。     |
-| insightDate                | 字符串 | 我们标识特定指标的更改的日期。 此日期表示一周中，我们检测到了显著增加结束或减少的指标，与之前的周进行比较。 |
-| 数据类型     | 字符串 | 指定此相关的见解通知的常规分析区域的字符串。 目前，此方法仅支持**运行状况**。    |
-| insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前相关的见解的详细信息。    |
+| insightDate                | 字符串 | 我们标识特定指标的更改的日期。 此日期表示的末尾一周中我们检测到了显著增加或减少相对于前的一周的指标。 |
+| 数据类型     | 字符串 | 一个字符串，指定此 insight 通知的常规分析区域。 目前，此方法仅支持**运行状况**。    |
+| insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前见解的详细信息。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
 
 | 值               | 类型   | 说明                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | 字符串 | 一个字符串，指示的当前相关的见解和当前维度描述的指标。 目前，此方法仅支持值**点击次数**。  |
-| SubDimensions         | array |  介绍相关的见解的单个跃点数的一个或多个对象。   |
+| FactName           | 字符串 | 一个字符串，指示的当前的见解和当前维度描述的指标。 目前，此方法仅支持值**点击次数**。  |
+| SubDimensions         | array |  描述见解的单个跃点数的一个或多个对象。   |
 | PercentChange            | 字符串 |  指标跨整个客户群的销售量更改百分比。  |
-| 具有           | 字符串 |  在当前的维度中所述的指标的名称。 示例包括**事件类型**、**市场**、 **DeviceType**，以及**PackageVersion**。   |
-| DimensionValue              | 字符串 | 在当前的维度中所述的指标值。 例如，如果**具有****事件类型**， **DimensionValue**可能**崩溃**或**挂起**。   |
-| FactValue     | 字符串 | 相关的见解的检测的日期指标的绝对值。  |
+| 具有           | 字符串 |  度量当前维度中所述的名称。 示例包括**事件类型**、**市场**、 **DeviceType**，以及**PackageVersion**。   |
+| DimensionValue              | 字符串 | 当前维度中描述的指标值。 例如，如果**维度****事件类型**， **DimensionValue**可能**崩溃**或**挂起**。   |
+| FactValue     | 字符串 | 绝对的度量值 insight 检测到的日期。  |
 | Direction | 字符串 |  更改 （**正**或**负**） 的方向。   |
 | 日期              | 字符串 |  我们确定与当前的见解或当前维度相关的更改的日期。   |
 
@@ -154,6 +154,6 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
+* [Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
 * [运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)

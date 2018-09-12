@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cd6f8391de9375ddd1c20471dd10c37e99f782f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847711"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934668"
 ---
 # <a name="barcode-scanner"></a>条形码扫描仪
 
@@ -24,10 +24,10 @@ ms.locfileid: "3847711"
 
 |主题 |描述 |
 |------|------------|
-| [配置条形码扫描仪](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何配置预期应用程序的条形码扫描仪。 |
+| [配置条形码扫描仪](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何配置目标应用程序的条形码扫描仪。 |
 | [使用软件触发器](../devices-sensors/pos-barcodescanner-software-trigger.md) | 了解如何控制从软件进行扫描的操作。 |
 | [使用标志](pos-barcodescanner-symbologies.md) | 了解如何确定条形码扫描仪支持的条形码类型，并控制条形码扫描仪将从应用程序识别哪些条形码类型。 |
-| [获取并了解条形码数据](pos-barcodescanner-scan-data.md) | 了解如何获取和解释扫描条形码数据。 |
+| [获取并了解条形码数据](pos-barcodescanner-scan-data.md) | 了解如何获取和解释你扫描条形码数据。 |
 | [相机条形码扫描仪](pos-camerabarcode.md) | 在通用 Windows 平台应用程序中通过标准相机镜头读取条形码。 需要 Windows 10 2018 年 4 月更新（版本 17134 或更高版本）。 |
 |
  

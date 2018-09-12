@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: db2c360a881071db14a1e65ffe2cd9a5bb16f0fe
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846771"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935990"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 
@@ -58,7 +58,7 @@ ms.locfileid: "3846771"
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-运行此命令后，证书将被添加到本地证书存储中，如“-CertStoreLocation”参数中指定。 该命令的结果还会产生证书的指纹。  
+运行此命令后，证书将被添加到本地证书存储中，如“-CertStoreLocation”参数中指定。 该命令的结果还会产生证书指纹。  
 
 **注意**  
 你可以使用以下命令在 PowerShell 窗口中查看你的证书：
