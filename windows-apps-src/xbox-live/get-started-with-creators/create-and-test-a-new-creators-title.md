@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: 94b22b2d369f74da73cfeb6a5f42508c703211ea
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880542"
+ms.locfileid: "3933391"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>创建新的 Xbox Live 创意者计划主题作品并发布到测试环境
 

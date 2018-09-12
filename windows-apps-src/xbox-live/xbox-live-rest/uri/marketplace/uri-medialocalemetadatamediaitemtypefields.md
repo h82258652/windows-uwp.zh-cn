@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f5bdcb8b854a8b71f232c8a1cc73cd12bc587015
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880660"
+ms.locfileid: "3929600"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段
 访问一个可以从中预期给定的 mediaitemtype 和 EDS 的给定的版本的数据字段。 这些 Uri 的域是`eds.xboxlive.com`。

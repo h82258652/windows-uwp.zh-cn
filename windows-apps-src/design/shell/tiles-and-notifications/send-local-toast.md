@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
 ms.openlocfilehash: 3004b7041838656890b3a967e858dddc64c29ee5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846871"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933546"
 ---
 # <a name="send-a-local-toast-notification"></a>发送本地 toast 通知
 

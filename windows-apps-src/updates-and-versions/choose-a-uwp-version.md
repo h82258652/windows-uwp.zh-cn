@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 版本, 内部版本, Windows, 选择, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848701"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934000"
 ---
 # <a name="choose-a-uwp-version"></a>选择 UWP 版本
 
@@ -35,7 +35,7 @@ ms.locfileid: "3848701"
 | 内部版本 10586（11 月更新 1511 版） | 此版本的 Windows 10 已于 2015 年 11 月发布。 突出功能包括引入了用于在 Microsoft Edge 中进行视频通信的 ORTC（对象实时通信）和用于支持应用使用 Windows Hello 人脸身份验证的提供者 API。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-build-10586.md) |
 | 内部版本 10240（Windows 10 1507 版） | 这是 Windows 10 的初始发行版本，已于 2015 年 7 月发布。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-build-10240.md) |
 
-我们强烈建议新的开发人员和开发人员始终针对普通受众编写代码使用最新版本的 Windows (17134)。 编写企业应用的开发人员应着重考虑支持较旧的**最低版本**。
+我们强烈建议新的开发人员和开发人员始终针对普通受众编写代码使用最新版本的 Windows (版本 17134)。 编写企业应用的开发人员应着重考虑支持较旧的**最低版本**。
 
 ## <a name="whats-different-in-each-uwp-version"></a>每个 UWP 版本中有何区别？
 
@@ -45,9 +45,9 @@ Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改�
 
 ## <a name="net-api-availability-in-uwp-versions"></a>在 UWP 版本的.NET API 可用性
 
-UWP 支持有限的可用无论**目标版本**或你的项目的**最低版本**的.NET Api 子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支持有限的可用无论的**目标版本**或你的项目的**最低版本**的.NET Api 子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-如果你想要创建可重用的跨平台库，.NET Standard 上是否受支持 UWP。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 中支持的 UWP 版本的信息。
+如果你想要创建可重用的跨平台库，.NET Standard 支持在 UWP 上。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 受支持的 UWP 版本中的信息。
 
 如果你要开发的桌面应用，请参阅改为[.NET Framework 版本和依赖项](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的详细信息。
 

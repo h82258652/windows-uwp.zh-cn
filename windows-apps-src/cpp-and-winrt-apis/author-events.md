@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845001"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934408"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中创作事件
 
@@ -30,7 +30,7 @@ ms.locfileid: "3845001"
 
 首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **Windows 运行时组件 (C + + WinRT)** 项目，然后将其命名为*BankAccountWRC* （针对"银行帐户 Windows 运行时组件"）。
 
-该新建项目包含一个名为 `Class.idl` 的文件。 重命名该文件`BankAccount.idl`(重命名`.idl`文件会自动重命名依赖于`.h`和`.cpp`文件，过)。 内容替换为`BankAccount.idl`与下面的列表。
+该新建项目包含一个名为 `Class.idl` 的文件。 重命名该文件`BankAccount.idl`(重命名`.idl`文件自动重命名依赖于`.h`和`.cpp`文件，过)。 内容替换为`BankAccount.idl`使用下面的列表。
 
 ```idl
 // BankAccountWRC.idl
@@ -45,7 +45,7 @@ namespace BankAccountWRC
 }
 ```
 
-保存文件。 该项目将不会生成完成时，但现在生成很有用，它以执行操作，因为它会生成源代码文件将在其中实现**BankAccount**运行时类。 因此继续操作并立即生成 (你会看到此阶段生成错误只需使用`Class.h`和`Class.g.h`找不到)。 在生成过程中，`midl.exe`工具会运行以创建组件的 Windows 运行时元数据文件 (即`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然后，`cppwinrt.exe` 工具运行（具有 `-component` 选项）以生成源代码文件，从而为你在创作组件时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的**BankAccount**运行时类的存根。 这些存根是 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 和 `BankAccount.cpp`。
+保存文件。 该项目将不会生成完成时，但现在生成有用的操作来执行操作，因为它会生成源代码文件将在其中实现**BankAccount**运行时类。 因此继续操作并立即生成 (你会看到此阶段生成错误只需使用`Class.h`和`Class.g.h`找不到)。 在生成过程中，`midl.exe`工具会运行以创建组件的 Windows 运行时元数据文件 (即`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然后，`cppwinrt.exe` 工具运行（具有 `-component` 选项）以生成源代码文件，从而为你在创作组件时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的**BankAccount**运行时类的存根。 这些存根是 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 和 `BankAccount.cpp`。
 
 在文件资源管理器，将复制的存根文件`BankAccount.h`和`BankAccount.cpp`文件夹中`\BankAccountWRC\BankAccountWRC\Generated Files\sources\`到包含项目文件的文件夹，即`\BankAccountWRC\BankAccountWRC\`，并替换目标中的文件。 现在，让我们打开 `BankAccount.h` 和 `BankAccount.cpp` 并实现运行时类。 在 `BankAccount.h` 中，将两个私有成员添加到 BankAccount 的实现（*不是*出厂实现）。
 
@@ -66,7 +66,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-你可以看到上方，该事件实现方面的特定委托类型参数化[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板。
+如你所见上述，根据[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板中，通过特定委托类型参数化实现事件。
 
 在 `BankAccount.cpp` 中，实现如下面的代码示例所示的函数。 在 C++/WinRT 中，IDL 声明事件作为一组重载函数实现（类似于属性作为重载 get 和 set 函数实现的方式）。 一个重载需要注册一个代理，并返回令牌。 另一个重载则需要令牌，并撤销关联代理的注册。
 
@@ -97,13 +97,13 @@ namespace winrt::BankAccountWRC::implementation
 
 你还可以从上述情况中发现，如果余额变为负，**AdjustBalance** 函数的实现将引发 **AccountIsInDebit** 事件。
 
-如果任何警告阻止你进行生成，然后解决这些错误或设置项目属性**C/c + +** > **常规** > **将警告视为错误****否 (/ WX-)**，然后重新生成项目。
+如果任何警告阻止你进行生成，然后解决这些错误或将项目属性**C/c + +** > **常规** > **将警告视为错误**到**否 (/ WX-)**，然后重新生成项目。
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>创建核心应用 (BankAccountCoreApp) 以测试 Windows 运行时组件
 
-现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建**Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目，并将其命名为*BankAccountCoreApp*。
+现在创建新项目（在 `BankAccountWRC` 解决方案中，或在一个新解决方案中）。 创建**Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目，然后将其命名为*BankAccountCoreApp*。
 
-添加一个引用，然后浏览到`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或如果两个项目在同一个解决方案中添加项目到项目的引用，）。 单击**添加**，然后单击**确定**。 立即生成 BankAccountCoreApp。 不太可能看到的错误的事件中的负载文件`readme.txt`不存在，从 Windows 运行时组件项目中排除该文件，重新生成它，然后重新生成 BankAccountCoreApp。
+添加一个引用，然后浏览到`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或如果这两个项目在同一个解决方案中添加项目到项目的引用，）。 单击**添加**，然后单击**确定**。 立即生成 BankAccountCoreApp。 你看到的错误的罕见的负载文件`readme.txt`不存在，从 Windows 运行时组件项目中排除该文件，重新生成它，然后重新生成 BankAccountCoreApp。
 
 生成过程期间,`cppwinrt.exe` 工具会运行以将引用的 `.winmd` 文件处理到包含投影类型的源代码文件中,从而为你在使用组件时提供支持。 组件的运行时类的投影类型的标头&mdash;名为 `BankAccountWRC.h`&mdash;将生成在文件夹 `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` 中。
 
@@ -146,13 +146,13 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-每次单击此窗口时，将从该银行帐户的余额中减去 1。 若要演示按按预期引发该事件，将断点放在处理**AccountIsInDebit**事件 lambda 表达式内部，运行应用时，单击此窗口内部。
+每次单击此窗口时，将从该银行帐户的余额中减去 1。 演示按预期，引发该事件，放置一个断点正在处理**AccountIsInDebit**事件的 lambda 表达式内部、 运行该应用，以及在窗口内单击。
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>参数化的委托和简单信号，跨 ABI
 
-如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;你的事件必须使用 Windows 运行时委托类型。 上述示例使用[**Windows::Foundation::EventHandler\ < 所 >**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\ < TSender，TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
+如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;事件必须使用 Windows 运行时委托类型。 上面的示例使用[**Windows::Foundation::EventHandler\ < 所 >**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\ < TSender，TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
 
-这些两个委托类型的类型参数必须跨 ABI，因此类型参数必须也是 Windows 运行时类型。 这包括第一方和第三方运行时类，以及基元类型，如数字和字符串。 编译器帮助你与"*必须是 WinRT 类型*"错误，如果你忘记了此约束。
+这些两个委托类型的类型参数必须跨 ABI，以便类型参数必须也是 Windows 运行时类型。 这包括第一方和第三方运行时类，以及基元类型，如数字和字符串。 编译器帮助你与"*必须是 WinRT 类型*"错误，如果你忘记了此约束。
 
 如果你不需要任何参数或与你的事件参数传递，你可以定义自己简单的 Windows 运行时委托类型。 下面的示例显示**BankAccount**运行时类的简化版本。 它声明了名为**SignalDelegate**的委托类型，然后它使用的引发信号类型的事件而不是具有参数的事件。
 
@@ -248,9 +248,9 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>参数化的委托、 简单信号和在项目内的回调
 
-如果仅在内部使用你的事件，则在 C + + WinRT 项目 （而不是跨二进制文件），则你仍然使用[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板，但参数化通过 C + + /winrt 的非运行 Windows 时[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)结构模板，这是一个高效、 引用计数的委托。 它支持任意数量的参数，并且它们并不局限于 Windows 运行时类型。
+如果你事件仅在内部用于在 C + + WinRT 项目 （而不是跨二进制文件），则你仍然使用[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板，但参数化通过 C + + WinRT 的非运行 Windows 时[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)结构模板，这是一个高效、 引用计数的委托。 它支持任意数量的参数，并且它们并不局限于 Windows 运行时类型。
 
-下面的示例中首先显示委托，不带任何参数 （本质上是简单信号） 的签名，然后另一个接受字符串。
+下面的示例首先显示委托，不带任何参数 （本质上是简单信号），签名，然后另一个接受字符串。
 
 ```cppwinrt
 winrt::event<winrt::delegate<>> signal;
@@ -264,7 +264,7 @@ log.add([](std::wstring const& message) { Persist(message); });
 log(L"Hello, World!");
 ```
 
-请注意如何添加到事件多个订阅的委托为你希望。 但是，没有与事件关联一些开销。 如果你只是仅的单个订阅的委托的简单回调，则你可以使用[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)自己。
+注意如何可以添加到事件与你希望的多个订阅委托。 但是，还有一些与事件关联的开销。 如果你只是简单仅单个订阅的委托回调，则可以使用[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)自身。
 
 ```cppwinrt
 winrt::delegate<> signalCallback;
@@ -280,9 +280,9 @@ logCallback(L"Hello, World!");
 
 ## <a name="design-guidelines"></a>设计指南
 
-我们建议作为函数参数传递事件，并不委托。 [**Winrt::event**](/uwp/cpp-ref-for-winrt/event)的**添加**函数是一个例外，因为你必须在此情况下传递委托。 本指南的原因是因为委托可以跨不同的 Windows 运行时语言 （根据它们是否支持一个客户端注册或多个） 采用不同形式。 事件，使用其多个订阅服务器模型，构成更可预测且一致的选项。
+我们建议作为函数参数传递事件，并不委托。 [**Winrt::event**](/uwp/cpp-ref-for-winrt/event) **添加**函数是一个例外，因为你必须在此情况下传递委托。 本指南的原因是因为委托可以跨不同的 Windows 运行时语言 （根据它们是否支持一个客户端注册、 或多个） 采用不同形式。 事件，其多个订阅服务器模型后，构成更加可预测且一致的选项。
 
-事件处理程序委托的签名应包含两个参数：*发件人*(**IInspectable**) 和*参数*（某些事件参数类型，例如[**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)）。
+事件处理程序委托的签名应包含两个参数：*发送者*(**IInspectable**)，并且*参数*（某些事件参数类型，例如[**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)）。
 
 请注意，是否设计一个内部 API，这些指南不一定适用。 尽管内部 Api 通常成为公共随着时间的推移。
 

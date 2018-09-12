@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850441"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934154"
 ---
 # <a name="web-authentication-broker"></a>Web 身份验证代理
 
@@ -163,7 +163,7 @@ Fiddler Web 调试程序可与应用一起使用。
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-    如果此注册表项，你可以在具有管理员权限的命令提示符中创建。
+    如果你没有此注册表项，你可以在具有管理员权限的命令提示符中创建。
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

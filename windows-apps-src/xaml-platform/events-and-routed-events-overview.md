@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849231"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933758"
 ---
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
 
@@ -153,7 +153,7 @@ End Sub
 
 **注意**  Visual Studio 以及其 XAML 设计界面一般都提倡使用实例处理技术代替，而不是 **Handles** 关键字。 这是因为在 XAML 中建立事件处理程序连接是典型的设计人员-开发人员工作流中的一部分，并且 **Handles** 关键字技术与在 XAML 中连接事件处理程序不兼容。
 
-在 C + + /CX 你还使用**+=** 语法，但与基本 C# 形式有区别：
+在 C + + CX，你还使用**+=** 语法，但与基本 C# 形式有区别：
 
 -   不存在委托推断，所以必须为委托实例使用 **ref new** 关键字。
 -   委托构造函数有两个参数，并且需要目标对象作为第一个参数。 通常由你指定 **this**。

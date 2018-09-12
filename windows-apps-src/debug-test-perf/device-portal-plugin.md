@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf511a910a266877d54a014f087c1748ff25838
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849541"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929639"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 

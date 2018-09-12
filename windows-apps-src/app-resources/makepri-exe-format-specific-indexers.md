@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec6b2a31f4f577de30dac1c96a411c6aee6e9dc
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846151"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932238"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 特定格式索引器
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) 工具生成其资源索引时所使用的特定格式索引器。
 
 > [!NOTE]
-> MakePri.exe 在安装时检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 检查安装 Windows 软件开发工具包时**适用于 UWP 管理应用的 Windows SDK**选项时，MakePri.exe 会安装。 它安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 MakePri.exe 通常与 `new`、`versioned` 或 `resourcepack` 命令一起使用。 请参阅 [MakePri.exe 命令行选项](makepri-exe-command-options.md)。 在这些情况下，它索引源文件以生成资源索引。 MakePri.exe 使用各种单独的索引器读取不同的源资源文件或资源容器。 最简单的索引器是文件夹索引器，它索引文件夹的内容，如 `.jpg` 或 `.png` 图像。
 

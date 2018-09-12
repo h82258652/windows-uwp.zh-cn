@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880544"
+ms.locfileid: "3936173"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
 包含新的基本信誉评分应更改用户的现有评分。 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8545bb1aca5f4e5249fac5c5b1d8dbf2a120af2f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3880772"
+ms.locfileid: "3936217"
 ---
 # <a name="post-trustedplatformusersbatchscidssciddatapathandfilenametype"></a>POST (/ trustedplatform/用户/批处理/scid / {scid} /data/ {pathAndFileName} {类型})
 将多个文件下载从多个用户具有相同的文件名。 这些 Uri 的域是`titlestorage.xboxlive.com`。

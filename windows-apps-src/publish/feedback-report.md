@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845441"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933520"
 ---
 # <a name="feedback-report"></a>反馈报告
 
@@ -31,7 +31,7 @@ ms.locfileid: "3845441"
 使用[软件包外部测试版](package-flights.md)时反馈也有用，因为当客户留下反馈时，反馈报告将展示每个客户已在其设备上安装的特定程序包。
 
 > [!TIP]
-> 快速查看在评论、 评分和跨所有应用的用户反馈过去 30 天中，展开左侧的导航菜单中的**参与**并选择**评论和反馈。** 
+> 快速查看在评论、 评分和跨所有应用的用户反馈最近 30 天内，在左侧的导航菜单中展开**参与**并选择**评论和反馈。** 
 
 
 ## <a name="apply-filters"></a>应用筛选器
@@ -58,14 +58,14 @@ ms.locfileid: "3845441"
 - **热门**：从已获得最新活动的反馈开始，显示其他客户在最近七天内进行投票的反馈。
 - **最近**：从最近留下的反馈开始，显示所有反馈。
 
-在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场，他们使用当客户留下反馈、 该设备和**Windows 预览体验成员**的类型的 Windows 预览体验成员提交反馈的客户是否在设备安装的特定程序包计划。
+在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场，他们使用当客户留下反馈、 该设备和**Windows 预览体验成员**的类型的 Windows 预览体验成员提交反馈的客户是否在设备已安装的特定程序包计划。
 
 还将在此看到[回复反馈](respond-to-customer-feedback.md)的选项。
 
 
 ## <a name="translating-feedback"></a>翻译反馈
 
-默认情况下，将为你翻译不在你的首选语言编写的反馈。 如果需要，可以在右上方取消选中**翻译反馈**复选框（页面筛选器旁边）来禁用反馈翻译。
+默认情况下，将为你翻译未在你的首选语言编写的反馈。 如果需要，可以在右上方取消选中**翻译反馈**复选框（页面筛选器旁边）来禁用反馈翻译。
 
 请注意，反馈将由自动翻译系统翻译，所以翻译结果可能不一定准确。 如果你想要对照翻译或者通过其他方式进行翻译，会旧提供原始文本。
 

@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847681"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934248"
 ---
 # <a name="custom-dependency-properties"></a>自定义依赖属性
 
@@ -79,9 +79,9 @@ Windows 运行时中的依赖属性示例如下：[**Control.Background**](https
 对于 Microsoft .NET 语言（C# 和 Microsoft Visual Basic），你可以在类的主体中调用 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)（在类中，但在任何成员定义外部）。 该标识符由 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法调用以返回值的形式提供。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 通常调用为静态构造函数，或作为类中包括的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public static readonly** 属性初始化的一部分。 此属性会公开你的依赖属性的标识符。 以下是 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用的一些示例。
 
 > [!NOTE]
-> 将依赖属性注册属性定义为标识符的一部分是典型的实现方式，但你也可以在类静态构造函数中注册依赖属性。 如果需要多行代码来初始化依赖属性，此方法可能很有用。
+> 将依赖属性注册属性定义为标识符的一部分是典型的实现，但你也可以在类静态构造函数中注册依赖属性。 如果需要多行代码来初始化依赖属性，此方法可能很有用。
 
-对于 C + + CX，你可以选择你如何拆分标头和代码文件之间实现的。 典型的拆分方式是在标头中将标识符本身声明为 **public static** 属性，它具有一个 **get** 实现但没有 **set**。 **get** 实现引用一个私有字段，该字段是一个未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例。 你也可以声明包装器和包装器的 **get** 和 **set** 实现。 在此情况下，标头文件包含一些极小的实现。 如果包装器需要归属于 Windows 运行时，标头文件中的特性也需要。 将 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用放置在代码文件内仅在应用首次初始化时运行的 helper 函数中。 使用 **Register** 的返回值填充你在标头文件中声明的静态但未初始化的标识符，你最初已在实现文件的根作用域上将其设置为 **nullptr**。
+对于 C + + CX，你可以如何拆分标头和代码文件之间实现的选项。 典型的拆分方式是在标头中将标识符本身声明为 **public static** 属性，它具有一个 **get** 实现但没有 **set**。 **get** 实现引用一个私有字段，该字段是一个未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例。 你也可以声明包装器和包装器的 **get** 和 **set** 实现。 在此情况下，标头文件包含一些极小的实现。 如果包装器需要归属于 Windows 运行时，标头文件中的特性也需要。 将 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用放置在代码文件内仅在应用首次初始化时运行的 helper 函数中。 使用 **Register** 的返回值填充你在标头文件中声明的静态但未初始化的标识符，你最初已在实现文件的根作用域上将其设置为 **nullptr**。
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
@@ -170,7 +170,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> 对于 C + + CX 代码，为什么你有一个私有字段和图面[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)的公共只读属性是，以便使用你的依赖属性的其他调用方还可以使用属性系统实用程序，将需要 Api 的原因要是公共的标识符。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 和 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 等。 不可将公共字段用于这些内容，因为 Windows 运行时元数据规则不支持公共字段。
+> 对于 C + + CX 代码，为什么你有一个私有字段，图面[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)的公共只读属性，以便使用你的依赖属性的其他调用方还可以使用属性系统实用程序，将需要 Api 的原因若要在公共的标识符。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 和 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 等。 不可将公共字段用于这些内容，因为 Windows 运行时元数据规则不支持公共字段。
 
 ## <a name="dependency-property-name-conventions"></a>依赖属性名称约定
 
@@ -186,7 +186,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 属性包装器应该在 **get** 实现中调用 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)，在 **set** 实现中调用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)。
 
 > [!WARNING]
-> 在所有情形中，包装器实现应执行仅在[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)和[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)操作。 否则，在通过 XAML 设置属性时的行为与通过代码设置属性时的行为不同。 为了提高效率，在设置依赖属性时，XAML 分析程序将绕过包装器，并通过 **SetValue** 与后备存储通信。
+> 在所有情形中，包装器实现应仅执行[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)和[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)操作。 否则，在通过 XAML 设置属性时的行为与通过代码设置属性时的行为不同。 为了提高效率，在设置依赖属性时，XAML 分析程序将绕过包装器，并通过 **SetValue** 与后备存储通信。
 
 ```csharp
 public String Label
@@ -251,7 +251,7 @@ public:
 通常，你将在 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的参数内提供一个 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771)，作为一个内联创建的参数。
 
 > [!NOTE]
-> 如果你正在定义[**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812)实现，必须使用实用程序方法[**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) ，而不是调用[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771)构造函数来定义**PropertyMetadata**实例。
+> 如果你要定义[**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812)实现，必须使用实用程序方法[**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) ，而不是调用[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771)构造函数来定义**PropertyMetadata**实例。
 
 下一个示例将通过使用 [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 值引用 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 实例，修改先前显示的 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 示例。 本节的后续内容中将介绍“OnLabelChanged”回调的实现。
 

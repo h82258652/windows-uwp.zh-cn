@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848761"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930621"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
