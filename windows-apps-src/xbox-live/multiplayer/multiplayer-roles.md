@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 角色
-ms.localizationpriority: low
-ms.openlocfilehash: 6e0690a46ade54f3d4a0738d9452ec42c072b519
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 0ab0a8fd83e94af9a06582faebc2923eb459996b
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880409"
 ---
 # <a name="roles"></a>角色
 

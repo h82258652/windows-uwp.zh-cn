@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
-ms.localizationpriority: low
-ms.openlocfilehash: 77b2be18fdda6dbf173814787bde151f088086c2
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: eeb30b5ad83c44ac4a6feb1471dc31a2e33730a1
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880415"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -59,7 +60,10 @@ void Example_RealTimeActivity_ConnectAsync()
 
 #### <a name="uwp-developers"></a>UWP 开发人员
 
-如果你要在 Windows 10 上进行非跨平台联机作品的 UWP 开发，则可以在开发人员中心上定义你的统计数据。  我们将很快提供有关如何执行此操作的文档。  与此同时，如果你有任何疑问，请联系你的 DAM。
+如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP， [Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上定义统计数据。 阅读[开发人员中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在开发人员中心上配置的统计数据。
+
+> [!NOTE]
+> 统计数据 2013年开发人员将需要有关开发人员中心上的统计数据 2013年配置信息联系其 DAM。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 
@@ -76,7 +80,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## <a name="subscribing-to-a-statistic-from-the-real-time-activity"></a>通过实时活动订阅统计数据
 
-应用程序可订阅实时活动 (RTA)，以在 Xbox 开发人员门户 (XDP) 中配置的统计数据发生更改时获取更新。
+应用程序可订阅实时活动 (RTA) 以在 Xbox 开发人员门户 (XDP) 或 Windows 开发人员中心中配置的统计数据发生更改时获取更新。
 
 ### <a name="subscribing-to-a-statistic-from-the-real-time-activity-service"></a>通过实时活动服务订阅统计数据
 
@@ -95,7 +99,7 @@ void Example_RealTimeActivity_SubscribeToStatisticChangeAsync()
     // Call to subscribe to an individual statistic.  Once the subscription is complete, the handler will be called with the initial value of the statistic.
     auto statisticResults = xboxLiveContext->user_statistics_service().subscribe_to_statistic_change(
         User::Users->GetAt(0)->XboxUserId->Data(),
-        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP
+        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Dev Center
          L"YourStat"
         );
 

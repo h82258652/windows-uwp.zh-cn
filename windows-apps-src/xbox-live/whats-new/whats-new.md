@@ -8,19 +8,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 02c0acdb252ce9e86b2635fa4845427c92ef8964
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f0d4038441f347a961f4acf57b4712995bf1f75d
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935654"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "3880404"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
 
 #### <a name="in-this-article"></a>本文内容
 
+* [2018 年 6 月](#june-2018)
 * [2017 年 8 月](#august-2017)
 * [2017 年 7 月](#july-2017)
 * [2017 年 6 月](#june-2017)
@@ -29,11 +30,21 @@ ms.locfileid: "1935654"
 * [2017 年 3 月](#march-2017)
 * [已存档](#archived)
 
-##<a name="august-2017"></a>2017 年 8 月
+## <a name="june-2018"></a>2018 年 6 月
 
-###<a name="xbox-live-features"></a>Xbox Live 功能
+### <a name="xbox-live-features"></a>Xbox Live 功能
 
-####<a name="in-game-clubs"></a>游戏内俱乐部
+#### <a name="c-api-layer-for-xsapi"></a>Xsapi C API 图层
+
+C Api 现在均可用于 Xbox Live 的一些功能。 新的 API 层为受支持的功能，包括自定义内存管理、 异步任务的手动线程管理和新的 HTTP 库提供了很多优势。
+
+有关详细信息，请参阅[Xbox Live C Api](../xsapi-flat-c.md)。
+
+## <a name="august-2017"></a>2017 年 8 月
+
+### <a name="xbox-live-features"></a>Xbox Live 功能
+
+#### <a name="in-game-clubs"></a>游戏内俱乐部
 
 开发人员现在可以创建“游戏内俱乐部”。 游戏内俱乐部与标准 Xbox 俱乐部不同，它们可由开发人员完全自定义，并在游戏内部和外部均可使用。 作为游戏开发人员，你可以使用它们来在游戏内快速构建任何类型的满足你的唯一要求的永久组场景，如团队、部落、小队、公会等。
 

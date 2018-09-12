@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 4914f098511c4553fae7fd83d09fd1c43a550d9f
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d727171b079bc05851e1c7ab4de6f01587ce460d
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935580"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880570"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>适用于 UWP 游戏的 Visual Studio 的入门
 
@@ -23,7 +23,7 @@ ms.locfileid: "1935580"
 
 1. 注册**[开发人员中心开发人员计划](https://developer.microsoft.com/store/register)**。
 2. **[Windows 10](https://microsoft.com/windows)**。
-3. **[Visual Studio 2015](https://www.visualstudio.com/)**（或更高版本）与**通用 Windows 应用开发工具**。
+3. **通用 Windows 应用开发工具**与**[visual Studio](https://www.visualstudio.com/)** 。 最低要求适用于 UWP 应用的版本是 Visual Studio 2015 更新 3。 我们建议你使用最新版本的 Visual Studio 开发人员和安全更新。 
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 或更高版本。
 
 > [!IMPORTANT]

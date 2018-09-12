@@ -7,19 +7,20 @@ ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: low
+ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 标题存储, Windows 开发人员中心
-ms.openlocfilehash: 7021d5c92ba29d4df639a1f773310756abe704cd
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 7a258db9c4615de81ba32be4b636e007d3b9471c
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880406"
 ---
 # <a name="configure-storage-for-you-title-on-windows-dev-center"></a>在 Windows 开发人员中心为标题配置存储
 
 借助 Xbox Live，可通过标题存储服务将与游戏相关的数据保存到云中。 通过标题存储配置页，可确定游戏允许使用哪些类型的云存储服务，并上传用于全局存储的文件。
 
-可转到 [Windows 开发人员中心仪表板](https://developer.microsoft.com/en-us/dashboard/windows/overview)，从**概述**或**产品**中选择你的应用，打开**服务**下拉菜单并选择 **Xbox Live**，找到 Xbox Live 标题存储配置页面。 创意者计划中的开发人员需点击其配置页面**云保存和存储**部分中的**显示选项**方可查看标题存储配置选项。 可使用全套 Xbox Live 功能的用户需找到**标题存储**链接，以导航到标题存储配置页面。
+你可以找到 Xbox Live 标题存储配置页面通过转到[Windows 开发人员中心仪表板](https://developer.microsoft.com/en-us/dashboard/windows/overview)，选择你的应用**概述**或**产品**，打开**服务**从下拉列表，并选择**Xbox Live**。 创意者计划中的开发人员需点击其配置页面**云保存和存储**部分中的**显示选项**方可查看标题存储配置选项。 可使用全套 Xbox Live 功能的用户需找到**标题存储**链接，以导航到标题存储配置页面。
 
 标题存储配置有两个主要部分。 标题存储设置部分和全局存储文件管理部分。
 

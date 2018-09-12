@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 44bad0b0cc4558453745d0cfadac216ccf11b6f3
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 49f0f88a7e64ce57462b3ee7b07676280d91fb41
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880594"
 ---
 # <a name="xbox-live-title-storage"></a>Xbox Live 标题存储
 
@@ -44,7 +45,7 @@ Xbox Live 标题存储的一些高级功能包括（但不限于）：
 |--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
 | 受信任平台   | 每个用户 256 MB | 每个用户 64 MB    | 已保存游戏或游戏状态（播放/暂停/继续）等基于每个用户的数据。 更安全，但具有平台限制。 | 任何平台均可读取，但只有 Xbox One、Xbox 360 或 Windows Phone 可以写入。  | 可公开配置或仅所有者可配置。       |
 | 通用平台 | 每个用户 64 MB | 每个用户 64 MB    | 已保存游戏或游戏状态（播放/暂停/继续）等基于每个用户的数据。 | 任何平台均可写入，但只有 Xbox One、Xbox 360 或 Windows Phone 以外的平台才可读取。 | 可公开配置或仅所有者可配置。       |
-| 全局             | 256 MB | 256 MB            | 每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 | 仅可通过 Xbox 开发人员门户写入，任何平台均可读取。                                | 所有用户均可读取。
+| 全局             | 256 MB | 256 MB            | 每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 | 仅可通过 Windows 开发人员中心的 Xbox 开发人员门户写入，任何平台均可读取。                                | 所有用户均可读取。
 
 ### <a name="deprecated-storage-types"></a>弃用的存储类型
 

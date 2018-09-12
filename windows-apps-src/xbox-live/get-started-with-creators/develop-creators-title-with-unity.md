@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者
-ms.localizationpriority: low
-ms.openlocfilehash: 962a808198f9682d819b20abb4965f446074de68
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 28f9da245d3fae23241058d7a83fe8c397a415d2
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018478"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880519"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a>使用 Unity 游戏引擎开发 Xbox Live 创意者计划主题作品入门
 
@@ -29,7 +29,7 @@ ms.locfileid: "2018478"
 
 [授权 Xbox Live 帐户](authorize-xbox-live-accounts.md)
 
-[登录到 Xbox Live In Unity](sign-in-to-xbox-live-in-unity.md) 1804 之前的 Unity 插件版本
+[登录到 Xbox Live In Unity](unity-prefabs-and-sign-in.md) 1804 之前的 Unity 插件版本
 
 [使用 PlayerAuthentication prefab 登录](playerauthentication-prefab-sign-in.md)到 1804 之后的 Unity 插件版本
 

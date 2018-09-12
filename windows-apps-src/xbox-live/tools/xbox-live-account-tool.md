@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 测试, 测试帐户
-ms.localizationpriority: low
-ms.openlocfilehash: 0aa005e149a61d7bb552ad4eaefc62322efef76a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 55e2d46f59a8ecd2d8bac77e8ce61834a4249a88
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880422"
 ---
 # <a name="xbox-live-account-tool"></a>Xbox Live 帐户工具
 
@@ -24,13 +25,13 @@ Xbox Live 帐户工具是一款设计用于帮助开发人员为测试游戏方�
 ## <a name="what-can-i-do-with-xbox-live-account-tool"></a>你可以使用 Xbox Live 帐户工具做什么？
 您可以：
   1. 查看用户的个人资料设置、XUID 和有效权限
-  2. 通过文本文件或 XDP csv 为用户社交图片添加关注者列表
+  2. 为用户的社交图片，通过文本文件或 Xbox 开发人员平台 csv 添加关注者列表
   3. 管理用户的好友列表：对你关注的用户执行收藏、取消收藏、阻止和取消阻止操作，并查看他们是否也关注你
   4. 更改开发用户的信誉（并立即查看原始的信誉统计值）
   5. 更改用户的玩家代号
 
 ## <a name="where-can-i-find-xbox-live-account-tool"></a>我可以在哪找到 Xbox Live 帐户工具？
-Xbox Live 帐户工具是 Xbox Live 工具包的一部分，可在 [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) 找到。
+Xbox Live 帐户工具可以找到中的 Xbox Live 工具包的一部分[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)。
 
 ## <a name="how-do-i-log-in"></a>如何登录？
 你需要使用想要管理的用户凭据并指定正确的沙盒。 请确保开发人员帐户有权访问沙盒，否则登录可能会失败。 该工具设计用于使用沙盒的开发人员帐户。

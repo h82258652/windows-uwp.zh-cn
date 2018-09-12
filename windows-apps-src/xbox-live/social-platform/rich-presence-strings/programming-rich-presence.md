@@ -8,13 +8,14 @@ ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, rich presence
-ms.localizationpriority: low
-ms.openlocfilehash: f2a62ec2d1678c5f7912cdbff6f6ab3e2464e35a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
+ms.localizationpriority: medium
+ms.openlocfilehash: bd39074e67c58e20154083be66211dbefc9f782d
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880744"
 ---
 # <a name="programming-rich-presence"></a>对 Rich Presence 进行编程
 

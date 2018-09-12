@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 1ac295a403a905578052985528418d873764147a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 04d2fab9aa836d36a0dba202b2292c311b6d4979
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880614"
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
@@ -63,7 +64,7 @@ Achievements 2017 系统支持游戏开发人员使用直接调用模型来解�
 
 ## <a name="updateachievement-api"></a>Update_Achievement API
 
-通过 [XDP](../configure-xbl/xdp/achievements-in-xdp.md) 或 [UDC](../configure-xbl/dev-center/achievements-in-udc.md) 配置完成就并将其发布到开发沙盒后，你的游戏即可通过调用 Update_Achievement API 解锁成就。
+通过 XDP 或 [UDC](../configure-xbl/dev-center/achievements-in-udc.md) 配置完成就并将其发布到开发沙盒后，你的游戏即可通过调用 Update_Achievement API 解锁成就。
 
 此 API 在 XDK 和 Xbox Live SDK 中均有提供。
 

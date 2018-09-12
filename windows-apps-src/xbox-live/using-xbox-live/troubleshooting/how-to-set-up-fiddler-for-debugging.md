@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, fiddler, 服务调用, 疑难解答
-ms.localizationpriority: low
-ms.openlocfilehash: f453de2aac908998f47602027bb979da397dc506
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 9eaa21ca792ab3071cb06a9e564f7ad1826782b4
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880667"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>使用 Fiddler 的 Xbox Live 疑难解答
 
@@ -23,7 +24,7 @@ Fiddler 是一种 Web 调试代理，用于记录你的设备和 Internet 之间
 ## <a name="for-windows-uwp-pc-apps"></a>适用于 Windows UWP 电脑应用
 
 1. 确保当前用户位于电脑上的管理员组中。
-1. 从 [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler) 下载 Fiddler
+1. 下载从 Fiddler[http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
 1. 确保你选择“适用于 .NET 4”的版本
 1. 安装完成后，转至“工具”->“Fiddler”选项并启用“捕获 HTTPS CONNECT 和解密 HTTPS 流量”。  运行时与 Xbox LIVE 服务之间的所有通信将使用 SSL 加密。  未选中此选项的话，你将无法看到任何有用信息。  接受 Fiddler 弹出的所有对话（应该有 5 个对话，包括 UAC）
 1. 转至“WinConfig”、“全部豁免”和“保存更改”。  否则，Fiddler 将不会使用应用商店应用。
@@ -42,7 +43,7 @@ Fiddler 是一种 Web 调试代理，用于记录你的设备和 Internet 之间
 
 ## <a name="for-xbox-one-uwp-based-projects"></a>对于基于 Xbox One UWP 的项目
 
-请按照此处的步骤操作 [https://docs.microsoft.com/zh-cn/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
+请按照此处的步骤[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## <a name="for-xbox-one-xdk-based-projects"></a>对于基于 Xbox One XDK 的项目
 
