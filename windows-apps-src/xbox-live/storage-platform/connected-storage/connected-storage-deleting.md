@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
-ms.localizationpriority: low
-ms.openlocfilehash: 1aed3dfe3c40f279aa7a0ff6a5bb386110ff25cc
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a90a880d1f18ff692c388993e0df6da81fa7966e
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881101"
 ---
 # <a name="use-connected-storage-to-delete-data"></a>使用连接存储删除数据
 
@@ -129,13 +130,13 @@ void DeleteContainer(User^ user)
 
 可以在以下路径找到 XDK .chm 文件中介绍的 XDK 连接存储 API：**Xbox ONE XDK >> API Reference >> Platform API Reference >> System API Reference >> Windows.Xbox.Storage**。
 在 [developer.microsoft.com 网站](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)也可查阅 XDK API。
-XDK API 链接要求你具有启用了 Xbox 开发人员工具包(XDK) 访问的 Microsoft 帐户 (MSA)。
+XDK API 链接要求你具有启用了 Xbox 开发人员工具包 (XDK) 访问的 Microsoft 帐户 (MSA)。
 Windows.Xbox.Storage 是 Xbox One 主机的连接存储命名空间的名称。
 
 
 ## <a name="c-uwp-sample"></a>C# UWP 示例
 
-虽然 XDK 游戏和 UWP 应用可能使用不同的 API，但 UWP API 外观与 XDK API 非常相似。 要删除数据，你仍然需要按照相同的基本步骤进行操作，并注意某些命名空间和类名称更改。 不使用命名空间 `Windows::Xbox::Storage`，而将使用 `Windows.Gaming.XboxLive.Storage`。 类 `ConnectedStorageSpace` 相当于 `GameSaveProvider`。 类 `ConnectedStorageContainer` 相当于 `GameSaveContainer`。 [将 Xbox Live 代码从 XDK 移植到 UWP](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md) 的连接存储部分进一步详细介绍这些更改。
+虽然 XDK 游戏和 UWP 应用可能使用不同的 API，但 UWP API 外观与 XDK API 非常相似。 要删除数据，你仍然需要按照相同的基本步骤进行操作，并注意某些命名空间和类名称更改。 不使用命名空间 `Windows::Xbox::Storage`，而将使用 `Windows.Gaming.XboxLive.Storage`。 类 `ConnectedStorageSpace` 相当于 `GameSaveProvider`。 类 `ConnectedStorageContainer` 相当于 `GameSaveContainer`。 在[将 Xbox Live 代码从 XDK 移植到 UWP](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md) 的连接存储部分进一步详细介绍了这些更改。
 
 ```csharp
 //Namespace Required

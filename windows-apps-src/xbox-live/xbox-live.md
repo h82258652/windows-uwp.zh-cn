@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 游戏, xbox, xbox live
-ms.localizationpriority: low
-ms.openlocfilehash: 9359db239948f51bd7111781b10d86ab96e0f3ce
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a3916e3b6c362605b3587bacd6c54f1cc69c1da7
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881248"
 ---
 # <a name="xbox-live"></a>Xbox Live
 
@@ -50,7 +51,7 @@ Xbox Live 社交功能可以有机增加你的受众，在 5,500 多万名活跃
 
 | 主题                                                                                                                                             | 描述                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| [Xbox Live 社交平台](social-platform/social-platform.md) | 如果你可以登录用户，则可以开始使用 Xbox Live 的社交功能，例如利用用户的社交图片、完整状态和其他内容。 |
+| [Xbox Live 社交平台](social-platform/social-platform.md) | 如果你可以使用户登录，则可以开始使用 Xbox Live 的社交功能，例如利用用户的社交图片、Rich Presence 和其他内容。 |
 
 ### <a name="xbox-live-data-platform"></a>Xbox Live 数据平台
 

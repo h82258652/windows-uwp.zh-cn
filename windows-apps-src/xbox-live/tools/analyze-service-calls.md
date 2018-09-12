@@ -9,16 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务调用, 测试, 跟踪分析器
-ms.localizationpriority: low
-ms.openlocfilehash: ada394f71bf8d372a61c0a280f34a658c0a9b60c
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 196505a9ed3fb62ef609415c292e98850588102f
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880876"
 ---
 # <a name="xbox-live-trace-analyzer"></a>Xbox Live 跟踪分析器
 
-现在，游戏开发人员可以通过 Xbox Live 服务 API 捕获所有服务调用，然后对其进行离线分析，以了解调用模式中是否存在任何违规。 可以使用 xbtrace 命令行工具中的新功能或者通过协议激活更高级方案来激活服务调用跟踪。 此外，也支持通过游戏代码直接激活服务调用跟踪。 离线分析工具（称为 Xbox Live 跟踪分析器，XBLTraceAnalyzer.exe）是 Xbox Live 工具包的组成部分，网址：[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)。
+现在，游戏开发人员可以通过 Xbox Live 服务 API 捕获所有服务调用，然后对其进行离线分析，以了解调用模式中是否存在任何违规。 可以使用 xbtrace 命令行工具中的新功能或者通过协议激活更高级方案来激活服务调用跟踪。 此外，也支持通过游戏代码直接激活服务调用跟踪。 从 Xbox Live 工具程序包的一部分找不到离线分析工具，调用 Xbox Live 跟踪分析器，XBLTraceAnalyzer.exe) [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)。
 
 
 ## <a name="gather-logs-and-analyze-the-service-calls"></a>收集日志并分析服务调用

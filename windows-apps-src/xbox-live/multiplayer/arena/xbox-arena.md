@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
-ms.localizationpriority: low
-ms.openlocfilehash: 1adda076a68d5011b7ae4e69f830829e1fb20545
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7e4df0894cc2c8ab214e129193a37b68f408194f
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881109"
 ---
 # <a name="xbox-arena"></a>Xbox Arena
 
@@ -76,6 +77,12 @@ Xbox Arena 角色（设置锦标赛）   | 游戏的角色（游戏）
 文章 | 描述
 --- | ---
 [Arena 游戏集成](arena-title-integration.md) | 了解如何在游戏中集成对 Xbox Arena 的支持。
+
+## <a name="operations-guidance"></a>操作指南
+
+文章 | 描述
+--- | ---
+[Xbox Arena 操作门户](operations-portal.md) | 介绍了可用于创建和管理与 Xbox Arena 集成的游戏的官方锦标赛的操作门户。
 
 ## <a name="user-experience-guidance"></a>用户体验指南
 

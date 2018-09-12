@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox 集成多人游戏
-ms.localizationpriority: low
-ms.openlocfilehash: 2dc9adf4cdb1b1366fd265ad40fabefbc3b05801
-ms.sourcegitcommit: aa7eab04a24c58d43d63cec1e1e99dbf9aab59f6
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7cb15206469abf96d8c88490c35c86b8c5197e93
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1913935"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881374"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C#)
 

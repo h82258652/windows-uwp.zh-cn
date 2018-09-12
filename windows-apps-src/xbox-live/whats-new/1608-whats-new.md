@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 561ba3a6d66f8e09c3fc9ffd3e7e379b49d14fec
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 892b04e780d25b07ac9ed12ff62f0f101761ce20
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881411"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---august-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 8 月
 
@@ -82,7 +83,7 @@ _XSAPIIMP pplx::task<xbox_live_result<void>> clear_search_handle(_In_ const stri
 
 XIM 是一个自包含界面，可通过 Xbox Live 服务功能向你的游戏轻松添加多人游戏实时网络和聊天通信。
 
-我们在此处共享 API 文档预览是为了鼓励客户提供反馈、询问问题。 我们之前在 Xfest 2016 讨论了此 API，你可以从“统包的多人游戏网络和聊天”演讲中看到存档的 [Xbox 开发人员门户上的演示材料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)。 请注意，此预览文档仅用于 C++ API。 C# 和其他语言的 WinRT 等效项将在今年晚些时候发布。
+我们在此处共享 API 文档预览是为了鼓励客户提供反馈、询问问题。 我们谈到之前在 Xfest 2016 中，此 API，你可以看到存档的[托管的合作伙伴开发人员站点上的演示材料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)从"打开密钥多人游戏网络和聊天"交谈。 请注意，此预览文档仅用于 C++ API。 C# 和其他语言的 WinRT 等效项将在今年晚些时候发布。
 
 如果你对 XIM 的功能感兴趣，或希望提供有关此项目的反馈或有其他相关问题，请随时在 [Xbox 开发人员论坛](https://forums.xboxlive.com/)上发帖子，或通过你的开发者帐户管理器联系我们。
 

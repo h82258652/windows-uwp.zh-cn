@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 节流, 速率限制
-ms.localizationpriority: low
-ms.openlocfilehash: 935b4e8c53c976215f0e24b27496c67332ef684a
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 3aa06e65dcb17fd9bb751680f0d3f4717c0fc098
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917757"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881171"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a>Xbox Live 细化速率限制
 
@@ -96,13 +96,13 @@ Xbox Live 坚信无论每个用户在玩什么游戏/应用，他/她都应该�
 
 ## <a name="implemented-limits"></a>已实施的限制
 
-下面的服务已实施 FGRL 限制，这些限制从 **2016 年 5 月** 开始执行。 重申一点，这些限制在所有沙盒和作品中都是一样的。 **通过 XDP 或开发人员中心发布并于 2016 年 5 月之前交付的所有作品都将被视为旧版作品，因此将免受限制。**
+下面的服务已实施 FGRL 限制，这些限制从 **2016 年 5 月** 开始执行。 重申一点，这些限制在所有沙盒和作品中都是一样的。 **通过 Xbox 开发人员平台或开发人员中心发布并在 2016 月之前交付的任何标题将被视为旧版并因此将免受限制。**
 
 | **名称** | **突增限制**（每位用户每个作品 15 秒） | **持续限制**（每位用户每个作品 300 秒） | **认证限制**（10 倍于持续限制，每位用户每个作品 300 秒） |
 |----------------------------|---------------------------|----------------------------|----------------------------|
 | 统计数据读取                 | 100                       | 300                        | 3000                       |
 | 个人资料                    | 10                        | 30                         | 300                        |
-| MPSD                       | 100                       | 300                        | 3000                       |
+| MPSD                       | 30                        | 300                        | 3000                       |
 | 状态                   | 读取 10，写入 3          | 读取 100，写入 30         | 读取 1000，写入 300       |
 | 社交                     | 10                        | 30                         | 300                        |
 | 排行榜               | 30                        | 100                        | 1000                       |

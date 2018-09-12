@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, 上下文搜索, 游戏剪辑, 广播
-ms.localizationpriority: low
-ms.openlocfilehash: 049e094c1a63bfaa80b0e11c2afd9431d0dd2d91
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 79197dc7db3f15aba5fc9d494a5e8408878f0dba
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880888"
 ---
 # <a name="configuring-contextual-search"></a>配置上下文搜索
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 02/24/2018
 例如，如果你使用 SinglePlayerMap 和 MultiplayerMap 这样的统计信息来筛选内容，玩家一次只会位于其中一个。  但是，这两个值可以随时在服务中用于查询。  当你设置一个时，同时清除另一个，这一点非常重要。  对于基于字符串的统计信息，空字符串非常适合（请确保不要将其作为一个选项加入你的 UI 配置）。
 
 ### <a name="configuring-a-stat-for-contextual-search"></a>配置上下文搜索的统计信息
-如果设置了支持标记的事件和统计信息，为上下文搜索配置游戏就很容易了。  如果你还不熟悉，请参阅有关此设置的其他现有的 XDP 文档。
+如果设置了支持标记的事件和统计信息，为上下文搜索配置游戏就很容易了。  有关设置上下文搜索，如果你还不熟悉，请参阅其他现有的 XDP 或 Windows 开发人员中心文档。
 
 ![](../images/contextual_search/config02.png)
 
@@ -59,7 +60,7 @@ ms.lasthandoff: 02/24/2018
 
   ![](../images/contextual_search/config03.png)
 
-  请注意，仅支持统计信息实例 - 不接受统计信息模板。  你还应该了解为统计信息实例设置的可见性（已在 XDP 的“统计信息”部分配置）。  仅标记为**开放**的统计信息将显示在第三方体验中。
+  请注意，仅支持统计信息实例 - 不接受统计信息模板。  你还应该了解为统计信息实例 （已在 XDP 或 Windows 开发人员中心的统计数据部分配置） 设置的可见性。  仅标记为**开放**的统计信息将显示在第三方体验中。
 
 2. 选择统计信息优先级。 这是指定这一统计信息相对于搜索体验/算法的其他方面的重要性的方式。  可接受值为 1-10（1 是最高）。  若要忽略，将此值保留为 0 或空白。
 3. 添加显示名称。  这是向最终用户显示的可本地化的字符串。

@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015, 会话, mpsd
-ms.localizationpriority: low
-ms.openlocfilehash: 6518afc16b693952761a5669ae6f5fce8194f883
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a6a9e88582b0d9c411cf4cd32aaf94beb0c5d0d0
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880942"
 ---
 # <a name="mpsd-session-details"></a>MPSD 会话详细信息
 
@@ -32,7 +33,7 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="session-overview"></a>会话概述
 
-MPSD 会话具有会话名称并被标识为会话模板的实例，它一个是为会话提供默认设置的 JSON 文档。 模板是具有服务配置标识符 (SCID) 的 [Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com) 服务配置的一部分，这是一个 GUID。 服务配置是面向开发人员的资源，供 XDP 用于引入、管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据开发人员通过 XDP 设置访问策略对服务配置执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
+多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的一个实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 可以在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)上找到此模板和[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据设置开发人员通过 XDP 或 Windows 开发人员中心访问策略的服务配置对执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
 
 本主题假设你的模板使用协定版本 107，即当前的 MPSD 为 Xbox One 使用的版本。 如果你有基于协定版本 105（与 104 相同）定义的模板，你必须更改这些设置以支持版本 107。 有关说明，请参阅[常见的多人游戏 2015 迁移问题](common-issues-when-adapting-multiplayer.md)。
 
@@ -194,7 +195,7 @@ https://{authority}/serviceconfigs/{service-config-id}/sessiontemplates/{session
 
 ## <a name="session-capabilities"></a>会话功能
 
-功能是 MPSD 会话中的常量，该会话配置 MPSD 应该对其应用的行为。 你最常使用 XDP 来设置会话模板中的功能。 它们在 /constants/system/capabilities 对象中设置。 如果不需要功能，则使用空的功能对象。
+功能是 MPSD 会话中的常量，该会话配置 MPSD 应该对其应用的行为。 你最常使用 XDP 和 Windows 开发人员中心来设置会话模板中的功能。 它们在 /constants/system/capabilities 对象中设置。 如果不需要功能，则使用空的功能对象。
 
 | 注意                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------|

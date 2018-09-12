@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
-ms.localizationpriority: low
-ms.openlocfilehash: dc839c6ebbb5dc754da84c5084cdff17b9aa0bb9
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bbfcb38704512b3dbd709eb827768d073ad4c95
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935676"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880940"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 

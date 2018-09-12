@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
-ms.localizationpriority: low
-ms.openlocfilehash: 5214b85ca7a0e4f8460044b34279895027d0b8d4
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8fe8ad244b9b7a650af4fc77c4adbb1805023ecf
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881204"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -106,7 +107,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 游戏指定匹配票证会话内的各成员的每个成员属性。 通过使用“matchAttrs”的属性名称并调用 MultiplayerSession.SetCurrentUserMemberCustomPropertyJson 方法来对它们进行设置。 此调用将 /members/{index}/properties/custom/matchAttrs 字段中的属性置于票证会话中的每个玩家上。
 
-基于为漏斗的 XDP 配置 UI 中的属性指定的平展方法，匹配过程将每个成员“平展”为单个票证级别属性。
+匹配过程将"平展"每个成员为单个票证级别属性，基于为漏斗的 Xbox Live 配置 UI 中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上配置。
 
 
 ### <a name="making-the-match"></a>进行匹配
@@ -176,12 +177,12 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com) 完成。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
 
-如 [SmartMatch 匹配]()中所述，有两种类型的会话与匹配相关：匹配票证会话和匹配目标会话。 基本上，票证会话是匹配服务的输入，而目标会话是输出。 在 XDP 中配置会话模板时，你应该为每个会话类型创建一个模板。
+如 [SmartMatch 匹配]()中所述，有两种类型的会话与匹配相关：匹配票证会话和匹配目标会话。 基本上，票证会话是匹配服务的输入，而目标会话是输出。 配置会话模板时，你应创建每个会话类型的模板。
 
 对于票证会话，你可以使用专用模板。 或者，你可以将模板重新用于大厅会话或其他不用于游戏的会话。
 
@@ -191,7 +192,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-在 XDP UI 中，你可以将每个会话映射到一个或多个漏斗，每个漏斗中包含确定如何将会话匹配在一起的规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+配置 XDP 或开发人员中心 UI 中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置
@@ -258,7 +259,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 ###### <a name="data-type-specific-rule-fields"></a>数据类型特定规则字段
 
-本部分定义了用于定义适用于某些数据类型但不适用于其他数据类型的规则的字段。 XDP UI 应该能够阐明哪些数据类型适用于特定规则。
+本部分定义了用于定义适用于某些数据类型但不适用于其他数据类型的规则的字段。 UI 应该能够阐明哪些数据类型适用于特定规则。
 
 **允许使用通配符**
 
@@ -427,7 +428,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 ### <a name="configuring-team-rules"></a>配置团队规则
 
-若要设置团队规则，请在 XDP 中创建一个。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
+若要设置团队规则，首先创建一个选择的配置平台 （XDP 或开发人员中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
 
 
 #### <a name="using-team-rules"></a>使用团队规则

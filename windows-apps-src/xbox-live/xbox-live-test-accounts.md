@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 测试帐户
-ms.localizationpriority: low
-ms.openlocfilehash: d0457e477eeb21499c4062b6cc1902eabdd9f1e5
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8ba24c02d59a992ecacf0be89197511c5e133c59
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881410"
 ---
 # <a name="xbox-live-test-accounts"></a>Xbox Live 测试帐户
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 02/24/2018
 
 如果你已有 Xbox Live 帐户，则预配该帐户以用于开发沙盒不失为好的开端。
 
-如果你目前还没有 Xbox Live 帐户，或需要额外的 MSA，则可以在 [https://account.microsoft.com/account](https://account.microsoft.com/account) 上创建一些帐户。
+如果你没有现有的 Xbox Live 帐户或不需要额外的 Msa，则可以创建一些在[https://account.microsoft.com/account](https://account.microsoft.com/account)。
 
 ## <a name="creating-test-accounts"></a>创建测试帐户
 

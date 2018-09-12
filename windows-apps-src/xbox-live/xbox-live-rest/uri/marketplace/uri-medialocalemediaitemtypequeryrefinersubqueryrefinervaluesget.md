@@ -1,0 +1,73 @@
+---
+title: 获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} /queryrefiners/ {queryRefiner} / subQueryRefinerValues)
+assetID: 0fcbef77-4607-765e-72e1-d2e7620e2c61
+permalink: en-us/docs/xboxlive/rest/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervaluesget.html
+author: KevinAsgari
+description: " 获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} /queryrefiners/ {queryRefiner} / subQueryRefinerValues)"
+ms.author: kevinasg
+ms.date: 20-12-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
+ms.localizationpriority: medium
+ms.openlocfilehash: 036a64f893ab1581d42f1601204b383968c607e3
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881014"
+---
+# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} /queryrefiners/ {queryRefiner} / subQueryRefinerValues)
+对于给定的查询精选值 (例如，"subgenres 给定流派中") 中获取子值的列表。 这些 Uri 的域是`eds.xboxlive.com`。
+ 
+  * [备注](#ID4EV)
+  * [URI 参数](#ID4EDB)
+ 
+<a id="ID4EV"></a>
+
+ 
+## <a name="remarks"></a>备注
+ 
+名为**queryRefinerValue**，这是为了允许查询精选值以禁止在 URI 杆要传递的字符的查询字符串参数传入查询精选值。
+ 
+音乐仅支持此 API。
+  
+<a id="ID4EDB"></a>
+
+ 
+## <a name="uri-parameters"></a>URI 参数
+ 
+| 参数| 类型| 说明| 
+| --- | --- | --- | 
+| marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
+  
+<a id="ID4EOB"></a>
+
+ 
+## <a name="see-also"></a>另请参阅
+ 
+<a id="ID4EQB"></a>
+
+ 
+##### <a name="parent"></a>Parent 的子磁盘） 
+
+[/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} /queryrefiners/ {queryRefiner} / subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
+
+  
+<a id="ID4E1B"></a>
+
+ 
+##### <a name="further-information"></a>详细信息 
+
+[EDS 公共标头](../../additional/edscommonheaders.md)
+
+ [EDS 参数](../../additional/edsparameters.md)
+
+ [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+
+ [市场 Uri](atoc-reference-marketplace.md)
+
+ [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
+
+   

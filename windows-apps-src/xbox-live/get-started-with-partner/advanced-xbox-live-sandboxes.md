@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 39bdfe0ddb5246408ee56781fb5e0c33d879fe9a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 23be9758a587644bc834236abd6961d4ac120d50
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881175"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -28,7 +29,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 内容隔离可确保发布者内容不在生产中泄露。 在本质上，内容隔离可以确保任何请求资源访问权限的主体用户、设备或主题作品（主题作品或服务）都有权访问资源。 通过内容隔离，相应分区被划入存储主题作品或服务数据的沙盒中。 换个说法就是，在沙盒范围内定义授权策略。
 
-沙盒是分隔生产中数据的一种方法。 使用 Xbox 360 era 服务时，PartnerNet 和 ProductionNet 是两种截然不同的环境。 使用 Xbox One era 服务时，单一生产环境包含 *n* 个不同的虚拟环境，其中每一个虚拟环境称之为沙盒。 由于所有内容都承载于单个生产环境中，所以沙盒实际上是独特的虚拟环境，而且在一个环境中生成的数据无法跨越到另一个环境。
+沙盒是分隔生产中数据的一种方法。 使用 Xbox 360 era 服务时，PartnerNet 和 ProductionNet 是两种截然不同的环境。 对于 Xbox One 时代的服务，单个生产环境包含*n*不同的虚拟环境，其中每个虚拟环境称为一个沙盒。 由于所有内容都承载于单个生产环境中，所以沙盒实际上是独特的虚拟环境，而且在一个环境中生成的数据无法跨越到另一个环境。
 
 下图展示了发布者可以在其中创建专用开发沙盒的单个生产环境。 仅授权开发人员帐户或开发人员工具包能够访问这些沙盒。
 
@@ -170,7 +171,7 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 沙盒 ID 是作品、产品或服务配置数据的分隔单元。多个作品可以位于同一个沙盒中，这是这些作品可以共享任何服务配置数据的先决条件。
 
-沙盒 ID（区分大小写）是采用以下格式的字符串：&lt;PublisherMoniker&gt;.*n*。 例如，沙盒 ID XLDP.5 的说明如下：
+沙盒 ID （区分大小写） 是一个字符串采用以下格式： &lt;PublisherMoniker&gt;。*n*。 例如，沙盒 ID XLDP.5 的说明如下：
 
 -   *发布者名字对象*在所有发布者中都是唯一的。 因此，“XLPD”是此特定发布者的发布者名字对象。 当开发人员帐户管理器在 XDP 中“激活”发布者时，将创建发布者名字对象。
 

@@ -9,26 +9,26 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, 创意者
-ms.localizationpriority: low
-ms.openlocfilehash: 65e6c45c509217389e2bb3d10a264d7922c3dba3
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b23d2964e541ea9102a704caa187041a2ce57891
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905353"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880833"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>向 Unity 项目添加玩家统计数据和排行榜
 
 > [!IMPORTANT]
 > Xbox Live Unity 插件不支持成就或多人在线游戏，只建议 [Xbox Live 创意者计划](../developer-program-overview.md)成员使用。
 
-向 Unity 项目添加 [Xbox Live 登录](sign-in-to-xbox-live-in-unity.md)后，下一步是添加玩家统计数据和基于其玩家统计数据的排行榜。
+向 Unity 项目添加 [Xbox Live 登录](unity-prefabs-and-sign-in.md)后，下一步是添加玩家统计数据和基于其玩家统计数据的排行榜。
 
 通过 [Xbox Live Unity 插件](https://github.com/Microsoft/xbox-live-unity-plugin)，你可以轻松地在 Unity 项目中添加玩家统计数据和排行榜。 与登录步骤类似，可以选择使用包含的 prefab，也可以将包含的脚本附加到自定义游戏对象中。
 
 ## <a name="prerequisites"></a>先决条件
 1. [在 Unity 中配置 Xbox Live](configure-xbox-live-in-unity.md)
-2. [在 Unity 中登录到 Xbox Live](sign-in-to-xbox-live-in-unity.md)
+2. [在 Unity 中登录到 Xbox Live](unity-prefabs-and-sign-in.md)
 
 ## <a name="player-stats"></a>玩家统计数据
 
@@ -105,7 +105,7 @@ Xbox Live Unity 插件包含两个排行榜 prefab：
 
 ## <a name="see-also"></a>另请参阅
 
-* [在 Xbox Live 中登录 Unity](sign-in-to-xbox-live-in-unity.md)
+* [在 Xbox Live 中登录 Unity](unity-prefabs-and-sign-in.md)
 * [在 Unity 中配置 Xbox Live](configure-xbox-live-in-unity.md)
 * [排行榜示例场景](setup-leaderboard-example-scene.md)
 * [获取排行榜数据](unity-leaderboard-from-scratch.md)

@@ -9,18 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
-ms.localizationpriority: low
-ms.openlocfilehash: 328ad7e7dc09b23ebb1d2e506ea5c03823ab384a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e43470a19338f4a523c89bec6dd45e2672dfd283
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880851"
 ---
 # <a name="introduction-to-the-multiplayer-system"></a>多人游戏系统简介
 
 | 注意                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 本文针对高级 API 的使用。  首先，请看一看[多人游戏管理器 API](../multiplayer-manager.md)，它让开发大大简化。  如果你在多人游戏管理器中发现了不受支持的场景，请告知 DAM。 |
+| 本文面向高级 API 的使用。  作为起点，请看一下[多人游戏管理器 API](../multiplayer-manager.md)，其大大简化了开发。  如果你在多人游戏管理器中发现了不受支持的场景，请告知 DAM。 |
 
 本文档包含以下部分
 * 关于多人游戏系统

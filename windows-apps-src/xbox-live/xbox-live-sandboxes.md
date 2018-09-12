@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 90240c0344e5757e44e4100f31c41b3e40151235
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 63447a9423ab65f79f034877a1c74c1eea75c78c
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880854"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 
@@ -94,7 +95,7 @@ ms.lasthandoff: 02/24/2018
     2. 通过运行开始使用 `Import-Module XboxlivePSModule`
     3. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
-* 若要从 zip 文件（位于 [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)）使用该模块，请打开 PowerShell 窗口，
+* 若要使用它从 zip 文件在[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开 PowerShell 窗口，
     1. 运行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
@@ -102,7 +103,7 @@ ms.lasthandoff: 02/24/2018
 
 从 [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) 下载 Xbox Live 工具包并解压缩。  你将会在其中找到 SwitchSandbox.cmd 批处理文件。
 
-在管理员模式下，运行此文件以切换你的沙盒。  第一个变量是沙盒。  例如，如果你要尝试切换到 XDKS.1 沙盒，则应执行以下操作：
+在管理员模式下，运行此文件以切换你的沙盒。  第一个参数是沙盒。  例如，如果你要尝试切换到 XDKS.1 沙盒，则应执行以下操作：
 
 ```
 SwitchSandbox.cmd XDKS.1

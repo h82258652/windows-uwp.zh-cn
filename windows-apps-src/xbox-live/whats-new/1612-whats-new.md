@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: eb2e6bf9f3f7b03f5d693ff5a4221df58d61c23b
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 9622774de85c3bac91a70f75829cbe3769b600b1
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881207"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---december-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 12 月
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 02/24/2018
 
 ### <a name="gamechat"></a>GameChat
 
-* 新[辅助功能](../multiplayer/chat/chat-accessibility-overview.md)已添加到 [GameChat](../multiplayer/chat/gamechat-overview.md)，以支持文本到语音和语音到文本场景。
+* 新辅助功能已添加到 GameChat，以支持文本到语音和语音到文本场景。
 
 ### <a name="multiplayer"></a>多人游戏
 
@@ -32,4 +33,7 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="documentation"></a>文档
 * 这是 [XIM](../multiplayer/xbox-integrated-multiplayer.md) 的更新文档。
-* 已添加了 [GameChat](../multiplayer/chat/gamechat-overview.md) 相关文档
+* 已添加了 GameChat 相关文档
+
+> [!IMPORTANT]
+> 游戏聊天与游戏聊天 2 已被替换为 ！ 请参考[游戏聊天 2 文档](../multiplayer/chat/game-chat-2-overview.md)，因为游戏聊天 1 不再受支持。

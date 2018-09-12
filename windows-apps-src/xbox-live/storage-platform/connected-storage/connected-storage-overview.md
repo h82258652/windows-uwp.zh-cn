@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
-ms.localizationpriority: low
-ms.openlocfilehash: 70d9c6dda2ba502345f0988a4d07b6c659f8fed2
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 754367c1a8d2daaf37d236e65d241b05c52e84d5
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881301"
 ---
 # <a name="connected-storage"></a>连接存储
 连接存储旨在允许游戏保存游戏数据以及应在设备之间漫游的其他相关状态数据。 连接存储 API 允许 Xbox One 和通用 Windows 平台 (UWP) 上的游戏保存、加载和删除本地存储的游戏数据，并在 Xbox One 或 UWP 游戏连接到 Internet 时保存、加载和删除同步到云的数据。 在同步发生后运行游戏的任何其他设备都可以使用保存的数据。 建议开发人员尽可能准确地保存游戏状态以提供最佳外出游戏体验。 连接存储允许你在家里玩游戏，然后在支持相同游戏的任何其他设备上从离开的游戏进度处继续游戏。
@@ -65,7 +66,7 @@ ms.lasthandoff: 03/16/2018
 
 可以在以下路径找到 XDK .chm 文件中介绍的 XDK 连接存储 API：**Xbox ONE XDK >> API Reference >> Platform API Reference >> System API Reference >> Windows.Xbox.Storage**。
 在 [developer.microsoft.com 网站](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)也可查阅 XDK API。
-XDK API 链接要求你具有启用了 Xbox 开发人员工具包(XDK) 访问的 Microsoft 帐户 (MSA)。
+XDK API 链接要求你具有启用了 Xbox 开发人员工具包 (XDK) 访问的 Microsoft 帐户 (MSA)。
 Windows.Xbox.Storage 是 Xbox One 主机的连接存储命名空间的名称。
 
 可以在以下路径找到 Xbox Live SDK .chm 文件中介绍的 UWP 连接存储 API：**Xbox Live APIs >> Xbox Live Platform Extensions SDK API Reference >> Windows.Gaming.XboxLive.Storage**。
@@ -98,13 +99,13 @@ xbstorage 是 XDK 附带的命令行工具，可用于在开发控制台上操�
 
 这两种工具都允许使用以下命令操作设备上的本地存储：
 
-|命令  |描述  |
+|命令  |说明  |
 |---------|---------|
-|重置    | 对连接存储执行出厂重置。 |
-|导入   | 将数据从指定的 XML 文件导入连接存储空间。 |
-|导出   | 将数据从连接存储空间导出到指定的 XML 文件。 |
-|删除   | 从连接存储空间删除数据。 |
-|生成 | 生成虚拟数据并保存到指定的 XML 文件中。 |
+|reset    | 对连接存储执行出厂重置。 |
+|import   | 将数据从指定的 XML 文件导入连接存储空间。 |
+|export   | 将数据从连接存储空间导出到指定的 XML 文件。 |
+|delete   | 从连接存储空间删除数据。 |
+|generate | 生成虚拟数据并保存到指定的 XML 文件中。 |
 |模拟 | 模拟存储空间不足的情况。 |
 
 要了解有关 xbstorage 工具中的可用函数和 gamesaveutils.exe 的更多信息，请参阅[管理本地连接存储](connected-storage-xb-storage.md)。

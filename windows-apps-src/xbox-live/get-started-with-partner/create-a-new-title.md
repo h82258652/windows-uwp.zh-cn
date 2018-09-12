@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: d7639402e9dcb8a343d49c6e4ce9254bad192f5a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 72126b51c4e155babad6cfee737e21d6102b03e5
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881383"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>为 Xbox Live 创建新主题作品
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 02/24/2018
 本文将通过以下假设引导你完成这一过程
 
 1. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品在 Xbox One、Windows 10 台式电脑和移动设备上运行
-2. 你正在 Windows 开发人员中心 ([http://dev.windows.com/](http://dev.windows.com)) 上配置主题作品。  如有疑问，应使用 Windows 开发人员中心。
+2. 要在 Windows 开发人员中心上配置你的游戏[http://dev.windows.com/](http://dev.windows.com)。  如有疑问，应使用 Windows 开发人员中心。
 3. 你正在使用带有自定义游戏引擎的 Visual Studio 或 Unity。
 4. 开发计算机运行的是 Windows 10。
 
@@ -39,12 +40,12 @@ ms.lasthandoff: 02/24/2018
 你需要在 [Windows 开发人员中心](http://dev.windows.com)上创建一个支持 Xbox Live 的主题作品，作为所有可用的 Xbox Live 功能的先决条件。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
-如果没有 Microsoft 帐户（也称为 MSA），则需要先在 [https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486) 上创建一个帐户。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
+如果你没有 Microsoft 帐户 (也称为 MSA)，你将需要首先创建一个在[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
 
 ### <a name="register-as-an-app-developer"></a>注册成为应用开发人员。
 你需要先注册成为应用开发人员，然后才可以在开发人员中心创建新主题作品。
 
-要注册，请转到 https://developer.microsoft.com/zh-cn/store/register 并遵循注册流程。
+若要注册，请转到https://developer.microsoft.com/en-us/store/register并按照注册流程。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
 接下来，你需要一个在开发人员中心上定义了的 UWP 主题作品。  需要先转到仪表板才能执行此操作

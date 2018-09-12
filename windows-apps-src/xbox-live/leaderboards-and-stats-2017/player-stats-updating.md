@@ -4,18 +4,18 @@ author: KevinAsgari
 description: 了解如何通过使用 Stats 2017 更新 Xbox Live 玩家统计数据。
 ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 08/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, stats 2017
-ms.localizationpriority: low
-ms.openlocfilehash: ebe10ba743cba6c26b9d2c4d0531296314c04e95
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 57d52b102d46efa1a2e6d35dedd46e6aba577977
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862990"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881193"
 ---
 # <a name="updating-stats-2017"></a>更新 Stats 2017
 
@@ -23,7 +23,8 @@ ms.locfileid: "1862990"
 
 由你的作品来跟踪玩家统计数据，你可以调用 `StatsManager` 适当地更新这些统计数据。  `StatsManager` 将缓冲所做的任何更改，并将这些更改定期刷新到该服务。  你的作品还可以手动刷新。
 
-> **注意** 不要太频繁地刷新统计数据。  否则，你的作品将受到速率限制。  最佳做法是最多每 5 分钟刷新一次。
+> [!NOTE]
+> 不要太频繁刷新统计数据。  否则，你的作品将受到速率限制。  最佳做法是最多每 5 分钟刷新一次。
 
 ### <a name="multiple-devices"></a>多台设备
 
@@ -76,6 +77,12 @@ statsManager->add_local_user(user);
 statsManager->do_work();  // returns stat_event_type::local_user_added
 ```
 
+```csharp
+Microsoft.Xbox.Services.Statistics.Manager.StatisticManager statManager = StatisticManager.SingletonInstance;
+statManager.AddLocalUser(user);
+statEvent = statManager.DoWork();
+```
+
 ### <a name="writing-stats"></a>写入统计数据
 
 你可以使用 `stats_manager::set_stat` 系列函数写入统计数据。  对于每种数据类型，此函数有三种变体：
@@ -88,12 +95,16 @@ statsManager->do_work();  // returns stat_event_type::local_user_added
 
 你可以选择通过 `stats_manager::request_flush_to_service` API 手动刷新统计数据。  请注意，如果你太频繁地调用此函数，则你将受到速率限制。  这并不意味着将不更新统计数据。  这只意味着超时到期时将会进行更新。
 
-请注意，对于类型为 *SUM* 的统计数据，你可以发送增量更新。  例如：如果你拥有*总击杀数*的统计数据，并且在服务器上该值为 100。  如果你在参数为 5 的情况下调用 `set_stat_integer`。  在服务器上新值为 105。
-
 ```cpp
 statsManager->set_stat_integer(user, L"numHeadshots", 20);
 statsManager->request_flush_to_service(user); // requests flush to service, performs a do_work
 statsManager->do_work();  // applies the stat changes, returns stat_update_complete after flush to service
+```
+
+```csharp
+statManager.SetStatisticIntegerData(user, statName, (long)statValue);
+statManager.RequestFlushToService(user);
+statManager.DoWork();
 ```
 
 #### <a name="example"></a>示例
@@ -130,4 +141,9 @@ statsManager->do_work();  // applies the stat changes, returns stat_update_compl
 ```cpp
 statsManager->remove_local_user(user);
 statsManager->do_work();  // applies the stat changes, returns local_user_removed after flush to service
+```
+
+```csharp
+statManager.RemoveLocalUser(user);
+statManager.DoWork();
 ```

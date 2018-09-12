@@ -1,54 +1,65 @@
 ---
 title: 玩家统计数据
-author: KevinAsgari
+author: aablackm
 description: 了解如何在 Xbox Live 中设置玩家统计数据。
 ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
-ms.author: kevinasg
-ms.date: 11/10/2017
+ms.author: aablackm
+ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, 排行榜
-ms.localizationpriority: low
-ms.openlocfilehash: c3a6f5ec0cbe983d07bc98f5cf4fd7c92f10614c
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 89f3f2662bbff2fdacb77c44078de922b6a37b24
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935608"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880974"
 ---
 # <a name="player-stats"></a>玩家统计数据
 
-如[数据平台概述](../data-platform/data-platform.md)中所述，统计数据是要跟踪的玩家相关信息的重要组成部分。 例如*爆头数*或*单圈最快时间*。
+如[数据平台概述](../data-platform/data-platform.md)中所述，统计数据是要跟踪的玩家相关信息的重要组成部分。 例如*爆头数*或*单圈最快时间*。 统计数据用于生成排行榜，在数将允许玩家比较他们的工作和与好友的技能和每个其他玩家在游戏的社区中的方案。 配置的统计数据将显示在游戏的[游戏中心](../data-platform/designing-xbox-live-experiences.md)排行榜，玩家将看到它们如何对其好友还玩游戏的排名。 在游戏的游戏中心中显示的统计数据被称为**功能统计数据**，也称为**主要统计信息**。除了游戏中心中显示，从 Xbox One 1806 更新开始特别推荐的统计数据可能还会定期出现在用户可能会添加到其主页视图的固定内容块。 这允许快速访问的社交排行榜直接从家庭版视图。 请务必记住，特别推荐的统计数据是显示在固定内容块中，以便用户可能不始终只能看到他们如果 Microsoft 的内容服务确定其他内容的项目可能更有吸引力的几个可能项之一。
 
-这些统计数据可以显示在[游戏中心](../data-platform/designing-xbox-live-experiences.md)内，也可以用于填充排行榜。 例如，如果你拥有*单圈最快时间*的统计数据，则可以拥有相应的排行榜，以显示全球玩家的单圈时间。
+## <a name="stats-2013-and-2017"></a>统计数据 2017年和 2013
 
-## <a name="defining-stats"></a>定义统计数据
+当前有两个实现 Xbox Live、 Stats 2013 和 Stats 2017 统计数据。 这两者都是适用于ID@Xbox和托管的合作伙伴开发人员。 Xbox Live 创意者计划开发人员可能仅使用 Stats 2017，并因此可以忽略 Stats 2013。
 
-对于某些类型的统计数据，你将需要在开发人员中心上对其进行配置。 我们将在下面列出这些类型。
+Xbox Live 创意者计划开发人员可以跳到[Stats 2017 文档](stats2017.md)。
 
-### <a name="what-needs-to-be-configured"></a>需要配置的内容
+这些两个实现操作截然不同原则。 当使用 Stats 2013 包含有关操作在用户执行某些信息向 Xbox Live 服务发送**事件**。 这些**事件**中的信息用于相应地更新统计数据。 统计数据 2013年中该服务将跟踪并更新所有统计数据值，使其的玩家或组玩家的统计数据值的资料来源。 为了便于对比，统计数据 2017 年将发送的实际的统计数据值本身的要使用的服务器。 统计数据 2017 年 10 月服务器会少为的值不验证发送到它，并因此是由你的作品，并跟踪的正确的统计数据值的统计数据值的资料来源。 我们建议你跟踪，如果你决定实现 Stats 2017 与[Xbox Live 存储平台](../storage-platform/storage-platform.md)在云中存储你的统计数据。 你可以将统计数据 2017年视为报告服务。 为你的游戏的正确的统计数据发送到服务器，统计数据将然后坐在服务器上，并等待上请求显示或更新。
 
-一般情况下，统计数据不需要配置，但是，如果你的统计数据是“特别推荐的统计数据”，则你需要在开发人员中心上对此统计数据进行定义。 特别推荐的统计数据将显示在你的作品的游戏中心上。 这些统计数据将使你的游戏中心看起来更有趣，并自动生成排行榜，以确保玩家始终参与其中。 你还可以在自己的作品中使用它们来引起玩家对某些游戏机制的关注，因为这些机制显示给 Xbox Live 上的所有玩家，即使他们没有你的作品。
+## <a name="a-brief-history"></a>简短历史记录
 
-将为特别推荐的统计数据自动提供全球历史排行榜和每月排行榜。 这些排行榜显示在游戏中心内，并将说明玩家与其好友的进度对比情况。 它们也可以像常规排行榜一样显示在你的作品中。 例如：
+启动的 Xbox One，Xbox Live 引入了新的事件驱动的统计数据模型中，玩家统计数据 2013年。 这提供了大量的好处 – 从游戏通过单个事件即可更新多个 Xbox Live 功能数据，如排行榜和成就;Xbox Live 配置依赖于服务器而不是在客户端;以及更多。 在 Xbox One 发布以来年，我们密切听取了游戏开发人员反馈和开发人员一致地请求更简化的统计数据服务，将允许绕过附带事件驱动的系统的复杂性，以及允许它们用于跟踪的方法已对其进行练习任何统计数据。 根据开发人员的反馈创建新的简化的版本的统计数据将使统计数据逻辑的控件返回到的开发人员的手。 系统是统计数据 2017，一项服务，只需采用值传递给它使开发人员能够控制如何确定统计数据值的逻辑的标题。
 
-![](../images/omega/gamehub_featuredstats.png)
+## <a name="how-stats-are-handled-in-2013-and-2017"></a>统计数据 2017年 2013年中的处理方式
 
-如果你的统计数据对应于*全球排行榜*，则你还需要在开发人员中心上定义它。 [排行榜](leaderboards.md)一文将更详细地介绍*全球排行榜*。 简而言之，全球排行榜就是将玩家与全球的其他所有玩家放在一起进行排名。
+让我们来看看配置和 2013年和 2017年更新统计数据。 让我们假设我们将从一些通用 rpg 进行统计数据，并且想要跟踪的流终止。
 
-如果你的统计数据仅对应于*社交排行榜*，则你不需要在开发人员中心上执行任何配置。 [排行榜](leaderboards.md)一文将更详细地介绍*社交排行榜*。 简而言之，社交排行榜就是只将玩家与其好友（关注他们的人，以及他们关注的人）放在一起进行排名。
+统计数据 2013年中你的游戏如何发送*事件*，其中包含有关玩家所执行的操作的信息。 此事件中玩家具有配备双刃剑时，将 slaying 操作 orc。 此事件中包含的信息的一些可能的 slay 操作所、 操作 slayed orc、 一组的类型是 melee，且使用武器为一双刃剑。 统计数据 2013年将运行通过多个规则由开发人员，在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)或[Windows 开发人员中心](https://developer.microsoft.com/en-us/windows)，并更新统计数据，还配置由你的事件配置此信息。 统计数据 2013年中该服务将跟踪的 slaying 统计值应该是什么。 与双刃剑事件 slay orc 无法更新多个这样的统计信息、 击杀数、 数 orcs slain 和双刃剑击杀数。
 
-### <a name="configured-on-dev-center"></a>在开发人员中心上配置
+在统计数据 2017 中，你将发送的实际值您的统计信息。 对于双刃剑示例 slay orc，你的游戏将跟踪的总击杀数、 双刃剑击杀数和 orcs 单独 slain 数并发送每项统计数据的更新的数量的服务。 服务有最小验证检查以确保发送大量有意义，所以绝对由你的游戏发送正确的统计数据。 虽然可能使用 Stats 2017 服务的游戏会话开始时取消统计数据的值，你不应使用 Stats 2017 服务正在运行该会话时确认统计数据的值。
 
-配置体验取决于你所使用的数据平台的版本。
+下面你可以看到图示的两种类型的统计数据的工作方式。
+![统计数据区别图](../images/stats/Stats2013-7DiagramColored.jpg)
 
-> **注意** 如果要让作品成为 Xbox Live 创意者计划的一部分，你需要使用 Data Platform 2017。
+## <a name="a-few-more-notes"></a>一些详细说明
 
-如果你已加入 Xbox Live 创意者计划，或使用了 Data Platform 2017，请参阅[在 Windows 开发人员中心上配置特别推荐的统计数据或排行榜](../configure-xbl/dev-center/featured-stats-and-leaderboards.md)
+为ID@Xbox和托管的合作伙伴开发人员有几个需要注意的统计数据 2013年和时 Stats 2017 为你的游戏的多个区别。
 
-如果是在 XDK 和更早 UWP 作品中使用的 Data Platform 2013，则可通过统计数据进一步赢取成就。 如果你是托管合作伙伴，并且需要更多信息，请参阅 [Data Platform 2013 的用户统计数据](https://developer.microsoft.com/games/xbox/docs/xboxlive/xbox-live-partners/event-driven-data-platform/user-stats)。  
+统计数据 2013年允许多个排行榜视图。
+统计数据 2013年允许你更轻松地深入了解你的统计信息的元数据。 在我们 orc 杀死整体统计数据是跟踪的击杀数的示例。 统计数据 2013年可以深入了解到内容已终止与什么武器以及定义的信息可能需要配置的任何其他终止你统计信息。
 
-## <a name="next-steps"></a>后续步骤
+统计数据 2013年具有播放统计数据的统计数据 2013年中允许访问玩家的游戏时间在游戏中，而无需配置统计信息本机分钟。 任何玩的统计信息必须由你的游戏中统计数据 2017年跟踪。
 
-现在，你已配置了一些玩家统计数据和特别推荐的统计数据。 你可以随时创建排行榜。 请参阅[排行榜](leaderboards.md)以开始操作。
+统计数据 2013年的近的实时更新频率。
+Stats 2013 事件系统几乎立即更新统计数据。 在 Stats 2017 没有五分钟的等待时间之前更新统计数据刷新到该服务。 开发人员可以手动刷新统计数据，但仍在最少 30 秒之间刷新到受到限制。
+
+统计数据 2013年可以支持其他 Xbox Live 服务。
+使用 Stats 2013 可用于统计数据解锁成就，并决定匹配。 统计数据 2017年仅用于生成排行榜。
+
+## <a name="further-reading"></a>进一步阅读
+
+有关 Stats 2013 的详细说明你可以读取[Stats 2013 上的合作伙伴唯一文档](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/event-driven-data-platform/user-stats)。
+有关 Stats 2017 的更深入地说明读取[统计数据 2017年文档](stats2017.md)。

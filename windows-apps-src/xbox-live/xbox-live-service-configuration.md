@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置
-ms.localizationpriority: low
-ms.openlocfilehash: c3d0314ba8d78c7c1c8b4307033bf014331c439a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e36e37802855747426184aa9d8cec0e6db77acd7
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881245"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live 服务配置
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 03/28/2018
 
 你可能熟悉 Xbox Live 的一些功能，例如[成就](achievements-2017/achievements.md)、[排行榜](leaderboards-and-stats-2017/leaderboards.md)和[匹配](multiplayer/multiplayer-concepts.md#smartmatch-matchmaking)。
 
-如果不熟悉的话，我们将以“排行榜”为例简要介绍一下。 排行榜让玩家可以查看表示自己相比其他玩家取得的成就的值。  例如，街机游戏中的高分、赛车游戏中的单圈时间，或第一人称射击游戏中的爆头数。 但不同的是，街机只显示在该物理计算机上玩过的玩家所取得的最高分，而 Xbox Live 可显示来自世界各地的玩家取得的高分。
+如果不熟悉的话，我们将以排行榜为例简要介绍一下。 排行榜让玩家可以查看表示自己相比其他玩家取得的成就的值。  例如，街机游戏中的高分、赛车游戏中的圈速，或第一人称射击游戏中的爆头数。 但不同的是，街机只显示在该物理计算机上玩过的玩家所取得的最高分，而 Xbox Live 可以显示来自世界各地的高分。
 
 不过，要做到这一点，你需要执行某种一次性配置，使 Xbox Live 了解你的排行榜。 例如，这些值应该是以升序还是降序排序，以及应对哪部分数据进行排序。
 
@@ -38,10 +39,12 @@ ms.lasthandoff: 03/28/2018
 
 对于后续的所有作品，建议使用 Windows 开发人员中心，但是，对于某些功能，你可能仍需要使用 XDP。 此部分将帮助并建议你从何处配置你的作品。
 
-如果你已经配置了作品，则可以向下滚动到[获取你的 ID](#get_ids)，以了解如何获取设置你的作品所需的各种标识符。
+具体取决于你所选的门户，你可以找到有关特定服务配置页信息：
 
-### <a name="xbox-one-xdk-only"></a>仅限 Xbox One XDK
-如果你要使用 Xbox One XDK 开发游戏，则必须使用 XDP 引入、配置和发布你的游戏。 很快将支持在 Windows 开发人员中心上配置 XDK 作品。
+* [Windows 开发人员中心配置](configure-xbl/windows-dev-center.md)
+* [Xbox 开发门户配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)-访问此链接，你必须具有一个 Microsoft 帐户 (MSA) 已启用 Xbox Live 完全访问权限。
+
+如果你已经配置了作品，则可以向下滚动到[获取你的 ID](#get_ids)，以了解如何获取设置你的作品所需的各种标识符。
 
 ### <a name="pcmobile-uwp-game-only"></a>仅限电脑/手机 UWP 游戏
 建议使用 Windows 开发人员中心配置和管理仅在 Windows 10 电脑和/或 Windows 10 移动设备运行的 UWP 游戏。
@@ -87,7 +90,7 @@ Xbox One 与电脑之间的跨设备游戏称为跨平台联机游戏，是对 W
 
 ## <a name="get-your-ids"></a>获取你的 ID
 
-若要启用 Xbox Live 服务，你需要获取多个 ID，以配置你的开发工具包和作品。 这些 ID 可通过执行 Xbox Live 服务配置获得。
+若要启用 Xbox Live 服务，你需要获取多个 ID，以配置你的开发工具包和主题作品。 这些 ID 可通过执行 Xbox Live 服务配置获得。
 
 如果你当前在 XDP 或开发人员中心上没有作品，请参阅上一部分 [Xbox Live 服务配置门户](#xbox_live_portals)以获取指导信息。
 

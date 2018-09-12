@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
-ms.localizationpriority: low
-ms.openlocfilehash: 46e3a178763a29fd0d5d89414e128b2d281f6fa4
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983316"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881354"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -28,8 +28,8 @@ XSAPI C API 公开了一个新的异步 C API，为开发人员在执行**异步
 
 ```cpp
 AsyncBlock* asyncBlock = new AsyncBlock {};
-asyncBlock->queue = queue;
-asyncBlock->context = this;
+asyncBlock->queue = asyncQueue;
+asyncBlock->context = customDataForCallback;
 asyncBlock->callback = [](AsyncBlock* asyncBlock)
 {
     XblUserProfile profile;
@@ -57,7 +57,6 @@ typedef struct AsyncBlock
 {
     AsyncCompletionRoutine* callback;
     void* context;
-    HANDLE waitEvent;
     async_queue_handle_t queue;
 } AsyncBlock;
 ```
@@ -66,8 +65,9 @@ typedef struct AsyncBlock
 
 * *callback* - 一个将在异步工作完成后调用的可选回调函数。  如果不指定回调，可以等待 **AsyncBlock** 完成并显示 **GetAsyncStatus**，然后获取结果。
 * *context* - 用于向回调函数传递数据。
-* *waitEvent* - 一个指定要等待的事件的句柄。 当异步操作完成及任何完成回调运行之后，将发出此信号。
 * *queue* - 一个 async_queue_handle_t，作为指定 **AsyncQueue** 的句柄。 如果未设置此队列，将使用默认队列。
+
+你应该在每个异步调用的 API 的堆上创建新 AsyncBlock。  AsyncBlock 必须 live 之前调用 AsyncBlock 的完成回调，然后可以将其删除。
 
 > [!IMPORTANT]
 > **AsyncBlock** 必须一直保留在内存中，直到**异步任务**完成。 如果是动态分配的，可以在 AsyncBlock 的**完成回调**内部将其删除。
@@ -150,7 +150,7 @@ STDAPI CreateSharedAsyncQueue(
 > 如果已存在具有此 ID 和调度模式的队列，将引用该队列。  否则，将创建新的队列。
 
 创建 **AsyncQueue** 之后，请直接将其添加到 **AsyncBlock** 以控制工作和完成函数的线程处理。
-队列用完后，一定要使用 **CloseAsyncQueue** 将其关闭：
+当你完成使用**AsyncQueue**时，通常时结束游戏，你可以将它放置**CloseAsyncQueue**:
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(
@@ -233,64 +233,63 @@ void CALLBACK HandleAsyncQueueCallback(
     switch (type)
     {
     case AsyncQueueCallbackType::AsyncQueueCallbackType_Work:
-        SetEvent(g_workReadyHandle);
-        break;
-
-    case AsyncQueueCallbackType::AsyncQueueCallbackType_Completion:
-        SetEvent(g_completionReadyHandle);
+        ReleaseSemaphore(g_workReadyHandle, 1, nullptr);
         break;
     }
 }
 ```
 
-如果两端都有一个线程调度，你的函数可能如下所示：
+然后在后台线程中你可以侦听此信号可以唤醒并调用**DispatchAsyncQueue**。
 
 ```cpp
-DWORD WINAPI background_thread_proc(LPVOID lpParam)
+DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 {
-    HANDLE hEvents[3] =
+    HANDLE hEvents[2] =
     {
         g_workReadyHandle.get(),
-        g_completionReadyHandle.get(),
         g_stopRequestedHandle.get()
     };
+
+    async_queue_handle_t queue = static_cast<async_queue_handle_t>(lpParam);
 
     bool stop = false;
     while (!stop)
     {
-        DWORD dwResult = WaitForMultipleObjectsEx(3, hEvents, false, INFINITE, false);
+        DWORD dwResult = WaitForMultipleObjectsEx(2, hEvents, false, INFINITE, false);
         switch (dwResult)
         {
-        case WAIT_OBJECT_0:
-            // AsyncQueueCallbackType_Work is ready
-            DispatchAsyncQueue(g_queue, AsyncQueueCallbackType_Work, 0);
-
-            if (!IsAsyncQueueEmpty(g_queue, AsyncQueueCallbackType_Work))
-            {
-                // If there's more pending work, then set the event to process them
-                SetEvent(g_workReadyHandle.get());
-            }
+        case WAIT_OBJECT_0: 
+            // Background work is ready to be dispatched
+            DispatchAsyncQueue(queue, AsyncQueueCallbackType_Work, 0);
             break;
 
         case WAIT_OBJECT_0 + 1:
-            // AsyncQueueCallbackType_Completion is ready
-            // Note: Typically completions should be dispatched on the game thread, but
-            // for this simple example, we're doing it here
-            DispatchAsyncQueue(g_queue, AsyncQueueCallbackType_Completion, 0);
-
-            if (!IsAsyncQueueEmpty(g_queue, AsyncQueueCallbackType_Completion))
-            {
-                // If there's more pending completions, then set the event to process them
-                SetEvent(g_completionReadyHandle.get());
-            }
-            break;
-
         default:
             stop = true;
             break;
         }
     }
 
+    CloseAsyncQueue(queue);
     return 0;
 }
 ```
+
+它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，那么你将需要确保不会错过代码的任何事件如：
+
+```cpp
+    case WAIT_OBJECT_0: 
+        // Background work is ready to be dispatched
+        DispatchAsyncQueue(queue, AsyncQueueCallbackType_Work, 0);        
+        
+        if (!IsAsyncQueueEmpty(queue, AsyncQueueCallbackType_Work))
+        {
+            // If there's more pending work, then set the event to process them
+            SetEvent(g_workReadyHandle.get());
+        }
+        break;
+```
+
+
+你可以在[社交 C 示例 AsyncIntegration.cpp](https://github.com/Microsoft/xbox-live-api/blob/master/InProgressSamples/Social/Xbox/C/AsyncIntegration.cpp)查看异步集成的最佳做法的示例
+

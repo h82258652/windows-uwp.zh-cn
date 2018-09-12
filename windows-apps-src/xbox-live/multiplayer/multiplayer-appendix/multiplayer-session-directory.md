@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, mpsd, 多人游戏会话目录。
-ms.localizationpriority: low
-ms.openlocfilehash: 31c9384310e1de445d537fb47d0c95b09e9a38a7
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d69867e2ba5d56eb47007732ae7197c9991be4c4
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880884"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>多人游戏会话目录 (MPSD)
 
@@ -214,7 +215,7 @@ MPSD 通过 REST 功能在会话更新中支持开放式并发，方法是使用
 
 ### <a name="using-the-multiplayer-rest-api-to-interact-with-mpsd"></a>使用多人游戏 REST API 与 MPSD 交互
 
-游戏或其服务可以使用对多人游戏 REST API 和匹配 REST API 的标准 HTTP 调用。 在直接使用 REST 功能时，调用方针对大多数操作的会话目录 URI 发出 DELETE、PUT、POST 和 GET 调用。 在 PUT 请求中，请求正文合并到现有会话中。 如果没有现有会话，请求正文用于创建新会话，以及存储在 [Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com) 中的会话模板。 所有字段都是可选的，只有增量必须指定。 因此，{} 是增量为零的有效 PUT 请求。
+游戏或其服务可以使用对多人游戏 REST API 和匹配 REST API 的标准 HTTP 调用。 在直接使用 REST 功能时，调用方针对大多数操作的会话目录 URI 发出 DELETE、PUT、POST 和 GET 调用。 在 PUT 请求中，请求正文合并到现有会话中。 如果没有现有会话，请求正文用于创建新会话，以及存储在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上的会话模板。 所有字段都是可选的，只有增量必须指定。 因此，{}是增量为零的有效 PUT 请求。
 
 若要执行返回合并结果的假设 PUT 请求而不影响服务器的官方会话副本，可以将查询字符串“?nocommit=true”附加到 PUT 请求中。
 
@@ -278,7 +279,7 @@ MPSD 通过 REST 功能在会话更新中支持开放式并发，方法是使用
 #### <a name="display-available-sessions-and-templates"></a>显示可用会话和模板
 
 1.  在工具中单击 SCID 以在登录用户属于其成员的 SCID 中显示会话列表。
-2.  在同一页面上，你可以单击 SCID，显示 SCID 的服务配置中的会话模板和本地化字符串。 这些项目通过 [XDP](https://xdp.xboxlive.com) 引入。
+2.  在同一页面上，你可以单击 SCID，显示 SCID 的服务配置中的会话模板和本地化字符串。 这些项目通过[XDP](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)引入。
 
 
 #### <a name="display-the-full-contents-of-a-session"></a>显示会话的完整内容

@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: e5aadc1c72b14ece196f4af74c31990e259add1a
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b9175eda1d73a7678ac9fd304dc60ef228a57c7f
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935678"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881197"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live 沙盒简介
 

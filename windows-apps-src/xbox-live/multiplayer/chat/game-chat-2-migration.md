@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
-ms.localizationpriority: low
-ms.openlocfilehash: 7517054aa2e715b5eef2672c4f5bbe4b17237888
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7695fda4502f8359491e5fb822e59bc91a20e0c7
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893817"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881253"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 
@@ -77,7 +77,7 @@ ms.locfileid: "1893817"
 
 与原游戏聊天的交互通过 `ChatManager` 类进行。 下面的示例显示了如何使用默认参数构造 `ChatManager` 实例：
 
-```cppwinrt
+```cpp
 auto chatManager = ref new ChatManager();
 ```
 
@@ -97,16 +97,16 @@ chat_manager::singleton_instance().initialize(4);
 
 向原游戏聊天 API 添加本地用户的操作通过 `ChatManager::AddLocalUserToChatChannelAsync()` 进行。 将该用户添加到多个聊天通道需要执行多个调用，每个调用均指定一个不同的通道。 下面的示例显示了如何将 "myXuid" 用户添加到通道 0：
 
-```cppwinrt
+```cpp
 auto asyncOperation = chatManager->AddLocalUserToChatChannelAsync(0, L"myXuid");
-``` 
+```
 
 远程用户不是直接添加到实例。 当某个远程设备出现在作品的网络中时，该作品将创建一个对象来表示该远程设备，并通过 `ChatManager::HandleNewRemoteConsole()` 通知游戏聊天该新设备的存在。 该作品还必须提供一个方法，通过实现 `CompareUniqueConsoleIdentifiersHandler` 来比较表示远程设备的对象与游戏聊天。 下面的示例显示了如何将此委托提供给游戏聊天，其中假设 `Platform::String` 对象用于表示远程设备，并且一个由字符串 `L"1"` 表示的新设备已加入作品的网络：
 
-```cppwinrt
-auto token = chatManager->OnCompareUniqueConsoleIdentifiers += 
-    ref new CompareUniqueConsoleIdentifiersHandler( 
-        [this](Platform::Object^ obj1, Platform::Object^ obj2) 
+```cpp
+auto token = chatManager->OnCompareUniqueConsoleIdentifiers +=
+    ref new CompareUniqueConsoleIdentifiersHandler(
+        [this](Platform::Object^ obj1, Platform::Object^ obj2)
     {
         return (static_cast<Platform::String^>(obj1)->Equals(static_cast<Platform::String^>(obj2)));
     });
@@ -129,7 +129,7 @@ chatManager->HandleNewRemoteConsole(newDeviceIdentifier);
 chat_user* chatUserA = chat_manager::singleton_instance().add_local_user(L"myLocalXboxUserId");
 ```
 
-请注意，该用户不会添加到特定的通道 - 游戏聊天 2 使用“通信关系”的概念而不是通道来管理用户是否可以相互交谈，并听到彼此。 本节将在后面介绍配置通信关系的方法。 
+请注意，该用户不会添加到特定的通道 - 游戏聊天 2 使用“通信关系”的概念而不是通道来管理用户是否可以相互交谈，并听到彼此。 本节将在后面介绍配置通信关系的方法。
 
 与本地用户类似，远程用户同步添加到本地游戏聊天 2 实例。 远程用户必须同时与用于表示远程设备的标识符相关联。 游戏聊天 2 引用在远程设备上作为“终结点”运行的应用的一个实例。 在此示例中，用户 B 将是由整数 `1` 所表示的终结点上 Xbox 用户 ID 为 `L"remoteXboxUserId"` 的用户。
 
@@ -154,10 +154,10 @@ chat_manager::singleton_instance().remove_user(chatUserD);
 ## <a name="processing-data"></a>处理数据
 
 ### <a name="game-chat"></a>游戏聊天
- 
+
 游戏聊天没有自己的传输层；这必须由应用提供。 传出数据包的处理方式是：订阅 `OnOutgoingChatPacketReady` 事件，并检查参数以确定数据包目的地和传输要求。 下面的示例显示了如何订阅该事件并将参数转发给作品实现的 `HandleOutgoingPacket()` 方法：
 
-```cppwinrt
+```cpp
 auto token = chatManager->OnOutgoingChatPacketReady +=
     ref new Windows::Foundation::EventHandler<Microsoft::Xbox::GameChat::ChatPacketEventArgs^>(
         [this](Platform::Object^, Microsoft::Xbox::GameChat::ChatPacketEventArgs^ args)
@@ -168,7 +168,7 @@ auto token = chatManager->OnOutgoingChatPacketReady +=
 
 传入数据包通过`ChatManager::ProcessingIncomingChatMessage()` 提交到游戏聊天。 必须提供原始数据包缓冲区和远程设备标识符。 下面的示例显示了如何提交存储在本地 `packetBuffer` 中的数据包以及存储在本地变量 `remoteIdentifier` 中的远程设备标识符。
 
-```cppwinrt
+```cpp
 Platform::String^ remoteIdentifier = /* The identifier associated with the device that generated this packet */
 Windows::Storage::Streams::IBuffer^ packetBuffer = /* The incoming chat packet */
 
@@ -217,7 +217,7 @@ chatManager::singleton_instance().process_incoming_data(remoteEndpointIdentifier
 
 游戏聊天使用事件模型通知应用发生了值得关注的事件 - 例如收到了文本消息或更改了用户的辅助功能首选项。 应用必须为每个值得关注的事件订阅并实现一个处理程序。 此示例显示了如何订阅 `OnTextMessageReceived` 事件并将参数转发给应用实现的 `OnTextChatReceived()` 或 `OnTranscribedChatReceived()` 方法：
 
-```cppwinrt
+```cpp
 auto token = chatManager->OnTextMessageReceived +=
     ref new Windows::Foundation::EventHandler<Microsoft::Xbox::GameChat::TextMessageReceivedEventArgs^>(
         [this](Platform::Object^, Microsoft::Xbox::GameChat::TextMessageReceivedEventArgs^ args)
@@ -270,11 +270,11 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 
 ## <a name="text-chat"></a>文字聊天
 
-### <a name="game-chat"></a>游戏聊天 
+### <a name="game-chat"></a>游戏聊天
 
 若要通过游戏聊天发送文字聊天，可以使用 `GameChatUser::GenerateTextMessage()`。 下面的示例显示如何通过由 `chatUser` 变量表示的本地聊天用户发送一条聊天文本消息：
 
-```cppwinrt
+```cpp
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
@@ -300,7 +300,7 @@ chatUser->local()->send_chat_text(L"Hello");
 
 当用户启用文本到语音转换时，`GameChatUser::HasRequestedSynthesizedAudio()` 将返回 true。 检测到此状态时，`GameChatUser::GenerateTextMessage()` 将另外生成文本到语音音频，该音频插入到与本地用户关联的音频流中。 下面的示例显示如何通过由 `chatUser` 变量表示的本地用户发送一条聊天文本消息：
 
-```cppwinrt
+```cpp
 chatUser->GenerateTextMessage(L"Hello", true);
 ```
 
@@ -336,7 +336,7 @@ chat_userA->local()->synthesize_text_to_speech(L"Hello");
 
 `GameChatUser` 提供了在确定相应 UI 元素时通常要检查的三个属性，分别是 `GameChatUser::TalkingMode`、`GameChatUser::IsMuted` 和 `GameChatUser::RestrictionMode`。 下面的示例演示了一种可能的启发机制，用于确定从 'chatUser' 变量所指向的 `GameChatUser` 对象分配到 `iconToShow` 变量的特定图标常量值。
 
-```cppwinrt
+```cpp
 if (chatUser->RestrictionMode != None)
 {
     if (!chatUser->IsMuted)

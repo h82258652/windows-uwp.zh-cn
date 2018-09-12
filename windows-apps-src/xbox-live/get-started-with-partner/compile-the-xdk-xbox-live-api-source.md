@@ -9,25 +9,26 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
-ms.localizationpriority: low
-ms.openlocfilehash: a8010afd83477e845efc942d543c0e34910ef97b
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 301d646b421e77044f613244ccab987f1cb40dc6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880778"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>编译 Xbox 开发人员工具包 (XDK) Xbox Live API 源
 
 Xbox 开发人员工具包 (XDK) 包括用于生成 Microsoft.Xbox.Services.dll (XSAPI) 的源。 开发人员可以遵循以下说明更新其项目，以使用 DLL 的本地生成。
 
 如果出现以下情况，你可能要自行生成 XSAPI：
-1. 如果要调试错误来了解错误代码的来源。
+1. 希望调试错误以了解错误代码的来源。
 1. 如果我们在分发 QFE 之前，为你提供了可修复问题的源代码修补程序。
 
 ## <a name="to-compile-the-xdk-c-xsapi-project-for-yourself"></a>要自行编译 XDK C++ XSAPI 项目
 
 <ol>
-  <li> 获取 Microsoft.Xbox.Services 源。 要执行此操作，请将“%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox Services API\8.0\SourceDist\Xbox.Services.zip”中的所有文件提取到“C:\Program Files (x86)”外的可写入文件夹，也可以从 <a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a> 中克隆源</li>
+  <li> 获取 Microsoft.Xbox.Services 源。 若要执行此操作，所有文件都提取"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox Services API\8.0\SourceDist\Xbox.Services.zip"到"C:\Program Files (x86)"，或者你外的可写入文件夹可以克隆源<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> 如果你的项目引用预生成 DLL，则需要删除此引用</li>
     <ul>
       <li> 对于 Visual Studio 2012：在 Visual Studio 中选择“项目 ->引用...”。 如果已将 Xbox 服务 API 列为引用，请选择它，然后单击“删除引用”。 单击“确定”并保存项目文件。</li>
@@ -53,7 +54,7 @@ Xbox 开发人员工具包 (XDK) 包括用于生成 Microsoft.Xbox.Services.dll 
 ## <a name="to-compile-the-xdk-winrt-xsapi-project-for-yourself"></a>要自行编译 XDK WinRT XSAPI 项目
 
 <ol>
-  <li> 获取 Microsoft.Xbox.Services 源。 要执行此操作，请将“%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox Services API\8.0\SourceDist\Xbox.Services.zip”中的所有文件提取到“C:\Program Files (x86)”外的可写入文件夹，也可以从 <a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a> 中克隆源</li>
+  <li> 获取 Microsoft.Xbox.Services 源。 若要执行此操作，所有文件都提取"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox Services API\8.0\SourceDist\Xbox.Services.zip"到"C:\Program Files (x86)"，或者你外的可写入文件夹可以克隆源<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> 如果你的项目引用预生成 DLL，则需要删除此引用</li>
     <ul>
       <li> 对于 Visual Studio 2012：在 Visual Studio 中选择“项目 ->引用...”。 如果已将 Xbox 服务 API 列为引用，请选择它，然后单击“删除引用”。 单击“确定”并保存项目文件。</li>

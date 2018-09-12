@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, spop, 单点入网
-ms.localizationpriority: low
-ms.openlocfilehash: 2ff73ebb57aaed393a0f7ce5dd371bb750d98626
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1ad187ea8645138d3076892e893cb0b770236ae8
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3880801"
 ---
 # <a name="single-point-of-presence-spop"></a>单点入网 (SPOP)
 

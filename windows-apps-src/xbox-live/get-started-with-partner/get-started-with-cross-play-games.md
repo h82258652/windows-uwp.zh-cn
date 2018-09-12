@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 跨平台游玩, 随处游戏
-ms.localizationpriority: low
-ms.openlocfilehash: 7ea0f8984c605c10fe91d085a31e8d9e0f04dab3
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 14f6e895ed98804fa965ee6d9ef6cadcde6f220f
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881201"
 ---
 # <a name="get-started-with-cross-play-games"></a>跨平台游玩游戏入门
 
@@ -108,7 +109,7 @@ Windows 10 展示型体验；跨平台游玩是 Xbox One 和电脑之间的跨�
 
 ### <a name="create-your-xdp-product"></a>创建 XDP 产品
 
-使用帐户管理器在 XDP ([https://xdp.xboxlive.com/](https://xdp.xboxlive.com/User/Publisher)) 中的发布器下创建新产品。
+使用帐户管理器在 XDP 中创建新产品下你的发布者 ([https://xdp.xboxlive.com/](https://xdp.xboxlive.com/User/Publisher))。
 
 在 XDP 中创建产品时，确保滚动到 UI 左侧部分的底部选择你的平台。 检查每个你**希望某天**在其上使用 Xbox Live 跨平台游玩集成发布游戏的平台。
 
