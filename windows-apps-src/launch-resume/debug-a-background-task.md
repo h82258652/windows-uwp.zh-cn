@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930621"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958531"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -34,7 +34,7 @@ ms.locfileid: "3930621"
 
 -   在 C# 和 C++ 中，确保主项目引用后台任务项目。 如果此引用没有就位，则后台任务将不包括在应用包中。
 -   在 C# 和 C++ 中，确保后台任务项目的 **Output type** 是“Windows 运行时组件”。
--   必须在程序包清单中的入口点属性中声明后台类。
+-   在后台类必须在程序包清单中的入口点属性中声明。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>手动触发后台任务以调试后台任务代码
 
@@ -82,7 +82,7 @@ ms.locfileid: "3930621"
     如果你遵循此过程，但事件日志显示后台任务的入口点或触发器有误，则你的应用无法正确注册后台任务。 有关此任务的帮助，请参阅[注册后台任务](register-a-background-task.md)。
 
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
-    2.  转到**应用程序和服务日志** - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure**事件查看器中。
+    2.  转到**应用程序和服务日志** - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure**在事件查看器中。
     3.  在操作窗格中，选择**视图** - &gt; **显示分析和调试日志**以启用诊断日志记录。
     4.  选择**诊断日志**并单击“**启用日志**”。
     5.  现在尝试使用你的应用再次注册并激活后台任务。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931301"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959435"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -29,9 +29,9 @@ ms.locfileid: "3931301"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](http://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布你的 Xbox Live 创意者计划游戏。
+如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](http://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布 Xbox Live 创意者计划游戏。
 
-有关详细信息，请参阅[开始使用 Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)和[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+有关详细信息，请参阅[Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)和[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
 ## <a name="experimentation"></a>实验
 
@@ -50,15 +50,15 @@ ms.locfileid: "3931301"
 
 ## <a name="product-collections-and-purchases"></a>产品收集和购买
 
-若要使用 Microsoft Store 收集 API 和 Microsoft 应用商店购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 此处。 请注意，需要 16 个小时才能使这些更改生效。
+若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 下面。 请注意，需要 16 个小时才能使这些更改生效。
 
 有关详细信息，请参阅[管理来自服务的产品授权](../monetize/view-and-grant-products-from-a-service.md)。
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这允许管理员为你的产品租户中的所有用户的名义执行其组织授予同意获取该应用。
 
-有关详细信息，请参阅[同意整个租户的请求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+有关详细信息，请参阅[请求同意整个租户](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>应用管理
 
@@ -92,7 +92,7 @@ f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限
 **WNS/MPNS**部分提供了可帮助你创建并向你的应用客户发送通知的选项。 
 
 > [!TIP]
-> 对于 UWP 应用，我们建议你在仪表板中使用**通知**选项。 将通知发送到所有应用的客户，你可以使用此功能或[客户类别](create-customer-segments.md)中所定义的符合条件的 Windows 10 客户定向子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
+> 对于 UWP 应用，我们建议你在仪表板中使用**通知**选项。 此功能，可以将通知发送到所有应用的客户，或者你符合条件的 Windows 10 客户子集定向到已定义[的客户类别](create-customer-segments.md)中。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
 具体取决于你的应用包类型及其特定要求，你还可以使用以下选项之一： 
 
@@ -100,7 +100,7 @@ f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限
 
 -   你可以使用 **Microsoft Azure 移动应用**发送推送通知、验证和管理应用用户，以及将应用数据存储在云中。 有关详细信息，请参阅[“移动应用”文档](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推送通知服务 (MPNS)** 可以和 Windows Phone 的 .xap 程序包结合使用。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的是 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推送通知服务 (MPNS)** 可以和 Windows Phone 的 .xap 程序包结合使用。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930417"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959423"
 ---
 # <a name="attached-properties-overview"></a>附加属性概述
 
@@ -76,7 +76,7 @@ Windows 运行时的附加属性实现为依赖属性，以便这些值可以由
 
 ### <a name="using-the-xaml-accessor-pattern"></a>使用 XAML 访问器模式
 
-XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值。 附加属性的所有者类型必须实现专用的访问器方法的形式 **获取 *** PropertyName*和 **设置 *** PropertyName*。 这些专用的访问器方法也是一种在代码中获取或设置附加属性的方式。 从代码角度讲，附加属性类似于拥有方法访问器而不是属性访问器的支持字段，并且该支持字段可存在于任何对象上，而不需要专门定义。
+XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值。 附加属性的所有者类型必须实现名为表单中的专用的访问器方法 **获取 *** PropertyName*和 **设置 *** PropertyName*。 这些专用的访问器方法也是一种在代码中获取或设置附加属性的方式。 从代码角度讲，附加属性类似于拥有方法访问器而不是属性访问器的支持字段，并且该支持字段可存在于任何对象上，而不需要专门定义。
 
 下面的示例展示了如何通过 XAML 访问器 API 在代码中设置附加属性。 在此示例中，`myCheckBox` 是 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 类的一个实例。 最后一行是实际设置值的代码，该行之前的行只是建立实例及其父子关系。 未注释掉的最后一行是使用属性系统的语法。 注释掉的最后一行是使用 XAML 访问器模式的语法。
 
@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 运行时 XAML 实现的一个现有限制是，你无法动画处理自定义附加属性。
 
-- 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假设存在一个元素`<TextBlock x:Uid="Title" />`，面向该实例上的**Canvas.Top**值的资源文件中的资源键是"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 若要将附加属性指定为从一个资源文件到 **x:Uid** 的资源引用的目标属性，可以使用一种特殊语法，即将代码样式的完全限定的 **using:** 声明放在方括号（“\[\]”）内，以创建一种专门的领域分隔效果。 例如，假设存在一个元素`<TextBlock x:Uid="Title" />`，该实例上的**Canvas.Top**值为目标的资源文件中的资源键是"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 有关资源文件和 XAML 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## <a name="related-topics"></a>相关主题
 

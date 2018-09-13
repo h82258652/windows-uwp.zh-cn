@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932677"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960278"
 ---
 # <a name="get-usersowneridsummary"></a>获取 (/users/ {ownerId} / 摘要)
 从调用方的角度来看，获取有关所有者的摘要数据。

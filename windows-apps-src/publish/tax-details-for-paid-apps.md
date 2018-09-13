@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
 ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934646"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960491"
 ---
 # <a name="tax-details-for-paid-apps"></a>付费应用的税收明细
 

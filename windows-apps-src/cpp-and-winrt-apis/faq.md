@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
 ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933214"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962901"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 常见问题
 对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
@@ -22,9 +22,9 @@ ms.locfileid: "3933214"
 > [!NOTE]
 > 如果问题与你看到的错误消息有关，另请参阅 [C++/WinRT 问题疑难解答](troubleshooting.md)主题。
 
-## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
+## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134
 
-如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，然后新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: from_abi： 标识符不找到*"，并使用来自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可的**出现在项目属性**C/C++** > **语言** > **命令行**下**其他选项**，然后将其删除)。
+如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方案是到任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 的要求是什么？
 [VSIX](https://aka.ms/cppwinrt/vsix) 强制执行最低的 Windows SDK 目标版本 10.0.17134.0（Windows 10，版本 1803）。 还需要 Visual Studio 2017（版本不低于 15.6；建议版本不低于 15.7）。 你可以通过 `.vcxproj` 文件 `<PropertyGroup Label="Globals">` 中 `<CppWinRTEnabled>true</CppWinRTEnabled>` 的存在来识别使用 VSIX 的项目。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
@@ -91,9 +91,9 @@ Visual Studio 是我们支持和推荐用于 C++/WinRT 的开发工具。 请参
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>为什么没有只读属性的生成的实现函数`const`限定符？
 
-声明中[MIDL 3.0](/uwp/midl-3/)的只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数是`const`-限定 （const 函数将视为 const*此*指针）。
+声明中[MIDL 3.0](/uwp/midl-3/)的只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数的`const`-限定 （const 函数将视为 const*此*指针）。
 
-我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试有关实现的函数可能是 const，和其不可能的原因。 你可以选择将任何实现功能 const，如本示例所示。
+我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试原因哪一种实现相关函数可能是 const，并且这可能不会。 你可以选择将任何实现函数 const，如本示例中所示。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -105,9 +105,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-你可以删除的`const`上**ToString**限定符应你决定需要更改在其实现中的某些对象状态。 但使每个成员函数 const 或非量，不能同时。 换言之，不重载实现函数`const`。
+你可以删除的`const`限定符上**ToString**应你决定需要更改在其实现某些对象状态。 但使每个成员函数 const 或非量，不能同时。 换言之，不在重载实现函数`const`。
 
-除了你实现的函数，其他另一个将放置在 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
+除了实现功能，其他另一个放置位置 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
 
 ```cppwinrt
 int main()
@@ -117,19 +117,19 @@ int main()
 }
 ```
 
-为**ToString**上述调用，在 Visual Studio 中的**转到声明**命令显示的 Windows 运行时**istringable:: Tostring**的投影到 C + + WinRT 如下所示。
+**ToString**上述调用，在 Visual Studio 中的**转到声明**命令显示的 Windows 运行时**istringable:: Tostring**投影到 C + + WinRT 如下所示。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-投影的函数是 const 无论你选择以有资格实现它们。 在后台，投影调用应用程序二进制接口 (ABI) 情况下，通过 COM 接口指针的调用。 只有与投影的**ToString**交互的状态是该 COM 接口指针;并且它当然无需修改该指针，因此该函数是 const。 这样你保证它不会更改有关，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**即使使用常量引用**IStringable**。
+无论你选择如何限定实现它们的 const 投影的函数。 在后台，投影调用应用程序二进制接口 (ABI) 情况下，通过 COM 接口指针的调用。 只有投影的**ToString**与之交互的状态是该 COM 接口指针;并且，它的确有无需修改该指针，因此该函数是 const。 这将使你保证它不会更改有关正在，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**甚至与 const 引用到**IStringable**。
 
-了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现。它们构成为您提供方便代码清理。 没有根本不`const`上 COM 和 Windows 运行时 ABI （适用于成员函数）。
+了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现;它们构成为您提供方便代码清理。 没有此类内容作为`const`上是 COM 还是 Windows 运行时 ABI （适用于成员函数）。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>是否有任何建议减少代码大小为 C + + WinRT 二进制文件？
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>是否有任何建议减小代码大小为 C + + WinRT 二进制文件？
 
-使用 Windows 运行时对象时，应避免的编码模式，因为它可以在你的应用程序产生负面影响，从而比生成所需的更多二进制代码如下所示。
+使用 Windows 运行时对象时，应避免的编码模式，因为它可以对应用程序产生负面影响，从而比生成所需的更多二进制代码如下所示。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -137,7 +137,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-在 Windows 运行时世界中，编译器不能缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非您干预，最终的更多虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，更喜欢位置可以如下所示的模式。 生成很少的代码，并且它可以也极大地缩短运行的时性能。
+在 Windows 运行时世界中，编译器不能缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非干涉，产生更多虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，首选位置可以如下所示的模式。 它生成很少的代码，并且它可以也极大地提高运行的时性能。
 
 ```cppwinrt
 auto a{ anobject.b().c() };

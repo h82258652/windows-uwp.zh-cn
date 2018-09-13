@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 加载项销售, 加载项购置, iap 销售, 应用内产品, iap, 加载项
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928255"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962343"
 ---
 # <a name="add-on-acquisitions-report"></a>加载项购置报告
 
@@ -32,7 +32,7 @@ ms.locfileid: "3928255"
 
 ## <a name="apply-filters"></a>应用筛选器
 
-在页面顶部附近，可以选择希望显示数据的时间段。 默认选择为 **30D**（30 天），但你可以选择要显示 3、6 或 12 个月的数据或指定的自定义数据范围的数据。 你还可以选择显示购置数据的一个小时或有 70 两小时; 近乎实时的**1 H**或**72h**这些时间段仅应用于**加载项购置**图的**加载项每日**选项卡和**市场**图的**购置**选项卡。 
+在页面顶部附近，可以选择希望显示数据的时间段。 默认选择为 **30D**（30 天），但你可以选择要显示 3、6 或 12 个月的数据或指定的自定义数据范围的数据。 你还可以选择**1 H**或**72h**一小时或有 70 两小时; 显示近乎实时的购置数据这些时间段仅应用于**加载项购置**图的**加载项每日**选项卡和**市场**图的**购置**选项卡。 
 
 你还可以展开**筛选器**，以按照特定加载项、市场和/或设备类型筛选该页面上的所有数据。
 

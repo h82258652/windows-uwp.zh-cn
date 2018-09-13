@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933330"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959913"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 > [!NOTE]
@@ -138,7 +138,7 @@ toastCompletedEventHandler: function (event) {
 
 在 Visual Studio 中的菜单栏上，依次选择“文件”&gt;“新建项目”****。 在“新建项目”**** 对话框中，依次展开JavaScript&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”**** 按钮。
 
-向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 展开**Visual C#&gt;的 Microsoft 应用商店**，然后选择**Windows 运行时组件**。 将该项目命名为 ToasterComponent，然后选择“确定”**** 按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
+向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 展开**Visual C# &gt; Microsoft Store** ，然后选择**Windows 运行时组件**。 将该项目命名为 ToasterComponent，然后选择“确定”**** 按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
 在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”**** 对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”**** 设置为“调试”**** 以及将“平台”**** 设置为 x86、x64 或 ARM。 选择“确定”**** 按钮。
 
@@ -273,7 +273,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
     </body>
 ```
 
-如果我们未使用 TypedEventHandler，则现在可以在本地计算机上运行该应用，并单击该按钮来生成 Toast。 但是我们的应用不会发生任何情况。 若要找出原因，可以调试引发 ToastCompletedEvent 的托管代码。 停止该项目，然后在菜单栏上，选择**调试&gt;Toaster 应用程序属性**。 将“调试器类型”**** 更改为“仅托管”****。 同样在菜单栏上，选择**调试&gt;异常**，然后选择**公共语言运行时异常**。
+如果我们未使用 TypedEventHandler，则现在可以在本地计算机上运行该应用，并单击该按钮来生成 Toast。 但是我们的应用不会发生任何情况。 若要找出原因，可以调试引发 ToastCompletedEvent 的托管代码。 停止项目，然后在菜单栏上，选择**调试&gt;Toaster 应用程序属性**。 将“调试器类型”**** 更改为“仅托管”****。 同样在菜单栏上，选择**调试&gt;异常**，然后选择**公共语言运行时异常**。
 
 现在运行应用并单击“生成 Toast”按钮。 调试器会捕获一个无效的转换异常。 尽管从其消息中看不是很明显，但发生了该异常，因为该接口的代理丢失。
 
@@ -283,7 +283,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>生成适用于组件接口的 GUID（C# 和其他 .NET 语言）
 
-在菜单栏上选择工具&gt;创建 GUID。 在该对话框中，选择 5。 \[Guid ("xxxxxxxx xxxx...xxxx) \]。 依次选择“新建 GUID”按钮和“复制”按钮。
+在菜单栏上，选择工具&gt;创建 GUID。 在该对话框中，选择 5。 \[Guid ("xxxxxxxx xxxx...xxxx) \]。 依次选择“新建 GUID”按钮和“复制”按钮。
 
 ![guid 生成器工具](./images/guidgeneratortool.png)
 
@@ -300,7 +300,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c"></a>生成适用于组件接口的 GUID (C++)
 
-在菜单栏上选择工具&gt;创建 GUID。 在该对话框中，选择 3。 静态构造 GUID = {...}。 依次选择“新建 GUID”按钮和“复制”按钮。
+在菜单栏上，选择工具&gt;创建 GUID。 在该对话框中，选择 3。 静态构造 GUID = {...}。 依次选择“新建 GUID”按钮和“复制”按钮。
 
 将 GUID 粘贴在 IToaster 接口定义的前面。 粘贴后，GUID 应该类似于下面的示例。 （不要使用该示例中的 GUID。 每一个独特接口都应该有其自己的 GUID。）
 ```cpp
@@ -332,7 +332,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 **重要提示** ARM 或 x64 项目配置，更改为 x64 或 arm32 的 MIDL /env 参数。
 
-若要确保 IDL 文件重新生成时，每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
+若要确保每次更改.winmd 文件时，将重新生成 IDL 文件，更改为**运行生成后事件****时生成更新项目输出。**
 生成事件的属性页应与此类似：![生成事件](./images/buildevents.png)
 
 重新生成解决方案以生成和编译 IDL。

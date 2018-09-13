@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930956"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957376"
 ---
 # <a name="get-usersrequestoridpermissionvalidate"></a>获取 （/users/ {requestorId} / 权限/验证）
 获取有关是否允许用户执行与目标用户指定的操作是或否答案。

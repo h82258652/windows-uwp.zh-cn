@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929115"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957869"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
@@ -60,7 +60,7 @@ ms.locfileid: "3929115"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了一个请求用于获取每日应用使用情况数据。 将 *applicationId* 值替换为你的应用的 Store ID。
+下面的示例演示了一个请求用于获取每日应用使用情况数据。 将 *applicationId* 值替换为你的应用的 Store ID。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagedaily?applicationId=XXXXXXXXXXXX&startDate=2018-08-10&endDate=2018-08-14 HTTP/1.1
@@ -80,27 +80,27 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | 查询的数据结果中的行总数。                                                                          |
 
  
-### <a name="usage-values"></a>使用情况值
+### <a name="usage-values"></a>使用数值
 
 *Value* 数组中的元素包含以下值。
 
 | 值                     | 类型    | 说明                                                               |
 |---------------------------|---------|---------------------------------------------------------------------------|
 | date                      | 字符串  | 有关使用情况数据日期范围中的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。        |
-| applicationId             | 字符串  | 检索使用情况数据的应用商店 ID。          |
+| applicationId             | 字符串  | 要为其检索使用情况数据的应用商店 ID。          |
 | applicationName           | 字符串  | 应用的显示名称。                                              |
-| deviceType                | 字符串  | 以下字符串之一，指定使用情况发生的位置的设备的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                         |
-| packageVersion            | 字符串  | 使用情况发生的位置的程序包的版本。                          |
+| deviceType                | 字符串  | 以下字符串之一，指定的设备使用情况发生的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                         |
+| packageVersion            | 字符串  | 使用情况发生的位置的程序包版本。                          |
 | market                    | 字符串  | 客户使用你的应用的市场的 ISO 3166 国家/地区代码。 |
-| subscriptionName          | 字符串  | 指示使用情况是通过 Xbox Game Pass。                            |
-| dailySessionCount         | 长型    | 在这一天的用户会话数量。                                  |
-| engagementDurationMinutes | Double  | 用户在其中主动使用你的应用的不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或非活动状态一段时间后结束分钟。             |
+| subscriptionName          | 字符串  | 指示用法是通过 Xbox Game Pass。                            |
+| dailySessionCount         | 长型    | 在那一天的用户会话数量。                                  |
+| engagementDurationMinutes | Double  | 其中用户积极使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 并终止 （进程结束） 或非活动状态一段时间后结束分钟。             |
 | dailyActiveUsers          | 长型    | 使用这一天的应用的客户数量。                           |
-| dailyActiveDevices        | 长型    | 每日用于与应用交互的所有用户的设备的数量。  |
-| dailyNewUsers             | 长型    | 第一次那一天使用你的应用的客户数量。    |
+| dailyActiveDevices        | 长型    | 每日用于与应用交互的所有用户的设备数量。  |
+| dailyNewUsers             | 长型    | 第一次那一天使用你的应用的客户数。    |
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                         |
-| monthlyActiveDevices      | 长型    | 许多不同的一段时间，在应用启动时启动 （进程开始） 运行你的应用和结束时终止 （进程结束） 的设备或处于非活动状态一段时间后。                                      |
-| monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户的数量。  |
+| monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                      |
+| monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户数。  |
 
 
 ### <a name="response-example"></a>回复示例

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928569"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964357"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -23,13 +23,13 @@ ms.locfileid: "3928569"
 
 ## <a name="uwp-apps"></a>UWP 应用
 
-如果你要提交 UWP 应用，而程序包文件不是由 Visual Studio 面向应用商店生成的 .appxupload 文件，你可能在预处理过程中会遇到错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用包文件时，仅上载的提交，而不 appx 或.appxbundle[程序包](upload-app-packages.md)页面上的.appxupload 文件。
+如果你要提交 UWP 应用，而程序包文件不是由 Visual Studio 面向应用商店生成的 .appxupload 文件，你可能在预处理过程中会遇到错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用包文件时，仅上载的提交，而不 appx 或.appxbundle 的[程序包](upload-app-packages.md)页面上的.appxupload 文件。
 
 如果显示了编译错误，请确保能够在发布模式中成功生成应用程序。 有关详细信息，请参阅 [.NET 本机内部编译器错误](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
 ## <a name="desktop-application"></a>桌面应用程序
 
-如果你计划提交包包含的 Win32 和 UWP 二进制文件，请确保使用 Windows 打包项目中，在 Visual Studio 2017 更新 4 中创建该程序包。 如果你使用的 UWP 项目模板创建包，你可能无法提交的打包到应用商店或旁加载到其他电脑上。 即使成功发布程序包，它可能出现在用户的电脑上的异常情况。 有关详细信息，请参阅[包使用 Visual Studio （桌面桥） 的应用]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果你计划提交包包含的 Win32 和 UWP 二进制文件，请确保使用 Windows 打包项目可在 Visual Studio 2017 更新 4 中创建该程序包。 如果你使用 UWP 项目模板创建程序包，你可能无法提交的打包到应用商店或旁加载到其他电脑上。 即使该程序包发布成功，它可能会以意想不到的方式，用户的电脑上的行为。 有关详细信息，请参阅[程序包应用通过使用 Visual Studio （桌面桥）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-apps"></a>Windows Phone 应用
 

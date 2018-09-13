@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929277"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958777"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -58,7 +58,7 @@ ms.locfileid: "3929277"
 
 ### <a name="consistency"></a>一致
 
-导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)，用户所熟悉并且图标的标准约定，位置和样式设置用户将觉得导航可预测且直观。
+导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)，用户所熟悉并且以下标准约定图标、 位置和样式设置用户将觉得导航可预测且直观。
 
 ![页面组件图像](images/nav/page-components.svg)
 

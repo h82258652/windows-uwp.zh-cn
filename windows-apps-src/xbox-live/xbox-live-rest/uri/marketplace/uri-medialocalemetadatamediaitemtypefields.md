@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f5bdcb8b854a8b71f232c8a1cc73cd12bc587015
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929600"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957308"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段
-访问一个可以从中预期给定的 mediaitemtype 和 EDS 的给定的版本的数据字段。 这些 Uri 的域是`eds.xboxlive.com`。
+访问一个可以从中预期的给定的 mediaitemtype 和 EDS 的给定的版本数据字段。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -40,7 +40,7 @@ ms.locfileid: "3929600"
 
 [获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段)](uri-medialocalemetadatamediaitemtypefieldsget.md)
 
-&nbsp;&nbsp;列出了一个可以从中预期给定的 mediaitemtype 和 EDS 的给定的版本的数据的字段。
+&nbsp;&nbsp;列出了一个可以从中预期的给定的 mediaitemtype 和 EDS 的给定的版本数据字段。
  
 <a id="ID4ELC"></a>
 

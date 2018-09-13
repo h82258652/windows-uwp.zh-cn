@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936374"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962051"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -49,7 +49,7 @@ ms.locfileid: "3936374"
 ### <a name="multiples-of-four"></a>四的倍数
 
 :::row:::
-    ::: 列范围::: 大小、 边距和 UI 元素的位置应始终为**4 epx 的倍数进行缩放**在 UWP 应用中。
+    ::: 列范围::: 大小、 边距和 UI 元素的位置应始终为**4 epx 的倍数**UWP 应用中。
 
         UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
@@ -66,7 +66,7 @@ ms.locfileid: "3936374"
 
 :::row:::
     :::column:::
-        在任何 Windows 10 设备上启动 UWP 应用时，它将启动在[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中使用[帧](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航。
+        在任何 Windows 10 设备上启动 UWP 应用时，它将启动带有[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[在页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航的[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中。
     :::column-end:::
     :::column:::
         ![帧](images/frame.svg)
@@ -75,7 +75,7 @@ ms.locfileid: "3936374"
 
 :::row:::
     :::column:::
-        你可以将你的应用的 UI 视为一个页面集合。 每个页面显示何种内容以及页面之间的关系由你决定。
+        可以在应用的 UI 看作页面的集合。 每个页面显示何种内容以及页面之间的关系由你决定。
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::

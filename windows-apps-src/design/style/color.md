@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929789"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959895"
 ---
 # <a name="color"></a>颜色
 
@@ -108,7 +108,7 @@ ms.locfileid: "3929789"
 
 :::row:::
     :::column:::
-        创建自定义控件的模板时，使用主题画笔，而不是硬编码颜色值。 这样，应用可轻松适应任何主题。
+        创建自定义控件模板时，使用主题画笔，而不是硬编码颜色值。 这样，应用可轻松适应任何主题。
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -147,7 +147,7 @@ ms.locfileid: "3929789"
 
 :::row:::
     :::column:::
-        ![用户选择主题色标头](images/color/user-accent.svg)![用户选择主题色](images/color/user-selected-accent.svg)
+        ![用户选择主题色标头](images/color/user-accent.svg)![用户选择的主题色](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
         ![自定义主题色标头](images/color/custom-accent.svg)![自定义品牌主题色](images/color/brand-color.svg)
