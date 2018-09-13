@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ff955b9076c1d9477605431afe61107600d7236d
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933681"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961826"
 ---
 # <a name="delete-sessionssessionidscidssciddatapathandfilenametype"></a>删除 (/sessions/ {sessionId} {scid} /scids/ /data/ {pathAndFileName} {类型})
 删除文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。

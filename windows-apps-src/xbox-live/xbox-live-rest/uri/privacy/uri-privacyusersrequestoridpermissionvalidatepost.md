@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936139"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960890"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST （/users/ {requestorId} / 权限/验证）
-获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
+获取有关是否允许用户执行一组的目标用户指定的动作 yes 或 no 答案的一组。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4ECB)
@@ -35,9 +35,9 @@ ms.locfileid: "3936139"
 
 ## <a name="remarks"></a>备注
 
-请求正文中获取用户的列表和列表的设置，并结果是为每个用户/设置对一个允许/阻止的结果。
+请求正文中获取用户列表和列表的设置，并结果是每个用户/设置对允许/阻止结果。
 
-在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和不这样做的关闭网络用户之间） 的情况下多人游戏，请参阅为用户类型[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
+在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和关闭网络用户并不之间） 的情况下多人游戏，请参阅为用户类型[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
 
 <a id="ID4ECB"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "3936139"
 
 使用授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- |
-| Xuid| 64 位有符号整数| 是| 1234567890|
+| Xuid| 64 位有符号的整数| 是| 1234567890|
 
 <a id="ID4ESC"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "3936139"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
 
 <a id="ID4E4D"></a>
 
@@ -102,11 +102,11 @@ ms.locfileid: "3936139"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务将返回一个状态代码此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 成功检索会话。|
+| 200| “确定”| 已成功检索会话。|
 | 400| 请求无效。| 示例： 设置不正确 Id、 不正确的 Uri 等。|
 | 404| URI 中指定的用户不存在。| 找不到指定的资源。|
 

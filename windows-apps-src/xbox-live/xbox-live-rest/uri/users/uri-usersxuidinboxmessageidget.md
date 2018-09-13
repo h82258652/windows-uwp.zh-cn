@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935005"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961650"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>获取 (/users/xuid({xuid})/inbox/{messageId})
 检索特定用户消息，将其标记为已在服务上的读的详细的消息文本。

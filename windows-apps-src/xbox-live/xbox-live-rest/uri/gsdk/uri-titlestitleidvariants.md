@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a11cf42c068883368db159e5cf679e4f38755ec
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936171"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961864"
 ---
 # <a name="titlestitleidvariants"></a>/titles/ {titleId} / 变体
-URI 由客户端获取可用的变体的标题。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+URI 由客户端以获取可用的变体的标题。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EIB)
@@ -32,7 +32,7 @@ URI 由客户端获取可用的变体的标题。 这些 Uri 的域是`gameserve
  
 | 参数| 说明| 
 | --- | --- | 
-| titleid| 游戏请求应在其中操作的 ID。| 
+| titleid| 游戏应在其中操作请求 ID。| 
   
 <a id="ID4EIB"></a>
 

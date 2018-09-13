@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c46981121393ce80228d857c32a01784d58af96
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934367"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961856"
 ---
 # <a name="get-mediamarketplaceidfields"></a>获取 (/media/ {marketplaceId} / 字段)
 获取字段的标记。 这些 Uri 的域是`eds.xboxlive.com`。

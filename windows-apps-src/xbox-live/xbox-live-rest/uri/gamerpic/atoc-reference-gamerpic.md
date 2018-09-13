@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d612f2fe9cb327b792ed3ab73ad17421f394a030
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933597"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961938"
 ---
 # <a name="gamerpic-uris"></a>玩家图片 Uri
  
