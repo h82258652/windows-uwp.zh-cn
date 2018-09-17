@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows 桌面桥应用测试
-description: 使用桌面桥的内置测试以确保针对其转换为 UWP 应用的桌面应用进行了优化。
+description: 使用桌面桥的内置测试以确保针对其转换为 UWP 应用，你的桌面应用进行了优化。
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964131"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987812"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)[的桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)的 Windows 桌面应用程序转换为使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)的通用 Windows 平台 (UWP) 应用。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
 适用于 Windows 桌面桥应用的可选测试仅供参考，将不能用于在 Microsoft 应用商店载入过程中评估你的应用。 我们建议调查这些测试结果以生成质量更好的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
@@ -50,13 +50,13 @@ Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌�
 此测试验证 appx 不是调试版本。
  
 **背景**  
-要通过 Microsoft 应用商店的认证，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+认证的 Microsoft 应用商店，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
  
 **测试详细信息**  
 测试应用，确保它不是调试版本并且未链接到任何调试框架。
  
 **更正操作**  
-* 提交到 Microsoft Store 之前，将应用编译为发行版本。
+* 之前将其提交到 Microsoft 应用商店将应用编译为发行版本。
 * 确保你安装了正确版本的 .NET Framework。
 * 确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 

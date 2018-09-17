@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960763"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981734"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI 中使用光
 
@@ -87,7 +87,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 属性 | 说明
 --- | ---
-**Color** | 光的[颜色](/uwp/api/windows.ui.color)。 照明值由[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)漫射、 Ambient 和 Specular 定义正在发出的颜色的颜色。 照明的光; 使用了 RGBA 值不使用 alpha 颜色分量。
+**颜色** | 光的[颜色](/uwp/api/windows.ui.color)。 照明值由[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)漫射、 Ambient 和 Specular 定义正在发出的颜色的颜色。 照明的光; 使用了 RGBA 值不使用 alpha 颜色分量。
 **Direction** | 光线的方向。 相对于其[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual 指定指光线方向。
 **坐标空间** | 每个 Visual 具有隐式的 3D 坐标空间。 X 方向是从左到右。 Y 方向是从顶部到底部。 Z 方向是从平面的点。 此坐标的原点为左上角与可视，并且单元设备无关的像素 (DIP)。 在此坐标中定义的光的偏移量。
 **内锥和外锥细胞** | 聚光发出的光锥包括两个部分：一个明亮的内锥和一个外锥。 合成允许你控制内锥和外锥角和颜色。

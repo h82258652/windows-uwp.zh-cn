@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957559"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988600"
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
@@ -24,7 +24,7 @@ ms.locfileid: "3957559"
 
 每个促销代码都具有对应的唯一可兑换 URL，客户可单击才能兑换充值码并从 Microsoft Store 安装应用或加载项。  请注意，你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，客户才能兑换促销代码以安装应用。
 
-你可以生成一次性代码 （并分配一个与每个客户），或者你可以选择生成代码可用于多次由指定的客户数。
+你可以生成一次性代码 （并分配一个与每个客户），或者你可以选择生成代码可用于多个时间由指定的客户数。
 
 > [!TIP]
 > 可使用[定向推送通知](send-push-notifications-to-your-apps-customers.md)向细分市场客户分发促销代码。 执行此操作时，请务必使用允许多个客户使用同一代码的促销代码。
@@ -40,7 +40,7 @@ ms.locfileid: "3957559"
 -   必须按照[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定义的要求进行操作，包括 **3k. 促销代码**部分。
 
 > [!NOTE]
-> 即使你的应用是对客户不可用，你可以使用促销代码 (即，如果选择了**可用，但不可被发现在应用商店中使此产品**与**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码并在使用 Windows 10 设备**你的提交[可发现性](choose-visibility-options.md#discoverability)部分中的选项)。 使用此选项，客户必须在 Windows 10 （包括 Xbox） 上才能获取你的产品的促销代码。
+> 即使你的应用是对客户不可用，你可以使用促销代码 (也就是说，如果选择了**可用，但不可被发现在应用商店中使此产品**与**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码并在使用 Windows 10 设备**你的提交[可发现性](choose-visibility-options.md#discoverability)部分中的选项)。 使用此选项，客户必须在 Windows 10 （包括 Xbox） 上才能获取你的产品的促销代码。
 
 
 ## <a name="order-promotional-codes"></a>预订促销代码

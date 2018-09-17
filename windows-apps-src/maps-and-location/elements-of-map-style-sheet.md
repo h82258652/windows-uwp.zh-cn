@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 地图, 地图样式表
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957955"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981676"
 ---
 # <a name="map-style-sheet-reference"></a>地图样式表参考
 
@@ -185,7 +185,7 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示是否要在地图上绘制海拔底纹。 |
 | shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 晕渲地貌阴暗面的颜色。  Alpha 通道表示最大 alpha 值。 |
 | shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 晕渲地貌光明面的颜色。  Alpha 通道表示最大 alpha 值。 |
-| shadowColor                  | Color   |      |      |      |  ✔️   | 使用阴影的图标隐藏阴影的颜色。 |
+| shadowColor                  | 颜色   |      |      |      |  ✔️   | 使用阴影的图标隐藏阴影的颜色。 |
 | spaceColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 地图周围的区域 ARGB 颜色值。 |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示是否 SVG 中的原始颜色应使用，而不是查找设置图像中的颜色的调色板条目。 |
 

@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958209"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986236"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -555,7 +555,7 @@ ms.locfileid: "3958209"
 
 ### <a name="navigationview"></a>NavigationView
 
-适应性容器和实现的左侧的导航窗格中，顶部导航和表模式的灵活的导航模型。
+适应性容器和灵活的导航模型实现的左侧的导航窗格、 顶部导航和表模式。
 
 参考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

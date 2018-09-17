@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962763"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987598"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>标准 C++ 数据类型和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-借助 C++/WinRT，你可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到需要在语义上等效集合 Api。
+借助 C++/WinRT，你可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到需要语义上等效的集合 Api。
 
 ## <a name="standard-initializer-lists"></a>标准初始值列表
 初始值列表 (**std::initializer_list**) 是 C++ 标准库构造。 在调用特定的 Windows 运行时构造函数和方法时，你可以使用初始值列表。 例如，你可以使用一个初始值列表来调用 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。
@@ -92,7 +92,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT 将 **std::vector** 作为 Windows 运行时集合参数绑定。 因此，你可以传递一个 **std::vector&lt;winrt::hstring&gt;**，它将转换为 **winrt::hstring** 的合适 Windows 运行时集合。 没有额外的详细信息，如果被调用方是异步的需要牢记。 由于这种情况下的实现详细信息，你将需要提供 rvalue，因此你必须提供复制或移动矢量。 在下面的代码示例中，我们将移动矢量的所有权到异步被调用方接受参数类型的对象 (然后我们便注意不要访问`vecH`再次后将其移动)。 如果你想要了解有关 rvalues 的详细信息，请参阅[值的分类，并且对它们的引用](cpp-value-categories.md)。
+C++/WinRT 将 **std::vector** 作为 Windows 运行时集合参数绑定。 因此，你可以传递一个 **std::vector&lt;winrt::hstring&gt;**，它将转换为 **winrt::hstring** 的合适 Windows 运行时集合。 没有额外的详细信息，如果被调用方是异步的需要牢记。 由于这种情况下的实现详细信息，你将需要提供 rvalue，因此你必须提供复制或移动矢量。 在下面的代码示例中，我们将矢量的所有权到异步被调用方接受参数类型的对象 (我们已注意不要访问`vecH`再次后将其移动)。 如果你想要了解有关 rvalues 的详细信息，请参阅[值的分类，并且对它们的引用](cpp-value-categories.md)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -101,7 +101,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-但你无法传递需要 Windows 运行时集合的 **std::vector&lt;std::wstring&gt;**。 原因在于，由于已经转换为 **std::wstring** 的合适 Windows 运行时集合，C++ 语言随后不会强制转换该集合的类型参数。 因此，不会编译下面的代码示例 (和解决方法是将传递**std:: vector&lt;winrt:: hstring&gt;** 相反，如上所示)。
+但你无法传递需要 Windows 运行时集合的 **std::vector&lt;std::wstring&gt;**。 原因在于，由于已经转换为 **std::wstring** 的合适 Windows 运行时集合，C++ 语言随后不会强制转换该集合的类型参数。 因此，不会编译下面的代码示例 (和解决方案是将传递**std:: vector&lt;winrt:: hstring&gt;** 相反，如上所示)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
@@ -132,7 +132,7 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 有关更多示例和信息，请参阅 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API 参考主题。
 
 ## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** 和标准迭代构造
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是 Windows 运行时 API 返回类型的集合的示例[**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (投影到 C + + 为 WinRT **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 你可以使用此类型与标准迭代构造，如基于范围的`for`。
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是 Windows 运行时 API 返回类型的集合的示例[**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (投影到 C + + /winrt， **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 你可以使用此类型与标准迭代构造，如基于范围的`for`。
 
 ```cppwinrt
 // main.cpp

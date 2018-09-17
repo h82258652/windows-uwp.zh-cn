@@ -1,9 +1,9 @@
 ---
-title: /users/ {ownerId} / 人/避免
+title: /users/{ownerId}/people/avoid
 assetID: 13dc3a10-ed04-4600-3afb-aa95a4139a06
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoid.html
 author: KevinAsgari
-description: " /users/ {ownerId} / 人/避免"
+description: " /users/{ownerId}/people/avoid"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 635f11677997523fe952de04b8398410efc503d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963140"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990285"
 ---
-# <a name="usersowneridpeopleavoid"></a>/users/ {ownerId} / 人/避免
+# <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
 访问用户避免列表
 
   * [URI 参数](#ID4EQ)
@@ -37,7 +37,7 @@ ms.locfileid: "3963140"
 
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 （/users/ {ownerId} / 人/避免）](uri-privacyusersxuidpeopleavoidget.md)
+[GET (/users/{ownerId}/people/avoid)](uri-privacyusersxuidpeopleavoidget.md)
 
 &nbsp;&nbsp;获取用户避免列表。
 
@@ -51,4 +51,4 @@ ms.locfileid: "3963140"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[隐私 Uri](atoc-reference-privacyv2.md)
+[隐私 URI](atoc-reference-privacyv2.md)

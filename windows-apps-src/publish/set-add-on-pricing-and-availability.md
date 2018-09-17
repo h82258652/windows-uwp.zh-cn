@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 加载项, iap, 价格
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958147"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987282"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>设置加载项定价和可用性
 
@@ -54,12 +54,12 @@ ms.locfileid: "3958147"
 
 ## <a name="pricing"></a>定价
 
-必须为你的加载项选择一个基本价格 （除非选择了**停止购置**选项中的**可见性**部分）。 默认选择是**免费**的因此如果你想要收取加载项，请务必选择其中一个可用价格段 （从.99 美元开始）。
+必须为你的加载项选择一个基本价格 （除非选择了**停止购置**选项中的**可见性**部分）。 是**免费**的默认选择，因此如果你想要收取加载项，请确保选择一个可用价格段 （.99 美元）。
 
 还可计划价格变更，以指示加载项价格应更改的日期和时间。 此外，还可选择针对特定市场自定义这些更改。 
 
 > [!TIP]
-> 对于订阅加载项之后通过在以后的提交中选择一个更高版本的基本价格或计划价格更改，提高价格发布该加载项，, 不能提高价格。 你可以选择使用以下任一方法，以较低价格，但后价格降低你将无法引发高于该新价格。 因此，它是尤为重要，以确保你选择的订阅加载项的相应价格段。 
+> 对于订阅加载项之后你发布该加载项，通过在以后的提交中选择一个更高版本的基本价格或通过计划价格更改，提高价格, 不能提高价格。 你可以选择以较低的价格，使用以下任一方法，但后价格降低你将无法引发高于该新价格。 因此，它是尤为重要，以确保你选择的订阅加载项的相应价格段。 
 
 有关详细信息，请参阅[设置和计划应用定价](set-and-schedule-app-pricing.md)。
 

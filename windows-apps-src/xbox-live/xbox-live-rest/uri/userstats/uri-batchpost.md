@@ -1,9 +1,9 @@
 ---
-title: 发布 （/ 批次）
+title: POST (/batch)
 assetID: f5997c8e-82c7-0fba-9991-ce1116db4830
 permalink: en-us/docs/xboxlive/rest/uri-batchpost.html
 author: KevinAsgari
-description: " 发布 （/ 批次）"
+description: " POST (/batch)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: db832032a40b40d4b3a774a56487f7065d9cd8ff
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955944"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990261"
 ---
-# <a name="post-batch"></a>发布 （/ 批次）
+# <a name="post-batch"></a>POST (/batch)
 发布作为跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法的方法。 这些 Uri 的域是`userstats.xboxlive.com`。
  
 <a id="ID4ET"></a>

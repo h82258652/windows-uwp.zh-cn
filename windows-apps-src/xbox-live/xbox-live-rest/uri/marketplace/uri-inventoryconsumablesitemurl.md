@@ -1,5 +1,5 @@
 ---
-title: / 用户/me/易耗品 / {itemID}
+title: /users/me/consumables/{itemID}
 assetID: 45724827-5e35-326f-3f17-f49e606d9e08
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurl.html
 author: KevinAsgari
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963430"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990267"
 ---
-# <a name="usersmeconsumablesitemid"></a>/ 用户/me/易耗品 / {itemID}
+# <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
@@ -52,7 +52,7 @@ ms.locfileid: "3963430"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[市场 Uri](atoc-reference-marketplace.md)
+[市场 URI](atoc-reference-marketplace.md)
 
 
 <a id="ID4EJC"></a>
@@ -60,10 +60,10 @@ ms.locfileid: "3963430"
 
 ##### <a name="further-information"></a>详细信息
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)

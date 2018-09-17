@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957497"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986364"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>通过使用程序包支持框架对 MSIX 程序包应用运行时修复
 
-包支持框架是可帮助你修复时应用到现有 win32 应用程序不能访问的源代码，以便它可以 MSIX 容器中运行的开源工具包。 包支持框架可帮助你遵循在现代的运行时环境的最佳实践的应用程序。
+包支持框架是可帮助你修复时应用到你现有的 win32 应用程序不能访问的源代码，以便它可以 MSIX 容器中运行的开源工具包。 包支持框架可帮助你遵循在现代的运行时环境的最佳实践的应用程序。
 
-若要创建包支持框架，我们利用其开发由 Microsoft research 开发的 (MSR) 开源框架，有助于 API 重定向和挂钩的[迂回的方式](https://www.microsoft.com/en-us/research/project/detours)技术。
+若要创建包支持框架，我们可以利用[迂回的方式](https://www.microsoft.com/en-us/research/project/detours)技术，它是开源框架开发由 Microsoft research 开发的 (MSR)，并帮助 API 重定向和挂钩。
 
-此框架开源，轻量的并且你可以使用它来解决应用程序问题快速。 它还会为你提供机会咨询在全球范围内，社区，并基于的其他投资构建。
+此框架是开源轻量的并且你可以使用它来解决应用程序问题快速。 它还会为你提供机会咨询在全球范围内，社区，并基于的其他投资构建。
 
 ## <a name="a-quick-look-inside-of-the-package-support-framework"></a>快速查看包支持框架内
 
@@ -37,13 +37,13 @@ ms.locfileid: "3957497"
 
 ![程序包支持框架 DLL 注入](images/desktop-to-uwp/package-support-framework-2.png)
 
-在运行时管理器需要由应用程序 MSIX 容器内运行时应用修复。
+需要通过 MSIX 容器内运行的应用程序时，运行时管理器应用修复。
 
 本指南将帮助你确定应用程序兼容性问题，并以查找、 应用和扩展运行时修复解决它们的。
 
 <a id="identify" />
 
-## <a name="identify-packaged-application-compatibility-issues"></a>标识打包的应用程序兼容性问题
+## <a name="identify-packaged-application-compatibility-issues"></a>确定已打包的应用程序兼容性问题
 
 首先，创建用于你的应用程序的程序包。 然后，将它安装、 运行它，并观察其行为。 你可能收到错误消息，以帮助你识别兼容性问题。 你还可以使用[进程监视器](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)来识别问题。  常见的问题与应用程序推测工作目录和计划路径访问权限。
 
@@ -61,11 +61,11 @@ ms.locfileid: "3957497"
 
 ![ProcMon 排除成功](images/desktop-to-uwp/procmon_exclude_success.png)
 
-如果你怀疑文件系统访问失败，搜索失败是在 System32/SysWOW64 或包文件路径下的事件。 此处，太还有助于筛选器。 在此列表的底部的开始菜单和向上滚动。 最近发生故障的出现在此列表的底部。 大多数重视包含诸如拒绝访问，"的字符串的错误和"未找到路径/名称"，并忽略看起来可疑的操作。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)具有两个问题。 你可以看到在下图中出现的列表中的这些问题。
+如果你怀疑文件系统访问失败，搜索失败是在 System32/SysWOW64 或包文件路径下的事件。 在这里，太还有助于筛选器。 在此列表的底部的开始菜单和向上滚动。 最近发生故障的显示在此列表的底部。 大多数重视包含诸如拒绝访问，"的字符串的错误和"未找到路径/名称"，并忽略看起来可疑的操作。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)具有两个问题。 你可以看到在下图中出现的列表中的这些问题。
 
 ![ProcMon Config.txt](images/desktop-to-uwp/procmon_config_txt.png)
 
-在第一个问题出现在此图像中，应用程序无法从位于"C:\Windows\SysWOW64"路径"Config.txt"文件中读取。 不太可能在应用程序正在尝试直接引用该路径。 大多数情况下，在尝试使用的相对路径，从该文件中读取，默认情况下，"System32/SysWOW64"应用程序的工作目录。 这要求应用程序应设置为某处封装其当前工作目录。 查找 appx 内，我们可以看到该文件存在可执行文件相同的目录中。
+在第一个问题出现在此图像中，应用程序无法从位于"C:\Windows\SysWOW64"路径"Config.txt"文件中读取。 不太可能在应用程序正在尝试直接引用该路径。 大多数情况下，在尝试从该文件中读取使用的相对路径，并且默认情况下，"System32/SysWOW64"应用程序的工作目录。 这要求应用程序应设置为某处封装其当前工作目录。 查找 appx 内，我们可以看到该文件存在可执行文件相同的目录中。
 
 ![应用 Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
 
@@ -81,9 +81,9 @@ ms.locfileid: "3957497"
 
 PSF 包含你可以使用，例如文件重定向大幅的运行时修补程序。
 
-### <a name="file-redirection-shim"></a>文件重定向大幅
+### <a name="file-redirection-shim"></a>文件重定向填充程序
 
-你可以使用[文件重定向大幅](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)重定向写入或读取未从 MSIX 容器中运行的应用程序访问的目录中的数据尝试。
+你可以使用[文件重定向大幅](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)重定向写入或读取不可以从 MSIX 容器中运行的应用程序访问的目录中的数据尝试。
 
 例如，如果你的应用程序写入与你的应用程序可执行文件相同的目录中的日志文件，然后可以使用[文件重定向大幅](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)在另一个位置，如本地应用数据存储中创建该日志文件。
 
@@ -106,7 +106,7 @@ PSF 包含你可以使用，例如文件重定向大幅的运行时修补程序�
 
 ### <a name="create-the-package-layout-folder"></a>创建程序包布局文件夹
 
-如果你已经有一个.appx 文件，可以将其内容解包到布局文件夹将用作你的程序包暂存区域。  你可以从**x64 适用于 VS 2017 的本机工具命令提示符**，或手动使用的可执行的搜索路径中的 SDK bin 路径。
+如果你已经有一个.appx 文件，你可以将其内容解包到布局文件夹将用作你的程序包暂存区域。  你可以从**x64 适用于 VS 2017 的本机工具命令提示符**，或手动使用的可执行的搜索路径中的 SDK bin 路径。
 
 ```
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.appx /d PackageContents
@@ -119,7 +119,7 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.appx /d PackageContent
 
 如果你开始没有.appx 文件，你可以从头开始创建的程序包文件夹和文件。
 
-### <a name="get-the-package-support-framework-files"></a>获取包支持框架文件
+### <a name="get-the-package-support-framework-files"></a>获取的包支持框架文件
 
 你可以通过使用 Visual Studio 中获取 PSF Nuget 程序包。 你还可以通过使用独立的 Nuget 命令行工具获取它。
 
@@ -127,9 +127,9 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.appx /d PackageContent
 
 在 Visual Studio 中，右键单击解决方案或项目节点并选择管理 Nuget 程序包命令之一。  搜索**Microsoft.PackageSupportFramework**或**PSF** Nuget.org 上找到该程序包。然后，安装它。
 
-#### <a name="get-the-package-by-using-the-command-line-tool"></a>通过使用命令行工具来获取程序包
+#### <a name="get-the-package-by-using-the-command-line-tool"></a>可以通过使用命令行工具获取该程序包
 
-从该位置安装 Nuget 命令行工具： https://www.nuget.org/downloads。 然后，从 Nuget 命令行，运行以下命令：
+从该位置安装 Nuget 命令行工具： https://www.nuget.org/downloads。 然后，从 Nuget 命令行，请运行此命令：
 
 ```
 nuget install Microsoft.PackageSupportFramework
@@ -137,7 +137,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>将包支持框架文件添加到程序包
 
-在程序包目录中添加所需的 32 位和 64 位 PSF Dll 和可执行文件。 使用下表作为指南。 你还需要包含所需的任何运行时修补程序。 在本例中，我们需要文件重定向运行时修复。
+在程序包目录中添加所需的 32 位和 64 位 PSF Dll 和可执行文件。 使用下表作为指南。 你还需要包含所需的任何运行时修复。 在我们的示例中，我们需要文件重定向运行时修复。
 
 | 应用程序可执行文件是 x64 | 应用程序可执行文件是 x86 |
 |-------------------------------|-----------|
@@ -151,7 +151,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="modify-the-package-manifest"></a>修改包清单
 
-在文本编辑器中，打开你的程序包清单，然后设置`Executable`属性`Application`元素中填充程序启动程序可执行文件的名称。  如果你知道的目标应用程序体系结构，选择适当的版本中，ShimLauncher32.exe 或 ShimLauncher64.exe。  如果没有，ShimLauncher32.exe 将可在所有情况下。  下面提供了一个示例。
+在文本编辑器中，打开你的程序包清单，然后设置`Executable`属性`Application`元素中填充程序启动程序可执行文件的名称。  如果你知道你的目标应用程序的体系结构，选择适当的版本中，ShimLauncher32.exe 或 ShimLauncher64.exe。  如果没有，ShimLauncher32.exe 将可在所有情况下。  下面提供了一个示例。
 
 ```xml
 <Package ...>
@@ -168,7 +168,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="create-a-configuration-file"></a>创建配置文件
 
-创建文件名称``config.json``，并将该文件保存到你的程序包的根文件夹。 修改 config.json 文件的已声明的应用 ID，以指向你只需替换的可执行文件。 使用从使用进程监视器获得的知识，你可以还设置的工作目录，以及使用文件重定向大幅重定向到程序包相对"PSFSampleApp"目录下的.log 文件读取/写入。
+创建文件名称``config.json``，并将该文件保存到你的程序包的根文件夹。 修改 config.json 文件的声明的应用 ID，以指向你只需更换的可执行文件。 使用从使用进程监视器获得的知识，你可以还设置的工作目录，以及使用文件重定向大幅重定向到.log 文件的相对于程序包的"PSFSampleApp"目录下的读取/写入。
 
 ```json
 {
@@ -208,13 +208,13 @@ nuget install Microsoft.PackageSupportFramework
 | 数组 | key | 值 |
 |-------|-----------|-------|
 | applications | id |  使用的值`Id`属性`Application`在程序包清单中的元素。 |
-| applications | 可执行文件 | 想要启动的可执行文件包相对路径。 在大多数情况下，你可以从程序包清单文件获取此值之前对其进行修改。 它是值的`Executable`属性`Application`元素。 |
+| applications | 可执行文件 | 想要启动的可执行文件程序包相对路径。 在大多数情况下，你可以从程序包清单文件获取此值之前对其进行修改。 它为的值的`Executable`属性`Application`元素。 |
 | applications | workingDirectory | （可选）若要使用的应用程序启动的工作目录作为程序包相对路径。 如果你未设置此值，操作系统将使用`System32`目录作为应用程序的工作目录。 |
 | 进程 | 可执行文件 | 在大多数情况下，这将名称`executable`配置上方以删除路径和文件扩展名。 |
 | 填充 | dll | 加载大幅.appx 程序包相对路径。 |
 | 填充 | 配置 | （可选）控制大幅 dl 的行为方式。 此值的准确格式发生变化填充程序通过填充程序基于每个大幅尽量可以解释此"blob"。 |
 
-`applications`， `processes`，并`shims`键是数组。 这意味着，你可以使用 config.json 文件指定多个应用程序、 流程和大幅 DLL。
+`applications`， `processes`，并`shims`键是数组。 这意味着，你可以使用 config.json 文件指定多个应用程序、 流程和填充程序 DLL。
 
 
 ### <a name="package-and-test-the-app"></a>程序包和测试应用
@@ -246,7 +246,7 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 ### <a name="use-the-trace-shim"></a>使用跟踪填充程序
 
-诊断打包的应用程序兼容性问题的替代技术是使用跟踪填充。 此 DLL 附带 PSF，并提供应用的行为，类似于进程监视器诊断的详细的视图。  它专为展示应用程序兼容性问题。  若要使用跟踪填充程序，将 DLL 添加到该程序包，将以下片段添加到你 config.json，然后打包和安装你的应用程序。
+诊断打包的应用程序兼容性问题的替代技术是使用跟踪填充。 此 DLL 附带 PSF，并提供应用的行为，类似于进程监视器诊断的详细的视图。  它专为展示应用程序兼容性问题。  若要使用跟踪填充程序，将 DLL 添加到程序包，将以下片段添加到你 config.json，然后打包和安装你的应用程序。
 
 ```json
 {
@@ -259,9 +259,9 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 }
 ```
 
-默认情况下，跟踪大幅筛选出可能会被视为"预期"的故障。  例如，应用程序可能会尝试无条件地删除文件，而不会检查是否已存在，忽略结果。 这有遗憾结果，某些意外的失败可能会获取被筛选掉，因此在上述示例中，我们选择从文件系统功能接收所有故障。 我们这样做是因为我们知道从之前的尝试从 Config.txt 文件中读取失败，带有消息"未找到文件"。 这是经常观察到并且通常不假定为意外故障。 实际上它是可能的最佳启动筛选仅向意外失败和然后回退到所有故障如果仍无法识别的问题。
+默认情况下，跟踪大幅筛选出可能会被视为"预期"的故障。  例如，应用程序可能会尝试无条件地在不检查以查看是否已存在，忽略结果的情况下删除文件。 这有遗憾结果，某些意外的失败可能会获取被筛选掉，因此在上述示例中，我们选择从文件系统功能接收所有故障。 我们这样做是因为我们知道从之前的尝试从 Config.txt 文件中读取失败，带有消息"未找到文件"。 这是经常观察到并且通常不假定为意外故障。 在实际中它是可能的最佳启动出筛选仅向意外失败，然后回退到所有故障如果仍无法识别的问题。
 
-默认情况下，跟踪填充程序的输出获取发送到附加调试程序。 对于此示例中，我们不打算连接调试器，并将改为使用从 SysInternals [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)计划以查看其输出。 运行应用之后, 我们可以看到相同的故障以前一样，这将为我们指出相同的运行时修复。
+默认情况下，跟踪填充程序的输出获取发送到附加调试程序。 对于此示例中，我们不打算连接调试器，并将改为使用从 SysInternals [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)计划以查看其输出。 之后运行该应用，我们可以看到相同的故障以前一样，这将为我们指出相同的运行时修复。
 
 ![找不到 TraceShim 文件](images/desktop-to-uwp/traceshim_filenotfound.png)
 
@@ -269,12 +269,12 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 ## <a name="debug-extend-or-create-a-runtime-fix"></a>调试、 延长或创建运行时修复
 
-你可以使用 Visual Studio 调试运行时修复、 扩展运行时修复，或创建一个从零开始。 你将需要执行以下操作才能成功。
+你可以使用 Visual Studio 调试运行时修复，扩展运行时修复，或创建一个从零开始。 你将需要执行以下操作才能成功。
 
 > [!div class="checklist"]
 > * 添加打包项目
 > * 添加项目的运行时修复
-> * 添加启动可执行文件填充程序启动程序的项目
+> * 添加启动可执行文件填充程序启动程序项目
 > * 配置打包项目
 
 完成后，你的解决方案将如下所示。
@@ -285,19 +285,19 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 | 项目 | 用途 |
 |-------|-----------|
-| DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](desktop-to-uwp-packaging-dot-net.md)，并将输出 MSIX 程序包。 |
+| DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](desktop-to-uwp-packaging-dot-net.md)，并且它将输出 MSIX 程序包。 |
 | Runtimefix | 这是一个包含一个或多个替换函数作为运行时修复的 c + + Dynamic-Linked 类库项目。 |
 | ShimLauncher | 这是 c + + 空项目。 此项目是收集包支持框架的运行时可分发文件的位置。 它将输出的可执行文件。 该可执行文件是启动解决方案时运行的第一件事。 |
 | WinFormsDesktopApplication | 此项目包含桌面应用程序的源代码。 |
 
 若要查看的完整示例，包含所有这些类型的项目，请参阅[PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)。
 
-我们将演练创建和配置这些项目的每个解决方案中的步骤。
+我们将演练创建和配置这些项目的每个你的解决方案中的步骤。
 
 
 ### <a name="create-a-package-solution"></a>创建程序包解决方案
 
-如果还没有为桌面应用程序解决方案，请在 Visual Studio 中创建新的**空白解决方案**。
+如果你没有为桌面应用程序的解决方案，请在 Visual Studio 中创建新的**空白解决方案**。
 
 ![空白解决方案](images/desktop-to-uwp/blank-solution.png)
 
@@ -305,7 +305,7 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 ### <a name="add-a-packaging-project"></a>添加打包项目
 
-如果你没有**Windows 应用程序打包项目**，创建一个并将其添加到你的解决方案。
+如果你尚未获得**Windows 应用程序打包项目中**，创建一个并将其添加到你的解决方案。
 
 ![包项目模板](images/desktop-to-uwp/package-project-template.png)
 
@@ -347,7 +347,7 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 如果你想要调试或扩展现有的运行时修复，添加的运行时修复文件，通过使用本指南的[查找运行时修复](#find)部分中所述的指南。
 
-如果你想要创建新的修补程序，无任何向该项目添加尚未。 我们将帮助你向该项目在本指南后面添加正确的文件。 现在，我们将继续设置你的解决方案。
+如果你想要创建新的修补程序，不要添加任何到此项目尚未。 我们将帮助你向该项目在本指南后面添加正确的文件。 现在，我们将继续设置你的解决方案。
 
 ### <a name="add-a-project-that-starts-the-shim-launcher-executable"></a>添加启动可执行文件填充程序启动程序的项目
 
@@ -361,11 +361,11 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 ![填充程序启动程序参考](images/desktop-to-uwp/shim-exe-reference.png)
 
-在你的解决方案中添加对运行时修复项目的项目引用。
+你的解决方案中添加对运行时修复项目的项目引用。
 
 ![运行时修复参考](images/desktop-to-uwp/reference-fix.png)
 
-右键单击该引用，然后再在**属性**窗口中应用这些值。
+右键单击该引用，并在**属性**窗口中，将这些值。
 
 | 属性 | 值 |
 |-------|-----------|-------|
@@ -422,7 +422,7 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 | 数组 | key | 值 |
 |-------|-----------|-------|
 | applications | id |  使用的值`Id`属性`Application`在程序包清单中的元素。 |
-| applications | 可执行文件 | 想要启动的可执行文件包相对路径。 在大多数情况下，你可以从程序包清单文件获取此值之前对其进行修改。 它是值的`Executable`属性`Application`元素。 |
+| applications | 可执行文件 | 想要启动的可执行文件程序包相对路径。 在大多数情况下，你可以从程序包清单文件获取此值之前对其进行修改。 它为的值的`Executable`属性`Application`元素。 |
 | applications | workingDirectory | （可选）若要使用的应用程序启动的工作目录作为程序包相对路径。 如果你未设置此值，操作系统将使用`System32`目录作为应用程序的工作目录。 |
 | 进程 | 可执行文件 | 在大多数情况下，这将名称`executable`配置上方以删除路径和文件扩展名。 |
 | 填充 | dll | 填充程序加载 DLL 程序包相对路径。 |
@@ -450,13 +450,13 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 ```
 
 >[!NOTE]
-> `applications`， `processes`，并`shims`键是数组。 这意味着，你可以使用 config.json 文件指定多个应用程序、 流程和大幅 DLL。
+> `applications`， `processes`，并`shims`键是数组。 这意味着，你可以使用 config.json 文件指定多个应用程序、 流程和填充程序 DLL。
 
 ### <a name="debug-a-runtime-fix"></a>调试运行时修复
 
-在 Visual Studio 中，按 F5 启动调试程序。  启动的第一件事是大幅启动器应用程序，这反过来启动目标桌面应用程序。  若要调试目标桌面应用程序，你将需要手动选择**调试**附加到桌面应用程序进程->**附加到进程**，，然后选择应用程序进程。 若要允许使用本机运行时修复 DLL 的.NET 应用程序调试，请选择托管和本机代码类型 （混合的模式调试）。  
+在 Visual Studio 中，按 F5 启动调试程序。  启动的第一件事是大幅启动器应用程序，这反过来启动目标桌面应用程序。  若要调试目标桌面应用程序，你将需要手动将附加到桌面应用程序进程通过选择**调试**->**附加到进程**，并选择应用程序进程。 若要允许使用本机运行时修复程序 DLL 的.NET 应用程序调试，请选择托管和本机代码类型 （混合的模式调试）。  
 
-一旦你已设置此，你可以桌面应用程序代码和运行时修复项目中设置断点旁边的代码行。 如果你没有源代码你的应用程序，你将能够在运行时修复项目中设置断点仅旁边的代码行。
+在此设置好，你可以桌面应用程序代码和运行时修复项目中设置断点旁边的代码行。 如果你没有源代码你的应用程序，你将能够在运行时修复项目中设置断点仅旁边的代码行。
 
 >[!NOTE]
 > 在 Visual Studio 为你提供的最简单的开发和调试体验，有一些限制，因此稍后在本指南中，我们将讨论其他你可以将应用的调试技术。
@@ -467,20 +467,20 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 ### <a name="replacement-functions"></a>替换函数
 
-首先，确定 MSIX 容器中运行你的应用程序时，无法通过调用的函数。 然后，你可以创建你想要改为调用的运行时管理器的替换函数。 这使你能够替换符合现代的运行时环境的规则的行为的函数的实现。
+首先，确定 MSIX 容器中运行你的应用程序时，无法通过调用的函数。 然后，你可以创建你想要改为调用的运行时管理器的替换函数。 这使你能够函数的实现替换为符合现代的运行时环境的规则的行为。
 
-在 Visual Studio 中，打开在本指南前面创建的运行时修复项目。
+在 Visual Studio 中，打开在本指南前面部分中创建的运行时修复项目。
 
-声明``SHIM_DEFINE_EXPORTS``宏，然后添加包含语句`shim_framework.h`的每个顶部。想要添加的运行时修复功能 CPP 文件。
+声明``SHIM_DEFINE_EXPORTS``宏，然后添加为一个包含语句`shim_framework.h`的每个顶部。想要添加的运行时修复功能 CPP 文件。
 
 ```c++
 #define SHIM_DEFINE_EXPORTS
 #include <shim_framework.h>
 ```
 >[!IMPORTANT]
->请确保`SHIM_DEFINE_EXPORTS`宏显示之前 include 语句。
+>请确保`SHIM_DEFINE_EXPORTS`宏出现之前 include 语句。
 
-创建具有相同的签名的函数的函数谁有想要修改的行为。 下面是示例函数，替换`MessageBoxW`函数。
+创建具有相同的签名的函数的函数的具有你想要修改的行为。 下面是示例函数，替换`MessageBoxW`函数。
 
 ```c++
 auto MessageBoxWImpl = &::MessageBoxW;
@@ -508,7 +508,7 @@ DECLARE_SHIM(MessageBoxWImpl, MessageBoxWShim);
 
 ### <a name="configuration-data"></a>配置数据
 
-如果你想要将配置数据添加到运行时修复，请考虑将它添加到``config.json``。 这样一来，你可以使用`ShimQueryCurrentDllConfig`轻松地分析该数据。 此示例分析该配置文件的布尔值和字符串值。
+如果你想要将配置数据添加到你的运行时修复，请考虑将它添加到``config.json``。 这样一来，你可以使用`ShimQueryCurrentDllConfig`轻松地分析该数据。 此示例分析该配置文件中的布尔值和字符串值。
 
 ```c++
 if (auto configRoot = ::ShimQueryCurrentDllConfig())
@@ -529,9 +529,9 @@ if (auto configRoot = ::ShimQueryCurrentDllConfig())
 
 ## <a name="other-debugging-techniques"></a>其他的调试技术
 
-虽然 Visual Studio 为你提供的最简单的开发和调试体验，有一些限制。
+虽然 Visual Studio 为你提供最简单的开发和调试体验，有一些限制。
 
-首先，F5 调试通过部署松散文件从包布局文件夹路径，而不是从.appx 包安装运行应用程序。  布局文件夹通常没有相同的安全限制作为安装的程序包文件夹。 因此，它可能无法重现之前应用运行时修复程序包路径访问拒绝错误。
+首先，F5 调试通过部署 loose 文件从包布局文件夹路径，而不是从.appx 程序包安装运行应用程序。  布局文件夹通常没有相同的安全限制作为安装的程序包文件夹。 因此，它可能无法重现之前应用运行时修复程序包路径访问拒绝错误。
 
 若要解决此问题，使用.appx 程序包部署，而不是 F5 松散文件部署。  若要创建.appx 包文件，请使用 Windows SDK 中，从[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)实用程序，上文所述。 或者，从 Visual Studio 中，右键单击你的应用程序项目节点并选择**应用商店**->**创建应用包**。
 
@@ -551,7 +551,7 @@ windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PS
 .childdbg 1
 g
 ```
-（执行目标应用程序启动并进入调试器之前）
+（执行，直到目标应用程序启动和进入调试器）
 
 ```
 sxe ld fixup.dll

@@ -11,15 +11,15 @@ keywords: Windows 10, uwp, 客户组, 类别, 外部测试版组, 已知用户�
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: 88101d9f8cc7ca40d37f88202667f36ecf5d8a3f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959381"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989396"
 ---
 # <a name="create-customer-groups"></a>创建客户组
 
-你可以创建包含你的应用的客户的一个子集的*客户组*。 这些组可以用于目标客户促销、 测试和其他用途。
+你可以创建*客户组*，包括你的应用的客户的子集。 这些组可以用于目标客户促销、 测试和其他用途。
 
 若要查看和创建客户组，在左侧的导航菜单中的[Windows 开发人员中心](https://partner.microsoft.com/dashboard)中，展开**参与**，然后选择**客户组**。
 

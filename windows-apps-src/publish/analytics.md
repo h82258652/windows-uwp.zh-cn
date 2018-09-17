@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，分析，报告，仪表板、 应用、 数据指标
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961871"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981246"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 
@@ -40,7 +40,7 @@ ms.locfileid: "3961871"
 -   [反馈报告](feedback-report.md)
 -   [Xbox 分析报告](xbox-analytics-report.md)
 -   [洞察报告](insights-report.md)
--   [广告性能报告](advertising-performance-report.md)
+-   [广告效果报告](advertising-performance-report.md)
 -   [广告市场活动报告](promote-your-app-report.md)
 
 

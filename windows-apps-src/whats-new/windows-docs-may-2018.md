@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963895"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985546"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月的新增功能
 
@@ -26,7 +26,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="motion-in-fluent-design"></a>在 Fluent 设计的运动
 
-在 Fluent 设计系统的动作的用户正在发展，计时、 缓动、 方向性和引力的基础上生成。 应用这些基础将帮助指导你的应用，用户和其数字体验用连接由反映自然世界。 有关详细信息，此文章：
+在 Fluent 设计系统的动作的用户正在发展，计时、 缓动、 方向性和引力的基础上生成。 应用这些基础将帮助指导你的应用，用户和其数字体验用连接由反映自然的世界。 有关详细信息，此文章：
 
 * [运动概述](../design/motion/index.md)已更新以反映这些基础知识。
 * [运动的实践](../design/motion/motion-in-practice.md)提供如何应用这些基础应用中的示例。
@@ -40,7 +40,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 已对以下 Fluent Design 页面视觉更新和次要更改：
 
 * [对齐方式，填充、 边距](../design/layout/alignment-margin-padding.md)
-* [Color](../design/style/color.md)
+* [颜色](../design/style/color.md)
 * [命令基础知识](../design/basics/commanding-basics.md)
 * [适用于 Windows 应用的 fluent 设计](../design/fluent-design-system/index.md)
 * [应用设计简介](../design/basics/design-and-ui-intro.md)
@@ -50,10 +50,10 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 * [样式概述](../design/style/index.md)
 * [写入样式](../design/style/writing-style.md)
 
-此外，我们已经重写与他们的内容区域上的所有新信息的以下页面：
+此外，我们已经重写提供他们的内容区域的所有新信息的以下页面：
 
 * [图标](../design/style/icons.md)现在提供实际建议使用图标并使它们变成可点击状态。
-* [版式](../design/style/typography.md)合并从类似文章的信息将所有内容放在一个位置的更新的指南和图示。
+* [版式](../design/style/typography.md)整合了信息从类似的文章，将所有内容放在一个位置的更新的指南和插图。
 
 ![颜色调色板图像](../design/style/images/color/accent-color-palette.svg)
 
@@ -77,11 +77,11 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 * 可靠的安装和更新。 
 * 管理与灵活功能系统安全模型。
-* 支持 Microsoft Store，企业管理和多个自定义分发模型。
+* 在 Microsoft 应用商店、 企业管理和支持许多自定义分发模型。
 
 工具，用于创建这些程序包将在 Visual Studio 和 Windows SDK 的未来版本中可用。
 
-MSIX 打包格式是一种开放源格式可以更方便，我们的合作伙伴支持与他们的工具和解决方案的 MSIX 生态系统。 若要详细了解 MSIX 打包格式，请参阅[MSIX SDK](https://github.com/Microsoft/msix-packaging)。 
+MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持与他们的工具和解决方案的 MSIX 生态系统。 若要详细了解 MSIX 打包格式，请参阅[MSIX SDK](https://github.com/Microsoft/msix-packaging)。 
 
 ![MSIX 打包图像](images/msix.png)
 
@@ -114,13 +114,13 @@ MSIX 打包格式是一种开放源格式可以更方便，我们的合作伙伴
 
 ![获取启动的映像](../get-started/images/build-your-app.png)
 
-### <a name="advertising-performance-report"></a>广告性能报告
+### <a name="advertising-performance-report"></a>广告效果报告
 
 在开发人员中心仪表板中的[广告性能报告](../publish/advertising-performance-report.md)现在提供了可见性指标。 我们还添加了[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)文章提供有关优化你的广告的可见性的建议。
 
 ### <a name="targeted-push-notifications"></a>定向的推送通知
 
-在开发人员中心仪表板中的[通知](../publish/send-push-notifications-to-your-apps-customers.md)页面现在提供的图形和世界地图视图中所有通知的额外分析数据。
+在开发人员中心仪表板中的[通知](../publish/send-push-notifications-to-your-apps-customers.md)页面现在提供图形和世界地图视图中所有通知的额外分析数据。
 
 ## <a name="videos"></a>视频
 
@@ -136,4 +136,4 @@ Windows 现在可以使用每个单独进程中运行的 UWP 应用中，多个�
 
 ### <a name="customer-database-tutorial"></a>客户数据库教程
 
-本教程创建基本的 UWP 应用用于管理客户列表，并介绍了概念和企业开发中非常有用的做法。 它将指导你通过实现 UI 元素并添加针对本地 SQLite 数据库中，操作，并提供松散指南连接到远程 REST 数据库，如果你想要继续进行操作。 [请查看下面的教程](../enterprise/customer-database-tutorial.md)
+本教程创建基本的 UWP 应用，用于管理客户列表，并介绍了概念和企业开发中非常有用的做法。 它将指导你完成实现 UI 元素和添加针对本地 SQLite 数据库，操作，并提供用于连接到远程的其余部分数据库，如果你想要继续进行操作的松散指南。 [请查看下面的教程](../enterprise/customer-database-tutorial.md)

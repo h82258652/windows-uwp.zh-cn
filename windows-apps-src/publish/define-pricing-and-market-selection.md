@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960915"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988268"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
 
 Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要推出你的应用的市场，按市场或市场组自定义许多[定价和可用性](set-app-pricing-and-availability.md)功能。
 
-为了使你的应用来自世界各地的适用于客户的信息，请参阅[使你的应用可本地化](../design/globalizing/prepare-your-app-for-localization.md)和[全球化指南](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
+有助于使你的应用来自世界各地的适用于客户的信息，请参阅[使你的应用可本地化](../design/globalizing/prepare-your-app-for-localization.md)和[全球化指南](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
 
 > [!NOTE]
 > 虽然本主题提及应用，但加载项提交的市场选择也使用同样的过程。
@@ -370,7 +370,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>瑞典 *</td>
     <td>瑞士 *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>塔吉克斯坦</td>
   </tr>
   <tr>
@@ -480,7 +480,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果你的应用包含程序包面向 Windows 8.x 不同，它是要注意的市场被视为单个"世界其他地区"市场的客户在 Windows 上使用的应用商店 8.x，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中一个供所有这些市场组的"世界其他地区"市场选项)。
+如果你的应用包含程序包面向 Windows 8.x 不同，请务必要注意的市场被视为单个"世界其他地区"市场的客户在 Windows 上使用的应用商店 8.x，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中一个供组所有这些市场的"世界其他地区"市场选项)。
 
 如果你在提交应用时保留默认选择，则无需担心此问题，并且你的应用将向所有可能的市场提供。 但是，如果你希望排除特定市场，请记住，即使只排除其中一个“世界其他地区”市场，也意味着将无法在任何“世界其他地区”市场中向使用 Windows 8 或 Windows 8.1 的客户提供你的应用。
 

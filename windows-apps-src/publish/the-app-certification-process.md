@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态的时间
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959727"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985884"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
-当你完成应用提交的创建并单击**提交到 Microsoft Store** 时，提交将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 你的提交通过认证后，它可能需要最多 24 小时的客户都可以看到该应用一览新的提交，或对程序包更新提交所做的更改。 如果你更新仅更改应用商店一览详细信息，将在一小时内完成发布流程。  发布你的提交，并在仪表板中的应用的状态将为**在应用商店**时将通知你。
+当你完成应用提交的创建并单击**提交到 Microsoft Store** 时，提交将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 你的提交通过认证后，可能需要最多 24 小时客户都可以看到该应用一览的新的提交，或已更新提交所做的更改来对程序包。 如果你更新仅更改应用商店一览详细信息，将在一小时内完成发布流程。  发布你的提交，并在仪表板中的应用的状态将为**在应用商店**时，你将收到通知。
 
 ## <a name="preprocessing"></a>预处理
 

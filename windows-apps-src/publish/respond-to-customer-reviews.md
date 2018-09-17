@@ -1,7 +1,7 @@
 ---
 author: jnHs
 Description: You can respond directly to reviews of your app to let customers know you’re listening to their feedback.
-title: 回复客户评论
+title: 回复客户评价
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
 ms.date: 7/17/2018
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963937"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981492"
 ---
-# <a name="respond-to-customer-reviews"></a>回复客户评论
+# <a name="respond-to-customer-reviews"></a>回复客户评价
 
 
 你可以回复评价的应用以让客户知道你正在听取他们的反馈。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 你的回复将显示在所有 Windows 10 客户都可以看到 Microsoft 应用商店中。 你还可以选择通过电子邮件向客户发送你的回复，（如果他们没有选择退出，并在使用运行 Windows 10 版本 1803年或更高版本的设备）。

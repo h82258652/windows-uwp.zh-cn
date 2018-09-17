@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户、 组、 多个用户，多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958981"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989312"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>向开发人员中心帐户添加用户、组和 Azure AD 应用程序
 
@@ -119,7 +119,7 @@ ms.locfileid: "3958981"
 ### <a name="add-groups-from-your-organizations-directory"></a>从组织的目录添加组
 
 1.  选择 （附近的仪表板右上角） 的齿轮图标，然后选择**帐户设置**。 在**设置**菜单中，选择**用户**。
-2. 从**用户**页中，选择**添加组**。
+2. 从**用户**页上，选择**添加组**。
 2.  从出现的列表中选择一个或多个组。 你可以使用搜索框来搜索特定组。
     > [!TIP]
     > 如果你选择将多个组添加到你的开发人员中心帐户中，则必须为其分配相同角色或自定义权限集。 若要添加具有不同角色/权限的多个组，请针对每个角色或自定义权限集重复以下步骤。
@@ -169,7 +169,7 @@ ms.locfileid: "3958981"
 > [!TIP]
 > 如果你主要使用此 Azure AD 应用程序进行开发人员中心身份验证，并且不需要用户直接访问它，可以为**回复 URL** 和**应用 ID URI** 输入任何有效地址，只要这些值未由目录中的任何其他 Azure AD 应用程序使用。
 
-1.  从 （在**帐户设置**）**用户**页中，选择**添加 Azure AD 应用程序**。
+1.  在**用户**页面 （下面**帐户设置**），选择**添加 Azure AD 应用程序**。
 2.  在下一页上，选择**新的 Azure AD 应用程序**。
 3.  输入新的 Azure AD 应用程序的**回复 URL**。 这是用户可以登录并使用 Azure AD 应用程序的 URL（有时也称为“应用 URL”或“登录 URL”）。 **回复 URL**不能超过 256 个字符，且在你目录中必须是唯一的。
 4.  输入新 Azure AD 应用程序的**应用程序 ID URI**。 这是 Azure AD 应用程序在向 Azure AD 发送单一登录请求时所显示的逻辑标识符。 请注意，每个 Azure AD 应用程序的**应用 ID URI** 在目录中必须唯一，且长度不得超过 256 个字符。 有关**应用 ID URI** 的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
@@ -221,13 +221,13 @@ ms.locfileid: "3958981"
 
 作为帐户所有者，你可以查看已添加到帐户中的任何其他用户的详细浏览历史记录。
 
-在 （下**帐户设置**）**用户**页上，选择你想要查看其浏览历史记录的用户显示**上次活动**下的链接。 你可以查看此用户在过去 30 天内访问过的所有网页的 URL。
+在 （在**帐户设置**）**用户**页上，选择你想要查看其浏览历史记录的用户显示**上次活动**下的链接。 你可以查看此用户在过去 30 天内访问过的所有网页的 URL。
 
 <span id="remove" />
 
 ## <a name="remove-users-groups-and-azure-ad-applications"></a>删除用户、组和 Azure AD 应用程序
 
-若要从开发人员中心帐户中删除用户、 组或 Azure AD 应用程序，选择按其名称在**用户**页上显示的**删除**链接。 在确认你希望删除它后，该用户、组或 Azure AD 应用程序将无法再访问你的开发人员中心帐户（除非你以后再次添加它）。
+若要从你的开发人员中心帐户中删除用户、 组或 Azure AD 应用程序，请选择按其名称在**用户**页上显示的**删除**链接。 在确认你希望删除它后，该用户、组或 Azure AD 应用程序将无法再访问你的开发人员中心帐户（除非你以后再次添加它）。
 
 > [!IMPORTANT]
 > 删除用户、组或 Azure AD 应用程序意味着它将无法再访问你的开发人员中心帐户。 它**不会**从你的组织的目录中删除用户、组或 Azure AD 应用程序。

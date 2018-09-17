@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, 应用内购买, 应用内产品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957231"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986628"
 ---
 # <a name="add-on-submissions"></a>加载项提交
 
@@ -90,6 +90,6 @@ ms.locfileid: "3957231"
 > [!IMPORTANT]
 > 如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
 
-若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将创建新的提交的加载项，使用之前提交中的信息作为起始点。 进行的更改，然后依次**提交到应用商店**。
+若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将创建新的提交的加载项，使用之前提交中的信息作为起始点。 进行的更改，然后再单击**提交到应用商店**。
 
 如果你希望删除之前提供的加载项，可通过创建新提交并通过**停止获取**选项将[分发和可见性](set-add-on-pricing-and-availability.md)选项更改为**在 Microsoft Store 中隐藏**。 请确保视需要将你的应用代码更新为也删除加载项引用（尤其是当你的应用支持 Windows 8.1 或更早版本时；此可见性设置不适用于这些客户）。

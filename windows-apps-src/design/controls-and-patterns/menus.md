@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956653"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986308"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -34,7 +34,7 @@ ms.locfileid: "3956653"
 
 | **获取 Windows UI 库** |
 | - |
-| 此控件是 Windows UI 库，其中包含新的控件和适用于 UWP 应用的 UI 功能的 NuGet 程序包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控件是 Windows UI 库，包含新控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows UI 库 Api** |
 | - | - |
@@ -48,7 +48,7 @@ ms.locfileid: "3956653"
 
 ### <a name="menubar-vs-menuflyout"></a>菜单栏与 MenuFlyout
 
-若要显示菜单浮出控件附加到画布上的 UI 元素中，使用 MenuFlyout 控件宿主菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选子菜单）。
+若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选的子菜单）。
 
 若要显示多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口的顶部菜单栏。
 
@@ -56,7 +56,7 @@ ms.locfileid: "3956653"
 
 菜单栏和命令栏都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开命令的应用可能需要更多的组织或分组的一组，然后 CommandBar 允许。
 
-你还可以与 CommandBar 配合使用菜单栏。 在菜单栏用于提供大部分命令和命令栏，以突出显示的最常用的命令。
+你还可以与 CommandBar 配合使用菜单栏。 使用在菜单栏提供大部分命令和命令栏，以突出显示的最常用的命令。
 
 ## <a name="examples"></a>示例
 
@@ -76,7 +76,7 @@ ms.locfileid: "3956653"
 
 ## <a name="menus-vs-context-menus"></a>菜单与上下文菜单
 
-菜单和上下文菜单是在它们的外观和可以包含的内容类似。 事实上，你可以使用相同的控件， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，创建它们。 不同之处在于，允许用户访问它的方式。
+菜单和上下文菜单会在它们的外观和可以包含的内容类似。 事实上，你可以使用相同的控件， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，创建它们。 不同之处在于，允许用户访问它的方式。
 
 何时应使用菜单或上下文菜单？
 
