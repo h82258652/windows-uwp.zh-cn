@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4772620a79eed3c66886d5adde716b56f5c7bb9e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960280"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983283"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -38,7 +38,7 @@ ms.locfileid: "3960280"
 
 [POST](uri-reputationusersxuidfeedbackpost.md)
 
-&nbsp;&nbsp;如果你希望在游戏中，而不是使用 shell 添加反馈选项，用于从你的游戏。
+&nbsp;&nbsp;如果你希望能够在你的游戏，而不是使用 shell 中添加的反馈选项，用于从你的游戏。
  
 <a id="ID4EDC"></a>
 
@@ -50,6 +50,6 @@ ms.locfileid: "3960280"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 Uri](atoc-reference-reputation.md)
+[信誉 URI](atoc-reference-reputation.md)
 
    

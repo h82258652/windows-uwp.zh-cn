@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f9cc70b51809b1722db875580d6a9ad60c15acf0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958384"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987933"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
-使访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
+允许访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
  
   * [URI 参数](#ID4EV)
  
@@ -39,7 +39,7 @@ ms.locfileid: "3958384"
 
 [POST (/users/xuid({xuid})/resetreputation)](uri-usersxuidresetreputationpost.md)
 
-&nbsp;&nbsp;启用后 （例如） 帐户劫持某些任意值设置指定的用户的信誉评分，强制执行团队。
+&nbsp;&nbsp;允许执行团队后 （例如） 帐户劫持将指定的用户的信誉评分设置为某些任意值。
  
 <a id="ID4E6B"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "3958384"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 Uri](atoc-reference-reputation.md)
+[信誉 URI](atoc-reference-reputation.md)
 
    

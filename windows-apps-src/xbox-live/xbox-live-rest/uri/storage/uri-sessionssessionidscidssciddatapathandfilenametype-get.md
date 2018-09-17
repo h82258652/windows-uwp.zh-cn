@@ -1,9 +1,9 @@
 ---
-title: 获取 (/sessions/ {sessionId} {scid} /scids/ /data/ {pathAndFileName} {类型})
+title: GET (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 assetID: eef3c530-2f56-442a-fa47-f459a77f5798
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfilenametype-get.html
 author: KevinAsgari
-description: " 获取 (/sessions/ {sessionId} {scid} /scids/ /data/ {pathAndFileName} {类型})"
+description: " GET (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 747381d7a62e206e5a99e1426f1d7aa01d4343d4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956402"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983449"
 ---
-# <a name="get-sessionssessionidscidssciddatapathandfilenametype"></a>获取 (/sessions/ {sessionId} {scid} /scids/ /data/ {pathAndFileName} {类型})
+# <a name="get-sessionssessionidscidssciddatapathandfilenametype"></a>GET (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 下载文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
@@ -40,7 +40,7 @@ ms.locfileid: "3956402"
 | --- | --- | --- | 
 | sessionId| 字符串| 若要查找会话的 ID。| 
 | scid| guid| 要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （达且包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （在最终的正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续的句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件或 json。| 
   
 <a id="ID4ECB"></a>
@@ -59,7 +59,7 @@ ms.locfileid: "3956402"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| 选择| 字符串| 仅 json 类型时才可用。 指定响应应仅包含某些属性/值的 JSON，由此参数。 使用"点"（.） 来指定子属性，并放在方括号 ([和]) 来指定数组索引。 例如，"array1 [4].prop2"指定"array1"数组索引 4"prop2"属性。| 
+| 选择| 字符串| 仅 json 类型时才可用。 指定响应只应包含某个属性/值的 JSON，由此参数。 使用"点"（.） 来指定子属性，并放在方括号 ([和]) 来指定数组索引。 例如，"array1 [4].prop2"指定"array1"数组索引 4"prop2"属性。| 
   
 <a id="ID4EQC"></a>
 
@@ -69,7 +69,7 @@ ms.locfileid: "3956402"
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EZD"></a>
 
@@ -78,7 +78,7 @@ ms.locfileid: "3956402"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 指定必须匹配要完成此操作的现有项目 ETag。| 
+| If-Match| 指定必须与要完成此操作的现有项目 ETag。| 
 | If-None-Match| 指定 ETag，不匹配任何现有项目，以完成此操作。| 
 | 范围| 指定要下载字节的范围。 遵循标准的 HTTP 范围标头格式。| 
   
@@ -105,9 +105,9 @@ ms.locfileid: "3956402"
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求时间太长，才能完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 408| 请求超时 | 请求所花的时间太长，才能完成。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
   
 <a id="ID4EDDAC"></a>
 
@@ -116,7 +116,7 @@ ms.locfileid: "3956402"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ETag| ETag 是资源的由对某一 URL 中找到的特定版本的 web 服务器分配一个不透明标识符。 如果在该 URL 处的资源内容发生改变，被分配新功能和不同的 ETag。| 
+| ETag| ETag 是资源的由对某一 URL 中找到的特定版本的 web 服务器分配的不透明标识符。 如果在该 URL 处的资源内容发生改变，新功能和不同的 ETag 分配。| 
 | 内容区域| 如果这部分下载，此标头指定下载的字节范围。| 
   
 <a id="ID4EGEAC"></a>
@@ -124,7 +124,7 @@ ms.locfileid: "3956402"
  
 ## <a name="response-body"></a>响应正文
  
-如果调用成功，该服务将返回文件的内容。
+如果在调用成功，该服务将返回文件的内容。
   
 <a id="ID4EREAC"></a>
 
@@ -136,12 +136,12 @@ ms.locfileid: "3956402"
  
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[/sessions/ {sessionId} {scid} /scids/ /data/ {pathAndFileName} {类型}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
+[/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
   
 <a id="ID4E6EAC"></a>
 
  
-##### <a name="reference--titleblob-jsonjsonjson-titleblobmd"></a>参考[TitleBlob (JSON)](../../json/json-titleblob.md)
+##### <a name="reference--titleblob-jsonjsonjson-titleblobmd"></a>引用[TitleBlob (JSON)](../../json/json-titleblob.md)
 
    

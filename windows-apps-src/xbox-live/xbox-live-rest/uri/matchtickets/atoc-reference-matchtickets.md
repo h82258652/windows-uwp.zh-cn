@@ -1,9 +1,9 @@
 ---
-title: 匹配 Uri
+title: 匹配 URI
 assetID: 667b02a9-6f34-8165-001b-ee8782575202
 permalink: en-us/docs/xboxlive/rest/atoc-reference-matchtickets.html
 author: KevinAsgari
-description: " 匹配 Uri"
+description: " 匹配 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bfeb225c67567c392615686743828941c02f6d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963032"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985195"
 ---
-# <a name="matchmaking-uris"></a>匹配 Uri
+# <a name="matchmaking-uris"></a>匹配 URI
  
 本部分提供了从 Xbox Live 服务的匹配服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。 
  
@@ -32,14 +32,14 @@ momatch.xboxlive.com
  
 ## <a name="service-version"></a>服务版本
  
-这些 HTTP/REST Uri 的调用方必须为 X-Xbl-协定的版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 103 或更高版本。 
+这些 HTTP/REST Uri 的调用方必须为 X-Xbl-合同的版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 103 或更高版本。 
   
 <a id="ID4ELB"></a>
 
  
 ## <a name="system-objects-and-properties"></a>系统对象和属性
  
-目前，匹配服务的所有配置都发生手动，使用[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)的服务配置部分。 一些匹配的信息也会反映在为 MPSD 定义的对象。 
+目前，匹配服务的所有配置都发生手动，使用[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)的服务配置部分。 为 MPSD 定义的对象也反映匹配的一些信息。 
  
 用于配置匹配的主要 JSON 对象[MatchTicket (JSON)](../../json/json-matchticket.md)和[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)中定义。 请注意，所有匹配票证必须都定义一个**ticketSessionRef**对象来提供对包含玩家或想要与其他人匹配的玩家的多人游戏会话的引用。 
   
@@ -48,15 +48,15 @@ momatch.xboxlive.com
  
 ## <a name="in-this-section"></a>本部分内容
 
-[/serviceconfigs/ {scid} /hoppers/ {hoppername}](uri-serviceconfigsscidhoppershoppername.md)
+[/serviceconfigs/{scid}/hoppers/{hoppername}](uri-serviceconfigsscidhoppershoppername.md)
 
 &nbsp;&nbsp;支持 POST 操作以创建匹配票证。 
 
-[/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据](uri-serviceconfigsscidhoppershoppernamestats.md)
+[/serviceconfigs/{scid}/hoppers/{name}/stats](uri-serviceconfigsscidhoppershoppernamestats.md)
 
-&nbsp;&nbsp;支持 GET 操作来检索漏斗的统计信息。
+&nbsp;&nbsp;支持获取操作来检索漏斗的统计信息。
 
-[/serviceconfigs/ {scid} {hoppername} /hoppers/ /tickets/ {票证 id}](uri-scidhoppernameticketid.md)
+[/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}](uri-scidhoppernameticketid.md)
 
 &nbsp;&nbsp;支持的匹配票证的删除操作。
  
@@ -71,7 +71,7 @@ momatch.xboxlive.com
 
  [HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)
 
- [会话目录 Uri](../sessiondirectory/atoc-reference-sessiondirectory.md)
+ [会话目录 URI](../sessiondirectory/atoc-reference-sessiondirectory.md)
 
   
 <a id="ID4E2C"></a>
@@ -79,6 +79,6 @@ momatch.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
 
    

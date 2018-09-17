@@ -1,9 +1,9 @@
 ---
-title: / 全局 /data//scid / {scid} {路径}
+title: /global/scids/{scid}/data/{path}
 assetID: d6353cd3-9127-98d4-bb99-5df690e07022
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapath.html
 author: KevinAsgari
-description: " / 全局 /data//scid / {scid} {路径}"
+description: " /global/scids/{scid}/data/{path}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b091f3bbb5e03808d04a255b204c13eee93f7fdb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956754"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983753"
 ---
-# <a name="globalscidssciddatapath"></a>/ 全局 /data//scid / {scid} {路径}
-列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+# <a name="globalscidssciddatapath"></a>/global/scids/{scid}/data/{path}
+列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -40,7 +40,7 @@ ms.locfileid: "3956754"
 
 [GET](uri-globalscidssciddatapath-get.md)
 
-&nbsp;&nbsp;列出了在指定路径的文件信息。
+&nbsp;&nbsp;列出了在指定的路径的文件信息。
  
 <a id="ID4EGC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "3956754"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 Uri](atoc-reference-storagev2.md)
+[标题存储 URI](atoc-reference-storagev2.md)
 
    

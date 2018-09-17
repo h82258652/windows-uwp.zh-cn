@@ -1,9 +1,9 @@
 ---
-title: （/用户/批） POST
+title: POST (/users/batch)
 assetID: bd0b18fe-8a6d-d591-5b13-bcd9643e945a
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchpost.html
 author: KevinAsgari
-description: " （/用户/批） POST"
+description: " POST (/users/batch)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,19 +12,19 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd1b1859de81724a97fa40d9acdc3a1847d9421
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956470"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983537"
 ---
-# <a name="post-usersbatch"></a>（/用户/批） POST
+# <a name="post-usersbatch"></a>POST (/users/batch)
 获取一批用户状态。
 这些 Uri 的域是`userpresence.xboxlive.com`。
 
   * [备注](#ID4EV)
   * [授权](#ID4EAB)
-  * [资源上的隐私设置的效果](#ID4EDC)
+  * [有关资源的隐私设置的效果](#ID4EDC)
   * [需的请求标头](#ID4EYF)
   * [可选的请求标头](#ID4EGAAC)
   * [请求正文](#ID4EGBAC)
@@ -35,9 +35,9 @@ ms.locfileid: "3956470"
 
 ## <a name="remarks"></a>备注
 
-应通过任何客户端、 服务或需要了解一批用户的状态信息的游戏使用此方法。
+应由任何客户端、 服务或需要了解一批用户的状态信息的游戏使用此方法。
 
-为此批处理请求的响应可以由深度和路径的筛选器。 消费者可以使用此找出并显示有关一组用户的状态。 此 API 上的筛选器中的属性，但 And 工作作为 Or 跨属性。
+此批处理请求的响应可以由深度和路径的筛选器。 使用者可以使用此找出并显示有关一组用户的状态。 此 API 上的筛选器为 Or 中一个属性，而 And 跨工作属性。
 
 <a id="ID4EAB"></a>
 
@@ -51,9 +51,9 @@ ms.locfileid: "3956470"
 <a id="ID4EDC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
 
-此方法始终返回 200 确定，但可能不会在响应正文中返回的内容。
+此方法始终返回 200 正常，但可能不会在响应正文中返回的内容。
 
 | 发出请求的用户| 目标用户的隐私设置| 行为|
 | --- | --- | --- | --- | --- | --- | --- |
@@ -64,9 +64,9 @@ ms.locfileid: "3956470"
 | 非好友用户| 每个人都| 200 OK|
 | 非好友用户| 仅好友| 200 OK|
 | 非好友用户| 阻止| 200 OK|
-| 第三方站点| 每个人都| 200 OK|
-| 第三方站点| 仅好友| 200 OK|
-| 第三方站点| 阻止| 200 OK|
+| 第三方网站| 每个人都| 200 OK|
+| 第三方网站| 仅好友| 200 OK|
+| 第三方网站| 阻止| 200 OK|
 
 <a id="ID4EYF"></a>
 
@@ -76,8 +76,8 @@ ms.locfileid: "3956470"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
-| x xbl 协定版本| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 示例值： 3，vnext。|
-| 接受| 字符串| 内容类型可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 示例值： 3，vnext。|
+| 接受| 字符串| 内容类型可接受。 支持的唯一一个是 application/json，但它必须在标头中指定。|
 | 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。|
@@ -89,7 +89,7 @@ ms.locfileid: "3956470"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 1。|
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 1。|
 
 <a id="ID4EGBAC"></a>
 
@@ -112,17 +112,17 @@ ms.locfileid: "3956470"
 
 | 成员| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| deviceTypes| 使用你想要了解有关用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，不会被筛选掉）。|
-| 标题| 设备的列表类型你想要了解有关其的用户。 如果该数组留空，则默认为所有可能的游戏 （即，不会被筛选掉）。|
-| level| 可能值： <ul><li>用户-获取用户节点</li><li>设备-获取用户和设备节点</li><li>标题-获取基本标题级别信息</li><li>所有-获取完整状态信息、 媒体信息，或同时</li></ul><br> 默认值为"标题"。|
-| onlineOnly| 如果此属性为 true，批处理操作会筛选掉记录脱机用户 （包括遮盖的）。 如果它不提供，则将返回在线和离线用户。|
+| deviceTypes| 使用你想要了解有关用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，无筛选）。|
+| 主题作品| 设备的列表类型你想要了解有关其的用户。 如果该数组留空，则默认为所有可能的游戏 （即，无筛选）。|
+| level| 可能值： <ul><li>用户-获取用户节点</li><li>设备-获取用户和设备节点</li><li>游戏-获取基本标题级别信息</li><li>所有-获取完整状态信息、 媒体信息或</li></ul><br> 默认值为"标题"。|
+| onlineOnly| 如果此属性为 true，批处理操作会筛选掉记录脱机用户 （包括遮盖的）。 如果它不提供，则将返回联机和脱机的用户。|
 
 <a id="ID4E4DAC"></a>
 
 
 ### <a name="prohibited-members"></a>禁止的成员
 
-所有其他成员禁止在请求中。
+在请求中禁止使用所有其他成员。
 
 <a id="ID4EIEAC"></a>
 
@@ -217,4 +217,4 @@ ms.locfileid: "3956470"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/ 用户/批处理](uri-usersbatch.md)
+[/users/batch](uri-usersbatch.md)

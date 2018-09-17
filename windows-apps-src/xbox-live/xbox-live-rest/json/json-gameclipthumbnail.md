@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 681a269cd861f741e2bbde3554acc1b25104d90d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958672"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983311"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
-包含一个单独的缩略图的相关信息。 可以有多个大小每个剪辑，并将由客户端选择正确显示。 
+包含一个单独的缩略图的相关的信息。 可以有多个大小每个剪辑，并将由客户端可选择正确显示。 
 <a id="ID4EN"></a>
 
  
@@ -60,6 +60,6 @@ GameClipThumbnail 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

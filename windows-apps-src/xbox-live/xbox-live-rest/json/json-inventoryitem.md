@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a7521de7da4ebd31f0a1d8c59bb7c0134eddc08
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956240"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985173"
 ---
 # <a name="inventoryitem-json"></a>inventoryItem (JSON)
 核心清单项表示标准项可被授予权利。
@@ -29,16 +29,16 @@ InventoryItem 对象具有以下规范。
 
 | 成员| 类型| 描述|
 | --- | --- | --- |
-| url| 字符串| 有关此特定库存项目的唯一标识符。|
+| url| 字符串| 此特定库存项目的唯一标识符。|
 | 项类型| 字符串| 项类型。 当前值 <ul><li><b>Unknown</b></li><li><b>游戏</b></li><li><b>电影</b></li><li> <b>TVShow</b></li><li><b>MusicVideo</b></li><li><b>GameTrial</b></li><li><b>ViralVideo</b></li><li><b>TVEpisode</b></li><li><b>TVSeason</b></li><li><b>TVSeries</b></li><li><b>VideoPreview</b></li><li><b>海报</b></li><li><b>播客</b></li><li><b>图像</b></li><li><b>BoxArt</b></li><li><b>ArtistPicture</b></li><li><b>GameContent</b></li><li><b>GameDemo</b></li><li><b>主题</b></li><li><b>XboxOriginalGame</b></li><li><b>GamerTile</b></li><li><b>ArcadeGame</b></li><li><b>GameConsumable</b></li><li><b>唱片集</b></li><li><b>AlbumDisc</b></li><li><b>AlbumArt</b></li><li><b>GameVideo</b></li><li><b>BackgroundArt</b></li><li><b>TVTrailer</b></li><li><b>GameTrailer</b></li><li><b>VideoShort</b></li><li><b>捆绑包</b></li><li><b>XnaCommunityGame</b></li><li><b>促销</b></li><li><b>MovieTrailer</b></li><li><b>SlideshowPreviewImage</b></li><li><b>ServerBackedGames</b></li><li><b>市场</b></li><li><b>AvatarItem</b></li><li><b>LiveApp</b></li><li><b>WebGame</b></li><li><b>MobileGame</b></li><li><b>MobilePdlc</b></li><li><b>MobileConsumable</b></li><li><b>应用</b></li><li><b>MetroGame</b></li><li><b>MetroGameContent</b></li><li><b>MetroGameConsumable</b></li><li><b>GameLayer</b></li><li><b>GameActivity</b></li><li><b>GameV2</b></li><li><b>SubscriptionV2</b></li><li><b>订阅</b><br/><br/> **注意：** 游戏由**GameV2**、 易耗品**GameConsumable**，并持久型 DLC 是**GameContent**。 |
-  | 容器 | 字符串 | 这是一套"容器"包含此项。 可为属于特定容器的项目中查询用户的清单。 当通过购买添加到清单项时确定这些容器。 |
+  | 容器 | 字符串 | 这是一套"容器"包含此项。 可以为属于特定容器的查询用户的清单。 这些容器的确定时由购买，该项将添加到清单。 |
   | 获取 | DateTime | 日期和时间项添加到用户的清单。 |
-  | startDate | DateTime | 日期和时间的项目就会变得或将变为可供使用。 |
+  | startDate | DateTime | 日期和时间的项目就会变得或将成为可供使用。 |
   | endDate | DateTime | 日期和时间的项目就会变得或将变为不可用。 |
-  | 状态 | 字符串 | 项的状态。 允许值为**启用**、**暂停**、**已过期**，**取消**，**续订**。  |
-  | trial | 布尔值 | 必需。 如果此权利是试用版;否则为 false。 如果你购买权利的试用版和购买完整版，你将收到两者。 |
+  | 状态 | 字符串 | 项的状态。 允许值为**启用**、**暂停**、**过期**、**已取消**、**续订**。  |
+  | trial | 布尔值 | 必需。 如果此权益试用版;否则为 false。 如果你购买权利的试用版和购买完整版，你将收到两者。 |
   | trialTimeRemaining | 时间跨度 | 可以为 null。 在试用版，以分钟为单位剩余多少时间。 |
-  | 消费品 | array | 如果项目是易耗型，它包含的内联表示形式的易耗型清单项，以及其当前的数量的唯一标识符 （链接）。 |
+  | 消费品 | array | 如果项目是易耗型，其中包含的内联表示形式为其当前的数量或易耗型库存项目的唯一标识符 （链接）。 |
 
 <a id="ID4EMAAC"></a>
 
@@ -94,7 +94,7 @@ consumableInventoryItem {
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EJCAC"></a>
@@ -106,4 +106,4 @@ consumableInventoryItem {
 
  [/ 库存/易耗品 / {itemID}](../uri/marketplace/uri-inventoryconsumablesitemurl.md)
 
- [/inventory/ {itemID}](../uri/marketplace/uri-inventoryitemurl.md)
+ [/inventory/{itemID}](../uri/marketplace/uri-inventoryitemurl.md)

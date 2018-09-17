@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 136a5563690bba4f8cbea80fb066a887a6a11fa7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963882"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988819"
 ---
 # <a name="systemstringsvalidate"></a>/system/strings/validate
 访问用于验证字符串的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
@@ -26,7 +26,7 @@ ms.locfileid: "3963882"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[POST （/系统/字符串/验证）](uri-systemstringsvalidatepost.md)
+[POST (/system/strings/validate)](uri-systemstringsvalidatepost.md)
 
 &nbsp;&nbsp;接受一个用于验证字符串数组并返回结果同等大小的数组。
  
@@ -40,6 +40,6 @@ ms.locfileid: "3963882"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[系统字符串 Validatation Uri](atoc-reference-systemstringsvalidate.md)
+[系统字符串验证 URI](atoc-reference-systemstringsvalidate.md)
 
    

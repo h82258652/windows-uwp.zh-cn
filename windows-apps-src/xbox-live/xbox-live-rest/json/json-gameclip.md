@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 047f7287578f52591c48ee059e72efb559b41c87
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957202"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984933"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -36,10 +36,10 @@ GameClip 对象具有以下规范。
 | <b>userCaption</b>| 字符串| 用户输入非本地化字符串的游戏剪辑。| 
 | <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并且将为以逗号分隔的如果是这样。| 
 | <b>源</b>| GameClipSource| 如何确定该剪辑的源。| 
-| <b>可见性</b>| GameClipVisibility| 游戏剪辑一旦发布在系统中的可见性。| 
+| <b>可见性</b>| GameClipVisibility| 游戏剪辑后在系统中发布的可见性。| 
 | <b>durationInSeconds</b>| 32 位无符号的整数| 持续时间的游戏剪辑以秒为单位。| 
 | <b>scid</b>| 字符串| 到游戏剪辑相关联的 SCID。| 
-| <b>rating</b>| 双精度浮点数| 与游戏剪辑，范围介于 0.0 到 5.0 中相关评分。| 
+| <b>rating</b>| 双精度浮点数| 与游戏剪辑，0.0 到 5.0 的范围内评分。| 
 | <b>ratingCount</b>| 32 位无符号的整数| 此代码片段进行分级次数。| 
 | <b>视图</b>| 32 位无符号的整数| 与游戏剪辑相关的视图数。| 
 | <b>titleData</b>| 字符串| 特定于游戏的属性包中。| 
@@ -102,6 +102,6 @@ GameClip 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

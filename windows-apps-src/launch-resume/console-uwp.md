@@ -10,25 +10,25 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963819"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990152"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>创建通用 Windows 平台控制台应用
 
-本主题介绍了如何创建[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + CX 通用 Windows 平台 (UWP) 控制台应用。
+本主题介绍如何创建[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 控制台应用。
 
-从 Windows 10 版本 1803，你可以编写 C + + WinRT 或 C + + CX UWP 控制台应用在控制台窗口中，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用使用控制台窗口进行输入和输出，并且可以使用[通用的 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，如**printf**和**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单启动 UWP 控制台应用，但你通常将从命令行启动它们。
+从 Windows 10 版本 1803，你可以编写 C + + WinRT 或 C + + /CX UWP 控制台应用在控制台窗口中，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用控制台窗口用于输入和输出，并可以使用[通用的 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，如**printf**和**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单启动 UWP 控制台应用，但你通常将从命令行启动它们。
 
-若要查看操作中，下面是有关创建 UWP 控制台应用视频。
+若要查看操作中，下面是有关创建 UWP 控制台应用的视频。
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 控制台应用模板 
 
-若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 已安装的模板就可在**新建项目**下 > **已安装** > **其他语言** > **Visual c + +** > **Windows 通用**作为**控制台应用 C + WinRT (通用 Windows)** 和**控制台应用 C + + /CX (通用 Windows)**。
+若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 已安装的模板是有效的**新**项目 > **已安装** > **其他语言** > **Visual c + +** > **Windows 通用**作为**控制台应用 C + WinRT (通用 Windows)** 和**控制台应用 C + + /CX (通用 Windows)**。
 
 ## <a name="add-your-code-to-main"></a>将代码添加到 main()
 

@@ -1,9 +1,9 @@
 ---
-title: / 用户/xuid ({xuid}) /groups/ {名字对象} / 广播
+title: /users/xuid({xuid})/groups/{moniker}/broadcasting
 assetID: cf8319f6-46a2-b263-ea4c-f1ce403b571b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcasting.html
 author: KevinAsgari
-description: " / 用户/xuid ({xuid}) /groups/ {名字对象} / 广播"
+description: " /users/xuid({xuid})/groups/{moniker}/broadcasting"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d2e5c0bcbb0c59eabdffdd148e4b7f013c3f40
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959952"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982787"
 ---
-# <a name="usersxuidxuidgroupsmonikerbroadcasting"></a>/ 用户/xuid ({xuid}) /groups/ {名字对象} / 广播
-访问组名字对象由指定的广播用户状态记录与在 URI 中显示的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。
+# <a name="usersxuidxuidgroupsmonikerbroadcasting"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting
+访问组名字对象由指定的广播用户状态记录与显示在 URI 中的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -38,9 +38,9 @@ ms.locfileid: "3959952"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/ 用户/xuid ({xuid}) /groups/ {名字对象} / 广播)](uri-usersxuidgroupsmonikerbroadcastingget.md)
+[GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )](uri-usersxuidgroupsmonikerbroadcastingget.md)
 
-&nbsp;&nbsp;检索与在 URI 中显示的 XUID 相关的组名字对象由指定的广播用户状态记录。
+&nbsp;&nbsp;检索与显示在 URI 中的 XUID 相关的组名字对象由指定的广播用户状态记录。
  
 <a id="ID4EHC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "3959952"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[存在 Uri](atoc-reference-presence.md)
+[状态 URI](atoc-reference-presence.md)
 
    

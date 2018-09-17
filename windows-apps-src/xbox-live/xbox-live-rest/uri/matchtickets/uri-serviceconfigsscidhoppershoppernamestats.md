@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} /hoppers/ {name} / 统计数据
+title: /serviceconfigs/{scid}/hoppers/{name}/stats
 assetID: 56bb4398-445b-e8c5-a4ce-1651576ee7e7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestats.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} /hoppers/ {name} / 统计数据"
+description: " /serviceconfigs/{scid}/hoppers/{name}/stats"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0742ad87e68f7d0c6ed6346873aa3dd6c56edee0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961880"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986499"
 ---
-# <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据
+# <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
-支持 GET 操作来检索漏斗的统计信息。
+支持获取操作来检索漏斗的统计信息。
 
 > [!IMPORTANT]
-> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -42,7 +42,7 @@ momatch.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | name| 字符串| 漏斗的名称。|
 
 <a id="ID4EEC"></a>
@@ -50,9 +50,9 @@ momatch.xboxlive.com
 
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据)](uri-serviceconfigsscidhoppershoppernamestatsget.md)
+[GET (/serviceconfigs/{scid}/hoppers/{name}/stats)](uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
-&nbsp;&nbsp;漏斗获取统计信息。
+&nbsp;&nbsp;漏斗中获取统计信息。
 
 <a id="ID4EQC"></a>
 
@@ -64,4 +64,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[匹配 Uri](atoc-reference-matchtickets.md)
+[匹配 URI](atoc-reference-matchtickets.md)

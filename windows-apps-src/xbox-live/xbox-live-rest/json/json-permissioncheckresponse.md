@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f04da7d375b404a5d05dcf5d5e9905b00b7545d9
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960276"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986971"
 ---
 # <a name="permissioncheckresponse-json"></a>PermissionCheckResponse (JSON)
 从单个权限设置针对单个目标用户的单个用户检查的结果。 
@@ -61,6 +61,6 @@ PermissionCheckResponse 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

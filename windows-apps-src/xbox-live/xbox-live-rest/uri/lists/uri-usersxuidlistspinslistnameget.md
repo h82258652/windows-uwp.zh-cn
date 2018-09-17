@@ -1,9 +1,9 @@
 ---
-title: 获取 (/users/xuid(xuid)/lists/PINS/{listname})
+title: GET (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: a63f595a-61dd-5885-c405-9833230abb94
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameget.html
 author: KevinAsgari
-description: " 获取 (/users/xuid(xuid)/lists/PINS/{listname})"
+description: " GET (/users/xuid(xuid)/lists/PINS/{listname})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f40428f79110e55aae7e881c25a3789899fee7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956082"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984529"
 ---
-# <a name="get-usersxuidxuidlistspinslistname"></a>获取 (/users/xuid(xuid)/lists/PINS/{listname})
+# <a name="get-usersxuidxuidlistspinslistname"></a>GET (/users/xuid(xuid)/lists/PINS/{listname})
 返回列表的内容。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [备注](#ID4EV)
@@ -35,9 +35,9 @@ ms.locfileid: "3956082"
  
 ## <a name="remarks"></a>备注
  
-中返回的数据的**listCount**字段表示多少项位于维护服务-此类的总列表，它可以用于确定其中列表末尾，，这可能是多少特定项已 retu 的不同数目该请求 rned。
+中返回的数据的**listCount**字段指示多少项是在维护服务-此类的总列表中，它可以用于确定其中列表末尾，以及这可能是数不同数量的特定项已 retu该请求 rned。
  
-如果列表尚不存在，则结果将包含任何列表项、 **listCount**将为零， **listVersion**将为零。
+如果尚不存在该列表，然后结果将包含任何列表项、 **listCount**将为零， **listVersion**将为零。
   
 <a id="ID4EIB"></a>
 
@@ -58,17 +58,17 @@ ms.locfileid: "3956082"
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | skipItems| 32 位有符号的整数| 可选。 若要返回结果之前枚举中跳过的项目数。 默认值： 0。| 
-| maxItems| 32 位有符号的整数| 可选。 要返回的项数的最大数量。 如果请求中指定没有最大值，则默认为 25 个项目。 该服务不会将最多入此值;如果值大于列表中的项目数，然后将并不报错返回所有项。| 
-| filterItemId| 字符串| 可选。 指定要在列表中找到的项。 返回列表中的项的所有实例。 允许客户端来快速确定是否以及所在的列表中的项。 方便的大型列表来确定无需循环访问整个列表项的所有实例。 默认值： null。| 
-| filterContentType| 字符串| 可选。 指定要返回的内容类型的以逗号分隔列表 （将不会返回类型不在列表中）。 用于仅从列表中获取某些内容的类型。 此筛选器使用逗号分隔列表中的内容类型。 （多个内容类型可通过查询一次调用。）支持的内容类型包括定义娱乐发现服务 (EDS) 的所有媒体类型。 默认值： null （所有内容类型）。| 
-| filterDeviceType| 字符串| 可选。 指定要返回的设备类型的以逗号分隔列表 （将不会返回类型不在列表中）。 筛选返回的设置为仅返回已插入从一组特定的设备类型的项目。 设备类型的以逗号分隔列表用于此筛选器 （多个设备类型可以一次调用查询）。 可能的值： xbox One、 MCapensis、 WindowsPhone、 WindowsPhone7、 Web、 PC、 MoLive。 默认值： null （所有内容类型）。| 
+| maxItems| 32 位有符号的整数| 可选。 要返回的项数的最大数量。 如果请求中指定没有最大值，则默认为 25 个项目。 该服务不将此值; 最多如果值大于列表中的项目数，然后将并不报错返回所有项。| 
+| filterItemId| 字符串| 可选。 指定要在列表中找到的项。 返回列表中的项的所有实例。 允许客户端快速确定，其中项是在列表中。 方便的大型列表，而无需循环访问整个列表确定某个项目的所有实例。 默认值： 为 null。| 
+| filterContentType| 字符串| 可选。 指定要返回的内容类型的以逗号分隔列表 （将不会返回类型不在列表中）。 用于仅从列表中获取某些内容的类型。 此筛选器使用逗号分隔列表中的内容类型。 （多个内容类型可查询一次调用。）支持的内容类型包括定义娱乐发现服务 (EDS) 的所有媒体类型。 默认值： null （所有内容类型）。| 
+| filterDeviceType| 字符串| 可选。 指定要返回的设备类型的以逗号分隔列表 （将不会返回类型不在列表中）。 筛选返回集仅返回已插入从一组特定的设备类型的项目。 （多个设备类型可查询一次调用） 此筛选器使用逗号分隔的设备类型列表。 可能的值： xbox One、 MCapensis、 WindowsPhone、 WindowsPhone7、 Web、 PC、 MoLive。 默认值： null （所有内容类型）。| 
   
 <a id="ID4ESD"></a>
 
  
 ## <a name="authorization"></a>授权
  
-此调用在**授权**标头中预期的 XSTS SAML 令牌。 Xuid 声明必须存在于该 SAML 令牌来标识调用方。 此值用于确定调用方是否有问题的列表数据的访问权限。 列表本身的 Xuid 也将标识，并将包含在列表的 URI。 使用此，我们将来可能支持共享访问列表，但的不是一项功能这一次。 目前，所有用户访问的列表都将自己并且没有共享的访问。 因此在 URI 中的 Xuid 必须匹配 SAML 声明令牌中的 Xuid。 
+此调用在**授权**标头中预期的 XSTS SAML 令牌。 Xuid 声明必须存在于该 SAML 令牌来标识调用方。 此值用于确定调用方是否有问题的列表数据的访问权限。 列表本身的 Xuid 也将标识和将包含在列表的 URI。 使用此，我们将来可能支持共享访问列表，但的不是一项功能这一次。 目前，所有用户访问的列表都将自己并且没有共享的访问。 因此在 URI 中的 Xuid 必须匹配 SAML 声明令牌中的 Xuid。 
 
 > [!NOTE] 
 > 目前支持 XBL 身份验证 2.0 和 3.0 令牌。 
@@ -82,10 +82,10 @@ ms.locfileid: "3956082"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 授权| 包含用于身份验证和授权请求的 STS 标记。 必须从 XSTS 服务令牌并作为一个声明包含 XUID。 | 
+| 授权| 包含用于身份验证和授权请求的 STS 标记。 必须从 XSTS 服务访问令牌并包括为声明之一的 XUID。 | 
 | X XBL 协定版本| 指定哪些 API 版本被请求 （正整数）。 引脚支持版本 2。 如果此标头丢失或不受支持值，则服务将返回 400 – 错误请求与"不受支持或缺少合约版本标头"中的状态说明。| 
-| Content-Type| 指定的请求/响应正文的内容将位于 json 或 xml。 受支持的值为"应用程序/json"和"应用程序/xml"| 
-| If-Match| 进行修改请求时，此标头必须包含列表的当前版本号。 修改请求使用 PUT、 POST，或删除动词命令。 如果"If-match"标头中的版本不匹配当前版本的列表，将拒绝请求，并 HTTP 412-前置条件失败返回代码。 （可选）此外可为获取，如果存在并传入的版本匹配当前的列表版本，然后无列表数据和 HTTP 304 – 将返回不修改代码。 | 
+| Content-Type| 指定是否内容的请求/响应正文将包含在 json 或 xml。 受支持的值为"应用程序/json"和"应用程序/xml"| 
+| If-Match| 进行修改请求时，此标头必须包含列表的当前版本号。 修改请求使用 PUT、 POST，或删除动词命令。 如果"If-match"标头中的版本不匹配当前版本的列表，将拒绝请求，并 HTTP 412 – 前置条件失败返回代码。 （可选）此外可为获取，如果存在并传入的版本匹配当前的列表版本，然后无列表数据和 HTTP 304 – 将返回不修改代码。 | 
   
 <a id="ID4EVF"></a>
 
@@ -104,13 +104,13 @@ ms.locfileid: "3956082"
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功完成请求。 响应正文应包含所请求的资源 （GET)。 POST 和 PUT 请求将接收最新列表元数据 （列表版本、 计数等）。| 
-| 201| 已创建| 已创建了新的列表。 这被返回初始插入到列表。 该响应包括在列表上保持最新的元数据和位置标头包含列表的 URI。| 
-| 304| 未修改| 返回上获取。 指示客户端列表的最新版本。 该服务的列表版本到<b>If-match</b>标头中的值进行比较。 如果它们相等，然后 304 获取不返回任何数据。| 
+| 201| 已创建| 已创建一个新的列表。 这被返回初始插入到列表。 该响应包括在列表上保持最新的元数据和位置标头包含列表的 URI。| 
+| 304| 未修改| 返回上获取。 指示客户端列表的最新版本。 该服务将列表版本<b>If-match</b>标头中的值进行比较。 如果相等，然后 304 获取不返回任何数据。| 
 | 400| 错误请求| 请求格式不正确。 可能的值无效或 URI 或查询字符串参数类型。 数据值或请求指示丢失或无效的 API 版本或也可能缺少所需的参数的结果。 请参阅<b>X XBL 合约版本</b>标头。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
-| 404| 找不到| 调用方没有访问资源。 这表示已创建了没有此类列表。| 
-| 412| 前置条件失败| 指示已更改的列表版本，并且修改请求失败。 修改请求是插入、 更新或删除。 该服务将检查列表版本的<b>If-match</b>标头文件。 如果不匹配当前版本的列表，然后操作将失败，这会返回当前列表元数据 （其中包括当前版本） 以及。| 
+| 404| 找不到| 调用方没有访问资源。 这指示已创建了没有此类的列表。| 
+| 412| 前置条件失败| 指示已更改的列表版本，并且修改请求失败。 修改请求是插入、 更新或删除。 该服务将检查列表版本的<b>If-match</b>标头文件。 如果不匹配当前版本的列表，然后操作将失败，这返回当前列表元数据 （其中包括当前版本） 以及。| 
 | 500| 内部服务器错误| 该服务拒绝由于服务器端错误的请求。| 
 | 501| 未实现| 调用方请求尚未实现在服务器的 URI。 （当前仅时请求使用专为不是列入白名单列表名称。）| 
 | 503| 服务不可用| 服务器拒绝请求，通常由于过多的负载。 延迟后 (请参阅<b>retry-after</b>标头)，可以重试请求。| 
@@ -172,7 +172,7 @@ ms.locfileid: "3956082"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 用户/xuid (xuid) / 列出/PIN / {listname}](uri-usersxuidlistspinslistname.md)
+[/users/xuid(xuid)/lists/PINS/{listname}](uri-usersxuidlistspinslistname.md)
 
   
 <a id="ID4E1DAC"></a>
@@ -180,7 +180,7 @@ ms.locfileid: "3956082"
  
 ##### <a name="further-information"></a>详细信息 
 
-[市场 Uri](../marketplace/atoc-reference-marketplace.md)
+[市场 URI](../marketplace/atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

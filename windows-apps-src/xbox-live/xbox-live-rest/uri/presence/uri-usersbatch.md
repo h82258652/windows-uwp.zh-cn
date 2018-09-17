@@ -1,9 +1,9 @@
 ---
-title: / 用户/批处理
+title: /users/batch
 assetID: db4c796a-8660-85ff-b92d-085245523f5c
 permalink: en-us/docs/xboxlive/rest/uri-usersbatch.html
 author: KevinAsgari
-description: " / 用户/批处理"
+description: " /users/batch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4c7f178d729e1e35a7e9bec922a7f969324322
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963566"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985033"
 ---
-# <a name="usersbatch"></a>/ 用户/批处理
+# <a name="usersbatch"></a>/users/batch
 一批用户的访问权限状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
   
 <a id="ID4EV"></a>
@@ -26,7 +26,7 @@ ms.locfileid: "3963566"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[（/用户/批） POST](uri-usersbatchpost.md)
+[POST (/users/batch)](uri-usersbatchpost.md)
 
 &nbsp;&nbsp;获取一批用户状态。
  
@@ -40,6 +40,6 @@ ms.locfileid: "3963566"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[存在 Uri](atoc-reference-presence.md)
+[状态 URI](atoc-reference-presence.md)
 
    

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 36726153d1364f384358471324452422f67741d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956888"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985557"
 ---
 # <a name="permissioncheckbatchuserresponse-json"></a>PermissionCheckBatchUserResponse (JSON)
-批处理权限的原因检查的一个目标用户的权限值的列表。 
+单个目标用户的权限值的列表中检查批处理权限的原因。 
 <a id="ID4EN"></a>
 
  
@@ -73,6 +73,6 @@ PermissionCheckBatchUserResponse 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961072"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987481"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 结果代码对应于提交到[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)每个字符串。
@@ -58,7 +58,7 @@ VerifyStringResult 对象具有以下规范。
 | --- | --- | --- | --- | --- |
 | 0| 成功|
 | 1| 具有冒犯性的字符串|
-| 2| 过长的字符串|
+| 2| 太长的字符串|
 | 3| 未知的错误|
 
 <a id="ID4ELD"></a>
@@ -71,7 +71,7 @@ VerifyStringResult 对象具有以下规范。
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EXD"></a>
@@ -79,4 +79,4 @@ VerifyStringResult 对象具有以下规范。
 
 ##### <a name="reference"></a>参考
 
-[POST （/系统/字符串/验证）](../uri/stringserver/uri-systemstringsvalidatepost.md)
+[POST (/system/strings/validate)](../uri/stringserver/uri-systemstringsvalidatepost.md)

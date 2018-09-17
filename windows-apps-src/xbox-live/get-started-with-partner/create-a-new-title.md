@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 72126b51c4e155babad6cfee737e21d6102b03e5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962340"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984913"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>为 Xbox Live 创建新主题作品
 
@@ -40,7 +40,7 @@ ms.locfileid: "3962340"
 你需要在 [Windows 开发人员中心](http://dev.windows.com)上创建一个支持 Xbox Live 的主题作品，作为所有可用的 Xbox Live 功能的先决条件。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
-如果你没有 Microsoft 帐户 (也称为 MSA)，你需要先创建一个在[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
+如果你没有 Microsoft 帐户 (也称为 MSA)，你将需要首先创建一个在[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
 
 ### <a name="register-as-an-app-developer"></a>注册成为应用开发人员。
 你需要先注册成为应用开发人员，然后才可以在开发人员中心创建新主题作品。

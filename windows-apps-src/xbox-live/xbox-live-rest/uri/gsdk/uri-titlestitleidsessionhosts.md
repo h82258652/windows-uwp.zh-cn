@@ -1,9 +1,9 @@
 ---
-title: /titles/ {titleId} / sessionhosts
+title: /titles/{titleId}/sessionhosts
 assetID: 92d9bdd2-5c8f-761b-3f9a-50f8db7b843c
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts.html
 author: KevinAsgari
-description: " /titles/ {titleId} / sessionhosts"
+description: " /titles/{titleId}/sessionhosts"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a93e134dba9ce66b8b6b547308f926112f6a577f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960578"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981891"
 ---
-# <a name="titlestitleidsessionhosts"></a>/titles/ {titleId} / sessionhosts
-请求 Xbox Live 计算 sessionhost 为给定的作品 id 分配。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+# <a name="titlestitleidsessionhosts"></a>/titles/{titleId}/sessionhosts
+请求 Xbox Live 计算 sessionhost，为给定的主题作品 id 分配。有关这些 Uri 域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EIB)
@@ -32,7 +32,7 @@ ms.locfileid: "3960578"
  
 | 参数| 描述| 
 | --- | --- | 
-| titleId| 游戏应在其中操作请求 ID。| 
+| titleId| 游戏应在其中操作该请求 ID。| 
   
 <a id="ID4EIB"></a>
 

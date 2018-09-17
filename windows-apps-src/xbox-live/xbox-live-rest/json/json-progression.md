@@ -1,9 +1,9 @@
 ---
-title: 进度 (JSON)
+title: Progression (JSON)
 assetID: cdff6415-f12b-0a45-61f2-26dbf47b1b56
 permalink: en-us/docs/xboxlive/rest/json-progression.html
 author: KevinAsgari
-description: " 进度 (JSON)"
+description: " Progression (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a0e534d92e4bcb77565f59de5252afcbbe3eef5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961840"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983285"
 ---
-# <a name="progression-json"></a>进度 (JSON)
-用户解锁成就的进度。 
+# <a name="progression-json"></a>Progression (JSON)
+在用户解锁成就的进度。 
 <a id="ID4EN"></a>
 
  
@@ -30,7 +30,7 @@ ms.locfileid: "3961840"
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | 要求| 要求的数组| 若要获得成就的要求，沿用户远距离解锁它。| 
-| timeUnlocked| DateTime| 成就是第一家解锁时间。| 
+| timeUnlocked| DateTime| 成就首先处于已解锁的时间。| 
   
 <a id="ID4ETB"></a>
 
@@ -62,6 +62,6 @@ ms.locfileid: "3961840"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: /media/ {marketplaceId} / 元数据/mediaGroups
+title: /media/{marketplaceId}/metadata/mediaGroups
 assetID: 8d8491f1-3577-b247-63b3-b8f1431195db
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroups.html
 author: KevinAsgari
-description: " /media/ {marketplaceId} / 元数据/mediaGroups"
+description: " /media/{marketplaceId}/metadata/mediaGroups"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbe951063397841e46c9b808f9b89825da05f5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960682"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987851"
 ---
-# <a name="mediamarketplaceidmetadatamediagroups"></a>/media/ {marketplaceId} / 元数据/mediaGroups
+# <a name="mediamarketplaceidmetadatamediagroups"></a>/media/{marketplaceId}/metadata/mediaGroups
 列出所有受支持的 mediaGroups 给定 EDS 版本。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -37,7 +37,7 @@ ms.locfileid: "3960682"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/media/ {marketplaceId} / 元数据/mediaGroups)](uri-medialocalemetadatamediagroupsget.md)
+[GET (/media/{marketplaceId}/metadata/mediaGroups)](uri-medialocalemetadatamediagroupsget.md)
 
 &nbsp;&nbsp;列出所有受支持的 mediaGroups 给定 EDS 版本。
  
@@ -51,7 +51,7 @@ ms.locfileid: "3960682"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 Uri](atoc-reference-marketplace.md)
+[市场 URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EKC"></a>
@@ -59,11 +59,11 @@ ms.locfileid: "3960682"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

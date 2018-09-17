@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ece582e46601fd63ba16a99a071ae40ecaff2d4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962324"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981199"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
@@ -40,7 +40,7 @@ ms.locfileid: "3962324"
 
 [GET](uri-achievementsusersxuidachievementsgetv2.md)
 
-&nbsp;&nbsp;获取的成就的标题，这些用户，解锁或这些用户具有正在上定义的列表。
+&nbsp;&nbsp;获取在标题、 解锁用户，或用户已在进行中定义的成就的列表。
  
 <a id="ID4EKC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "3962324"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[成就 Uri](atoc-reference-achievementsv2.md)
+[成就 URI](atoc-reference-achievementsv2.md)
 
    

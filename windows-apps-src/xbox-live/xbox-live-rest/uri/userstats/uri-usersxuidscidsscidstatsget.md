@@ -1,9 +1,9 @@
 ---
-title: 获取 (/users/xuid({xuid})/scids/{scid}/stats)
+title: GET (/users/xuid({xuid})/scids/{scid}/stats)
 assetID: af117e87-6f1d-6448-9adf-7cf890d1380f
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstatsget.html
 author: KevinAsgari
-description: " 获取 (/users/xuid({xuid})/scids/{scid}/stats)"
+description: " GET (/users/xuid({xuid})/scids/{scid}/stats)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ed96418141aec049a9577924597a07da4313b7e2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956274"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981109"
 ---
-# <a name="get-usersxuidxuidscidsscidstats"></a>获取 (/users/xuid({xuid})/scids/{scid}/stats)
+# <a name="get-usersxuidxuidscidsscidstats"></a>GET (/users/xuid({xuid})/scids/{scid}/stats)
 获取由逗号分隔列表的代表指定用户的用户统计数据名称范围的服务配置。
 这些 Uri 的域是`userstats.xboxlive.com`。
 
@@ -37,7 +37,7 @@ ms.locfileid: "3956274"
 
 ## <a name="remarks"></a>备注
 
-客户端需要一种方法向读取和写入游戏统计信息玩家代表我们的新玩家统计信息系统。
+客户端需要一种方法向读取和写入游戏统计信息的玩家代表我们的新玩家统计信息系统。
 
 <a id="ID4EEB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "3956274"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问的服务配置。|
+| xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。|
 | scid| GUID| 服务配置，其中包含要访问的资源的标识符。|
 
 <a id="ID4EPB"></a>
@@ -56,7 +56,7 @@ ms.locfileid: "3956274"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| statNames| 字符串| 唯一的查询字符串参数是用逗号分隔用户统计数据名称 URI 名词。例如，以下 URI 通知服务的 URI 中指定的用户 id 代表请求的四个统计信息。 `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`该限制将仔细考虑"批处理"URI 长度适用范围与开发人员便于且会限制可以在单个调用中，请求的统计信息的数量。 例如，限制可能决定通过值得统计数据名称文本 （包括逗号分隔） 的任一 600 个字符或最大 10 统计信息。 启用如下简单获取启用 HTTP 缓存常用的请求统计信息，减少从聊天客户端调用卷。 |
+| statNames| 字符串| 唯一的查询字符串参数是用逗号分隔用户统计数据名称 URI 名词。例如，以下 URI 通知服务 URI 中指定的用户 id 代表请求的四个统计信息。 `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`有的统计信息可以在单个调用中，请求数限制，该限制将仔细考虑"最适合"的 URI 长度适用范围与开发人员方便。 例如，限制可能值得的统计数据名称文本 （包括逗号分隔），无论 600 个字符或最大 10 统计信息来确定。 启用所示的简单获取启用 HTTP 为常用的请求的统计数据，可调用卷减少从闲聊客户端缓存。 |
 
 <a id="ID4EUC"></a>
 
@@ -65,10 +65,10 @@ ms.locfileid: "3956274"
 
 没有针对内容隔离和访问控制方案实现的授权逻辑。
 
-   * 可以从任何平台上的客户端读取排行榜和用户统计信息，前提是调用方提交请求有效的 XSTS 令牌。 显然限于受数据平台的客户端写入。
+   * 排行榜和用户统计信息可以读取的所有平台上的客户端，前提是调用方提交请求有效的 XSTS 令牌。 写入都很明显限于数据平台支持的客户端。
    * 游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是开放的统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
 
-检查伪代码如下所示：
+检查的伪代码如下所示：
 
 
 ```cpp
@@ -98,7 +98,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | 生成此请求应定向到的服务名称/号。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 1。|
+| X RequestedServiceVersion|  | 生成此请求应定向到该服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 1。|
 
 <a id="ID4E3F"></a>
 
@@ -117,7 +117,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 304| 未修改| 资源不被修改由于最后一次请求。|
+| 304| 未修改| 资源不被修改自最后一次请求。|
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 403| 已禁止| 为用户或服务不允许该请求。|
@@ -179,4 +179,4 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/ 用户/xuid ({xuid}) /scids/ {scid} / 统计数据](uri-usersxuidscidsscidstats.md)
+[/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)

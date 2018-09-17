@@ -1,9 +1,9 @@
 ---
-title: /sessions/ {sessionId} {scid} /scids/ /data/ {路径}
+title: /sessions/{sessionId}/scids/{scid}/data/{path}
 assetID: 932459b4-24b4-5b09-8146-ed214de0083a
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapath.html
 author: KevinAsgari
-description: " /sessions/ {sessionId} {scid} /scids/ /data/ {路径}"
+description: " /sessions/{sessionId}/scids/{scid}/data/{path}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6089bd7d758dffb75759ca2f079ee944dcb692
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958916"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983337"
 ---
-# <a name="sessionssessionidscidssciddatapath"></a>/sessions/ {sessionId} {scid} /scids/ /data/ {路径}
-列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+# <a name="sessionssessionidscidssciddatapath"></a>/sessions/{sessionId}/scids/{scid}/data/{path}
+列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -41,7 +41,7 @@ ms.locfileid: "3958916"
 
 [GET](uri-sessionssessionidscidssciddatapath-get.md)
 
-&nbsp;&nbsp;列出了在指定路径的文件信息。
+&nbsp;&nbsp;列出了在指定的路径的文件信息。
  
 <a id="ID4EPC"></a>
 
@@ -53,6 +53,6 @@ ms.locfileid: "3958916"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 Uri](atoc-reference-storagev2.md)
+[标题存储 URI](atoc-reference-storagev2.md)
 
    

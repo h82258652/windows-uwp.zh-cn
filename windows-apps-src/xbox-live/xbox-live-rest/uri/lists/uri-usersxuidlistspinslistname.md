@@ -1,9 +1,9 @@
 ---
-title: / 用户/xuid (xuid) / 列出/PIN / {listname}
+title: /users/xuid(xuid)/lists/PINS/{listname}
 assetID: b6421b11-fcd1-cfdb-c1fa-6cab3dab89d9
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistname.html
 author: KevinAsgari
-description: " / 用户/xuid (xuid) / 列出/PIN / {listname}"
+description: " /users/xuid(xuid)/lists/PINS/{listname}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 052a83f47dc2d5b692c811850e41381c4745815c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961852"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985159"
 ---
-# <a name="usersxuidxuidlistspinslistname"></a>/ 用户/xuid (xuid) / 列出/PIN / {listname}
+# <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
 访问列表中的项目。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -65,6 +65,6 @@ ms.locfileid: "3961852"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
 
    

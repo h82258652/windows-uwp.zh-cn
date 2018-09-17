@@ -1,9 +1,9 @@
 ---
-title: / 用户/xuid ({xuid}) /achievements/ {scid} / {achievementid}
+title: /users/xuid({xuid})/achievements/{scid}/{achievementid}
 assetID: 656a6d63-1a11-b0a5-63d2-2b010abd62e7
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementid.html
 author: KevinAsgari
-description: " / 用户/xuid ({xuid}) /achievements/ {scid} / {achievementid}"
+description: " /users/xuid({xuid})/achievements/{scid}/{achievementid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f58b4b5f8cf135aaaad5e23095c4c00278dcec83
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956214"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982057"
 ---
-# <a name="usersxuidxuidachievementsscidachievementid"></a>/ 用户/xuid ({xuid}) /achievements/ {scid} / {achievementid}
-返回关于该成就，包括其配置的元数据和特定于用户的数据的详细信息。 
+# <a name="usersxuidxuidachievementsscidachievementid"></a>/users/xuid({xuid})/achievements/{scid}/{achievementid}
+返回有关成就，包括其配置的元数据和特定于用户的数据的详细信息。 
 
 > [!NOTE] 
 > 仅支持平台。 
@@ -45,7 +45,7 @@ ms.locfileid: "3956214"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/users/xuid({xuid})/achievements/{scid}/{achievementid})](uri-usersxuidachievementsscidachievementidget.md)
+[GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})](uri-usersxuidachievementsscidachievementidget.md)
 
 &nbsp;&nbsp;获取在成就的详细信息。
  
@@ -59,6 +59,6 @@ ms.locfileid: "3956214"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[成就 Uri](atoc-reference-achievementsv2.md)
+[成就 URI](atoc-reference-achievementsv2.md)
 
    

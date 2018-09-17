@@ -1,9 +1,9 @@
 ---
-title: 删除 (/users/xuid({xuid})/inbox/{messageId})
+title: DELETE (/users/xuid({xuid})/inbox/{messageId})
 assetID: c54eede3-3e3b-2cbe-1be9-8bf3a48171bc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageiddelete.html
 author: KevinAsgari
-description: " 删除 (/users/xuid({xuid})/inbox/{messageId})"
+description: " DELETE (/users/xuid({xuid})/inbox/{messageId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957152"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989927"
 ---
-# <a name="delete-usersxuidxuidinboxmessageid"></a>删除 (/users/xuid({xuid})/inbox/{messageId})
+# <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [备注](#ID4EV)
@@ -27,7 +27,7 @@ ms.locfileid: "3957152"
   * [请求正文](#ID4E1B)
   * [HTTP 状态代码](#ID4EHC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EAE)
-  * [资源上的隐私设置的效果](#ID4EYF)
+  * [有关资源的隐私设置的效果](#ID4EYF)
  
 <a id="ID4EV"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "3957152"
  
 删除操作是幂等。
  
-此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。 
+此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。 
   
 <a id="ID4ECB"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "3957152"
  
 ## <a name="authorization"></a>授权 
  
-你必须具有用户声明要删除用户消息。
+你必须拥有自己声明删除用户消息的用户。
   
 <a id="ID4E1B"></a>
 
@@ -72,9 +72,9 @@ ms.locfileid: "3957152"
 | 代码| 说明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功。| 
-| 403| 不能转换 XUID 或者找不到有效的 XUID 声明。| 
+| 403| 不能转换 XUID 或找不到有效的 XUID 声明。| 
 | 404| 无法分析 URI 中的消息 ID 或 XUID 是 URI 中丢失。| 
-| 500| 常规服务器端错误。| 
+| 500| 常规的服务器端错误。| 
   
 <a id="ID4EAE"></a>
 
@@ -92,7 +92,7 @@ ms.locfileid: "3957152"
 <a id="ID4EYF"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果 
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果 
  
 仅可以删除自己用户的消息。 
   
@@ -112,6 +112,6 @@ ms.locfileid: "3957152"
 <a id="ID4ETG"></a>
 
  
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
 
    

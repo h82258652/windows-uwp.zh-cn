@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 98adbf3f170c679452f4a78a18097b83e93faffa
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960092"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989693"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
-有关游戏信息请求。 
+有关游戏的请求。 
 <a id="ID4EN"></a>
 
  
@@ -31,7 +31,7 @@ TitleRequest 对象具有以下规范。
 | --- | --- | --- | 
 | id| 32 位无符号的整数| 标题的标识符。| 
 | 活动| [ActivityRequest](json-activityrequest.md)| 游戏内信息，包括丰富的状态和媒体信息，如果可用。| 
-| 状态| 字符串| 无论用户是否处于活动状态。 若要将标记为非活动用户，需要此字段。 默认值为"活动"。| 
+| 状态| 字符串| 无论用户是否处于活动状态。 若要将标记为非活动用户，需要使用此字段。 默认值为"活动"。| 
 | 放置| 字符串| 游戏放置模式。 可能的值包括"完全"、"fill"，"贴靠"或"background"。 默认值为"完全"。| 
   
 <a id="ID4EJC"></a>
@@ -68,7 +68,7 @@ TitleRequest 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E5C"></a>

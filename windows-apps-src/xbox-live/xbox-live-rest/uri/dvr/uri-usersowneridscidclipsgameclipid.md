@@ -1,9 +1,9 @@
 ---
-title: /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId}
+title: /users/{ownerId}/scids/{scid}/clips/{gameClipId}
 assetID: 49b68418-71f1-c5a2-3a9b-869fd1fa663c
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridscidclipsgameclipid.html
 author: KevinAsgari
-description: " /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId}"
+description: " /users/{ownerId}/scids/{scid}/clips/{gameClipId}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d12f9e530ee6d703aa324cb6380591aab31facfd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961330"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989485"
 ---
-# <a name="usersowneridscidsscidclipsgameclipid"></a>/users/ {ownerId} {scid} /scids/ /clips/ {gameClipId}
-如果已知的所有 Id，以找到它，请从系统中访问单个游戏剪辑。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+# <a name="usersowneridscidsscidclipsgameclipid"></a>/users/{ownerId}/scids/{scid}/clips/{gameClipId}
+如果已知的所有 Id，以找到它，请从系统中访问单个游戏剪辑。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -30,16 +30,16 @@ ms.locfileid: "3961330"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| ownerId| 字符串| 正在访问其资源的用户的用户身份。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
+| ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| 正在访问的资源 GameClip ID。| 
+| gameClipId| 字符串| 正在访问的资源的 GameClip ID。| 
   
 <a id="ID4EFC"></a>
 
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/users/ {ownerId} {scid} /scids/ /clips/ {gameClipId})](uri-usersowneridscidclipsgameclipidget.md)
+[GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})](uri-usersowneridscidclipsgameclipidget.md)
 
 &nbsp;&nbsp;如果已知的所有 Id，以找到它，请从系统中获取单个游戏剪辑。
  
@@ -53,6 +53,6 @@ ms.locfileid: "3961330"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR Uri](atoc-reference-dvr.md)
+[游戏 DVR URI](atoc-reference-dvr.md)
 
    

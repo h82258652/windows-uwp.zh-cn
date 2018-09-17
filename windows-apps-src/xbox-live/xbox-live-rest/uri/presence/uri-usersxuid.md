@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 738ae0d04777089b240cff615de981b4ee783079
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956560"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989465"
 ---
 # <a name="usersxuidxuid"></a>/users/xuid({xuid})
 访问其他用户或客户端存在。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -37,7 +37,7 @@ ms.locfileid: "3956560"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/users/xuid({xuid}))](uri-usersxuidget.md)
+[GET (/users/xuid({xuid}))](uri-usersxuidget.md)
 
 &nbsp;&nbsp;发现其他用户或客户端存在。
  
@@ -51,6 +51,6 @@ ms.locfileid: "3956560"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[存在 Uri](atoc-reference-presence.md)
+[状态 URI](atoc-reference-presence.md)
 
    

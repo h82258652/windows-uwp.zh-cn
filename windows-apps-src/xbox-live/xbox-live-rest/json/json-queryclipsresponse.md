@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963766"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990111"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
-包装分页信息的列表以及返回游戏剪辑的列表。 
+包装返回的游戏剪辑，以及分页列表信息的列表。 
 <a id="ID4EN"></a>
 
  
@@ -29,8 +29,8 @@ QueryClipsResponse 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| <b>gameClips</b>| GameClip 的数组| 满足的请求限制 (<b>maxItems</b>) 查询的游戏剪辑数组。| 
-| <b>pagingInfo</b>| PagingInfo| 包含所需的延续任务和列表的后续调用分页的超过了请求 (<b>maxItems</b>) 的信息。| 
+| <b>gameClips</b>| GameClip 的数组| 满足的请求限制 (<b>maxItems</b>) 查询的游戏剪辑的数组。| 
+| <b>pagingInfo</b>| PagingInfo| 包含所需的延续任务和列表的后续调用分页的超过请求限制 (<b>maxItems</b>) 的信息。| 
   
 <a id="ID4E2B"></a>
 
@@ -135,7 +135,7 @@ QueryClipsResponse 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ESC"></a>

@@ -1,9 +1,9 @@
 ---
-title: / 全局/scid / {scid}
+title: /global/scids/{scid}
 assetID: 721e8be9-a50a-ae14-91c1-e103add0abab
 permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid.html
 author: KevinAsgari
-description: " / 全局/scid / {scid}"
+description: " /global/scids/{scid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f914d3994f99b743fc596420eef76aed7f4df79
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959840"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987621"
 ---
-# <a name="globalscidsscid"></a>/ 全局/scid / {scid}
+# <a name="globalscidsscid"></a>/global/scids/{scid}
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -51,6 +51,6 @@ ms.locfileid: "3959840"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 Uri](atoc-reference-storagev2.md)
+[标题存储 URI](atoc-reference-storagev2.md)
 
    

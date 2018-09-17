@@ -1,9 +1,9 @@
 ---
-title: 获取 (/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName})
+title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 assetID: 81139619-dc27-1601-30ba-08f6c45aaaca
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.html
 author: KevinAsgari
-description: " 获取 (/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName})"
+description: " GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa7314b2cb2c8459f4bd2aae78794685c277c70
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962774"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983429"
 ---
-# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>获取 (/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName})
+# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 检索一组会话模板名称。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [URI 参数](#ID4ET)
   * [HTTP 状态代码](#ID4E5)

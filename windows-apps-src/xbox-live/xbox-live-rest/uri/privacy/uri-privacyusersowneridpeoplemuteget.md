@@ -1,9 +1,9 @@
 ---
-title: 获取 （/users/ {ownerId} / 人/静音）
+title: GET (/users/{ownerId}/people/mute)
 assetID: 49b6c830-95f7-3200-0e46-0a1af573971c
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemuteget.html
 author: KevinAsgari
-description: " 获取 （/users/ {ownerId} / 人/静音）"
+description: " GET (/users/{ownerId}/people/mute)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: af9f52e04a163e0839017e1d051653d968df816d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958142"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988991"
 ---
-# <a name="get-usersowneridpeoplemute"></a>获取 （/users/ {ownerId} / 人/静音）
+# <a name="get-usersowneridpeoplemute"></a>GET (/users/{ownerId}/people/mute)
 获取用户的静音的列表。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4EZ)
-  * [资源上的隐私设置的效果](#ID4EEB)
+  * [有关资源的隐私设置的效果](#ID4EEB)
   * [授权](#ID4ENB)
   * [需的请求标头](#ID4ESC)
   * [请求正文](#ID4EPE)
@@ -45,12 +45,12 @@ ms.locfileid: "3958142"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"me" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"我"， <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
 
 <a id="ID4EEB"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
 
 无。
 
@@ -59,7 +59,7 @@ ms.locfileid: "3958142"
 
 ## <a name="authorization"></a>授权
 
-使用授权声明 | 声明| 类型| 是否必需？| 示例值|
+使用的授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- |
 | Xuid| 64 位有符号的整数| 是| 1234567890|
 
@@ -71,7 +71,7 @@ ms.locfileid: "3958142"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权 | 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>Xauth=&lt;authtoken></code>。 最大大小： none。|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，授权令牌中的声明的有效性，依此类推。 示例值： <code>1</code>， <code>vnext</code>。 最大大小： none。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，授权令牌中的声明的有效性后等。 示例值： <code>1</code>， <code>vnext</code>。 最大大小： none。|
 | 接受| 字符串| 内容类型可接受。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4EPE"></a>
@@ -90,8 +90,8 @@ ms.locfileid: "3958142"
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 有关静音列表的成功请求。|
-| 400| 错误请求| URI 中指定的目标 ID 不正确。|
+| 200| “确定”| 静音列表的成功请求。|
+| 400| 错误请求| URI 中指定的目标 ID 不是有效的。|
 | 403| 已禁止| URI 中指定的所有者不是经过身份验证的用户。|
 | 404| 找不到| URI 中指定的所有者不存在。|
 
@@ -141,4 +141,4 @@ ms.locfileid: "3958142"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 人/静音](uri-privacyusersowneridpeoplemute.md)
+[/users/{ownerId}/people/mute](uri-privacyusersowneridpeoplemute.md)

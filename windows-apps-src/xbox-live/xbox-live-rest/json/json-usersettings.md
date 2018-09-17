@@ -1,9 +1,9 @@
 ---
-title: 用户设置 (JSON)
+title: UserSettings (JSON)
 assetID: 17c030cb-05e0-f78e-5ab1-cdbd8b801ceb
 permalink: en-us/docs/xboxlive/rest/json-usersettings.html
 author: KevinAsgari
-description: " 用户设置 (JSON)"
+description: " UserSettings (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 20ac62403a8248011928089ea81cdf6418259db1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959358"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986127"
 ---
-# <a name="usersettings-json"></a>用户设置 (JSON)
+# <a name="usersettings-json"></a>UserSettings (JSON)
 返回当前身份验证的用户设置。 
 <a id="ID4EN"></a>
 
@@ -32,7 +32,7 @@ ms.locfileid: "3959358"
 | id| 32 位无符号的整数| 设置的标识符。| 
 | 源| 32 位无符号的整数| 表示设置的源。 | 
 | titleId| 32 位无符号的整数| 标题与设置关联的标识符。 | 
-| 值| 8 位无符号整数的数组| 表示设置的值。 客户端检索设置必须了解表示格式能够以读取数据。 | 
+| 值| 8 位无符号整数的数组| 表示设置的值。 客户端检索设置必须了解表示格式，以便能够读取数据。 | 
   
 <a id="ID4EJC"></a>
 
@@ -61,6 +61,6 @@ ms.locfileid: "3959358"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

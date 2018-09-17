@@ -1,9 +1,9 @@
 ---
-title: 获取 (/handles/ {句柄 id})
+title: GET (/handles/{handle-id})
 assetID: c95b5ab5-d56a-f70d-20d8-afb48d122ccd
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidget.html
 author: KevinAsgari
-description: " 获取 (/handles/ {句柄 id})"
+description: " GET (/handles/{handle-id})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f048d13c981bf07a124bd9637a36338b9dd3339
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960108"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982659"
 ---
-# <a name="get-handleshandle-id"></a>获取 (/handles/ {句柄 id})
+# <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
 检索句柄 ID 指定的句柄
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此方法由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EDB)
@@ -75,4 +75,4 @@ ms.locfileid: "3960108"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/handles/ {handleId}](uri-handleshandleid.md)
+[/handles/{handleId}](uri-handleshandleid.md)

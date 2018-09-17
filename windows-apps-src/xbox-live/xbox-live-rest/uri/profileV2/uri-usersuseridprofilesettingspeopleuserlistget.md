@@ -1,9 +1,9 @@
 ---
-title: 获取 （/users/ {userId} / 配置文件/设置/人 / {用户列表}）
+title: GET (/users/{userId}/profile/settings/people/{userList})
 assetID: f6553499-89e2-f21b-a00f-7e5437c045ff
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlistget.html
 author: KevinAsgari
-description: " 获取 （/users/ {userId} / 配置文件/设置/人 / {用户列表}）"
+description: " GET (/users/{userId}/profile/settings/people/{userList})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958822"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985163"
 ---
-# <a name="get-usersuseridprofilesettingspeopleuserlist"></a>获取 （/users/ {userId} / 配置文件/设置/人 / {用户列表}）
-获取用户的个人资料或支持用户，与用户的名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
+# <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
+获取用户的配置文件，或支持用户，与用户的名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EKB)
@@ -32,7 +32,7 @@ ms.locfileid: "3958822"
  
 ## <a name="remarks"></a>备注
  
-**用户列表**和**Userid**是互斥的参数。 如果指定了两或任何一个，你将得到**BadRequest** 。 **用户列表**是未来校验多个命名的列表对请求有用的方案中的数组。 **Userid**构成 Xuid 十进制字符串-JSON 已损坏时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
+**用户列表**和**Userid**是互斥的参数。 如果指定了这两或任何一个，则你将得到**BadRequest** 。 **用户列表**是未来校验在多个命名的列表是适用于请求方案中的数组。 **Userid**构成 Xuid 十进制字符串-JSON 已损坏时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
   
 <a id="ID4EKB"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "3958822"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | 用户 Id| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
-| 用户列表| 字符串| 用户获取设置已命名的列表。 目前，用户是唯一受支持的列表。| 
+| 用户列表| 字符串| 命名的人员获取设置的列表。 目前，用户是唯一受支持的列表。| 
   
 <a id="ID4EVB"></a>
 
@@ -131,8 +131,8 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/users/ {userId} / 配置文件/设置/人 / {用户列表}？ 设置 = {设置}](uri-usersuseridprofilesettingspeopleuserlist.md)
+[/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
- [配置文件 (JSON)](../../json/json-profile.md)
+ [Profile (JSON)](../../json/json-profile.md)
 
    

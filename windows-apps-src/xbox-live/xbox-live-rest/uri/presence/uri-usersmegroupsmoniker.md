@@ -1,9 +1,9 @@
 ---
-title: / 用户/me/组 / {名字对象}
+title: /users/me/groups/{moniker}
 assetID: 3d319a19-da5e-a485-985d-46dcff4bb521
 permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmoniker.html
 author: KevinAsgari
-description: " / 用户/me/组 / {名字对象}"
+description: " /users/me/groups/{moniker}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce98786b9ef3702ae0aa1208cb04a9bd530a938
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962032"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989929"
 ---
-# <a name="usersmegroupsmoniker"></a>/ 用户/me/组 / {名字对象}
+# <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
 访问 presencerecord，他的有关我的用户组。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -37,7 +37,7 @@ ms.locfileid: "3962032"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/ 用户/me/组 / {名字对象})](uri-usersmegroupsmonikerget.md)
+[GET (/users/me/groups/{moniker} )](uri-usersmegroupsmonikerget.md)
 
 &nbsp;&nbsp;我的用户组获取 presencerecord，他的。
  
@@ -51,6 +51,6 @@ ms.locfileid: "3962032"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[存在 Uri](atoc-reference-presence.md)
+[状态 URI](atoc-reference-presence.md)
 
    

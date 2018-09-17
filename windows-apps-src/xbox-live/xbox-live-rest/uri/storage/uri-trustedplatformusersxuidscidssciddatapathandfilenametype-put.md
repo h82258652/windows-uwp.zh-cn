@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b64dae884231f36851e650b8ecad0c146741d8e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960356"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985937"
 ---
 # <a name="put-trustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>PUT (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
-将文件上传。 可在其中的数据和元数据发送一条消息，或作为其中的数据和元数据发送一系列的较小的块多块上载完整上载上传数据。 可以在一个消息发送仅小于 4 兆字节的文件。 数据类型 json 不支持多块上传。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+将文件上传。 可在其中的数据和元数据发送一条消息，或作为其中的数据和元数据发送一系列的较小的块多块上载完整上载上传数据。 可以在一个消息发送仅小于 4 兆字节的文件。 多块上载不受支持的类型 json 数据。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [授权](#ID4EEB)
@@ -39,7 +39,7 @@ ms.locfileid: "3960356"
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
 | scid| guid| 要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （达且包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （在最终的正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续的句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件或 json。| 
   
 <a id="ID4EEB"></a>
@@ -54,21 +54,21 @@ ms.locfileid: "3960356"
  
 ## <a name="optional-query-string-parameters"></a>可选的查询字符串参数 
  
-对于单个消息上传查询字符串参数是：
+对于单个邮件上载，查询字符串参数是：
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | clientFileTime| DateTime| 日期/时间任何客户端上的文件的最后一次上载文件。| 
 | 显示名称| 字符串| 应该向用户显示的文件的名称。| 
  
-对于多块上载查询字符串参数是：
+对于多块上载，查询字符串参数是：
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | clientFileTime| DateTime| 日期/时间任何客户端上的文件的最后一次上载文件。| 
 | 显示名称| 字符串| 应该向用户显示的文件的名称。| 
 | ContinuationToken| 字符串| 从以前的上传请求的响应延续令牌。 如果这是第一个块，这不应指定。 | 
-| finalBlock| Bool| 设置为 true 的文件的最后一个块。 设置为 false 的所有其他块。| 
+| finalBlock| Bool| 设置为 true 的文件的最后一个块。 设置为 false 时为所有其他块。| 
   
 <a id="ID4EQE"></a>
 
@@ -78,7 +78,7 @@ ms.locfileid: "3960356"
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EZF"></a>
 
@@ -87,7 +87,7 @@ ms.locfileid: "3960356"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 指定必须匹配要完成此操作的现有项目 ETag。| 
+| If-Match| 指定必须与要完成此操作的现有项目 ETag。| 
 | If-None-Match| 指定 ETag，不匹配任何现有项目，以完成此操作。| 
   
 <a id="ID4E3G"></a>
@@ -95,7 +95,7 @@ ms.locfileid: "3960356"
  
 ## <a name="request-body"></a>请求正文 
  
-请求正文中包含正在上传文件的内容。 对于单个消息上载，正文是文件的完整内容。 对于多块上载，正文是文件的查询字符串参数中指定的部分。 
+请求正文中包含上载文件的内容。 对于单个邮件上载，正文是文件的完整内容。 对于多块上载，正文是文件的查询字符串参数中指定的部分。 
   
 <a id="ID4EHH"></a>
 
@@ -113,16 +113,16 @@ ms.locfileid: "3960356"
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求时间太长，才能完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 408| 请求超时 | 请求所花的时间太长，才能完成。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
   
 <a id="ID4E1EAC"></a>
 
  
 ## <a name="response-body"></a>响应正文 
  
-如果在调用是一个多块请求成功，该服务将返回 continution 令牌传递与下一个块。
+如果在调用是一个多块请求成功，该服务将返回 continution 访问令牌传递与下一个块。
  
 <a id="ID4EGFAC"></a>
 

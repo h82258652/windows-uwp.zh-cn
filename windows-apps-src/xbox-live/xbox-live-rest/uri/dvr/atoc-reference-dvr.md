@@ -1,9 +1,9 @@
 ---
-title: 游戏 DVR Uri
+title: 游戏 DVR URI
 assetID: 472f705e-bf28-7894-b1ba-80933d8746a6
 permalink: en-us/docs/xboxlive/rest/atoc-reference-dvr.html
 author: KevinAsgari
-description: " 游戏 DVR Uri"
+description: " 游戏 DVR URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961858"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988911"
 ---
-# <a name="game-dvr-uris"></a>游戏 DVR Uri
+# <a name="game-dvr-uris"></a>游戏 DVR URI
  
 本部分提供了从*游戏*dvr 的 Xbox Live 服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
  
@@ -34,27 +34,27 @@ ms.locfileid: "3961858"
  
 ## <a name="in-this-section"></a>本部分内容
 
-[/ 公用/scid / {scid} / 剪辑](uri-publicscidclips.md)
+[/public/scids/{scid}/clips](uri-publicscidclips.md)
 
-&nbsp;&nbsp;访问公共剪辑。 实际上可以在两种形式，指定此 URI`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
+&nbsp;&nbsp;访问公共剪辑。 此 URI 实际上中可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
 
-[/ {uri}](uri-uri.md)
+[/{uri}](uri-uri.md)
 
 &nbsp;&nbsp;访问游戏剪辑数据。
 
-[/ 用户/me/scid / {scid} / 剪辑](uri-usersmescidclips.md)
+[/users/me/scids/{scid}/clips](uri-usersmescidclips.md)
 
 &nbsp;&nbsp;访问初始上传请求。
 
-[/ 用户/me/scid / {scid} /clips/ {gameClipId}](uri-usersmescidclipsgameclipid.md)
+[/users/me/scids/{scid}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
 
 &nbsp;&nbsp;访问游戏剪辑数据和元数据。
 
-[/users/ {ownerId} / 剪辑](uri-usersowneridclips.md)
+[/users/{ownerId}/clips](uri-usersowneridclips.md)
 
 &nbsp;&nbsp;访问权限的用户的剪辑的列表。
 
-[/users/ {ownerId} {scid} /scids/ /clips/ {gameClipId}](uri-usersowneridscidclipsgameclipid.md)
+[/users/{ownerId}/scids/{scid}/clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
 
 &nbsp;&nbsp;如果已知的所有 Id，以找到它，请从系统中访问单个游戏剪辑。
  
@@ -68,6 +68,6 @@ ms.locfileid: "3961858"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
 
    

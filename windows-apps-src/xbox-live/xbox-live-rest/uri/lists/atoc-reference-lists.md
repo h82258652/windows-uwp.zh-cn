@@ -1,9 +1,9 @@
 ---
-title: 列出了 Uri
+title: 列表 URI
 assetID: 84dcbd11-86a0-8a1e-7db9-bcecf9b7f853
 permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
 author: KevinAsgari
-description: " 列出了 Uri"
+description: " 列表 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d09d5b1246e5a5d77a2d9bb9dec7b87f7847c8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962180"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982411"
 ---
-# <a name="lists-uris"></a>列出了 Uri
+# <a name="lists-uris"></a>列表 URI
  
-本部分提供了从*图钉*的 Xbox Live 服务的详细信息通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*Pin*。
  
 仅游戏和 Xbox 360 上，Windows Phone 设备、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
  
@@ -31,19 +31,19 @@ ms.locfileid: "3962180"
  
 ## <a name="in-this-section"></a>本部分内容
 
-[/ 用户/xuid (xuid) / 列出/PIN / {listname}](uri-usersxuidlistspinslistname.md)
+[/users/xuid(xuid)/lists/PINS/{listname}](uri-usersxuidlistspinslistname.md)
 
 &nbsp;&nbsp;访问列表中的项目。
 
-[/ 用户/xuid (xuid) / 列出/PIN / {listname} / ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
+[/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
 &nbsp;&nbsp;确定是否一组项 （由 itemId 指定） 包含在列表中而不检索整个列表。
 
-[/ 用户/xuid (xuid) / 列出/PIN / {listname} / 索引 （{索引}）？ insertIndex = {insertIndex}](uri-usersxuidlistspinslistnameindex.md)
+[/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 
 &nbsp;&nbsp;将移动列表中的一项。
 
-[/ 用户/xuid (xuid) / 列出/PIN / {listname} / RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
+[/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
 
 &nbsp;&nbsp;从列表中删除项目。
  
@@ -57,6 +57,6 @@ ms.locfileid: "3962180"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
 
    

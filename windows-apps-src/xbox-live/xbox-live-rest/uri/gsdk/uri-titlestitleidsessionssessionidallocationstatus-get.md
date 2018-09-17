@@ -1,9 +1,9 @@
 ---
-title: 获取 (/titles/ {titleId} /sessions/ {sessionId} / allocationStatus)
+title: GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 assetID: 613ba53f-03cb-5ed3-a5ba-be59e5a146d1
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus-get.html
 author: KevinAsgari
-description: " 获取 (/titles/ {titleId} /sessions/ {sessionId} / allocationStatus)"
+description: " GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956224"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983445"
 ---
-# <a name="get-titlestitleidsessionssessionidallocationstatus"></a>获取 (/titles/ {titleId} /sessions/ {sessionId} / allocationStatus)
-返回由其 sessionId sessionhost 分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+# <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
+返回由其 sessionId sessionhost 分配状态。 有关这些 Uri 域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4E4)
   * [所需的响应标头](#ID4EEB)
@@ -44,21 +44,21 @@ ms.locfileid: "3956224"
  
 ## <a name="response-body"></a>响应正文
  
-如果调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
 | 成员| 说明| 
 | --- | --- | 
-| description| 返回空字符串 （左中的向后兼容性）。| 
-| clusterId| 返回空字符串 （左中的向后兼容性）。| 
+| description| 返回空字符串 （留给中向后兼容性）。| 
+| clusterId| 返回空字符串 （留给中向后兼容性）。| 
 | 主机名| 会话主机的 URL。| 
-| status| 指示排队、 已完成，或终止。| 
+| status| 表示排队、 已完成，或终止。| 
 | sessionHostId| 会话主机 id。| 
 | sessionId| （在分配时） 提供的客户端会话 id。| 
 | secureContext| 安全设备地址。| 
 | portMappings| 该实例端口映射。| 
 | 区域| 实例的位置。| 
-| 票证 Id| 当前会话 ID （左中的向后兼容性）。| 
-| gameHostId| 当前 sessionHostId （左中的向后兼容性）。| 
+| 票证 Id| 当前会话 ID （留给中向后兼容性）。| 
+| gameHostId| 当前 sessionHostId （留给中向后兼容性）。| 
  
 <a id="ID4EGD"></a>
 
@@ -106,9 +106,9 @@ ms.locfileid: "3956224"
  
 收到以下响应代码时，游戏应仅重试对服务调用：
  
-   * 200-成功 
+   * 200 — 成功 
    * 400-请求包含无效参数 
    * 401-未授权 
-   * 404-的主题作品 ID 或票证 ID 已无效，或未找到 
+   * 404-的主题作品 ID 或票证 ID 已无效或未找到 
    * 500-意外的服务器错误。 
     

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3853140ce5e7c3f7710f489709945fc70b6703b4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959708"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984143"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 要对其执行操作的 Xuid 列表。 
@@ -29,7 +29,7 @@ XuidList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 字符串的数组| 在其应执行的操作，或应返回数据的 Xbox 用户 ID (XUID) 值的列表。| 
+| xuid| 字符串的数组| Xbox 用户 ID (XUID) 值的应执行的操作，或应返回数据的列表。| 
   
 <a id="ID4EMB"></a>
 
@@ -59,7 +59,7 @@ XuidList 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EBC"></a>
@@ -67,6 +67,6 @@ XuidList 对象具有以下规范。
  
 ##### <a name="reference"></a>参考 
 
-[POST (/users/ {ownerId} / 人/xuid)](../uri/people/uri-usersowneridpeoplexuidspost.md)
+[POST (/users/{ownerId}/people/xuids)](../uri/people/uri-usersowneridpeoplexuidspost.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: 删除 (/serviceconfigs/ {scid} {hoppername} /hoppers/ /tickets/ {票证 id})
+title: DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 assetID: d9ff3f21-aa70-af41-afa1-9a9244fcdb95
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketiddelete.html
 author: KevinAsgari
-description: " 删除 (/serviceconfigs/ {scid} {hoppername} /hoppers/ /tickets/ {票证 id})"
+description: " DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956030"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986533"
 ---
-# <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>删除 (/serviceconfigs/ {scid} {hoppername} /hoppers/ /tickets/ {票证 id})
+# <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
 删除匹配票证。
 
 > [!IMPORTANT]
-> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E2)
@@ -45,7 +45,7 @@ ms.locfileid: "3956030"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | name| 字符串| 漏斗的名称。|
 | 票证 Id| GUID| 票证 id。|
 
@@ -56,8 +56,8 @@ ms.locfileid: "3956030"
 
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。| 403|
-| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。| 403|
+| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话的成员。| 403|
+| 特权和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。| 403|
 
 <a id="ID4EOC"></a>
 
@@ -89,4 +89,4 @@ ms.locfileid: "3956030"
 
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[/serviceconfigs/ {scid} {hoppername} /hoppers/ /tickets/ {票证 id}](uri-scidhoppernameticketid.md)
+[/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}](uri-scidhoppernameticketid.md)

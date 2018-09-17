@@ -1,9 +1,9 @@
 ---
-title: 获取 （/users/ {requestorId} / 权限/验证）
+title: GET (/users/{requestorId}/permission/validate)
 assetID: 8d22c668-af9a-1d24-8d65-830c2ce913d7
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidateget.html
 author: KevinAsgari
-description: " 获取 （/users/ {requestorId} / 权限/验证）"
+description: " GET (/users/{requestorId}/permission/validate)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957376"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983509"
 ---
-# <a name="get-usersrequestoridpermissionvalidate"></a>获取 （/users/ {requestorId} / 权限/验证）
+# <a name="get-usersrequestoridpermissionvalidate"></a>GET (/users/{requestorId}/permission/validate)
 获取有关是否允许用户执行与目标用户指定的操作是或否答案。
 
   * [URI 参数](#ID4EQ)
@@ -54,7 +54,7 @@ ms.locfileid: "3957376"
 
 ## <a name="authorization"></a>授权
 
-使用授权声明 | 声明| 类型| 是否必需？| 示例值|
+使用的授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Xuid| 64 位有符号的整数| 是| 1234567890|
 
@@ -66,7 +66,7 @@ ms.locfileid: "3957376"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
 
 <a id="ID4ETE"></a>
 
@@ -135,6 +135,6 @@ ms.locfileid: "3957376"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {requestorId} / 权限/验证](uri-privacyusersrequestoridpermissionvalidate.md)
+[/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
  [PermissionId 枚举](../../enums/privacy-enum-permissionid.md)

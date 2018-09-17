@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f6bcc90cc9758540bd7688e2d54a9f31262116d9
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961228"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981057"
 ---
 # <a name="put-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a>PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
-将文件上传。 数据类型 json 不支持多块上传。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+将文件上传。 多块上载不受支持的类型 json 数据。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [授权](#ID4EEB)
@@ -39,7 +39,7 @@ ms.locfileid: "3961228"
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
 | scid| guid| 要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （达且包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （在最终的正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续的句点。| 
   
 <a id="ID4EEB"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "3961228"
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EAE"></a>
 
@@ -75,7 +75,7 @@ ms.locfileid: "3961228"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 指定必须匹配要完成此操作的现有项目 ETag。| 
+| If-Match| 指定必须与要完成此操作的现有项目 ETag。| 
 | If-None-Match| 指定 ETag，不匹配任何现有项目，以完成此操作。| 
   
 <a id="ID4EDF"></a>
@@ -83,7 +83,7 @@ ms.locfileid: "3961228"
  
 ## <a name="request-body"></a>请求正文 
  
-请求正文中包含正在上传的文件的完整内容。 
+请求正文中包含要加载的文件的完整内容。 
   
 <a id="ID4EOF"></a>
 
@@ -101,16 +101,16 @@ ms.locfileid: "3961228"
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求时间太长，才能完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 408| 请求超时 | 请求所花的时间太长，才能完成。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
   
 <a id="ID4EBDAC"></a>
 
  
 ## <a name="response-body"></a>响应正文 
  
-如果成功上传，{} 响应被返回 201。
+如果成功上传，{} 响应返回 201。
   
 <a id="ID4EODAC"></a>
 
@@ -122,6 +122,6 @@ ms.locfileid: "3961228"
  
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[/json/users/xuid({xuid}) /scids/ {scid} /data/ {pathAndFileName} json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
+[/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
    

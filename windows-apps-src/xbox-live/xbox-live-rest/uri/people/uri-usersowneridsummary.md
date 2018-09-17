@@ -1,9 +1,9 @@
 ---
-title: /users/ {ownerId} / 摘要
+title: /users/{ownerId}/summary
 assetID: 63f8ed09-532d-381e-59e6-2849893df5bf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummary.html
 author: KevinAsgari
-description: " /users/ {ownerId} / 摘要"
+description: " /users/{ownerId}/summary"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cf5fc70d2f4b149f7a5c6dd20c5aaf22cafe2a7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960160"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983219"
 ---
-# <a name="usersowneridsummary"></a>/users/ {ownerId} / 摘要
+# <a name="usersowneridsummary"></a>/users/{ownerId}/summary
 有关从调用方的角度来看所有者访问摘要数据。
 
   * [URI 参数](#ID4EQ)
@@ -30,14 +30,14 @@ ms.locfileid: "3960160"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
 <a id="ID4ESB"></a>
 
 
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/users/ {ownerId} / 摘要)](uri-usersowneridsummaryget.md)
+[GET (/users/{ownerId}/summary)](uri-usersowneridsummaryget.md)
 
 &nbsp;&nbsp;从调用方的角度来看，获取有关所有者的摘要数据。
 
@@ -51,4 +51,4 @@ ms.locfileid: "3960160"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 摘要]()
+[/users/{ownerId}/summary]()

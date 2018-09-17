@@ -1,9 +1,9 @@
 ---
-title: 要求 (JSON)
+title: Requirement (JSON)
 assetID: 74faee8d-42e3-cfcf-22b3-9dcd9227de6b
 permalink: en-us/docs/xboxlive/rest/json-requirement.html
 author: KevinAsgari
-description: " 要求 (JSON)"
+description: " Requirement (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962760"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983691"
 ---
-# <a name="requirement-json"></a>要求 (JSON)
+# <a name="requirement-json"></a>Requirement (JSON)
 解锁条件成就和远用户是向会议它们。 
 <a id="ID4EN"></a>
 
@@ -32,7 +32,7 @@ ms.locfileid: "3962760"
 | id| 字符串| 要求的 ID。| 
 | 当前| 字符串| 要求的进度的当前值。| 
 | target| 字符串| 要求的目标值。| 
-| ： 键入| 字符串| 要求操作类型。 有效值为总和、 最小值、 最大值。| 
+| ： 键入| 字符串| 操作类型的要求。 有效值为总和、 最小值、 最大值。| 
 | ruleParticipationType| 字符串| 要求参与类型。 有效值为个人，组。| 
   
 <a id="ID4ETC"></a>
@@ -45,6 +45,6 @@ ms.locfileid: "3962760"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

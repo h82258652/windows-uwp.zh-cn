@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1129db6154d842cbadf0e7918d2fe460166ba1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961978"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982639"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a>/users/xuid({xuid})/deleteuserdata
 完全重置为测试用户信誉数据。 仅供测试。 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。
@@ -30,7 +30,7 @@ ms.locfileid: "3961978"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在删除其数据的用户。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 要删除其数据的用户。| 
   
 <a id="ID4EYB"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "3961978"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[信誉 Uri](atoc-reference-reputation.md)
+[信誉 URI](atoc-reference-reputation.md)
 
    

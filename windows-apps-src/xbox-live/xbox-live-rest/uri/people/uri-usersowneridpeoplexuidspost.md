@@ -1,9 +1,9 @@
 ---
-title: POST (/users/ {ownerId} / 人/xuid)
+title: POST (/users/{ownerId}/people/xuids)
 assetID: e20bfb58-9c3b-14ed-6462-85d42fa6fe1a
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuidspost.html
 author: KevinAsgari
-description: " POST (/users/ {ownerId} / 人/xuid)"
+description: " POST (/users/{ownerId}/people/xuids)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961762"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987859"
 ---
-# <a name="post-usersowneridpeoplexuids"></a>POST (/users/ {ownerId} / 人/xuid)
+# <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
@@ -45,7 +45,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。| 
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
   
 <a id="ID4EJB"></a>
 
@@ -74,8 +74,8 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
+| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>应用程序/json</b>。| 
   
 <a id="ID4EHF"></a>
 
@@ -103,7 +103,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ### <a name="prohibited-members"></a>禁止的成员
  
-所有其他成员禁止在请求中。
+在请求中禁止使用所有其他成员。
   
 <a id="ID4EAH"></a>
 
@@ -135,7 +135,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | 200| “确定”| "获取"方法时成功。| 
 | 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
 | 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 格式不正确。| 
-| 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
+| 403| 已禁止| 在授权标头，无法分析 XUID 声明。| 
   
 <a id="ID4ENBAC"></a>
 
@@ -199,6 +199,6 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/users/ {ownerId} / 人/xuid](uri-usersowneridpeoplexuids.md)
+[/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
    

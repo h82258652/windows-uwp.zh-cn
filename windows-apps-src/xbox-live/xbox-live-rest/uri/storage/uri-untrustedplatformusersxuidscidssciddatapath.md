@@ -1,9 +1,9 @@
 ---
-title: /untrustedplatform/users/xuid({xuid}) /scids/ {scid} /data/ {路径}
+title: /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}
 assetID: d1e05113-c7a3-d615-52d7-d54f08b30b44
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersxuidscidssciddatapath.html
 author: KevinAsgari
-description: " /untrustedplatform/users/xuid({xuid}) /scids/ {scid} /data/ {路径}"
+description: " /untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f3c6521d330d9359be8a15e97c4a275560fbf199
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956490"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984873"
 ---
-# <a name="untrustedplatformusersxuidxuidscidssciddatapath"></a>/untrustedplatform/users/xuid({xuid}) /scids/ {scid} /data/ {路径}
-列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+# <a name="untrustedplatformusersxuidxuidscidssciddatapath"></a>/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}
+列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -41,7 +41,7 @@ ms.locfileid: "3956490"
 
 [GET](uri-untrustedplatformusersxuidscidssciddatapath-get.md)
 
-&nbsp;&nbsp;列出了在指定路径的文件信息。
+&nbsp;&nbsp;列出了在指定的路径的文件信息。
  
 <a id="ID4EPC"></a>
 
@@ -53,6 +53,6 @@ ms.locfileid: "3956490"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 Uri](atoc-reference-storagev2.md)
+[标题存储 URI](atoc-reference-storagev2.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: POST (/titles/ {主题作品 Id} / sessionhosts)
+title: POST (/titles/{Title Id}/sessionhosts)
 assetID: 8558b336-1af9-8143-9752-477ceb3a8e4e
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts-post.html
 author: KevinAsgari
-description: " POST (/titles/ {主题作品 Id} / sessionhosts)"
+description: " POST (/titles/{Title Id}/sessionhosts)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 147df5a3032aa950b7b301f7990c5456db200d2c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962772"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983451"
 ---
-# <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/ {主题作品 Id} / sessionhosts)
+# <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 创建新群集请求。 这些 Uri 的域是`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
@@ -34,7 +34,7 @@ ms.locfileid: "3962772"
  
 | 参数| 描述| 
 | --- | --- | 
-| titleId| 游戏应在其中操作请求 ID。| 
+| titleId| 游戏应在其中操作该请求 ID。| 
   
 <a id="ID5EG"></a>
 
@@ -48,7 +48,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求，将需要在下表中所示的标头。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
@@ -63,11 +63,11 @@ gameserverms.xboxlive.com
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| 这是调用方指定的标识符。 它已分配给会话主机进行分配和返回。 更高版本上，你可以通过此标识符来引用特定 sessionhost。 它必须是全局唯一 (即 GUID)。| 
+| sessionId| 这是调用方指定的标识符。 它已分配给会话主机进行分配和返回。 以后，你可以通过此标识符来引用特定 sessionhost。 它必须全局唯一 (即 GUID)。| 
 | SandboxId| 你想要在分配的会话主机沙盒。| 
 | cloudGameId| 云游戏标识符。| 
 | 位置| 你想要从分配的会话的首选位置的排序的列表。| 
-| sessionCookie| 这是调用方指定不透明的字符串。 它与 sessionhost 相关联，并可以在你的游戏代码中引用。 使用此成员将从客户端的少量的信息传递到服务器 （最大大小为 4 KB）。| 
+| sessionCookie| 这是调用方指定不透明的字符串。 它与 sessionhost 关联，并可以在你的游戏代码中引用。 使用此成员将从客户端的少量的信息传递到服务器 （最大大小为 4 KB）。| 
 | gameModelId| 游戏模式标识符。| 
  
 <a id="ID4EDD"></a>
@@ -105,12 +105,12 @@ gameserverms.xboxlive.com
  
 ## <a name="response-body"></a>响应正文
  
-如果调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 主机名| 实例的主机名。| 
-| portMappings| 端口映射。| 
+| 主机名| 实例的主机名称。| 
+| portMappings| 端口映射中。| 
 | 区域| 在托管区域实例。| 
 | secureContext| 安全设备地址。| 
  
@@ -153,18 +153,18 @@ gameserverms.xboxlive.com
  
 收到以下响应代码时，游戏应仅重试对服务调用：
  
-   * 200-成功-返回响应。
+   * 200 — 成功-返回响应。
    * 400-参数无效或格式不正确的请求正文。
    * 401-未授权
-   * 404-主题作品 id 不具有任何订阅分配给它。
-   * 409 — 相同的请求大约在同一时间进行 (相同 sessionId)，此响应时，可以。 如果分配请求和会话主机已指定的 sessionId 已处于活动状态，我们将返回有关该 sessionhost 详细信息。 如果会话主机但是，不是活动尚未，你将收到冲突。
+   * 404-主题作品 id 不具有任何分配给它的订阅。
+   * 409 — 相同的请求大约在同一时间进行 (相同 sessionId)，此响应时，可以。 如果分配请求和会话主机已指定的 sessionId 而已处于活动状态，我们将返回详细介绍该 sessionhost 的信息。 如果会话主机但不活动状态，但你将收到冲突。
    * 500-意外的服务器错误。
-   * 503-没有 sessionhosts StandingBy。 当这些资源的一些是免费，重试请求。
+   * 503 — 无 sessionhosts StandingBy。 这些资源一些可用时，请重试请求。
    
 <a id="ID4EFG"></a>
 
  
 ## <a name="see-also"></a>另请参阅
- [/titles/ {titleId} / sessionhosts](uri-titlestitleidsessionhosts.md)
+ [/titles/{titleId}/sessionhosts](uri-titlestitleidsessionhosts.md)
 
   

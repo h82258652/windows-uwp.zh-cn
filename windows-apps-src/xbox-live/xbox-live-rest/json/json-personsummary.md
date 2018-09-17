@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cb093f624d27f28cace771896cf52146059bc332
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959750"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986881"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [人 (JSON)](json-person.md)对象的集合。 
@@ -33,11 +33,11 @@ PersonSummary 对象具有以下规范。
 | hasCallerMarkedTargetAsKnown| 布尔值| 是否为已知调用方已标记为目标。 示例值： true| 
 | isCallerFollowingTarget| 布尔值| 是否调用方是按照目标。 示例值： true| 
 | isTargetFollowingCaller| 布尔值| 目标是否关注调用方。 示例值： true| 
-| legacyFriendStatus| 字符串| 目标所示的调用方的旧好友状态。 可以是"None"，"MutuallyAccepted"、"OutgoingRequest"或"IncomingRequest"。 示例值:"MutuallyAccepted"| 
+| legacyFriendStatus| 字符串| 旧好友的目标所示的调用方的状态。 可以为"无"，"MutuallyAccepted"、"OutgoingRequest"或"IncomingRequest"。 示例值:"MutuallyAccepted"| 
 | recentChangeCount| 32 位无符号的整数| 可选。 在目标的社交图片的最新更改的数量。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
 | targetFollowerCount| > 32 位无符号的整数| 遵循的是目标的用户数。 示例值： 1308年| 
 | targetFollowingCount| 32 位无符号的整数| 以下目标的用户数。 示例值： 112| 
-| 水印| 字符串| 可选。 目标的的最新更改水印。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
+| 水印| 字符串| 可选。 该目标的的最新更改水印。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
   
 <a id="ID4E4D"></a>
 
@@ -71,6 +71,6 @@ PersonSummary 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

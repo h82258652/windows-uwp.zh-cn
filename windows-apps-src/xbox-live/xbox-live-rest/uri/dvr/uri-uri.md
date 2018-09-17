@@ -1,9 +1,9 @@
 ---
-title: / {uri}
+title: /{uri}
 assetID: 40b256c3-197d-66c9-5680-15ddddde82ee
 permalink: en-us/docs/xboxlive/rest/uri-uri.html
 author: KevinAsgari
-description: " / {uri}"
+description: " /{uri}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b70d027146a5aba0495692e2f2bef1e2a7d2bd52
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962892"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984993"
 ---
-# <a name="uri"></a>/ {uri}
-访问游戏剪辑数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+# <a name="uri"></a>/{uri}
+访问游戏剪辑数据。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -37,11 +37,11 @@ ms.locfileid: "3962892"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/ {uri})](uri-uriget.md)
+[GET (/{uri})](uri-uriget.md)
 
 &nbsp;&nbsp;下载游戏剪辑。
 
-[放入 (/ {uri})](uri-uriput.md)
+[PUT (/{uri})](uri-uriput.md)
 
 &nbsp;&nbsp;上传游戏剪辑数据。
  
@@ -55,6 +55,6 @@ ms.locfileid: "3962892"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR Uri](atoc-reference-dvr.md)
+[游戏 DVR URI](atoc-reference-dvr.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: /media/ {marketplaceId} / crossMediaGroupSearch
+title: /media/{marketplaceId}/crossMediaGroupSearch
 assetID: 5c8c28a1-a492-2817-7164-eef9ae2f3fd1
 permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearch.html
 author: KevinAsgari
-description: " /media/ {marketplaceId} / crossMediaGroupSearch"
+description: " /media/{marketplaceId}/crossMediaGroupSearch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8357937fa210d74fd8393be0e4746863c477b63c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963534"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986497"
 ---
-# <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/ {marketplaceId} / crossMediaGroupSearch
+# <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/{marketplaceId}/crossMediaGroupSearch
 访问多个不同的媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -37,7 +37,7 @@ ms.locfileid: "3963534"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/media/ {marketplaceId} / crossMediaGroupSearch)](uri-localecrossmediagroupsearchget.md)
+[GET (/media/{marketplaceId}/crossMediaGroupSearch)](uri-localecrossmediagroupsearchget.md)
 
 &nbsp;&nbsp;获取多个不同的媒体组中的项。
  
@@ -51,7 +51,7 @@ ms.locfileid: "3963534"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 Uri](atoc-reference-marketplace.md)
+[市场 URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EKC"></a>
@@ -59,11 +59,11 @@ ms.locfileid: "3963534"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

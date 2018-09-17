@@ -1,9 +1,9 @@
 ---
-title: POST (/ 用户/me/scid / {scid} /clips/ {gameClipId})
+title: POST (/users/me/scids/{scid}/clips/{gameClipId})
 assetID: 410aecad-57f9-c3dc-f35f-19c4d8dfb704
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipidpost.html
 author: KevinAsgari
-description: " POST (/ 用户/me/scid / {scid} /clips/ {gameClipId})"
+description: " POST (/users/me/scids/{scid}/clips/{gameClipId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c8b9e20e990c51c6b3d7e56e72f4d5d6551b39
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956234"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988083"
 ---
-# <a name="post-usersmescidsscidclipsgameclipid"></a>POST (/ 用户/me/scid / {scid} /clips/ {gameClipId})
-更新用户自己的数据的游戏剪辑元数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+# <a name="post-usersmescidsscidclipsgameclipid"></a>POST (/users/me/scids/{scid}/clips/{gameClipId})
+更新用户自己的数据的游戏剪辑元数据。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -46,7 +46,7 @@ ms.locfileid: "3956234"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| 正在访问的资源 GameClip ID。| 
+| gameClipId| 字符串| 正在访问的资源的 GameClip ID。| 
   
 <a id="ID4ELB"></a>
 
@@ -56,7 +56,7 @@ ms.locfileid: "3956234"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。| 
@@ -78,7 +78,7 @@ ms.locfileid: "3956234"
  
 请求的正文应采用 JSON 格式的[UpdateMetadataRequest](../../json/json-updatemetadatarequest.md)对象。 示例：
  
-更改剪辑用户名和可见性：
+更改用户剪辑名称和可见性：
  
 
 ```cpp
@@ -90,7 +90,7 @@ ms.locfileid: "3956234"
 ```
 
  
-更改只是标题属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
+更改只是标题属性 （这只是一个示例，由于此字段的架构是取决于调用方）：
  
 
 ```cpp
@@ -108,12 +108,12 @@ ms.locfileid: "3956234"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。| 
-| 重试后| 字符串| 指示客户端在不可用的服务器的情况下我们深表歉意。| 
-| 有所不同| 字符串| 指示下游代理如何缓存响应。| 
+| 重试后| 字符串| 指示客户端在不可用的服务器的情况下稍后重试。| 
+| 不同| 字符串| 指示下游代理如何缓存响应。| 
   
 <a id="ID4EJAAC"></a>
 
@@ -129,7 +129,7 @@ ms.locfileid: "3956234"
  
 ## <a name="response-body"></a>响应正文
  
-HTTP 状态代码为 200 的元数据的成功更新时将会返回。
+将返回的元数据的 HTTP 状态代码为 200 的成功更新时。
  
 否则将相应的 HTTP 状态代码返回 JSON 格式的 ServiceErrorResponse 对象。
   
@@ -138,11 +138,11 @@ HTTP 状态代码为 200 的元数据的成功更新时将会返回。
  
 ## <a name="related-uris"></a>相关的 Uri
  
-以下 Uri 更新元数据中的公共字段。 没有任何所需的这些请求的正文。 HTTP 状态代码为 200 的元数据的成功更新时将会返回。 否则将相应的 HTTP 状态代码返回 JSON 格式的 ServiceErrorResponse 对象。
+以下 Uri 更新元数据中的公共字段。 没有任何所需的这些请求的正文。 将返回的元数据的 HTTP 状态代码为 200 的成功更新时。 否则将相应的 HTTP 状态代码返回 JSON 格式的 ServiceErrorResponse 对象。
  
-   * **POST /users/ {ownerId} /scids/ {scid} {gameClipId} /clips/ /ratings/ {分级值}** -适用于指定剪辑指定的分级。 评分值应为 1 到 5 之间的整数。
+   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} /ratings/ {评分值}** -适用于指定剪辑指定的评分。 评分值应为 1 到 5 之间的整数。
    * **发布 /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 标志**-标志来包含可能有问题的内容要检查通过强制执行该剪辑。
-   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 查看**-增加指定游戏剪辑视图计数。 建议，这称为不合适时开始播放，但当 75%-80%的播放完毕。
+   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 查看**-增加视图计数指定游戏剪辑。 建议，这称为不正确播放启动时，但当 75%的 80%的播放完毕。
    
 <a id="ID4EMCAC"></a>
 
@@ -154,6 +154,6 @@ HTTP 状态代码为 200 的元数据的成功更新时将会返回。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 用户/me/scid / {scid} /clips/ {gameClipId}](uri-usersmescidclipsgameclipid.md)
+[/users/me/scids/{scid}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
 
    

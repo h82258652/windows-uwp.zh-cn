@@ -1,9 +1,9 @@
 ---
-title: / 用户/xuid ({xuid}) /scids/ {scid} /stats/ {statname) /people/ {所有 | 收藏}
+title: /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 assetID: 0983dad0-59b7-45b7-505d-603e341fe0cc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
 author: KevinAsgari
-description: " / 用户/xuid ({xuid}) /scids/ {scid} /stats/ {statname) /people/ {所有 | 收藏}"
+description: " /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 161c7e96faf3ec217aeb188ccb3b5b1e354d217e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964312"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989505"
 ---
-# <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/ 用户/xuid ({xuid}) /scids/ {scid} /stats/ {statname) /people/ {所有 | 收藏}
+# <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 访问 （排名） 在社交排行榜。
 这些 Uri 的域是`leaderboards.xboxlive.com`。
 
@@ -41,9 +41,9 @@ ms.locfileid: "3964312"
 
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
+[GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;返回社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。
+&nbsp;&nbsp;返回在社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。
 
 <a id="ID4EYC"></a>
 
@@ -55,4 +55,4 @@ ms.locfileid: "3964312"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[排行榜 Uri](atoc-reference-leaderboard.md)
+[排行榜 URI](atoc-reference-leaderboard.md)

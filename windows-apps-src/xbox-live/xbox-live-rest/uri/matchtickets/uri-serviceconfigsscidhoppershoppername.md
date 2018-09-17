@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} /hoppers/ {hoppername}
+title: /serviceconfigs/{scid}/hoppers/{hoppername}
 assetID: ba1e129d-b4c4-6535-46ce-fd184465c85f
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppername.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} /hoppers/ {hoppername}"
+description: " /serviceconfigs/{scid}/hoppers/{hoppername}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e02a4ea5ba9c21337032daad44579f6001360cd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964347"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988331"
 ---
-# <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs/ {scid} /hoppers/ {hoppername}
+# <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs/{scid}/hoppers/{hoppername}
 
 支持 POST 操作以创建匹配票证。
 
 > [!IMPORTANT]
-> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -37,7 +37,7 @@ momatch.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | hoppername | 字符串 | 漏斗的名称。 |
 
 <a id="ID4E2B"></a>
@@ -45,7 +45,7 @@ momatch.xboxlive.com
 
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/serviceconfigs/ {scid} /hoppers/ {hoppername})](uri-serviceconfigsscidhoppershoppernamepost.md)
+[POST (/serviceconfigs/{scid}/hoppers/{hoppername})](uri-serviceconfigsscidhoppershoppernamepost.md)
 
 &nbsp;&nbsp;创建指定的匹配票证。
 
@@ -59,4 +59,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[匹配 Uri](atoc-reference-matchtickets.md)
+[匹配 URI](atoc-reference-matchtickets.md)

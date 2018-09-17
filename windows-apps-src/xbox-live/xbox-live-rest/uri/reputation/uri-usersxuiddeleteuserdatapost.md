@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963706"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983317"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 完全重置为测试用户信誉数据。 仅供测试。
@@ -33,7 +33,7 @@ ms.locfileid: "3963706"
 
 ## <a name="remarks"></a>备注
 
-调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 强制执行团队可能会调用此 API 使用任何沙盒 id。
+调用此 API 将删除所有反馈项目和信誉数据用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 执行团队可能会调用此 API 使用任何沙盒 id。
 
 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。
 
@@ -44,14 +44,14 @@ ms.locfileid: "3963706"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在删除其数据的用户。|
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 要删除其数据的用户。|
 
 <a id="ID4EJB"></a>
 
 
 ## <a name="authorization"></a>授权
 
-Retail 沙盒中，从强制执行团队**PartnerClaim** 。
+Retail 沙盒中，从执行团队**PartnerClaim** 。
 
 对于所有其他沙盒， **PartnerClaim**和**SandboxIdClaim**。
 
@@ -75,15 +75,15 @@ Retail 沙盒中，从强制执行团队**PartnerClaim** 。
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 404| 找不到| 找不到指定的资源。|
-| 500| 内部服务器错误| 服务器时遇到意外的情况，使其不能完成请求。|
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。|
+| 500| 内部服务器错误| 服务器时遇到意外的情况，无法完成请求。|
+| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。|
 
 <a id="ID4EJF"></a>
 
 
 ## <a name="response-body"></a>响应正文
 
-None 成功;否则为[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+无成功;否则为[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
 
 <a id="ID4EWF"></a>
 

@@ -1,9 +1,9 @@
 ---
-title: 获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes)
+title: GET (/media/{marketplaceId}/metadata/mediaItemTypes)
 assetID: ca2825fa-1988-8464-0a69-d965e38844bb
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesget.html
 author: KevinAsgari
-description: " 获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes)"
+description: " GET (/media/{marketplaceId}/metadata/mediaItemTypes)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eb16d6052d07ed90d99c327b4955b5d8bedabff
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956226"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982135"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a>获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes)
+# <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes)
 列出所有受支持的 mediaItemTypes 给定 EDS 版本。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -42,7 +42,7 @@ ms.locfileid: "3956226"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/media/ {marketplaceId} / 元数据/mediaItemTypes](uri-medialocalemetadatamediaitemtypes.md)
+[/media/{marketplaceId}/metadata/mediaItemTypes](uri-medialocalemetadatamediaitemtypes.md)
 
   
 <a id="ID4EMB"></a>
@@ -50,13 +50,13 @@ ms.locfileid: "3956226"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
- [市场 Uri](atoc-reference-marketplace.md)
+ [市场 URI](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

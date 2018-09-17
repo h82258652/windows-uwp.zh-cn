@@ -1,9 +1,9 @@
 ---
-title: /handles/ {handleId}
+title: /handles/{handleId}
 assetID: 5b722d3e-fe80-fec5-a26b-8b3db6422004
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleid.html
 author: KevinAsgari
-description: " /handles/ {handleId}"
+description: " /handles/{handleId}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 47dda291a9a86ccbee69e1e51ca71be373f5dc1d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962564"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985165"
 ---
-# <a name="handleshandleid"></a>/handles/ {handleId}
-支持会话句柄由标识符指定的删除和 GET 的操作。 
+# <a name="handleshandleid"></a>/handles/{handleId}
+支持会话句柄标识符指定的删除和 GET 的操作。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于情况下，使用模板合约 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -44,11 +44,11 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有效的方法
 
-[删除 (/handles/ {handleId})](uri-handleshandleiddelete.md)
+[DELETE (/handles/{handleId})](uri-handleshandleiddelete.md)
 
 &nbsp;&nbsp;句柄 ID 指定的删除句柄
 
-[获取 (/handles/ {句柄 id})](uri-handleshandleidget.md)
+[GET (/handles/{handle-id})](uri-handleshandleidget.md)
 
 &nbsp;&nbsp;检索句柄 ID 指定的句柄
  
@@ -62,6 +62,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)
 
    

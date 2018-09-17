@@ -1,9 +1,9 @@
 ---
-title: 删除 (/users/xuid(xuid)/lists/PINS/{listname})
+title: DELETE (/users/xuid(xuid)/lists/PINS/{listname})
 assetID: b43e3faa-7791-8bcb-3aec-7bdad8ffbebf
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamedelete.html
 author: KevinAsgari
-description: " 删除 (/users/xuid(xuid)/lists/PINS/{listname})"
+description: " DELETE (/users/xuid(xuid)/lists/PINS/{listname})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0749229af844c7b71496351000cadece7544bfc6
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962650"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989002"
 ---
-# <a name="delete-usersxuidxuidlistspinslistname"></a>删除 (/users/xuid(xuid)/lists/PINS/{listname})
+# <a name="delete-usersxuidxuidlistspinslistname"></a>DELETE (/users/xuid(xuid)/lists/PINS/{listname})
 从列表中删除项目。 这些 Uri 的域是`eplists.xboxlive.com`。
  
   * [备注](#ID4EV)
@@ -35,9 +35,9 @@ ms.locfileid: "3962650"
  
 ## <a name="remarks"></a>备注
  
-若要删除的项由其列表中的索引和中查询字符串参数**的索引**标识。 索引列表必须以逗号分隔，并且可以在一次调用中传递 100 个索引。 但是，如果没有索引传递 （空查询字符串参数） 则整个列表的内容将被删除 （空列表将保留，并且版本号将继续增加）。 一旦项目都被删除，列表"压缩"，以便没有漏洞剩顺序的索引。 因此，此调用不是幂等。
+若要删除的项由其列表中的索引和中查询字符串参数**的索引**标识。 索引列表必须以逗号分隔，并且可以将 100 个索引传递单次调用。 但是，如果没有索引传递 （空的查询字符串参数） 则整个列表的内容将被删除 （空列表将保留，和版本号将继续增加）。 一旦项都被删除，列表"压缩"，以便没有漏洞剩顺序的索引。 因此，此调用不幂等。
  
-此调用需要**如果-匹配： versionNumber**标头包含在请求中， **versionNumber**所在的文件的当前版本号。 如果它不是包含在内，或者不匹配当前的列表版本编号，然后 HTTP 412 （前置条件失败） 将返回状态代码，并且该响应正文将包含最新的元数据的列表，包括当前版本号。 这是为了防止从不同的客户端上彼此造成破坏的更新。
+此调用需要**如果-匹配： versionNumber**标头包含在请求中， **versionNumber**所在的文件的当前版本号。 如果它不是包含在内，或者不匹配当前的列表版本编号，然后 HTTP 412 （前置条件失败） 将返回状态代码，并且该响应正文将包含最新的元数据的列表，其中包括当前版本号。 这是为了防止从不同的客户端上彼此造成破坏的更新。
   
 <a id="ID4EIB"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "3962650"
  
 ## <a name="authorization"></a>授权
  
-此调用在**授权**标头中预期的 XSTS SAML 令牌。 Xuid 声明必须存在于该 SAML 令牌来标识调用方。 此值用于确定调用方是否有问题的列表数据的访问权限。 列表本身的 Xuid 也将标识，并将包含在列表的 URI。 使用此，我们将来可能支持共享访问列表，但的不是一项功能这一次。 目前，所有用户访问的列表都将自己并且没有共享的访问。 因此在 URI 中的 Xuid 必须匹配 SAML 声明令牌中的 Xuid。 
+此调用在**授权**标头中预期的 XSTS SAML 令牌。 Xuid 声明必须存在于该 SAML 令牌来标识调用方。 此值用于确定调用方是否有问题的列表数据的访问权限。 列表本身的 Xuid 也将标识和将包含在列表的 URI。 使用此，我们将来可能支持共享访问列表，但的不是一项功能这一次。 目前，所有用户访问的列表都将自己并且没有共享的访问。 因此在 URI 中的 Xuid 必须匹配 SAML 声明令牌中的 Xuid。 
 
 > [!NOTE] 
 > 目前支持 XBL 身份验证 2.0 和 3.0 令牌。 
@@ -80,10 +80,10 @@ ms.locfileid: "3962650"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 授权| 包含用于身份验证和授权请求的 STS 标记。 必须从 XSTS 服务令牌并作为一个声明包含 XUID。 | 
+| 授权| 包含用于身份验证和授权请求的 STS 标记。 必须从 XSTS 服务访问令牌并包括为声明之一的 XUID。 | 
 | X XBL 协定版本| 指定哪些 API 版本被请求 （正整数）。 引脚支持版本 2。 如果此标头丢失或不受支持值，则服务将返回 400 – 错误请求与"不受支持或缺少合约版本标头"中的状态说明。| 
-| Content-Type| 指定的请求/响应正文的内容将位于 json 或 xml。 受支持的值为"应用程序/json"和"应用程序/xml"| 
-| If-Match| 进行修改请求时，此标头必须包含列表的当前版本号。 修改请求使用 PUT、 POST，或删除动词命令。 如果"If-match"标头中的版本不匹配当前版本的列表，将拒绝请求，并 HTTP 412-前置条件失败返回代码。 （可选）此外可为获取，如果存在并传入的版本匹配当前的列表版本，然后无列表数据和 HTTP 304 – 将返回不修改代码。 | 
+| Content-Type| 指定是否内容的请求/响应正文将包含在 json 或 xml。 受支持的值为"应用程序/json"和"应用程序/xml"| 
+| If-Match| 进行修改请求时，此标头必须包含列表的当前版本号。 修改请求使用 PUT、 POST，或删除动词命令。 如果"If-match"标头中的版本不匹配当前版本的列表，将拒绝请求，并 HTTP 412 – 前置条件失败返回代码。 （可选）此外可为获取，如果存在并传入的版本匹配当前的列表版本，然后无列表数据和 HTTP 304 – 将返回不修改代码。 | 
   
 <a id="ID4EWE"></a>
 
@@ -102,13 +102,13 @@ ms.locfileid: "3962650"
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功完成请求。 响应正文应包含所请求的资源 （GET)。 POST 和 PUT 请求将接收最新列表元数据 （列表版本、 计数等）。| 
-| 201| 已创建| 已创建了新的列表。 这被返回初始插入到列表。 该响应包括在列表上保持最新的元数据和位置标头包含列表的 URI。| 
-| 304| 未修改| 返回上获取。 指示客户端列表的最新版本。 该服务的列表版本到<b>If-match</b>标头中的值进行比较。 如果它们相等，然后 304 获取不返回任何数据。| 
+| 201| 已创建| 已创建一个新的列表。 这被返回初始插入到列表。 该响应包括在列表上保持最新的元数据和位置标头包含列表的 URI。| 
+| 304| 未修改| 返回上获取。 指示客户端列表的最新版本。 该服务将列表版本<b>If-match</b>标头中的值进行比较。 如果相等，然后 304 获取不返回任何数据。| 
 | 400| 错误请求| 请求格式不正确。 可能的值无效或 URI 或查询字符串参数类型。 数据值或请求指示丢失或无效的 API 版本或也可能缺少所需的参数的结果。 请参阅<b>X XBL 合约版本</b>标头。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
-| 404| 找不到| 调用方没有访问资源。 这表示已创建了没有此类列表。| 
-| 412| 前置条件失败| 指示已更改的列表版本，并且修改请求失败。 修改请求是插入、 更新或删除。 该服务将检查列表版本的<b>If-match</b>标头文件。 如果不匹配当前版本的列表，然后操作将失败，这会返回当前列表元数据 （其中包括当前版本） 以及。| 
+| 404| 找不到| 调用方没有访问资源。 这指示已创建了没有此类的列表。| 
+| 412| 前置条件失败| 指示已更改的列表版本，并且修改请求失败。 修改请求是插入、 更新或删除。 该服务将检查列表版本的<b>If-match</b>标头文件。 如果不匹配当前版本的列表，然后操作将失败，这返回当前列表元数据 （其中包括当前版本） 以及。| 
 | 500| 内部服务器错误| 该服务拒绝由于服务器端错误的请求。| 
 | 501| 未实现| 调用方请求尚未实现在服务器的 URI。 （当前仅时请求使用专为不是列入白名单列表名称。）| 
 | 503| 服务不可用| 服务器拒绝请求，通常由于过多的负载。 延迟后 (请参阅<b>retry-after</b>标头)，可以重试请求。| 
@@ -146,6 +146,6 @@ ms.locfileid: "3962650"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 用户/xuid (xuid) / 列出/PIN / {listname}](uri-usersxuidlistspinslistname.md)
+[/users/xuid(xuid)/lists/PINS/{listname}](uri-usersxuidlistspinslistname.md)
 
    

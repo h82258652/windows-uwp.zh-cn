@@ -1,9 +1,9 @@
 ---
-title: 获取 (/ {uri})
+title: GET (/{uri})
 assetID: a67a3288-88f9-c504-5fa8-8fd06055d079
 permalink: en-us/docs/xboxlive/rest/uri-uriget.html
 author: KevinAsgari
-description: " 获取 (/ {uri})"
+description: " GET (/{uri})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b70c87b848cec5f9bbe3ad4a4b3fdf224c84c1dc
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960372"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981031"
 ---
-# <a name="get-uri"></a>获取 (/ {uri})
-下载游戏剪辑。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+# <a name="get-uri"></a>GET (/{uri})
+下载游戏剪辑。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EDB)
@@ -55,7 +55,7 @@ ms.locfileid: "3960372"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。| 
@@ -84,12 +84,12 @@ ms.locfileid: "3960372"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。| 
-| 重试后| 字符串| 指示客户端在不可用的服务器的情况下我们深表歉意。| 
-| 有所不同| 字符串| 指示下游代理如何缓存响应。| 
+| 重试后| 字符串| 指示客户端在不可用的服务器的情况下稍后重试。| 
+| 不同| 字符串| 指示下游代理如何缓存响应。| 
   
 <a id="ID4EYAAC"></a>
 
@@ -108,8 +108,8 @@ ms.locfileid: "3960372"
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 406| 不允许| 不支持资源版本。| 
-| 408| 请求超时| 请求时间太长，才能完成。| 
-| 410| 前面| 所请求的资源不再可用。| 
+| 408| 请求超时| 请求所花的时间太长，才能完成。| 
+| 410| 前面| 请求的资源不再可用。| 
   
 <a id="ID4EOFAC"></a>
 
@@ -141,6 +141,6 @@ ms.locfileid: "3960372"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ {uri}](uri-uri.md)
+[/{uri}](uri-uri.md)
 
    

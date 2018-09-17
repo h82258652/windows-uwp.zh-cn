@@ -1,9 +1,9 @@
 ---
-title: 用户列表 (JSON)
+title: UserList (JSON)
 assetID: 894f5a39-4eed-0c5b-fc45-cb0097dc46fd
 permalink: en-us/docs/xboxlive/rest/json-userlist.html
 author: KevinAsgari
-description: " 用户列表 (JSON)"
+description: " UserList (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 51dd19ebed394bb0c3c8b5f4649dd5c83a58027c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960294"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989959"
 ---
-# <a name="userlist-json"></a>用户列表 (JSON)
+# <a name="userlist-json"></a>UserList (JSON)
 [用户](json-user.md)对象的集合。 
 <a id="ID4ER"></a>
 
@@ -59,6 +59,6 @@ ms.locfileid: "3960294"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

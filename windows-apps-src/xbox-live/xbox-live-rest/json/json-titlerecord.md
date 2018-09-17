@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7fb10a0f81e24215ebc24d2545f1197d4520bc
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961764"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988775"
 ---
 # <a name="titlerecord-json"></a>TitleRecord (JSON)
 有关游戏，包括其名称和上次修改时间戳的信息。 
@@ -33,10 +33,10 @@ TitleRecord 对象具有以下规范。
 | --- | --- | --- | 
 | id| 32 位无符号的整数| 职务记录的 Id。| 
 | name| 字符串| 标题的本地化的名称。| 
-| 活动| [ActivityRecord](json-activityrecord.md)| 在游戏中的用户的活动。 仅深度为"全部"时返回。| 
+| 活动| [ActivityRecord](json-activityrecord.md)| 在游戏中的用户活动。 仅深度为"全部"时返回。| 
 | lastModified| DateTime| UTC 时间戳记录上次更新时。| 
-| 放置| 字符串| 用户界面中应用的位置。 可能性包括"fill"、"完全"、"贴靠"或"background"。 默认值为"完全"不能将放置应用的设备。| 
-| 状态| 字符串| 游戏的状态。 可以是"活动"或"非活动"（默认）。 标题设置根据自己的条件的活动和非活动状态的状态。| 
+| 放置| 字符串| 在用户界面的应用位置。 可能性包括"fill"、"完全"、"贴靠"或"background"。 默认值为"完全"，而无需将应用的功能的设备。| 
+| 状态| 字符串| 游戏的状态。 可以是"活动"或"非活动"（默认）。 标题设置基于其自己的标准的活动和非活动状态的状态。| 
   
 <a id="ID4E6C"></a>
 
@@ -70,7 +70,7 @@ TitleRecord 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUD"></a>

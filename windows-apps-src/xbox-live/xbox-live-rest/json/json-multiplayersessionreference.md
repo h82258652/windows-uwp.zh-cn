@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dfa27115e1c7ebc9be657ff4fb3f6946406dd8b
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956148"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983541"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
 表示**MultiplayerSessionReference**的 JSON 对象。 
@@ -29,7 +29,7 @@ MultiplayerSessionReference JSON 对象具有以下规范。
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
-| templateName | 字符串 | 会话模板的当前实例的名称。 第 2 部分会话标识符。 | 
+| 模板名称 | 字符串 | 会话模板的当前实例的名称。 第 2 部分会话标识符。 | 
 | name | 字符串 | 会话名称。 会话标识符的第 3 部分。 | 
   
 <a id="ID4EZ"></a>
@@ -59,7 +59,7 @@ MultiplayerSessionReference JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVB"></a>

@@ -1,9 +1,9 @@
 ---
-title: 获取 (/inventory/ {itemID})
+title: GET (/inventory/{itemID})
 assetID: d3ca14a5-0214-ef42-091e-3f05f2a3482d
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurlget.html
 author: KevinAsgari
-description: " 获取 (/inventory/ {itemID})"
+description: " GET (/inventory/{itemID})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a94493243178a503ae846608b172af598bf97dd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960680"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988817"
 ---
-# <a name="get-inventoryitemid"></a>获取 (/inventory/ {itemID})
-提供特定的清单项完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
+# <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
+为特定的库存项目提供完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -30,7 +30,7 @@ ms.locfileid: "3960680"
  
 ## <a name="remarks"></a>备注
  
-没有策略检查，强制执行，否则筛选会出现作为此调用的一部分。
+没有策略检查，强制执行，否则筛选会作为此调用的一部分。
   
 <a id="ID4EAB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "3960680"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| itemID| 字符串| 唯一单数库存项目的每个用户的 ID| 
+| itemID| 字符串| 为单数库存项目的每个用户的唯一 ID| 
   
 <a id="ID4ELB"></a>
 
@@ -70,7 +70,7 @@ GET 请求，假设传递身份验证并分配适当授权上下文中，该响�
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[获取 (/inventory/ {itemID})]()
+[GET (/inventory/{itemID})]()
 
   
 <a id="ID4EJC"></a>
@@ -78,13 +78,13 @@ GET 请求，假设传递身份验证并分配适当授权上下文中，该响�
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
- [市场 Uri](atoc-reference-marketplace.md)
+ [市场 URI](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

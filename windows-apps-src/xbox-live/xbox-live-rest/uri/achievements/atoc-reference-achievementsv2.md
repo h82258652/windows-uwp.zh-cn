@@ -1,9 +1,9 @@
 ---
-title: 成就 Uri
+title: 成就 URI
 assetID: 568bbc2c-9746-37ef-3514-99ffc96e3c15
 permalink: en-us/docs/xboxlive/rest/atoc-reference-achievementsv2.html
 author: KevinAsgari
-description: " 成就 Uri"
+description: " 成就 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 891d1d03ab5b7b60dd25c58d9f2f40083bde6e7c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958266"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989041"
 ---
-# <a name="achievements-uris"></a>成就 Uri
+# <a name="achievements-uris"></a>成就 URI
 
-本部分提供了从 Xbox Live*成就*服务的详细信息通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供了从*成就*的 Xbox Live 服务的详细信息统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
 
 这些 Uri 的域是 achievements.xboxlive.com。
 
@@ -31,11 +31,11 @@ ms.locfileid: "3958266"
 
 [/users/xuid({xuid})/achievements](uri-achievementsusersxuidachievementsv2.md)
 
-&nbsp;&nbsp;提供对用户的成就访问。
+&nbsp;&nbsp;提供对用户的成就的访问。
 
-[/ 用户/xuid ({xuid}) /achievements/ {scid} / {achievementid}](uri-usersxuidachievementsscidachievementid.md)
+[/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
-&nbsp;&nbsp;返回关于该成就，包括其配置的元数据和特定于用户的数据的详细信息。
+&nbsp;&nbsp;返回有关成就，包括其配置的元数据和特定于用户的数据的详细信息。
 
 
 > [!NOTE] 
@@ -53,4 +53,4 @@ ms.locfileid: "3958266"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)

@@ -1,9 +1,9 @@
 ---
-title: 获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} / sortorders)
+title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)
 assetID: 225e8cb2-44eb-6b7b-eaa0-1ea2d2602f6f
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortordersget.html
 author: KevinAsgari
-description: " 获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} / sortorders)"
+description: " GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 656a8df9a810252e4bc77f1537428ae0104ef98f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962034"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982641"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} / sortorders)
-列出了可用的排序订单的给定的 mediaitem 类型和 EDS 给定的版本。 这些 Uri 的域是`eds.xboxlive.com`。
+# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)
+列出可用的排序订单的给定的 mediaitem 类型和 EDS 给定的版本。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -43,7 +43,7 @@ ms.locfileid: "3962034"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaitemtype} / sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
+[/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
 
   
 <a id="ID4EMB"></a>
@@ -51,13 +51,13 @@ ms.locfileid: "3962034"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
- [市场 Uri](atoc-reference-marketplace.md)
+ [市场 URI](atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

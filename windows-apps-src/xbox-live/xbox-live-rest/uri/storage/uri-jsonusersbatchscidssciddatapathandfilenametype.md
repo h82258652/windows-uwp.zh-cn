@@ -1,9 +1,9 @@
 ---
-title: / json/用户/批次/scid / {scid} /data/ {pathAndFileName} json
+title: /json/users/batch/scids/{scid}/data/{pathAndFileName},json
 assetID: 06ae159f-7739-1330-df15-871d260e6ba1
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilenametype.html
 author: KevinAsgari
-description: " / json/用户/批次/scid / {scid} /data/ {pathAndFileName} json"
+description: " /json/users/batch/scids/{scid}/data/{pathAndFileName},json"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b620144bbeee783835f5bf9181381a4c9b38a66
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958860"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985555"
 ---
-# <a name="jsonusersbatchscidssciddatapathandfilenamejson"></a>/ json/用户/批次/scid / {scid} /data/ {pathAndFileName} json
-从多个用户具有相同的文件名下载多个文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+# <a name="jsonusersbatchscidssciddatapathandfilenamejson"></a>/json/users/batch/scids/{scid}/data/{pathAndFileName},json
+将多个文件下载从多个用户具有相同的文件名。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "3958860"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| guid| 要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （达且包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （在最终的正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续的句点。| 
   
 <a id="ID4E3B"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "3958860"
 
 [POST](uri-jsonusersbatchscidssciddatapathandfilenametype-post.md)
 
-&nbsp;&nbsp;从多个用户具有相同的文件名下载多个文件。 请求 URI 由确定要下载的文件。 请求正文中的包含的用户的 Xuid 列表以下载其文件。 响应正文将很多部分的 MIME 消息，与表示与自己的标头的一组特定用户的文件的每个部分。 很可能是成功和失败的组合的响应的部分。
+&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。 请求 URI 由确定要下载的文件。 请求正文中的包含的用户的 Xuid 列表以下载其文件。 响应正文将多个部分的 MIME 消息中，然后使用表示的特定用户的组其自己的标头文件的每个部分。 很可能是成功和失败的组合的响应的部分。
  
 <a id="ID4EGC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "3958860"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[标题存储 Uri](atoc-reference-storagev2.md)
+[标题存储 URI](atoc-reference-storagev2.md)
 
    

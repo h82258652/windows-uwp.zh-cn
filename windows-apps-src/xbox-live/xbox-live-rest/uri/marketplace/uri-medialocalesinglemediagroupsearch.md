@@ -1,9 +1,9 @@
 ---
-title: /media/ {marketplaceId} / singleMediaGroupSearch
+title: /media/{marketplaceId}/singleMediaGroupSearch
 assetID: f5599db7-4050-640e-db96-2df01a007c07
 permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearch.html
 author: KevinAsgari
-description: " /media/ {marketplaceId} / singleMediaGroupSearch"
+description: " /media/{marketplaceId}/singleMediaGroupSearch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e99fc70db836c36d8f92a4b4c4b12ec8e75c47e1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960708"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981927"
 ---
-# <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/ {marketplaceId} / singleMediaGroupSearch
+# <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
 允许搜索在单个媒体组中的项目。 请注意，此搜索返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询精简将。
  
 这些 Uri 的域是`eds.xboxlive.com`。
@@ -39,7 +39,7 @@ ms.locfileid: "3960708"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (媒体 / {marketplaceId} / singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
+[GET (media/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
 
 &nbsp;&nbsp;允许搜索在单个媒体组中的项目。 
  
@@ -53,7 +53,7 @@ ms.locfileid: "3960708"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 Uri](atoc-reference-marketplace.md)
+[市场 URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EOC"></a>
@@ -61,11 +61,11 @@ ms.locfileid: "3960708"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

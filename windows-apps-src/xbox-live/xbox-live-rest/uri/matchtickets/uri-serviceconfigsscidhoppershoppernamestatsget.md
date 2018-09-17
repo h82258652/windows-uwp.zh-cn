@@ -1,9 +1,9 @@
 ---
-title: 获取 (/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据)
+title: GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 assetID: 4de5b07d-93e1-8ff0-05dd-1d3bb1802088
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestatsget.html
 author: KevinAsgari
-description: " 获取 (/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据)"
+description: " GET (/serviceconfigs/{scid}/hoppers/{name}/stats)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961376"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986977"
 ---
-# <a name="get-serviceconfigsscidhoppersnamestats"></a>获取 (/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据)
+# <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
-漏斗获取统计信息。
+漏斗中获取统计信息。
 
 > [!IMPORTANT]
-> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
@@ -44,7 +44,7 @@ ms.locfileid: "3961376"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | name| 字符串| 漏斗的名称。|
 
 <a id="ID4EJB"></a>
@@ -54,9 +54,9 @@ ms.locfileid: "3961376"
 
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。 | 403|
-| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
-| 作品 ID/购买/设备类型的概念证明| 是| 正在匹配到游戏必须允许指定的标题声明，设备类型组合的匹配。 | 403|
+| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话的成员。 | 403|
+| 特权和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
+| 主题作品 ID/购买/设备类型的概念证明| 是| 正在匹配到游戏必须允许指定的标题声明，设备类型组合的匹配。 | 403|
 
 <a id="ID4E3C"></a>
 
@@ -108,4 +108,4 @@ ms.locfileid: "3961376"
 
 ##### <a name="parent"></a>Parent 的子磁盘）  
 
-[/serviceconfigs/ {scid} /hoppers/ {name} / 统计数据](uri-serviceconfigsscidhoppershoppernamestats.md)
+[/serviceconfigs/{scid}/hoppers/{name}/stats](uri-serviceconfigsscidhoppershoppernamestats.md)

@@ -1,9 +1,9 @@
 ---
-title: 删除 (/users/xuid({xuid})/devices/current/titles/current)
+title: DELETE (/users/xuid({xuid})/devices/current/titles/current)
 assetID: 3bf75247-0a2a-0e4c-afcc-9e7654a89648
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddevicescurrenttitlescurrentdelete.html
 author: KevinAsgari
-description: " 删除 (/users/xuid({xuid})/devices/current/titles/current)"
+description: " DELETE (/users/xuid({xuid})/devices/current/titles/current)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 512cb5d65279a461937d91929284b2eb1921ec00
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962776"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981125"
 ---
-# <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a>删除 (/users/xuid({xuid})/devices/current/titles/current)
-删除结束游戏，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
+# <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a>DELETE (/users/xuid({xuid})/devices/current/titles/current)
+删除关闭标题，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EZ)
   * [授权](#ID4EEB)
@@ -46,8 +46,8 @@ ms.locfileid: "3962776"
 | --- | --- | --- | --- | --- | --- | --- | 
 | XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 已禁止| 
 | titleId| 是| 职务标题的 Id| 403 已禁止| 
-| deviceId| 是针对 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
-| deviceType| 是针对 Web 除外| 调用方的 deviceType| 403 已禁止| 
+| deviceId| 是所有 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
+| deviceType| Web 除是| 调用方的 deviceType| 403 已禁止| 
   
 <a id="ID4ERD"></a>
 
@@ -57,8 +57,8 @@ ms.locfileid: "3962776"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 示例值： 3，vnext。| 
-| Content-Type| 字符串| 示例值的请求的正文的 mime 类型： 应用程序/json。| 
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 示例值： 3，vnext。| 
+| Content-Type| 字符串| 请求正文中的示例值的 mime 类型： 应用程序/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
   
@@ -69,7 +69,7 @@ ms.locfileid: "3962776"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 1。| 
   
 <a id="ID4EVG"></a>
 

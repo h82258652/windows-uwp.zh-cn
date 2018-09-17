@@ -1,9 +1,9 @@
 ---
-title: 获取 (/users/ {ownerId} / 摘要)
+title: GET (/users/{ownerId}/summary)
 assetID: 754190c9-b15d-f34b-1dca-5c92f6f67d12
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummaryget.html
 author: KevinAsgari
-description: " 获取 (/users/ {ownerId} / 摘要)"
+description: " GET (/users/{ownerId}/summary)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960278"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986897"
 ---
-# <a name="get-usersowneridsummary"></a>获取 (/users/ {ownerId} / 摘要)
+# <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 从调用方的角度来看，获取有关所有者的摘要数据。
 
   * [URI 参数](#ID4EQ)
@@ -37,7 +37,7 @@ ms.locfileid: "3960278"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "3960278"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl 协定版本| 字符串| 生成此请求应定向到的服务名称/号。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
+| x xbl 协定版本| 字符串| 生成此请求应定向到该服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
 | 接受| 字符串| 内容类型可接受。 所有回复将都对<code>application/json</code>。|
 
 <a id="ID4EXE"></a>
@@ -85,7 +85,7 @@ ms.locfileid: "3960278"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 400| 错误请求| 用户 Id 的格式不正确。|
-| 403| 已禁止| 无法分析 XUID 声明与授权标头中。|
+| 403| 已禁止| 在授权标头，无法分析 XUID 声明。|
 
 <a id="ID4EZG"></a>
 
@@ -136,4 +136,4 @@ ms.locfileid: "3960278"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 摘要](uri-usersowneridsummary.md)
+[/users/{ownerId}/summary](uri-usersowneridsummary.md)

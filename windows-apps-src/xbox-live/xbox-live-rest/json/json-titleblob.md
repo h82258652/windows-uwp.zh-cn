@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956094"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981853"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
-包含有关从存储游戏的信息。 
+包含有关作品存储中的信息。 
 <a id="ID4EP"></a>
 
  
@@ -33,7 +33,7 @@ TitleBlob 对象具有以下规范。
 | 显示名称| 字符串| [可选]向用户显示的文件的名称。| 
 | etag| 字符串| 标记中使用的文件下载并上传请求。| 
 | fileName| 字符串| 文件的名称。| 
-| 大小| 64 位有符号的整数| 以字节为单位的文件大小。| 
+| 大小| 64 位有符号的整数| 以字节为单位的文件的大小。| 
 | smartBlobType| 字符串| [可选]数据类型。 可能的值为： 配置，json、 二进制文件。| 
   
 <a id="ID4E6C"></a>
@@ -65,6 +65,6 @@ TitleBlob 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
    

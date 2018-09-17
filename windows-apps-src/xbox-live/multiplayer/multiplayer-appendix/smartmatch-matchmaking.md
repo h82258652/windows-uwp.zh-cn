@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fe8ad244b9b7a650af4fc77c4adbb1805023ecf
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957570"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983723"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -107,7 +107,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 游戏指定匹配票证会话内的各成员的每个成员属性。 通过使用“matchAttrs”的属性名称并调用 MultiplayerSession.SetCurrentUserMemberCustomPropertyJson 方法来对它们进行设置。 此调用将 /members/{index}/properties/custom/matchAttrs 字段中的属性置于票证会话中的每个玩家上。
 
-匹配过程将"平展"每个成员为单个票证级别属性，基于为漏斗的 Xbox Live 配置 UI 中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上进行配置。
+匹配过程将"平展"每个成员为单个票证级别属性，基于为漏斗的 Xbox Live 配置 UI 中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上配置。
 
 
 ### <a name="making-the-match"></a>进行匹配
@@ -177,7 +177,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置都都通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
@@ -192,7 +192,7 @@ SmartMatch 匹配的所有配置都都通过[Xbox 开发人员门户 (XDP)](http
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-与配置的 XDP 或开发人员中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起的漏斗中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+使用配置的 XDP 或开发人员中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置

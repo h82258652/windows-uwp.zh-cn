@@ -1,9 +1,9 @@
 ---
-title: / 用户/xuid ({xuid}) /groups/ {名字对象}
+title: /users/xuid({xuid})/groups/{moniker}
 assetID: 7c73236b-95ee-723b-e5e0-68252c953e14
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmoniker.html
 author: KevinAsgari
-description: " / 用户/xuid ({xuid}) /groups/ {名字对象}"
+description: " /users/xuid({xuid})/groups/{moniker}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 356afd69483968a3edd836eb9e031bc8fcfafd4c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964536"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984991"
 ---
-# <a name="usersxuidxuidgroupsmoniker"></a>/ 用户/xuid ({xuid}) /groups/ {名字对象}
+# <a name="usersxuidxuidgroupsmoniker"></a>/users/xuid({xuid})/groups/{moniker}
 访问 presencerecord，他的一组。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -38,9 +38,9 @@ ms.locfileid: "3964536"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/ 用户/xuid ({xuid}) /groups/ {名字对象})](uri-usersxuidgroupsmonikerget.md)
+[GET (/users/xuid({xuid})/groups/{moniker} )](uri-usersxuidgroupsmonikerget.md)
 
-&nbsp;&nbsp;获取一组 presencerecord，他的。
+&nbsp;&nbsp;获取 presencerecord，他的一组。
  
 <a id="ID4EHC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "3964536"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[存在 Uri](atoc-reference-presence.md)
+[状态 URI](atoc-reference-presence.md)
 
    

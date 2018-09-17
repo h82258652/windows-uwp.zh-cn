@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me
+title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 assetID: a6c2fa17-8bed-d0df-d7ff-db1aa60f44b3
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me"
+description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7e61fe76fc0f322c93d55448d53ee6444ffec5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956876"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982655"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me
-支持删除操作，以删除会话成员。
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
+支持删除操作，删除会话成员。
 <a id="ID4EO"></a>
 
 
@@ -41,14 +41,14 @@ sessiondirectory.xboxlive.com
 | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4EOC"></a>
 
 
 ## <a name="valid-methods"></a>有效的方法
 
-[删除 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名} / 成员/me)](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
+[DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
 
 &nbsp;&nbsp;从会话中删除成员。
 
@@ -62,4 +62,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)

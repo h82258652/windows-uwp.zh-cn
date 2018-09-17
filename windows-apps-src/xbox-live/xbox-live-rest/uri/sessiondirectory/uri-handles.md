@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d6833309ce990aee72fd07deab9ecde04eca3b0e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956464"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982379"
 ---
 # <a name="handles"></a>/handles
-支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果需要会话。 
+支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于情况下，使用模板合约 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -42,7 +42,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有效的方法
 
-[发布 （/ 处理）](uri-handlespost.md)
+[POST (/handles)](uri-handlespost.md)
 
 &nbsp;&nbsp;设置用户的当前活动，多人游戏会话，并邀请会话成员，如果需要。
  
@@ -56,6 +56,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)
 
    

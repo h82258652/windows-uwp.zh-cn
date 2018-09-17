@@ -1,9 +1,9 @@
 ---
-title: /media/ {marketplaceId} / 详细信息
+title: /media/{marketplaceId}/details
 assetID: bc8758ed-2f90-b501-5c3f-6f253f02d754
 permalink: en-us/docs/xboxlive/rest/uri-medialocaledetails.html
 author: KevinAsgari
-description: " /media/ {marketplaceId} / 详细信息"
+description: " /media/{marketplaceId}/details"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956096"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984749"
 ---
-# <a name="mediamarketplaceiddetails"></a>/media/ {marketplaceId} / 详细信息
-返回提供详细信息和元数据有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。
+# <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
+详细信息和元数据，产品/服务返回有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。
  
 API 不同于相关的 API 和浏览 API 的详细信息 (当 passin ID 中的) 为这些 API 返回显式或隐式方法，与 fiven ID 相关联的其他项目的信息，而详细信息 API 返回的其他信息有关相同的项。
  
@@ -41,22 +41,22 @@ API 不同于相关的 API 和浏览 API 的详细信息 (当 passin ID 中的) 
 | XboxHexTitle| Y| Y| N| N| N| N| N| Y| 
 | ProviderContentId| N| N| Y| N| N| Y| N| Y| 
  
-  * [参数说明](#ID4EEH)
+  * [参数的说明](#ID4EEH)
   * [URI 参数](#ID4EUH)
  
 <a id="ID4EEH"></a>
 
  
-## <a name="parameter-notes"></a>参数说明
+## <a name="parameter-notes"></a>参数的说明
  
 <a id="ID4EIH"></a>
 
  
 ### <a name="providercontentid"></a>ProviderContentId
  
-这是用于查找提供商例如特定 id。 Netflix Id 或 Hulu id。
+这是用于查找提供程序例如特定 id。 Netflix Id 或 Hulu id。
  
-ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderContentIds 是唯一的 ID 可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符之间什么是 delimieter Id 之间没有多义性，什么是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
+ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderContentIds 是唯一的 ID，可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符，什么是 Id 之间 delimieter 之间没有多义性和内容是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
    
 <a id="ID4EUH"></a>
 
@@ -72,9 +72,9 @@ ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderCon
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/media/ {marketplaceId} / 详细信息)](uri-medialocaledetailsget.md)
+[GET (/media/{marketplaceId}/details)](uri-medialocaledetailsget.md)
 
-&nbsp;&nbsp;返回提供详细信息和元数据有关的一个或多个项目。 
+&nbsp;&nbsp;详细信息和元数据，产品/服务返回有关的一个或多个项目。 
  
 <a id="ID4EABAC"></a>
 
@@ -86,7 +86,7 @@ ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderCon
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 Uri](atoc-reference-marketplace.md)
+[市场 URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EMBAC"></a>
@@ -94,11 +94,11 @@ ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderCon
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

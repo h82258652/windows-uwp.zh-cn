@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, Windows 10, Xbox one, 特别推荐的统计数据和排行榜, 排行榜, 统计数据 2017, Windows 开发人员中心
 ms.openlocfilehash: ed965c4d7e2c15e76494fd197808c7f47db2d584
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964576"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982199"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>在 Windows 开发人员中心上配置 2017 特别推荐的统计数据和排行榜
 
@@ -23,7 +23,7 @@ ms.locfileid: "3964576"
 
 ![游戏中心成就页面的屏幕截图](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png)上图显示特别推荐的统计数据在标题 GameHub 中的效果。 特别推荐的统计数据带红色方框显示。
 
-使用 Data Platform 2017，只需要配置用于精选到玩家游戏中心页面中的社交排行榜的统计数据。
+使用 Data Platform 2017，你只需要配置用于精选到玩家游戏中心页面中的社交排行榜的统计数据。
 
 可以使用 Windows 开发人员中心配置与你的游戏关联的特别推荐的统计数据和排行榜。 通过执行以下操作添加配置：
 

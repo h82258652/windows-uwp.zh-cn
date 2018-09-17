@@ -1,9 +1,9 @@
 ---
-title: 成就标题历史记录 Uri
+title: 游戏成就历史记录 URI
 assetID: a7499a25-d957-2ab9-fe47-f2615e5f2ea5
 permalink: en-us/docs/xboxlive/rest/atoc-reference-titlehistoryv2.html
 author: KevinAsgari
-description: " 成就标题历史记录 Uri"
+description: " 游戏成就历史记录 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 82d6dc051911ea04b685ffaeb21f821241bec77d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956266"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988931"
 ---
-# <a name="achievement-title-history-uris"></a>成就标题历史记录 Uri
+# <a name="achievement-title-history-uris"></a>游戏成就历史记录 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务相关的成就*游戏历史记录*。 在所有平台上运行的游戏均可读取此历史记录的信息。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务相关的成就*游戏历史记录*。 在所有平台上运行的游戏均可读取此历史记录的信息。
  
 这些 Uri 的域是 achievements.xboxlive.com。
  
@@ -31,7 +31,7 @@ ms.locfileid: "3956266"
 
 [/users/xuid({xuid})/history/titles](uri-titlehistoryusersxuidhistorytitlesv2.md)
 
-&nbsp;&nbsp;提供访问用户的成就相关游戏历史记录。
+&nbsp;&nbsp;提供访问用户的成就相关的游戏历史记录。
  
 <a id="ID4EMB"></a>
 
@@ -43,6 +43,6 @@ ms.locfileid: "3956266"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
 
    

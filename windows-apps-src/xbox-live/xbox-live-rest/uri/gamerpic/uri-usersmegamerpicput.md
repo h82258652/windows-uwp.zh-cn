@@ -1,9 +1,9 @@
 ---
-title: PUT （/用户/me/玩家图片）
+title: PUT (/users/me/gamerpic)
 assetID: ddf71c62-197d-a81d-35a7-47c6dc9e1b0c
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpicput.html
 author: KevinAsgari
-description: " PUT （/用户/me/玩家图片）"
+description: " PUT (/users/me/gamerpic)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c8c8f4297bb671f8e90c233ccf98dc2cf0730ad
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964298"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984169"
 ---
-# <a name="put-usersmegamerpic"></a>PUT （/用户/me/玩家图片）
-上传 1080 x 1080 玩家图片。 
+# <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
+用于上传 1080 x 1080 玩家图片。 
   * [请求正文](#ID4EQ)
   * [HTTP 状态代码](#ID4EZ)
   * [响应正文](#ID4EXC)
@@ -29,7 +29,7 @@ ms.locfileid: "3964298"
  
 ## <a name="request-body"></a>请求正文
  
-请求正文是玩家图片 （1080 x 1080 PNG 文件）。
+请求正文是玩家头像 （1080 x 1080 PNG 文件）。
   
 <a id="ID4EZ"></a>
 

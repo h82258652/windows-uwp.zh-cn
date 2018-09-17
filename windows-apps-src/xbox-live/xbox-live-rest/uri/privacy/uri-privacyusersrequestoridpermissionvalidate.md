@@ -1,9 +1,9 @@
 ---
-title: /users/ {requestorId} / 权限/验证
+title: /users/{requestorId}/permission/validate
 assetID: 400a9721-bf43-76df-4cd1-9f2ae6ca5035
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidate.html
 author: KevinAsgari
-description: " /users/ {requestorId} / 权限/验证"
+description: " /users/{requestorId}/permission/validate"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: faa0325a8540e1e3df9674a4acab2ab33e93dceb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957190"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988825"
 ---
-# <a name="usersrequestoridpermissionvalidate"></a>/users/ {requestorId} / 权限/验证
+# <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
   * [URI 参数](#ID4EQ)
  
@@ -36,13 +36,13 @@ ms.locfileid: "3957190"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 （/users/ {requestorId} / 权限/验证）](uri-privacyusersrequestoridpermissionvalidateget.md)
+[GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
 &nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作是或否答案。
 
-[POST （/users/ {requestorId} / 权限/验证）](uri-privacyusersrequestoridpermissionvalidatepost.md)
+[POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行一组的目标用户指定的动作 yes 或 no 答案的一组。
+&nbsp;&nbsp;获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
  
 <a id="ID4EAC"></a>
 
@@ -51,7 +51,7 @@ ms.locfileid: "3957190"
  
 <a id="ID4ECC"></a>
 
-   [隐私 Uri](atoc-reference-privacyv2.md)
+   [隐私 URI](atoc-reference-privacyv2.md)
 
  [PermissionId 枚举](../../enums/privacy-enum-permissionid.md)
 

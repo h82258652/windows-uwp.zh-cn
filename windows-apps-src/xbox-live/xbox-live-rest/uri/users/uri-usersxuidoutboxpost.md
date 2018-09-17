@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 260d55104a2083270b1f5c2d2892826cc7b3d6ed
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956860"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985177"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
 指定的消息发送到收件人的列表。
@@ -25,7 +25,7 @@ ms.locfileid: "3956860"
   * [备注](#ID4EV)
   * [URI 参数](#ID4EAB)
   * [授权](#ID4ENB)
-  * [资源上的隐私设置的效果](#ID4EYB)
+  * [有关资源的隐私设置的效果](#ID4EYB)
   * [请求正文](#ID4E3F)
   * [HTTP 状态代码](#ID4ETCAC)
   * [响应正文](#ID4E1EAC)
@@ -35,7 +35,7 @@ ms.locfileid: "3956860"
 
 ## <a name="remarks"></a>备注
 
-此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
+此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。
 
 <a id="ID4EAB"></a>
 
@@ -51,16 +51,16 @@ ms.locfileid: "3956860"
 
 ## <a name="authorization"></a>授权
 
-你必须具有用户声明并有效金会员订阅发送用户消息。
+你必须具有用户声明和有效的金会员订阅发送用户消息。
 
 <a id="ID4EYB"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
 
-成功用户将消息发送到玩家，无论该玩家好友，会导致的结果代码为 200。 但是，如果向已阻止您的人发送一条消息，接收者不会收到消息，并将不会收到你的消息未成功任何指示。
+成功用户将消息发送到玩家，无论该玩家好友，会导致的结果代码为 200。 但是，如果你向已阻止你的任何人发送一条消息，接收者不会收到消息，并将不会收到你的消息未成功任何指示。
 
-在多少消息可发送每日和多少好友和非好友，如下所示还存在限制。
+在消息数量可以发送每日和多少好友和非好友，如下所示还存在限制。
 
    * 每个消息 20 陌生人
    * 200 陌生人 / 24 小时
@@ -76,9 +76,9 @@ ms.locfileid: "3956860"
 | 非好友用户| 每个人都| 200 OK|
 | 非好友用户| 仅好友| 200 OK|
 | 非好友用户| 阻止| 200 OK|
-| 第三方站点| 每个人都| 200 OK|
-| 第三方站点| 仅好友| 200 OK|
-| 第三方站点| 阻止| 200 OK|
+| 第三方网站| 每个人都| 200 OK|
+| 第三方网站| 仅好友| 200 OK|
+| 第三方网站| 阻止| 200 OK|
 
 <a id="ID4E3F"></a>
 
@@ -133,7 +133,7 @@ ms.locfileid: "3956860"
 | 403| XUID 不能转换。|
 | 404| 玩家代号无效或找不到用户。|
 | 409| 用户已达到每日由系统强制实施的限制。|
-| 500| 常规服务器端错误。|
+| 500| 常规的服务器端错误。|
 
 <a id="ID4E1EAC"></a>
 
@@ -158,4 +158,4 @@ ms.locfileid: "3956860"
 <a id="ID4EZFAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 856b387825734fb7c6973293bc7004a79d05c207
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956674"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986461"
 ---
 # <a name="standard-http-status-codes"></a>标准 HTTP 状态代码
  
-超文本传输协议 (HTTP) 标准介绍了大量的客户端请求的响应中的服务器返回的状态代码。 Xbox Live 服务方法返回 HTTP 协议符合状态代码，以描述请求的状态。
+超文本传输协议 (HTTP) 标准描述中向客户端请求的响应服务器返回的状态代码的数量。 Xbox Live 服务方法返回 HTTP 协议兼容的状态代码，以描述请求的状态。
  
-下面是返回的 Xbox Live 服务，以及它们的典型含义状态代码的列表。
+下面是返回的 Xbox Live 服务，以及它们典型的含义的状态代码的列表。
  
 <a id="ID4EAB"></a>
 
@@ -36,21 +36,21 @@ ms.locfileid: "3956674"
 | 202| 已接受| 已接受请求，但尚未完成。| 
 | 204| 任何内容| 请求已完成，但没有要返回的内容。| 
 | 301| 已永久移动| 该服务已移动到不同的 URI。| 
-| 302| 找到| 所请求的资源暂时在不同的 URI。| 
+| 302| 找到| 请求的资源暂时在不同的 URI。| 
 | 307| 临时重定向| 此资源的 URI 暂时已发生更改。| 
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 406| 不允许| 不支持资源版本。| 
-| 408| 请求超时| 请求时间太长，才能完成。| 
+| 408| 请求超时| 请求所花的时间太长，才能完成。| 
 | 409| 冲突| 由于与资源的当前状态的冲突未完成请求。| 
-| 410| 前面| 所请求的资源不再可用。| 
+| 410| 前面| 请求的资源不再可用。| 
 | 412| 前置条件失败| 服务器不满足请求者置于请求前置条件之一。| 
 | 416| 请求的范围无法满足| 所请求的范围不可用。| 
-| 500| 内部服务器错误| 服务器时遇到意外的情况，使其不能完成请求。| 
+| 500| 内部服务器错误| 服务器时遇到意外的情况，无法完成请求。| 
 | 501| 未实现| 服务器不支持所需满足该请求的功能。| 
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
  
 
 > [!NOTE] 
@@ -73,7 +73,7 @@ ms.locfileid: "3956674"
 <a id="ID4EKCAC"></a>
 
  
-##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a>参考[统一资源标识符 (URI) 引用](../uri/atoc-xboxlivews-reference-uris.md)
+##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a>引用[统一资源标识符 (URI) 引用](../uri/atoc-xboxlivews-reference-uris.md)
 
  [其他参考](atoc-xboxlivews-reference-additional.md)
 

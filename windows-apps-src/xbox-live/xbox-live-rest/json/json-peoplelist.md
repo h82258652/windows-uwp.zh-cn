@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 44102cb2ee1c996be9d0b42626f11a64ffb5c377
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956024"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986167"
 ---
 # <a name="peoplelist-json"></a>PeopleList (JSON)
 [用户](json-person.md)对象的集合。 
@@ -29,7 +29,7 @@ PeopleList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 人脉| [人](json-person.md)的数组| [Person](json-person.md)对象构成联系人列表。| 
+| 人脉| [人](json-person.md)的数组| [Person](json-person.md)对象构成人脉列表。| 
 | totalCount| 32 位无符号的整数| 可用设置中的[人员](json-person.md)对象总数。 对于页面，因为它代表整个集，而不只是最新的响应的大小，客户端可以使用此值。 示例值： 680。| 
   
 <a id="ID4EAC"></a>
@@ -75,7 +75,7 @@ PeopleList 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVC"></a>
@@ -83,8 +83,8 @@ PeopleList 对象具有以下规范。
  
 ##### <a name="reference"></a>参考 
 
-[获取 (/users/ {ownerId} / 个人)](../uri/people/uri-usersowneridpeopleget.md)
+[GET (/users/{ownerId}/people)](../uri/people/uri-usersowneridpeopleget.md)
 
- [POST (/users/ {ownerId} / 人/xuid)](../uri/people/uri-usersowneridpeoplexuidspost.md)
+ [POST (/users/{ownerId}/people/xuids)](../uri/people/uri-usersowneridpeoplexuidspost.md)
 
    

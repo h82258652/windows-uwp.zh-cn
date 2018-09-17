@@ -1,7 +1,7 @@
 ---
 author: jnHs
 Description: The Packages page is where you upload all of the package files (.appxupload, .appx, .appxbundle, and/or .xap) for the app that you're submitting.
-title: 上载应用包
+title: 上传应用包
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.author: wdg-dev-content
 ms.date: 5/10/2018
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963273"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990172"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
 你可以在**程序包**页上载要提交的应用的所有程序包文件（.appx、.appxupload、.appxbundle 和/或 .xap）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。 当客户下载应用时，应用商店将自动向每个客户提供最适用于其设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
-有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还需要了解[如何版本号可能会影响哪些程序包交付给特定客户](package-version-numbering.md)以及[如何将程序包分配给不同的操作系统](guidance-for-app-package-management.md)。
+有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还需要了解[如何版本号可能会影响哪些程序包交付给特定的客户](package-version-numbering.md)，以及[如何将程序包分配给不同的操作系统](guidance-for-app-package-management.md)。
 
 ## <a name="uploading-packages-to-your-submission"></a>将程序包上载到你的提交
 

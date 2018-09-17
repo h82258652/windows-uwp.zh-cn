@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
 ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962510"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984765"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -49,7 +49,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 
-若要在 XDP 上创建作品，发布者创建一个产品组、 指定产品组，流派，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
+为在 XDP 上创建作品，发布者创建一个产品组、 指定产品组中，类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
 
 图 2. 产品组、产品、产品实例以及沙盒之间的关系。
 

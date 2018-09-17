@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bfae4eac9ecf0177026183cc25bac5526bbba62f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962310"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981557"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
@@ -34,7 +34,7 @@ DeviceEndpoint 对象具有以下规范。
 | 区域设置| 字符串| 必需。 发送到此终结点的通知所需的语言。 可以按优先顺序的逗号分隔的列表。 示例:"DE-DE、 EN-US、 en"。| 
 | 平台| 字符串| 可选。 当前受支持的值为"WindowsPhone"和"Windows"。 如果未指定，则将它派生的设备令牌。| 
 | platformVersion| 字符串| 可选。 此字符串的格式是特定于每个平台。 目前不使用此值。| 
-| systemId| GUID| 必需。 "应用"实例的唯一标识符 （设备/用户组合）。 最佳做法实施应用生成一个随机的 GUID 后安装/首次运行，且继续上后续的运行的应用使用该值。| 
+| systemId| GUID| 必需。 "应用实例"的唯一标识符 （设备/用户组合）。 最佳做法实施应用生成一个随机的 GUID 后安装/首次运行，且继续上后续的运行的应用中使用该值。| 
 | titleId| 32 位无符号的整数| 必需。 发出对服务调用的游戏的游戏 ID。| 
   
 <a id="ID4EGD"></a>
@@ -68,7 +68,7 @@ DeviceEndpoint 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>

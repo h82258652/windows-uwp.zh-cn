@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0ed4b66c50baa89432f44d53e313f042138b7de
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956500"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985201"
 ---
 # <a name="gamesession-json"></a>GameSession (JSON)
-多人游戏会话表示游戏数据的 JSON 对象。 
+多人游戏会话中表示游戏数据的 JSON 对象。 
 <a id="ID4ER"></a>
 
   
@@ -32,15 +32,15 @@ GameSession JSON 对象具有以下规范。
 | customData| 8 位无符号整数数组| 1024 字节的特定于游戏的会话数据。 此值不透明到服务器。 | 
 | 显示名称| 字符串| 显示名称的游戏的会话，128 个字符的最大长度。 此值不透明到服务器。 | 
 | hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置为 true 标记为只读，游戏会话提交到会话阻止进一步数据此字段。 | 
-| 关闭| 布尔值| 如果会话已关闭，并且没有更多玩家可以否则是已添加，并且 false，则为 true。 如果此值为 true，将拒绝加入会话的请求。 | 
+| 关闭| 布尔值| 如果会话已关闭，并且没有更多的玩家可以否则是已添加，并且 false，则为 true。 如果此值为 true，将拒绝请求加入会话。 | 
 | maxPlayers| 32 位有符号的整数| 可以同时在会话中的玩家的最大数。 值的范围是 2-16。 一旦会话包含的最大玩家数，进一步请求加入会话被拒绝。 | 
-| playersCanBeRemovedBy| PlayerAcl| 一个值，指示允许从会话中删除其他玩家的玩家。 可能的值为 NoOne、 自行，和 AnyPlayer。 | 
+| playersCanBeRemovedBy| PlayerAcl| 一个值，指示允许从会话中删除其他玩家的玩家。 可能的值为 NoOne、 自，和 AnyPlayer。 | 
 | 名单| 玩家对象的数组| 在会话中的玩家的数组。 名单包含当前玩家和以前在会话中，但保留的玩家。 名单中玩家的顺序永远不会更改。 新玩家将添加到该数组的末尾。 | 
 | seatsAvailable| 32 位有符号的整数| 仍可以加入会话的最大玩家数达到之前的玩家数。 此值是只读的并且始终小于 maxPlayers 字段的值。 | 
-| sessionId| 字符串| 在创建会话时分配由 MPSD 会话 ID。 访问存储在会话中的信息时，此值通常包含 URI 中。| 
+| sessionId| 字符串| 在创建会话时分配 MPSD 会话 ID。 访问存储在会话中的信息时，此值通常包含 URI 中。| 
 | titleId| 32 位无符号的整数| 游戏创建游戏会话的 ID。| 
 | variant| 32 位有符号的整数| 游戏的变体。 此值不透明到服务器。| 
-| 可见性| VisibilityLevel| 一个值，指示会话可见性。 可能的值为： PlayersCurrentlyInSession、 PlayersEverInSession，并且所有人。| 
+| 可见性| VisibilityLevel| 指示会话可见性的值。 可能的值为： PlayersCurrentlyInSession、 PlayersEverInSession，并且所有人。| 
   
 <a id="ID4EEF"></a>
 
@@ -78,7 +78,7 @@ GameSession JSON 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EZF"></a>
@@ -90,6 +90,6 @@ GameSession JSON 对象具有以下规范。
 
  [GameSessionSummary (JSON)](json-gamesessionsummary.md)
 
- [玩家 (JSON)](json-player.md)
+ [Player (JSON)](json-player.md)
 
    

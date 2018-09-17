@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名}
+title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}
 assetID: 55ce6459-1714-49bc-6231-b547ddf04143
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名}"
+description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 43054e909ce6e4a3d472a6a6480cd0812afa5ad4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964334"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989989"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名}
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}
 支持创建和检索会话的 PUT 和 GET 操作。
 <a id="ID4EO"></a>
 
@@ -34,18 +34,18 @@ sessiondirectory.xboxlive.com
 | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。| 
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。| 
 
 <a id="ID4EBC"></a>
 
 
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md)
+[GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md)
 
 &nbsp;&nbsp;获取会话对象。
 
-[PUT (/serviceconfigs/ {scid} {sessionTemplateName} /sessiontemplates/ /sessions/ {会话名})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md)
+[PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md)
 
 &nbsp;&nbsp;创建、 更新或加入会话。
 
@@ -59,4 +59,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)

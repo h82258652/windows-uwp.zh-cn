@@ -1,9 +1,9 @@
 ---
-title: 获取 (/handles/ {handleId} / 会话)
+title: GET (/handles/{handleId}/session)
 assetID: 1f22954c-e77b-69c2-63f4-741fbd965f8f
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionget.html
 author: KevinAsgari
-description: " 获取 (/handles/ {handleId} / 会话)"
+description: " GET (/handles/{handleId}/session)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab3214ca9b2cb2ff8ace11706ceda22885598e1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958914"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984141"
 ---
-# <a name="get-handleshandleidsession"></a>获取 (/handles/ {handleId} / 会话)
+# <a name="get-handleshandleidsession"></a>GET (/handles/{handleId}/session)
 获取指定的句柄标识符会话对象。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此方法由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EDB)
@@ -75,4 +75,4 @@ ms.locfileid: "3958914"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/handles/ {handleId} / 会话](uri-handleshandleidsession.md)
+[/handles/{handleId}/session](uri-handleshandleidsession.md)

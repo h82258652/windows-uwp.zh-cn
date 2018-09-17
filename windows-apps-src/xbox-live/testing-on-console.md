@@ -1,7 +1,7 @@
 ---
 author: aablackm
 title: 在 Xbox One 主机上进行测试
-description: 了解如何在 Xbox Live 主机上的 Xbox Live 服务进行测试
+description: 了解如何测试 Xbox Live 主机上的 Xbox Live 服务
 ms.author: aablackm
 ms.date: 08/15/2018
 ms.topic: article
@@ -10,23 +10,23 @@ ms.technology: uwp
 keywords: windows 10，uwp，游戏，xbox，xbox live，xbox one
 ms.localizationpriority: low
 ms.openlocfilehash: 5500f6f396d6dae179e434283097c34274d9b829
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959572"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987385"
 ---
 # <a name="testing-on-the-xbox-one-console"></a>在 Xbox One 主机上进行测试
 
-开发你的游戏为主机的 Xbox One 系列时才自然想要能够测试你的游戏与实际的主机上的 Xbox Live 功能。 有几个选项来测试你的硬件上的作品。 你可以使用任何零售 Xbox One 主机来激活该控制台的开发人员模式下测试的通用 Windows 平台 (UWP) 游戏或应用。 此选项可供所有开发人员，并且是 Xbox Live 创意者计划开发人员的唯一选项。 ID@Xbox并且托管的合作伙伴的订购和使用 Xbox 开发工具包的选项。
+在开发你的游戏为主机的 Xbox One 系列时才自然想要能够测试你的游戏与实际的主机上的 Xbox Live 功能。 有几个选项来测试你的硬件上的作品。 可以使用任何零售 Xbox One 主机激活控制台的开发人员模式来测试通用 Windows 平台 (UWP) 游戏或应用。 此选项可供所有开发人员，并且是 Xbox Live 创意者计划开发人员的唯一选项。 ID@Xbox和托管的合作伙伴可以排序和使用 Xbox 开发工具包的选项。
 
 ## <a name="retail-console-testing-xbox-live-creators"></a>零售控制台测试： Xbox Live 创意者
 
-在零售 Xbox One 主机上的激活开发人员模式将允许你通过配对与 Visual Studio 生成到 Xbox One 主机部署 UWP 游戏和应用。 这是主机测试 Xbox Live 创意者计划开发人员的选项。 你将无法测试在零售 Xbox One 主机上的 XDK 游戏。
+在零售 Xbox One 主机上的激活开发人员模式将允许你通过使用 Visual Studio 生成配对，则为 Xbox One 主机部署 UWP 游戏和应用。 这是测试选项适用于 Xbox Live 创意者计划开发人员控制台。 你将无法测试在零售 Xbox One 主机上的 XDK 游戏。
 
 * 按照以允许开发测试零售主机上的[开发人员模式激活说明](../xbox-apps/devkit-activation.md)。  
-* 按照[设置 Xbox One 说明](../xbox-apps/development-environment-setup.md#setting-up-your-xbox-one)加载到 Xbox One 游戏。  
-* 按照将你的主机放回零售模式下或卸载零售控制台的开发环境的[开发人员模式停用说明](../xbox-apps/devkit-deactivation.md)。  
+* 按照[设置你的 Xbox One 说明](../xbox-apps/development-environment-setup.md#setting-up-your-xbox-one)加载到 Xbox One 游戏。  
+* 按照使你的主机返回到零售模式或卸载零售控制台的开发环境的[开发人员模式停用说明](../xbox-apps/devkit-deactivation.md)。  
 * 你的主机处于开发人员模式时你可以通过远程访问它通过你的电脑使用[适用于 Xbox 的 Windows 设备门户](../debug-test-perf/device-portal-xbox.md)。  
 
 ## <a name="xbox-development-kit-testing-idxbox-and-managed-partners"></a>Xbox 开发工具包测试：ID@Xbox和托管合作伙伴

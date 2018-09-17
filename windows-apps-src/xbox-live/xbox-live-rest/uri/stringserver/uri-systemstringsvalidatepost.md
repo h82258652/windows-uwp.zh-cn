@@ -1,9 +1,9 @@
 ---
-title: POST （/系统/字符串/验证）
+title: POST (/system/strings/validate)
 assetID: 6a59bc0b-8edd-87bf-efaf-f16efa3bedf7
 permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidatepost.html
 author: KevinAsgari
-description: " POST （/系统/字符串/验证）"
+description: " POST (/system/strings/validate)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964352"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985943"
 ---
-# <a name="post-systemstringsvalidate"></a>POST （/系统/字符串/验证）
+# <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
  
   * [备注](#ID4EV)
@@ -39,7 +39,7 @@ ms.locfileid: "3964352"
  
 
 > [!NOTE] 
-> 生成<b>VerifyStringResult</b>将仅报告第一个字符串中的有问题单词。 可能有其他冲突字符串中的字词。 如果你计划替换为有问题的字词，以使字符串可用，你应替换为有问题的单词或子字符串，然后重新检查要查找其他有问题的子字符串的字符串。  
+> 生成<b>VerifyStringResult</b>将仅报告第一个字符串中的有问题单词。 可能有其他冲突字符串中的字词。 如果你打算替换为有问题的字词，以使字符串可用，你应替换为有问题的单词或子字符串，然后重新验证要查找其他有问题的子字符串的字符串。  
 
  
   
@@ -89,7 +89,7 @@ ms.locfileid: "3964352"
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 所有字符串都已成功都处理。 这并不意味着所有字符串都必须积极的 Hresult。| 
+| 200| “确定”| 所有字符串都已成功都处理。 这并不意味着所有字符串都必须正面的 Hresult。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 406| 不允许| 缺少<b>内容类型： 应用程序/json</b>标头。| 

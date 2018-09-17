@@ -1,9 +1,9 @@
 ---
-title: /titles/ {titleId} / 变体
+title: /titles/{titleId}/variants
 assetID: bca30c8f-1f09-729f-4955-38b7809404eb
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidvariants.html
 author: KevinAsgari
-description: " /titles/ {titleId} / 变体"
+description: " /titles/{titleId}/variants"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a11cf42c068883368db159e5cf679e4f38755ec
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961864"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984029"
 ---
-# <a name="titlestitleidvariants"></a>/titles/ {titleId} / 变体
-URI 由客户端以获取可用的变体的标题。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+# <a name="titlestitleidvariants"></a>/titles/{titleId}/variants
+调用由客户端的游戏获取可用的变体的 URI。 有关这些 Uri 域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EIB)
@@ -32,7 +32,7 @@ URI 由客户端以获取可用的变体的标题。 这些 Uri 的域是`gamese
  
 | 参数| 说明| 
 | --- | --- | 
-| titleid| 游戏应在其中操作请求 ID。| 
+| titleid| 游戏应在其中操作该请求 ID。| 
   
 <a id="ID4EIB"></a>
 

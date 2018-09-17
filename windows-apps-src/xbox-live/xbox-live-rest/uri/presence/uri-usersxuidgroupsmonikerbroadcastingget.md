@@ -1,9 +1,9 @@
 ---
-title: 获取 (/ 用户/xuid ({xuid}) /groups/ {名字对象} / 广播)
+title: GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )
 assetID: 8a3df075-ccdf-18f2-ab0c-275f25cc22e3
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcastingget.html
 author: KevinAsgari
-description: " 获取 (/ 用户/xuid ({xuid}) /groups/ {名字对象} / 广播)"
+description: " GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dc10f18d7c1c38ac21ad6889943b8c6009f5af1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960334"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982839"
 ---
-# <a name="get-usersxuidxuidgroupsmonikerbroadcasting-"></a>获取 (/ 用户/xuid ({xuid}) /groups/ {名字对象} / 广播)
-检索与在 URI 中显示的 XUID 相关的组名字对象由指定的广播用户状态记录。 这些 Uri 的域是`userpresence.xboxlive.com`。
+# <a name="get-usersxuidxuidgroupsmonikerbroadcasting-"></a>GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )
+检索与显示在 URI 中的 XUID 相关的组名字对象由指定的广播用户状态记录。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
   * [查询字符串参数](#ID4EJB)
   * [授权](#ID4EKC)
-  * [资源上的隐私设置的效果](#ID4EQD)
+  * [有关资源的隐私设置的效果](#ID4EQD)
   * [需的请求标头](#ID4EEH)
   * [可选的请求标头](#ID4EMBAC)
   * [请求正文](#ID4EMCAC)
@@ -39,7 +39,7 @@ ms.locfileid: "3960334"
  
 ## <a name="remarks"></a>备注
  
-访问组名字对象由指定的广播用户状态记录与在 URI 中显示的 XUID。
+访问组名字对象由指定的广播用户状态记录与显示在 URI 中的 XUID。
   
 <a id="ID4E5"></a>
 
@@ -58,36 +58,36 @@ ms.locfileid: "3960334"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| level| 字符串| 返回所指定的此查询字符串的详细程度。 有效选项包括"用户"、"设备"、"标题"和"全部"。"用户"的级别是没有 DeviceRecord 嵌套对象的 presencerecord，他的对象。 级别"设备"是 presencerecord，他的和 DeviceRecord 的对象，而无需 TitleRecord 嵌套对象。 级别"标题"是 presencerecord，他、 DeviceRecord 和 TitleRecord 的对象，而 ActivityRecord 嵌套对象。 "全部"级别是整个记录，包括所有嵌套的对象。如果未提供此参数，该服务默认为标题级别 （即，它将返回为标题的细节此用户的状态）。| 
+| level| 字符串| 返回所指定的此查询字符串的详细的级别。 有效选项包括"用户"、"设备"、"标题"和"全部"。在级别"用户"是没有 DeviceRecord 嵌套对象的 presencerecord，他的对象。 级别"设备"是 presencerecord，他的和 DeviceRecord 的对象，而无需 TitleRecord 嵌套对象。 级别"标题"是 presencerecord，他、 DeviceRecord 和 TitleRecord 的对象，而 ActivityRecord 嵌套对象。 "全部"级别是整个记录，包括所有嵌套的对象。如果未提供此参数，该服务将默认为标题级别 （即，它将返回标题的细节此用户的状态）。| 
   
 <a id="ID4EKC"></a>
 
  
 ## <a name="authorization"></a>授权
  
-使用授权声明 | 声明| 类型| 是否必需？| 示例值| 
+使用的授权声明 | 声明| 类型| 是否必需？| 示例值| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | <b>Xuid</b>| 64 位有符号的整数| 是| 1234567890| 
   
 <a id="ID4EQD"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
  
-该服务将始终返回 200 正常如果请求本身是标准格式。 但是，它将筛选出信息从响应时不能将隐私检查。
+该服务将始终返回 200 正常如果请求本身是标准格式。 但是，它将过滤掉响应中的信息时不能将隐私检查。
  
-资源上的隐私设置的效果 | 发出请求的用户| 目标用户的隐私设置| 行为| 
+有关资源的隐私设置的效果 | 发出请求的用户| 目标用户的隐私设置| 行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 我| -| 所述。| 
 | 好友| 每个人都| 所述。| 
 | 好友| 仅好友| 所述。| 
-| 好友| 阻止| 所述的服务将筛选出的数据。| 
+| 好友| 阻止| 所述的服务筛选掉数据。| 
 | 非好友用户| 每个人都| 所述。| 
-| 非好友用户| 仅好友| 所述的服务将筛选出的数据。| 
-| 非好友用户| 阻止| 所述的服务将筛选出的数据。| 
-| 第三方站点| 每个人都| 所述的服务将筛选出的数据。| 
-| 第三方站点| 仅好友| 所述的服务将筛选出的数据。| 
-| 第三方站点| 阻止| 所述的服务将筛选出的数据。| 
+| 非好友用户| 仅好友| 所述的服务筛选掉数据。| 
+| 非好友用户| 阻止| 所述的服务筛选掉数据。| 
+| 第三方网站| 每个人都| 所述的服务筛选掉数据。| 
+| 第三方网站| 仅好友| 所述的服务筛选掉数据。| 
+| 第三方网站| 阻止| 所述的服务筛选掉数据。| 
   
 <a id="ID4EEH"></a>
 
@@ -97,7 +97,7 @@ ms.locfileid: "3960334"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 示例值： 3，vnext。| 
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 示例值： 3，vnext。| 
 | 接受| 字符串| 内容类型可接受。 只有一个存在支持<b>应用程序/json</b>，但它仍然必须指定在标头中。| 
 | 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。| 
 | Host| 字符串| 服务器的域名。 示例值： userpresence.xboxlive.com。| 
@@ -109,7 +109,7 @@ ms.locfileid: "3960334"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 1。| 
   
 <a id="ID4EMCAC"></a>
 
@@ -144,12 +144,12 @@ ms.locfileid: "3960334"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl 协定版本| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 示例值： 1，vnext。| 
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 示例值： 1，vnext。| 
 | Content-Type| 字符串| 请求正文的 mime 类型。 示例值：<b>应用程序/json</b>。| 
-| 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。 示例值:"无缓存"。| 
+| 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。 示例值:"非缓存"。| 
 | X XblCorrelationId| 字符串| 要关联服务器返回的内容和什么客户端接收的服务生成的值。 示例值:"4106d0bc-1cb3-47bd-83fd-57d041c6febe"。| 
 | X 内容类型选项| 字符串| 返回符合 SDL 的值。 示例值:"nosniff"。| 
-| 日期| 字符串| 日期/时间已发送消息。 示例值:"星期二，11 月 2012 年 17 10:33:31 格林威治标准时间"。| 
+| 日期| 字符串| 日期/时间发送消息。 示例值:"星期二，11 月 2012 年 17 10:33:31 格林威治标准时间"。| 
   
 <a id="ID4EMJAC"></a>
 
@@ -167,7 +167,7 @@ ms.locfileid: "3960334"
  
 ## <a name="response-body"></a>响应正文
  
-此 API 检索与在 URI 中显示的 XUID 相关的组名字对象由指定的广播用户状态记录。
+此 API 检索与显示在 URI 中的 XUID 相关的组名字对象由指定的广播用户状态记录。
  
 <a id="ID4EGLAC"></a>
 
@@ -272,6 +272,6 @@ ms.locfileid: "3960334"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 用户/xuid ({xuid}) /groups/ {名字对象}](uri-usersxuidgroupsmoniker.md)
+[/users/xuid({xuid})/groups/{moniker}](uri-usersxuidgroupsmoniker.md)
 
    

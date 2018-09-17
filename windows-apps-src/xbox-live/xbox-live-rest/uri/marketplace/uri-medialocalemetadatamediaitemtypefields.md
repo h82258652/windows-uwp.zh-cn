@@ -1,9 +1,9 @@
 ---
-title: /media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段
+title: /media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields
 assetID: fc9b556a-7fc7-64ec-cb5c-b5cabd2ab4ce
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypefields.html
 author: KevinAsgari
-description: " /media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段"
+description: " /media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f5bdcb8b854a8b71f232c8a1cc73cd12bc587015
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957308"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982609"
 ---
-# <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段
-访问一个可以从中预期的给定的 mediaitemtype 和 EDS 的给定的版本数据字段。 这些 Uri 的域是`eds.xboxlive.com`。
+# <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields
+访问从其中一个期待看到的数据，为给定的 mediaitemtype 和 EDS 的给定的版本字段。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -38,9 +38,9 @@ ms.locfileid: "3957308"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/media/ {marketplaceId} / 元数据/mediaItemTypes / {mediaItemType} / 字段)](uri-medialocalemetadatamediaitemtypefieldsget.md)
+[GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)](uri-medialocalemetadatamediaitemtypefieldsget.md)
 
-&nbsp;&nbsp;列出了一个可以从中预期的给定的 mediaitemtype 和 EDS 的给定的版本数据字段。
+&nbsp;&nbsp;列出了一个可以从中预期数据，为给定的 mediaitemtype 和 EDS 的给定的版本字段。
  
 <a id="ID4ELC"></a>
 
@@ -52,7 +52,7 @@ ms.locfileid: "3957308"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[市场 Uri](atoc-reference-marketplace.md)
+[市场 URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EXC"></a>
@@ -60,11 +60,11 @@ ms.locfileid: "3957308"
  
 ##### <a name="further-information"></a>详细信息 
 
-[EDS 公共标头](../../additional/edscommonheaders.md)
+[EDS 通用标头](../../additional/edscommonheaders.md)
 
  [EDS 参数](../../additional/edsparameters.md)
 
- [EDS 查询精简将](../../additional/edsqueryrefiners.md)
+ [EDS 查询优化器](../../additional/edsqueryrefiners.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

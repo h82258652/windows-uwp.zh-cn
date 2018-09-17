@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f67cfd1359a55d109d6e110ec6e5257cb34f3bb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957296"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987437"
 ---
 # <a name="serviceconfigsscidsessiontemplates"></a>/serviceconfigs/{scid}/sessiontemplates
-支持 GET 操作以检索一组的 MPSD 会话模板。 
+支持获取操作来检索一组的 MPSD 会话模板。 
 <a id="ID4EO"></a>
 
  
@@ -39,9 +39,9 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有效的方法
 
-[获取 (/serviceconfigs/ {scid} / sessiontemplates)](uri-serviceconfigsscidsessiontemplatesget.md)
+[GET (/serviceconfigs/{scid}/sessiontemplates)](uri-serviceconfigsscidsessiontemplatesget.md)
 
-&nbsp;&nbsp;检索 MPSD 会话模板的一组。
+&nbsp;&nbsp;检索一组的 MPSD 会话模板。
  
 <a id="ID4EZB"></a>
 
@@ -53,6 +53,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)
 
    

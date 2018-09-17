@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ac24fb580696f1524ce7a6cf09dc1e492e9d2378
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958526"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986603"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -56,9 +56,9 @@ ms.locfileid: "3958526"
 | --- | --- | --- | --- | --- | --- | --- | 
 | XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 已禁止| 
 | titleId| 是| 职务标题的 Id| 403 已禁止| 
-| deviceId| 是针对 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
-| deviceType| 是针对 Web 除外| 调用方的 deviceType| 403 已禁止| 
-| sandboxId| 是，对于来自调用的 | 调用方的沙盒| 403 已禁止| 
+| deviceId| 是所有 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
+| deviceType| Web 除是| 调用方的 deviceType| 403 已禁止| 
+| sandboxId| 对于来自调用的是 | 调用方的沙盒| 403 已禁止| 
   
 <a id="ID4ENE"></a>
 
@@ -68,8 +68,8 @@ ms.locfileid: "3958526"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 示例值： 3，vnext。| 
-| Content-Type| 字符串| 示例值的请求的正文的 mime 类型： 应用程序/json。| 
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 示例值： 3，vnext。| 
+| Content-Type| 字符串| 请求正文中的示例值的 mime 类型： 应用程序/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
   
@@ -80,14 +80,14 @@ ms.locfileid: "3958526"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 1。| 
   
 <a id="ID4ERH"></a>
 
  
 ## <a name="request-body"></a>请求正文
  
-请求对象是[TitleRequest](../../json/json-titlerequest.md)。 更新实际存在的正文中的属性。 任何属性都不是正文的一部分但存在服务器上将不会修改。
+请求对象是[TitleRequest](../../json/json-titlerequest.md)。 更新实际存在的正文中的属性。 任何属性，都不是正文的一部分但存在服务器上将不会修改。
  
 <a id="ID4EAAAC"></a>
 
@@ -132,7 +132,7 @@ ms.locfileid: "3958526"
  
 ##### <a name="further-information"></a>详细信息 
 
-[市场 Uri](../marketplace/atoc-reference-marketplace.md)
+[市场 URI](../marketplace/atoc-reference-marketplace.md)
 
  [其他参考](../../additional/atoc-xboxlivews-reference-additional.md)
 

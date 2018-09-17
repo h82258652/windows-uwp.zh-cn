@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次
+title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch
 assetID: 4f8e1ece-2ba8-9ea4-e551-2a69c499d7b9
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次"
+description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc0850d1fda69eae1c0f3774a3146de33c7b4c8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960376"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982029"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次
-支持在会话模板级别创建批处理查询 POST 操作。
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch
+支持 POST 操作在会话模板级别创建批处理的查询。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此方法由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -44,7 +44,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/serviceconfigs/ {scid} /sessiontemplates/ {sessionTemplateName} / 批次)](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.md)
+[POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.md)
 
 &nbsp;&nbsp;在多个 Xbox 用户 Id 创建批处理查询。
 
@@ -58,4 +58,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)

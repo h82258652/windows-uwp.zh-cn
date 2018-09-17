@@ -1,9 +1,9 @@
 ---
-title: 隐私 Uri
+title: 隐私 URI
 assetID: 5eff3264-ef2a-5ec4-2e68-e5f4be2c0a47
 permalink: en-us/docs/xboxlive/rest/atoc-reference-privacyv2.html
 author: KevinAsgari
-description: " 隐私 Uri"
+description: " 隐私 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bed703722b6c2d03cbc7b5e9f1b8be08ef38c7f0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961364"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984931"
 ---
-# <a name="privacy-uris"></a>隐私 Uri
+# <a name="privacy-uris"></a>隐私 URI
  
-本部分提供了从出于*隐私*的 Xbox Live 服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供了从 Xbox Live 服务的*隐私*的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
  
 仅在 Windows 8 上运行的游戏，Xbox 360 或 Windows Phone 上设备可以使用此服务。
  
@@ -31,15 +31,15 @@ ms.locfileid: "3961364"
  
 ## <a name="in-this-section"></a>本部分内容
 
-[/users/ {ownerId} / 人/静音](uri-privacyusersowneridpeoplemute.md)
+[/users/{ownerId}/people/mute](uri-privacyusersowneridpeoplemute.md)
 
 &nbsp;&nbsp;访问用户的静音列表。
 
-[/users/ {requestorId} / 权限/验证](uri-privacyusersrequestoridpermissionvalidate.md)
+[/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
-[/users/ {ownerId} / 人/避免](uri-privacyusersxuidpeopleavoid.md)
+[/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)
 
-&nbsp;&nbsp;访问用户避免列表
+&nbsp;&nbsp;访问用户的避免列表
  
 <a id="ID4E2B"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "3961364"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[统一资源标识符 (URI) 引用](../atoc-xboxlivews-reference-uris.md)
+[统一资源标识符 (URI) 参考](../atoc-xboxlivews-reference-uris.md)
 
    

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957494"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983205"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
-有关系统上次看到的用户，当用户在没有有效 DeviceRecord 提供的信息。 
+有关系统上次看到用户，当用户在没有有效 DeviceRecord 可用的信息。 
 <a id="ID4EN"></a>
 
  
@@ -29,10 +29,10 @@ LastSeenRecord 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| deviceType| 字符串| 用户在其上已过去存在的设备类型。| 
-| titleId| 32 位无符号的整数| 用户在其已过去存在标题的标识符。| 
-| titleName| 字符串| 用户在其已过去呈现的标题的名称。| 
-| 时间戳| DateTime| 指示当用户已过去存在 UTC 时间戳。| 
+| deviceType| 字符串| 用户在其的最后一个呈现设备的类型。| 
+| titleId| 32 位无符号的整数| 用户在其的最后一个呈现标题的标识符。| 
+| titleName| 字符串| 用户在其的最后一个呈现的标题的名称。| 
+| 时间戳| DateTime| 用于指示当用户的最后一个呈现的 UTC 时间戳。| 
   
 <a id="ID4EHC"></a>
 
@@ -61,7 +61,7 @@ LastSeenRecord 对象具有以下规范。
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[JavaScript 对象表示法 (JSON) 对象引用](atoc-xboxlivews-reference-json.md)
+[JavaScript 对象表示法 (JSON) 对象参考](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E5C"></a>

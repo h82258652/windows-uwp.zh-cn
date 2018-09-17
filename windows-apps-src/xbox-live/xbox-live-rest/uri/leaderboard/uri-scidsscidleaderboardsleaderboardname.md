@@ -1,9 +1,9 @@
 ---
-title: /scids/ {scid} /leaderboards/ {leaderboardname}
+title: /scids/{scid}/leaderboards/{leaderboardname}
 assetID: 16345a17-6025-5453-5694-eaf97f0e83e9
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardname.html
 author: KevinAsgari
-description: " /scids/ {scid} /leaderboards/ {leaderboardname}"
+description: " /scids/{scid}/leaderboards/{leaderboardname}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 797a557b4bb7d443ecfdce1f136f5db2079b1990
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960336"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983925"
 ---
-# <a name="scidsscidleaderboardsleaderboardname"></a>/scids/ {scid} /leaderboards/ {leaderboardname}
+# <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
 访问预定义的全球排行榜。 这些 Uri 的域是`leaderboards.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
@@ -58,6 +58,6 @@ ms.locfileid: "3960336"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[排行榜 Uri](atoc-reference-leaderboard.md)
+[排行榜 URI](atoc-reference-leaderboard.md)
 
    

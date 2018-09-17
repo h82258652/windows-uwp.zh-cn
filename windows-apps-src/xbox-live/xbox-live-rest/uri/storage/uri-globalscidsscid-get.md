@@ -1,9 +1,9 @@
 ---
-title: 获取 (/ 全局/scid / {scid})
+title: GET (/global/scids/{scid})
 assetID: 7c8cd028-e94a-45e1-fe34-c9deae2d6042
 permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid-get.html
 author: KevinAsgari
-description: " 获取 (/ 全局/scid / {scid})"
+description: " GET (/global/scids/{scid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4087c9857e657bd2621ab1fdb85d06abbfd8f5ef
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955918"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988335"
 ---
-# <a name="get-globalscidsscid"></a>获取 (/ 全局/scid / {scid})
+# <a name="get-globalscidsscid"></a>GET (/global/scids/{scid})
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
@@ -52,7 +52,7 @@ ms.locfileid: "3955918"
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EWC"></a>
 
@@ -77,9 +77,9 @@ ms.locfileid: "3955918"
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求时间太长，才能完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 408| 请求超时 | 请求所花的时间太长，才能完成。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
   
 <a id="ID4EUAAC"></a>
 
@@ -116,7 +116,7 @@ ms.locfileid: "3955918"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 全局/scid / {scid}](uri-globalscidsscid.md)
+[/global/scids/{scid}](uri-globalscidsscid.md)
 
   
 <a id="ID4E1BAC"></a>

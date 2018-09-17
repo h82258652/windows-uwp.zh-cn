@@ -1,9 +1,9 @@
 ---
-title: 获取 （/users/ {ownerId} / 人/避免）
+title: GET (/users/{ownerId}/people/avoid)
 assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
 author: KevinAsgari
-description: " 获取 （/users/ {ownerId} / 人/避免）"
+description: " GET (/users/{ownerId}/people/avoid)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963652"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981203"
 ---
-# <a name="get-usersowneridpeopleavoid"></a>获取 （/users/ {ownerId} / 人/避免）
+# <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
 
   * [备注](#ID4EQ)
@@ -50,7 +50,7 @@ ms.locfileid: "3963652"
 
 ## <a name="authorization"></a>授权
 
-使用授权声明 | 声明| 类型| 是否必需？| 示例值|
+使用的授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- |
 | Xuid| 64 位有符号的整数| 是| 1234567890|
 
@@ -74,7 +74,7 @@ ms.locfileid: "3963652"
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| URI 中指定的目标 ID 不正确。|
+| 400| 错误请求| URI 中指定的目标 ID 不是有效的。|
 | 403| 已禁止| URI 中指定的所有者不是经过身份验证的用户。|
 | 404| 找不到| URI 中指定的所有者不存在。|
 
@@ -122,4 +122,4 @@ ms.locfileid: "3963652"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 人/避免](uri-privacyusersxuidpeopleavoid.md)
+[/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)

@@ -1,9 +1,9 @@
 ---
-title: /titles/ {titleId} /sessions/ {sessionId} / allocationStatus
+title: /titles/{titleId}/sessions/{sessionId}/allocationStatus
 assetID: 55611f4b-4ba4-fa9a-ce44-fcc4a6df1b35
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus.html
 author: KevinAsgari
-description: " /titles/ {titleId} /sessions/ {sessionId} / allocationStatus"
+description: " /titles/{titleId}/sessions/{sessionId}/allocationStatus"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f8137980bddbf494c989f4f8a39c2f6edaf3d30a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958168"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983909"
 ---
-# <a name="titlestitleidsessionssessionidallocationstatus"></a>/titles/ {titleId} /sessions/ {sessionId} / allocationStatus
-对于给定的作品 id 和会话 id，获取票证请求的状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+# <a name="titlestitleidsessionssessionidallocationstatus"></a>/titles/{titleId}/sessions/{sessionId}/allocationStatus
+对于给定的作品 id 和会话 id，获取票证请求的状态。 有关这些 Uri 域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [URI 参数](#ID4EU)
   * [主机名](#ID4EPB)
@@ -32,7 +32,7 @@ ms.locfileid: "3958168"
  
 | 参数| 描述| 
 | --- | --- | 
-| titleId| 游戏应在其中操作请求 ID。| 
+| titleId| 游戏应在其中操作该请求 ID。| 
 | sessionId| 若要查找会话的 ID。| 
   
 <a id="ID4EPB"></a>

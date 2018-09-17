@@ -1,9 +1,9 @@
 ---
-title: 获取 (/users/ {ownerId} / 个人)
+title: GET (/users/{ownerId}/people)
 assetID: c948d031-ec19-7571-31ef-23cb9c5ebfaf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopleget.html
 author: KevinAsgari
-description: " 获取 (/users/ {ownerId} / 个人)"
+description: " GET (/users/{ownerId}/people)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d08a8ff9e04b255944128ffc1cd1c0b101180d8f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955942"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981037"
 ---
-# <a name="get-usersowneridpeople"></a>获取 (/users/ {ownerId} / 个人)
+# <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 获取调用方的用户集合。
 这些 Uri 的域是`social.xboxlive.com`。
 
@@ -47,7 +47,7 @@ ms.locfileid: "3955942"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"me"、 xuid({xuid}) 或 gt({gamertag})。|
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。|
 
 <a id="ID4EJB"></a>
 
@@ -56,8 +56,8 @@ ms.locfileid: "3955942"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表中的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 如果调用用户位于不同所属的用户，支持仅**所有**的值。|
-| startIndex| 32 位无符号的整数| 返回给定索引处开始的项目。  
+| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表上的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表具有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 如果调用用户位于不同所属的用户，支持仅**所有**的值。|
+| startIndex| 32 位无符号的整数| 返回的给定索引处开始的项目。  
 | maxItems| 32 位无符号的整数| 用户从开始菜单索引的集合返回的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
 
 <a id="ID4ERD"></a>
@@ -85,8 +85,8 @@ ms.locfileid: "3955942"
 
 | 标题| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。|
+| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>应用程序/json</b>。|
 
 <a id="ID4E5G"></a>
 
@@ -106,7 +106,7 @@ ms.locfileid: "3955942"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 成功。|
 | 400| 错误请求| 查询参数或用户 Id 的格式不正确。|
-| 403| 已禁止| 无法分析 XUID 声明与授权标头中。|
+| 403| 已禁止| 在授权标头，无法分析 XUID 声明。|
 
 <a id="ID4EBBAC"></a>
 
@@ -123,7 +123,7 @@ ms.locfileid: "3955942"
 
 ## <a name="response-body"></a>响应正文
 
-如果调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
+如果在调用成功，该服务将返回调用方的用户集合和数组，其中包含调用方的用户集合中的用户总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
 
 <a id="ID4EZCAC"></a>
 
@@ -168,4 +168,4 @@ ms.locfileid: "3955942"
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[/users/ {ownerId} / 个人](uri-usersowneridpeople.md)
+[/users/{ownerId}/people](uri-usersowneridpeople.md)

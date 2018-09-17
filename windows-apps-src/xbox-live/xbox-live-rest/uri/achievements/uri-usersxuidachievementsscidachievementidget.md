@@ -1,9 +1,9 @@
 ---
-title: 获取 (/users/xuid({xuid})/achievements/{scid}/{achievementid})
+title: GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 assetID: 27318886-f084-d6a8-e582-3eb070ccbc38
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementidget.html
 author: KevinAsgari
-description: " 获取 (/users/xuid({xuid})/achievements/{scid}/{achievementid})"
+description: " GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d64dc9fbae0e53880578ebff7576b028d6ecdf49
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963114"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987779"
 ---
-# <a name="get-usersxuidxuidachievementsscidachievementid"></a>获取 (/users/xuid({xuid})/achievements/{scid}/{achievementid})
+# <a name="get-usersxuidxuidachievementsscidachievementid"></a>GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 获取在成就的详细信息。 这些 Uri 的域是`achievements.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
   * [授权](#ID4EAB)
-  * [资源上的隐私设置的效果](#ID4E4C)
+  * [有关资源的隐私设置的效果](#ID4E4C)
   * [需的请求标头](#ID4EPG)
   * [可选的请求标头](#ID4EPH)
   * [请求正文](#ID4ECBAC)
@@ -46,18 +46,18 @@ ms.locfileid: "3963114"
  
 ## <a name="authorization"></a>授权
  
-使用授权声明 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
+使用的授权声明 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 是| Xbox LIVE 为其提出请求上是有效的用户。| 403 已禁止| 
+| 用户| 是| Xbox LIVE 的身份提出请求上是有效的用户。| 403 已禁止| 
 | Title| 否| 调用的标题。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供声明时缺少并因此将拒绝任何未标记为公共的 Scid 的访问。| 
 | 沙盒| 否| 应从中检索结果沙盒。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供默认声明时缺少。| 
   
 <a id="ID4E4C"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>资源上的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
  
-资源上的隐私设置的效果 | 发出请求的用户| 目标用户的隐私设置| 行为| 
+有关资源的隐私设置的效果 | 发出请求的用户| 目标用户的隐私设置| 行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 我| -| 所述。| 
 | 好友| 每个人都| “确定”| 
@@ -66,9 +66,9 @@ ms.locfileid: "3963114"
 | 非好友用户| 每个人都| “确定”| 
 | 非好友用户| 仅好友| 禁止访问。| 
 | 非好友用户| 阻止| 禁止访问。| 
-| 第三方站点| 每个人都| “确定”| 
-| 第三方站点| 仅好友| 禁止访问。| 
-| 第三方站点| 阻止| 禁止访问。| 
+| 第三方网站| 每个人都| “确定”| 
+| 第三方网站| 仅好友| 禁止访问。| 
+| 第三方网站| 阻止| 禁止访问。| 
   
 <a id="ID4EPG"></a>
 
@@ -86,9 +86,9 @@ ms.locfileid: "3963114"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 请求将仅可路由到的服务后验证标头，身份验证令牌中的声明的有效性，依此类推。 默认值： 1。| 
-| x xbl 协定版本| 字符串| 默认为 V1。| 
-| 接受的语言| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 1。| 
+| x xbl 协定版本| 字符串| 默认值为 V1。| 
+| 接受的语言| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
   
 <a id="ID4ECBAC"></a>
 
@@ -114,8 +114,8 @@ ms.locfileid: "3963114"
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 406| 不允许| 资源版本不受支持;应拒绝 MVC 层。| 
-| 408| 请求超时| 请求时间太长，才能完成。| 
-| 410| 前面| 所请求的资源不再可用。| 
+| 408| 请求超时| 请求所花的时间太长，才能完成。| 
+| 410| 前面| 请求的资源不再可用。| 
   
 <a id="ID4EBGAC"></a>
 
@@ -199,6 +199,6 @@ ms.locfileid: "3963114"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 用户/xuid ({xuid}) /achievements/ {scid} / {achievementid}](uri-usersxuidachievementsscidachievementid.md)
+[/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: 获取 (/ qosservers)
+title: GET (/qosservers)
 assetID: 8b940c1b-947c-eab3-78ed-4384f57ea0bd
 permalink: en-us/docs/xboxlive/rest/uri-qosservers-get.html
 author: KevinAsgari
-description: " 获取 (/ qosservers)"
+description: " GET (/qosservers)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a4787bf6b139d1a638ec783c0293d70a8ee239
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959762"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989205"
 ---
-# <a name="get-qosservers"></a>获取 (/ qosservers)
-URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+# <a name="get-qosservers"></a>GET (/qosservers)
+通过适用于 Xbox Live 计算获取可用的 QoS 服务器列表中的客户端调用的 URI。 有关这些 Uri 域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4EBB)
   * [所需的响应标头](#ID4EUC)
@@ -37,7 +37,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求，将需要在下表中所示的标头。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | 
@@ -51,7 +51,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终包括下表中所示的标头。
+响应将始终会包括下表中所示的标头。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | 
@@ -63,7 +63,7 @@ gameserverds.xboxlive.com
  
 ## <a name="response-body"></a>响应正文
  
-如果调用成功，该服务将返回一个具有以下成员的 JSON 对象。
+如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 

@@ -1,9 +1,9 @@
 ---
-title: / 用户/me/scid / {scid} / 剪辑
+title: /users/me/scids/{scid}/clips
 assetID: ed8317f7-7898-47ad-d18d-cd5150daf293
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclips.html
 author: KevinAsgari
-description: " / 用户/me/scid / {scid} / 剪辑"
+description: " /users/me/scids/{scid}/clips"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb5800be9f96b7b90ed816f094cb38d83ee4727
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963048"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988477"
 ---
-# <a name="usersmescidsscidclips"></a>/ 用户/me/scid / {scid} / 剪辑
-访问初始上传请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+# <a name="usersmescidsscidclips"></a>/users/me/scids/{scid}/clips
+访问初始上传请求。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -37,7 +37,7 @@ ms.locfileid: "3963048"
  
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/ 用户/me/scid / {scid} / 剪辑)](uri-usersmescidclipspost.md)
+[POST (/users/me/scids/{scid}/clips)](uri-usersmescidclipspost.md)
 
 &nbsp;&nbsp;发出初始上载请求。
  
@@ -51,6 +51,6 @@ ms.locfileid: "3963048"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[游戏 DVR Uri](atoc-reference-dvr.md)
+[游戏 DVR URI](atoc-reference-dvr.md)
 
    

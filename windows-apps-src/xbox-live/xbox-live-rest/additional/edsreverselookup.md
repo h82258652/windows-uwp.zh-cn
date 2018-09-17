@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956466"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988739"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
@@ -29,11 +29,11 @@ ms.locfileid: "3956466"
  
 娱乐发现服务 (EDS) 反向查找支持所有视频的媒体类型 （**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**，以及**MediaItemType.TVShow**)，以及**MediaItemType.Unknown**。
  
-反向查找需要传递 4 个参数： 
+反向查找需要传递的 4 个参数： 
    * `idType=ScopedMediaId`
    * `ids=` 提供程序媒体 ID
    * `ScopeIdType=Title`
-   * `ScopeId=` 提供商主题作品 ID
+   * `ScopeId=` 提供程序的主题作品 ID
  
  
 通常反向查找需要两个步骤： 
@@ -73,6 +73,6 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
 ##### <a name="further-information"></a>详细信息 
 
-[市场 Uri](../uri/marketplace/atoc-reference-marketplace.md)
+[市场 URI](../uri/marketplace/atoc-reference-marketplace.md)
 
    

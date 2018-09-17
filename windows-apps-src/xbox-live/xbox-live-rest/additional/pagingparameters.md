@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962782"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987649"
 ---
 # <a name="paging-parameters"></a>分页参数
  
@@ -31,7 +31,7 @@ ms.locfileid: "3962782"
 | --- | --- | --- | --- | 
 | ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
 | maxItems| 否| 32 位有符号的整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项目的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
-| skipItems| 否| 32 位有符号的整数| 返回从给定的项目数后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
+| skipItems| 否| 32 位有符号的整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
   
 <a id="ID4EDD"></a>
 

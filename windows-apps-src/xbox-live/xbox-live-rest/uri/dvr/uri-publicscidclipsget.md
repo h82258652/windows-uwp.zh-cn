@@ -1,9 +1,9 @@
 ---
-title: 获取 (/ 公用/scid / {scid} / 剪辑)
+title: GET (/public/scids/{scid}/clips)
 assetID: 15b3e873-1f96-b1da-2f79-6dac1369a4c0
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclipsget.html
 author: KevinAsgari
-description: " 获取 (/ 公用/scid / {scid} / 剪辑)"
+description: " GET (/public/scids/{scid}/clips)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960158"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987751"
 ---
-# <a name="get-publicscidsscidclips"></a>获取 (/ 公用/scid / {scid} / 剪辑)
+# <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 列表公共剪辑。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。
  
   * [备注](#ID4EV)
@@ -30,11 +30,11 @@ ms.locfileid: "3960158"
  
 ## <a name="remarks"></a>备注
  
-此 API 允许各种方式是公共的列表剪辑。 在隐私检查和防止请求 XUID 的内容隔离检查返回的剪辑列表。
+此 API 允许列表剪辑公共的各种方法。 在隐私检查和防止请求的 XUID 的内容隔离检查返回的剪辑列表。
  
 查询每个服务配置标识符 (SCID) 进行了优化。 指定进一步筛选器或下面列出的默认值以外的排序顺序可以在某些情况下长返回。 这会更明显的较大的视频集。 查询不能指定升序排序顺序。
  
-若要获取特定集合 ofpublic 剪辑，需要限定符。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回。
+若要获取特定集合 ofpublic 剪辑，需要使用限定符。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回。
   
 <a id="ID4ECB"></a>
 
@@ -67,6 +67,6 @@ ms.locfileid: "3960158"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 公用/scid / {scid} / 剪辑](uri-publicscidclips.md)
+[/public/scids/{scid}/clips](uri-publicscidclips.md)
 
    

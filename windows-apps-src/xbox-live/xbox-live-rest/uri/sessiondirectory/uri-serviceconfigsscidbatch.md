@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/ {scid} / 批次
+title: /serviceconfigs/{scid}/batch
 assetID: eb1b510f-d92e-ae9b-a3e6-0edf58b4f075
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
 author: KevinAsgari
-description: " /serviceconfigs/ {scid} / 批次"
+description: " /serviceconfigs/{scid}/batch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a48bf9c30370238adc83376a524e9c61abb4af13
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960308"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988035"
 ---
-# <a name="serviceconfigsscidbatch"></a>/serviceconfigs/ {scid} / 批次
+# <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid}/batch
 支持在服务配置标识符级别为批处理查询 POST 操作。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此方法由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -43,7 +43,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有效的方法
 
-[POST (/serviceconfigs/ {scid} / 批次)](uri-serviceconfigsscidbatchpost.md)
+[POST (/serviceconfigs/{scid}/batch)](uri-serviceconfigsscidbatchpost.md)
 
 &nbsp;&nbsp;在服务配置的多个 Xbox 用户 Id 创建批处理查询。
 
@@ -57,4 +57,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent 的子磁盘）
 
-[会话目录 Uri](atoc-reference-sessiondirectory.md)
+[会话目录 URI](atoc-reference-sessiondirectory.md)

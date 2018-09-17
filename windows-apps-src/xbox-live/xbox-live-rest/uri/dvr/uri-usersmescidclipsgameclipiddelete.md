@@ -1,9 +1,9 @@
 ---
-title: 删除 (/ 用户/me/scid / {scid} /clips/ {gameClipId})
+title: DELETE (/users/me/scids/{scid}/clips/{gameClipId})
 assetID: 486fac60-6884-2e3f-9ef8-8de5da0ad8af
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipiddelete.html
 author: KevinAsgari
-description: " 删除 (/ 用户/me/scid / {scid} /clips/ {gameClipId})"
+description: " DELETE (/users/me/scids/{scid}/clips/{gameClipId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a68d765cfdec81da064b0522ea2ff9a4be12bafb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962574"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983729"
 ---
-# <a name="delete-usersmescidsscidclipsgameclipid"></a>删除 (/ 用户/me/scid / {scid} /clips/ {gameClipId})
+# <a name="delete-usersmescidsscidclipsgameclipid"></a>DELETE (/users/me/scids/{scid}/clips/{gameClipId})
 删除游戏剪辑这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [备注](#ID4EX)
@@ -40,7 +40,7 @@ ms.locfileid: "3962574"
 提供用于 GameClips 服务中删除用户的视频的机制。 在删除后从系统删除所有元数据和实际的视频资产 （生成和原始）。 这是永久操作。 
 
 > [!NOTE] 
-> 指定的所有者 ID 必须匹配成功删除请求的授权令牌的调用方。 
+> 指定的所有者 ID 必须匹配中删除请求成功的授权令牌的调用方。 
 
 
   
@@ -52,7 +52,7 @@ ms.locfileid: "3962574"
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| 正在访问的资源 GameClip ID。| 
+| gameClipId| 字符串| 正在访问的资源的 GameClip ID。| 
   
 <a id="ID4ENB"></a>
 
@@ -69,7 +69,7 @@ ms.locfileid: "3962574"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。| 
@@ -113,12 +113,12 @@ ms.locfileid: "3962574"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到的 Xbox LIVE 的服务的名称/号码。 验证标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。| 
-| 重试后| 字符串| 指示客户端在不可用的服务器的情况下我们深表歉意。| 
-| 有所不同| 字符串| 指示下游代理如何缓存响应。| 
+| 重试后| 字符串| 指示客户端在不可用的服务器的情况下稍后重试。| 
+| 不同| 字符串| 指示下游代理如何缓存响应。| 
   
 <a id="ID4E2CAC"></a>
 
@@ -134,7 +134,7 @@ ms.locfileid: "3962574"
  
 ## <a name="response-body"></a>响应正文
  
-该服务将通过 HTTP 状态代码的 204 （任何内容） 后成功做出响应。 尝试删除同一个对象，或不存在对象将返回 404。
+该服务将通过 HTTP 状态代码的 204 （任何内容） 后成功做出响应。 尝试为删除同一个对象，或不存在对象将返回 404。
  
 发生错误，将返回一个**ServiceErrorResponse**对象。
   
@@ -148,6 +148,6 @@ ms.locfileid: "3962574"
  
 ##### <a name="parent"></a>Parent 的子磁盘） 
 
-[/ 用户/me/scid / {scid} /clips/ {gameClipId}](uri-usersmescidclipsgameclipid.md)
+[/users/me/scids/{scid}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
 
    
