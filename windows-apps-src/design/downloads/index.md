@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984602"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016947"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
@@ -95,12 +95,12 @@ ms.locfileid: "3984602"
     
 ## <a name="samples"></a>示例
 
-![生成强制转换映像](images/buildcast.png)
+![生成强制转换图像](images/buildcast.png)
 **BuildCast**<br>
 BuildCast 是一个端到端示例，用于展示 Fluent 设计系统，以及通用 Windows 平台的其他功能。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下载 BuildCast 示例</a> <br><a href="https://github.com/Microsoft/BuildCast">在 GitHub 上查看 BuildCast 示例</a>
 
-![午餐 Scheduler](images/lunchscheduler.png)
+![午餐计划程序](images/lunchscheduler.png)
 **Lunch Scheduler**<br>
 安排与朋友和同事午餐的 UWP 示例。 你创建午餐，邀请好友前往感兴趣的餐厅，然后应用帮助管理有关各方的午餐。 此应用将 Fluent Design 系统的元素并入 UWP 应用中，包括亚克力、展示和连贯动画。 <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">下载 Lunch Scheduler 示例</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">在 GitHub 上查看 Lunch Scheduler 示例</a></p>  
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984840"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015275"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 
@@ -90,14 +90,14 @@ Authorization: Bearer <your access token>
 | applicationName           | 字符串  | 应用的显示名称。                                                                |
 | market                    | 字符串  | 客户使用你的应用的市场的 ISO 3166 国家/地区代码。                   |
 | packageVersion            | 字符串  | 使用情况发生的位置的程序包版本。                                            |
-| deviceType                | 字符串  | 以下字符串之一，指定的设备使用情况发生的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                                           |
+| deviceType                | 字符串  | 以下字符串之一，指定使用情况发生的位置的设备的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                                           |
 | subscriptionName          | 字符串  | 指示用法是通过 Xbox Game Pass。                                              |
 | monthlySessionCount       | 长型    | 在该月期间的用户会话的数量。                                              |
-| engagementDurationMinutes | Double  | 其中用户积极使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 并终止 （进程结束） 或非活动状态一段时间后结束分钟。                               |
+| engagementDurationMinutes | Double  | 用户在其中主动使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或非活动状态一段时间后结束分钟。                               |
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                                           |
-| monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                                        |
+| monthlyActiveDevices      | 长型    | 不同的一段时间，在应用启动时启动 （进程开始） 运行你的应用和结束时终止 （进程结束） 的设备或非活动状态一段时间后数。                                                        |
 | monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户数。                    |
-| averageDailyActiveUsers   | Double  | 每天都使用应用的客户的平均数量。                             |
+| averageDailyActiveUsers   | Double  | 每天都使用该应用的客户的平均数量。                             |
 | averageDailyActiveDevices | Double  | 用于与应用交互的所有用户每天设备的平均数量。 |
 
 

@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3986308"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019463"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -50,13 +50,13 @@ ms.locfileid: "3986308"
 
 若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选的子菜单）。
 
-若要显示多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口的顶部菜单栏。
+若要显示的多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口的顶部菜单栏。
 
 ### <a name="menubar-vs-commandbar"></a>与命令栏菜单栏
 
-菜单栏和命令栏都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开命令的应用可能需要更多的组织或分组的一组，然后 CommandBar 允许。
+菜单栏和命令栏两者都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开命令的应用可能需要更多的组织或分组的一组，然后 CommandBar 允许。
 
-你还可以与 CommandBar 配合使用菜单栏。 使用在菜单栏提供大部分命令和命令栏，以突出显示的最常用的命令。
+你还可以将菜单栏 CommandBar 结合使用。 使用在菜单栏提供大部分命令和命令栏，以突出显示的最常用的命令。
 
 ## <a name="examples"></a>示例
 
@@ -132,7 +132,7 @@ ms.locfileid: "3986308"
 ````
 
 > [!TIP]
-> MenuFlyoutItem 中的大小是图标的 16x16 像素。 如果你使用 SymbolIcon、 FontIcon 或 PathIcon，图标自动缩放到正确的大小，且不会失真。 如果你使用 BitmapIcon，请确保你的资产为 16x16 像素。  
+> MenuFlyoutItem 中的图标的大小为 16x16 像素。 如果你使用 SymbolIcon、 FontIcon 或 PathIcon，图标自动缩放到正确的大小，且不会失真。 如果你使用 BitmapIcon，请确保你的资产为 16x16 像素。  
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>创建菜单浮出控件或上下文菜单
 
@@ -225,12 +225,12 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 > **预览**： 菜单栏需要的[最新的 Windows 10 Insider Preview 版本和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-使用相同的元素来创建像菜单浮出控件菜单栏中的菜单。 但是，而不是组合 MenuFlyout MenuFlyoutItem 对象，你将它们组合 MenuBarItem 元素中。 每个 MenuBarItem 作为顶级菜单添加到在菜单栏。
+你可以使用相同的元素来创建如菜单浮出控件中所示的菜单栏中的菜单。 但是，而不是组合 MenuFlyout MenuFlyoutItem 对象，你将它们组合 MenuBarItem 元素中。 每个 MenuBarItem 作为顶级菜单添加到在菜单栏。
 
 ![菜单栏示例](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> 本示例演示仅是说明了如何创建 UI 结构，但不是显示任何命令的实现。
+> 此示例中显示仅是说明了如何创建 UI 结构，但不显示的任何命令的实现。
 
 ```xaml
 <MenuBar>

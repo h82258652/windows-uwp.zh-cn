@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-description: 你可以创建可扩展树视图的 ItemsSource 绑定到分层数据源，或者你可以创建和管理 TreeViewNode 对象自行。
+description: 你可以通过将 ItemsSource 绑定到分层数据源，创建可扩展树视图或者你可以创建并自行管理 TreeViewNode 对象。
 title: 树视图
 label: Tree view
 template: detail.hbs
@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985790"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4023003"
 ---
 # <a name="treeview"></a>树视图
 
@@ -85,7 +85,7 @@ TreeView API 支持以下功能：
 从 Windows Insider Preview 中，你可以绑定分层数据源到[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)属性来提供的树视图内容，就像你处理列表视图的 ItemsSource。 同样，使用[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) （和可选[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)） 提供 DataTemplate 呈现项目。
 
 > [!IMPORTANT]
-> ItemsSource 是将内容放入 TreeView 控件到 TreeView.RootNodes 替代机制。 不能同时设置 ItemsSource 和 RootNodes。 使用 ItemsSource 时，节点创建，并且可以从 TreeView.RootNodes 属性访问它们。
+> ItemsSource 是将内容放入 TreeView 控件到 TreeView.RootNodes 替代机制。 不能同时设置 ItemsSource 和 RootNodes。 当你使用 ItemsSource 时，为你创建的节点和你可以从 TreeView.RootNodes 属性访问它们。
 
 下面是一个使用 XAML 声明的简单树视图示例。 通常以代码方式添加节点，但这里我们显示的是 XAML 层次结构，因为这有助于更直观地显示节点层次结构的创建方式。
 
@@ -120,7 +120,7 @@ TreeView API 支持以下功能：
 </TreeView>
 ```
 
-请参阅_使用数据绑定的树视图_的完整代码示例部分。
+请参阅_使用数据绑定的树视图_示例部分获取的完整代码。
 
 #### <a name="items-and-item-containers"></a>项目和项目容器
 
@@ -213,7 +213,7 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 
 ### <a name="item-template-selectors"></a>项目模板选择器
 
-你可以选择设置的树视图项目，具体取决于项目类型的不同数据模板。 例如，在文件资源管理器应用中，可以使用一个数据模板的文件夹，而另一个文件。
+你可以选择设置的树视图项目，具体取决于项目类型的不同数据模板。 例如，在文件资源管理器应用中，可以使用一个数据模板的文件夹和另一个用于文件。
 
 ![文件夹和文件使用不同的数据模板](images/treeview-icons.png)
 

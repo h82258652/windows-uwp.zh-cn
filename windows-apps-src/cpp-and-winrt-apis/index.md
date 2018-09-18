@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
 ms.openlocfilehash: 7168ee705114523a324194b89f8450e768cfab22
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982600"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020565"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 利用 C++/WinRT，你可以采用任何符合标准的 C++17 编译器创作和使用 Windows 运行时 API。 Windows SDK 包含 C++/WinRT；它已在版本 10.0.17134.0（Windows 10，版本 1803）中引用。
@@ -52,11 +52,11 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 | [使用 C++/WinRT 的错误处理](error-handling.md) | 本主题讨论处理使用 C++/WinRT 编程时出现的错误的策略。 |
 | [使用代理处理事件](handle-events.md) | 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理委托。 |
 | [创作事件](author-events.md) | 本主题演示如何创作包含引发事件的运行时类的 Windows 运行时组件。 它还演示使用该组件并处理事件的应用。 |
-| [集合使用 C + + WinRT](collections.md) | C + + WinRT 提供的函数和你节省大量时间和精力当你想要实现和/或传递集合的基类。 |
+| [集合使用 C + + WinRT](collections.md) | C + + /winrt 提供函数和你节省大量时间和精力当你想要实现和/或传递集合的基类。 |
 | [并发和异步操作](concurrency.md) | 本主题介绍你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。 |
 | [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
 | [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
-| [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题将指导你完成的步骤创建一个简单的自定义控件使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。 |
+| [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题将指导你完成的步骤创建一个简单的自定义控件，使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。 |
 | [使用 COM 组件使用 C + + WinRT](consume-com.md) | 本主题使用完整的 Direct2D 代码示例显示了如何使用 C + + /winrt 来使用 COM 类和接口。 |
 | [创作 COM 组件使用 C + + WinRT](author-coclasses.md) | C + + WinRT 只是因为它可以帮助你创作 Windows 运行时类可以帮助你创作传统的 COM 组件。 |
 | [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 |

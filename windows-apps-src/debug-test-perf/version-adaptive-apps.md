@@ -3,18 +3,18 @@ author: jwmsft
 title: 版本自适应应用
 description: 了解如何在保持与以前版本的兼容性的同时利用新 API
 ms.author: jimwalk
-ms.date: 10/10/2017
+ms.date: 09/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d43cd9d03977e34b57d78e1f22bd7e8b340ff4ab
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701033"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019643"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应应用：在保持与以前版本的兼容性的同时使用新 API
 
@@ -48,19 +48,23 @@ ms.locfileid: "1701033"
 
 若要更改已在 Visual Studio 中创建的项目的最低版本和目标版本，请转到“项目”-&gt;“属性”-&gt;“应用程序”选项卡 -&gt;“目标”。
 
-![在 Visual Studio 中更改目标 SDK](images/vs-target-sdk-2.png) 
+![在 Visual Studio 中更改目标 SDK](images/vs-target-sdk-2.png)
 
-为便于参考，下表显示了每个 SDK 的内部版本号。 有关 Windows 10 更新的详细信息，请参阅 TechNet 上的 [Windows 10 版本信息](https://technet.microsoft.com/windows/release-info)。
+为便于参考，下表显示了每个 SDK 的内部版本号。
 
-友好名称 | 版本 | 操作系统/SDK 内部版本 | 注释
----- | ---- | ---- | ----
-RTM | 1507 | 10240 | 请参阅重要的[支持](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates) 信息。
-11 月更新 | 1511 | 10586 | 请参阅重要的[支持](https://support.microsoft.com/help/4035050/windows-10-version-1511-will-no-longer-receive-security-updates)信息。
-周年更新 | 1607 | 14393 |
-创意者更新 | 1703 | 15063 |
-秋季创意者更新 | 1709 | 16299 |
+| 友好名称 | 版本 | 操作系统/SDK 内部版本 |
+| ---- | ---- | ---- |
+| RTM | 1507 | 10240 |
+| 11 月更新 | 1511 | 10586 |
+| 周年更新 | 1607 | 14393 |
+| 创意者更新 | 1703 | 15063 |
+| 秋季创意者更新 | 1709 | 16299 |
+| 2018 年 4 月更新 | 1803 | 17134 |
+| 2018 年 10 月更新 | 1809 | _Insider Preview_ |
 
 可以从 [Windows SDK 和模拟器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何已发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows) 站点的开发人员部分下载最新的 Windows Insider Preview SDK。
+
+ 有关 Windows 10 更新的详细信息，请参阅[Windows 10 版本信息](https://technet.microsoft.com/windows/release-info)。 有关 Windows 10 的重要信息支持生命周期，请参阅[Windows 生命周期事实表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>执行 API 检查
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp、 标准、 c + +，cpp，winrt，投影，作者，COM、 组件
 ms.localizationpriority: medium
 ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985778"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016023"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 COM 组件中创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -51,7 +51,7 @@ int main()
 
 本主题的其余部分演示了如何创建的最小控制台应用程序项目中使用 C + + /winrt 来实现基本 coclass 和类工厂。 示例应用程序显示了如何提供与回调按钮的 toast 通知，并 coclass （可实现**INotificationActivationCallback** COM 接口） 允许应用程序启动并调用时用户单击 toast 上的按钮。
 
-有关 toast 通知功能区域的更多背景可以位于[发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)。 该部分中的文档的代码示例使用 C + + /winrt，因此我们建议你想在本主题中所示的代码。
+有关 toast 通知功能区域的更多背景位于[发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)。 该部分中的文档的代码示例使用 C + + /winrt，因此我们建议你想在本主题中所示的代码。
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>创建 Windows 控制台应用程序项目 (ToastAndCallback)
 
@@ -78,7 +78,7 @@ using namespace Windows::UI::Notifications;
 
 ## <a name="implement-the-coclass-and-class-factory"></a>实现 coclass 和类工厂
 
-在 C + + WinRT，可通过从[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基结构派生实现 coclass 和类工厂。 三个 using 指令如上所示后立即 (之前`main`)，将此代码来实现 toast 通知 COM 激活器组件粘贴。
+在 C + + /winrt，你通过从[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基结构派生实现 coclass 和类工厂。 三个 using 指令如上所示后立即 (之前`main`)，将此代码来实现你的 toast 通知 COM 激活器组件粘贴。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -138,7 +138,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 在上面的代码中 coclass，我们实现**INotificationActivationCallback::Activate**方法，即用户单击 toast 通知上的回调按钮时调用的函数。 但是，可以调用该函数之前，需要创建，组件类的一个实例，即**IClassFactory::CreateInstance**函数的工作。
 
-我们只需实现 coclass 称为通知， *COM 激活器*，它具有其类 id (CLSID) 的形式`callback_guid`标识符 （ **GUID**类型），请参阅上述内容。 我们将使用该标识符更高版本，在开始菜单快捷方式和 Windows 注册表项的形式。 COM 激活器 CLSID，并且其关联的 COM 服务器 （这是我们在此处生成的可执行文件的路径） 的路径是一种的机制的 toast 通知知道什么类创建其回调按钮时的实例 (是否通知，则单击在操作中心与否）。
+我们只需实现 coclass 称为通知， *COM 激活器*，它具有其类 id (CLSID) 的形式`callback_guid`标识符 （ **GUID**类型），请参阅上述内容。 我们将使用该标识符更高版本，在开始菜单快捷方式和 Windows 注册表项的形式。 COM 激活器 CLSID，并且其关联的 COM 服务器 （这是我们在此处生成的可执行文件的路径） 的路径是一种的机制的 toast 通知知道什么类创建其回调按钮时的实例 (是否通知单击在操作中心或不）。
 
 ## <a name="best-practices-for-implementing-com-methods"></a>实现 COM 方法的最佳做法
 
@@ -380,7 +380,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>如何测试示例应用程序
 
-生成应用程序，然后在以管理员身份会导致在注册时，和其他设置，代码运行至少一次运行它。 是否正在运行它作为管理员，然后按 \ 会导致 toast 显示。 然后，你可以单击该**回调 ToastAndCallback**按钮直接从 toast 通知，将启动 pop，或从操作中心和你的应用程序、 实例化，coclass 和 INotificationActivationCallback **:: 激活**执行方法。
+生成应用程序，并运行它至少一次以管理员身份会导致在注册时，和其他设置，若要运行的代码。 是否正在运行它作为管理员，然后按 \ 会导致 toast 显示。 然后，你可以单击该**回调 ToastAndCallback**按钮直接从 toast 通知，将启动 pop，或从操作中心和你的应用程序、 实例化，coclass 和 INotificationActivationCallback **:: 激活**执行方法。
 
 ## <a name="important-apis"></a>重要的 API
 * [IInspectable 接口](https://msdn.microsoft.com/library/br205821)

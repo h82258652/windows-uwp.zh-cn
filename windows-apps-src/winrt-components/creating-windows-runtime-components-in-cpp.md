@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982040"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019233"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>使用 C++/CX 创建 Windows 运行时组件
 > [!NOTE]
-> 本主题旨在帮助你维护 C++/CX 应用程序。 不过，建议使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何创建 Windows 运行时组件使用 C + + WinRT，请参阅[中创作事件在 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
+> 本主题旨在帮助你维护 C++/CX 应用程序。 不过，建议使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 若要了解如何创建 Windows 运行时组件中使用 C + + WinRT，请参阅[创作事件 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
 
 本主题介绍了如何使用 C + + 创建一个 Windows 运行时组件，它是一个组件，可从使用 C#、 Visual Basic、 c + + 或 Javascript 生成的通用 Windows 应用调用的 CX。
 
@@ -29,7 +29,7 @@ ms.locfileid: "3982040"
 
 在生成包含 JavaScript 或 .NET 项目的解决方案时，Windows 运行时组件项目、JavaScript 项目文件和编译的 DLL 会合并到一个程序包中，可以在模拟器中本地调试或在受限设备上远程调试该程序包。 你还可以仅将组件项目作为扩展 SDK 进行分配。 有关详细信息，请参阅[创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)。
 
-一般情况下，当你的代码在 C + + CX 组件使用常规 c + + 库和内置类型，除了抽象二进制接口 (ABI) 边界处将数据传入和传出代码传递在另一个.winmd 程序包中的位置。 因此，请使用 Windows 运行时类型和的特殊语法的 C + + CX 支持用于创建和处理这些类型。 此外，在 C + + CX 代码，使用诸如委派和事件在 JavaScript、 Visual Basic、 c + + 或 C# 中实现可从组件引发并处理事件的类型。 有关如何在 C + + CX 语法，请参阅[Visual c + + 语言参考 (C + + CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
+一般情况下，当你的代码在 C + + CX 组件使用常规 c + + 库和内置类型，除了抽象二进制接口 (ABI) 边界处将数据与代码传递在另一个.winmd 程序包中的位置。 因此，请使用 Windows 运行时类型和特殊语法的 C + + CX 支持用于创建和处理这些类型。 此外，在 C + + CX 编码，使用诸如委派和事件在 JavaScript、 Visual Basic、 c + +，或 C# 中实现可从组件引发并处理事件的类型。 有关如何在 C + + /CX 语法，请参阅[Visual c + + 语言参考 (C + + CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
 
 ## <a name="casing-and-naming-rules"></a>大小写和命名规则
 
@@ -44,7 +44,7 @@ JavaScript 区分大小写。 因此，必须遵循以下大小写约定：
 .NET 语言遵循其正常大小写规则。
 
 ## <a name="instantiating-the-object"></a>实例化对象
-仅 Windows 运行时类型可以跨 ABI 边界传递。 如果组件在公共方法中具有作为返回类型或参数的类型（例如 std::wstring），编译器将引发错误。 Visual c + + 组件扩展 (C + + CX) 内置类型包括诸如 int 和双精度，以及其 typedef 等效 int32 float64，等等。 有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
+仅 Windows 运行时类型可以跨 ABI 边界传递。 如果组件在公共方法中具有作为返回类型或参数的类型（例如 std::wstring），编译器将引发错误。 Visual c + + 组件扩展 (C + + CX) 内置类型包括诸如整型和双精度还及其 typedef 等效项 int32 float64，等等。 有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
 ```cpp
 // ref class definition in C++
@@ -77,7 +77,7 @@ ResultText.Text = num.ToString();
 ## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C + + CX 内置类型、 库类型和 Windows 运行时类型
 可激活类（也称为 ref 类）是可通过其他诸如 JavaScript、C# 或 Visual Basic 语言实例化的类。 若要能够通过其他语言使用，组件必须包含至少一项可激活类。
 
-Windows 运行时组件可以包含多个公共的可激活类以及其他仅为组件内部所知的类。 将[WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx)属性应用到 C + + 不旨在对 JavaScript 可见的 CX 类型。
+Windows 运行时组件可以包含多个公共的可激活类以及其他仅为组件内部所知的类。 将[WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx)属性应用到 C + + 不是可见于 JavaScript 的 CX 类型。
 
 所有公共类必须驻留在与组件元数据文件具有相同名称的相同根命名空间中。 例如，名为 A.B.C.MyClass 的类仅可在名为 A.winmd、A.B.winmd 或 A.B.C.winmd 的元数据文件中定义的情况下才可以实例化。 DLL 名称不需要匹配 .winmd 文件名。
 
@@ -396,7 +396,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-.NET 语言上访问属性访问本机 C + + CX 对象只在.NET Framework 对象一样。
+.NET 语言上访问属性访问本机 C + + /CX 对象就像它们在.NET Framework 对象。
 
 ```csharp
 private void GetAProperty()
@@ -529,7 +529,7 @@ private:
 };
 ```
 
-枚举值传递之间 C + + CX 和 JavaScript 为整数。 你可以选择声明的 JavaScript 对象，包含相同的命名的值的 C + + CX 枚举并使用它作为遵循。
+枚举值传递之间 C + + /CX 和以整数形式的 JavaScript。 你可以选择声明的 JavaScript 对象，包含相同的命名的值的 C + + CX 枚举并使用它以遵循。
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -546,7 +546,7 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类
 ## <a name="asynchronous-methods"></a>异步方法
 若要使用其他 Windows 运行时对象公开的异步方法，请使用[任务类（并发运行时）](https://msdn.microsoft.com/library/hh750113.aspx)。 有关详细信息，请参阅[任务并行度（并发运行时）](https://msdn.microsoft.com/library/dd492427.aspx)。
 
-若要实现异步方法，在 C + + CX，使用在 ppltasks.h 中定义的[create\_async](https://msdn.microsoft.com/library/hh750102.aspx)函数。 有关详细信息，请参阅[创建异步操作 C + + /CX 为 UWP 应用](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 有关示例，请参阅[演练： 创建一个基本 Windows 运行时组件在 C + + CX 并从 JavaScript 或 C# 调用它](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 C + + CX 异步方法只是任何在.NET Framework 中定义的异步方法一样。
+若要实现异步方法，在 C + + /CX 使用在 ppltasks.h 中定义的[create\_async](https://msdn.microsoft.com/library/hh750102.aspx)函数。 有关详细信息，请参阅[创建异步操作 C + + /CX 为 UWP 应用](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 有关示例，请参阅[演练： 创建一个基本 Windows 运行时组件在 C + + CX 并从 JavaScript 或 C# 调用它](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言使用 C + + CX 异步方法只是任何在.NET Framework 中定义的异步方法一样。
 
 ## <a name="exceptions"></a>异常
 你可以引发任何由 Windows 运行时定义的异常类型。 你无法从任何 Windows 运行时异常类型中派生自定义类型。 但是，你可以引发 COMException 并提供可由捕获异常的代码访问的自定义 HRESULT。 无法在 COMException 中指定自定义消息。
@@ -558,7 +558,7 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类
 
 如果 JavaScript 代码似乎无法识别组件中的公共属性或方法，请确保在 JavaScript 中使用的是 Camel 大小写格式。 例如，LogCalc 使用 + CX 方法必须引用为 logCalc 在 JavaScript 中。
 
-如果你删除 C + + CX Windows 运行时组件项目从某个解决方案中，你还必须手动删除项目引用从 JavaScript 项目。 如果此操作无法完成，将阻止后续调试或生成操作。 如有必要，你可以稍后向 DLL 添加程序集引用。
+如果你删除了 C + + CX Windows 运行时组件项目从某个解决方案中，你还必须手动删除项目引用从 JavaScript 项目。 如果此操作无法完成，将阻止后续调试或生成操作。 如有必要，你可以稍后向 DLL 添加程序集引用。
 
 ## <a name="related-topics"></a>相关主题
 * [演练：用 C++/CX 创建一个基本的 Windows 运行时组件，然后从 JavaScript 或 C# 中调用该组件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

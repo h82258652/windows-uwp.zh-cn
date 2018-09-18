@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983888"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016069"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -66,7 +66,7 @@ ms.locfileid: "3983888"
 
 :::row:::
     :::column:::
-        在任何 Windows 10 设备上启动 UWP 应用时，它将启动带有[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[在页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航的[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中。
+        在任何 Windows 10 设备上启动 UWP 应用时，它将启动带有[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航的[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中。
     :::column-end:::
     :::column:::
         ![帧](images/frame.svg)
@@ -75,7 +75,7 @@ ms.locfileid: "3983888"
 
 :::row:::
     :::column:::
-        可以在应用的 UI 看作页面的集合。 每个页面显示何种内容以及页面之间的关系由你决定。
+        你可以将你的应用的 UI 视为一个页面集合。 每个页面显示何种内容以及页面之间的关系由你决定。
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::

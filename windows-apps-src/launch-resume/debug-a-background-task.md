@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984196"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4018125"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -34,7 +34,7 @@ ms.locfileid: "3984196"
 
 -   在 C# 和 C++ 中，确保主项目引用后台任务项目。 如果此引用没有就位，则后台任务将不包括在应用包中。
 -   在 C# 和 C++ 中，确保后台任务项目的 **Output type** 是“Windows 运行时组件”。
--   在后台类必须在程序包清单中的入口点属性中声明。
+-   必须在程序包清单中的入口点属性中声明后台类。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>手动触发后台任务以调试后台任务代码
 
@@ -105,7 +105,7 @@ ms.locfileid: "3984196"
 -   如果后台任务需要锁屏界面访问权限，请确保在尝试调试后台任务之前将应用放在锁屏界面上。 有关为支持锁屏界面的应用指定清单选项的信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 -   后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 
-有关使用 VS 调试后台任务的详细信息请参阅[如何触发暂停、 恢复和后台事件在 UWP 应用中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
+有关使用 VS 调试后台任务的详细信息，请参阅[如何触发暂停、 恢复和后台事件在 UWP 应用中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -114,7 +114,7 @@ ms.locfileid: "3984196"
 * [注册后台任务](register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [如何触发暂停、 恢复和后台 UWP 应用中的事件](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [如何触发暂停、 恢复和后台事件在 UWP 应用](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [分析与 Visual Studio 代码分析的 UWP 应用的代码质量](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  

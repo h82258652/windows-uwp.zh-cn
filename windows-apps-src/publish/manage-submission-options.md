@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 发布暂停, 发布日期, 发送提交以发布, 受限功能审核, windows 10, uwp, publishing hold, publish date, send submission to publish, restricted capability approval
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984792"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015135"
 ---
 # <a name="manage-submission-options"></a>管理提交选项
 
@@ -30,12 +30,12 @@ ms.locfileid: "3984792"
 
 **通过认证后立即发布此提交（或按照计划部分中选择的日期）** 是默认选择，这意味着你的提交在通过认证后即开始发布过程，除非你在**定价和可用性**页面的[计划](configure-precise-release-scheduling.md)部分配置了日期。   
 
-对于大多数提交，我们建议保留**发布暂停选项**部分对此选项的设置。 如果你希望为提交指定特定的发布日期，请使用**通过认证后立即发布此提交（或按照计划部分中选择的日期）**。 保留此部分设置的默认选项不会导致在**计划**部分中所设置的日期之前发布提交。 在**计划**部分中选择的日期将用于确定你的产品时在应用商店中提供给客户。
+对于大多数提交，我们建议保留**发布暂停选项**部分对此选项的设置。 如果你希望为提交指定特定的发布日期，请使用**通过认证后立即发布此提交（或按照计划部分中选择的日期）**。 保留此部分设置的默认选项不会导致在**计划**部分中所设置的日期之前发布提交。 在**计划**部分中选择的日期将用于确定当你的产品应用商店中提供给客户。
 
 
 ### <a name="publish-your-submission-manually"></a>手动发布你的提交
 
-如果还不想设置发布日期，并且希望自己的提交保持未发布的状态，直到手动决定启动发布流程为止，则可选择**在我选择“立即发布”前不发布此提交**。 选择此选项意味着将不发布所提交的内容，直到自己做出指示为止。 后你提交传递认证，你可以将其发布通过在认证状态页上，选择**现在发布**或通过相同的方式选择特定日期，如下所述。
+如果还不想设置发布日期，并且希望自己的提交保持未发布的状态，直到手动决定启动发布流程为止，则可选择**在我选择“立即发布”前不发布此提交**。 选择此选项意味着将不发布所提交的内容，直到自己做出指示为止。 后你提交通过认证，你可以将其发布通过在认证状态页上，选择**现在发布**或通过相同的方式选择特定日期，如下所述。
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>在特定日期开始发布你的提交

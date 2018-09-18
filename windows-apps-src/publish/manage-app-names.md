@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用名，更改应用名称、 更新应用名称、 游戏的名称、 产品名称
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d2c6f72e2f69f0b768af55f9bddeb9bb008027
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3986868"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016961"
 ---
 # <a name="manage-app-names"></a>管理应用名称
 
@@ -26,7 +26,7 @@ ms.locfileid: "3986868"
 
 可以保留多个应用名称以用于同一应用。 如果你以多种语言提供应用，而且要为不同的语言使用不同的名称，则该选项特别有用。 如下所述，还可以以更改应用的名称保留新名称。
 
-以保留一个新的应用名称、 找到**管理应用名称**页的**保留更多名称**部分中的文本框。 输入想要保留的名称，然后单击“检查可用性”****。 如果该名称可用，请单击**保留产品名称**。 如果需要，可以通过重复上述步骤中，保留多个应用名称。
+保留的新的应用名称，查找**管理应用名称**页的**保留更多名称**部分中的文本框。 输入想要保留的名称，然后单击“检查可用性”****。 如果该名称可用，请单击**保留产品名称**。 如果需要，可以通过重复上述步骤中，保留多个应用名称。
 
 > [!NOTE]
 > 有关保留应用名称的详细信息，以及为何某个名称可能不可用，请参阅[通过保留名称创建你的应用](create-your-app-by-reserving-a-name.md)。
@@ -46,12 +46,12 @@ ms.locfileid: "3986868"
 如果应用已经在应用商店中，并且希望重命名该应用，则可以为它保留一个新名称（按照上述步骤操作），然后为该应用创建新提交即可。 
 
 你必须更新你的应用的程序包来替换的旧名称新并将已更新的程序包上载到你的提交。
-- 首先，更新 Package.StoreAssociation.xml 文件以使用新名称，手动或通过使用 Visual Studio (**项目 > 应用商店 > 将应用与应用商店...关联**)。有关详细信息，请参阅[包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)。
+- 首先，更新 Package.StoreAssociation.xml 文件以使用新名称，手动或使用 Visual Studio (**项目 > 应用商店 > 将应用与应用商店...关联**)。有关详细信息，请参阅[使用 Visual Studio 的 UWP 应用包](../packaging/packaging-uwp-apps.md)。
 - 还需要更新应用部件清单中的 [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 元素，以及更新包括应用名称的任何图形或文本。 
   > [!IMPORTANT]
   > 更改应用部件清单中的 **Package/Properties/DisplayName** 之前，请确保更新 Package.StoreAssociation.xml 文件，否则会出现错误。
 
-若要更新应用商店一览，以使其使用新名称，请转到[应用商店一览页面](create-app-store-listings.md)为该语言并从**产品名称**下拉列表中选择名称。 请务必查看你的说明和名称的任何提及的一览的其他部分，并根据需要进行更新。
+若要更新应用商店一览，以便它使用新名称，转到[应用商店一览页面](create-app-store-listings.md)为该语言，并从**产品名称**下拉列表中选择的名称。 请务必查看你的说明和名称的任何提及的一览的其他部分，并根据需要进行更新。
 
 > [!NOTE]
 > 如果你的应用具有多个语言包和/或应用商店一览，你将需要更新的程序包和/或应用商店一览每种语言名称需要进行更新。

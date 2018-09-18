@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: 本主题将指导你完成的步骤创建一个简单的自定义控件使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。
+description: 本主题将指导你完成的步骤创建一个简单的自定义控件，使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。
 title: XAML 自定义（模板化）控件与 C++/WinRT
 ms.author: stwhi
 ms.date: 08/01/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，XAML，自定义，模板化控件
 ms.localizationpriority: medium
 ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3981916"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4018253"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>XAML 自定义 （模板化） 控件与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -24,12 +24,12 @@ ms.locfileid: "3981916"
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
-通用 Windows 平台 (UWP) 的最强大功能之一是用户界面 (UI) 堆栈提供如何创建基于 XAML[**控件**](/uwp/api/windows.ui.xaml.controls.control)类型的自定义控件的灵活性。 XAML UI 框架提供了[自定义依赖属性](/windows/uwp/xaml-platform/custom-dependency-properties)和附加的属性和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)，这使其更轻松地创建功能丰富且可自定义控件等功能。 本主题将指导你完成的步骤创建自定义 （模板化） 控件与 C + + WinRT。
+通用 Windows 平台 (UWP) 的最强大功能之一是用户界面 (UI) 堆栈提供如何创建基于 XAML[**控件**](/uwp/api/windows.ui.xaml.controls.control)类型的自定义控件的灵活性。 XAML UI 框架提供[自定义依赖属性](/windows/uwp/xaml-platform/custom-dependency-properties)和附加的属性和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)，这使其更轻松地创建功能丰富且可自定义控件等功能。 本主题将指导你完成的步骤创建自定义 （模板化） 控件，使用 C + + WinRT。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
 首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **空白应用 (C + + WinRT)** 项目，然后将其命名为*BgLabelControlApp*。
 
-我们将创作新类来表示自定义 （模板化） 控件。 我们正在同一编译单元内创作和使用该类。 但我们希望能够来实例化此类从 XAML 标记，因此它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
+我们将创作新类来表示自定义 （模板化） 控件。 我们正在同一编译单元内创作和使用该类。 但我们希望能够来实例化此类 XAML 标记中的，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
 创作新的运行时类的第一步是将新的 **Midl 文件(.idl)** 项添加到项目。 将其命名为 `BgLabelControl.idl`。 删除 `BgLabelControl.idl` 的默认内容，然后粘贴到此运行时类声明中。
 
@@ -49,7 +49,7 @@ namespace BgLabelControlApp
 上面的一览演示声明一个依赖属性 (DP) 时遵循的模式。 有两个部分每个分发点。 首先，声明类型[**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty)的只读的静态属性。 它具有 DP 再加上*属性*的名称。 你将在实现中使用此静态属性。 其次，你使用的类型和你 DP 名称声明读写实例属性。
 
 > [!NOTE]
-> 如果你希望 DP 浮点类型，然后将其`double`(`Double` [MIDL 3.0](/uwp/midl-3/)中)。 声明和实现类型的 DP `float` (`Single` MIDL 中)，并导致错误，然后将值设置为 XAML 标记中，该 DP*无法创建 'Windows.Foundation.Single 文本<NUMBER>*。
+> 如果你希望 DP 浮点类型，然后将其`double`(`Double` [MIDL 3.0](/uwp/midl-3/)中)。 声明并实现类型的 DP `float` (`Single` MIDL 中)，然后在 XAML 标记中，该 DP 设置一个值将导致错误，并*无法创建 'Windows.Foundation.Single 从文本<NUMBER>*。
 
 保存文件并生成项目。 在生成过程中，`midl.exe` 工具会运行以创建描述该运行时类的 Windows 运行时元数据文件 (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`)。 然后，`cppwinrt.exe` 工具运行以生成源代码文件，从而为你在创作和使用运行时类时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的**BgLabelControl**运行时类的存根。 这些存根是 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` 和 `BgLabelControl.cpp`。
 
@@ -113,16 +113,16 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ...
 ```
 
-在本演练中，我们将不会使用**介绍 OnLabelChanged**。 但是，以便你可以看到如何注册依赖属性的属性更改回调。 **介绍 OnLabelChanged**的实现还显示了如何从基本投影类型 （基本的投影的类型是**DependencyObject**，在此情况下） 获取一个派生的投影的类型。 并且，它展示了如何获取实现的投影的类型的类型的指针，然后。 第二个操作自然地将仅可能在项目中实现的投影的类型 （即，实现运行时类的项目）。
+在本演练中，我们将不会使用**介绍 OnLabelChanged**。 但是，这样你可以查看如何使用属性更改回调中注册依赖属性。 **介绍 OnLabelChanged**的实现还显示了如何从基本的投影类型 （基本的投影的类型是**DependencyObject**，在此情况下） 获取一个派生的投影的类型。 并且，它展示了如何获取实现的投影的类型的类型的指针，然后。 第二个操作将自然而然地只可能在项目中实现的投影的类型 （即实现运行时类的项目）。
 
 > [!NOTE]
-> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以调用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)依赖属性更改的事件处理程序中上方，而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以调用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)依赖属性已更改的事件处理程序中上方，而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
 
-## <a name="design-the-default-style-for-bglabelcontrol"></a>**BgLabelControl**设计的默认样式
+## <a name="design-the-default-style-for-bglabelcontrol"></a>适用于**BgLabelControl**设计的默认样式
 
-在其构造函数， **BgLabelControl**设置的默认样式键本身。 但什么*是*默认样式？ 自定义 （模板化） 控件需要有一个默认样式&mdash;包含默认控件模板&mdash;，它可以使用后者呈现本身的情况下该控件的使用者不设置样式和/或模板。 本部分中，我们将将某个标记文件添加到包含我们的默认样式的项目。
+在其构造函数， **BgLabelControl**设置的默认样式键本身。 *是*的，但默认样式？ 自定义 （模板化） 控件需要有一个默认样式&mdash;包含默认控件模板&mdash;，它可以使用后者呈现自身与以防样式和/或模板不设置控件的使用者。 本部分中，我们将将某个标记文件添加到包含我们的默认样式的项目。
 
-你的项目节点下，创建一个新文件夹并将其命名为"Themes"。 在`Themes`，添加新项类型**Visual c + +** 的 > **XAML** > **XAML 视图**，并将其命名为"Generic.xaml"。 文件夹和文件名称必须要以便 XAML 框架，以便查找自定义控件的默认样式中所示。 删除的默认内容`Generic.xaml`，然后粘贴到下面的标记中。
+你的项目节点下，创建一个新文件夹并将其命名为"Themes"。 在`Themes`，添加新项的类型**Visual c + +** > **XAML** > **XAML 视图**，并将其命名为"Generic.xaml"。 文件夹和文件名称必须要以便 XAML 框架，以便查找自定义控件的默认样式中所示。 删除的默认内容`Generic.xaml`，然后粘贴到下面的标记中。
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
@@ -155,7 +155,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-此外，添加以下 include 指令`MainPage.h`，以便**MainPage**类型 （编译 XAML 标记和命令性代码的组合） 是注意到的**BgLabelControl**自定义控件类型。
+此外，添加以下 include 指令到`MainPage.h`，以便**MainPage**类型 （编译 XAML 标记和命令性代码的组合） 会注意到的**BgLabelControl**自定义控件类型。
 
 ```cppwinrt
 // MainPage.h
@@ -164,13 +164,13 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ...
 ```
 
-立即生成并运行该项目。 你将看到的默认控件模板绑定到背景画笔，而此类标签，在标记中的**BgLabelControl**实例。
+立即生成并运行该项目。 你将看到的默认控件模板绑定到背景画笔，而此类标签， **BgLabelControl**实例在标记中。
 
-本演练演示了自定义 （模板化） 控件的简单示例，在 C + + WinRT。 任意丰富且齐全，你可以使你自己的自定义控件。 例如，自定义控件可能需要为可编辑的数据网格、 视频播放器或 3D 几何图形的可视化工具创造复杂的形式。
+本演练演示了自定义 （模板化） 控件的简单示例，在 C + + WinRT。 任意丰富且齐全，你可以使你自己的自定义控件。 例如，自定义控件可能需要为可编辑的数据网格、 视频播放器或 3D 几何图形的可视化工具是复杂的形式。
 
 ## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>实现*可重写*功能，如**MeasureOverride**和**OnApplyTemplate**
 
-派生自定义控件的[**控件**](/uwp/api/windows.ui.xaml.controls.control)运行时类，该类本身进一步派生基本运行时类。 和可重写方法来**控制**、 [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)和[**UIElement**](/uwp/api/windows.ui.xaml.uielement) ，您可以在你的派生类重写。 下面是代码示例向你显示如何执行该操作。
+派生自定义控件的[**控件**](/uwp/api/windows.ui.xaml.controls.control)运行时类，该类本身进一步派生基本的运行时类。 和可重写方法来**控制**、 [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)和[**UIElement**](/uwp/api/windows.ui.xaml.uielement) ，你可以替代派生的类中。 下面是代码示例展示了如何执行该操作。
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>
@@ -189,7 +189,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-*可重写*函数本身以不同方式提供不同的语言投影中。 在 C# 中，例如，可重写函数通常显示为受保护的虚拟函数。 在 C + + WinRT，它们既不虚拟，也不受保护，但仍可以替代它们，并提供自己的实现，如上所示。
+*可重写*函数本身以不同方式提供不同的语言投影中。 在 C# 中，例如，可重写函数通常显示为受保护的虚拟函数。 在 C + + WinRT，它们既不虚拟，也不受保护，但是仍可以替代它们，并提供自己的实现，如上所示。
 
 ## <a name="important-apis"></a>重要的 API
 * [控件类](/uwp/api/windows.ui.xaml.controls.control)

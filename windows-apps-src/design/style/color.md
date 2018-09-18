@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983420"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4017011"
 ---
 # <a name="color"></a>颜色
 
@@ -147,10 +147,10 @@ ms.locfileid: "3983420"
 
 :::row:::
     :::column:::
-        ![用户选择主题色标头](images/color/user-accent.svg)![用户选择的主题色](images/color/user-selected-accent.svg)
+        ![用户选择的主题标题](images/color/user-accent.svg)![用户选择的主题色](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![自定义主题色标头](images/color/custom-accent.svg)![自定义品牌主题色](images/color/brand-color.svg)
+        ![自定义主题标题](images/color/custom-accent.svg)![自定义品牌主题色](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 

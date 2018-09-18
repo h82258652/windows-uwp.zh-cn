@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983498"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020595"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
@@ -31,7 +31,7 @@ ms.locfileid: "3983498"
 
 了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
-本主题假定你已创建一个后台任务类，包括可作为后台任务入口点的**Run**方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点**运行**的方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 本主题也适用于进程内后台任务。 但是，而不是**Run**方法中，使用替换**OnBackgroundActivated**。 进程内后台任务不需要你使用永久性存储发送取消信号，因为你可以使用应用状态传达取消（如果后台任务与前台应用在同一进程中运行）。
 
@@ -40,7 +40,7 @@ ms.locfileid: "3983498"
 编写一个用于处理取消事件的方法。
 
 > [!NOTE]
-> 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或应用不会对其进行处理，则将终止后台任务，没有警告且不引发 OnCanceled 事件。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
+> 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或该应用不会对其进行处理，则没有警告且不引发 OnCanceled 事件的情况下，将会终止后台任务。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
 
 创建一个名为 **OnCanceled** 的方法，如下所示。 该方法是 Windows 运行时在针对后台任务进行取消请求时调用的入口点。
 
@@ -139,7 +139,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 修改后台任务类的代码以在它工作时检查该标志变量。 如果**\_cancelRequested**变为设置为 true，则停止工作将在继续操作。
 
-[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包括后台任务取消时停止定期计时器回调的检查。
+[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含一个检查，以后台任务取消时停止定期计时器回调。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -183,7 +183,7 @@ else
 > [!NOTE]
 > 如上所示的代码示例使用[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。用于记录后台任务进度的[**进度**](https://msdn.microsoft.com/library/windows/apps/br224800)属性。 使用 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 类将进度报告回应用。
 
-修改**Run**方法，以便停止工作后，它会记录该任务已完成还是已取消。 此步骤适用于进程外后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于进程内后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
+修改**Run**方法，以便停止工作后，它会记录该任务已完成还是已被取消。 此步骤适用于进程外后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于进程内后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
 
 [后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)将状态记录在 LocalSettings。
 
@@ -265,7 +265,7 @@ else
 
 ## <a name="run-method-example"></a>Run 方法示例
 
-完成**Run**方法和计时器回调代码时，请从[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)如下所示的上下文。
+完成**运行**方法和计时器回调代码时，请从[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)如下所示的上下文。
 
 ```csharp
 // The Run method is the entry point of a background task.

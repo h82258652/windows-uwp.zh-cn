@@ -8,14 +8,14 @@ ms.date: 07/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态的时间
+keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态，时间
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985884"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4023377"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
@@ -40,8 +40,8 @@ ms.locfileid: "3985884"
 当你的应用通过认证时，它已准备好移动到**发布**过程。
 
 - 如果你已指示应尽快可能 （默认选项） 发布你的提交，将立即开始发布过程。
-- 如果这是第一次已发布应用，并且你指定**发布日期**[计划](configure-precise-release-scheduling.md#release)部分中，应用将变为可用根据你的**发布日期**选择。
-- 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定，它不应发布在特定日期之前，我们将等到该日期开始发布过程中，除非你选择**更改发布日期**。
+- 如果这是首次发布应用，并[计划](configure-precise-release-scheduling.md#release)部分中指定**的发布日期**，应用将成为根据你的**发布日期**选择可用。
+- 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定应不会发布在特定日期之前，我们将等到该日期开始发布过程，除非你选择**更改发布日期**。
 - 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定你想要手动发布提交，我们将不会开始发布过程，直到你选择**立即发布**（或选择**更改发布日期**并选取特定日期）。
 
 
@@ -51,7 +51,7 @@ ms.locfileid: "3985884"
 
 对于新的应用和更新包括对应用包的更改，将在 24 小时内完成发布流程。 对于仅更改选项，例如应用商店一览详细信息，但不会更改应用的程序包更新，发布过程将需要少于一小时。
 
-当你的应用处于发布阶段时，你的应用提交的状态列中的**显示详细信息**链接可使你知道你的新的程序包和一览详细信息的应用商店时为每个受支持的操作系统版本上的客户提供。 尚未完成的步骤将显示**挂起**。 你的应用将继续处于发布阶段，直到此过程完成，意味着新的程序包和/或一览详细信息可供所有应用的潜在客户。
+当你的应用处于发布阶段时，你的应用提交的状态列中的**显示详细信息**链接可使你知道你的新的程序包和一览详细信息的应用商店时为每个受支持的操作系统版本上的客户提供。 尚未完成的步骤将显示**挂起**。 你的应用将继续处于发布阶段，直到此过程完成，意味着新的程序包和/或一览详细信息提供给的所有应用的潜在客户。
 
 ## <a name="in-the-store"></a>已在 Microsoft Store 
 

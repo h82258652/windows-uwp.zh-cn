@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 游戏板, 振动
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf78b43bb09f97c196858d7cc4fcdb1e71462fc
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982880"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4023097"
 ---
 # <a name="gamepad-and-vibration"></a>游戏板和振动
 
@@ -33,7 +33,7 @@ ms.locfileid: "3982880"
 
 Xbox Wireless Controller 和 Xbox Wireless Controller S 等游戏板是通用游戏输入设备。 它们是 Xbox One 上的标准输入设备，不喜欢用键盘和鼠标的 Windows 游戏玩家通常会选择这些设备。 游戏板在 Windows 10 和 Xbox UWP 应用中受 [Windows.Gaming.Input][] 命名空间支持。
 
-Xbox One 游戏板配备有一个方向板 （或方向键）;**A**、 **B**、 **X**、 **Y**、**视图**和**菜单**按钮;左和右操纵杆、 缓冲键和触发器;以及总共 4 个振动电机。 两个操纵杆会在 X 和 Y 轴提供两个模拟读数，并在向内按时还可以充当一个按钮。 每个触发器提供表示它距离返回拉取模拟读数。
+Xbox One 游戏板配备有一个方向板 （或方向键）;**A**、 **B**、 **X**、 **Y**、**视图**和**菜单**按钮;左和右操纵杆、 缓冲键和触发器;以及总共 4 个振动电机。 两个操纵杆会在 X 和 Y 轴提供两个模拟读数，并在向内按时还可以充当一个按钮。 每个扳机键会提供一个模拟读数表示它距离返回拉取。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **Paddle** buttons on its underside. These can be used to provide redundant access to game commands that are difficult to use together (such as the right thumbstick together with any of the **A**, **B**, **X**, or **Y** buttons) or to provide dedicated access to additional commands. -->
@@ -98,9 +98,9 @@ Xbox One 游戏板针对强烈和细微的游戏板振动提供了两个独立�
 
 ### <a name="the-gamepads-list"></a>游戏板列表
 
-[Gamepad][] 类会提供一个静态属性 [Gamepads][]，该属性是当前已连接游戏板的只读列表。 因为你可能只对某些连接的游戏板感兴趣，建议你保留自己的集合，而访问它们通过`Gamepads`属性。
+[Gamepad][] 类会提供一个静态属性 [Gamepads][]，该属性是当前已连接游戏板的只读列表。 因为你可能只对某些连接的游戏板感兴趣，建议你保留自己的集合，而不是访问这些通过`Gamepads`属性。
 
-下面是将所有已连接游戏板复制到一个新集合的示例。 请注意，因为将会在后台中的其他线程访问此集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），你需要设置任何代码的读取或更新集合周围锁定。
+下面是将所有已连接游戏板复制到一个新集合的示例。 请注意，因为将会在后台中的其他线程访问此集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），你需要设置任何读取或更新集合的代码锁定。
 
 ```cpp
 auto myGamepads = ref new Vector<Gamepad^>();
@@ -146,7 +146,7 @@ private void GetGamepads()
 
 ### <a name="adding-and-removing-gamepads"></a>添加和删除游戏板
 
-添加或删除游戏板时会引发的[GamepadAdded][]和[GamepadRemoved][]事件。 你可以为这些事件注册处理程序以跟踪当前连接的游戏板。
+当添加或删除游戏板时，会引发的[GamepadAdded][]和[GamepadRemoved][]事件。 你可以为这些事件注册处理程序以跟踪当前连接的游戏板。
 
 下面是开始跟踪已添加的游戏板的示例。
 
@@ -183,7 +183,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-下面的示例停止跟踪已删除游戏板。 你还需要处理时将其; 要跟踪的游戏板会发生什么情况例如，此代码仅跟踪来自一个游戏板输入，只需将其设置为`nullptr`删除的时间。 你需要检查每个帧，如果你的游戏板处于活动状态，以及哪些游戏板你正在从输入时收集控制器的连接和断开连接的更新。
+下面的示例将停止跟踪已删除的游戏板。 你还需要处理时将其; 要跟踪的游戏板会发生什么情况例如，此代码仅跟踪来自一个游戏板输入，只需将其设置为`nullptr`删除的时间。 你需要检查每个帧，如果你的游戏板处于活动状态，以及哪些游戏板你正在从输入时收集控制器的连接和断开连接的更新。
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -275,7 +275,7 @@ double rightStickX = reading.RightThumbstickX; // returns a value between -1.0 a
 double rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
-读取操纵杆的值时，你会注意到，当操纵杆处于中心位置闲置时，它们不会稳定地生成中性读数 0.0；而是每次移动操纵杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。 使用死区的一种方法是，确定操纵杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以大致计算距离&mdash;它它们并不精确，因为操纵杆读数实际上是极值，不是平面值&mdash;只需通过使用勾股定理计算。 这会生成一个径向死区。
+读取操纵杆的值时，你会注意到，当操纵杆处于中心位置闲置时，它们不会稳定地生成中性读数 0.0；而是每次移动操纵杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。 使用死区的一种方法是，确定操纵杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以大致计算距离&mdash;它它们并不精确，因为操纵杆读数实际上是极值，不是平面值&mdash;使用勾股定理计算。 这会生成一个径向死区。
 
 下面示例演示如何使用勾股定理计算基本径向死区。
 
@@ -335,7 +335,7 @@ double rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1
 
 ### <a name="reading-the-buttons"></a>读取按钮
 
-每个游戏板按钮&mdash;方向键、 左和右缓冲键、 左右操纵杆按键、 **A**、 **B**、 **X**、 **Y**、**视图**和**菜单**的四个方向&mdash;提供读取的数字指示它已按下 （向下） 还是释放 （向上）。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到由[GamepadButtons][]枚举表示单个组标志。
+每个游戏板按钮&mdash;方向键、 左和右缓冲键、 左右操纵杆按键、 **A**、 **B**、 **X**、 **Y**、**视图**和**菜单**的四个方向&mdash;提供阅读该数字指示它是按下 （向下） 还是释放 （向上）。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到的单独位域所表示的[GamepadButtons][]枚举。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **paddle** buttons on its underside. These buttons are also represented in the `GamepadButtons` enumeration and their values are read in the same way as the standard gamepad buttons. -->
@@ -374,7 +374,7 @@ if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
 }
 ```
 
-有时你可能想要确定从按钮的过渡时按下到释放或多个按钮是按下还是释放，或按特定方式安排一组按钮释放为按下，&mdash;按下，释放一些。 有关如何检测这些条件的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
+有时你可能想要确定某个按钮时从转换为释放按下或释放为按下，是按下还是释放多个按钮，或按特定方式安排一组按钮&mdash;按下，释放一些。 有关如何检测这些条件的详细信息，请参阅 [检测按钮转换](input-practices-for-games.md#detecting-button-transitions) 和 [检测复杂按钮安排](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 ## <a name="run-the-gamepad-input-sample"></a>运行游戏板输入示例
 
@@ -390,7 +390,7 @@ Xbox One 游戏板共配备有四个独立的振动电机。 两个大型电机�
 
 游戏板振动通过 [Gamepad][] 类的 [Vibration][] 属性进行控制。 `Vibration` Vibration 是 [GamepadVibration][] 结构的实例，该结构由四个浮点值组成，每个值代表其中一个电机的强度。
 
-尽管的成员`Gamepad.Vibration`属性可以直接修改，建议在初始化单独`GamepadVibration`实例与你需的值，然后将其复制到`Gamepad.Vibration`属性来一次性更改实际电机强度。
+尽管的成员`Gamepad.Vibration`可以直接修改属性，建议在初始化单独`GamepadVibration`实例与你需的值，然后将其复制到`Gamepad.Vibration`属性来一次性更改实际电机强度。
 
 以下示例演示了如何一次性更改电机强度。
 
@@ -440,7 +440,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 mainGamepad.Vibration = vibration;
 ```
 
-切记，这两个电机不是完全相同的，所以将这些属性设置为相同的值并不会在一个电机中生成与另一个电机中相同的振动。 对于任何值，左的电机会更强振动，较低的频率比右快速演练的&mdash;对于相同的值&mdash;生成更轻柔的振动，较高的频率。 即使是最大值，左电机也无法生成右电机的高频率，右电机也无法生成左电机的高动力。 因为电机通过游戏板刚性连接，所以即使电机具有不同的特性并且能够以不同的强度振动，游戏玩家仍然不能完全独立地体验振动。 相比完全相同的电机，这种布置可以产生更大范围、更丰富的感觉。
+切记，这两个电机不是完全相同的，所以将这些属性设置为相同的值并不会在一个电机中生成与另一个电机中相同的振动。 对于任何值，左的电机会更强振动，较低的频率比右电动机的&mdash;对于相同的值&mdash;生成更轻柔的振动，较高的频率。 即使是最大值，左电机也无法生成右电机的高频率，右电机也无法生成左电机的高动力。 因为电机通过游戏板刚性连接，所以即使电机具有不同的特性并且能够以不同的强度振动，游戏玩家仍然不能完全独立地体验振动。 相比完全相同的电机，这种布置可以产生更大范围、更丰富的感觉。
 
 ### <a name="using-the-impulse-triggers"></a>使用脉冲扳机键
 

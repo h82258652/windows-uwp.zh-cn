@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985724"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015847"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Windows 开发人员文档中的新增 2018 年 9 月
 
@@ -38,19 +38,19 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 [Windows UI 库](https://aka.ms/winui-docs)是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 这些程序包也是与早期版本的 Windows 10 兼容，因此即使你的用户不具有最新的操作系统版本的工作原理你的应用。
 
-Windows UI 库的详细信息，请参阅[NuGet 程序包中包含的 API 命名空间此列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
+Windows UI 库的详细信息，请参阅[的 NuGet 包中包含的 API 命名空间此列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="how-blur-effects-work"></a>如何模糊效果工作
 
-我们作家，esteemed Mike Jacobs，其中一个已开始一系列有关模糊，从设想摄影应用和游戏设计为在中等文章。 如果感兴趣了解有关此普遍的视觉效果的详细信息，请查看[影像和摄影上的第一个文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)以及[抗锯齿在图形上的第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+我们作家，esteemed Mike Jacobs，其中一个已开始一系列文章中中等有关模糊，从到摄影应用和游戏设计的愿景。 如果感兴趣了解有关此普遍的视觉效果的详细信息，请查看[影像和摄影上的第一个文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)以及[抗锯齿在图形上的第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![模糊操作](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>投稿指南
 
-我们为我们的 UWP 文档更新了[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
+我们更新了[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)，我们 UWP 文档。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
 
 ## <a name="videos"></a>视频
 

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983072"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4021851"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 版本 17134 中的最近更新
 
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady 是一组技术，用于防止数字内容在未
 系统触发器 | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) 让你可以在操作系统未提供所需系统触发器时定义系统触发器。 例如，当硬件驱动程序和 UWP 应用均属于第三方，且硬件驱动程序需要引发其应用处理的自定义事件时。 例如，需要在插入音频插孔时通知用户的音频卡。
 用户活动 | 新的 [UserActivity 文档](../launch-resume/useractivities.md)解释了如何帮助用户恢复他们在应用中，甚至是在多台设备中所执行的操作。</br>**UserActivitySessionHistoryItem** 类有检索近期用户活动的新方法。 请参阅 [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) 及其重载了解详细信息。
 Windows Mixed Reality API | 为支持不断扩大的 Windows Mixed Reality 平台，已向 [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 和 [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 命名空间添加了新 API。
-Windows Mixed Reality 文档 | Windows Mixed Reality 开发人员指南[现托管在 docs.microsoft.com。](https://docs.microsoft.com/windows/mixed-reality/) 就像在这些 UWP 文档，你现在可以包含 GitHub 问题的反馈意见或提交自己所做的贡献通过拉取请求。
+Windows Mixed Reality 文档 | Windows Mixed Reality 开发人员指南[现托管在 docs.microsoft.com。](https://docs.microsoft.com/windows/mixed-reality/) 就像在这些 UWP 文档中，你现在可以包含 GitHub 问题的反馈意见或提交自己所做的贡献通过拉取请求。
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 

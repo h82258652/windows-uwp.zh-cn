@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 目标通知, 推送通知, toast, 磁贴
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982971"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019685"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>向应用客户发送通知
 
@@ -53,7 +53,7 @@ Windows 开发人员中心提供以数据驱动的客户参与平台，可用于
 
 1. 展开 [Windows 开发人员中心仪表板](https://partner.microsoft.com/dashboard/)中的**参与**部分，然后选择**通知**。
 2. 在**通知**页上，选择**新通知**。
-3. 在**选择模板**部分中，选择你想要发送，然后单击**确定**的[通知类型](#notification-template-types)。
+3. 在**选择模板**部分中，选择你想要发送，然后单击**确定**[通知类型](#notification-template-types)。
 4. 在下一页中，使用下拉菜单选择要为其生成通知的**单个应用**或**多个应用**。 你只能选择已[配置为使用 Microsoft Store Services SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)的应用。
 5. 在**通知设置**部分，选择通知**名称**，并选择通知发送目标的**客户组**（如果适用）。 （发送至多个应用的通知只能发送至这些应用的所有客户。）如果要使用你尚未创建的段，请选择**创建新客户组**。 请注意，新段 24 小时之后才可用作通知。 有关详细信息，请参阅[创建客户类别](create-customer-segments.md)。
 6. 如果你想要指定何时发送通知，清除**立即发送通知**复选框并选择特定的日期和时间（除非指定为使用每个客户的当地时区，否则所有客户均使用 UTC 时间）。
@@ -132,12 +132,12 @@ Windows 开发人员中心提供以数据驱动的客户参与平台，可用于
     * **启动数**：通知已发送、客户已点击该通知，最后应用也打开。 请注意，这仅跟踪应用启动数。 此状态不包含邀请客户执行其他操作的通知，例如启动应用商店以留下评分。
     * **未知**：我们无法确定此通知的状态。
 
-若要分析所有通知的用户活动数据：
+若要分析你的所有通知的用户活动数据：
 
 1.  展开 Windows 开发人员中心仪表板中的**参与**部分，然后选择**通知**。
 2.  在**通知**页面上，单击**分析**选项卡。此选项卡上显示以下数据：
     * 为你的 toast 和操作中心通知的各种用户操作状态的图形视图。
-    * 为你的 toast 和操作通过率单击世界地图视图中心通知。
+    * 为你的 toast 和操作通过率单击的世界地图视图中心通知。
 3. 在页面顶部附近，可以选择希望显示数据的时间段。 默认选择为 30D（30 天），但你可以选择要显示 3、6 或 12 个月的数据或指定的自定义数据范围的数据。 你还可以展开**筛选器**筛选的所有数据的应用和市场。
 
 ## <a name="translate-your-notifications"></a>翻译通知

@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984652"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015059"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Windows 开发人员文档中的新增在 2018 年 7 月
 
-Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例已在 7 月的月份中可用。
+Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例，已在 7 月的月份中可用。
 
 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
@@ -26,7 +26,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="progressive-web-apps-on-windows"></a>在 Windows 上的渐进式 Web 应用
 
-[渐进式 Web 应用 (Pwa)](https://developer.microsoft.com/windows/pwa)都只需通过本机类似于应用的功能，支持平台和浏览器引擎，如启动从 homescreen 安装、 离线支持和推送[逐步增强](https://wikipedia.org/wiki/Progressive_enhancement)的 web 应用通知。 Windows 10 与 Microsoft Edge (EdgeHTML) 引擎 Pwa 享受运行的其他优点[独立于浏览器窗口与 UWP 应用。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[渐进式 Web 应用 (Pwa)](https://developer.microsoft.com/windows/pwa)都只需使用本机类似于应用的功能，支持平台和浏览器引擎，如启动从 homescreen 安装、 离线支持和推送[逐步增强](https://wikipedia.org/wiki/Progressive_enhancement)的 web 应用通知。 使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10，Pwa 享受正在运行的其他优点[独立于浏览器窗口与 UWP 应用。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![Pwa 的操作中的图像](images/progressive-web-apps.jpg)
 
@@ -38,13 +38,13 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="notepad"></a>记事本
 
-在 Windows 10 Insider Preview 生成 17713，[许多新功能已更新记事本](http://aka.ms/ant-man)中可用。 缩放、 环绕查找/替换，以及对 Unix/Linux （换行符） 和 Mac （回车） 行尾支持现可向[Windows 预览体验成员](https://insider.windows.com/)。 
+在 Windows 10 Insider Preview 生成 17713，[许多新功能已更新记事本](http://aka.ms/ant-man)中可用。 缩放、 环绕查找/替换，并支持 Unix/Linux （换行符） 和 Mac （回车） 行尾现可向[Windows 预览体验成员](https://insider.windows.com/)。 
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="design-landing-page"></a>设计登录页面
 
-查看[更新登录页的设计](https://developer.microsoft.com/windows/apps/design)为一览概述 UWP 设计区域，并添加到 Fluent 设计的最新功能的信息。
+请查看[更新登录页的设计](https://developer.microsoft.com/windows/apps/design)为一览概述 UWP 设计区域，并添加到 Fluent 设计的最新功能的信息。
 
 ### <a name="design-toolkits"></a>设计工具包
 
@@ -56,13 +56,13 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 )的几个新主题：
 
 * [WebVR 是什么？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) 说明了什么 WebVR，为什么应使用它，以及如何为其开发入门。
+) 说明了什么 WebVR，为什么你应使用它，以及如何为其开发入门。
 
 * [渐进式 Web 应用中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)： 了解如何将 WebVR 添加到渐进式 Web 应用 (PWA)。
 
 * [WebVR 在 web 视图中](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)： 了解如何将 WebVR 添加到 Windows 10 应用中的 web 视图控件。
 
-* [WebVR 演示](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 签出一些 WebVR 演示使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式头戴显示设备。
+* [WebVR 演示](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 查看一些 WebVR 演示使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式头戴显示设备。
 
 此外，我们已对现有页面进行一些更新：
 
@@ -70,13 +70,13 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 * [WebVR 开发人员指南 （登录页）](https://docs.microsoft.com/microsoft-edge/webvr/)： 刷新的外观和感觉，具有较大的图像和图标和新演示。
 
-* [使用 WebVR 与 Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge)： 更新包括有关 Windows 10 2018 年 4 月更新。
+* [使用 Microsoft Edge 使用 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge)： 已更新，包括有关 Windows 10 2018 年 4 月更新。
 
 ## <a name="videos"></a>视频
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>要开始使用适用于开发人员： 创建和自定义 Windows 10 上的表单
 
-我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 本视频将指导你通过这些主题，之一和介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
+我们的[入门文档](../get-started/index.md)适用于 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过这些主题中，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>增强你的项目个性聊天机器人
 
@@ -88,12 +88,12 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 Raymond Chen:
 
-* [为什么所做的那样你是否适用于 Microsoft？](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
+* [为什么所做的那样你适用于 Microsoft？](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
 
 Larry Osterman:
 
 * [我们为何不要让开发人员更改默认音频设备？](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
-* [为什么有许多 UWP 功能异步？](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
+* [为什么的许多 UWP 功能异步？](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
 
 ## <a name="samples"></a>示例
 

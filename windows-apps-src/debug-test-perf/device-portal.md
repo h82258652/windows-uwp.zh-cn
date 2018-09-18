@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982926"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4017233"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，用于帮助您解决并查看 Windows 设备的实时性能。
+Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，用于帮助你解决并查看你的 Windows 设备的实时性能。
 
-Windows Device Portal 是你可以从电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以还与该设备上的浏览器本地连接。
+Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以也与该设备上的浏览器本地连接。
 
 Windows Device Portal 是适用于每个设备系列，但功能和设置因每个设备的要求。 本文提供了 Device Portal 的常规说明以及指向包含每个设备系列的更具体信息的文章链接。
 
-Windows Device Portal 的功能实现与[REST Api](device-portal-api-core.md) ，可用于直接访问数据和以编程方式控制设备。
+使用[REST Api](device-portal-api-core.md) ，可用于直接访问数据和以编程方式控制设备已实现的 Windows Device Portal 的功能。
 
 ## <a name="setup"></a>设置
 
@@ -63,16 +63,16 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 使用沿页面左侧的导航窗格中的链接导航到适用于你的设备的可用管理和监视工具。
 
-下面介绍了都是通用设备系列的工具。 根据设备的不同可能提供其他选项。 有关详细信息，请参阅你的设备类型的特定页面。
+此处所述的通用设备系列的工具。 根据设备的不同可能提供其他选项。 有关详细信息，请参阅你的设备类型的特定页面。
 
 ### <a name="apps-manager"></a>应用管理器
 
-应用管理器提供了安装/卸载和管理功能的应用包和程序包主机设备上。
+应用管理器提供了安装/卸载和管理功能的应用程序包和捆绑在主机设备上。
 
-![设备门户应用管理器页面](images/device-portal/wdp-apps.png)
+![设备门户的应用管理器页](images/device-portal/wdp-apps.png)
 
-- **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册松散文件从网络共享。
-- **正在运行的应用**： 获取有关当前正在运行并在必要时关闭它们的应用的信息。
+- **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册 loose 文件从网络共享。
+- **正在运行的应用**： 获取有关当前正在运行，并根据需要关闭它们的应用的信息。
 
 #### <a name="install-an-app"></a>安装应用
 
@@ -91,7 +91,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="running-processes"></a>正在运行的进程
 
-此页显示有关当前在主机设备上运行的进程的详细信息。 这包括应用和系统进程。 在某些平台 （Desktop、 IoT、 和 HoloLens） 上，你可以终止进程。
+此页显示有关当前在主机设备上运行的进程的详细信息。 这包括应用和系统进程。 在某些平台 （Desktop、 IoT、 和 HoloLens），你可以终止进程。
 
 ![设备门户运行处理页面](images/device-portal/mob-device-portal-processes.png)
 
@@ -99,11 +99,11 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 此页面可查看和操纵由旁加载的任何应用存储的文件。 请参阅[使用应用文件资源管理器](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)博客文章以了解有关文件资源管理器以及如何使用它的详细信息。 
 
-![设备门户文件资源管理器页面](images/device-portal/mob-device-portal-AppFileExplorer.png)
+![设备门户文件资源管理器页](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
 ### <a name="performance"></a>性能
 
-性能页显示系统诊断信息，如电源使用情况、 帧速率的实时图形和 CPU 负载。
+平均页面显示系统诊断信息，如电源使用情况、 帧速率的实时图形和 CPU 负载。
 
 可用的指标如下所示：
 - **CPU**： 的总可用的 CPU 使用率百分比
@@ -133,7 +133,7 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 - **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不在 GUID 中包含括号。
 - **已启用提供程序**： 这将列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击**禁用**来停止跟踪。 单击或点击**全部停止**来暂停所有跟踪。
 - **提供程序历史记录**： 这将显示当前会话期间启用的 ETW 提供程序。 单击或点击**启用**来激活已禁用的提供程序。 单击或点击**清除**来清除历史记录。
-- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格形式的 ETW 事件。 表将实时更新。 使用**筛选器**菜单上设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到本地 CSV 文件。
+- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格的 ETW 事件。 下表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到本地 CSV 文件。
 
 有关使用 ETW 日志记录的更多详细信息，请参阅[使用设备门户，以查看调试日志](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)博客文章。 
 
@@ -146,7 +146,7 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 - **可用配置文件**：从下拉列表中选择 WPR 配置文件，然后单击或点击**开始**以开始跟踪。
 - **自定义配置文件**：单击或点击**浏览**以从电脑中选择 WPR 配置文件。 单击或点击**上载并启动**以开始跟踪。
 
-若要停止跟踪，请单击**停止**。 保留在此页面上，直到跟踪文件 (。ETL) 已完成下载。
+若要停止跟踪，请单击**停止**。 停留在此页面上，直到跟踪文件 (。ETL) 已完成下载。
 
 捕获。可用于在[Windows 性能分析器](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx)分析打开 ETL 文件。
 
@@ -154,12 +154,12 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 
 设备管理器页面枚举连接到你的设备的所有外围设备。 你可以单击要查看每个属性的设置图标。
 
-![设备门户设备管理器页面](images/device-portal/mob-device-portal-devices.png)
+![设备门户设备管理器页](images/device-portal/mob-device-portal-devices.png)
 
 ### <a name="networking"></a>网络
 
-网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将可能断开连接你从 Device Portal。
-- **可用的网络**： 显示适用于该设备的 WiFi 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
+网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将很可能你断开与连接 Device Portal。
+- **可用的网络**： 显示 WiFi 网络适用于该设备。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
 - **IP 配置**： 显示设备的网络端口的每个主机地址信息。
 
 ![设备门户网络页面](images/device-portal/mob-device-portal-network.png)
@@ -184,7 +184,7 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 为了防止受到 [CSRF 攻击](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
 
 > [!IMPORTANT]
-> 此保护可防止从独立客户端 （如命令行实用程序） 使用 REST Api 的用法。 这可以通过 3 种方法解决： 
+> 此保护可防止从独立客户端 （例如命令行实用程序） 使用 REST api。 这可以通过 3 种方法解决： 
 > - 使用"auto-"用户名。 将“auto-”置于其用户名前面的客户端将绕过 CSRF 保护。 此用户名不能用于通过浏览器登录到 Device Portal，这一点很重要，因为它将针对 CSRF 攻击打开服务。 示例：如果 Device Portal 的用户名为“admin”，则 ```curl -u auto-admin:password <args>``` 应该用于绕过 CSRF 保护。 
 > - 在客户端中实现 Cookie 到标头的方案。 这需要 GET 请求来建立会话 Cookie，并包含所有后续请求的标头和 Cookie。 
 > - 禁用身份验证并使用 HTTP。 CSRF 保护仅适用于 HTTPS 终结点，因此 HTTP 终结点上的连接无需执行上述任一操作。 
