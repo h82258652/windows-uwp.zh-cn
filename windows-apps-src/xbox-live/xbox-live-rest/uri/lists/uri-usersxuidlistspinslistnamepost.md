@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 77789014fcd242aad70e7302b01907bc10b8bbab
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983557"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4024028"
 ---
 # <a name="post-usersxuidxuidlistspinslistname"></a>POST (/users/xuid(xuid)/lists/PINS/{listname})
 项目插入到列表中基于查询字符串参数**insertIndex**的索引。 这些 Uri 的域是`eplists.xboxlive.com`。

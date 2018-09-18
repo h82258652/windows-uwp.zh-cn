@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 控制器支持
 ms.localizationpriority: medium
 ms.openlocfilehash: 29b9dcc18d3930300354d2fdcef78d68314f6514
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982415"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020000"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>向 Xbox Live Prefabs 添加控制器支持
 

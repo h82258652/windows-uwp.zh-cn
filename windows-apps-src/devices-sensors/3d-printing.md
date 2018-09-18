@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows 10，uwp，3dprinting，3d 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982006"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4024473"
 ---
 # <a name="3d-printing"></a>3D 打印
 
 
-本部分介绍了如何利用[Windows.Graphics.Printing3D 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)将 3D 打印功能添加到你的通用 Windows 应用。  
+本部分介绍了如何使用[Windows.Graphics.Printing3D 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)将 3D 打印功能添加到你的通用 Windows 应用。  
 
-有关详细信息的 Windows 10，包括硬件合作伙伴、 社区论坛和有关 3D 打印功能的一般信息的资源的 3D 打印硬件开发人员中心上看到的[3D 打印与 Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)的站点。
+对于 Windows 10，包括硬件合作伙伴、 社区论坛和有关 3D 打印功能的常规信息的资源的 3D 打印的详细信息硬件开发人员中心上看到的[Windows 10 的 3D 打印](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)的站点。
 
 | 主题 | 描述 |
 |-------|-------------|
 | [从应用进行 3D 打印](3d-print-from-app.md) | 了解如何向 UWP 应用添加 3D 打印功能。 本主题介绍了如何在确保 3D 模型可打印并且格式正确后启动 3D 打印对话框。 |
-| [生成 3MF 程序包](generate-3mf.md) | 介绍 3D 制造格式文件类型和如何进行创建和使用 Windows.Graphics.Printing3D Api 操作的结构。 |
+| [生成 3MF 程序包](generate-3mf.md) | 介绍 3D 制造格式文件类型和如何进行创建和操作使用 Windows.Graphics.Printing3D Api 的结构。 |
 
 ## <a name="related-topics"></a>相关主题
 

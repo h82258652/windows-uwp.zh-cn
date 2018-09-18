@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 042ecc09302fce4ef86905a7b7d5adcafb0a97f4
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984947"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020604"
 ---
 # <a name="flowchart---fill-open-slots-in-a-multiplayer-game"></a>流程图 - 在多人游戏中填补空位
 

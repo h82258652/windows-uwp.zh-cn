@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 270f36d354ee4561d12f78644436ad51e286768c
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3988837"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020724"
 ---
 # <a name="get-usersmeinventory"></a>GET (/users/me/inventory)
 提供的一套当前与返回到调用方提供的用户相关联的清单。

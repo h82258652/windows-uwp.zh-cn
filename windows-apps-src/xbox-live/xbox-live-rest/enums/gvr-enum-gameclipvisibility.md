@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d7390f16d2cc8f61d76f51713c2903a6fd2c9c
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3989275"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4022400"
 ---
 # <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 枚举
 详细介绍 GameClipVisibility 枚举。 
