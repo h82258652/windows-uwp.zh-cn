@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 233f0e81f041cf1c98e18781c0b312a9d0b0a20a
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4017870"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4053118"
 ---
 # <a name="batch"></a>/batch
 在多个游戏的多个玩家统计数据的访问复杂的批处理请求。 这些 Uri 的域是`userstats.xboxlive.com`。

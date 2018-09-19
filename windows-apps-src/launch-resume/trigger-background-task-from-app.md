@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 后台任务触发器，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4023347"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052231"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>从应用中触发后台任务
 

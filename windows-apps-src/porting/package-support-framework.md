@@ -10,34 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: 7e5119696498156d36ec63b16b1d76c00b03f4df
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4021517"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060959"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>通过使用程序包支持框架到 MSIX 程序包应用运行时修复
 
 包支持框架是可帮助你修复时应用到你现有的 win32 应用程序不能访问的源代码，以便它可以 MSIX 容器中运行的开源工具包。 包支持框架可帮助你遵循在现代的运行时环境的最佳实践的应用程序。
 
-若要创建包支持框架，我们可以利用[迂回的方式](https://www.microsoft.com/en-us/research/project/detours)技术，它是开源框架开发由 Microsoft research 开发的 (MSR)，并帮助 API 重定向和挂钩。
-
-此框架是开源轻量的并且你可以使用它来解决应用程序问题快速。 它还会为你提供机会咨询的全球社区，并基于的其他投资构建。
-
-## <a name="a-quick-look-inside-of-the-package-support-framework"></a>快速查看包支持框架内
-
-包支持框架包含可执行文件、 运行时管理器 DLL 和一组的运行时修复。
-
-![包支持框架](images/desktop-to-uwp/package-support-framework.png)
-
-它的工作原理如下。 你将创建配置文件，用于指定要应用到你的应用程序 fix(s)。 然后，你将修改你的程序包来指向填充程序启动程序可执行文件。
-
-当用户启动你的应用程序时，填充程序启动程序是运行的第一个可执行文件。 它读取你的配置文件，并运行时 fix(s) 和运行时管理器 DLL 注入到应用程序进程。
-
-![程序包支持的框架 DLL 注入](images/desktop-to-uwp/package-support-framework-2.png)
-
-需要通过 MSIX 容器内运行的应用程序时，运行时管理器应用修复。
+若要了解详细信息，请参阅[包支持框架](https://docs.microsoft.com/windows/msix/package-support-framework-overview)。
 
 本指南将帮助你确定应用程序兼容性问题，并查找、 应用，并扩展运行时修复解决它们的。
 
