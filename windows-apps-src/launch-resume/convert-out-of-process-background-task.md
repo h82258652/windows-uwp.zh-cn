@@ -1,25 +1,25 @@
 ---
 author: TylerMSFT
-title: 将进程外后台任务转换为进程内后台任务
-description: 将进程外后台任务转换为在前台应用进程中运行的进程内后台任务。
+title: 移植为进程内后台任务进程外后台任务
+description: 移植为进程内后台任务在前台应用进程中运行的进程外后台任务。
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，后台任务，应用服务
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1144443f943f134991d050dea1457f252eaaf36d
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4020267"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4055777"
 ---
-# <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>将进程外后台任务转换为进程内后台任务
+# <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>移植为进程内后台任务进程外后台任务
 
-将进程外后台活动转换为进程内活动的最简单方法是将 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) 方法代码加入应用程序，并从 [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 中启动它。
+移植你的进程外 (OOP) 后台活动进程内活动的最简单方法是将应用程序中，你[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法代码，并从[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)启动它。 在此处所述的技术不是有关创建大幅从 OOP 后台任务与进程内后台任务。它的有关重写 （或移植） 为进程内版本 OOP 版本。
 
 如果应用具有多个后台任务，[后台激活示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation)可显示如何使用 `BackgroundActivatedEventArgs.TaskInstance.Task.Name` 确定启动的任务。
 

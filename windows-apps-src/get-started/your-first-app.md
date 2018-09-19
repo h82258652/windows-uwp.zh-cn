@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 第一个应用, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4017951"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4059331"
 ---
 # <a name="create-your-first-app"></a>创建你的第一个应用
 
