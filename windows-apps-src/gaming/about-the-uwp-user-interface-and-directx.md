@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4060691"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4083436"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 

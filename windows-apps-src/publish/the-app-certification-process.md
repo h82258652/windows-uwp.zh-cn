@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态，时间
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4052063"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4088638"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
