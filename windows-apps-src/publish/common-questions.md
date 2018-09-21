@@ -45,7 +45,7 @@ ms.locfileid: "4087562"
 
 广告市场活动当前在以下国家和地区中受支持：
 
-阿尔及利亚、阿根廷、澳大利亚、奥地利、巴哈马、巴林、巴巴多斯、比利时、伯利兹、玻利维亚、巴西、加拿大、智利、中国、哥伦比亚、丹麦、多米尼加共和国、厄瓜多尔、埃及、萨尔瓦多、芬兰、法国、德国、危地马拉、海地、洪都拉斯、香港特別行政区、印度、印度尼西亚、伊拉克、爱尔兰、意大利、牙买加、约旦、科威特、黎巴嫩、马来西亚、墨西哥、摩洛哥、新西兰、荷兰、尼加拉瓜、挪威、阿曼、巴拿马、巴拉圭、秘鲁、菲律宾、波多黎各、卡塔尔、沙特阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台湾、泰国、特立尼达和多巴哥、突尼斯、阿拉伯联合酋长国、英国、美国、乌拉圭、委内瑞拉、越南。
+Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>广告市场活动支持哪些语言？
 
