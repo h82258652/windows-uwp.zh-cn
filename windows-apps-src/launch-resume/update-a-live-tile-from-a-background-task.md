@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4111563"
+ms.locfileid: "4129492"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>通过后台任务更新动态磁贴
 

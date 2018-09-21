@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, azure ad, azure 租户, aad 租户, azure ad 租户, 租户管理, 租户
 ms.localizationpriority: medium
 ms.openlocfilehash: dd729d76705849c981516109da39bbd27c140286
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4088484"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4118983"
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>将 Azure Active Directory 与开发人员中心帐户相关联
 

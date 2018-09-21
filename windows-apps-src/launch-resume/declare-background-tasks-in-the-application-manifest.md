@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4110403"
+ms.locfileid: "4124116"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 

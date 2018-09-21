@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113157"
+ms.locfileid: "4124782"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>磁贴和 toast 通知的语言、比例和高对比度支持
 
