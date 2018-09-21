@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 051c24e0acc645150f4ca7ff74480f7de3ce456b
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4090370"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4111539"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作 API
 
@@ -320,8 +320,8 @@ IClosable ic1 = myimpl.as<IClosable>(); // error
 
 如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符 (前提是实现类型由生成的`cppwinrt.exe`工具) 的实现此目的。
 
-## <a name="deriving-from-a-type-that-has-a-non-trivial-constructor"></a>从一个具有特殊构造函数的类型派生
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) 是特殊构造函数的一个示例。 由于没有默认构造函数，因此，若要构造一个 **ToggleButtonAutomationPeer**，你需要传递 *owner*。 因此，如果你从 **ToggleButtonAutomationPeer** 派生，则需要提供一个接受 *owner* 并将它传递给基类的构造函数。 让我们来看看实际的情况。
+## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>从具有非默认构造函数的类型派生
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是非默认构造函数的示例。 由于没有默认构造函数，因此，若要构造一个 **ToggleButtonAutomationPeer**，你需要传递 *owner*。 因此，如果你从 **ToggleButtonAutomationPeer** 派生，则需要提供一个接受 *owner* 并将它传递给基类的构造函数。 让我们来看看实际的情况。
 
 ```idl
 // MySpecializedToggleButton.idl

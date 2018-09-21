@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4085724"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4115301"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 问题疑难解答
 > [!NOTE]
@@ -37,7 +37,7 @@ XAML 分析异常可能很难进行诊断，特别是在此类异常中没有含
 | C++ 编译器产生错误“*正在尝试引用已删除的函数*”。 | 当你调用 **make** 并且你作为模板参数传递的实现类型具有 `= delete` 默认构造函数时，将会出现此错误。 编辑实现类型的标头文件并将 `= delete` 更改为 `= default`。 你还可以为运行时类添加一个构造函数到 IDL 中。 |
 | 你已经实现 [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)，但 XAML 绑定没有更新（UI 没有订阅 [**PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)）。 | 请记得在 XAML 标记中的绑定表达式上设置 `Mode=OneWay`（或 TwoWay）。 请参阅 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)。 |
 | 你将一个 XAML 项目控件绑定到一个可观测集合，在运行时引发了异常并显示消息“参数不正确”。 | 在 IDL 和实现中，将任何可观测的集合声明为 **Windows.Foundation.Collections.IVector<IInspectable>**。 但返回一个实现 **Windows.Foundation.Collections.IObservableVector<T>**（其中的 T 是元素类型）的对象。 请参阅 [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md)。  |
-| C++ 编译器产生以下形式的错误“*‘MyImplementationType_base&lt;MyImplementationType&gt;’: 没有适当的默认构造函数可用*”。|当你从具有特殊构造函数的类型派生时会出现此错误。 派生类型的构造函数需要传递基类型的构造函数所需的参数。 有关工作示例，请参阅[从具有特殊构造函数的类型派生](author-apis.md#deriving-from-a-type-that-has-a-non-trivial-constructor)。|
+| C++ 编译器产生以下形式的错误“*‘MyImplementationType_base&lt;MyImplementationType&gt;’: 没有适当的默认构造函数可用*”。|当你从具有特殊构造函数的类型派生时会出现此错误。 派生类型的构造函数需要传递基类型的构造函数所需的参数。 有关工作示例，请参阅[从具有特殊构造函数的类型派生](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor)。|
 | C++ 编译器产生错误“*无法从‘const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;’转换为‘const winrt::param::async_iterable&lt;winrt::hstring&gt; &’*”。|当你将 std::wstring 的 std::vector 传递给需要一个集合的 Windows 运行时 API 时，将会出现此错误。 有关更多信息，请参阅[标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)。|
 | C++ 编译器产生错误“*无法从‘const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;’转换为‘const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*”。|当你将 winrt::hstring 的 std::vector 传递给需要一个集合的异步 Windows 运行时 API 并且你没有将相应的矢量复制或移动到异步被调用方时，将会出现此错误。 有关更多信息，请参阅[标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)。|
 | 当打开项目时，Visual Studio 产生错误“*该项目的应用程序未安装*”。|你需要从 Visual Studio 的**新建项目**对话框中安装 **用于 C++ 开发的 Windows 通用工具**（如果你尚未这样做的话）。 如果上述方法未能解决问题，则项目可能依赖于 C++/WinRT Visual Studio Extension (VSIX)（请参阅 [Visual Studio 对于 C++/WinRT 和 VSIX 的支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)）。|
