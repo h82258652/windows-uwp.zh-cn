@@ -15,24 +15,24 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f7592f584227d9b3a93a0ef4cea3ce53cd203ea
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4132203"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151526"
 ---
 # <a name="combo-box"></a>组合框
 
 > [!IMPORTANT]
 > 本文介绍的功能尚未发布，在商业发行之前可能发生实质性修改。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 
-使用组合框 （也称为下拉列表） 显示用户可以从中进行选择的项的列表。 组合框启动处于紧凑状态，并展开以显示可选项目的列表。
+使用组合框 （也称为下拉列表） 以显示用户可以从中进行选择的项的列表。 组合框启动处于紧凑状态，并展开以显示可选项目的列表。
 
 当关闭组合框时，它显示当前所选内容或为空，如果没有选定项。 当用户在扩展组合框中时，它将显示可选择项列表。
 
-> **重要的 Api**: [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、 [Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **重要 Api**: [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、 [Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
-处于紧凑状态的标头组合框。
+处于紧凑状态的标头的组合框。
 
 ![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
 
@@ -114,7 +114,7 @@ ListView 和 GridView，如组合框派生自[选择器](/uwp/api/windows.ui.xam
 若要获取有关选定的数据项的特定属性的值，你可以使用[SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue)属性。 在此情况下，设置[SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath)选定的项，可获取的值指定哪个属性。
 
 > [!TIP]
-> 如果你设置 SelectedItem 或 SelectedIndex 指示默认选择，如果属性设置为之前填充组合框项集合发生异常。 除非你在 XAML 中定义你的项，则最好处理组合框已加载的事件，并将 SelectedItem 或 SelectedIndex 设置 Loaded 的事件处理程序中。
+> 如果你设置 SelectedItem 或 SelectedIndex 指示默认选择，如果属性设置为之前填充组合框项集合发生异常。 除非你在 XAML 中定义你的项，最好是处理组合框已加载的事件，并将 SelectedItem 或 SelectedIndex 设置已加载的事件处理程序中。
 
 你可以将绑定到在 XAML 中，这些属性或处理[SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)事件来响应选择更改。
 
@@ -168,7 +168,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selectionchanged-and-keyboard-navigation"></a>SelectionChanged 和键盘导航
 
-默认情况下，当用户单击、 点击时，或在列表中确认其所选内容，按 enter 键的项和组合框关闭时，将发生 SelectionChanged 事件。 当用户使用键盘箭头键导航打开组合框列表，选择保持不变。
+默认情况下，当用户点击量、 点击时，或按某个项目在列表中确认其所选内容，和组合框关闭时，会发生 SelectionChanged 事件。 当用户使用键盘箭头键导航打开组合框列表，选择保持不变。
 
 若要创建的组合框"实时更新"，而用户正在使用箭头键 （如字体所选内容下拉列表） 进行导航打开的列表，请将[SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger)设置为[始终](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)。 这会导致发生焦点更改打开的列表中的其他项目时 SelectionChanged 事件。
 
@@ -205,9 +205,9 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 默认情况下，当用户提交自定义文本更新 SelectedItem 值。 你可以通过将**Handled**设置为**true**在 TextSubmitted 事件参数中替代此行为。 会将事件标记为已处理，当组合框将不执行任何进一步的操作事件之后，并将保持正在编辑的状态。 SelectedItem 将不会更新。
 
-此示例显示了一个简单的可编辑组合框。 包含简单的字符串，并且用户输入的任何值用作输入。
+此示例显示了一个简单的可编辑组合框。 该列表包含简单的字符串和用户输入的任何值用作输入。
 
-"最近使用的名称"的选择器使用户可以输入自定义字符串。 RecentlyUsedNames 列表包含用户可以选择从，某些值，但用户还可以添加一个新的自定义的值。 CurrentName 属性表示当前输入的名称。
+"最近使用的名称"的选择器使用户可以输入自定义字符串。 RecentlyUsedNames 列表包含用户可以选择从，某些值，但用户还可以添加一个新的自定义的值。 CurrentName 属性表示的当前输入的名称。
 
 ```xaml
 <ComboBox IsEditable="true"
@@ -219,7 +219,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 你可以处理[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)事件来处理用户输入的值。 在事件处理程序中，你将通常验证用户输入的值是有效，然后在应用中使用的值。 根据情况，你可能会将值添加到组合框的选项列表中以供将来使用。
 
-当满足这些条件，则 TextSubmitted 事件将发生：
+当满足这些条件，则 TextSubmitted 事件发生：
 
 - IsEditable 属性为**true**
 - 用户输入的不匹配组合框列表中的现有输入的文本

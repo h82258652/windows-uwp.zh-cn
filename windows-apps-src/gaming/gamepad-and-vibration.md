@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 游戏板, 振动
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf78b43bb09f97c196858d7cc4fcdb1e71462fc
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4128734"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151944"
 ---
 # <a name="gamepad-and-vibration"></a>游戏板和振动
 
@@ -100,7 +100,7 @@ Xbox One 游戏板针对强烈和细微的游戏板振动提供了两个独立�
 
 [Gamepad][] 类会提供一个静态属性 [Gamepads][]，该属性是当前已连接游戏板的只读列表。 因为你可能只对某些连接的游戏板感兴趣，建议你保留自己的集合，而不是访问这些通过`Gamepads`属性。
 
-下面是将所有已连接游戏板复制到一个新集合的示例。 请注意，因为将会在后台中的其他线程访问此集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），你需要设置任何读取或更新集合的代码锁定。
+下面是将所有已连接游戏板复制到一个新集合的示例。 请注意，因为将会在后台中的其他线程访问此集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），你需要放置任何代码的读取或更新集合周围锁定。
 
 ```cpp
 auto myGamepads = ref new Vector<Gamepad^>();
@@ -146,7 +146,7 @@ private void GetGamepads()
 
 ### <a name="adding-and-removing-gamepads"></a>添加和删除游戏板
 
-当添加或删除游戏板时，会引发的[GamepadAdded][]和[GamepadRemoved][]事件。 你可以为这些事件注册处理程序以跟踪当前连接的游戏板。
+添加或删除游戏板时会引发的[GamepadAdded][]和[GamepadRemoved][]事件。 你可以为这些事件注册处理程序以跟踪当前连接的游戏板。
 
 下面是开始跟踪已添加的游戏板的示例。
 
@@ -183,7 +183,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-下面的示例将停止跟踪已删除的游戏板。 你还需要处理时将其; 要跟踪的游戏板会发生什么情况例如，此代码仅跟踪来自一个游戏板输入，只需将其设置为`nullptr`删除的时间。 你需要检查每个帧，如果你的游戏板处于活动状态，以及哪些游戏板你正在从输入时收集控制器的连接和断开连接的更新。
+下面的示例将停止跟踪已删除的游戏板。 你还需要处理时将其; 要跟踪的游戏板会发生什么情况例如，此代码仅跟踪来自一个游戏板输入，只需将其设置为`nullptr`当删除它时。 你需要检查每个帧，如果你的游戏板处于活动状态，以及哪些游戏板你正在从输入时收集控制器的连接和断开连接的更新。
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -275,7 +275,7 @@ double rightStickX = reading.RightThumbstickX; // returns a value between -1.0 a
 double rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
-读取操纵杆的值时，你会注意到，当操纵杆处于中心位置闲置时，它们不会稳定地生成中性读数 0.0；而是每次移动操纵杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。 使用死区的一种方法是，确定操纵杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以大致计算距离&mdash;它它们并不精确，因为操纵杆读数实际上是极值，不是平面值&mdash;使用勾股定理计算。 这会生成一个径向死区。
+读取操纵杆的值时，你会注意到，当操纵杆处于中心位置闲置时，它们不会稳定地生成中性读数 0.0；而是每次移动操纵杆并返回到中心位置时，才会生成不同的接近 0.0 的值。 要减小这些误差，你可以使用小“死区”__（一系列被忽略的接近理想中心位置的值）。 使用死区的一种方法是，确定操纵杆被移动远离中心的距离，并忽略比你选择的某些距离更近的读数。 你可以大致计算距离&mdash;它它们并不精确，因为操纵杆读数实际上是极值，不是平面值&mdash;只需通过使用勾股定理计算。 这会生成一个径向死区。
 
 下面示例演示如何使用勾股定理计算基本径向死区。
 
@@ -440,7 +440,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 mainGamepad.Vibration = vibration;
 ```
 
-切记，这两个电机不是完全相同的，所以将这些属性设置为相同的值并不会在一个电机中生成与另一个电机中相同的振动。 对于任何值，左的电机会更强振动，较低的频率比右电动机的&mdash;对于相同的值&mdash;生成更轻柔的振动，较高的频率。 即使是最大值，左电机也无法生成右电机的高频率，右电机也无法生成左电机的高动力。 因为电机通过游戏板刚性连接，所以即使电机具有不同的特性并且能够以不同的强度振动，游戏玩家仍然不能完全独立地体验振动。 相比完全相同的电机，这种布置可以产生更大范围、更丰富的感觉。
+切记，这两个电机不是完全相同的，所以将这些属性设置为相同的值并不会在一个电机中生成与另一个电机中相同的振动。 对于任何值，左的电机会比右电动机它更强以较低频率振动&mdash;对于相同的值&mdash;生成更轻柔的振动，较高的频率。 即使是最大值，左电机也无法生成右电机的高频率，右电机也无法生成左电机的高动力。 因为电机通过游戏板刚性连接，所以即使电机具有不同的特性并且能够以不同的强度振动，游戏玩家仍然不能完全独立地体验振动。 相比完全相同的电机，这种布置可以产生更大范围、更丰富的感觉。
 
 ### <a name="using-the-impulse-triggers"></a>使用脉冲扳机键
 

@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125702"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151556"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -50,7 +50,7 @@ ms.locfileid: "4125702"
 
 若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选的子菜单）。
 
-若要显示的多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口的顶部菜单栏。
+若要显示的多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
 
 ### <a name="menubar-vs-commandbar"></a>与命令栏菜单栏
 
@@ -83,7 +83,7 @@ ms.locfileid: "4125702"
 - 如果主机元素是一个按钮或其他一些命令元素（其主要作用是显示其他命令），则使用菜单。
 - 如果主机元素是一些具有另一主要用途（如显示文本或图像）的其他类型的元素，则使用上下文菜单。
 
-例如，使用在按钮上菜单提供筛选和排序列表的选项。 在此方案中，按钮控件的主要用途是提供对菜单的访问权限。
+例如，使用在按钮上一个菜单提供筛选和排序列表的选项。 在此方案中，按钮控件的主要用途是提供对菜单的访问权限。
 
 ![邮件中的菜单示例](images/Mail_Menu.png)
 
@@ -230,7 +230,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ![菜单栏示例](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> 此示例中显示仅是说明了如何创建 UI 结构，但不显示的任何命令的实现。
+> 本示例演示仅是说明了如何创建 UI 结构，但不是显示任何命令的实现。
 
 ```xaml
 <MenuBar>

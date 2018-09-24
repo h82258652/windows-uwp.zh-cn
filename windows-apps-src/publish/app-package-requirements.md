@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 程序包要求, 程序包, 程序包格式, 受支持的版本, 提交, windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4128286"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151862"
 ---
 # <a name="app-package-requirements"></a>应用包要求
 
@@ -41,7 +41,7 @@ ms.locfileid: "4128286"
 
 ### <a name="app-bundles"></a>应用程序包
 
-对于面向 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 的应用，Visual Studio 可以生成应用程序包 (.appxbundle) 来减少用户下载应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
+对于面向 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 的应用，Visual Studio 可以生成应用程序包 (.appxbundle) 来减少用户下载的应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
 
 > [!NOTE]
 > 一个应用程序包可以包含所有体系结构的程序包。 对于每个目标操作系统，应仅提交一个捆绑包。

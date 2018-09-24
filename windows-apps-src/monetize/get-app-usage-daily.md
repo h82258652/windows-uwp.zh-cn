@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122976"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151598"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
@@ -99,7 +99,7 @@ Authorization: Bearer <your access token>
 | dailyActiveDevices        | 长型    | 每日用于与你的应用交互的所有用户的设备数量。  |
 | dailyNewUsers             | 长型    | 第一次那一天使用你的应用的客户数。    |
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                         |
-| monthlyActiveDevices      | 长型    | 不同的一段时间，在应用启动时启动 （进程开始） 运行你的应用和结束时终止 （进程结束） 的设备或非活动状态一段时间后数。                                      |
+| monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                      |
 | monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户数。  |
 
 

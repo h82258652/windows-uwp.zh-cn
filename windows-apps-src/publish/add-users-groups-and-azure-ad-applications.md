@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户、 组、 多个用户，多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125958"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152332"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>向开发人员中心帐户添加用户、组和 Azure AD 应用程序
 
-（在**帐户设置**） 的 Windows 开发人员中心的**用户**部分中，可以使用 Azure Active Directory 将用户添加到你的开发人员中心帐户。 为每个用户分配一个角色（或自定义权限集），并且该角色定义他们的帐户访问权限。 你还可以添加[用户组](#groups)和 [Azure AD 应用程序](#azure-ad-applications)，以授予他们对你的开发人员中心帐户的访问权限。
+（在**帐户设置**） 下的 Windows 开发人员中心的**用户**部分允许你使用 Azure Active Directory 将用户添加到你的开发人员中心帐户。 为每个用户分配一个角色（或自定义权限集），并且该角色定义他们的帐户访问权限。 你还可以添加[用户组](#groups)和 [Azure AD 应用程序](#azure-ad-applications)，以授予他们对你的开发人员中心帐户的访问权限。
 
 将用户添加到帐户后，你可以[编辑帐户详细信息](#edit)、更改[角色和权限](set-custom-permissions-for-account-users.md)或[删除用户](#remove)。
 

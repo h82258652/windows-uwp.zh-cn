@@ -15,11 +15,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4129470"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152178"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -33,7 +33,7 @@ ms.locfileid: "4129470"
 
 ## <a name="back-button"></a>后退按钮
 
-若要创建后退按钮，使用具有的[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将按钮放在应用的 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
+若要创建后退按钮，使用具有的[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将按钮放在你的应用的 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
 
 ![应用的 UI 的左上角的后退按钮](images/back-nav/BackEnabled.png)
 
@@ -304,7 +304,7 @@ bool App::On_BackRequested()
 ### <a name="system-back-bar"></a>系统后退栏
 
 > [!NOTE]
-> "系统后退栏"是仅说明，而不是正式的名称。
+> "系统后退栏"是只描述，不正式名称。
 
 系统后退栏是在选项卡区带和应用 s 内容区域之间插入一个带。 此区带横跨整个应用，“后退”按钮位于左边缘。 带区的垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
 
@@ -337,7 +337,7 @@ bool App::On_BackRequested()
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，无屏幕导航元素</strong>
 <p>用户从一个页面导航到同一对等组内的另一个页面。 没有无屏幕导航元素 （如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) 提供到两个页面的直接导航。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
-<p>在下图中，用户在同一对等组中，两个页面之间导航，导航应添加到导航历史记录。</p>
+<p>在下图中，用户在同一对等组中，两个页面之间导航和导航应添加到导航历史记录。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">

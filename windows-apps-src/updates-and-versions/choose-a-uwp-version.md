@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 版本, 内部版本, Windows, 选择, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4123264"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152966"
 ---
 # <a name="choose-a-uwp-version"></a>选择 UWP 版本
 
@@ -45,9 +45,9 @@ Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改�
 
 ## <a name="net-api-availability-in-uwp-versions"></a>在 UWP 版本的.NET API 可用性
 
-UWP 支持有限的可用无论的**目标版本**或你的项目的**最低版本**的.NET Api 子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支持有限的.NET Api，无论的**目标版本**或你的项目的**最低版本**提供的子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-如果你想要创建可重用的跨平台库，.NET Standard 支持在 UWP 上。 在[.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 中支持的 UWP 版本的信息。
+如果你想要创建可重用的跨平台库，.NET Standard 支持在 UWP 上。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 中支持的 UWP 版本的信息。
 
 如果你要开发的桌面应用，请参阅改为[.NET Framework 版本和依赖项](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的详细信息。
 

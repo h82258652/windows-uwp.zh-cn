@@ -1,6 +1,6 @@
 ---
 author: cphilippona
-description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移到它们时，可聚焦元素的边框进行动画处理。
+description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移向它们时，可聚焦元素的边框进行动画处理。
 title: 显示焦点
 template: detail.hbs
 ms.author: mijacobs
@@ -14,17 +14,17 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125614"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151536"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
 ![主图](images/header-reveal-focus.svg)
 
-显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的照明效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
+显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的一种灯光效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
 
 （展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)。）
 
@@ -69,8 +69,8 @@ ms.locfileid: "4125614"
 
 设置**FocusVisualKind**属性后，系统自动将显示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
 
-## <a name="why-isnt-reveal-focus-on-by-default"></a>为什么显示焦点在默认情况下？ 
-如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 显示焦点会增加焦点视觉对象的大小，因为这可能导致 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
+## <a name="why-isnt-reveal-focus-on-by-default"></a>为何焦点不是展示在默认情况下？ 
+如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 展示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你将希望自定义显示焦点效果对其进行优化你的应用。
 
 ## <a name="customizing-reveal-focus"></a>自定义显示焦点
 
@@ -112,7 +112,7 @@ ms.locfileid: "4125614"
 
 ## <a name="customize-the-color"></a>自定义颜色
 
-若要更改显示焦点视觉的颜色，请使用[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)和[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)属性。
+若要更改显示焦点视觉的颜色，使用[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)和[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)属性。
 
 | 属性 | 默认资源 | 默认资源值 |
 | ---- | ---- | --- | 

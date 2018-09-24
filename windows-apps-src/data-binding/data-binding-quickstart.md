@@ -10,12 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: ff104bfb5114cd51eb04d75af3c096f47a7d286d
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122508"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153620"
 ---
 # <a name="data-binding-overview"></a>数据绑定概述
 
@@ -36,7 +40,7 @@ ms.locfileid: "4122508"
 
 每个绑定均由一个绑定目标和一个绑定源构成。 通常，绑定目标是控件或其他 UI 元素的属性，而绑定源是类实例（数据模型或视图模型）的属性。 本示例演示了如何将控件绑定到单个项目。 绑定目标是 **TextBlock** 的 **Text** 属性。 绑定源是一个名为 **Recording** 的简单类的实例，该类表示音频录制。 我们先来看一下类。
 
-如果你使用 C#，然后将新类添加到你的项目，并将其命名`Recording.cs`。
+如果你使用 C# 或 C + + CX，然后将新类添加到你的项目，并将命名的类**录制**。
 
 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后将新的**Midl 文件 (.idl)** 项目添加到项目中，名为如下所示的 C + + 以下 WinRT 代码示例列表。 这些新文件的内容替换为应用一览中显示的[MIDL 3.0](/uwp/midl-3/intro)代码、 生成项目，以生成`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然后将代码添加到生成的文件，以匹配列表。 有关这些生成的文件的详细信息以及如何将它们复制到你的项目，请参阅[XAML 控件; 绑定到 C + + /winrt 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
@@ -157,6 +161,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ```
 
 ```cpp
+// Recording.h
 #include <sstream>
 namespace Quickstart
 {
@@ -217,6 +222,10 @@ namespace Quickstart
         }
     };
 }
+
+// Recording.cpp
+#include "pch.h"
+#include "Recording.h"
 ```
 
 接下来，从表示标记页的类公开绑定源类。 我们通过将类型 **RecordingViewModel** 的属性添加到 **MainPage** 来执行此操作。
@@ -273,6 +282,10 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ```
 
 ```cpp
+// MainPage.h
+...
+#include "Recording.h"
+
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -280,16 +293,21 @@ namespace Quickstart
     private:
         RecordingViewModel ^ viewModel;
     public:
-        MainPage()
-        {
-            InitializeComponent();
-            this->viewModel = ref new RecordingViewModel();
-        }
+        MainPage();
+
         property RecordingViewModel^ ViewModel
         {
             RecordingViewModel^ get() { return this->viewModel; };
         }
     };
+}
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+    this->viewModel = ref new RecordingViewModel();
 }
 ```
 
@@ -381,6 +399,8 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ```
 
 ```cpp
+// Recording.h
+...
 public ref class RecordingViewModel sealed
 {
 private:
@@ -561,11 +581,14 @@ public ref class Recording sealed
 
 而在每种情况下结果均相同。
 
+> [!NOTE]
+> 如果你使用 c + +，则你的 UI 将不会完全一样图： **ReleaseDateTime**属性的呈现是不同。 请参阅下一节详细本主题的讨论。
+
 ![绑定列表视图](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>设置数据值的格式或对其进行转换，以供显示
 
-以上呈现有一个小问题。 **ReleaseDateTime** 属性不仅仅是一个日期，还可以是 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)，因此应以高于所需精度的精度来显示它。 一个解决方案是，将字符串属性添加到返回 `this.ReleaseDateTime.ToString("d")` 的 **Recording** 类。 将该属性命名为 **ReleaseDate** 可指示它将返回一个日期，而不是返回日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
+没有以上呈现问题。 **ReleaseDateTime**属性不只是一个日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果你使用 c + +，则它是[**日历**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它显示高于所需精度的精度。 和在 c + + 呈现为类型名称。 一种解决方案是将字符串属性添加到返回的等效的**录制**类`this.ReleaseDateTime.ToString("d")`。 该属性**ReleaseDate**命名将指示它将返回一个日期，并且不日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
 
 一个更灵活的解决方案是使用称为值转换器的工具。 下面是如何创作你自己的值转换器的示例。 将此代码添加到你的 Recording.cs 源代码文件。
 
@@ -598,7 +621,94 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-现在，我们可以添加 **StringFormatter** 的实例作为页面资源并将其用于绑定。 我们将格式字符串从标记传递到该转换器，以便于更为灵活地设置格式。
+```cppwinrt
+// StringFormatter.idl
+namespace Quickstart
+{
+    runtimeclass StringFormatter : Windows.UI.Xaml.Data.IValueConverter
+    {
+        StringFormatter();
+    }
+}
+
+// StringFormatter.h
+#pragma once
+
+#include "StringFormatter.g.h"
+#include <sstream>
+
+namespace winrt::Quickstart::implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter>
+    {
+        StringFormatter() = default;
+
+        Windows::Foundation::IInspectable Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+        Windows::Foundation::IInspectable ConvertBack(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+    };
+}
+
+namespace winrt::Quickstart::factory_implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter, implementation::StringFormatter>
+    {
+    };
+}
+
+// StringFormatter.cpp
+#include "pch.h"
+#include "StringFormatter.h"
+
+namespace winrt::Quickstart::implementation
+{
+    Windows::Foundation::IInspectable StringFormatter::Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar valueAsCalendar{ value.as<Windows::Globalization::Calendar>() };
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar.MonthAsNumericString().c_str();
+        wstringstream << L"/" << valueAsCalendar.DayAsString().c_str();
+        wstringstream << L"/" << valueAsCalendar.YearAsString().c_str();
+        return winrt::box_value(hstring{ wstringstream.str().c_str() });
+    }
+
+    Windows::Foundation::IInspectable StringFormatter::ConvertBack(Windows::Foundation::IInspectable const& /* value */, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        throw hresult_not_implemented();
+    }
+}
+```
+
+```cpp
+...
+public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
+{
+public:
+    virtual Platform::Object^ Convert(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar^ valueAsCalendar = dynamic_cast<Windows::Globalization::Calendar^>(value);
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar->MonthAsNumericString()->Data();
+        wstringstream << L"/" << valueAsCalendar->DayAsString()->Data();
+        wstringstream << L"/" << valueAsCalendar->YearAsString()->Data();
+        return ref new Platform::String(wstringstream.str().c_str());
+    }
+
+    // No need to implement converting back on a one-way binding
+    virtual Platform::Object^ ConvertBack(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        throw ref new Platform::NotImplementedException();
+    }
+};
+...
+```
+
+现在，我们可以添加 **StringFormatter** 的实例作为页面资源并将其用于绑定。
 
 ```xml
 <Page.Resources>
@@ -610,6 +720,8 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
     ConverterParameter=Released: \{0:d\}}"/>
 ...
 ```
+
+你可以看到上方，格式灵活性我们使用标记将格式字符串传递到该转换器通过转换器参数。 将显示在本主题中，仅 C# 值转换器的代码示例中使用该参数。 但你可以轻松地传递 c + + 样式格式字符串形式的转换器参数，并在你的值转换器，例如**wprintf**或**swprintf**格式功能中使用的。
 
 此处是结果。
 

@@ -10,13 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4129736"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151506"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Windows 开发人员文档中的新增在 2018 年 7 月
+# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>什么是 Windows 开发人员文档中 2018 年 7 月中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例，已在 7 月的月份中可用。
 
@@ -62,11 +62,11 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 * [WebVR 在 web 视图中](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)： 了解如何将 WebVR 添加到 Windows 10 应用中的 web 视图控件。
 
-* [WebVR 演示](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 查看一些 WebVR 演示使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式头戴显示设备。
+* [WebVR 演示](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 签出一些 WebVR 演示使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式头戴显示设备。
 
 此外，我们已对现有页面进行一些更新：
 
-* 目录中现在更好地分为四个不同的顶级桶：**基础知识**、**开发**、**资源**和**演示**。
+* 目录中现在更好地分为四个不同的顶级存储桶：**基础知识**、**开发**、**资源**和**演示**。
 
 * [WebVR 开发人员指南 （登录页）](https://docs.microsoft.com/microsoft-edge/webvr/)： 刷新的外观和感觉，具有较大的图像和图标和新演示。
 
@@ -76,24 +76,24 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>要开始使用适用于开发人员： 创建和自定义 Windows 10 上的表单
 
-我们的[入门文档](../get-started/index.md)适用于 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过这些主题中，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
+我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过这些主题中，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>增强你的项目个性聊天机器人
 
-项目个性聊天，可以将自定义角色添加到你聊天机器人。 通过与 Microsoft 机器人框架 SDK 集成，你可以添加更多谈话地与客户交互的小演讲功能。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何实现它，然后经验的[试用交互式演示](http://aka.ms/PersonalityChat)。
+项目个性聊天，可以将自定义角色添加到你聊天机器人。 通过与 Microsoft 机器人框架 SDK 集成，你可以添加更多谈话地与客户交互的小演讲功能。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)以了解如何实现它，然后动手体验来获取[试用交互式演示](http://aka.ms/PersonalityChat)。
 
 ### <a name="one-dev-question"></a>一个开发人员的问题
 
-在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们回答的最新问题 ！
+在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们已回答的最新问题 ！
 
 Raymond Chen:
 
-* [为什么所做的那样你适用于 Microsoft？](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
+* [为什么未将应用到 Microsoft？](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
 
 Larry Osterman:
 
-* [我们为何不要让开发人员更改默认音频设备？](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
-* [为什么的许多 UWP 功能异步？](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
+* [为什么我们不要让开发人员更改默认音频设备？](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
+* [为什么有许多 UWP 功能异步？](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
 
 ## <a name="samples"></a>示例
 

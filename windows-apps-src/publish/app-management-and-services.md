@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4129952"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151702"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -92,7 +92,7 @@ f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限
 **WNS/MPNS**部分提供了可帮助你创建并向你的应用客户发送通知的选项。 
 
 > [!TIP]
-> 对于 UWP 应用，我们建议你在仪表板中使用**通知**选项。 将通知发送到所有应用的客户，你可以使用此功能或定向你符合条件的 Windows 10 客户的子集[的客户类别](create-customer-segments.md)中定义。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
+> 对于 UWP 应用，我们建议你在仪表板中使用**通知**选项。 将通知发送到所有应用的客户，你可以使用此功能或[客户类别](create-customer-segments.md)中所定义的你符合条件的 Windows 10 客户定向子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
 具体取决于你的应用的包类型及其特定要求，你还可以使用以下选项之一： 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127184"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152382"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
@@ -69,9 +69,9 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 应用管理器提供了安装/卸载和管理功能的应用程序包和捆绑在主机设备上。
 
-![设备门户的应用管理器页](images/device-portal/wdp-apps.png)
+![设备门户应用管理器页](images/device-portal/wdp-apps.png)
 
-- **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册 loose 文件从网络共享。
+- **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册松散文件从网络共享。
 - **正在运行的应用**： 获取有关当前正在运行，并根据需要关闭它们的应用的信息。
 
 #### <a name="install-an-app"></a>安装应用
@@ -97,7 +97,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="file-explorer"></a>文件资源管理器
 
-此页面可查看和操纵由旁加载的任何应用存储的文件。 请参阅[使用应用文件资源管理器](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)博客文章以了解有关文件资源管理器以及如何使用它的详细信息。 
+此页面允许你查看和操纵由旁加载的任何应用存储的文件。 请参阅[使用应用文件资源管理器](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)博客文章以了解有关文件资源管理器以及如何使用它的详细信息。 
 
 ![设备门户文件资源管理器页](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -119,7 +119,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信息。
 
-![设备门户 ETW 日志记录页面](images/device-portal/mob-device-portal-etw.png)
+![设备门户 ETW 日志记录页](images/device-portal/mob-device-portal-etw.png)
 
 选中**隐藏提供程序**以仅显示“事件”列表。
 - **已注册的提供程序**： 选择事件提供程序和跟踪级别。 跟踪级别是以下值之一：
@@ -158,9 +158,9 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 
 ### <a name="networking"></a>网络
 
-网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将很可能你断开与连接 Device Portal。
+网络页管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将可能使断开连接你从 Device Portal。
 - **可用的网络**： 显示 WiFi 网络适用于该设备。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
-- **IP 配置**： 显示设备的网络端口的每个主机地址信息。
+- **IP 配置**： 设备的网络端口会显示有关每个主机的地址信息。
 
 ![设备门户网络页面](images/device-portal/mob-device-portal-network.png)
 
@@ -184,7 +184,7 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 为了防止受到 [CSRF 攻击](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
 
 > [!IMPORTANT]
-> 此保护可防止从独立客户端 （例如命令行实用程序） 使用 REST api。 这可以通过 3 种方法解决： 
+> 此保护可防止从独立客户端 （如命令行实用程序） 使用 REST api。 这可以通过 3 种方法解决： 
 > - 使用"auto-"用户名。 将“auto-”置于其用户名前面的客户端将绕过 CSRF 保护。 此用户名不能用于通过浏览器登录到 Device Portal，这一点很重要，因为它将针对 CSRF 攻击打开服务。 示例：如果 Device Portal 的用户名为“admin”，则 ```curl -u auto-admin:password <args>``` 应该用于绕过 CSRF 保护。 
 > - 在客户端中实现 Cookie 到标头的方案。 这需要 GET 请求来建立会话 Cookie，并包含所有后续请求的标头和 Cookie。 
 > - 禁用身份验证并使用 HTTP。 CSRF 保护仅适用于 HTTPS 终结点，因此 HTTP 终结点上的连接无需执行上述任一操作。 

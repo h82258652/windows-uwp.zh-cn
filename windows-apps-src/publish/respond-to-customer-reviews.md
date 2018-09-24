@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4121882"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152026"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评价
 
@@ -27,13 +27,13 @@ ms.locfileid: "4121882"
 > [!TIP]
 > 除了使用仪表板回复评论，回复评价[以编程方式](../monetize/submit-responses-to-app-reviews.md)，或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
-默认情况下，将在应用商店，原始的客户评价的正下方中发布你的回复。 这些响应将在 Windows 10 设备上查看应用商店的任何客户可见。 如果留下评价的客户使用运行 Windows 10 版本 1803年或更高版本的设备，并且它们未选择退出接收电子邮件响应，一份你的回复将还会发送到该客户通过电子邮件。  你将需要提供一个有效的电子邮件地址才能提交你的回复，我们将添加到客户电子邮件中。 然后，他们可以使用此电子邮件地址来直接与你联系。
+默认情况下，将在应用商店，原始的客户评价的正下方中发布你的回复。 这些响应将在 Windows 10 设备上查看应用商店的任何客户可见。 如果留下评价的客户使用运行 Windows 10 版本 1803年或更高版本的设备，并且它们未选择退出接收电子邮件响应，一份你的回复将还会发送到该客户通过电子邮件。  你将需要提供才能提交你的回复，我们将向客户电子邮件中包含一个有效的电子邮件地址。 然后，他们可以使用此电子邮件地址来直接与你联系。
 
 如果你不希望你的回复显示在应用商店，并改为想要仅通过电子邮件向客户做出响应，请取消选中**公开此回复**框。 请注意，你将无法取消选中此框，如果客户已选择不接收电子邮件回复和/或如果他们使用的设备未运行 Windows 10 版本 1803年或更高版本。
 
 ## <a name="guidelines-for-responses"></a>回复准则
 
-在回复客户的评论时，必须遵循以下准则： 这些准则适用于所有回复，无论它们是公共的或不。
+在回复客户的评论时，必须遵循以下准则： 这些准则适用于所有回复，无论他们公钥。
 
 > [!IMPORTANT]
 > 你将无法更改 （除非客户修改其原始评价） 发布到应用商店的响应，因此请仔细检查你的回复。 如果客户修改其原始评论，你的回复将从应用的应用商店一览页面。 然后，你可以选择通过选择**更新你的回复**中提交对修改后评论的新响应。
