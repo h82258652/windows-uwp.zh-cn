@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4123427"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147673"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
 允许客户端创建 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -49,12 +49,12 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求，将需要在下表中所示的标头。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
-| 用户代理|  | 有关用户代理发出请求的信息。| 
-| 内容类型| 应用程序/json| 提交的数据的类型。| 
+| 用户代理|  | 有关发出请求的用户代理信息。| 
+| 内容类型| 应用程序/json| 正在提交的数据的类型。| 
 | Host| gameserverms.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -65,7 +65,7 @@ gameserverms.xboxlive.com
  
 ## <a name="authorization"></a>授权
  
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头是无效或不存在，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务在响应中返回 401 未经授权。
   
 <a id="ID4EWD"></a>
 
@@ -77,7 +77,7 @@ gameserverms.xboxlive.com
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | sessionId| 从 MPSD 会话标识符。| 
-| abortIfQueued| 可选参数，该设置为 true 告知 GSMS 不进行排队此会话的资源，如果它可以不随即完成。 如果由于此值为 true，将中止请求，将包含响应对象<code>"fulfillmentState" : "Aborted"</code>。 | 
+| abortIfQueued| 可选参数，该设置为 true 告知 GSMS 不进行排队此会话的资源，如果它可以不立即完成。 如果请求中止，因为此值为 true，将包含响应对象<code>"fulfillmentState" : "Aborted"</code>。 | 
  
 <a id="ID4ERE"></a>
 
@@ -121,7 +121,7 @@ gameserverms.xboxlive.com
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是的估计值，当群集将准备好，但而对调用方轮询给定的订阅和请求和实施情况率的当前池的状态更新的频率的建议。| 
-| fulfillmentState| 指示是否提供的会话立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或终止，"中止"，因为无法满足请求时立即请求为"true"的指定的 abortIfQueued。 | 
+| fulfillmentState| 指示是否提供的会话被立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或终止，"中止"，因为无法满足请求时立即请求指定的 abortIfQueued 为"true"。 | 
  
 <a id="ID4EWH"></a>
 

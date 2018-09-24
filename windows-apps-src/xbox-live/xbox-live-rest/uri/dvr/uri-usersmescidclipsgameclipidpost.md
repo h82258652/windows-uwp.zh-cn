@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c8b9e20e990c51c6b3d7e56e72f4d5d6551b39
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4123367"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152441"
 ---
 # <a name="post-usersmescidsscidclipsgameclipid"></a>POST (/users/me/scids/{scid}/clips/{gameClipId})
-更新用户自己的数据的游戏剪辑元数据。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+更新游戏剪辑元数据的用户的数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -36,7 +36,7 @@ ms.locfileid: "4123367"
  
 ## <a name="remarks"></a>备注
  
-用于更新游戏剪辑元数据的 API 在更新元数据的自己的游戏剪辑辅助功能和标题，如和更新的公共属性 （如应用进行评分或递增的视图计数） 分为两类的任何其他游戏剪辑。 如果对 URI 中的 XUID 不匹配的 XUID 声明中，可以编辑只将公共数据，并将拒绝任何要编辑的任何其他数据的请求。 在这种情况中多个字段尝试进行编辑和至少其中一个无效请求，整个请求将会失败。
+用于更新游戏剪辑元数据的 API 分为两个类别，更新的自己的游戏剪辑辅助功能和标题，如元数据和更新的公共属性 （如应用进行评分或递增的视图计数） 的任何其他游戏剪辑。 如果对 URI 中的 XUID 不匹配的 XUID 声明中，可以编辑只将公共数据，并将拒绝任何要编辑的任何其他数据的请求。 在这种情况中多个字段尝试进行编辑，其中一个无效请求的整个请求将会失败。
   
 <a id="ID4EAB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "4123367"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| 正在访问的资源的 GameClip ID。| 
+| gameClipId| 字符串| GameClip 所访问的资源的 ID。| 
   
 <a id="ID4ELB"></a>
 
@@ -90,7 +90,7 @@ ms.locfileid: "4123367"
 ```
 
  
-更改只是标题属性 （这只是一个示例，由于此字段的架构是取决于调用方）：
+更改只是标题属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
  
 
 ```cpp
@@ -138,11 +138,11 @@ ms.locfileid: "4123367"
  
 ## <a name="related-uris"></a>相关的 Uri
  
-以下 Uri 更新元数据中的公共字段。 没有任何所需的这些请求的正文。 将返回的元数据的 HTTP 状态代码为 200 的成功更新时。 否则将相应的 HTTP 状态代码返回 JSON 格式的 ServiceErrorResponse 对象。
+以下 Uri 更新元数据中的公共字段。 没有任何所需的这些请求正文。 将返回的元数据的 HTTP 状态代码为 200 的成功更新时。 否则将相应的 HTTP 状态代码返回 JSON 格式的 ServiceErrorResponse 对象。
  
-   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} /ratings/ {评分值}** -适用于指定剪辑指定的评分。 评分值应为 1 到 5 之间的整数。
-   * **发布 /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 标志**-标志来包含可能有问题的内容要检查通过强制执行该剪辑。
-   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 查看**-增加视图计数指定游戏剪辑。 建议，这称为不正确播放启动时，但当 75%的 80%的播放完毕。
+   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} /ratings/ {分级值}** -适用于指定剪辑指定的评分。 评分值应为 1 到 5 之间的整数。
+   * **发布 /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 标志**-标志来包含可能可疑的内容通过强制执行检查该剪辑。
+   * **POST /users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} / 视图**-递增指定游戏剪辑的视图计数。 建议，这称为不正确播放启动时，但当 75%-80%的播放完毕。
    
 <a id="ID4EMCAC"></a>
 

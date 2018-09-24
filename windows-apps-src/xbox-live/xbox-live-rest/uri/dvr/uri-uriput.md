@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 61eecfbc6d5ebeda4825b8a3d29e90347b9988af
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4123377"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150017"
 ---
 # <a name="put-uri"></a>PUT (/{uri})
 上传游戏剪辑数据。
-有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
 
   * [备注](#ID4EX)
   * [URI 参数](#ID4EQB)
@@ -38,14 +38,14 @@ ms.locfileid: "4123377"
 
 ## <a name="remarks"></a>备注
 
-返回**InitialUploadResponse**后，通过该对象中返回**uploadUri**执行上传。 客户端应将文件拆分为**expectedBlocks**连续块中，不大于 2 MB。 它们可以并行上传。
+**InitialUploadResponse**返回后，通过该对象中返回**uploadUri**执行上传。 客户端应将文件拆分为**expectedBlocks**连续块中，不能大于 2 MB。 它们可以并行上传。
 
-如果你要上载块中的文件，服务器将返回 HTTP 状态代码的已接受 (202) 为每个请求，直到它已经收到所有预期的块中，在这种情况下它作为一个文件，返回创建 (201) 提交的所有块。 在这些情况下，响应不包含一个对象，并服务器可能计划其他处理。 在发生错误， **ServiceErrorResponse**对象可能会返回以及相应的 HTTP 状态代码。
+如果你要上载块中的文件，服务器将返回 HTTP 状态代码的已接受 (202) 为每个请求，直到它已经收到所有预期的块中，在这种情况下它作为一个文件，返回创建 (201) 提交的所有块。 在这些情况下，响应不包含一个对象，并且服务器可能计划额外的处理。 在发生错误， **ServiceErrorResponse**对象可能会返回以及相应的 HTTP 状态代码。
 
 在恢复的错误代码，客户端应使用标准后关闭重试机制重试。
 
 > [!NOTE] 
-> 即使上传操作成功完成，则进一步处理将发生的可能原因剪辑不相关的上传或元数据的拒绝补充过程。
+> 即使上传操作成功完成，进一步处理将发生的可能原因剪辑不相关的上传或元数据的拒绝补充过程。
 
 
 <a id="ID4EQB"></a>
@@ -64,7 +64,7 @@ ms.locfileid: "4123377"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- |
-| <b>blockNum</b>| 32 位无符号的整数| 如果设置<b>expectedBlocks</b>必需。 确定文件中的块的排序的零开始编制的块数量。 例如，如果<b>expectedBlocks</b> 7，然后<b>blockNum</b>可以是从 0 到 6。 |
+| <b>blockNum</b>| 32 位无符号的整数| 如果设置<b>expectedBlocks</b>必需。 确定文件中的块的排序零开始编制块编号。 例如，如果<b>expectedBlocks</b> 7，然后<b>blockNum</b>可以是从 0 到 6。 |
 | <b>uploadId</b>| 字符串| 必需。 <b>GameClipsServiceUploadResponse</b>对象中的不透明 ID。|
 
 <a id="ID4EBE"></a>
@@ -102,20 +102,20 @@ ms.locfileid: "4123377"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 301| 已永久移动| 该服务已移动到不同的 URI。|
 | 307| 临时重定向| 该服务已移动到不同的 URI。|
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。|
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 403| 已禁止| 为用户或服务不允许该请求。|
 | 404| 找不到| 找不到指定的资源。|
 | 406| 不允许| 不支持资源版本。|
 | 408| 请求超时| 请求所花的时间太长，才能完成。|
-| 410| 前面| 请求的资源不再可用。|
+| 410| 前面| 所请求的资源不再可用。|
 
 <a id="ID4EYEAC"></a>
 

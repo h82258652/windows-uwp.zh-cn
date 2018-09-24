@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4122769"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151397"
 ---
 # <a name="game-dvr-uris"></a>游戏 DVR URI
  
@@ -24,7 +24,7 @@ ms.locfileid: "4122769"
  
 仅主机可以录制游戏剪辑，但可以访问的任何设备可以显示剪裁。
  
-根据问题的 URI 的函数，这些 Uri 的域是：
+根据问题的 URI 的函数，提供了这些 Uri 的域：
  
    *  gameclipsmetadata.xboxlive.com 
    *  gameclipstransfer.xboxlive.com 

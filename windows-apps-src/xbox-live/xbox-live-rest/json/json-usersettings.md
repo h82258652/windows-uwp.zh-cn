@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 20ac62403a8248011928089ea81cdf6418259db1
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126167"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149113"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
-返回当前身份验证的用户设置。 
+返回当前身份验证的用户的设置。 
 <a id="ID4EN"></a>
 
  
-## <a name="usersettings"></a>用户设置
+## <a name="usersettings"></a>UserSettings
  
-用户设置对象具有以下规范。
+UserSettings 对象具有以下规范。
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
 | id| 32 位无符号的整数| 设置的标识符。| 
 | 源| 32 位无符号的整数| 表示设置的源。 | 
 | titleId| 32 位无符号的整数| 标题与设置关联的标识符。 | 
-| 值| 8 位无符号整数的数组| 表示设置的值。 客户端检索设置必须了解表示格式，以便能够读取数据。 | 
+| 值| 8 位无符号整数的数组| 表示设置的值。 客户端检索设置必须了解的表示形式格式能够以读取数据。 | 
   
 <a id="ID4EJC"></a>
 

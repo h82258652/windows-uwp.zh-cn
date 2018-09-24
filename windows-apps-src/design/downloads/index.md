@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4123010"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155008"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
@@ -88,14 +88,14 @@ ms.locfileid: "4123010"
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: 列范围 ="2":::**适用于 Adobe Photoshop 的磁贴和图标生成器**这组适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
+    ::: 列范围 ="2":::**适用于 Adobe Photoshop 的磁贴和图标生成器**这一套适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>示例
 
-![生成强制转换图像](images/buildcast.png)
+![生成强制转换映像](images/buildcast.png)
 **BuildCast**<br>
 BuildCast 是一个端到端示例，用于展示 Fluent 设计系统，以及通用 Windows 平台的其他功能。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下载 BuildCast 示例</a> <br><a href="https://github.com/Microsoft/BuildCast">在 GitHub 上查看 BuildCast 示例</a>

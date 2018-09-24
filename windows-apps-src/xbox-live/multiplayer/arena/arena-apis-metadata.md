@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: dde5d59167b90473669770ad584382387f5e3f41
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129769"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4148017"
 ---
 # <a name="arena-apis-a-comprehensive-list-of-ui-metadata"></a>Arena API：UI 元数据的完整列表
 

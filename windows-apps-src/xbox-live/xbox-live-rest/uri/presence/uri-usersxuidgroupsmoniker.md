@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 356afd69483968a3edd836eb9e031bc8fcfafd4c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124379"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150161"
 ---
 # <a name="usersxuidxuidgroupsmoniker"></a>/users/xuid({xuid})/groups/{moniker}
 访问 presencerecord，他的一组。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -31,7 +31,7 @@ ms.locfileid: "4124379"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID) 相关的组中的 Xuid 的用户。| 
-| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象以大写 P 是"People"。| 
+| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象大写 P 是"People"。| 
   
 <a id="ID4E4B"></a>
 

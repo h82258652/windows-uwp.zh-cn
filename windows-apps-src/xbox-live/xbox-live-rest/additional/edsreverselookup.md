@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4130373"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152189"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
@@ -27,13 +27,13 @@ ms.locfileid: "4130373"
  
 ## <a name="reverse-lookup-steps"></a>反向查找步骤
  
-娱乐发现服务 (EDS) 反向查找支持所有视频的媒体类型 （**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**，以及**MediaItemType.TVShow**)，以及**MediaItemType.Unknown**。
+娱乐发现服务 (EDS) 反向查找支持的所有视频的媒体类型 （**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**，以及**MediaItemType.TVShow**)，以及**MediaItemType.Unknown**。
  
-反向查找需要传递的 4 个参数： 
+反向查找需要传递 4 个参数： 
    * `idType=ScopedMediaId`
    * `ids=` 提供程序媒体 ID
    * `ScopeIdType=Title`
-   * `ScopeId=` 提供程序的主题作品 ID
+   * `ScopeId=` 提供商主题作品 ID
  
  
 通常反向查找需要两个步骤： 
@@ -44,7 +44,7 @@ GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaIt
 ```
 
  
-   * 发出反向查找使用以前的响应中的**ProviderMediaId**字段的调用： 
+   * 发出将调用用于反向查找使用以前的响应中的**ProviderMediaId**字段： 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -53,7 +53,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-如果不从 EDS 检索到的**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
+如果不具有从 EDS 检索到的**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
   
 <a id="ID4EOC"></a>
 

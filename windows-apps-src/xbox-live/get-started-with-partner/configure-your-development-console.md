@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 53126e185b9d94c911abab8999e3ca1da8691c7c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4130695"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150193"
 ---
 # <a name="configure-your-xbox-development-console"></a>配置 Xbox 开发主机
 

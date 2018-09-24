@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f295c1f1b432f90e12d3e628cd35a54412812ec
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129227"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153151"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API 简介
 
@@ -43,7 +43,7 @@ ms.locfileid: "4129227"
 
 ## <a name="xbox-live-services-api-overview"></a>Xbox Live 服务 API 概述 ##
 
-Xbox Live 服务 API (**XSAPI**) 公开了三个组的客户端 Api，它支持各种客户方案：
+Xbox Live 服务 API (**XSAPI**) 公开三个组的客户端 Api，它支持各种客户方案：
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
 - [基于 XSAPI C++11 的 API](#xsapi-c++11-based-api)
@@ -57,7 +57,7 @@ Xbox Live 服务 API (**XSAPI**) 公开了三个组的客户端 Api，它支持�
     - C++/CX 是一项 Microsoft C++ 扩展，可简化 WinRT 编程，例如将 ^ 用作 WinRT 指针。
 - 支持面向 Xbox One XDK 平台和通用 Windows 平台 (UWP) x86、x64 及 ARM 体系结构的应用程序。
 - 通过例外以包括 C++/CX 在内的所有语言处理错误。
-- 还支持 C++/WinRT。  详细了解 C + + 可在找到 WinRT[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- 还支持 C++/WinRT。  详细了解 C + + 可在中找到 WinRT[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 下面是使用 C++/WinRT 调用 XSAPI WinRT API 的示例：
 
@@ -91,7 +91,7 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 #include "xsapi\services.h"
 ```
 
-- 还支持 C++/WinRT。  详细了解 C + + 可在找到 WinRT[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- 还支持 C++/WinRT。  详细了解 C + + 可在中找到 WinRT[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 若要将 C++/WinRT 与 XSAPI C++ API 结合使用，在包括 XSAPI 标头之前，请先定义 XSAPI_CPPWINRT。  例如：
 
@@ -110,7 +110,7 @@ std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_s
 ### <a name="xsapi-c-based-api"></a>XSAPI C 基于 API
 
 - 允许游戏时调用 XSAPI 控制的内存分配。
-- 允许游戏获得的线程处理时调用 XSAPI 的完全控制。
-- 使用新 HTTP 库，libHttpClient，面向游戏开发人员。
+- 允许游戏获得的线程处理调用 XSAPI 时的完全控制。
+- 使用新 HTTP 库，libHttpClient，为游戏开发人员设计。
 
 有关详细信息，请参阅[Xbox Live C Api 的介绍](xsapi-flat-c.md)。

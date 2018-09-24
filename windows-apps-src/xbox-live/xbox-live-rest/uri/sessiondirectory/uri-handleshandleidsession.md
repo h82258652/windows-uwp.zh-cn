@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eb7ca17500f571ed72cf0bcd6ececbcde17ce717
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128323"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152681"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
-支持 PUT 和获取对会话的操作，使用句柄取消引用。 
+支持 PUT 并获得对会话的操作，使用句柄取消引用。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于情况下，使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
 
  
 
@@ -51,7 +51,7 @@ sessiondirectory.xboxlive.com
 
 [GET (/handles/{handleId}/session)](uri-handleshandleidsessionget.md)
 
-&nbsp;&nbsp;获取指定的句柄标识符会话对象。 
+&nbsp;&nbsp;获取指定的句柄标识符的会话对象。 
 
 [PUT (/handles/{handle-id}/session)](uri-handleshandleidsessionput.md)
 

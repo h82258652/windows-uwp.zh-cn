@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125548"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154838"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -398,7 +398,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>添加共享目标扩展
 
-在**解决方案资源管理器**中，你的解决方案中打开打包项目的**package.appxmanifest**文件并添加扩展。
+在**解决方案资源管理器**中，在你的解决方案中打开打包项目的**package.appxmanifest**文件并添加扩展。
 
 ```xml
 <Extensions>

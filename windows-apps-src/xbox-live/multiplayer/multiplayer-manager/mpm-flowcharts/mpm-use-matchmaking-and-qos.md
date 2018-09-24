@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one、mpm, 多人游戏, 服务质量, qos, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fad7f1da832a63c93e249f25420ad8e8ab8c2da
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4121549"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150235"
 ---
 # <a name="flowchart---use-matchmaking-and-manage-quality-of-service"></a>流程图 - 使用匹配并管理服务质量
 

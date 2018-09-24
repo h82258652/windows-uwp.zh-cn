@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a94493243178a503ae846608b172af598bf97dd
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4127141"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150277"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
-为特定的库存项目提供完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
+为特定的清单项提供完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EAB)
@@ -30,7 +30,7 @@ ms.locfileid: "4127141"
  
 ## <a name="remarks"></a>备注
  
-没有策略检查，强制执行，否则筛选会作为此调用的一部分。
+没有策略检查，强制执行，或筛选会作为此调用的一部分。
   
 <a id="ID4EAB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "4127141"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| itemID| 字符串| 为单数库存项目的每个用户的唯一 ID| 
+| itemID| 字符串| 为每个用户单数库存项目的唯一 ID| 
   
 <a id="ID4ELB"></a>
 
@@ -51,7 +51,7 @@ ms.locfileid: "4127141"
  
 ### <a name="sample-response"></a>示例响应
  
-GET 请求，假设传递身份验证并分配适当授权上下文中，该响应是具有完整的项目属性集的单个清单项。
+GET 请求，假设传递身份验证并分配适当授权上下文中，该响应是具有完整的项目属性集的单个库存项。
  
 
 ```cpp

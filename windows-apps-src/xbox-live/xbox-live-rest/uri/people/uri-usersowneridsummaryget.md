@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130877"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155765"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 从调用方的角度来看，获取有关所有者的摘要数据。
@@ -65,7 +65,7 @@ ms.locfileid: "4130877"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | x xbl 协定版本| 字符串| 生成此请求应定向到该服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
-| 接受| 字符串| 内容类型可接受。 所有回复将都对<code>application/json</code>。|
+| 接受| 字符串| 内容类型的可接受。 所有回复将都对<code>application/json</code>。|
 
 <a id="ID4EXE"></a>
 
@@ -79,13 +79,13 @@ ms.locfileid: "4130877"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 400| 错误请求| 用户 Id 的格式不正确。|
-| 403| 已禁止| 在授权标头，无法分析 XUID 声明。|
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。|
 
 <a id="ID4EZG"></a>
 
@@ -94,7 +94,7 @@ ms.locfileid: "4130877"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 232。|
+| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 232。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 这必须是<b>应用程序/json</b>。|
 
 <a id="ID4EGAAC"></a>

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: eeb30b5ad83c44ac4a6feb1471dc31a2e33730a1
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4121571"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150845"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -63,7 +63,7 @@ void Example_RealTimeActivity_ConnectAsync()
 如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP， [Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上定义统计数据。 阅读[开发人员中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在开发人员中心上配置的统计数据。
 
 > [!NOTE]
-> Stats 2013 开发人员将需要关于开发人员中心上的 Stats 2013 配置信息联系其 DAM。
+> Stats 2013 开发人员将需要联系其 DAM 有关开发人员中心上的 Stats 2013 配置信息。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 

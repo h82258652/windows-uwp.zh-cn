@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a4780c92fc16adb697783ecee50d36523ff92998
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125051"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152729"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  
-此通用资源标识符 (URI) 提供访问用户的成就相关的游戏历史记录。
+此通用资源标识符 (URI) 提供对用户的成就相关游戏历史记录访问。
  
 这些 Uri 的域是`achievements.xboxlive.com`。
  
@@ -31,7 +31,7 @@ ms.locfileid: "4125051"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 在访问其游戏历史记录的用户。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其游戏历史记录的用户。| 
   
 <a id="ID4EAC"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4125051"
 
 [GET](uri-titlehistoryusersxuidhistorytitlesgetv2.md)
 
-&nbsp;&nbsp;获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回用户的游戏播放或启动完整历史记录。
+&nbsp;&nbsp;获取的游戏的用户已解锁或对其成就进度的列表。 此 API 不会返回游戏播放或启动的用户的完整历史记录。
  
 <a id="ID4EKC"></a>
 

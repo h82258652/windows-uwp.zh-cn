@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0735a65afe8b5748efefce5dec9ad1989a77b4d
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4122659"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154193"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-调用方的用户集合中获取目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
+目标 ID 由用户从集合中获取调用方的人。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
@@ -46,14 +46,14 @@ ms.locfileid: "4122659"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
-| targetid| 字符串| 在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
+| targetid| 字符串| 正在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
   
 <a id="ID4EJB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-| 类型| 必需| 描述| 如果缺少的响应| 
+| 类型| 必需| 描述| 如果缺少，响应| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | XUID| 是| 调用方具有用户的 Xbox 用户 ID (XUID)。| 401 未授权| 
   
@@ -74,7 +74,7 @@ ms.locfileid: "4122659"
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>应用程序/json</b>。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
   
 <a id="ID4EWE"></a>
 
@@ -88,13 +88,13 @@ ms.locfileid: "4122659"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 成功。| 
 | 400| 错误请求| 用户 Id 的格式不正确。| 
-| 403| 已禁止| 在授权标头，无法分析 XUID 声明。| 
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
 | 404| 找不到| 所有者的人脉列表中找不到目标用户。| 
   
 <a id="ID4EDH"></a>
@@ -112,7 +112,7 @@ ms.locfileid: "4122659"
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务返回的目标人员。 请参阅[人 (JSON)](../../json/json-person.md)。
+如果在调用成功，该服务返回的目标人员。 请参阅[Person (JSON)](../../json/json-person.md)。
  
 <a id="ID4E3AAC"></a>
 

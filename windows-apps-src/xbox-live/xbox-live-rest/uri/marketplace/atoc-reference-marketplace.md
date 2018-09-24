@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be83e2d4301a708a705a8bec0a1d975b6435bc5
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124343"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154431"
 ---
 # <a name="marketplace-uris"></a>市场 URI
 
-本部分提供了从*应用商店*服务，也称为娱乐发现服务 (EDS) 的 Xbox Live 服务的详细信息统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*应用商店*服务，也称为娱乐发现服务 (EDS)。
 
 仅在 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上运行的游戏可以使用此服务。
 
@@ -33,7 +33,7 @@ ms.locfileid: "4124343"
 
 [/users/me/inventory](uri-inventory.md)
 
-&nbsp;&nbsp;访问当前与提供的用户相关联的库存集。
+&nbsp;&nbsp;访问当前与提供的用户相关联的清单的集。
 
 [/users/me/consumables/{itemID}](uri-inventoryconsumablesitemurl.md)
 
@@ -41,7 +41,7 @@ ms.locfileid: "4124343"
 
 [/inventory/{itemID}](uri-inventoryitemurl.md)
 
-&nbsp;&nbsp;访问完整的一组特定的库存项目的详细信息。
+&nbsp;&nbsp;访问完整的详细信息的特定库存项目的设置。
 
 [/media/{marketplaceId}/crossMediaGroupSearch](uri-localecrossmediagroupsearch.md)
 
@@ -69,7 +69,7 @@ ms.locfileid: "4124343"
 
 [/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes](uri-medialocalemetadatamediagroupsmediaitemtypes.md)
 
-&nbsp;&nbsp;访问每个媒体组 EDS 的给定版本可用 mediaItemTypes。
+&nbsp;&nbsp;访问每个媒体组可用 mediaItemTypes EDS 的给定版本。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields](uri-medialocalemetadatamediaitemtypefields.md)
 
@@ -77,7 +77,7 @@ ms.locfileid: "4124343"
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
-&nbsp;&nbsp;对于给定的媒体项的类型，请访问查询精简将。
+&nbsp;&nbsp;对于给定的媒体项的类型，请访问查询优化器。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 
@@ -85,7 +85,7 @@ ms.locfileid: "4124343"
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
 
-&nbsp;&nbsp;对于给定的查询精选值 (例如，"subgenres 在给定流派") 的访问权限的子值列表。
+&nbsp;&nbsp;为某个给定的查询精选值 (例如，"subgenres 在给定流派") 的访问权限的子值列表。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes](uri-medialocalemetadatamediaitemtypes.md)
 
@@ -97,7 +97,7 @@ ms.locfileid: "4124343"
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 
-&nbsp;&nbsp;允许搜索在单个媒体组中的项目。
+&nbsp;&nbsp;允许搜索单个媒体组中的项。
 
 <a id="ID4EFD"></a>
 

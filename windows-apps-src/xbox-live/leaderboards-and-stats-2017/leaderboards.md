@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 190d54fb53192a1cc798b46a0a4b76d7bdd3e074
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125059"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155539"
 ---
 # <a name="leaderboards"></a>排行榜
 
@@ -23,7 +23,7 @@ ms.locfileid: "4125059"
 
 如[数据平台概述](../data-platform/data-platform.md)中所述，排行榜不仅是鼓励玩家进行竞争的好办法，也是确保玩家积极参与尝试突破个人及好友的历史最好成绩的绝佳方式。
 
-[特别推荐的统计数据](stats2017.md#configured-stats-and-featured-leaderboards)的排行榜始终显示在游戏的游戏中心和时它被固定到主页，有时显示为游戏的 UI 的一部分。 你还可以使用你配置的特别推荐的统计数据以你的游戏内创建排行榜。
+[特别推荐的统计数据](stats2017.md#configured-stats-and-featured-leaderboards)的排行榜始终显示在游戏的游戏中心并时它已固定到主页，有时显示为游戏的 UI 的一部分。 你还可以使用你配置的特别推荐的统计数据以你的游戏内创建排行榜。
 
 ## <a name="choosing-good-leaderboards"></a>选择合适的排行榜
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: fab1e83f212675b2c0bb28e0b1ae449f271edec7
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127702"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154632"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的并发和异步操作
 > [!NOTE]
@@ -69,7 +69,7 @@ int main()
 C++/WinRT 将 C++ 协同程序集成到编程模型中以提供协作等待结果的自然方式。 你可以通过编写协同程序来生成自己的 Windows 运行时异步操作。 在以下代码示例中，**ProcessFeedAsync** 是协同程序。
 
 > [!NOTE]
-> **获取**函数存在于 C + + /winrt 投影类型**winrt::Windows::Foundation::IAsyncAction**，因此你可以调用该功能在任何 C + + WinRT 项目。 因为**获取**不是实际的 Windows 运行时类型**IAsyncAction**的应用程序二进制接口 (ABI) 表面的一部分，不会找到列为[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)接口的成员函数。
+> **获取**函数存在于 C + + /winrt 投影类型**winrt::Windows::Foundation::IAsyncAction**，因此你可以调用函数从任何 C + + WinRT 项目。 因为**获取**不是实际的 Windows 运行时类型**IAsyncAction**的应用程序二进制接口 (ABI) 表面的一部分，不会找到列为[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)接口的成员函数。
 
 ```cppwinrt
 // main.cpp
@@ -319,6 +319,83 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+## <a name="reporting-progress"></a>报告进度
+
+如果你的协同程序返回[**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)或[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，然后你可以检索**winrt::get_progress_token**函数返回的对象并使用它返回到进度报告进度处理程序。 下面是代码示例。
+
+```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+#include <iostream>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
+{
+    auto progress{ co_await winrt::get_progress_token() };
+
+    co_await 1s;
+    double pi_so_far{ 3.1 };
+    progress(0.2);
+
+    co_await 1s;
+    pi_so_far += 4.e-2;
+    progress(0.4);
+
+    co_await 1s;
+    pi_so_far += 1.e-3;
+    progress(0.6);
+
+    co_await 1s;
+    pi_so_far += 5.e-4;
+    progress(0.8);
+
+    co_await 1s;
+    pi_so_far += 9.e-5;
+    progress(1.0);
+    co_return pi_so_far;
+}
+
+IAsyncAction DoMath()
+{
+    auto async_op_with_progress{ CalcPiTo5DPs() };
+    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    {
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+    });
+    double pi{ co_await async_op_with_progress };
+    std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
+    std::wcout << L"Pi is approx.: " << pi << std::endl;
+}
+
+int main()
+{
+    init_apartment();
+    DoMath().get();
+}
+```
+
+> [!NOTE]
+> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，则第二个将失败。 任一以下两种类型的完成处理程序之一是相应;不能两者都相同的异步对象。
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+async_op_with_progress.Completed([](auto const& sender, AsyncStatus /* status */)
+{
+    double pi{ sender.GetResults() };
+});
+```
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+double pi{ co_await async_op_with_progress };
+```
+
+有关完成处理程序的详细信息，请参阅[异步操作和运算的委托类型](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)。
 
 ## <a name="important-apis"></a>重要的 API
 * [concurrency:: task 类](/cpp/parallel/concrt/reference/task-class)

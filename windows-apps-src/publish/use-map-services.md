@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126676"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154206"
 ---
 # <a name="use-map-services"></a>使用地图服务
 
@@ -23,10 +23,10 @@ ms.locfileid: "4126676"
 
 若要在适用于 Windows Phone 8.1 及更早版本的应用中使用地图服务，你需要请求在开发人员中心仪表板中的应用的代码中包含地图服务应用程序 ID 和令牌。
 
-后你已[保留应用名称](create-your-app-by-reserving-a-name.md)，随时可以导航到该应用在仪表板中，展开左侧的导航菜单中的**服务**部分并选择**地图**。 单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 这些值将保存在此页面上，以便可以在任何时间，以查看其返回。
+后你已[保留应用名称](create-your-app-by-reserving-a-name.md)，随时可以导航到该应用在仪表板中，展开左侧的导航菜单中的**服务**部分并选择**映射**。 当你单击**获取令牌**时，我们将生成的地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 这些值将保存在此页面上，以便可以在任何时间，以查看其返回。
 
 > [!IMPORTANT]
-> 请务必向你的程序包之前代码中添加的**ApplicationID**和**AuthenticationToken**和提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
+> 请务必**ApplicationID**和**AuthenticationToken**添加到你的代码之前你的程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
  
 

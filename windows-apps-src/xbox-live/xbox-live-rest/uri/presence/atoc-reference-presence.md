@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c2a34d47f894e2ac9aeaf6228c8ebd41348306
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124483"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156075"
 ---
 # <a name="presence-uris"></a>状态 URI
  
@@ -26,7 +26,7 @@ ms.locfileid: "4124483"
  
 这些 Uri 的域是 userpresence.xboxlive.com。
  
-你可以通过使用实时活动 (RTA) 服务订阅用户的状态更改。
+你可以通过使用实时活动 (RTA) 服务订阅用户的在线状态更改。
  
 <a id="ID4ERB"></a>
 
@@ -59,11 +59,11 @@ ms.locfileid: "4124483"
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting](uri-usersxuidgroupsmonikerbroadcasting.md)
 
-&nbsp;&nbsp;访问组名字对象由指定的广播用户状态记录与显示在 URI 中的 XUID。
+&nbsp;&nbsp;访问组名字对象由指定的广播用户的状态记录相关出现在 URI 中的 XUID。
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting/count](uri-usersxuidgroupsmonikerbroadcastingcount.md)
 
-&nbsp;&nbsp;访问的组名字对象由指定的广播用户计数与显示在 URI 中的 XUID。
+&nbsp;&nbsp;访问的组名字对象由指定的广播用户计数相关出现在 URI 中的 XUID。
  
 <a id="ID4EMC"></a>
 

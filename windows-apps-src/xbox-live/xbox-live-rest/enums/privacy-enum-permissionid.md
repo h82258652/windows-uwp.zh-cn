@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f58c2d0f68e1f65820104928e45a09ccfdb259cb
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126013"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149529"
 ---
 # <a name="permissionid-enumeration"></a>PermissionId 枚举
 详细介绍 PermissionId 枚举。
@@ -25,20 +25,20 @@ ms.locfileid: "4126013"
    * [GET (/users/{requestorId}/permission/validate)](../uri/privacy/uri-privacyusersrequestoridpermissionvalidateget.md)
    * [POST (/users/{requestorId}/permission/validate)](../uri/privacy/uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-这些 Id 包括针对用户，如检查目标或单个特权参与者的单个隐私设置的特定设置的直接检查。 此外，还有权限可授予权限 API 和将针对特定用户操作的多个设置的检查的 Id。
+这些 Id 包括直接检查针对的用户，如检查目标或单个特权参与者的单个隐私设置的特定设置。 此外，还有权限可与权限 API 和将检查针对特定用户操作的多个设置的 Id。
 
 <a id="ID4EIB"></a>
 
 
 ## <a name="permissions"></a>权限
 
-以下是调用方可以使用它来检查是否可以执行特定操作的值。 与上面的设置，这些封装的服务定义的策略，并不能直接更改由用户，但在大多数情况下，基于其值由用户定义的一个或多个设置将构建策略。 以下是针对多个上面定义的设置通常复合检查。 示例： <b>ViewProfile</b>权限执行操作目标的<b>ShareProfile</b>隐私设置和请求者的<b>AllowProfileViewing</b>权限的检查。
+以下是调用方可以使用它来检查是否可以执行特定操作的值。 与上述的设置，这些封装定义服务的策略，并不能直接更改由用户，但在大多数情况下，这些策略生成顶部其值由用户定义的一个或多个设置。 以下是针对多个上面定义的设置通常复合检查。 示例： <b>ViewProfile</b>权限执行操作目标的<b>ShareProfile</b>隐私设置和请求者的<b>AllowProfileViewing</b>权限的检查。
 
-一般情况下，建议的调用方请求需要检查，而不是直接检查隐私设置和权限的操作的权限 ID。 这允许隐私策略，如新的检查，并且包含跨整个服务完全一致地更改。
+一般情况下，建议的调用方请求的操作需要检查，而不是直接检查隐私设置和权限的权限 ID。 这允许隐私策略，如新的检查合并跨整个服务完全一致地更改。
 
 | 权限名称| 说明|
 | --- | --- |
-| CommunicateUsingText| 检查用户可以向目标用户发送的邮件包含文本内容|
+| CommunicateUsingText| 检查用户可以向目标用户发送一条消息具有文本内容|
 | CommunicateUsingVideo| 检查用户可以使用与目标用户的视频通信|
 | CommunicateUsingVoice| 检查用户可以使用与目标用户的语音通信|
 | ViewTargetProfile| 检查用户可以查看目标用户的配置文件|

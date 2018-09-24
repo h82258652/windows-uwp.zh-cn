@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4127055"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156281"
 ---
 # <a name="session-directory-uris"></a>会话目录 URI
 
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>服务版本
 
-这些 REST Uri 的调用方必须为 X-Xbl-合同的版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 104/105 或更高版本。
+这些 REST Uri 的调用方必须 X-Xbl-合同的版本，指定的服务版本的娱乐发现服务 (EDS) 的 HTTP 标头的传递值 104/105 或更高版本。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>系统对象和属性
 
-用于配置的其会话和模板，MPSD 使用多个会话 JSON 对象符合该目录会强制执行和解释的固定架构。 在调用期间为支持各种会话目录 Uri 的方法，这些对象验证和合并，具体取决于受支持的架构。 与多人游戏配置相关联的主要 JSON 对象是：
+用于配置的其会话和模板，MPSD 使用大量符合会话 JSON 对象，该目录会强制执行和解释的固定架构。 在调用期间为支持各种会话目录 Uri 的方法，这些对象是验证，并且合并，具体取决于受支持的架构。 与多人游戏配置相关联的主要 JSON 对象是：
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -70,7 +70,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="handles"></a>句柄
 
-2015 多人游戏只能，可以通过会话句柄访问会话。 添加了多个 Uri 以提供功能以支持句柄。  
+2015 多人游戏仅，可以通过会话句柄访问会话。 添加了多个 Uri 以提供功能以支持句柄。  
 <a id="ID4EFE"></a>
 
 
@@ -78,15 +78,15 @@ sessiondirectory.xboxlive.com
 
 [/handles](uri-handles.md)
 
-&nbsp;&nbsp;支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。
+&nbsp;&nbsp;支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板用户体验，并邀请会话成员，如果所需的会话。
 
 [/handles/{handleId}](uri-handleshandleid.md)
 
-&nbsp;&nbsp;支持会话句柄标识符指定的删除和 GET 的操作。
+&nbsp;&nbsp;支持会话句柄由标识符指定的删除和 GET 的操作。
 
 [/handles/{handleId}/session](uri-handleshandleidsession.md)
 
-&nbsp;&nbsp;支持 PUT 和获取对会话的操作，使用句柄取消引用。
+&nbsp;&nbsp;支持 PUT 并获得对会话的操作，使用句柄取消引用。
 
 [/handles/query](uri-handlesquery.md)
 
@@ -98,15 +98,15 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessions](uri-serviceconfigsscidsessions.md)
 
-&nbsp;&nbsp;支持获取操作来检索一组会话文档。
+&nbsp;&nbsp;支持 GET 操作以检索一组会话文档。
 
 [/serviceconfigs/{scid}/sessiontemplates](uri-serviceconfigsscidsessiontemplates.md)
 
-&nbsp;&nbsp;支持获取操作来检索一组的 MPSD 会话模板。
+&nbsp;&nbsp;支持 GET 操作以检索一组的 MPSD 会话模板。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}](uri-serviceconfigsscidsessiontemplatessessiontemplatename.md)
 
-&nbsp;&nbsp;支持获取操作来检索一组会话模板名称。
+&nbsp;&nbsp;支持 GET 操作以检索一组会话模板名称。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
 
@@ -114,15 +114,15 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessions.md)
 
-&nbsp;&nbsp;支持获取操作来检索一组指定的模板名称的会话模板。
+&nbsp;&nbsp;支持 GET 操作以检索一组指定的模板名称的会话模板。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
 
-&nbsp;&nbsp;支持创建和检索会话的 PUT 和 GET 操作。
+&nbsp;&nbsp;支持来创建和检索会话的 PUT 和 GET 操作。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
 
-&nbsp;&nbsp;支持删除操作，以删除指定的会话成员。
+&nbsp;&nbsp;支持的删除操作，以删除指定的会话成员。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md)
 
@@ -130,7 +130,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
 
-&nbsp;&nbsp;支持删除操作，以删除指定的会话的服务器。
+&nbsp;&nbsp;支持的删除操作，以删除指定的会话的服务器。
 
 <a id="ID4ESF"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4122387"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154165"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -34,7 +34,7 @@ ms.locfileid: "4122387"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，仅返回该用户，如果它们不在阻止列表中，也可以为空如果它们不。
+如果给定目标，仅返回该用户，如果它们在阻止列表中，也可以为空如果它们不。
 
 <a id="ID4EZ"></a>
 
@@ -50,9 +50,9 @@ ms.locfileid: "4122387"
 
 ## <a name="authorization"></a>授权
 
-使用的授权声明 | 声明| 类型| 是否必需？| 示例值|
+使用授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- |
-| Xuid| 64 位有符号的整数| 是| 1234567890|
+| Xuid| 64 位有符号整数| 是| 1234567890|
 
 <a id="ID4EJC"></a>
 
@@ -62,14 +62,14 @@ ms.locfileid: "4122387"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权 | 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>Xauth=&lt;authtoken></code>。 最大大小： none。|
-| 接受| 字符串| 内容类型可接受。 示例值： <code>application/json</code>。 最大大小： none。|
+| 接受| 字符串| 内容类型的可接受。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4EYD"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -86,7 +86,7 @@ ms.locfileid: "4122387"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
-| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 34。 最大大小： none。|
+| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|
 | 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4ESH"></a>

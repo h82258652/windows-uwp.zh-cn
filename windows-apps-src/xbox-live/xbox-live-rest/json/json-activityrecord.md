@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb34d64daa9b1349c4f956a59ccf5d8efa5b565
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124991"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150025"
 ---
 # <a name="activityrecord-json"></a>ActivityRecord (JSON)
 有关一个或多个用户的完整状态格式化和本地化字符串。 
@@ -29,7 +29,7 @@ ActivityRecord 对象具有以下规范。
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| richPresence| 字符串| 完整状态字符串中，格式化和本地化。| 
+| richPresence| 字符串| 完整状态字符串格式化和本地化。| 
 | 媒体| MediaRecord| 哪些用户观看或收听。| 
   
 <a id="ID4ETB"></a>

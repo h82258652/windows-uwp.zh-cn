@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bed703722b6c2d03cbc7b5e9f1b8be08ef38c7f0
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129559"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152679"
 ---
 # <a name="privacy-uris"></a>隐私 URI
  
-本部分提供了从 Xbox Live 服务的*隐私*的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供了从出于*隐私*的 Xbox Live 服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
  
 仅在 Windows 8 上运行的游戏，Xbox 360 或 Windows Phone 上设备可以使用此服务。
  

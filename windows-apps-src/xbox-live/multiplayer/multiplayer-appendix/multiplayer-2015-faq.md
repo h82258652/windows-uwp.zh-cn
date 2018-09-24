@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c319db5c93f6bc06f551fbb3b76f975fc3de87a
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126071"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152899"
 ---
 # <a name="multiplayer-2015-faq-and-troubleshooting"></a>Multiplayer 2015 常见问题和疑难解答
 

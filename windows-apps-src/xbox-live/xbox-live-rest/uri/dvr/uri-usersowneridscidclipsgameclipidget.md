@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 13b96b0d2f1f674533dd2c070bd1a10884bb7370
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4127015"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152561"
 ---
 # <a name="get-usersowneridscidsscidclipsgameclipid"></a>GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})
-如果已知的所有 Id，以找到它，请从系统中获取单个游戏剪辑。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+如果已知的所有 Id，以找到它，请从系统获取单个游戏剪辑。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EVB)
@@ -37,14 +37,14 @@ ms.locfileid: "4127015"
  
 ## <a name="remarks"></a>备注
  
-该剪辑的查询的所有数据都在从任何元数据查询返回的**GameClip**对象中可用。 获取此 API 通过单个游戏剪辑需要**XUID**、 **ServiceConfigId**、 **GameClipId**和**SandboxId**请求的声明中。 如果游戏剪辑被标记为强制执行，或内容隔离或隐私检查确定用户没有权限，以获取特定的游戏剪辑，该 API 将返回 HTTP 状态代码的 404 （未找到）。
+查询该剪辑的所有数据都在从任何元数据查询返回的**GameClip**对象中可用。 **XUID**、 **ServiceConfigId**、 **GameClipId**和**SandboxId**请求的声明中需要获取此 API 通过单个游戏剪辑。 如果游戏剪辑被标记为强制执行，或内容隔离或隐私检查确定用户没有权限，以获取特定游戏剪辑，该 API 将返回 HTTP 状态代码的 404 （未找到）。
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+现在，从 XToken 声明检索并强制执行**SandboxId** 。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
  
-此外必须使用此 API 以刷新已过期的 Uri。 完成查询时，该游戏的剪辑任何过期的 Uri 将被相应地刷新。 
+此外必须使用此 API 以刷新过期的 Uri。 完成查询时，该游戏的剪辑任何过期的 Uri 将被相应地刷新。 
 
 > [!NOTE] 
-> URI 刷新可能需要最多 30 40 秒后完成此请求。 如果 URI 已过期，请尝试使用它立即进行流式处理的操作将获得从 IIS 平滑流式处理服务器的 HTTP 500 状态代码。 我们正在努力缩短的方法，并将随着该工作相应地更新此说明。 
+> URI 刷新可能需要最多 30 40 秒后完成此请求。 如果 URI 已过期，尝试使用它立即进行流式处理的操作将获得从 IIS 平滑流式处理服务器的 HTTP 500 状态代码。 我们正在运行的方法来缩短，，并将该工作随着相应地更新此注意。 
 
 
   
@@ -57,20 +57,20 @@ ms.locfileid: "4127015"
 | --- | --- | --- | --- | 
 | ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| 正在访问的资源的 GameClip ID。| 
+| gameClipId| 字符串| GameClip 所访问的资源的 ID。| 
   
 <a id="ID4EAC"></a>
 
  
 ## <a name="authorization"></a>授权
  
-使用的授权声明 | 声明| 类型| 是否必需？| 示例值| 备注| 
+使用授权声明 | 声明| 类型| 是否必需？| 示例值| 备注| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Xuid| 64 位有符号的整数| 是| 1234567890|  | 
-| TitleId| 64 位有符号的整数| 是| 1234567890| 用于<b>内容隔离</b>检查。| 
-| SandboxId| 十六进制的二进制文件| 是|  | 可将定向到正确的区域，用于查找，系统和用于<b>内容隔离</b>检查。| 
+| Xuid| 64 位有符号整数| 是| 1234567890|  | 
+| TitleId| 64 位有符号整数| 是| 1234567890| 用于<b>内容隔离</b>检查。| 
+| SandboxId| 十六进制的二进制文件| 是|  | 可将定向到正确的区域的查找，系统和用于<b>内容隔离</b>检查。| 
   
-有关资源的隐私设置的效果 | 发出请求的用户| 目标用户的隐私设置| 行为| 
+在资源的隐私设置的效果 | 请求的用户| 目标用户的隐私设置| 行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 我| -| 所述。| 
 | 好友| 每个人都| 禁止访问。| 
@@ -119,20 +119,20 @@ ms.locfileid: "4127015"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
 | 301| 已永久移动|  | 
 | 307| 临时重定向|  | 
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 406| 不允许| 不支持资源版本。| 
 | 408| 请求超时| 请求所花的时间太长，才能完成。| 
-| 410| 前面| 请求的资源不再可用。| 
+| 410| 前面| 所请求的资源不再可用。| 
   
 <a id="ID4EQIAC"></a>
 

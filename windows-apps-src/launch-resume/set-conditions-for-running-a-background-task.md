@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125870"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156228"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
@@ -31,7 +31,7 @@ ms.locfileid: "4125870"
 
 了解如何设置控制何时运行后台任务的条件。
 
-有时，后台任务需要以后台任务成功满足某些条件。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件。 然后将排队的后台任务，但满足所有所需的条件之前不会运行。
+有时，后台任务需要为后台任务成功满足某些条件。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件。 然后将排队的后台任务，但满足所有所需的条件之前不会运行。
 
 设置条件对后台任务节省电池使用时间和 CPU 时阻止任务不必要地运行。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
 
@@ -64,7 +64,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 若要添加条件，请在 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224769) 对象上调用 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224768) 方法，并向其传递 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象。
 
-下面的代码使用**taskBuilder**来添加**InternetAvailable**条件。
+下面的代码使用**taskBuilder**添加**InternetAvailable**条件。
 
 ```csharp
 taskBuilder.AddCondition(internetCondition);
@@ -80,7 +80,7 @@ taskBuilder->AddCondition(internetCondition);
 
 ## <a name="register-your-background-task"></a>注册后台任务
 
-你现在可以注册的[**注册**](https://msdn.microsoft.com/library/windows/apps/br224772)方法中，你的后台任务，并在满足指定的条件之前不会启动后台任务。
+你现在可以注册的[**注册**](https://msdn.microsoft.com/library/windows/apps/br224772)方法中，你的后台任务并在满足指定的条件之前不会启动后台任务。
 
 以下代码注册该任务并存储所生成的 BackgroundTaskRegistration 对象：
 
@@ -111,7 +111,7 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > [!NOTE]
 > 小心不要向后台任务中添加冲突的条件。
 
-以下代码段显示了创建和注册后台任务的上下文中的多个条件。
+以下代码段在创建和注册后台任务的上下文中显示多个条件。
 
 ```csharp
 // Set up the background task.
@@ -182,7 +182,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 选择你的后台任务的条件，以便它仅在运行时需要时，它不应时不会运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> 选择你的后台任务的条件，以便它仅在运行时需要时，它不应该时不会运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 ## <a name="related-topics"></a>相关主题
 

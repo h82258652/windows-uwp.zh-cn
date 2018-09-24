@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125035"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155517"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
 获取多个不同的媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -31,9 +31,9 @@ ms.locfileid: "4125035"
  
 ## <a name="remarks"></a>备注
  
-跨组 API 允许客户端搜索的几个不同的媒体组中的项。 此 API 需要分页结果使用仅向前延续令牌。 此 API 将接受查询精简将。
+跨组 API 允许客户端搜索的几个不同的媒体组中的项。 此 API 需要分页结果使用仅向前延续令牌。 此 API 将接受查询优化器。
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+现在，从 XToken 声明检索并强制执行**SandboxId** 。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "4125035"
  
 ### <a name="sample-response"></a>示例响应
  
-下面的 JSON 代码是为了响应在调用`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`。
+下面的代码 JSON 是为了响应在调用`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`。
  
 
 ```cpp

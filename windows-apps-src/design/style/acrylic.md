@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122112"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155608"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -124,7 +124,7 @@ ms.locfileid: "4122112"
 ## <a name="usability-and-adaptability"></a>可用性和适应性
 亚克力外观可自动适应各种设备和上下文。
 
-在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力均显示为纯色：
+在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力会显示为纯色：
  - 当用户关闭设置中的透明度 > 个性化 > 颜色
  - 当激活节电模式
  - 应用在低端硬件上运行时
@@ -211,7 +211,7 @@ ms.locfileid: "4122112"
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
  - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
@@ -338,7 +338,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="how-we-designed-acrylic"></a>如何设计亚克力
 
-我们微调亚克力的关键组件以凸显其独特外观和属性。 我们从透明度、 模糊和噪点设置为平面的图面增添视觉深度和维度开始。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
+我们微调亚克力的关键组件以凸显其独特外观和属性。 我们从透明度、 模糊和噪点设置为平滑图面增添视觉深度和维度开始。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
 
 ![亚克力设置](images/AcrylicRecipe_Diagram.jpg)
 <br/>亚克力设置：背景、模糊、排除混合、颜色/色调覆盖、噪点

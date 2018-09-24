@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124207"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152109"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
-删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
+删除用户的收件箱中的用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4ECB)
@@ -27,7 +27,7 @@ ms.locfileid: "4124207"
   * [请求正文](#ID4E1B)
   * [HTTP 状态代码](#ID4EHC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EAE)
-  * [有关资源的隐私设置的效果](#ID4EYF)
+  * [在资源的隐私设置的效果](#ID4EYF)
  
 <a id="ID4EV"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "4124207"
  
 删除操作是幂等。
  
-此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。 
+此 API 支持仅内容类型是"application/json"，其中每个调用的 HTTP 标头中必需的。 
   
 <a id="ID4ECB"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "4124207"
  
 ## <a name="authorization"></a>授权 
  
-你必须拥有自己声明删除用户消息的用户。
+你必须拥有自己声明要删除的用户消息的用户。
   
 <a id="ID4E1B"></a>
 
@@ -67,21 +67,21 @@ ms.locfileid: "4124207"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 说明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功。| 
-| 403| 不能转换 XUID 或找不到有效的 XUID 声明。| 
-| 404| 无法分析 URI 中的消息 ID 或 XUID 是 URI 中丢失。| 
-| 500| 常规的服务器端错误。| 
+| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。| 
+| 404| 无法分析 URI 中的消息 ID 或 URI 中缺少一个 XUID。| 
+| 500| 常规服务器端错误。| 
   
 <a id="ID4EAE"></a>
 
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应 
  
-如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
+发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
  
 | 属性| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -92,7 +92,7 @@ ms.locfileid: "4124207"
 <a id="ID4EYF"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果 
+## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果 
  
 仅可以删除自己用户的消息。 
   

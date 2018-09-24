@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c46981121393ce80228d857c32a01784d58af96
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126085"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152475"
 ---
 # <a name="get-mediamarketplaceidfields"></a>GET (/media/{marketplaceId}/fields)
 获取字段的标记。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -30,20 +30,20 @@ ms.locfileid: "4126085"
  
 ## <a name="remarks"></a>备注
  
-娱乐发现服务 (EDS) Api，默认情况下，返回每个项目的字段非常小最低的集：
+娱乐发现服务 (EDS) Api，默认情况下返回一组很少最小的每个项目的字段：
  
    * 媒体项类型
    * 媒体组
    * ID
    * 姓名
   
-若要获取详细信息，这些 Api 接受指定应返回的数据的其他部分的**字段**参数。 因为有许多可能的域，在每个 API 调用的完整中指定其名称将大大膨胀请求。 相反，可以将名称传递到此 API，这会生成一个更小值，可以将传递到其他 Api。
+若要获取详细信息，这些 Api 接受指定应返回的数据的其他部分的**字段**参数。 因为有许多可能的字段，在每个 API 调用的完整中指定其名称将大大膨胀请求。 相反，可以将名称传递到此 API，这会生成一个更小值，可以将传递到其他 Api。
  
-对于接受此参数的任何 API，所提供的值必须中指定的媒体项的所有类型的所有字段的超集。 不能指定不同的用于不同的媒体项类型的字段集。 但是，如果字段适用于媒体项类型，但不是另一个，它将仅出现在媒体项类型存在数据 (例如，如果"AvatarBodyType"包含在调用[获取 (/media/ {marketplaceId} / 字段)]()，将仅 AvatarItems包含域）。
+对于接受此参数的任何 API，所提供的值必须中指定的媒体项的所有类型的所有字段的超集。 不能指定不同的用于不同的媒体项类型的字段集。 但是，如果字段适用于一个媒体项类型，但不是另一个，它将仅出现在媒体项类型存在数据的位置 (例如，如果"AvatarBodyType"包含在调用[获取 (/media/ {marketplaceId} / 字段)]()，将仅 AvatarItems包含字段）。
  
-从该 API 返回的值为高度可缓存-实际上，它们不应更改除外之间的 EDS 部署。 建议，如果缓存，缓存的最后一个不会超过用户的会话。
+从此 API 返回的值是可高度缓存-实际上，它们不应更改除外之间的 EDS 部署。 建议，如果缓存，缓存的最后一个不会超过用户的会话。
  
-除了接受的实际的字段名称，此 API 接受"全部"作为有效的值。 这将生成包含可以指定每个字段的值。 使用"全部"值仅适合开发、 调试和测试目的。
+除了接受的实际的字段名称，此 API 接受"全部"作为有效的值。 这将生成包含可指定每个字段的值。 使用"全部"值仅适合开发、 调试和测试目的。
  
 或者，你可以发送`desired={list of fields separated by a '.'}`接受**字段**令牌的任何 api。
  

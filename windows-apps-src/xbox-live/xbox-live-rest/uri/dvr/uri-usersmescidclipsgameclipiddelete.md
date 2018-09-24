@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a68d765cfdec81da064b0522ea2ff9a4be12bafb
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126959"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155041"
 ---
 # <a name="delete-usersmescidsscidclipsgameclipid"></a>DELETE (/users/me/scids/{scid}/clips/{gameClipId})
-删除游戏剪辑这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+删除游戏剪辑这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4ECB)
@@ -40,7 +40,7 @@ ms.locfileid: "4126959"
 提供用于 GameClips 服务中删除用户的视频的机制。 在删除后从系统删除所有元数据和实际的视频资产 （生成和原始）。 这是永久操作。 
 
 > [!NOTE] 
-> 指定的所有者 ID 必须匹配中删除请求成功的授权令牌的调用方。 
+> 指定的所有者 ID 必须匹配在成功的删除请求的授权令牌的调用方。 
 
 
   
@@ -52,14 +52,14 @@ ms.locfileid: "4126959"
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| 正在访问的资源的 GameClip ID。| 
+| gameClipId| 字符串| GameClip 所访问的资源的 ID。| 
   
 <a id="ID4ENB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-需要为此方法仅 Xuid 声明。
+需要为此方法仅的 Xuid 声明。
   
 <a id="ID4EYB"></a>
 
@@ -96,7 +96,7 @@ ms.locfileid: "4126959"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -134,7 +134,7 @@ ms.locfileid: "4126959"
  
 ## <a name="response-body"></a>响应正文
  
-该服务将通过 HTTP 状态代码的 204 （任何内容） 后成功做出响应。 尝试为删除同一个对象，或不存在对象将返回 404。
+该服务将通过 HTTP 状态代码的 204 （任何内容） 后成功做出响应。 尝试删除相同的对象或不存在对象将返回 404。
  
 发生错误，将返回一个**ServiceErrorResponse**对象。
   

@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4128358"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155422"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
@@ -98,7 +98,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储你的应用的 PRI 文件。 每个资源的`uri`转储文件中显示。
+如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -175,13 +175,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果要将“AppDisplayName”资源从 `Resources.resw` 移动到 `ManifestResources.resw`，在应用包清单中，需将 `ms-resource:AppDisplayName` 更改为 `ms-resource:/ManifestResources/AppDisplayName`。
 
-如果分段资源文件名 (它包含"。"字符)，然后在名称中保留点时引用它。 **不要**替换正斜杠 （"/"） 字符，像资源名称的点。
+如果分段资源文件名 (它包含"。"字符)，然后在名称中保留点时引用它。 **不要**替换正斜杠 （"/"） 字符，像针对资源名称的点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储你的应用的 PRI 文件。 每个资源的`uri`转储文件中显示。
+如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -268,7 +268,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后使用资源映射名称中的点。
+为 Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");

@@ -4,23 +4,26 @@ title: 创建多实例通用 Windows 应用
 description: 本主题介绍如何编写支持多实例的 UWP 应用。
 keywords: 多实例 UWP
 ms.author: twhitney
-ms.date: 09/19/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9302ed0375739153eb95ac2b54c1ed396b14daee
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126992"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156092"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>创建多实例通用 Windows 应用
 
 本主题介绍如何创建多实例通用 Windows 平台 (UWP) 应用。
 
-从 Windows 10 版本 1803 (10.0;内部版本 17134） 起，你的 UWP 应用可以选择支持多个实例。 如果多实例 UWP 应用的一个实例正在运行，并发生后续的激活请求，平台将不会激活现有实例。 相反，它将创建一个新实例，而且在单独的进程中运行。
+从 Windows 10 版本 1803 (10.0;内部版本 17134） 开始，你的 UWP 应用可以选择支持多个实例。 如果多实例 UWP 应用的一个实例正在运行，并发生后续的激活请求，平台将不会激活现有实例。 相反，它将创建一个新实例，而且在单独的进程中运行。
+
+> [!IMPORTANT]
+> 对于 JavaScript 应用程序，支持多实例，但不是多实例重定向。 由于 JavaScript 应用程序不支持多实例重定向， [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)类不是适用于此类应用程序。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>选择加入多实例行为
 
@@ -59,7 +62,7 @@ ms.locfileid: "4126992"
 
 如上所示，**多实例重定向 UWP 应用**模板将 `SupportsMultipleInstances` 添加到 package.appxmanifest 文件，并且还将 **Program.cs**（或 **Program.cpp**，如果使用的是模板的 C++ 版本）添加到包含 `Main()` 函数的项目中。 用于重定向激活操作的逻辑包含在 `Main` 函数中。 **Program.cs**的模板如下所示。
 
-[AppInstance.RecommendedInstance](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示提供 shell 首选的实例此激活请求，如果一个 (或`null`如果没有)。 如果 shell 将提供首选项，然后你可以可以重定向激活到该实例，或如果你选择将可以忽略它。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示提供 shell 首选的实例此激活请求，如果存在 (或`null`如果没有一个)。 如果 shell 将提供首选项，然后你可以可以重定向激活到该实例，或如果你选择可以忽略它。
 
 ``` csharp
 public static class Program
@@ -109,7 +112,7 @@ public static class Program
 }
 ```
 
-`Main()` 是运行的第一项内容。 它在 [OnLaunched()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 和 [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_) 之前运行。 这样便能够确定在应用中的任何其他初始化代码运行之前，是激活此实例还是其他实例。
+`Main()` 是运行的第一项内容。 它[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前运行。 这样便能够确定在应用中的任何其他初始化代码运行之前，是激活此实例还是其他实例。
 
 以上代码决定是激活应用程序的现有实例还是新实例。 使用一个密钥来确定是否存在要激活的现有实例。 例如，如果可启动应用来[处理文件激活](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，则可能将文件名作为密钥。 然后，可检查是否已使用该密钥注册了应用的一个实例，然后激活它，而不是打开一个新实例。 这是代码背后的构想： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
@@ -129,7 +132,7 @@ public static class Program
 - 若要避免发生争用和争用导致的问题，多实例应用需要采取措施对访问设置、应用本地存储以及能在多个实例之间共享的任何其他资源（例如用户文件、数据存储等）进行分区/同步。 可使用标准同步机制，如互斥体、信号灯、事件等等。
 - 如果应用的 Package.appxmanifest 文件中有 `SupportsMultipleInstances`，则其扩展无需声明 `SupportsMultipleInstances`。 
 - 如果将 `SupportsMultipleInstances` 添加到除后台任务或应用服务之外的任何其他扩展，并且托管该扩展的应用也不在其 Package.appxmanifest 文件中声明 `SupportsMultipleInstances`，则会发生架构错误。
-- 应用可以在其清单中使用 [ResourceGroup](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) 声明，从而将多个后台任务归入同一主机。 这与多实例相冲突，在多实例中，每个激活操作会进入单独的主机。 因此，应用无法在其清单中同时声明 `SupportsMultipleInstances` 和 `ResourceGroup`。
+- 应用可以使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)声明在其清单中组合多个后台任务归入同一主机。 这与多实例相冲突，在多实例中，每个激活操作会进入单独的主机。 因此，应用无法在其清单中同时声明 `SupportsMultipleInstances` 和 `ResourceGroup`。
 
 ## <a name="sample"></a>示例
 

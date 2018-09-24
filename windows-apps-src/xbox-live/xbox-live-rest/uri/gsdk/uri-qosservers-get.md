@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a4787bf6b139d1a638ec783c0293d70a8ee239
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4122621"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4148849"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-通过适用于 Xbox Live 计算获取可用的 QoS 服务器列表中的客户端调用的 URI。 有关这些 Uri 域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4EBB)
   * [所需的响应标头](#ID4EUC)
@@ -37,11 +37,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求，将需要在下表中所示的标头。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | 
-| 内容类型| 应用程序/json| 提交的数据的类型。| 
+| 内容类型| 应用程序/json| 正在提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 

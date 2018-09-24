@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db953d711bcb423f02aebfd3579cddea717826b
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124951"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155691"
 ---
 # <a name="authorization-types"></a>授权类型
  
-Xbox Live 服务使用与请求的授权类型的编号。 本主题介绍了标准授权类型。
+Xbox Live 服务的请求使用大量授权类型。 本主题介绍了标准的授权类型。
  
 | 类型| 说明| 
 | --- | --- | 
 | 用户 | 调用方是授权的 Xbox Live 用户。 | 
-| Title | 调用方是受信任的平台上的游戏。| 
+| Title | 调用方是受信任的平台上的标题。| 
  
 <a id="ID4EGC"></a>
 
@@ -43,6 +43,6 @@ Xbox Live 服务使用与请求的授权类型的编号。 本主题介绍了标
 <a id="ID4EUC"></a>
 
  
-##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a>引用[统一资源标识符 (URI) 引用](../uri/atoc-xboxlivews-reference-uris.md)
+##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a>引用[统一资源标识符 (URI) 参考](../uri/atoc-xboxlivews-reference-uris.md)
 
    

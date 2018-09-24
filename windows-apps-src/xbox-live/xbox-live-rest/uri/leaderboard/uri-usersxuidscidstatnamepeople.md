@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 161c7e96faf3ec217aeb188ccb3b5b1e354d217e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4130011"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147603"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 访问 （排名） 在社交排行榜。
@@ -32,9 +32,9 @@ ms.locfileid: "4130011"
 | 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid| 字符串| 用户的标识符。|
-| scid| 字符串| 服务配置，其中包含要访问的资源的标识符。|
+| scid| 字符串| 服务配置，其中包含正在访问的资源的标识符。|
 | statname| 字符串| 正在访问的用户统计数据资源的唯一标识符。|
-| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅通过该用户指定为常用联系人的联系人。|
+| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅由该用户指定为常用联系人的联系人。|
 
 <a id="ID4EOC"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "4130011"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;返回在社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。
+&nbsp;&nbsp;返回在社交排行榜的统计数据值 （分数） 为当前用户的任何一种所有已知的联系人或仅由该用户指定为常用联系人的联系人的排名。
 
 <a id="ID4EYC"></a>
 

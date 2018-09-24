@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 本地化字符串, Windows 开发人员中心
 ms.openlocfilehash: fac642adad099bf930a4ddabba151384a83db17c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128199"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149311"
 ---
 # <a name="configuring-localized-strings-on-windows-dev-center"></a>在 Windows 开发人员中心配置本地化字符串
 
@@ -42,4 +42,4 @@ ms.locfileid: "4128199"
 |---------------------------|-------------|
 | XSD 验证失败：命名空间‘http://config.mgt.xboxlive.com/schema/localization/1’中的元素‘LocalizedString’不能包含文本。 需要的可能元素列表：命名空间‘http://config.mgt.xboxlive.com/schema/localization/1’中的‘值’ | XML 文档格式不正确时会发生此情况 |
 | 本地化字符串缺少开发人员显示区域设置的项目 | 本地化字符串缺少其区域设置与开发人员显示区域设置不匹配的项目时，会发生这种情况 |
-| XSD 验证失败：‘区域设置’属性无效 - 根据其数据类型‘http://config.mgt.xboxlive.com/schema/localization/1:NonEmptyString’‘ ’值无效 - 模式约束失败。 | 当本地化的字符串缺少中的区域设置值时，会发生此情况 <Value> tag|
+| XSD 验证失败：‘区域设置’属性无效 - 根据其数据类型‘http://config.mgt.xboxlive.com/schema/localization/1:NonEmptyString’‘ ’值无效 - 模式约束失败。 | 发生这种情况时的本地化的字符串缺少中的区域设置值 <Value> tag|

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122834"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154494"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -66,7 +66,7 @@ ms.locfileid: "4122834"
 
 :::row:::
     :::column:::
-        在任何 Windows 10 设备上启动 UWP 应用时，它将启动带有[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航的[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中。
+        在任何 Windows 10 设备上启动 UWP 应用时，它将启动在[窗口](/uwp/api/Windows.UI.Xaml.Controls.Window)中使用[帧](/uwp/api/Windows.UI.Xaml.Controls.Frame)，它可以[页面](/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间进行导航。
     :::column-end:::
     :::column:::
         ![帧](images/frame.svg)

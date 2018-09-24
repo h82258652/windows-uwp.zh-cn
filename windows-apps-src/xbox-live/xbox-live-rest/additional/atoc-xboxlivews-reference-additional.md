@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128469"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149919"
 ---
 # <a name="additional-reference"></a>其他参考
 
-本部分中的主题提供 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
+此部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
 
 <a id="ID4EZ"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "4128469"
 
 [数据类型概述](datatypeoverview.md)
 
-&nbsp;&nbsp;介绍 Xbox Live 服务使用的标准标识相关的数据类型。
+&nbsp;&nbsp;介绍使用 Xbox Live 服务的标准标识相关的数据类型。
 
 [辅助 EDS API](eds-apis.md)
 
@@ -51,11 +51,11 @@ ms.locfileid: "4128469"
 
 [EDS 查询优化器](edsqueryrefiners.md)
 
-&nbsp;&nbsp;介绍了通用于许多 EDS Api 查询精简将。
+&nbsp;&nbsp;介绍了通用于许多 EDS Api 查询优化器。
 
 [EDS 反向查找视频](edsreverselookup.md)
 
-&nbsp;&nbsp;查找基于反向数据的视频。
+&nbsp;&nbsp;查找视频基于反向数据。
 
 [EDS 表](edstables.md)
 
@@ -71,7 +71,7 @@ ms.locfileid: "4128469"
 
 [标准 HTTP 状态代码](httpstatuscodes.md)
 
-&nbsp;&nbsp;描述该服务返回的标准 HTTP 状态代码。
+&nbsp;&nbsp;介绍了由该服务返回的标准 HTTP 状态代码。
 
 <a id="ID4ECC"></a>
 

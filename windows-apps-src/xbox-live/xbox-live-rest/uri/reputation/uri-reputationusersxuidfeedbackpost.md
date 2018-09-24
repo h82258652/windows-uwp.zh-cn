@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129133"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150541"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
-如果你希望能够在你的游戏，而不是使用 shell 中添加的反馈选项，用于从你的游戏。 这些 Uri 的域是`reputation.xboxlive.com`。
+如果你希望能够在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。 这些 Uri 的域是`reputation.xboxlive.com`。
  
   * [URI 参数](#ID4EZ)
   * [需的请求标头](#ID4EEB)
@@ -46,7 +46,7 @@ ms.locfileid: "4129133"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求仅为路由到服务验证该标头，身份验证令牌中的声明的有效性后等。 默认值： 101。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
   
 <a id="ID4ENC"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "4129133"
  
 ### <a name="prohibited-members"></a>禁止的成员 
  
-在请求中禁止使用所有其他成员。
+所有其他成员被禁止在请求中。
   
 <a id="ID4ETD"></a>
 
@@ -104,7 +104,7 @@ ms.locfileid: "4129133"
 | 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。| 
 内容类型| 
 应用程序/json| 
-提交的数据的类型。| 
+正在提交的数据的类型。| 
   
 <a id="ID4EXF"></a>
 
@@ -118,7 +118,7 @@ ms.locfileid: "4129133"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

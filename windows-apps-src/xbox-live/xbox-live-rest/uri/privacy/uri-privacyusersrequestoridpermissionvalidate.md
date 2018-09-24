@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: faa0325a8540e1e3df9674a4acab2ab33e93dceb
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4123373"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155017"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -38,7 +38,7 @@ ms.locfileid: "4123373"
 
 [GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作是或否答案。
+&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作或否答案。
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 

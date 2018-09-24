@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 584acb4b74fa74dd91e9f8044b59647d8e5d8787
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124543"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154447"
 ---
 # <a name="usersxuidxuidoutbox"></a>/users/xuid({xuid})/outbox
-提供仅发送给用户的访问权限的邮件发件箱为 Xbox LIVE 服务。 这些 Uri 的域是`msg.xboxlive.com`。
+提供的消息仅发送给用户的访问权限的 Xbox LIVE 服务发件箱。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  

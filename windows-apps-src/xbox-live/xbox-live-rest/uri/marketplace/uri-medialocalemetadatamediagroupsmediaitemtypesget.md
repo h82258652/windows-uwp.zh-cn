@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f9131026fe64f18ded49fa7394b54696dbbc44f8
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130995"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153651"
 ---
 # <a name="get-mediamarketplaceidmetadatamediagroupsmediagroupmediaitemtypes"></a>GET (/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes)
 列出了每个媒体组 EDS 的给定版本可用 mediaItemTypes。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -31,7 +31,7 @@ ms.locfileid: "4130995"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
-| mediagroup| 字符串| 必需。 [获取 (/media/ {marketplaceId} / 元数据/mediaGroups)](uri-medialocalemetadatamediagroupsget.md)中的值之一。| 
+| mediagroup| 字符串| 必需。 [GET (/media/ {marketplaceId} / 元数据/mediaGroups)](uri-medialocalemetadatamediagroupsget.md)中的值之一。| 
   
 <a id="ID4EAB"></a>
 

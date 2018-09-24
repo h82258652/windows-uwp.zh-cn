@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d1560c7bb8c6a6eb4fe9e4786f0378d74aeca2
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124287"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147821"
 ---
 # <a name="activityrequest-json"></a>ActivityRequest (JSON)
-有关一个或多个用户的完整状态的信息的请求。 
+有关一个或多个用户的完整状态信息请求。 
 <a id="ID4EN"></a>
 
  
@@ -30,7 +30,7 @@ ActivityRequest 对象具有以下规范。
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
 | richPresence| [RichPresenceRequest](json-richpresencerequest.md)| 应使用完整状态字符串的友好名称。| 
-| 媒体| MediaRequest| 对于用户是观看或收听的媒体信息。| 
+| 媒体| MediaRequest| 对于用户是观看或收听媒体信息。| 
   
 <a id="ID4EVB"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128965"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152249"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。
@@ -31,7 +31,7 @@ ms.locfileid: "4128965"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| itemID| 字符串| 为单数库存项目的每个用户的唯一 ID|
+| itemID| 字符串| 为每个用户单数库存项目的唯一 ID|
 
 <a id="ID4ERB"></a>
 

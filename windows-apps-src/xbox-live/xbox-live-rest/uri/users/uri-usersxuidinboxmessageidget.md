@@ -12,21 +12,21 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126943"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155107"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-检索特定用户消息，将其标记为已在服务上的读的详细的消息文本。
+检索特定用户消息，将其标记为已在服务上读的详细的消息文本。
 这些 Uri 的域是`msg.xboxlive.com`。
 
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
   * [授权](#ID4ERB)
   * [请求正文](#ID4E3B)
-  * [有关资源的隐私设置的效果](#ID4EJC)
+  * [在资源的隐私设置的效果](#ID4EJC)
   * [HTTP 状态代码](#ID4EUC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EUE)
 
@@ -35,11 +35,11 @@ ms.locfileid: "4126943"
 
 ## <a name="remarks"></a>备注
 
-在 get 操作只能执行的用户、 系统和 FriendRequest 消息类型。
+在 get 操作仅可以执行的用户、 系统和 FriendRequest 消息类型。
 
-此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新登录。
+此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新中。
 
-此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。
+此 API 支持仅内容类型是"application/json"，其中每个调用的 HTTP 标头中必需的。
 
 <a id="ID4EEB"></a>
 
@@ -56,7 +56,7 @@ ms.locfileid: "4126943"
 
 ## <a name="authorization"></a>授权
 
-你必须拥有自己声明检索用户消息的用户。
+你必须拥有自己声明可检索用户消息的用户。
 
 <a id="ID4E3B"></a>
 
@@ -68,7 +68,7 @@ ms.locfileid: "4126943"
 <a id="ID4EJC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
 
 仅可以检索自己用户的消息。
 
@@ -77,22 +77,22 @@ ms.locfileid: "4126943"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- |
 | 200| 成功。|
-| 400| XUID，无法正确转换。|
-| 403| 不能转换 XUID 或找不到有效的 XUID 声明。|
+| 400| 不能正确转换的 XUID。|
+| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。|
 | 404| 有效的 XUID 是缺少，或使用消息 ID 找不到或正确地分析。|
-| 500| 常规的服务器端错误或消息类型获取无效。|
+| 500| 常规服务器端错误或消息类型获取无效。|
 
 <a id="ID4EUE"></a>
 
 
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应
 
-如果调用成功，该服务将返回的 JSON 格式的结果数据。 根对象是一个 UserMessageHeader 对象。
+如果调用成功，该服务将返回采用 JSON 格式的结果数据。 根对象是一个 UserMessageHeader 对象。
 
 #### <a name="usermessageheader"></a>UserMessageHeader
 
@@ -105,8 +105,8 @@ ms.locfileid: "4126943"
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
-| 发送| DateTime|  | 日期和时间发送消息。 （由该服务）。|
-| 到期| DateTime|  | 过期日期和时间消息。 （所有消息都具有最大生存时间，以在将来确定）。|
+| 发送| DateTime|  | 日期和时间已发送消息。 （由该服务）。|
+| 到期| DateTime|  | 过期日期和时间消息。 （所有邮件都具有最大生存时间，以在将来确定）。|
 | 可以忽略 messageType| 字符串| 13| 消息类型： 用户、 系统，FriendRequest。|
 | senderXuid| ulong|  | 发件人的 XUID。|
 | 发送方| 字符串| 15| 发件人的玩家代号。|
@@ -136,7 +136,7 @@ ms.locfileid: "4126943"
 
 #### <a name="error-response"></a>错误响应
 
-如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
+发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
 
 | 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

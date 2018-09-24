@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 信誉, 社交平台
 ms.localizationpriority: medium
 ms.openlocfilehash: cc296892a8d3134dd44ff4bad43603fd164ed5fd
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129203"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155571"
 ---
 # <a name="reputation"></a>信誉
 

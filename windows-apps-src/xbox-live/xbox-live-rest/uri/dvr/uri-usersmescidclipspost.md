@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e6cee1adbe9e9401bec2ce578ab0d04da921170
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126905"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150359"
 ---
 # <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
-发出初始上载请求。 有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+发出初始上载请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EFB)
@@ -37,7 +37,7 @@ ms.locfileid: "4126905"
  
 ## <a name="remarks"></a>备注
  
-这是 GameClip 上载过程的第一部分。 在视频的捕获，建议调用 GameClips 服务立即获取以 ID 和 URI 供上传的位，即使上传未计划立即启动。 用户配额检查和其他检查通过内容隔离，隐私，依此类推，若要查看是否视频应甚至计划用于上传客户端，则将执行此调用。 肯定响应来自此调用指示愿意接受视频剪辑的上传该服务。 上传的所有剪辑必须与特定标题 （通过 SCID) 都关联，以接受系统中。
+这是 GameClip 上载过程的第一部分。 在视频的捕获，建议调用 GameClips 服务立即获取以 ID 和 URI 供上传的位，即使上传未计划立即开始。 用户配额检查和其他检查通过内容隔离，隐私，依此类推，若要查看是否视频应甚至计划用于上传客户端，将执行此调用。 从此调用肯定响应指示服务愿意接受上载的视频剪辑。 上传的所有剪辑必须与特定标题 （通过 SCID) 都关联，要接受系统中。
  
 此调用不是幂等;后续调用将导致不同 Id 和要颁发的 Uri。 重试失败应遵循标准客户端后关闭行为。
   
@@ -124,14 +124,14 @@ ms.locfileid: "4126905"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
-| 400| 错误请求| 在请求正文中，时出现错误或用户通过他们的配额。| 
+| 400| 错误请求| 在请求正文中，没有错误或用户通过他们的配额。| 
 | 401| 未授权| 没有在请求中的身份验证令牌格式问题。| 
-| 403| 已禁止| 声明丢失或 DeviceType 不需要一些。| 
+| 403| 已禁止| 声明丢失，或 DeviceType 不需要一些。| 
 | 503| 不允许| 该服务或一些下游的依赖项都已关闭。 使用标准后关闭行为重试。| 
   
 <a id="ID4EVAAC"></a>
@@ -139,7 +139,7 @@ ms.locfileid: "4126905"
  
 ## <a name="response-body"></a>响应正文
  
-该响应可以[InitialUploadResponse](../../json/json-initialuploadresponse.md)对象或 JSON 格式的[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)对象。
+[InitialUploadResponse](../../json/json-initialuploadresponse.md)对象或 JSON 格式的[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)对象可以响应。
   
 <a id="ID4EFBAC"></a>
 

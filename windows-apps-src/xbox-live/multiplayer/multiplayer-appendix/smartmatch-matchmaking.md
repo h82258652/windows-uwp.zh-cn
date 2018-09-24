@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fe8ad244b9b7a650af4fc77c4adbb1805023ecf
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125249"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155681"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -177,7 +177,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)，会都发生。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
@@ -192,7 +192,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-使用配置的 XDP 或开发人员中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+与配置的 XDP 或开发人员中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置

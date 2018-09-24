@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d612f2fe9cb327b792ed3ab73ad17421f394a030
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4130539"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155853"
 ---
 # <a name="gamerpic-uris"></a>玩家头像 URI
  
@@ -24,19 +24,19 @@ ms.locfileid: "4130539"
  
 这些 Uri 的域是`gamerpics.xboxlive.com`。
  
-玩家图片服务旨在通过授予的能力，以允许用户生成的其游戏的字符的玩家图片的标题为用户提供更多个性化选项，（在此方案中的游戏字符指的是游戏内 protagonist; 它可以是一个人汽车、 宇宙飞船或用户控件在游戏中的任何其他实体)。
+玩家图片服务旨在通过授予标题的能力，以允许用户生成的其游戏的字符的玩家图片向用户提供更多个性化选项，（在此方案中的游戏字符指的是游戏内 protagonist; 它可以是一个人汽车、 宇宙飞船或用户控件在游戏中的任何其他实体)。
  
 生成的游戏玩家图片的基本流程如下所示：
  
-   * 游戏将用户提供能够创建其游戏内字符的图像。 
-     * 如果没有，游戏可以然后消息它们没有相应的权限的用户。
+   * 标题提供用户能够创建其游戏内字符的图像。 
+     * 如果没有，游戏可以然后消息，它们不具有适当权限的用户。
      * 如果用户具有权限，用户可以继续创建其字符玩家图片。
   
    * 用户创建图像和标题向玩家图片服务发送 1080 x 1080.png 文件。
    * 该服务将存储该图像，并设置为用户的新玩家图片的图像。
    * 为用户的玩家图片调用任何体验将获取更新的映像。
   
-能够设置的游戏玩家图片受仅限强制执行的权限 (211)。 如果强制执行撤销权限，用户将无法保存的游戏玩家图片，以及该服务将返回 403。 游戏应调用 CheckPrivilege 以验证允许用户要共享的内容 （专用 211）。
+仅强制执行特权 (211) 由控制设置的游戏玩家图片的功能。 如果强制执行吊销权限，将阻止用户保存的游戏的玩家图片，并且该服务将返回 403。 游戏应调用 CheckPrivilege 以验证允许用户要共享内容 （专用 211）。
  
 目前，才能使用此服务，你的游戏必须列入白名单。 若要请求审批，发送电子邮件至`slsgamerpics@microsoft.com`。
  

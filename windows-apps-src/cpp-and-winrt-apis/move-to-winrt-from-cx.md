@@ -10,22 +10,22 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130802"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154450"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>从 C++/CX 移动到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 本主题介绍如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 代码移植到 C++/WinRT 中的等效项。
 
 > [!IMPORTANT]
-> 如果你想要逐渐移植您[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码与 C + + WinRT，则可以。 C + + /CX 和 C + + WinRT 代码可以在同一项目中，除了 XAML 编译器支持，以及 Windows 运行时组件中共存。 对于这些异常，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。 但你可以使用 XAML 应用退出因素代码在 Windows 运行时组件，如将其移植。 将移动尽可能多的 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用两个它们从你的应用程序项目，并逐渐移植到另一个。
+> 如果你想要逐渐移植您[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码与 C + + WinRT，则可以。 C + + /CX 和 C + + WinRT 代码可以在同一项目中，除了 XAML 编译器支持，以及 Windows 运行时组件中共存。 对于这些异常，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。 但你可以使用 XAML 应用退出因素代码在 Windows 运行时组件，如将其移植。 无论是移动尽可能多的 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用这两张信用卡从你的应用程序项目，并逐渐移植到另一个。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 **Windows** 中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-对比记住上面提到的异常的第一步中将项目移植到 C + + WinRT 是手动添加 C + + WinRT 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留处于关闭状态，以便生成消息帮助你查找 （和端口） 的支持所有依赖项的 C + + CX，或者你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **消耗 Windows 运行时扩展** \> **是 (/ZW)**)，并将逐渐移植。
+对比记住上面提到的异常的第一步中将项目移植到 C + + WinRT 是手动添加 C + + WinRT 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留处于关闭状态，以便生成消息帮助你查找 （和端口） 的支持所有依赖项的 C + + CX，或者你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，和逐渐移植。
 
 将项目属性**常规** \> **目标平台版本**设置为 10.0.17134.0（Windows 10 版本 1803）或更高版本。
 
@@ -183,8 +183,8 @@ private:
 };
 ```
 
-## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>将从基本的运行时类转换为一个派生
-它是通常具有引用到的基础，你知道指的是派生类型的对象。 在 C + + CX，你使用`dynamic_cast`为*强制转换*为基准引用到引用派生。 `dynamic_cast`是实际上只是隐藏的[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)调用。 下面是一个典型示例&mdash;你处理依赖属性更改事件，并且你想要从**DependencyObject**转换回拥有的依赖属性的实际类型。
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>从一个基本的运行时类转换为一个派生
+它是通常具有引用到的基础，你知道指的是派生类型的对象。 在 C + + CX，你使用`dynamic_cast`到*强制转换*为基准引用到引用派生。 `dynamic_cast`是实际上只是隐藏的[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)调用。 下面是一个典型示例&mdash;你处理依赖属性更改事件，并且你想要从**DependencyObject**转换回拥有依赖属性的实际类型。
 
 ```cpp
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -241,7 +241,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 不使用 lambda 函数，你可以选择作为自由函数或指向成员函数的指针实现代理。 有关详细信息，请参阅[使用 C++/WinRT 中的代理来处理事件](handle-events.md)。
 
-如果你正在从内部使用（不是跨二进制文件）事件和代理的 C++/CX 基本代码移植，[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 将帮助你复制 C++/WinRT 中的这个模式。 另请参阅[参数化委托、 简单信号，并在项目内的回调](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
+如果你正在从内部使用（不是跨二进制文件）事件和代理的 C++/CX 基本代码移植，[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 将帮助你复制 C++/WinRT 中的这个模式。 另请参阅[参数化委托、 简单信号和在项目内的回调](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
 
 ## <a name="revoking-a-delegate"></a>撤销代理
 在 C++/CX 中，使用 `-=` 运算符来撤销之前的事件注册。

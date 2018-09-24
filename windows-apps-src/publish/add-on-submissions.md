@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, 应用内购买, 应用内产品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122268"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155274"
 ---
 # <a name="add-on-submissions"></a>加载项提交
 
@@ -23,7 +23,7 @@ ms.locfileid: "4122268"
 
 加载项通过 Windows 开发人员中心仪表板发布。 你还需要在你的应用代码中[启用加载项](../monetize/in-app-purchases-and-trials.md)。
 
-加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 在此之后，你将创建提交，以便可以通过 Microsoft 应用商店购买你的加载项。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在 Store 中上架后[更新](#updating-an-add-on-after-publication)加载项，而无需重新提交该应用。
+加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 在此之后，你将创建一个提交，以便可以通过 Microsoft 应用商店购买你的加载项。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在 Store 中上架后[更新](#updating-an-add-on-after-publication)加载项，而无需重新提交该应用。
 
 > [!NOTE]
 > 文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
@@ -90,6 +90,6 @@ ms.locfileid: "4122268"
 > [!IMPORTANT]
 > 如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
 
-若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将创建新的提交的加载项，使用之前提交中的信息作为起始点。 进行的更改，然后再单击**提交到应用商店**。
+若要提交更新，请转到仪表板中的加载项页面，然后单击**更新**。 这将创建新的提交的加载项，使用之前提交中的信息作为起始点。 进行的更改会喜欢，然后依次**提交到应用商店**。
 
 如果你希望删除之前提供的加载项，可通过创建新提交并通过**停止获取**选项将[分发和可见性](set-add-on-pricing-and-availability.md)选项更改为**在 Microsoft Store 中隐藏**。 请确保视需要将你的应用代码更新为也删除加载项引用（尤其是当你的应用支持 Windows 8.1 或更早版本时；此可见性设置不适用于这些客户）。

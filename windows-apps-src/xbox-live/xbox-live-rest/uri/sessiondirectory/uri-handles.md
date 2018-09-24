@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d6833309ce990aee72fd07deab9ecde04eca3b0e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125429"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4148695"
 ---
 # <a name="handles"></a>/handles
-支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。 
+支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板用户体验，并邀请会话成员，如果所需的会话。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于情况下，使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>

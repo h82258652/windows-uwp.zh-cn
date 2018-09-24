@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 02b2c0d24c3f963025774c87c0c0a1c588c8a249
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122824"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155574"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
@@ -300,7 +300,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 下面的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
+> 此处的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
 
 现在，生成并运行应用。 单击显示“单击以转到第 2 页”的链接。 在顶部显示“第 2 页”的第二个页面应加载并显示在框架中。
 

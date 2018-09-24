@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8989e05ce4874b3783e9cf130124be3f2129f3
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129175"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149029"
 ---
 # <a name="usersbatchfeedback"></a>/users/batchfeedback
  
@@ -36,7 +36,7 @@ ms.locfileid: "4129175"
 
 [POST](uri-reputationusersbatchfeedbackpost.md)
 
-&nbsp;&nbsp;使用你的游戏服务来发送你的游戏界面之外的批处理表单中的反馈。
+&nbsp;&nbsp;使用你的游戏服务来在你的作品的接口之外的批处理窗体发送反馈。
  
 <a id="ID4EJB"></a>
 

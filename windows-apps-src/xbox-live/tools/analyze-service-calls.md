@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务调用, 测试, 跟踪分析器
 ms.localizationpriority: medium
 ms.openlocfilehash: 196505a9ed3fb62ef609415c292e98850588102f
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4122685"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149299"
 ---
 # <a name="xbox-live-trace-analyzer"></a>Xbox Live 跟踪分析器
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4121567"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149665"
 ---
 # <a name="get-usersrequestoridpermissionvalidate"></a>GET (/users/{requestorId}/permission/validate)
-获取有关是否允许用户执行与目标用户指定的操作是或否答案。
+获取有关是否允许用户执行与目标用户指定的操作或否答案。
 
   * [URI 参数](#ID4EQ)
   * [查询字符串参数](#ID4E2)
@@ -47,16 +47,16 @@ ms.locfileid: "4121567"
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | 设置| 字符串枚举| 要进行检查的 PermissionId 值。 示例值:"CommunicateUsingText"。|
-| target| 字符串| 在其上执行操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 示例值： <code>xuid(0987654321)</code>|
+| target| 字符串| 在其上执行该操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 示例值： <code>xuid(0987654321)</code>|
 
 <a id="ID4EDC"></a>
 
 
 ## <a name="authorization"></a>授权
 
-使用的授权声明 | 声明| 类型| 是否必需？| 示例值|
+使用授权声明 | 声明| 类型| 是否必需？| 示例值|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Xuid| 64 位有符号的整数| 是| 1234567890|
+| Xuid| 64 位有符号整数| 是| 1234567890|
 
 <a id="ID4EID"></a>
 
@@ -80,7 +80,7 @@ ms.locfileid: "4121567"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -96,7 +96,7 @@ ms.locfileid: "4121567"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>|
-| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 34|
+| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34|
 | 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
 
 <a id="ID4EKAAC"></a>

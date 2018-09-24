@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4130619"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152283"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
 详细信息和元数据，产品/服务返回有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。
  
-API 不同于相关的 API 和浏览 API 的详细信息 (当 passin ID 中的) 为这些 API 返回显式或隐式方法，与 fiven ID 相关联的其他项目的信息，而详细信息 API 返回的其他信息有关相同的项。
+API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因为这些 API 将返回有关显式或隐式方法，与 fiven ID 相关联的其他项的信息，而详细信息 API 返回的其他信息有关相同的项。
  
 可以将多个 Id 的不同的媒体项类型传递到单个调用 （只要它们不类型 ProviderContentID-请参阅下面的），但它们都必须属于相同的媒体组。 但是，有几个调用方不知道媒体组在其中的客户端方案。 API 支持这通过允许 sepcial 值为"未知"媒体组在以下情况：
  
    * idType = XboxHexTitle，这将产生 AppType 或 GameType 项
    * idType = ProviderContentId，这将产生 MovieType 或 TVType 项
   
-下表总结了整个映射的哪个 ID 可与哪些媒体组提供类型：
+下面的图表总结了哪个 ID 的类型可以提供与哪些媒体组的整个映射：
  
 | ID 类型| AppType| GameType| MovieType| MusicArtistType| MusicType| TVType| WebVideoType| Unknown| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -56,7 +56,7 @@ API 不同于相关的 API 和浏览 API 的详细信息 (当 passin ID 中的) 
  
 这是用于查找提供程序例如特定 id。 Netflix Id 或 Hulu id。
  
-ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderContentIds 是唯一的 ID，可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符，什么是 Id 之间 delimieter 之间没有多义性和内容是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
+ProviderContentId idType 时，接受单个值。 这是因为 ProviderContentIds 是唯一的 ID，可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符是什么是 Id 之间 delimieter 之间存在多义性，什么是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
    
 <a id="ID4EUH"></a>
 

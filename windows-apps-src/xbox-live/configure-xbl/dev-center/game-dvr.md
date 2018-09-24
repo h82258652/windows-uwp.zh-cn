@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 游戏 DVR, Windows 开发人员中心
 ms.openlocfilehash: d3d50dff4f8fc09f4c9303fa68172bd4a46eb2fa
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125205"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149001"
 ---
 # <a name="configuring-game-dvr-on-windows-dev-center"></a>在 Windows 开发人员中心上配置游戏 DVR
 

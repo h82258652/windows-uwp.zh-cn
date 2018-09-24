@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a215e9e1abb6daad2c011f38d56c2e501bd16e40
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126687"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153205"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 检索用户的剪辑的列表。
-有关这些 Uri 域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
 
   * [备注](#ID4EX)
   * [URI 参数](#ID4EEB)
@@ -36,11 +36,11 @@ ms.locfileid: "4126687"
 
 ## <a name="remarks"></a>备注
 
-此 API 使的列表用户自己的剪辑以及其他用户的剪辑存储在服务中的不同方法。 多个入口点从不同的级别返回数据，并允许筛选通过查询参数。 如果声明中的 XUID 匹配 URI 中指定的所有者，然后在后内容隔离检查用户自己剪辑将返回。 如果对 URI 中的所有者与 XUID 声明不匹配，然后指定的用户的剪辑是根据返回隐私检查和防止请求的 XUID 的内容隔离检查。
+此 API 使的列表用户自己的剪辑以及其他用户的剪辑存储在服务中的不同方法。 多个入口点从不同的级别返回数据，并允许筛选通过查询参数。 如果声明中的 XUID 匹配 URI 中指定的所有者，然后在后内容隔离检查用户的剪辑将返回。 如果对 URI 中的所有者与 XUID 声明不匹配，然后指定的用户的剪辑是根据返回隐私检查和内容隔离检查针对请求的 XUID。
 
-查询每位用户每个服务配置 id (scid) 进行了优化。 指定进一步筛选器或默认值以外的排序顺序如下所示可能在某些情况下需要更长的时间以返回。 这会更明显的较大的每个用户的视频集。
+查询每位用户每个服务配置 id (scid) 进行了优化。 指定进一步筛选器或默认值以外的排序顺序如下所示可能在某些情况下需要更长的时间以返回。 这是更明显的较大的每个用户的视频集。
 
-用于获取多个用户的列表，在相同的 API 调用中没有任何批处理 API。 从 SLS 设计师建议 （当前） 的模式是反过来查询的每个用户。
+用于获取多个用户的列表，在相同的 API 调用中没有任何批处理 API。 从 SLS 设计师建议 （当前） 的模式是反过来查询每个用户。
 
 <a id="ID4EEB"></a>
 
@@ -58,12 +58,12 @@ ms.locfileid: "4126687"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| skipItems| 32 位有符号的整数| 可选。 返回的项目集合 （即，跳过 N 项目） 中的 N + 1 处开始。|
-| ContinuationToken| 字符串| 可选。 返回在给定的延续令牌启动的项目。 如果两者都提供，continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。 最大大小： 36。|
-| maxItems| 32 位有符号的整数| 可选。 要从集合 （可以结合 skipItems 和 continuationToken 返回的项的区域） 中返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回 maxItems 少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
-| 订单| Unicode 字符| 可选。 指定在 (D) escending 是否返回列表 （最高的值首先） 或 (A) scending （首次最低值） 顺序。 默认： d。|
-| type| GameClipTypes| 可选。 组逗号分隔的剪辑，要返回的类型。 默认： 所有。|
-| eventId| 字符串| 可选。 以逗号分隔 eventIDs 来筛选结果的组。 默认： 为 Null。|
+| skipItems| 32 位有符号整数| 可选。 返回的项目集合 （即，跳过 N 项目） 中的 N + 1 处开始。|
+| ContinuationToken| 字符串| 可选。 返回在给定的延续令牌启动的项。 如果同时提供，continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。 最大大小： 36。|
+| maxItems| 32 位有符号整数| 可选。 要从集合 （可以与结合使用 skipItems 和 continuationToken 返回的项的区域） 中返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回 maxItems 少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
+| 订单| Unicode 字符| 可选。 指定在 (D) escending 是否返回列表 （第一次最高值） 或 (A) scending （首次最低值） 顺序。 默认： d。|
+| type| GameClipTypes| 可选。 以逗号分隔的剪辑返回类型的组。 默认： 所有。|
+| eventId| 字符串| 可选。 以逗号分隔的 eventIDs 筛选结果，则集。 默认： Null。|
 | 限定符| 字符串| 可选。 指定要用于获取剪辑的顺序限定符。 <ul><li>创建-指定剪辑中的日期顺序返回到系统</li><li>评分-[顶级]-指定由他们的评分值返回剪辑</li><li>视图-[最查看]-指定剪辑返回的视图数</li></ul><br/> 最大大小： 12。 默认:"创建"。| 
 
 <a id="ID4EPE"></a>
@@ -182,7 +182,7 @@ ms.locfileid: "4126687"
 
 ## <a name="related-uris"></a>相关的 Uri
 
-以下 URI 等同于在此文档中，但具有一个额外的路径参数来指定 SCID 的主要通道。 将返回该用户的剪辑仅为 SCID。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回错误。
+以下 URI 等同于在此文档中，但具有一个额外路径参数来指定 SCID 的主要通道。 将返回仅该用户的剪辑的 SCID。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回错误。
 
    * **/users/ {ownerId} /scids/ {scid} / 剪辑**
 

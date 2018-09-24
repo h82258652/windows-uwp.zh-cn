@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 82d6dc051911ea04b685ffaeb21f821241bec77d
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128827"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156331"
 ---
 # <a name="achievement-title-history-uris"></a>游戏成就历史记录 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务相关的成就*游戏历史记录*。 在所有平台上运行的游戏均可读取此历史记录的信息。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务相关的成就*游戏历史记录*。 在所有平台上运行的游戏均可阅读此历史记录的信息。
  
 这些 Uri 的域是 achievements.xboxlive.com。
  
@@ -31,7 +31,7 @@ ms.locfileid: "4128827"
 
 [/users/xuid({xuid})/history/titles](uri-titlehistoryusersxuidhistorytitlesv2.md)
 
-&nbsp;&nbsp;提供访问用户的成就相关的游戏历史记录。
+&nbsp;&nbsp;提供对用户的成就相关游戏历史记录访问。
  
 <a id="ID4EMB"></a>
 

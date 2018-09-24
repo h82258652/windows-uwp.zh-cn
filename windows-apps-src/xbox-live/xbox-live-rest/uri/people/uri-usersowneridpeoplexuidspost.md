@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4127219"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151821"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
@@ -52,7 +52,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="authorization"></a>授权
  
-| 类型| 必需| 描述| 如果缺少的响应| 
+| 类型| 必需| 描述| 如果缺少，响应| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | XUID| 是| 调用方具有用户的 Xbox 用户 ID (XUID)。| 401 未授权| 
   
@@ -75,7 +75,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>应用程序/json</b>。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
   
 <a id="ID4EHF"></a>
 
@@ -89,7 +89,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| XuidList| 确定要返回调用方的用户集合中的用户的 Xuid 的数组。 请参阅[XuidList (JSON)](../../json/json-xuidlist.md)。| 
+| XuidList| 确定要返回的调用方的用户集合中的用户的 Xuid 的数组。 请参阅[XuidList (JSON)](../../json/json-xuidlist.md)。| 
   
 <a id="ID4EKG"></a>
 
@@ -103,7 +103,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ### <a name="prohibited-members"></a>禁止的成员
  
-在请求中禁止使用所有其他成员。
+所有其他成员被禁止在请求中。
   
 <a id="ID4EAH"></a>
 
@@ -128,14 +128,14 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| "获取"方法时成功。| 
 | 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
-| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 格式不正确。| 
-| 403| 已禁止| 在授权标头，无法分析 XUID 声明。| 
+| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 的格式不正确。| 
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
   
 <a id="ID4ENBAC"></a>
 

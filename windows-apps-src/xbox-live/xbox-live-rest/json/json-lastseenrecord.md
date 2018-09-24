@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4121511"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156329"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
-有关系统上次看到用户，当用户在没有有效 DeviceRecord 可用的信息。 
+有关系统上次看到的用户，当用户在没有有效 DeviceRecord 可用的信息。 
 <a id="ID4EN"></a>
 
  
@@ -29,10 +29,10 @@ LastSeenRecord 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| deviceType| 字符串| 用户在其的最后一个呈现设备的类型。| 
-| titleId| 32 位无符号的整数| 用户在其的最后一个呈现标题的标识符。| 
+| deviceType| 字符串| 用户在其上的最后一个存在的设备类型。| 
+| titleId| 32 位无符号的整数| 用户在其的最后一个存在标题的标识符。| 
 | titleName| 字符串| 用户在其的最后一个呈现的标题的名称。| 
-| 时间戳| DateTime| 用于指示当用户的最后一个呈现的 UTC 时间戳。| 
+| 时间戳| DateTime| 用于指示用户时最后一个存在 UTC 时间戳。| 
   
 <a id="ID4EHC"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128895"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152783"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
@@ -31,7 +31,7 @@ ms.locfileid: "4128895"
 
 &nbsp;&nbsp;Uri 和成就关联的 HTTP 方法。
 
-[游戏服务器统一资源标识符 (URI) 引用](gsdk/atoc-gsdk-uri-reference.md)
+[游戏服务器统一资源标识符 (URI) 参考](gsdk/atoc-gsdk-uri-reference.md)
 
 &nbsp;&nbsp;客户端用于创建游戏的游戏服务器开发工具包服务器实例的 Uri。
 
@@ -41,7 +41,7 @@ ms.locfileid: "4128895"
 
 [玩家头像 URI](gamerpic/atoc-reference-gamerpic.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为标题生成图片。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法为标题生成图片。
 
 [排行榜 URI](leaderboard/atoc-reference-leaderboard.md)
 
@@ -81,11 +81,11 @@ ms.locfileid: "4128895"
 
 [会话目录 URI](sessiondirectory/atoc-reference-sessiondirectory.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的多人游戏会话目录 (MPSD)。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法为多人游戏会话目录 (MPSD)。
 
 [游戏成就历史记录 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为*游戏历史记录*。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法为*游戏历史记录*。
 
 [标题存储 URI](storage/atoc-reference-storagev2.md)
 
@@ -101,7 +101,7 @@ ms.locfileid: "4128895"
 
 [用户统计信息 URI](userstats/atoc-reference-userstats.md)
 
-&nbsp;&nbsp;Uri 和关联的用户统计信息的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的用户统计信息。
 
 <a id="ID4E5C"></a>
 

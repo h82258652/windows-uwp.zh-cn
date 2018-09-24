@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 66de8c34857d667b66cdfb091f83106fed777279
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124205"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147945"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a>更新的多人游戏邀请流程
 

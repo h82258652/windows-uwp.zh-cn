@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bec8c58fcccf5630d69bee28313e004f43d2d5ba
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4128883"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152749"
 ---
 # <a name="get-trustedplatformusersxuidxuidscidsscid"></a>GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -36,14 +36,14 @@ ms.locfileid: "4128883"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
-| scid| guid| 要查找的服务配置 ID。| 
+| scid| guid| 若要查找的服务配置 ID。| 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头无效或不存在，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头丢失或无效，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4ENB"></a>
 
@@ -67,20 +67,20 @@ ms.locfileid: "4128883"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-该服务返回的状态代码之一此部分中使用此方法对此资源进行的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
 | 201| 已创建 | 创建实体。| 
-| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
+| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
 | 408| 请求超时 | 请求所花的时间太长，才能完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，无法完成请求。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，执行此请求将阻止它。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EUAAC"></a>
 

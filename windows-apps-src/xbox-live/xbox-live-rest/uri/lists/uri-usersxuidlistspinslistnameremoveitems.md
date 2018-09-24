@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 341baca193d9ac8bf3a2599cd9ad77312729a89d
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4124305"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154819"
 ---
 # <a name="usersxuidxuidlistspinslistnameremoveitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems
 从列表中删除项目。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -44,7 +44,7 @@ ms.locfileid: "4124305"
 
 [POST](uri-usersxuidlistspinslistnameremoveitemspost.md)
 
-&nbsp;&nbsp;按 itemId，请从列表中删除项目。
+&nbsp;&nbsp;通过 itemId，请从列表中删除项目。
  
 <a id="ID4ELC"></a>
 
