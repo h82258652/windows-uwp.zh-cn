@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 类别, 子类别, 流派
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f43ae7c70a9471f279927d87c9d55aac8519d6a
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151176"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4179986"
 ---
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 

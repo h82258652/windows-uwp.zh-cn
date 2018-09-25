@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148093"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4179195"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
 包含有关作品存储中的信息。 
@@ -30,10 +30,10 @@ TitleBlob 对象具有以下规范。
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | clientFileTime| DateTime| [可选]日期和时间的上次上传的文件。| 
-| 显示名称| 字符串| [可选]向用户显示的文件的名称。| 
+| displayName| 字符串| [可选]向用户显示的文件的名称。| 
 | etag| 字符串| 标记中使用的文件下载并上传请求。| 
 | fileName| 字符串| 文件的名称。| 
-| 大小| 64 位有符号的整数| 以字节为单位的文件的大小。| 
+| 大小| 64 位有符号整数| 该文件以字节为单位的大小。| 
 | smartBlobType| 字符串| [可选]数据类型。 可能的值为： 配置，json、 二进制文件。| 
   
 <a id="ID4E6C"></a>

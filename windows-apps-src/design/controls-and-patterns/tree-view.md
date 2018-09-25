@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-description: 你可以通过将 ItemsSource 绑定到分层数据源，创建可扩展树视图或者你可以创建并自行管理 TreeViewNode 对象。
+description: 你可以创建可扩展树视图的 ItemsSource 绑定到分层数据源，或者你可以创建和管理 TreeViewNode 对象自己。
 title: 树视图
 label: Tree view
 template: detail.hbs
@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148312"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180226"
 ---
 # <a name="treeview"></a>树视图
 
@@ -31,7 +31,7 @@ TreeView API 支持以下功能：
 
 - N 级嵌套
 - 选择单个或多个节点
-- （预览版）数据绑定到树视图和 TreeViewItem ItemsSource 属性
+- （预览版）数据绑定到 TreeViewItem 树视图的 ItemsSource 属性
 - （预览版）TreeViewItem 为根的树视图项模板
 - （预览版）任意 TreeViewItem 中的内容类型
 - （预览版）将拖放在树视图之间
@@ -78,14 +78,14 @@ TreeView API 支持以下功能：
 
 ## <a name="create-a-tree-view"></a>创建树视图
 
-你可以通过将[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)绑定到分层数据源，创建一个树视图或者你可以创建并自行管理 TreeViewNode 对象。
+你可以创建一个树视图的[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)绑定到分层数据源，或者你可以创建和管理 TreeViewNode 对象自己。
 
-要创建树视图，可以使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控件和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 对象层次结构。 通过向 TreeView 控件的[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)集合添加一个或多个根节点来创建节点层次结构。 然后可以向每个 TreeViewNode 的 Children 集合中添加多个节点。 你可以通过嵌套树视图节点来创建任意数量的层次。
+要创建树视图，可以使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控件和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 对象层次结构。 你可以通过向 TreeView 控件的[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)集合添加一个或多个根节点来创建节点层次结构。 然后可以向每个 TreeViewNode 的 Children 集合中添加多个节点。 你可以通过嵌套树视图节点来创建任意数量的层次。
 
-从 Windows Insider Preview 中，你可以绑定分层数据源到[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)属性来提供的树视图内容，就像你处理列表视图的 ItemsSource。 同样，使用[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) （和可选[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)） 提供 DataTemplate 呈现项目。
+启动 Windows Insider Preview 中，你可以绑定分层数据源到[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)属性来提供的树视图内容，就像你处理 ListView 的 ItemsSource。 同样，使用[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) （和可选[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)） 提供一个 datatemplate，呈现项目它。
 
 > [!IMPORTANT]
-> ItemsSource 是将内容放入 TreeView 控件到 TreeView.RootNodes 替代机制。 不能同时设置 ItemsSource 和 RootNodes。 当你使用 ItemsSource 时，为你创建的节点和你可以从 TreeView.RootNodes 属性访问它们。
+> ItemsSource 是的替代机制到 TreeView.RootNodes 将内容放入 TreeView 控件。 不能同时设置 ItemsSource 和 RootNodes。 当你使用 ItemsSource 时，为你创建的节点和你可以从 TreeView.RootNodes 属性访问它们。
 
 下面是一个使用 XAML 声明的简单树视图示例。 通常以代码方式添加节点，但这里我们显示的是 XAML 层次结构，因为这有助于更直观地显示节点层次结构的创建方式。
 
@@ -103,7 +103,7 @@ TreeView API 支持以下功能：
 </TreeView>
 ```
 
-在大多数情况下，树视图显示来自数据源，因此通常声明根 TreeView 控件在 XAML 中，但在代码中，或使用数据绑定方式添加 TreeViewNode 对象。
+在大多数情况下，树视图显示来自数据源，因此通常声明根 TreeView 控件在 XAML 中，但在代码中或使用数据绑定方式添加 TreeViewNode 对象。
 
 ### <a name="bind-to-a-hierarchical-data-source"></a>绑定到分层数据源
 
@@ -133,7 +133,7 @@ TreeView API 支持以下功能：
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | 获取指定 TreeViewItem 容器的 TreeViewNode。 |
+| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | 获取适用于指定 TreeViewItem 容器的 TreeViewNode。 |
 | [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | 获取指定 TreeViewNode TreeViewItem 容器。 |
 
 ### <a name="manage-tree-view-nodes"></a>管理树视图节点
@@ -205,15 +205,15 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 你可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 来指定数据项在树视图中的显示方式。
 
 > [!NOTE]
-> 在 Windows 10 版本 1803 中，必须重新设置 TreeView 控件模板，如果内容不是字符串，还必须指定自定义 ItemTemplate。 有关更多信息，请参阅本文末尾的完整示例。 在更高版本中，设置[TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)属性。
+> 在 Windows 10 版本 1803 中，必须重新设置 TreeView 控件模板，如果内容不是字符串，还必须指定自定义 ItemTemplate。 有关更多信息，请参阅本文末尾的完整示例。 在更高版本，设置[TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)属性。
 
 ### <a name="item-container-style"></a>项容器样式
 
-你使用的是 ItemsSource 或 RootNodes，用于显示每个节点 – 的实际元素称为"容器"– [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)对象。 你可以设置容器样式使用树视图的 ItemContainerStyle 或 ItemContainerStyleSelector 属性。
+你是否使用 ItemsSource 或 RootNodes，用于显示每个节点 – 的实际元素称为"容器"– [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)对象。 你可以设置容器样式使用树视图的 ItemContainerStyle 或 ItemContainerStyleSelector 属性。
 
 ### <a name="item-template-selectors"></a>项目模板选择器
 
-你可以选择设置的树视图项目，具体取决于项目类型的不同数据模板。 例如，在文件资源管理器应用中，可以使用一个数据模板的文件夹和另一个用于文件。
+你可以选择设置不同的具体取决于项目类型的树视图项目 DataTemplate。 例如，在文件资源管理器应用中，可以使用一个数据模板的文件夹，而另一个文件。
 
 ![文件夹和文件使用不同的数据模板](images/treeview-icons.png)
 
@@ -384,7 +384,7 @@ TreeView 控件支持单选和多选。 默认情况下，节点选择处于关�
 
 启用选择后，每个树节点旁会显示一个复选框，选中的项目突出显示。 用户可以使用复选框选择或取消选择项目；单击项目仍将导致项目调用。
 
-选择或取消选择一个父节点将选择或取消选择该节点下的所有子元素。 如果一些，但不是全部选择子元素的父节点下，父节点的复选框显示为不确定 （填充黑盒）。
+选择或取消选择一个父节点将选择或取消选择该节点下的所有子元素。 如果某些，但不是全部选择子元素的父节点下，父节点的复选框将显示为不确定的 （填充黑色框）。
 
 ![在树视图中的多个选择](images/treeview-selection.png)
 
