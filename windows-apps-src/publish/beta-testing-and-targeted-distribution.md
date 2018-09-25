@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp, beta 测试版本, 有限分发, beta 版本, 测试, 测试人员
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148112"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177736"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>beta 版本测试和定向分发
 
@@ -35,7 +35,7 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 
 如果你要让测试人员在应用公开发布前就使用它，并确保没有其他人可以看到该应用的一览，请使用[可见性](choose-visibility-options.md)（位于你的提交的**定价和可用性**页面）下的**私人受众**选项。 只有通过这种方法，才可以在将应用分配给测试人员时，完全防止其他人看到该应用的 Microsoft Store 一览（即使其他人能够键入直接链接）。 
 
-**私人受众**选项可以仅可用时不已发布你的应用向公共受众。 你可以使用此选项与应用面向任何操作系统版本，但测试人员必须运行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，并且必须使用与你提供的电子邮件地址关联的 Microsoft 帐户登录。
+**私人受众**选项可以仅可时不已发布你的应用向公共受众。 你可以使用此选项与应用面向任何操作系统版本，但测试人员必须运行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，并且必须使用与你提供的电子邮件地址关联的 Microsoft 帐户登录。
 
 有关详细信息，请参阅[私人受众](choose-visibility-options.md#audience)。
 
@@ -53,7 +53,7 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>在 Microsoft Store 中隐藏应用和使用促销代码
 
-此选项提供了另一种方法来限制应用于某些组的测试人员分发时阻止其他任何用户发现你的应用商店中的应用 （或促销充值码获取它）。 但是，与私人受众选项不同，如果有直接链接，任何人都可能看到你的应用的一览。 如果保密性对于你的提交至关重要，我们建议改为发布到私人受众。
+此选项提供了另一种方法来限制分发应用于某些组的测试人员，同时防止其他任何用户发现你的应用商店中的应用 （或促销充值码获取它）。 但是，与私人受众选项不同，如果有直接链接，任何人都可能看到你的应用的一览。 如果保密性对于你的提交至关重要，我们建议改为发布到私人受众。
 
 隐藏应用和使用促销代码适用于面向任何操作系统版本的应用，但测试人员只有在运行 Windows 10 的情况下才可以获得该应用。
 

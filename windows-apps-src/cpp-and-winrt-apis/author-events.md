@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151012"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176188"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中创作事件
 
@@ -30,7 +30,7 @@ ms.locfileid: "4151012"
 
 首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **Windows 运行时组件 (C + + WinRT)** 项目，然后将其命名为*BankAccountWRC* （针对"银行帐户 Windows 运行时组件"）。
 
-该新建项目包含一个名为 `Class.idl` 的文件。 重命名该文件`BankAccount.idl`(重命名`.idl`文件会自动重命名依赖于`.h`和`.cpp`文件、 过)。 内容替换为`BankAccount.idl`使用下面的列表。
+该新建项目包含一个名为 `Class.idl` 的文件。 重命名该文件`BankAccount.idl`(重命名`.idl`文件会自动重命名依赖于`.h`和`.cpp`文件、 太)。 内容替换为`BankAccount.idl`使用下面的列表。
 
 ```idl
 // BankAccountWRC.idl
@@ -66,7 +66,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-你可以看到上方，根据[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板中，通过特定的委托类型参数化实现事件。
+你可以看到上方，根据[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板中，通过特定委托类型参数化实现事件。
 
 在 `BankAccount.cpp` 中，实现如下面的代码示例所示的函数。 在 C++/WinRT 中，IDL 声明事件作为一组重载函数实现（类似于属性作为重载 get 和 set 函数实现的方式）。 一个重载需要注册一个代理，并返回令牌。 另一个重载则需要令牌，并撤销关联代理的注册。
 
@@ -146,15 +146,15 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-每次单击此窗口时，将从该银行帐户的余额中减去 1。 演示按预期方式引发该事件，放置一个断点正在处理**AccountIsInDebit**事件的 lambda 表达式内部、 运行该应用，以及在窗口内单击。
+每次单击此窗口时，将从该银行帐户的余额中减去 1。 若要演示按预期，引发该事件，放置一个断点处理**AccountIsInDebit**事件的 lambda 表达式内部，运行应用时，单击此窗口内部。
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>参数化的委托和简单信号，跨 ABI
 
 如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;事件必须使用 Windows 运行时委托类型。 上面的示例使用[**Windows::Foundation::EventHandler\ < 所 >**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\ < TSender，TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
 
-这些两个委托类型的类型参数必须跨 ABI，因此类型参数必须是 Windows 运行时类型，太。 这包括第一方和第三方运行时类，以及基元类型，如数字和字符串。 编译器帮助你与"*必须是 WinRT 类型*"错误，如果你忘记了此约束。
+这些两个委托类型的类型参数必须跨 ABI，因此类型参数必须是 Windows 运行时类型，太。 这包括第一方和第三方运行时类，以及基元类型，如数字和字符串。 编译器将帮助你与"*必须是 WinRT 类型*"错误如果你忘记了此约束。
 
-如果你不需要任何参数或与你的事件参数传递，你可以定义自己简单的 Windows 运行时委托类型。 下面的示例显示了**BankAccount**运行时类的简化版本。 它声明了名为**SignalDelegate**的委托类型，然后它使用的引发信号类型的事件而不是具有参数的事件。
+如果你不需要任何参数或与你的事件参数传递，你可以定义自己简单的 Windows 运行时委托类型。 下面的示例显示**BankAccount**运行时类的简化版本。 它声明了名为**SignalDelegate**的委托类型，然后它使用的引发信号类型的事件而不是具有参数的事件。
 
 ```idl
 // BankAccountWRC.idl
@@ -246,11 +246,11 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>参数化的委托、 简单信号，并在项目内的回调
+## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>参数化的委托、 简单信号和在项目内的回调
 
-如果仅在内部使用你的事件，则内您的 C + + WinRT 项目 （而不是跨二进制文件），则你仍然使用[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板，但参数化通过 C + + /winrt 的非-Windows 运行时[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)结构模板，这是高效、 引用计数的委托。 它支持任意数量的参数，并且它们并不局限于 Windows 运行时类型。
+如果你事件仅在内部用于在 C + + WinRT 项目 （而不是跨二进制文件），则你仍然使用[**winrt::event**](/uwp/cpp-ref-for-winrt/event)结构模板，但参数化通过 C + + WinRT 的非运行 Windows 时[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)结构模板，这是一个高效、 引用计数的委托。 它支持任意数量的参数，并且它们并不局限于 Windows 运行时类型。
 
-下面的示例首先显示委托，不带任何参数 （本质上是简单信号），签名，然后另一个接受字符串。
+下面的示例中首先显示委托不采用任何参数 （本质上是简单信号），签名，然后另一个接受字符串。
 
 ```cppwinrt
 winrt::event<winrt::delegate<>> signal;
@@ -264,7 +264,7 @@ log.add([](std::wstring const& message) { Persist(message); });
 log(L"Hello, World!");
 ```
 
-注意如何可以添加到事件与你希望的多个订阅委托。 但是，还有一些与事件关联的开销。 如果你只是简单仅单个订阅的委托回调，则可以使用[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)自身。
+注意如何可以添加到事件与你希望的多个订阅委托。 但是，还有一些与事件关联的开销。 如果你只是简单回调仅单个订阅委托，则可以使用[**winrt:: delegate&lt;...T&gt;**](/uwp/cpp-ref-for-winrt/delegate)自身。
 
 ```cppwinrt
 winrt::delegate<> signalCallback;
@@ -280,11 +280,11 @@ logCallback(L"Hello, World!");
 
 ## <a name="design-guidelines"></a>设计指南
 
-我们建议你使用传递事件和不委托，作为函数参数。 [**Winrt::event**](/uwp/cpp-ref-for-winrt/event) **添加**函数是一个例外，因为你必须在此情况下传递委托。 本指南的原因是因为委托可以跨不同的 Windows 运行时语言 （根据它们是否支持一个客户端注册、 或多个） 采用不同形式。 事件，其多个订阅服务器模型后，构成更加可预测且一致的选项。
+我们建议你使用传递事件，并不委托，作为函数参数。 [**Winrt::event**](/uwp/cpp-ref-for-winrt/event) **添加**函数是一个例外，因为你必须在此情况下传递委托。 本指南的原因是因为委托可以跨不同的 Windows 运行时语言 （根据它们是否支持一个客户端注册、 或多个） 采用不同形式。 事件，其多个订阅服务器模型后，构成更加可预测且一致的选项。
 
-事件处理程序委托的签名应包含两个参数：*发送者*(**IInspectable**)，并且*参数*（某些事件参数类型，例如[**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)）。
+事件处理程序委托的签名应包含两个参数：*发件人*(**IInspectable**) 和*参数*（某些事件参数类型，例如[**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)）。
 
-请注意，是否设计一个内部 API，这些准则不一定适用。 尽管内部 Api 通常成为公共随着时间的推移。
+请注意，如果设计一个内部 API，不一定适用以下指南。 尽管内部 Api 通常成为公共随着时间的推移。
 
 ## <a name="related-topics"></a>相关主题
 * [使用 C++/WinRT 创作 API](author-apis.md)

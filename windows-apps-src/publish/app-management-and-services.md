@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151702"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177660"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -56,7 +56,7 @@ ms.locfileid: "4151702"
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品代表租户中的所有用户执行其组织授予同意获取该应用。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
 
 有关详细信息，请参阅[同意整个租户的请求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 

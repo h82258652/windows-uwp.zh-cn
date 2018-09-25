@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天, 游戏聊天 2, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 252cd33b0504a586852381a6c5ace3f5700890f7
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155721"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181307"
 ---
 # <a name="game-chat-2-overview"></a>游戏聊天 2 概述
 

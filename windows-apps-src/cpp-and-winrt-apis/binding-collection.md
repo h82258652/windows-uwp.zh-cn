@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149076"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175050"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 项目控件; 绑定到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -305,7 +305,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 在上面的 MIDL 3.0 一览，请注意， **BookSkus**属性的类型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)。 在本主题的下一步部分中，我们将在项目源的[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)绑定到绑定**BookSkus**。 列表框的项目控件，而以正确设置[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，你需要将其设置为类型**IVector** **IInspectable**，或如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)互操作性类型的值。
+> 在上述 MIDL 3.0 列表中，请注意， **BookSkus**属性的类型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)。 在本主题的下一步部分中，我们将在项目源的[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)绑定到绑定**BookSkus**。 列表框的项目控件，并且若要正确设置[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，你需要将其设置为类型**IVector** **IInspectable**，或如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)互操作性类型的值。
 
 保存并生成。 人 `Generated Files` 文件夹中的 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 复制访问器存根，然后实现它们。
 
@@ -364,7 +364,7 @@ m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::
 m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
 ```
 
-而不是调用[**winrt:: make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，通过调用**winrt::single_threaded_observable_vector\ < 所 >** 工厂函数创建相应集合对象。
+而不是调用[**winrt:: make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，可以通过调用**winrt::single_threaded_observable_vector\ < 所 >** 工厂函数创建相应集合对象。
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>将 ListBox 绑定到 **BookSkus** 属性
 打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 在与 **Button** 相同的 **StackPanel** 内添加以下标记。

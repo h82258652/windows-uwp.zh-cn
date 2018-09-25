@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: 本主题将指导你完成的步骤创建一个简单的自定义控件，使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。
+description: 本主题将指导你完成的步骤创建一个简单的自定义控件使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。
 title: XAML 自定义（模板化）控件与 C++/WinRT
 ms.author: stwhi
 ms.date: 08/01/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，XAML，自定义，模板化控件
 ms.localizationpriority: medium
 ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152228"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174434"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>XAML 自定义 （模板化） 控件与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -24,7 +24,7 @@ ms.locfileid: "4152228"
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
-通用 Windows 平台 (UWP) 的最强大功能之一是用户界面 (UI) 堆栈提供如何创建基于 XAML[**控件**](/uwp/api/windows.ui.xaml.controls.control)类型的自定义控件的灵活性。 XAML UI 框架提供了[自定义依赖属性](/windows/uwp/xaml-platform/custom-dependency-properties)和附加的属性和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)，这使其更轻松地创建功能丰富且可自定义控件等功能。 本主题将指导你完成的步骤创建自定义 （模板化） 控件，使用 C + + WinRT。
+通用 Windows 平台 (UWP) 的最强大功能之一是用户界面 (UI) 堆栈提供如何创建基于 XAML[**控件**](/uwp/api/windows.ui.xaml.controls.control)类型的自定义控件的灵活性。 XAML UI 框架提供了[自定义依赖属性](/windows/uwp/xaml-platform/custom-dependency-properties)和附加的属性和[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)，这使其更轻松地创建功能丰富且可自定义控件等功能。 本主题将指导你完成的步骤创建自定义 （模板化） 控件与 C + + WinRT。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
 首先在 Microsoft Visual Studio 中创建新项目。 创建**Visual c + +** > **Windows 通用** > **空白应用 (C + + WinRT)** 项目，然后将其命名为*BgLabelControlApp*。
@@ -56,7 +56,7 @@ namespace BgLabelControlApp
 将这些存根文件 `BgLabelControl.h` 和 `BgLabelControl.cpp` 从 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` 复制到项目文件夹中，即 `\BgLabelControlApp\BgLabelControlApp\`。 在**解决方案资源管理器**中，确保将**显示所有文件**切换为打开。 右键单击已复制的存根文件，然后单击**包括在项目中**。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>实现**BgLabelControl**自定义控件类
-现在，让我们打开 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 和 `BgLabelControl.cpp` 并实现运行时类。 在`BgLabelControl.h`、 更改要设置的默认样式键，实现**标签**和**LabelProperty**的构造函数、 添加一个名为**介绍 OnLabelChanged**处理的依赖属性的值更改的静态事件处理程序和添加私有成员**LabelProperty**适用的应用商店的支持字段。
+现在，让我们打开 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 和 `BgLabelControl.cpp` 并实现运行时类。 在`BgLabelControl.h`、 更改要设置的默认样式键、**标签**和**LabelProperty**实现的构造函数、 添加一个名为**介绍 OnLabelChanged**处理的依赖属性的值更改的静态事件处理程序和添加私有成员**LabelProperty**适用的应用商店的支持字段。
 
 在添加这些之后, 你`BgLabelControl.h`如下所示。
 
@@ -113,10 +113,10 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ...
 ```
 
-在本演练中，我们将不会使用**介绍 OnLabelChanged**。 但它的目的是，这样你可以查看如何注册依赖属性的属性已更改的回调。 **介绍 OnLabelChanged**的实现还显示了如何从基本的投影类型 （基本的投影的类型是**DependencyObject**，在此情况下） 获取一个派生的投影的类型。 和它演示了如何获取，然后实现的投影的类型的类型的指针。 第二个操作自然地将仅可能在项目中实现的投影的类型 （即，实现的运行时类的项目）。
+在本演练中，我们将不会使用**介绍 OnLabelChanged**。 但它的目的是，这样你可以查看如何注册依赖属性的属性已更改的回调。 **介绍 OnLabelChanged**的实现还显示了如何从基本投影类型 （基投影的类型是**DependencyObject**，在此情况下） 获取一个派生的投影的类型。 和它演示了如何获取，然后实现的投影的类型的类型的指针。 第二个操作自然地将仅可能在项目中实现的投影的类型 （即，实现的运行时类的项目）。
 
 > [!NOTE]
-> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以调用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)依赖属性已更改的事件处理程序中上方，而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以调用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)依赖属性更改的事件处理程序中上方，而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>适用于**BgLabelControl**设计的默认样式
 
@@ -155,7 +155,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-此外，添加以下 include 指令到`MainPage.h`，以便**MainPage**类型 （编译 XAML 标记和命令性代码的组合） 会注意到的**BgLabelControl**自定义控件类型。
+此外，添加以下 include 指令`MainPage.h`，以便**MainPage**类型 （编译 XAML 标记和命令性代码的组合） 是注意到的**BgLabelControl**自定义控件类型。
 
 ```cppwinrt
 // MainPage.h
@@ -170,7 +170,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 ## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>实现*可重写*功能，如**MeasureOverride**和**OnApplyTemplate**
 
-派生自定义控件的[**控件**](/uwp/api/windows.ui.xaml.controls.control)运行时类，该类本身进一步派生基本的运行时类。 和可重写方法来**控制**、 [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)和[**UIElement**](/uwp/api/windows.ui.xaml.uielement) ，你可以替代派生的类中。 下面是代码示例展示了如何执行该操作。
+派生自定义控件从[**控件**](/uwp/api/windows.ui.xaml.controls.control)运行时类，该类本身进一步派生基本运行时类。 并且，可重写方法的**控件**、 [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)和[**UIElement**](/uwp/api/windows.ui.xaml.uielement) ，您可以在你的派生类重写。 下面是代码示例向你显示如何执行该操作。
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>
@@ -189,7 +189,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-*可重写*函数本身以不同方式提供不同的语言投影中。 在 C# 中，例如，可重写函数通常显示为受保护的虚拟函数。 在 C + + WinRT，它们既不虚拟，也不受保护，但是仍可以替代它们，并提供自己的实现，如上所示。
+*可重写*函数本身以不同方式提供不同的语言投影中。 在 C# 中，例如，可重写函数通常显示为受保护的虚拟函数。 在 C + + WinRT，它们既不虚拟，也不受保护，但仍可以替代它们，并提供自己的实现，如上所示。
 
 ## <a name="important-apis"></a>重要的 API
 * [控件类](/uwp/api/windows.ui.xaml.controls.control)

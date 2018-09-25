@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 链接, windows 应用商店协议, 链接到应用
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156590"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178214"
 ---
 # <a name="link-to-your-app"></a>链接到你的应用
 
@@ -31,7 +31,7 @@ ms.locfileid: "4156590"
 
 ## <a name="linking-to-your-apps-store-listing-with-the-microsoft-store-badge"></a>链接到你的应用具有的 Microsoft 应用商店锁屏提醒的应用商店一览
 
-你可以直接链接到具有自定义的锁屏提醒，以让客户知道你的应用在 Microsoft 应用商店中的应用的一览。
+你可以直接链接到具有自定义的锁屏提醒，以让客户知道你的应用是在 Microsoft 应用商店中你的应用一览。
 
 若要创建锁屏提醒，请访问的[Microsoft 应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面。 需要具有 12 个字符的应用的**应用商店 ID**才能生成锁屏提醒和链接。 可以在**应用管理**部分的[应用标识](view-app-identity-details.md)页查找应用的**应用商店 ID**。
 
@@ -49,7 +49,7 @@ ms.locfileid: "4156590"
 
 `ms-windows-store://pdp/?ProductId=`
 
-有关使用 Microsoft 应用商店协议的详细信息，请参阅[Microsoft 应用启动](../launch-resume/launch-store-app.md)。
+有关使用 Microsoft 应用商店协议的详细信息，请参阅[启动 Microsoft 应用](../launch-resume/launch-store-app.md)。
 
  
 

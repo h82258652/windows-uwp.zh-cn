@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c453dc1800770547623fc4920f6d2c964a4b2f88
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156355"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181355"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 可用的访问排序顺序为给定的 mediaitem 类型和 EDS 的给定的版本。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -31,7 +31,7 @@ ms.locfileid: "4156355"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
-| mediaitemtype| 字符串| 必需。 从值之一[获取 (/media/ {marketplaceId} / 元数据/mediaGroups / {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 
+| mediaitemtype| 字符串| 必需。 从值之一[GET (/media/ {marketplaceId} / /metadata/mediagroups/ {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 
   
 <a id="ID4EBC"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4156355"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)](uri-medialocalemetadatamediaitemtypesortordersget.md)
 
-&nbsp;&nbsp;列出可用的排序订单的给定的 mediaitem 类型和 EDS 给定的版本。
+&nbsp;&nbsp;列出了可用的排序订单的给定的 mediaitem 类型和 EDS 给定的版本。
  
 <a id="ID4ELC"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 地图, 地图样式表
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4154286"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176308"
 ---
 # <a name="map-style-sheet-reference"></a>地图样式表参考
 

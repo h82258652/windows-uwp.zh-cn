@@ -11,21 +11,21 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149506"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173330"
 ---
 # <a name="app-submissions"></a>应用提交
 
 
 [通过保留名称创建应用](create-your-app-by-reserving-a-name.md)后，你可以开始着手其发布工作。 第一步是创建**提交**。
 
-你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，以便你可以返回，并在其上工作，只要你准备就绪。
+你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交更新，以便你可以返回，并在其上工作，只要你准备就绪。
 
 > [!NOTE]
-> 你必须拥有[的开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft Store 的应用。
+> 你必须拥有[的开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft 应用商店应用。
 
 发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要为已发布的应用创建新的提交，请单击“应用概述”页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （并让其可再次更高版本，如果你想要）。
 

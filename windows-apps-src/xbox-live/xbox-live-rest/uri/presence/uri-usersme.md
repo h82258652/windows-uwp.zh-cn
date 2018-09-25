@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aff98e5322a7d2da78b7411f8f213ffac53333d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153607"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178475"
 ---
 # <a name="usersme"></a>/users/me
 访问当前用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。

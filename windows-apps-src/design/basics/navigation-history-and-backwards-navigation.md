@@ -15,11 +15,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152178"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174820"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -174,7 +174,7 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-更高版本，我们向后处理为单个页面的导航。 如果你想要从后退导航排除特定页面或你想要显示页面前执行页面级别代码，你可以处理每个页面中的导航。
+更高版本，我们向后处理的单个页面的导航。 如果你想要从后退导航，排除特定页面或你想要显示页面前执行页面级别代码，你可以处理每个页面中的导航。
 
 若要处理向后导航的整个应用，你将注册全局侦听器的[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)事件`App.xaml`代码隐藏文件。
 
@@ -306,7 +306,7 @@ bool App::On_BackRequested()
 > [!NOTE]
 > "系统后退栏"是只描述，不正式名称。
 
-系统后退栏是在选项卡区带和应用 s 内容区域之间插入一个带。 此区带横跨整个应用，“后退”按钮位于左边缘。 带区的垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
+系统后退栏是在选项卡区带和应用 s 内容区域之间插入一个带。 此区带横跨整个应用，“后退”按钮位于左边缘。 此区带都有垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
 
 系统后退栏基于“后退”按钮的可见性动态显示。 当后退按钮可见时，系统后退栏插入，将通过以下选项卡区带 32 像素向下移位应用内容。 当后退按钮隐藏时，系统后退栏动态删除，将上移到应用内容 32 像素，以满足选项卡区带。 若要避免你的应用的 UI shift 向上或向下，我们建议绘制[应用内后退按钮](#back-button)。
 

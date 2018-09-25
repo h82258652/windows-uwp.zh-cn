@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149782"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174552"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Windows 开发人员文档中的新增 2018 年 9 月
 
-Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南和视频所做的 9 月在一个月。
+Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南和视频已可使用的 9 月在一个月。
 
 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
@@ -28,7 +28,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 [Windows 机器学习文档](https://docs.microsoft.com/windows/ai/)现在位于其自己的站点上, 和更新的最新的 Windows 预览体验成员 sdk。 桌面版和 UWP 教程，在 c + + 和 C# 可帮助你开始将 WinML 添加到你的应用程序。
 
-[Windows.AI.MachineLearning API 参考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)已更新的最新的 Windows 预览体验成员 sdk。
+已更新为最新的 Windows 预览体验成员 SDK [Windows.AI.MachineLearning API 参考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)。
 
 使用最新的 SDK 的新示例已更新[的 Windows 机器学习 GitHub 存储库](https://github.com/Microsoft/Windows-Machine-Learning)。
 
@@ -36,15 +36,15 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-ui-library"></a>Windows UI 库
 
-[Windows UI 库](https://aka.ms/winui-docs)是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 这些程序包也是与早期版本的 Windows 10 兼容，因此即使你的用户不具有最新的操作系统版本的工作原理你的应用。
+[Windows UI 库](https://aka.ms/winui-docs)是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 这些程序包也是与早期版本的 Windows 10 兼容，因此即使你的用户无需的最新的操作系统版本的工作原理你的应用。
 
-Windows UI 库的详细信息，请参阅[的 NuGet 包中包含的 API 命名空间此列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
+Windows UI 库的详细信息，请参阅[此列表的 NuGet 程序包中包含的 API 命名空间。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="how-blur-effects-work"></a>如何模糊效果工作
 
-我们作家，esteemed Mike Jacobs，其中一个已开始一系列文章中中等有关模糊，从到摄影应用和游戏设计的愿景。 如果感兴趣了解有关此普遍的视觉效果的详细信息，请查看[影像和摄影上的第一个文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)以及[抗锯齿在图形上的第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+我们编写，esteemed Mike Jacobs，其中一个已开始一系列有关模糊，从设想摄影应用和游戏设计为在中等文章。 如果你感兴趣了解有关此种无处不视觉效果的详细信息，请查看[影像和摄影上的第一个文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)和[抗锯齿在图形上的第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![模糊操作](images/blur-example.jpg)
 
@@ -56,15 +56,15 @@ Windows UI 库的详细信息，请参阅[的 NuGet 包中包含的 API 命名�
 
 ### <a name="one-dev-question"></a>一个开发人员的问题
 
-在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们回答的最新问题 ！
+在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们已回答的最新问题 ！
 
 兆辉 Gustafson:
 
-* [渐进式 Web 应用的 6 个视频](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [6 视频渐进式 Web 应用](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Chris Heilmann
 
-* [webhint 工具的 4 个视频](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [取决于 webhint 工具的 4 个视频](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
 Larry Osterman:
 

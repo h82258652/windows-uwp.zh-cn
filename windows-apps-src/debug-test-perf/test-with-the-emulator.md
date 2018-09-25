@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151188"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180682"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -49,7 +49,7 @@ RAM
 
 若要查看 RAM 和操作系统的要求，请在“控制面板”中选择“系统和安全”****，然后选择“系统”****。
 
-适用于 Windows 10 移动版的 Microsoft 模拟器要求 Visual Studio 2015 或更高版本;它不与早期版本的 Visual Studio 的向后兼容。
+适用于 Windows 10 移动版的 Microsoft 模拟器要求 Visual Studio 2015 或更高版本;它不与早期版本的 Visual Studio 反向兼容。
 
 适用于 Windows 10 移动版的 Microsoft 模拟器无法加载面向 Windows Phone OS 7.1 之前的 Windows Phone 操作系统版本的应用。
 

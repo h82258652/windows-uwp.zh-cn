@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a16339e0918f8291f7b1cc7a3a6dfef3ccf375d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149474"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177226"
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
@@ -28,16 +28,16 @@ ms.locfileid: "4149474"
 ## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 程序包的版本编号
 
 > [!IMPORTANT]
-> Windows 10 程序包的版本号的最后 （第四个） 部分会保留商店使用，并且必须保留为 0 （尽管应用商店可能会更改此部分中的值） 生成程序包时。
+> Windows 10 程序包的版本号的最后 （第四个） 部分会保留用于应用商店，并且必须保留为 0 （尽管应用商店可能会更改此部分中的值） 在生成程序包时。
 
 从已发布的提交中选择 Windows 10 程序包后，Microsoft Store 将始终使用适用于客户设备的版本最高的程序包。 这将为你提供更大的灵活性，并让你可以控制在特定设备类型上提供给客户的程序包。 重要的是，你可以按任意顺序提交这些程序包；你将并不局限于提供每个后续提交中的更高版本的程序包。
 
 > [!TIP]
-> 如果你的应用还具有 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 的程序包，任何 Windows 10 程序包的版本号必须始终高于任何这些程序包中的版本号。 有关详细信息，请参阅[将 Windows 10 程序包添加到以前发布的应用](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app)。
+> 如果你的应用也具有用于 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 的程序包，任何 Windows 10 程序包的版本号必须始终高于任何这些程序包中的版本号。 有关详细信息，请参阅[将 Windows 10 程序包添加到以前发布的应用](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app)。
 
 你可以使用相同版本号提供多个 Windows 10 程序包。 但是，共享一个版本号的程序包也不能拥有相同的体系结构，因为应用商店用于每个程序包的完整标识必须是唯一的。 有关详细信息，请参阅 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
-当你提供多个使用相同版本号的 Windows 10 程序包时，体系结构 （顺序为 x64、 x86、 ARM、 neutral） 将用于确定哪种等级更高 （当在应用商店确定哪个程序包提供给客户的设备）。 当对使用相同版本号的应用程序包进行分级时，应考虑采用程序包内等级最高的体系结构：包含 x64 程序包的应用程序包的等级高于仅包含 x86 程序包的应用程序包的等级。
+如果你提供多个使用相同版本号的 Windows 10 程序包，体系结构 （顺序为 x64、 x86、 ARM、 neutral） 将用于确定哪一个是等级更高 （当在应用商店确定哪个程序包提供给客户的设备）。 当对使用相同版本号的应用程序包进行分级时，应考虑采用程序包内等级最高的体系结构：包含 x64 程序包的应用程序包的等级高于仅包含 x86 程序包的应用程序包的等级。
 
 这将为你随时间推移不断优化你的应用提供了极大的灵活性。 你可以通过上载和提交使用较低版本号的新程序包，添加对之前不支持的经济实惠型设备的支持；可以添加具有更为严格的相关性的版本号较高的程序包，充分利用硬件或操作系统功能；也可以添加版本号较高的程序包，用作对部分或全部现有客户群的更新。
 
@@ -61,7 +61,7 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>使用版本编号，可针对新获取的程序包回滚到以前交付的程序包
 
-如果你保留副本，你将能够你的应用的程序包应用商店中回滚到早期 Windows 10 程序包，如果你发现版本问题时。 这是一种临时性的方法，可在你解决此问题时限制对你的客户的中断。
+如果你保留副本，你将能够你的应用包应用商店中回滚到早期 Windows 10 程序包，如果你发现版本问题时。 这是一种临时性的方法，可在你解决此问题时限制对你的客户的中断。
 
 若要执行此操作，创建新的[提交](app-submissions.md)。 删除有问题的程序包并上载你想要在应用商店中提供的旧程序包。 已收到你正在回滚的程序包的客户仍然会具有出现问题的程序包（因为较旧程序包的版本号是早期的）。 但是，这将阻止任何其他用户获取有问题的程序包，同时将仍然允许在应用商店中提供该应用。
 

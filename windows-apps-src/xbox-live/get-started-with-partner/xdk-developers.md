@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2d435bf11cb4c06527090abb4b78f31a339142
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152519"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181177"
 ---
 # <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a>开始使用适用于基于 XDK 的游戏的 Visual Studio
 

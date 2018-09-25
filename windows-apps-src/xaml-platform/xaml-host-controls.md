@@ -9,52 +9,54 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a4865f403685752225a729bf68abb15237dd90
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.openlocfilehash: 6b8c263b030cbb8f945ffb13a24b6dff3af28fcc
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156580"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173630"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
 
 > [!NOTE]
 > 作为开发人员预览版当前可用的 Api 和本文中讨论的控件。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 
-Windows 10 的下一个版本中我们正在 UWP 控件引入非 UWP 桌面应用程序，以便你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件的最新 Windows 10 UI 功能. 这意味着，你可以使用 UWP 功能，例如[Fluent 设计系统](../design/fluent-design-system/index.md)和[Windows Ink](../design/input/pen-and-stylus-interactions.md)现有 WPF、 Windows 窗体，以及 C/c + + Win32 应用程序中。 此开发人员方案有时称为*XAML 群岛*。
+Windows 10 现在可以让你可以在非 UWP 桌面应用程序中使用 UWP 控件，以便你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件的最新 Windows 10 UI 功能。 这意味着，你可以使用 UWP 功能，例如[Fluent 设计系统](../design/fluent-design-system/index.md)和[Windows Ink](../design/input/pen-and-stylus-interactions.md)现有 WPF、 Windows 窗体，以及 c + + Win32 应用程序中。 此开发人员方案有时称为*XAML 群岛*。
 
-我们将提供几种方法，用于在桌面应用程序，具体取决于技术或框架你使用的 XAML 群岛。
+我们提供几种方法，用于在桌面应用程序，具体取决于技术或框架你使用的 XAML 群岛。
 
 ## <a name="wrapped-controls"></a>包装的控件
 
-我们将为在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中的 WPF 和 Windows 窗体应用程序提供包装 UWP 控件的选择。 你可以直接在 WPF 或 Windows 窗体项目的设计图面添加这些控件并将像任何其他 WPF 或 Windows 窗体控件在设计器中。 我们称为这些控件*包装控件*因为它们换行的接口和特定 UWP 控件的功能。
+WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)使用包装 UWP 控件的选择。 你可以直接在 WPF 或 Windows 窗体项目的设计图面添加这些控件并将像任何其他 WPF 或 Windows 窗体控件在设计器中。 我们称为这些控件*包装控件*因为它们换行的接口和特定 UWP 控件的功能。
 
-请尝试此操作，现在与[WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/webview)控件在 Windows 社区工具包中。 此控件使用 Microsoft Edge 呈现引擎在 WPF 或 Windows 窗体应用程序中显示 web 内容。  
+以下包装的控件支持 Windows 10 版本 1803年及更高版本。
 
-我们还会规划其他包装的 UWP 控件 WPF 和 Windows 窗体应用程序在将来的版本的 Windows 社区工具包，其中包括：
+* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview)。 此控件使用 Microsoft Edge 呈现引擎在 WPF 或 Windows 窗体应用程序中显示 web 内容。
+* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible)。 此控件是**WebView**与 Windows 10 兼容的版本和以前版本的 Windows。 此控件使用 Microsoft Edge 呈现引擎，以显示在 Windows 10 （版本 1803年及更高版本） 上的 web 内容和 Internet Explorer 呈现引擎来显示在 Windows 7 和 Windows 上的 web 内容 8.x。
 
-* **WebViewCompatible**。 此控件是**WebView**与 Windows 10 兼容的版本和以前版本的 Windows。 此控件使用 Microsoft Edge 呈现引擎，以显示在 Windows 10 上的 web 内容和 Internet Explorer 呈现引擎来显示较早版本上的 web 内容。
-* **InkCanvas**和**InkToolbar**。 这些控件提供对 Windows 窗体或 WPF 桌面应用程序中的基于 Windows Ink 的用户交互的 surface 和相关的工具栏。
-* **MediaPlayerElement**。 此控件嵌入流式处理和呈现媒体内容，例如 Windows 窗体或 WPF 桌面应用程序中的视频的视图。
+以下包装的控件支持 Windows 10 Insider Preview SDK 生成 17709 和更高版本。
+
+* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)。 这些控件提供对 Windows 窗体或 WPF 桌面应用程序中的基于 Windows Ink 的用户交互的 surface 和相关的工具栏。
+* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement)。 此控件嵌入流式处理和呈现媒体内容，例如 Windows 窗体或 WPF 桌面应用程序中的视频的视图。
 
 多个 UWP 的 WPF 换行控件和 Windows 窗体应用程序计划的 Windows 社区工具包未来版本。
 
 > [!NOTE]
-> 包装的控件不可用的 C/c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
+> 包装的控件不可用于 c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
 
 ## <a name="host-controls"></a>主机控件
 
-除涵盖可用的包装控件的情况下，WPF 和 Windows 窗体应用程序还可以使用[WindowsXamlHost](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/docs/controls/WindowsXAMLHost.md)控件在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 此控件可以承载派生自[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括由 Windows SDK 以及自定义用户控件提供的任何 UWP 控件的任何 UWP 控件。
+除涵盖可用的包装控件的情况下，WPF 和 Windows 窗体应用程序还可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 此控件可以承载派生自[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括由 Windows SDK 以及自定义用户控件提供的任何 UWP 控件的任何 UWP 控件。 此控件支持 Windows 10 Insider Preview SDK 生成 17709 和更高版本。
 
 > [!NOTE]
-> 主机控件不可用的 C/c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
+> 主机控件不可用于 c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
 
 ## <a name="uwp-xaml-hosting-api"></a>UWP XAML 托管 API
 
-如果你有一个 C/c + + WinRT 应用程序，你可以使用*UWP XAML 托管 API*托管派生[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)你有一个关联的窗口句柄 (HWND) 的应用程序中的任何 UI 元素中的任何 UWP 控件。 有关使用此 API 的详细信息，请参阅[使用托管 API 的桌面应用程序的 XAML](using-the-xaml-hosting-api.md)。
+如果你有了 c + + Win32 应用程序，你可以使用*UWP XAML 托管 API*托管派生[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)你有一个关联的窗口句柄 (HWND) 的应用程序中的任何 UI 元素中的任何 UWP 控件。 在 Windows 10 Insider Preview SDK 生成 17709 引入了此 API。 有关使用此 API 的详细信息，请参阅[使用托管 API 的桌面应用程序的 XAML](using-the-xaml-hosting-api.md)。
 
 > [!NOTE]
-> C/c + + Win32 桌面应用程序必须使用 UWP XAML 到托管 UWP 控件中承载 API。 包装的控件和主机控件不可用针对这些类型的应用程序。 对于 WPF 和 Windows 窗体应用程序，我们建议你使用的包装的控件和主机控件而不是 UWP XAML 在 Windows 社区工具包中托管 API。 这些控件使用 UWP XAML 内部托管 API，并且提供更简单的开发体验。 但是，你可以使用 UWP XAML 托管 API 直接在 WPF 和 Windows 窗体应用程序中，如果你选择。
+> C + + Win32 桌面应用程序必须使用 UWP XAML 到托管 UWP 控件中承载 API。 包装的控件和主机控件不可用针对这些类型的应用程序。 对于 WPF 和 Windows 窗体应用程序，我们建议你使用的包装的控件和主机控件而不是 UWP XAML 在 Windows 社区工具包中托管 API。 这些控件使用 UWP XAML 内部托管 API，并且提供更简单的开发体验。 但是，你可以使用 UWP XAML 托管 API 直接在 WPF 和 Windows 窗体应用程序中，如果你选择。
 
 ## <a name="architecture-overview"></a>体系结构概述
 

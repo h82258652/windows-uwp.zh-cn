@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4150906"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175980"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
@@ -26,7 +26,7 @@ ms.locfileid: "4150906"
 在[上载应用程序包](upload-app-packages.md)时，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 值必须与为应用所保留的名称相匹配。 如果使用 Microsoft Visual Studio 创建应用程序包，则将为你填充此特性。
 
 > [!IMPORTANT]
-> 你可以保留其他名称的应用，并且你可以选择使用其中一个引擎在你的应用的已发布版本而不是保留当你首次在仪表板中创建你的应用的一个。 但是，请注意，将会在此处输入的名字用的一些你的应用[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)**。 这些值可能会给某些用户，且不能更改，因此请确保你保留该名称是适用于此用。
+> 你可以保留其他名称的应用，并且你可以选择使用其中一个引擎在你的应用的已发布版本而不是保留时首先在仪表板中创建你的应用的一个。 但是，请注意，将某些你的应用的[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)** 中使用你在此处输入的第一个名称。 这些值可能会给某些用户，且不能更改，因此请确保你保留的名称是适用于此用。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>通过保留新名称创建应用

@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148282"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175120"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -214,7 +214,7 @@ ms.locfileid: "4148282"
     :::column:::
         ![大纲细节图像](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: 列范围 ="2":::[**大纲/细节**](../controls-and-patterns/master-details.md)
+    ::: 列范围 ="2":::**大纲/细节** [](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         

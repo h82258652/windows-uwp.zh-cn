@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148372"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176406"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -30,7 +30,7 @@ ms.locfileid: "4148372"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开该应用，了解 NavigationView 的实际</a> </p>
+    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开该应用，了解 NavigationView 的实际</a>到 </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -555,7 +555,7 @@ ms.locfileid: "4148372"
 
 ### <a name="navigationview"></a>NavigationView
 
-适应性容器和灵活的导航模型实现的左侧的导航窗格、 顶部导航和表模式。
+适应性容器和灵活的导航模型实现的左侧的导航窗格中，顶部导航和表模式。
 
 参考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

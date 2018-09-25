@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 146cce82275047c112d70cfb3d022eab723f49e6
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156136"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174790"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 

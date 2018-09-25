@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, toast, 云中的操作中心, 通知镜像, 通知, 跨设备
 ms.localizationpriority: medium
 ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149518"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173496"
 ---
 # <a name="notification-mirroring"></a>通知镜像
 
@@ -29,7 +29,7 @@ ms.locfileid: "4149518"
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-开发人员通知镜像提供两大好处： 镜像的通知可使更多用户参与你的服务，并且它们还帮助用户发现你的 Microsoft 应用商店的桌面应用 ！ 用户甚至可能不知道有出色的 UWP 应用可用于他们的 Windows 10 桌面。 当用户从手机接收到镜像的通知时，用户可单击 toast 通知跳转到 Microsoft 应用商店中，他们可以在其中安装 UWP 桌面应用。
+开发人员从通知镜像提供两大好处： 镜像的通知可使更多用户参与你的服务，并且它们还可以帮助用户发现你的 Microsoft 应用商店的桌面应用 ！ 用户甚至可能不知道有出色的 UWP 应用可用于他们的 Windows 10 桌面。 当用户从手机接收到镜像的通知时，用户可单击 toast 通知跳转到 Microsoft 应用商店中，他们可以在其中安装 UWP 桌面应用。
 
 镜像适用于 Windows Phone 和 Android。 用户需要同时在手机和桌面上登录 Cortana，通知镜像才能运行。
 

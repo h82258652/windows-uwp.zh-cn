@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156288"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174940"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
@@ -59,15 +59,15 @@ ms.locfileid: "4156288"
 ## <a name="additional-guidelines-for-company-accounts"></a>有关公司帐户的其他指南
 
 > [!IMPORTANT]
-> 若要允许多个用户访问你的开发人员中心帐户，我们建议使用 Azure Active Directory 将角色分配给单个用户 （而不是共享的访问权限的 Microsoft 帐户）。 之后每位用户可以使用自己的单独 Azure AD 凭据进行登录，从而访问开发人员中心帐户。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+> 若要允许多位用户访问你的开发人员中心帐户，我们建议使用 Azure Active Directory 将角色分配给单个用户 （而不是共享的访问权限的 Microsoft 帐户）。 之后每位用户可以使用自己的单独 Azure AD 凭据进行登录，从而访问开发人员中心帐户。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
 
-当创建公司帐户，这些指南可帮助，如果有多人需要通过使用打开该帐户的 Microsoft 帐户 （而不是作为单个用户添加到开发人员中心帐户） 中访问该帐户。
+创建公司帐户时这些指南可帮助，如果有多人需要通过使用打开该帐户的 Microsoft 帐户 （而不是作为单个用户添加到开发人员中心帐户） 中访问该帐户。
 
 -   使用尚未属于你或其他个人的电子邮件地址创建 Microsoft 帐户，如 MyCompany_DevCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是在你的公司已经使用 Azure AD。 (如上所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户。
--   设置公司电子邮件通讯组列表，包括每位需要访问开发人员帐户，并将添加到此电子邮件地址 [与 Microsoft 帐户相关联的安全信息 [(https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如，当将新的安全信息添加到 t他帐户，或者从新设备的访问时）。
--   添加对 Microsoft 帐户的安全信息的公司电话号码。 尝试使用无需分机并可供关键团队成员的数字。
--   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登录到贵公司的开发人员帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
+-   设置公司电子邮件分发列表，其中包括每位需要访问开发人员帐户，并将添加到此电子邮件地址 [与 Microsoft 帐户相关联的安全信息 [(https://account.microsoft.com/security)。 这允许的所有员工列表，以接收安全代码发送到此别名。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如，当将新的安全信息添加到 t他帐户，或者从新设备的访问时）。
+-   添加 Microsoft 帐户的安全信息的公司电话号码。 尝试使用无需分机并可供关键团队成员的数字。
+-   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登录到贵公司的开发者帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
 -   如果需要允许从不受信任的电脑访问帐户，请将开发人员访问人数上限限制为五人。 理想情况下，这些开发人员应从共享相同地理和网络位置的计算机访问该帐户。
 -   请经常在 https://account.microsoft.com/security 上查看公司的安全信息以确保它都是当前信息。
 
@@ -78,7 +78,7 @@ ms.locfileid: "4156288"
 
 Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到 https://account.microsoft.com/security 并使用 Microsoft 帐户登录来管理你的安全信息。 有关详细信息，请参阅[安全信息和安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
 
-在登录到 Windows 开发人员中心仪表板使用你的 Microsoft 帐户时，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议将指定你经常使用为*受信任的设备*的电脑。 当你从受信任的设备登录时，通常不会提示你的代码，尽管有时可能会在特定情况下提示你或你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+在登录到 Windows 开发人员中心仪表板使用你的 Microsoft 帐户时，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议指定为*受信任的设备*经常使用的电脑。 当你从受信任的设备登录时，通常不会提示你的代码，尽管可能偶尔系统提示你在特定情况下，或者如果你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
 
 
 ## <a name="closing-your-account"></a>关闭你的帐户

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148412"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181418"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -48,7 +48,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="what-goes-in-a-form"></a>表单包含哪些元素？
 
-需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 这是你可以添加的选项的基本列表-无需阅读有关它们的一切内容只足够需要了解它们的外观及其工作方式。
+需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 这是可以添加的选项的基本列表-无需阅读有关它们的一切内容只足够需要了解它们的外观及其工作方式。
 
 * [TextBox](../design/controls-and-patterns/text-box.md)到你的应用允许用户输入的文本。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 让用户从两个选项中做出选择。
@@ -136,7 +136,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="going-further"></a>深入探索
 
-虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 可随意返回参阅我们链接给你和试验的表单，添加新 UI 功能并进一步改进用户体验的文档。 如果你希望通过更详细的布局功能的分步指南，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
+虽然本文创建的只是一个表单，但布局和控件的概念适用于你可能构建的所有 XAML UI。 可随意返回通过的文档，我们链接给你进行试验的表单，添加新 UI 功能并进一步改进用户体验。 如果你希望通过更详细的布局功能的分步指南，请参阅我们的[自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md)
 
 表单不一定非得单独使用，你也可以更进一步 - 将它们嵌入到[大纲/细节模式](../design/controls-and-patterns/master-details.md)或[透视表控件](../design/controls-and-patterns/tabs-pivot.md)中。 或者，如果要对表单背后的代码做些改动，请参阅[事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 

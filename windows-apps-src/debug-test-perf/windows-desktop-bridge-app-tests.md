@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148362"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178086"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
-[桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)的 Windows 桌面应用程序转换为使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)的通用 Windows 平台 (UWP) 应用。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
+Windows 桌面应用程序转换为通用 Windows 平台 (UWP) 应用使用[桌面桥](https://developer.microsoft.com/en-us/windows/bridges/desktop)[的桌面桥应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)。 转换后，将以面向 Windows 10 桌面版的 UWP 应用包（.appx 或 .appxbundle）的形式打包、维护和部署 Windows 桌面应用程序。
 
 ## <a name="required-versus-optional-tests"></a>必需测试与可选测试
 适用于 Windows 桌面桥应用的可选测试仅供参考，将不能用于在 Microsoft 应用商店载入过程中评估你的应用。 我们建议调查这些测试结果以生成质量更好的应用。 应用商店载入的整体通过/失败条件取决于必需测试，而不是这些可选测试。
@@ -50,13 +50,13 @@ ms.locfileid: "4148362"
 此测试验证 appx 不是调试版本。
  
 **背景**  
-认证的 Microsoft 应用商店，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过 Microsoft 应用商店的认证，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
  
 **测试详细信息**  
 测试应用，确保它不是调试版本并且未链接到任何调试框架。
  
 **更正操作**  
-* 之前将其提交到 Microsoft 应用商店将应用编译为发行版本。
+* 将其提交到 Microsoft Store 之前，将应用编译为发行版本。
 * 确保你安装了正确版本的 .NET Framework。
 * 确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 
@@ -221,7 +221,7 @@ ms.locfileid: "4148362"
 这可以通过确保应用编译为发行版本而不是调试版本来进行更正。 
 
 > [!NOTE]
-> 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息，识别存在该 API 不允许的 UWP 应用的 API。 
+> 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 检查错误消息，识别存在的 API，不允许的 API 适用于 UWP 应用。 
 
 > [!NOTE]
 > 内置于该调试配置中的 c + + 应用将无法通过此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 有关详细信息，请参阅[UWP 应用中的 Windows Api 的替代项](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。

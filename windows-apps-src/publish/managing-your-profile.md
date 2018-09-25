@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148192"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177030"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
@@ -26,7 +26,7 @@ ms.locfileid: "4148192"
 
 ## <a name="account-settings"></a>帐户设置
 
-若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和指向其他页面，你可以在其中查看信息并执行多种帐户相关任务的详细信息。
+若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和链接到其他页面，你可以在其中查看信息并执行多种帐户相关任务的详细信息。
 
 在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以看到你的卖家 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配以唯一地标识开发者帐户，且无法进行编辑。
 
@@ -48,7 +48,7 @@ ms.locfileid: "4148192"
 
 以下是**帐户设置**部分中会出现的一些其他项目。
 
-- **验证状态**： 当帐户正在进行验证过程 （例如，当你首次登录或大量更改联系人信息后），你可以查看验证状态。
+- **验证状态**： 当你的帐户正在进行验证处理 （例如，当你首次登录或大量更改联系人信息后），你可以在此查看验证状态。
 - **开发人员中心会员计划**： 你可以选择在或退出[开发人员中心会员计划](dev-center-insider-program.md)从主**帐户设置**页面。
 - **付款帐户**和**税务资料**：可在此[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 - **企业关联**：接受希望发布应用以供其独家使用的企业的邀请。 有关详细信息，请参阅[将业务线应用分配到企业](distribute-lob-apps-to-enterprises.md)。

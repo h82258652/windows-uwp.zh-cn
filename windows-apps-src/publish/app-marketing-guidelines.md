@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153782"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181548"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft 应用商店营销指南的应用
 
@@ -23,7 +23,7 @@ ms.locfileid: "4153782"
 
 ## <a name="store-badges"></a>应用商店锁屏提醒
 
-我们创建了特殊的促销锁屏提醒，帮助你的 Microsoft 应用商店中的应用的一览带动更多客户。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
+我们创建了特殊的促销锁屏提醒，帮助你带动更多的客户的 Microsoft 应用商店中你的应用的一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
 [![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 应用商店锁屏提醒指南 （PDF、 英语）**
 
@@ -51,7 +51,7 @@ ms.locfileid: "4153782"
 
 -   如果你已注册开发人员中心，请遵守“应用开发人员协议”中[“Microsoft 商标授权”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
 
--   如果未注册 Windows 开发人员中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
+-   如果你未注册 Windows 开发人员中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
 
 -   请按照[Microsoft 应用商店锁屏提醒指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的徽标使用规范。
 

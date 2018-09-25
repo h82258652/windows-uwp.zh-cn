@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 疑难解答, HRESULT, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148432"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176120"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 问题疑难解答
 > [!NOTE]
@@ -48,9 +48,9 @@ XAML 分析异常可能很难进行诊断，特别是在此类异常中没有含
 | 应用发生崩溃，因为在 C++/WinRT 对象销毁后调用了其中的一个事件处理程序。|请参阅[在事件处理程序中使用 *this* 对象](handle-events.md#using-the-this-object-in-an-event-handler)。|
 | C++ 编译器产生“*错误 C2338: 此项仅用于弱引用支持*”。|你请求针对某个类型的弱引用，该类型将 **winrt::no_weak_ref** 标记结构作为模板参数传递给其基类。 请参阅[选择退出弱引用支持](weak-references.md#opting-out-of-weak-reference-support)|
 | C + + 链接器产生"*错误 LNK2019： 无法解析的外部符号*"|请参阅[链接器为什么遇到我"LNK2019： 无法解析的外部符号"错误？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)|
-| LLVM 和 Clang 工具链产生错误时使用 C + + WinRT。|我们不支持 LLVM 和 Clang 工具链 C + + WinRT，但如果你想要模拟我们如何使用它在内部，则可以尝试的实验，如一中所述[可以使用 LLVM/Clang 编译使用 C + + WinRT？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
+| LLVM 和 Clang 工具链产生错误时使用 C + + WinRT。|我们不支持 LLVM 和 Clang 工具链 C + + WinRT，但如果你想要模拟我们如何使用它在内部，则可以尝试的实验，如一中所述[我是否可以使用 LLVM/Clang 编译 C + + WinRT？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
 | C + + 编译器产生"*没有适当的默认构造函数可用*"的投影类型。 | 如果你尝试延迟初始化的运行时类对象，或使用，并可在同一项目中，实现的运行时类，则你将需要调用`nullptr_t`构造函数。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。 |
-| C + + 编译器产生"*错误 C3861: from_abi': 找不到标识符*"，和源自*base.h*其他错误。 你可能会看到此错误，如果你使用的 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)。 | 无论是面向更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/c + +**  > **语言** > **命令行**下**的其他选项**，然后将其删除)。 |
+| C + + 编译器产生"*错误 C3861: from_abi': 找不到标识符*"，和源自*base.h*其他错误。 你可能会看到此错误，如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)。 | 无论是面向更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/c + +**  > **语言** > **命令行**下**的其他选项**，然后将其删除)。 |
 
 > [!NOTE]
 > 如果本主题没有解决你的问题，你可以[在 Stack Overflow 上使用 `c++-winrt` 标签](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)查找帮助。

@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: “展示”是一种灯光效果，有助于重点深入了解应用的交互式元素。
-title: 显示突出显示
+title: 突出显示展示
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -15,13 +15,13 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4150530"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175718"
 ---
-# <a name="reveal-highlight"></a>显示突出显示
+# <a name="reveal-highlight"></a>突出显示展示
 
 ![主图](images/header-reveal-highlight.svg)
 
@@ -69,7 +69,7 @@ ms.locfileid: "4150530"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-这些插图显示几个不同的控件上显示突出显示：
+这些插图显示几种不同控件上突出显示展示:
 
 ![展示示例](images/RevealExamples_Collage.png)
 
@@ -135,7 +135,7 @@ ms.locfileid: "4150530"
 
 这些效果由两个画笔定义： 
 * 边框展示由**RevealBorderBrush**定义
-* 悬停展示定义的**RevealBackgroundBrush**
+* 悬停展示由**RevealBackgroundBrush**定义
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>

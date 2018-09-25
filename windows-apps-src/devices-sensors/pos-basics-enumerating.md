@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e42ebb2eba7b6465be271e6095100c03798826f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4154642"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174664"
 ---
 # <a name="enumerating-point-of-service-devices"></a>枚举服务点设备
 在此部分，你将了解如何[定义设备选择器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)（用于向系统提供查询设备），以及如何通过以下方法之一使用此选择器枚举服务点设备：

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 437d149e22f035fdd0cb1f5251a114b6dd4765e4
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151756"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181578"
 ---
 # <a name="pin-secondary-tiles"></a>固定辅助磁贴
 

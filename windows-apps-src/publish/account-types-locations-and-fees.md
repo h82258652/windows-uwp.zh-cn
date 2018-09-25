@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149578"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174684"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
@@ -37,7 +37,7 @@ ms.locfileid: "4149578"
 |--------------------|-----------------|
 | <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，应用具有某些功能，如访问财务帐户信息或需要通过身份验证才能访问主要功能 （不使用安全的专用第三方身份验证提供程序），仅发布的公司帐户。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，应用具有某些功能，如访问财务帐户信息或需要通过身份验证才能访问主要功能 （而不使用安全的专用第三方身份验证提供程序）仅发布的公司帐户。
 
 ## <a name="account-verification"></a>帐户验证
 

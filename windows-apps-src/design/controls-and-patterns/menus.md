@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151556"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175868"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -46,17 +46,17 @@ ms.locfileid: "4151556"
 
 菜单和上下文菜单用于整理命令; 在若要显示任意内容，例如通知或确认请求使用[对话框或浮出控件](dialogs.md)。
 
-### <a name="menubar-vs-menuflyout"></a>菜单栏与 MenuFlyout
+### <a name="menubar-vs-menuflyout"></a>MenuFlyout 与菜单栏
 
-若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选的子菜单）。
+若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选子菜单）。
 
-若要显示的多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
+若要在水平行显示多个顶级菜单的一组，请使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
 
-### <a name="menubar-vs-commandbar"></a>与命令栏菜单栏
+### <a name="menubar-vs-commandbar"></a>菜单栏与 CommandBar
 
 菜单栏和命令栏两者都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开命令的应用可能需要更多的组织或分组的一组，然后 CommandBar 允许。
 
-你还可以将菜单栏 CommandBar 结合使用。 使用在菜单栏提供大部分命令和命令栏，以突出显示的最常用的命令。
+你还可以将菜单栏 CommandBar 结合使用。 在菜单栏用于提供大部分命令和 CommandBar 突出显示的最常用的命令。
 
 ## <a name="examples"></a>示例
 
@@ -76,7 +76,7 @@ ms.locfileid: "4151556"
 
 ## <a name="menus-vs-context-menus"></a>菜单与上下文菜单
 
-菜单和上下文菜单会在它们的外观和可以包含的内容类似。 事实上，你可以使用相同的控件， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，创建它们。 不同之处在于，允许用户访问它的方式。
+菜单和上下文菜单在外观和可以包含的内容类似。 事实上，你可以使用相同的控件， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，创建它们。 不同之处在于，允许用户访问它的方式。
 
 何时应使用菜单或上下文菜单？
 
@@ -96,7 +96,7 @@ ms.locfileid: "4151556"
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 相关联[的浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，通过某个元素或者分组在应用窗口顶部菜单栏中。
+- 与其[浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，通过某个元素关联或分组在应用窗口顶部菜单栏中。
 
 ### <a name="context-menus"></a>上下文菜单
 
@@ -145,7 +145,7 @@ ms.locfileid: "4151556"
 - [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) - 打开或关闭选项。
 - [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) - 直观地区分菜单项。
 
-此示例创建[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) ，并使用[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)属性，该属性适用于大多数控件，以显示为上下文菜单的 MenuFlyout。
+此示例创建[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)并[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)属性，该属性适用于大多数控件，用于显示为上下文菜单的 MenuFlyout。
 
 ````xaml
 <Rectangle

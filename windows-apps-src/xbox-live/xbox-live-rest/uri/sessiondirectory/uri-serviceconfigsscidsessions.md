@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 04176c4b2d2839df07fb55eceb5bb752c61d9c65
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155431"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181149"
 ---
 # <a name="serviceconfigsscidsessions"></a>/serviceconfigs/{scid}/sessions
 支持 GET 操作以检索一组会话文档。 

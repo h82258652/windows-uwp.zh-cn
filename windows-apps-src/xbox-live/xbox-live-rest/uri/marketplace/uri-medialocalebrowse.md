@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4147573"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181181"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
 允许浏览的单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。

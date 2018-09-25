@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 协议激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b0cd9dbde739079fc72a0ee4a7be018afc427ed
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155673"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4172625"
 ---
 # <a name="handle-protocol-activation"></a>处理协议激活
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4154494"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176178"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -29,11 +29,11 @@ ms.locfileid: "4154494"
 
 ## <a name="effective-pixels-and-scaling"></a>有效像素和缩放
 
-首先，UWP 应用可以在所有 [Windows 10 设备](../devices/index.md)（从电视到平板电脑或电脑）上运行。 这会如何影响应用的 UI？
+UWP 应用在所有运行[Windows 10 设备](../devices/index.md)，从电视到平板电脑或电脑。 那么，如何设计在各种设备和屏幕大小外观良好的 UI？
 
 ![各种设备上的同一应用](images/universal-image-1.jpg)
 
-幸运的是，UWP 应用会自动调整 UI 元素的大小，以使它们在所有设备和屏幕大小上清晰可见并易于交互！
+UWP 有助于通过自动调整 UI 元素，以便它们清晰可见并易于交互在所有设备和屏幕大小上。
 
 当你的应用在设备上运行时，系统将使用算法使 UI 元素在屏幕上的显示方式规范化。 此缩放算法考虑了观看距离和屏幕密度（每英寸像素），以针对感知大小（而不是物理大小）进行优化。 该缩放算法确保用户可从 10 英尺远处识别 Surface Hub 上高 24 像素的字体，正如从几英寸远处识别 5 英寸手机上高 24 像素的字体。
 

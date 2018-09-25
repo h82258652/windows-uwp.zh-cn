@@ -11,11 +11,11 @@ keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4150952"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181718"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
@@ -72,7 +72,7 @@ ms.locfileid: "4150952"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>将你的后台活动代码放置在 OnBackgroundActivated() 中
 
-将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)它触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
+将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)以它将会触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
 
 ``` cs
 using Windows.ApplicationModel.Background;

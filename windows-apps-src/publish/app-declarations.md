@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151664"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181130"
 ---
 # <a name="product-declarations"></a>产品声明
 
-在[提交过程](app-submissions.md)的[属性](enter-app-properties.md)页的**产品声明**部分可帮助确保你的应用适当的方式显示并交付给正确的客户，并帮助他们了解如何使用你的应用。
+[提交过程](app-submissions.md)的[属性](enter-app-properties.md)页面的**产品声明**部分可帮助确保你的应用适当的方式显示并交付给正确的客户，并帮助他们了解如何使用你的应用。
 
 以下部分介绍一些声明和你需要确定是否每个声明都适用于你的应用时的注意事项。 请注意，这些声明的两个检查默认情况下 （如下面所述）。具体取决于你的产品类别，你还可能会看到其他声明。 请务必查看所有声明并确保它们准确反映你的提交。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此应用使用户可以进行购买，但不使用 Microsoft 应用商店商务系统。
 
-几乎每个提交中，你应取消选中此框，由于应用提供给要购买的机会是，或可消耗或在你的应用中使用的项目必须使用 Microsoft 应用商店应用内购买 API 创建和提交加载项。 每个[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的创建和提交之前，在 2015 年 6 月 29 日应用无法继续无需使用 Microsoft 商务引擎，提供应用内购买功能，但前提是该购买功能符合[Microsoft 应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
+几乎每个提交中，你应取消选中此框，由于应用提供给要购买的机会是，或可消耗或在你的应用中使用的项目必须使用 Microsoft 应用商店应用内购买 API 来创建和提交加载项。 每个[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的创建和提交之前，在 2015 年 6 月 29 日应用无法继续无需使用 Microsoft 商务引擎，提供应用内购买功能，但前提是该购买功能符合[Microsoft 应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>已对此应用进行辅助功能指南符合度测试。
 
@@ -48,11 +48,11 @@ ms.locfileid: "4151664"
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
-默认情况下，以使客户能够将应用安装到外部或可移动存储媒体 SD 卡，如或非系统卷驱动器等外部驱动器情况下，此框处于选中状态。 （适用于 Windows Phone 8.1，这是通过 StoreManifest.xml 指示。）
+默认情况下，以使客户能够将应用安装到外部或可移动存储媒体 SD 卡，如或非系统卷驱动器等外部驱动器，此框处于选中状态。 （适用于 Windows Phone 8.1，这是通过 StoreManifest.xml 指示。）
 
-如果你想要防止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。
+如果你想要阻止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。
 
-请注意，如果没有限制安装，以便*仅*可以应用的选项安装到可移动存储媒体。
+请注意，如果没有限制，以便*应用只能*安装选项安装到可移动存储媒体。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。

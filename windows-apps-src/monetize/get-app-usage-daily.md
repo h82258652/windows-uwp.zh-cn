@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151598"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174132"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | 查询的数据结果中的行总数。                                                                          |
 
  
-### <a name="usage-values"></a>使用数值
+### <a name="usage-values"></a>使用情况值
 
 *Value* 数组中的元素包含以下值。
 

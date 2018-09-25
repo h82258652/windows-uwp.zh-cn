@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152362"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173650"
 ---
 # <a name="feedback-report"></a>反馈报告
 
@@ -58,7 +58,7 @@ ms.locfileid: "4152362"
 - **热门**：从已获得最新活动的反馈开始，显示其他客户在最近七天内进行投票的反馈。
 - **最近**：从最近留下的反馈开始，显示所有反馈。
 
-在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场，他们使用当客户留下反馈、 类型的设备，以及**Windows 预览体验成员**的 Windows 预览体验成员提交反馈的客户是否在设备已安装的特定程序包计划。
+在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场，他们使用当客户留下反馈、 该设备和**Windows 预览体验成员**的类型的 Windows 预览体验成员提交反馈的客户是否在设备已安装的特定程序包计划。
 
 还将在此看到[回复反馈](respond-to-customer-feedback.md)的选项。
 

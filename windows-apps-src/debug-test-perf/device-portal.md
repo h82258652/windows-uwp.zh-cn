@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152382"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181438"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，用于帮助你解决并查看你的 Windows 设备的实时性能。
+Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，可帮助你解决并查看你的 Windows 设备的实时性能。
 
-Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以也与该设备上的浏览器本地连接。
+Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以还与该设备上的浏览器本地连接。
 
 Windows Device Portal 是适用于每个设备系列，但功能和设置因每个设备的要求。 本文提供了 Device Portal 的常规说明以及指向包含每个设备系列的更具体信息的文章链接。
 
@@ -30,7 +30,7 @@ Windows Device Portal 是适用于每个设备系列，但功能和设置因每�
 ## <a name="setup"></a>设置
 
 每台设备都有有关连接到 Device Portal 的特定说明，但每台设备都需要以下常规步骤：
-1. （在设置应用中配置） 在设备上启用开发人员模式和 Device Portal。
+1. 在你的设备 （已在设置应用配置） 上启用开发人员模式和 Device Portal。
 2. 通过本地网络或 USB 连接你的设备和电脑。
 3. 在浏览器中导航到 Device Portal 页面。 此表显示的端口和协议使用的每个设备系列。
 
@@ -72,7 +72,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 ![设备门户应用管理器页](images/device-portal/wdp-apps.png)
 
 - **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册松散文件从网络共享。
-- **正在运行的应用**： 获取有关当前正在运行，并根据需要关闭它们的应用的信息。
+- **正在运行的应用**： 获取有关当前正在运行并在必要时关闭它们的应用的信息。
 
 #### <a name="install-an-app"></a>安装应用
 
@@ -91,7 +91,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="running-processes"></a>正在运行的进程
 
-此页显示有关当前在主机设备上运行的进程的详细信息。 这包括应用和系统进程。 在某些平台 （Desktop、 IoT、 和 HoloLens），你可以终止进程。
+此页显示有关当前在主机设备上运行的进程的详细信息。 这包括应用和系统进程。 在某些平台 （Desktop、 IoT、 和 HoloLens） 上，你可以终止进程。
 
 ![设备门户运行处理页面](images/device-portal/mob-device-portal-processes.png)
 
@@ -103,7 +103,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="performance"></a>性能
 
-平均页面显示系统诊断信息，如电源使用情况、 帧速率的实时图形和 CPU 负载。
+性能页显示系统诊断信息，如电源使用情况、 帧速率的实时图形和 CPU 负载。
 
 可用的指标如下所示：
 - **CPU**： 的总可用的 CPU 使用率百分比
@@ -139,7 +139,7 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 
 ### <a name="performance-tracing"></a>性能跟踪
 
-性能跟踪页面允许你为视图与主机设备的[Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx)跟踪。
+性能跟踪页面允许你查看与主机设备的[Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx)跟踪。
 
 ![设备门户性能跟踪页面](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -159,7 +159,7 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 ### <a name="networking"></a>网络
 
 网络页管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将可能使断开连接你从 Device Portal。
-- **可用的网络**： 显示 WiFi 网络适用于该设备。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
+- **可用的网络**： 显示适用于该设备的 WiFi 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
 - **IP 配置**： 设备的网络端口会显示有关每个主机的地址信息。
 
 ![设备门户网络页面](images/device-portal/mob-device-portal-network.png)

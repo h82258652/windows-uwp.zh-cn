@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151988"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181346"
 ---
 # <a name="supported-languages"></a>支持的语言
 
@@ -27,7 +27,7 @@ ms.locfileid: "4151988"
 ## <a name="supported-languages"></a>支持的语言
 
 
-以下是在 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言，并且它不得指定未包含在此处的任何语言代码。
+以下是 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言，并且它不得指定未包含在此处的任何语言代码。
 
 | 语言名称         | 支持的语言代码                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
