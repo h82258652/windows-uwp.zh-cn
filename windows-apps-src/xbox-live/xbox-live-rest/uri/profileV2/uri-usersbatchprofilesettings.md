@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d183aeab14103ed0d6730571029076d85e7b004a
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4178519"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4207706"
 ---
 # <a name="usersbatchprofilesettings"></a>/users/batch/profile/settings
 访问用户或用户的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。

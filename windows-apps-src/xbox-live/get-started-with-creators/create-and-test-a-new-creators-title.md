@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者, 测试
 ms.localizationpriority: medium
-ms.openlocfilehash: 94b22b2d369f74da73cfeb6a5f42508c703211ea
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: fe31a014c3076fa306249aeea006f817956013e2
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173017"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4208682"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>创建新的 Xbox Live 创意者计划主题作品并发布到测试环境
 
@@ -89,7 +89,7 @@ ms.locfileid: "4173017"
 
 仅授权的设备和用户可以访问开发沙盒中游戏的 Xbox Live 配置。
 
-默认情况下，添加到开发人员中心帐户中的所有 Xbox One 开发主机都有权访问你的开发沙盒。  若要添加 Xbox One 主机，请转到[管理 Xbox One 主机](https://developer.microsoft.com/XboxDevices)。 如果你已在开发人员中心帐户中，可以转到**帐户设置** > **帐户设置** > **开发设备** > **Xbox One 开发主机**。
+默认情况下，添加到开发人员中心帐户中的所有 Xbox One 开发主机都有权访问你的开发沙盒。  若要添加 Xbox One 主机，请转到[管理 Xbox One 主机](https://partner.microsoft.com/XboxDevices)。 如果你已在开发人员中心帐户中，可以转到**帐户设置** > **帐户设置** > **开发设备** > **Xbox One 开发主机**。
 
 此外，你还可以授权常规 Xbox Live 帐户，使其有权访问你的开发沙盒。  若要授权 Xbox Live 帐户访问你的开发沙盒，请转到[管理帐户](https://developer.microsoft.com/xboxtestaccounts/configurecreators)。
 
