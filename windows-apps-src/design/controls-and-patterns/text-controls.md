@@ -15,24 +15,21 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d68d0a5e6f2a22bc0012b3245ba050df271f7f92
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fc18db25e6404e5236038badd8169ef7bcfc4817
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817405"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210989"
 ---
 # <a name="text-controls"></a>文本控件
-
- 
 
 文本控件由文本输入框、密码框、自动建议框和文本块组成。 XAML 框架提供用于呈现、输入和编辑文本的多个控件，以及一组用于设置文本格式的属性。
 
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
-- 用于文本输入和编辑的控件是 [TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md) 和 [RichEditBox](rich-edit-box.md)。
+- 用于文本输入和编辑的控件是： [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)，以及[PasswordBox](password-box.md)。
 
-> **重要 API**：[AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[TextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
-
+> **重要 Api**: [TextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、 [RichTextBlock 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [TextBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、 [RichEditBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、 [AutoSuggestBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、 [PasswordBox 类](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -124,28 +121,13 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 ## <a name="pen-input"></a>笔输入
 
-> 笔输入功能目前仅在 Windows Insider Preview 中可用。 特征名称、术语和功能并非最终版本。
-
 **适用于：** TextBox、RichEditBox、AutoSuggestBox
 
 从 Windows 10 版本 1803 开始，XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 进行笔输入。 当用户使用 Windows 手写笔点击进入文本输入框时，文本框会进行转换，以允许用户直接用手写笔进行写入，而不是打开一个单独的输入面板。
 
 ![用手写笔点击时，文本框会扩展](images/pen-input-expand.gif)
 
-当用户在文本框中任意位置书写时，系统会进行文本识别，并有候选窗口显示识别结果。 用户可以点击结果进行选择，也可以继续书写以接受建议的候选字词。 候选窗口中包含文本（以及字母）识别结果，因此识别不限于字典中的字词。 当用户书写时，接受的文本输入会被转换为保持自然书写感觉的脚本字体。
-
-![带笔输入的文本框](images/pen-input-1.png)
-
-用户可以使用标准手势和操作编辑其文本，如下面这些：
-
-- _删除_ 或_擦除_ - 绘制通过以删除某个字词或字词部分
-- _联接_ - 在字词之间绘制弧线以删除它们之间的空格
-- _插入_ - 绘制一个插入符号以插入空格
-- _覆盖_ - 在现有文本上书写以替换它
-
-![覆盖笔输入](images/pen-input-2.png)
-
-当你的应用设定目标并且在 Windows 10 版本 1803 或更高版本中运行时，会默认启用嵌入式文本输入。 你可以选择退出以文本框为基础的输入以禁用该功能并恢复为文本输入面板。 要禁用嵌入式文本输入，请将文本控件的 **IsHandwritingViewEnabled** 属性设置为 **false**。
+有关详细信息，请参阅[与手写视图的文本输入](text-handwriting-view.md)。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>为文本控件选择正确的键盘
 
