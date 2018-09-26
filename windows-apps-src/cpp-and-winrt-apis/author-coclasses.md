@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准、 c + +，cpp，winrt，投影，作者，COM、 组件
 ms.localizationpriority: medium
-ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 227ffcd72150e37a513649e69bc7a6709581d65c
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176510"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4205323"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 COM 组件中创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -381,6 +381,127 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 ## <a name="how-to-test-the-example-application"></a>如何测试示例应用程序
 
 生成应用程序，然后再在以管理员身份会导致在注册时，和其他设置，若要运行的代码至少一次运行它。 指示是否正在运行它作为管理员，然后按 \ 以使一个 toast 以显示。 然后可以单击直接从 toast 通知，将启动 pop，或从操作中心，并且你的应用程序、 实例化，coclass 和 INotificationActivationCallback****调用返回 ToastAndCallback**按钮:: 激活**执行方法。
+
+## <a name="in-process-com-server"></a>进程内 COM 服务器
+
+上述*ToastAndCallback*示例应用作为本地 （或进程外） COM 服务器。 这是你用于注册它，指示的[LocalServer32](/windows/desktop/com/localserver32) Windows 注册表项。 本地 COM 服务器承载其 coclass(es) 内的可执行二进制文件 ( `.exe`)。
+
+或者 （和可以说更有可能），你可以选择托管你 coclass(es) 内动态链接库 ( `.dll`)。 形式的 DLL 的 COM 服务器被称为进程内 COM 服务器，并由正在使用注册的[InprocServer32](/windows/desktop/com/inprocserver32) Windows 注册表项。
+
+### <a name="create-a-dynamic-link-library-dll-project"></a>创建动态链接库 (DLL) 项目
+
+你可以开始通过在 Microsoft Visual Studio 中创建新项目中创建的进程内 COM 服务器的任务。 创建**Visual c + +** > **Windows 桌面版** > **动态链接库 (DLL)** 项目。
+
+### <a name="set-project-properties"></a>设置项目属性
+
+转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 设置**Windows SDK 版本**为*10.0.17134.0 （Windows 10，版本 1803年）*，或更高版本。
+
+若要添加 Visual Studio 支持 C + + WinRT 到你的项目，编辑你`.vcxproj`文件，找到`<PropertyGroup Label="Globals">`，该属性在组内，设置属性`<CppWinRTEnabled>true</CppWinRTEnabled>`。
+
+因为 C + + WinRT 使用中的 C + + 17 标准的功能，请将项目属性**C/c + +** > **语言** > 的**c + + 语言标准** *ISO C + + 17 标准 (/ std:c + + 17)*。
+
+### <a name="the-precompiled-header"></a>在预编译标头
+
+重命名你`stdafx.h`和`stdafx.cpp`到`pch.h`和`pch.cpp`分别。 设置项目属性**C/c + +** > **预编译标头** >  *pch.h***预编译标头文件**。
+
+查找和替换所有`#include "stdafx.h"`与`#include "pch.h"`。
+
+在`pch.h`，包括`winrt/base.h`。
+
+```cppwinrt
+// pch.h
+...
+#include <winrt/base.h>
+```
+
+确认你正在不受[为什么不会我的新项目编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
+
+### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>实现 coclass、 类工厂和进程内服务器导出
+
+打开`dllmain.cpp`，并向其添加代码列表，如下所示。
+
+如果你已经拥有一个 DLL，实现 C + + WinRT Windows 运行时类，则你将已经**DllCanUnloadNow**函数如下所示。 如果你想要添加到此 DLL 组件类，你可以添加**DllGetClassObject**函数。
+
+如果没有现有的[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)代码你想要保持兼容，则你可以从显示的代码中删除 WRL 部分。
+
+```cppwinrt
+// dllmain.cpp
+
+struct MyCoclass : winrt::implements<MyCoclass, IPersist>
+{
+    HRESULT STDMETHODCALLTYPE GetClassID(CLSID* id) noexcept override
+    {
+        *id = IID_IPersist; // Doesn't matter what we return, for this example.
+        return S_OK;
+    }
+};
+
+struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
+    MyCoclassFactory : winrt::implements<MyCoclassFactory, IClassFactory>
+{
+    HRESULT STDMETHODCALLTYPE CreateInstance(IUnknown *pUnkOuter, REFIID riid, void **ppvObject) noexcept override
+    {
+        try
+        {
+            *ppvObject = winrt::make<MyCoclass>().get();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
+    }
+
+    HRESULT STDMETHODCALLTYPE LockServer(BOOL fLock) noexcept override
+    {
+        // ...
+        return S_OK;
+    }
+
+    // ...
+};
+
+HRESULT __stdcall DllCanUnloadNow()
+{
+#ifdef _WRL_MODULE_H_
+    if (!::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().Terminate())
+    {
+        return S_FALSE;
+    }
+#endif
+
+    if (winrt::get_module_lock())
+    {
+        return S_FALSE;
+    }
+
+    winrt::clear_factory_cache();
+    return S_OK;
+}
+
+HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** result)
+{
+    try
+    {
+        *result = nullptr;
+
+        if (clsid == __uuidof(MyCoclassFactory))
+        {
+            return winrt::make<MyCoclassFactory>()->QueryInterface(iid, result);
+        }
+
+#ifdef _WRL_MODULE_H_
+        return ::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().GetClassObject(clsid, iid, result);
+#else
+        return winrt::hresult_class_not_available().to_abi();
+#endif
+    }
+    catch (...)
+    {
+        return winrt::to_hresult();
+    }
+}
+```
 
 ## <a name="important-apis"></a>重要的 API
 * [IInspectable 接口](https://msdn.microsoft.com/library/br205821)

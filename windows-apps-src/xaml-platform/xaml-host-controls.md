@@ -9,40 +9,37 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8c263b030cbb8f945ffb13a24b6dff3af28fcc
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173630"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204669"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
 
 > [!NOTE]
 > 作为开发人员预览版当前可用的 Api 和本文中讨论的控件。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 
-Windows 10 现在可以让你可以在非 UWP 桌面应用程序中使用 UWP 控件，以便你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件的最新 Windows 10 UI 功能。 这意味着，你可以使用 UWP 功能，例如[Fluent 设计系统](../design/fluent-design-system/index.md)和[Windows Ink](../design/input/pen-and-stylus-interactions.md)现有 WPF、 Windows 窗体，以及 c + + Win32 应用程序中。 此开发人员方案有时称为*XAML 群岛*。
+Windows 10 现在可以让你可以在非 UWP 桌面应用程序中使用 UWP 控件，以便你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件的最新 Windows 10 UI 功能。 这意味着，你可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 设计系统](../design/fluent-design-system/index.md)支持现有 WPF、 Windows 窗体，以及 c + + Win32 应用程序中的控件。 此开发人员方案有时称为*XAML 群岛*。
 
-我们提供几种方法，用于在桌面应用程序，具体取决于技术或框架你使用的 XAML 群岛。
+我们提供几种方法，用于在 WPF、 Windows 窗体和 c + + Win32 应用程序，具体取决于技术或框架你使用的 XAML 群岛。
 
 ## <a name="wrapped-controls"></a>包装的控件
 
-WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)使用包装 UWP 控件的选择。 你可以直接在 WPF 或 Windows 窗体项目的设计图面添加这些控件并将像任何其他 WPF 或 Windows 窗体控件在设计器中。 我们称为这些控件*包装控件*因为它们换行的接口和特定 UWP 控件的功能。
-
-以下包装的控件支持 Windows 10 版本 1803年及更高版本。
-
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview)。 此控件使用 Microsoft Edge 呈现引擎在 WPF 或 Windows 窗体应用程序中显示 web 内容。
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible)。 此控件是**WebView**与 Windows 10 兼容的版本和以前版本的 Windows。 此控件使用 Microsoft Edge 呈现引擎，以显示在 Windows 10 （版本 1803年及更高版本） 上的 web 内容和 Internet Explorer 呈现引擎来显示在 Windows 7 和 Windows 上的 web 内容 8.x。
-
-以下包装的控件支持 Windows 10 Insider Preview SDK 生成 17709 和更高版本。
-
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)。 这些控件提供对 Windows 窗体或 WPF 桌面应用程序中的基于 Windows Ink 的用户交互的 surface 和相关的工具栏。
-* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement)。 此控件嵌入流式处理和呈现媒体内容，例如 Windows 窗体或 WPF 桌面应用程序中的视频的视图。
-
-多个 UWP 的 WPF 换行控件和 Windows 窗体应用程序计划的 Windows 社区工具包未来版本。
+WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)使用包装 UWP 控件的选择。 我们称为这些控件*包装控件*因为它们换行的接口和特定 UWP 控件的功能。 你可以直接在 WPF 或 Windows 窗体项目的设计图面添加这些控件，并像使用任何其他 WPF 或 Windows 窗体控件中在设计器中使用它们。
 
 > [!NOTE]
 > 包装的控件不可用于 c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
+
+以下包装的 UWP 控件是当前可用的 WPF 和 Windows 窗体应用程序。 在 Windows 社区工具包未来版本计划详细包装的 UWP 控件。
+
+| 控件 | 最低受支持的操作系统 | 说明 |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 使用 Microsoft Edge 呈现引擎来显示 web 内容。 |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供的**web 视图**与多个操作系统版本兼容的版本。 此控件使用 Microsoft Edge 呈现引擎，以显示在 Windows 10 版本 1803年及更高版本上的 web 内容和 Internet Explorer 呈现引擎，以显示 web 内容较早版本的 Windows 10，Windows 8.x 和 Windows 7。 |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK 生成 17709 | 为 surface 和相关的工具栏提供 Windows 窗体或 WPF 桌面应用程序中的基于 Windows Ink 的用户交互。 |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK 生成 17709 | 嵌入流式处理和呈现媒体内容，例如 Windows 窗体或 WPF 桌面应用程序中的视频的视图。 |
 
 ## <a name="host-controls"></a>主机控件
 
