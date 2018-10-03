@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 加载项销售, 加载项购置, iap 销售, 应用内产品, iap, 加载项
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268016"
+ms.locfileid: "4317627"
 ---
 # <a name="add-on-acquisitions-report"></a>加载项购置报告
 

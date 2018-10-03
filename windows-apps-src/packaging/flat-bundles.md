@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 打包, 包配置, 平面捆绑包
 ms.localizationpriority: medium
 ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4263152"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4315041"
 ---
 # <a name="flat-bundle-app-packages"></a>平面捆绑应用包 
 

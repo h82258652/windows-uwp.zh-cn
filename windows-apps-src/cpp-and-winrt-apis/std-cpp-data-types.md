@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262086"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4316601"
 ---
-# <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>标准 C++ 数据类型和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-借助 C++/WinRT，你可以使用标准 C++ 数据类型（包括某些 C++ 标准库数据类型）调用 Windows 运行时 API。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到预期语义上等效的集合的 Api。
+# <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
+
+与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用标准 c + + 数据类型，包括一些 c + + 标准库数据类型。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到预期语义上等效的集合的 Api。
 
 ## <a name="standard-initializer-lists"></a>标准初始值列表
 初始值列表 (**std::initializer_list**) 是 C++ 标准库构造。 在调用特定的 Windows 运行时构造函数和方法时，你可以使用初始值列表。 例如，你可以使用一个初始值列表来调用 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。

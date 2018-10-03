@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265148"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4320665"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>使用应用安装程序文件遇到的安装问题的疑难解答
 

@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 68a631153c104f14f22839077c4c62d34626ed2a
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267112"
+ms.locfileid: "4318059"
 ---
-# <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>从 C++/CX 移动到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-本主题介绍如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 代码移植到 C++/WinRT 中的等效项。
+# <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
+
+本主题介绍如何将移植[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码中的等效[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 > [!IMPORTANT]
 > 如果你想要逐渐移植你[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码与 C + + WinRT，则可以。 C + + /CX 和 C + + /winrt 代码可以在同一项目中，XAML 编译器支持，以及 Windows 运行时组件除外共存。 对于这些异常，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。 但你可以使用 XAML 应用退出因素代码在 Windows 运行时组件，如将其移植。 无论是移动尽可能多的 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用这两张信用卡从你的应用程序项目，并逐渐移植到另一个。

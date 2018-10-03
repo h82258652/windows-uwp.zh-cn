@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268038"
+ms.locfileid: "4315177"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
@@ -370,7 +370,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>瑞典 *</td>
     <td>瑞士 *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>塔吉克斯坦</td>
   </tr>
   <tr>

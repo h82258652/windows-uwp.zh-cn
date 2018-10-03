@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，可选包，相关的集、 程序包扩展，visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 4864bdaa1f32b980c5c8b159ca71bb6a56da4ec5
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265320"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4317814"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>可选包和相关集的创作
 可选包中包含可与主要包相集成的内容。 这些可用于可下载内容 (DLC)，因为划分大型应用大小限制，或者用于随附的任何其他内容单独从原始应用。

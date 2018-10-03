@@ -11,11 +11,11 @@ keywords: windows 10，uwp 安全
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: ac2e29d5219809058edee2d7a92c2e2475d9752e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262556"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4317185"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd1dffe4da7b3725ef7716fe9cf28bdf8eaf34f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4260979"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314067"
 ---
 # <a name="working-with-symbologies"></a>使用标志
 [条形码标志](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)是到特定条形码格式的数据映射。 一些常见的标志包括 UPC、 Code 128、 QR 代码中，依次类推。  通用 Windows 平台条形码扫描仪 Api 允许应用程序控制扫描仪如何处理这些标志而无需手动配置扫描仪。 

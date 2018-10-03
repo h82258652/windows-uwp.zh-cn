@@ -3,30 +3,29 @@ author: stevewhims
 description: C + + /winrt 提供函数和节省大量时间和精力当你想要实现和/或传递集合的基类。
 title: 集合通过 C + + WinRT
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影集合
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265362"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312311"
 ---
-# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用集合[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="collections-with-cwinrt"></a>集合通过 C + + WinRT
 
-> [!NOTE]
-> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
-
-在内部，Windows 运行时集合有很多复杂移动部件。 但当你想要将集合对象传递给 Windows 运行时函数，或实现你自己的集合属性和集合类型，有函数和基本类在 C + + /winrt 来支持你。 这些功能的复杂性退出或在双手，并采用时间和精力保存你的大量的开销。
-
-> [!IMPORTANT]
-> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，可用或更高版本可以在本主题中所述的功能。
+在内部，Windows 运行时集合有很多复杂移动部件。 但当你想要将集合对象传递给 Windows 运行时函数，或实现你自己的集合属性和集合类型，有函数和基类[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)以支持你。 这些功能的复杂性退出或在双手，并采用时间和精力保存你的大量的开销。
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)是任何随机访问元素的集合，由实现的 Windows 运行时接口。 如果你要自行实现**IVector** ，还需要实现[**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)和[**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)。 即使你*需要*自定义集合类型，有大量工作。 但是，如果你已将**std:: vector** （或**std:: map**或**std::unordered_map**） 中的数据，并且只想要执行操作传递给 Windows 运行时 API，然后你想要避免尽可能进行工作，该级别。 和避免它*是*可能的因为 C + + WinRT 将帮助你高效地轻松地创建集合。
+
+另请参阅[XAML 项目控件; 绑定到 C + + /winrt 集合](binding-collection.md)。
+
+> [!NOTE]
+> 如果你尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更高版本，然后你将不会有权访问的函数和本主题中介绍的基类。 相反，将看到[是否你有较早版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)有关你可以改为使用可观测矢量模板的列表。
 
 ## <a name="helper-functions-for-collections"></a>对于集合的帮助程序函数
 

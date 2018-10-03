@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 外部测试
 ms.localizationpriority: medium
 ms.openlocfilehash: d5f43173c85bc8a696d7dbc9967e704f79db2b3f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268172"
+ms.locfileid: "4318121"
 ---
 # <a name="package-flights"></a>软件包外部测试版
 

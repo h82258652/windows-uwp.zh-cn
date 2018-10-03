@@ -3,25 +3,22 @@ author: stevewhims
 description: 本主题介绍如何直接或间接使用 **winrt::implements** 基结构来创作 C++/WinRT API。
 title: 使用 C++/WinRT 创作 API
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4261156"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309267"
 ---
-# <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作 API
+# <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
-> [!NOTE]
-> **与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。**
-
-本主题介绍如何直接或间接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基结构来创作 C++/WinRT API。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
+本主题演示如何创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)通过使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements) Api 直接或间接基结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 - 你*不是*在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用。 在此案例中，你直接从 **winrt::implements** 派生并实现相关函数。
 - 你*正在*创作一个运行时类。 你可能正在创作一个要从某个应用中使用的组件。 或者，你可能正在创作一个要从 XAML 用户接口 (UI) 使用的类型，在此情况下，你在同一个编译单元内实现和使用一个运行时类。 在这些情况下，你使用工具为你生成派生自 **winrt::implements** 的类。
@@ -285,17 +282,17 @@ iclosable.Close();
 
 **MyType** 类不是投影的一部分；它是实现。 但是，通过这种方法，你可以直接调用其实现方法，而无需虚拟函数调用的开销。 在上面的示例中，即使 **MyType::ToString** 在 **IStringable** 上使用与投影方法相同的签名，我们也还是直接调用非虚拟方法，而不必跨越应用程序二进制接口 (ABI)。 **com_ptr** 只包含指向 **MyType** 结构的指针，因此你还可以通过 `myimpl` 变量和箭头运算符访问 **MyType** 的任何其他内部细节。
 
-假设你有一个接口对象，并且你恰好知道它是实现上的接口，则可以使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi) 函数模板返回到实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。
+在以下情况： 你有一个接口对象，并且你恰好知道它是实现上的接口，然后你可以回到使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函数模板的实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。
 
 > [!NOTE]
-> 如果你安装了[Windows 10 SDK 预览版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更高版本，然后你可以调用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+> 如果你尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更高版本，然后你需要调用[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
 下面提供了一个示例。 [实现**BgLabelControl**自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中有另一个示例。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
 {
-    MyType* myimpl = winrt::from_abi<MyType>(from);
+    MyType* myimpl = winrt::get_self<MyType>(from);
     myimpl->ToString();
     myimpl->Close();
 }
@@ -305,7 +302,7 @@ void ImplFromIClosable(IClosable const& from)
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
-impl.copy_from(winrt::from_abi<MyType>(from));
+impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 

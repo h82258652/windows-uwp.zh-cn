@@ -13,12 +13,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3480288035d98ab3f68da33f9121e7daaf86180f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4264382"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4326167"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 图标
 
@@ -58,6 +58,12 @@ ms.locfileid: "4264382"
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
+
+你还可以使用静态资源`SymbolThemeFontFamily`若要访问**Segoe MDL2 Assets**，而不是按名称指定字体：
+```xaml
+<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
+```
+
 
 ## <a name="how-do-i-get-this-font"></a>如何获取该字体？
 * Windows 10： 上没有任何你需要执行操作，字体附带 Windows。

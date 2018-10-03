@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 目标通知, 推送通知, toast, 磁贴
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4266838"
+ms.locfileid: "4315287"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>向应用客户发送通知
 

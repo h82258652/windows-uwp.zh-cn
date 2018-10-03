@@ -12,12 +12,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268162"
+ms.locfileid: "4312425"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -162,9 +162,9 @@ Visual Studio 提供用于管理你的应用图标称为**清单设计器**非�
 
 在**视觉资源**选项卡，**所有视觉资源**，第一个菜单项未完全什么其名称所示： 生成你的应用需要按某个按钮与每个视觉资产。
 
-![Visaul Studio 中生成所有视觉资源](images/app-icons/all-visual-assets.png)
+![在 Visual Studio 中生成所有视觉资源](images/app-icons/all-visual-assets.png)
 
-你只需提供一个图像，并且 Visaul Studio 将生成小磁贴、 中等磁贴、 大磁贴、 宽磁贴、 大磁贴、 应用图标、 初始屏幕，以及打包徽标资源，以便每个比例系数。
+你需要做是提供单个图像，并 Visual Studio 将生成小磁贴、 中等磁贴、 大磁贴、 宽磁贴、 大磁贴、 应用图标、 初始屏幕，并打包徽标资源，以便每个比例系数。
 
 若要在一次生成所有资源：
 1. 单击**源**字段旁边的 **...** 并选择你想要使用的图像。 如果你使用位图图像，确保它至少 400 400 个像素，以便你获得清晰的结果。 基于矢量的图像工作性能最佳;Visual Studio 可让你可以使用 AI (Adobe Illustrator) 和 PDF 文件。 

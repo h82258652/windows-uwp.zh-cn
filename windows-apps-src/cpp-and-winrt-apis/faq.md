@@ -9,36 +9,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4b7b78bf3ef0a561d102804a245c59b6519796
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 4f1d2bdfe5ce88ed4e3f5f3e618fb7034f4eb0bb
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4264352"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313881"
 ---
-# <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 常见问题
-对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
+# <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
+你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 > [!NOTE]
 > 如果问题与你看到的错误消息有关，另请参阅 [C++/WinRT 问题疑难解答](troubleshooting.md)主题。
 
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何重定向我的 C + + 到更高版本的 Windows SDK 的 WinRT 项目？
 
-Windows SDK 的最新公开发布版本是 10.0.17763.0 (Windows 10 版本 1809年)。 重定目标项目可能会导致最少的编译器和链接器问题的方法也是工作量最大。 该方法需要创建新项目 （面向你选择的 Windows SDK 版本），然后通过中将文件复制到新项目中，从旧。 将旧的部分`.vcxproj`和`.vcxproj.filters`文件，你可以只复制超过保存你在 Visual Studio 中添加文件。
-
-但是，有两种其他方法，然后重新你在 Visual Studio 中的项目。
-
-- 转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 **Windows SDK 版本**设置为你想要面向的版本。
-- 在**解决方案资源管理器**中，右键单击项目节点单击**重定目标项目**，选择你想要面向，版本而定，然后单击**确定**。
-
-如果使用这两种方法，其中任一后遇到任何编译器或链接器错误，则你可以尝试清理解决方案 (**生成** > **全新解决方案**和/或手动删除所有临时文件夹和文件) 然后再尝试重新生成。
-
-如果 c + + 编译器产生"*错误 C2039: 'IUnknown': 不是成员 \'global 命名空间 '*"，然后添加`#include <unknwn.h>`到顶部你`pch.h`文件。
-
-你可能还需要添加`#include <hstring.h>`在此之后。
-
-如果 c + + 链接器产生"*错误 LNK2019： 无法解析的外部符号_WINRT_CanUnloadNow@0函数中引用_VSDesignerCanUnloadNow@0*"，然后你可以通过添加解决的`#define _VSDESIGNER_DONT_LOAD_AS_DLL`到你`pch.h`文件。
-
+请参阅[如何重定目标 C + + 到更高版本的 Windows SDK 的 WinRT 项目](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 在我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
 
@@ -84,7 +70,7 @@ C:\ExperimentWithLLVMClang>type main.cpp
 #pragma comment(lib, "windowsapp")
 #pragma comment(lib, "ole32")
 
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <stdio.h>
 #include <iostream>
 
@@ -167,4 +153,4 @@ a.f();
 如上所示的建议的模式适用而不只是于 C + + WinRT 但向所有 Windows 运行时语言投影。
 
 > [!NOTE]
-> 如果本主题没有解决你的问题，你可以[在 Stack Overflow 上使用 `c++-winrt` 标签](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)查找帮助。
+> 如果本主题没有解决问题，则通过访问[Visual Studio c + + 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)，或通过使用，你可能会发现帮助[`c++-winrt`标记 Stack Overflow 上](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。

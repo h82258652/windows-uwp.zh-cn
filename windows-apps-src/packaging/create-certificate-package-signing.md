@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 448b4405381c3100f8b92abd0f2889799c0354fc
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266714"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309899"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 0531cbefef509f7bc323829031b366bec3c798d8
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4258962"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4316125"
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
