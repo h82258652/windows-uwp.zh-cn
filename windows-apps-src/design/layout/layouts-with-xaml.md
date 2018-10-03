@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211261"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260470"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -99,7 +99,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
 > [!Tip]
-> 当你有在 UI 中的元素是**折叠**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 当你有在 UI 中的某些元素是**Collapsed**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>样式资源
 
@@ -113,7 +113,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 
 下面对 XAML 框架中提供的面板控件的主要功能做一个比较。
 
-面板控件 | 说明
+面板控件 | 描述
 --------------|------------
 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) | **Canvas** 不支持动态 UI；控制设置子元素位置和大小的所有方面。 通常将其用于特殊情况（例如创建图形），或用于定义较大自适应 UI 的小静态区域。 可以使用代码或视觉状态来在运行时重新放置元素。<li>元素使用 Canvas.Top 和 Canvas.Left 附加属性进行绝对定位。</li><li>可以使用 Canvas.ZIndex 附加属性明确指定分层。</li><li>HorizontalAlignment/VerticalAlignment 的 Stretch 值将忽略。 如果未显式设置元素的大小，它会调整大小以容纳其内容。</li><li>如果子内容超出面板，则视觉上不会被截断。 </li><li>子内容不受面板边界限制。</li>
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) | **Grid** 支持对子元素进行动态调整大小。 可以使用代码或视觉状态来重新定位和重新排列元素。<li>元素使用 Grid.Row 和 Grid.Column 附加属性在行和列中进行排列。</li><li>通过使用 Grid.RowSpan 和 Grid.ColumnSpan 附加属性，元素可跨越多行和多列。</li><li>将遵循 HorizontalAlignment/VerticalAlignment 的 Stretch 值。 如果未明确设置元素的大小，则该元素会拉伸以填满网格单元格中的可用空间。</li><li>如果子内容超出面板，则视觉上会被截断。</li><li>由于内容大小受面板边界限制，因此可滚动的内容会显示滚动条（如果需要）。</li>
@@ -236,7 +236,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在之前示例中，**网格**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
+> 在前面的示例中， **Grid**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
 
 ### <a name="attached-property-syntax"></a>附加属性语法
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83c4645a09a38a76dfd230436e858e222d817eab
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208045"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259316"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
@@ -38,7 +38,7 @@ ms.locfileid: "4208045"
 4.  在**广告单元类型**下拉列表中，选择广告类型。
 
     * 如果你的应用中显示横幅广告时，选择**横幅**。
-    * 如果你的应用中显示的间隙视频广告或间隙横幅广告，请选择**间隙视频**或**间隙横幅**（请务必选择你想要显示的间隙广告类型的相应选项）。
+    * 如果你的应用中显示间隙视频广告或间隙横幅广告，请选择**间隙视频**或**间隙横幅**（请务必选择你想要显示的间隙广告类型的相应选项）。
     * 如果你的应用中显示本机广告时，选择**本机**。
 
 5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)**、**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)**。
@@ -111,7 +111,7 @@ ms.locfileid: "4208045"
 
 |  广告网络  |  说明  |  支持的广告类型  |
 |--------------|---------------|---------------------|
-| Oath 和 AppNexus |  这是可提供通过我们的合作伙伴的广告网络，Oath 和 AppNexus Microsoft 托管的广告网络。<p/>**注意**： Oath 和 AppNexus 始终排名第一**付费广告网络**列表中的横幅广告单元，并且它不能更改为更低排名针对这些类型的广告。 | 横幅、视频间隙 |
+| Oath 和 AppNexus |  这是可通过我们的合作伙伴的广告网络，Oath 和 AppNexus 提供一个 Microsoft 托管的广告网络。<p/>**注意**： Oath 和 AppNexus 为始终排名第一**付费广告网络**列表中的横幅广告单元，并且它不能更改为更低排名针对这些类型的广告。 | 横幅、视频间隙 |
 | AppNexus（直接） | 选择此选项以从[AppNexus](https://www.appnexus.com)提供广告。 | 视频间隙、本机  |
 | Microsoft 应用安装广告 | 选择此选项以提供由 Windows 生态系统中[为其应用创建促销广告市场活动](create-an-ad-campaign-for-your-app.md)的其他开发人员创建的应用安装广告或应用重新参与广告。  |  横幅、横幅间隙、本机  |
 | MSN 内容建议 |  选择此选项以从 MSN 内容建议提供广告。 |  横幅、横幅间隙  |

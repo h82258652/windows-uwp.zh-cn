@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210907"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258500"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
@@ -92,7 +92,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 可以使用来自类库（通用 Windows）或 [Windows 运行时库（通用 Windows）](../winrt-components/index.md)项目内的相同代码。 在运行时，加载托管库的应用的资源。 我们建议库从托管库的应用加载资源，因为应用的本地化程度可能更高。 如果库确实需要提供资源，该库应向其托管应用提供将这些资源替换为输入的选项。
 
-如果分段的资源名称 (它包含"。"字符)，然后替换点使用正斜杠 （"/"） 中的资源名称的字符。 属性标识符，例如，包含点;因此，你需要执行此 substition 操作以便加载其中一种从代码。
+如果分段的资源名称 (它包含"。"字符)，然后替换点使用正斜杠 （"/"） 中的资源名称的字符。 属性标识符，例如，包含点;因此，你需要执行此 substition 操作以便加载其中一个引擎从代码。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
@@ -175,7 +175,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果要将“AppDisplayName”资源从 `Resources.resw` 移动到 `ManifestResources.resw`，在应用包清单中，需将 `ms-resource:AppDisplayName` 更改为 `ms-resource:/ManifestResources/AppDisplayName`。
 
-如果分段资源文件名 (它包含"。"字符)，然后在名称中保留点时引用它。 **不要**替换正斜杠 （"/"） 字符，像针对资源名称的点。
+如果分段资源文件名 (它包含"。"字符)，然后在名称中退出点时引用它。 **不要**替换正斜杠 （"/"） 字符，像针对资源名称的点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -268,7 +268,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-为 Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
+Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204733"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258388"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "4204733"
 在许多情况下，你可以直接从桌面应用程序中调用 UWP API，因此在查看本指南前，请参阅[面向 Windows 10 的增强](desktop-to-uwp-enhance.md)。
 
 >[!NOTE]
->本指南假设你已使用桌面桥为桌面应用程序创建了 Windows 应用包。 如果你尚未完成此操作，请参阅[桌面桥](desktop-to-uwp-root.md)。
+>本指南假定你已为桌面应用程序创建 Windows 应用包。 如果你尚未完成此操作，请参阅[打包桌面应用程序](desktop-to-uwp-root.md)。
 
 如果你已准备就绪，那我们开始吧。
 
@@ -40,7 +40,7 @@ ms.locfileid: "4204733"
 
 ![扩展启动项目](images/desktop-to-uwp/extend-start-project.png)
 
-如果你的解决方案不包含打包项目，请参阅[使用 Visual Studio 打包应用](desktop-to-uwp-packaging-dot-net.md)。
+如果你的解决方案不包含打包项目，请参阅[包使用 Visual Studio 的桌面应用程序](desktop-to-uwp-packaging-dot-net.md)。
 
 ### <a name="add-a-uwp-project"></a>添加 UWP 项目
 
@@ -83,6 +83,9 @@ ms.locfileid: "4204733"
 此图像显示 Windows 窗体应用程序，该应用程序可打开包含地图控件的、基于 XAML 的新式 UI。
 
 ![自适应设计](images/desktop-to-uwp/extend-xaml-ui.png)
+
+>[!NOTE]
+>此示例显示了通过向解决方案中添加 UWP 项目的 XAML UI。 这是显示 XAML Ui 中的桌面应用程序的稳定支持的方法。 此方法的替代方法是使用 XAML 岛直接向桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[在桌面应用程序的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>设计模式
 
@@ -245,7 +248,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ## <a name="provide-services-to-other-apps"></a>向其他应用提供服务
 
-添加其他应用可以使用的服务。 例如，你可以添加一个服务，以允许其他应用对你的应用之后的数据库进行受控访问。 通过实现后台任务，即使桌面应用未运行时，应用也可以访问该服务。
+添加其他应用可以使用的服务。 例如，你可以添加一个服务，以允许其他应用对你的应用之后的数据库进行受控访问。 通过实现后台任务，应用可以访问该服务，即使未运行桌面应用程序。
 
 下面是执行此操作的示例。
 
@@ -330,7 +333,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="test-the-app-service"></a>测试应用服务
 
-通过从其他应用中调用你的服务来对其进行测试。 该代码可以是桌面应用程序，例如 Windows 窗体应用或其他 UWP 应用。
+通过从其他应用中调用你的服务来对其进行测试。 此代码可以如 Windows 窗体应用程序或其他 UWP 应用的桌面应用程序。
 
 > [!NOTE]
 > 只有在你正确设置了 ``AppServiceConnection`` 类的 ``PackageFamilyName`` 属性时，该代码才能正常工作。 你可以通过在 UWP 项目的上下文中调用 ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` 来获得该名称。 请参阅[创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
@@ -376,7 +379,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 可使你的桌面应用程序成为共享目标，以使用户能够轻松地共享数据，如来自支持共享的其他应用的图片。
 
-例如，用户可能选择你的应用来共享来自 Microsoft Edge 这一照片应用的图片。 下面是具有该功能的 WPF 示例应用。
+例如，用户可能选择你的应用程序共享来自 Microsoft Edge，照片应用的图片。 下面是具有该功能的 WPF 示例应用程序。
 
 ![共享目标](images/desktop-to-uwp/share-target.png)
 
@@ -447,7 +450,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 你可以添加后台任务，从而在应用挂起后继续运行代码。 后台任务对于不需要用户交互的小任务非常有用。 例如，你的任务可以下载邮件，显示有关传入聊天消息的 Toast 通知，或对系统状况中的更改做出响应。
 
-下面是一个注册后台任务的 WPF 示例应用。
+下面是注册后台任务的 WPF 示例应用程序。
 
 ![后台任务](images/desktop-to-uwp/sample-background-task.png)
 

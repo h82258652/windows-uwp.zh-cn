@@ -15,12 +15,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c69f516ab3bd412453883d6384237c8ee5446a09
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674594"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259746"
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -60,6 +60,9 @@ ms.locfileid: "1674594"
 此 XAML 为 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 创建了 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316)，可指定控件的内容显示在选择框的下方。 根元素为 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250)。 该示例指定 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 来创建 **X**，表示用户已选定 **CheckBox**，并用 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 表示不确定状态。 请注意，[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 在 **Path** 和 **Ellipse** 上均设置为 0，因此在默认情况下，两者都不会显示。
 
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 是一种特殊的绑定，将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
+
+> [!NOTE]
+> 从开始到 Windows 10 的下一个主要更新，你可以使用[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)标记扩展中的位置中使用[TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 有关详细信息，请参阅 [TemplateBinding 标记扩展](../../xaml-platform/templatebinding-markup-extension.md)。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

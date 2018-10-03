@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212535"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264132"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -283,7 +283,7 @@ foreach (uint id in toBeRemoved)
 > [!IMPORTANT] 
 > 已知问题： 前台事件将导致 CPU 循环上最新版本的 Windows，并且之前无法正常工作之前。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
 
-而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
+而不是使用前台事件，使用前面显示为[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)

@@ -4,30 +4,30 @@ Description: View details related to the unique identity assigned to your app by
 title: 查看应用标识的详细信息
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
-ms.date: 12/21/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211111"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259826"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-在 Windows 开发人员中心仪表板中的应用时，你可以查看由 Microsoft 应用商店分配给它的唯一标识符相关的详细信息。 此外，你还可以获取指向应用的应用商店一览的链接。
+你可以查看与分配给你的应用的**应用标识**页面上的 Microsoft Store 的唯一标识符相关的详细信息。 你还可以获取指向你的应用的应用商店的此页面上列出。
 
 若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
 
-以下值必须包含在 .appx 程序包清单中。 如果[使用 Microsoft Visual Studio 生成程序包](../packaging/packaging-uwp-apps.md)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
+以下值必须包含在程序包清单中。 如果[使用 Microsoft Visual Studio 生成程序包](../packaging/packaging-uwp-apps.md)，并使用与你的开发者帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将以下各项添加到程序包中：
 
 -   **程序包/标识/名称**
 -   **程序包/标识/发布者**

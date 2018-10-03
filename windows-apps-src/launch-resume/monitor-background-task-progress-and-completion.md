@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204999"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263438"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成
 
@@ -38,7 +38,7 @@ ms.locfileid: "4204999"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>创建一个事件处理程序以处理完成的后台任务
 
 ### <a name="step-1"></a>步骤 1
-创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)的对象以及[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)对象。
+创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)对象和[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)对象。
 
 使用以下足迹对于**OnCompleted**后台任务事件处理程序方法。
 

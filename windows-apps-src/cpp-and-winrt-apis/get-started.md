@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
 ms.openlocfilehash: f058ece64e6f041b5b0e8731a7891968f573f744
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206405"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258438"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 入门
 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
@@ -26,7 +26,7 @@ ms.locfileid: "4206405"
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
 
 > [!IMPORTANT]
-> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，则新创建 C + + WinRT 项目可能无法编译带有错误"*错误 C3861: from_abi： 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
+> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
 
 按下面所示编辑 `pch.h` 和 `main.cpp`。
 

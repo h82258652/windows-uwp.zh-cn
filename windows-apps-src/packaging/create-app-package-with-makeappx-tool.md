@@ -3,19 +3,19 @@ author: laurenhughes
 title: 使用 MakeAppx.exe 工具创建应用包
 description: MakeAppx.exe 创建、加密、解密应用程序包和捆绑包，并从中提取文件。
 ms.author: lahugh
-ms.date: 03/07/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 打包, windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 94972915e5fc80a477d8d647212ab3b91e0aa384
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817788"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264322"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
 
@@ -25,10 +25,12 @@ ms.locfileid: "1817788"
 > [!IMPORTANT] 
 > 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.appx 和 .appxsym。 .Appxsym 文件是一个压缩的 .pdb 文件，包含在 Windows 开发人员中心中用于[崩溃分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的应用的公共符号。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
+请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分创建，并包含其他两个文件：.msix 或.appx 和.appxsym。 .Appxsym 文件是一个压缩的 .pdb 文件，包含在 Windows 开发人员中心中用于[崩溃分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的应用的公共符号。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
+
+ 更新到最新版本的 Windows 10 中的此工具不会影响.appx 包使用情况。 你可以继续使用此工具与.appx 程序包，或支持针对.msix 包使用该工具，如下所述。
 
 手动创建一个 .appxupload 文件：
-- 将 .appx 和 .appxsym 放在一个文件夹中
+- 将.msix 和.appxsym 放在一个文件夹
 - 压缩该文件夹
 - 将压缩的文件夹扩展名从 .zip 更改为 .appxupload
 
@@ -58,7 +60,6 @@ MakeAppx <command> [options]
 | unbundle      | 将所有程序包解压到以捆绑包完整名称命名的指定输出路径下的子目录中。 |
 | encrypt       | 在指定的输出程序包/捆绑包中，从输入程序包/捆绑包中创建加密的应用包或捆绑包。 |
 | decrypt       | 在指定的输出程序包/捆绑包中，从输入应用包/捆绑包中创建解密的应用包或捆绑包。 |
-| 内部版本         |  |
 
 
 此选项列表适用于所有命令：
@@ -81,14 +82,14 @@ MakeAppx <command> [options]
 
 | **参数**                          | **描述**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;output package name&gt;           | 创建的程序包的名称。 这是附有 .appx 的文件名。 |
-| &lt;encrypted output package name&gt; | 创建的加密包的名称。 这是附有 .eappx 的文件名。 |
-| &lt;input package name&gt;            | 程序包的名称。 这是附有 .appx 的文件名。 |
-| &lt;encrypted input package name&gt;  | 加密包的名称。 这是附有 .eappx 的文件名。 |
-| &lt;output bundle name&gt;            | 创建的捆绑包的名称。 这是附有 .appxbundle 的文件名。 |
-| &lt;encrypted output bundle name&gt;  | 创建的加密捆绑包的名称。 这是附有 .eappxbundle 的文件名。 |
-| &lt;input bundle name&gt;             | 捆绑包的名称。 这是附有 .appxbundle 的文件名。 |
-| &lt;encrypted input bundle name&gt;   | 加密捆绑包的名称。 这是附有 .eappxbundle 的文件名。 |
+| &lt;output package name&gt;           | 创建的程序包的名称。 这是附有.msix 或.appx 的文件名。 |
+| &lt;encrypted output package name&gt; | 创建的加密包的名称。 这是附有.emsix 或.eappx 的文件名。 |
+| &lt;input package name&gt;            | 程序包的名称。 这是附有.msix 或.appx 的文件名。 |
+| &lt;encrypted input package name&gt;  | 加密包的名称。 这是附有.emsix 或.eappx 的文件名。 |
+| &lt;output bundle name&gt;            | 创建的捆绑包的名称。 这是附有.msixbundle 或.appxbundle 文件名称。 |
+| &lt;encrypted output bundle name&gt;  | 创建的加密捆绑包的名称。 这是附有.emsixbundle 或.eappxbundle 的文件名。 |
+| &lt;input bundle name&gt;             | 捆绑包的名称。 这是附有.msixbundle 或.appxbundle 文件名称。 |
+| &lt;encrypted input bundle name&gt;   | 加密捆绑包的名称。 这是附有.emsixbundle 或.eappxbundle 的文件名。 |
 | &lt;content directory&gt;             | 应用包或捆绑包内容的路径。 |
 | &lt;mapping file&gt;                  | 指定程序包源和目标的文件名。 |
 | &lt;output directory&gt;              | 输出程序包和捆绑包的目录路径。 |
@@ -98,7 +99,7 @@ MakeAppx <command> [options]
 
 ### <a name="create-an-app-package"></a>创建应用包
 
-应用包是一个打包到 .appx 程序包文件的完整应用文件集合。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
+应用包是整套到.msix 或.appx 包文件中打包的应用的文件。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
 特定于 **pack** 命令的选项：
 
@@ -125,12 +126,12 @@ MakeAppx pack [options] /d <content directory> /ep <encrypted output package nam
 下面显示了 **pack** 命令的命令行示例：
 
 ``` examples
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.appx
-MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.appx
-MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.appx
-MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.appx
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kf MyKeyFile.txt
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.msix
+MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.msix
+MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.msix
+MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.msix
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kf MyKeyFile.txt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 ```
 
 ### <a name="create-an-app-bundle"></a>创建应用程序包
@@ -157,10 +158,10 @@ MakeAppx bundle [options] /f <mapping file> /ep <encrypted output bundle name> /
 下面的块包含 **bundle** 命令的示例：
 
 ``` examples
-MakeAppx bundle /v /d "C:\My Files" /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kf MyKeyFile.txt
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kt
+MakeAppx bundle /v /d "C:\My Files" /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kf MyKeyFile.txt
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kt
 ```
 
 ### <a name="extract-files-from-a-package-or-bundle"></a>从程序包或捆绑包中解压缩文件
@@ -189,13 +190,13 @@ MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directo
 下面的块包含 **unpack** 和 **unbundle** 命令的使用示例：
 
 ``` examples
-MakeAppx unpack /v /p MyPackage.appx /d "C:\My Files"
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kt
+MakeAppx unpack /v /p MyPackage.msix /d "C:\My Files"
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kt
 
-MakeAppx unbundle /v /p MyBundle.appxbundle /d "C:\My Files"
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kt
+MakeAppx unbundle /v /p MyBundle.msixbundle /d "C:\My Files"
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 ```
 
 ### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>加密或解密程序包或捆绑包
@@ -223,28 +224,12 @@ MakeAppx decrypt [options] /ep <package name> /p <output package name> /kt
 下面的块包含 **encrypt** 和 **decrypt** 命令的使用示例：
 
 ``` examples
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 
-MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe decrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 ```
-
-### <a name="build-an-app-package"></a>生成应用包 
-
-**MakeAppx.exe** 可根据它的应用包布局文件生成应用。 若要了解如何创建包布局文件以及如何使用 **MakeAppx.exe** 生成该文件，请参阅[用包布局创建程序包](packaging-layout.md)。  
-
-特定于 **build** 命令的选项：
-
-| **选项**    | **说明**                       |
-|---------------|---------------------------------------|
-| /bc           | 指定要生成的包系列中的子包。  |
-| /id           | 用于选择要根据程序包 **ID** 属性生成的程序包。 |
-| /ip           | 指示应用包的以前版本的位置。 |
-| /iv           | 自动递增正在生成的程序包的版本。 |
-| /f            | 指定打包布局文件。 |
-| /nbp          | 指示不应生成应用包。 |
-| /op           | 输出程序包目标。 |
 
 ## <a name="key-files"></a>密钥文件
 

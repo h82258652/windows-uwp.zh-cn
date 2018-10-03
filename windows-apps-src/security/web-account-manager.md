@@ -11,11 +11,11 @@ keywords: windows 10，uwp 安全
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212561"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262320"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -179,7 +179,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果你的应用使用的登录提示 （若要填充的默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时忽略此属性。
+> （可选） 如果你的应用使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时忽略此属性。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211237"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261156"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作 API
 
@@ -37,7 +37,7 @@ ms.locfileid: "4211237"
 > [!NOTE]
 > 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[对 C++/WinRT 的 Visual Studio 支持以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目模板阐释**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
+在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目模板阐释了**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;

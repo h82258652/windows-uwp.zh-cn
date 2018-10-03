@@ -3,19 +3,19 @@ author: laurenhughes
 title: 设置 UWP 应用的自动生成
 description: 如何配置自动生成以生成旁加载和/或应用商店程序包。
 ms.author: lahugh
-ms.date: 03/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354254e01333db17f1151c182267c0330a799ba
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832358"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261680"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -81,7 +81,7 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 
 #### <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
-此任务将工作文件夹中的任何解决方案编译为二进制文件，并生成输出 AppX 文件。 此任务使用 MSbuild 参数。  你必须指定这些参数的值。 使用下表作为指南。 
+此任务将在对二进制文件的工作文件夹，并且生成输出应用包文件的任何解决方案编译。 此任务使用 MSbuild 参数。  你必须指定这些参数的值。 使用下表作为指南。 
 
 |**MSBuild 参数**|**值**|**说明**|
 |--------------------|---------|---------------|
@@ -111,7 +111,7 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 
 ![项目](images/building-screen6.png)
 
-由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，项目文件夹将包含建议提交到应用商店的程序包 (.appxupload)。 请注意，还可以将常规应用包 (.appx) 或应用程序包 (.appxbundle) 提交到应用商店。 在本文中，我们将使用 .appxupload 文件。
+由于我们已将 `UapAppxPackageBuildMode` 属性设置为 `StoreUpload`，项目文件夹将包含建议提交到应用商店的程序包 (.appxupload)。 请注意，你还可以提交常规应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle) 到应用商店。 在本文中，我们将使用 .appxupload 文件。
 
 
 >[!NOTE]
@@ -216,7 +216,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 然后，从生成步骤中删除 `AppxBundle` msbuild 参数。
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>设置连续部署生成用于旁加载
-当此类型的生成完成时，用户可以从生成结果页的项目部分下载 .appxbundle 文件。 如果要通过创建更完整的分配来对应用进行 beta 测试，可使用 HockeyApp 服务。 此服务提供用于 beta 测试、用户分析和崩溃诊断的高级功能。
+此类型的生成完成后，用户可以从生成结果页的项目部分下载应用包文件。 如果要通过创建更完整的分配来对应用进行 beta 测试，可使用 HockeyApp 服务。 此服务提供用于 beta 测试、用户分析和崩溃诊断的高级功能。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>将版本号应用到生成
 
@@ -257,9 +257,9 @@ CI_MyUWPApp_1.1.2501.0
 
 接下来，使用本指南配置 HockeyApp 连接：[如何将 HockeyApp 与 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS) 一起使用。](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs) 可使用 Microsoft 帐户、社交媒体帐户或仅仅一个电子邮件地址设置 HockeyApp 帐户。 免费计划附带两个应用、一个所有者，并且没有数据限制。
 
-然后，可以手动或通过上传现有 appx 包文件创建 HockeyApp 应用。 若要了解详细信息，请参阅[如何创建新应用](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
+然后，你可以手动或通过上传现有应用包文件创建 HockeyApp 应用。 若要了解详细信息，请参阅[如何创建新应用](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
 
-若要使用现有 appx 包文件，请添加一个生成步骤，并设置该生成步骤的 Binary File Path 参数。 
+若要使用现有的应用包文件，添加一个生成步骤，并设置该生成步骤的 Binary File Path 参数。 
 
 ![配置 hockey app](images/building-screen15.png) 
 
@@ -269,7 +269,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-尽管 HockeyApp 任务允许你指定符号文件的路径，但最佳做法是将符号（appxsym 文件）包含在程序包中。
+尽管 HockeyApp 任务允许你指定符号文件的路径，它是将符号包含捆绑包是最佳做法。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将程序包提交到 Microsoft Store 的连续部署生成 
 
@@ -287,7 +287,7 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-这将生成可提交到应用商店的 .appxupload 文件。
+这将生成可提交到应用商店上传文件。
 
 
 #### <a name="configure-automatic-store-submission"></a>配置自动 Microsoft Store 提交
@@ -296,7 +296,7 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 
 你需要将开发人员帐户与 Azure Active Directory (AD) 连接起来，然后在 AD 中创建一个应用以对请求进行身份验证。 可按照扩展页中的指南完成该操作。 
 
-配置该扩展后，可添加生成任务，并使用应用 ID 和 .appxupload 文件的位置配置它。
+一旦你已配置了扩展，可以添加生成任务，并使用你的应用 ID 和上传文件的位置对其进行配置。
 
 ![配置开发人员中心](images/building-screen17.png) 
 
@@ -317,17 +317,17 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，然后将安装或更新 appx 文件。
+使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到在本地计算机的受信任的根证书部分将然后安装或更新的应用包文件。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
-在 Windows10 周年更新中，你可以双击 appxbundle 文件，然后通过在对话框中选择安装按钮来安装应用。 
+在 Windows 10 周年更新中，你可以双击应用包文件，并通过在对话框中选择安装按钮来安装你的应用。 
 
 ![在 rs1 中旁加载](images/building-screen18.png) 
 
 >[!NOTE]
 > 此方法不安装证书或关联的依赖项。
 
-如果要从 VSTS 或 HockeyApp 之类的网站分配 appx 包，你需要在浏览器中将该站点添加到受信任的站点列表。 否则，Windows 将该文件标记为锁定。 
+如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点列表。 否则，Windows 将该文件标记为锁定。 
 
 <span id="certificates-best-practices"/>
 

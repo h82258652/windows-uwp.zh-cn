@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211001"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258362"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>获取并了解条形码数据
 
-一旦你已设置你的条形码扫描仪，你当然需要了解你扫描的数据的一种方法。 当你扫描条形码时，会引发的[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)事件。 [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)应该订阅此事件。 该**DataReceived**事件传递一个[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)对象，它可用于访问的条形码数据。
+一旦你已设置你的条形码扫描仪，你当然需要一种了解你扫描的数据。 当扫描条形码时，会引发的[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)事件。 [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)应该订阅此事件。 **DataReceived**事件传递一个[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)对象，它可用于访问的条形码数据。
 
 ## <a name="subscribe-to-the-datareceived-event"></a>订阅 DataReceived 事件
 
@@ -39,7 +39,7 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 
 ## <a name="get-the-data"></a>获取数据
 
-**BarcodeScannerReport**后，你可以访问和分析条形码数据。 **BarcodeScannerReport**有三个属性：
+**BarcodeScannerReport**后，你可以访问和分析条形码数据。 **BarcodeScannerReport**具有三个属性：
 
 * [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata)： 完整、 原始条形码数据。
 * [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel)： 解码的条形码标签，其中不包括在标头、 校验和、 和其他信息。
@@ -64,7 +64,7 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 
 ### <a name="get-the-scan-data-label"></a>获取扫描数据标签
 
-若要获取已解码的条形码标签，有你需要注意的一些事项。 只有某些数据类型包含编码的文本，因此应首先检查是否标志可以转换为字符串，，然后将转换我们从**ScanDataLabel**获取为 utf-8 编码字符串的缓冲区。
+若要获取已解码的条形码标签，有你需要注意的一些事项。 只有某些数据类型包含编码的文本，因此你应该首先检查是否标志可以转换为字符串，，然后将转换我们从**ScanDataLabel**获取为 utf-8 编码字符串的缓冲区。
 
 ```cs
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
@@ -104,7 +104,7 @@ private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 
 ### <a name="get-the-raw-scan-data"></a>获取原始扫描数据
 
-若要获取完整，原始数据从条形码，我们只需将转换**ScanData**从我们进入一个字符串的缓冲区。
+若要获取完整，原始数据从条形码，我们只需将转换我们从**ScanData**获取转换为字符串的缓冲区。
 
 ```cs
 private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
@@ -123,15 +123,15 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-这些数据位于，一般情况下，因为从扫描仪传递的格式。 邮件标头和预告片信息删除，但是，因为它们不包含应用程序的有用信息，并且可能是特定于扫描仪的。
+这些数据位于，一般情况下，如从扫描仪传递的格式。 邮件标头和预告片信息删除，但是，因为它们不包含应用程序的有用信息，并且可能是特定于扫描仪的。
 
 常见的标头信息是前缀字符 （如 STX 字符）。 预告片的常见信息是终止符字符 （如 ETX 或回车字符） 和一个块检查字符，如果扫描仪将生成一个。
 
-如果返回扫描仪将此属性应包含符号字符 (例如，**一个**用于 UPC A)。 它还应包括检查数字，如果它们存在标签中，并返回的扫描仪。 （请注意，符号字符和检查数字可能会也可能不存在，取决于扫描仪配置。 扫描仪将其返回，如果存在，但不是会生成或计算它们，如果它们不存在。)
+此属性应包含符号字符，如果扫描仪将返回 (例如，**一个**用于 UPC A)。 它还应包括检查数字，如果它们存在标签中，并返回的值扫描仪。 （请注意，符号字符和检查数字可能会也可能不存在，取决于扫描仪配置。 扫描仪将其返回，如果存在，但不是会生成或计算它们，如果它们不存在。)
 
-某些商品可能带有补充条形码。 此条形码通常位于右侧的主条形码，并由其他两个或五个字符的信息。 如果扫描仪读取商品，其中包含主要和补充条形码、 补充的字符将附加到的主字符和结果传递给该应用程序作为一个标签。 （请注意，扫描仪可能支持的配置，启用或禁用的补充代码读取）。
+可能使用补充条形码标记一些商品。 此条形码通常位于右侧的主条形码，并由其他两个或五个字符的信息。 如果扫描仪读取商品，其中包含主要和补充条形码、 补充字符附加到的主角，和结果传递给该应用程序作为一个标签。 （请注意，扫描仪可能支持的配置，启用或禁用的补充代码阅读）。
 
-某些商品可能会使用多个标签，有时称为*multisymbol 标签*或*分层的标签*标记。 这些条形码通常进行垂直排列，并且可能会引起的相同或不同的标志。 如果扫描仪读取包含多个标签的商品时，每个条形码会传递给该应用程序作为单独的标签。 这是标准化的由于这些条形码类型当前缺少必需的。 一个不能确定取决于单个条形码数据的所有变体。 因此，应用程序将需要确定当多个标签条形码已阅读根据返回的数据。 （请注意，扫描仪可能会也可能不支持多个标签读取）。
+可能会使用多个标签，有时称为*multisymbol 标签*或*分层的标签*标记一些商品。 这些条形码通常进行垂直排列，并且可能会引起的相同或不同的标志。 如果扫描仪读取包含多个标签的商品时，每个条形码会传递给该应用程序作为单独的标签。 这是标准化的由于这些条形码类型当前缺少必需的。 一个不能确定取决于单个条形码数据的所有变体。 因此，应用程序将需要确定当多个标签条形码已阅读根据返回的数据。 （请注意，扫描仪可能会也可能不支持多个标签阅读）。
 
 在对应用程序在引发**DataReceived**事件之前设置此值。
 

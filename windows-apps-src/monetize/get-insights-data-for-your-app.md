@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4213207"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258118"
 ---
 # <a name="get-insights-data"></a>获取的见解数据
 
-若要获取的见解数据在 Microsoft Store 分析 API 中的此方法相关购置、 运行状况和使用情况的应用的指标给定的日期范围和其他可选筛选器内使用。 此信息也是在 Windows 开发人员中心仪表板中的[洞察报告](../publish/insights-report.md)中可用。
+若要获取的见解数据在 Microsoft Store 分析 API 中的此方法相关购置、 运行状况和应用的使用情况指标给定的日期范围和其他可选筛选器内使用。 此信息也是在 Windows 开发人员中心仪表板中的[洞察报告](../publish/insights-report.md)中可用。
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -40,7 +40,7 @@ ms.locfileid: "4213207"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                  |
+| 值      | 类型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 包含应用的见解数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[相关的见解值](#insight-values)部分。                                                                                                                      |
 | TotalCount | int    | 查询的数据结果中的行总数。                 |
@@ -80,23 +80,23 @@ Authorization: Bearer <your access token>
 | 值               | 类型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | 字符串 | 要为其检索见解数据的应用商店 ID。     |
-| insightDate                | 字符串 | 我们在其标识特定指标的更改的日期。 此日期表示的末尾一周中我们检测到了显著增加或减少相对于前的一周的指标。 |
+| insightDate                | 字符串 | 我们在其标识特定指标的更改日期。 此日期表示的末尾一周中我们检测到了显著增加或减小的指标，相对于前的一周中。 |
 | 数据类型     | 字符串 | 用于指定此 insight 描述的常规分析区域的以下字符串之一：<p/><ul><li><strong>购置</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul>   |
 | insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前见解的详细信息。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
 
-| 值               | 类型   | 说明                           |
+| 值               | 类型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | 字符串 | 以下值之一，用于指示规格，它的当前相关的见解和当前维度描述，具体取决于**数据类型**值。<ul><li>对于**运行状况**，此值始终是**点击次数**。</li><li>**购置**，此值始终是**AcquisitionQuantity**。</li><li>对于**使用情况**，此值可以是以下字符串之一：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | array |  描述见解的单个跃点数的一个或多个对象。   |
 | PercentChange            | 字符串 |  指标跨整个客户群的销售量更改百分比。  |
-| 具有           | 字符串 |  在当前维度中所述的指标的名称。 示例包括**事件类型**、**市场**、 **DeviceType**、 **PackageVersion**、 **AcquisitionType**、 **AgeGroup**和**性别**。   |
-| DimensionValue              | 字符串 | 在当前维度中描述的指标值。 例如，如果**维度**， **EventType** **DimensionValue**可能**崩溃**或**挂起**。   |
-| FactValue     | 字符串 | 绝对的度量值的见解的检测的日期。  |
+| 维度           | 字符串 |  在当前维度中所述的指标的名称。 示例包括**事件类型**、**市场**、 **DeviceType**、 **PackageVersion**、 **AcquisitionType**、 **AgeGroup**和**性别**。   |
+| DimensionValue              | 字符串 | 在当前维度中描述的指标的值。 例如，如果**维度**为**EventType**， **DimensionValue**可能**崩溃**或**挂起**。   |
+| FactValue     | 字符串 | 绝对的度量值 insight 已检测到的日期。  |
 | Direction | 字符串 |  更改 （**正**或**负**） 的方向。   |
-| 日期              | 字符串 |  我们确定与当前的见解或当前维度相关的更改的日期。   |
+| 日期              | 字符串 |  我们确定与当前 insight 或当前维度相关的更改的日期。   |
 
 ### <a name="response-example"></a>回复示例
 

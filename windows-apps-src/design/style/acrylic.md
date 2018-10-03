@@ -14,12 +14,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205713"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258480"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -31,10 +31,12 @@ ms.locfileid: "4205713"
 
 :::row:::
     :::column:::
-        在浅色主题亚克力![在浅色主题亚克力](images/Acrylic_LightTheme_Base.png)
+        Acrylic in light theme
+        ![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
     :::column-end:::
     :::column:::
-        在深色主题亚克力![在深色主题亚克力](images/Acrylic_DarkTheme_Base.png)
+        Acrylic in dark theme
+        ![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
     :::column-end:::
 :::row-end:::
 
@@ -49,68 +51,20 @@ ms.locfileid: "4205713"
 ## <a name="examples"></a>示例
 
 :::row:::
-    ::: 列范围:::![某些图像](images/XAML-controls-gallery-app-icon.png)
+    :::column span:::
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    ::: 列范围 ="2"::: **XAML 控件库**<br>
-        如果你安装了该 XAML 控件库应用，请单击<a href="xamlcontrolsgallery:/item/Acrylic">此处</a>打开该应用并查看操作中的亚克力。
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
-## <a name="when-to-use-acrylic"></a>何时使用亚克力
-
-我们建议将支持 UI（例如应用内导航或命令元素）放在亚克力图面上。 此材料对于对话框和浮出控件等瞬态 UI 元素也十分有用，因为它可帮助维持与触发瞬态 UI 的内容之间的视觉关联。 亚克力适合用作背景材料，在视觉上独立的窗格中显示，因此不要将亚克力应用于细节丰富的前景元素。
-
-主要应用内容后的图面应使用纯色不透明背景。
-
-考虑将亚克力扩展到一个或多个应用边缘（包括窗口标题栏）以改进视觉流。 避免通过堆叠不同混合类型的亚克力而导致产生条纹效果。 亚克力这种工具可让设计在视觉上更加协调，但使用不当可能会导致视觉干扰。
-
-考虑以下使用模式，确定将亚克力融入应用的最佳方式。
-
-### <a name="vertical-acrylic-pane"></a>垂直亚克力窗格
-
-如应用带有垂直导航，我们建议将亚克力应用于包含导航元素的次级窗格。
-
-![使用单个垂直亚克力窗格的应用模式](images/acrylic_app-pattern_vertical.png)
-
-[NavigationView](../controls-and-patterns/navigationview.md) 是一种新的常用控件，用于在应用中添加导航，其视觉设计采用了亚克力。 NavigationView 的窗格在窗格并排打开并显示主要内容时显示背景亚克力，在窗格以覆盖形式打开时自动转换为应用内亚克力。
-
-如果你的应用不能使用 NavigationView，而你计划自行添加亚克力，我们建议使用相对透明的亚克力 60%色调不透明度。
- - 窗格以覆盖形式在其他应用内容上打开时，应设置为 [60% 应用内亚克力](#acrylic-theme-resources)
- - 窗格并排打开并显示主要应用内容时，应设置为 [60% 背景亚克力](#acrylic-theme-resources)
-
-### <a name="multiple-acrylic-panes"></a>多个亚克力窗格
-
-如应用带有三个不同的垂直窗格，我们建议将亚克力应用于非主要内容。
- - 对于最靠近主要内容的次级窗格，使用 [80% 背景亚克力](#acrylic-theme-resources)
- - 对于远离主要内容的三级窗格，使用 [60% 背景亚克力](#acrylic-theme-resources)
-
-![使用两个垂直亚克力窗格的应用模式](images/acrylic_app-pattern_double-vertical.png)
-
-### <a name="horizontal-acrylic-pane"></a>水平亚克力窗格
-
-如应用顶部带有水平导航、命令或其他明显的水平元素，我们建议对此类视觉元素应用 [70% 亚克力](#acrylic-theme-resources)。
-
-![使用水平亚克力窗格的应用模式](images/acrylic_app-pattern_horizontal.png)
-
-以连续、可缩放内容为重点的画布应用应在顶部栏中使用应用内亚克力，以便于用户连接此类内容。 画布应用包括地图、绘画和绘图等。
-
-如应用没有单个连续画布，我们建议使用背景亚克力，从而将用户连接到他们的整体桌面环境。
-
-### <a name="acrylic-in-utility-apps"></a>实用程序应用中的亚克力
-
-小组件或轻型应用可以将亚克力边缘到边缘拖放到它们的应用窗口中，从而增强它们作为实用程序应用的用途。 属于此类别的应用通常具有短暂的用户参与时间，且不可能占用用户的整个桌面的屏幕。 示例包括计算器和操作中心。
-
-![计算器实用程序将亚克力用作其整个背景](images/acrylic_app-pattern_full.png)
-
-> [!Note]
-> 呈现亚克力图面进行 GPU，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
-
-
 ## <a name="acrylic-blend-types"></a>亚克力混合类型
-亚克力的最明显特征是其透明度。 有两种亚克力混合类型可改变材料透明度：
+亚克力的最明显特征是透明度。 有两种亚克力混合类型可改变材料透明度：
  - **背景亚克力**显示桌面壁纸和当前处于活动状态的应用后的其他窗口，增加了应用程序窗口之间的层次感，同时允许用户进行个性化偏好设置。
  - **应用内亚克力**在应用框架内增加层次感，焦点清晰且层次分明。
 
@@ -118,13 +72,46 @@ ms.locfileid: "4205713"
 
  ![应用内亚克力](images/AppAcrylic_DarkTheme.png)
 
- 叠加多层亚克力图面时务必小心。 背景亚克力，顾名思义，不应是 z 顺序中最靠近用户的元素。 多层背景亚克力往往会导致意外的光学错觉，应尽量避免。 如果你选择叠加多层亚克力，请使用应用内亚克力并考虑采用较浅的亚克力色调，让亚克力层在视觉上更靠近观看者。
+ 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建人分心光学错觉。
 
+## <a name="when-to-use-acrylic"></a>何时使用亚克力
+
+* 用于支持 UI，例如 NavigationView 或串联命令元素使用应用内亚克力。 
+* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
+
+如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
+
+请考虑以下使用模式，以确定如何最佳亚克力融入你的应用：
+
+### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
+
+如果你的应用不能使用 NavigationView，而你计划自行添加亚克力，我们建议使用相对透明的亚克力 60%色调不透明度。
+ - 窗格以覆盖形式在其他应用内容上打开时，应设置为 [60% 应用内亚克力](#acrylic-theme-resources)
+ - 窗格并排打开并显示主要应用内容时，应设置为 [60% 背景亚克力](#acrylic-theme-resources)
+
+![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
+
+此外，在顶部无内容扩展或下亚克力的滚动将为应用提供更加沉浸式和无缝体验。
+
+### <a name="vertical-panes"></a>垂直窗格
+
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，如在 NavigationView 的**Collapsed**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+
+### <a name="transient-surfaces"></a>瞬态图面
+
+如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
+
+![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
+
+默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口所有时将使用瞬态亚克力它们进行调用。
+
+> [!Note]
+> 呈现亚克力图面进行 GPU，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
 
 ## <a name="usability-and-adaptability"></a>可用性和适应性
 亚克力外观可自动适应各种设备和上下文。
 
-在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力会显示为纯色：
+在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力均显示为纯色：
  - 当用户关闭设置中的透明度 > 个性化 > 颜色
  - 当激活节电模式
  - 应用在低端硬件上运行时
@@ -163,7 +150,7 @@ ms.locfileid: "4205713"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以放置文本后面的这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -211,8 +198,7 @@ ms.locfileid: "4205713"
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
  - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
-
+ - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
 
@@ -332,6 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 * 请将亚克力用作非主要应用图面（例如导航窗格）的背景材料。
 * 请将亚克力扩展到至少一个应用边缘，通过与应用周围环境巧妙融合营造无缝体验。
+* 不要在你的应用的较大的背景图面上放置桌面 arylic-这将中断主要用于瞬态表面的亚克力的心理模型。
 * 不要直接并列放置应用内亚克力和背景亚克力，以避免接缝处产生不协调的视觉效果。
 * 不要并列放置具有相同色调和不透明度的多个亚克力窗格，因为这会导致出现不协调的明显接缝。
 * 不要将主题色文本放在亚克力图面上。

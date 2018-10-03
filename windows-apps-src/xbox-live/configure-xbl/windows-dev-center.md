@@ -1,7 +1,7 @@
 ---
 title: 开发人员中心服务配置
 author: KevinAsgari
-description: 详细介绍如何在 Windows 开发人员中心上配置 Xbox Live 服务的主题的链接。
+description: 详细说明了如何在 Windows 开发人员中心上配置 Xbox Live 服务的主题的链接。
 ms.author: kevinasg
 ms.date: 7/30/2018
 ms.topic: article
@@ -10,25 +10,25 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: a0c30014c3688695847a5734adfa7cbc7498ba4a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204376"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4268289"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows 开发人员中心服务配置
 
-在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)中发布并使用完整的 Xbox Live 功能集的游戏可以在开发人员中心配置其 Xbox Live 服务。
+在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)发布并使用完整的 Xbox Live 功能集的游戏可以在开发人员中心配置其 Xbox Live 服务。
 
 > [!IMPORTANT]
 > 这些主题不适用于 Xbox Live 创意者计划中的主题作品。
 
-若要访问的配置页，你的游戏必须启用 Xbox Live 完全访问权限。
+你的游戏必须启用 Xbox Live 完全访问权限，才能访问配置页面。
 
-若要访问 Xbox Live 配置页中，在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)中，选择你的游戏后导航到**服务** > **Xbox Live**。
+若要访问 Xbox Live 配置页中，在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)，选择你的游戏后导航到**服务** > **Xbox Live**。
 
 
-下面的主题介绍如何通过使用 Windows 开发人员中心配置 Xbox Live。
+以下主题介绍了如何通过使用 Windows 开发人员中心配置 Xbox Live。
 
 ## <a name="in-this-section"></a>本部分内容
 

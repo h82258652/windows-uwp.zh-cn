@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: 从应用中触发后台任务
-description: 介绍了如何触发后台任务从应用程序中
+description: 介绍如何触发后台任务从应用程序中
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 后台任务触发器，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206061"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261858"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>从应用中触发后台任务
 
@@ -22,15 +22,15 @@ ms.locfileid: "4206061"
 
 有关如何创建应用程序触发器的示例，请参阅此[示例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)。
 
-本主题假定你已从你的应用程序要激活的后台任务。 如果你尚未获得后台任务，则示例后台任务[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)在。 或者，按照[创建和注册进程外后台任务](create-and-register-a-background-task.md)来创建一个中的步骤。
+本主题假定你拥有要从你的应用程序激活后台任务。 如果你尚未获得后台任务，则示例后台任务在[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 或者，按照中[创建和注册进程外后台任务](create-and-register-a-background-task.md)来创建一个步骤。
 
 ## <a name="why-use-an-application-trigger"></a>为什么要使用的应用程序触发器
 
-使用**ApplicationTrigger**从前台应用在单独进程中运行代码。 如果你的应用具有必须要完成后台-即使用户关闭前台应用的工作**ApplicationTrigger**适合使用。 如果应终止后台工作，当应用关闭时，或[扩展执行](run-minimized-with-extended-execution.md)应改为使用，则应绑定到前台进程的状态。
+使用**ApplicationTrigger**从前台应用在单独进程中运行代码。 如果你的应用具有必须要完成后台-即使在用户关闭前台应用的工作**ApplicationTrigger**适合使用。 如果应终止后台工作，当应用关闭时，或[扩展执行](run-minimized-with-extended-execution.md)应改为使用，则应绑定到前台进程的状态。
 
 ## <a name="create-an-application-trigger"></a>创建应用程序触发器
 
-创建新[ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)。 你可以将其存储在字段下面的代码片段中完成。 这是为了方便起见，以便我们无需我们想要发送信号触发器时更高版本创建一个新实例。 但你可以使用任何**ApplicationTrigger**实例发送信号触发器。
+创建新[ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)。 你无法将其存储在字段中下面的代码段中完成。 这是为了方便起见，以便我们无需更高版本创建一个新实例，当我们想要发送信号触发器。 但你可以使用任何**ApplicationTrigger**实例发送信号触发器。
 
 ```csharp
 // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive
@@ -60,7 +60,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 你可以创建一个后台任务条件以控制任务何时运行。 条件阻止后台任务在满足条件之前运行。 有关详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
 
-在此示例中，以便在触发条件设置为**InternetAvailable** ，仅运行一次任务都可以访问 internet。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+在此示例中，以便在触发，条件设置为**InternetAvailable** ，仅运行一次任务都可以访问 internet。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -79,7 +79,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ##  <a name="call-requestaccessasync"></a>调用 RequestAccessAsync()
 
-注册**ApplicationTrigger**后台任务之前，调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)来确定用户允许，因为用户可能已禁用，你的应用的后台活动的后台活动的级别。 请参阅有关方式用户详细信息的[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制后台活动的设置。
+注册**ApplicationTrigger**后台任务之前，调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)来确定用户允许，因为用户可能已禁用你的应用的后台活动的后台活动的级别。 请参阅有关方式用户详细信息的[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制后台活动的设置。
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -92,9 +92,9 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>注册后台任务
 
-通过调用后台任务注册函数注册后台任务。 注册后台任务，并查看下面的代码示例中的**RegisterBackgroundTask()** 方法定义的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
+通过调用后台任务注册函数注册后台任务。 注册后台任务，并查看下面的示例代码中的**RegisterBackgroundTask()** 方法定义的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
 
-如果你正在考虑使用应用程序触发器来扩展你的前台进程的生命周期，请考虑改为使用[扩展执行](run-minimized-with-extended-execution.md)。 应用程序触发器旨在用于创建单独托管的过程中执行工作。 下面的代码段注册进程外后台触发器。
+如果你正在考虑使用应用程序触发器来扩展你的前台进程的生命周期，请考虑改为使用[扩展执行](run-minimized-with-extended-execution.md)。 应用程序触发器旨在用于创建单独宿主的进程中执行工作。 以下代码片段注册进程外后台触发器。
 
 ```csharp
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -122,7 +122,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="trigger-the-background-task"></a>触发后台任务
 
-触发后台任务之前，请使用[BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)验证已注册的后台任务。 验证所有后台任务已注册的好时机是在应用启动期间。
+触发后台任务之前，请使用[BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)验证已注册后台任务。 验证所有后台任务已注册的好时机是在应用启动期间。
 
 通过调用[ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)触发后台任务。 任何**ApplicationTrigger**实例会重启。
 
@@ -138,8 +138,8 @@ var result = await _AppTrigger.RequestAsync();
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。 请参阅有关方式用户详细信息的[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制后台活动的设置。  
 
-- 内存： 调整你的应用的内存和能耗使用是确保操作系统将允许你运行的后台任务关键。 使用的[内存管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)以查看你的后台任务正在使用的内存量。 你的后台任务使用更多的内存，让它保持运行另一个应用在前台运行时，操作系统越难。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
-- CPU 时间： 后台任务受限制的基于触发器类型时，他们获取的时钟时间内使用时间量。 通过应用程序触发器触发后台任务仅限于大约 10 分钟。
+- 内存： 调整你的应用的内存和能耗使用是确保操作系统将允许你运行的后台任务关键。 使用的[内存管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)以查看你的后台任务正在使用的内存量。 更多内存你的后台任务使用，让它保持运行另一个应用位于前台时，操作系统越难。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
+- CPU 时间： 后台任务受基于触发器类型时，他们获取的时钟时间内使用时间量的限制。 通过应用程序触发器触发后台任务仅限于大约 10 分钟。
 
 有关适用于后台任务的资源限制，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 

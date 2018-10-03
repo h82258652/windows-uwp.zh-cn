@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 Visual Studio 打包应用（桌面桥）
+title: 使用 Visual Studio 打包的桌面应用程序
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7ff53aeffced746e78d8b27243469dc547097
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410704"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259806"
 ---
-# <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>使用 Visual Studio 打包应用（桌面桥）
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
 可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，可将该包发布到 Microsoft Store 或将其旁加载到一台或多台电脑中。
 
 Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 
 >[!IMPORTANT]
->桌面桥是在 Windows 10 版本 1607 中引入，它仅可用于面向 Windows 10 周年更新（10.0；版本 14393）或 Visual Studio 更高版本的项目中。
+>能够创建桌面应用程序的 Windows 应用包 （Windows 10 版本 1607年中引入了称为桌面桥，否则，它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
-在开始为应用程序创建程序包之前查看本指南：[准备打包应用（桌面桥）](desktop-to-uwp-prepare.md)。
+开始为你的应用程序创建程序包之前查看本指南：[准备打包的桌面应用程序](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -83,18 +83,18 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**运行、调试或测试应用**
+**运行、 调试或测试桌面应用程序**
 
-请参阅[运行、调试和测试打包的桌面应用（桌面桥）](desktop-to-uwp-debug.md)
+请参阅[运行、 调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md)
 
-**通过添加 UWP API 来增强桌面应用**
+**通过添加 UWP Api 来增强桌面应用程序**
 
 请参阅[增强用于 Windows 10 的桌面应用程序](desktop-to-uwp-enhance.md)
 
-**通过添加 UWP 项目和 Windows 运行时组件来扩展你的桌面应用**
+**通过添加 UWP 项目和 Windows 运行时组件来扩展桌面应用程序**
 
 请参阅[使用新式 UWP 组件扩展桌面应用程序](desktop-to-uwp-extend.md)。
 
 **分发应用**
 
-请参阅[分发打包的桌面应用（桌面桥）](desktop-to-uwp-distribute.md)
+请参阅[发布已打包的桌面应用程序](desktop-to-uwp-distribute.md)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209841"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260586"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
@@ -35,7 +35,7 @@ ms.locfileid: "4209841"
 
 进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-因为后台进程不会使应用崩溃出现问题的进程外后台任务更具复原能力。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
+由于出现错误时，后台进程不能使应用崩溃，进程外后台任务是更具复原能力。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
 
 进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)接口操作系统在单独进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
@@ -77,7 +77,7 @@ ms.locfileid: "4209841"
 
 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 这种情况节省电源，因为可用网络之前，不会执行后台任务。 此条件不提供实时激活。
 
-如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时。）
+如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，当手机屏幕处于关闭状态。）
  
 有关后台任务条件的详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
 
@@ -171,7 +171,7 @@ ms.locfileid: "4209841"
 [处理取消的后台任务](handle-a-cancelled-background-task.md)  
 [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
-在应用启动期间检查你的后台任务注册。 确保在 BackgroundTaskBuilder.AllTasks 中存在你的应用的分组的后台任务。 重新注册的那些不存在。 取消注册不再需要的任何任务。 这将确保所有后台任务注册在每次启动时应用都是最新。
+在应用启动期间检查你的后台任务注册。 确保在 BackgroundTaskBuilder.AllTasks 中存在你的应用未分组的后台任务。 重新注册的那些不存在。 取消注册不再需要的任何任务。 这将确保所有后台任务注册在每次启动应用时都是最新。
 
 ## <a name="related-topics"></a>相关主题
 

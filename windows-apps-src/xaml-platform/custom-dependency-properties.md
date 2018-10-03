@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206107"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266032"
 ---
 # <a name="custom-dependency-properties"></a>自定义依赖属性
 
@@ -81,7 +81,7 @@ Windows 运行时中的依赖属性示例如下：[**Control.Background**](https
 > [!NOTE]
 > 将依赖属性注册属性定义为标识符的一部分是典型的实现，但你也可以在类静态构造函数中注册依赖属性。 如果需要多行代码来初始化依赖属性，此方法可能很有用。
 
-对于 C + + CX，你可以如何拆分标头和代码文件之间的实现的选项。 典型的拆分方式是在标头中将标识符本身声明为 **public static** 属性，它具有一个 **get** 实现但没有 **set**。 **get** 实现引用一个私有字段，该字段是一个未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例。 你也可以声明包装器和包装器的 **get** 和 **set** 实现。 在此情况下，标头文件包含一些极小的实现。 如果包装器需要归属于 Windows 运行时，标头文件中的特性也需要。 将 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用放置在代码文件内仅在应用首次初始化时运行的 helper 函数中。 使用 **Register** 的返回值填充你在标头文件中声明的静态但未初始化的标识符，你最初已在实现文件的根作用域上将其设置为 **nullptr**。
+对于 C + + CX，你可以如何拆分标头和代码文件之间实现的选项。 典型的拆分方式是在标头中将标识符本身声明为 **public static** 属性，它具有一个 **get** 实现但没有 **set**。 **get** 实现引用一个私有字段，该字段是一个未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例。 你也可以声明包装器和包装器的 **get** 和 **set** 实现。 在此情况下，标头文件包含一些极小的实现。 如果包装器需要归属于 Windows 运行时，标头文件中的特性也需要。 将 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用放置在代码文件内仅在应用首次初始化时运行的 helper 函数中。 使用 **Register** 的返回值填充你在标头文件中声明的静态但未初始化的标识符，你最初已在实现文件的根作用域上将其设置为 **nullptr**。
 
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
@@ -170,14 +170,14 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> 对于 C + + CX 代码，为什么你有一个私有字段，图面[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)的公共只读属性，以便使用依赖属性的其他调用方还可以使用属性系统实用程序，将需要 Api 的原因若要成为公共的标识符。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 和 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 等。 不可将公共字段用于这些内容，因为 Windows 运行时元数据规则不支持公共字段。
+> 对于 C + + CX 代码，为什么你拥有一个私有字段以及图面[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)的公共只读属性，以便使用依赖属性的其他调用方还可以使用属性系统实用程序，将需要 Api 的原因若要成为公共的标识符。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 和 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 等。 不可将公共字段用于这些内容，因为 Windows 运行时元数据规则不支持公共字段。
 
 ## <a name="dependency-property-name-conventions"></a>依赖属性名称约定
 
 依赖属性具有命名约定；需要在除一些例外情况外的所有情形中遵循这些约定。 依赖属性本身有一个基本名称（上一个示例中的“Label”），它作为 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的第一个参数提供。 该名称必须在每个注册类型中是唯一的，这种唯一性需求也适用于任何继承的成员。 通过基础类型继承的依赖属性已被视为注册类型的一部分；不能再次注册继承属性的名称。
 
 > [!WARNING]
-> 你提供此处可以是任何字符串标识符的名称在编程选择的语言中有效，但通常希望能够在 XAML 中设置你的依赖属性。 要在 XAML 中设置，你选择的属性名称必须是有效的 XAML 名称。 有关详细信息，请参阅 [XAML 概述](xaml-overview.md)。
+> 你提供此处可以是任何字符串标识符的名称在编程选择的语言中有效，但通常希望能够太在 XAML 中设置依赖属性。 要在 XAML 中设置，你选择的属性名称必须是有效的 XAML 名称。 有关详细信息，请参阅 [XAML 概述](xaml-overview.md)。
 
 创建标识符属性时，将你注册属性时的属性名称与后缀“Property”结合在一起（例如“LabelProperty”）。 此属性是依赖属性的标识符，并且它用作你在自己的属性包装器中执行的 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 和 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 调用的输入。 它还供属性系统以及其他 XAML 处理器（例如 [**{x:Bind}**](x-bind-markup-extension.md)）使用
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, 应用内购买, 应用内产品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212319"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261868"
 ---
 # <a name="add-on-submissions"></a>加载项提交
 

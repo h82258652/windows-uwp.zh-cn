@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务，应用服务连接的设备，远程系统
 ms.localizationpriority: medium
 ms.openlocfilehash: d4aa5a4f379e0791e9da7db4ecd2a27c09cf0a3a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209753"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262032"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
@@ -85,7 +85,7 @@ ms.locfileid: "4209753"
 
 [应用服务和扩展](app-services.md)部分介绍如何将应用服务集成到你的 UWP 应用，从而允许跨应用共享数据和功能。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
 | [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |
@@ -102,7 +102,7 @@ ms.locfileid: "4209753"
 | [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | 通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，通用 Windows 应用可访问后台中的传感器和外围备，即使在前台应用暂停时也是如此。 |
 | [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)       | 创建和注册在前台应用所在的同一进程中运行的后台任务。 |
 | [创建和注册进程外后台任务](create-and-register-a-background-task.md)           | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。 |
-| [移植为进程内后台任务的进程外后台任务](convert-out-of-process-background-task.md) | 了解如何将移植到在前台应用所在的同一进程中运行的进程内后台任务的进程外后台任务。|
+| [移植为进程内后台任务进程外后台任务](convert-out-of-process-background-task.md) | 了解如何将移植到在前台应用所在的同一进程中运行的进程内后台任务进程外后台任务。|
 | [调试后台任务](debug-a-background-task.md)                                                       | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。 |
 | [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。 |
 | [分组后台任务注册](group-background-tasks.md)                                             | 通过分组隔离后台任务注册。 |
@@ -134,7 +134,7 @@ ms.locfileid: "4209753"
 
 [初始屏幕](splash-screens.md)部分介绍如何设置和配置应用的初始屏幕。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 仪表板, devcenter, 开发中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210117"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265702"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>使用 Windows 开发人员中心仪表板
 
 
-[Windows 开发人员中心仪表](https://partner.microsoft.com/dashboard)板，你管理和提交所有面向 Windows 设备在一个位置中的应用。
+[Windows 开发人员中心仪表](https://partner.microsoft.com/dashboard)板，你管理和提交所有面向 Windows 设备在一个位置的应用。
 
 > [!NOTE]
 > 必须具有[开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问 Windows 开发人员中心仪表板。
@@ -37,9 +37,9 @@ ms.locfileid: "4210117"
 
 可以独立于应用的提交管理[加载项 （应用内产品）](add-on-submissions.md) 。 这可为使你拥有更大的灵活性和独立进行更改的能力。
 
-Windows 开发人员中心还提供了功能[添加多个用户](manage-account-users.md)[的应用管理和配置服务](app-management-and-services.md)，[查看分析数据](analytics.md)、[付款报告](payout-summary.md)、[推广你的应用](attract-customers-and-promote-your-apps.md)，[吸引你客户](engage-with-your-customers.md)， [beta 测试](beta-testing-and-targeted-distribution.md)、[将 LOB 应用分发到企业](distribute-lob-apps-to-enterprises.md)，等等。
+Windows 开发人员中心还提供用于[添加多个用户](manage-account-users.md)[的应用管理和配置服务](app-management-and-services.md)，[查看分析数据](analytics.md)、[付款报告](payout-summary.md)、[推广你的应用](attract-customers-and-promote-your-apps.md)，[的功能通过吸引你客户](engage-with-your-customers.md)， [beta 测试](beta-testing-and-targeted-distribution.md)、[将 LOB 应用分发到企业](distribute-lob-apps-to-enterprises.md)，等等。
 
-你的反馈有助于我们构建更好的功能和体验。 在仪表板中工作时，请使用**反馈**链接中的仪表板右上角，分享你的想法和建议。
+你的反馈有助于我们构建更好的功能和体验。 在仪表板中工作时，请使用**反馈**链接中的仪表板右上角共享你的想法和建议。
 
 
  

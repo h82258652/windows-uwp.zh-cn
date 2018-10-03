@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208299"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266180"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -52,7 +52,7 @@ ms.locfileid: "4208299"
 
 3.  从左侧的模板列表中，选择**已安装 > Visual C# > Windows 通用**以查看 UWP 项目模板列表。
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[进行设置](get-set-up.md)。）
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[准备工作](get-set-up.md)。）
 
     ![如何重复安装流程](images/win10-cs-install.png)
 

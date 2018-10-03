@@ -10,29 +10,29 @@ ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，COM、 组件、 类、 接口
 ms.localizationpriority: medium
 ms.openlocfilehash: 598d0e7b4a374c18ece48f52947cec64a0f79dab
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209683"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258148"
 ---
 # <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用与 COM 组件[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
-你可以使用的功能的 C + + /winrt 库以使用 COM 组件，如高性能的 2d 和 3d 图形的 DirectX Api。 C + + /winrt 是使用 DirectX，而不影响性能的最简单方法。 本主题使用 Direct2D 代码示例显示了如何使用 C + + /winrt 来使用 COM 类和接口。 当然，可以混用 COM 和 Windows 运行时编程中的相同的 C + + WinRT 项目。
+你可以使用的功能的 C + + /winrt 库以使用 COM 组件，如 DirectX Api 的高性能的 2d 和 3d 图形。 C + + /winrt 是使用 DirectX，而不影响性能的最简单方法。 本主题使用 Direct2D 代码示例显示了如何使用 C + + /winrt 来使用 COM 类和接口。 当然，可以混用 COM 和 Windows 运行时编程中的相同的 C + + WinRT 项目。
 
 在本主题末尾，你会发现的最小的 Direct2D 应用程序的完整源代码列表。 我们将抬起摘录该代码，并使用它们来演示如何使用 COM 组件使用 C + + WinRT 使用各种功能的 C + + /winrt 库。
 
 ## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>COM 智能指针 ([**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
-当你计划使用 COM 时，您工作，直接与接口，而不是与对象 （这是还在幕后适用于 Windows 运行时 Api，它们是 COM 的进化 true）。 COM 类上调用的函数，例如，你激活的类，获取回来，接口，然后在该接口上调用函数。 若要访问对象的状态，不要直接调用访问其数据成员相反，你可以在接口上调用访问器和转变器函数。
+当你计划使用 COM 时，你直接与接口，而不是与对象 （这也是 true 幕后适用于 Windows 运行时 Api，它们是 COM 的进化） 起作用。 COM 类上调用的函数，例如，你激活的类，获取回来，接口，然后在该接口上调用函数。 若要访问对象的状态，不要直接调用访问其数据成员相反，你可以在接口上调用访问器和转变器函数。
 
-若要更具体，我们谈互动接口*指针*。 为此，我们受益于是否存在 COM 智能指针类型在 C + + WinRT&mdash; [**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)类型。
+若要更具体，我们谈与接口*指针*交互。 为此，我们受益于是否存在 COM 智能指针类型在 C + + WinRT&mdash; [**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)类型。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-上面的代码显示了如何声明为[**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM 接口的未初始化智能指针。 智能指针是未初始化，，因此它尚不支持指向属于任何实际对象 （它没有指向接口根本） **ID2D1Factory1**接口。 但它可能会执行此操作;并且它 （正在智能指针） 可以通过 COM 引用计数管理的接口，它指向拥有对象的生存期且依据调用的函数时在该接口的媒体的功能。
+上面的代码显示了如何声明为[**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM 接口的未初始化智能指针。 智能指针是未初始化，，因此它尚不支持指向属于任何实际对象 （它没有指向接口根本） **ID2D1Factory1**接口。 但它可能会执行此操作;并且 （正在智能指针） 可以通过 COM 引用计数管理的接口，它指向拥有对象的生存期且依据调用的函数时该接口的媒体的功能。
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>返回为接口指针的 COM 函数**void\ * \ ***
 
@@ -51,7 +51,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>返回一个特定接口指针的 COM 函数
 
-[**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函数返回其 antepenultimate 参数，已通过[**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596)接口指针**ID3D11Device\ * \ *** 类型。 对于这样返回一个特定接口指针的函数，使用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
+[**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函数具有其 antepenultimate 参数通过返回的[**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596)接口指针**ID3D11Device\ * \ *** 类型。 对于这样返回一个特定接口指针的函数，使用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
 
 ```cppwinrt
 winrt::com_ptr<ID3D11Device> device;
@@ -61,7 +61,7 @@ D3D11CreateDevice(
     ...);
 ```
 
-在此之前部分中的代码示例演示如何调用原始**D2D1CreateFactory**函数。 但实际上，当本主题的代码示例调用**D2D1CreateFactory**，它使用包装原始的 API，帮助程序函数模板，因此该代码示例实际使用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
+在此之前部分中的代码示例演示如何调用原始**D2D1CreateFactory**函数。 但实际上，当本主题的代码示例调用**D2D1CreateFactory**，它使用包装原始的 API，帮助程序函数模板，因此该代码示例实际上使用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
@@ -73,7 +73,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>返回为接口指针的 COM 函数**IUnknown\ * \ ***
 
-[**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函数返回其最后一个参数，已通过 DirectWrite 工厂接口指针**IUnknown\ * \ *** 类型。 对于此类功能，请使用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)，但将重新解释强制转换为该**IUnknown\ * \ ***。
+[**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函数返回其最后一个参数，已通过 DirectWrite 工厂接口指针**IUnknown\ * \ *** 类型。 对于此类函数，使用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)，但将重新解释强制转换为该**IUnknown\ * \ ***。
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -85,7 +85,7 @@ DWriteCreateFactory(
 ## <a name="re-seat-a-winrtcomptr"></a>重新席位**winrt:: com_ptr**
 
 > [!IMPORTANT]
-> 如果你拥有已固定[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其内部的原始指针已经有一个目标） 和你想要重新席位它为指向一个不同的对象，然后你需要先为分配`nullptr`对其&mdash;下面的代码示例中所示。 如果不这样做，然后已固定**com_ptr**将绘制问题 （当你调用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)或[**put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 你注意到通过断言其内部指针不为 null。
+> 如果你有是否已固定[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其内部的原始指针已经有一个目标） 和你想要重新席位它为指向一个不同的对象，则你首先需要分配`nullptr`向其&mdash;下面的代码示例中所示。 如果不这样做，然后已固定**com_ptr**将绘制问题 （当你调用[**com_ptr:: put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)或[**put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 你注意到通过断言其内部指针不为 null。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -111,7 +111,7 @@ winrt::check_hresult(D2D1CreateFactory(
     factory.put_void()));
 ```
 
-## <a name="com-functions-that-take-a-specific-interface-pointer"></a>执行特定接口指针的 COM 函数
+## <a name="com-functions-that-take-a-specific-interface-pointer"></a>执行特定的接口指针的 COM 函数
 
 你可以调用[**com_ptr:: get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function)函数将**com_ptr**你传递到采用相同类型的特定接口指针的函数。
 
@@ -147,15 +147,15 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
 ... CreateDevice(..., winrt::com_ptr<ID3D11Device>& device) ...
 ```
 
-返回**winrt:: com_ptr**的函数，应通过执行此操作值。
+返回**winrt:: com_ptr**的函数应该通过执行此操作值。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> CreateFactory() ...
 ```
 
-## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>查询使用不同的接口的 COM 智能指针
+## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>查询不同的接口的 COM 智能指针
 
-你可以使用[**com_ptr:: as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)函数来查询其他接口的 COM 智能指针。 如果查询不成功，该函数会引发异常。
+[**Com_ptr:: as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)函数可用于查询不同的接口的 COM 智能指针。 如果查询不成功，该函数将引发异常。
 
 ```cppwinrt
 void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
@@ -170,7 +170,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>完整源的最小的 Direct2D 应用程序的代码列表
 
-如果你想要生成并运行此源的代码示例，则第一，在 Visual Studio 中，创建一个新**核心应用 (C + + WinRT)**。 `Direct2D` 合理的项目名称，但你可以你喜欢的任何对其进行命名。 打开`App.cpp`，删除其整个内容，并粘贴以下列表中。
+如果你想要生成并运行此源的代码示例然后第一，在 Visual Studio 中，创建一个新**核心应用 (C + + WinRT)**。 `Direct2D` 合理的项目名称，但你可以你喜欢的任何对其进行命名。 打开`App.cpp`，删除其整个内容，并粘贴以下列表中。
 
 ```cppwinrt
 #include "pch.h"

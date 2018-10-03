@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206181"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261096"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
@@ -170,7 +170,7 @@ ms.locfileid: "4206181"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>购置</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    不适用 （对于父产品的设置包括**加载项购置**报告）        </td><td>    不适用                         </td></tr>
+    <tr><td align="left">    <b>购置</b>     </td><td>    可查看产品的<a href="acquisitions-report.md">购置</a>和<a href="add-on-acquisitions-report.md">加载项购置</a>报告。        </td><td>    不适用    </td><td>    不适用 （对于父产品的设置包含**加载项购置**报告）        </td><td>    不适用                         </td></tr>
     <tr><td align="left">    <b>使用情况</b> </td><td>    可查看产品的<a href="usage-report.md">使用情况报告</a>。     </td><td>    不适用       </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不适用     </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不适用     </td><td>    不适用         </td></tr>

@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210447"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259976"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
 
-设计和流畅的设计 UWP 应用的 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/downloads">我们的主下载页</a>。 
+设计和 Fluent 设计/UWP 应用的 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/downloads">我们的主下载页</a>。 
 
 
 ## <a name="design-toolkits"></a>设计工具包
@@ -29,32 +29,37 @@ ms.locfileid: "4210447"
 
 :::row:::
     :::column:::
-        ![主图](images/adobe-xd.png) <b>Adobe XD 工具包</b><br>
-        v1806，2018 年 6 月<br>
-        <a href="https://aka.ms/adobexdtoolkit">下载</a>
+        ![hero image](images/adobe-xd.png)
+        <b>Adobe XD toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![主图](images/adobe-illustrator.png) <b>Adobe Illustrator 工具包</b><br>
-        v1806，2018 年 6 月<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">下载</a>
+        ![hero image](images/adobe-illustrator.png)
+        <b>Adobe Illustrator toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![主图](images/sketch.png)<b>草图</b><br>
-        v1803，2018 年 3 月<br>
-        <a href="https://aka.ms/sketchtoolkit">下载</a>
+        ![hero image](images/sketch.png)
+        <b>Sketch</b><br>
+        v1803, March 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![主图](images/adobe-photoshop.png) <b>Adobe Photoshop 工具包</b><br>
-        v1705，2017 年 5 月<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">下载</a>
+        ![hero image](images/adobe-photoshop.png)
+        <b>Adobe Photoshop toolkit</b><br>
+        v1705, May 2017<br>
+        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![主图](images/framer.png) <b>Framer 工具包</b><br>
-        v1806，2018 年 6 月<br>
-        <a href="https://aka.ms/framertoolkit">下载</a>
+        ![hero image](images/framer.png)
+        <b>Framer toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -64,14 +69,16 @@ ms.locfileid: "4210447"
 
 :::row:::
     :::column:::
-        ![WinUI 库缩略图](images/WinUI-library.png) <b>Windows UI 库</b><br>
-        控件和其他适用于 UWP 应用的 UI 元素。<br/>
-        <a href="/uwp/toolkits/winui/getting-started">安装说明</a><br/>
+        ![WinUI library thumbnail](images/WinUI-library.png)
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for UWP apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-        ![Windows 社区缩略图](images/Windows-community-toolkit.png) <b>Windows 社区工具包</b><br>
-        帮助程序函数，自定义控件和应用服务。<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">安装说明</a>
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -88,19 +95,25 @@ ms.locfileid: "4210447"
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: 列范围 ="2":::**适用于 Adobe Photoshop 的磁贴和图标生成器**这一套适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
+    :::column span="2":::
+      **适用于 Adobe Photoshop 的磁贴和图标生成器**此组适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>示例
 
+![VanArsdel 图像](images/VanArsdel_Screenshot.png)
+**VanArsdel**<br>
+生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及强大的 ux 框架和合成的基础功能，它会使广泛使用改进的密度和新的控件。 该示例显示了如何构建用于管理和购买 （在此情况下，灯） 的 IoT 设备更丰富、 工作效率体验。<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下载 VanArsdel 示例</a> <br><a href="https://github.com/microsoft/vanarsdel">请查看 GitHub 上的 VanArsdel 示例</a>
+
 ![生成强制转换映像](images/buildcast.png)
 **BuildCast**<br>
-BuildCast 是一个端到端示例，用于展示 Fluent 设计系统，以及通用 Windows 平台的其他功能。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
+BuildCast 是一个端到端示例，用于展示 Fluent 设计系统和 UWP。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下载 BuildCast 示例</a> <br><a href="https://github.com/Microsoft/BuildCast">在 GitHub 上查看 BuildCast 示例</a>
 
-![午餐计划程序](images/lunchscheduler.png)
+![午餐 Scheduler](images/lunchscheduler.png)
 **Lunch Scheduler**<br>
 安排与朋友和同事午餐的 UWP 示例。 你创建午餐，邀请好友前往感兴趣的餐厅，然后应用帮助管理有关各方的午餐。 此应用将 Fluent Design 系统的元素并入 UWP 应用中，包括亚克力、展示和连贯动画。 <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">下载 Lunch Scheduler 示例</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">在 GitHub 上查看 Lunch Scheduler 示例</a></p>  
 

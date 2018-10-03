@@ -11,11 +11,11 @@ keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209893"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260460"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 

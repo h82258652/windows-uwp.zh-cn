@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b8749b53e28047842343bd2a1e0c005f588d79d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209883"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265352"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的代理来处理事件
 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理代理。 你可以使用任何标准 C++ 函数类对象来处理事件。
@@ -122,7 +122,7 @@ private:
 
 不是如上面示例中的强引用，你可以存储对按钮的弱引用（请参阅 [C++/WinRT 中的弱引用](weak-references.md)）。
 
-或者，当你注册委托时，你可以指定**winrt:: auto_revoke** （这是一个值的类型[**winrt:: auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)） 以请求一个事件撤销程序 （的类型[**winrt:: event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件撤销程序为你保留对事件源 （引发事件的对象） 的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
+或者，当你注册委托时，你可以指定**winrt:: auto_revoke** （这是一个值类型[**winrt:: auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)） 以请求一个事件撤销程序 (of 类型[**winrt:: event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件撤销程序为你保留对事件源 （引发事件的对象） 的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -195,9 +195,9 @@ void ProcessFeedAsync()
 如上面的“协同程序”注释所示，与将代理与异步操作和运算的已完成事件结合使用相比，你可能会发现使用协同程序更自然。 有关详细信息和代码示例，请参阅[利用 C++/WinRT 实现的并发和异步运算](concurrency.md)。
 
 > [!NOTE]
-> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，则第二个将失败。
+> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，第二个将会失败。
 
-如果你继续使用而不是协同程序的委托，然后你可以选择更简单的语法。
+如果你继续使用而不是协同程序的委托，然后你可以选择简单的语法。
 
 ```cppwinrt
 async_op_with_progress.Completed(

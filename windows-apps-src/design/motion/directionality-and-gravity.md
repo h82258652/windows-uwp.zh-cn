@@ -5,7 +5,7 @@ title: 方向性和引力 - UWP 应用中的动画
 label: Directionality and gravity
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,17 +14,14 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a5216e81bc556a2e761e88b071e988bf6e4f457e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: b61abf00d5ab8820457742f16feb9b496b7d7d1c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843736"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265806"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
-
-> [!IMPORTANT]
-> 本文介绍的功能尚未发布，在商业发行之前可能发生实质性修改。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 
 方向信号有助于巩固用户在体验过程中建立的心理模型。 任何运动的方向都必须支持空间连续性和空间中对象的完整性。
 
@@ -32,7 +29,9 @@ ms.locfileid: "1843736"
 
 ## <a name="direction-of-movement"></a>运动方向
 
-:::row::: :::column::: 运动的方向对应于物理运动。 就像在自然界中一样，对象可以沿任意世界轴（X、Y、Z）移动。 我们按照这种方式看待对象在屏幕上的运动。
+:::row:::
+    :::column:::
+        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
 
         When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
     :::column-end:::
@@ -63,28 +62,39 @@ ms.locfileid: "1843736"
 
 需要仔细考虑 4 个导航方向。
 
-:::row::: :::column::: **前进进入**
+:::row:::
+    :::column:::
+        **Forward-In**
 
         Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
     :::column-end:::
-:::row-end::: :::row::: :::column::: **前进退出**
+:::row-end:::
+:::row:::
+    :::column:::
+        **Forward-Out**
 
         Content exits quickly. Objects accelerate off screen.
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
     :::column-end:::
-:::row-end::: :::row::: :::column::: **后退进入**
+:::row-end:::
+:::row:::
+    :::column:::
+        **Backward-In**
 
         Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
     :::column-end:::
-:::row-end::: :::row::: :::column::: **后退退出**
+:::row-end:::
+:::row:::
+    :::column:::
+        **Backward-Out**
 
         Same as Forward-Out, but reversed.
     :::column-end:::

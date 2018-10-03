@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: fab1e83f212675b2c0bb28e0b1ae449f271edec7
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206457"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266304"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的并发和异步操作
 > [!NOTE]
@@ -322,7 +322,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 ## <a name="reporting-progress"></a>报告进度
 
-如果你的协同程序返回[**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)或[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，然后你可以检索**winrt::get_progress_token**函数返回的对象并使用它返回到进度报告进度处理程序。 下面是代码示例。
+如果你的协同程序返回[**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)或[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，然后你可以检索**winrt::get_progress_token**函数返回的对象并使用它回进度报告进度处理程序。 下面是代码示例。
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
@@ -380,7 +380,7 @@ int main()
 ```
 
 > [!NOTE]
-> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，则第二个将失败。 任一以下两种类型的完成处理程序之一是相应;不能两者都相同的异步对象。
+> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，第二个将会失败。 任一以下两种类型的完成处理程序之一是相应;不能两者都相同的异步对象。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };

@@ -15,11 +15,11 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c75169f118e2c8ef575fa251a7badc8cfe44247
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205645"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261654"
 ---
 # <a name="navigation-view-preview-version"></a>导航视图 （预览版本）
 
@@ -33,7 +33,7 @@ NavigationView 控件提供了适用于应用的顶级导航。 它适应各种�
 
 ## <a name="get-the-windows-ui-library"></a>获取 Windows UI 库
 
-此控件是 Windows UI 库，包含新控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 
+此控件是 Windows UI 库，包含新的控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 
 
 ## <a name="navigation-styles"></a>导航样式
 
@@ -49,7 +49,7 @@ NavigationView 支持：
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-NavigationView 是自适应导航控件，非常适用于：
+NavigationView 是非常适用于自适应导航控件：
 
 - 提供一致的导航体验整个应用。
 - 保留较小的 windows 上的屏幕空间。
@@ -61,10 +61,11 @@ NavigationView 是自适应导航控件，非常适用于：
 
 :::row:::
     :::column:::
-        ![某些图像](images/XAML-controls-gallery-app-icon.png)
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    ::: 列范围 ="2"::: **XAML 控件库**<br>
-        如果你安装了该 XAML 控件库应用，请单击<a href="xamlcontrolsgallery:/item/NavigationView">此处</a>打开该应用，了解 NavigationView 的实际。
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/NavigationView">here</a> to open the app and see NavigationView in action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -77,26 +78,26 @@ NavigationView 可以将设置为不同的显示模式，通过`PaneDisplayMode`
 
 :::row:::
     :::column:::
-    ### Left
-    Displays an expanded left positioned pane.
+    ### <a name="left"></a>向左
+    显示扩展的左侧定位的窗格。
     :::column-end:::
     :::column span="2":::
-    ![left nav pane expanded](images/displaymode-left.png)
+    ![展开左侧的导航窗格](images/displaymode-left.png)
     :::column-end:::
 :::row-end:::
 
 我们建议左侧的导航时：
 
-- 具有中等-数量到大量 (5-10) 的同等重要的顶级导航类别。
-- 你希望使用较少的其他应用内容的空间非常重要的导航类别。
+- 具有中等高大量 (5-10) 同样重要的顶级导航类别。
+- 你希望与其他应用内容所需的空间更小的非常重要的导航类别。
 
 :::row:::
     :::column:::
-    ### Top
-    Displays a top positioned pane.
+    ### <a name="top"></a>Top
+    显示顶部放置窗格。
     :::column-end:::
     :::column span="2":::
-    ![top navigation](images/displaymode-top.png)
+    ![顶部导航](images/displaymode-top.png)
     :::column-end:::
 :::row-end:::
 
@@ -109,21 +110,21 @@ NavigationView 可以将设置为不同的显示模式，通过`PaneDisplayMode`
 
 :::row:::
     :::column:::
-    ### LeftCompact
-    Displays a thin sliver with icons on the left.
+    ### <a name="leftcompact"></a>LeftCompact
+    在左侧显示带图标的精简条。
     :::column-end:::
     :::column span="2":::
-    ![nav pane compact](images/displaymode-leftcompact.png)
+    ![精简的导航窗格](images/displaymode-leftcompact.png)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-    ### LeftMinimal
-    Displays only the menu button.
+    ### <a name="leftminimal"></a>LeftMinimal
+    显示仅菜单按钮。
     :::column-end:::
     :::column span="2":::
-    ![nav pane minimal](images/displaymode-leftminimal.png)
+    ![最少的导航窗格](images/displaymode-leftminimal.png)
     :::column-end:::
 :::row-end:::
 
@@ -131,7 +132,7 @@ NavigationView 可以将设置为不同的显示模式，通过`PaneDisplayMode`
 
 ![gif leftnav 默认自适应行为](images/displaymode-auto.png)
 
-可在小屏幕上的 LeftMinimal、 LeftCompact 之间中等屏幕，并在较大的屏幕上的左侧。 请参阅有关详细信息的[自适应行为](#adaptive-behavior)部分。
+中等屏幕和大屏幕上的左边适应小屏幕上都具有 LeftMinimal、 LeftCompact 之间。 请参阅有关详细信息的[自适应行为](#adaptive-behavior)部分。
 
 ## <a name="anatomy"></a>结构
 
@@ -147,7 +148,7 @@ NavigationView 可以将设置为不同的显示模式，通过`PaneDisplayMode`
 
 窗格可以放置的顺序或左侧，通过`PanePosition`属性。
 
-下面是向左和顶级窗格职位详细的窗格结构：
+下面是向左和顶级窗格位置详细的窗格解剖学：
 
 <b>左侧的导航</b><br>
 
@@ -174,8 +175,8 @@ NavigationView 可以将设置为不同的显示模式，通过`PaneDisplayMode`
 
 NavigationView 窗格还可以包含：
 
-1. 导航项目，请在表单中的[NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem)，导航到特定页面。
-2. 分隔符，形式的[NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)，用于对导航项分组。 将[不透明度](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)属性设置为 0 来呈现空间作为分隔符。
+1. 导航项，形式的[NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem)，用于导航到特定页面。
+2. 分隔符，形式的[NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)，用于对导航项分组。 [不透明度](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)属性设置为 0 来呈现空间作为分隔符。
 3. 标头，形式的[NavigationViewItemHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)，用于标记项组。
 4. 可选[AutoSuggestBox](auto-suggest-box.md)允许应用级别搜索。
 5. [应用设置](../app-settings/app-settings-and-data.md)的可选入口点。 若要隐藏设置项，请使用[IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)属性。
@@ -214,9 +215,9 @@ NavigationView 窗格还可以包含：
     :::column-end:::
 :::row-end:::
 
-### <a name="pane-content"></a>窗格的内容
+### <a name="pane-content"></a>窗格内容
 
-在窗格中，添加到[PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)属性时的自由格式内容
+在窗格中，添加到[PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)属性后的自由格式内容
 
 :::row:::
     :::column:::
@@ -255,7 +256,7 @@ NavigationView 会根据可用屏幕空间大小自动更改其显示模式。 �
 
 ### <a name="default"></a>默认值
 
-NavigationView 的默认自适应行为是较小的窗口宽度上显示较大的窗口宽度展开左侧窗格中、 中等大小的窗口宽度上左仅限图标的导航窗格和汉堡菜单按钮。 有关自适应行为的窗口大小的详细信息，请参阅[屏幕大小和断点](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
+NavigationView 的默认自适应行为是在较小的窗口宽度上显示较大的窗口宽度展开左侧窗格中，中等大小的窗口宽度上左仅限图标的导航窗格和汉堡菜单按钮。 有关自适应行为的窗口大小的详细信息，请参阅[屏幕大小和断点](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
 
 ![gif leftnav 默认自适应行为](images/displaymode-auto.png)
 
@@ -265,7 +266,7 @@ NavigationView 的默认自适应行为是较小的窗口宽度上显示较大�
 
 ### <a name="minimal"></a>最小
 
-第二个常见的自适应模式是较大窗口宽度和两个中小型窗口宽度汉堡菜单上使用展开的左侧窗格。
+第二个常见的自适应模式是较大窗口宽度和两个中等和小窗口宽度汉堡菜单上使用展开的左侧窗格。
 
 ![gif leftnav 自适应行为 2](images/adaptive-behavior-minimal.png)
 
@@ -275,12 +276,12 @@ NavigationView 的默认自适应行为是较小的窗口宽度上显示较大�
 
 我们建议此时：
 
-- 你希望为较小的窗口宽度上的应用内容的更多空间。
+- 你希望为较小的窗口宽度的应用内容的更多空间。
 - 导航类别不能清楚地表示带图标。
 
 ### <a name="compact"></a>精简
 
-第三个常见的自适应模式是展开的左侧窗格中使用较大的窗口宽度，，这两个中小型窗口宽度为仅图标的左侧的导航窗格。 一个很好的示例是邮件应用。
+第三个常见的自适应模式是展开的左侧窗格中使用较大窗口宽度，这两个中等和小窗口宽度为仅图标的左侧的导航窗格。 良好示例是邮件应用。
 
 ![gif leftnav 自适应行为 3](images/adaptive-behavior-compact.png)
 
@@ -295,7 +296,7 @@ NavigationView 的默认自适应行为是较小的窗口宽度上显示较大�
 
 ### <a name="no-adaptive-behavior"></a>任何自适应行为
 
-有时你根本可能不需要任何自适应行为。 你可以设置为始终扩展、 始终紧凑，或始终最少的窗格。
+有时你根本可能不需要任何自适应行为。 你可以设置为始终扩展、 始终紧凑，或始终最小的窗格。
 
 ![gif leftnav 自适应行为 4](images/adaptive-behavior-none.png)
 
@@ -305,10 +306,10 @@ NavigationView 的默认自适应行为是较小的窗口宽度上显示较大�
 
 ### <a name="top-to-left-navigation"></a>上向左导航
 
-我们建议使用顶部导航较大的窗口大小的左侧的导航的小窗口大小时：
+我们建议使用较大的窗口大小和小上的左侧的导航的顶部导航窗口大小时：
 
-- 必须一套同样重要的顶级导航类别显示在一起，以便在屏幕上不符合此设置中的一个类别，如果你折叠到左侧的导航，以便为他们提供同样重要。
-- 你想要保留为更内容尽可能以较小的窗口大小的空间。
+- 你有同等重要顶级导航类别显示在一起，一组，以便在屏幕上不符合此组中的一个类别，如果你折叠到左侧的导航，以便为他们提供同样重要。
+- 你想要保留为更内容的空间，较小的窗口大小。
 
 下面是一个示例：
 
@@ -341,7 +342,7 @@ NavigationView 的默认自适应行为是较小的窗口宽度上显示较大�
 
 ```
 
-有时，应用需要将不同的数据绑定到的顶部窗格和左窗格。 通常左窗格中包括多个导航元素。
+有时应用需要将不同的数据绑定到顶部窗格和左窗格。 通常左窗格中包括多个导航元素。
 
 下面是一个示例：
 
@@ -443,7 +444,7 @@ public class NavViewDataTemplateSelector : DataTemplateSelector
 
 ### <a name="tabs"></a>选项卡
 
-在选项卡模型中，选择和焦点相关联。 操作，通常将焦点移将还转移选择。 在以下示例中，右箭头会选择指示器将从移动显示到放大镜。 你可以通过将[SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus)属性设置为启用达到此目的。
+在选项卡模型中，选择和焦点相关联。 通常将焦点移将还转移选择操作。 在以下示例中，右箭头会选择指示器从移动显示到放大镜。 你可以通过[SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus)属性设置为启用达到此目的。
 
 ![纯文本的顶部 navview 的屏幕截图](images/nav-tabs.png)
 
@@ -477,11 +478,11 @@ NavigationView 具有内置的后退按钮，可以通过以下属性启用：
 :::row:::
     :::column:::
     <b>左侧的导航</b><br>
-    ![NavigationView 后退按钮上的左导航](images/leftnav-back.png)
+    ![左上角的 NavigationView 上的后退按钮导航](images/leftnav-back.png)
     :::column-end:::
     :::column:::
      <b>顶级导航</b><br>
-    ![在顶部导航 NavigationView 后退按钮](images/topnav-back.png)
+    ![NavigationView 顶级导航上的后退按钮](images/topnav-back.png)
     :::column-end:::
 :::row-end:::
 
@@ -493,7 +494,7 @@ NavigationView 具有内置的后退按钮，可以通过以下属性启用：
 
 下面是如何，你可以将 NavigationView 合并与较大的窗口大小的顶部导航窗格和较小的窗口大小的左侧的导航窗格的端到端示例。
 
-在此示例中，我们希望经常选择新的导航类别，最终用户，因此我们：
+在此示例中，我们希望最终用户经常选择新的导航类别，因此我们：
 
 - 将[SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion)属性设置为已启用
 - 使用不将添加到导航堆栈的框架导航。
@@ -508,7 +509,7 @@ NavigationView 具有内置的后退按钮，可以通过以下属性启用：
 下面是示例代码：
 
 > [!NOTE]
-> 如果你使用[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)，则你将需要添加对该工具包的引用： `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`。
+> 如果你使用[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)，则你将需要添加对此工具包的引用： `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`。
 
 ```xaml
 <Page
@@ -591,7 +592,7 @@ NavigationView 具有内置的后退按钮，可以通过以下属性启用：
 ```
 
 > [!NOTE]
-> 如果你使用[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)，则你将需要添加对该工具包的引用： `using MUXC = Microsoft.UI.Xaml.Controls;`。
+> 如果你使用[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)，则你将需要添加对此工具包的引用： `using MUXC = Microsoft.UI.Xaml.Controls;`。
 
 ```csharp
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
@@ -725,9 +726,9 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 
 ## <a name="scroll-content-under-top-pane"></a>在顶部窗格下的滚动内容
 
-对于无缝的外观和感觉，如果你的应用具有使用 ScrollViewer 的页面，并且在导航窗格顶部放置，我们建议在顶部导航窗格下方的内容滚动。
+对于无缝的外观和感觉，如果你的应用具有使用 ScrollViewer 的页面，并且你导航窗格顶部放置，我们建议在顶部导航窗格下方的内容滚动。
 
-这可以通过将[CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds)属性设置为 true 相关 ScrollViewer 上实现。
+这可以通过将[CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds)属性设置为 true 相关的 ScrollViewer 上实现。
 
 ![navview 滚动导航窗格](images/nav-scroll-content.png)
 
@@ -737,7 +738,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 
 你可以通过在 NavigationView 上设置[ContentOverlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay)属性达到此目的。 
 
-有时，如果用户向下滚动，你可能想要隐藏的导航窗格中，通过在 NavigationView 的[IsPaneVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay)属性设置为 false 来实现。
+有时，如果用户向下滚动，你可能想要隐藏导航窗格中，通过上 NavigationView 的[IsPaneVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay)属性设置为 false 来实现。
 
 ![navview 滚动隐藏导航](images/nav-scroll-hidepane.png)
 

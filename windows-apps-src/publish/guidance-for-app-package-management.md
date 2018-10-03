@@ -4,18 +4,18 @@ Description: Learn how your app's packages are made available to your customers,
 title: 应用包管理指南
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205137"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266192"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -99,7 +99,7 @@ ms.locfileid: "4205137"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
-如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的支持你的应用之前，将提示您确认，这是你的意图，你可以在**程序包**页面上保存更改之前的所有程序包。
+如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的应用以前支持，将提示您确认，这是你的意图，你可以在的**程序包**页面上保存更改之前的所有程序包。
 
 当发布的提交，删除所有可在你的应用以前支持的设备系列运行的程序包时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
 
@@ -110,30 +110,11 @@ ms.locfileid: "4205137"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>将适用于 Windows 10 的程序包添加到以前发布的应用
 
-如果你在应用商店中有一个面向 Windows 8.x 和/或 Windows Phone 8.x 的应用，并希望为 Windows 10 更新你的应用，请创建一个新提交并在[程序包](upload-app-packages.md) 步骤阶段添加 UWP .appxupload 程序包。 你的应用完成认证过程后，已拥有你的应用，而现在位于 Windows 10 的客户将你的 UWP 程序包作为更新获取从应用商店。 该 UWP 程序包也适用于使用 Windows 10 的客户进行新的购置。
+如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x，并且你想要为 Windows 10 更新你的应用、 创建新提交并在[包](upload-app-packages.md)步骤期间添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 Windows 10 客户通过新的购置 UWP 程序包。
 
 > [!NOTE]
 > 使用 Windows 10 的客户获取 UWP 程序包后，你无法使客户回退到使用任何以前操作系统版本的程序包。 
 
-请注意，你的 Windows 10 程序包的版本号必须始终高于那些你包含的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 程序包（或你以前发布的那些操作系统的程序包）的任一版本号。 有关详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
+请注意，你的 Windows 10 程序包的版本号必须始终高于那些你已使用任何 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 程序包。 有关详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
 
 有关如何包装 UWP 应用以上架 Microsoft Store 的详细信息，请参阅[包装应用](../packaging/index.md)。
-
-> [!IMPORTANT]
-> 请谨记，如果你提供面向通用设备系列的程序包，每个已经在任何较早的操作系统（Windows Phone 8、Windows 8.1 等）上拥有你的应用然后升级到 Windows 10 的客户将更新以获取你的 Windows 10 程序包。
-> 
-> 发生这种情况即使你具有中排除了特定设备系列[设备系列可用性](device-family-availability.md)步骤你的提交，由于部分仅适用于新的购置。 如果你不希望每个以前的客户获取你的通用 Windows 10 程序包，请确保在 appx 清单中将 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素更新为仅包含你希望支持的特定设备系列。
-> 
-> 例如，假设你希望在 Windows 8 和 Windows 8.1 客户已升级到 Windows 10 桌面版设备，以获取新的 UWP 应用，但你希望现在使你的程序包之前的 Windows 10 移动版设备进行 availabl 任何 Windows Phone 客户e （面向 Windows Phone 8 或 Windows Phone 8.1）。 若要执行此操作，你将需要更新[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)在 appx 清单中包含仅**Windows.Desktop** （适用于桌面设备系列），而不是将其保留为**Windows.Universal**值 （面向通用设备系列）默认情况下，Microsoft Visual Studio 包含在清单中。 不要提交任何面向通用或移动设备系列的 UWP 程序包（**Windows.Universal** 或 **Windows.Universal**）。 这样，你的 Windows 10 Mobile 客户将不会获得你的任何 UWP 程序包。
-
-
-## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>使程序包维持对 Windows Phone 8.1 的兼容性
-
-当更新之前为 Windows Phone 8.1 发布的应用时，会针对程序包类型应用某些要求：
-
--   在应用具有已发布的 Windows Phone 8.1 程序包后，所有后续更新必须也包含 Windows Phone 8.1 程序包。
--   在应用具有已发布的 Windows Phone 8.1 XAP 后，后续更新必须具有 Windows Phone 8.1 XAP、Windows Phone 8.1 appx 或 Windows Phone 8.1 appxbundle。
--   当应用具有已发布的 Windows Phone 8.1 .appx 时，后续更新必须具有 Windows Phone 8.1 .appx 或 Windows Phone 8.1 .appxbundle。 换言之，不允许 Windows Phone 8.1 XAP。 这也适用于包含 Windows Phone 8.1 .appx 的 .appxupload。
--   在应用具有已发布的 Windows Phone 8.1 .appxbundle 后，后续更新必须具有 Windows Phone 8.1 .appxbundle。 换言之，不允许 Windows Phone 8.1 XAP 或 Windows Phone 8.1 .appx。 这也适用于包含 Windows Phone 8.1 .appxbundle 的 .appxupload。
-
-若未遵循这些规则，可能导致程序包上载错误，从而阻止你完成提交。

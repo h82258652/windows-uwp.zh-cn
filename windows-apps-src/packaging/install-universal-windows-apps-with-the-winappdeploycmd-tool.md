@@ -4,25 +4,25 @@ ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安装应用
 description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。
 ms.author: lahugh
-ms.date: 03/08/2017
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 664b2e92c40fa619150a2c3fd527194e8e983039
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 229f0e9993abc9c5600c55a1a0eddc2e262f1c4c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1673004"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260838"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
 
-Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。 当 Windows 10 设备通过 USB 进行连接或无需 Microsoft Visual Studio 或该应用的解决方案即可连接到同一子网时，可使用此工具部署 .appx 程序包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
+Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。 此工具可用于在 Windows 10 设备而无需为该应用的 Microsoft Visual Studio 或解决方案是通过 USB 连接或同一子网的情况下部署应用包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
 
-你只需安装 Windows 10 SDK 即可从命令提示符或脚本文件中运行 WinAppDeployCmd 工具。 在你使用 WinAppDeployCmd.exe 安装应用时，此操作会使用 .appx 文件或 AppxManifest（适用于松散文件）将应用旁加载到 Windows 10 设备。 此命令不会安装应用所需的证书。 若要运行该应用，Windows 10 设备必须处于开发人员模式下或已经安装了证书。
+你只需安装 Windows 10 SDK 即可从命令提示符或脚本文件中运行 WinAppDeployCmd 工具。 使用 WinAppDeployCmd.exe 安装应用时，这会使用.appx/.msix 文件或 AppxManifest （适用于松散文件） 将旁加载到 Windows 10 设备上的应用。 此命令不会安装应用所需的证书。 若要运行该应用，Windows 10 设备必须处于开发人员模式下或已经安装了证书。
 
 若要部署到移动设备，必须首先创建程序包。 有关详细信息，请查看[此处](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
@@ -136,7 +136,7 @@ WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-使用指定的 .appx 程序包更新已经安装在 IP 地址为 192.168.0.1 的 Windows 10 设备上的应用。
+更新已经安装在 IP 地址为 192.168.0.1 使用指定的应用包的 Windows 10 设备的应用。
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1

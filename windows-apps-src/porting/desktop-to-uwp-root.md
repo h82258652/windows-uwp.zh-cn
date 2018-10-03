@@ -1,48 +1,46 @@
 ---
 author: normesta
-Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monitization.
+Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
 Search.Product: eADQiWindows 10XVcnh
-title: 桌面桥
+title: 打包桌面应用程序
 ms.author: normesta
-ms.date: 05/14/2018
+ms.date: 09/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ded8fb8a9d391ec48b46b0795b901dc403e1f30
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211225"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266400"
 ---
-# <a name="desktop-bridge"></a>桌面桥
+# <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 
-使用你现有的桌面应用，并为 Windows 10 用户增加现代体验。 然后，将应用发布到 Microsoft Store，以拓展国际市场。 你可以直接利用 Store 中内置的功能，以更为简单的方式通过你的应用获取利润。 当然，并非必须使用 Store。 你完全可以使用现有的渠道。
+获取现有桌面应用程序并为 Windows 10 用户增加现代体验。 然后，将应用发布到 Microsoft Store，以拓展国际市场。 你可以通过其盈利你的应用程序中更为简单的方式通过利用应用商店中内置的功能。 当然，并非必须使用 Store。 你完全可以使用现有的渠道。
 
 ![桌面桥](images/desktop-to-uwp/desktop-bridge-4.png)
 
-桌面桥是我们内置于平台中的基础架构，借助它，你可以使用现代化的 Windows 应用包来分发你的 Windows 窗体、WPF 或 Win32 桌面应用或游戏。
+在桌面应用程序创建程序包时，你的应用程序将获得一个标识，并且与该标识，桌面应用程序可以访问到 Windows 通用平台 (UWP) Api。 你可以使用它们添加具有吸引力的现代体验，例如动态磁贴和通知。  使用简单的条件编译和运行时检查来仅当你的应用程序运行在 Windows 10 上运行 UWP 代码。
 
-此包向你的应用提供一个身份，你的桌面应用可以利用此身份获得对 Windows 通用平台 (UWP) API 的访问权限。 你可以使用它们添加具有吸引力的现代体验，例如动态磁贴和通知。  仅当应用在 Windows 10 上运行时，才可使用简单的条件编译和运行时检查来运行 UWP 代码。
-
-除了用于添加 Windows 10 体验的代码之外，你的应用将保持不变，你可以继续将它分发给你现有的 Windows 7、Windows Vista 或 Windows XP 用户群。 在 Windows 10 上，你的应用将继续像如今的情形一样，以完全信任用户模式运行。
+除了用于添加 Windows 10 体验的代码，你的应用程序保持不变，你可以继续将它分发给你的现有 Windows 7、 Windows Vista 或 Windows XP 用户群。 在 Windows 10 中，你的应用程序继续运行以完全信任用户模式下，就像它如今。
 
 >[!IMPORTANT]
->桌面桥是在 Windows 10 版本 1607 中引入，它仅可用于面向 Windows 10 周年更新（10.0；版本 14393）或 Visual Studio 更高版本的项目中。
+>能够创建桌面应用程序的 Windows 应用包 （Windows 10 版本 1607年中引入了称为桌面桥，否则，它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
 
 > [!NOTE]
-> 请观看 Microsoft Virtual Academy 发布的<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>的视频短片。 这些视频演示了将桌面应用引入通用 Windows 平台 (UWP) 的整个过程。
+> 请观看 Microsoft Virtual Academy 发布的<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>的视频短片。 这些视频演示了将桌面应用程序到通用 Windows 平台 (UWP) 的整个过程。
 
 ## <a name="benefits"></a>好处
 
 以下是为你的 Windows 桌面应用程序创建 Windows 应用包的一些原因：
 
-:heavy_check_mark: **简化部署**。 使用此桥的应用和游戏都具有出色的部署体验。 此体验确保用户可以放心地安装应用，并对其进行更新。 如果用户选择卸载应用，则将完全删除它，不会留下任何痕迹。 这能减少编写设置体验的时间，并使用户使用最新应用。
+:heavy_check_mark: **简化部署**。 使用此桥的应用和游戏都具有出色的部署体验。 此体验确保用户可以放心地安装应用程序并对其进行更新。 如果用户选择卸载应用，则将完全删除它，不会留下任何痕迹。 这能减少编写设置体验的时间，并使用户使用最新应用。
 
-:heavy_check_mark: **自动更新和许可**。 你的应用能够参与 Microsoft Store 的内置许可和自动更新设施。 自动更新是高度可靠和高效的机制，因为仅下载文件的已更改部分。
+:heavy_check_mark: **自动更新和许可**。 你的应用程序可以参与 Microsoft Store 的内置许可和自动更新设施。 自动更新是高度可靠和高效的机制，因为仅下载文件的已更改部分。
 
 :heavy_check_mark: **扩大覆盖范围并简化盈利过程**。 选择通过 Microsoft Store 进行分发可将覆盖范围扩大至数以百万的 Windows10 用户，这些用户可以通过当地支付选项获取应用、游戏和应用内商品。
 
@@ -54,7 +52,7 @@ ms.locfileid: "4211225"
 
 ## <a name="prepare"></a>准备
 
-首先，查看文章[准备打包桌面应用](desktop-to-uwp-prepare.md)，准备应用程序，然后解决应用存在的所有问题，最后再为应用创建 Windows 应用包。 在创建包之前，可能不需要对应用进行很多更改。 但是，某些情况下可能需要在创建包之前对应用进行调整。
+首先，准备你的应用程序通过查看文章[准备打包桌面应用](desktop-to-uwp-prepare.md)，以及然后解决任何之前为其创建 Windows 应用包应用于你的应用程序的问题。 你可能不需要创建包之前对你的应用程序进行很多更改。 但是，有一些情况下可能需要进行调整你的应用程序，为其创建包之前。
 
 <a id="convert" />
 
@@ -64,9 +62,9 @@ ms.locfileid: "4211225"
 
 ### <a name="desktop-app-converter"></a>Desktop App Converter
 
-尽管此工具名称中出现了“Converter”一词，但它实际上并不转换你的应用。 你的应用将保持不变。 但是，此工具将为你生成 Windows 应用包。 在应用进行大量系统修改的情况下，或者如果你不太确定安装程序要执行的操作，则使用它非常方便。
+尽管此工具名称中出现了“Converter”一词，但它实际上并不转换你的应用。 你的应用程序保持不变。 但是，此工具将为你生成 Windows 应用包。 你的应用程序进行大量系统修改或者如果你不确定你的安装程序的用途，则它可以是在情况下非常方便。
 
-Desktop App Converter 可将安装程序的操作转换为虚拟文件和注册表系统，以供你的应用打包版本使用。 Desktop App Converter 还可以为你执行一些额外的操作。 以下是其中一些例子。
+Desktop App Converter 转换到的虚拟文件和注册表系统将使用你的应用程序的打包的版本安装程序的操作。 Desktop App Converter 还可以为你执行一些额外的操作。 以下是其中一些例子。
 
 :heavy_check_mark: 自动注册预览控件、缩略图处理程序、属性处理程序、防火墙规则、URL 标志。
 
@@ -76,11 +74,11 @@ Desktop App Converter 可将安装程序的操作转换为虚拟文件和注册�
 
 : heavy_check_mark： 生成可用于运行你的应用的证书。
 
-:heavy_check_mark: 验证你的应用是否符合桌面桥和 Microsoft Store 要求。
+: heavy_check_mark： 验证你的应用程序针对已打包的桌面应用程序和 Microsoft Store 的要求。
 
-Desktop App Converter 的另一个重要用途是通过除 Visual Studio 之外的开发环境维护你的应用。 即使没有应用安装程序，你也可以使用 Desktop App Converter。
+使用 Desktop App Converter 的另一个绝佳理由是通过除 Visual Studio 之外不同的开发环境维护你的应用程序。 即使你的应用程序没有安装程序，你可以使用 Desktop App Converter。
 
-请参阅[使用 Desktop App Converter 将应用打包（桌面桥）](desktop-to-uwp-run-desktop-app-converter.md)
+查看[程序包的桌面应用程序使用 Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)
 
 ### <a name="visual-studio"></a>Visual Studio
 
@@ -94,17 +92,17 @@ Desktop App Converter 的另一个重要用途是通过除 Visual Studio 之外�
 
 :heavy_check_mark: 使用向导生成包。
 
-:heavy_check_mark: 根据已保存在 Windows 开发人员中心仪表板中的应用名称轻松分配应用 ID。
+: heavy_check_mark： 轻松地将标识从已保存在 Windows 开发人员中心仪表板中的名称分配给你的应用程序。
 
-请参阅[使用 Visual Studio 将 .NET 应用打包（桌面桥）](desktop-to-uwp-packaging-dot-net.md)
+请参阅[包使用 Visual Studio 的桌面应用程序](desktop-to-uwp-packaging-dot-net.md)
 
 ### <a name="third-party-installer"></a>第三方安装程序
 
- 多个热门的第三方产品和安装程序现在都支持桌面桥。 只需单击几下即可使用它们来生成 MSI 安装程序或应用包。 我们不提供有关如何使用这些工具的文档，不过你可以访问它们的网站以了解详细信息。
+ 多个热门的第三方产品和安装程序现在都支持打包的桌面应用程序的能力。 只需单击几下即可使用它们来生成 MSI 安装程序或应用包。 我们不提供有关如何使用这些工具的文档，不过你可以访问它们的网站以了解详细信息。
 
 #### <a name="advanced-installer"></a>Advanced Installer
 
-Caphyon 提供基于 GUI 的免费桌面应用打包工具。使用此工具，你只需单击几下即可为应用程序生成 Windows 应用包。 它可以使用任何安装程序（甚至是以静默模式运行的安装程序）并执行验证检查，以确定该应用是否适合打包。
+Caphyon 提供基于 GUI 的免费桌面应用打包工具。使用此工具，你只需单击几下即可为应用程序生成 Windows 应用包。 它可以使用任何安装程序;即使在静默模式下运行并执行验证检查以确定是否适用于打包应用。
 Desktop App Converter 还与 Hyper-V 和 [VMware](http://www.vmware.com/) 集成。 这意味着你可以使用自己的虚拟机，而无需下载大小可能超过 3GB 的匹配的 [Docker](https://docs.docker.com/) 映像。
 
 <img width="20%" src="images/desktop-to-uwp/Advanced_Installer_Vertical.png">
@@ -132,7 +130,7 @@ Cloudhouse 提供了自动打包工具，用于将业务线应用程序打包到
 
 #### <a name="firegiant"></a>FireGiant
 
-[FireGiant Appx 扩展](https://www.firegiant.com/products/wix-expansion-pack/appx)可用来基于相同 WiX 源代码同时创建 Windows 应用包和 MSI 程序包。 每次创建时，对于 Windows 应用包和较早版本的 Windows with MSI，都面向 Windows 10 中的桌面桥进行创建。
+[FireGiant Appx 扩展](https://www.firegiant.com/products/wix-expansion-pack/appx)可用来基于相同 WiX 源代码同时创建 Windows 应用包和 MSI 程序包。 每次你生成时，你可以使用 Windows 应用包和早期版本的 Windows msi 面向 Windows 10。
 
 <img width="20%" src="images/desktop-to-uwp/FG3rdPartyLogo.png">
 
@@ -140,7 +138,7 @@ FireGiant Appx 扩展使用对 WiX 项目的静态分析和智能模拟来创建
 
 因为 FireGiant Appx 扩展不会通过运行安装程序来转换它，你可以保留 WiX 安装程序，而无需重复将其转换为 Windows 应用包。 你的使用不同版本 Windows 的所有用户都可获取最新改进功能，你无需担心 MSI 和 Windows 应用包不同步。
 
-查看此[视频](https://www.youtube.com/watch?v=AFBpdBiAYQE)，了解 CEO Rob Mensching 如何通过几行 FireGiant 代码创建 Appx（Windows 应用包）版本的热门开源 7-Zip 压缩工具，然后他又如何通过更改相同 WiX 源代码改进了 Windows 应用和 MSI 包。
+请查看此[视频](https://www.youtube.com/watch?v=AFBpdBiAYQE)，了解几行代码 FireGiant CEO Rob Mensching 如何创建 Appx （Windows 应用包） 版本的热门开源 7-zip 压缩工具，然后他如何提高 Windows 应用程序和 MSI 包更改相同 WiX 源代码。
 
 #### <a name="installaware"></a>InstallAware
 
@@ -188,7 +186,7 @@ InstallShield 提供单一解决方案来开发 MSI 与 EXE 安装程序、创�
 
 #### <a name="raypack-studio"></a>RayPack Studio
 
-Raynet 的打包解决方案 [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio) 支持桌面桥，将其作为其中一种有效且易于配置的转换和重新打包框架方法。
+Raynet 的打包解决方案， [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio)中，作为一种高效且易于配置的转换和重新打包框架的桌面应用程序支持创建的包。
 
 <img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
 
@@ -212,25 +210,25 @@ Raynet 的打包解决方案 [RayPack Studio](https://raynet.de/Raynet-Products/
 
 ### <a name="manual-packaging"></a>手动打包
 
-以上都无法实现时，你还可以在不使用上述任何工具的情况下转换你的应用。 如果想精细地控制你的转换，则可以创建清单文件，然后运行 **MakeAppx.exe** 工具来创建 Windows 应用包。
+作为最后一个选项，你可以不使用上述任何工具的情况下转换你的应用程序。 如果想精细地控制你的转换，则可以创建清单文件，然后运行 **MakeAppx.exe** 工具来创建 Windows 应用包。
 
-请参阅[手动将应用打包（桌面桥）](desktop-to-uwp-manual-conversion.md)。
+请参阅[手动打包的桌面应用程序](desktop-to-uwp-manual-conversion.md)。
 
 ## <a name="integrate"></a>集成
 
-如果你的应用需要与系统集成（例如：建立防火墙规则），请在程序包清单中指出集成任务，系统将完成其余操作。 对于其中大多数任务，你根本不必编写任何代码。 在清单中添加 XML，你就可以执行一些操作，如在用户登录时启动进程、将应用集成到“文件资源管理器”中，以及为应用添加显示在其他应用中的打印目标列表。
+如果你的应用程序需要与系统集成 (例如： 建立防火墙规则)、 应用程序的程序包清单中指出和，系统将完成其余部分。 对于其中大多数任务，你根本不必编写任何代码。 在清单中的 XML 位，你可以执行操作像在用户登录时启动进程、 将你的应用程序集成到文件资源管理器，并添加你的应用程序的其他应用中显示的打印目标列表。
 
-请参阅[将应用与 Windows 10 集成（Windows 桌面桥）](desktop-to-uwp-extensions.md)。
+请参阅[Windows 10 已打包的桌面应用程序集成](desktop-to-uwp-extensions.md)。
 
 ## <a name="enhance"></a>增强
 
-将应用打包后，就可以通过添加动态磁贴和推送通知等功能对应用进行完善。 其中一些功能可显著提高应用的参与度，并且只需花费很少的时间即可添加。 某些增强功能需要更多的代码。
+将应用打包后，就可以通过添加动态磁贴和推送通知等功能对应用进行完善。 其中一些功能可显著提高你的应用程序的参与级别，并且只需花费很少的时间来添加。 某些增强功能需要更多的代码。
 
 请参阅[增强用于 Windows 10 的桌面应用程序](desktop-to-uwp-enhance.md)。
 
 ## <a name="extend"></a>扩展
 
-一些 Windows 10 体验（例如：启用触摸功能的 UI 页面）必须在现代应用容器内运行。 一般情况下，首先应确定是否可以通过 UWP API [增强](desktop-to-uwp-enhance.md)现有桌面应用程序来增加你的体验。 如果你必须使用 UWP 组件来可实现此体验，则可以将 UWP 项目添加到你的解决方案中，并使用应用服务在桌面应用和 UWP 组件之间进行通信。
+一些 Windows 10 体验（例如：启用触摸功能的 UI 页面）必须在现代应用容器内运行。 一般情况下，首先应确定是否可以通过 UWP API [增强](desktop-to-uwp-enhance.md)现有桌面应用程序来增加你的体验。 如果你有使用 UWP 组件，以实现此体验，你可以将 UWP 项目添加到你的解决方案和使用应用服务在桌面应用程序和 UWP 组件之间进行通信。
 
 请参阅[使用现代 UWP 组件扩展桌面应用程序](desktop-to-uwp-extend.md)。
 
@@ -247,18 +245,18 @@ Raynet 的打包解决方案 [RayPack Studio](https://raynet.de/Raynet-Products/
 
 ## <a name="test"></a>测试
 
-若要在准备分发时在现实环境中测试应用，最好对应用进行签名，然后安装它。 请参阅[测试你的应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)。
+若要在准备分发，请在现实环境中测试你的应用程序，最好是对你的应用程序进行签名，然后安装它。 请参阅[测试你的应用](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)。
 
 >[!IMPORTANT]
-> 如果你打算将应用发布到 Microsoft Store，请确保它支持运行 S 模式下的 Windows 10 设备。 这是 Microsoft Store 的要求。 请参阅[测试 Windows 应用是否适用于 S 模式下的 Windows 10](desktop-to-uwp-test-windows-s.md)。
+> 如果你打算发布到 Microsoft 应用商店应用程序，请确保你的应用程序在 S 模式下运行 Windows 10 的设备上正常运行。 这是 Microsoft Store 的要求。 请参阅[测试 Windows 应用是否适用于 S 模式下的 Windows 10](desktop-to-uwp-test-windows-s.md)。
 
 ## <a name="validate"></a>验证
 
-若要为你的应用创造在 Microsoft Store 中发布的最佳机会或令其通过 [Windows 认证](http://go.microsoft.com/fwlink/p/?LinkID=309666)，请在提交应用进行认证之前先在本地进行验证和测试。
+若要为你的应用程序的 Microsoft 应用商店中正在发布的最佳机会或[Windows 认证](http://go.microsoft.com/fwlink/p/?LinkID=309666)，验证在本地和测试之前提交以进行认证。
 
-如果要使用 DAC 将你的应用打包，则可以使用新的 ``-Verify`` 标志来根据桌面桥和 Store 要求验证应用包。 请参阅[将应用打包、对应用进行签名并为 Store 提交做好准备](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)。
+如果你使用 DAC 打包应用，你可以使用新``-Verify``标志来根据已打包的桌面应用程序和应用商店要求验证应用。 请参阅[将应用打包、对应用进行签名并为 Store 提交做好准备](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)。
 
-如果你使用的是 Visual Studio，则可以通过**创建应用包**向导验证应用。 请参阅[创建应用包上传文件](../packaging/packaging-uwp-apps.md#create-an-app-package-upload-file)。
+如果你使用 Visual Studio，你可以验证你的应用程序从**创建应用包**向导。 请参阅[创建应用包上传文件](../packaging/packaging-uwp-apps.md#create-an-app-package-upload-file)。
 
 若要手动运行该工具，请参阅 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)。
 
@@ -266,9 +264,9 @@ Raynet 的打包解决方案 [RayPack Studio](https://raynet.de/Raynet-Products/
 
 ## <a name="distribute"></a>分发
 
-可以通过将应用发布到 Microsoft Store 或将其旁加载到其他系统来分发应用。
+你可以分配你的应用程序，由发布到 Microsoft Store 或旁加载到其他系统它。
 
-请参阅[分发已打包的桌面应用（桌面桥）](desktop-to-uwp-distribute.md)。
+请参阅[分发打包的桌面应用](desktop-to-uwp-distribute.md)。
 
 ## <a name="support-and-feedback"></a>支持和反馈
 
@@ -285,15 +283,13 @@ Raynet 的打包解决方案 [RayPack Studio](https://raynet.de/Raynet-Products/
 | 主题 | 描述 |
 |-------|-------------|
 | [准备将应用打包](desktop-to-uwp-prepare.md) | 提供在将应用打包之前要检查的项目列表。 |
-| [使用 Desktop App Converter 将应用打包（桌面桥）](desktop-to-uwp-run-desktop-app-converter.md) | 演示如何运行 Desktop App Converter。 |
-| [手动将应用打包（桌面桥）](desktop-to-uwp-manual-conversion.md) | 了解如何手动创建应用包和清单。 |
-| [使用 Visual Studio 将 .NET 应用打包（桌面桥）](desktop-to-uwp-packaging-dot-net.md)| 演示如何使用 Visual Studio 将应用打包。 |
-| [将应用与 Windows 10 集成（桌面桥）](desktop-to-uwp-extensions.md) | 通过在打包项目的程序包清单文件描述任务，将你的应用与 Windows 10 集成。 |
+| [使用 Desktop App Converter 将应用打包](desktop-to-uwp-run-desktop-app-converter.md) | 演示如何运行 Desktop App Converter。 |
+| [手动打包的桌面应用程序](desktop-to-uwp-manual-conversion.md) | 了解如何手动创建应用包和清单。 |
+| [使用 Visual Studio 将桌面应用程序打包](desktop-to-uwp-packaging-dot-net.md)| 显示了如何使用 Visual Studio 打包桌面应用程序。 |
+| [将桌面应用程序与 Windows 10 集成](desktop-to-uwp-extensions.md) | 通过描述打包项目的程序包清单文件中的任务将与 Windows 10 集成你的应用程序。 |
 | [增强用于 Windows 10 的桌面应用程序](desktop-to-uwp-enhance.md)| 使用 UWP API 来添加为 Windows 10 用户而设的现代化体验。 |
-| [适用于打包桌面应用（桌面桥）的 UWP API](desktop-to-uwp-supported-api.md) | 查看哪些 UWP API 可供已打包的桌面应用使用。 |
-| [使用新式 UWP 组件扩展桌面应用程序](desktop-to-uwp-extend.md)| 添加必须在 UWP 应用容器内运行的高级体验。 使用应用服务将你的桌面应用与 UWP 进程连接。|
-| [运行、调试和测试打包的桌面应用（桌面桥）](desktop-to-uwp-debug.md) | 说明用于调试已打包应用的选项。 |
-| [分发打包的桌面应用（桌面桥）](desktop-to-uwp-distribute.md) | 查看如何向用户分发已转换的应用。  |
-| [在桌面桥幕后（桌面桥）](desktop-to-uwp-behind-the-scenes.md) | 深入研究桌面桥的深层次工作原理。 |
-| [已知问题（桌面桥）](desktop-to-uwp-known-issues.md) | 列出桌面桥的已知问题。 |
-| [桌面桥代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上演示已转换应用的功能的代码示例。 |
+| [适用于已打包的桌面应用程序的 UWP Api](desktop-to-uwp-supported-api.md) | 查看哪些 UWP Api 可用于在已打包的桌面应用程序使用。 |
+| [使用新式 UWP 组件扩展桌面应用程序](desktop-to-uwp-extend.md)| 添加必须在 UWP 应用容器内运行的高级体验。 通过使用应用服务与 UWP 进程连接桌面应用程序。|
+| [运行、 调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md) | 说明用于调试已打包应用的选项。 |
+| [分发打包的桌面应用程序 ](desktop-to-uwp-distribute.md) | 请参阅可如何分配给用户转换的应用程序。  |
+| [已知的 Issues(desktop-to-uwp-known-issues.md) | 列出的已知问题的打包桌面应用程序。 |

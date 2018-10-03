@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209231"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263344"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
@@ -39,7 +39,7 @@ ms.locfileid: "4209231"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -73,7 +73,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                                                                                                                         |
+| 值      | 类型   | 描述                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 包含聚合的使用情况数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。 |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的评价数据超过 10000 行时，就会返回此值。                 |
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | packageVersion            | 字符串  | 使用情况发生的位置的程序包版本。                          |
 | market                    | 字符串  | 客户使用你的应用的市场的 ISO 3166 国家/地区代码。 |
 | subscriptionName          | 字符串  | 指示用法是通过 Xbox Game Pass。                            |
-| dailySessionCount         | 长型    | 在这一天的用户会话数量。                                  |
+| dailySessionCount         | 长型    | 在那一天的用户会话数量。                                  |
 | engagementDurationMinutes | Double  | 用户在其中主动使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或非活动状态一段时间后结束分钟。             |
 | dailyActiveUsers          | 长型    | 使用这一天的应用的客户数量。                           |
 | dailyActiveDevices        | 长型    | 每日用于与你的应用交互的所有用户的设备数量。  |

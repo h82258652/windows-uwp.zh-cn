@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ca59855456abe366ec681404b3bf6253bc182f79
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209317"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258686"
 ---
 # <a name="color"></a>颜色
 
@@ -29,23 +29,23 @@ ms.locfileid: "4209317"
 
 :::row:::
     :::column:::
-        **有效地使用颜色。**
-谨慎地使用颜色突出显示重要元素时，颜色可帮助创建流畅直观的用户界面。
+        **Use color meaningfully.**
+        When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
     :::column-end:::
     :::column:::
-        **使用颜色指示交互性。**
-可选择一种颜色来指示应用程序中处于交互状态的元素。 例如，许多网页使用蓝色文本表示超链接。
+        **Use color to indicate interactivity.**
+        It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **颜色为个人。**
-在 Windows 中，用户可选择要在其整个体验中显示的主题色和浅色/深色主题。 可选择按何种方式将用户的主题色及主题纳入应用程序，进而为用户提供个性化体验。
+        **Color is personal.**
+        In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
     :::column-end:::
     :::column:::
-        **颜色具有文化性。**
-请考虑来自不同文化的人们对所用颜色的解读方式。 例如，蓝色在一些文化中象征着美德和保护，而在另一些文化中代表着哀悼。
+        **Color is cultural.**
+        Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
     :::column-end:::
 :::row-end:::
 
@@ -108,7 +108,7 @@ ms.locfileid: "4209317"
 
 :::row:::
     :::column:::
-        创建自定义控件模板时，使用主题画笔，而不是硬编码颜色值。 这样，应用可轻松适应任何主题。
+        When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -147,10 +147,12 @@ ms.locfileid: "4209317"
 
 :::row:::
     :::column:::
-        ![用户选择的主题标题](images/color/user-accent.svg)![用户选择的主题色](images/color/user-selected-accent.svg)
+        ![user-selected accent header](images/color/user-accent.svg)
+        ![user-selected accent color](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![自定义主题标题](images/color/custom-accent.svg)![自定义品牌主题色](images/color/brand-color.svg)
+        ![custom accent header](images/color/custom-accent.svg)
+        ![custom brand accent color](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -254,13 +256,160 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 若要详细了解如何使用画笔，请参阅 [XAML 画笔](brushes.md)。
 
+## <a name="scoping-system-colors"></a>作用域的系统颜色
+
+除了在应用中定义自己的颜色，你可以使用**ColorSchemeResources**标记范围我们 systematized 的颜色以所需的区域设置整个应用。 此 API 允许你不仅着色和主题大的同时通过设置一些属性，但还你许多其他系统优势所提供的控件组通常不会获取与手动定义自定义的颜色：
+
+- 使用**ColorSchemeResources**设置任何颜色不会影响高对比度
+  * 这意味着你的应用将进行更多的用户，而无需任何额外的设计或开发人员成本访问
+- 可以轻松地设置颜色的浅色、 深色或普遍跨两种主题通过在该 API 上设置一个属性
+- **ColorSchemeResources**上设置的颜色将向所有类似的控件，还使用该系统颜色下级联作用
+  * 这将确保你将具有一致的颜色故事在你的应用同时保持你的品牌的外观
+- 效果无重新模板化的所有视觉状态、 动画和不透明度变体
+
+### <a name="how-to-use-colorschemeresources"></a>如何使用 ColorSchemeResources
+
+ColorSchemeResources 是 API，告知哪些资源将被系统范围的位置。 ColorSchemeResources 必须采取[X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，，可在三个选项之一：
+- 默认值
+  * 将显示在[浅色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题的颜色更改
+- Light
+  * 将仅在[浅色主题](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)中显示颜色更改 
+- 深色
+  * 将仅在[深色主题](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)中显示颜色更改
+
+设置该 X:key 将确保你的颜色相应地更改为系统或应用主题中，你希望在任何一种主题不同的自定义外观。
+
+### <a name="how-to-apply-scoped-colors"></a>如何将应用限定作用域的颜色
+
+限定作用域通过**ColorSchemeResources** API 在 XAML 中的资源，你可以充分的任何系统颜色或在我们[主题资源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)库，并且重页面或容器的范围内定义它们的画笔。
+
+例如，如果定义两个系统颜色- **SystemBaseLowColor**和**SystemBaseMediumLowColor**内网格，并将两个按钮放在你的页面上： 一个在该网格和一个外部：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+        <ColorSchemeResources x:Key="Default" 
+        SystemBaseLowColor="LightGreen" 
+        SystemBaseMediumLowColor="DarkCyan"/>
+    </Grid.Resources>
+
+    <Buton Content="Button_A"/>
+</Grid>
+<Buton Content="Button_B"/>
+```
+
+你已得到**Button_A**的应用的新颜色，并且**Button_B**将保持外观类似我们系统默认按钮：
+
+![按钮上的限定作用域的系统颜色](images/color/scopedcolors_cyan_button.png)
+
+但是，由于我们的所有系统颜色太都层叠到其他控件，则设置**SystemBaseLowColor**和**SystemBaseMediumLowColor**将影响不仅仅按钮。 在此情况下，控件像**切换按钮**、**单选按钮**和**滑块**将也会影响通过这些系统的颜色更改，应这些控件放置上面 exampl 网格的作用域。
+如果你想要范围设置系统颜色更改*到单个控件仅*可以通过该控件的资源中定义**ColorSchemeResources**执行此操作：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Button Content="Button_A">
+        <Button.Resources>
+            <ColorSchemeResources x:Key="Default" 
+                SystemBaseLowColor="LightGreen" 
+                SystemBaseMediumLowColor="DarkCyan"/>
+        </Button.Resources>
+    </Button>
+</Grid>
+<Button Content="Button_B"/>
+```
+本质上具有完全相同的操作作为之前，但现在添加到网格中的任何其他控件将不选取颜色更改。 这是因为这些系统颜色的作用域为**Button_A**仅。
+
+### <a name="nesting-scoped-resources"></a>嵌套限定资源
+
+嵌套系统颜色也有可能，和执行此操作，使**ColorSchemeResources**即可在应用布局的标记内的嵌套的元素的资源：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+        <ColorSchemeResources x:Key="Default"
+            SystemBaseLowColor="LightGreen"
+            SystemBaseMediumLowColor="DarkCyan"/>
+    </Grid.Resources>
+
+    <Button Content="Button_A"/>
+    <Grid x:Name="Grid_B">
+        <Grid.Resources>
+            <ColorSchemeResources x:Key="Default"
+                SystemBaseLowColor="Goldenrod"
+                SystemBaseMediumLowColor="DarkGoldenrod"/>
+        </Grid.Resources>
+
+        <Button Content="Nested Button"/>
+    </Grid>
+</Grid>
+```
+
+在此示例中，继承**Button_A** **Grid_A**资源中定义的颜色和**嵌套按钮**继承**Grid_B**资源的颜色。 通过扩展，这意味着，任何其他控件放在**Grid_B**内将检查或之前检查或应用**Grid_A**资源，首先，应用**Grid_B**资源和最后应用我们的默认颜色，如果没有在定义页面或应用级别。
+
+这适用于任意数量的其资源具有颜色定义的嵌套元素。
+
+### <a name="scoping-with-a-resourcedictionary"></a>使用 ResourceDictionary 范围
+
+并不局限于容器或页面的资源，并且还可以以后可合并在任何范围通常会合并字典的方式在 ResourceDictionary 中定义这些系统颜色。
+
+#### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
+
+首先，你应创建 ResourceDictionary。 然后将放置**ColorSchemeResources** ThemeDictionaries 内，并替代所需的系统颜色：
+
+```xaml
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestApp">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ColorSchemeResources x:Key="Default"
+            SystemBaseLowColor="LightGreen"
+            SystemBaseMediumLowColor="DarkCyan"/>
+        
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
+```
+
+#### <a name="mainpagexaml"></a>MainPage.xaml
+
+在页面上包含你的布局，只需该词典合并中所需的作用域上：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="MyCustomTheme.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </Grid.Resources>
+             
+    <Button Content="Button_A"/>
+</Grid>
+```
+
+现在，可在所有资源、 主题、 和自定义颜色放在单个**MyCustomTheme**资源字典中并范围在需要时无需担心布局标记中的额外待筛选邮件。
+
+### <a name="other-ways-to-define-color-resources"></a>定义颜色资源的其他方法
+
+ColorSchemeResources 还允许系统颜色放置和作为的包装器，而不在行中直接在其中定义：
+
+``` xaml
+<ColorSchemeResources x:Key="Dark">
+    <Color x:Key="SystemBaseLowColor">Goldenrod</Color>
+</ColorSchemeResources>
+```
+
 ## <a name="usability"></a>可用性
 
 :::row:::
     :::column:::
-        ![对比度图](images/color/illo-contrast.svg)
+        ![contrast illustration](images/color/illo-contrast.svg)
     :::column-end:::
-    ::: 列范围 ="2":::**对比度**
+    :::column span="2":::
+        **Contrast**
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
@@ -270,9 +419,10 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 :::row:::
     :::column:::
-        ![对比度图](images/color/illo-lighting.svg)
+        ![contrast illustration](images/color/illo-lighting.svg)
     :::column-end:::
-    ::: 列范围 ="2":::**照明**
+    :::column span="2":::
+        **Lighting**
 
         Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
@@ -280,9 +430,10 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 :::row:::
     :::column:::
-        ![对比度图](images/color/illo-colorblindness.svg)
+        ![contrast illustration](images/color/illo-colorblindness.svg)
     :::column-end:::
-    ::: 列范围 ="2":::**色盲**
+    :::column span="2":::
+        **Colorblindness**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::

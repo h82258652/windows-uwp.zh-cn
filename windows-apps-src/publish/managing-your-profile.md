@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210027"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263012"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
@@ -26,7 +26,7 @@ ms.locfileid: "4210027"
 
 ## <a name="account-settings"></a>帐户设置
 
-若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和链接到其他页面，你可以在其中查看信息并执行多种帐户相关任务的详细信息。
+若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和指向其他页面，你可以在其中查看信息并执行多种帐户相关任务的详细信息。
 
 在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以看到你的卖家 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配以唯一地标识开发者帐户，且无法进行编辑。
 
@@ -56,6 +56,6 @@ ms.locfileid: "4210027"
 - **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将 Azure AD 与开发人员中心帐户关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。
-- **开发人员设备**： 查看和管理[Windows Phone 8.x 设备已解锁用于测试](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
+- **开发人员设备**： 查看和管理[已解锁用于测试的 Windows Phone 8.x 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
 
 

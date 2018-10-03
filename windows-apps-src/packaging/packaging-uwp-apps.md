@@ -4,7 +4,7 @@ ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 打包 UWP 应用
 description: 要分发或销售你的通用 Windows 平台 (UWP) 应用，你需要为其创建一个应用包。
 ms.author: lahugh
-ms.date: 06/10/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,25 +13,25 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: eb930c5e6b2c1c1f864f2e63fbce97c89bb89e1f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211579"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258458"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
 若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要将其打包。 如果你不想通过 Microsoft Store 分发应用，也可以将应用包直接旁加载到设备上或通过 [Web 安装](installing-UWP-apps-web.md)分发它。 本文介绍使用 Visual Studio 配置、创建和测试 UWP 应用包的过程。 有关管理和部署业务线 (LOB) 应用的详细信息，请参阅[企业应用管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，你可以向 Windows 开发人员中心提交应用包 (.appx)、应用程序包 (.appxbundle) 或完整的应用包上传文件 (.appxupload)。 在上述选项中，提交包上传文件将提供最佳的体验。 
+在 Windows 10 中，你可以提交应用包、 应用程序包或向 Windows 开发人员中心完整的应用包上传文件。 在上述选项中，提交包上传文件将提供最佳的体验。 
 
 ## <a name="types-of-app-packages"></a>应用包类型
 
-- **应用包 (.appx)**  
-    包含应用的文件，其格式可以旁加载到设备上。 Visual Studio 创建的任何单一 .appx 包文件都**不适合**提交到开发人员中心，它们只能用于旁加载和测试目的。 如果你想将应用提交到开发人员中心，请使用应用包上传文件。  
+- **应用包 （.appx 或.msix）**  
+    包含应用的文件，其格式可以旁加载到设备上。 Visual Studio 创建的任何单个应用包文件是**不**用于提交到开发人员中心，并且应该用于旁加载和测试的目的。 如果你想将应用提交到开发人员中心，请使用应用包上传文件。  
 
-- **应用程序包 (.appxbundle)**  
+- **应用程序包 （.appxbundle 或.msixbundle）**  
     应用程序包可以包含多个应用包，每个包都构建为支持特定的设备体系结构。 例如，一个应用程序包可以包含三个独立的应用包，它们分别用于 x86、x64 和 ARM 配置。 应尽可能生成应用程序包，因为它们使你的应用能够在尽可能广泛的设备上使用。  
 
 - **应用包上传文件 (.appxupload)**  
@@ -80,7 +80,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="create-an-app-package-upload-file"></a>创建应用包上传文件
 
-要通过 Microsoft Store 分发应用，你必须创建应用包 (.appx)、应用程序包 (.appxbundle) 或上传程序包 (.appxupload)，并[将打包后的应用提交到开发人员中心](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可以单独向开发人员中心提交应用包或应用程序包，但我们鼓励你提交上传包。
+若要通过 Microsoft 应用商店分发应用必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到开发人员中心打包的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可以单独向开发人员中心提交应用包或应用程序包，但我们鼓励你提交上传包。
 
 >[!NOTE]
 > 应用包上传文件 (.appxupload) 是**唯一**一种能够使用 Visual Studio 创建的对开发人员中心有效的应用包类型。 其他有效的[可以手动创建的应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，无需使用 Visual Studio。 
@@ -102,7 +102,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 4.  使用你的开发者帐户登录到 Windows 开发人员中心。 如果你还没有开发者帐户，该向导将帮助你创建一个。
 5.  为你的程序包选择应用名称，如果你尚未在 Windows 开发人员中心门户中保留应用名称，也可以保留一个新名称。  
     ![使用显示的应用名称选择创建应用包窗口](images/packaging-screen4.jpg)
-6.  确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在**生成应用程序包**列表框中，选择**始终**。 应用程序包 (.appxbundle) 优于单个应用包 (.appx)，因为它包含为每种类型的处理器体系结构配置的应用包集合。 当你选择生成应用程序包时，应用程序包将包含在最终的应用包上传 (.appxupload) 文件中，并带有调试和崩溃分析信息。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+6.  确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在**生成应用程序包**列表框中，选择**始终**。 应用程序包 (.appxbundle) 是首选通过单个应用包文件因为它包含每种类型的处理器体系结构配置的应用包集合。 当你选择生成应用程序包时，应用程序包将包含在最终的应用包上传 (.appxupload) 文件中，并带有调试和崩溃分析信息。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![显示的创建应用包窗口及包配置](images/packaging-screen5.jpg)
 
 
@@ -137,7 +137,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="sideload-your-app-package"></a>旁加载应用包
 
-Windows 10 周年更新引入了双击应用包文件安装应用包的简单方法。 你只需要找到应用包 (.appx) 或应用程序包 (.appxbundle) 文件，然后双击它。 应用安装程序启动并提供基本的应用信息及安装按钮、安装进度条和任何相关的错误消息。 
+Windows 10 周年更新引入了双击应用包文件安装应用包的简单方法。 若要使用这种情况，导航到你的应用包或应用程序包文件，然后双击它。 应用安装程序启动并提供基本的应用信息及安装按钮、安装进度条和任何相关的错误消息。 
 
 ![安装名为 Contoso 的示例应用时的应用安装程序显示](images/appinstaller-screen.png)
 
@@ -145,7 +145,7 @@ Windows 10 周年更新引入了双击应用包文件安装应用包的简单方
 > 应用安装程序假定设备信任此应用。 如果你旁加载开发人员或企业应用，则需要向存储在设备上的“Trusted People or Trusted Publishers Certification Authorities”安装签名证书。 如果你不确定如何执行此操作，请参阅[安装测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-on-previous-versions-of-windows"></a>在以前版本的 Windows 上旁加载应用
-对于 UWP 应用包，应用不会像桌面应用那样安装到设备上。 通常，你会从 Microsoft Store 下载 UWP 应用，这也会将应用安装到你的设备上。 你可以在不将应用发布到 Microsoft Store 的情况下安装应用（旁加载）。 这允许你使用你所创建的应用包 (.appx) 安装和测试应用。 如果你有一款不想在应用商店中出售的应用（如业务线 (LOB) 应用），你可以旁加载该应用，以便你的公司中的其他用户也可以使用它。
+对于 UWP 应用包，应用不会像桌面应用那样安装到设备上。 通常，你会从 Microsoft Store 下载 UWP 应用，这也会将应用安装到你的设备上。 你可以在不将应用发布到 Microsoft Store 的情况下安装应用（旁加载）。 这允许你安装和测试应用使用的应用包文件中创建。 如果你有一款不想在应用商店中出售的应用（如业务线 (LOB) 应用），你可以旁加载该应用，以便你的公司中的其他用户也可以使用它。
 
 下面的列表提供了旁加载应用的要求。
 

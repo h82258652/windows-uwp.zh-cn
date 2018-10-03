@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4213257"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258428"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 
@@ -39,7 +39,7 @@ ms.locfileid: "4213257"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -72,7 +72,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                                                                                                                         |
+| 值      | 类型   | 描述                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 包含聚合的使用情况数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。 |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的评价数据超过 10000 行时，就会返回此值。                 |
@@ -97,8 +97,8 @@ Authorization: Bearer <your access token>
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                                           |
 | monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                                        |
 | monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户数。                    |
-| averageDailyActiveUsers   | Double  | 每天都使用应用的客户的平均数量。                             |
-| averageDailyActiveDevices | Double  | 用于与应用交互的日常上的所有用户设备的平均数量。 |
+| averageDailyActiveUsers   | Double  | 每天都使用该应用的客户的平均数量。                             |
+| averageDailyActiveDevices | Double  | 用于与应用交互的所有用户每天设备的平均数量。 |
 
 
 ### <a name="response-example"></a>回复示例

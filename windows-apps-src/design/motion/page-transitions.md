@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: a2923834fd968114a4ed607de214763fb2575697
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211409"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261900"
 ---
 # <a name="page-transitions"></a>页面过渡
 
@@ -55,6 +55,20 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
+```
+
+## <a name="horizontal-slide"></a>水平幻灯片
+
+使用水平幻灯片显示同级页面都显示并排。 [NavigationView](../controls-and-patterns/navigationview.md)控件会自动将此动画将用于顶级导航，但如果你要构建自己的水平导航体验，然后可以实现与 SlideNavigationTransitionInfo 水平滑动。
+
+所需的感觉是用户正在是并排的页面之间进行导航。 
+
+```csharp
+// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## <a name="suppress"></a>禁止显示

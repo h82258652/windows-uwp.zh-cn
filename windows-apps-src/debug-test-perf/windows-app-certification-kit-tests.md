@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210087"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258706"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-在[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在故障的情况下操作。
+[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了他们的标准，详细信息，并建议在故障的情况下操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
@@ -312,7 +312,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="test-details"></a>测试详细信息
 
--   验证该应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持的 UWP 应用开发的 Win32 API。
+-   验证，应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
 -   验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。
 
 ### <a name="corrective-actions"></a>更正操作
@@ -501,7 +501,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="background"></a>背景
 
-要通过 Microsoft 应用商店的认证，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过认证的 Microsoft 应用商店，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -509,7 +509,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="corrective-actions"></a>更正操作
 
--   将其提交到 Microsoft Store 之前，将应用编译为发行版本。
+-   提交到 Microsoft Store 之前，将应用编译为发行版本。
 -   确保你安装了正确版本的 .NET Framework。
 -   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 

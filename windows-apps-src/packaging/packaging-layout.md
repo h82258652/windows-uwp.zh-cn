@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ed24cb1ed0c4b4c15e6c96cf029c8f3841d8aac
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818260"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262454"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
 
@@ -55,7 +55,7 @@ ms.locfileid: "1818260"
 我们一起来分析这个示例，以了解其工作原理。
 
 ### <a name="packagefamily"></a>PackageFamily
-该包布局将创建一个 .appxbundle 平面文件，其中包含一个 x64 体系结构程序包和一个“Media”资产包。 
+该包布局将创建单个平面应用捆绑包文件，其中包含一个 x64 体系结构程序包和一个"Media"资产包。 
 
 **PackageFamily** 元素用于定义应用程序包。 你必须使用 **ManifestPath** 属性为该捆绑包提供一个 **AppxManifest**，**AppxManifest** 应该与该捆绑包的体系结构包的 **AppxManifest** 相对应。 此外，还必须提供 **ID** 属性。 ID 在包创建过程中与 MakeAppx.exe 配合使用，因此你可以根据需要创建该包，并且它将用作生成的包的文件名。 **FlatBundle** 属性用于描述要创建的捆绑包的类型，对于平面捆绑包（本文详细介绍的包类型），该属性为 **true**；对于经典捆绑包，该属性为 **false**。 **ResourceManager** 属性用于指定该捆绑包中的资源包是否将使用 MRT 来访问文件。 该属性默认为 **true**，但截止 Windows 10 版本 1803，该功能还没准备好，因此必须将其设置为 **false**。
 
@@ -147,7 +147,7 @@ ms.locfileid: "1818260"
 
 每个可选包都有自己独特的包系列名称，必须使用 **PackageFamily** 元素进行定义，同时将 **Optional** 属性指定为 **true**。 **RelatedSet** 属性用于指定可选包是否在相关集中（默认为 true）- 可选包是否应随主包一起更新。
 
-**PrebuiltPackage** 元素用于添加包布局中未定义的包，以包含或引用要构建的 .appxbundle 文件。 本例包含了另一个 DLC 可选包，以便主 .appxbundle 文件能够引用它并使其成为相关集的一部分。
+**PrebuiltPackage**元素用于添加包布局以包含或引用要构建的应用包文件中未定义的包。 在此情况下，另一个 DLC 可选包包含在此处，以便主应用程序包文件可以引用它并使其成为相关集的一部分。
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用包布局和 MakeAppx.exe 构建应用包
@@ -163,7 +163,7 @@ MakeAppx.exe build /f PackagingLayout.xml /op OutputPackages\
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本，因为 .appxbundle 文件仍需要引用以前版本的 **Media** 包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
+`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本，因为应用捆绑包文件仍需要引用以前版本的**媒体**包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
 以本页面上的高级包布局示例为例，要只构建 **Themes** 可选捆绑包和它引用的 **Themes.main** 应用包，可以使用以下命令：
 
 ``` example 

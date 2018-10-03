@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: Share code between a desktop app and a UWP app
+Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: 在桌面应用和 UWP 应用之间共享代码
+title: 桌面应用程序和 UWP 应用之间共享代码
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
@@ -10,14 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: ca5b722ea97202d57f05613bec88ae6bee1db5f2
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018623"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260106"
 ---
-# <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>在桌面应用和 UWP 应用之间共享代码
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>桌面应用程序和 UWP 应用之间共享代码
 
 你可以将代码迁移到 .NET Standard 库中，然后创建通用 Windows 平台 (UWP) 应用以覆盖所有 Windows 10 设备。 虽然没有工具可以将桌面应用程序转换为 UWP 应用，但是，你可以重复使用大量现有代码来降低构建代码的成本。 本指南演示如何执行该操作。
 
@@ -67,7 +67,7 @@ ms.locfileid: "2018623"
 
 ### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>示例：将数据访问代码迁移到 .NET Standard 2.0 库
 
-假设我们有一个非常基本的 Windows 窗体应用，该应用显示我们 Northwind 示例数据库中的客户。
+假设我们有的非常基本的 Windows 窗体应用程序显示我们 Northwind 示例数据库中的客户。
 
 ![Windows 窗体应用](images/desktop-to-uwp/win-forms-app.png)
 

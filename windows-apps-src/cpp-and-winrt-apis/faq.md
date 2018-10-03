@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: eb4b7b78bf3ef0a561d102804a245c59b6519796
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206915"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264352"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 常见问题
 对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
@@ -22,9 +22,27 @@ ms.locfileid: "4206915"
 > [!NOTE]
 > 如果问题与你看到的错误消息有关，另请参阅 [C++/WinRT 问题疑难解答](troubleshooting.md)主题。
 
+## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何重定向我的 C + + 到更高版本的 Windows SDK 的 WinRT 项目？
+
+Windows SDK 的最新公开发布版本是 10.0.17763.0 (Windows 10 版本 1809年)。 重定目标项目可能会导致最少的编译器和链接器问题的方法也是工作量最大。 该方法需要创建新项目 （面向你选择的 Windows SDK 版本），然后通过中将文件复制到新项目中，从旧。 将旧的部分`.vcxproj`和`.vcxproj.filters`文件，你可以只复制超过保存你在 Visual Studio 中添加文件。
+
+但是，有两种其他方法，然后重新你在 Visual Studio 中的项目。
+
+- 转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 **Windows SDK 版本**设置为你想要面向的版本。
+- 在**解决方案资源管理器**中，右键单击项目节点单击**重定目标项目**，选择你想要面向，版本而定，然后单击**确定**。
+
+如果使用这两种方法，其中任一后遇到任何编译器或链接器错误，则你可以尝试清理解决方案 (**生成** > **全新解决方案**和/或手动删除所有临时文件夹和文件) 然后再尝试重新生成。
+
+如果 c + + 编译器产生"*错误 C2039: 'IUnknown': 不是成员 \'global 命名空间 '*"，然后添加`#include <unknwn.h>`到顶部你`pch.h`文件。
+
+你可能还需要添加`#include <hstring.h>`在此之后。
+
+如果 c + + 链接器产生"*错误 LNK2019： 无法解析的外部符号_WINRT_CanUnloadNow@0函数中引用_VSDesignerCanUnloadNow@0*"，然后你可以通过添加解决的`#define _VSDESIGNER_DONT_LOAD_AS_DLL`到你`pch.h`文件。
+
+
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为什么我的新项目不会编译？ 在我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
 
-如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，则新创建 C + + WinRT 项目可能无法编译带有错误"*错误 C3861: from_abi： 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **一致性模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
+如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，则新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: 'from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**的其他选项**，然后将其删除)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 的要求是什么？
 [VSIX](https://aka.ms/cppwinrt/vsix) 强制执行最低的 Windows SDK 目标版本 10.0.17134.0（Windows 10，版本 1803）。 还需要 Visual Studio 2017（版本不低于 15.6；建议版本不低于 15.7）。 你可以通过 `.vcxproj` 文件 `<PropertyGroup Label="Globals">` 中 `<CppWinRTEnabled>true</CppWinRTEnabled>` 的存在来识别使用 VSIX 的项目。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持和 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
@@ -93,7 +111,7 @@ Visual Studio 是我们支持和推荐用于 C++/WinRT 的开发工具。 请参
 
 声明中[MIDL 3.0](/uwp/midl-3/)的只读属性时，你可能希望`cppwinrt.exe`工具来为你生成一个实现函数的`const`-限定 （const 函数将视为 const*此*指针）。
 
-我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试有关哪一种实现函数都可能 const，而这不可能的原因。 你可以选择将实现功能的任何 const，如本示例中所示。
+我们当然建议尽可能使用 const 但`cppwinrt.exe`工具本身不会尝试原因有关哪一种实现函数都可能 const，而这不可能。 你可以选择将任何实现函数 const，如本示例中所示。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -105,7 +123,7 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-你可以删除的`const`限定符上**ToString**应你决定，你需要更改在其实现中的某些对象状态。 但是，使你的成员的每个函数 const 或非量，不能同时。 换言之，不重载实现函数`const`。
+你可以删除的`const`限定符上**ToString**应你决定需要更改在其实现中的某些对象状态。 但使每个你的成员函数 const 或非量，不能同时。 换言之，不在重载实现函数`const`。
 
 除了实现功能，其他另一个将放置在 const 进入图片是 Windows 运行时函数投影。 请考虑此代码。
 
@@ -117,19 +135,19 @@ int main()
 }
 ```
 
-**ToString**上述调用，在 Visual Studio 中的**转到声明**命令显示的 Windows 运行时**istringable:: Tostring**投影到 C + + WinRT 如下所示。
+调用**ToString**上面的**转到声明**命令在 Visual Studio 中演示的 Windows 运行时**istringable:: Tostring**的投影到 C + + WinRT 如下所示。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-无论你选择如何限定实现它们的 const 投影的函数。 在后台，投影调用应用程序二进制接口 (ABI)，通过 COM 接口指针调用的金额。 只有投影的**ToString**与之交互的状态是该 COM 接口指针;并且它当然无需修改该指针，因此该函数是 const。 这使你保证它不会更改有关，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**即使使用 const 引用**IStringable**。
+投影的函数很 const 无论你选择如何限定实现它们。 在后台，投影调用应用程序二进制接口 (ABI) 情况下，通过 COM 接口指针的调用。 只有与投影的**ToString**交互的状态是该 COM 接口指针;并且它当然无需修改该指针，因此该函数是 const。 这将使你保证它不会更改有关正在，通过调用**IStringable**引用的任何内容，并确保你可以调用**ToString**甚至与 const 引用到**IStringable**。
 
 了解，这些示例中的`const`是实现详细信息的 C + + WinRT 投影和实现;它们构成为您提供方便代码清理。 没有根本不`const`上 COM 和 Windows 运行时 ABI （适用于成员函数）。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>你有任何建议减小代码大小为 C + + WinRT 二进制文件？
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>你有任何建议减小代码大小对于 C + + WinRT 二进制文件？
 
-使用 Windows 运行时对象时，应避免的编码模式，因为它可以在你的应用程序比生成所需的更多二进制代码，从而产生负面影响，如下所示。
+使用 Windows 运行时对象时，应避免的编码模式，因为它可以在你的应用程序平等生成更多二进制代码，从而产生负面影响，如下所示。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -137,7 +155,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-在 Windows 运行时世界中，则编译器将无法缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非干预，产生在多个虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，首选位置可以如下所示的模式。 它生成很少的代码，并且它可以也极大地缩短运行的时性能。
+在 Windows 运行时世界中，编译器不能缓存的值`c()`或通过间接寻址调用每个方法的接口 ('。)。 除非干涉，产生在多个虚拟调用和引用计数开销。 上面的模式可以轻松地生成为严格所需的两倍代码。 相反，首选位置可以如下所示的模式。 它会生成很少的代码，并且它可以也极大地缩短运行的时性能。
 
 ```cppwinrt
 auto a{ anobject.b().c() };
@@ -146,7 +164,7 @@ a.e();
 a.f();
 ```
 
-如上所示的建议的模式应用而不只是到 C + + WinRT 但向所有 Windows 运行时语言投影。
+如上所示的建议的模式适用而不只是于 C + + WinRT 但向所有 Windows 运行时语言投影。
 
 > [!NOTE]
 > 如果本主题没有解决你的问题，你可以[在 Stack Overflow 上使用 `c++-winrt` 标签](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)查找帮助。

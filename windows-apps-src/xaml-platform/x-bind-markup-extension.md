@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。
+description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行在更少的时间和更低的内存比绑定，并支持将更好的调试。
 title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -10,19 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 340f8e72c5015fad341810ef335dea73f77fc82f
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672884"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261484"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
 **注意**  有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 
-  **{x:Bind}** 标记扩展（Windows10 的新增内容）是 **{Binding}** 的备用选项。 虽然 **{x:Bind}** 缺少 **{Binding}** 中的一些功能，但它运行时所花费的时间和使用的内存量均比 **{Binding}** 要少，且支持更好的调试。
+  **{x:Bind}** 标记扩展（Windows10 的新增内容）是 **{Binding}** 的备用选项。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新 (`Mode="OneWay"`)。 该对象也可以配置为将其自己的值的更改推送回源属性 (`Mode="TwoWay"`)。
 
@@ -47,6 +47,8 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 <object property="{x:Bind bindingProperties}" .../>
 -or-
 <object property="{x:Bind propertyPath, bindingProperties}" .../>
+-or-
+<object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
 | 术语 | 说明 |
@@ -56,6 +58,25 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 | _propName_=_value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 |
 | _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-you-can-set)部分。 |
+
+## <a name="examples"></a>示例
+
+```XAML
+<Page x:Class="QuizGame.View.HostView" ... >
+    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
+</Page>
+```
+
+本示例中 XAML 会将 **{x:Bind}** 与 **ListView.ItemTemplate** 属性结合使用。 请注意 **x:DataType** 值的声明。
+
+```XAML
+  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
+    <StackPanel Orientation="Vertical" Height="50">
+      <TextBlock Text="{x:Bind Title}"/>
+      <TextBlock Text="{x:Bind Description}"/>
+    </StackPanel>
+  </DataTemplate>
+```
 
 ## <a name="property-path"></a>属性路径
 
@@ -69,7 +90,8 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 对于 C++/CX，**{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 无需使用 **\[Bindable\]** 属性。
 
-使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 使用 **x:Bind** 时，你可以使用元素的名称作为绑定路径的第一部分，因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
+
 
 ### <a name="collections"></a>集合
 
@@ -94,78 +116,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 ## <a name="functions-in-binding-paths"></a>绑定路径中的函数
 
-从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作
-
-- 实现值转换的更简单方法
-- 依赖多个参数适用于绑定的方法
-
-> [!NOTE]
-> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
-
-在以下示例中，项目的背景和前景会绑定到这些函数，根据颜色参数执行转换。
-
-```xaml
-<DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
-        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
-    </Grid>
-</DataTemplate>
-```
-
-```csharp
-class ColorEntry
-{
-    public string ColorName { get; set; }
-    public Color Color { get; set; }
-
-    public static SolidColorBrush Brushify(Color c)
-    {
-        return new SolidColorBrush(c);
-    }
-
-    public SolidColorBrush TextColor(Color c)
-    {
-        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
-    }
-}
-
-```
-
-### <a name="function-syntax"></a>函数语法
-
-``` Syntax
-Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
-             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
-```
-
-### <a name="path-to-the-function"></a>函数的路径
-
-与其他属性路径一样指定该函数的路径，可以包含用于定位该函数的点 (.)、索引器或强制转换。
-
-可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，**&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** 将映射到 DateTime.Parse 函数（假定在页面顶部指定了 **xmlns:sys="using:System"**）。
-
-如果模式为单向/双向，函数路径将对它执行更改检测，并且将重新计算绑定（如果对这些对象进行了更改）。
-
-要绑定的函数需要：
-
-- 可以访问代码和元数据 - 因此 internal / private 在 C# 中有效，但 C++/CX 需要方法为公有 WinRT 方法。
-- 重载基于参数数目，而不是基于参数类型，并且它将尝试匹配第一个带有许多参数的重载。
-- 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
-- 函数的返回类型需要匹配正使用绑定的属性的类型
-
-### <a name="function-arguments"></a>函数参数
-
-可以指定多个函数参数，用逗号 (,) 分隔
-
-- 绑定路径 - 类似直接绑定该对象的语法。
-  - 如果模式为单向/双向，将执行更改检查，并在更改对象后重新计算绑定
-- 使用引号括起来的常量字符串 - 需要使用引号将它指定为一个字符串。 乘幂号 (^) 可用于转义字符串中的引号
-- 常数 - 例如，-123.456
-- 布尔值 – 指定为“x:True”或“x:False”
-
-### <a name="two-way-function-bindings"></a>双向函数绑定
-
-在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 使用 **BindBack** 绑定属性执行此操作，例如 **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**。 该函数应该具有一个参数，其值需要返回给模型。
+从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能启用多个方案在标记中的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
 
 ## <a name="event-binding"></a>事件绑定
 
@@ -227,21 +178,3 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 **{x:Bind}** 仅为标记扩展，且无法以编程方式创建或处理此类绑定。 有关标记扩展的详细信息，请参阅 [XAML 概述](xaml-overview.md)。
 
-## <a name="examples"></a>示例
-
-```XML
-<Page x:Class="QuizGame.View.HostView" ... >
-    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
-</Page>
-```
-
-本示例中 XAML 会将 **{x:Bind}** 与 **ListView.ItemTemplate** 属性结合使用。 请注意 **x:DataType** 值的声明。
-
-```XML
-  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
-    <StackPanel Orientation="Vertical" Height="50">
-      <TextBlock Text="{x:Bind Title}"/>
-      <TextBlock Text="{x:Bind Description}"/>
-    </StackPanel>
-  </DataTemplate>
-```

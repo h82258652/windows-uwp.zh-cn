@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212801"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263904"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -87,9 +87,9 @@ ms.locfileid: "4212801"
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>仅显示上传的应用商店中的徽标图像
 
-你可以选择防止应用商店向 Windows 10 （包括 Xbox） 上的客户显示你的一览时在你的应用包中使用的徽标图像，并改为具有应用商店使用你上传的图像。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果你的产品支持较早的操作系统版本，这些客户可能仍会看到图像从你的程序包，即使你使用此选项。）
+你可以选择防止应用商店使用你的应用程序包中的徽标图像，向 Windows 10 （包括 Xbox） 上的客户显示你的一览时，并改为具有应用商店使用你上传的图像。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果你的产品支持较早的操作系统版本，这些客户可能仍会看到图像从你的程序包，即使你使用此选项。）
 
-若要为 Windows 10 和 Xbox 上的客户，显示在应用商店仅使用图像你上传 （适用于 Windows 10，包括 Xbox 客户），并且不使用你的程序包中的任何图像，请检查框**上传的徽标图像而不是从我的包的图像**.
+以在应用商店仅使用图像上载 （适用于 Windows 10，包括 Xbox 客户），并且不使用你的程序包中的任何图像，请检查框**For Windows 10 和 Xbox 上的客户，显示上传的徽标图像而不是我程序包中的图像**.
 
 选中此框，出现了名为**应用商店显示图像**的新部分。 在这里，你可以上传 3 张图像，其中包括**1:1 应用磁贴图标 （300 x 300 像素）** 大小 （如果你选中此框，提供该图像将移动到此部分的字段）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
 

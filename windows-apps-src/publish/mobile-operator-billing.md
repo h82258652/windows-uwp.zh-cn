@@ -4,18 +4,18 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: 移动运营商结算
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 08/23/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: da08e63cc42987f1a3876e13a713d670a80cf9ba
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208937"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259080"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -45,7 +45,7 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 马来西亚        | Digi                             |
 | 荷兰     | KPN                              |
 | 挪威          | Telenor、Telia                   |
-| 波兰          | Orange                           |
+| 波兰          | Orange、 播放                     |
 | 新加坡       | M1 Limited StarHub              |
 | 斯洛伐克        | Slovak Telekom                   |
 | 西班牙           | Orange                           |

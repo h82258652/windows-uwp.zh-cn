@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77450c3885f8a9bcd698e25ca721c4c3fe1305
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817828"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259152"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -23,6 +23,7 @@ ms.locfileid: "1817828"
 
 **重要的 API**
 
+-   [**{x:Bind} 标记扩展**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Binding 类**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
@@ -64,7 +65,8 @@ ms.locfileid: "1817828"
 
 下面是一个非常基础的可用作绑定源的类实现。
 
-**注意** 如果要将 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 与 Visual C++ 组件扩展 (C++/CX) 结合使用，你需要将 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性添加到你的绑定源类。 如果使用的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，则不需要该属性。 有关代码段的信息，请参阅[添加详细信息视图](data-binding-quickstart.md#adding-a-details-view)。
+> [!Note]
+> 如果你对使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) Visual c + + 组件扩展 (C + + CX) 然后你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你的绑定源类。 如果使用的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，则不需要该属性。 有关代码段的信息，请参阅[添加详细信息视图](data-binding-quickstart.md#adding-a-details-view)。
 
 ```csharp
 public class HostViewModel
@@ -84,7 +86,8 @@ public class HostViewModel
 
 让类成为可观察绑定源，以及成为类（已拥有基类）的必需项的更便捷方法是实现 [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 实际上，这仅涉及到实现一个名为 **PropertyChanged** 的事件。 下面展示了使用 **HostViewModel** 的示例。
 
-**注意** 对于 C++/CX，应实现 [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)，并且绑定源类必须具有 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 或实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。
+> [!Note]
+> 对于 C + + /CX，应实现[**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)，并且绑定源类必须具有[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)或实现[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -158,12 +161,11 @@ public class HostViewModel : BindableBase
 
 在下面的两个示例中，**Button.Content** 属性是绑定目标，并且其值已设置为用于声明绑定对象的标记扩展。 首先显示的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，然后是 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 在标记中声明绑定这一做法很常见（其既便捷、易读又很实用）。 不过，应避免标记和以命令性方式（编程方式）创建 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 类的实例（除非需要）。
 
-<!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-```xml
+```xaml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-```xml
+```xaml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -189,7 +191,7 @@ namespace QuizGame.View
 
 该操作完成后，即可仔细看看声明绑定对象的标记。 下面的示例使用与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并演示了将其绑定到 **HostViewModel.NextButtonText** 属性。
 
-```xml
+```xaml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -201,13 +203,14 @@ namespace QuizGame.View
               **Path**
             ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 属性支持各种用于绑定到嵌套属性、附加属性以及整数和字符串索引器的语法选项。 有关详细信息，请参阅 [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 绑定到字符串索引器会为你提供绑定到动态属性的效果，而无需实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 有关其他设置，请参阅 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
 
-**注意** 当 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦点时，对 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的更改将发送到双向绑定源，这并非发生在每次用户按键之后。
+> [!Note]
+> [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)更改发送到双向绑定源时[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)失去焦点时，并且不在每次用户按键之后。
 
 **DataTemplate 和 x:DataType**
 
 在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内（不论用作项模板、内容模板还是标头模板），**Path** 的值不在页面的上下文中进行解释，而在模板化的数据对象的上下文中进行解释。 在数据模板中使用 {x:Bind} ，以便在编译时可以对它的绑定进行验证（同时为它们生成有效代码）时，**DataTemplate** 需要使用 **x:DataType** 声明其数据对象的类型。 下面给出的示例可用作绑定到 **SampleDataGroup** 对象集合的项目控件的 **ItemTemplate**。
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -224,15 +227,14 @@ namespace QuizGame.View
 
 在编译时为你的页面在分部类中生成支持 **{x:Bind}** 的代码。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。 生成的代码包含可用于你的页面的 [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) 事件的处理程序，并且该处理程序在表示你的页面绑定的已生成类上调用 **Initialize** 方法。 **Initialize** 依次调用 **Update**，以开始在绑定源和目标之间移动数据。 只在页面或用户控件的第一个测量阶段之前引发 **Loading**。 因此异步加载你的数据时，可能未在调用 **Initialize** 时做好准备。 因此，加载数据之后，可以通过调用 `this.Bindings.Update();` 强制初始化一次性绑定。 如果只需针对异步加载的数据执行一次性绑定，则使用此方法对其进行初始化比使用以下方法方便：首先进行单向绑定，然后侦听更改。 如果你的数据未经过细微的更改并且它可能作为某个特定操作的一部分进行更新，则你可以执行一次性绑定，并且通过对 **Update** 的调用随时强制执行手动更新。
 
-**限制**
-
-**{x:Bind}** 既不适用于后期绑定方案（例如导航 JSON 对象的字典结构），也不适用于鸭子类型，该类型是基于属性名称的词法匹配的一种较弱形式的类型（“如果它的走路方式、游泳方式和叫声像鸭子，那么它就是一只鸭子”）。 借助鸭子类型，与 Age 属性的绑定将会同样满足 Person 或 Wine 对象。 对于这些方案，请使用 **{Binding}**。
+> [!Note]
+> **{x:Bind}** 既不适用于后期绑定方案（例如导航 JSON 对象的字典结构），也不适用于鸭子类型，该类型是基于属性名称的词法匹配的一种较弱形式的类型（“如果它的走路方式、游泳方式和叫声像鸭子，那么它就是一只鸭子”）。 借助鸭子类型，与 Age 属性的绑定将会同样满足 Person 或 Wine 对象。 对于这些方案，请使用 **{Binding}**。
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 声明的绑定对象
 
 默认情况下，[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 假设你要绑定到标记页面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 因此，我们将页面的 **DataContext** 设置为绑定源类（本例中为 **HostViewModel** 类型）的实例。 下面的示例展示了用于声明绑定对象的标记。 我们使用了与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并绑定到 **HostViewModel.NextButtonText** 属性。
 
-```xml
+```xaml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -250,7 +252,7 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内，[**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 已设置为模板化的数据对象。 下面给出的示例可用作项目控件的 **ItemTemplate**，绑定到具有名为 **Title** 和 **Description** 的字符串属性的任意类型的集合。
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -259,7 +261,8 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
   </DataTemplate>
 ```
 
-**注意** 默认情况下，当 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦点时，[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的更改将发送到双向绑定源。 若要在每次用户按键之后发送更改，则在标记的绑定对象上将 **UpdateSourceTrigger** 设置为 **PropertyChanged**。 当通过将 **UpdateSourceTrigger** 设置为 **Explicit** 将更改发送到绑定源时，也可完全控制这一情形。 然后，在文本框（通常为 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)）上处理事件，调用绑定目标上的 [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) 以获取 [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) 对象，最后调用 [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) 以编程方式更新数据源。
+> [!Note]
+> 默认情况下， [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)失去焦点时对[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)更改为双向绑定源中发送。 若要在每次用户按键之后发送更改，则在标记的绑定对象上将 **UpdateSourceTrigger** 设置为 **PropertyChanged**。 当通过将 **UpdateSourceTrigger** 设置为 **Explicit** 将更改发送到绑定源时，也可完全控制这一情形。 然后，在文本框（通常为 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)）上处理事件，调用绑定目标上的 [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) 以获取 [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) 对象，最后调用 [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) 以编程方式更新数据源。
 
 [
               **Path**
@@ -359,7 +362,7 @@ End Class
 
 下面介绍了如何在绑定对象标记中使用该值转换器。
 
-```xml
+```xaml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -377,7 +380,8 @@ End Class
 
 转换器还有可选参数：[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage)（该参数允许指定在转换中使用的语言）和 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter)（该参数允许为转换逻辑传递一个参数）。 有关使用转换器参数的示例，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)。
 
-**注意** 如果在转换中存在错误，请不要引发异常。 而是返回 [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue)，它将停止数据传输。
+> [!Note]
+> 如果在转换中存在错误，请不要引发异常。 而是返回 [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue)，它将停止数据传输。
 
 若要显示在无法解析绑定源时所使用的默认值，则在标记的绑定上对象设置 **FallbackValue** 属性。 这对处理转换和格式错误很有用。 这对要绑定到可能未存在于异型绑定集合中所有对象上的源属性也同样有用。
 
@@ -388,7 +392,7 @@ End Class
 
 ## <a name="function-binding-in-xbind"></a>{x:Bind} 中的函数绑定
 
-{x:Bind} 使绑定步骤中的最后一步可以是一个函数。 这可以用于执行转换，以及执行依赖多个属性的绑定。 请参阅 [**{x:Bind} 标记扩展**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。
+{x:Bind} 使绑定步骤中的最后一步可以是一个函数。 这可以用于执行转换，以及执行依赖多个属性的绑定。 请参阅[**x: Bind 中的函数**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
 
@@ -398,7 +402,7 @@ End Class
 
 TemplatesResourceDictionary.xaml
 
-```xml
+```xaml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -431,7 +435,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-```xml
+```xaml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -461,7 +465,7 @@ MainPage.xaml
 
 随即你可以将按钮的 **Click** 事件绑定到由 **RootFrame** 属性返回的 **Frame** 对象上的方法，如下所示。 注意，我们还将按钮的 **IsEnabled** 属性绑定到同一 **Frame** 的另一成员。
 
-```xml
+```xaml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -528,15 +532,13 @@ MainPage.xaml
     ...
 
     <GridView
-    ItemsSource="{Binding Source={StaticResource AuthorHasACollectionOfBookSku}}" ...>
+    ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
         <GridView.GroupStyle>
             <GroupStyle
                 HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
         </GridView.GroupStyle>
     </GridView>
 ```
-
-请注意，[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) 必须使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)（而不是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)），因为它需要将 **Source** 属性设置为资源。 若要在完整应用的上下文中查看上述示例，请下载 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 示例应用。 与如上所示的标记不同，[Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 以独占方式使用 {Binding}。
 
 你可以采用以下两种方式之一实现“属于组”模式。 一种方法是创作你自己的组类。 从 **List&lt;T&gt;** 派生类（其中 *T* 是项目类型）。 例如，`public class Author : List<BookSku>`。 另一种方式是，使用 [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 表达式，从诸如 **BookSku** 项目的属性值等动态创建组对象（以及组类）。 此方法（仅维护项目的简单列表并将其动态分组在一起）是从云服务访问数据的应用的典型用法。 可以灵活地按作者或流派对书籍进行分组，而无需特殊组类，如 **Author** 和 **Genre**。
 
@@ -566,13 +568,13 @@ MainPage.xaml
 
 请记住，在将 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 用于数据模板时，需通过设置 **x:DataType** 值来指示要绑定到的类型。 如果类型是我们无法在标记中解释的泛型，则需要在组样式标头模板中改用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-```xml
+```xaml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{Binding Genres}"
+        Source="{x:Bind Genres}"
         IsSourceGrouped="true"/>
     </Grid.Resources>
-    <GridView ItemsSource="{Binding Source={StaticResource GenreIsACollectionOfBookSku}}">
+    <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
             <DataTemplate>
                 <TextBlock Text="{x:Bind Title}"/>
@@ -616,7 +618,7 @@ MainPage.xaml
 
 以下示例演示了如何使用代码实现绑定。
 
-```xml
+```xaml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -667,8 +669,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | 绑定的路径的任何部分（叶除外）为 null 时使用。 | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 使用 {x:Bind}，绑定到某一字段；Path 默认位于 Page 的根处，以便任意命名的元素均可通过其字段进行访问。 | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 借助 {x:Bind}，对元素进行命名并在 Path 中使用其名称。 | 
-| RelativeSource: TemplatedParent | 不支持 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 在大多数情况下，常规模板绑定可在控件模板中使用。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。&lt; | 
-| 源 | 不支持 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x:Bind}，则改用某一属性或静态路径。 | 
+| RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 随 {x: Bind} 上 ControlTemplate TargetType 指示绑定到模板父。 对于 {Binding} 常规模板绑定可在控件模板中用于大多数的用途。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。&lt; | 
+| 源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x: Bind} 你可以直接使用命名的元素中，使用某一属性或静态路径。 | 
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支持 UpdateSourceTrigger=Explicit。 {x:Bind} 可在所有情况下（TextBox.Text 除外，它使用 LostFocus 行为）使用 PropertyChanged 行为。 | 
 

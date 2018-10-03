@@ -4,23 +4,23 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: 已知问题（桌面桥）
 ms.author: normesta
-ms.date: 05/18/2018
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905378"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263874"
 ---
-# <a name="known-issues-desktop-bridge"></a>已知问题（桌面桥）
+# <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
-本文包含桌面桥的已知问题。
+本文包含桌面应用程序创建 Windows 应用包时可能发生的已知的问题。
 
 <a id="app-converter" />
 
@@ -38,7 +38,7 @@ ms.locfileid: "1905378"
 
 若要解决此问题，请尝试从提升的命令提示符中运行命令 `Netsh int ipv4 reset`，然后重启计算机。
 
-### <a name="your-net-app-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>你的 .NET 应用是使用“AnyCPU”生成选项编译的，无法安装
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET 应用程序使用"AnyCPU"生成选项编译，并且无法安装
 
 如果将主要可执行文件或任何依赖项放置在 **Program Files** 或 **Windows\System32** 文件夹层次结构中的任意位置，则可能会出现这种情况。
 
@@ -54,9 +54,9 @@ ms.locfileid: "1905378"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML 中发现错误。 “Executable”特性无效 - 根据其数据类型，值“MyApp.EXE”无效
 
-如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响应用是否能够运行，但这可能导致 DAC 生成此错误。
+如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响是否你的应用程序运行，这可能导致 DAC 生成此错误。
 
-若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者，可以将应用中的所有可执行文件的大小写从大写更改为小写（例如从 .EXE 更改为 .exe）。
+若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以更改为大写小写从应用程序中的所有可执行文件的大小写 (例如： 从。EXE.exe)。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>已损坏或格式不正确的验证码签名
 
@@ -97,7 +97,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 
 如果更新未解决问题或者你不确定如何恢复电脑，请联系 [Microsoft 支持](https://support.microsoft.com/contactus/)。
 
-如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，应用将对尚未安装该更新的用户不可用。 若要限制应用对已安装此更新的用户的可用性，请修改 AppxManifest.xml 文件，如下所示：
+如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，你的应用程序不会提供给尚未安装更新的用户。 若要限制用户已安装此更新的应用程序的可用性，请修改 AppxManifest.xml 文件，如下所示：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -131,6 +131,41 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 certutil -dump <cert_file.pfx>
 ```
 
+<a id="bad-pe-cert" />
+
+### <a name="bad-pe-certificate-0x800700c1"></a>损坏的 PE 证书 (0x800700C1)
+
+当你的包包含一个已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
+
+* 开始菜单的证书不是图像的末尾。  
+
+* 证书的大小不积极。
+
+* 证书开始屏幕后不是`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
+
+* 证书指针未正确对齐 WIN_CERTIFICATE 结构。
+
+若要查找包含损坏的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`为 1 的值。
+
+```
+set APPXSIP_LOG=1
+```
+
+然后，从**命令提示符下**，登录一次，你的应用程序。 例如：
+
+```
+signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
+```
+
+有关文件包含损坏的 PE 证书的信息将显示在**控制台窗口**。 例如：
+
+```
+...
+
+ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.exe
+
+...   
+```
 ## <a name="next-steps"></a>后续步骤
 
 **查找问题的答案**
