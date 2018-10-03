@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: d8b56682054a96091480a5b8ff4b493ecebf6ba9
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265473"
+ms.locfileid: "4319958"
 ---
 # <a name="flowchart---play-a-multiplayer-game-by-using-smartmatch-matchmaking"></a>流程图 - 使用 SmartMatch 匹配进行多人游戏
 

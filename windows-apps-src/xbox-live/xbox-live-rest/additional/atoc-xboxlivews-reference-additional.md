@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267675"
+ms.locfileid: "4319983"
 ---
 # <a name="additional-reference"></a>其他参考
 
