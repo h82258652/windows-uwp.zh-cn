@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6076f4dfbef0f926563f4696f8ee0e2660d0fc24
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205188"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4257709"
 ---
 # <a name="sessionentry-json"></a>SessionEntry (JSON)
-用于适用性会话中包含的数据。 
+用于健身会话包含的数据。 
 <a id="ID4EN"></a>
 
  
@@ -27,14 +27,14 @@ ms.locfileid: "4205188"
  
 SessionEntry 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| durationInSeconds| 32 位有符号整数 | 持续时间，以秒为单位 — 的会话。 | 
+| durationInSeconds| 32 位有符号整数 | 持续时间--以秒为单位 — 的会话。 | 
 | 焦耳为单位| 32 位有符号整数 | 能源 — 以焦耳为单位 — 刻录在会话中。 | 
-| 满足| 单精度浮点数| 会话持续时间的平均满足的值。 满足值是相对于静态的单个新陈代谢速率活动期间的个人新陈代谢速率的比值。 因为休眠新陈代谢率是个人的权重，无论 1.0 和满足的值为相对于个人休眠新陈代谢速率，它们可以用于比较正在执行的个人的不同粗细的活动的强度。| 
+| 满足| 单精度浮点数| 会话持续时间的平均满足的值。 满足值是相对于静态的个人新陈代谢速率活动期间的个人新陈代谢速率的比值。 因为休眠新陈代谢率是个人的权重，无论 1.0 和满足的值为相对于个人休眠新陈代谢速率，它们可以用于比较正在执行的不同粗细个人活动的强度。| 
 | serverTimestamp| DateTime| 时间，具体取决于 UTC — 入口服务器上输入。 | 
 | 源| 8 位无符号的整数| 会话源。| 
-| 时间戳| DateTime| 时间--基于在协调世界时 （utc 时间）-在客户端上创建条目。 | 
+| 时间戳| DateTime| 时间--基于上协调世界时 （utc 时间）-在客户端上创建条目。 | 
 | titleId| 64 位无符号的整数| 游戏-以十进制 —，创建该条目。| 
   
 <a id="ID4EFE"></a>

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛
 ms.localizationpriority: medium
 ms.openlocfilehash: 12654a89cc43c323c4fa516c4d78f15553441671
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205540"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4260725"
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 
@@ -343,7 +343,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 * **Arena 平台** - 你可以为你的游戏选择玩锦标赛的平台。
 * **锦标赛资产** -（以前位于“多人游戏和匹配”部分。）这些是你的游戏的锦标赛图像。
 
-此外可以在 Windows 开发人员中心的 Xbox Live 服务下的**锦标赛**菜单中启用 arena。
+此外可以在 Windows 开发人员中心中的 Xbox Live 服务下的**锦标赛**菜单上启用 arena。
 
 ![Windows 开发人员中心上的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
 

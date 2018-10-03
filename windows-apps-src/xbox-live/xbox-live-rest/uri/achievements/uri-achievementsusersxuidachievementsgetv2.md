@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ed26a509d75ea7b62705023b0e31850581adc66a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204484"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4260333"
 ---
 # <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
 获取的游戏，这些用户，解锁或这些用户具有正在上定义的成就的列表。 这些 Uri 的域是`achievements.xboxlive.com`。
@@ -34,7 +34,7 @@ ms.locfileid: "4204484"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其 （资源） 的用户。 必须匹配的身份验证的用户的 XUID。| 
   
@@ -43,14 +43,14 @@ ms.locfileid: "4204484"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 必需| 类型| 说明| 
+| 参数| 必需| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | <b>skipItems</b>| 否| 32 位有符号整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
 | <b>ContinuationToken</b>| 否| 字符串| 返回在给定的延续令牌启动的项。 | 
 | <b>maxItems</b>| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项数的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
 | <b>titleId</b>| 否| 字符串| 返回的结果筛选器。 接受一个或多个以逗号分隔的十进制作品标识符。| 
-| <b>unlockedOnly</b>| 否| 布尔值| 返回的结果筛选器。 如果设置为<b>true</b>，将只返回为用户解锁成就。 默认值为<b>false</b>。| 
-| <b>possibleOnly</b>| 否| 布尔值| 返回的结果筛选器。 如果设置为<b>true</b>，将返回所有可能的结果，但不是解锁元数据-只需从 XMS 的成就信息。 默认值为<b>false</b>。| 
+| <b>unlockedOnly</b>| 否| 布尔值| 返回的结果筛选器中。 如果设置为<b>true</b>，将只返回为用户解锁成就。 默认值为<b>false</b>。| 
+| <b>possibleOnly</b>| 否| 布尔值| 返回的结果筛选器中。 如果设置为<b>true</b>，将返回所有可能的结果，但不是解锁元数据-只需从 XMS 的成就信息。 默认值为<b>false</b>。| 
 | <b>类型</b>| 否| 字符串| 返回的结果筛选器。 可以是"持续"挑战"。 默认值为所有受支持的类型。| 
 | <b>orderBy</b>| 否| 字符串| 指定的顺序返回结果。 可以是"无序"、"标题"、"UnlockTime"或"EndingSoon"。 默认值是"无序"。| 
   
@@ -59,16 +59,16 @@ ms.locfileid: "4204484"
  
 ## <a name="authorization"></a>授权
  
-| 声明| 是否为必需？| 说明| 如果缺少的行为| 
+| 声明| 是否为必需？| 描述| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方需要 Xbox LIVE 上的有效用户。| 403 已禁止| 
+| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方必须是 Xbox LIVE 上的有效用户。| 403 已禁止| 
   
 <a id="ID4ESG"></a>
 
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
   
@@ -77,11 +77,11 @@ ms.locfileid: "4204484"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
 | <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就会使用此 API 的 V2 版本。 否则为 V1。| 
-| <b>接受的语言</b>| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍没有匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
+| <b>接受的语言</b>| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
   
 <a id="ID4EIBAC"></a>
 
@@ -95,7 +95,7 @@ ms.locfileid: "4204484"
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务返回[成就 (JSON)](../../json/json-achievementv2.md)对象和一个[PagingInfo (JSON)](../../json/json-paginginfo.md)对象的数组。
+如果在调用成功，该服务返回[成就 (JSON)](../../json/json-achievementv2.md)对象和[PagingInfo (JSON)](../../json/json-paginginfo.md)对象的数组。
  
 <a id="ID4ECCAC"></a>
 

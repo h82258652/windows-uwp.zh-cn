@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209544"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4257777"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
-使用你的游戏服务来在你的作品的接口之外的批处理窗体发送反馈。 这些 Uri 的域是`reputation.xboxlive.com`。
+由你的游戏服务以在你的游戏界面之外的批处理窗体中发送反馈。 这些 Uri 的域是`reputation.xboxlive.com`。
  
   * [请求正文](#ID4EX)
   * [所需的标头](#ID4E3E)
@@ -38,7 +38,7 @@ ms.locfileid: "4209544"
  
 ### <a name="required-members"></a>所需的成员 
  
-请求应包含一个**BatchFeedback**对象数组。 
+请求应包含**BatchFeedback**对象的数组。 
   
 <a id="ID4EPB"></a>
 
@@ -97,7 +97,7 @@ ms.locfileid: "4209544"
 | titleId| 字符串| 此反馈，从已发送的标题或为空的。| 
 | sessionRef| 对象| 描述在 MPSD 会话的对象此反馈与之相关，或为 NULL。| 
 | feedbackType| 字符串| FeedbackType 枚举中的值字符串版本。| 
-| textReason| 字符串| 发件人可能会添加以提供更多详细信息已提交的反馈的合作伙伴提供的文本。| 
+| textReason| 字符串| 发件人可能会添加以为更多详细信息已提交的反馈的合作伙伴提供的文本。| 
 | evidenceId| 字符串| 可用作所提交反馈的证据的资源的 ID。 例如视频文件的 ID。| 
    
 <a id="ID4E3E"></a>
@@ -108,11 +108,11 @@ ms.locfileid: "4209544"
 在 Xbox Live 服务请求时，以下标头是必需的。 
 
 > [!NOTE] 
-> 合作伙伴声明证书必须与才能提交批量反馈请求发送。 
+> 合作伙伴声明证书必须随才能提交批量反馈请求发送。 
 
 
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 101| API 协定版本。| 
 | 内容类型| 应用程序/json| 正在提交的数据的类型。| 
@@ -124,7 +124,7 @@ ms.locfileid: "4209544"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

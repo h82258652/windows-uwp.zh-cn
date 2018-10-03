@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d9c5f2e4aa27f86069578211c5c3188b2921449a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208308"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4260665"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  
@@ -27,7 +27,7 @@ ms.locfileid: "4208308"
  
 GameClipUri 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | <b>uri</b>| 字符串| 为视频资产的位置 URI。| 
 | <b>文件大小</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 

@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a215e9e1abb6daad2c011f38d56c2e501bd16e40
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211696"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4257785"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 检索用户的剪辑的列表。
-这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，具体问题的 URI 的函数取决于。
+这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
 
   * [备注](#ID4EX)
   * [URI 参数](#ID4EEB)
@@ -38,16 +38,16 @@ ms.locfileid: "4211696"
 
 此 API 使的列表用户自己的剪辑以及其他用户的剪辑存储在服务中的不同方法。 多个入口点从不同的级别返回数据，并允许筛选通过查询参数。 如果声明中的 XUID 匹配 URI 中指定的所有者，然后在后内容隔离检查用户的剪辑将返回。 如果对 URI 中的所有者与 XUID 声明不匹配，然后指定的用户的剪辑是根据返回隐私检查和内容隔离检查针对请求的 XUID。
 
-查询每位用户每个服务配置 id (scid) 进行了优化。 指定进一步筛选器或默认值以外的排序顺序如下所示可能在某些情况下需要更长的时间以返回。 这是更明显的较大的每个用户的视频集。
+查询每位用户每个服务配置 id (scid) 进行了优化。 指定进一步筛选器或默认值以外的排序顺序如下所示可能在某些情况下需要更长的时间以返回。 这会更明显的较大的每个用户的视频集。
 
-用于获取多个用户的列表，在相同的 API 调用中没有任何批处理 API。 从 SLS 设计师建议 （当前） 的模式是反过来查询每个用户。
+用于获取多个用户的列表，在相同的 API 调用中没有任何批处理 API。 从 SLS 设计师建议 （当前） 的模式是反之查询每个用户。
 
 <a id="ID4EEB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。|
 
@@ -56,13 +56,13 @@ ms.locfileid: "4211696"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- |
 | skipItems| 32 位有符号整数| 可选。 返回的项目集合 （即，跳过 N 项目） 中的 N + 1 处开始。|
-| ContinuationToken| 字符串| 可选。 返回在给定的延续令牌启动的项。 如果同时提供，continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。 最大大小： 36。|
-| maxItems| 32 位有符号整数| 可选。 要从集合 （可以与结合使用 skipItems 和 continuationToken 返回的项的区域） 中返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回 maxItems 少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
-| 订单| Unicode 字符| 可选。 指定在 (D) escending 是否返回列表 （第一次最高值） 或 (A) scending （首次最低值） 顺序。 默认： d。|
-| type| GameClipTypes| 可选。 以逗号分隔的剪辑返回类型的组。 默认： 所有。|
+| ContinuationToken| 字符串| 可选。 返回在给定的延续令牌启动的项。 如果同时提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。 最大大小： 36。|
+| maxItems| 32 位有符号整数| 可选。 要从集合 （可以使用 skipItems 和 continuationToken 返回一系列项相结合） 返回的项数的最大数量。 如果 maxItems 不存在，并且可能会返回 maxItems 少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
+| 订单| Unicode 字符| 可选。 指定是否中 (D) escending 返回列表 （第一次最高值） 或 (A) scending （首次最低值） 顺序。 默认： d。|
+| type| GameClipTypes| 可选。 组逗号分隔的剪辑返回的类型。 默认： 所有。|
 | eventId| 字符串| 可选。 以逗号分隔的 eventIDs 筛选结果，则集。 默认： Null。|
 | 限定符| 字符串| 可选。 指定要用于获取剪辑的顺序限定符。 <ul><li>创建-指定剪辑中的日期顺序返回到系统</li><li>评分-[顶级]-指定由他们的评分值返回剪辑</li><li>视图-[最查看]-指定剪辑返回的视图数</li></ul><br/> 最大大小： 12。 默认:"创建"。| 
 
@@ -78,21 +78,21 @@ ms.locfileid: "4211696"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。|
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌请求。|
 | 接受| 字符串| 内容类型的可接受的值。 示例：<b>应用程序/json</b>。|
 | 重试后| 字符串| 指示客户端在不可用的服务器的情况下稍后重试。|
-| 不同| 字符串| 指示下游代理如何缓存响应。|
+| 有所不同| 字符串| 指示下游代理如何缓存响应。|
 
 <a id="ID4ENH"></a>
 
 
 ## <a name="optional-response-headers"></a>可选的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Etag| 字符串| 用于缓存优化。 示例:"686897696a7c876b7e"。|
 

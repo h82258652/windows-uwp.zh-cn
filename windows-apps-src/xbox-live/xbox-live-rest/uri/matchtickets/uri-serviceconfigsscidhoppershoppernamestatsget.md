@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207668"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4258269"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
 漏斗获取统计信息。
 
 > [!IMPORTANT]
-> 此方法旨在用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
@@ -36,15 +36,15 @@ ms.locfileid: "4207668"
 
 
 ## <a name="remarks"></a>备注
-此 HTTP/REST 方法获取从命名漏斗在服务配置 ID (SCID) 级别的统计信息。 此方法可以通过**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API 包装。  
+此 HTTP/REST 方法获取从命名漏斗在服务配置 ID (SCID) 级别的统计信息。 此方法可以由**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API 包装。  
 <a id="ID4E5"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | name| 字符串| 漏斗的名称。|
 
 <a id="ID4EJB"></a>
@@ -52,11 +52,11 @@ ms.locfileid: "4207668"
 
 ## <a name="authorization"></a>授权
 
-| 类型| 必需| 描述| 如果缺少，响应|
+| 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话的成员。 | 403|
+| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。 | 403|
 | 特权和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
-| 主题作品 ID/购买/设备类型的概念证明| 是| 正在匹配到游戏必须允许匹配的指定的主题作品声明，设备类型组合。 | 403|
+| 主题作品 ID/概念证明购买/设备类型| 是| 正在匹配到游戏必须允许指定的主题作品声明，设备类型组合的匹配。 | 403|
 
 <a id="ID4E3C"></a>
 
@@ -75,7 +75,7 @@ ms.locfileid: "4207668"
 
 ## <a name="response-body"></a>响应正文
 
-| 成员| 类型| 说明|
+| 成员| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | hopperName| 字符串| 所选的漏斗的名称。|
 | waitTime| 32 位有符号整数| 匹配漏斗 （不可或缺秒数） 时间的平均。 |

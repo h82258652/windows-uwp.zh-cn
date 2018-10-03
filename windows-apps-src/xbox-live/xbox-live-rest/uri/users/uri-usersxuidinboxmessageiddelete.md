@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212956"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4262645"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
-删除用户的收件箱中的用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
+删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4ECB)
@@ -36,14 +36,14 @@ ms.locfileid: "4212956"
  
 删除操作是幂等。
  
-此 API 支持仅内容类型是"application/json"，其中每个调用的 HTTP 标头中必需的。 
+此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
 | 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 | 
@@ -53,7 +53,7 @@ ms.locfileid: "4212956"
  
 ## <a name="authorization"></a>授权 
  
-你必须拥有自己声明要删除的用户消息的用户。
+你必须拥有你自己声明要删除用户消息的用户。
   
 <a id="ID4E1B"></a>
 
@@ -67,13 +67,13 @@ ms.locfileid: "4212956"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 说明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功。| 
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。| 
-| 404| 无法分析 URI 中的消息 ID 或 URI 中缺少一个 XUID。| 
+| 403| 不能转换 XUID 或找不到有效的 XUID 声明。| 
+| 404| 无法分析 URI 中的消息 ID 或 XUID 是 URI 中丢失。| 
 | 500| 常规服务器端错误。| 
   
 <a id="ID4EAE"></a>
@@ -81,9 +81,9 @@ ms.locfileid: "4212956"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应 
  
-发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含从该服务环境的值。
  
-| 属性| 类型| 说明| 
+| 属性| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 错误码| 字符串| 指示错误的来源。| 
 | 错误代码| int| 与 （可以为 null） 的错误相关联的数字代码。| 
@@ -112,6 +112,6 @@ ms.locfileid: "4212956"
 <a id="ID4ETG"></a>
 
  
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
 
    

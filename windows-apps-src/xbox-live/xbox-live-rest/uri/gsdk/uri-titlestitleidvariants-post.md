@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212228"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4258357"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -35,7 +35,7 @@ URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 说明| 
+| 参数| 描述| 
 | --- | --- | 
 | titleid| 游戏应在其中操作该请求 ID。| 
   
@@ -53,7 +53,7 @@ gameserverds.xboxlive.com
  
 当发出请求下, 表中所示的标头是必需的。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | 
 | 内容类型| 应用程序/json| 正在提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
@@ -68,7 +68,7 @@ gameserverds.xboxlive.com
  
 当发出请求下, 表中所示的标头是可选的。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X XblCorrelationId|  | 请求正文的 mime 类型。| 
   
@@ -77,7 +77,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头是无效或不存在，该服务将在响应中返回 401 未经授权。
  
 <a id="ID4EEE"></a>
 
@@ -86,7 +86,7 @@ gameserverds.xboxlive.com
  
 请求必须包含一个具有以下成员的 JSON 对象。
  
-| 成员| 说明| 
+| 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 区域设置| 若要返回的变体本地。| 
 | maxVariants| 变体，要返回的最大数量。| 
@@ -117,7 +117,7 @@ gameserverds.xboxlive.com
  
 响应将始终会包括下表中所示的标头。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 内容类型| 应用程序/json| 响应正文中的数据的类型。| 
 | Content-Length|  | 响应正文的长度。| 
@@ -129,7 +129,7 @@ gameserverds.xboxlive.com
  
 响应可能包括的标头，如下所示。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X XblCorrelationId|  | 响应正文的 mime 类型。| 
   
@@ -140,7 +140,7 @@ gameserverds.xboxlive.com
  
 如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
-| 成员| 说明| 
+| 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 变体| 变体的数组。| 
 | variantId| 变体的 Id。| 

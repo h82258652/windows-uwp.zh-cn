@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f5af1639f5348fe20c36c56c1301f723d832f7
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204466"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4262711"
 ---
 # <a name="gameresult-json"></a>GameResult (JSON)
 表示数据，以描述游戏会话的结果的 JSON 对象。 
@@ -26,7 +26,7 @@ ms.locfileid: "4204466"
  
 GameResult JSON 对象具有以下成员。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | blob| 8 位无符号整数数组| 自定义特定于游戏的结果数据。| 
 | 结果| 字符串| 游戏会话的玩家的参与的结果。 有效值为"Win"、"丢失"绑定"。 | 

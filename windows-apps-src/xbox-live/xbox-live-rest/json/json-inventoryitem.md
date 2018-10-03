@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a7521de7da4ebd31f0a1d8c59bb7c0134eddc08
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208240"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4263595"
 ---
 # <a name="inventoryitem-json"></a>inventoryItem (JSON)
 核心清单项表示可被授予权利的标准项。
@@ -30,15 +30,15 @@ InventoryItem 对象具有以下规范。
 | 成员| 类型| 描述|
 | --- | --- | --- |
 | url| 字符串| 此特定库存项目的唯一标识符。|
-| 项类型| 字符串| 项类型。 当前值 <ul><li><b>Unknown</b></li><li><b>游戏</b></li><li><b>电影</b></li><li> <b>TVShow</b></li><li><b>MusicVideo</b></li><li><b>GameTrial</b></li><li><b>ViralVideo</b></li><li><b>TVEpisode</b></li><li><b>TVSeason</b></li><li><b>TVSeries</b></li><li><b>VideoPreview</b></li><li><b>海报</b></li><li><b>播客</b></li><li><b>图像</b></li><li><b>BoxArt</b></li><li><b>ArtistPicture</b></li><li><b>GameContent</b></li><li><b>GameDemo</b></li><li><b>主题</b></li><li><b>XboxOriginalGame</b></li><li><b>GamerTile</b></li><li><b>ArcadeGame</b></li><li><b>GameConsumable</b></li><li><b>唱片集</b></li><li><b>AlbumDisc</b></li><li><b>AlbumArt</b></li><li><b>GameVideo</b></li><li><b>BackgroundArt</b></li><li><b>TVTrailer</b></li><li><b>GameTrailer</b></li><li><b>VideoShort</b></li><li><b>捆绑包</b></li><li><b>XnaCommunityGame</b></li><li><b>促销</b></li><li><b>MovieTrailer</b></li><li><b>SlideshowPreviewImage</b></li><li><b>ServerBackedGames</b></li><li><b>市场</b></li><li><b>AvatarItem</b></li><li><b>LiveApp</b></li><li><b>WebGame</b></li><li><b>MobileGame</b></li><li><b>MobilePdlc</b></li><li><b>MobileConsumable</b></li><li><b>应用</b></li><li><b>MetroGame</b></li><li><b>MetroGameContent</b></li><li><b>MetroGameConsumable</b></li><li><b>GameLayer</b></li><li><b>GameActivity</b></li><li><b>GameV2</b></li><li><b>SubscriptionV2</b></li><li><b>订阅</b><br/><br/> **注意：** 游戏由**GameV2**、 易耗品**GameConsumable**，并持久型 DLC 是**GameContent**。 |
-  | 容器 | 字符串 | 这是一套"容器"包含此项。 可通过用户的库存查询适用于特定容器所属的项目。 这些容器的确定时由购买，该项将添加到清单。 |
+| 项类型| 字符串| 项类型。 当前值 <ul><li><b>Unknown</b></li><li><b>游戏</b></li><li><b>电影</b></li><li> <b>TVShow</b></li><li><b>MusicVideo</b></li><li><b>GameTrial</b></li><li><b>ViralVideo</b></li><li><b>TVEpisode</b></li><li><b>TVSeason</b></li><li><b>TVSeries</b></li><li><b>VideoPreview</b></li><li><b>海报</b></li><li><b>播客</b></li><li><b>图像</b></li><li><b>BoxArt</b></li><li><b>ArtistPicture</b></li><li><b>GameContent</b></li><li><b>GameDemo</b></li><li><b>主题</b></li><li><b>XboxOriginalGame</b></li><li><b>GamerTile</b></li><li><b>ArcadeGame</b></li><li><b>GameConsumable</b></li><li><b>唱片集</b></li><li><b>AlbumDisc</b></li><li><b>AlbumArt</b></li><li><b>GameVideo</b></li><li><b>BackgroundArt</b></li><li><b>TVTrailer</b></li><li><b>GameTrailer</b></li><li><b>VideoShort</b></li><li><b>捆绑包</b></li><li><b>XnaCommunityGame</b></li><li><b>促销</b></li><li><b>MovieTrailer</b></li><li><b>SlideshowPreviewImage</b></li><li><b>ServerBackedGames</b></li><li><b>市场</b></li><li><b>AvatarItem</b></li><li><b>LiveApp</b></li><li><b>WebGame</b></li><li><b>MobileGame</b></li><li><b>MobilePdlc</b></li><li><b>MobileConsumable</b></li><li><b>应用</b></li><li><b>MetroGame</b></li><li><b>MetroGameContent</b></li><li><b>MetroGameConsumable</b></li><li><b>GameLayer</b></li><li><b>GameActivity</b></li><li><b>GameV2</b></li><li><b>SubscriptionV2</b></li><li><b>订阅</b><br/><br/> **注意：** 游戏指定的**GameV2**、 易耗品**GameConsumable**，并持久型 DLC 是**GameContent**。 |
+  | 容器 | 字符串 | 这是一套"容器"包含此项。 可为属于特定容器的项目中查询用户的清单。 这些容器的确定时由购买，该项将添加到清单。 |
   | 获取 | DateTime | 日期和时间项添加到用户的清单。 |
-  | startDate | DateTime | 日期和时间的项目就会变得或将成为可供使用。 |
+  | startDate | DateTime | 日期和时间的项目就会变得或将变为可供使用。 |
   | endDate | DateTime | 日期和时间的项目就会变得或将变为不可用。 |
-  | 状态 | 字符串 | 项的状态。 允许值为**启用**、**暂停**、**过期**，**取消**，**续订**。  |
-  | trial | 布尔值 | 必需。 如果此权利是试用版;否则为则返回 false。 如果您购买权利的试用版，然后购买完整版，你将收到两者。 |
-  | trialTimeRemaining | 时间跨度 | 可以为 null。 在试用版，以分钟为单位剩余多少时间。 |
-  | 消费品 | array | 如果项目是易耗型，它包含的内联表示形式的唯一标识符 （链接） 的易耗型清单项，以及其当前的数量。 |
+  | 状态 | 字符串 | 项的状态。 允许值为**启用**、**暂停**、**到期**、**取消**，**续订**。  |
+  | trial | 布尔值 | 必需。 如果此权利是试用版;否则为则返回 false。 如果你购买权利的试用版和购买完整版，你将收到两者。 |
+  | trialTimeRemaining | 时间跨度 | 可以为 null。 试用版，以分钟为单位上剩余多少时间。 |
+  | 消费品 | array | 如果项目是易耗型，它包含的内联表示形式的易耗型清单项，以及其当前的数量的唯一标识符 （链接）。 |
 
 <a id="ID4EMAAC"></a>
 
@@ -104,6 +104,6 @@ consumableInventoryItem {
 
 [/users/me/inventory](../uri/marketplace/uri-inventory.md)
 
- [/ 库存/易耗品 / {itemID}](../uri/marketplace/uri-inventoryconsumablesitemurl.md)
+ [/ 清查/易耗品 / {itemID}](../uri/marketplace/uri-inventoryconsumablesitemurl.md)
 
  [/inventory/{itemID}](../uri/marketplace/uri-inventoryitemurl.md)
