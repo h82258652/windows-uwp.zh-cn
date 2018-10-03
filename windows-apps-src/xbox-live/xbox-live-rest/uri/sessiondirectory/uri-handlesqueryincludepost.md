@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dab1ce8b995862470114a389cb6d4bf2ea7904a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210566"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267505"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a>POST (/handles/query?include=relatedInfo)
 创建会话句柄包含相关的会话信息的查询。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4ECB)
@@ -36,9 +36,9 @@ ms.locfileid: "4210566"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法创建句柄数据查询使用"包括"查询字符串中指定的会话信息。 查询字符串值旨在作为扩展以支持将来的查询选项，支持以逗号分隔的列表，例如，"？ 包括 = relatedInfo，会话"。 可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**包装 POST 方法。
+此 HTTP/REST 方法创建句柄数据查询使用"包含"查询字符串中指定的会话信息。 查询字符串值旨在作为扩展以支持将来的查询选项，支持以逗号分隔的列表，例如，"？ 包括 = relatedInfo，会话"。 可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**包装 POST 方法。
 
-对于此方法，请求正文中的类型字段必须设置为"活动"。 响应正文中的项直接映射到**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**的属性。
+此方法，请求正文中的类型字段必须设置为"活动"。 响应正文中的项直接映射到**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**的属性。
 
 <a id="ID4ECB"></a>
 
@@ -52,16 +52,16 @@ ms.locfileid: "4210566"
 
 可以使用下表中的查询字符串参数修改查询。
 
-| <b>参数</b>| <b>类型</b>| <b>说明</b>|
+| <b>参数</b>| <b>类型</b>| <b>描述</b>|
 | --- | --- | --- | --- |
 | 关键字| 字符串| 一个关键字，例如，"foo"，它们是否要检索必须在会话或模板中找到的。 |
-| xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，以在查询中包含的会话。 默认情况下，用户必须处于活动状态为它要包括的会话中。 |
-| 预订| 布尔型| 若要包括的会话用户设置为保留玩家，但并未加入成为活动玩家。 在查询你自己的会话，或特定用户的会话服务器到服务器查询时，仅使用此参数。 |
-| 处于非活动状态| 布尔型| 若要包括用户已接受但不是会主动玩游戏的会话，则为 true。 计数为非活动状态的用户已"准备好"但不是"活动"的会话。 |
-| 专用| 布尔型| 如果为 true，以包含专用会话。 在查询你自己的会话，或特定用户的会话服务器到服务器查询时，仅使用此参数。 |
+| xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，以在查询中包括的会话。 默认情况下，用户必须是其可包含在会话中处于活动状态。 |
+| 预订| 布尔型| 若要包括的会话用户设置为保留玩家，但并未加入成为活动玩家。 在查询你自己的会话，或查询特定用户的会话服务器到服务器时，仅使用此参数。 |
+| 处于非活动状态| 布尔型| 若要包括用户已接受但不是会主动玩游戏的会话，则为 true。 用户可"就绪"，但不是"活动"的会话计数为非活动状态。 |
+| 专用| 布尔型| 如果为 true，以包含专用会话。 在查询你自己的会话，或查询特定用户的会话服务器到服务器时，仅使用此参数。 |
 | 可见性| 字符串| 会话的可见性状态。 由<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>定义可能的值。 如果此参数设置为"打开"，该查询应包括仅打开的会话。 如果它被设置为"private"，<i>专用</i>参数必须设置为 true。 |
 | version| 32 位有符号整数| 应包含最大会话版本。 例如，值为 2 指定主要会话版本的 2 的唯一会话或更少应包含。 版本号必须小于或等于请求的协定版本 mod 100。 |
-| 参加| 32 位有符号整数| 若要检索的会话的最大数量。 此数字必须介于 0 和 100 之间。 |
+| 参加| 32 位有符号整数| 若要检索的会话最大数量。 此数字必须介于 0 和 100 之间。 |
 
 
 设置为 true 的*私有*或*预订*需要对会话的服务器级访问权限。 或者，这些设置要求调用方的 XUID 声明以匹配 URI 中的 XUID 筛选器。 否则，HTTP/403 状态代码返回，无论确实存在任何此类会话。

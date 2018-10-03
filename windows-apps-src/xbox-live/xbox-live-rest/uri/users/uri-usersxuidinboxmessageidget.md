@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207970"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267347"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
 检索特定用户消息，将其标记为已在服务上读的详细的消息文本。
@@ -39,14 +39,14 @@ ms.locfileid: "4207970"
 
 此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新中。
 
-此 API 支持仅内容类型是"application/json"，其中每个调用的 HTTP 标头中必需的。
+此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
 
 <a id="ID4EEB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 |
 | 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 |
@@ -56,7 +56,7 @@ ms.locfileid: "4207970"
 
 ## <a name="authorization"></a>授权
 
-你必须拥有自己声明可检索用户消息的用户。
+你必须拥有自己声明检索用户消息的用户。
 
 <a id="ID4E3B"></a>
 
@@ -77,15 +77,15 @@ ms.locfileid: "4207970"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- |
 | 200| 成功。|
-| 400| 不能正确转换的 XUID。|
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。|
+| 400| 无法正确转换的 XUID。|
+| 403| 不能转换 XUID 或找不到有效的 XUID 声明。|
 | 404| 有效的 XUID 是缺少，或使用消息 ID 找不到或正确地分析。|
-| 500| 常规服务器端错误或消息类型获取无效。|
+| 500| 常规的服务器端错误或消息类型获取无效。|
 
 <a id="ID4EUE"></a>
 
@@ -106,7 +106,7 @@ ms.locfileid: "4207970"
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
 | 发送| DateTime|  | 日期和时间已发送消息。 （由该服务）。|
-| 到期| DateTime|  | 过期日期和时间消息。 （所有邮件都具有最大生存时间，以在将来确定）。|
+| 到期| DateTime|  | 过期日期和时间消息。 （所有消息都具有最大生存时间，以在将来确定）。|
 | 可以忽略 messageType| 字符串| 13| 消息类型： 用户、 系统，FriendRequest。|
 | senderXuid| ulong|  | 发件人的 XUID。|
 | 发送方| 字符串| 15| 发件人的玩家代号。|
@@ -136,9 +136,9 @@ ms.locfileid: "4207970"
 
 #### <a name="error-response"></a>错误响应
 
-发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含从该服务环境的值。
 
-| 属性| 类型| 说明|
+| 属性| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 错误码| 字符串| 指示错误的来源。|
 | 错误代码| int| 与 （可以为 null） 的错误相关联的数字代码。|
@@ -160,4 +160,4 @@ ms.locfileid: "4207970"
 <a id="ID4EMEAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

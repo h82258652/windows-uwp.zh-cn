@@ -3,7 +3,7 @@ title: /users/me/consumables/{itemID}
 assetID: 45724827-5e35-326f-3f17-f49e606d9e08
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurl.html
 author: KevinAsgari
-description: 用户的 Xbox 易耗品 rESTful 终结点。
+description: 为用户的 Xbox 易耗品 rESTful 终结点。
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206864"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267491"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。
@@ -29,9 +29,9 @@ ms.locfileid: "4206864"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
-| itemID| 字符串| 为每个用户单数库存项目的唯一 ID|
+| itemID| 字符串| 为单数库存项目的每个用户的唯一 ID|
 
 <a id="ID4ERB"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4206864"
 
 [POST ({itemID})](uri-inventoryconsumablesitemurlpost.md)
 
-&nbsp;&nbsp;指示，已使用所有或易耗型库存项目的部分和递减请求的距离该消耗品的数量。
+&nbsp;&nbsp;指示，已使用全部或部分的易耗型库存项目和递减请求的距离该消耗品的数量。
 
 <a id="ID4E4B"></a>
 

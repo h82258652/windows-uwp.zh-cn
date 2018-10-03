@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208404"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267675"
 ---
 # <a name="additional-reference"></a>其他参考
 
@@ -33,7 +33,7 @@ ms.locfileid: "4208404"
 
 [数据类型概述](datatypeoverview.md)
 
-&nbsp;&nbsp;介绍使用 Xbox Live 服务的标准标识相关的数据类型。
+&nbsp;&nbsp;介绍 Xbox Live 服务使用的标准标识相关的数据类型。
 
 [辅助 EDS API](eds-apis.md)
 
@@ -71,7 +71,7 @@ ms.locfileid: "4208404"
 
 [标准 HTTP 状态代码](httpstatuscodes.md)
 
-&nbsp;&nbsp;介绍了由该服务返回的标准 HTTP 状态代码。
+&nbsp;&nbsp;介绍由该服务返回的标准 HTTP 状态代码。
 
 <a id="ID4ECC"></a>
 

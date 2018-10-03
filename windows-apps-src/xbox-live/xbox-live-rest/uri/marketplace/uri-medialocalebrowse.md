@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212116"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268259"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
 允许浏览的单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
  
-此 API 还允许在给定的项的子项的浏览。 例如，通过为 Xbox 360 游戏 ID 和 MediaItemType 参数中传递，这允许浏览和 diltering 上该项目，如虚拟形象项目或 DLC 游戏的子项。
+此 API 还允许浏览内给定项的子项。 例如，通过为 Xbox 360 游戏 ID 和 MediaItemType 参数中传递，这可以浏览和 diltering 该项目，如虚拟形象项目或 DLC 游戏的子元素上。
  
 此 API 将接受查询优化器。
  
 某些情况下，用于检索子元素包括：
  
    * 为轨唱片集
-   * 季节系列
+   * 到季节系列
    * 季节到剧集：
    * 跟踪对音乐视频
    * 照相艺术家
-   * 游戏的游戏加载项 （DLC、 头像、 主题、 等。）
+   * 为游戏加载项 （DLC、 头像、 主题等） 游戏
   
 这些 Uri 的域是`eds.xboxlive.com`。
  
@@ -43,7 +43,7 @@ ms.locfileid: "4212116"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   

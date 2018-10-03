@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 068ae15566d73dfc4610f8540972b7e80329de8e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209480"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267507"
 ---
 # <a name="usertitle-json"></a>UserTitle (JSON)
 包含用户的游戏数据。 
@@ -27,16 +27,16 @@ ms.locfileid: "4209480"
  
 UserTitle 对象具有以下规范。 所有属性都是必需的。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | lastUnlock| DateTime| 上次成就的时间。| 
 | titleId| 32 位无符号的整数| 游戏的唯一标识符。| 
-| titleVersion| 字符串| 标题的版本。| 
-| serviceConfigId| 字符串| 主要服务配置集与游戏相关联的 ID。| 
+| titleVersion| 字符串| 游戏的版本。| 
+| serviceConfigId| 字符串| 与游戏相关联的主要服务配置集 ID。| 
 | 标题键入| 字符串| 游戏类型。| 
 | 平台| 字符串| 受支持的平台。| 
 | name| 字符串| 此标题文本名称。 最大长度 22。| 
-| earnedAchievements| 32 位无符号的整数| 成就数获得标题，包括已解锁的成就和成功完成挑战。| 
+| earnedAchievements| 32 位无符号的整数| 成就数而获得的游戏，包括已解锁的成就和成功完成挑战。| 
 | currentGamerscore| 32 位无符号的整数| 在此游戏中获得此用户总玩家分数。| 
 | maxGamerscore| 32 位无符号的整数| 此标题的总可能玩家分数。| 
   

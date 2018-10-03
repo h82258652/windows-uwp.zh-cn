@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 891d1d03ab5b7b60dd25c58d9f2f40083bde6e7c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206100"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268117"
 ---
 # <a name="achievements-uris"></a>成就 URI
 
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live*成就*服务。
+本部分提供了从*成就*的 Xbox Live 服务的详细信息通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
 
 这些 Uri 的域是 achievements.xboxlive.com。
 
@@ -31,7 +31,7 @@ ms.locfileid: "4206100"
 
 [/users/xuid({xuid})/achievements](uri-achievementsusersxuidachievementsv2.md)
 
-&nbsp;&nbsp;提供对用户的成就的访问。
+&nbsp;&nbsp;提供对用户的成就访问。
 
 [/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
@@ -39,7 +39,7 @@ ms.locfileid: "4206100"
 
 
 > [!NOTE] 
-> 仅受支持的平台。
+> 仅支持平台。
 
 
 

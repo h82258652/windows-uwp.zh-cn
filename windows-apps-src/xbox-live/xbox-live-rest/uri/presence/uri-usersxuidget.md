@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 308ecbddb5d62ae98d576f56af4cd3f7363c2c5a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209152"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268093"
 ---
 # <a name="get-usersxuidxuid"></a>GET (/users/xuid({xuid}))
 发现其他用户或客户端存在。
@@ -37,7 +37,7 @@ ms.locfileid: "4209152"
 
 ## <a name="remarks"></a>备注
 
-可以筛选响应，如果使用者不感兴趣的整个对象提供的[presencerecord，他的](../../json/json-presencerecord.md)一部分。
+该响应可以进行筛选，以提供的[presencerecord，他的](../../json/json-presencerecord.md)一部分，如果使用者不感兴趣的整个对象。
 
 > [!NOTE] 
 > 返回的数据会受到隐私和内容隔离规则。
@@ -49,7 +49,7 @@ ms.locfileid: "4209152"
  
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 目标用户。|
 
@@ -60,14 +60,14 @@ ms.locfileid: "4209152"
 
 | 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- |
-| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回整个树活动除外。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> |
+| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除外活动将整个树。</li><li><b>所有</b>： 返回整个树中，包括活动级别是否存在。</li></ul> |
 
 <a id="ID4E4C"></a>
 
 
 ## <a name="authorization"></a>授权
 
-| 类型| 必需| 描述| 如果缺少，响应|
+| 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 已禁止|
 
@@ -76,7 +76,7 @@ ms.locfileid: "4209152"
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
 
-此方法将始终返回 200 确定，但可能不会在响应正文中返回的内容。
+此方法始终返回 200 确定，但可能不会在响应正文中返回的内容。
 
 | 请求的用户| 目标用户的隐私设置| 行为|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -96,11 +96,11 @@ ms.locfileid: "4209152"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
 | x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
-| 接受| 字符串| 内容类型的可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
+| 接受| 字符串| 内容类型可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
 | 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
 
@@ -109,7 +109,7 @@ ms.locfileid: "4209152"
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
@@ -130,7 +130,7 @@ ms.locfileid: "4209152"
 
 ### <a name="sample-response"></a>示例响应
 
-如果没有现有记录的用户，则返回任何设备的记录。
+如果没有为用户现有记录，则返回没有设备的记录。
 
 
 ```cpp

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210828"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268281"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
@@ -44,7 +44,7 @@ GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaIt
 ```
 
  
-   * 发出将调用用于反向查找使用以前的响应中的**ProviderMediaId**字段： 
+   * 发出反向查找使用以前的响应中的**ProviderMediaId**字段的调用： 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
