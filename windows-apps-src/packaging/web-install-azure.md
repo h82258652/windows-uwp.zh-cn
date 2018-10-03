@@ -3,18 +3,18 @@ author: c-don
 title: 从 Azure Web 服务器安装 UWP 应用
 description: 阅读此教程，了解如何设置 Azure Web 服务器、如何验证 Web 应用可以托管应用包，以及如何有效调用和使用应用安装程序。
 ms.author: cdon
-ms.date: 06/05/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e97cb4bc6d3a58115ce467f05ef29dd0710844
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: b98ca6316f733210dbdbc5201178b3a89a2b5982
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992184"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267964"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>从 Azure Web 应用安装 UWP 应用
 
@@ -81,10 +81,12 @@ ms.locfileid: "1992184"
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <system.webServer>
-    <!--This is to allow the web server to serve resources with the appx/appxbundle/appinstaller extension-->
+    <!--This is to allow the web server to serve resources with the appropriate file extension-->
     <staticContent>
       <mimeMap fileExtension=".appx" mimeType="application/appx" />
+      <mimeMap fileExtension=".msix" mimeType="application/msix" />
       <mimeMap fileExtension=".appxbundle" mimeType="application/appxbundle" />
+      <mimeMap fileExtension=".msixbundle" mimeType="application/msixbundle" />
       <mimeMap fileExtension=".appinstaller" mimeType="application/appinstaller" />
     </staticContent>
   </system.webServer>

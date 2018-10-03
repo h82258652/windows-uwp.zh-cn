@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fefcfd0f49449095b08a1463931513440bc69c1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209256"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4264227"
 ---
 # <a name="post-usersxuidxuidresetreputation"></a>POST (/users/xuid({xuid})/resetreputation)
 使执行团队后 （例如） 帐户劫持将指定的用户的信誉评分设置为某些任意值。 这些 Uri 的域是`reputation.xboxlive.com`。
@@ -41,7 +41,7 @@ ms.locfileid: "4209256"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID) 指定的用户。| 
   
@@ -50,7 +50,7 @@ ms.locfileid: "4209256"
  
 ## <a name="authorization"></a>授权
  
-从合作伙伴： 为零售沙盒， **PartnerClaim**从强制执行团队;对于所有其他沙盒， **PartnerClaim**。
+从合作伙伴： 为零售沙盒， **PartnerClaim**来自强制执行团队;对于所有其他沙盒， **PartnerClaim**。
  
 从用户： 以外的所有沙盒零售、 **XuidClaim**和**TitleClaim**除外。
   
@@ -59,13 +59,13 @@ ms.locfileid: "4209256"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-从所有：**内容类型： 应用程序/json**。
+来自所有： **Content-type： 应用程序/json**。
  
 从合作伙伴： **X Xbl 协定版本**（当前版本是 101）、 **X Xbl 沙盒**。
  
 从用户: （当前版本是 101） **X Xbl 协定版本**。
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
 | X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
@@ -98,9 +98,9 @@ ms.locfileid: "4209256"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 确定。| 
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
@@ -114,7 +114,7 @@ ms.locfileid: "4209256"
  
 ## <a name="response-body"></a>响应正文
  
-成功时，响应正文为空。 失败时，将返回[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+成功时，响应正文为空。 失败时，将返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
  
 <a id="ID4E3H"></a>
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a5a56b524dbf88d96a34f769f7a25bed7bca8a1d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212996"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261073"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
-与成就或其奖励关联的媒体资产。
+与成就或其奖励媒体资产。
 <a id="ID4EN"></a>
 
 

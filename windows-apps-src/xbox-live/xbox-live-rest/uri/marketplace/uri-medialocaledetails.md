@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206202"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4266557"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
 详细信息和元数据，产品/服务返回有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -28,7 +28,7 @@ API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因�
    * idType = XboxHexTitle，这将产生 AppType 或 GameType 项
    * idType = ProviderContentId，这将产生 MovieType 或 TVType 项
   
-下面的图表总结了哪个 ID 的类型可以提供与哪些媒体组的整个映射：
+下表总结了整个映射的哪个 ID 可与哪些媒体组提供类型：
  
 | ID 类型| AppType| GameType| MovieType| MusicArtistType| MusicType| TVType| WebVideoType| Unknown| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -41,29 +41,29 @@ API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因�
 | XboxHexTitle| Y| Y| N| N| N| N| N| Y| 
 | ProviderContentId| N| N| Y| N| N| Y| N| Y| 
  
-  * [参数的说明](#ID4EEH)
+  * [参数说明](#ID4EEH)
   * [URI 参数](#ID4EUH)
  
 <a id="ID4EEH"></a>
 
  
-## <a name="parameter-notes"></a>参数的说明
+## <a name="parameter-notes"></a>参数说明
  
 <a id="ID4EIH"></a>
 
  
 ### <a name="providercontentid"></a>ProviderContentId
  
-这是用于查找提供程序例如特定 id。 Netflix Id 或 Hulu id。
+这是用于查找提供商例如特定 id。 Netflix Id 或 Hulu id。
  
-ProviderContentId idType 时，接受单个值。 这是因为 ProviderContentIds 是唯一的 ID，可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符是什么是 Id 之间 delimieter 之间存在多义性，什么是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
+ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderContentIds 是唯一的 ID 可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符，什么是 Id 之间 delimieter 之间没有多义性和什么是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
    
 <a id="ID4EUH"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   

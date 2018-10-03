@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 938a653c591bae1787f5a5cbc5d074f361295d96
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208414"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4264259"
 ---
 # <a name="mediarequest-json"></a>MediaRequest (JSON)
  
@@ -29,7 +29,7 @@ MediaRequest 对象具有以下规范。
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| id| 字符串| 使用必应目录或提供商目录的媒体的标识符。| 
+| id| 字符串| 必应目录或提供商目录所使用的媒体的标识符。| 
 | idType| 字符串| 如何解释<b>id</b>。可能的值包括"必应"和"提供程序"。| 
   
 <a id="ID4E2B"></a>

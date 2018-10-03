@@ -1,7 +1,7 @@
 ---
 author: TerryWarwick
 title: 配置条形码扫描仪
-description: 了解如何配置条形码扫描仪的目标应用程序。
+description: 了解如何配置目标应用程序的条形码扫描仪。
 ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211053"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266972"
 ---
 # <a name="configure-a-barcode-scanner"></a>配置条形码扫描仪
 

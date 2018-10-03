@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4213068"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261947"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
@@ -32,7 +32,7 @@ ms.locfileid: "4213068"
  
 ## <a name="remarks"></a>备注
  
-每个结果指示对应的字符串是可接受的 Xbox LIVE，以及是否包含有问题的字符串，如果适用。
+每个结果指示对应的字符串是可接受上 Xbox LIVE，以及是否包含有问题的字符串，如果适用。
  
 相同的字符串将始终提供相同的结果。 如果你收到未成功结果，分析结果，并相应地修改的字符串。
  
@@ -48,7 +48,7 @@ ms.locfileid: "4213068"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标题| 说明| 
+| 标题| 描述| 
 | --- | --- | --- | 
 | 授权| 身份验证令牌。 示例： XBL3.0 x = [哈希];[令牌]。| 
 | x xbl 协定版本| 整数 API 协定版本。 必须对此 API 为 1 或 2。| 
@@ -58,7 +58,7 @@ ms.locfileid: "4213068"
  
 ## <a name="request-body"></a>请求正文
  
-请求正文是数组的一个字符串，与不受限制，大小和每个字符串的 512 字符数组。
+请求正文是数组的一个字符串，使用不受限制，大小和 512 个字符，每个字符串数组。
  
 <a id="ID4ETC"></a>
 
@@ -85,14 +85,14 @@ ms.locfileid: "4213068"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 所有字符串都已成功都处理。 这并不一定意味着所有字符串都必须正面的 Hresult。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
-| 406| 不允许| 缺少<b>内容类型： 应用程序/json</b>标头。| 
+| 406| 不允许| 缺少<b>content-type： 应用程序/json</b>标头。| 
 | 408| 请求超时| 服务可能不理解格式不正确的请求。 通常无效参数。| 
   
 <a id="ID4ETF"></a>
@@ -100,7 +100,7 @@ ms.locfileid: "4213068"
  
 ## <a name="response-body"></a>响应正文
  
-返回的[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
+返回[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
   
 <a id="ID4EAG"></a>
 

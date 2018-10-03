@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b869f87760498dc6a2224809a42380f1b8f5930b
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205664"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4264433"
 ---
 # <a name="reputation-uris"></a>信誉 URI
  
-本部分提供了从**Microsoft.Xbox.Services.Social.ReputationService**的 Xbox Live 服务的详细信息统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。 信誉 Uri 的域是 reputation.xboxlive.com。 典型的 URI 表示可能是https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback。 
+本部分提供了从**Microsoft.Xbox.Services.Social.ReputationService**为 Xbox Live 服务的详细信息通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。 信誉 Uri 的域是 reputation.xboxlive.com。 典型的 URI 表示可能是https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback。 
  
 信誉服务使用的反馈，如所述[的反馈 (JSON)](../../json/json-feedback.md)，来计算信誉评分。 此分数保存在项 ReputationOverall 下用户的统计信息区域中。 有关检索用户统计信息的详细信息，请参阅[获取 (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)。 
  
@@ -33,15 +33,15 @@ ms.locfileid: "4205664"
 
 [/users/xuid({xuid})/feedback](uri-reputationusersxuidfeedback.md)
 
-&nbsp;&nbsp;如果你希望能够在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。
+&nbsp;&nbsp;如果你希望能够在游戏中，相较于使用 shell 添加反馈选项，用于从你的游戏。
 
 [/users/batchfeedback](uri-reputationusersbatchfeedback.md)
 
-&nbsp;&nbsp;使用你的游戏服务来在你的作品的接口之外的批处理窗体发送反馈。
+&nbsp;&nbsp;由你的游戏服务以在你的游戏界面之外的批处理窗体中发送反馈。
 
 [/users/me/resetreputation](uri-usersmeresetreputation.md)
 
-&nbsp;&nbsp;使强制执行的团队能够访问当前用户的信誉评分。
+&nbsp;&nbsp;使执行团队以访问当前用户的信誉评分。
 
 [/users/xuid({xuid})/deleteuserdata](uri-usersxuiddeleteuserdata.md)
 
@@ -49,7 +49,7 @@ ms.locfileid: "4205664"
 
 [/users/xuid({xuid})/resetreputation](uri-usersxuidresetreputation.md)
 
-&nbsp;&nbsp;使访问指定的用户的信誉评分，强制执行团队。
+&nbsp;&nbsp;使执行团队以访问指定的用户的信誉评分。
  
 <a id="ID4E5B"></a>
 

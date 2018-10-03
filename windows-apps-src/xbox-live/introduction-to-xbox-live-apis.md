@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f295c1f1b432f90e12d3e628cd35a54412812ec
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206862"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4266943"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API 简介
 
@@ -43,7 +43,7 @@ ms.locfileid: "4206862"
 
 ## <a name="xbox-live-services-api-overview"></a>Xbox Live 服务 API 概述 ##
 
-Xbox Live 服务 API (**XSAPI**) 公开三个组的客户端 Api，它支持各种客户方案：
+Xbox Live 服务 API (**XSAPI**) 公开了三个组的客户端 Api，它支持各种客户方案：
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
 - [基于 XSAPI C++11 的 API](#xsapi-c++11-based-api)
@@ -111,6 +111,6 @@ std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_s
 
 - 允许游戏时调用 XSAPI 控制的内存分配。
 - 允许游戏获得的线程处理调用 XSAPI 时的完全控制。
-- 使用新 HTTP 库，libHttpClient，为游戏开发人员设计。
+- 使用新 HTTP 库，libHttpClient，面向游戏开发人员。
 
-有关详细信息，请参阅[Xbox Live C Api 的介绍](xsapi-flat-c.md)。
+有关详细信息，请参阅[Xbox Live C Api 简介](xsapi-flat-c.md)。

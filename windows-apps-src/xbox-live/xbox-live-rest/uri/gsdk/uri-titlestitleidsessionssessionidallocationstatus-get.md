@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205932"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4264309"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 返回由其 sessionId sessionhost 分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -48,17 +48,17 @@ ms.locfileid: "4205932"
  
 | 成员| 说明| 
 | --- | --- | 
-| description| 返回空字符串 （左中的向后兼容性）。| 
-| clusterId| 返回空字符串 （左中的向后兼容性）。| 
+| description| 返回空字符串 （留给中向后兼容性）。| 
+| clusterId| 返回空字符串 （留给中向后兼容性）。| 
 | 主机名| 会话主机的 URL。| 
 | status| 表示排队、 已完成，或终止。| 
 | sessionHostId| 会话主机 id。| 
 | sessionId| （在分配时） 提供的客户端会话 id。| 
 | secureContext| 安全设备地址。| 
-| portMappings| 端口映射的实例。| 
+| portMappings| 实例的端口映射。| 
 | 区域| 实例的位置。| 
-| 票证 Id| 当前会话 ID （左中的向后兼容性）。| 
-| gameHostId| 当前 sessionHostId （左中的向后兼容性）。| 
+| 票证 Id| 当前会话 ID （留给中向后兼容性）。| 
+| gameHostId| 当前 sessionHostId （留给中向后兼容性）。| 
  
 <a id="ID4EGD"></a>
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 98adbf3f170c679452f4a78a18097b83e93faffa
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205564"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267065"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
-有关游戏的请求。 
+有关游戏信息请求。 
 <a id="ID4EN"></a>
 
  
@@ -31,7 +31,7 @@ TitleRequest 对象具有以下规范。
 | --- | --- | --- | 
 | id| 32 位无符号的整数| 标题的标识符。| 
 | 活动| [ActivityRequest](json-activityrequest.md)| 游戏内信息，包括丰富的状态和媒体信息，如果可用。| 
-| 状态| 字符串| 无论用户是否处于活动状态。 若要将标记为非活动用户，需要使用此字段。 默认值为"活动"。| 
+| 状态| 字符串| 无论用户是否处于活动状态。 若要将标记为非活动用户，需要此字段。 默认值为"活动"。| 
 | 放置| 字符串| 游戏放置模式。 可能的值包括"完全"、"fill"，"贴靠"或"background"。 默认值为"完全"。| 
   
 <a id="ID4EJC"></a>

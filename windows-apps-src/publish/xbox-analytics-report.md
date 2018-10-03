@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207673"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268058"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析报告
 
 Windows 开发人员中心仪表板中的 **Xbox 分析报告**向你显示了有关客户使用游戏中的 Xbox 功能的情况统计数据。 它还提供服务运行状况信息，以帮助你解决客户端错误。
 
 > [!IMPORTANT]
-> 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，你必须先通过[概念审批过程](../gaming/concept-approval.md)，其中包括通过[Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏和游戏通过提交[ID@Xbox计划](../xbox-live/developer-program-overview.md#id)。 通过[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏都不在此报告中当前可见。
+> 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，你必须先完成[概念审批过程](../gaming/concept-approval.md)，其中包括通过[Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏和游戏通过提交[ID@Xbox计划](../xbox-live/developer-program-overview.md#id)。 通过[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏不可在此报告当前可见。
 
 通过展开**分析**并选择 **Xbox 分析**，你可以从游戏的左侧导航菜单中查看 **Xbox 分析**报告。  可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。
 

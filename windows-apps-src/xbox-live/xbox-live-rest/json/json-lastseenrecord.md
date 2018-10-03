@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207178"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267263"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
 有关系统上次看到的用户，当用户在没有有效 DeviceRecord 可用的信息。 
@@ -27,12 +27,12 @@ ms.locfileid: "4207178"
  
 LastSeenRecord 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| deviceType| 字符串| 用户在其上的最后一个存在的设备类型。| 
-| titleId| 32 位无符号的整数| 用户在其的最后一个存在标题的标识符。| 
-| titleName| 字符串| 用户在其的最后一个呈现的标题的名称。| 
-| 时间戳| DateTime| 用于指示用户时最后一个存在 UTC 时间戳。| 
+| deviceType| 字符串| 用户在其上已过去存在的设备类型。| 
+| titleId| 32 位无符号的整数| 用户在其已过去存在标题的标识符。| 
+| titleName| 字符串| 用户在其已过去存在的标题的名称。| 
+| 时间戳| DateTime| 指示当用户处于过去存在 UTC 时间戳。| 
   
 <a id="ID4EHC"></a>
 

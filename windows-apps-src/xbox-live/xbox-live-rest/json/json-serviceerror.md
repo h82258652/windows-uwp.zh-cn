@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9f5cb3f4dc0565cafc073cea35e3e6e00d273f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205534"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4266423"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 包含有关错误对服务调用失败时返回的信息。 
@@ -29,7 +29,7 @@ ServiceError 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| code| 32 位有符号整数 | 错误类型。 请参阅下表有关可能的值。 | 
+| code| 32 位有符号整数 | 错误类型。 请参阅下表了解可能的值。 | 
 | 源| 字符串 | 引发了错误的服务的名称。 例如，值为<code>ReputationFD</code>指示错误是在信誉服务。 | 
 | description| 字符串| 错误的描述。 | 
  
@@ -38,13 +38,13 @@ ServiceError 对象具有以下规范。
  
 ### <a name="error-codes"></a>错误代码
  
-| 值| 说明| 
+| 值| 描述| 
 | --- | --- | --- | --- | --- | 
 | 0| 成功无错误| 
-| 4000| 提交与 POST 请求失败验证的请求正文的 JSON 文档无效。 请参阅描述字段的详细信息。 | 
+| 4000| 提交与 POST 请求失败验证的请求正文的 JSON 文档无效。 请参阅有关详细信息的描述字段。 | 
 | 4100| 用户不会不存在 XUID 请求 URI 中包含不表示 XBOX Live 上的有效用户。| 
-| 4500| 未授权授权错误调用方进行执行请求的操作。| 
-| 5000| 服务错误时出现的服务内部错误| 
+| 4500| 授权错误调用方无权执行请求的操作。| 
+| 5000| 服务错误时出现内部服务错误| 
 | 5300| 服务不可用服务不可用。| 
    
 <a id="ID4EQE"></a>

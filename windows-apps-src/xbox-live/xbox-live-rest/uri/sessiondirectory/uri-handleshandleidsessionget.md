@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab3214ca9b2cb2ff8ace11706ceda22885598e1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212464"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261213"
 ---
 # <a name="get-handleshandleidsession"></a>GET (/handles/{handleId}/session)
-获取指定的句柄标识符的会话对象。
+获取指定的句柄标识符会话对象。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EDB)
@@ -35,7 +35,7 @@ ms.locfileid: "4212464"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法从服务器上，使用所提供的服务端指针对会话 （句柄） 检索会话对象。 返回是会话对象，使用所有属性。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**换行显示。
+此 HTTP/REST 方法从服务器上，使用所提供的服务端指针对会话 （句柄） 检索会话对象。 返回是会话对象，使用所有属性。 此方法可以由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**包装。
 
 此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取的 ID 从协议激活后用户已接受游戏邀请。
 
@@ -44,7 +44,7 @@ ms.locfileid: "4212464"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | handleId| GUID| 会话句柄的唯一 ID。|
 

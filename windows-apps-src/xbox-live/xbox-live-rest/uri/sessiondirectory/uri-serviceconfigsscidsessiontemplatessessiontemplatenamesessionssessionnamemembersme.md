@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7e61fe76fc0f322c93d55448d53ee6444ffec5
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204242"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4264061"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
-支持删除操作，删除会话成员。
+支持删除操作，以删除会话成员。
 <a id="ID4EO"></a>
 
 
@@ -30,14 +30,14 @@ sessiondirectory.xboxlive.com
  
 ## <a name="remarks"></a>备注
 
-所有会话成员资源操作都需要的 Xbox 用户 ID (XUID) 用户声明授权。
+所有会话成员资源操作都需要 Xbox 用户 ID (XUID) 用户声明授权。
 
 <a id="ID4EAB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|

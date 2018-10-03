@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208412"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4264855"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 用户的个人配置文件设置。 
@@ -27,10 +27,10 @@ ms.locfileid: "4208412"
  
 配置文件对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| AppDisplayName| 字符串| 有关在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应将用于在应用中显示的用户的标识字符串。| 
-| GameDisplayName| 字符串| 用于在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应将用于在游戏中显示的用户的标识字符串。| 
+| AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应该用于在应用中显示的用户的标识字符串。| 
+| GameDisplayName| 字符串| 用于在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应该用于在游戏中显示的用户的标识字符串。| 
 | Gamertag| 字符串| 用户的玩家代号。| 
 | AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （见下方）。| 
 | GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下方）。| 
@@ -45,7 +45,7 @@ ms.locfileid: "4208412"
 
 
  
-原始 URL 是一个可调整大小的 URL。 它可以用于指定以下值之一调整大小和格式使用通过将`&format={format}&w={width}&h={height}`为该 URI:
+原始 URL 是可调整大小的 URL。 它可以用于指定以下值之一调整大小和格式使用通过附加`&format={format}&w={width}&h={height}`为该 URI:
  
 格式： png
  

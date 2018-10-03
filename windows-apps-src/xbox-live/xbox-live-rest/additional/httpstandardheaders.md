@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 31499f8d6fa41d888afd84bea64f7f9de0585b96
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204268"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4266539"
 ---
 # <a name="standard-http-request-and-response-headers"></a>标准 HTTP 请求和响应标头
  
@@ -27,13 +27,13 @@ ms.locfileid: "4204268"
  
 下表列出了在 Xbox Live 服务请求时使用的标准 HTTP 标头。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。 所需的所有 Xbox Live 服务请求。| 
-| 授权| STSTokenString| STS 身份验证令牌。 从<b>GetTokenAndSignatureResult.Token</b>属性检索此标头的值。 | 
-| Content-Type| 应用程序/xml、 应用程序/json、 multipart/表单数据或应用程序/x-www-窗体-urlencoded| 指定的提交的请求的内容的类型。| 
-| Content-Length| 整数值| 指定在 POST 请求正在提交的数据的长度。| 
-| 接受的语言 | String| 指定如何本地化返回的任何字符串。 有关有效的语言/区域设置组合的列表，请参阅<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高级 Xbox 360 编程</a>。| 
+| 授权| STSTokenString| STS 身份验证令牌。 此标头的值被从<b>GetTokenAndSignatureResult.Token</b>属性。 | 
+| Content-Type| 应用程序/xml、 应用程序/json、 multipart/表单数据或应用程序/x-www-窗体-urlencoded| 指定提交与请求的内容的类型。| 
+| Content-Length| 整数值| 指定提交 POST 请求中的数据的长度。| 
+| 接受的语言 | String| 指定如何本地化返回任何字符串。 有关有效的语言/区域设置组合的列表，请参阅<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高级 Xbox 360 编程</a>。| 
   
 <a id="ID4E6C"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "4204268"
  
 下表列出了在 Xbox Live 服务响应中使用标准的 HTTP 标头。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | 
 | Content-Type| 应用程序/xml，应用程序/json| 指定要返回的内容的类型。| 
 | Content-Length| 整数值| 指定所返回的数据的长度。| 

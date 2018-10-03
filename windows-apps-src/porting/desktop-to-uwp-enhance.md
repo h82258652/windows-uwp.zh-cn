@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Enhance your desktop app for Windows 10 users by using Universal Windows Platform (UWP) APIs.
+Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: 增强用于 Windows 10 的桌面应用程序
 ms.author: normesta
@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aafe2d09fc27a2693ccf2c4c9d8f189aa0164a3c
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976505"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267762"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
@@ -78,11 +78,11 @@ ms.locfileid: "1976505"
 
 :white_check_mark: **首先，确定你要添加哪些体验**
 
-有许多选项。 例如，可以使用盈利 API 来简化你的采购订单流，或在要分享有趣的内容时（例如其他用户发布了新图片）吸引用户对应用的注意。
+有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你有要共享，如另一个用户已发布了新图片有趣的内容来简化你采购订单流。
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
-即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这可以加强用户与应用的互动，并使你的应用看似已与操作系统深度集成。 稍后，我们将向你演示用于该体验的代码。
+即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这加强用户与你的应用程序，并且具有进行显示与操作系统深度集成应用程序的互动。 稍后，我们将向你演示用于该体验的代码。
 
 访问我们的[开发人员中心](https://developer.microsoft.com/windows)获取灵感。
 
@@ -173,7 +173,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支持 Windows XP、Windows Vista 和 Windows 7/8 安装库
 
-你可以为用于 Windows 10 的应用增加现代体验，而无需创建新分支和维护不同代码库。
+你可以增加你的应用程序在 Windows 10 的现代体验无需创建新分支和维护不同代码库。
 
 如果要为 Windows 10 用户生成单独的二进制文件，请使用条件编译。 如果你希望生成要部署到所有 Windows 用户的一组二进制文件，请使用运行时检查。
 
@@ -224,7 +224,7 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>运行时检查
 
-可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 仅当用户将应用作为打包应用在 Windows 10 上运行时，你的应用才会调用 UWP API。
+可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 UWP Api 仅当用户是作为打包的应用程序在 Windows 10 上运行你的应用程序。
 
 向代码中添加运行时检查的最简单方法是安装此 Nuget 包：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用 ``IsRunningAsUWP()`` 方法访问所有 UWP 代码。 请参阅此博客文章以了解详细信息：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
 
@@ -237,7 +237,7 @@ void UWP::ShowToast()
 * [Hello World 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
 * [辅助磁贴](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [应用商店 API 示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
-* [实现 UWP UpdateTask 的 WinForms 应用](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
+* [实现 UWP UpdateTask 的 WinForms 应用程序](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [UWP 示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b8c498c981ddddb10d28317c260c707ca1e897
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206974"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267363"
 ---
 # <a name="getclipresponse-json"></a>GetClipResponse (JSON)
-换行游戏剪辑。 
+包装游戏剪辑。 
 <a id="ID4EN"></a>
 
  
@@ -27,7 +27,7 @@ ms.locfileid: "4206974"
  
 GetClipResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | gameClip| [GameClip](json-gameclip.md)| 满足查询单个游戏剪辑。| 
   

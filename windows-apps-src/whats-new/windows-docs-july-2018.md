@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
-title: 什么是在 2018 年 7 月 Windows 文档中新功能-开发 UWP 应用
-description: 新功能、 视频、 示例和开发人员指南已被添加到 2018 年 7 月 Windows 10 开发人员文档。
+title: 在 2018 年 7 月 Windows 文档中新增功能-开发 UWP 应用
+description: 新功能、 视频、 示例和开发人员指南已添加到 2018 年 7 月 Windows 10 开发人员文档。
 keywords: 新增功能，更新，功能，开发人员指南，Windows 10，7 月
 ms.author: quradic
 ms.date: 7/11/2018
@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206247"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266698"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>什么是 Windows 开发人员文档中 2018 年 7 月中的新增功能
+# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>什么是 Windows 开发人员文档中 2018 年 7 月的新增功能
 
-Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例已在 7 月的月份中可用。
+Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例已可使用 7 月在一个月。
 
 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
@@ -26,7 +26,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="progressive-web-apps-on-windows"></a>在 Windows 上的渐进式 Web 应用
 
-[渐进式 Web 应用 (Pwa)](https://developer.microsoft.com/windows/pwa)是只需通过本机类似于应用的功能，支持平台和浏览器引擎，如启动从 homescreen 安装、 离线支持和推送[逐步增强](https://wikipedia.org/wiki/Progressive_enhancement)的 web 应用通知。 使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10，Pwa 享受运行的优点[独立于浏览器窗口与 UWP 应用。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[渐进式 Web 应用 (Pwa)](https://developer.microsoft.com/windows/pwa)是只需通过本机类似于应用的功能，支持平台和浏览器引擎，如启动从 homescreen 安装、 离线支持和推送[逐步增强](https://wikipedia.org/wiki/Progressive_enhancement)的 web 应用通知。 使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10，Pwa 享受运行的其他优点[独立于浏览器窗口与 UWP 应用。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![Pwa 的操作中的图像](images/progressive-web-apps.jpg)
 
@@ -55,8 +55,8 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 我们已添加到[WebVR 文档](https://docs.microsoft.com/microsoft-edge/webvr/
 )的几个新主题：
 
-* [WebVR 是什么？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) 介绍了 WebVR 是什么，为什么你应使用它，以及如何为其开发入门。
+* [什么是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
+) 说明了什么 WebVR，为什么应使用它，以及如何为其开发入门。
 
 * [渐进式 Web 应用中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)： 了解如何将 WebVR 添加到渐进式 Web 应用 (PWA)。
 
@@ -70,13 +70,13 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 * [WebVR 开发人员指南 （登录页）](https://docs.microsoft.com/microsoft-edge/webvr/)： 刷新的外观和感觉，具有较大的图像和图标和新演示。
 
-* [使用 Microsoft Edge 使用 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge)： 更新包括有关 Windows 10 2018 年 4 月更新。
+* [使用 WebVR 与 Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge)： 更新包括有关 Windows 10 2018 年 4 月更新。
 
 ## <a name="videos"></a>视频
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>要开始使用适用于开发人员： 创建和自定义 Windows 10 上的表单
 
-我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 本视频将指导你通过这些主题中，之一和介绍你的应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
+我们的[入门文档](../get-started/index.md)面向 Windows 开发人员现在提供基本应用开发任务动手的体验。 此视频将指导你通过一个这些主题的链接，并介绍有关在应用中创建窗体 UI 基础知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看操作，然后中的代码[自行查看本主题。](http://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>增强你的项目个性聊天机器人
 
@@ -84,7 +84,7 @@ Adobe XD 和 Adobe Illustrator 工具包已更新新功能。 这些设计工具
 
 ### <a name="one-dev-question"></a>一个开发人员的问题
 
-在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们已回答的最新问题 ！
+在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们回答的最新问题 ！
 
 Raymond Chen:
 
@@ -92,13 +92,13 @@ Raymond Chen:
 
 Larry Osterman:
 
-* [为什么我们不要让开发人员更改默认音频设备？](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
-* [为什么有许多 UWP 功能异步？](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
+* [我们为何不要让开发人员更改默认音频设备？](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
+* [为什么会相当多的 UWP 功能异步？](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
 
 ## <a name="samples"></a>示例
 
 ### <a name="photo-editor-cwinrt"></a>照片编辑器 C + + WinRT
 
-照片编辑器示例应用展示了使用开发[C + + WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)语言投影。 该应用使你从**图片**库中，检索照片，然后编辑具有相关联的照片效果的选择的图像。 [克隆或下载下面的示例。](https://github.com/Microsoft/Windows-appsample-photo-editor)
+照片编辑器示例应用展示了使用开发[C + + WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)语言投影。 该应用使你从**图片**库检索照片，然后编辑具有相关联的照片效果的选择的图像。 [克隆或下载下面的示例。](https://github.com/Microsoft/Windows-appsample-photo-editor)
 
 ![正在操作的示例的示例](images/photo-editor-banner.png)

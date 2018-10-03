@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d64dc9fbae0e53880578ebff7576b028d6ecdf49
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210708"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4262785"
 ---
 # <a name="get-usersxuidxuidachievementsscidachievementid"></a>GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 获取在成就的详细信息。 这些 Uri 的域是`achievements.xboxlive.com`。
@@ -35,22 +35,22 @@ ms.locfileid: "4210708"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其资源的用户。 必须匹配的身份验证的用户的 XUID。| 
 | scid| GUID| 其成就所访问的服务配置的唯一标识符。| 
-| achievementid| 32 位无符号的整数| 正在访问的成就 （中指定的 SCID) 的唯一标识符。| 
+| achievementid| 32 位无符号的整数| 正在访问的成就的 （中指定的 SCID) 的唯一标识符。| 
   
 <a id="ID4EAB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-使用授权声明 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
+使用授权声明 | 声明| 是否为必需？| 描述| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | 用户| 是| Xbox LIVE 的身份提出请求上是有效的用户。| 403 已禁止| 
-| Title| 否| 调用的标题。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供声明时缺少并因此将拒绝任何未标记为公共的 Scid 的访问。| 
-| 沙盒| 否| 应从中检索结果沙盒。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供默认声明时缺少。| 
+| Title| 否| 调用的标题。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者未提供声明时缺少并因此将拒绝任何未标记为公共的 Scid 的访问。| 
+| 沙盒| 否| 应从中检索结果沙盒。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者未提供默认声明时缺少。| 
   
 <a id="ID4E4C"></a>
 
@@ -75,7 +75,7 @@ ms.locfileid: "4210708"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
   
@@ -84,11 +84,11 @@ ms.locfileid: "4210708"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
 | x xbl 协定版本| 字符串| 默认值为 V1。| 
-| 接受的语言| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍没有匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
+| 接受的语言| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
   
 <a id="ID4ECBAC"></a>
 
@@ -102,11 +102,11 @@ ms.locfileid: "4210708"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 已成功检索会话。| 
+| 200| “确定”| 成功检索会话。| 
 | 301| 已永久移动| 该服务已移动到不同的 URI。| 
 | 307| 临时重定向| 此资源的 URI 暂时已发生更改。| 
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 

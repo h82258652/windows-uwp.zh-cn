@@ -12,24 +12,24 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 856b387825734fb7c6973293bc7004a79d05c207
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207800"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261735"
 ---
 # <a name="standard-http-status-codes"></a>标准 HTTP 状态代码
  
-超文本传输协议 (HTTP) 标准描述状态代码返回到客户端请求的响应中的服务器的的数量。 Xbox Live 服务方法将返回 HTTP 协议符合状态代码来描述请求的状态。
+超文本传输协议 (HTTP) 标准描述中向客户端请求的响应由服务器返回的状态代码的数量。 Xbox Live 服务方法将返回 HTTP 协议符合状态代码来描述请求的状态。
  
-下面是由 Xbox Live 服务，以及它们典型的含义的状态代码的列表。
+下面是返回的 Xbox Live 服务，以及它们典型的含义的状态代码的列表。
  
 <a id="ID4EAB"></a>
 
  
 ## <a name="xbox-live-services-status-codes"></a>Xbox Live 服务状态代码
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | 
 | 200| “确定”| 请求已成功。| 
 | 201| 已创建| 创建实体。| 
@@ -46,15 +46,15 @@ ms.locfileid: "4207800"
 | 408| 请求超时| 请求所花的时间太长，才能完成。| 
 | 409| 冲突| 由于与资源的当前状态的冲突未完成请求。| 
 | 410| 前面| 所请求的资源不再可用。| 
-| 412| 前置条件失败| 服务器不满足，则请求者将放在请求前置条件之一。| 
-| 416| 请求的范围不满足| 所请求的范围不可用。| 
+| 412| 前置条件失败| 服务器不满足请求者置于请求前置条件之一。| 
+| 416| 请求的范围无法满足| 所请求的范围不可用。| 
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
 | 501| 未实现| 服务器不支持所需满足该请求的功能。| 
 | 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
  
 
 > [!NOTE] 
-> 某些资源和方法提供的含义的资源或方法的上下文中的特定状态代码的特定信息。 有关更多详细信息，请参阅文档中针对资源或你所使用的方法。 
+> 某些资源和方法提供的含义的该资源或方法的上下文中的特定状态代码的特定信息。 有关更多详细信息，请参阅文档中针对资源或正在使用的方法。 
 
   
 <a id="ID4E3BAC"></a>
@@ -73,7 +73,7 @@ ms.locfileid: "4207800"
 <a id="ID4EKCAC"></a>
 
  
-##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a>引用[统一资源标识符 (URI) 参考](../uri/atoc-xboxlivews-reference-uris.md)
+##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a>参考[统一资源标识符 (URI) 参考](../uri/atoc-xboxlivews-reference-uris.md)
 
  [其他参考](atoc-xboxlivews-reference-additional.md)
 

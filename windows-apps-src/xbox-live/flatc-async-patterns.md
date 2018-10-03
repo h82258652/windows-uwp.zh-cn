@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209838"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4265515"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -67,7 +67,7 @@ typedef struct AsyncBlock
 * *context* - 用于向回调函数传递数据。
 * *queue* - 一个 async_queue_handle_t，作为指定 **AsyncQueue** 的句柄。 如果未设置此队列，将使用默认队列。
 
-你应该在每个异步调用的 API 的堆上创建新 AsyncBlock。  AsyncBlock 必须 live 之前称为 AsyncBlock 的完成回调，然后可以将其删除。
+你应该在每个异步调用的 API 在堆栈上创建新 AsyncBlock。  AsyncBlock 必须 live 直到称为 AsyncBlock 的完成回调，然后可以将其删除。
 
 > [!IMPORTANT]
 > **AsyncBlock** 必须一直保留在内存中，直到**异步任务**完成。 如果是动态分配的，可以在 AsyncBlock 的**完成回调**内部将其删除。
@@ -150,7 +150,7 @@ STDAPI CreateSharedAsyncQueue(
 > 如果已存在具有此 ID 和调度模式的队列，将引用该队列。  否则，将创建新的队列。
 
 创建 **AsyncQueue** 之后，请直接将其添加到 **AsyncBlock** 以控制工作和完成函数的线程处理。
-当你完成使用**AsyncQueue**时，通常时即将结束游戏，你可以关闭它与**CloseAsyncQueue**:
+当你完成使用**AsyncQueue**时，通常当即将结束游戏，你可以关闭它与**CloseAsyncQueue**:
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(
@@ -275,7 +275,7 @@ DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 }
 ```
 
-它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，然后你将需要确保不会错过代码的任何事件如：
+它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，那么你将需要确保不会错过代码的任何事件如：
 
 ```cpp
     case WAIT_OBJECT_0: 

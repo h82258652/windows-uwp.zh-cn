@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 加载项, iap, 价格
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209207"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266912"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>设置加载项定价和可用性
 
@@ -59,7 +59,7 @@ ms.locfileid: "4209207"
 还可计划价格变更，以指示加载项价格应更改的日期和时间。 此外，还可选择针对特定市场自定义这些更改。 
 
 > [!TIP]
-> 对于订阅加载项之后通过在更高版本的提交中选择一个更高版本的基本价格或通过计划价格更改，提高价格发布该加载项，, 不能提高价格。 你可以选择以较低的价格，使用以下任一方法，但后价格降低你将无法引发高于该新价格。 因此，它是尤为重要确保选择订阅加载项的相应价格段。 
+> 对于订阅加载项，你不能提高价格，你发布加载项之后，通过在更高版本的提交中选择一个更高版本的基本价格或通过计划价格更改，提高价格。 你可以选择使用以下任一方法，以较低价格，但后价格已降低你将无法引发高于该新价格。 因此，它是确保选择订阅加载项的相应价格段尤其重要。 
 
 有关详细信息，请参阅[设置和计划应用定价](set-and-schedule-app-pricing.md)。
 

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: b294814affc821d6efc3b1193817e841fcfac263
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817355"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266868"
 ---
-# <a name="integrate-your-app-with-windows-10-desktop-bridge"></a>将应用与 Windows 10 集成（桌面桥）
+# <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>与 Windows 10 集成已打包的桌面应用程序
 
-使用扩展以预定义方式将应用与 Windows 10 集成。
+使用扩展以预定义方式与 Windows 10 集成已打包的桌面应用程序。
 
-例如，使用扩展创建一个防火墙例外，使应用成为某一文件类型的默认应用，或将“开始”磁贴指向打包后的应用版本。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
+例如，使用扩展创建一个防火墙例外，使你的应用程序文件类型的默认应用程序或开始菜单磁贴指向打包后的应用版本。 若要使用扩展，只需将某些 XML 添加到应用的程序包清单文件。 不需要任何代码。
 
 本主题介绍这些扩展以及使用它们可执行的任务。
 
@@ -31,8 +31,8 @@ ms.locfileid: "1817355"
 帮助用户切换到打包后的应用。
 
 * [将现有“开始”磁贴和任务栏按钮指向打包后的应用](#point)
-* [使打包后的应用（而非桌面应用）打开文件](#make)
-* [将打包的应用与一组文件类型相关联](#associate)
+* [使打包应用打开文件而不是你的桌面应用程序](#make)
+* [将打包应用程序与一组文件类型相关联](#associate)
 * [向具有特定文件类型的文件的上下文菜单添加选项](#add)
 * [直接使用 URL 打开某些类型的文件](#open)
 
@@ -94,9 +94,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 <a id="make" />
 
-### <a name="make-your-packaged-app-open-files-instead-of-your-desktop-app"></a>使打包后的应用（而非桌面应用）打开文件
+### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>使打包应用打开文件而不是你的桌面应用程序
 
-可确保用户默认对特定的文件类型打开新打包的应用，而不是打开桌面版应用。
+你可以确保用户默认对特定类型的文件而不是打开你的应用的桌面版本打开新打包应用程序。
 
 为达到该目的，需指定每个想要从中继承文件关联的应用程序的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。
 
@@ -123,7 +123,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |应用的唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。 可使用此 ID 管理将来版本的应用中的更改。 |
-|MigrationProgId |[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)，描述想要从中继承文件关联的应用程序、组件和桌面应用版本。|
+|MigrationProgId |[编程标识符 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) ，描述应用程序、 组件和要从中继承文件关联的桌面应用程序的版本。|
 
 #### <a name="example"></a>示例
 
@@ -154,9 +154,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 <a id="associate" />
 
-### <a name="associate-your-packaged-app-with-a-set-of-file-types"></a>将打包的应用与一组文件类型相关联
+### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>将打包应用程序与一组文件类型相关联
 
-可将打包后的应用与文件类型扩展相关联。 如果用户右键单击某个文件，然后选择**打开方式**选项，应用将出现在建议列表中。
+你可以与文件类型扩展名关联的打包应用程序。 如果用户右键单击某个文件，然后选择**打开方式**选项，你的应用程序将显示在建议列表。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -245,8 +245,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |类别 | 始终为 ``windows.fileTypeAssociation``。
 |Name |应用的唯一 ID。 |
 |Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
-|ID |动词命令的唯一 ID。 如果你的应用为 UWP 应用，则会将该动词命令作为应用的激活事件参数的一部分向其传递，以便应用可以相应地处理用户的选择。 如果应用是完全信任的已打包应用，它将改为接收参数（请参阅下一项）。 |
-|Parameters |与动词命令关联的实参参数和值的列表。 如果应用是完全信任的已打包应用，激活应用时会将这些参数作为事件参数传递给应用。 可以根据不同的激活动词命令自定义应用的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果应用为 UWP 应用，则无法传递参数。 应用转而接收参数（请参阅上一项）。|
+|ID |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，则会传递到你的应用作为其激活事件参数的一部分中，以便它可以相应地处理用户的选择。 如果你的应用程序是完全信任的已打包的应用，该参数将改为接收 （请参阅下一项）。 |
+|Parameters |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的已打包的应用，这些参数传递给该应用程序作为事件参数激活应用程序时。 你可以自定义你的应用程序基于不同激活动词命令的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果你的应用程序是 UWP 应用，则无法传递参数。 应用转而接收参数（请参阅上一项）。|
 |Extended |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 如果未列出该特性，则该特性可选，并且默认为值 **False**（例如，始终显示动词命令）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
 
 #### <a name="example"></a>示例
@@ -282,7 +282,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>直接使用 URL 打开某些类型的文件
 
-可确保用户默认对特定的文件类型打开新打包的应用，而不是打开桌面版应用。
+你可以确保用户默认对特定类型的文件而不是打开你的应用的桌面版本打开新打包应用程序。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -307,7 +307,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |Name |应用的唯一 ID。 |
-|UseUrl |指示是否直接从 URL 目标打开文件。 如果未设置此值，应用尝试使用 URL 打开文件的操作将导致系统先在本地下载文件。 |
+|UseUrl |指示是否直接从 URL 目标打开文件。 如果你未设置此值，尝试在你的应用程序使用 URL 原因第一个下载文件系统本地打开文件。 |
 |Parameters |可选参数。 |
 |FileType |相关的文件扩展名。 |
 
@@ -344,7 +344,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="create-firewall-exception-for-your-app"></a>为应用创建防火墙例外
 
-如果应用需要通过端口进行通信，可向防火墙例外列表中添加应用。
+如果你的应用程序需要通过端口进行通信，你可以添加到列表的防火墙例外应用程序。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -458,7 +458,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 帮助用户整理文件并以熟悉的方式与之交互。
 
-* [定义用户同时选择并打开多个文件时应用的行为方式](#define)
+* [定义当用户选择并同时打开多个文件时，你的应用程序的行为方式](#define)
 * [在文件资源管理器内以缩略图显示文件内容](#show)
 * [在文件资源管理器的“预览”窗格中显示文件内容](#preview)
 * [使用户能够使用文件资源管理器中的“类型”列对文件进行分组](#enable)
@@ -467,9 +467,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 <a id="define" />
 
-### <a name="define-how-your-app-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定义用户同时选择并打开多个文件时应用的行为方式
+### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定义当用户选择并同时打开多个文件时，你的应用程序的行为方式
 
-指定用户同时打开多个文件时应用的行为方式。
+指定用户同时打开多个文件时，你的应用程序的行为方式。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -503,9 +503,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 已打包的桌面应用具有与常规桌面应用相同的三个选项。
 
- * ``Player``：应用已激活一次。 将所有所选文件作为实参参数传递给应用。
- * ``Single``：为第一个选定的文件激活一次应用。 忽略其他文件。
- * ``Document``：为每个选定的文件激活应用的一个新的单独实例。
+ * ``Player``： 你的应用程序已激活一次。 所有选定的文件传递给你的应用程序作为实参参数。
+ * ``Single``： 你的应用程序已激活一次为第一个选定的文件。 忽略其他文件。
+ * ``Document``： 针对每个选定的文件激活一个新的单独实例，你的应用程序。
 
  可以为不同的文件类型和操作设置不同的首选项。 例如，可能会希望以“文档”** 模式打开*文档*，以“播放机”** 模式打开*图像*。
 
@@ -814,9 +814,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |-------|-------------|
 |类别 |始终为 ``windows.cloudfiles``。
 |iconResource |代表你的云文件提供商服务的图标。 该图标显示在文件资源管理器的导航窗格中。  用户选择该图标可显示云服务中的文件。 |
-|CustomStateHandler Clsid |实现 CustomStateHandler 的应用的类 ID。 系统使用该类 ID 请求云文件的自定义状态和列。 |
-|ThumbnailProviderHandler Clsid |实现 ThumbnailProviderHandler 的应用的类 ID。 系统使用该类 ID 请求云文件的缩略图图像。 |
-|ExtendedPropertyHandler Clsid |实现 ExtendedPropertyHandler 的应用的类 ID。  系统使用该类 ID 请求云文件的扩展属性。 |
+|CustomStateHandler Clsid |实现 CustomStateHandler 的应用程序类 ID。 系统使用该类 ID 请求云文件的自定义状态和列。 |
+|ThumbnailProviderHandler Clsid |实现 ThumbnailProviderHandler 的应用程序类 ID。 系统使用该类 ID 请求云文件的缩略图图像。 |
+|ExtendedPropertyHandler Clsid |实现 ExtendedPropertyHandler 的应用程序类 ID。  系统使用该类 ID 请求云文件的扩展属性。 |
 |谓词 |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
 |ID |动词命令的唯一 ID。 |
 
@@ -849,19 +849,19 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 <a id="start" />
 
-## <a name="start-your-app-in-different-ways"></a>以不同方式启动应用
+## <a name="start-your-application-in-different-ways"></a>以不同方式启动你的应用程序
 
-* [使用协议启动应用](#protocol)
-* [使用别名启动应用](#alias)
+* [通过使用某个协议启动你的应用程序](#protocol)
+* [通过使用别名启动应用程序](#alias)
 * [用户登录 Windows 时启动可执行文件](#executable)
-* [在用户向电脑连接设备时启动你的应用](#autoplay)
+* [使用户能够到其电脑连接设备时启动你的应用程序](#autoplay)
 * [在接收来自 Microsoft Store 的更新后自动重启](#updates)
 
 <a id="protocol" />
 
-### <a name="start-your-app-by-using-a-protocol"></a>使用协议启动应用
+### <a name="start-your-application-by-using-a-protocol"></a>通过使用某个协议启动你的应用程序
 
-协议关联允许其他程序和系统组件与打包后的应用进行互操作。 使用某个协议启动打包后的应用时，可以指定要传递到其激活事件参数的特定参数，以使该应用做出相应行为。 仅打包后完全受信任的应用支持参数。 UWP 应用不能使用参数。  
+协议关联允许其他程序和系统组件与打包后的应用进行互操作。 当使用某个协议启动打包应用程序时，你可以指定要传递到其激活事件参数，以便它可以相应地行为的特定参数。 仅打包后完全受信任的应用支持参数。 UWP 应用不能使用参数。  
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -885,7 +885,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |-------|-------------|
 |类别 |始终为 ``windows.protocol``。
 |Name |协议的名称。 |
-|Parameters |应用激活时要向其传递用作事件参数的参数和值的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
+|Parameters |参数和值，以激活应用程序时传递到应用程序作为事件参数的列表。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 |
 
 ### <a name="example"></a>示例
 
@@ -909,9 +909,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 ```
 <a id="alias" />
 
-### <a name="start-your-app-by-using-an-alias"></a>使用别名启动应用
+### <a name="start-your-application-by-using-an-alias"></a>通过使用别名启动应用程序
 
-用户和其他进程可以使用别名启动应用，无需指定应用的完整路径。 可以指定该别名。
+用户和其他进程可以使用别名启动你的应用程序无需指定你的应用的完整路径。 可以指定该别名。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -965,12 +965,12 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>用户登录 Windows 时启动可执行文件
 
-启动任务允许应用在用户登录时自动运行可执行文件。
+启动任务允许你的应用程序在用户登录时自动运行可执行文件。
 
 > [!NOTE]
-> 用户必须至少启动一次应用才可注册此启动任务。
+> 用户必须启动你的应用程序至少一次注册此启动任务。
 
-应用可声明多个启动任务。 每个任务独立启动。 所有启动任务都将显示在任务管理器的**启动**选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。
+你的应用程序可以声明多个启动任务。 每个任务独立启动。 所有启动任务都将显示在任务管理器的**启动**选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。
 
 用户可以使用任务管理器手动禁用应用的启动任务。 如果用户禁用任务，则无法以编程方式重新启用它。
 
@@ -996,7 +996,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |-------|-------------|
 |类别 |始终为 ``windows.startupTask``。|
 |Executable |要启动的可执行文件的相对路径。 |
-|TaskId |任务的唯一标识符。 应用可以使用此标识符调用 [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) 类中的 API，以编程方式启用或禁用启动任务。 |
+|TaskId |任务的唯一标识符。 使用此标识符，你的应用程序可以[Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)类以编程方式启用或禁用启动任务中调用 Api。 |
 |Enabled |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
 |DisplayName |任务管理器中显示的任务名称。 可以使用 ```ms-resource``` 本地化此字符串。 |
 
@@ -1025,9 +1025,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 ```
 <a id="autoplay" />
 
-### <a name="enable-users-to-start-your-app-when-they-connect-a-device-to-their-pc"></a>在用户向电脑连接设备时启动你的应用
+### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>使用户能够到其电脑连接设备时启动你的应用程序
 
-当用户向其电脑连接设备时，自动播放可以将你的应用作为一个选项提供。
+当用户将设备连接到其电脑时，自动播放可以显示你的应用程序作为一个选项。
 
 #### <a name="xml-namespace"></a>XML 命名空间
 
@@ -1051,13 +1051,13 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |-------|-------------|
 |类别 |始终为 ``windows.autoPlayHandler``。
 |ActionDisplayName |表示用户可以对其连接到电脑的设备执行的操作的字符串（例如：“导入文件”或“播放视频”）。 |
-|ProviderDisplayName | 表示你的应用或服务的字符串（例如：“Contoso 视频播放器”）。 |
+|ProviderDisplayName | 一个字符串，表示你的应用程序或服务 (例如:"Contoso 视频播放器")。 |
 |ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
-|谓词 |谓词设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
-|DropTargetHandler |实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口的应用的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
-|参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
+|谓词 |谓词设置标识传递给你的应用程序针对所选选项的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
+|DropTargetHandler |应用程序实现[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
+|参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于此类事件，自动播放将使用这些命令行参数启动你的应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
-|HWEventHandler |实现 [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) 接口的应用的类 ID。 |
+|HWEventHandler |应用程序实现[IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx)接口的类 ID。 |
 |InitCmdLine |你要传递给 [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) 接口的 [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) 方法的字符串参数。 |
 
 ### <a name="example"></a>示例
@@ -1086,36 +1086,36 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>在接收来自 Microsoft Store 的更新后自动重启
 
-如果在用户安装应用更新时，你的应用已打开，则该应用将关闭。
+如果用户安装应用更新到它时，你的应用程序已打开，应用程序关闭。
 
-如果你希望该应用在更新完成后重新启动，请在要重新启动的每个进程中调用 [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) 函数。
+如果你希望该应用程序来重启在更新完成之后，你想要重新启动每个进程中调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数。
 
-应用中的每个活动窗口都会收到 [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) 消息。 此时，你的应用可在必要时再次调用 [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) 函数以更新命令行。
+你的应用程序中的每个活动窗口接收[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)消息。 到目前为止，你的应用程序可以调用[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函数再次以更新命令行，如有必要。
 
-当你的应用中的每个活动窗口都收到 [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) 消息时，应用应保存数据并关闭。
+当你的应用程序中的每个活动窗口收到[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)消息时，你的应用程序应保存数据，并关闭。
 
 >[!NOTE]
-如果该应用未处理 [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) 消息，你的活动窗口还会收到 [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) 消息。
+在应用程序不会处理[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)消息的情况下，你的活动窗口还会收到[WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx)消息。
 
-此时，你的应用有 30 秒时间来关闭自己的进程，或由平台强制终止这些进程。
+到目前为止，你的应用程序有 30 秒时间来关闭自己的进程或平台强制终止这些进程。
 
-更新完成后，你的应用将重新启动。
+更新完成后，重新启动你的应用程序。
 
 ## <a name="work-with-other-applications"></a>与其他应用程序配合使用
 
 与其他应用集成，启动其他进程或共享信息。
 
-* [使应用在支持打印的应用程序中显示为打印目标](#printing)
+* [使应用程序中显示为打印目标应用程序支持打印](#printing)
 * [与其他 Windows 应用程序共享字体](#fonts)
 * [从通用 Windows 平台 (UWP) 应用启动 Win32 进程](#win32-process)
 
 <a id="printing" />
 
-### <a name="make-your-app-appear-as-the-print-target-in-applications-that-support-printing"></a>使应用在支持打印的应用程序中显示为打印目标
+### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>使应用程序中显示为打印目标应用程序支持打印
 
-用户想要从其他应用（如记事本）打印数据时，可使应用在可用打印目标的应用列表中显示为打印目标。
+当用户想要从另一个应用程序 （如记事本） 打印数据时，你可以使应用程序中显示为打印目标应用的可用打印目标列表。
 
-必须修改应用，使其接收 XML 纸张规范 (XPS) 格式的打印数据。
+你将需要修改你的应用程序，以便在其接收 XML 纸张规范 (XPS) 格式的打印数据。
 
 #### <a name="xml-namespaces"></a>XML 命名空间
 
@@ -1137,7 +1137,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |类别 |始终为 ``windows.appPrinter``。
 |DisplayName |希望在应用的打印目标列表中显示的名称。 |
-|Parameters |应用正确处理请求所需的任何参数。 |
+|Parameters |你的应用程序正确处理请求所需的任何参数。 |
 
 #### <a name="example"></a>示例
 
@@ -1260,9 +1260,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
-如果想要创建在所有设备上运行的通用 Windows 平台用户界面，但希望 Win32 应用的组件继续以完全信任方式运行，此扩展可能会很有用。
+此扩展可能会很有用，如果你想要创建在所有设备运行的通用 Windows 平台用户界面，但希望 Win32 应用程序继续以完全信任方式运行的组件。
 
-只需为 Win32 应用创建桌面桥程序包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示想要在桌面桥程序包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](../launch-resume/app-services.md)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
+只需创建 Win32 应用的 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你想要在 Windows 应用包中启动可执行文件。  如果想要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](../launch-resume/app-services.md)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 
