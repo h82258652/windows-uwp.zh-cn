@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5b1d346bf7e2673b4bca0d1d04075c03fdd6e5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 00f09889971cab58917fd898506b635cc66dcaf2
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312264"
+ms.locfileid: "4354990"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 
@@ -102,7 +102,7 @@ ms.locfileid: "4312264"
 
 ### <a name="0x87dd0005-unexpected-or-unknown-title"></a>0x87DD0005 意外或未知游戏
 
-仔细检查 XDP 中的应用程序 ID 设置和开发人员中心绑定。 你可以查看[将 Xbox Live 支持添加到新的或现有的 Visual Studio UWP](../../images/troubleshooting/dev_center_binding.png)中的相关说明。
+仔细检查 XDP 中的应用程序 ID 设置和开发人员中心绑定。 你可以查看[将 Xbox Live 支持添加到新的或现有的 Visual Studio UWP](https://docs.microsoft.com/windows-hardware/drivers/devapps/step-1--create-a-uwp-device-app#span-idassociateyourappwiththewindowsstorespanspan-idassociateyourappwiththewindowsstorespanspan-idassociateyourappwiththewindowsstorespanassociate-your-app-with-the-microsoft-store)中的相关说明。
 
 ### <a name="0x87dd000e-title-not-authorized"></a>0x87DD000E 游戏未授权
 

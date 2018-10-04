@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp、 标准、 c + +，cpp，winrt，投影，新闻，什么的、 新
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc28092020639d108ec35898ad1d6bddcd055f5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: bc6be28e112dfdd14b3585bd88ba066fbeae382d
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317458"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357769"
 ---
 # <a name="whats-new-in-cwinrt"></a>新增功能在 C + + WinRT
 
@@ -45,6 +45,12 @@ ms.locfileid: "4317458"
 - 改进了代码生成： 各种改进，以减少代码大小、 改进内联，并优化工厂缓存。
 - 删除不必要的递归。 当命令行引用到某个文件夹，而不是特定于`.winmd`、`cppwinrt.exe`工具不会再递归搜索`.winmd`文件。 `cppwinrt.exe`工具现在还处理重复更加智能化，从而使其更具复原能力用户错误，并且为不当正确`.winmd`文件。
 - 强化的智能指针。 以前，失败时撤销事件 revokers 移动-分配一个新值。 这有助于发现的问题智能指针类未可靠地处理自我分配;[**winrt:: com_ptr 结构模板**](/uwp/cpp-ref-for-winrt/com-ptr)中获得 root 权限。 **winrt:: com_ptr**已修复，并固定来处理事件 revokers 移动语义正确，以便它们分配时撤销。
+
+> [!NOTE]
+> 使用版本 1.0.181002.2 （或更高版本） 的[C + + /winrt Visual Studio 扩展 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)安装，创建新的 C + + WinRT 项目自动安装该项目的[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 程序包提供改进了 C + + WinRT 项目生成支持，从而使你的项目之间的开发计算机和生成代理 （仅 NuGet 程序包，以及不 VSIX，安装的） 移植。
+>
+> 现有项目的&mdash;已安装版本 1.0.181002.2 之后 （或更高版本） 的 VSIX&mdash;我们建议你在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。
+
 
 ## <a name="isolation-from-windows-sdk-header-files"></a>从 Windows SDK 标头文件的隔离
 

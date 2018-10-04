@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: C + + WinRT 只是因为它可以帮助你创作 Windows 运行时类可以帮助你创作传统的 COM 组件。
-title: 创作 COM 组件通过 C + + WinRT
+title: 通过 C++/WinRT 创作 COM 组件
 ms.author: stwhi
 ms.date: 09/06/2018
 ms.topic: article
@@ -9,14 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp、 标准、 c + +，cpp，winrt，投影，作者，COM、 组件
 ms.localizationpriority: medium
-ms.openlocfilehash: 2886d2b42d4c192a3f6924a41a4c4dd1483db471
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 94f59833f4c657445b7135b1158974d8a553813f
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313827"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358415"
 ---
-# <a name="author-com-components-with-cwinrt"></a>创作 COM 组件通过 C + + WinRT
+# <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
 [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)可帮助你创作经典组件对象模型 (COM) 组件 （或组件类），就像它有助于你创作 Windows 运行时类。 下面是简单的图示，你可以测试出，如果你将代码粘贴到`pch.h`和`main.cpp`的新**Windows 控制台应用程序 (C + + WinRT)** 项目。
 
@@ -415,9 +415,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="in-process-com-server"></a>进程内 COM 服务器
 
-上述*ToastAndCallback*示例应用作为本地 （或进程外） COM 服务器。 这是你用于注册它，表示的[LocalServer32](/windows/desktop/com/localserver32) Windows 注册表项。 本地的 COM 服务器承载其 coclass(es) 可执行的二进制文件 ( `.exe`)。
+上述*ToastAndCallback*示例应用作为本地 （或进程外） COM 服务器。 这是你用于注册其 coclass 的 CLSID 示[LocalServer32](/windows/desktop/com/localserver32) Windows 注册表项。 本地的 COM 服务器承载其 coclass(es) 可执行的二进制文件 ( `.exe`)。
 
-或者 （和可以说更有可能），你可以选择托管你 coclass(es) 内动态链接库 ( `.dll`)。 形式的 DLL 的 COM 服务器被称为进程内 COM 服务器，并由正在使用注册的[InprocServer32](/windows/desktop/com/inprocserver32) Windows 注册表项。
+或者 （和可以说更有可能），你可以选择托管你 coclass(es) 内动态链接库 ( `.dll`)。 形式的 DLL 的 COM 服务器被称为进程内 COM 服务器，并由正在使用注册的[InprocServer32](/windows/desktop/com/inprocserver32) Windows 注册表项的 Clsid。
 
 ### <a name="create-a-dynamic-link-library-dll-project"></a>创建动态链接库 (DLL) 项目
 
@@ -556,5 +556,5 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="related-topics"></a>相关主题
 * [使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [使用 COM 组件通过 C + + WinRT](consume-com.md)
+* [通过 C++/WinRT 使用 COM 组件](consume-com.md)
 * [发送本地 toast 通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
