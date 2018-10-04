@@ -39,6 +39,7 @@
 ## [按钮](controls-and-patterns/buttons.md)
 ## [复选框](controls-and-patterns/checkbox.md)
 ## [颜色选取器](controls-and-patterns/color-picker.md)
+## [命令栏浮出控件](controls-and-patterns/command-bar-flyout.md)
 ## [联系人卡片](controls-and-patterns/contact-card.md)
 ## [日期和时间](controls-and-patterns/date-and-time.md)
 ### [日历日期选取器](controls-and-patterns/calendar-date-picker.md)
@@ -56,6 +57,7 @@
 ## [图像和图像画笔](controls-and-patterns/images-imagebrushes.md)
 ## [墨迹书写控件](controls-and-patterns/inking-controls.md)
 ## [列表](controls-and-patterns/lists.md)
+### [组合框](controls-and-patterns/combo-box.md)
 ### [列表视图和网格视图](controls-and-patterns/listview-and-gridview.md)
 ### [项目容器和模板](controls-and-patterns/item-containers-templates.md)
 ### [列表视图项模板](controls-and-patterns/item-templates-listview.md)
@@ -100,6 +102,7 @@
 ## [版式](style/typography.md)
 ## 图标
 ### [概述](style/icons.md)
+### [应用图标和徽标](style/app-icons-and-logos.md)
 ### [Segoe MDL2 图标](style/segoe-ui-symbol-font.md)
 ## [亚克力](style/acrylic.md)
 ## [突出显示](style/reveal.md)
@@ -126,7 +129,6 @@
 
 # Shell
 ## [磁贴](shell/tiles-and-notifications/creating-tiles.md)
-### [磁贴和图标资源指南](shell/tiles-and-notifications/app-assets.md)
 ### [辅助磁贴](shell/tiles-and-notifications/secondary-tiles.md)
 #### [指导](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [固定辅助磁贴](shell/tiles-and-notifications/secondary-tiles-pinning.md)
