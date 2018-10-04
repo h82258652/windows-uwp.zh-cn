@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图, 游戏邀请
 ms.localizationpriority: medium
 ms.openlocfilehash: b14ff62d1bb08c5115e5fa766b1b56abf37cbff2
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4261547"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4312598"
 ---
 # <a name="send-game-invites"></a>发送游戏邀请
 

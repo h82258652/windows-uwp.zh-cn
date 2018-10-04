@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fc67b19619f8b7cf7e873acd956c06f65491c06
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4259679"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311792"
 ---
 # <a name="use-connected-storage-to-load-data"></a>使用连接存储加载数据
 

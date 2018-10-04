@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e65936d20923ecbdc2d9cfb0a0ec52bb7504b885
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4260143"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311388"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript 对象表示法 (JSON) 对象参考
  

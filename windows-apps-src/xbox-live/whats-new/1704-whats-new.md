@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 竞技场, 锦标赛
 ms.localizationpriority: medium
 ms.openlocfilehash: 5084b0badf29bdf5e4adc3b45ee1961d6a4e7097
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4259711"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311350"
 ---
 # <a name="whats-new-for-the-xbox-live-apis---april-2017"></a>Xbox Live API 的新增功能 - 2017 年 4 月
 

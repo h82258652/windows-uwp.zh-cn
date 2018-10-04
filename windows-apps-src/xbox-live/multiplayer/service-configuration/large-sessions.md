@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 大型会话, 最近的玩家
 ms.localizationpriority: medium
 ms.openlocfilehash: cead1a3ca1d56185ef97fe3f3271484bfbc58f18
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265481"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311042"
 ---
 # <a name="large-sessions"></a>大型会话
 

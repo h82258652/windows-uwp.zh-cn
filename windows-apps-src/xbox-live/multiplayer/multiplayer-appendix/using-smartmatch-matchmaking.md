@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 4594bd70c28729f38e0c0eaea7ea8ef7a905bbfe
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265888"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4310524"
 ---
 # <a name="using-smartmatch-matchmaking"></a>使用 SmartMatch 匹配
 

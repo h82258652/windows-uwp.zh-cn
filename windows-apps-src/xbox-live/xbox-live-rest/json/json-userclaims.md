@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ec9878845b7d93cd4db18ff9825d728897a5c0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268277"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4313090"
 ---
 # <a name="userclaims-json"></a>UserClaims (JSON)
 返回当前身份验证的用户的信息。 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eaddef523fcfa3b794c421acbe6c1aac4785b68
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4262727"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4314814"
 ---
 # <a name="post-handles"></a>POST (/handles)
 设置用户的当前活动，多人游戏会话，并邀请会话成员，如果需要。

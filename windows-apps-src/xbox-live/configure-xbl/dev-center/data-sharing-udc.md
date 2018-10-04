@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 2b56a4d3fa857222e2b93cd0f9e39133c16c2ebc
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4260821"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4316106"
 ---
 # <a name="configure-data-sharing-on-dev-center"></a>在开发人员中心配置数据共享
 

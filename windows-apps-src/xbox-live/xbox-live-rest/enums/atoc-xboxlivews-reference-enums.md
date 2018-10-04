@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5490ec5b940f70180d2830e7caaed9a9926f50
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4257853"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311414"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript 对象表示法 (JSON) 对象中使用的枚举
  

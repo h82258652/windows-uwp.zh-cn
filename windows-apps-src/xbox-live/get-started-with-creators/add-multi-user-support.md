@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: cc59d014bae8553cbbc9a4aca1db954872d28029
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4257919"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4319806"
 ---
 # <a name="add-multi-user-support-to-your-unity-game"></a>向 Unity 游戏添加多用户支持
 > [!IMPORTANT]

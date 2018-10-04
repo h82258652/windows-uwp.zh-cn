@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, Windows 10, Xbox one, 特别推荐的统计数据和排行榜, 排行榜, 统计数据 2017, Windows 开发人员中心
 ms.openlocfilehash: ed965c4d7e2c15e76494fd197808c7f47db2d584
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265636"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4317802"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>在 Windows 开发人员中心上配置 2017 特别推荐的统计数据和排行榜
 

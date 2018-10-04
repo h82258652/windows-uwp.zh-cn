@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, Xbox 集成多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a52501761f75b5d57aa73d919b7c83f3988685c
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4264265"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4310416"
 ---
 # <a name="use-xim-unity-with-il2cpp"></a>使用 XIM（带有 IL2CPP 的 Unity）
 

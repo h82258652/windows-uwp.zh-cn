@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, nuget
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d3ce8b56e5d1bf921eef48499d54b1d3fc4c22
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4262139"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4312576"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>向 UWP 项目添加 Xbox Live API 二进制文件包
 

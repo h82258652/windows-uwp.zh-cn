@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: e437cd488c1a16020f4b315f418cb57c97e2b1b4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4262183"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4313986"
 ---
 # <a name="flowchart---shut-down-after-a-multiplayer-game-is-complete"></a>流程图 - 多人游戏结束后将其关闭
 
