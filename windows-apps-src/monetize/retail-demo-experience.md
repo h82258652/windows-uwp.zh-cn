@@ -1,158 +1,261 @@
 ---
 author: joannaleecy
-title: 创建零售演示体验应用
-description: 创建零售演示体验 (RDX) 应用，该应用是可在零售演示模式和正常模式下启动的单个应用
+title: 零售演示 (RDX) 功能添加到你的应用
+description: 零售演示模式，帮助展示你的应用在零售销售场地准备你的应用。
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
 ms.author: joanlee
-ms.date: 02/08/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 零售演示应用
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a22e09484943d63988cef6bb6a7e7c09e016dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 152c775c1b69bfd82d8969aed7e638f98646bdd7
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691013"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351311"
 ---
-#  <a name="create-a-retail-demo-experience-rdx-app"></a>创建零售演示体验 (RDX) 应用
+# <a name="add-retail-demo-rdx-features-to-your-app"></a>零售演示 (RDX) 功能添加到你的应用
 
-当客户走进某个零售商店或地点时，他们预期看到最新的电脑和移动电话正在展出，这些展出的设备称为零售演示设备。
-零售演示设备和安装在它们上的内容对商店中的客户体验负有很大责任，因为客户经常花费大量时间玩这些设备。
+在你的 Windows 应用中包括零售演示模式，以便试用电脑和设备销售地板上的客户可以直接跳转中。
 
-在零售商店中安装在这些电脑和移动电话上的应用必须是零售演示体验 (RDX) 应用。 本文概述了如何设计和开发要在零售商店中的电脑和移动演示设备上安装的应用的零售演示版本。
+当客户在零售商店中，他们希望能够试用的电脑和设备的演示。 他们通常会花费相当大块的将与通过[零售演示体验 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)应用的一起玩游戏其时间。
 
-零售演示体验应用采用可在两种不同模式（_正常_或_零售_）之一下启动的单个版本形式。
-从客户的角度来说，只有一个应用，为了帮助客户区分两个版本，建议在零售模式下运行的应用在标题栏或适合位置突出显示“零售”字样。
+你可以设置你的应用提供在_正常_或_零售_模式中的不同体验。 例如，如果你的应用启动与安装过程中，你可以在零售模式下，跳过它，预填充应用的示例数据和默认设置，以便他们可以直接跳转中。
 
-除了对应用的应用商店要求，RDX 应用还必须与零售演示设备完全兼容，请设置、清理和更新系统以确保客户在零售商店具有一致良好的体验。
+从客户的角度是仅在一个应用。 为了帮助客户区分两种模式，我们建议应用在零售模式下时，它显示单词"零售"突出标题栏中或在合适的位置。
+
+除了适用于应用的 Microsoft 应用商店要求，RDX 感知应用还必须与 RDX 设置、 清理和更新过程，以确保客户在零售商店具有一致良好的体验兼容。
 
 ## <a name="design-principles"></a>设计原则
 
-### <a name="show-your-best"></a>展示你的精华
+* **展示你的精华**。 展示你的应用的精彩使用零售演示体验。 这很可能在首次你的客户将看到你的应用，因此显示它们的最佳部分 ！
 
-使用零售演示体验展示你的应用程序的精彩之处。  这可能是客户首次看到你的应用程序，因此请展示它们最精华的部分！
+* **显示快速它**。 客户可能没有耐心 - 用户越快体验应用的真正价值越好。
 
-### <a name="show-it-fast"></a>快速查找
+* **使故事保持简单**。 零售演示体验是价值的电梯对于你的应用的值。
 
-客户可能没有耐心 - 用户越快体验应用的真正价值越好。
-
-### <a name="keep-the-story-simple"></a>使故事保持简单
-
-记住，零售演示体验是对应用价值的电梯游说。
-
-### <a name="focus-on-the-experience"></a>专注于体验
-
-给用户时间来理解你的内容。  尽管使用户快速到达精华部分很重要，但设计合适的暂停可帮助他们完全享受体验。
+* **专注于体验**。 给用户时间来理解你的内容。 尽管使用户快速到达精华部分很重要，但设计合适的暂停可帮助他们完全享受体验。
 
 ## <a name="technical-requirements"></a>技术要求
 
-由于零售演示体验应用旨在向零售客户展示应用的精华，因此使它们满足这些技术要求并遵守应用商店针对所有零售演示体验应用的隐私法规很重要。
-这还可用作一个清单，帮助你为验证过程做准备，并在测试过程中提供清晰度。 请注意，不仅仅在验证过程中，还必须在零售演示体验应用的整个生存期中保留这些要求；只要应用在零售演示设备上保持运行。
+由于 RDX 感知应用旨在展示你的应用向零售客户的精华，它们必须满足技术要求并遵守 Microsoft 应用商店具有针对所有零售演示体验应用的隐私法规。
 
-### <a name="critical-level-requirements"></a>关键级别要求
+这可以用作一个清单，帮助你为验证过程做准备，并在测试过程中提供清晰度。 请注意，不仅仅在验证过程中，还必须在零售演示体验应用的整个生存期中保留这些要求；只要应用在零售演示设备上保持运行。
 
-不满足这些关键要求的 RDX 应用将尽快从所有零售演示设备中删除。
+### <a name="critical-requirements"></a>关键要求
 
-* 不要求个人身份信息 (PII)
+不满足这些关键要求的 RDX 感知应用将尽快删除从所有零售演示设备。
 
-    不允许应用要求客户输入任何个人身份信息。  这包括所有 Microsoft 帐户信息、联系人详细信息等。
+* **不要求个人身份信息 (PII)**。 这包括登录信息、 Microsoft 帐户信息或联系人详细信息。
 
-* 无错误体验
+* **无错误体验**。 你的应用必须毫无错误地运行。 此外，不应向使用零售演示设备的客户显示任何错误弹出窗口或通知。 错误品牌产生负面影响应用本身、 你的品牌、 设备的品牌，设备的制造商的品牌和 Microsoft 的品牌。
 
-    你的应用必须毫无错误地运行。 此外，不应向使用零售演示设备的客户显示任何错误弹出窗口或通知。 这很重要，因为我们希望向客户展示我们的精华，精华应当无错误。
-    另一个原因是，错误会对应用本身、你的品牌和运行应用的设备、设备制造商的品牌以及 Microsoft 的品牌产生负面影响。
-
-* 付费应用必须具有试用模式
-
-    为了使应用安装在零售演示设备上，应用需要是免费应用或具有已建立的试用模式。  客户不希望为零售商店中的体验付费。 有关详细信息，请参阅[排除或限制试用版中的功能](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)
+* **付费应用必须具有试用模式**。 你的应用需要将免费或包括[试用模式](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客户不希望为零售商店中的体验付费。
 
 ### <a name="high-priority-requirements"></a>高优先级要求
 
-不满足这些高优先级要求的 RDX 应用将立即受到调查以获取修复。 如果无法立即找到修复，此应用可能从所有零售演示设备中删除。
+不满足这些高优先级要求的 RDX 感知应用需要立即调查获取修复。 如果无法立即找到修复，此应用可能从所有零售演示设备中删除。
 
-* 令人难忘的离线体验
+* **Memorable 脱机体验**。 你的应用需要展现绝佳的离线体验，因为大约 50%的设备在零售地点处于离线。 这是为了确保与离线应用交互的客户仍然能够获得有意义且正面的体验。
 
-    你的零售演示体验应用需要展现绝佳的离线体验，因为大约 50% 的设备在零售地点处于离线状态。 这是为了确保与离线应用交互的客户仍然能够获得有意义且正面的体验。
+* **已更新内容体验**。 你的应用应永远不会更新联机时提示。 如果需要更新，应以静默方式执行它们。
 
-* 更新的内容体验
+* **无匿名通信**。 使用零售演示设备的客户是匿名用户，因为它们不应能够从设备消息或共享内容。
 
-    若要提供绝佳的体验，应用需要始终处于最新状态，并且当应用处于联机状态时永远不应提示客户进行应用程序更新。
+* **通过使用清理过程的一致体验传递**。 当客户走到零售演示设备前时，每个客户都应具有相同的体验。 你的应用应使用[清理过程](#clean-up-process)以在每次使用后返回到相同的默认状态。 我们不希望下一位客户看到哪些最后一个客户留下的。 这包括计分牌、成就和解锁。
 
-* 无匿名通信
-
-    由于使用零售演示设备的客户是匿名用户，他们不应能够从设备发消息或共享内容。
-
-* 利用清理过程提供一致的体验
-
-    当客户走到零售演示设备前时，每个客户都应具有相同的体验。 你应利用[清理进程](#clean-up-process) 在每次使用后返回到相同的默认状态，因为我们不希望下一位客户看到上一位客户留下的内容。  这包括计分牌、成就和解锁。
-
-* 适合年龄的内容
-
-    所有零售演示体验应用内容需要分配为“青少年”或更低的分级类别。 有关详细信息，请参阅[使应用由 IARC 分级](https://www.globalratings.com/for-developers.aspx)和 [ESRB 分级](https://www.esrb.org/ratings/ratings_guide.aspx)。
+* **适合年龄的内容**。 所有应用内容都需要分配为青少年或更低的分级类别。 若要了解详细信息，请参阅[获取你的应用由 IARC 分级](https://www.globalratings.com/for-developers.aspx)文件和[ESRB 分级](https://www.esrb.org/ratings/ratings_guide.aspx)。
 
 ### <a name="medium-priority-requirements"></a>中等优先级要求
 
 Windows 零售商店团队可能直接联系开发人员，以设置有关如何解决这些问题的讨论。
 
-* 能够在广泛的设备上成功运行
+* **能够在广泛的设备上成功运行**。 应用必须在所有设备，包括带有低端规范的设备上正常运行。 如果不满足最低要求的设备上安装该应用，则应用将需要清楚地告知用户这。 必须公布最低设备要求，以便应用可以始终高性能地运行。
 
-    零售演示体验应用必须在所有设备上运行良好，包括带有低端规范的设备。 如果零售演示体验应用安装在不满足运行应用的最低规范的设备上，则应用需要向用户明确通知这一点。 必须公布最低设备要求，以便应用可以始终高性能地运行。
+* **满足零售商店应用大小要求**。 应用必须小于 800MB。 如果你 RDX 感知应用不满足大小要求，请联系 Windows 零售商店团队直接进行进一步讨论。
 
-* 满足零售商店应用大小要求
+## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>RetailInfo API： 准备你的代码演示模式
 
-    应用必须小于 800MB。 如果你的零售体验应用不满足大小要求，请直接联系 Windows 零售商店团队进行进一步讨论。
+### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
+在[**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)实用程序类中，这是 Windows 10 SDK 中的[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空间的一部分， [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)属性用作的布尔值指示器用来指定哪个代码路径的运行你的应用_法线_模式或_零售_模式。
 
-## <a name="preparing-codebase-for-retail-demo-mode-development"></a>准备代码库用于零售演示模式开发
+``` csharp
+using Windows.Storage;
 
-[
-    **RetailInfo**
-  ](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) 实用程序类中的 [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo) 属性（作为 Windows10 SDK 中的 [Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile) 命名空间的一部分）用作指定应用程序在哪个代码路径上运行的布尔值指示器 - _正常_模式或_零售_模式。
+StorageFolder folder = ApplicationData.Current.LocalFolder;
+
+if (Windows.System.Profile.RetailInfo.IsDemoModeEnabled) 
+{
+    // Use the demo specific directory
+    folder = await folder.GetFolderAsync(“demo”);
+}
+
+StorageFile file = await folder.GetFileAsync(“hello.txt”);
+// Now read from file
+```
+
+``` cpp
+using namespace Windows::Storage;
+
+StorageFolder^ localFolder = ApplicationData::Current->LocalFolder;
+
+if (Windows::System::Profile::RetailInfo::IsDemoModeEnabled) 
+{
+    // Use the demo specific directory
+    create_task(localFolder->GetFolderAsync(“demo”).then([this](StorageFolder^ demoFolder)
+    {
+        return demoFolder->GetFileAsync(“hello.txt”);
+    }).then([this](task<StorageFile^> fileTask)
+    {
+        StorageFile^ file = fileTask.get();
+    });
+    // Do something with file
+}
+else
+{
+    create_task(localFolder->GetFileAsync(“hello.txt”).then([this](StorageFile^ file)
+    {
+        // Do something with file
+    });
+}
+```
+
+``` javascript
+if (Windows.System.Profile.retailInfo.isDemoModeEnabled) {
+    console.log(“Retail mode is enabled.”);
+} else {
+    Console.log(“Retail mode is not enabled.”);
+}
+```
+
+### <a name="retailinfoproperties"></a>RetailInfo.Properties
 
 当 [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) 返回 true 时，可使用 [**RetailInfo.Properties**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.properties) 查询一组关于设备的属性，以生成更加自定义的零售演示体验。 这些属性包括 [**ManufacturerName**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.memory) 等。
 
+```csharp
+using Windows.UI.Xaml.Controls;
+using Windows.System.Profile
 
-## <a name="clean-up-process"></a>清理过程
+TextBlock priceText = new TextBlock();
+priceText.Text = RetailInfo.Properties[KnownRetailInfo.Price];
+// Assume infoPanel is a StackPanel declared in XAML
+this.infoPanel.Children.Add(priceText);
+```
 
-当在固定持续时间内与设备没有交互时，使用清理过程将零售演示设备重置回原始默认设置。 这是为了确保零售商店中的每个用户都可以走到设备前，在与设备交互时获得准确的默认所需体验。 开发零售演示体验应用时，了解何时及如何触发清理过程、默认清理过程期间会发生什么并了解如何根据所需零售演示体验的要求自定义此清理过程很重要。
+```cpp
+using namespace Windows::UI::Xaml::Controls;
+using namespace Windows::System::Profile;
 
-### <a name="when-does-clean-up-begin"></a>清理何时开始？
+TextBlock ^manufacturerText = ref new TextBlock();
+manufacturerText.set_Text(RetailInfo::Properties[KnownRetailInfoProperties::Price]);
+// Assume infoPanel is a StackPanel declared in XAML
+this->infoPanel->Children->Add(manufacturerText);
+```
 
-清理序列在特定的设备空闲时间后开始。 当设备上没有来自触摸、鼠标和键盘的输入时，空闲时间开始计数。
+```javascript
+var pro = Windows.System.Profile;
+console.log(pro.retailInfo.properties[pro.KnownRetailInfoProperties.price);
+```
 
-#### <a name="desktoppc"></a>台式机/电脑
+#### <a name="idl"></a>IDL
 
-120 秒空闲时间后，空闲吸引应用视频将开始在设备上播放。 5 秒后，清理过程开始。
+```
+//  Copyright (c) Microsoft Corporation. All rights reserved.
+//
+//  WindowsRuntimeAPISet
 
-#### <a name="phone"></a>手机
+import "oaidl.idl";
+import "inspectable.idl";
+import "Windows.Foundation.idl";
+#include <sdkddkver.h>
 
-60 秒空闲时间后，空闲吸引应用视频将开始在设备上播放，并且清理过程立即开始。
+namespace Windows.System.Profile
+{
+    runtimeclass RetailInfo;
+    runtimeclass KnownRetailInfoProperties;
 
-### <a name="what-happens-during-a-default-clean-up-process"></a>默认的清理过程期间会发生什么？
+    [version(NTDDI_WINTHRESHOLD), uuid(0712C6B8-8B92-4F2A-8499-031F1798D6EF), exclusiveto(RetailInfo)]
+    [version(NTDDI_WINTHRESHOLD, Platform.WindowsPhone)]
+    interface IRetailInfoStatics : IInspectable
+    {
+        [propget] HRESULT IsDemoModeEnabled([out, retval] boolean *value);
+        [propget] HRESULT Properties([out, retval, hasvariant] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable *> **value);
+    }
 
-#### <a name="step-1-clean-up"></a>步骤 1：清理
+    [version(NTDDI_WINTHRESHOLD), uuid(50BA207B-33C4-4A5C-AD8A-CD39F0A9C2E9), exclusiveto(KnownRetailInfoProperties)]
+    [version(NTDDI_WINTHRESHOLD, Platform.WindowsPhone)]
+    interface IKnownRetailInfoPropertiesStatics : IInspectable
+    {
+        [propget] HRESULT RetailAccessCode([out, retval] HSTRING *value);
+        [propget] HRESULT ManufacturerName([out, retval] HSTRING *value);
+        [propget] HRESULT ModelName([out, retval] HSTRING *value);
+        [propget] HRESULT DisplayModelName([out, retval] HSTRING *value);
+        [propget] HRESULT Price([out, retval] HSTRING *value);
+        [propget] HRESULT IsFeatured([out, retval] HSTRING *value);
+        [propget] HRESULT FormFactor([out, retval] HSTRING *value);
+        [propget] HRESULT ScreenSize([out, retval] HSTRING *value);
+        [propget] HRESULT Weight([out, retval] HSTRING *value);
+        [propget] HRESULT DisplayDescription([out, retval] HSTRING *value);
+        [propget] HRESULT BatteryLifeDescription([out, retval] HSTRING *value);
+        [propget] HRESULT ProcessorDescription([out, retval] HSTRING *value);
+        [propget] HRESULT Memory([out, retval] HSTRING *value);
+        [propget] HRESULT StorageDescription([out, retval] HSTRING *value);
+        [propget] HRESULT GraphicsDescription([out, retval] HSTRING *value);
+        [propget] HRESULT FrontCameraDescription([out, retval] HSTRING *value);
+        [propget] HRESULT RearCameraDescription([out, retval] HSTRING *value);
+        [propget] HRESULT HasNfc([out, retval] HSTRING *value);
+        [propget] HRESULT HasSdSlot([out, retval] HSTRING *value);
+        [propget] HRESULT HasOpticalDrive([out, retval] HSTRING *value);
+        [propget] HRESULT IsOfficeInstalled([out, retval] HSTRING *value);
+        [propget] HRESULT WindowsVersion([out, retval] HSTRING *value);
+    }
+
+    [version(NTDDI_WINTHRESHOLD), static(IRetailInfoStatics, NTDDI_WINTHRESHOLD)]
+    [version(NTDDI_WINTHRESHOLD, Platform.WindowsPhone), static(IRetailInfoStatics, NTDDI_WINTHRESHOLD, Platform.WindowsPhone)]
+    [threading(both)]
+    [marshaling_behavior(agile)]
+    runtimeclass RetailInfo
+    {
+    }
+
+    [version(NTDDI_WINTHRESHOLD), static(IKnownRetailInfoPropertiesStatics, NTDDI_WINTHRESHOLD)]
+    [version(NTDDI_WINTHRESHOLD, Platform.WindowsPhone), static(IKnownRetailInfoPropertiesStatics, NTDDI_WINTHRESHOLD, Platform.WindowsPhone)]
+    [threading(both)]
+    [marshaling_behavior(agile)]
+    runtimeclass KnownRetailInfoProperties
+    {
+    }
+}
+```
+
+## <a name="cleanup-process"></a>清理过程
+
+清理开始两分钟后购物者停止与设备交互。 零售演示播放，并且 Windows 开始重置联系人、 照片和其他应用中的任何示例数据。 根据设备，这可能需要 1 至 5 分钟内以完全所有内容都将重置为正常。 这将确保零售商店中的每个客户可以走到设备，与设备交互时获得相同的体验。
+
+步骤 1： 清理
 * 关闭所有 Win32 和应用商店应用
 * 删除已知文件夹（如 __Pictures__、__Videos__、__Music__、__Documents__、__SavedPictures__、__CameraRoll__、__Desktop__ 和 __Downloads__ 文件）中的所有文件夹。
 * 删除非结构化和结构化漫游状态
 * 删除结构化本地状态
 
-#### <a name="step-2-set-up"></a>步骤 2：设置
+步骤 2： 设置
 * 对于离线设备：文件夹保持空白
 * 对于联机设备：零售演示资源可从 Microsoft Store 推送到设备
 
-### <a name="how-to-store-data-across-user-sessions"></a>如何跨用户会话存储数据？
+### <a name="store-data-across-user-sessions"></a>跨用户会话存储数据
 
-如果要跨用户会话存储数据，可将信息存储在 __ApplicationData.Current.TemporaryFolder__ 中，因为默认清理过程不会自动删除此文件夹中的数据。 请注意，将在清理过程期间删除使用 *LocalState* 存储的信息。
+若要跨用户会话存储数据，可以存储信息__ApplicationData.Current.TemporaryFolder__中，因为默认清理过程不会自动删除此文件夹中的数据。 请注意，清理过程期间删除使用*LocalState*存储的信息。
 
-### <a name="how-to-customize-the-clean-up-process"></a>如何自定义清理过程？
+### <a name="customize-the-cleanup-process"></a>自定义清理过程
 
-如果你希望自定义清理过程，你需要在应用中实现 `Microsoft-RetailDemo-Cleanup` 应用服务。
+若要自定义清理过程，实现`Microsoft-RetailDemo-Cleanup`应用服务转换你的应用。
 
-需要自定义清理逻辑的方案包括运行耗费资源的设置、下载和缓存数据或者不希望删除 *LocalState* 数据。
+需要自定义清理逻辑的方案包括运行广泛的设置、 下载和缓存数据，或者不希望*LocalState*要删除数据。
 
-步骤 1：在应用程序清单中声明 _Microsoft-RetailDemo-Cleanup_ 服务。
+步骤 1： 声明你的应用清单中的_Microsoft-RetailDemo-Cleanup_服务。
 ``` CSharp
   <Applications>
       <Extensions>
@@ -165,7 +268,7 @@ Windows 零售商店团队可能直接联系开发人员，以设置有关如何
 
 ```
 
-步骤 2：使用下面的示例模板在 _AppdataCleanup_ 案例函数下实现自定义清理逻辑。
+步骤 2： 实现你在使用下面的示例模板_AppdataCleanup_案例函数下的自定义清理逻辑。
 ``` CSharp
 using System;
 using System.IO;
@@ -263,8 +366,4 @@ namespace MyCompany.MyApp
 * [存储和检索应用数据](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
 * [如何创建和使用应用服务](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 * [本地化应用内容](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-
-
- 
-
- 
+* [零售演示体验 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

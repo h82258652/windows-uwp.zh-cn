@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 敏捷, 对象, 敏捷性, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318009"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361362"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT 中的敏捷对象
 在大多数情况下，Windows 运行时类（例如标准的 c++ 对象）的实例可以从任何线程访问。 这样的类是*敏捷的*。 Windows 附带的 Windows 运行时类中只有一小部分是非敏捷的，但当你使用它们时，你需要考虑它们的线程模型和封送行为（封送是指跨线程或进程边界传送数据）。 它是一个好的默认每个 Windows 运行时对象是敏捷的因此你自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)类型均为敏捷型默认情况下。

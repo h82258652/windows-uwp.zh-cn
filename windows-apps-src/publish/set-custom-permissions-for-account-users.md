@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317679"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351435"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 

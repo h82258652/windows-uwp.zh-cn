@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310675"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351383"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 

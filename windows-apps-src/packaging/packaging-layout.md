@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4314187"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4353953"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
 

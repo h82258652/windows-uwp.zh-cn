@@ -11,11 +11,11 @@ keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319272"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357088"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 内容组映射, 流式处理安装, uwp 应用流式处理安装, 源内容组映射
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319587"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351947"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 

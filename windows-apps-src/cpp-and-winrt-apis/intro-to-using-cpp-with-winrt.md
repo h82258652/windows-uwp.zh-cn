@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1563f85df6d437ce313c99df52ea319ef94a30
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 7848a0b00e2f6a2bbaa84c413dc26f1ea7238e8e
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318739"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350568"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -40,6 +40,11 @@ Windows 运行时基于组件对象模型 (COM) API，可通过*语言投影* �
 
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持
 对于 Visual Studio 中的 C++/WinRT 项目模板以及 C++/WinRT MSBuild 属性和目标，请从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 中下载并安装 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。
+
+> [!NOTE]
+> 使用版本 1.0.181002.2 （或更高版本） 的 VSIX 安装，创建新的 C + + WinRT 项目自动安装该项目的[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 程序包提供改进了 C + + WinRT 项目生成支持，从而使你的项目之间的开发计算机和生成代理 （仅 NuGet 程序包，以及不 VSIX，安装的） 移植。
+>
+> 现有项目的&mdash;已安装版本 1.0.181002.2 之后 （或更高版本） 的 VSIX&mdash;我们建议你在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。
 
 你将需要 Visual Studio 2017 (至少需要版本 15.6，但我们建议至少是 15.7)，以及 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)。 如果你尚未安装它，你将需要安装 Visual Studio 安装程序内的从**c + + 通用 Windows 平台工具**选项。 并在 Windows**设置** > **更新 \ & 安全** > **适用于开发人员**，选择**开发人员模式**选项，而不是**旁加载应用**选项。
 

@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: 移植为进程内后台任务进程外后台任务
+title: 将进程外后台任务移植到进程内后台任务
 description: 移植为进程内后台任务在前台应用进程中运行的进程外后台任务。
 ms.author: twhitney
 ms.date: 09/19/2018
@@ -11,13 +11,13 @@ keywords: windows 10，uwp，后台任务，应用服务
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311225"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350891"
 ---
-# <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>移植为进程内后台任务进程外后台任务
+# <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>将进程外后台任务移植到进程内后台任务
 
 移植你进程外 (OOP) 后台活动进程内活动的最简单方法是将[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法代码内的应用程序，并从[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)启动它。 在此处所述的技术不是为了创建大幅从 OOP 后台任务与进程内后台任务;它的有关重写 （或移植） OOP 版本到进程内版本。
 

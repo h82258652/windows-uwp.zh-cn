@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp, beta 测试版本, 有限分发, beta 版本, 测试, 测试人员
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318551"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356673"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>beta 版本测试和定向分发
 

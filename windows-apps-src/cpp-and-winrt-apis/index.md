@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315975"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352431"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -54,13 +54,13 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 | [使用 C++/WinRT 的错误处理](error-handling.md) | 本主题讨论处理使用 C++/WinRT 编程时出现的错误的策略。 |
 | [使用代理处理事件](handle-events.md) | 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理委托。 |
 | [创作事件](author-events.md) | 本主题演示如何创作包含引发事件的运行时类的 Windows 运行时组件。 它还演示使用该组件并处理事件的应用。 |
-| [集合通过 C + + WinRT](collections.md) | C + + /winrt 提供函数和节省大量时间和精力当你想要实现和/或传递集合的基类。 |
+| [使用 C++/WinRT 的集合](collections.md) | C + + /winrt 提供函数和节省大量时间和精力当你想要实现和/或传递集合的基类。 |
 | [并发和异步操作](concurrency.md) | 本主题介绍你可通过 C++/WinRT 创建和使用 Windows 运行时异步对象的方式。 |
 | [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md) | 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 本主题介绍如何实现和使用可观测属性以及如何将 XAML 控件绑定到该属性。 |
 | [XAML 项目控件; 绑定到 C++/WinRT 集合](binding-collection.md) | 可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 本主题介绍如何实现和使用可观测集合以及如何将 XAML 项目控件绑定到该集合。 |
 | [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题将指导你完成的步骤创建简单的自定义控件使用 C + + WinRT。 你可以生成的相关信息来创建你自己功能丰富且可自定义的 UI 控件。 |
-| [使用 COM 组件通过 C + + WinRT](consume-com.md) | 本主题使用完整的 Direct2D 代码示例，介绍如何使用 C + + /winrt 来使用 COM 类和接口。 |
-| [创作 COM 组件通过 C + + WinRT](author-coclasses.md) | C + + WinRT 只是因为它可以帮助你创作 Windows 运行时类可以帮助你创作传统的 COM 组件。 |
+| [通过 C++/WinRT 使用 COM 组件](consume-com.md) | 本主题使用完整的 Direct2D 代码示例，介绍如何使用 C + + /winrt 来使用 COM 类和接口。 |
+| [通过 C++/WinRT 创作 COM 组件](author-coclasses.md) | C + + WinRT 只是因为它可以帮助你创作 Windows 运行时类可以帮助你创作传统的 COM 组件。 |
 | [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 |
 | [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
 | [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 |

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 27b91376bfdb58bd474f7d291fa9f650455461c0
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310286"
+ms.locfileid: "4360989"
 ---
 # <a name="xbox-live-multiplayer-platform"></a>Xbox Live 多人游戏平台
 

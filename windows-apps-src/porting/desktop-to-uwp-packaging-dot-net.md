@@ -12,11 +12,11 @@ keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313147"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350862"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 

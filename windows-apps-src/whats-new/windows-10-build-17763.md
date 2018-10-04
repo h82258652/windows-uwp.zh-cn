@@ -4,17 +4,17 @@ title: 面向开发人员的 Windows 10 中的新增工具和功能
 description: Windows 10 版本 17763 和新开发人员工具提供工具、 功能和通用 Windows 平台支持的体验。
 keywords: 新增功能，新增功能，更新，更新，功能，新，Windows 10，最新，开发人员，17763
 ms.author: quradic
-ms.date: 10/02/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c354d9ed4bae4cd8b484fcc3281dc5ac753dab1e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 29fe3dc2958a9dfbd679eb62d012292b44bcf40d
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312883"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354882"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>对于开发人员，生成 17763，什么是 Windows 10 中的新增功能
 
@@ -44,7 +44,7 @@ Windows UI 库 | [Windows UI 库](https://aka.ms/winui-docs)是一组提供适�
 功能 | 描述
  :------ | :------
 条形码扫描仪 | 已重新整理，并改进了更多详细信息和代码段的[条形码扫描仪](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)文档。 我们还添加了新的主题中，[获取并了解条形码数据](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，这就解释了如何获取和处理来自条形码扫描仪的数据。
-C++/WinRT | [C + + WinRT](https://aka.ms/cppwinrt)包含此版本的新功能。 例如，有新函数和基本类，你在实现自己的[集合属性和集合类型](/windows/uwp/cpp-and-winrt-apis/collections)提供支持。 </br> 现在还可以在[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension)标记扩展使用与你的 C + + WinRT 运行时类。 有关详细信息和代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)。 </br> 其他新 C + + WinRT 内容包括： [XAML 自定义 （模板化） 控件](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[作者 COM 组件](/windows/uwp/cpp-and-winrt-apis/author-coclasses);和[值的分类，并对它们的引用](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)。
+C++/WinRT | [C + + WinRT](https://aka.ms/cppwinrt)包含许多新功能、 更改和修复了此版本。 有新的函数和基本类，你在实现自己的[集合属性和集合类型](/windows/uwp/cpp-and-winrt-apis/collections); 支持而现在可以在[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 标记扩展使用与 C + + WinRT 运行时类 （有关代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)）。 新的和更改在此版本中的所有内容的完整说明，请参阅[新增功能在 C + + WinRT](../cpp-and-winrt-apis/news.md)。</br></br>其他新 C + + WinRT 内容包括： [XAML 自定义控件](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[作者 COM 组件](/windows/uwp/cpp-and-winrt-apis/author-coclasses);[值类别](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories);和[强和弱引用](../cpp-and-winrt-apis/weak-references.md)。
 C + + WinRT 代码示例 | 我们添加了 250 C + + WinRT 代码一览主题中我们的文档，附带的现有 C + + CX 代码示例。
 投稿指南 | 我们为我们的 UWP 文档更新了[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
 DirectX 图形 Infastructure (DXGI) | 新文档已添加了缺少 DXGI Api，并且我们提供了有关最佳做法的文章 Windows 10 上的显示。 </br> * [为了获得最佳性能，使用 DXGI 翻转模型](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)： 提供如何最大限度提高性能和现代版本的 Windows 上演示文稿堆栈中的效率的指南。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)： 通知应用程序，受支持硬件拉伸。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 枚举](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)： 描述支持的硬件合成哪些级别。

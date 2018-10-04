@@ -4,22 +4,20 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: 深入了解数据绑定
 description: 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 559bbbc3421151a9055b89c94bc1293a950ccb5b
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318461"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351448"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
-
-
 
 **重要的 API**
 
@@ -31,16 +29,15 @@ ms.locfileid: "4318461"
 > [!Note]
 > 本主题详细介绍数据绑定功能。 有关简短、实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
 
-
 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
 
-当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这称为一次性绑定，非常适合在运行时期间其值不会更改的数据。 或者，你可以选择“观察”值并在其更改时更新 UI。 这称为单向绑定，非常适合只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 这称为双向绑定，非常适合读写数据。 下面是一些示例。
+当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这是一种模式的绑定名*一次性*，和非常适合在运行时期间不会更改值。 或者，你可以选择"观察"值并在其更改时更新 UI。 这称为多*单向*，和非常适合只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 此模式称为*双向*，并且它非常适用于读写数据。 下面是一些示例。
 
--   你可以使用一次性绑定，将 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 绑定到当前用户的照片。
--   你可以使用单向绑定，将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到按报纸剪辑分组的实时新闻报道的集合。
--   你可以使用双向绑定，将 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 绑定到表单中的客户名称。
+-   你可以使用一次性模式将[**图像**](https://msdn.microsoft.com/library/windows/apps/BR242752)绑定到当前用户的照片。
+-   你可以使用单向模式将[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)绑定到按报纸分组的实时新闻报道的集合。
+-   你可以使用双向模式将[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)绑定到表单中的客户的名称。
 
-有两种类型的绑定，它们通常都在 UI 标记中进行声明。 你既可以选用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，也可以选用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 还可以在同一应用中（甚至是同一 UI 元素上）混合使用这两个标记扩展。 {x:Bind} 是 Windows 10 的新增内容，并且具备更好的性能。 除非另有明确说明，否则本主题中所述的所有详细信息均适用于这两种绑定。
+独立于模式，有两种类型的绑定，并且它们通常都声明在 UI 标记中。 你既可以选用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，也可以选用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 还可以在同一应用中（甚至是同一 UI 元素上）混合使用这两个标记扩展。 {x:Bind} 是 Windows 10 的新增内容，并且具备更好的性能。 除非另有明确说明，否则本主题中所述的所有详细信息均适用于这两种绑定。
 
 **用于演示 {x:Bind} 的应用示例**
 

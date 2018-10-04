@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f1d2bdfe5ce88ed4e3f5f3e618fb7034f4eb0bb
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: e00f387c3dd78353158d93d3b4749345936396f5
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313881"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352192"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -47,11 +47,13 @@ ms.locfileid: "4313881"
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>链接器为什么给出“LNK2019: 无法解析的外部符号”错误？
 如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的头文件中做了前置声明，但其定义位于尚未包含的头文件中。 请包括以 API 的命名空间命名的头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影头文件](consume-apis.md#cwinrt-projection-headers)。
 
-如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://msdn.microsoft.com/library/br224650)，则需要在项目中显式包含 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 项目模板，则会自动链接 `WindowsApp.lib`。 如果没有自动链接，则可以使用项目链接设置包含它，或在源代码中进行。
+如果无法解析的符号是 Windows 运行时自由函数，例如[RoInitialize](https://msdn.microsoft.com/library/br224650)，你将需要显式链接你的项目中的[WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 项目模板，则会自动链接 `WindowsApp.lib`。 如果没有自动链接，则可以使用项目链接设置包含它，或在源代码中进行。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
 ```
+
+我们建议你解决任何你可以通过将链接**WindowsApp.lib**的链接器错误。 但是，如果你不需要通过使用由 Visual Studio 和 Microsoft store 来验证提交 （含义，因此不可能的应用程序能够成功的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试你的应用程序引入到 Microsoft Store），则你可以改为将链接替代的静态链接库。 例如，如果链接器错误是指**CoIncrementMTAUsage** （或**WINRT_CoIncrementMTAUsage**），然后你可以解析的链接 Ole32.lib，如果绝对有必要 （例如，如果你的**WindowsApp.lib**版本不导出函数）。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) 还是两者。 可调用 **IClosable::Close** 任意次数。

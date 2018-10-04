@@ -12,11 +12,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315547"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355024"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用合成动画设置动画的 XAML 元素
 

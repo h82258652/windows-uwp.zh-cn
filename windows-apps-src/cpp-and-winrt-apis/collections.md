@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: C + + /winrt 提供函数和节省大量时间和精力当你想要实现和/或传递集合的基类。
-title: 集合通过 C + + WinRT
+title: 使用 C++/WinRT 的集合
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影集合
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312311"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361116"
 ---
-# <a name="collections-with-cwinrt"></a>集合通过 C + + WinRT
+# <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 
 在内部，Windows 运行时集合有很多复杂移动部件。 但当你想要将集合对象传递给 Windows 运行时函数，或实现你自己的集合属性和集合类型，有函数和基类[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)以支持你。 这些功能的复杂性退出或在双手，并采用时间和精力保存你的大量的开销。
 

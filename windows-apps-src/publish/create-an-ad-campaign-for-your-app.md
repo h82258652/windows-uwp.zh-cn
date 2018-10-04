@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7e7c1e2cd9a2ca083cef5fed27a9067cf1e7e7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309287"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352648"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 

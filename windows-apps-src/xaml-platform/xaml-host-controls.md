@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318195"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355762"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
 
