@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, 上下文搜索, 游戏剪辑, 广播
 ms.localizationpriority: medium
 ms.openlocfilehash: 79197dc7db3f15aba5fc9d494a5e8408878f0dba
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318670"
+ms.locfileid: "4360998"
 ---
 # <a name="configuring-contextual-search"></a>配置上下文搜索
 

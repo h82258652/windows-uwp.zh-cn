@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4178eac74e58699f322d004577520893f582f874
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4315530"
+ms.locfileid: "4361128"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
 详细信息和元数据，产品/服务返回有关的一个或多个项目。

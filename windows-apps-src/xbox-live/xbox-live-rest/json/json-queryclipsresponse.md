@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312266"
+ms.locfileid: "4353557"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
 包装分页信息的列表以及返回游戏剪辑的列表。 
