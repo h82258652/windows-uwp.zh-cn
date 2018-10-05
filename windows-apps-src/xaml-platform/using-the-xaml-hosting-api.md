@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 860e515d013046ef77d0aee38eb5d42c9c3e2dc9
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356752"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390447"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的桌面应用程序托管 API
 
@@ -51,7 +51,7 @@ UWP XAML 托管 API 托管在桌面应用程序的 UWP 控件提供的低级别�
   * 该控件，[请转到此处](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost)的 WPF 版本。 从[**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)派生 WPF 版本。
   * 该控件，[请转到此处](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost)的 Windows 窗体版本。 Windows 窗体版本派生自[**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>系统必备
 
 托管 API UWP XAML 具有以下先决条件。
 
@@ -295,7 +295,7 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
 
 托管 API 的 XAML 共享相同限制在 Windows 10 的所有其他类型的 XAML 主机控件。 有关详细的列表，请参阅[XAML 主机控件限制](xaml-host-controls.md#limitations)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>使用 UWP XAML 托管 API 在 UWP 应用中的错误
 

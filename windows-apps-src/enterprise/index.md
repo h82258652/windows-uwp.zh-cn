@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: 此路线图提供适用于 Windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
-title: 企业
+title: 企业版
 author: awkoren
 ms.author: alkoren
 ms.date: 08/30/2018
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351181"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388036"
 ---
-# <a name="enterprise"></a>企业
+# <a name="enterprise"></a>企业版
 
 此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
 

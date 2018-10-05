@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，帐户用户，管理用户、 azure ad，多用户、 多个用户
 ms.localizationpriority: medium
 ms.openlocfilehash: bef703958f8f04cd55d887dfa8840d1ed3fbeba5
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4355546"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389915"
 ---
 # <a name="manage-account-users"></a>管理帐户用户
 
