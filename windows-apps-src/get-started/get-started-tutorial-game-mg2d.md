@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4360378"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4387506"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>用 MonoGame 2D 创建 UWP 游戏
 
@@ -265,7 +265,7 @@ Game1.cs 中的 **Draw** 方法调用 **Draw** 方法，后者用于在游戏窗
 
 现在就来谈谈玩家需要避让的障碍物。 忍者神猫和肉食恐龙都最讨厌什么呢？ 吃蔬菜！ [单击此处以下载此图像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
-Just as before with the green rectangle, add these images to **Content.mgcb** via the **MonoGame Pipeline**, naming them “ninja-cat-dino.png” and “broccoli.png” respectively.
+如同先前的绿色矩形一样，通过 **MonoGame 管道**将这些图像添加到 **Content.mgcb**，然后将其分别命名为“ninja-cat-dino.png”和“broccoli.png”。
 
 ### <a name="2-add-class-variables"></a>2. 添加类变量
 将以下代码添加到 **Game1.cs** 中的类变量列表中：
@@ -286,13 +286,13 @@ float score;
 Random random;
 ```
 
-**dino** and **broccoli** are our SpriteClass variables. **dino** will hold the player avatar, while **broccoli** holds the broccoli obstacle.
+**dino** 和 **broccoli** 是我们的 SpriteClass 变量。 **dino** 将控制玩家头像，而 **broccoli** 则控制花椰菜障碍物。
 
 **spaceDown** 用于跟踪空格键是被按住还是被按下后再松开。
 
 **gameStarted** 用于告诉我们用户是否已第一次开始游戏。
 
-**broccoliSpeedMultiplier** determines how fast the broccoli obstacle moves across the screen.
+**broccoliSpeedMultiplier** 用于确定花椰菜障碍物在屏幕内的移动速度。
 
 **gravitySpeed** 用于确定玩家头像在跳跃后加速下降的速度。
 

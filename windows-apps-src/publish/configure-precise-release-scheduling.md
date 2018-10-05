@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
 ms.localizationpriority: medium
 ms.openlocfilehash: 84466f907bad7e38506e1bf81b89eb631675093c
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4360814"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4385606"
 ---
 # <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 

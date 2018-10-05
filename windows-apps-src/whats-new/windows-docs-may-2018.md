@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4357411"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386927"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月的新增功能
 

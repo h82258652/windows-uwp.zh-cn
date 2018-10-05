@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 29fe3dc2958a9dfbd679eb62d012292b44bcf40d
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.openlocfilehash: 19f2d29d94759a4b8fd273c8fdc0cdf5c93311de
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354882"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4385696"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>对于开发人员，生成 17763，什么是 Windows 10 中的新增功能
 
@@ -70,7 +70,8 @@ Windows Mixed Reality | 开发人员现在可以将受硬件保护的请求后�
 ## <a name="web-development"></a>Web 开发
 
 功能 |描述:--|:---EdgeHTML 18 |Windows 10 年 10 月使用[EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)，最新的更新在 Microsoft Edge 浏览器和适用于 UWP 应用的 JavaScript 引擎更新海上。 EdgeHTML 18 带来了对 Web 身份验证 API、 新 WebView 控件功能的详细信息的现代化和扩展支持 ！ 一侧工具，EdgeHTML 18 带来 WebDriver 的新功能和自动更新以及增强了对 Edge DevTools 和 Edge DevTools 协议。 有关所有详细信息，请查看[EdgeHTML 18 中的新增功能是什么](https://docs.microsoft.com/microsoft-edge/dev-guide)，[最新的 Windows 10 中的 DevTools 更新 (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new) 。
-渐进式 Web 应用 |开发 Windows Pwa？ 请查看以下指南： </br> * [为 PWA 生成一个简单的 web 应用](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started) </br> * [增强 Windows 运行时与你 PWA](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features) </br> * [发布到 Microsoft Store 你 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)Web API 扩展 |已添加到 Mozilla Developer Network 文档中针对跨浏览器 web 开发的[旧 Microsoft API 扩展](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)列表。 这些 API 扩展特定于 Internet Explorer 或 Microsoft Edge，并补充有关 MDN web 文档中的兼容性和浏览器支持的现有信息。传统的 Microsoft [CSS 扩展](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和[JavaScript 扩展](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也是可用，并且可以找到丰富的 web API 信息从 MDN 直接在呈现[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+渐进式 Web 应用 |Windows 10 JavaScript 应用 （ *WWAHost.exe*进程中运行的 web 应用） 现在支持启动才能激活任何视图是一个可选[每个应用程序背景脚本](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide#progressive-web-apps)和过程的持续时间内运行。 与此，你可以监视和修改导航、 跨导航跟踪状态、 监视导航错误，和视图激活前运行代码。 如果指定为[`StartPage`](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application)在[应用清单](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)你，每个应用的视图 (windows) 公开给该脚本作为的新实例[`WebUIView`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.webui.webuiview)类，作为一般 (Win32) [WebView](https://docs.microsoft.com/en-us/uwp/api/windows.web.ui.iwebviewcontrol)中提供相同的事件、 属性和方法。
+Web API 扩展 |已添加到 Mozilla Developer Network 文档中针对跨浏览器 web 开发的[旧 Microsoft API 扩展](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)列表。 这些 API 扩展特定于 Internet Explorer 或 Microsoft Edge，并补充有关 MDN web 文档中的兼容性和浏览器支持的现有信息。传统的 Microsoft [CSS 扩展](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和[JavaScript 扩展](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也是可用，并且可以找到丰富的 web API 信息从 MDN 直接在呈现[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 WebVR |我们已主要更新中[WebVR 开发人员指南](https://docs.microsoft.com/microsoft-edge/webvr/)，包括主页页面的完全重新设计和目录的重组。 我们已编写多个新的主题，其中包括： </br> * [什么是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) 说明了什么 WebVR，为什么应使用它，以及如何为其开发入门。 </br> * [渐进式 Web 应用中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)： 了解如何将 WebVR 添加到渐进式 Web 应用 (PWA)。 </br> * [WebVR 在 web 视图中](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)： 了解如何将 WebVR 添加到 Windows 10 应用中的 web 视图控件。 </br> * [WebVR 演示](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 签出一些 WebVR 演示使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式头戴显示设备。
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利

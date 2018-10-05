@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 付款, 应用销售, 应用收款, 付款, 应用商店费用, 付款暂停, 百分比
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4357951"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4383613"
 ---
 # <a name="getting-paid"></a>获取付款
 以下是一些你需要的信息，可确保你收到你的应用、加载项和广告收益的付款。

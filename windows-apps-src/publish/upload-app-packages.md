@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353030"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386686"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
