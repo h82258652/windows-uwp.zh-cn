@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2516987d1f56ba1da482854b6c6a390e1001db
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4358539"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4392017"
 ---
 # <a name="configuring-featured-stats-or-leaderboards-on-universal-dev-center-with-data-platform-2017"></a>使用 Data Platform 2017 在通用开发人员中心上配置 Xbox Live 的特别推荐的统计数据和排行榜
 

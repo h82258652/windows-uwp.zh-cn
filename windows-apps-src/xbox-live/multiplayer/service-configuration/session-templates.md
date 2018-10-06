@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 会话模板
 ms.localizationpriority: medium
 ms.openlocfilehash: be861f34293eea7b8cf9fbfb91620be29652fbff
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350485"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393635"
 ---
 # <a name="multiplayer-session-templates"></a>多人游戏会话模板
 

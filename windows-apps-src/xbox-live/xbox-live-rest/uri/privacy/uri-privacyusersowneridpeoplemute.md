@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a5de74be5e82fde007d6680eaf4c9e5a543afc64
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4357538"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389123"
 ---
 # <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
 访问用户的静音列表。

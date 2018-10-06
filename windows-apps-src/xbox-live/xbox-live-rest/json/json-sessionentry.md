@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6076f4dfbef0f926563f4696f8ee0e2660d0fc24
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4360165"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4392596"
 ---
 # <a name="sessionentry-json"></a>SessionEntry (JSON)
 用于健身会话包含的数据。 

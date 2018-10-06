@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b2fd29f69b919e5a3e700c451f9ecb21ba2c9cdd
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354842"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393109"
 ---
 # <a name="rich-presence-appendix"></a>“完整状态”附录
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d727171b079bc05851e1c7ab4de6f01587ce460d
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354528"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388295"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>适用于 UWP 游戏的 Visual Studio 的入门
 

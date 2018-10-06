@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 服务配置, 会话模板, 自定义邀请字符串, smartmatch hopper
 ms.localizationpriority: medium
 ms.openlocfilehash: fd4032152e2c4a110fcffd8e6a7a46dba25d8271
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356608"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393606"
 ---
 # <a name="multiplayer-service-configuration"></a>多人游戏服务配置
 为了让你的作品充分利用 Xbox Live 提供的服务，你必须先定义服务配置。 此服务配置位于 Xbox Live 云服务中，可定义 Xbox Live 服务与任何运行你的作品/游戏的设备的交互方式。
