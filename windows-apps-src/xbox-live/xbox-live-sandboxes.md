@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 63447a9423ab65f79f034877a1c74c1eea75c78c
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4387705"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4430784"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 

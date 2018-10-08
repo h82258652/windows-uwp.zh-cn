@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394338"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423676"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评价
 
