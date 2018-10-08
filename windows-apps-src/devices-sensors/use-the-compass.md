@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 069f13926fda125ebb383f16bf96eab333a28523
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958652"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420296"
 ---
 # <a name="use-the-compass"></a>使用指南针
 
@@ -28,8 +28,6 @@ ms.locfileid: "958652"
 **示例**
 
 -   有关更完整的实现，请参阅[指南针示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)。
-
-\[在商业发行之前可能会实质性修改与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 了解如何使用指南针确定当前方位。
 
