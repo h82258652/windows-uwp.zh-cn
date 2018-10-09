@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: bdae6ca018670109120c85945d78806158b6c1b7
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391657"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445582"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件; 绑定到 C++/WinRT 集合
 
@@ -46,20 +46,18 @@ ms.locfileid: "4391657"
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
 }
 ...
 ```
 
 > [!IMPORTANT]
-> 在上述 MIDL 3.0 列表中，请注意， **BookSkus**属性的类型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。 在本主题的下一步部分中，我们将在项目源的[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)绑定到绑定**BookSkus**。 列表框的项目控件，而要正确设置[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，你需要将其设置为类型**IVector** **IInspectable**，或如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)互操作性类型的值。
+> 在上述 MIDL 3.0 列表中，请注意， **BookSkus**属性的类型的[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) 。 在本主题的下一步部分中，我们将在项目源的[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)绑定到绑定**BookSkus**。 列表框的项目控件，而要正确设置[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性，你需要设置其类型**IObservableVector**的值 （或**IVector**） **IInspectable**，或互操作性类型，如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
 
 保存并生成。 人 `Generated Files` 文件夹中的 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 复制访问器存根，然后实现它们。
 
 ```cppwinrt
 // BookstoreViewModel.h
-...
-#include "single_threaded_observable_vector.h"
 ...
 struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 {
@@ -67,11 +65,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
 };
 ...
 ```
@@ -81,7 +79,7 @@ private:
 ...
 BookstoreViewModel::BookstoreViewModel()
 {
-    m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+    m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
     m_bookSkus.Append(m_bookSku);
 }
@@ -91,7 +89,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }
@@ -119,7 +117,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
     MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
-    MainViewModel().BookSkus().Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+    MainViewModel().BookSkus().Append(winrt::make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 }
 ...
 ```

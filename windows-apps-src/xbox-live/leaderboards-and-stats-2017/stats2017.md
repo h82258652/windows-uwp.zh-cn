@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live，xbox，游戏，uwp，windows 10，xbox one，玩家统计数据、 排行榜，stats 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e953dcca8f57b689cdee879551b188aa01f42f
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391577"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4421423"
 ---
 # <a name="stats-2017"></a>Stats 2017
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: f2b9d342e775b2834c6b3e7eb02a8b2e3d71728d
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 2caec1c245514f7c1596d2a40749e974998fadcd
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383217"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445595"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件; 绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何实现可观测属性[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 控件绑定到它们。
@@ -178,7 +178,7 @@ namespace winrt::Bookstore::implementation
 {
     BookstoreViewModel::BookstoreViewModel()
     {
-        m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+        m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     }
 
     Bookstore::BookSku BookstoreViewModel::BookSku()
@@ -189,7 +189,7 @@ namespace winrt::Bookstore::implementation
 ```
 
 > [!NOTE]
-> `m_bookSku` 的类型是投影类型 (**winrt::Bookstore::BookSku**)，而且你用于 **make** 的模板参数是实现类型 (**winrt::Bookstore::implementation::BookSku**)。 即使如此，**make** 也会返回投影类型的实例。
+> 类型`m_bookSku`是投影的类型 (**winrt::Bookstore::BookSku**)，并使用[**winrt:: make**](/uwp/cpp-ref-for-winrt/make)的模板参数是实现类型 (**winrt::Bookstore::implementation::BookSku**)。 即使如此，**make** 也会返回投影类型的实例。
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>将类型 **BookstoreViewModel** 的属性添加到 **MainPage**
 打开 `MainPage.idl`，这将声明表示主 UI 页面的运行时类。 添加导入语句以导入 `BookstoreViewModel.idl`，然后添加名为类型 **BookstoreViewModel** 的 MainViewModel 的只读属性。 此外删除**MyProperty**属性。 另请注意`import`指令在以下列表中。
@@ -252,7 +252,7 @@ namespace winrt::Bookstore::implementation
 {
     MainPage::MainPage()
     {
-        m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+        m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();
         InitializeComponent();
     }
 
