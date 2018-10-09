@@ -13,23 +13,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c48e054a0b00300df10a676b5d185411de06b505
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "301783"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4430271"
 ---
 # <a name="generate-a-3mf-package"></a>生成 3MF 程序包
-
-
-
 
 **重要的 API**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
-
-\[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 本指南介绍了 3D 制造格式文档的结构以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 创建和操作该文档。
 
