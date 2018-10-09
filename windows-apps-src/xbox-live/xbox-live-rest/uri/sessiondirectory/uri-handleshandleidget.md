@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f048d13c981bf07a124bd9637a36338b9dd3339
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4428212"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462158"
 ---
 # <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
 检索句柄 ID 指定的句柄

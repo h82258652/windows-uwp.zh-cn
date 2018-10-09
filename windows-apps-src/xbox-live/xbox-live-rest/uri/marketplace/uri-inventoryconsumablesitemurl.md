@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4418799"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4461963"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。

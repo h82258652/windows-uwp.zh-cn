@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ed26a509d75ea7b62705023b0e31850581adc66a
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421548"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4460656"
 ---
 # <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
 获取的游戏，这些用户，解锁或这些用户具有正在上定义的成就的列表。 这些 Uri 的域是`achievements.xboxlive.com`。

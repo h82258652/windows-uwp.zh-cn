@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a8bfe8a76b83c78886c48f7e15de274fe89a52a
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4424701"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4460751"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
 使执行团队后 （例如） 帐户劫持将当前用户的信誉评分设置为某些任意值。 这些 Uri 的域是`reputation.xboxlive.com`。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1b1741beaf1ffa2b034726a41c56339136e6f1
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4414937"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462081"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-for-managed-partners-and-idxbox-members"></a>为托管的合作伙伴和 ID@Xbox 成员集成 Xbox Live 的分步指南
 

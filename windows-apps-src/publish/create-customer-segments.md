@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 类别, 类别, 目标组, 客户
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec3bdd1d46927c9d6037906ebdb07e7a5c8f3f1
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4431251"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4461534"
 ---
 # <a name="create-customer-segments"></a>创建客户类别
 

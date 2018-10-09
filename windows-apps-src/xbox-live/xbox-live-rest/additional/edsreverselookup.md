@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4423805"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4461134"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
