@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: db832032a40b40d4b3a774a56487f7065d9cd8ff
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386390"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425002"
 ---
 # <a name="post-batch"></a>POST (/batch)
 发布充当跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法的方法。 这些 Uri 的域是`userstats.xboxlive.com`。

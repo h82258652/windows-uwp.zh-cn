@@ -1,10 +1,10 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: 数据绑定概述
 description: 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。
-ms.author: markl
-ms.date: 07/06/2018
+ms.author: stwhi
+ms.date: 10/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,13 +13,13 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-- cpp
-ms.openlocfilehash: c088aa6a2a8b1922eb93ec758dcda8c9a5ec8965
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+- cppcx
+ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389863"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426945"
 ---
 # <a name="data-binding-overview"></a>数据绑定概述
 
@@ -76,7 +76,7 @@ namespace Quickstart
 // Recording.idl
 namespace Quickstart
 {
-    runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+    runtimeclass Recording
     {
         Recording(String artistName, String compositionName, Windows.Globalization.Calendar releaseDateTime);
         String ArtistName{ get; };
@@ -91,7 +91,7 @@ import "Recording.idl";
 
 namespace Quickstart
 {
-    runtimeclass RecordingViewModel : Windows.UI.Xaml.DependencyObject
+    runtimeclass RecordingViewModel
     {
         RecordingViewModel();
         Quickstart.Recording DefaultRecording{ get; };
@@ -157,7 +157,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ...
 ```
 
-```cpp
+```cppcx
 // Recording.h
 #include <sstream>
 namespace Quickstart
@@ -278,7 +278,7 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ...
 ```
 
-```cpp
+```cppcx
 // MainPage.h
 ...
 #include "Recording.h"
@@ -395,7 +395,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ...
 ```
 
-```cpp
+```cppcx
 // Recording.h
 ...
 public ref class RecordingViewModel sealed
@@ -501,10 +501,10 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 > [!NOTE]
 > 到目前为止，本主题中我们仅使用了 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，而将在下面介绍的这两种技术要求更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-> [!IMPORTANT]
-> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后 （如下所述） [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
+如果你使用 C + + WinRT 或 Visual c + + 组件扩展 (C + + CX) 然后，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展时，你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要绑定到任何运行时类。 若要使用[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，不需要该属性。
 
-如果你使用 C + + WinRT 或 Visual c + + 组件扩展 (C + + CX) 然后，我们将使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展，因为你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到**录制**类。
+> [!IMPORTANT]
+> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
 
 首先介绍的是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技术。
 
@@ -517,11 +517,11 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 // Add this attribute:
 ...
 [Windows.UI.Xaml.Data.Bindable]
-runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+runtimeclass Recording
 ...
 ```
 
-```cpp
+```cppcx
 [Windows::UI::Xaml::Data::Bindable]
 public ref class Recording sealed
 {
@@ -678,7 +678,7 @@ namespace winrt::Quickstart::implementation
 }
 ```
 
-```cpp
+```cppcx
 ...
 public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
 {

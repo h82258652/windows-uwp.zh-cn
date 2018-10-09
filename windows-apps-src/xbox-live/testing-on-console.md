@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，游戏，xbox，xbox live，xbox one
 ms.localizationpriority: low
 ms.openlocfilehash: 5500f6f396d6dae179e434283097c34274d9b829
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391127"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426411"
 ---
 # <a name="testing-on-the-xbox-one-console"></a>在 Xbox One 主机上进行测试
 

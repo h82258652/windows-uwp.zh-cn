@@ -10,19 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 106ea458502a95c53ecbf02d9118f3c31ff43978
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389441"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429070"
 ---
 # <a name="create-a-windows-hello-login-app"></a>创建 Windows Hello 登录应用
-
-
-
-
-\[与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Windows Hello 作为传统用户名和密码身份验证系统的替代项。 该应用将用户名用于登录并为每个帐户创建 Hello 密钥。 这些帐户在配置 Windows Hello 时将受在 Windows 设置中设置的 PIN 的保护。
 

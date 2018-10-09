@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30de119b7c3a00730b698eb9d4938280669219a7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2848b9a7326bdac084120ec9b75f067718f14853
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958702"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4428878"
 ---
 # <a name="use-the-accelerometer"></a>使用加速计
 
@@ -28,8 +28,6 @@ ms.locfileid: "958702"
 **示例**
 
 -   有关更完整的实现，请参阅[加速计示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
-
-\[在商业发行之前可能会实质性修改与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 了解如何使用加速计响应用户移动。
 
