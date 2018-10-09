@@ -3,18 +3,18 @@ author: TerryWarwick
 title: 枚举 PointOfService 设备
 description: 了解如何枚举 PointOfService 设备
 ms.author: jken
-ms.date: 08/30/2018
+ms.date: 10/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e42ebb2eba7b6465be271e6095100c03798826f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4445615"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468706"
 ---
 # <a name="enumerating-point-of-service-devices"></a>枚举服务点设备
 在此部分，你将了解如何[定义设备选择器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)（用于向系统提供查询设备），以及如何通过以下方法之一使用此选择器枚举服务点设备：
@@ -60,9 +60,6 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 > 请参阅[生成设备选择器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)了解如何生成更高级的筛选器字符串。
 
 ## <a name="method-1-use-a-device-picker"></a>方法 1： 使用设备选取器
-
-> [!NOTE]
-> 此方法需要最新的[Windows SDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)。
 
 [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker)类允许你显示选取器浮出控件，其中包含可供选择的用户的设备的列表。 你可以使用[筛选器](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter)属性选择哪些类型的设备选取器中显示。 此属性属于类型[DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter)。 你可以将设备类型添加到使用[SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses)或[SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors)属性的筛选器。
 

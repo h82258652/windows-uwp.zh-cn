@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4428775"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462427"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析报告
 

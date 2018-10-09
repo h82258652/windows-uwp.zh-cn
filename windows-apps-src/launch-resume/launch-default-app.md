@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cdfc2beabb640764f85a5ee9f1b24e390b2f87a
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664067"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4469997"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>启动 URI 的默认应用
 
@@ -45,6 +45,7 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 |[ms-store:](#store-app-uri-scheme)  | “应用商店”应用 |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | 音调选取器 |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | “114 查号”应用 |
+|[msnweather:](#weather-app-uri-scheme) | 天气应用 |
 
 <br>
 例如，以下 URI 打开默认浏览器并显示必应网站。
@@ -240,3 +241,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 `ms-windows-store://home/`
 
 有关详细信息，请参阅[启动 UWP 应用](launch-store-app.md)。
+
+### <a name="weather-app-uri-scheme"></a>天气应用 URI 方案
+
+使用**msnweather:** URI 方案来启动天气应用。
+
+| URI 方案 | 结果 |
+|------------|---------|
+| msnweather://forecast?la= \[latitude\] 和 lo = \ [longitude\] | 启动天气应用中基于位置的地理坐标预测页。<br>`latitude` 指位置的纬度。<br> `longitude` 指的经度的位置。<br> |

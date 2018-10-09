@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ec6cf478097a6cd00af85d52112555650db35f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817142"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468746"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -70,12 +70,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |“设置”页面| URI |
 |-------------|-----|
-|访问工作或学校帐户 | ms-settings:workplace |
-|电子邮件和应用帐户  | ms-settings:emailandaccounts |
-|家人和其他人 | ms-settings:otherusers |
-|登录选项 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-|将设置进行同步 | ms-settings:sync |
-|你的信息 | ms-settings:yourinfo |
+| 访问工作或学校帐户 | ms-settings:workplace |
+| 电子邮件和应用帐户  | ms-settings:emailandaccounts |
+| 家人和其他人 | ms-settings:otherusers |
+| 登录选项 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+| 将设置进行同步 | ms-settings:sync |
+| Windows Hello 设置 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| 你的信息 | ms-settings:yourinfo |
 
 ## <a name="apps"></a>应用
 
@@ -86,16 +87,21 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 网站应用 | ms-settings:appsforwebsites |
 | 默认应用 | ms-settings:defaultapps |
 | 管理可选功能 | ms-settings:optionalfeatures |
+| 离线地图 | ms-settings:maps |
 | 启动应用 | ms-settings:startupapps |
+| 视频播放 | ms-settings:videoplayback |
 
 ## <a name="cortana"></a>Cortana
 
 |“设置”页面| URI |
 |-------------|-----|
-| Cortana 权限和历史记录 | ms-settings:cortana-permissions |
+| 权限和历史记录 | ms-settings:cortana-permissions |
 | 更多详细信息 | ms-settings:cortana-moredetails |
-| 通知 | ms-settings:cortana-notifications |
+| 在我的设备上的 Cortana | ms-settings:cortana-notifications |
 | 与 Cortana 交谈 | ms-settings:cortana-language |
+
+> [!NOTE] 
+> 在桌面上设置本节时将会调用搜索电脑设置为区域中的 Cortana 当前不可用或已禁用 Cortana 的位置。 在此情况下不会列出特定于 Cortana 的页面 (在我的设备，Cortana) 和 cortana 交谈。 
 
 ## <a name="devices"></a>设备
 
@@ -158,7 +164,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | “设置”主页 | ms-settings: |
 
 
-## <a name="network-wireless--internet"></a>网络、无线和 Internet
+## <a name="network--internet"></a>网络和 Internet
 
 |“设置”页面| URI |
 |-------------|-----|
@@ -189,9 +195,14 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 导航栏 | ms-settings:personalization-navbar |
 | 个性化（类别） | ms-settings:personalization |
 | “开始”菜单 | ms-settings:personalization-start |
-| 声音 | ms-settings:sounds |
 | 任务栏 | ms-settings:taskbar |
 | 主题 | ms-settings:themes |
+
+## <a name="phone"></a>电话
+
+|“设置”页面| URI |
+|-------------|-----|
+| 你的手机 | ms-settings:mobile-devices  |
 
 ## <a name="privacy"></a>隐私
 
@@ -257,7 +268,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 消息 | ms-settings:messaging |
 | 多任务 | ms-settings:multitasking |
 | 夜灯设置 | ms-settings:nightlight |
-| 离线地图 | ms-settings:maps |
 | 电话 | ms-settings:phone-defaultapps |
 | 投影到这台电脑 | ms-settings:project |
 | 共享体验 | ms-settings:crossdevice |
@@ -267,9 +277,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 远程桌面 | ms-settings:remotedesktop |
 | 电话 | ms-settings:phone |
 | 电源和睡眠 | ms-settings:powersleep |
+| 声音 | ms-settings:sounds |
 | 存储 | ms-settings:storagesense |
 | 存储感知 | ms-settings:storagepolicies |
-| 视频播放 | ms-settings:videoplayback |
 
 ## <a name="time-and-language"></a>时间和语言
 
@@ -290,21 +300,15 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 备份 | ms-settings:backup |
 | 传递优化 | ms-settings:delivery-optimization |
 | 查找我的设备 | ms-settings:findmydevice |
+| 适用于开发人员 | ms-settings:developers |
 | 恢复 | ms-settings:recovery |
 | 疑难解答 | ms-settings:troubleshoot |
-| Windows Defender | ms-settings:windowsdefender |
-| Windows Hello 设置 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Windows 安全中心 | ms-settings:windowsdefender |
 | Windows 预览体验计划 | ms-settings:windowsinsider（仅当用户在 WIP 中注册时显示） |
 | Windows 更新 | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows 更新 - 高级选项 | ms-settings:windowsupdate-options |
 | Windows 更新 - 重启选项 | ms-settings:windowsupdate-restartoptions |
 | Windows 更新 - 查看更新历史记录 | ms-settings:windowsupdate-history |
-
-## <a name="developers"></a>开发人员
-
-|“设置”页面| URI |
-|-------------|-----|
-| 适用于开发人员 | ms-settings:developers |
 
 ## <a name="user--accounts"></a>用户帐户
 

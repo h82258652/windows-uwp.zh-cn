@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72081a87ece7f1ab0b92ce66a5fdb3e380d0d4cb
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 3d6cce2a38624339016acbad51693de1ade50678
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4417445"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465642"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -52,7 +52,7 @@ ms.locfileid: "4417445"
 | **录制的通话文件夹**\* | **recordedCallsFolder** 设备功能允许应用访问记录的通话文件夹。<br /><br />当在应用的程序包清单中声明 **recordedCallsFolder** 功能时，该功能必须包含 **mobile** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;mobile:Capability Name="recordedCallsFolder"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **用户帐户信息**\* | **userAccountInformation** 功能使应用能够访问用户的名称和头像。<br /><br />若要访问 [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.System.UserProfile) 命名空间中的某些 API，此功能是必需的。<br /><br />当在应用的程序包清单中声明 **userAccountInformation** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="userAccountInformation"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **VOIP 呼叫** | **voipCall** 功能允许应用访问 [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 命名空间中的 VOIP 呼叫 API。<br /><br />当在应用的程序包清单中声明 **voipCall** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="voipCall"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
-| **3D 对象** | **objects3D** 功能允许应用编程访问 3D 对象文件。 此功能通常用在需要访问整个 3D 对象库的 3D 应用和游戏中。<br /><br />若要使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命令空间中的 API 访问包含 3D 对象的文件夹，则需要此功能。<br /><br />当在应用的程序包清单中声明 **objects3D** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="objects3d"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **3D 对象** | **objects3D** 功能允许应用编程访问 3D 对象文件。 此功能通常用在需要访问整个 3D 对象库的 3D 应用和游戏中。<br /><br />若要使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命令空间中的 API 访问包含 3D 对象的文件夹，则需要此功能。<br /><br />当在应用的程序包清单中声明 **objects3D** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="objects3D"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **读取阻止的消息**\* | **blockedChatMessages** 功能允许应用读取已由“垃圾邮件筛选器”应用阻止的短信和彩信。<br /><br />若要使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命令空间中的 API 访问已阻止的消息，则需要此功能。<br /><br />当在应用的程序包清单中声明 **blockedChatMessages** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="blockedChatMessages"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **自定义设备** | **LowLevelDevices**功能允许应用访问自定义设备满足大量其他要求时。 不要将此功能通过**lowLevel**设备功能，它允许访问 GPIO，I2C，SPI 和 PWM 设备相混淆。<br /><br /> 如果你想要打开此设备的句柄和发送 Ioctl 开发公开[设备接口](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的自定义驱动程序，你必须<ul><li>启用应用程序清单中的**lowLevelDevices**功能： <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></li><li>启用[嵌入的模式](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)</li><li>将设备接口标记为[受限制](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)，在[INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)中或通过调用[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)中你的驱动程序。</ul>  <br /><br />然后，你可以使用[**Windows.Devices.Custom.CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)打开到你的设备的句柄。 有关详细信息，请参阅[适用于内部设备的 UWP 设备应用](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)。
 | **IoT 系统管理** | **systemManagement** 功能允许应用具有基本的系统管理权限，例如关机或重启、区域设置和时区。<br /><br />若要访问 [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814) 命名空间中的某些 API，则需要此功能。<br /><br />当在应用的程序包清单中声明 **systemManagement** 功能时，该功能必须包含 **iot** 命名空间，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="systemManagement"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
@@ -144,7 +144,7 @@ ms.locfileid: "4417445"
 | **设备解锁** | **deviceUnlock** 受限功能允许应用解锁用于开发人员和企业旁加载方案的设备。<br /><br /> 我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 |
 | **双重 SIM 卡磁贴** | **dualSimTiles** 受限功能允许应用在具有多张 SIM 卡的设备上创建额外的应用列表项。<br /><br />若要使用 [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) 命名空间中的某些 API，则需要该功能。 |
 | **企业共享的存储** | **enterpriseDeviceLockdown** 受限功能允许应用使用设备锁定 API 和访问企业共享存储文件夹。 <br /><br />我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 |
-| **系统输入式注入** | **inputInjection** 受限功能允许应用以编程方式将各种形式的输入（如 HID、触摸、笔、键盘或鼠标）注入系统中。 该功能通常用于可控制系统的协作应用。<br /><br />对于电脑，只有位于同一应用容器中的进程才会收到来自应用的具有该功能的输入式注入。  |
+| **系统输入式注入** | **InputInjectionBrokered**受限功能允许应用以编程方式将各种形式的输入，例如 HID、 触摸、 笔、 键盘或鼠标到系统。 该功能通常用于可控制系统的协作应用。<br /><br />对于电脑，只有位于同一应用容器中的进程才会收到来自应用的具有该功能的输入式注入。<br /><br />```<Capabilities><rescap:Capability Name="inputInjectionBrokered" /></Capabilities>``` |
 | **观察输入**\* | **inputObservation** 受限功能允许应用观察要由系统接收的各种形式的原始输入（如 HID、触摸、笔、键盘或鼠标），而不考虑其最终目标。  |
 | **禁止显示输入** | **inputSuppression** 受限功能允许应用隐藏要由系统接收的各种形式的原始输入，例如 HID、触摸、笔、键盘或鼠标。
 | **VPN 应用** | **networkingVpnProvider** 受限功能允许应用具有对 VPN 功能的完整访问权限，包括管理连接和提供 VPN 插件功能的能力。<br /><br />若要使用 [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040) 命名空间中的某些 API，则需要该功能。 |
@@ -207,7 +207,7 @@ ms.locfileid: "4417445"
 | **企业云单一登录** | **enterpriseCloudSSO** 功能允许应用针对托管的 Web 视图控件内的 Azure Active Director (AAD) 资源使用单一登录。 |
 | **自动接受 VoIP 呼叫** | **backgroundVoIP** 功能允许开发人员自动接收并接受传入的 VoIP 呼叫，而无需用户明确接受呼叫。 利用该功能的应用会被授予对相机和麦克风的完全控制，并且可以在后台使用这些资源。<br /><br />我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 |
 | **开发模式网络** | **developmentModeNetwork** 功能允许应用在调用 C++/CX UWP 应用或 C++ Windows 运行时组件中的 OpenFile Win32 API 时使用已登录用户的凭据访问网络路径。 <br /><br />我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 |
-| **广泛的文件系统访问** | **broadFileSystemAccess** 功能允许应用获取与当前运行该应用的用户相同的文件系统访问权限，且在运行期间无需任何额外的文件选取器样式提示符。<br/><br/>此功能适用于 [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API。 请务必注意，第一次通过此功能（已在应用程序包清单中声明）使用任何 **Windows.Storage** API 都将触发用户同意提示，用户可以在此授予或拒绝权限。 用户也可以在任何设置切换点允许或拒绝权限。 除该功能外，不声明任何特殊的文件夹功能（如**文档**、**图片**或**视频**）同样很重要。 |
+| **广泛的文件系统访问** | **broadFileSystemAccess** 功能允许应用获取与当前运行该应用的用户相同的文件系统访问权限，且在运行期间无需任何额外的文件选取器样式提示符。 请务必注意，不需要此功能即可访问用户具有已选择使用 FilePicker 或 FolderPicker 的文件。<br/><br/>此功能适用于 [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API。 请务必注意，第一次通过此功能（已在应用程序包清单中声明）使用任何 **Windows.Storage** API 都将触发用户同意提示，用户可以在此授予或拒绝权限。 用户也可以在任何设置切换点允许或拒绝权限。 除该功能外，不声明任何特殊的文件夹功能（如**文档**、**图片**或**视频**）同样很重要。 |
 | **系统固件和 BIOS** | **smbios** 功能允许应用访问 BIOS 数据和系统固件数据。 |
 | **完全信任权限级别** | **RunFullTrust**受限功能允许应用在用户的计算机上运行完全信任权限级别。 若要使用[FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API，则需要此功能。<br /><br />此功能也是必需的 appx 或 msix 包作为交付任何桌面应用程序 （与[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)），和打包这些应用使用 Desktop App Converter (DAC) 时将自动显示在你的清单或Visual Studio。 |
 | **提升权限** | **AllowElevation**受限功能允许应用创建的 Microsoft 合作伙伴和企业以保留需要自动提升在启动或在应用的生存期内的现有桌面功能。<br/><br/>我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 它仅为通过适用于企业的 Microsoft 应用商店其专用应用商店向企业部署的业务线应用批准。  |
