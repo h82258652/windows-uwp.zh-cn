@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 标题存储
 ms.localizationpriority: medium
 ms.openlocfilehash: b74dd1943764b7dcfc7a635e569ed9bbd5d8e24b
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421577"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4460535"
 ---
 # <a name="storing-a-binary-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中存储二进制文件 blob
 

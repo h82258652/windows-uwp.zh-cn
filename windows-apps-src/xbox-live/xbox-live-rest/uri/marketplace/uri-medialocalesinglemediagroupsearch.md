@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e99fc70db836c36d8f92a4b4c4b12ec8e75c47e1
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421680"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4460681"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
 允许搜索单个媒体组中的项。 请注意，此搜索从返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询优化器。
