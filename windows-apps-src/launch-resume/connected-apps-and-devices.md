@@ -11,11 +11,11 @@ keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467380"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504298"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目“Rome”）
 
@@ -39,5 +39,5 @@ Windows 10 版本 1607 中引入了[远程系统 API](https://msdn.microsoft.com
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
 | [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
 | [通过远程会话连接设备](remote-sessions.md) | 通过在远程会话中加入多个设备来创建跨多个设备的共享体验。 |
-| [即便跨设备，也继续用户活动](useractivities.md)| 帮助用户继续执行他们之前在应用中，甚至是在多台设备。|
-| [用户活动的最佳做法](useractivities-best-practices.md)| 了解有关创建和更新用户活动的建议的做法。|
+| [即便跨设备，也继续用户活动](useractivities.md)| 帮助用户继续执行他们之前在应用中，即使跨多台设备。|
+| [用户活动的最佳做法](useractivities-best-practices.md)| 了解用于创建和更新用户活动的推荐的做法。|

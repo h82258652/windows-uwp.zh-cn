@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
 ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460662"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503817"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -207,7 +207,7 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 如果主题作品已准备好公开发行，则首先需要进行认证。 CERT 沙盒是 Microsoft 控制的沙盒，只有认证中的个人用户才能访问该沙盒。 发布者可以查看他们拥有的哪些内容将进行认证。
 
-无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复由发布者使用 XDP 或 Windows 开发人员中心。
+无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复的发布者使用 XDP 或 Windows 开发人员中心。
 
 <a name="retail-sandbox"></a>RETAIL 沙盒
 --------------

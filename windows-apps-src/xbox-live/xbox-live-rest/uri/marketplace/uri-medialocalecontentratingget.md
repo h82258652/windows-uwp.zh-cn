@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 456ae44dcffeede64011719c02dbeb3806792405
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467855"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503578"
 ---
 # <a name="get-mediamarketplaceidcontentrating"></a>GET (/media/{marketplaceId}/contentRating)
 获取该内容分级令牌。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -30,14 +30,14 @@ ms.locfileid: "4467855"
  
 ## <a name="remarks"></a>备注
  
-强制执行家长控制子级被允许看到的内容是在复杂的任务。 每个媒体项类型具有其自己的分级系统，不仅那些分级系统可能会有所不同，随国家。 这意味着需要指定正确筛选的所有项的数据的多个不同部分。
+强制执行家长控制子级被允许看到的内容是在复杂的任务。 每个媒体项类型具有其自己的分级系统，不仅这些分级系统可能会有所不同，国家。 这意味着需要指定正确筛选的所有项的数据的多个不同部分。
  
-而不是在所有 API 调用中指定的所有参数，此 API 生成一个值，以将传递到其他 Api 中的**combinedContentRating**参数，仍传达相同的信息。 这旨在使 Api 更易于使用和维护，如传递到此 API 的多个参数处于折叠状态转换为单个、 可重复使用的值为其他 Api。
+而不是在所有 API 调用中指定的所有参数，此 API 生成一个值，以将传递到其他 Api 中的**combinedContentRating**参数，仍传达相同信息。 这被设计使 Api 更易于使用和维护，如传递到此 API 的多个参数处于折叠状态转换为单个、 可重复使用的值为其他 Api。
  
-尽管此 api 返回的确切值最终可能会更改，它们应很少更改 （例如版本的娱乐发现服务 (EDS)），因此可能很长一段时间为缓存。 接受**combinedContentRating**参数将提供有意义的错误消息，如果传入的值是无效的这是指示任何 API 调用方只需要调用此 API 再次以获取更新的值。 如果 API 接受**combinedContentRating**参数，但其中一个未提供，任何筛选的内容会发生具体取决于家长控制。 
+尽管此 API 返回的确切值可能会最终更改，它们应很少更改 （例如版本的娱乐发现服务 (EDS)） 并因此可以为长时间内缓存。 接受**combinedContentRating**参数将提供有意义的错误消息，如果传入的值是无效的这是指示任何 API 调用方只需要调用此 API 再次来获取更新的值。 如果 API 接受**combinedContentRating**参数，但其中一个未提供，任何筛选的内容将基于家长控制。 
 
 > [!NOTE] 
-> 这并不意味着，返回仅"安全"内容-这意味着，返回所有内容，包括显式潜在的内容。 
+> 这并不意味着，返回仅"安全"内容-这意味着，返回所有内容，包括潜在显式的内容。 
 
 
   

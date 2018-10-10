@@ -8,14 +8,14 @@ ms.date: 08/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 查看、 注释和审阅者
+keywords: windows 10，uwp，查看、 注释，审阅者
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471320"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499878"
 ---
 # <a name="reviews-report"></a>评价报告
 
@@ -24,7 +24,7 @@ ms.locfileid: "4471320"
 
 可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，你可以通过[Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[获取应用评价](../monetize/get-app-reviews.md)的方法以编程方式检索此数据。
 
-你还可以响应客户评论[直接在此页](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或通过使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+你还可以响应客户评论[直接通过此页面](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或通过使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
 > [!TIP]
 > 若要快速查看最近 30 天中所有应用的评论、评分和用户反馈，请在左侧导航菜单中展开**参与**，然后选择**评论和反馈。** 
@@ -63,9 +63,9 @@ ms.locfileid: "4471320"
 > [!TIP]
 > 客户在应用商店中看到的平均评分会考虑客户的市场和设备类型，因此可能不同于在此报告中看到的内容。
 
-请注意，此图表始终包括所有评价，即使你选择**查看内容**页面筛选器中的**带有评论的评分内容**。
+请注意，此图表始终包括所有评价，即使你选择**查看内容**页面筛选器中的**评论内容的评分**。
 
-此外可以在[评分报告](ratings-report.md)，以及有关你的应用评分的更多详细信息中看到此图。
+此图表还可以在[评分报告](ratings-report.md)，以及有关你的应用评分的更多详细信息。
 
 
 <span id = "review-insight-categories" />
@@ -88,7 +88,7 @@ ms.locfileid: "4471320"
 
 -   客户提供的标题和评论文本。 （使用 Windows Phone 8.1 及较早版本的客户所撰写的评论将不带有标题。）
 -   评论的日期。
--   评论者的名称将显示在 Microsoft Store 中。
+-   在 Microsoft Store 中显示的评论者名称。
 -   评论者所在的国家/地区。
 -   客户进行评论时其设备上的应用程序包版本。 （此信息不适用于在线提交的评论或使用 Windows8.1 及较早版本的客户所提交的评论。）
 -   客户进行评论时所使用设备的操作系统版本。
@@ -111,7 +111,7 @@ ms.locfileid: "4471320"
 
 请注意，评论将由自动翻译系统翻译，翻译结果翻译可能并不总是准确。 如果希望对照翻译或者通过其他方式进行翻译，会提供原始文本。
 
-如上所述，当搜索评论，仅留下的客户的原始文本搜索 （并不是任何已翻译的文本），即使你已**翻译评论**框处于选中状态。
+如上所述，当搜索评论，搜索仅留下的客户的原始文本 （和不任何已翻译的文本），即使你已**翻译评论**框处于选中状态。
 
 
 ## <a name="responding-to-customer-reviews"></a>回复客户评论

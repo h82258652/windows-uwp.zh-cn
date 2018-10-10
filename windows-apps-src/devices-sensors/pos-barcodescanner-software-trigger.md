@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464530"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500372"
 ---
 # <a name="use-a-software-trigger"></a>使用软件触发器
 
@@ -33,7 +33,7 @@ ms.locfileid: "4464530"
 > [!Important]
 > 通过首先检查属性 [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported) 确认你的条形码扫描仪支持使用软件触发器。
 
-下面的示例演示了如何启动使用软件触发器，这将阻止扫描后它扫描一个条形码扫描：
+以下示例演示了如何启动使用软件触发器，这将阻止扫描后它扫描一个条形码扫描：
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 

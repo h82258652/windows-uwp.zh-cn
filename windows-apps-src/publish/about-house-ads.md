@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467926"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498207"
 ---
 # <a name="about-house-ads"></a>关于自家广告
 
 
 你可以创建一则广告以在你的其他应用中免费推广你的某个应用。 我们将这些广告称为*自家广告*。
 
-自家广告将仅出现在你自己配置为[显示来自 Microsoft 的广告](../monetize/display-ads-in-your-app.md)的应用。
+自家广告将仅出现在你自己被配置为[显示来自 Microsoft 的广告](../monetize/display-ads-in-your-app.md)的应用。
 
 若要设置自家广告，在[创建广告市场活动](create-an-ad-campaign-for-your-app.md)时，选择**自家广告（免费）** 作为**市场活动类型**。 该广告将能够自动出现在你的符合以下标准的任一应用中：
 

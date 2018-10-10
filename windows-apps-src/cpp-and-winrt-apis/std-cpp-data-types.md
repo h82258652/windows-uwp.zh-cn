@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
 ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470086"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503636"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
 
-与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用标准 c + + 数据类型，包括一些 c + + 标准库数据类型。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到预期语义上等效的集合的 Api。
+与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用标准 c + + 数据类型，包括一些 c + + 标准库数据类型。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到预期语义上等效集合的 Api。
 
 ## <a name="standard-initializer-lists"></a>标准初始值列表
 初始值列表 (**std::initializer_list**) 是 C++ 标准库构造。 在调用特定的 Windows 运行时构造函数和方法时，你可以使用初始值列表。 例如，你可以使用一个初始值列表来调用 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。
@@ -133,7 +133,7 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 有关更多示例和信息，请参阅 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API 参考主题。
 
 ## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** 和标准迭代构造
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是一个 Windows 运行时 API，返回类型的集合的示例[**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (投影到 C + + /winrt， **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 你可以使用此类型与标准迭代构造，如基于范围的`for`。
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是 Windows 运行时 API 返回的类型的集合的示例[**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (投影到 C + + /winrt， **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 你可以使用此类型与标准迭代构造，如基于范围的`for`。
 
 ```cppwinrt
 // main.cpp

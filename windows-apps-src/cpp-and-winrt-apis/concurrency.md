@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f29828a800795aba70c17bcab19b56b85d56382
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466477"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499651"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>通过 C++/WinRT 的并发和异步操作
 
-本主题介绍了可以这两种方式创建和使用与 Windows 运行时异步对象[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主题介绍了可以这两种方式创建和使用 Windows 运行时异步对象[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>异步操作和 Windows 运行时“异步”函数
 有可能需要超过 50 毫秒才能完成的任何 Windows 运行时 API 将实现为异步函数（具有一个以“Async”结尾的名称）。 异步函数的实现将启动另一线程上的工作，并且立即返回表示异步操作的对象。 在异步操作完成后，返回的对象会包含从该工作中生成的任何值。 **Windows::Foundation** Windows 运行时命名空间包含四种类型的异步操作对象。
@@ -356,9 +356,9 @@ int main()
 
 如果你运行上述示例，则你将看到**ImplicitCancellationAsync**打印一条消息每秒三秒之后, 自动时间终止由于被取消。 这样做的原因，在遇到`co_await`表达式，协同程序会检查是否已被取消。 如果有，则它会使短路并且，如果没有，则它会暂停为正常。
 
-在协同程序暂停时，取消可以当然，会发生。 仅协同程序恢复时，或点击另一个`co_await`，它将检查取消。 该问题是可能太粗糙-粒度延迟响应取消之一。
+在该协同程序暂停时，取消，当然，会发生。 仅协同程序恢复时，或点击另一个`co_await`，它将检查取消。 问题是延迟的可能太粗糙-粒度响应取消。
 
-因此，另一个选项是显式轮询从协同程序内取消。 使用以下列表中的代码更新上面的示例。 在此新的示例中， **ExplicitCancellationAsync**检索[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函数中，返回的对象，并使用它来定期检查是否已取消协同程序。 只要其不被取消后，该协同程序之间无限;一旦其被取消后，该循环并将该函数正常退出。 由于之前示例中，但此处退出事件在发生显式方法，并具有唯一控制权，结果都是相同的。
+因此，另一个选项是显式轮询从协同程序中取消。 使用以下列表中的代码更新上面的示例。 在此新的示例中， **ExplicitCancellationAsync**检索[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函数中，返回的对象，并使用它来定期检查是否已取消协同程序。 只要它不会取消，该协同程序之间无限;一旦其被取消后，该循环并将该函数正常退出。 如前面的示例，但此处退出发生显式方法，并控制，结果都是相同的。
 
 ```cppwinrt
 ...
@@ -382,12 +382,12 @@ IAsyncAction MainCoroutineAsync()
 ...
 ```
 
-等待**winrt::get_cancellation_token**检索与你的名义**IAsyncAction**协同程序是在生成的知识取消令牌。 你可以使用该令牌上函数调用运算符查询取消状态&mdash;本质上轮询取消。 如果要执行一些计算密集型操作，或循环访问较大的集合，这是合理的技术。
+等待**winrt::get_cancellation_token**检索取消令牌代表你的协同程序生成**IAsyncAction**知识。 你可以使用该令牌函数调用运算符查询取消状态&mdash;本质上轮询取消。 如果你正在执行一些计算密集型操作，或循环访问较大的集合，则这是合理的技术。
 
 ### <a name="register-a-cancellation-callback"></a>注册取消回调
-Windows 运行时取消不会自动流向其他异步对象。 但是&mdash;在 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年) 中引入&mdash;你可以注册取消回调。 这是性挂钩的取消程度可以传播，并使其成为可能与现有的并发库集成。
+在 Windows 运行时取消不会自动流到其他异步对象。 但是&mdash;在 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年) 中引入&mdash;你可以注册取消回调。 这是性挂钩的取消程度可以传播，并使其可以与现有的并发库集成。
 
-在下一个代码示例， **NestedCoroutineAsync**执行的工作，但它没有特殊取消逻辑在其中。 **CancellationPropagatorAsync**是实质上是嵌套协同程序; 在包装器包装器将优先转发取消。
+在此下一个代码示例中， **NestedCoroutineAsync**执行的工作，但它没有特殊取消逻辑中。 **CancellationPropagatorAsync**是本质上的嵌套协同程序; 在包装器包装器将优先转发取消。
 
 ```cppwinrt
 // pch.h
@@ -437,11 +437,11 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync**注册其自己的取消回调，lambda 函数，然后等待 （它会暂停） 嵌套的工作完成后才。 当或**CancellationPropagatorAsync**被取消后，它会传播到嵌套协同程序取消。 若要轮询取消; 无需也不会被取消阻止无限期。 此机制非常灵活，你可以使用它向互操作具有协同程序或并发库知道任何 C + WinRT。
+**CancellationPropagatorAsync**注册其自己的取消回调，lambda 函数，然后等待 （它会暂停） 嵌套的工作完成后才。 当或取消**CancellationPropagatorAsync** ，它会传播到嵌套协同程序取消。 若要轮询取消; 无需也不会被取消阻止无限期。 此机制是灵活，可以使用它向互操作具有协同程序或并发库知道任何 C + WinRT。
 
 ## <a name="reporting-progress"></a>报告进度
 
-如果你的协同程序返回[**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)或[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，然后你可以检索[**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token)函数中，返回的对象并使用它回进度报告进度处理程序。 下面是代码示例。
+如果你的协同程序返回[**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)或[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，然后你可以检索[**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token)函数中，返回的对象并使用它返回到进度报告进度处理程序。 下面是代码示例。
 
 ```cppwinrt
 // pch.h
@@ -520,7 +520,7 @@ double pi{ co_await async_op_with_progress };
 
 ## <a name="fire-and-forget"></a>触发，并且忘记
 
-有时，你的任务可与其他工作，同时完成并且你无需等待完成该任务 （任何其他工作取决于它），是否需要它返回一个值，也不会。 在此情况下，你可以关闭该任务触发，并且忘记它。 你可以通过编写协同程序其返回类型是[**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) （而不是一种 Windows 运行时异步操作类型或**concurrency:: task**） 来执行该操作。
+有时，你的任务可与其他工作，同时完成并且你无需等待完成该任务 （任何其他工作取决于它），你需要返回一个值，也不会。 在此情况下，你可以关闭该任务触发，并且忘记它。 你可以通过编写协同程序其返回类型是[**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) （而不是一种 Windows 运行时异步操作类型或**concurrency:: task**） 来执行该操作。
 
 ```cppwinrt
 // pch.h

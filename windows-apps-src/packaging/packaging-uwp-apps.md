@@ -14,17 +14,17 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472820"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502856"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
 若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要将其打包。 如果你不想通过 Microsoft Store 分发应用，也可以将应用包直接旁加载到设备上或通过 [Web 安装](installing-UWP-apps-web.md)分发它。 本文介绍使用 Visual Studio 配置、创建和测试 UWP 应用包的过程。 有关管理和部署业务线 (LOB) 应用的详细信息，请参阅[企业应用管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，你可以提交应用包、 应用程序包或向 Windows 开发人员中心完整的应用包上传文件。 在上述选项中，提交包上传文件将提供最佳的体验。 
+在 Windows 10 中，你可以提交应用包、 应用程序包或在 Windows 开发人员中心为完整的应用包上传文件。 在上述选项中，提交包上传文件将提供最佳的体验。 
 
 ## <a name="types-of-app-packages"></a>应用包类型
 
@@ -80,7 +80,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="create-an-app-package-upload-file"></a>创建应用包上传文件
 
-若要通过 Microsoft 应用商店分发应用必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到开发人员中心打包的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可以单独向开发人员中心提交应用包或应用程序包，但我们鼓励你提交上传包。
+若要通过 Microsoft 应用商店分发应用，你必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到开发人员中心的封装的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可以单独向开发人员中心提交应用包或应用程序包，但我们鼓励你提交上传包。
 
 >[!NOTE]
 > 应用包上传文件 (.appxupload) 是**唯一**一种能够使用 Visual Studio 创建的对开发人员中心有效的应用包类型。 其他有效的[可以手动创建的应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，无需使用 Visual Studio。 

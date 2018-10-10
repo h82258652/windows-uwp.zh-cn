@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469997"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502593"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>启动 URI 的默认应用
 
@@ -248,4 +248,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案 | 结果 |
 |------------|---------|
-| msnweather://forecast?la= \[latitude\] 和 lo = \ [longitude\] | 启动天气应用中基于位置的地理坐标预测页。<br>`latitude` 指位置的纬度。<br> `longitude` 指的经度的位置。<br> |
+| msnweather://forecast?la= \[latitude\] 和 lo = \ [longitude\] | 启动天气应用中基于位置的地理坐标的预测页面。<br>`latitude` 指位置的纬度。<br> `longitude` 指的经度的位置。<br> |

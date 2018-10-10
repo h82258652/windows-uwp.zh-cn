@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 03da8b482dcfb8a4972fee69c0e3995d792cb87a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470741"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498399"
 ---
 # <a name="get-globalscidssciddatapathandfilenametype"></a>GET (/global/scids/{scid}/data/{pathAndFileName},{type})
 下载文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -39,7 +39,7 @@ ms.locfileid: "4470741"
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_) 和正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （设置到阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （最终正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
 | type| 字符串| 数据的格式。 可能的值为： 二进制文件、 配置或 json。| 
   
 <a id="ID4ECB"></a>
@@ -58,8 +58,8 @@ ms.locfileid: "4470741"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| 选择| 字符串| 仅 json 类型时才可用。 指定响应只应包含某个属性/值的 JSON，通过此参数确定。 使用一个"点"（.） 来指定子属性和放在方括号 ([和]) 来指定数组索引。 例如，"array1 [4].prop2"指定"array1"数组索引 4"prop2"属性。| 
-| customSelector| 字符串| 用于配置类型文件。 指示哪些自定义虚拟节点包含。 配置类型文件的详细信息，请参阅标题存储。| 
+| 选择| 字符串| 仅 json 类型时才可用。 指定响应应仅包含某些属性/值的 JSON，由此参数。 使用"点"（.） 来指定子属性，并放在方括号 ([和]) 来指定数组的索引。 例如，"array1 [4].prop2"指定"array1"数组的索引 4"prop2"属性。| 
+| customSelector| 字符串| 用于配置类型文件。 指示自定义虚拟节点包含。 配置类型文件的详细信息，请参阅标题存储。| 
   
 <a id="ID4EZC"></a>
 
@@ -69,7 +69,7 @@ ms.locfileid: "4470741"
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4ECE"></a>
 
@@ -116,7 +116,7 @@ ms.locfileid: "4470741"
  
 | 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ETag| ETag 是由对某一 URL 找到资源的特定版本的 web 服务器分配一个不透明标识符。 如果在该 URL 处的资源内容发生改变，被分配新功能和不同的 ETag。| 
+| ETag| ETag 是资源的由对某一 URL 中找到的特定版本的 web 服务器分配一个不透明标识符。 如果位于该 URL 的资源内容发生改变，被分配新功能和不同的 ETag。| 
 | 内容区域| 如果这部分下载，此标头指定下载的字节范围。| 
   
 <a id="ID4EPEAC"></a>

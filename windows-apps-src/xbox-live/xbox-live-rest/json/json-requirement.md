@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469185"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499274"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
 解锁条件成就和远用户是向会议它们。 
@@ -32,7 +32,7 @@ ms.locfileid: "4469185"
 | id| 字符串| 要求的 ID。| 
 | 当前| 字符串| 要求的进度的当前值。| 
 | target| 字符串| 要求的目标值。| 
-| ： 键入| 字符串| 要求操作类型。 有效值为总和、 最小值、 最大值。| 
+| ： 键入| 字符串| 要求操作类型。 有效值为总和、 最小值、 最大。| 
 | ruleParticipationType| 字符串| 要求参与类型。 有效值为个人，组。| 
   
 <a id="ID4ETC"></a>

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470338"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502264"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
@@ -92,7 +92,7 @@ ms.locfileid: "4470338"
 | 200| “确定”| 所有字符串都已成功都处理。 这并不一定意味着所有字符串都必须正面的 Hresult。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
-| 406| 不允许| 缺少<b>content-type： 应用程序/json</b>标头。| 
+| 406| 不允许| 缺少<b>内容类型： 应用程序/json</b>标头。| 
 | 408| 请求超时| 服务可能不理解格式不正确的请求。 通常无效参数。| 
   
 <a id="ID4ETF"></a>
@@ -100,7 +100,7 @@ ms.locfileid: "4470338"
  
 ## <a name="response-body"></a>响应正文
  
-返回[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
+返回的[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，该请求数组大小相同的数组。
   
 <a id="ID4EAG"></a>
 

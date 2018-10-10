@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461963"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504262"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。
@@ -31,7 +31,7 @@ ms.locfileid: "4461963"
 
 | 参数| 类型| 描述|
 | --- | --- | --- |
-| itemID| 字符串| 为单数库存项目的每个用户的唯一 ID|
+| itemID| 字符串| 特定于每个用户单数库存项目的 ID|
 
 <a id="ID4ERB"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4461963"
 
 [POST ({itemID})](uri-inventoryconsumablesitemurlpost.md)
 
-&nbsp;&nbsp;指示，已使用全部或部分的易耗型库存项目和递减请求的距离该消耗品的数量。
+&nbsp;&nbsp;指示，已使用所有或易耗型库存项目的部分和递减请求量该消耗品的数量。
 
 <a id="ID4E4B"></a>
 

@@ -15,11 +15,11 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb400da4b3abe61e086732eaceb0e53fd1b005
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466674"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499392"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>使用手写视图的文本输入
 
@@ -29,9 +29,9 @@ ms.locfileid: "4466674"
 
 ## <a name="overview"></a>概述
 
-XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and-stylus-interactions.md)嵌入的支持。 当用户点击到使用 Windows 手写笔的文本输入框时，文本框将转换为手写图面，而不是打开一个单独的输入的面板。
+XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and-stylus-interactions.md)的嵌入式的支持。 当用户点击到使用 Windows 手写笔的文本输入框时，文本框将转换为手写图面，而不是打开一个单独的输入的面板。
 
-当用户书写时任意位置在文本框中和候选窗口显示识别结果，将识别文本。 用户可以点击结果进行选择，也可以继续书写以接受建议的候选字词。 候选窗口中包含文本（以及字母）识别结果，因此识别不限于字典中的字词。 当用户书写时，接受的文本输入会被转换为保持自然书写感觉的脚本字体。
+当用户书写时任意位置中的文本框中，另一个候选窗口显示识别结果，将识别文本。 用户可以点击结果进行选择，也可以继续书写以接受建议的候选字词。 候选窗口中包含文本（以及字母）识别结果，因此识别不限于字典中的字词。 当用户书写时，接受的文本输入会被转换为保持自然书写感觉的脚本字体。
 
 > [!NOTE]
 > 默认情况下，启用手写视图，但你可以禁用基于每个控件并改为恢复为文本输入面板。
@@ -52,7 +52,7 @@ XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and
 
 默认情况下启用内置手写视图。
 
-你可能想要禁用手写视图，如果你已经提供等效到文本转换墨迹功能在你的应用程序，或你的文本输入的体验依赖于某种类型的格式设置或特殊字符 （如选项卡） 通过手写不可用。
+你可能想要禁用手写视图，如果你已在你的应用程序中, 提供等效到文本转换墨迹功能或文本输入的体验依赖于某种类型的格式设置或特殊字符 （如选项卡） 通过手写不可用。
 
 在此示例中，我们通过[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)控件[IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled)属性设置为 false 禁用手写视图。 支持手写视图的所有文本控件都支持的一个类似属性。
 
@@ -67,11 +67,11 @@ XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and
 
 ## <a name="specify-the-alignment-of-the-handwriting-view"></a>指定手写视图的对齐方式
 
-手写视图是位于上方基础的文本控件和调整大小以适应用户的手写首选项 (请参阅**设置-> 设备-> 笔和 Windows Ink-> 手写时直接写入文本字段-> 的字体大小**). 视图还会自动对齐相对于文本控件和应用内的其位置。
+手写视图是上方基础的文本控件和调整大小以适应用户的手写首选项 (请参阅**设置-> 设备-> 笔和 Windows Ink-> 手写时直接写入文本字段-> 的字体大小**). 视图还会自动相对于文本控件和应用内的位置对齐。
 
 应用程序 UI 不会重排以适应更大的控件，因此，系统可能会导致视图以会阻挡重要的 UI。
 
-此处，我们显示了如何使用[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment)属性来指定哪些基础的文本控件上的定位点用于对齐手写视图。
+此处，我们显示了如何使用[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment)属性指定基础的文本控件上的定位点用于对齐手写视图。
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -86,7 +86,7 @@ XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and
 
 ## <a name="disable-auto-completion-candidates"></a>禁用自动完成候选项
 
-默认情况下启用文本建议弹出窗口提供识别候选项，用户可以从中选择的最顶端的候选项不正确的情况下的顶级墨迹的列表。
+默认情况下启用文本建议弹出窗口提供识别候选项，用户可以从中选择的最顶端的候选项不正确的情况下的顶部墨迹的列表。
 
 如果你的应用程序已提供可靠，自定义识别功能，你可以使用[AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled)属性若要禁用内置的建议，如下面的示例中所示。
 
@@ -103,15 +103,15 @@ XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and
 
 ## <a name="use-handwriting-font-preferences"></a>使用手写字体首选项
 
-用户可以从集合中选择预定义的基于手写字体时要使用呈现文本基于墨迹识别 (请参阅**设置-> 设备-> 笔和 Windows Ink-> 手写字体-> 时使用手写**)。
+用户可以从集合中选择预定义的基于手写字体时要使用基于墨迹识别的呈现文本 (请参阅**设置-> 设备-> 笔和 Windows Ink-> 手写字体-> 时使用手写**)。
 
 > [!NOTE]
-> 用户甚至可以创建基于自己手写的字体。
+> 用户甚至可以创建基于其自己的手写字体。
 > [!VIDEO https://www.youtube.com/embed/YRR4qd4HCw8]
 
 你的应用可以访问此设置，并使用所选的字体的文本控件中识别出的文本。
 
-在此示例中，我们可以侦听[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)事件，并应用在用户选择的字体，如果文本更改源于 HandwritingView （或默认字体，如果不是）。
+在此示例中，我们侦听[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)事件，并应用在用户选择的字体，如果文本更改来自 HandwritingView （或默认字体，如果不是）。
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -140,9 +140,9 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 </AutoSuggestBox>
 ```
 
-在相应的代码隐藏中，我们展示如何禁用[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)上[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。
+在相应的代码隐藏中，我们显示了如何禁用[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)上[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。
 
-1. 首先，我们处理应用程序的 Loaded 的事件，我们调用 FindInnerTextBox 函数来启动可视化树遍历。
+1. 首先，我们处理应用程序的 Loaded 的事件，我们调用 FindInnerTextBox 函数以开始可视化树遍历。
 
     ```csharp
     private void SampleAutoSuggestBox_Loaded(object sender, RoutedEventArgs e)
@@ -152,7 +152,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-2. 然后，我们开始循环通过调用 FindVisualChildByName FindInnerTextBox 函数中的可视化树 （从 AutoSuggestBox 开始）。
+2. 然后，我们开始循环调用 FindVisualChildByName FindInnerTextBox 功能中的可视化树 （从 AutoSuggestBox 开始）。
 
     ```csharp
     private bool FindInnerTextBox(AutoSuggestBox autoSuggestBox)
@@ -167,7 +167,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-3. 最后，此函数循环可视化树直到检索 TextBox。
+3. 最后，此函数循环的可视化树直到检索 TextBox。
 
     ```csharp
     private FrameworkElement FindVisualChildByName<T>(DependencyObject obj)
@@ -196,11 +196,11 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 在某些情况下，你可能需要确保[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)介绍它否则不可能的 UI 元素。
 
-在此处，我们创建支持 （由将 TextBox 和听写按钮放入 StackPanel 实现） 的听写 TextBox。
+此处，我们将创建支持 （由将文本框和听写按钮放入 StackPanel 实现） 的听写 TextBox。
 
 ![听写的文本框](images/handwritingview/textbox-with-dictation.png)
 
-StackPanel 是，因此，现在大于 TextBox [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)可能不会会阻挡所有复合 cotnrol。
+StackPanel 大于现在 TextBox，如[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)可能不会会阻挡所有复合 cotnrol。
 
 ![听写的文本框](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
@@ -233,7 +233,7 @@ StackPanel 是，因此，现在大于 TextBox [HandwritingView](https://docs.mi
 
 你还可以设置的大小[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)，你需要确保在视图不会阻挡重要的 UI 时这会很有用。
 
-如前面的示例中，我们将创建支持 （由将 TextBox 和听写按钮放入 StackPanel 实现） 的听写 TextBox。
+如前面的示例中，我们将创建支持 （由将文本框和听写按钮放入 StackPanel 实现） 的听写 TextBox。
 
 ![听写的文本框](images/handwritingview/textbox-with-dictation.png)
 
@@ -279,8 +279,8 @@ StackPanel 是，因此，现在大于 TextBox [HandwritingView](https://docs.mi
 
 ![自定义 UI 的文本框](images/handwritingview/textbox-with-customui.png)
 
-下面的示例显示了如何侦听[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) [弹出窗口](https://docs.microsoft.com/uwp/api/windows.ui.popups)将位置设置[Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)、[已关闭](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
-)和[SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)事件。
+下面的示例显示了如何侦听[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) [弹出窗口](https://docs.microsoft.com/uwp/api/windows.ui.popups)将位置设置[Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)和[Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
+)， [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)事件。
 
 ```csharp
 private void Search_HandwritingViewOpened(
@@ -318,9 +318,9 @@ private double GetPopupVerticalOffset()
 
 ## <a name="retemplate-the-handwritingview-control"></a>重新 HandwritingView 控件
 
-与所有 XAML 框架控件一样，你可以针对特定要求自定义可视结构和可视行为[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 。
+与所有 XAML 框架控件一样，你可以针对特定要求自定义的可视结构和可视行为[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 。
 
-若要查看创建自定义模板签出[创建自定义传输控件](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls)操作方法或[自定义编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)的完整示例。
+若要查看创建自定义模板签出[创建自定义传输控件](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls)的操作方法或[自定义编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)的完整示例。
 
 
 

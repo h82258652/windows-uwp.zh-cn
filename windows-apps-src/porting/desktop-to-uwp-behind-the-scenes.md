@@ -11,15 +11,15 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465632"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498223"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>已打包的桌面应用程序在幕后
 
-本文提供有关时会发生什么情况的文件和注册表项为桌面应用程序创建 Windows 应用包的更深入的了解。
+本文提供有关发生什么情况的文件和注册表项为桌面应用程序创建 Windows 应用包时更深入的了解。
 
 现代包的主要目标是单独的应用程序状态与系统状态尽可能多地同时保留与其他应用的兼容性。 桥实现此目的的方式是，将应用程序放置在通用 Windows 平台 (UWP) 软件包内，然后检测并重定向它在运行时对文件系统和注册表所作的一些更改。
 
@@ -27,7 +27,7 @@ ms.locfileid: "4465632"
 
 ## <a name="installation"></a>安装
 
-应用包安装在 *C:\Program Files\WindowsApps\package_name* 下，并且可执行文件的标题为 *app_name.exe*。 每个软件包文件夹都包含一个清单（名为 AppxManifest.xml），其中包含已打包应用的特殊 XML 命名空间。 该清单文件内部是一个 ```<EntryPoint>``` 元素，该元素引用完全信任的应用。 当启动该应用程序时，它不会在应用容器，内部运行，但改为它以用户身份运行像往常一样。
+应用包安装在 *C:\Program Files\WindowsApps\package_name* 下，并且可执行文件的标题为 *app_name.exe*。 每个软件包文件夹都包含一个清单（名为 AppxManifest.xml），其中包含已打包应用的特殊 XML 命名空间。 该清单文件内部是一个 ```<EntryPoint>``` 元素，该元素引用完全信任的应用。 该应用程序启动时，它不会在应用容器，内部运行，但改为它以用户身份运行像往常一样。
 
 部署后，软件包文件由操作系统标记为只读并严格锁定。 如果这些文件遭到篡改，Windows 将阻止应用启动。
 
@@ -94,7 +94,7 @@ HKCU 下的所有写入都在写入时复制到每用户、每应用位置。 �
 
 ## <a name="uninstallation"></a>卸载
 
-当用户卸载程序包时，所有文件和文件夹位于*C:\Program Files\WindowsApps\package_name*都删除，以及对 AppData 或注册表在打包过程中捕获的重定向写入。
+当用户卸载程序包时，所有文件和文件夹位于*C:\Program Files\WindowsApps\package_name*都删除，以及已捕获在打包过程中对 AppData 或注册表任何重定向写入。
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468636"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499825"
 ---
 # <a name="debugging-testing-and-performance"></a>调试、测试和性能
 
 
-本部分显示了如何使用 Microsoft Visual Studio 调试、 测试和优化你的应用。 它还包括 Windows 设备门户 （适用于监视设备和配置） 和 Windows 应用认证工具包 （准备你的应用的 Microsoft 应用商店） 之类的工具。
+本部分介绍了如何使用 Microsoft Visual Studio 调试、 测试和优化你的应用。 它还包括 Windows Device Portal （用于监视设备和配置） 和 Windows 应用认证工具包 （准备你的应用的 Microsoft 应用商店） 之类的工具。
 
 | 主题 | 说明 |
 |-------|-------------|

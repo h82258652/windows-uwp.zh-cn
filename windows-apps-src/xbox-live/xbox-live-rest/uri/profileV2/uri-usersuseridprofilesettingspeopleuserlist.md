@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 44341b5fc8f831e3a500f47a51b94978f587cb8c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469971"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501138"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
 访问用户或用户，人脉名字对象支持的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -31,7 +31,7 @@ ms.locfileid: "4469971"
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
 | userId| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
-| userList| 字符串| 用户获取设置已命名的列表。 目前，用户是唯一受支持的列表。| 
+| userList| 字符串| 命名的人员获取设置的列表。 目前，用户是唯一受支持的列表。| 
   
 <a id="ID4E1B"></a>
 

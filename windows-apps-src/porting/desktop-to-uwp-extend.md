@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465891"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499402"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -85,7 +85,7 @@ ms.locfileid: "4465891"
 ![自适应设计](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->此示例显示了通过向解决方案中添加 UWP 项目的 XAML UI。 这是显示 XAML Ui 中的桌面应用程序的稳定支持的方法。 此方法的替代方法是使用 XAML 岛直接向桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[在桌面应用程序的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>此示例显示了通过向解决方案中添加一个 UWP 项目的 XAML UI。 这是显示 XAML Ui 中的桌面应用程序的稳定支持的方法。 此方法的替代方法是使用 XAML 岛直接向桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[桌面应用程序中的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>设计模式
 
@@ -333,7 +333,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="test-the-app-service"></a>测试应用服务
 
-通过从其他应用中调用你的服务来对其进行测试。 此代码可以如 Windows 窗体应用程序或其他 UWP 应用的桌面应用程序。
+通过从其他应用中调用你的服务来对其进行测试。 此代码可以是桌面应用程序，例如 Windows 窗体应用程序或其他 UWP 应用。
 
 > [!NOTE]
 > 只有在你正确设置了 ``AppServiceConnection`` 类的 ``PackageFamilyName`` 属性时，该代码才能正常工作。 你可以通过在 UWP 项目的上下文中调用 ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` 来获得该名称。 请参阅[创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。

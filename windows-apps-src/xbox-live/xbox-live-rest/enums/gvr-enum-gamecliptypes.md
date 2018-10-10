@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ae66a68eb6dede1d82ef3e071246ccacd33199
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466670"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503750"
 ---
 # <a name="gamecliptype-enumeration"></a>GameClipType 枚举
 详细介绍 GameClipTypes 枚举。 
@@ -25,9 +25,9 @@ ms.locfileid: "4466670"
  
 ## <a name="gamecliptypes"></a>GameClipTypes
  
-这是标志枚举，因此个可能的多个值。
+这是标志枚举，以便多个值都可用。
  
-| <b>枚举器</b>| <b>说明</b>| 
+| <b>枚举</b>| <b>说明</b>| 
 | --- | --- | 
 | 无| 游戏剪辑类型是未知或未设置。 （不适用于上载）| 
 | MetadataOnly| 游戏剪辑不包括资产数据 – 仅元数据。 （以供将来使用）| 

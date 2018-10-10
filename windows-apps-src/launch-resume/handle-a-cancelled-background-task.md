@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463374"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498769"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
@@ -40,7 +40,7 @@ ms.locfileid: "4463374"
 编写一个用于处理取消事件的方法。
 
 > [!NOTE]
-> 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或应用不会对其进行处理，则没有警告且不引发 OnCanceled 事件的情况下，将会终止后台任务。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
+> 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或该应用不会对其进行处理，则将终止后台任务，没有警告且不引发 OnCanceled 事件。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
 
 创建一个名为 **OnCanceled** 的方法，如下所示。 该方法是 Windows 运行时在针对后台任务进行取消请求时调用的入口点。
 
@@ -183,7 +183,7 @@ else
 > [!NOTE]
 > 如上所示的代码示例使用[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。用于记录后台任务进度的[**进度**](https://msdn.microsoft.com/library/windows/apps/br224800)属性。 使用 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 类将进度报告回应用。
 
-修改**Run**方法，以便停止工作后，它会记录该任务已完成还是已被取消。 此步骤适用于进程外后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于进程内后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
+修改**Run**方法，以便在停止工作后，它记录该任务已完成还是已被取消。 此步骤适用于进程外后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于进程内后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
 
 [后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)将状态记录在 LocalSettings。
 

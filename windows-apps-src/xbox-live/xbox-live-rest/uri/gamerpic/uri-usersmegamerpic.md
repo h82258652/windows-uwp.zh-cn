@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e8f71a565b253a9601a61488948920f75d0444f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472878"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501194"
 ---
 # <a name="usersmegamerpic"></a>/users/me/gamerpic
-访问 1080 x 1080 玩家图片。  
+访问 1080 x 1080 玩家头像。  
 <a id="ID4EQ"></a>
 
  
@@ -27,7 +27,7 @@ ms.locfileid: "4472878"
 
 [PUT (/users/me/gamerpic)](uri-usersmegamerpicput.md)
 
-&nbsp;&nbsp;用于上传 1080 x 1080 玩家图片。
+&nbsp;&nbsp;上载 1080 x 1080 玩家头像。
  
 <a id="ID4E1"></a>
 

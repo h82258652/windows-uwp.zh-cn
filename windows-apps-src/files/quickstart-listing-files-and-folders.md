@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468736"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501817"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
@@ -46,7 +46,7 @@ ms.locfileid: "4468736"
 > [!NOTE]
 > 请记住声明 **picturesLibrary** 功能。
 
-在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法 （不在子文件夹中） 获得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件，并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法**PicturesLibrary**中获取所有子文件夹并列出每个子文件夹的名称。
+在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法 （不在子文件夹中） 获得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件，并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法获取**PicturesLibrary**中的所有子文件夹并列出每个子文件夹的名称。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

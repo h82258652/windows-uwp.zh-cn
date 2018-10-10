@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d9262ac16eab3d1c2f35960445321fa3872c30
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471446"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501472"
 ---
 # <a name="player-json"></a>Player (JSON)
-包含玩家在游戏会话数据。 
+在游戏会话中包含玩家数据。 
 <a id="ID4EN"></a>
 
  
@@ -29,9 +29,9 @@ ms.locfileid: "4471446"
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| customData| 8 位无符号整数的数组| 1024 字节的 Base64 编码的特定于游戏的玩家数据。 此值不透明到服务器。| 
-| 玩家代号| 字符串| 玩家代号 — 最多 15 个字符的 — 的玩家。 在确定玩家时，客户端应在 UI 中使用此值。 | 
-| isCurrentlyInSession| 布尔值| 指示是否玩家当前在会话中或离开会话。| 
+| customData| 数组，8 位无符号整数| 1024 字节的 Base64 编码的特定于游戏的玩家数据。 此值不透明到服务器。| 
+| 玩家代号| 字符串| 玩家代号，最多 15 个字符的 — 的玩家。 在确定玩家时，客户端应在 UI 中使用此值。 | 
+| isCurrentlyInSession| 布尔值| 指示玩家当前在会话中或离开会话。| 
 | seatIndex| 32 位有符号整数| 玩家在会话中的索引。| 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家。| 
   

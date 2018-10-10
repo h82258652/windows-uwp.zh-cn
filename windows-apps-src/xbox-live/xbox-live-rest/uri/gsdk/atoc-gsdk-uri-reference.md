@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 912c3febd0a29a9aca326761ae63e61a0bdfada0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471440"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502144"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a>游戏服务器统一资源标识符 (URI) 参考
 客户端用于创建游戏的游戏服务器开发工具包服务器实例的 Uri。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -28,7 +28,7 @@ ms.locfileid: "4471440"
 
 [/qosservers](uri-qosservers.md)
 
-&nbsp;&nbsp;URI 由客户端以适用于 Xbox Live 计算获取可用的 QoS 服务器的列表。
+&nbsp;&nbsp;URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。
 
 [/titles/{titleId}/clusters](uri-titlestitleidclusters.md)
 
@@ -40,7 +40,7 @@ ms.locfileid: "4471440"
 
 [/titles/{titleId}/sessionhosts](uri-titlestitleidsessionhosts.md)
 
-&nbsp;&nbsp;请求 Xbox Live 计算 sessionhost，若要为给定的作品 id 分配。
+&nbsp;&nbsp;请求 Xbox Live 计算 sessionhost，对于给定的作品 id 分配。
 
 [/titles/{titleId}/sessions/{sessionId}/allocationStatus](uri-titlestitleidsessionssessionidallocationstatus.md)
 

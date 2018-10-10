@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469138"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499161"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
 从服务检索指定的数量的用户消息摘要。
@@ -26,7 +26,7 @@ ms.locfileid: "4469138"
   * [URI 参数](#ID4EEB)
   * [查询字符串参数](#ID4EIC)
   * [授权](#ID4EGE)
-  * [在资源的隐私设置的效果](#ID4ETE)
+  * [资源的隐私设置的效果](#ID4ETE)
   * [HTTP 状态代码](#ID4E5E)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EMH)
 
@@ -37,7 +37,7 @@ ms.locfileid: "4469138"
 
 用户的消息摘要包含仅邮件主题。 对于用户生成的消息，这是当前的消息文本的前 20 个字符。 系统消息可能会提供其他使用者，如"LIVE System"。
 
-发送; 顺序的相反中返回的消息也就是说，首先返回较新消息。
+发送; 顺序的相反中返回的消息也就是说，首次返回较新消息。
 
 此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
 
@@ -58,7 +58,7 @@ ms.locfileid: "4469138"
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- | --- | --- | --- |
 | maxItems| int| 100| 返回的邮件的最大数量。|
-| ContinuationToken| 字符串|  | 以前的枚举调用; 中返回的字符串使用继续枚举。|
+| ContinuationToken| 字符串|  | 在以前枚举调用; 返回字符串使用继续枚举。|
 | skipItems| int| 100| 消息以跳过; 数忽略 continuationToken 是否存在。|
 
 <a id="ID4EGE"></a>
@@ -71,7 +71,7 @@ ms.locfileid: "4469138"
 <a id="ID4ETE"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
 
 仅可以枚举自己用户的消息。
 
@@ -101,7 +101,7 @@ ms.locfileid: "4469138"
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
-| 结果| 消息]| 100| 用户消息的数组|
+| 结果| 消息]| 100| 用户的消息的数组|
 | pagingInfo| PagingInfo|  | 当前的结果集的页面信息|
 
 #### <a name="message"></a>消息
@@ -168,7 +168,7 @@ ms.locfileid: "4469138"
 
 #### <a name="error-response"></a>错误响应
 
-如果错误，该服务可能会返回服务器对象，其中可能包含从该服务环境的值。
+发生错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
 
 | 属性| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

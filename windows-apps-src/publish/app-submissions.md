@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462346"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501581"
 ---
 # <a name="app-submissions"></a>应用提交
 
@@ -25,9 +25,9 @@ ms.locfileid: "4462346"
 你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，以便你可以回来，并在其上工作，只要你准备就绪。
 
 > [!NOTE]
-> 你必须拥有[开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft Store 应用。
+> 你必须拥有[开发人员帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问[Windows 开发人员中心](https://partner.microsoft.com/dashboard)和提交到 Microsoft Store 的应用。
 
-发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要为已发布的应用创建新的提交，请单击“应用概述”页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （并让其可再次更高版本，如果你想要）。
+发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要为已发布的应用创建新的提交，请单击“应用概述”页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （，然后将其提供再次更高版本，如果你想要）。
 
 > [!NOTE]
 > 此部分文档介绍如何在开发人员中心仪表板上创建应用提交。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行应用提交。
@@ -113,7 +113,7 @@ ms.locfileid: "4462346"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **发布暂停选项**     | 默认：通过认证后立即发布此提交（或按照计划部分中选择的日期发布）      | [发布暂停选项](manage-submission-options.md#publishing-hold-options)    
 | **认证说明**     | 推荐          | [认证说明](notes-for-certification.md)             |
-| **受限功能**     | 如果你的产品声明了任何[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
+| **受限功能**     | 如果你的产品声明[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)的任何所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

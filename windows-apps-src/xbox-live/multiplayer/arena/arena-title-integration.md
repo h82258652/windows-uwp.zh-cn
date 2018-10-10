@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛
 ms.localizationpriority: medium
 ms.openlocfilehash: 12654a89cc43c323c4fa516c4d78f15553441671
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468361"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499040"
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 
@@ -345,7 +345,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 
 此外可以在 Windows 开发人员中心中的 Xbox Live 服务下的**锦标赛**菜单上启用 arena。
 
-![Windows 开发人员中心上的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
+![在 Windows 开发人员中心上的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
 
 您必须发布服务配置，你的更改才会生效。 目前不支持通过 UDC 进行自助式 Arena 配置。 如果你使用 UDC 进行服务配置，则与你的开发客户经理一起进行 Arena 入门培训。
 

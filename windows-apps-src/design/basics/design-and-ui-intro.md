@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472331"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500280"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -33,7 +33,7 @@ UWP 应用在所有运行[Windows 10 设备](../devices/index.md)，从电视到
 
 ![各种设备上的同一应用](images/universal-image-1.jpg)
 
-UWP 有助于通过自动调整 UI 元素，以便它们清晰可见并易于交互上所有设备和屏幕大小。
+UWP 有助于通过自动调整 UI 元素，以便它们清晰可见并易于交互在所有设备和屏幕大小上。
 
 当你的应用在设备上运行时，系统将使用算法使 UI 元素在屏幕上的显示方式规范化。 此缩放算法考虑了观看距离和屏幕密度（每英寸像素），以针对感知大小（而不是物理大小）进行优化。 该缩放算法确保用户可从 10 英尺远处识别 Surface Hub 上高 24 像素的字体，正如从几英寸远处识别 5 英寸手机上高 24 像素的字体。
 

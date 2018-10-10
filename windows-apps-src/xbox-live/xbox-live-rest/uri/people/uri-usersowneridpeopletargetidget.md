@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0735a65afe8b5748efefce5dec9ad1989a77b4d
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470457"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4497777"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-按目标 ID 某人从集合中获取调用方的人。 这些 Uri 的域是`social.xboxlive.com`。
+调用方的用户集合中获取目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
@@ -36,7 +36,7 @@ ms.locfileid: "4470457"
  
 ## <a name="remarks"></a>备注
  
-GET 操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
+获取操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
   
 <a id="ID4E5"></a>
 
@@ -73,7 +73,7 @@ GET 操作不会修改任何资源，因此如果执行一次或多次，这将�
  
 | 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
 | 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
   
 <a id="ID4EWE"></a>
@@ -94,7 +94,7 @@ GET 操作不会修改任何资源，因此如果执行一次或多次，这将�
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 成功。| 
 | 400| 错误请求| 用户 Id 的格式不正确。| 
-| 403| 已禁止| XUID 声明不将得到解析从与授权标头。| 
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
 | 404| 找不到| 所有者的人脉列表中找不到目标用户。| 
   
 <a id="ID4EDH"></a>

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ece582e46601fd63ba16a99a071ae40ecaff2d4
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464424"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498724"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
@@ -31,7 +31,7 @@ ms.locfileid: "4464424"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其 （资源） 的用户。 必须匹配的身份验证的用户的 XUID。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在访问其 （资源） 的用户。 必须匹配的身份验证的用户的 XUID。| 
   
 <a id="ID4EAC"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4464424"
 
 [GET](uri-achievementsusersxuidachievementsgetv2.md)
 
-&nbsp;&nbsp;获取的游戏，这些用户，解锁或这些用户具有正在上定义的成就的列表。
+&nbsp;&nbsp;获取的成就上标题、 解锁由用户或用户已在进行定义的列表。
  
 <a id="ID4EKC"></a>
 

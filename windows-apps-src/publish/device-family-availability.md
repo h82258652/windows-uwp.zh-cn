@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: medium
 ms.openlocfilehash: e86b56c09f907e45655a0ef9b94fad30a4959b59
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469663"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500079"
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -55,7 +55,7 @@ ms.locfileid: "4469663"
 如果你的提交包含可以在 **Windows 8/8.1** 和 **Windows Phone 8.x 及更早版本**上运行的程序包，那么这些程序包将提供给客户，如表中所示。 这些操作系统版本没有对应的复选框。 若要停止向这些客户提供应用，请从提交中删除相应的程序包。
 
 > [!IMPORTANT]
-> 若要完全阻止特定的 Windows 10 设备系列获取你的提交，更新清单以面向你想要支持的设备系列中的[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素 （即，Windows.Mobile 或 Windows.Desktop），而是比其保留为 Windows.Universal 值 （面向通用设备系列） 的 Microsoft Visual Studio 包含默认情况下在清单中。
+> 若要完全阻止特定的 Windows 10 设备系列获取你的提交，更新清单以面向你想要支持的设备系列中的[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素 （即，Windows.Mobile 或 Windows.Desktop），而是比其保留为 Windows.Universal 值 （面向通用设备系列） 的 Microsoft Visual Studio 的清单中默认包含。
 
 请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果你先发布了一个带有 Windows Phone 8.1 程序包的应用，而在以后又将 Windows 10 (UWP) 程序包添加到面向通用设备系列的同一应用，将会向已拥有你的 Windows Phone 8.1 程序包的 Windows 10 移动客户提供此 Windows 10 (UWP) 程序包的更新，即使你已取消选中“Windows 10 移动版”**** 复选框也是如此（因为这并不是全新购买，而是一次更新）。 但是，如果你没有提供面向通用或移动设备系列的任何 Windows 10 (UWP) 程序包，则你的 Windows 10 移动客户将继续使用 Windows Phone 8.1 程序包。
 

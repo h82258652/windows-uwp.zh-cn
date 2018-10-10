@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f04da7d375b404a5d05dcf5d5e9905b00b7545d9
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469259"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4497708"
 ---
 # <a name="permissioncheckresponse-json"></a>PermissionCheckResponse (JSON)
 从单个权限设置针对单个目标用户的单个用户检查的结果。 
@@ -30,7 +30,7 @@ PermissionCheckResponse 对象具有以下规范。
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
 | IsAllowed| 布尔值| 必需。 如果请求用户允许执行与目标用户请求的操作，此成员为<b>true</b> 。| 
-| 结果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)的数组| 可选。 如果<b>IsAllowed</b>已 false 检查已被并被拒绝请求者相关的内容，指示的权限被拒绝的原因。| 
+| 结果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)的数组| 可选。 如果<b>IsAllowed</b> false，并且检查被拒绝请求者相关的内容，指示的权限被拒绝的原因。| 
   
 <a id="ID4E3B"></a>
 

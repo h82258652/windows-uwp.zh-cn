@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461485"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503322"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -34,7 +34,7 @@ ms.locfileid: "4461485"
 
 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
 
-当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这是一种模式的绑定名*一次性*，和非常适合在运行时期间不会更改值。 或者，你可以选择"观察"值并在其更改时更新 UI。 这称为多*单向*，和非常适合只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 此模式称为*双向*，并且它非常适用于读写数据。 下面是一些示例。
+当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这是一种模式的绑定称为*一次性*，以及非常适合在运行时期间不会更改值。 或者，你可以选择"观察"值并在其更改时更新 UI。 这称为多*单向*，以及非常适合只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 此模式称为*双向*，并且它非常适用于读写数据。 下面是一些示例。
 
 -   你可以使用一次性模式将[**图像**](https://msdn.microsoft.com/library/windows/apps/BR242752)绑定到当前用户的照片。
 -   你可以使用单向模式将[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)绑定到按报纸分组的实时新闻报道的集合。
@@ -65,7 +65,7 @@ ms.locfileid: "4461485"
 
 下面是一个非常基础的可用作绑定源的类实现。
 
-如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后将新**Midl 文件 (.idl)** 项目添加到项目中，名为如下所示的 C + + 以下 WinRT 代码示例列表。 这些新文件的内容替换为应用一览中显示的[MIDL 3.0](/uwp/midl-3/intro)代码、 生成项目，以生成`HostViewModel.h`和`.cpp`，然后将代码添加到生成的文件，以匹配列表。 有关这些生成的文件的详细信息以及如何将它们复制到你的项目，请参阅[XAML 控件; 绑定到 C + + /winrt 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后将新的**Midl 文件 (.idl)** 项目添加到项目中，名为如下所示的 C + + 以下 WinRT 代码示例列表。 这些新文件的内容替换为应用一览中显示的[MIDL 3.0](/uwp/midl-3/intro)代码、 生成项目，以生成`HostViewModel.h`和`.cpp`，然后将代码添加到生成的文件，以匹配列表。 有关这些生成的文件的详细信息以及如何将它们复制到你的项目，请参阅[XAML 控件; 绑定到 C + + /winrt 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
 ```csharp
 public class HostViewModel
@@ -201,7 +201,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 现在，**NextButtonText** 属性可供观察。 当创作到该属性的单向或双向绑定（将在稍后介绍操作方法）时，生成的绑定对象将订阅 **PropertyChanged** 事件。 引发该事件后，绑定对象的处理程序将接收一个包含已更改的属性名的参数。 这是绑定对象知道已更改和重新读取的属性值的方式。
 
-以便你无需实现如果你使用 C# 然后可仅多次，上面所示的模式将从你会发现在[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)示例 （"Common"文件夹中） 的**BindableBase**基类派生。 下面是具体操作的一个示例。
+以便你无需实现如果你使用 C# 然后刚可以多次，上面所示的模式将从你会发现在[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)示例 （"Common"文件夹中） 的**BindableBase**基类派生。 下面是具体操作的一个示例。
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -226,7 +226,7 @@ public class HostViewModel : BindableBase
 ```
 
 > [!NOTE]
-> 对于 C + + WinRT，在你从基类派生的应用程序中声明的任何运行时类被称为*可组合*类。 并且可组合类周围的约束。 要通过使用 Visual studio 和 Microsoft store 来验证提交的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试应用程序 (并因此应用程序无法成功地引入 Microsoft Store)，可组合类必须最终派生自 Windows 基类。 这意味着在非常根目录继承层次结构的类必须源自 windows.* 命名空间的类型。 如果你需要从基类派生的运行时类&mdash;例如，若要实现视图模型来派生的所有**BindableBase**类&mdash;则可以从[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)派生。
+> 对于 C + + WinRT，在你从基类派生的应用程序中声明的任何运行时类被称为*可组合*类。 还有可组合类周围的约束。 要通过使用 Visual studio 和 Microsoft store 来验证提交的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试应用程序 (并因此应用程序无法成功地引入 Microsoft Store)，可组合类必须最终派生自 Windows 基类。 这意味着非常根目录继承层次结构的类必须源自 windows.* 命名空间的类型。 如果你需要从基类派生的运行时类&mdash;例如，若要实现的视图模型来派生所有**BindableBase**类&mdash;，然后你可以从[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)派生。
 
 通过使用 [**String.Empty**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.empty.aspx) 或 **null** 参数引发 **PropertyChanged** 事件，以指示对象上的所有非索引器属性应重新读取。 可以通过将“Item\[*indexer*\]”的参数用于特定索引器（其中 *indexer* 是索引值），或将“Item\[\]”的值用于所有索引器，引发该事件以指示对象上的索引器属性已更改。
 
@@ -242,7 +242,7 @@ public class HostViewModel : BindableBase
 | 实现支持集合更改通知的集合。 | 扩展 [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 或实现（非通用）[**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。|实现[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)，或[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。|实现 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) 和 [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974)。|
 |实现支持增量加载的集合。|扩展 [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 或实现（非通用）[**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 此外，还实现 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。|实现[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)，或[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。 此外，还实现[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)|实现 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) 和 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。|
 
-你可以使用增量加载将列表控件绑定到任意的大型数据源，且仍获得高性能。 例如，你可以将列表控件绑定到必应图像查询结果，而无需一次性加载所有结果。 你只需立即加载部分结果，再根据需要加载其他结果。 若要支持增量加载，你必须支持集合更改通知的数据源上实现[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) 。 当数据绑定引擎请求更多数据时，你的数据源必须发出相应的请求、集成结果，然后发送相应的通知以更新 UI。
+你可以使用增量加载将列表控件绑定到任意的大型数据源，且仍获得高性能。 例如，你可以将列表控件绑定到必应图像查询结果，而无需一次性加载所有结果。 你只需立即加载部分结果，再根据需要加载其他结果。 若要支持增量加载，必须在支持集合更改通知的数据源上实现[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) 。 当数据绑定引擎请求更多数据时，你的数据源必须发出相应的请求、集成结果，然后发送相应的通知以更新 UI。
 
 ### <a name="binding-target"></a>绑定目标
 
@@ -256,10 +256,10 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-如果你使用 C + + WinRT 或 Visual c + + 组件扩展 (C + + CX)，那么你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展以便与任何运行时类。
+如果你使用 C + + WinRT 或 Visual c + + 组件扩展 (C + + CX)，则你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要使用 {} 标记扩展的[绑定](https://msdn.microsoft.com/library/windows/apps/Mt204782)与任何运行时类。
 
 > [!IMPORTANT]
-> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
+> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
 
 ### <a name="binding-object-declared-using-xbind"></a>使用 {x:Bind} 声明的绑定对象
 
@@ -330,7 +330,7 @@ DataBindingInDepth::HostViewModel MainPage::ViewModel()
 </Page>
 ```
 
-注意，该值即是我们为 **Path** 指定的值。 此值在页面本身的上下文中进行了解释，在本例中路径首先用于引用我们刚添加到**MainPage**页面的**ViewModel**属性。 该属性将返回 **HostViewModel** 实例，这样我们便可以点入该对象以访问 **HostViewModel.NextButtonText** 属性。 并且，我们将指定 **Mode** 以替代一次性绑定默认值 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
+注意，该值即是我们为 **Path** 指定的值。 页面本身的上下文中解释此值，在本例中路径首先用于引用我们刚添加到**MainPage**页面**ViewModel**属性。 该属性将返回 **HostViewModel** 实例，这样我们便可以点入该对象以访问 **HostViewModel.NextButtonText** 属性。 并且，我们将指定 **Mode** 以替代一次性绑定默认值 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
 
 [
               **Path**
@@ -376,7 +376,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 **如果你的数据异步加载**
 
-在编译时为你的页面在分部类中生成支持 **{x:Bind}** 的代码。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。 生成的代码包含可用于你的页面的 [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) 事件的处理程序，并且该处理程序在表示你的页面绑定的已生成类上调用 **Initialize** 方法。 **Initialize** 依次调用 **Update**，以开始在绑定源和目标之间移动数据。 只在页面或用户控件的第一个测量阶段之前引发 **Loading**。 因此异步加载你的数据时，可能未在调用 **Initialize** 时做好准备。 因此，加载数据之后，可以通过调用 `this.Bindings.Update();` 强制初始化一次性绑定。 如果你只需针对异步加载的数据的一次性绑定，很方便： 首先初始化它们通过这种方式不是单向绑定并可以侦听更改。 如果你的数据未经过细微的更改并且它可能作为某个特定操作的一部分进行更新，则你可以执行一次性绑定，并且通过对 **Update** 的调用随时强制执行手动更新。
+在编译时为你的页面在分部类中生成支持 **{x:Bind}** 的代码。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。 生成的代码包含可用于你的页面的 [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) 事件的处理程序，并且该处理程序在表示你的页面绑定的已生成类上调用 **Initialize** 方法。 **Initialize** 依次调用 **Update**，以开始在绑定源和目标之间移动数据。 只在页面或用户控件的第一个测量阶段之前引发 **Loading**。 因此异步加载你的数据时，可能未在调用 **Initialize** 时做好准备。 因此，加载数据之后，可以通过调用 `this.Bindings.Update();` 强制初始化一次性绑定。 如果你只需针对异步加载的数据的一次性绑定很方便： 首先进行单向绑定，侦听更改比初始化这种方式。 如果你的数据未经过细微的更改并且它可能作为某个特定操作的一部分进行更新，则你可以执行一次性绑定，并且通过对 **Update** 的调用随时强制执行手动更新。
 
 > [!NOTE]
 > **{x: Bind}** 不适合于后期绑定方案，例如导航 JSON 对象，也鸭子类型化的字典结构。 "鸭子类型"是一种键入基于属性名称的词法匹配的弱形式 (在中，"如果它遍历、 游泳方式和叫声像鸭子，然后它是一只鸭子")。 借助鸭子类型，与**Age**属性的绑定将会同样满足与**人**或**说出**对象 （假定每个这些类型具有**Age**属性）。 对于这些方案中，使用 **{Binding}** 标记扩展。
@@ -394,7 +394,7 @@ runtimeclass HostViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
 ```
 
 > [!IMPORTANT]
-> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
+> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
 
 默认情况下，[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 假设你要绑定到标记页面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 因此，我们将页面的 **DataContext** 设置为绑定源类（本例中为 **HostViewModel** 类型）的实例。 下面的示例展示了用于声明绑定对象的标记。 我们使用了与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并绑定到 **HostViewModel.NextButtonText** 属性。
 
@@ -651,7 +651,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ## <a name="binding-to-data-grouped-by-a-key"></a>绑定到按键分组的数据
 
-如果你采用平面的项目集合的 （书籍，例如，由一个**BookSku**类表示），并且对项进行分组通过使用一常见属性作为键 （例如**BookSku.AuthorName**属性），那么该结果称之为分组的数据。 当对数据进行分组时，它将不再是简单集合。 分组的数据是组对象的集合，其中每个组对象都具有
+如果你采用平面的项目集合的 （书籍，例如，由一个**BookSku**类表示），并且对项进行分组通过使用一常见属性作为键 （例如**BookSku.AuthorName**属性），那么该结果称之为分组的数据。 当对数据进行分组时，它将不再是简单集合。 分组的数据是组对象的集合，其中每个组对象具有
 
 - 一个密钥，并
 - 其属性与该键匹配的项目集合。
@@ -815,8 +815,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | 绑定的路径的任何部分（叶除外）为 null 时使用。 | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 使用 {x:Bind}，绑定到某一字段；Path 默认位于 Page 的根处，以便任意命名的元素均可通过其字段进行访问。 | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 借助 {x:Bind}，对元素进行命名并在 Path 中使用其名称。 | 
-| RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 随 {x: Bind} 上 ControlTemplate TargetType 指示绑定到模板父。 对于 {Binding} 常规模板绑定可在控件模板中用于大多数的用途。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。&lt; | 
-| 源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x: Bind} 你可以直接使用命名的元素中，使用某一属性或静态路径。 | 
+| RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | {X: Bind} 上 ControlTemplate TargetType 表示绑定到模板父。 对于 {Binding} 常规模板绑定可在控件模板中的大多数使用。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。&lt; | 
+| 源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 对于 {x: Bind} 你可以直接使用命名的元素中，使用属性或静态路径。 | 
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | 模式可以是一次性、单向或双向。 {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支持 UpdateSourceTrigger=Explicit。 {x:Bind} 可在所有情况下（TextBox.Text 除外，它使用 LostFocus 行为）使用 PropertyChanged 行为。 | 
 

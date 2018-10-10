@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463992"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504237"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -98,7 +98,7 @@ ms.locfileid: "4463992"
 - [边框](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-可以具有隐式动画处理的更改的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_过渡_属性以及用于每个过渡类型。
+可以具有隐式动画处理的更改的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个过渡类型。
 
 | 动画化的属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |
@@ -110,7 +110,7 @@ ms.locfileid: "4463992"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时淡入和淡出时处于禁用状态。
+此示例显示了如何使用的 Opacity 属性和过渡使按钮启用控件时淡入和淡出时禁用它。
 
 ```xaml
 <Button x:Name="SubmitButton"

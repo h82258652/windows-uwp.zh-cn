@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468171"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500470"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -73,8 +73,8 @@ ms.locfileid: "4468171"
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 成功检索会话。|
-| 400| 错误请求| URI 中指定的目标 ID 不是有效的。|
+| 200| “确定”| 已成功检索会话。|
+| 400| 错误请求| URI 中指定的目标 ID 不正确。|
 | 403| 已禁止| URI 中指定的所有者不是经过身份验证的用户。|
 | 404| 找不到| URI 中指定的所有者不存在。|
 
@@ -87,7 +87,7 @@ ms.locfileid: "4468171"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|
-| 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
+| 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4ESH"></a>
 

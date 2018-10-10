@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472447"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499858"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
@@ -25,7 +25,7 @@ ms.locfileid: "4472447"
 
 ## <a name="uploading-packages-to-your-submission"></a>将程序包上载到你的提交
 
-若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 **程序包**页面可让你上传.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap 文件。
+若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 在**程序包**页面可让你上传.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap 文件。
 
 > [!IMPORTANT]
 > 对于 Windows 10，我们建议在上传此处.msixupload 或.appxupload 文件而不是.msix、.appx、.msixbundle 或.appxbundle。  有关如何包装 UWP 应用以上架应用商店的详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)。

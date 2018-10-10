@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 98adbf3f170c679452f4a78a18097b83e93faffa
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472635"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501498"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
-有关游戏信息请求。 
+有关游戏的请求。 
 <a id="ID4EN"></a>
 
  

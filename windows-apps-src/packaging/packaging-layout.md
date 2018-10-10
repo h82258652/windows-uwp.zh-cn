@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468136"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500951"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
 
@@ -147,7 +147,7 @@ ms.locfileid: "4468136"
 
 每个可选包都有自己独特的包系列名称，必须使用 **PackageFamily** 元素进行定义，同时将 **Optional** 属性指定为 **true**。 **RelatedSet** 属性用于指定可选包是否在相关集中（默认为 true）- 可选包是否应随主包一起更新。
 
-**PrebuiltPackage**元素用于添加包布局以包含或引用要构建的应用包文件中未定义的包。 在此情况下，另一个 DLC 可选包包含在此处，以便主应用程序包文件可以引用它并使其成为相关集的一部分。
+**PrebuiltPackage**元素用于添加包布局以包含或引用要构建的应用包文件中未定义的包。 在此情况下，另一个 DLC 可选包包含在此处，以便在主应用包文件可以引用它并使其成为相关集的一部分。
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用包布局和 MakeAppx.exe 构建应用包
@@ -163,7 +163,7 @@ MakeAppx.exe build /f PackagingLayout.xml /op OutputPackages\
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本，因为应用捆绑包文件仍需要引用以前版本的**媒体**包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
+`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 由于在应用包文件仍需要引用以前版本的**媒体**包，必须提供以前的版本。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
 以本页面上的高级包布局示例为例，要只构建 **Themes** 可选捆绑包和它引用的 **Themes.main** 应用包，可以使用以下命令：
 
 ``` example 

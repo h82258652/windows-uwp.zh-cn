@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ecdf3d885a518f622dae00b4b4a98979c3bdefe9
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469974"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499584"
 ---
 # <a name="auxiliary-eds-apis"></a>辅助 EDS API
 
-有几种娱乐发现服务 (EDS) Api 不直接提供信息内容，但提供了有关如何使用该服务或帮助驱动器常见 UI 模型的一般信息。
+有几种娱乐发现服务 (EDS) Api 不直接提供信息的内容，但提供了有关如何使用该服务或帮助驱动器常见 UI 模型的常规信息。
 
 <a id="ID4EQ"></a>
 
@@ -38,14 +38,14 @@ ms.locfileid: "4469974"
 
 ### <a name="api-parameter-values"></a>API 参数值
 
-此 API 介绍了可以使用该服务的参数。 返回的信息是可供客户端 UI，因为本地化的文本附带每个参数。
+此 API 介绍了可以使用该服务的参数。 返回的信息是由客户端 UI，因为本地化的文本附带每个参数。
 
-None 以下 Api 接受任何查询参数。
+无以下 Api 接受任何查询参数。
 
 | API| URI| 描述|
 | --- | --- | --- | --- | --- | --- |
 | 类型| / {区域设置} / 元数据/mediaGroups| 媒体组的完整列表|
-| 媒体项的每个媒体组的类型| / {区域设置} / /metadata/mediagroups/ {mediaItemTypeGroup} / mediaItemTypes| 媒体的列表项给定的媒体组内包含的类型。|
+| 媒体项的每个媒体组的类型| / {区域设置} / /metadata/mediagroups/ {mediaItemTypeGroup} / mediaItemTypes| 媒体的列表项包含在给定的媒体组的类型。|
 | 所有媒体项类型| / {区域设置} / 元数据/mediaItemTypes| 媒体项目类型的完整列表|
 | 每个媒体项类型的字段| / {区域设置} / /metadata/mediaitemtypes/ {mediaItemType} / 字段| 单个媒体项类型中的字段列表|
 | 查询优化器| / {区域设置} / /metadata/mediaitemtypes/ {mediaItemType} / queryRefiners| 查询优化器支持给定的媒体项类型的列表|
@@ -58,11 +58,11 @@ None 以下 Api 接受任何查询参数。
 
 ### <a name="combined-content-rating-generator"></a>结合使用内容分级生成器
 
-强制执行家长控制子级被允许看到的内容是在复杂的任务。 每个媒体项类型具有其自己的分级系统，不仅那些分级系统可能会有所不同，随国家。 这意味着需要指定正确筛选的所有项的数据的多个不同部分。
+强制执行家长控制子级被允许看到的内容是在复杂的任务。 每个媒体项类型具有其自己的分级系统，不仅这些分级系统可能会有所不同，国家。 这意味着需要指定正确筛选的所有项的数据的多个不同部分。
 
-而不是在所有 API 调用中指定的所有参数，此 API 生成一个值，以将传递到其他 Api 中的 combinedContentRating 参数，仍传达相同的信息。 这旨在使 Api 更易于使用和维护，如传递到此 API 的多个参数处于折叠状态转换为单个、 可重复使用的值为其他 Api。
+而不是在所有 API 调用中指定的所有参数，此 API 生成一个值，以将传递到其他 Api 中的 combinedContentRating 参数，仍传达相同信息。 这被设计使 Api 更易于使用和维护，如传递到此 API 的多个参数处于折叠状态转换为单个、 可重复使用的值为其他 Api。
 
-尽管此 api 返回的确切值最终可能会更改，它们应很少更改 （例如 EDS 版本），因此可能很长一段时间为缓存。 接受 combinedContentRating 参数将提供的含义明确的错误消息如果传入的值是无效，即表明调用方只是任何 API 需要调用此 API 再次以获取更新的值。 如果 API 接受 combinedContentRating 参数，但其中一个未提供，任何筛选的内容将生效具体取决于家长控制
+尽管此 API 返回的确切值可能会最终更改，它们应很少更改 （例如版本的 EDS） 并因此可以为长时间内缓存。 接受 combinedContentRating 参数将提供的含义明确的错误消息如果传入的值无效，即表明调用方只是任何 API 需要调用此 API 再次来获取更新的值。 如果 API 接受 combinedContentRating 参数，但其中一个未提供，任何筛选的内容将基于家长控制
 
 > [!NOTE]
 > 这并不意味着，返回仅"安全"内容-这意味着，返回所有内容，包括潜在显式内容）。
@@ -85,9 +85,9 @@ EDS Api 中，默认情况下，返回一组很少最小的每个项目的字段
 
 对于接受此参数的任何 API，所提供的值必须中指定的媒体项的所有类型的所有字段的超集。 不能指定不同的用于不同的媒体项类型的字段集。 但是，如果字段适用于一个媒体项类型，但不是另一个，它将仅出现在媒体项类型存在数据 (例如仅 AvatarItems"AvatarBodyType"包含到组合的字段名称 API 的调用中，如果将包含该字段)。
 
-从此 API 返回的值是可高度缓存-实际上，它们不应更改除外之间的 EDS 部署。 建议，如果需要缓存，缓存的最后一个不会超过用户的会话。
+从该 API 返回的值是高度缓存-实际上，它们不应更改除外之间的 EDS 部署。 建议，如果需要缓存，缓存的最后一个不会超过用户的会话。
 
-除了接受的实际的字段名称，此 API 接受"全部"作为有效的值。 这将生成包含可指定每个字段的值。 "所有"值很可能仅用于开发、 调试和测试目的。
+除了接受的实际的字段名称，此 API 接受"全部"作为有效的值。 这将生成包含可指定每个字段的值。 "全部"值很可能仅用于开发、 调试和测试目的。
 
 <a id="ID4ERG"></a>
 

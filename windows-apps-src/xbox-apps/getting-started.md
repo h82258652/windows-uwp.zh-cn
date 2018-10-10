@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472590"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504499"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One 上的 UWP 应用开发入门
 
@@ -35,7 +35,7 @@ ms.locfileid: "4472590"
 
 1.  安装 Visual Studio 2015 Update 3 或 Visual Studio 2017。
 
-    如果你要安装 Visual Studio 2015 更新 3，请确保选择**自定义**安装，然后选择**通用 Windows 应用开发工具**复选框-它不是默认安装的一部分。 如果你是 C++ 开发人员，确保选择“自定义安装”****，然后选择“C++”****。
+    如果你要安装 Visual Studio 2015 更新 3，请确保你选择**自定义**安装，然后选择**通用 Windows 应用开发工具**复选框-它不是默认安装的一部分。 如果你是 C++ 开发人员，确保选择“自定义安装”****，然后选择“C++”****。
 
     如果要安装 Visual Studio 2017，请确保选择**通用 Windows 平台开发**工作负载。 如果你是 c + + 开发人员，在**摘要**右侧窗格中，在**通用 Windows 平台开发**，确保你选择的**c + + 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
 
@@ -52,7 +52,7 @@ ms.locfileid: "4472590"
 
 ## <a name="setting-up-your-xbox-one-console"></a>设置 Xbox One 主机
 
-1.  在 Xbox One 上激活开发人员模式。 下载该应用、 获取激活代码，并将其输入到你的开发人员中心帐户中的[管理 Xbox One 主机](https://partner.microsoft.com/xboxactivate)页面。 有关详细信息，请参阅 [Xbox One 开发人员模式激活](devkit-activation.md)。 
+1.  在 Xbox One 上激活开发人员模式。 下载该应用，获取激活代码，然后输入你的开发人员中心帐户中的[管理 Xbox One 主机](https://partner.microsoft.com/xboxactivate)页面。 有关详细信息，请参阅 [Xbox One 开发人员模式激活](devkit-activation.md)。 
 
 2.  打开**开发人员模式激活**应用，然后选择**切换并重启**。 恭喜，你现在具有处于开发人员模式下的 Xbox One！
   
@@ -70,7 +70,7 @@ ms.locfileid: "4472590"
 
     你可以通过在主机上启动“开发人员主页”（“主页”右侧的大磁贴）并查看左上角找到你的 Xbox One IP 地址。 有关开发人员主页的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。  
 
-2.  **对于 c + + 和 HTML/Javascript 项目**： 你遵循相似路径到 C# 项目，但在项目属性转到**调试**选项卡中，选择调试程序以打开下拉列表中，键入的 IP 地址或主机名中的**远程计算机****计算机名称**字段中，并选择**通用 （未加密协议）** **身份验证类型**字段中的控制台。
+2.  **对于 c + + 和 HTML/Javascript 项目**： 你遵循相似路径 C# 项目，但在项目属性转到**调试**选项卡中，选择调试程序以打开下拉列表中，键入的 IP 地址或主机名中的**远程计算机****计算机名称**字段中，并选择**通用 （未加密协议）** **身份验证类型**字段中的主机。
 
 3. 在顶部菜单栏中的绿色播放按钮的左侧，从下拉列表中选择**x64** 。
    

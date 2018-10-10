@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: 启动屏幕截图
-description: 本主题介绍了 ms screenclip 和 ms screensketch URI 方案。 你的应用可以使用这些 URI 方案来启动代码段和草图应用或打开新的代码段。
+description: 本主题介绍了 ms screenclip 和 ms screensketch URI 方案。 你的应用可以使用这些 URI 方案来启动代码段和 Sketch 应用或打开新的代码段。
 ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，uri、 截图草图
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469703"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502373"
 ---
 # <a name="launch-screen-snipping"></a>启动屏幕截图
 
-**Ms screenclip:** 和**ms screensketch:** URI 方案允许你启动截图或编辑屏幕截图。
+**Ms screenclip:** 和**ms screensketch:** URI 方案允许你启动代码段或编辑屏幕截图。
 
 ## <a name="open-a-new-snip-from-your-app"></a>从你的应用打开新的代码段
 
@@ -31,7 +31,7 @@ ms.locfileid: "4469703"
 | 源 | 字符串 | 否 | 要指示启动 URI 的源的自由格式字符串。 |
 | delayInSeconds | int | 否 | 从 1 到 30 的整数值。 指定以完全秒为单位，URI 调用和截图开始时之间的延迟。 |
 
-## <a name="launching-the-snip--sketch-app"></a>启动代码段和草图应用
+## <a name="launching-the-snip--sketch-app"></a>启动代码段和 Sketch 应用
 
 **Ms screensketch:** URI 允许你以编程方式启动代码段和 Sketch 的应用，并为批注该应用中打开特定的图像。
 

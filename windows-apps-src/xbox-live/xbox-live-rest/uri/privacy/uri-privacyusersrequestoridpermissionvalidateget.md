@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465365"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501228"
 ---
 # <a name="get-usersrequestoridpermissionvalidate"></a>GET (/users/{requestorId}/permission/validate)
 获取有关是否允许用户执行与目标用户指定的操作或否答案。
@@ -47,7 +47,7 @@ ms.locfileid: "4465365"
 | 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- |
 | 设置| 字符串枚举| 要进行检查的 PermissionId 值。 示例值:"CommunicateUsingText"。|
-| target| 字符串| 在其上执行该操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 示例值： <code>xuid(0987654321)</code>|
+| target| 字符串| 在其上执行操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 示例值： <code>xuid(0987654321)</code>|
 
 <a id="ID4EDC"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "4465365"
 | 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
 
 <a id="ID4ETE"></a>
 
@@ -84,7 +84,7 @@ ms.locfileid: "4465365"
 
 | 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| “确定”| 成功检索会话。|
+| 200| “确定”| 已成功检索会话。|
 | 400| 请求无效。| 示例： 设置不正确 Id、 不正确的 Uri 等。|
 | 404| URI 中指定的用户不存在。| 找不到指定的资源。|
 
@@ -97,7 +97,7 @@ ms.locfileid: "4465365"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34|
-| 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
+| 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
 
 <a id="ID4EKAAC"></a>
 

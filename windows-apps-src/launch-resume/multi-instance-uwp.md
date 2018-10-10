@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462802"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498019"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>创建多实例通用 Windows 应用
 
@@ -23,7 +23,7 @@ ms.locfileid: "4462802"
 从 Windows 10 版本 1803 (10.0;内部版本 17134） 开始，你的 UWP 应用可以选择支持多个实例。 如果多实例 UWP 应用的一个实例正在运行，并发生后续的激活请求，平台将不会激活现有实例。 相反，它将创建一个新实例，而且在单独的进程中运行。
 
 > [!IMPORTANT]
-> 多实例，对于 JavaScript 应用程序，但支持多实例重定向不。 由于 JavaScript 应用程序不支持多实例重定向， [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)类不适用于此类应用程序。
+> 支持多实例的 JavaScript 应用程序，但不是多实例重定向。 由于 JavaScript 应用程序不支持多实例重定向， [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)类不适用于此类应用程序。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>选择加入多实例行为
 
@@ -62,7 +62,7 @@ ms.locfileid: "4462802"
 
 如上所示，**多实例重定向 UWP 应用**模板将 `SupportsMultipleInstances` 添加到 package.appxmanifest 文件，并且还将 **Program.cs**（或 **Program.cpp**，如果使用的是模板的 C++ 版本）添加到包含 `Main()` 函数的项目中。 用于重定向激活操作的逻辑包含在 `Main` 函数中。 **Program.cs**的模板如下所示。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示此激活请求，提供 shell 的首选的实例，如果一个 (或`null`如果没有一个)。 如果 shell 将提供首选项，然后你可以可以重定向激活到该实例，或者如果你选择可以忽略它。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示提供 shell 首选的实例此激活请求，如果一个 (或`null`如果没有)。 如果 shell 将提供首选项，然后你可以可以重定向激活到该实例，或如果你选择可以忽略它。
 
 ``` csharp
 public static class Program

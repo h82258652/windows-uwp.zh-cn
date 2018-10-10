@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469643"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498177"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -99,9 +99,9 @@ ms.locfileid: "4469643"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
-如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的应用以前支持，将提示您确认，这是你的意图，你可以在的**程序包**页面上保存更改之前的所有程序包。
+如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的支持你的应用之前，将提示您确认，这是你的意图，你可以在**程序包**页面上保存更改之前的所有程序包。
 
-当发布的提交，删除所有可在你的应用以前支持的设备系列运行的程序包时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
+当发布的提交，删除所有包可在你的应用以前支持的设备系列上运行时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
 
 请注意，即使你删除支持某些设备系列的所有程序包，已在该设备类型上安装应用的任何现有客户仍可以使用它，并且他们将获取你以后提供的任何更新。
 
@@ -110,7 +110,7 @@ ms.locfileid: "4469643"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>将适用于 Windows 10 的程序包添加到以前发布的应用
 
-如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x，并且你想要为 Windows 10 更新你的应用、 创建新提交并在[包](upload-app-packages.md)步骤期间添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 Windows 10 客户通过新的购置 UWP 程序包。
+如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x，并且你想要为 Windows 10 更新你的应用、 创建新提交并在[程序包](upload-app-packages.md)步骤期间添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 Windows 10 客户通过新的购置 UWP 程序包。
 
 > [!NOTE]
 > 使用 Windows 10 的客户获取 UWP 程序包后，你无法使客户回退到使用任何以前操作系统版本的程序包。 

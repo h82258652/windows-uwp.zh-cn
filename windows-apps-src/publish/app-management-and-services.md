@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471998"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509324"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -56,7 +56,7 @@ ms.locfileid: "4471998"
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授予同意获取该应用。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
 
 有关详细信息，请参阅[请求同意整个租户](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
@@ -100,7 +100,7 @@ f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限
 
 -   你可以使用 **Microsoft Azure 移动应用**发送推送通知、验证和管理应用用户，以及将应用数据存储在云中。 有关详细信息，请参阅[“移动应用”文档](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推送通知服务 (MPNS)** 可以和 Windows Phone 的 .xap 程序包结合使用。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到提供的**WNS/MPNS**页面上的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推送通知服务 (MPNS)** 可以和 Windows Phone 的 .xap 程序包结合使用。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

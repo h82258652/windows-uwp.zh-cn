@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471019"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499983"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -105,7 +105,7 @@ ms.locfileid: "4471019"
 -   如果后台任务需要锁屏界面访问权限，请确保在尝试调试后台任务之前将应用放在锁屏界面上。 有关为支持锁屏界面的应用指定清单选项的信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 -   后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 
-有关使用 VS 调试后台任务的详细信息请参阅[如何触发暂停、 恢复和后台事件在 UWP 应用中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
+有关使用 VS 调试后台任务的详细信息请参见[如何触发暂停、 恢复和后台事件在 UWP 应用中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
 
 ## <a name="related-topics"></a>相关主题
 

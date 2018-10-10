@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp, beta 测试版本, 有限分发, beta 版本, 测试, 测试人员
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467662"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498243"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>beta 版本测试和定向分发
 
@@ -53,7 +53,7 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>在 Microsoft Store 中隐藏应用和使用促销代码
 
-此选项提供了另一种方法应用限制分发给某组测试人员，并能阻止其他任何用户发现你的应用商店中的应用 （或获取不使用促销代码）。 但是，与私人受众选项不同，如果有直接链接，任何人都可能看到你的应用的一览。 如果保密性对于你的提交至关重要，我们建议改为发布到私人受众。
+此选项提供了另一种方法来限制应用于某些组的测试人员分发时阻止其他任何用户发现你的应用商店中的应用 （或促销充值码获取它）。 但是，与私人受众选项不同，如果有直接链接，任何人都可能看到你的应用的一览。 如果保密性对于你的提交至关重要，我们建议改为发布到私人受众。
 
 隐藏应用和使用促销代码适用于面向任何操作系统版本的应用，但测试人员只有在运行 Windows 10 的情况下才可以获得该应用。
 

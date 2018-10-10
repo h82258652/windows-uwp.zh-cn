@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464889"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498273"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件; 绑定到 C++/WinRT 集合
 
@@ -36,7 +36,7 @@ ms.locfileid: "4464889"
 在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中，我们已将类型 **BookSku** 的属性添加到主视图模型。 在此步骤中，我们将使用[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)工厂函数模板来帮助我们在同一视图模型上实现**BookSku**可观测集合。
 
 > [!NOTE]
-> 如果尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本，然后查看[是否有较早版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)有关你可以使用而不是**winrt::single_ 可观测矢量模板的列表threaded_observable_vector**。
+> 如果尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本，然后查看[是否有较早版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)有关你可以使用而不是**winrt::single_ 可观测矢量模板的列表threaded_observable_vector**。
 
 声明 `BookstoreViewModel.idl` 中的新属性。
 

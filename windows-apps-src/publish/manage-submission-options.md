@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 发布暂停, 发布日期, 发送提交以发布, 受限功能审核, windows 10, uwp, publishing hold, publish date, send submission to publish, restricted capability approval
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465513"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500066"
 ---
 # <a name="manage-submission-options"></a>管理提交选项
 
@@ -35,7 +35,7 @@ ms.locfileid: "4465513"
 
 ### <a name="publish-your-submission-manually"></a>手动发布你的提交
 
-如果还不想设置发布日期，并且希望自己的提交保持未发布的状态，直到手动决定启动发布流程为止，则可选择**在我选择“立即发布”前不发布此提交**。 选择此选项意味着将不发布所提交的内容，直到自己做出指示为止。 后你提交通过认证，你可以将其发布通过在认证状态页上，选择**现在发布**或通过相同方式选择特定日期，如下所述。
+如果还不想设置发布日期，并且希望自己的提交保持未发布的状态，直到手动决定启动发布流程为止，则可选择**在我选择“立即发布”前不发布此提交**。 选择此选项意味着将不发布所提交的内容，直到自己做出指示为止。 后你的提交通过认证，你可以将其发布通过在认证状态页上，选择**现在发布**或通过相同方式选择特定日期，如下所述。
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>在特定日期开始发布你的提交

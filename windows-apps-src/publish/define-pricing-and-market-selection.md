@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466295"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500247"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
@@ -480,7 +480,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果你的应用包含程序包面向 Windows 8.x 不同，请务必注意大量市场被视为单个"世界其他地区"市场使用的 Windows 应用商店客户 8.x，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中没有一个"世界其他地区"市场选项以将所有这些市场组合)。
+如果你的应用包含程序包面向 Windows 8.x 不同，请务必注意大量市场被视为单个"世界其他地区"市场的客户在 Windows 上使用的应用商店 8.x，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中没有一个"世界其他地区"市场选项，以将所有这些市场组合)。
 
 如果你在提交应用时保留默认选择，则无需担心此问题，并且你的应用将向所有可能的市场提供。 但是，如果你希望排除特定市场，请记住，即使只排除其中一个“世界其他地区”市场，也意味着将无法在任何“世界其他地区”市场中向使用 Windows 8 或 Windows 8.1 的客户提供你的应用。
 
