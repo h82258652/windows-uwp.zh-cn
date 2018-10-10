@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f5af1639f5348fe20c36c56c1301f723d832f7
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4414849"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4470297"
 ---
 # <a name="gameresult-json"></a>GameResult (JSON)
 表示数据，以描述游戏会话的结果的 JSON 对象。 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d9845fdbd9c8dad77c8599a04850a47573858e8
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425229"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4472279"
 ---
 # <a name="payout-summary"></a>付款摘要
 

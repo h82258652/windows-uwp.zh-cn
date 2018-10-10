@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e43cacf9a3fcaedd3829a690441dd28be935339
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/09/2018
-ms.locfileid: "4430529"
+ms.locfileid: "4471518"
 ---
 # <a name="rich-presence-updating-strings"></a>“完整状态”更新字符串
 

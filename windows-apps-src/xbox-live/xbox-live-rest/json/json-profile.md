@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4419175"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4470812"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 用户的个人配置文件设置。 

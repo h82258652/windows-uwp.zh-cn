@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d392269f9cde18f3fcf86bbe0e061aa957fd877a
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415240"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4470245"
 ---
 # <a name="reading-a-json-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中读取 JSON blob
 

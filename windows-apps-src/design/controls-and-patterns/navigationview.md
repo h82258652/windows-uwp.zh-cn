@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c75169f118e2c8ef575fa251a7badc8cfe44247
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 99982e54bd9eebd6d6c34fa08c9f1c480b626a15
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4429755"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471084"
 ---
 # <a name="navigation-view-preview-version"></a>导航视图 （预览版本）
 
@@ -416,23 +416,23 @@ items.Add(new Item() {
 });
 
 public class NavViewDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate NavItemTemplate { get; set; }
+
+    public DataTemplate NavItemTopTemplate { get; set; }    
+
+    public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
     {
-        public DataTemplate NavItemTemplate { get; set; }
+        Item currItem = item as Item;
+        if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
+            return NavItemTopTemplate;
+        else 
+            return NavItemTemplate;
+    }   
 
-        public DataTemplate NavItemTopTemplate { get; set; }    
-
-     public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
-
-        protected override DataTemplate SelectTemplateCore(object item)
-        {
-            Item currItem = item as Item;
-            if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
-                return NavItemTopTemplate;
-            else 
-                return NavItemTemplate;
-        }   
-
-    }
+}
 
 ```
 
@@ -595,6 +595,8 @@ NavigationView 具有内置的后退按钮，可以通过以下属性启用：
 > 如果你使用[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)，则你将需要添加对此工具包的引用： `using MUXC = Microsoft.UI.Xaml.Controls;`。
 
 ```csharp
+private Type currentPage;
+
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
 private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
@@ -638,6 +640,8 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
+    if (args.InvokedItem == null)
+        return;
 
     if (args.IsSettingsInvoked)
         ContentFrame.Navigate(typeof(SettingsPage));
@@ -656,13 +660,14 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 private void NavView_Navigate(string navItemTag)
 {
     var item = _pages.First(p => p.Tag.Equals(navItemTag));
+    if (currentPage == item.Page)
+          return;
     ContentFrame.Navigate(item.Page);
+
+    currentPage = item.Page;
 }
 
-private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
-{
-    On_BackRequested();
-}
+private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) => On_BackRequested();
 
 private void BackInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
@@ -726,7 +731,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 
 ## <a name="scroll-content-under-top-pane"></a>在顶部窗格下的滚动内容
 
-对于无缝的外观和感觉，如果你的应用具有使用 ScrollViewer 的页面，并且你导航窗格顶部放置，我们建议在顶部导航窗格下方的内容滚动。
+对于无缝的外观和感觉，如果你的应用具有使用 ScrollViewer 的页面，并且你导航窗格顶部放置，我们建议在顶部导航窗格下方的内容滚动。 这使应用粘滞标头类型的行为。
 
 这可以通过将[CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds)属性设置为 true 相关的 ScrollViewer 上实现。
 

@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用服务
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: d259df2a65046acb1c34dd2958ab4513bc31f43b
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425409"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471363"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>将应用服务转换为与其主机应用在同一个进程中运行
 
@@ -47,6 +47,8 @@ ms.locfileid: "4425409"
 第二项更改是将服务逻辑从其单独的后台任务项目移动至可从 **OnBackgroundActivated()** 调用的方法。
 
 此时，应用程序可直接运行应用服务。 例如，在 App.xaml.cs 中：
+
+[!NOTE] 下面的代码是不同于提供示例 1 （进程外服务）。 下面的代码仅用于说明目的提供，并且不应作为的示例 2 （进程内服务） 的一部分。  若要继续示例中的文章的过渡 1 （进程外服务） 到示例 2 （进程内服务） 继续使用而不是下面说明的代码示例 1 提供的代码。
 
 ``` cs
 using Windows.ApplicationModel.AppService;
