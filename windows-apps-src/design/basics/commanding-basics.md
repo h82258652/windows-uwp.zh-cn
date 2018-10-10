@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470033"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505190"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
 
@@ -157,7 +157,7 @@ ms.locfileid: "4470033"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可以通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
 :::row-end:::
 
 :::row:::

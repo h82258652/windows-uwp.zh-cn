@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ac24fb580696f1524ce7a6cf09dc1e492e9d2378
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469607"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504736"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -68,7 +68,7 @@ ms.locfileid: "4469607"
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
+| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
 | Content-Type| 字符串| 请求正文中的示例值的 mime 类型： 应用程序/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
@@ -80,7 +80,7 @@ ms.locfileid: "4469607"
  
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
 <a id="ID4ERH"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a5caed8863133129c7bc2f0ee3dcb87f1c4a935e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468571"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504652"
 ---
 # <a name="post-handlesquery"></a>POST (/handles/query)
 创建查询会话句柄。
@@ -38,7 +38,7 @@ ms.locfileid: "4468571"
 
 此 HTTP/REST 方法创建查询句柄仅用于数据，而无需任何会话信息。 它可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForSocialGroupAsync**换行。
 
-此方法，请求正文中的类型字段必须设置为"活动"。 响应正文中的项直接映射到**MultiplayerActivityDetails**的属性。
+对于此方法，请求正文中的类型字段必须设置为"活动"。 响应正文中的项直接映射到**MultiplayerActivityDetails**的属性。
 
 <a id="ID4EDB"></a>
 
@@ -55,13 +55,13 @@ ms.locfileid: "4468571"
 | <b>参数</b>| <b>类型</b>| <b>描述</b>|
 | --- | --- | --- | --- |
 | 关键字| 字符串| 一个关键字，例如，"foo"，它们是否要检索必须在会话或模板中找到的。 |
-| xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，以在查询中包括的会话。 默认情况下，用户必须是其可包含在会话中处于活动状态。 |
+| xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，在查询中包含的会话。 默认情况下，用户必须为其包括在会话中处于活动状态。 |
 | 预订| 布尔型| 若要包括的会话用户设置为保留玩家，但并未加入成为活动玩家。 在查询你自己的会话，或查询特定用户的会话服务器到服务器时，仅使用此参数。 |
 | 处于非活动状态| 布尔型| 若要包括用户已接受但不是会主动玩游戏的会话，则为 true。 用户可"就绪"，但不是"活动"的会话计数为非活动状态。 |
 | 专用| 布尔型| 如果为 true，以包含专用会话。 在查询你自己的会话，或查询特定用户的会话服务器到服务器时，仅使用此参数。 |
 | 可见性| 字符串| 会话的可见性状态。 由<b>MultiplayerSessionVisibility</b>定义可能的值。 如果此参数设置为"打开"，该查询应包括仅打开的会话。 如果它被设置为"private"，<i>专用</i>参数必须设置为 true。 |
-| version| 32 位有符号整数| 应包含最大会话版本。 例如，值为 2 指定主要会话版本的 2 的唯一会话或更少应包含。 版本号必须小于或等于请求的协定版本 mod 100。 |
-| 参加| 32 位有符号整数| 若要检索的会话最大数量。 此数字必须介于 0 和 100 之间。 |
+| version| 32 位有符号整数| 应包含最大会话版本。 例如，值为 2 指定 2 的主要的会话版本的唯一会话或更少应包含。 版本号必须小于或等于请求的协定版本 mod 100。 |
+| 参加| 32 位有符号整数| 若要检索的会话的最大数量。 此数字必须介于 0 和 100 之间。 |
 
 
 设置为 true 的*私有*或*预订*需要对会话的服务器级访问权限。 或者，这些设置要求调用方的 XUID 声明以匹配 URI 中的 XUID 筛选器。 否则，HTTP/403 状态代码返回，无论确实存在任何此类会话。
@@ -76,7 +76,7 @@ ms.locfileid: "4468571"
 
 ## <a name="request-body"></a>请求正文
 
-对于用户的"收藏夹"社交图片的所有活动，请求正文如下所示：
+有关用户的"收藏夹"社交图片的所有活动，请求正文如下所示：
 
 
 ```cpp
@@ -99,7 +99,7 @@ ms.locfileid: "4468571"
 
 ## <a name="response-body"></a>响应正文
 
-句柄被检索的句柄结构数组具有嵌入在每个结构的唯一 ID。
+句柄被检索的句柄结构数组具有嵌入在每个结构中的唯一 ID。
 
 
 ```cpp

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
 ms.openlocfilehash: fcd6d937c7261b5cfa8af954eb5d2ec2869d8afd
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471249"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505179"
 ---
 # <a name="manual-app-packaging"></a>手动打包应用
 

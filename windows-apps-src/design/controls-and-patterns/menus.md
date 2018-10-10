@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472384"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504611"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -41,19 +41,19 @@ ms.locfileid: "4472384"
 
 菜单和上下文菜单通过在用户不需要使用时对命令进行组织和隐藏，从而节省空间。 如果需要经常使用某一特定命令并希望有可用的空间，请考虑将该命令直接置于其自己的元素（而非菜单）中，以便用户无需遍历菜单即可访问它。
 
-菜单和上下文菜单用于整理命令; 在若要显示任意内容，如通知或确认请求使用[对话框或浮出控件](dialogs.md)。
+菜单和上下文菜单用于整理命令; 在若要显示任意内容，例如通知或确认请求使用[对话框或浮出控件](dialogs.md)。
 
 ### <a name="menubar-vs-menuflyout"></a>菜单栏与 MenuFlyout
 
-若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选子菜单）。
+若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选的子菜单）。
 
-若要在水平行显示多个顶级菜单的一组，请使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
+若要显示的多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
 
 ### <a name="menubar-vs-commandbar"></a>菜单栏与 CommandBar
 
-菜单栏和命令栏两者都表示可用于向用户公开的命令的图面。 在菜单栏提供了一种快速而简单的方式来公开，可能需要更多的组织或分组多于 CommandBar 允许的应用的命令集。
+菜单栏和命令栏都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开，可能需要更多的组织或分组比 CommandBar 允许的应用的命令集。
 
-你还可以将菜单栏 CommandBar 结合使用。 在菜单栏用于提供大部分命令，而 CommandBar 将突出显示的最常用的命令。
+你还可以与 CommandBar 配合使用菜单栏。 在菜单栏用于提供大部分命令和 CommandBar 突出显示的最常用的命令。
 
 ## <a name="examples"></a>示例
 
@@ -80,7 +80,7 @@ ms.locfileid: "4472384"
 - 如果主机元素是一个按钮或其他一些命令元素（其主要作用是显示其他命令），则使用菜单。
 - 如果主机元素是一些具有另一主要用途（如显示文本或图像）的其他类型的元素，则使用上下文菜单。
 
-例如，使用在按钮上一个菜单提供筛选和排序列表的选项。 在此方案中，按钮控件的主要用途是提供对菜单的访问权限。
+例如，使用在按钮上菜单提供筛选和排序列表的选项。 在此方案中，按钮控件的主要用途是提供对菜单的访问权限。
 
 ![邮件中的菜单示例](images/Mail_Menu.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "4472384"
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 相关联[的浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，通过某个元素或者分组在应用窗口顶部菜单栏中。
+- 与[浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，通过某个元素或分组在应用窗口顶部菜单栏中。
 
 ### <a name="context-menus"></a>上下文菜单
 
@@ -227,7 +227,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ![菜单栏示例](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> 本示例演示仅是说明了如何创建 UI 结构，但不是显示任何命令的实现。
+> 此示例中显示仅是说明了如何创建 UI 结构，但不显示的任何命令的实现。
 
 ```xaml
 <MenuBar>

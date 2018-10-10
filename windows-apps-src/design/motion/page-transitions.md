@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: a2923834fd968114a4ed607de214763fb2575697
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462456"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504990"
 ---
 # <a name="page-transitions"></a>页面过渡
 
@@ -59,7 +59,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>水平幻灯片
 
-使用水平幻灯片显示同级页面都显示并排。 [NavigationView](../controls-and-patterns/navigationview.md)控件会自动将此动画将用于顶级导航，但如果你要构建自己的水平导航体验，然后可以实现与 SlideNavigationTransitionInfo 水平滑动。
+使用水平幻灯片显示同级页面显示旁边彼此。 [NavigationView](../controls-and-patterns/navigationview.md)控件会自动将此动画将用于顶级导航，但如果你构建自己的水平导航体验，然后可以实现与 SlideNavigationTransitionInfo 水平滑动。
 
 所需的感觉是用户正在是并排的页面之间进行导航。 
 

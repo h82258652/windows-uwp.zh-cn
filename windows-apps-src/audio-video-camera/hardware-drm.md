@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461746"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504714"
 ---
 # <a name="hardware-drm"></a>硬件 DRM
 
@@ -83,7 +83,7 @@ localSettings.values["SoftwareOverride"] = 1;
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-最佳方式是硬件 DRM 还是软件 DRM 是查看 C:\\Users\\&lt;用户名&gt;\\AppData\\Local\\Packages\\&lt;应用程序名称&gt;\\LocalCache\\PlayReady\\\*
+如果你是硬件 DRM 还是软件 DRM 是查看 C:\\Users\\ 的最佳方式&lt;用户名&gt;\\AppData\\Local\\Packages\\&lt;应用程序名称&gt;\\LocalCache\\PlayReady\\\*
 
 -   如果存在 mspr.hds 文件，则使用的是软件 DRM。
 -   如果你具有另一个 \*.hds 文件，则使用的是硬件 DRM。

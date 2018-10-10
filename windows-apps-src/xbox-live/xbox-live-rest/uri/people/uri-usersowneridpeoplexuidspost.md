@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464333"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504665"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
@@ -65,7 +65,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。| 
 | Content-Length| 32 位无符号的整数。 长度，以字节为单位，请求正文。 示例值： 22。| 
-| Content-Type| 字符串。 请求正文的 MIME 类型。 这必须是<b>应用程序/json</b>。| 
+| Content-Type| 字符串。 请求正文中的 MIME 类型。 这必须是<b>应用程序/json</b>。| 
   
 <a id="ID4EBE"></a>
 
@@ -74,7 +74,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
 | 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
   
 <a id="ID4EHF"></a>
@@ -134,8 +134,8 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| "获取"方法时成功。| 
 | 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
-| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 格式不正确。| 
-| 403| 已禁止| XUID 声明不将得到解析从与授权标头。| 
+| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 的格式不正确。| 
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
   
 <a id="ID4ENBAC"></a>
 
@@ -154,7 +154,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 "获取"请求方法时，将只会发送的响应正文。 没有"添加"或"删除"无响应正文。
  
-如果"获取"方法调用成功，该服务集合和数组，其中包含调用方的用户集合返回的用户总数中调用方的人。 对于"添加"和"删除"方法将返回无响应。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
+如果"获取"方法调用成功，该服务集合和数组，其中包含调用方的用户集合返回的用户总数中调用方的人。 无响应"添加"和"删除"方法返回。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
  
 <a id="ID4EHDAC"></a>
 

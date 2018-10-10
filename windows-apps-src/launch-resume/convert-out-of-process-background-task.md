@@ -11,15 +11,15 @@ keywords: windows 10，uwp，后台任务，应用服务
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464176"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505319"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>将进程外后台任务移植到进程内后台任务
 
-移植你进程外 (OOP) 后台活动进程内活动的最简单方法是将[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法代码内的应用程序，并从[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)启动它。 在此处所述的技术不是为了创建大幅从 OOP 后台任务与进程内后台任务;它的有关重写 （或移植） OOP 版本到进程内版本。
+移植你进程外 (OOP) 的后台活动进程内活动的最简单方法是将[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法代码内的应用程序，并从[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)启动它。 在此处所述的技术不是有关创建大幅从 OOP 后台任务与进程内后台任务。它的有关重写 （或移植） OOP 版本到进程内版本。
 
 如果应用具有多个后台任务，[后台激活示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation)可显示如何使用 `BackgroundActivatedEventArgs.TaskInstance.Task.Name` 确定启动的任务。
 

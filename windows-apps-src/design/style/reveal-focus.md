@@ -14,11 +14,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461229"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504656"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -26,13 +26,13 @@ ms.locfileid: "4461229"
 
 显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的照明效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
 
-（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)。）
+（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)）。
 
 
 > **重要 API**：[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>工作原理
-通过添加动画的明亮辉光的元素边框周围显示焦点引起对聚焦元素：
+通过添加动画的明亮辉光元素边框周围显示焦点引起对聚焦元素：
 
 ![显示视觉](images/traveling-focus-fullscreen-light-rf.gif)
 
@@ -67,10 +67,10 @@ ms.locfileid: "4461229"
     }
 ```
 
-设置**FocusVisualKind**属性后，系统自动将展示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
+设置**FocusVisualKind**属性后，系统自动将显示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>为何焦点不是展示在默认情况下？ 
-如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 展示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
+如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 显示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
 
 ## <a name="customizing-reveal-focus"></a>自定义显示焦点
 
@@ -78,9 +78,9 @@ ms.locfileid: "4461229"
 
 但在开始对构成之前，最好先稍有多了解构成展示焦点的组件。
 
-有默认的展示焦点视觉的三个部分： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 展示焦点发光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
+有默认的展示的焦点视觉的三个部分： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 显示焦点明亮辉光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
 
-除了静态元素中，展示焦点视觉功能动画的灯光，跳动时移动焦点时，焦点方向移动。
+除了静态元素中，展示的焦点视觉功能动画的灯光，跳动时移动焦点时，焦点方向移动。
 
 ![显示焦点层](images/reveal-breakdown.svg)
 
@@ -176,7 +176,7 @@ ms.locfileid: "4461229"
 
 ## <a name="related-articles"></a>相关文章
 
-- [展示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
+- [显示突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [针对 Xbox 和电视进行设计](/windows/uwp/design/devices/designing-for-tv)
 - [游戏板和遥控器交互](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
