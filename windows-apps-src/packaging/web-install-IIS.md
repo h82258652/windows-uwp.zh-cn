@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用安装程序，AppInstaller 旁, 加载，相关集，可选包，IIS 服务器
 ms.localizationpriority: medium
 ms.openlocfilehash: 214ddd2b55bca1acecbab0a841cf2048335e7b3a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469516"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507984"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>从 IIS 服务器安装 UWP 应用
 
@@ -30,7 +30,7 @@ ms.locfileid: "4469516"
 2. Web 开发工具和 IIS 
 3. UWP 应用包 - 要分发的应用包
 
-可选：GitHub 上的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)。 如果你没有应用包，以使用，但仍想要了解如何使用此功能，这非常有用。
+可选：GitHub 上的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)。 如果你没有应用程序包使用，但仍想要了解如何使用此功能，这非常有用。
 
 ## <a name="step-1---install-iis-and-aspnet"></a>第 1 步-安装 IIS 和 ASP.NET 
 
@@ -47,7 +47,7 @@ ms.locfileid: "4469516"
 
 ## <a name="step-2---install-visual-studio-2017-and-web-development-tools"></a>第 2 步-安装 Visual Studio 2017 和 Web 开发工具 
 
-[安装 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)如果尚未安装它。 如果你尚未获得 Visual Studio 2017，请确保已安装了以下工作负荷。 如果工作负荷不存在于你的安装，请按照使用 Visual Studio 安装程序 （从开始菜单中找到）。  
+[安装 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)如果尚未安装它。 如果你已经有了 Visual Studio 2017，请确保已安装了以下工作负荷。 如果工作负荷不存在于你的安装，请按照使用 Visual Studio 安装程序 （从开始菜单中找到）。  
 
 在安装期间，选择**ASP.NET 和 Web 开发**和你感兴趣的任何其他工作负荷。 
 
@@ -71,7 +71,7 @@ ms.locfileid: "4469516"
 
 添加要分配到 web 应用程序的应用包。 你可以使用是 GitHub 上提供[初学者项目包](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)的一部分，如果你没有可用的应用包的应用包。 该应用包签名所用的证书 (MySampleApp.cer) 也随 GitHub 上的示例提供。 你必须安装到你之前安装该应用 (第 9 步) 的设备的证书。
 
-初学者项目的 web 应用程序中，在一个新文件夹添加到名为 web 应用`packages`，其中包含要分发的应用包。 若要在 Visual Studio 中创建文件夹，右键单击解决方案资源管理器的根上，选择**添加** -> **新文件夹**并将其命名`packages`。 若要将应用包添加到文件夹，右键单击`packages`文件夹，然后选择**添加** -> **现有项目...** 和浏览到应用包位置。 
+初学者项目 web 应用程序，在一个新文件夹添加到名为 web 应用`packages`，其中包含要分发的应用包。 若要在 Visual Studio 中创建文件夹，右键单击解决方案资源管理器的根上，选择**添加** -> **新文件夹**并将其命名`packages`。 若要将应用包添加到文件夹，右键单击`packages`文件夹，然后选择**添加** -> **现有项目...** 和浏览到应用包的位置。 
 
 ![添加程序包](images/add-package.png)
 
@@ -79,13 +79,13 @@ ms.locfileid: "4469516"
 
 此示例 web 应用使用简单的 HTML。 你可以自由地生成 web 应用根据需要根据你的需求。 
 
-右键单击解决方案资源管理器的根项目中，选择**添加** -> **新项目**，并从**Web**部分中添加一个新的**HTML 页面**。
+右键单击解决方案资源管理器的根项目中，选择**添加** -> **新项目**，并从**Web**部分中添加新**的 HTML 页面**。
 
-HTML 页面创建后，右键单击解决方案资源管理器中的 HTML 页面上，然后选择**设为开始页**。  
+创建的 HTML 页面后，右键单击解决方案资源管理器中的 HTML 页面上，并选择**设置为开始页面**。  
 
-双击 HTML 文件，以在代码编辑器窗口中打开它。 在本教程中，将使用仅在所需的网页来调用应用安装程序应用成功安装 Windows 10 应用中的元素。 
+双击 HTML 文件，以在代码编辑器窗口中打开它。 在本教程中，将使用仅在所需的网页来调用应用安装程序应用成功安装的 Windows 10 应用中的元素。 
 
-下面的 HTML 代码包括在 web 页面。 成功调用应用安装程序的关键是使用应用安装程序向操作系统注册的自定义方案： `ms-appinstaller:?source=`。 请参阅下面的代码示例，更多详细信息。
+在你的 web 页面包含以下的 HTML 代码。 成功调用应用安装程序的关键是使用应用安装程序向操作系统注册的自定义方案： `ms-appinstaller:?source=`。 请参阅下面的代码示例，更多详细信息。
 
 > [!NOTE]
 > 请确保指定的自定义方案匹配 VS 解决方案的 web 选项卡中的项目 Url 后的 URL 路径。
@@ -104,7 +104,7 @@ HTML 页面创建后，右键单击解决方案资源管理器中的 HTML 页面
 
 ## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a>步骤 7-配置应用包 MIME 类型的 web 应用
 
-从解决方案资源管理器中打开**Web.config**文件并添加以下行内的`<configuration>`元素。 
+从解决方案资源管理器中打开**Web.config**文件并添加以下行中的`<configuration>`元素。 
 
 ```xml
 <system.webServer>
@@ -133,7 +133,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 你应查找`microsoft.desktopappinstaller_8wekyb3d8bbwe`列表中。
 
-通过应用安装程序安装应用的本地验证完成后，你可以删除通过此步骤中添加环回豁免：
+通过应用安装程序安装应用的本地验证完成后，你可以删除你在此步骤中通过添加环回豁免：
 
 '' 命令行 CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```

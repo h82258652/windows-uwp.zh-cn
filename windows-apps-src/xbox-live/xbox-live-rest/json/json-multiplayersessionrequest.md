@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c2cb3ca95524b49ea6e0cbe14771036a3e6925
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461700"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506619"
 ---
 # <a name="multiplayersessionrequest-json"></a>MultiplayerSessionRequest (JSON)
-对于**MultiplayerSession**对象上的操作传递的请求 JSON 对象。 
+请求 JSON 对象传递**MultiplayerSession**对象的操作。 
 <a id="ID4EQ"></a>
 
   
@@ -32,7 +32,7 @@ MultiplayerSessionRequest JSON 对象具有以下规范。
 | 属性 | object | 合并到的会话属性更改。| 
 | members.me | object| 常量和大量的属性，例如其顶级对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 | 
 | 成员 | object| 表示用户添加到会话中，从零开始的索引键控其他对象。 在请求中的成员数开始时始终具有 0，即使会话已包含成员。 成员将添加到会话在请求中出现的顺序。 成员属性只能由用户属于其设置。 | 
-| 服务器 | object| 值，该值指示更新和添加内容为会话的关联的服务器参与者的设置。 服务器指定为 null，如果是从会话中删除该服务器条目。 | 
+| 服务器 | object| 关联的服务器参与者的设置的值，该值指示更新和添加到会话。 服务器指定为 null，如果是从会话中删除该服务器条目。 | 
   
 <a id="ID4EZ"></a>
 

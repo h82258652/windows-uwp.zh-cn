@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470812"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505598"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 用户的个人配置文件设置。 
@@ -30,7 +30,7 @@ ms.locfileid: "4470812"
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
 | AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应该用于在应用中显示的用户的标识字符串。| 
-| GameDisplayName| 字符串| 用于在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应该用于在游戏中显示的用户的标识字符串。| 
+| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应该用于在游戏中显示的用户的标识字符串。| 
 | Gamertag| 字符串| 用户的玩家代号。| 
 | AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （见下方）。| 
 | GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下方）。| 
@@ -41,7 +41,7 @@ ms.locfileid: "4470812"
 
 
 > [!NOTE] 
-> 图片可以是用户的真实图片或其 xbox One 玩家图片，具体取决于隐私。 这些设置表示应该用于客户端上显示的用户的图片 url。 此图像可能为空 （指示用户尚未设置任何图片）。 
+> 图片可以是用户的真实图片或其 xbox One 玩家头像，具体取决于隐私。 这些设置表示应该用于客户端上显示的用户的图片 url。 此图像可能为空 （指示用户尚未设置任何图片）。 
 
 
  
@@ -49,7 +49,7 @@ ms.locfileid: "4470812"
  
 格式： png
  
-大小： 64 x 64、 208 x 208、 424 x 424
+大小： 64 x 64，208 x 208，424 x 424
  
 <a id="ID4E2D"></a>
 

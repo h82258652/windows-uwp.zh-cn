@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cf7ab408b14e74a8f231d6c81e3077a0a40be5
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467938"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508547"
 ---
 # <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 创建、 更新或加入会话。
@@ -35,9 +35,9 @@ ms.locfileid: "4467938"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法创建，加入，或更新会话，具体取决于发送相同的 JSON 请求正文模板的子集。 成功时，它将返回一个**MultiplayerSession**对象，包含从服务器返回的响应。 在它的属性可能不同于传入的**MultiplayerSession**对象中的属性。 此方法可以由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**包装。
+此 HTTP/REST 方法创建，加入，或更新会话，具体取决于同一个 JSON 请求正文模板子集发送。 成功时，它将返回一个**MultiplayerSession**对象，包含从服务器返回的响应。 在它的属性可能不同于传入的**MultiplayerSession**对象中的属性。 此方法可以由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**包装。
 
-会话创建和更新操作有表示应用的更改应用程序/json 正文使用 PUT。 操作是幂等，相同的更改的多个应用程序，即有任何其他效果。
+会话创建和更新操作 PUT 使用应用程序/json 正文，表示应用的更改。 操作是幂等，相同的更改的多个应用程序，即有任何其他效果。
 
 JSON 请求正文镜像会话数据结构。 所有字段和子字段都是可选的。
 
@@ -66,7 +66,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 
 
-在 PUT 方法更新会话属性的线格式如下所示。 这是等效于对会话 URI 的 PUT 操作作为属性没有任何内容但下方的对象的正文。 区别是，此操作将返回错误代码 404 未找到如果会话不存在。 此操作支持 If-match 标头。
+在 PUT 方法更新会话属性的线格式如下所示。 这是等效于对会话 URI 的 PUT 操作作为属性没有但下方的对象的任何内容的正文。 区别是，此操作将返回错误代码 404 未找到如果会话不存在。 此操作支持 If-match 标头。
 
 ```cpp
 PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001/properties HTTP/1.1
@@ -107,7 +107,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 | 属性 | object | 合并到的会话属性更改。|
 | members.me | object| 常量和大量的属性，例如其顶级对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 |
 | 成员 | object| 表示用户添加到会话中，从零开始的索引键控其他对象。 在请求中的成员数开始时始终具有 0，即使会话已包含成员。 成员将添加到会话在请求中出现的顺序。 成员属性只能由用户属于其设置。 |
-| 服务器 | object| 值，该值指示更新和添加内容为会话的关联的服务器参与者的设置。 服务器指定为 null，如果是从会话中删除该服务器条目。 |
+| 服务器 | object| 关联的服务器参与者的设置的值，该值指示更新和添加到会话。 服务器指定为 null，如果是从会话中删除该服务器条目。 |
 
 
 
@@ -137,7 +137,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="response-body"></a>响应正文
 
-示例创建或加入会话的响应正文：
+有关创建或加入会话的响应正文示例：
 
 
 ```cpp

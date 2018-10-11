@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472787"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508574"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -68,7 +68,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择仿真的设备。
+若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择一个模拟的设备。
 
 ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 

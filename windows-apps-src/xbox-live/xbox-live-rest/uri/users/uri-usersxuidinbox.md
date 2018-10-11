@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 944b2c9f0e5758444295ef9ec189d84728a3845d
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471788"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505610"
 ---
 # <a name="usersxuidxuidinbox"></a>/users/xuid({xuid})/inbox
-提供给用户的访问权限的 Xbox LIVE 服务的邮件收件箱。 这些 Uri 的域是`msg.xboxlive.com`。
+提供访问用户的 Xbox LIVE 服务的邮件收件箱。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "4471788"
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
-| 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 | 
+| 邮件 Id | 字符串 [50] | 要检索或删除该消息的 ID。 | 
   
 <a id="ID4EDC"></a>
 
@@ -48,7 +48,7 @@ ms.locfileid: "4471788"
 
 [GET (/users/xuid({xuid})/inbox/{messageId})](uri-usersxuidinboxmessageidget.md)
 
-&nbsp;&nbsp;检索特定用户消息，将其标记为已在服务上读的详细的消息文本。 
+&nbsp;&nbsp;检索特定用户消息，将其标记为已在服务上的读的详细的消息文本。 
  
 <a id="ID4EVC"></a>
 

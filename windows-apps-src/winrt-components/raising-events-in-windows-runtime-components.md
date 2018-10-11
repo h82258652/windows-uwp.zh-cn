@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467227"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508167"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 > [!NOTE]
@@ -330,9 +330,9 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要提示** ARM 或 x64 项目配置，更改为 x64 或 arm32 MIDL /env 参数。
+**重要提示** 为 ARM 或 x64 项目配置，更改为 x64 或 arm32 的 MIDL /env 参数。
 
-若要确保 IDL 文件会重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
+若要确保 IDL 文件时重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
 生成事件的属性页应与此类似：![生成事件](./images/buildevents.png)
 
 重新生成解决方案以生成和编译 IDL。
@@ -364,7 +364,7 @@ WIN32;_WINDOWS
 ```
 在“C/C++”>“预编译标头”**** 下，将“预编译标头”**** 更改为“不使用预编译标头”****，然后选择“应用”**** 按钮。
 
-下**链接器 > 常规**，将**忽略导入库**更改为**Ye**s、，然后选择**应用**按钮。
+在**链接器 > 常规**，将**忽略导入库**更改为**Ye**s、，然后选择**应用**按钮。
 
 在“链接器”>“输入”**** 下，依次选择“附加依赖项”****、向下箭头按钮和“编辑”****。 在框中添加此文本：
 

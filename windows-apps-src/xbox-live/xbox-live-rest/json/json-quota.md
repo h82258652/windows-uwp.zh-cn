@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4308c148a530233e06d666da5ec446821ba6ee26
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461176"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508511"
 ---
 # <a name="quotainfo-json"></a>quotaInfo (JSON)
 包含有关标题组的配额信息。 
@@ -31,7 +31,7 @@ QuotaInfo 对象具有以下规范。
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| quotaBytes| 32 位有符号整数 | 最大可用由游戏的字节数。| 
+| quotaBytes| 32 位有符号整数 | 最大可用的标题的字节数。| 
 | usedBytes| 32 位有符号整数 | 游戏使用的字节数。| 
   
 <a id="ID4EXB"></a>

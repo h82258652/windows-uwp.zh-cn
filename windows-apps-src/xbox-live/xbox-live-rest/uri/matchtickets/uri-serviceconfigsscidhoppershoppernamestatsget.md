@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470848"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507887"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
-漏斗获取统计信息。
+漏斗中获取统计信息。
 
 > [!IMPORTANT]
-> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此方法旨在用于合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
@@ -55,8 +55,8 @@ ms.locfileid: "4470848"
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。 | 403|
-| 特权和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
-| 主题作品 ID/概念证明购买/设备类型| 是| 正在匹配到游戏必须允许指定的主题作品声明，设备类型组合的匹配。 | 403|
+| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
+| 主题作品 ID/概念证明购买/设备类型| 是| 正在匹配到游戏必须允许匹配的指定的主题作品声明，设备类型组合。 | 403|
 
 <a id="ID4E3C"></a>
 
@@ -78,7 +78,7 @@ ms.locfileid: "4470848"
 | 成员| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | hopperName| 字符串| 所选的漏斗的名称。|
-| waitTime| 32 位有符号整数| 匹配漏斗 （不可或缺秒数） 时间的平均。 |
+| waitTime| 32 位有符号整数| 匹配时间 （整型数秒为单位） 的漏斗的平均。 |
 | 填充| 32 位有符号整数| 等待匹配漏斗中的用户数。|
 
 <a id="ID4E1D"></a>

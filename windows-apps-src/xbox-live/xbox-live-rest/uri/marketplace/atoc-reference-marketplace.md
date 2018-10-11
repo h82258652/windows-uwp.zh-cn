@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be83e2d4301a708a705a8bec0a1d975b6435bc5
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466903"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506723"
 ---
 # <a name="marketplace-uris"></a>市场 URI
 
-本部分提供了从*应用商店*服务，也称为娱乐发现服务 (EDS) 的 Xbox Live 服务的详细信息通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*应用商店*服务，也称为娱乐发现服务 (EDS)。
 
-仅运行的 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上的游戏均可使用此服务。
+仅在 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上运行的游戏可以使用此服务。
 
 这些 Uri 的域是 eds.xboxlive.com 和 inventory.xboxlive.com。
 
@@ -49,7 +49,7 @@ ms.locfileid: "4466903"
 
 [/media/{marketplaceId}/browse](uri-medialocalebrowse.md)
 
-&nbsp;&nbsp;允许浏览的单个媒体组中的项。
+&nbsp;&nbsp;允许浏览单个媒体组中的项。
 
 [/media/{marketplaceId}/contentRating](uri-medialocalecontentrating.md)
 
@@ -97,7 +97,7 @@ ms.locfileid: "4466903"
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 
-&nbsp;&nbsp;允许搜索单个媒体组中的项。
+&nbsp;&nbsp;允许搜索在单个媒体组中的项目。
 
 <a id="ID4EFD"></a>
 

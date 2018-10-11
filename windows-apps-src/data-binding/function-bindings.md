@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 标记扩展允许函数在标记中使用。
+description: XBind 标记扩展允许在标记中使用的功能。
 title: 在 X:bind 中的函数
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472570"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507865"
 ---
 # <a name="functions-in-xbind"></a>在 X:bind 中的函数
 
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-你还可以直接在标记中使用系统功能，例如完成日期格式、 文本格式、 文本串联等之类的简单方案：
+你还可以直接在标记中使用的系统功能以完成简单的方案，如日期格式设置文本格式、 文本串联、 等，例如：
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -177,7 +177,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双向函数绑定
 
-在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 完成此操作使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
+在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 这是使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

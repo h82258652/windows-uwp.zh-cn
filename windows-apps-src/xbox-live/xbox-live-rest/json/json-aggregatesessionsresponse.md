@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bf1a09144bec9cddda1ae2fd9656dc6dc8c51d
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465221"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506501"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
-为用户的适用性会话包含聚合的数据。 
+包含聚合的数据的用户的适用性会话。 
 <a id="ID4EN"></a>
 
  
@@ -30,9 +30,9 @@ AggregateSessionsResponse 对象具有以下规范。
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
 | totalDurationInSeconds| 64 位有符号整数| 以秒为单位聚合时段的会话的总持续时间。| 
-| totalJoules| 64 位有符号整数| 总能耗刻录 — 以焦耳为单位 — 聚合时段。 | 
+| totalJoules| 64 位有符号整数| 总能耗刻录 — 以焦耳为单位，聚合时段。 | 
 | totalSessions| 64 位有符号整数| 聚合时段的会话的总数。| 
-| weightedAverageMets| 单精度浮点数 | 聚合时段的任务 （满足） 值的加权平均值新陈代谢等效。 满足值是相对于静态的个人新陈代谢速率活动期间的个人新陈代谢速率的比值。 因为休眠新陈代谢率是个人的权重，无论 1.0 和满足的值为相对于个人休眠新陈代谢速率，它们可以用于比较正在执行的不同粗细个人活动的强度。| 
+| weightedAverageMets| 单精度浮点数 | 聚合时段的任务 （满足） 值的加权平均值新陈代谢等效。 满足值是相对于静态的个人新陈代谢速率活动期间个人新陈代谢率的比率。 因为休眠新陈代谢率是个人的权重，无论 1.0 和满足的值为相对于个人休眠新陈代谢速率，它们可以用于比较的不同粗细个人正在执行活动的强度。| 
   
 <a id="ID4ESC"></a>
 

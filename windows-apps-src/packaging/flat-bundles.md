@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, 打包, 包配置, 平面捆绑包
 ms.localizationpriority: medium
 ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471644"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508801"
 ---
 # <a name="flat-bundle-app-packages"></a>平面捆绑应用包 
 
 > [!IMPORTANT]
 > 如果你打算将应用提交到 Microsoft Store，你需要联系 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)并获得批准才能使用平面捆绑包。
 
-平面捆绑包是一种捆绑应用包文件的改进的方式。 典型 Windows 应用包文件使用的应用包文件需要包含在捆绑包的多层包结构，平面捆绑包只引用应用包文件，从而允许他们能够在应用程序包之外删除这一需要。 由于捆绑包中不再包含应用包文件，它们可以对它们进行并行处理，从而缩短了上传时间、 更快发布速度 （因为可以同时处理每个应用包文件），并最终更快地开发迭代。
+平面捆绑包是一种捆绑应用包文件的改进的方式。 典型 Windows 应用包文件使用的应用包文件需要包含在捆绑包的多层包结构，平面捆绑包中删除这一需要通过只引用应用包文件，从而允许他们能够在应用程序包之外。 由于捆绑包中不再包含应用包文件，它们可以对它们进行并行处理，从而缩短了上传时间、 更快发布速度 （因为可以同时处理每个应用包文件），并最终加快开发迭代。
 
 ![平面捆绑包示意图](images/bundle-combined.png)
 
@@ -33,7 +33,7 @@ ms.locfileid: "4471644"
 可以使用 MakeAppx.exe 工具或使用包布局定义捆绑包结构来创建平面捆绑包。
 
 ### <a name="using-makeappxexe"></a>使用 MakeAppx.exe
-若要创建使用 MakeAppx.exe 平面捆绑包，请使用"MakeAppx.exe bundle"命令像往常一样，但使用 /fb 开关生成平面应用捆绑包文件 （这将是非常小，由于只引用应用包文件，不包含任何实际负载). 
+若要创建平面捆绑包使用 MakeAppx.exe，使用"MakeAppx.exe bundle"命令像往常一样，但使用 /fb 开关生成平面应用捆绑包文件 （这将是非常小，由于只引用应用包文件，不包含任何实际负载). 
 
 以下是命令语法示例：
 

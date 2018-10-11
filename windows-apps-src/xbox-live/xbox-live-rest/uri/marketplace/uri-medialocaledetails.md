@@ -12,16 +12,16 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464253"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508241"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
 详细信息和元数据，产品/服务返回有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。
  
-API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因为这些 API 将返回有关显式或隐式方法，与 fiven ID 相关联的其他项的信息，而详细信息 API 返回的其他信息有关相同的项。
+API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因为这些 API 将返回显式或隐式方法，与 fiven ID 相关联的其他项目的信息，而详细信息 API 返回的其他信息有关相同的项。
  
 可以将多个 Id 的不同的媒体项类型传递到单个调用 （只要它们不类型 ProviderContentID-请参阅下面的），但它们都必须属于相同的媒体组。 但是，有几个调用方不知道媒体组在其中的客户端方案。 API 支持这通过允许 sepcial 值为"未知"媒体组在以下情况：
  
@@ -56,7 +56,7 @@ API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因�
  
 这是用于查找提供商例如特定 id。 Netflix Id 或 Hulu id。
  
-ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderContentIds 是唯一的 ID 可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符，什么是 Id 之间 delimieter 之间没有多义性和什么是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
+ProviderContentId idType 时，将接受仅单个值。 这是因为 ProviderContentIds 是唯一的 ID，可以包含类型 '。 字符。 由于 '。 字符也是我们使用 Id 之间的分隔符是什么是 Id 之间 delimieter 之间存在多义性，什么是 ID 本身的一部分。 该 API 的其余部分适用于 ProviderContentIds，进行相同的方式，除了批量查找功能。
    
 <a id="ID4EUH"></a>
 

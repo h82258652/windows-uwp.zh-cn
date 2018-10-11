@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 229f0e9993abc9c5600c55a1a0eddc2e262f1c4c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466262"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506285"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
 
-Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。 此工具可用于在 Windows 10 设备而无需为该应用的 Microsoft Visual Studio 或解决方案是通过 USB 连接或同一子网的情况下部署应用包。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
+Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。 你可以使用此工具的应用包部署在 Windows 10 设备时通过 USB 连接或位于同一子网而无需为该应用的 Microsoft Visual Studio 或解决方案。 你还可以将事先未打包的应用部署到远程电脑或 Xbox One。 本文介绍如何使用此工具安装 UWP 应用。
 
 你只需安装 Windows 10 SDK 即可从命令提示符或脚本文件中运行 WinAppDeployCmd 工具。 使用 WinAppDeployCmd.exe 安装应用时，这会使用.appx/.msix 文件或 AppxManifest （适用于松散文件） 将旁加载到 Windows 10 设备上的应用。 此命令不会安装应用所需的证书。 若要运行该应用，Windows 10 设备必须处于开发人员模式下或已经安装了证书。
 

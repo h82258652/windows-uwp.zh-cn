@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471193"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508502"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -56,7 +56,7 @@ ms.locfileid: "4471193"
 
 如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响是否你的应用程序运行，这可能导致 DAC 生成此错误。
 
-若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以更改为大写小写从应用程序中的所有可执行文件的大小写 (例如： 从。EXE.exe)。
+若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以更改为大写小写应用程序中的所有可执行文件的大小写 (例如： 从。EXE.exe)。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>已损坏或格式不正确的验证码签名
 
@@ -141,7 +141,7 @@ certutil -dump <cert_file.pfx>
 
 * 证书的大小不积极。
 
-* 证书开始屏幕后不是`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
+* 证书开始菜单未在`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
 
 * 证书指针未正确对齐 WIN_CERTIFICATE 结构。
 

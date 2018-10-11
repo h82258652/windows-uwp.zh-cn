@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470148"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506179"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -24,16 +24,16 @@ ms.locfileid: "4470148"
 
 若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-如果使用 xcopy 命令安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统的更改，请考虑手动打包并且想要更精确地控制进程。
+如果使用 xcopy 命令安装你的应用程序，或者你熟悉应用的安装程序对系统进行的更改，请考虑手动打包并且想要更精确地控制过程。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
 >[!IMPORTANT]
->能够创建桌面应用程序的 Windows 应用包 （Windows 10 版本 1607年中引入了称为桌面桥，否则，它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
+>创建 Windows 应用包的桌面应用程序的功能 （Windows 10 版本 1607年中引入了称为桌面桥，否则，它仅可用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
-开始为你的应用程序创建程序包之前查看本指南：[准备打包的桌面应用程序](desktop-to-uwp-prepare.md)。
+在开始为你的应用程序创建程序包之前查看本指南：[准备打包的桌面应用程序](desktop-to-uwp-prepare.md)。
 
 ## <a name="create-a-package-manifest"></a>创建程序包清单
 
@@ -87,7 +87,7 @@ ms.locfileid: "4470148"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果你已保留在 Windows 应用商店应用程序名称，你可以通过使用 Windows 开发人员中心仪表板中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
+> 如果你已保留在 Windows 应用商店中你的应用程序的名称，你可以通过使用 Windows 开发人员中心仪表板中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
 
 ### <a name="properties"></a>属性
 
@@ -177,7 +177,7 @@ ms.locfileid: "4470148"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>生成包资源索引 (PRI) 文件
 
-如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源应用程序创建程序包后，你需要生成新的 PRI 文件。
+如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源应用程序创建程序包后，你需要生成一个新的 PRI 文件。
 
 1.  打开**适用于 VS 2017 的开发人员命令提示符**。
 
@@ -201,7 +201,7 @@ ms.locfileid: "4470148"
 
 ## <a name="run-the-packaged-app"></a>运行打包的应用
 
-你可以运行你的应用程序对它进行测试本地而无需获得证书并对其进行签名。 只需运行此 PowerShell cmdlet：
+你可以运行你的应用程序测试，本地而无需获得证书并对其进行签名。 只需运行此 PowerShell cmdlet：
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
@@ -226,4 +226,4 @@ ms.locfileid: "4470148"
 
 **对你的应用程序进行签名，然后将它分发**
 
-请参阅[发布已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分布的已打包的桌面应用程序](desktop-to-uwp-distribute.md)

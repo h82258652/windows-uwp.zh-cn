@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463331"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507351"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
 允许客户端创建 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -54,7 +54,7 @@ gameserverms.xboxlive.com
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | 
 | 用户代理|  | 有关发出请求的用户代理信息。| 
-| 内容类型| 应用程序/json| 正在提交的数据的类型。| 
+| 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverms.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -120,8 +120,8 @@ gameserverms.xboxlive.com
  
 | 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是的估计值，当群集将准备好，但而对调用方轮询给定的订阅和请求和实施情况率的当前池状态更新的频率的建议。| 
-| fulfillmentState| 指示是否提供的会话被立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或中止，"中止"，由于无法满足请求时立即请求为"true"的指定的 abortIfQueued。 | 
+| pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是估计，当群集将准备好，但而对调用方轮询给定的订阅和请求和实施情况率的当前池状态更新的频率的建议。| 
+| fulfillmentState| 指示是否提供的会话立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或终止，"中止"，因为无法满足请求时立即请求为"true"的指定的 abortIfQueued。 | 
  
 <a id="ID4EWH"></a>
 

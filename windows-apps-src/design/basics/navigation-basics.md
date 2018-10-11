@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463495"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506416"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -188,7 +188,7 @@ ms.locfileid: "4463495"
         Use top navigation when:
 
         - 你想要显示在屏幕上的所有导航选项。
-        - 你希望为你的应用内容的更多空间。
+        - 你希望为你的应用的内容的更多空间。
         - 图标不能清楚地描述你导航类别。
         
         使用 tab 键时：

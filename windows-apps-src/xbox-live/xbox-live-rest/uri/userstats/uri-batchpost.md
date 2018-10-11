@@ -12,21 +12,21 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: db832032a40b40d4b3a774a56487f7065d9cd8ff
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463328"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505302"
 ---
 # <a name="post-batch"></a>POST (/batch)
-发布充当跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法的方法。 这些 Uri 的域是`userstats.xboxlive.com`。
+POST 方法，可用作跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法。 这些 Uri 的域是`userstats.xboxlive.com`。
  
 <a id="ID4ET"></a>
 
  
 ## <a name="remarks"></a>备注
  
-游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是开放的统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
+游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
   
   * [备注](#ID4ET)
   * [备注](#ID4EFB)
@@ -53,8 +53,8 @@ ms.locfileid: "4463328"
  
 没有针对内容隔离和访问控制方案实现的授权逻辑。
  
-   * 可以从任何平台上的客户端读取排行榜和用户统计信息，前提是调用方提交与请求有效的 XSTS 令牌。 写入都很明显限于客户端支持。
-   * 游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是开放的统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
+   * 排行榜和用户统计信息可以读取的所有平台上的客户端，前提是调用方提交请求的有效 XSTS 令牌。 写入都很明显限于客户端支持。
+   * 游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
   
 下面的示例是伪代码检查：
  
@@ -86,7 +86,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到该服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到该服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
 <a id="ID4EAF"></a>
 
@@ -137,7 +137,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| 成功检索会话。| 
+| 200| “确定”| 已成功检索会话。| 
 | 304| 未修改| 资源不已修改自最后一次请求。| 
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权| 请求要求用户身份验证。| 

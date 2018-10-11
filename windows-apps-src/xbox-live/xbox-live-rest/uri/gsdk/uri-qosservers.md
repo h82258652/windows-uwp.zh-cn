@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e7e2b0c5fa02199084127b9c01eb4cac58833383
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469313"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509356"
 ---
 # <a name="qosservers"></a>/qosservers
-URI 由客户端以适用于 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [主机名](#ID4EZ)
  
@@ -37,5 +37,5 @@ gameserverds.xboxlive.com
 
 [GET](uri-qosservers-get.md)
 
-&nbsp;&nbsp;URI 由客户端以适用于 Xbox Live 计算获取可用的 QoS 服务器的列表。
+&nbsp;&nbsp;URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。
  

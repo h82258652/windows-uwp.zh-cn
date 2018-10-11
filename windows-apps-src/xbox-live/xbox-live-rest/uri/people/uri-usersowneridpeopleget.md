@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d08a8ff9e04b255944128ffc1cd1c0b101180d8f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471656"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505513"
 ---
 # <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 获取调用方的用户集合。
@@ -38,7 +38,7 @@ ms.locfileid: "4471656"
 
 ## <a name="remarks"></a>备注
 
-GET 操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
+获取操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
 
 <a id="ID4E5"></a>
 
@@ -56,9 +56,9 @@ GET 操作不会修改任何资源，因此如果执行一次或多次，这将�
 
 | 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- |
-| 视图| 字符串| 返回与视图关联的用户。 默认值为"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表上的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -在用户的人脉列表中的用户也是旧 Xbox LIVE 好友返回所有人。</li></br>**注意：** 不同于所属的用户调用用户是否支持仅**所有**的值。|
-| startIndex| 32 位无符号的整数| 返回起始位置给定索引的项。  
-| maxItems| 32 位无符号的整数| 用户从开始菜单索引从开始集合中返回的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
+| 视图| 字符串| 返回与视图关联的用户。 默认值为"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表中的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 如果调用用户是不同于所属的用户，则支持仅的**所有**值。|
+| startIndex| 32 位无符号的整数| 返回起始位置给定索引的项目。  
+| maxItems| 32 位无符号的整数| 用户从开始菜单索引从开始集合中返回的最大数。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
 
 <a id="ID4ERD"></a>
 
@@ -85,7 +85,7 @@ GET 操作不会修改任何资源，因此如果执行一次或多次，这将�
 
 | 标题| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
+| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
 | 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。|
 
 <a id="ID4E5G"></a>
@@ -106,7 +106,7 @@ GET 操作不会修改任何资源，因此如果执行一次或多次，这将�
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 成功。|
 | 400| 错误请求| 查询参数或用户 Id 的格式不正确。|
-| 403| 已禁止| XUID 声明不将得到解析从与授权标头。|
+| 403| 已禁止| 无法分析 XUID 声明与授权标头中。|
 
 <a id="ID4EBBAC"></a>
 
@@ -123,7 +123,7 @@ GET 操作不会修改任何资源，因此如果执行一次或多次，这将�
 
 ## <a name="response-body"></a>响应正文
 
-如果调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
+如果在调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
 
 <a id="ID4EZCAC"></a>
 

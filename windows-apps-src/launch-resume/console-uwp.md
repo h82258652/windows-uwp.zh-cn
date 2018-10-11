@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461514"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507082"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>创建通用 Windows 平台控制台应用
 
 本主题介绍了如何创建[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 控制台应用。
 
-从 Windows 10 版本 1803，你可以编写 C + + WinRT 或 C + + /CX UWP 控制台应用在控制台窗口中，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用控制台窗口用于输入和输出，并可以使用[通用的 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，如**printf**和**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单中，启动 UWP 控制台应用，但你通常将从命令行启动它们。
+从 Windows 10，版本 1803，你可以编写 C + + WinRT 或 C + + /CX UWP 控制台应用在控制台窗口中，如 DOS 或 PowerShell 控制台窗口中运行。 控制台应用控制台窗口用于输入和输出，并可以使用[通用的 C 运行时](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，如**printf**和**getchar**。 UWP 控制台应用可以发布到 Microsoft Store。 它们在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 可以从开始菜单启动 UWP 控制台应用，但你通常将从命令行启动它们。
 
 若要查看操作中，下面是有关创建 UWP 控制台应用视频。
 
@@ -28,7 +28,7 @@ ms.locfileid: "4461514"
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 控制台应用模板 
 
-若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 已安装的模板就可在**新建项目**下 > **已安装** > **其他语言** > **Visual c + +** > **Windows 通用**作为**控制台应用 C + WinRT (通用 Windows)** 和**控制台应用 C + + /CX (通用 Windows)**。
+若要创建 UWP 控制台应用，请首先安装 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal)中提供的**控制台应用（通用）项目模板**。 就可在**新建项目**下的已安装的模板 > **已安装** > **其他语言** > **Visual c + +** > **Windows 通用**作为**控制台应用 C + WinRT (通用 Windows)** 和**控制台应用 C + + /CX (通用 Windows)**。
 
 ## <a name="add-your-code-to-main"></a>将代码添加到 main()
 

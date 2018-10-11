@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469713"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507326"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -48,7 +48,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="what-goes-in-a-form"></a>表单包含哪些元素？
 
-需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 以下是你可以添加的选项的基本列表-无需阅读有关它们的一切内容只足够需要了解它们的外观及其工作方式。
+需要使用各种 [XAML 控件](../design/controls-and-patterns/controls-and-events-intro.md)填充表单。 你可能对这些控件很熟悉，但如果需要复习，请重温以下参考资料。 特别是，你需要允许用户输入文本或从值列表中进行选择的控件。 这是你可以添加的选项的基本列表-无需阅读有关它们的一切内容只足够需要了解它们的外观及其工作方式。
 
 * [TextBox](../design/controls-and-patterns/text-box.md)到你的应用允许用户输入的文本。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 让用户从两个选项中做出选择。

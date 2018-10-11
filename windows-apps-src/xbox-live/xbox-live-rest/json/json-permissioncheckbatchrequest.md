@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3b7f63e7a991420ee594cf45acf2f9952bcf74
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469416"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506517"
 ---
 # <a name="permissioncheckbatchrequest-json"></a>PermissionCheckBatchRequest (JSON)
 PermissionCheckBatchRequest 对象的集合。 
@@ -29,7 +29,7 @@ PermissionCheckBatchRequest 对象具有以下规范。
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| 用户| 用户的数组| 必需。 要检查针对权限的目标的数组。 此数组中的每个条目是 Xbox 用户 ID (XUID) 或匿名关闭网络用户跨网络方案 ("anonymousUser":"allUsers")。 | 
+| 用户| 用户的数组| 必需。 要查看针对权限的目标的数组。 在此数组中的每个条目是 Xbox 用户 ID (XUID) 或匿名关闭网络用户跨网络方案 ("anonymousUser":"allUsers")。 | 
 | 权限| [PermissionId 枚举](../enums/privacy-enum-permissionid.md)的数组| 必需。 要查看针对每个用户的权限。| 
   
 <a id="ID4E3B"></a>

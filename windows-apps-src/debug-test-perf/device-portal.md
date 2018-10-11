@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467279"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508450"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具来帮助你查看 Windows 设备的实时性能并进行疑难解答。
+Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，可帮助你解决并查看你的 Windows 设备的实时性能。
 
-Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以还与该设备上的浏览器本地连接。
+Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以也与该设备上的浏览器本地连接。
 
 Windows Device Portal 是适用于每个设备系列，但功能和设置因每个设备的要求。 本文提供了 Device Portal 的常规说明以及指向包含每个设备系列的更具体信息的文章链接。
 
@@ -91,7 +91,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="running-processes"></a>正在运行的进程
 
-此页显示有关当前在主机设备上运行的进程的详细信息。 这包括应用和系统进程。 在某些平台 （Desktop、 IoT、 和 HoloLens），你可以终止进程。
+此页显示有关当前在主机设备上运行的进程的详细信息。 这包括应用和系统进程。 在某些平台 （Desktop、 IoT、 和 HoloLens） 上，你可以终止进程。
 
 ![设备门户运行处理页面](images/device-portal/mob-device-portal-processes.png)
 
@@ -103,11 +103,11 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="performance"></a>性能
 
-性能页显示系统诊断信息，如电源使用情况、 帧速率的实时图形和 CPU 负载。
+平均页面显示系统诊断信息，如电源使用情况、 帧速率的实时图形和 CPU 负载。
 
 可用的指标如下所示：
 - **CPU**： 的总可用的 CPU 使用率百分比
-- **内存**： 总数，在使用中，可用、 提交、 页面缓冲，和非页面缓冲
+- **内存**： 总数，正在使用、 可用提交、 页面缓冲，和非页面缓冲
 - **I/O**： 读取和写入数据数量
 - **网络**： 接收和发送数据
 - **GPU**: %的总可用 GPU 引擎使用率
@@ -127,15 +127,15 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
   2. 严重错误
   3. 警告
   4. 非错误警告
-  5. 详细跟踪 \
+  5. 详细的跟踪
 
   单击或点击**启用**以开始跟踪。 提供程序将添加到**已启用的提供程序**下拉列表。
 - **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不在 GUID 中包含括号。
 - **已启用提供程序**： 这将列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击**禁用**来停止跟踪。 单击或点击**全部停止**来暂停所有跟踪。
 - **提供程序历史记录**： 这将显示当前会话期间启用的 ETW 提供程序。 单击或点击**启用**来激活已禁用的提供程序。 单击或点击**清除**来清除历史记录。
-- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格形式的 ETW 事件。 表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到本地 CSV 文件。
+- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格形式的 ETW 事件。 下表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到一个本地 CSV 文件。
 
-有关使用 ETW 日志记录的详细信息，请参阅[使用设备门户，以查看调试日志](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)博客文章。 
+有关使用 ETW 日志记录的更多详细信息，请参阅[使用设备门户，以查看调试日志](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)博客文章。 
 
 ### <a name="performance-tracing"></a>性能跟踪
 
@@ -159,7 +159,7 @@ ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信�
 ### <a name="networking"></a>网络
 
 网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将可能使断开连接你从 Device Portal。
-- **可用的网络**： 显示适用于该设备的 WiFi 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
+- **可用的网络**： 显示提供给设备的 WiFi 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
 - **IP 配置**： 设备的网络端口会显示有关每个主机的地址信息。
 
 ![设备门户网络页面](images/device-portal/mob-device-portal-network.png)

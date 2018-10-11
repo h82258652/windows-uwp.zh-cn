@@ -4,7 +4,7 @@ Description: Build UWP apps and custom/templated controls that support platform 
 title: 文本缩放
 label: Text scaling
 template: detail.hbs
-keywords: UWP，文本、 缩放、 辅助功能、"轻松使用"，显示"请 text 大"，用户交互，输入
+keywords: UWP 中，文本、 缩放、 辅助功能、"轻松使用"，显示"进行更大的 text"，用户交互，输入
 ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
@@ -12,28 +12,28 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 885ccc89fcbd4315eeed40c3546ef485c515294e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461862"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508687"
 ---
 # <a name="text-scaling"></a>文本缩放
 
 ![文本缩放 225%到 100%的示例](images/coretext/text-scaling-news-hero-small.png)  
-*文本缩放在 Windows 10 （225%到 100%) 的示例*
+*在 Windows 10 （225%到 100%) 缩放的文本的示例*
 
 ## <a name="overview"></a>概述
 
-读取 （从到桌面的显示器连接到 Surface Hub 的巨大屏幕的便携式计算机的移动设备） 的计算机屏幕上的文本会很困难，许多人。 相反，某些用户找到在应用和网站中用于为大于必要的字体大小。
+读取 （从到桌面监视 Surface Hub 的巨大屏幕的便携式计算机的移动设备） 的计算机屏幕上的文本会很困难，许多人。 相反，某些用户找到在应用和网站中用于为大于必要的字体大小。
 
-若要确保文本是为尽可能广泛的用户清晰可见，Windows 提供的能力，用户在操作系统和个别应用程序更改相对字体大小。 而不是使用放大镜应用 （这通常只需放大屏幕区域内的所有内容，并引入了自己的可用性问题）、 更改显示分辨率或依赖于 DPI 缩放 （用以调整大小具体取决于显示和典型观看的所有内容距离），用户可以快速地访问用于调整大小只是文本，范围从 100%（默认大小） 的设置 225%。
+若要确保文本是为尽可能广泛的用户清晰可见，Windows 提供了用户在操作系统和个别应用程序更改相对字体大小的功能。 而不是使用放大镜应用 （这通常只需放大屏幕区域内的所有内容，并引入了自己的可用性问题）、 更改屏幕分辨率，或依靠 DPI 缩放 （这调整具体取决于显示和典型观看的所有内容距离），用户可以快速地访问用于调整大小只是文本，范围从 100%（默认大小） 的设置 225%。
 
 ## <a name="support"></a>支持
 
-通用 Windows 应用程序 (这两个标准和 PWA)，支持文本缩放默认情况下。
+通用 Windows 应用程序 (标准和 PWA)，支持文本缩放默认情况下。
 
-如果你的 UWP 应用程序包含自定义控件、 自定义文本的图面、 硬编码控件高度、 早期的框架或第三方框架，你可能需要进行一些更新，以确保一致且有用为你的用户体验。  
+如果你的 UWP 应用程序包含自定义控件、 自定义文本的图面，硬编码控件高度、 早期的框架或第三方框架，你可能需要进行一些更新，以确保为你的用户体验一致且很有用。  
 
 DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放，而 Win32 支持仅限于菜单、 图标和工具栏。  
 
@@ -41,18 +41,18 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 
 ## <a name="user-experience"></a>用户体验
 
-用户可以调整文本比例变大滑块上设置-> 将文本与轻松访问-> 视觉/显示屏幕。
+用户可以调整文本缩放与使文本大滑块上设置-> 轻松访问-> 视觉/显示屏幕。
 
 ![文本缩放 225%到 100%的示例](images/coretext/text-scaling-settings-100-small.png)  
 *文本缩放设置设置-> 轻松访问-> 视觉/显示屏幕*
 
 ## <a name="ux-guidance"></a>UX 指南
 
-文本调整大小时，必须还调整大小控件和容器并将其重新排列，从而使其适应文本和其新布局。 如前所述，具体取决于应用程序、 框架和平台，是为你完成这项工作的大部分。 下面的 UX 指南介绍这些情况下，不是。
+文本是调整大小时，必须也调整控件和容器并将其重新排列，从而使其适应文本和其新布局。 如前所述，具体取决于应用程序、 框架和平台，是为你完成此工作的大部分。 下面的 UX 指南介绍这些情况下，不是。
 
 ### <a name="use-the-platform-controls"></a>使用平台控件
 
-没有我们说这已经？ 值得： 如果可能，始终使用与各种 Windows 应用框架提供的内置控件以获得最大程度地投入可能最全面的用户体验。
+没有我们说这已经？ 值得： 如果可能，始终使用与各种 Windows 应用框架提供的内置控件以获得最全面的用户体验可能的最少的努力。
 
 例如，所有 UWP 文本控件都支持全文缩放而无需任何自定义或模板化的体验。
 
@@ -97,13 +97,13 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 ```
 
 ![缩放 225%到 100%的动画的文本](images/coretext/text-scaling.gif)  
-*动画的文字缩放*
+*动画的文本缩放*
 
 ### <a name="use-auto-sizing"></a>使用自动调整大小
 
-未指定绝对大小为你的控件。 只要有可能，让你的控件根据用户和设备设置自动调整大小的平台。  
+未指定绝对大小为你的控件。 尽可能让你的控件基于用户和设备设置自动调整大小的平台。  
 
-在此代码段中前面的示例中，我们使用`Auto`和`*`的一组网格列和让平台宽度值调整应用布局，具体取决于包含网格中的元素的大小。
+在此代码段中前面的示例中，我们使用`Auto`和`*`的一组网格列和让平台宽度值调整应用布局根据包含网格中的元素的大小。
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -117,7 +117,7 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 
 若要确保你的应用的布局是为高的灵活性和适应性尽可能，启用文本换行包含的文本 （许多控件不支持文本换行默认情况下） 的任何控件中。
 
-如果你未指定文本换行，该平台是使用其他方法来调整的布局，包括剪切 （请参阅上一示例）。
+如果你未指定文本换行，该平台是使用其他方法来调整的布局，包括剪裁 （请参阅上一示例）。
 
 在这里，我们使用`AcceptsReturn`和`TextWrapping`TextBox 属性，以确保我们的布局是尽可能地灵活。
 
@@ -131,7 +131,7 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 
 ### <a name="specify-text-trimming-behavior"></a>指定文本剪裁行为
 
-如果文本换行不是首选的行为，大多数文本控件让剪裁文本或指定省略号文本剪裁行为。 剪切是省略号到首选，因为省略号占用空间本身。
+如果文本换行不是首选的行为，大多数文本控件让剪裁文本，或指定的文本剪裁行为省略号。 省略号占用空间本身是首选到省略号剪裁。
 
 > [!NOTE]
 > 如果你需要剪裁文本，剪裁的字符串，而不是开头的末尾。
@@ -151,7 +151,7 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 
 如果你剪裁文本，使用工具提示来向用户提供的完整文本。
 
-在这里，我们将工具提示添加到 TextBlock 不支持文本换行：
+此处，我们将工具提示添加到 TextBlock 不支持文本换行：
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -170,7 +170,7 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 
 ### <a name="support-text-scaling-natively"></a>支持文本本机缩放
 
-处理[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系统事件自定义框架和控件中。 用户在其系统设置文本比例因子每次引发此事件。
+处理[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系统事件在你的自定义框架和控件。 用户在其系统设置文本比例因子每次引发此事件。
 
 ## <a name="summary"></a>摘要
 

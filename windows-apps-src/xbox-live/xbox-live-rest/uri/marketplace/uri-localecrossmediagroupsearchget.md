@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461189"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505636"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
-获取多个不同的媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
+从多个不同的媒体组获取项。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
@@ -64,7 +64,7 @@ ms.locfileid: "4461189"
  
 ### <a name="sample-response"></a>示例响应
  
-下面的代码 JSON 是为了响应在调用`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`。
+下面的 JSON 代码是为了响应在调用`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`。
  
 
 ```cpp

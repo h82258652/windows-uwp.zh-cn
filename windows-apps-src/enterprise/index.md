@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462648"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506341"
 ---
 # <a name="enterprise"></a>企业版
 
@@ -74,7 +74,7 @@ Windows Template Studio 是一个 Visual Studio 2017 扩展，加快了创建新
 
 ### <a name="windows-ui-library"></a>Windows UI 库
 
-Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 它还使低级别兼容性较早版本的 Windows 10，因此即使用户不需要的最新的操作系统的工作原理你的应用。
+Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 它还使低级别兼容性较早版本的 Windows 10 中，因此即使用户不需要的最新的操作系统的工作原理你的应用。
 
 ![Windows UI 库](images/win-ui.png)
 
@@ -84,7 +84,7 @@ Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面�
 
 ### <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
 
-Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以增强外观和感觉，并现有桌面应用程序将仅可通过 UWP 控件，如 Windows Ink 和支持 Fluent 设计系统的控件的最新 Windows 10 UI 功能的功能。 此功能称为 XAML 群岛。
+Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件，如 Windows Ink 和支持 Fluent 设计系统的控件的最新 Windows 10 UI 功能。 此功能称为 XAML 群岛。
 
 了解[UWP 控件的桌面应用程序](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
 
@@ -92,7 +92,7 @@ Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程�
 
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
-在.NET Standard 包括比.NET Standard 20000 更多 Api 1.x。 这使得变得更加方便迁移现有的.NET Framework 库，然后跨不同的.NET 应用程序包括 UWP 应用程序中使用它们。
+在.NET Standard 包括 20000 比.NET Standard 的更多 Api 1.x。 这使得变得更加方便迁移现有的.NET Framework 库，然后跨不同的.NET 应用程序包括 UWP 应用程序中使用它们。
 
 ![net 标准](images/dot-net-standard-project-template.png)
 
@@ -110,9 +110,9 @@ Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程�
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是提供对所有 Windows 应用的现代打包体验的 Windows 应用包格式。 MSIX 包格式保留现有的应用包的功能，并安装文件除了启用 Win32、 WPF 和 Windows 窗体应用的新的现代打包和部署功能。
+MSIX 是提供对所有 Windows 应用的现代打包体验的 Windows 应用包格式。 MSIX 包的格式保留现有的应用包的功能，并安装文件除了启用 Win32、 WPF 和 Windows 窗体应用的新的现代打包和部署功能。
 
-MSIX 是打包格式构建为可安全、 安全且可靠，具体取决于.msi、.appx、 APP-V 和 ClickOnce 安装技术的组合。
+MSIX 是打包格式构建为可安全、 安全且可靠，具体取决于.msi、.appx、 APP-V 和 ClickOnce 安装技术组合。
 
 ![MSIX 图标](images/WinUI_MSIX_2col_740x417.png)
 
@@ -126,8 +126,8 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
 | 主题 | 说明 |
 |-------|-------------|
-| [安全 Windows 应用开发简介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖大量主题，并且主要旨在帮助应用架构师更好地了解可使创建通用 Windows 平台应用快速且简单的 Windows 功能。 |
-| [身份验证和用户身份](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 密码使用强大的双因素身份验证 (2FA) 来替换验证现有凭据和创建特定于设备的凭据的生物识别或 PIN 基于用户手势保护，从而导致同时方便和高度安全的体验。 |
+| [安全 Windows 应用开发简介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖大量主题，并且主要旨在帮助应用架构师更好地了解使创建通用 Windows 平台应用快速且简单的 Windows 功能。 |
+| [身份验证和用户身份](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 来替换密码，使用强大的双因素身份验证 (2FA) 验证现有凭据和通过创建特定于设备的凭据的生物识别或 PIN 基于受用户手势，从而导致同时方便和高度安全的体验。 |
 | [加密](https://msdn.microsoft.com/library/windows/apps/mt270191) | 加密部分概述 UWP 应用可用的加密功能。 文章的范围从有关如何轻松加密敏感业务数据的初级操作实例，一直到操作加密密钥以及使用 MAC、哈希和签名等高级主题。 |
 | [Windows 信息保护 (WIP)](wip-hub.md) | 此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。 |
 
@@ -138,7 +138,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 | 主题 | 说明 |
 |-------|-------------|
 | [数据绑定概述](https://msdn.microsoft.com/library/windows/apps/mt269383) | 本主题介绍了如何将一个控件 （或其他 UI 元素） 绑定到单个项目或项目控件绑定到通用 Windows 平台 (UWP) 应用中的项目的集合。 此外，它还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 |
-| [面向 UWP 的 Entity Framework 7](https://msdn.microsoft.com/library/windows/apps/mt592863) | 针对大数据集执行复杂查询通过使用 Entity Framework 7（支持 UWP）得到了大幅简化。 在本演练中，你将生成针对使用 Entity Framework 本地 SQLite 数据库执行基本数据访问的 UWP 应用。 |
+| [面向 UWP 的 Entity Framework 7](https://msdn.microsoft.com/library/windows/apps/mt592863) | 针对大数据集执行复杂查询通过使用 Entity Framework 7（支持 UWP）得到了大幅简化。 在本演练中，你将生成针对本地 SQLite 数据库使用实体框架执行基本数据访问的 UWP 应用。 |
 | [SQLite 本地数据库](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | 本视频是使用 SQLite（本地应用数据库的建议解决方案）的全面开发人员指南。 请访问 [SQLite](https://www.sqlite.org/download.html) 以下载适用于 UWP 的最新版本，或使用已经与 Windows 10 SDK 一起提供的版本。 |
 
 ## <a name="networking-and-data-serialization"></a>网络和数据序列化
@@ -175,23 +175,23 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
 ## <a name="deployment"></a>部署
 
-你可以选择将应用分配给组织的用户。 你可以使用适用于企业，现有的移动设备管理的 Microsoft 应用商店，或者可以将应用旁加载到设备。 你可以还使你应用可供常规公共通过发布到 Microsoft Store。
+你可以选择将应用分配给组织的用户。 你可以使用适用于企业，现有的移动设备管理的 Microsoft 应用商店，或者你可以将应用旁加载到设备。 你还可以你的应用提供到公共通过发布到 Microsoft Store。
 
 | 主题 | 说明 |
 |-------|-------------|
-| [将 LOB 应用分配到企业](https://msdn.microsoft.com/library/windows/apps/mt608995) | 你可以直接向通过适用于企业的 Microsoft 应用商店批量购置的企业发布业务线应用，无需使应用广泛提供给公众。 |
+| [将 LOB 应用分配到企业](https://msdn.microsoft.com/library/windows/apps/mt608995) | 无需使应用广泛提供给公众，你可以直接向企业获取批量购置，通过适用于企业的 Microsoft 应用商店发布业务线应用。 |
 | [旁加载应用](https://technet.microsoft.com/library/mt269549) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
-| [将应用发布到 Microsoft Store](https://dev.windows.com/publish) | 利用统一的 Microsoft 应用商店允许你发布和管理你的所有应用适用于所有 Windows 设备。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
+| [将应用发布到 Microsoft 应用商店](https://dev.windows.com/publish) | 在统一的 Microsoft 应用商店允许你发布和管理你的所有应用适用于所有 Windows 设备。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
 
 ## <a name="enterprise-uwp-samples"></a>企业 UWP 示例
 
 此处显示简介文本。
 
-操作-谈乔什和/或 Karl 才能一起获取更侧重于企业的示例。
+操作-谈乔什和/或 Karl 才能一起获取更多侧重于企业的示例。
 
 | 主题 |  描述 |
 |------ |--------------|
-| [VanArsdel 清单示例](https://github.com/Microsoft/InventorySample) | 示例 Windows 10 应用程序 （使用通用 Windows 平台） 侧重于在业务线方案中，显示了如何在桌面应用程序使用最新的 Windows 功能。 该示例都基于创建和管理客户、 订单和产品虚构公司 VanArsdel。
+| [VanArsdel 清单示例](https://github.com/Microsoft/InventorySample) | 示例 Windows 10 应用程序 （使用通用 Windows 平台） 侧重于在业务线方案中，显示了如何在桌面应用程序中使用最新的 Windows 功能。 该示例都基于创建和管理客户、 订单和产品虚构公司 VanArsdel。
 突出显示 MVVM，SQL 数据库，实体框架。 列出其他人。|
 
 ## <a name="patterns-and-practices"></a>模式和实践

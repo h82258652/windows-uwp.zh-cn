@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466647"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506591"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
@@ -27,7 +27,7 @@ ms.locfileid: "4466647"
   * [请求正文](#ID4E1B)
   * [HTTP 状态代码](#ID4EHC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EAE)
-  * [在资源的隐私设置的效果](#ID4EYF)
+  * [资源的隐私设置的效果](#ID4EYF)
  
 <a id="ID4EV"></a>
 
@@ -46,14 +46,14 @@ ms.locfileid: "4466647"
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
-| 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 | 
+| 邮件 Id | 字符串 [50] | 要检索或删除该消息的 ID。 | 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-你必须拥有你自己声明要删除用户消息的用户。
+你必须拥有自己声明要删除的用户消息的用户。
   
 <a id="ID4E1B"></a>
 
@@ -81,7 +81,7 @@ ms.locfileid: "4466647"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应 
  
-如果错误，该服务可能会返回服务器对象，其中可能包含从该服务环境的值。
+发生错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
  
 | 属性| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -92,7 +92,7 @@ ms.locfileid: "4466647"
 <a id="ID4EYF"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果 
+## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果 
  
 仅可以删除自己用户的消息。 
   

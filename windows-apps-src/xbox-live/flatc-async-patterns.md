@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460684"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505364"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -67,7 +67,7 @@ typedef struct AsyncBlock
 * *context* - 用于向回调函数传递数据。
 * *queue* - 一个 async_queue_handle_t，作为指定 **AsyncQueue** 的句柄。 如果未设置此队列，将使用默认队列。
 
-你应该在每个异步调用的 API 在堆栈上创建新 AsyncBlock。  AsyncBlock 必须 live 直到称为 AsyncBlock 的完成回调，然后可以将其删除。
+你应该在每个异步调用的 API 在堆栈上创建新 AsyncBlock。  AsyncBlock 必须 live 之前称为 AsyncBlock 的完成回调，然后可以将其删除。
 
 > [!IMPORTANT]
 > **AsyncBlock** 必须一直保留在内存中，直到**异步任务**完成。 如果是动态分配的，可以在 AsyncBlock 的**完成回调**内部将其删除。
@@ -239,7 +239,7 @@ void CALLBACK HandleAsyncQueueCallback(
 }
 ```
 
-然后在后台线程中你可以侦听此信号可以唤醒并调用**DispatchAsyncQueue**。
+然后在后台线程你可以侦听此信号可以唤醒并调用**DispatchAsyncQueue**。
 
 ```cpp
 DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
@@ -275,7 +275,7 @@ DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 }
 ```
 
-它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，那么你将需要确保不会错过代码的任何事件如：
+它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，然后你将需要确保不会错过代码的任何事件如：
 
 ```cpp
     case WAIT_OBJECT_0: 

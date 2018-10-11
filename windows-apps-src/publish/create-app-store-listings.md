@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472830"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506305"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 
@@ -57,7 +57,7 @@ ms.locfileid: "4472830"
 如果尚未上载程序包的语言正在努力，并已保留多个名称，你将需要选择其中一个保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。
 
 > [!NOTE]
-> **产品名称**选择仅适用于应用商店一览语言中你所使用。 它不会影响客户安装该应用; 时显示的名称该名称是程序包的来自获取安装清单。 以避免混淆，我们建议每种语言的程序包和应用商店一览使用相同的名称。
+> **产品名称**选择仅适用于应用商店一览语言中你所使用。 它不会影响客户安装该应用; 时显示的名称该名称来自获取安装的程序包清单。 以避免混淆，我们建议每种语言的程序包和应用商店一览，使用相同的名称。
 
 ## <a name="description"></a>描述
 
@@ -134,7 +134,7 @@ ms.locfileid: "4472830"
 
 对于游戏，简短说明还可能出现在 Xbox One 上游戏中心的“信息”部分。
 
-为了获得最佳结果，保持简短描述下 270 字符。 字段限制 500 个字符，但在一些视图中，只有首先 270 的字符将显示为 （链接可查看的简短说明的其余部分）。
+为获得最佳结果，使你的简短描述下 270 字符。 字段限制 500 个字符，但在一些视图中，只有首先 270 的字符将显示为 （链接可查看的简短说明的其余部分）。
 
 
 ### <a name="additional-system-requirements"></a>其他系统要求

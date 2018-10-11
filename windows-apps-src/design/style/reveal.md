@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: “展示”是一种灯光效果，有助于重点深入了解应用的交互式元素。
-title: 展示突出显示
+title: 显示突出显示
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -15,22 +15,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465350"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509008"
 ---
-# <a name="reveal-highlight"></a>展示突出显示
+# <a name="reveal-highlight"></a>显示突出显示
 
 ![主图](images/header-reveal-highlight.svg)
 
-展示突出显示是当用户附近移动指针它们突出显示交互性元素，如命令栏，一种灯光效果。 
+显示突出显示是当用户附近移动指针它们时突出显示交互性元素，如命令栏，一种灯光效果。 
 
 > **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
-显示突出显示引起对交互式元素通过显示元素的容器时指针在附近，此图所示：
+显示突出显示引起对交互式元素通过显示元素的容器时指针在附近，在此图中所示：
 
 ![显示视觉](images/Nav_Reveal_Animation.gif)
 
@@ -69,7 +69,7 @@ ms.locfileid: "4465350"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-这些插图显示几种不同控件展示突出显示：
+这些插图显示几种不同控件显示突出显示：
 
 ![展示示例](images/RevealExamples_Collage.png)
 

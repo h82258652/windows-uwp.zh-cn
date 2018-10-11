@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462538"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507303"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -269,7 +269,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-尽管 HockeyApp 任务允许你指定符号文件的路径，它是将符号包含捆绑包是最佳做法。
+尽管 HockeyApp 任务允许你指定符号文件的路径，它是与捆绑包将符号是最佳做法。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将程序包提交到 Microsoft Store 的连续部署生成 
 
@@ -296,7 +296,7 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 
 你需要将开发人员帐户与 Azure Active Directory (AD) 连接起来，然后在 AD 中创建一个应用以对请求进行身份验证。 可按照扩展页中的指南完成该操作。 
 
-一旦你已配置了扩展，可以添加生成任务，并使用你的应用 ID 和上传文件的位置对其进行配置。
+一旦你已配置了扩展，你可以添加生成任务，并与你的应用 ID 和上传文件的位置对其进行配置。
 
 ![配置开发人员中心](images/building-screen17.png) 
 
@@ -317,7 +317,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到在本地计算机的受信任的根证书部分将然后安装或更新的应用包文件。
+使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，并将然后安装或更新的应用包文件。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
 在 Windows 10 周年更新中，你可以双击应用包文件，并通过在对话框中选择安装按钮来安装你的应用。 

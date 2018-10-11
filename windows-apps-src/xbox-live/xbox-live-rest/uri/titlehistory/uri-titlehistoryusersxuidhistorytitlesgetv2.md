@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471002"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508570"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
-获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回游戏播放或启动的用户的完整历史记录。 这些 Uri 的域是`achievements.xboxlive.com`。
+获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回用户的游戏播放或启动完整历史记录。 这些 Uri 的域是`achievements.xboxlive.com`。
  
   * [URI 参数](#ID4EY)
   * [查询字符串参数](#ID4EDB)
@@ -34,7 +34,7 @@ ms.locfileid: "4471002"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其游戏历史记录的用户。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在访问其游戏历史记录的用户。| 
   
 <a id="ID4EDB"></a>
 
@@ -43,9 +43,9 @@ ms.locfileid: "4471002"
  
 | 参数| 必需| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| skipItems| 否| 32 位有符号整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
-| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项。 | 
-| maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项数的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
+| skipItems| 否| 32 位有符号整数| 返回在给定的项目数后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
+| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
+| maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项目的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
   
 <a id="ID4EFD"></a>
 
@@ -54,7 +54,7 @@ ms.locfileid: "4471002"
  
 | 声明| 是否为必需？| 描述| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方必须是 Xbox LIVE 上的有效用户。| 403 已禁止| 
+| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方需要 Xbox LIVE 上的有效用户。| 403 已禁止| 
   
 <a id="ID4EGE"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "4471002"
  
 | 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。| 
+| <b>X RequestedServiceVersion</b>| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。| 
 | <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就会使用此 API 的 V2 版本。 否则为 V1。| 
   
 <a id="ID4ERF"></a>

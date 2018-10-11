@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb30b5ad83c44ac4a6feb1471dc31a2e33730a1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.openlocfilehash: 561e5e3dfbd2d65ce43a1ecbd77f668617b89386
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470919"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509394"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -60,10 +60,10 @@ void Example_RealTimeActivity_ConnectAsync()
 
 #### <a name="uwp-developers"></a>UWP 开发人员
 
-如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP， [Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上定义统计数据。 阅读[开发人员中心统计信息配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在开发人员中心上配置的统计数据。
+如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP， [Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上定义统计数据。 阅读[开发人员中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在开发人员中心上配置的统计数据。
 
 > [!NOTE]
-> Stats 2013 开发人员将需要联系其 DAM 关于开发人员中心上的 Stats 2013 配置信息。
+> Stats 2013 开发人员将需要联系其 DAM 有关[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)[开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上的信息。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 

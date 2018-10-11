@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a8bfe8a76b83c78886c48f7e15de274fe89a52a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460751"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508583"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
 使执行团队后 （例如） 帐户劫持将当前用户的信誉评分设置为某些任意值。 这些 Uri 的域是`reputation.xboxlive.com`。
@@ -49,16 +49,16 @@ ms.locfileid: "4460751"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-来自所有： **Content-type： 应用程序/json**。
+来自所有：**内容类型： 应用程序/json**。
  
-从合作伙伴： **X Xbl 协定版本**（当前版本是 101）、 **X Xbl 沙盒**。
+从合作伙伴： **X Xbl 协定版本**（当前版本是 101）， **X Xbl 沙盒**。
  
 从用户: （当前版本是 101） **X Xbl 协定版本**。
  
 | 标头| 类型| 描述| 
 | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
+| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
   
 <a id="ID4END"></a>
 
@@ -104,7 +104,7 @@ ms.locfileid: "4460751"
  
 ## <a name="response-body"></a>响应正文
  
-成功时，响应正文为空。 失败时，将返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+成功时，响应正文为空。 失败时，会返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
  
 <a id="ID4ERH"></a>
 

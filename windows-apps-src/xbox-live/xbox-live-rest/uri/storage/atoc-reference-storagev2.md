@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a188c3406ad0ca3bfca78d6b45c548c72bf791e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472314"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506123"
 ---
 # <a name="title-storage-uris"></a>标题存储 URI
  
-本部分提供了从*标题存储*的 Xbox Live 服务的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息。
+本部分提供了从*标题*存储的 Xbox Live 服务的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息。
  
 所有平台上运行的游戏均可使用此服务。
  
@@ -37,7 +37,7 @@ ms.locfileid: "4472314"
 
 [/global/scids/{scid}/data/{path}](uri-globalscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/global/scids/{scid}/data/{pathAndFileName},{type}](uri-globalscidssciddatapathandfilenametype.md)
 
@@ -53,7 +53,7 @@ ms.locfileid: "4472314"
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{path}](uri-jsonusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
@@ -65,7 +65,7 @@ ms.locfileid: "4472314"
 
 [/sessions/{sessionId}/scids/{scid}/data/{path}](uri-sessionssessionidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
@@ -81,7 +81,7 @@ ms.locfileid: "4472314"
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
@@ -97,7 +97,7 @@ ms.locfileid: "4472314"
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 

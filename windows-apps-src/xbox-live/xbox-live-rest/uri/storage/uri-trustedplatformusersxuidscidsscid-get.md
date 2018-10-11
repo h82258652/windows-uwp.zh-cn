@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bec8c58fcccf5630d69bee28313e004f43d2d5ba
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471588"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507430"
 ---
 # <a name="get-trustedplatformusersxuidxuidscidsscid"></a>GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -53,7 +53,7 @@ ms.locfileid: "4471588"
 | 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
-| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
+| 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
   
 <a id="ID4EWC"></a>
 
@@ -87,7 +87,7 @@ ms.locfileid: "4471588"
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将返回一个[quotaInfo](../../json/json-quota.md)对象。 
+如果调用成功，该服务将返回一个[quotaInfo](../../json/json-quota.md)对象。 
  
 <a id="ID4ECBAC"></a>
 

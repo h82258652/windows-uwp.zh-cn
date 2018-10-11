@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7693d9e60a9fdf58eba8aecdd8618c0a78ecef44
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460694"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507485"
 ---
 # <a name="usersowneridpeopletargetid"></a>/users/{ownerId}/people/{targetid}
-从调用方的用户集合访问目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
+调用方的用户集合中访问通过目标 ID 的人员。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -40,7 +40,7 @@ ms.locfileid: "4460694"
 
 [GET](uri-usersowneridpeopletargetidget.md)
 
-&nbsp;&nbsp;按目标 ID 某人从集合中获取调用方的人。
+&nbsp;&nbsp;调用方的用户集合中获取目标 ID 由一个人。
  
 <a id="ID4E1B"></a>
 

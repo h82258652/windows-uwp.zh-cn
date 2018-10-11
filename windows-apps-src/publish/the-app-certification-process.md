@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态，时间
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471055"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505826"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
-当你完成应用提交的创建并单击**提交到 Microsoft Store** 时，提交将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 你的提交通过认证后，可能需要最多 24 个小时即可客户都可以看到该应用一览以便用于新的提交，或对程序包更新提交所做的更改。 如果你更新仅更改应用商店一览详细信息，将在一小时内完成发布流程。  发布你的提交，并在仪表板中的应用的状态将为**在应用商店**时，你将收到通知。
+当你完成应用提交的创建并单击**提交到 Microsoft Store** 时，提交将进入认证步骤。 此过程通常在几小时内完成，但在某些情况下可能需要最多三个工作日。 你的提交通过认证后，可能需要最多 24 个小时即可客户都可以看到该应用一览用于新的提交，或对程序包已更新提交所做的更改。 如果你更新仅更改应用商店一览详细信息，将在一小时内完成发布流程。  发布你的提交，并在仪表板中的应用的状态将为**在应用商店**时，你将收到通知。
 
 ## <a name="preprocessing"></a>预处理
 
@@ -39,8 +39,8 @@ ms.locfileid: "4471055"
 
 当你的应用通过认证时，它已准备好移动到**发布**过程。
 
-- 如果你已指示应尽快 （默认选项） 发布你的提交，将立即开始发布过程。
-- 如果这是首次发布应用，并且你指定**发布日期**[计划](configure-precise-release-scheduling.md#release)部分中，应用将推出根据你的**发布日期**选择。
+- 如果你已指示应尽快可能选项 （默认） 发布你的提交，将立即开始发布过程。
+- 如果这是第一次已发布应用，并且你指定**发布日期**[计划](configure-precise-release-scheduling.md#release)部分中，应用将推出根据你的**发布日期**选择。
 - 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定应不会发布在特定日期之前，我们将等到该日期开始发布过程中，除非你选择**更改发布日期**。
 - 如果你已使用[发布暂停选项](manage-submission-options.md#publishing-hold-options)指定你想要手动发布提交，我们将不会开始发布过程，直到你选择**立即发布**（或选择**更改发布日期**并选取特定日期）。
 
