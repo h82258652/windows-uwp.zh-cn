@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eac2405b8668179fa60921ca45012a417e61b352
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4528671"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4562947"
 ---
 # <a name="initialuploadrequest-json"></a>InitialUploadRequest (JSON)
 POST GameClip 的正文上传请求。 

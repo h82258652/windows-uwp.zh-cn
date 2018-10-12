@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 610f771641352447f9d38fc4217231ba3230e6fb
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4530749"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4564601"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
 为游戏会话表示摘要数据的 JSON 对象。 

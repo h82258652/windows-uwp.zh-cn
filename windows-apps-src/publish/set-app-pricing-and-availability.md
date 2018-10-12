@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 价格, 可用, 可发现, 免费试用版, 试用版, 试用, 应用, 发布日期
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4540012"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4568376"
 ---
 # <a name="set-app-pricing-and-availability"></a>设置应用定价和可用性
 

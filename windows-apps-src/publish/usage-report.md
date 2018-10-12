@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4539789"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4563735"
 ---
 # <a name="usage-report"></a>使用情况报告
 

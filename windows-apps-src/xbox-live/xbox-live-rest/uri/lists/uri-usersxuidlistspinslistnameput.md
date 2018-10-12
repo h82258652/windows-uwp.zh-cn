@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: fe69fe9e59fd3c7e523f9823438ff9d9b0b7916a
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4533983"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4563474"
 ---
 # <a name="put-usersxuidxuidlistspinslistname"></a>PUT (/users/xuid(xuid)/lists/PINS/{listname})
 更新根据指定每个项目，请求正文中的索引列表中的项。 这些 Uri 的域是`eplists.xboxlive.com`。

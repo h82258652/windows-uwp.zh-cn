@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f914d3994f99b743fc596420eef76aed7f4df79
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4533742"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4568187"
 ---
 # <a name="globalscidsscid"></a>/global/scids/{scid}
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。

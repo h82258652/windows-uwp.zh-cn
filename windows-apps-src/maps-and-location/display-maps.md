@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
 ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4535613"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4566111"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和 Streetside 视图显示地图
 

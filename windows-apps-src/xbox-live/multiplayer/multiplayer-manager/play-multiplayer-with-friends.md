@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a1023fdfd564013549a7445875af9cb06af3f11
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4534751"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4563953"
 ---
 # <a name="play-a-multiplayer-game-with-friends"></a>与好友进行多人游戏
 

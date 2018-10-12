@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ae66a68eb6dede1d82ef3e071246ccacd33199
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4533652"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4567550"
 ---
 # <a name="gamecliptype-enumeration"></a>GameClipType 枚举
 详细介绍 GameClipTypes 枚举。 

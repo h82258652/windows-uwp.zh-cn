@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, 系统用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 0533e9f63453ee2a7a8a7cb77f6f253e2d9c0e23
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4528835"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4565194"
 ---
 # <a name="retrieving-the-windows-system-user-in-a-universal-windows-platform-uwp-title"></a>在通用 Windows 平台 (UWP) 作品中检索 Windows 系统用户
 

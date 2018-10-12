@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b55649b5a4fb0927b03d3fcaf55545a7852d6526
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4537897"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4564908"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 开发人员文档中的新增功能
 

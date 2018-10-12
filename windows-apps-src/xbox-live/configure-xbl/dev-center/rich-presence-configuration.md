@@ -10,11 +10,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, Rich Presence 字符串, Windows 开发人员中心
 ms.openlocfilehash: 125d14fe0bf261caf9177a8ef5fa4cdb72b7952b
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4536719"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4565479"
 ---
 # <a name="configure-rich-presence-on-windows-dev-center"></a>在 Windows 开发人员中心上配置 Rich Presence
 

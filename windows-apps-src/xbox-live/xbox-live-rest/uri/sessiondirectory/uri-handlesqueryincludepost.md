@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dab1ce8b995862470114a389cb6d4bf2ea7904a
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4535159"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4565127"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a>POST (/handles/query?include=relatedInfo)
 创建会话句柄包含相关的会话信息的查询。

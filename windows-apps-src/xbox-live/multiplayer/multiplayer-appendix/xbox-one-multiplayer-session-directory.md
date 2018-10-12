@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c4e10d3a9c194ff5c191ccf33370bad2d9981650
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4539374"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4567342"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One 多人游戏会话目录
 

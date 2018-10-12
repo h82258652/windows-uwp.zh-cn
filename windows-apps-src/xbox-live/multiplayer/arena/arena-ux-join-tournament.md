@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d5f1e4c658d2638f53baaa4176ba741990c667f
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4534976"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4563780"
 ---
 # <a name="join-a-tournament-by-using-the-arena-ui"></a>使用 Arena UI 加入锦标赛
 

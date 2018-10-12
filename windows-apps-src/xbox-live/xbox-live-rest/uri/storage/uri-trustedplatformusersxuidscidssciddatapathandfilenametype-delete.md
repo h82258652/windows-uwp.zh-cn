@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bf3547689984d21efa442d8b2d346e0a42f1de2e
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4555418"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4568181"
 ---
 # <a name="delete-trustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 删除文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
