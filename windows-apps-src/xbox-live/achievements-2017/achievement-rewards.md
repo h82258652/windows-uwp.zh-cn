@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 成就, 奖励
 ms.localizationpriority: medium
 ms.openlocfilehash: 67a84ac7296ccbb3aed82f676f09083dc9c16b17
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4534444"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4573050"
 ---
 # <a name="achievement-rewards"></a>成就奖励
 
