@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: 使用此部分中的 C# 代码示例了解有关使用 Microsoft Store 提交 API 的详细信息。
 title: C# 示例 - 应用、加载项和外部测试版的提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 96040a01b62693d45aec703c332577a3b6bb8eef
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: f5e508bd89c06841009576a0a69cb960a20faa83
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654576"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612534"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 示例：应用、加载项和外部测试版的提交
 
@@ -122,7 +122,7 @@ ms.locfileid: "1654576"
 
 ```IngestionClient``` 类提供的帮助程序方法由示例应用中的其他方法用来执行以下任务：
 
-* [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，此访问令牌可用于在 Microsoft Store 提交 API 中调用方法。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 提交 API。 令牌到期后，可以生成新的令牌。
+* [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，此访问令牌可用于在 Microsoft Store 提交 API 中调用方法。 获取令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 提交 API。 该令牌到期后，可以重新生成一个。
 * 将包含新的应用或加载项提交资源的 ZIP 存档上传至 Azure Blob 存储。 有关将 ZIP 存档上传至应用和加载项提交的 Azure Blob 存储的详细信息，请参阅 [创建应用提交](manage-app-submissions.md#create-an-app-submission) 和 [创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission) 中的相关说明。
 * 处理 Microsoft Store 提交 API 的 HTTP 请求。
 

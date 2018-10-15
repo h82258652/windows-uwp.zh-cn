@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564099"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624365"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 

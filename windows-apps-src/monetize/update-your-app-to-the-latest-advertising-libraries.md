@@ -12,7 +12,7 @@ ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: 76581de948a4bb62597443e389122298f69c561d
 ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/15/2018
 ms.locfileid: "1654806"
@@ -29,7 +29,7 @@ ms.locfileid: "1654806"
 
 * 将不再向应用中的任何 **AdControl** 提供横幅广告，并且你将不再从这些控件中获取任何广告收益。
 
-* 当应用中的 **AdControl** 请求新广告时，将引发控件的 **ErrorOccurred** 事件，并且事件参数的 **ErrorCode** 属性将具有值 **NoAdAvailable**。
+* When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
 
 * 与你的应用关联的任何广告单元均会停用。 你无法从开发人员中心帐户中删除这些已停用的广告单元。 如果你已将应用更新为使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)，请忽略这些广告单元并创建新的广告单元。
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
 title: 使用 Microsoft Store Services SDK 与客户互动
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: ed40494b8498a1d990df0e4c041b1a81024176f5
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 070e1e5bcccee27a19f3afb8a1c9d8ae356a9d73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672804"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612360"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 吸引客户
 
@@ -28,14 +28,14 @@ Microsoft Store Services SDK 提供的功能可帮助你在通用 Windows 平台
 
 ## <a name="scenarios-supported-by-the-microsoft-store-services-sdk"></a>Microsoft Store Services SDK 支持的方案
 
-Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 有关 API 的参考文档，请参阅 [Microsoft Store Services SDK API 参考](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)。
+Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 有关 API 的参考文档，请参阅 [Microsoft Store Services SDK API 参考](https://docs.microsoft.com/uwp/api/overview/engagement)。
 
 |  方案  |  说明   |
 |------------|----------------|
-|  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在开发人员中心仪表板中定义某个实验后，请使用 [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) 类在应用中为实验获取变体、使用该数据修改正在测试的功能的性能，然后使用 [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) 方法将视图事件和转换事件发送到开发人员中心。 最后，使用仪表板查看结果并管理实验。  |
-|  [从 UWP 应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 类将 Windows10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在开发人员中心仪表板的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |
-|  [配置 UWP 应用以接收开发人员中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用 UWP 应用中的 [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) 类注册应用以接收使用 Windows 开发人员中心仪表板发送给客户的定向推送通知。  |
-|   [在开发人员中心中为使用情况报告记录 UWP 应用中的自定义事件](log-custom-events-for-dev-center.md)   |  使用 UWP 应用中的 [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 类在开发人员中心中记录与应用相关联的自定义事件。 然后，在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中查看自定义事件的总发生次数。  |
+|  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在开发人员中心仪表板中定义某个实验后，请使用 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 类在应用中为实验获取变体、使用该数据修改正在测试的功能的性能，然后使用 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) 方法将视图事件和转换事件发送到开发人员中心。 最后，使用仪表板查看结果并管理实验。  |
+|  [从 UWP 应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类将 Windows10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在开发人员中心仪表板的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |
+|  [配置 UWP 应用以接收开发人员中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用 UWP 应用中的 [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) 类注册应用以接收使用 Windows 开发人员中心仪表板发送给客户的定向推送通知。  |
+|   [在开发人员中心中为使用情况报告记录 UWP 应用中的自定义事件](log-custom-events-for-dev-center.md)   |  使用 UWP 应用中的 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 类在开发人员中心中记录与应用相关联的自定义事件。 然后，在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中查看自定义事件的总发生次数。  |
 
 <span id="prerequisites" />
 
@@ -123,7 +123,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 2. 在**解决方案资源管理器**中，右键单击**引用**，然后选择**添加引用…**
 
-3. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中 **Microsoft 协议框架**旁边的复选框。 这使你能够使用 [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 命名空间中的 API。
+3. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中 **Microsoft 协议框架**旁边的复选框。 这使你能够使用 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空间中的 API。
 
 3. 单击**确定**。
 
@@ -134,7 +134,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 ## <a name="understanding-framework-packages-in-the-sdk"></a>了解 SDK 中的框架包
 
-Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 库配置为*框架包*。 此库包含 [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 命名空间中的 API。
+Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 库配置为*框架包*。 此库包含 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空间中的 API。
 
 此库是一个框架包，因此，这意味着在用户安装使用此库的应用版本之后，无论我们何时发布新版本的库及修复和性能增强，Windows 更新均会在其设备上自动更新此库。 这有助于确保客户始终在其设备上安装最新可用版本的库。
 
@@ -142,7 +142,7 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 库�
 
 ## <a name="related-topics"></a>相关主题
 
-* [Microsoft Store Services SDK API 参考](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
+* [Microsoft Store Services SDK API 参考](https://docs.microsoft.com/uwp/api/overview/engagement)
 * [通过 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)
 * [从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)
 * [配置应用以接收开发人员中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)

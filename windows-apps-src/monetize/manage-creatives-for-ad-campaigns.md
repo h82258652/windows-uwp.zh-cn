@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: 在 Microsoft Store 促销 API 中使用此方法管理促销性广告活动的创意。
 title: 管理创意
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: f29920bba22be689c79f2264836ebcee6d8dfe5c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 838329101695c21abfb7ac89dd9c83330b7bd26b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664017"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614053"
 ---
 # <a name="manage-creatives"></a>管理创意
 
@@ -49,7 +49,7 @@ ms.locfileid: "1664017"
 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 说明         |
+| 标头        | 类型   | 描述         |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 561e5e3dfbd2d65ce43a1ecbd77f668617b89386
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 57793a01ebd4c97130df6a476b447a99d78c990e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565448"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624041"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -131,3 +131,8 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
         );
 }
 ```
+
+> [!IMPORTANT]
+> 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证标记到期时刷新。
+> 
+> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测到 RTA 会话已关闭，并且开始退出会话的用户。 它是由 RTA 客户端连接关闭时检测和启动重新连接并重新订阅之前 MPSD 结束会话。

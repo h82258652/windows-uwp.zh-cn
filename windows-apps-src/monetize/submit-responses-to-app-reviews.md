@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: 在 Microsoft Store 评价 API 中使用此方法，提交针对应用评价的回复。
 title: 提交评价回复
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 加载项购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a757743bec947a5e8b0edf8c7a0d02e7c00942d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662597"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614824"
 ---
 # <a name="submit-responses-to-reviews"></a>提交评价回复
 
@@ -46,7 +46,7 @@ ms.locfileid: "1662597"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -69,11 +69,11 @@ ms.locfileid: "1662597"
 
 | 值        | 类型   | 说明           |  必需  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 位于开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。   |  是  |
+| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 位于开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)。 Store ID 示例：9WZDNCRFJ3Q8。   |  是  |
 | ReviewId | 字符串 |  要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字符串 | 要提交的回复。 你的回复必须遵循[以下准则](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字符串 | 应用的支持电子邮件地址，客户可以用它来直接与你联系。 必须为有效的电子邮件地址。     |  是  |
-| IsPublic | 布尔值 |  值 **true** 表示你的回复将显示于应用的应用商店一览中，客户评价的正下方，而且所有客户都可以看到回复。 值 **false** 表示你的回复将通过电子邮件发送给客户，而且其他客户无法在应用的应用商店一览中看到回复。     |  是  |
+| IsPublic | 布尔值 |  如果你指定**为 true**，你的回复将显示在你的应用的应用商店一览中，客户评价的正下方，并且将向所有客户可见。 如果你指定**为 false** ，且用户未选择退出接收电子邮件回复，你的回复将发送给客户通过电子邮件，并且它不会对你的应用的应用商店一览中的其他客户可见。 如果你指定**为 false** ，用户已选择不接收电子邮件回复，则将返回错误。   |  是  |
 
 
 ### <a name="request-example"></a>请求示例

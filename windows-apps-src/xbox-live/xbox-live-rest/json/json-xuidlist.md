@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3853140ce5e7c3f7710f489709945fc70b6703b4
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566867"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611204"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 要对其执行操作的 Xuid 列表。 

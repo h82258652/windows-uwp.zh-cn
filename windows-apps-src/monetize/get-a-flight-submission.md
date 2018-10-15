@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: 在 Microsoft Store 提交 API 中使用此方法，可获取现有软件包外部测试版提交的数据。
 title: 获取软件包外部测试版提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: b3c2dcafb391877c878c368beb97d32416cf00fe
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 6772625d2939052e617c4edaafb2f06042dd244a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817395"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616335"
 ---
 # <a name="get-a-package-flight-submission"></a>获取软件包外部测试版提交
 

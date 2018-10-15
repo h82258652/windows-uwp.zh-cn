@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 82d6dc051911ea04b685ffaeb21f821241bec77d
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571719"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613002"
 ---
 # <a name="achievement-title-history-uris"></a>游戏成就历史记录 URI
  

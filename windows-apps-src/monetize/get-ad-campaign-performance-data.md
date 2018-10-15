@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内指定应用程序的广告市场活动性能聚合数据。
 title: 获取广告市场活动性能数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告市场活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 79901ef38ca837ae547f1d25f98bb42a440c2619
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: ce3f51e0eec2356262811bd126f0a63d555c28bd
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663627"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613472"
 ---
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
@@ -45,7 +45,7 @@ ms.locfileid: "1663627"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                |
+| 标头        | 类型   | 描述                |
 |---------------|--------|---------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

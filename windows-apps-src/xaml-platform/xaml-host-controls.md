@@ -1,20 +1,20 @@
 ---
-author: normesta
+author: mcleanbyron
 description: 本指南将帮助您直接在 WPF 和 Windows 窗体应用程序中创建基于 Fluent 的 UWP UI
 title: 在桌面应用程序的 UWP 控件
-ms.author: normesta
+ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571471"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610245"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: 在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用检索软件包外部测试版信息。
 title: 获取应用的软件包外部测试版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: aa9bbac25316fcebc630edd55aabd333e43e3e49
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: d6349e5c597b923ba05abe5ed74492409350e36e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661977"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613638"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 

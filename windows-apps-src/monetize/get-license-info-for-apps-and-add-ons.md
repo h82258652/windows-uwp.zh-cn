@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: 了解如何使用 Windows.Services.Store 命名空间获取当前应用及其加载项的许可证信息。
 title: 获取应用和加载项的许可证信息
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 许可证, 应用, 加载项, 应用内购买, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a8ee69c291bd1b181cdc842175232a8310fd0d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 83889dce2959a3d373081808864a6b7913fb142b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689373"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613144"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>获取应用和加载项的许可证信息
 
@@ -28,7 +28,7 @@ ms.locfileid: "1689373"
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到应用商店中。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到 Microsoft Store 中。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
 * 如果你想要获取应用的某个加载项的许可证信息，还必须[在开发人员中心仪表板中创建加载项](../publish/add-on-submissions.md)。
 
 此示例中的代码假设：

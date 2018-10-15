@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除现有加载项提交。
 title: 删除加载项提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 删除, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: a969a2a0b22153a66fb2d1c07f489b3bb2555afb
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 1c4b9214f821c23c7507562512e8337820db1fc0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816022"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610439"
 ---
 # <a name="delete-an-add-on-submission"></a>删除加载项提交
 

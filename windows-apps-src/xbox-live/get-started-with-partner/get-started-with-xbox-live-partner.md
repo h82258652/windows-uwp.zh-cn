@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 合作伙伴, ID@Xbox
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f2f4d957bcfae1bfeb62f043f666f14bee4649b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569253"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614552"
 ---
 # <a name="get-started-with-xbox-live-as-a-managed-partner-or-an-idxbox-developer"></a>以托管合作伙伴或 ID@Xbox 开发人员的身份开始使用 Xbox Live
 

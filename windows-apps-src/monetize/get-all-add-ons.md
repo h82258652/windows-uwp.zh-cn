@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: 在 Microsoft Store 提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用检索所有加载项数据。
 title: 获取所有加载项
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ec59a39c91152788f757beb56afc75e7191922
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c711e2443de4607d2266dcddf513a48ff11522a7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663117"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614030"
 ---
 # <a name="get-all-add-ons"></a>获取所有加载项
 

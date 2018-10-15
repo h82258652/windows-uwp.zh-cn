@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: 使用此方法续订 Microsoft Store 密钥。
 title: 续订 Microsoft Store ID 密钥
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, Microsoft Store ID 密钥, 续订
 ms.localizationpriority: medium
-ms.openlocfilehash: 430eaaa040e731e429eba15d58f554e41349a959
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664820"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612441"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>续订 Microsoft Store ID 密钥
 
@@ -56,7 +56,7 @@ ms.locfileid: "1664820"
 | 参数     | 类型   | 说明                       | 必需 |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | 字符串 | Azure AD 访问令牌。        | 是      |
-| 密钥           | 字符串 | 过期的 Microsoft Store ID 密钥。 | 否       |
+| 密钥           | 字符串 | 过期的 Microsoft Store ID 密钥。 | 是       |
 
 
 ### <a name="request-example"></a>请求示例
@@ -78,9 +78,9 @@ Host: collections.mp.microsoft.com
 
 ### <a name="response-body"></a>响应正文
 
-| 参数 | 类型   | 说明                                                                                                            | 必需 |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| 密钥       | 字符串 | 已刷新的 Microsoft Store 密钥，可在将来调用 Microsoft Store 收集 API 或购买 API 时使用。 | 否       |
+| 参数 | 类型   | 说明                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| 键       | 字符串 | 已刷新的 Microsoft Store 密钥，可在将来调用 Microsoft Store 收集 API 或购买 API 时使用。 |
 
 
 ### <a name="response-example"></a>响应示例
@@ -103,8 +103,8 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="error-codes"></a>错误代码
 
 
-| 代码 | 错误        | 内部错误代码           | 描述                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 代码 | 错误        | 内部错误代码           | 描述   |
+|------|--------------|----------------------------|---------------|
 | 401  | 未授权 | AuthenticationTokenInvalid | Azure AD 访问令牌无效。 在某些情况下，ServiceError 的详细信息包含更多信息，例如令牌到期或 *appid* 声明丢失的时间。 |
 | 401  | 未授权 | InconsistentClientId       | Microsoft Store ID 密钥中的 *clientId* 声明与 Azure AD 访问令牌中的 *appid* 声明不匹配。                                                                     |
 

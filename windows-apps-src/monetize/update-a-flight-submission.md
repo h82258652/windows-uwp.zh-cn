@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: 在 Microsoft Store 提交 API 中使用此方法，更新现有软件包外部测试版提交。
 title: 更新软件包外部测试版提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: fa8f8c90257f78d46afe7d4dbe4b261ab88501fc
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 467dae77a7815dba03ce558c7e29e3eea0036d09
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816432"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615588"
 ---
 # <a name="update-a-package-flight-submission"></a>更新软件包外部测试版提交
 

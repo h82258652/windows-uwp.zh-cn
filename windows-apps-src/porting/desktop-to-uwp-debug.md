@@ -12,11 +12,11 @@ keywords: windows 10，uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572563"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611571"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>运行、 调试和测试打包的桌面应用程序
 

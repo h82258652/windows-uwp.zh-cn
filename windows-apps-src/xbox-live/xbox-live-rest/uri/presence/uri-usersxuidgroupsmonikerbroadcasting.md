@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d2e5c0bcbb0c59eabdffdd148e4b7f013c3f40
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564277"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613156"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcasting"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting
 访问组名字对象由指定的广播用户状态记录与在 URI 中出现的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。

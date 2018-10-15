@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: 在 Microsoft Store 促销 API 中使用此方法创建、编辑和获取促销性广告活动。
 title: 管理广告活动
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 125e67e7b56ac4f8d7d15a36ceca3922ea58ac82
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: f707c252e404da3aaf6e82317c80a266f4d91d26
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664227"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611262"
 ---
 # <a name="manage-ad-campaigns"></a>管理广告活动
 
@@ -54,7 +54,7 @@ ms.locfileid: "1664227"
 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 说明         |
+| 标头        | 类型   | 描述         |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |

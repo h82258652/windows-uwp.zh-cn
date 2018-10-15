@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a8dedfe2111621215f0cc0741f7209c37f816bd3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574483"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614614"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---august-2015"></a>Xbox Live SDK 的新增功能 - 2015 年 8 月
 

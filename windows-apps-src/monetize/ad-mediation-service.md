@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Microsoft 广告中介能够显示多个广告网络的广告，让你最大程度地增加广告收益，并充分利用应用促销功能。
 title: Microsoft 广告中介服务
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
-ms.openlocfilehash: e2774b44891934e10a72c1a944d6a0dad45872b5
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: cfcb2402a9a0246060a619cbc65337e2b2c69d78
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989260"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610879"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572129"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615634"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 

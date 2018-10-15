@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 处理
 ms.localizationpriority: medium
 ms.openlocfilehash: 9863ac224e04d48265a05fe56ed484db5dcc3cd8
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566915"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624010"
 ---
 # <a name="c-api-error-handling"></a>C++ API 错误处理
 

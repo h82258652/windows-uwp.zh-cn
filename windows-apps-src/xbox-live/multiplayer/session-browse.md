@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ea47c73cc882db4031f9c43ccbc64030ee039b3f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564830"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610637"
 ---
 # <a name="multiplayer-session-browse"></a>多人游戏会话浏览
 
@@ -107,7 +107,7 @@ ms.locfileid: "4564830"
 搜索属性包含以下组成部分：
 
 `tags` - 标记是字符串描述符，可用于对游戏会话进行分类，与标签类似。 标记必须以字母开头，不能包含空格，且必须少于 100 个字符。
-Example tags: "ProRankOnly", "norocketlaunchers", "cityMaps".
+标记示例：“ProRankOnly”、“norocketlaunchers”、“cityMaps”。
 
 `strings` - 字符串是文本变量，字符串名称必须以字母开头，不能包含空格，且必须少于 100 个字符。
 

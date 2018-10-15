@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的应用的应用内购买相关信息。
 title: 获取应用的加载项
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e829d497a62a55fb56462a669f4e3545740975c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 9b450636db1896de32b0b3c0d2822b37624de10b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663197"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612481"
 ---
 # <a name="get-add-ons-for-an-app"></a>获取应用的加载项
 

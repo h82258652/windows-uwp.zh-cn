@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: 在 Microsoft Store 提交 API 中使用此方法，可获取现有应用提交的数据。
 title: 获取应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: c20e2ec72af848d76413d46a3941e10930f073bf
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 9838798778a2d66b2a52fcfe02defce0c9167d2d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816612"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610100"
 ---
 # <a name="get-an-app-submission"></a>获取应用提交
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: 使用 Microsoft Store 定向优惠 API 获取对应用的当前用户可用的定向优惠。
 title: 使用应用商店服务管理定向优惠
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 定向优惠
 ms.localizationpriority: medium
-ms.openlocfilehash: f329795e612f4669b970ea74fa7a97377cadd1eb
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: cb3000e8d791f997267166505a190ddc7c9b4d34
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653966"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611480"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用应用商店服务管理定向优惠
 

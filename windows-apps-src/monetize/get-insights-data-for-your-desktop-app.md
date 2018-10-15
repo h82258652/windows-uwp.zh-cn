@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法，可获取桌面应用程序的见解数据。
 title: 获取桌面应用程序的见解数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563676"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624325"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 

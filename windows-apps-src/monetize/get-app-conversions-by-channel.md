@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的通道聚合转换数据。
 title: 通过通道获取应用转换
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 应用转换, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0253c7857c46d6a796da545e93d30805fcda2b
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 720b4a20d6fa46df0118cecb0c65dcef533e1659
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663707"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611551"
 ---
 # <a name="get-app-conversions-by-channel"></a>通过通道获取应用转换
 
@@ -59,7 +59,7 @@ ms.locfileid: "1663707"
 | endDate | 日期 | 要检索的转换数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
-| filter | string  | 筛选响应正文的一条或多条语句。 每条语句可以使用 **eq** 或 **ne** 运算符，多条语句还可以使用 **and** 或 **or** 进行组合。 你可以在筛选器语句中指定以下字符串。 有关说明，请参阅本文的[转换值](#conversion-values)部分。 <ul><li><strong>applicationName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>下面是一个 *filter* 参数示例：<em>filter=deviceType eq 'PC'</em>。</p> | 否   |
+| filter | string  | 筛选响应正文的一条或多条语句。 每条语句都可以使用 **eq** 或 **ne** 运算符，多条语句还可以使用 **and** 或 **or** 进行组合。 你可以在筛选器语句中指定以下字符串。 有关说明，请参阅本文的[转换值](#conversion-values)部分。 <ul><li><strong>applicationName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>下面是一个 *filter* 参数示例：<em>filter=deviceType eq 'PC'</em>。</p> | 否   |
 | aggregationLevel | 字符串 | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。 | 否 |
 | orderby | string | 对每个转换的结果数据值进行排序的语句。 语法为 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 参数可以是以下字符串之一：<ul><li><strong>日期</strong></li><li><strong>applicationName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p><em>order</em> 参数为可选，它可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定对每个字段进行升序还是降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串：<em>orderby=date,market</em></p> |  否  |
 | groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：<ul><li><strong>日期型</strong></li><li><strong>applicationName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>conversionCount</strong></li><li><strong>clickCount</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 | referrerUriDomain           | string |  指定激活应用列表及自定义应用推广市场 ID 时所在的域。   |
 | channelType           | string |  指定用于转换的通道的以下字符串之一：<ul><li><strong>CustomCampaignId</strong></li><li><strong>应用商店流量</strong></li><li><strong>其他</strong></li></ul>    |
 | storeClient         | string | 发生转换的应用商店的版本。 当前，唯一受支持的值为 **SFC**。    |
-| deviceType          | string | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>            |
+| deviceType          | 字符串 | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>Unknown</strong></li></ul>            |
 | market              | string | 发生转换的市场的 ISO 3166 国家/地区代码。    |
 | clickCount              | 数字  |     单击你的应用列表链接的客户数量。      |           
 | conversionCount            | 数字  |   客户转换数。         |          

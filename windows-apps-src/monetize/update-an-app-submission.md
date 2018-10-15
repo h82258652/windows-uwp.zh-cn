@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: 在 Microsoft Store 提交 API 中使用此方法，可更新现有应用提交。
 title: 更新应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7830b1d05d386616d4368f59f266cdeafa2e01
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816442"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615578"
 ---
 # <a name="update-an-app-submission"></a>更新应用提交
 
@@ -72,7 +72,7 @@ ms.locfileid: "1816442"
 | canInstallOnRemovableMedia           |  布尔型  |   指示客户是否可以将应用安装到可移动存储。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | isGameDvrEnabled           |  布尔型 |   指示是否可以为应用启用游戏 DVR。    |   
 | gamingOptions           |  object |   一个包含[游戏选项资源](manage-app-submissions.md#gaming-options-object)的数组，用于为应用定义游戏相关设置。     |   
-| hasExternalInAppProducts           |     boolean          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
+| hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
 | applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心填充。   |    

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: ''
 description: 在 Microsoft Store 分析 API 中使用此方法，可下载应用中错误的 CAB 文件。
 title: 下载应用中错误的 CAB 文件
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: a74a72e1d02a73d2b930179d9d2cb99ea09c7c40
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662057"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612703"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下载应用中错误的 CAB 文件
 
@@ -53,7 +53,7 @@ ms.locfileid: "1662057"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供了应用商店 ID。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供了应用商店 ID。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | cabId | 字符串 | 想要下载的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabId** 值。 |  是  |
 
  

@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用此部分中的 C# 代码示例了解有关使用 Microsoft Store 提交 API 提交游戏选项和预报片的详细信息。
 title: C# 示例 - 使用游戏选项和预告片的应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c13b8f0e65d7ca6715acc5ebcee5ca70605a668
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e22081435bea8c73f509719aec1ce31d9157a315
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653126"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614775"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C# 示例：使用游戏选项和预告片的应用提交
 
@@ -41,7 +41,7 @@ ms.locfileid: "1653126"
 
 ```CreateAndSubmitSubmissionExample``` 类定义公用 ```Execute``` 方法，该方法调用其他示例方法，以使用 Microsoft Store 提交 API 来创建并确认包含游戏选项和预告片的应用提交。 要调整此代码以供自己使用，请执行以下操作：
 
-* 将 ```tenantId``` 变量指定为你应用的租户 ID，将 ```clientId``` 和 ```clientSecret``` 变量指定为你应用的客户端 ID 和密钥。 有关详细信息，请参阅[如何将 Azure AD 应用程序与你的 Windows 开发人员中心帐户相关联](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
+* 将 ```tenantId``` 变量指定为你应用的租户 ID，将 ```clientId``` 和 ```clientSecret``` 变量指定为你应用的客户端 ID 和密钥。 有关详细信息，请参阅[如何将 Azure AD 应用程序与你的 Windows 开发者中心帐户相关联](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
 * 将 ```applicationId``` 变量指定为要为其创建提交的应用的[应用商店 ID](in-app-purchases-and-trials.md#store-ids)。
 
 > [!div class="tabbedCodeSnippets"]

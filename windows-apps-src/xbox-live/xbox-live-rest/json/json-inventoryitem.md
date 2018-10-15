@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a7521de7da4ebd31f0a1d8c59bb7c0134eddc08
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563452"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613438"
 ---
 # <a name="inventoryitem-json"></a>inventoryItem (JSON)
 核心清单项表示标准项可被授予权利。

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 在 Microsoft Store 购买 API 中使用此方法，可向给定用户授予免费应用或加载项。
 title: 授予免费产品
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 购买 API, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: c1ecb1f7db755fd21014ebc7edf979e7a25e7c7f
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1665023"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610593"
 ---
 # <a name="grant-free-products"></a>授予免费产品
 
@@ -62,9 +62,9 @@ ms.locfileid: "1665023"
 | language       | 字符串 | 用户的语言。  | 是      |
 | market         | 字符串 | 用户的市场。       | 是      |
 | orderId        | GUID   | 为订单生成的 GUID。 此值对用户而言是唯一的，但不 要求对所有订单都唯一。    | 是      |
-| productId      | string | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例 Store ID 为 9NBLGGH42CFD。 | 是      |
+| productId      | string | Microsoft Store 目录中的[产品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 产品的示例应用商店 ID 为 9NBLGGH42CFD。 | 是      |
 | quantity       | int    | 要购买的数量。 当前，唯一受支持的值为 1。 如果未指定，默认值为 1。   | 否       |
-| skuId          | string | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例 Store ID 为 0010。     | 是      |
+| skuId          | string | Microsoft Store 目录中的产品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU 的示例应用商店 ID 为 0010。     | 是      |
 
 
 ### <a name="request-example"></a>请求示例

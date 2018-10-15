@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。
 title: 获取应用评价
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评价
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1e71fc0fb96344ab73c503de6fcc741673d8d9
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: ce1f9c3a360209bc9ac7b03ac162460a333c7192
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663847"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613571"
 ---
 # <a name="get-app-reviews"></a>获取应用评价
 
@@ -42,7 +42,7 @@ ms.locfileid: "1663847"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -72,7 +72,7 @@ ms.locfileid: "1663847"
 |---------------|--------|-----------------|
 | market | eq, ne | 包含设备市场的 ISO 3166 国家/地区代码的字符串。 |
 | osVersion  | eq, ne  | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
-| deviceType  | eq, ne  | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>  |
+| deviceType  | eq, ne  | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>  |
 | isRevised  | eq, ne  | 指定 <strong>true</strong> 可筛选已修改的评价，否则指定 <strong>false</strong>。  |
 | packageVersion  | eq, ne  | 已评价的应用程序包版本。  |
 | deviceModel  | eq, ne  | 应用已评价的设备的类型。  |

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。
 title: 获取应用购置
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 应用购置
 ms.localizationpriority: medium
-ms.openlocfilehash: d108d66ff8f7533056b8a5eeb1955e54ef006a38
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 7b712c41f8288502e9e2abd1f05396ef1720390e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691346"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613587"
 ---
 # <a name="get-app-acquisitions"></a>获取应用购置
 
@@ -42,7 +42,7 @@ ms.locfileid: "1691346"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -96,12 +96,12 @@ Authorization: Bearer <your access token>
 | applicationName     | 字符串 | 应用的显示名称。   |
 | deviceType          | 字符串 | 用于指定发生购置的设备类型的以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>    |
 | orderName           | 字符串 | 订单名称。  |
-| storeClient         | string | 用于指示发生购置的 Microsoft Store 版本的以下字符串之一：<ul><li>**Windows Phone Store (client)**</li><li>**Microsoft Store (client)**（或 **Windows Store (client)**，如果查询 2018 年 3 月 23 日之前的数据）</li><li>**Microsoft Store (web)**（或 **Windows Store (web)**，如果查询 2018 年 3 月 23 日之前的数据）</li><li>**Volume purchase by organizations**</li><li>**Other**</li></ul>                                                                                            |
-| osVersion           | string | 用于指定发生购置的操作系统版本的以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>未知</strong></li></ul>  |
+| storeClient         | 字符串 | 用于指示发生购置的 Microsoft Store 版本的以下字符串之一：<ul><li>**Windows Phone Store (client)**</li><li>**Microsoft Store (client)**（或 **Windows Store (client)**，如果查询 2018 年 3 月 23 日之前的数据）</li><li>**Microsoft Store (web)**（或 **Windows Store (web)**，如果查询 2018 年 3 月 23 日之前的数据）</li><li>**Volume purchase by organizations**</li><li>**Other**</li></ul>                                                                                            |
+| osVersion           | string | 用于指定发生购置的操作系统版本的以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
 | market              | 字符串 | 发生购置行为的市场的 ISO 3166 国家/地区代码。  |
-| gender              | string | 用于指定进行购置的用户的性别的以下字符串之一：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>    |
+| gender              | 字符串 | 用于指定进行购置的用户的性别的以下字符串之一：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>    |
 | ageGroup            | string | 用于指定进行购置的用户的年龄段的以下字符串之一：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>  |
-| acquisitionType     | string | 下列字符串之一，用于指示购置类型：<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li></ul>   |
+| acquisitionType     | 字符串 | 下列字符串之一，用于指示购置类型：<ul><li><strong>Free</strong></li><li><strong>试用</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li></ul>   |
 | acquisitionQuantity | 数字 | 在指定的聚合级别期间发生的购置数。    |
 
 

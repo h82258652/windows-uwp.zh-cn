@@ -1,26 +1,26 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: 了解如何使用 AdControl 类在适用于 Windows10 (UWP) 的 XAML 应用中显示横幅广告。
 title: XAML 和 .NET 中的 AdControl
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 广告, AdControl, 广告控件, XAML, .net, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec7cfe180ee5c83bd4c4084bf02834a265de026
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: d7549e2fc73bfd5ca3132146248747037c5fffc2
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689973"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614804"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
 
-本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows 10（使用 C# 实现）的通用 Windows 平台 (UWP) XAML 应用中显示横幅广告。
+本演练介绍如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类在适用于 Windows 10（使用 C# 实现）的通用 Windows 平台 (UWP) XAML 应用中显示横幅广告。
 
 > [!NOTE]
 > Microsoft 广告 SDK 还支持使用 C++ 实现的 XAML 应用。 有关完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
@@ -79,7 +79,7 @@ ms.locfileid: "1689973"
     </Page>
     ```
 
-5. 在**网格**标记中，为 **AdControl** 添加代码。 将 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 和 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 属性分配至[测试广告单元值](set-up-ad-units-in-your-app.md#test-ad-units)。 另外还要调整控件的**高度**和**宽度**，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
+5. 在**网格**标记中，为 **AdControl** 添加代码。 将 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 属性分配至[测试广告单元值](set-up-ad-units-in-your-app.md#test-ad-units)。 另外还要调整控件的**高度**和**宽度**，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
     > [!NOTE]
     > 每个 **AdControl** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为控件提供广告，每个广告单元都包含*单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 在将应用发布到应用商店之前，你必须在 Windows 开发人员中心[将这些测试值替换为实时值](#release)。

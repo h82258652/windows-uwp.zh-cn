@@ -1,5 +1,5 @@
 ---
-author: mcleans
+author: mcleanbyron
 description: 本文介绍了如何在桌面应用程序中托管 UWP XAML UI。
 title: 使用 UWP XAML 中的桌面应用程序托管 API
 ms.author: mcleans
@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 860e515d013046ef77d0aee38eb5d42c9c3e2dc9
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566391"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624355"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的桌面应用程序托管 API
 

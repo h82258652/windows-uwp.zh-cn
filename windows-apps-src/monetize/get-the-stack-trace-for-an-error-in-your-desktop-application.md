@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取桌面应用程序中的错误堆栈跟踪。
 title: 获取桌面应用程序中的错误的堆栈跟踪
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe496c771c4e69bc51b562c476469e8fef53c92
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989321"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610152"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的堆栈跟踪
 
