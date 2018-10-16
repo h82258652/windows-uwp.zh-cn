@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法获取 Xbox Live 多玩家数据。
 title: 获取 Xbox Live 多人游戏数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 多玩家
 ms.localizationpriority: medium
-ms.openlocfilehash: 89c6ea0821a54e0ada8953071072e1e89c57fc2f
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 84255c97186accfcafc561eeb77e0fdb6924b5e9
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976665"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622418"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>获取 Xbox Live 多人游戏数据
 

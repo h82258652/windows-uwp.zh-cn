@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影集合
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563784"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616987"
 ---
 # <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 

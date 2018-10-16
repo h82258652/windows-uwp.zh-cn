@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563600"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622258"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 

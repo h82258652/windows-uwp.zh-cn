@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567513"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623179"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>已打包的桌面应用程序在幕后
 

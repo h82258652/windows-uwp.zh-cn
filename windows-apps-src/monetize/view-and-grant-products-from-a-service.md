@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: 如果你有应用和加载项的目录，你可以使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问你的服务中的这些产品的所有权信息。
 title: 管理服务中的产品权益
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a0766830bc2110dffcf5baf886e8ccb98ac6446
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: c159acb096730d59b4d2667d890187199c5bda0a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573630"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618440"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服务中的产品权益
 

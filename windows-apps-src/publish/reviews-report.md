@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，查看、 注释，审阅者
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574258"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622005"
 ---
 # <a name="reviews-report"></a>评价报告
 

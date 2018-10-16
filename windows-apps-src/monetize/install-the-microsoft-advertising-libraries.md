@@ -1,28 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: 了解如何安装 Microsoft 广告 SDK。
 title: 安装 Microsoft 广告 SDK
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c12d09fdc7643a2d2ac1c13fa2a4e6c92cad03
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e65b26006cbeb7f7fbd9bf95f83051873e6f1140
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654876"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620191"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 
 若要在面向 Windows10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
 
 > [!NOTE]
-> 如果开发的是 JavaScript/HTML UWP 应用，则除了安装 Windows10 SDK 版本 (10.0.14393)（周年更新） 或更高版本以外，还必须安装 WinJS 库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 若要安装 WinJS，请参阅[获取 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> 如果你要开发是 JavaScript/HTML UWP 应用，你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本，你还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
 
 <span id="install-msi" />
 
@@ -33,11 +33,11 @@ ms.locfileid: "1654876"
 1.  关闭 Visual Studio 的所有实例。
 
 2. 如果之前已安装 Microsoft Advertising SDK、通用广告客户端 SDK、广告中介扩展或 Microsoft 官方商城协定和盈利 SDK 的任何以前版本，请立即卸载这些 SDK 版本。 （可选）打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何早期广告 SDK 版本：
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  下载并安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
 
@@ -56,11 +56,11 @@ ms.locfileid: "1654876"
 1.  关闭 Visual Studio 的所有实例。
 
 2.  如果之前已安装 Microsoft Advertising SDK、通用广告客户端 SDK、广告中介扩展或 Microsoft 官方商城协定和盈利 SDK 的任何以前版本，请立即卸载这些 SDK 版本。 （可选）打开**命令提示符**窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何早期广告 SDK 版本：
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  启动 Visual Studio 并打开要使用 Microsoft 广告 SDK 的项目。
     > [!NOTE]
@@ -105,7 +105,7 @@ ms.locfileid: "1654876"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft 广告 SDK 中的框架包
 
-适用于 UWP 应用的 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 库已配置为*框架包*。 此库包含 [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) 和 [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 命名空间中的广告 API。
+适用于 UWP 应用的 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 库已配置为*框架包*。 此库包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
 
 此库是一个框架包，因此，这意味着在用户安装使用此库的应用版本之后，无论我们何时发布新版本的库及修复和性能增强，Windows 更新均会在其设备上自动更新此库。 这有助于确保客户始终在其设备上安装最新可用版本的库。
 

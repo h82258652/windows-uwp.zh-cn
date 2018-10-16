@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: 在 Microsoft Store 提交 API 中使用此方法，可获取加载项提交的状态。
 title: 获取加载项提交的状态
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 状态
 ms.localizationpriority: medium
-ms.openlocfilehash: fb03be4646628d347cb5d41f6496033464a8c958
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 07c1dd89ce31ad70e5ee3b79c09caf36a89ad926
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816282"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621874"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>获取加载项提交的状态
 

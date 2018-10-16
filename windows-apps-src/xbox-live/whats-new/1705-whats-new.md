@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 新增功能, 2017 年 5 月
 ms.localizationpriority: medium
 ms.openlocfilehash: 97de20b2d4fb384139b606003c800516151502d3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566726"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615759"
 ---
 # <a name="whats-new-for-the-xbox-live-apis---may-2017"></a>Xbox Live API 的新增功能 - 2017 年 5 月
 

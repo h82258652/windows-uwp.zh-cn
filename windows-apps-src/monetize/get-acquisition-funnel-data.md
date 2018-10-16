@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置漏斗数据。
 title: 获取应用购置漏斗数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 购置, 漏斗
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ffe2219ce7bc1dc47ff92240eeeff1374b5f43
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 362bcc956fa5945f9685aac7d6351b9fda7690de
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663577"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616078"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>获取应用购置漏斗数据
 
@@ -65,7 +65,7 @@ ms.locfileid: "1663577"
 |---------------|-----------------|
 | campaignId | 与购置关联的[自定义应用推广活动](../publish/create-a-custom-app-promotion-campaign.md)的 ID 字符串。 |
 | market | 包含购置行为所在地市场的 ISO 3166 国家/地区代码的字符串。 |
-| deviceType | 用于指定发生购置的设备类型的以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
+| deviceType | 用于指定发生购置的设备类型的以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>Unknown</strong></li></ul> |
 | ageGroup | 用于指定完成购置的用户的年龄段的以下字符串之一：<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 或以上</strong></li><li><strong>未知</strong></li></ul> |
 | gender | 用于指定完成购置的用户的性别的以下字符串之一：<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>未知</strong></li></ul> |
 

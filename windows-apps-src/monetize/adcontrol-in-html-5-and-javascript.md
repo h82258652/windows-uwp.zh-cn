@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: 了解如何使用 AdControl 类在适用于 Windows10 (UWP) 的 JavaScript/HTML 应用中显示横幅广告。
 title: HTML 5 和 JavaScript 中的 AdControl
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 广告, AdControl, 广告控件, javascript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c6b924072c9a55bf0610883252b511f612dff1
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 37f7754e8f88e61df571fe561ae94dc4b71468ed
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690133"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618365"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
-本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 应用中显示横幅广告。
+本演练介绍如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类在适用于 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 应用中显示横幅广告。
 
 有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
@@ -28,7 +28,7 @@ ms.locfileid: "1690133"
 * 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
 > [!NOTE]
-> 如果已安装 Windows 10 SDK 版本 10.0.14393（周年更新）或更高版本的 Windows SDK，那么还必须安装 WinJS 库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 若要安装 WinJS，请参阅[获取 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> 如果你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本的 Windows SDK，你还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>在应用中集成横幅广告
 

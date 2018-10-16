@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 角色
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab0a8fd83e94af9a06582faebc2923eb459996b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570587"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617816"
 ---
 # <a name="roles"></a>角色
 

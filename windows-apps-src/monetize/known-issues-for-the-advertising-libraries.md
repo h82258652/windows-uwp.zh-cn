@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: 详细了解当前版本 Microsoft 广告 SDK 的已知问题。
 title: 有关应用内广告的已知问题和疑难解答
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: aaf2db68df9de3f397a0cbc677e18f4ed544cf4b
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817528"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622139"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -26,7 +26,7 @@ ms.locfileid: "1817528"
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML 中的 AdControl 接口未知
 
-适用于 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的 XAML 标记可能会错误显示暗示接口未知的蓝色曲线。 这仅在面向 x86 时发生，并且可能会被省略。
+适用于 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的 XAML 标记可能会错误显示暗示接口未知的蓝色曲线。 这仅在面向 x86 时发生，并且可能会被省略。
 
 ## <a name="lasterror-from-previous-ad-request"></a>之前广告请求的 lastError
 

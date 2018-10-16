@@ -17,11 +17,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a61b8bdcfcfad490528cdceed5e732a6f5f3a89
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564888"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615853"
 ---
 # <a name="tooltips"></a>工具提示
 

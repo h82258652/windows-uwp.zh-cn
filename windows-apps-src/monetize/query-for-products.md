@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: 在 Microsoft Store 收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。
 title: 查询产品
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 收集 API, 查看产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 696d2c0ca4f8d0d92bef66efb9d551a2f19d2aa3
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 066660c307be9f3592aa38cb21a6e00cd960aa73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664963"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618832"
 ---
 # <a name="query-for-products"></a>查询产品
 
@@ -45,7 +45,7 @@ ms.locfileid: "1664963"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 说明                                                                                           |
+| 标头         | 类型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |

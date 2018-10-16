@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: 从应用启动“反馈中心”
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 反馈中心, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a5c6dab627a2022b36a4afee3dc155b345f855
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6617c3d5901fbb1a1e9a7f271f4c80d4f38e41f6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689213"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623526"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>从应用启动“反馈中心”
 
@@ -48,7 +48,7 @@ ms.locfileid: "1689213"
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. 在承载反馈控件的应用页面的初始化代码中，使用 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) 类的静态 [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 方法确定“反馈中心”在用户设备上是否可用。 反馈仅在运行基于桌面和移动[设备系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)的 Windows10 操作系统的版本 10.0.14271 或更高版本的设备上可用。
+7. 在承载反馈控件的应用页面的初始化代码中，使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) 类的静态 [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 方法确定“反馈中心”在用户设备上是否可用。 反馈仅在运行基于桌面和移动[设备系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)的 Windows10 操作系统的版本 10.0.14271 或更高版本的设备上可用。
 
     如果此属性返回 **true**，则使该控件可见。 以下代码演示如何为 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 执行此操作。
 
@@ -56,7 +56,7 @@ ms.locfileid: "1689213"
       > [!NOTE]
       > 尽管反馈中心目前在 Xbox 设备上不受支持，但 **IsSupported** 属性当前在运行 Windows 10 的版本 10.0.14271 或更高版本的 Xbox 设备上返回 **true**。 这是一个已知问题，将在 Microsoft Store Services SDK 的将来版本中得到修复。  
 
-8. 在用户单击控件时运行的事件处理程序中，获取 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 对象并调用 [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) 方法来启动“反馈中心”应用。 此方法有两个重载：一个不带有参数，另一个接受包含要与反馈相关联的元数据的键值对字典。 以下示例演示如何在 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 的 [Click](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 事件处理程序中启动“反馈中心”。
+8. 在用户单击控件时运行的事件处理程序中，获取 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 对象并调用 [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) 方法来启动“反馈中心”应用。 此方法有两个重载：一个不带有参数，另一个接受包含要与反馈相关联的元数据的键值对字典。 以下示例演示如何在 [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 的 [Click](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 事件处理程序中启动“反馈中心”。
 
     [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 

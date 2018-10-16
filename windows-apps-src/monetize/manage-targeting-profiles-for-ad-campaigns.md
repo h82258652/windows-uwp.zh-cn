@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: 在 Microsoft Store 促销 API 中使用此方法管理促销性广告活动的目标市场配置文件。
 title: 管理目标市场配置文件
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 692da5c2cc45e64d3feeab6136c1e50c72a7b0b0
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fa142f1df672703d2f14dc185481bb248efe07b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664187"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619149"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -44,7 +44,7 @@ ms.locfileid: "1664187"
 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 说明         |
+| 标头        | 类型   | 描述         |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |
@@ -468,7 +468,7 @@ Authorization: Bearer <your access token>
 |     185      |            UY                  |
 |     186      |            UZ                  |
 |     189      |            ZM                  |
-|     190      |            ZW                  |
+|     为 190      |            ZW                  |
 |     219      |            MD                  |
 |     224      |            PS                  |
 |     225      |            RE                  |

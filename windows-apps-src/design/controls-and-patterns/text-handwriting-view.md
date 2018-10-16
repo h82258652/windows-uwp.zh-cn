@@ -5,7 +5,7 @@ title: 使用手写视图的文本输入
 label: Text input with the handwriting view
 template: detail.hbs
 ms.author: kbridge
-ms.date: 09/10/18
+ms.date: 10/13/18
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,16 +14,16 @@ pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aeb400da4b3abe61e086732eaceb0e53fd1b005
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 3117cde7b8b00973c135fbc759fa99b6a48ec6ac
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569123"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620809"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>使用手写视图的文本输入
 
-![用手写笔点击时，文本框会扩展](images/pen-input-expand-cropped.gif)
+![用手写笔点击时，文本框会扩展](images/handwritingview/handwritingview2.gif)
 
 自定义墨迹转换为受 UWP 文本控件，如[TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)、 [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)和其他控件，用于提供类似的文本输入的体验 （如[AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)) 的文本输入的内置手写视图。
 
@@ -36,8 +36,7 @@ XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and
 > [!NOTE]
 > 默认情况下，启用手写视图，但你可以禁用基于每个控件并改为恢复为文本输入面板。
 
-
-![带笔输入的文本框](images/pen-input-1.png)
+![使用墨迹和建议的文本框](images/handwritingview/handwritingview-inksuggestion1.gif)
 
 用户可以使用标准手势和操作编辑其文本，如下面这些：
 
@@ -46,7 +45,7 @@ XAML 文本输入的框功能进行笔输入使用[Windows Ink](../input/pen-and
 - _插入_ - 绘制一个插入符号以插入空格
 - _覆盖_ - 在现有文本上书写以替换它
 
-![覆盖笔输入](images/pen-input-2.png)
+![带有墨迹更正文本框](images/handwritingview/handwritingview-inkcorrection1.gif)
 
 ## <a name="disable-the-handwriting-view"></a>禁用手写视图
 

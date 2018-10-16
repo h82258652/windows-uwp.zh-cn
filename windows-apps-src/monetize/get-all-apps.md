@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的所有应用的相关信息。
 title: 获取所有应用
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
-ms.openlocfilehash: bf2e7bb5e809d975c7217118ebc36409a54061c9
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: d4261c984eb992092230425205313d751a351f07
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816132"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621648"
 ---
 # <a name="get-all-apps"></a>获取所有应用
 

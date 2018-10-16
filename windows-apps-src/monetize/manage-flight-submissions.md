@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: 在 Microsoft Store 提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。
 title: 管理软件包外部测试版提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9cba76b693a871d10ee1f14fd9023bd166b0de
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: df685e0886b1db59e5868717a425b95e40217bdf
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817335"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617725"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
@@ -151,7 +151,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 ## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell 模块
 
-除了直接调用 Microsoft Store 提交 API 的方式外，我们还提供在该 API 之上实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Microsoft Store 提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到应用商店的主要方式被频繁使用。
+除了直接调用 Microsoft Store 提交 API 的方式外，我们还提供在该 API 之上实现命令行界面的开源 PowerShell 模块。 此模块称为 [StoreBroker](https://aka.ms/storebroker)。 你可以使用此模块从命令行管理你的应用、外部测试版和加载项提交，而不是通过直接调用 Microsoft Store 提交 API，或者你可以浏览源以查看更多有关如何调用此 API 的示例。 在 Microsoft 内，StoreBroker 模块作为将许多第一方应用程序提交到 Microsoft Store 的主要方式被频繁使用。
 
 有关详细信息，请参阅我们 [GitHub 上的 StoreBroker 页面](https://aka.ms/storebroker)。
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: 在 Microsoft Store 提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新提交。
 title: 创建应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cdcba307fdfb76afdf8d5df18150859d580e2ca
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 02aa06359f4f15d8763d75d0ab5381ce890ede4a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664387"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617927"
 ---
 # <a name="create-an-app-submission"></a>创建应用提交
 

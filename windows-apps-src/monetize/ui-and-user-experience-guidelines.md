@@ -12,7 +12,7 @@ keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
 ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
 ms.locfileid: "1881068"
@@ -107,13 +107,13 @@ ms.locfileid: "1881068"
 
 * 理想情况下，在你需要显示广告之前，请预取广告（通过调用 [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)）30 至 60 秒。
 
-* 订阅 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类中显示的全部四个事件（**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**），并使用它们来做出适用于应用的正确决策。
+* Subscribe to all four events exposed in the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
 
 * 将一些内置体验用于替代服务器匹配的广告。 你会发现这在以下几种情况下非常有用：
 
     * 脱机模式，即无法访问广告服务器时。
 
-    * 引发 **ErrorOccurred** 事件时。
+    * When the **ErrorOccurred** event fires.
 
     * 如果你选择保存基于 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 的用户带宽，**ConnectionProfile** 类中的 API 可以提供帮助。
 
@@ -155,7 +155,7 @@ ms.locfileid: "1881068"
 
 * 使用间隙广告获取任何可以作为货币消费或与其他用户交易的内容。
 
-* 在 [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) 事件的事件处理程序上下文中请求新的间隙广告。 这可能会导致无限循环，以及广告服务的操作问题。
+* Requesting a new interstitial ad in the context of the event handler for the [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) event. 这可能会导致无限循环，以及广告服务的操作问题。
 
 * 只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告后收到 [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，则应用中所示的下一个间隙广告必须是已准备好通过 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 方法显示的广告。
 

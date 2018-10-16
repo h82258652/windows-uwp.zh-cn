@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用此部分中的 Java 代码示例了解有关使用 Microsoft Store 提交 API 提交游戏选项和预报片的详细信息。
 title: Java 示例 - 使用游戏选项和预告片的应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b843e0a4a4178eb8ca044afb7f7f7867f2cc5bd
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: f84dfeb202a86c9b1cb1fa29a8c0dae83f3c54de
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653376"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618378"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Java 示例：使用游戏选项和预告片的应用提交
 
@@ -22,8 +22,8 @@ ms.locfileid: "1653376"
 
 * 获取要用于 Microsoft Store 提交 API 的 Azure AD 访问令牌。
 * 创建应用提交
-* 为应用提交配置应用商店一览数据，包括[游戏](manage-app-submissions.md#gaming-options-object)和[预告片](manage-app-submissions.md#trailer-object)高级应用一览选项。
-* 上传 ZIP 文件，其中包含应用提交的程序包、应用一览图像和预告片文件。
+* 配置用于应用提交的应用商店一览数据，包括[游戏](manage-app-submissions.md#gaming-options-object)和[预告片](manage-app-submissions.md#trailer-object)高级应用一览选项。
+* 上传 ZIP 文件，其中包含程序包、应用一览图像和用于应用提交的预告片文件。
 * 确认应用提交。
 
 <span id="create-app-submission" />

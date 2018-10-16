@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法获取你的应用的见解数据。
 title: 获取的见解数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574764"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617560"
 ---
 # <a name="get-insights-data"></a>获取的见解数据
 

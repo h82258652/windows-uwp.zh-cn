@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f09889971cab58917fd898506b635cc66dcaf2
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564604"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622219"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 

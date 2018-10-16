@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。
 title: 获取应用评分
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评分
 ms.localizationpriority: medium
-ms.openlocfilehash: 902f8852edb0955f1499963efbbe41bc1affb147
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: d3d09aa395f9c0924951a44f5b0abaf9c99cb32e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664237"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620839"
 ---
 # <a name="get-app-ratings"></a>获取应用评分
 
@@ -42,7 +42,7 @@ ms.locfileid: "1664237"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -74,7 +74,7 @@ ms.locfileid: "1664237"
 |---------------|-----------------|
 | market | 包含对应用评分所在地市场的 ISO 3166 国家/地区代码的字符串。 |
 | osVersion | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceType | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
+| deviceType | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
 | isRevised | 指定 <strong>true</strong> 可筛选已修改的评分，否则指定 <strong>false</strong>。 |
 
 

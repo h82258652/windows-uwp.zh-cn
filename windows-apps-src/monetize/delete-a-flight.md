@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除注册到 Windows 开发人员中心帐户的应用的软件包外部测试版。
 title: 删除软件包外部测试版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 删除外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: d907d87929a64178b3ebd3d169e30b04f6577eb4
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 436a28cc1be0c106928784086731fe078d789527
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815502"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618355"
 ---
 # <a name="delete-a-package-flight"></a>删除软件包外部测试版
 

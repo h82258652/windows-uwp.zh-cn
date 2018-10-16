@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: 了解如何使用 Windows.Services.Store 命名空间购买应用或其加载项之一。
 title: 支持应用内购买应用和加载项
 keywords: windows 10, uwp, 加载项, 应用内购买, IAP, Windows.Services.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 735eff1672d56e84f0496bee9b30dd6b0810258d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 7bf04632c4c99f2d58e3cd936e678af168750ff0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690433"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622207"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>支持应用内购买应用和加载项
 
@@ -28,13 +28,13 @@ ms.locfileid: "1690433"
 每个方法都为用户提供标准购买 UI，随后在交易完成后异步完成这些方法。 该方法返回一个指示该交易是否已成功的对象。
 
 > [!NOTE]
-> **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间，而不是 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+> **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[此文](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到应用商店中。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到 Microsoft Store 中。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
 * 如果你想要对应用的某个加载项启用应用内购买，还必须[在开发人员中心仪表板中创建加载项](../publish/add-on-submissions.md)。
 
 此示例中的代码假设：

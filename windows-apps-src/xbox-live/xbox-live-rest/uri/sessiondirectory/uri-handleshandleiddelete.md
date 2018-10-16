@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 15300451495c198a1f15997bae38cb862a9b8186
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563193"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621854"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
 删除句柄 ID 指定的句柄

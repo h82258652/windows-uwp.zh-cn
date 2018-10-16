@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: 在 Microsoft Store 评价 API 中使用此方法可以确定是否可以回复特定评价，或者是否可以回复针对给定应用的任何评价。
 title: 获取评价的回复信息
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 回复信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc3bae99aebaf26074ba4f8b8a38e1a6e0ac428
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 0212d7457ab85749fd66397876144acecd5dfcf1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701083"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621108"
 ---
 # <a name="get-response-info-for-reviews"></a>获取评价的回复信息
 
@@ -42,7 +42,7 @@ ms.locfileid: "1701083"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -51,7 +51,7 @@ ms.locfileid: "1701083"
 
 | 参数        | 类型   | 说明                                     |  必需  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | 字符串 | 其中的应用包含要确定是否可以回复的评价的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 其中的应用包含要确定是否可以回复的评价的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | reviewId | 字符串 | 要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。 <br/>如果忽略此参数，此方法的回复正文将指示你是否有回复指定应用的任何评价的权限。 |  否  |
 
 

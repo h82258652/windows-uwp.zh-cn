@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: 在 Microsoft Store 提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的应用提交。
 title: 确认应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 4512ac4c7e108b6cadab6a7e85a10e244cab3193
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 5e720e017eb77aad4a2696039b9fd076daf3db9e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816072"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621694"
 ---
 # <a name="commit-an-app-submission"></a>确认应用提交
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的广告性能聚合数据。
 title: 获取广告性能数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7439b8602f8b6900b747d26add2914f8685526
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: e4800a0021288f4d0081946c1fad20099aa4cd77
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663598"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622952"
 ---
 # <a name="get-ad-performance-data"></a>获取广告性能数据
 
@@ -46,7 +46,7 @@ ms.locfileid: "1663598"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明           |
+| 标头        | 类型   | 描述           |
 |---------------|--------|--------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

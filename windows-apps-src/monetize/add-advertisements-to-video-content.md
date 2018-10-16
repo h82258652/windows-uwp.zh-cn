@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: 了解如何使用 AdScheduler 类在视频内容中显示广告。
 title: 在视频内容中显示广告
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9142770c6063aba34977c20309bcaeb6ac46450e
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cc5dd40ca3d9fe6e20f5e79c95b59cef3bea9a34
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690643"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623146"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -166,7 +166,7 @@ ms.locfileid: "1690643"
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-当 **AdScheduler** 遇到错误时引发此事件。 有关错误代码值的详细信息，请参阅[错误代码](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.errorcode.aspx)。
+当 **AdScheduler** 遇到错误时引发此事件。 有关错误代码值的详细信息，请参阅[错误代码](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode)。
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 

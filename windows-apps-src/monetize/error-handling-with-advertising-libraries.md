@@ -12,14 +12,14 @@ keywords: Windows 10, uwp, 广告, 投放广告, 错误处理, javascript, XAML,
 ms.localizationpriority: medium
 ms.openlocfilehash: fb60f870aa220a123bab185ef98ccca1f6a8881a
 ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/14/2018
 ms.locfileid: "1880968"
 ---
 # <a name="handle-ad-errors"></a>处理广告错误
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 和 **NativeAdsManagerV2** 类均具有 **ErrorOccurred** 事件，该时间在发生广告相关错误时引发。 应用代码可以处理此事件并检查事件参数对象的 [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) 和  [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) 属性，以帮助确定错误原因。
+The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx),  [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and **NativeAdsManagerV2** classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs. 应用代码可以处理此事件并检查事件参数对象的 [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) 和  [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) 属性，以帮助确定错误原因。
 
 <span id="bkmk-dotnet"/>
 
@@ -27,11 +27,11 @@ ms.locfileid: "1880968"
 
 若要在 XAML 应用中处理与广告相关的错误：
 
-1. 将 **AdControl**、**InterstitialAd** 或 **NativeAdsManagerV2** 对象的 **ErrorOccurred** 事件分配到事件处理程序委托的名称。
+1. Assign the **ErrorOccurred** event of your **AdControl**, **InterstitialAd**, or **NativeAdsManagerV2** object to the name of an event handler delegate.
 
 2. 对错误事件处理委托进行编码，以便它可以处理两个参数：发送者的 **Object** 和 [AdErrorEventArgs](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.aspx) 对象。
 
-以下示例中，一个名为 **OnAdError** 的委托被分配给名为 **myBannerAdControl** 的 **AdControl** 对象的 *ErrorOccurred* 事件。
+Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -55,13 +55,13 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 ## <a name="javascripthtml-apps"></a>JavaScript/HTML 应用
 
-若要在 JavaScript 应用中处理 **ErrorOccur** 错误：
+To handle **ErrorOccur** errors in a JavaScript app:
 
-1.  将 **onErrorOccurred** 事件分配给事件处理程序。
+1.  Assign the **onErrorOccurred** event to an event handler.
 
 2.  对事件处理程序进行编码。
 
-以下示例中，一个名为 **errorLogger** 的事件处理程序被分配到 **AdControl** 对象的 **ErrorOccurred** 事件。
+Here is an example that assigns an event handler named **errorLogger** to the **ErrorOccurred** event of an **AdControl** object.
 
 > [!div class="tabbedCodeSnippets"]
 ``` html
@@ -75,7 +75,7 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 当发生错误时，该错误处理程序会捕获 JavaScript 错误对象。 该错误对象向错误处理程序提供两个参数。 有关详细信息，请参阅[异步 Windows 运行时方法的特殊错误属性](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
 
-以下是一个名为 **errorLogger** 的错误处理函数的示例，该函数可处理 **onErrorOccurred** 事件。
+Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.
 
 > [!div class="tabbedCodeSnippets"]
 ``` javascript

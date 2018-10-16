@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: 使用 Microsoft Store 促销 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式管理促销广告活动。
 title: 使用 Microsoft Store 服务开展广告活动
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 45869b96d17fa51fbdf22e417c7e7f43a8c90a9b
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 6a1f08dbd70904284179c90fa00d2abd9acf4b97
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976222"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620471"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 

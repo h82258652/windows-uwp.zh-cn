@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: 阅读 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 title: HTML 和 JavaScript 疑难解答指南
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 广告, advertising, AdControl, 疑难解答, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2d94b769783bdc28c2218dcb9c07f678ba7bc9
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 5474ac51d57decfe2c4f4d5f1969da5b4436fd14
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654866"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610136"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑难解答指南
 
@@ -74,7 +74,7 @@ ms.locfileid: "1654866"
     </div>
     ```
 
-5.  查看元素定位 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必须在可视区域内。
+5.  查看元素定位 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 必须在可视区域内。
 
 6.  检查 **visibility** 属性。 此属性禁止设置为折叠或隐藏。 此属性可内联设置（如下所示）或在外部样式表中设置。
 
@@ -140,7 +140,7 @@ ms.locfileid: "1654866"
 
 11. 确保 **AdControl** 在视口中可见。 **AdControl** 必须可见才能正确显示广告。
 
-12. [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 的动态值不应在仿真器中测试。 若要确保 **AdControl** 正常运行，请使用 **ApplicationId** 和 **AdUnitId** 的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
+12. [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 的动态值不应在仿真器中测试。 若要确保 **AdControl** 正常运行，请使用 **ApplicationId** 和 **AdUnitId** 的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
 <span id="html-blackboxblinksdisappears"/>
 
@@ -148,7 +148,7 @@ ms.locfileid: "1654866"
 
 1.  仔细检查前面的 [AdControl 不显示](#html-notappearing)部分中的所有步骤。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
+2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -295,7 +295,7 @@ ms.locfileid: "1654866"
 
 1.  仔细检查 [AdControl 不显示](#js-adcontrolnotappearing)部分中的所有步骤。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
+2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
     此示例展示了如何实现可报告错误消息的错误处理程序。 此 HTML 代码的代码段提供了如何设置 UI 以显示错误消息的示例。
 
@@ -342,9 +342,9 @@ ms.locfileid: "1654866"
 
 ### <a name="ads-not-refreshing"></a>广告不刷新
 
-1.  检查 **AdControl** 的 [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 属性是否设置为 false。 默认情况下，此可选属性设置为 **true**。 在设置为 **false** 时，必须使用 **Refresh** 方法检索其他广告。
+1.  检查 **AdControl** 的 [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 属性是否设置为 false。 默认情况下，此可选属性设置为 **true**。 在设置为 **false** 时，必须使用 **Refresh** 方法检索其他广告。
 
-2.  检查 [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的调用。 使用自动刷新（**IsAutoRefreshEnabled** 为 **true**）时，不能将 **Refresh** 用于检索其他广告。 使用手动刷新（**IsAutoRefreshEnabled** 为 **false**）时，根据设备的当前数据连接，只应至少在 30 到 60 秒后调用**Refresh**。
+2.  检查 [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的调用。 使用自动刷新（**IsAutoRefreshEnabled** 为 **true**）时，不能将 **Refresh** 用于检索其他广告。 使用手动刷新（**IsAutoRefreshEnabled** 为 **false**）时，根据设备的当前数据连接，只应至少在 30 到 60 秒后调用**Refresh**。
 
     此示例展示了如何为 **AdControl** 创建 **div**。
 
