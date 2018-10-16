@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f0eed745b9350bd1bc2f4860cb3db5e5a6b9ad7c
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611165"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4683118"
 ---
 # <a name="serviceerrorresponse-json"></a>ServiceErrorResponse (JSON)
 当遇到服务错误时，将返回一个相应的 HTTP 错误代码。 （可选），该服务还可能包括 ServiceErrorResponse 对象，如下面定义。 在生产环境中，较少的数据可能会包含。 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618998"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4684164"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
 如果你希望在游戏中，而不是使用 shell 添加反馈选项，用于从你的游戏。 这些 Uri 的域是`reputation.xboxlive.com`。

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评价
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1f9c3a360209bc9ac7b03ac162460a333c7192
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4613571"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4686211"
 ---
 # <a name="get-app-reviews"></a>获取应用评价
 
@@ -109,43 +109,43 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 描述                                                                                                                                                                                                                                                                            |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含评价数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[评价值](#review-values)部分。                                                                                                                                      |
+| 值      | 类型   | 描述      |
+|------------|--------|------------------|
+| 值      | array  | 包含评价数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[评价值](#review-values)部分。       |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的评价数据超过 10000 行时，就会返回此值。 |
-| TotalCount | int    | 查询的数据结果中的行总数。                                    |
+| TotalCount | int    | 查询的数据结果中的行总数。  |
 
  
 ### <a name="review-values"></a>评价值
 
 *Value* 数组中的元素包含以下值。
 
-| 值                  | 类型    | 说明                                                                                                                                                                                                                          |
-|------------------------|---------|---------------------|
-| date                   | 字符串  | 评价数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。  |
-| applicationId          | 字符串  | 要检索评价数据的应用的应用商店 ID。        |
-| applicationName        | 字符串  | 应用的显示名称。   |
-| market                 | 字符串  | 评价已提交的市场的 ISO 3166 国家/地区代码。       |
-| osVersion              | 字符串  | 评价已提交的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。         |
-| deviceType             | 字符串  | 评价已提交的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。      |
-| isRevised              | 布尔值 | 值为 **true** 表示评价已修改；否则为 **false**。         |
-| packageVersion         | 字符串  | 已评价的应用程序包版本。   |
-| deviceModel            | 字符串  | 应用已评价的设备的类型。      |
-| productFamily          | 字符串  | 设备系列名称。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。  |
-| deviceRAM              | 数字  | 物理 RAM（以 MB 为单位）。        |
-| deviceScreenResolution | 字符串  | 设备屏幕分辨率采用“*宽度* x *高度*”格式。        |
-| deviceStorageCapacity  | 数字  | 主存储器磁盘容量（以 GB 为单位）。   |
-| isTouchEnabled         | 布尔值 | 值为 **true** 表示触摸受支持；否则为 **false**。      |
-| reviewerName           | 字符串  | 评价者名称。      |
-| rating                 | 数字  | 应用评分（以星级为单位）。         |
-| reviewTitle            | 字符串  | 评价的标题。       |
-| reviewText             | 字符串  | 评价的文本内容。     |
-| helpfulCount           | 数字  | 评价标记为有用的次数。     |
-| notHelpfulCount        | 数字  | 评价标记为无用的次数。               |
-| responseDate           | 字符串  | 回复的提交时间。                 |
-| responseText           | 字符串  | 回复的文本内容。        |
-| id                     | 字符串  | 评价的 ID（这是一个 GUID）。 你可以在[获取应用评价的回复信息](get-response-info-for-app-reviews.md)和[提交对应用评价的回复](submit-responses-to-app-reviews.md)方法中使用此 ID。       |
- 
+| 值           | 类型    | 说明       |
+|-----------------|---------|-------------------|
+| date            | 字符串  | 评价数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
+| applicationId   | 字符串  | 要检索评价数据的应用的应用商店 ID。         |
+| applicationName | 字符串  | 应用的显示名称。    |
+| market          | 字符串  | 评价已提交的市场的 ISO 3166 国家/地区代码。        |
+| osVersion       | 字符串  | 评价已提交的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。            |
+| deviceType      | 字符串  | 评价已提交的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。            |
+| isRevised       | 布尔值 | 值为 **true** 表示评价已修改；否则为 **false**。   |
+| packageVersion  | 字符串  | 已评价的应用程序包版本。        |
+| deviceModel        | 字符串  |应用已评价的设备的类型。     |
+| productFamily      | 字符串  | 设备系列名称。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。   |
+| deviceRAM       | 数字  | 物理 RAM（以 MB 为单位）。    |
+| deviceScreenResolution       | 字符串  | 设备屏幕分辨率采用“*宽度* x *高度*”格式。    |
+| deviceStorageCapacity | 数字 | 主存储器磁盘容量（以 GB 为单位）。 |
+| isTouchEnabled | 布尔值 | 值为 **true** 表示触摸受支持；否则为 **false**。 |
+| reviewerName | 字符串 | 评价者名称。 |
+| rating | 数字 | 应用评分（以星级为单位）。 |
+| reviewTitle | 字符串 | 评价的标题。 |
+| reviewText | 字符串 | 评价的文本内容。 |
+| helpfulCount | 数字 | 评价标记为有用的次数。 |
+| notHelpfulCount | 数字 | 评价标记为无用的次数。 |
+| responseDate | 字符串 | 回复的提交时间。 |
+| responseText | 字符串 | 回复的文本内容。 |
+| id | 字符串 | 评价的 ID（这是一个 GUID）。 你可以在[获取应用评价的回复信息](get-response-info-for-app-reviews.md)和[提交对应用评价的回复](submit-responses-to-app-reviews.md)方法中使用此 ID。 |
+
 
 ### <a name="response-example"></a>回复示例
 

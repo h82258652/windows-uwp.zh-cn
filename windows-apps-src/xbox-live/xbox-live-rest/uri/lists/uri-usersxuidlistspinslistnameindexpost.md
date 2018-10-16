@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aecb7f73a49e7628b076fe943774ccf89aa71bc
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617337"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4684065"
 ---
 # <a name="post-usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>POST /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 将列表中的项移到列表中的不同位置。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -58,7 +58,7 @@ ms.locfileid: "4617337"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| insertIndex| 字符串| 指定要插入项的列表位置。 允许的值为零，正整数和"结束"。 "结束"将项目放置在当前列表的末尾。 If the specified value is beyond the end of the list, the item is inserted at the end of the list. | 
+| insertIndex| 字符串| 指定要插入项的列表位置。 允许的值为零，正整数和"结束"。 "结束"将项目放置在当前列表的末尾。 如果指定的值列表末尾超出，项目被插入末尾的列表。 | 
   
 <a id="ID4EVD"></a>
 

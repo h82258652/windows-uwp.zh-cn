@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 108d022909afc9a118cc1f011acf100972576841
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622813"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4684846"
 ---
 # <a name="configure-achievements-2017-on-dev-center"></a>在开发人员中心上配置 Achievements 2017
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f38bbe0993988f542496aa0cd8b23bc5d7d36e4
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4621886"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4683411"
 ---
 # <a name="flowchart---handle-protocol-activation"></a>流程图 - 处理协议激活
 

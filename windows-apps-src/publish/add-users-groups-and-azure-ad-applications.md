@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户、 组、 多个用户，多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4610722"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4686178"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>向开发人员中心帐户添加用户、组和 Azure AD 应用程序
 

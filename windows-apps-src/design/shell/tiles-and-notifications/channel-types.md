@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 88040d6eb1c5d198de0a446348e114b7e59a2dad
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d6607f6464cc938e7edde7ab0317809fabfeee65
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654896"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688520"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>选择正确的推送通知通道类型
 
 本文介绍了三种类型的 UWP 推送通知通道（主要、辅助和备用），帮助你将内容提供给你的应用。 
 
-（有关如何创建推送通知的详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)。） 
+（有关如何创建推送通知的详细信息，请参阅[Windows 推送通知服务 (WNS) 概述](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)）。 
 
 ## <a name="types-of-push-channels"></a>推送通道的类型 
 

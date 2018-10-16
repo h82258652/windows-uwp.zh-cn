@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息, 桌面应用程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b6e8a19b665c5e01ef227e7d5f643a311efa5c58
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4616127"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4684506"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的详细信息
 

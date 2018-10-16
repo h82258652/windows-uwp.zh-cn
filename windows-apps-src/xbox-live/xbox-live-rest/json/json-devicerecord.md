@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae61df42706ea3ff3f52678feef8510974b5534
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612399"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4682695"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
 有关设备，包括其类型和游戏在其上的信息。 
