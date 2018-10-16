@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e08208b7086023654b0b2404cccc8664e123d9ec
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: c7dc6436e1a233a6b0a74a787b5c30de47899eff
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983612"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4690935"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教程：在 UWP 应用中支持 Surface Dial（和其他滚轮设备）
 
@@ -62,7 +62,7 @@ Dial 支持三种基本手势：
 6. 返回到 Windows 设备，选择**添加蓝牙或其他设备**。
 7. 在**设备添加**对话框中，选择**蓝牙** > **Surface Dial**。 Surface Dial 现在应已连接，并被添加到**蓝牙和其他设备**设置页中**鼠标、键盘和笔**下的设备列表中。
 8. 长按 Dial 几秒钟以显示内置菜单，通过此方法对 Dial 进行测试。
-9. 如果菜单未在屏幕上显示（Dial 还应出现振动），返回蓝牙设置，删除设备，然后尝试重新连接设备。
+9. 如果菜单未显示 （Dial 还应出现振动） 在屏幕上，转到蓝牙设置，删除设备，然后尝试重新连接设备。
 
 > [!NOTE]
 > 可以通过**滚轮**设置配置滚轮设备：

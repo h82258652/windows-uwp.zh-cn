@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622258"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688678"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -125,7 +125,7 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 
 **选项 3：CertUtil**
 
-从命令行对 PFX 文件运行 **certutil**，然后从输出中复制*使用者* 字段。
+运行**certutil**从命令行对 PFX 文件，然后从输出复制*使用者*字段。
 
 ```cmd
 certutil -dump <cert_file.pfx>

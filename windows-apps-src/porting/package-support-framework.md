@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b4cae2e135f7a66cd68192faabeffdb309a909
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 1c8e4649fad0e467e0656415e2fd49a9fea05109
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620978"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4689868"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>通过使用程序包支持框架对 MSIX 程序包应用运行时修复
 
@@ -269,7 +269,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 | 项目 | 用途 |
 |-------|-----------|
-| DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](desktop-to-uwp-packaging-dot-net.md)，并将输出 MSIX 程序包。 |
+| DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](desktop-to-uwp-packaging-dot-net.md)，并其输出 MSIX 程序包。 |
 | Runtimefix | 这是一个包含一个或多个替换函数作为运行时修复的 c + + Dynamic-Linked 类库项目。 |
 | PSFLauncher | 这是 c + + 空项目。 此项目是收集包支持框架的运行时分发文件的位置。 它将输出的可执行文件。 该可执行文件是启动解决方案时运行的第一件事。 |
 | WinFormsDesktopApplication | 此项目包含的桌面应用程序的源代码。 |

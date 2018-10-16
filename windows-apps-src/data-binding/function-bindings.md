@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575306"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691954"
 ---
 # <a name="functions-in-xbind"></a>在 X:bind 中的函数
 

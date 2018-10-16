@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832251"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4690106"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>通过相机配置文件发现和选择相机功能
 
@@ -77,7 +77,7 @@ ms.locfileid: "1832251"
 > [!NOTE] 
 > 自 Windows 10 版本 1803 起弃用本节中介绍的 API。 详情请参阅上一节：**使用媒体帧源组获取配置文件**。
 
-在选择支持 HDR 的配置文件时，最初的操作与其他方案类似。 创建一个 **MediaCaptureInitializationSettings** 和一个用于保留捕获设备 ID 的字符串。 添加一个将跟踪是否支持 HDR 视频的布尔变量。
+在选择支持 HDR 的配置文件时，最初的操作与其他方案类似。 创建**MediaCaptureInitializationSettings**和一个字符串，用于保留捕获设备 id。 添加一个将跟踪是否支持 HDR 视频的布尔变量。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
