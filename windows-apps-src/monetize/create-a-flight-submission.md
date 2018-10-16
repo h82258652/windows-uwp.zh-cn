@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: 在 Microsoft Store 提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新的软件包外部测试版提交。
 title: 创建软件包外部测试版提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 807fef9170af5c18561d2e1ee0160b9029f77514
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 87e544c2d9d04e62f324fe14cd7aab3e1b7ee500
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664437"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624395"
 ---
 # <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 

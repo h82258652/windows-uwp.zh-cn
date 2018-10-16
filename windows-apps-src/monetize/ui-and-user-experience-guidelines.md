@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: 了解应用中广告的 UI 和用户体验指南。
 title: 广告的 UI 和用户体验指南
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
+ms.openlocfilehash: c7f5e762593773e529610989741274d9fb5b9be7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881068"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616916"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -37,7 +37,7 @@ ms.locfileid: "1881068"
 
 ## <a name="guidelines-for-banner-ads"></a>横幅广告指南
 
-以下部分针对如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 在应用中实施[横幅广告](banner-ads.md)提供了一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。
+以下部分针对如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 在应用中实施[横幅广告](banner-ads.md)提供了一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -53,7 +53,7 @@ ms.locfileid: "1881068"
 
 * 针对广告不可用时进行规划。 可能会多次出现广告未发送到应用的情况。 设计页面的版式，以使其不管是否显示广告都看起来很精美。 有关详细信息，请参阅[处理错误](error-handling-with-advertising-libraries.md)。
 
-* 如有对用覆盖进行最佳处理的客户发出警报的场景，请在显示覆盖时调用 [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)，并在完成警报场景后调用 [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx)。
+* 如有对用覆盖进行最佳处理的客户发出警报的场景，请在显示覆盖时调用 [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)，并在完成警报场景后调用 [AdControl.Resume](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.resume)。
 
 ### <a name="practices-to-avoid"></a>要避免的做法
 
@@ -69,11 +69,11 @@ ms.locfileid: "1881068"
 
 本部分提供违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的横幅广告场景示例。 这些示例仅供教学，以此方式帮助你更好地理解策略。 这些示例并不完善，可能有许多其他违反策略 10.10.1 的方式未在此处列出。
 
-* 通过一些处理来干扰用户查看横幅广告的能力，例如，更改 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的不透明度或将其他控件置于 **AdControl** 之上（不会先调用 [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)）。
+* 通过一些处理来干扰用户查看横幅广告的能力，例如，更改 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的不透明度或将其他控件置于 **AdControl** 之上（不会先调用 [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)）。
 
 * 要求用户单击横幅广告才能完成应用中的任务，或强制用户单击横幅广告作为应用设计的结果。
 
-* 以任何方式绕过横幅广告的内置最小刷新计时器，包括（但不限于）交换 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 对象，或不进行用户交互就强制刷新页面。
+* 以任何方式绕过横幅广告的内置最小刷新计时器，包括（但不限于）交换 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 对象，或不进行用户交互就强制刷新页面。
 
 * 在开发和测试期间（或在仿真器中），使用实时广告单元（即，从 Windows 开发人员中心仪表板获得的广告单元）。
 
@@ -87,7 +87,7 @@ ms.locfileid: "1881068"
 
 如果使用得当，[间隙广告](interstitial-ads.md)可极大提高应用的收益，而不会对用户满意度带来负面影响。 如果使用不当，此类广告可能会产生相反的效果。
 
-以下部分针对如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在应用中实施间隙视频广告和间隙横幅广告提供一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
+以下部分针对如何使用 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在应用中实施间隙视频广告和间隙横幅广告提供一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -105,15 +105,15 @@ ms.locfileid: "1881068"
 
 * 如果你的应用需要看完整个间隙视频广告，请提前指出这一规则，这样他们就不会对点击关闭按钮时出现错误消息感到意外。
 
-* 理想情况下，在你需要显示广告之前，请预取广告（通过调用 [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)）30 至 60 秒。
+* 理想情况下，在你需要显示广告之前，请预取广告（通过调用 [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)）30 至 60 秒。
 
-* Subscribe to all four events exposed in the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
+* 订阅 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 类中显示的全部四个事件（**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**），并使用它们来做出适用于应用的正确决策。
 
 * 将一些内置体验用于替代服务器匹配的广告。 你会发现这在以下几种情况下非常有用：
 
     * 脱机模式，即无法访问广告服务器时。
 
-    * When the **ErrorOccurred** event fires.
+    * 引发 **ErrorOccurred** 事件时。
 
     * 如果你选择保存基于 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 的用户带宽，**ConnectionProfile** 类中的 API 可以提供帮助。
 
@@ -135,11 +135,11 @@ ms.locfileid: "1881068"
 
 * 请勿来回播放两个或多个间隙广告。 用户看到广告进度条重置到起始点时会感到非常失望。 许多人会认为这只是代码编写或广告投放 Bug。
 
-* 请勿在调用 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 之前提取一个超过 5 分钟的间隙视频广告。 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
+* 请勿在调用 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 之前提取一个超过 5 分钟的间隙视频广告。 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
 
 * 请勿对广告投放出现故障（如没有可用的广告）的用户进行处罚。 例如，如果你显示“观看广告获取 *xxx*”的 UI 选项，那么在用户看完以后，你应提供 *xxx*。 有两个选项可以考虑：
 
-    * 不包括该选项，除非已引发 [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件。
+    * 不包括该选项，除非已引发 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件。
 
     * 使应用包含内置体验，以产生与真实广告相同的效益。
 
@@ -151,13 +151,13 @@ ms.locfileid: "1881068"
 
 * 将所有 UI 元素放在间隙广告容器上。
 
-* 在用户使用应用时调用 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx)。
+* 在用户使用应用时调用 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show)。
 
 * 使用间隙广告获取任何可以作为货币消费或与其他用户交易的内容。
 
-* Requesting a new interstitial ad in the context of the event handler for the [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) event. 这可能会导致无限循环，以及广告服务的操作问题。
+* 在 [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) 事件的事件处理程序上下文中请求新的间隙广告。 这可能会导致无限循环，以及广告服务的操作问题。
 
-* 只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告后收到 [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，则应用中所示的下一个间隙广告必须是已准备好通过 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 方法显示的广告。
+* 只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告后收到 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，则应用中所示的下一个间隙广告必须是已准备好通过 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示的广告。
 
 * 在开发和测试期间（或在仿真器中）使用实时广告单元（即，从 Windows 开发人员中心仪表板获得的广告单元）
 
@@ -171,7 +171,7 @@ ms.locfileid: "1881068"
 
 ### <a name="register-the-container-for-your-native-ad"></a>为本机广告注册容器
 
-你必须在代码中调用 **NativeAdV2** 对象的 [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) 方法注册用作本机广告容器的 UI 元素，并有选择地注册你希望注册为广告的可点击目标的任何特定控件。 要正确跟踪广告曝光数和点击数，就必须执行此操作。
+你必须在代码中调用 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 对象的 [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) 方法注册用作本机广告容器的 UI 元素，并有选择地注册你希望注册为广告的可点击目标的任何特定控件。 要正确跟踪广告曝光数和点击数，就必须执行此操作。
 
 **RegisterAdContainer** 方法有两个重载：
 
@@ -181,7 +181,7 @@ ms.locfileid: "1881068"
 
 ### <a name="required-native-ad-elements"></a>必需的本机广告元素
 
-在本机广告设计中，至少必须始终向用户显示由 **NativeAdV2** 对象的属性提供的以下本机广告元素。 若不包含这些元素，广告单元的业绩会很差，收益率也很低。
+在本机广告设计中，至少必须始终向用户显示由 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 对象的属性提供的以下本机广告元素。 若不包含这些元素，广告单元的业绩会很差，收益率也很低。
 
 1. 始终显示本机广告的标题（由 **Title** 属性提供）。 提供足以显示至少 25 个字符的空间。 如果标题较长，请使用省略号替换其他文字。
 2. 始终显示以下元素中的至少一种，以帮助区分本机广告体验与你的应用体验，清楚地表明此内容由广告商提供：

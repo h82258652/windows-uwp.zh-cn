@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
 description: 在 Microsoft Store 提交 API 中使用此方法，可获取应用提交的状态。
 title: 获取应用提交的状态
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 状态
 ms.localizationpriority: medium
-ms.openlocfilehash: 546b634333d568482cc41d72bb8985b1070c1ff7
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 7d14ce17f4e6dff08351ca0764f3b6a173550426
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817092"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624145"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>获取应用提交的状态
 

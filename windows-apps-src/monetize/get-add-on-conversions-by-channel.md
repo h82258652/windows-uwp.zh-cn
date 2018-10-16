@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一加载项的通道聚合转换数据。
 title: 通过通道获取加载项转换
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 加载项转换, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c32cc30d65c798c09592ac46d64c2c1c550b64
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: af29c790df5508a22c545cdc5a2ca2faac15e134
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663417"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623991"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>通过通道获取加载项转换
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | referrerUriDomain           | string |  指定激活应用列表及自定义应用推广市场 ID 时所在的域。   |
 | channelType           | string |  指定用于转换的通道的以下字符串之一：<ul><li><strong>CustomCampaignId</strong></li><li><strong>应用商店流量</strong></li><li><strong>其他</strong></li></ul>    |
 | storeClient         | string | 发生转换的应用商店的版本。 当前，唯一受支持的值为 **SFC**。    |
-| deviceType          | string | 以下字符串之一：<ul><li><strong>PC</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>            |
+| deviceType          | 字符串 | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>Unknown</strong></li></ul>            |
 | market              | string | 发生转换的市场的 ISO 3166 国家/地区代码。    |
 | clickCount              | 数字  |     单击你的应用列表链接的客户数量。      |           
 | conversionCount            | 数字  |   客户转换数。         |         

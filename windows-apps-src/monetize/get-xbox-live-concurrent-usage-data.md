@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法获取 Xbox Live 并行使用情况数据。
 title: 获取 Xbox Live 并发使用情况数据
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 并行使用情况
 ms.localizationpriority: medium
-ms.openlocfilehash: 47e9a23ba046e70a4d755a3ac9dc1bbf4d62f307
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 0853d3fce7a3af7539cce26229942f2bc31cb1a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976172"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623819"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>获取 Xbox Live 并发使用情况数据
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除现有应用提交。
 title: 删除应用提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 删除
 ms.localizationpriority: medium
-ms.openlocfilehash: 11144909b0009281ac4dfefff2bd36bf292d6029
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: c10a8df52c9de2b5a6b2eaf3533dbc3825bf4d8e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816162"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624055"
 ---
 # <a name="delete-an-app-submission"></a>删除应用提交
 
