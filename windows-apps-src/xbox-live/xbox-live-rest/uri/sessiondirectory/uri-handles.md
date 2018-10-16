@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d6833309ce990aee72fd07deab9ecde04eca3b0e
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611342"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681380"
 ---
 # <a name="handles"></a>/handles
 支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。 

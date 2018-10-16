@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 自定义, 应用, 促销, 市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 13ee8d7482a2ce0716d4e133af329cd0ea42c184
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620494"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680095"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>创建自定义应用促销市场活动
 

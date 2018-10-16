@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c4e10d3a9c194ff5c191ccf33370bad2d9981650
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 0de1431aea2695d72682fd70f23695d672c465a6
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612226"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681222"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One 多人游戏会话目录
 
@@ -48,7 +48,7 @@ ms.locfileid: "4612226"
 | 术语                 | 定义                                                                                                                                                                                                                                                                                  |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 多人游戏会话  | 驻留在 Xbox Live 云端并在 Xbox One 上运行游戏时表示连接（或将连接）在一起的一组用户的安全文档。 多人游戏的所有方面（如匹配、参与方、加入进程等）都利用多人游戏会话。 |
-| 游戏会话         | 这是显示在 MPSD 中的实际游戏会话，用户在其中一起玩游戏。 所有的多人游戏场景最终会结束于游戏会话。                                                                                                                               |
+| 游戏会话         | 这是显示在 MPSD，其中用户一起玩游戏中的实际游戏会话。 所有的多人游戏场景最终会结束于游戏会话。                                                                                                                               |
 | 匹配票证会话 | 这是一个在匹配期间用于跟踪匹配票证提交的会话。                                                                                                                                                                                                                 |
 | 非活动玩家      | 在会话内已被设置为“非活动”状态的玩家。 在游戏受限、暂停或处于非活动状态（如标题所定义）时，游戏将用户设置为“非活动”状态。                                                                                     |
 

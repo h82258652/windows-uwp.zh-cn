@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ddafc1a71a0965f46b6b5e4b2ba012b435ce5bc3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567165"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680848"
 ---
 # <a name="get-untrustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>GET (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 下载文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。

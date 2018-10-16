@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: ca37d0b360679a878cff3aeabd96f82016c36fde
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622617"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679966"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 

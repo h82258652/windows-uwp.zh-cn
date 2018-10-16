@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c62703d43197962e313e364df2cdc3650bd2a792
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618080"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679755"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 返回社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。

@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617947"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680118"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
@@ -149,7 +149,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 若要显示命令的上下文菜单中，你通常将浮出控件分配给 UI 元素的[ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout)属性中。 这样一来，打开浮出控件由元素，并且你无需执行任何其他操作。
 
-如果你处理自行显示浮出控件 （例如，在上一个[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件），则设置为**标准**处于扩展模式下打开浮出控件，并使其获得焦点的浮出控件的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 。
+如果你处理自行显示浮出控件 （例如，在上一个[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件），设置浮出控件的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)为**标准**处于扩展模式下打开浮出控件，并使其获得焦点。
 
 > [!TIP]
 > 有关选项时显示浮出控件和如何控制放置的浮出控件的详细信息，请参阅[浮出控件](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)。

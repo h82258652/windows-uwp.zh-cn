@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f58c2d0f68e1f65820104928e45a09ccfdb259cb
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4615174"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679203"
 ---
 # <a name="permissionid-enumeration"></a>PermissionId 枚举
 详细介绍 PermissionId 枚举。

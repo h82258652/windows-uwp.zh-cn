@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 8d862114f95a3b6f1e9c519f37f2d3eacc32de4d
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618867"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680654"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -80,7 +80,7 @@ typedef struct AsyncBlock
 * 通过 true 值调用 **GetAsyncStatus** 一直等到它完成。
 * 在 **AsyncBlock** 中设置一个 waitEvent，并等待发出事件信号
 
-使用 **GetAsyncStatus** 和 waitEvent 时，在 AsyncBlock 的**完成回调**执行之后**异步任务**视作完成，但 AsyncBlock 的**完成回调**是可选的。
+借助**GetAsyncStatus**和 waitEvent，**异步任务**被视为完成后 AsyncBlock 的**完成回调**执行但 AsyncBlock 的**完成回调**是可选的。
 
 一旦**异步任务**完成，你就可以获取结果。
 

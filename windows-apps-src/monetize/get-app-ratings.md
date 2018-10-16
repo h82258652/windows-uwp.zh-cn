@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评分
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d09aa395f9c0924951a44f5b0abaf9c99cb32e
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 0671015ead96b57515b4b451a06ff3c9cf1a94cb
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620839"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694624"
 ---
 # <a name="get-app-ratings"></a>获取应用评分
 
@@ -106,20 +106,20 @@ Authorization: Bearer <your access token>
 
 *Value* 数组中的元素包含以下值。
 
-| 值           | 类型    | 说明                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 值           | 类型    | 说明       |
+|-----------------|---------|-------------------|
 | date            | 字符串  | 评分数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| applicationId   | 字符串  | 要检索评分数据的应用的存储 ID。                                                                                                                                                                 |
-| applicationName | 字符串  | 应用的显示名称。                                                                                                                                                                                                         |
-| market          | 字符串  | 评分已提交的市场的 ISO 3166 国家/地区代码。                                                                                                                                                              |
-| osVersion       | 字符串  | 评分已提交的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                               |
-| deviceType      | 字符串  | 评分已提交的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                           |
-| isRevised       | 布尔值 | 值为 **true** 表示评分已修改；否则为 **false**。                                                                                                                                                       |
-| oneStar         | 数字  | 一星评分的数值。                                                                                                                                                                                                      |
-| twoStars        | 数字  | 二星评分的数值。                                                                                                                                                                                                      |
-| threeStars      | 数字  | 三星评分的数值。                                                                                                                                                                                                    |
-| fourStars       | 数字  | 四星评分的数值。                                                                                                                                                                                                     |
-| fiveStars       | 数字  | 五星评分的数值。            |
+| applicationId   | 字符串  | 要检索评分数据的应用的存储 ID。         |
+| applicationName | 字符串  | 应用的显示名称。    |
+| market          | 字符串  | 评分已提交的市场的 ISO 3166 国家/地区代码。        |
+| osVersion       | 字符串  | 评分已提交的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。            |
+| deviceType      | 字符串  | 评分已提交的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。            |
+| isRevised       | 布尔值 | 值为 **true** 表示评分已修改；否则为 **false**。   |
+| oneStar         | 数字  | 一星评分的数值。        |
+| twoStars        | 数字  | 二星评分的数值。    |
+| threeStars      | 数字  | 三星评分的数值。   |
+| fourStars       | 数字  | 四星评分的数值。    |
+| fiveStars       | 数字  | 五星评分的数值。    |
 
 
 ### <a name="response-example"></a>响应示例

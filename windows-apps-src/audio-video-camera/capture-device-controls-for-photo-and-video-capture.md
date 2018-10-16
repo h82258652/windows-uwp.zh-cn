@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "206307"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681758"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>用于照片和视频捕获的手动相机控件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何使用手动设备控件实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。
@@ -268,7 +269,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 ## <a name="powerline-frequency"></a>Powerline frequency
 某些相机设备支持防闪烁处理，该功能依赖于获知当前环境中的电力线 AC 频率。 某些设备支持自动确定电力线频率，而另一些设备需要手动设置该频率。 以下代码示例显示如何确定设备上的电力线频率支持以及如何手动设置该频率（如果需要）。 
 
-首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，从而传入 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) 并传入值 **Auto** 来执行此操作。 如果调用成功，这意味着你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
+首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，从而传入 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)并传入值**自动**执行此操作。如果调用成功，这意味着你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -338,7 +339,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 在针对 **ManipulationDelta** 事件的处理程序中，将根据用户的收缩手势的变化更新缩放系数。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值表示收缩手势的比例变化，如此收缩大小的小幅上升是略大于 1.0 的数字，并且收缩大小的小幅下降是略小于 1.0 的数字。 在此示例中，缩放控制的当前值乘以比例增量。
 
-在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最后，你必须确保该缩放系数是由 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 属性表示的受设备支持的缩放步长的倍数。 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
+在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最后，你必须确保该缩放系数是由[**步骤**](https://msdn.microsoft.com/library/windows/apps/dn633818)属性在设备支持该缩放步长的倍数。 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
 
 通过创建新的 [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) 对象，在捕获设备上设置缩放级别。 将 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) 属性设置为 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，然后将 [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) 属性设置为你想要的缩放系数。 最后，调用 [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) 在设备上设置新的缩放值。 该设备将平滑过渡到新的缩放值。
 

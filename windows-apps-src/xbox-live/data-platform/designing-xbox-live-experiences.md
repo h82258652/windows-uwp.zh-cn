@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 统计信息, 成就, 排行榜, 设计
 ms.localizationpriority: medium
 ms.openlocfilehash: 112beacc2009f495da64475a0740560b7271b43d
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612576"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681367"
 ---
 # <a name="designing-xbox-live-experiences"></a>设计 Xbox Live 体验
 

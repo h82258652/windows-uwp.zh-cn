@@ -17,12 +17,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 359c6527c341a08eca23aa6dd28acd27ddb19205
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611362"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679976"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
@@ -320,7 +320,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 我们的应用可在两个页面之间导航，但它还没有什么真正有趣的功能。 当一个应用包含多个页面时，这些页面经常需要共享信息。 让我们将一些信息从第一页传递到第二页。
 
-在 Page1.xaml 中，将你之前添加的 **HyperlinkButton** 替换为以下 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
+在 Page1.xaml 中，替换为你添加**HyperlinkButton**更早版本以下[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
 
 我们在此处添加 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 标签和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name`，用于输入文本字符串。
 
