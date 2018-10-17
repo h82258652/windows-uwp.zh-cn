@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684887"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742729"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
@@ -48,7 +48,7 @@ ms.locfileid: "4684887"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标题| 描述| 
+| 标题| 说明| 
 | --- | --- | --- | 
 | 授权| 身份验证令牌。 示例： XBL3.0 x = [哈希];[令牌]。| 
 | x xbl 协定版本| 整数 API 协定版本。 必须对此 API 为 1 或 2。| 
@@ -87,7 +87,7 @@ ms.locfileid: "4684887"
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 所有字符串都已成功都处理。 这并不一定意味着所有字符串都必须正面的 Hresult。| 
 | 401| 未授权| 请求要求用户身份验证。| 

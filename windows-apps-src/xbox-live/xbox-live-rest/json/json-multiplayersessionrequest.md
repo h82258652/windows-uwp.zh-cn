@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c2cb3ca95524b49ea6e0cbe14771036a3e6925
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680921"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742157"
 ---
 # <a name="multiplayersessionrequest-json"></a>MultiplayerSessionRequest (JSON)
 请求 JSON 对象传递**MultiplayerSession**对象的操作。 
@@ -26,7 +26,7 @@ ms.locfileid: "4680921"
  
 MultiplayerSessionRequest JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | 常量| object| 会话模板，以产生会话常量与合并的只读的设置。 | 
 | 属性 | object | 合并到的会话属性更改。| 

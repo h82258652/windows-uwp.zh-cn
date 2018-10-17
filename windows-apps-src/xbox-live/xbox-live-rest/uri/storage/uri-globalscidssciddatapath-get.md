@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 93414fcb069a79a1fd98d3f5313a7a4784bb97d4
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679801"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743035"
 ---
 # <a name="get-globalscidssciddatapath"></a>GET (/global/scids/{scid}/data/{path})
 列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -34,7 +34,7 @@ ms.locfileid: "4679801"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| guid| 若要查找的服务配置 ID。| 
 | path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
@@ -44,7 +44,7 @@ ms.locfileid: "4679801"
  
 ## <a name="optional-query-string-parameters"></a>可选的查询字符串参数 
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | skipItems| int| 返回在集合中，例如，N + 1 处开始的项跳过 N 项目。| 
 | ContinuationToken| 字符串| 返回在给定的延续令牌启动的项目。 如果两者都提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
@@ -62,7 +62,7 @@ ms.locfileid: "4679801"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
 | 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 被替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
@@ -81,7 +81,7 @@ ms.locfileid: "4679801"
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
 | 201| 已创建 | 创建实体。| 

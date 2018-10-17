@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688929"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742979"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -35,7 +35,7 @@ URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 描述| 
+| 参数| 说明| 
 | --- | --- | 
 | titleid| 游戏应在其中操作该请求 ID。| 
   
@@ -53,7 +53,7 @@ gameserverds.xboxlive.com
  
 当发出请求下, 表中所示的标头是必需的。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
 | 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
@@ -68,7 +68,7 @@ gameserverds.xboxlive.com
  
 当发出请求下, 表中所示的标头是可选的。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X XblCorrelationId|  | 请求正文的 mime 类型。| 
   
@@ -86,7 +86,7 @@ gameserverds.xboxlive.com
  
 请求必须包含一个具有以下成员的 JSON 对象。
  
-| 成员| 描述| 
+| 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 区域设置| 若要返回的变体本地。| 
 | maxVariants| 变体，要返回的最大数量。| 
@@ -117,7 +117,7 @@ gameserverds.xboxlive.com
  
 响应将始终会包括下表中所示的标头。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 内容类型| 应用程序/json| 响应正文中的数据的类型。| 
 | Content-Length|  | 响应正文的长度。| 
@@ -129,7 +129,7 @@ gameserverds.xboxlive.com
  
 响应可能包括的标头，如下所示。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X XblCorrelationId|  | 响应正文的 mime 类型。| 
   
@@ -140,7 +140,7 @@ gameserverds.xboxlive.com
  
 如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
-| 成员| 描述| 
+| 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 变体| 变体的数组。| 
 | variantId| 变体的 Id。| 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 910e2e46725c8628d6984983c808bf5fc9937f9f
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685639"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742003"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
 指示，已使用所有或易耗型库存项目的部分和递减请求量该消耗品的数量。
@@ -48,7 +48,7 @@ ms.locfileid: "4685639"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- |
 | itemID| 字符串| 特定于每个用户单数库存项目的 ID|
 

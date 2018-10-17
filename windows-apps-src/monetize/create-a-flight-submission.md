@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 87e544c2d9d04e62f324fe14cd7aab3e1b7ee500
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684743"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4756018"
 ---
 # <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
@@ -45,7 +45,7 @@ ms.locfileid: "4684743"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

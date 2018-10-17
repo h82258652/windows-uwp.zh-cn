@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685695"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742766"
 ---
 # <a name="get-insights-data"></a>获取的见解数据
 
@@ -40,7 +40,7 @@ ms.locfileid: "4685695"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 描述                  |
+| 值      | 类型   | 说明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 包含应用的见解数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[相关的见解值](#insight-values)部分。                                                                                                                      |
 | TotalCount | int    | 查询的数据结果中的行总数。                 |
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
 
-| 值               | 类型   | 描述                           |
+| 值               | 类型   | 说明                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | 字符串 | 以下值之一，用于指示规格，它的当前相关的见解和当前维度描述，具体取决于**数据类型**值。<ul><li>对于**运行状况**，此值始终是**点击次数**。</li><li>获取**购置**，此值始终是**AcquisitionQuantity**。</li><li>对于**使用情况**，此值可以是以下字符串之一：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | array |  介绍相关的见解的单个跃点数的一个或多个对象。   |

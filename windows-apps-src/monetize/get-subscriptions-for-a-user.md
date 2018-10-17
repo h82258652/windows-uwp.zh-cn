@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688622"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4756078"
 ---
 # <a name="get-subscriptions-for-a-user"></a>获取用户订阅
 
@@ -45,7 +45,7 @@ ms.locfileid: "4688622"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 描述      |
+| 标头         | 类型   | 说明      |
 |----------------|--------|-------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |

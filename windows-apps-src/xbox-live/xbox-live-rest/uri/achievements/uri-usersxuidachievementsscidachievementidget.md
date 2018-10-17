@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d64dc9fbae0e53880578ebff7576b028d6ecdf49
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688999"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4740765"
 ---
 # <a name="get-usersxuidxuidachievementsscidachievementid"></a>GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 获取在成就的详细信息。 这些 Uri 的域是`achievements.xboxlive.com`。
@@ -35,7 +35,7 @@ ms.locfileid: "4688999"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问的资源的用户。 必须匹配的身份验证的用户的 XUID。| 
 | scid| GUID| 正在访问其成就的服务配置的唯一标识符。| 
@@ -46,7 +46,7 @@ ms.locfileid: "4688999"
  
 ## <a name="authorization"></a>授权
  
-使用授权声明 | 声明| 是否为必需？| 描述| 如果缺少的行为| 
+使用授权声明 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | 用户| 是| Xbox LIVE 正在为其发出请求上是有效的用户。| 403 已禁止| 
 | Title| 否| 调用的标题。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供声明时缺少并因此将未标记为公共任何 Scid 拒绝访问。| 
@@ -75,7 +75,7 @@ ms.locfileid: "4688999"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
   
@@ -84,7 +84,7 @@ ms.locfileid: "4688999"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
 | x xbl 协定版本| 字符串| 默认值为 V1。| 
@@ -104,7 +104,7 @@ ms.locfileid: "4688999"
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
 | 301| 已永久移动| 该服务已移动到不同的 URI。| 

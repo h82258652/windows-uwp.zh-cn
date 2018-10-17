@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684062"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742179"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
 从服务检索指定的数量的用户消息摘要。
@@ -46,7 +46,7 @@ ms.locfileid: "4684062"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 发出请求的玩家。|
 
@@ -170,7 +170,7 @@ ms.locfileid: "4684062"
 
 发生错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
 
-| 属性| 类型| 描述|
+| 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 错误码| 字符串| 指示错误的来源。|
 | 错误代码| int| 与 （可以为 null） 的错误相关联的数字代码。|

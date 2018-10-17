@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2452be9eacd5efe0b28229a14579e838e9b62d0e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4682495"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743423"
 ---
 # <a name="eds-common-headers"></a>EDS 通用标头
 
@@ -26,7 +26,7 @@ ms.locfileid: "4682495"
 
 ## <a name="entertainment-discovery-services-eds-common-request-headers"></a>娱乐发现服务 (EDS) 常见请求标头
 
-| 标头名称| 描述| 是否为必需？| 注释|
+| 标头名称| 说明| 是否为必需？| 注释|
 | --- | --- | --- | --- |
 | <b>x xbl 协定版本</b>| EDS 服务版本| 是| 3.2|
 | <b>x xbl 客户端类型</b>| 客户端类型标头| 是| 说到团队，获取你自己的客户端类型。|
@@ -48,7 +48,7 @@ ms.locfileid: "4682495"
 
 ## <a name="common-response-headers"></a>常见的响应标头
 
-| 标头名称| 描述| 是否为必需？| 注释|
+| 标头名称| 说明| 是否为必需？| 注释|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | <b>缓存</b>| 缓存标头| 是| 请参阅<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>。|
 | <b>xbl 的 x 错误</b>| 错误| 否| 从各种数据提供程序的错误的列表。|

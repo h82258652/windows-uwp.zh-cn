@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 地图, 地图样式表
 ms.localizationpriority: medium
 ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686102"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743678"
 ---
 # <a name="map-style-sheet-reference"></a>地图样式表参考
 
@@ -230,7 +230,7 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 
 此属性组继承自 [MapElement](#mapelement) 属性组。
 
-| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 描述 |
+| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 说明 |
 |------------------------------|---------|------|------|------|------|-------------|
 | 形状背景             | Float   |      |      |      |  ✔️   | 要用作图标-替换存在任何形状的背景形状。 |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | 图标主干的定位点应缩放的量。  例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |

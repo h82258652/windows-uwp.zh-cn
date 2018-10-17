@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，相关的见解、 趋势、 异常，异常，数据发生更改
 ms.localizationpriority: medium
 ms.openlocfilehash: be70dccbb7a12b65b9e7bbd07f27ae7ea3a578ff
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4682398"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741948"
 ---
 # <a name="insights-report"></a>洞察报告
 

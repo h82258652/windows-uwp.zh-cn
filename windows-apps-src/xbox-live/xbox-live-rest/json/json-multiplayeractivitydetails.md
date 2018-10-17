@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de72a24c34af1a5f145c44b2acfa11a7bd07f95
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679758"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4740581"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
 表示**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**的 JSON 对象。 
@@ -31,7 +31,7 @@ ms.locfileid: "4679758"
  
 MultiplayerActivityDetails JSON 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | --- | 
 | SessionReference| MultiplayerSessionReference| 表示会话的标识信息的<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>对象。| 
 | HandleId| 64 位无符号的整数| 对应于活动句柄 ID。| 

@@ -1,6 +1,6 @@
 ---
 author: eliotcowley
-title: 磁条阅读器
+title: 磁条读取器
 description: 磁条阅读器 UWP 文档的索引主题。
 ms.author: elcowle
 ms.date: 10/04/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，点的服务、 pos、 磁条阅读器
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679480"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741994"
 ---
-# <a name="magnetic-stripe-reader"></a>磁条阅读器
+# <a name="magnetic-stripe-reader"></a>磁条读取器
 
 磁条阅读器可以扫描某些类型的对磁条它们，如信用卡、 驱动程序的许可证，并将存储会员卡的卡。 你可能遇到一个购买应用商店中的某些内容时。
 
@@ -26,6 +26,6 @@ ms.locfileid: "4679480"
 
 ## <a name="in-this-section"></a>本部分内容
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [获取并了解磁条数据](../devices-sensors/pos-magnetic-stripe-reader-data.md) | 了解如何获取和解释磁条中的数据。 |

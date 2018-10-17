@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6271cdf3d94f194adee5087136c1d87ad9f214b5
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684843"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741529"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
 用来筛选状态信息，如用户、 设备和游戏的属性的数组。
@@ -27,7 +27,7 @@ ms.locfileid: "4684843"
 
 BatchRequest 对象具有以下规范。
 
-| 成员| 类型| 描述|
+| 成员| 类型| 说明|
 | --- | --- | --- |
 | 用户| 字符串的数组| 用户想要了解，最多个一次 1100 Xuid 其状态的列表 XUIDs。|
 | deviceTypes| 字符串的数组| 使用你想要了解有关的用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，无筛选）。|

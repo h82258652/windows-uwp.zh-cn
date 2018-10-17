@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686559"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741971"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的桌面应用程序托管 API
 
@@ -295,7 +295,7 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
 
 托管 API 的 XAML 共享相同限制在 Windows 10 的所有其他类型的 XAML 主机控件。 有关详细的列表，请参阅[XAML 主机控件限制](xaml-host-controls.md#limitations)。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>使用 UWP XAML 托管 API 在 UWP 应用中的错误
 
@@ -317,4 +317,4 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
 
 ## <a name="related-topics"></a>相关主题
 
-* [在桌面应用程序的 UWP 控件](xaml-host-controls.md)
+* [桌面应用程序中的 UWP 控件](xaml-host-controls.md)
