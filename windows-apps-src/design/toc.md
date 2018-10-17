@@ -24,77 +24,104 @@
 ## 布局面板
 ### [概述](layout/layout-panels.md)
 ### [教程：使用布局面板](layout/grid-tutorial.md)
+### [拆分视图](controls-and-patterns/split-view.md)
 ### [自定义面板](layout/custom-panels-overview.md)
 ### [自定义面板示例：BoxPanel](layout/boxpanel-example-custom-panel.md)
 ## 转换
 ### [概述](layout/transforms.md)
 ### [3D 透视效果](layout/3-d-perspective-effects.md)
+## [Z 深度和阴影](layout/depth-shadow.md)
 
 # 控件
 ## [概述](controls-and-patterns/index.md)
 ## [控件和事件简介](controls-and-patterns/controls-and-events-intro.md)
 ## [按功能排序的控件索引](controls-and-patterns/controls-by-function.md)
-## [应用栏和命令栏](controls-and-patterns/app-bars.md)
-## [自动建议框](controls-and-patterns/auto-suggest-box.md)
-## [按钮](controls-and-patterns/buttons.md)
-## [复选框](controls-and-patterns/checkbox.md)
-## [颜色选取器](controls-and-patterns/color-picker.md)
-## [命令栏浮出控件](controls-and-patterns/command-bar-flyout.md)
-## [联系人卡片](controls-and-patterns/contact-card.md)
-## [日期和时间](controls-and-patterns/date-and-time.md)
-### [日历日期选取器](controls-and-patterns/calendar-date-picker.md)
-### [日历视图](controls-and-patterns/calendar-view.md)
-### [日期选取器](controls-and-patterns/date-picker.md)
-### [时间选取器](controls-and-patterns/time-picker.md)
-## 对话框和浮出控件
-### [概述](controls-and-patterns/dialogs-and-flyouts/index.md)
-### [对话框](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
-### [浮出控件](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
-## [翻转视图](controls-and-patterns/flipview.md)
-## [表单](controls-and-patterns/forms.md)
-## [中心](controls-and-patterns/hub.md)
-## [超链接](controls-and-patterns/hyperlinks.md)
-## [图像和图像画笔](controls-and-patterns/images-imagebrushes.md)
-## [墨迹书写控件](controls-and-patterns/inking-controls.md)
-## [列表](controls-and-patterns/lists.md)
+
+## 基本输入
+### [按钮](controls-and-patterns/buttons.md)
+### [复选框](controls-and-patterns/checkbox.md)
 ### [组合框](controls-and-patterns/combo-box.md)
+### [超链接](controls-and-patterns/hyperlinks.md)
+### [单选按钮](controls-and-patterns/radio-button.md)
+### [评分控件](controls-and-patterns/rating.md)
+### [滑块](controls-and-patterns/slider.md)
+### [切换](controls-and-patterns/toggles.md)
+
+## 集锦
+### [概述](controls-and-patterns/lists.md)
+### [翻转视图](controls-and-patterns/flipview.md)
 ### [列表视图和网格视图](controls-and-patterns/listview-and-gridview.md)
-### [项目容器和模板](controls-and-patterns/item-containers-templates.md)
-### [列表视图项模板](controls-and-patterns/item-templates-listview.md)
-### [网格视图项模板](controls-and-patterns/item-templates-gridview.md)
+#### [项目容器和模板](controls-and-patterns/item-containers-templates.md)
+#### [列表视图项模板](controls-and-patterns/item-templates-listview.md)
+#### [网格视图项模板](controls-and-patterns/item-templates-gridview.md)
 ### [反转列表](controls-and-patterns/inverted-lists.md)
 ### [下拉刷新](controls-and-patterns/pull-to-refresh.md)
 ### [嵌套 UI](controls-and-patterns/nested-ui.md)
 ### [集合命令处理](controls-and-patterns/collection-commanding.md)
-## [大纲/细节](controls-and-patterns/master-details.md)
-## [媒体播放](controls-and-patterns/media-playback.md)
+### [轻扫](controls-and-patterns/swipe.md)
+### [树视图 ](controls-and-patterns/tree-view.md)
+
+## 对话框和浮出控件
+### [概述](controls-and-patterns/dialogs-and-flyouts/index.md)
+### [对话框](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
+### [浮出控件](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
+
+## [表单](controls-and-patterns/forms.md)
+
+## 媒体、图形和形状
+### [图像和图像画笔](controls-and-patterns/images-imagebrushes.md)
+### [墨迹](controls-and-patterns/inking-controls.md)
+### [媒体播放](controls-and-patterns/media-playback.md)
 ### [自定义传输控件](controls-and-patterns/custom-transport-controls.md)
-## [菜单和上下文菜单](controls-and-patterns/menus.md)
-## [导航视图](controls-and-patterns/navigationview.md)
-## [个人图片](controls-and-patterns/person-picture.md)
-## [透视表](controls-and-patterns/pivot.md)
-## [进度](controls-and-patterns/progress-controls.md)
-## [单选按钮](controls-and-patterns/radio-button.md)
-## [评分控件](controls-and-patterns/rating.md)
-## [滚动和平移控件](controls-and-patterns/scroll-controls.md)
+### [形状](controls-and-patterns/shapes.md)
+### [Web 视图](controls-and-patterns/web-view.md)
+
+## 菜单和工具栏
+### [应用栏和命令栏](controls-and-patterns/app-bars.md)
+### [命令栏浮出控件](controls-and-patterns/command-bar-flyout.md)
+### [菜单和上下文菜单](controls-and-patterns/menus.md)
+
+## 导航
+### [中心](controls-and-patterns/hub.md)
+### [大纲/细节](controls-and-patterns/master-details.md)
+### [导航视图](controls-and-patterns/navigationview.md)
+### [透视表](controls-and-patterns/pivot.md)
+
+## 人脉
+### [联系人卡片](controls-and-patterns/contact-card.md)
+### [个人图片](controls-and-patterns/person-picture.md)
+
+## 选取器
+### [颜色选取器](controls-and-patterns/color-picker.md)
+### [日期和时间控件](controls-and-patterns/date-and-time.md)
+### [日历日期选取器](controls-and-patterns/calendar-date-picker.md)
+### [日历视图](controls-and-patterns/calendar-view.md)
+### [日期选取器](controls-and-patterns/date-picker.md)
+### [时间选取器](controls-and-patterns/time-picker.md)
+
+## 滚动
+### [滚动和平移控件](controls-and-patterns/scroll-controls.md)
+### [语义式缩放](controls-and-patterns/semantic-zoom.md)
+
 ## [搜索](controls-and-patterns/search.md)
-## [语义式缩放](controls-and-patterns/semantic-zoom.md)
-## [形状](controls-and-patterns/shapes.md)
-## [滑块](controls-and-patterns/slider.md)
-## [拆分视图](controls-and-patterns/split-view.md)
-## [轻扫](controls-and-patterns/swipe.md)
-## [文本](controls-and-patterns/text-controls.md)
-### [内容链接](controls-and-patterns/content-links.md)
-### [标签](controls-and-patterns/labels.md)
-### [密码框](controls-and-patterns/password-box.md)
-### [富编辑框](controls-and-patterns/rich-edit-box.md)
-### [RTF 块](controls-and-patterns/rich-text-block.md)
+
+## 状态和信息
+### [进度](controls-and-patterns/progress-controls.md)
+### [工具提示](controls-and-patterns/tooltips.md)
+
+## 文本
+### [概述](controls-and-patterns/text-controls.md)
+### [自动建议框](controls-and-patterns/auto-suggest-box.md)
 ### [文本块](controls-and-patterns/text-block.md)
+### [富文本块](controls-and-patterns/rich-text-block.md)
 ### [文本框](controls-and-patterns/text-box.md)
-## [切换](controls-and-patterns/toggles.md)
-## [工具提示](controls-and-patterns/tooltips.md)
-## [树视图 ](controls-and-patterns/tree-view.md)
-## [Web 视图](controls-and-patterns/web-view.md)
+### [富编辑框](controls-and-patterns/rich-edit-box.md)
+### [密码框](controls-and-patterns/password-box.md)
+### [标签](controls-and-patterns/labels.md)
+### [内容链接](controls-and-patterns/content-links.md)
+### [手写视图](controls-and-patterns/text-handwriting-view.md)
+
+
 
 # 样式
 ## [概述](style/index.md)
@@ -124,6 +151,7 @@
 ## [连贯动画](motion/connected-animation.md)
 ## [视差](motion/parallax.md)
 ## [XAML 中的动画](motion/xaml-animation.md)
+### [属性动画](motion/xaml-property-animations.md)
 ### [情节提要动画](motion/storyboarded-animations.md)
 ### [关键帧以及缓动函数动画](motion/key-frame-and-easing-function-animations.md)
 
@@ -217,6 +245,7 @@
 ## [输入注入](input/input-injection.md)
 ## [标识输入设备](input/identify-input-devices.md)
 ## [自定义文本输入](input/custom-text-input.md)
+## [文本缩放](input/text-scaling.md)
 ## [拖放](input/drag-and-drop.md)
 ## [视觉缩放和调整大小](input/guidelines-for-optical-zoom.md)
 ## [平移](input/guidelines-for-panning.md)
