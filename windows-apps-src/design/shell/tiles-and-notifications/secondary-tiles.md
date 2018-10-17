@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 辅助磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11ca4d29f22daf953ce03436c3b786c70a9e04
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: d8d6a79ddd497bc3ada777af25791e9938355c79
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622873"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692873"
 ---
 # <a name="secondary-tiles"></a>辅助磁贴
 
@@ -70,7 +70,7 @@ ms.locfileid: "4622873"
 * 用户可以在不删除父应用的情况下随时删除他们的辅助磁贴。
 * 辅助磁贴可在运行时创建。 应用磁贴只能在安装过程中创建。
 * 在添加辅助磁贴之前，浮出控件会提示用户进行确认。
-* 不能请求用户以编程方式为锁屏界面选择辅助磁贴。 用户必须通过电脑设置中的“个性化”页面手动添加辅助磁贴。
+* 不能请求用户以编程方式为锁屏界面选择辅助磁贴。 在电脑设置，用户必须手动添加辅助磁贴通过个性化页面。
 
 为了发送通知，为与辅助磁贴配合使用的磁贴和锁屏提醒更新程序以及推送通知通道提供了特定方法。 这些特定方法与同主要磁贴配合使用的版本相对应。 例如，CreateBadgeUpdaterForApplication 与 CreateBadgeUpdaterForSecondaryTile 相对应。
 

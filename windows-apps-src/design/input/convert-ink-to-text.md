@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c654c6b35b9e7e27cc201ac71e70a92a920b79
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895332"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4693531"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -212,7 +212,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
         }
     }
 ```
-6. 以下是在我们的识别画布上绘制 TextBlock 的函数。 我们在墨迹画布上使用关联墨迹笔划的边界矩形来设置 TextBlock 的位置和字体大小。
+6. 以下是在我们的识别画布上绘制 TextBlock 的函数。 我们可以使用在墨迹画布上的关联的墨迹笔划的边界矩形来设置的位置和字体大小的 TextBlock。
 ```csharp
 /// <summary>
 /// Draw ink recognition text string on the recognitionCanvas.
@@ -231,7 +231,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. 以下是在我们的识别画布上绘制椭圆和多边形的函数。 我们在墨迹画布上使用关联墨迹笔划的边界矩形来设置各形状的位置和字体大小。
+7. 以下是在我们的识别画布上绘制椭圆和多边形的函数。 我们可以使用在墨迹画布上的关联的墨迹笔划的边界矩形来设置的位置和字体大小的形状。
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)

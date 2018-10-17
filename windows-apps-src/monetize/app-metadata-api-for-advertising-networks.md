@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, 广告网络, 应用元数据
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 16603bfe8c3fe0bfeaef1e19018798d0c6477b85
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4613538"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692079"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>广告网络的应用元数据 API
 

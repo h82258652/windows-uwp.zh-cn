@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 3004b7041838656890b3a967e858dddc64c29ee5
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 656e6123db1fc9ea0f3d8c6b6fb106864200e431
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612392"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691567"
 ---
 # <a name="send-a-local-toast-notification"></a>发送本地 toast 通知
 
@@ -88,7 +88,7 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 现在先来构造内容的可视部分，其中包括希望用户看到的文本和图像。
 
-通知库使得 XML 内容的生成变得十分简单。 如果不从 NuGet 安装通知库，则需要手动构造 XML，这样就可能出错。
+借助通知库，生成的 XML 内容很简单。 如果不从 NuGet 安装通知库，则需要手动构造 XML，这样就可能出错。
 
 > [!NOTE]
 > 图像可来自于应用包、应用的本地存储或来自 Web。 自 Fall Creators Update 起，正常连接上的 Web 图像的大小限制提升至 3 MB，按流量计费的连接上的限制提升至 1 MB。 在尚未运行 Fall Creators Update 的设备上，Web 图像的大小不得超过 200 KB。

@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 00a6bbf06f918c0b86bcaed7ae7891b474baefe8
-ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.localizationpriority: medium
+ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
-ms.locfileid: "852873"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4694170"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **注意**  你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)还是使用 [{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
@@ -143,7 +143,7 @@ else
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 在此情况下，设计工具所做的只是为该类的可绑定属性而分析该类，并将这些显示在“数据”**** 面板中和“创建数据绑定”**** 对话框中。
+**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 所有设计工具所做在此情况下是分析其可绑定的属性的类和显示这些**数据**面板中，并在**创建数据绑定**对话框。
 
 <a name="sample-data-for-prototyping"></a>用于原型制作的示例数据
 --------------------------------------------------------

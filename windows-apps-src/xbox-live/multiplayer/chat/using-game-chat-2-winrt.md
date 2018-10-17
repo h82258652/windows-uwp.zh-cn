@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ca62427a5e8f51143ef9e40faf24272ffbe97d7
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611137"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691186"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>使用游戏聊天 2（WinRT 投影）
 

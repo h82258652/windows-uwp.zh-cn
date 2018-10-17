@@ -11,11 +11,11 @@ keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 应用�
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ebfa61fa200342e32beb87be6cd27ea11e8f40
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4614310"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4693624"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>终止应用提交的推出
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 5309b33e0f65a1a06e1a3c0060a84e4c4a88ef9d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 8f3aa529e1c292bcea816e21222ca2a5e07f4319
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700793"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692312"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -48,7 +48,7 @@ ms.locfileid: "1700793"
 \Assets\Images\contrast-white\<logo.png, and other image files>
 ```
 
-如果你按照上述示例命名文件夹，那么你的应用会使用高对比度设置从针对适当限定符命名的文件夹中加载资源文件。 因此，如果该设置为“高对比度黑色”，则会加载 `\Assets\Images\contrast-black` 文件夹中的资源文件。 如果该设置为“无”（即，计算机未处于高对比度模式），则会加载 `\Assets\Images\standard` 文件夹中的资源文件。
+如果你按照上述示例命名文件夹，那么你的应用会使用高对比度设置从针对适当限定符命名的文件夹中加载资源文件。 因此，如果该设置为“高对比度黑色”，则会加载 `\Assets\Images\contrast-black` 文件夹中的资源文件。 如果该设置为“无”（即，计算机未处于高对比度模式），则会加载 `\Assets\Images\contrast-standard` 文件夹中的资源文件。
 
 ## <a name="use-qualifiers-in-file-names"></a>在文件名称中使用限定符
 

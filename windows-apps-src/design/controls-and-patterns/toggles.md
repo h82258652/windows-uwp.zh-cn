@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: daffbc5ff74adc234ac6c2b414a7e1b85763849d
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 796ee4ffaa551c23286110ec7164f511655d6017
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620727"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694006"
 ---
 # <a name="toggle-switches"></a>切换开关
 
@@ -71,7 +71,7 @@ ms.locfileid: "4620727"
 - 当用户必须执行额外的步骤才能使更改生效时，使用复选框。 例如，如果用户必须单击“提交”或“下一步”按钮才能应用更改，则使用复选框。
 - 当用户可选择与单个设置或功能相关的多个项时，请使用复选框。
 
-## <a name="toggle-switches-in-the-the-windows-ui"></a>Windows UI 中的切换开关
+## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI 中的切换开关
 
 这些图像显示了 Windows UI 如何使用切换开关。 下面介绍智能存储设置屏幕如何使用切换开关：
 

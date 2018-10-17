@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166b015b4605c10f8c778c7e9aa24cc4993d3472
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: c60fcd705acf2d0d1e3162e80bc1d85095aa0fb4
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818239"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4694249"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>检测和响应音频的状态变化
 从 Windows 10 版本 1803 开始，应用可检测到系统何时降低或静音应用使用的音频流的音频级别。 可以接收捕获和呈现流、特定音频设备和音频类别或应用用于媒体播放的 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 对象的通知。 例如，当警报响起时，系统可能降低（或者“闪避”）音频播放级别。 如果应用没有在应用清单中声明 *backgroundMediaPlayback* 功能，系统将在应用进入后台时将其静音。 
@@ -26,7 +26,7 @@ ms.locfileid: "1818239"
 
 [!code-cs[SoundLevelDeviceIdCategory](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSoundLevelDeviceIdCategory)]
 
-在 **SoundLevelChanged** 事件处理程序中，查看传入处理程序的 **AudioStateMonitor** 发件人的 [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) 属性，以确定流的新音频级别。 在此示例中，声音级别为静音时应用停止捕获音频，音频级别返回到完整音量时恢复捕获。
+在**SoundLevelChanged**事件处理程序中，检查**AudioStateMonitor**发件人传递到处理程序以确定流的新音频级别的[**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)属性。 在此示例中，声音级别为静音时应用停止捕获音频，音频级别返回到完整音量时恢复捕获。
 
 [!code-cs[GameChatSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetGameChatSoundLevelChanged)]
 
