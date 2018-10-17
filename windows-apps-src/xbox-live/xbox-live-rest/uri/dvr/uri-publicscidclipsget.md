@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686955"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745266"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 列表公共剪辑。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。
@@ -41,7 +41,7 @@ ms.locfileid: "4686955"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| 字符串| 公共剪辑主要服务配置标识符。| 
 | titleid| 字符串| 公共剪辑的职务 Id。 不能在相同的 URI 的 scid 中指定。 如果已指定，将用于查找的主 SCID。| 
@@ -51,7 +51,7 @@ ms.locfileid: "4686955"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | <b>？ achievementId = {achievementId}</b>| 匹配指定的<b>achievementId</b>最新的剪辑。| 不支持其他排序/筛选。| 
 | <b>？ greatestMomentId = {greatestMomentId}</b>| 匹配指定的<b>greatestMomentId</b>最新的剪辑。| 不支持其他排序/筛选。| 

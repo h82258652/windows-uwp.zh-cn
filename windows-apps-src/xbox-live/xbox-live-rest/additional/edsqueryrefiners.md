@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b049965d619a7c25108e2b6308b18f1e402fecab
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688932"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744773"
 ---
 # <a name="eds-query-refiners"></a>EDS 查询优化器
  
@@ -35,7 +35,7 @@ ms.locfileid: "4688932"
    * 由另一个查询。 它等同于第一，不同之处在于，"流派 = 射击游戏"添加。
    * 该响应现在包含仅涉及三个游戏，所有这些属于"射击游戏"类别。
   
-| 参数| 数据类型| 描述| 
+| 参数| 数据类型| 说明| 
 | --- | --- | --- | 
 | <b>十年期</b>| 字符串| 在其中的所有项必须已都发布的十年期。| 
 | <b>流派</b>| 字符串的数组| 所有项都必须都有的流派的列表。| 

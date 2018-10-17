@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692592"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746441"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -41,7 +41,7 @@ ms.locfileid: "4692592"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
 
@@ -59,7 +59,7 @@ ms.locfileid: "4692592"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权 | 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>Xauth=&lt;authtoken></code>。 最大大小： none。|
 | 接受| 字符串| 内容类型可接受。 示例值： <code>application/json</code>。 最大大小： none。|
@@ -71,7 +71,7 @@ ms.locfileid: "4692592"
 
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 描述|
+| 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 400| 错误请求| URI 中指定的目标 ID 不正确。|
@@ -83,7 +83,7 @@ ms.locfileid: "4692592"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|

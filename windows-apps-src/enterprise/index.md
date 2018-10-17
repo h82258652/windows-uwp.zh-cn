@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680510"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745070"
 ---
 # <a name="enterprise"></a>企业版
 
@@ -36,7 +36,7 @@ ms.locfileid: "4680510"
 > * [若要创建桌面样式 Ui 的控件](#desktop-style-UI)
 > * [控件以支持企业方案](#enterprise)
 > * [Windows UI 库](#UI-library)
-> * [在桌面应用程序的 UWP 控件](#xaml-islands)
+> * [桌面应用程序中的 UWP 控件](#xaml-islands)
 > * [.NET Standard 2.0](#standard)
 > * [SQL Server 连接](#sql-server)
 > * [MSIX 部署](#MSIX)
@@ -82,7 +82,7 @@ Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面�
 
 <a id="xaml-islands" />
 
-### <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
+### <a name="uwp-controls-in-desktop-applications"></a>桌面应用程序中的 UWP 控件
 
 Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程序中使用 UWP 控件。 这意味着你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件，如 Windows Ink 和支持 Fluent 设计系统的控件的最新 Windows 10 UI 功能。 此功能称为 XAML 群岛。
 
@@ -189,7 +189,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
 操作-谈乔什和/或 Karl 才能一起获取更多侧重于企业的示例。
 
-| 主题 |  描述 |
+| 主题 |  说明 |
 |------ |--------------|
 | [VanArsdel 清单示例](https://github.com/Microsoft/InventorySample) | 示例 Windows 10 应用程序 （使用通用 Windows 平台） 侧重于在业务线方案中，显示了如何在桌面应用程序中使用最新的 Windows 功能。 该示例都基于创建和管理客户、 订单和产品虚构公司 VanArsdel。
 突出显示 MVVM，SQL 数据库，实体框架。 列出其他人。|

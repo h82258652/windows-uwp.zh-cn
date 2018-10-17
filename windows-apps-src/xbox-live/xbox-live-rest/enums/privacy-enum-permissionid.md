@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f58c2d0f68e1f65820104928e45a09ccfdb259cb
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679203"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747120"
 ---
 # <a name="permissionid-enumeration"></a>PermissionId 枚举
 详细介绍 PermissionId 枚举。
@@ -36,7 +36,7 @@ ms.locfileid: "4679203"
 
 一般情况下，建议的调用方请求需要检查，而不是直接检查隐私设置和权限的操作的权限 ID。 这允许隐私策略，如新的检查合并，完全一致地更改跨整个服务。
 
-| 权限名称| 描述|
+| 权限名称| 说明|
 | --- | --- |
 | CommunicateUsingText| 检查用户可以向目标用户发送的邮件包含文本内容|
 | CommunicateUsingVideo| 检查用户可以使用与目标用户的视频通信|

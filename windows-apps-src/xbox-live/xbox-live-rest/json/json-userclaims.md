@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ec9878845b7d93cd4db18ff9825d728897a5c0
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691170"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750423"
 ---
 # <a name="userclaims-json"></a>UserClaims (JSON)
 返回当前身份验证的用户的信息。 
@@ -27,7 +27,7 @@ ms.locfileid: "4691170"
  
 UserClaims 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | 玩家代号| 字符串| 用户的玩家代号。| 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的用户。| 

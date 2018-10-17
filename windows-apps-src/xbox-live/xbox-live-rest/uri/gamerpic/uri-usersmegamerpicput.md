@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c8c8f4297bb671f8e90c233ccf98dc2cf0730ad
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4682243"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749129"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
 上载 1080 x 1080 玩家头像。 
@@ -38,7 +38,7 @@ ms.locfileid: "4682243"
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | 
 | 200| “确定”| 成功获取。| 
 | 201| 创建。| 上传已成功。| 

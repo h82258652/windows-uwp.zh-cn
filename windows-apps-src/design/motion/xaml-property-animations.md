@@ -12,11 +12,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679619"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750841"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用合成动画设置动画的 XAML 元素
 
@@ -38,7 +38,7 @@ ms.locfileid: "4679619"
 
 此表显示了可用于修改 UIElement，还可使用一个[CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation)进行动画处理的呈现的属性。
 
-| 属性 | 类型 | 描述 |
+| 属性 | 类型 | 说明 |
 | -- | -- | -- |
 | [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | 双面 | 此对象的不透明度 |
 | [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Shift 元素的 X/Y/Z 位置 |

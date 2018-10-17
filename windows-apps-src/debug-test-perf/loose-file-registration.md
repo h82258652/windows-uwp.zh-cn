@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 设备门户、 应用管理器、 部署、 sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: a6a96a78cf03ce4994ddee1c929997b12a2d028f
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689720"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745432"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>部署应用通过松散文件注册 
 
@@ -81,7 +81,7 @@ Windows PowerShell 还使你可以注册 loose 文件布局，但只能在本地
 Add-AppxPackage -Register <path to manifest file>
 ```
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="mapped-network-drives"></a>映射的网络驱动器
 目前，映射的网络驱动器不支持松散文件注册。 请参阅完全映射的驱动器的网络共享路径。

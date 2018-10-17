@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f40428f79110e55aae7e881c25a3789899fee7
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689864"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746251"
 ---
 # <a name="get-usersxuidxuidlistspinslistname"></a>GET (/users/xuid(xuid)/lists/PINS/{listname})
 返回列表的内容。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -44,7 +44,7 @@ ms.locfileid: "4689864"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID)。| 
 | listtype| 字符串| 列表 （如何使用和其工作原理） 的类型。 始终"固定"对于这些相关的方法。| 
@@ -55,7 +55,7 @@ ms.locfileid: "4689864"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | skipItems| 32 位有符号整数| 可选。 若要返回结果之前枚举中跳过的项目数。 默认值： 0。| 
 | maxItems| 32 位有符号整数| 可选。 要返回的项数的最大数量。 如果请求中指定没有最大值，则默认为 25 个项目。 该服务不将此值; 最多如果值大于列表中的项目数，然后将并不报错返回所有项。| 
@@ -80,7 +80,7 @@ ms.locfileid: "4689864"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标题| 描述| 
+| 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 包含用于身份验证和授权请求的 STS 标记。 必须从 XSTS 服务访问令牌并包括为声明之一的 XUID。 | 
 | X XBL 协定版本| 指定哪些 API 版本正在请求 （正整数）。 引脚支持版本 2。 如果此标头丢失或不受支持值，则服务将返回 400 – 错误请求与"不受支持或丢失合约版本标头"中的状态说明。| 
@@ -101,7 +101,7 @@ ms.locfileid: "4689864"
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功完成请求。 响应正文应包含所请求的资源 （GET)。 POST 和 PUT 请求将接收最新列表元数据 （列表版本、 计数等）。| 
 | 201| 已创建| 已创建了新的列表。 这被返回初始插入到列表。 该响应包括在列表上保持最新的元数据和位置标头包含列表的 URI。| 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 089aba60b80e629a8068bcf39f009ac97fc6ad66
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4687156"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745635"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a>POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 
@@ -43,7 +43,7 @@ ms.locfileid: "4687156"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID) 会话。|
 | hoppername | 字符串 | 漏斗的名称。 |
@@ -74,7 +74,7 @@ ms.locfileid: "4687156"
 
 ### <a name="required-members"></a>所需的成员
 
-| 成员| 类型| 描述|
+| 成员| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | serviceConfig| GUID| 会话的 SCID。|
 | hopperName| 字符串| 漏斗的名称。|
@@ -157,7 +157,7 @@ POST /serviceconfigs/{scid}/hoppers/{hoppername}
 
 ## <a name="response-body"></a>响应正文
 
-| 成员| 描述|
+| 成员| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 票证 Id| GUID| 正在创建票证的 ID。|
 | waitTime| 32 位有符号整数| 平均等待时间 （整型数秒为单位） 的漏斗。|

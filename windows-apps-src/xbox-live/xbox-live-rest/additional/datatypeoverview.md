@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9340f4adb83932ef2c48aba271367e7faab645c3
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679206"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750778"
 ---
 # <a name="data-type-overview"></a>数据类型概述
  
 Xbox Live 服务使用各种与标识和身份验证相关的数据类型。 本主题概要介绍了这些类型。
  
-| 类型| 描述| 
+| 类型| 说明| 
 | --- | --- | 
 | 玩家代号| 用户的独特的用户可读的屏幕名称。| 
 | 玩家| 一个 JSON 对象，包含用户的 XUID 和玩家代号，以及玩家的索引中的会话 （或"固定"），无论玩家仍然参与会话，并自定义数据的小 blob。| 

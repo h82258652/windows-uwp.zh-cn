@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cb093f624d27f28cace771896cf52146059bc332
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4683433"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745514"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [人 (JSON)](json-person.md)对象的集合。 
@@ -27,7 +27,7 @@ ms.locfileid: "4683433"
  
 PersonSummary 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | hasCallerMarkedTargetAsFavorite| 布尔值| 是否调用方已标记为常用的目标。 示例值： true| 
 | hasCallerMarkedTargetAsKnown| 布尔值| 是否已知调用方已标记为目标。 示例值： true| 

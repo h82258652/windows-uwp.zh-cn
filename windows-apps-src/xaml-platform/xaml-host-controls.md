@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: 本指南将帮助您直接在 WPF 和 Windows 窗体应用程序中创建基于 Fluent 的 UWP UI
-title: 在桌面应用程序的 UWP 控件
+title: 桌面应用程序中的 UWP 控件
 ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688530"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746830"
 ---
-# <a name="uwp-controls-in-desktop-applications"></a>在桌面应用程序的 UWP 控件
+# <a name="uwp-controls-in-desktop-applications"></a>桌面应用程序中的 UWP 控件
 
 > [!NOTE]
 > 作为开发人员预览版当前可用的 Api 和本文中讨论的控件。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
@@ -34,7 +34,7 @@ WPF 和 Windows 窗体应用程序可以在[Windows 社区工具包](https://doc
 
 以下包装的 UWP 控件是当前可用的 WPF 和 Windows 窗体应用程序。 在 Windows 社区工具包未来版本计划详细包装 UWP 控件。
 
-| 控件 | 最低受支持的操作系统 | 描述 |
+| 控件 | 最低受支持的操作系统 | 说明 |
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 版本 1803 | 使用 Microsoft Edge 呈现引擎来显示 web 内容。 |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供的**web 视图**与多个操作系统版本兼容的版本。 此控件使用 Microsoft Edge 呈现引擎，以显示在 Windows 10 版本 1803年及更高版本，web 内容和 Internet Explorer 呈现引擎以显示 web 内容较早版本的 Windows 10，Windows 8.x 和 Windows 7。 |

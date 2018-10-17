@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4681213"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749637"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI 中使用光
 
@@ -37,7 +37,7 @@ Windows.UI.Composition Api 使你能够创建实时动画和效果。 合成光�
 
 ### <a name="light-types"></a>光类型
 
-| 类型 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
 | [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | 发出出现的非定向光的光源反映由场景中的所有内容。 |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 大型无限远距离光源发射光在单个方向。 如太阳。 |
@@ -85,7 +85,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 根据使用光的类型，光可以具有衰减和空间的属性。 并非所有光类型都使用所有属性。
 
-属性 | 描述
+属性 | 说明
 --- | ---
 **颜色** | 光的[颜色](/uwp/api/windows.ui.color)。 照明值由[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)漫射、 Ambient 和 Specular 定义正在发出的颜色的颜色。 照明的光; 使用了 RGBA 值不使用 alpha 颜色分量。
 **Direction** | 光线的方向。 相对于其[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual 被指定指向光线的方向。
@@ -98,7 +98,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 ### <a name="advanced-lighting-properties"></a>高级照明属性
 
-属性 | 描述
+属性 | 说明
 --- | ---
 **强度** | 控制光的亮度。
 **衰减** | 衰减控制光的强度如何随距离属性指定的最大距离而减弱。  常量，Quadradic 和线性衰减属性可以使用。
@@ -121,11 +121,11 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 > 场景照明不会产生阴影;它是专注于 2D 呈现效果。  它不会考虑 3D 照明包含的方案的真实照明模型，包括阴影到。
 
 
-属性 | 描述
+属性 | 说明
 --- | ---
 **正常映射** | NormalMaps 创建其中正常指向光线将显得更亮并正常指向立即将暗的纹理效果。 若要添加到目标 visual NormalMap 使用使用 LoadedImageSurface 加载 NormalMap 资产[CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 。
 **环绕** | 环境光属性主要用于控制整体颜色反射。
-**反射** | 镜面反射高光对象，从而使其看上去闪光上创建 你可以控制镜面反射程度以及闪光的级别。  These properties are manipulated to create material effects like shinny metals or glossy paper.
+**反射** | 镜面反射高光对象，从而使其看上去闪光上创建 你可以控制镜面反射程度以及闪光的级别。  这些属性被操作以创建材料效果，例如 shinny 金属或镜面纸张。
 **漫射** | 漫射的反射散布在所有方向的光。
 **反射率模型** | [反射率模型](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel)允许你[Blinn Phong](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader)和物理基于 Blinn Phong 之间进行选择。  如果你想要有压缩反射高光，你将选择以物理方式基于 Blinn Phong。
 

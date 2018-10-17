@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690559"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747521"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 结果代码对应于提交到[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)每个字符串。
@@ -27,7 +27,7 @@ ms.locfileid: "4690559"
 
 VerifyStringResult 对象具有以下规范。
 
-| 成员| 类型| 描述|
+| 成员| 类型| 说明|
 | --- | --- | --- |
 | resultCode| 32 位无符号的整数| 必需。 HResult 代码对应于提交字符串。|
 | offendingString| 字符串| 必需。 字符串值，导致被拒绝的字符串。|

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eac2405b8668179fa60921ca45012a417e61b352
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/17/2018
-ms.locfileid: "4693663"
+ms.locfileid: "4750775"
 ---
 # <a name="initialuploadrequest-json"></a>InitialUploadRequest (JSON)
 POST GameClip 的正文上传请求。 
@@ -27,7 +27,7 @@ POST GameClip 的正文上传请求。
  
 InitialUploadRequest 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | <b>greatestMomentId</b>| 字符串| 若要使用该剪辑的名称作为文本字符串 ID。 这是托管，本地化标题的配置文件中的游戏开发人员。| 
 | <b>userCaption</b>| 字符串| 可选。 最多 250 个字符的最大长度的游戏剪辑的备用用户输入名称。| 

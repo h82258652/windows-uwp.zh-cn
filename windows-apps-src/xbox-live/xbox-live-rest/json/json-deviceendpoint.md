@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bfae4eac9ecf0177026183cc25bac5526bbba62f
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690699"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750435"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
@@ -27,7 +27,7 @@ ms.locfileid: "4690699"
  
 DeviceEndpoint 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | 设备名称| 字符串| 可选。 设备，如果适用的友好名称。 目前不使用此值。| 
 | endpointUri| 字符串| 必需。 客户端平台 （Windows 或 Windows Phone） 已获得从推送通知服务 （WNS 或 MPNS） URL。| 

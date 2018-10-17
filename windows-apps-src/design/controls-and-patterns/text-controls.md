@@ -15,12 +15,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7326acf728aef66f10c72ee04461fd90e5f775
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 2cd5f7e7022f246fce3d08286fe77c74503ddc5d
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691517"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744872"
 ---
 # <a name="text-controls"></a>文本控件
 
@@ -125,7 +125,7 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 从 Windows 10 版本 1803 开始，XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 进行笔输入。 当用户使用 Windows 手写笔点击进入文本输入框时，文本框会进行转换，以允许用户直接用手写笔进行写入，而不是打开一个单独的输入面板。
 
-![用手写笔点击时，文本框会扩展](images/pen-input-expand.gif)
+![用手写笔点击时，文本框会扩展](images/handwritingview/handwritingview2.gif)
 
 有关详细信息，请参阅[与手写视图的文本输入](text-handwriting-view.md)。
 

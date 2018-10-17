@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ed96418141aec049a9577924597a07da4313b7e2
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691097"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746166"
 ---
 # <a name="get-usersxuidxuidscidsscidstats"></a>GET (/users/xuid({xuid})/scids/{scid}/stats)
 获取由逗号分隔列表的代表指定用户的用户统计数据名称范围的服务配置。
@@ -44,7 +44,7 @@ ms.locfileid: "4691097"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。|
 | scid| GUID| 服务配置，其中包含正在访问的资源的标识符。|
@@ -54,7 +54,7 @@ ms.locfileid: "4691097"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | statNames| 字符串| 唯一的查询字符串参数是用逗号分隔用户统计数据名称 URI 名词。例如，以下 URI 通知服务的 URI 中指定的用户 id 代表请求的四个统计信息。 `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`该限制将仔细考虑"批处理"URI 长度适用范围与开发人员便于且会限制可以在单个调用中，请求的统计信息的数量。 例如，可能会通过值得统计数据名称文本 （包括逗号分隔） 的任一 600 个字符或最大 10 统计信息来确定限制。 启用所示的简单获取启用 HTTP 缓存常用的请求的统计数据，从聊天客户端减少调用卷。 |
 
@@ -87,7 +87,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
 
@@ -96,7 +96,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到该服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
@@ -114,7 +114,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 描述|
+| 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 304| 未修改| 资源不已修改自最后一次请求。|

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691688"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743810"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
 包含新的基本信誉评分应更改用户的现有评分。 
@@ -27,7 +27,7 @@ ms.locfileid: "4691688"
  
 ResetReputation 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | fairplayReputation| 数字| 所需新基础 （有效范围为 0 到 75） 的用户的公平比赛信誉评分。| 
 | commsReputation| 数字| 所需新基础 （有效范围为 0 到 75） 的用户的通信和信誉评分。| 

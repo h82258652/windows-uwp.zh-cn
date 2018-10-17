@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4681023"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746486"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
@@ -43,7 +43,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
   
@@ -61,7 +61,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标题| 描述| 
+| 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。| 
 | Content-Length| 32 位无符号的整数。 长度，以字节为单位，请求正文。 示例值： 22。| 
@@ -72,7 +72,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标题| 描述| 
+| 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
 | 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
@@ -87,7 +87,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ### <a name="required-members"></a>所需的成员
  
-| 成员| 描述| 
+| 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | XuidList| 确定要返回的调用方的用户集合中的用户的 Xuid 的数组。 请参阅[XuidList (JSON)](../../json/json-xuidlist.md)。| 
   
@@ -130,7 +130,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| "获取"方法时成功。| 
 | 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
@@ -142,7 +142,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Content-Length| 32 位无符号的整数| 长度，以字节为单位，响应正文。 示例值： 22。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 这将始终为<b>应用程序/json</b>。| 

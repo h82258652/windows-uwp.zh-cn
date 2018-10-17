@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c795dbd2b6193798b472e51526bdd9e2f6b4622
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690712"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749434"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsincludevaluemetadata"></a>GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)
 获取指定的统计数据，包括与统计信息值，指定的服务配置中的用户相关联的元数据的列表。
@@ -46,7 +46,7 @@ ms.locfileid: "4690712"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。|
 | scid| GUID| 服务配置，其中包含正在访问的资源的标识符。|
@@ -56,7 +56,7 @@ ms.locfileid: "4690712"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | statNames| 字符串| 以逗号分隔用户统计数据名称的列表。例如，以下 URI 通知服务的 URI 中指定的用户 id 代表请求的四个统计信息。{:: nomakrdown}<br/><br/>`https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots?include=valuemetadata`| 
 | 包括 = valuemetadata| 字符串| 指示该响应包括与 uset 统计信息值关联的任何值元数据。|
@@ -90,7 +90,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
 | X Xbl 协定版本| 字符串| 指示哪个版本的要使用的 API。 为了在响应中包含值元数据，此值必须设置为"3"。|
@@ -100,7 +100,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到该服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
@@ -118,7 +118,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 描述|
+| 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 304| 未修改| 资源不已修改自最后一次请求。|

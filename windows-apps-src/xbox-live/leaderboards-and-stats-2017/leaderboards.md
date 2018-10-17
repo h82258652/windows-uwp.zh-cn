@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e65002e173922a989c8194266a1ef109d24e7e4
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690794"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744982"
 ---
 # <a name="leaderboards"></a>排行榜
 
@@ -257,7 +257,7 @@ LeaderboardResult boardResult = await boardService.GetLeaderboardAsync(
 
 `LeaderboardResult` 有多个函数和属性来促进排行榜数据的读数。
 
-|属性  |描述  |
+|属性  |说明  |
 |---------|---------|
 |公共 IAsyncOperation<LeaderboardResult> GetNextAsync (uint maxItems);     |检索下一组提高排名达到 maxItems 参数的数量。 这是本质上再次调用 `GetLeaderboard()`         |
 |公共 LeaderboardQuery GetNextQuery();     |检索可用于进行排行榜调用来检索数据的下一组 LeaderboardQuery。         |
@@ -341,7 +341,7 @@ m_statsManager = stats_manager::get_singleton_instance();
 
 A`leaderboard_query`有几个属性可以设置这将影响返回的数据：
 
-|属性 |描述  |
+|属性 |说明  |
 |---------|---------|
 |m_skipResultToRank     |此 uint 变量将确定哪些排名的排行榜数据将从开始时返回。 排名开始排名 1。         |
 |m_skipResultToMe     |如果设置为 true，此布尔值将导致的排行榜数据返回在开始`XboxLiveUser`中使用`get_leaderboard()`调用。  |
@@ -507,7 +507,7 @@ public sealed class LeaderboardQuery : __ILeaderboardQueryPublicNonVirtuals
 
 A`LeaderboardQuery`有几个属性可以设置这将影响返回的数据：
 
-|属性 |描述  |
+|属性 |说明  |
 |---------|---------|
 |SkipResultToRank     |此 uint 变量将确定哪些排名的排行榜数据将从开始时返回。 排名开始排名 1。         |
 |SkipResultToMe     |如果设置为 true，此布尔值将导致的排行榜数据返回在开始`XboxLiveUser`中使用`GetLeaderboard()`调用。  |

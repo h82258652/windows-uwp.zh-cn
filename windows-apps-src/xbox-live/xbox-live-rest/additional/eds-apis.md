@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ecdf3d885a518f622dae00b4b4a98979c3bdefe9
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692196"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748574"
 ---
 # <a name="auxiliary-eds-apis"></a>辅助 EDS API
 
@@ -27,7 +27,7 @@ ms.locfileid: "4692196"
 
 ## <a name="auxiliary-apis"></a>辅助 Api
 
-| API| URI| 描述|
+| API| URI| 说明|
 | --- | --- | --- |
 | API 参数值| / {区域设置} / 元数据| 可以在服务的调用中使用的参数的可能值的枚举|
 | 结合使用内容分级生成器| / {区域设置} / contentRating| 创建一个可用于其他 Api 为筛选出可能令人反感或显式的内容。 有关详细信息，请参阅下文。|
@@ -42,7 +42,7 @@ ms.locfileid: "4692196"
 
 无以下 Api 接受任何查询参数。
 
-| API| URI| 描述|
+| API| URI| 说明|
 | --- | --- | --- | --- | --- | --- |
 | 类型| / {区域设置} / 元数据/mediaGroups| 媒体组的完整列表|
 | 媒体项的每个媒体组的类型| / {区域设置} / /metadata/mediagroups/ {mediaItemTypeGroup} / mediaItemTypes| 媒体的列表项包含在给定的媒体组的类型。|

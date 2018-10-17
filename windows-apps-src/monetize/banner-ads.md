@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，广告，广告，AdControl，横幅广告
 ms.localizationpriority: medium
 ms.openlocfilehash: fc47c8d40d10eef3e6d92f2d47485d8cf265172d
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4682211"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751024"
 ---
 # <a name="banner-ads"></a>横幅广告
 
@@ -26,7 +26,7 @@ ms.locfileid: "4682211"
 
 ## <a name="in-this-section"></a>本部分内容
 
-|  主题    | 描述 |               
+|  主题    | 说明 |               
 |----------|-------|
 | [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在 XAML/.NET 应用中添加横幅广告。        |
 | [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)     | 在 HTML5/JavaScript 应用中添加横幅广告。        |

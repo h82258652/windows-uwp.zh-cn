@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a5caed8863133129c7bc2f0ee3dcb87f1c4a935e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680348"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750696"
 ---
 # <a name="post-handlesquery"></a>POST (/handles/query)
 创建查询会话句柄。
@@ -52,7 +52,7 @@ ms.locfileid: "4680348"
 
 可以使用下表中的查询字符串参数修改查询。
 
-| <b>参数</b>| <b>类型</b>| <b>描述</b>|
+| <b>参数</b>| <b>类型</b>| <b>说明</b>|
 | --- | --- | --- | --- |
 | 关键字| 字符串| 一个关键字，例如，"foo"，它们是否要检索必须在会话或模板中找到的。 |
 | xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，在查询中包含的会话。 默认情况下，用户必须为其包括在会话中处于活动状态。 |

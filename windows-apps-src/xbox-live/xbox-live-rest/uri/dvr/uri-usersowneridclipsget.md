@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a215e9e1abb6daad2c011f38d56c2e501bd16e40
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689688"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748287"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 检索用户的剪辑的列表。
@@ -47,7 +47,7 @@ ms.locfileid: "4689688"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。|
 
@@ -56,7 +56,7 @@ ms.locfileid: "4689688"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | skipItems| 32 位有符号整数| 可选。 返回的项目集合 （即，跳过 N 项目） 中的 N + 1 处开始。|
 | ContinuationToken| 字符串| 可选。 返回在给定的延续令牌启动的项目。 如果两者都提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。 最大大小： 36。|
@@ -78,7 +78,7 @@ ms.locfileid: "4689688"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。|
@@ -92,7 +92,7 @@ ms.locfileid: "4689688"
 
 ## <a name="optional-response-headers"></a>可选的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Etag| 字符串| 用于缓存优化。 示例:"686897696a7c876b7e"。|
 

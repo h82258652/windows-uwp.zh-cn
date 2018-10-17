@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 31499f8d6fa41d888afd84bea64f7f9de0585b96
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4681383"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750404"
 ---
 # <a name="standard-http-request-and-response-headers"></a>标准 HTTP 请求和响应标头
  
@@ -27,7 +27,7 @@ ms.locfileid: "4681383"
  
 下表列出了在 Xbox Live 服务请求时使用的标准 HTTP 标头。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。 所需的所有 Xbox Live 服务请求。| 
 | 授权| STSTokenString| STS 身份验证令牌。 此标头的值被从<b>GetTokenAndSignatureResult.Token</b>属性。 | 
@@ -42,7 +42,7 @@ ms.locfileid: "4681383"
  
 下表列出了在 Xbox Live 服务响应中使用标准的 HTTP 标头。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | Content-Type| 应用程序/xml，应用程序/json| 指定要返回的内容的类型。| 
 | Content-Length| 整数值| 指定所返回的数据的时长。| 

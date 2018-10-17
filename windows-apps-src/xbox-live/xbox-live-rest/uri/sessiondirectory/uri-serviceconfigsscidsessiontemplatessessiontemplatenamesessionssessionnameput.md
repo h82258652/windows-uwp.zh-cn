@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cf7ab408b14e74a8f231d6c81e3077a0a40be5
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690345"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748313"
 ---
 # <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 创建、 更新或加入会话。
@@ -83,7 +83,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
@@ -101,7 +101,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 下面是示例请求正文用于创建或加入会话。 请求正文中的以下成员都是可选的。 其他所有可能的成员被禁止在请求中。
 
-| 成员| 类型| 描述|
+| 成员| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 常量| object| 会话模板，以产生会话常量与合并的只读的设置。 |
 | 属性 | object | 合并到的会话属性更改。|

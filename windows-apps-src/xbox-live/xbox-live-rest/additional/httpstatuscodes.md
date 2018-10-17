@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 856b387825734fb7c6973293bc7004a79d05c207
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685504"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743786"
 ---
 # <a name="standard-http-status-codes"></a>标准 HTTP 状态代码
  
@@ -29,7 +29,7 @@ ms.locfileid: "4685504"
  
 ## <a name="xbox-live-services-status-codes"></a>Xbox Live 服务状态代码
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | 
 | 200| “确定”| 请求已成功。| 
 | 201| 已创建| 创建实体。| 

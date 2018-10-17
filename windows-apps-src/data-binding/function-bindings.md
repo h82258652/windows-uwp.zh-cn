@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: XBind 标记扩展允许在标记中使用的功能。
-title: 在 X:bind 中的函数
+title: x:Bind 中的函数
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691954"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747015"
 ---
-# <a name="functions-in-xbind"></a>在 X:bind 中的函数
+# <a name="functions-in-xbind"></a>x:Bind 中的函数
 
 **注意**  有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
