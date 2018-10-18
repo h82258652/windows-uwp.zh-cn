@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752366"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4967791"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -98,7 +98,7 @@ ms.locfileid: "4752366"
 - [边框](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-可以具有隐式动画处理的更改的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个过渡类型。
+可以具有隐式动画处理的更改每个属性有一个相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个过渡类型。
 
 | 动画化的属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |

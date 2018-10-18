@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751034"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4966843"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 > [!NOTE]
@@ -332,7 +332,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 **重要提示** 为 ARM 或 x64 项目配置，更改为 x64 或 arm32 的 MIDL /env 参数。
 
-若要确保 IDL 文件时重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
+若要确保 IDL 文件会重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
 生成事件的属性页应与此类似：![生成事件](./images/buildevents.png)
 
 重新生成解决方案以生成和编译 IDL。

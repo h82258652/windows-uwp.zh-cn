@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742729"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "5013051"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
@@ -32,7 +32,7 @@ ms.locfileid: "4742729"
  
 ## <a name="remarks"></a>备注
  
-每个结果指示对应的字符串是可接受上 Xbox LIVE，以及是否包含有问题的字符串，如果适用。
+每个结果指示对应的字符串是否在 Xbox LIVE，可接受以及是否包含有问题的字符串，如果适用。
  
 相同的字符串将始终提供相同的结果。 如果你收到未成功结果，分析结果，并相应地修改的字符串。
  
@@ -85,14 +85,14 @@ ms.locfileid: "4742729"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 所有字符串都已成功都处理。 这并不一定意味着所有字符串都必须正面的 Hresult。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
-| 406| 不允许| 缺少<b>内容类型： 应用程序/json</b>标头。| 
+| 406| 不允许| 缺少<b>content-type: application/json</b>标头。| 
 | 408| 请求超时| 服务可能不理解格式不正确的请求。 通常无效参数。| 
   
 <a id="ID4ETF"></a>
@@ -100,7 +100,7 @@ ms.locfileid: "4742729"
  
 ## <a name="response-body"></a>响应正文
  
-返回的[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，该请求数组大小相同的数组。
+返回的[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
   
 <a id="ID4EAG"></a>
 

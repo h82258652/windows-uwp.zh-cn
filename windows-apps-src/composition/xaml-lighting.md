@@ -15,11 +15,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754758"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4969918"
 ---
 # <a name="xaml-lighting"></a>XAML 照明
 
@@ -38,7 +38,7 @@ ms.locfileid: "4754758"
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 是基类，可以用于创建自定义光。
 
-此示例显示了适用于目标 Uielement 和画笔的彩色的聚焦的自定义 XamlLight 的定义。
+此示例显示了适用于定向 Uielement 和画笔的彩色的聚焦的自定义 XamlLight 的定义。
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -461,7 +461,7 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-你可以将此光应用于任何 XAML UIElement 或画笔能够增强它们。 此示例显示了不同可能用法。
+你可以将此光应用于任何 XAML UIElement 或画笔能够增强它们。 此示例显示了不同的潜在用法。
 
 > [!Important]
 > 对于[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，删除的两个实例`local:OrangeSpotLight.IsTarget="True"`从下面的标记。 代码隐藏文件中已设置的附加的属性。
@@ -495,7 +495,7 @@ Platform::String^ OrangeSpotLight::GetId()
 
 此 XAML 的结果如下所示。
 
-![Xaml 光照亮的元素的示例](images/orange-spot-light.png)
+![Xaml 光照亮元素的示例](images/orange-spot-light.png)
 
 > [!Important]
 > 仅对于“最低版本”等于 Windows 10 创意者更新或更高版本的应用，才支持如以上示例所示在标记中设置 UIElement.Lights。 对于面向早期版本的应用，必须在代码隐藏中创建光。
