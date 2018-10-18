@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689592"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753745"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 
@@ -39,7 +39,7 @@ ms.locfileid: "4689592"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -66,7 +66,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 描述                  |
+| 值      | 类型   | 说明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 包含应用的见解数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[相关的见解值](#insight-values)部分。                                                                                                                      |
 | TotalCount | int    | 查询的数据结果中的行总数。                 |
@@ -86,7 +86,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
 
-| 值               | 类型   | 描述                           |
+| 值               | 类型   | 说明                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | 字符串 | 一个字符串，指示的当前相关的见解和当前维度描述的指标。 目前，此方法仅支持值**点击次数**。  |
 | SubDimensions         | array |  介绍相关的见解的单个跃点数的一个或多个对象。   |

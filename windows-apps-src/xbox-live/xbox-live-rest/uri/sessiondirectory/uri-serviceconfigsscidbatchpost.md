@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f7bc8a4dae55c60e501c2a38e6806b00f4d5075
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686821"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751785"
 ---
 # <a name="post-serviceconfigsscidbatch"></a>POST (/serviceconfigs/{scid}/batch)
 在服务配置的多个 Xbox 用户 Id 创建批处理查询。
@@ -47,7 +47,7 @@ ms.locfileid: "4686821"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 
@@ -58,7 +58,7 @@ ms.locfileid: "4686821"
 
 可以使用下表中的查询字符串参数修改查询。
 
-| <b>参数</b>| <b>类型</b>| <b>描述</b>|
+| <b>参数</b>| <b>类型</b>| <b>说明</b>|
 | --- | --- | --- | --- | --- | --- | --- |
 | 关键字| 字符串| 一个关键字，例如，"foo"，它们是否要检索必须在会话或模板中找到的。 |
 | xuid| 64 位无符号的整数| Xbox 用户 ID，例如，"123"，在查询中包含的会话。 默认情况下，用户必须为其包括在会话中处于活动状态。 |

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用内购买，Iap，加载项，错误代码
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2d3a4562be403172520f8377afb16c782a49c0
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4681738"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751362"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 操作错误代码
 

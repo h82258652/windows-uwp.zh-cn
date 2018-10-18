@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690161"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753840"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
@@ -43,7 +43,7 @@ ms.locfileid: "4690161"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
 | 邮件 Id | 字符串 [50] | 要检索或删除该消息的 ID。 | 
@@ -83,7 +83,7 @@ ms.locfileid: "4690161"
  
 发生错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
  
-| 属性| 类型| 描述| 
+| 属性| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 错误码| 字符串| 指示错误的来源。| 
 | 错误代码| int| 与 （可以为 null） 的错误相关联的数字代码。| 

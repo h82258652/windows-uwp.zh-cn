@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4178eac74e58699f322d004577520893f582f874
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691053"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752105"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
 详细信息和元数据，产品/服务返回有关的一个或多个项目。
@@ -39,7 +39,7 @@ ms.locfileid: "4691053"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。|
 
@@ -48,7 +48,7 @@ ms.locfileid: "4691053"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | id| string]| 必需。 所有将为其返回的详细信息 （最多 10) 的 Id。 注意，任何 ID 包含非法放置在 URL 中的字符 （ProviderContentId 类型 Id 通常是完整的 Url 本身，从而包含非法字符）<b>必须</b>使用 URL 编码，以便正确发送到娱乐发现服务 (EDS)。 另请注意，这仅可单个值的 ID 类型是否 ProviderContentId。 如果需要多个 ProviderContentId，则必须对 EDS 进行多次调用。|
 | IdType| 字符串| 可选。 Id 在传递给 id 参数的类型。 有效值为： <ul><li><b>规范</b>（必应/市场） </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>（例如 132kb WMA 音乐文件） </li><li><b>AMG</b></li><li><b>MediaNet</b>(前 MusiWave) </li><li><b>XboxHexTitle</b>（在控制台上播放的应用） </li></ul>|

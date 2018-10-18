@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 盈利, 参与, 促销, 应用商店服务
 ms.localizationpriority: medium
 ms.openlocfilehash: abd6c772ed84934a54c1755b5d55d398e34fbad9
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4693941"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4754029"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和应用商店服务
 

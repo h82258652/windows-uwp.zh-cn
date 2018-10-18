@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d20bffe2be163db568af0b16bdfef8cd600271
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692456"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753249"
 ---
 # <a name="commit-an-add-on-submission"></a>确认加载项提交
 
@@ -42,7 +42,7 @@ ms.locfileid: "4692456"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 描述                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

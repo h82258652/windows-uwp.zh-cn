@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd1b1859de81724a97fa40d9acdc3a1847d9421
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4687503"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752652"
 ---
 # <a name="post-usersbatch"></a>POST (/users/batch)
 获取一批用户状态。
@@ -73,7 +73,7 @@ ms.locfileid: "4687503"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
 | x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
@@ -87,7 +87,7 @@ ms.locfileid: "4687503"
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
@@ -101,7 +101,7 @@ ms.locfileid: "4687503"
 
 ### <a name="required-members"></a>所需的成员
 
-| 成员| 描述|
+| 成员| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 用户| 用户想要了解，最多个一次 1100 Xuid 其状态的列表 XUIDs。|
 
@@ -110,7 +110,7 @@ ms.locfileid: "4687503"
 
 ### <a name="optional-members"></a>可选的成员
 
-| 成员| 描述|
+| 成员| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | deviceTypes| 使用你想要了解有关的用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，无筛选）。|
 | 主题作品| 设备的列表类型你想要了解有关其的用户。 如果该数组留空，则默认为所有可能的游戏 （即，无筛选）。|

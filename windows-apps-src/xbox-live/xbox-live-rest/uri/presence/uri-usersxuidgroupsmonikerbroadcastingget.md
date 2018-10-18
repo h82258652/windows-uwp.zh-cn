@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dc10f18d7c1c38ac21ad6889943b8c6009f5af1
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4694278"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752684"
 ---
 # <a name="get-usersxuidxuidgroupsmonikerbroadcasting-"></a>GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )
 检索与在 URI 中出现的 XUID 相关的组名字对象由指定的广播用户状态记录。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -46,7 +46,7 @@ ms.locfileid: "4694278"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID) 相关的组中的 Xuid 的用户。| 
 | 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象以大写 P 是"People"。| 
@@ -94,7 +94,7 @@ ms.locfileid: "4694278"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
 | x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
@@ -107,7 +107,7 @@ ms.locfileid: "4694278"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
@@ -125,7 +125,7 @@ ms.locfileid: "4694278"
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
@@ -142,7 +142,7 @@ ms.locfileid: "4694278"
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 1，vnext。| 
 | Content-Type| 字符串| 请求正文的 mime 类型。 示例值：<b>应用程序/json</b>。| 
@@ -156,7 +156,7 @@ ms.locfileid: "4694278"
  
 ## <a name="optional-response-headers"></a>可选的响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 重试后| 字符串| 返回 503 HTTP 错误。 允许知道多长时间重试调用之前要等待的客户端。 示例值:"120"。| 
 | Content-Length| 字符串| 响应正文的长度。 示例值:"第 527"。| 

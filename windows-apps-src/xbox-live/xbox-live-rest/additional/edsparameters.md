@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3ab2880bee2e6a6f5cf7a5350244e786e5e615
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691484"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4754748"
 ---
 # <a name="eds-parameters"></a>EDS 参数
 
@@ -27,7 +27,7 @@ ms.locfileid: "4691484"
 
 这些查询参数不一定接受所有[娱乐发现服务 (EDS) Api](../uri/marketplace/atoc-reference-marketplace.md)，但所有都接受由多个 API。
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | combinedContentRating| 字符串| 可选。 请参阅[GET (/media/ {marketplaceId} / contentRating)](../uri/marketplace/uri-medialocalecontentratingget.md)。|
 | ContinuationToken| 字符串| 可选。 延续令牌是包含该服务需要分页某些应用场景中的信息的不透明 blob。 如果省略值，结果的第一页返回 （其中页面大小由 maxItems 参数），以及可用于获取结果的第二页延续令牌。 第二个页面将包含结果的第三页延续令牌，依此类推。|

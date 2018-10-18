@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684628"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753593"
 ---
 # <a name="paging-parameters"></a>分页参数
  
@@ -27,7 +27,7 @@ ms.locfileid: "4684628"
  
 ## <a name="query-string-parameters"></a>查询字符串参数 
  
-| 参数| 必需| 类型| 描述| 
+| 参数| 必需| 类型| 说明| 
 | --- | --- | --- | --- | 
 | ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
 | maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项目的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 

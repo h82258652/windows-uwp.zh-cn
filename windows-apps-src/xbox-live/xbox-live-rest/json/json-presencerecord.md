@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c365760f68aa7c87422e747606175ae9a12f0574
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688234"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751855"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
 联机状态相关的单个用户的数据。
@@ -27,7 +27,7 @@ ms.locfileid: "4688234"
 
 Presencerecord，他的对象具有以下规范。
 
-| 成员| 类型| 描述|
+| 成员| 类型| 说明|
 | --- | --- | --- |
 | xuid| 字符串| Xbox 用户 ID (XUID) 目标用户。 为此用户提供的状态数据。|
 | 设备| [DeviceRecord](json-devicerecord.md)的数组| 记录列表中用户的设备。|

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c8b9e20e990c51c6b3d7e56e72f4d5d6551b39
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680676"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4754754"
 ---
 # <a name="post-usersmescidsscidclipsgameclipid"></a>POST (/users/me/scids/{scid}/clips/{gameClipId})
 更新用户自己的数据的游戏剪辑元数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
@@ -43,7 +43,7 @@ ms.locfileid: "4680676"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
 | gameClipId| 字符串| GameClip 正在访问的资源的 ID。| 
@@ -53,7 +53,7 @@ ms.locfileid: "4680676"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
 | X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
@@ -66,7 +66,7 @@ ms.locfileid: "4680676"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Accept-Encoding| 字符串| 可接受的压缩编码。 示例值： gzip，桥，标识。| 
 | ETag| 字符串| 用于缓存优化。 示例值:"686897696a7c876b7e"。| 
@@ -106,7 +106,7 @@ ms.locfileid: "4680676"
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
@@ -120,7 +120,7 @@ ms.locfileid: "4680676"
  
 ## <a name="optional-response-headers"></a>可选的响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Etag| 字符串| 用于缓存优化。 示例:"686897696a7c876b7e"。| 
   

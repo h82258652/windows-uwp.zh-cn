@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 147df5a3032aa950b7b301f7990c5456db200d2c
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692727"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751746"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 创建新群集请求。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -50,7 +50,7 @@ gameserverms.xboxlive.com
  
 当发出请求下, 表中所示的标头是必需的。
  
-| 标头| 值| 描述| 
+| 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
 | 内容类型| 应用程序/json| 提交的数据的类型。| 
   
@@ -61,7 +61,7 @@ gameserverms.xboxlive.com
  
 请求必须包含一个具有以下成员的 JSON 对象。
  
-| 成员| 描述| 
+| 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | sessionId| 这是调用方指定的标识符。 它已分配给会话主机进行分配和返回。 以后，你可以通过此标识符来引用特定 sessionhost。 它必须是全局唯一 (即 GUID)。| 
 | SandboxId| 你想要在分配的会话主机沙盒。| 
@@ -107,7 +107,7 @@ gameserverms.xboxlive.com
  
 如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
-| 成员| 描述| 
+| 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 主机名| 实例的主机名。| 
 | portMappings| 端口映射。| 

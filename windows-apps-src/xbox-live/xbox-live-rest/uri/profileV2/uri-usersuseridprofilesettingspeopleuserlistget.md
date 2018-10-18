@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688218"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753564"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 获取用户的个人资料或支持用户，与人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -39,7 +39,7 @@ ms.locfileid: "4688218"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | userId| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
 | userList| 字符串| 命名的人员获取设置的列表。 目前，用户是唯一受支持的列表。| 
@@ -49,7 +49,7 @@ ms.locfileid: "4688218"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | settings| 字符串| 设置名称的逗号分隔的列表。| 
   
@@ -58,7 +58,7 @@ ms.locfileid: "4688218"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 32 位有符号整数| 值 = 2| 
 | 内容类型| 字符串| 值 = <code>application/json</code>| 

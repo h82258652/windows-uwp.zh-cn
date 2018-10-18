@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 838329101695c21abfb7ac89dd9c83330b7bd26b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690076"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752478"
 ---
 # <a name="manage-creatives"></a>管理创意
 
@@ -49,7 +49,7 @@ ms.locfileid: "4690076"
 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 描述         |
+| 标头        | 类型   | 说明         |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |

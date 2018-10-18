@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c7286493e08fd62ad4b207d0e014dd4fbd5318
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4687424"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4754259"
 ---
 # <a name="handle-uri-activation"></a>处理 URI 激活
 
@@ -41,7 +41,7 @@ ms.locfileid: "4687424"
 
     以下是该协议的清单设计器中每个可以填写的字段的简短描述（有关详细信息，请参阅 [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/dn934791)）：
 
-| 字段 | 描述 |
+| 字段 | 说明 |
 |-------|-------------|
 | **徽标** | 指定用于标识**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
 | **显示名称** | 指定用于标识**控制面板**的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的显示名称。 |

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 270f36d354ee4561d12f78644436ad51e286768c
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684350"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751948"
 ---
 # <a name="get-usersmeinventory"></a>GET (/users/me/inventory)
 提供的一套当前与返回给调用方提供的用户相关联的清单。
@@ -43,7 +43,7 @@ ms.locfileid: "4684350"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | 可用性| 字符串| 要返回的项数当前可用。 默认值为"可用"，然后返回项目的当前日期之间的开始日期和结束日期范围。 其他值包括"全部"，返回所有项和"不可用"当前日期为其返回项都位于之外的开始日期和结束日期范围和它因此当前不可用。 |
 | 容器| 字符串| 可选。 如果你将值设置为游戏的产品 ID，从清单的结果仅包括与该游戏相关的项。 从你的服务器以筛选到特定游戏的产品的结果调用库存时，这是特别有用。|

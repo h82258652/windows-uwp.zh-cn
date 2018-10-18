@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c62703d43197962e313e364df2cdc3650bd2a792
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679755"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752182"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite})
 返回社交排行榜的统计数据值 （分数） 为当前用户的任一所有已知的联系人或仅通过该用户指定为常用联系人的联系人的排名。
@@ -48,7 +48,7 @@ ms.locfileid: "4679755"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid| 字符串| 用户的标识符。|
 | scid| 字符串| 服务配置，其中包含正在访问的资源的标识符。|
@@ -60,7 +60,7 @@ ms.locfileid: "4679755"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 描述|
+| 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | maxItems| 32 位无符号的整数| 排行榜要返回的记录的结果页中的最大数量。 如果未指定，默认数量将会返回 (10)。 MaxItems 的最大值是仍未定义的但我们想要避免大型数据集，所以此值应该可能的最大设置的 UI 可以处理每次调用调谐器。 |
 | skipToRank| 32 位无符号的整数| 返回结果与指定的排行榜排名启动的页面。 结果的其余部分将按排名排序顺序。 此查询字符串可以返回到后续查询以获取"下一步"的结果页返回一个延续令牌可以馈送。 |
@@ -86,7 +86,7 @@ Xuid 授权是必需的。
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标题| 描述|
+| 标题| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串。 HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
 | Content-Type| 字符串。 请求正文中的 MIME 类型。 示例值:"应用程序/json"。|
@@ -98,7 +98,7 @@ Xuid 授权是必需的。
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标题| 描述|
+| 标题| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | If-None-Match| 字符串。 实体-使用标记如果客户端支持缓存。 示例值:"686897696a7c876b7e"。|
 
@@ -114,7 +114,7 @@ Xuid 授权是必需的。
 
 ### <a name="required-members"></a>所需的成员
 
-| 成员| 描述|
+| 成员| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | <b>pagingInfo</b>| 部分| 可选。 在页面中的最后一项的排名低于 totalItems 时返回。 本部分还不会返回时请求中指定 skipToUser。|
 | ContinuationToken| 字符串| 必需。 指定要返回到"continuationToken"查询参数，以获取该 URI 的下一页结果，如果所需的源的值。 如果不返回任何 pagingInfo 则没有"下一页"要获取的数据。|
@@ -140,7 +140,7 @@ Xuid 授权是必需的。
 
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 描述|
+| 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 304| 未修改|  |
@@ -156,7 +156,7 @@ Xuid 授权是必需的。
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 该响应正文的 mime 类型。 示例值:"应用程序/json"。|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值:"232"。|
@@ -166,7 +166,7 @@ Xuid 授权是必需的。
 
 ## <a name="optional-response-headers"></a>可选的响应标头
 
-| 标头| 类型| 描述|
+| 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | ETag| 字符串| 用于缓存优化。 示例值:"686897696a7c876b7e"。|
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: ce3f51e0eec2356262811bd126f0a63d555c28bd
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691580"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4755738"
 ---
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
@@ -45,7 +45,7 @@ ms.locfileid: "4691580"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 描述                |
+| 标头        | 类型   | 说明                |
 |---------------|--------|---------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 描述  |
+| 值      | 类型   | 说明  |
 |------------|--------|---------------|
 | 值      | 数组  | 包含广告市场活动性能聚合数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[市场活动性能对象](#campaign-performance-object)部分。          |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 5，但查询的数据超过 5 项时，就会返回此值。 |

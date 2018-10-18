@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4694594"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752186"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -70,7 +70,7 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 
 ### <a name="topics-about-the-c-language"></a>有关 c + + 语言的主题
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | - | - |
 | [值类别和对它们的引用](cpp-value-categories.md) | 本主题介绍了各种类别的 c + + 中存在的值。 你将肯定所知，左值和 rvalues，但也有其他类型。 |
 

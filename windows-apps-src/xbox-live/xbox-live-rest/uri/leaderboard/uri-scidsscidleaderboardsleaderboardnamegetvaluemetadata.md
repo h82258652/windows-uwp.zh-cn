@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 63f5d2967219a909a82e0e638fb9c852670e9749
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691145"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4755087"
 ---
 # <a name="get-scidsscidleaderboardsleaderboardnameincludevaluemetadata"></a>GET (/scids/{scid}/leaderboards/{leaderboardname}?include=valuemetadata)
  
@@ -53,7 +53,7 @@ ms.locfileid: "4691145"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| GUID| 服务配置，其中包含正在访问的资源标识符。| 
 | leaderboardname| 字符串| 正在访问的预定义的排行榜资源的唯一标识符。| 
@@ -63,7 +63,7 @@ ms.locfileid: "4691145"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 描述| 
+| 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 包括 = valuemetadata| 字符串| 指示该响应包括任何关联的排行榜值的值元数据。| 
 | maxItems| 32 位无符号的整数| 排行榜要返回的记录的结果页中的最大数量。 如果未指定，默认数量将会返回 (10)。 MaxItems 的最大值是仍未定义的但我们想要避免大型数据集，所以此值应该可能的最大设置的 UI 可以处理每次调用调谐器。| 
@@ -107,7 +107,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标题| 描述| 
+| 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串。 HTTP 身份验证的身份验证凭据。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>| 
 | X Xbl 协定版本| 字符串。 指示哪个版本的要使用的 API。 为了在响应中包含值元数据，此值必须设置为"3"。| 
@@ -119,7 +119,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标题| 描述| 
+| 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | If-None-Match| 字符串。 使用如果客户端支持缓存的实体标记。 示例值: <b>"686897696a7c876b7e"</b>|  | 
   
@@ -130,7 +130,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 描述| 
+| 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
 | 304| 未修改| 资源不已修改自最后一次请求。| 
@@ -146,7 +146,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ## <a name="response-headers"></a>响应标头
  
-| 标头| 类型| 描述| 
+| 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Content-Type| 字符串| 必需。 该响应正文的 MIME 类型。 示例：<b>应用程序/json</b>。| 
 | Content-Length| 字符串| 必需。 正在发送响应中的字节数。 示例： <b>232</b>。| 

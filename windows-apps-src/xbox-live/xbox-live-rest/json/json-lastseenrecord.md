@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689697"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4754896"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
 有关系统上次看到的用户，当用户在没有有效 DeviceRecord 可用的信息。 
@@ -27,7 +27,7 @@ ms.locfileid: "4689697"
  
 LastSeenRecord 对象具有以下规范。
  
-| 成员| 类型| 描述| 
+| 成员| 类型| 说明| 
 | --- | --- | --- | 
 | deviceType| 字符串| 用户在其上已过去存在的设备类型。| 
 | titleId| 32 位无符号的整数| 用户在其已过去存在标题的标识符。| 

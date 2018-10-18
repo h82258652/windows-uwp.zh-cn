@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 服务配置, 会话模板, 自定义邀请字符串, smartmatch hopper
 ms.localizationpriority: medium
 ms.openlocfilehash: fd4032152e2c4a110fcffd8e6a7a46dba25d8271
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690683"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753856"
 ---
 # <a name="multiplayer-service-configuration"></a>多人游戏服务配置
 为了让你的作品充分利用 Xbox Live 提供的服务，你必须先定义服务配置。 此服务配置位于 Xbox Live 云服务中，可定义 Xbox Live 服务与任何运行你的作品/游戏的设备的交互方式。
@@ -54,7 +54,7 @@ ms.locfileid: "4690683"
 
 创建新的匹配 hopper 时，你必须定义以下各项：
 
-| 字段 | 描述 |
+| 字段 | 说明 |
 |---|---|
 |名称| 输入一个名称，该名称既描述了匹配 hopper 的特征，又便于你记忆和识别。 该名称必须是文本字符串，最多包含 140 个字符。 |
 | 最小组大小 | 指定可接受的最小玩家数。 最小值为 1。 |
