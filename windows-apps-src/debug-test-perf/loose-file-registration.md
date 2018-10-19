@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户、 应用管理器，部署 sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: a6a96a78cf03ce4994ddee1c929997b12a2d028f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4948006"
+ms.locfileid: "5126607"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>部署应用通过松散文件注册 
 

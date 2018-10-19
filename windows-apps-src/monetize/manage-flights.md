@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a761edf50888fb7f3130886a2c7e6e65b7c0a1d
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4957658"
+ms.locfileid: "5130168"
 ---
 # <a name="manage-package-flights"></a>管理软件包外部测试版
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: e22081435bea8c73f509719aec1ce31d9157a315
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "5013205"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "5126929"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C# 示例：使用游戏选项和预告片的应用提交
 
