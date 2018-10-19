@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953417"
+ms.locfileid: "5157869"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -41,6 +41,12 @@ ms.locfileid: "4953417"
 ![扩展启动项目](images/desktop-to-uwp/extend-start-project.png)
 
 如果你的解决方案不包含打包项目，请参阅[包使用 Visual Studio 的桌面应用程序](desktop-to-uwp-packaging-dot-net.md)。
+
+### <a name="configure-the-desktop-application"></a>配置的桌面应用程序
+
+请确保你的桌面应用程序具有对你需要调用 Windows 运行时 Api 的文件的引用。
+
+若要执行此操作，请参阅主题[增强 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)的[首先，设置你的项目](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)部分。
 
 ### <a name="add-a-uwp-project"></a>添加 UWP 项目
 
@@ -71,6 +77,12 @@ ms.locfileid: "4953417"
 然后，在 UWP 项目中添加对运行时组件的引用。 解决方案将如下所示：
 
 ![运行时组件引用](images/desktop-to-uwp/runtime-component-reference.png)
+
+### <a name="build-your-solution"></a>生成解决方案
+
+生成你的解决方案，以确保未显示任何错误。 如果你收到错误，打开**配置管理器**，并确保你的项目面向相同的平台。
+
+![配置管理器](images/desktop-to-uwp/config-manager.png)
 
 以下是可以使用 UWP 项目和运行时组件执行的一些操作。
 
@@ -211,7 +223,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-重载 ``OnNavigatedTo`` 方法以使用传递给页面的参数。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
+在代码隐藏 XAML 页中，重写``OnNavigatedTo``方法使用参数传递给页面。 在本例中，我们将使用传递给该页面的纬度和经度来在地图中显示一个位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -238,156 +250,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
  }
 ```
 
-### <a name="similar-samples"></a>相似示例
-
-[向 VB6 应用程序添加 UWP XAML 用户体验](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
-
-[Northwind 示例：UWA UI & Win32 传统代码的端到端示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
-
-[Northwind 示例：连接到 SQL Server 的 UWP 应用](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SQLServer)
-
-## <a name="provide-services-to-other-apps"></a>向其他应用提供服务
-
-添加其他应用可以使用的服务。 例如，你可以添加一个服务，以允许其他应用对你的应用之后的数据库进行受控访问。 通过实现后台任务，应用可以访问该服务，即使未运行桌面应用程序。
-
-下面是执行此操作的示例。
-
-![自适应设计](images/desktop-to-uwp/winforms-app-service.png)
-
-### <a name="have-a-closer-look-at-this-app"></a>详细了解该应用
-
-:heavy_check_mark: [获取应用](https://www.microsoft.com/en-us/store/p/winforms-appservice/9p7d9b6nk5tn)
-
-:heavy_check_mark: [浏览代码](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinformsAppService)
-
-### <a name="the-design-pattern"></a>设计模式
-
-要显示提供服务，请执行以下操作：
-
-:one: [实现应用服务](#appservice)
-
-:two: [添加应用服务扩展](#extension)
-
-:three: [测试应用服务](#test)
-
-<a id="appservice" />
-
-### <a name="implement-the-app-service"></a>实现应用服务
-
-下面是可对来自其他应用的请求进行验证和处理的位置。 将下面的代码添加到你的解决方案中的 Windows 运行时组件。
-
-```csharp
-public sealed class AppServiceTask : IBackgroundTask
-{
-    private BackgroundTaskDeferral backgroundTaskDeferral;
- 
-    public void Run(IBackgroundTaskInstance taskInstance)
-    {
-        this.backgroundTaskDeferral = taskInstance.GetDeferral();
-        taskInstance.Canceled += OnTaskCanceled;
-        var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
-        details.AppServiceConnection.RequestReceived += OnRequestReceived;
-    }
- 
-    private async void OnRequestReceived(AppServiceConnection sender,
-                                         AppServiceRequestReceivedEventArgs args)
-    {
-        var messageDeferral = args.GetDeferral();
-        ValueSet message = args.Request.Message;
-        string id = message["ID"] as string;
-        ValueSet returnData = DataBase.GetData(id);
-        await args.Request.SendResponseAsync(returnData);
-        messageDeferral.Complete();
-    }
- 
- 
-    private void OnTaskCanceled(IBackgroundTaskInstance sender,
-                                BackgroundTaskCancellationReason reason)
-    {
-        if (this.backgroundTaskDeferral != null)
-        {
-            this.backgroundTaskDeferral.Complete();
-        }
-    }
-}
-```
-
-<a id="extension" />
-
-### <a name="add-an-app-service-extension-to-the-packaging-project"></a>将应用服务扩展添加到打包项目
-
-打开**package.appxmanifest**文件的打包项目中，并添加到应用服务扩展``<Application>``元素。
-
-```xml
-<Extensions>
-      <uap:Extension
-          Category="windows.appService"
-          EntryPoint="AppServiceComponent.AppServiceTask">
-        <uap:AppService Name="com.microsoft.samples.winforms" />
-      </uap:Extension>
-    </Extensions>    
-```
-为应用服务给定一个名称，并提供入口点类的名称。 这是你实现该服务的类。
-
-<a id="test" />
-
-### <a name="test-the-app-service"></a>测试应用服务
-
-通过从其他应用中调用你的服务来对其进行测试。 此代码可以是桌面应用程序，例如 Windows 窗体应用程序或其他 UWP 应用。
-
-> [!NOTE]
-> 只有在你正确设置了 ``AppServiceConnection`` 类的 ``PackageFamilyName`` 属性时，该代码才能正常工作。 你可以通过在 UWP 项目的上下文中调用 ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` 来获得该名称。 请参阅[创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
-
-```csharp
-private async void button_Click(object sender, RoutedEventArgs e)
-{
-    AppServiceConnection dataService = new AppServiceConnection();
-    dataService.AppServiceName = "com.microsoft.samples.winforms";
-    dataService.PackageFamilyName = "Microsoft.SDKSamples.WinformWithAppService";
- 
-    var status = await dataService.OpenAsync();
-    if (status == AppServiceConnectionStatus.Success)
-    {
-        string id = int.Parse(textBox.Text);
-        var message = new ValueSet();
-        message.Add("ID", id);
-        AppServiceResponse response = await dataService.SendMessageAsync(message);
- 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            if (response.Message["Status"] as string == "OK")
-            {
-                DisplayResult(response.Message["Result"]);
-            }
-        }
-    }
-}
-```
-
-在此处了解有关应用服务的更多信息：[创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
-
-### <a name="similar-samples"></a>相似示例
-
-[应用服务桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample)
-
-[使用 C++ win32 应用的应用服务桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample_C%2B%2B)
-
-[接收推送通知的 MFC 应用程序](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/MFCwithPush)
-
-
 ## <a name="making-your-desktop-application-a-share-target"></a>使桌面应用程序成为共享目标
 
 可使你的桌面应用程序成为共享目标，以使用户能够轻松地共享数据，如来自支持共享的其他应用的图片。
 
 例如，用户可能选择你的应用程序共享来自 Microsoft Edge，照片应用的图片。 下面是具有该功能的 WPF 示例应用程序。
 
-![共享目标](images/desktop-to-uwp/share-target.png)
+![共享目标](images/desktop-to-uwp/share-target.png).
 
-### <a name="have-a-closer-look-at-this-app"></a>详细了解该应用
-
-:heavy_check_mark: [获取应用](https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
-
-:heavy_check_mark: [浏览代码](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WPFasShareTarget)
+完整示例，请参阅[下面](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
 
 ### <a name="the-design-pattern"></a>设计模式
 
@@ -395,20 +266,28 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 :one: [添加共享目标扩展](#share-extension)
 
-:two: [覆盖 OnNavigatedTo 事件处理程序](#override)
+: two：[覆盖 OnShareTargetActivated 事件处理程序](#override)
+
+: three：[添加桌面扩展到 UWP 项目](#desktop-extensions)
+
+: four：[添加完全信任的进程扩展](#full-trust)
+
+: five：[修改的桌面应用程序来获取共享的文件](#modify-desktop)
 
 <a id="share-extension" />
 
+以下步骤  
+
 ### <a name="add-a-share-target-extension"></a>添加共享目标扩展
 
-在**解决方案资源管理器**中，在你的解决方案中打开打包项目的**package.appxmanifest**文件并添加扩展。
+在**解决方案资源管理器**中，在你的解决方案中打开打包项目的**package.appxmanifest**文件并添加共享目标扩展。
 
 ```xml
 <Extensions>
       <uap:Extension
           Category="windows.shareTarget"
           Executable="ShareTarget.exe"
-          EntryPoint="ShareTarget.App">
+          EntryPoint="App">
         <uap:ShareTarget>
           <uap:SupportedFileTypes>
             <uap:SupportsAnyFileType />
@@ -419,31 +298,99 @@ private async void button_Click(object sender, RoutedEventArgs e)
 </Extensions>  
 ```
 
-提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 你还必须指定可用你的应用共享的文件类型。
+提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 此标记假定你的 UWP 应用的可执行文件的名称是`ShareTarget.exe`。
+
+你还必须指定可用你的应用共享的文件类型。 在此示例中，我们进行[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序成为共享目标的位图图像，因此我们指定`Bitmap`受支持的文件类型。
 
 <a id="override" />
 
-### <a name="override-the-onnavigatedto-event-handler"></a>覆盖 OnNavigatedTo 事件处理程序
+### <a name="override-the-onsharetargetactivated-event-handler"></a>覆盖 OnShareTargetActivated 事件处理程序
 
-覆盖 UWP 项目的**应用**类中的 **OnNavigatedTo** 事件处理程序。
+覆盖 UWP 项目的**应用程序**类中**OnShareTargetActivated**事件处理程序。
 
 当用户选择你的应用来共享文件时，将调用此事件处理程序。
 
 ```csharp
-protected override async void OnNavigatedTo(NavigationEventArgs e)
+
+protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
 {
-  this.shareOperation = (ShareOperation)e.Parameter;
-  if (this.shareOperation.Data.Contains(StandardDataFormats.StorageItems))
-  {
-      this.sharedStorageItems =
-        await this.shareOperation.Data.GetStorageItemsAsync();
-       
-      foreach (StorageFile item in this.sharedStorageItems)
-      {
-          ProcessSharedFile(item);
-      }
-  }
+    shareWithDesktopApplication(args.ShareOperation);
 }
+
+private async void shareWithDesktopApplication(ShareOperation shareOperation)
+{
+    if (shareOperation.Data.Contains(StandardDataFormats.StorageItems))
+    {
+        var items = await shareOperation.Data.GetStorageItemsAsync();
+        StorageFile file = items[0] as StorageFile;
+        IRandomAccessStreamWithContentType stream = await file.OpenReadAsync();
+
+        await file.CopyAsync(ApplicationData.Current.LocalFolder);
+            shareOperation.ReportCompleted();
+
+        await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+    }
+}
+```
+在此代码中，我们将保存到应用的本地存储文件夹由用户共享的图像。 更高版本，我们将修改的桌面应用程序到拉取映像从该相同的文件夹。 桌面应用程序可以这样做是因为它包含在与 UWP 应用相同的包。
+
+<a id="desktop-extensions" />
+
+### <a name="add-desktop-extensions-to-the-uwp-project"></a>桌面扩展添加到 UWP 项目
+
+将**适用于 UWP 的 Windows 桌面扩展**扩展添加到 UWP 应用项目。
+
+![桌面扩展](images/desktop-to-uwp/desktop-extensions.png)
+
+<a id="full-trust" />
+
+### <a name="add-the-full-trust-process-extension"></a>添加完全信任的进程扩展
+
+在**解决方案资源管理器**中，在解决方案中，打开打包项目的**package.appxmanifest**文件，然后添加旁边你之前添加此文件共享目标扩展的完全信任过程扩展。
+
+```xml
+<Extensions>
+  ...
+      <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
+  ...
+</Extensions>  
+```
+
+此扩展将使 UWP 应用启动到你想要共享文件的桌面应用程序。 在示例中，我们引用的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序的可执行文件。
+
+<a id="modify-desktop" />
+
+### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改的桌面应用程序来获取共享的文件
+
+修改桌面应用程序以查找并处理共享的文件。 此示例中，在 UWP 应用存储在本地应用数据文件夹中的共享的文件。 因此，我们将修改的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序向拉取照片从该文件夹。
+
+```csharp
+Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+```
+对于用户打开已有的桌面应用程序的情况下，我们还可能会处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件并在路径中将传递到文件位置。 这样一来任何打开的实例的桌面应用程序将显示共享的照片。
+
+```csharp
+...
+
+   FileSystemWatcher watcher = new FileSystemWatcher(Photos.Path);
+
+...
+
+private void Watcher_Created(object sender, FileSystemEventArgs e)
+{
+    // new file got created, adding it to the list
+    Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
+    {
+        if (File.Exists(e.FullPath))
+        {
+            ImageFile item = new ImageFile(e.FullPath);
+            Photos.Insert(0, item);
+            PhotoListBox.SelectedIndex = 0;
+            CurrentPhoto.Source = (BitmapSource)item.Image;
+        }
+    }));
+}
+
 ```
 
 ## <a name="create-a-background-task"></a>创建后台任务
@@ -456,9 +403,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 该任务发出 http 请求并测量从请求到返回响应所用的时间。 你的任务可能会更有意义，但该示例对了解后台任务的基本机制非常有用。
 
-### <a name="have-a-closer-look-at-this-app"></a>详细了解该应用
-
-:heavy_check_mark: [浏览代码](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)
+完整示例，请参阅[下面](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)。
 
 ### <a name="the-design-pattern"></a>设计模式
 
