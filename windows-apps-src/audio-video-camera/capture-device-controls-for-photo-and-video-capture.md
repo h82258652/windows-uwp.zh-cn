@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753163"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4966574"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>用于照片和视频捕获的手动相机控件
 
@@ -269,7 +269,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 ## <a name="powerline-frequency"></a>Powerline frequency
 某些相机设备支持防闪烁处理，该功能依赖于获知当前环境中的电力线 AC 频率。 某些设备支持自动确定电力线频率，而另一些设备需要手动设置该频率。 以下代码示例显示如何确定设备上的电力线频率支持以及如何手动设置该频率（如果需要）。 
 
-首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，从而传入 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)并传入值**自动**执行此操作。如果调用成功，这意味着你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
+首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，从而传入 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)并传入值**自动**执行此操作。如果调用成功，这意味着，你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 

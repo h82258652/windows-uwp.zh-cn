@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745219"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4965129"
 ---
 # <a name="keyboard-accelerators"></a>键盘加速键
 
@@ -252,7 +252,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>替代默认键盘行为
 
-在某些情况下，你可能需要重写特定键，如空格键或 Enter 键的默认行为。 例如， 
+在某些情况下，你可能需要替代特定键，如空格键或 Enter 键的默认行为。 例如， 
 
 ## <a name="disable-a-keyboard-accelerator"></a>禁用键盘快捷方式 
 
@@ -364,7 +364,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 默认情况下，当声明键盘快捷方式时，所有控件 （除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对应的键组合中都显示工具提示。
 
 > [!NOTE] 
-> 如果控件具有多个快捷方式定义，则显示只有第一个。
+> 如果控件有多个定义的加速键，则显示只有第一个。
 
 ![加速键工具提示](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
@@ -373,7 +373,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 [按钮](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，和[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)对象，键盘加速键附加到控件的默认工具提示。 适用于[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对象，键盘快捷方式显示的浮出控件文本。
 
 > [!NOTE]
-> 指定工具提示 （请参阅 Button1 下面的示例） 替代此行为。
+> 指定工具提示 （参见 Button1 在下面的示例） 替代此行为。
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
