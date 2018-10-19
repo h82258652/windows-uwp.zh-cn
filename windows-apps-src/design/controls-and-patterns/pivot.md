@@ -15,15 +15,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752293"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4964616"
 ---
 # <a name="pivot"></a>透视表
 
-[透视表](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控件支持触摸的轻扫的一小部分的内容部分之间。
+[透视表](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控件支持触摸轻扫一小部分的内容部分各之间。
 
 > **重要 Api**：[透视表类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -34,7 +34,7 @@ ms.locfileid: "4752293"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/Pivot">打开该应用并查看操作中的透视表控件</a>。</p>
+    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/Pivot">打开此应用，请参阅操作中的透视表控件</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -49,14 +49,14 @@ ms.locfileid: "4752293"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-若要实现常见的顶部导航和选项卡模式，我们建议使用[NavigationView](navigationview.md)，可自动适应不同屏幕大小，并允许进行更好地自定义。
+若要实现常见的顶部导航和选项卡模式，我们建议使用[NavigationView](navigationview.md)，从而自动适应不同屏幕大小，并允许进行更好地自定义。
 
 但是，如果你的导航需要触摸轻扫，我们建议使用透视表。
 
 NavigationView 和透视表控件之间的其他关键差异是默认溢出行为和导航 API:
 
 - 透视表项目，而 NavigationView 使用下拉菜单溢出，以便用户可以看到所有项目的转盘溢出。
-- 透视表处理内容的各个部分，尽管 NavigationView 允许更灵活地控制导航行为之间的导航。
+- 透视表处理内容部分，尽管 NavigationView 允许更灵活地控制导航行为之间导航。
 
 ## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView，而不是透视表
 
@@ -87,7 +87,7 @@ NavigationView 和透视表控件之间的其他关键差异是默认溢出行�
 </Page>
 ```
 
-NavigationView 提供更好地导航自定义控制，并且需要相应的代码隐藏。 若要伴随上述 XAML，使用下面的代码隐藏：
+NavigationView 提供更好地导航自定义控制，并且需要相应的代码隐藏。 若要支持上述 XAML，使用下面的代码隐藏：
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-此代码可模拟透视表控件的内置的导航体验，减去内容的各个部分之间的轻扫的触摸体验。 但是，你可以看到，则你可能还用自定义多个点，包括动画的过渡，导航参数和堆栈功能。
+此代码可模拟透视表控件的内置的导航体验，减去内容的各个部分之间的轻扫的触摸体验。 但是，你可以看到，则你可能还用自定义多个点，包括动画的过渡、 导航参数和堆栈功能。
 
 ## <a name="create-a-pivot-control"></a>创建透视表控件
 

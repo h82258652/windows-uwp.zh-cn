@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
 ms.openlocfilehash: b98ca6316f733210dbdbc5201178b3a89a2b5982
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747170"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4959693"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>从 Azure Web 应用安装 UWP 应用
 

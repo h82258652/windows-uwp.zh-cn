@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754135"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4961353"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -24,12 +24,12 @@ ms.locfileid: "4754135"
 
 若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-如果使用 xcopy 命令安装你的应用程序，或者你熟悉应用的安装程序对系统进行的更改，请考虑手动打包并且想要更精确地控制过程。
+如果使用 xcopy 命令安装你的应用程序，或者你熟悉应用的安装程序对系统进行的更改，请考虑手动打包并且想要更精确地控制进程。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
 >[!IMPORTANT]
->创建 Windows 应用包的桌面应用程序的功能 （Windows 10 版本 1607年中引入了称为桌面桥，否则，它仅可用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
+>创建 Windows 应用包的桌面应用程序的功能 （Windows 10 版本 1607年中引入了称为桌面桥，否则，它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
@@ -121,7 +121,7 @@ ms.locfileid: "4754135"
 ```
 
 ### <a name="capabilities"></a>功能
-适用于你创建包，为你将需要添加的桌面应用``runFullTrust``功能。
+对于桌面应用创建的包的你将需要添加``runFullTrust``功能。
 
 ```XML
 <Capabilities>
@@ -177,7 +177,7 @@ ms.locfileid: "4754135"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>生成包资源索引 (PRI) 文件
 
-如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源应用程序创建程序包后，你需要生成一个新的 PRI 文件。
+如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源你的应用程序创建程序包后，你需要生成新的 PRI 文件。
 
 1.  打开**适用于 VS 2017 的开发人员命令提示符**。
 

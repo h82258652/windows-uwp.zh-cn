@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754398"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4960196"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
@@ -28,16 +28,16 @@ ms.locfileid: "4754398"
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>进程内后台任务和进程外后台任务
 
-有两种方法实现后台任务：
+有两个可实现后台任务的方法：
 
 * 进程内： 应用及其后台进程运行的同一进程中
 * 进程外： 应用及其后台进程运行在单独进程中。
 
 进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-进程外后台任务是更容易复原，因为如果出现错误，后台进程不能使应用崩溃。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
+因为后台进程不会使应用崩溃出现问题的进程外后台任务更具复原能力。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
 
-进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)操作系统在单独进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
+进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)接口操作系统在单独进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
 在 Windows10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 相反，你可以运行后台代码直接在前台应用程序的过程。
 
@@ -75,9 +75,9 @@ ms.locfileid: "4754398"
 | **UserNotPresent**       | 用户必须离开。            |
 | **UserPresent**          | 用户必须存在。         |
 
-将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件节省电源，因为可用网络之前，不会执行后台任务。 此条件不提供实时激活。
+将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 这种情况节省电源，因为可用网络之前，不会执行后台任务。 此条件不提供实时激活。
 
-如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，当手机屏幕处于关闭状态。）
+如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时。）
  
 有关后台任务条件的详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
 
@@ -171,7 +171,7 @@ ms.locfileid: "4754398"
 [处理取消的后台任务](handle-a-cancelled-background-task.md)  
 [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
-在应用启动期间检查你的后台任务注册。 确保你的应用的分组的后台任务中 BackgroundTaskBuilder.AllTasks 存在。 重新注册的那些不存在。 取消注册不再需要的任何任务。 这将确保所有后台任务注册在每次启动应用时都是最新。
+在应用启动期间检查你的后台任务注册。 确保你的应用的分组的后台任务中 BackgroundTaskBuilder.AllTasks 存在。 重新注册的那些不存在。 不再需要的任何任务取消。 这将确保所有后台任务注册在每次启动应用时都是最新。
 
 ## <a name="related-topics"></a>相关主题
 

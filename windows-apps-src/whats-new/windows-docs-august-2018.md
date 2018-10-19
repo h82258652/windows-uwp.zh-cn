@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: 在 2018 年 8 月 Windows 文档中新增功能-开发 UWP 应用
-description: 新功能、 视频、 示例和开发人员指南已被添加到 2018 年 8 月 Windows 10 开发人员文档。
+description: 新功能、 视频、 示例和开发人员指南已添加到 2018 年 8 月 Windows 10 开发人员文档。
 keywords: 新增功能，更新，功能，开发人员指南，Windows 10，8 月
 ms.author: quradic
 ms.date: 08/14/2018
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752030"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4962257"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>什么是 Windows 开发人员文档中 2018 年 8 月的新增功能
 
@@ -28,9 +28,9 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 以下功能已添加到 Windows Insider Preview 版本，可通过[Windows 预览体验](https://insider.windows.com/)计划。
 
-* [Windows UI 库](https://aka.ms/winui-docs)是一组提供适用于 UWP 应用的控件和其他用户 interfact 元素的 NuGet 程序包。 这些程序包也是使用早期版本的 Windows 10 兼容，因此即使你的用户无需的最新的操作系统版本的工作原理你的应用。
+* [Windows UI 库](https://aka.ms/winui-docs)是一组提供适用于 UWP 应用的控件和其他用户 interfact 元素的 NuGet 程序包。 这些程序包也是使用早期版本的 Windows 10 兼容，因此即使你的用户没有设置的最新的操作系统版本的工作原理你的应用。
 
-* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、[拆分按钮](../design/controls-and-patterns/buttons.md#create-a-split-button)，以及[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)提供专用的功能来增强你的应用的用户界面的按钮控件。
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、[拆分按钮](../design/controls-and-patterns/buttons.md#create-a-split-button)和[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)提供专用的功能来增强你的应用的用户界面与按钮控件。
 
 ![用于选择前景色拆分按钮](../design/controls-and-patterns/images/split-button-rtb.png)
 
@@ -42,13 +42,13 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 包支持框架是可帮助你修复时应用到 win32 应用程序不能访问的源代码，以便它可以 MSIX 容器中运行的开源工具包。
 
-若要了解详细信息，请参阅[应用运行时修复到使用程序包支持框架 MSIX 包](../porting/package-support-framework.md)。
+若要了解详细信息，请参阅[应用运行时修复到使用程序包支持框架 MSIX 程序包](../porting/package-support-framework.md)。
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="web-api-extensions"></a>Web API 扩展
 
-已添加到在 Mozilla Developer Network 文档中针对跨浏览器 web 开发的[旧 Microsoft API 扩展](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)列表。 这些 API 扩展是唯一的 Internet Explorer 或 Microsoft Edge，并补充有关 MDN web 文档中的兼容性和浏览器支持的现有信息。传统的 Microsoft [CSS 扩展](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和[JavaScript 扩展](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)还可用，并且你可以找到丰富的 web API 信息从 MDN 直接在呈现[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+已添加到在 Mozilla Developer Network 文档中针对跨浏览器 web 开发的[旧 Microsoft API 扩展](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)列表。 这些 API 扩展是唯一的 Internet Explorer 或 Microsoft Edge，并补充有关 MDN web 文档中的兼容性和浏览器支持的现有信息。传统的 Microsoft[扩展 CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和[JavaScript 扩展](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也是可用，并且你可以找到丰富的 web API 信息从 MDN 直接在呈现[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
 ### <a name="cwinrt-code-examples"></a>C + + /winrt 代码示例
 
@@ -56,7 +56,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="project-rome"></a>Project Rome
 
-[项目 rome 文档](https://docs.microsoft.com/windows/project-rome/)站点具有已重新整理到功能第一种方法。 这应使它以找到他们要查找的并实现他们所选的功能跨多个平台的开发人员可以轻松。
+[项目 rome 文档](https://docs.microsoft.com/windows/project-rome/)站点具有已重新整理到功能第一个方法。 这应便于开发人员可以找到他们要查找的并实现跨多个平台所选的功能。
 
 ## <a name="videos"></a>视频
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741267"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4959719"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>将可视化层与 XAML 结合使用
 

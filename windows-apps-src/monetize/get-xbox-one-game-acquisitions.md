@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox One 游戏购置
 ms.localizationpriority: medium
 ms.openlocfilehash: 39d932a49e573d55a0ccb9cb69568006feede8a7
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741684"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4959670"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>获取 Xbox One 游戏购置
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | date                | 字符串 | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
 | applicationId       | 字符串 | 要检索其购置数据的 Xbox One 游戏的产品 ID。 |
 | applicationName     | 字符串 | 游戏的显示名称。       |
-| acquisitionType     | 字符串 | 下列字符串之一，用于指示购置类型：<ul><li><strong>Free</strong></li><li><strong>试用</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>订阅 Iap</strong></li><li><strong>私人受众</strong></li><li><strong>预顺序</strong></li><li><strong>Xbox Game Pass</strong>（或者，如果在 2018 年 3 月 23 之前查询数据，则是 <strong>Game Pass</strong>）</li><li><strong>磁盘</strong></li><li><strong>预付码</strong></li><li><strong>计费的前顺序</strong></li><li><strong>取消的预顺序</strong></li><li><strong>失败的前顺序</strong></li></ul>    |
+| acquisitionType     | 字符串 | 下列字符串之一，用于指示购置类型：<ul><li><strong>Free</strong></li><li><strong>试用</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>订阅 Iap</strong></li><li><strong>私人受众</strong></li><li><strong>预顺序</strong></li><li><strong>Xbox Game Pass</strong>（或者，如果在 2018 年 3 月 23 之前查询数据，则是 <strong>Game Pass</strong>）</li><li><strong>磁盘</strong></li><li><strong>预付码</strong></li><li><strong>计费的预顺序</strong></li><li><strong>取消的预顺序</strong></li><li><strong>失败的预顺序</strong></li></ul>    |
 | ageGroup            | 字符串 | 用于指示进行购置的用户的年龄段的以下字符串之一：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | 字符串 | 用于指定完成购置的设备类型的以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>服务器</strong></li><li><strong>平板电脑</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>  |
 | gender              | 字符串 | 用于指定进行购置的用户的性别的以下字符串之一：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |

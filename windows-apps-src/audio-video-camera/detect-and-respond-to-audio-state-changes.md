@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c60fcd705acf2d0d1e3162e80bc1d85095aa0fb4
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751570"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4964847"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>检测和响应音频的状态变化
 从 Windows 10 版本 1803 开始，应用可检测到系统何时降低或静音应用使用的音频流的音频级别。 可以接收捕获和呈现流、特定音频设备和音频类别或应用用于媒体播放的 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 对象的通知。 例如，当警报响起时，系统可能降低（或者“闪避”）音频播放级别。 如果应用没有在应用清单中声明 *backgroundMediaPlayback* 功能，系统将在应用进入后台时将其静音。 

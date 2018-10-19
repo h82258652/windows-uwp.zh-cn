@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f3aa529e1c292bcea816e21222ca2a5e07f4319
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741559"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4961620"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 

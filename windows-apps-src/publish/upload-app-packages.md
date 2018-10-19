@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4743174"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4964658"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
-**程序包**页面是其中你上传所有的应用，你要提交的程序包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。 当客户下载应用时，应用商店将自动向每个客户提供最适用于其设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
+**程序包**页面是其中你上传的所有你要提交的应用包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。 当客户下载应用时，应用商店将自动向每个客户提供最适用于其设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
 有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还将想要了解[如何版本号可能会影响哪些程序包交付给特定客户](package-version-numbering.md)以及[如何将程序包分配给不同的操作系统](guidance-for-app-package-management.md)。
 
 ## <a name="uploading-packages-to-your-submission"></a>将程序包上载到你的提交
 
-若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 在**程序包**页面可让你上传.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap 文件。
+若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 **程序包**页面会告知你上传.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap 文件。
 
 > [!IMPORTANT]
 > 对于 Windows 10，我们建议在上传此处.msixupload 或.appxupload 文件而不是.msix、.appx、.msixbundle 或.appxbundle。  有关如何包装 UWP 应用以上架应用商店的详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)。

@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750000"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4961289"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
 
@@ -94,7 +94,7 @@ ms.locfileid: "4750000"
 
 ## <a name="place-commands-on-the-right-surface"></a>将命令放置在合适的图面上
 
-在你的应用，包括应用画布或特殊命令容器，例如命令栏、 命令栏浮出控件、 菜单栏和对话框中，可以将命令元素放置在多个图面。
+在你的应用，包括应用画布或特殊命令容器，例如命令栏、 命令栏浮出控件、 菜单栏和对话框中，可以将命令元素放置在各种图面上。
 
 请注意，如果可能，你应让用户操作直接内容而不是使用作用于内容的命令。 例如，允许用户通过拖放列表项而不是使用上移和下移命令按钮来重新排列列表。
 
@@ -157,7 +157,7 @@ ms.locfileid: "4750000"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可以通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
 :::row-end:::
 
 :::row:::

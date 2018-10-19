@@ -11,11 +11,11 @@ keywords: windows 10，uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3722c5b011d16ca793b3541efe124b7c255dfd
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746010"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4961327"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -260,7 +260,7 @@ ___
 
 如果遇到问题，你可以复制和粘帖此 CodePen 中的所有 JavaScript 来加以解决，或者可以对其进行编辑，以调整某些光和更改部分颜色。 
 
-<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光、 相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
+<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光，相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
 </iframe>
 
 

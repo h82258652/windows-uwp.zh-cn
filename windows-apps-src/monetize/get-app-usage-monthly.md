@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747338"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4962699"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 
 在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式的聚合的使用情况数据 （不包括 Xbox 多人游戏） 获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序。 此信息也是在 Windows 开发人员中心仪表板中的[使用情况报告](../publish/usage-report.md)中可用。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -91,7 +91,7 @@ Authorization: Bearer <your access token>
 | market                    | 字符串  | 客户使用你的应用的市场的 ISO 3166 国家/地区代码。                   |
 | packageVersion            | 字符串  | 使用情况发生的位置的程序包版本。                                            |
 | deviceType                | 字符串  | 以下字符串之一，指定的设备使用情况发生的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                                           |
-| subscriptionName          | 字符串  | 指示用法是通过 Xbox Game Pass。                                              |
+| subscriptionName          | 字符串  | 指示使用情况是通过 Xbox Game Pass。                                              |
 | monthlySessionCount       | 长型    | 在该月期间的用户会话的数量。                                              |
 | engagementDurationMinutes | Double  | 用户在其中主动使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或非活动状态一段时间后结束分钟。                               |
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                                           |

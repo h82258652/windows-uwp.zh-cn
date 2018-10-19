@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, lob, 业务线, 企业应用, 适用于企业的 store, 适用于教育的 store, 企业
 ms.localizationpriority: medium
 ms.openlocfilehash: 9149533a12263e105356a1683257c4d9172eefb5
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746664"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4962824"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>将 LOB 应用分配到企业
 

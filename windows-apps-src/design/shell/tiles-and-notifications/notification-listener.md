@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749780"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4960519"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -281,9 +281,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>已添加/已消除的通知的前台事件
 
 > [!IMPORTANT] 
-> 已知问题： 前台事件将在最新版本的 Windows 中，会导致 CPU 循环和之前无法正常工作之前。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
+> 已知问题： 前台事件将导致 CPU 循环上最新版本的 Windows，并且之前无法正常工作之前。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
 
-而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
+而不是使用前台事件，使用前面显示为[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)

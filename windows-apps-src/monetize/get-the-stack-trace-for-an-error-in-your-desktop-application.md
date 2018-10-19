@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误, 桌面应用程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746301"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4963175"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的堆栈跟踪
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4755383"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4964036"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 
@@ -61,11 +61,11 @@ ms.locfileid: "4755383"
 
 ### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
 
-从开始到 Windows 10 的下一个主要更新，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**的任意位置。 
+从开始到 Windows 10 的下一个主要更新，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**任意位置。 
 
 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)属性将需要 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
 
-通过**X:bind**支持，你现在可以使用这两个[函数绑定](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中的良好为双向绑定
+通过**X:bind**支持，你现在可以使用这两个[函数绑定](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也为双向绑定
 
 在以下示例中，TextBlock.Text 评估为 Button.Content.ToString()。 在该 ControlTemplate TargetType 充当数据源，并完成与到父 TemplateBinding 相同的结果。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4744457"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4962731"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -167,10 +167,10 @@ _framePool.FrameArrived += (s, a) =>
 
 ## <a name="putting-it-all-together"></a>整合到一起
 
-以下代码片段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们已经有一个按钮的前端，单击时，调用**Button_ClickAsync**方法。
+以下代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们已经有一个按钮的前端，单击时，调用**Button_ClickAsync**方法。
 
 > [!NOTE]
-> 此代码段使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目其文档。
+> 此代码段使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目信息其文档。
 
 ```cs
 using Microsoft.Graphics.Canvas;

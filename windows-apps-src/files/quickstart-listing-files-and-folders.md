@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753078"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4960545"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
@@ -46,7 +46,7 @@ ms.locfileid: "4753078"
 > [!NOTE]
 > 请记住声明 **picturesLibrary** 功能。
 
-在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法 （不在子文件夹中） 获得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件，并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法获取**PicturesLibrary**中的所有子文件夹并列出每个子文件夹的名称。
+在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法获取[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件 （不在子文件夹） 并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法**PicturesLibrary**中获取所有子文件夹并列出每个子文件夹的名称。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -181,7 +181,7 @@ Next folder
 > [!NOTE]
 > 在 C# 或 Visual Basic 中，请记得在使用 **await** 运算符的任何方法的方法声明中放入 **async** 关键字。
 
-或者，你可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法来获取某个特定位置中的所有项 （文件和子文件夹）。 下面的示例使用**GetItemsAsync**方法 （不在子文件夹） 中获取的所有文件和[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
+或者，你可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法获取某个特定位置中的所有项 （文件和子文件夹）。 下面的示例使用**GetItemsAsync**方法 （不在子文件夹） 中获取的所有文件和[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

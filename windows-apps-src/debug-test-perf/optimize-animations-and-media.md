@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741859"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4964837"
 ---
 # <a name="optimize-animations-media-and-images"></a>优化动画、媒体和图像
 
@@ -223,7 +223,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-示例 2 代码隐藏 （不良）-在连接到树前设置 BitmapImage 的 UriSource。
+示例 2 代码隐藏 （不良）-连接到树前设置 BitmapImage 的 UriSource。
 
 ```csharp
 var bitmapImage = new BitmapImage();

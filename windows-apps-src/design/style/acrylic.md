@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4755406"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4964026"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -76,12 +76,12 @@ ms.locfileid: "4755406"
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如 NavigationView 或串联命令元素使用应用内亚克力。 
+* 用于支持 UI，例如 NavigationView 或行中的命令元素使用应用内亚克力。 
 * 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
 
 如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
 
-请考虑以下使用模式，确定如何最佳亚克力融入你的应用：
+请考虑以下使用模式，以确定如何最佳亚克力融入你的应用：
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
 
@@ -91,11 +91,11 @@ ms.locfileid: "4755406"
 
 ![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
 
-此外，在顶部拥有你的内容扩展或下亚克力的滚动将为应用提供更加沉浸式和无缝体验。
+此外，在顶部拥有你的内容扩展或下亚克力滚动将为应用提供更加沉浸式和无缝体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，如在 NavigationView 的**折叠**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开你的垂直窗格，如在 NavigationView 的**Collapsed**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
 
 ### <a name="transient-surfaces"></a>瞬态图面
 
@@ -150,7 +150,7 @@ ms.locfileid: "4755406"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以放置文本后面的这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -198,7 +198,7 @@ ms.locfileid: "4755406"
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
  - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
 
