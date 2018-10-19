@@ -3,7 +3,7 @@ author: TylerMSFT
 title: 创建和使用应用服务
 description: 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 应用到应用通信，进程间通信，IPC，后台消息，后台通信，应用到应用的应用服务
+keywords: 应用到应用的通信，进程间通信，IPC，后台消息，后台通信，应用到应用的应用服务
 ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475ae8db964b23de89488d883c135158ea20e74
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747124"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4958021"
 ---
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 

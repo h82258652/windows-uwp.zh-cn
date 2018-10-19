@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e6a654897efba1fa66350abaddbacf9791bbbcc
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753450"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4957958"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>更改用户订阅的计费状态
 
@@ -57,7 +57,7 @@ ms.locfileid: "4753450"
 
 | 名称         | 类型  | 说明   |  必填  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | 字符串 | 想要更改的订阅 ID。 若要获取此 ID，调用[获取用户订阅](get-subscriptions-for-a-user.md)，标识代表想要更改的订阅加载项的响应正文条目用于条目**id**字段的值。     | 是      |
+| recurrenceId | 字符串 | 想要更改的订阅 ID。 若要获取此 ID，调用[获取用户订阅](get-subscriptions-for-a-user.md)方法，标识代表想要更改的订阅加载项的响应正文条目并使用该条目**id**字段的值。     | 是      |
 
 
 ### <a name="request-body"></a>请求正文
@@ -120,7 +120,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | 布尔值 |  表示是否已将订阅配置为在当前订阅期结束时自动续订。   |
 | 受益人 | 字符串 |  与此订阅关联的权利受益人的 ID。   |
 | expirationTime | 字符串 | 订阅截止日期和时间（ISO 8601 格式）。 仅当订阅处于特定状态时，此字段才可用。 截止时间通常表示当前状态截止的时间。 例如，对于活动的订阅，截止日期表示下一次自动续订发生的时间。    |
-| expirationTimeWithGrace | 字符串 | 过期日期和时间，订阅将包括在宽限期，采用 ISO 8601 格式。 此值指示当该用户将失去对该订阅的访问权限后自动续订订阅已失败。    |
+| expirationTimeWithGrace | 字符串 | 过期日期和时间订阅将包括在宽限期，采用 ISO 8601 格式。 此值指示当该用户将失去对订阅的访问后已失败订阅自动续订。    |
 | id | 字符串 |  订阅 ID。 使用此方法表示在你调用[更改用户订阅的计费状态](change-the-billing-state-of-a-subscription-for-a-user.md)方法时想要修改的订阅。    |
 | isTrial | 布尔值 |  表示订阅是否为试用版。     |
 | lastModified | 字符串 |  上次修改订阅的日期和时间（ISO 8601 格式）。      |

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4755808"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4954814"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
@@ -56,7 +56,7 @@ ms.locfileid: "4755808"
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品执行租户中的所有用户的名义其组织授权同意获取该应用。
 
 有关详细信息，请参阅[请求同意整个租户](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
@@ -94,7 +94,7 @@ f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限
 > [!TIP]
 > 对于 UWP 应用，我们建议你在仪表板中使用**通知**选项。 将通知发送到所有应用的客户，你可以使用此功能或[客户类别](create-customer-segments.md)中所定义的你符合条件的 Windows 10 客户定向子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
-具体取决于你的应用包类型及其特定要求，你还可以使用以下选项之一： 
+具体取决于你的应用的包类型及其特定要求，你还可以使用以下选项之一： 
 
 -   可使用 **Windows 推送通知服务 (WNS)** 从自己的云服务中发送 Toast、磁贴、锁屏提醒和原始更新。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 

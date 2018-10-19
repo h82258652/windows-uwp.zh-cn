@@ -14,11 +14,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4743724"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4961052"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
 
@@ -30,7 +30,7 @@ ms.locfileid: "4743724"
 
 ## <a name="see-it-in-action"></a>查看实际操作
 
-在此简短视频中，应用使用连贯的动画来项目图像制作它正在"继续"变成下一页标题中一部分。 该效果有助于在转换过程维持用户上下文。
+在此简短视频中，应用使用连贯的动画来项目图像制作它正在"继续"变成下一页标题中的一部分。 该效果有助于在转换过程维持用户上下文。
 
 ![连贯动画](images/connected-animations/example.gif)
 
@@ -61,14 +61,14 @@ ms.locfileid: "4743724"
 
 从开始 RS5，连贯的动画进一步体现 Fluent design 通过提供动画配置定制专门为向前和向后页面导航。
 
-通过在 ConnectedAnimation 上设置配置属性指定的动画配置。 （我们将介绍这方面的示例在下一节。）
+你可以通过在 ConnectedAnimation 上设置配置属性指定动画配置。 （我们将介绍这方面的示例在下一节。）
 
 此表介绍了可用的配置。 有关这些动画在应用的运动原则的详细信息，请参阅[方向性和引力](index.md)。
 
 | [GravityConnectedAnimationConfiguration]() |
 | - |
-| 这是默认配置中，并且建议用于向前导航。 |
-用户前进 (A 到 B) 在应用中，会出现连接的元素以物理方式"拉入页面关闭"。 在执行此操作，元素似乎在 z 空间向前移动，并作为引力参加暂停的效果有点丢弃。 若要克服引力的影响，元素获得速度并加快了到其最终位置。 结果是一个英寸缩放和 dip 英寸的动画。 |
+| 这是默认配置，并适合向前导航。 |
+用户前进 (A 到 B) 在应用中，会出现连接的元素以物理方式"拉入页面关闭"。 在执行此操作，元素似乎在 z 空间向前移动，并作为引力参加暂停的效果有点丢弃。 若要克服引力的影响，该元素获得速度并加快了到其最终位置。 结果是"缩放和 dip"动画。 |
 
 | [DirectConnectedAnimationConfiguration]() |
 | - |
@@ -85,12 +85,12 @@ ms.locfileid: "4743724"
 - [DefaultDuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
 - [DefaultEasingFunction](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
 
-以实现不同效果，某些配置忽略 ConnectedAnimationService 这些属性而使用他们自己的值，此表中所述。
+若要实现不同效果，某些配置忽略这些属性上 ConnectedAnimationService 而使用他们自己的值，此表中所述。
 
 | 配置 | 方面 DefaultDuration？ | 方面 DefaultEasingFunction？ |
 | - | - | - |
 | 引力 | 是 | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但是"引力 dip"具有其自己的缓动函数。*  |
-| 直接 | 否 <br/> *进行动画处理超过 150 毫秒。*| 否 <br/> *使用减速缓动函数。* |
+| 直接 | 否 <br/> *超过 150 毫秒进行动画处理。*| 否 <br/> *使用减速缓动函数。* |
 | 基本 | 是 | 是 |
 
 ## <a name="how-to-implement-connected-animation"></a>如何实现连贯的动画
@@ -98,16 +98,16 @@ ms.locfileid: "4743724"
 设置连贯动画涉及两个步骤：
 
 1. *准备*在源页面上，这向系统表明源元素将参与连贯动画的动画对象。
-1. *开始菜单*目标页上的动画传递到目标元素的引用。
+1. *开始菜单*目标页上的动画将传递到目标元素的引用。
 
-导航时从源页面，调用[ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview)获取的 ConnectedAnimationService 实例。 若要准备动画，在此情况下，调用[PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate)并传入的唯一密钥和你想要在转换中使用的 UI 元素。 唯一密钥可以检索动画稍后在目标页。
+当从源页面导航时，调用[ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview)获取的 ConnectedAnimationService 实例。 若要准备动画，在此情况下，调用[PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate)并传入的唯一密钥和你想要在转换中使用的 UI 元素。 唯一密钥允许你检索动画稍后在目标页。
 
 ```csharp
 ConnectedAnimationService.GetForCurrentView()
     .PrepareToAnimate("forwardAnimation", SourceImage);
 ```
 
-导航时，请在目标页中启动动画。 要启动该动画，请调用 [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart)。 你可以通过使用你在创建动画时提供的唯一密钥调用 [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation)，来检索正确的动画实例。
+当导航发生时，在目标页中启动动画。 要启动该动画，请调用 [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart)。 你可以通过使用你在创建动画时提供的唯一密钥调用 [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation)，来检索正确的动画实例。
 
 ```csharp
 ConnectedAnimation animation =
@@ -120,9 +120,9 @@ if (animation != null)
 
 ### <a name="forward-navigation"></a>向前导航
 
-此示例显示了如何使用 ConnectedAnimationService 创建两个页面 (Page_A 到 Page_B) 之间的向前导航转换。
+此示例显示了如何使用 ConnectedAnimationService 创建两个页面 (Page_A 到 Page_B) 之间的前进导航的转换。
 
-向前导航的推荐的动画配置是[GravityConnectedAnimationConfiguration]()。 这是默认情况下，因此你无需设置[配置](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration)属性，除非你想要指定不同的配置。
+向前导航的推荐的动画配置是[GravityConnectedAnimationConfiguration]()。 这是默认值，因此你无需设置[配置](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration)属性，除非你想要指定不同的配置。
 
 设置源页中的动画。
 
@@ -187,9 +187,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="back-navigation"></a>后退导航
 
-对于后退导航 (Page_B 到 Page_A)，请遵循相同的步骤，但反转源和目标页面。
+对于后退导航 (Page_B 到 Page_A)，请按照相同的步骤，但反转，源和目标页面。
 
-当用户导航回来时，他们希望尽快返回到之前的状态的应用。 因此，建议的配置是[DirectConnectedAnimationConfiguration]()。 此动画更快、 更直接，并使用减速缓动。
+当用户导航回来时，他们预期应用要尽快返回到之前的状态。 因此，建议的配置是[DirectConnectedAnimationConfiguration]()。 此动画更快、 更直接，并使用减速缓动。
 
 设置源页中的动画。
 
@@ -248,7 +248,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </ListView>
 ```
 
-若要使用对应于给定的列表项目的椭圆准备一个连贯的动画，调用一个唯一密钥、 该项目和名称"PortraitEllipse"的[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)方法。
+若要使用对应于给定的列表项目的椭圆准备一个连贯的动画，调用具有一个唯一密钥、 该项目和名称"PortraitEllipse"的[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)方法。
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -257,7 +257,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-若要启动一个动画与此元素作为目标，如当导航回从详细信息视图，使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果你刚为 ListView 加载了数据源，TryStartConnectedAnimationAsync 将会等到相应的项目容器已被创建时才启动动画。
+若要此元素作为目标，如从详细信息视图，导航的重新启动一个动画使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果你刚为 ListView 加载了数据源，TryStartConnectedAnimationAsync 将会等到相应的项目容器已被创建时才启动动画。
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
@@ -285,11 +285,11 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=9066bbbe%2Dcf58%2D4ab4%2Db274%2D595616f5d0a0&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-*协调的动画*是其中某一元素似乎在屏幕上移动一同连贯的动画元素创建动画的连贯的动画目标以及进入动画的一种特殊类型。 协调动画可以向一个转换添加多个视觉效果，并进一步将用户的注意力转移到源视图和目标视图之间共享的上下文。 在这些图像中，该项目的标题 UI 使用协调动画创建动画。
+*协调的动画*是一种特殊类型的进入动画其中某一元素似乎在屏幕上移动在迁移后的连贯的动画元素创建动画的连贯的动画目标以及。 协调动画可以向一个转换添加多个视觉效果，并进一步将用户的注意力转移到源视图和目标视图之间共享的上下文。 在这些图像中，该项目的标题 UI 使用协调动画创建动画。
 
 当协调的动画使用了引力配置时，重力应用于连贯的动画元素和协调的元素。 协调的元素将"swoop"旁边的连接元素使元素保持真正协调。
 
-使用 **TryStart** 的双参数过载将协调元素添加至连贯动画。 此示例演示了一个名为"DescriptionRoot"且名为"CoverImage"的连贯的动画元素配合使用时进入的网格布局的协调的动画。
+使用 **TryStart** 的双参数过载将协调元素添加至连贯动画。 此示例演示了一个名为"DescriptionRoot"且与名为"CoverImage"的连贯的动画进入配合使用的网格布局的协调的动画。
 
 ```xaml
 <!-- DestinationPage.xaml -->

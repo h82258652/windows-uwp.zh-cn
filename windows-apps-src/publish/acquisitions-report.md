@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 购置, 应用销售, 应用下载, 安装, 漏斗, 购置, 转换, 渠道, 应用页面视图
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753153"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4955198"
 ---
 # <a name="acquisitions-report"></a>购置报告
 
 
-在 Windows 开发人员中心仪表板中的**购置**报告可使你可以查看哪些用户购置并安装你的应用，以及客户统计和平台详细信息，以及有关如何使用 Windows 10 （包括 Xbox） 客户找到你的应用显示信息列表。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。 
+在 Windows 开发人员中心仪表板中的**购置**报告可使你可以查看哪些用户购置并安装你的应用，以及客户统计和平台详细信息，以及显示有关 Windows 10 （包括 Xbox） 客户找到你的应用的方式的信息列表。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。 
 
 可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
@@ -50,17 +50,17 @@ ms.locfileid: "4753153"
 
 默认情况下，我们显示的**每日应用**视图，其中包括附近实时数据。 你还可以通过选择**应用累计**看到应用的终生购置数。 这将显示从首次发布应用起所有购置的累计总数。
 
-为你的应用 （从 2016 年 10 月-存在) 的**总销售**还可以在此图表中显示 （在美元） 的应用销售中获得的总金额。 请注意，此金额不考虑任何退款、 撤单、 拒付等。
+为你的应用 （从 2016 年 10 月-存在) 的**总销售**还可以在此图表中显示的应用销售 （中美元） 从赚取的总金额。 请注意，此金额不考虑任何退款、 撤单、 拒付等。
 
 你可以选择按照购置是否源于客户端或基于 Web 的应用商店和/或按照操作系统版本来筛选结果。
 
 > [!NOTE]
 > 你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取应用购置](../monetize/get-app-acquisitions.md)方法以编程方式检索此数据。
 
-在**每天应用**视图中，选中**30d**时间段后，你可能会看到圆圈标记。 这些表示显著增加或减少在我们认为你会想要了解有关为给定值。 出现圆的日期表示一周中，我们检测到了显著增加或减少相对于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
+在**每日应用**视图中，选中**30d**时间段后，你可能会看到圆圈标记。 这些表示显著增加或减少在我们认为你会想要了解有关为给定值。 在其出现圆的日期表示一周中我们检测显著增加或减少相对于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
 
 > [!TIP]
-> 你可以查看过去 30 天内[洞察报告](insights-report.md)中与相关的重大更改的更多见解。
+> 你可以查看更多过去 30 天内[洞察报告](insights-report.md)中与重大更改相关的见解。
 
 ## <a name="installs"></a>安装次数
 

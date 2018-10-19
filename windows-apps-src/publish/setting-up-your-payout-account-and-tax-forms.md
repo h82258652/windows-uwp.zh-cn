@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750454"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4956705"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>设置付款帐户和税单
 
 
-若要从 Microsoft Store 中的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。
+若要从 Microsoft 应用商店中的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。
 
-如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用 （或加载项），你可以设置付款帐户并此时填写税单。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
+如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用 （或加载项），你可以设置付款帐户并填写税单，在该时间。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
 
 > [!NOTE]
 > 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
 
-[设置开发人员帐户](opening-a-developer-account.md)后，有两个事项你需要执行操作之前，你可以销售应用 （或加载项） 在 Microsoft Store 中：
+[设置你的开发人员帐户](opening-a-developer-account.md)后，有两个事项你需要执行操作之前，你可以销售应用 （或加载项） 在 Microsoft Store 中：
 
 -   [设置付款帐户](#payout-account)
 -   [填写税单](#tax-forms)
@@ -158,7 +158,7 @@ ms.locfileid: "4750454"
 
 ### <a name="tax-treaty-benefits"></a>免税待遇
 
-如果你在美国境外，你也许能够利用免税待遇。 这些优势有所不同随国家，并可能会允许你减少的 Microsoft 应用商店预缴的量。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
+如果你在美国境外，你也许能够利用免税待遇。 这些优惠会随国家和并可能会允许你减少的 Microsoft 应用商店预缴的量。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
 
  
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741928"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4956355"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 
@@ -54,7 +54,7 @@ ms.locfileid: "4741928"
 
 如果你已上载程序包中的应用商店一览，你正在为相同的语言，将会选择这些程序包中使用的名称。 如果你需要重命名[该应用](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，你可以使用程序包，使用新名称创建新的提交时选择不同的保留的名称下面。
 
-如果尚未上载程序包的语言正在努力，并已保留多个名称，你将需要选择其中一个保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。
+如果尚未上载程序包的语言正在努力，并已保留多个名称，你将需要选择其中一个你保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。
 
 > [!NOTE]
 > **产品名称**选择仅适用于应用商店一览语言中你所使用。 它不会影响客户安装该应用; 时显示的名称该名称来自获取安装的程序包清单。 以避免混淆，我们建议每种语言的程序包和应用商店一览，使用相同的名称。
