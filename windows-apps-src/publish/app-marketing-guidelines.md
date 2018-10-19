@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749439"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4952905"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft 应用商店营销指南的应用
 
@@ -23,7 +23,7 @@ ms.locfileid: "4749439"
 
 ## <a name="store-badges"></a>应用商店锁屏提醒
 
-我们创建了特殊的促销锁屏提醒，帮助你带动更多客户的 Microsoft 应用商店中的应用的一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
+我们创建了特殊的促销锁屏提醒，帮助你带动更多客户的 Microsoft 应用商店中你的应用一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
 [![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 应用商店锁屏提醒指南 （PDF、 英语）**
 
@@ -47,7 +47,7 @@ ms.locfileid: "4749439"
 
 *Microsoft 商标授权*意味着[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面中描述了*Microsoft 锁屏提醒*。 若要使用这些锁屏提醒，必须满足以下条件：
 
--   在 Microsoft Store，让你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   在 Microsoft store 中具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
 -   如果你已注册开发人员中心，请遵守“应用开发人员协议”中[“Microsoft 商标授权”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
 

@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: 调试、测试和性能
-description: 使用 Microsoft Visual Studio 和其他工具来调试和测试你的应用，为 Microsoft Store 认证过程做好准备。
+description: 使用 Microsoft Visual Studio 和其他工具来调试和测试你的应用并为 Microsoft Store 认证过程做好准备。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4755528"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4948049"
 ---
 # <a name="debugging-testing-and-performance"></a>调试、测试和性能
 
 
-本部分介绍了如何使用 Microsoft Visual Studio 调试、 测试和优化你的应用。 它还包括 Windows Device Portal （用于监视设备和配置） 和 Windows 应用认证工具包 （准备你的应用的 Microsoft 应用商店） 之类的工具。
+本部分显示了如何使用 Microsoft Visual Studio 调试、 测试和优化你的应用。 它还包括 Windows Device Portal （用于监视设备和配置） 和 Windows 应用认证工具包 （准备你的应用的 Microsoft 应用商店） 之类的工具。
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -31,6 +31,6 @@ ms.locfileid: "4755528"
 | [部署应用通过松散文件注册](loose-file-registration.md) | 本指南介绍了如何使用松散文件布局进行验证和共享 Windows 10 应用，而无需其打包。 |
 | [Beta 测试](beta-testing.md) | **Beta 测试**使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。 |
 | [Windows Device Portal](device-portal.md) | Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 |
-| [Windows 应用认证工具包](windows-app-certification-kit.md) | 若要为你的应用的 Microsoft 应用商店，或通过 Windows 认证中发布的最佳机会，验证在本地和测试之前提交以进行认证。 本主题显示了如何安装并运行 Windows 应用认证工具包。 |
+| [Windows 应用认证工具包](windows-app-certification-kit.md) | 若要为你的应用的 Microsoft 应用商店，或通过 Windows 认证中发布的最佳机会，验证在本地和测试之前提交应用进行认证。 本主题显示了如何安装并运行 Windows 应用认证工具包。 |
 | [性能](performance-and-xaml-ui.md) | 用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 |
 | [版本自适应应用](version-adaptive-apps.md) | 利用最新 API 和功能，同时仍然达到尽可能广泛的受众。 使用运行时 API 检查，以使代码和 XAML 在运行时适应在运行应用的 Windows 10 版本上可用的功能。 |

@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745169"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4957173"
 ---
 # <a name="ad-campaign-report"></a>广告市场活动报告
 
-在 Windows 开发人员中心仪表板中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，**吸引**展开左侧的导航菜单中，选择**广告市场活动**。
+在 Windows 开发人员中心仪表板中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，在左侧的导航菜单中展开**吸引**并选择**广告市场活动**。
 
 ## <a name="definitions"></a>定义
 

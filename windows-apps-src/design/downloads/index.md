@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: e829883ec33b5e221d0947b6f39cf6ac091a0b4a
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752580"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4955394"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
@@ -100,7 +100,7 @@ ms.locfileid: "4752580"
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
-      **适用于 Adobe Photoshop 的磁贴和图标生成器**这组适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
+      **适用于 Adobe Photoshop 的磁贴和图标生成器**此组的适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
     :::column-end:::
 :::row-end:::
 
@@ -109,7 +109,7 @@ ms.locfileid: "4752580"
 
 ![VanArsdel 图像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及强大的 ux 框架和合成的基础功能，它会使广泛使用改进的密度和新的控件。 该示例显示了如何构建的丰富管理和购买 （在此情况下，灯） 的 IoT 设备工作效率体验。<br>
+生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及强大的 ux 框架和合成的基础功能，它会使广泛使用改进的密度和新的控件。 示例显示如何可以生成的丰富管理和购买 （在此情况下，灯） 的 IoT 设备工作效率体验。<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下载 VanArsdel 示例</a> <br><a href="https://github.com/microsoft/vanarsdel">请查看 GitHub 上的 VanArsdel 示例</a>
 
 ![生成强制转换映像](images/buildcast.png)

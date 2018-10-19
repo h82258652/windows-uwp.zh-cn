@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751004"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4946272"
 ---
 # <a name="reveal-highlight"></a>显示突出显示
 
@@ -259,7 +259,7 @@ ms.locfileid: "4751004"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>微调自定义控件的“展示”效果 
 
-自定义或重新模板化控件或自定义的命令处理表面启用展示时，这些技巧可以帮助你优化此效果：
+自定义或重新模板化控件或自定义命令处理表面上启用展示时，这些技巧可以帮助你优化此效果：
  
 * 在邻近的未在高度或宽度上对齐（尤其是在列表中）的项目上：删除边框方法行为，并让边框只在悬停时显示。
 * 对于频繁出入禁用状态的命令处理项目：将边框方法画笔放在元素的背板及其边框上，以强调它们的状态。

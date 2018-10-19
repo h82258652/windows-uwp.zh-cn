@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f29828a800795aba70c17bcab19b56b85d56382
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754494"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4949442"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>通过 C++/WinRT 的并发和异步操作
 
-本主题介绍了可以这两种方式创建和使用 Windows 运行时异步对象[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主题介绍了可以这两种方式创建和使用与 Windows 运行时异步对象[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>异步操作和 Windows 运行时“异步”函数
 有可能需要超过 50 毫秒才能完成的任何 Windows 运行时 API 将实现为异步函数（具有一个以“Async”结尾的名称）。 异步函数的实现将启动另一线程上的工作，并且立即返回表示异步操作的对象。 在异步操作完成后，返回的对象会包含从该工作中生成的任何值。 **Windows::Foundation** Windows 运行时命名空间包含四种类型的异步操作对象。
@@ -317,7 +317,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 ## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消异步操作，并取消回调
 
-异步编程的 Windows 运行时的功能允许你取消正在进行的异步操作。 让我们开始一个简单的示例。
+异步编程的 Windows 运行时功能允许你取消正在进行的异步操作。 让我们开始一个简单的示例。
 
 ```cppwinrt
 // pch.h
@@ -354,11 +354,11 @@ int main()
 }
 ```
 
-如果你运行上述示例，则你将看到**ImplicitCancellationAsync**打印一条消息每秒三秒之后, 自动时间终止由于被取消。 这样做的原因，在遇到`co_await`表达式，协同程序会检查是否已被取消。 如果有，则它会使短路并且，如果没有，则它会暂停为正常。
+如果你运行上述示例，则你将看到**ImplicitCancellationAsync**打印一条消息每秒三秒之后, 自动时间终止由于被取消。 这样做的原因，在遇到`co_await`的表达式中，协同程序会检查是否已被取消。 如果有，则它会使短路并且，如果没有，则它会暂停为正常。
 
-在该协同程序暂停时，取消，当然，会发生。 仅协同程序恢复时，或点击另一个`co_await`，它将检查取消。 问题是延迟的可能太粗糙-粒度响应取消。
+在协同程序暂停时，取消可能，当然，会发生。 仅协同程序恢复时，或点击另一个`co_await`，它将检查取消。 问题是延迟的可能太粗糙-粒度响应取消。
 
-因此，另一个选项是显式轮询从协同程序中取消。 使用以下列表中的代码更新上面的示例。 在此新的示例中， **ExplicitCancellationAsync**检索[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函数中，返回的对象，并使用它来定期检查是否已取消协同程序。 只要它不会取消，该协同程序之间无限;一旦其被取消后，该循环并将该函数正常退出。 如前面的示例，但此处退出发生显式方法，并控制，结果都是相同的。
+因此，另一个选项是显式轮询从协同程序中取消。 使用以下列表中的代码更新上面的示例。 在此新示例中， **ExplicitCancellationAsync**检索[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函数中，返回的对象，并使用它来定期检查是否已取消协同程序。 只要它不会取消，该协同程序之间无限;一旦其被取消后，该循环并将该函数正常退出。 结果是相同的上一示例中，但此处退出发生显式方法，如和控制。
 
 ```cppwinrt
 ...
@@ -382,12 +382,12 @@ IAsyncAction MainCoroutineAsync()
 ...
 ```
 
-等待**winrt::get_cancellation_token**检索取消令牌代表你的协同程序生成**IAsyncAction**知识。 你可以使用该令牌函数调用运算符查询取消状态&mdash;本质上轮询取消。 如果你正在执行一些计算密集型操作，或循环访问较大的集合，则这是合理的技术。
+等待**winrt::get_cancellation_token**检索与你的名义**IAsyncAction**协同程序是在生成的知识取消令牌。 你可以使用该令牌上函数调用运算符查询取消状态&mdash;本质上轮询取消。 如果要执行一些受计算限制的操作，或循环访问较大的集合，这是合理的技术。
 
 ### <a name="register-a-cancellation-callback"></a>注册取消回调
-在 Windows 运行时取消不会自动流到其他异步对象。 但是&mdash;在 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年) 中引入&mdash;你可以注册取消回调。 这是性挂钩的取消程度可以传播，并使其可以与现有的并发库集成。
+Windows 运行时取消不会自动流到其他异步对象。 但是&mdash;版本 10.0.17763.0 (Windows 10 版本 1809年) 的 Windows SDK 中引入了&mdash;你可以注册取消回调。 这是性挂钩的取消程度可以传播，并使其成为可能与现有的并发库集成。
 
-在此下一个代码示例中， **NestedCoroutineAsync**执行的工作，但它没有特殊取消逻辑中。 **CancellationPropagatorAsync**是本质上的嵌套协同程序; 在包装器包装器将优先转发取消。
+在此下一个代码示例中， **NestedCoroutineAsync**执行的工作，但它没有特殊取消逻辑在其中。 **CancellationPropagatorAsync**是实质上是嵌套协同程序; 在包装器包装器将优先转发取消。
 
 ```cppwinrt
 // pch.h
@@ -437,7 +437,7 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync**注册其自己的取消回调，lambda 函数，然后等待 （它会暂停） 嵌套的工作完成后才。 当或取消**CancellationPropagatorAsync** ，它会传播到嵌套协同程序取消。 若要轮询取消; 无需也不会被取消阻止无限期。 此机制是灵活，可以使用它向互操作具有协同程序或并发库知道任何 C + WinRT。
+**CancellationPropagatorAsync**注册其自己的取消回调，lambda 函数，然后等待 （它暂停） 嵌套的工作完成后才。 当或**CancellationPropagatorAsync**被取消后，它会传播到嵌套协同程序取消。 若要轮询取消; 无需也不会被取消阻止无限期。 此机制非常灵活，你可以使用它设置的互操作具有协同程序或并发库知道执行任何操作的 C + + WinRT。
 
 ## <a name="reporting-progress"></a>报告进度
 
@@ -501,7 +501,7 @@ int main()
 ```
 
 > [!NOTE]
-> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，第二个将会失败。 任一以下两种类型的完成处理程序之一是相应;不能两者都相同的异步对象。
+> 不正确实现为异步操作或操作的多个*完成处理程序*。 你可以让任一单个为其已完成的事件，委托，或者你可以`co_await`它。 如果你有两者，则第二个将失败。 任一以下两种类型的完成处理程序之一是相应;不能两者都相同的异步对象。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };

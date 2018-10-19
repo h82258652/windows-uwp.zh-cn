@@ -1,6 +1,6 @@
 ---
 author: cphilippona
-description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移到它们时，可聚焦元素的边框进行动画处理。
+description: 显示焦点是一种灯光效果，当用户将游戏板或键盘焦点移向它们时，可聚焦元素的边框进行动画处理。
 title: 显示焦点
 template: detail.hbs
 ms.author: mijacobs
@@ -14,11 +14,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4743886"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4953503"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -26,17 +26,17 @@ ms.locfileid: "4743886"
 
 显示焦点是[10 英尺体验](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和电视屏幕的照明效果。 当用户将游戏板或键盘焦点移向可聚焦元素（如按钮）时，它会将这些元素的边框进行动画处理。 默认情况下，它是关闭状态，但启用很简单。 
 
-（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)）。
+（展示突出显示效果，突出显示交互性元素的灯光请参阅[展示突出显示文章](/windows/uwp/design/style/reveal)。）
 
 
 > **重要 API**：[Application.FocusVisualKind 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 枚举](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals 属性](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>工作原理
-通过添加动画的明亮辉光元素边框周围显示焦点引起对聚焦元素：
+通过添加动画的明亮辉光的元素边框周围显示焦点引起对聚焦元素：
 
 ![显示视觉](images/traveling-focus-fullscreen-light-rf.gif)
 
-这是 10 英尺场景中的用户可能不会完全注意整个电视屏幕尤其有用。 
+这是 10 英尺场景中用户可能不会完全注意整个电视屏幕尤其有用。 
 
 ## <a name="examples"></a>示例
 
@@ -45,7 +45,7 @@ ms.locfileid: "4743886"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/RevealFocus">打开该应用，请参阅展示的实际的焦点</a>。</p>
+    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/RevealFocus">打开此应用，请参阅展示的实际的焦点</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -70,15 +70,15 @@ ms.locfileid: "4743886"
 设置**FocusVisualKind**属性后，系统自动将显示焦点效果应用于其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)属性设置为**True** （大多数控件的默认值） 的所有控件。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>为何焦点不是展示在默认情况下？ 
-如你所见，很容易启用展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 显示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果来优化你的应用。
+如你所见，很容易打开展示焦点时在应用检测到它正在 Xbox 上运行。 那么，系统为何不为你打开它？ 显示焦点会增加焦点视觉对象的大小，因为这可能导致你的 UI 布局问题。 在某些情况下，你会想要自定义显示焦点效果以对其进行优化你的应用。
 
 ## <a name="customizing-reveal-focus"></a>自定义显示焦点
 
 你可以通过修改每个控件的焦点视觉属性来自定义显示焦点效果： [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，以及[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
 
-但在开始对构成之前，最好先稍有多了解构成展示焦点的组件。
+但在开始对构成前，最好先稍有多了解构成显示焦点的组件。
 
-有默认的展示的焦点视觉的三个部分： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 显示焦点明亮辉光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
+有三个部分的默认显示焦点视觉对象： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 显示焦点明亮辉光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
 
 除了静态元素中，展示的焦点视觉功能动画的灯光，跳动时移动焦点时，焦点方向移动。
 

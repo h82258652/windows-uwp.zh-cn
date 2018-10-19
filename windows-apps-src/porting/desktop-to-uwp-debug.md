@@ -12,11 +12,11 @@ keywords: windows 10，uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746909"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4948069"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>运行、 调试和测试打包的桌面应用程序
 
@@ -41,7 +41,7 @@ Add-AppxPackage –Register AppxManifest.xml
 ```
 要启动应用，请在 Windows“开始”菜单中找到它。
 
-![在开始菜单中的已打包应用程序](images/desktop-to-uwp/converted-app-installed.png)
+![在开始菜单中打包的应用程序](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
 > 打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
@@ -54,7 +54,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 如果你使用任何其他工具创建了程序包，请按照以下步骤操作。
 
-1. 请确保在开始打包应用程序至少一次，以便它在本地计算机上安装。
+1. 请确保启动打包应用程序至少一次，以便它在本地计算机上安装。
 
    请参阅上述[运行应用](#run-app)部分。
 
@@ -68,13 +68,13 @@ Add-AppxPackage –Register AppxManifest.xml
 
 #### <a name="modify-your-application-in-between-debug-sessions"></a>修改你的应用程序在调试会话之间
 
-如果你更改你的应用程序来修复 bug，请重新打包使用 MakeAppx 工具。 请参阅[运行 MakeAppx 工具](desktop-to-uwp-manual-conversion.md#make-appx)。
+如果你对你的应用程序来修复 bug 进行更改，请重新打包使用 MakeAppx 工具。 请参阅[运行 MakeAppx 工具](desktop-to-uwp-manual-conversion.md#make-appx)。
 
 ### <a name="debug-the-entire-application-lifecycle"></a>调试整个应用程序生命周期
 
 在某些情况下，你可能希望更精细地控制调试过程，包括应用启动前调试你的应用程序的功能。
 
-你可以使用[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)来获取对包括暂停、 恢复和终止的应用程序生命周期的完全控制。
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)可用于获取对包括暂停、 恢复和终止的应用程序生命周期的完全控制。
 
 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 包含在 Windows SDK 中。
 
@@ -82,13 +82,13 @@ Add-AppxPackage –Register AppxManifest.xml
 
 若要在准备分发，请在现实环境中测试你的应用程序，最好是对你的应用程序进行签名，然后安装它。
 
-### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>测试使用 Visual Studio 打包的应用程序
+### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>测试使用 Visual Studio 打包应用程序
 
 Visual Studio 对你的应用程序通过使用测试证书进行签名。 你会在**创建应用包**向导生成的输出文件夹中找到该证书。 证书文件具有 *.cer*扩展，并且你将需要你想要测试你的应用程序上的电脑上的**受信任的根证书颁发机构**存储中安装该证书。 请参阅[旁加载包](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>测试使用 Desktop App Converter (DAC) 打包的应用程序
 
-如果使用 Desktop App Converter 打包你的应用程序，你可以使用``sign``参数，以自动对你的应用程序通过使用生成的证书进行签名。 必须安装该证书，然后再安装应用。 请参阅[运行打包的应用](desktop-to-uwp-run-desktop-app-converter.md#run-app)。   
+如果你使用 Desktop App Converter 打包你的应用程序，你可以使用``sign``参数，以自动对你的应用程序通过使用生成的证书进行签名。 必须安装该证书，然后再安装应用。 请参阅[运行打包的应用](desktop-to-uwp-run-desktop-app-converter.md#run-app)。   
 
 
 ### <a name="manually-sign-apps-optional"></a>手动对应用进行签名（可选）
@@ -99,7 +99,7 @@ Visual Studio 对你的应用程序通过使用测试证书进行签名。 你�
 
 2. 将该证书安装到系统上**受信任根**或**受信任人**证书存储区中。
 
-3. 通过使用该证书对你的应用程序，请参阅[签名的应用包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
+3. 通过使用该证书对你的应用程序，请参阅[应用包签名使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
   > [!IMPORTANT]
   > 确保证书上的发布者名称与应用的发布者名称匹配。
@@ -111,7 +111,7 @@ Visual Studio 对你的应用程序通过使用测试证书进行签名。 你�
 
 ### <a name="test-your-application-for-windows-10-s"></a>测试你的应用程序适用于 Windows 10 S
 
-在发布你的应用之前，请确保，它将设备上正常运行 Windows 10 s。事实上，如果你打算发布到 Microsoft 应用商店应用程序，你必须执行此操作因为它是应用商店要求。 无法在运行 Windows 10 S 的设备上正常运行的应用将不会通过认证。
+在发布你的应用之前，请确保在运行 Windows 10 s。 设备上它也将正常运行事实上，如果你打算发布到 Microsoft 应用商店应用程序，你必须执行此操作因为这是应用商店要求。 无法在运行 Windows 10 S 的设备上正常运行的应用将不会通过认证。
 
 请参阅[测试适用于 Windows 10 S 的 Windows 应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)。
 
