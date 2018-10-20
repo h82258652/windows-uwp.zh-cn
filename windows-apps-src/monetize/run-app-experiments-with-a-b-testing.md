@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ff6ba9a3767570aa9e885d491b38053a1d5d52
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5129918"
+ms.locfileid: "5164534"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>通过 A/B 测试运行应用实验
 

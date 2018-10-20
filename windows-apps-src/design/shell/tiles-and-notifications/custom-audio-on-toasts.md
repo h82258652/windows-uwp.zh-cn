@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, toast, 自定义音频, 通知, 音频, 声音
 ms.localizationpriority: medium
 ms.openlocfilehash: 24be148340366163fcab00ec75f7f26fac6c2d80
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4959122"
+ms.locfileid: "5164884"
 ---
 # <a name="custom-audio-on-toasts"></a>toast 上的自定义音频
 

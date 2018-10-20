@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, ad control, interstitial
 ms.localizationpriority: medium
 ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4965609"
+ms.locfileid: "5166378"
 ---
 # <a name="interstitial-ads"></a>间隙广告
 

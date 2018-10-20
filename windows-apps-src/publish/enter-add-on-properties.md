@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4961261"
+ms.locfileid: "5162335"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 

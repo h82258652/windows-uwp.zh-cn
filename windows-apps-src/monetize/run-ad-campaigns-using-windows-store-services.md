@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a1f08dbd70904284179c90fa00d2abd9acf4b97
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5133696"
+ms.locfileid: "5160658"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 

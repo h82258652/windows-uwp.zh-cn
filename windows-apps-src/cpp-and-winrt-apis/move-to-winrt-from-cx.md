@@ -3,32 +3,38 @@ author: stevewhims
 description: 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。
 title: 从 C++/CX 移动到 C++/WinRT
 ms.author: stwhi
-ms.date: 07/20/2018
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a631153c104f14f22839077c4c62d34626ed2a
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 29144f110a76227ae6a1bc1e7d7aa9f051babc9d
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4957009"
+ms.locfileid: "5162619"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
-本主题介绍如何将移植[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码中的等效[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主题介绍如何将中的代码移植[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)项目中的等效[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+
+## <a name="porting-strategies"></a>移植策略
+
+如果你想要逐渐移植 C + + /CX 代码到 C + + WinRT，则可以。 C + + /CX 和 C + + /winrt 代码可以在同一项目中，XAML 编译器支持和 Windows 运行时组件的例外共存。 对于这些两个例外，你需要面向 C + + /CX 或 C + + WinRT 在同一项目中的。
 
 > [!IMPORTANT]
-> 如果你想要逐渐移植你[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)代码与 C + + /winrt 中，则可以。 C + + /CX 和 C + + /winrt 代码可以在同一个项目，除外 XAML 编译器支持，以及 Windows 运行时组件中共存。 对于这些异常，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。 但你可以使用 XAML 应用退出因素代码在 Windows 运行时组件，如将其移植。 将移动尽可能 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用这两张信用卡从你的应用程序项目和逐渐移植到另一个。
+> 如果你的项目生成一个 XAML 应用程序，然后我们建议的一个工作流是首次使用一个 C + 的 Visual Studio 中创建新项目 + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 然后，开始复制的源代码和标记通过 C + + CX 项目。 你可以添加新**项目**的 XAML 页面 \> **添加新项...** \>  **Visual c + +** > **空白页面 (C + + WinRT)**。
+>
+> 或者，你可以使用 Windows 运行时组件为因素代码之外的 XAML C + + CX 项目为将其移植。 将移动尽可能 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用这两张信用卡从你的应用程序项目和逐渐移植到另一个。 请参阅[互 C + + /winrt 与 C + + CX](interop-winrt-cx.md)为在同一项目中使用两个语言投影的更多详细信息。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 **Windows** 中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-对比记住上面提到的异常的第一步中将项目移植到 C + + WinRT 是手动添加 C + + /winrt 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留处于关闭状态，以便生成消息帮助你查找 （和端口） 的支持所有依赖项的 C + + /CX，或你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，和逐渐移植。
+对比记住上面提到的异常的第一步中移植 C + + CX 项目到 C + + /winrt 是手动添加 C + + WinRT 支持添加到它 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留处于关闭状态，以便生成消息帮助你查找 （和端口） 的支持所有依赖项的 C + + /CX，或你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，和逐渐移植。
 
-将项目属性**常规** \> **目标平台版本**设置为 10.0.17134.0（Windows 10 版本 1803）或更高版本。
+确保**常规**该项目属性 \> **目标平台版本**设置为 10.0.17134.0(windows 10，版本 1803年) 或更高版本。
 
 在预编译的标头文件（通常为 `pch.h`）中，包括 `winrt/base.h`。
 
@@ -389,6 +395,7 @@ void LogWrapLine(winrt::hstring const& str);
 * [利用 C++/WinRT 实现的并发和异步操作](concurrency.md)
 * [通过 C++/WinRT 使用 API](consume-apis.md)
 * [在 C++/WinRT 中使用代理处理事件](handle-events.md)
+* [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md)
 * [Microsoft 接口定义语言 3.0 参考](/uwp/midl-3)
 * [从 WRL 移动到 C++/WinRT](move-to-winrt-from-wrl.md)
 * [C++/WinRT 中的字符串处理](strings.md)

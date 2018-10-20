@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: b3c3a3f6f831186302fc32b1f510919da40c57cc
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4965580"
+ms.locfileid: "5163047"
 ---
 # <a name="convert-between-strings-and-binary-data"></a>在字符串与二进制数据之间转换
 

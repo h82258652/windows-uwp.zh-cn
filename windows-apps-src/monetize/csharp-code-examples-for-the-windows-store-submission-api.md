@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: f5e508bd89c06841009576a0a69cb960a20faa83
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5127611"
+ms.locfileid: "5164832"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 示例：应用、加载项和外部测试版的提交
 

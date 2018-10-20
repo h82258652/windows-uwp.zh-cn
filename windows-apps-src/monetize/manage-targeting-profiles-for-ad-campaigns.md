@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fa142f1df672703d2f14dc185481bb248efe07b
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5133077"
+ms.locfileid: "5159199"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 

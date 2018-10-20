@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f9caf8519aa76ef9487e5318a238a6e1d53fe2
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5132410"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5168010"
 ---
 # <a name="custom-automation-peers"></a>自定义自动化对等  
 

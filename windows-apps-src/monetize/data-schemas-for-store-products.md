@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 产品, 架构
 ms.localizationpriority: medium
 ms.openlocfilehash: 77faa88524f348736c4c997dcd18ded200e9fd86
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130976"
+ms.locfileid: "5164087"
 ---
 # <a name="data-schemas-for-store-products"></a>Microsoft Store 产品的数据架构
 

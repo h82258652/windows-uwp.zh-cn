@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 091782d926949b87db9b29c08ec8cf98f485f0df
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4967559"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169086"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
@@ -62,7 +62,9 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
    ![设置入口点](images/desktop-to-uwp/entry-point-set.png)
 
-6. 生成打包项目，以确保未显示任何错误。
+6. 生成打包项目，以确保未显示任何错误。  如果你收到错误，打开**配置管理器**，并确保你的项目面向相同的平台。
+
+   ![配置管理器](images/desktop-to-uwp/config-manager.png)
 
 7. 使用[创建应用包](../packaging/packaging-uwp-apps.md)向导生成 appxupload 文件。
 

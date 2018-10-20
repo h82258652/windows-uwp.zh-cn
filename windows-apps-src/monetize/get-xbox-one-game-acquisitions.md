@@ -4,18 +4,18 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: 在 Microsoft Store 分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一 Xbox One 游戏的聚合购置数据。
 title: 获取 Xbox One 游戏购置
 ms.author: mhopkins
-ms.date: 03/23/2018
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox One 游戏购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 39d932a49e573d55a0ccb9cb69568006feede8a7
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.openlocfilehash: aac2bd45cf102816db8ba1f434be5743dead48e3
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130986"
+ms.locfileid: "5157631"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>获取 Xbox One 游戏购置
 
@@ -49,15 +49,15 @@ ms.locfileid: "5130986"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要检索其购置数据的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载购置数据，该 .tsv 文件中就包含产品 ID。  |  是  |
+| applicationId | 字符串 | 要检索其购置数据的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到你的游戏在 XDP 分析程序中，并从 URL 检索产品 ID。 或者，如果你从合作伙伴中心分析报告下载购置数据，该.tsv 文件中包含的产品 ID。  |  是  |
 | startDate | date | 要检索的购置数据日期范围中的开始日期。 默认值为当前日期。 |  否  |
 | endDate | date | 要检索的购置数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | 整数 | 要返回的数据的行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
 | skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号引起来。 例如，*filter=market eq 'US' and gender eq 'm'*。 <p/><p/>你可以指定响应正文中的以下字段：<p/><ul><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
+| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号引起来。 例如，*filter=market eq 'US' and gender eq 'm'*。 <p/><p/>你可以指定响应正文中的以下字段：<p/><ul><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
 | aggregationLevel | 字符串 | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。 | 否 |
-| orderby | 字符串 | 对每个购置的结果数据值进行排序的语句。 语法为 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 参数可以是以下字符串之一：<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li><li><strong>purchasePriceUSDAmount</strong></li><li><strong>taxUSDAmount</strong></li></ul><p><em>order</em> 参数是可选的，它可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定对每个字段进行升序还是降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：<ul><li><strong>日期型</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li><li><strong>purchasePriceUSDAmount</strong></li><li><strong>taxUSDAmount</strong></li></ul><p>返回的数据行将包含 <em>groupby</em> 参数中指定的字段以及以下字段：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
+| orderby | 字符串 | 对每个购置的结果数据值进行排序的语句。 语法为 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 参数可以是以下字符串之一：<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串：<em>orderby=date,market</em></p> |  否  |
+| groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：<ul><li><strong>日期型</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -65,10 +65,10 @@ ms.locfileid: "5130986"
 以下示例演示用于获取 Xbox One 游戏购置数据的多个请求。 将 *applicationId* 值替换为你的游戏的 Store ID。
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=8/1/2017&endDate=8/31/2017&skip=0&filter=market eq 'US' and gender eq 'm'  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=8/1/2017&endDate=8/31/2017&skip=0&filter=market eq 'US' and gender eq 'm' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -94,7 +94,7 @@ Authorization: Bearer <your access token>
 | applicationId       | 字符串 | 要检索其购置数据的 Xbox One 游戏的产品 ID。 |
 | applicationName     | 字符串 | 游戏的显示名称。       |
 | acquisitionType     | 字符串 | 下列字符串之一，用于指示购置类型：<ul><li><strong>Free</strong></li><li><strong>试用</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>订阅 Iap</strong></li><li><strong>私人受众</strong></li><li><strong>预顺序</strong></li><li><strong>Xbox Game Pass</strong>（或者，如果在 2018 年 3 月 23 之前查询数据，则是 <strong>Game Pass</strong>）</li><li><strong>磁盘</strong></li><li><strong>预付码</strong></li><li><strong>计费的预顺序</strong></li><li><strong>取消的预顺序</strong></li><li><strong>失败的预顺序</strong></li></ul>    |
-| ageGroup            | 字符串 | 用于指示进行购置的用户的年龄段的以下字符串之一：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
+| age                 | 字符串 | 用于指示进行购置的用户的年龄段的以下字符串之一：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | 字符串 | 用于指定完成购置的设备类型的以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>服务器</strong></li><li><strong>平板电脑</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>  |
 | gender              | 字符串 | 用于指定进行购置的用户的性别的以下字符串之一：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |
 | market              | 字符串 | 发生购置行为的市场的 ISO 3166 国家/地区代码。  |
@@ -120,7 +120,7 @@ Authorization: Bearer <your access token>
       "applicationId": "BRRT4NJ9B3D1 ",
       "applicationName": "Contoso Game",
       "acquisitionType": "Paid",
-      "ageGroup": "35-49",
+      "age": "35-49",
       "deviceType": "Console",
       "gender": "m",
       "market": "US",

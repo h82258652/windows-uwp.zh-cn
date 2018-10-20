@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5132992"
+ms.locfileid: "5162887"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 

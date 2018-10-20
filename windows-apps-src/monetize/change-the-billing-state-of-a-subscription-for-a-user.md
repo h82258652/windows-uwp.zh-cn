@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e6a654897efba1fa66350abaddbacf9791bbbcc
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4957958"
+ms.locfileid: "5163847"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>更改用户订阅的计费状态
 

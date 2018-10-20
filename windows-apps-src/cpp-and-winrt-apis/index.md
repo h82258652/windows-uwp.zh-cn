@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: b5603063f8038b5617f8a1c2dd7d77d90c702901
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953031"
+ms.locfileid: "5161288"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -61,10 +61,10 @@ C++ 编程语言适用于企业*和* 独立软件供应商 (ISV) 行业中重视
 | [XAML 自定义（模板化）控件与 C++/WinRT](xaml-cust-ctrl.md) | 本主题将指导你完成的步骤创建简单的自定义控件使用 C + + WinRT。 你可以构建相关信息来创建你自己功能丰富且可自定义的 UI 控件上。 |
 | [通过 C++/WinRT 使用 COM 组件](consume-com.md) | 本主题使用完整的 Direct2D 代码示例，介绍如何使用 C + + /winrt 来使用 COM 类和接口。 |
 | [通过 C++/WinRT 创作 COM 组件](author-coclasses.md) | C + + WinRT 有助于创作经典 COM 组件，就像它有助于你创作 Windows 运行时类。 |
-| [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 |
 | [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
-| [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 |
+| [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间转换的两个帮助程序函数。 |
 | [从 WRL 移动到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主题介绍如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 C++/WinRT 中的等效项。 |
+| [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。 |
 | [强引用和弱引用在 C + + WinRT](weak-references.md) | Windows 运行时是一种引用计数系统;和在系统务必要了解有关的重要性和之间，区别强和弱引用。 |
 | [敏捷对象](agile-objects.md) | 敏捷对象是可从任何线程访问的对象。 C++/WinRT 类型默认情况下是敏捷对象，但你可以选择退出。 |
 

@@ -4,18 +4,18 @@ Description: Enhance your desktop application for Windows 10 users by using Univ
 Search.Product: eADQiWindows 10XVcnh
 title: 增强用于 Windows 10 的桌面应用程序
 ms.author: normesta
-ms.date: 08/12/2017
+ms.date: 10/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: ffe3f2a93642911da57d3dd94c09206dc7f5dc94
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4948716"
+ms.locfileid: "5160678"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
@@ -58,10 +58,10 @@ ms.locfileid: "4948716"
 
 打开**其他 #using 目录**对话框，并添加这些目录。
 
-* %VSInstallDir%\Common7\IDE\VC\vcpackages
-* C:\Program Files (x86)\Windows Kits\10\UnionMetadata
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*最新版本*>
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*最新版本*>
+* $(VSInstallDir) Common7\IDE\VC\vcpackages
+* C:\Program 文件 (x86) \Windows Kits\10\UnionMetadata\ <*SDK 版本*> \Facade
+* C:\Program 文件 (x86) \Windows Kits\10\References\ <*SDK 版本*> \Windows.Foundation.UniversalApiContract\ <*最新版本*>
+* C:\Program 文件 (x86) \Windows Kits\10\References\ <*SDK 版本*> \Windows.Foundation.FoundationContract\ <*最新版本*>
 
 打开**附加包含目录**对话框，并添加此目录：C:\Program Files (x86)\Windows Kits\10\Include\<*最新版本*>\um
 
