@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b4a7b971647304e08fe52e7696be9fcd39e584
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740343"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5156573"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
 应更新剪辑元数据。 
@@ -50,7 +50,7 @@ UpdateMetadataRequest 对象具有以下规范。
 ```
 
  
-更改只是标题属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
+更改只是游戏属性 （由于此字段的架构是取决于调用方，这是只是一个示例）：
  
 
 ```json

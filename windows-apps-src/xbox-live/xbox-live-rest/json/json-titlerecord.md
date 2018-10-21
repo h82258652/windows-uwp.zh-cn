@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7fb10a0f81e24215ebc24d2545f1197d4520bc
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740450"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5159790"
 ---
 # <a name="titlerecord-json"></a>TitleRecord (JSON)
 有关游戏，包括其名称和上次修改时间戳的信息。 
@@ -36,7 +36,7 @@ TitleRecord 对象具有以下规范。
 | 活动| [ActivityRecord](json-activityrecord.md)| 在游戏中的用户的活动。 仅深度为"所有"时返回。| 
 | lastModified| DateTime| UTC 时间戳记录上次更新时。| 
 | 放置| 字符串| 用户界面中应用的位置。 可能性包括"fill"、"完全"、"贴靠"或"background"。 默认值为"完全"，而无需将应用的功能的设备。| 
-| 状态| 字符串| 游戏的状态。 可以是"活动"或"非活动"（默认）。 标题设置根据自己的条件活动和非活动状态的状态。| 
+| 状态| 字符串| 游戏的状态。 可以是"活动"或"非活动"（默认）。 标题设置基于其自己的标准的活动和非活动状态的状态。| 
   
 <a id="ID4E6C"></a>
 

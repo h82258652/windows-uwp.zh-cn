@@ -12,22 +12,22 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754751"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5159117"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
-允许浏览单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
+允许浏览的单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非按顺序而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
  
-此 API 还允许在给定的项的子项的浏览。 例如，通过为 Xbox 360 游戏 ID 和 MediaItemType 参数中传递，这可以浏览和 diltering 该项目，如虚拟形象项目或 DLC 游戏的子元素上。
+此 API 还允许在给定的项的子项的浏览。 例如，通过为 Xbox 360 游戏 ID 和 MediaItemType 参数中传递，这允许浏览和 diltering 上该项目，如虚拟形象项目或 DLC 游戏的子项。
  
 此 API 将接受查询优化器。
  
-检索子元素的某些方案包括：
+某些情况下，用于检索子元素包括：
  
-   * 为轨唱片集
+   * 到轨唱片集
    * 季节系列
    * 季节到剧集：
    * 跟踪对音乐视频
@@ -54,7 +54,7 @@ ms.locfileid: "4754751"
 
 [GET (media/{marketplaceId}/browse)](uri-medialocalebrowseget.md)
 
-&nbsp;&nbsp;允许浏览单个媒体组中的项。 
+&nbsp;&nbsp;允许浏览的单个媒体组中的项。 
  
 <a id="ID4EXC"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3853140ce5e7c3f7710f489709945fc70b6703b4
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4754992"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157516"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 要对其执行操作的 Xuid 列表。 
@@ -29,7 +29,7 @@ XuidList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 字符串的数组| Xbox 用户 ID (XUID) 值的应执行的操作，或应返回数据的列表。| 
+| xuid| 字符串的数组| 在其应执行的操作，或应返回数据的 Xbox 用户 ID (XUID) 值的列表。| 
   
 <a id="ID4EMB"></a>
 

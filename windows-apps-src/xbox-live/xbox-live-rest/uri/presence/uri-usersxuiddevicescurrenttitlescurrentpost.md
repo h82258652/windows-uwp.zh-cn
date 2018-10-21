@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ac24fb580696f1524ce7a6cf09dc1e492e9d2378
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754819"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157250"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -36,7 +36,7 @@ ms.locfileid: "4754819"
  
 此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和游戏的媒体状态数据。
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+现在，从 XToken 声明检索并强制执行**SandboxId** 。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
@@ -57,7 +57,7 @@ ms.locfileid: "4754819"
 | XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 已禁止| 
 | titleId| 是| 职务标题的 Id| 403 已禁止| 
 | deviceId| 是针对 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
-| deviceType| 是针对 Web 除外| 调用方的 deviceType| 403 已禁止| 
+| deviceType| Web 除是| 调用方的 deviceType| 403 已禁止| 
 | sandboxId| 是，对于来自调用的 | 调用方的沙盒| 403 已禁止| 
   
 <a id="ID4ENE"></a>
@@ -68,8 +68,8 @@ ms.locfileid: "4754819"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
-| Content-Type| 字符串| 请求正文中的示例值的 mime 类型： 应用程序/json。| 
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
+| Content-Type| 字符串| 请求示例值的正文的 mime 类型： application/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
   
@@ -80,14 +80,14 @@ ms.locfileid: "4754819"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
 <a id="ID4ERH"></a>
 
  
 ## <a name="request-body"></a>请求正文
  
-请求对象是[TitleRequest](../../json/json-titlerequest.md)。 更新实际存在的正文中的属性。 任何属性都不是正文的一部分但存在服务器上将不会修改。
+请求对象是[TitleRequest](../../json/json-titlerequest.md)。 实际存在的正文中的属性会更新。 任何属性都不是正文的一部分但存在服务器上将不会修改。
  
 <a id="ID4EAAAC"></a>
 

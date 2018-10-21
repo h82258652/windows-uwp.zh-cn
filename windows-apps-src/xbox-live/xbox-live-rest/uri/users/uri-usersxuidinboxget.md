@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742179"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5160198"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
 从服务检索指定的数量的用户消息摘要。
@@ -26,7 +26,7 @@ ms.locfileid: "4742179"
   * [URI 参数](#ID4EEB)
   * [查询字符串参数](#ID4EIC)
   * [授权](#ID4EGE)
-  * [资源的隐私设置的效果](#ID4ETE)
+  * [在资源的隐私设置的效果](#ID4ETE)
   * [HTTP 状态代码](#ID4E5E)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EMH)
 
@@ -37,9 +37,9 @@ ms.locfileid: "4742179"
 
 用户的消息摘要包含仅邮件主题。 对于用户生成的消息，这是当前的消息文本的前 20 个字符。 系统消息可能会提供其他使用者，如"LIVE System"。
 
-发送; 顺序的相反中返回的消息也就是说，首次返回较新消息。
+发送; 顺序的相反中返回的消息也就是说，首先返回较新消息。
 
-此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
+此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。
 
 <a id="ID4EEB"></a>
 
@@ -58,7 +58,7 @@ ms.locfileid: "4742179"
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- | --- | --- | --- |
 | maxItems| int| 100| 返回的邮件的最大数量。|
-| ContinuationToken| 字符串|  | 在以前枚举调用; 返回字符串使用继续枚举。|
+| ContinuationToken| 字符串|  | 以前的枚举调用; 中返回的字符串使用继续枚举。|
 | skipItems| int| 100| 消息以跳过; 数忽略 continuationToken 是否存在。|
 
 <a id="ID4EGE"></a>
@@ -71,7 +71,7 @@ ms.locfileid: "4742179"
 <a id="ID4ETE"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
 
 仅可以枚举自己用户的消息。
 
@@ -80,7 +80,7 @@ ms.locfileid: "4742179"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -90,7 +90,7 @@ ms.locfileid: "4742179"
 | 404| URI 中找不到有效的 XUID。|
 | 409| 基础集合更改具体取决于传递延续令牌。|
 | 416| 跳过的项数大于可用的项目数。|
-| 500| 常规服务器端错误。|
+| 500| 常规的服务器端错误。|
 
 <a id="ID4EMH"></a>
 
@@ -101,7 +101,7 @@ ms.locfileid: "4742179"
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
-| 结果| 消息]| 100| 用户的消息的数组|
+| 结果| 消息]| 100| 用户消息的数组|
 | pagingInfo| PagingInfo|  | 当前的结果集的页面信息|
 
 #### <a name="message"></a>消息
@@ -116,7 +116,7 @@ ms.locfileid: "4742179"
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
 | id| 字符串| 50| 消息标识符，用于检索消息详细信息或删除邮件。|
-| isRead| Bool|  | 标志，指示用户具有已阅读消息详细信息。|
+| isRead| Bool|  | 标志，指示用户已经读取消息的详细信息。|
 | 发送| DateTime|  | 发送消息 UTC 日期和时间。 （由该服务）。|
 | 到期| DateTime|  | UTC 过期日期和时间消息。 （所有消息都具有最大生存时间，以在将来确定）。|
 | 可以忽略 messageType| 字符串| 50| 消息类型： 用户、 系统、 FriendRequest、 视频、 QuickChat、 VideoChat、 PartyChat、 标题、 GameInvite。|
@@ -168,7 +168,7 @@ ms.locfileid: "4742179"
 
 #### <a name="error-response"></a>错误响应
 
-发生错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
+如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
 
 | 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -192,4 +192,4 @@ ms.locfileid: "4742179"
 <a id="ID4EWKAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

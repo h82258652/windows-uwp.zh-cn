@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 068ae15566d73dfc4610f8540972b7e80329de8e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752791"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157224"
 ---
 # <a name="usertitle-json"></a>UserTitle (JSON)
 包含用户的游戏数据。 
@@ -31,7 +31,7 @@ UserTitle 对象具有以下规范。 所有属性都是必需的。
 | --- | --- | --- | 
 | lastUnlock| DateTime| 上次成就的时间。| 
 | titleId| 32 位无符号的整数| 游戏的唯一标识符。| 
-| titleVersion| 字符串| 游戏的版本。| 
+| titleVersion| 字符串| 标题的版本。| 
 | serviceConfigId| 字符串| 主要服务配置集与游戏相关联的 ID。| 
 | 标题键入| 字符串| 游戏类型。| 
 | 平台| 字符串| 受支持的平台。| 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 72126b51c4e155babad6cfee737e21d6102b03e5
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742920"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5156727"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>为 Xbox Live 创建新主题作品
 
@@ -26,7 +26,7 @@ ms.locfileid: "4742920"
 本文将通过以下假设引导你完成这一过程
 
 1. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品在 Xbox One、Windows 10 台式电脑和移动设备上运行
-2. 要在 Windows 开发人员中心上配置你的游戏[http://dev.windows.com/](http://dev.windows.com)。  如有疑问，应使用 Windows 开发人员中心。
+2. 你要在 Windows 开发人员中心上配置你的游戏[http://dev.windows.com/](http://dev.windows.com)。  如有疑问，应使用 Windows 开发人员中心。
 3. 你正在使用带有自定义游戏引擎的 Visual Studio 或 Unity。
 4. 开发计算机运行的是 Windows 10。
 

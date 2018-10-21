@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d862114f95a3b6f1e9c519f37f2d3eacc32de4d
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751877"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5160589"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -80,7 +80,7 @@ typedef struct AsyncBlock
 * 通过 true 值调用 **GetAsyncStatus** 一直等到它完成。
 * 在 **AsyncBlock** 中设置一个 waitEvent，并等待发出事件信号
 
-借助**GetAsyncStatus**和 waitEvent，**异步任务**被视为完成后 AsyncBlock 的**完成回调**执行但 AsyncBlock 的**完成回调**是可选的。
+借助**GetAsyncStatus**和 waitEvent，**异步任务**视作完成后 AsyncBlock 的**完成回调**执行但 AsyncBlock 的**完成回调**是可选的。
 
 一旦**异步任务**完成，你就可以获取结果。
 
@@ -239,7 +239,7 @@ void CALLBACK HandleAsyncQueueCallback(
 }
 ```
 
-然后在后台线程你可以侦听此信号可以唤醒并调用**DispatchAsyncQueue**。
+然后在后台线程中你可以侦听此信号可以唤醒并调用**DispatchAsyncQueue**。
 
 ```cpp
 DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
@@ -275,7 +275,7 @@ DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 }
 ```
 
-它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，然后你将需要确保不会错过代码的任何事件如：
+它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，那么你将需要确保不会错过代码的任何事件如：
 
 ```cpp
     case WAIT_OBJECT_0: 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 57793a01ebd4c97130df6a476b447a99d78c990e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754542"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5161506"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -63,7 +63,7 @@ void Example_RealTimeActivity_ConnectAsync()
 如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP， [Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上定义统计数据。 阅读[开发人员中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在开发人员中心上配置的统计数据。
 
 > [!NOTE]
-> Stats 2013 开发人员将需要联系其 DAM 有关[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)[开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上的信息。
+> Stats 2013 开发人员将需要有关[开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上的[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)信息联系其 DAM。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 
@@ -135,4 +135,4 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 > [!IMPORTANT]
 > 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证标记到期时刷新。
 > 
-> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测到 RTA 会话已关闭，并且开始退出会话的用户。 它是由 RTA 客户端连接关闭时检测和启动重新连接并重新订阅之前 MPSD 结束会话。
+> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测 RTA 会话已关闭，并开始用户退出会话。 它是由 RTA 客户端连接关闭时检测和启动重新连接并重新订阅 MPSD 结束会话之前。

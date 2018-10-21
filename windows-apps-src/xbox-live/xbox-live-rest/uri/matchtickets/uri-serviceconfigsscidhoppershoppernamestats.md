@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0742ad87e68f7d0c6ed6346873aa3dd6c56edee0
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750634"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5160204"
 ---
 # <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
-支持 GET 操作来检索漏斗的统计信息。
+支持获取操作来检索漏斗的统计信息。
 
 > [!IMPORTANT]
-> 此 URI 用于合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此 URI 旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
 <a id="ID4ER"></a>
 
@@ -34,7 +34,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>备注
-此 URI 支持的值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。 只有一个票证创建者可以删除票证或检索该 URI 的状态。  
+此 URI 支持的值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。 只有的票证创建者可以删除票证或检索 URI 的状态。  
 <a id="ID4E6"></a>
 
 

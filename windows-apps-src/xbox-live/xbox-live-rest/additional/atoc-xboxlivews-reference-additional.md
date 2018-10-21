@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742335"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5163200"
 ---
 # <a name="additional-reference"></a>其他参考
 
-此部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
+此部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 补充参考资料。
 
 <a id="ID4EZ"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "4742335"
 
 [数据类型概述](datatypeoverview.md)
 
-&nbsp;&nbsp;介绍 Xbox Live 服务使用标准标识相关的数据类型。
+&nbsp;&nbsp;介绍 Xbox Live 服务使用的标准标识相关的数据类型。
 
 [辅助 EDS API](eds-apis.md)
 

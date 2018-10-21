@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d037e05e7d0817d51d2c63beaf00ae91d10567
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740593"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5159819"
 ---
 # <a name="post-untrustedplatformusersbatchscidssciddatapathandfilenametype"></a>POST (/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})
-将多个文件下载从多个用户具有相同的文件名。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+从具有相同的文件名多个用户下载多个文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [授权](#ID4ECB)
@@ -37,7 +37,7 @@ ms.locfileid: "4740593"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （设置到阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （最终正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且反斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件的 json。| 
   
 <a id="ID4ECB"></a>
@@ -80,12 +80,12 @@ ms.locfileid: "4740593"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
-| 201| 已创建 | 创建实体。| 
+| 201| 已创建 | 已创建实体。| 
 | 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
@@ -93,7 +93,7 @@ ms.locfileid: "4740593"
 | 406| 不允许 | 不支持资源版本。| 
 | 408| 请求超时 | 请求所花的时间太长，才能完成。| 
 | 500| 内部服务器错误 | 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 503| 服务不可用 | 请求已阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EPAAC"></a>
 
@@ -103,7 +103,7 @@ ms.locfileid: "4740593"
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 内容处置| 介绍了部分的内容。 在标头的"名称"和"filename"部分是该文件属于用户的 XUID。| 
-| HttpStatusCode| HTTP 状态代码与检索此特定文件。| 
+| HttpStatusCode| HTTP 状态代码与检索此特定文件相关。| 
   
 <a id="ID4ESBAC"></a>
 
@@ -112,16 +112,16 @@ ms.locfileid: "4740593"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ETag| ETag 是资源的由对某一 URL 中找到的特定版本的 web 服务器分配一个不透明标识符。 如果位于该 URL 的资源内容发生改变，被分配新功能和不同的 ETag。| 
+| ETag| ETag 是由对某一 URL 找到资源的特定版本的 web 服务器分配一个不透明标识符。 如果位于该 URL 的资源内容发生改变，新功能和不同的 ETag 被分配。| 
 | Content-Type| 如果成功检索文件，这是文件的内容类型。| 
-| 内容区域| 如果文件已成功检索且部分下载，这是在响应中包含的文件字节范围。 | 
+| 内容区域| 如果文件已成功检索，并且是部分下载，这是在响应中包含的文件字节范围。 | 
   
 <a id="ID4E3CAC"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-如果在调用成功，该服务将多部分响应中返回所请求文件的内容。
+如果在调用成功，该服务将多部分响应中返回所请求的文件的内容。
  
 <a id="ID4EGDAC"></a>
 

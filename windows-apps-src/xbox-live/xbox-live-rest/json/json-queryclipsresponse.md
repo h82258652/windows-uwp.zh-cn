@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750772"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5162299"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
-包装返回的游戏剪辑，以及分页信息列表的列表。 
+包装返回的游戏剪辑，以及分页列表信息的列表。 
 <a id="ID4EN"></a>
 
  
@@ -29,8 +29,8 @@ QueryClipsResponse 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| <b>gameClips</b>| GameClip 的数组| 满足最多请求 (<b>maxItems</b>) 查询的游戏剪辑的数组。| 
-| <b>pagingInfo</b>| PagingInfo| 包含所需的延续任务和列表的后续调用分页的超过请求 (<b>maxItems</b>) 的信息。| 
+| <b>gameClips</b>| GameClip 的数组| 满足最多请求限制 (<b>maxItems</b>) 查询的游戏剪辑的数组。| 
+| <b>pagingInfo</b>| PagingInfo| 包含所需的延续和列表的后续调用分页的超过请求限制 (<b>maxItems</b>) 的信息。| 
   
 <a id="ID4E2B"></a>
 

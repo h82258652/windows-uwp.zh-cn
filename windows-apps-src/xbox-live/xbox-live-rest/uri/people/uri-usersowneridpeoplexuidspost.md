@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746486"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5162638"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
@@ -65,7 +65,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。| 
 | Content-Length| 32 位无符号的整数。 长度，以字节为单位，请求正文。 示例值： 22。| 
-| Content-Type| 字符串。 请求正文中的 MIME 类型。 这必须是<b>应用程序/json</b>。| 
+| Content-Type| 字符串。 请求正文的 MIME 类型。 这必须是<b>application/json</b>。| 
   
 <a id="ID4EBE"></a>
 
@@ -74,8 +74,8 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>应用程序/json</b>。| 
+| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。| 
   
 <a id="ID4EHF"></a>
 
@@ -128,13 +128,13 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| "获取"方法时成功。| 
-| 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
-| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 的格式不正确。| 
+| 204| 任何内容| 成功时方法是"添加"或者"删除"。| 
+| 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 格式不正确。| 
 | 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
   
 <a id="ID4ENBAC"></a>
@@ -145,7 +145,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Content-Length| 32 位无符号的整数| 长度，以字节为单位，响应正文。 示例值： 22。| 
-| Content-Type| 字符串| 响应正文的 MIME 类型。 这将始终为<b>应用程序/json</b>。| 
+| Content-Type| 字符串| 响应正文的 MIME 类型。 这将始终为<b>application/json</b>。| 
   
 <a id="ID4EZCAC"></a>
 

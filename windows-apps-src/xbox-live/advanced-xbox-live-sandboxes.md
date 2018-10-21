@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
 ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746683"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157819"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -45,7 +45,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 ## <a name="initial-setup-for-a-title"></a>主题作品的初始设置
 
-主题作品源自于 Xbox 开发人员门户 (XDP) 或 Windows 开发人员中心。 本文档介绍源自在 XDP 中的主题作品。 标题分配一个作品 ID、 产品 ID 和服务配置 ID (SCID)。
+主题作品源自于 Xbox 开发人员门户 (XDP) 或 Windows 开发人员中心。 本文档介绍源自在 XDP 中的主题作品。 标题分配主题作品 ID、 产品 ID 和服务配置 ID (SCID)。
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 

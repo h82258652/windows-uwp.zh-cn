@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, Windows 10, Xbox one, 特别推荐的统计数据和排行榜, 排行榜, 统计数据 2017, Windows 开发人员中心
-ms.openlocfilehash: ed965c4d7e2c15e76494fd197808c7f47db2d584
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: dcd73b7b1ea26cd929750ffed325896dfaf2c593
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745234"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157803"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>在 Windows 开发人员中心上配置 2017 特别推荐的统计数据和排行榜
 
@@ -30,7 +30,7 @@ ms.locfileid: "4745234"
 1. 导航到针对你的作品的**特别推荐的统计数据和排行榜**部分（位于**服务** > **Xbox Live** > **特别推荐的统计数据和排行榜**下）。
 2. 单击**新建**按钮会打开一个强制回应表单。 填写完成后，单击**保存**。
 
-![新特别推荐的统计数据和排行榜对话框的图像](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-1.png)
+![新特别推荐的统计数据和排行榜对话框的图像](../../images/dev-center/featured-stats-and-leaderboards/featured-stats.png)
 
 **显示名称**字段是用户将在游戏中心里看到的字段。 该字符串可以在 Xbox Live 服务配置的**本地化字符串**中进行本地化。
 
