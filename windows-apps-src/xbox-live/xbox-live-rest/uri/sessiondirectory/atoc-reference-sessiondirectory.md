@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754693"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5171033"
 ---
 # <a name="session-directory-uris"></a>会话目录 URI
 
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>服务版本
 
-这些 REST Uri 的调用方必须为 X-Xbl-协定-版本，HTTP 标头，用于指定的服务版本的娱乐发现服务 (EDS) 传递值 104/105 或更高版本。
+这些 REST Uri 的调用方必须为 X-Xbl-协定-版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 104/105 或更高版本。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>系统对象和属性
 
-用于配置的其会话和模板，MPSD 使用多个会话 JSON 对象符合该目录会强制执行和解释的固定架构。 在调用期间为支持各种会话目录 Uri 的方法，这些对象验证和合并，具体取决于受支持的架构。 与多人游戏配置相关联的主要 JSON 对象是：
+用于配置的其会话和模板，MPSD 使用多个会话 JSON 对象符合该目录会强制执行和解释的固定架构。 在调用期间为支持各种会话目录 Uri 的方法，这些对象是验证，并且合并，具体取决于受支持的架构。 与多人游戏配置相关联的主要 JSON 对象是：
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -78,11 +78,11 @@ sessiondirectory.xboxlive.com
 
 [/handles](uri-handles.md)
 
-&nbsp;&nbsp;支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。
+&nbsp;&nbsp;支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果需要该会话。
 
 [/handles/{handleId}](uri-handleshandleid.md)
 
-&nbsp;&nbsp;支持会话句柄由标识符指定的删除和 GET 的操作。
+&nbsp;&nbsp;支持会话句柄由标识符指定的删除和 GET 操作。
 
 [/handles/{handleId}/session](uri-handleshandleidsession.md)
 
@@ -94,7 +94,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/batch](uri-serviceconfigsscidbatch.md)
 
-&nbsp;&nbsp;支持在服务配置标识符级别为批处理查询 POST 操作。
+&nbsp;&nbsp;支持在服务配置标识符级别为批处理的查询 POST 操作。
 
 [/serviceconfigs/{scid}/sessions](uri-serviceconfigsscidsessions.md)
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751942"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5168511"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
@@ -44,7 +44,7 @@ GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaIt
 ```
 
  
-   * 调用进行反向查找使用以前的响应中的**ProviderMediaId**字段： 
+   * 发出反向查找使用以前的响应中的**ProviderMediaId**字段在调用： 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -53,7 +53,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-如果不具有从 EDS 检索到的**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
+如果不从 EDS 检索到的**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
   
 <a id="ID4EOC"></a>
 

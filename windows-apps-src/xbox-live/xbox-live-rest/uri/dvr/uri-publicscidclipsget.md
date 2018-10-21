@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745266"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5168498"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 列表公共剪辑。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。
@@ -32,9 +32,9 @@ ms.locfileid: "4745266"
  
 此 API 允许的各种方法是公共的列表剪辑。 在隐私检查和防止请求 XUID 的内容隔离检查返回的剪辑列表。
  
-查询每个服务配置标识符 (SCID) 进行了优化。 指定进一步筛选器或下面列出的默认值以外的排序顺序可以在某些情况下长返回。 这是更明显的较大的视频集。 查询不能指定升序排序顺序。
+查询每个服务配置标识符 (SCID) 进行了优化。 进一步指定筛选器或下面列出的默认值以外的排序顺序可能在某些情况下需要更长的时间以返回。 这是更明显的较大的视频集。 查询不能指定升序排序顺序。
  
-若要获取特定集合 ofpublic 剪辑，需要限定符。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回。
+若要获取特定集合 ofpublic 剪辑，需要使用限定符。 请求的用户必须能够接触到请求的 SCID，否则 HTTP 403 将返回。
   
 <a id="ID4ECB"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "4745266"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| scid| 字符串| 公共剪辑主要服务配置标识符。| 
+| scid| 字符串| 主要服务配置标识符的公共剪辑。| 
 | titleid| 字符串| 公共剪辑的职务 Id。 不能在相同的 URI 的 scid 中指定。 如果已指定，将用于查找的主 SCID。| 
   
 <a id="ID4ENB"></a>

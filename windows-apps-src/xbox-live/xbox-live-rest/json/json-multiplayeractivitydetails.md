@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de72a24c34af1a5f145c44b2acfa11a7bd07f95
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740581"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167288"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
 表示**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**的 JSON 对象。 
@@ -38,10 +38,10 @@ MultiplayerActivityDetails JSON 对象具有以下规范。
 | TitleId| 32 位无符号的整数| 应启动才能加入活动主题作品 ID。| 
 | 可见性| MultiplayerSessionVisibility| 指示会话的可见性状态的<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>值。| 
 | JoinRestriction| MultiplayerSessionJoinRestriction| 指示会话加入限制的<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>值。 可见性字段设置为"打开"适用于此限制。| 
-| 已关闭| 布尔值| 如果会话暂时关闭为加入，以及 false 否则，则为 true。| 
+| 已关闭| 布尔值| 如果会话已临时关闭为加入，以及 false 否则，则为 true。| 
 | OwnerXboxUserId| 64 位无符号的整数| 拥有活动的成员的 Xbox 用户 ID。| 
-| MaxMembersCount| 32 位无符号的整数| 总插槽数。| 
-| MembersCount| 32 位无符号的整数| 占用的插槽数。| 
+| MaxMembersCount| 32 位无符号的整数| 总插槽的数量。| 
+| MembersCount| 32 位无符号的整数| 占用的空位的数量。| 
   
 <a id="ID4E3D"></a>
 

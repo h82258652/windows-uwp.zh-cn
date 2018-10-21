@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a94493243178a503ae846608b172af598bf97dd
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4966753"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167356"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
 为特定的库存项目提供完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。

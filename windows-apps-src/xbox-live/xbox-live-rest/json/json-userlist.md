@@ -12,24 +12,24 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 51dd19ebed394bb0c3c8b5f4649dd5c83a58027c
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740494"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167378"
 ---
 # <a name="userlist-json"></a>UserList (JSON)
 [用户](json-user.md)对象的集合。 
 <a id="ID4ER"></a>
 
  
-## <a name="userlist"></a>UserList
+## <a name="userlist"></a>用户列表
  
 UserList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 用户| 数组，[用户 (JSON)](json-user.md)| 请参阅 JSON 下面的示例。| 
+| 用户| [User (JSON)](json-user.md)的数组| 请参阅 JSON 下面的示例。| 
   
 <a id="ID4EPB"></a>
 

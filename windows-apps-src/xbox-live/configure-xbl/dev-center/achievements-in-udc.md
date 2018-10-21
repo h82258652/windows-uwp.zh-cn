@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
-ms.openlocfilehash: 108d022909afc9a118cc1f011acf100972576841
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: 80bd83fed60c17f0c575f0b5e3847c902a6c0e62
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751608"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167883"
 ---
 # <a name="configure-achievements-2017-on-dev-center"></a>在开发人员中心上配置 Achievements 2017
 
@@ -27,7 +27,7 @@ ms.locfileid: "4751608"
 1. 导航至游戏中的“成就”部分，位于**服务** > **Xbox Live** > **成就**下。
 2. 单击**新成就**按钮并填写表格。  完成后，单击**保存**。
 
-![在 Microsoft 开发人员中心创建新成就的屏幕截图](../../images/dev-center/achievements-1.png)
+![在 Microsoft 开发人员中心创建新成就的屏幕截图](../../images/dev-center/achievement-table.png)
 
 ## <a name="description"></a>描述
 可以在描述部分输入成就的基本信息，如名称和锁定/解锁描述。 可以通过访问 [Microsoft 开发人员中心](https://developer.microsoft.com/dashboard)的**本地化字符串**服务配置部分为成就添加本地化支持。
@@ -63,7 +63,7 @@ ms.locfileid: "4751608"
 
 要创建新奖励，请单击**额外奖励**部分的**添加奖励**按钮并填写表格。
 
-![在 Microsoft 开发人员中心为成就添加奖励的屏幕截图](../../images/dev-center/achievements-4.png)
+![在 Microsoft 开发人员中心为成就添加奖励的屏幕截图](../../images/dev-center/achievement-reward.png)
 
 ### <a name="reward-details"></a>奖励详细信息
 填写奖励详细信息以关联新奖励。 完成后，单击**添加**。

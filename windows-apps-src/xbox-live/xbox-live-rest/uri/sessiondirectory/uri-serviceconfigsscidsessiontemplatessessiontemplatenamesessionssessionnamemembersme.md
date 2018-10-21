@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7e61fe76fc0f322c93d55448d53ee6444ffec5
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754732"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169758"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 支持删除操作，以删除会话成员。
@@ -30,7 +30,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="remarks"></a>备注
 
-所有会话成员资源操作都需要的 Xbox 用户 ID (XUID) 用户声明授权。
+所有会话成员资源操作都需要 Xbox 用户 ID (XUID) 用户声明授权。
 
 <a id="ID4EAB"></a>
 

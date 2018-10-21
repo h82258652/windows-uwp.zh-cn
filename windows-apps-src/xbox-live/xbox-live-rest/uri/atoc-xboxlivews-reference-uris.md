@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4743391"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5168486"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
@@ -37,7 +37,7 @@ ms.locfileid: "4743391"
 
 [游戏 DVR URI](dvr/atoc-reference-dvr.md)
 
-&nbsp;&nbsp;Uri 和游戏 dvr 关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的游戏 DVR 的 HTTP 方法。
 
 [玩家头像 URI](gamerpic/atoc-reference-gamerpic.md)
 

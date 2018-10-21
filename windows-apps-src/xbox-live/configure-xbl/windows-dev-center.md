@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
-ms.openlocfilehash: a0c30014c3688695847a5734adfa7cbc7498ba4a
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: 8bf9401650b2f769a401a5226853f7f5ef4942d8
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741723"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5165265"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows 开发人员中心服务配置
 
@@ -28,9 +28,11 @@ ms.locfileid: "4741723"
 若要访问 Xbox Live 配置页中，在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)中，选择主题作品后导航到**服务** > **Xbox Live**。
 
 
-以下主题介绍了如何通过使用 Windows 开发人员中心配置 Xbox Live。
+以下主题介绍如何通过使用 Windows 开发人员中心配置 Xbox Live。
 
 ## <a name="in-this-section"></a>本部分内容
+
+* [摘要](dev-center/summary.md)
 
 * [Xbox Live 设置](dev-center/xbox-live-setup.md)
 
@@ -48,9 +50,7 @@ ms.locfileid: "4741723"
 
 * [标题存储](dev-center/title-storage.md)
 
-* [数据共享](dev-center/data-sharing-udc.md)
-
-* [本地化字符串](dev-center/localized-strings.md)
+* [访问策略](dev-center/access-policies-udc.md)
 
 * [单一登录](dev-center/single-sign-on.md)
 

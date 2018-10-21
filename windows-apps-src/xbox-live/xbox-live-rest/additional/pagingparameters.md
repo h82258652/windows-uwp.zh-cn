@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753593"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5164857"
 ---
 # <a name="paging-parameters"></a>分页参数
  
@@ -29,9 +29,9 @@ ms.locfileid: "4753593"
  
 | 参数| 必需| 类型| 说明| 
 | --- | --- | --- | --- | 
-| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
-| maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项目的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
-| skipItems| 否| 32 位有符号整数| 返回在给定的项目数后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
+| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项。 | 
+| maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项数的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页该服务可能会提供一个默认值。 | 
+| skipItems| 否| 32 位有符号整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
   
 <a id="ID4EDD"></a>
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f09889971cab58917fd898506b635cc66dcaf2
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740596"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167772"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 
@@ -42,7 +42,7 @@ ms.locfileid: "4740596"
 
 #### <a name="your-titles-service-configuration-is-not-published-to-the-correct-development-sandbox"></a>你的游戏服务配置未发布到正确的开发沙盒。
 
-请确保已将你的游戏服务配置发布到开发沙盒中。  你无法在某个游戏的给定开发沙盒中登录到 Xbox Live，除非该游戏已发布到相同沙盒。  请参阅 [XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)，了解有关该操作的信息。 你可以读取[开发人员中心文档](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)，了解如何将发布你的 Windows 开发人员中心配置。
+请确保已将你的游戏服务配置发布到开发沙盒中。  你无法在某个游戏的给定开发沙盒中登录到 Xbox Live，除非该游戏已发布到相同沙盒。  请参阅 [XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)，了解有关该操作的信息。 你可以读取[开发人员中心文档](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)，了解如何发布你的 Windows 开发人员中心配置。
 
 ### <a name="ids-configured-incorrectly"></a>ID 配置不正确
 
@@ -94,7 +94,7 @@ ms.locfileid: "4740596"
 
 总体而言，这意味着设备或用户无法访问指定游戏。
 
-1. 这可能意味着你未使用测试帐户尝试登录或者你的测试帐户没有所登录沙盒的访问权限。 请仔细检查在[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)中创建测试帐户的说明，并[开发人员中心文档。](../../xbox-live-test-accounts.md) 如果需要创建一个新的测试帐户有权访问相应沙盒。
+1. 这可能意味着你未使用测试帐户尝试登录或者你的测试帐户没有所登录沙盒的访问权限。 请仔细检查在[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)中创建测试帐户的说明和[开发人员中心文档。](../../xbox-live-test-accounts.md) 如果需要创建一个新的测试帐户有权访问相应沙盒。
 
 你可能需要删除 Windows 10 中的旧帐户，可通过转至“开始”菜单中的“设置”并转至“帐户”来进行删除。
 

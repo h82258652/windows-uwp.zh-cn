@@ -12,21 +12,21 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: db832032a40b40d4b3a774a56487f7065d9cd8ff
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4744770"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169232"
 ---
 # <a name="post-batch"></a>POST (/batch)
-POST 方法，可用作跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法。 这些 Uri 的域是`userstats.xboxlive.com`。
+发布作为跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法的方法。 这些 Uri 的域是`userstats.xboxlive.com`。
  
 <a id="ID4ET"></a>
 
  
 ## <a name="remarks"></a>备注
  
-游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
+游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
   
   * [备注](#ID4ET)
   * [备注](#ID4EFB)
@@ -53,8 +53,8 @@ POST 方法，可用作跨多个游戏的多个玩家统计数据的复杂的批
  
 没有针对内容隔离和访问控制方案实现的授权逻辑。
  
-   * 排行榜和用户统计信息可以读取的所有平台上的客户端，前提是调用方提交请求的有效 XSTS 令牌。 写入都很明显限于客户端支持。
-   * 游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
+   * 假设调用方提交与请求有效的 XSTS 令牌，可以从任何平台上的客户端读取排行榜和用户统计信息。 写入都很明显限制为支持的客户端。
+   * 游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
   
 下面的示例是伪代码检查：
  
@@ -133,7 +133,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

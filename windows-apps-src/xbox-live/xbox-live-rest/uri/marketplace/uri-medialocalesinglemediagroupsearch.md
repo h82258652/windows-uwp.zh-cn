@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e99fc70db836c36d8f92a4b4c4b12ec8e75c47e1
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752827"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167701"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
-允许搜索在单个媒体组中的项目。 请注意，此搜索返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询优化器。
+允许搜索单个媒体组中的项。 请注意，此搜索从返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询优化器。
  
 这些 Uri 的域是`eds.xboxlive.com`。
  
@@ -41,7 +41,7 @@ ms.locfileid: "4752827"
 
 [GET (media/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
 
-&nbsp;&nbsp;允许搜索在单个媒体组中的项目。 
+&nbsp;&nbsp;允许搜索单个媒体组中的项。 
  
 <a id="ID4ECC"></a>
 

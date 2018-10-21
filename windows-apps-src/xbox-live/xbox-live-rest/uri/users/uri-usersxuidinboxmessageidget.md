@@ -12,21 +12,21 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752961"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5163879"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-检索特定用户消息，将其标记为已在服务上的读的详细的消息文本。
+检索特定用户消息，将其标记为已在服务上读的详细的消息文本。
 这些 Uri 的域是`msg.xboxlive.com`。
 
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
   * [授权](#ID4ERB)
   * [请求正文](#ID4E3B)
-  * [资源的隐私设置的效果](#ID4EJC)
+  * [在资源的隐私设置的效果](#ID4EJC)
   * [HTTP 状态代码](#ID4EUC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EUE)
 
@@ -39,7 +39,7 @@ ms.locfileid: "4752961"
 
 此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新登录。
 
-此 API 支持仅内容类型是"application/json"，这必需的每个调用的 HTTP 标头。
+此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。
 
 <a id="ID4EEB"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "4752961"
 | 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 |
-| 邮件 Id | 字符串 [50] | 要检索或删除该消息的 ID。 |
+| 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 |
 
 <a id="ID4ERB"></a>
 
@@ -68,7 +68,7 @@ ms.locfileid: "4752961"
 <a id="ID4EJC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
 
 仅可以检索自己用户的消息。
 
@@ -77,15 +77,15 @@ ms.locfileid: "4752961"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- |
 | 200| 成功。|
 | 400| 无法正确转换的 XUID。|
-| 403| 不能转换 XUID 或找不到有效的 XUID 声明。|
+| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。|
 | 404| 有效的 XUID 是缺少，或使用消息 ID 找不到或正确地分析。|
-| 500| 常规服务器端错误或消息类型获取无效。|
+| 500| 常规的服务器端错误或消息类型获取无效。|
 
 <a id="ID4EUE"></a>
 
@@ -136,7 +136,7 @@ ms.locfileid: "4752961"
 
 #### <a name="error-response"></a>错误响应
 
-发生错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
+如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
 
 | 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -160,4 +160,4 @@ ms.locfileid: "4752961"
 <a id="ID4EMEAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

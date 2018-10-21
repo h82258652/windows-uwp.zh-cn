@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 610f771641352447f9d38fc4217231ba3230e6fb
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741490"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5168517"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
 为游戏会话表示摘要数据的 JSON 对象。 
@@ -28,7 +28,7 @@ GameSessionSummary JSON 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日期和时间会话创建时，采用 UTC。 | 
+| creationTime| DateTime| 日期和会话的创建时间，采用 UTC 时间。 | 
 | customData| 8 位无符号整数数组| 1024 字节的特定于游戏的会话数据。 此值不透明到服务器。 | 
 | displayName| 字符串| 显示名称的游戏会话，128 个字符的最大长度。 此值不透明到服务器。 | 
 | hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置为 true 标记为只读，游戏会话提交到会话阻止进一步数据此字段。 | 

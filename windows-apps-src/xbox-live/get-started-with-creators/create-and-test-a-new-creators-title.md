@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: fe31a014c3076fa306249aeea006f817956013e2
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742128"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169830"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>创建新的 Xbox Live 创意者计划主题作品并发布到测试环境
 
@@ -27,7 +27,7 @@ ms.locfileid: "4742128"
 
 1. 你正在使用 Xbox Live 创意者计划。
 2. 你正在开发通用 Windows 平台 (UWP) 主题作品。  UWP 主题作品可以在 Xbox One、Windows 10 台式电脑和移动设备上运行
-3. 要在 Windows 开发人员中心上配置你的游戏[http://dev.windows.com/](http://dev.windows.com)。  如有疑问，应使用 Windows 开发人员中心。
+3. 你要在 Windows 开发人员中心上配置你的游戏[http://dev.windows.com/](http://dev.windows.com)。  如有疑问，应使用 Windows 开发人员中心。
 4. 开发计算机运行的是 Windows 10。
 
 > [!NOTE]

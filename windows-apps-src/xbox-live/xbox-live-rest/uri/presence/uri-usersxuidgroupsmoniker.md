@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 356afd69483968a3edd836eb9e031bc8fcfafd4c
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747536"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167714"
 ---
 # <a name="usersxuidxuidgroupsmoniker"></a>/users/xuid({xuid})/groups/{moniker}
 访问 presencerecord，他的一组。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -31,7 +31,7 @@ ms.locfileid: "4747536"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID) 相关的组中的 Xuid 的用户。| 
-| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象以大写 P 是"People"。| 
+| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象大写 P 是"People"。| 
   
 <a id="ID4E4B"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4747536"
 
 [GET (/users/xuid({xuid})/groups/{moniker} )](uri-usersxuidgroupsmonikerget.md)
 
-&nbsp;&nbsp;Presencerecord，他获取一组。
+&nbsp;&nbsp;获取一组 presencerecord，他的。
  
 <a id="ID4EHC"></a>
 

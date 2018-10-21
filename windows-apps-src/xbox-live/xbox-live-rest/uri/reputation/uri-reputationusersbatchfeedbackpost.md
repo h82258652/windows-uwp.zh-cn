@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750226"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169518"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
-使用你的游戏服务来在你的游戏界面之外的批处理形式发送反馈。 这些 Uri 的域是`reputation.xboxlive.com`。
+使用你的游戏服务来在你的游戏界面之外的批处理窗体发送反馈。 这些 Uri 的域是`reputation.xboxlive.com`。
  
   * [请求正文](#ID4EX)
   * [所需的标头](#ID4E3E)
@@ -38,7 +38,7 @@ ms.locfileid: "4750226"
  
 ### <a name="required-members"></a>所需的成员 
  
-请求应包含一个**BatchFeedback**对象数组。 
+请求应包含**BatchFeedback**对象的数组。 
   
 <a id="ID4EPB"></a>
 
@@ -96,8 +96,8 @@ ms.locfileid: "4750226"
 | targetXuid| 字符串| 目标用户的 XUID| 
 | titleId| 字符串| 此反馈，从已发送的标题或为空的。| 
 | sessionRef| 对象| 描述在 MPSD 会话的对象此反馈与之相关，或为 NULL。| 
-| feedbackType| 字符串| FeedbackType 枚举中的值字符串版本。| 
-| textReason| 字符串| 发件人可能会添加以提供有关提交的反馈的更多详细信息的合作伙伴提供的文本。| 
+| feedbackType| 字符串| 字符串值 FeedbackType 枚举中的版本。| 
+| textReason| 字符串| 发件人可能会添加以为更多详细信息已提交的反馈的合作伙伴提供的文本。| 
 | evidenceId| 字符串| 可用作所提交反馈的证据的资源的 ID。 例如视频文件的 ID。| 
    
 <a id="ID4E3E"></a>
@@ -117,14 +117,14 @@ ms.locfileid: "4750226"
 | x xbl 协定版本| 101| API 协定版本。| 
 | 内容类型| 应用程序/json| 提交的数据的类型。| 
 | 授权| "XBL3.0 x =&lt;userhash >;&lt;令牌 >"| HTTP 身份验证的身份验证凭据。| 
-| X RequestedServiceVersion| 101| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。| 
+| X RequestedServiceVersion| 101| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。| 
   
 <a id="ID4EWG"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -132,7 +132,7 @@ ms.locfileid: "4750226"
 | 401| 未授权| 请求要求用户身份验证。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 503| 服务不可用| 请求已阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EDAAC"></a>
 

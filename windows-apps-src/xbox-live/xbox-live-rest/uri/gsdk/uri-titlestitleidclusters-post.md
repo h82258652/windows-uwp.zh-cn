@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4744627"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5171046"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
 允许客户端创建 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -49,11 +49,11 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求时, 显示下表中的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
-| 用户代理|  | 有关发出请求的用户代理信息。| 
+| 用户代理|  | 有关发出请求的用户代理的信息。| 
 | 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverms.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
@@ -65,7 +65,7 @@ gameserverms.xboxlive.com
  
 ## <a name="authorization"></a>授权
  
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头是无效或不存在，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务将在响应中返回 401 未经授权。
   
 <a id="ID4EWD"></a>
 
@@ -100,7 +100,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括下表中所示的标头。
+响应将始终包括下表中所示的标头。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -120,8 +120,8 @@ gameserverms.xboxlive.com
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是估计，当群集将准备好，但而对调用方轮询给定的订阅和请求和实施情况率的当前池状态更新的频率的建议。| 
-| fulfillmentState| 指示是否提供的会话立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或终止，"中止"，因为无法满足请求时立即请求为"true"的指定的 abortIfQueued。 | 
+| pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是的估计值，当群集将准备好，但而对调用方轮询给定的订阅和请求和实施情况率的当前池状态更新的频率的建议。| 
+| fulfillmentState| 指示是否提供的会话立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或终止，"中止"，由于无法满足请求时立即请求指定的 abortIfQueued 为"true"。 | 
  
 <a id="ID4EWH"></a>
 
@@ -149,7 +149,7 @@ gameserverms.xboxlive.com
    * 429： 请求过多
    * 500-服务器错误
    * 502 — 错误的网关
-   * 503-服务不可用
+   * 503 — 服务不可用
    * 504 — 网关超时
    
 <a id="ID4EFBAC"></a>

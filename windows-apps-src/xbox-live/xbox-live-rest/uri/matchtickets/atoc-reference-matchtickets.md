@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bfeb225c67567c392615686743828941c02f6d2
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742092"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5171784"
 ---
 # <a name="matchmaking-uris"></a>匹配 URI
  
@@ -32,16 +32,16 @@ momatch.xboxlive.com
  
 ## <a name="service-version"></a>服务版本
  
-这些 HTTP/REST Uri 的调用方必须为 X-Xbl-协定-版本，HTTP 标头，用于指定的服务版本的娱乐发现服务 (EDS) 传递值 103 或更高版本。 
+这些 HTTP/REST Uri 的调用方必须为 X-Xbl-协定-版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 103 或更高版本。 
   
 <a id="ID4ELB"></a>
 
  
 ## <a name="system-objects-and-properties"></a>系统对象和属性
  
-目前，匹配服务的所有配置都发生手动，使用[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)的服务配置部分。 一些匹配的信息也会反映在为 MPSD 定义的对象。 
+目前，匹配服务的所有配置都发生手动，使用[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)的服务配置部分。 为 MPSD 定义的对象还反映匹配的一些信息。 
  
-[MatchTicket (JSON)](../../json/json-matchticket.md)和[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)中定义的主要用于配置匹配的 JSON 对象。 请注意，所有匹配票证必须都定义一个**ticketSessionRef**对象来提供对包含玩家或想要与其他人匹配的玩家的多人游戏会话的引用。 
+[MatchTicket (JSON)](../../json/json-matchticket.md)和[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)中定义的主要用于配置匹配的 JSON 对象。 请注意所有匹配票证必须都定义一个**ticketSessionRef**对象来提供对包含玩家或想要与其他人匹配的玩家的多人游戏会话的引用。 
   
 <a id="ID4EBC"></a>
 
@@ -54,7 +54,7 @@ momatch.xboxlive.com
 
 [/serviceconfigs/{scid}/hoppers/{name}/stats](uri-serviceconfigsscidhoppershoppernamestats.md)
 
-&nbsp;&nbsp;支持 GET 操作来检索漏斗的统计信息。
+&nbsp;&nbsp;支持获取操作来检索漏斗的统计信息。
 
 [/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}](uri-scidhoppernameticketid.md)
 

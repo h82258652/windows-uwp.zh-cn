@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: af9f52e04a163e0839017e1d051653d968df816d
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740627"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5171765"
 ---
 # <a name="get-usersowneridpeoplemute"></a>GET (/users/{ownerId}/people/mute)
 获取用户的静音的列表。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4EZ)
-  * [资源的隐私设置的效果](#ID4EEB)
+  * [在资源的隐私设置的效果](#ID4EEB)
   * [授权](#ID4ENB)
   * [需的请求标头](#ID4ESC)
   * [请求正文](#ID4EPE)
@@ -36,7 +36,7 @@ ms.locfileid: "4740627"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，则此 URI 将返回仅该用户，如果用户是在静音的列表中，也可以为空，如果用户不是。
+如果给定目标，则此 URI 返回只允许该用户，如果用户是在静音的列表中，也可以为空，如果用户不是。
 
 <a id="ID4EZ"></a>
 
@@ -45,12 +45,12 @@ ms.locfileid: "4740627"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"me"， <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"我" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
 
 <a id="ID4EEB"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
 
 无。
 
@@ -71,7 +71,7 @@ ms.locfileid: "4740627"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权 | 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>Xauth=&lt;authtoken></code>。 最大大小： none。|
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，授权令牌中的声明的有效性后，依此类推。 示例值： <code>1</code>， <code>vnext</code>。 最大大小： none。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，授权令牌中的声明的有效性后，依此类推。 示例值： <code>1</code>， <code>vnext</code>。 最大大小： none。|
 | 接受| 字符串| 内容类型可接受。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4EPE"></a>
@@ -86,7 +86,7 @@ ms.locfileid: "4740627"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

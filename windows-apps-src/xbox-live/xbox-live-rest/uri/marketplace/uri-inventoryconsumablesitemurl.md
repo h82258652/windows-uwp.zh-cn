@@ -3,7 +3,7 @@ title: /users/me/consumables/{itemID}
 assetID: 45724827-5e35-326f-3f17-f49e606d9e08
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurl.html
 author: KevinAsgari
-description: 为用户的 Xbox 易耗品 rESTful 终结点。
+description: Xbox 用户的易耗型项目 rESTful 终结点。
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740491"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169341"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。
@@ -40,7 +40,7 @@ ms.locfileid: "4740491"
 
 [POST ({itemID})](uri-inventoryconsumablesitemurlpost.md)
 
-&nbsp;&nbsp;指示，已使用所有或易耗型库存项目的部分和递减请求量该消耗品的数量。
+&nbsp;&nbsp;指示，已使用全部或部分的易耗型的库存项目并减少所请求的量通过该消耗品的数量。
 
 <a id="ID4E4B"></a>
 

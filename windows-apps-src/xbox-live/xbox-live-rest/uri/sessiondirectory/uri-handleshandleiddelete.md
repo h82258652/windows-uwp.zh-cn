@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 15300451495c198a1f15997bae38cb862a9b8186
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4748939"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169827"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
 删除句柄 ID 指定的句柄
@@ -34,7 +34,7 @@ ms.locfileid: "4748939"
 
 
 ## <a name="remarks"></a>备注
-此 HTTP/REST 方法删除句柄对于指定 ID，并清除用户的当前活动会话。 此方法可以由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.ClearActivityAsync**包装。  
+此 HTTP/REST 方法删除句柄对于指定 ID，并清除用户的当前活动会话。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.ClearActivityAsync**包装。  
 <a id="ID4EAB"></a>
 
 

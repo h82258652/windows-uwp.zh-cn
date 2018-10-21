@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747166"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5171790"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 从调用方的角度来看，获取有关所有者的摘要数据。
@@ -79,7 +79,7 @@ ms.locfileid: "4747166"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -95,7 +95,7 @@ ms.locfileid: "4747166"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 232。|
-| Content-Type| 字符串| 响应正文的 MIME 类型。 这必须是<b>应用程序/json</b>。|
+| Content-Type| 字符串| 响应正文的 MIME 类型。 这必须是<b>application/json</b>。|
 
 <a id="ID4EGAAC"></a>
 

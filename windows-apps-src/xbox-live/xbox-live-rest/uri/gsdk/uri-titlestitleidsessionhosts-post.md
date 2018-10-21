@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 147df5a3032aa950b7b301f7990c5456db200d2c
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751746"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5170751"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 创建新群集请求。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -48,7 +48,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求时, 显示下表中的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
@@ -64,7 +64,7 @@ gameserverms.xboxlive.com
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | sessionId| 这是调用方指定的标识符。 它已分配给会话主机进行分配和返回。 以后，你可以通过此标识符来引用特定 sessionhost。 它必须是全局唯一 (即 GUID)。| 
-| SandboxId| 你想要在分配的会话主机沙盒。| 
+| SandboxId| 你想要中分配的会话主机沙盒。| 
 | cloudGameId| 云游戏标识符。| 
 | 位置| 你想要从分配的会话的首选位置的排序的列表。| 
 | sessionCookie| 这是调用方指定不透明的字符串。 它与 sessionhost 相关联，并可以在你的游戏代码中引用。 使用此成员从客户端向服务器 （最大大小为 4 KB） 传递少量的信息。| 
@@ -110,8 +110,8 @@ gameserverms.xboxlive.com
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 主机名| 实例的主机名。| 
-| portMappings| 端口映射。| 
-| 区域| 在托管区域实例。| 
+| portMappings| 端口映射中。| 
+| 区域| 区域实例中托管。| 
 | secureContext| 安全设备地址。| 
  
 <a id="ID4ESE"></a>
@@ -157,9 +157,9 @@ gameserverms.xboxlive.com
    * 400-参数无效或格式不正确的请求正文。
    * 401-未授权
    * 404-主题作品 id 不具有任何订阅分配给它。
-   * 409 — 相同的请求大约在同一时间进行 (相同 sessionId)，此响应时，可以。 如果分配请求和会话主机已指定的 sessionId 已处于活动状态，我们将返回有关该 sessionhost 详细信息。 如果会话主机，但是，并不活动状态，但你将收到冲突。
+   * 409 — 相同的请求大约在同一时间进行 (相同 sessionId)，此响应时，可以。 如果分配请求和会话主机已指定的 sessionId 和已处于活动状态，我们将返回有关该 sessionhost 详细信息。 如果会话主机，但是，并不活动状态，但你将收到冲突。
    * 500-意外的服务器错误。
-   * 503 — 无 sessionhosts StandingBy。 这些资源的一些可用时，重试请求。
+   * 503 — 无 sessionhosts StandingBy。 当这些资源的一些是免费重试请求。
    
 <a id="ID4EFG"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747527"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169289"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 完全重置为测试用户信誉数据。 仅供测试。
@@ -35,7 +35,7 @@ ms.locfileid: "4747527"
 
 调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 执行团队可能会调用此 API 使用任何沙盒 id。
 
-这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。
+这些 Uri 的域是`reputation.xboxlive.com`。 上端口 10443 始终调用此 URI。
 
 <a id="ID4E5"></a>
 
@@ -51,7 +51,7 @@ ms.locfileid: "4747527"
 
 ## <a name="authorization"></a>授权
 
-Retail 沙盒中，从强制执行团队**PartnerClaim** 。
+Retail 沙盒中，从执行团队**PartnerClaim** 。
 
 对于所有其他沙盒， **PartnerClaim**和**SandboxIdClaim**。
 
@@ -60,14 +60,14 @@ Retail 沙盒中，从强制执行团队**PartnerClaim** 。
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-**内容类型： 应用程序/json**和**X Xbl 协定版本**（当前版本是 101）。
+**Content-type: application/json**和**X Xbl 协定版本**（当前版本是 101）。
 
 <a id="ID4EHC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-该服务返回的状态代码之一此部分中使用此方法对此资源所做的请求的响应。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ Retail 沙盒中，从强制执行团队**PartnerClaim** 。
 | 401| 未授权| 请求要求用户身份验证。|
 | 404| 找不到| 找不到指定的资源。|
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。|
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。|
+| 503| 服务不可用| 请求已阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。|
 
 <a id="ID4EJF"></a>
 

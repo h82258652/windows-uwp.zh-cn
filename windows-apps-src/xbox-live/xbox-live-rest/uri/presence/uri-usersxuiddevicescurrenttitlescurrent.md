@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe5e366c48dc5cc7586604584adb6af00207b85
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4748199"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5169154"
 ---
 # <a name="usersxuidxuiddevicescurrenttitlescurrent"></a>/users/xuid({xuid})/devices/current/titles/current
 访问游戏或游戏的用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -39,7 +39,7 @@ ms.locfileid: "4748199"
 
 [DELETE (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentdelete.md)
 
-&nbsp;&nbsp;删除结束游戏，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。
+&nbsp;&nbsp;删除结束标题，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期存在。
 
 [POST (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentpost.md)
 

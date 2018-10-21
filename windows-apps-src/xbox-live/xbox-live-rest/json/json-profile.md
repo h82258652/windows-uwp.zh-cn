@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4754832"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5170022"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 用户的个人配置文件设置。 
@@ -41,7 +41,7 @@ ms.locfileid: "4754832"
 
 
 > [!NOTE] 
-> 图片可以是用户的真实图片或其 xbox One 玩家头像，具体取决于隐私。 这些设置表示应该用于客户端上显示的用户的图片 url。 此图像可能为空 （指示用户尚未设置任何图片）。 
+> 图片可以是用户的真实图片或其 xbox One 玩家图片，具体取决于隐私。 这些设置表示应该用于客户端上显示的用户的图片 url。 此图像可能为空 （指示用户尚未设置任何图片）。 
 
 
  
@@ -49,7 +49,7 @@ ms.locfileid: "4754832"
  
 格式： png
  
-大小： 64 x 64，208 x 208，424 x 424
+大小： 64 x 64、 208 x 208、 424 x 424
  
 <a id="ID4E2D"></a>
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 04952a183a2903a5c296a6b27af35766bccbddc1
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4748936"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167541"
 ---
 # <a name="untrustedplatformusersbatchscidssciddatapathandfilenametype"></a>/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
-将多个文件下载从多个用户具有相同的文件名。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+从具有相同的文件名多个用户下载多个文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "4748936"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （设置到阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （最终正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且反斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件的 json。| 
   
 <a id="ID4EFC"></a>
@@ -41,7 +41,7 @@ ms.locfileid: "4748936"
 
 [POST](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype-post.md)
 
-&nbsp;&nbsp;将多个文件下载从多个用户具有相同的文件名。
+&nbsp;&nbsp;从具有相同的文件名多个用户下载多个文件。
  
 <a id="ID4EPC"></a>
 
