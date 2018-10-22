@@ -3,30 +3,32 @@ author: stevewhims
 description: 为了帮助你更快地开始使用 C++/WinRT，本主题将详细介绍一个简单的代码示例。
 title: C++/WinRT 入门
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 获取, 获得, 开始
 ms.localizationpriority: medium
-ms.openlocfilehash: b5954aa8236a9abeee6e5c74a200f77fcccf97e3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: b8f8425fa602c844803cc632f523949b8b04d551
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5165809"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5403097"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
-若要帮助你更快地开始使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，本主题介绍一个简单的代码示例。
+
+若要帮助你更快地开始使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，本主题介绍基于新一个简单的代码示例**Windows 控制台应用程序 (C + + WinRT)** 项目。 本主题还介绍了如何[添加 C + + /winrt 支持到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
+
+> [!IMPORTANT]
+> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，然后新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**其他选项**，然后将其删除)。
 
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
+
 > [!NOTE]
 > 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
-
-> [!IMPORTANT]
-> 如果你使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，并面向 Windows SDK 版本 10.0.17134.0(windows 10，版本 1803年)，然后新创建 C + + WinRT 项目可能无法编译错误"*错误 C3861: from_abi': 标识符不找到*"，以及与源自*base.h*其他错误。 解决方法是任一目标更高版本的 （更多一致） 版本的 Windows SDK 或设置项目属性**C/c + +** > **语言** > **合规模式： 否**(另外，如果 **/ 许可-** 出现在项目属性**C/C++** > **语言** > **命令行**下**其他选项**，然后将其删除)。
 
 按下面所示编辑 `pch.h` 和 `main.cpp`。
 
@@ -117,6 +119,48 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 如你所见，C++/WinRT 鼓励使用与类相似的新式 C++ 表达式，例如 `syndicationItem.Title().Text()`。 这是与传统的 COM 编程不同的更简洁的编程风格。 你无需直接初始化 COM、处理 COM 指针。
 
 也不需要处理 HRESULT 返回代码。 C++/WinRT 会将错误 HRESULT 转换为异常（如 [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)）以实现自然、现代化的编程风格。 有关错误处理以及代码示例的详细信息，请参阅 [C++/WinRT 的错误处理](error-handling.md)。
+
+## <a name="modify-a-windows-desktop-application-project-to-add-cwinrt-support"></a>修改 Windows 桌面应用程序项目添加 C + + /winrt 支持
+
+本部分介绍了如何添加 C + + WinRT 支持添加到你可能有一个 Windows 桌面应用程序项目。 如果你没有现有的 Windows 桌面应用程序项目，然后你可以按照以下步骤以及按创建的第一个。 例如，打开 Visual Studio 并创建**Visual c + +** \> **Windows 桌面版** \> **Windows 桌面应用程序**项目。
+
+### <a name="set-project-properties"></a>设置项目属性
+
+转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 确保**Windows SDK 版本**被设置为 10.0.17134.0(windows 10，版本 1803年) 或更高版本。
+
+确认你正在不受[为什么不会我的新项目编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
+
+因为 C + + /winrt 使用 C + + 17 标准的功能，请将项目属性**C/c + +** > **语言** > 的**c + + 语言标准** *ISO C + + 17 标准 (/ std:c + + 17)*。
+
+### <a name="the-precompiled-header"></a>预编译标头
+
+重命名你`stdafx.h`和`stdafx.cpp`到`pch.h`和`pch.cpp`分别。 设置项目属性**C/c + +** > **预编译标头** >  *pch.h***预编译标头文件**。
+
+查找和替换所有`#include "stdafx.h"`使用`#include "pch.h"`。
+
+在`pch.h`，包括`winrt/base.h`。
+
+```cppwinrt
+// pch.h
+...
+#include <winrt/base.h>
+```
+
+## <a name="linking"></a>链接
+
+C + + /winrt 语言投影依赖于某些 Windows 运行时可用 （非成员） 函数和入口点，需要链接到[WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 本部分介绍满足链接器三种的方式。
+
+第一个选项是将添加到你的 Visual Studio 项目所有 C + + /winrt MSBuild 属性和目标。 编辑你`.vcxproj`文件，找到`<PropertyGroup Label="Globals">`，该属性在组内，设置属性`<CppWinRTEnabled>true</CppWinRTEnabled>`。
+
+或者，你可以使用项目链接设置显式链接`WindowsApp.lib`。
+
+或者，你可以执行此操作它源代码 (在`pch.h`，例如) 如下。
+
+```cppwinrt
+#pragma comment(lib, "windowsapp")
+```
+
+你现在可以编译和链接，并添加 C + + WinRT 代码到你的项目 (例如中, 显示的代码[使用 + /winrt 快速入门](#a-cwinrt-quick-start)部分，更高版本)
 
 ## <a name="important-apis"></a>重要的 API
 * [Syndicationclient:: Retrievefeedasync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
