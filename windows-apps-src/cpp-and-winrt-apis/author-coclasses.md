@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp，标准、 c + +，cpp，winrt，投影，作者，COM，组件
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f59833f4c657445b7135b1158974d8a553813f
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: 24fd024ee25a6868b8c25b77ce31edc6662bbb6d
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160019"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408380"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
@@ -423,29 +423,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 你可以开始通过在 Microsoft Visual Studio 中创建新项目中创建的进程内 COM 服务器的任务。 创建**Visual c + +** > **Windows 桌面版** > **动态链接库 (DLL)** 项目。
 
-### <a name="set-project-properties"></a>设置项目属性
-
-转到项目属性**常规** \> **Windows SDK 版本**，并选择**所有配置**和**所有平台**。 设置**Windows SDK 版本**为*10.0.17134.0 （Windows 10，版本 1803年）*，或更高版本。
-
-若要添加 Visual Studio 支持 C + + WinRT 到你的项目，编辑你`.vcxproj`文件，找到`<PropertyGroup Label="Globals">`，该属性在组内，设置属性`<CppWinRTEnabled>true</CppWinRTEnabled>`。
-
-因为 C + + /winrt 使用 C + + 17 标准的功能，请将项目属性**C/c + +** > **语言** > 的**c + + 语言标准** *ISO C + + 17 标准 (/ std:c + + 17)*。
-
-### <a name="the-precompiled-header"></a>预编译标头
-
-重命名你`stdafx.h`和`stdafx.cpp`到`pch.h`和`pch.cpp`分别。 设置项目属性**C/c + +** > **预编译标头** >  *pch.h***预编译标头文件**。
-
-查找和替换所有`#include "stdafx.h"`使用`#include "pch.h"`。
-
-在`pch.h`，包括`winrt/base.h`。
-
-```cppwinrt
-// pch.h
-...
-#include <winrt/base.h>
-```
-
-确认你正在不受[为什么不会我的新项目编译？](/windows/uwp/cpp-and-winrt-apis/faq)。
+若要添加 C + + WinRT 支持添加到新项目，请按照中所述的步骤[修改 Windows 桌面应用程序项目添加 C + + /winrt 支持](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 ### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>实现 coclass、 类工厂和进程内服务器导出
 

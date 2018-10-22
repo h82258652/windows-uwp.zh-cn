@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fc09e7a9d98d04c53aac0d76293b9d8e4dc6ed91
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170382"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407515"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>适用于 UWP 应用的锁屏提醒通知
 
