@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 评分, 评价
 ms.localizationpriority: medium
 ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397979"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431406"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>请求应用的评分和评价
 

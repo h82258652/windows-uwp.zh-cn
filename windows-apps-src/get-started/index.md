@@ -11,11 +11,11 @@ keywords: 入门, Windows 10, uwp, xaml, c#
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403014"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430638"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门 
  

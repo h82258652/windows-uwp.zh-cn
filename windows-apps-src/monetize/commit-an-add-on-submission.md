@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d20bffe2be163db568af0b16bdfef8cd600271
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409796"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430818"
 ---
 # <a name="commit-an-add-on-submission"></a>确认加载项提交
 
