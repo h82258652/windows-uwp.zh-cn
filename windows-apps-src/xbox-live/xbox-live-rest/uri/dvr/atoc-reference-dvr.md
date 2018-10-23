@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5163021"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5402489"
 ---
 # <a name="game-dvr-uris"></a>游戏 DVR URI
  

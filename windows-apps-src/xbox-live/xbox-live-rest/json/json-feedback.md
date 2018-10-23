@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e9ef3bb19155199ae94b18b828fb40eb7a0a2ce6
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5171805"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5407375"
 ---
 # <a name="feedback-json"></a>Feedback (JSON)
 包含与玩家有关的反馈信息。

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab3214ca9b2cb2ff8ace11706ceda22885598e1
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5156552"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5399611"
 ---
 # <a name="get-handleshandleidsession"></a>GET (/handles/{handleId}/session)
 获取指定的句柄标识符会话对象。

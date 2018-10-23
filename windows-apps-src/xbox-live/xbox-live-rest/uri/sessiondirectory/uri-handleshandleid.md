@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 47dda291a9a86ccbee69e1e51ca71be373f5dc1d
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5170707"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5407758"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
 支持会话句柄由标识符指定的删除和 GET 操作。 

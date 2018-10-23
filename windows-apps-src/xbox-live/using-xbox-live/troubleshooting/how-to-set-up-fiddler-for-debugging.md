@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, fiddler, 服务调用, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eaa21ca792ab3071cb06a9e564f7ad1826782b4
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5160448"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404900"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>使用 Fiddler 的 Xbox Live 疑难解答
 

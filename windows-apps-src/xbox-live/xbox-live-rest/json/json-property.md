@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 033a87580680b054f5eefec7c543215e4351ace3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5171787"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5403222"
 ---
 # <a name="property-json"></a>Property (JSON)
 包含匹配请求条件为提供的客户端的属性数据。

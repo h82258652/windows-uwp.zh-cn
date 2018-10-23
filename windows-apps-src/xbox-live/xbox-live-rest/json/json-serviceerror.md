@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9f5cb3f4dc0565cafc073cea35e3e6e00d273f
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5165453"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5396614"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 包含有关错误对服务调用失败时返回的信息。 

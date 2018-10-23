@@ -10,11 +10,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 标题存储, Windows 开发人员中心
 ms.openlocfilehash: 7a258db9c4615de81ba32be4b636e007d3b9471c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5158823"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5402873"
 ---
 # <a name="configure-storage-for-you-title-on-windows-dev-center"></a>在 Windows 开发人员中心为标题配置存储
 

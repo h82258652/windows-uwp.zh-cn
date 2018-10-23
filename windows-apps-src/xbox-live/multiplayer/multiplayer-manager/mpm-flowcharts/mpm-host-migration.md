@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 6394e440981dea5da28b0a5e59334def9a2a57e8
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5163347"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5397867"
 ---
 # <a name="flowchart---handle-host-migration"></a>流程图 - 处理主机迁移
 

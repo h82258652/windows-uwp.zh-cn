@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ecdf1bb3da9f2cd92e95976e07bbc2fd58a51800
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5164815"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401869"
 ---
 # <a name="xbox-live-storage-platform---connected-storage-title-storage"></a>Xbox Live 存储平台 - 连接存储、标题存储
 
