@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: a80d25ee14ada799bce5d9e341869522e600e6a5
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399860"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5444302"
 ---
 # <a name="real-time-activity-rta-best-practices"></a>实时活动 (RTA) 最佳实践
 这些最佳实践将有助于你在作品中充分利用 RTA。

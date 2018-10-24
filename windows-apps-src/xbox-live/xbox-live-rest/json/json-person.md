@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8e4ac4e91c4359ca20822297ccb625d09e3d59
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5407633"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5436854"
 ---
 # <a name="person-json"></a>Person (JSON)
 有关单个人员人脉系统中的元数据。 

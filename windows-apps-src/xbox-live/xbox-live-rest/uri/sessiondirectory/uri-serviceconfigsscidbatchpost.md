@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f7bc8a4dae55c60e501c2a38e6806b00f4d5075
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401650"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5433202"
 ---
 # <a name="post-serviceconfigsscidbatch"></a>POST (/serviceconfigs/{scid}/batch)
 在服务配置的多个 Xbox 用户 Id 创建批处理查询。

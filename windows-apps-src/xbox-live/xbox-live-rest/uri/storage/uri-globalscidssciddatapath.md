@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b091f3bbb5e03808d04a255b204c13eee93f7fdb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5407863"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5443511"
 ---
 # <a name="globalscidssciddatapath"></a>/global/scids/{scid}/data/{path}
 列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。

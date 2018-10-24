@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
 ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395770"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445694"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 089d2a492c8878e79bd60de1226c948e1eee7e0f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400762"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5442419"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 一个游戏会话的消息队列中定义为一条消息的数据的 JSON 对象。 

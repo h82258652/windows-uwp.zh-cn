@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a215e9e1abb6daad2c011f38d56c2e501bd16e40
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5405826"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5439919"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 检索用户的剪辑的列表。

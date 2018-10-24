@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 身份验证, 登录
 ms.localizationpriority: medium
 ms.openlocfilehash: e6e833601bc02052a841c78bc4f140cb9f45e74f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5409462"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5442353"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP 项目的身份验证
 

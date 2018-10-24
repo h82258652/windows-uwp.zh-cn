@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bc3d574274bdef6d0033e9f5313457706dd509e
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402882"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5442154"
 ---
 # <a name="permissioncheckbatchresponse-json"></a>PermissionCheckBatchResponse (JSON)
 批处理权限的结果检查的多个用户的权限值列表。 

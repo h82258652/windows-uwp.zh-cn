@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14304f38d84894ef999003e86f92beeca526ef
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5409245"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5444485"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 枚举
 详细介绍 ThumbnailSource 枚举。 

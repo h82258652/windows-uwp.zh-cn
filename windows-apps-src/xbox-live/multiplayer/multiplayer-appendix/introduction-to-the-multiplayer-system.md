@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: e43470a19338f4a523c89bec6dd45e2672dfd283
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402195"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5438504"
 ---
 # <a name="introduction-to-the-multiplayer-system"></a>多人游戏系统简介
 

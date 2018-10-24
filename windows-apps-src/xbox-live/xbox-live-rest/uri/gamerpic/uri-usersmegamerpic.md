@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e8f71a565b253a9601a61488948920f75d0444f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399508"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5440692"
 ---
 # <a name="usersmegamerpic"></a>/users/me/gamerpic
 访问 1080 x 1080 玩家图片。  

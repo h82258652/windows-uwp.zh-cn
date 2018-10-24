@@ -10,11 +10,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 特权, Windows 开发人员中心
 ms.openlocfilehash: f9ca72d54a539ab7fac684646019e2923572c297
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403116"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5434676"
 ---
 # <a name="configure-privileges-on-windows-dev-center"></a>在 Windows 开发人员中心上配置特权
 

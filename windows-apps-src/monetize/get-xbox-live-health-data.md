@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 运行状况, 客户端错误
 ms.localizationpriority: medium
 ms.openlocfilehash: e7802db965ee4d1515090270125430871544d9f1
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407238"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440821"
 ---
 # <a name="get-xbox-live-health-data"></a>获取 Xbox Live 运行状况数据
 

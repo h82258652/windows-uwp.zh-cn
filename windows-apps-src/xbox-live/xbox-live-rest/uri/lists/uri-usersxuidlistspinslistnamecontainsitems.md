@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e775e5e7033b5ddf53ed4f05c9965731c5d70a3
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398665"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5441220"
 ---
 # <a name="usersxuidxuidlistspinslistnamecontainsitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 确定是否项目 （由 itemId 指定） 的一组包含在列表中而不检索将整个列表。 这些 Uri 的域是`eplists.xboxlive.com`。

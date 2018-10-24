@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe7de94e4a8564b4971fda0b64f6648d9b6088b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400131"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444717"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 版本 16299 中的最近更新
 

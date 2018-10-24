@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403067"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445253"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 

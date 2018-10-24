@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407038"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443740"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>用资产包和包折叠进行开发 
 

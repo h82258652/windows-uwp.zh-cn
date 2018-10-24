@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396411"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442635"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 

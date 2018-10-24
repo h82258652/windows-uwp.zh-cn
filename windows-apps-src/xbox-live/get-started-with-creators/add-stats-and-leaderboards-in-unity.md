@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, 创意者
 ms.localizationpriority: medium
 ms.openlocfilehash: b23d2964e541ea9102a704caa187041a2ce57891
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399614"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5439903"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>向 Unity 项目添加玩家统计数据和排行榜
 

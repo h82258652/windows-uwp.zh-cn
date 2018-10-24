@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 广告, AdControl, 错误处理, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e25de40c7fd28cb43c308bd0361b400e7bf6909
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398054"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443218"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 演练中的错误处理
 

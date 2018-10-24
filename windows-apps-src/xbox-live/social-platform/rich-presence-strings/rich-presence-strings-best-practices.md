@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态, 最佳实践
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d9266bc4416443a3f6e78d4d0fedb9886f10044
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397499"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5441312"
 ---
 # <a name="rich-presence-best-practices"></a>“完整状态”最佳实践
 

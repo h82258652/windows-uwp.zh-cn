@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396836"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5444247"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
 包含有关从存储游戏的信息。 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 统计信息, 成就, 排行榜, 数据平台
 ms.localizationpriority: medium
 ms.openlocfilehash: fa9f3e9fa697e3ec7ca474a6e0a38cf5ac9536ad
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5410269"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5442432"
 ---
 # <a name="xbox-live-data-platform---stats-leaderboards-achievements"></a>Xbox Live 数据平台 - 统计信息、排行榜、成就
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 处理
 ms.localizationpriority: medium
 ms.openlocfilehash: 706a9c7ccaa9188bef046c814cb19e8568fd26b7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400310"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5437279"
 ---
 # <a name="winrt-api-error-handling"></a>WinRT API 错误处理
 

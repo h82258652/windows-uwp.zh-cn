@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 71d8701e5efa4df719ddc3bda66b5c6cdbece435
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399608"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5442654"
 ---
 # <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a>向 UWP 项目添加 Xbox Live API 源并进行编译
 

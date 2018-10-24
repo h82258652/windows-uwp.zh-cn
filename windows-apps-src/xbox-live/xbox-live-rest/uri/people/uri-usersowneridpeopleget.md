@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d08a8ff9e04b255944128ffc1cd1c0b101180d8f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395038"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5444343"
 ---
 # <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 获取调用方的用户集合。

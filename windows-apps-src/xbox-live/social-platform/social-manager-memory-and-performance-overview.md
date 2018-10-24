@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 社交管理器, 人脉
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e32ea2c1938bc72642d8affa031dffd538d4feb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402809"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5444514"
 ---
 # <a name="social-manager-memory-and-performance-overview"></a>社交管理器内存和性能概述
 

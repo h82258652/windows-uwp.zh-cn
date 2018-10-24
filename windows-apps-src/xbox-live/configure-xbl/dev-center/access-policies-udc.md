@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 8a19c6e116cb6c2f3cd8e2f2d8541516ebf89de9
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5408106"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5433306"
 ---
 # <a name="configure-access-policies-on-dev-center"></a>在开发人员中心上配置访问策略
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d862114f95a3b6f1e9c519f37f2d3eacc32de4d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5410625"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5435876"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
