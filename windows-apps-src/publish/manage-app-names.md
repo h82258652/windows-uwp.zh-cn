@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用名，更改应用名称、 更新应用名称、 游戏的名称、 产品名称
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438205"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468625"
 ---
 # <a name="manage-app-names"></a>管理应用名称
 
@@ -64,9 +64,9 @@ ms.locfileid: "5438205"
 > [!TIP]
 > 使用第一个名称为它保留在仪表板中将显示每个应用。 如果你已遵循以上步骤以重命名的应用，并且你想要使用的新名称在仪表板中显示，你必须删除的原始名称 （通过**管理应用名称**页上，单击**删除**）。 
 
- 
+ 
 
- 
+ 
 
 
 

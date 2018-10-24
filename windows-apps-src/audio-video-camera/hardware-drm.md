@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439871"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474352"
 ---
 # <a name="hardware-drm"></a>硬件 DRM
 
@@ -29,7 +29,7 @@ ms.locfileid: "5439871"
 
 ## <a name="windows-tee-implementation"></a>Windows TEE 实现
 
-本主题简要概述了 Windows 10 如何实现受信任的执行环境 (TEE)。
+本主题提供简要概述了 windows 10 如何实现受信任的执行环境 (TEE)。
 
 Windows TEE 实现的详细信息不在本文档范围内。 但是，简要讨论标准移植工具包 TEE 端口和 Windows 端口之间的区别将非常有益。 Windows 可实现 OEM 代理层，并将序列化 PRITEE 函数调用传输到 Windows Media Foundation 子系统中的用户模式驱动程序。 这将最终传送至 Windows TrEE（受信任的执行环境）驱动程序或 OEM 图形驱动程序。 有关这些方法的详细信息已超出了本文档范围。 下图显示了 Windows 端口的常规组件交互。 如果想要开发 Windows PlayReady TEE 实现，可以联系 <WMLA@Microsoft.com>。
 

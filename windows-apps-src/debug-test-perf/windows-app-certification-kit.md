@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443541"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468934"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -27,8 +27,8 @@ ms.locfileid: "5443541"
 
 测试通用 Windows 应用的先决条件：
 
--   必须安装并运行 Windows 10。
--   必须安装 [Windows 应用认证工具包版本 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，该版本包含在适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中。
+-   你必须安装并运行 windows 10。
+-   你必须安装[Windows 应用认证工具包版本 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，它包含在 Windows 软件开发工具包 (SDK) 适用于 windows 10。
 -   必须[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 -   必须将要测试的 Windows 应用部署到计算机。
 
@@ -56,17 +56,17 @@ ms.locfileid: "5443541"
 
 6.  打开报告文件并查看测试结果。
 
-**注意**  如果你使用的是 Visual Studio，你可以在创建应用包时运行 Windows 应用认证工具包。 请参阅[打包 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Mt627715)以了解操作方法。
+**注意**如果你使用 Visual Studio，你可以创建应用包时运行 Windows 应用认证工具包。 请参阅[打包 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Mt627715)以了解操作方法。
 
- 
+ 
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>从命令行使用 Windows 应用认证工具包验证 Windows 应用
 
-**重要提示**  必须在活动用户会话的上下文中运行 Windows 应用认证工具包。
+**重要提示**必须在活动用户会话的上下文中运行 Windows 应用认证工具包。
 
 1.  在命令窗口中，导航到包含 Windows 应用认证工具包的目录。
 
-    **注意**   默认路径是 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
+    **注意**的默认路径是 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
 2.  按此顺序输入以下命令，以测试已安装在你的测试计算机上的应用：
 
@@ -82,9 +82,9 @@ ms.locfileid: "5443541"
 
 3.  在测试完成后，打开名为 `[report file name]` 的报告文件并查看测试结果。
 
-**注意**  可以从某个服务运行 Windows 应用认证工具包，但是该服务必须在活动用户会话内启动工具包过程，并且不得在 Session0 中运行。
+**注意**可以从某个服务中，运行 Windows 应用认证工具包，但是该服务必须在活动用户会话内启动工具包过程，并且不得在 Session0 中运行。
 
-**注意**   有关 Windows 应用认证工具包命令行的详细信息，请输入命令 `appcert.exe /?`
+**注意**有关 Windows 应用认证工具包命令行的详细信息，请输入命令 `appcert.exe /?`
 
 ## <a name="testing-with-a-low-power-computer"></a>使用低能耗电脑进行测试
 
@@ -98,9 +98,9 @@ Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能
 
 * [Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)
 * [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 
 
- 
+ 
 
 
 

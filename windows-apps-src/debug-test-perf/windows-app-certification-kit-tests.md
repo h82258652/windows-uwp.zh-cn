@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434690"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483877"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
@@ -319,11 +319,11 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 确保应用编译为一个发行版本，而不是调试版本。
 
-> **注意** 应用的调试版本将无法通过此测试，即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+> **注意**即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)，应用的调试版本将无法通过此测试。
 
 查看错误消息，识别应用所用的不是[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
 
-> **注意** 内置于该调试配置中的 c + + 应用将无法通过此测试，即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **注意**即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api，内置于该调试配置中的 c + + 应用将无法通过此测试。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
 ## <a name="performance-tests"></a>性能测试
 
@@ -481,7 +481,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 
 
- 
+ 
 
 ### <a name="branding-validation"></a>品牌验证
 
@@ -551,7 +551,7 @@ Microsoft 应用商店要求使用 Direct3D 正确呈现或正常功能级别 9 
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D 暂停后修正
 
-> **注意** 此测试仅适用于 Windows 8.1 及更高版本开发 UWP 应用。
+> **注意**此测试仅适用于 UWP 应用开发的 Windows8.1 及更高版本。
 
 ### <a name="background"></a>后台
 
@@ -673,4 +673,4 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
 
 * [Windows 桌面桥应用测试](windows-desktop-bridge-app-tests.md)
 * [Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 

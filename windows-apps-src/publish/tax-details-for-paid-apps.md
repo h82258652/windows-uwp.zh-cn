@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
 ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444825"
+ms.locfileid: "5474382"
 ---
 # <a name="tax-details-for-paid-apps"></a>付费应用的税收明细
 
@@ -30,7 +30,7 @@ ms.locfileid: "5444825"
 > 
 > 经销商所在国家/地区的税收责任和情形（如[下方](#reseller-countriesregions)所述）列于[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)附件 C 中，与下表中列出的信息不产生冲突
 
- 
+ 
 
 | 国家/地区                   | 价格选择的税收注意事项                                                                                                             | 付款含义                    | 税收责任 |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------|
@@ -226,7 +226,7 @@ ms.locfileid: "5444825"
 | 赞比亚                           | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 | 津巴布韦                         | 所选择的价格就是最终售价并且包含所有适用的税款。                                                                   | 所选价格的 70%                 | 开发人员          |
 
- 
+ 
 
 ## <a name="mixed-remittance-countriesregions"></a>混合汇款的国家/地区
 
@@ -238,7 +238,7 @@ ms.locfileid: "5444825"
 | 南非                       |
 | 越南                            |
 
- 
+ 
 
 ## <a name="reseller-countriesregions"></a>经销商国家/地区
 
@@ -250,11 +250,11 @@ ms.locfileid: "5444825"
 | 中国（运行 Windows Phone 7.x 的移动通信设备和运行 Windows8.x 的个人计算机除外） |
 | 巴西（仅适用于在 Windows 10 设备上进行的购买）     |
 
- 
+ 
 
 
 
- 
+ 
 
 
 

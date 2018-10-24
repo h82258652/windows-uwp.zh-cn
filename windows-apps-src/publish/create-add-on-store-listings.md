@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435550"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468357"
 ---
 # <a name="create-add-on-store-listings"></a>创建加载项 Store 一览
 
@@ -50,9 +50,9 @@ ms.locfileid: "5435550"
 
 你也可以选择提供一张可以显示给客户的图像。 此图标必须是大小正好为 300 x 300 像素的 .png 文件。
 
- 
+ 
 
- 
+ 
 
 
 

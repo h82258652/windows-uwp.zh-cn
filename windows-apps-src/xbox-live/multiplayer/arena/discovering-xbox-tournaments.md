@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: 3417304a1033084ef7543b602b80901a38a5b0b1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444321"
+ms.locfileid: "5483379"
 ---
 # <a name="discovering-xbox-tournaments"></a>发现 Xbox 锦标赛
 

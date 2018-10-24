@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db3af004831f010a3dd4918898ce5f7cf70bb1a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438116"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468595"
 ---
 # <a name="intro-to-certificates"></a>证书简介
 
@@ -26,7 +26,7 @@ ms.locfileid: "5438116"
 
 ### <a name="shared-certificate-stores"></a>共享的证书存储
 
-UWP 应用将使用在 Windows 8 中引入的新 isolationist 应用程序模型。 在此模型中，应用将在低级操作系统结构（称为应用容器）中运行，除非明确允许，否则禁止应用访问除本身以外的资源或文件。 以下各节将介绍这对公钥基础结构 (PKI) 的含义。
+UWP 应用使用 Windows8 中引入的新 isolationist 应用程序模型。 在此模型中，应用将在低级操作系统结构（称为应用容器）中运行，除非明确允许，否则禁止应用访问除本身以外的资源或文件。 以下各节将介绍这对公钥基础结构 (PKI) 的含义。
 
 ### <a name="certificate-storage-per-app-container"></a>证书按应用容器存储
 

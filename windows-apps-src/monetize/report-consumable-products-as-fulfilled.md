@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 收集 API, 完成, 可消费
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cbacd35a25e8eaf9673d118fcbece835572e289
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440372"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468399"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>将可消费产品报告为已完成
 
@@ -144,7 +144,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | 未授权 | PartnerAadTicketRequired   | 在授权标头中，Azure AD 访问令牌不会 传递到服务。                                                                                                   |
 | 401  | 未授权 | InconsistentClientId       | 请求正文的 Microsoft Store ID 密钥中的 *clientId* 声明与授权标头的 Azure AD 访问令牌中的 *appid* 声明不匹配。                     |
 
-<span/> 
+<span/> 
 
 ## <a name="related-topics"></a>相关主题
 

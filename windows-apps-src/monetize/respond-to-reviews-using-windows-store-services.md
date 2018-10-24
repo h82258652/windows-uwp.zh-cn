@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 评价 API, 回复评价
 ms.localizationpriority: medium
 ms.openlocfilehash: 004688612a7cdbebaa904acf7069a8d792f625da
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431123"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468452"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>使用 Microsoft Store 服务回复评价
 
@@ -94,4 +94,4 @@ Microsoft Store 评价 API 包含多种方法，可用于确定你是否能够�
 * [获取应用评价的回复信息](get-response-info-for-app-reviews.md)
 * [提交对应用评价的回复](submit-responses-to-app-reviews.md)
 
- 
+ 

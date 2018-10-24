@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f446299dcf1a0bcf93d483d13c926c6e4cd230f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432710"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468311"
 ---
 # <a name="authentication-and-user-identity"></a>身份验证和用户身份
 
@@ -25,7 +25,7 @@ ms.locfileid: "5432710"
 
 对于要连接到第三方标识提供者服务（如 Facebook、Twitter、Flick 等）的常规应用，可使用 [Web 身份验证代理](web-authentication-broker.md)。 为了方便起见，可使用[凭据保险箱](credential-locker.md)来保存和漫游用户的登录信息。
 
-使用 Windows 10 的企业应极力考虑使用 [Microsoft Passport 和 Windows Hello](microsoft-passport.md)，因为它们支持高度安全的双重身份验证。 如果无法使用 Microsoft Passport，[智能卡](smart-cards.md)和[指纹生物识别](fingerprint-biometrics.md)可以添加额外的安全层。
+使用 windows 10 的企业应极力考虑使用[Microsoft Passport 和 Windows Hello](microsoft-passport.md)，它们支持高度安全的双因素身份验证。 如果无法使用 Microsoft Passport，[智能卡](smart-cards.md)和[指纹生物识别](fingerprint-biometrics.md)可以添加额外的安全层。
 
 <table>
 <tr><th>主题</th><th>说明</th></tr>

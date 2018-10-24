@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 敏捷, 对象, 敏捷性, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc8ebb24eb051cd8e9b141f361f47041b122d5c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436642"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474392"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT 中的敏捷对象
 
