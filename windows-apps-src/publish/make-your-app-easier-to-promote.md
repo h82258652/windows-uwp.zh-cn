@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 促销, 推广, 特色, 展示, 应用商店
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b2212a0b063611a546c3f627016fc7d3179071
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400970"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440291"
 ---
 # <a name="make-your-app-easier-to-promote"></a>使你的应用更易于推广
 

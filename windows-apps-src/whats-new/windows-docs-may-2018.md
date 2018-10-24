@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.openlocfilehash: 4a9e55de039087ce3fdaae6a003293a50938af90
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400078"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430983"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月的新增功能
 
@@ -99,7 +99,7 @@ MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持 MS
 
 ### <a name="sets"></a>集
 
-集功能在 Windows Insider preview 版本中可用。 使用集功能时，你的应用绘制到可能会与其他应用，与具有自己的选项卡标题栏中的每个应用共享的窗口。 [针对集进行设计](../design/shell/design-for-sets.md)如何优化应用以提供最佳体验设置 UI 中的提供的指南。
+集功能在 Windows Insider preview 版本中可用。 使用集功能时，你的应用绘制到可能会与其他应用，与具有自己的选项卡标题栏中的每个应用共享的窗口。 
 
 ## <a name="developer-guidance"></a>开发人员指南
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 许可证, 应用, 加载项, 应用内购买, IAP, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 83889dce2959a3d373081808864a6b7913fb142b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405166"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434122"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>获取应用和加载项的许可证信息
 
