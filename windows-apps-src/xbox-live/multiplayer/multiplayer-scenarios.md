@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d104a92a7245e008c3ac579a49220db42713675c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405026"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5431869"
 ---
 # <a name="multiplayer-scenarios"></a>多人游戏方案
 有多种不同类型的多人游戏方案，选择正确的方案可以增加游戏的玩家参与度和玩家基数，反之，这两者也有助于尽可能延长游戏寿命。

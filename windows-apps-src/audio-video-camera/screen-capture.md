@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403504"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444073"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
