@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 打包, windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441055"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477340"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
 
@@ -99,7 +99,7 @@ MakeAppx <command> [options]
 
 ### <a name="create-an-app-package"></a>创建应用包
 
-应用包是将一组完整的打包到一个.msix 或.appx 包文件中的应用的文件。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
+应用包是整套.msix 或.appx 包文件中打包的应用的文件。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
 特定于 **pack** 命令的选项：
 

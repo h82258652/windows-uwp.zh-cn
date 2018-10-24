@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433070"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475159"
 ---
 # <a name="manage-add-ons"></a>管理加载项
 
@@ -158,7 +158,7 @@ ms.locfileid: "5433070"
 |-----------------|---------|------------------|
 | id            | 字符串  | 提交的 ID。    |
 | resourceLocation   | 字符串  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。     |
- 
+ 
 <span/>
 
 ## <a name="related-topics"></a>相关主题

@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e91d4bd481188f4d29af68af2c4572b26d446ae
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432608"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478517"
 ---
 # <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
  
 
-在 Windows 10 中，主要应用磁贴在应用清单中定义，而辅助磁贴由应用代码以编程方式创建和定义。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
+在 windows 10 中的主要应用磁贴定义在应用清单中，而辅助磁贴是以编程方式创建和由你的应用代码。 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。 （本地通知是从应用代码发送的通知，而不是从 Web 服务器推送或拉取的通知。）
 
 ![默认磁贴和带有通知的磁贴](images/sending-local-tile-01.png)
 
 > [!NOTE] 
 >了解[创建自适应磁贴](create-adaptive-tiles.md)和[磁贴内容架构](../tiles-and-notifications/tile-schema.md)。
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>安装 NuGet 程序包
 
@@ -50,7 +50,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>创建通知内容
 
 
-在 Windows 10 中，使用自适应磁贴模板定义磁贴负载，通过这种方式可以为通知创建自定义视觉布局。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](create-adaptive-tiles.md)。）
+在 windows 10，使用自适应磁贴模板，这允许你创建适合你的通知的自定义视觉布局定义磁贴负载。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](create-adaptive-tiles.md)。）
 
 此代码示例会为中型磁贴和宽磁贴创建自适应磁贴内容。
 
@@ -297,9 +297,9 @@ var notification = new TileNotification(doc);
 * [**Windows.UI.Notifications 命名空间**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [如何使用通知队列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [传送通知](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 
 
 
 

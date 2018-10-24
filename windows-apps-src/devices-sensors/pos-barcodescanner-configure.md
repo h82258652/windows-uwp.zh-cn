@@ -1,7 +1,7 @@
 ---
 author: TerryWarwick
 title: 配置条形码扫描仪
-description: 了解如何配置条形码扫描仪预期应用程序。
+description: 了解如何配置条形码扫描仪的目标应用程序。
 ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431686"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477151"
 ---
 # <a name="configure-a-barcode-scanner"></a>配置条形码扫描仪
 
@@ -25,7 +25,7 @@ ms.locfileid: "5431686"
 ## <a name="usb-barcode-scanner"></a>USB 条形码扫描仪
 USB 连接的条形码扫描仪必须在 **HID POS 扫描仪**模式下配置，以使用 Windows 附带的条形码扫描仪驱动程序。 此驱动程序是发布到[USB HID](http://www.usb.org/developers/hidpage/) **HID 销售点使用表**规范的实现。  请参考条形码扫描仪文档或联系条形码扫描仪制造商获取启用 **HID POS 扫描仪**模式的说明。  配置为 **HID POS 扫描仪**后，条形码扫描仪将在 **POS 条形码扫描仪**节点的“设备管理器”中显示为 **POS HID 条形码扫描仪**。
 
-你的条形码扫描仪制造商可能还有供应商特定的驱动程序，可以使用除 **HID POS 扫描仪**以外的模式支持 UWP 条形码扫描仪 API。  如果你已经安装了制造商提供的驱动程序与 UWP 条形码扫描仪 Api 兼容，你可能会看到列出下**POS 条形码扫描仪**设备管理器中的特定于供应商的设备。
+你的条形码扫描仪制造商可能还有供应商特定的驱动程序，可以使用除 **HID POS 扫描仪**以外的模式支持 UWP 条形码扫描仪 API。  如果你已经安装了制造商提供的驱动程序与 UWP 条形码扫描仪 Api 兼容，你可能会看到下面**POS 条形码扫描仪**设备管理器中列出的供应商特定设备。
 
 ## <a name="bluetooth-barcode-scanner"></a>蓝牙条形码扫描仪
 蓝牙连接的扫描仪必须在**串行端口协议 - 简单串行接口 (SPP-SSI)** 模式下配置，以使用 UWP 条形码扫描仪 API。  请参考条形码扫描仪文档或联系条形码扫描仪制造商获取启用 **SPP-SSI 模式**的说明。

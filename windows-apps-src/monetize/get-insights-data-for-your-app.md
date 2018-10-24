@@ -1,6 +1,6 @@
 ---
 author: Xansky
-description: 在 Microsoft Store 分析 API 中使用此方法，可获取你的应用的见解数据。
+description: 在 Microsoft Store 分析 API 中使用此方法获取你的应用的见解数据。
 title: 获取的见解数据
 ms.author: mhopkins
 ms.date: 07/31/2018
@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445804"
+ms.locfileid: "5478793"
 ---
 # <a name="get-insights-data"></a>获取的见解数据
 
-若要获取的见解数据在 Microsoft Store 分析 API 中的此方法相关购置、 运行状况和使用情况的应用的指标给定的日期范围和其他可选筛选器内使用。 此信息也是在 Windows 开发人员中心仪表板中的[洞察报告](../publish/insights-report.md)中可用。
+若要获取的见解数据在 Microsoft Store 分析 API 中的此方法与购置、 运行状况和应用的使用情况指标给定的日期范围和其他可选筛选器内使用。 此信息也是在 Windows 开发人员中心仪表板中的[洞察报告](../publish/insights-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -49,14 +49,14 @@ ms.locfileid: "5445804"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你要检索的见解数据的应用[商店 ID](in-app-purchases-and-trials.md#store-ids) 。 如果未指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
+| applicationId | 字符串 | 你想要检索的见解数据的应用[商店 ID](in-app-purchases-and-trials.md#store-ids) 。 如果未指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
 | startDate | date | 开始菜单的见解数据日期范围中要检索的日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | date | 中的结束日期的见解数据日期范围以检索。 默认值为当前日期。 |  否  |
-| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如，*筛选器 = dataType eq 购置*。 <p/><p/>你可以指定以下筛选字段：<p/><ul><li><strong>购置</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul> | 否   |
+| filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如， *filter = dataType eq 购置*。 <p/><p/>你可以指定以下筛选字段：<p/><ul><li><strong>购置</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul> | 否   |
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示了一个请求用于获取的见解数据。 将 *applicationId* 值替换为你的应用的 Store ID。
+下面的示例演示了一个请求用于获取的见解数据。 将 *applicationId* 值替换为你的应用的 Store ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/insights?applicationId=9NBLGGGZ5QDR&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'acquisition' or dataType eq 'health' HTTP/1.1
@@ -79,9 +79,9 @@ Authorization: Bearer <your access token>
 
 | 值               | 类型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | 字符串 | 要为其检索见解数据的应用商店 ID。     |
-| insightDate                | 字符串 | 我们在其标识特定指标的更改的日期。 此日期表示的末尾一周中我们检测到了显著增加或减小的指标，相对于前的一周中。 |
-| 数据类型     | 字符串 | 用于指定此相关的见解描述的常规分析区域的以下字符串之一：<p/><ul><li><strong>购置</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul>   |
+| applicationId       | 字符串 | 要为其检索的见解数据的应用商店 ID。     |
+| insightDate                | 字符串 | 我们标识特定指标的更改的日期。 此日期表示一周中，我们检测到了显著增加结束或减少相比于前的一周的指标。 |
+| 数据类型     | 字符串 | 指定此相关的见解描述的常规分析区域的以下字符串之一：<p/><ul><li><strong>购置</strong></li><li><strong>运行状况</strong></li><li><strong>使用情况</strong></li></ul>   |
 | insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前相关的见解的详细信息。    |
 
 
@@ -89,12 +89,12 @@ Authorization: Bearer <your access token>
 
 | 值               | 类型   | 说明                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | 字符串 | 以下值之一，用于指示规格，它的当前相关的见解和当前维度描述，具体取决于**数据类型**值。<ul><li>对于**运行状况**，此值始终是**点击次数**。</li><li>有关**购置**，此值始终是**AcquisitionQuantity**。</li><li>对于**使用情况**，此值可以是以下字符串之一：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
-| SubDimensions         | array |  介绍相关的见解的单个跃点数的一个或多个对象。   |
+| FactName           | 字符串 | 以下值之一，用于指示规格，它的当前相关的见解和当前维度描述，具体取决于**数据类型**值。<ul><li>对于**运行状况**，此值始终是**点击次数**。</li><li>获取**购置**，此值始终是**AcquisitionQuantity**。</li><li>对于**使用情况**，此值可以是以下字符串之一：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| SubDimensions         | array |  介绍了相关的见解的单个跃点数的一个或多个对象。   |
 | PercentChange            | 字符串 |  指标跨整个客户群的销售量更改百分比。  |
 | 具有           | 字符串 |  指标当前维度中所述的名称。 示例包括**事件类型**、**市场**、 **DeviceType**、 **PackageVersion**、 **AcquisitionType**、 **AgeGroup**和**性别**。   |
 | DimensionValue              | 字符串 | 在当前维度中描述的指标的值。 例如，如果**维度**， **EventType** **DimensionValue**可能**崩溃**或**挂起**。   |
-| FactValue     | 字符串 | 绝对的度量值上相关的见解的检测的日期。  |
+| FactValue     | 字符串 | 绝对的度量值相关的见解检测到的日期。  |
 | Direction | 字符串 |  更改 （**正**或**负**） 的方向。   |
 | 日期              | 字符串 |  我们确定与当前相关的见解或当前维度相关的更改的日期。   |
 

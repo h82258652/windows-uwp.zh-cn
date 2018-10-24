@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: f707c252e404da3aaf6e82317c80a266f4d91d26
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438357"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470693"
 ---
 # <a name="manage-ad-campaigns"></a>管理广告活动
 
@@ -60,7 +60,7 @@ ms.locfileid: "5438357"
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |
 
 
-<span id="parameters"/> 
+<span id="parameters"/> 
 
 ### <a name="parameters"></a>参数
 

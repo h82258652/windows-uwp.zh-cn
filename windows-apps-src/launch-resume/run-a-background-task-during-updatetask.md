@@ -7,26 +7,26 @@ ms.date: 04/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp、 更新、 后台任务、 updatetask，后台任务
+keywords: windows 10、 uwp、 更新、 后台任务、 updatetask、 后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439805"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476104"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在 UWP 应用更新时运行后台任务
 
-了解如何编写后台任务在通用 Windows 平台 (UWP) 应用商店应用更新后运行。
+了解如何编写在通用 Windows 平台 (UWP) 应用商店应用更新后运行的后台任务。
 
-用户向设备安装的应用安装更新后，将由操作系统调用更新任务后台任务。 这允许你的应用执行初始化任务，例如初始化新的推送通知通道，更新数据库架构，依此类推之前在用户启动已更新的应用。
+在用户设备上安装的应用安装更新后，将由操作系统调用更新后台任务。 这允许你的应用来执行初始化任务，例如初始化新的推送通知通道，更新数据库架构，依此类推，才能在用户启动已更新的应用。
 
-更新任务不同于启动使用[ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)触发器，因为在此情况下你的应用必须至少运行一次之前它更新才可注册后台任务将通过**激活后台任务ServicingComplete**触发器。  更新任务未注册，因此的应用的已永远不会运行，但的升级后，将仍然拥有触发其更新任务。
+启动后台任务使用[ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)触发器，因为在这种情况下你的应用必须至少运行一次之前它更新才可注册后台任务将被激活通过**与更新任务ServicingComplete**触发器。  更新任务未注册，因此的应用的已永远不会运行，但该升级后，仍会触发其更新任务。
 
 ## <a name="step-1-create-the-background-task-class"></a>步骤 1： 创建后台任务类
 
-作为与其他类型的后台任务，你应实现更新任务后台任务作为 Windows 运行时组件。 若要创建此组件，按照中[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)的**创建后台任务类**部分的步骤。 包括以下步骤：
+作为与其他类型的后台任务，你应实现更新后台任务作为 Windows 运行时组件。 若要创建此组件，请按照[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)的**创建后台任务类**部分。 包括以下步骤：
 
 - 将一个 Windows 运行时组件项目添加到你的解决方案。
 - 为组件创建从你的应用的引用。
@@ -35,7 +35,7 @@ ms.locfileid: "5439805"
 
 你无需注册此后台任务 （"注册要运行的后台任务"部分中**创建和注册进程外后台任务**主题） 用于更新任务。 这是因为你无需将任何代码添加到你的应用可以注册该任务，并且该应用不具有至少运行一次更新，以注册后台任务才能使用更新任务的主要原因。
 
-以下示例代码显示在 C# 中更新任务后台任务类的基本起始点。 后台任务类本身和后台任务项目中的所有其他类-需要是**公共**和**密封**。 后台任务类必须从**IBackgroundTask**并在公共**run （）** 方法具有如下所示的签名：
+以下示例代码显示在 C# 中更新任务后台任务类的基本起始点。 后台任务类本身和后台任务项目中的所有其他类-需要**公共**和**密封**。 后台任务类必须从**IBackgroundTask**和公共**run （）** 方法具有签名如下所示：
 
 ```cs
 using Windows.ApplicationModel.Background;
@@ -52,7 +52,7 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>步骤 2： 将你的后台任务在程序包清单中声明
+## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>步骤 2： 你中声明后台任务在程序包清单
 
 在 Visual Studio 解决方案资源管理器，右键单击**Package.appxmanifest** ，然后单击**查看代码**以查看程序包清单。 添加以下`<Extensions>`XML 声明更新任务：
 
@@ -76,26 +76,26 @@ namespace BackgroundTasks
 
 ## <a name="step-3-debugtest-your-update-task"></a>步骤 3： 调试/测试更新任务
 
-确保你已部署你的应用到你的计算机，以便要更新的东西。
+请确保你已部署你的应用到计算机，以便要更新的东西。
 
-你的后台任务的 run （） 方法中设置断点。
+在你的后台任务的 run （） 方法中设置断点。
 
 ![设置断点](images/run-func-breakpoint.png)
 
-接下来，在解决方案资源管理器中，右键单击你的应用的项目 （不后台任务项目），然后单击**属性**。 在应用属性窗口中，在左侧，单击**调试**，然后选择**不启动，但调试代码在启动时**：
+接下来，在解决方案资源管理器，右键单击你的应用的项目 （非后台任务项目），然后单击**属性**。 在应用属性窗口中，在左侧，单击**调试**，然后选择**不启动，但调试代码在启动时**：
 
 ![设置调试设置](images/do-not-launch-but-debug.png)
 
 接下来，若要确保触发 UpdateTask，增加程序包的版本号。 在解决方案资源管理器中，双击你的应用的**Package.appxmanifest**文件，以打开程序包设计器，然后更新的**内部**版本号：
 
-![更新的版本](images/bump-version.png)
+![更新版本](images/bump-version.png)
 
-现在，Visual Studio 2017 中按 F5 时，你的应用将更新，并且系统将激活后台 UpdateTask 组件。 调试程序将自动附加到后台进程。 将获取命中断点，你可以通过更新代码逻辑步骤。
+现在，Visual Studio 2017 中按 F5 时，你的应用将更新，并且系统将激活后台 UpdateTask 组件。 调试程序将自动附加到后台进程。 将获取命中断点，然后你可以通过更新代码逻辑步骤。
 
-后台任务完成后，你可以在同一调试会话内启动 Windows 开始菜单中的前台应用。 调试程序将再次自动连接，这次到前台进程，并且你可以通过你的应用的逻辑步骤。
+后台任务完成后，你可以在同一调试会话内启动 Windows 开始菜单中的前台应用。 调试程序将自动重新连接，到前台进程，这次，并且你可以通过你的应用的逻辑步骤。
 
 > [!NOTE]
-> Visual Studio 2015 用户： 上面的步骤适用于 Visual Studio 2017。 如果你使用 Visual Studio 2015，你可以使用相同的技术触发器和测试 UpdateTask，除 Visual Studio 将不将附加到它。 在 VS 2015 中的其他步骤是设置为其入口点，设置 UpdateTask [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)并触发直接从前台应用执行。
+> Visual Studio 2015 用户： 上述步骤适用于 Visual Studio 2017。 如果你使用的 Visual Studio 2015 中，你可以使用触发器和测试 UpdateTask，除 Visual Studio 将附加到它的相同技术。 在 VS 2015 中的其他步骤是设置为入口点，设置 UpdateTask [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)并触发直接从前台应用程序执行。
 
 ## <a name="see-also"></a>另请参阅
 

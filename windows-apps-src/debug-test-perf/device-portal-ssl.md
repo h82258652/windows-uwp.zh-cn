@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439081"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470533"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自定义的 SSL 证书预配 Device Portal
 在 Windows 10 创意者更新，Windows Device Portal 添加设备管理员使用自定义的证书安装在 HTTPS 通信的一种方法。 
 
-尽管你可以在你自己的电脑上执行此操作，此功能主要适用于企业就地具有现成的证书基础结构。  
+尽管你可以在自己的电脑上执行此操作，此功能主要旨在提供有现成的证书基础结构的企业。  
 
 例如，公司可能拥有它使用 intranet 网站提供通过 HTTPS 的证书进行签名的证书颁发机构 (CA)。 此功能的代表基础结构。 
 
@@ -52,7 +52,7 @@ $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 
 SSL 证书具有两个关键功能： 保护通过加密连接并验证你实际通信的浏览器栏中显示的地址 (Bing.com，192.168.1.37，等) 和不是恶意的第三方。
 
-以下 PowerShell 脚本创建的 SSL 证书`localhost`终结点。 Device Portal 侦听每个终结点需要其自己的证书。你可以替换`$IssuedTo`参数与每个不同的终结点脚本中为你的设备： 主机名、 本地主机和 IP 地址。
+以下 PowerShell 脚本创建的 SSL 证书`localhost`终结点。 Device Portal 侦听每个终结点需要其自己的证书。你可以替换`$IssuedTo`为你的设备在脚本中具有不同的终结点的每个参数： 主机名、 本地主机和 IP 地址。
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -68,7 +68,7 @@ $cert = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -Subj
 $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (ConvertTo-SecureString -String $Password -Force -AsPlainText)
 ```
 
-如果你拥有多台设备，你可以重复使用 localhost.pfx 文件，但你将仍需要分别创建每个设备的 IP 地址和主机名证书。
+如果你有多个设备，你可以重复使用 localhost.pfx 文件，但你仍需要分别创建每个设备的 IP 地址和主机名证书。
 
 在生成捆绑包的.pfx 文件后，你将需要将其加载到 Windows Device Portal。 
 
@@ -80,7 +80,7 @@ $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (Con
 WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
 ```
 
-请参阅下文例如使用情况：
+请参阅下面的示例用法：
 ```
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword

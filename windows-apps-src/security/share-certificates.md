@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 863658438ce53f2c74faddb845a7d17c6ec3130c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443473"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470852"
 ---
 # <a name="share-certificates-between-apps"></a>在应用之间共享证书
 
@@ -78,9 +78,9 @@ ms.locfileid: "5443473"
 
 如果没有可用的客户端证书，则用户将需要将证书添加到证书存储。 可将代码包括在 Windows 应用商店应用中，此应用使用户能够选择包含客户端证书的 PFX 文件，然后将该证书导入到客户端证书存储中。
 
-**提示**：你可以使用 makecert.exe 创建 PFX 文件以用于此快速入门。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
+**提示**你可以使用 makecert.exe 创建 PFX 文件以用于此快速入门。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
 
- 
+ 
 
 1.  打开 Visual Studio，然后在起始页创建新的项目。 将此新项目命名为“FirstContosoBankApp”。 单击“确定”**** 创建新项目。
 2.  在 MainPage.xaml 文件中，将以下 XAML 添加到默认 **Grid** 元素中。 此 XAML 包括一个用于浏览要导入的 PFX 文件的按钮、一个用于输入受密码保护的 PFX 文件的密码的文本框、一个用于导入选中的 PFX 文件的按钮、一个用于登录安全 Web 服务的按钮以及一个用于显示当前操作状况的文本块。

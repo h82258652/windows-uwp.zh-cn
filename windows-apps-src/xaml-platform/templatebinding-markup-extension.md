@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437680"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475312"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 
@@ -57,17 +57,17 @@ ms.locfileid: "5437680"
 
 **TemplateBinding** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“{”和“}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
-**注意** 在 Windows 运行时 XAML 处理器实现中，**TemplateBinding** 没有支持类表示。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
+**注意**中的 Windows 运行时 XAML 处理器实现中，没有**TemplateBinding**没有支持类表示。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
 
 ### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
 
-从开始到 Windows 10 的下一个主要更新，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**任意位置。 
+从开始到 Windows 10 的下一个主要更新，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**的任意位置。 
 
 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)属性将需要 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
 
 通过**X:bind**支持，你现在可以使用这两个[函数绑定](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也为双向绑定
 
-在以下示例中，TextBlock.Text 评估为 Button.Content.ToString()。 在该 ControlTemplate TargetType 充当数据源，并完成与到父 TemplateBinding 相同的结果。
+在以下示例中，TextBlock.Text 评估为 Button.Content.ToString()。 在该 ControlTemplate TargetType 作为数据源，并完成与到父 TemplateBinding 相同的结果。
 
 ```xaml
 <ControlTemplate TargetType="Button">
@@ -84,5 +84,5 @@ ms.locfileid: "5437680"
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [XAML 概述](xaml-overview.md)
 * [依赖属性概述](dependency-properties-overview.md)
- 
+ 
 

@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行在更少的时间和更低的内存比绑定和支持更好的调试。
+description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行时间和减少相比绑定，并支持将更好的调试的内存。
 title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,18 +11,17 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445904"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477363"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
-**注意**  有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的一般信息随 **{x: Bind}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-
-  **{x:Bind}** 标记扩展（Windows10 的新增内容）是 **{Binding}** 的备用选项。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
+**{X: Bind}** 标记扩展，windows 10 的新功能-是 **{Binding}** 的替代方法。 **{x: Bind}** 运行时间和减少相比 **{绑定}** 和支持更好的调试的内存。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新 (`Mode="OneWay"`)。 该对象也可以配置为将其自己的值的更改推送回源属性 (`Mode="TwoWay"`)。
 
@@ -90,7 +89,7 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 对于 C++/CX，**{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 无需使用 **\[Bindable\]** 属性。
 
-使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用该元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
 
 
 ### <a name="collections"></a>集合
@@ -152,7 +151,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 > [!NOTE]
 > 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}**，请注意在 **Mode** 属性默认值方面的差异。
- 
+ 
 > [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) 可用于针对标记树的特定段更改 x:Bind 的默认模式。 所选的模式将应用该元素及其子元素上的任何 x:Bind 表达，不明确指定某个模式作为绑定的一部分。 使用 OneTime 时的性能比使用 OneWay 时更好，因为使用 OneWay 将导致生成更多代码以连接到和处理更改检测。
 
 ## <a name="remarks"></a>备注
@@ -172,7 +171,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 > [!NOTE]
 > 从 Windows10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 注意，这不是函数绑定的特点，只是属性绑定。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-**提示**  如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在它前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
+**提示**如果你需要指定单个花括号为某个值，如[**路径**](https://msdn.microsoft.com/library/windows/apps/br209830)或[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)，它前面加反斜杠： `\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 

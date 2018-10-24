@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 购买 API, 授予产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441760"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474883"
 ---
 # <a name="grant-free-products"></a>授予免费产品
 
@@ -229,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | 未授权 | InconsistentClientId       | 请求正文的 Microsoft Store ID 密钥中的 *clientId* 声明与授权标头的 Azure AD 访问令牌中的 *appid* 声明不匹配。       |
 | 400  | BadRequest   | InvalidParameter           | 详细信息包含有关请求正文和具有无效值的字段的信息。           |
 
-<span/> 
+<span/> 
 
 ## <a name="related-topics"></a>相关主题
 

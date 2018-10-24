@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432048"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479715"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft 应用商店营销指南的应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "5432048"
 
 我们创建了特殊的促销锁屏提醒，帮助你带动更多客户的 Microsoft 应用商店中你的应用一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
-[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 应用商店锁屏提醒指南 （PDF、 英语）**
+[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 应用商店锁屏提醒指南 （PDF，英语）**
 
 
 ## <a name="badge-generator-and-images"></a>锁屏提醒生成器和图像
@@ -41,25 +41,25 @@ ms.locfileid: "5432048"
 
 若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 [Microsoft 应用商店营销指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中，可以找到最佳实践和技术规范有关如何使用这些图像。
 
-[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows 设备插图**
+[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057)**Windows 设备插图**
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 
 *Microsoft 商标授权*意味着[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面中描述了*Microsoft 锁屏提醒*。 若要使用这些锁屏提醒，必须满足以下条件：
 
--   在 Microsoft store 中具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   在 Microsoft Store，具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
 -   如果你已注册开发人员中心，请遵守“应用开发人员协议”中[“Microsoft 商标授权”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
 
--   如果你未注册 Windows 开发人员中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
+-   如果你尚未注册 Windows 开发人员中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
 
 -   请按照[Microsoft 应用商店锁屏提醒指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的徽标使用规范。
 
 Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 Microsoft 标志获得的有关商誉的唯一受益公司。 Microsoft 可能会随时自行撤销此许可证。
 
- 
+ 
 
- 
+ 
 
 
 

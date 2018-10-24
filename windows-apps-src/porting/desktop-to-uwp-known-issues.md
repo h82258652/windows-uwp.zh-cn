@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431797"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476545"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -38,7 +38,7 @@ ms.locfileid: "5431797"
 
 若要解决此问题，请尝试从提升的命令提示符中运行命令 `Netsh int ipv4 reset`，然后重启计算机。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>你的.NET 应用程序使用"AnyCPU"生成选项编译，无法安装
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET 应用程序使用"AnyCPU"生成选项编译，并且无法安装
 
 如果将主要可执行文件或任何依赖项放置在 **Program Files** 或 **Windows\System32** 文件夹层次结构中的任意位置，则可能会出现这种情况。
 
@@ -125,7 +125,7 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 
 **选项 3：CertUtil**
 
-运行**certutil**从命令行对 PFX 文件，然后从输出复制*使用者*字段。
+运行**certutil**从命令行对 PFX 文件，然后从输出中复制*使用者*字段。
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -133,19 +133,19 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>不合适的 PE 证书 (0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>损坏的 PE 证书 (0x800700C1)
 
-当你的包包含一个已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
+当你的程序包包含已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
 
-* 开始菜单的证书不是图像的末尾。  
+* 证书的开始菜单未末尾的图像。  
 
 * 证书的大小不积极。
 
-* 证书开始屏幕后不是`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
+* 证书开始菜单未在`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
 
 * 证书指针未正确对齐 WIN_CERTIFICATE 结构。
 
-若要查找包含损坏的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`值为 1 到。
+若要查找包含损坏的 PE 证书文件，打开**命令提示符**，并设置名为环境变量`APPXSIP_LOG`为 1 的值。
 
 ```
 set APPXSIP_LOG=1

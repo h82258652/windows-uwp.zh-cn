@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430723"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469308"
 ---
 # <a name="product-declarations"></a>产品声明
 
@@ -44,7 +44,7 @@ ms.locfileid: "5430723"
 有关详细信息，请参阅[辅助功能](../design/accessibility/accessibility.md)、[辅助功能测试](../design/accessibility/accessibility-testing.md)和[应用商店中的辅助功能](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非已针对此目的特别设计和测试过应用，否则不要将其列为辅助应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
+> 除非已针对此目的特别设计和测试过应用，否则不要将其列为辅助应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
@@ -68,11 +68,11 @@ ms.locfileid: "5430723"
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 付款, 应用销售, 应用收款, 付款, 应用商店费用, 付款暂停, 百分比
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438191"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478698"
 ---
 # <a name="getting-paid"></a>获取付款
 以下是一些你需要的信息，可确保你收到你的应用、加载项和广告收益的付款。
@@ -70,9 +70,9 @@ Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销�
 > **付款暂停状态**选择适用于**所有**通过 Windows 开发人员中心支付的收入来源（Microsoft Store、广告和 Azure Marketplace 等）。 无法为每个收入来源选择不同的暂停状态。
 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: ca37d0b360679a878cff3aeabd96f82016c36fde
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433272"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478760"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 
 可通过[定价和可用性](set-app-pricing-and-availability.md)页面的**定价**部分为应用选择一个基价。 还可[计划价格更改](#schedule-price-changes)，以指示应用价格应更改的日期和时间。 此外，你可以选择[替代特定市场的基价](#override-base-price-for-specific-markets)，方法是选择新的价格层或使用市场的当地货币输入自由格式价格。
 
 > [!NOTE]
-> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，[订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能不断增加 （通过计划价格更改，或通过更改的基本价格），尽管它可能会降低。
+> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，[订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能不断增加 （通过更改的基本价格或通过计划价格更改），尽管它可能会降低。
 
 ## <a name="base-price"></a>基价
 

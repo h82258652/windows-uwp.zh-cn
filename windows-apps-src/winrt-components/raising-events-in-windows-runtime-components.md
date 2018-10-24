@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439264"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472329"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 > [!NOTE]
@@ -142,7 +142,7 @@ toastCompletedEventHandler: function (event) {
 
 在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”**** 对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”**** 设置为“调试”**** 以及将“平台”**** 设置为 x86、x64 或 ARM。 选择“确定”**** 按钮。
 
-**重要提示** 平台 = 所有 CPU 都停止工作，因为它对你将要在稍后添加到解决方案的本机代码 Win32 DLL 无效。
+**重要提示**平台 = 所有 CPU 不工作，因为它是你将在以后添加到解决方案的本机代码 Win32 dll 无效。
 
 在“解决方案资源管理器”中，将 class1.cs 重命名为 ToasterComponent.cs，以便它与项目名相匹配。 Visual Studio 会自动重命名文件中的类，以便与新的文件名相匹配。
 
@@ -150,7 +150,7 @@ toastCompletedEventHandler: function (event) {
 
 当你需要代理和存根时，你的组件必须使用接口来显示其公共成员。 在 ToasterComponent.cs 中，为 Toaster 定义一个接口，并为该 Toaster 生成的 Toast 定义另一个接口。
 
-**注意** 在 C# 中，你可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择“重构”&gt;“提取接口”****。 在生成的代码中，手动提供接口公共辅助功能。
+**注意**在 C# 中你可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择“重构”&gt;“提取接口”****。 在生成的代码中，手动提供接口公共辅助功能。
 
 ```csharp
     public interface IToaster
@@ -218,8 +218,8 @@ IToast 接口具有一个字符串，可以检索该字符串来描述 Toast 的
 
 在前面的代码中，我们将创建 Toast，然后向上旋转线程池工组项以引发通知。 尽管 IDE 可能会建议你将 await 关键字应用到异步调用，但是在这种情况下没有必要，因为该方法不会执行任何依赖操作结果的工作。
 
-**注意** 上面的代码中的异步调用使用 ThreadPool.RunAsync，只是为了演示一种引发后台线程上的事件的简单方法。 你可以编写这种特定方法（如以下示例所示），并且它会正常工作，因为 .NET 任务计划程序会自动封装回调到 UI 线程的 async/await。
-  
+**注意**上面的代码中的异步调用使用 ThreadPool.RunAsync 只是为了演示一种引发后台线程上的事件的简单方法。 你可以编写这种特定方法（如以下示例所示），并且它会正常工作，因为 .NET 任务计划程序会自动封装回调到 UI 线程的 async/await。
+  
 ```csharp
     public async void MakeToast(string message)
     {
@@ -233,7 +233,7 @@ IToast 接口具有一个字符串，可以检索该字符串来描述 Toast 的
 
 ## <a name="to-program-the-javascript-app"></a>对 JavaScript 应用进行编程
 
-现在我们可以向 JavaScript 应用添加一个按钮，从而使它使用我们刚定义为生成 Toast 的类。 在我们执行此操作之前，必须向我们刚创建的 ToasterComponent 项目添加一个引用。 在解决方案资源管理器，打开命名为 ToasterApplication 项目的快捷菜单中，选择**添加&gt;引用**，然后选择**添加新引用**按钮。 在“添加引用”对话框的“解决方案”下的左侧窗格中，选择组件项目，然后在中间窗格中，选择 ToasterComponent。 选择“确定”**** 按钮。
+现在我们可以向 JavaScript 应用添加一个按钮，从而使它使用我们刚定义为生成 Toast 的类。 在我们执行此操作之前，必须向我们刚创建的 ToasterComponent 项目添加一个引用。 在解决方案资源管理器中打开命名为 ToasterApplication 项目的快捷菜单中，选择**添加&gt;引用**，然后选择**添加新引用**按钮。 在“添加引用”对话框的“解决方案”下的左侧窗格中，选择组件项目，然后在中间窗格中，选择 ToasterComponent。 选择“确定”**** 按钮。
 
 在“解决方案资源管理器”中，打开 ToasterApplication 项目的快捷菜单，然后选择“设置为启动项目”****。
 
@@ -330,9 +330,9 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要提示** 为 ARM 或 x64 项目配置，更改为 x64 或 arm32 的 MIDL /env 参数。
+**重要提示**为 ARM 还是 x64 项目配置，更改为 x64 或 arm32 的 MIDL /env 参数。
 
-若要确保 IDL 文件会重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
+若要确保 IDL 文件时重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
 生成事件的属性页应与此类似：![生成事件](./images/buildevents.png)
 
 重新生成解决方案以生成和编译 IDL。

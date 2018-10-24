@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439274"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479751"
 ---
 # <a name="about-house-ads"></a>关于自家广告
 
@@ -34,7 +34,7 @@ ms.locfileid: "5439274"
 >[!NOTE]
 > 一位最终用户每天最多将看到五次任意一则给定的自家广告。
 
- 
+ 
 
 ### <a name="related-topics"></a>相关主题
 

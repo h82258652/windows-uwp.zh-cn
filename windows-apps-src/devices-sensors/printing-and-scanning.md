@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，打印，3dprinting，3d 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445654"
+ms.locfileid: "5473809"
 ---
 # <a name="printing-and-scanning"></a>打印和扫描
 
@@ -34,5 +34,5 @@ ms.locfileid: "5445654"
 * [打印的设计指南](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 视频：开发可在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
- 
+ 
 

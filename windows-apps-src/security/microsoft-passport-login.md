@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 106ea458502a95c53ecbf02d9118f3c31ff43978
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434327"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479033"
 ---
 # <a name="create-a-windows-hello-login-app"></a>创建 Windows Hello 登录应用
 
@@ -28,9 +28,9 @@ ms.locfileid: "5434327"
 ## <a name="get-started"></a>入门
 
 
-为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要使用 Visual Studio 2015 (社区版或更高版本)，或更高版本的 Visual Studio 中，Windows 10 计算机上。 Visual Studio 2015 时所需的最低版本，我们建议你使用 Visual Studio 的最新版本的最新的开发人员和安全更新。
+为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要使用 Visual Studio 2015 (社区版或更高版本)，或更高版本的 Visual Studio 中，Windows 10 计算机上。 Visual Studio 2015 中时需要的最低版本，我们建议你使用 Visual Studio 的最新版本的最新的开发人员和安全更新。
 
--   打开 Visual Studio 并选择文件 > 新建 > 项目。
+-   打开 Visual Studio，然后选择文件 > 新建 > 项目。
 -   这将打开一个“新建项目”窗口。 导航到“模板”&gt;“Visual C#”。
 -   选择“空白应用（通用 Windows）”并将你的应用程序命名为“PassportLogin”。
 -   生成并运行新的应用程序 (F5)，然后你应该看到屏幕上显示的空白窗口。 关闭该应用程序。

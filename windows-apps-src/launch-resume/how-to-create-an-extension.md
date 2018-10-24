@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 548f5f5d1810347527c3c9bfe761a766c4a35c7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445574"
+ms.locfileid: "5473891"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 
@@ -411,7 +411,7 @@ _MathExtension 项目中的 Package.appxmanifest：_
 
 应用扩展属于开放式生态系统。 如果你的应用可以托管应用扩展，则只要遵循你的扩展信息传递/接收方法，任何人都可以为你的主机编写扩展。 这与属于封闭式生态系统的可选包不同，在该系统中，发布者决定允许谁制作可与应用配合使用的可选包。
 
-应用扩展是独立的程序包，并且可能是独立的应用。 它们不能依赖于另一个应用进行部署。 可选包需要主程序包，并且没有主程序包就无法运行。
+应用扩展是独立的程序包，并且可能是独立的应用。 它们不能依赖于另一个应用进行部署。可选包需要主程序包，并且没有主程序包就无法运行。
 
 游戏扩展包将非常适合作为可选包，因为它紧紧地绑定到游戏上，不能独立于游戏而运行，并且你可能不希望扩展包随便由生态系统中的任何开发者进行创建。
 

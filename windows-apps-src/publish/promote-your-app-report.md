@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445515"
+ms.locfileid: "5469576"
 ---
 # <a name="ad-campaign-report"></a>广告市场活动报告
 
@@ -86,6 +86,6 @@ ms.locfileid: "5445515"
 
 * [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
 
- 
+ 
 
- 
+ 

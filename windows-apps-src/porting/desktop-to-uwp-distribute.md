@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436710"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476345"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>分发打包的桌面应用程序
 
@@ -29,7 +29,7 @@ ms.locfileid: "5436710"
 
 [Microsoft Store](https://www.microsoft.com/store/apps) 是客户获取应用最便利的方法。
 
-发布到该应用商店应用程序要获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发到通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
+发布到该应用商店应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发到其组织通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
 
 如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
@@ -42,24 +42,24 @@ ms.locfileid: "5436710"
 
 ## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>但不将其置于 Microsoft Store 分发你的应用程序
 
-如果您而是将无需使用应用商店分发你的应用程序，你可以手动将应用分配到一个或多个设备。
+如果您不会无需使用应用商店分发你的应用程序，你可以手动将应用分配到一个或多个设备。
 
 如果要更好地控制分发体验，或者不想涉及 Microsoft Store 证书过程，这很有意义。
 
-若要将分配到其他设备的应用程序，而其置于应用商店，你必须获取一个证书，使用该证书，然后旁加载你的应用程序到这些设备上登录你的应用程序。
+若要而不将其置于应用商店分配应用程序与其他设备，你需要获取一个证书，你的应用程序使用对进行签名的证书，然后旁加载到这些设备上的应用程序。
 
 你可以[创建证书](../packaging/create-certificate-package-signing.md)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
-如果你打算分发到运行 Windows 10 S 的设备上应用程序，你的应用程序已签名通过 Microsoft 应用商店中，因此你必须先完成应用商店提交过程，然后可以分发到这些设备上的应用程序。
+如果你打算分发到运行 Windows 10 S 的设备上应用程序，你的应用程序已由 Microsoft 应用商店签名，因此你必须先完成应用商店提交过程，然后可以分发到这些设备上的应用程序。
 
 如果创建证书，则必须将其安装到运行应用的每台设备上的**受信任根**或**受信任人**证书存储区中。 如果从热门供应商处获取证书，则不必在其他系统上安装除应用外的任何内容。  
 
 > [!IMPORTANT]
 > 确保证书上的发布者名称与应用的发布者名称匹配。
 
-若要对你的应用程序使用证书进行签名，请参阅[签名应用程序包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
+若要对你的应用程序使用证书进行签名，请参阅[登录应用程序包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
-旁加载你的应用程序到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+旁加载应用程序到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
 
 **视频**
 
@@ -127,7 +127,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>卸载桌面版应用
 
-它是最好不要卸载用户桌面应用程序，而无需第一个询问其权限。 显示一个对话框，向用户征得该权限。 用户可能会决定不卸载桌面版应用。 如果发生这种情况，你需要确定你是否想要阻止的桌面应用程序的使用情况或支持的并行使用两个应用。
+它是最好不要卸载用户桌面应用程序，而无需第一个询问其权限。 显示一个对话框，向用户征得该权限。 用户可能会决定不卸载桌面版应用。 如果发生这种情况，你需要决定是否要阻止桌面应用程序的使用情况或支持的并行使用两个应用。
 
 下面的示例介绍如何在基于 .NET 的打包的应用中执行此操作。
 
@@ -151,7 +151,7 @@ private void RemoveDesktopApp()
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {
-                    string[] uninstallArgs = uninstallString.Split(' ');
+                    string[] uninstallArgs = uninstallString.Split(' ');
 
             Process process = new Process();
             process.StartInfo.FileName = uninstallArgs[0];

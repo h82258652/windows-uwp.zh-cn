@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430963"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469023"
 ---
 # <a name="use-map-services"></a>使用地图服务
 
@@ -28,9 +28,9 @@ ms.locfileid: "5430963"
 > [!IMPORTANT]
 > 请务必将**ApplicationID**和**AuthenticationToken**添加到你的代码之前你的程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
- 
+ 
 
- 
+ 
 
 
 

@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 了解如何创建“Hello, world”应用 (XAML)
-description: 使用 Extensible Application Markup Language (XAML) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
+description: 使用 C# Extensible Application Markup Language (XAML) 在 windows 10 上创建简单 Hello，world 应用面向通用 Windows 平台 (UWP)。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434852"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479156"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单"Hello，world"应用的 windows 10 上的 Windows 通用平台 (UWP)。 通过在 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 windows 10 设备上运行的应用。
 
 在此处，你将了解如何：
 
--   创建面向 **Windows10** 和 **UWP** 的新 **Visual Studio 2017** 项目。
+-   创建一个新的**Visual Studio 2017**项目面向**windows 10**和**UWP**。
 -   编写 XAML 即可更改起始页上的 UI。
 -   在 Visual Studio 中，在本地桌面中运行该项目。
 -   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
@@ -52,7 +52,7 @@ ms.locfileid: "5434852"
 
 3.  从左侧的模板列表中，选择**已安装 > Visual C# > Windows 通用**以查看 UWP 项目模板列表。
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[准备工作](get-set-up.md)。）
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[进行设置](get-set-up.md)。）
 
     ![如何重复安装流程](images/win10-cs-install.png)
 
@@ -235,7 +235,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>小结
 
-祝贺你，你已创建了自己的第一个适用于 Windows10 和 UWP 的应用！
+恭喜，你已为 windows 10 和 UWP 创建第一个应用 ！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 

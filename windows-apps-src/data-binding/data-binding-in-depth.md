@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444251"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469663"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -40,7 +40,7 @@ ms.locfileid: "5444251"
 -   你可以使用单向模式将[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)绑定到按报纸分组的实时新闻报道的集合。
 -   你可以使用双向模式将[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)绑定到表单中的客户的名称。
 
-独立于模式，有两种类型的绑定，并且它们通常都声明在 UI 标记中。 你既可以选用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，也可以选用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 还可以在同一应用中（甚至是同一 UI 元素上）混合使用这两个标记扩展。 {x:Bind} 是 Windows 10 的新增内容，并且具备更好的性能。 除非另有明确说明，否则本主题中所述的所有详细信息均适用于这两种绑定。
+独立于模式，有两种类型的绑定，并且它们通常都声明在 UI 标记中。 你既可以选用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，也可以选用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 还可以在同一应用中（甚至是同一 UI 元素上）混合使用这两个标记扩展。 {x: Bind} 是 windows 10 的新功能，并且具有更好的性能。 除非另有明确说明，否则本主题中所述的所有详细信息均适用于这两种绑定。
 
 **用于演示 {x:Bind} 的应用示例**
 
@@ -256,7 +256,7 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-如果你使用 C + + /winrt 或 Visual c + + 组件扩展 (C + + CX)，然后你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要使用 {} 标记扩展的[绑定](https://msdn.microsoft.com/library/windows/apps/Mt204782)与任何运行时类。
+如果你使用 C + + /winrt 或 VisualC + + 组件扩展 (C + + CX)，则你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要使用 {} 标记扩展的[绑定](https://msdn.microsoft.com/library/windows/apps/Mt204782)与任何运行时类。
 
 > [!IMPORTANT]
 > 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
@@ -383,7 +383,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 声明的绑定对象
 
-如果你使用 C + + /winrt 或 Visual c + + 组件扩展 (C + + CX) 然后，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展时，你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要绑定到任何运行时类。 若要使用[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，不需要该属性。
+如果你使用 C + + /winrt 或 VisualC + + 组件扩展 (C + + CX) 然后，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展时，你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要绑定到任何运行时类。 若要使用[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，不需要该属性。
 
 ```cppwinrt
 // HostViewModel.idl
@@ -758,7 +758,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 
 ## <a name="creating-bindings-in-code"></a>使用代码创建绑定
 
-**注意** 由于不能使用代码创建 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 绑定，因此此部分仅适用于 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 不过，使用 [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 同样可以获得 {x:Bind} 的某些相同优势，这使你可以在任何依赖属性上注册更改通知。
+**注意**此部分仅适用于[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因为你无法在代码中创建[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)绑定。 不过，使用 [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 同样可以获得 {x:Bind} 的某些相同优势，这使你可以在任何依赖属性上注册更改通知。
 
 还可以使用规程代码而不是 XAML 来将 UI 元素连接到数据。 为此，请创建一个新 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 对象，设置相应的属性，然后调用 [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) 或 [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx)。 如果你希望在运行时选择绑定属性值或在多个控件中共享单个绑定，则以编程方式创建绑定将十分有用。 但是请注意，调用 **SetBinding** 后，无法更改绑定属性值。
 

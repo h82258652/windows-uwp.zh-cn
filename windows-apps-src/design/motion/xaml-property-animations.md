@@ -12,24 +12,24 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434534"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470716"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用合成动画设置动画的 XAML 元素
 
 本文介绍了新属性，使你对 XAML UIElement 使用合成动画的性能和轻松使用设置 XAML 属性进行动画处理。
 
-在 Windows 10 版本 1809 之前，你有 2 个选项来生成 UWP 应用中的动画：
+在 Windows 10 版本 1809 之前, 必须 2 个选项来生成 UWP 应用中的动画：
 
 - 使用[情节提要动画](storyboarded-animations.md)，如 XAML 构造或 _* ThemeTransition_和 _* ThemeAnimation_ [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation)命名空间中的类。
 - [使用可视化层与 XAML](../../composition/using-the-visual-layer-with-xaml.md)中所述，请使用合成动画。
 
-使用可视化层提供更好的性能比使用 XAML 构造。 但使用[ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)以获取元素的基础合成[视觉](/uwp/api/windows.ui.composition.visual)对象，然后创建动画使用合成动画的可视且更复杂，若要使用。
+使用可视化层提供更好的性能比使用 XAML 构造。 但是，使用[ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)以获取元素的基础合成[视觉](/uwp/api/windows.ui.composition.visual)对象，然后对使用合成动画的视觉进行动画处理且更复杂，若要使用。
 
-从开始 Windows 10 版本 1809，你可以设置直接使用合成动画而不要求以获取基础合成视觉对象的 UIElement 上的属性的动画。
+启动在 Windows 10 版本 1809，你可以进行动画处理直接使用合成动画而不要求以获取基础合成视觉对象的 UIElement 上的属性。
 
 > [!NOTE]
 > 若要在 UIElement 上使用这些属性，你的 UWP 项目目标版本必须为 1809年或更高版本。 有关配置你的项目版本的详细信息，请参阅[版本自适应应用](../../debug-test-perf/version-adaptive-apps.md)。
@@ -54,9 +54,9 @@ TransformMatrix 属性值结合的缩放、 旋转和翻译的属性，按以下
 
 这些属性作为合成[视觉](/uwp/api/windows.ui.composition.visual)类 （除了转换，这不是在视觉上） 上的类似于名为属性具有相同的用途和行为。
 
-### <a name="example-setting-the-scale-property"></a>示例： 设置缩放属性
+### <a name="example-setting-the-scale-property"></a>示例： 设置缩放
 
-此示例显示了如何设置按钮上的比例属性。
+此示例显示了如何设置按钮上的缩放属性。
 
 ```xaml
 <Button Scale="2,2,1" Content="I am a large button" />
@@ -71,9 +71,9 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 ### <a name="mutual-exclusivity-between-new-and-old-properties"></a>新的和旧属性之间相互独有性子
 
 > [!NOTE]
-> **不透明度**属性不强制执行此部分中所述的相互唯一性。 是否使用 XAML 或合成动画，你可以使用相同的 Opacity 属性。
+> **Opacity**属性不强制执行此部分中所述的相互唯一性。 是否使用 XAML 或合成动画，你可以使用相同的 Opacity 属性。
 
-可使用一个 CompositionAnimation 进行动画处理的属性是几个现有的 UIElement 属性的替换：
+可使用一个 CompositionAnimation 进行动画处理的属性是多个现有 UIElement 属性的替换：
 
 - [RenderTransform](/uwp/api/windows.ui.xaml.uielement.rendertransform)
 - [RenderTransformOrigin](/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)
@@ -90,7 +90,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 > [!IMPORTANT]
 > 尝试混合使用两个属性集将导致 API 调用失败，并生成一条错误消息。
 
-很可能但不建议为简单起见，从一组属性的方法清除它们，切换。 如果该属性受 DependencyProperty （例如，UIElement.Projection 受 UIElement.ProjectionProperty），然后调用 ClearValue 以将其还原到其"未使用"状态。 （例如，比例属性），否则将属性设置为其默认值。
+很可能但不建议为简单起见，从一组属性通过清除它们，切换。 如果该属性受 DependencyProperty （例如，UIElement.Projection 受 UIElement.ProjectionProperty），然后调用 ClearValue 以将其还原到其"未使用"状态。 （例如，比例属性），否则将属性设置为其默认值。
 
 ## <a name="animating-uielement-properties-with-compositionanimation"></a>与 CompositionAnimation UIElement 属性进行动画处理
 
@@ -100,7 +100,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 ### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>示例： 将使用 Vector3KeyFrameAnimation 比例属性进行动画处理
 
-此示例显示了如何进行动画处理按钮的比例。
+此示例显示了如何创建动画的一个按钮的缩放。
 
 ```csharp
 var compositor = Window.Current.Compositor;
@@ -113,9 +113,9 @@ animation.Target = "Scale";
 button.StartAnimation(animation);
 ```
 
-### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>示例： 将 expressionanimation 比例属性进行动画处理
+### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>示例： 将 expressionanimation Scale 属性进行动画处理
 
-页面具有两个按钮。 第二个按钮进行动画处理以两次是最大 （通过 scale) 作为第一个按钮。
+页面具有两个按钮。 第二个按钮进行动画处理为两倍大 （通过 scale) 作为第一个按钮。
 
 ```xaml
 <Button x:Name="sourceButton" Content="Source"/>

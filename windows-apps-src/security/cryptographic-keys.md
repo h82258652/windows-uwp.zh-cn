@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f41ac858e73041e5afb4db596ce52b7d9bf4d8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436766"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471892"
 ---
 # <a name="cryptographic-keys"></a>加密密钥
 
@@ -79,4 +79,4 @@ ms.locfileid: "5436766"
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | 创建一个 KeyDerivationParameters 对象以在某个计数器模式的、基于哈希的邮件身份验证代码 (HMAC) 密钥派生函数中使用。 |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 创建一个 KeyDerivationParameters 对象以在 SP800-56A 密钥派生函数中使用。                                                 |
 
- 
+ 

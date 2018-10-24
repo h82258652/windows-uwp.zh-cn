@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 目录, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: fad186ed63557024fb71a6ec3c6997833afb7f4c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432585"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473350"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理应用内产品的大目录
 
-如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。 在 Windows 10 之前的版本中，应用商店限制每个开发者帐户可以列出 200 个产品，并且本主题中所述的过程可以用于解决此限制。 从 Windows 10 开始，应用商店将不会限制每个开发者帐户所列出的产品数量，在本文中描述的流程也不再必需。
+如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。 在 Windows 10 之前的版本中，应用商店限制每个开发者帐户可以列出 200 个产品，并且本主题中所述的过程可以用于解决此限制。 从 windows 10 开始，应用商店的每个开发人员帐户的产品列表数没有限制并且在本文中所述的过程也不再必需。
 
 > [!IMPORTANT]
 > 本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项和订阅），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。

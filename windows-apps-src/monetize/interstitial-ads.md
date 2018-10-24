@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, ad control, interstitial
 ms.localizationpriority: medium
 ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436845"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477707"
 ---
 # <a name="interstitial-ads"></a>间隙广告
 
@@ -163,7 +163,7 @@ ms.locfileid: "5436845"
 ### <a name="c-directx-interop"></a>C++（DirectX 互操作）
 
 此示例假设你已在 Visual Studio 中创建了 C++ **DirectX 和 XAML 应用（通用 Windows）** 项目，并且面向特定的 CPU 体系结构。
- 
+ 
 1. 在 Visual Studio 中打开你的项目。
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：

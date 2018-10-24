@@ -10,16 +10,16 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows 窗体, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438337"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470266"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>桌面应用程序中的 UWP 控件
 
 > [!NOTE]
-> 作为开发人员预览版当前可用的 Api 和本文中讨论的控件。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
+> 作为开发人员预览版当前可用的 Api 和本文中讨论的控件。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 
 Windows 10 现在可以在非 UWP 桌面应用程序中使用 UWP 控件，以便你可以增强的外观、 体验和功能的现有桌面应用程序将仅可通过 UWP 控件的最新 Windows 10 UI 功能。 这意味着，你可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 设计系统](../design/fluent-design-system/index.md)支持你的现有 WPF、 Windows 窗体和 c + + Win32 应用程序中的控件。 此开发人员方案有时称为*XAML 群岛*。
 
@@ -27,7 +27,7 @@ Windows 10 现在可以在非 UWP 桌面应用程序中使用 UWP 控件，以�
 
 ## <a name="wrapped-controls"></a>包装的控件
 
-在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)，WPF 和 Windows 窗体应用程序可以使用所选的包装 UWP 控件。 我们称为这些控件*包装控件*因为它们换行的接口和特定 UWP 控件的功能。 你可以直接在 WPF 或 Windows 窗体项目的设计图面添加这些控件，并像使用任何其他 WPF 或 Windows 窗体控件中在设计器中使用它们。
+在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)，WPF 和 Windows 窗体应用程序可以使用所选的包装 UWP 控件。 我们称为这些控件*包装控件*因为它们换行的接口和特定 UWP 控件的功能。 可以在 WPF 或 Windows 窗体项目的设计图面中直接添加这些控件，并像使用任何其他 WPF 或 Windows 窗体控件中在设计器中使用它们。
 
 > [!NOTE]
 > 包装的控件不可用于 c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
@@ -43,7 +43,7 @@ Windows 10 现在可以在非 UWP 桌面应用程序中使用 UWP 控件，以�
 
 ## <a name="host-controls"></a>主机控件
 
-除涵盖可用包装控件的情况下，WPF 和 Windows 窗体应用程序还可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 此控件可以承载派生自[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括由 Windows SDK 以及自定义用户控件提供的任何 UWP 控件的任何 UWP 控件。 此控件支持 Windows 10 Insider Preview SDK 生成 17709 及更高版本。
+除涵盖可用包装控件的情况下，WPF 和 Windows 窗体应用程序还可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件在[Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)。 此控件可以承载派生自[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括由 Windows SDK 以及自定义用户控件提供的任何 UWP 控件的任何 UWP 控件。 此控件支持 Windows 10 Insider Preview SDK 生成 17709 和更高版本。
 
 > [!NOTE]
 > 主机控件不可用于 c + + Win32 桌面应用程序。 这些类型的应用程序必须使用[UWP XAML 托管 API](#uwp-xaml-hosting-api)。
@@ -53,7 +53,7 @@ Windows 10 现在可以在非 UWP 桌面应用程序中使用 UWP 控件，以�
 如果你有了 c + + Win32 应用程序，你可以使用*UWP XAML 托管 API*来托管你有一个关联的窗口句柄 (HWND) 的应用程序中的任何 UI 元素中派生[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)任何 UWP 控件。 在 Windows 10 Insider Preview SDK 生成 17709 引入了此 API。 有关使用此 API 的详细信息，请参阅[使用托管 API 中的桌面应用程序的 XAML](using-the-xaml-hosting-api.md)。
 
 > [!NOTE]
-> C + + Win32 桌面应用程序必须使用 UWP XAML 到托管 UWP 控件中承载 API。 包装的控件和主机控件不可用针对这些类型的应用程序。 对于 WPF 和 Windows 窗体应用程序，我们建议你使用的包装的控件和主机控件而不是 UWP XAML 在 Windows 社区工具包中托管 API。 这些控件使用 UWP XAML 内部托管 API，并且提供更简单的开发体验。 但是，你可以使用 UWP XAML 托管 API 直接在 WPF 和 Windows 窗体应用程序中，如果你选择。
+> C + + Win32 桌面应用程序必须使用 UWP XAML 到托管 UWP 控件中承载 API。 包装的控件和主机控件不可用于这些类型的应用程序。 对于 WPF 和 Windows 窗体应用程序，我们建议你使用的包装的控件和主机控件而不是 UWP XAML 在 Windows 社区工具包中托管 API。 这些控件使用 UWP XAML 内部托管 API，并且提供更简单的开发体验。 但是，你可以使用 UWP XAML 托管 API 直接在 WPF 和 Windows 窗体应用程序中，如果你选择。
 
 ## <a name="architecture-overview"></a>体系结构概述
 

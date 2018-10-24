@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: b81bf3c55b493d8e36f186ec56b68367c6245cc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434056"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478184"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -451,7 +451,7 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 | TPM                 | 受信任的平台模块可用于创建加密公钥/私钥对，其创建方式使私钥永远无法泄露或在 TPM 之外使用（即，该密钥不可迁移）。                                                                                                                                                                                                                                                                                                               |
 | TPM 密钥证明 | 一种以加密方式证明密钥是 TPM 绑定密钥的证明。 此类型的证明可用于保证特定加密操作在特定计算机的 TPM 中发生                                                                                                                                                                                                                                                                                                                       |
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 

@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: windows 10, uwp, 自定义, 应用, 促销, 市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 13ee8d7482a2ce0716d4e133af329cd0ea42c184
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435262"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478780"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>创建自定义应用促销市场活动
 
 除了创建将在 Windows 应用中运行的[应用的广告市场活动](create-an-ad-campaign-for-your-app.md)外，你还可以使用其他渠道推广你的应用。 例如，你可以使用第三方应用营销提供商推广你的应用，或者可以在社交媒体站点上发布指向你的应用的链接。 这些活动被称为*自定义市场活动*。
 
-如果你为应用举行自定义市场活动，你可以通过为每个自定义市场活动创建不同的 URL（其中每个 URL 包含不同的*市场活动 ID*）来跟踪每个市场活动的相对表现。 当运行 Windows 10 的客户单击包含市场活动 ID 的 URL 时，Microsoft 会将该单击操作与相应的自定义市场活动相关联，并向你提供此数据。
+如果你为应用举行自定义市场活动，你可以通过为每个自定义市场活动创建不同的 URL（其中每个 URL 包含不同的*市场活动 ID*）来跟踪每个市场活动的相对表现。 当运行 windows 10 的客户单击包含市场活动 ID 的 URL 时，Microsoft 将该单击与相应的自定义市场活动相关联，并向你提供此数据。
 
 > [!IMPORTANT]
-> 仅会为 Windows 10 客户跟踪此数据。 使用其他操作系统的客户仍可以跟踪你的应用一览的链接，但有关这些客户的活动的数据将不包括在内。
+> 仅，在 windows 10 上的客户对此数据被跟踪。 使用其他操作系统的客户仍可以跟踪你的应用一览的链接，但有关这些客户的活动的数据将不包括在内。
 
 有两种主要类型的数据与自定义市场活动相关联：应用的 Microsoft Store 一览的*页面查看次数*和*转换数量*。 转换是由客户通过包括自定义市场活动 ID 的 URL 查看应用的应用商店一览页面所导致的应用购置。 有关转换的详细信息，请参阅本主题中的[了解应用购买如何限定为转换](#understanding-how-acquisitions-qualify-as-conversions)。
 

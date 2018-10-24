@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: aa01cc3d70db7a94667e944d1a1739e911f94b0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439146"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469766"
 ---
 # <a name="cryptography"></a>加密
 
@@ -46,7 +46,7 @@ ms.locfileid: "5439146"
 | 密钥存储提供程序        | 存储密钥材料的容器。 当前，密钥可以存储在软件、智能卡或受信任的平台模块 (TPM) 中。                                                                   |
 | X.509 证书           | 一个数字文档，通常由证书颁发机构颁发，用于向其他相关方验证个人、系统或实体的身份。                                            |
 
- 
+ 
 ## <a name="namespaces"></a>命名空间
 
 以下命名空间可以用在应用中。
@@ -152,4 +152,4 @@ SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此
 | [有关加密的导出限制](export-restrictions-on-cryptography.md) | 使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Microsoft Store 中。                                                                                                                                                                                                                                                                                                                                                                                            |
 | [常见的加密任务](common-cryptography-tasks.md)                     | 这些文章提供常见的 UWP 加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。                                                                                                                                                                                                                                                                                    |
 
- 
+ 

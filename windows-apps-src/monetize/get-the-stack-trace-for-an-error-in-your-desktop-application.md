@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误, 桌面应用程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440133"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472160"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的堆栈跟踪
 
@@ -46,7 +46,7 @@ ms.locfileid: "5440133"
 | 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
- 
+ 
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -55,7 +55,7 @@ ms.locfileid: "5440133"
 | applicationId | string | 要为其获取堆栈跟踪的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 |  是  |
 | cabIdHash | string | 获取与要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID 哈希。 要获取此值，请使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索应用程序中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
 
- 
+ 
 ### <a name="request-example"></a>请求示例
 
 以下示例演示如何使用此方法获取堆栈跟踪。 将 *applicationId* 和 *cabIdHash* 值替换为桌面应用程序的相应值。

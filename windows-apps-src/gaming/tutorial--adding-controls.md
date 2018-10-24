@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 控件, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436346"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472887"
 ---
 # <a name="add-controls"></a>添加控件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 Windows 10 安装在没有物理按钮的平板电脑、连接了 Xbox 控制器的电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏设备上。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
+优秀的通用 Windows 平台 (UWP) 游戏支持多种界面。 潜在玩家可能将 windows 10 上没有物理按钮，连接，了 Xbox 控制器的电脑的平板电脑，或者具有高性能鼠标和游戏键盘的最新桌面游戏安装。 在我们的游戏中，控制在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 类中实现。 此类将全部三个输入类型（鼠标和键盘、触控和游戏板）聚合到一个控制器内。 最终结果是一个第一人称射击游戏，其使用通过多台设备使用的流派标准移动观看控件。
 
 > [!NOTE]
 > 有关控件的详细信息，请参阅[游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md)和[游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)。
@@ -99,7 +99,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 游戏在暂停后进入 **WaitForInput** 状态。 当玩家将指针移出游戏主窗口或者按下暂停按钮（P 键或游戏板**开始**按钮）时将发生此情况。 **MoveLookController** 注册点按操作，并在它调用 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法时通知游戏循环。 此时，如果 **IsPauseRequested** 返回 **true**，游戏循环将对 **MoveLookController** 调用 **WaitForPress** 以将控制器转入 **WaitForInput** 状态。 
 
 
-进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 以外暂停按钮，为了让游戏回退到**活动**状态玩家需要选择一个菜单项。 
+进入 **WaitForInput** 状态后，游戏将停止处理几乎所有游戏输入事件，直到它返回到 **Active** 状态。 例外情况是暂停按钮，按此按钮会使游戏回退到活动状态。 以外暂停按钮中，为了让游戏回退到**活动**状态玩家需要选择一个菜单项。 
 
 
 
@@ -579,7 +579,7 @@ window->KeyUp +=
 
 
 
-在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 这用于在**UpdatePollingDevices**方法检查是否已更改已知游戏板的列表。 
+在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我们添加了两个新事件来确定游戏板是否已[添加](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[删除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 这些事件更新 **m_gamepadsChanged** 属性。 这用于**UpdatePollingDevices**方法中检查是否已更改已知游戏板的列表。 
 
 ```cpp
     // Detect gamepad connection and disconnection events.
@@ -815,11 +815,11 @@ void MoveLookController::Update()
 
 现在，我们已经添加了控件，我们还需要添加另一项功能来创建沉浸式游戏：声音！
 对于任何游戏而言，音乐和声音效果都非常重要，下面我们讨论[添加声音](tutorial--adding-sound.md)。
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

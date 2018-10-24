@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430838"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472837"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
@@ -56,6 +56,6 @@ ms.locfileid: "5430838"
 - **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将 Azure AD 与开发人员中心帐户关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。
-- **开发人员设备**： 查看和管理[Windows Phone 8.x 设备已解锁用于测试](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
+- **开发人员设备**： 查看和管理[已解锁用于测试的 Windows Phone 8.x 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434301"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472558"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
@@ -29,7 +29,7 @@ ms.locfileid: "5434301"
 将产品进行促销后，客户将能够在所选时间段内以更低价格购买该产品。 如果将价格降为**免费**，客户可以在促销期间免费下载产品。
 
 > [!IMPORTANT]
-> 促销价格将仅显示给使用 Windows 10 设备（包括 Xbox One）的客户。 向拥有其他产品的用户提供的促销价仅显示给使用 Windows 10 版本 1607 或更高版本的客户。
+> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 向拥有其他产品的用户提供的促销价仅显示给使用 Windows 10 版本 1607 或更高版本的客户。
 > 
 > 在其他操作系统上，客户看到的是应用或加载项的常规价格，将无法以促销价进行购买。 你始终可以通过在新提交中选择其他价格区间来更改价格，但该价格不以限时促销的形式显示。
 
@@ -83,7 +83,7 @@ ms.locfileid: "5434301"
 > [!IMPORTANT]
 > 如果促销已开始，你将无法编辑开始日期。 在你可以编辑结束日期时，我们建议你不要将促销编辑为早于其原始结束日期结束。 如果你在最初发布的结束日期之前结束促销，可能会让潜在客户感到懊恼（因为客户在查看应用的“应用商店一览”时会看到计划的结束日期）。
 
- **若要取消未尚开始的促销，请执行以下操作：**
+ **若要取消未尚开始的促销，请执行以下操作：**
 
 1.  在进行中的应用或加载项提交的**定价和可用性**页上，转到**促销价**部分。
 2.  找到要取消的促销，然后单击**删除**。

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433470"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470742"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
 
 
 
-**注意**  你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)还是使用 [{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
+**注意**你需要示例数据的程度 — 多少它能帮助你 — 取决于你的绑定是否使用[{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)或[{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
 
 也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。 为了使你的控件填充数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你正要生成一个草图（或原型）应用，则示例数据可能真的非常有用而且节省时间。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。
 

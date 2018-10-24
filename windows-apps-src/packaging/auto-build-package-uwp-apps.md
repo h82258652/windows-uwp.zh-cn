@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431902"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472516"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -216,7 +216,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 然后，从生成步骤中删除 `AppxBundle` msbuild 参数。
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>设置连续部署生成用于旁加载
-此类型的生成完成后，用户可以从生成结果页面的项目部分下载应用包文件。 如果要通过创建更完整的分配来对应用进行 beta 测试，可使用 HockeyApp 服务。 此服务提供用于 beta 测试、用户分析和崩溃诊断的高级功能。
+此类型的生成完成后，用户可以从生成结果页的项目部分下载应用包文件。 如果要通过创建更完整的分配来对应用进行 beta 测试，可使用 HockeyApp 服务。 此服务提供用于 beta 测试、用户分析和崩溃诊断的高级功能。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>将版本号应用到生成
 
@@ -257,7 +257,7 @@ CI_MyUWPApp_1.1.2501.0
 
 接下来，使用本指南配置 HockeyApp 连接：[如何将 HockeyApp 与 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS) 一起使用。](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs) 可使用 Microsoft 帐户、社交媒体帐户或仅仅一个电子邮件地址设置 HockeyApp 帐户。 免费计划附带两个应用、一个所有者，并且没有数据限制。
 
-然后，你可以手动或通过上传现有应用包文件创建 HockeyApp 应用。 若要了解详细信息，请参阅[如何创建新应用](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
+然后，你可以手动或通过上传现有的应用包文件创建 HockeyApp 应用。 若要了解详细信息，请参阅[如何创建新应用](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
 
 若要使用现有的应用包文件，添加一个生成步骤，并设置该生成步骤的 Binary File Path 参数。 
 
@@ -269,7 +269,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-尽管 HockeyApp 任务允许你指定符号文件的路径，它是最佳做法将符号包含捆绑包。
+尽管 HockeyApp 任务允许你指定符号文件的路径，它是与捆绑包将符号是最佳做法。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>设置将程序包提交到 Microsoft Store 的连续部署生成 
 
@@ -296,7 +296,7 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 
 你需要将开发人员帐户与 Azure Active Directory (AD) 连接起来，然后在 AD 中创建一个应用以对请求进行身份验证。 可按照扩展页中的指南完成该操作。 
 
-配置扩展后，你可以添加生成任务，并使用你的应用 ID 和上传文件的位置配置它。
+一旦你已配置了扩展，你可以添加生成任务，并与你的应用 ID 和上传文件的位置对其进行配置。
 
 ![配置开发人员中心](images/building-screen17.png) 
 
@@ -317,7 +317,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到在本地计算机的受信任的根证书部分将然后安装或更新的应用包文件。
+使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，并将然后安装或更新的应用包文件。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
 在 Windows 10 周年更新中，你可以双击应用包文件，并通过在对话框中选择安装按钮来安装你的应用。 
@@ -327,7 +327,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 >[!NOTE]
 > 此方法不安装证书或关联的依赖项。
 
-如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点列表。 否则，Windows 将该文件标记为锁定。 
+如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点的列表。 否则，Windows 将该文件标记为锁定。 
 
 <span id="certificates-best-practices"/>
 

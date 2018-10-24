@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 00baa088f0cb01068f1d1d78d101e6cd294c77f7
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433040"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476411"
 ---
 # <a name="launch-the-windows-settings-app"></a>启动 Windows 设置应用
 
@@ -101,7 +101,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 与 Cortana 交谈 | ms-settings:cortana-language |
 
 > [!NOTE] 
-> 在桌面上设置本节时将会调用搜索电脑设置为区域中的 Cortana 当前不可用或已禁用 Cortana 的位置。 在此情况下不会列出特定于 Cortana 的页面 (在我的设备，Cortana) 和 cortana 交谈。 
+> 在桌面上设置本节时将会调用搜索电脑设置为区域中的 Cortana 当前不可用或已禁用 Cortana 的位置。 在此情况下不会列出特定于 Cortana 的页面 (在我的设备，Cortana) 和与 Cortana。 
 
 ## <a name="devices"></a>设备
 
@@ -127,6 +127,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 音频 | ms-settings:easeofaccess-audio |
 | 隐藏式字幕 | ms-settings:easeofaccess-closedcaptioning |
+| 颜色筛选器 | ms-设置： easeofaccess-colorfilter |
 | 屏幕 | ms-settings:easeofaccess-display |
 | 目视控制 | ms-settings:easeofaccess-eyecontrol |
 | 字体 | ms-settings:fonts |

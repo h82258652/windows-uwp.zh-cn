@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441195"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471566"
 ---
 # <a name="trademark-and-copyright-protection"></a>商标和版权保护
 
@@ -67,9 +67,9 @@ Microsoft 强烈建议您不要这样做。 但是如果商业上确实有必要
 
 仔细阅读 Microsoft 的通知，并按照说明执行操作。 Microsoft 的通知可能包含您可能需要遵循的具体步骤，以告知我们您为纠正该问题所做的事项、您与要求者的意见不一致以及/或者您希望将您的应用重新提交到应用商店。
 
- 
+ 
 
- 
+ 
 
 
 

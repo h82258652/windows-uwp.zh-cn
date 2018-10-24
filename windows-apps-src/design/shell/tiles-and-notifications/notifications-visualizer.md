@@ -1,6 +1,6 @@
 ---
 author: andrewleader
-Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
+Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
 title: 通知可视化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af8b2489346e1ef81c5cae304802814b79b8b950
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432525"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473995"
 ---
 # <a name="notifications-visualizer"></a>通知可视化工具
 
  
 
 
-通知可视化工具是 [Microsoft Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴和交互式 toast 通知。
+通知可视化工具是一个新的通用 Windows 平台 (UWP) 应用[的应用商店中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可帮助开发人员设计自适应动态磁贴和交互式 toast 通知的 windows 10。
 
 
 ## <a name="overview"></a>概述
@@ -34,13 +34,13 @@ ms.locfileid: "5432525"
 
 ![通知可视化工具应用编辑器（带有代码和磁贴）的屏幕截图](images/notif-visualizer-001.png)
 
- 
+ 
 
 借助通知可视化工具，可以创建和测试自适应磁贴和 Toast 有效负载，而无需编辑和部署自己的应用。 创建了视觉效果很理想的负载后，可以将其集成到应用中。 若要了解更多详细信息，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)和[发送本地 Toast](send-local-toast.md)。
 
-**注意**   通知可视化工具对 Windows“开始”菜单和 Toast 通知的模拟并不总是完全准确，并且它不支持某些高级有效负载属性。 当拥有所需的磁贴和 Toast 时，可通过固定磁贴或弹出 Toast 对其进行测试来验证它是否会按预期显示。
+**注意**的 Windows 开始菜单和 toast 通知的通知可视化工具的模拟并不总是完全准确，并且它不支持某些高级有效负载属性。 当拥有所需的磁贴和 Toast 时，可通过固定磁贴或弹出 Toast 对其进行测试来验证它是否会按预期显示。
 
- 
+ 
 
 ## <a name="features"></a>功能
 
@@ -54,7 +54,7 @@ ms.locfileid: "5432525"
 
 ![通知可视化工具编辑器（带有磁贴）的屏幕截图](images/notif-visualizer-004.png)
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 

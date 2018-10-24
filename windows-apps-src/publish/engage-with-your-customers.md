@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3690e294a3af29d1af261189310dca1a13ac5130
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439294"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475873"
 ---
 # <a name="engage-with-your-customers"></a>与客户互动
 
@@ -26,4 +26,4 @@ ms.locfileid: "5439294"
 -   [向应用客户发送通知](send-push-notifications-to-your-apps-customers.md)
 -   [使用定向优惠最大程度地提高参与度和转换率](use-targeted-offers-to-maximize-engagement-and-conversions.md)
 
- 
+ 

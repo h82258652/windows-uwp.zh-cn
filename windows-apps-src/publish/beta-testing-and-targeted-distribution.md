@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp, beta 测试版本, 有限分发, beta 版本, 测试, 测试人员
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440383"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473799"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>beta 版本测试和定向分发
 
@@ -35,7 +35,7 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 
 如果你要让测试人员在应用公开发布前就使用它，并确保没有其他人可以看到该应用的一览，请使用[可见性](choose-visibility-options.md)（位于你的提交的**定价和可用性**页面）下的**私人受众**选项。 只有通过这种方法，才可以在将应用分配给测试人员时，完全防止其他人看到该应用的 Microsoft Store 一览（即使其他人能够键入直接链接）。 
 
-**私人受众**选项可以仅可在你具有未已发布你的应用到公共受众时。 你可以使用此选项与应用面向任何操作系统版本，但测试人员必须运行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，并且必须使用与你提供的电子邮件地址关联的 Microsoft 帐户登录。
+**私人受众**选项可以只能时不已发布你的应用向公共受众。 你可以使用此选项与应用面向任何操作系统版本，但测试人员必须运行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，并且必须使用与你提供的电子邮件地址关联的 Microsoft 帐户登录。
 
 有关详细信息，请参阅[私人受众](choose-visibility-options.md#audience)。
 
@@ -53,7 +53,7 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>在 Microsoft Store 中隐藏应用和使用促销代码
 
-此选项提供了另一种方法来限制时阻止其他任何用户发现你的应用商店中的应用分发到某些组的测试人员，应用 （或促销充值码获取它）。 但是，与私人受众选项不同，如果有直接链接，任何人都可能看到你的应用的一览。 如果保密性对于你的提交至关重要，我们建议改为发布到私人受众。
+此选项提供了另一种方法来限制应用于某些组的测试人员分发时阻止其他任何用户发现你的应用商店中的应用 （或促销充值码获取它）。 但是，与私人受众选项不同，如果有直接链接，任何人都可能看到你的应用的一览。 如果保密性对于你的提交至关重要，我们建议改为发布到私人受众。
 
 隐藏应用和使用促销代码适用于面向任何操作系统版本的应用，但测试人员只有在运行 Windows 10 的情况下才可以获得该应用。
 
@@ -79,4 +79,4 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 > [!IMPORTANT]
 > 此选项不适用于新的提交。 如果你之前已经为面向 Windows Phone 8.1 或更早版本的某个应用选择了此选项，你将能够让该应用继续使用此选项。 你可以通过创建新的提交来更改测试人员（最多 10,000 名）列表。 
 
-使用此选项，具有你所指定的电子邮件地址的人员可以通过使用应用一览的直接链接来下载该应用（仅限在运行 Windows Phone 8.1 或之前版本的设备上）。 其他任何客户都无法下载该应用（即使他们拥有该链接），并且他们无法通过搜索或浏览在 Microsoft Store 中找到该应用。 为了让测试人员能够下载该应用，你需要为他们提供链接（[应用标识页面](view-app-identity-details.md)上的 **URL**），并且他们必须使用与你提供的电子邮件地址相关联的 Microsoft 帐户登录。 你还可以通过[生成促销代码](generate-promotional-codes.md)让使用 Windows 10 设备的测试人员获得该应用；借助其中一个应用促销代码，任何人都可以在 Windows 10 设备上下载该应用，即使你未在此处输入其电子邮件。
+使用此选项，具有你所指定的电子邮件地址的人员可以通过使用应用一览的直接链接来下载该应用（仅限在运行 Windows Phone 8.1 或之前版本的设备上）。 其他任何客户都无法下载该应用（即使他们拥有该链接），并且他们无法通过搜索或浏览在 Microsoft Store 中找到该应用。 为了让测试人员能够下载该应用，你需要为他们提供链接（[应用标识页面](view-app-identity-details.md)上的 **URL**），并且他们必须使用与你提供的电子邮件地址相关联的 Microsoft 帐户登录。 你还可以让应用访问 windows 10 设备上的测试人员通过[生成促销充值码](generate-promotional-codes.md);即使你未输入其电子邮件，与你的应用的促销充值码之一的任何人都可以在 windows 10 设备上，下载它。

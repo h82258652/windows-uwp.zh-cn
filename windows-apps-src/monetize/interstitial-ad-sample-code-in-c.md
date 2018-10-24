@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 间隙, c#, 示例代码
 ms.localizationpriority: medium
 ms.openlocfilehash: 195f13d3a51925925d320b87cd0142d14d449226
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438720"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475802"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>C\# 间隙广告示例代码 #  
 
@@ -40,8 +40,8 @@ ms.locfileid: "5438720"
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
 
- 
+ 
 ## <a name="related-topics"></a>相关主题
 
 * [GitHub 上的广告示例](http://aka.ms/githubads)
- 
+ 

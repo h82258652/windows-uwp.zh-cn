@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
+description: 准备工作比想像中的简单。 请按照以下说明，并开始创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445614"
+ms.locfileid: "5474756"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 按照以下说明开始创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。
+准备工作比想像中的简单。 请按照以下说明，并开始创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
 
 ## <a name="1-download-or-update-visual-studio"></a>1. 下载或更新 Visual Studio
 
-Microsoft Visual Studio 2017 可帮助你设计、编码、测试和调试应用。
+Microsoft Visual Studio2017 可帮助你设计、 编码、 测试和调试你的应用。
 
-如果你尚未获得 Visual Studio 2017，则可以安装免费的 Microsoft Visual Studio Community 2017。 此下载包含用于测试应用的设备模拟器：
+如果你尚未获得 Visual Studio2017，你可以安装免费的 Microsoft Visual Studio Community2017。 此下载包含用于测试应用的设备模拟器：
 
 -   [下载 Windows 10 开发人员工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

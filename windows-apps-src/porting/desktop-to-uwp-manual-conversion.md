@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440990"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470043"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "5440990"
 
 若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-如果使用 xcopy 命令安装你的应用程序，或者你熟悉应用的安装程序对系统进行的更改，请考虑手动打包并且想要更精确地控制进程。
+请考虑手动打包，如果使用 xcopy 命令安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统进行的更改并且想要更精确地控制过程。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
@@ -177,7 +177,7 @@ ms.locfileid: "5440990"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>生成包资源索引 (PRI) 文件
 
-如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源你的应用程序创建程序包后，你需要生成新的 PRI 文件。
+如果你创建基于目标的资源，如上述部分所述，或修改了任何视觉资源应用程序创建程序包后，你需要生成一个新的 PRI 文件。
 
 1.  打开**适用于 VS 2017 的开发人员命令提示符**。
 
@@ -208,7 +208,7 @@ ms.locfileid: "5440990"
 若要更新应用的 .exe 或 .dll 文件，请将程序包中的现有文件替换为新文件、增加 AppxManifest.xml 中的版本号，然后再次运行上述命令。
 
 > [!NOTE]
-> 打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
+> 已打包的应用程序始终作为交互用户运行，并且任何安装已打包的应用程序上的驱动器必须格式化为 NTFS 格式。
 
 ## <a name="next-steps"></a>后续步骤
 

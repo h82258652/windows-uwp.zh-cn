@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 3a516fea67239a737c1f8a05ef17fbc1d9203030
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438878"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476815"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
 有些 Windows 10 体验（例如：启用触摸功能的 UI 页面）必须在新式应用容器内运行。 如果要添加这些体验，请用 UWP 项目和 Windows 运行时组件扩展桌面应用程序。
 
-在许多情况下，你可以直接从桌面应用程序中调用 UWP API，因此在查看本指南前，请参阅[面向 Windows 10 的增强](desktop-to-uwp-enhance.md)。
+在许多情况下，你可以直接从桌面应用程序中调用 Windows 运行时 Api，因此在查看本指南中前,，请参阅[适用于 Windows 10 增强](desktop-to-uwp-enhance.md)。
 
 >[!NOTE]
 >本指南假定你已为桌面应用程序创建 Windows 应用包。 如果你尚未完成此操作，请参阅[打包桌面应用程序](desktop-to-uwp-root.md)。
@@ -44,7 +44,7 @@ ms.locfileid: "5438878"
 
 ### <a name="configure-the-desktop-application"></a>配置的桌面应用程序
 
-请确保你的桌面应用程序具有对你需要调用 Windows 运行时 Api 的文件的引用。
+请确保你的桌面应用程序具有的文件，则需要调用 Windows 运行时 Api 的参考。
 
 若要执行此操作，请参阅主题[增强 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)的[首先，设置你的项目](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)部分。
 
@@ -97,7 +97,7 @@ ms.locfileid: "5438878"
 ![自适应设计](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->此示例显示了通过向解决方案中添加 UWP 项目的 XAML UI。 这是显示 XAML Ui 中的桌面应用程序的稳定受支持的方法。 此方法的替代方法是使用 XAML 岛直接向你的桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[在桌面应用程序的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>此示例显示了通过向解决方案中添加一个 UWP 项目的 XAML UI。 这是显示 XAML Ui 中的桌面应用程序的稳定支持的方法。 此方法的替代方法是使用 XAML 岛直接向你的桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前作为开发人员预览版。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[桌面应用程序中的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>设计模式
 
@@ -162,7 +162,7 @@ ms.locfileid: "5438878"
   <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
     <uap:Protocol Name="xamluidemo" />
   </uap:Extension>
-</Extensions>    
+</Extensions>    
 ```
 
 为协议给定名称，提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。
@@ -254,7 +254,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 可使你的桌面应用程序成为共享目标，以使用户能够轻松地共享数据，如来自支持共享的其他应用的图片。
 
-例如，用户可能选择你的应用程序共享来自 Microsoft Edge，照片应用的图片。 下面是具有该功能的 WPF 示例应用程序。
+例如，用户可能选择你的应用程序共享来自 Microsoft Edge、 照片应用的图片。 下面是具有该功能的 WPF 示例应用程序。
 
 ![共享目标](images/desktop-to-uwp/share-target.png).
 
@@ -280,33 +280,33 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>添加共享目标扩展
 
-在**解决方案资源管理器**中，在你的解决方案中打开打包项目的**package.appxmanifest**文件并添加共享目标扩展。
+在**解决方案资源管理器**中，你的解决方案中打开打包项目的**package.appxmanifest**文件并添加共享目标扩展。
 
 ```xml
 <Extensions>
-      <uap:Extension
-          Category="windows.shareTarget"
-          Executable="ShareTarget.exe"
-          EntryPoint="App">
-        <uap:ShareTarget>
-          <uap:SupportedFileTypes>
-            <uap:SupportsAnyFileType />
-          </uap:SupportedFileTypes>
-          <uap:DataFormat>Bitmap</uap:DataFormat>
-        </uap:ShareTarget>
-      </uap:Extension>
-</Extensions>  
+      <uap:Extension
+          Category="windows.shareTarget"
+          Executable="ShareTarget.exe"
+          EntryPoint="App">
+        <uap:ShareTarget>
+          <uap:SupportedFileTypes>
+            <uap:SupportsAnyFileType />
+          </uap:SupportedFileTypes>
+          <uap:DataFormat>Bitmap</uap:DataFormat>
+        </uap:ShareTarget>
+      </uap:Extension>
+</Extensions>  
 ```
 
 提供 UWP 项目生成的可执行文件的名称以及入口点类的名称。 此标记假定你的 UWP 应用的可执行文件的名称是`ShareTarget.exe`。
 
-你还必须指定可用你的应用共享的文件类型。 在此示例中，我们进行[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序成为共享目标的位图图像，因此我们指定`Bitmap`受支持的文件类型。
+你还必须指定可用你的应用共享的文件类型。 在此示例中，我们进行[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序成为共享目标的位图图像，因此我们将指定`Bitmap`受支持的文件类型。
 
 <a id="override" />
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>覆盖 OnShareTargetActivated 事件处理程序
 
-覆盖 UWP 项目的**应用程序**类中**OnShareTargetActivated**事件处理程序。
+覆盖 UWP 项目的**应用程序**类中的**OnShareTargetActivated**事件处理程序。
 
 当用户选择你的应用来共享文件时，将调用此事件处理程序。
 
@@ -353,7 +353,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
   ...
       <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
   ...
-</Extensions>  
+</Extensions>  
 ```
 
 此扩展将使 UWP 应用启动到你想要共享文件的桌面应用程序。 在示例中，我们引用的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序的可执行文件。
@@ -362,12 +362,12 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改的桌面应用程序来获取共享的文件
 
-修改桌面应用程序以查找并处理共享的文件。 此示例中，在 UWP 应用存储在本地应用数据文件夹中的共享的文件。 因此，我们将修改的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序向拉取照片从该文件夹。
+修改桌面应用程序以查找并处理共享的文件。 在此示例中，UWP 应用存储在本地应用数据文件夹中的共享的文件。 因此，我们将修改的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序向拉取照片从该文件夹。
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
-对于用户打开已有的桌面应用程序的情况下，我们还可能会处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件并在路径中将传递到文件位置。 这样一来任何打开的实例的桌面应用程序将显示共享的照片。
+对于用户打开已有的桌面应用程序的情况下，我们还可能会处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件并在路径中传递到的文件位置。 该方法任何打开的实例的桌面应用程序将显示共享的照片。
 
 ```csharp
 ...

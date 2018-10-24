@@ -17,11 +17,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445395"
+ms.locfileid: "5473832"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -117,7 +117,7 @@ void MyProject::MainPage::Grid_KeyUp(
 > [!NOTE]
 > Alt 键由 **VirtualKey.Menu** 值表示。
 
- 
+ 
 
 ### <a name="shortcut-keys-example"></a>快捷键示例
 
@@ -284,7 +284,7 @@ End Sub
 >
 > 设置 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 不会自行执行任何操作。 你仍需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的处理程序，才能在你的应用中真正实现键盘快捷方式行为。 此外，不会自动为访问键提供带下划线的文本效果。 如果你希望在 UI 中显示带下划线的文本，则必须明确对助记键中特定键的文本标注下划线，作为嵌入式 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式。
 
- 
+ 
 
 ## <a name="keyboard-routed-events"></a>键盘路由事件
 
@@ -411,6 +411,6 @@ public class CustomGridView : GridView
 * [输入：触摸键盘示例](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [响应屏幕键盘外观示例](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
+ 
 
- 
+ 

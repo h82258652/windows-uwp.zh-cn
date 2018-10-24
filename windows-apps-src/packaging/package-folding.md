@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443740"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475486"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>用资产包和包折叠进行开发 
 
@@ -29,7 +29,7 @@ ms.locfileid: "5443740"
 
 要明白包折叠为什么不会影响你的开发流程，我们首先需要知道当你将应用拆分成多个包（资产包或资源包）时会发生什么情况。 
 
-从高层次上看，将应用的部分文件拆分到其他包（非体系结构程序包）后，你将无法直接访问那些相对于你的代码运行位置的文件。 原因在于这些软件包跟你的体系结构程序包安装到了不同的目录。 例如，如果你进行游戏，你的游戏已经本地化为法语和德语。 你打算为 x86 和 x64 计算机构建，那么你应该有你的游戏的应用程序包中的这些应用包文件：
+从高层次上看，将应用的部分文件拆分到其他包（非体系结构程序包）后，你将无法直接访问那些相对于你的代码运行位置的文件。 原因在于这些软件包跟你的体系结构程序包安装到了不同的目录。 例如，如果你进行游戏，你的游戏已经本地化为法语和德语。 你打算为 x86 和 x64 计算机构建，则你应该有你的游戏的应用程序包中的这些应用包文件：
 
 -   MyGame_1.0_x86.appx
 -   MyGame_1.0_x64.appx
@@ -47,7 +47,7 @@ C:\Program Files\WindowsApps\
 `-- …(other apps)
 ```
 
-请注意，并非适用于用户的文件不会在应用包安装 （即 x86 程序包和德语语言包）。 
+请注意，并非适用于用户的文件不会在应用包安装 （x86 程序包和德语语言包）。 
 
 对于该用户，你的游戏的主可执行文件将位于 **MyGame_1.0_x64** 文件夹中，它将从该文件夹运行，并且通常只能访问该文件夹中的文件。 要访问 **MyGame_1.0_language-fr** 文件夹中的文件，你必须使用 MRT API 或 PackageManager API。 MRT Api 能够从安装的语言自动选择最合适的文件，你可以了解有关[windows.applicationmodel.resources.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core)MRT Api 的详细信息。 或者，你也可以使用 [PackageManager 类](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager)找到法语语言包的安装位置。 你不应该对应用程序包的安装位置做出任何假设，因为安装位置可能会发生变化，并且可能因用户而异。 
 

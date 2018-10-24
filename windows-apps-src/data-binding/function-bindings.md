@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432358"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470289"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
-**注意**  有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的常规信息绑定中你的应用与 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
 
@@ -66,7 +66,7 @@ class ColorEntry
 
 与其他属性路径一样指定该函数的路径，可以包含用于定位该函数的点 (.)、索引器或强制转换。
 
-可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法用于绑定到代码隐藏部分中的静态函数。
+可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，使用以下语法用于绑定到代码隐藏文件中的静态函数。
 
 ```xaml
 <Page 

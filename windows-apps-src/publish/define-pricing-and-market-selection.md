@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435704"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470878"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
@@ -43,10 +43,10 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 请记住，即使你选择了所有市场，本地法律和限制或其他因素可能会阻止某些应用列入一些国家和地区。 此外，某些市场可能有与年龄分级相关的特定要求。 如果你的应用不满足这些要求，我们将无法在该市场中提供你的应用。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
 
 > [!NOTE]
-> 对于面向 Windows 8 或 Windows 8.1 的应用，某些个别市场被视为单个“世界其他地区”市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
+> 对于面向 Windows8 或 Windows8.1 应用，某些个别市场被视为单个"世界其他地区"市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
 
 你还将看到一个复选框，指示是否向应用商店将来可能添加的任何市场推出你的应用。 如果选中此框，我们将来添加新市场时，你的提交的基本价格和公开发布日期将用于你在这些市场的应用。 如果不希望这样做，可取消选中该框，我们将不会在未来添加的市场中发布你的应用（但你可在将来随时添加这些市场）。
- 
+ 
 
 ## <a name="microsoft-store-consumer-markets"></a>Microsoft 应用商店消费者市场
 
@@ -476,13 +476,13 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 | 英国       | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 美国        | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 
- 
+ 
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果你的应用包含程序包面向 Windows 8.x 不同，请务必注意大量市场被视为单个"世界其他地区"市场使用的 Windows 应用商店客户 8.x，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中没有一个"世界其他地区"市场选项以将所有这些市场组合)。
+如果你的应用包含程序包面向 Windows 8.x 不同，请务必注意大量市场被视为单个"世界其他地区"市场使用的 Windows 应用商店客户 8.x 不同，即使它们显示为 Windows 开发人员中心中的个别市场仪表板 (而不是更早版本的应用商店仪表板中，其中没有一个"世界其他地区"市场选项，以将所有这些市场组合)。
 
-如果你在提交应用时保留默认选择，则无需担心此问题，并且你的应用将向所有可能的市场提供。 但是，如果你希望排除特定市场，请记住，即使只排除其中一个“世界其他地区”市场，也意味着将无法在任何“世界其他地区”市场中向使用 Windows 8 或 Windows 8.1 的客户提供你的应用。
+如果你在提交应用时保留默认选择，则无需担心此问题，并且你的应用将向所有可能的市场提供。 但是，如果你想要排除特定市场，请记住，即使其中一个"世界其他地区"市场中排除意味着你的应用不能在任何 Windows8 或 Windows8.1 的客户的"世界其他地区"市场。
 
 包含在 Windows 8.x 的“世界其他地区”中的市场如下：
 
@@ -743,4 +743,4 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 </table>
 
 > [!NOTE]
-> 有关可注册开发者帐户的国家和地区的列表，请参阅[帐户类型、地点和费用](account-types-locations-and-fees.md)。
+> 有关可注册开发者帐户的国家和地区的列表，请参阅[帐户类型、地点和费用](account-types-locations-and-fees.md)。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440123"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476051"
 ---
 # <a name="accessing-homegroup-content"></a>访问家庭组内容
 
@@ -38,7 +38,7 @@ ms.locfileid: "5440123"
     若要访问家庭组内容，用户的计算机必须已设置家庭组，且你的应用必须至少具有以下功能之一：**picturesLibrary**、**musicLibrary** 或 **videosLibrary**。 当你的应用访问“家庭组”文件夹时，它将仅看到与在你的应用清单中声明的功能相对应的库。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
 
     > [!NOTE]
-    >  无论在你的应用的清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。     
+    >  无论在你的应用的清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。     
 
 -   **了解如何使用文件选取器**
 
@@ -197,7 +197,7 @@ ms.locfileid: "5440123"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **打开用户的文件选择的读取访问权限，并将文件流设置为的源**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，，然后播放该文件。
+3.  **打开用户的文件选择的读取访问权限，并将文件流设置为的源**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，并且然后播放该文件。
     ```cs
     if (file != null)
     {

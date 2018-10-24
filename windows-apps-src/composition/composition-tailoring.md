@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440153"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470107"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>定制效果和使用 Windows UI 体验
 
@@ -30,7 +30,7 @@ Windows UI 提供差异化有关的许多美观效果、 动画和方式。 但�
 
 ## <a name="user-effects-settings"></a>用户效果设置
 
-用户可以自定义原因，该应用程序应尊重并适应各种其 Windows 的体验。 最终用户可以控制的一个区域更改类型的用于其系统整个他们可看到的效果。
+用户可以自定义原因，该应用程序应尊重并适应各种其 Windows 的体验。 最终用户可以控制的一个区域更改效果他们可看到用于整个系统的类型。
 
 ### <a name="transparency-effects-settings"></a>透明度效果设置
 
@@ -38,9 +38,9 @@ Windows UI 提供差异化有关的许多美观效果、 动画和方式。 但�
 
 ![在设置中的透明度选项](images/tailoring-transparency-setting.png)
 
-打开时，使用透明度任何效果将显示按预期运行。 这适用于亚克力、 HostBackdropBrush 或不是完全不透明任何自定义效果图。
+打开时，使用透明度任何效果会按预期显示。 这适用于亚克力、 HostBackdropBrush 或不是完全不透明任何自定义效果图。
 
-关闭后，亚克力材料将自动回退为纯色因为默认情况下，XAML 的亚克力画笔具有侦听此事件。 在这里，我们看到相应地回退为纯色时未启用透明效果的计算器应用：
+关闭后，亚克力材料将自动回退为纯色因为 XAML 的亚克力画笔具有默认情况下侦听此事件。 在这里，我们看到相应地回退为纯色时未启用透明效果的计算器应用：
 
 ![使用亚克力的计算器](images/tailoring-acrylic.png)
 ![使用亚克力响应透明度设置的计算器](images/tailoring-acrylic-fallback.png)
@@ -85,7 +85,7 @@ public MainPage()
 
 ### <a name="using-composition-capabilities"></a>使用合成功能
 
-CompositionCapabilities 功能已用于功能，如亚克力材料，其中材料将回退到具体取决于方案和硬件的详细性能效果。
+CompositionCapabilities 功能已用于功能，如亚克力材料，材料回退到更多的性能效果，具体取决于方案和硬件。
 
 可以将该 API 添加到几个简单步骤中的现有代码。
 
@@ -120,7 +120,7 @@ CompositionCapabilities 功能已用于功能，如亚克力材料，其中材�
 
 ## <a name="fast-vs-slow-effects"></a>快速与慢效果
 
-根据反馈提供[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) CompositionCapabilties API 中的方法，应用程序可以决定进行了优化他们所选的其他效果交换耗费资源或不受支持的效果为设备。 某些效果已知的一致地比他人做得更多需要大量资源应谨慎使用，并可以更自由地使用其他效果。 对于所有效果，但是，小心应使用时链接和为某些方案或组合创建动画可能会更改效果图的性能特征。 下面是一些经验法则性能特性的单个效果：
+根据反馈提供[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) CompositionCapabilties API 中的方法，应用程序可以决定进行了优化他们所选的其他效果交换耗费资源或不受支持的效果为设备。 某些效果已知的一致地比他人做得更多需要大量资源应谨慎使用，并可以更自由地使用其他效果。 对于所有效果，但是，小心应使用链接和动画为某些方案或组合可能会更改效果图的性能特征时。 下面是一些经验法则性能特性的单个效果：
 
 - 已知具有高性能影响的效果如下所示 – 高斯模糊、 阴影掩码、 BackDropBrush、 HostBackDropBrush，和可视化层。 这些不推荐用于低端设备[（功能级别 9.1 9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，并且应谨慎使用高端设备上。
 - 中等性能影响的效果包括颜色矩阵，某些混合效果 BlendModes （亮度、 颜色、 饱和度和色调） 聚焦、 SceneLightingEffect，和 （取决于方案） BorderEffect。 这些效果可适用于某些情况下，低端在设备上，但链接和进行动画处理时，应使用小心。 建议为两个或更少限制使用和创建仅过渡动画。

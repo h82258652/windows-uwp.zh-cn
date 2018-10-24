@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441529"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469036"
 ---
 # <a name="custom-dependency-properties"></a>自定义依赖属性
 
@@ -70,7 +70,7 @@ Windows 运行时中的依赖属性示例如下：[**Control.Background**](https
 - （可选）将 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 等特性放在包装器上。
 
 > [!NOTE]
-> 如果定义一个自定义附加属性，一般会省略包装器。 而是编写一种可供 XAML 处理器使用的不同访问器样式。 查看[自定义附加属性](custom-attached-properties.md)。 
+> 如果定义一个自定义附加属性，一般会省略包装器。 而是编写一种可供 XAML 处理器使用的不同访问器样式。 查看[自定义附加属性](custom-attached-properties.md)。 
 
 ## <a name="registering-the-property"></a>注册属性
 
@@ -476,7 +476,7 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>注册 C++/CX 应用的依赖属性
 
-由于分为标头文件和实现文件以及在实现文件的作用域上进行初始化是错误做法，所以在 C++/CX 中注册属性的实现比在 C# 中实现更为复杂。 （Visual C++ 组件扩展 (C++/CX) 将静态初始化器代码从根作用域直接放置在 **DllMain** 中，而 C# 编译器将静态初始化器分配到类，从而避免 **DllMain** 加载锁定问题。）。 此处执行的最佳做法是为某个类声明可注册所有依赖属性的 helper 函数，一个类对应一个函数。 然后，对于你的应用使用的每个自定义类，必须引用要使用的每个自定义类公开的 helper 注册函数。 在 `InitializeComponent` 之前，调用每个 helper 注册函数以作为 [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`) 的一部分。 例如，该构造函数仅在首次引用应用时运行，如果恢复暂停的应用，该构造函数不会再次运行。 同样，如之前 C++ 注册示例所示，每个 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用周围的 **nullptr** 标识非常重要：它确保该函数的任何调用方均不能注册此属性两次。 第二次注册调用可能会导致没有此类标识的应用崩溃，因为属性名称可能重复。 如果你要查找 C++/CX 版本示例的代码，请参阅 [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)中的这一实现模式。
+由于分为标头文件和实现文件以及在实现文件的作用域上进行初始化是错误做法，所以在 C++/CX 中注册属性的实现比在 C# 中实现更为复杂。 (VisualC + + 组件扩展 (C + + CX) 会将代码从根作用域直接置于**DllMain**，而 C# 编译器将静态初始化分配给类，从而避免**DllMain**加载锁定问题。)。 此处执行的最佳做法是为某个类声明可注册所有依赖属性的 helper 函数，一个类对应一个函数。 然后，对于你的应用使用的每个自定义类，必须引用要使用的每个自定义类公开的 helper 注册函数。 在 `InitializeComponent` 之前，调用每个 helper 注册函数以作为 [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`) 的一部分。 例如，该构造函数仅在首次引用应用时运行，如果恢复暂停的应用，该构造函数不会再次运行。 同样，如之前 C++ 注册示例所示，每个 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用周围的 **nullptr** 标识非常重要：它确保该函数的任何调用方均不能注册此属性两次。 第二次注册调用可能会导致没有此类标识的应用崩溃，因为属性名称可能重复。 如果你要查找 C++/CX 版本示例的代码，请参阅 [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)中的这一实现模式。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -484,4 +484,4 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 - [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
 - [依赖属性概述](dependency-properties-overview.md)
 - [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)
- 
+ 

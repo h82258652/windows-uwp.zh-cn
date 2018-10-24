@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442501"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473220"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 
@@ -50,14 +50,14 @@ ms.locfileid: "5442501"
 
 ## <a name="product-name"></a>产品名称
 
-此下拉框允许你指定的名称应在应用商店一览 （如果你的应用的多个名称）。
+此下拉框允许你指定的名称应在应用商店一览中 （如果你的应用的多个名称）。
 
 如果你已上载程序包中的应用商店一览，你正在为相同的语言，将会选择这些程序包中使用的名称。 如果你需要重命名[该应用](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，你可以使用程序包，使用新名称创建新的提交时选择不同的保留的名称下面。
 
-如果尚未上载程序包的语言正在努力，并已保留多个名称，你将需要选择其中一个你保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。
+如果尚未上载程序包的语言正在处理的已保留多个名称，你将需要选择其中一个保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。
 
 > [!NOTE]
-> **产品名称**选择仅适用于应用商店一览语言中你所使用。 它不会影响客户安装该应用; 时显示的名称该名称来自获取安装的程序包清单。 以避免混淆，我们建议每种语言的程序包和应用商店一览，使用相同的名称。
+> **产品名称**选择仅适用于应用商店一览语言中你所使用。 它不会影响客户安装该应用; 时显示的名称该名称来自获取安装的程序包清单。 以避免混淆，我们建议每种语言的程序包和应用商店一览使用相同的名称。
 
 ## <a name="description"></a>描述
 
@@ -134,7 +134,7 @@ ms.locfileid: "5442501"
 
 对于游戏，简短说明还可能出现在 Xbox One 上游戏中心的“信息”部分。
 
-为获得最佳结果，使你的简短描述下 270 字符。 字段限制 500 个字符，但在一些视图中，只有首先 270 的字符将显示为 （链接可查看的简短说明的其余部分）。
+为获得最佳结果，使你的简短描述下 270 字符。 该字段限制 500 个字符，但在一些视图中，只有前 270 的字符将显示为 （链接可查看的简短说明的其余部分）。
 
 
 ### <a name="additional-system-requirements"></a>其他系统要求

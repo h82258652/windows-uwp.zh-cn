@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435295"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478145"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
@@ -354,11 +354,11 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-可通过在为 Windows 8.1 编写的[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)中的此快速入门下载代码并在 win_unap Windows 10 应用中重新使用源代码来了解详细信息。
+你可以了解详情，请在[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)面向 Windows8.1，此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
 
 ## <a name="related-topics"></a>相关主题
 
 * [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
- 
+ 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433559"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473985"
 ---
 # <a name="background-transfers"></a>后台传输
 使用后台传输 API 以便在网络上可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
@@ -44,7 +44,7 @@ ms.locfileid: "5433559"
 
 虽然后台传输功能具备其自己的处理网络状态更改的机制，但对于使用网络连接功能的应用还有其他需要考虑的常规连接因素。 有关其他信息，请阅读[利用可用的网络连接信息](https://msdn.microsoft.com/library/windows/apps/hh452983)。
 
-> **注意**  对于在移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、漫游状态和用户的流量套餐传输的数据量的功能。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
+> **注意**对于移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、 漫游状态传输数据量的功能和用户数据计划。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
 
 下表指示在电话的当前给定状态下，对于每个 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值，允许在电话上进行后台传输的时间。 你可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 类确定电话的当前状态。
 
@@ -203,7 +203,7 @@ promise = download.startAsync().then(complete, error, progress);
 1.  现在可以使用填充的列表重新启动挂起的操作。
 
 ## <a name="post-processing"></a>后处理
-Windows 10 中的新功能可以在完成后台传输时运行应用程序代码，即使该应用未在运行。 例如，你的应用可能希望在电影结束下载后更新电影的可用列表，而不是在每次启动应用时让应用扫描新电影。 或者，你的应用可能希望通过再次尝试使用不同的服务器或端口来处理已失败的文件传输。 针对成功的传输和失败的传输，均会调用后处理，以便你可以使用它来实现自定义错误处理和重试逻辑。
+Windows 10 中的新增功能是能够在后台传输完成时运行应用程序代码，即使该应用未运行时。 例如，你的应用可能希望在电影结束下载后更新电影的可用列表，而不是在每次启动应用时让应用扫描新电影。 或者，你的应用可能希望通过再次尝试使用不同的服务器或端口来处理已失败的文件传输。 针对成功的传输和失败的传输，均会调用后处理，以便你可以使用它来实现自定义错误处理和重试逻辑。
 
 后处理使用现有的后台任务基础结构。 创建后台任务，并在开始传输前将后台任务与传输关联。 然后传输在后台执行，并在它们完成时，调用后台任务以执行后处理。
 
@@ -264,7 +264,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立连接之后，将中止在两分钟内未收到响应的 HTTP 请求消息。
 
-> **注意**  在任何一种方案中，假定存在 Internet 连接，后台传输将最多自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
+> **注意**在任一情况下，假定存在 Internet 连接，后台传输将自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
 
 ## <a name="debugging-guidance"></a>调试指南
 在 Microsoft Visual Studio 中停止调试会话与关闭你的应用相似；PUT 上载将暂停，POST 上载将终止。 即使在调试时，你的应用也应该枚举，然后重新启动或取消任何保持的上载。 例如，如果对该调试会话之前的操作没有兴趣，你可以使应用在应用启动时取消已枚举的持续上载操作。

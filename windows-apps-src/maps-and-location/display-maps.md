@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
 ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434459"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476556"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和 Streetside 视图显示地图
 
@@ -153,7 +153,7 @@ pageGrid.Children.Add(MapControl2);
 > [!NOTE]
 > 由于字符串不能转换为 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675)，因此无法在 XAML 标记中为 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) 属性指定值，除非使用数据绑定。 （此限制同样适用于 [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) 附加属性。）
 
- 
+ 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -327,9 +327,9 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 此示例介绍如何显示类似于上一个图像的街景视图。
 
-**注意**  如果地图控件的大小太小，将不会显示总览图。
+**注意**如果地图控件的大小太小，将不会显示总览。
 
- 
+ 
 
 ```csharp
 private async void showStreetsideView()

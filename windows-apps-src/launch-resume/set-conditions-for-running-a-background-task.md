@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439571"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477422"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
@@ -31,9 +31,9 @@ ms.locfileid: "5439571"
 
 了解如何设置控制何时运行后台任务的条件。
 
-有时，后台任务需要某些条件满足后台任务继续进行。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件。 然后将排队的后台任务，但满足所有所需的条件之前不会运行。
+有时，后台任务需要为后台任务成功满足某些条件。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件。 然后将排队的后台任务，但满足所有所需的条件之前不会运行。
 
-条件对后台任务设置节省电池使用时间和 CPU 阻止任务不必要地运行。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
+设置条件对后台任务节省电池使用时间和 CPU 阻止任务不必要地运行。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
 
 还有可能由在同一[**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)上多次调用**AddCondition**组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
 
@@ -45,7 +45,7 @@ ms.locfileid: "5439571"
 
 添加条件之前，创建[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)对象来表示必须实际用于运行后台任务的条件。 在构造函数中，指定必须满足[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)枚举值的条件。
 
-以下代码将创建一个[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)对象，指定**InternetAvailable**条件：
+以下代码将创建[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)对象的指定**InternetAvailable**条件：
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -182,7 +182,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 选择你的后台任务的条件，以便它仅在运行时需要时，它不应时不会运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> 选择你的后台任务的条件，以便它仅在运行时需要当它不应该不会运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 ## <a name="related-topics"></a>相关主题
 

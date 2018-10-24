@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433496"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478073"
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -112,7 +112,7 @@ ms.locfileid: "5433496"
 | **false**           | `Unchecked`        | 空白。                  |
 | **null**            | `Indeterminate`    | 包含一个圆形。      |
 
- 
+ 
 
 使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br208817) 中元素外观的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br243053) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br209391)。 当控件进入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上设置。
 
@@ -188,7 +188,7 @@ ms.locfileid: "5433496"
 | 从 `Checked` 到 `Indeterminate`。   | 应用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 删除 `Checked` **VisualState** 的 **Setter** 值，因此 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 为 0。 | 显示一个圆形。                            |
 | 从 `Indeterminate` 到 `Unchecked`。 | 删除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 0。                                                                                                                                           | 不显示任何符号。                             |
 
- 
+ 
 有关如何创建控件的视觉状态（尤其是如何使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 类和动画类型）的详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)。
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>使用工具轻松处理主题
@@ -211,11 +211,11 @@ ms.locfileid: "5433496"
 
 对于 XAML 模板中的某些属性，你可能已注意到使用 [{ThemeResource} 标记扩展](../../xaml-platform/themeresource-markup-extension.md)的资源引用。 这是一种可使单个控件模板使用资源的技术，这些资源可能采用不同的值，具体取决于当前处于活动状态的主题。 这对于画笔和颜色尤其重要，因为主题的主要目的是使用户选择应用于整个系统的是深色主题、浅色主题，还是高对比度主题。 使用 XAML 资源系统的应用可以使用适合该主题的资源集，以便应用 UI 中的主题选择可以反映用户的整个系统的主题选择。
 
- ## <a name="get-the-sample-code"></a>获取示例代码
+ # # 获取示例代码
 * [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [自定义文本编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
- 
+ 
 
 
 

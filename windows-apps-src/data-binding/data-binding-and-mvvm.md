@@ -2,7 +2,7 @@
 author: KarlErickson
 ms.assetid: F46306EC-DFF3-4FF0-91A8-826C1F8C4A52
 title: 数据绑定和 MVVM
-description: 数据绑定的模型-视图-模型 (MVVM) UI 体系结构设计模式，核心是，使 UI 和非 UI 代码之间的松散耦合。
+description: 数据绑定的核心模型-视图-模型 (MVVM) UI 体系结构设计模式，并使 UI 和非 UI 代码之间的松散耦合。
 ms.author: karler
 ms.date: 10/02/2018
 ms.topic: article
@@ -11,47 +11,47 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eda370db8b68232066052cca3d0abfa6e3876167
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445734"
+ms.locfileid: "5475985"
 ---
 # <a name="data-binding-and-mvvm"></a>数据绑定和 MVVM
 
 模型-视图-模型 (MVVM) 是适用于分离 UI 和非 UI 代码的 UI 体系结构设计模式。 借助 MVVM，你在 XAML 中以声明方式定义你的 UI，并使用数据绑定标记将其链接到其他包含数据和命令的图层。 数据绑定基础结构提供松散耦合的会使 UI 和链接的数据同步并将路由到相应的命令的用户输入。 
 
-因为它提供松散耦合，使用数据绑定减少了硬不同类型的代码之间的依赖项。 这使得更轻松地更改而不会导致意外的负面影响其他单元中的单个代码单位 （方法、 类、 控件等）。 此分离是一种*分离出关注内容*，这是许多设计模式中的一个重要概念。 
+因为它提供松散耦合、 数据绑定的用法会减少不同类型的代码之间的硬依赖项。 这使得更轻松地更改而不会导致意外的负面影响其他单元中的单个代码单位 （方法、 类、 控件等）。 此分离是一种*分离出关注内容*，这是许多设计模式中的一个重要概念。 
 
 ## <a name="benefits-of-mvvm"></a>MVVM 的优势
 
 将你的代码分离方面有许多优势，包括：
 
-* 启用迭代、 探索的编码风格。 在隔离的更改是不太危险且更易于试验。
-* 简化单元测试。 可测试代码单元均彼此相互隔离，个别应用和生产环境之外。
-* 支持团队协作。 可以由单独的个人或小组，开发和集成更高版本分离的代码，并依附于设计良好的接口。
+* 启用迭代、 探索的编码风格。 在隔离的更改是不太危险且更易于使用。
+* 简化单元测试。 可以测试代码单元均彼此相互隔离，个别应用和生产环境之外。
+* 支持团队协作。 可以由单独的个人或小组，遵循良好设计的接口的分离的代码，并将其集成的更高版本。
 * 改进可维护性。 修复 bug 分离的代码中不太可能导致其他代码回归。
 
-MVVM，与更传统的"代码隐藏"结构的应用通常使用仅显示数据的数据绑定，通过直接处理公开控件的事件来响应用户输入。 事件处理程序在代码隐藏文件 （例如 MainPage.xaml.cs) 中，实现，并且通常紧密耦合到控件，通常包含直接操作 UI 的代码。 这使难或无法替换控件，而无需更新的事件处理代码。 使用此体系结构，代码隐藏文件通常累积不直接相关的 UI，如数据库访问代码，结束被复制和修改用于其他页面的代码。
+MVVM，与更传统的"代码隐藏"结构的应用通常使用仅显示数据的数据绑定，并通过直接处理公开控件的事件来响应用户输入。 事件处理程序中的代码隐藏文件 （例如 MainPage.xaml.cs) 中，实现，并且通常紧密耦合到控件，通常包含直接操作 UI 的代码。 这使难或无法替换控件，而无需更新的事件处理代码。 使用此体系结构，代码隐藏累积文件，通常并不直接相关的 ui，如数据库访问代码，结束被复制和修改用于其他页面的代码。
 
 ## <a name="app-layers"></a>应用层
 
 在使用 MVVM 模式时，将应用分为以下层：
 
-* **模型**层定义表示你的业务数据的类型。 这包括模型的核心应用域，所需的所有内容，并且通常包括核心应用逻辑。 这一层完全独立于视图和视图模型层，并经常驻留在云中部分。 鉴于完全实现的模型层，你可以创建多个不同的客户端应用如果您这样选择，例如使用相同的基础数据的 UWP 和 web 应用。
-* **视图**层定义 UI 使用 XAML 标记。 在标记包含定义特定 UI 组件和不同的视图模型和模型成员之间的连接的数据绑定表达式 （如[X:bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)）。 代码隐藏文件是有时用于视图层的一部分包含自定义或操作 UI，或者在调用执行的工作的视图模型方法之前，从事件处理程序参数中提取数据所需的其他代码。 
-* **视图模型**层提供数据绑定目标视图。 在许多情况下，视图模型直接，公开的模型，或提供换行特定模型成员的成员。 视图模型还可以用于跟踪相关的数据定义成员到 UI，但不是属于模型，如的项目列表的显示顺序。 视图模型还可用作与其他服务例如数据库访问代码的集成点。 对于简单的项目，你可能不需要单独的模型图层，但仅视图-模型封装所需的所有数据。 
+* **模型**层定义表示你的业务数据的类型。 这包括模型的核心应用域，所需的所有内容，并且通常包括核心应用逻辑。 这一层完全独立于视图和视图模型层，并经常驻留在云中部分。 鉴于完全实现的模型层，你可以创建多个不同的客户端应用如果选择，例如 UWP 和 web 应用程序使用相同的基础数据。
+* **视图**层定义 UI 使用 XAML 标记。 在标记包含定义特定 UI 组件和不同的视图模型和模型成员之间的连接的数据绑定表达式 （如[X:bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)）。 代码隐藏文件是有时用于视图层的一部分包含自定义或操作 UI，或者调用执行工作的视图模型方法前，从事件处理程序参数中提取数据所需的其他代码。 
+* 在**视图模型**层提供数据绑定目标视图。 在许多情况下，视图模型直接公开的模型，或提供换行特定模型成员的成员。 视图模型还可以用于跟踪相关的数据定义成员的 ui，但不是属于模型，如的项目列表的显示顺序。 视图模型还可用作与其他服务，如数据库访问代码的集成点。 对于简单的项目，你可能不需要单独的模型层，但仅对视图模型的封装所需的所有数据。 
 
 ## <a name="basic-and-advanced-mvvm"></a>基本和高级 MVVM
 
 与任何设计模式中，没有实现 MVVM，多个方法，并且许多不同的技术被视为 MVVM 的一部分。 出于此原因，有不同的多个第三方 MVVM 框架支持各种基于 XAML 的平台，包括 UWP。 但是，这些框架通常包括实现分离的体系结构，从而 MVVM 的确切定义某种程度上不明确的多个服务。 
 
-尽管复杂的 MVVM 框架可以是非常有用，特别是对于企业级项目，通常是采用任何特定模式或技术，与相关联的成本和权益并不总是清除，具体取决于的比例和大小你的项目。 幸运的是，你可以采用仅提供清晰、 切实好处，这些方法并忽略其他人，直到需要它们。 
+尽管复杂的 MVVM 框架可以是非常有用，特别是对于企业级项目，通常是采用任何特定模式或技术，相关联的成本和权益并不总是清晰，具体取决于的缩放和大小你的项目。 幸运的是，你可以采用仅提供清晰、 切实好处，这些技术，并忽略其他人，直到需要它们。 
 
-特别是，你可以获取大量即可了解和应用数据绑定和将你的应用逻辑分离到之前所述的图层的强大的优势。 这可以实现使用仅 Windows SDK 和无需使用任何外部框架提供的功能。 特别是， [{x: Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，将数据绑定更轻松以及更高版本比在之前的 XAML 平台，不需要进行大量的样本代码中执行所需更早版本。
+特别是，你可以获取大量即可了解和应用数据绑定和将你的应用逻辑分离到之前所述的图层的强大的优势。 这可以实现使用仅 Windows SDK 和无需使用任何外部框架提供的功能。 特别是， [{x: Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)简化数据绑定和更高版本比在之前的 XAML 平台，不需要进行大量样板代码中执行所需更早版本。
 
-有关使用基本、 的框 MVVM 的其他指南，请查看 GitHub 上的[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。 很多其他[UWP 应用示例](https://github.com/Microsoft?q=windows-appsample
-)还使用了一个基本 MVVM 体系结构和[通信应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)包括代码隐藏和 MVVM 版本中，说明[MVVM 转换](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md)。 
+有关使用基本的现成的 MVVM 的其他指南，请查看 GitHub 上的[客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。 很多其他[UWP 应用示例](https://github.com/Microsoft?q=windows-appsample
+)也使用基本 MVVM 体系结构，并且[通信应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)包括代码隐藏和 MVVM 版本中，说明[MVVM 转换](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md)。 
 
 ## <a name="see-also"></a>另请参阅
 

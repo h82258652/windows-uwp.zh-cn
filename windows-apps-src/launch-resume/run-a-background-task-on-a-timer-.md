@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433506"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469255"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 
@@ -37,7 +37,7 @@ ms.locfileid: "5433506"
 
 > [!NOTE]
 > 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时，会引发异常。
- 
+ 
 例如，此触发器将导致后台任务每小时一次运行。
 
 ```cs
@@ -128,7 +128,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="remarks"></a>备注
 
-从 Windows 10 开始，它不再需要为用户将你的应用添加到锁屏界面上，即可利用后台任务。
+从 windows 10 开始，它不再需要为用户将你的应用添加到锁屏界面上，即可利用后台任务。
 
 如果你已先调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)使用**TimeTrigger**仅运行后台任务。
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 后台任务触发器后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431778"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469857"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>从应用中触发后台任务
 
@@ -145,7 +145,7 @@ var result = await _AppTrigger.RequestAsync();
 
 ## <a name="remarks"></a>备注
 
-从 Windows 10 开始，它不再需要为用户将你的应用添加到锁屏界面上，即可利用后台任务。
+从 windows 10 开始，它不再需要为用户将你的应用添加到锁屏界面上，即可利用后台任务。
 
 如果你已先调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)使用**ApplicationTrigger**仅运行后台任务。
 

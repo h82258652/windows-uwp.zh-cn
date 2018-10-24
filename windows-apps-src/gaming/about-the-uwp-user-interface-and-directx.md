@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444293"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475051"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
@@ -23,7 +23,7 @@ ms.locfileid: "5444293"
 
 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。 相反，因为它们在 Windows 运行时堆栈中的较低级别上运行，所以它们必须以更加基本的方式与用户界面框架互操作： 直接访问应用对象并与之互操作。 了解何时以及如何执行此互操作，以及作为 DirectX 开发人员， 你可以如何在 UWP 应用的开发中高效使用此模型。
 
-请参阅[Direct3D 图形词汇表](../graphics-concepts/index.md)有关不熟悉的图形条款或读取时遇到的概念信息。
+请参阅有关不熟悉的图形条款或读取时遇到的概念信息[Direct3D 图形词汇表](../graphics-concepts/index.md)。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心用户界面命名空间
 
@@ -36,9 +36,9 @@ ms.locfileid: "5444293"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意**   如果你未开发 UWP 应用，请使用特定于 JavaScript 或 XAML 的库和命名空间中提供的用户界面组件，而不要使用这些命名空间中提供的类型。
+> **注意**如果你未开发 UWP 应用，请使用特定于 JavaScript 或 XAML 的库和命名空间，而不是这些命名空间中提供的类型中提供的用户界面组件。
 
- 
+ 
 
 ## <a name="the-windows-runtime-app-object"></a>Windows 运行时应用对象
 
@@ -114,7 +114,7 @@ ms.locfileid: "5444293"
 | [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | 等待新事件并调度所有可用事件。 继续此行为，直到窗口关闭或者应用程序调用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 方法为止。 |
 | [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则立即返回。                                                                                                                                          |
 
- 
+ 
 
 使用 DirectX 的 UWP 应使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) 选项来防止可能中断图形更新的阻止行为。
 
@@ -155,9 +155,9 @@ int main(Platform::Array<Platform::String^>^)
 
 总的来说，在设计 UWP 应用时，使用应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 和 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 来处理所有 UI 线程，而不要尝试自行创建和管理 MTA 线程。 当你需要一个不能用 **CoreDispatcher** 处理的单独线程时，请使用异步模式，并按照前面提到的指南操作以避免出现重新进入问题。
 
- 
+ 
 
- 
+ 
 
 
 

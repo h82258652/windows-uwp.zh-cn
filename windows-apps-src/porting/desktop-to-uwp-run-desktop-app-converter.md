@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435002"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470762"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 将桌面应用程序打包
 
@@ -271,7 +271,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-InstallerArguments &lt;String&gt; |可选 |用于强制安装程序在无人参与/静默的情况下运行的参数的以逗号分隔的列表或字符串。 如果安装程序是 msi，则此参数为可选参数。 若要从安装程序中获取日志，请在此处为安装程序提供日志记录参数，并使用路径 &lt;log_folder&gt;，该路径是转换器使用相应路径所替换的标记。 <br><br>**注意**：无人参与/无提示标志和日志参数将因安装程序技术而异。 <br><br>此参数的用法示例：-InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" 另一个不生成日志文件的示例可能如下所示：```-InstallerArguments "/quiet", "/norestart"``` 同样，如果你希望转换器捕获日志并将其放置在最终的日志文件夹中，则必须逐字节地将任何日志直接指向标记路径 &lt;log_folder&gt;。|
 |-InstallerValidExitCodes &lt;Int32&gt; |可选 |指示安装程序成功运行的退出代码的以逗号分隔的列表（例如 0，1234，5678）。  默认情况下，对于非 msi，它为 0，对于 msi，它为 0，1641，3010。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |可选 |一个告知此脚本对输出调用 MakeAppx 的开关（如果有）。 |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |可选 |一个开关，当存在时告知此脚本以 MSIX 程序包输出打包。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |可选 |一个开关，如果存在，告知此脚本以 MSIX 程序包输出打包。 |
 |<a id="identity-params" /><strong>程序包标识符参数</strong>||
 |-PackageName &lt;String&gt; |必填 |通用 Windows 应用包的名称。 如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。 |
 |-Publisher &lt;String&gt; |必需 |通用 Windows 应用包的发布者 |
@@ -296,7 +296,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-LogFile &lt;String&gt;  |可选 |指定日志文件。 如果省略此参数，将创建一个日志文件临时位置。 |
 | -Sign [&lt;SwitchParameter&gt;] |可选 |出于测试目的，告知此脚本使用生成的证书对输出 Windows 应用包进行签名。 此开关应该位于开关 ```-MakeAppx``` 的旁边。 |
 |&lt;通用参数&gt; |必需 |此 cmdlet 支持通用参数：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 和 *OutVariable*。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
-| -Verify [&lt;SwitchParameter&gt;] |可选 |一个开关，当存在时告知 DAC 根据验证应用程序包打包的应用和 Microsoft 应用商店要求。 结果是一个“VerifyReport.xml”验证报告，该报告在浏览器中能够以最佳方式显示。 此开关应该位于开关 `-MakeAppx` 的旁边。 |
+| -Verify [&lt;SwitchParameter&gt;] |可选 |一个开关，当存在时告知 DAC 根据验证应用程序包已打包的应用和 Microsoft 应用商店要求。 结果是一个“VerifyReport.xml”验证报告，该报告在浏览器中能够以最佳方式显示。 此开关应该位于开关 `-MakeAppx` 的旁边。 |
 |-PublishComRegistrations| 可选| 扫描你的安装程序进行的所有公共 COM 注册，并发布你的清单中有效的注册。 仅当想使这些注册可供其他应用程序使用时才使用此标志。 如果这些注册将仅由你的应用程序使用，则无需使用此标志。 <br><br>请查看[本文](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97)以确保在你将应用打包后，COM 注册会按预期工作。
 
 <a id="run-app" />
@@ -307,7 +307,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 一种方法是打开 PowerShell 命令提示符，然后键入此命令：```Add-AppxPackage –Register AppxManifest.xml```。 这可能是运行你的应用程序，因为你无需对其进行签名的最简单方法。
 
-另一种方法是对你的应用程序使用证书进行签名。 如果你使用```sign```参数，Desktop App Converter 将为你生成一个，然后登录你的应用程序与之。 该文件名为 **auto-generated.cer**，你可以在已打包应用的根文件夹中找到它。
+另一种方法是对你的应用程序使用证书进行签名。 如果你使用```sign```参数，Desktop App Converter 将为你生成一个，然后对其应用程序进行签名。 该文件名为 **auto-generated.cer**，你可以在已打包应用的根文件夹中找到它。
 
 请按照以下步骤安装生成的证书，然后运行应用。
 
@@ -334,9 +334,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 ## <a name="modify-the-packaged-app"></a>修改已打包的应用
 
-你可能将对你已打包的应用程序，以解决 bug、 添加视觉资源或增强你的应用程序使用动态磁贴等现代体验进行更改。
+你将可能更改到你已打包的应用程序，以解决 bug、 添加视觉资源或增强你的应用程序使用动态磁贴等现代体验。
 
-进行更改之后，无需再次运行转换器。 在大多数情况下，你可以只需重新打包你的应用程序使用 MakeAppx 工具，并为你的应用生成的 appxmanifest.xml 文件 DAC。 请参阅[生成 Windows 应用包](desktop-to-uwp-manual-conversion.md#make-appx)。
+进行更改之后，无需再次运行转换器。 在大多数情况下，你可以只需重新打包你的应用程序使用 MakeAppx 工具和 DAC 生成 appxmanifest.xml 文件为你的应用。 请参阅[生成 Windows 应用包](desktop-to-uwp-manual-conversion.md#make-appx)。
 
 * 如果修改了任何应用视觉资源，请生成新的包资源索引文件，然后再运行 MakeAppx 工具以生成新的包。 请参阅[生成包资源索引 (PRI) 文件](desktop-to-uwp-manual-conversion.md#make-pri)。
 
@@ -351,7 +351,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-以下两个部分介绍了几个可选修复杀到的已打包的应用程序可能需要考虑。
+以下两个部分介绍了几个可选修复杀到打包的应用程序，你可以考虑。
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>删除不必要的文件和注册表项
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 842d26a2bb257dd182813832c5e6480237a9f220
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431211"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478449"
 ---
 # <a name="export-restrictions-on-cryptography"></a>有关加密的出口限制
 
@@ -25,9 +25,9 @@ ms.locfileid: "5431211"
 
 美国商务部工业与安全局负责对使用某些加密类型的技术出口进行监管。 Microsoft Store 中列出的所有应用都必须遵守这些法律和法规，因为这些应用文件可以存储在美国。 甚至其他国家或地区的应用开发者上传在美国之外分发的应用也必须遵守这些法规。 因此，向 Microsoft Store 提交应用时，所有应用开发者必须确保他们的应用不包含这些法规所限制的任何技术。
 
-> **注意**  在此提供的信息提供了一些指南，但作为在 Microsoft Store 中发布应用的应用开发者，确保应用遵守所有适用法律和法规是你自己的责任。
+> **注意**此处提供的信息提供了一些指南，但它是你的责任作为应用开发者以确保应用遵守所有适用法律和法规的约束在 Microsoft Store 中发布应用。
 
- 
+ 
 
 有关美国商务部工业与安全局的详细信息，请参阅[关于工业与安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "5431211"
 
 首先，确定应用是否使用了出口管理条例监管的加密类型。 该问题包括显示在以下列表中的示例；但是切记，此列表不包括每种可能的加密应用。
 
-> **重要提示**  不仅要考虑为应用编写的代码，而且要考虑应用包括或链接到的所有软件库、实用工具和操作系统组件。
+> **重要提示**不仅要考虑代码为你的应用，但还所有软件库、 实用工具和你的应用包括或链接到的操作系统组件。
 
 -   对数字签名的任何使用，例如身份验证或完整性检查
 -   对你的应用使用或访问的任何数据或文件的加密

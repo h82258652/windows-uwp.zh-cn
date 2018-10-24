@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444073"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471967"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -28,7 +28,7 @@ ms.locfileid: "5444073"
 
 ## <a name="add-the-screen-capture-capability"></a>添加屏幕捕获功能
 
-**Windows.Graphics.Capture**命名空间中的 Api 需要你的应用程序清单中声明一个常规功能：
+**Windows.Graphics.Capture**命名空间中的 Api 需要在你的应用程序清单中声明一个常规功能：
     
 1. 在**解决方案资源管理器**中打开**Package.appxmanifest** 。
 2. 选择**功能**选项卡。
@@ -72,7 +72,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-由于这是 UI 代码，则需要在 UI 线程上调用。 如果你要调用此方法从代码隐藏页面的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
+由于这是 UI 代码，则需要在 UI 线程上调用。 如果你要调用此方法从代码隐藏页面你的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -170,7 +170,7 @@ _framePool.FrameArrived += (s, a) =>
 以下代码段是如何在 UWP 应用程序中实现屏幕捕获的端到端示例。 在此示例中，我们已经有一个按钮的前端，单击时，调用**Button_ClickAsync**方法。
 
 > [!NOTE]
-> 此代码段使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目信息其文档。
+> 此代码段使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 图形呈现的库。 请参阅有关如何将其设置为你的项目其文档。
 
 ```cs
 using Microsoft.Graphics.Canvas;

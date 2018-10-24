@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 盈利, 参与, 促销, 应用商店服务
 ms.localizationpriority: medium
 ms.openlocfilehash: abd6c772ed84934a54c1755b5d55d398e34fbad9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431873"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476041"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和应用商店服务
 
@@ -36,7 +36,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 | [记录开发人员中心的自定义事件](log-custom-events-for-dev-center.md)  | 记录 UWP 应用中的自定义事件，并查看开发人员中心仪表板中的[使用情况报告](../publish/usage-report.md)中的事件。 此功能需要 Microsoft Store Services SDK。 |
 | [请求评分和评价](request-ratings-and-reviews.md) |  以编程方式显示评分和评价 UI，从而鼓励客户对应用进行评分或评价。  |
 | [Microsoft Store 服务](using-windows-store-services.md)    |  了解如何使用 RESTful API 将提交到应用商店和访问应用的分析数据自动化以及将与应用商店相关的其他任务自动化。    |
-| [零售演示 (RDX) 功能添加到你的应用](retail-demo-experience.md)        |  在你的 Windows 应用中包括零售演示模式，以便客户试用电脑和设备上销售下限可以直接跳转中。  |
+| [零售演示 (RDX) 功能添加到你的应用](retail-demo-experience.md)        |  在你的 Windows 应用中包括零售演示模式，以便试用电脑和设备在销售车间上的客户可以直接跳转中。  |
 
 ## <a name="related-topics"></a>相关主题
 

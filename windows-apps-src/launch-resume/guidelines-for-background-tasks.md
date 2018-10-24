@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440791"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470631"
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 
@@ -64,7 +64,7 @@ ms.locfileid: "5440791"
 
 **请求执行后台任务：**
 
-> **重要提示**  从 Windows10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
+> **重要提示**从 windows 10 开始，应用将不再需要锁屏界面上的先决条件也可以运行后台任务。
 
 通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用必须在注册任何类型的后台任务之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如果用户在设备设置中显式拒绝了应用的后台任务权限，此方法将返回 [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439)。 有关后台活动和节电模式的相关用户选项的详细信息，请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>后台任务清单
@@ -110,6 +110,6 @@ ms.locfileid: "5440791"
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
+ 
 
- 
+ 

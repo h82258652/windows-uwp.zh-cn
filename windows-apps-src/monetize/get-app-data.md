@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用数据
 ms.localizationpriority: medium
 ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442767"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474776"
 ---
 # <a name="get-app-data"></a>获取应用数据
 
@@ -188,7 +188,7 @@ ms.locfileid: "5442767"
 |-----------------|---------|------------------------------|
 | id            | 字符串  | 提交的 ID。    |
 | resourceLocation   | 字符串  | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。            |
- 
+ 
 <span/>
 
 ## <a name="related-topics"></a>相关主题

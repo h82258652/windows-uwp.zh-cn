@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: 此路线图提供适用于 Windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
+description: 此路线图提供适用于 windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
 title: 企业版
 author: awkoren
 ms.author: alkoren
@@ -11,29 +11,29 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437504"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476609"
 ---
 # <a name="enterprise"></a>企业版
 
-此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
+此路线图提供适用于 Windows10Universal Windows 平台 (UWP) 应用的关键企业功能的概述。
 
-**注意** 本文面向编写企业 UWP 应用的开发人员。 有关常规 UWP 开发，请参阅 [Windows 10 应用的操作方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 有关 WPF、Windows 窗体或 Win32 开发，请访问[桌面开发人员中心](https://dev.windows.com/desktop)。 有关 IT 专业人员资源（如部署 Windows 10 或管理企业安全功能），请参阅 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
+**注意**本文面向编写企业 UWP 应用的开发人员。 有关常规 UWP 开发，请参阅 [Windows 10 应用的操作方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 有关 WPF、Windows 窗体或 Win32 开发，请访问[桌面开发人员中心](https://dev.windows.com/desktop)。 有关 IT 专业人员资源（如部署 Windows 10 或管理企业安全功能），请参阅 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
 
-有显示的一些已在生成期间此演示文稿[快速构建 LOB 应用程序与 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)展示进步此应用程序的版本
+有显示了一些已在生成期间此演示文稿[快速构建 LOB 应用程序与 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)展示改进此应用程序的版本
 
 值得拨出在前面的事项：
 
 ## <a name="whats-new-for-enterprise-applications"></a>什么是企业应用程序的新功能
 
-下面是一些工具、 库和功能已创建相当的最近。
+下面是一些工具、 库和功能相当已创建的最近。
 
 > [!div class="checklist"]
 > * [Windows Template Studio](#template-studio)
-> * [若要创建桌面样式 Ui 控件](#desktop-style-UI)
+> * [若要创建桌面样式 Ui 的控件](#desktop-style-UI)
 > * [控件以支持企业方案](#enterprise)
 > * [Windows UI 库](#UI-library)
 > * [桌面应用程序中的 UWP 控件](#xaml-islands)
@@ -45,7 +45,7 @@ ms.locfileid: "5437504"
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio 是一个 Visual Studio 2017 扩展，加快了创建新的通用 Windows 平台 (UWP) 应用使用的基于向导的体验。 生成的 UWP 项目是标准格式，可读实现成熟的模式和最佳做法同时包含最新的 Windows 10 功能的代码。
+Windows Template Studio 是一个 Visual Studio 2017 扩展，加快了创建新的通用 Windows 平台 (UWP) 应用使用基于向导的体验。 生成的 UWP 项目是标准格式，可读实现成熟的模式和最佳做法的同时包含最新的 Windows 10 功能的代码。
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -53,7 +53,7 @@ Windows Template Studio 是一个 Visual Studio 2017 扩展，加快了创建新
 
 <a id="desktop-style-UI" />
 
-### <a name="controls-to-create-desktop-style-uis"></a>若要创建桌面样式 Ui 控件
+### <a name="controls-to-create-desktop-style-uis"></a>若要创建桌面样式 Ui 的控件
 
 我们已发布新的 UWP XAML 控件填充传统桌面应用程序 UI 和 UWP UI 之间的差距。
 
@@ -67,18 +67,18 @@ Windows Template Studio 是一个 Visual Studio 2017 扩展，加快了创建新
 
 [DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid)提供行和列中显示的数据集合的灵活方法。
 
-[树视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view)支持分层列表，带有展开和折叠节点包含嵌套的项。 它可用于说明你的用户界面中的文件夹结构或嵌套关系。
+[在树视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view)支持分层列表，带有展开和折叠节点包含嵌套的项。 它可用于说明你的用户界面中的文件夹结构或嵌套关系。
 
 ![数据网格控件](images/DataGrid.gif)
 
 
 ### <a name="windows-ui-library"></a>Windows UI 库
 
-Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 它还使低级别兼容性较早版本的 Windows 10，因此即使用户不需要的最新的操作系统的工作原理你的应用。
+Windows UI 库是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 它还使低级别兼容性较早版本的 Windows 10 中，因此即使用户不需要的最新的操作系统的工作原理你的应用。
 
 ![Windows UI 库](images/win-ui.png)
 
-请参阅[Windows UI 库 （预览版本）](https://docs.microsoft.com/en-us/uwp/toolkits/winui/)。
+请参阅[Windows UI 库 （预览版）](https://docs.microsoft.com/en-us/uwp/toolkits/winui/)。
 
 <a id="xaml-islands" />
 
@@ -92,7 +92,7 @@ Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程�
 
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
-在.NET Standard 包括 20000 比.NET Standard 的更多 Api 1.x。 这使得变得更加方便迁移现有的.NET Framework 库，然后在不同的.NET 应用程序包括你的 UWP 应用程序中使用它们。
+在.NET Standard 包括 20000 比.NET Standard 的更多 Api 1.x。 这使得变得更加方便迁移现有的.NET Framework 库，然后跨不同的.NET 应用程序包括 UWP 应用程序中使用它们。
 
 ![net 标准](images/dot-net-standard-project-template.png)
 
@@ -110,9 +110,9 @@ Windows 10 现在可以在 WPF、 Windows 窗体和 c + + Win32 桌面应用程�
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是提供对所有 Windows 应用的现代打包体验的 Windows 应用包格式。 MSIX 程序包格式保留现有的应用包的功能，并安装文件除了启用 Win32、 WPF 和 Windows 窗体应用的新的现代打包和部署功能。
+MSIX 是提供对所有 Windows 应用的现代打包体验的 Windows 应用包格式。 MSIX 程序包格式保留现有的应用包的功能，并安装文件除了启用新的现代 Win32、 WPF 和 Windows 窗体应用打包和部署功能。
 
-MSIX 是打包格式构建为可安全、 安全且可靠，具体取决于.msi、.appx、 APP-V 和 ClickOnce 安装技术的组合。
+MSIX 是一种打包格式，构建为可安全、 安全且可靠，具体取决于.msi、.appx、 APP-V 和 ClickOnce 安装技术组合。
 
 ![MSIX 图标](images/WinUI_MSIX_2col_740x417.png)
 
@@ -120,14 +120,14 @@ MSIX 是打包格式构建为可安全、 安全且可靠，具体取决于.msi�
 
 <a id="distribution" />
 
-## <a name="security"></a>安全
+## <a name="security"></a>安全性
 
-Windows 10 为应用开发人员提供一套用于保护用户身份、公司网络安全和存储在设备上的任何业务数据的功能。 Windows 10 的新增功能是 Microsoft Passport，它是一种易于部署的双重密码替代项，可通过使用 PIN 或 Windows Hello 访问，提供企业级安全并支持基于指纹、面部和虹膜的识别。
+Windows 10 提供了一套适用于应用开发人员保护其用户、 公司网络安全和存储在设备上的任何业务数据的身份的安全功能。 新增功能的 windows 10 是 Microsoft Passport、 轻松部署的双重密码替代项，是辅助应用通过使用 PIN 或 Windows Hello，提供企业级安全并支持指纹、 面部和虹膜基于识别。
 
 | 主题 | 说明 |
 |-------|-------------|
-| [安全 Windows 应用开发简介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖大量主题，并且主要旨在帮助应用架构师更好地了解可使创建通用 Windows 平台应用，快速且简单的 Windows 功能。 |
-| [身份验证和用户身份](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 来替换密码，使用强大的双因素身份验证 (2FA) 验证现有凭据和通过创建特定于设备的凭据的生物识别或 PIN 基于受用户手势，从而导致同时方便和高度安全的体验。 |
+| [安全 Windows 应用开发简介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖大量主题，并且主要旨在帮助应用架构师更好地了解可使创建通用 Windows 平台应用快速且简单的 Windows 功能。 |
+| [身份验证和用户身份](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 来替换密码，使用强大的双因素身份验证 (2FA) 验证现有凭据和创建特定于设备的凭据的生物识别或 PIN 基于受用户手势，导致同时方便和高度安全的体验。 |
 | [加密](https://msdn.microsoft.com/library/windows/apps/mt270191) | 加密部分概述 UWP 应用可用的加密功能。 文章的范围从有关如何轻松加密敏感业务数据的初级操作实例，一直到操作加密密钥以及使用 MAC、哈希和签名等高级主题。 |
 | [Windows 信息保护 (WIP)](wip-hub.md) | 此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。 |
 
@@ -170,36 +170,36 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 | 主题 | 说明 |
 |-------|-------------|
 | [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631) | 在此初级指南中，你将熟悉 Windows 10 UWP 平台，包括：什么是设备系列和如何决定要面向哪个设备、可使你针对不同设备外形规格改编 UI 的新 UI 控件和面板以及如何了解和控制适用于应用的 API 图面。 |
-| [自适应 XAML UI 代码示例](http://go.microsoft.com/fwlink/p/?LinkId=619992) | 此代码示例显示了所有可能的布局选项和你的应用，而不考虑设备类型的控件，并允许你与显示了如何实现你正在查找的任何布局面板进行交互。 除了演示每个控件如何响应不同的外形规格外，应用本身也具有响应性，并显示实现自定义 UI 的各种方法。 |
-| [Xamarin 主题]() | 对于面向 phone Xamarin |
+| [自适应 XAML UI 代码示例](http://go.microsoft.com/fwlink/p/?LinkId=619992) | 此代码示例演示了所有可能的布局选项和你的应用，而不考虑设备类型的控件，并允许你与显示了如何实现你正在查找的任何布局面板进行交互。 除了演示每个控件如何响应不同的外形规格外，应用本身也具有响应性，并显示实现自定义 UI 的各种方法。 |
+| [Xamarin 主题]() | 面向手机 Xamarin |
 
 ## <a name="deployment"></a>部署
 
-你可以选择将应用分配给组织的用户。 你可以使用适用于企业，现有的移动设备管理的 Microsoft 应用商店，或者你可以将应用旁加载到设备。 你可以还提供你的应用到公共通过发布到 Microsoft Store。
+你可以选择将应用分配给组织的用户。 你可以使用适用于企业，现有的移动设备管理的 Microsoft 应用商店，或者你可以将应用旁加载到设备。 你还可以应用提供到公共通过发布到 Microsoft 应用商店。
 
 | 主题 | 说明 |
 |-------|-------------|
-| [将 LOB 应用分配到企业](https://msdn.microsoft.com/library/windows/apps/mt608995) | 无需使应用向公众广泛可用，你可以直接向企业获取批量购置，通过适用于企业的 Microsoft 应用商店发布业务线应用。 |
+| [将 LOB 应用分配到企业](https://msdn.microsoft.com/library/windows/apps/mt608995) | 无需使应用广泛提供给公众，你可以直接向企业获取批量购置，通过适用于企业的 Microsoft 应用商店发布业务线应用。 |
 | [旁加载应用](https://technet.microsoft.com/library/mt269549) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
-| [将应用发布到 Microsoft 应用商店](https://dev.windows.com/publish) | 统一的 Microsoft 应用商店允许你发布和管理你的所有应用适用于所有 Windows 设备。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
+| [将应用发布到 Microsoft Store](https://dev.windows.com/publish) | 在统一的 Microsoft 应用商店可以发布和管理你的所有应用适用于所有 Windows 设备。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
 
 ## <a name="enterprise-uwp-samples"></a>企业 UWP 示例
 
 此处显示简介文本。
 
-操作-谈乔什和/或 Karl 才能一起获取更侧重于企业的示例。
+操作-谈乔什和/或 Karl 才能一起获取更多侧重于企业的示例。
 
 | 主题 |  说明 |
 |------ |--------------|
-| [VanArsdel 清单示例](https://github.com/Microsoft/InventorySample) | 示例 Windows 10 应用程序 （使用通用 Windows 平台） 侧重于在业务线方案中，显示了如何使用桌面应用程序中的最新的 Windows 功能。 该示例基于创建和管理客户、 订单和产品虚构公司 VanArsdel。
-突出显示 MVVM，SQL 数据库，实体框架。 列出其他人。|
+| [VanArsdel 清单示例](https://github.com/Microsoft/InventorySample) | 示例 Windows 10 应用程序 （使用通用 Windows 平台） 侧重于在业务线方案中，显示了如何在桌面应用程序中使用最新的 Windows 功能。 该示例都基于创建和管理客户、 订单和产品虚构公司 VanArsdel。
+突出显示 MVVM，SQL 数据库的 Entity Framework。 列出其他人。|
 
 ## <a name="patterns-and-practices"></a>模式和实践
 
-大规模的企业级应用的基本代码可能变得不实用。 Prism 是用于在 WPF、Windows 10 UWP 和 Xamarin Forms 中生成松散耦合、可维护且可测试的 XAML 应用程序的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
+大规模的企业级应用的基本代码可能变得不实用。 Prism 是用于生成松散耦合、 可维护性、 和可测试 XAML 应用程序在 WPF、 windows 10 UWP 和 Xamarin Forms 中的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
 
 有关 Prism 的详细信息，请参阅 [GitHub 存储库](https://github.com/PrismLibrary/Prism)。
 
- 
+ 
 
- 
+ 

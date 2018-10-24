@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434498"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470395"
 ---
 # <a name="storyboarded-animations"></a>情节提要动画
 
@@ -153,7 +153,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By 可以为空
 
-我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 Visual C++ 组件扩展 (C++/CX) 不具有 **Nullable** 类型，因此它转而使用 [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)。
+我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 VisualC + + 组件扩展 (C + + CX) 不具有**Nullable**类型，因此它改为使用[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) 。
 
 ### <a name="other-properties-of-an-animation"></a>动画的其他属性
 
@@ -314,7 +314,7 @@ myStoryBoard.Begin()
 > [!TIP]
 > 在你为应用方案编写代码（其中会从应用代码启动动画）时，你可能希望再次查看动画或转换是否已存在于 UI 方案的动画库中。 库动画使得所有 Windows 运行时应用间的 UI 体验更加一致，并且更易于使用。
 
- 
+ 
 
 ### <a name="animations-for-visual-states"></a>视觉状态的动画
 
@@ -341,9 +341,9 @@ myStoryBoard.Begin()
 * [控件模板](https://msdn.microsoft.com/library/windows/apps/Mt210948)
 * [**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+ 
 
- 
+ 
 
 
 

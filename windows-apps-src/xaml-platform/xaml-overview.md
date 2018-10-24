@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: d28f6bca5a0d849661f158e25767f27586ace101
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433812"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470497"
 ---
 # <a name="xaml-overview"></a>XAML 概述
 
@@ -74,9 +74,9 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 |------|-------------|
 | [x:Key](x-key-attribute.md) | 为 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每个资源设置一个唯一的用户定义密钥。 该密钥的令牌字符串是 **StaticResource** 标记扩展的参数，你可以在以后使用此密钥在应用 XAML 的其他位置检索其他 XAML 用法中的 XAML 资源。 |
 | [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 默认 Windows 运行时激活模型中的 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051)。 |
-| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
+| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)是框架中的一个类似属性，但并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
 | [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用 **x:Uid** 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
-| [XAML 固有数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于 XAML 中的该值，可将 **x:Boolean** 固有类型用作对象元素，例如： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [XAML 固有数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于 XAML 中的该值，可将 **x:Boolean** 固有类型用作对象元素，例如： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 在 XAML 语言 XAML 命名空间中还存在其他编程结构，但没有这么常用。
 
@@ -92,7 +92,7 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 例如，将前缀 `myTypes` 映射到命名空间 `myCompany.myTypes` 的属性语法为：`    xmlns:myTypes="using:myCompany.myTypes"`，而代表的元素用法为： `<myTypes:CustomButton/>`
 
-有关为自定义类型映射 XAML 命名空间的详细信息，包括 Visual C++ 组件扩展 (C++/CX) 的特殊注意事项，请参阅 [XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
+有关自定义类型映射 XAML 命名空间的详细信息，包括特殊注意事项 VisualC + + 组件扩展 (C + + CX)，请参阅[XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空间
 
@@ -202,7 +202,7 @@ namespace App1
 
 在一个项目中，将 XAML 编写为 .xaml 文件，使用你最喜欢的语言（C#、Visual Basic、C++/CX）编写一个代码隐藏文件。 当在项目的生成操作中对 XAML 文件进行标记编译时，可以通过将一个命名空间和类指定为 XAML 页面根元素的 [x:Class](x-class-attribute.md) 属性来标识每个 XAML 页面的 XAML 代码隐藏文件的位置。 有关这些机制在 XAML 中如何工作以及它们与编程和应用程序模型之间的关系的详细信息，请参阅[事件和路由事件概述](events-and-routed-events-overview.md)。
 
-**注意**  对于 C++/CX，存在两个代码隐藏文件，一个是标头 (.xaml.h)，另一个是实现 (.xaml.cpp)。 该实现引用标头，从技术上讲，标头表示代码隐藏连接的入口点。
+**注意**对于 C + /CX，存在两个代码隐藏文件，一个是标头 (。 xaml.h)，另一个是实现 (。 xaml.cpp)。 该实现引用标头，从技术上讲，标头表示代码隐藏连接的入口点。
 
 ## <a name="resource-dictionaries"></a>资源字典
 
@@ -256,6 +256,6 @@ XAML 在应用开发过程中发挥着多项重要作用。
 
 一旦应用真正运行，如果任何 XAML 分析错误在设计时未经检测，公共语言运行时 (CLR) 就会报告这些错误作为 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 有关可以对运行时 **XamlParseException** 执行的操作的详细信息，请参阅[采用 C# 或 Visual Basic 的 Windows 运行时应用的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
-**注意**  针对代码使用 C++/CX 的应用不能获取特定 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
+**注意**应用程序使用 C + + /CX 代码为未获取特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
 
 有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。

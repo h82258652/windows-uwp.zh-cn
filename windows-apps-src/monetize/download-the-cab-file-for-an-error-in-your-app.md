@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438407"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470342"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下载应用中错误的 CAB 文件
 
@@ -56,7 +56,7 @@ ms.locfileid: "5438407"
 | applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供了应用商店 ID。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | cabId | 字符串 | 想要下载的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabId** 值。 |  是  |
 
- 
+ 
 ### <a name="request-example"></a>请求示例
 
 以下示例演示如何使用此方法下载 CAB 文件。 将 *applicationId* 和 *cabId* 值替换为你的应用的相应值。
