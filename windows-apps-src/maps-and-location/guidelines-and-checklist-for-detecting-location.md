@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439982"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480870"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
@@ -79,7 +79,7 @@ ms.locfileid: "5439982"
 
         提供位置数据的设备可跟踪不同应用所请求的报告间隔，并以请求的最小间隔提供数据报告。 这样，对准确性要求最高的应用就会接收到其所需的数据。 因此，如果其他应用请求的更新频率更高，则定位程序可能以高于你的应用所请求的频率生成更新。
 
-        **注意**  不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
+        **注意**不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
 
     -   为了帮助节省电耗，请设置 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 属性，以向位置平台指示你的应用是否需要高精度的数据。 如果应用都不需要高精度的数据，则系统可以不打开 GPS 提供程序以节省电耗。
 
@@ -105,7 +105,7 @@ ms.locfileid: "5439982"
     -   原始传感器包括加速计、陀螺仪和磁力计。
     -   融合传感器包括方向、测斜仪和指南针。 融合传感器从原始传感器的组合中获取数据。
 
-    Windows 运行时 API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
+    Windows 运行时  API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
 **连接待机**
 - 当电脑处于连接待机状态时，始终可以实例化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 但是，**Geolocator** 对象将找不到任何可聚合的传感器，因此对 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的调用将在 7 秒后超时，[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件侦听器将永远不会被调用，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件侦听器将在 **NoData** 状态下被调用一次。
@@ -170,6 +170,6 @@ ms.locfileid: "5439982"
 * [使用 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP 位置示例（地理位置）](http://go.microsoft.com/fwlink/p/?linkid=533278)
- 
+ 
 
- 
+ 

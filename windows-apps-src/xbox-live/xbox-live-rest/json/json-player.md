@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d9262ac16eab3d1c2f35960445321fa3872c30
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437168"
+ms.locfileid: "5479292"
 ---
 # <a name="player-json"></a>Player (JSON)
 在游戏会话包含玩家数据。 
@@ -29,8 +29,8 @@ ms.locfileid: "5437168"
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| customData| 8 位无符号整数的数组| 1024 字节的 Base64 编码的特定于游戏的玩家数据。 此值不透明到服务器。| 
-| 玩家代号| 字符串| 玩家代号，最多 15 个字符的 — 的玩家。 识别的玩家时，客户端应在 UI 中使用此值。 | 
+| customData| 数组，8 位无符号整数| 1024 字节的 Base64 编码的特定于游戏的玩家数据。 此值不透明到服务器。| 
+| 玩家代号| 字符串| 玩家代号，最多 15 个字符的 — 的玩家。 在确定玩家时，客户端应在 UI 中使用此值。 | 
 | isCurrentlyInSession| 布尔值| 指示玩家当前在会话中或离开会话。| 
 | seatIndex| 32 位有符号整数| 玩家在会话中的索引。| 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家。| 

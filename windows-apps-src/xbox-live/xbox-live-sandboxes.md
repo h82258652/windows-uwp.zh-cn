@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 63447a9423ab65f79f034877a1c74c1eea75c78c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439737"
+ms.locfileid: "5468165"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 
@@ -95,7 +95,7 @@ ms.locfileid: "5439737"
     2. 通过运行开始使用 `Import-Module XboxlivePSModule`
     3. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
-* 若要使用它从 zip 文件在[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开 PowerShell 窗口，
+* 若要使用它从 zip 文件在[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开一个 PowerShell 窗口，
     1. 运行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 

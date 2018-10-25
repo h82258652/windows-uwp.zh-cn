@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c3c9a436af3e25f1af20baab5f7fca4c7ed109b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5442510"
+ms.locfileid: "5468105"
 ---
 # <a name="get-sessionssessionidscidssciddatapath"></a>GET (/sessions/{sessionId}/scids/{scid}/data/{path})
-列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [可选的查询字符串参数](#ID4ECB)
@@ -38,7 +38,7 @@ ms.locfileid: "5442510"
 | --- | --- | --- | 
 | sessionId| 字符串| 若要查找会话的 ID。| 
 | scid| guid| 若要查找的服务配置 ID。| 
-| path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
+| path| 字符串| 要返回的数据项路径。 返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
   
 <a id="ID4ECB"></a>
 
@@ -47,8 +47,8 @@ ms.locfileid: "5442510"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| skipItems| int| 返回在集合中，例如，N + 1 处开始的项跳过 N 的项目。| 
-| ContinuationToken| 字符串| 返回在给定的延续令牌启动的项。 如果同时提供，continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
+| skipItems| int| 返回的项目在集合中，例如，N + 1 处开始跳过 N 项目。| 
+| ContinuationToken| 字符串| 返回在给定的延续令牌启动的项目。 如果两者都提供，continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
 | maxItems| int| 要从该集合，这可以与 skipItems 和 continuationToken 返回项目的范围结合使用返回的项数的最大数量。 如果 maxItems 不存在，并且可能会返回少于 maxItems，即使尚未返回结果的最后一页该服务可能会提供一个默认值。 | 
   
 <a id="ID4EWC"></a>
@@ -56,7 +56,7 @@ ms.locfileid: "5442510"
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头丢失或无效，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头是无效或不存在，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4EDD"></a>
 
@@ -80,12 +80,12 @@ ms.locfileid: "5442510"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 请求已成功。| 
-| 201| 已创建| 已创建实体。| 
+| 201| 已创建| 创建实体。| 
 | 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
@@ -93,7 +93,7 @@ ms.locfileid: "5442510"
 | 406| 不允许| 不支持资源版本。| 
 | 408| 请求超时| 请求所花的时间太长，才能完成。| 
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用| 请求已阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EUBAC"></a>
 

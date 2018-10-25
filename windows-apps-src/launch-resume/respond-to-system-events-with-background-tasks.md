@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438433"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481537"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>使用后台任务响应系统事件
 
@@ -89,7 +89,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 > [!NOTE]
 > 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
- 
+ 
 ## <a name="remarks"></a>备注
 
 若要实际查看后台任务注册，请下载[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443400"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481301"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -97,6 +97,6 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
 
 有关最新的已知问题和发布与 Microsoft 广告 SDK 相关的问题的详细信息，请访问[论坛](http://go.microsoft.com/fwlink/p/?LinkId=401266)。
 
- 
+ 
 
- 
+ 

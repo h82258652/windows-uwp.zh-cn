@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442961"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481389"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
-你可以查看与分配给你的应用的**应用标识**页面上的 Microsoft Store 的唯一标识符相关的详细信息。 你还可以获取指向你的应用的应用商店的此页面上列出。
+你可以查看与分配给你的应用的**应用标识**页面上的 Microsoft Store 的唯一标识符相关的详细信息。 此外可以获取指向你的应用的应用商店的此页面上列出。
 
 若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
 
@@ -56,9 +56,9 @@ ms.locfileid: "5442961"
 
 
 
- 
+ 
 
- 
+ 
 
 
 

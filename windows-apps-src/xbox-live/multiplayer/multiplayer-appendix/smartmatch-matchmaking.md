@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fe8ad244b9b7a650af4fc77c4adbb1805023ecf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439429"
+ms.locfileid: "5468621"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -177,7 +177,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)，会都发生。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
@@ -192,7 +192,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-配置 XDP 或开发人员中心的 UI，你可以将每个会话映射到一个或多个 hopper，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+配置 XDP 或开发人员中心 UI 中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置
@@ -428,7 +428,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 ### <a name="configuring-team-rules"></a>配置团队规则
 
-若要设置团队规则，首先创建一个你所选的配置的平台 （XDP 或开发人员中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
+若要设置团队规则，首先创建一个选择的配置平台 （XDP 或开发人员中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
 
 
 #### <a name="using-team-rules"></a>使用团队规则

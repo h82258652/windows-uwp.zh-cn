@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, advertising, AdControl, 疑难解答, HTML, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 5474ac51d57decfe2c4f4d5f1969da5b4436fd14
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445924"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481939"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑难解答指南
 
@@ -148,7 +148,7 @@ ms.locfileid: "5445924"
 
 1.  仔细检查前面的 [AdControl 不显示](#html-notappearing)部分中的所有步骤。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
+2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -295,7 +295,7 @@ ms.locfileid: "5445924"
 
 1.  仔细检查 [AdControl 不显示](#js-adcontrolnotappearing)部分中的所有步骤。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
+2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
     此示例展示了如何实现可报告错误消息的错误处理程序。 此 HTML 代码的代码段提供了如何设置 UI 以显示错误消息的示例。
 
@@ -379,6 +379,6 @@ ms.locfileid: "5445924"
 
 3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 
- 
+ 
 
- 
+ 

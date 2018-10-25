@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 回复信息
 ms.localizationpriority: medium
 ms.openlocfilehash: 0212d7457ab85749fd66397876144acecd5dfcf1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437835"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483273"
 ---
 # <a name="get-response-info-for-reviews"></a>获取评价的回复信息
 
@@ -74,7 +74,7 @@ Authorization: Bearer <your access token>
 | CanRespond      | 布尔值  | 值为 **true** 表示你可以回复指定的评价，或者你有回复指定应用的任何评价的权限。 否则，此值将为 **false**。       |
 | DefaultSupportEmail  | 字符串 |  应用的[支持电子邮件地址](../publish/enter-app-properties.md#support-contact-info)，其在应用的应用商店一览中有所指定。 如果未指定支持电子邮件地址，则此字段为空。    |
 
- 
+ 
 ### <a name="response-example"></a>回复示例
 
 以下示例举例说明此请求的 JSON 响应正文。

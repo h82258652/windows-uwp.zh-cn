@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433738"
+ms.locfileid: "5483087"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
 删除匹配票证。
 
 > [!IMPORTANT]
-> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此方法用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "5433738"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法从在服务配置 ID (SCID) 级别命名漏斗中删除指定的票证 ID。 此方法可以通过**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**包装。  
+此 HTTP/REST 方法在服务配置 ID (SCID) 级别的命名漏斗中删除指定的票证 ID。 此方法可由**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**包装。  
 <a id="ID4E2"></a>
 
 
@@ -56,8 +56,8 @@ ms.locfileid: "5433738"
 
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。| 403|
-| 权限和设备类型| 是| 当用户的 deviceType 设置时，控制台时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。| 403|
+| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话的成员。| 403|
+| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。| 403|
 
 <a id="ID4EOC"></a>
 

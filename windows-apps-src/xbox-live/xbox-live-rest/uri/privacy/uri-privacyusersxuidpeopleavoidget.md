@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434297"
+ms.locfileid: "5477595"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -34,7 +34,7 @@ ms.locfileid: "5434297"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，仅返回该用户，如果它们在阻止列表中，也可以为空如果它们不。
+如果已指定目标，仅返回该用户，如果它们不在阻止列表中，也可以为空如果它们不。
 
 <a id="ID4EZ"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "5434297"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 要访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
 
 <a id="ID4EEB"></a>
 
@@ -69,7 +69,7 @@ ms.locfileid: "5434297"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -86,7 +86,7 @@ ms.locfileid: "5434297"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
-| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|
+| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 34。 最大大小： none。|
 | 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4ESH"></a>

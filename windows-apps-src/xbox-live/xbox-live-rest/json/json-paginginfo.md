@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 933169945c865fc6bc6f7b8b7ba7872fff98d1b8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441740"
+ms.locfileid: "5469834"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
-包含分页信息数据页中返回的结果。 
+包含分页信息中的数据的页面将返回的结果。 
 <a id="ID4EN"></a>
 
  

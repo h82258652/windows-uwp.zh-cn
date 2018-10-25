@@ -10,20 +10,20 @@ ms.technology: uwp
 keywords: xbox live，xbox，游戏，uwp，windows 10，xbox one、 c，xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: ac47d3877c44cfa9891753c49be8a5749fba9185
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444414"
+ms.locfileid: "5478937"
 ---
 # <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live C Api 简介
 
-在 2018 年 6 月，到 XSAPI 添加了新的平面 C API 图层。 此新的 API 层可以解决与 c + + 和 WinRT API 层出现一些问题。
+在 2018 年 6 月，到 XSAPI 添加了新的平面 C API 图层。 此新的 API 层解决与 c + + 和 WinRT API 层出现一些问题。
 
-C API 不涵盖所有 XSAPI 功能，但正在处理其他功能。 所有 3 API 图层、 C、 c + + 和 WinRT 将继续支持，并且随着时间的推移添加了其他功能。
+C API 不涵盖 XSAPI 的所有功能，但正在处理其他功能。 所有 3 个 API 图层、 C、 c + + 和 WinRT 将继续支持，并且随着时间的推移添加了其他功能。
 
 > [!NOTE]
-> C Api 当前仅适用于使用 Xbox 开发人员工具包 (XDK) 游戏。 它们并不支持这一次的 UWP 游戏。
+> C Api 目前仅适用于使用 Xbox 开发人员工具包 (XDK) 游戏。 它们并不支持这一次的 UWP 游戏。
 
 ## <a name="features-covered-by-the-c-apis"></a>涵盖 C Api 的功能
 
@@ -38,22 +38,22 @@ C API 目前支持以下功能和服务：
 ## <a name="benefits-of-the-c-api-for-xsapi"></a>Xsapi C API 的优势
 
 - 允许游戏时调用 XSAPI 控制的内存分配。
-- 允许游戏获得的线程处理调用 XSAPI 时的完全控制。
-- 使用新 HTTP 库，libHttpClient，为游戏开发人员设计。
+- 允许游戏获得的线程处理时调用 XSAPI 的完全控制。
+- 使用新 HTTP 库，libHttpClient，面向游戏开发人员。
 
-你可以使用旁边 c + + XSAPI C Api，但你将使用 c + + Api 不获得上面列出的优势。
+你可以使用一起 c + + XSAPI C Api，但你不会使用 c + + Api 将获得上面列出的优势。
 
 ### <a name="managing-memory-allocations"></a>管理内存分配
 
-使用新 C API，你现在可以指定它时分配内存，将调用 XSAPI 的回调函数。 如果你没有指定函数回调，XSAPI 将使用标准内存分配例程。
+使用新 C API，你现在可以指定它时分配内存，将调用 XSAPI 的回调函数。 如果你没有指定函数回调，XSAPI 将使用标准的内存分配例程。
 
-若要手动指定内存例程，你可以执行以下操作：
+若要手动指定内存例程，请执行以下操作：
 
-- 在游戏开始：
+- 在开始菜单的游戏：
   - 调用`XblMemSetFunctions(memAllocFunc, memFreeFunc)`指定用于分配和释放内存分配回调。
   - 调用`XblInitialize()`若要初始化库实例。  
 - 尽管游戏正在运行：
-  - 调用的任何新的 C Api 在 XSAPI 中的分配或释放内存会导致 XSAPI 调用处理回调的指定的内存。  
+  - 调用的任何新的 C Api 在 XSAPI 中，分配或释放内存会导致 XSAPI 调用处理回调的指定的内存。  
 - 当游戏退出：
   - 调用`XblCleanup()`以回收与 XSAPI 库相关联的所有资源。
   - 清理你的游戏的自定义内存管理器。
@@ -62,11 +62,11 @@ C API 目前支持以下功能和服务：
 
 C API 引入了新的异步线程调用完全控制的线程模型允许开发人员模式。 有关详细信息，请参阅[调用模式 XSAPI 平面 C 层异步调用](flatc-async-patterns.md)。
 
-## <a name="migrating-code-to-use-c-xsapi"></a>迁移代码以使用 XSAPI C
+## <a name="migrating-code-to-use-c-xsapi"></a>迁移代码以使用 C XSAPI
 
 可以与 XSAPI c + + Api 在项目中，并行使用 XSAPI C Api，因此我们建议你一次迁移一项功能。
 
-C Api 和 c + + Api 是周围的常用的核心，只需使用不同的入口点，实际上只是精简包装器，因此功能应保持不变。 但是，仅 C Api 可以充分利用的自定义内存和线程管理功能。
+C Api 和 c + + Api 是实际上只是精简包装的常用的核心，只需使用不同的入口点，以便功能应保持不变。 但是，仅 C Api 可以充分利用自定义内存和线程管理功能。
 
 > [!IMPORTANT]
 > 不能混合使用 C Api 的 XSAPI WinRT Api。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 0673048fc9a1ed8fb7c439607ebc4197039699e9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436720"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483423"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
@@ -72,4 +72,4 @@ ms.locfileid: "5436720"
 -   产品 ID 不可包含以下任何字符：**&lt; &gt; \* % & : \\ ? + ,**
 -   若要在所有操作系统版本中提供加载项，必须只使用字母数字字符、句点和/或下划线。 如果你使用任何其他类型的字符，该加载项将不可供运行 Windows Phone 8.1 或更早版本的客户购买。
 -   产品 ID 在 Microsoft Store 中无需是唯一的，但对于你的开发人员帐户必须是唯一的。
- 
+ 

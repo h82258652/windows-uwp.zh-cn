@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435510"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481116"
 ---
 # <a name="access-keys"></a>访问键
 
@@ -263,16 +263,16 @@ _自动键提示放置示例_
 
     a.  键提示应**靠近**具有访问键的元素（所有者）。  
     b.  键提示应**避免覆盖具有访问键的已启用元素**。   
-    c.  如果无法将键提示置于其所有者附近，则应覆盖其所有者。 
+    c.  如果无法将键提示置于其所有者附近，则应覆盖其所有者。 
 
 2.  **可发现性**：用户可以通过键提示快速发现控件。
 
-    a.  键提示不得**覆盖**其他键提示。  
+    a.  键提示不得**覆盖**其他键提示。  
 
 3.  **轻松扫描**：用户可以轻松地浏览键提示。
 
     a.  键提示相互之间以及与 UI 元素之间应**对齐**。
-    b.  应尽可能多地将键提示**分组**。 
+    b.  应尽可能多地将键提示**分组**。 
 
 ### <a name="relative-position"></a>相对位置
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e27eada890bd616fb764ebea7bb43890df1eeb0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437190"
+ms.locfileid: "5478707"
 ---
 # <a name="usersmeinventory"></a>/users/me/inventory
 访问当前与提供的用户相关联的清单的集。 这些 Uri 的域是`inventory.xboxlive.com`。
@@ -28,7 +28,7 @@ ms.locfileid: "5437190"
 
 [GET (/users/me/inventory)](uri-inventoryget.md)
 
-&nbsp;&nbsp;提供了清单当前与返回给调用方提供的用户关联的组。
+&nbsp;&nbsp;提供的一套当前与返回给调用方提供的用户相关联的清单。
  
 <a id="ID4E6"></a>
 

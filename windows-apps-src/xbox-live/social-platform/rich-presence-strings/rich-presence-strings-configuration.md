@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
 ms.openlocfilehash: 7accd2585b7d1822b99abf03e74a660cbf983cf9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439254"
+ms.locfileid: "5479766"
 ---
 # <a name="rich-presence-configuration"></a>“完整状态”配置
 
@@ -148,7 +148,7 @@ totalKicked | 默认值 | Kicked {0} Buckets! | BucketsKicked
  |  | zh-CN | 玩多人游戏 |
  |  | en-GB | Playing multiplayer |
  |  | de | Spielt Mehrspieler |
- |  | 等 | 
+ |  | 等 | 
 
 对于可以创建多少个字符串没有限制，但必须至少为标题创建一个字符串。
 

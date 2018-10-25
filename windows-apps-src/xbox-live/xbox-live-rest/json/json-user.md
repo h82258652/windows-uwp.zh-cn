@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7070d829000821cb48d8fcbaa4fde1d6f393b16a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5430446"
+ms.locfileid: "5472797"
 ---
 # <a name="user-json"></a>User (JSON)
 包含用户排行榜数据。 
@@ -29,8 +29,8 @@ ms.locfileid: "5430446"
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 玩家代号| 字符串| （最多 15 个字符） 的玩家的玩家代号。 识别的玩家时，客户端应在 UI 中使用此值。| 
-| 排名| 32 位有符号整数| 相对于请求排行榜数据的用户的用户对分级。| 
+| 玩家代号| 字符串| （最多 15 个字符） 的玩家的玩家代号。 在确定玩家时，客户端应在 UI 中使用此值。| 
+| 排名| 32 位有符号整数| 相对于请求排行榜数据的用户的用户的排名。| 
 | rating| 字符串| 该用户的评分。| 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的用户。| 
   

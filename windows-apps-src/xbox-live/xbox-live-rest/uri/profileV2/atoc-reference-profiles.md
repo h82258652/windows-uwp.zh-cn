@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bcae059476cd5e55d95cbbbc7c4b479c359e46fe
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444601"
+ms.locfileid: "5469289"
 ---
 # <a name="profiles-uris"></a>配置文件 URI
  
-本部分提供了从 Xbox Live 服务*配置文件*的详细信息的配置文件通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供有关的个人资料统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务*配置文件*。
  
 仅在 Windows 8 上运行的游戏，或在 Windows Phone 上 Xbox 360，设备可以使用此服务。
  

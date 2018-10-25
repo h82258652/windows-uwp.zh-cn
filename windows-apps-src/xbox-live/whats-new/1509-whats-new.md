@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e348254e7e1d7ab233ee1a82e7223a57ebd2781
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5435684"
+ms.locfileid: "5479792"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---september-2015"></a>Xbox Live SDK 的新增功能 - 2015 年 9 月
 
@@ -43,7 +43,7 @@ Xbox Live SDK 支持 Windows 10 RTM [版本 10.0.10240] 和 Visual Studio 2015 R
 
 ## <a name="logging"></a>日志记录
 * xbox::services::experimental 中的 service_call_logging_config
-* 若要通过主机上的 xbTrace.exe 开始和停止，你必须调用 service_call_logging_config 类中的 register_for_protocol_activation。  请在游戏初始化期间进行一次此调用。
+* 若要开始和停止跟踪 xbTrace.exe 通过在主机上，你必须调用 theservice_call_logging_config 类。  请在游戏初始化期间进行一次此调用。
 
 ## <a name="resync-for-rta"></a>RTA 的重新同步
 * 当 RTA 服务认为用户信息可能已过期时可能发生重新同步

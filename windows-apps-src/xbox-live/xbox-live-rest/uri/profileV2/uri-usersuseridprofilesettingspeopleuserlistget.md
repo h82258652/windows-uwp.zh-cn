@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441717"
+ms.locfileid: "5471188"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
-获取用户的配置文件或支持用户，与人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
+获取用户的个人资料或支持用户，通过人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EKB)
@@ -32,7 +32,7 @@ ms.locfileid: "5441717"
  
 ## <a name="remarks"></a>备注
  
-**userList**和**Userid**是互斥的参数。 如果指定了这两或任何一个，你将得到**BadRequest** 。 **userList**是数组，以便在多个命名的列表是适用于请求方案未来篡改。 **Userid**构成 Xuid 十进制字符串-JSON 已损坏时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
+**userList**和**Userid**是互斥的参数。 如果指定了这两或任何一个，你将得到**BadRequest** 。 **userList**是数组，以便在多个命名的列表是适用于请求方案未来篡改。 **Userid**组成 Xuid 十进制字符串-JSON 无效时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
   
 <a id="ID4EKB"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "5441717"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | userId| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
-| 用户列表| 字符串| 命名的人获取设置列表。 目前，用户是唯一支持的列表。| 
+| userList| 字符串| 用户可以设置命名的列表。 目前，用户是唯一支持的列表。| 
   
 <a id="ID4EVB"></a>
 

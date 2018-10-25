@@ -12,21 +12,21 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434348"
+ms.locfileid: "5473586"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-检索特定用户消息，将其标记为已在服务上读的详细的消息文本。
+检索特定用户消息，将其标记为读取该服务的详细的消息文本。
 这些 Uri 的域是`msg.xboxlive.com`。
 
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
   * [授权](#ID4ERB)
   * [请求正文](#ID4E3B)
-  * [在资源的隐私设置的效果](#ID4EJC)
+  * [资源的隐私设置的效果](#ID4EJC)
   * [HTTP 状态代码](#ID4EUC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EUE)
 
@@ -39,7 +39,7 @@ ms.locfileid: "5434348"
 
 此 URI 需要在 Xbox.com 刷新。 目前，Xbox 360 中不会更新的读/未读状态，直到用户注销并重新登录。
 
-此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。
+此 API 支持仅内容类型是"application/json"，这需要在每个调用的 HTTP 标头中。
 
 <a id="ID4EEB"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "5434348"
 | 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 |
-| 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 |
+| 邮件 Id | string [50] | 要检索或删除该消息的 ID。 |
 
 <a id="ID4ERB"></a>
 
@@ -68,7 +68,7 @@ ms.locfileid: "5434348"
 <a id="ID4EJC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
 
 仅可以检索自己用户的消息。
 
@@ -77,14 +77,14 @@ ms.locfileid: "5434348"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- |
 | 200| 成功。|
-| 400| 无法正确转换的 XUID。|
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。|
-| 404| 有效的 XUID 是缺少，或使用消息 ID 找不到或正确地分析。|
+| 400| 不能正确转换的 XUID。|
+| 403| 不能转换 XUID 或者找不到有效的 XUID 声明。|
+| 404| 有效的 XUID 是缺失的或使用消息 ID 找不到或正确地分析。|
 | 500| 常规的服务器端错误或消息类型获取无效。|
 
 <a id="ID4EUE"></a>
@@ -98,21 +98,21 @@ ms.locfileid: "5434348"
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
-| 标题| 标题|  | JSON 对象|
+| 标题| 标题|  | JSON 对象|
 | messageText| 字符串| 256| UTF-8|
 
 #### <a name="header"></a>标题
 
 | 属性| 类型| 最大长度| 备注|
 | --- | --- | --- | --- |
-| 发送| DateTime|  | 日期和时间已发送消息。 （由该服务）。|
-| 到期| DateTime|  | 过期日期和时间消息。 （所有消息都具有最大生存时间，以在将来确定）。|
+| 发送| DateTime|  | 日期和时间已发送消息。 （由该服务）。|
+| 到期| DateTime|  | 过期日期和时间消息。 （所有消息都有在以后确定最长寿命。）|
 | 可以忽略 messageType| 字符串| 13| 消息类型： 用户、 系统，FriendRequest。|
-| senderXuid| ulong|  | 发件人的 XUID。|
+| senderXuid| ulong|  | 发件人的 XUID。|
 | 发送方| 字符串| 15| 发件人的玩家代号。|
-| hasAudio| Bool|  | 该消息是否音频 （语音） 附件。|
-| hasPhoto| Bool|  | 是否消息包含照片附件。|
-| hasText| Bool|  | 是否消息包含文本。|
+| hasAudio| Bool|  | 该消息是否音频 （语音） 附件。|
+| hasPhoto| Bool|  | 是否消息包含照片附件。|
+| hasText| Bool|  | 是否消息包含文本。|
 
 #### <a name="sample-response"></a>示例响应
 
@@ -136,7 +136,7 @@ ms.locfileid: "5434348"
 
 #### <a name="error-response"></a>错误响应
 
-如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
 
 | 属性| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -160,4 +160,4 @@ ms.locfileid: "5434348"
 <a id="ID4EMEAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

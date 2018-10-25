@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443822"
+ms.locfileid: "5476515"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 从调用方的角度来看，获取有关所有者的摘要数据。
@@ -37,7 +37,7 @@ ms.locfileid: "5443822"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 正在访问其资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
+| ownerId| 字符串| 要访问其资源的用户的标识符。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。 示例值： <code>me</code>， <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "5443822"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl 协定版本| 字符串| 名称/的内部版本号此请求应定向到该服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
+| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1|
 | 接受| 字符串| 内容类型可接受。 所有回复将都对<code>application/json</code>。|
 
 <a id="ID4EXE"></a>
@@ -79,7 +79,7 @@ ms.locfileid: "5443822"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,7 +94,7 @@ ms.locfileid: "5443822"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 232。|
+| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 232。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 这必须是<b>application/json</b>。|
 
 <a id="ID4EGAAC"></a>

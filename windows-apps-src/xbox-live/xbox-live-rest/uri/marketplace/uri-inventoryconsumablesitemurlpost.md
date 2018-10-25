@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 910e2e46725c8628d6984983c808bf5fc9937f9f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438981"
+ms.locfileid: "5480908"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-指示，已使用全部或部分的易耗型的库存项目并减少所请求的量通过该消耗品的数量。
+指示，已使用所有或易耗型库存项目的部分和递减请求的距离该消耗品的数量。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
   * [备注](#ID4EX)
@@ -32,10 +32,10 @@ ms.locfileid: "5438981"
 
 ## <a name="remarks"></a>备注
 
-   * 如果调用方要求占用的数量超过剩余提供的项目，则调用将被拒绝。
-   * 调用方要求占用的数量必须是上面 0 正整数。 消耗值为 0 或较低的调用将被拒绝。
+   * 如果调用方要求占用的数量超过该项目的剩余电源，调用将被拒绝。
+   * 调用方要求占用的数量必须是上述 0 正整数。 消耗值为 0 或更低的调用将被拒绝。
    * 如果调用方提供一个空的事务 ID，将拒绝该请求。
-   * 如果可用，以便它可以确定哪些游戏报告消耗，将会记录的主题作品声明。
+   * 如果可用，以便它可以确定哪些游戏报告消耗，将记录的主题作品声明。
    * 使用相同的 transactionId 的其他文章将被忽略某个时间段。
 
 
@@ -72,7 +72,7 @@ ms.locfileid: "5438981"
 ```
 
 
-删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供了一种方法重试限制两次计数相同的使用情况的风险时使用易耗型内容的操作与调用方。
+删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供了一种方法重试限制两次计数使用相同的风险时使用易耗型内容的操作与调用方。
 
 <a id="ID4ENC"></a>
 

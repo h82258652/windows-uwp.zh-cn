@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 大型会话, 最近的玩家
 ms.localizationpriority: medium
 ms.openlocfilehash: cead1a3ca1d56185ef97fe3f3271484bfbc58f18
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443819"
+ms.locfileid: "5471498"
 ---
 # <a name="large-sessions"></a>大型会话
 
@@ -43,23 +43,23 @@ Xbox Live 的一项功能是，如果 Xbox Live 玩家与新人玩多人游戏�
 
 ```json
 {
-    "constants": {
-        "system": {
-            "version": 1,
-            "maxMembersCount": 2000,
-            "visibility": "open",
-            "capabilities": {
-                "gameplay": true,
-                "large": true
-            },
-            "timeouts": {
-                "inactive": 0,
-                "ready": 180000,
-                "sessionEmpty": 0
-            }
-        },
-        "custom": { }
-    }
+    "constants": {
+        "system": {
+            "version": 1,
+            "maxMembersCount": 2000,
+            "visibility": "open",
+            "capabilities": {
+                "gameplay": true,
+                "large": true
+            },
+            "timeouts": {
+                "inactive": 0,
+                "ready": 180000,
+                "sessionEmpty": 0
+            }
+        },
+        "custom": { }
+    }
 }
 ```
 
@@ -79,17 +79,17 @@ Xbox Live 的一项功能是，如果 Xbox Live 玩家与新人玩多人游戏�
 
 #### <a name="1-persistent-groups"></a>1. 永久组
 
-如果一组玩家一直在一起（可能包括有来有往的玩家），则可以命名该组（例如，guid – 采用与常规会话相同的命名规则）。  每个成员在加入和离开该组时，应在其自己的“groups”属性中添加或删除该组名，这是一组字符串：
+如果一组玩家一直在一起（可能包括有来有往的玩家），则可以命名该组（例如，guid – 采用与常规会话相同的命名规则）。每个成员在加入和离开该组时，应在其自己的“groups”属性中添加或删除该组名，这是一组字符串：
 
 ```json
 {
     "members": {
         "me": {
-            "properties": {
-                "system": {
-                    "groups": [ "boffins-posse" ]
-                }
-            }
+            "properties": {
+                "system": {
+                    "groups": [ "boffins-posse" ]
+                }
+            }
         }
     }
 }
@@ -101,18 +101,18 @@ Xbox Live 的一项功能是，如果 Xbox Live 玩家与新人玩多人游戏�
 
 ```json
 {
-    "members": {
-        "me": {
-            "properties": {
-                "system": {
-                    "encounters": [ "trade.0c7bbbbf-1e49-40a1-a354-0a9a9e23d26a" ]
-                }
-            }
-        }
-    }
+    "members": {
+        "me": {
+            "properties": {
+                "system": {
+                    "encounters": [ "trade.0c7bbbbf-1e49-40a1-a354-0a9a9e23d26a" ]
+                }
+            }
+        }
+    }
 }
 ```
 
 你可以对“groups”和“encounters”使用相同的名称。例如，如果一个玩家与某个组“进行交易”，则该组中的成员不需要执行任何操作（假定他们之前将该组名添加到其“groups”中），并且所遇到的人会将该组名上传到其“encounters”列表中。 这样，各用户便可像最近的玩家一样查看该组的所有成员，反之亦然。
 
-成为该组成员 30 秒钟时的遇到计数。 由于遇到被视为一次性活动，因此，系统总会立即处理“encounters”数组，然后从会话中将其清除。  该数字将不会出现在响应中。  （“groups”数组始终存在，直到被更改或删除，或者成员离开会话。）
+成为该组成员 30 秒钟时的遇到计数。 由于遇到被视为一次性活动，因此，系统总会立即处理“encounters”数组，然后从会话中将其清除。该数字将不会出现在响应中。（“groups”数组始终存在，直到被更改或删除，或者成员离开会话。）

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 最佳实践
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce22d1571d5e4f96b384d6da914f1d359d78641
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441253"
+ms.locfileid: "5481684"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a>调用 Xbox Live 的最佳实践
 
 可以通过两种主要方式调用 Xbox Live 服务：使用 Xbox 服务 API (XSAPI)，或者直接调用 REST 端点。 无论代码如何调用 Xbox Live，必须具有正确的调用模式和重试逻辑。
 
 若要了解如何编写正确的重试逻辑，必须了解两类 REST 端点 - **幂等**和**非幂等**。 我们将在下面分别讨论这两类端点
- 
+ 
 ## <a name="non-idempotent-endpoints"></a>非幂等端点
 
 在重复调用时会产生副作用的 HTTP 方法被视为是**非幂等**。 这意味着，如果客户端将调用此端点且发生网络超时，则重试此方法不安全，因为资源可能已更新，但网络无法通知已成功的调用方。 发生错误时，客户端必须先查询以确定调用是否成功，而不是重试。 仅当调用不成功时才应重试。
@@ -48,7 +48,7 @@ ms.locfileid: "5441253"
 * reputation\_service::submit\_batch\_reputation\_feedback()
 <br>
 * reputation\_service::submit\_reputation\_feedback()
- 
+ 
 
 ## <a name="idempotent-methods"></a>幂等方法
 
@@ -83,7 +83,7 @@ ms.locfileid: "5441253"
 ## <a name="error-handling"></a>错误处理
 
 游戏开发人员在**每次**服务调用时应**始终**使用正确的错误处理，并且需要确保正确处理故障响应。
- 
+ 
 许多的实际情况可能会导致请求 Xbox Live 返回故障代码，如
 
 1.  网络不可用。 例如，设备丢失 4G、丢失 WLAN 或网络关闭。
@@ -101,7 +101,7 @@ XSAPI 具有两类错误处理模式。 通过 C++/CX、C\# 或 Javascript 使�
 
 ## <a name="best-calling-patterns"></a>最佳调用模式
 
-### <a name="use-batching-requests"></a>使用批处理请求
+### <a name="usebatching-requests"></a>Usebatching 请求
 
 某些端点支持将一组请求批处理或聚合为单次调用。 例如，借助 Xbox Live 个人资料服务，你可以请求单个用户的个人资料或一组用户的个人资料。 因此，如果你需要一组用户的个人资料，那么，一次调用每个用户个人资料的一个端点或 API 的效率就非常低。 每次调用都会增加大量身份验证开销。 相反，将你需要其相关信息的所有用户一次传递至 API，使得端点可以同时处理所有用户个人资料并返回单个响应。
 
@@ -118,7 +118,7 @@ XSAPI 将 RTA 服务作为客户端可使用的一组订阅 API 公开。 这些
 * user\_statistics\_service::subscribe\_to\_statistic\_change
 <br>
 * social\_service::subscribe\_to\_social\_relationship\_change<br>
- 
+ 
 
 ## <a name="use-xbox-live-client-side-managers"></a>使用 Xbox Live 客户端侧管理器
 
@@ -162,7 +162,7 @@ Xbox Live 服务具有适当的节流机制，用于防止单个设备对服务�
 
 > xboxLiveContext-&gt;settings()-&gt;disable\_asserts\_for\_xbox\_live\_throttling\_in\_dev\_sandboxes( xbox\_live\_context\_throttle\_setting::this\_code\_needs\_to\_be\_changed\_to\_avoid\_throttling )；
 
-但是，请注意，此 API 不会阻止游戏被节流。 你的游戏仍将被节流。 这只会在使用调试版本时在开发人员沙盒中禁用断言。 
+但是，请注意，此 API 不会阻止游戏被节流。 你的游戏仍将被节流。 这只会在使用调试版本时在开发人员沙盒中禁用断言。 
 
 ### <a name="xbox-live-trace-analyzer-tool"></a>Xbox Live 分析跟踪器工具
 

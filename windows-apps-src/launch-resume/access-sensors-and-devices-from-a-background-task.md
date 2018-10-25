@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 99f853da53302d4080bfa9462da0ec524e8d2064
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436155"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480837"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 
@@ -33,7 +33,7 @@ ms.locfileid: "5436155"
 
 当你的应用不再对用户可见时，Windows 会暂停或终止应用以回收内存和 CPU 资源。 这允许其他应用在前台运行并减少电池消耗。 出现这种情况时，如未获得后台任务的帮助，正在进行的数据事件将丢失。 Windows 提供了后台任务触发器 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，让你的应用从后台安全地在设备和传感器上执行长时间运行的同步和监视操作，即使你的应用暂停也是如此。 有关应用生命周期的详细信息，请参阅[启动、恢复和后台任务](index.md)。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-**注意**  在通用 Windows 应用中，在后台同步设备需要用户批准你的应用执行后台同步。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
+**注意**在通用 Windows 应用中，在后台同步设备需要用户批准你的应用执行后台同步。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
 
 ### <a name="limitation-critical-device-operations"></a>限制：关键设备操作
 
@@ -85,10 +85,9 @@ ms.locfileid: "5436155"
 8.  Windows 监控系统条件和任务运行情况，并在必要时（不再符合所需条件）取消该任务。
 9.  当后台任务报告进度或完成时，你的应用将通过该注册任务的进度事件和完成事件接收这些事件。
 
-**重要提示**  
-使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 时，请考虑以下几个要点：
+**重要提示**使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)时，请考虑以下几个要点：
 
--   首次在 Windows8.1 和 Windows Phone 8.1 中引入了通过编程方式触发可使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
+-   首次 Windows8.1 和 Windows Phone 8.1 中引入以编程方式触发可使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)后台任务的能力。
 
 -   Windows 会强制执行某些策略，从而确保获得用户同意才能更新电脑上的外围设备。
 
@@ -96,8 +95,8 @@ ms.locfileid: "5436155"
 
 -   当不再符合某些策略要求（包括最长后台时间（时钟时间）量时，Windows 可能会取消使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 使用这些后台任务与外围设备交互时考虑这些策略要求很重要。
 
-**提示**  若要了解这些后台任务的工作原理，请下载相关示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
- 
+**提示**以了解这些后台任务的工作原理，请下载相关示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
+ 
 ## <a name="frequency-and-foreground-restrictions"></a>频率和前台限制
 
 应用启动操作频率方面没有相关限制，但应用每次只能运行一项 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务操作（这不会对其他类型的后台任务造成影响），并且只有当你的应用位于前台时才能启动后台任务。 当你的应用不在前台时，将无法启动使用 **DeviceUseTrigger** 的后台任务。 在前一项后台任务完成之前，应用无法启动另一项 **DeviceUseTrigger** 后台任务。

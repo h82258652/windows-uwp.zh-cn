@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445435"
+ms.locfileid: "5482349"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 图标
 
@@ -66,7 +66,7 @@ ms.locfileid: "5445435"
 
 
 ## <a name="how-do-i-get-this-font"></a>如何获取该字体？
-* Windows 10： 上没有任何你需要执行操作，字体附带 Windows。
+* 在 Windows 10： 无需执行任何，字体附带 Windows。
 * 你需要在 Mac 上下载并安装字体：<a href="https://aka.ms/SegoeFonts">获取 Segoe UI 和 MDL2 图标字体</a>
 
 ## <a name="icon-list"></a>图标列表

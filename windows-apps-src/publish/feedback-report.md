@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434680"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483677"
 ---
 # <a name="feedback-report"></a>反馈报告
 
@@ -31,7 +31,7 @@ ms.locfileid: "5434680"
 使用[软件包外部测试版](package-flights.md)时反馈也有用，因为当客户留下反馈时，反馈报告将展示每个客户已在其设备上安装的特定程序包。
 
 > [!TIP]
-> 快速查看在评论、 评分和你的应用的所有用户反馈过去 30 天中，展开左侧的导航菜单中的**参与**并选择**评论和反馈。** 
+> 对于概览评论、 评分和跨所有应用的用户反馈最近 30 天内，在左侧的导航菜单中展开**参与**并选择**评论和反馈。** 
 
 
 ## <a name="apply-filters"></a>应用筛选器

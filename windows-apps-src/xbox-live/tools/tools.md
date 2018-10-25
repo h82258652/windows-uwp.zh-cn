@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 工具, 玩家重置, live 跟踪分析器, LTA, xbox live 帐户工具
 ms.localizationpriority: medium
 ms.openlocfilehash: 98b21eda55c6122104c9ec79cda10708e362f3a4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431971"
+ms.locfileid: "5482882"
 ---
 # <a name="development-tools-for-xbox-live"></a>适用于 Xbox Live 的开发工具
 
 本部分介绍可用于帮助进行 Xbox Live 开发的各种工具。 [Xbox Live 开发人员工具 GitHub](https://github.com/Microsoft/xbox-live-developer-tools) 存储库中提供了其中许多工具。 也可使用[开发工具库](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)创建自己的自定义工具。 可在 [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) 下载所有独立开发人员工具。
 
 > [!NOTE]
-> 下载中包含的 MatchSim 和 XboxLiveCompute 工具仅可由托管的合作伙伴，或在注册合作伙伴[ID@Xbox](http://www.xbox.com/Developers/id)计划。 若要了解有关的可用的开发人员计划的详细信息，请参阅[开发人员计划概述](https://docs.microsoft.com/windows/uwp/xbox-live/developer-program-overview)。 
+> 包含在下载 MatchSim 和 XboxLiveCompute 工具仅可由托管的合作伙伴或注册合作伙伴[ID@Xbox](http://www.xbox.com/Developers/id)计划。 若要了解有关的可用的开发人员计划的详细信息，请参阅[开发人员计划概述](https://docs.microsoft.com/windows/uwp/xbox-live/developer-program-overview)。 
 
 ## <a name="global-storage"></a>全局存储
 全局标题存储用于存储每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 它是一种[标题存储](../storage-platform/xbox-live-title-storage/xbox-live-title-storage.md)。 全局存储工具用于管理测试沙盒中的全局标题存储。 数据仍须通过 Windows 开发人员中心或 Xbox 开发人员门户 (XDP) 发布到 RETAIL。 该工具在 [开发工具] (https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。 可使用[开发工具库](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)创建自定义工具。

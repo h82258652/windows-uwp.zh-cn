@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f7c8a4ce74fc1e958c143d1baa08bfbcd5e72706
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441841"
+ms.locfileid: "5481974"
 ---
 # <a name="delete-untrustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 删除文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -36,9 +36,9 @@ ms.locfileid: "5441841"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家发出请求者。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 若要访问该项目的路径和文件名称。 有效的字符 （达且包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且反斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符的文件名称部分 （在最终的正斜杠后的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)，下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件或 json。| 
   
 <a id="ID4EEB"></a>
@@ -46,7 +46,7 @@ ms.locfileid: "5441841"
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头丢失或无效，该服务将返回 401 未经授权的响应。
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头是无效或不存在，该服务将返回 401 未经授权的响应。
   
 <a id="ID4ERB"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "5441841"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 指定必须匹配要完成此操作的现有项目 ETag。| 
+| If-Match| 指定 ETag 必须符合现有项才能完成该操作。| 
   
 <a id="ID4EWD"></a>
 
@@ -79,12 +79,12 @@ ms.locfileid: "5441841"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 该文件已成功，删除，或不存在。| 
-| 201| 已创建 | 已创建实体。| 
+| 201| 已创建 | 创建实体。| 
 | 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
@@ -92,7 +92,7 @@ ms.locfileid: "5441841"
 | 406| 不允许 | 不支持资源版本。| 
 | 408| 请求超时 | 请求所花的时间太长，才能完成。| 
 | 500| 内部服务器错误 | 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用 | 请求已阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EUBAC"></a>
 

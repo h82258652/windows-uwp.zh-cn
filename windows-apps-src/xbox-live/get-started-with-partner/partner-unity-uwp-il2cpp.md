@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 8787e0d1be8449ab60ed5753593c65c0a892ae74
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437583"
+ms.locfileid: "5478193"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 UWP 带有 IL2CPP 脚本后端的 Unity 添加 Xbox Live 支持
 
@@ -141,7 +141,7 @@ public class XboxLiveTest : MonoBehaviour
 这将启动类似正常的 UWP 应用的应用，并允许进行 Xbox Live 调用，因为它们需要 UWP 应用容器才能正常工作。
 
 **14) 如果对 Unity 中的任何内容进行更改，请重新生成**
-  
+  
 如果你在 Unity 中更改任何内容，则必须重新生成 UWP 项目。
 
 请注意，当重新编译时，Unity 将替换你的 pfx 文件，这将导致 Xbox Live 登录失败，因此，你必须在 Unity 项目中更新它以避免此问题。

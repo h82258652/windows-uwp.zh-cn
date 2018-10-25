@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置
 ms.localizationpriority: medium
 ms.openlocfilehash: e1d3b21f98528afec5e97cac6f645c7835b6362a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437260"
+ms.locfileid: "5476580"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live 服务配置
 
@@ -39,7 +39,7 @@ ms.locfileid: "5437260"
 
 对于后续的所有作品，建议使用 Windows 开发人员中心，但是，对于某些功能，你可能仍需要使用 XDP。 此部分将帮助并建议你从何处配置你的作品。
 
-具体取决于你所选的门户，你可以找到有关特定服务配置页信息：
+具体取决于你所选的门户，你可以找到有关特定服务配置页的信息：
 
 * [Windows 开发人员中心配置](configure-xbl/windows-dev-center.md)
 * [Xbox 开发门户配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)-若要访问此链接，你必须具有一个 Microsoft 帐户 (MSA) 已启用 Xbox Live 完全访问权限。
@@ -114,7 +114,7 @@ Xbox One 与电脑之间的跨设备游戏称为跨平台联机游戏，是对 W
 
 **XDP**
 
-如果你要在 XDP 上配置你的游戏，你获取你的沙盒 ID 概述页面上为你的产品，如下所示：
+如果你要在 XDP 上配置你的作品，则你的沙盒 ID 上获得概述页面为你的产品，如下所示：
 
 ![](images/getting_started/xdp_sandbox_id.png)
 

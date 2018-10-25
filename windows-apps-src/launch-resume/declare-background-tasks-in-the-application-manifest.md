@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445644"
+ms.locfileid: "5481488"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
@@ -94,7 +94,7 @@ ms.locfileid: "5445644"
 
 2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
 
-    **注意**  确保列出你所使用的每个触发器类型，否则后台任务将不会注册未声明的触发器类型（[**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法将失败并引发异常）。
+    **注意**确保列出的每个触发器类型你正在使用，或后台任务将不会注册未声明的触发器类型 （[**注册**](https://msdn.microsoft.com/library/windows/apps/br224772)方法将失败并引发异常）。
 
     此代码段示例指示使用系统事件触发器和推送通知：
 
@@ -213,7 +213,7 @@ ms.locfileid: "5445644"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次用 SupportsMultipleInstances 属性触发新触发器时，在新进程中运行
 
-此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 要使用此属性，你必须面向 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
+此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性，你必须面向 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
 
 ```xml
 <Package

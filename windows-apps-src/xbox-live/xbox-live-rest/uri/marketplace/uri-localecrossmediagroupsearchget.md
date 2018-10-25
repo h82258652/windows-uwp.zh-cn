@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445262"
+ms.locfileid: "5469267"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
 获取多个不同的媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -31,9 +31,9 @@ ms.locfileid: "5445262"
  
 ## <a name="remarks"></a>备注
  
-跨组 API 允许客户端搜索的几个不同的媒体组中的项。 此 API 需要分页结果使用仅向前延续令牌。 此 API 将接受查询优化器。
+跨组 API 允许客户端搜索几个不同的媒体组中的项目。 此 API 需要分页结果使用仅向前延续令牌。 此 API 将接受查询优化器。
  
-现在，从 XToken 声明检索并强制执行**SandboxId** 。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 

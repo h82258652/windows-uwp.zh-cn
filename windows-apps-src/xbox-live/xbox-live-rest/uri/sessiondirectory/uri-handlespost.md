@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eaddef523fcfa3b794c421acbe6c1aac4785b68
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434019"
+ms.locfileid: "5469125"
 ---
 # <a name="post-handles"></a>POST (/handles)
 设置用户的当前活动，多人游戏会话，并邀请会话成员，如果需要。
@@ -35,9 +35,9 @@ ms.locfileid: "5434019"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法可用于设置当前活动会话。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**换行。 请求正文必须定义在 JSON 文件中，为"活动"类型字段使用**sessionRef**对象的会话引用。 检索没有响应正文。 会话引用中指定的项目的定义，请参阅**Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**。
+此 HTTP/REST 方法可用于设置的当前活动会话。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**换行。 请求正文中必须定义在 JSON 文件中，为"活动"类型字段使用**sessionRef**对象的会话引用。 检索没有响应正文。 会话引用中指定的项目的定义，请参阅**Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**。
 
-此 POST 方法还用于邀请用户指定的会话句柄。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**换行。 此，请使用的 POST 方法需要你请求正文定义的会话引用，但它具有类型字段设置为"邀请"。 响应正文是邀请句柄。
+此 POST 方法还用于邀请用户指定的会话句柄。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**换行。 使用 POST 方法需要在请求正文定义的会话引用，但它具有类型字段设置为"邀请"。 响应正文是邀请句柄。
 
 <a id="ID4EHB"></a>
 

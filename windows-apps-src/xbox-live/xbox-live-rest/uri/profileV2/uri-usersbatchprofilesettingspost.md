@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 66d32e448f7db8558ea6ef02714b6112e230e711
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443508"
+ms.locfileid: "5476286"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 获取用户或用户配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -32,7 +32,7 @@ ms.locfileid: "5443508"
  
 ## <a name="remarks"></a>备注
  
-这是仅完全限定的配置文件 URL 中允许。 从客户端的所有其他配置文件 Api 会被阻止。
+这是仅完全限定的个人资料 URL 中允许。 从客户端的所有其他配置文件 Api 会被阻止。
   
 <a id="ID4EFB"></a>
 
@@ -48,7 +48,7 @@ ms.locfileid: "5443508"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | 
-| x xbl 协定版本| 32 位无符号的整数| 协定版本必须设置为 2，来区分从 Xbox 360 API 此调用。| 
+| x xbl 协定版本| 32 位无符号的整数| 合约版本必须设置为 2，来区分从 Xbox 360 API 此调用。| 
 | 内容类型| 字符串| 值 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>

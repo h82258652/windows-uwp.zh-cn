@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431481"
+ms.locfileid: "5477631"
 ---
 # <a name="get-usersrequestoridpermissionvalidate"></a>GET (/users/{requestorId}/permission/validate)
 获取有关是否允许用户执行与目标用户指定的操作或否答案。
@@ -46,8 +46,8 @@ ms.locfileid: "5431481"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| 设置| 字符串枚举| 要进行检查的 PermissionId 值。 示例值:"CommunicateUsingText"。|
-| target| 字符串| 在其上执行操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 示例值： <code>xuid(0987654321)</code>|
+| 设置| 字符串枚举| 若要进行检查 PermissionId 值。 示例值:"CommunicateUsingText"。|
+| target| 字符串| 在其上执行该操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 示例值： <code>xuid(0987654321)</code>|
 
 <a id="ID4EDC"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "5431481"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
 
 <a id="ID4ETE"></a>
 
@@ -80,7 +80,7 @@ ms.locfileid: "5431481"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -96,7 +96,7 @@ ms.locfileid: "5431481"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>|
-| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34|
+| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 34|
 | 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
 
 <a id="ID4EKAAC"></a>

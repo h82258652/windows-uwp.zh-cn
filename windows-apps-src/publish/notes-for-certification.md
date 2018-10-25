@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 测试人员说明
 ms.localizationpriority: medium
 ms.openlocfilehash: 741925a3ac49273bd7ba826dfbadd2e18724f307
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441985"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482239"
 ---
 # <a name="notes-for-certification"></a>认证说明
 
@@ -44,9 +44,9 @@ ms.locfileid: "5441985"
 -   **请保证说明信息言简意赅。** 如果确实需要详细介绍某些信息，你可以提供包含更多信息的页面 URL。 但是，请记住，应用的客户不会看到这些说明。 如果你认为自己需要提供复杂说明来测试应用，则考虑你的应用是否需要进行简化，以便客户（和测试人员）了解它的使用方法。
 -   **服务和外部组件必须联机并且可用。** 如果你的应用需要连接到服务才能够运行，请确保服务联机并且可用。 包括有关测试人员将需要用到的服务的任何信息，如登录信息。 如果你的应用无法在测试期间连接到它所需的服务，则它可能无法通过认证。
 
- 
+ 
 
- 
+ 
 
 
 

@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a96c69415a8ad13bdafaa821df66a919296f61
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431307"
+ms.locfileid: "5473421"
 ---
 # <a name="people-uris"></a>人脉 URI
  
-本部分提供了从*人脉*系统的 Xbox Live 服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从*人脉*系统的 Xbox Live 服务。
  
-仅运行的 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上的游戏均可使用此服务。
+仅运行 Xbox 360、 Windows Phone 设备，或在 Xbox.com 上的游戏可以使用此服务。
  
 这些 Uri 的域是 social.xboxlive.com。
  
@@ -37,7 +37,7 @@ ms.locfileid: "5431307"
 
 [/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
-&nbsp;&nbsp;调用方的用户集合中访问通过目标 ID 的人员。
+&nbsp;&nbsp;调用方的用户集合中访问目标 ID 由一个人。
 
 [/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 

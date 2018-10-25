@@ -13,11 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442622"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481366"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -477,8 +477,7 @@ string str = "Recognition result\n";
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
-**注意**  
-用户可以通过转到**设置-&gt;时间和语言**来查看已安装语言的列表。 已安装的语言在**语言**下列出。
+**注意**用户可以看到的已安装的语言列表，方法转到**设置-&gt;时间和语言**。 已安装的语言在**语言**下列出。
 
 若要安装新语言包并为该语言启用手写识别：
 
@@ -488,7 +487,7 @@ string str = "Recognition result\n";
 4.  单击该语言，然后选择**选项**。
 5.  在**语言选项**页面上，下载**手写识别引擎**（也可以在此处下载完整的语言包、语音识别引擎和键盘布局）。
 
- 
+ 
 
 我们在此处演示如何使用手写识别引擎基于所选的识别器来解释 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一组笔划。
 
@@ -873,4 +872,4 @@ string str = "Recognition result\n";
 * [系列说明示例](https://aka.ms/cpubsample-familynotessample)
 
 
- 
+ 

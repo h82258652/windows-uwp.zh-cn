@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cf7ab408b14e74a8f231d6c81e3077a0a40be5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5430599"
+ms.locfileid: "5475403"
 ---
 # <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 创建、 更新或加入会话。
@@ -35,16 +35,16 @@ ms.locfileid: "5430599"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法创建，加入，或更新会话，具体取决于同一个 JSON 请求正文模板子集发送。 成功时，它将返回一个**MultiplayerSession**对象，包含从服务器返回的响应。 在它的属性可能不同于传入的**MultiplayerSession**对象中的属性。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**包装。
+此 HTTP/REST 方法创建，连接，或更新会话，具体取决于同一个 JSON 请求正文模板子集发送。 成功时，它将返回一个**MultiplayerSession**对象，包含从服务器返回的响应。 在它的属性可能不同于传入**MultiplayerSession**对象中的属性。 此方法可由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**包装。
 
-会话创建和更新操作 PUT 使用 application/json 正文，表示将应用的更改。 操作是幂等，相同的更改的多个应用程序，即有任何其他效果。
+会话创建和更新操作 PUT 使用 application/json 正文表示应用的更改。 操作是幂等，相同的更改的多个应用程序，即有任何其他效果。
 
 JSON 请求正文镜像会话数据结构。 所有字段和子字段都是可选的。
 
 在 PUT 方法的会话创建或加入模式的线格式如下所示。
 
 > [!NOTE]
-> 请注意使用此模式。 Upates 应用盲目，无论该会话的当前状态。
+> 请注意使用此模式。 Upates 盲目，无论该会话的当前状态。
 
 
 
@@ -87,7 +87,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 | --- | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4EFC"></a>
 
@@ -103,7 +103,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 | 成员| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 常量| object| 会话模板，以生成会话常量与合并的只读的设置。 |
+| 常量| object| 会话模板，以产生会话常量与合并的只读的设置。 |
 | 属性 | object | 合并到的会话属性更改。|
 | members.me | object| 常量和大量的属性，例如其顶级对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 |
 | 成员 | object| 表示用户添加到会话中，从零开始的索引键控其他对象。 在请求中的成员数开始时始终具有 0，即使会话已包含成员。 成员将添加到会话中请求中的显示的顺序。 成员属性只能由用户属于其设置。 |
@@ -137,7 +137,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="response-body"></a>响应正文
 
-示例创建或加入会话的响应正文：
+有关创建或加入会话的响应正文示例：
 
 
 ```cpp

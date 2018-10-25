@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d64dc9fbae0e53880578ebff7576b028d6ecdf49
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431073"
+ms.locfileid: "5470206"
 ---
 # <a name="get-usersxuidxuidachievementsscidachievementid"></a>GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 获取在成就的详细信息。 这些 Uri 的域是`achievements.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
   * [授权](#ID4EAB)
-  * [在资源的隐私设置的效果](#ID4E4C)
+  * [资源的隐私设置的效果](#ID4E4C)
   * [需的请求标头](#ID4EPG)
   * [可选的请求标头](#ID4EPH)
   * [请求正文](#ID4ECBAC)
@@ -38,8 +38,8 @@ ms.locfileid: "5431073"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问的资源的用户。 必须匹配的身份验证的用户的 XUID。| 
-| scid| GUID| 服务配置其成就所访问的唯一标识符。| 
-| achievementid| 32 位无符号的整数| 正在访问的成就 （中指定的 SCID) 的唯一标识符。| 
+| scid| GUID| 其成就所访问的服务配置的唯一标识符。| 
+| achievementid| 32 位无符号的整数| 正在访问的成就的 （中指定的 SCID) 的唯一标识符。| 
   
 <a id="ID4EAB"></a>
 
@@ -48,27 +48,27 @@ ms.locfileid: "5431073"
  
 使用授权声明 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 是| Xbox LIVE 的身份提出请求上是有效的用户。| 403 已禁止| 
+| 用户| 是| Xbox LIVE 正在为其发出请求上是有效的用户。| 403 已禁止| 
 | Title| 否| 调用的标题。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供声明时缺少并因此将拒绝任何未标记为公共的 Scid 的访问。| 
 | 沙盒| 否| 应从中检索结果沙盒。| 依赖于身份验证。 截至 2013 年 5 月 1 日，或者不提供默认声明时缺少。| 
   
 <a id="ID4E4C"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
  
-在资源的隐私设置的效果 | 发出请求的用户| 目标用户的隐私设置| 行为| 
+资源的隐私设置的效果 | 请求的用户| 目标用户的隐私设置| 行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 我| -| 所述。| 
 | 好友| 每个人都| “确定”| 
 | 好友| 仅好友| “确定”| 
-| 好友| 阻止| 禁止访问。| 
+| 好友| 阻止| 禁止。| 
 | 非好友用户| 每个人都| “确定”| 
-| 非好友用户| 仅好友| 禁止访问。| 
-| 非好友用户| 阻止| 禁止访问。| 
+| 非好友用户| 仅好友| 禁止。| 
+| 非好友用户| 阻止| 禁止。| 
 | 第三方网站| 每个人都| “确定”| 
-| 第三方网站| 仅好友| 禁止访问。| 
-| 第三方网站| 阻止| 禁止访问。| 
+| 第三方网站| 仅好友| 禁止。| 
+| 第三方网站| 阻止| 禁止。| 
   
 <a id="ID4EPG"></a>
 
@@ -86,9 +86,9 @@ ms.locfileid: "5431073"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
 | x xbl 协定版本| 字符串| 默认值为 V1。| 
-| 接受的语言| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过列表工作，直到找到匹配本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
+| 接受的语言| 字符串| 所需的区域设置和回退 （例如，FR-FR、 fr、 EN-GB、 en 全球、 EN-US） 的列表。 成就服务将通过该列表工作，直到找到匹配的本地化的字符串。 如果找不到，它将尝试以匹配用户令牌，这是来自用户的 IP 地址中定义的位置。 如果找到仍不匹配的本地化的字符串，它使用由游戏开发人员/发布者提供的默认字符串。 | 
   
 <a id="ID4ECBAC"></a>
 
@@ -102,7 +102,7 @@ ms.locfileid: "5431073"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

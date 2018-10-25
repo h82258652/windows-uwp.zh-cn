@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
 ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436984"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482665"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
 
-与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用标准 c + + 数据类型，包括一些 c + + 标准库数据类型。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到需要从语义上等效集合 Api。
+与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用标准 c + + 数据类型，包括一些 c + + 标准库数据类型。 你可以将标准字符串传递给 Api (请参阅[的字符串处理 C + + WinRT](strings.md))，并且你可以将传递初始值列表和标准容器到预期从语义上等效的集合的 Api。
 
 ## <a name="standard-initializer-lists"></a>标准初始值列表
 初始值列表 (**std::initializer_list**) 是 C++ 标准库构造。 在调用特定的 Windows 运行时构造函数和方法时，你可以使用初始值列表。 例如，你可以使用一个初始值列表来调用 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。
@@ -93,7 +93,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT 将 **std::vector** 作为 Windows 运行时集合参数绑定。 因此，你可以传递一个 **std::vector&lt;winrt::hstring&gt;**，它将转换为 **winrt::hstring** 的合适 Windows 运行时集合。 没有额外的详细信息，如果被调用方是异步的需要牢记。 由于这种情况下的实现详细信息，你将需要提供 rvalue，因此你必须提供复制或移动矢量。 在下面的代码示例中，我们将移动矢量的所有权到异步被调用方接受参数类型的对象 (然后我们便注意不要访问`vecH`再次后将其移动)。 如果你想要了解有关 rvalues 的详细信息，请参阅[值类别和对它们的引用](cpp-value-categories.md)。
+C++/WinRT 将 **std::vector** 作为 Windows 运行时集合参数绑定。 因此，你可以传递一个 **std::vector&lt;winrt::hstring&gt;**，它将转换为 **winrt::hstring** 的合适 Windows 运行时集合。 没有额外的详细信息，如果被调用方是异步的需要牢记。 由于这种情况下的实现详细信息，你将需要提供 rvalue，因此你必须提供复制或移动矢量。 在下面的代码示例中，我们将矢量的所有权到异步被调用方接受参数类型的对象 (然后我们便注意不要访问`vecH`再次后将其移动)。 如果你想要了解有关 rvalues 的详细信息，请参阅[值的分类，并且对它们的引用](cpp-value-categories.md)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -133,7 +133,7 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 有关更多示例和信息，请参阅 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API 参考主题。
 
 ## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** 和标准迭代构造
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是 Windows 运行时 API 返回的类型的集合的示例[**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (投影到 C + + /winrt， **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 你可以使用此类型与标准迭代构造，如基于范围的`for`。
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是 Windows 运行时 API 返回的类型的集合的示例[**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (投影到 C + + /winrt， **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 你可以使用此类型与标准迭代结构，如基于范围的`for`。
 
 ```cppwinrt
 // main.cpp
@@ -154,7 +154,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 ```
 
 ## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>使用异步 Windows 运行时 Api 的 c + + 协同程序
-你可以继续调用异步 Windows 运行时 Api 时使用[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 。 但是，在许多情况下，c + + 协同程序为与异步对象的交互提供高效且更轻松地编码的用法。 有关详细信息和代码示例，请参阅[并发和异步操作通过 C + + WinRT](concurrency.md)。
+你可以继续调用异步 Windows 运行时 Api 时使用[并行模式库 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 。 但是，在许多情况下，c + + 协同程序提供高效且更轻松地编码用法与异步对象的交互。 有关详细信息和代码示例，请参阅[并发和异步操作通过 C + + WinRT](concurrency.md)。
 
 ## <a name="important-apis"></a>重要的 API
 * [IVector&lt;T&gt;接口](/uwp/api/windows.foundation.collections.ivector_t_)

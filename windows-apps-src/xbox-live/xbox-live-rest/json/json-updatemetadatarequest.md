@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b4a7b971647304e08fe52e7696be9fcd39e584
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5435093"
+ms.locfileid: "5470162"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
-应更新剪辑元数据。 
+应针对剪辑元数据。 
 <a id="ID4EN"></a>
 
  
@@ -30,7 +30,7 @@ UpdateMetadataRequest 对象具有以下规范。
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | userCaption| 字符串| 更改游戏剪辑的用户输入非本地化字符串。| 
-| 可见性| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 在系统中发布时，请更改游戏剪辑的可见性。| 
+| 可见性| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 更改游戏剪辑的可见性，因为它在系统中发布。| 
 | titleData| 字符串| 特定于游戏的属性包中。 最大大小： 10 KB。| 
   
 <a id="ID4EBC"></a>
@@ -50,7 +50,7 @@ UpdateMetadataRequest 对象具有以下规范。
 ```
 
  
-更改只是游戏属性 （由于此字段的架构是取决于调用方，这是只是一个示例）：
+更改只是标题属性 （这只是一个示例，由于此字段的架构是由调用方负责）：
  
 
 ```json

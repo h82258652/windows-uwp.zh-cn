@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6d5460d4021de8daa6af344e2da920e55dbba5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439030"
+ms.locfileid: "5479594"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live 服务 RESTful 参考
 
@@ -41,4 +41,4 @@ Xbox Live 服务是一套用于管理游戏和玩家信息的服务。 这些服
 
 [其他参考](additional/atoc-xboxlivews-reference-additional.md)
 
-&nbsp;&nbsp;适用于 Xbox Live 服务的补充参考资料。 这包括有关授权类型、 数据类型、 标准 HTTP 状态代码和标头、 分页参数和娱乐发现服务 (EDS) 的信息。
+&nbsp;&nbsp;适用于 Xbox Live 服务的补充参考资料。 这包括有关授权类型、 数据类型、 标准 HTTP 状态代码的标头、 分页参数和娱乐发现服务 (EDS) 的信息。

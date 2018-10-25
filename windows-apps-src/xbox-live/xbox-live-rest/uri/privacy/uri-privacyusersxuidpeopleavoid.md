@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 635f11677997523fe952de04b8398410efc503d2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433142"
+ms.locfileid: "5479427"
 ---
 # <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
 访问用户的避免列表
@@ -30,7 +30,7 @@ ms.locfileid: "5433142"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 要访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
 
 <a id="ID4ERB"></a>
 

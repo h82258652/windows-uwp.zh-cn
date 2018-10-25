@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 图像, 覆盖
 ms.localizationpriority: medium
 ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433895"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481789"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
@@ -29,8 +29,7 @@ ms.locfileid: "5433895"
 
 地图服务（例如 Nokia 地图和必应地图）将地图剪切成多个方形磁贴，以供快速检索和显示。 这些磁贴的大小为 256 像素 X 256 像素，并以多个级别的详细信息的形式进行预呈现。 许多第三方服务还提供剪切成磁贴的基于地图的数据。 使用磁贴源可检索第三方磁贴，还可以创建你自己的自定义磁贴，并且可覆盖显示在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中的地图上的这些磁贴。
 
-**重要提示**  
-在使用磁贴源时，无需编写代码即可请求或放置个别磁贴。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
+**重要提示**当你使用磁贴源时，你无需编写代码即可请求或放置个别磁贴。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
 
 下面是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的示例，并显示了 X 和 Y 坐标及缩放级别的可替换参数。
 
@@ -196,7 +195,7 @@ void MainPage::AddHttpMapTileSource()
 | ms-appdata:///temp | 指向应用的临时文件夹。 |
 |  | 这是 [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) 属性所引用的位置。 |
 
- 
+ 
 
 以下示例通过使用 `ms-appx:///` 协议来加载以文件形式存储在应用的安装文件夹中的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的构造函数中指定。 在此示例中，磁贴仅当地图的缩放级别在可选的 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 属性所指定的范围时才显示。
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 033a87580680b054f5eefec7c543215e4351ace3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441229"
+ms.locfileid: "5473955"
 ---
 # <a name="property-json"></a>Property (JSON)
 包含匹配请求条件为提供的客户端的属性数据。
@@ -30,7 +30,7 @@ ms.locfileid: "5441229"
 | 成员| 类型| 描述|
 | --- | --- | --- |
 | id| 字符串| 此属性的 id。|
-| type| 32 位有符号整数 | 该属性的类型。 支持的值包括： <ul><li>0 = 整数</li><li>1 = string</li></ul>| 
+| type| 32 位有符号整数 | 该属性的类型。 支持的值包括： <ul><li>0 = 整型</li><li>1 = string</li></ul>| 
 | 值| 字符串| 此属性的值。|
 
 <a id="ID4EGC"></a>

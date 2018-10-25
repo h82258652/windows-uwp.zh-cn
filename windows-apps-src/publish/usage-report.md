@@ -4,18 +4,18 @@ Description: The Usage report in the Windows Dev Center dashboard lets you see h
 title: 使用情况报告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
-ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: c5ef2136eaf17fc902dcfc7840ff6dbdac56ef0d
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439120"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480183"
 ---
 # <a name="usage-report"></a>使用情况报告
 
@@ -48,12 +48,13 @@ ms.locfileid: "5439120"
 - **用户**：显示选定时间段内的**用户会话**总数。 每个用户会话表示不同的时间段，在应用启动（进程开始）时开始，在应用终止（进程结束）或处于非活动状态一段时间后结束。 因此，一个客户可能在同一天或同一周有多个用户会话。 此外，还显示**活动用户**总数（当天或本周使用应用的任何客户）和**新用户**（当天或本周第一次使用你的应用的客户）。 请注意，如果已将任何筛选器应用于页面，此图中将不会出现**新用户**。
 - **设备**：显示所有用户每日用于与你的应用交互的设备数量。
 - **持续时间**：显示总参与小时数（用户活跃使用你的应用的小时数）。
+- **参与**： 显示每个用户 （所有用户会话的平均持续时间） 的平均参与分钟。 
 - **保持期**：显示选定时间段内的 **DAU/MAU**（每日活动用户/每月活动用户）。
 
-**30d**选定时间段后，你可能会看到圆圈标记时查看的**用户**、**设备**或**持续时间**的选项卡。 这些表示显著增加或减少在我们认为你会想要了解有关为给定值。 在其出现圆的日期表示一周中我们检测显著增加或减少相对于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
+选中**30d**时间段后，你可能会看到圆圈标记，当查看**用户**、**设备**或**持续时间**的选项卡。 这些表示显著增加或减少我们认为你会想要了解有关为给定值。 出现圆的日期表示一周中，我们检测到了显著增加或减少相比于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
 
 > [!TIP]
-> 你可以查看更多过去 30 天内[洞察报告](insights-report.md)中与重大更改相关的见解。
+> 你可以查看过去 30 天内[洞察报告](insights-report.md)中相关的重大更改的更多见解。
 
 
 ## <a name="user-sessions"></a>用户会话
@@ -90,4 +91,4 @@ ms.locfileid: "5439120"
 
 
 
- 
+ 

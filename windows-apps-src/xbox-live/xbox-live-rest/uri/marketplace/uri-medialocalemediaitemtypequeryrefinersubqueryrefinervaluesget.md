@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 036a64f893ab1581d42f1601204b383968c607e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441226"
+ms.locfileid: "5472531"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
-为某个给定的查询精选值 (例如，"subgenres 给定流派中") 中获取子值的列表。 这些 Uri 的域是`eds.xboxlive.com`。
+对于给定的查询精选值 (例如，"subgenres 在给定流派") 中获取子值的列表。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EDB)
@@ -29,7 +29,7 @@ ms.locfileid: "5441226"
  
 ## <a name="remarks"></a>备注
  
-名为**queryRefinerValue**，这是为了使用的字符禁止在 URI 杆传递允许查询精选值的查询字符串参数传入查询精选值。
+名为**queryRefinerValue**，这是为了允许查询精选值以禁止在 URI 杆传递的字符的查询字符串参数传入查询精选值。
  
 此 API 仅支持音乐。
   

@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437282"
+ms.locfileid: "5470832"
 ---
 # <a name="game-dvr-uris"></a>游戏 DVR URI
  
-本部分提供了从*游戏*dvr 的 Xbox Live 服务的详细信息的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。
+从 Xbox Live 服务的*游戏 DVR*，本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息。
  
-仅主机可以录制游戏剪辑，但可以访问任何设备可以显示剪裁。
+仅主机可以录制游戏剪辑，但可以访问的任何设备可以显示剪裁。
  
 根据问题的 URI 的函数，提供了这些 Uri 的域：
  
@@ -36,7 +36,7 @@ ms.locfileid: "5437282"
 
 [/public/scids/{scid}/clips](uri-publicscidclips.md)
 
-&nbsp;&nbsp;访问公共剪辑。 此 URI 实际上中可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
+&nbsp;&nbsp;访问公开剪辑。 此 URI 实际上可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
 
 [/{uri}](uri-uri.md)
 

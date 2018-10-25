@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db953d711bcb423f02aebfd3579cddea717826b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431663"
+ms.locfileid: "5480873"
 ---
 # <a name="authorization-types"></a>授权类型
  
-Xbox Live 服务的请求使用大量授权类型。 本主题介绍了标准的授权类型。
+Xbox Live 服务使用请求的授权类型的数量。 本主题介绍了标准授权类型。
  
 | 类型| 说明| 
 | --- | --- | 
 | 用户 | 调用方是授权的 Xbox Live 用户。 | 
-| Title | 调用方是受信任的平台上的标题。| 
+| Title | 调用方是受信任的平台上的游戏。| 
  
 <a id="ID4EGC"></a>
 

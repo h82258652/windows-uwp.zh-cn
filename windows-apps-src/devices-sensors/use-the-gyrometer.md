@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 25be2cfab15378f14aed61dcaae1e7e85159f36e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445624"
+ms.locfileid: "5479496"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺测试仪
 
@@ -35,7 +35,7 @@ ms.locfileid: "5445624"
 
 ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
 
 你使用的设备或仿真器必须支持陀螺测试仪。
 

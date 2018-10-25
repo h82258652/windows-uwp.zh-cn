@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e408509f4cebbc89587237c6e0dc67bc88b1558
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430933"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481330"
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
  
 
-特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊磁贴模板均专为 Windows 10 而生成，除了图标磁贴模板，它是针对 Windows 10 进行更新的经典特殊模板。 本文介绍了三种特殊磁贴模板：图标、照片和人脉。
+特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊磁贴模板是专门为构建 windows 10，除了图标磁贴模板中，已针对 windows 10 更新的经典特殊模板。 本文介绍了三种特殊磁贴模板：图标、照片和人脉。
 
 ## <a name="iconic-tile-template"></a>图标磁贴模板
 
 
-图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 在手机和平板电脑/台式机上都支持该模板。
+图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 手机和平板电脑/桌面版上支持该模板。
 
 ![小邮件磁贴和中邮件磁贴](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>如何创建图标磁贴
 
-以下步骤介绍了要创建适用于 Windows 10 的图标磁贴所需的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
+以下步骤介绍了你需要知道为 windows 10 创建图标磁贴的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
 
 ![图标磁贴的开发人员流程](images/iconic-template-dev-flow.png)
 
@@ -188,7 +188,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>“人脉”磁贴模板
 
 
-Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 这种磁贴模板自 Windows 10 版本 10572 起推出，任何人都可随意在其应用中使用该模板。
+Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 此磁贴模板以来推出 windows 10 版本 10572，并且任何人都在其应用中使用它。
 
 “人脉”磁贴模板可用于以下大小的磁贴：
 
@@ -196,19 +196,19 @@ Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在
 
 ![中等“人脉”磁贴](images/people-tile-medium.png)
 
- 
+ 
 
 **宽磁贴** (TileWide)
 
 ![宽“人脉”磁贴](images/people-tile-wide.png)
 
- 
+ 
 
 **大磁贴（仅限台式机）** (TileLarge)
 
 ![大“人脉”磁贴](images/people-tile-large.png)
 
- 
+ 
 
 如果你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，若要使用“人脉”磁贴模板，只需为 *TileBinding* 内容创建新的 *TileBindingContentPeople* 对象即可。 *TileBindingContentPeople* 类具有一个 Images 属性，你可以在其中添加图像。
 
@@ -281,9 +281,9 @@ TileContent content = new TileContent()
 * [磁贴、锁屏提醒和通知](index.md)
 * [创建自适应磁贴](create-adaptive-tiles.md)
 * [磁贴内容架构](../tiles-and-notifications/tile-schema.md)
- 
+ 
 
- 
+ 
 
 
 

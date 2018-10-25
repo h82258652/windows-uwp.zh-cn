@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 44341b5fc8f831e3a500f47a51b94978f587cb8c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5435163"
+ms.locfileid: "5473172"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
 访问用户或用户，人脉名字对象支持的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -31,7 +31,7 @@ ms.locfileid: "5435163"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | userId| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
-| 用户列表| 字符串| 命名的人获取设置列表。 目前，用户是唯一支持的列表。| 
+| userList| 字符串| 用户可以设置命名的列表。 目前，用户是唯一支持的列表。| 
   
 <a id="ID4E1B"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "5435163"
 
 [GET (/users/{userId}/profile/settings/people/{userList})](uri-usersuseridprofilesettingspeopleuserlistget.md)
 
-&nbsp;&nbsp;获取用户的配置文件或支持用户，与人脉名字对象。
+&nbsp;&nbsp;获取用户的个人资料或支持用户，通过人脉名字对象。
  
 <a id="ID4EEC"></a>
 

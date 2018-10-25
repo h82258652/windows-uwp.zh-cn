@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433284"
+ms.locfileid: "5470835"
 ---
 # <a name="paging-parameters"></a>分页参数
  
-某些 Xbox Live 服务 Uri 返回 JavaScript 对象表示法 (JSON) 对象的集合。 通过将分页参数指定为查询字符串附加到 URI 的一部分，可以通过分页这些集合。 遵循的分页参数的完整列表。 允许分页参数的所有 Uri 都链接到此页面底部。
+某些 Xbox Live 服务 Uri 返回 JavaScript 对象表示法 (JSON) 对象的集合。 通过将分页参数指定为查询字符串附加到该 URI 的一部分，可以通过分页这些集合。 遵循分页参数的完整列表。 允许分页参数的所有 Uri 都链接到此页面底部。
  
 <a id="ID4E2"></a>
 
@@ -29,9 +29,9 @@ ms.locfileid: "5433284"
  
 | 参数| 必需| 类型| 说明| 
 | --- | --- | --- | --- | 
-| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项。 | 
+| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
 | maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项数的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页该服务可能会提供一个默认值。 | 
-| skipItems| 否| 32 位有符号整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
+| skipItems| 否| 32 位有符号整数| 返回在给定的项目数后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
   
 <a id="ID4EDD"></a>
 

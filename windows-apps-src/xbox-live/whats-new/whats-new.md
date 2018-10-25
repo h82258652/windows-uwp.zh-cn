@@ -2,24 +2,24 @@
 title: Xbox Live 的新增功能
 author: PhillipLucas
 description: Xbox Live SDK 的新增功能
-ms.author: sthaff
-ms.date: 10/04/2017
+ms.author: aablackm
+ms.date: 10/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d4038441f347a961f4acf57b4712995bf1f75d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3f199b0efb7ea3071beb1dfa4555fcd0bcf5a36f
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "3880404"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473207"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
 
-#### <a name="in-this-article"></a>本文内容
+## <a name="in-this-article"></a>本文内容
 
 * [2018 年 6 月](#june-2018)
 * [2017 年 8 月](#august-2017)
@@ -36,7 +36,7 @@ ms.locfileid: "3880404"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API 图层
 
-C Api 现在均可用于 Xbox Live 的一些功能。 新的 API 层为受支持的功能，包括自定义内存管理、 异步任务的手动线程管理和新的 HTTP 库提供了很多优势。
+C Api 现已推出的 Xbox Live 的一些功能。 新的 API 层为受支持的功能，包括自定义内存管理、 异步任务的手动线程管理和新的 HTTP 库提供了很多优势。
 
 有关详细信息，请参阅[Xbox Live C Api](../xsapi-flat-c.md)。
 
@@ -52,18 +52,15 @@ Xbox live 成员可以通过在 Xbox 主机、电脑或 iOS/Android 设备上随
 
 API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些 API 位于 xbox::services::clubs 命名空间中。
 
-
 ## <a name="july-2017"></a>2017 年 7 月
 
 ### <a name="xbox-live-features"></a>Xbox Live 功能
-#### <a name="multiplayer-updates"></a>多人游戏更新
-
-查询活动句柄和搜索句柄现在在响应中包含自定义会话属性。
 
 #### <a name="tournaments"></a>锦标赛
 
 添加了新 API 以支持锦标赛。 你现在可以使用 xbox::services::tournaments::tournament_service 类从你的游戏访问锦标赛服务。
 这些新锦标赛 API 支持以下场景：
+
 * 查询服务以查找当前标题的所有现有锦标赛。
 * 从服务检索有关锦标赛的详细信息。
 * 查询服务以检索锦标赛的团队列表。
@@ -94,7 +91,7 @@ API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些
 
 #### <a name="multiplayer"></a>多人游戏
 
-* 查询活动句柄和搜索句柄现在在响应中包含自定义会话属性。
+* 查询搜索句柄现在在响应中包含的自定义会话属性。
 
 #### <a name="bug-fixes"></a>Bug 修复
 

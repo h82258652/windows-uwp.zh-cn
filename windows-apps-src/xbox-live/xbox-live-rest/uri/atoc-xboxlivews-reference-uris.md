@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441247"
+ms.locfileid: "5478249"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
-本部分提供有关统一资源标识符 (Uri) 的详细信息和使用 Xbox Live 服务的超文本传输协议 (HTTP) 方法。
+本部分提供有关统一资源标识符 (Uri) 的详细信息，并使用 Xbox Live 服务的超文本传输协议 (HTTP) 方法。
 
 <a id="ID4EAB"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "5441247"
 
 [游戏 DVR URI](dvr/atoc-reference-dvr.md)
 
-&nbsp;&nbsp;Uri 和关联的游戏 DVR 的 HTTP 方法。
+&nbsp;&nbsp;Uri 和游戏 dvr 关联的 HTTP 方法。
 
 [玩家头像 URI](gamerpic/atoc-reference-gamerpic.md)
 
@@ -77,7 +77,7 @@ ms.locfileid: "5441247"
 
 [信誉 URI](reputation/atoc-reference-reputation.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法信誉服务。
+&nbsp;&nbsp;Uri 和信誉服务相关联的 HTTP 方法。
 
 [会话目录 URI](sessiondirectory/atoc-reference-sessiondirectory.md)
 
@@ -89,7 +89,7 @@ ms.locfileid: "5441247"
 
 [标题存储 URI](storage/atoc-reference-storagev2.md)
 
-&nbsp;&nbsp;Uri 和关联的标题存储的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的标题存储。
 
 [系统字符串验证 URI](stringserver/atoc-reference-systemstringsvalidate.md)
 
@@ -97,7 +97,7 @@ ms.locfileid: "5441247"
 
 [用户 URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为用户。
+&nbsp;&nbsp;Uri 和关联的用户的 HTTP 方法。
 
 [用户统计信息 URI](userstats/atoc-reference-userstats.md)
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 应用转换, 通道
 ms.localizationpriority: medium
 ms.openlocfilehash: 720b4a20d6fa46df0118cecb0c65dcef533e1659
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442889"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482721"
 ---
 # <a name="get-app-conversions-by-channel"></a>通过通道获取应用转换
 

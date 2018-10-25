@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5432086"
+ms.locfileid: "5477503"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
@@ -27,7 +27,7 @@ ms.locfileid: "5432086"
   * [请求正文](#ID4E1B)
   * [HTTP 状态代码](#ID4EHC)
   * [JavaScript 对象表示法 (JSON) 响应](#ID4EAE)
-  * [在资源的隐私设置的效果](#ID4EYF)
+  * [资源的隐私设置的效果](#ID4EYF)
  
 <a id="ID4EV"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "5432086"
  
 删除操作是幂等。
  
-此 API 支持仅内容类型是"application/json"，需要在每个调用的 HTTP 标头中。 
+此 API 支持仅内容类型是"application/json"，这需要在每个调用的 HTTP 标头中。 
   
 <a id="ID4ECB"></a>
 
@@ -46,14 +46,14 @@ ms.locfileid: "5432086"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
-| 邮件 Id | 字符串 [50] | 要检索或删除的消息 ID。 | 
+| 邮件 Id | string [50] | 要检索或删除该消息的 ID。 | 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-你必须拥有自己声明要删除用户消息的用户。
+你必须拥有自己声明要删除的用户消息的用户。
   
 <a id="ID4E1B"></a>
 
@@ -67,21 +67,21 @@ ms.locfileid: "5432086"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 说明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功。| 
-| 403| 不能转换 XUID 或无法找到有效的 XUID 声明。| 
-| 404| 无法分析 URI 中的消息 ID 或 URI 中缺少一个 XUID。| 
-| 500| 常规的服务器端错误。| 
+| 403| 不能转换 XUID 或者找不到有效的 XUID 声明。| 
+| 404| 无法分析 URI 中的消息 ID 或 XUID 是在 URI 中丢失。| 
+| 500| 常规服务器端错误。| 
   
 <a id="ID4EAE"></a>
 
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript 对象表示法 (JSON) 响应 
  
-如果错误，该服务可能会返回一个服务器对象，其中可能包含从该服务的环境的值。
+如果错误，该服务可能会返回服务器对象，其中可能包含的服务的环境中的值。
  
 | 属性| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -92,7 +92,7 @@ ms.locfileid: "5432086"
 <a id="ID4EYF"></a>
 
  
-## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果 
+## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果 
  
 仅可以删除自己用户的消息。 
   
@@ -112,6 +112,6 @@ ms.locfileid: "5432086"
 <a id="ID4ETG"></a>
 
  
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
 
    

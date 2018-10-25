@@ -1,7 +1,7 @@
 ---
 title: 配置在开发人员中心访问策略
 author: KevinAsgari
-description: 介绍如何在开发人员中心，以允许其他应用、 游戏和服务访问 Xbox Live 设置配置访问策略。
+description: 介绍如何在开发人员中心，以允许其他应用、 游戏和服务，以访问 Xbox Live 设置配置访问策略。
 ms.assetid: ''
 ms.author: kevinasg
 ms.date: 02/21/2018
@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 8a19c6e116cb6c2f3cd8e2f2d8541516ebf89de9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433306"
+ms.locfileid: "5472923"
 ---
 # <a name="configure-access-policies-on-dev-center"></a>在开发人员中心上配置访问策略
 

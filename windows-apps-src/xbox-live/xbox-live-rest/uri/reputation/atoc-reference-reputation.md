@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b869f87760498dc6a2224809a42380f1b8f5930b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438962"
+ms.locfileid: "5477983"
 ---
 # <a name="reputation-uris"></a>信誉 URI
  
-本部分提供了从**Microsoft.Xbox.Services.Social.ReputationService**为 Xbox Live 服务的详细信息通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法。 信誉 Uri 的域是 reputation.xboxlive.com。 典型的 URI 表示可能是https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback。 
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的**Microsoft.Xbox.Services.Social.ReputationService**。 信誉 Uri 的域是 reputation.xboxlive.com。 典型的 URI 表示可能是https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback。 
  
-信誉服务使用的反馈，[反馈 (JSON)](../../json/json-feedback.md)，所述计算信誉评分。 此分数保存在项 ReputationOverall 下用户的统计信息区域中。 有关检索用户统计信息的详细信息，请参阅[获取 (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)。 
+信誉服务使用的反馈，[反馈 (JSON)](../../json/json-feedback.md)，所述计算信誉评分。 该分数保存在项 ReputationOverall 下用户的统计信息区域中。 有关检索用户统计数据的详细信息，请参阅[获取 (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)。 
  
 在所有平台上的游戏可以使用信誉服务。
  
@@ -33,11 +33,11 @@ ms.locfileid: "5438962"
 
 [/users/xuid({xuid})/feedback](uri-reputationusersxuidfeedback.md)
 
-&nbsp;&nbsp;如果你希望能够在你的游戏，相较于使用 shell 中添加的反馈选项，则使用从你的游戏。
+&nbsp;&nbsp;如果想要在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。
 
 [/users/batchfeedback](uri-reputationusersbatchfeedback.md)
 
-&nbsp;&nbsp;使用你的游戏服务来在你的游戏界面之外的批处理窗体发送反馈。
+&nbsp;&nbsp;使用你的游戏服务来在你的游戏界面之外的批处理形式发送反馈。
 
 [/users/me/resetreputation](uri-usersmeresetreputation.md)
 
@@ -49,7 +49,7 @@ ms.locfileid: "5438962"
 
 [/users/xuid({xuid})/resetreputation](uri-usersxuidresetreputation.md)
 
-&nbsp;&nbsp;使访问指定的用户的信誉评分，强制执行团队。
+&nbsp;&nbsp;允许访问指定的用户的信誉评分，强制执行团队。
  
 <a id="ID4E5B"></a>
 

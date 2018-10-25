@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0308f24d0eb0ddef040cb37ceae4736f7ee2d81a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5435928"
+ms.locfileid: "5471733"
 ---
 # <a name="gameclipuritype-enumeration"></a>GameClipUriType 枚举
 详细介绍 GameClipUriType 枚举。 
@@ -30,6 +30,6 @@ ms.locfileid: "5435928"
 | 无| 游戏剪辑 URI 类型是未知或未设置。| 
 | 源语言| 游戏剪辑 URI 处于未处理的形式的原始游戏剪辑的位置。| 
 | 下载| 游戏剪辑 URI 是可供下载该剪辑的位置。| 
-| SmoothStreaming| 游戏剪辑 URI 是 IIS 平滑流式处理的 URL （清单指针）。| 
+| SmoothStreaming| 游戏剪辑 URI 是 IIS 平滑流式处理 URL （清单指针）。| 
 | Ahls| 游戏剪辑 URL 是 Apple Http 实时流的 URL。| 
   

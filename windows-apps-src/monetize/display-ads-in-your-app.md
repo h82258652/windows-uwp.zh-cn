@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
 ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445694"
+ms.locfileid: "5483499"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
-通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 我们的广告盈利平台提供了多种可以无缝集成到你应用和支持的中介通过各种受欢迎的广告网络的广告格式。 我们的平台兼容 OpenRTB、 各种 2.x、 MRAID 2 和 VPAID 3 标准的并且与护城河和 IAS 兼容。 
+通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 我们的广告盈利平台提供了多种可以无缝集成到你应用和支持的中介与很多受欢迎的广告网络的广告格式。 我们的平台是符合 OpenRTB、 各种 2.x、 MRAID 2 和 VPAID 3 标准，并且是与护城河和 IAS 兼容。 
 
 <br/>
 

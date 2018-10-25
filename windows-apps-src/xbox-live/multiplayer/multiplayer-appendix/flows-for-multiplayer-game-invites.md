@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 66de8c34857d667b66cdfb091f83106fed777279
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437844"
+ms.locfileid: "5478366"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a>更新的多人游戏邀请流程
 
-由于听取了 Xbox One Beta 的反馈，从 Xbox One 恢复更新 24 起，多人游戏邀请的用户体验流程已经更改，且已于 2013 年 11 月 6 日发布。 这是对**仅用户体验 (UX)** 的更改，不会从游戏角度影响任何行为或功能。 作品开发人员不需要进行任何代码更改。
+由于听取了 Xbox One Beta 的反馈，从 Xbox One 恢复更新 24 起，多人游戏邀请的用户体验流程已经更改，且已于 2013 年 11 月 6 日发布。这是对**仅用户体验 (UX)** 的更改，不会从游戏角度影响任何行为或功能。 作品开发人员不需要进行任何代码更改。
 
 ## <a name="summary-of-changes"></a>更改摘要
 
@@ -81,8 +81,8 @@ David 从多人游戏大厅开始游戏。
     <p><br>
 在“通知中心”，Laura 可以选择： <ul>
     <li>   <b>接受游戏邀请：</b>游戏启动。
-    <li>   <b>拒绝游戏邀请：</b>没有游戏启动。 Laura 仍位于派对中，并将收到后来的游戏邀请。         
-    <li>   <b style="background-color: #FFFF00">离开派对：没有游戏启动。 Laura 被从派对中删除。</b>
+    <li>   <b>拒绝游戏邀请：</b>没有游戏启动。Laura 仍位于派对中，并将收到后来的游戏邀请。         
+    <li>   <b style="background-color: #FFFF00">离开派对：没有游戏启动。Laura 被从派对中删除。</b>
     </ul>
     </td>
   </tr>

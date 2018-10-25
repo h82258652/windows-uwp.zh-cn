@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5440708"
+ms.locfileid: "5476675"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
-获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回游戏播放或启动的用户的完整历史记录。 这些 Uri 的域是`achievements.xboxlive.com`。
+获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回用户的游戏播放或启动完整历史记录。 这些 Uri 的域是`achievements.xboxlive.com`。
  
   * [URI 参数](#ID4EY)
   * [查询字符串参数](#ID4EDB)
@@ -43,8 +43,8 @@ ms.locfileid: "5440708"
  
 | 参数| 必需| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| skipItems| 否| 32 位有符号整数| 返回在给定的项目数之后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
-| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项。 | 
+| skipItems| 否| 32 位有符号整数| 返回在给定的项目数后开始的项目。 例如， <b>skipItems ="3"</b>将检索项目开头的第四项检索。 | 
+| ContinuationToken| 否| 字符串| 返回在给定的延续令牌启动的项目。 | 
 | maxItems| 否| 32 位有符号整数| 要从该集合，这可以与<b>skipItems</b>和<b>continuationToken</b>返回项目的范围结合使用返回的项数的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回少于<b>maxItems</b>，即使尚未返回结果的最后一页该服务可能会提供一个默认值。 | 
   
 <a id="ID4EFD"></a>
@@ -54,7 +54,7 @@ ms.locfileid: "5440708"
  
 | 声明| 是否为必需？| 说明| 如果缺少的行为| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方必须是 Xbox LIVE 上的有效用户。| 403 已禁止| 
+| 用户| 调用方是授权的 Xbox LIVE 用户。| 调用方需要 Xbox LIVE 上的有效用户。| 403 已禁止| 
   
 <a id="ID4EGE"></a>
 
@@ -63,8 +63,8 @@ ms.locfileid: "5440708"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。| 
-| <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就将使用此 API 的 V2 版本。 否则为 V1。| 
+| <b>X RequestedServiceVersion</b>| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。| 
+| <b>x xbl 协定版本</b>| 32 位无符号的整数| 如果存在，并且设置为 2，就会使用此 API 的 V2 版本。 否则为 V1。| 
   
 <a id="ID4ERF"></a>
 

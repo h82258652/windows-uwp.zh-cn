@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: 我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。
+description: 我们将介绍在 Windows 运行时应用中，事件的编程概念时使用的 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 作为编程语言中，并使用 XAML 进行 UI 定义。
 title: 事件和路由事件概述
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444767"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480440"
 ---
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
 
@@ -23,7 +23,7 @@ ms.locfileid: "5444767"
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持*路由事件*：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
+我们将介绍在 Windows 运行时应用中，事件的编程概念时使用的 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 作为编程语言中，并使用 XAML 进行 UI 定义。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持*路由事件*：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
 
 ## <a name="events-as-a-programming-concept"></a>事件即编程概念
 
@@ -31,7 +31,7 @@ ms.locfileid: "5444767"
 
 当你使用 C#、Visual Basic 或 C++/CX 作为编程语言时，UI 是通过标记 (XAML) 定义的。 对于 XAML 标记语法，将事件与标记元素和运行时代码实体联系起来的某些原则与其他 Web 技术（例如 ASP.NET 或 HTML5）类似。
 
-**注意**  为 XAML 定义的 UI 提供运行时逻辑的代码常常称为*代码隐藏*或代码隐藏文件。 在 Microsoft Visual Studio 解决方案视图中，此关系以图形方式显示，同时代码隐藏文件是一个独立、嵌套的文件，而不是它引用的 XAML 页面。
+**注意**为 XAML 定义的 ui 提供运行时逻辑的代码常常称为*代码隐藏*或代码隐藏文件。 在 Microsoft Visual Studio 解决方案视图中，此关系以图形方式显示，同时代码隐藏文件是一个独立、嵌套的文件，而不是它引用的 XAML 页面。
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>按钮.单击：事件和 XAML 简介
 
@@ -47,7 +47,7 @@ Windows 运行时应用的一个最常见的编程任务是捕获用户在 UI �
   Click="ShowUpdatesButton_Click"/>
 ```
 
-**提示**  *事件连接*是一个编程术语。 它是指进程或代码，凭此你可以指示某个事件的出现应调用命名处理程序方法。 在大部分过程代码模型中，事件连接是隐式或显式的“AddHandler”代码，用于命名事件和方法并通常涉及目标对象实例。 在 XAML 中，“AddHandler”是隐式的，事件连接完全由将事件命名为对象元素的属性名称和将处理程序命名为该属性的值组成。
+**提示***事件连接*是一个编程术语。 它是指进程或代码，凭此你可以指示某个事件的出现应调用命名处理程序方法。 在大部分过程代码模型中，事件连接是隐式或显式的“AddHandler”代码，用于命名事件和方法并通常涉及目标对象实例。 在 XAML 中，“AddHandler”是隐式的，事件连接完全由将事件命名为对象元素的属性名称和将处理程序命名为该属性的值组成。
 
 然后，使用编程语言（用于你所有应用的代码和代码隐藏的语言）编写实际的处理程序。 在属性 `Click="ShowUpdatesButton_Click"` 中，你创建了一个合约：当对 XAML 进行标记编译和分析时，IDE 的生成操作和最终应用加载时 XAML 分析操作中的 XAML 标记编译步骤都可以找到一个作为该应用的代码的一部分且名为 `ShowUpdatesButton_Click` 的方法。 `ShowUpdatesButton_Click` 必须是一个方法，并且该方法要为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何处理程序都实现一个兼容的方法签名（基于一个委托）。 例如，此代码定义 `ShowUpdatesButton_Click` 处理程序。
 
@@ -84,13 +84,13 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 
 此例中，`ShowUpdatesButton_Click` 方法基于 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委托。 由于该委托以 MSDN 参考页面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的语法进行命名，你便可确认该委托为待使用的委托。
 
-**提示**  Visual Studio 提供了一种便捷方式，以供你在编辑 XAML 时命名事件处理程序和定义处理程序方法。 当在 XAML 文本编辑器中提供事件的属性名称时，稍等片刻就会显示 Microsoft IntelliSense 列表。 如果单击该列表中的**&lt;新建事件处理程序&gt;**，Microsoft Visual Studio 将基于元素的 **x:Name**（或类型名）、事件名称和数字后缀建议一个方法名称。 然后可以右键单击所选的事件处理程序名称，并单击“导航到事件处理程序”****。 此操作将直接导航到新插入的事件处理程序定义，如 XAML 页面代码隐藏文件的代码编辑器中所示。 事件处理程序已拥有正确的签名，包括 *sender* 参数和该事件所使用的事件数据类。 另外，如果代码隐藏文件中已存在一个具有正确签名的处理程序方法，该方法的名称会与**&lt;新建事件处理程序&gt;** 选项一起显示在自动完成下拉列表中。 此外，也可按下 Tab 键（作为快捷方式）来代替单击 IntelliSense 列表项。
+**提示**Visual Studio 提供了一种便捷方式命名事件处理程序和定义处理程序方法在编辑 XAML 时。 当在 XAML 文本编辑器中提供事件的属性名称时，稍等片刻就会显示 Microsoft IntelliSense 列表。 如果单击该列表中的**&lt;新建事件处理程序&gt;**，Microsoft Visual Studio 将基于元素的 **x:Name**（或类型名）、事件名称和数字后缀建议一个方法名称。 然后可以右键单击所选的事件处理程序名称，并单击“导航到事件处理程序”****。 此操作将直接导航到新插入的事件处理程序定义，如 XAML 页面代码隐藏文件的代码编辑器中所示。 事件处理程序已拥有正确的签名，包括 *sender* 参数和该事件所使用的事件数据类。 另外，如果代码隐藏文件中已存在一个具有正确签名的处理程序方法，该方法的名称会与**&lt;新建事件处理程序&gt;** 选项一起显示在自动完成下拉列表中。 此外，也可按下 Tab 键（作为快捷方式）来代替单击 IntelliSense 列表项。
 
 ## <a name="defining-an-event-handler"></a>定义事件处理程序
 
 对于充当 UI 元素并在 XAML 中声明的对象，事件处理程序代码将在一个分部类中定义，该类用作 XAML 页面的代码隐藏。 事件处理程序是你编写的方法，是与 XAML 关联的分部类中的一部分。 这些事件处理程序基于一个特定事件使用的委托。 事件处理程序方法可以是公共的或私有的。 私有访问可以使用，原因在于 XAML 创建的处理程序和实例会在最终生成代码时合并在一起。 一般而言，我们建议让事件处理程序方法在类中保持私有。
 
-**注意**  针对 C++ 的事件处理程序不会在分部类中定义，它们会在标头中声明为私有类成员。 C++ 项目的生成操作负责生成特定代码，这些代码支持适用于 C++ 的 XAML 类型体系和代码隐藏模型。
+**注意**c + + 的事件处理程序不会在分部类中定义，它们都声明为私有类成员在标头中。 C++ 项目的生成操作负责生成特定代码，这些代码支持适用于 C++ 的 XAML 类型体系和代码隐藏模型。
 
 ### <a name="the-sender-parameter-and-event-data"></a>*sender* 参数和事件数据
 
@@ -131,7 +131,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意**  此外，还有一种更详细的语法。 在 2005 年，C# 添加了一个称为委托推断的功能，它使编译器能够推断新委托实例并实现以前更简单的语法。 详细语法在功能上等同于以前的示例，但显式创建了一个新委托实例，然后再注册它，进而避免利用委托推断。 这种显式的语法不太常见，但你仍会在一些代码示例中看到它。
+**注意**更详细的语法。 在 2005 年，C# 添加了一个称为委托推断的功能，它使编译器能够推断新委托实例并实现以前更简单的语法。 详细语法在功能上等同于以前的示例，但显式创建了一个新委托实例，然后再注册它，进而避免利用委托推断。 这种显式的语法不太常见，但你仍会在一些代码示例中看到它。
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -151,7 +151,7 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**注意**  Visual Studio 以及其 XAML 设计界面一般都提倡使用实例处理技术代替，而不是 **Handles** 关键字。 这是因为在 XAML 中建立事件处理程序连接是典型的设计人员-开发人员工作流中的一部分，并且 **Handles** 关键字技术与在 XAML 中连接事件处理程序不兼容。
+**注意**Visual Studio 以及其 XAML 设计界面一般都提倡使用实例处理技术而不是**处理**的关键字。 这是因为在 XAML 中建立事件处理程序连接是典型的设计人员-开发人员工作流中的一部分，并且 **Handles** 关键字技术与在 XAML 中连接事件处理程序不兼容。
 
 在 C + + CX，你还使用**+=** 语法，但与基本 C# 形式有区别：
 
@@ -238,7 +238,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 在某些情况下，*sender* 不是应关注的对象，你关注的是一些信息，例如在触发指针事件时指针在哪个可能的子对象上方，或者在用户按下键盘上的键时较大 UI 中的哪个对象拥有焦点。 对于这些情况，你可以使用 [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) 属性的值。 在路由上的所有点上，**OriginalSource** 都会报告引发事件的原始对象，而不是报告附加了处理程序的对象。 但是，对于 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 输入事件，该原始对象常常是一个不会在页面级 UI 定义 XAML 中立即可见的对象。 相反，该原始源对象可能是控件的一个模板部分。 例如，如果用户将指针悬停在 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的边缘，对于大部分指针事件，**OriginalSource** 是 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 中的 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 模板部分，而不是 **Button** 本身。
 
-**提示**  如果创建模板化控件，输入事件浮升将十分有用。 对于任何具有模板的控件，其客户都可能应用一个新模板。 尝试重新创建工作模板的客户可能会无意中清除默认模板中声明的某些事件处理功能。 你仍然可以通过在类定义中将处理程序附加为 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) 替代的一部分来提供控件级事件处理功能。 然后，你可以捕获在实例化时向上浮升至控件根的输入事件。
+**提示**输入事件浮升将十分有用，如果你要创建模板化控件。 对于任何具有模板的控件，其客户都可能应用一个新模板。 尝试重新创建工作模板的客户可能会无意中清除默认模板中声明的某些事件处理功能。 你仍然可以通过在类定义中将处理程序附加为 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) 替代的一部分来提供控件级事件处理功能。 然后，你可以捕获在实例化时向上浮升至控件根的输入事件。
 
 ### <a name="the-handled-property"></a>**Handled** 属性
 
@@ -269,7 +269,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 -   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 属性值为 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
 -   元素的 **Background** 或 **Fill** 属性值不是 **null**。 **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值会导致透明性和点击测试不可见。 （若要使元素透明而且可执行点击测试，可使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 画笔代替 **null**。）
 
-**注意**  **Background** 和 **Fill** 不由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定义，而是由不同的派生类定义，例如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)。 但你为前景和背景属性使用的画笔含义对点击测试和输入事件而言是相同的，无论是哪些子类实现了这些属性。
+**请注意****背景****填充**未定义的[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)，并改为由不同的派生类，如[**控件**](https://msdn.microsoft.com/library/windows/apps/br209390)和[**形状**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)。 但你为前景和背景属性使用的画笔含义对点击测试和输入事件而言是相同的，无论是哪些子类实现了这些属性。
 
 -   如果该元素为控件，那么它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 属性值必须为 **true**。
 -   该元素必须具有实际的布局大小。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 为 0 的元素不会引发输入事件。

@@ -8,23 +8,23 @@ ms.date: 08/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，查看、 注释，审阅者
+keywords: windows 10、 uwp、 查看、 注释和审阅者
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434967"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479944"
 ---
 # <a name="reviews-report"></a>评价报告
 
 
 在 Windows 开发人员中心仪表板中的**评价**报告可以查看客户在应用商店中的对应用进行评分时输入的评论 （注释）。
 
-可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，你可以通过使用中[的 Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)[获取应用评价](../monetize/get-app-reviews.md)的方法以编程方式检索此数据。
+可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，你可以通过[Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[获取应用评价](../monetize/get-app-reviews.md)的方法以编程方式检索此数据。
 
-你还可以响应客户评论[直接从此页面](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或通过使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+你还可以响应客户评论[直接在此页](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或通过使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
 > [!TIP]
 > 若要快速查看最近 30 天中所有应用的评论、评分和用户反馈，请在左侧导航菜单中展开**参与**，然后选择**评论和反馈。** 
@@ -52,7 +52,7 @@ ms.locfileid: "5434967"
 
 ## <a name="ratings-breakdown"></a>评分细目
 
-**评分细目**图表将显示在此报告顶部，以便你可以获取快速查看一下以下： 
+**评分细目**图表将显示在此报告顶部，以便你可以获得快速查看一下以下： 
 - 应用的平均星级评分。
 - 过去 12 个月中应用的评分总数。
 - 每个星级评分的评分总数。
@@ -63,16 +63,16 @@ ms.locfileid: "5434967"
 > [!TIP]
 > 客户在应用商店中看到的平均评分会考虑客户的市场和设备类型，因此可能不同于在此报告中看到的内容。
 
-请注意，此图表始终包括所有评价，即使你选择**查看内容**页面筛选器中的**带有评论的评分内容**。
+请注意，此图表始终包括所有评价，即使你选择**查看内容**页面筛选器中的**评论内容的评分**。
 
-此图表还可以看到中[评分报告](ratings-report.md)，以及有关你的应用评分的更多详细信息。
+此图表还可以在[评分报告](ratings-report.md)，以及有关你的应用分级的详细信息。
 
 
 <span id = "review-insight-categories" />
 
 ## <a name="insight-categories"></a>见解类别
 
-**见解类别**图表组根据我们确定类别评论可能与评论关联。
+**见解类别**图表组根据我们确定的类别评论可能与评论关联。
 
 > [!NOTE]
 > 按照类别查看评论时，不包括不足 24 小时和/或采用非英语语言的评论。
@@ -90,16 +90,16 @@ ms.locfileid: "5434967"
 -   评论的日期。
 -   在 Microsoft Store 中显示的评论者名称。
 -   评论者所在的国家/地区。
--   客户进行评论时其设备上的应用程序包版本。 （此信息不适用于在线提交的评论或使用 Windows8.1 及较早版本的客户所提交的评论。）
+-   客户进行评论时其设备上的应用程序包版本。 （此信息不用于在线提交或 Windows8.1 及更早版本的客户所提交的评论。）
 -   客户进行评论时所使用设备的操作系统版本。
--   客户进行评论时所使用设备的名称。 （此信息不适用于在线提交的评论或使用 Windows8.1 及较早版本的客户所提交的评论。）
+-   客户进行评论时所使用设备的名称。 （此信息不用于在线提交或 Windows8.1 及更早版本的客户所提交的评论。）
 -   评论的“有用性计数”，依据其他客户在阅读该评论时进行的评定。 它们显示为一组包含两个数字的数据：第一个数字显示将其评定为有用的客户数，第二个数字显示对该评论进行评定的客户总数。 例如，有用性计数 4/10 表示在 10 个评定者中，有 4 个评定者认为评论有用，而 6 个评定者认为无用。 （如果该评论没有有用投票，则不显示有用性计数。）
 
 请注意，客户可以对应用进行评分但不添加任何评论，因此通常会看到评论数少于评分数。
 
-可以按日期和/或按评分以升序或降序对页面上的评论进行排序。 单击**排序方式**链接以查看按**日期**和/或**评分**排序的选项。
+可以按日期和/或按评分以升序或降序对页面上的评论进行排序。 单击**排序的**链接以查看按**日期**和/或**评分**排序的选项。
 
-你还可以使用搜索框搜索特定的字词或短语在你的应用的评价中。 请注意，搜索仅原始评论文本撰写的客户，即使在不同的语言编写评价。 不搜索翻译的评论文本。
+你可以使用搜索框来搜索特定的字词或短语在你的应用的评价。 请注意，搜索仅原始评论文本撰写的客户，即使评价已不同的语言编写的。 翻译的评论文本不会搜索。
 
 > [!NOTE]
 > 有时可能会发现此报告中未显示评论。 由于 Microsoft 会从应用商店中删除客户（运行某些预发行版和预览版的 Windows10 ）编写的评论，因此可能会发生此问题。 我们这样做的目的是降低因预发行 Windows 版本中的问题导致可能出现负面评论的可能性。 我们还可能会从应用商店中删除标识为垃圾邮件、不适合、具有冒犯性或违反了其他策略的评论。 我们希望此操作将产生更好的客户体验。
@@ -111,7 +111,7 @@ ms.locfileid: "5434967"
 
 请注意，评论将由自动翻译系统翻译，翻译结果翻译可能并不总是准确。 如果希望对照翻译或者通过其他方式进行翻译，会提供原始文本。
 
-如上所述，当搜索你的评论，搜索仅留下的客户的原始文本 （和不任何已翻译的文本），即使你已**翻译评论**框处于选中状态。
+如上所述，当搜索评论，搜索仅保留在客户的原始文本 （和不任何已翻译的文本），即使你已**翻译评论**框处于选中状态。
 
 
 ## <a name="responding-to-customer-reviews"></a>回复客户评论
@@ -124,8 +124,8 @@ ms.locfileid: "5434967"
 -   如果平均评分较高，但下载量较低，你需要设法[让更多的用户发现你的应用](attract-customers-and-promote-your-apps.md)，因为它已经受到试用用户的广泛好评。
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

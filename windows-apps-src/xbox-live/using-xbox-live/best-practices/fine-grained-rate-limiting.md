@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 节流, 速率限制
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa06e65dcb17fd9bb751680f0d3f4717c0fc098
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5436651"
+ms.locfileid: "5473126"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a>Xbox Live 细化速率限制
 
@@ -96,7 +96,7 @@ Xbox Live 坚信无论每个用户在玩什么游戏/应用，他/她都应该�
 
 ## <a name="implemented-limits"></a>已实施的限制
 
-下面的服务已实施 FGRL 限制，这些限制从 **2016 年 5 月** 开始执行。 重申一点，这些限制在所有沙盒和作品中都是一样的。 **通过 Xbox 开发人员平台或开发人员中心发布并在 2016 月之前交付的任何标题将被视为旧版，并因此将免受限制。**
+下面的服务已实施 FGRL 限制，这些限制从 **2016 年 5 月** 开始执行。 重申一点，这些限制在所有沙盒和作品中都是一样的。 **任何游戏的已通过 Xbox 开发人员平台或开发人员中心发布并在 5 月 2016年之前交付将被视为旧版，并因此将免受限制。**
 
 | **名称** | **突增限制**（每位用户每个作品 15 秒） | **持续限制**（每位用户每个作品 300 秒） | **认证限制**（10 倍于持续限制，每位用户每个作品 300 秒） |
 |----------------------------|---------------------------|----------------------------|----------------------------|

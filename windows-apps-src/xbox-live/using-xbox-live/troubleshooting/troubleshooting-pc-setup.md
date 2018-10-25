@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eabd83f9fc42f86fb1ec35bbce7d8b7b2359e0e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5442151"
+ms.locfileid: "5474127"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a>Windows 电脑上的 Xbox Live 设置疑难解答
 
@@ -33,6 +33,6 @@ Windows 10 电脑上，你可以确保你的计算机设置正确使用以下步
 1. 将构建目标平台更改为“Win32”或“x64”。
 1. 右键单击解决方案并重建所有内容。
 1. 在调试程序中启动应用。
-1. 登录你在[Xbox 开发人员门户](https://xdp.xboxlive.com)中、 创建的开发帐户或与[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上授权零售开发者帐户。
+1. 登录[Xbox 开发人员门户](https://xdp.xboxlive.com)中，创建的开发帐户或与[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上获得授权零售开发者帐户。
 1. 授予应用访问 Xbox Live 信息的权限。
 1. 验证该应用是否可以检索你的信息以及你是否能够看到你的玩家代号。

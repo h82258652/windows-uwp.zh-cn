@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431133"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482741"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -120,7 +120,7 @@ ms.locfileid: "5431133"
 
         - 可以按任意顺序查看页面。
         - 页面之间明显不同，并且不具有明显的父/子关系。
-        - 组中存在少于 8 页面。 <br>
+        - 组中有页面少于 8。 <br>
         （当存在多个页面时，用户可能难以区分页面或难以弄清它们当前在组中的位置。 如果你认为这对你的应用不构成问题，请继续将页面作为对等方平行排列。 否则，请考虑使用层次结构将页面分为两个或更多的组。）
 
     :::column-end:::
@@ -193,7 +193,7 @@ ms.locfileid: "5431133"
         
         使用 tab 键时：
 
-        - 你想要保留导航历史记录和页面的状态。
+        - 你想要保留导航历史记录和页面状态。
         - 你预期用户经常标签之间进行切换。
 
 :::row-end:::

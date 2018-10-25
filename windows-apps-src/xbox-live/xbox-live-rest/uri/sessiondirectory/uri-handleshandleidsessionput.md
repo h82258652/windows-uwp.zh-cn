@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 89572da87f4975aeeaa1ae7506a34f2b9cb4e72a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443855"
+ms.locfileid: "5469626"
 ---
 # <a name="put-handleshandle-idsession"></a>PUT (/handles/{handle-id}/session)
 创建或更新会话由取消引用句柄。
@@ -35,7 +35,7 @@ ms.locfileid: "5443855"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法将新的或更新会话写入多人游戏服务，使用提供的会话句柄 id。 结果是一个表示新的或更新会话，如从服务器返回的对象。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**包装。
+此 HTTP/REST 方法将新的或更新会话写入多人游戏服务，使用提供的会话句柄 id。 结果是表示新的或更新会话，如从服务器返回的对象。 此方法可由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**包装。
 
 此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取的 ID 从协议激活后用户已接受游戏邀请。
 

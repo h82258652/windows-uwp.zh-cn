@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e79846ecb0fce63d371b9ade7efa01ca0561b952
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5430602"
+ms.locfileid: "5479308"
 ---
 # <a name="get-started-with-the-xbox-live-creators-program"></a>Xbox Live 创意者计划入门
  
@@ -32,14 +32,14 @@ Xbox Live 创意者计划游戏必须属于通用 Windows 平台 (UWP) 应用程
 * [使用 Visual Studio 开发创意者主题作品](develop-creators-title-with-visual-studio.md)将为你介绍如何关联 Visual Studio 项目与开发人员中心上的 Xbox Live 配置。
 * [使用 Unity 开发创意者主题作品](develop-creators-title-with-unity.md)将为你介绍如何创建支持 Xbox Live 的新 Unity 游戏、处理单用户和多用户登录、添加排行榜和统计信息等功能，以及如何生成本机 Visual Studio 项目。
 
-Unity 时仅我们为其提供文档的第三方游戏引擎，游戏引擎[构建 （2 和 3）](https://www.scirra.com/construct2)和[Game Maker Studio](https://www.yoyogames.com/gamemaker)还有文档可帮助你将 Xbox Live 集成到你的 Construct 或 Game Maker Studio 游戏分别。
+我们为其提供文档仅第三方游戏引擎 Unity 时，游戏引擎[构建 （2 和 3）](https://www.scirra.com/construct2)和[Game Maker Studio](https://www.yoyogames.com/gamemaker)还有文档可帮助你将 Xbox Live 集成到你的 Construct 或 Game Maker Studio 游戏分别。
 
 * [游戏 Maker Studio 2 UWP 现在支持 Xbox Live 创意者计划](https://www.yoyogames.com/gamemaker/xblc)将向你介绍如何导出你的 Game Maker Studio 项目，以在 Xbox One 和 Windows 10 电脑上播放。
-* [在 UWP 应用-中使用 Xbox Live 构造](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)将向你介绍了如何使用 Xbox Live 在你的 Construct 2 和 3 的游戏中。
+* [使用 Xbox Live 在 UWP 应用的构造](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)将向你介绍了如何使用 Xbox Live 在你的 Construct 2 和 3 的游戏中。
 
-你仍可以为没有记录 Xbox Live 集成的其他游戏开发引擎，使用 Xbox Live Api 将 Xbox Live 添加到你的游戏。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
+你仍可以为没有记录 Xbox Live 集成的其他游戏开发引擎，使用 Xbox Live Api 将 Xbox Live 添加到你的作品。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
 
-支持 Xbox Live 服务使用第三方不可 Unity 游戏引擎都要回答问题的相应的游戏引擎员工使用。
+为支持 Xbox Live 服务使用第三方不可 Unity 的游戏引擎工作使用相应的游戏引擎人员要回答问题。
 
 ## <a name="3-xbox-live-concepts--testing"></a>3. Xbox Live 概念和测试
 创建主题作品后，你应会了解一些将影响开发主题作品体验的 Xbox Live 概念。 此外，你还需要在游戏计划支持的所有平台上测试游戏，以确保游戏能够按预期运行。
