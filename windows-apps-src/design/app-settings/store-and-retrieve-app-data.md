@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47383cd8f89e5da104ac73878b0613c364240459
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: f73a99ea4dc58880f1de517853a05aa0b0d6dd6b
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817295"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512899"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
@@ -172,7 +172,7 @@ async void ReadTimestamp()
 -   不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
 -   不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
 -   不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
--   不要使用漫游频繁更改数据。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
+-   不要为使用漫游频繁更改数据。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫游先决条件
 

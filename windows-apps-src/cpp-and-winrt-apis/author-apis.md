@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474455"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512859"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
-本主题演示了如何创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)直接或间接基结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
+本主题演示如何创作[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)直接或间接基结构。 在此上下文中，*创作*的同义词有*生成*或*实现*。 本主题介绍以下在 C++/WinRT 类型上实现 API 的情形（按此顺序）。
 
 - 你*不是*在创作一个 Windows 运行时类（运行时类）；你只是想要实现一个或多个 Windows 运行时接口以便在应用内进行本地使用。 在此案例中，你直接从 **winrt::implements** 派生并实现相关函数。
 - 你*正在*创作一个运行时类。 你可能正在创作一个要从某个应用中使用的组件。 或者，你可能正在创作一个要从 XAML 用户接口 (UI) 使用的类型，在此情况下，你在同一个编译单元内实现和使用一个运行时类。 在这些情况下，你使用工具为你生成派生自 **winrt::implements** 的类。
@@ -34,7 +34,7 @@ ms.locfileid: "5474455"
 > [!NOTE]
 > 有关 C++/WinRT Visual Studio Extension (VSIX)（提供项目模板支持以及 C++/WinRT MSBuild 属性和目标）的安装和使用的信息，请参阅[对 C++/WinRT 的 Visual Studio 支持以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目模板阐释**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
+在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心应用 (C + + WinRT)** 项目模板阐释了**CoreApplication**模式。 该模式首先将 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 的实现传递给 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -282,10 +282,10 @@ iclosable.Close();
 
 **MyType** 类不是投影的一部分；它是实现。 但是，通过这种方法，你可以直接调用其实现方法，而无需虚拟函数调用的开销。 在上面的示例中，即使 **MyType::ToString** 在 **IStringable** 上使用与投影方法相同的签名，我们也还是直接调用非虚拟方法，而不必跨越应用程序二进制接口 (ABI)。 **com_ptr** 只包含指向 **MyType** 结构的指针，因此你还可以通过 `myimpl` 变量和箭头运算符访问 **MyType** 的任何其他内部细节。
 
-在以下情况： 你有一个接口对象，并且你恰好知道它是在你的实现的接口，然后你可以回到使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函数模板的实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。
+在以下情况： 你有一个接口对象，并且你恰好知道它是实现上的接口，然后可以重新使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函数模板的实现。 同样，这种方法可以避免虚拟函数调用，并让你直接访问实现。
 
 > [!NOTE]
-> 如果你尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本，然后你需要调用[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
+> 如果你尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本，则需要调用[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
 下面提供了一个示例。 [实现**BgLabelControl**自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中有另一个示例。
 
@@ -315,7 +315,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符 (前提是实现类型由生成`cppwinrt.exe`工具) 的实现此目的。
+如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符 (前提是该实现类型由`cppwinrt.exe`工具) 的实现此目的。
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>从具有非默认构造函数的类型派生
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是非默认构造函数的示例。 由于没有默认构造函数，因此，若要构造一个 **ToggleButtonAutomationPeer**，你需要传递 *owner*。 因此，如果你从 **ToggleButtonAutomationPeer** 派生，则需要提供一个接受 *owner* 并将它传递给基类的构造函数。 让我们来看看实际的情况。

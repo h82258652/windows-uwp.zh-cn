@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10，uwp，3dprinting，3d 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468740"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512869"
 ---
 # <a name="3d-printing"></a>3D 打印
 
 
 本部分介绍了如何使用[Windows.Graphics.Printing3D 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)将 3D 打印功能添加到你的通用 Windows 应用。  
 
-有关详细信息的 Windows 10，包括硬件合作伙伴、 社区论坛和有关 3D 打印功能的常规信息资源 3D 打印硬件开发人员中心上看到[Windows 10 的 3D 打印](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)站点。
+有关详细信息的 Windows 10，包括硬件合作伙伴、 社区论坛和有关 3D 打印功能的一般信息的资源的 3D 打印硬件开发人员中心上看到[3D 打印与 Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)站点。
 
 | 主题 | 描述 |
 |-------|-------------|
@@ -34,6 +34,6 @@ ms.locfileid: "5468740"
 * [Windows 10 的 3D 打印（硬件开发人员中心）](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
 * [Windows.Graphics.Printing3D 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
 * [3D 打印示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
-* [Unity 示例从 3D 打印](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
+* [从 Unity 示例 3D 打印](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  

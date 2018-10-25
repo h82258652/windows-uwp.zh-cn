@@ -12,15 +12,15 @@ keywords: windows 10，uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470817"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512151"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>运行、 调试和测试打包的桌面应用程序
 
-运行打包应用程序并查看其外观而无需对其进行签名。 然后，设置断点并单步执行代码。 当你准备好在生产环境中测试你的应用程序时，对你的应用程序进行签名，然后安装它。 本主题演示如何执行以下各项操作。
+运行打包应用程序并查看其外观而无需对其进行签名。 然后，设置断点并单步执行代码。 当你已准备好在生产环境中测试你的应用程序时，对你的应用程序进行签名，然后安装它。 本主题演示如何执行以下各项操作。
 
 <a id="run-app" />
 
