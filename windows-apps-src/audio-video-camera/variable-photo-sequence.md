@@ -6,18 +6,17 @@ title: 可变照片序列
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4c6a6ef37af9f860e4ff1c77fd8e5e5151bb271e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204281"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572306"
 ---
 # <a name="variable-photo-sequence"></a>可变照片序列
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你演示如何捕获可变照片序列，允许你快速连续捕获图像的多个帧，并将每个帧配置为使用不同的焦点、闪光灯、ISO、曝光和曝光补偿设置。 此功能启用了创建高动态范围 (HDR) 图像等方案。
@@ -33,7 +32,7 @@ ms.locfileid: "204281"
 
 [!code-cs[VPSUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
 
-声明成员变量以存储 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 对象，该对象用于启动照片序列捕获。 声明 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的数组以在序列中存储每个捕获的图像。 此外，声明数组以针对每个帧存储 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 对象。 可通过图像处理算法使用它，以确定哪些设置已用于捕获每个帧。 最后，声明一个将用于跟踪序列中当前正在捕获的图像的索引。
+声明成员变量以存储 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 对象，该对象用于启动照片序列捕获。 声明 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的数组以在序列中存储每个捕获的图像。 此外，声明数组以针对每个帧存储 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 对象。 可通过图像处理算法使用它，以确定哪些设置已用于捕获每个帧。 最后，声明一个将用于跟踪当前正在捕获序列中的映像的索引。
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
@@ -98,9 +97,9 @@ ms.locfileid: "204281"
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

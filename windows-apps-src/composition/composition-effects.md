@@ -6,15 +6,14 @@ description: 效果 API 使开发人员可以自定义其 UI 的呈现方式。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 3ee0d4c66dedfb0309a8426c779af3d71c8d1afc
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.localizationpriority: medium
+ms.openlocfilehash: b943807f6102c80af76fecb650087f4f2e91b9c6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2017
-ms.locfileid: "839391"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572646"
 ---
 # <a name="composition-effects"></a>合成效果
 
@@ -40,7 +39,7 @@ ms.locfileid: "839391"
 
 目前，合成支持以下效果：
 
-| 作用               | 描述                                                                                                                                                                                                                |
+| 作用               | 说明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D 仿射变换  | 将 2D 仿射变换矩阵应用到图像。 我们使用此效果在我们的效果[示例](http://go.microsoft.com/fwlink/?LinkId=785341)中对 alpha 蒙板进行动画处理。       |
 | 算术合成 | 使用灵活方程组合两张图像。 我们使用算术合成在我们的[示例](http://go.microsoft.com/fwlink/?LinkId=785341)中创建交叉淡入淡出效果。 |

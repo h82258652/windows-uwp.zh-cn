@@ -1,41 +1,40 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: 此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。
-title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
-ms.author: markl
+description: 此案例研究，以 Bookstore 中提供的信息，首先显示分组数据 LongListSelector 中的 WindowsPhone Silverlight 应用。
+title: WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7a36649701187a795eb6e75df351af69110bee6b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205710"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572566"
 ---
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
+# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-此案例研究以 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的信息为基础，首先研究可显示 **LongListSelector** 中的分组数据的 Windows Phone Silverlight 应用。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的步骤。
+此案例研究-基于[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)中提供的信息，首先研究可显示分组数据**的 LongListSelector**中 WindowsPhone Silverlight 应用。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows10Universal Windows 平台 (UWP) 应用的步骤。
 
-**注意**   在 Visual Studio 中打开 Bookstore2Universal\_10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中用于设置目标平台版本的步骤进行操作。
+**注意**时在 Visual Studio 中打开 Bookstore2Universal\_10，如果你看到消息"需要 Visual Studio 更新"，然后按照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中用于设置目标平台版本的步骤。
 
 ## <a name="downloads"></a>下载
 
-[下载 Bookstore2WPSL8 Windows Phone Silverlight 应用](http://go.microsoft.com/fwlink/p/?linkid=522601)。
+[下载 Bookstore2WPSL8 WindowsPhone Silverlight 应用](http://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-[下载 Bookstore2Universal\_10 Windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532952)。
+[下载 Bookstore2Universal\_10 windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532952)。
 
-##  <a name="the-windows-phone-silverlight-app"></a>Windows Phone Silverlight 应用
+##  <a name="the-windowsphone-silverlight-app"></a>WindowsPhone Silverlight 应用
 
-下图显示了 Bookstore2WPSL8（我们要移植的应用）的外观。 它是垂直滚动的 **LongListSelector**，其中包含按作者进行分组的书籍。 你可以缩小到跳转列表，并且可以从该列表导航回任一组。 此应用包含两个主要部分：提供分组数据源的视图模型，以及绑定到该视图模型的用户界面。 正如我们将看到的，这两部分都可以轻松地从 Windows Phone Silverlight 技术移植到通用 Windows 平台 (UWP)。
+下图显示了 Bookstore2WPSL8（我们要移植的应用）的外观。 它是垂直滚动的 **LongListSelector**，其中包含按作者进行分组的书籍。 你可以缩小到跳转列表，并且可以从该列表导航回任一组。 此应用包含两个主要部分：提供分组数据源的视图模型，以及绑定到该视图模型的用户界面。 如我们所见，这两部分都可以轻松地从 WindowsPhone Silverlight 技术移植到通用 Windows 平台 (UWP)。
 
 ![Bookstore2WPSL8 的外观](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
-##  <a name="porting-to-a-windows-10-project"></a>移植到 Windows 10 项目
+##  <a name="porting-to-a-windows10-project"></a>移植到 windows 10 项目
 
 可快速完成以下任务：在 Visual Studio 中创建新项目、将文件从 Bookstore2WPSL8 复制到其中并将已复制的文件包含在新项目中。 首先创建一个新的空白应用程序（Windows 通用）项目。 将其命名为 Bookstore2Universal\_10。 这些是要从 Bookstore2WPSL8 复制到 Bookstore2Universal\_10 的文件。
 
@@ -43,7 +42,7 @@ ms.locfileid: "205710"
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
-我们可以将 Visual Studio 生成的 App.xaml 和 App.xaml.cs 保存在 Windows 10 项目中。
+我们可以保留的 App.xaml 和 App.xaml.cs 中的 Visual Studio 生成为我们在 windows 10 项目中。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2WPSL8 命名空间的任何引用更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改。
 
@@ -123,7 +122,7 @@ ms.locfileid: "205710"
 
 ![移动设备上初始源代码发生更改的 UWP 应用](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，尚未使用正确的样式和画笔，使得文本在可通过单击操作缩小的组标题上不可见。 当你在桌面设备上运行应用时，你将会遇到第二个问题，即应用尚未适应其用户界面，使得无法在较大的设备上提供最佳的体验和空间的使用，并且窗口的大小可能会比移动设备的屏幕大小大很多。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
+视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，正确的样式和画笔是不尚未使用，使你可以通过单击缩小的组标题上不可见的文本。如果你在桌面设备上运行该应用，你将看到第二个问题，即，该应用尚未调整其用户界面以提供的最佳体验和使用的窗口可以可能比在移动设备的屏幕大小大很多较大的设备上的空间。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
 
 ## <a name="initial-styling-and-templating"></a>初始样式设置和模板
 
@@ -256,22 +255,22 @@ ms.locfileid: "205710"
 
 ![在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小 
-![在桌面设备上运行的已移植的 Windows 10 应用，缩小视图，两个窗口大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+在桌面设备，放大视图，两个窗口大小上运行的已移植的 windows 10 应用 
+![在桌面设备，缩小视图，两个窗口大小上运行的已移植的 windows 10 应用](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-在桌面设备上运行的已移植的 Windows 10 应用，缩小视图，两个窗口大小
+在桌面设备，缩小视图，两个窗口大小上运行的已移植的 windows 10 应用
 
 ![在移动设备上运行的已移植的 Windows 10 应用，放大视图](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-在移动设备上运行的已移植的 Windows 10 应用，放大视图
+在移动设备，放大视图上运行的已移植的 windows 10 应用
 
 ![在移动设备上运行的已移植的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-在移动设备上运行的已移植的 Windows 10 应用，缩小视图
+在移动设备上使用，缩小视图运行的已移植的 windows 10 应用
 
 ## <a name="making-the-view-model-more-flexible"></a>使视图模型更灵活
 
-本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 我们从 Windows Phone Silverlight 应用 Bookstore2WPSL8 移植的视图模型（源文件位于 ViewModel\\BookstoreViewModel.cs 中）包含一个派生自 **List&lt;T&gt;** 的名为 Author 的类，其中 **T** 是 BookSku。 这意味着，Author 类*是一*组 BookSku。
+本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 视图模型 （源文件位于 ViewModel\\BookstoreViewModel.cs 中） 我们从 WindowsPhone Silverlight 应用 Bookstore2WPSL8 移植包含名为 Author 派生的类**列表&lt;T&gt;**，其中的**T**是 BookSku。 这意味着，Author 类*是一*组 BookSku。
 
 当我们将 **CollectionViewSource.Source** 绑定到 Authors 时，我们要传达的唯一信息是 Authors 中的每个 Author 都是一个包含*某些内容*的组。 我们将其保留为 **CollectionViewSource**，以确定在此情况下 Author 确实是一组 BookSku。 该方法可用：但是不灵活。 如果我们希望 Author *既属于*一组 BookSku *又属于*一组作者的住址呢？ Author 不可能同时*属于*这两个组。 但 Author 可以*包含*任意数量的组。 而这就是解决方案：使用*包含组*模式而不是我们当前在使用的*属于组*模式。 操作方法如下：
 
@@ -304,4 +303,4 @@ ms.locfileid: "205710"
 
 ## <a name="conclusion"></a>总结
 
-此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 经发现，Windows Phone Silverlight **LongListSelector** 的所有设施和概念以及其他更多内容都可以采用 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP 应用使用。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
+此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 所有设施和概念的 WindowsPhone Silverlight **LongListSelector**— 等-发现适用于 UWP 应用的**SemanticZoom**、 **ListView**、 **GridView**和**CollectionViewSource**形式。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。

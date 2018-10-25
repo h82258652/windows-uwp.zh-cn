@@ -5,19 +5,18 @@ description: 本节包含有关如何将 NFC 集成到通用 Windows 平台 (UWP
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 15a113b5-8231-41c9-b724-ce5add813967
-ms.openlocfilehash: 8e2438793ed154e083cca5bdd881012ddd90f42b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 01e8e5a94092312b953dd2a183cd6902a1df5505
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204108"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542364"
 ---
 # <a name="nfc"></a>NFC
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分包含有关如何将 NFC 集成到通用 Windows 平台 (UWP) 应用的文章。
 
