@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8ddac5d69ce0c562129255832adfc49380946510
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044656"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572376"
 ---
 # <a name="choosing-a-resource"></a>选择资源
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044656"
 | 输出合并器   | 输出    | 呈现器目标视图     | 缓冲区，Texture1D，Texture2D，Texture3D |
 | 输出合并器   | 输出    | 深度/模具视图     | Texture1D，Texture2D                    |
 
- 
+ 
 
 ## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>确定将如何使用每个资源
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044656"
 | 临时        | GPU                                  | 不适用                 |
 | 不可变      | CPU（仅在创建资源时） | 不适用                 |
 
- 
+ 
 
 默认用法应用于 CPU 预计不经常更新的资源（每帧少于一次）。 理想情况下，CPU 从不将其直接写入采用默认用法的资源，以避免引起可能的性能损失。
 
@@ -75,7 +73,7 @@ ms.locfileid: "1044656"
 | 渲染到纹理                     | 默认              |
 | CPU 访问 GPU 数据                | 临时              |
 
- 
+ 
 
 如果你不确定要选择哪个用法，请先使用默认用法，因为它应为最常见的情况。 着色器常量缓冲区是一个应始终采用默认用法的资源类型。
 
@@ -95,9 +93,9 @@ ms.locfileid: "1044656"
 
 [资源](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

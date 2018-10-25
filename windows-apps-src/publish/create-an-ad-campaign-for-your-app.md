@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7e7c1e2cd9a2ca083cef5fed27a9067cf1e7e7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468508"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5522859"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
@@ -74,7 +74,7 @@ ms.locfileid: "5468508"
 10.  如果选择**提升应用参与度**作为市场活动目标，可选择一个客户类别作为目标。 使用此市场活动创建的广告将仅向包含在此类别中的客户显示。 每个市场活动仅可选择一个客户类别。 有关类别的信息，请参阅[创建客户类别](create-customer-segments.md)。 完成后，单击**保存并转到下一步**以继续转到**广告设计**步骤。 此步骤是不用于自家广告市场活动，因为它们仅在你自己的应用中运行。
 
 11.  在**广告设计**页面中，选择以下选项之一：
-    * **自动生成**。 这是默认选项，，它允许你从我们的默认模板创建的广告。 你可以进行选择以自定义广告内容，我们将根据你的选择（进行选择时自动更新）预览广告外观。
+    * **自动生成**。 这是默认选项，并且它允许你从我们的默认模板创建的广告。 你可以进行选择以自定义广告内容，我们将根据你的选择（进行选择时自动更新）预览广告外观。
         * 在**语言**下拉列表中，选择广告语言。 Microsoft Store 锁屏提醒的文本消息将以选择的语言显示。
         * 若要向你的广告添加额外的文本消息行，可在**自定义标志行**字段中输入文本消息。
             > [!NOTE]

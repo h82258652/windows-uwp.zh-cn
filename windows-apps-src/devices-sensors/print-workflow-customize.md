@@ -6,16 +6,14 @@ description: 创建自定义打印工作流体验以满足组织的需求。
 ms.author: pafarley
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f58c0c8397831595c237b7bd9fe4eafb25594ab3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476964"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542384"
 ---
 # <a name="customize-the-print-workflow"></a>自定义打印工作流
 

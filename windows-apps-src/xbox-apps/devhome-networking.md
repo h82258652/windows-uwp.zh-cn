@@ -1,30 +1,28 @@
 ---
 author: v-angraf
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
-title: 网络页 （开发主页）
-description: 提供有关开发主页应用程序的网络页上的一个 Xbox 的信息。
+title: 网络页面 （开发人员主页）
+description: 提供信息适用于 Xbox One 开发人员主页应用的网络页面。
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
-ms.openlocfilehash: ae160956f555f691e681abc4992ac21789c387b5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5968a2dad76343a1aa589caadf62ec3cd823aed0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015456"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572576"
 ---
-# <a name="networking-page-dev-home"></a>网络页 （开发主页）
+# <a name="networking-page-dev-home"></a>网络页面 （开发人员主页）
    
   
-**网络**页上的开发主页模拟以便解决问题的各种网络条件。 它还允许您启动网络数据包跟踪。   
- ![开发主页的网络页](images/devhome_networking.png)   
+开发人员主页**网络**页面模拟各种网络条件为了进行故障排除。 它还允许你启动网络数据包跟踪。   
+ ![网络页面的开发人员主页](images/devhome_networking.png)   
   
-**网络**页包含以下窗格：   
+**网络**页面包含以下窗格：   
  
    *  [网络模拟](#ID4EEB)  
    *  [XBTrace (netcap)](#ID4EOB)  
@@ -37,7 +35,7 @@ ms.locfileid: "1015456"
 ## <a name="network-simulation"></a>网络模拟  
    
   
-**网络模拟**窗格运行网络模拟测试针对各种带宽配置文件。   
+**网络模拟**窗格中运行网络模拟，可针对各种带宽配置文件进行测试。   
   
 <a id="ID4EOB"></a>
 
@@ -46,13 +44,13 @@ ms.locfileid: "1015456"
 ## <a name="xbtrace-netcap"></a>XBTrace (netcap)  
    
   
-**XBTrace (netcap)** 窗格中启动或停止网络数据包跟踪。   
+**XBTrace (netcap)** 窗格开始或停止网络数据包跟踪。   
   
 <a id="ID4E2B"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [在控制台 （开发主页） 上的开发主页](dev-home.md)
+ [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

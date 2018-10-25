@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 广告, 演练
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1974618c65dd057c4c8152d9c4c9556869a3ef
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482639"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5514129"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>应用内广告的最佳做法
 

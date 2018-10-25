@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2676c59251a4aadb0f97a1180238ec076bf45229
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d1c35af3dd1f8826fbd61268c5c47cef9d77146a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652886"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542434"
 ---
 # <a name="devices"></a>设备
 
@@ -80,16 +78,16 @@ Direct3D 支持以下两种主要类型的 Direct3D 设备：
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [Direct3D 图形学习指南](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26705e9481a96d54eff70d04c004bf62fe049091
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 56ce3520248a0fca25230d7ee2a822d827d842a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044866"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572206"
 ---
 # <a name="triangle-interpolation"></a>三角形内插
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044866"
 | 平面         | 仅在平面阴影模式下内插雾系数。 对于所有其他内插值，将在整个面中应用三角形中第一个顶点的颜色。 |
 | 高氏      | 将在所有三个顶点之间执行线性内插。                                                                                                               |
 
- 
+ 
 
 漫射颜色和反射颜色的处理方式不同，具体取决于颜色模式。 在 RGB 颜色模式中，系统将在内插中使用红色、绿色和蓝色组件。
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044866"
 
 [坐标系和几何图形](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48d0b21d588ef7b4913e16b75f9d21c5d5209f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470415"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5518843"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全 Windows 应用开发简介
 
@@ -290,7 +290,7 @@ Azure API 管理还可以减少对某个服务的 API 调用数（称为限制�
 
 传统上来讲，Windows 从未对应用下过定义。 它通常是指可执行文件 (.exe)，但从来不包括安装、状态存储、执行长度、版本控制、操作系统集成和应用到应用通信。 通用 Windows 平台模型定义涵盖安装、运行时环境、资源管理、更新、数据模型和卸载的应用模型。
 
-Windows 10 应用中的容器，这意味着，它们的权限有限 （可以请求和由用户授予额外权限），默认情况下运行。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
+Windows 10 应用中的容器，这意味着，它们的权限有限 （可以请求并由用户授予额外权限），默认情况下运行。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
 
 请注意，此应用模型充当应用的“监狱”，这意味着无法访问它们，但它不是无法从外部访问的“城堡”（具有管理员权限的应用程序当然仍可以访问里面的内容）。 Windows 10 中的 Device Guard 因为支持组织/IT 指定允许执行哪些 (Win32) 应用，所以可以进一步帮助限制此访问权限。
 

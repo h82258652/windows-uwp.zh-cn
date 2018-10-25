@@ -4,18 +4,18 @@ Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: 支持的语言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 10/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5095aafd0b78b6b8cadc0e3852e2079507800c75
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483340"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5519096"
 ---
 # <a name="supported-languages"></a>支持的语言
 
@@ -27,7 +27,9 @@ ms.locfileid: "5483340"
 ## <a name="supported-languages"></a>支持的语言
 
 
-以下是在 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言，并且它不得指定未包含在此处的任何语言代码。
+以下是在 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言。 
+
+此处将不包括的语言代码不受应用商店。 我们建议你不要包括面向以外; 下面列出的语言代码的程序包此类软件包不会分发给客户，并且可能导致延迟或故障认证。
 
 | 语言名称         | 支持的语言代码                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

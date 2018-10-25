@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044706"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542291"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 alpha 通道的纹理
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044706"
 | 3:0          | 透明数据块                |
 | 7:4          | 之前所述的 64 位块 |
 
- 
+ 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>显式纹理编码
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044706"
 
 ![64 位透明数据块图示](images/colors4.png)
 
-**注意**   Direct3D 压缩法使用四个最高有效位。
+**注意**的 Direct3D 压缩法使用四个最高有效位。
 
- 
+ 
 
 下表描述了 alpha 信息（16 位词）如何在内存中分布。
 
@@ -56,7 +54,7 @@ word 0 的布局：
 | 11:8          | \[0\]\[2\] |
 | 15:12 (MSB\*) | \[0\]\[3\] |
 
- 
+ 
 
 \*最低有效位，最高有效位 (MSB)
 
@@ -69,7 +67,7 @@ word 1 的布局：
 | 11:8        | \[1\]\[2\] |
 | 15:12 (MSB) | \[1\]\[3\] |
 
- 
+ 
 
 word 2 的布局：
 
@@ -80,7 +78,7 @@ word 2 的布局：
 | 11:8        | \[2\]\[2\] |
 | 15:12 (MSB) | \[2\]\[3\] |
 
- 
+ 
 
 word 3 的布局：
 
@@ -91,7 +89,7 @@ word 3 的布局：
 | 11:8        | \[3\]\[2\] |
 | 15:12 (MSB) | \[3\]\[3\] |
 
- 
+ 
 
 在 BC1 中用于确定纹素是否透明的颜色对比并没有使用这种格式。 假定在没有颜色对比的情况下，始终将颜色数据处理成 4 颜色模式。
 
@@ -139,7 +137,7 @@ alpha 块的内存布局如下所示：
 | 6    | \[3\]\[1\]（1 个 MSB）、\[3\]\[0\]、\[2\]\[3\]、\[2\]\[2\]（1 个 LSB） |
 | 7    | \[3\]\[3\]、\[3\]\[2\]、\[3\]\[1\]（2 个 LSB）                    |
 
- 
+ 
 
 在 BC1 中用于确定纹素是否透明的颜色对比并没有使用这些格式。 假定在没有颜色对比的情况下，始终将颜色数据处理成 4 颜色模式。
 
@@ -148,9 +146,9 @@ alpha 块的内存布局如下所示：
 
 [压缩的纹理资源](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470043"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5513843"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -87,11 +87,11 @@ ms.locfileid: "5470043"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果你已保留在 Windows 应用商店中你的应用程序的名称，你可以通过使用 Windows 开发人员中心仪表板中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
+> 如果你已保留在 Windows 应用商店应用程序名称，你可以通过使用 Windows 开发人员中心仪表板中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
 
 ### <a name="properties"></a>属性
 
-[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是你在应用商店，对于上传到应用商店的应用中保留的应用程序的名称。
+[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是你在应用商店上, 传到应用商店的应用中保留的应用程序的名称。
 
 ```XML
 <Properties>
@@ -121,7 +121,7 @@ ms.locfileid: "5470043"
 ```
 
 ### <a name="capabilities"></a>功能
-对于桌面应用创建的包的你将需要添加``runFullTrust``功能。
+适用于桌面应用创建程序包的你将需要添加``runFullTrust``功能。
 
 ```XML
 <Capabilities>

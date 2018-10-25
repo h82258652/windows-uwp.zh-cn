@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 438b9608e9b15fd0c00def517a4c38491d486217
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e7b0f06711b4a908f8990dfb16968400c685c15f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044846"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542374"
 ---
 # <a name="copying-and-accessing-resource-data"></a>复制和访问资源数据
 
@@ -130,16 +128,16 @@ Direct3D 中的异步调用（即绝大多数方法，尤其是渲染调用）�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [资源](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

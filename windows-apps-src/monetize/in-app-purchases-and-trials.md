@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 试用, 消耗品, 耐用型, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468869"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5520972"
 ---
 # <a name="in-app-purchases-and-trials"></a>应用内购买和试用
 
@@ -162,7 +162,7 @@ UWP 应用可提供以下类型的加载项。
 
 如果你的应用使用 **Windows.Services.Store** 命名空间中的 API 实现应用内购买和试用功能，则你必须将应用发布到 Microsoft Store，然后将此应用下载到开发设备上以使用其许可证进行测试。 请按照下述过程测试你的代码：
 
-1. 如果应用尚未在 Microsoft Store 中发布和可用，请确保应用满足 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、[将应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)到 Windows 开发人员中心仪表板，并确保应用通过认证过程。 在测试应用期间，你可以[将应用配置为在 Microsoft Store 中隐藏](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 请注意[软件包外部测试版](../publish/package-flights.md)的正确配置。 未正确配置的程序包外部测试版可能无法下载。
+1. 如果应用尚未在 Microsoft Store 中发布和可用，请确保应用满足 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、[将应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)到 Windows 开发人员中心仪表板，并确保应用通过认证过程。 在测试应用期间，你可以[将应用配置为在 Microsoft Store 中隐藏](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 请注意[软件包外部测试版](../publish/package-flights.md)的正确配置。 未正确配置的软件包外部测试版可能无法下载。
 
 2. 接下来，确保已完成以下操作：
 

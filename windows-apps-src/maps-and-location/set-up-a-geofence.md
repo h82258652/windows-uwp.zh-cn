@@ -6,16 +6,14 @@ ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 地图, 位置, 地理围栏, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 02baf078d127f516d57e947145ec639df5ba891b
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1594775"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542271"
 ---
 # <a name="set-up-a-geofence"></a>设置地理围栏
 
@@ -479,7 +477,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 在你的应用可以访问位置之前，必须在设备上启用 **“位置”**。 在“设置”**** 应用中，检查以下“位置隐私设置”**** 是否已打开：
 
--   **“此设备的位置...”** 已 **“打开”**（在 Windows 10 移动版中不适用）
+-   **...此设备的位置**是处于**打开**状态 （在 windows 10 移动版中不适用）
 -   位置服务设置（**位置**）已**打开**
 -   在 **“选择可以使用你的位置的应用”** 下，你的应用已设置为 **“打开”**
 

@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468814"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5514921"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -76,12 +76,12 @@ ms.locfileid: "5468814"
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如 NavigationView 或行中的命令元素使用应用内亚克力。 
-* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
+* 用于支持 UI，例如 NavigationView 或串联命令元素应用内亚克力。 
+* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于视觉维持与触发瞬态 UI 的内容。
 
-如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
+如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 会执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将亚克力边缘到边缘内的多个，这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让设计，视觉协调，但不正确，使用时可能会导致视觉干扰。
 
-请考虑以下使用模式，以确定如何最佳亚克力融入你的应用：
+请考虑以下使用模式，以确定最佳方式亚克力融入你的应用：
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
 
@@ -91,19 +91,19 @@ ms.locfileid: "5468814"
 
 ![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
 
-此外，在顶部拥有你的内容扩展或下亚克力滚动将为应用提供更加沉浸式和无缝体验。
+此外，在顶部拥有你的内容扩展或下亚克力的滚动将为应用提供更多的沉浸式和无缝体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开你的垂直窗格，如在 NavigationView 的**Collapsed**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开垂直窗格，如在 NavigationView**折叠**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
 
-### <a name="transient-surfaces"></a>瞬态图面
+### <a name="transient-surfaces"></a>暂时图面
 
 如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
 
-![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
+![使用信息的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
 
-默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力在调用时。
+默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口所有时将使用瞬态亚克力它们进行调用。
 
 > [!Note]
 > 呈现亚克力图面进行 GPU，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
@@ -150,7 +150,7 @@ ms.locfileid: "5468814"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以放置文本后面的这些更半透明 70%亚克力资源。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
+        <td> <b>建议用法：</b>如果你的应用使用 AltMedium 颜色的辅助文本且文本大小的 18 像素或更大，你可以将文本后面的这些更半透明 70%亚克力资源放。 我们建议在应用的顶部水平导航和命令区域使用这些资源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
