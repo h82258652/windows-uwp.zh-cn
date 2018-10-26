@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f894cbc4c5c024d1b51660c48eb749479457b81
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5654060"
+ms.locfileid: "5684524"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
 
