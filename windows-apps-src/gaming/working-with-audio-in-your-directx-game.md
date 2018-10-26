@@ -6,16 +6,14 @@ ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 音频, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 2770e48720f3024908835aa26579ea1b4b3d3903
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654486"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551040"
 ---
 # <a name="audio-for-games"></a>游戏音频
 
@@ -109,7 +107,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xaudio2-how-to-resources"></a>XAudio2“操作方法”资源
 
@@ -196,7 +194,7 @@ XAudio2 是 DirectX 的音频混合库，主要用于开发高性能的音频游
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="media-foundation-resources"></a>Media Foundation 资源
 
@@ -257,7 +255,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="windows-runtime-xaml-media-types"></a>Windows 运行时 XAML 媒体类型
 
@@ -298,7 +296,7 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="reference"></a>参考
 
@@ -307,16 +305,16 @@ Media Foundation (MF) 是一个用于流音频和视频播放的媒体平台。 
 -   [XAudio2 编程指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 -   [Microsoft 媒体基础概述](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 
 
 -   [XAudio2 编程指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 
- 
+ 
 
- 
+ 
 
 
 

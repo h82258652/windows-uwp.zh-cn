@@ -4,23 +4,18 @@ ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: 音乐、图片和视频库中的文件和文件夹
 description: 将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8f81f3b6abea2ceb07ab4442d0b5dc24104408
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 1859d758806b4e92758decb40b8a30d02acb254d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654436"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549741"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
-
-
-
 
 将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。
 
@@ -47,7 +42,7 @@ ms.locfileid: "1654436"
 
 > [!NOTE]
 > 请记住声明相应的功能。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
- 
+ 
 
 若要获取对用户的音乐、图片或视频库的引用，请调用 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 提供 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 枚举中的相应值。
 
@@ -147,7 +142,7 @@ private async void getSongs()
     QueryOptions queryOption = new QueryOptions
         (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
 
-    queryOption.FolderDepth = FolderDepth.Deep
+    queryOption.FolderDepth = FolderDepth.Deep;
 
     Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
 

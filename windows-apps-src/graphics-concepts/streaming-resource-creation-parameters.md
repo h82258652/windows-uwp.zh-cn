@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a17f69ae0353bb7682a1dbfa48d5909f48d4aa
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652986"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548927"
 ---
 # <a name="streaming-resource-creation-parameters"></a>流式资源创建参数
 
@@ -26,22 +24,22 @@ ms.locfileid: "1652986"
 <span id="Supported-Resource-Type"></span><span id="supported-resource-type"></span><span id="SUPPORTED-RESOURCE-TYPE"></span>**受支持的资源类型**  
 Texture2D\[Array\]（包括 TextureCube\[Array\]，这是 Texture2D\[Array\] 的一种变体）或缓冲区。
 
-**不支持：**Texture1D\[Array\]。
+**不受支持：** Texture1D\ [Array\]。
 
 <span id="Supported-Resource-Usage"></span><span id="supported-resource-usage"></span><span id="SUPPORTED-RESOURCE-USAGE"></span>**受支持的资源用法**  
 默认用法。
 
-**不支持：**动态、暂存或不可变。
+**不受支持：** 动态、 暂存或不可变。
 
 <span id="Supported-Resource-Misc-Flags"></span><span id="supported-resource-misc-flags"></span><span id="SUPPORTED-RESOURCE-MISC-FLAGS"></span>**受支持的资源杂项标记**  
 平铺式，即流式处理（按照定义）、纹理立方体、绘图间接参数、允许存在原始视图的缓冲区、结构化缓冲区、资源夹或生成 mips。
 
-**不支持：**共享、共享键的互斥体、可兼容的 GDI、共享 NT 句柄、限制内容、限制共享资源、限制共享资源的驱动程序、受保护的内容或磁贴池。
+**不受支持：** 共享、 共享键控互斥体、 可兼容的 GDI 共享 NT 句柄、 限制内容、 限制共享的资源、 限制共享的资源的驱动程序、 受保护，或磁贴池。
 
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**受支持的绑定标志**  
 作为着色器资源、呈现目标、深度模板或无序的访问绑定。
 
-**不支持：**作为常量缓冲区、顶点缓冲区（支持绑定平铺缓冲区作为 SRV/UAV/RTV）、索引缓冲区、流输出、解码器或视频编码器绑定。
+**不受支持：** 绑定作为常量缓冲区、 顶点缓冲区 （绑定平铺的缓冲区作为 SRV/UAV/rtv）、 索引缓冲区、 流输出、 解码器或视频编码器。
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**受支持的格式**  
 除一些例外情况外，所有格式均适用于给定配置（无论是否平铺）。
@@ -76,16 +74,16 @@ Direct3D 支持的完整范围。 流式资源对非流式资源所应用的总�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [创建流式资源](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

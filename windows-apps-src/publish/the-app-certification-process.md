@@ -6,16 +6,14 @@ ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，发布，预处理，认证，版本，挂起，提交，发布，状态的时间
 ms.localizationpriority: medium
-ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 24eec7e0f9b52d83d9cda5b964e6b23274a5e6e6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517552"
+ms.locfileid: "5549679"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 

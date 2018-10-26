@@ -6,16 +6,14 @@ description: 使用桌面桥的内置测试以确保你的桌面应用非常适�
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8363bc3085e9d6ec4e1a86751b691266b12b365c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514567"
+ms.locfileid: "5549339"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 

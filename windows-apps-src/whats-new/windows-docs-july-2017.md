@@ -6,15 +6,13 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10
 ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e439c0b1c20f03c9519d29a24979e5008f3de94e
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691836"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546583"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 开发人员文档中的新增功能
 
@@ -110,7 +108,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="scoped-search"></a>范围搜索
 
-“UWP”范围已添加到 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 参考](https://docs.microsoft.com/en-us/uwp/api/)文档。除非已停用此范围，否则从这些区域内进行的搜索将仅返回 UWP 文档。
+“UWP”范围已添加到 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 参考](https://docs.microsoft.com/en-us/uwp/api/)文档。 除非已停用此范围，否则从这些区域中执行的搜索将仅返回 UWP 文档。
 
 ![范围搜索](images/scoped-search.png)
 

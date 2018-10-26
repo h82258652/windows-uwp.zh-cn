@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee55a932857611e19dc24170d5b61c9c26b51c13
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 91c95019c327f39a58a7397a66f9d4bbc88f843d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652716"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548685"
 ---
 # <a name="compute-pipeline"></a>计算管道
 
@@ -63,6 +61,6 @@ Direct3D 计算管道旨在处理大部分可与图形管道并行完成的计�
 
 [Direct3D 图形学习指南](index.md)
 
- 
+ 
 
- 
+ 

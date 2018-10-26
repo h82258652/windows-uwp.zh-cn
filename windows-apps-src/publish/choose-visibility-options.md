@@ -5,16 +5,14 @@ title: 选择可见性选项
 ms.author: wdg-dev-content
 ms.date: 08/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 可见性, 私人受众, 可用的, 可检测到的
 ms.localizationpriority: medium
-ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8a83f1ea4547e60547e427cedd5ad5338e450762
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516104"
+ms.locfileid: "5548338"
 ---
 # <a name="choose-visibility-options"></a>选择可见性选项
 

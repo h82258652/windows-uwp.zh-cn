@@ -5,16 +5,14 @@ description: 本文列出了 UWP 应用可用的条形码扫描仪功能以及�
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: dff05e8909c2afd2bac055eead87f4b66892109b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833065"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549531"
 ---
 # <a name="camera-barcode-scanner"></a>相机条形码扫描仪
 相机条形码扫描仪在 Windows 将连接到计算机的相机与软件解码器配对时动态创建。  每个相机 - 解码器对都是一个功能完全的条形码扫描仪。   

@@ -6,16 +6,14 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 联系人, 日历, 约会, 电子邮件
 ms.localizationpriority: medium
-ms.openlocfilehash: 2224ab78d5f3424904dfc2e211d9890648080574
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905332"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549319"
 ---
 # <a name="contacts-my-people-and-calendar"></a>联系人、我的人脉和日历
 
@@ -35,7 +33,7 @@ ms.locfileid: "1905332"
 | [“我的人脉”共享](my-people-sharing.md) | 介绍如何添加“我的人脉”支持，这让用户能够通过将文件从文件资源管理器拖到“我的人脉”固定区域，来与他们固定的联系人分享内容。 |
 | [“我的人脉”通知](my-people-notifications.md) | 介绍如何创建和使用“我的人脉”通知（一种从固定的联系人发送的新型 Toast 通知）。 |
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 

@@ -7,15 +7,13 @@ keywords: UWP 应用 开发 线程处理 异步 平台概述 门户 开发 开�
 ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de821f436b1ca44d3626a1029aa0a288273f8b84
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "2736682"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5550471"
 ---
 <div> 
 <h1>开发 UWP 应用</h1>
@@ -229,7 +227,7 @@ ms.locfileid: "2736682"
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概述</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight 到 UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone silverlight 移植到 UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows 运行时 8.x 到 UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">桌面桥</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">在桌面应用和 UWP 之间共享代码</a></p>

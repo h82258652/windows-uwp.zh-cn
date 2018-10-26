@@ -6,20 +6,18 @@ description: Windows 开发人员中心仪表板中的广告市场活动报告�
 ms.author: wdg-dev-content
 ms.date: 11/21/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 0e7bb2a4d592ae8201d27e45eb0f05d7fbca76a7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469576"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549623"
 ---
 # <a name="ad-campaign-report"></a>广告市场活动报告
 
-在 Windows 开发人员中心仪表板中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，在左侧的导航菜单中展开**吸引**并选择**广告市场活动**。
+在 Windows 开发人员中心仪表板中的**广告市场活动**报告可使你可以查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，在左侧的导航菜单中展开**吸引**并选择**广告市场活动**。
 
 ## <a name="definitions"></a>定义
 

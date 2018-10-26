@@ -6,16 +6,14 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b458c7ec5cabdc27ebd90c9eb024df2f35e402
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664950"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549277"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
@@ -103,7 +101,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 在指定的中心点附近搜索纽约。                             |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | 在指定的边框（即在纽约市）搜索比萨。      |
 
- 
+ 
 ## <a name="display-multiple-points"></a>显示多个点
 
 
@@ -117,7 +115,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | 显示带有名为 Fake\_Business\_with\_Underscore 的图钉的纽约市。                                                  |
 | bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669 | 显示名为酒店列表的列表，以及拉斯维加斯的恺撒王宫酒店和百乐宫酒店的两枚图钉，缩放级别为 16。 |
 
- 
+ 
 
 ## <a name="display-directions-and-traffic"></a>显示路线和路况
 
@@ -251,10 +249,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </ul>
 <p>在 Windows 10 中，鸟瞰图和 3D 视图样式相同。</p>
 <div class="alert">
-**注意** 省略 **sty** 参数将产生与 sty=r 相同的结果。
+**注意**省略**sty**参数将产生相同的结果与 sty = r。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -289,10 +287,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 <b>ss</b> 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 <b>cp</b> 参数结合使用，指定街道级视图的位置。</p>
 <div class="alert">
-**注意** 并不是所有地区都提供街道级图像。
+**注意**街道级图像在所有地区不可用。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -303,10 +301,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
 <div class="alert">
-**注意** 并不是所有地区都提供路况数据。
+**注意**路况数据在所有地区不可用。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -332,10 +330,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
-**注意** 如果某个位置由 **pos** 参数值指定，则可针对该位置使用标题。 将显示标题，而不是显示纬度和经度。
+**注意**如果由**pos**参数值指定该位置可以位置使用标题。 将显示标题，而不是显示纬度和经度。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -377,7 +375,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tbody>
 </table>
 
-  
+  
 <span id="ms-drive-to-param-reference"/>
 
 ## <a name="ms-drive-to-parameter-reference"></a>ms-drive-to: 参数引用
@@ -387,7 +385,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 > **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#display-directions-and-traffic)。
 
- 
+ 
 
 | 参数 | 定义 | 示例 | 详细信息 |
 |------------|-----------|---------|---------|
@@ -395,7 +393,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.longitude** | 目的地经度 | 示例：destination.longitude=-122.141964733601 | 目的地的经度。 有效的经度值范围为 -180 到 +180（包括这两者）。 |
 | **destination.name** | 目的地的名称 | 示例：destination.name=Redmond, WA | 目的地的名称。 你无需编码 **destination.name** 值。 |
 
- 
+ 
 <span id="ms-walk-to-param-reference"/>
 
 ## <a name="ms-walk-to-parameter-reference"></a>ms-walk-to: 参数引用
@@ -404,7 +402,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 用于启动逐向导航步行路线请求的 URI 无需编码，并且具有以下格式。
 
 > **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#display-directions-and-traffic)。
- 
+ 
 
 | 参数 | 定义 | 示例 | 详细信息 |
 |-----------|------------|---------|----------|
@@ -414,7 +412,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: 参数引用
 
-**ms-settings:** URI 方案的地图应用特定参数的语法定义如下。 **maps-downloadmaps** 采用 **ms-settings:maps-downloadmaps?** 的形式与 **ms-settings:** URI 一起指定以指示脱机地图设置页。 
+**ms-settings:** URI 方案的地图应用特定参数的语法定义如下。 **maps-downloadmaps** 采用 **ms-settings:maps-downloadmaps?** 的形式与 **ms-settings:** URI 一起指定以指示脱机地图设置页。 
 
 | 参数 | 定义 | 示例 | 详细信息 |
 |-----------|------------|---------|----------|

@@ -6,18 +6,17 @@ title: 在后台处理媒体文件
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 8d3166b40120799818598300a049a4148a40d2cc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204398"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548368"
 ---
 # <a name="process-media-files-in-the-background"></a>在后台处理媒体文件
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你显示了如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。
@@ -143,9 +142,13 @@ ms.locfileid: "204398"
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-通过调用 **MediaProcessingTrigger** 对象的 [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) 方法来启动后台任务。 此方法返回的 [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) 对象让你知道后台任务是否已成功启动，如果未成功启动，则让你知道后台任务未启动的原因。
+当应用最初启动目的，如**OnNavigatedTo**事件时，典型的应用将注册其后台任务。
+
+通过调用 **MediaProcessingTrigger** 对象的 [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) 方法来启动后台任务。 此方法返回的 [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) 对象让你知道后台任务是否已成功启动，如果未成功启动，则让你知道后台任务未启动的原因。 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+
+典型的应用将启动后台任务以响应用户交互，如中的 UI 控件的**Click**事件。
 
 当后台任务更新该操作的进度时，将调用 **OnProgress** 事件处理程序。 你可以利用此机会使用进度信息更新你的 UI。
 
@@ -156,9 +159,9 @@ ms.locfileid: "204398"
 [!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
 
- 
+ 
 
- 
+ 
 
 
 

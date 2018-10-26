@@ -9,15 +9,13 @@ keywords: 设备, 输入, 交互
 ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c36e60d0435db6536ea7bb0eee3011937668cb7
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395386"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550832"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 应用的设备基础版
 
@@ -133,7 +131,7 @@ UI 注意事项
 
 手机是所有计算设备中最广泛使用的设备，它可以借助有限的屏幕空间和基本输入完成许多操作。 手机有多种尺寸可供选择；较大的手机称为平板手机。 平板手机上的应用体验类似于手机上的应用体验，但平板手机增加的屏幕空间支持在内容使用中进行某些关键更改。
 
-通过适用于手机的 Continuum（这是兼容 Windows 10 移动版设备的一种新体验），用户可以将手机连接到监视器，甚至使用鼠标和键盘来使手机像笔记本电脑一样工作。 （有关详细信息，请参阅[适用于手机的 Continuum 文章](http://go.microsoft.com/fwlink/p/?LinkID=699431)。）
+使用适用于兼容 windows 10 移动版设备，一种新体验的手机的 Continuum 用户可以将手机连接到监视器和甚至使用鼠标和键盘来使手机像笔记本电脑一样工作。 （有关详细信息，请参阅[适用于手机的 Continuum 文章](http://go.microsoft.com/fwlink/p/?LinkID=699431)。）
 
 屏幕尺寸
 -   4 英寸到 5 英寸（对于手机）
@@ -166,7 +164,7 @@ UI 注意事项
 -   移动传感器
 -   位置传感器
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Surface Hub 设备
 
@@ -199,7 +197,7 @@ UI 注意事项
 -   相机
 -   麦克风
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Windows IoT 设备
 

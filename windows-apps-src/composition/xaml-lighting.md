@@ -5,8 +5,6 @@ description: Light 对象与 SceneLightingEffect 结合使用来模拟动态照�
 ms.author: jimwalk
 ms.date: 06/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -14,12 +12,12 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: fae2a222ae20c64e8e8adb2abfa973d62216239e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514868"
+ms.locfileid: "5547352"
 ---
 # <a name="xaml-lighting"></a>XAML 照明
 

@@ -6,20 +6,18 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 83551438a629e39407c24cfd98d4a761ba3c039b
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: 80242b95e64f0d642df0284c94455d60825f6daf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "693225"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549287"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延长显示初始屏幕的时间
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -30,13 +28,13 @@ ms.locfileid: "693225"
 
 通过为你的应用创建延长的初始屏幕，使初始屏幕显示的时间更长。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。 无论你是要显示实时加载信息还是想要简单地为应用提供更多时间来准备其初始 UI，延长的初始屏幕允许你定义启动体验。
 
-> **注意**  本主题中的短语“延长的初始屏幕”是指在屏幕上保留延长时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
+> **注意**中的短语"延长的初始屏幕"本主题是指在屏幕保留延长时间的时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
 
- 
+ 
 
 通过遵循以下建议，确保延长的初始屏幕准确地模仿默认初始屏幕：
 
--   你的延长的初始屏幕页面应该使用 620 x 300 像素的图像，与应用清单中为初始屏幕指定的图像（你的应用的初始屏幕图像）一致。 在 Microsoft Visual Studio 2015 中，初始屏幕设置存储在你的应用清单（Package.appxmanifest 文件）的 **“可见资源”** 选项卡的 **“初始屏幕”** 部分中。
+-   你的延长的初始屏幕页面应该使用 620 x 300 像素的图像，与应用清单中为初始屏幕指定的图像（你的应用的初始屏幕图像）一致。 在 Microsoft Visual Studio2015 初始屏幕设置存储在应用清单 （Package.appxmanifest 文件） 中的**视觉资源**选项卡的**初始屏幕**部分。
 -   你的延长的初始屏幕使用的背景色应该与应用清单中为初始屏幕指定的背景色（你的应用的初始屏幕背景）一致。
 -   你的代码应该使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类将你的应用的初始屏幕图像放置在默认初始屏幕的相同屏幕坐标处。
 -   通过使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类在你的延长的初始屏幕上重新放置项目，你的代码应该响应窗口调整大小事件（例如，在旋转屏幕时或将应用移动到屏幕上靠近另一个应用的位置时）。
@@ -48,7 +46,7 @@ ms.locfileid: "693225"
 
 本主题假设你希望将延长的初始屏幕添加到使用 C#、Visual Basic 或 C++ 的现有通用 Windows 平台 (UWP) 应用。
 
--   在 Visual Studio 2015 中打开你的应用。
+-   在 Visual Studio2015 中打开你的应用。
 -   从菜单栏按下或打开 **“项目”**，然后单击 **“添加新项”**。 将出现 **“添加新项”** 对话框。
 -   从此对话框，向你的应用添加新的 **“空白页”**。 本主题将延长的初始屏幕页命名为“ExtendedSplash”。
 
@@ -77,9 +75,9 @@ ms.locfileid: "693225"
     </Grid>
 ```
 
-**注意**  此代码将 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的宽度设置为 20 像素。 你可以将其宽度手动设置为对你的应用有效的值，但是，该控件无法以小于 20 像素的宽度呈现。
+**注意**此代码将[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)的宽度设置为 20 像素。 你可以将其宽度手动设置为对你的应用有效的值，但是，该控件无法以小于 20 像素的宽度呈现。
 
- 
+ 
 
 ## <a name="essential-code-for-an-extended-splash-screen-class"></a>延长的初始屏幕类的必需代码
 
@@ -221,9 +219,9 @@ ms.locfileid: "693225"
     }
     ```
 
-    **注意**  在你尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效的 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 对象，如该示例中所示。
+    **注意**你尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效的[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)对象，该示例中所示。
 
-     
+     
 
 8.  **（可选）添加类方法以还原保存的会话状态**
 
@@ -267,7 +265,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ## <a name="complete-code"></a>完成代码
 
 
-> **注意**  以下代码与之前步骤中显示的代码段稍有不同。
+> **注意**下面的代码与稍有不同的代码段，在之前步骤中所示。
 -   ExtendedSplash.xaml 包括一个 `DismissSplash` 按钮。 单击此按钮时，事件处理程序 `DismissSplashButton_Click` 将调用 `DismissExtendedSplash` 方法。 在你的应用中，在应用完成资源加载或初始化其 UI 后调用 `DismissExtendedSplash`。
 -   此应用还会使用 UWP 应用项目模板，该模板使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航。 因此，在 App.xaml.cs 中，启动激活处理程序 ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) 将定义一个 `rootFrame` 并使用它来设置应用窗口的内容。
 
@@ -421,7 +419,7 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs：此项目是在 Visual Studio 2015 中使用 UWP 应用 **“空白应用 (XAML)”** 项目模板创建的。 `OnNavigationFailed` 和 `OnSuspending` 事件处理程序均自动生成并且无需进行任何更改即可实现延长的初始屏幕。 此主题将仅修改 `OnLaunched`。
+App.xaml.cs： 此项目已使用的 UWP 应用**空白应用 (XAML)** 项目模板中创建视觉 Studio2015。 `OnNavigationFailed` 和 `OnSuspending` 事件处理程序均自动生成并且无需进行任何更改即可实现延长的初始屏幕。 此主题将仅修改 `OnLaunched`。
 
 如果你没有为应用使用项目模板，请参阅步骤 4：[修改启动激活处理程序](#modify-the-launch-activation-handler)以获取不使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航的已修改 `OnLaunched` 的示例。
 
@@ -552,6 +550,6 @@ namespace SplashScreenExample
 * [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation 属性**](https://msdn.microsoft.com/library/windows/apps/br224765)
 * [**Windows.ApplicationModel.Core.CoreApplicationView.Activated 事件**](https://msdn.microsoft.com/library/windows/apps/br225018)
 
- 
+ 
 
- 
+ 

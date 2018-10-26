@@ -5,15 +5,14 @@ description: 详细了解在生成你的 UWP 应用包时应使用哪些处理�
 ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 打包, 体系结构, 包配置
-ms.openlocfilehash: 70188734e7fc26f66b68d0c31921071c47e8b7a8
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.localizationpriority: medium
+ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2017
-ms.locfileid: "884048"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548705"
 ---
 # <a name="app-package-architectures"></a>应用包体系结构
 
@@ -27,11 +26,11 @@ ms.locfileid: "884048"
 ## <a name="windows-10-devices-and-architectures"></a>Windows 10 设备和体系结构
 
 > [!div class="mx-tableFixed"]
-| UWP 体系结构 | 桌面 (x86)      | 桌面 (x64)      | 桌面 (ARM)      | 移动             | HoloLens           | Xbox               | IoT Core（与设备相关） | 
-|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|
-| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          |
-| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          |
-| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          |
+| UWP 体系结构 | 桌面 (x86)      | 桌面 (x64)      | 桌面 (ARM)      | 移动             | HoloLens           | Xbox               | IoT Core（与设备相关） | Surface Hub        |
+|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
+| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
+| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
+| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
  
 
 下面我们更详细地讨论这些体系结构。 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b882c70701d2ea2f8abef14a7d3319616696ea4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044726"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550189"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位 alpha 纹理
 
@@ -70,7 +68,7 @@ else
 | 2            | Bitmap Word\_0 |
 | 3            | Bitmap Word\_1 |
 
- 
+ 
 
 Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 
@@ -80,7 +78,7 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 | 10:5        | 绿色分量 |
 | 15:11       | 红色分量   |
 
- 
+ 
 
 \*最低有效位
 
@@ -97,7 +95,7 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 | 13:12         | Texel\[1\]\[2\] |
 | 15:14 (MSB\*) | Texel\[1\]\[3\] |
 
- 
+ 
 
 \*最高有效位 (MSB)
 
@@ -114,7 +112,7 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 | 13:12       | Texel\[3\]\[2\] |
 | 15:14 (MSB) | Texel\[3\]\[3\] |
 
- 
+ 
 
 ## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>不透明颜色编码示例
 
@@ -134,9 +132,9 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 
 这看起来像下面说明的一系列颜色。
 
-**注意** 在图像中，像素 (0,0) 显示在左上角。
+**注意**在图像中，像素 (0，0) 显示在左上角。
 
- 
+ 
 
 ![不透明编码梯度示意图](images/redsquares.png)
 
@@ -169,9 +167,9 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 
 [压缩的纹理资源](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

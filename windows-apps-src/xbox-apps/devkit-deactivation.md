@@ -5,17 +5,15 @@ description: 如何停用开发人员模式。
 ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: d1df8d475ec27ff3de7e3d6599e53ec3035cffc6
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 72ff0c79a12e6f9726abda638dfe02aa30ee54e6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516309"
+ms.locfileid: "5572406"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Xbox One 开发人员模式停用
 

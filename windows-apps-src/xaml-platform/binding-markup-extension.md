@@ -6,23 +6,21 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f90821fdadea0939dbad316ad9be4424b31a926
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1573044"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549174"
 ---
 # <a name="binding-markup-extension"></a>{Binding} 标记扩展
 
 
-**注意**  Windows 10 提供了一种新的绑定机制，该机制针对性能和开发人员的工作效率进行了优化。 请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)。
+**注意**一种新的绑定机制是适用于 windows 10，针对性能和开发人员工作效率进行了优化。 请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)。
 
-**注意**  有关将你的应用中的数据绑定与 **{Binding}** 一起使用的一般信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较的一般信息），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的常规信息绑定在你的应用与 **{Binding}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 
             **{Binding}** 标记扩展用于将控件上的属性数据绑定到来自数据源（例如代码）的值。 
@@ -91,7 +89,7 @@ ms.locfileid: "1573044"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定绑定源更新的定时。 如果没有指定，则默认值为 **Default**。 |
 
-**注意**  如果你要将标记从 **{x:Bind}** 转换为 **{Binding}**，那么请注意 **Mode** 属性的默认值差异。
+**注意**如果要将标记从 **{x: Bind}** 转换为 **{Binding}**，则请注意差异处于默认**模式**属性的值。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 
@@ -100,7 +98,7 @@ ms.locfileid: "1573044"
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 和 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 指定一个绑定源，因此它们是互斥的。
 
-**提示**  如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在其前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
+**提示**如果你需要指定单个花括号为某个值，如[**路径**](https://msdn.microsoft.com/library/windows/apps/br209830)或[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)，然后它前面加反斜杠： `\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
 ## <a name="examples"></a>示例
 
@@ -138,4 +136,4 @@ ms.locfileid: "1573044"
 
 当在 XAML 标记编辑器中创作 **{Binding}** 时，Microsoft Visual Studio 中的 Microsoft IntelliSense 将显示数据上下文的相关属性。 只要你键入“{Binding”，适合 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的数据上下文属性便会显示在下拉列表中。 IntelliSense 对 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他属性也能起到帮助作用。 为实现此操作，你必须在标记页中设置数据上下文或设计时数据上下文。 **Go To Definition** (F12) 也可以与 **{Binding}** 一起使用。 或者，你也可以使用数据绑定对话框。
 
- 
+ 

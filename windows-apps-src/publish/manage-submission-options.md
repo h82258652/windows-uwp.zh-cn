@@ -5,16 +5,14 @@ title: 管理提交选项
 ms.author: wdg-dev-content
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 发布暂停, 发布日期, 发送提交以发布, 受限功能审核, windows 10, uwp, publishing hold, publish date, send submission to publish, restricted capability approval
 ms.localizationpriority: medium
-ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 51b816ece884f1464d0dbf039aef5d80e2ca7341
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470477"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548441"
 ---
 # <a name="manage-submission-options"></a>管理提交选项
 
@@ -35,14 +33,14 @@ ms.locfileid: "5470477"
 
 ### <a name="publish-your-submission-manually"></a>手动发布你的提交
 
-如果还不想设置发布日期，并且希望自己的提交保持未发布的状态，直到手动决定启动发布流程为止，则可选择**在我选择“立即发布”前不发布此提交**。 选择此选项意味着将不发布所提交的内容，直到自己做出指示为止。 后你提交通过认证，你可以将其发布通过在认证状态页上，选择**现在发布**或通过相同方式选择特定日期，如下所述。
+如果还不想设置发布日期，并且希望自己的提交保持未发布的状态，直到手动决定启动发布流程为止，则可选择**在我选择“立即发布”前不发布此提交**。 选择此选项意味着将不发布所提交的内容，直到自己做出指示为止。 在你提交通过认证后你可以将其发布通过在认证状态页上，选择**现在发布**或通过相同方式选择特定日期，如下所述。
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>在特定日期开始发布你的提交
 
 选择**于此日期开始发布此提交**来确保在特定日期之前不发布提交。 使用此选项，你的提交将在你指定的日期当天或之后立即发布。 该日期必须为 24 小时之后的一个日期。 除了日期，还可指定开始发布提交的时间。 
 
-你可以更改此后，将产品提交的发布日期，只要它尚未进入发布步骤。 
+你可以更改此之后，将产品提交的发布日期，只要它尚未进入发布步骤。 
  
 如前文所述，如果你希望为提交指定特定的发布日期，请使用**通过认证后立即发布此提交（或按照计划部分中选择的日期）** 并将**发布暂停选项**保留为默认选择。 使用**于此日期开始发布此提交**选项意味着你的提交在这个日期之前不会开始发布过程，不过认证或发布期间的推迟可能导致实际发布日期晚于你选择的日期。 
 

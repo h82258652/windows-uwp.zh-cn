@@ -6,16 +6,14 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a66faebf8447253cc158ea8aa2312eb61474bc08
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675254"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550691"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移动和绘制命令语法
 
@@ -83,7 +81,7 @@ ms.locfileid: "1675254"
 
 大写 **M** 指示 *startPoint* 是绝对坐标；小写 **m** 指示 *startPoint* 是上一个点的偏移或 (0,0)（如果没有上一个点）。
 
-**注意** 在移动命令后指定多个点是合法的。 向这些点绘制一条直线，就像你指定了直线命令一样。 但是这不是建议的样式；请改为使用专门的直线命令。
+**注意**是合法在移动命令后指定多个点。 向这些点绘制一条直线，就像你指定了直线命令一样。 但是这不是建议的样式；请改为使用专门的直线命令。
 
 **绘制命令**
 
@@ -141,7 +139,7 @@ ms.locfileid: "1675254"
 |------|-------------|
 | *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第一个控制点，可确定曲线的开始切线。 |
 | *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第二个控制点，可确定曲线的结束切线。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
 
 **二次方贝塞尔曲线命令**
 
@@ -197,7 +195,7 @@ ms.locfileid: "1675254"
 | *isLargeArcFlag* | 如果圆弧的角度应为 180 度或更大，则设置为 1；否则，设置为 0。 |
 | *sweepDirectionFlag* | 如果圆弧以正角方向绘制，则设置为 1；否则，设置为 0。 |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
- 
+ 
 **关闭命令**
 
 结束当前图形，并创建一条可将当前点连接到图形起点的直线。 此命令将在该图形的最后一条线段和第一条线段之间创建一个直线接头（转角）。
@@ -212,7 +210,7 @@ ms.locfileid: "1675254"
 
 | 语法 |
 |--------|
-| *x*,*y*<br/> - 或 - <br/>*x* *y* |
+| *x*,*y*<br/> - 或 - <br/>*x**y* |
 
 | 术语 | 描述 |
 |------|-------------|
@@ -231,7 +229,7 @@ ms.locfileid: "1675254"
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>用于生成移动和绘制命令的设计工具
 
-在 Blend for Microsoft Visual Studio 2015 中使用**笔**工具和其他绘图工具通常会生成一个具有移动和绘制命令的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 对象。
+在 Blend for Microsoft Visual Studio2015 中使用**触控笔**工具和其他绘图工具通常将生成[**路径**](/uwp/api/Windows.UI.Xaml.Shapes.Path)对象，与移动和绘制命令。
 
 你可能在某些控件部件中看到现有移动和绘制命令数据，这些部件已在控件的 Windows 运行时 XAML 默认模板中定义。 例如，某些控件将已定义数据的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 用作移动和绘制命令。
 

@@ -6,8 +6,6 @@ description: 访问位于文件夹、库、设备或网络位置的文件和文�
 ms.author: lahugh
 ms.date: 06/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
@@ -15,12 +13,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 13aa22906e9c5ba64237b2c69025143060ff85a9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5527265"
+ms.locfileid: "5549574"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 

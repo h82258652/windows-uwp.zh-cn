@@ -6,19 +6,17 @@ description: 用户希望他们的应用保持响应性、感觉自然，并且�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894783"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547879"
 ---
 # <a name="planning-for-performance"></a>规划性能
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。
@@ -44,7 +42,7 @@ ms.locfileid: "894783"
 | 连续的              | 不再感觉到有响应      | 500 毫秒 | 5 秒        | 从 Internet 下载文件                                            |
 | 卡住                 | 时间长；用户可能切换    | 500 毫秒 | 10 秒       | 从应用商店安装多个应用                                         |
 
- 
+ 
 
 你现在可以向应用的性能方案分配交互类。 你可以向每种方案分配应用的时间点引用、部分用户体验以及一个交互类。 以下是针对餐饮应用示例的一些建议。
 
@@ -175,7 +173,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
--   在将你的应用提交到应用商店以进行认证之前，请确保将测试计划合并到性能相关测试案例中，如 [Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)中的“性能测试”部分以及 [Windows 应用商店应用测试案例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的“性能和稳定性”部分所述。
+-   你在将应用提交到应用商店进行认证之前，请确保你测试将计划合并到性能相关测试用例的[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)和中的"性能测试"部分中所述"性能和[UWP 应用测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的稳定性"部分。
 
 有关详细信息，请参阅以下资源和分析工具。
 

@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1ba185e70a34a4e7bfed0609412ac7bbca2d4a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653686"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550918"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
  
@@ -32,20 +30,19 @@ ms.locfileid: "1653686"
 
 有关在 XAML 和 C# 中添加控件和设置其样式的常规说明和代码示例。
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">添加控件和处理事件</a></b> <br/>
-向应用添加控件有 3 个关键步骤：将控件添加到应用 UI、在控件上设置属性，然后将代码添加到控件的事件处理程序，以使其执行某个操作。</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">设置控件的样式</a></b> <br/>
-可以使用 XAML 框架通过多种方式自定义应用的外观。 通过样式可以设置控件属性，并重复使用这些设置，以便使多个控件具有一致的外观。</p>
-  </div>
-</div>
-</div>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">添加控件和处理事件</a></b> <br/>
+向应用添加控件有 3 个关键步骤：将控件添加到应用 UI、在控件上设置属性，然后将代码添加到控件的事件处理程序，以使其执行某个操作。</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">设置控件的样式</a></b> <br/>
+可以使用 XAML 框架通过多种方式自定义应用的外观。 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。</p>
+    :::column-end:::
+:::row-end:::
+
+## <a name="get-the-windows-ui-library"></a>获取 Windows UI 库
+某些控件的 Windows UI 库中才可用。 若要获取它，请参阅[Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。
 
 ## <a name="alphabetical-index"></a>按字母顺序排序的索引 
 
@@ -67,7 +64,7 @@ ms.locfileid: "1653686"
 
 <li style="list-style-type: none;"><a href="date-and-time.md">日期和时间控件</a></li>
 
-<li style="list-style-type: none;"><a href="dialogs.md">对话框和浮出控件</a></li>
+<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">对话框和浮出控件</a></li>
 
 <li style="list-style-type: none;"><a href="flipview.md">翻转视图</a></li>
 
@@ -95,11 +92,13 @@ ms.locfileid: "1653686"
 
 <li style="list-style-type: none;"><a href="person-picture.md">个人图片</a></li>
 
+<li style="list-style-type: none;"><a href="pivot.md">透视表</a></li>
+
 <li style="list-style-type: none;"><a href="progress-controls.md">进度控件</a></li>
 
 <li style="list-style-type: none;"><a href="radio-button.md">单选按钮</a></li>
 
-<li style="list-style-type: none;"><a href="rating.md">分级控件</a></li>
+<li style="list-style-type: none;"><a href="rating.md">评分控件</a></li>
 
 <li style="list-style-type: none;"><a href="scroll-controls.md">滚动和平移控件</a></li>
 
@@ -112,8 +111,6 @@ ms.locfileid: "1653686"
 <li style="list-style-type: none;"><a href="slider.md">滑块</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">拆分视图</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">表和透视表</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">文本控件</a></li>
 

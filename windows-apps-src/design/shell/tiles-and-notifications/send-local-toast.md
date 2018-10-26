@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 656e6123db1fc9ea0f3d8c6b6fb106864200e431
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 95f72180038b6ccbed5f399c2cd58081915baf2c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479196"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548411"
 ---
 # <a name="send-a-local-toast-notification"></a>发送本地 toast 通知
 

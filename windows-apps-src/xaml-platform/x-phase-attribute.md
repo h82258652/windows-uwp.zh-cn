@@ -6,18 +6,17 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a629fb07bfa2e3f8bb3d070e9fe4994baba4336b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 17ee99553b5713acb1917ccb697abb2387d00da2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205602"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549194"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 将 **x:Phase** 与 [{x:Bind} 标记扩展](x-bind-markup-extension.md)结合使用，以便能以增量方式呈现 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 项并改进平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
@@ -33,7 +32,7 @@ ms.locfileid: "205602"
 
 | 术语 | 说明 |
 |------|-------------|
-| PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 | 
+| PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 | 
 
 ## <a name="remarks"></a>备注
 
@@ -45,23 +44,23 @@ ms.locfileid: "205602"
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
-    <Grid Width="200" Height="80">
-        <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="75" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
-        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
-        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
-        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
-        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
-    </Grid>
+    <Grid Width="200" Height="80">
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
+        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
+        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
+        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
+        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
+    </Grid>
 </DataTemplate>
 ```
 
@@ -82,5 +81,5 @@ ms.locfileid: "205602"
 
 阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
 
-仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
+仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 windows 10，这意味着[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)和[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
 

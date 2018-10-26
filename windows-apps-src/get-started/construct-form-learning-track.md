@@ -5,16 +5,14 @@ description: 了解在应用中创建可靠表单所需完成的工作。
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 2d1018857d727d1cc96ded813390a397c6d94e44
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517093"
+ms.locfileid: "5560586"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 

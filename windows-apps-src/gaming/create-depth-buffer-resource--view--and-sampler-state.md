@@ -6,19 +6,18 @@ ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, direct3d, 深度缓冲区
-ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 091ac04b2a41c54fbce7294bcf6651f4ad4aafd2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204257"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549329"
 ---
 # <a name="create-depth-buffer-device-resources"></a>创建深度缓冲区设备资源
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 1 部分。
@@ -261,9 +260,9 @@ m_shadowViewport.MaxDepth = 1.f;
 
 在本操作实例的下一部分中，将介绍如何通过[呈现到深度缓冲区](render-the-shadow-map-to-the-depth-buffer.md)来创建阴影映射。
 
- 
+ 
 
- 
+ 
 
 
 

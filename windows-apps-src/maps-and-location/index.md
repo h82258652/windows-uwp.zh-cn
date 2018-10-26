@@ -6,29 +6,28 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 地图服务
-ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665333"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548219"
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本部分介绍你可以如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。
+本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。
 
-> **提示** 若要了解有关在应用中使用地图和位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载以下示例：
+> [!TIP]
+> 若要了解有关你的应用中使用地图和位置的详细信息，请从 GitHub 上的[Windows 通用示例存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载以下示例：
 -   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
- 
+ 
 
 ## <a name="display-maps"></a>显示地图
 
@@ -46,7 +45,7 @@ ms.locfileid: "665333"
 
 ## <a name="access-map-services"></a>访问地图服务
 
-通过使用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中的 API 将路线、方向和地理编码功能添加到你的应用。 你还可以通过将“设置”应用直接启动到相应的页面来帮助用户管理离线地图。
+通过使用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中的 API 将路线、方向和地理编码功能添加到你的应用。
 
 | 主题 | 说明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +53,7 @@ ms.locfileid: "665333"
 | [在地图上显示目标点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 |
 | [显示路线和方向](routes-and-directions.md) | 请求路线和方向并在应用中显示它们。 |
 | [执行地理编码和反向地理编码](geocoding.md) | 通过调用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
-
+| [查找并下载供离线使用的地图包](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在过去，你的应用必须将用户定向到设置应用下载离线地图。 现在，可以使用类[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空间中以查找 （基于[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)等。） 在给定区域中的已下载的程序包。 <br> 你可以也检查侦听的地图包下载状态以及无需用户离开你的应用开始下载。 <br> 你可以找到有关如何执行此操作的参考内容和[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例。
 
 ## <a name="get-the-users-location"></a>获取用户的位置
 
@@ -64,7 +63,8 @@ ms.locfileid: "665333"
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [请求地图身份验证密钥](authentication-key.md) | 应用必须先进行身份验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
 | [位置感知应用设计指南](guidelines-and-checklist-for-detecting-location.md) | 需要访问用户位置的应用的性能指南。 |
-| [获取用户的位置](get-location.md) | 获取对用户位置的访问权限，然后检索该位置。 |
+| [获取用户的位置](get-location.md) | 获取对用户位置的访问权限，然后检索该位置。 | 
+| [有关使用访问跟踪的指南](guidelines-for-visits.md) | 了解如何使用功能强大的访问跟踪功能进行更实用的位置跟踪。 |
 | [地理围栏设计指南](guidelines-for-geofencing.md) | 使用地理围栏功能的应用的性能指南。 |
 | [设置地理围栏](set-up-a-geofence.md) | 在你的应用中设置地理围栏并了解如何处理前台和后台中的通知。 |
 

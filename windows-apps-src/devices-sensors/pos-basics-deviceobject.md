@@ -3,18 +3,16 @@ author: TerryWarwick
 title: PointOfService 设备对象
 description: 了解如何创建 PointOfService 设备对象
 ms.author: jken
-ms.date: 06/4/2018
+ms.date: 06/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: eaaeeae3e21549510258ee9370ef6ffb0d9f9020
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 31af943ab4a9231f58fb2e3d5489e9ae80d8d565
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976714"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5550126"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService 设备对象
 
@@ -24,16 +22,18 @@ ms.locfileid: "1976714"
 此示例尝试通过使用 DeviceID 的 FromIdAsync 创建新的 BarcodeScanner 对象。 如果创建对象时出现问题，将写入调试消息。
 
 ```Csharp
-using windows.devices.enumeration;
 
-try
-{
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
-}
-catch (Exception ex)
-{
-    Debug.WriteLine("Failure: - " + ex.Message);
-}
+
+    if(barcodeScanner != null)
+    {
+        // after successful creation, claim the scanner for exclusive use and enable it to exchange data
+    }
+    else
+    {
+        Debug.WriteLine("Failure to create barcodeScanner object");
+    }
+    
 ```
 
 有了设备对象后，你可以访问设备的方法、属性和事件。  
