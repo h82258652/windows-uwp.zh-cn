@@ -5,16 +5,14 @@ description: 了解 XSAPI C API 的异步 C API 调用模式
 ms.author: aablackm
 ms.date: 06/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d862114f95a3b6f1e9c519f37f2d3eacc32de4d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b247a69e0def8a2e3a62a8c05a8fac3106bded35
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473971"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568363"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 

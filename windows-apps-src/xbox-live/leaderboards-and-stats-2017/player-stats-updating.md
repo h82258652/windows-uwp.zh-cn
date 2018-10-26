@@ -6,16 +6,14 @@ ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
 ms.author: kevinasg
 ms.date: 08/24/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, stats 2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d52b102d46efa1a2e6d35dedd46e6aba577977
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6f61858347955bde007d97420cfb33d8e0298fd2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470640"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566872"
 ---
 # <a name="updating-stats-2017"></a>更新 Stats 2017
 

@@ -6,16 +6,14 @@ ms.assetid: 6cb2cb10-811a-4b20-9b9b-a3fc59a033c2
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, 上下文搜索, 游戏剪辑, 广播
 ms.localizationpriority: medium
-ms.openlocfilehash: 79197dc7db3f15aba5fc9d494a5e8408878f0dba
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 7e1b63693ac3d6d1cb68a15a2c32bf730cf54dec
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473087"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567730"
 ---
 # <a name="configuring-contextual-search"></a>配置上下文搜索
 

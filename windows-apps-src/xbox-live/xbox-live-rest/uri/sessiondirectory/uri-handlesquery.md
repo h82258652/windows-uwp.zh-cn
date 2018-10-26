@@ -7,16 +7,14 @@ description: " /handles/query"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: fbb8a823581f357e42cd13bb1331808584301f5e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 12a56d730a85d1e7ecaafa4dde1e78c6531dc3f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481990"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565853"
 ---
 # <a name="handlesquery"></a>/handles/query
 支持创建会话句柄查询 POST 操作。 

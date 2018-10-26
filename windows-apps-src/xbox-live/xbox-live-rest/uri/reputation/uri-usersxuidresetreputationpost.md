@@ -7,16 +7,14 @@ description: " POST (/users/xuid({xuid})/resetreputation)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fefcfd0f49449095b08a1463931513440bc69c1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a297b98e278c80312ab52cec5fd84efec0d28647
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472077"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562155"
 ---
 # <a name="post-usersxuidxuidresetreputation"></a>POST (/users/xuid({xuid})/resetreputation)
 启用后 （例如） 帐户劫持某些任意值设置指定的用户的信誉评分，强制执行团队。 这些 Uri 的域是`reputation.xboxlive.com`。

@@ -7,16 +7,14 @@ description: " Requirement (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4a020d81a45aabd6253ba11e8e9ac5bb8b6c4a77
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471412"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571685"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
 成就和用户向会议它们是距离解锁条件。 
