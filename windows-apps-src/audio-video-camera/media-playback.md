@@ -6,19 +6,17 @@ title: 媒体播放
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 888131d37a86793d67ce71376b158bd7de734331
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: dbcd2a4f9cec02882c62c7d6493746931b7919a8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2017
-ms.locfileid: "837020"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557547"
 ---
 # <a name="media-playback"></a>媒体播放
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分将提供有关创建可播放音频和视频的通用 Windows 应用的信息。 
 
@@ -46,7 +44,7 @@ ms.locfileid: "837020"
 * [自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)
 * [后台音频示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 * [系统媒体传输示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)                                                                                               
- 
+ 
 
 
 

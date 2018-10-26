@@ -6,19 +6,18 @@ ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, opengl, direct3d
-ms.openlocfilehash: d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 2308c0b931b58209d1233205c355ac09680803dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204390"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554762"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>规划从 OpenGL ES 2.0 到 Direct3D 的移植
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -65,7 +64,7 @@ Direct3D 11 为 11\_1 提供对 9\_1 (Direct3D 9.1) 的硬件“功能级别”�
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath 提供一组 API 和宏，用于处理常见的线性代数和三角函数类型、值以及函数。 这些类型和函数设计为与 Direct3D 及其着色器操作很好地结合使用。                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | [DirectX HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509580) | Direct3D 着色器使用的当前 HLSL 语法。 它实现 Direct3D 着色器模型 5.0。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="review-the-windows-runtime-apis-and-template-library"></a>查看 Windows 运行时 API 和模板库
 
@@ -108,7 +107,7 @@ Windows 运行时 API 为 UWP 应用提供整体基础结构。 [在此处](http
 | [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | 构建一个自定义版本的右手透视投影矩阵。                                                    |
 | [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | 构建一个右手透视投影矩阵。                                                                        |
 
- 
+ 
 
 ## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>OpenGL ES2.0 到 Direct3D 11 移植常见问题解答
 
@@ -116,9 +115,9 @@ Windows 运行时 API 为 UWP 应用提供整体基础结构。 [在此处](http
 -   问题：“通常情况下，我可以在我的 OpenGL 代码中搜索某些字符串或模式并将它们替换为 Direct3D 同等内容？”
 -   解答：不可以。 OpenGL ES 2.0 和 Direct3D 11 来自不同的图形管道模型。 尽管它们表面上在概念和 API 之间有一些相似之处，如呈现上下文和着色器的实例化，但你也应该查看本指南以及 Direct3D 11 参考以便再次创建管道时你可以做出最佳选择，而不是尝试 1 对 1 映射。 但是，如果你从 GLSL 移植到 HLSL，那么为 GLSL 变量、内部函数以及函数创建一组常用的别名不仅会使移植更加容易，而且还可以保留唯一一组着色器代码文件。
 
- 
+ 
 
- 
+ 
 
 
 

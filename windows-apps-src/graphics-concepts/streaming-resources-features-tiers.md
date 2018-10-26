@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fcedcdfa6470a4c17c964cd0ae341e1ccf3b3a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bc7d04a826bd8be0947e8d84ab8dbff6f67e8027
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652866"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555134"
 ---
 # <a name="streaming-resources-features-tiers"></a>流式资源功能层
 
@@ -61,16 +59,16 @@ Direct3D 版本提供查询功能，可验证支持流式资源的硬件和驱�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [流式资源](streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

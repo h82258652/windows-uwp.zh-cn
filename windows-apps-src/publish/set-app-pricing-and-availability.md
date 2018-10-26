@@ -6,16 +6,14 @@ ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 价格, 可用, 可发现, 免费试用版, 试用版, 试用, 应用, 发布日期
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 0f394bbe644d679b48c239a305594900ca0f7e46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519961"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552773"
 ---
 # <a name="set-app-pricing-and-availability"></a>设置应用定价和可用性
 

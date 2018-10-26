@@ -6,19 +6,17 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894743"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553857"
 ---
 # <a name="optimize-your-xaml-layout"></a>优化 XAML 布局
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -28,7 +26,7 @@ ms.locfileid: "894743"
 
 ## <a name="reduce-layout-structure"></a>减少布局结构
 
-布局性能的最大收益来自于简化 UI 元素树的层次结构。 可视化树中存在面板，但它们是结构元素，而不是*像素生成元素*（如 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 或 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)）。 通过减少非像素生成元素来简化树通常可以显著提高性能。
+布局性能的最大收益来自于简化 UI 元素树的层次结构。 可视化树中存在面板，但它们是结构元素，而不是*像素生成元素*（如 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 或 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)）。 通过减少非像素生成元素来简化树通常可以显著提高性能。
 
 许多 UI 通过嵌套面板来实现，这可能导致更深层、复杂的面板和元素树。 嵌套面板很方便，但在许多情况下，使用更复杂的单个面板可以实现相同的 UI。 使用单个面板可提供更好的性能。
 
@@ -138,7 +136,7 @@ ms.locfileid: "894743"
 
 常见的 UI 要求是具有元素互相重叠的布局。 通常填充、边距、对齐和转换用于以这种方式定位元素。 已优化 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控件以提高重叠元素的布局性能。
 
-**重要提示**  若要查看改进，请使用单个单元格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要提示**若要查看改进，请使用单个单元[**网格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### <a name="examples"></a>示例
 

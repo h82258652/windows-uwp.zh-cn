@@ -1,27 +1,25 @@
 ---
-title: Direct3D 图形概念
-description: 介绍 Microsoft Direct3D 所基于的图形概念。
+title: Direct3D 图形词汇表
+description: 定义由 Microsoft Direct3D 图形术语。
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-- Direct3D 图形学习指南
+- Direct3D 图形词汇表
 author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1fed9eaf3003bc67a86a5282fccbb923019a36
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0e325494cefeab4cf3ed40939f5b24de5e921b68
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653016"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555573"
 ---
-# <a name="direct3d-graphics-concepts"></a>Direct3D 图形概念
+# <a name="direct3d-graphics-glossary"></a>Direct3D 图形词汇表
 
 
-介绍 Microsoft Direct3D 图形概念。 本指南介绍 Direct3D 游戏和应用开发中使用的一般 3D 计算机图形概念。
+定义 Microsoft Direct3D 图形术语。 本词汇表定义，在高级别、 一般 3D 计算机图形条款的开发中使用 Direct3D 游戏和应用。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本部分内容
 
@@ -89,8 +87,8 @@ ms.locfileid: "1653016"
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 

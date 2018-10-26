@@ -7,21 +7,19 @@ keywords: 联系人，选择 选择单个联系人 选择多个联系人 联系�
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.openlocfilehash: 861d3d7a68596cbec289050391775d665ac6979d
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665093"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557038"
 ---
 # <a name="select-contacts"></a>选择联系人
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-[**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
+[**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用于选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
 
 ## <a name="set-up-the-contact-picker"></a>设置联系人选取器
 

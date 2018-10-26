@@ -6,22 +6,20 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2271c8029a733e1ab05c19b2110352fee5b04fc2
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663947"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558865"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
 可以使用**自动播放**功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用**自动播放**功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
 
-> **注意**  如果你是设备制造商，而且希望将你的 [Microsoft Store 设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)关联为设备的**自动播放**处理程序，则可以在设备元数据中标识该应用。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **注意**如果你是设备制造商，并且你想要为你的设备的**自动播放**处理程序关联[的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)，你可以中标识该应用在设备元数据。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
 
 ## <a name="register-for-autoplay-content"></a>注册自动播放内容
 
@@ -36,7 +34,7 @@ ms.locfileid: "1663947"
 | 共享音乐  | PlayMusicFilesOnArrival |
 | 共享视频 | PlayVideoFilesOnArrival |
 
- 
+ 
 使用邻近感应共享文件时，**FileActivatedEventArgs** 对象的 **Files** 属性包含对拥有所有共享文件的根文件夹的引用。
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步骤 1：创建新项目并添加自动播放声明
@@ -110,7 +108,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意**  将在以下步骤中添加 `DisplayImages` 和 `CopyImages` 方法。
+> **注意**`DisplayImages`和`CopyImages`方法会在以下步骤。
 
 ### <a name="step-4-add-code-to-display-images"></a>步骤 4：添加用于显示图像的代码
 
@@ -222,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果你的相机内存卡将图片存储在 AVCHD 或 PRIVATE\ACHD 文件夹中，则将需要相应地更新代码。
-    **注意**  如果你没有相机内存卡，则可以使用闪存驱动器（只要它在根目录中具有一个名为 **DCIM** 的文件夹，并且 DCIM 文件夹具有一个包含图像的子文件夹）。
+    **注意**如果你没有相机内存卡，如果它具有一个名为根目录中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹，其中包含图像，你可以使用闪存驱动器。
 
 ## <a name="register-for-an-autoplay-device"></a>注册自动播放设备
 
@@ -231,9 +229,9 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 下面显示了如何将应用标识为在将相机连接到电脑时的**自动播放**选项。 此应用会注册为 **WPD\\ImageSourceAutoPlay** 事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
 
-**重要提示**  [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用只能在属于桌面设备系列的 Windows 10 设备（例如电脑）上使用这些 API。
+**重要提示** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用可以仅在桌面设备系列，例如电脑中的 windows 10 设备上使用这些 Api。
 
- 
+ 
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步骤 1：创建新项目并添加自动播放声明
 
@@ -340,7 +338,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **注意**  将在以下步骤中添加 `ShowImages` 方法。
+> **注意**`ShowImages`方法将在以下步骤中添加。
 
 ### <a name="step-5-add-code-to-display-device-information"></a>步骤 5：添加用于显示设备信息的代码
 
@@ -368,7 +366,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **注意**  将在以下步骤中添加 `GetImageList` 和 `GetThumbnail` 方法。
+> **注意**`GetImageList`和`GetThumbnail`方法会在以下步骤中。
 
 ### <a name="step-6-add-code-to-display-images"></a>步骤 6：添加用于显示图像的代码
 
@@ -411,7 +409,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行你的应用，请将相机连接到你的计算机。 然后从“自动播放”选项列表中选择该应用。
-    **注意**  并非所有相机都针对 **WPD\\ImageSource** 自动播放设备事件进行公布。
+    **注意**并非所有相机都播发**WPD\\ImageSource**自动播放设备事件。
 
 ## <a name="configure-removable-storage"></a>配置可移动存储
 
@@ -436,8 +434,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 2.  打开 Package.appxmanifest 文件，选择**功能**选项卡。选择**可移动存储**功能。 这使应用能够访问可移动存储设备上的文件和文件夹。
 3.  在清单文件中，选择**声明**选项卡。在**可用声明**下拉列表中，选择**自动播放内容**，然后单击**添加**。 选择已添加到**支持的声明**列表中的新**自动播放内容**项。
 
-    **注意**  此外，你还可以选择为自定义“自动播放”事件添加**自动播放设备**声明。
-    
+    **注意**或者，你还可以选择要添加自定义自动播放事件**自动播放设备**声明。  
 4.  在**自动播放内容**事件声明的**启动操作**部分中，为第一个启动操作输入下表中的以下值。
 5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新**文件类型关联**声明的“属性”中，将**显示名称**字段设置为**显示 .ms 文件**，并将**名称**字段设置为 **ms\_association**。 在**支持的文件类型**部分中，单击**新增**。 将**文件类型**字段设置为 **.ms**。 对于内容事件，“自动播放”功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
@@ -480,9 +477,9 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意**  将在以下步骤中添加 `DisplayFiles` 方法。
+> **注意**`DisplayFiles`方法将在以下步骤中添加。
 
- 
+ 
 
 ### <a name="step-5-add-code-to-display-folders"></a>步骤 5：添加用于显示文件夹的代码
 
@@ -519,7 +516,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 使用**自动播放**系统，应用可以注册各种设备和卷（磁盘）到达事件。 若要注册**自动播放**内容事件，则必须在程序包清单中启用**可移动存储**功能。 此表显示了可以注册的事件及其引发时间。
 
-| 方案                                                           | 事件                              | 描述   |
+| 方案                                                           | 事件                              | 说明   |
 |--------------------------------------------------------------------|------------------------------------|---------------|
 | 使用相机上的照片                                           | **WPD\ImageSource**                | 针对标识为 Windows Portable Devices 且提供 ImageSource 功能的相机引发。 |
 | 使用自动播放器上的音乐                                     | **WPD\AudioSource**                | 针对标识为 Windows Portable Devices 且提供 AudioSource 功能的媒体播放器引发。 |
@@ -558,6 +555,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
   </Applications>
 ```
 
- 
+ 
 
- 
+ 

@@ -6,20 +6,22 @@ title: 传统后台媒体播放
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 68695125c2056adca8186120db7875cb3a68baf8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 319343a06eeb49fc4ec0ca2fcd340f655654f718
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204342"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554633"
 ---
 # <a name="legacy-background-media-playback"></a>传统后台媒体播放
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍了传统双进程模型，用于向 UWP 应用添加后台音频支持。 从 Windows 10 版本 1607 开始，后台音频的单进程模型更易于实现。 有关后台音频的当前建议的详细信息，请参阅[在后台播放媒体](background-audio.md)。 本文旨在为已使用传统双进程模型进行开发的应用提供支持。
+
+> [!NOTE]
+> 从 Windows 版本 1703 中，开始**BackgroundMediaPlayer**已弃用，并且可能不能在未来版本的 Windows。
 
 ## <a name="background-audio-architecture"></a>后台音频体系结构
 
@@ -121,9 +123,9 @@ ms.locfileid: "204342"
 | **共享生命周期**    | 已启用  | 已禁用 | 已禁用 |
 
 
- 
+ 
 
- 
+ 
 
 
 

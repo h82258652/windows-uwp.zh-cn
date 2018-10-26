@@ -6,27 +6,26 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e9f0a148238b8f91c4643954c7f575e742f69d5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205560"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553411"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。 如果数组的内容用于输入，该方法将从该数组进行读取而不是对其进行写入。 如果数组的内容用于输出，该方法将对该数组进行写入而不是从中进行读取。 这会带来数组参数问题，因为 .NET Framework 中的数组是引用类型，而且即使通过值（在 Visual Basic 中为 **ByVal**）传递数组引用，数组的内容仍具有可变性。 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 需要你通过将 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性应用于参数，指定数组（如果该数组未从上下文中清除）的预期用途。 数组用途已确定，如下所示：
 
 -   对于返回值或输出参数（在 Visual Basic 中为带有 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性的 **ByRef** 参数），数组始终仅用于输出。 不会应用 ReadOnlyArrayAttribute 属性。 输出参数上允许有 WriteOnlyArrayAttribute 属性，但是多余的。
 
-    > **注意**  Visual Basic 编译器不强制执行仅输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
- 
+    > **警告**Visual Basic 编译器不强制执行仅输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
+ 
 -   不允许具有 **ref** 修饰符（在 Visual Basic 中为 **ByRef**）的参数。 Winmdexp.exe 会生成错误。
 -   对于通过值传递的参数，必须通过应用 [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性或 [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性来指定数组内容是用于输入还是用于输出。 同时指定这两个属性是一个错误。
 

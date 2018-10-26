@@ -6,15 +6,15 @@ title: 将你的应用与联系人卡片上的操作关联起来
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 联系人, 联系人卡片, 注释
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
-ms.openlocfilehash: e882566fcc81941669dd4844235bcbd899ea3079
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: eb1c01a4fe370f899da185dc39b7d3abe6a1904e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204310"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558825"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 

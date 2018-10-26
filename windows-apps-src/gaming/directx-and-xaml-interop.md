@@ -6,16 +6,14 @@ ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, xaml 互操作
 ms.localizationpriority: medium
-ms.openlocfilehash: 107501bb06af62035e78ef1ac65291b2bdec5c62
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674984"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555177"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 和 XAML 互操作
 
@@ -25,9 +23,9 @@ ms.locfileid: "1674984"
 
 如果你的应用主要侧重于 2D 呈现，你可能需要使用 [Win2D](https://github.com/microsoft/win2d) Windows 运行时库。 此库由 Microsoft 维护，并且基于核心 Direct2D 技术生成。 它大大简化了实现 2D 图形的使用模式，并包括对本文档中所述的某些技术的有用抽象。 有关更多详细信息，请参阅项目页面。 本文档介绍有关选择*不*使用 Win2D 的应用开发人员的指南。
 
-> **注意**  DirectX API 没有定义为 Windows 运行时类型，所以通常使用 Visual C++ 组件扩展 (C++/CX) 来开发可与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
+> **注意**DirectX Api 没有定义为 Windows 运行时类型，所以通常使用 VisualC + + 组件扩展 (C + + CX) 来开发可与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
 
- 
+ 
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
@@ -386,7 +384,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 > **注意**   通常，你的 DirectX 应用应当在横向创建交换链，并等于显示窗口大小（这在大多数 Microsoft Store 游戏中通常为本机屏幕分辨率）。 这可确保你的应用在没有任何可见 XAML 覆盖时使用最佳交换链实现。 如果应用旋转到纵向模式，你的应用应在现有交换链上调用 [IDXGISwapChain1::SetRotation](https://msdn.microsoft.com/library/windows/desktop/hh446801)，根据需要应用内容转换，然后在同一交换链上再次调用 [SetSwapChain](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 类似地，每当通过调用 [IDXGISwapChain::ResizeBuffers](https://msdn.microsoft.com/library/windows/desktop/bb174577) 调整了交换链的大小时，你的应用都应当再次在同一交换链上调用**SetSwapChain**。
 
 
- 
+ 
 
 这是在代码隐藏文件中创建和更新 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) 对象的基本过程。
 
@@ -471,9 +469,9 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
 * [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
- 
+ 
 
- 
+ 
 
 
 

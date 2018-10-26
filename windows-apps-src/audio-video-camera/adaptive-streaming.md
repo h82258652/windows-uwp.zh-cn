@@ -6,16 +6,14 @@ title: 自适应流式处理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae99a7a92ce933c8536dc30f9807d60a1441a809
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: ef8e3ab4abd9ee9159dc7d5aa757f55e00817a51
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912965"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551563"
 ---
 # <a name="adaptive-streaming"></a>自适应流式处理
 
@@ -120,10 +118,10 @@ ms.locfileid: "1912965"
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [HLS 标记支持](hls-tag-support.md) 
-* [Dash 配置文件支持](dash-profile-support.md) 
+* [HLS 标记支持](hls-tag-support.md) 
+* [Dash 配置文件支持](dash-profile-support.md) 
 * [使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
-* [在后台播放媒体](background-audio.md) 
+* [在后台播放媒体](background-audio.md) 
 
 
 

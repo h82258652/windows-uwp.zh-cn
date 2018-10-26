@@ -9,15 +9,13 @@ keywords: 键盘, 文本, 核心文本, 自定义文本, 文本服务框架, 输
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 734d18d7320ecc3157fbc9896db28989e0791e8d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655559"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555409"
 ---
 # <a name="custom-text-input"></a>自定义文本输入
 
@@ -63,7 +61,7 @@ ms.locfileid: "1655559"
 | **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 范围的起始位置是紧接第一个字符前的 ACP。 |
 | **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 范围的结束位置是紧接最后一个字符后的 ACP。     |
 
- 
+ 
 
 例如，在前面显示的文本范围中，范围 \[0, 5\] 可指定单词 “Hello”。 **StartCaretPosition** 必须始终小于或等于 **EndCaretPosition**。 范围 \[5, 0\] 无效。
 
@@ -159,7 +157,6 @@ ms.locfileid: "1655559"
 
 **示例**
 * [自定义编辑控件示例](https://go.microsoft.com/fwlink/?linkid=831024)
- 
 **存档示例**
 * [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 

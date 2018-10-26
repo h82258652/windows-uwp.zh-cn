@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a648d9366a3abcedd9fd75328cf0f504a9f84c
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: 7555f4a61f7798fa32d137928cde8c042a7fcdfc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992073"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553702"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>方案 1：从字符串资源和资产文件生成 PRI 文件
 在此方案中，我们使用[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) 让新应用代表我们的自定义生成系统。 请记住，此自定义生成系统的目的是为目标 UWP 应用创建 PRI 文件。 因此，作为此演练的一部分，我们将创建一些示例资源文件（包含字符串和其他类型的资源）来代表该目标 UWP 应用的资源。

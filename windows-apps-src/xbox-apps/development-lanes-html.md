@@ -5,16 +5,15 @@ description: Xbox 上的 HTML UWP 游戏开发。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
-ms.openlocfilehash: 5c139a80f8f24b47047cc2a8b6fb6f812f54f0e6
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.localizationpriority: medium
+ms.openlocfilehash: 7c32a02532ab544e7697d59fa4f1ca93231183d3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2017
-ms.locfileid: "900893"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558998"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>将 HTML 游戏移植到 Xbox 上的 UWP
 Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Edge](https://developer.microsoft.com/microsoft-edge/) 浏览器引擎上运行。 Edge 速度较快，并且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。

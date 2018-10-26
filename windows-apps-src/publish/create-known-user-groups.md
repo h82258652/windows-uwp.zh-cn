@@ -5,16 +5,14 @@ title: 创建已知用户组
 ms.author: wdg-dev-content
 ms.date: 03/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
 ms.localizationpriority: medium
-ms.openlocfilehash: e15b5a4a2f76cbfc33db593c3110ac6f2d054b5b
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: eec9c214bcd4ac63406ec7681e66762356a0c1cf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513711"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551318"
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 

@@ -6,16 +6,14 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, 着色器
 ms.localizationpriority: medium
-ms.openlocfilehash: 601cdd696290a1b22d7ed38d968a32db53b78ea1
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691406"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557126"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL 到 HLSL 参考
 
@@ -45,7 +43,7 @@ OpenGL ES 2.0 和 Direct3D 11 有很多相似之处。 它们都有相似的呈�
 | 通过第三方库（例如，Simple DirectMedia Layer (SDL)）提供更高级的模块 | 更高级的模块（如 Direct2D）构建在低级模块上，以简化 Windows 应用的开发             |
 | 通过扩展名来区分硬件供应商                                                         | Microsoft 采用常规方法向 API 中添加可选功能，以便这些功能不会特定于任何特定的硬件供应商 |
 
- 
+ 
 
 GLSL 和 HLSL 通常会在以下方面有所不同：
 
@@ -69,10 +67,10 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">着色器编译被集成到了图形 API 中</td>
 <td align="left">HLSL 编译器<a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">将着色器编译为</a>中间二进制表示，然后 Direct3D 将其传递给驱动程序。
 <div class="alert">
-<strong>注意</strong>  此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
+<strong>注意</strong>此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -98,10 +96,10 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">行主序矩阵（默认设置）</td>
 <td align="left">列主序矩阵（默认设置）
 <div class="alert">
-<strong>注意</strong>   使用 <strong>row_major</strong> 类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
+<strong>注意</strong>使用<strong>row_major</strong>类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -111,11 +109,11 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </tbody>
 </table>
 
- 
+ 
 
-> **注意**  HLSL 让纹理和采样器作为两个不同的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
+> **注意**HLSL 让纹理和采样器作为两个不同的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
 
- 
+ 
 
 在 GLSL 中，将大多数 OpenGL 状态呈现为预定义的全局变量。 例如，使用 GLSL，**gl\_Position** 变量可用于指定顶点位置，而 **gl\_FragColor** 变量可用于指定片段颜色。 在 HLSL 中，将 Direct3D 状态从应用代码显式传递到着色器。 例如，对于 Direct3D 和 HLSL，顶点着色器的输入必须与顶点缓冲区中的数据格式相匹配，并且应用代码中常量缓冲区的结构必须与着色器代码中常量缓冲区 ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) 的结构相匹配。
 
@@ -162,7 +160,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </tbody>
 </table>
 
- 
+ 
 
 在 GLSL 中，没有修饰符的变量只是普通的全局变量，它们是每个着色器的私有变量。
 
@@ -274,7 +272,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="porting-glsl-pre-defined-global-variables-to-hlsl"></a>将 GLSL 预定义的全局变量移植到 HLSL
 
@@ -382,7 +380,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </tbody>
 </table>
 
- 
+ 
 
 使用语义指定位置、颜色等作为顶点着色器输入和像素着色器输入。 必须将输入布局中的语义值与顶点着色器输入相匹配。 例如，请参阅[将 GLSL 变量移植到 HLSL 的示例](#examples-of-porting-glsl-variables-to-hlsl)。 有关 HLSL 语义的详细信息，请参阅[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
 
@@ -503,14 +501,14 @@ HLSL 像素着色器代码
 // The COLOR semantic must match the semantic in the vertex shader code.
 struct PixelShaderInput
 {
-    float4 pos : SV_Position;
-    float4 color : COLOR; // Color for the pixel
+    float4 pos : SV_Position;
+    float4 color : COLOR; // Color for the pixel
 };
 
-// Set the pixel color value for the renter target. 
+// Set the pixel color value for the renter target. 
 float4 main(PixelShaderInput input) : SV_Target
 {
-    return input.color;
+    return input.color;
 }
 ```
 
@@ -525,7 +523,7 @@ OpenGL 呈现代码
 // Bind shaders to the pipeline. 
 // Both vertex shader and fragment shader are in a program.
 glUseProgram(m_shader->getProgram());
- 
+ 
 // Input asssembly 
 // Get the position and color attributes of the vertex.
 
@@ -534,13 +532,13 @@ glEnableVertexAttribArray(m_positionLocation);
 
 m_colorLocation = glGetAttribColor(m_shader->getProgram(), "color");
 glEnableVertexAttribArray(m_colorLocation);
- 
+ 
 // Bind the vertex buffer object to the input assembler.
 glBindBuffer(GL_ARRAY_BUFFER, m_geometryBuffer);
 glVertexAttribPointer(m_positionLocation, 4, GL_FLOAT, GL_FALSE, 0, NULL);
 glBindBuffer(GL_ARRAY_BUFFER, m_colorBuffer);
 glVertexAttribPointer(m_colorLocation, 3, GL_FLOAT, GL_FALSE, 0, NULL);
- 
+ 
 // Draw a triangle with 3 vertices.
 glDrawArray(GL_TRIANGLES, 0, 3);
 ```
@@ -551,7 +549,7 @@ Direct3D 呈现代码
 // Bind the vertex shader and pixel shader to the pipeline.
 m_d3dDeviceContext->VSSetShader(vertexShader.Get(),nullptr,0);
 m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
- 
+ 
 // Declare the inputs that the shaders expect.
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
@@ -568,9 +566,9 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 * [从 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
- 
+ 
 
- 
+ 
 
 
 

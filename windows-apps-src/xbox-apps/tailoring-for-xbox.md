@@ -5,16 +5,14 @@ description: 如何针对 Xbox 优化你的应用程序。
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1794e4b7ddf97b0b5c41ff29295892e512453a07
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927252"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551891"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -26,7 +24,7 @@ ms.locfileid: "927252"
 
 ### <a name="do-turn-off-mouse-mode"></a>*应做事项：* 关闭鼠标模式
 
-Xbox 用户喜欢其控制器。 若要优化控制器输入，[禁用鼠标模式](how-to-disable-mouse-mode.md)，并启用方向导航（也称为 [X-Y 焦点](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)）。 观看焦点陷阱和无法访问的 UI。
+Xbox 用户喜欢其控制器。 若要优化控制器输入，[禁用鼠标模式](how-to-disable-mouse-mode.md)，并启用方向导航（也称为 [X-Y 焦点](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)）。 请注意焦点陷阱和不可访问的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*应做事项：* 绘制适用于 10 英尺体验的焦点矩形
 
@@ -47,7 +45,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*注意事项：* 使用电视安全颜色
 
-电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 读取[颜色](../design/devices/designing-for-tv.md#colors)以了解如何使您查找以为所有人出色的应用程序 ！
+电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 读取[颜色](../design/devices/designing-for-tv.md#colors)若要了解如何使你良好地适应每个人的应用 ！
 
 ### <a name="remember-you-can-disable-scaling"></a>*记住：* 可以禁用缩放
 
@@ -67,12 +65,12 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 - [UWP 开发 1：生成自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
 - [浏览器外的 Web 应用：跨平台与跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>Xbox 上的应用程序开发
+## <a name="app-dev-on-xbox"></a>在 Xbox 上的应用开发
 
-**应用程序开发上 Xbox**事件是面向开发人员新增 Xbox 上构建应用程序的绝佳起始点。
+**在 Xbox 上的应用开发人员**事件是很好的起点，适用于开发人员熟悉 Xbox 上生成应用。
 
-* [观看录制的会话](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [读取博客文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+* [观看的录制的会话](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [阅读博客文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>另请参阅
 

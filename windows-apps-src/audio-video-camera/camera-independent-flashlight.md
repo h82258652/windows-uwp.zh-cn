@@ -6,18 +6,17 @@ title: 独立于相机的手电筒
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204189"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555553"
 ---
 # <a name="camera-independent-flashlight"></a>独立于相机的手电筒
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍如何访问和使用设备灯（如果存在）。 灯功能的管理独立于设备的相机和相机闪光灯功能。 除了获取对灯的引用和调整其设置以外，本文还介绍了在不使用灯资源时如何正确地释放灯资源，以及在灯正由另一个应用使用时，如何检测灯的可用性更改。
@@ -79,7 +78,7 @@ ms.locfileid: "204189"
 ## <a name="related-topics"></a>相关主题
 - [媒体播放](media-playback.md)
 
- 
+ 
 
 
 

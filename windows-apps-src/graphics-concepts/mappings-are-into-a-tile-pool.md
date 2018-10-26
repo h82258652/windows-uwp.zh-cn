@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45062f82955b1e353def2eadbeae36d1c9e81ce6
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652656"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558855"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>映射到磁贴池
 
@@ -35,7 +33,7 @@ ms.locfileid: "1652656"
 
 假设每个页表条目为 64 位。
 
-对于单个表面的页表大小命中率最坏情况，考虑到 Direct3D 11 中的资源限制，假设流式资源以 128 位/元素格式（如 RGBA 浮点值）创建，则 64KB 磁贴只包含 4096 个像素。 最大支持的 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小为 16384\*16384\*2048（但只有一个 mipmap），如果使用 64 位表条目完全填充（不包括 mipmap），则其在页表中需要约 1GB 的存储空间。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
+对于而言，最坏的页表大小的单个表面，给定 Direct3D11 中的资源限制，假设流式资源创建使用 128 位 / 元素格式 （如 RGBA 浮点值），因此 64KB 磁贴包含仅 4096 个像素。 最大支持的 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小为 16384\*16384\*2048（但只有一个 mipmap），如果使用 64 位表条目完全填充（不包括 mipmap），则其在页表中需要约 1GB 的存储空间。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
 
 这种情况需要访问约 10.6 TB 的可寻址内存。 但可寻址内存的量可能存在限制，这将减少这些数量，可能缩减至约 TB 范围。
 
@@ -64,7 +62,7 @@ ms.locfileid: "1652656"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tile-pool-creation.md">创建磁贴池</a></p></td>
-<td align="left"><p>应用程序可以为每个 Direct3D 设备创建一个或多个磁贴池。 每个磁贴池的总大小限制为 Direct3D 11 的资源大小限制，约为 GPU RAM 的 1/4。</p></td>
+<td align="left"><p>应用程序可以为每个 Direct3D 设备创建一个或多个磁贴池。 每个磁贴池的总大小仅限于 Direct3D11 的资源大小限制，约为 GPU RAM 的 1/4。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tile-pool-resizing.md">磁贴池调整大小</a></p></td>
@@ -77,16 +75,16 @@ ms.locfileid: "1652656"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [创建流式资源](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

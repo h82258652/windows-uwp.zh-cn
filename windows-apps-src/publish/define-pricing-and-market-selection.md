@@ -6,16 +6,14 @@ ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
 ms.date: 06/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
-ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c50f20b3e86f1868732be74b0d35933658dc3ceb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470878"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555010"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 

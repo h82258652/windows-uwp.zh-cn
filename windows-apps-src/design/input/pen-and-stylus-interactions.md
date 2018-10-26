@@ -9,15 +9,13 @@ keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, �
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 665a83743e2c4b5096b76b481c0e46274daf9c1f
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707328"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555648"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP 应用中的笔交互和 Windows Ink
 
@@ -34,14 +32,14 @@ ms.locfileid: "1707328"
 | 视频 |   |
 | --- | --- |
 | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *在 UWP 应用中使用墨迹* | *使用 Windows 触笔和墨迹构建更吸引人的企业应用* |
+| *在 UWP 应用中使用墨迹* | *使用 Windows 手写笔和墨迹构建更具吸引力 enterpriseapps* |
 
 Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、绘图和批注的自然方法。 该平台支持将数字化器输入捕获为墨迹数据、生成墨迹数据、管理墨迹数据、在输出设备上以笔划墨迹形式呈现墨迹数据以及通过手写识别将墨迹转换为文本。
 
 除了捕获用户在书写或绘图时笔的基本位置和移动外，你的应用还可以跟踪和收集笔划前后使用的不同程度的压力。 此信息连同设置（针对笔尖形状、大小和旋转）、墨迹颜色以及用途（普通墨迹、擦除、突出显示和选择）一起支持你提供非常接近于在纸上使用钢笔、铅笔或画笔书写或绘图的用户体验。
 
 > [!NOTE]
-> 你的应用还支持其他基于指针的设备的输入，包括触摸数字化器和鼠标设备。 
+> 你的应用还支持其他基于指针的设备的输入，包括触摸数字化器和鼠标设备。 
 
 墨迹平台具有很高的灵活性。 它旨在根据不同要求支持各类功能级别。
 
@@ -51,9 +49,9 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 | 组件 | 描述 |
 | --- | --- |
-| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | 默认情况下，XAML UI 平台控件将所有笔输入接收和显示为笔划墨迹或擦除笔划。<br/>有关如何使用 InkCanvas 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | XAMLUI 平台控件，默认情况下，接收和显示来自笔的所有输入作为笔划墨迹或擦除笔划进行处理。<br/>有关如何使用 InkCanvas 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | 代码隐藏对象，与 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件（通过 [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 属性公开）一起进行实例化。 此对象提供 **InkCanvas** 公开的所有默认墨迹书写功能以及适用于其他自定义和个性化的完整 API 集。<br/>有关如何使用 InkPresenter 的详细信息，请参阅[将 Windows Ink 笔划识别为文本](convert-ink-to-text.md)和[存储和检索 Windows Ink 笔划数据](save-and-load-ink.md)。 |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | XAML UI 平台控件，包含在关联 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 中激活墨迹相关功能的按钮的可自定义、可扩展的集合。<br/>有关如何使用 InkToolbar 的详细信息，请参阅[将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用](ink-toolbar.md)。 |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | XAMLUI 平台控件，包含一组可自定义和可扩展的按钮可激活关联的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中与墨迹相关功能。<br/>有关如何使用 InkToolbar 的详细信息，请参阅[将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用](ink-toolbar.md)。 |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件。 这支持完全自定义墨迹书写体验。<br/>有关详细信息，请参阅[复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。 |
 
 ## <a name="basic-inking-with-inkcanvas"></a>通过 InkCanvas 实现基本墨迹书写
@@ -104,7 +102,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 对象通过每个 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件进行实例化。
 
 > [!NOTE]
-> [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不能直接进行实例化。 而是通过 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn858535) 属性进行访问。 
+> [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不能直接进行实例化。 而是通过 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn858535) 属性进行访问。 
 
 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn858535) 不仅提供了其相应 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn922011) 控件的所有默认墨迹书写行为，它还提供了完整 API 集用于对笔输入（标准和修改后）进行其他笔划自定义和精细管理。 这包括笔划属性、支持的输入设备类型以及输入是由对象进行处理还是传递到应用进行处理。
 
@@ -204,7 +202,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 | ![具有默认的黑色笔划墨迹的 inkcanvas](images/ink-basic-custom-1-small.png) | ![具有用户选择的红色笔划墨迹的 inkcanvas](images/ink-basic-custom-2-small.png) |
 | --- | --- |
-| 具有默认的黑色笔划墨迹的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | 具有用户选择的红色墨迹笔划的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。 | 
+| 具有默认的黑色笔划墨迹的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | 具有用户选择的红色墨迹笔划的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。 | 
 
 若要提供墨迹书写和擦除之外的功能（例如笔划选择），你的应用必须为 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 标识特定输入，从而在未处理的情况下进行传递以供应用处理。
 

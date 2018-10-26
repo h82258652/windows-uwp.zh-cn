@@ -5,16 +5,14 @@ description: 在 ARM 上运行 ARM32 应用的常见问题以及如何解决这�
 ms.author: misatran
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10 s, 始终连接, 基于 ARM 的 ARM32 应用, 基于 ARM 的 windows 10, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: a0cc306334f4844b1660c6047dead2c0c4c3bd71
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 4eaeccb8b4003bb835ee4700d1df57cd8cefcda0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877199"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559164"
 ---
 # <a name="troubleshooting-arm32-uwp-apps"></a>ARM32 UWP 应用疑难解答
 >[!IMPORTANT]

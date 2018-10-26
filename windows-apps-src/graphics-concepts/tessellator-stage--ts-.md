@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044816"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556611"
 ---
 # <a name="tessellator-ts-stage"></a>细化器 (TS) 阶段
 
@@ -72,7 +70,7 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
     | 整数              | 分割因子范围：\[1..64\] |
     | 幂 2                 | 分割因子范围：\[1..64\] |
 
-     
+     
 
 分割通过两个可编程的着色器阶段实施：[外壳着色器](hull-shader-stage--hs-.md)和[域着色器](domain-shader-stage--ds-.md)。 这些着色器阶段通过在着色器模型 5 中定义的 HLSL 代码进行编程。 着色器目标为：hs\_5\_0 和 ds\_5\_0。 标题创建着色器，然后从在着色器绑定至管道时传递至运行时的编译着色器提取硬件代码。
 
@@ -97,9 +95,9 @@ Direct3D 图形管道在软件中实施分割，能够将 CPU 的工作负担转
 
 [图形管道](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

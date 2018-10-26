@@ -9,15 +9,13 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 952153069c7b88abb93f3437f2e20cf83ed41de2
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 946e8421cf21c37c929e7a9f9687117c3d7aca92
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707012"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555793"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows Ink 笔划数据
 
@@ -266,7 +264,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 > [!NOTE]
 > GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法不支持向后兼容的以下格式。
 
-| 格式                    | 描述 |
+| 格式                    | 说明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | 指定使用 ISF 持久保存的墨迹。 这是墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式，也可以直接放置在剪贴板上。                                                                                                                                                                                                         |
 | Base64InkSerializedFormat | 指定通过将 ISF 编码为 base64 流来持久保存墨迹。 提供该格式是为了在 XML 或 HTML 文件中直接对墨迹进行编码。                                                                                                                                                                                                                                                |

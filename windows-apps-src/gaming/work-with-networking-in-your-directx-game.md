@@ -6,19 +6,18 @@ ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 网络, directx
-ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205958"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551338"
 ---
 # <a name="networking-for-games"></a>游戏网络
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在你的 DirectX 游戏中开发并融入联网功能。
 
@@ -48,10 +47,10 @@ ms.locfileid: "205958"
 
 用于游戏的较受欢迎的网络 API 包括：
 
--   TCP 和套接字 – 提供可靠连接。 可以将 TCP 用于不需要安全性的游戏操作。 因为 TCP 允许服务器轻松缩放，所以它通常用于使用基础结构（客户端服务器或 Internet 对等）模型的游戏。 临时（本地对等）游戏也可以通过 Wi-Fi Direct 和 BlueTooth 使用 TCP。 TCP 通常用于游戏对象移动、角色交互、文本聊天和其他操作。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类提供可以用在 Windows 应用商店游戏中的 TCP 套接字。 **StreamSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
+-   TCP 和套接字 – 提供可靠连接。 可以将 TCP 用于不需要安全性的游戏操作。 因为 TCP 允许服务器轻松缩放，所以它通常用于使用基础结构（客户端服务器或 Internet 对等）模型的游戏。 临时（本地对等）游戏也可以通过 Wi-Fi Direct 和 BlueTooth 使用 TCP。 TCP 通常用于游戏对象移动、角色交互、文本聊天和其他操作。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)类提供 TCP 套接字，可在 Microsoft Store 游戏中。 **StreamSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
 -   使用 SSL 的 TCP 和套接字 – 提供防止窃听的可靠连接。 将带有 SSL 的 TCP 连接用于需要安全性的游戏操作。 由于 SSL 的加密和开销将导致延迟并降低性能，所以仅在需要安全性时使用它。 带有 SSL 的 TCP 通常用于登录、购买和交易资源、游戏角色创建和管理。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类提供支持 SSL 的 TCP 套接字。
--   UDP 和套接字 – 提供具有较低开销的不可靠网络传输。 UDP 用于要求较少延迟，但可以容忍一些数据包丢失的游戏操作。 它经常用于打斗游戏、射击和跟踪、网络音频以及语音聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 类提供可以用在 Windows 应用商店游戏中的 UDP 套接字。 **DatagramSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
--   HTTP 客户端 – 提供到 HTTP 服务器的可靠连接。 最常见的网络方案是访问网站来检索或存储信息。 一个简单的示例是使用网站来存储用户信息和游戏得分的游戏。 当与 SSL 一起使用来确保安全性时，HTTP 客户端可以用于登录、购买、交易资源、游戏角色创建以及管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类提供用于 Windows 应用商店游戏的现代 HTTP 客户端 API。 **HttpClient** 类与 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间中的相关类搭配使用。
+-   UDP 和套接字 – 提供具有较低开销的不可靠网络传输。 UDP 用于要求较少延迟，但可以容忍一些数据包丢失的游戏操作。 它经常用于打斗游戏、射击和跟踪、网络音频以及语音聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)类提供 UDP 套接字，可在 Microsoft Store 游戏中。 **DatagramSocket** 类与 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间中的相关类搭配使用。
+-   HTTP 客户端 – 提供到 HTTP 服务器的可靠连接。 最常见的网络方案是访问网站来检索或存储信息。 一个简单的示例是使用网站来存储用户信息和游戏得分的游戏。 当与 SSL 一起使用来确保安全性时，HTTP 客户端可以用于登录、购买、交易资源、游戏角色创建以及管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)类提供的现代 HTTP 客户端 API 使用的 Microsoft 应用商店游戏中。 **HttpClient** 类与 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间中的相关类搭配使用。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>在 DirectX 游戏中处理网络异常
 

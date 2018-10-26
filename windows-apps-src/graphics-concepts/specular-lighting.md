@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 305924b19914bf4e85366695add2476c3c81c281
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044806"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553606"
 ---
 # <a name="specular-lighting"></a>高光照明
 
@@ -36,7 +34,7 @@ ms.locfileid: "1044806"
 |-----------------------------------------------------------------------------|
 | 高光照明 = Cₛ \* sum\[Lₛ \* (N · H)<sup>P</sup> \* Atten \* Spot\] |
 
- 
+ 
 
 变量及其类型和范围如下所列：
 
@@ -51,7 +49,7 @@ ms.locfileid: "1044806"
 | Atten        | 不适用           | 浮点                                                   | 灯光衰减值。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
 | Spot         | 不适用           | 浮点                                                   | 聚光因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。        |
 
- 
+ 
 
 Cₛ 的值为：
 
@@ -59,9 +57,9 @@ Cₛ 的值为：
 -   顶点颜色 2，前提为镜面材料来源是反射顶点颜色，且在顶点声明中提供第二个顶点的颜色。
 -   材料反射颜色
 
-**注意**：如果采用了任何一种反射材料来源选项且未提供顶点颜色，则使用材料反射颜色。
+**注意**如果使用任何一种反射材料来源选项和未提供顶点颜色，则使用材料反射颜色。
 
- 
+ 
 
 单独处理和内插所有灯光后，将反射组件的范围限制为 0 至 255。
 
@@ -74,7 +72,7 @@ Cₛ 的值为：
 |-------------------------------------------|
 | H = norm(norm(Cₚ - Vₚ) + L<sub>dir</sub>) |
 
- 
+ 
 
 | 参数       | 默认值 | 类型                                          | 说明                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
@@ -82,7 +80,7 @@ Cₛ 的值为：
 | Vₚ              | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 顶点位置。                                             |
 | L<sub>dir</sub> | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 从顶点位置到光线位置的方向矢量。 |
 
- 
+ 
 
 以这种方式确定中间矢量可能是计算密集型操作。 或者，使用正交反射高光（而不是相机相关的反射高光）指示系统进行操作，就像 Z 轴上的视角距离为无限远。 通过以下公式来反映。
 
@@ -90,7 +88,7 @@ Cₛ 的值为：
 |-------------------------------------|
 | H = norm((0,0,1) + L<sub>dir</sub>) |
 
- 
+ 
 
 这种设置的计算密集程度较低，但精确度大大降低，所以最适合采用正交投影的应用使用。
 
@@ -120,9 +118,9 @@ Cₛ 的值为：
 
 [照明的数学运算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

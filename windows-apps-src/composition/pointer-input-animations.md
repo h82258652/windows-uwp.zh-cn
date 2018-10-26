@@ -5,16 +5,14 @@ description: 了解如何使用指针位置来创建动态的“紧随光标”�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: e142f173e6968c111acc0e480aab83d02f04b07d
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: b69899761e1c4a139fd2b15d6810440df5192487
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480753"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551863"
 ---
 # <a name="pointer-based-animations"></a>基于指针的动画
 

@@ -6,17 +6,15 @@ title: 适用于打包桌面应用（桌面桥）的 UWP API
 ms.author: normesta
 ms.date: 10/27/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
-ms.openlocfilehash: c39301c37c83f57a67dca35c3628bd9f3eda2583
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 9448e8f4a61241879b739ff10fd000ea8c130d52
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515627"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557699"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>适用于打包的桌面应用的 UWP Api
 

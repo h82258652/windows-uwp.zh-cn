@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f166fd4d645c5308ae5351503061fe3bfa1d7c4e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 25d5e1d88ec631c3d9105d0291710ca6d0389f13
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044856"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551583"
 ---
 # <a name="the-need-for-streaming-resources"></a>需要流式资源
 
@@ -81,9 +79,9 @@ Direct3D 的纹理筛选路径以及呈现路径充分支持 16K 纹理并满足
 
 [流式资源](streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

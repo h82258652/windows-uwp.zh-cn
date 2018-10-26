@@ -6,16 +6,14 @@ description: 也许是不可能或不需要（可能是出于隐私或性能的�
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 269d51ec6005bcd61ac01a66d72c34bdb2901add
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470742"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552552"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
@@ -143,7 +141,7 @@ else
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 所有，设计工具所做在此情况下是解析为其可绑定的属性的类和显示这些**数据**面板中和在**创建数据绑定**对话框。
+**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 设计工具所做的这种情况下是解析为其可绑定的属性的类，并显示这些**数据**面板中，并在**创建数据绑定**对话框。
 
 <a name="sample-data-for-prototyping"></a>用于原型制作的示例数据
 --------------------------------------------------------

@@ -1,21 +1,19 @@
 ---
 author: jwmsft
 title: xDeferLoadStrategy 属性
-description: xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将使内存使用量增加大约 600 个字节。
+description: xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。每个受影响的元素将使内存使用量增加大约 600 个字节。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff89fea215ea4af58ab9b51a40baeb81ecb39bcc
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881098"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555249"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
@@ -36,7 +34,7 @@ ms.locfileid: "1881098"
 
 使用 **x:DeferLoadStrategy** 时的限制有：
 
-- 必须定义元素的 [x:Name](x-name-attribute.md)，因为需要有在以后查找该元素的方法。
+- 你必须定义一个[X:name](x-name-attribute.md)元素，因为存在需要以后查找该元素的方法。
 - 可以仅延迟派生自 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 或 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的类型。
 - 不能在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延迟根元素。
 - 不能在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中延迟元素。
@@ -59,9 +57,9 @@ ms.locfileid: "1881098"
 - 将评估该元素上的所有绑定。
 - 如果已注册为接收有关某属性（包含延迟元素的属性）的属性更改通知，将引发此通知。
 
-可嵌套延迟元素，但必须从最外层的元素中实现它们。  如果尝试先实现子元素再实现父元素，将引发异常。
+可嵌套延迟元素，但必须从最外层的元素中实现它们。 如果尝试先实现子元素再实现父元素，将引发异常。
 
-通常情况下，建议延迟第一帧中无法查看的元素。 一个用于查找要延迟的候选项的准则是，查找正使用折叠的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 创建的元素。 此外，由用户交互触发的 UI 也是用于查找可延迟的元素的好位置。
+通常情况下，建议延迟第一帧中无法查看的元素。一个用于查找要延迟的候选项的准则是，查找正使用折叠的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 创建的元素。 此外，由用户交互触发的 UI 也是用于查找可延迟的元素的好位置。
 
 延迟 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 中的元素时请谨慎操作，因为延迟此类元素虽然会减少启动时间，但同时也可能降低平移性能，具体取决于要创建的内容。 如果想要提升平移性能，请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)和 [x:Phase 特性](x-phase-attribute.md)文档。
 
@@ -73,19 +71,19 @@ ms.locfileid: "1881098"
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
-    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
 
-    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
-    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
-    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
-    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
+    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
+    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
+    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
+    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
 </Grid>
 <Button x:Name="RealizeElements" Content="Realize Elements" Click="RealizeElements_Click"/>
 ```
@@ -94,6 +92,6 @@ ms.locfileid: "1881098"
 private void RealizeElements_Click(object sender, RoutedEventArgs e)
 {
     // This will realize the deferred grid.
-    this.FindName("DeferredGrid");
+    this.FindName("DeferredGrid");
 }
 ```

@@ -1,38 +1,84 @@
 ---
 author: TerryWarwick
-title: PointOfService 设备声明型号
-description: 了解 PointOfService 声明型号
+title: PointOfService 设备声明和启用模型
+description: 了解 PointOfService 声明和启用模型
 ms.author: jken
-ms.date: 06/4/2018
+ms.date: 06/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 202234530945e55ef9c0d0fb68cf9ca83d2e15c3
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: df9c4764b8f7d752a132d6759054660f481cce55
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983725"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551974"
 ---
-# <a name="point-of-service-device-claim-model"></a>服务点设备声明型号
+# <a name="point-of-service-device-claim-and-enable-model"></a>服务点设备声明和启用模型
 
-## <a name="claiming-a-device-for-exclusive-use"></a>声明独占使用设备
+## <a name="claiming-for-exclusive-use"></a>声明独占使用
 
 在成功创建 PointOfService 设备对象后，你必须使用适合的设备类型声明方法进行声明，然后才能使用该设备输入或输出。  声明授予应用程序对很多设备功能的独占访问权限，以确保一个应用程序不会干扰其他应用程序使用设备。  一次只有一个应用程序可以声明独占使用 PointOfService 设备。 
+
+> [!Note]
+> 声明操作建立于某个设备的独占锁，但不会将其放到运行状态。  有关详细信息，请参阅[启用设备进行 I/O 操作](#Enable-device-for-I/O-operations)。
+
+### <a name="apis-used-to-claim--release"></a>Api 用于声明 / 发布
+
+|设备|声明 | 版本 | 
+|-|:-|:-|
+|BarcodeScanner | [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [ClaimedBarcodeScanner.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
+|CashDrawer | [CashDrawer.ClaimDrawerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [ClaimedCashDrawer.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
+|LineDisplay | [LineDisplay.ClaimAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.claimasync) |  [ClaimedineDisplay.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay.close) | 
+|MagneticStripeReader | [MagneticStripeReader.ClaimReaderAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.claimreaderasync) |  [ClaimedMagneticStripeReader.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.close) | 
+|PosPrinter | [PosPrinter.ClaimPrinterAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) |  [ClaimedPosPrinter.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.close) | 
+ | 
+
+## <a name="enable-device-for-io-operations"></a>启用设备进行 I/O 操作
+
+声明操作只是建立对所用设备的独占权限，但不会将其放到运行状态。  若要接收事件，或执行任何操作，输出必须启用使用**EnableAsync**的设备。  相反，你可以调用**DisableAsync**停止侦听设备或执行输出中的事件。  你还可以使用**IsEnabled**来确定你的设备的状态。
+
+### <a name="apis-used-enable--disable"></a>使用 Api 启用/禁用
+
+| 设备 | 启用 | 禁用 | IsEnabled？ |
+|-|:-|:-|:-|
+|ClaimedBarcodeScanner | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
+|ClaimedCashDrawer | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
+|ClaimedLineDisplay | 不 Applicable¹ | 不 Applicable¹ | 不 Applicable¹ | 
+|ClaimedMagneticStripeReader | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.isenabled) |  
+|ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
+|
+
+¹ 行显示不需要显式启用 I/O 操作的设备。  通过执行 I/O PointOfService LineDisplay Api 来自动执行启用。
+
+## <a name="code-sample-claim-and-enable"></a>代码示例： 声明和启用
 
 此示例显示如何在成功创建了条形码扫描仪对象后声明条形码扫描仪设备。
 
 ```Csharp
-try
-{
-    claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
-}
-catch (Exception ex)
-{
-    Debug.WriteLine("EX: ClaimScannerAsync() - " + ex.Message);
-}
+
+    BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
+
+    if(barcodeScanner != null)
+    {
+        // after successful creation, claim the scanner for exclusive use 
+        claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
+
+        if(claimedBarcodeScanner != null)
+        {
+            // after successful claim, enable scanner for data events to fire
+            await claimedBarcodeScanner.EnableAsync();
+        }
+        else
+        {
+            Debug.WriteLine("Failure to claim barcodeScanner");
+        }
+    }
+    else
+    {
+        Debug.WriteLine("Failure to create barcodeScanner object");
+    }
+    
 ```
 
 > [!Warning]
@@ -40,16 +86,6 @@ catch (Exception ex)
 > 1. 另一个应用已请求了对同一设备的声明，并且你的应用没有为响应 **ReleaseDeviceRequested** 事件发出 **RetainDevice**。  （有关详细信息，请参阅下面的[声明协商](#Claim-negotiation)。）
 > 2. 你的应用已暂停，这导致设备对象关闭，声明因此不再有效。 （有关详细信息，请参阅[设备对象生命周期](pos-basics-deviceobject.md#device-object-lifecycle)。）
 
-### <a name="apis-used-for-claiming"></a>用于声明的 API
-
-|设备|声明 |
-|-|:-|
-|BarcodeScanner | [ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | 
-|CashDrawer | [ClaimDrawerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | 
-|LineDisplay | [ClaimAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.claimasync) |
-|MagneticStripeReader | [ClaimReaderAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.claimreaderasync) | 
-|PosPrinter | [ClaimPrinterAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) | 
-|
 
 ## <a name="claim-negotiation"></a>声明协商
 
@@ -59,17 +95,51 @@ catch (Exception ex)
 
 如果具有有效声明的应用程序未立即使用 **RetainDevice** 响应，将假设该应用程序已暂停或不需要设备，声明将被撤销并给予新应用程序。 
 
-此示例演示在另一个应用请求发布设备后，如何保留已声明的条形码扫描仪。  
+第一步是创建响应**RetainDevice** **ReleaseDeviceRequested**事件的事件处理程序。  
 
 ```Csharp
-claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
-
-void claimedBarcodeScanner_ReleaseDeviceRequested(object sender, ClaimedBarcodeScanner myScanner)
-{
-    // Retain exclusive access to the device
-    myScanner.RetainDevice();  
-}
+    /// <summary>
+    /// Event handler for the ReleaseDeviceRequested event which occurs when 
+    /// the claimed barcode scanner receives a Claim request from another application
+    /// </summary>
+    void claimedBarcodeScanner_ReleaseDeviceRequested(object sender, ClaimedBarcodeScanner myScanner)
+    {
+        // Retain exclusive access to the device
+        myScanner.RetainDevice();
+    }
 ```
+
+然后与你已声明的设备注册事件处理程序
+
+```Csharp
+    BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
+
+    if(barcodeScanner != null)
+    {
+        // after successful creation, claim the scanner for exclusive use 
+        claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
+
+        if(claimedBarcodeScanner != null)
+        {
+            // register a release request handler to prevent loss of scanner during active use
+            claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
+
+            // after successful claim, enable scanner for data events to fire
+            await claimedBarcodeScanner.EnableAsync();          
+        }
+        else
+        {
+            Debug.WriteLine("Failure to claim barcodeScanner");
+        }
+    }
+    else
+    {
+        Debug.WriteLine("Failure to create barcodeScanner object");
+    }
+```
+
+
+
 ### <a name="apis-used-for-claim-negotiation"></a>用于声明协商的 API
 
 |声明的设备|发布通知| 保留设备 |

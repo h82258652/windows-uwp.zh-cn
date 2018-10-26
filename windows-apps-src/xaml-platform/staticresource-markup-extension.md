@@ -6,18 +6,17 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205580"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555216"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，而 **StaticResource** 用法则在 **ResourceDictionary** 中引用该资源的键。
 
@@ -41,8 +40,7 @@ ms.locfileid: "205580"
 
 本主题未介绍 **StaticResource** 解析为资源字典中的项时所遵循的规则。 这些规则取决于引用和资源是否都存在于模板中，以及是否使用了合并的资源字典，等等。 有关如何定义资源和正确使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的详细信息（包括示例代码），请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-**重要提示**  
-**StaticResource** 不应尝试将引用转发到一个在 XAML 文件中按词法进一步定义的资源。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
+**重要提示** **StaticResource**不应尝试将引用转发到已定义资源的 XAML 文件中按词法进一步。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
 
 尝试为无法解析的键指定 **StaticResource** 会在运行时引发 XAML 分析异常。 设计工具还可能会提供警告或错误。
 
@@ -79,7 +77,7 @@ ms.locfileid: "205580"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>设计时工具支持 **{StaticResource}** 标记扩展
 
-当你在 XAML 页面中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio 2013 可在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和应用级别 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)以及你的项目正在使用的任何扩展中的资源。
+当你在 XAML 页面中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio2013 可以在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和应用级别 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)以及你的项目正在使用的任何扩展中的资源。
 
 在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”****(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
 

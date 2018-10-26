@@ -6,22 +6,19 @@ description: 通过 UI 虚拟化、元素减少和项目的逐步更新来提高
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cff6e2785434eb4fdb922d8b89b55aca242655f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816902"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553642"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 和 GridView UI 优化
 
 
-**注意**  
-有关更多详细信息，请参阅 //build/ 会话：[当用户与 GridView 和 ListView 中的大量数据交互时可以显著提高性能](https://channel9.msdn.com/events/build/2013/3-158)。
+**注意**更多详细信息，请参阅 //build/ 会议：[可以显著提高性能与大量数据 GridView 和 ListView 中的用户交互时](https://channel9.msdn.com/events/build/2013/3-158)。
 
 通过 UI 虚拟化、元素减少和项目的进度更新来改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关数据虚拟化技术，请参阅 [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md)。
 
@@ -325,5 +322,5 @@ private void ListView_ChoosingItemContainer
 
 当使用不同项目模板的项目分布不均匀时，可能需要在平移期间创建新项目模板，并且这将取消虚拟化所提供的许多好处。 此外，在评估是否可为当前数据项目重复使用特定的容器时，项目模板选择器仅考虑五个可能的候选项。 因此，在应用中使用项目模板选择器前，你应谨慎考虑你的数据是否适用于项目模板选择器。 如果你的集锦大部分是同类，则选择器将在大多数时间（可能是所有时间）返回相同的类型。 请注意你要为上述罕见的同质例外所付出的代价，并考虑是否首选使用 [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)（或两个项目控件）。
 
- 
+ 
 

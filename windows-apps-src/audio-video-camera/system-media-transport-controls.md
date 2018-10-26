@@ -6,18 +6,17 @@ title: 手动控制系统媒体传输控件
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1c0b24bce21ed145d61f6b5d05392a6fc3cc30aa
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: b0ece9a25a2fd2892553d66847c39637e7faae70
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204406"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554058"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>手动控制系统媒体传输控件
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 从 Windows10 版本 1607 开始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体的 UWP 应用默认自动与系统媒体传输控件 (SMTC) 集成。 对于大多数方案，均推荐使用此方法与 SMTC 交互。 有关自定义 SMTC 与 **MediaPlayer** 的默认集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。
 
@@ -93,7 +92,7 @@ ms.locfileid: "204406"
 | [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756)     | [**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757)     |
 | [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt218758) | [**ShuffleEnabledChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218759) |
 
- 
+ 
 若要处理用户与其中一个控件的交互，请先为关联的事件注册一个处理程序。
 
 [!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
@@ -114,10 +113,10 @@ ms.locfileid: "204406"
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md) 
+* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md) 
 * [系统媒体传输示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
- 
+ 
 
 
 

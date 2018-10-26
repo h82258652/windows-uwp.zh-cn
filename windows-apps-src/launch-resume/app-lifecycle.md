@@ -7,15 +7,13 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 53cc58930180f5ae7c3ec661feeb42433486afca
-ms.sourcegitcommit: b0b2fa760f4699b79b02e69061d85d529d90ef0a
-ms.translationtype: HT
+ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2018
-ms.locfileid: "1533762"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554957"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows10 通用 Windows 平台 (UWP) 应用生命周期
 
@@ -60,7 +58,7 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 |**ClosedByUser** | 用户使用平板电脑模式下的关闭手势或 Alt+F4 关闭了应用。 当用户关闭应用时，它将首先暂停，然后终止。 | 从本质上说，由于应用经历了导致处于 Terminated 状态的相同步骤，因此处理此状态的步骤与 Terminated 状态相同。|
 |**Running** | 当用户尝试再次启动应用时，该应用已经打开。 | 无。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
 
-**注意**  *当前用户会话*基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
+**请注意***当前用户会话*都基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
 
 需要注意的一种重要情形是：如果设备具有足够资源，操作系统会预启动针对该行为选择的常用应用，以优化响应性。 在后台启动要预启动的应用，然后快速暂停，以便当用户切换到这些应用时，可以恢复它们，这比启动应用的速度要快得多。
 
@@ -89,7 +87,7 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 
 这些方法的事件数据包含我们之前所见的相同 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性，这会告诉你应用在激活之前处于哪种状态。 解释状态以及应该对它采取的操作，方法与上面[应用启动](#app-launch)部分中所述的方法相同。
 
-**注意** 如果你使用计算机的管理员帐户登录，则你将无法激活 UWP 应用。
+**注意**如果你使用计算机的管理员帐户登录，你将无法激活 UWP 应用。
 
 ## <a name="running-in-the-background"></a>在后台运行 ##
 
@@ -179,7 +177,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 当应用暂停时，它不会收到它注册用于接收的任何网络事件。 这些网络事件没有排队，它们只是丢失了。 因此，你的应用应该在恢复时测试网络状态。
 
-**注意**  由于 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件未从 UI 线程中引发，因此如果恢复处理程序中的代码与 UI 通信，则必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
+**注意**如果恢复处理程序中的代码与 UI 通信，因为[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)事件未从 UI 线程中引发，必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
 
 有关一般准则，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
@@ -187,9 +185,9 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 通常，用户不需要关闭应用，他们可以让 Windows 管理它们。 但是，用户可以选择以下方法来关闭应用：使用关闭手势、按 Alt+F4，或在 Windows Phone 上使用任务切换程序。
 
-没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 和更高版本中，在用户关闭应用之后，该应用将从屏幕和切换列表中删除，但不会显式终止。
+没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 及更高版本，应用已被用户关闭后，该应用删除从屏幕和切换列表，但不是会显式终止。
 
-**用户关闭行为：** 如果应用在被用户关闭时需要执行不同于被 Windows 关闭时的操作，你可以使用激活事件处理程序确定应用是被用户还是被 Windows 终止的。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**由用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序以确定由用户还是被 Windows 终止应用。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 
@@ -228,6 +226,6 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 * [单个进程的后台活动模型](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 
- 
+ 
 
- 
+ 

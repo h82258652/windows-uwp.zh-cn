@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf14efc4c4ec29c98ebebff91493623d55267db5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d7456cd773196520e066062c664f5e3073941dfe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044606"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559389"
 ---
 # <a name="primitive-topologies"></a>基元拓扑
 
@@ -68,7 +66,7 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 | ![缠绕方向的符号](images/d3d10-primitive-topologies-winding-direction.png) | 缠绕方向 | 装配基元时的顶点顺序。 可以是顺时针或逆时针。 |
 | ![前导顶点的符号](images/d3d10-primitive-topologies-leading-vertex.png)       | 前导顶点    | 包含每常量数据的基元中的第一个非相邻顶点。       |
 
- 
+ 
 
 ## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>生成多个条带
 
@@ -86,9 +84,9 @@ Direct3D 支持多种基元拓扑，后者定义管道（如点列表、线列�
 
 [图形管道](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

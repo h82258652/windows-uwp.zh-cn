@@ -6,17 +6,15 @@ title: 使用 Desktop App Converter 将应用打包（桌面桥）
 ms.author: normesta
 ms.date: 08/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3c05cbf2ce0b2f6288e6beb9c84df9d2b42bd6f2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470762"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559514"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 将桌面应用程序打包
 
@@ -217,7 +215,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。
 
-``Sign``参数生成一个证书，然后对你的应用程序与之进行签名。 若要运行应用，你需要安装生成的证书。 若要了解如何操作，请参阅本指南的[运行已打包的应用](#run-app)部分。
+``Sign``参数生成一个证书，然后对其应用程序进行签名。 若要运行应用，你需要安装生成的证书。 若要了解如何操作，请参阅本指南的[运行已打包的应用](#run-app)部分。
 
 你可以验证你的应用程序使用``Verify``参数。
 

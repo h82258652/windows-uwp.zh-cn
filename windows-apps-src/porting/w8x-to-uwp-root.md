@@ -1,39 +1,38 @@
 ---
-author: mcleblanc
-description: 如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。
+author: stevewhims
+description: 如果你有一个通用 8.1 应用 \#8212;whether 它面向 Windows8.1、 Windows Phone 8.1 还是同时 \#8212;then 你会发现，你的源代码和技能将顺利地移植到 windows 10。
 title: 从 Windows 运行时 8.x 移动到 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205615"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556057"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>从 Windows 运行时 8.x 移动到 UWP
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。 借助 Windows 10，你可以创建通用 Windows 平台 (UWP) 应用，该应用是可供客户安装到各种设备的单个应用包。 有关 Windows 10、UWP 应用的更多背景信息以及我们将在此移植指南中提及的自适应代码和自适应 UI 的概念，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果你有一个通用 8.1 应用，无论它面向 Windows8.1、 Windows Phone 8.1 或两者 —，你会发现，你的源代码和技能将顺利地移植到 windows 10。 与 windows 10，你可以创建通用 Windows 平台 (UWP) 应用，这是可供客户安装到各种设备的单个应用包。 在 windows 10 上的更多背景，UWP 应用和自适应代码和我们将在此移植指南中提及的自适应 UI 的概念有关[向 UWP 应用的指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-在移植时，你将发现 Windows 10 与之前的平台共享大部分 API 以及 XAML 标记、UI 框架和工具，并且对它们全都很熟悉。 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
+在移植时，你会发现 windows 10 与之前的平台，以及 XAML 标记、 UI 框架和工具，共享大部分 Api，你会发现全都很熟悉。 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
 
 ## <a name="if-you-have-a-universal-81-app"></a>如果你有一个 Universal 8.1 App
 
 通用 8.1 应用是基于 8.1 通用应用项目生成的。 假设该项目的名称是 AppName\_81。 它包含这些子项目。
 
--   AppName\_81.Windows。 这是为 Windows 8.1 生成应用包的项目。
+-   AppName\_81.Windows。 这是为 Windows8.1 生成应用包的项目。
 -   AppName\_81.WindowsPhone。 这是为 Windows Phone 8.1 生成应用包的项目。
 -   AppName\_81.Shared。 这是包含由其他两个项目使用的源代码、标记文件以及其他资源的项目。
 
-通常，8.1 通用 Windows 应用在其 Windows 8.1 和 Windows Phone 8.1 形式中提供相同的功能（因此会使用相同的代码和标记）。 这样的应用是移植到面向通用设备系列（并且可安装到种类最广泛的设备）的单个 Windows 10 应用的理想之选。 实际上，你将移植共享项目的内容，并且只需要使用很少或不使用其他两个项目中的内容，因为它们中只有很少内容或没有内容。
+通常，8.1 通用 Windows 应用提供相同的功能，因此会使用相同的代码和标记 — 其 Windows8.1 和 Windows Phone 8.1 形式中。 这样的应用是移植到面向通用设备系列 （并且可安装到种类最广泛的设备） 的单个 windows 10 应用的理想之选。 实际上，你将移植共享项目的内容，并且只需要使用很少或不使用其他两个项目中的内容，因为它们中只有很少内容或没有内容。
 
-其他情况下，应用的 Windows 8.1 和/或 Windows Phone 8.1 形式包含独有的功能。 或者它们虽然包含相同的功能，但使用不同的技术来实现这些功能。 对于这样的应用，你可以选择将其移植到面向通用设备系列的单个应用（在此情况下你要使应用适应不同的设备），或者可以选择将其移植为多个应用（比如，面向桌面设备系列的应用和面向移动设备系列的应用）。 通用 8.1 应用的性质将决定其中哪些选项最适合你的情况。
+其他情况下，Windows8.1 和/或应用的 Windows Phone 8.1 形式包含独有的功能。 或者它们虽然包含相同的功能，但使用不同的技术来实现这些功能。 对于这样的应用，你可以选择将其移植到面向通用设备系列的单个应用（在此情况下你要使应用适应不同的设备），或者可以选择将其移植为多个应用（比如，面向桌面设备系列的应用和面向移动设备系列的应用）。 通用 8.1 应用的性质将决定其中哪些选项最适合你的情况。
 
 1.  将共享项目的内容移植到面向通用设备系列的应用。 如果适用，从 Windows 和 WindowsPhone 项目回收任何其他内容，并无条件地在应用中使用该内容或在当时恰巧运行应用的设备上有条件地使用该内容（后者的行为称为*自适应*）。
 2.  将 WindowsPhone 项目的内容移植到面向跨平台设备系列的应用。 如果适用，从 Windows 项目中回收任何其他内容，并无条件或自适应地使用该内容。

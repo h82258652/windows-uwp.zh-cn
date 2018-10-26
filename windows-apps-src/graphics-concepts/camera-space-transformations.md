@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 032518fe793db99309d098b28f2f8e94bbb072ba
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9de6759fb15aef4b32a5e9022a27cab09af300f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043926"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553492"
 ---
 # <a name="camera-space-transformations"></a>相机空间转换
 
@@ -56,16 +54,16 @@ L<sub>dir</sub> = norm(V \* Lₚ)，其中参数在下表中进行定义。
 | Lₚ              | 不适用           | 3D 矢量（x、y 和 z 浮点值） | 相机空间中的光线位置                            |
 | vMatrix         | Identity      | 浮点值的 4 x 4 矩阵           | 包含视图转换的矩阵                      |
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [照明的数学运算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

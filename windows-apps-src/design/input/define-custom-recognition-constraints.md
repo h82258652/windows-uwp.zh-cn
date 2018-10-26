@@ -9,15 +9,13 @@ keywords: 语音, 语音, 语音识别, 自然语言, 听写, 输入, 用户交�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc38c39591a63800eb5d985022bb7ee569d7203
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 86ed884c3e9811c65d414dce6c0697e20dbd4711
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653476"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559303"
 ---
 # <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
 
@@ -182,7 +180,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C) [用于语音识别的语义翻译 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 规范。
+该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C)[用于语音识别的语义翻译 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 规范。
 
 我们在此处侦听“是”和“否”的变体。
 
@@ -241,9 +239,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 **示例**
 * [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

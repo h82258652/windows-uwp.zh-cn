@@ -6,27 +6,26 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 触摸, 控件, directx, 输入
-ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204388"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553009"
 ---
 # <a name="touch-controls-for-games"></a>游戏的触摸控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。 我们将介绍如何添加基于触摸的控件以便在 Direct3D 环境中（使用手指或触笔在其中拖动来改变相机视角） 移动固定平面相机。
 
 你可以将这些控件合并到游戏中，让玩家能够在 3D 环境中通过拖动滚动或平移地图或游戏区。 例如，在策略游戏或拼图游戏中，你可以使用这些控件让玩家通过左右平移来观看大于屏幕的游戏环境。
 
-> **注意**  我们的代码还使用基于鼠标的平移控件。 与指针相关的事件通过 Windows 运行时 API 进行抽象，因此它们可以处理基于触摸或基于鼠标的指针事件。
+> **注意**我们的代码也适用于基于鼠标的平移控件。 与指针相关的事件通过 Windows 运行时 API 进行抽象，因此它们可以处理基于触摸或基于鼠标的指针事件。
 
- 
+ 
 
 ## <a name="objectives"></a>目标
 
@@ -344,14 +343,12 @@ void CameraPanController::Update( CoreWindow ^window )
 
 恭喜你！ 你已在游戏中实现了一组简单的相机平移触摸控件。
 
-> **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

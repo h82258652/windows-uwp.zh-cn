@@ -5,16 +5,14 @@ description: 了解如何使用 Visual Studio 创建包含可执行代码的可�
 ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
-ms.openlocfilehash: f5660649b6f82135cdb45a8678a3f871a0f5e61d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8f454c7e7386ba829cf6c99edc0b5b8f2d831f00
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482339"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556452"
 ---
 # <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
  

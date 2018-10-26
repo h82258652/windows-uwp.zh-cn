@@ -1,21 +1,19 @@
 ---
 title: 用 JavaScript 创建 UWP 游戏
-description: Microsoft 存储，JavaScript 和 CreateJS 中写入的游戏简单 UWP
+description: 简单的 UWP 游戏的 Microsoft 应用商店、 用 JavaScript 和 CreateJS 编写
 author: GrantMeStrength
 ms.author: jken
 ms.date: 02/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 87625c05ea13dcb8af2c06dfba7b35308200b5eb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1018607"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558520"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -28,13 +26,13 @@ ms.locfileid: "1018607"
 ## <a name="introduction"></a>简介
 
 
-应用程序发布到 Microsoft 存储意味着您可以共享它 （或销售 ！） 与数百万个，许多不同的设备上。  
+应用发布到 Microsoft 应用商店意味着你可以共享 （或其出售 ！） 与数百万人，许多不同设备上。  
 
-若要将您的应用程序发布到 Microsoft 存储必须将编写作为 UWP （通用 Windows 平台） 应用程序。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
+若要将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
 
 此项目由使用 Visual Studio 的 JavaScript 创建。 除了一些细微差别外，还可将其托管在网站上，或者可对其进行调整以适应其他平台。 
 
-**注意：** 这是不完整 （或良好 ！） 游戏;它旨在演示如何使用 JavaScript 和第三方库以使应用程序已准备好发布到 Microsoft 存储区。
+**注意：** 这不是完整 （或好 ！） 游戏;它旨在展示使用 JavaScript 和第三方库将应用发布到 Microsoft 应用商店的准备工作。
 
 
 ## <a name="requirements"></a>要求
@@ -73,7 +71,7 @@ ms.locfileid: "1018607"
 
 ## <a name="walkthough"></a>操作实例
 
-如果通过 F5 开始游戏，则可能会想知道发生了什么。 和答案是"没有很多"，如大量的代码是当前注释掉的。到目前为止，您将看到所有是不复存在和 ineffectual 企求以按空格键。 
+如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
 
 ### <a name="1-setting-the-stage"></a>1. 设置舞台
 
@@ -92,7 +90,7 @@ EaselJS 可以为我们提供一个被称为*舞台*的新对象。 该舞台链
 
 ### <a name="2-loading-the-bitmaps"></a>2. 加载位图
 
-EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以创建简单的形状（如用于天空的蓝色矩形）或位图（例如我们将要添加的云彩）、文本对象和子画面。 子画面使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 一个包含多个图像位图。 例如，我们使用此 SpriteSheet 来存储恐龙动画的不同帧：
+EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以创建简单的形状（如用于天空的蓝色矩形）或位图（例如我们将要添加的云彩）、文本对象和子画面。 子画面使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 一个包含多个图像的单一位图。 例如，我们使用此 SpriteSheet 来存储恐龙动画的不同帧：
 
 ![行走的恐龙的子画面表](images/JS2D_4.png)
 
@@ -170,7 +168,7 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">请参阅 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 为云彩添加动画效果</a>，Microsoft Edge 文档 (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>)（位于 <a href="http://codepen.io">CodePen</a>）。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
+ 
 执行该操作的代码已位于 **main.js** 文件中，由 CreateJS 库 EaselJS 提供。 显示如下：
 
 ```
@@ -259,9 +257,9 @@ function animate_clouds()
 
 如果再次运行此应用，则现在你应该可以调整窗口大小并获得更好的效果。
 
-## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 存储
+## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
 
-现在您具有 UWP 应用程序，就可以将其发布到 Microsoft 存储 （假定您已经在首次改进 ！） 
+现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
 
 此流程包含几个步骤。
 
@@ -269,7 +267,7 @@ function animate_clouds()
 2. 你必须使用应用提交[清单](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必须将此应用提交以进行[认证](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
-有关详细信息，请参阅[Publishing UWP 应用程序](https://developer.microsoft.com/en-us/store/publish-apps)。
+有关详细信息，请参阅[发布你的 UWP 应用](https://developer.microsoft.com/en-us/store/publish-apps)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能建议。
 

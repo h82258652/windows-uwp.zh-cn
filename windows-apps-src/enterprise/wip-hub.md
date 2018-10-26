@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: 此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。
+Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -8,15 +8,15 @@ title: Windows 信息保护 (WIP)
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dec05e663e6ca7390dc3974b8a3cde2971b50426
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204267"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555861"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 信息保护 (WIP)
 
@@ -64,7 +64,7 @@ WIP 和 MDM 一起使组织可以更好地控制如何处理组织所管理的�
 
 如果你已准备好启发你的应用，请参阅以下指南之一：
 
-**对于使用 C 生成的通用 Windows 平台 (UWP) 应用#**
+**对于使用 C# 生成的通用 Windows 平台 (UWP) 应用**
 
 [Windows 信息保护 (WIP) 开发人员指南](wip-dev-guide.md)。
 
@@ -99,4 +99,4 @@ END
 
 
 
- 
+ 

@@ -5,16 +5,14 @@ description: 了解如何在保持与以前版本的兼容性的同时利用新 
 ms.author: jimwalk
 ms.date: 09/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: b96fafe380c08c74c4e411c7d559cc961c6da1ed
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513970"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554838"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应应用：在保持与以前版本的兼容性的同时使用新 API
 

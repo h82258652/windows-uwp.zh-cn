@@ -3,18 +3,16 @@ author: TerryWarwick
 title: 服务点硬件支持
 description: 本文包含有关每个服务点设备类的硬件支持的信息
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb2468497115c9595f6fd17ab61b30caed507ab
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832091"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559247"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 
@@ -27,18 +25,76 @@ ms.locfileid: "1832091"
 |
 
 
-### <a name="compatible-barcode-scanners"></a>兼容的条形码扫描仪
-| 类别 | 连接性 | 制造商/型号 |
-|--------------|-----------|-----------|
-| **1D 手持扫描仪** | **USB** |Honeywell Voyager 1200g<br/>Honeywell Voyager 1202g<br/>Honeywell Voyager 1202-bf<br/>Honeywell Voyager 145Xg（可升级）|
-| **1D 手持扫描仪** | **蓝牙** |Socket Mobile CHS 7Ci<br/> Socket Mobile CHS 7Di<br/> Socket Mobile CHS 7Mi<br/> Socket Mobile CHS 7Pi<br/>Socket Mobile DuraScan D700<br/> Socket Mobile DuraScan D730<br/>Socket Mobile SocketScan S800（以前称为 CHS 8Ci） <br/>|
-|**2D 手持扫描仪** | **USB** |Code Reader™ 950<br/>Code Reader™ 1021<br/>Code Reader™ 1421<br/> Honeywell Granit 198Xi<br/>Honeywell Granit 191Xi<br/>Honeywell Xenon 1900g<br/>Honeywell Xenon 1902g<br/>Honeywell Xenon 1902g-bf<br/>Honeywell Xenon 1900h<br/>Honeywell Xenon 1902h<br/>Honeywell Voyager 145Xg（可升级）<br/>Honeywell Voyager 1602g<br/>Intermec SG20<br/>Zebra DS2278<br/>Zebra DS8108 ¹<hr><small>¹ 最低需要固件 016 (2018.01.18)。 可使用 [123Scan](http://www.zebra.com/123Scan) 升级</small>|
-|**2D 手持扫描仪** | **蓝牙** |Socket Mobile SocketScan S850（以前称为 CHS 8Qi）|
-| **演示扫描仪** | **USB** |Code Reader™ 5000<br/>Honeywell Genesis 7580g<br/>Honeywell Orbit 7190g|
-| **柜台扫描仪** | **USB** |Honeywell Stratos 2700|
-| **扫描引擎** | **USB** | Honeywell N5680<br/>Honeywell N3680|
-| **Windows Mobile 设备**| **内置** |Bluebird EF400<br/>Bluebird EF500<br/>Bluebird EF500R<br/>Honeywell CT50<br/>Honeywell D75e<br/>Janam XT2<br/>Panasonic FZ-E1<br/>Panasonic FZ-F1<br/>PointMobile PM80<br/>Zebra TC700j|
-| **Windows Mobile 设备**| **自定义** | 具有条形码扫描仪护套的 HP Elite X3 |
+| 制造商  | 型号                          | 功能 | 左侧的“连接”    | 类型         | 模式                      |
+|---------------|--------------------------------|------------|--------------|--------------|---------------------------|
+| 代码          | Reader™ 950                    | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| 代码          | Reader™ 1021                   | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| 代码          | Reader™ 1421                   | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| 代码          | Reader™ 5000                   | 2D         | USB          | 演示 | HID 的 POS 扫描仪           |
+| Honeywell     | Genesis 7580g                  | 2D         | USB          | 演示 | HID 的 POS 扫描仪           |
+| Honeywell     | Granit 198Xi                   | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Granit 191Xi                   | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | N5680                          | 2D         | 内置     | 组件    | HID 的 POS 扫描仪           |
+| Honeywell     | N3680                          | 2D         | 内置     | 组件    | HID 的 POS 扫描仪           |
+| Honeywell     | 轨道 7190g                    | 2D         | USB          | 演示 | HID 的 POS 扫描仪           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | 计数器   | HID 的 POS 扫描仪           |
+| Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Voyager 1202g                  | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Voyager 1202-bf                | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Voyager 145Xg                  | 1D 2 D ¹   | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Voyager 1602g                  | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Xenon 1900g                    | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Xenon 1902g                    | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Xenon 1900h                    | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Honeywell     | Xenon 1902h                    | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| HP            | 值条形码扫描仪 (HR2150) | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Intermec      | SG20                           | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Socket Mobile | CHS 7Ci                        | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | CHS 7Di                        | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | CHS 7mi                        | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | CHS 7Pi                        | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | CHS 8Ci                        | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | DuraScan D700                  | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | DuraScan D730                  | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | DuraScan D740                  | 2D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | SocketScan S700                | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | SocketScan S730                | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | SocketScan S740                | 2D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | SocketScan S800                | 1D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Socket Mobile | SocketScan S850                | 2D         | 蓝牙    | 手持     | 串行端口配置文件 (SPP) |
+| Zebra         | DS2278                         | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+| Zebra         | DS8108²                        | 2D         | USB          | 手持     | HID 的 POS 扫描仪           |
+|
+
+
+¹ Upgradable 以支持通过 Honeywell 2D 条形码 <br/>
+² 最低需要固件 016 (2018.01.18)。 可使用 Zebra [123Scan](http://www.zebra.com/123Scan)。 
+
+
+<hr>
+
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>与内置的条形码扫描仪的 Windows 设备
+| 制造商   | 型号 | 操作系统 |
+|----------------|-------|------------------|
+| Innowi         | ChecOut M | Windows 10   |
+
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>与内置的条形码扫描仪的 Windows 移动版设备
+| 制造商   | 型号 | 操作系统 |
+|----------------|-------|------------------|
+| Bluebird       | EF400 | Windows 移动版   |
+| Bluebird       | EF500 | Windows 移动版   |
+| Bluebird       | EF500R | Windows 移动版   |
+| Honeywell      | CT50   | Windows 移动版   |
+| Honeywell      | D75e | Windows 移动版   |
+| Janam          | XT2      | Windows 移动版   |
+| 松下      | FZ-E1 | Windows 移动版   |
+| 松下      | FZ-F1 |Windows 移动版   |
+| PointMobile    | PM80 | Windows 移动版   |
+| Zebra          | TC700j | Windows 移动版   |
+| HP             | Elite X3 护套 | Windows 移动版   |
+
+
 
 
 ## <a name="cash-drawer"></a>收银机

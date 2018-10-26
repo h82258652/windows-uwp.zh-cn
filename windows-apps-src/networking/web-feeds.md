@@ -6,16 +6,14 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d01ab6fc70397824b4bd6b267dd5e7cdeac0ee
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975799"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559689"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 源
 
@@ -48,7 +46,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 网络隔离功能可影响尝试访问网络的 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空间中的任何类元素。 Windows 会主动强制实现网络隔离。 如果尚未启用相应的网络功能，则调用 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空间中的类元素可能会因为网络隔离导致网络访问失败。
 
-在生成应用时，在应用清单中配置其网络功能。 网络功能通常在开发应用时通过 Microsoft Visual Studio 2015 添加。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
+在生成应用时，在应用清单中配置其网络功能。 网络功能通常添加开发应用时使用 Microsoft Visual Studio2015。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
 
 有关网络隔离和网络功能的详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 

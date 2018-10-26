@@ -6,16 +6,14 @@ title: 视频捕获的效果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a3c6efd0abc4061ffc567ec088171c62528e7ff
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: d427a532e9821b81b6f23d08babecd692c8c95e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843277"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557888"
 ---
 # <a name="effects-for-video-capture"></a>视频捕获的效果
 
@@ -107,9 +105,9 @@ ms.locfileid: "1843277"
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

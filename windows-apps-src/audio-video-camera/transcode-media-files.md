@@ -6,16 +6,14 @@ title: 转换媒体文件代码
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c13471d67033790c01a07e53af667c2a078894
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831971"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556690"
 ---
 # <a name="transcode-media-files"></a>转换媒体文件代码
 
@@ -86,11 +84,18 @@ ms.locfileid: "1831971"
 
 
 ## <a name="encode-a-metadata-stream"></a>对元数据流进行编码
+从 Windows 10，版本 1803年开始，你可以包含计时元数据时转换媒体文件。 与上述的视频转换代码示例中，它使用内置的媒体编码配置文件创建方法，如[**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，你必须手动创建元数据编码配置文件以支持类型的元数据编码.
 
-
+在创建元数据 incoding 配置文件中的第一步是创建描述要转换代码的元数据编码 [**TimedMetadataEncodingProperties**] 对象。 子类型属性是指定的元数据类型的 GUID。 每个元数据类型的编码详细信息，专并不由 Windows 提供。 在此示例中，使用 GoPro 元数据 (gprs) 的 GUID。 接下来，调用[**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)以设置描述特定于元数据格式的流格式的数据的二进制文件 blob。 下一步， **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)由编码属性，并跟踪标签和名称是允许应用程序读取 endcoded 流标识元数据流和 （可选） 在 UI 中显示的流名称。 
  
+[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
- 
+创建后**TimedMetadataStreamDescriptor**，你可以创建**MediaEncodingProfile**描述视频、 音频和元数据文件中进行编码。 在最后一个示例中创建**TimedMetadataStreamDescriptor**传递到此示例帮助程序函数，并通过调用[**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)添加到**MediaEncodingProfile** 。
+
+[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
+ 
+
+ 
 
 
 

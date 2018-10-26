@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7f68984274cbdb3adec0a88a0c99f7a7342380
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045110"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556410"
 ---
 # <a name="data-type-conversion"></a>数据类型转换
 
@@ -37,7 +35,7 @@ ms.locfileid: "1045110"
 | FLOAT | 任意表示形式中由 Direct3D 定义的浮点值。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | SRGB  | 与 UNORM 类似，对于其中的 n 位数字而言，所有 0 都意味着 0.0f，且所有 1 都意味着 1.0f。 但是，和 UNORM 不同，在 SRGB 中，所有 0 至所有 1 之间的有符号整数编码序列表示 0.0f 至 1.0f 之间数字的浮点解释中的非线性进度。 大致上说，如果此非线性进度 (SRGB) 显示为颜色序列，在“average”查看条件下，它将在“average”显示器上对“average”观察者显示为亮度级别的线性渐变。 有关完整的详细信息，请参考 IEC（国际电工委员会）的 IEC 61996-2-1，SRGB 颜色标准。                |
 
- 
+ 
 
 上述条款经常用作“格式名称修饰符”，它们会描述数据在内存中的布局方式，以及要在进入或离开管道单元的内存（例如着色器）中的传输路径中执行何种转换（可能包含筛选）。
 
@@ -189,7 +187,7 @@ ms.locfileid: "1045110"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定点整数转换
 
@@ -238,22 +236,22 @@ ms.locfileid: "1045110"
 <td align="left">固定点整数</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>假设转换为浮动的特定固定点表示形式不包含超过总共 24 位的信息，则小数部分的信息不超过 23 位。 假设给定的固定点数 fxp 为 i.f 形式（i 为整数位，f 为小数位）。 转换为浮点的操作与以下伪代码类似。</p>
-<p>float 结果 = (浮点) (fxp &gt; &gt; f) + / / 提取整数</p>
-((浮点) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>));提取分数</td>
+<p>浮点结果 = (float) (fxp &gt; &gt; f) + / / 提取整数</p>
+((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>));提取小数</td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [附录](appendix.md)
 
- 
+ 
 
- 
+ 
 
 
 

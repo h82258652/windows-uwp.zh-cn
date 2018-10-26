@@ -6,19 +6,17 @@ description: 了解如何创建定期重复的工作项。
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 定期工作项, 线程处理, 计时器
-ms.openlocfilehash: 59dd19692143b155c33f8fdd7f3197f724ebb0ac
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665273"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558878"
 ---
 # <a name="create-a-periodic-work-item"></a>创建定期工作项
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要的 API **
 
@@ -33,9 +31,9 @@ ms.locfileid: "665273"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 返回一个 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 对象。 存储该对象，以防需要取消计时器。
 
-> **注意**  避免将间隔的值指定为零（或小于 1 微秒的任何值）。 这将导致定期计时器像单次计时器一样操作。
+> **注意**避免指定值为零 （或小于 1 微秒的任何值） 的时间间隔。 这将导致定期计时器像单次计时器一样操作。
 
-> **注意**  你可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 并显示工作项的进度。
+> **注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
 
 以下示例创建每 60 秒运行一次的工作项：
 
@@ -209,4 +207,4 @@ ms.locfileid: "665273"
 * [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
- 
+ 

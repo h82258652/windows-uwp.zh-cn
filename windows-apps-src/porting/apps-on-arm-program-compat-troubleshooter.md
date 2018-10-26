@@ -5,16 +5,14 @@ description: 介绍当你的应用无法在 ARM 上正常工作时如何调整�
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10 s, 始终连接, 兼容性疑难解答, 基于 ARM 的 windows
 ms.localizationpriority: medium
-ms.openlocfilehash: d517b2e455f6ad75d3158c7899ad70a774cabc46
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1595103"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555000"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程序兼容性疑难解答
 模拟以支持 x86 应用是为基于 ARM64 的 Windows 10 创建的一项新功能。 有时，模拟可以执行优化，但无法提供最佳体验。 你可以使用程序兼容性疑难解答切换 x86 应用的模拟设置，从而减少默认优化并有可能提高兼容性。

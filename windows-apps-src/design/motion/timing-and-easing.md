@@ -7,19 +7,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 412ba7e36c2bb36562ceee13bb1e204ff402a882
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 9983c62804dad4f0202fc83e3f9b5f23714352d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843739"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555635"
 ---
 # <a name="timing-and-easing"></a>计时和缓动
 
@@ -41,19 +39,38 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 ### <a name="150ms-exit"></a>**150 毫秒**（退出）
 
-:::行::: :::列::: 用于正在退出场景或关闭的对象或页面。
-允许计时不会妨碍帧速率实现流畅动画的退出 UI 呈现非常快速的方向反馈。
-:::列末::: :::列::: ![150 毫秒运动](images/150msAlt.gif) :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        Use for objects or pages that are exiting the scene or closing.
+        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+    :::column-end:::
+    :::column:::
+        ![150ms motion](images/150msAlt.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="300ms-enter"></a>**300 毫秒**（进入）
 
-:::行::: :::列::: 用于正在进入场景或打开的对象或页面。
-允许内容进入场景时留有欢迎内容的合理时间量。
-:::列末::: :::列::: ![300 毫秒运动](images/300ms.gif) :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        Use for objects or pages that are entering the scene or opening.
+        Allows a reasonable amount of time to celebrate content as it enters the scene.
+    :::column-end:::
+    :::column:::
+        ![300ms motion](images/300ms.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="500ms-move"></a>**≤500 毫秒**（移动）
 
-:::行::: :::列::: 用于正在跨单个或多个场景转换的对象。 :::列末::: :::列::: ![500 毫秒运动](images/500ms.gif) :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        Use for objects which are translating across a single scene or multiple scenes. 
+    :::column-end:::
+    :::column:::
+        ![500ms motion](images/500ms.gif)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="easing-in-fluent-motion"></a>Fluent 运动的缓动
 
@@ -69,7 +86,9 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 ### <a name="accelerate-exit"></a>**加快**（退出）
 
-:::行::: :::列::: 用于正在退出场景的 UI 或对象。
+:::row:::
+    :::column:::
+        Use for UI or objects that are exiting the scene.
 
         Objects become powered and gain momentum until they reach escape velocity.
         The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
@@ -77,7 +96,7 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
     :::column:::
         ![accelerate easing](images/accelEase.gif)
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ```
 cubic-bezier(0.7 , 0 , 1 , 0.5)
@@ -106,7 +125,9 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 ### <a name="decelerate-enter"></a>**减速**（进入）
 
-:::行::: :::列::: 用于正在进入场景（导航或生成）的对象或 UI。
+:::row:::
+    :::column:::
+        Use for objects or UI entering the scene, either navigating or spawning.
 
         Once on-scene, the object is met with extreme friction, which slows the object to rest.
         The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
@@ -116,7 +137,7 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
     :::column:::
         ![decelerate easing](images/decelEase.gif)
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ```
 cubic-bezier(0.1 , 0.9 , 0.2 , 1)
@@ -145,15 +166,17 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 ### <a name="standard-easing-move"></a>**标准缓动**（移动）
 
-:::行::: :::列::: 这是用于系统内所有动画参数更改的基准缓动。
-为屏幕上发生状态改变（如简单的位置改变）的对象使用标准缓动。 此外，为在场景内变形（如生长的对象）的对象使用此缓动。
+:::row:::
+    :::column:::
+        This is the baseline easing for any animated parameter change inside of the system.
+        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
 
         The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
     :::column-end:::
     :::column:::
         ![standard easing](images/standardEase.gif)
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ```
 cubic-bezier(0.8 , 0 , 0.2 , 1)

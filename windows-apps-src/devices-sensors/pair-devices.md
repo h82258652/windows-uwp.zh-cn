@@ -6,16 +6,14 @@ description: 某些设备需要先进行配对，然后才能使用。 Windows.D
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 86cac8248db896f56757dae7678d6e146835884c
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 64f4756df37cbfaf041e432b7e4a890123f52d2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673994"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554967"
 ---
 # <a name="pair-devices"></a>为设备配对
 
@@ -31,9 +29,9 @@ ms.locfileid: "1673994"
 -   基本配对
 -   自定义配对
 
-**提示**  某些设备不需要进行配对即可使用。 这将在自动配对的部分中进行介绍。
+**提示**某些设备不需要进行配对即可使用。 这将在自动配对的部分中进行介绍。
 
- 
+ 
 
 ## <a name="automatic-pairing"></a>自动配对
 
@@ -74,6 +72,6 @@ ms.locfileid: "1673994"
 
 若要下载展示如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的示例，请单击[此处](http://go.microsoft.com/fwlink/?LinkID=620536)。
 
- 
+ 
 
- 
+ 

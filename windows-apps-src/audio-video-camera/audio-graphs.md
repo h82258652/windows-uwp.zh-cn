@@ -6,16 +6,14 @@ title: 音频图
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b9f49c8f21c7c60fb99fd8eaf24156a8aed3d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: cdd1548a4d120027afd06a178cc338c88cb5cc4b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832498"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558268"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -47,7 +45,7 @@ Windows 运行时音频图 API：
 -   比使用 XAudio2 简单得多。
 -   除了受 C++ 支持，还可以通过 C# 使用。
 -   可以直接使用音频文件，包括压缩的文件格式。 XAudio2 仅在音频缓冲区上运行，不提供任何文件 I/O 功能。
--   可以使用 Windows 10 中的低延迟音频管道。
+-   可以在 windows 10 中使用的低延迟音频管道。
 -   支持在默认终结点参数处于使用状态时，自动切换终结点。 例如，如果用户从设备扬声器切换到耳机，则音频会自动重定向到新输入。
 
 ## <a name="audiograph-class"></a>AudioGraph 类
@@ -270,9 +268,9 @@ Windows 运行时音频图 API：
 
 ## <a name="see-also"></a>另请参阅
 - [媒体播放](media-playback.md)
- 
+ 
 
- 
+ 
 
 
 

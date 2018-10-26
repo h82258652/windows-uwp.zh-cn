@@ -6,19 +6,18 @@ ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx 11, 设备丢失
-ms.openlocfilehash: 3d7a93ed0b1ce78cba278232eb5325e463c12789
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 888b3ec7ab667a8a92ae638a9d5c456c3180df0d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204322"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558600"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>在 Direct3D 11 中处理设备删除方案
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。
 
@@ -29,7 +28,7 @@ ms.locfileid: "204322"
 -   图形设备停止响应并进行重置。
 -   已采用物理方式附加或删除图形适配器。
 
-出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 随 Microsoft Visual Studio 2015 一起提供的 DirectX 11 应用（通用 Windows）模板提供了代码示例。
+出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 使用 Microsoft Visual Studio2015 提供的 DirectX 11 应用 (通用 Windows) 模板提供的代码示例。
 
 ## <a name="instructions"></a>说明
 
@@ -169,4 +168,4 @@ if (m_deviceNotify != nullptr)
 
 对于与 Visual Studio 图形诊断相关的 Direct3D 事件捕获和播放，Visual Studio 开发人员命令提示符支持命令行工具“dxcap”。 当你的应用正在运行时，你可以使用命令行选项“-forcetdr”，以便强制执行 GPU 超时检测和恢复事件，进而触发 DXGI\_ERROR\_DEVICE\_REMOVED 并允许你测试错误处理代码。
 
-> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 有关如何安装适用于 Windows 10 的图形工具的详细信息可以在此处找到：<https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
+> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 如何安装为 Windows 10 图形工具的详细信息可以在此处找到： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>

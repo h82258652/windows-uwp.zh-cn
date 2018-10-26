@@ -1,35 +1,33 @@
 ---
 author: v-angraf
 ms.assetid: 94bb7ad9-cf50-61a8-ad42-48b9bdb9ed36
-title: 主页 （开发主页）
-description: 提供有关主页页上的信息开发主页应用程序的一个 Xbox。
+title: 主页 （开发人员主页）
+description: 提供适用于 Xbox One 开发人员主页应用的信息主页页面。
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b863b56dcff96833adccd5c1ca08743d60bf0b
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: b95637b38aafeb4111ecb25279dcec448ca3c30f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015429"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551931"
 ---
-# <a name="home-page-dev-home"></a>主页 （开发主页）
+# <a name="home-page-dev-home"></a>主页 （开发人员主页）
    
   
-开发主页的**主页**页提供对定期执行开发控制台的任务的快速访问。   
- ![主页上的开发主页](images/devhome_home.png)   
+开发人员主页**主页**页面提供快速访问例行开发控制台执行的任务。   
+ ![主页上的开发人员主页](images/devhome_home.png)   
   
 **主页**页包含以下窗格：   
  
    *  [快速操作](#ID4EEB)  
-   *  [游戏和应用程序](#ID4EPC)  
+   *  [游戏和应用](#ID4EPC)  
    *  [测试帐户](#ID4EQD)  
-   *  [将与您的浏览器连接](#ID4EFE)  
+   *  [联系你的浏览器](#ID4EFE)  
 
  
 <a id="ID4EEB"></a>
@@ -39,30 +37,30 @@ ms.locfileid: "1015429"
 ## <a name="quick-actions"></a>快速操作  
    
   
-**快速操作**窗格包含以下按钮提供快速访问经常执行的操作：   
+**快速操作**窗格包含以下按钮可提供快速访问经常执行的操作：   
  
-   *  **显示 Visual Studio pin:** 显示可用于对您的计算机上安装的 Visual Studio 开发控制台的代码。   
-   *  **更改沙盒：** 允许您更改控制台是哪些沙盒。   
-   *  **重新启动控制台：** 重新启动开发控制台。   
-   *  **离开开发模式：** 返回到零售模式控制台，并重新启动控制台。   
-   *  **启动主页：** 启动零售主屏幕中。   
-   *  **注册共享的网络位置从游戏：** 注册共享的网络位置的游戏。   
+   *  **显示 Visual Studio pin:** 显示可用于将开发控制台与你的计算机上安装 Visual Studio 配对的代码。   
+   *  **更改沙盒：** 使你能够更改控制台处于的沙盒。   
+   *  **重新启动控制台：** 重启开发主机。   
+   *  **退出开发人员模式：** 返回到零售模式下的控制台并重新启动控制台。   
+   *  **启动主页：** 启动零售主页屏幕。   
+   *  **注册中共享的网络位置的游戏：** 注册中共享的网络位置的游戏。   
 
   
 <a id="ID4EPC"></a>
 
    
 
-## <a name="games--apps"></a>游戏和应用程序   
+## <a name="games--apps"></a>游戏和应用   
    
   
-**游戏和应用程序**窗格可用于执行以下操作：   
+可以在**的游戏和应用**窗格中，用于执行以下操作：   
  
-   *  查看游戏和开发控制台上安装的应用程序的列表。  
-   *  快速启动游戏和应用程序。  
-   *  查看游戏和应用程序的 PLM 状态。  
-   *  从上下文菜单更改 PLM 状态。  
-   *  注册并从远程网络共享运行标题。
+   *  查看游戏和应用安装在开发控制台上的列表。  
+   *  快速启动游戏和应用。  
+   *  查看游戏和应用的 PLM 状态。  
+   *  在上下文菜单中更改 PLM 状态。  
+   *  注册并从远程网络共享运行游戏。
 
   
 <a id="ID4EQD"></a>
@@ -72,10 +70,10 @@ ms.locfileid: "1015429"
 ## <a name="test-accounts"></a>测试帐户  
    
   
-**测试帐户**窗格可用于执行以下操作：   
+可以在**测试帐户**窗格中，用于执行以下操作：   
  
-   *  查看控制台上注册的用户列表。  
-   *  登录单击一下用户入或签出。  
+   *  在控制台上注册用户的列表视图。  
+   *  签署一次单击的用户或缩小。  
    *  添加用户和来宾帐户。  
    *  查看用户和来宾帐户的详细信息。  
 
@@ -84,16 +82,16 @@ ms.locfileid: "1015429"
 
    
 
-## <a name="connect-with-your-browser"></a>将与您的浏览器连接  
+## <a name="connect-with-your-browser"></a>联系你的浏览器  
    
   
-**与您的浏览器的连接**窗格中显示的 IP 地址和端口可用于从 web 浏览器中管理控制台。   
+**连接与你的浏览器**窗格中显示的 IP 地址和端口，但是你可以使用从 web 浏览器管理你的主机。   
   
 <a id="ID4EPE"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [在控制台 （开发主页） 上的开发主页](dev-home.md)
+ [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

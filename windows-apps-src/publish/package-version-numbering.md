@@ -4,22 +4,20 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: 程序包版本编号
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470405"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558769"
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
-你提供的每个程序包都必须具有一个版本号（采用应用清单中 **Package/Identity** 元素的 **Version** 属性值进行提供）。 Microsoft Store 强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
+你提供的每个程序包都必须具有一个版本号（采用应用清单中 [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素的 **Version** 属性值进行提供）。 Microsoft Store 强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
 
 > [!NOTE]
 > 本主题提及"程序包"，但除非另有说明，否则.msix/.appx 和.msixbundle/.appxbundle 文件的版本号应用相同的规则。
@@ -28,15 +26,15 @@ ms.locfileid: "5470405"
 ## <a name="version-numbering-for-windows10-packages"></a>Windows 10 程序包的版本编号
 
 > [!IMPORTANT]
-> 对于 Windows 10 (UWP) 程序包，版本号的最后 （第四个） 部分会保留的应用商店使用，并且必须保留为 0 （尽管应用商店可能会更改此部分中的值） 生成程序包时。
+> 对于 Windows 10 (UWP) 程序包，版本号的最后 （第四个） 部分会保留的应用商店使用，并且必须保留为 0 （尽管应用商店可能会更改此部分中的值） 生成程序包时。 其他部分必须设置为介于 0 和 65535 （除了第一个部分，不能为 0） 之间的整数。
 
 当从已发布的提交中选择 UWP 程序包，Microsoft Store 将始终使用适用于客户的 Windows 10 设备的版本最高的程序包。 这将为你提供更大的灵活性，并让你可以控制在特定设备类型上提供给客户的程序包。 重要的是，你可以按任意顺序提交这些程序包；你将并不局限于提供每个后续提交中的更高版本的程序包。
 
 你可以使用相同版本号提供多个 UWP 程序包。 但是，共享一个版本号的程序包也不能拥有相同的体系结构，因为应用商店用于每个程序包的完整标识必须是唯一的。 有关详细信息，请参阅 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
-当你提供多个使用相同版本号的 UWP 程序包时，体系结构 （顺序为 x64、 x86、 ARM、 neutral） 将用于确定哪一个是等级更高 （当在应用商店确定哪个程序包提供给客户的设备）。 当对使用相同版本号的应用程序包进行分级时，应考虑采用程序包内等级最高的体系结构：包含 x64 程序包的应用程序包的等级高于仅包含 x86 程序包的应用程序包的等级。
+当你提供多个使用相同版本号的 UWP 程序包时，体系结构 （顺序为 x64、 x86、 ARM、 neutral） 将用于确定哪种等级更高 （当在应用商店确定哪个程序包提供给客户的设备）。 当对使用相同版本号的应用程序包进行分级时，应考虑采用程序包内等级最高的体系结构：包含 x64 程序包的应用程序包的等级高于仅包含 x86 程序包的应用程序包的等级。
 
-这将为你随时间推移不断优化你的应用提供了极大的灵活性。 你可以上传和提交使用较低版本号以添加对之前不支持的 Windows 10 设备支持的新程序包，你可以添加具有更为严格的相关性，以充分利用硬件或操作系统功能，或你的更高版本的程序包可以添加版本号较高的程序包，用作对部分或全部现有客户更新基本。
+这将为你随时间推移不断优化你的应用提供了极大的灵活性。 你可以上传和提交使用较低版本号以添加对之前不支持的 Windows 10 设备支持的新程序包，你可以添加具有更为严格的相关性，以充分利用硬件或操作系统功能，或你的更高版本的程序包可以添加用作对部分或全部现有客户群的更高版本的程序包。
 
 下面的示例说明了如何管理版本编号，以便通过多个提交将预期的程序包交付给客户。
 
@@ -58,20 +56,20 @@ Windows 10 使你能够编写一个代码库可在任意位置运行。 这使�
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>使用版本编号，可针对新获取的程序包回滚到以前交付的程序包
 
-如果保留了你的程序包的副本，你必须选择你的应用包应用商店中回滚到早期 windows 10 程序包，你应发现版本问题时。 这是一种限制对你的客户的中断，而花费时间来修复问题的方法。
+如果保留了你的程序包的副本，你必须选择你的应用包应用商店中回滚到早期 windows 10 程序包，你应发现版本问题时。 这是一种方法，将向你的客户的中断限制而花费时间来解决此问题。
 
-若要执行此操作，请创建新的[提交](app-submissions.md)。 删除有问题的程序包并上载你想要在应用商店中提供的旧程序包。 已收到你正在回滚的程序包的客户仍然会具有出现问题的程序包（因为较旧程序包的版本号是早期的）。 但是，这将阻止任何其他用户获取有问题的程序包，同时将仍然允许在应用商店中提供该应用。
+若要执行此操作，创建一个新[提交](app-submissions.md)。 删除有问题的程序包并上载你想要在应用商店中提供的旧程序包。 已收到你正在回滚的程序包的客户仍然会具有出现问题的程序包（因为较旧程序包的版本号是早期的）。 但是，这将阻止任何其他用户获取有问题的程序包，同时将仍然允许在应用商店中提供该应用。
 
 若要为已收到有问题的程序包的客户解决此问题，你可以提交新的 windows 10 程序包，如你可以具有更高版本的版本号，与程序包。 在该提交完成认证过程后，所有客户的程序包都将更新为新程序包，因为它具有更高的版本号。
 
 
-## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>版本编号的 Windows8.1 （及更早版本） 和 Windows Phone 8.1 程序包
+## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>以及 Windows Phone 8.1 程序包的版本编号的 Windows8.1 （及更早版本）
 
 对于面向 Windows Phone 8.1 的 .appx 程序包，新提交中的程序包版本号必须始终大于上一提交（或之前任意提交）中所含的程序包版本号。
 
 对于面向 Windows8 和 Windows8.1 的.appx 程序包，相同的规则应用于每个体系结构： 新提交中的程序包的版本号必须始终大于到应用商店的同一体系结构下上次发布的包。
 
-此外，Windows8.1 程序包的版本号必须始终大于你的任何 Windows8 程序包为相同应用的版本号。 换言之，你提交的任何 Windows8 程序包的版本号必须低于你已为相同应用提交的任何 Windows8.1 程序包的版本号。
+此外，Windows8.1 程序包的版本号必须始终大于任何 Windows8 同一个应用的程序包的版本号。 换言之，在你提交的任何 Windows8 程序包的版本号必须低于你已为相同应用提交的任何 Windows8.1 程序包的版本号。
 
 > [!NOTE]
 > 如果你的应用还具有 windows 10 程序包，windows 10 程序包的版本号必须始终高于那些为你的任何 Windows8、 Windows8.1，和/或 Windows Phone 8.1 程序包。 有关详细信息，请参阅[添加到以前发布的应用的 windows 10 的程序包](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。

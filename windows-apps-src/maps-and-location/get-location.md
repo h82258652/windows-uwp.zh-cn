@@ -4,22 +4,20 @@ title: 获取用户位置
 description: 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.author: pafarley
-ms.date: 02/08/2017
+ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 位置功能
-ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.localizationpriority: medium
+ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695741"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558057"
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
@@ -48,7 +46,7 @@ ms.locfileid: "695741"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步骤 1：请求访问用户的位置
 
-除非你的应用具有 Consentless Location 功能（参见备注），否则在尝试访问用户的位置之前，必须使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法请求对该位置的访问权限。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
+除非你的应用具有粗糙 location 功能 （参见备注），你必须使用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)之前尝试访问的位置请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -60,7 +58,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
 
->注意：Consentless Location 功能使应用在未获得用户明确许可的情况下就可以获取有意模糊（不精确）的位置（但系统级的位置开关仍必须为**开**）。 若要了解如何在应用中利用 Consentless Location，请参阅 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 类中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
+>注意： 粗糙 location 功能使你的应用可以获取有意模糊 （不精确） 的位置，而无需获得用户明确许可 （系统级的位置开关仍必须为**上**，但是）。 若要了解如何利用你的应用中的粗糙位置，请参阅[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)类中的[**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)方法。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步骤 2：获取用户的位置并注册位置权限的更改
 
@@ -263,9 +261,9 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 ## <a name="troubleshoot-your-app"></a>对应用进行故障排除
 
 
-在你的应用可以访问用户位置之前，必须在设备上启用 **“位置”**。 在**设置**应用中，检查以下**位置隐私设置**是否已打开：
+在你的应用可以访问用户位置之前，必须在设备上启用 **“位置”**。 在“设置”**** 应用中，检查以下“位置隐私设置”**** 是否已打开：
 
--   **“此设备的位置...”** 已 **“打开”**（在 Windows 10 移动版中不适用）
+-   **...此设备的位置**是处于**打开**状态 （在 windows 10 移动版中不适用）
 -   位置服务设置（**位置**）已**打开**
 -   在 **“选择可以使用你的位置的应用”** 下，你的应用已设置为 **“打开”**
 

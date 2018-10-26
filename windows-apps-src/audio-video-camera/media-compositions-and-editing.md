@@ -6,18 +6,17 @@ title: 媒体合成和编辑
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 66d14ae9335edcc5535d0dcc37cca2273874f61d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205885"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557348"
 ---
 # <a name="media-compositions-and-editing"></a>媒体合成和编辑
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你介绍如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间中的 API 来快速开发应用，从而使用户从音频和视频源文件创建媒体合成。 框架的功能包括以编程方式同时追加多个视频剪辑、添加视频和图像覆盖、添加后台音频，以及同时应用音频和视频效果。 创建媒体合成后，可在平面媒体文件中进行呈现以供播放或共享，但合成还可通过磁盘进行序列化和反序列化，从而允许用户加载并修改之前创建的合成。 这一完整功能将在易于使用的 Windows 运行时接口中提供，与低级别 [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 相比，它可大大减少执行这些任务所需的代码数量和复杂性。
@@ -152,9 +151,9 @@ ms.locfileid: "205885"
 
 -   如果合成中的媒体文件不在你的应用可以访问的位置中，并且也不在你的应用的 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 类的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 属性中，当加载该合成时，将引发错误。
 
- 
+ 
 
- 
+ 
 
 
 

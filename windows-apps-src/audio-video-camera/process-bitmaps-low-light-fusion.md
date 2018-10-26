@@ -5,16 +5,14 @@ title: 使用 Low Light Fusion API 处理位图
 ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, low light fusion, 位图, 图像处理
 ms.localizationpriority: medium
-ms.openlocfilehash: e884a895a9fed4a932eaef760faf88271e752b67
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: aa1fa0ae298bf9f0403a3a565f44010b022ba1f6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690523"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553943"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>使用 Low Light Fusion API 处理位图
 

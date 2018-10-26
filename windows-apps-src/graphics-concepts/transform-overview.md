@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32beeae8d2398457311a14fa53afe330acdc75f2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 32f55b0a387221b792e37072f129edddf285195b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700843"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552686"
 ---
 # <a name="transform-overview"></a>转换概述
 
@@ -32,7 +30,7 @@ ms.locfileid: "1700843"
 | 到投影空间的投影转换    | 下一个阶段是[投影转换](projection-transform.md)，它从视图空间转换为投影空间。 在管道的此部分中，通常会根据对象与查看器的距离来按比例缩放对象，以便为场景提供深度错觉，即近距离对象看上去比远距离对象大。 为简单起见，本文档将投影转换后顶点所在的空间称为*投影空间*。 在一些图形书籍中，可能会将投影空间称为*后透视齐性空间*。 并非所有投影转换都会按比例缩放场景中对象的大小。 此类投影有时称为*仿射*或*正交投影*。 |
 | 屏幕空间中的剪裁                      | 在管道的最后一个部分中，将删除屏幕上所有不可见的顶点，这样一来，光栅器便无需花时间计算不可见项的颜色和着色。 此过程称为*剪裁*。 在剪裁后，剩余顶点将根据视口参数进行缩放并转换为屏幕坐标。 生成的顶点（光栅化场景时可在屏幕上看到）存在于*屏幕空间*中。                                                                                                                                                                                                                                                    |
 
- 
+ 
 
 转换用于将对象几何图形从一个坐标空间转换到另一个坐标空间。 Direct3D 使用矩阵执行 3D 转换。 矩阵创建 3D 转换。 你可组合矩阵来生成一个包含多个转换的矩阵。
 
@@ -163,9 +161,9 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 [转换](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

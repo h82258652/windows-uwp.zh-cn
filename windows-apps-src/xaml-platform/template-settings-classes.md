@@ -6,18 +6,17 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205638"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552454"
 ---
 # <a name="template-settings-classes"></a>模板设置类
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -57,7 +56,7 @@ ms.locfileid: "205638"
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 模板的完整 XAML 有数百行，因此这只是一个小小的摘要。 此 XAML 定义作为 6 个 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素之一的控件部件，此元素描绘不确定进度的旋转动画。 作为开发人员，你可能不喜欢圆形，而且可能针对动画处理方式使用不同的图形基元或不同的基本形状。 例如，你可能撰写一个改用一组以方形排列的[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素的 **ProgressRing**。 如果是这样，则你的新模板的单个 **Rectangle** 组件可能如下所示：
+[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 模板的完整 XAML 有数百行，因此这只是一个小小的摘要。 此 XAML 定义作为 6 个 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 元素之一的控件部件，此元素描绘不确定进度的旋转动画。 作为开发人员，你可能不喜欢圆形，而且可能针对动画处理方式使用不同的图形基元或不同的基本形状。 例如，你可能撰写一个改用一组以方形排列的[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 元素的 **ProgressRing**。 如果是这样，则你的新模板的单个 **Rectangle** 组件可能如下所示：
 
 ```xml
 <Rectangle
@@ -98,8 +97,7 @@ ms.locfileid: "205638"
 
 同样，模板中有许多 XAML，因此我们只显示摘要。 而且这仅仅是分别使用相同 [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) 属性的多个状态和主题动画之一。 对于 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)，通过绑定使用 **ComboBoxTemplateSettings** 值强制模板中的相关动画停止，并在基于共享值的位置上开始，以便平稳地过渡。
 
-**注意**  
-当你使用 **TemplateSettings** 值作为控件模板的一部分时，请确保你设置的是与值的类型匹配的属性。 如果不是，你可能需要为绑定创建一个值转换器，以便可以从 **TemplateSettings** 值的不同源类型转换为绑定的目标类型。 有关详细信息，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
+**注意**当你的控件模板的一部分，请使用**TemplateSettings**值时，请确保你设置属性值的类型相匹配。 如果不是，你可能需要为绑定创建一个值转换器，以便可以从 **TemplateSettings** 值的不同源类型转换为绑定的目标类型。 有关详细信息，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
 
 ## <a name="related-topics"></a>相关主题
 

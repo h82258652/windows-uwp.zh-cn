@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 887600366fdf1bf3951091df27d10f54516c2bf0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674544"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556047"
 ---
 # <a name="raw-notification-overview"></a>原始通知概述
 
@@ -28,7 +26,7 @@ ms.locfileid: "1674544"
 > [!IMPORTANT]
 > 若要了解原始通知，最好熟悉一下 [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)中讨论的概念。
 
- 
+ 
 
 与 Toast、磁贴和锁屏提醒推送通知一样，原始通知从应用的云服务通过分配的通道统一资源标识符 (URI) 推送到 WNS。 WNS 反过来将通知传送到与该通道关联的设备和用户帐户。 与其他推送通知不同，原始通知没有指定的格式。 负载的内容完全由应用定义。
 
@@ -97,7 +95,7 @@ ms.locfileid: "1674544"
 > [!IMPORTANT]
 > 使用原始通知后台任务之前，必须通过 [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_) 向应用授予后台访问权限。
 
- 
+ 
 
 必须使用 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) 注册后台任务。 如果未注册，则当收到原始通知时该任务不会运行。
 
@@ -117,7 +115,7 @@ ms.locfileid: "1674544"
 ## <a name="other-resources"></a>其他资源
 
 
-你可以通过下载适用于 Windows 8.1 的[原始通知示例](http://go.microsoft.com/fwlink/p/?linkid=241553)和适用于 Windows 8.1 的[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?LinkId=231476)并在 Windows 10 应用中重复使用其源代码来了解详细信息。
+你可以了解详细信息通过为 Windows8.1，Windows8.1，[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?LinkId=231476)下载[原始通知示例](http://go.microsoft.com/fwlink/p/?linkid=241553)，在 windows 10 应用中重新使用其源代码。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -126,9 +124,9 @@ ms.locfileid: "1674544"
 * [快速入门：为正在运行的应用截获推送通知](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
- 
+ 
 
- 
+ 
 
 
 
