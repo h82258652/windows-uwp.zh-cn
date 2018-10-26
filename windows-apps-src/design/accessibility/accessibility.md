@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b444562976d9ced90032933ec3cb39d870fc2771
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 5827bf0c9ddb7f5ebbab3f34e40e08d1620b6e0c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638694"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546133"
 ---
 # <a name="accessibility"></a>辅助功能  
 
@@ -36,7 +34,7 @@ ms.locfileid: "1638694"
 | [设计非独占软件](designing-inclusive-software.md) | 了解如何改进适用于 Windows 10 的 UWP 应用的非独占设计。  以辅助功能思维设计和生成非独占软件。 |
 | [开发非独占 Windows 应用](developing-inclusive-windows-apps.md) | 本文是开发辅助 UWP 应用的路线图。 |
 | [辅助功能测试](accessibility-testing.md) | 为确保 UWP 应用为辅助应用所要遵循的测试过程。 |
-| [Microsoft Store 中的辅助功能](accessibility-in-the-store.md) | 介绍有关在 Microsoft Store 中将 UWP 应用声明为辅助应用的要求。 |
+| [应用商店中的辅助功能](accessibility-in-the-store.md) | 介绍有关在 Microsoft Store 中将 UWP 应用声明为辅助应用的要求。 |
 | [辅助功能清单](accessibility-checklist.md) | 提供了可帮助你确保 UWP 应用为辅助应用的清单。 |
 | [公开基本的辅助功能信息](basic-accessibility-information.md) | 基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍可帮助应用公开辅助技术所需的基本信息的代码。 |
 | [键盘辅助功能](keyboard-accessibility.md) | 如果应用未提供良好的键盘访问，则盲人用户或行动不便的用户在使用该应用时会存在困难，或者可能根本无法使用该应用。 |

@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 5616a78cdc7822bc924924f2335ad1b27ee747ec
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1706892"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549227"
 ---
 # <a name="resource-management-system"></a>资源管理系统
 资源管理系统具有生成时间和运行时两种功能。 在生成时间，系统创建与你的应用打包在一起的资源的所有不同变体的索引。 此索引为包资源索引 (PRI)，它也包括在你的应用包中。 在运行时，系统检测有效的用户和计算机设置，查询 PRI 中的信息，并自动加载最匹配这些设置的资源。

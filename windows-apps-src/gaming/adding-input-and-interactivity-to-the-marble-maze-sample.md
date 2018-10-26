@@ -6,16 +6,14 @@ ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 游戏, 输入, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be43690726112d8597747ee51dd94baf0f40f0e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 0b7e9a3f655b8be1b93334ed8decf9fe6fa8bbf2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817042"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544468"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>向 Marble Maze 添加输入和交互性示例
 
@@ -27,7 +25,7 @@ ms.locfileid: "1817042"
 > [!NOTE]
 > 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
 
- 
+ 
 本文档讨论了在游戏中使用输入时的一些重要事项：
 
 -   如果可能，支持多种输入设备，使你的游戏能够适应更广泛的客户偏好和能力。 尽管游戏控制器和传感器的使用是可选的，但我们强烈建议使用它来增强玩家体验。 我们设计了游戏控制器和传感器 API 来帮助你更轻松地集成这些输入设备。
@@ -50,12 +48,12 @@ Marble Maze 支持通过 Xbox 控制器、鼠标和触摸来选择菜单项，�
 > [!NOTE]
 > 本文档使用触摸表示触摸和鼠标输入，使用指针表示任何使用指针事件的设备。 因为触摸和鼠标使用标准指针事件，所以你可使用任何一种设备来选择菜单项和控制游戏。
 
- 
+ 
 
 > [!NOTE]
 > 程序包清单将 **Landscape** 设置为仅支持的旋转方向，以免在旋转设备来滚动弹珠时更改方向。 若要查看程序包清单，在 Visual Studio 中打开**解决方案资源管理器**中的 **Package.appxmanifest**。
 
- 
+ 
 
 ## <a name="initializing-input-devices"></a>初始化输入设备
 
@@ -541,7 +539,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 > [!IMPORTANT]
 > 使用 Xbox 控制器时，请始终考虑死区。 死区指各个游戏板在对初始移动的敏感性上的差异。 在一些控制器中，较小的运动可能不会生成读数，但在其他控制器中，它可能生成明显的读数。 若要在游戏中考虑此情形，可为初始操纵杆运动创建一个不运动区域。 有关死区的详细信息，请参阅[读取操纵杆](gamepad-and-vibration.md#reading-the-thumbsticks)。
 
- 
+ 
 
 ###  <a name="applying-input-to-the-game-state"></a>将输入应用到游戏状态
 
@@ -550,7 +548,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 > [!TIP]
 > 即使你的应用程序仅使用一种输入方法，我们也建议你始终规范输入值。 执行此操作可简化游戏的其他组件如何解释输入（例如力学模拟），以及使编写适用于不同屏幕分辨率的游戏更容易。
 
- 
+ 
 
 在 **MarbleMazeMain::Update** 方法处理输入后，将会创建一个矢量来表示在倾斜迷宫时对弹珠的影响。 下面的示例展示了 Marble Maze 如何使用 [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) 函数创建一个规范化的重力矢量。 **maxTilt** 变量约束迷宫倾斜的程度并阻止迷宫朝一侧倾斜。
 
@@ -621,9 +619,9 @@ if (marblePosition.z >= resetDepth)
 * [向 Marble Maze 添加可视内容示例](adding-visual-content-to-the-marble-maze-sample.md)
 * [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
 
 

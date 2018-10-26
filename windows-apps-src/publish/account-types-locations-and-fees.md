@@ -6,16 +6,14 @@ description: 我们在许多国家和地区提供了个人开发者帐户和公�
 ms.author: wdg-dev-content
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 619b245ed6037192fe8b846a20d9fe0fe97baa24
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517747"
+ms.locfileid: "5544965"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 

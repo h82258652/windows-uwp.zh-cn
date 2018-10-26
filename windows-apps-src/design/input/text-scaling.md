@@ -8,15 +8,13 @@ keywords: UWP 中，文本、 缩放、 辅助功能、"轻松使用"，显示"�
 ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 885ccc89fcbd4315eeed40c3546ef485c515294e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ce3ec15a45f812162c7aab0cb9683183d7196ae3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475375"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547012"
 ---
 # <a name="text-scaling"></a>文本缩放
 

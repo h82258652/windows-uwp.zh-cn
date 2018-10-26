@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: c951d8aacef1a327740ca09f19bbc33caa3695df
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395576"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543519"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -54,9 +52,9 @@ ms.locfileid: "1395576"
 
 简而言之，将字符串分解为在所有上下文中均起作用的几个部分。 将出现需要将某一字符串作为整个句子的情况。
 
-请考虑以下字符串：“{0} 无法进行同步。”
+请考虑以下字符串:"{0}无法同步。"
 
-大量的字词可能会替换 {0}，如“约会”、“任务”或“文档”。 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
+大量的字词可能会替换{0}，如"约会"、"任务"或"文档"。 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
 
 | 英语                                    | 德语                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -64,7 +62,7 @@ ms.locfileid: "1395576"
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-在另一个示例中，考虑语句“在 {0} 分钟后提醒我”。 “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
+在另一个示例中，考虑语句"提醒我在{0}分钟。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 
@@ -100,7 +98,7 @@ ms.locfileid: "1395576"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 请确保翻译了解每个参数的含义，以便他们可以针对目标语言适当颠倒格式字符串（例如“{1} {0}”）中格式项的顺序。
+此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保 translator 知道每个参数的意图，以便它们可以反向格式中的项顺序格式字符串 (例如，"{1} {0}")，适用于目标语言。
 
 ## <a name="dont-over-localize"></a>不要过度本地化
 

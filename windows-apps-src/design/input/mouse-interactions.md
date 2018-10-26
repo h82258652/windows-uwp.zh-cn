@@ -8,23 +8,21 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fbd6566afeff365a91c5d2ee670c0cafcb3def0
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395006"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546239"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
 
 针对触摸输入优化通用 Windows 平台 (UWP) 应用设计，并在默认情况下获得基本的鼠标支持。
 
- 
+ 
 
 ![鼠标](images/input-patterns/input-mouse.jpg)
 
@@ -69,10 +67,10 @@ ms.locfileid: "1395006"
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>注意</strong>  如果选择或应用栏命令不是适合的 UI 行为，右键单击可显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>，右键单击可显示上下文菜单，如果选择或应用栏命令不是适合的 UI 行为。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -100,7 +98,7 @@ ms.locfileid: "1395006"
 
 使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件实现基本输入功能，而无需为每个指针输入设备编写代码。 但是，你仍可以使用此对象的指针、手势和操作事件来利用每台设备的特殊功能（例如鼠标滚轮事件）。
 
-**示例：**在我们的[应用示例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中查看正在使用的此功能。
+**示例：** 请参阅我们[的应用示例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中实际此功能。
 
 
 - [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -153,10 +151,10 @@ ms.locfileid: "1395006"
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
- 
+ 
+ 
 
- 
+ 
 
 
 

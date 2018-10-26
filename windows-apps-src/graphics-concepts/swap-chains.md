@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b24b50c18716f14c58244e52bbb77668760b042
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: b38dc50f38276fb367402b230e6199fbabdcef80
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045036"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549600"
 ---
 # <a name="swap-chains"></a>交换链
 
@@ -34,7 +32,7 @@ Direct3D 提供两种避免撕裂的选项：
 
 -   一种选项只允许监视器在垂直回扫（或垂直同步）操作时更新。 监视器刷新图像的方式通常是水平移动光针，从监视器左上角开始，Z 字形移动到右下角。 光针达到底部后，监视器将重新校准，将其移回左上角，重新开始刷新过程。
 
-    此再校准称为垂直同步。期间垂直同步，监视器不绘制任何内容，以便监视器开始重新绘制之前，不会看到前台缓冲区任何更新。 垂直同步相对较慢，但是，还不足以在等待时渲染复杂场景。 若要避免撕裂，同时能够渲染复杂场景，则需要进行后台缓冲。
+    此重新校准过程称为垂直同步。垂直在同步期间，监视器不会绘制任何内容，因此在监视器再次开始绘制之前，不会看到对前台缓冲区的任何更新。 垂直同步相对较慢，但是，还不足以在等待时渲染复杂场景。 若要避免撕裂，同时能够渲染复杂场景，则需要进行后台缓冲。
 
 -   一种选项使用后台缓冲技术。 后台缓冲是向屏幕外图面（称为后台缓冲区）绘制场景的过程。 前台缓冲区之外的任何图面均称为屏幕外图面，因为此类图面永远不会通过监视器直接显示。
 
@@ -54,9 +52,9 @@ Direct3D 提供两种避免撕裂的选项：
 
 [设备](devices.md)
 
- 
+ 
 
- 
+ 
 
 
 

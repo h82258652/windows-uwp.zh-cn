@@ -7,21 +7,19 @@ keywords: 联系人, 短信, 发送
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.openlocfilehash: e5c3678e6c12a65b6821d2fc2a54e0710f7dcef3
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 06d84646685c6944ab0e816b42cf6fb2125f8a57
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665353"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545562"
 ---
 # <a name="send-an-sms-message"></a>发送短信
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。
 
-
-本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 消息在用户点击“发送”按钮之前将不会发送。
+若要调用此代码，声明在程序包清单中的**聊天**、 **smsSend**，以及**chatSystem**功能。 这是[受限的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)，但你可以在应用中使用它们。 仅当你打算将应用发布到应用商店，你需要批准。 请参阅[帐户类型、 位置和费用](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)。
 
 ## <a name="launch-the-compose-sms-dialog"></a>启动撰写短信对话框
 
@@ -53,6 +51,15 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
         chatMessage.Recipients.Add(phone.Number);
     }
     await Windows.ApplicationModel.Chat.ChatMessageManager.ShowComposeSmsMessageAsync(chatMessage);
+}
+```
+
+你可以使用下面的代码以确定是否正在运行该应用在设备处于无法发送短信。
+
+```csharp
+if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Chat"))
+{
+   // Call code here.
 }
 ```
 

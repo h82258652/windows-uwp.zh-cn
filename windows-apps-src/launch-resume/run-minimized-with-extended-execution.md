@@ -5,17 +5,15 @@ title: 使用扩展执行来推迟应用挂起
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 扩展执行, 最小化, ExtendedExecutionSession, 后台任务, 应用程序生命周期, 锁屏界面
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 302c6125852654d931088de41a20e4b42adb9b52
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 30e05259306a222a3cb18268aeb58a8380f6d4d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862076"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544640"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>使用扩展执行来推迟应用挂起
 

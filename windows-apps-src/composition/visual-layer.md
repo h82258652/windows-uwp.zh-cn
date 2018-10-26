@@ -6,19 +6,18 @@ description: Windows.UI.Composition API 使你能够访问框架层 (XAML) 和�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b292be46ccddd4355f3bef13e37da6b6cec452fa
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.localizationpriority: medium
+ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2017
-ms.locfileid: "839481"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545741"
 ---
 # <a name="visual-layer"></a>可视化层
 
-可视化层为图形、效果和动画提供高性能的保留模式 API，是 Windows 设备上所有 UI 的基础。 可采用声明方式定义 UI，可视化层依靠图形硬件加速来确保内容、效果和动画以独立于应用 UI 线程的流畅、无故障的方式进行呈现。
+可视化层为图形、效果和动画提供高性能的保留模式 API，是 Windows 设备上所有 UI 的基础。可采用声明方式定义 UI，可视化层依靠图形硬件加速来确保内容、效果和动画以独立于应用 UI 线程的流畅、无故障的方式进行呈现。
 
 值得注意的要点：
 
@@ -41,7 +40,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 ### <a name="content"></a>内容
 
-内容由使用视觉对象的动画和效果系统进行托管、转换并提供进行使用。 类层次结构的底层是 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 类，这是应用进程中用于合成器中的视觉状态的轻型线程敏捷代理。 Visual 的子类包括 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)（用于使子级可以创建视觉对象树）和 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)（包含内容并且可以使用纯色、自定义绘制内容或视觉效果进行绘制）。 这些 Visual 类型一起组成 2D UI 的可视化树结构并支持大多数可见 XAML FrameworkElement。
+内容由使用视觉对象的动画和效果系统进行托管、转换并提供进行使用。 类层次结构的底层是 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 类，这是应用进程中用于合成器中的视觉状态的轻型线程敏捷代理。 Visual 的子类包括 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)以使子级可以创建树视觉效果和[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)包含的内容，并且可以使用纯色、 自定义绘制内容或视觉效果进行绘制。 这些 Visual 类型一起组成 2D UI 的可视化树结构并支持大多数可见 XAML FrameworkElement。
 
 有关详细信息，请参阅[合成视觉对象](composition-visual-tree.md)概述。
 
@@ -55,7 +54,7 @@ Windows UWP 应用已在通过 UI 框架之一使用可视化层。 还可以非
 
 ### <a name="animations"></a>动画
 
-可视化层中的动画系统使你可以移动视觉对象、对效果进行动画处理以及驱动转换、剪辑和其他属性。  它是与框架无关的系统，是在考虑到性能的情况下从头开始设计的。  它独立于 UI 线程运行，以确保流畅性和可扩展性。  虽然它使你可以使用熟悉的 KeyFrame 动画随时间推移驱动属性更改，不过也使你可以在不同属性（包括用户输入）之间设置数学关系，从而使你可以直接创造无缝的精心设计的体验。
+可视化层中的动画系统使你可以移动视觉对象、对效果进行动画处理以及驱动转换、剪辑和其他属性。它是与框架无关的系统，是在考虑到性能的情况下从头开始设计的。它独立于 UI 线程运行，以确保流畅性和可扩展性。虽然它使你可以使用熟悉的 KeyFrame 动画随时间推移驱动属性更改，不过也使你可以在不同属性（包括用户输入）之间设置数学关系，从而使你可以直接创造无缝的精心设计的体验。
 
 有关详细信息，请参阅[合成动画](composition-animation.md)概述。
 

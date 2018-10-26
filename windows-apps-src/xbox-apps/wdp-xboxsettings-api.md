@@ -5,17 +5,15 @@ description: 了解如何访问 Xbox 开发人员设置。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: f231fb85ed5ef4f9bcee75736157bd8630a6cbfa
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "662499"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544557"
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
@@ -52,12 +50,12 @@ GET | /ext/settings
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果设置为一个号码：
-* Min-（数目） 此字段表示设置的最小数值。
-* 最大-（数目） 此字段表示设置的最大数值。
+如果设置为数字：
+* Min-(Number) 此字段指示设置的最小数值。
+* Max-(Number) 此字段指示设置的最大数值。
 
-如果设置为选择：
-* OptionsVariable-("是"|"No") 此字段指示设置选项是否变量，如果有效选项可以更改而不重新启动。
+如果已选择设置：
+* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，可以在无需重启更改有效选项。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
@@ -103,12 +101,12 @@ GET | /ext/settings/\&lt;setting name\&gt;
 * Category -（字符串）设置的类别。
 * Type - ("Text" | "Number" | "Bool" | "Select") 此字段指示设备的类型：文本输入、布尔值（“true”或“false”），具有最小值和最大值的数字或者在特定的值列表中进行选择。
 
-如果设置为一个号码：
-* Min-（数目） 此字段表示设置的最小数值。
-* 最大-（数目） 此字段表示设置的最大数值。
+如果设置为数字：
+* Min-(Number) 此字段指示设置的最小数值。
+* Max-(Number) 此字段指示设置的最大数值。
 
-如果设置为选择：
-* OptionsVariable-("是"|"No") 此字段指示设置选项是否变量，如果有效选项可以更改而不重新启动。
+如果已选择设置：
+* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，可以在无需重启更改有效选项。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**

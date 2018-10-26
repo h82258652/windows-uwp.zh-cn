@@ -6,19 +6,17 @@ description: Beta 测试使你有机会根据来自你的应用开发团队之�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 6f5a4e7f2961143f44acb533f045783fb4e4b7c1
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "692905"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544743"
 ---
 # <a name="beta-testing"></a>Beta 测试
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 *Beta 测试*使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。
@@ -36,7 +34,7 @@ ms.locfileid: "692905"
 -   在各种设备上测试你的应用。
 -   标识性能问题和以其他方式可能找不到的其他错误。
 -   获取可用于改善用户体验的实际使用情况信息。
--   收到反馈，而不会影响 Windows 应用商店中的公共评级。
+-   收到反馈，而不会影响的 Microsoft 应用商店中的公共评级。
 
 ## <a name="when-to-beta-test"></a>何时进行 Beta 测试
 
@@ -48,9 +46,9 @@ ms.locfileid: "692905"
 
 请参阅 [Beta 测试和目标分发](https://msdn.microsoft.com/library/windows/apps/Mt185377)了解如何将应用提交到应用商店进行 Beta 测试。
 
- 
+ 
 
- 
+ 
 
 
 

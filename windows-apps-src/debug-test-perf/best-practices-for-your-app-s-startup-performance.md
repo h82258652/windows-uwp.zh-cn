@@ -6,19 +6,17 @@ description: 通过改进你处理启动和激活的方式，创建启动时间�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894763"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545244"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>应用的启动性能的最佳做法
+# <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
 

@@ -5,17 +5,15 @@ description: 特定于 Xbox One 且使用 Windows Device Portal 的工具“开�
 ms.author: elcowle
 ms.date: 10/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, xbox one, 工具, windows 10, uwp, xbox one, tools
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
-ms.openlocfilehash: f39759b91993bdb641dca9d3029a620ada2ab59c
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 71fd9f3ad1c3fcf02420502692518310b896f52a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701103"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542712"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Xbox One 工具简介
 

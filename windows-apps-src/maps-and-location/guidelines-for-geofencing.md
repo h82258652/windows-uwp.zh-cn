@@ -6,16 +6,14 @@ ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 地图, 位置, 地理围栏
 ms.localizationpriority: medium
-ms.openlocfilehash: e781ff1fbcf5c39f03fb7b2c5f713a881b36e4b2
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 86104f00ed0189290fd0cd718042573d9d592cc3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689493"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543454"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>地理围栏应用指南
 
@@ -134,6 +132,6 @@ function onVisibilityChanged() {
 * [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [UWP 位置示例（地理位置）](http://go.microsoft.com/fwlink/p/?linkid=533278)
- 
+ 
 
- 
+ 

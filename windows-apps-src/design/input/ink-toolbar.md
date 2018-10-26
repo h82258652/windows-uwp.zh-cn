@@ -8,16 +8,14 @@ keywords: Windows Ink，Windows 墨迹书写，DirectInk，InkPresenter，InkCan
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d3973a91d32873246f91030d6c74cdda4001433
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: b6896a4c149084dd5609f2ac6737c803a18d14ac
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707258"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543285"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>将 InkToolbar 添加到通用 Windows 平台 (UWP) 应用
 

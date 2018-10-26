@@ -1,20 +1,18 @@
 ---
 author: QuinnRadich
 title: 使用通用 Windows 平台创建应用
-description: 创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用比想象中要更简单。
+description: 就很容易比想像为 windows 10 创建通用 Windows 平台 (UWP) 应用。
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
-ms.openlocfilehash: c31a659b7584bec5a8f71307c40a220e17d62b53
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: dde635624101fdcf0803770bc69e7922f56f704e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843530"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542804"
 ---
 # <a name="start-coding"></a>开始编写代码
 

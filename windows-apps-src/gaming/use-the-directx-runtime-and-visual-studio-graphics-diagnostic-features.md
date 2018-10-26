@@ -6,23 +6,22 @@ ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 图形, 诊断, 工具, directx
-ms.openlocfilehash: 076020d88889a9cc8b417befa2dd54b41d688e5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204303"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545224"
 ---
 # <a name="graphics-diagnostics-tools"></a>图形诊断工具
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-对于 Windows 10，图形诊断工具现已作为 Windows 内的可选功能提供。 若要使用在运行时和 Visual Studio 中提供的图形诊断功能来开发 DirectX 应用或游戏，请安装可选“图形工具”功能：
+对于 windows 10，图形诊断工具现已可从 Windows 中作为可选功能。 若要使用在运行时和 Visual Studio 中提供的图形诊断功能来开发 DirectX 应用或游戏，请安装可选“图形工具”功能：
 
-1.  转到“设置****，依次选择“系统”****、“应用和功能”****，然后单击“管理可选功能”****。
+1.  转到**设置**，选择**应用**，然后单击**管理可选功能**。
 2.  单击“添加功能”****   
 3.  在“可选功能”**** 列表中，选择“图形工具”****，然后单击“安装”****。
 
@@ -37,9 +36,9 @@ ms.locfileid: "204303"
 
 [Visual Studio 中的图形诊断概述](http://go.microsoft.com/fwlink/p/?LinkID=526382)
 
- 
+ 
 
- 
+ 
 
 
 

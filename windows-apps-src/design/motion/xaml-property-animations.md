@@ -5,22 +5,20 @@ description: 使用合成动画设置动画的 XAML 元素。
 ms.author: jimwalk
 ms.date: 09/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
-ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 9372ba818805446948a444632e809ec06691c5e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470716"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549689"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用合成动画设置动画的 XAML 元素
 
-本文介绍了新属性，使你对 XAML UIElement 使用合成动画的性能和轻松使用设置 XAML 属性进行动画处理。
+本文介绍了新属性，使你对 XAML UIElement 的合成动画的性能和轻松使用设置 XAML 属性进行动画处理。
 
 在 Windows 10 版本 1809 之前, 必须 2 个选项来生成 UWP 应用中的动画：
 
@@ -32,7 +30,7 @@ ms.locfileid: "5470716"
 启动在 Windows 10 版本 1809，你可以进行动画处理直接使用合成动画而不要求以获取基础合成视觉对象的 UIElement 上的属性。
 
 > [!NOTE]
-> 若要在 UIElement 上使用这些属性，你的 UWP 项目目标版本必须为 1809年或更高版本。 有关配置你的项目版本的详细信息，请参阅[版本自适应应用](../../debug-test-perf/version-adaptive-apps.md)。
+> 若要在 UIElement 上使用这些属性，你的 UWP 项目目标版本必须为 1809年或更高版本。 有关配置你的项目的版本的详细信息，请参阅[版本自适应应用](../../debug-test-perf/version-adaptive-apps.md)。
 
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>新呈现属性替换旧呈现属性
 
@@ -48,11 +46,11 @@ ms.locfileid: "5470716"
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 旋转轴 |
 | [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 缩放和旋转中心点 |
 
-TransformMatrix 属性值结合的缩放、 旋转和翻译的属性，按以下顺序： TransformMatrix、 缩放、 旋转、 转换。
+TransformMatrix 属性值结合的缩放、 旋转和平移的属性，按以下顺序： TransformMatrix、 缩放、 旋转、 转换。
 
-这些属性不会影响该元素的布局，因此修改这些属性不会导致新[Measure](/uwp/api/windows.ui.xaml.uielement.measure)/[排列](/uwp/api/windows.ui.xaml.uielement.arrange)传递。
+这些属性不会影响的元素的布局，因此修改这些属性不会导致新[Measure](/uwp/api/windows.ui.xaml.uielement.measure)/[排列](/uwp/api/windows.ui.xaml.uielement.arrange)传递。
 
-这些属性作为合成[视觉](/uwp/api/windows.ui.composition.visual)类 （除了转换，这不是在视觉上） 上的类似于名为属性具有相同的用途和行为。
+这些属性作为合成[视觉](/uwp/api/windows.ui.composition.visual)类 （除了转换，这不是在视觉上） 的类似命名属性具有相同的用途和行为。
 
 ### <a name="example-setting-the-scale-property"></a>示例： 设置缩放
 
@@ -80,17 +78,17 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 - [投影](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
-当你设置 （或进行动画处理） 的任何新属性时，你无法使用的旧属性。 相反，如果你设置 （或进行动画处理） 的任何旧属性，你无法使用新的属性。
+当你设置 （或进行动画处理） 的任何新属性时，你无法使用的旧属性。 相反，如果你设置 （或进行动画处理） 的任何旧属性，则无法使用新的属性。
 
-如果你使用 ElementCompositionPreview 获取和管理视觉对象自行使用这些方法，你还不能使用的新属性：
+如果你使用 ElementCompositionPreview 获取和管理可视自行使用这些方法，你还不能使用的新属性：
 
 - [ElementCompositionPreview.GetElementVisual](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)
 - [ElementCompositionPreview.SetIsTranslationEnabled](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setistranslationenabled)
 
 > [!IMPORTANT]
-> 尝试混合使用两个属性集将导致 API 调用失败，并生成一条错误消息。
+> 尝试混合使用两个设置的属性会导致 API 调用失败，且会产生一条错误消息。
 
-很可能但不建议为简单起见，从一组属性通过清除它们，切换。 如果该属性受 DependencyProperty （例如，UIElement.Projection 受 UIElement.ProjectionProperty），然后调用 ClearValue 以将其还原到其"未使用"状态。 （例如，比例属性），否则将属性设置为其默认值。
+很可能但不建议为简单起见，从一组属性通过清除它们，切换。 如果该属性受 DependencyProperty （例如，UIElement.Projection 受 UIElement.ProjectionProperty），然后调用 ClearValue 以将其还原到其"未使用"状态。 （例如，缩放属性），否则将属性设置为其默认值。
 
 ## <a name="animating-uielement-properties-with-compositionanimation"></a>与 CompositionAnimation UIElement 属性进行动画处理
 
@@ -98,7 +96,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 使用在 UIElement 上的[StartAnimation](/uwp/api/windows.ui.xaml.uielement.startanimation)和[StopAnimation](/uwp/api/windows.ui.xaml.uielement.stopanimation)方法 UIElement 属性进行动画处理。
 
-### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>示例： 将使用 Vector3KeyFrameAnimation 比例属性进行动画处理
+### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>示例： 将使用 Vector3KeyFrameAnimation Scale 属性进行动画处理
 
 此示例显示了如何创建动画的一个按钮的缩放。
 

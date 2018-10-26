@@ -6,16 +6,14 @@ description: 每台设备都具有相关联的 DeviceInformation 属性，在你
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fe51fd98f70e6f920a7421a9932e69bba11377
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959243"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543364"
 ---
 # <a name="device-information-properties"></a>设备信息属性
 
@@ -38,7 +36,7 @@ ms.locfileid: "959243"
 当请求属性时，你并不局限于具有用户友好名称的常用属性。 你可以通过指定基础 GUID 和属性 ID (PID) 来请求任何可用的属性，甚至请求由单个设备或驱动程序提供的自定义属性。 用于指定自定义属性的格式是“`{GUID} PID`”。 例如:"`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"。 
 
 > [!Note]
-> 您可以找到设备驱动程序的设备属性键头文件属性的 Guid 的列表。
+> 你可以在设备驱动程序的设备属性密钥标头文件中找到属性 Guid 的列表。
 
 某些属性对于所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 对象都是常用属性，但大多数属性是特定种类的唯一属性。 下面部分列出了一些常用属性，按单个 **DeviceInformationKind** 排序。 有关不同种类之间的相关方式的详细信息，请参阅 **DeviceInformationKind**。
 
@@ -57,7 +55,7 @@ ms.locfileid: "959243"
 | **System.Devices.Icon**               | 字符串  | 图标路径。                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | 字符串  | 设备对象的最佳显示名称。                                                                                                                                                                                                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="device-properties"></a>设备属性
 
@@ -75,7 +73,7 @@ ms.locfileid: "959243"
 | **System.Devices.Present**            | 布尔值    | 指示设备当前是否存在并可用。                                                                                                                                                                                                                         |
 | **System.ItemNameDisplay**            | 字符串     | 此设备对象的最佳显示名称。 在此情况下，这不一定是用户的最佳名称。 通过引用相关联的 **DeviceContainer** 或 **DeviceInterface** 的 **System.ItemNameDisplay**，可能会找到更合适的用户友好候选名称。 |
 
- 
+ 
 
 ## <a name="devicecontainer-properties"></a>DeviceContainer 属性
 
@@ -95,7 +93,7 @@ ms.locfileid: "959243"
 | **System.Devices.Paired**         | 布尔值    | 指示任何子 **DeviceInformationKind.Device** 对象是无线设备还是已与当前系统配对的网络设备。             |
 | **System.ItemNameDisplay**        | 字符串     | 此设备的最佳显示名称。                                                                                                                             |
 
- 
+ 
 
 ## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass 属性
 
@@ -103,7 +101,7 @@ ms.locfileid: "959243"
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | 字符串 | 此设备的最佳显示名称。 |
 
- 
+ 
 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint 属性
 
@@ -124,7 +122,7 @@ ms.locfileid: "959243"
 | **System.Devices.Aep.SignalStrength** | Int32      | 设备的信号强度。 此属性仅适用于某些协议。                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | 字符串     | 设备的最佳显示名称。                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer 属性
 
@@ -146,7 +144,7 @@ ms.locfileid: "959243"
 | **System.Devices.AepContainer.SupportsVideo**       | 布尔值    | 指示此设备是否支持视频强制转换。                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **System.ItemNameDisplay**                          | 字符串     | 设备的最佳显示名称。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
- 
+ 
 
 ## <a name="associationendpointservice-properties"></a>AssociationEndpointService 属性
 
@@ -160,8 +158,8 @@ ms.locfileid: "959243"
 | **System.Devices.AeoService.ServiceId**         | 字符串  | 此服务的标识。 这也是 [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 的值。 |
 | **System.ItemNameDisplay**                      | 字符串  | 该服务的最佳显示名称。                                                                           |
 
- 
+ 
 
- 
+ 
 
- 
+ 

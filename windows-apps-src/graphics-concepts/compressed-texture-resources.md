@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a26679bab35590d61f9188f64df977fbaf78d90
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e808bf0fe1f521a60aa347efd148ede96be95964
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653226"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548897"
 ---
 # <a name="compressed-texture-resources"></a>压缩的纹理资源
 
@@ -73,16 +71,16 @@ Direct3D 提供了压缩用于对 3D 模型进行纹理处理的曲面的服务�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [纹理](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ title: PlayReady DRM
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c466587a9e1d190368de0f142fea9d902e731aba
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692192"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543764"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -23,7 +21,7 @@ ms.locfileid: "1692192"
 
 本主题介绍如何向通用 Windows 平台 (UWP) 应用添加 PlayReady 保护的媒体内容。
 
-PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 UWP 应用。 本部分介绍了对适用于 Windows10 的 Microsoft PlayReady DRM 所做的更改，以及如何修改 PlayReady UWP 应用以支持从以前的 Windows8.1 版本到 Windows10 版本所做的更改。
+PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 UWP 应用。 本部分介绍的 windows 10 以及如何修改 PlayReady UWP 应用以支持从以前的 Windows8.1 版本到 windows 10 版本所做的更改 Microsoft PlayReady DRM 所做的更改。
  
 | 主题                                                                     | 说明                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -32,7 +30,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 
 ## <a name="whats-new-in-playready-drm"></a>PlayReady DRM 中的新增功能
 
-下表介绍适用于 Windows10 的 PlayReady DRM 的新增功能和所做更改。
+下表介绍了新功能和对适用于 windows 10 的 PlayReady DRM 所做的更改。
 
 -   添加了硬件数字版权管理 (HWDRM)。
 
@@ -401,17 +399,17 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 
 在开始创建 PlayReady 保护的 UWP 应用之前，需要在系统上安装以下软件：
 
--   Windows10。
--   如果你正在为适用于 UWP 应用的 PlayReady DRM 编译任何示例，则必须使用 Microsoft Visual Studio 2015 或更高版本编译这些示例。 仍可以使用 Microsoft Visual Studio 2013 编译适用于 Windows 8.1 应用商店应用的 PlayReady DRM 的任何示例。
+-   Windows 10。
+-   如果你正在为 PlayReady DRM 编译任何示例适用于 UWP 应用，则必须使用 Microsoft Visual Studio2015 或更高版本编译这些示例。 你仍可以使用 Microsoft Visual Studio2013 编译任何于 Windows8.1 应用商店应用的 PlayReady DRM 的示例。
 
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-uwp-app-migration-guide"></a>PlayReady UWP 应用迁移指南
 
-本部分包括有关如何将现有 PlayReady Windows8.x 应用商店应用迁移到 Windows10 的信息。
+本部分包含有关如何将现有 PlayReady Windows 8.x 应用商店应用迁移到 windows 10。
 
-Windows10 上的 PlayReady UWP 应用的命名空间已从 **Microsoft.Media.PlayReadyClient** 更改为 [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。 这意味着你将需要搜索旧命名空间并将其替换为代码中的新命名空间。 你仍将引用 winmd 文件。 它是 Windows10 操作系统上的 windows.media.winmd 的一部分。 它作为 TH 的 Windows SDK 的一部分位于 windows.winmd 中。 对于 UWP，可在 windows.foundation.univeralappcontract.winmd 中引用它。
+Windows 10 上的 PlayReady UWP 应用的命名空间已从**Microsoft.Media.PlayReadyClient**更改为[**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。 这意味着你将需要搜索旧命名空间并将其替换为代码中的新命名空间。 你仍将引用 winmd 文件。 它是 windows.media.winmd 的 windows 10 操作系统上的一部分。 它作为 TH 的 Windows SDK 的一部分位于 windows.winmd 中。 对于 UWP，可在 windows.foundation.univeralappcontract.winmd 中引用它。
 
 若要播放 PlayReady 保护的高清 (HD) 内容 (1080p) 和超高清 (UHD) 内容，将需要实现 PlayReady 硬件 DRM。 有关如何实现 PlayReady 硬件 DRM 的信息，请参阅[硬件 DRM](hardware-drm.md)。
 

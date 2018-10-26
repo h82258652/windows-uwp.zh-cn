@@ -6,19 +6,17 @@ description: 创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8562454b976362ebc65884203775b3891216d8b7
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 726dc4aaa34b9b68aa198e236abcef57b78b21f4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894543"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548259"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 
-\[ 已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。
 
@@ -34,12 +32,11 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 当你使用 C# 或 Visual Basic 开发 UWP 应用时，你所使用的两个最常见的 API 组合是 UWP API 和 UWP 应用的 .NET API。 通常，在 UWP 中定义的类型位于以“Windows”开头的命名空间中。 而 .NET 类型位于以“System”开头的命名空间中。 但是，存在例外情况。 UWP 应用的 .NET 中的类型在使用时不要求互操作性。 如果你发现在使用 UWP 的区域出现较差性能，你可以使用适用于 UWP 应用的 .NET 来获取更佳性能。
 
-**注意**  
-大多数随 Windows 10 提供的 UWP 组件是使用 C++ 实现的，因此你从 C# 或 Visual Basic 中使用它们时将跨越互操作性边界。 如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
+**注意**与 windows 10 交付的 UWP 组件的大多数 c + + 实现，因此你从 C# 或 Visual Basic 使用它们时可跨越互操作性边界。 如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
 
 在本主题中，我们提及“UWP 组件”时，我们是指以 C# 或 Visual Basic 以外的语言编写的组件。
 
- 
+ 
 
 每次你访问 UWP 组件的属性或调用其方法时，都会产生互操作成本。 实际上，创建 UWP 组件的成本比创建 .NET 对象的成本更高。 原因是 UWP 必须执行从你的应用语言转换为组件语言的代码。 此外，如果你将数据传递给该组件，数据必须在已管理和未管理类型中转换。
 
@@ -93,5 +90,5 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 所有在应用中获取良好性能的建议都适用于在组件中获取良好性能。 衡量你的组件，查明哪些 API 具有较高通信模式，并从这些方面考虑提供可让用户使用较少调用来处理工作的 API。 在设计 UWP 时投入极大的努力，以便使应用使用这些设计成果，同时无需频繁地超越互操作边界。
 
- 
+ 
 

@@ -6,21 +6,20 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 游戏, directx, 2d, 图形
-ms.openlocfilehash: 702b47d4002e9a2d0d62cc67e71432bb630e21d4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204251"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543152"
 ---
 # <a name="2d-graphics-for-directx-games"></a>DirectX 游戏的 2D 图形
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-我们将讨论二维位图图形的使用和效果，以及如何在游戏中使用它们。
+我们将讨论 2D 位图图形的使用和效果，以及如何在游戏中使用它们。
 
 2D 图形是 3D 图形的子集，用于处理 2D 基元或位图。 更一般地说，它们不像 3D 那样使用 z 坐标，因此游戏的执行通常限制在 x-y 平面。 它们有时使用 3D 图形技术创建其视觉组件，而且它们的开发一般比较简单。 如果你是游戏开发新手，则最好从 2D 游戏开始，而且 2D 图形开发也是在 DirectX 上操作的良好开端。
 
@@ -62,16 +61,3 @@ ms.locfileid: "204251"
 -   [Direct2D 概述](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Direct2D 快速入门](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Direct2D 和 Direct3D 互操作性概述](https://msdn.microsoft.com/library/windows/desktop/dd370966)
-
-> **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
- 
-
- 
-
-
-
-

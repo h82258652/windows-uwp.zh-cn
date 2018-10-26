@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9feb6460512a7266dfd5d2979b89084f6487f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653446"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546949"
 ---
 # <a name="guidelines-for-targeting"></a>目标指南
 
@@ -104,7 +102,7 @@ ms.locfileid: "1653446"
 </tbody>
 </table>
 
- 
+ 
 
 可以根据你的特定方案的需要调整这些目标大小的建议。 这些建议中需要考虑的一些注意事项包括：
 
@@ -168,9 +166,9 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 * [输入：Windows 8 手势示例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [输入：操作和手势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 音频, 游戏, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 4534675395f415ccd742dff646bc6c498aa7faa6
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700903"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546857"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>向 Marble Maze 添加音频示例
 
@@ -352,7 +350,7 @@ CoTaskMemFree(waveFormat);
 > [!IMPORTANT]
 > [MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) 方法使用 **CoTaskMemAlloc** 分配 [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) 对象。 因此，请确保在使用完此对象时调用 **CoTaskMemFree**。
 
- 
+ 
 
 **MediaStreamer::Initialize** 方法最后计算流的长度 **m\_maxStreamLengthInBytes**（以字节为单位）。 为此，它调用 [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) 方法来获取以 100 纳秒为单位的音频流持续时间、将持续时间转换为节，然后乘以平均数据传输速率（以字节每秒为单位）。 Marble Maze 稍后使用此值分配可存储每种游戏声音的缓冲区。
 
@@ -402,7 +400,7 @@ enum SoundEvent
 | MenuChangeEvent   | MenuChange.wav | 在用户更改当前菜单项时播放。 |
 | MenuSelectedEvent | MenuSelect.wav | 在用户选择一个菜单项时播放。           |
 
- 
+ 
 
 下面的示例展示了 **Audio::CreateResources** 方法如何为背景音乐创建源语音。 [XAUDIO2\_SEND\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419244) 结构定义来自另一个语音的目标语音，并指定是否应使用筛选器。 Marble Maze 调用 **Audio::SetSoundEffectFilter** 方法，以使用筛选器在球滚动时更改其声音。 [XAUDIO2\_VOICE\_SENDS](https://msdn.microsoft.com/library/windows/desktop/ee419246) 结构定义要从单个输出语音接收数据的一组语音。 Marble Maze 将数据从源语音发送到主语音（对于枯燥或保持不变的游戏声音部分）和两个子混合语音（用于实现有趣或混响的游戏声音部分）。
 

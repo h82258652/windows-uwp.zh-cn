@@ -9,15 +9,13 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef67c179e691d14f3636a663a24ebbb862c35f7
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: fbb2b6e5edee47d75d7115a38f95abf5ae71529a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675184"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543477"
 ---
 # <a name="touch-interactions"></a>触摸交互
 
@@ -78,14 +76,13 @@ ms.locfileid: "1675184"
 
 
 
-**注意**  
-非直接输入的优点是已经过 25 年的优化。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
+**注意**间接输入已经过 25 年的优化的好处。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>用户触摸反馈
 
-与应用交互期间适当的视觉反馈可帮助用户识别、了解以及适应应用和 Windows 平台解释其交互的方式。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
+与你的应用交互期间适当的视觉反馈可帮助用户识别、 了解以及适应应用和 Windowsplatform 如何解释其交互。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
 当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义定向规则。
 
@@ -156,9 +153,9 @@ ms.locfileid: "1675184"
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **注意**  其中的一个例外是使用特定的定时交互来帮助了解和探究（例如，长按）。
+    **注意**例外情况是，使用特定的定时的交互来帮助了解和探究 （如示例，请按住）。
 
-     
+     
 
 -   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
@@ -207,7 +204,7 @@ ms.locfileid: "1675184"
 | 收缩          | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指并拢在一起。                         |
 | 拉伸        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -239,7 +236,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | 在鼠标滚轮的增量值更改时发生。         |
 | [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | 为所有指针事件提供数据。                         |
 
- 
+ 
 
 以下示例显示如何使用 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 对象上的点击交互。
 
@@ -435,15 +432,15 @@ End Sub
 | [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | 描述操作发生的速度。                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | 提供 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件的数据。                                       |
 
- 
+ 
 
 手势由一系列操作事件组成。 每个手势都从 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 事件开始，如用户触摸屏幕时。
 
 接下来，引发一个或多个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，先触摸屏幕，然后在屏幕上拖动手指。 最后，在完成交互时引发 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
 
-**注意**  如果你没有触摸屏监视器，则可以使用鼠标和鼠标滚轮界面在模拟器中测试你的操作事件代码。
+**注意**如果你没有触摸屏监视器，则可以使用鼠标和鼠标滚轮界面在模拟器中测试你的操作事件代码。
 
- 
+ 
 
 以下示例演示如何使用 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件来处理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑动交互以及在屏幕上移动它。
 
@@ -607,9 +604,9 @@ End Sub
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
- 
+ 
 
 
 

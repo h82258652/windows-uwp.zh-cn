@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c057d1d92f5fa6ca24e11c279179d432dd0f58
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: dfe7495e08bfcecac839b0ae15d2d65b00311298
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396666"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543545"
 ---
 # <a name="web-view"></a>Web 视图
  
@@ -328,9 +326,9 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 ## <a name="related-topics"></a>相关主题
 
 * [WebView 类](https://msdn.microsoft.com/library/windows/apps/br227702)
- 
+ 
 
- 
+ 
 
 
 

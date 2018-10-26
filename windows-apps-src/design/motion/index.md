@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ffe26e949be254e85d28dde4a98a1730baa84a3e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843480"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546794"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
 
@@ -60,7 +58,8 @@ Fluent 运动在应用中提供用途。 它基于用户行为提供智能反馈
 
 ## <a name="motion-articles"></a>动作文章
 
-:::行::: :::列:::
+:::row:::
+    :::column:::
         ### [Timing and easing](timing-and-easing.md)
         Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
     :::column-end:::
@@ -68,7 +67,9 @@ Fluent 运动在应用中提供用途。 它基于用户行为提供智能反馈
         ### [Directionality and gravity](directionality-and-gravity.md)
         Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
     :::column-end:::
-:::行末::: :::行::: :::列:::
+:::row-end:::
+:::row:::
+    :::column:::
         ### [Page transitions](page-transitions.md)
         Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
     :::column-end:::
@@ -76,4 +77,4 @@ Fluent 运动在应用中提供用途。 它基于用户行为提供智能反馈
         ### [Connected animation](connected-animation.md)
         Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
     :::column-end:::
-:::行末:::
+:::row-end:::

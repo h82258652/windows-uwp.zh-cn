@@ -6,19 +6,17 @@ title: 使用 PlayReady 的自适应流式处理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: aebd2e2de0b1c4991b69b02f1f215ab58feef4a9
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.localizationpriority: medium
+ms.openlocfilehash: 7132de481f22f53269cd9bd69a38819c5b71cb55
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2017
-ms.locfileid: "907105"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542679"
 ---
 # <a name="adaptive-streaming-with-playready"></a>使用 PlayReady 的自适应流式处理
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。 
 

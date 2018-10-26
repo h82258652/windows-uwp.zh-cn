@@ -8,17 +8,15 @@ title: 自定义视频效果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1f53bb1165561865124a960940fab3f4325061
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843317"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544753"
 ---
 # <a name="custom-video-effects"></a>自定义视频效果
 
@@ -102,7 +100,7 @@ ms.locfileid: "1843317"
 > [!NOTE] 
 > 如果从 **SupportedEncodingProperties** 返回空的 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 对象的空白默认列表，系统将默认为 ARGB32 编码。
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes 属性
 
@@ -114,7 +112,7 @@ ms.locfileid: "1843317"
 > [!NOTE]
 > 如果指定 [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系统将使用 GPU 或系统内存（以对管道更高效者为准）。 在使用此值时，必须检查 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法，以查看传入到该方法的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 或 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 是否包含数据，然后相应地处理帧。
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>TimeIndependent 属性
 
@@ -166,7 +164,7 @@ ms.locfileid: "1843317"
 > 2.  选择**生成**选项卡。
 > 3.  选中**允许不安全代码**复选框。
 
- 
+ 
 
 现在，你可以添加 **ProcessFrame** 方法实现。 首先，此方法将从输入和输出软件位图中获取 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 为每个缓冲区获取 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
 

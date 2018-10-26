@@ -5,17 +5,15 @@ description: 如何在 Xbox One 上生成适用于通用 Windows 平台 (UWP) �
 ms.author: mstahl
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 8baf47929183849ffd282703ec08b414b1e2bbdf
-ms.sourcegitcommit: 43ce38a4789e0a5194069cc3307cbbc20aa0367e
-ms.translationtype: HT
+ms.openlocfilehash: 9b35733978ffbaca00caae2128b799d6cc923542
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "1934510"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549811"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
@@ -25,7 +23,7 @@ Xbox One 上的 UWP 支持开发应用和游戏。 你不必参与开发人员�
 
 本部分包括设置步骤、身份验证过程指南、有关安装所需的 Visual Studio 版本和 Windows 10 工具的信息，以及生成、运行和调试你的第一个简单应用程序的步骤。 
 
-| 主题      | 描述 |
+| 主题      | 说明 |
 |------------|-------------|
 |[入门](getting-started.md)| Xbox One 上的 UWP 开发入门指南。 |
 |[新增功能](whats-new.md)| 突出显示 Xbox One 上的 UWP 中的新功能。 |

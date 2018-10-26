@@ -9,15 +9,13 @@ keywords: 设备、数字化器、输入、交互
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40abeae4048784599deadd9a1a62a995447159be
-ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
-ms.translationtype: HT
+ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "1903191"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546609"
 ---
 # <a name="identify-input-devices"></a>标识输入设备
 
@@ -31,9 +29,9 @@ ms.locfileid: "1903191"
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**注意** 此处讨论的属性返回的值基于所有检测到的鼠标：如果至少一个鼠标支持特定功能，则布尔属性返回非零值，数值属性返回任何一个鼠标公开的最大值。
+**注意**此处讨论的属性返回的值基于所有检测到鼠标： 如果至少一个鼠标支持特定功能，并且数值属性返回任何一个公开的最大值，布尔属性返回非零值鼠标。
 
- 
+ 
 
 以下代码使用一系列 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素来显示各个鼠标属性和值。
 
@@ -69,9 +67,9 @@ private void GetKeyboardProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
-**注意** 此处讨论的属性返回的值基于所有检测到的触摸数字化器：如果至少一个数字化器支持特定功能，则布尔属性返回非零值，数值属性返回任何一个数字化器公开的最大值。
+**注意**此处讨论的属性返回的值基于所有检测到的触摸数字化器： 布尔属性返回非零值，如果至少一个数字化器支持特定功能，并且数值属性返回的最大值任何一个数字化器公开。
 
- 
+ 
 
 以下代码使用一系列 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素来显示触摸属性和值。
 
@@ -89,7 +87,7 @@ private void GetTouchProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
-**注意** 此处讨论的属性返回的值基于所有检测到的指针设备：如果至少一个设备支持特定功能，则布尔属性返回非零值，数值属性返回任何一个指针设备公开的最大值。
+**注意**此处讨论的属性返回的值基于所有检测到的指针设备： 布尔属性返回非零值，如果至少一个设备支持特定功能，并且数值属性返回公开的最大值任何一个指针设备。
 
 以下代码使用一个表格来显示每个指针设备的属性和值。
 
@@ -188,9 +186,9 @@ private void GetPointerDevices()
 
 **存档示例**
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
- 
+ 
 
- 
+ 
 
 
 

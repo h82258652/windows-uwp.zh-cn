@@ -6,16 +6,14 @@ title: 在 Visual Studio 中创建项目
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c85f96537c3a660692bf3c9d910155f39b37a3
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 3b10d615146c8989231c4fe36ad9588716c59c34
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1572864"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547566"
 ---
 # <a name="getting-started-creating-a-project"></a>入门：创建项目
 
@@ -29,11 +27,11 @@ Microsoft Visual Studio 与 Windows 的关系就像 Xcode 与 iOS 和 Mac OS 的
 
 你还会发现此[生成适用于 Windows 的应用博客文章](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)非常有用。
 
-创建 Windows 10 应用（更正式的称呼为通用 Windows 平台 (UWP) 应用）与使用情节提要创建 iOS 应用极为相似。 Windows 10 应用通常在多个页面上进行构建，每个页面包含用户界面的不同部分，类似于网站。 通常每个页面具有两个关联的源文件：一个源文件存储用户界面（以 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/mt185595)格式存储），另一个源文件包含源代码（通常为 C#）。 当用户与应用交互时，它们会在这些页面之间导航。 在本演练中，你将创建带有两个页面的应用。
+创建适用于 windows 10 （更正式称为通用 Windows 平台 (UWP) 应用） 应用与创建使用情节提要的 iOS 应用极为相似。 Windows 10 应用通常上进行构建多个页面，每个页面包含用户界面，类似于网站的不同部分。 通常每个页面具有两个关联的源文件：一个源文件存储用户界面（以 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/mt185595)格式存储），另一个源文件包含源代码（通常为 C#）。 当用户与应用交互时，它们会在这些页面之间导航。 在本演练中，你将创建带有两个页面的应用。
 
-**注意**  Windows 10 应用的一项重要功能是，无论在什么平台上，均可使用相同的源代码和相同的 API 集。 正如你所知，在编写适用于 iPhone 和 iPad 的通用 iOS 应用时，可在运行时决定应用运行的平台，并采取相应操作。 同样地，Windows 10 应用可在运行时分辨出其在什么设备上运行。 相较于桌面版，借助 UWP 应用，无需在源代码中使用 \#ifdef 即可创建手机版。 为方便起见，Windows 10 应用还可根据设备使用其用户界面控件：例如，应用可能引用日期选取器控件，它将自动呈现不同的外观和具有不同的功能，具体取决于它是在台式机屏幕还是在手机屏幕上运行。这也是应用智能的一种体现。 但源代码不会改变。
+**注意**windows 10 应用的一项重要功能是上相同的源代码和相同的 API 集，均可供你无论在什么平台。 正如你所知，在编写适用于 iPhone 和 iPad 的通用 iOS 应用时，可在运行时决定应用运行的平台，并采取相应操作。 类似的方式，windows 10 应用可以告知，在运行时，的设备运行。 相较于桌面版，借助 UWP 应用，无需在源代码中使用 \#ifdef 即可创建手机版。 为方便起见，windows 10 应用还智能地使用其具体取决于设备的用户界面控件： 例如，你的应用可能引用日期选取器控件，并且该控件将自动外观和具体取决于它是否具有不同的方式运行在台式机屏幕还是在手机屏幕上运行。 但源代码不会改变。
 
-让我们看看如何创建 Windows 10 应用。 首先运行 Visual Studio。 首次运行时，Visual Studio 将要求你获取开发人员许可证。 开发人员许可证使你可以先在本地计算机上安装和测试 UWP 应用，然后再将其提交到 Microsoft Store。 要获得许可证，请按照屏幕说明，使用 Microsoft 帐户登录。 如果没有帐户，请单击“开发人员许可证”**** 对话框中的“注册”**** 链接，并按照屏幕上的说明操作。
+让我们来看看我们如何创建 windows 10 应用。 首先运行 Visual Studio。 首次运行时，Visual Studio 将要求你获取开发人员许可证。 开发人员许可证使你可以先在本地计算机上安装和测试 UWP 应用，然后再将其提交到 Microsoft Store。 要获得许可证，请按照屏幕说明，使用 Microsoft 帐户登录。 如果没有帐户，请单击“开发人员许可证”**** 对话框中的“注册”**** 链接，并按照屏幕上的说明操作。
 
 为了进行比较，在启动 Xcode 时，你首先看到“欢迎使用 Xcode”**** 屏幕，如下图所示。
 

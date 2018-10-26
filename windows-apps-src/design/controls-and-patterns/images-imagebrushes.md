@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee3948fc4c7ab83657e8bca127306bb037d491a8
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494134"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544243"
 ---
 # <a name="images-and-image-brushes"></a>图像和图像画笔
 
@@ -60,7 +58,7 @@ ms.locfileid: "1494134"
 
 ![图像元素示例](images/Image_Licorice.jpg)
 
-在该示例中，[Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 属性用于指定要显示的图像的位置。 可以通过指定绝对 URL（例如 http://contoso.com/myPicture.jpg）或指定相对于你的应用包装结构的 URL 来设置 Source。 例如，我们将“licorice.jpg”图像文件放在项目的根目录文件夹中，并将包含图像文件的项目设置声明为内容。
+在该示例中，[Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 属性用于指定要显示的图像的位置。 你可以通过指定绝对 URL 设置源 (例如，http://contoso.com/myPicture.jpg)或指定相对于你的应用打包结构的 URL。 例如，我们将“licorice.jpg”图像文件放在项目的根目录文件夹中，并将包含图像文件的项目设置声明为内容。
 
 ### <a name="imagebrush"></a>ImageBrush
 

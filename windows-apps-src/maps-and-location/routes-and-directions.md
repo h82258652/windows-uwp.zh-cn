@@ -6,16 +6,14 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.author: normesta
 ms.date: 09/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 路线, 地图, 位置, 方向
 ms.localizationpriority: medium
-ms.openlocfilehash: c837eac53d7063a4b70bac62b64558e3411c70cd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 69283f6b53f3a8483376e3b8fe77a4491d4b01b1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690323"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545078"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地图上显示路线和方向
 
@@ -27,7 +25,7 @@ ms.locfileid: "1690323"
 >若要了解有关在应用中使用地图的详细信息，请下载[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 >如果映射不是你的应用的核心功能，请考虑改为启动 Windows 地图应用。 你可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 方案来将 Windows 地图应用启动为特定的地图和路线规划。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
- 
+ 
 ## <a name="an-intro-to-maproutefinder-results"></a>MapRouteFinder 结果简介
 
 
@@ -64,7 +62,7 @@ ms.locfileid: "1690323"
 >[!IMPORTANT]
 >必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
- 
+ 
 
 ```csharp
 using System;
@@ -147,7 +145,7 @@ You have reached your destination.
 >[!IMPORTANT]
 >必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
- 
+ 
 
 ```csharp
 using System;
@@ -218,7 +216,7 @@ private async void ShowRouteOnMap()
   BasicGeoposition point2 = new BasicGeoposition() { Latitude = 47.6205, Longitude = -122.3493 };
   BasicGeoposition point3 = new BasicGeoposition() { Latitude = 48.649693, Longitude = -122.144908 };
 
-  // Get Driving Route from point A  to point B thru point C
+  // Get Driving Route from point A  to point B thru point C
   var path = new List<EnhancedWaypoint>();
 
   path.Add(new EnhancedWaypoint(new Geopoint(point1), WaypointKind.Stop));

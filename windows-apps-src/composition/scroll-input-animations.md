@@ -5,16 +5,14 @@ description: 了解如何使用 XAML ScrollViewer 和 ExpressionAnimations 来�
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 58e696bc3d376b80b21149a9e55a2b0547a91c0c
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: a078d096a9cffe26e9b342250726dd75cdf48817
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480713"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543565"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>增强现有 ScrollViewer 体验
 
