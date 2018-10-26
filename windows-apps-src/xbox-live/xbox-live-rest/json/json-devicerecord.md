@@ -7,16 +7,14 @@ description: " DeviceRecord (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae61df42706ea3ff3f52678feef8510974b5534
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f4a59b31825a3f139912ead802300161f92d17f6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478160"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558205"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
 有关设备，包括其类型和游戏在其上的信息。 

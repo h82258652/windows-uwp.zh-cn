@@ -9,15 +9,13 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 471f222bb22293ccb3b66f5387d43b74fc53b910
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7e042a9bbedee3ded0601eda06da8e349c4b788c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653866"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572666"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定语音识别器语言
 
@@ -60,9 +58,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安装的语言在不同的设备之间可能会不同。 如果对于特定的约束你依赖于某种语言，你应验证是否存在该语言。
 
-**注意** 在安装新的语言包后，必须重新启动。 如果指定的语言不受支持或未完成安装过程，将引发异常，其错误代码为 SPERR\_NOT\_FOUND (0x8004503a)。
+**注意**安装新的语言包后，则需要重新启动。 如果指定的语言不受支持或未完成安装过程，将引发异常，其错误代码为 SPERR\_NOT\_FOUND (0x8004503a)。
 
- 
+ 
 
 通过检查 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 类的下列两种静态属性之一，来确定设备上受支持的语言：
 
@@ -105,9 +103,9 @@ SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](https://msdn.micr
 **示例**
 
 * [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

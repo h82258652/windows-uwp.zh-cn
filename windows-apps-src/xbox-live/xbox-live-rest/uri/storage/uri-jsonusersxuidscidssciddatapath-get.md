@@ -7,16 +7,14 @@ description: " GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef285dfa79c47c9bd058d593c1102e581cbe460
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 352056562a59df0e06f05745f73009c597c22afe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469937"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5544576"
 ---
 # <a name="get-jsonusersxuidxuidscidssciddatapath"></a>GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})
 列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。

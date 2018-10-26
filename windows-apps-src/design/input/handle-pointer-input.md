@@ -9,15 +9,13 @@ keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572606"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
@@ -37,7 +35,7 @@ ms.locfileid: "1895136"
 
 > [!NOTE]
 > 如果你的应用需要，也可以从原始 HID 数据升级特定于设备的信息。
- 
+ 
 
 输入堆栈上的每个输入点（或接触点）通过由各种指针事件处理程序中的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br227968) 参数公开的 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/hh943076) 对象表示。 在多笔或多点触控输入的情况下，每个接触点都视为一个唯一的输入指针。
 
@@ -50,7 +48,7 @@ UWP 应用可以侦听以下指针事件：
 
 > [!NOTE]
 > 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 **CapturePointer** 成功，[**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976)（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
- 
+ 
 
 <table>
 <colgroup>
@@ -79,10 +77,10 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
-<strong>注意</strong>  不存在相应的指针捕获事件。
+<strong>注意</strong>没有任何相应的指针捕获事件。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -127,7 +125,7 @@ UWP 应用可以侦听以下指针事件：
 <p>鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 [PointerMoved](https://msdn.microsoft.com/library/windows/apps/br208970) 事件在指针和该按钮之间创建一个辅助关联。</p></td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 ## <a name="pointer-event-example"></a>指针事件示例
 
@@ -247,8 +245,7 @@ public MainPage()
 -   此处理程序管理 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件。 我们将事件添加到事件日志、将指针添加活动指针字典，并显示指针详细信息。
 
     > [!NOTE]
-    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件并不总是成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) 和 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)）的所有事件。
-         
+    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件并不总是成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) 和 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)）的所有事件。      
 
 ```csharp
 /// <summary>
@@ -330,7 +327,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 -   此处理程序管理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件。 我们将事件添加到事件日志并更新指针详细信息。
 
     > [!Important]
-    > 鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件在指针和该按钮之间创建一个辅助关联。 仅当释放该鼠标按钮时才引发 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件（在完成该事件之前，其他按钮无法与指针关联）。 由于此排他性关联，会通过 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件路由其他鼠标按钮单击。     
+    > 鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件在指针和该按钮之间创建一个辅助关联。 仅当释放该鼠标按钮时才引发 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件（在完成该事件之前，其他按钮无法与指针关联）。 由于此排他性关联，会通过 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件路由其他鼠标按钮单击。     
 
 ```csharp
 /// <summary>
@@ -536,7 +533,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   此处理程序管理 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 事件。 我们将事件添加到事件日志、从指针数组删除指针，并更新指针详细信息。
 
     > [!NOTE]
-    > 可能会发生 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)，而不是 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。     
+    > 可能会发生 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)，而不是 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)。     
 
 ```csharp
 /// <summary>

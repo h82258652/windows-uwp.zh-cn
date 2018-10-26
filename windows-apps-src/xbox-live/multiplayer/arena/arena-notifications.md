@@ -5,16 +5,14 @@ description: 描述发给玩家以使其完成锦标赛阶段的 Xbox Arena 通�
 ms.author: kevinasg
 ms.date: 10-10-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
-ms.openlocfilehash: 559ea8e1d8c3d4cb01c2fdfc49996b347ec1683b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 086f7bd5e319dc6810517a434c986f0e6cb24eab
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479646"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557507"
 ---
 # <a name="arena-notifications"></a>Arena 通知
 

@@ -6,16 +6,14 @@ title: 显示相机预览
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bba681a60d51167d1fc3d6bf8bf4050a7db2152f
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: b258569b707f50051eaa266e2cae5b9971894cf3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692948"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572226"
 ---
 # <a name="display-the-camera-preview"></a>显示相机预览
 

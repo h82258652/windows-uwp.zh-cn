@@ -6,16 +6,14 @@ ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c74b05974bcfd9dd8c592d18f6f5fe4ff388f03
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675344"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572596"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 语法指南
 
@@ -91,7 +89,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 </UserControl ...>
 ```
 
-**注意**  一些结构无法声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 和 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。
+**注意**一些结构无法声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 和 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。
 
 ## <a name="setting-properties"></a>设置属性
 
@@ -242,7 +240,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 另一个 XAML 规则是元素的属性必须能够按照任何顺序进行设置。 例如，`<Rectangle Height="50" Width="100" />` 和 `<Rectangle Width="100"  Height="50" />` 之间没有区别。 使用哪种顺序只是样式问题。
 
-**注意**  如果你使用的设计表面不是 XML 编辑器，XAML 设计人员通常会提升排序约定，但是你可以在后来任意编辑该 XAML，以便对属性重新排序或者引入新属性。
+**注意**XAML 设计人员通常提升排序约定，如果你使用的设计表面不是 XML 编辑器，但你可以在后来任意编辑该 XAML，以对属性重新排序或者引入新属性。
 
 ## <a name="attached-properties"></a>附加属性
 
@@ -271,8 +269,8 @@ XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展
 
 因为左括号 \{ 是标记扩展序列的开始，所以必须使用一个转义序列来指定一个以“\{”开始的文字字符串值。 该转义序列是“\{\}”。 例如，要指定一个是单个左括号的字符串值，可以将该属性值指定为“\{\}\{”。 你也可以使用引号（例如，一个由 **""** 分隔的属性值中的 **'**）来以字符串形式提供“\{”值。
 
-**注意**  如果在用引号引起的属性内，使用“\\}”也可以。
- 
+**注意**内的引用的属性时，还可以运行"\}"。
+ 
 ## <a name="enumeration-values"></a>枚举值
 
 Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员是读写属性，则可以通过提供一个特性值来设置这样的属性。 可以通过使用常量名称的非限定名称来确定哪个枚举值要用作该属性的值。 例如，下面介绍如何设置 XAML 形式的 [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992)：`<Button Visibility="Visible"/>`。 下面作为字符串的“Visible”可以直接映射到 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) 枚举的命名常量 **Visible**。
@@ -280,7 +278,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 -   请勿使用限定形式，因为它不起作用。 例如，下面的 XAML 无效：`<Button Visibility="Visibility.Visible"/>`
 -   请勿使用常量的值。 换句话说，请勿依赖显式或隐式依赖枚举定义方式的枚举的整数值。 尽管看似可行，但无论采用 XAML 形式还是代码形式，这都是不合适的做法，因为你依赖的可能是过渡实现的详细信息。 例如，请勿执行如下操作：`<Button Visibility="1"/>`。
 
-**注意**  在使用 XAML 和使用枚举的 API 参考主题中，在**语法**的**属性值**部分，单击枚举类型的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
+**注意**在使用 XAML 和使用枚举的 Api 参考主题中，单击枚举类型的**属性值**部分中的**语法**的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
 
 枚举可以具有与标志相同的作用，即，它们可以被归类于 **FlagsAttribute**。 如果你需要将具有标志作用的枚举的值组合指定为一个 XAML 属性值，请使用每个枚举常量的名称，在每个名称之间加一个逗号 (,)，不要有任何多余的空格字符。 具有标志作用的属性在 Windows 运行时 XAML 词汇中并不常见，但 [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) 示例表明了支持以 XAML 的形式设置具有标志作用的枚举值。
 
@@ -290,7 +288,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 运行时参考中的 XAML 占位符约定
 
-参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”**** 部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法不同于 C#、Microsoft Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 语法，因为 XAML 语法是一种用法语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”**** 部分中的某些占位符。
+参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”**** 部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法是不同于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 语法因为 XAML 语法是一种用法语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”**** 部分中的某些占位符。
 
 当你在某个属性的 XAML 语法中看到类型名称/元素名称时，显示的名称为最初定义该属性的类型的名称。 但 Windows 运行时 XAML 支持基于 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的类的类继承模型。 因此，通常你可以使用以下类中的属性：该类从字面上看不属于定义类，但派生自首先定义该属性/特性的类。 例如，你可以将 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 设置为使用深度继承的任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生类上的属性。 例如：`<Button Visibility="Visible" />`。 因此，对于任意 XAML 用法语法中显示的元素名称，都不要过于拘泥于字面意思；该语法对于表示该类的元素以及表示派生类的元素也可能同样适用。 在类型很少或不能显示为采用真实用法的定义元素时，该类型名称在语法中刻意小写。 例如，你看到的 **UIElement.Visibility** 的语法为：
 
@@ -320,5 +318,5 @@ XAML 用法部分还使用各种通用性占位符。 有些情况下，这些�
 * [XAML 概述](xaml-overview.md)
 * [XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)
 * [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
- 
+ 
 

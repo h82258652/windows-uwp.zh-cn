@@ -7,16 +7,14 @@ description: " /untrustedplatform/users/xuid({xuid})/scids/{scid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 394b2dc83169e3ef5671ddfe1d45137836d9f358
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1ebb33e15fc60ee81c8d64f38651fbe54a10453b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478289"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550828"
 ---
 # <a name="untrustedplatformusersxuidxuidscidsscid"></a>/untrustedplatform/users/xuid({xuid})/scids/{scid}
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。

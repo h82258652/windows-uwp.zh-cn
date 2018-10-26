@@ -6,16 +6,14 @@ ms.assetid: 22b8f893-abb3-426e-9840-f79de0753702
 ms.author: kevinasg
 ms.date: 10/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f42379b5225553f03b9b9af8149d6cb888377a36
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 25dfb486eca6135526dc6c0081e77b5bc9dbbbeb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472290"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553540"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>创意者计划的 Xbox Live 服务配置
 

@@ -7,16 +7,14 @@ description: " GameClipVisibility 枚举"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d7390f16d2cc8f61d76f51713c2903a6fd2c9c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ac037fcbf14a4138c26e37f5480b48e97221d033
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477192"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552587"
 ---
 # <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 枚举
 详细介绍 GameClipVisibility 枚举。 

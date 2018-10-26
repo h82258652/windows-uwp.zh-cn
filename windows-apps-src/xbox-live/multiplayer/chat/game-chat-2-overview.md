@@ -5,16 +5,14 @@ description: 了解如何使用 Xbox Live 游戏聊天 2（游戏聊天的更新
 ms.author: tomco
 ms.date: 10/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天, 游戏聊天 2, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 252cd33b0504a586852381a6c5ace3f5700890f7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 211769593fb2801aee31cfcd8b20869fab27314e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5546480"
 ---
 # <a name="game-chat-2-overview"></a>游戏聊天 2 概述
 

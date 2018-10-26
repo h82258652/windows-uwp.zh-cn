@@ -6,16 +6,14 @@ ms.assetid: 4bb6fa66-34d1-4db9-87c8-7e24ad5afc0a
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 示例, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ff1d53f8f1fe17e3fec5331f65920b7a36ec15
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 30078629f164f30fffcecb0dce76046b896c21f6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "3880402"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558428"
 ---
 # <a name="xbox-live-samples"></a>Xbox Live 示例
 
@@ -23,7 +21,7 @@ ms.locfileid: "3880402"
 * [Xbox 开发人员工具包示例](#xdk-samples)
 
 ## <a name="xbox-live-api-samples"></a>Xbox Live API 示例
-示例这两个 Xbox Live 创意者计划和ID@Xbox可以在以下位置找到 Xbox Live Samples GitHub 存储库中发现展示 Xbox Live API 的用法[https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples)
+这些示例这两个 Xbox Live 创意者计划和ID@Xbox可以在以下位置找到 Xbox Live Samples GitHub 存储库中发现展示 Xbox Live API 的用法[https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples)
 
 | 示例名称             | 平台 | 语言                     | 描述                                                                                                                                                                                                           |
 |:------------------------|:----------|:------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

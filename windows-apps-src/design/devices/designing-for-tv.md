@@ -10,19 +10,17 @@ keywords: Xbox, TV, 10 英尺体验, 游戏板, 遥控器, 输入, 交互
 ms.author: elcowle
 ms.date: 12/5/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c9751ef316dbec7334fc12242d71dd58ae2cb262
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 098bc97de27d58fdc1d582e0db264ef04f0d3e61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700963"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572346"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
@@ -68,7 +66,7 @@ _**Microsoft 电影和电视中提供了屏幕截图中所示的所有电影。*
 
 现在你已了解了适用于 10 英尺体验的良好 UWP 应用设计的原则，请阅读以下关于优化应用和实现出色用户体验的特定方法的概述。
 
-| 功能        | 描述           |
+| 功能        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [游戏板和遥控器](#gamepad-and-remote-control)      | 确保你的应用适用于游戏板和遥控器是针对 10 英尺体验进行优化中最重要的步骤。 可以进行多个特定于游戏板和遥控器的改进，以优化用户操作在某种程度上受限的设备上的用户交互体验。 |
 | [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | UWP 提供 **XY 焦点导航**，该导航允许用户在应用的 UI 中四处导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
@@ -258,19 +256,19 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -279,8 +277,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 若要防止焦点从控件以特定方向移动，请使用 `XYFocus*` 属性将其指向相同的控件：
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -324,7 +322,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 尽管你无法垂直堆叠 `CommandBar` 的项，但相对于滚动方向放置它们（例如，垂直滚动列表的左侧或右侧，或者水平滚动列表的顶部或底部）是另一个需要考虑的选项（如果适用于你的 UI 布局）。
 
-如果应用的 `CommandBar` 具有需要便于用户访问的项，你可能要考虑将这些项放置在 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 内部，并将它们从 `CommandBar` 中删除。 `ContextFlyout` 是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) 的属性，并且是与该元素关联的[上下文菜单](../controls-and-patterns/dialogs.md)。 在电脑上，右键单击带有 `ContextFlyout` 的元素时，会弹出上下文菜单。 在 Xbox One 上，如果焦点在此类元素上，按**菜单**按钮也会发生此行为。
+如果应用的 `CommandBar` 具有需要便于用户访问的项，你可能要考虑将这些项放置在 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 内部，并将它们从 `CommandBar` 中删除。 `ContextFlyout` 是 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) 的属性，并且是与该元素关联的[上下文菜单](../controls-and-patterns/dialogs-and-flyouts/index.md)。 在电脑上，右键单击带有 `ContextFlyout` 的元素时，会弹出上下文菜单。 在 Xbox One 上，如果焦点在此类元素上，按**菜单**按钮也会发生此行为。
 
 ### <a name="ui-layout-challenges"></a>UI 布局挑战
 

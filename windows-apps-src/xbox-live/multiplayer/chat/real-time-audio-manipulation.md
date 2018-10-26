@@ -5,16 +5,14 @@ description: 了解如何操作和处理由游戏聊天 2 捕获的聊天音频�
 ms.author: kevinasg
 ms.date: 05/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信, 缓冲区操作, 音频操作
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5f9863bf4a023520486567de1f5feb1907b177
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: cd0a88c5d3ae50cb7dd86585507c951cc061503d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469201"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559947"
 ---
 # <a name="real-time-audio-manipulation"></a>实时音频操作
 

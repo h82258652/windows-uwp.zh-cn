@@ -6,16 +6,14 @@ title: 媒体项、播放列表和轨
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 241f3f62f8bf8965f7bc718c2dfe0c7e76866c51
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 73b6a19e2385f1a9b8afa4672df50d17ac16ec97
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832468"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572526"
 ---
 # <a name="media-items-playlists-and-tracks"></a>媒体项、播放列表和轨
 
@@ -199,7 +197,7 @@ ms.locfileid: "1832468"
               **MediaPlaybackList**
             ](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你创建媒体项的播放列表，这些项由 **MediaPlaybackItem** 对象表示。
 
-**注意** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的项使用无缝播放进行呈现。 系统将使用 MP3 或 AAC 编码的文件中所提供的元数据来确定无缝播放所需的延迟或填充补偿。 如果 MP3 或 AAC 编码的文件不提供此元数据，则系统将试探性确定延迟或填充。 对于无损格式（如 PCM、FLAC 或 ALAC），系统不执行任何操作，因为这些编码器不会引入延迟或填充。
+**注意** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955)中的项使用无缝播放进行呈现。 系统将使用 MP3 或 AAC 编码的文件中所提供的元数据来确定无缝播放所需的延迟或填充补偿。 如果 MP3 或 AAC 编码的文件不提供此元数据，则系统将试探性确定延迟或填充。 对于无损格式（如 PCM、FLAC 或 ALAC），系统不执行任何操作，因为这些编码器不会引入延迟或填充。
 
 若要开始使用，请声明用于存储 **MediaPlaybackList** 的变量。
 

@@ -7,16 +7,14 @@ description: " UserTitle (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 068ae15566d73dfc4610f8540972b7e80329de8e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 44e43fb04cff64b5f1f5c025066decf5cc5cff80
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471200"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560250"
 ---
 # <a name="usertitle-json"></a>UserTitle (JSON)
 包含用户的游戏数据。 

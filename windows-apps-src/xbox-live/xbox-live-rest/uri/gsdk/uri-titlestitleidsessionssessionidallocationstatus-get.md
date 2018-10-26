@@ -7,16 +7,14 @@ description: " GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 67b50aba65477637689a7a15ea44d02299de1026
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483508"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543735"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 返回由其 sessionId sessionhost 分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -48,17 +46,17 @@ ms.locfileid: "5483508"
  
 | 成员| 说明| 
 | --- | --- | 
-| description| 返回空字符串 （左中的向后兼容性）。| 
-| clusterId| 返回空字符串 （左中的向后兼容性）。| 
+| description| 返回空字符串 （留给中向后兼容性）。| 
+| clusterId| 返回空字符串 （留给中向后兼容性）。| 
 | 主机名| 会话主机的 URL。| 
 | status| 指示排队、 已完成，或者中止。| 
 | sessionHostId| 会话主机 id。| 
-| sessionId| 客户端 （在分配时） 提供会话 id。| 
+| sessionId| （在分配时） 提供的客户端会话 id。| 
 | secureContext| 安全设备地址。| 
-| portMappings| 实例的端口映射。| 
+| portMappings| 该实例端口映射。| 
 | 区域| 实例的位置。| 
-| 票证 Id| 当前会话 ID （左中的向后兼容性）。| 
-| gameHostId| 当前 sessionHostId （左中的向后兼容性）。| 
+| 票证 Id| 当前会话 ID （留给中向后兼容性）。| 
+| gameHostId| 当前 sessionHostId （留给中向后兼容性）。| 
  
 <a id="ID4EGD"></a>
 
@@ -106,7 +104,7 @@ ms.locfileid: "5483508"
  
 收到以下响应代码时，游戏应仅重试对服务调用：
  
-   * 200 — 成功 
+   * 200-成功 
    * 400-请求包含无效参数 
    * 401-未授权 
    * 404-的主题作品 ID 或票证 ID 已无效，或未找到 

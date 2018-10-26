@@ -7,16 +7,14 @@ description: " 辅助 EDS API"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ecdf3d885a518f622dae00b4b4a98979c3bdefe9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 15e1c5ddd6fe0b645d6851a348fe6e1fc0879b55
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475606"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5544941"
 ---
 # <a name="auxiliary-eds-apis"></a>辅助 EDS API
 

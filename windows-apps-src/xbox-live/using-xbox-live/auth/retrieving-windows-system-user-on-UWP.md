@@ -5,16 +5,14 @@ description: 了解如何在通用 Windows 平台 (UWP) 游戏中检索 Windows 
 ms.author: kevinasg
 ms.date: 06/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, 系统用户
 ms.localizationpriority: medium
-ms.openlocfilehash: 0533e9f63453ee2a7a8a7cb77f6f253e2d9c0e23
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: bd783c4e1614cc558f80472765a77138d1abf409
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5467753"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5545319"
 ---
 # <a name="retrieving-the-windows-system-user-in-a-universal-windows-platform-uwp-title"></a>在通用 Windows 平台 (UWP) 作品中检索 Windows 系统用户
 

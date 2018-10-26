@@ -7,16 +7,14 @@ description: " LastSeenRecord (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: fc16e1364346792a39be98dc0232579652b11dd3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472765"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5541926"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
 有关系统上次看到的用户，当用户在没有有效 DeviceRecord 提供的信息。 
