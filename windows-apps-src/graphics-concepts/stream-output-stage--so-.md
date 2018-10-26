@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c3ed335360d7b259c045722b65bb08a71b6e0c
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a86aa5a78bc4df9deaeea239356345c33736d942
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044036"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568840"
 ---
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
@@ -47,7 +45,7 @@ ms.locfileid: "1044036"
 
 流输出 (SO) 阶段可持续地将几何着色器 (GS) 阶段等之前的有效阶段输出（或流式传输）至内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段无效，那么流输出 (SO) 阶段会持续地将域着色器 (DS) 阶段的顶点数据输出至内存缓冲区（如果 DS 也无效，则从顶点着色器 (VS) 阶段输出）。
 
-当三角形或行条绑定到输入汇编 (IA) 阶段时，每条转换为列表之前出进行流式处理。顶点作为完整基元 （例如，3 个顶点的三角形一次）; 始终写出不完整基元永远不会进行出流式处理。与邻接基元类型流出数据之前放弃相邻数据。
+当三角形或直线带绑定到输入装配器 (IA) 阶段时，那么所有带会都转换列表流出之前。顶点都始终写成完整基元 （例如，3 个顶点的三角形一次）;不完整的基元不会流出。带邻近度的基元类型会数据流出之前放弃相邻数据。
 
 流输出阶段支持最多同时 4 个缓冲区。
 
@@ -59,9 +57,9 @@ ms.locfileid: "1044036"
 
 [图形管道](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

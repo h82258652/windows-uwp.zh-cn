@@ -6,16 +6,14 @@ ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 示例, directx, 结构
 ms.localizationpriority: medium
-ms.openlocfilehash: c26b547d5cc94f3277d0c898804e65d75e6d17e2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 1272200bf128443c82807aec9df5559f207819e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700873"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569113"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 
@@ -27,7 +25,7 @@ DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构�
 > [!NOTE]
 > 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
 
- 
+ 
 ## 
 本文档讨论了在构造游戏代码时的一些重要事项：
 
@@ -65,7 +63,7 @@ Marble Maze 中的一些组件只需很少或无需修改即可在任何游戏�
 | StepTimer.h               | 定义 **StepTimer** 类，可提供一种轻松的方式来获取总时间和已经过的时间。
 | UserInterface.h、UserInterface.cpp         | 定义与用户界面相关的功能，例如菜单系统和高分表。                                                                        |
 
- 
+ 
 
 ##  <a name="design-time-versus-run-time-resource-formats"></a>设计时资源格式与运行时资源格式
 
@@ -114,7 +112,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 > [!NOTE]
 > 也可在主菜单准备好后显示主菜单，允许剩余资源继续在后台加载。 例如，如果用户在所有资源加载完之前从菜单选择一个选项，你可显示一个进度栏来表明正在继续加载场景资源。
 
- 
+ 
 
 即使游戏包含相对较少的游戏资源，以异步方式加载它们也是一种不错的做法，原因有二。 一个原因是很难保证所有资源将快速加载到所有设备和所有配置上。 另外，通过尽早整合异步加载功能，代码随时可随着功能的添加而扩展。
 
@@ -134,7 +132,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 > [!TIP]
 > 如果要编写 Windows 运行时 C++ 库（也就是 DLL）中包含的游戏代码，请考虑是否阅读[使用 C++ 为 UWP 应用创建异步操作](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)，以了解如何创建可供应用和其他库使用的异步操作。
 
- 
+ 
 
 ## <a name="the-game-loop"></a>游戏循环
 
@@ -431,9 +429,9 @@ void MarbleMazeMain::LoadState()
 * [Marble Maze 示例基础](marble-maze-sample-fundamentals.md)
 * [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
 
 

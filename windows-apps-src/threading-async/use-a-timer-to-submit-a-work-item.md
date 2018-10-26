@@ -6,19 +6,17 @@ description: 了解如何创建在经过计时器时间后运行的工作项。
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 计时器, 线程
-ms.openlocfilehash: 214a3ad9d84ffb8bc26a4aa02d79d0b1c06f2bfe
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665343"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564974"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用计时器提交工作项
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要的 API **
 
@@ -31,7 +29,7 @@ ms.locfileid: "665343"
 
 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 结构指定延迟。
 
-> **注意**  你可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 并显示工作项的进度。
+> **注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
 
 以下示例创建三分钟后运行的工作项：
 
@@ -225,7 +223,7 @@ ms.locfileid: "665343"
 
 通用 Windows 平台 (UWP) 应用无法使用 **Thread.Sleep**，因为它会阻止 UI 线程。 你可以改为使用 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 创建工作项，这将延迟工作项完成的任务，但不会阻止 UI 线程。
 
-如需演示工作项、计时器工作项和定期工作项的完整代码示例，请参阅[线程池示例](http://go.microsoft.com/fwlink/p/?linkid=255387)。 代码示例最初是为 Windows 8.1 编写，但该代码可在 Windows 10 中重复使用。
+如需演示工作项、计时器工作项和定期工作项的完整代码示例，请参阅[线程池示例](http://go.microsoft.com/fwlink/p/?linkid=255387)。 此代码示例最初为 Windows8.1 编写，但该代码可在 windows 10 中重复使用。
 
 有关重复计时器的信息，请参阅[创建定期工作项](create-a-periodic-work-item.md)。
 
@@ -234,6 +232,6 @@ ms.locfileid: "665343"
 * [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
 * [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
 * [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
- 
+ 
 
- 
+ 

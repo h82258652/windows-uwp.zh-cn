@@ -6,19 +6,18 @@ ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 移植, 着色器, direct3d, opengl
-ms.openlocfilehash: f683e8b6ad04b1350adae1c962da09e2f15f5cec
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204344"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567219"
 ---
 # <a name="port-the-shader-objects"></a>移植着色器对象
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -28,9 +27,9 @@ ms.locfileid: "204344"
 
 移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。
 
-> **注意**   是否创建了新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
+> **注意**创建新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
 
- 
+ 
 
 与 OpenGL ES 2.0 非常相似，必须将 Direct3D 中已编译的着色器与绘制上下文相关联。 但是，Direct3D 本身没有着色器程序对象的概念，你必须将着色器直接分配给 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)。 该步骤遵循 OpenGL ES 2.0 创建和绑定着色器对象的过程，并且为你提供了 Direct3D 中的相应 API 行为。
 
@@ -81,9 +80,9 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 在 Direct3D 中，着色器不是在运行时期间编译的，当编译程序的其余部分时，它们始终被编译为 CSO 文件。 当使用 Microsoft Visual Studio 编译应用时，HLSL 文件被编译为应用必须加载的 CSO (.cso) 文件。 确保在打包时将这些 CSO 文件与你的应用包含在一起。
 
-> **注意**   以下示例使用 **auto** 关键字和 lambda 语法异步执行着色器加载和编译。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
+> **注意**下面的示例执行的着色器加载和编译使用**自动**关键字和 lambda 语法异步。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
 
- 
+ 
 
 Direct3D 11：编译着色器
 
@@ -319,9 +318,9 @@ m_d3dContext->UpdateSubresource(
 
 [绘制到屏幕](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

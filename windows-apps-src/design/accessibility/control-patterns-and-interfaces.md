@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd6f279505a960be0b9e1e2e5918a769ff56930
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e48045e27e8ee7796f5dda2afb691a9f6e5371b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655056"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565335"
 ---
 # <a name="control-patterns-and-interfaces"></a>控件模式和接口  
 
@@ -63,7 +61,7 @@ ms.locfileid: "1655056"
 | **转换** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | 用于可调整大小、移动和旋转的控件。 Transform 控件模式通常用于设计器、窗体、图形编辑器和绘图应用程序。 |
 | **值** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 允许客户端在不支持一系列值的控件上获取或设置某个值。 |
 | **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | 公开容器中已虚拟化并需要作为 UI 自动化元素可完全进行访问的项目。 |
-| **窗口** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 向 Microsoft Windows 操作系统公开特定于窗口的信息（一种基本概念）。 用作窗口的控件示例包括子窗口和对话框。 |
+| **窗口** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 公开特定于 windows 中，信息向 MicrosoftWindows 操作系统的基本概念。 用作窗口的控件示例包括子窗口和对话框。 |
 
 > [!NOTE]
 > 现有的 XAML 控件中可能并不会包含所有这些模式的实现。 其中部分模式具有接口，目的仅在于通过模式的常规 UI 自动化框架定义来支持奇偶校验，以及支持需要使用纯粹自定义实现来支持该模式的自动化对等方案。

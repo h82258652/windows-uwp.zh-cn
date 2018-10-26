@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 181b958009a5537f7adccb1b784dacde06fe21d4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3c15ff6aa43540b61b410525e6bb20a0de3da821
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044766"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570787"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>配置深度模具功能
 
@@ -87,7 +85,7 @@ Direct3D 应用程序使用贴纸来控制将特定基元图像中的哪些像�
 
 第一次渲染绘制前向多边形，并增加模具缓冲区值。 第二次渲染绘制阴影卷的后向多边形，并减少模具缓冲区值。
 
-通常情况下，所有递增和递减值取消每个其他出。但是，场景已呈现与普通几何导致失败 z 缓冲区测试呈现卷影卷一些像素。 留在模具缓冲区的值域阴影中像素相对应。 使用这些保留的模具缓冲区内容作为掩码，以在场景中 alpha 混合大面积、全环绕的黑色间隙。 将模具缓冲区作为掩码，结果是将位于阴影处的像素变暗。
+通常情况下，所有增加和减少值相互抵消。但是，使用常规几何图形导致部分像素无法通过 z 缓冲测试，如呈现阴影卷已呈现场景。 留在模具缓冲区的值域阴影中像素相对应。 使用这些保留的模具缓冲区内容作为掩码，以在场景中 alpha 混合大面积、全环绕的黑色间隙。 将模具缓冲区作为掩码，结果是将位于阴影处的像素变暗。
 
 这意味着每个光源的阴影几何图形将绘制两次，因此为 GPU 的顶点吞吐量带来了压力。 双面模具功能旨在缓解此问题。 这种方法使用两组模具状态（如下文所列），一组用于前向三角形，另一组用于后向三角形。 这样，每个阴影卷每个光源只需绘制一次。
 

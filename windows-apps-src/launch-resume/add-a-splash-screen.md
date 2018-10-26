@@ -6,16 +6,14 @@ ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 ms.author: twhitney
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6cff7ce434e219b0d502f384d202c3b708479a
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 143b96171091406fb91954685143e4f86c036ffb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1861886"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570896"
 ---
 # <a name="add-a-splash-screen"></a>添加初始屏幕
 
@@ -41,11 +39,11 @@ ms.locfileid: "1861886"
 
 4. 若要选择适用于 UWP 应用的新初始屏幕图像，请按下在**比例资源**下的 **1240 x 600 px** 标签旁边显示的带省略号的按钮。 选择你要用于初始屏幕图像的 1240 x 600 像素图像（.png、.jpg 或 .jpeg）。
 
-    **重要提示**  所选初始屏幕图像必须为使用 1 倍比例系数的 620 x 300 像素。 此外，在设计你的初始屏幕时，请注意它比屏幕小，并且居中。 它不像 Windows Phone 应用商店应用的初始屏幕一样会填满屏幕。
+    **重要提示**所选初始屏幕图像必须为使用 1 倍比例系数的 620 x 300 像素。 此外，在设计你的初始屏幕时，请注意它比屏幕小，并且居中。 它不像 Windows Phone 应用商店应用的初始屏幕一样会填满屏幕。
 
 5. 若要选择适用于 Windows Phone 应用商店应用的新初始屏幕图像，请按下在**比例资源**下的 **1152 x 1920 px** 标签旁边显示的带省略号的按钮。 选择你要用于初始屏幕图像的 1152 x 1920 像素图像（.png、.jpg 或 .jpeg）。
 
-    **重要提示**  所选初始屏幕图像必须为 1152 x 1920 像素，即 2.4 倍比例系数的正确大小。 如果这是你提供的唯一资源，那么它将缩小为 1.4 倍和 1 倍比例系数。
+    **重要提示**所选初始屏幕图像必须为 1152 x 1920 像素即 2.4 倍比例系数的正确大小。 如果这是你提供的唯一资源，那么它将缩小为 1.4 倍和 1 倍比例系数。
 
 6. 在**初始屏幕**部分的**背景色**字段中，将背景色设置为与初始屏幕图像一起显示。 你可以输入颜色的名称，也可以输入“#”和颜色的十六进制值。 有关可用颜色的名称列表，请参阅 [**SplashScreen 元素**](https://msdn.microsoft.com/library/windows/apps/br211467)。 你也可以为初始屏幕设置背景色。 如果你未为 UWP 应用指定颜色，则初始屏幕背景色默认为浅灰色（十六进制值 \#464646）。 这与默认的**磁贴**背景色相同（请参阅**可视资源**选项卡的**磁贴图像和徽标**部分中的**背景色**字段）。 如果你未为 Windows Phone 指定颜色，或将其设置为“透明”，则初始屏幕背景色将为透明。
 

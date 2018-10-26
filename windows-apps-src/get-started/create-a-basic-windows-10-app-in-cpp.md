@@ -1,36 +1,35 @@
 ---
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: 使用 C++ 创建“Hello World”应用 (Windows 10)
-description: 借助 Microsoft Visual Studio 2017，可以使用 C++ 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。
+title: 创建 Hello World 应用在 C + + CX (windows 10)
+description: Microsoft Visual Studio2017，则可以使用 C + + CX 来开发可在 windows 10，包括可在运行 windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。
 ms.author: jken
-ms.date: 03/26/2017
+ms.date: 06/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0701266e67be8fde53d4436f0461cb362d6d67df
-ms.sourcegitcommit: 3522d888781ff6f063b129b54760a5cbefd38139
-ms.translationtype: HT
+ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "1937043"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571462"
 ---
-# <a name="create-a-hello-world-app-in-c"></a>用 C++ 创建“Hello world”应用
+# <a name="create-a-hello-world-app-in-ccx"></a>创建"Hello world"应用在 C + + CX
 
-借助 Microsoft Visual Studio 2017，可以使用 C++ 开发可在 Windows 10 上运行的应用，且这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。
+> [!IMPORTANT]
+> 此教程使用 C + + CX。 Microsoft 已发布了 C + + WinRT： 的完全标准新式 C + + 17 语言投影的 Windows 运行时 (WinRT) Api。 有关此语言的详细信息，请参阅[C + + WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)。 
+
+Microsoft Visual Studio2017，则可以使用 C + + /CX 开发的 UI 定义 Extensible Application Markup Language (XAML) 中的 windows 10 上运行的应用。
 
 > [!NOTE]
 > 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
 
+## <a name="before-you-start"></a>开始之前
 
-## <a name="before-you-start"></a>开始之前...
-
--   若要完成本教程，在运行 Windows 10 的计算机上，你必须使用 Visual Studio Community 2017 或任一非社区版 Visual Studio 2017。 若要进行下载，请参阅[获取工具](http://go.microsoft.com/fwlink/p/?LinkId=532666)。
--   我们假设你已基本了解 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595) 中的标准 C++、XAML 和概念。
+-   若要完成本教程中，必须在运行 windows 10 的计算机上使用 Visual StudioCommunity 2017 或任一 Visual Studio2017 非社区版。 若要进行下载，请参阅[获取工具](http://go.microsoft.com/fwlink/p/?LinkId=532666)。
+-   我们假设你已基本了解 C + + CX，XAML，并在此[XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)中的概念。
 -   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，依次选择**窗口** > **重置窗口布局**。
-
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>将 C++ 桌面应用与 Windows 应用比较
 
@@ -38,7 +37,7 @@ ms.locfileid: "1937043"
 
 ### <a name="whats-the-same"></a>相同之处
 
--   你可以使用 STL、CRT（有某些例外）以及任何其他 C++ 库，只要代码不尝试调用不可从 Windows 运行时环境访问的 Windows 函数。
+-   你可以使用 STL、 CRT （有某些例外） 以及任何其他 c + + 库，只要代码仅调用可以从 Windows 运行时环境访问的 Windows 函数。
 
 -   如果你习惯可视设计器，你仍然可以使用内置于 Microsoft Visual Studio 的设计器，或者你可以使用功能更加完整的 Blend for Visual Studio。 如果你习惯手动编写 UI 代码，则可以手动编写 XAML 的代码。
 
@@ -46,7 +45,7 @@ ms.locfileid: "1937043"
 
 -   你仍然可以使用 Visual Studio 调试器、探查器和其他开发工具。
 
--   你仍然可以通过使用 Visual C++ 编译器创建用来编译原生机器代码的应用。 使用 C++ 编写的 UWP 应用不能在托管的运行时环境中执行。
+-   你仍然可以通过使用 Visual C++ 编译器创建用来编译原生机器代码的应用。 UWP 应用中的 C + + CX 不在托管的运行时环境中执行。
 
 ### <a name="whats-new"></a>新增功能有哪些？
 
@@ -62,17 +61,17 @@ ms.locfileid: "1937043"
 
 -   在 Microsoft Store 和 Windows Phone Store 中，应用通过一个验证流程确定为安全之后，即可面向无数潜在客户发布。
 
-## <a name="hello-world-store-app-in-c"></a>使用 C++ 的 Hello World 应用商店应用
+## <a name="hello-world-store-app-in-ccx"></a>Hello World 应用商店应用 C + + CX
 
-我们的第一个应用是“Hello World”，它演示了交互性、布局和样式的一些基本功能。 我们将通过 Universal Windows App 项目模板创建应用。 如果你之前开发过 Windows 8.1 和 Windows Phone 8.1 应用，你可能还记得在 Visual Studio 中你必须具有三个项目：一个用于 Windows 应用，一个用于手机应用，另一个带有共享代码。 Windows 10 通用 Windows 平台 (UWP) 使只需一个项目成为可能，该项目可在所有设备上运行，包括运行 Windows 10 的台式机和笔记本电脑，以及诸如平板电脑、手机、VR 设备等。
+我们的第一个应用是“Hello World”，它演示了交互性、布局和样式的一些基本功能。 我们将通过 Universal Windows App 项目模板创建应用。 如果你已开发 Windows8.1 和之前的 Windows Phone 8.1 应用，你可能还记得必须具有三个项目在 Visual Studio 中，一个用于 Windows 应用，一个用于手机应用，而另一个带有共享代码。 Windows 10 通用 Windows 平台 (UWP) 使只需一个项目，在所有设备，包括运行 windows 10 设备，如平板电脑、 手机、 VR 设备等的台式机和笔记本电脑计算机上运行。
 
 我们将从基础开始：
 
--   如何在 Visual Studio 2017 中创建通用 Windows 项目。
+-   如何在 Visual Studio2017 中创建通用 Windows 项目。
 
 -   如何了解创建的项目和文件。
 
--   如何了解 Visual C++ 组件扩展 (C++/CX) 中的扩展以及何时使用它们。
+-   如何了解 VisualC + + 组件扩展中的扩展 (C + + CX)，以及何时使用它们。
 
 **首先，在 Visual Studio 中创建一个解决方案**
 
@@ -89,7 +88,7 @@ ms.locfileid: "1937043"
 
 4.  输入项目名称。 我们将其命名为 HelloWorld。
 
- ![“新建项目”对话框中的 C++ 项目模板 ](images/vs2017-uwp-01.png)
+ ![C + + CX 在新建项目对话框中的项目模板 ](images/vs2017-uwp-01.png)
 
 5.  选择**确定**按钮。
 
@@ -104,7 +103,7 @@ ms.locfileid: "1937043"
 
 ### <a name="about-the-project-files"></a>关于项目文件
 
-项目文件中的每个 .xaml 文件在同一个文件夹都有对应的 .xaml.h 文件和 .xaml.cpp 文件，在“生成的文件”文件夹中有 .g 文件和 .g.hpp 文件，该文件夹在磁盘上，但不是项目的一部分。 修改 XAML 文件以创建 UI 元素，并将其连接到数据源 (DataBinding)。 修改 .h 和 .cpp 文件以为事件处理程序添加自定义逻辑。 自动生成的文件表示 XAML 标记到 C++ 的转换。 请勿修改这些文件，但你可以研究它们以更好地了解代码隐藏的工作原理。 基本上，生成的文件包含 XAML 根元素的部分类定义；此类是你在 \*.xaml.h 和 .cpp 文件中修改的相同类。 生成的文件将 XAML UI 子元素声明为类成员，以便你可以在你编写的代码中引用它们。 在构建时，生成的代码和你的代码合并为完整的类定义，然后进行编译。
+项目文件中的每个 .xaml 文件在同一个文件夹都有对应的 .xaml.h 文件和 .xaml.cpp 文件，在“生成的文件”文件夹中有 .g 文件和 .g.hpp 文件，该文件夹在磁盘上，但不是项目的一部分。 修改 XAML 文件以创建 UI 元素，并将其连接到数据源 (DataBinding)。 修改 .h 和 .cpp 文件以为事件处理程序添加自定义逻辑。 自动生成的文件表示 XAML 标记的转换为 C + + CX。 请勿修改这些文件，但你可以研究它们以更好地了解代码隐藏的工作原理。 基本上，生成的文件包含 XAML 根元素的部分类定义；此类是你在 \*.xaml.h 和 .cpp 文件中修改的相同类。 生成的文件将 XAML UI 子元素声明为类成员，以便你可以在你编写的代码中引用它们。 在构建时，生成的代码和你的代码合并为完整的类定义，然后进行编译。
 
 让我们先看一下项目文件。
 
@@ -120,7 +119,7 @@ ms.locfileid: "1937043"
 
 **引用类**
 
-几乎所有 Windows 运行时类，包括 Windows API--XAML 控件中的所有类型、应用中的页面、应用类本身，所有设备和网络对象、所有容器类型，都声明为 **ref class**。 （一些 Windows 类型是 **value class** 或 **value struct**）。 引用类可从任何语言使用。 在 C++ 中，这些类型的生存期由自动引用计数管理（非垃圾集合），以便你从来不会明确地删除这些对象。 你也可以创建自己的引用类。
+几乎所有 Windows 运行时类，包括 Windows API--XAML 控件中的所有类型、应用中的页面、应用类本身，所有设备和网络对象、所有容器类型，都声明为 **ref class**。 （一些 Windows 类型是 **value class** 或 **value struct**）。 引用类可从任何语言使用。 在 C + + CX，这些类型的生存期由自动引用计数管理 （非垃圾集合），以便你永远不会明确地删除这些对象。 你也可以创建自己的引用类。
 
 ```cpp
 namespace HelloWorld
@@ -310,7 +309,7 @@ MainPage::MainPage()
 
 你应使用哪个主题？ 你需要的任何一个。 以下我们的观点：对于主要显示图像或视频的应用，我们建议深色主题；对于包含大量文本的应用，我们建议浅色主题。 如果你使用的是自定义配色方案，则请使用最适合应用外观和感觉的主题。 在本教程的其余部分中，我们使用屏幕截图中的浅色主题。
 
-**注意**  主题在应用启动时应用，并且无法在应用运行时更改主题。
+**注意**时该应用已启动并在应用运行时不能更改应用的主题。
 
 ### <a name="using-system-styles"></a>使用系统样式
 
@@ -332,12 +331,12 @@ MainPage::MainPage()
      在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 XAML 会进行更新：
 
     ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BaseTextStyle}"/>
+    <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
     ```
 
 7.  重复该过程可设置字体大小并将 **BaseTextBlockStyle** 分配到 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 元素。
 
-    **提示**  尽管此 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
+    **提示**尽管没有任何文本在此[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)中，你将指针移动到 XAML 设计图面时，蓝色轮廓会显示所在，以便你可以选择它。  
 
     现在的 XAML 如下所示：
 
@@ -407,7 +406,7 @@ MainPage::MainPage()
 
 ## <a name="next-steps"></a>后续步骤
 
-如果你具有一个面向 Windows 8.1 和/或 Windows Phone 8.1 的通用 Windows 应用项目，可以将它移植到 Windows 10 中。 虽然没有针对移植的自动操作过程，但你可以手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)。
+如果你有一个面向 Windows8.1 和/或 Windows Phone 8.1 的 Windows 通用应用项目，你可以将其移植到 windows 10。 虽然没有针对移植的自动操作过程，但你可以手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)。
 
 如果你有要与 UWP 应用集成的现有 C++ 代码，例如用于为现有应用程序创建新的 UWP UI，请参阅[操作方法：在通用 Windows 项目中使用现有 C++ 代码](http://go.microsoft.com/fwlink/p/?LinkId=619623)。
 

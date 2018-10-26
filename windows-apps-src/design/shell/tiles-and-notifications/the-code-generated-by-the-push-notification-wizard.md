@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c90d3d32876bdfd6b91f597ad94eba33907e90
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 6b39211c4b21a68fc0e563f73805805dcf1f4641
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675194"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570363"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
@@ -211,9 +209,9 @@ function sendNotifications(request) {
 
 sendNotifications 函数发送 toast 通知形式的单一通知。 你还可以使用其他类型的推送通知。
 
-**提示**  有关在编辑脚本时如何获取帮助的信息，请参阅 [为服务器端 JavaScript 启用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示**有关如何获取有关编辑脚本时的帮助的信息，请参阅[为服务器端 JavaScript 启用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
 
- 
+ 
 
 ## <a name="push-notification-types"></a>推送通知类型
 
@@ -237,9 +235,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](http://go.microsoft.com/fwlink/p/?linkid=301694)。
 
-**警告**  运行推送通知向导一次后，请不要再次运行该向导来为其他移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.\* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
+**警告**已运行推送通知向导一次，不运行该向导第二次来为其他移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将 push.register.\* 中的向导生成的代码（包括对 **CreatePushNotificationChannelForApplicationAsync** 的调用）移到 OnLaunched 事件之外来实现此目的，但此操作的细节取决于应用的体系结构。
 
- 
+ 
 
 ## <a name="related-topics"></a>相关主题
 
@@ -249,9 +247,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 * [连接到 Windows Azure 移动服务 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
 * [连接到 Windows Azure 移动服务 (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
 * [快速入门：为移动服务添加推送通知 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
- 
+ 
 
- 
+ 
 
 
 

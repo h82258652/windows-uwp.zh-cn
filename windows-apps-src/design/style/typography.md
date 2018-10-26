@@ -5,16 +5,14 @@ title: UWP 应用中的版式
 ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 62f5aa7d1089b38131c742c588ae741e88197533
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843367"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565007"
 ---
 # <a name="typography"></a>版式
 
@@ -30,9 +28,16 @@ ms.locfileid: "1843367"
 
 若要在应用上显示非英语语言或为应用选择另一种字体，请参阅[语言](#Languages)和[字体](#Fonts)，了解我们推荐的 UWP 应用字体。
 
-:::行::: :::列::: ![执行](images/do.svg)为 UI 选取一种字体。
-:::列末::: :::列::: ![不执行](images/dont.svg)不要混用多种字体。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Pick one font for your UI.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Don't mix multiple fonts.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="size-and-scaling"></a>大小和缩放
 
@@ -42,14 +47,27 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 因系统缩放的工作原理，设计时采用的是有效像素而非实际物理像素，所以不必更改字体大小来适应不同尺寸的屏幕的分辨率。
 
-:::行::: :::列::: ![执行](images/do.svg)遵循 UWP [字体渐变](#type-ramp)大小调整方式。
-:::列末::: :::列::: ![不执行](images/dont.svg)使用小于 12 像素的字号。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Follow the UWP [type ramp](#type-ramp) sizing.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use a font size smaller than 12 px.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="hierarchy"></a>层次结构
 
-:::行::: :::列::: 用户在扫描页面时依赖于视觉层次结构：标题用于总结内容，正文文本用于提供更多详细信息。 若要在应用中创建清晰的视觉层次结构，请遵循 UWP 字体渐变。
-:::列末::: :::列::: ![文本块样式](images/type/type-hierarchy.svg) :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/type-hierarchy.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="type-ramp"></a>字体渐变
 
@@ -59,8 +77,14 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
 ### <a name="using-the-type-ramp"></a>使用字体渐变
 
-:::行::: :::列::: 可以像访问 XAML [静态资源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)那样访问字体渐变的不同层次。 样式遵循 `*TextBlockStyle` 命名约定。
-:::列末::: :::列::: ![文本块样式](images/type/text-block-type-ramp.svg) :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -72,7 +96,10 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-:::行::: :::列::: ![执行](images/do.svg)为大多数文本使用“Body”。
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Use "Body" for most text.
 
         Use "Base" for titles when space is constrained.
     :::column-end:::
@@ -82,7 +109,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
         Use "Header" or "Subheader" if text needs to wrap.
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ## <a name="alignment"></a>对齐
 
@@ -96,9 +123,16 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 
 ## <a name="character-count"></a>字符数
 
-:::行::: :::列::: ![执行](images/do.svg)每行保持为 50–60 个字母以便于阅读。
-:::列末::: :::列::: ![不执行](images/dont.svg)每行少于 20 个字符或多于 60 个字符将不便于阅读。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Keep to 50–60 letters per line for ease of reading.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Less than 20 characters or more than 60 characters per line is difficult to read.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="clipping-and-ellipses"></a>剪裁和省略号
 
@@ -110,9 +144,16 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
 ```
 
-:::行::: :::列::: ![执行](images/do.svg)剪裁文本，如果启用了多行显示则换行。
-:::列末::: :::列::: ![不执行](images/dont.svg)使用省略号以避免视觉上的杂乱感。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Clip text, and wrap if multiple lines are enabled.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use ellipses to avoid visual clutter.
+    :::column-end:::
+:::row-end:::
 
 **注意**：如果未对容器进行完善定义（例如，不区分背景颜色），或者当存在用于查看更多文本的链接时，则使用省略号。
 

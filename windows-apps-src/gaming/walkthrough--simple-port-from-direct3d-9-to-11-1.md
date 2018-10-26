@@ -6,16 +6,14 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, 端口, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 97cb8341497ad72ab6b4b4f50a7cfbd7bdb4afb7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653096"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569133"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
@@ -50,7 +48,7 @@ ms.locfileid: "1653096"
 </tbody>
 </table>
 
- 
+ 
 
 本主题介绍了执行以下同一基本图形任务的两种代码路径：显示旋转的顶点着色立方体。 在这两种情况下，该代码涉及以下流程：
 
@@ -72,7 +70,7 @@ ms.locfileid: "1653096"
 ## <a name="prerequisites"></a>先决条件
 
 
-应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 尚不需要模板，但需要 Microsoft Visual Studio 2015 来加载此操作实例的代码示例。
+应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 加载本演练中的代码示例。
 
 访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此演练中显示的 DirectX 11 和 UWP 编程概念。
 

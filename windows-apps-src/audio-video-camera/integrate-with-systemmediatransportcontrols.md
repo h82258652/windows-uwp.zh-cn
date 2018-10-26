@@ -6,16 +6,14 @@ title: 与系统媒体传输控件集成
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 044d8aa8f777f6cb159c3488fdcf81c2b2c48d2d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 15d7e3b3e822081a751aa791a76e674b07af8d9d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690293"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569748"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>与系统媒体传输控件集成
 
@@ -84,9 +82,9 @@ ms.locfileid: "1690293"
 * [使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
 * [手动控制系统媒体传输控件](system-media-transport-controls.md)
 * [Github 上的系统媒体传输控件示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, 阴影卷, 深度缓冲区, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 369fd133ffba2947b06a3fc9391979c17973ea52
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653696"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565749"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
 
@@ -54,12 +52,12 @@ ms.locfileid: "1653696"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>阴影映射应用程序到 Direct3D 9 桌面的移植
 
 
-Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，你可以将具有阴影卷的呈现代码迁移到 DirectX 11，并且 Direct3D 11 呈现器将是与功能级别 9 设备兼容的下一级设备。 本操作实例介绍任何 Direct3D 11 应用或游戏如何使用深度测试实现传统的阴影卷。 代码包含以下过程：
+Windows8 添加了深度比较功能为功能级别 9 \_1 和 9 \_3。 现在，你可以将具有阴影卷的呈现代码迁移到 DirectX 11，并且 Direct3D 11 呈现器将是与功能级别 9 设备兼容的下一级设备。 本操作实例介绍任何 Direct3D 11 应用或游戏如何使用深度测试实现传统的阴影卷。 代码包含以下过程：
 
 1.  为阴影映射创建 Direct3D 设备资源。
 2.  添加呈现传递以创建深度映射。
@@ -72,7 +70,7 @@ Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，
 ## <a name="prerequisites"></a>先决条件
 
 
-应该[准备通用 Windows 平台 (UWP) DirectX 游戏开发的开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 目前，你还不需要模板，但需要使用 Microsoft Visual Studio 2015 为此操作实例生成代码示例。
+应该[准备通用 Windows 平台 (UWP) DirectX 游戏开发的开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 生成本演练中的代码示例。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -87,9 +85,9 @@ Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，
 * [改进阴影深度映射的常见技术](https://msdn.microsoft.com/library/windows/desktop/ee416324)
 * [级联阴影映射](https://msdn.microsoft.com/library/windows/desktop/ee416307)
 
- 
+ 
 
- 
+ 
 
 
 

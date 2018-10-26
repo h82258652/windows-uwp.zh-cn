@@ -6,19 +6,18 @@ ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 呈现, 阴影映射, 深度缓冲区, direct3d
-ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a73754fef6d87505751460ec134d853c6bca0530
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204135"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570472"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 2 部分。
@@ -153,9 +152,9 @@ PixelShaderInput main(VertexShaderInput input)
 
 在本演练的下一部分中，了解如何通过[使用深度测试进行呈现](render-the-scene-with-depth-testing.md)来添加阴影。
 
- 
+ 
 
- 
+ 
 
 
 

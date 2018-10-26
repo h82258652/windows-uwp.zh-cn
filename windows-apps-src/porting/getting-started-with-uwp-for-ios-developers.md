@@ -1,33 +1,32 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: 适用于 iOS 开发人员的 UWP 入门
 title: 适用于 iOS 开发人员的 UWP 入门
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204842"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566035"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>适用于 iOS 开发人员的 UWP 入门
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果你是考虑为 Windows 10 进行开发的 iOS 开发人员，这些文档会是很好的入门文档。 它们将向你介绍开始编写应用时需要了解的一些概念，并讨论了如何在 Windows 应用商店中发布作品。
+如果你是考虑为 windows 10 进行开发的 iOS 开发人员，这些文档会开始菜单的绝佳位置。 它们将向你的一些概念你将需要知道当你开始编写应用，并讨论了如何可以发布你的 Microsoft 应用商店的工作。
 
 在本部分中，我们将逐渐开始并查看如何使用 Microsoft Visual Studio 和 C# 编程语言创建简单应用，特别是此过程会如何随着当前使用工具的变化而变化。 （对 C# 不感兴趣？ 不用担心，我们会提供其他编程语言和工具，并且将在[入门：选择一种编程语言](getting-started-choosing-a-programming-language.md)中介绍它们）。
 
-为了在台式机、笔记本电脑、平板电脑和手机等设备上创建具有足够吸引力的应用，Windows 10 引入了一个新平台。 由于通用 Windows 平台 (UWP) 应用提供了许多独特的功能，因此，直接移植你的 iOS 应用可能会错过这些功能。 因此，我们鼓励你尝试新控件和新功能，查看它们如何使你作为开发人员的生活更轻松，以及帮助你开发新应用。
+Windows 10 引入了新的平台有吸引力且和创建应用在台式机、 笔记本电脑、 平板电脑、 手机设备上的详细信息。 由于通用 Windows 平台 (UWP) 应用提供了许多独特的功能，因此，直接移植你的 iOS 应用可能会错过这些功能。 因此，我们鼓励你尝试新控件和新功能，查看它们如何使你作为开发人员的生活更轻松，以及帮助你开发新应用。
 
-不要单单移植应用，而是要**重新构建**应用，并且利用新功能和新设备，这是底线。 不要满足于最低的提供共同特性的做法，而是要创建使用 Windows 10 独特功能（如动态磁贴、通知和与 Cortana 交互）的丰富体验。
+不要单单移植应用，而是要**重新构建**应用，并且利用新功能和新设备，这是底线。 不要满足于最低共同，但创建通过 Cortana 使用唯一的 windows 10 功能，例如动态磁贴、 通知和交互的丰富体验。
 
-要开始这些操作实例，你需要一台装有 Windows 10 和 Microsoft Visual Studio 的计算机。 你可以从[用于 Windows 应用商店应用编程的开发人员下载](https://developer.microsoft.com/en-us/windows/downloads)来下载它们。 没有 PC？ 不要担心，你可以使用 Mac：请参阅[在 Mac 上安装 Windows 和开发人员工具](setting-up-your-mac-with-windows-10.md)。
+若要开始这些操作实例，你将需要使用 windows 10 和 Microsoft Visual Studio 安装的计算机。 你可以下载这些[用于 UWP 应用编程的开发人员下载](https://developer.microsoft.com/en-us/windows/downloads)。 没有 PC？ 不要担心，你可以使用 Mac：请参阅[在 Mac 上安装 Windows 和开发人员工具](setting-up-your-mac-with-windows-10.md)。
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -40,8 +39,8 @@ ms.locfileid: "204842"
 | [入门：下一步是什么？](getting-started-what-next.md) | 凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。 在后续步骤中，请先通读以下主题，然后启动 Visual Studio 并开始编写代码！ |
 | [Windows 应用概念映射](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | 如何以 Windows（和 Android）功能术语考虑 iOS 概念 |
 
- 
+ 
 
- 
+ 
 
- 
+ 

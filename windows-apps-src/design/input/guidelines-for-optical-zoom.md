@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b49afdd4a9fe1db28c8195bdf166d6a74e153020
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: f1643638eaf7eb625defe1f25b44cae20faf0a5c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653796"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568263"
 ---
 # <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
 
@@ -41,10 +39,9 @@ ms.locfileid: "1653796"
 
 ![将手指并拢可缩小对象，将手指分开可放大](images/objectresize.png)
 
-**注意**  
-不应将视觉缩放与[语义式缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
+**注意**光学缩放不应与[语义式缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
@@ -70,10 +67,9 @@ ms.locfileid: "1653796"
     -   可调整大小的项可以显示在可调整大小的画布或画板上的绘图应用程序中。
     -   具有嵌入对象（如地图）的网页。
 
-    **注意**  
-    在所有情况下，除非所有触摸点都位于可调整大小对象之内，否则调整内容区域大小。
+    **注意**在所有情况下，内容区域调整大小，除非所有触摸点都都位于可调整大小的对象。
 
-     
+     
 
 ## <a name="related-articles"></a>相关文章
 
@@ -93,9 +89,9 @@ ms.locfileid: "1653796"
 * [输入：Windows 8 手势示例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [输入：操作和手势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

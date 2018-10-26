@@ -6,19 +6,18 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8aa2070606f7ef077dfa4392d576f212b2f8ea84
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205854"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564438"
 ---
 # <a name="launch-an-app-for-results"></a>针对结果启动应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -28,7 +27,7 @@ ms.locfileid: "205854"
 
 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是*针对结果启动应用*。 此处示例演示了如何针对结果使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 启动应用。
 
-通过 Windows 10 中新的应用到应用的通信 API，Windows 应用（和 Windows Web 应用）可以启动应用并交换数据和文件。 这样你便可以从多个应用生成混合解决方案。 使用这些新 API，使得原本需要用户使用多个应用才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用来完成支付流程。
+新应用到应用通信 windows 10 中的 Api 使 Windows 应用 （和 Windows Web 应用） 来启动应用并交换数据和文件。 这样你便可以从多个应用生成混合解决方案。 使用这些新 API，使得原本需要用户使用多个应用才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用来完成支付流程。
 
 将针对结果启动的应用称为启动应用。 启动应用的应用称为调用应用。 针对此示例，将编写调用应用和启动应用。
 
@@ -204,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 * [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 * [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
- 
+ 
 
- 
+ 

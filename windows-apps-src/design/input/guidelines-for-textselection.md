@@ -9,15 +9,13 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d90cdac94f4eafa153de161a338b9d4c7bf5e
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653886"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564365"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -51,20 +49,20 @@ ms.locfileid: "1653886"
 
 **注意事项和建议**
 
-使用通过 Windows 中的语言框架公开的内置控件，可以生成提供完整平台用户交互体验的应用（包括选择和操作行为）。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
+使用通过提供完整平台用户交互体验，包括选择和操作行为的 Windowsto 生成应用中的语言框架公开的内置控件。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
 
 使用标准 UWP 文本控件时，本主题中所述的选择行为和视觉对象不能自定义。
 
 **文本选择**
 
-如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处描述的 Windows 选择行为。
+如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windowsselection 行为。
 
 **可编辑的内容和不可编辑的内容**
 
 
-借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 和其他 Windows 触摸交互一样，计时交互仅限于用来显示信息 UI 的长按手势。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
+借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windowstouch 交互，计时的交互仅限于点按操作和手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windows 识别选择交互的两个可能状态，即可编辑状态和不可编辑状态，并相应调整选择 UI、反馈以及功能。
+Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应调整选择 UI、 反馈以及功能。
 
 **可编辑的内容**
 
@@ -82,9 +80,9 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**注意**  如果词汇拼写错误，这些交互会稍有变化。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**注意**如果拼写错误的单词这些交互会稍。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
- 
+ 
 
 **不可编辑的内容**
 
@@ -130,9 +128,9 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 * [输入：Windows 8 手势示例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [输入：操作和手势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

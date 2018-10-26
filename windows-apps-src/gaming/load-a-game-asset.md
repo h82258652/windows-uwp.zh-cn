@@ -6,16 +6,14 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, 加载资源
 ms.localizationpriority: medium
-ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983550"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565325"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
@@ -73,7 +71,7 @@ ms.locfileid: "1983550"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="instructions"></a>说明
 
@@ -216,7 +214,7 @@ void ResourceLoading::CreateDeviceResources()
 -   此后，后续的位 \(numVertices \* sizeof\(**BasicVertex**\)\) 包含顶点数据。
 -   最后一个数据位 \(numIndices \* 16\) 包含索引数据，表示为 uint16 值序列。
 
-重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows 8 平台都是低字节序。
+重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows8 平台都是序。
 
 在该示例中，你从 **LoadMeshAsync** 方法中调用一个方法 CreateMesh 来执行该位级解释。
 
@@ -707,9 +705,9 @@ task<void> BasicLoader::LoadShaderAsync(
 * [BasicReaderWriter 的完整代码](complete-code-for-basicreaderwriter.md)
 * [DDSTextureLoader 的完整代码](complete-code-for-ddstextureloader.md)
 
- 
+ 
 
- 
+ 
 
 
 

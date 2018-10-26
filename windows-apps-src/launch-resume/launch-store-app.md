@@ -1,29 +1,27 @@
 ---
 author: TylerMSFT
 title: 打开 Microsoft Store 应用
-description: 本主题介绍了 ms-windows-store URI 方案。 您的应用程序可以使用此 URI 方案启动 Microsoft 存储应用程序存储区中的特定页面。
+description: 本主题介绍了 ms-windows-store URI 方案。 你的应用可以使用此 URI 方案来启动 Microsoft Store 应用到应用商店中的特定页面。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b97e4da92a7cd4066ca555189f052e3e82006fe
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975649"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571938"
 ---
 # <a name="launch-the-microsoft-store-app"></a>打开 Microsoft Store 应用
 
 
 
-本主题介绍了 **ms-windows-store:** URI 方案。 您的应用程序可以使用此 URI 方案使用[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)方法启动 Microsoft 存储应用程序存储区中的特定页面。
+本主题介绍了 **ms-windows-store:** URI 方案。 你的应用可以使用此 URI 方案来启动到应用商店中的特定页面的 Microsoft 应用商店应用通过使用[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)方法。
 
-本示例演示如何打开游戏页上的存储区：
+此示例演示了如何打开对的游戏页面的存储：
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
@@ -139,6 +137,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 </table>
 
- 
+ 
 
- 
+ 

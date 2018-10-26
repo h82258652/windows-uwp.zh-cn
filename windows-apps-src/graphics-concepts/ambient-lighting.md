@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044126"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565220"
 ---
 # <a name="ambient-lighting"></a>环境光
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044126"
 | sum               | 不适用           | 不适用           | 环境光的总和                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 道光的光环境颜色                                                                              |
 
- 
+ 
 
 Cₐ 的值为：
 
@@ -48,9 +46,9 @@ Cₐ 的值为：
 -   vertex color2，如果 AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2，并在顶点声明中提供第二个顶点颜色。
 -   材料环境颜色。
 
-**注意**   如果使用任一 AMBIENTMATERIALSOURCE 选项，且未提供顶点颜色，则使用材料环境颜色。
+**注意**如果使用任一 AMBIENTMATERIALSOURCE 选项，并且未提供顶点颜色，则使用材料环境颜色。
 
- 
+ 
 
 若要使用材料环境颜色，请使用 SetMaterial，如以下示例代码所示。
 
@@ -89,9 +87,9 @@ Ambient.a = 0.0f;
 
 [照明的数学运算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

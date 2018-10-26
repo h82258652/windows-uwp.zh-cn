@@ -6,16 +6,14 @@ description: 获取由 StorageFile 对象表示的文件属性&\#8212;顶级、�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3edb012f04026251d151da99f34accb9e1848c3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662727"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565457"
 ---
 # <a name="get-file-properties"></a>获取文件属性
 
@@ -32,7 +30,7 @@ ms.locfileid: "1662727"
 > [!NOTE]
 > 另请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
- 
+ 
 
 
 ## <a name="prerequisites"></a>先决条件
@@ -49,9 +47,9 @@ ms.locfileid: "1662727"
 
 很多顶级文件属性都可以作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类的成员进行访问。 这些属性包括文件属性、内容类型、创建日期、显示名称和文件类型等。
 
-**注意**  请记住，要声明 **picturesLibrary** 功能。
+**注意**请记住声明**picturesLibrary**功能。
 
- 
+ 
 
 此示例枚举了图片库中的所有文件，从而访问每个文件中的一些顶层属性。
 
@@ -142,6 +140,6 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
- 
+ 
 
- 
+ 

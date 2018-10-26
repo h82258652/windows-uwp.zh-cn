@@ -6,16 +6,14 @@ title: 选择哪一种网络技术？
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ac6eb26c13d8fca3196fa64bfce2bb76f9d1b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3c617f3ec6d189f3ee75fcf2fd0ff96d386ec32c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975599"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570482"
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
@@ -71,9 +69,9 @@ ms.locfileid: "975599"
 
 ## <a name="background-transfers"></a>后台传输
 
-当你希望通过网络可靠地传输文件时，请使用[后台传输 API](background-transfers.md)。 后台传输 API 提供了高级的上载和下载功能，这些功能可在应用暂停期间在后台运行，并且在应用终止后仍保持运行。 该 API 监视网络状态以及在失去连接时自动暂停和恢复传输，而且传输同样也既为数据敏感型又为电池敏感型，这意味着下载活动将根据当前连接性和设备电池状态进行调整。 当你的应用在移动设备或电池供电的设备上运行时，这些功能是必不可少的。 该 API 非常适合于使用 HTTP 上载和下载大型文件。 FTP 也受支持，但仅用于下载。
+当你希望通过网络可靠地传输文件时，请使用[后台传输 API](background-transfers.md)。 后台传输 API 提供了高级的上载和下载功能，这些功能可在应用暂停期间在后台运行，并且在应用终止后仍保持运行。 该 API 监视网络状态以及在失去连接时自动暂停和恢复传输，而且传输同样也既为数据敏感型又为电池敏感型，这意味着下载活动将根据当前连接性和设备电池状态进行调整。 当你的应用在移动设备或电池供电的设备上运行时，这些功能是必不可少的。 该 API 非常适合于使用 HTTP 上载和下载大型文件。 还支持 FTP，但只能用于下载。
 
-Windows 10 中新后台传输功能可在文件传输完成后触发后处理，以便你可以更新本地目录、激活其他应用或在下载完成时通知用户。
+Windows 10 中的新后台传输功能是能够文件传输完成，以便你可以更新本地目录，激活其他应用，或在下载完成时通知用户时触发后期处理。
 
 ### <a name="when-to-use-background-transfers"></a>何时使用后台传输
 
@@ -131,7 +129,7 @@ Windows 10 中新后台传输功能可在文件传输完成后触发后处理，
 
 ### <a name="mobile-operators"></a>移动运营商
 
-Windows 10 向广大开发人员受众公开了一些之前只公开给设备制造商和移动运营商的 API。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
+Windows 10 向开发人员受众公开具有之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
 
 ### <a name="network-operations"></a>网络运营
 

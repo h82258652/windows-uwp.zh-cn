@@ -6,24 +6,23 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205447"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565424"
 ---
 # <a name="xaml-and-whitespace"></a>XAML 与空格
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解 XAML 中使用的空格处理规则。
 
 ## <a name="whitespace-processing"></a>空格处理
 
-与 XML 一样，XAML 中的空格字符是空白、换行和制表符。 它们分别对应于 Unicode 值 0020、000A 和 0009。 默认情况下，在 XAML 处理器遇到 XAML 文件中各元素之间的任何内部文本时，会执行以下空格规范化操作：
+与 XML，在 XAML 中的空格字符是空白、 换行和制表符。它们分别对应于 Unicode 值 0020、 000A 和 0009。 默认情况下，在 XAML 处理器遇到 XAML 文件中各元素之间的任何内部文本时，会执行以下空格规范化操作：
 
 -   删除东亚字符之间的换行字符。
 -   将所有空格字符（空白、换行、制表符）转换为空白。

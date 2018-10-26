@@ -6,16 +6,14 @@ title: 获取每月的应用使用情况
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
-ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3d42cf9f0ed0827b1d5c451ad9fed077ef6acc6b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473703"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568383"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 

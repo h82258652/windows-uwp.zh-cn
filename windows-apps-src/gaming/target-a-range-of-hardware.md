@@ -6,19 +6,18 @@ ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 阴影图, directx
-ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a9c53578fc67c13aafa1c8e39ad1d2910981081d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204359"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568791"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>在许多硬件上支持阴影图
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。 [演练：使用 Direct3D 11 中的深度缓冲区实现阴影体](implementing-depth-buffers-for-shadow-mapping.md)的第 4 部分。
@@ -175,9 +174,9 @@ return float4(input.color * (light + shadow), 1.f);
 </FxCompile>
 ```
 
- 
+ 
 
- 
+ 
 
 
 

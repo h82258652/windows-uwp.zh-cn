@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2750de79dbdb01081aa099ff955fcef2999dcbf
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6f690e08d211692b05f0a80722aa4a3e3a06b39f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652490"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569193"
 ---
 # <a name="lighting"></a>照明
 
 
 光照用于照亮场景中的对象。 每个对象顶点的颜色基于当前纹理贴图、顶点颜色和光源。
 
-**注意** 本节只适用于固定功能管道。 可编程着色器显式执行所有照明。
+**注意**此部分仅为固定函数管道。 可编程着色器显式执行所有照明。
 
- 
+ 
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本节内容
 
@@ -61,16 +59,16 @@ ms.locfileid: "1652490"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [Direct3D 图形学习指南](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

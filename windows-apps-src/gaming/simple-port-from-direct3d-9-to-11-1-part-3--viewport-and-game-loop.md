@@ -6,16 +6,14 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 游戏, 移植, 游戏循环, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: baf230559ebeb285d5faa3e2de8e38b355638070
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488841"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569417"
 ---
 # <a name="port-the-game-loop"></a>移植游戏循环
 
@@ -37,9 +35,9 @@ ms.locfileid: "1488841"
 
 UWP 环境具有更简单的系统。 不再设置传统的窗口，Microsoft Store 游戏使用 DirectX 实现 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)。 对于要直接在应用容器内的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中运行的 DirectX 应用和游戏来说，存在该接口。
 
-> **注意**：Windows 提供指向资源（如源应用程序对象和 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)）的托管指针。 请参阅 [**对象运算符的句柄 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **注意** Windows 提供指向资源，如源应用程序对象和[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)的托管的指针。 请参阅 [**对象运算符 (^) 的句柄**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
 
- 
+ 
 
 你的“main”类需要从 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 继承并且实现五种 **IFrameworkView** 方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 和 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 除了创建 **IFrameworkView**（从本质上说，这是你的游戏所在的位置）之外，你还需要实现一个用于创建 **IFrameworkView** 实例的工厂类。 你的游戏仍然包含一个可执行文件，该文件具有一个名为 **main()** 的方法，但所有 main 均可以使用工厂来创建 **IFrameworkView** 实例。
 
@@ -141,9 +139,9 @@ DirectX UWP 模板包含可随时与游戏结合使用的强大 Direct3D 设备�
 -   [游戏音频](working-with-audio-in-your-directx-game.md)
 -   [游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
- 
+ 
 
- 
+ 
 
 
 

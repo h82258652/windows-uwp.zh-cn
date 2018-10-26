@@ -7,17 +7,15 @@ title: Windows 信息保护 (WIP) 开发人员指南
 ms.author: normesta
 ms.date: 06/21/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据保护, edp, 启发式应用
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: c9d58f787d93a2a658a473a0bf852b859daaca37
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 74d5ac551efdd4b48b39686758a5e68e946ba1aa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664167"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568328"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 信息保护 (WIP) 开发人员指南
 

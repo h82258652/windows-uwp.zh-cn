@@ -6,20 +6,18 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
-ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665593"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571022"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [通用 Windows 应用](https://msdn.microsoft.com/library/windows/apps/dn894631)必须先经过验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
@@ -35,7 +33,7 @@ ms.locfileid: "665593"
 
 创建新密钥
 
-1.  在你的浏览器中，导航到必应地图开发人员中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
+1.  在浏览器中，导航到必应地图开发人员中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
 2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击**登录**。
 

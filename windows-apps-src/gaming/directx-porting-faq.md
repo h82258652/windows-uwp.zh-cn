@@ -6,16 +6,14 @@ ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 47df8489364d37c009a56df444aa0fe4f30a443f
-ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
+ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "204331"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567199"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常见问题
 
@@ -48,10 +46,10 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 
 [DirectX 工具包 (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) 社区项目提供用于 Direct3D 11 的帮助程序类。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何维护桌面和 Microsoft 存储代码的路径？
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>如何保留桌面和 Microsoft 应用商店的代码路径？
 
 
-Chuck Walbourn 名为[双使用游戏的编码技术](http://go.microsoft.com/fwlink/p/?LinkID=286210)的系列文章提供了有关共享桌面和 Microsoft 存储代码路径之间的代码的指导。
+标题为[双重用途的游戏编码技术的](http://go.microsoft.com/fwlink/p/?LinkID=286210)Chuck walbourn 编写的文章系列提供有关在桌面和 Microsoft 应用商店代码路径之间共享代码的指南。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP应用中加载图像资源？
 
@@ -125,7 +123,7 @@ DirectX 10.x 和 DirectX 11 桌面游戏可轻松移植到 UWP。 请参阅 [迁
 ## <a name="how-do-i-debug-my-shaders"></a>如何调试着色器？
 
 
-Microsoft Visual Studio 2015 包含针对 DirectX 图形的诊断工具。 请参阅[调试 DirectX 图形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
+Microsoft Visual Studio2015 包含针对 DirectX 图形诊断工具。 请参阅[调试 DirectX 图形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 函数的 Direct3D 11 等同项是什么？
 
@@ -137,9 +135,9 @@ Microsoft Visual Studio 2015 包含针对 DirectX 图形的诊断工具。 请�
 
 请参阅“将 DirectX 9 功能映射到 DirectX 11 API”中提供的[图面格式映射](feature-mapping.md#surface-format-mapping)。
 
- 
+ 
 
- 
+ 
 
 
 

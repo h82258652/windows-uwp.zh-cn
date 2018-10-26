@@ -1,31 +1,30 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: 常见控件入门
 title: 常见控件入门
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204931"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572027"
 ---
 # <a name="getting-started-common-controls"></a>入门：常见控件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## <a name="common-controls-list"></a>常见控件列表
+## <a name="common-controls-list"></a>常用控件列表
 
 在前面的部分中，你仅使用了两个控件：按钮和文本块。 当然，还有许多控件可供你使用。 下面是一些可在你的应用和与其等效的 iOS 中使用的常用控件。 iOS 控件按字母顺序列出，后跟最为相似的通用 Windows 平台 (UWP) 控件。
 
 UWP 控件相当智能的方面是，它们可以感知到在其上运行的设备类型，并相应地更改外观和功能。 例如，如果项目使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) 控件，能够优化自身以在桌面计算机上呈现不同于手机上的外观和行为，这就足够智能。 你无需执行任何操作，因为控件会在运行时对自身进行调整。
 
-| iOS 控件（类/协议） | 等效的 Windows 应用商店应用控件 |
+| iOS 控件（类/协议） | 等效的 UWP 控件 |
 |------------------------------|--------------------------------------|
 | 活动指示器 (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 另请参阅[快速入门：添加进度控件](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | 广告横幅视图 (**ADBannerView**) 和广告横幅视图委托 (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 另请参阅[在应用中显示广告](../monetize/display-ads-in-your-app.md) |
@@ -33,7 +32,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 | 日期选取器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 图像视图 (UIDatePicker) | [图像](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | 标签 (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 另请参阅[快速入门：显示文本](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[适用于 Windows 应用商店应用的必应地图](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| 地图视图 (MKMapView) 和地图视图委派 (MKMapViewDelegate) | 请参阅[适用于 UWP 应用的必应地图](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | 导航控制器 (UINavigationController) 和导航控制器委托 (UINavigationControllerDelegate) | [帧](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> 另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | 页面控件 (UIPageControl) | [页面](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> 另请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | 选取器视图 (UIPickerView) 和选取器视图委托 (UIPickerViewDelegate) | [组合框](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> 另请参阅[添加组合框和列表框](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
@@ -54,7 +53,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 
 有关其他更多控件，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-**注意**  有关使用 JavaScript 和 HTML 的 Windows 应用商店应用的控件列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
+**注意**控件适用于使用 JavaScript 和 HTML 的 UWP 应用的列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
 
 ### <a name="next-step"></a>下一步
 

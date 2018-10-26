@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: defea1e9adbb4d0f9edb24c936069191944b94be
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044715"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569213"
 ---
 # <a name="viewports-and-clipping"></a>视区和剪切
 
@@ -49,9 +47,9 @@ ms.locfileid: "1044715"
 
 Direct3D 假定视区剪裁体范围在 X 方向为 -1.0 - 1.0，在 Y 方向为 1.0 - -1.0。这些是应用程序在过去最常使用的设置。 你可以在剪裁之前使用[投影转换](projection-transform.md)调整视区纵横比。
 
-**注意**   MinZ 和 MaxZ 表示将场景呈现到的深度范围，不用于剪裁。 大多数应用程序将这些值设置为 0.0 和 1.0 而言，以便让系统呈现到深度缓冲区中的整个深度值范围。 在某些情况下，你可以通过使用其他深度范围来实现特殊效果。 例如，要在游戏中呈现抬头显示，你可以将这两个值都设置为 0.0 以强制系统在前台呈现场景中的对象，或者也可以将它们都设置为 1.0 以呈现应始终位于后台的对象。
+**注意** MinZ 和 MaxZ 表示将场景呈现到深度范围不用于剪裁。 大多数应用程序将这些值设置为 0.0 和 1.0 而言，以便让系统呈现到深度缓冲区中的整个深度值范围。 在某些情况下，你可以通过使用其他深度范围来实现特殊效果。 例如，要在游戏中呈现抬头显示，你可以将这两个值都设置为 0.0 以强制系统在前台呈现场景中的对象，或者也可以将它们都设置为 1.0 以呈现应始终位于后台的对象。
 
- 
+ 
 
 在视区结构的 X 成员、Y 成员、Width 成员和 Height 成员中使用的尺寸定义了呈现目标图面上的视区的位置和尺寸。 这些值位于屏幕坐标中，相对于图面的左上角。
 
@@ -61,9 +59,9 @@ Direct3D 使用视区位置和尺寸来缩放顶点，以便将呈现的场景�
 
 此矩阵根据视区尺寸和所需的深度范围缩放顶点，并将它们转换到平移目标图面上的合适位置。 此矩阵还将翻转 y 坐标以在左上角反射屏幕原点，同时让 y 向下增大。 应用此矩阵后，顶点仍然是同类的（即，它们仍作为 \[x,y,z,w\] 顶点存在），并且它们在发送到光栅器之前必须平移到非同类坐标。
 
-**注意**   应用程序通常分别将 MinZ 和 MaxZ 设置为 0.0 和 1.0，从而使系统呈现到整个深度范围。 但是，你可以使用其他值实现某些效果。 例如，你可以将这两个值都设置为 0.0 以强制所有对象位于前台，或将这两个值设置为 1.0 以将所有对象呈现到后台。
+**注意**应用程序通常将 MinZ 和 MaxZ 为 0.0 和 1.0 分别以使系统呈现到整个深度范围。 但是，你可以使用其他值实现某些效果。 例如，你可以将这两个值都设置为 0.0 以强制所有对象位于前台，或将这两个值设置为 1.0 以将所有对象呈现到后台。
 
- 
+ 
 
 ## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>清除视区
 
@@ -88,9 +86,9 @@ Direct3D 使用视区位置和尺寸来缩放顶点，以便将呈现的场景�
 
 [坐标系和几何图形](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

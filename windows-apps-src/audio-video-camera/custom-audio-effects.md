@@ -5,17 +5,15 @@ title: 自定义音频效果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 576277ab4bf3d2ea3bfe679da4039da194aabb70
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843257"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565105"
 ---
 # <a name="custom-audio-effects"></a>自定义音频效果
 
@@ -88,7 +86,7 @@ ms.locfileid: "1843257"
 > 2.  选择**生成**选项卡。
 > 3.  选中**允许不安全代码**复选框。
 
- 
+ 
 
 现在，你可以将 **ProcessFrame** 方法实现添加到你的效果。 首先，此方法将从输入和输出音频帧中获取 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioBuffer) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 为每个缓冲区获取 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
 
@@ -157,7 +155,7 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 * [Win2D 文档](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒体播放](media-playback.md)
 
- 
+ 
 
 
 

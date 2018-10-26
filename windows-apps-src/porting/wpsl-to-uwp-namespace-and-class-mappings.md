@@ -1,35 +1,33 @@
 ---
 author: stevewhims
-description: 本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。
-title: Windows Phone Silverlight 到 UWP 命名空间和类映射
+description: 本主题提供 WindowsPhone Silverlight Api 到其通用 Windows 平台 (UWP) 等效项的全面映射。
+title: WindowsPhone silverlight 移植到 UWP 命名空间和类映射
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f7bd31b8157af00817738cb1d224c827acb6ca6
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935807"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566158"
 ---
-# <a name="windows-phone-silverlight-to-uwp-api-mappings"></a>Windows Phone Silverlight 到 UWP API 的映射
+# <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone silverlight 移植到 UWP API 的映射
 
 
-本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。 但是，通常不存在一对一的功能映射：任一平台都可能比其在命名空间或类中的对应平台具有更多或更少的功能。
+本主题提供 WindowsPhone Silverlight Api 到其通用 Windows 平台 (UWP) 等效项的全面映射。 但是，通常不存在一对一的功能映射：任一平台都可能比其在命名空间或类中的对应平台具有更多或更少的功能。
 
-当你要在 UWP 项目中工作并重复使用 Windows Phone Silverlight 项目中的源代码时，映射表将提供帮助。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 有时，映射会处理较多工作，在极少数情况下，则需要更改方法。
+当你要在 UWP 项目中工作并重复使用 WindowsPhone Silverlight 项目中的源代码，映射表将帮助你。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 有时，映射会处理较多工作，在极少数情况下，则需要更改方法。
 
-**如何使用表**：首先，搜索使用的类名称。 只要进行映射比仅更改命名空间名称更复杂，就会在此处列出类。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
+**如何使用该表：** 首先，搜索要使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，就会在此处列出类。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
 
-**注意**  Windows 10 支持的 .NET Framework 数目远远超过 Windows Phone 应用商店应用支持的数目。 例如，Windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、System.Net.NetworkInformation 和 System.Net.Sockets。
-此外，在 Windows 10 应用中，你将受益于 .NET Native，这是一种先进的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
+**注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。
+此外，在 windows 10 应用中，你将受益于.NET Native，这是先进障碍的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
 
-| Windows Phone Silverlight | Windows 运行时 |
+| WindowsPhone Silverlight | Windows 运行时 |
 | ------------------------- | --------------- |
 | 广告 | |
 | **Microsoft.Advertising.Mobile.UI.AdControl** 类 | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 类 |

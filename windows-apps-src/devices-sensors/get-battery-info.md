@@ -6,16 +6,14 @@ description: 了解如何使用 Windows.Devices.Power 命名空间中的 API 获
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c191a9f2da29f0ad10d0ba61507873b4fd652ddc
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959072"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565348"
 ---
 # <a name="get-battery-information"></a>获取电池信息
 
@@ -32,7 +30,7 @@ ms.locfileid: "959072"
 
 某些设备拥有多个电池，而对于每个电池在此类设备的总能量容量中所发挥的功能，并非总是显而易见。 这时就要用到 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 类了。 *聚合电池*表示所有连接到设备的电池控制器并可提供一个整体 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。
 
-**注意**  实际上，[**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) 类对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
+**注意**[**电池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
 
 一旦有了聚合电池对象，你便可以调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 来获取对应的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)。
 
@@ -340,7 +338,7 @@ namespace App1
 
 最后，若要运行此基本电池应用：在“调试”**** 菜单上，单击“开始调试”**** 以测试该解决方案。
 
-**提示**  若要从 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象接收数值，请在**本地计算机**或外部**设备**（如 Windows Phone）上调试你的应用。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
+**提示**若要从[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)对象接收数值，调试你的应用在**本地计算机**或外部**设备**（如 Windows Phone) 上。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
 
- 
+ 
 

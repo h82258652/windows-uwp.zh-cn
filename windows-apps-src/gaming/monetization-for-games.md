@@ -6,15 +6,14 @@ ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 盈利
-ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
-ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.localizationpriority: medium
+ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2017
-ms.locfileid: "877733"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571201"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -23,14 +22,14 @@ ms.locfileid: "877733"
 过去，你只是为游戏设置一个价格，然后等待用户在应用商店中购买该游戏。 但是，今天你有多种选项。 你可以选择将游戏分配给“实体”应用商店、在线销售游戏（通过物理复制或软复制），也可以让所有人免费玩游戏，但融入某种形式的广告或可供购买的应用内商品。 游戏也不再仅是单独的产品。 除了主游戏，它们通常还附带可供购买的额外内容。
 
 你可以通过以下一种或多种方式，推广 UWP 游戏并通过其盈利。
-* 将你的游戏放置在 Windows 应用商店中，它是一个支持[全球分配](#worldwide-distribution-channel)的安全在线商店。 世界各地的玩家均可以[你设置的价格](#set-a-price-for-your-game)在线购买你的游戏。
+* 将游戏放置在 Microsoft 应用商店，它是安全的在线应用商店产品[全球分配](#worldwide-distribution-channel)。 世界各地的玩家均可以[你设置的价格](#set-a-price-for-your-game)在线购买你的游戏。
 * 使用 Windows SDK 中的 API 创建[游戏内购买](#in-game-purchases)。 玩家可以从你的游戏内购买商品，或购买装备、皮肤、地图或游戏关卡等额外内容。
 * 使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 中的 API 从广告网络显示广告。 你可以[在你的游戏中显示广告](#display-ads-in-your-game)并向玩家提供观看视频广告换取游戏内奖励的选项。
 * [通过广告市场活动最大程度地发展游戏的潜在客户](#maximize-your-games-potential-through-ad-campaigns)。 使用付费、社区（免费）或自家（免费）广告推广你的游戏，以扩大其用户群。
 
 ## <a name="worldwide-distribution-channel"></a>全球分配渠道
 
-Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供下载，并支持通过各种付款形式（包括 Visa、MasterCard 和 PayPal）支付费用。 有关国家和地区的完整列表，请参阅[市场和自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
+在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[市场和自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
 
 ## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
@@ -50,13 +49,13 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 
 ## <a name="in-game-purchases"></a>游戏内购买
 
-游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Windows 应用商店中，这些产品称为_加载项_。 [加载项](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)通过 Windows 开发人员中心仪表板发布。 你还需要在你的游戏代码中启用加载项。
+游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft 应用商店中，这些产品称为_加载项_。 [加载项](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)通过 Windows 开发人员中心仪表板发布。 你还需要在你的游戏代码中启用加载项。
 
 ### <a name="types-of-add-ons"></a>加载项类型
 
 你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 对于开发人员托管的易耗型加载项，你负责为玩家跟踪商品库存；对于应用商店托管的易耗型加载项，Windows 应用商店为你跟踪商品库存。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为玩家跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
@@ -93,7 +92,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 
 1. 在 Visual Studio 中打开你的游戏解决方案。
 2. 在 Visual Studio 内，转到__项目__ > __应用商店__ > __创建应用包...__
-3. 对于__是否生成要上传到 Windows 应用商店的程序包？__ 选项，选择__是__。
+3. 对于__你希望生成要上传到 Microsoft Store 的程序包？__ 选项，选择__是__。
 4. 登录你的开发人员中心开发者帐户。 或者[注册](https://developer.microsoft.com/store/register)开发者帐户（如果没有）。
 5. 选择要为其创建上传包的应用。 如果尚未创建应用提交，请提供新的应用名称创建新提交。 有关详细信息，请参阅[通过保留名称创建应用](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功创建程序包后，单击__启动 Windows 应用认证工具包__启动测试过程。
@@ -105,7 +104,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 2. 在__仪表板概述__或__所有应用__页面上，单击要使用的应用。 如果尚未创建应用提交，请单击__创建新应用__并保留名称。
 3. 在__应用概述__页面上，单击__开始提交__。
 4. 配置此新提交。 在提交页面上：
-    * 单击__定价和可用性__。 在__可见性__部分中，选择“__隐藏此应用并阻止购置..__” 以确保只有你的开发团队可以访问游戏。 有关更多详细信息，请转到[分发和可见性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
+    * 单击__定价和可用性__。 在__可见性__部分中，选择__隐藏此应用并阻止购置...__ 以确保你的开发团队有权访问游戏。 有关更多详细信息，请转到[分发和可见性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
     * 单击__属性__。 在__类别和子类别__部分中，选择__游戏__和适合你的游戏的子类别。
     * 单击__年龄分级__。 准确填写调查表。
     * 单击__程序包__。 上传在上一步中创建的游戏程序包。
@@ -141,7 +140,7 @@ Windows 应用商店使你的游戏在全球 200 多个国家和地区中可供�
 * [定价和可用性](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [应用商店一览](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-如果你的游戏有许多加载项，你可以使用 __Windows 应用商店提交 API__ 以编程方式创建它们。 有关详细信息，请参阅[使用 Windows 应用商店服务创建和管理提交](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)。
+如果你的游戏具有许多加载项，你可以通过使用__Microsoft Store 提交 API__以编程方式创建它们。 有关详细信息，请参阅[创建使用 Microsoft Store 服务和管理提交](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)。
 
 ## <a name="display-ads-in-your-game"></a>在游戏中显示广告
 
@@ -158,11 +157,11 @@ Microsoft 广告 SDK 中的库和工具有助于你在游戏中设置服务，�
 
 ### <a name="which-ads-are-displayed"></a>显示哪些广告？
 
-默认情况下，你的应用将显示来自 Microsoft 付费广告网络的广告。 若要最大化你的广告收益，你可以为你的广告单元启用广告中介，以显示来自其他付费广告网络的广告。 有关当前产品/服务的详细信息，请参阅[广告中介](../publish/monetize-with-ads.md#ad-mediation)指南。
+默认情况下，你的应用将显示来自 Microsoft 付费广告网络的广告。 若要最大化你的广告收益，你可以为你的广告单元启用广告中介，以显示来自其他付费广告网络的广告。 有关当前产品/服务的详细信息，请参阅[广告中介](../publish/in-app-ads.md#mediation)指南。
 
 ### <a name="which-markets-allow-ads-to-be-displayed"></a>哪些市场允许显示广告？
 
-有关支持广告的国家和地区的完整列表，请参阅[广告网络支持的市场](../publish/monetize-with-ads.md#network-markets)。
+有关支持广告的国家和地区的完整列表，请参阅[广告网络支持的市场](../publish/in-app-ads.md#network-markets)。
 
 ### <a name="apis-for-displaying-ads"></a>用于显示广告的 API
 

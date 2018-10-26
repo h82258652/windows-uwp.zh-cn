@@ -2,19 +2,17 @@
 author: mijacobs
 title: 创建自定义样式
 description: 本文介绍有关在 XAML 中设置 UI 元素样式的基础知识
-keywords: XAML, UWP, 入门
+keywords: XAML、UWP、入门
 ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45510b8129a69641fdb64c13939ccb9b4376a654
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674944"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570185"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -64,8 +62,7 @@ PhotoLab 应用有两个主要页面：
 
     [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
     
-    <!-- TODO reduce size -->
-    ![独角兽](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![独角兽](../basics/images/xaml-basics/unicorn.png)
     
     > **阅读相关信息：**[绘制形状](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章会告知你需要知道的有关 XAML 形状的所有内容。 
     

@@ -6,16 +6,14 @@ description: 本教程介绍如何在 Microsoft Visual Studio 中声明设备功
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 693a33bc212f6fe1b35414a20f2a6c44393c0b87
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989441"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566268"
 ---
 # <a name="enable-device-capabilities"></a>启用设备功能
 
@@ -28,8 +26,7 @@ ms.locfileid: "1989441"
 
 当你使用某些类型的设备时，Windows 应用要求你在应用包清单中进行指定。 在 Visual Studio 中，你可以使用[清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)声明大多数功能，也可以按照[如何在程序包清单中指定设备功能（手动）](https://msdn.microsoft.com/library/windows/apps/Dn263092)所述手动添加它们。 本教程假定你使用清单设计器。
 
-**注意**  
-某些类型的设备不需要在应用程序包清单中声明，例如打印机、扫描仪和传感器。
+**注意**某些类型的设备，例如打印机、 扫描仪和传感器，无需在应用包清单中声明。
 
 -   在 Visual Studio 解决方案资源管理器中，双击程序清单文件 **Package.appxmanifest**。
 -   打开“功能”**** 选项卡。

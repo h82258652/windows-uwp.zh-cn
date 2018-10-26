@@ -6,19 +6,18 @@ ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, 激活
-ms.openlocfilehash: 4d3585e28ca4a3665a881df4f16a3cc3f82fcc52
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: b7f700ab97566ad9ec03d0595c55721dd9a9be98
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204174"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572057"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>如何激活应用（DirectX 和 C++）
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍了如何为通用 Windows 平台 (UWP) DirectX 应用定义激活体验。
 
@@ -91,9 +90,9 @@ void App::Run()
 * [如何暂停应用（DirectX 和 C++）](how-to-suspend-an-app-directx-and-cpp.md)
 * [如何恢复应用（DirectX 和 C++）](how-to-resume-an-app-directx-and-cpp.md)
 
- 
+ 
 
- 
+ 
 
 
 

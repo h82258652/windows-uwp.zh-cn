@@ -6,15 +6,13 @@ keywords: UWP, Windows 10, 文本, 编写, 语音, 语气, 设计, UI, UX
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2feb7f21f9a307632b08714ff617a4ce3aa649
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 8022b3bb5ca312be259c554f46dc9f432ea3caeb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843287"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571482"
 ---
 # <a name="writing-style"></a>写入样式
 
@@ -42,25 +40,46 @@ ms.locfileid: "1843287"
 
 用户需要能够快速阅读和了解你的文本。 不要将篇幅浪费在不必要的介绍上。 最大限度地提高关键字的可见性，并且在添加之前始终展现核心思想。
 
-:::行::: :::列::: ![应做事项](images/do.svg) 选择**筛选器**为图像添加效果。
-:::列末::: :::列::: ![禁止事项](images/dont.svg) 如果想要为图像添加视觉效果或者其他效果，请选择**筛选器**。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        Select **filters** to add effects to your image.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        If you want to add visual effects or alterations to your image, select **filters.**
+    :::column-end:::
+:::row-end:::
 
 ## <a name="emphasize-action"></a>强调操作
 
 应用是由操作定义的。 用户在使用应用时会进行操作，而应用在响应用户时也会进行操作。 确保整个应用中的文本均使用*主动语态*。 用户和功能应描述为它们主动执行操作，而不是对它们执行了操作。
 
-:::行::: :::列::: ![应做事项](images/do.svg) 重启应用以查看更改。
-:::列末::: :::列::: ![禁止事项](images/dont.svg) 应用被重启时，更改将被应用。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        Restart the app to see your changes.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        The changes will be applied when the app is restarted.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="short-and-sweet"></a>简短扼要
 
 用户快速阅读文本时，通常会完全跳过大块的文字。 请不要牺牲必要的信息和展示效果，但也不要使用不必要的字词。 有时候，这意味着可以使用许多更简短的句子或片段。 其他情况下，这意味着需要谨慎地选择较长句子的措辞和结构。
 
-:::行::: :::列::: ![应做事项](images/do.svg) 我们无法上传图片。 如果再次发生此情况，请尝试重启应用。 但是，不用担心，你的图片将会等待你返回操作。
-:::列末::: :::列::: ![禁止事项](images/dont.svg)出错，我们无法上传图片。 请重试，如果你再次遇到此问题，你需要重启应用。 但是，不用担心，我们已经本地保存了你的操作，等你稍后返回可以继续进行操作。
-:::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="style-conventions"></a>风格惯例
 
@@ -73,8 +92,14 @@ ms.locfileid: "1843287"
 * 用“我们”来指代你自己的角度。 这样既热情，又有助于让用户感觉像是属于体验的一部分。
 * 不要使用“我”来指代应用的角度，即使你是唯一创建它的人。
 
-:::行::: :::列::: ![应做事项](images/do.svg) 我们无法将你的文件保存到该位置。
-:::列末::: :::列::: :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        We couldn't save your file to that location.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="abbreviations"></a>缩写词
 
@@ -84,8 +109,14 @@ ms.locfileid: "1843287"
 * 请勿使用过于相似的缩写词。
 * 如果你正在本地化自己的应用，或者如果你的用户将英语作为第二语言，请勿使用缩写。
 
-:::行::: :::列::: ![应做事项](images/do.svg) 通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。 通过每个 UWP 应用中包含的设计功能，你可以构建适用于一系列设备的用户界面 (UI)。
-:::列末::: :::列::: :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="contractions"></a>语言简练
 
@@ -93,8 +124,14 @@ ms.locfileid: "1843287"
 * 当简练的语言能够自然融入到文本中时，请使用它们。
 * 不要只是为了节省空间或者当这些简练的语言会让你的文字听起来拗口的情况下使用。
 
-:::行::: :::列::: ![应做事项](images/do.svg) 喜欢这个图像的话，选择**保存**将其添加到图片库。 这样便可以与好友共享这个图像了。
-:::列末::: :::列::: :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="periods"></a>句号
 
@@ -102,12 +139,18 @@ ms.locfileid: "1843287"
 * 将句号用作工具提示、错误消息和对话中完整句子的结尾。
 * 请勿将句号用作按钮、单选按钮、标签或复选框文本的结尾。
 
-:::行::: :::列::: ![应做事项](images/do.svg) <b>没有连接。</b>
-* 请检查网络电缆是否已插入。
-* 请确保没有处于飞行模式下。
-* 请查看无线开关是否已打开。
-* 请重新启动路由器。
-:::列末::: :::列::: :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>You’re not connected.</b>
+        * Check that your network cables are plugged in.
+        * Make sure you're not in airplane mode.
+        * See if your wireless switch is turned on.
+        * Restart your router.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="capitalization"></a>大写
 
@@ -115,11 +158,17 @@ ms.locfileid: "1843287"
 * 大写专有名词。
 * 大写应用中文本的每个字符串的开头：每个句子、标签和标题的开头。
 
-:::行::: :::列::: ![应做事项](images/do.svg) <b>哪部分遇到了问题？</b>
-* 我忘记了密码。
-* 它不接受密码。
-* 其他人可能正在使用我的帐户。
-:::列末::: :::列::: :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>Which part is giving you trouble?</b>
+        * I forgot your password.
+        * It won't accept password.
+        * Someone else might be using my account.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ## <a name="error-messages"></a>错误消息
 
@@ -133,16 +182,24 @@ ms.locfileid: "1843287"
 
 * **简洁、清晰**：去除无关的信息。
 
-:::行::: :::列::: ![应做事项](images/do.svg) <b>没有连接。</b>
-* 请检查网络电缆是否已插入。
-* 请确保没有处于飞行模式下。
-* 请查看无线开关是否已打开。
-* 请重新启动路由器。
-:::列末::: :::列::: :::列末::: :::行末::: 
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>You’re not connected.</b>
+        * Check that your network cables are plugged in.
+        * Make sure you're not in airplane mode.
+        * See if your wireless switch is turned on.
+        * Restart your router.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end::: 
 
-## <a name="dialogs"></a>对话
+## <a name="dialogs"></a>对话框
 
-:::行::: :::列::: 为应用中的任何对话创建文本时，许多适用于编写错误消息的建议也同样适用。 尽管用户期待对话，但这些对话仍然会中断应用的正常进程；并且这些对话需要简洁有用，以便用户可以回到他们之前正在进行的操作。
+:::row:::
+    :::column:::
+        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
 
         But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
     :::column-end:::
@@ -153,13 +210,21 @@ ms.locfileid: "1843287"
         2. It won't accept my password
         3. Someone else might be using my account
     :::column-end:::
-:::行末:::
+:::row-end:::
 
 ## <a name="buttons"></a>按钮
 
-:::行::: :::列::: 按钮上的文本需要足够简洁，让用户可以一目了然；并且要足够清楚，让该按钮的功能显而易见。 按钮上最长的文本应该只是简短的几个字词，许多文本应该都比这更短。
-在编写按钮的文本时，请记住每个按钮代表一个操作。 请务必在按钮文本中使用*主动语态*，使用代表操作而非反应的词。
-:::列末::: :::列::: ![应做事项](images/do.svg) * 立即安装 * 共享 :::列末::: :::行末:::
+:::row:::
+    :::column:::
+        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
+        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+    :::column-end:::
+    :::column:::
+        ![Do](images/do.svg)
+        * Install now
+        * Share
+    :::column-end:::
+:::row-end:::
 
 ## <a name="spoken-experiences"></a>口语体验
 

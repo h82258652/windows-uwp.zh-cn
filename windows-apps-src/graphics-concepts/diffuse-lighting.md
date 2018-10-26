@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84036edd2071d9545b3a492ea5cf0b397d9e722e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044426"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572163"
 ---
 # <a name="diffuse-lighting"></a>漫射照明
 
@@ -41,7 +39,7 @@ Diffuse Lighting = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</s
 | Atten           | 不适用           | 浮点数         | 光衰减。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。 |
 | Spot            | 不适用           | 浮点数         | 聚焦因素。 请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。  |
 
- 
+ 
 
 若要计算衰减 (Atten) 或聚焦特征 (Spot)，请参阅[衰减和聚焦因素](attenuation-and-spotlight-factor.md)。
 
@@ -73,9 +71,9 @@ Diffuse Lighting = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</s
 
 [照明的数学运算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

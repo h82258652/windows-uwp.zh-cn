@@ -6,16 +6,14 @@ title: C# 示例 - 应用、加载项和外部测试版的提交
 ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: f5e508bd89c06841009576a0a69cb960a20faa83
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 55843f229252b2f68df096442f27544a59ce69cd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474766"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568541"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 示例：应用、加载项和外部测试版的提交
 

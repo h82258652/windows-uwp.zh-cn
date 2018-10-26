@@ -6,16 +6,14 @@ description: 使用 StorageFile.IsAvailable 属性确定 Microsoft OneDrive 文�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5de157d320b401fdc0e542eb0f1bdc241e2f21
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "459756"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569708"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>确定 Microsoft OneDrive 文件的可用性
 
@@ -51,7 +49,7 @@ ms.locfileid: "459756"
 | 标记为仅联机可用的 OneDrive 文件       | True   | 基于用户设置 | False   |
 | 网络文件                              | True   | 基于用户设置 | False   |
 
- 
+ 
 
 以下步骤演示了如何确定文件是否当前可用。
 

@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4525cf151d53790a44995bd8a8dd77a88332cdd0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673444"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567639"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -29,9 +27,9 @@ ms.locfileid: "1673444"
 
 定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
 
-**注意** 可以通过下载适用于 Windows 8.1 的[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)并在 Windows 10 应用中重复使用其源代码来了解详细信息。
+**注意**可了解详细信息通过下载[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)Windows8.1 用于在 windows 10 应用中重新使用其源代码。
 
- 
+ 
 
 ## <a name="how-it-works"></a>工作原理
 
@@ -110,4 +108,4 @@ ms.locfileid: "1673444"
 * [定期通知指南](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [如何为锁屏提醒设置定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [如何为磁贴设置定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
+ 

@@ -6,16 +6,14 @@ ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 26510cac6e4d42ee5eb36a7ae09c9c1518b47089
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300173"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571181"
 ---
 # <a name="input-for-games"></a>游戏输入
 
@@ -45,17 +43,17 @@ ms.locfileid: "300173"
 
 有关如何在 UWP 游戏中使用赛车方向盘的信息，请参阅[赛车方向盘和力回馈](racing-wheel-and-force-feedback.md)。
 
-### <a name="flight-sticks"></a>航班棒
+### <a name="flight-sticks"></a>飞行杆
 
-航班棒是重现的感觉可能会找到平面或太空船的考核中心中的航班棒的游戏输入的设备。 它们是用于快速精确地控制飞行的完美输入设备。
+飞行杆是游戏输入的设备，重现飞机或宇宙飞船驾驶舱中的飞行杆的感觉。 它们是用于快速精确地控制飞行的完美输入设备。
 
-有关如何使用在 UWP 游戏中的航班棒的详细信息，请参阅[航班继续有效](flight-stick.md)。
+有关如何使用你的 UWP 游戏中的飞行杆的详细信息，请参阅[飞行杆](flight-stick.md)。
 
 ### <a name="raw-game-controllers"></a>原始游戏控制器
 
 原始游戏控制器是游戏控制器的通用表示形式，具有许多不同种类的常见游戏控制器上的输入。 这些输入作为未命名按钮、开关和轴的简单数组进行公开。 使用原始游戏控制器，可以使客户能够创建自定义输入映射（无论使用何种类型的控制器）。
 
-有关如何在 UWP 游戏中使用原始游戏控制器的详细信息，请参阅[原始游戏控制器](raw-game-controller.md)。
+有关如何在你的 UWP 游戏中使用原始游戏控制器的详细信息，请参阅[原始游戏控制器](raw-game-controller.md)。
 
 ### <a name="ui-navigation-controllers"></a>UI 导航控制器
 

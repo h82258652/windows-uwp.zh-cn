@@ -6,16 +6,14 @@ description: 线程和异步编程可让你的应用在并行线程中以异步�
 ms.author: twhitney
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 异步, 线程, 线程
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbc9e73d2ffe25ac848a1ed1b88a649214b9f5
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.openlocfilehash: f01142695b676ebadea2f227cf5f8beb65ba6f9c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893489"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570396"
 ---
 # <a name="threading-and-async-programming"></a>线程处理和异步编程
 线程和异步编程可让你的应用在并行线程中以异步方式完成工作。
@@ -34,7 +32,7 @@ ms.locfileid: "1893489"
 
 | 主题                                                                                                          | 说明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [异步编程（UWP 应用）](asynchronous-programming-universal-windows-platform-apps.md)              | 本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C++ 组件扩展 (C++/CX) 和 JavaScript 中的表示形式。 |
+| [异步编程（UWP 应用）](asynchronous-programming-universal-windows-platform-apps.md)              | 本主题介绍通用 Windows 平台 (UWP) 中进行异步编程和它的表示形式在 C# 中，Microsoft Visual Basic.NET VisualC + + 组件扩展 (C + + CX)，和 JavaScript。 |
 | [使用 C++/CX 进行异步编程（UWP 应用）](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文介绍在 C++/CX 中，通过使用在 ppltasks.h 中的 <code>concurrency</code> 命名空间中定义的 <code>task</code> 类来使用异步方法的推荐方法。 |
 | [使用线程池的最佳做法](best-practices-for-using-the-thread-pool.md)                         | 本主题介绍使用线程池的最佳实践。 |
 | [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | 通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。 本主题将介绍如何从采用 C# 或 Microsoft Visual Basic 的 UWP 使用异步方法。 |

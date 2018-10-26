@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4d40360833596b9ef9eed97c426a5ec90db353
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9c6ada4bd964a9430d6ef47bd46f954ca76c404a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043956"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565125"
 ---
 # <a name="world-transform"></a>世界转换
 
@@ -44,9 +42,9 @@ Direct3D 使用你设置的世界矩阵和视图矩阵来配置多个内部数�
 
 [转换](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

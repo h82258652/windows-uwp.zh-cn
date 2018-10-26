@@ -9,22 +9,20 @@ keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 54911cbab3124da30b416f328675353349883175
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 1c77e7a220618273e0fb8fb75cf3de2247534f5b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394366"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565027"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
 
 设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接式多点触控输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
 
- 
+ 
 
 ![触摸板](images/input-patterns/input-touchpad.jpg)
 
@@ -118,7 +116,7 @@ ms.locfileid: "1394366"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>硬件
 
@@ -168,7 +166,7 @@ ms.locfileid: "1394366"
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
 
 

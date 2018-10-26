@@ -6,19 +6,18 @@ ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 呈现, 场景, 深度测试, direct3d, 阴影
-ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569019"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>通过深度测试呈现场景
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 3 部分。
@@ -161,9 +160,9 @@ return float4(input.color * ambient, 1.f);
 
 在本演练的下一部分中，了解如何[在硬件范围内支持阴影映射](target-a-range-of-hardware.md)。
 
- 
+ 
 
- 
+ 
 
 
 

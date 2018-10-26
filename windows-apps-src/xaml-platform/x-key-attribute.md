@@ -6,18 +6,17 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d48ccb93a411e92b57059192de38366f27353a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205604"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569173"
 ---
 # <a name="xkey-attribute"></a>x:Key 属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一标识作为资源被创建和引用的元素，这些资源存在于一个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
 
@@ -42,7 +41,7 @@ ms.locfileid: "205604"
 | 术语 | 说明 |
 |------|-------------|
 | object | 任何可共享的对象。 请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
-| stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_&gt; 语法。 请参阅下面的“XamlName 语法”。 | 
+| stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_&gt; 语法。 请参阅下面的“XamlName 语法”。 | 
 
 ##  <a name="xamlname-grammar"></a>XamlName 语法
 

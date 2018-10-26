@@ -6,16 +6,14 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.author: stwhi
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e68d674ecb3ab29170036d1dff6c69ab3ba759c
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018553"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569688"
 ---
 # <a name="networking-basics"></a>网络基础知识
 针对任何支持网络的应用的必做事项。
@@ -40,7 +38,7 @@ ms.locfileid: "2018553"
 | **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
-[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 为此，你在 Windows 8 中使用了控制通道触发器，这些触发器在 Windows 10 中仍受支持。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供了更好的功能，可在某些应用场景中降低开销，例如已启用推送的流套接字：套接字代理和套接字活动触发器。
+[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于 Windows8，在此目的，并且它们在 windows 10 中仍受支持。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供更好的功能降低开销，对于某些方案，例如已启用推送的流套接字： 套接字代理和套接字活动触发器。
 
 如果你的应用使用了 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)，则你的应用可以将开放套接字的所有权转移给系统提供的套接字代理，然后退出前台甚至终止。 在已传输的套接字上建立连接或流量送达该套接字后，你的应用或其指定的后台任务将被激活。 如果你的应用未运行，它将启动。 然后，套接字代理将使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 通知你的应用收到新流量。 你的应用将从套接字代理回收套接字并处理该套接字上的流量。 这意味着，当你的应用未处理网络流量时，将消耗非常少的系统资源。
 
@@ -468,7 +466,7 @@ using Windows::Storage::Streams;
 如何在通过网络进行连接时提供身份验证凭据。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，你可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 windows 10，你可以在[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893)设置的对象 （这必须在启动 TLS 握手之前） 上提供客户端证书。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
 下面是演示如何实现此目的的代码段：
 

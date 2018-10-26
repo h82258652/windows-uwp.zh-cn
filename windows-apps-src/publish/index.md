@@ -4,23 +4,21 @@ layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: 发布 Windows 应用
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 发布, 销售, 分发, Microsoft Store, 仪表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
-ms.localizationpriority: high
-ms.openlocfilehash: 37cfce48a60f95109dfff99b45750fa8fbe1f220
-ms.sourcegitcommit: 4e39a2bdb5b895ed09b64957dc1a86ccf1f8e1af
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 98e47934f936b6995ab37623b610869219254b85
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "1718661"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566118"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
  
-可以使用 Windows 开发人员中心仪表板将应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
+你可以使用[Windows 开发人员中心仪表板](https://partner.microsoft.com/dashboard)将应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -123,8 +121,8 @@ ms.locfileid: "1718661"
                 </div>
                 <div class="cardText">
                     <h3>推广你的应用</h3>   
-                    <p><a href="generate-promotional-codes.md">生成促销充值码</a></p>
                     <p><a href="create-an-ad-campaign-for-your-app.md">创建广告活动</a></p>
+                    <p><a href="generate-promotional-codes.md">生成促销充值码</a></p>
                     <p><a href="put-apps-and-add-ons-on-sale.md">销售报价</a></p>
                 </div>
             </div>

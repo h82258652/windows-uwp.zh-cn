@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: 在开发跨平台应用时，应该作何选择？
 title: 选择一种方法进行 iOS 和 UWP 应用开发
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: ccacfc1257af529fcc2363285c6dd9e4ab2315ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: c62624e83d1e8334cce711869088817e2f9dc5e0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204784"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566258"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在开发跨平台应用时，应该作何选择？
 

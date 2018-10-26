@@ -7,19 +7,17 @@ keywords: 键盘, 游戏控制器, 遥控器, 导航, 导航策略, 输入, 用�
 ms.author: kbridge
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a2892e6f4382f231299e8ef2307c70cdbebb46c
-ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
-ms.translationtype: HT
+ms.openlocfilehash: d2317b419a2679d13e846690bbaca0eb212a245e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "1903161"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571646"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 

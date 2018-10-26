@@ -5,19 +5,17 @@ description: 在 Xbox 上进行 C++ UWP 游戏开发。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 2871e9f1a17bb96ddb601ab6d8446641e05b8ead
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1c954efde29603b0f1d8fef2c80378c87b954e02
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300363"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566863"
 ---
-# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>使自定义 c + + 上 Xbox 游戏 UWP
+# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>将自定义 c + + xbox 游戏 UWP
 
 如果你要编写一个自定义 C++ 引擎，Xbox One 完全支持 C++。 
 

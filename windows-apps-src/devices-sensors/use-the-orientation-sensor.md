@@ -6,16 +6,14 @@ description: 了解如何使用方向传感器确定设备方向。
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a9270ba675b0797344d3370aec433de90d80d5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958882"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570671"
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向传感器
 
@@ -48,7 +46,7 @@ ms.locfileid: "958882"
 
 ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
 
 你使用的设备或仿真器必须支持方向传感器。
 

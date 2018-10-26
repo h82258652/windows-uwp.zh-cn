@@ -1,30 +1,28 @@
 ---
 author: v-angraf
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
-title: 性能页 （开发主页）
-description: 提供有关开发主页应用程序的性能页上的一个 Xbox 的信息。
+title: 平均页面 （开发人员主页）
+description: 提供有关开发人员主页应用的性能页适用于 Xbox One 的信息。
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
-ms.openlocfilehash: f0bf93c9670e16ec008b55779410a076d89d867c
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 6035463473eb6ddb1a3ec7fa554f9a12b8f764fc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015292"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565690"
 ---
-# <a name="performance-page-dev-home"></a>性能页 （开发主页）
+# <a name="performance-page-dev-home"></a>平均页面 （开发人员主页）
    
   
-模拟开发主页的**性能**页上的各种磁盘活动和 CPU 使用率条件，以便解决问题。   
- ![开发主页的性能页](images/devhome_performance.png)   
+开发人员主页的**性能**页模拟各种磁盘活动和 CPU 使用情况，为了进行故障排除。   
+ ![开发人员主页的平均页面](images/devhome_performance.png)   
   
-**性能**页包含以下窗格：   
+**平均**页面包含以下窗格：   
  
    *  [磁盘模拟](#ID4EEB)  
    *  [CPU 模拟](#ID4EOB)  
@@ -37,7 +35,7 @@ ms.locfileid: "1015292"
 ## <a name="disk-simulation"></a>磁盘模拟  
    
   
-**磁盘模拟**窗格模拟从系统或其他应用程序的磁盘活动。   
+**磁盘模拟**窗格模拟从系统或其他应用的磁盘活动。   
   
 <a id="ID4EOB"></a>
 
@@ -46,13 +44,13 @@ ms.locfileid: "1015292"
 ## <a name="cpu-simulation"></a>CPU 模拟  
    
   
-**CPU 模拟**窗格模拟 CPU6 上的活动 （共享的核心）。   
+**CPU 模拟**窗格模拟 CPU6 上的活动 （共享的核心版）。   
   
 <a id="ID4EYB"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [在控制台 （开发主页） 上的开发主页](dev-home.md)
+ [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

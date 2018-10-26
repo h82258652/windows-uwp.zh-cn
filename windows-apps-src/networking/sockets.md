@@ -6,16 +6,14 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
 ms.date: 06/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d05f57c674b7b882cf3494e8fb29611963f83c
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 9e0e73f4224b1577a5219d239f8c11bf5ecc0b73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983478"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565668"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
@@ -1206,7 +1204,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-下面的示例适用于 C# 及任何其他 UWP 语言。 它依赖于 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) 和 [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) 的批量发送行为。 该技术对输出流调用了 [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)，从 Windows 10 开始，FlushAsync 保证只在输出流上的所有操作完成后才返回。
+下面的示例适用于 C# 及任何其他 UWP 语言。 它依赖于 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) 和 [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) 的批量发送行为。 技术在这截至 windows 10，可保证在输出流上的所有操作都完成后才返回该输出流上调用[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) 。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1280,7 +1278,7 @@ private:
 
 -   在异步写入尚未完成之前，你将无法修改当前写入的 **IBuffer** 实例的内容。
 -   **FlushAsync** 模式仅适用于 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
--   **FlushAsync** 模式适仅用于 Windows 10 以及更高版本。
+-   **FlushAsync**模式适仅用于在 windows 10 以及。
 -   在其他情况下，用 [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 **FlushAsync** 模式。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的端口共享

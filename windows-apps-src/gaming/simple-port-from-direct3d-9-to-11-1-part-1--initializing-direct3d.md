@@ -6,19 +6,18 @@ ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 游戏, direct3d 11, 初始化, 移植, direct3d 9
-ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204231"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571918"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -76,9 +75,9 @@ m_pD3D->CreateDevice(
 
 创建 Direct3D 11 设备和上下文之后，我们可以利用 COM 指针功能获取最新版本的接口，该指针功能还包括其他功能，因此我们总是推荐使用它。
 
-> **注意**：D3D\_FEATURE\_LEVEL\_9\_1（对应于着色器模型 2.0）是 Windows 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
+> **注意** : D3D\_FEATURE\_LEVEL\_9\_1 （对应于着色器模型 2.0） 是你的 Microsoft 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
 
- 
+ 
 
 Direct3D 11
 
@@ -109,7 +108,7 @@ D3D11CreateDevice(
     creationFlags,
     featureLevels,
     ARRAYSIZE(featureLevels),
-    D3D11_SDK_VERSION, // Windows Store apps must set this to D3D11_SDK_VERSION.
+    D3D11_SDK_VERSION, // UWP apps must set this to D3D11_SDK_VERSION.
     &device, // Returns the Direct3D device created.
     nullptr,
     &context // Returns the device immediate context.
@@ -128,9 +127,9 @@ Direct3D 11 包含一个称为 DirectX 图形基础结构 (DXGI) 的设备 API�
 
 Direct3D 设备为 DXGI 实现一个 COM 接口。 首先，我们需要获取该接口并使用该接口来请求托管设备的 DXGI 适配器。 然后，我们使用 DXGI 适配器来创建 DXGI 工厂。
 
-> **注意**：这些是 COM 接口，因此你的第一反应可能是使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 应该使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智能指针。 然后，只需调用 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，从而提供正确接口类型的一个空 COM 指针。
+> **注意**这些是 COM 接口，因此你的第一反应可能是使用[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 应该使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智能指针。 然后，只需调用 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，从而提供正确接口类型的一个空 COM 指针。
 
- 
+ 
 
 **Direct3D 11**
 
@@ -152,9 +151,9 @@ dxgiAdapter->GetParent(
 
 既然我们拥有了 DXGI 工厂，那么我们便可以使用它来创建交换链。 下面我们定义交换链参数。 我们需要指定表面格式；我们将选择 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059)，因为它与 Direct2D 兼容。 我们将关闭显示缩放、多重采样以及立体呈现，因为该示例中没有使用这些功能。 由于我们直接在 CoreWindow 中运行，因此可以将宽度和高度设置为 0 并自动获取全屏值。
 
-> **注意**：始终将 *SDKVersion* 参数设置为用于 UWP 应用的 D3D11\_SDK\_VERSION。
+> **注意**始终适用于 UWP 应用将*SDKVersion*参数设置为 D3D11\_SDK\_VERSION。
 
- 
+ 
 
 **Direct3D 11**
 
@@ -172,9 +171,9 @@ swapChain.As(&m_swapChain);
 
 为了确保我们不会呈现屏幕未实际显示的内容，我们将帧延迟设置为 1 并使用 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077)。 这不仅能够省电而且还是应用商店的认证要求；我们将在本操作实例的第 2 部分中了解有关呈现到屏幕的更多信息。
 
-> **注意**：可以使用多线程（例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作项）在呈现线程被阻止时继续其他工作。
+> **注意**你可以使用多线程 （例如，[**线程池**](https://msdn.microsoft.com/library/windows/apps/br229642)工作项） 在呈现线程被阻止时继续其他工作。
 
- 
+ 
 
 **Direct3D 11**
 
@@ -227,9 +226,9 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 现在，我们拥有了设备句柄和全屏呈现目标，接下来我们便可以加载和绘制几何图形了。 继续[第 2 部分：呈现](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)。
 
- 
+ 
 
- 
+ 
 
 
 

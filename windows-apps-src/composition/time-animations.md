@@ -5,20 +5,18 @@ description: 使用 KeyFrameAnimation 类可随着时间推移更改 UI。
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: c2b349938b22ca1097299bd4c80b75cff2629f07
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: bf6d3f16c7b240ca370c01a787fef09862f35863
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673744"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568814"
 ---
 # <a name="time-based-animations"></a>基于时间的动画
 
-当有组件加入，或整体用户体验改变时，最终用户通常会以两种方式观察到：随时间推移的变化或瞬时变化。 在 Windows 平台上，前者是首选 - 瞬间发生改变的用户体验通常会让用户感到困惑和惊讶，因为他们无法马上明白发生了什么。 然后最终用户会觉得该体验不协调、不自然。
+当有组件加入，或整体用户体验改变时，最终用户通常会以两种方式观察到：随时间推移的变化或瞬时变化。 在 Windows 平台上，前者是首选后者-立即频繁更改的用户体验感到困惑和惊讶，因为他们无法马上发生了什么事情明白最终用户。 然后最终用户会觉得该体验不协调、不自然。
 
 你可以用一段时间来慢慢改变 UI，慢慢引导最终用户，或通知他们其试用体验会有哪些改变。 在 Windows 平台上，这可通过基于时间的动画（也称为 KeyFrameAnimations）来实现。 KeyFrameAnimations 允许随时间推移更改 UI，并控制动画的每一个方面，包括动画启动的方式和时间，以及它如何达到结束状态。 例如，用 300 毫秒将一个对象以动画形式移动到一个新位置，比起“瞬间挪移”要更讨喜。 当使用动画而不是即时更改时，最终结果是更让人愉快和有吸引力。
 
@@ -86,17 +84,17 @@ ms.locfileid: "1673744"
 接下来，因为要对 Offset 属性进行动画处理，所以需要创建 Vector3KeyFrameAnimation（Offset 为 Vector3 类型）。 你还可以为 KeyFrameAnimation 定义 KeyFrame。
 
 ```csharp
-    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
-    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
+    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
 然后，定义 KeyFrameAnimation 的属性，以描述其持续时间以及两个位置（当前位置和 <200,0,0>）之间的 10 次动画行为。
 
 ```csharp
-    animation.Duration = TimeSpan.FromSeconds(2);
-    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
-    // Run animation for 10 times
-    animation.IterationCount = 10;
+    animation.Duration = TimeSpan.FromSeconds(2);
+    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
+    // Run animation for 10 times
+    animation.IterationCount = 10;
 ```
 
 最后，为了运行动画，需要对 CompositionObject 的属性启动它。
@@ -109,13 +107,13 @@ redVisual.StartAnimation("Offset.X", animation);
 
 ```csharp
 private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
-{ 
-    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
-    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
-    animation.Duration = TimeSpan.FromSeconds(2);
-    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
-    // Run animation for 10 times
-    animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
-} 
+{ 
+    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
+    animation.Duration = TimeSpan.FromSeconds(2);
+    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
+    // Run animation for 10 times
+    animation.IterationCount = 10;
+    visual.StartAnimation("Offset.X", animation);
+} 
 ```

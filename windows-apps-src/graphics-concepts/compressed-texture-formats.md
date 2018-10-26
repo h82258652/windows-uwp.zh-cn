@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a37246ff409b0a18992af32172bd4f6a8e535da7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4dd0ff85198107263fba458bd97c0323a7049d20
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044896"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565616"
 ---
 # <a name="compressed-texture-formats"></a>压缩的纹理格式
 
@@ -36,9 +34,9 @@ Direct3D 使用将纹理贴图分为 4 x 4 纹素块的压缩格式。 如果纹
 
 [压缩的纹理资源](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

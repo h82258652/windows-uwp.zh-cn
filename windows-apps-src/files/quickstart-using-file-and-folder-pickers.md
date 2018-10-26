@@ -6,16 +6,14 @@ description: 通过让用户与选取器交互来访问文件和文件夹。 你
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f025504d8024a23810a7d5dd2b0b28414fe5a62
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662587"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569398"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
@@ -28,7 +26,7 @@ ms.locfileid: "1662587"
 通过让用户与选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 类访问文件，并使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 访问文件夹。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+> 有关完整示例，请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
 
 ## <a name="prerequisites"></a>先决条件
 

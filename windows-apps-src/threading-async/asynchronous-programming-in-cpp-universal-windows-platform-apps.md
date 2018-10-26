@@ -1,27 +1,25 @@
 ---
 author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: 本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类来使用异步方法的推荐方式。
+description: 本文介绍的推荐的方式来使用异步方法在 VisualC + + 组件扩展 (C + + CX) 通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类。
 title: 使用 C++ 进行异步编程
 ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 869ba45929e015f27c5342af57da450f0b99b607
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921205"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571205"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]
 > 本主题旨在帮助你维护 C++/CX 应用程序。 不过，建议使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 编写新应用程序。 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。
 
-本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 `concurrency` 命名空间中定义的 `task` 类来使用异步方法的推荐方式。
+本文介绍的推荐的方式来使用异步方法在 VisualC + + 组件扩展 (C + + CX) 通过使用`task`中定义的类`concurrency`在 ppltasks.h 中的命名空间。
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>通用 Windows 平台 (UWP) 异步类型
 通用 Windows 平台 (UWP) 功能具有一个定义完善的用于调用异步方法的模型，并提供了使用此类方法所需的类型。 如果你对 UWP 异步模型不熟悉，请在阅读本文其余部分之前阅读[异步编程][AsyncProgramming]。
@@ -116,7 +114,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   因为第二个延续是基于值的，所以如果通过调用 [**DeleteAsync**][deleteAsync] 启动的操作引发异常，则第二个延续根本不会执行。
 
-**注意**  创建任务链只是使用 **task** 类组合异步操作的一种方式。 还可以通过使用连接和选择运算符 **&&** 和 **||** 来组合操作。 有关详细信息，请参阅[任务并行度（并发运行时）][taskParallelism]。
+**注意**创建任务链只是之一使用**task**类组合异步操作的方法。 还可以通过使用连接和选择运算符 **&&** 和 **||** 来组合操作。 有关详细信息，请参阅[任务并行度（并发运行时）][taskParallelism]。
 
 ## <a name="lambda-function-return-types-and-task-return-types"></a>Lambda 函数返回类型和任务返回类型
 在任务延续中，lambda 函数的返回类型包含在 **task** 对象中。 如果该 lambda 返回 **double**，则延续任务的类型为 **task<double>**。 但是，任务对象的设计目的是为了不生成无需嵌套的返回类型。 如果 lambda 返回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，则延续返回 **task&lt;SyndicationFeed^&gt;**，而不是 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 此过程称为*异步解包*，并且它还确保延续内部的异步操作在调用下一个延续之前完成。

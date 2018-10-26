@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d78c6e070dd5d29a8e615f70f67507830e5f3938
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a796897aa786283499c25b0f405e302feeb5f938
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653086"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565060"
 ---
 # <a name="creating-streaming-resources"></a>创建流式资源
 
@@ -77,16 +75,16 @@ ms.locfileid: "1653086"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [流式资源](streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

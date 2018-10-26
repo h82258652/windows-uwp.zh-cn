@@ -6,19 +6,18 @@ ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 暂停, directx
-ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 204d61430f59c820e9ef9ef36832cd1c24ee7f9c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204210"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569648"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>如何暂停应用（DirectX 和 C++）
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍了系统在暂停通用 Windows 平台 (UWP) DirectX 应用时，如何保存重要系统状态和应用数据。
 
@@ -100,7 +99,7 @@ void App::Run()
 ## <a name="call-trim"></a>调用 Trim()
 
 
-从 Windows 8.1 开始，所有 DirectX Windows 应用商店应用在挂起时必须调用 [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)。 此调用指示图形驱动程序释放为该应用分配的所有临时缓冲区，这样可以减少应用在暂停状态时被终止以回收内存资源的情况。 这是针对 Windows 8.1 的认证要求。
+从 Windows8.1 开始，所有 DirectX UWP 应用时必须都调用[**idxgidevice3:: Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)暂停。 此调用指示图形驱动程序释放为该应用分配的所有临时缓冲区，这样可以减少应用在暂停状态时被终止以回收内存资源的情况。 这是针对 Windows8.1 的认证要求。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -151,9 +150,9 @@ void DX::DeviceResources::Trim()
 * [如何恢复应用（DirectX 和 C++）](how-to-resume-an-app-directx-and-cpp.md)
 * [如何激活应用（DirectX 和 C++）](how-to-activate-an-app-directx-and-cpp.md)
 
- 
+ 
 
- 
+ 
 
 
 

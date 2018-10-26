@@ -6,16 +6,14 @@ title: 获取预览帧
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1d346a0ae3cd67fb1242e16de308b54520d435
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 211bd4ce660726030f8b90d29c4ea4d8a14564de
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842704"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570883"
 ---
 # <a name="get-a-preview-frame"></a>获取预览帧
 
@@ -62,9 +60,9 @@ ms.locfileid: "1842704"
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

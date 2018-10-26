@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bede5aabec76371ae336b09544cfdfa5b4995bd
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 15e149a6381a511c66f5c337c8256e5ce5024939
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652260"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571366"
 ---
 # <a name="appendices"></a>附录
 
@@ -55,16 +53,16 @@ ms.locfileid: "1652260"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [Direct3D 图形学习指南](index.md)
 
- 
+ 
 
- 
+ 
 
 
 
