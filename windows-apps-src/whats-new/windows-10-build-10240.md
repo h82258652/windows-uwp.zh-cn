@@ -1,27 +1,25 @@
 ---
 author: QuinnRadich
-Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: Windows 10 版本 10240 中的新增功能 - 2015 年 7 月
+Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
+title: 什么是 windows 10 版本 10240-2015 年 7 月中的新增功能
 keywords: 新增功能, 更新, 功能, 新增, Windows 10, 1507, 10240
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: c5d3a9cf8a3281e7cd1f7efa460f13f8a17b10bb
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1397136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564232"
 ---
-# <a name="whats-new-in-windows-10-for-developers-build-10240"></a>面向开发人员的 Windows 10 版本 10240 中的新增功能
+# <a name="whats-new-in-windows10-for-developers-build-10240"></a>什么是 windows 10 中面向开发人员的新增功能、 内部版本 10240
 
 Windows 10 版本 10240 和更新的 SDK 提供用于打造出色的通用 Windows 平台应用的工具、功能和体验。 在 Windows 10 上[安装这些工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 后，你就可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-下面按功能逐项查看 Windows 10 版本 10240（也称为 Windows 10 版本 1507）的新增功能。
+下面是按功能逐项查看你在 windows 10 版本 10240 （也称为 Windows 10 版本 1507年） 的新增功能。
 
 ## <a name="adaptive-layouts"></a>自适应布局
 

@@ -6,19 +6,18 @@ ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, directx, 输入延迟
-ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204393"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564626"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。 此外，适当的输入事件优化可延长电池使用时间。 了解如何选择正确的 CoreDispatcher 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。
 
@@ -236,7 +235,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Microsoft Visual Studio 2015 中的 **DirectX 11 和 XAML 应用（通用 Windows）** 模板将游戏循环拆分为多个采用相似样式的线程。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
+在 Microsoft Visual Studio2015 的**DirectX 11 和 XAML 应用 (通用 Windows)** 模板将游戏循环拆分成多个线程以类似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>缩短输入延迟的其他方法
 
@@ -249,7 +248,7 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 ![图 1 DirectX 中的输入延迟 ](images/input-latency1.png)
 
-在 Windows 8.1 中，DXGI 引入了用于交换链的 **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** 标志，它使应用无需实现启发以保持 Present 队列为空，即可轻松地缩短该延迟。 使用该标志创建的交换链将作为可等待的交换链进行引用。 图 2 显示了使用可等待的交换链时输入事件的大致生命周期和响应情况：
+在 Windows8.1，DXGI 引入了用于交换链，它使应用即可轻松地缩短该延迟，无需实现启发以保持 Present 队列为空的**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**标志。 使用该标志创建的交换链将作为可等待的交换链进行引用。 图 2 显示了使用可等待的交换链时输入事件的大致生命周期和响应情况：
 
 图 2
 
@@ -257,9 +256,9 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 我们可从以上图表中看出，如果这些游戏可以在 16.7 毫秒的预算时间（由屏幕的刷新频率定义）内渲染和呈现每帧画面，就有可能缩短整整 2 帧的输入延迟。 七巧板示例使用可等待的交换链并控制 Present 队列限制，方法是调用：` m_deviceResources->SetMaximumFrameLatency(1);`
 
- 
+ 
 
- 
+ 
 
 
 

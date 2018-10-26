@@ -9,16 +9,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d680ddfb1dd121d2b9763c1d8af646db6de4797
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 113acbe1f4e9bb3814b2f9b61beb79488995d3e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494034"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563341"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -101,9 +99,9 @@ Windows 10 入门应用中的媒体播放器。
 ### <a name="set-the-media-source"></a>设置媒体源
 若要播放网络上的文件或嵌入在应用中的文件，请将 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置为带有该文件路径的 [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx)。
 
-**提示**  若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 **Internet（客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+**提示**若要打开 internet 中的文件，你需要声明你的应用的清单 (Package.appxmanifest) 中的**Internet （客户端）** 功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
- 
+ 
 
 此代码尝试将使用 XAML 定义的 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 属性设置为输入到 [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) 中的文件路径。
 

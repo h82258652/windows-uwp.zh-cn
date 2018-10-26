@@ -6,16 +6,14 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 设置, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1a993f16d2d9403f16c1f4cc15805b0c5f36a9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488911"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559623"
 ---
 # <a name="set-up-the-game-project"></a>设置游戏项目
 
@@ -37,7 +35,7 @@ ms.locfileid: "1488911"
 
 ### <a name="use-directx-template-to-create-a-project"></a>使用 DirectX 模板创建项目
 
-Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio 2017 中，你可以找到许多模板，这可以大大简化游戏和图形应用的开发。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
+Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio2017，你可以找到许多模板，这可以大大简化游戏和图形应用开发。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
 
 用于本教程的模板是标题为 **DirectX 11 应用(通用 Windows)** 的模板。 
 
@@ -155,7 +153,7 @@ void App::Run()
 | SamplePixelShader.hlsl       | 内容                | 包含最基本的像素着色器的高级着色器语言 (HLSL) 代码。                                            |
 | SampleVertexShader.hlsl      | 内容                | 包含最基本的顶点着色器的高级着色器语言 (HLSL) 代码。                                           |
 | ShaderStructures.h           | 内容                | 包含可用于将 MVP 矩阵和每顶点数据发送到顶点着色器的着色器结构。  |
-| pch.h/.cpp                   | 主                   | 包含所有 Windows 系统中包括的 Direct3D 应用使用的 API，包括 DirectX 11 API。| 
+| pch.h/.cpp                   | 主                   | 包含所有 Windows 系统中包括的 Direct3D 应用使用的 API，包括 DirectX 11 API。| 
 
 ### <a name="next-steps"></a>后续步骤
 
@@ -163,9 +161,9 @@ void App::Run()
 
 下一个部分是[定义游戏的 UWP 框架](tutorial--building-the-games-uwp-app-framework.md)。 我们将检查此游戏的使用情况，并展开介绍该模板所提供的许多概念和组件。
 
- 
+ 
 
- 
+ 
 
 
 

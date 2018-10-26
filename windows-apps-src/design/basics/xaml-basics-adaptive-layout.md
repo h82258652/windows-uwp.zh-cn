@@ -6,15 +6,13 @@ keywords: XAML, UWP, 入门
 ms.author: mukin
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fee97ecefd2d0c0694bd50ef7255488f3fb567f3
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 000aa2d8f3684aa813b85076d9124a87a71b6a8c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639650"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563298"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -40,7 +38,7 @@ ms.locfileid: "1639650"
 
 在本教程中，你将从一个简化版的 PhotoLab 示例开始。 
 
-1. 转到 [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 这将让你访问 GitHub 页上的示例。 
+1. 转到[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 这将让你访问 GitHub 页上的示例。 
 2. 接下来，你将需要克隆或下载示例。 单击**克隆或下载**按钮。 一个子菜单将出现。
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">

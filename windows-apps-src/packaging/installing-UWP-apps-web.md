@@ -5,16 +5,14 @@ description: 在此部分中，我们将查看允许用户直接从网页中安�
 ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
-ms.openlocfilehash: d0368743e3afa6e9cdb5e5ac95672430416fc824
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1434782"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560982"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>从网页中安装 UWP 应用
 
@@ -31,8 +29,11 @@ ms.locfileid: "1434782"
 在此机制中，应用安装程序会针对协议激活方案向操作系统注册。 当用户单击 Web 链接时，浏览器会向操作系统核实是否有注册到该 Web 链接的应用。 如果该方案与应用安装程序指定的协议激活方案匹配，则调用应用安装程序。 请务必注意，此机制独立于浏览器。 这对站点管理员有好处，例如，对将此机制合并到网页时不需要考虑 Web 浏览器差异的站点管理员有好处。 
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>协议激活方案的要求
-   - 支持字节范围请求的 Web 服务器 (HTTP/1.1)
-   - 应用包需要托管在支持 HTTP/1.1 协议的服务器上   
+
+1. Web 服务器需要支持字节范围请求 (HTTP/1.1)
+    - 支持 HTTP/1.1 协议的服务器都应具有支持字节范围请求 
+2. Web 服务器将需要知道的有关 Windows 10 应用包的内容类型
+    - 下面介绍了如何将新的内容类型声明为[web 配置](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)文件的一部分
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>如何在网页上启用它 
 想要在其网站上托管应用包的应用开发人员需要执行以下步骤：

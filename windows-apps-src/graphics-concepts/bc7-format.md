@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c70293960947070a0a6b94d7a63fd55f503c8e18
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 70380dd0bd07cfe0c81e8339f8606029663b47d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045066"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562848"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
@@ -65,7 +63,7 @@ BC7 块可以包含多个终结点对。 与某个终结点对对应的索引集
 | 组合的颜色 + alpha    | 必需  | 不适用           | 不适用                | 可选       | 必需             | 可选 | 必需           |
 | 单独的颜色和 alpha | 必需  | 必需      | 可选           | 不适用            | 必需             | 不适用      | 必需           |
 
- 
+ 
 
 BC7 在两个终结点之间的近似线上定义一个调色板。 该模式值确定每个块的内插终结点对的数量。 BC7 为每个纹素存储一个调色板索引。
 
@@ -356,9 +354,9 @@ BC7 模式 7 具有以下特征：
 
 [纹理块压缩](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 

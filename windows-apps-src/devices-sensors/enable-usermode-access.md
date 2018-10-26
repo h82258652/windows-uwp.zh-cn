@@ -5,17 +5,15 @@ description: 本教程介绍如何对 Windows 10 上的 GPIO、I2C、SPI 和 UAR
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: acpi
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a8877d2991f953853339ac8fea3efad6d735c6
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: 09957c19414f586a49a1a2cb9186aa027dc1de07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1618422"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560566"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -740,7 +738,7 @@ devcon status *msft8000
 
 现在 rhproxy 已经运行，它应该已经创建了可由用户模式访问的设备接口。 我们将使用几种命令行工具来枚举设备，并查看它们是否显示。
 
-克隆 [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) 存储库并生成 `GpioTestTool`、`I2cTestTool`、`SpiTestTool` 和 `Mincomm` 示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
+克隆[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存储库并生成`GpioTestTool`、 `I2cTestTool`， `SpiTestTool`，并且`Mincomm`示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
 ```
 I2cTestTool.exe -list
 SpiTestTool.exe -list

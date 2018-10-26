@@ -9,15 +9,13 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bdbe841e486a5024c594b1458e3beb57e228e1d
-ms.sourcegitcommit: db09dcb08da5995c46c2729896e56be3774ee5ba
-ms.translationtype: HT
+ms.openlocfilehash: 4006cdedffdbc601b498ce64caddfdefcbf4877a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "1554243"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564183"
 ---
 # <a name="speech-interactions"></a>语音交互
 
@@ -222,12 +220,12 @@ TTS 从纯文本或 SSML 生成语音输出。
 * [语音交互](https://msdn.microsoft.com/library/windows/apps/mt185614)
 * [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/mt185598)
 
- **示例**
+ **示例**
 
 * [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

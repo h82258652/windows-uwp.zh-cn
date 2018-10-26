@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de9b0e5d1e8e461561d228448fc1998ad4ff0fd9
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: c01b96f70bd39c43f321935aa47393ada0400319
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393956"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559919"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -96,7 +94,7 @@ ms.locfileid: "1393956"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>本地通知
 
@@ -171,9 +169,9 @@ ms.locfileid: "1393956"
 * [定期通知概述](periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [GitHub 上的通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 
 
 
 

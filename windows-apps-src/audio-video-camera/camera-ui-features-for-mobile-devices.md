@@ -6,14 +6,14 @@ title: 移动设备的相机 UI 功能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 062ca589b2a63db1f56ada4e2df4f99bc7f8b0fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204069"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563991"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
 
@@ -56,9 +56,6 @@ ms.locfileid: "204069"
 当应用关闭或者用户离开应用的媒体捕获页面时，请注销该硬件按钮处理程序。
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
-
-> [!NOTE]
-> 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。                                                                                   |
 
 ## <a name="related-topics"></a>相关主题
 

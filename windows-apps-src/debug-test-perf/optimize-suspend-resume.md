@@ -6,19 +6,17 @@ description: 创建通用 Windows 平台 (UWP) 应用，以简化其进程生存
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f9e045c381fc6c51a769be31403114ad15cf06bd
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894683"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562019"
 ---
 # <a name="optimize-suspendresume"></a>优化暂停/恢复
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 创建通用 Windows 平台 (UWP) 应用，以简化其生存期系统的使用过程，从而在暂停或终止后高效地恢复。
 
@@ -90,9 +88,9 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 ## <a name="related-topics"></a>相关主题
 
 * [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/Hh465088)
- 
+ 
 
- 
+ 
 
 
 

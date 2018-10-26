@@ -5,16 +5,14 @@ description: 了解如何使用相机条形码扫描仪
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 861233de6967a6199bae5d81c1a3938bf8645246
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 12aabff66fc116f510dced78aa56f3df5f84c850
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976029"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559990"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>相机条形码扫描仪入门
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>步骤 1：向应用清单中添加功能声明
@@ -88,3 +86,14 @@ DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
 
 > [!TIP]
 > 请参阅[托管预览](pos-camerabarcode-hosting-preview.md)了解如何托管应用程序中相机条形码扫描仪的预览。
+
+## <a name="step-8-initiate-scan"></a>步骤 8： 启动扫描 
+你可以通过调用 [**StartSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync) 来启动扫描过程。  
+根据 [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) 的值，扫描仪可能在扫描一个条形码后即停止，或持续扫描直到你调用 [**StopSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync)。
+
+设置所需的 [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) 值来在解码条形码时控制扫描仪行为。
+
+| 值 | 说明 |
+| ----- | ----------- |
+| True   | 在扫描一个条形码后停止 |
+| False  | 持续扫描条形码而不停止 |

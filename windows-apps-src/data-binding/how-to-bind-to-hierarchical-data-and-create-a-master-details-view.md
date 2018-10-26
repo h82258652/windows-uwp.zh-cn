@@ -6,21 +6,20 @@ description: 你可以通过将项目控件绑定到 CollectionViewSource 实例
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204113"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564021"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>绑定分层数据和创建大纲/细节视图
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> **注意**  另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **注意**另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 你可以通过将项目控件绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
@@ -225,7 +224,7 @@ namespace MasterDetailsBinding
 
 请注意，如果直接绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，即表示你希望绑定到绑定控件中的当前项，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做。 例如，[**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 表示团队视图的 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 属性被绑定到 `Teams`**CollectionViewSource**。 然而，[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 中的控件被绑定到 `Team` 类的属性，因为 **CollectionViewSource** 会自动按需提供团队列表中当前所选的团队。
 
- 
+ 
 
- 
+ 
 

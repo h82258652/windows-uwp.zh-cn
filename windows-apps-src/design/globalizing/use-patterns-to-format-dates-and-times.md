@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 485d16cb9c40769c123719f8f55e81d804f220a3
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393986"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563453"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用模板和模式设置日期和时间格式
 
@@ -29,7 +27,7 @@ ms.locfileid: "1393986"
 
 但当你希望更好地控制要显示的 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 对象组件的顺序和格式时，可以将格式模式传递到该构造函数的 *formatTemplate* 参数。 格式模式使用特殊语法，该语法让你可以获得 **DateTime** 对象的个别组件&mdash;例如仅获取月份名称或年份值，以便在所选择的任何自定义格式中显示它们。 此外，模式也可以进行本地化以适应其他语言和区域。
 
-**注意**  这只是格式模式的概述。 有关格式模板和格式模式的更完整讨论，请参阅 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类的“备注”部分。
+**注意**这是仅格式模式的概述。 有关格式模板和格式模式的更完整讨论，请参阅 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类的“备注”部分。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式模板和格式模式之间的差异
 
@@ -63,7 +61,7 @@ Ja-JP: "{month.integer}月{day.integer}日"
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-以上格式化程序对花括号 {} 中的个别组件返回区域性特定值。 但格式模式中的组件顺序是不变的。 你得到的内容完全符合你的要求，但可能适合或不适合相关区域性。 此格式化程序对于英语（美国）有效，但对于法语（法国）或日语无效。
+以上格式化程序返回区域性特定值括号内的个别组件{}。 但格式模式中的组件顺序是不变的。 你得到的内容完全符合你的要求，但可能适合或不适合相关区域性。 此格式化程序对于英语（美国）有效，但对于法语（法国）或日语无效。
 
 ``` syntax
 En-US: January 1
@@ -117,7 +115,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 是关于资源文件 (.resw) 中的可本地化资源的资源标识符。 对于默认语言是英语（美国）的情况，这将设置为值“{0} | {1}”，以及注释说明“{0}”表示日期，“{1}”表示时间。 这样，翻译人员可以按需调整格式项。 例如，如果在某个语言或区域中将时间放在日期前面显得更自然，则他们可以更改项的顺序。 或者，他们也可以将“|”替换为其他分隔符。
+`CustomDateTimeFormatString` 是关于资源文件 (.resw) 中的可本地化资源的资源标识符。 对于默认语言是英语 （美国），这将设置为的值为"{0} |{1}"以及注释说明"{0}"的日期和"{1}"是指时间。 这样，翻译人员可以按需调整格式项。 例如，如果在某个语言或区域中将时间放在日期前面显得更自然，则他们可以更改项的顺序。 或者，他们也可以将“|”替换为其他分隔符。
 
 实现此示例的另一种方法是查询这两个格式化程序的格式模式，将它们连接起来，然后从结果格式模式构建第三个格式化程序。
 

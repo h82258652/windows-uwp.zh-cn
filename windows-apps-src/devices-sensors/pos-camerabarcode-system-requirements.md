@@ -5,16 +5,14 @@ description: 本文列出了从 UWP 应用使用相机条形码扫描仪的要�
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f0dcbe28107bb8c6918e4e0ac63698f1f9692005
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: d63dc1af00716b8e60532341826a698f97ec9d32
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833063"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563902"
 ---
 # <a name="camera-barcode-scanner-system-requirements"></a>相机条形码扫描仪的系统要求
 从 Windows 10 版本 1803 开始，你可以通过来自通用 Windows 应用程序的标准相机镜头来读取条形码。

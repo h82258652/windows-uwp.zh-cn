@@ -6,19 +6,18 @@ ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
-ms.openlocfilehash: 9f2babdac40e3baf27bec9b2e214e9350d1f2539
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204217"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563769"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用 DXGI 1.3 通过等待交换链发信号通知开始呈现新帧的正确时间来减少有效的帧延迟。 游戏通常需要尽可能减少在从收到玩家输入到游戏通过更新显示内容来响应该输入之间的延迟时间。 本主题说明了一项从 Direct3D 11.2 开始可用于将游戏中的有效帧延迟降至最低的技术。
 
@@ -38,9 +37,9 @@ ms.locfileid: "204217"
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注意**   与其他标记不同，此标记不能使用 [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 添加或删除。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> **注意**与某些标志，此标记不能将添加或删除使用[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
- 
+ 
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -159,9 +158,9 @@ void DX::DeviceResources::WaitOnSwapChain()
 * [同步](https://msdn.microsoft.com/library/windows/desktop/ms686353)
 * [使用事件对象 (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
- 
+ 
 
- 
+ 
 
 
 

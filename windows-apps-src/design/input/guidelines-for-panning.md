@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 27db679e653873be4aac3ed9298d7d0e59e99d2b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654396"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561035"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
@@ -36,9 +34,9 @@ ms.locfileid: "1654396"
 
 -   显示平移指示器和滚动条以提供位置和大小提示。如果你提供自定义导航功能，则隐藏它们。
 
-    **注意**  与标准滚动条不同，平移指示器只是为了提供信息而已。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **注意**与标准滚动条，平移指示器是纯粹用于提供信息。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
 
-     
+     
 
 **单轴平移（一维溢出）**
 
@@ -80,7 +78,7 @@ ms.locfileid: "1654396"
 
 ## <a name="additional-usage-guidance"></a>其他使用指南
 
-与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除了在 API 中进行区别，或受到特定于设备的 Windows UI 要求，否则，我们将两种交互都称为平移。
+与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除非在 API 中进行区别，或受到特定于设备的 WindowsUI 要求，我们将两种交互都称为平移。
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - 行为更改</strong>
@@ -103,7 +101,7 @@ ms.locfileid: "1654396"
 
 **平移类型**
 
-Windows 8 支持三种类型的平移：
+Windows8 支持三种类型的平移：
 
 -   单轴 - 仅支持一个方向（水平或垂直）的平移。
 -   围栏 - 支持所有方向的平移。 但是，用户超过特定方向的距离阈值后，平移限制在该轴范围内。
@@ -120,9 +118,9 @@ Windows 8 支持三种类型的平移：
 -   触摸平移指示器。
 -   用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动条。
 
-**注意**  仅当在可平移区域内进行触摸接触时，平移指标器才可见。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
+**注意**平移指标器才可见的可平移区域内进行触摸接触时。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
 
- 
+ 
 
 **平移指示器** 平移指示器类似于滚动条中的滚动框。 它们指示所显示内容与全部可平移区域的比例以及所显示内容在可平移区域中的相对位置。
 
@@ -149,7 +147,7 @@ Windows 8 支持三种类型的平移：
 | ![显示可平移区域的图像。](images/ux-panning-snap1.png) | ![显示要向左平移的可平移区域的图像。](images/ux-panning-snap2.png) | ![显示在逻辑吸附点上停止平移的可平移区域的图像。](images/ux-panning-snap3.png) |
 | 轻扫以平移。                                                  | 抬起触摸接触。                                                                     | 可平移区域在吸附点停止，不是在抬起触摸接触的位置停止。                                |
 
- 
+ 
 
 **围栏** 内容可能宽于和高于屏幕设备的尺寸和分辨率。 因此，经常需要进行二维平移（水平和垂直）。 在此类情况下，围栏可以通过强调沿运动轴（垂直或水平）平移来改善用户体验。
 
@@ -195,9 +193,9 @@ Windows 8 支持三种类型的平移：
 * [输入：Windows 8 手势示例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [输入：操作和手势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

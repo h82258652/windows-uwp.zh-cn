@@ -6,16 +6,14 @@ title: 用于视频捕获的手动相机控件
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4bad8d38676c8298026e66be31e2493ae7d4117
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 91f9d21f6df09bf8f3cad3e5a43f3ed94049338e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816032"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562539"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>用于视频捕获的手动相机控件
 
@@ -94,7 +92,7 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 * [使用 MediaCapture 进行照片、视频和音频的基本捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [使用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
- 
+ 
 
 
 

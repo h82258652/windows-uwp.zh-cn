@@ -6,19 +6,18 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, basicreaderwriter
-ms.openlocfilehash: 1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 7a5d644a2a141a83316575a235805fa56657bf3a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "204299"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561401"
 ---
 # <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter 的完整代码
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 一般用来读取和写入二进制数据文件的类和方法的完整代码。 由 [BasicLoader](complete-code-for-basicloader.md) 类使用。
 
@@ -262,9 +261,9 @@ task<void> BasicReaderWriter::WriteDataAsync(
 }
 ```
 
- 
+ 
 
- 
+ 
 
 
 

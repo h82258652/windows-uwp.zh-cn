@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: abff26c7f2e874d4a5e8e964fe716fcf2f1592cb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045090"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563862"
 ---
 # <a name="bc6h-format"></a>BC6H 格式
 
@@ -34,15 +32,15 @@ BC6H 由以下 DXGI \ _FORMAT 枚举值指定：
 -   **DXGI\_FORMAT\_BC6H\_UF16**。 此 BC6H 格式不使用 16 位浮点颜色通道值中的符号位。
 -   **DXGI\_FORMAT\_BC6H\_SF16**。 此 BC6H 格式使用 16 位浮点颜色通道值中的符号位。
 
-**注意** 颜色通道的 16 位浮点格式通常称为“半”浮点格式。 此格式具有以下位布局：
+**注意** 16 位浮点颜色通道格式通常称为"半"浮点格式。 此格式具有以下位布局：
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16（无符号浮点） | 5 个指数位 + 11 个尾数位              |
 | SF16（带符号浮点）   | 1 个符号位 + 5 个指数位 + 10 个尾数位 |
 
- 
+ 
 
- 
+ 
 
 BC6H 格式可用于 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277)（包括数组）、Texture3D 或 TextureCube（包括阵列）纹理资源。 同样，此格式适用于与这些资源有关的任何 MIP 贴图表面。
 
@@ -114,7 +112,7 @@ decompress_bc6h(x, y, block)
 | 13   | 63 位           | 0 位    | 60 位 (12.8, 12.8, 12.8)       | 5 位 (01011) |
 | 14   | 63 位           | 0 位    | 60 位 (16.4, 16.4, 16.4)       | 5 位 (01111) |
 
- 
+ 
 
 此表中的每个格式可以由模式位唯一地进行标识。 前十个模式用于两区域磁贴，而模式位字段的长度可以是两位或五位。 这些块还有用于压缩颜色终结点（72 位或 75 位）、分区（5 位）和分区索引（46 位）的字段。
 
@@ -160,7 +158,7 @@ decompress_bc6h(x, y, block)
 | by    | endpt\[1\].A\[2\] |
 | bz    | endpt\[1\].B\[2\] |
 
- 
+ 
 
 Endpt\[i\]，其中 i 要么是 0 要么是 1，分别指第 0 个或第 1 个终结点集。
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>终结点值的符号扩展
@@ -329,9 +327,9 @@ unsigned short finish_unquantize(int comp)
 
 [纹理块压缩](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 

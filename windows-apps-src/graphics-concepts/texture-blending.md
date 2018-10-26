@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1014ed205c5cf0eda2c9b71c8406a98394b1463
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d4121bd402b048ee6102ed3be30b94a66e274273
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652896"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562195"
 ---
 # <a name="texture-blending"></a>纹理混合
 
@@ -36,7 +34,7 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
 
 **注意** Direct3D 将颜色混合与 α 混合区分开来。 应用程序针对颜色和 α 单独设置混合操作以及相关参数，所以这些设置的结果是相互独立的。
 
- 
+ 
 
 将多个混合层所用的参数以及操作相结合，可以定义一种基于流的简单混合语言。 从某个纹理层得出的结果流到另一层，再从这一层流到下一层，依此类推。 结果在各纹理层之间流动并最终在多边形上光栅化的概念通常被称作纹理混合层叠。 下图显示了单个纹理层如何形成纹理混合层叠。
 
@@ -74,16 +72,16 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
 [纹理](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

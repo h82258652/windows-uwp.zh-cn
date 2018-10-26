@@ -5,17 +5,15 @@ description: 本部分包含有关如何通过 AdvertisementWatcher 和 Advertis
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be2aad5a6a0fe76caefa4710ebf946e418cf151
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 38f850cfb811260758377d5404e01c8e540e7ec2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300433"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560208"
 ---
 # <a name="bluetooth-le-advertisements"></a>蓝牙低能耗广告
 
@@ -47,7 +45,7 @@ Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=61999
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-> **注意**： 为用户隐私，您广告的生命周期内是否与您的应用程序的关联。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**： 出于用户隐私，广告的生命周期被绑定到应用。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本发布
 

@@ -6,16 +6,14 @@ description: 关联终结点 (AEP) 服务为设备通过给定协议支持的服
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e204da16edd438b045fb753dca538e7fdeaa5a5f
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 5f103ee3c281ca95abcaee76cdc6f88b74a49eb1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690273"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563222"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
 
@@ -74,7 +72,7 @@ ms.locfileid: "1690273"
 | GATT - 用户数据                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT - 体重秤                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
- 
+ 
 
 有关可用蓝牙服务的更完整列表，请参阅[此处](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](http://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API 获取一些常见的 GATT 服务。
 
@@ -105,7 +103,7 @@ UPnP 服务使用以下协议标识符：{0e261de4-12f0-46e6-91ba-428607ccef64}
 | 内容目录                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
- 
+ 
 
 ## <a name="wsd-services"></a>WSD 服务
 
@@ -118,7 +116,7 @@ WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971b-aedc551346b0}
 | 打印机      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
 | 扫描仪      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
- 
+ 
 
 ## <a name="aqs-sample"></a>AQS 示例
 
@@ -129,6 +127,6 @@ System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" A
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
 
- 
+ 
 
- 
+ 

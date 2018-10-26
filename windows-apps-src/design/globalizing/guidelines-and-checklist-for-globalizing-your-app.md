@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 288b0509a269453e89ff827ddf27eced3ecd4c75
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 177332515db26eca7cef7a7be75c5752a239a8f1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673884"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562976"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指南
 
@@ -39,7 +37,7 @@ ms.locfileid: "1673884"
 | 正确地显示文本和字体。 | 理想的字体、字号和文本方向因市场而异。 有关详细信息，请参阅[**调整布局和字体，并支持 RTL**](adjust-layout-and-fonts--and-support-rtl.md)及[国际字体](loc-international-fonts.md)。 |
 
 ## <a name="important-apis"></a>重要的 API
- 
+ 
 * [全球化](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)

@@ -6,16 +6,14 @@ title: 支持的编解码器
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d520437f9be9d2e2bc6fe8243c3d34b17ef2d9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "303673"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562832"
 ---
 # <a name="supported-codecs"></a>支持的编解码器
 
@@ -30,7 +28,7 @@ ms.locfileid: "303673"
 > [!NOTE] 
 > 其中表明 AMR-NB 支持，此编解码器在服务器 SKU 上不受支持。
 
- 
+ 
 
 ### <a name="desktop"></a>桌面
 
@@ -341,7 +339,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>移动体验
 
@@ -652,7 +650,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -963,7 +961,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-arm"></a>IoT Core (ARM)
 
@@ -1274,7 +1272,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>XBox
 
@@ -1585,7 +1583,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="video-codec--format-support"></a>视频编解码器和格式支持
 
@@ -1595,7 +1593,7 @@ ms.locfileid: "303673"
 > 其中表明 H.265 支持，该设备系列内的所有设备不一定都受支持。
 > 其中表明 MPEG-2/MPEG-1 支持，只在安装可选的 Microsoft DVD 通用 Windows 应用后才受支持。
 
- 
+ 
 
 ### <a name="desktop"></a>桌面
 
@@ -1814,7 +1812,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>移动体验
 
@@ -2033,7 +2031,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -2252,7 +2250,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-arm"></a>IoT (ARM)
 
@@ -2471,7 +2469,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>XBox
 
@@ -2690,7 +2688,7 @@ ms.locfileid: "303673"
 </tbody>
 </table>
 
-## <a name="image-codec--format-support"></a>图像编解码器和格式支持 
+## <a name="image-codec--format-support"></a>图像编解码器和格式支持 
 
 <table>
 <colgroup>

@@ -6,20 +6,18 @@ ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
-ms.openlocfilehash: 450f95e68c85a325e43127df90ffeddbaa850afa
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488861"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560480"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>呈现框架 I：呈现简介
 
-我们在之前的主题中介绍了如何生成通用 Windows 平台 (UWP) 游戏，以及如何定义状态机来处理游戏流。 现在，应该来了解如何装配呈现框架了。 我们来看看示例游戏如何使用 Direct3D 11（通常称为 DirectX 11）来呈现游戏场景。
+我们在之前的主题中介绍了如何生成通用 Windows 平台 (UWP) 游戏，以及如何定义状态机来处理游戏流。 现在，应该来了解如何装配呈现框架了。 让我们来看看示例游戏如何呈现游戏场景使用 Direct3D11 （通常称为 DirectX 11）。
 
 >[!Note]
 >如果你尚未下载适用于此示例的最新游戏代码，请转到 [Direct3D 游戏示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
@@ -620,7 +618,7 @@ __DX::DeviceResources__ 类位于 __DeviceResources.cpp__/__.h__文件中，控�
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX 图形基础结构 (DXGI) 是随 Windows Vista 引入的新子系统，它封装了 Direct3D 10、10.1、11 和 11.1 所需的一些低级别任务。 在多线程应用程序中使用 DXGI 时需要格外小心，以确保不会发生死锁。 有关详细信息，请参阅 [DirectX 图形基础结构 (DXGI)：最佳做法-多线程](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX 图形基础结构 (DXGI) 是一个新子系统中引入的 WindowsVista 封装的一些低级别任务所需的 Direct3D 10、 10.1、 11 和 11.1。 在多线程应用程序中使用 DXGI 时需要格外小心，以确保不会发生死锁。 有关详细信息，请参阅 [DirectX 图形基础结构 (DXGI)：最佳做法-多线程](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>功能级别
 
@@ -630,7 +628,7 @@ Microsoft DirectX 图形基础结构 (DXGI) 是随 Windows Vista 引入的新子
 
 使用功能级别，在创建设备时，你可以尝试为想要请求的功能级别创建设备。 如果设备创建成功，该功能级别将存在，如果失败，硬件将不支持该功能级别。 你可以尝试在更低的功能级别重新创建设备，也可以选择退出应用程序。 例如，12\_0 功能级别需要 Direct3D 11.3 或 Direct3D 12，以及着色器模型 5.1。 有关详细信息，请参阅 [Direct3D 功能级别：各功能级别概述](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
 
-使用功能级别，你可以开发适用于 Direct3D 9、Microsoft Direct3D 10 或 Direct3D 11 的应用程序，然后在 9、10 或 11 硬件上运行应用程序（除一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后运行它上 9、 10 或 11 硬件 （除一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
 
 ### <a name="stereo-rendering"></a>立体呈现
 
