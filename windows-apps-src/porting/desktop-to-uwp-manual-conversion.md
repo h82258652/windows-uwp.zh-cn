@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 0482c9a770d23ccebb094c00de7cab08cd6ab1cb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547045"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5641147"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -158,7 +158,7 @@ ms.locfileid: "5547045"
 
 ## <a name="optional-add-target-based-unplated-assets"></a>（可选）添加基于目标的未着色资产
 
-基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 可在[此处](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets)了解相关详细信息。
+基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 可在[此处](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets)了解相关详细信息。
 
 1. 获取正确的 44x44 图像，然后将它们复制到包含图像（即资产）的文件夹。
 
