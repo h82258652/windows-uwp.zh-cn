@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: b1e57d5c8ae4d1586de9f16455dc178c5e154fbf
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5546669"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696621"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。

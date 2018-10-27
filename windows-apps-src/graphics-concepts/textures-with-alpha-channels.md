@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542291"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695991"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 alpha 通道的纹理
 

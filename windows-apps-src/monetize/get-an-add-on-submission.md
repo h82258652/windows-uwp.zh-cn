@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f113f47a905e8b542dde4c982a162341fc0196
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5565381"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696054"
 ---
 # <a name="get-an-add-on-submission"></a>获取加载项提交
 

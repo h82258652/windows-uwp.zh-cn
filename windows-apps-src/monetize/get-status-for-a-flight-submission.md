@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 状态
 ms.localizationpriority: medium
 ms.openlocfilehash: e3db0b4823b4bc6d8ac50e40026b21f288f9e64c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5572090"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696330"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>获取软件包外部测试版提交的状态
 
