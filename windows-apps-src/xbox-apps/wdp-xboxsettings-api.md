@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5544557"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703552"
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。

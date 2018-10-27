@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5641147"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699735"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 

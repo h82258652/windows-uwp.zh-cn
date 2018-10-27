@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 扩展, 组件化, 应用服务, 包, 扩展
 ms.localizationpriority: medium
 ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597659"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700412"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>用服务、扩展和包扩展应用
 

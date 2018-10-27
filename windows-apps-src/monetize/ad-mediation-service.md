@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
 ms.openlocfilehash: f8ebffbd7a2fa209289c99780e0bbbea94afac2e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559465"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697846"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
 

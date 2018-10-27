@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 36df4e7d8060b9e4420a5fe1a2144ad29520c7f7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5546418"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703032"
 ---
 # <a name="manage-ad-campaigns"></a>管理广告活动
 

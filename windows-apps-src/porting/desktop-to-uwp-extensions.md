@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: 252b1309f1218a872ea49dcce7048b890a6139b4
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554887"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697938"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>与 Windows 10 集成已打包的桌面应用程序
 

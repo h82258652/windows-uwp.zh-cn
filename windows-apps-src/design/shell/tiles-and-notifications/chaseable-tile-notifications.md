@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可追踪的磁贴, 动态磁贴, 可追踪的磁贴通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126755dfb6f5f0e117d10daef85a83e8a171f1f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543122"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703347"
 ---
 # <a name="chaseable-tile-notifications"></a>可追踪的磁贴通知
 
