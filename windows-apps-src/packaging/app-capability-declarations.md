@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c17c802e77d13e6e980ed5046c19bfc106d5cff
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 451a8041e0a81d43d91692e92046c32d458e0982
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563268"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710610"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -211,6 +211,8 @@ ms.locfileid: "5563268"
 | **提升权限** | **AllowElevation**受限功能允许通过 Microsoft 合作伙伴和企业可保留现有的桌面功能需要自动提升启动或在应用的生命周期期间创建的应用。<br/><br/>我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 它将仅批准通过适用于企业的 Microsoft 应用商店其专用应用商店向企业部署的业务线应用。  |
 | **Windows 团队设备的凭据** | **TeamEditionDeviceCredentials**受限功能允许应用访问请求运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的设备帐户凭据的 Api。<br/><br/>我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 |
 | **Windows 团队应用程序视图** | **TeamEditionView**受限功能允许应用访问托管在运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的应用程序视图的 Api。<br/><br/>我们不建议在提交到 Microsoft Store 的应用中声明该功能。 对于大多数开发人员，我们不会批准其使用该功能。 |
+| **相机处理扩展** | **CameraProcessingExtension**受限功能允许应用处理从而无需直接相机控制相机捕获的图像。<br /><br />若要在[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)命名空间中调用 Api，则需要此功能。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
+| **数据使用量管理*** | **NetworkDataUsageManagement**受限功能允许应用收集网络数据使用情况信息。<br /><br />若要调用[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)，需要此功能。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
 
 ## <a name="custom-capabilities"></a>自定义功能
 
