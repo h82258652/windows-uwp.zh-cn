@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e37b47e22d10f509afd5d7503fa8f7a43ab365
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597711"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686338"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
 

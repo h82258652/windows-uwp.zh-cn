@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 22ce577f7d70b3750a365462b64181a27e71428e
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5611092"
+ms.locfileid: "5682146"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>复制到字节数组并从字节数组复制
 

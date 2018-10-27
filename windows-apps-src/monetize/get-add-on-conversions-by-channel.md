@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 加载项转换, 通道
 ms.localizationpriority: medium
 ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543052"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687351"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>通过通道获取加载项转换
 

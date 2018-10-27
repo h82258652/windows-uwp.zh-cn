@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 422a6b40c86a84367054a20cabe1a0b0a32cb89d
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597691"
+ms.locfileid: "5704978"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 

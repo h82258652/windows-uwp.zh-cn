@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml, 屏幕旋转, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: be3f8e57a592512335a826c142876d1ff3c53e5b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560317"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686969"
 ---
 # <a name="add-features-to-directx-games"></a>为 DirectX 游戏添加功能
 

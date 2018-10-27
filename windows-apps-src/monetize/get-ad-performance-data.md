@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告, 性能
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f24b2494470f60371e466bb4d1e1878475d963
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559906"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686746"
 ---
 # <a name="get-ad-performance-data"></a>获取广告性能数据
 

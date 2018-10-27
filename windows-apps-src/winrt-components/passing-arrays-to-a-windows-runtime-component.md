@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553411"
+ms.locfileid: "5684762"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 

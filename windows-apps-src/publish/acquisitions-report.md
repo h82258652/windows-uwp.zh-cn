@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 购置, 应用销售, 应用下载, 安装, 漏斗, 购置, 转换, 渠道, 应用页面视图
 ms.localizationpriority: medium
 ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5552275"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686587"
 ---
 # <a name="acquisitions-report"></a>购置报告
 

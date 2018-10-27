@@ -8,11 +8,11 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e51a7fb64dae42307960aa90f85463d11aecadc
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559091"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686770"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>17763 版本的 Windows 10 中的新增 Api
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 地图, 位置, 地理围栏, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542271"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5693903"
 ---
 # <a name="set-up-a-geofence"></a>设置地理围栏
 

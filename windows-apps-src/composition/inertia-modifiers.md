@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c10b1cc621da834a8a7c411e75eb92b1944b5a
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5640550"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687553"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用 Inertia Modifier 创建吸附点
 

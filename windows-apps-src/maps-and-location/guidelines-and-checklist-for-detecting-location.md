@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561712"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687241"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 

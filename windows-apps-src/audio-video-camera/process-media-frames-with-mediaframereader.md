@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 722a411bc6363d3a10b5db0f609b08f5d14b3f8d
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5611543"
+ms.locfileid: "5711234"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
