@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocaledetails.html
 author: KevinAsgari
 description: " /media/{marketplaceId}/details"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 62d0fc09d851f16c2af4126c9d3f7edccfec96a1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d61d8f23936dc40648637df793d7610159498ac0
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5552450"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688506"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
 详细信息和元数据，产品/服务返回有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。

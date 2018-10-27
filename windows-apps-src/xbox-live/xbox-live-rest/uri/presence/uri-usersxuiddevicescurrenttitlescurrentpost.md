@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuiddevicescurrenttitlescurrentpost
 author: KevinAsgari
 description: " POST (/users/xuid({xuid})/devices/current/titles/current)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 0508b3911108fcc0213bbbd4c5e9317c440e01d9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 31e04f1711d83679ac0b41c74c1c391b26bc7969
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553579"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691856"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。

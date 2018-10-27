@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsgetv2.h
 author: KevinAsgari
 description: " GET (/users/xuid({xuid})/achievements)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 433103e1dad073f431d5a4e5fc104b2e5b51c99b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 550a835bf729b22c9adc79a15ef643fa1cb009b2
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568952"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5684254"
 ---
 # <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
 获取的成就标题、 解锁由用户或用户有正在上定义的列表。 这些 Uri 的域是`achievements.xboxlive.com`。

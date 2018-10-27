@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameput.html
 author: KevinAsgari
 description: " PUT (/users/xuid(xuid)/lists/PINS/{listname})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b4af068bd124584d04b5b452961312f11463b9e8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 7222e3d64bd90f0c542f7235118e837b42d3929f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566806"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709684"
 ---
 # <a name="put-usersxuidxuidlistspinslistname"></a>PUT (/users/xuid(xuid)/lists/PINS/{listname})
 更新根据指定每个项目，请求正文中的索引列表中的项。 这些 Uri 的域是`eplists.xboxlive.com`。

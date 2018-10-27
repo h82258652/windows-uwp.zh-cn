@@ -3,16 +3,16 @@ title: Arena API UI 元数据
 author: KevinAsgari
 description: 包含用于 Xbox Arena API 的 UI 元数据的完整列表。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
-ms.openlocfilehash: b745af2209e0679e2d47180f9744a7e80036f7aa
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e2f785836b6d81213ca3e13d9687fd67beae1259
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566721"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708434"
 ---
 # <a name="arena-apis-a-comprehensive-list-of-ui-metadata"></a>Arena API：UI 元数据的完整列表
 

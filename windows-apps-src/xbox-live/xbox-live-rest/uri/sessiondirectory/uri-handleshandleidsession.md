@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsession.html
 author: KevinAsgari
 description: " /handles/{handleId}/session"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cad82cb85922774e16ce84e4fab7a62998aef26
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 38fa1ad62b2e76dceda79744c59eb59ddc50ea90
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571957"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693019"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 支持 PUT 并获得对会话的操作，使用句柄取消引用。 

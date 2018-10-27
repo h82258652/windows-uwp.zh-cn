@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentrating.html
 author: KevinAsgari
 description: " /media/{marketplaceId}/contentRating"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a129c8a2580fb80259121f7a819390c84265255
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 64aa0cdd7b1167ee139774114ad65e507bce759e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550987"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5682003"
 ---
 # <a name="mediamarketplaceidcontentrating"></a>/media/{marketplaceId}/contentRating
 访问内容分级令牌。 这些 Uri 的域是`eds.xboxlive.com`。

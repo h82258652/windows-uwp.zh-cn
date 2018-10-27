@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/privacy-enum-permissionid.html
 author: KevinAsgari
 description: " PermissionId 枚举"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1fb7b9bfd038ffb2786a1204a77afa40da7dc1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: c0f1d0b27e0d9448240f20addb96188a03581f9c
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568237"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704744"
 ---
 # <a name="permissionid-enumeration"></a>PermissionId 枚举
 详细介绍 PermissionId 枚举。

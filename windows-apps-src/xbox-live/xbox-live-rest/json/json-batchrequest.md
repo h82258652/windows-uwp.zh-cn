@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-batchrequest.html
 author: KevinAsgari
 description: " BatchRequest (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 405d5668368747fab8133cb9f2ce02117f637b98
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 29effaaa7fe70a2b3ae19e9e30d8a852d954c9a9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555245"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691602"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
 用来筛选状态信息，如用户、 设备和标题属性的数组。

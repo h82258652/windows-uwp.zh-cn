@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameremoveitemspos
 author: KevinAsgari
 description: " POST /users/xuid(xuid)/lists/PINS/{listname}/RemoveItems"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: bd3e32fc59def5638120837f0fa618adb2e5fd26
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: c4d7b825edaf030bfd5ca61480a5277d5b1d3a96
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570136"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691652"
 ---
 # <a name="post-usersxuidxuidlistspinslistnameremoveitems"></a>POST /users/xuid(xuid)/lists/PINS/{listname}/RemoveItems
 通过 itemId，请从列表中删除项目。 这些 Uri 的域是`eplists.xboxlive.com`。

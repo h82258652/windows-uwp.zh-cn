@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist
 author: KevinAsgari
 description: " /users/{userId}/profile/settings/people/{userList}?settings={settings}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 7130e800299e1f8f8ddbbb7a69efb501e5de1734
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b7c5140838ccc29c9b60d80c7a1f52e4d6eb90a4
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570051"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701340"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
 访问用户或用户，人脉名字对象支持的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapathandfilenametype-g
 author: KevinAsgari
 description: " GET (/global/scids/{scid}/data/{pathAndFileName},{type})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e76ebacc5f29d4eb0ed420f798857c94be7fa9cc
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 692a68644022dba21de49ed25c4aa69281389e10
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567721"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707690"
 ---
 # <a name="get-globalscidssciddatapathandfilenametype"></a>GET (/global/scids/{scid}/data/{pathAndFileName},{type})
 下载文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。

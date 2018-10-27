@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 跨平台游玩, 随处游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: b74d214163c975126ba5131d6b9b3c8423c23280
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571111"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5694435"
 ---
 # <a name="get-started-with-cross-play-games"></a>跨平台游玩游戏入门
 

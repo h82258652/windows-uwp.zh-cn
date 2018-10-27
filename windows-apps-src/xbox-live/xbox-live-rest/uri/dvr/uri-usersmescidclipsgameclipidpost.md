@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipidpost.html
 author: KevinAsgari
 description: " POST (/users/me/scids/{scid}/clips/{gameClipId})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd0972554c1beecce270d306c8a7ea94214cee6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 71066e3ac2be19747983265b8bdb2b7b91a36211
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554870"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688165"
 ---
 # <a name="post-usersmescidsscidclipsgameclipid"></a>POST (/users/me/scids/{scid}/clips/{gameClipId})
 更新用户自己的数据的游戏剪辑元数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。

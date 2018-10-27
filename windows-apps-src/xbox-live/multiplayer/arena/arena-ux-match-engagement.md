@@ -3,16 +3,16 @@ title: 比赛参与
 author: KevinAsgari
 description: 描述玩家在锦标赛经历中不断进阶的 UX 阶段。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
-ms.openlocfilehash: e243f4d765912fc15e3676a647b670487fea3e8c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 4746cd0092b1a23b948a3bd9a551624c236cfd5e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570194"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689663"
 ---
 # <a name="match-engagement"></a>比赛参与
 

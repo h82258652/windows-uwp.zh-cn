@@ -3,16 +3,16 @@ title: Xbox Arena 操作门户
 author: KevinAsgari
 description: 了解如何使用 operations 门户管理 Xbox 锦标赛。
 ms.author: kevinasg
-ms.date: 06-18-2018
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live，xbox，游戏，uwp，windows 10，xbox one，arena，锦标赛、 操作，门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f253804727d138769f596ffb1fa7c6e7bc8861
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d22212e4fc3d01ced50b557c4ec4a1e9619ebe61
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553479"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693825"
 ---
 # <a name="xbox-arena-operations-portal"></a>Xbox Arena 操作门户
 

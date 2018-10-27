@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
 author: KevinAsgari
 description: " /users/{ownerId}/people/mute"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 23c8ab6fd50df5d24fe4deb2882c91431853be60
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 569aa173a0074fd147092716b9a36d53acaef0db
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555490"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701598"
 ---
 # <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
 访问用户的静音列表。

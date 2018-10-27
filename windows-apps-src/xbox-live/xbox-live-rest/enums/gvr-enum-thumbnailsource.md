@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/gvr-enum-thumbnailsource.html
 author: KevinAsgari
 description: " ThumbnailSource 枚举"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b343292b80c6b9a05d2f21a27d80960e711e4b27
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 71b97271c96b09ef83069ddb597bcfd5c9f71509
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550792"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699165"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 枚举
 详细介绍 ThumbnailSource 枚举。 

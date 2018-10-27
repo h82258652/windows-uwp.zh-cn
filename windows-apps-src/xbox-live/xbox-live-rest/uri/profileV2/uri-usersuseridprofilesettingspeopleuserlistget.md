@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist
 author: KevinAsgari
 description: " GET (/users/{userId}/profile/settings/people/{userList})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e4c27017b1060965b0e2eaa29e93ca6557cb37
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d8f04950b5aff14bf943f9827f0a2af52ddbcb9c
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566941"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709418"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 获取用户的个人资料或支持用户，通过人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。

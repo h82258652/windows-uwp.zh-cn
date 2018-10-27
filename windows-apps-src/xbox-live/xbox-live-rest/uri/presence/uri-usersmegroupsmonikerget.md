@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmonikerget.html
 author: KevinAsgari
 description: " GET (/users/me/groups/{moniker} )"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 9982d95931eeea6cdb7a9006cebb00b8d5543d91
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 2b19cb41aabfa9f0c629784f86ece4ca28bd8929
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5542698"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710859"
 ---
 # <a name="get-usersmegroupsmoniker-"></a>GET (/users/me/groups/{moniker} )
 Presencerecord，他获取我的用户组。 这些 Uri 的域是`userpresence.xboxlive.com`。

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcastingcount.
 author: KevinAsgari
 description: " /users/xuid({xuid})/groups/{moniker}/broadcasting/count"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6d079b880f92d04d14e84432af57cc843f923f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: dbfe207483f5814d2cd32ffcd5ac651c0ab5aa52
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560743"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692029"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting/count
 访问的组名字对象由指定的广播用户计数与在 URI 中出现的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。

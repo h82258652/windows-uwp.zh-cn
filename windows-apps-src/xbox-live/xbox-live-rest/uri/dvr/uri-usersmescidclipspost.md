@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipspost.html
 author: KevinAsgari
 description: " POST (/users/me/scids/{scid}/clips)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 68e87cef7adeb4c50dcb841db6737626500bfe70
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: dd074b6ffc7b5367992c984e7e3c24b036f0f11d
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5548539"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707422"
 ---
 # <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
 发出初始上载请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。

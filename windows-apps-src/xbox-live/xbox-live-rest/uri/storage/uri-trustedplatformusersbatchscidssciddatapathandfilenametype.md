@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersbatchscidssciddatapa
 author: KevinAsgari
 description: " /trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 2de2fa259f57c57961df4513bcacec8d6e7a5224
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 5be54f3a974bdd514a634723811d99a2a82b5b05
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5545253"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695292"
 ---
 # <a name="trustedplatformusersbatchscidssciddatapathandfilenametype"></a>/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
 从多个用户具有相同的文件名下载多个文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-serviceerror.html
 author: KevinAsgari
 description: " ServiceError (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 7864970588dafa6bc774d1960944dde0fdb0a05a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 7f00618c3ecb51a0934b1b3f73a51553b49f153b
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563264"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691606"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 包含有关错误对服务调用失败时返回的信息。 

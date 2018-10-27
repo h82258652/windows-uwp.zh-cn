@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearch.html
 author: KevinAsgari
 description: " /media/{marketplaceId}/singleMediaGroupSearch"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f7ec6a785569e76e4c65637f306be2fbb4497e31
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 3157f7152d7bf4d864d706e04a7ea345e248a431
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5543888"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692530"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
 允许搜索单个媒体组中的项。 请注意，此搜索返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询优化器。

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-json.html
 author: KevinAsgari
 description: " JavaScript 对象表示法 (JSON) 对象参考"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 996ee979eefd92c4e1c6ad4e03d39d239cb03637
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 039cc9cf1d7d1d77330ff280d7cff5619971b075
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553968"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696725"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript 对象表示法 (JSON) 对象参考
  

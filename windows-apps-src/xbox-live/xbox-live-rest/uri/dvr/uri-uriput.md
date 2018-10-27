@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-uriput.html
 author: KevinAsgari
 description: " PUT (/{uri})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e62c958a0c06dc69f4cd206ccd120c6210f79d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 56a5150e354568f3ea7ec772953bd1e1e8efa579
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563080"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705448"
 ---
 # <a name="put-uri"></a>PUT (/{uri})
 上传游戏剪辑数据。

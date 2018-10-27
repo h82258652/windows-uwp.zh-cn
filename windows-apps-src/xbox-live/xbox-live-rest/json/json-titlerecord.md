@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-titlerecord.html
 author: KevinAsgari
 description: " TitleRecord (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c26910005c54cf9038f09045cd30f4463527306e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e4cdec869727cb6182d86616782c640020a0b7ac
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5546354"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691736"
 ---
 # <a name="titlerecord-json"></a>TitleRecord (JSON)
 有关游戏，包括其名称和上次修改时间戳的信息。 

@@ -3,16 +3,16 @@ title: 发现 Xbox 锦标赛
 author: KevinAsgari
 description: 了解如何为游戏创建用于发现锦标赛的 UI。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
-ms.openlocfilehash: dc460f66ec37d32bfa21d8eaa59066d51beabfac
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 05e8e48ac6995adb36fac998bfbd8cf9fa0dbf7f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563380"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709806"
 ---
 # <a name="discovering-xbox-tournaments"></a>发现 Xbox 锦标赛
 

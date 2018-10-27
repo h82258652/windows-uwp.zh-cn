@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-inventory.html
 author: KevinAsgari
 description: " /users/me/inventory"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 23125dc788c547e013c989d58c24618443ccd1d0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 03368afe54d1f4f56d2ffe9b75a71f076476e623
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5545862"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699972"
 ---
 # <a name="usersmeinventory"></a>/users/me/inventory
 访问当前与提供的用户相关联的清单的集。 这些 Uri 的域是`inventory.xboxlive.com`。

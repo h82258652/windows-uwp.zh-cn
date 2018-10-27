@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/eds-apis.html
 author: KevinAsgari
 description: " 辅助 EDS API"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 15e1c5ddd6fe0b645d6851a348fe6e1fc0879b55
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 791ec5e593d90cf52b91cca863df02da2db97f5f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5544941"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691853"
 ---
 # <a name="auxiliary-eds-apis"></a>辅助 EDS API
 

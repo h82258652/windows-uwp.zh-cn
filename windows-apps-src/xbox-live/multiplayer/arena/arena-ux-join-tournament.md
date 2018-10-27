@@ -3,16 +3,16 @@ title: 加入锦标赛
 author: KevinAsgari
 description: 了解如何创建 UI，以供玩家加入你的游戏的锦标赛。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
-ms.openlocfilehash: 701545085f095bd9c26598ac063780c49ee94c0d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f3240007d5501941ea3579dab2942d67d4e69809
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558778"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703389"
 ---
 # <a name="join-a-tournament-by-using-the-arena-ui"></a>使用 Arena UI 加入锦标赛
 

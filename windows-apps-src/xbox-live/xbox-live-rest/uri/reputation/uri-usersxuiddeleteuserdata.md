@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuiddeleteuserdata.html
 author: KevinAsgari
 description: " /users/xuid({xuid})/deleteuserdata"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ea6fd858e88aa92394d3c9e116118d52dd88ac
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 5eaba6a02fa2ebb00ef4861a5bf37963796b78b5
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570100"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693942"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a>/users/xuid({xuid})/deleteuserdata
 完全重置为测试用户信誉数据。 仅供测试。 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。

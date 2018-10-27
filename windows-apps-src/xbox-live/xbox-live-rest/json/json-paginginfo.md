@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-paginginfo.html
 author: KevinAsgari
 description: " PagingInfo (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c9479488961de40ef5019d1ebe067f29dffb16dd
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e86fbe2ee840a33e3e4cb21cb9584381d389394a
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569407"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5690914"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
 包含分页信息中的数据的页面将返回的结果。 

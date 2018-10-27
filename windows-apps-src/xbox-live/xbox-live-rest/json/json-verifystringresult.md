@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-verifystringresult.html
 author: KevinAsgari
 description: " VerifyStringResult (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b60eb65c5b69addae0509d74095d63b7a367bd97
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1ba5336ed0bf734eff60a4bbffca3397fd1ea3eb
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567822"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687264"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 结果代码对应于[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)提交每个字符串。

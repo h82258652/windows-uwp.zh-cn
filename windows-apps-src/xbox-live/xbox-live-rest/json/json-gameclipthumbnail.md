@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gameclipthumbnail.html
 author: KevinAsgari
 description: " GameClipThumbnail (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dbf2343f293c7a78c467da651f2185b738b9df8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 4fae93f76d9c8647b2d4264463b434d86897e2a5
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559708"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703251"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
 包含一个单独的缩略图的相关信息。 可以有多个大小每个剪辑，并由客户端选择正确显示。 
