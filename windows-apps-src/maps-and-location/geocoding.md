@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地理编码, 地图, 位置
 ms.localizationpriority: medium
 ms.openlocfilehash: bdd956dece4435ceb8e14121ec2b545095af3a11
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5693370"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5768847"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
 

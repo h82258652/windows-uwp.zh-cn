@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 0606c3b1b0b36dadb888166310f8b347d40a480a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5709273"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5744629"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>通过远程会话连接设备
 

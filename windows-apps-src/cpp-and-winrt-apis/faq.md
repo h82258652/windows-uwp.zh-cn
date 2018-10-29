@@ -3,16 +3,16 @@ author: stevewhims
 description: 对你可能有的关于通过 C++/WinRT 创作和使用 Windows 运行时 API 的问题的解答。
 title: C++/WinRT 常见问题
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2ea3dddc592379199017408652cab0a2a68fbb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 612eb6ced57fb2a8ca5d855ef9c156b0b9ae4440
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696472"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742520"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -51,7 +51,7 @@ ms.locfileid: "5696472"
 #pragma comment(lib, "windowsapp")
 ```
 
-我们建议你解决任何可通过链接**WindowsApp.lib**的链接器错误。 但是，如果你不需要通过使用 Visual studio 和通过 Microsoft Store 来验证提交 （含义，因此不可能的应用程序能够成功的[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试你的应用程序引入到 Microsoft Store），则你可以改为将链接替代的静态链接库。 例如，如果你的链接器错误是指**CoIncrementMTAUsage** （或**WINRT_CoIncrementMTAUsage**），然后你可以来解决如果绝对有必要 （例如，如果你的**WindowsApp.lib**版本不会链接 Ole32.lib导出函数）。
+请务必解决任何你可以通过而不可选的静态链接库链接**WindowsApp.lib**的链接器错误，否则你的应用程序不会通过 Visual Studio 和使用[Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)测试若要验证提交 （因此将不会将你的应用程序能够成功地引入 Microsoft Store 可能的含义） 的 Microsoft 应用商店。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) 还是两者。 可调用 **IClosable::Close** 任意次数。

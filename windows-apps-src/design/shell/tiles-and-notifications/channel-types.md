@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: db2cf1c732669a2ae45b8a5eb427e8864446c800
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5710287"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745708"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>选择正确的推送通知通道类型
 

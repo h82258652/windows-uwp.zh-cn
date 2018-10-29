@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c5a5536ef1853a726421bdc75269f0cb5c1a84b
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5689583"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5748119"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>支持应用内购买应用和加载项
 

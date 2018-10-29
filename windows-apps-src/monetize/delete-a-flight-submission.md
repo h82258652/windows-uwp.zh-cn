@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 删除, 软件包外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: afc68c3e851652fd0af0749540e1978ee6cc539c
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5703403"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743943"
 ---
 # <a name="delete-a-package-flight-submission"></a>删除软件包外部测试版提交
 

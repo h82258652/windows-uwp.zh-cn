@@ -1,6 +1,6 @@
 ---
 author: c-don
-title: 部署应用通过松散文件注册
+title: 通过松散文件注册部署应用
 description: 本指南介绍了如何使用松散文件布局进行验证和共享 Windows 10 应用，而无需其打包。
 ms.author: cdon
 ms.date: 6/1/2018
@@ -8,13 +8,13 @@ ms.topic: article
 keywords: windows 10、 uwp、 设备门户、 应用管理器、 部署、 sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5705727"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743034"
 ---
-# <a name="deploy-an-app-through-loose-file-registration"></a>部署应用通过松散文件注册 
+# <a name="deploy-an-app-through-loose-file-registration"></a>通过松散文件注册部署应用 
 
 本指南介绍了如何使用松散文件布局进行验证和共享 Windows 10 应用，而无需其打包。 注册 loose 文件布局允许开发人员快速验证他们的应用无需打包和安装应用。 
 
