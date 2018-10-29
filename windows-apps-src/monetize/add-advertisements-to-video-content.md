@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 视频, scheduler, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 158817aa0abea1ddb1247188ec69389a7682e899
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5697397"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5750800"
 ---
 # <a name="show-ads-in-video-content"></a>在视频内容中显示广告
 
@@ -91,7 +91,7 @@ ms.locfileid: "5697397"
     > [!NOTE]
     > 在 **MediaPlayer** 中开始播放主要视频内容之前，应该等待 **requestSchedule** 或 **requestScheduleByUrl** 返回。 在 **requestSchedule** 返回之前开始播放媒体（就前导广告而言），前导广告的播放将中断主要视频内容。 即使函数失败，也必须调用 **play**，因为 **AdScheduler** 将告诉 **MediaPlayer** 跳过广告，直接转到内容。 你可能具有不同的业务要求，例如插入内置广告（如果无法成功远程获取广告）。
 
-8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 The following code shows some of these events, including **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete**, and **onErrorOccurred**.
+8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 以下代码显示了部分事件，包括 **onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete** 和 **onErrorOccurred**。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
 
