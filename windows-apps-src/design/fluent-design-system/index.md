@@ -8,17 +8,17 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab8e8c18a0b1db0991bf470f194f8774f2357b4
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5689896"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5747613"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent 设计系统的 Windows 应用创意者
 
 ![Fluent 设计标头](images/fluentdesign-app-header.jpg)
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 Fluent Design 系统是用于创建自适应、 共鸣和美观用户界面的系统。
 
