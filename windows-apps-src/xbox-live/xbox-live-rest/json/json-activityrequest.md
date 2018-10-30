@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb39036ccc75f4caec5a0fa6f961d2462ce5bda
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5695927"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5755218"
 ---
 # <a name="activityrequest-json"></a>ActivityRequest (JSON)
 有关一个或多个用户的完整状态信息请求。 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c78fe5a0707797911ff9015cfa28378201b0939
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5701133"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5744807"
 ---
 # <a name="permissioncheckresult-json"></a>PermissionCheckResult (JSON)
 从单个权限设置针对单个目标用户的单个用户检查的结果。 

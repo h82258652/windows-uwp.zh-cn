@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3d7ac0204f9a87f60e6437738aae66f4a6d67b
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5687316"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5758836"
 ---
 # <a name="eds-authorization"></a>EDS 授权
  
-  * [简介](#ID4EN)
+  * [介绍](#ID4EN)
   * [授权流程](#ID4EFB)
   * [3.0 标记： 多用户与单个用户](#ID4EEC)
   * [EDS 是否支持多用户？](#ID4EYC)
@@ -26,7 +26,7 @@ ms.locfileid: "5687316"
 <a id="ID4EN"></a>
 
  
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
  
 娱乐发现服务 (EDS) 3.1 不会支持匿名流量。 所有请求 EDS 需要身份验证。 EDS 需要调用方进行正确身份验证的客户端从 XToken。 这些标记由 XSTS 和可以获得通过各种 Xbox 身份验证服务 (XAS)。 有单独的身份验证服务的设备、 用户和游戏将所有定义的令牌的标识。
  

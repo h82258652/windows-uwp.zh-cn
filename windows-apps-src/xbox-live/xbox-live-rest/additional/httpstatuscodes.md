@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5540339d61c81b08b9843f7352ac816d93fcf12e
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5685361"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5746445"
 ---
 # <a name="standard-http-status-codes"></a>标准 HTTP 状态代码
  

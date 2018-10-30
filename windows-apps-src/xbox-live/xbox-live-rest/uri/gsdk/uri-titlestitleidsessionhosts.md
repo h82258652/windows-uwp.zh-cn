@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 77868d4bce61c80e9f8ebd0744822c9ade27327e
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5693168"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5740879"
 ---
 # <a name="titlestitleidsessionhosts"></a>/titles/{titleId}/sessionhosts
 请求 Xbox Live 计算 sessionhost，对于给定的作品 id 分配。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 791ec5e593d90cf52b91cca863df02da2db97f5f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5691853"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5739754"
 ---
 # <a name="auxiliary-eds-apis"></a>辅助 EDS API
 

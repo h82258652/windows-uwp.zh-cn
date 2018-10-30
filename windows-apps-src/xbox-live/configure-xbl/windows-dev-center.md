@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: ec865b56254b624655e29df43a42ebedd58e4cf0
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5684050"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5740822"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows 开发人员中心服务配置
 
@@ -30,13 +30,13 @@ ms.locfileid: "5684050"
 
 ## <a name="in-this-section"></a>本部分内容
 
-* [摘要](dev-center/summary.md)
+* [小结](dev-center/summary.md)
 
 * [Xbox Live 设置](dev-center/xbox-live-setup.md)
 
-* [Achievements 2017](dev-center/achievements-in-udc.md)
+* [2017 年成就](dev-center/achievements-in-udc.md)
 
-* [特别推荐的统计数据和排行榜 2017](dev-center/featured-stats-and-leaderboards.md)
+* [2017 特别推荐的统计数据和排行榜](dev-center/featured-stats-and-leaderboards.md)
 
 * [游戏 DVR](dev-center/game-dvr.md)
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f58c9028d506b6f2773529e3c1e8f8fdfbff4d6
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5691941"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5749632"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live 服务 RESTful 参考
 

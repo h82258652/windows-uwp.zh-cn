@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b6821579e9ba96c679a6cace19e65645ae79455
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5708311"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5760297"
 ---
 # <a name="add-xbox-live-to-a-new-or-existing-xdk-project"></a>向新的或现有的 XDK 项目添加 Xbox Live
 
