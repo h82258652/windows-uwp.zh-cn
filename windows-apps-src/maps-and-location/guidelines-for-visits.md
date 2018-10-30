@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, geovisit, geovisits
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a78b2689a10dff50696e5e65cc44f79a6f1ea7d
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5691429"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5762948"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>有关使用访问跟踪的指南
 

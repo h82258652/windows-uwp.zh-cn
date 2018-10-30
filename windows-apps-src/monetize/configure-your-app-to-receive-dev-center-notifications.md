@@ -9,11 +9,11 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, 定向推送通知, 开
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: 451643387076a8f944ffe94206ea6fac08524026
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5703367"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5762173"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>针对定向推送通知配置应用
 

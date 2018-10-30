@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e57cc24554f851ba79cfc47e917b92b3ad3047e
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5698858"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5762633"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>将应用更新到最新的横幅广告库
 
@@ -27,7 +27,7 @@ ms.locfileid: "5698858"
 
 * 将不再向应用中的任何 **AdControl** 提供横幅广告，并且你将不再从这些控件中获取任何广告收益。
 
-* When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
+* 当应用中的 **AdControl** 请求新广告时，将引发控件的 **ErrorOccurred** 事件，并且事件参数的 **ErrorCode** 属性将具有值 **NoAdAvailable**。
 
 * 与你的应用关联的任何广告单元均会停用。 你无法从开发人员中心帐户中删除这些已停用的广告单元。 如果你已将应用更新为使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)，请忽略这些广告单元并创建新的广告单元。
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 进度栏, toast 进度栏, 通知, toast 数据绑定
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca144f92676f87fcdade37b280c39640bc74624
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5692906"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5757727"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Toast 进度栏和数据绑定
 

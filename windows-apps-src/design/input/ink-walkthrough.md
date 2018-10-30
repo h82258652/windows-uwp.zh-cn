@@ -8,12 +8,12 @@ ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 933c3f1c4c2c57cc0a7a92334223f6c6d4bbb010
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5707159"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5760461"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教程：在 UWP 应用中支持墨迹
 
@@ -40,6 +40,7 @@ ms.locfileid: "5707159"
 * 一台运行当前版本 Windows 10 的计算机（或虚拟机）
 * [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* 具体取决于你的配置，你可能需要安装[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/6.1.9) NuGet 程序包，并在系统设置中启用**开发人员模式**（设置-> 更新和安全-> 对于开发人员->使用开发人员功能）。
 * 如果你还不熟悉使用 Visual Studio 进行通用 Windows 平台 (UWP) 应用开发，请在开始此教程前浏览一下这些主题：  
     * [准备工作](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [创建“Hello, world”应用 \(XAML\)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)

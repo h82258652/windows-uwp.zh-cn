@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b596ab9abd31fa10d0ca07dec973082b495262e
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5684261"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5763550"
 ---
 # <a name="how-x86-emulation-works-on-arm"></a>x86 模拟如何在 ARM 上运行
 x86 应用的模拟使得在 ARM 中可以使用丰富的 Win32 应用生态系统。 这使得用户无需对应用进行任何修改，便可获得运行现有 x86 win32 应用的神奇体验。 该应用甚至不知道它在基于 ARM 的 Windows 电脑上运行，除非它调用特定 API ([IsWoW64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318.aspx))。

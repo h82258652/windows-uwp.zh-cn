@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 联系人, 日历, 约会, 电子邮件
 ms.localizationpriority: medium
 ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702744"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5760534"
 ---
 # <a name="contacts-my-people-and-calendar"></a>联系人、我的人脉和日历
 

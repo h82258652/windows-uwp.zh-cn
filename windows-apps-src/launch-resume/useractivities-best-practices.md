@@ -8,11 +8,11 @@ ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 199499e8737d638301f32d01a00ac603e3f5348f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5688355"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5761196"
 ---
 # <a name="user-activities-best-practices"></a>用户活动的最佳做法
 
