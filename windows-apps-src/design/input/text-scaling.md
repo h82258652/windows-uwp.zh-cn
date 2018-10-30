@@ -10,11 +10,11 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce3ec15a45f812162c7aab0cb9683183d7196ae3
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706974"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754047"
 ---
 # <a name="text-scaling"></a>文本缩放
 
@@ -170,7 +170,7 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 本质上不支持文本缩放�
 
 处理[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系统事件自定义框架和控件中。 用户在其系统设置文本比例因子每次引发此事件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>小结
 
 本主题概要介绍的缩放支持 Windows 中的文本，并包括有关如何自定义用户体验的 UX 和开发人员指南。
 

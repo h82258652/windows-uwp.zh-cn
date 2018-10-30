@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e979428191151f680f51d8d4cf2f37f70b0b369d
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 1503b6816a1ebd687ddd320c550c4476a4c5a038
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5684246"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752992"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>对于开发人员，生成 17763，什么是 Windows 10 中的新增功能
 
@@ -94,7 +94,7 @@ MSIX MakeAppx.exe 工具支持 | 你可以使用 MakeAppx.exe 工具创建的 UW
 
 ### <a name="cwinrt"></a>C++/WinRT
 
-C + + /winrt 是一种新创作和使用 Windows 运行时 Api。 它有在标头文件中实现唯一，旨在为你提供对现代应用功能的一流访问。 [观看视频](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)以了解它的工作原理，然后[阅读开发人员文档](../cpp-and-winrt-apis/index.md)的详细信息。
+C + + /winrt 是一种新创作和使用 Windows 运行时 Api。 它有仅在标头文件中实现，旨在为你提供对现代应用功能的一流访问。 [观看视频](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)以了解它的工作原理，然后[阅读开发人员文档](../cpp-and-winrt-apis/index.md)的详细信息。
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>要开始使用适用于开发人员： 创建和自定义 Windows 10 上的表单
 
