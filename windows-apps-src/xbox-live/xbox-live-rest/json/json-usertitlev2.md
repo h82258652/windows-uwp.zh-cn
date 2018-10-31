@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1735b7fcedd358c290b289b97417e0ea3a6c090b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5752060"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831300"
 ---
 # <a name="usertitle-json"></a>UserTitle (JSON)
 包含用户的游戏数据。 

@@ -9,16 +9,16 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 406b7921c4967c9b1f12fb06d19f50ff12d16311
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5755661"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828133"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
-本部分提供有关统一资源标识符 (Uri) 的详细信息，并使用 Xbox Live 服务的超文本传输协议 (HTTP) 方法。
+本部分提供有关统一资源标识符 (Uri) 和超文本传输协议 (HTTP) 方法使用 Xbox Live 服务的详细信息。
 
 <a id="ID4EAB"></a>
 
