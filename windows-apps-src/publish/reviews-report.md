@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
+Description: The Reviews report in Partner Center lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: 评价报告
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
@@ -8,19 +8,19 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: windows 10、 uwp、 查看、 注释和审阅者
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b246ec0127373dba2385f249640c09940105fa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769093"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831443"
 ---
 # <a name="reviews-report"></a>评价报告
 
 
-在 Windows 开发人员中心仪表板中的**评价**报告可以查看客户在应用商店中的对应用进行评分时输入的评论 （注释）。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**评价**报告可以查看客户在应用商店中的对应用进行评分时输入的评论 （注释）。
 
-可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，你可以通过[Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[获取应用评价](../monetize/get-app-reviews.md)的方法以编程方式检索此数据。
+你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 或者，你可以通过[Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[获取应用评价](../monetize/get-app-reviews.md)的方法以编程方式检索此数据。
 
 你还可以响应客户评论[直接在此页](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或通过使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
@@ -114,7 +114,7 @@ ms.locfileid: "5769093"
 
 ## <a name="responding-to-customer-reviews"></a>回复客户评论
 
-你可以使用 Microsoft 应用商店开发人员中心仪表板、 [Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)来发送对许多客户评论回复。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
+你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)， [Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)来发送对许多客户评论回复。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
 
 根据你所看到的评分和评论，不妨考虑下面提供的一些其他措施。
 

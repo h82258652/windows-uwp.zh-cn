@@ -1,34 +1,34 @@
 ---
 author: JnHs
-Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: 为应用创建广告市场活动
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c6388902322357d27918b6e4b95555785288bc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751523"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833337"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
-可以使用开发人员中心仪表板来创建广告活动，从而有助于推广你的应用并扩大使用你的应用的用户群。 默认情况下，我们将根据你的应用在开发人员中心仪表板中的设置来为你的广告选择目标受众，不过你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
+你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)，从而有助于推广你的应用并扩大用户群中创建广告市场活动。 默认情况下，我们将选择目标受众为你的广告根据你在合作伙伴中心中的应用的设置，但你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
 
 你可以仅为通过[应用认证过程](the-app-certification-process.md) 的最终发布阶段的应用创建广告市场活动。
 
 > [!NOTE]
-> 文档的此部分介绍了如何在开发人员中心仪表板上创建市场活动。 或者，你可以使用 [Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
+> 文档的此部分介绍了如何在合作伙伴中心中创建广告市场活动。 或者，你可以使用 [Microsoft Store 促销 API](../monetize/run-ad-campaigns-using-windows-store-services.md) 以编程方式创建和管理市场活动。
 
 ## <a name="instructions"></a>说明
 
 下面介绍了如何创建广告市场活动来推广应用。
 
-1.  从仪表板的左侧导航菜单中，展开**吸引**，然后选择**广告市场活动**。
+1.  从[合作伙伴中心](https://partner.microsoft.com/dashboard)的左侧的导航菜单中，展开**吸引**，然后选择**广告市场活动**。
 2.  选择**创建市场活动**（或者如果你之前已创建市场活动，请选择**新建市场活动**）。
 3.  在下一页的**目标类型**部分中，选择以下目标之一：
     * **增加应用安装量**。 如果广告市场活动的目的是使用户安装应用，请选择此选项。
@@ -48,7 +48,7 @@ ms.locfileid: "5751523"
 
         每月预算针对创建广告市场活动的月份按比例分配。 换言之，如果你在日历月中途创建广告市场活动，在该月你只需支付每月预算的一半。
 
-    * 单击**添加新的付款方式**指定广告市场活动的付款方式，并填写帐户详细信息。 如果你已提供付款方式，在需要对其进行更新时，可以选择**选择其他付款方式**。 付款方式帐单地址所在的国家/地区必须与你的开发人员中心帐户相关联的国家/地区相匹配。
+    * 单击**添加新的付款方式**指定广告市场活动的付款方式，并填写帐户详细信息。 如果你已提供付款方式，在需要对其进行更新时，可以选择**选择其他付款方式**。 你付款方式帐单地址所在的国家/地区必须与与开发者帐户相关联的国家/地区相匹配。
 
     * 如果你已从 Microsoft 代表收到优惠券来支付广告市场活动，请单击**使用优惠券**、输入优惠券代码，然后单击**应用**即可将优惠券应用到该市场活动。
 
@@ -103,10 +103,3 @@ ms.locfileid: "5751523"
 若要查看市场活动的执行方式，请返回到**广告市场活动**页面。 按**日期**、**市场活动目标**、**应用名称**、**市场活动类型**或**状态**选择**部分筛选器**，以确定报告中包含的内容范围。 除了查看有关活动的**曝光率**、**点击数**、**转换数**和**花费**信息，还可以使用报告**暂停**或**恢复**活动。 有关详细信息，请参阅[广告市场活动报告](promote-your-app-report.md)。
 
 若要编辑市场活动，请在列表中选择其名称。
-
-## <a name="related-topics"></a>相关主题
-
-* [管理广告市场活动](managing-your-ad-campaign.md)
-* [关于自家广告](about-house-ads.md)
-* [“推广你的应用”报告](promote-your-app-report.md)
-* [有关广告市场活动的常见问题](common-questions.md)

@@ -8,12 +8,12 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f5d47bbe87e9319def2e8c6500fd954f2a291e18
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756783"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829907"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
@@ -22,9 +22,11 @@ ms.locfileid: "5756783"
 > [!NOTE]
 > 当你选择**适用于 UWP 管理应用的 Windows SDK**选项安装 Windows 软件开发工具包时，会安装 MakePri.exe。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
-## <a name="makepri-commands"></a>MakePri 命令
+## <a name="getting-help-from-the-command-line"></a>从命令行中获取帮助
 
-运行 `MakePri.exe help` 以查看可以与 MakePri.exe 一起使用的命令。
+你可以运行`MakePri.exe help`或`MakePri.exe /?`以查看你可以使用 MakePri.exe 命令。 你还可以发出`MakePri.exe <command> /?`若要查看有关某个命令，并在极少数情况下的细节，甚至是`MakePri.exe <command> <option>`以查看有关选项的详细信息。
+
+## <a name="makepri-commands"></a>MakePri 命令
 
 ```
 C:\>makepri help
@@ -424,7 +426,7 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 /IndexOptions(io) <OPTIONS>
 ```
 
-**选项**包括以下选项中的逗号分隔的列表。
+**选项**是由以下选项中的逗号分隔列表。
 
 - + /-HiddenFiles(hf)。 索引 （+） 或忽略 （-） 隐藏的文件和文件夹。
 - + /-LinkedFiles(lf)。 索引 （+） 或忽略 （-） 链接的文件和文件夹。

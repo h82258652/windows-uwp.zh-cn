@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
+Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: 运行状况报告
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 运行状况, 崩溃, 无响应事件, 应用运行状况康, 运行状况数据, 堆栈跟踪, cab 文件, 失败, 故障, pdb, 符号
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c32468bfa933ea0d9d56150f0b2610eb1668e5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766195"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829761"
 ---
 # <a name="health-report"></a>运行状况报告
 
-可以通过 Windows 开发人员中心仪表板中的**运行状况**报告获取有关应用性能和质量的数据，包括崩溃和无响应事件。 可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 如果适用，可以查看堆栈跟踪和/或 CAB 文件以便进一步调试。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**运行状况**报告允许你获取相关的性能和质量的应用，包括崩溃和无响应事件的数据。 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 如果适用，可以查看堆栈跟踪和/或 CAB 文件以便进一步调试。
 
 或者，也可以使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索数据。
 

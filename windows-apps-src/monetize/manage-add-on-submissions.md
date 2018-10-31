@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf15f71071355ddf61d820fc33949b10d42cdfa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d8e3ab04c2842fc08fb8b0aa298660bfbd0cfd7f
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741290"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833191"
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
@@ -336,7 +336,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 | 值           | 类型    | 说明               |
 |-----------------|---------|------|
-|     date            |    字符串     |  报告生成的日期和时间，采用 ISO 8601 格式。    |
+|     date            |    字符串     |  日期和报告生成的时间，采用 ISO 8601 格式。    |
 |     reportUrl            |    字符串     |  用于访问报告的 URL。    |
 
 ## <a name="enums"></a>枚举

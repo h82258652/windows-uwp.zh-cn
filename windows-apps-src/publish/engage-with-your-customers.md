@@ -3,20 +3,20 @@ author: jnHs
 Description: Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.
 title: 与客户互动
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1612f4d2f2a68c1367980cf5a064ac8712b9073b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f9f266538c42b83da9135079f51a3f935f459020
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756017"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829156"
 ---
 # <a name="engage-with-your-customers"></a>与客户互动
 
-利用通知、定向优惠、回复评论和反馈等功能，提升客户的参与度和满意度。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)包含功能可帮助你的客户参与度和满意度。 了解如何使用通知、 定向优惠、 回复评论和反馈的详细信息。
 
 -   [创建客户组](create-customer-groups.md)
 -   [回复客户评论](respond-to-customer-reviews.md)

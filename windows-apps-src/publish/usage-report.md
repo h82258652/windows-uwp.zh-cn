@@ -1,24 +1,24 @@
 ---
 author: jnHs
-Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+Description: The Usage report in Partner Center lets you see how customers are using your app.
 title: 使用情况报告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 10/05/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
-ms.openlocfilehash: 3998e8c5b207d8484a621db16d2e72a136f22c80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f07f107a5136ee50cd87032fa3911ab65d33b7c1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766569"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831054"
 ---
 # <a name="usage-report"></a>使用情况报告
 
 
-可通过 Windows 开发人员中心仪表板中的**使用情况**报告查看使用 Windows 10（包括 Xbox）的客户如何使用你的应用，并显示有关已定义的自定义事件的信息。 可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**使用情况**报告可让你查看 Windows 10 （包括 Xbox） 客户如何使用你的应用，并显示有关已定义的自定义事件的信息。 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。
 
 
 ## <a name="apply-filters"></a>应用筛选器

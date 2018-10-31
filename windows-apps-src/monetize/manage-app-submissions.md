@@ -8,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: b042e3cc3e92bce7a895e717c6bc20c2e11d1677
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0f95e91c1ef9e47ab3371a1481237dc510eddae7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748675"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831533"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 
@@ -592,7 +592,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 | 值           | 类型    | 说明             |
 |-----------------|---------|------|
-|     date            |    字符串     |  报告生成的日期和时间，采用 ISO 8601 格式。    |
+|     date            |    字符串     |  日期和报告生成的时间，采用 ISO 8601 格式。    |
 |     reportUrl            |    字符串     |  用于访问报告的 URL。    |
 
 

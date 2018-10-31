@@ -4,23 +4,23 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: 帐户类型、位置和费用
 description: 我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 619b245ed6037192fe8b846a20d9fe0fe97baa24
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741618"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831572"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
-我们在许多[国家和地区](#developer-account-and-app-submission-markets)提供了个人帐户和公司帐户。 任一类型的帐户都向你提供将应用发布到 Microsoft Store 和参与其他 Microsoft 开发人员计划的访问权限。
+Windows 中[的合作伙伴中心](https://partner.microsoft.com/dashboard)的产品/服务计划个人和公司帐户在许多[国家和地区](#developer-account-and-app-submission-markets)。 你将应用发布到应用商店和参与其他 Microsoft 计划访问权限的帐户提供的任何一种类型。
 
 > [!NOTE]
-> 当注册帐户时，确保使用你希望用于开发者帐户的 Microsoft 帐户登录。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
+> 当打开开发者帐户，请确保你想要使用的开发者帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
 在[开始注册过程](http://go.microsoft.com/fwlink/p/?LinkId=615100) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 

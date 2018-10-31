@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: 反馈报告
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
-ms.date: 11/3/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb8958adaeb78a068ae2baad30b7bc9fa96561a2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744049"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828973"
 ---
 # <a name="feedback-report"></a>反馈报告
 
-使用 Windows 开发人员中心仪表板中的“反馈报告”****，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。 你可以在仪表板中查看此数据，或导出该数据以供脱机查看。
+合作伙伴中心中的**反馈报告**可供你查看问题、 建议和投票，Windows 10 客户通过反馈中心提交。 你可以在合作伙伴中心中查看此数据，或导出该数据以供脱机查看。
 
 > [!NOTE]
 > 还可以直接通过此报告[回复反馈](respond-to-customer-feedback.md)，让客户知道你正在听取他们的反馈。
@@ -26,7 +26,7 @@ ms.locfileid: "5744049"
 
 可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的反馈 API，以便允许客户[直接从应用启动“反馈中心”](../monetize/launch-feedback-hub-from-your-app.md)。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以通过使用“反馈中心”应用来留下该应用的反馈。 因此，你可能会看到在此报告中的客户反馈，即使你未明确要求反馈从你的应用内。
 
-使用[软件包外部测试版](package-flights.md)时反馈也有用，因为当客户留下反馈时，反馈报告将展示每个客户已在其设备上安装的特定程序包。
+使用[软件包外部测试版](package-flights.md)，因为**反馈**报告将展示每个客户已在其设备安装，当客户留下反馈的特定程序包时反馈也会有所帮助。
 
 > [!TIP]
 > 对于概览评论、 评分和跨所有应用的用户反馈最近 30 天内，在左侧的导航菜单中展开**参与**并选择**评论和反馈。** 

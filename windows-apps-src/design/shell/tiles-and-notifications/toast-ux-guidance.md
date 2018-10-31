@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，集合、 组、 ux，ux 指南，指导、 操作、 toast，操作中心、 noninterruptive、 有效通知、 非侵入式通知，操作，管理，组织
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ee3431681f3d9fba5c50759e822d78c09826957
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 3c77719bd45c3169ec02a280099d27e10099a25c
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767918"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828756"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast 通知的 UX 指南
 通知是现代生命; 的必要组成部分这些设置有助于用户更高效且参与与应用和网站，以及保持当前使用的任何更新。 不过，通知可以快速打开与适用于 overbearing 如果它们不设计以用户为中心的方式产生干扰。 通知是离开正在处于关闭状态，一个右键单击，并且它后不太可能处于关闭状态，它们将处于打开状态再次。  以确保你的通知尊重用户的屏幕空间和时间，因此你可以将此参与通道保留打开。
@@ -42,7 +42,7 @@ ctionable 通知是一个非常强大的工具，以帮助用户感觉高效、 
 
 **原始通知：** 使用[原始通知](raw-notification-overview.md)可以很有利出于多种原因，尤其是在左键最小化用户中断。  发送原始通知将唤醒你的应用在后台，这样通知有意义立即提供你的应用的上下文中是否可以访问。 如果它是某些感觉应显示给用户立即，即可弹出从[本地 toast](send-local-toast.md) 。  如果它是用户不需要查看现在，你都能够创建[计划的 toast](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/)将在以后触发。
 
-**映像 toast:** 还可以引发将跳过弹出在右下角的屏幕，并改为通知直接发送到操作中心的通知。 这被通过[SupressPopup 属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)设置为 True。 尽管可能存在一些怀疑周围不在操作中心之外弹出通知，我们看到 2-3 倍更高版本上生活在操作中心的 toast 的参与度弹出 toast。  当他们已准备好接收 notificaitons，可以控制当它们中断，这是在操作中心中的内容可以是 noninvasively 通知用户得更有效的原因，用户将更具响应性。
+**映像 toast:** 还可以引发将跳过弹出在右下角的屏幕，并改为通知直接发送到操作中心的通知。 这被通过[SuppressPopup 属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)设置为 True。 尽管可能存在一些怀疑周围不在操作中心之外弹出通知，我们看到 2-3 倍更高版本上生活在操作中心的 toast 的参与度弹出 toast。  当他们已准备好接收 notificaitons，可以控制当它们中断，这是在操作中心中的内容可以是 noninvasively 通知用户得更有效的原因，用户将更具响应性。
 
 ## <a name="3-clear-out-the-clutter"></a>3.清除待筛选邮件
 通知可以保留在操作中心内相当长时间 （默认三天）。  务必确保位于此处的内容是保持最新状态和相关每次用户打开操作中心。 你有浪费用户的屏幕空间，以及占用更多的可用于将出现更保持最新的空位。  我们假设用户安装你的电子邮件管理应用，并接收十个电子邮件和以及这些电子邮件的十个通知。  具体取决于你所需的体验，你可以考虑清除这些通知，如果用户已读取的相应的电子邮件，或作为一种方法从操作中心中删除旧的待筛选邮件打开该应用。

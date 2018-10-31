@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: 加载项购置报告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 加载项销售, 加载项购置, iap 销售, 应用内产品, iap, 加载项
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b25067104a664cb90ef068749d9e4cd00bcc80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761857"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829794"
 ---
 # <a name="add-on-acquisitions-report"></a>加载项购置报告
 
 
-在 Windows 开发人员中心仪表板中的**加载项购置**报告可以查看多少加载项，你已售出，以及客户统计和平台详细信息，以及显示有关 windows 10 的客户 （包括 Xbox） 的转换信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**加载项购置**报告可以查看多少加载项，你已售出，以及客户统计和平台详细信息，以及显示有关 windows 10 的客户 （包括 Xbox） 的转换信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。
 
-可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
+你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 或者，也可以使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
 
 在此报告中，加载项购置意味着客户已向你购买了某个加载项（或者当你免费提供时免费获得）。 同一客户多次购买的同一易耗型加载项的操作计为单独的加载项购置。
 

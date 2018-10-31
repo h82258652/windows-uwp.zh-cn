@@ -4,28 +4,28 @@ Description: The Store listings section of the app submission process is where y
 title: 创建 Microsoft Store 一览
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 06/18/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
-ms.openlocfilehash: 237642897beb51c9b685068ee714182fa1fe1bb5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec1867e747f3458e3a9cffabe9a45535d4c27489
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766529"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829997"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 
 
 [应用提交过程](app-submissions.md)的 **Microsoft Store 一览**部分是你提供文本和[图像](app-screenshots-and-images.md)的地方，当客户在 Microsoft Store 中查看你的应用一览时将看到这些内容。
 
-虽然 **Microsoft Store 一览**中的许多字段可选，但我们建议提供多张图像以及尽可能详细的信息，以便你的应用一览能脱颖而出。填写文本描述并提供至少一张[屏幕截图](app-screenshots-and-images.md#screenshots)是完成 **Microsoft Store 一览**步骤的最低要求。 对于某些提交，[隐私策略](#privacy-policy)和[支持联系人信息](#support-contact-info)字段也是必填项。 
+虽然 **Microsoft Store 一览**中的许多字段可选，但我们建议提供多张图像以及尽可能详细的信息，以便你的应用一览能脱颖而出。填写文本描述并提供至少一张[屏幕截图](app-screenshots-and-images.md#screenshots)是完成 **Microsoft Store 一览**步骤的最低要求。
 
 > [!TIP]
-> 如果希望在 .csv 文件中脱机输入一览信息，而不是在仪表板中直接提供信息、上载文件，还可以选择[导入和导出 Microsoft Store 一览](import-and-export-store-listings.md)。 如果你有多种语言的一览，使用导入和导出选项可能尤其方便，因为这样你可以一次执行多项更新。 
+> 你可以选择性地[导入和导出应用商店一览](import-and-export-store-listings.md)如果你希望在.csv 文件，而不是提供的信息和上载文件在合作伙伴中心中直接输入一览信息脱机。 如果你有多种语言的一览，使用导入和导出选项可能尤其方便，因为这样你可以一次执行多项更新。 
 
-默认情况下，我们将针对你的所有目标操作系统使用相同的 Microsoft Store 一览（每种语言）。 如果希望针对提交支持的特定操作系统使用自定义的 Microsoft Store 一览，可以[创建特定于平台的 Microsoft Store 一览](create-platform-specific-store-listings.md)。 Windows 10 上将始终向客户显示默认列表。
+如果你以前发布的应用支持 Windows 8.x 和/或 Windows Phone 8.x 或更早版本，你可以[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)向这些客户显示。 
 
 ## <a name="store-listing-languages"></a>应用商店一览语言
 
@@ -38,19 +38,19 @@ ms.locfileid: "5766529"
 
 在“其他应用商店一览语言”**** 部分中，可以单击“管理其他语言”**** 添加或删除程序包*不*包括的语言。 查看你想要添加的语言的对话框，然后单击“更新”****。 你已经选择的语言将显示在“其他应用商店一览语言”**** 部分中。 若要删除其中一种或多种语言，请单击“删除”****（或单击“管理其他语言”**** 并取消选中你想要删除的语言的对话框）。
 
-在完成选择后，单击**保存**以返回到提交概述页。
+在完成选择后，单击**保存**以返回到提交概述页。 
 
 ## <a name="add-and-edit-store-listing-info"></a>添加和编辑应用商店一览信息
 
-若要编辑应用商店一览，请从提交概述页选择语言名称。
+若要编辑应用商店一览，请从提交概述页选择语言名称。 除非你选择导出应用商店一览并脱机，则同时导入一览数据的所有，你必须单独编辑每种语言。 有关详细信息的工作原理，请参阅[导入和导出应用商店一览](import-and-export-store-listings.md)。
 
-**应用商店一览**页面顶部的字段与所选语言的默认应用商店一览相关联。 这些字段将显示给所有客户，除非你有面向较早 OS 版本（Windows 8.x 或更早版本；Windows Phone 8.x 或更早版本）的程序包并创建特定于平台的应用商店一览，以包含要显示给指定 OS 版本的客户的不同屏幕截图或信息。 有关详细信息，请参阅[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)。
+可用的字段如下所述。
 
 ## <a name="product-name"></a>产品名称
 
 此下拉框允许你指定的名称应在应用商店一览中 （如果你的应用的多个名称）。
 
-如果你已上载程序包中的应用商店一览，你正在为相同的语言，将会选择这些程序包中使用的名称。 如果你需要重命名[该应用](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，你可以使用程序包，使用新名称创建新的提交时选择不同的保留的名称下面。
+如果你已上载包相同的语言列出你的应用商店中正在努力，将选择这些程序包中使用的名称。 如果你需要重命名[该应用](manage-app-names.md#rename-an-app-that-has-already-been-published)已发布后，你可以选择不同的保留的名称下面，当你创建新的提交之后你上传了程序包，使用新名称。
 
 如果尚未上载程序包的语言正在处理的已保留多个名称，你将需要选择其中一个保留的应用名称，因为在要从中提取名称的语言中没有相关联的软件包。
 
@@ -67,14 +67,14 @@ ms.locfileid: "5766529"
 
 ## <a name="whats-new-in-this-version"></a>此版本的最近更新
 
-如果这是你首次提交应用，请将此字段留空。 若要更新现有应用，通过此处可以让客户了解最新版的应用发生了哪些变更。 此字段的长度限制是 1500 个字符。 （之前，此字段称为**发行说明**）。
+如果这是你首次提交应用，请将此字段留空。 对于现有的应用的更新，这是此处可以让客户了解最新版本中更改的内容。 此字段的长度限制是 1500 个字符。 （之前，此字段称为**发行说明**）。
 
-## <a name="app-features"></a>应用功能
+## <a name="product-features"></a>产品功能
 
 这是应用主要功能的简要汇总。 除了**描述**外，这些功能还将在应用的 Microsoft Store 一览的**功能**部分，以项目符号列表的形式向客户显示。 保持简洁，每个功能只用几句话（不要超过 200 个字符）描述。 最多可以包括 20 个功能。
 
 > [!NOTE]
-> 在 Microsoft Store 一览中，应用功能将以项目符号形式显示，因此不要添加自己的项目符号。
+> 这些功能将以项目符号形式在应用商店一览，因此不要添加自己的项目符号。
 
 ## <a name="screenshots"></a>屏幕截图
 
@@ -93,11 +93,11 @@ ms.locfileid: "5766529"
 有关详细信息，请参阅[应用商店徽标](app-screenshots-and-images.md#store-logos)。
 
 
-## <a name="additional-art-assets"></a>其他插图资源
+## <a name="trailers-and-additional-assets"></a>预告片和其他资源
 
-可提交其他产品资产，包括预告片和促销图像。 这是可选的，但建议你尽可能多地上传此类资产。 这些图像有助于客户更好地了解产品，并且可让列表更具吸引力。
+你可以为你的产品，包括视频预告片和促销图像提交其他资源。 这是可选的，但建议你尽可能多地上传此类资产。 这些图像有助于客户更好地了解产品，并且可让列表更具吸引力。
 
-有关详细信息，请参阅[其他插图资源](app-screenshots-and-images.md#additional-art-assets)。
+有关详细信息，请参阅[预告片和其他资源](app-screenshots-and-images.md#trailers-and-additional-assets)。
 
 <a id="supplemental-information" />
 
@@ -149,7 +149,7 @@ ms.locfileid: "5766529"
 
 ## <a name="additional-information"></a>其他信息
 
-以下项可帮助客户发现和了解你的产品。 你在此处输入的信息将应用于给定语言的所有应用商店一览，无论操作系统是什么，即使你[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)也是如此。 （此部分以前称为**共享字段**）。
+以下项可帮助客户发现和了解你的产品。 （此部分以前称为**共享字段**）。
 
 ### <a name="search-terms"></a>搜索词
 

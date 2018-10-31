@@ -4,16 +4,16 @@ Description: Product declarations help make sure your app is displayed appropria
 title: 产品声明
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1fc444dbd106f4eeb0996903f71701a96a9735
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747825"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831156"
 ---
 # <a name="product-declarations"></a>产品声明
 
@@ -46,16 +46,14 @@ ms.locfileid: "5747825"
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客户可以将此应用安装到备用驱动器或可移动存储。
 
-默认情况下，以使客户能够将应用安装到外部或可移动存储媒体 SD 卡，如或非系统卷驱动器等外部驱动器，此框处于选中状态。 （适用于 Windows Phone 8.1，这是通过 StoreManifest.xml 指示。）
+默认情况下，以使客户能够将应用安装到外部或可移动存储媒体 SD 卡，如或非系统卷驱动器等外部驱动器，此框处于选中状态。
 
-如果你想要阻止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。
-
-请注意，如果没有限制，以便*应用只能*安装选项安装到可移动存储媒体。
+如果你想要阻止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。 （请注意，如果没有限制，以便*应用只能*安装选项安装到可移动存储媒体。）
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。
 
-此框在默认情况下处于选中状态，从而允许在客户选择使用 Windows 创建 OneDrive 自动备份时，将你的应用的数据包含在内。 （适用于 Windows Phone 8.1，这是通过 StoreManifest.xml 指示。）
+此框在默认情况下处于选中状态，从而允许在客户选择使用 Windows 创建 OneDrive 自动备份时，将你的应用的数据包含在内。
 
 如果要防止你的应用数据包含在自动备份中，请取消选中此框。
 

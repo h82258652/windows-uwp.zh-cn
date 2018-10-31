@@ -7,12 +7,12 @@ ms.date: 05/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f6248452d97d10b6004067b6c0a973973443db
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752640"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5832446"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT 的错误处理
 
@@ -77,7 +77,7 @@ winrt::check_bool(::SetEvent(h.get()));
 如果你传递到 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 的值为 false，那么以下操作序列将生效。
 
 - **winrt::check_bool** 调用 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 函数。
-- **winrt::throw_last_error** 调用 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) 来检索调用线程的最后一个错误代码值，然后调用 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) 函数。
+- **winrt:: throw_last_error**调用[**时出错**](https://msdn.microsoft.com/library/windows/desktop/ms679360)检索调用线程的最后一个错误代码值，然后调用[**winrt:: throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)函数。
 - **winrt::throw_hresult** 使用表示该错误代码的 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 对象（或标准对象）抛出异常。
 
 由于 Windows API 使用各个返回值类型报告运行时错误，因此除 **winrt::check_bool** 外，还有其他一些用于检查值和抛出异常的有用的帮助程序函数。
