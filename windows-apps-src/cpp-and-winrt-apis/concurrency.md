@@ -7,12 +7,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: d7807b71f1c775493e525284e61c093081eb2c2b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d59fec17c1e8cc340f630ba236f7361325046ea2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5754840"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824484"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>通过 C++/WinRT 的并发和异步操作
 
@@ -258,7 +258,7 @@ IASyncAction DoWorkAsync(Param const value);
 
 协同程序是像任何其他函数调用方受到阻止，直到函数将执行返回给它。 用于返回的协同程序的第一个机会是第一个`co_await`， `co_return`，或`co_yield`。
 
-因此，在进行之前计算绑定协同程序中的工作，你需要将执行返回给调用方 （换句话说，引入暂停点），以便调用方不被阻塞。 如果你正在尚未执行此操作`co-await`运算某些其他操作，则可以`co-await` [**winrt:: resume_background**](/uwp/cpp-ref-for-winrt/resume-background)函数。 这将控制权返回给调用方，然后立即在某个线程池线程上恢复执行。
+因此，在进行之前计算绑定协同程序中的工作，你需要将执行返回给调用方 （换句话说，引入暂停点），以便调用方不被阻塞。 如果你正在尚未执行此操作`co_await`运算某些其他操作，则可以`co_await` [**winrt:: resume_background**](/uwp/cpp-ref-for-winrt/resume-background)函数。 这将控制权返回给调用方，然后立即在某个线程池线程上恢复执行。
 
 实现中使用的线程池是底层 [Windows 线程池](https://msdn.microsoft.com/library/windows/desktop/ms686766)，因此具有极高的效率。
 
@@ -309,7 +309,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 只要上面的协同程序是从创建 **TextBlock** 的 UI 线程调用的，这种技术就有效。 在你的应用中，有很多时候都是可以保证这一点的。
 
-更多常规解决方案更新 UI，涵盖调用线程不确定的情况下，你可以`co-await` [**winrt:: resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)函数以切换到特定的前台线程。 在下面的代码示例中，我们通过传递与 **TextBlock** 关联的调度程序对象（通过访问其 [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 属性）来指定前台线程。 **winrt::resume_foreground** 实现对该调度程序对象调用 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，以执行协同程序中该调度程序对象之后的工作。
+更多常规解决方案更新 UI，涵盖调用线程不确定的情况下，你可以`co_await` [**winrt:: resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)函数以切换到特定的前台线程。 在下面的代码示例中，我们通过传递与 **TextBlock** 关联的调度程序对象（通过访问其 [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 属性）来指定前台线程。 **winrt::resume_foreground** 实现对该调度程序对象调用 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，以执行协同程序中该调度程序对象之后的工作。
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
@@ -328,7 +328,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 一般来说之后暂停点协同程序中，, 执行的原始线程可能会消失和恢复可能会发生任何线程上 （换言之，任何线程可能调用**已完成**的异步操作）。
 
-但是，如果你`co-await`四种 Windows 运行时异步操作类型 (**IAsyncXxx**)，则 C + + WinRT 捕获调用上下文此时你`co-await`。 并且，它可确保你是仍在该上下文上延续恢复时。 C + + WinRT 一点将通过检查你是否已在调用上下文，如果不是，切换到它。 如果你已在之前在单线程单元 (STA) 的线程上`co-await`，然后你将在同一个以后;如果你已在之前在多线程的单元 (MTA) 的线程上`co-await`，然后就随后会在一个。
+但是，如果你`co_await`四种 Windows 运行时异步操作类型 (**IAsyncXxx**)，则 C + + WinRT 捕获调用上下文此时你`co_await`。 并且，它可确保你是仍在该上下文上延续恢复时。 C + + WinRT 一点将通过检查你是否已在调用上下文，如果不是，切换到它。 如果你已在之前在单线程单元 (STA) 的线程上`co_await`，然后你将在同一个以后;如果你已在之前在多线程的单元 (MTA) 的线程上`co_await`，然后就随后会在一个。
 
 ```cppwinrt
 IAsyncAction ProcessFeedAsync()

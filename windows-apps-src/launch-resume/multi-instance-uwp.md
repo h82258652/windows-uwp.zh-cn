@@ -7,12 +7,12 @@ ms.author: twhitney
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8729ec5219159884ae0e99d8cc6eaa8dbe900d90
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c70d696c1211cfa4f929178f0cf0d9da76ae74c2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752838"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825793"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>创建多实例通用 Windows 应用
 
@@ -60,7 +60,7 @@ ms.locfileid: "5752838"
 
 如上所示，**多实例重定向 UWP 应用**模板将 `SupportsMultipleInstances` 添加到 package.appxmanifest 文件，并且还将 **Program.cs**（或 **Program.cpp**，如果使用的是模板的 C++ 版本）添加到包含 `Main()` 函数的项目中。 用于重定向激活操作的逻辑包含在 `Main` 函数中。 **Program.cs**的模板如下所示。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示提供 shell 首选的实例此激活请求，如果存在 (或`null`如果没有)。 如果 shell 将提供首选项，然后你可以可以重定向激活到该实例，或如果你选择可以忽略它。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示提供 shell 首选的实例此激活请求，如果存在 (或`null`如果没有)。 如果 shell 将提供首选项，然后你可以将重定向激活到该实例，或如果你选择可以忽略它。
 
 ``` csharp
 public static class Program
@@ -127,7 +127,7 @@ public static class Program
 ## <a name="additional-considerations"></a>其他注意事项
 
 - 面向桌面和物联网 (IoT) 项目的 UWP 应用支持多实例。
-- 若要避免发生争用和争用导致的问题，多实例应用需要采取措施对访问设置、应用本地存储以及能在多个实例之间共享的任何其他资源（例如用户文件、数据存储等）进行分区/同步。 可使用标准同步机制，如互斥体、信号灯、事件等等。
+- 若要避免发生争用和争用导致的问题，多实例应用需要采取措施对访问设置、应用本地存储以及能在多个实例之间共享的任何其他资源（例如用户文件、数据存储等）进行分区/同步。 标准同步机制，如互斥体、 信号灯、 事件和等等，都可用。
 - 如果应用的 Package.appxmanifest 文件中有 `SupportsMultipleInstances`，则其扩展无需声明 `SupportsMultipleInstances`。 
 - 如果将 `SupportsMultipleInstances` 添加到除后台任务或应用服务之外的任何其他扩展，并且托管该扩展的应用也不在其 Package.appxmanifest 文件中声明 `SupportsMultipleInstances`，则会发生架构错误。
 - 应用可以使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)声明在其清单中组合多个后台任务归入同一主机。 这与多实例相冲突，在多实例中，每个激活操作会进入单独的主机。 因此，应用无法在其清单中同时声明 `SupportsMultipleInstances` 和 `ResourceGroup`。

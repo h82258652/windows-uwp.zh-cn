@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcbd1dfceb0dc51addfe9572fba746680745b26
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752208"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824869"
 ---
 # <a name="reveal-highlight"></a>突出显示展示
 
@@ -115,7 +115,7 @@ ms.locfileid: "5752208"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>在自定义控件上启用“展示”
 
-你可以向自定义控件添加“展示”。 你执行操作前，最好先对“展示”效果的工作原理多些了解。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
+你可以向自定义控件添加“展示”。 在执行操作之前，最好多一些了解展示效果的工作原理。 “展示”由两种单独的效果组成：**边框展示**和**悬停展示**。
 
 - **边框**会在指针靠近时显示交互式元素的边框。 此效果会向你显示，这些邻近项目可以与当前的聚焦项目采用类似操作。
 - **悬停**会在悬停或聚焦的项目周围应用一个柔和的光晕形状，并在单击时播放按下动画。 

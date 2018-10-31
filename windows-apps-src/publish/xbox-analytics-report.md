@@ -1,27 +1,27 @@
 ---
 author: jnHs
-Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox 分析报告
 ms.author: wdg-dev-content
-ms.date: 06/04/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox 实时分析, xbox 统计数据
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a5ec3c81b9cddce4c38ad7f764d35bd6f34f86
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c2c1f54a402fc4ae7184f1d588cc255525f762c2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748007"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827390"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析报告
 
-Windows 开发人员中心仪表板中的 **Xbox 分析报告**向你显示了有关客户使用游戏中的 Xbox 功能的情况统计数据。 它还提供服务运行状况信息，以帮助你解决客户端错误。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**Xbox 分析**报告显示有关你的客户在游戏中的 Xbox 功能的统计信息。 它还提供服务运行状况信息，以帮助你解决客户端错误。
 
 > [!IMPORTANT]
 > 只有当你要发布 Xbox 游戏或要发布一款使用 Xbox Live 服务的游戏时，才能查看此报告。 若要执行此操作，你必须先通过[概念审批过程](../gaming/concept-approval.md)，其中包括通过[Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏和游戏通过提交[ID@Xbox计划](../xbox-live/developer-program-overview.md#id)。 通过[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏是不在此报告当前可见。
 
-通过展开**分析**并选择 **Xbox 分析**，你可以从游戏的左侧导航菜单中查看 **Xbox 分析**报告。  可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。
+通过扩展**分析**并选择**Xbox 分析**，你可以为你的游戏中查看从左侧的导航菜单中的**Xbox 分析**报告。  你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。
 
 
 ## <a name="overview-tab"></a>“概述”选项卡

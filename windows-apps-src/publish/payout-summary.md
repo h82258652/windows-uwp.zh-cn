@@ -4,16 +4,16 @@ Description: The Payout summary shows you details about the money you’ve earne
 title: 付款摘要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 02/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc0b38c8118a3cfc8b157eacecab91f7ac2b120
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751250"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827426"
 ---
 # <a name="payout-summary"></a>付款摘要
 
@@ -29,7 +29,7 @@ ms.locfileid: "5751250"
 >
 > 月付（如果已达到任何适用的付款阈值）。 我们以后通常在每月的第 15 日支付指定月的任何到期付款。 请注意，付款通常需要 3 到 10 个工作日才会到达你的付款帐户。 有关详细信息，请参阅[付款阈值、方法和时间范围](payment-thresholds-methods-and-timeframes.md)。
 
-若要查看**付款摘要**，单击开发人员中心右上角附近显示的**付款**图标，然后选择**付款摘要**。
+要查看**付款摘要**，请单击显示在合作伙伴中心中的右上角附近的**付款**图标，然后选择**付款摘要**。
 
 ## <a name="current-proceeds-and-payments"></a>当前收益和付款
 

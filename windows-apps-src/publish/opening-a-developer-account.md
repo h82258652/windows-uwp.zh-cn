@@ -2,22 +2,22 @@
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: 开设开发者帐户
-description: 有关如何为 Microsoft Store 和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。
+description: 下面是如何 Winodws 开发者帐户注册 Microsoft 应用商店和其他 Microsoft 计划在合作伙伴中心的概述。
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 935e628bb285adea8e515f6192d7f2654c05022e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b34bdfae8faf7fee2b2eae373483eb9e4dea1972
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757627"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828222"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
-有关如何为 Microsoft Store 和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。
+下面是概述了如何注册[合作伙伴中心](https://partner.microsoft.com/dashboard)中的 Windows 开发人员帐户。
 
 > [!NOTE]
 > 当你注册开发者帐户时，我们将使用你在联系人信息中提供的电子邮件地址，以发送与你的帐户相关的电子邮件通信。 有时，其中可能包括有关我们的计划的信息性电子邮件。 如果你通过单击[退出](http://go.microsoft.com/fwlink/p/?LinkId=533280)选择不接收这些信息电子邮件，则请注意，我们仍然会向你发送交易电子邮件（例如，为了让你知道你的应用已经通过认证，或付款已在路上）。 这些电子邮件是你的帐户的必要组成部分，除非关闭你的帐户，否则你将继续收到这些交易电子邮件。
@@ -57,11 +57,11 @@ ms.locfileid: "5757627"
 ## <a name="additional-guidelines-for-company-accounts"></a>有关公司帐户的其他指南
 
 > [!IMPORTANT]
-> 若要允许多位用户访问你的开发人员中心帐户，我们建议使用 Azure Active Directory 将角色分配给个别用户 （而不是对 Microsoft 帐户的共享访问）。 之后每位用户可以使用自己的单独 Azure AD 凭据进行登录，从而访问开发人员中心帐户。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+> 若要允许多位用户访问开发者帐户，我们建议使用 Azure Active Directory 将角色分配给个别用户 （而不是对 Microsoft 帐户的共享访问）。 每个用户则可以通过使用自己的单独登录到合作伙伴中心访问开发人员帐户的 Azure AD 凭据。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
 
-创建公司帐户时这些指南可帮助，如果有多人需要通过使用打开该帐户的 Microsoft 帐户 （而不是作为单个用户添加到开发人员中心帐户） 中访问该帐户。
+如果你将需要具有多个用户访问权限，通过使用打开它的 Microsoft 帐户 （而不是作为单个用户添加到帐户），以下指南的公司帐户可能会有所帮助：
 
--   使用尚未属于你或其他个人的电子邮件地址创建 Microsoft 帐户，如 MyCompany_DevCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是在你的公司已经使用 Azure AD。 (如上所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
+-   创建使用尚未属于你或其他个人，如电子邮件地址的 Microsoft 帐户MyCompany_PartnerCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是在你的公司已经使用 Azure AD。 (如上所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户。
 -   设置公司电子邮件分发列表，其中包括每位需要访问开发人员帐户，并将添加到此电子邮件地址 [Microsoft 帐户关联的安全信息 [(https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如当新的安全信息添加到 t他帐户，或者从新设备的访问时）。
 -   添加 Microsoft 帐户的安全信息的公司电话号码。 尝试使用无需分机并可供关键团队成员的数字。
@@ -76,7 +76,7 @@ ms.locfileid: "5757627"
 
 Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到 https://account.microsoft.com/security 并使用 Microsoft 帐户登录来管理你的安全信息。 有关详细信息，请参阅[安全信息和安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
 
-在登录到 Windows 开发人员中心仪表板使用 Microsoft 帐户时，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议指定为*受信任的设备*经常使用的电脑。 当你从受信任的设备登录时，通常不会提示你的代码，尽管可能偶尔系统提示你在特定情况下，或者如果你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+在你登录到合作伙伴中心使用 Microsoft 帐户，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议指定为*受信任的设备*经常使用的电脑。 当你从受信任的设备登录时，通常不会提示你的代码，尽管可能偶尔系统提示你在特定情况下，或者如果你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
 
 
 ## <a name="closing-your-account"></a>关闭你的帐户

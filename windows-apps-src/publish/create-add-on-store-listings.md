@@ -4,29 +4,28 @@ Description: When submitting an add-on, the info you provide in the Store listin
 title: 创建加载项 Store 一览
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b03984bf858d805142ac768ecf8ddd69a6232db
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 811c2c978d04e7636bb5f52a2ebf7587193c4786
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760926"
+ms.locfileid: "5826981"
 ---
 # <a name="create-add-on-store-listings"></a>创建加载项 Store 一览
 
-
-提交加载项时，如果你的客户看到获取加载项的选项，将向他们显示在“ Store 一览”**** 步骤中提供的信息。 请务必仔细考虑 Store 一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义 Store 一览。
+提交时在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的加载项，在**应用商店一览**步骤中提供的信息，在他们可看到获取加载项的选项将显示给客户。 请务必仔细考虑 Store 一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义 Store 一览。
 
 > [!TIP]
-> 如果要在 .csv 文件中脱机输入一览信息，而不是在仪表板中直接提供此信息，还可以针对加载项[导入和导出 Store 一览](import-and-export-store-listings.md)。 此操作在使用多种语言创建一览时尤其方便。 不过，你始终可以直接在仪表板上输入信息，而不必使用导入/导出功能。
+> 你还可以[导入和导出应用商店一览](import-and-export-store-listings.md)的加载项如果你想要在.csv 文件，而不是合作伙伴中心中直接提供此信息输入一览信息脱机。 此操作在使用多种语言创建一览时尤其方便。 但是，你始终可以直接在[合作伙伴中心](https://partner.microsoft.com/dashboard)，而无需使用导入/导出功能中输入你的信息。
 
 
-## <a name="store-listing-languages"></a>Store 一览语言
+## <a name="store-listing-languages"></a>应用商店一览语言
 
-需要指定一种或多种[语言](supported-languages.md)，才可以输入 Store 一览信息。 必须使用至少一种语言完成** Store 一览**页面。 我们建议为应用支持的每种语言提供 Store 一览。
+需要指定一种或多种[语言](supported-languages.md)，才可以输入 Store 一览信息。 必须使用至少一种语言完成** Store 一览**页面。 我们建议创建你的应用的应用商店一览每种语言支持。
 
 在加载项提交的** Store 一览**部分下，单击**添加/删除语言**，然后单击下一页上的**管理语言**。 选中要添加的语言的框，然后单击**更新**。 你已选择的语言将显示在页面的** Store 一览语言**部分。
 

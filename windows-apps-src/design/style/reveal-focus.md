@@ -11,12 +11,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e590f140cfa86fed0b3beccce9b39ce284c076
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b7c80ed7521d797602cde15607f966a1fc3665cd
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5763849"
+ms.locfileid: "5823303"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -74,7 +74,7 @@ ms.locfileid: "5763849"
 
 你可以通过修改每个控件的焦点视觉属性来自定义显示焦点效果： [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，以及[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 这些属性让你可以自定义焦点矩形的颜色和粗细。 （它们与你用于创建[高可见性焦点视觉](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的属性相同。） 
 
-但在开始对构成前，最好先有点多了解构成展示焦点的组件。
+但在开始对构成前，最好先多一些了解构成展示焦点的组件。
 
 有默认的展示的焦点视觉的三个部分： 主边框、 辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 展示焦点发光具有粗细与主边框的粗细成比例，并且*之外*的主边框周围运行。
 

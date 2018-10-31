@@ -3,16 +3,16 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 选择可见性选项
 ms.author: wdg-dev-content
-ms.date: 08/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 可见性, 私人受众, 可用的, 可检测到的
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a83f1ea4547e60547e427cedd5ad5338e450762
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757982"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5826599"
 ---
 # <a name="choose-visibility-options"></a>选择可见性选项
 
@@ -60,7 +60,7 @@ ms.locfileid: "5757982"
 - 无论你的组织许可设置如何，都不能通过适用于企业的 Microsoft Store 和/或适用于教育的 Microsoft Store 提供你的应用，甚至对于私人受众中的用户也是如此。
 - 虽然 Microsoft Store 确保只有使用 Microsoft 帐户登录并已添加到你的私人受众中的用户可以看到并使用你的应用，但我们无法阻止这些用户向私人受众以外的用户共享信息或屏幕截图。 保密性至关重要，请确保你的私人受众仅包括你相信不会与他人共享你的应用详细信息的用户。
 - 请确保测试人员了解如何向你提供反馈。 你可能不希望他们在反馈中心留下反馈，因为其他客户都可以看到该反馈。 请考虑包括一个链接，以便他们发送电子邮件或以其他方式提供反馈。
-- 你的私人受众中的人员撰写的任何评论均可供你查看。 但是，这些评价不会在你的应用的 Microsoft Store 一览中发布，即使将你的提交移至**公共受众**后也是如此。 你可以通过在开发人员中心中查看[评论报告](reviews-report.md)来阅读你的私人受众撰写的评论，但你无法下载此数据或使用 [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式访问这些评论。
+- 你的私人受众中的人员撰写的任何评论均可供你查看。 但是，这些评价不会在你的应用的 Microsoft Store 一览中发布，即使将你的提交移至**公共受众**后也是如此。 你可以读取撰写的评论由你的私人受众查看[评论报告](reviews-report.md)，但无法下载此数据，也可以使用[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以编程方式访问这些评论。
 - 当你将应用从**私人受众**移至**公共受众**时，Store 一览中显示的**发布日期**将是它首次发布至公共受众的日期。
 
 ## <a name="discoverability"></a>可发现性

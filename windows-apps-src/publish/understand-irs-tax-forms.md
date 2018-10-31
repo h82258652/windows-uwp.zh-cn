@@ -3,17 +3,17 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: 了解 Microsoft 发出的 IRS 税单
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: e16333b061c3f50d4c0d66b0704bf0977570595e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742147"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5836065"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -25,8 +25,8 @@ ms.locfileid: "5742147"
 
 | IRS 税单 | 说明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 打印的表单将在 **1 月 31 日**或之前加盖邮戳，并且将同时在开发人员中心（**仪表板 > 帐户设置 > 税务资料**）中提供 .pdf 副本 |
-|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印的表单将在 **3 月 15 日**或之前加盖邮戳，并且将同时在开发人员中心（**仪表板 > 帐户设置 > 税务资料**）中提供 .pdf 副本 |
+|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 将打开或**1 月 31**日之前加盖邮戳打印的表单和.pdf 副本可在[合作伙伴中心](https://partner.microsoft.com/dashboard)中 (在**帐户设置 > 税务资料**) 在同一时间 |
+|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 将打开或**3 月 15**日之前加盖邮戳打印的表单，并将在合作伙伴中心中提供.pdf 副本 (在**帐户设置 > 税务资料**) 在同一时间 |
 
 > [!NOTE]
 > 我们在 IRS 税单使用的地址来自于你的[税务配置文件](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
@@ -106,7 +106,7 @@ ms.locfileid: "5742147"
     <td valign="top"><b>我已经填写了 W8 表单，为什么我收到的付款中仍然预扣了税款？</b></td>
     <td valign="top">如果以下情况之一，将会预扣税款：<br>
      1. 你没有正确填写 W8 的税务协定部分。<br>
-     2. 你居住的国家/地区没有与美国签署税务协定。<br><br>你可以在任何时间来提交更新的 W8 表单访问开发人员中心。<br><br><b>注意</b>： 并非所有收入都都将受到税款。</td>
+     2. 你居住的国家/地区没有与美国签署税务协定。<br><br>你可以在任何时间来提交更新的 W8 表单访问合作伙伴中心。<br><br><b>注意</b>： 并非所有收入都都将受到税款。</td>
   </tr>
   <tr>
     <td valign="top"><b>我提交了一份更新的含有有效协定信息的 W8 表单。 Microsoft 可以退还代扣的税款吗？</b></td>

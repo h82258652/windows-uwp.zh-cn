@@ -4,16 +4,16 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: 程序包版本编号
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741681"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825031"
 ---
 # <a name="package-version-numbering"></a>程序包版本编号
 
@@ -64,6 +64,9 @@ Windows 10 使你能够编写一个代码库可在任意位置运行。 这使�
 
 
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>以及 Windows Phone 8.1 程序包的版本编号的 Windows8.1 （及更早版本）
+
+> [!IMPORTANT]
+> 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 对于面向 Windows Phone 8.1 的 .appx 程序包，新提交中的程序包版本号必须始终大于上一提交（或之前任意提交）中所含的程序包版本号。
 

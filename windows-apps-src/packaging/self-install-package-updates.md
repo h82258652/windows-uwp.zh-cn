@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d5a6cc57a7af63d9aee3685d5bfc3e3fd72fac0a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744171"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827154"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>从 Microsoft Store 下载并安装程序包更新
 

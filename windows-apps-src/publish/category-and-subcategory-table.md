@@ -4,16 +4,16 @@ Description: Listing your app in the right category and subcategory helps custom
 title: 类别和子类别表
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 类别, 子类别, 流派
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750418"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840812"
 ---
 # <a name="category-and-subcategory-table"></a>类别和子类别表
 
@@ -22,7 +22,7 @@ ms.locfileid: "5750418"
 
 你必须选择最能描述你的应用的类别。 可以选择一个子类别（如果可用）。 如果你不确定要使用哪一类别或子类别，或者无法找到看起来完全相符的类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
 
-如果你将类别选择为**游戏**，则需要选择至少一个子类别（在游戏中也称为*流派*）。 可以为游戏适当地选择多个流派。 注意：为了向 Xbox 客户发布游戏，你必须启用[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念批准](../gaming/concept-approval.md)过程）。 
+如果你选择**游戏**作为类别，你需要选择至少一个子类别 （*流派*名为适用于游戏）。 可以为游戏适当地选择多个流派。 注意：为了向 Xbox 客户发布游戏，你必须启用[Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念批准](../gaming/concept-approval.md)过程）。 
 
 > [!IMPORTANT] 
 > 如果以**游戏**类别发布应用，则你无法在新提交中选择不同类别；它必须继续以**游戏**类别分布（但你可以在新提交中更改流派选择）。 同样，更新先前以其他类别发布的应用时，你也无法选择**游戏**类别。
@@ -149,38 +149,6 @@ Microsoft Store 将应用整理为以下类别和子类别。
   </tr>
 </tbody>
 </table>
-
-
-<!--
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Classics <br> Educational <br> Family + kids <br> Fighting <br> Multi-Player Online Battle Arena <br> Music <br> Other <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Tools <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security              |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
--->
 
 > [!NOTE] 
 > 对于 Windows 8.x 和 Windows Phone 8.x 及更早版本的客户在 Microsoft Store 中使用的一些类别和子类别，其显示可能会与上面列出的类别的显示不同。 

@@ -4,16 +4,16 @@ Description: The App properties page of the app submission process lets you defi
 title: 输入应用属性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件, 隐私策略, 支持联系人信息, 应用网站, 支持信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7fffe4c687009f71c9908ca9391278a172209a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746052"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5823413"
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 
@@ -60,7 +60,7 @@ ms.locfileid: "5746052"
 
 ## <a name="game-settings"></a>游戏设置
 
-仅当选择**游戏**作为你的产品类别时，才显示此选项。 可在此处指定你的游戏支持的功能。 此部分中提供的所有信息将显示在产品的应用商店一览中。
+仅当选择**游戏**作为你的产品类别时，才显示此选项。 可在此处指定你的游戏支持的功能。 本部分中提供的信息将显示在产品的应用商店一览。
 
 如果你的游戏支持多人游戏选项，请务必指示一个会话的最小玩家数量和最大玩家数量。 输入的最小玩家数量和最大玩家数量不能超过 1,000。
 

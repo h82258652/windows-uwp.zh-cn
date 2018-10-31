@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 路线, 地图, 位置, 方向
 ms.localizationpriority: medium
 ms.openlocfilehash: 69283f6b53f3a8483376e3b8fe77a4491d4b01b1
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764319"
+ms.locfileid: "5823988"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地图上显示路线和方向
 

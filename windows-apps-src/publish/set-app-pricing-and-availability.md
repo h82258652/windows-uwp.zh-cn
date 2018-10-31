@@ -4,16 +4,16 @@ Description: The Pricing and availability page of the app submission process let
 title: 设置应用定价和可用性
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 05/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 价格, 可用, 可发现, 免费试用版, 试用版, 试用, 应用, 发布日期
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f394bbe644d679b48c239a305594900ca0f7e46
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a21cc94dd9b22304c715cc0e6b038ffdac6da02b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746113"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828108"
 ---
 # <a name="set-app-pricing-and-availability"></a>设置应用定价和可用性
 

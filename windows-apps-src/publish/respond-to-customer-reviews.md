@@ -4,26 +4,26 @@ Description: You can respond directly to reviews of your app to let customers kn
 title: 回复客户评价
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 7/17/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
-ms.openlocfilehash: f4bad59e298ef65cc7aaf6561b77cc86eeff832e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 823ca28618540dbaab1f4e5711ee59d277b0c894
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748370"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824123"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评价
 
 
 你可以回复评价的应用以让客户知道你正在听取他们的反馈。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 你的回复将显示在所有 windows 10 客户都可以看到 Microsoft 应用商店中。 你还可以选择通过电子邮件向客户发送你的回复，（如果他们没有选择退出，并在使用运行 Windows 10 版本 1803年或更高版本的设备）。
 
-若要查看应用的相关评论并提供回复，请在 Windows 开发人员中心仪表板中找到应用。 在左侧导航菜单中，展开**分析**，然后单击**评价**以显示[评价报告](reviews-report.md)。 选择**响应查看**提供你的回复。
+若要查看你的应用的相关评论并提供回复，请在[合作伙伴中心](https://partner.microsoft.com/dashboard)中找到该应用。 在左侧的导航菜单中，展开**分析**，然后单击**评价**显示的[评价报告](reviews-report.md)。 选择**响应查看**提供你的回复。
 
 > [!TIP]
-> 除了使用仪表板回复评论，回复评价[以编程方式](../monetize/submit-responses-to-app-reviews.md)，或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+> 除了使用合作伙伴中心回复评价之外，你可以响应评论[以编程方式](../monetize/submit-responses-to-app-reviews.md)，或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
 默认情况下，将在应用商店，原始的客户评价的正下方中发布你的回复。 这些响应将在 Windows 10 设备上查看应用商店的任何客户可见。 如果留下评价的客户使用运行 Windows 10 版本 1803年或更高版本的设备，并且它们未选择退出接收电子邮件响应，一份你的回复将还会发送到该客户通过电子邮件。  你将需要提供有效的电子邮件地址才能提交你的回复，我们将向客户电子邮件中。 然后，他们可以使用此电子邮件地址来直接与你联系。
 

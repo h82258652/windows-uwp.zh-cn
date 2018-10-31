@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: f85f586d58d159e9fb4751933f14f6b74cd94f96
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 9e62e2e2b3da4bc8e26f944ca446d11cf55c2c84
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761296"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827377"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
@@ -43,7 +43,7 @@ ms.locfileid: "5761296"
 
 在开始编写调用 Microsoft Store 提交 API 的代码之前，确保已满足以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 必须[将 Azure AD 应用程序与你的 Windows 开发人员中心帐户相关联](#associate-an-azure-ad-application-with-your-windows-dev-center-account)，获取租户 ID、客户端 ID 和密钥。 获取 Azure AD 访问令牌（该令牌用于调用 Microsoft Store 提交 API）需要这些值。
 
@@ -70,7 +70,7 @@ ms.locfileid: "5761296"
 
 1.  在开发人员中心，[将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  然后，从开发人员中心的**帐户设置**部分的**用户**页面[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account)，这里的应用程序表示应用或服务并且将用于访问你的开发人员中心帐户的提交。 请确保为此应用程序分配**管理员**角色。 如果应用程序在你的 Azure AD 目录中尚不存在，你可以[在开发人员中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account)。  
+2.  然后，从开发人员中心的**帐户设置**部分的**用户**页面[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，这里的应用程序表示应用或服务并且将用于访问你的开发人员中心帐户的提交。 请确保为此应用程序分配**管理员**角色。 如果应用程序在你的 Azure AD 目录中尚不存在，你可以[在开发人员中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
