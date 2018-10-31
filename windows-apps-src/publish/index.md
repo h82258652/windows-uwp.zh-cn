@@ -4,21 +4,21 @@ layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: 发布 Windows 应用
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 发布, 销售, 分发, Microsoft Store, 仪表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 98e47934f936b6995ab37623b610869219254b85
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 229e1eab05e392a4091c9eee5bc9af948c678d96
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766820"
+ms.locfileid: "5816388"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
  
-你可以使用[Windows 开发人员中心仪表板](https://partner.microsoft.com/dashboard)将应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
+你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)将你的应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>

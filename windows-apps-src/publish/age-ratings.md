@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 年龄分级, 游戏分级, iarc, 分级, 问卷调查, 分级委员会, 内容分级
 ms.localizationpriority: medium
 ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760866"
+ms.locfileid: "5820112"
 ---
 # <a name="age-ratings"></a>年龄分级
 

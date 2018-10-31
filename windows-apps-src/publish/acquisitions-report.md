@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: 购置报告
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 09/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 购置, 应用销售, 应用下载, 安装, 漏斗, 购置, 转换, 渠道, 应用页面视图
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769223"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813304"
 ---
 # <a name="acquisitions-report"></a>购置报告
 
 
-在 Windows 开发人员中心仪表板中的**购置**报告可使你可以查看哪些用户购置并安装你的应用，以及客户统计和平台详细信息，以及有关如何在 windows 10 （包括 Xbox） 的客户找到你的应用显示信息列表。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。 
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**购置**报告可使你可以查看哪些用户购置并安装你的应用，以及客户统计和平台详细信息，以及有关在 windows 10 （包括 Xbox） 的客户找到你的应用一览的方式显示信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。 
 
-可以在仪表板中查看此数据，或[下载报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
+你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 或者，也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
 在此报告中，**购置**意味着新客户已获得应用许可证（无论你是否收费）。 **安装**是指 Windows 10 设备上安装的应用。
 

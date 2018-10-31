@@ -4,16 +4,16 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: 应用包要求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 程序包要求, 程序包, 程序包格式, 受支持的版本, 提交, windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
-ms.openlocfilehash: 5270215e1f4834a7e7c86ed4b3052ed4f791d57e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764571"
+ms.locfileid: "5815510"
 ---
 # <a name="app-package-requirements"></a>应用包要求
 
@@ -74,6 +74,8 @@ ms.locfileid: "5764571"
 | 程序包大小         | .msixbundle 或.appxbundle： 每个捆绑包最大为 25 GB <br>.msix 或.appx 程序包面向 Windows 10: 25 每个程序包最大 GB<br>面向 Windows 8.1 的 .appx 程序包：每个程序包最大为 8 GB <br> 面向 Windows 8 的 .appx 程序包：每个程序包最大为 2 GB <br> 面向 Windows Phone 8.1 的 .appx 程序包：每个程序包最大为 4 GB <br> .xap 程序包：每个程序包最大为 1 GB                                                                           |
 | 块映射哈希     | SHA2-256 算法                                                   |
 
+> [!IMPORTANT]
+> 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 ## <a name="supported-versions"></a>支持的版本
 

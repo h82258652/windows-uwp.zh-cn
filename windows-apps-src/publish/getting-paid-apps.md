@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: Here’s some important info you’ll need to ensure that you receive payment for your apps, in-app products (IAPs), and advertising earnings.
+Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: 获取付款
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
-ms.date: 02/05/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 付款, 应用销售, 应用收款, 付款, 应用商店费用, 付款暂停, 百分比
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a5736c48232d3fa080d13fbcbbbdb70bfa9c92
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 96845e81b093b7cddb6d334286e9cfa468a43b28
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767110"
+ms.locfileid: "5816830"
 ---
 # <a name="getting-paid"></a>获取付款
-以下是一些你需要的信息，可确保你收到你的应用、加载项和广告收益的付款。
+下面是一些有关接收对你的应用、 加载项和广告收益的付款的重要信息。
 
 > [!IMPORTANT]
-> 在从 Microsoft Store 的应用销售中获得收益之前，需要[设置付款帐户并填写必要的税单](setting-up-your-payout-account-and-tax-forms.md)。
+> 你可以从 Microsoft Store 中的应用销售中获得收益之前，你需要[设置付款帐户并填写必要的税单](setting-up-your-payout-account-and-tax-forms.md)。
 
 ## <a name="store-fee"></a>应用商店费用
 
@@ -48,7 +48,7 @@ Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销�
 
 ## <a name="payout-reporting"></a>付款报告
 
-你可以在 Windows 开发人员中心仪表板的 **“付款摘要”** 中访问有关付款信息的详细内容并下载报告。 有关此处显示的信息和我们如何对你的收入进行归类的详细信息，请参阅[付款摘要](payout-summary.md)。
+你可以访问有关付款信息的详细信息中并下载报告[合作伙伴中心](https://partner.microsoft.com/dashboard)的**付款摘要**。 有关此处显示的信息和我们如何对你的收入进行归类的详细信息，请参阅[付款摘要](payout-summary.md)。
 
 
 ## <a name="payout-timeframe"></a>付款时限
@@ -65,7 +65,7 @@ Microsoft Store 费用适用于通过 Microsoft Store 收到的所有应用销�
 将付款暂停状态设置为 **“开”** 后，所有付款都将处于暂停状态，直到你将滑块切换回 **“关”**。 当执行此操作时，将在下一个每月付款周期期间包含你（前提是已达到任何适用的付款阈值）。 例如，如果你已暂停付款，但希望在 6 月生成一个付款，则请确保在 5 月结束前将付款暂停状态切换为 **“关”**。
 
 > [!NOTE]
-> **付款暂停状态**选择适用于**所有**通过 Windows 开发人员中心支付的收入来源（Microsoft Store、广告和 Azure Marketplace 等）。 无法为每个收入来源选择不同的暂停状态。
+> **付款暂停状态**选择适用于**所有**通过 Windows 开发人员计划中 (Microsoft Store、 广告和 Azure Marketplace 等) 的合作伙伴中心支付的收入来源。 无法为每个收入来源选择不同的暂停状态。
 
 
  

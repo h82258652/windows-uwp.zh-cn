@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 交换链缩放, 覆盖, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751619"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818464"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>交换链缩放和覆盖
 

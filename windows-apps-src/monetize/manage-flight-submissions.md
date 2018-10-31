@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 213c68a7e633d7084934120bf3438709701b5cb3
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 31b3379d66485fcd5ab417ecb2782b06f6e80e67
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759127"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818484"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
@@ -303,7 +303,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 | 值           | 类型    | 说明         |
 |-----------------|---------|------|
-|     date            |    字符串     |  报告生成的日期和时间，采用 ISO 8601 格式。    |
+|     date            |    字符串     |  日期和报告生成的时间，采用 ISO 8601 格式。    |
 |     reportUrl            |    字符串     |  用于访问报告的 URL。    |
 
 

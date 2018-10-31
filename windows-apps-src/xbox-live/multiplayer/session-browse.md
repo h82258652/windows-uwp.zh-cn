@@ -105,7 +105,7 @@ ms.locfileid: "5750579"
 搜索属性包含以下组成部分：
 
 `tags` - 标记是字符串描述符，可用于对游戏会话进行分类，与标签类似。 标记必须以字母开头，不能包含空格，且必须少于 100 个字符。
-标记示例：“ProRankOnly”、“norocketlaunchers”、“cityMaps”。
+Example tags: "ProRankOnly", "norocketlaunchers", "cityMaps".
 
 `strings` - 字符串是文本变量，字符串名称必须以字母开头，不能包含空格，且必须少于 100 个字符。
 

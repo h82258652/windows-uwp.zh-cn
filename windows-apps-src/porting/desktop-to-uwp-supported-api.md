@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
-ms.openlocfilehash: 9448e8f4a61241879b739ff10fd000ea8c130d52
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 086025e46e0e5293e44dda61896fa3fd4ae6115b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764279"
+ms.locfileid: "5814349"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>适用于打包的桌面应用的 UWP Api
 
@@ -28,7 +28,7 @@ ms.locfileid: "5764279"
 <tr><td>后台任务</td><td>尽管已打包的应用可以注册后台任务，但仅完全转换的 UWP 应用可以<i>作为</i>后台任务运行。 有关详细信息，请参阅 <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub 上的后台任务示例</a>。</td></tr>
 <tr><td>蓝牙</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>聊天和电话呼叫</td><td>已打包的应用只有完全移植到 UWP 才能在移动设备上运行。</td></tr>
-<tr><td>合约激活</td><td>只有完全转换的 UWP 应用才能由合约激活。</td></tr>
+<tr><td>合约激活</td><td>只有完全转换的 UWP 应用可以由合约激活。</td></tr>
 <tr><td>加密</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>地理位置</td><td>已打包的应用当前并不能支持所有 API。</td></tr>
 <tr><td>文件和文件夹选取器</td><td>已打包的应用具有完全的文件系统访问权限，并且不需要 UWP 选取器。</td></tr>

@@ -4,16 +4,16 @@ Description: Learn how to promote your apps and content in the Microsoft Store. 
 title: Microsoft 应用商店营销指南的应用
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d065504385a5e7a743bd4936e9240565d3207a36
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745267"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5821091"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft 应用商店营销指南的应用
 
@@ -47,9 +47,9 @@ ms.locfileid: "5745267"
 
 -   在 Microsoft Store，具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
--   如果你已注册开发人员中心，请遵守“应用开发人员协议”中[“Microsoft 商标授权”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
+-   如果你已注册合作伙伴中心中成为应用开发人员，符合应用开发人员协议的["许可向 Microsoft 商标授权"](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
 
--   如果你尚未注册 Windows 开发人员中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
+-   如果你尚未注册成为应用开发人员在合作伙伴中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
 
 -   请按照[Microsoft 应用商店锁屏提醒指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的徽标使用规范。
 

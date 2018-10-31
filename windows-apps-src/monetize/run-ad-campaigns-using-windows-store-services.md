@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 2212a3663e79f4fb068af631cfad7715b5a039ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 699efd34a0a304231bcfa865c76452c1260cd675
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757587"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5812421"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 
@@ -38,7 +38,7 @@ ms.locfileid: "5757587"
 
 * 使用此 API 成功创建和启动广告活动之前，你必须先[在开发人员中心仪表板中使用**推广你的应用**页面创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并且必须在此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的广告活动的投放渠道将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指要从中调用 Microsoft Store 促销 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
@@ -48,7 +48,7 @@ ms.locfileid: "5757587"
 
 1.  在开发人员中心，[将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  然后，从开发人员中心的**帐户设置**部分的**用户**页面[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account)，这里的应用程序表示应用或服务并且将用于管理你的开发人员中心帐户的促销活动。 请确保为此应用程序分配**管理员**角色。 如果应用程序在你的 Azure AD 目录中尚不存在，你可以[在开发人员中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account)。 
+2.  然后，从开发人员中心的**帐户设置**部分的**用户**页面[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，这里的应用程序表示应用或服务并且将用于管理你的开发人员中心帐户的促销活动。 请确保为此应用程序分配**管理员**角色。 如果应用程序在你的 Azure AD 目录中尚不存在，你可以[在开发人员中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 

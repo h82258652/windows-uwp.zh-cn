@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9450a5980ee83c41c60e630c616ba620e0ac4930
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757687"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5821211"
 ---
 # <a name="point-of-service"></a>服务点
 此部分包含有关如何使用 [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) 来与从通用 Windows 应用程序的零售和酒店环境中发现的外设进行交互的文章。

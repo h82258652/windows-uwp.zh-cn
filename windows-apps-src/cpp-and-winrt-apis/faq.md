@@ -7,12 +7,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
-ms.openlocfilehash: 612eb6ced57fb2a8ca5d855ef9c156b0b9ae4440
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 83fa27f982f777d9c023b5af68144eb67ac5d9aa
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742520"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5812089"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -35,7 +35,7 @@ ms.locfileid: "5742520"
 运行时类是一个可通过现代 COM 接口进行激活和使用（通常跨可执行文件）的类型。 但是，运行时类也可在实现它的编译单元内使用。 你采用接口定义语言 (IDL) 声明运行时类，而且可以在标准 C++ 中使用 C++/WinRT 实现它。
 
 ## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>*投影类型*和*实现类型*是什么意思？
-如果你仅*使用* Windows 运行时类（运行时类），则将要专门处理*投影类型*。 C++/WinRT 是一种*语言投影*，所以投影类型是通过 C++/WinRT *投影*到 C++ 中的 Windows 运行时的表面的一部分。 有关更多详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。
+如果你仅*使用* Windows 运行时类（运行时类），则将要专门处理*投影类型*。 C++/WinRT 是一种*语言投影*，所以投影类型是通过 C++/WinRT *投影*到 C++ 中的 Windows 运行时的表面的一部分。 有关更多详细信息，请参阅[使用 Api 通过 C + + WinRT](consume-apis.md)。
 
 *实现类型*包含运行时类的实现，因此仅在实现该运行时类的项目中可用。 当你在实现运行时类的项目中工作时（Windows 运行时组件项目或使用 XAML UI 的项目），请务必熟悉你对某个运行时类的实现类型与表示该运行时类已投影到 C++/WinRT 中的投影类型之间的区别。 有关更多详细信息，请参阅[通过 C++/WinRT 创作 API](author-apis.md)。
 

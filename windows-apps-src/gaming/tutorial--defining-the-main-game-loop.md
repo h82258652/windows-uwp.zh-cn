@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 主对象
 ms.localizationpriority: medium
 ms.openlocfilehash: b94d7139f35b3a18edd66af9959a0958d0bdcbc1
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762213"
+ms.locfileid: "5815778"
 ---
 # <a name="define-the-main-game-object"></a>定义主游戏对象
 

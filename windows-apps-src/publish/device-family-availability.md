@@ -3,16 +3,16 @@ author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: 设备系列可用性
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 程序包, 上传, 设备系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: e575c3315411b7be0af14316e8063aa592b2920f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 543b5c519e7514ccef397c2bb78eadcc5e3692f5
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740410"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815649"
 ---
 # <a name="device-family-availability"></a>设备系列可用性
 
@@ -50,21 +50,22 @@ ms.locfileid: "5740410"
 
 如果要为 Windows 10 IoT 核心版提交 UWP 应用，你不应该在上载软件包后对默认选择进行更改；Windows 10 IoT 没有单独的复选框。 有关发布 IoT 核心版 UWP 应用的详细信息，请参阅 [IoT 核心版 UWP 应用的 Microsoft Store 支持](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)。
 
-如果你的提交包含可以在 **Windows 8/8.1** 和 **Windows Phone 8.x 及更早版本**上运行的程序包，那么这些程序包将提供给客户，如表中所示。 这些操作系统版本没有对应的复选框。 若要停止向这些客户提供应用，请从提交中删除相应的程序包。
+如果你以前发布的应用的提交包含可以在**Windows 8/8.1**运行的程序包，并**Windows Phone 8.x 及更早版本**，这些程序包将提供给这些操作系统版本上的客户。 若要停止向这些客户提供应用，请从提交中删除相应的程序包。
 
 > [!IMPORTANT]
 > 若要完全阻止特定的 Windows 10 设备系列获取你的提交，更新清单以面向你想要支持的设备系列中的[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素 （即，Windows.Mobile 或 Windows.Desktop），而是比其保留为 Windows.Universal 值 （面向通用设备系列） 的 Microsoft Visual Studio 的清单中默认包含。
 
-请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果你先发布了一个带有 Windows Phone 8.1 程序包的应用，而在以后又将 Windows 10 (UWP) 程序包添加到面向通用设备系列的同一应用，将会向已拥有你的 Windows Phone 8.1 程序包的 Windows 10 移动客户提供此 Windows 10 (UWP) 程序包的更新，即使你已取消选中“Windows 10 移动版”**** 复选框也是如此（因为这并不是全新购买，而是一次更新）。 但是，如果你没有提供面向通用或移动设备系列的任何 Windows 10 (UWP) 程序包，则你的 Windows 10 移动客户将继续使用 Windows Phone 8.1 程序包。
+请务必了解：你在**设备系列可用性**部分中所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你在此处删除了设备系列也是如此。 这甚至适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果你拥有已发布的应用与 Windows Phone 8.1 程序包，并添加 Windows 10 (UWP) 程序包面向 Windows.Universal 设备系列，Windows 10 移动客户拥有 Windows Phone 8.1 程序包将提供更新到此 Windows10 (UWP) 程序包，即使你已取消选中适用于**Windows 10 移动版**框。
 
 有关设备系列的详细信息，请参阅[**设备系列概述**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
+
 ## <a name="understanding-ranking"></a>了解分级
 
-除了指示哪些 Windows 10 设备系列可以下载提交外，**设备系列可用性**部分还介绍了特定程序包中的哪一个将提供给不同设备系列。 如果你有多个程序包可以在某个设备系列上运行，该表格将基于程序包的版本号指示程序包的提供顺序。 有关 Store 如何基于版本号对程序包分级的详细信息，请参阅[程序包版本编号](package-version-numbering.md)。 
+除了指示哪些 Windows 10 设备系列可以下载你的提交，**设备系列可用性**部分介绍了将提供的不同设备系列的特定程序包。 如果你有多个程序包可以在某个设备系列上运行，该表格将基于程序包的版本号指示程序包的提供顺序。 有关 Store 如何基于版本号对程序包分级的详细信息，请参阅[程序包版本编号](package-version-numbering.md)。 
 
-例如，假设你有两个程序包：Package_A.appxupload 和 Package_B.appxupload。 对于给定的设备系列，如果 Package_A.appxupload 排名第 1 而 Package_B.appxupload 排名第 2，这意味着当该设备类型上的客户获取应用时，Store 将先尝试提供 Package_A.appxupload。 如果客户设备无法运行 Package_A.appxupload，Store 将提供 Package_B.appxupload。 如果客户设备无法运行该设备系列的任何程序包（例如，当应用支持的**最低版本**高于客户设备上的版本时），客户将无法将应用下载到该设备。
+例如，假设你有两个程序包：Package_A.appxupload 和 Package_B.appxupload。 对于给定的设备系列，如果 Package_A.appxupload 排名第 1 而 Package_B.appxupload 排名第 2，这意味着当该设备类型上的客户获取应用时，Store 将先尝试提供 Package_A.appxupload。 如果客户设备无法运行 Package_A.appxupload，Store 将提供 Package_B.appxupload。 如果客户设备无法运行任何该设备系列的程序包 （例如，如果**最低版本为**你的应用支持是高于客户设备上的版本），然后客户将无法下载该设备上的应用。
 
 > [!NOTE]
-> 当确定向给定客户提供哪个程序包时，不考虑 .xap 程序包中的版本号。 因此，如果你有多个相同等级的 .xap 程序包，你将看到一个星号而非数字，客户可能会收到任一程序包。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。
+> 当确定向给定的客户提供哪个程序包时，不考虑 （适用于以前发布的应用） 的.xap 程序包中的版本号。 因此，如果你有多个相同等级的 .xap 程序包，你将看到一个星号而非数字，客户可能会收到任一程序包。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。
 

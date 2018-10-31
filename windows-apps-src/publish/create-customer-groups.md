@@ -3,23 +3,23 @@ author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: 创建客户组
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 客户组, 类别, 外部测试版组, 已知用户组
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a2a1454baa1d5b1f09226e501233aa4c076373
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 381953c51bfeb04625b452bd278ea09a4c9a8368
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5739931"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814243"
 ---
 # <a name="create-customer-groups"></a>创建客户组
 
 你可以创建包含你的应用的客户的一个子集的*客户组*。 这些组可以用于目标客户促销、 测试和其他用途。
 
-若要查看和创建客户组，在左侧的导航菜单中的[Windows 开发人员中心](https://partner.microsoft.com/dashboard)中，展开**参与**，然后选择**客户组**。
+若要查看和创建客户组，在左侧的导航菜单中的[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开**参与**，然后选择**客户组**。
 
 当前支持两种客户组：
 

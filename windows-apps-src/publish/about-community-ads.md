@@ -4,16 +4,16 @@ Description: You can cross-promote your app with apps published by other develop
 title: 有关社区广告
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 10/04/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 20f0f06d0927d61c062a0514d84bef993da6e932
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748473"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819334"
 ---
 # <a name="about-community-ads"></a>有关社区广告
 
@@ -30,19 +30,15 @@ ms.locfileid: "5748473"
 
 ### <a name="opt-in-to-community-ads"></a>选择加入社区广告
 
-你可以为应用之一创建社区广告市场活动之前，你必须选择加入**盈利**&gt;在 Windows 开发人员中心仪表板中的**应用内广告**页面。
+你可以为应用之一创建社区广告市场活动之前，你必须选择加入**盈利** &gt; [合作伙伴中心](https://partner.microsoft.com/dashboard)中的**应用内广告**页面。
 
 若要选择加入社区广告的 UWP 应用：
 
-1. 在**应用内广告**页面上的**中介设置**部分中，选择你的应用中使用某个广告单元。
-2. 如果选择**让 Microsoft 选择最佳中介设置为你的应用**选项时，会自动将社区广告启用为广告单元。 否则为在**目标**下拉列表中选择基准配置或特定于市场的配置，然后查看**其他广告网络**列表中的**Microsoft 社区广告**框。
+1. 选择你所使用的应用和滚动中关闭到**中介设置**广告单元。
+2. 如果选择**让 Microsoft 优化我的设置**，则会自动将社区广告启用为广告单元。 否则为在**目标**下拉列表中选择基准配置或特定于市场的配置，然后查看**其他广告网络**列表中的**Microsoft 社区广告**框。
 
     > [!NOTE]
     > 你可以使用**权重**字段指定你想要显示来自付费的网络和其他广告网络，包括社区广告的广告的比例。
-
-若要选择加入社区广告适用于 Windows 8.x 或 Windows Phone 8.x 应用
-
-1. 在**应用内广告**页面上，选中**显示我的应用中的社区广告**框。
 
 你不需要在完成选择后重新发布应用。 一旦你已选择加入，将能够在[创建广告市场活动](create-an-ad-campaign-for-your-app.md)时选择**社区广告（免费）** 作为市场活动类型。
 

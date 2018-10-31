@@ -4,22 +4,21 @@ Description: A great description can make your app stand out in the Microsoft St
 title: 编写出色的应用提要
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 描述, 说明, Microsoft Store 一览, 营销
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ad41dc2f78f37485d1b8de3101348363b5ba28
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 382bfe760165b4dee3fbdbb63166648c2e475325
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744854"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816163"
 ---
 # <a name="write-a-great-app-description"></a>编写出色的应用提要
 
 
 出色的提要可以让你的应用在 Microsoft Store 中脱颖而出，并有助于鼓励用户下载它。 [提交应用时输入的提要](create-app-store-listings.md#description)显示在应用的 Microsoft Store 一览中。 前几行也可能显示在应用商店中的搜索结果和算法列表中。
-
 
 以下是使应用的提要能成为最好提要的一些提示。
 
@@ -28,14 +27,14 @@ ms.locfileid: "5744854"
 -   **使用列表和简短的段落。** 潜在客户可能只会快速浏览应用的提要。 使用简短的段落和列表将内容拆分可以更加方便用户浏览。
 
     > [!NOTE]
-    > 添加[应用功能](create-app-store-listings.md#app-features)列表也可以帮助快速显示该应用的功能。 此列表应直接位于应用提要下方。
+    > 添加[产品功能](create-app-store-listings.md#product-features)的列表还可以帮助快速显示该应用的功能。 此列表应直接位于应用提要下方。
 
 -   **避免使用枯燥乏味的语言。** 应使用引人入胜的语言来撰写提要。 确保措辞能够清楚地描述你的应用的功能，但请用有趣的方式来介绍。 对于大多数应用，采用随和而友好的语气效果较好。
 -   **提要的长度应恰到好处。** 一个好的提要应该读起来轻松快速，但也要包含足够的信息以让读者产生兴趣，并将应用的功能介绍清楚。 复杂的应用将需要更多篇幅来介绍；而简单的应用可能只需要几句话。 在大多数情况下，合适的长度在 200 字左右，但最好不要超过 3000 字。
 -   **清楚说明免费试用和加载项的情况。** 如果你为你的应用提供免费试用版，一定要解释清楚试用版的相关情况，以便让客户了解哪些功能受到限制。 提一下有哪些类型的加载项，这也是一个不错的主意，特别是当它们对你的应用的功能有重大影响时。
 -   **使用标准大写形式和标点符号。** 全部采用大写形式的提要，或使用独特标点符号的提要难以阅读。
 -   **不要忘了检查拼写和语法。** 如果提要中有很多拼写错误的单词或错乱的句子，这就不能很好地反映你的应用的质量。 一定要检查你的提要（或让其他人看一下）以查看是否存在错误。
--   **不要包含链接或其他位置上的信息。** 你在提要字段中输入的 URL 不可单击，因此不要尝试添加诸如隐私策略或支持网站等内容的链接。 而是在“应用商店一览”**** 页面的指定区域中添加这些内容。
+-   **不要包含链接或其他位置上的信息。** 你在提要字段中输入的 URL 不可单击，因此不要尝试添加诸如隐私策略或支持网站等内容的链接。 相反，添加你的提交的**属性**页面的指定区域中。
 -   **请勿使用 HTML 标记。** HTML 或其他代码将不会呈现。 你的提要必须仅为纯文本。
 -   **通过查看应用商店中类似应用的提要来获得灵感。** 看看其他开发者如何描述他们的应用。 这也有助于你找出可加以强调的你的应用的与众不同之处。
 

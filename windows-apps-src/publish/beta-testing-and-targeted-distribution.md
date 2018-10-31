@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
+Description: Partner Center gives you several options to let testers try out your app before you offer it to the public.
 title: beta 版本测试和定向分发
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10，uwp, beta 测试版本, 有限分发, beta 版本, 测试, 测试人员
 ms.localizationpriority: medium
-ms.openlocfilehash: e57490e2ad9c3991baf40b6c4d15d35def59f94f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746740"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813865"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>beta 版本测试和定向分发
 
 无论你如何仔细地测试应用，都不如通过让其他人使用它来进行实际测试。 测试人员可能会发现你所忽略的问题，例如拼写错误、混乱的应用流程或可能导致该应用崩溃的错误。 然后，你将有机会在向公众发布提交之前修复这些问题，从而推出更完善的最终产品。 
 
-Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的几个选项，以便可以让测试人员在你向公众提供应用之前试用它。 
+合作伙伴中心为你提供了几个选项让测试人员提供给公众之前试用你的应用。
 
 无论你选择哪种方法，对应用进行 beta 版本测试时需要牢记以下几点。
 
@@ -33,7 +33,7 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 
 如果你要让测试人员在应用公开发布前就使用它，并确保没有其他人可以看到该应用的一览，请使用[可见性](choose-visibility-options.md)（位于你的提交的**定价和可用性**页面）下的**私人受众**选项。 只有通过这种方法，才可以在将应用分配给测试人员时，完全防止其他人看到该应用的 Microsoft Store 一览（即使其他人能够键入直接链接）。 
 
-**私人受众**选项可以只能时不已发布你的应用向公共受众。 你可以使用此选项与应用面向任何操作系统版本，但测试人员必须运行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，并且必须使用与你提供的电子邮件地址关联的 Microsoft 帐户登录。
+**私人受众**选项只能时不已发布你的应用向公共受众。 你可以使用此选项与应用面向任何操作系统版本，但测试人员必须运行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，并且必须使用与你提供的电子邮件地址关联的 Microsoft 帐户登录。
 
 有关详细信息，请参阅[私人受众](choose-visibility-options.md#audience)。
 
@@ -71,6 +71,8 @@ Windows 开发人员中心仪表板为你提供仅向指定人员提交应用的
 - 在发布产品后，将链接（[应用标识页面](view-app-identity-details.md)上的 **URL**）分发给测试人员，以便他们进行试用。
 - 当你准备好向公众提供应用时，请创建一个新提交并将**可见性**选项更改为**使此产品在 Microsoft Store 中可用，并使其可被发现**（你也可以更改其他需要改动的内容）。
 
+> [!IMPORTANT]
+> 从 2018 年 10 月 31 日起新创建的产品不能包含程序包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>向具有指定电子邮件地址的 Windows Phone 客户定向分发
 

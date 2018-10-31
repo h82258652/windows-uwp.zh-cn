@@ -4,16 +4,16 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: 解决提交错误
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d997d2523012588348512311980f9bb4a7160b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758438"
+ms.locfileid: "5811974"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -31,6 +31,9 @@ ms.locfileid: "5758438"
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 及更早版本
 
+> [!IMPORTANT]
+> 从 2018 年 10 月 31 日起新创建的产品不能包含程序包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+
 在预处理过程中检测到 Windows Phone 程序包的问题时，你可能会看到**错误 2001**。 在大多数情况下，需要重新生成你的应用包来更正错误。 完成后，请在提交的[程序包](upload-app-packages.md)页面上将旧程序包替换为新程序包，然后再单击“提交到应用商店”****。
 
 有多种错误可能会导致此错误。 查看下面的列表来确定哪一种情形可能适用于你的程序包。
@@ -45,7 +48,7 @@ ms.locfileid: "5758438"
 
 ## <a name="nameidentity-errors"></a>名称/标识错误
 
-如果你看到显示“在程序包中找到的名称不是保留的应用名称之一。请保留应用名称和/或使用此语言的正确应用名称更新程序包”**** 错误，这可能是因为你在程序包中输入了错误的名称。 如果你使用的是开发人员中心中没有保留的应用名称，此错误也会发生。 通常，你可以遵循以下步骤来解决此错误：
+如果你看到显示“在程序包中找到的名称不是保留的应用名称之一。请保留应用名称和/或使用此语言的正确应用名称更新程序包”**** 错误，这可能是因为你在程序包中输入了错误的名称。 如果你在合作伙伴中心中使用没有保留应用名称，也会发生此错误。 通常，你可以遵循以下步骤来解决此错误：
 
 - 转到应用[应用标识](view-app-identity-details.md)页（在**应用管理**下），确认应用是否分配了标识。 如果没有，将看到创建一个标识的选项。 需要保留一个应用名称才能创建该标识。 请确保这是已在程序包中使用过的名称。
 - 如果应用已经具有标识，可能仍然需要保留要在程序包中使用的名称。 在**应用管理**下，单击[管理应用名称](manage-app-names.md)。 输入你想要使用的名称，然后单击“保留应用名称”****。

@@ -4,19 +4,18 @@ Description: When submitting an add-on, the options on the Properties page help 
 title: 输入加载项属性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f616e4da96c1a2c59822d1370b49016dbca1bb7
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745553"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816466"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
-
 
 在提交加载项时，“属性”**** 页面上的选项有助于确定在提供给客户时加载项的行为。
 
@@ -32,7 +31,7 @@ ms.locfileid: "5745553"
 
 ## <a name="product-lifetime"></a>产品生命周期
 
-如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果你愿意，可以设置“产品生命周期”****，以使加载项在设置的持续时间后（可选择 1 至 365 天）过期。
+如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果你愿意，你可以更改**产品生命周期**，以便加载项后一段时间 （可选择 1 至 365 天） 过期。
 
 
 ## <a name="quantity"></a>数量

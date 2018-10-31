@@ -3,16 +3,16 @@ author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: 创建已知用户组
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
 ms.localizationpriority: medium
-ms.openlocfilehash: eec9c214bcd4ac63406ec7681e66762356a0c1cf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 44f0ea17d1034ae617b4b8c96cf61cc4829a6704
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764690"
+ms.locfileid: "5818738"
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 
@@ -22,7 +22,7 @@ ms.locfileid: "5764690"
 
 ## <a name="to-create-a-known-user-group"></a>创建已知用户组
 
-1. 在 Windows 开发人员中心仪表板中，展开左侧导航菜单中的**参与**，然后选择**客户组**。 
+1. 在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开左侧的导航菜单中**参与**，然后选择**客户组**。 
 2. 在**我的客户组**部分中选择**创建新组**。
 3. 在下一页上，在**组名称**框中，输入组名称。
 4. 确保选择**已知用户组**单选按钮。
@@ -38,7 +38,7 @@ ms.locfileid: "5764690"
 
 ## <a name="to-edit-a-known-user-group"></a>编辑已知用户组
 
-创建已知用户组之后，则无法将其从仪表板中删除（或更改其名称），但可以随时编辑其成员身份。
+你不能删除从合作伙伴中心的已知的用户组 （或更改其名称） 后创建，但你可以随时编辑其成员身份。
 
 若要查看和编辑已知用户组，展开左侧导航菜单中的**参与**菜单，然后选择**客户组**。 在**我的客户组**下，选择要编辑的组名称。 通过在创建新的外部测试版时选择**查看并管理现有组**，或者从软件包外部测试版的概述页选择组名称，还可以从软件包外部测试版创建页面中编辑已知用户组。 
 

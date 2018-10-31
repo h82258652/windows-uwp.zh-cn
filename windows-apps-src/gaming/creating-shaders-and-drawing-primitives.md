@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 着色器, 基元, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747234"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819301"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>创建着色器和绘制基元
 

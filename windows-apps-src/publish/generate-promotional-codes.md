@@ -4,21 +4,21 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: 生成促销代码
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 08/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a29b38ebb0e00e2c65b9050868ad1e11cc2ab2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2fe89f65ff4f3278b0ba88ef4c5ca9d22bc67817
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762646"
+ms.locfileid: "5817959"
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
 
-你可以为已在 Microsoft Store 中发布的应用或加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用来处理客户服务方案的促销充值码来使用户免费访问你的应用或加载项，或者的[beta 测试](beta-testing-and-targeted-distribution.md)windows 10。 
+[合作伙伴中心](https://partner.microsoft.com/dashboard)允许你的应用或已在 Microsoft Store 中发布的加载项生成促销代码。 促销充值码是让有影响力的用户能够免费访问你的应用或加载项的一种简便方式。 你还可以使用来处理客户服务方案的促销充值码来使用户免费访问你的应用或加载项，或者的[beta 测试](beta-testing-and-targeted-distribution.md)windows 10。 
 
 每个促销代码都具有对应的唯一可兑换 URL，客户可单击才能兑换充值码并从 Microsoft Store 安装应用或加载项。  请注意，你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，客户才能兑换促销代码以安装应用。
 
@@ -45,7 +45,7 @@ ms.locfileid: "5762646"
 
 应用或加载项预订促销代码：
 
-1.  在 Windows 开发人员中心仪表板的左侧导航菜单中，展开**吸引**，然后选择**促销代码**。
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)的左侧的导航菜单中，展开**吸引**，然后选择**促销代码**。
 
 2.   在**促销代码**页面上，单击**预订代码**。
 
@@ -64,7 +64,7 @@ ms.locfileid: "5762646"
 
 若要下载已完成的促销代码订单并将代码分发给客户：
 
-1.  在 Windows 开发人员中心仪表板的左侧导航菜单中，展开**吸引**，然后选择**促销代码。**
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)的左侧的导航菜单中，展开**吸引**，然后选择**促销代码。**
 2.  单击促销代码订单的**下载**链接，然后将生成的文件保存到计算机。 此文件包含采用制表符分隔值 (.tsv) 格式的促销代码订单相关信息。
 3.  在选择的编辑器中打开 .tsv 文件。 为了实现最佳体验，请在可采用表格结构显示数据的应用程序（例如 Microsoft Excel）中打开 .tsv 文件。 但是，也可以在任何文本编辑器中打开此文件。
 
@@ -103,7 +103,7 @@ ms.locfileid: "5762646"
 
 ## <a name="review-your-promotional-codes"></a>查看促销代码
 
-若要查看应用及其加载项的促销代码订单的详细摘要，请导航到应用的**促销代码**页面（在开发人员中心仪表板的左侧导航菜单，展开**推广**然后选择**促销代码**）。 可以查看所有当前和非活动促销代码的以下详细信息：
+若要查看你的应用和加载项的促销充值码订单的详细的摘要，请导航到的**促销充值码**页面 （在合作伙伴中心的左侧的导航菜单中，展开**吸引**，然后选择**促销代码**）。 可以查看所有当前和非活动促销代码的以下详细信息：
 -   订单名称
 -   应用或加载项
 -   开始日期

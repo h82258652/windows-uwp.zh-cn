@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756427"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5820006"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>资源管理系统如何匹配和选择资源
 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有候选资源，然后确定要返回的最佳候选资源。 为此，需考虑所有限定符，以便对所有候选资源评级。

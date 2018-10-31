@@ -8,22 +8,26 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
-ms.openlocfilehash: 535706cc0627dc89ce96981ad40faafbf242e80e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f02ca7c43443289ef9d2d0562be25f277068685b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748320"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818042"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
-**程序包**页面是其中上传所有的应用，你要提交的程序包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。 当客户下载应用时，应用商店将自动向每个客户提供最适用于其设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
+**程序包**页面是其中上传所有的应用，你要提交的程序包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload 和/或.appxbundle）。 你可以上传在此页上，在同一应用的所有程序包，并且当客户下载应用时，应用商店将自动向每个客户提供最适合他们的设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
-有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还需要了解[如何版本号可能会影响哪些程序包交付给特定客户](package-version-numbering.md)以及[如何将程序包分配给不同的操作系统](guidance-for-app-package-management.md)。
+> [!IMPORTANT]
+> 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+
+有关程序包所包含的内容以及应如何构建程序包的详细信息，请参阅[应用包要求](app-package-requirements.md)。 你还需要了解[版本号如何影响的程序包交付给特定客户](package-version-numbering.md)以及[如何管理为各种方案的程序包](guidance-for-app-package-management.md)。
+
 
 ## <a name="uploading-packages-to-your-submission"></a>将程序包上载到你的提交
 
-若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 **程序包**页面可让你上传.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle，和/或.xap 文件。
+若要上载程序包，请将其拖动到上载字段中或单击以浏览文件。 **程序包**页面可让你上传.msix、.msixupload、.msixbundle、.appx、.appxupload 和/或.appxbundle 文件。
 
 > [!IMPORTANT]
 > 对于 windows 10，我们建议在上传此处.msixupload 或.appxupload 文件而不是.msix、.appx、.msixbundle 或.appxbundle。  有关如何包装 UWP 应用以上架应用商店的详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)。
