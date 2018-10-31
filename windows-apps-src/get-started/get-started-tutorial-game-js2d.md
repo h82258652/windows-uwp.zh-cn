@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817630"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865792"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -63,7 +63,7 @@ ms.locfileid: "5817630"
 
 现在，你可以运行此游戏！
 
-按 **F5** 即可开始运行此应用。 此时你将会看到一个打开的窗口，我们熟悉的恐龙（如果稀疏）站立于旖旎风光中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
+按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙 （如果稀疏） 站立风光中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
 
 ![只是一个普通的恐龙，一只忍者神猫坐在其背部](images/JS2D_3.png)
 

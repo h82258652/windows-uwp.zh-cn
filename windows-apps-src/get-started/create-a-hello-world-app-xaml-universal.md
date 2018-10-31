@@ -8,12 +8,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: b28d0237deda78291816a52affd1fa7b4768640b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839785"
+ms.locfileid: "5864911"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -85,7 +85,7 @@ ms.locfileid: "5839785"
 -   App.xaml 是你声明应用中所使用的资源的位置。
 -   App.xaml.cs 是 App.xaml 的代码隐藏文件。 与所有代码隐藏页面一样，它包含一个调用 `InitializeComponent` 方法的构造函数。 你不必编写 `InitializeComponent` 方法。 该方法由 Visual Studio 生成，其主要作用是初始化在 XAML 文件中声明的元素。
 -   App.xaml.cs 是应用的入口点。
--   App.xaml.cs 还包含一些处理应用激活和挂起的方法。
+-   App.xaml.cs 还包含方法来处理[激活](../launch-resume/activate-an-app.md)和[挂起](../launch-resume/suspend-an-app.md)的应用。
 
 *MainPage.xaml*
 
@@ -95,12 +95,14 @@ ms.locfileid: "5839785"
 
 *Package.appxmanifest*
 -   描述应用的清单文件：应用的名称、描述、磁贴、起始页等等。
--   包括应用包含的文件列表。
+-   包括依赖项、 资源以及你的应用包含的文件的列表。
 
 *一组徽标图像*
--   Assets/Square150x150Logo.scale-200.png 表示“开始”菜单中的应用。
+-   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中等或范围大小） 在开始菜单中。
+-   Assets/Square44x44Logo.png 表示你的应用的开始菜单、 任务栏和任务管理器应用列表中。
 -   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
+-   Assets/LockScreenLogo.scale-200.png 可以用于系统处于锁定状态时表示在锁屏上的应用。
 
 ## <a name="step-2-adding-a-button"></a>步骤 2：添加按钮
 
