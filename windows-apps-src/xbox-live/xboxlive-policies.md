@@ -9,11 +9,11 @@ layout: LandingPage
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 策略
 ms.localizationpriority: medium
 ms.openlocfilehash: 849d89f0cfd261b1e2dfc3b5eb355e3f1c4f434a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5746931"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838809"
 ---
 ## <a name="xbox-live-policies"></a>Xbox Live 策略
 

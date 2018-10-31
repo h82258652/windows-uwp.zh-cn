@@ -3,16 +3,16 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: 设置和计划应用定价
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
-ms.openlocfilehash: 99e11e29c5625d528777046075f01a824f1b0b37
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740536"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5839332"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 
@@ -37,23 +37,18 @@ ms.locfileid: "5740536"
 请记住，你选择的价格段可能包含你的客户必须支付的销售税或增值税。 若要了解有关选定市场中应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
-> 如果你在[可见性](choose-visibility-options.md#discoverability)部分的**使此产品在 Microsoft Store 中可用，但不可被发现**下选择了**停止获取**选项，你将无法为你的提交设置定价（因为没有人能够获取应用，除非他们提供可以免费获得应用的促销代码）。
+> 如果你选择下**可用，但不可被发现在应用商店中使此产品**的**停止购置**选项中的[可见性](choose-visibility-options.md#discoverability)部分），你将无法设置为你的提交定价 （因为没有人能够获取该应用除非他们使用促销代码免费获取应用）。
 
 ## <a name="schedule-price-changes"></a>计划价格更改
 
 如果希望在特定日期和时间更改应用基价，可选择计划一个或多个价格更改。 
 
 > [!IMPORTANT]
-> 仅向使用 Windows 10 设备（包括 Xbox）的客户显示价格更改。 如果你的应用支持较早版本的操作系统，则价格更改不适用。 
->
-> - 对于使用 Windows 8 的客户，应用将始终按**基价**（非任何特定于市场的价格）提供应用，即使计划了其他价格更改也是如此。 
-> - 对于使用 Windows 8.1 和 Windows Phone 8.1 及更早版本的客户，应用将始终按客户所在市场的第一个价格段提供，即使在该市场计划了其他价格更改时也是如此。
-> 
-> 计划价格更改时请记住这一点。 例如，如果最初以较低价格段发布应用，然后计划了涨价日期，则使用较早版本的操作系统购买应用的客户将按较低（初始）价格购入应用。
+> 仅向使用 Windows 10 设备（包括 Xbox）的客户显示价格更改。 如果你以前发布的应用支持较早的操作系统版本，则价格更改将不适用于这些客户。 对于使用 Windows 8 的客户，应用将始终按**基价**（非任何特定于市场的价格）提供应用，即使计划了其他价格更改也是如此。 对于 Windows 8.1 和 Windows Phone 8.1 及更早版本的客户，应用将始终提供有关客户的市场的第一个价格段。
 
 单击**计划价格更改**可查看价格更改选项。 选择你想要使用的价格段（或为单个市场基价替代输入自由格式价格），然后选择日期、时间和时区。
 
-可单击**再次计划价格更改**，根据所需计划后续更改。
+你可以单击再次**计划价格更改**计划后续更改为你想要。
 
 > [!NOTE]
 > 计划的价格更改与[销售定价](put-apps-and-add-ons-on-sale.md)的运作方式不同。 将应用进行促销时，价格在 Microsoft Store 中显示时会带有删除线，并且客户将能够在你选择的时间段内以优惠价格购买该应用。 优惠期结束后，优惠价格将不再使用，应用将以基价（或你为该市场指定的其他价格，如果适用）出售。
@@ -66,7 +61,7 @@ ms.locfileid: "5740536"
 默认情况下，上述所选选项将应用于所有提供应用的市场。 你可以有选择地更改一个或多个市场的价格，方法是选择不同的价格段或使用市场的当地货币输入自由格式价格。
 
 > [!IMPORTANT]
-> 使用 Windows 8 的客户所看到的应用价格将始终为应用的**基价**，即使为其所在市场选择一个不同的价格也是如此。
+> 如果你以前发布的应用支持 Windows 8，这些客户将始终看到应用**基本价格**其，即使你选择了不同的价格为其所在市场。
 
 若要更改特定市场的价格，单击**选择基价替代的市场**。 随即将出现**市场选择**弹出窗口，其中列出了所有你选择要提供应用的市场。 （如果在**市场**部分中排除了任何市场，则这些市场将不可用。） 
 

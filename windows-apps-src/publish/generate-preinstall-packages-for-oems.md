@@ -4,16 +4,16 @@ Description: If your developer account has been granted the appropriate permissi
 title: 生成适用于 OEM 的预安装程序包
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8564d3dc7240bb556f3cb90c51165def9e2d4eba
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 02f7c1ad1a396464532a1c63c925bf9e19600f1b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761559"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5839431"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>生成适用于 OEM 的预安装程序包
 
@@ -22,7 +22,7 @@ ms.locfileid: "5761559"
 
 ## <a name="important-preinstall-policy--limitations"></a>预安装策略及限制重要提示
 
-预安装应用必须通过 Windows 开发人员中心认证才能获取最新的应用商店许可，否则它们无法连接到应用商店并接收应用更新。
+预安装的应用必须通过[合作伙伴中心](https://partner.microsoft.com/dashboard)，以便它们无法连接到应用商店并接收应用更新具有最新的应用商店许可进行认证。
 
 任何预安装的应用必须在所有市场中保持免费。
 
@@ -31,7 +31,7 @@ ms.locfileid: "5761559"
 
 使用预安装权限启用帐户后，请完成以下步骤：
 
-1.  在仪表板中，导航至待预安装的应用。
+1.  在合作伙伴中心中，导航至待预安装的应用。
 2.  在左侧导航菜单中，展开**应用管理**，然后选择**当前程序包**。
 3.  在**请求用于操作系统预安装的程序包**部分中，选择**启用可下载的程序包**。
 4.  在确认对话框中，选择**启用**。
