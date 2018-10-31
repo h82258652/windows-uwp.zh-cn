@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8a63e91bd5415f33118294a03567bb5e670ae2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839818"
+ms.locfileid: "5860078"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
@@ -28,7 +28,7 @@ ms.locfileid: "5839818"
 > **重要 API**：[ContentLink 类](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo 类](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange 类](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> 内容链接 API 分布在以下命名空间中：Windows.UI.Xaml.Controls、Windows.UI.Xaml.Documents 和 Windows.UI.Text。
+> 内容链接 Api 分布在以下命名空间： Windows.UI.Xaml.Controls、 Windows.UI.Xaml.Documents 和 Windows.UI.Text。
 
 
 

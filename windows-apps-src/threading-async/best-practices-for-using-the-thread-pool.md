@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
 ms.openlocfilehash: ff607e3b39ea9d9a3731cc1f231fe1eb27b0b155
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817750"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5860671"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用线程池的最佳做法
 

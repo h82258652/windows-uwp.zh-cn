@@ -14,11 +14,11 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5820155"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5859767"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
 
