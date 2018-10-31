@@ -4,16 +4,16 @@ Description: Review this list to help avoid issues that frequently prevent apps 
 title: 避免常见的认证失败
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a3c3cd5d7b75408a368c6b5fbc0b4a8bfe2839
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7f37412ac88b001f412a1495f2b4efa029cf4d3a
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762123"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835247"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常见的认证失败
 
@@ -33,7 +33,7 @@ ms.locfileid: "5762123"
 
 -   提供使用你的应用时所需的[任何必要信息](notes-for-certification.md)，例如，如果应用要求用户登录某项服务，则需要提供测试帐户的用户名和密码；还可能需要说明访问隐藏的功能或锁定的功能所需的任何步骤。
 
--   如果应用要求提供，则应包括[隐私策略](create-app-store-listings.md#privacy-policy)；例如，如果你的应用以任何方式访问任何种类的个人信息或在其他方面经法律要求。 若要帮助确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+-   如果你的应用需要一个;，包括[隐私策略 URL](enter-app-properties.md#privacy-policy-url)例如，如果你的应用访问任何种类的个人信息以任何方式或在其他法律要求。 若要帮助确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 -   请确保你的应用的说明清晰地展示应用的用途。 有关帮助，请参阅[编写出色的应用说明](write-a-great-app-description.md)中提供的相关指南。
 

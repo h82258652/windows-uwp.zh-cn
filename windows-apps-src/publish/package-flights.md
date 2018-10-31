@@ -4,16 +4,16 @@ Description: You can use package flights to distribute packages that are only gi
 title: 软件包外部测试版
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 ms.author: wdg-dev-content
-ms.date: 6/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 外部测试
 ms.localizationpriority: medium
-ms.openlocfilehash: c34aa5f060671341900e25095ee8dc1d2d45a657
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a873b6f6c0d1a35667b47109f5cc2205e5a02158
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757922"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838908"
 ---
 # <a name="package-flights"></a>软件包外部测试版
 
@@ -21,7 +21,7 @@ ms.locfileid: "5757922"
 
 与软件包外部测试版，只有程序包有不同;应用商店一览详细信息将你的客户的所有相同。 外部测试版组中的任何人都将收到你可以将其包括在软件包外部测试版，而不在外部测试版组中的客户将继续接收常规 （非外部测试版的） 程序包的程序包。  如果你稍后决定要将从软件包外部测试版的程序包提供给所有客户，你可以轻松地在非外部测试版提交中使用这些相同的程序包。 请注意，软件包外部测试版必须一样的任何提交通过[认证过程](the-app-certification-process.md)。
 
-当你设置软件包外部测试版时，你可以指定应将其添加到**已知用户组**（有时称为外部测试版组） 获取特定软件包的用户。 外部测试版组中使用运行支持软件包外部测试版（Windows.Desktop 版本 10586 或更高版本；Windows.Mobile 版本 10586.63 或更高版本；或者 Xbox One）的 Windows10 版本的设备的任何用户都将从为该特定组指定的软件包外部测试版中获取软件包。 （软件包外部测试版包括面向任何操作系统版本的程序包，这些系统包括 Windows8.1/Windows Phone 8.1 或早期版本。）未添加到一个软件包外部测试版组或使用不支持软件包外部测试版的设备的任何用户将从非外部测试版提交中获取软件包。
+当你设置软件包外部测试版时，你可以指定应将其添加到**已知用户组**（有时称为外部测试版组） 获取特定软件包的用户。 外部测试版组中使用运行支持软件包外部测试版（Windows.Desktop 版本 10586 或更高版本；Windows.Mobile 版本 10586.63 或更高版本；或者 Xbox One）的 Windows10 版本的设备的任何用户都将从为该特定组指定的软件包外部测试版中获取软件包。 （你的软件包外部测试版包括面向任何操作系统版本，包括 Windows 8.1 / Windows Phone 8.1 或早期版本，如果你以前发布的应用已经支持它们的程序包。）尚未添加到一个外部测试版组，或使用不支持软件包外部测试版的设备的任何用户将从非外部测试版提交中获取程序包。
 
 > [!IMPORTANT] 
 > 在桌面和移动设备上，外部测试版组中的用户将在提供更新时在外部测试版中自动获取该程序包。 但是，**外部测试版组中使用 Xbox 设备的用户将需要手动检查更新**才能获取最新程序包，请确保他们是使用 Microsoft 帐户登录到所属设备中（通过包含在已知用户组中的关联电子邮件地址）。
@@ -51,7 +51,7 @@ ms.locfileid: "5757922"
 
 ## <a name="specify-packages-to-include-in-your-package-flight"></a>指定要包含在软件包外部测试版中的程序包
 
-在保存软件包外部测试版详细信息后，你可以看到其概述页。 单击**程序包**，指定要包括在外部测试版中的软件包。 可包含面向任何操作系统版本的程序包，这些系统包括 Windows10、Windows8.x 和 Windows Phone 8.x 或较早版本。
+在保存软件包外部测试版详细信息后，你可以看到其概述页。 单击**程序包**，指定要包括在外部测试版中的软件包。 你可以包含面向你的应用支持任何 OS 版本的程序包。
 
 可以选择与之前发布的提交关联的程序包（可以是非外部测试版的提交，或者是其他多个软件包外部测试版中的一个）。 如果你需要上传新程序包以供此软件包外部测试版，你可以此处上传它们 （使用[与上传到常规的非外部测试版提交的应用包时相同的进程](upload-app-packages.md)）。 完成指定要包括在此软件包外部测试版中的软件包后，单击**保存**。
 

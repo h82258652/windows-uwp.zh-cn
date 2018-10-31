@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Insights report in the Windows Dev Center dashboard
+Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: 洞察报告
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，相关的见解、 趋势、 异常，异常，数据发生更改
 ms.localizationpriority: medium
-ms.openlocfilehash: 082f6e133217061d319301ec3f65ed035a3eef23
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745037"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5837996"
 ---
 # <a name="insights-report"></a>洞察报告
 
 
-在 Windows 开发人员中心仪表板中的**洞察**报告重点介绍了我们检测到在你的购置、 运行状况，和/或使用情况数据过去 30 天内的重大更改 （增加或降低特定度量）。 这允许你获取快速查看一下可能很重要的更改，而无需在每个报告中查看所有图表。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)**洞察**报告重点介绍了我们检测到在你的购置、 运行状况，和/或使用情况数据过去 30 天内的重大更改 （增加或降低特定度量）。 这允许你获取快速查看一下可能很重要的更改，而无需在每个报告中查看所有图表。
 
 > [!NOTE]
 > 在此报告中的数据包含过去 30 天。 你无法选择此报告中的不同时间段。

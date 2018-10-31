@@ -2,29 +2,29 @@
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: 管理帐户设置和个人资料信息
-description: 你可以在统一 Windows 开发人员中心仪表板的“帐户设置”部分中，查看和更新你的开发者帐户设置和个人资料信息。
+description: 你可以查看和更新你的开发者帐户设置和合作伙伴中心的帐户设置部分中的个人资料信息。
 ms.author: wdg-dev-content
-ms.date: 03/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
-ms.openlocfilehash: b17281d597ea484c81896abd7efdc7d31fdc8add
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744003"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5837405"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
-你可以在 [Windows 开发人员中心仪表板](using-the-windows-dev-center-dashboard.md)的“帐户设置”**** 部分中，查看和更新你的开发者帐户设置和个人资料信息。 
+你可以查看和更新你的开发者帐户设置和[合作伙伴中心](https://partner.microsoft.com/dashboard)的**帐户设置**部分中的个人资料信息。 
 
 > [!NOTE]
-> 可以在**消息中心**（你可以选择仪表板顶部附近的消息图标来访问）管理通知首选项（如接收的通知类型及如何接收）。
+> 可以在**消息中心**（你可以选择访问合作伙伴中心的顶部附近的消息图标） 中管理通知首选项 （如哪种类型的通知，以接收和如何接收）。
 
 ## <a name="account-settings"></a>帐户设置
 
-若要查看你的帐户设置，单击你的仪表板右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和指向其他页面，你可以在其中查看信息并执行多种帐户相关任务的详细信息。
+若要查看你的帐户设置，单击在合作伙伴中心的右上角的齿轮图标，然后选择**开发人员设置**。 在此处你将找到有关你的帐户和指向其他页面，你可以在其中查看信息并执行多种帐户相关任务的详细信息。
 
 在**帐户详细信息**部分中，可以查看帐户的状态和类型。 你还可以看到你的卖家 ID 和其他的发布者 ID 信息。 这些值由 Microsoft 分配以唯一地标识开发者帐户，且无法进行编辑。
 
@@ -50,8 +50,8 @@ ms.locfileid: "5744003"
 - **开发人员中心会员计划**： 你可以选择在或退出[开发人员中心会员计划](dev-center-insider-program.md)从主**帐户设置**页面。
 - **付款帐户**和**税务资料**：可在此[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 - **企业关联**：接受希望发布应用以供其独家使用的企业的邀请。 有关详细信息，请参阅[将业务线应用分配到企业](distribute-lob-apps-to-enterprises.md)。
-- **用户**：将用户添加到开发人员中心帐户，并向其分配角色和权限。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
-- **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将 Azure AD 与开发人员中心帐户关联](associate-azure-ad-with-dev-center.md)。
+- **用户**： 将用户添加到你的帐户，并向其分配角色和权限。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+- **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将你的合作伙伴中心帐户与 Azure AD 关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。
 - **开发人员设备**： 查看和管理[已解锁用于测试的 Windows Phone 8.x 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 

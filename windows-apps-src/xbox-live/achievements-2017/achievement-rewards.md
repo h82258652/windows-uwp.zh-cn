@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 成就, 奖励
 ms.localizationpriority: medium
-ms.openlocfilehash: f26ca230cc7b9a41a078ac436c4c0c46e88ea70c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6c7d192bfe4b156e3767617ad9243efd1d94bd8e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5763297"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5818767"
 ---
 # <a name="achievement-rewards"></a>成就奖励
 
@@ -66,7 +66,7 @@ Xbox Live 支持以下类型的奖励：
 
 1. 在游戏启动或游戏从挂起状态恢复时查询成就服务，以确定哪些已解锁的成就具有应用内奖励并获得各自的奖励代码。 应始终完成此操作，以确保你能够在游戏未运行时或在其他主机上捕获已解锁的任何成就。  
 
-    若要进行查询，你可以在 Microsoft.Xbox.Services.Achievements 命名空间中使用 RESTful 成就 URI 或 API。
+    若要查询，你可以在 Microsoft.Xbox.Services.Achievements Namespace 中使用 RESTful 成就 Uri 或 Api。
 
 2. 注册即可在其中一个成就解锁时收到通知。 这是可选项，但对大部分游戏来说可能是必须的。 请注意，在发生解锁时，仅当游戏实际运行时才会收到此通知。 这是上一步骤之所以如此重要的另一个原因。
 

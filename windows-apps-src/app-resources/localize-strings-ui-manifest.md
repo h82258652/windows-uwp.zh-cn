@@ -10,12 +10,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e57d5c8ae4d1586de9f16455dc178c5e154fbf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760524"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836689"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
@@ -259,7 +259,7 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>从类库或 Windows 运行时库加载字符串
 引用的类库（通用 Windows）或 [Windows 运行时库（通用 Windows）](../winrt-components/index.md)的字符串资源通常被添加到在生成过程中要将其包括在其中的包的子文件夹中。 此类字符串的资源标识符通常采用 *LibraryName/ResourcesFileName/ResourceIdentifier* 的形式。
 
-库可以为自己的资源获取 ResourceLoader。 例如，下面的代码说明了库或引用该库的应用如何为库的字符串资源获取 ResourceLoader。
+库可以为自己的资源获取 ResourceLoader。 例如，以下代码演示如何库或引用该库的应用可以为获取 ResourceLoader 库的字符串资源。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");

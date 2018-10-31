@@ -4,38 +4,38 @@ Description: Set roles or custom permissions for account users.
 title: 为帐户用户设置角色或自定义权限
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 用户角色, 用户权限, 自定义角色, 用户访问权限, 自定义权限, 标准角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 753b71d409fd660687af77410f7f5796aa3c8a5c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748645"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835700"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>为帐户用户设置角色或自定义权限
 
-[将用户添加到开发人员中心帐户](add-users-groups-and-azure-ad-applications.md)时，将需要指定他们的帐户中有哪些访问权限。 可以通过将适用于整个帐户的[标准角色](#roles)分配给用户以实现此目的，或者可以选择[自定义权限](#custom)，向用户提供相应的访问权限级别。 有些自定义权限适用于整个帐户，有些权限限制于一个或多个特定产品（如果你愿意，可授予所有产品）。
+当你在[将用户添加到你的合作伙伴中心帐户](add-users-groups-and-azure-ad-applications.md)，你将需要指定他们的帐户中有哪些访问权限。 可以通过将适用于整个帐户的[标准角色](#roles)分配给用户以实现此目的，或者可以选择[自定义权限](#custom)，向用户提供相应的访问权限级别。 有些自定义权限适用于整个帐户，有些权限限制于一个或多个特定产品（如果你愿意，可授予所有产品）。
 
 > [!NOTE] 
 > 无论是添加用户、组还是添加 Azure AD 应用程序，均可应用同一角色和权限。
 
 在确定应用什么角色或权限时，请注意： 
--   用户（包括组和 Azure AD 应用程序）将能够使用与其分配角色关联的权限访问整个开发人员中心帐户，除非[自定义权限](#custom)并分配[产品级别的权限](#product-level-permissions)，这样他们只能使用特定的应用和/或加载项。
+-   用户 （包括组和 Azure AD 应用程序） 将能够使用其分配角色关联的权限访问整个合作伙伴中心帐户，除非你[自定义权限](#custom)并将其分配[产品级别权限](#product-level-permissions)因此，他们只能使用特定的应用和/或加载项。
 -   可以通过选择多个角色或使用自定义权限授予想要授予的访问权限，允许用户、组或 Azure AD 应用程序访问多个角色的功能。
 -   具有某个角色（或自定义权限集）的用户还可加入具有其他角色（或权限集）的组。 在该情况下，用户可访问与组和个人帐户关联的所有功能。
 
 > [!TIP]
-> 本主题特定于 Windows 应用开发人员计划。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 有关 Windows 桌面应用程序计划中的用户角色的信息，请参阅 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
+> 本主题仅适用于 Windows 应用开发人员计划，[合作伙伴中心](https://partner.microsoft.com/dashboard)中。 有关硬件开发人员计划中用户角色的信息，请参阅[管理用户角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 有关 Windows 桌面应用程序计划中的用户角色的信息，请参阅 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
 
 
 <span id="roles" />
 
 ## <a name="assign-roles-to-account-users"></a>将角色分配给帐户用户
 
-默认情况下，从将用户、组或 Azure AD 应用程序添加至开发人员中心帐户时起，即有一组标准角色可供选择。 每个角色都有一组特定的权限，以便在帐户内执行某些功能。 
+默认情况下，一组标准角色可供你选择时添加用户、 组或 Azure AD 应用程序到合作伙伴中心帐户。 每个角色都有一组特定的权限，以便在帐户内执行某些功能。 
 
 除非选择定义[自定义权限](#custom)（方法为选中**自定义权限**），否则添加到帐户的每个用户、组或 Azure AD 应用程序都必须分配以下标准角色中的至少一个角色。 
 
@@ -45,7 +45,7 @@ ms.locfileid: "5748645"
 
 | 角色                 | 描述              |
 |----------------------|--------------------------|
-| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在开发人员中心中管理用户，但请注意，在 Azure AD 租户中创建和删除用户的功能取决于帐户在 Azure AD 中的权限。 即，如果用户分配了管理员角色，但在组织的 Azure AD 中没有全局管理员权限，他们将无法创建新用户或从目录中删除用户（尽管他们可以更改用户的开发人员中心角色）。 <p> 注意，如果开发人员中心帐户与多个 Azure AD 租户关联，则管理员无法查看完整的用户详细信息（包括名字、姓氏、密码恢复电子邮件，以及他们是否为 Azure AD 全局管理员），除非使用拥有该用户所在租户的全局管理员权限的帐户登录该租户。 不过，管理员可以在与开发人员中心帐户关联的任何租户中添加和删除用户。 |
+| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在合作伙伴中心中管理用户，但请注意，若要创建和删除 Azure AD 租户中的用户的功能取决于 Azure AD 中的帐户的权限。 也就是说，如果用户分配了管理员角色，但不具有全局管理员权限在组织的 Azure AD，他们将无法创建新用户或从目录中删除用户 （尽管他们可以更改用户的合作伙伴中心角色）。 <p> 注意，如果与多个 Azure AD 租户相关联的合作伙伴中心帐户，管理器无法查看完整的用户详细信息 (包括名字、 姓氏、 密码恢复电子邮件，以及它们是否为 Azure AD 全局管理员) 除非它们是登录到与具有该租户的全局管理员权限的帐户的用户所在租户。 但是，他们可以添加和删除与合作伙伴中心帐户相关联的任何租户中的用户。 |
 | 开发人员            | 可以上传程序包并提交应用和加载项，并且可以查看[使用情况报告](usage-report.md)获取遥测详细信息。 可以访问[跨设备体验](https://go.microsoft.com/fwlink/?linkid=874042)功能。 无法查看财务信息或帐户设置。   |
 | 业务参与者 | 可查看[运行状况](health-report.md)和[使用情况](usage-report.md)报告。 无法创建或提交产品、更改帐户设置或查看财务信息。   |
 | 财务参与者  | 可查看[付款报告](payout-summary.md)、财务信息和购置报告。 无法对应用、加载项或帐户设置进行任何更改。    |
@@ -173,7 +173,6 @@ ms.locfileid: "5748645"
     <tr><td align="left">    <b>运行状况</b> </td><td>    可查看产品的<a href="health-report.md">运行状况报告</a>。    </td><td>    不适用     </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>客户反馈</b>    </td><td>    可查看产品的<a href="reviews-report.md">评论</a>和<a href="feedback-report.md">反馈</a>报告。       </td><td>    不适用（若要响应反馈或评论，必须授予<b>联系客户</b>权限）   </td><td>    不适用     </td><td>    不适用         </td></tr>
     <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可查看产品的[Xbox 分析报告](xbox-analytics-report.md)。    </td><td>    不适用   </td><td>    不适用       </td><td>    不适用          </td></tr>
-    <tr><td align="left">    <b>真实数据</b>   </td><td>    可查看产品的实时报告。 （注意：该报告目前仅通过<a href="dev-center-insider-program.md">开发人员中心会员计划</a>提供。）      </td><td>    不适用   </td><td>    不适用     </td><td>    不适用                 </td></tr>
     </tbody>
     </table>
 

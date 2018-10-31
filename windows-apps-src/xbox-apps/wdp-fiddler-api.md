@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758213"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838488"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 设置 API 参考   
 可以使用此 REST API 在开发工具包上启用和禁用 Fiddler 网络跟踪。
