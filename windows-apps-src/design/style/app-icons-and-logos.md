@@ -11,11 +11,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877468"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947728"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -25,8 +25,8 @@ ms.locfileid: "5877468"
     :::column:::
         * 你的应用窗口标题栏
         * 开始菜单中的应用列表
-        * 任务栏和任务管理器
-        * 你的应用的磁贴
+        * 在任务栏和任务管理器
+        * 你的应用磁贴
         * 你的应用的初始屏幕
         * 在 Microsoft Store 中
     :::column-end:::
@@ -41,7 +41,7 @@ ms.locfileid: "5877468"
 
 ## <a name="icon-types-locations-and-scale-factors"></a>图标类型、 位置和比例系数
 
-默认情况下，Visual Studio 资产子目录中存储图标资源。 下面是不同类型的显示位置的图标和他们正在调用的列表。 
+默认情况下，Visual Studio 资产子目录中存储图标资源。 下面是的图标显示位置和它们的调用不同类型的列表。 
 
 | 图标名称 | 显示在 | 资产文件名称 |
 | ---      | ---        | --- |
@@ -49,16 +49,16 @@ ms.locfileid: "5877468"
 | 中等磁贴 |开始菜单中，Microsoft Store listing\ *  |  Square150x150Logo.png |
 | 宽磁贴  | “开始”菜单   | Wide310x150Logo.png |
 | 大磁贴   | 开始菜单中，Microsoft Store listing\ * |  LargeTile.png  |
-| 应用图标 | 在开始菜单、 任务栏、 任务管理器中的应用列表 | Square44x44Logo.png |
+| 应用图标 | 在开始菜单、 任务栏、 任务管理器的应用列表 | Square44x44Logo.png |
 | 初始屏幕 | 应用的初始屏幕 | 是 SplashScreen.png  |
-| 锁屏提醒徽标 | 你的应用的磁贴 | BadgeLogo.png  |
+| 锁屏提醒徽标 | 你的应用磁贴 | BadgeLogo.png  |
 | 程序包徽标/应用商店徽标 | 应用安装程序，开发人员中心，应用商店的应用商店中的"写评论"选项中的"报告应用程序"选项 | StoreLogo.png  |
 
 \ * 使用，除非你选择[仅显示上传的应用商店中的图像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。 
 
 若要确保这些图标看起来锐每个屏幕上，你可以创建多个版本的不同的显示比例系数的同一个图标。 
 
-比例系数确定文本等 UI 元素的大小。 比例系数介于 100%和 400%。 较大的值创建较大 UI 元素，使其更易于查看高 DPI 显示器上。 
+比例系数确定文本等 UI 元素的大小。 缩放系数介于 100%和 400%。 较大的值创建较大的 UI 元素，使其更易于查看高 DPI 显示器上。 
 
 :::row:::
     :::column:::
@@ -72,17 +72,17 @@ ms.locfileid: "5877468"
 :::row-end:::  
 
 
-由于应用图标资源是位图，位图不会也随比例，我们建议为每个比例系数提供版本每个图标资源： 100%、 125%、 150%、 200%和 400%。 有很多图标的 ！ Fortunatly，Visual Studio 提供了一种工具，便于生成和更新这些图标。 
+由于应用图标资源是位图，位图不会也随比例，我们建议为每个比例系数提供一个版本每个图标资源： 100%、 125%、 150%、 200%和 400%。 有很多图标的 ！ Fortunatly，Visual Studio 提供了一种工具，便于生成和更新这些图标。 
 
 ## <a name="microsoft-store-listing-image"></a>Microsoft Store 一览图像
 
-"如何指定我的应用一览图像在 Microsoft Store 中？"
+"如何指定为我的应用一览图像在 Microsoft Store 中？"
 
-默认情况下，我们使用你的程序包的图像的一些在应用商店中 （以及其他[你在提交过程中提供的图像](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)） 此页面的顶部表中所述。 但是，你可以选择防止应用商店使用你的应用包中的徽标图像，向 Windows 10 （包括 Xbox） 上的客户显示你的一览时，并改为具有应用商店使用你上传的图像。 这为你提供更好地控制你的应用的外观的整个应用商店的各种显示中。 （请注意，是否你的产品支持较早的操作系统版本，这些客户可能仍会看到图像从你的程序包，即使你使用此选项。）你可以在提交过程的**应用商店一览**步骤的**应用商店徽标**部分中执行此操作。
+默认情况下，我们使用某些你的程序包的图像在应用商店中 （以及其他[你在提交过程中提供的图像](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)） 此页面顶部表中所述。 但是，你可以选择防止应用商店向 Windows 10 （包括 Xbox） 上的客户显示你的一览时，你的应用包中使用的徽标图像，并改为具有应用商店使用你上传的图像。 这为你提供更好地控制你的应用的外观的整个应用商店的各种显示中。 （请注意，是否你的产品支持较早的操作系统版本，这些客户可能仍会看到图像从你的程序包，即使你使用此选项。）你可以在提交过程的**应用商店一览**步骤的**应用商店徽标**部分中执行此操作。
 
 ![在应用提交过程中指定应用商店徽标](images/app-icons/storelogodisplay.png)
 
-选中此框，出现了名为**应用商店显示图像**的新部分。 此处，你可以上传应用商店将使用你的应用包中的徽标图像代替的 3 个图像大小： 300 x 300、 150 x 150 和 71 x 71 像素。 尽管我们建议提供所有 3 个大小，是必需的仅为 300 x 300 大小。
+选中此框，出现了名为**应用商店显示图像**的新部分。 在这里，你可以上传应用商店将使用你的应用包中的徽标图像代替的 3 个图像大小： 300 x 300、 150 x 150 和 71 x 71 像素。 尽管我们建议提供所有 3 大小，是必需的仅为 300 x 300 大小。
 
 有关详细信息，请参阅[仅显示上传的应用商店中的徽标图像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。
 
@@ -104,12 +104,12 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 ## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>使用 Visual Studio 清单设计器的管理应用图标
 
-Visual Studio 提供用于管理你的应用图标称为**清单设计器**非常有用的工具。 
+Visual Studio 提供了用于管理你的应用图标调用**清单设计器**的非常有用的工具。 
 
-> 如果你尚未获得 Visual Studio 2017 中，有多个版本可用，包括免费版、 （Visual Studio 2017 社区版），并且其他版本提供免费试用版。 你可以在此处下载它们：[https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> 如果你尚未获得 Visual Studio 2017，有很多个版本可用，包括免费版，（Visual Studio 2017 社区版），和其他版本提供免费试用版。 你可以在此处下载它们：[https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
-若要启动清单设计器:
+若要启动清单设计器：
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
@@ -158,14 +158,14 @@ Visual Studio 提供用于管理你的应用图标称为**清单设计器**非�
 
 ## <a name="generating-all-assets-at-once"></a>在一次生成所有资源
 
-在**视觉资源**选项卡，**所有视觉资源**，第一个菜单项未完全什么其名称所示： 生成你的应用需要按某个按钮与每个视觉资产。
+在**视觉资源**选项卡，**所有视觉资源**，第一个菜单项未完全什么其名称的建议： 生成你的应用需要按某个按钮与每个视觉资产。
 
 ![在 Visual Studio 中生成所有视觉资源](images/app-icons/all-visual-assets.png)
 
-你需要做是提供一个图像，和 Visual Studio 将生成小磁贴、 中等磁贴、 大磁贴、 宽磁贴、 大磁贴、 应用图标、 初始屏幕，并打包徽标资源，以便每个比例系数。
+你需要做是提供单个图像，并 Visual Studio 将生成小磁贴、 中等磁贴、 大磁贴、 宽磁贴、 大磁贴、 应用图标、 初始屏幕，并为每个比例系数的徽标资产包。
 
 若要在一次生成所有资源：
-1. 单击**源**字段旁边的 **...** ，然后选择你想要使用的图像。 如果你使用位图图像，确保它至少 400 400 个像素，以便你获得清晰的结果。 基于矢量的图像工作性能最佳。Visual Studio 可让你可以使用 AI (Adobe Illustrator) 和 PDF 文件。 
+1. 单击**源**字段旁边 **...** 并选择你想要使用的图像。 如果你使用位图图像，确保它至少 400 400 个像素，以便你获得清晰的结果。 基于矢量的图像适合;Visual Studio 可让你可以使用 AI (Adobe Illustrator) 和 PDF 文件。 
 2. （可选）。在**显示设置**部分中，配置以下选项：
 
     a.  **短名称**： 指定你的应用的短名称。
@@ -186,25 +186,25 @@ Visual Studio 生成你的图像文件，并将其添加到项目。 如果你�
 
 例如，
 
-Square150x150Logo 比例-100.png、 Square150x150Logo 比例-200.png、 Square150x150Logo 比例-400.png
+Square150x150Logo-比例-100.png、 Square150x150Logo-比例-200.png、 Square150x150Logo-比例-400.png
 
-请注意，Visual Studio 不会默认情况下生成锁屏提醒徽标。 这是因为锁屏提醒徽标是唯一的并且可能不应匹配你的其他应用程序图标。 有关详细信息，请参阅[UWP 应用项目的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。 
+请注意，Visual Studio 不会生成锁屏提醒徽标，默认情况下。 这是因为锁屏提醒徽标是唯一的并且可能不应匹配你的其他应用图标。 有关详细信息，请参阅[为 UWP 应用项目的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。 
 
 
 ## <a name="more-about-app-icon-assets"></a>有关应用图标资源的详细信息
 Visual Studio 将生成你的项目，所需的所有应用图标资源，但如果你想要自定义它们，这有助于了解如何在不同于其他应用资源。 
 
-应用图标资源出现在大量的位置： Windows 任务栏、 任务视图、 ALT + tab 键，以及开始菜单磁贴的右下角。 在很多地方显示应用图标资源，因为它具有一些额外的调整大小和 plating 的选项没有其他资源:"目标大小"资产和"更新"的资源。 
+应用图标资源出现在大量的位置： Windows 任务栏、 任务视图、 ALT + TAB、 和开始菜单磁贴的右下角。 在很多地方显示应用图标资源，因为它具有一些额外的大小调整和 plating 的选项没有其他资源:"目标大小"资产和"更新"的资源。 
 
 ### <a name="target-size-app-icon-assets"></a>目标大小应用图标资源
-除了标准的比例系数大小 ("Square44x44Logo.scale-400.png")，我们还建议创建的"目标大小"资源。 我们将这些资产目标大小，因为它们面向特定的大小，如 16 个像素，而不是特定的比例系数，如 400。 对于不使用停滞系统缩放的图面是目标大小的资源：
+除了标准的比例系数大小 ("Square44x44Logo.scale-400.png")，我们还建议创建的"目标大小"资源。 我们将这些资产目标大小，因为它们面向特定的大小，如 16 个像素，而不是特定的比例系数，如 400。 请勿使用缩放停滞系统的曲面的目标大小资源如下：
 
 * “开始”菜单跳转列表（桌面）
 * 磁贴下角的“开始”菜单（桌面）
 * 快捷方式（桌面）
 * 控制面板（桌面）
 
-下面是目标大小资源列表：
+下面是目标大小的资源的列表：
 
 
 | 资源大小 | 文件名示例                  |
@@ -233,7 +233,7 @@ Visual Studio 将生成你的项目，所需的所有应用图标资源，但如
 ![Windows 任务栏中的资源](images/assetguidance21.png)
 
 ### <a name="unplated-assets"></a>未着色的资源
-默认情况下，Windows 默认情况下使用彩色背板顶部的基于目标的资源。 如果需要，你可以提供基于目标的未着色的资源。 "更新"，则意味着资产将显示在透明背景。 请记住，这些资产将显示在不同的背景色。 
+默认情况下，Windows 默认情况下使用彩色背板顶部的基于目标的资源。 如果需要，你可以提供基于目标的未着色的资源。 "更新"，则意味着资产将显示透明背景。 请记住，这些资产将显示在不同的背景色。 
 
 ![未着色和着色资源](images/assetguidance22.png)
 
@@ -256,19 +256,19 @@ Visual Studio 将生成你的项目，所需的所有应用图标资源，但如
 
 ## <a name="more-about-badge-logo-assets"></a>有关锁屏提醒徽标资源的详细信息
 
-当你使用的资源生成器生成所需的所有资产时，没有为什么它不会默认情况下会都生成锁屏提醒徽标的原因： 它们明显不同于其他应用资源。 锁屏提醒徽标是显示在通知和应用的磁贴上一状态图像。 
+你使用的资源生成器生成所需的所有资产，时为什么它不会都生成锁屏提醒徽标默认情况下的原因： 它们明显不同于其他应用资源。 锁屏提醒徽标是显示在通知和应用的磁贴上的状态图像。 
 
-有关详细信息，请参阅[UWP 应用项目的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
+有关详细信息，请参阅[为 UWP 应用项目的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
 
 
 ## <a name="customizing-asset-padding"></a>自定义的资源填充
 
-默认情况下，Visual Studio 资产生成器到任何映像应用推荐的填充。 如果你的映像已经包含填充或希望扩展到磁贴的结尾的全出血图像，你可以关闭此功能通过取消选中**应用推荐的填充**复选框。 
+默认情况下，Visual Studio 资产生成器到任何映像应用推荐的填充。 如果你的映像已经包含填充或者你想要扩展到磁贴的结尾的全出血图像，你可以关闭此功能通过取消选中**应用推荐的填充**复选框。 
 
 ### <a name="tile-padding-recommendations"></a>磁贴填充建议
 如果你想要提供你自己的填充，下面是我们建议为磁贴。 
 
-有四种磁贴大小： 小 (71 x 71)、 中等 (150 x 150)、 范围 (310 x 150)，以及大 (310 x 310)。 
+有 4 个磁贴大小： 小 (71 x 71)、 中等 (150 x 150)、 范围 (310 x 150) 和大 (310 x 310)。 
 
 每个磁贴资源的大小与在其上放置的磁贴大小相同。
 

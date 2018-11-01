@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 65afbaa4440a5bce43ca6d48126e6cc2b8316466
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879252"
+ms.locfileid: "5947568"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-在[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，可帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件的详细信息，并建议在故障的情况下操作。
+[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件的详细信息，并建议在故障的情况下操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
@@ -246,7 +246,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 如果原生的可执行文件未通过测试，请确保你使用了最新的编译器和链接器来生成文件，并在链接器上使用了 */appcontainer* 标记。
 
-如果托管的可执行文件未通过测试，请确保你使用了最新的编译器和链接器，如 Microsoft Visual Studio 生成 UWP 应用。
+如果托管的可执行文件未通过测试，请确保你使用的最新的编译器和链接器，如 Microsoft Visual Studio 中，生成 UWP 应用。
 
 **备注**
 
@@ -306,7 +306,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="background"></a>背景
 
-应用必须使用适用于 UWP 应用 （Windows 运行时或受支持的 Win32 Api） 的 Microsoft 应用商店认证的 Api。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
+适用于 UWP 应用 （Windows 运行时或受支持的 Win32 Api） 的 Microsoft 应用商店进行认证，应用必须使用的 Api。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -507,7 +507,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="corrective-actions"></a>更正操作
 
--   提交到 Microsoft Store 之前，将应用编译为发行版本。
+-   将其提交到 Microsoft Store 之前，请将应用编译为发行版本。
 -   确保你安装了正确版本的 .NET Framework。
 -   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 

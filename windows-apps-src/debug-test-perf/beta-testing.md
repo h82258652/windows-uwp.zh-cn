@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5862500"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5923206"
 ---
 # <a name="beta-testing"></a>Beta 测试
 
@@ -34,7 +34,7 @@ ms.locfileid: "5862500"
 -   在各种设备上测试你的应用。
 -   标识性能问题和以其他方式可能找不到的其他错误。
 -   获取可用于改善用户体验的实际使用情况信息。
--   收到反馈，而不会影响的 Microsoft 应用商店中的公共评级。
+-   收到反馈，而不会影响在 Microsoft Store 中的公共评级。
 
 ## <a name="when-to-beta-test"></a>何时进行 Beta 测试
 

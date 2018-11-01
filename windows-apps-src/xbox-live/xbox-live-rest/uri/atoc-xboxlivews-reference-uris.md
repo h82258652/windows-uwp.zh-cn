@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5874520"
+ms.locfileid: "5947502"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
@@ -67,7 +67,7 @@ ms.locfileid: "5874520"
 
 [隐私 URI](privacy/atoc-reference-privacyv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的隐私。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法出于隐私。
 
 [配置文件 URI](profileV2/atoc-reference-profiles.md)
 
@@ -87,7 +87,7 @@ ms.locfileid: "5874520"
 
 [标题存储 URI](storage/atoc-reference-storagev2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法的标题存储。
+&nbsp;&nbsp;Uri 和关联的标题存储的 HTTP 方法。
 
 [系统字符串验证 URI](stringserver/atoc-reference-systemstringsvalidate.md)
 
@@ -95,7 +95,7 @@ ms.locfileid: "5874520"
 
 [用户 URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri 和关联的用户的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为用户。
 
 [用户统计信息 URI](userstats/atoc-reference-userstats.md)
 

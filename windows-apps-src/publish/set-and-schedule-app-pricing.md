@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5866812"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922784"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 
 可通过[定价和可用性](set-app-pricing-and-availability.md)页面的**定价**部分为应用选择一个基价。 还可[计划价格更改](#schedule-price-changes)，以指示应用价格应更改的日期和时间。 此外，你可以选择[替代特定市场的基价](#override-base-price-for-specific-markets)，方法是选择新的价格层或使用市场的当地货币输入自由格式价格。
 
 > [!NOTE]
-> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，[订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能不断增加 （通过更改的基本价格或通过计划价格更改），尽管它可能会降低。
+> 虽然本主题涉及应用，但加载项提交的价格选择也使用同样的过程。 请注意，[订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)，你选择的基本价格不能不断增加 （通过计划价格更改，或通过更改的基本价格），尽管它可能会降低。
 
 ## <a name="base-price"></a>基价
 
@@ -37,7 +37,7 @@ ms.locfileid: "5866812"
 请记住，你选择的价格段可能包含你的客户必须支付的销售税或增值税。 若要了解有关选定市场中应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
-> 如果你选择下**可用，但不可被发现在应用商店中使此产品**的**停止购置**选项中的[可见性](choose-visibility-options.md#discoverability)部分），你将无法设置为你的提交定价 （因为没有人能够获取该应用除非他们使用促销代码免费获取应用）。
+> 如果你选择**停止获取**选项下**可用，但不可被发现在应用商店中使此产品**在[可见性](choose-visibility-options.md#discoverability)部分），你将无法设置定价 （因为没有人能够获取该应用提交除非他们使用促销代码免费获取应用）。
 
 ## <a name="schedule-price-changes"></a>计划价格更改
 
@@ -61,7 +61,7 @@ ms.locfileid: "5866812"
 默认情况下，上述所选选项将应用于所有提供应用的市场。 你可以有选择地更改一个或多个市场的价格，方法是选择不同的价格段或使用市场的当地货币输入自由格式价格。
 
 > [!IMPORTANT]
-> 如果你以前发布的应用支持 Windows 8，这些客户将始终看到应用**基本价格**其，即使你选择了不同的价格为其所在市场。
+> 如果你以前发布的应用支持 Windows 8，这些客户将始终看到应用**基本价格**它，即使你选择了不同的价格为其所在市场。
 
 若要更改特定市场的价格，单击**选择基价替代的市场**。 随即将出现**市场选择**弹出窗口，其中列出了所有你选择要提供应用的市场。 （如果在**市场**部分中排除了任何市场，则这些市场将不可用。） 
 

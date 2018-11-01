@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869976"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5941901"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -52,7 +52,7 @@ ms.locfileid: "5869976"
 
 简而言之，将字符串分解为在所有上下文中均起作用的几个部分。 将出现需要将某一字符串作为整个句子的情况。
 
-请考虑以下字符串:"{0}无法同步。"
+请考虑以下字符串:"{0}不会同步。"
 
 大量的字词可能会替换{0}，如"约会"、"任务"或"文档"。 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
 

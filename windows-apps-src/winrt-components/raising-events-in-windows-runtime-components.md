@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dddd170f5f056de18c4729b6b6b5b4b6cbcea7b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861327"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921393"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 运行时组件中引发事件
 > [!NOTE]
@@ -140,7 +140,7 @@ toastCompletedEventHandler: function (event) {
 
 在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”**** 对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”**** 设置为“调试”**** 以及将“平台”**** 设置为 x86、x64 或 ARM。 选择“确定”**** 按钮。
 
-**重要提示**平台 = 所有 CPU 不工作，因为它是你将在以后添加到解决方案的本机代码 Win32 dll 无效。
+**重要**平台 = 所有 CPU 不起都作用，因为它是你将在以后添加到解决方案的本机代码 Win32 dll 无效。
 
 在“解决方案资源管理器”中，将 class1.cs 重命名为 ToasterComponent.cs，以便它与项目名相匹配。 Visual Studio 会自动重命名文件中的类，以便与新的文件名相匹配。
 
@@ -271,7 +271,7 @@ MakeToast 函数必须挂接到一个按钮。 更新 default.html 以包含用�
     </body>
 ```
 
-如果我们未使用 TypedEventHandler，则现在可以在本地计算机上运行该应用，并单击该按钮来生成 Toast。 但是我们的应用不会发生任何情况。 若要找出原因，可以调试引发 ToastCompletedEvent 的托管代码。 停止项目，然后在菜单栏上，选择**调试&gt;Toaster 应用程序属性**。 将“调试器类型”**** 更改为“仅托管”****。 同样在菜单栏上，选择**调试&gt;异常**，然后选择**公共语言运行时异常**。
+如果我们未使用 TypedEventHandler，则现在可以在本地计算机上运行该应用，并单击该按钮来生成 Toast。 但是我们的应用不会发生任何情况。 若要找出原因，可以调试引发 ToastCompletedEvent 的托管代码。 停止项目，然后在菜单栏上，选择**调试&gt;Toaster Application 属性**。 将“调试器类型”**** 更改为“仅托管”****。 同样在菜单栏上，选择**调试&gt;异常**，然后选择**公共语言运行时异常**。
 
 现在运行应用并单击“生成 Toast”按钮。 调试器会捕获一个无效的转换异常。 尽管从其消息中看不是很明显，但发生了该异常，因为该接口的代理丢失。
 
@@ -328,9 +328,9 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要提示**为 ARM 还是 x64 项目配置，更改为 x64 或 arm32 的 MIDL /env 参数。
+**重要**为 ARM 或 x64 项目配置、 更改为 x64 或 arm32 的 MIDL /env 参数。
 
-若要确保 IDL 文件时重新生成每次更改.winmd 文件，更改为**运行生成后事件****时生成更新项目输出。**
+若要确保 IDL 文件时重新生成每次更改.winmd 文件时，更改为**运行生成后事件****时生成更新项目输出。**
 生成事件的属性页应与此类似：![生成事件](./images/buildevents.png)
 
 重新生成解决方案以生成和编译 IDL。
@@ -339,7 +339,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>将代理和存根代码编译到 DLL 中
 
-现在你拥有所需的文件，可以对它们进行编译来生成 DLL（它是 C++ 文件）。 若要使其尽可能简单，请添加一个新项目来支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后依次选择“添加”>“新建项目”****。 在**新建项目**对话框的左侧窗格中，展开**Visual c + + &gt; Windows&gt;通用 Windows**，然后在中间窗格中，选择**DLL （UWP 应用）**。 （请注意，这不是 c + + Windows 运行时组件项目）。代理服务器将项目命名，然后选择**确定**按钮。 当 C# 类中发生某些更改时，这些文件将通过生成后事件进行更新。
+现在你拥有所需的文件，可以对它们进行编译来生成 DLL（它是 C++ 文件）。 若要使其尽可能简单，请添加一个新项目来支持生成代理。 打开 ToasterApplication 解决方案的快捷菜单，然后依次选择“添加”>“新建项目”****。 在**新建项目**对话框的左侧窗格中，展开**Visual c + + &gt; Windows&gt;通用 Windows**，然后在中间窗格中，选择**DLL （UWP 应用）**。 （请注意，这不是 c + + Windows 运行时组件项目）。该项目的代理服务器，然后选择**确定**按钮。 当 C# 类中发生某些更改时，这些文件将通过生成后事件进行更新。
 
 默认情况下，代理项目会生成标头 .h 文件和 C++ .cpp 文件。 由于 DLL 从产生于 MIDL 的文件中生成，因此不需要 .h 和 .cpp 文件。 在“解决方案资源管理器”中，打开它们的快捷菜单、选择“删除“****，然后确认删除。
 

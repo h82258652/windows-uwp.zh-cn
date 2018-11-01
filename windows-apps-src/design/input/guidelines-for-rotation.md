@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bffed44921df05a72025e86917901a65fe7ea82
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870901"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922158"
 ---
 # <a name="rotation"></a>旋转
 
@@ -90,7 +90,7 @@ Windows8 支持三种类型的旋转： 自由、 受限以及组合。
 <td align="left">组合旋转</td>
 <td align="left"><p>组合旋转支持包含区域（类似于<a href="guidelines-for-panning.md">平移指南</a>中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度对齐点上。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
 <div class="alert">
-<strong>注意</strong>用户界面围栏是目标周围的某个区域周围限制向特定值或位置，从而影响其选择移动的功能。
+<strong>注意</strong>用户界面围栏是一项功能周围的目标某个区域限制向特定值或位置，从而影响其选择的移动。
 </div>
 <div>
  

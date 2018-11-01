@@ -8,11 +8,11 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cb837965746eb1c2c7deab613eec239a83cac294
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882495"
+ms.locfileid: "5923959"
 ---
 # <a name="extend-the-game-sample"></a>扩展游戏示例
 
@@ -25,7 +25,7 @@ ms.locfileid: "5882495"
 ## <a name="using-xaml-for-the-overlay"></a>将 XAML 用于覆盖层
 
 
-还有一种方法我们未深入讨论，即使用 XAML 代替 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 作为覆盖层。 与 Direct2D 相比，XAML 在绘制用户界面元素方面有许多优势。 最重要的一点是，它可以将 windows 10 外观和感觉融入 DirectX 游戏更方便。 许多用于定义 UWP 应用的常用元素、 样式和行为都紧密集成到 XAML 模型中，大幅减少了游戏开发人员的实现工作。 如果你自己设计的游戏有一个复杂的用户界面，请考虑使用 XAML 代替 Direct2D。
+还有一种方法我们未深入讨论，即使用 XAML 代替 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 作为覆盖层。 与 Direct2D 相比，XAML 在绘制用户界面元素方面有许多优势。 最重要的好处是，它可以将 windows 10 外观和感觉融入 DirectX 游戏更方便。 许多用于定义 UWP 应用的常用元素、 样式和行为都紧密集成到 XAML 模型中，大幅减少了游戏开发人员的实现工作。 如果你自己设计的游戏有一个复杂的用户界面，请考虑使用 XAML 代替 Direct2D。
 
 使用 XAML，我们可以制作一个外观与之前制作的 Direct2D 界面类似的游戏界面。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 呈现框架, 转换, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867541"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921297"
 ---
 # <a name="convert-the-rendering-framework"></a>转换呈现框架
 
@@ -99,7 +99,7 @@ technique RenderSceneSimple
 
 定义了输入布局之后，我们要确保它表示我们用来在系统内存和 GPU 内存中存储每个顶点数据的相同数据结构。 同样，顶点着色器的输出应该与用作像素着色器输入的结构相匹配。 在 C++ 中，将数据从一个函数传递到另一个函数时的规则并不相同；你可以忽略位于结构结尾部分的未使用的变量。 但不能重新排列顺序，并且不能跳过数据结构中间的内容。
 
-> **注意** Direct3D 9 中为顶点着色器绑定到像素着色器的规则比更宽松 Direct3D 11 中的规则。 Direct3D 9 排列比较灵活，但效率低。
+> **注意** Direct3D 9 中为顶点着色器绑定到像素着色器的规则比更宽松的 Direct3D 11 中的规则。 Direct3D 9 排列比较灵活，但效率低。
 
  
 
@@ -238,7 +238,7 @@ m_d3dDevice->CreateVertexShader(
 
 若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用包中。
 
-> **注意**请确保为 HLSL 编译器设置正确的目标功能级别： 右键单击 HLSL 源文件，在 Visual Studio 中的，选择属性并更改下的**着色器模型**设置**HLSL 编译器-&gt;常规**。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
+> **注意**请确保为 HLSL 编译器设置正确的目标功能级别： 右键单击 HLSL 源文件，在 Visual Studio 中的，选择属性下的将**着色器模型**设置更改**HLSL 编译器-&gt;常规**。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
 
  
 

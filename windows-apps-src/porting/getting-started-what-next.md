@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8a6165df7bf839154ede4db3fda8a5e1662880
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870283"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922794"
 ---
 # <a name="getting-started-what-next"></a>入门：下一步是什么？
 
@@ -31,7 +31,7 @@ ms.locfileid: "5870283"
 
 此外，请确保访问我们的[社区资源](https://developer.microsoft.com/en-us/windows/support)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
 
-我们认为，windows 10 将开启为你的新应用构建机会。 我们期待看到你即将生成的所有优秀应用！
+我们认为，windows 10 将打开你的新应用构建机会。 我们期待看到你即将生成的所有优秀应用！
 
 ## <a name="related-topics"></a>相关主题
 

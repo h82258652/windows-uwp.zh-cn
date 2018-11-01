@@ -9,15 +9,15 @@ keywords: windows 10, uwp, 会员, 开发人员中心会员, 预览功能
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: 950c80967851c858212fecc6999c93b55dd439de
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861416"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947908"
 ---
 # <a name="dev-center-insider-program"></a>开发人员中心会员计划
 
-作为[注册的开发人员](http://go.microsoft.com/fwlink/?LinkID=615100)，你可以帮助影响我们的功能可通过加入开发人员中心会员计划。 此计划允许你在向所有开发人员提供新功能前试用它们。 我们鼓励你通过向我们提供你的反馈有关这些功能在你的仪表板右上角中使用问号图标下的反馈链接。 我们将仔细阅读从开发人员中心会员收到的所有反馈，并给予优先考虑。
+作为[注册的开发人员](http://go.microsoft.com/fwlink/?LinkID=615100)，你可以帮助影响我们提供通过加入开发人员中心会员计划的功能。 此计划允许你在向所有开发人员提供新功能前试用它们。 我们鼓励你通过向我们提供你的反馈有关这些功能在你的仪表板右上角中使用问号图标下的反馈链接。 我们将仔细阅读从开发人员中心会员收到的所有反馈，并给予优先考虑。
 
 若要加入该计划，选择**帐户设置**页面上。 你可以随时选择退出。
 

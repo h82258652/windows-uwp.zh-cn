@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871749"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947738"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -30,7 +30,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 
 ## <a name="whats-new-in-playready-drm"></a>PlayReady DRM 中的新增功能
 
-下表介绍了新功能和对适用于 windows 10 的 PlayReady DRM 所做的更改。
+下表介绍的新功能和到适用于 windows 10 的 PlayReady DRM 所做的更改。
 
 -   添加了硬件数字版权管理 (HWDRM)。
 
@@ -407,7 +407,7 @@ PlayReady DRM 允许你在使用 HDCP 2.0 或更高版本后立即通过 Miracas
 
 ## <a name="playready-uwp-app-migration-guide"></a>PlayReady UWP 应用迁移指南
 
-本部分包含有关如何将现有 PlayReady Windows 8.x 应用商店应用迁移到 windows 10。
+本部分包含有关如何将现有 PlayReady Windows 8.x 应用商店应用迁移到 windows 10 的信息。
 
 Windows 10 上的 PlayReady UWP 应用的命名空间已从**Microsoft.Media.PlayReadyClient**更改为[**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)。 这意味着你将需要搜索旧命名空间并将其替换为代码中的新命名空间。 你仍将引用 winmd 文件。 它是 windows.media.winmd 的 windows 10 操作系统上的一部分。 它作为 TH 的 Windows SDK 的一部分位于 windows.winmd 中。 对于 UWP，可在 windows.foundation.univeralappcontract.winmd 中引用它。
 

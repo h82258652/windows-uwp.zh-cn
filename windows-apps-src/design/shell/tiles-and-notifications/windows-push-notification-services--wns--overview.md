@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879525"
+ms.locfileid: "5921629"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述
  
@@ -53,7 +53,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 
 ### <a name="important-notes"></a>重要说明
 
--   我们不保证应用的通知通道 URI 将始终保持相同。 我们建议应用在每次运行时均请求一个新的通道，并在 URI 更改时更新其服务。 开发人员绝不能修改该通道 URI，而应将其视作一段黑盒字符串。 此时，通道 URI 于 30 天后过期。 如果 windows 10 应用会定期更新其通道在后台，则可以下载适用于 Windows8.1[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)和重新使用其源代码和/或它所演示的模式。
+-   我们不保证应用的通知通道 URI 将始终保持相同。 我们建议应用在每次运行时均请求一个新的通道，并在 URI 更改时更新其服务。 开发人员绝不能修改该通道 URI，而应将其视作一段黑盒字符串。 此时，通道 URI 于 30 天后过期。 如果你的 windows 10 应用会定期更新其通道，在后台，你可以下载适用于 Windows8.1[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)并重新使用其源代码和/或它所演示的模式。
 -   云服务和客户端应用之间的接口由你这个开发人员来实现。 我们建议应用使用其自身的服务完成身份验证过程，并通过安全的协议（如 HTTPS）来传输数据。
 -   云服务必须始终确保通道 URI 使用域“notify.windows.com”。 该服务永远不应向任何其他域中的通道推送通知。 如果应用的回调发生了泄露，恶意攻击者可能会将该通道 URI 提交给假冒 WNS。 如果不对域进行检查，你的云服务可能会在你不知情的情况下向此攻击者泄露信息。
 -   如果你的云服务尝试将通知传递到过期通道，WNS 将返回[响应代码 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes)。 为响应此代码，你的服务不应再尝试将通知发送到该 URI。
@@ -175,7 +175,7 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 
  
 
-下面是如何检查节电模式在 windows 10 中打开的示例。 此示例将通知用户，并将“设置”应用启动到**节电模式设置**。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
+下面是如何检查节电模式 windows 10 中打开的示例。 此示例将通知用户，并将“设置”应用启动到**节电模式设置**。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
 
 ```cs
 using System;

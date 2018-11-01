@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
 ms.openlocfilehash: dbe932eb9391a4de0304b4be42944b2bced3287a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888746"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921589"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
 
 
 
-本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持 windows 10、 Windows8.1、 Windows Phone 8.1 以及 WindowsPhone8 XAML 和 JavaScript/HTML 应用。
+本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持 windows 10、 Windows8.1、 Windows Phone 8.1 和 WindowsPhone8 XAML 和 JavaScript/HTML 应用。
 
 ## <a name="installation"></a>安装
 

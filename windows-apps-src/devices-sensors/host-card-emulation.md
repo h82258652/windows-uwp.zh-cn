@@ -9,25 +9,25 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bf8d5f1587cc27082944cf0fc63edc274cb2bc7d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871124"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5923597"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>创建 NFC 智能卡应用
 
 
-**重要提示**本主题仅适用于 windows 10 移动版。
+**重要**本主题仅适用于 windows 10 移动版。
 
 Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。 这限制了未与 MNO 密切合作的其他商户或开发人员提供的各种可能的支付解决方案。 在 windows 10 移动版中，我们引入了称为主机卡仿真 (HCE) 的新的卡仿真技术。 HCE 技术使你的应用可以直接与 NFC 读卡器通信。 本主题演示了主机卡仿真 (HCE) 在 windows 10 移动版设备上的工作原理以及如何开发 HCE 应用，以便你的客户能够无需与 MNO 协作通过他们的手机而非物理卡访问你的服务。
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>开发 HCE 应用需要做哪些准备工作
 
 
-若要为 windows 10 移动版开发基于 HCE 的卡仿真应用，你将需要准备开发环境。 你可以通过安装 Microsoft Visual Studio2015，其中包括 Windows 开发人员工具和附带 NFC 仿真支持的 windows 10 移动版仿真器进行设置。 有关准备工作的详细信息，请参阅[准备工作](https://msdn.microsoft.com/library/windows/apps/Dn726766)
+若要为 windows 10 移动版开发基于 HCE 的卡仿真应用，你将需要准备开发环境。 你可以通过安装 Microsoft Visual Studio2015，其中包括 Windows 开发人员工具和附带 NFC 仿真支持的 windows 10 移动版仿真器获取设置。 有关准备工作的详细信息，请参阅[准备工作](https://msdn.microsoft.com/library/windows/apps/Dn726766)
 
-（可选） 如果你想要使用实际的 windows 10 移动版设备而不是包含的 windows 10 移动版仿真器进行测试，你将需要以下各项。
+（可选） 如果你想要使用实际的 windows 10 移动版设备而不是包含 windows 10 移动版仿真器进行测试，你将需要以下各项。
 
 -   附带 NFC HCE 支持的 windows 10 移动版设备。 目前，Lumia 730、830、640 和 640 XL 具有支持 NFC HCE 应用的硬件。
 -   支持协议 ISO/IEC 14443-4 和 ISO/IEC 7816-4 的读卡器终端
@@ -48,9 +48,9 @@ Windows 10 支持模拟智能卡基于 ISO-DEP (ISO-IEC 14443-4) 并使用 ISO-I
 
 ## <a name="app-selection-and-aid-routing"></a>应用选择和 AID 路由
 
-若要开发 HCE 应用，你必须了解因为用户可能会安装多个不同的 HCE 应用，windows 10 移动版设备如何路由到特定应用的 Aid。 每个应用都可以注册多个基于 HCE 和 SIM 卡的卡。 基于 sim 卡的传统 Windows Phone 8.1 应用将继续在 windows 10 移动版上，只要用户在 NFC 设置菜单中选择"SIM 卡"选项作为其默认支付卡。 首次打开设备时，将默认设置该选项。
+若要开发 HCE 应用，你必须了解 windows 10 移动版设备如何因为用户可能会安装多个不同的 HCE 应用将 Aid 路由到特定应用。 每个应用都可以注册多个基于 HCE 和 SIM 卡的卡。 基于 sim 卡的传统 Windows Phone 8.1 应用将继续在 windows 10 移动版上，只要用户在 NFC 设置菜单中选择"SIM 卡"选项作为其默认支付卡。 首次打开设备时，将默认设置该选项。
 
-当用户点击其 windows 10 移动版设备与某一终端时，数据将自动路由到设备上安装的适当应用。 此路由基于小程序 ID (AID)，它们是使用 5 到 16 个字节的标识符。 点击期间，外部终端将传输 SELECT 命令 APDU 以指定后续所有 APDU 命令可能要路由到的 AID。 后续 SELECT 选择命令将再次更改路由。 基于应用注册的 AID 和用户设置，APDU 通信将路由到将发送响应 APDU 的特定应用。 请注意，终端可能想要在同一个点击过程中与多个不同应用通信。 因此，必须确保你的应用在停用后尽快退出其后台任务，从而为其他应用的后台任务提供空间以响应 APDU。 我们将在本主题的后面部分讨论后台任务。
+当用户点击其 windows 10 移动版设备到某一终端时，数据将自动路由到设备上安装的适当应用。 此路由基于小程序 ID (AID)，它们是使用 5 到 16 个字节的标识符。 点击期间，外部终端将传输 SELECT 命令 APDU 以指定后续所有 APDU 命令可能要路由到的 AID。 后续 SELECT 选择命令将再次更改路由。 基于应用注册的 AID 和用户设置，APDU 通信将路由到将发送响应 APDU 的特定应用。 请注意，终端可能想要在同一个点击过程中与多个不同应用通信。 因此，必须确保你的应用在停用后尽快退出其后台任务，从而为其他应用的后台任务提供空间以响应 APDU。 我们将在本主题的后面部分讨论后台任务。
 
 HCE 应用必须使用它们可以处理的特定 AID 自行注册，以便它们可以接收 AID 的 APDU。 应用使用 AID 组来声明 AID。 从概念上来讲，AID 组等同于单个物理卡。 例如，一张信用卡已使用某个 AID 组进行声明，而第二张来自其他银行的信用卡使用不同的第二个 AID 组进行声明，尽管这两张信用卡可能具有相同的 AID。
 
@@ -74,7 +74,7 @@ HCE 应用必须使用它们可以处理的特定 AID 自行注册，以便它�
 
 **与基于 SIM 卡的 NFC 应用程序共存**
 
-在 windows 10 移动版中，系统会 NFC 控制器路由表，可用于在控制器层确认路由决策。 该表包含以下各项的路由信息。
+在 windows 10 移动版中，系统会创建 NFC 控制器路由表，用于在控制器层确认路由决策。 该表包含以下各项的路由信息。
 
 -   单个 AID 路由。
 -   基于协议的路由 (ISO-DEP)。
@@ -82,7 +82,7 @@ HCE 应用必须使用它们可以处理的特定 AID 自行注册，以便它�
 
 当外部读卡器发送“SELECT AID”命令时，NFC 控制器将首先检查路由表中的 AID 路由以进行匹配。 如果不匹配，将为 ISO-DEP (14443-4-A) 通信使用基于协议的路由作为默认路由。 对于其他任何非 ISO-DEP 通信，将使用基于技术的路由。
 
-Windows 10 移动版提供菜单选项"SIM 卡"NFC 设置页面才能继续使用传统 Windows Phone 8.1 基于 sim 卡的应用，它们不向系统注册其 Aid。 如果用户选择“SIM 卡”作为其默认支付卡，则将 ISO-DEP 路由设置为 UICC，对于下拉菜单中的所有其他选项，ISO-DEP 路由指向主机。
+Windows 10 移动版提供一个菜单选项"SIM 卡"NFC 设置页面来继续使用传统 Windows Phone 8.1 基于 sim 卡的应用，它们不向系统注册其 Aid。 如果用户选择“SIM 卡”作为其默认支付卡，则将 ISO-DEP 路由设置为 UICC，对于下拉菜单中的所有其他选项，ISO-DEP 路由指向主机。
 
 ISO-DEP 路由设置为"SIM 卡"的设备具有支持 se 的 SIM 卡时 windows 10 移动版首次启动设备。 当用户安装支持 HCE 的应用并且该应用支持任何 HCE AID 组注册时，ISO-DEP 路由将指向主机。 新的基于 SIM 卡的应用程序需要在 SIM 卡中注册 AID，以便特定的 AID 路由填充到控制器路由表中。
 
@@ -314,7 +314,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 你的应用应先检查设备是否具有 NFC 硬件、支持卡仿真功能以及支持主机卡仿真，然后再向用户提供此类功能。
 
-NFC 智能卡仿真功能仅在 windows 10 移动版中，因此尝试使用智能卡仿真程序 Api 在任何其他版本的 windows 10 中受支持，将导致错误。 你可以使用以下代码段来检查是否支持智能卡 API。
+NFC 智能卡仿真功能仅在 windows 10 移动版，因此尝试使用智能卡仿真程序 Api 在任何其他版本的 windows 10 上受支持，将导致错误。 你可以使用以下代码段来检查是否支持智能卡 API。
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");

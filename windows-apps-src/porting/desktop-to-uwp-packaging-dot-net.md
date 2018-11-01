@@ -10,11 +10,11 @@ keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fb6a552686e35f319d9624ba4c4663dad966f23
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878003"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922814"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
@@ -60,7 +60,7 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
    ![设置入口点](images/desktop-to-uwp/entry-point-set.png)
 
-6. 生成打包项目，以确保未显示任何错误。  如果你收到错误，打开**配置管理器**，并确保你的项目面向相同的平台。
+6. 生成打包项目，以确保未显示任何错误。  如果你收到错误，打开**配置管理器**，并确保你的项目面向的相同的平台。
 
    ![配置管理器](images/desktop-to-uwp/config-manager.png)
 
@@ -83,7 +83,7 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**运行、 调试或测试的桌面应用程序**
+**运行、 调试或测试你的桌面应用程序**
 
 请参阅[运行、 调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md)
 
@@ -97,4 +97,4 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 **分发应用**
 
-请参阅[分布的已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分发打包的桌面应用程序](desktop-to-uwp-distribute.md)

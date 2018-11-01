@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 1666d64c26c8ccfecda142e50f2e672d0f4c8864
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5866858"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5918980"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 
@@ -83,7 +83,7 @@ ms.locfileid: "5866858"
 8.  Windows 监控系统条件和任务运行情况，并在必要时（不再符合所需条件）取消该任务。
 9.  当后台任务报告进度或完成时，你的应用将通过该注册任务的进度事件和完成事件接收这些事件。
 
-**重要提示**使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)时，请考虑以下几个要点：
+**重要**使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)时，请考虑以下几个要点：
 
 -   首次 Windows8.1 和 Windows Phone 8.1 中引入以编程方式触发可使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)后台任务的能力。
 

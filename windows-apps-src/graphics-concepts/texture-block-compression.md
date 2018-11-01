@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878568"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5924163"
 ---
 # <a name="texture-block-compression"></a>纹理块压缩
 
@@ -23,7 +23,7 @@ Direct3D 11 中的纹理块压缩 (BC) 支持已经过扩展，以包含 BC6H �
 
 有关 Direct3D 11 之前纹理块压缩算法支持的更多详细信息（包括针对 BC1 至 BC5 格式的支持），请参见[纹理块压缩 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531)。
 
-**有关文件格式的注释：** BC6H 和 BC7 纹理压缩格式可用于存储纹理压缩的数据的 DDS 文件格式。 要了解更多信息，请参见 [DDS 编程指南](https://msdn.microsoft.com/library/windows/desktop/bb943991)。
+**有关文件格式的注释：** BC6H 和 BC7 纹理压缩格式可用于存储压缩的纹理数据的 DDS 文件格式。 要了解更多信息，请参见 [DDS 编程指南](https://msdn.microsoft.com/library/windows/desktop/bb943991)。
 
 ## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Direct3D 11 中支持的纹理块压缩格式
 

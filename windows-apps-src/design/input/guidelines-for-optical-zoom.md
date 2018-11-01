@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f1643638eaf7eb625defe1f25b44cae20faf0a5c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869125"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5941429"
 ---
 # <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
 
@@ -67,7 +67,7 @@ ms.locfileid: "5869125"
     -   可调整大小的项可以显示在可调整大小的画布或画板上的绘图应用程序中。
     -   具有嵌入对象（如地图）的网页。
 
-    **注意**在所有情况下，内容区域调整大小，除非所有触摸点都都位于可调整大小的对象。
+    **注意**在所有情况下，除非所有触摸点都都位于可调整大小的对象，否则调整内容区域。
 
      
 

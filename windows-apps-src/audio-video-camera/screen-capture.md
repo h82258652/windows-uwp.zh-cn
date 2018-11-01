@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
 ms.openlocfilehash: d28ed1fce79a815155180ab8a3c708e2c8bf8916
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5889006"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5942154"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -26,7 +26,7 @@ ms.locfileid: "5889006"
 
 ## <a name="add-the-screen-capture-capability"></a>添加屏幕捕获功能
 
-**Windows.Graphics.Capture**命名空间中的 Api 需要在你的应用程序清单中声明一个常规功能：
+**Windows.Graphics.Capture**命名空间中找到的 Api 需要你的应用程序清单中声明一个常规功能：
     
 1. 在**解决方案资源管理器**中打开**Package.appxmanifest** 。
 2. 选择**功能**选项卡。
@@ -70,7 +70,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-由于这是 UI 代码，则需要在 UI 线程上调用。 如果你要调用此方法从代码隐藏页面你的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
+由于这是 UI 代码，则需要在 UI 线程上调用。 如果你正在调用此方法从代码隐藏页面的应用程序 （例如**MainPage.xaml.cs**) 这是为你自动完成，但如果不是，你可以强制它与下面的代码在 UI 线程上运行：
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;

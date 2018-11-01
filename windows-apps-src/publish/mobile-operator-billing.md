@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
 ms.openlocfilehash: ff02cfc287bc1d88485a713390e233fc7a742a01
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884521"
+ms.locfileid: "5920350"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -43,7 +43,7 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 马来西亚        | Digi                             |
 | 荷兰     | KPN                              |
 | 挪威          | Telenor、Telia                   |
-| 波兰          | Orange、 玩游戏                     |
+| 波兰          | Orange、 播放                     |
 | 新加坡       | M1 Limited StarHub              |
 | 斯洛伐克        | Slovak Telekom                   |
 | 西班牙           | Orange                           |

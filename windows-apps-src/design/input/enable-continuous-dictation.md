@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861819"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5925016"
 ---
 # <a name="continuous-dictation"></a>连续听写
 
@@ -28,7 +28,7 @@ ms.locfileid: "5861819"
 对于较长的连续语音识别会话（例如听写或电子邮件），则使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn913913) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn653226) 属性以获取 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 对象。
 
 > [!NOTE]
-> 听写语言支持取决于你的应用正在运行其中的[设备](https://docs.microsoft.com/windows/uwp/design/devices/)。 电脑和笔记本电脑，识别仅 EN-US，而 Xbox 和手机可以识别支持语音识别的所有语言。 有关详细信息，请参阅[指定语音识别器语言](specify-the-speech-recognizer-language.md)。
+> 听写语言支持取决于你的应用运行所在的位置[设备](https://docs.microsoft.com/windows/uwp/design/devices/)。 电脑和笔记本电脑，识别仅为 EN-US，而 Xbox 和手机可以识别支持语音识别的所有语言。 有关详细信息，请参阅[指定语音识别器语言](specify-the-speech-recognizer-language.md)。
 
 ## <a name="set-up"></a>设置
 
@@ -127,7 +127,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  然后检查 [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 属性。 如果 Confidence 的值是 [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 或更好，我们便将文本追加到 StringBuilder。 我们还在收集输入时更新 UI。
 
-    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件在不能直接更新 UI 后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
+    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件在不能直接更新 UI 的后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -167,7 +167,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  事件处理程序检查“Status”属性，以确定识别是否成功。 它还可处理用户已停止说话的情况。 通常，将 [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) 视为成功的识别，因为这意味着用户已结束说话。 你应该在代码中对这种情况进行处理以提供良好体验。
 
-    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件在不能直接更新 UI 后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
+    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件在不能直接更新 UI 的后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861635"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922995"
 ---
 # <a name="raw-notification-overview"></a>原始通知概述
 
@@ -115,7 +115,7 @@ ms.locfileid: "5861635"
 ## <a name="other-resources"></a>其他资源
 
 
-你可以了解详细信息通过为 Windows8.1，Windows8.1，[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?LinkId=231476)下载[原始通知示例](http://go.microsoft.com/fwlink/p/?linkid=241553)，在 windows 10 应用中重新使用其源代码。
+你可以了解详细信息通过 Windows8.1，[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?LinkId=231476)的[原始通知示例](http://go.microsoft.com/fwlink/p/?linkid=241553)下载 Windows8.1，用于在 windows 10 应用中重新使用其源代码。
 
 ## <a name="related-topics"></a>相关主题
 

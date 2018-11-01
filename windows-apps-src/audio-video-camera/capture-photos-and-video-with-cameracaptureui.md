@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fd9a347904b83db4bb927a36e466153a9e24d8de
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865927"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5923100"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI 捕获照片和视频
 
@@ -24,7 +24,7 @@ ms.locfileid: "5865927"
 如果你希望提供你自己的相机 UI 或者你的方案需要对捕获操作进行更可靠的低级别控制，你应使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象并实现自己的捕获体验。 有关详细信息，请参阅 [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
 > [!NOTE]
-> 如果你的应用仅使用 CameraCaptureUI，你不应该应用清单文件中指定**网络摄像头**或**麦克风**功能。 如果指定了这些功能，应用将显示在设备的摄像头隐私设置中，但是即使用户拒绝摄像头访问应用，也不会阻止 CameraCaptureUI 捕获媒体。 这是因为 Windows 内置的摄像头应用是受信任的第一方应用，需要用户按下按钮来启动照片、音频和视频捕获。 你的应用可能无法通过 Windows 应用认证工具包认证提交到应用商店中，如果作为唯一的照片捕获机制使用 CameraCaptureUI 时指定了网络摄像头或麦克风功能时。
+> 如果你的应用仅使用 CameraCaptureUI，你不应该应用清单文件中指定**网络摄像头**或**麦克风**功能。 如果指定了这些功能，应用将显示在设备的摄像头隐私设置中，但是即使用户拒绝摄像头访问应用，也不会阻止 CameraCaptureUI 捕获媒体。 这是因为 Windows 内置的摄像头应用是受信任的第一方应用，需要用户按下按钮来启动照片、音频和视频捕获。 你的应用可能无法通过 Windows 应用认证工具包认证提交到应用商店，如果你为你唯一的照片捕获机制使用 CameraCaptureUI 时指定了网络摄像头或麦克风功能时。
 > 如果使用 MediaCapture 以编程方式捕获音频、照片或视频，必须指定应用清单文件中的网络摄像头或麦克风功能。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 捕获照片

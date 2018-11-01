@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d219a09ccca74c9fc513b7510c40ce0b90ad9f52
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888713"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5941396"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>移植 WindowsPhone Silverlight XAML 和 UI 到 UWP
 
@@ -165,7 +165,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
 -   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法将语言字符串视为参数而不是 [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx) 对象。
 -   [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 类不内置支持排序和筛选以及对工作执行差异化分组。 有关详细信息，请参阅[深度数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)和[数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
-尽管相同的绑定功能仍然大部分受支持，但 windows 10 提供了新的选项和性能更佳绑定机制，称为编译绑定，它使用 {x: Bind} 标记扩展。 请参阅[数据绑定：通过对 XAML 数据绑定的新增功能提升应用性能](http://channel9.msdn.com/Events/Build/2015/3-635)和 [x:Bind 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
+尽管相同的绑定功能仍然大部分受支持，windows 10 提供了一个新的选项和性能更佳绑定机制，称为编译绑定，它使用 {x: Bind} 标记扩展。 请参阅[数据绑定：通过对 XAML 数据绑定的新增功能提升应用性能](http://channel9.msdn.com/Events/Build/2015/3-635)和 [x:Bind 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
 
 ## <a name="binding-an-image-to-a-view-model"></a>将图像绑定到视图模型
 
@@ -197,11 +197,11 @@ WindowsPhone Silverlight 应用使用**Microsoft.Phone.Controls**命名空间和
 | ContextMenu（在 Windows Phone 工具包中） | 对于单选浮出控件，请使用 [Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496)。 |
 | ControlTiltEffect.TiltEffect 类 | UWP 动画库中的动画内置于常用控件的默认样式中。 请参阅[创建指针操作动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)。 |
 | 带有分组数据的 LongListSelector | WindowsPhone Silverlight longlistselector 以两种方式，可以配合使用。 第一，它可以显示按某个键分组的数据，例如按首字母分组的名称列表。 第二，它可以在两个语义视图之间“缩放”：项（例如名称）的分组列表和只有组键（例如首字母）本身的列表。 借助 UWP，你可以按照[列表和网格视图控件指南](https://msdn.microsoft.com/library/windows/apps/mt186889)进行操作来显示分组数据。 |
-| 带有平面数据的 LongListSelector | 出于性能原因，在很长列表时，我们建议而不是 WindowsPhone Silverlight LongListSelector 即使对于平面、 非分组数据的列表框。 在 UWP 应用中，[GridView](https://msdn.microsoft.com/library/windows/apps/br242705) 优先用于项的长列表，无论数据是否适合分组。 |
-| Panorama | 中心控件中将 WindowsPhone Silverlight Panorama 控件映射到[的 Windows 运行时 8.x 应用中的中心控件指南](https://msdn.microsoft.com/library/windows/apps/dn449149)和指南。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) 部分不会环绕，并且不使用视差。 |
+| 带有平面数据的 LongListSelector | 出于性能原因，在非常长列表时，我们建议而不是 WindowsPhone Silverlight LongListSelector 列表框中，即使对于平面、 非分组的数据。 在 UWP 应用中，[GridView](https://msdn.microsoft.com/library/windows/apps/br242705) 优先用于项的长列表，无论数据是否适合分组。 |
+| Panorama | 中心控件的 WindowsPhone Silverlight Panorama 控件映射的[Windows 运行时 8.x 应用中的中心控件指南](https://msdn.microsoft.com/library/windows/apps/dn449149)和指南。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) 部分不会环绕，并且不使用视差。 |
 | Pivot | WindowsPhone Silverlight Pivot 控件的 UWP 等效项是[Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241)。 它适用于所有设备系列。 |
 
-**注意** PointerOver 视觉状态是与自定义样式/模板在 windows 10 应用中，而非 WindowsPhone Silverlight 应用中。 存在其他原因，你现有的自定义样式/模板可能适用于 windows 10 应用，其中包括你正在使用的系统资源键集的视觉状态和对 windows 10 默认样式所做的性能改进的更改 /模板。 我们建议为 windows 10 编辑一个控件默认模板的全新副本，然后重新应用你样式和模板的自定义的。
+**注意** PointerOver 视觉状态是与自定义样式/模板在 windows 10 应用中，而非 WindowsPhone Silverlight 应用中。 存在其他原因，你现有的自定义样式/模板可能适用于 windows 10 应用，其中包括你正在使用的系统资源键集的视觉状态和对 windows 10 默认样式所做的性能改进的更改 /模板。 我们建议为 windows 10 编辑一个控件默认模板的全新副本，然后重新应用你的样式和模板的自定义的。
 
 有关 UWP 控件的详细信息，请参阅[按功能列出的控件](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)和[控件指南](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
@@ -227,7 +227,7 @@ WindowsPhone Silverlight 具有**System.Windows.UIElement.OpacityMask**属性，
 
 ![与主题有关的位图](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
-在 WindowsPhone Silverlight 应用中，方法是将 （采用位图形式） alpha 蒙板用作**OpacityMask** **矩形**填充前景画笔：
+在 WindowsPhone Silverlight 应用中，方法是将 （采用位图形式） alpha 蒙板用作**OpacityMask** **矩形**填充的前景画笔：
 
 ```xml
     <Rectangle Fill="{StaticResource PhoneForegroundBrush}" Width="26" Height="26">
@@ -251,7 +251,7 @@ WindowsPhone Silverlight 具有**System.Windows.UIElement.OpacityMask**属性，
     <Image Source="Assets/winrt_check.png" Stretch="None"/>
 ```
 
-在 WindowsPhone Silverlight **UIElement.Clip**属性可以是任何形状，你可以使用**几何图形**express 通常在 XAML 标记中**StreamGeometry**小型语言序列化。 在 UWP 中，[**Clip**](https://msdn.microsoft.com/library/windows/apps/br208919) 属性的类型是 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/br210259)，以便你可以只剪裁矩形区域。 允许使用小型语言定义矩形这一做法过于宽松。 因此，若要在标记中移植裁剪区域，请替换 **Clip** 属性语法并使其成为与以下内容类似的属性元素语法：
+在 WindowsPhone Silverlight **UIElement.Clip**属性可以是任何形状，你可以使用**几何**express 通常在 XAML 标记中**StreamGeometry**小型语言序列化。 在 UWP 中，[**Clip**](https://msdn.microsoft.com/library/windows/apps/br208919) 属性的类型是 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/br210259)，以便你可以只剪裁矩形区域。 允许使用小型语言定义矩形这一做法过于宽松。 因此，若要在标记中移植裁剪区域，请替换 **Clip** 属性语法并使其成为与以下内容类似的属性元素语法：
 
 ```xml
     <UIElement.Clip>
@@ -319,7 +319,7 @@ Windows 10 应用的 TextBlock 系统样式
 
 ## <a name="theme-changes"></a>主题更改
 
-对于 WindowsPhone Silverlight 应用，默认主题默认为深色。 对于 windows 10 设备，默认主题已更改，但你可以控制使用声明所请求的主题在 App.xaml 中的主题。 例如，若要在所有设备上都使用深色主题，请将 `RequestedTheme="Dark"` 添加到根 Application 元素。
+对于 WindowsPhone Silverlight 应用，默认主题默认为深色。 对于 windows 10 设备，默认主题已更改，但你可以控制通过声明所请求的主题在 App.xaml 中使用的主题。 例如，若要在所有设备上都使用深色主题，请将 `RequestedTheme="Dark"` 添加到根 Application 元素。
 
 ## <a name="tiles"></a>磁贴
 
@@ -376,7 +376,7 @@ WindowsPhone Silverlight 应用和 windows 10 应用不同的大小和离开的�
 
 这样，应用便可在所有屏幕上提供最佳体验。我们建议你针对各种屏幕大小创建每个位图资源，其中每个资源均适用于特定的比例因子。 在大多数情况下，提供 100% 缩放、200% 缩放和 400% 缩放的资源（按优先级顺序）能在采用所有中间比例系数时均可提供极佳效果。
 
-**注意**如果出于任何原因，无法创建资源的多个大小，则创建 100%缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
+**注意**如果出于任何原因无法创建资源的多个大小，则创建 100%缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
 
 如果具有繁复的图案，则可能希望在更多尺寸中提供资源。 如果要从矢量图像开始，则生成采用任意比例系数的高质量资源相对容易。
 

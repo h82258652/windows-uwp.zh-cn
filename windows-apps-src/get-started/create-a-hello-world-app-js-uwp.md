@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869144"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5941993"
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
 
@@ -32,7 +32,7 @@ ms.locfileid: "5869144"
 ## <a name="before-you-start"></a>开始之前...
 
 -   [UWP 应用是什么？](universal-application-platform-guide.md)。
--   若要完成本教程中，你需要 windows 10 和 Visual Studio2017。 [准备工作](get-set-up.md)。
+-   若要完成本教程，你需要 windows 10 和 Visual Studio2017。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在**窗口**菜单中，通过使用**重置窗口布局**命令来重置它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目。

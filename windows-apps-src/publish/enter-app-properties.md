@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件, 隐私策略, 支持联系人信息, 应用网站, 支持信息
 ms.localizationpriority: medium
 ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5883654"
+ms.locfileid: "5941881"
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 
@@ -60,7 +60,7 @@ ms.locfileid: "5883654"
 
 ## <a name="game-settings"></a>游戏设置
 
-仅当选择**游戏**作为你的产品类别时，才显示此选项。 可在此处指定你的游戏支持的功能。 本部分中提供的信息将显示在产品的应用商店一览。
+仅当选择**游戏**作为你的产品类别时，才显示此选项。 可在此处指定你的游戏支持的功能。 此部分中提供的信息将显示在产品的应用商店一览。
 
 如果你的游戏支持多人游戏选项，请务必指示一个会话的最小玩家数量和最大玩家数量。 输入的最小玩家数量和最大玩家数量不能超过 1,000。
 

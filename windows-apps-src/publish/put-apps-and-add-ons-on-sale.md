@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872650"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5942108"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
-你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。 并且，你可以选择是否要将促销提供给每位用户，或使它的独占的产品/服务拥有其他产品的客户。
+你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。 并且，你可以选择是否要将促销提供给每位用户，或使其拥有其他产品的其中一个客户供独占的产品/服务。
 
 > [!NOTE]
 > 订阅加载项不支持促销价格。
