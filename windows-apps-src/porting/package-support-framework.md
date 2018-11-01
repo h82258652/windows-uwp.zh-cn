@@ -8,12 +8,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: f17bb6bbefb2fd3266edac20ca1f23af76eb0a3c
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827870"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884478"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>通过使用程序包支持框架到 MSIX 程序包应用运行时修复
 
@@ -65,13 +65,13 @@ PSF 包含你可以使用，例如文件重定向修正的运行时修补程序�
 
 ### <a name="file-redirection-fixup"></a>文件重定向修正
 
-你可以使用[文件重定向修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)重定向写入或读取数据并不可以从 MSIX 容器中运行的应用程序访问的目录中尝试。
+你可以使用[文件重定向修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)重定向写入或读取数据并不可以从 MSIX 容器中运行的应用程序访问的目录中尝试。
 
-例如，如果你的应用程序写入与你的应用程序可执行文件相同的目录中的日志文件，然后你可以使用[文件重定向修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)在另一个位置，如本地应用数据存储中创建该日志文件。
+例如，如果你的应用程序写入与你的应用程序可执行文件相同的目录中的日志文件，然后你可以使用[文件重定向修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)在另一个位置，如本地应用数据存储中创建该日志文件。
 
 ### <a name="runtime-fixes-from-the-community"></a>从社区的运行时修复
 
-请确保查看我们的[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop)页面社区贡献。 很可能在其他开发人员已解决类似的问题，并且具有共享运行时修复。
+请确保查看我们的[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework)页面社区贡献。 很可能在其他开发人员已解决类似的问题，并且具有共享运行时修复。
 
 ## <a name="apply-a-runtime-fix"></a>应用运行时修复
 
@@ -88,7 +88,7 @@ PSF 包含你可以使用，例如文件重定向修正的运行时修补程序�
 
 ### <a name="create-the-package-layout-folder"></a>创建程序包布局文件夹
 
-如果你已经有.msix （或.appx） 文件，可以将其内容解包到布局文件夹中，将用作你的程序包暂存区域。  你可以从**x64 适用于 VS 2017 的本机工具命令提示**，或手动使用的可执行的搜索路径中的 SDK bin 路径。
+如果你已经有.msix （或.appx） 文件，可以将其内容解包到布局文件夹中，将用作你的程序包暂存区域。 你可以从命令提示符使用 makemsix 工具，具体取决于 SDK 的安装路径，这是你将 Windows 10 电脑上找到 makemsix.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makemsix.exe
 
 ```
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -103,11 +103,7 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 ### <a name="get-the-package-support-framework-files"></a>获取程序包支持框架文件
 
-你可以通过使用 Visual Studio 中获取 PSF Nuget 程序包。 你还可以通过使用独立 Nuget 命令行工具获取它。
-
-#### <a name="get-the-package-by-using-visual-studio"></a>通过使用 Visual Studio 中获取程序包
-
-在 Visual Studio 中，右键单击解决方案或项目节点并选择管理 Nuget 程序包命令之一。  搜索**Microsoft.PackageSupportFramework**或**PSF** Nuget.org 上找到该程序包。然后，安装它。
+通过使用独立 Nuget 命令行工具或通过 Visual Studio，你可以获取 PSF Nuget 程序包。
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>通过使用命令行工具来获取该程序包
 
@@ -117,15 +113,20 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 nuget install Microsoft.PackageSupportFramework
 ```
 
+#### <a name="get-the-package-by-using-visual-studio"></a>通过使用 Visual Studio 中获取程序包
+
+在 Visual Studio 中，右键单击解决方案或项目节点并选择管理 Nuget 程序包命令之一。  搜索**Microsoft.PackageSupportFramework**或**PSF** Nuget.org 上找到该程序包。然后，安装它。
+
+
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>将包支持框架文件添加到你的程序包
 
 将所需的 32 位和 64 位 PSF Dll 和可执行文件添加到程序包目录中。 使用下表作为指南。 你还需要包含所需的任何运行时修复。 在本例中，我们需要文件重定向运行时修复。
 
 | 应用程序可执行文件为 x64 | 应用程序可执行文件是 x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
-| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
-| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 你的程序包内容现在应如下所示。
 
