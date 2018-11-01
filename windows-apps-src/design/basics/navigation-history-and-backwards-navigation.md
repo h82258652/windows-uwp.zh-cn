@@ -9,12 +9,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42bc7fdb91a8c7642e132d4ac3d93be1f0927df0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d2f437db1a1792df22fd084cedee31cb6e590d24
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840006"
+ms.locfileid: "5873186"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -287,21 +287,6 @@ bool App::On_BackRequested()
 以前，UWP 应用使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 该 API 将继续支持以确保向后兼容，但我们不会再建议依靠[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
 
 如果你的应用将继续使用[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，然后的系统 UI 将呈现系统后退按钮：
-
-- 如果你的应用**不选项卡**，然后在标题栏呈现后退按钮。 后退按钮的视觉体验和用户交互保持不变从以前版本。
-
-    ![标题栏后退按钮](images/nav-back-pc.png)
-
-- 如果应用**选项卡**，则后退按钮呈现在新的系统后退栏。
-
-    ![系统绘制后退按钮栏](images/back-nav/tabs.png)
-
-### <a name="system-back-bar"></a>系统后退栏
-
-> [!NOTE]
-> "系统后退栏"是仅说明，而不是正式的名称。
-
-系统后退栏是"区带"选项卡区带和应用的内容区域之间插入。 此区带横跨整个应用，“后退”按钮位于左边缘。 此区带都有垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
 
 - 如果你的应用**不选项卡**，然后在标题栏呈现后退按钮。 后退按钮的视觉体验和用户交互保持不变从以前版本。
 

@@ -10,12 +10,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: e28d557280ab253a09d5697f369c694e490d3c7d
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5836098"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5875531"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
  
@@ -113,8 +113,6 @@ ms.locfileid: "5836098"
 <li style="list-style-type: none;"><a href="split-view.md">拆分视图</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">文本控件</a></li>
-
-<li style="list-style-type: none;"><a href="index.md">磁贴、锁屏提醒和通知</a></li>
 
 
 <li style="list-style-type: none;"><a href="toggles.md">切换</a></li>

@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1122ae00f9b84980a7793deef08a30a16711b4be
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 730d5ae9062fe39533cd615facaf5beaa7d02ffd
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5823683"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5876080"
 ---
 # <a name="composition-brushes"></a>合成画笔
 从 UWP 应用程序在屏幕上可见的所有内容都是可见，因为它由画笔绘制。 画笔使你能够与内容为图像或绘图到复杂的效果链范围从简单纯色绘制用户界面 (UI) 对象。 本主题介绍使用 CompositionBrush 绘制的概念。
 
-请注意，当使用 XAML UWP 应用中，你可以选择绘制[XAML 画笔](/windows/uwp/design/style/brushes)或[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush)UIElement。 通常情况下，会更简单，最好选择 XAML 画笔，如果你的方案受 XAML 画笔。 例如，对的按钮，更改的文本或图像的形状填充颜色进行动画处理。 另一方面，如果你正在执行，如动画的遮罩或动画的九网格拉伸或效果链绘制 XAML 画笔不受支持，可用于 CompositionBrush 绘制[使用 UIElementXamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)。
+请注意，当使用 XAML UWP 应用中，你可以选择绘制[XAML 画笔](/windows/uwp/design/style/brushes)或[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush)UIElement。 通常情况下，会更简单，最好选择 XAML 画笔，如果你的方案受 XAML 画笔。 例如，对的按钮，更改的文本或图像的形状填充颜色进行动画处理。 另一方面，如果你正在执行，如动画的遮罩或动画的九网格拉伸或效果链绘制 XAML 画笔不受支持，你可使用 CompositionBrush 来绘制[使用 UIElementXamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)。
 
 使用可视化层时，必须使用 CompositionBrush 绘制[SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual)的区域。
 
