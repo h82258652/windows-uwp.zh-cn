@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 56a5150e354568f3ea7ec772953bd1e1e8efa579
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5813622"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5861588"
 ---
 # <a name="put-uri"></a>PUT (/{uri})
 上传游戏剪辑数据。

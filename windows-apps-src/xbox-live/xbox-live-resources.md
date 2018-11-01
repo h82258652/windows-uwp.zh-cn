@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live, 资源, API, 参考
 ms.localizationpriority: medium
 ms.openlocfilehash: 392269add8d54873726f225e5314e7f14bd92923
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5824782"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5878518"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live 资源
 

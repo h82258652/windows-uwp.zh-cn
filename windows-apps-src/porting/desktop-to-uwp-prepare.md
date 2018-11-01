@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abd10a352243e7c7ca7e665b3fb5ee774e0346e
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 3a0b3a9f5ce7c03b8add9cc459bade684b9daf21
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5840872"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886682"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包的桌面应用程序
 
@@ -103,7 +103,7 @@ ms.locfileid: "5840872"
 
 + __你的应用程序启动一个实用工具以执行任务__。 避免启动 PowerShell 和 Cmd.exe 等命令实用工具。 事实上，如果用户安装到运行 Windows 10 S 的系统上的应用程序，然后你的应用程序将无法启动它们。 这可能阻止你无法提交至 Microsoft Store 的应用程序，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容
 
-启动实用工具通常可以提供一种方便的方法，用于从操作系统获取信息、访问注册表或访问系统功能。 但是，你可以改为使用 UWP API 完成这些类型的任务。 这些 Api 非常性能更佳，因为它们无需单独的可执行文件运行，但更重要的是，它们会一直到达程序包外部应用程序。 应用的设计保持一致隔离、 信任和附带的应用程序，你已打包，并且你的应用程序将按预期在运行 Windows 10 s。 的系统上的安全
+启动实用工具通常可以提供一种方便的方法，用于从操作系统获取信息、访问注册表或访问系统功能。 但是，你可以改为使用 UWP API 完成这些类型的任务。 这些 Api 非常性能更佳，因为它们无需单独的可执行文件运行，但更重要的是，它们会一直到达程序包外部应用程序。 应用的设计保持一致隔离、 信任和附带的应用程序打包，并且你的应用程序将按预期在运行 Windows 10 s。 的系统上的安全
 
 + __你的应用程序主机的加载项、 插件或扩展__。   在许多情况下，只要尚未对扩展打包并且该扩展以完全信任方式安装，COM 样式的扩展则可能会继续工作。 这是因为那些安装程序可以使用其完全信任的功能修改注册表，并将扩展文件放置都会在主机应用程序能够找到它们。
 
