@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ms.openlocfilehash: b6896a4c149084dd5609f2ac6737c803a18d14ac
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5753071"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882992"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>将 InkToolbar 添加到通用 Windows 平台 (UWP) 应用
 

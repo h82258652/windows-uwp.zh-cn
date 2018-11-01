@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 02c856fd697bef958eb45a0f0f133e06f63a7f51
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813988"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5878146"
 ---
 # <a name="binding-markup-extension"></a>{Binding} 标记扩展
 
@@ -22,8 +22,7 @@ ms.locfileid: "5813988"
 
 **注意**有关使用数据的常规信息绑定在你的应用与 **{Binding}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-
-            **{Binding}** 标记扩展用于将控件上的属性数据绑定到来自数据源（例如代码）的值。 
+**{Binding}** 标记扩展用于数据绑定到来自数据源等代码值的控件上的属性。 
             **{Binding}** 标记扩展会在 XAML 加载时转换为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类的实例。 此绑定对象可获取来自数据源上的某个属性的值，并将其推送到控件上的该属性。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行更新。 该对象也可以配置为将对控件值的更改推送回源属性。 作为数据绑定目标的属性必须是依赖属性。 有关详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
 

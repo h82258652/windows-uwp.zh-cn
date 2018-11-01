@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 街机摇杆, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5840511"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5879832"
 ---
 # <a name="arcade-stick"></a>街机摇杆
 

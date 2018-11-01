@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5837405"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5881598"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 目录, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: eb286c9487b57cf36f9dc558902a0da532bfdc0a
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831113"
+ms.locfileid: "5878433"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理应用内产品的大目录
 

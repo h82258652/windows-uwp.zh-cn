@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 装箱, 标量, 值
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b99f587fbd517b677d85b50abb26fdf072b359
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5830137"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882295"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱
  

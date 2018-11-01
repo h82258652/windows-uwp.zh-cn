@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 触摸, 控件, directx, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833131"
+ms.locfileid: "5878182"
 ---
 # <a name="touch-controls-for-games"></a>游戏的触摸控件
 

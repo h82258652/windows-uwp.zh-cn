@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d91fc7166812f53e8b2238b1a47c8aeb9c425f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832999"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880262"
 ---
 # <a name="asynchronous-programming"></a>异步编程
 本主题介绍了进行异步编程在通用 Windows 平台 (UWP) 和 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示形式。

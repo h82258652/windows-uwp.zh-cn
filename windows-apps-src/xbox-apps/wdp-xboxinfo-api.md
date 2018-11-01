@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，xbox，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5812361"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884042"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 信息 API 参考   
 你可以访问 Xbox One 使用此 API 的设备信息。

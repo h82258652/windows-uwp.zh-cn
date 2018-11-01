@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
 ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832446"
+ms.locfileid: "5878696"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT 的错误处理
 

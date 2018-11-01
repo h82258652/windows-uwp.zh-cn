@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: 81dabcf92136174b08c6a20fd9a98122fcd2c813
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833749"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883228"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>获取应用的错误报告数据
 

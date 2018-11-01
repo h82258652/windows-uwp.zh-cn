@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: a03a26262d03d93ea2f23f2a61ba1ee603a2d507
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832206"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884094"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 
