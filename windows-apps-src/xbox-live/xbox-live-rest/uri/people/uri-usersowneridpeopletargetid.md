@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f745e416c573bdf4c6aa172c62a82204ba077dcd
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5859498"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5932305"
 ---
 # <a name="usersowneridpeopletargetid"></a>/users/{ownerId}/people/{targetid}
-调用方的用户集合中访问目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
+调用方的用户集合中访问通过目标 ID 的人员。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -28,8 +28,8 @@ ms.locfileid: "5859498"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| ownerId| 字符串| 要访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
-| targetid| 字符串| 在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
+| targetid| 字符串| 正在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
   
 <a id="ID4EQB"></a>
 
@@ -38,7 +38,7 @@ ms.locfileid: "5859498"
 
 [GET](uri-usersowneridpeopletargetidget.md)
 
-&nbsp;&nbsp;调用方的用户集合中获取目标 ID 由一个人。
+&nbsp;&nbsp;目标 ID 由用户从集合中获取调用方的人。
  
 <a id="ID4E1B"></a>
 

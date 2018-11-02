@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f0cb0fdd3d50a45f4cbeeedacc38bada5874c86
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5876589"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5919088"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
 详细信息和元数据，产品/服务返回有关的一个或多个项目。
@@ -30,7 +30,7 @@ ms.locfileid: "5876589"
 
 ## <a name="remarks"></a>备注
 
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+现在，检索 XToken 声明从**SandboxId**并强制执行。 如果不存在**SandboxId** ，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
 
 <a id="ID4ECB"></a>
 
@@ -48,11 +48,11 @@ ms.locfileid: "5876589"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| id| string]| 必需。 所有将为其返回的详细信息 （最多 10) 的 Id。 请注意，任何 ID 包含非法放置在 URL 中的字符 （ProviderContentId 类型 Id 通常是完整的 Url 本身，从而包含非法字符）<b>必须</b>使用 URL 编码，以便正确发送到娱乐发现服务 (EDS)。 另请注意，这仅可单个值 ID 类型是否 ProviderContentId。 如果需要多个 ProviderContentId，必须对 EDS 进行多次调用。|
-| IdType| 字符串| 可选。 Id 在传递给 id 参数的类型。 有效值为： <ul><li><b>规范</b>（必应/市场） </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>（例如 132kb WMA 音乐文件） </li><li><b>AMG</b></li><li><b>MediaNet</b>(前 MusiWave) </li><li><b>XboxHexTitle</b>（在主机上播放的应用） </li></ul>|
-| DesiredMediaItemTypes| 字符串| <b>所需如果 MediaGroup 不会传递。 都应该不会传递。</b> 媒体项从的 Id。 所提供的所有 Id 必须具有相同的类型。 如果需要多个类型，传入所有可能类型中上述 IdType 所述。 此值默认为"未知"如果它不存在，这可能不会为所有 ID 类型的 valied。 |
-| MediaGroup| 字符串| <b>所需如果 DesiredMediaItemTypes 不会传递。 都应该不会传递。</b>|
-| ConditionSets| 字符串| <b>可选</b>。 客户端都无法请求<b>可用性</b>修剪具体取决于条件集，它们是通过此查询字符串指定的键 / 值对。 它们用于匹配条件集的可用性。 可以用于匹配的条件集的键列表如下所示。 <ul><li><b>平台</b>： 其中产品为生成，并且可以玩。</li><li><b>订阅</b>： 此可用性 （金牌或银牌） 的支持订阅列表。</li><li><b>EntitlementIds</b>： 跟踪用户购买游戏。</li></ul> | 
+| id| string]| 必需。 所有将为其返回的详细信息 （最多 10) 的 Id。 注意，任何 ID，包含非法放置在 URL 中的字符 （ProviderContentId 类型 Id 通常会完全本身的 Url，从而包含非法字符）<b>必须</b>使用 URL 编码，才能正常发送到娱乐发现服务 (EDS)。 另请注意，这仅可单个值 ID 类型是否 ProviderContentId。 如果需要多个 ProviderContentId，则必须对 EDS 进行多次调用。|
+| IdType| 字符串| 可选。 Id 其在传递给 id 参数的类型。 有效值为： <ul><li><b>规范</b>（必应/市场） </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>（例如 132kb WMA 音乐文件） </li><li><b>AMG</b></li><li><b>MediaNet</b>(前 MusiWave) </li><li><b>XboxHexTitle</b>（在控制台上播放的应用） </li></ul>|
+| DesiredMediaItemTypes| 字符串| <b>所需如果 MediaGroup 不会传递。 两者不应将传递。</b> 媒体项从的 Id。 所提供的所有 Id 必须具有相同的类型。 如果需要多个类型，传入所有可能类型中上述 IdType 所述。 此值默认为"未知"如果它不存在，这可能不会为所有 ID 类型 valied。 |
+| MediaGroup| 字符串| <b>所需如果 DesiredMediaItemTypes 不会传递。 两者不应将传递。</b>|
+| ConditionSets| 字符串| <b>可选</b>。 客户端都无法请求<b>可用性</b>修剪，具体取决于条件集，它们是通过此查询字符串指定的键 / 值对。 它们用于匹配条件集的可用性。 可用于匹配的条件集的键列表如下所示。 <ul><li><b>平台</b>： 在产品为生成，并且可以玩。</li><li><b>订阅</b>： 的受支持 （金牌或银牌） 此可用性的订阅列表。</li><li><b>EntitlementIds</b>： 跟踪用户购买游戏。</li></ul> | 
 
 <a id="ID4EYF"></a>
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc67b61d9130838802774460cd38ec08e2e349b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5860584"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5933927"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -49,11 +49,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求下, 表中所示的标头都是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 提交的数据的类型。| 
+| 内容类型| 应用程序/json| 正在提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -75,7 +75,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头是无效或不存在，该服务在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果不允许调用方访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务将在响应中返回 401 未经授权。
  
 <a id="ID4EEE"></a>
 
@@ -113,7 +113,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括下表中所示的标头。
+响应将始终会包括的标头下表中所示。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -146,7 +146,7 @@ gameserverds.xboxlive.com
 | isPublisher|  | 
 | 排名|  | 
 | gameVariantSchemaId|  | 
-| variantSchemas| 数组的变体的架构。| 
+| variantSchemas| 变体的架构的数组。| 
 | variantSchemaId| 架构的 Id。| 
 | schemaContent| 架构内容| 
 | name| 架构的名称| 
@@ -156,7 +156,7 @@ gameserverds.xboxlive.com
 | gsiSetId| GSI 集的 Id。| 
 | gsiSetName| GSI 集的名称。| 
 | selectionOrder|  | 
-| variantSchemaId| 设置用于 GSI varaint 架构的 id。| 
+| variantSchemaId| 设置 varaint 架构 GSI 中使用的 id。| 
  
 <a id="ID4EYBAC"></a>
 

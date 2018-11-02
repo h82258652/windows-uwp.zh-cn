@@ -10,22 +10,22 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fa1ad62b2e76dceda79744c59eb59ddc50ea90
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5865448"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5922098"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 支持 PUT 并获得对会话的操作，使用句柄取消引用。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它被用于使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
 
  
 
 > [!NOTE] 
-> 此 URI 目前仅由 Xbox One 主机和服务器使用服务标识符外部访问。  
+> 此 URI 目前仅可由 Xbox One 主机和服务器使用服务标识符外部访问。  
 
  
 <a id="ID4ES"></a>

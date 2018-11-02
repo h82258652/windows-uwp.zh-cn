@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 上下文搜索, 广播, 游戏剪辑
 ms.localizationpriority: medium
 ms.openlocfilehash: dba22050f53ece134cb805bad60746e55f952476
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5876939"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5922348"
 ---
 # <a name="contextual-search"></a>上下文搜索
 

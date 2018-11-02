@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873802"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944796"
 ---
 # <a name="interaction-primer"></a>交互入门
 
@@ -66,7 +66,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ## <a name="cortana"></a>Cortana
 
-在 windows 10， **Cortana**扩展性来处理用户的语音命令，并启动你的应用程序执行一个单独操作。
+在 windows 10， **Cortana**扩展性来处理来自用户的语音命令，并启动你的应用程序执行一个单独操作。
 
 ### <a name="device-support"></a>设备支持
 
@@ -258,7 +258,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 触摸键盘是一种借助触摸屏输入来输入文本的可视软件键盘。 触摸键盘不可以代替 OSK，因为它仅用于文本输入（它不模拟硬件键盘），并且仅在文本字段或其他可编辑的文本控件获得焦点时显示。 触摸键盘不支持应用或系统命令。
 
-**注意**OSK 的优先级高于触摸键盘时，它不会显示 OSK 是否存在。
+**注意**OSK 的优先级高于触摸键盘时，将不显示 OSK 是否存在。
 
 一般而言，键盘：
 

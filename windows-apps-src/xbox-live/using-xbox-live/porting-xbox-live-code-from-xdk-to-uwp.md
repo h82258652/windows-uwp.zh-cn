@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 40389232f5a1f6ab606720068fe8c9ac80fd5093
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5867537"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5925424"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>将 Xbox Live 代码从 Xbox 开发人员工具包 (XDK) 移植到通用 Windows 平台 (UWP)
 
@@ -29,7 +29,7 @@ ms.locfileid: "5867537"
 
 ## <a name="setting-up-and-configuring-your-project-in-dev-center-and-xdp"></a>在开发人员中心和 XDP 中设置和配置项目
 
-使用 Xbox Live 服务的 UWP 游戏需要在[Windows 开发人员中心](https://dev.windows.com/en-us)或[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/)中配置。 有关最新信息，请参阅 Xbox Live 编程指南中的[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，该指南包含在 [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 中。
+使用 Xbox Live 服务的 UWP 主题作品需要在[Windows 开发人员中心](https://dev.windows.com/en-us)或[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/)中配置。 有关最新信息，请参阅 Xbox Live 编程指南中的[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，该指南包含在 [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 中。
 
 该页面上的主题包含在作品中使用 Xbox Live 服务的以下步骤：
 
@@ -57,7 +57,7 @@ ms.locfileid: "5867537"
 
 2.  [安装 **Xbox Live 平台扩展 SDK**](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) - 如果你需要为 UWP 使用安全套接字 API 和/或游戏保存 API（也称为连接存储）。
 
-3.  在 Visual Studio 中为通用 Windows 应用项目添加 Xbox Live 支持。 你可以添加完整源或引用二进制文件，通过将 NuGet 程序包安装到 Visual Studio 项目。 程序包以 C++ 和 WinRT 的形式提供。 有关更多详细信息，请参阅[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
+3.  在 Visual Studio 中为通用 Windows 应用项目添加 Xbox Live 支持。 你可以添加完整源或引用二进制文件，通过 NuGet 程序包安装到 Visual Studio 项目。 程序包以 C++ 和 WinRT 的形式提供。 有关更多详细信息，请参阅[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
 
 4.  将你的开发计算机配置为使用沙盒。 你可以在管理员命令提示符下运行 Xbox Live SDK 的工具目录中的命令行脚本（例如：SwitchSandbox.cmd XDKS.1）。
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0848aaa74fcecec599c701d944c54defae1fa011
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5878840"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5930177"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
 获取有关是否允许用户执行一组的目标用户的指定的操作或否答案一组。
@@ -33,9 +33,9 @@ ms.locfileid: "5878840"
 
 ## <a name="remarks"></a>备注
 
-请求正文中获取用户列表和列表的设置，并结果是每个用户/设置对允许/阻止结果。
+请求正文中获取用户列表和列表的设置，并结果是允许/阻止用户/设置对每个结果。
 
-在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和不这样做的关闭网络用户之间） 的情况下多人游戏，请参阅针对用户类型[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
+在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和关闭网络用户并不之间） 的情况下多人游戏，请参阅针对用户类型[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
 
 <a id="ID4ECB"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "5878840"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅路由到该服务后验证标头、 身份验证令牌等中的声明的有效性。示例值： 1。|
 
 <a id="ID4E4D"></a>
 
@@ -100,7 +100,7 @@ ms.locfileid: "5878840"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -116,7 +116,7 @@ ms.locfileid: "5878840"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>|
-| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 34|
+| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34|
 | 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
 
 <a id="ID4E5H"></a>

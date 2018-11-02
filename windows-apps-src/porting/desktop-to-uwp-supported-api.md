@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: 086025e46e0e5293e44dda61896fa3fd4ae6115b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5874383"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942967"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>适用于打包的桌面应用的 UWP Api
 

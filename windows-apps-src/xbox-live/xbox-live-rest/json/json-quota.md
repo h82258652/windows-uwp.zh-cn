@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb2283f5214d1d25e1aa0e8bcba17f4c51019fd
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882733"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5928544"
 ---
 # <a name="quotainfo-json"></a>quotaInfo (JSON)
 包含有关标题组的配额信息。 

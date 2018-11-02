@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b9c821e9d2cecc0b9a6bd02da650d40385a3fd91
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887138"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5918470"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-调用方的用户集合中获取目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
+目标 ID 由用户从集合中获取调用方的人。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
@@ -34,7 +34,7 @@ ms.locfileid: "5887138"
  
 ## <a name="remarks"></a>备注
  
-获取操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
+GET 操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
   
 <a id="ID4E5"></a>
 
@@ -43,8 +43,8 @@ ms.locfileid: "5887138"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| ownerId| 字符串| 要访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
-| targetid| 字符串| 在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
+| targetid| 字符串| 正在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
   
 <a id="ID4EJB"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "5887138"
  
 | 类型| 必需| 描述| 如果缺少的响应| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| XUID| 是| 调用方都有用户的 Xbox 用户 ID (XUID)。| 401 未授权| 
+| XUID| 是| 调用方具有用户的 Xbox 用户 ID (XUID)。| 401 未授权| 
   
 <a id="ID4ERC"></a>
 
@@ -71,8 +71,8 @@ ms.locfileid: "5887138"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。| 
+| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅路由到该服务后验证标头、 身份验证令牌等中的声明的有效性。默认值： 1。| 
+| 接受| 字符串。 内容类型，在响应中接受的调用方。 所有的响应是<b>application/json</b>。| 
   
 <a id="ID4EWE"></a>
 
@@ -86,7 +86,7 @@ ms.locfileid: "5887138"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

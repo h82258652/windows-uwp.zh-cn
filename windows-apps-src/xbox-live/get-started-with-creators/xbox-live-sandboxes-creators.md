@@ -8,12 +8,12 @@ ms.date: 10/30/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d1774227dc98c4bfa007e7171ce6fddfceea2f2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: bb11578fcc641c34b4337d90ee37d4084b16da55
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5865900"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5929535"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live 沙盒简介
 
@@ -107,3 +107,7 @@ SwitchSandbox.cmd RETAIL
 
 1. 单击**快速操作**下面的**更改沙盒**。
 2. 输入沙盒 ID，然后单击**保存并重启**。
+
+### <a name="sign-in-with-the-xbox-app"></a>使用 Xbox 应用登录
+
+一旦你已切换你的开发电脑，你会想要验证，你要登录到 Xbox Live 符合条件的测试帐户与你的游戏使用正确的沙盒。 这可以通过登录到[Xbox Live 的应用](https://www.xbox.com/en-US/xbox-app)。 你的开发环境开始使用 Xbox 应用所需的沙盒后将登录用户使用相同的约束为任何其他 Xbox Live 服务在沙盒上运行。 这使得有用验证沙盒使用有效的帐户。

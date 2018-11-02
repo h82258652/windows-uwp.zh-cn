@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4186a0fe6d6023703c3e1e88e2d78519f793e9e6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881454"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5928906"
 ---
 # <a name="xbox-live-title-storage"></a>Xbox Live 标题存储
 

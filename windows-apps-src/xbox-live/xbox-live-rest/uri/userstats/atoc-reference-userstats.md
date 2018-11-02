@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f850cfcb99df079698a685399680bfdb6e32c813
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5873348"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5929440"
 ---
 # <a name="user-statistics-uris"></a>用户统计信息 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*用户统计信息*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*用户统计信息*。
  
 这些 Uri 的域是 userstats.xboxlive.com。
  
@@ -29,7 +29,7 @@ ms.locfileid: "5873348"
 
 [/batch](uri-batch.md)
 
-&nbsp;&nbsp;跨多个游戏的多个玩家统计数据的访问复杂的批处理请求。
+&nbsp;&nbsp;用于在多个游戏的多个玩家统计数据的访问复杂的批处理请求。
 
 [/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)
 

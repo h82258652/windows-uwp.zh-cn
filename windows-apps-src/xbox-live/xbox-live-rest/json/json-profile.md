@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 444f765101c1067b6a13125099040c64197848e4
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5875662"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5930650"
 ---
 # <a name="profile-json"></a>Profile (JSON)
-用户的个人配置文件设置。 
+用户的个人资料设置。 
 <a id="ID4EN"></a>
 
  
@@ -28,7 +28,7 @@ ms.locfileid: "5875662"
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | AppDisplayName| 字符串| 在应用中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示用户的标识字符串，用于在应用中显示。| 
-| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示应该用于在游戏中显示的用户的标识字符串。| 
+| GameDisplayName| 字符串| 在游戏中显示的名称。 这可能是用户的"真实姓名"或他们的玩家代号，具体取决于隐私。 此设置表示用户的标识字符串，用于在游戏中显示。| 
 | Gamertag| 字符串| 用户的玩家代号。| 
 | AppDisplayPicRaw| 字符串| 原始应用显示 pic URL （见下方）。| 
 | GameDisplayPicRaw| 字符串| 原始游戏显示 pic URL （见下方）。| 
@@ -43,7 +43,7 @@ ms.locfileid: "5875662"
 
 
  
-原始 URL 是可调整大小的 URL。 它可用于指定以下值之一调整大小和格式通过追加`&format={format}&w={width}&h={height}`为该 URI:
+原始的 URL 是可调整大小的 URL。 它可以用于指定以下值之一调整大小和格式通过追加`&format={format}&w={width}&h={height}`为该 URI:
  
 格式： png
  

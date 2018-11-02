@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e7f91062ca9bbc19bd56cfc2773aece95e7fc30
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881859"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5922991"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
-为游戏会话表示摘要数据的 JSON 对象。 
+为游戏会话表示摘要数据一个 JSON 对象。 
 <a id="ID4EN"></a>
 
   
@@ -26,10 +26,10 @@ GameSessionSummary JSON 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日期和时间在会话创建时，采用 UTC。 | 
+| creationTime| DateTime| 日期和时间会话创建时，采用 UTC。 | 
 | customData| 8 位无符号整数数组| 1024 字节的特定于游戏的会话数据。 此值不透明到服务器。 | 
 | displayName| 字符串| 显示名称的游戏会话，128 个字符的最大长度。 此值不透明到服务器。 | 
-| hasEnded| 布尔值| 如果会话已结束，则为 true 并且 false 否则为。 设置为 true 标记为只读形式，游戏会话提交到会话阻止更多数据此字段。 | 
+| hasEnded| 布尔值| 如果会话已结束，则为 true 和 false 否则为。 设置为 true 标记为只读形式，游戏会话提交到会话阻止进一步数据此字段。 | 
 | sessionId| 字符串会话 id。 | 
 | titleId| 32 位无符号的整数| 游戏创建游戏会话的 ID。| 
 | variant| 32 位有符号整数| 游戏的变体。 此值不透明到服务器。| 

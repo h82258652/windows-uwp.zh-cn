@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c9d6ea4151acec6c7644d106db28f2820153dd2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5875922"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940388"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})
 从会话中删除指定的成员。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [URI 参数](#ID4ET)
   * [HTTP 状态代码](#ID4E5)
@@ -36,7 +36,7 @@ ms.locfileid: "5875922"
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4E5"></a>
 

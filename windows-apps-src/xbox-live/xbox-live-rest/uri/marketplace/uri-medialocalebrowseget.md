@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b5267444390fb1dde870423959c86a353e35d7af
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879281"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5918999"
 ---
 # <a name="get-mediamarketplaceidbrowse"></a>GET (media/{marketplaceId}/browse)
 允许浏览单个媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -29,9 +29,9 @@ ms.locfileid: "5879281"
  
 ## <a name="remarks"></a>备注
  
-非连续而不使用延续令牌使用 skipItems 参数可以访问页面的搜索返回的数据。 此 API 将接受查询优化器。 
+非按顺序使用 skipItems 参数，而不使用延续令牌，可以访问页面从此搜索返回的数据。 此 API 将接受查询优化器。 
  
- **SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。 
+ 现在，检索 XToken 声明从**SandboxId**并强制执行。 如果不存在**SandboxId** ，娱乐发现服务 (EDS) 将引发 400 错误请求错误。 
   
 <a id="ID4EFB"></a>
 

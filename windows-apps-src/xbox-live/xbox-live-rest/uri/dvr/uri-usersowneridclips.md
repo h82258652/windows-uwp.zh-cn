@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 755d30796c7e948a2fe97e84986a74a461795f83
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885345"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5924405"
 ---
 # <a name="usersowneridclips"></a>/users/{ownerId}/clips
-访问权限的用户的剪辑的列表。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+访问用户的剪辑的列表。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，根据问题的 URI 的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -28,7 +28,7 @@ ms.locfileid: "5885345"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
+| ownerId| 字符串| 用户的用户身份的所访问的资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
   
 <a id="ID4EVB"></a>
 

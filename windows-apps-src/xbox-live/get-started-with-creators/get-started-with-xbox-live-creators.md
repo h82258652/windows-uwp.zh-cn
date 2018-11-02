@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e037101ac5f75107770db6be93cb0c6687edfbd9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5875211"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5933055"
 ---
 # <a name="get-started-with-the-xbox-live-creators-program"></a>Xbox Live 创意者计划入门
  
@@ -35,9 +35,9 @@ Xbox Live 创意者计划游戏必须属于通用 Windows 平台 (UWP) 应用程
 * [游戏 Maker Studio 2 UWP 现在支持 Xbox Live 创意者计划](https://www.yoyogames.com/gamemaker/xblc)将向你介绍如何导出你的 Game Maker Studio 项目，以在 Xbox One 和 Windows 10 电脑上播放。
 * [使用 Xbox Live 在 UWP 应用的构造](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)将向你介绍了如何使用 Xbox Live 在你的 Construct 2 和 3 的游戏中。
 
-你仍可以为没有记录 Xbox Live 集成的其他游戏开发引擎，使用 Xbox Live Api 将 Xbox Live 添加到你的作品。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
+你仍可以为没有记录 Xbox Live 集成的其他游戏开发引擎，使用 Xbox Live Api 将 Xbox Live 添加到你的游戏。 要从你的项目使用 Xbox Live API，可以通过 NuGet 程序包添加对二进制文件的引用或者添加 API 源。 添加 NuGet 程序包可加快编译速度，而添加源可简化调试。
 
-为支持 Xbox Live 服务使用第三方不可 Unity 的游戏引擎工作使用相应的游戏引擎人员要回答问题。
+支持 Xbox Live 服务使用第三方不可 Unity 游戏引擎都要回答问题的相应的游戏引擎员工使用。
 
 ## <a name="3-xbox-live-concepts--testing"></a>3. Xbox Live 概念和测试
 创建主题作品后，你应会了解一些将影响开发主题作品体验的 Xbox Live 概念。 此外，你还需要在游戏计划支持的所有平台上测试游戏，以确保游戏能够按预期运行。
@@ -65,5 +65,5 @@ Xbox Live 创意者计划提供了一系列功能，旨在帮助你推广游戏�
 
 如果你使用的是 Xbox Live 创意者计划，则该过程与发布任何其他 UWP 应用程序的过程相同：
 
-- [Microsoft Store 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)包括[游戏和 Xbox 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)
+- [Microsoft Store 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)，包括[游戏和 Xbox 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)
 - [发布 Windows 应用](https://developer.microsoft.com/en-us/store/publish-apps)

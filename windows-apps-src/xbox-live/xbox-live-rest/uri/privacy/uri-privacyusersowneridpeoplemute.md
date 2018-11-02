@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 569aa173a0074fd147092716b9a36d53acaef0db
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5875646"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5928877"
 ---
 # <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
 访问用户的静音列表。
@@ -28,7 +28,7 @@ ms.locfileid: "5875646"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 要访问其资源的用户的标识符。 可能的值为"me" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"我" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
 
 <a id="ID4ETB"></a>
 

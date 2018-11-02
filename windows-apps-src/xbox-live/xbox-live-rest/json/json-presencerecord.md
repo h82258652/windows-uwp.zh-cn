@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: febf5e377c73572e4e231f830d737b4e704d262e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5875472"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5932145"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
 联机状态相关的单个用户的数据。
@@ -28,7 +28,7 @@ Presencerecord，他的对象具有以下规范。
 | 成员| 类型| 说明|
 | --- | --- | --- |
 | xuid| 字符串| Xbox 用户 ID (XUID) 目标用户。 为此用户提供的状态数据。|
-| 设备| [DeviceRecord](json-devicerecord.md)的数组| 记录列表中用户的设备。|
+| 设备| [DeviceRecord](json-devicerecord.md)的数组| 用户的设备记录的列表。|
 | 状态| 字符串| Xbox LIVE 上的用户的活动。 可能值： <ul><li>联机： 用户必须在至少一个设备记录。</li><li>离开： 用户已登录 Xbox LIVE 但不是活动任何作品中。</li><li>脱机： 用户不是任何设备上存在的。</li></ul> | 
 | lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 当用户在没有有效 DeviceRecords，最后看到的信息才可用。 如果已从缓存中，删除对象及其数据可能不会返回，因为没有任何永久性存储。|
 

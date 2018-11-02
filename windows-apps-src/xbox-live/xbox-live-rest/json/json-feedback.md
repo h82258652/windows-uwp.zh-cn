@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 287287879f6b7f2334d23a9ff1836a61ddd1ce42
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5867629"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5931599"
 ---
 # <a name="feedback-json"></a>Feedback (JSON)
 包含有关玩家的反馈信息。
@@ -38,43 +38,43 @@ ms.locfileid: "5867629"
 
 ### <a name="feedback-types"></a>反馈类型
 
-在"发送"列指示谁可以提交反馈。
+"发送"列指示谁可以提交反馈。
 
-   * "用户"意味着它才能提交用于 XToken 身份验证，因此控制台 API 可接受**SubmitFeedback**。
-   * "合作伙伴"意味着它可以提交的合作伙伴使用声明证书，因此该 API 可接受**SubmitBatchFeedback**。
+   * "用户"意味着它才能提交用于 XToken 身份验证，因此控制台 API 可以接受**SubmitFeedback**。
+   * "合作伙伴"意味着可以提交它由合作伙伴使用声明证书，因此该 API 可接受**SubmitBatchFeedback**。
    * "隐私"意味着只有 SLS 隐私服务可以发送反馈。
-   * "None"意味着反馈内部由适用于审核的 SLS 信誉服务，并且无法发送的任何调用方。
+   * "None"意味着反馈审核的 SLS 信誉服务由内部生成，并且无法发送的任何调用方。
 
-| 类型| 发送| 注释|
+| 类型| 发送的| 注释|
 | --- | --- | --- | --- | --- | --- |
-| CommsAbusiveVoice| 用户| 用户向报告不恰当的语音通信从游戏内和 Xbox 仪表板发送反馈。 |
-| CommsInappropriateVideo| 用户合作伙伴| 用户和合作伙伴发送反馈报告不恰当视频游戏和 Xbox 操作面板。 |
+| CommsAbusiveVoice| 用户| 用户向报告不恰当的语音通信从游戏内和从 Xbox 操作面板发送反馈。 |
+| CommsInappropriateVideo| 用户合作伙伴| 用户和合作伙伴发送反馈报告不恰当视频从游戏内和从 Xbox 操作面板。 |
 | CommsMuted| 隐私| 当用户静音另一个玩家时，隐私向信誉服务发送此反馈。 |
-| CommsPhishing| 用户| 用户将其发送此反馈报告的钓鱼消息。 |
-| CommsPictureMessage| 用户| 收件箱服务调用信誉服务，它会更新发件人的信誉，具体取决于图片的通信并报告给执行团队的反馈。 |
+| CommsPhishing| 用户| 用户将其发送此反馈报告网络钓鱼消息。 |
+| CommsPictureMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，具体取决于图片的通信并报告给执行团队的反馈。 |
 | CommsSpam| 用户| 用户将其发送此反馈报告垃圾邮件。 |
-| CommsTextMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，报告给执行团队的反馈。 **注意：** 收件箱 UI 应该有一个按钮，以允许用户在标志一条消息。 |
-  | CommsVoiceMessage | 用户 | 收件箱服务调用信誉服务，它会更新发件人的信誉，具体取决于语音消息的通信并报告给执行团队的反馈。  |
+| CommsTextMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，报告给执行团队的反馈。 **注意：** 收件箱 UI 应该有一个按钮，以允许用户标志一条消息。 |
+  | CommsVoiceMessage | 用户 | 收件箱服务调用信誉服务，该更新发件人的信誉，具体取决于语音消息的通信并报告给执行团队的反馈。  |
   | FairPlayBlock | 隐私 | 当用户阻止其他玩家，隐私向信誉服务发送此反馈。  |
   | FairPlayCheater | 用户合作伙伴 | 确定用户在作弊的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayConsoleBanRequest | 合作伙伴 | 合作伙伴将作为建议禁止从 Xbox Live 的主机发送此反馈。  |
-  | FairPlayIdler | 用户合作伙伴 | 如果用户处于空闲状态目的游戏时，通常圆形后一轮，确定的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayKicked | 用户合作伙伴 | 检测用户已进行投票退出 （踢） 的游戏的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayKillsTeammates | 用户合作伙伴 | 当玩家 killls 可以自动确定的标题他名队友就可以发送此反馈无需用户干预。  |
+  | FairPlayConsoleBanRequest | 合作伙伴 | 合作伙伴提供的建议，以禁止从 Xbox Live 控制台为发送此反馈。  |
+  | FairPlayIdler | 用户合作伙伴 | 如果用户处于空闲状态目的游戏时，通常圆形后舍入，确定的游戏可以发送此反馈无需用户干预。  |
+  | FairPlayKicked | 用户合作伙伴 | 检测用户已进行投票退出游戏 （踢） 的游戏可以发送此反馈无需用户干预。  |
+  | FairPlayKillsTeammates | 用户合作伙伴 | 当玩家 killls 可以自动确定的游戏他名队友就可以发送此反馈无需用户干预。  |
   | FairPlayQuitter | 用户合作伙伴 | 确定用户提前退出游戏的游戏可以发送此反馈无需用户干预。  |
   | FairPlayTampering | 用户合作伙伴 | 确定用户已篡改磁盘上的内容的游戏可以发送此反馈无需用户干预。  |
   | FairPlayUnblock | 隐私 | 当用户取消阻止其他玩家，隐私向信誉服务发送此反馈。  |
   | FairPlayUserBanRequest | 合作伙伴 | 合作伙伴将作为建议禁止从 Xbox Live 用户发送此反馈。  |
-  | InternalAmbassadorScoreUpdated | 无 | 这是不用于调用方内部反馈类型。  |
-  | InternalReputationReset | 无 | 这是不用于调用方内部反馈类型。  |
-  | InternalReputationUpdated | 无 | 这是不用于调用方内部反馈类型。  |
-  | PositiveHelpfulPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈提交正有用同行玩家在游戏、 论坛、 等信息。  |
-  | PositiveHighQualityUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户提交的游戏内从共享 UGC 上的正面反馈等调整 Forza 中的设置。  |
+  | InternalAmbassadorScoreUpdated | 无 | 这是不用于由调用方内部反馈类型。  |
+  | InternalReputationReset | 无 | 这是不用于由调用方内部反馈类型。  |
+  | InternalReputationUpdated | 无 | 这是不用于由调用方内部反馈类型。  |
+  | PositiveHelpfulPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈提交正从游戏、 论坛、 等内的有用同事的玩家有关的信息。  |
+  | PositiveHighQualityUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户提交正面的反馈，在从游戏内的共享 UGC 例如，调节 Forza 中的设置。  |
   | PositiveSkilledPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏可以让用户能够 MPSD 会话结束时对 MVP 投票。  |
-  | UserContentGamerpic | 用户 | 用户将其发送此反馈报告直接通过玩家卡片不恰当的玩家图片。  |
-  | UserContentGamertag | 用户 | 用户将其发送此反馈报告直接通过玩家卡片不恰当玩家标记。  |
+  | UserContentGamerpic | 用户 | 用户将其发送此反馈报告直接通过玩家卡片的不恰当的玩家图片。  |
+  | UserContentGamertag | 用户 | 用户将其发送此反馈报告不恰当的玩家标记直接通过玩家卡片。  |
   | UserContentInappropriateUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户标志在游戏中的不恰当共享的 UGC 例如，Forza 画图作业。  |
-  | UserContentPersonalInfo | 用户 | 用户将其发送此反馈报告简介并直接通过玩家卡片其他个人信息。  |
+  | UserContentPersonalInfo | 用户 | 用户将其发送此反馈报告简介和玩家卡片直接从其他个人信息。  |
 
 <a id="ID4EFEAC"></a>
 

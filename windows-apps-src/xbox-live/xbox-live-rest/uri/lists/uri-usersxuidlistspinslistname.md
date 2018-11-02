@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b76637d0c88e4ef2bc8905ff1b4dd894fd819a0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5861907"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936486"
 ---
 # <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
 访问列表中的项目。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -29,8 +29,8 @@ ms.locfileid: "5861907"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID)。| 
-| listtype| 字符串| 列表 （如何使用和其工作原理） 的类型。 始终"固定"对于这些相关的方法。| 
-| listname| 字符串| 列表的名称 （给定 listtype 执行哪些列表）。 始终为"XBLPins"中的 Pin 的项。| 
+| listtype| 字符串| 列表 （它如何使用和其工作原理） 的类型。 始终对这些"固定"相关的方法。| 
+| listname| 字符串| 列表的名称 （给定 listtype 执行哪些列表）。 始终为"XBLPins"的 Pin 中的项。| 
   
 <a id="ID4EGC"></a>
 
@@ -47,7 +47,7 @@ ms.locfileid: "5861907"
 
 [POST](uri-usersxuidlistspinslistnamepost.md)
 
-&nbsp;&nbsp;项目插入到列表中基于查询字符串参数**insertIndex**的索引。
+&nbsp;&nbsp;插入索引基于查询字符串参数**insertIndex**处列表项。
 
 [PUT](uri-usersxuidlistspinslistnameput.md)
 

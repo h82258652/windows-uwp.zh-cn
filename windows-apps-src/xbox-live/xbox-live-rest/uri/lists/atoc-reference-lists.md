@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c84b68f990392d17342e333b18e5f5d38d2266
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5861939"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938174"
 ---
 # <a name="lists-uris"></a>列表 URI
  
 本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*Pin*。
  
-仅游戏和 Xbox 360、 Windows Phone 设备上、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
+只有游戏和 Xbox 360 上，在 Windows Phone 设备、 SmartGlass，或上 Xbox.com 上运行的应用程序可以使用此服务。
  
 这些 Uri 的域是 eplists.xboxlive.com。
  
@@ -39,7 +39,7 @@ ms.locfileid: "5861939"
 
 [/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 
-&nbsp;&nbsp;移动列表中的一项。
+&nbsp;&nbsp;将移动列表中的一项。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
 

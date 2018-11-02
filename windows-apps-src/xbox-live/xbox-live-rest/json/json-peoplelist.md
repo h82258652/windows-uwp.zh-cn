@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 261ab440091ce3825c1025e2831b054807910e94
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5859536"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5941055"
 ---
 # <a name="peoplelist-json"></a>PeopleList (JSON)
 [Person](json-person.md)对象的集合。 
@@ -27,7 +27,7 @@ PeopleList 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 人脉| [人](json-person.md)的数组| [Person](json-person.md)对象构成联系人列表。| 
+| 人脉| [人](json-person.md)的数组| [Person](json-person.md)对象构成人脉列表。| 
 | totalCount| 32 位无符号的整数| 可用设置中的[人员](json-person.md)对象总数。 对于页面，因为它代表整个集，而不只是最新的响应的大小，客户端可以使用此值。 示例值： 680。| 
   
 <a id="ID4EAC"></a>

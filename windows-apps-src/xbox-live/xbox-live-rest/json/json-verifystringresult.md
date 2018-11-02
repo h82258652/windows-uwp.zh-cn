@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ba5336ed0bf734eff60a4bbffca3397fd1ea3eb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5863600"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939736"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
-结果代码对应于[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)提交每个字符串。
+结果代码对应于每个提交给[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)的字符串。
 <a id="ID4ER"></a>
 
 

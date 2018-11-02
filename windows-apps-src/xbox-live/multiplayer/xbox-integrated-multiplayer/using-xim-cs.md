@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox 集成多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a588a633f2c12a6adf4c062940c4e2bee7fe18
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5875059"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5929469"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C#)
 

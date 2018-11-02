@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 71b97271c96b09ef83069ddb597bcfd5c9f71509
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5861171"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5927366"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 枚举
 详细介绍 ThumbnailSource 枚举。 
@@ -26,6 +26,6 @@ ms.locfileid: "5861171"
 | <b>枚举</b>| <b>说明</b>| 
 | --- | --- | 
 | 默认值| 从该剪辑中的 3 个第二个点会生成一个大型和小型大小的缩略图。| 
-| Offset| 从该剪辑 InitialUploadRequest 中指定的值会生成一个大和小尺寸的缩略图。| 
+| Offset| 从该剪辑 InitialUploadRequest 中指定的值情况下，会生成一个大型和小型大小的缩略图。| 
 | 上传| 生成并上传独立 GameClips 服务的缩略图。| 
   

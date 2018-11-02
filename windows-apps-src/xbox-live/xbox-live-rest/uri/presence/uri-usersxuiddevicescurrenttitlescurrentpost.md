@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e04f1711d83679ac0b41c74c1c391b26bc7969
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879415"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5925176"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
-使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。
+更新游戏与用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
@@ -32,9 +32,9 @@ ms.locfileid: "5879415"
  
 ## <a name="remarks"></a>备注
  
-此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和游戏的媒体状态数据。
+此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和标题的媒体状态数据。
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+现在，检索 XToken 声明从**SandboxId**并强制执行。 如果不存在**SandboxId** ，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
@@ -108,9 +108,9 @@ ms.locfileid: "5879415"
  
 ## <a name="response-body"></a>响应正文
  
-如果成功，HTTP 状态代码的 200 或 201 创建将返回，根据需要。
+如果成功，200 或 201 创建 HTTP 状态代码将返回，根据需要。
  
-如果出现错误 （HTTP 4xx 或 5xx），在响应正文中返回相应的错误的信息。
+发生错误 （HTTP 4xx 或 5xx），在响应正文中返回相应的错误的信息。
   
 <a id="ID4EVAAC"></a>
 

@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d2586662121b48701c7eb33f3b8f91e5243bd6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5868485"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5924421"
 ---
 # <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a>DELETE (/users/xuid({xuid})/devices/current/titles/current)
-删除结束游戏，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
+删除结束标题，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EZ)
   * [授权](#ID4EEB)
@@ -83,7 +83,7 @@ ms.locfileid: "5868485"
  
 如果成功，使用没有响应正文中返回 HTTP 状态代码。
  
-如果错误 （HTTP 4xx 或 5xx），在响应正文中返回相应的错误的信息。
+发生错误 （HTTP 4xx 或 5xx），在响应正文中返回相应的错误的信息。
   
 <a id="ID4ELH"></a>
 

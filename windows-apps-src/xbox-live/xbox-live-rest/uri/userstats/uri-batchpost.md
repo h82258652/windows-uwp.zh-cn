@@ -10,21 +10,21 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cf59d532b303402bc17320621a92ee7a0bc77934
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879383"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5941121"
 ---
 # <a name="post-batch"></a>POST (/batch)
-POST 方法，可作为跨多个游戏的多个玩家统计数据的复杂的批处理请求的 GET 方法。 这些 Uri 的域是`userstats.xboxlive.com`。
+POST 方法，可用作跨多个标题的 GET 方法为多个玩家统计数据的复杂的批处理请求。 这些 Uri 的域是`userstats.xboxlive.com`。
  
 <a id="ID4ET"></a>
 
  
 ## <a name="remarks"></a>备注
  
-游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是开放的统计信息。 打开统计信息可访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
+游戏开发人员可以标记为打开或限制使用 XDP 或开发人员中心的统计信息。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
   
   * [备注](#ID4ET)
   * [备注](#ID4EFB)
@@ -42,7 +42,7 @@ POST 方法，可作为跨多个游戏的多个玩家统计数据的复杂的批
  
 调用方提供的用户，服务配置 Id (Scid) 的每个用于检索这些统计数据的 Scid 的统计数据名称列表数组的邮件正文。
  
-你可能会发现它的详细信息很有用，若要查看简单，单统计信息之前的[GET](uri-usersxuidscidsscidstatsget.md)方法读取本页更加复杂，批模式。
+你可能会发现它的详细信息很有用，若要查看简单，单统计信息之前的[GET](uri-usersxuidscidsscidstatsget.md)方法读取本页更复杂，批处理模式。
   
 <a id="ID4EUB"></a>
 
@@ -51,10 +51,10 @@ POST 方法，可作为跨多个游戏的多个玩家统计数据的复杂的批
  
 没有针对内容隔离和访问控制方案实现的授权逻辑。
  
-   * 假设调用方提交请求有效的 XSTS 令牌，可以从任何平台上的客户端读取排行榜和用户统计信息。 写入是很明显限于客户端支持。
-   * 游戏开发人员可以将统计数据标记为打开或 XDP 或开发人员中心使用限制。 排行榜是开放的统计信息。 打开统计信息可访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
+   * 排行榜和用户统计信息可以读取的所有平台上的客户端，前提是调用方提交请求有效的 XSTS 令牌。 写入都很明显限制为支持的客户端。
+   * 游戏开发人员可以标记为打开或限制使用 XDP 或开发人员中心的统计信息。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或开发人员中心管理到沙盒的用户身份验证。
   
-下面的示例是伪代码检查：
+下面的示例是检查的伪代码：
  
 
 ```cpp
@@ -96,7 +96,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ### <a name="sample-request"></a>示例请求
  
-以下文章正文通知服务从两个不同 Scid 的两个不同用户所请求四个统计信息。
+以下文章正文通知服务从两个不同 Scid 为两个不同的用户所请求四个统计信息。
  
 
 ```cpp
@@ -131,17 +131,17 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
-| 304| 未修改| 资源未修改由于最后一次请求。| 
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
+| 304| 未修改| 资源未修改自最后一次请求。| 
+| 400| 错误请求| 服务可能不理解的格式不正确的请求。 通常参数无效。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 404| 找不到| 找不到指定的资源。| 
-| 406| 不允许| 不支持资源版本。| 
+| 406| 不允许| 资源版本不受支持。| 
 | 408| 请求超时| 资源版本不受支持;应拒绝 MVC 层。| 
   
 <a id="ID4ENBAC"></a>

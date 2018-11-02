@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, 游戏, uwp, windows 10, Xbox one, Windows 开发人员中心, Xbox Live 设置
 ms.openlocfilehash: 761d5e721220a3094c455273a71d029fc8c26ba1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5877884"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5923478"
 ---
 # <a name="configure-xbox-live-setup-on-windows-dev-center"></a>在 Windows 开发人员中心中配置 Xbox Live 设置
 
@@ -35,7 +35,7 @@ ms.locfileid: "5877884"
 ![用于在开发人员中心上选择默认区域设置的选择下拉列表的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
 
 ## <a name="product-type"></a>产品类型
-此下拉菜单允许你更改产品的类型。 它默认为类型**游戏**。 你所做的选择将影响 XboxLivefeatures 提供给你。 有三个可供选择的选项：
+此下拉菜单允许你更改产品的类型。 它默认为类型**游戏**。 你所做选择将影响 XboxLivefeatures 提供给你。 有三个可供选择的选项：
 1. 应用 
 2. 游戏 
 3. 游戏演示 

@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: da73760969e7a4a9e268644555d0790980b16123
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5866088"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5921766"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
-删除句柄 ID 指定的句柄
+删除由句柄 ID 指定的句柄
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EAB)
@@ -32,7 +32,7 @@ ms.locfileid: "5866088"
 
 
 ## <a name="remarks"></a>备注
-此 HTTP/REST 方法删除句柄对于指定 ID，并清除用户的当前活动会话。 此方法可由**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.ClearActivityAsync**包装。  
+此 HTTP/REST 方法删除句柄对于指定 ID，并清除会话的用户的当前活动。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.ClearActivityAsync**换行显示。  
 <a id="ID4EAB"></a>
 
 

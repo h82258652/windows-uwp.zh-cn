@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e96604daa9f8736601f52c917b556369ec620e96
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5874413"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945176"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用画笔绘制背景、前景和轮廓
 
@@ -39,7 +39,7 @@ ms.locfileid: "5874413"
 
 ### <a name="predefined-color-names"></a>预定义颜色名称
 
-可以使用预定义的颜色名称（如 [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) 或 [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx)）。 共有 256 种已命名的颜色。 XAML 解析器会将颜色名称转换为具有正确颜色通道的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 结构。 256 种已命名的颜色基于级联样式表，级别 3 *X11*颜色名称 (CSS3) 规范，因此你可能已经熟悉此列表的已命名的颜色如果你以前有过 web 开发或设计。
+可以使用预定义的颜色名称（如 [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) 或 [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx)）。 共有 256 种已命名的颜色。 XAML 解析器会将颜色名称转换为具有正确颜色通道的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 结构。 256 种已命名的颜色基于级联样式表，级别 3 *X11*颜色名称 (CSS3) 规范，因此你可能已经熟悉此列表中的已命名的颜色如果你以前有过 web 开发或设计。
 
 下面是将 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性设置为预定义颜色 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) 的示例。
 

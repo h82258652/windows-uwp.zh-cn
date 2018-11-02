@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c414b7e95a81d1ac6307229c49b87072059d3a15
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5870061"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5934244"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -169,7 +169,7 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 沙盒 ID 是作品、产品或服务配置数据的分隔单元。多个作品可以位于同一个沙盒中，这是这些作品可以共享任何服务配置数据的先决条件。
 
-沙盒 ID （区分大小写） 是采用以下格式的字符串： &lt;PublisherMoniker&gt;。*n*。 例如，沙盒 ID XLDP.5 的说明如下：
+沙盒 ID （区分大小写） 是一个字符串采用以下格式： &lt;PublisherMoniker&gt;。*n*。 例如，沙盒 ID XLDP.5 的说明如下：
 
 -   *发布者名字对象*在所有发布者中都是唯一的。 因此，“XLPD”是此特定发布者的发布者名字对象。 当开发人员帐户管理器在 XDP 中“激活”发布者时，将创建发布者名字对象。
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 64aa0cdd7b1167ee139774114ad65e507bce759e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5863062"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5929502"
 ---
 # <a name="mediamarketplaceidcontentrating"></a>/media/{marketplaceId}/contentRating
 访问内容分级令牌。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -37,7 +37,7 @@ ms.locfileid: "5863062"
 
 [GET (/media/{marketplaceId}/contentRating)](uri-medialocalecontentratingget.md)
 
-&nbsp;&nbsp;获取该内容分级令牌。
+&nbsp;&nbsp;获取内容分级令牌。
  
 <a id="ID4E5B"></a>
 

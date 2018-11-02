@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b4da88a85535d6be97607663c96e416e226efb31
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5880564"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937043"
 ---
 # <a name="game-dvr-uris"></a>游戏 DVR URI
  
@@ -34,7 +34,7 @@ ms.locfileid: "5880564"
 
 [/public/scids/{scid}/clips](uri-publicscidclips.md)
 
-&nbsp;&nbsp;访问公开剪辑。 此 URI 实际上可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
+&nbsp;&nbsp;访问公开的剪辑。 此 URI 实际上可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
 
 [/{uri}](uri-uri.md)
 
@@ -50,11 +50,11 @@ ms.locfileid: "5880564"
 
 [/users/{ownerId}/clips](uri-usersowneridclips.md)
 
-&nbsp;&nbsp;访问权限的用户的剪辑的列表。
+&nbsp;&nbsp;访问用户的剪辑的列表。
 
 [/users/{ownerId}/scids/{scid}/clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
 
-&nbsp;&nbsp;如果已知的所有 Id，以找到它，请从系统中访问单个游戏剪辑。
+&nbsp;&nbsp;如果已知的所有 Id，以找到它，请从系统中访问的单个游戏剪辑。
  
 <a id="ID4EOC"></a>
 

@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4da982d9ce3c1f24b00c62a3668253f086b41f55
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886714"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5927295"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-返回由其 sessionId sessionhost 分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+返回由其 sessionId sessionhost 的分配状态。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4E4)
   * [所需的响应标头](#ID4EEB)
@@ -53,7 +53,7 @@ ms.locfileid: "5886714"
 | sessionHostId| 会话主机 id。| 
 | sessionId| （在分配时） 提供的客户端会话 id。| 
 | secureContext| 安全设备地址。| 
-| portMappings| 该实例端口映射。| 
+| portMappings| 端口映射的实例。| 
 | 区域| 实例的位置。| 
 | 票证 Id| 当前会话 ID （留给中向后兼容性）。| 
 | gameHostId| 当前 sessionHostId （留给中向后兼容性）。| 
@@ -102,9 +102,9 @@ ms.locfileid: "5886714"
  
 ### <a name="remarks"></a>备注
  
-收到以下响应代码时，游戏应仅重试对服务调用：
+何时接收的以下响应代码，游戏应仅重试对服务调用：
  
-   * 200-成功 
+   * 200 — 成功 
    * 400-请求包含无效参数 
    * 401-未授权 
    * 404-的主题作品 ID 或票证 ID 已无效，或未找到 

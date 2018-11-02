@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: aea8a1914a9466b7e24fd0214059a0dac5a6c3a7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5888270"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5922879"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
-换行分页信息的列表以及返回游戏剪辑的列表。 
+包装返回的游戏剪辑，以及分页信息列表的列表。 
 <a id="ID4EN"></a>
 
  

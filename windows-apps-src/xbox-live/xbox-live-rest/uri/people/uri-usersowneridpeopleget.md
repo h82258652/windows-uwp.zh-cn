@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a9761e3e9dff2cef330c48674a62b33f63fbd096
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5867655"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942537"
 ---
 # <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 获取调用方的用户集合。
@@ -36,7 +36,7 @@ ms.locfileid: "5867655"
 
 ## <a name="remarks"></a>备注
 
-获取操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
+GET 操作不会修改任何资源，因此如果执行一次或多次，这将产生相同的结果。
 
 <a id="ID4E5"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "5867655"
 
 | 参数| 类型| 说明|
 | --- | --- | --- |
-| ownerId| 字符串| 要访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。|
+| ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。|
 
 <a id="ID4EJB"></a>
 
@@ -54,9 +54,9 @@ ms.locfileid: "5867655"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表中的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 不同于所属的用户调用用户是否支持**所有**的值。|
-| startIndex| 32 位无符号的整数| 返回起始位置给定索引的项目。  
-| maxItems| 32 位无符号的整数| 用户从开始菜单索引的集合返回的最大数。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
+| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表上的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友上的所有人。</li></br>**注意：** 不同于所属的用户调用用户是否支持仅**所有**的值。|
+| startIndex| 32 位无符号的整数| 返回的起始位置给定的索引的项。  
+| maxItems| 32 位无符号的整数| 用户从开始菜单索引从开始集合中返回的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
 
 <a id="ID4ERD"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "5867655"
 
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID| 是| 调用方都有用户的 Xbox 用户 ID (XUID)。| 401 未授权|
+| XUID| 是| 调用方具有用户的 Xbox 用户 ID (XUID)。| 401 未授权|
 
 <a id="ID4EZE"></a>
 
@@ -83,8 +83,8 @@ ms.locfileid: "5867655"
 
 | 标题| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。|
+| X RequestedServiceVersion| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅路由到该服务后验证标头、 身份验证令牌等中的声明的有效性。默认值： 1。|
+| 接受| 字符串。 内容类型，在响应中接受的调用方。 所有的响应是<b>application/json</b>。|
 
 <a id="ID4E5G"></a>
 
@@ -98,7 +98,7 @@ ms.locfileid: "5867655"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -121,7 +121,7 @@ ms.locfileid: "5867655"
 
 ## <a name="response-body"></a>响应正文
 
-如果调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
+如果在调用成功，该服务将返回调用方的用户集合和数组，其中包含调用方的用户集合中的用户总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
 
 <a id="ID4EZCAC"></a>
 

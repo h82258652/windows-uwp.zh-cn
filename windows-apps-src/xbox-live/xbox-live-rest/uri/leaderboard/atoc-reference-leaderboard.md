@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f229ad872140ba4b0d21049f13ab4f4320e746d1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5868971"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5930502"
 ---
 # <a name="leaderboards-uris"></a>排行榜 URI
 
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从*排行榜*的 Xbox Live 服务。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*排行榜*。
 
 这些 Uri 的域是 leaderboards.xboxlive.com。
 

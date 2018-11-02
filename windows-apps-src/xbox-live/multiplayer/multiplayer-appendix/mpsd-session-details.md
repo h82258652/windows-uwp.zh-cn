@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015, 会话, mpsd
 ms.localizationpriority: medium
 ms.openlocfilehash: ad551d07d94f90d89f8abda0b188ea281b4930c2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5869797"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5922029"
 ---
 # <a name="mpsd-session-details"></a>MPSD 会话详细信息
 
@@ -31,7 +31,7 @@ ms.locfileid: "5869797"
 
 ## <a name="session-overview"></a>会话概述
 
-多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 此模板中找不到[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)和[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据设置开发人员通过 XDP 或 Windows 开发人员中心访问策略的服务配置对执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
+多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 此模板中找不到[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)和[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据开发人员通过 XDP 或 Windows 开发人员中心设置访问策略的服务配置对执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
 
 本主题假设你的模板使用协定版本 107，即当前的 MPSD 为 Xbox One 使用的版本。 如果你有基于协定版本 105（与 104 相同）定义的模板，你必须更改这些设置以支持版本 107。 有关说明，请参阅[常见的多人游戏 2015 迁移问题](common-issues-when-adapting-multiplayer.md)。
 

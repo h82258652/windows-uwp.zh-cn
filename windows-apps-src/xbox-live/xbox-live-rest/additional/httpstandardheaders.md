@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b1d86a870e32457b903053c7a8c3b1d722c9c559
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5863098"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936365"
 ---
 # <a name="standard-http-request-and-response-headers"></a>标准 HTTP 请求和响应标头
  
@@ -28,10 +28,10 @@ ms.locfileid: "5863098"
 | 标头| 值| 说明| 
 | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。 所需的所有 Xbox Live 服务请求。| 
-| 授权| STSTokenString| STS 身份验证令牌。 此标头的值被从<b>GetTokenAndSignatureResult.Token</b>属性。 | 
-| Content-Type| 应用程序/xml、 application/json、 multipart/表单数据或应用程序/x-www-窗体-urlencoded| 指定提交的请求的内容的类型。| 
+| 授权| STSTokenString| STS 身份验证令牌。 从<b>GetTokenAndSignatureResult.Token</b>属性检索此标头的值。 | 
+| Content-Type| 应用程序/xml、 application/json、 multipart/表单数据或应用程序/x-www-窗体-urlencoded| 指定要提交的请求的内容的类型。| 
 | Content-Length| 整数值| 指定在 POST 请求正在提交的数据的时长。| 
-| 接受的语言 | String| 指定如何本地化任何返回的字符串。 有效的语言组合的列表，请参阅<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高级 Xbox 360 编程</a>。| 
+| 接受的语言 | String| 指定如何本地化任何返回的字符串。 有关有效的语言组合的列表，请参阅<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高级 Xbox 360 编程</a>。| 
   
 <a id="ID4E6C"></a>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, xbox, xbox live
 ms.localizationpriority: medium
 ms.openlocfilehash: 66906737de1183425320f8a46b8d0642a3210122
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5871791"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5918576"
 ---
 # <a name="what-is-xbox-live"></a>什么是 Xbox Live？
 

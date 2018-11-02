@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: ca291312345646bb48691615854503f5121c8888
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5876467"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5932923"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 
@@ -31,7 +31,7 @@ ms.locfileid: "5876467"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>开发人员帐户不能访问适用于运行时访问的沙盒
 
-* 测试帐户 （也称为开发帐户） 或经授权的开发人员帐户必须用于登录到正在开发中主题作品。  请确保你尝试使用一个登录或在 XDP 上创建其他测试帐户[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)。 在 Windows 开发人员中心上的 xbox live 相关联的开发人员帐户，你可以授权[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* 测试帐户 （也称为开发帐户） 或经授权的开发人员帐户必须用于登录到正在开发中主题作品。  请确保你尝试使用其中一个登录，或在 XDP 上创建其他测试帐户[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)。 在 Windows 开发人员中心上的 xbox live 相关联的开发人员帐户，你可以授权[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * 确保帐户有权访问你的游戏发布到沙盒。  在 XDP 中创建的测试帐户继承了创建它们的 XDP 帐户的权限
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>你的设备未位于正确的沙盒上

@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 298aaa1ae410badd24aa413cc4ada499b3521c74
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5867982"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939874"
 ---
 # <a name="handles"></a>/handles
 支持 POST 操作来设置用户的当前活动显示在 Xbox One 仪表板的用户体验，并邀请会话成员，如果所需的会话。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它被用于使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -42,7 +42,7 @@ sessiondirectory.xboxlive.com
 
 [POST (/handles)](uri-handlespost.md)
 
-&nbsp;&nbsp;设置用户的当前活动，多人游戏会话，并邀请会话成员，如果需要。
+&nbsp;&nbsp;设置用户的当前活动的多人游戏会话，并邀请会话成员，如果需要。
  
 <a id="ID4EKB"></a>
 

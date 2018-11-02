@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: aa749dac2638dbdb1f474300e9799e3e67827079
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5888144"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937619"
 ---
 # <a name="post-handles"></a>POST (/handles)
-设置用户的当前活动，多人游戏会话，并邀请会话成员，如果需要。
+设置用户的当前活动的多人游戏会话，并邀请会话成员，如果需要。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EHB)
@@ -33,9 +33,9 @@ ms.locfileid: "5888144"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法可用于设置的当前活动会话。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**换行。 请求正文中必须定义在 JSON 文件中，为"活动"类型字段使用**sessionRef**对象的会话引用。 检索没有响应正文。 会话引用中指定的项目的定义，请参阅**Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**。
+此 HTTP/REST 方法可用于设置的当前活动会话。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**换行。 请求正文必须定义的会话引用，在 JSON 文件中，为"活动"类型字段使用**sessionRef**对象。 检索没有响应正文。 会话引用中指定的项目的定义，请参阅**Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**。
 
-此 POST 方法还用于邀请用户指定的会话句柄。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**换行。 使用 POST 方法需要在请求正文定义的会话引用，但它具有类型字段设置为"邀请"。 响应正文是邀请句柄。
+此 POST 方法还用于邀请用户指定的会话句柄。 在此情况下，该方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**换行。 使用 POST 方法需要你请求正文定义的会话引用，但具有类型字段设置为"邀请"。 响应正文是邀请句柄。
 
 <a id="ID4EHB"></a>
 
@@ -117,7 +117,7 @@ ms.locfileid: "5888144"
 <a id="ID4ESC"></a>
 
 
-### <a name="response-body-for-sending-invites"></a>响应正文用于发送邀请
+### <a name="response-body-for-sending-invites"></a>响应正文，用于发送邀请
 邀请句柄。   
 <a id="ID4EXC"></a>
 

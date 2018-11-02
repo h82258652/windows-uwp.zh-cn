@@ -8,15 +8,15 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: ec865b56254b624655e29df43a42ebedd58e4cf0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5862298"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940081"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows 开发人员中心服务配置
 
-在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)中发布并使用完整的 Xbox Live 功能集的游戏可以在开发人员中心配置其 Xbox Live 服务。
+在[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)中发布，并使用完整的 Xbox Live 功能集的游戏可以在开发人员中心配置其 Xbox Live 服务。
 
 > [!IMPORTANT]
 > 这些主题不适用于 Xbox Live 创意者计划中的主题作品。

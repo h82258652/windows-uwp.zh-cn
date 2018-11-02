@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c78fe5a0707797911ff9015cfa28378201b0939
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5864735"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5923748"
 ---
 # <a name="permissioncheckresult-json"></a>PermissionCheckResult (JSON)
 从单个权限设置针对单个目标用户的单个用户检查的结果。 
@@ -27,7 +27,7 @@ PermissionCheckResult 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 原因| 字符串| 可选。 一个<b>PermissionResultCode</b>值，指示的权限被拒绝为什么<b>IsAllowed</b>是否 false。| 
+| 原因| 字符串| 可选。 <b>PermissionResultCode</b>值，该值指示的权限被拒绝为什么<b>IsAllowed</b>是否 false。| 
 | restrictedSetting| 字符串| 可选。 如果<b>原因</b>成员<b>PermissionResultCode</b>的值指示请求权限检查失败，这指示的权限失败。| 
   
 <a id="ID4E6B"></a>

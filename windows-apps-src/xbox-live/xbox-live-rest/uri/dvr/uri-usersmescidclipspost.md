@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dd074b6ffc7b5367992c984e7e3c24b036f0f11d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5868420"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938797"
 ---
 # <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
-发出初始上载请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
+发出请求，初始上载。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，根据问题的 URI 的函数。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4EFB)
@@ -35,9 +35,9 @@ ms.locfileid: "5868420"
  
 ## <a name="remarks"></a>备注
  
-这是 GameClip 上载过程的第一部分。 后的视频捕获，建议将调用 GameClips 服务立即获取的位上, 传 ID 和 URI，即使上传未计划立即启动。 用户配额检查和其他检查通过内容隔离，隐私，依此类推，若要查看是否视频应该甚至计划用于上传客户端，将执行此调用。 正面的响应此调用指示服务愿意接受上传的视频剪辑。 上传的所有剪辑必须与特定标题 （通过 SCID) 都关联，以接受系统中。
+这是 GameClip 上载过程的第一部分。 在视频的捕获，建议调用 GameClips 服务立即获取的位上, 传 ID 和 URI，即使上传未计划立即开始。 用户配额检查和其他检查通过内容隔离，隐私，依此类推，若要查看是否视频应甚至计划用于上传客户端，则将执行此调用。 从此调用肯定响应指示服务愿意接受上载的视频剪辑。 上传的所有剪辑必须与特定标题 （通过 SCID) 都关联，以接受系统中。
  
-此调用不是幂等;后续调用将导致不同 Id 和要颁发的 Uri。 重试失败应遵循标准客户端后关闭行为。
+此调用不幂等;后续调用将导致不同 Id 和要颁发的 Uri。 重试失败应遵循标准客户端后关闭行为。
   
 <a id="ID4EFB"></a>
 
@@ -69,7 +69,7 @@ ms.locfileid: "5868420"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅路由到该服务后验证标头、 身份验证令牌等中的声明的有效性。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。| 
   
@@ -122,12 +122,12 @@ ms.locfileid: "5868420"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 已成功检索会话。| 
-| 400| 错误请求| 在请求正文中，没有错误或用户通过其配额。| 
+| 400| 错误请求| 在请求正文中，没有错误或用户通过他们的配额。| 
 | 401| 未授权| 没有在请求中的身份验证令牌格式问题。| 
 | 403| 已禁止| 声明丢失，或 DeviceType 不需要一些。| 
 | 503| 不允许| 该服务或一些下游的依赖项都已关闭。 使用标准后关闭行为重试。| 

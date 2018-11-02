@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c70f0dee1226057a69cb876dac4f4512b378b5
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5876734"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5929220"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
@@ -34,7 +34,7 @@ ms.locfileid: "5876734"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API 图层
 
-C Api 现已推出的 Xbox Live 的一些功能。 新的 API 层为受支持的功能，包括自定义内存管理、 异步任务的手动线程管理和新的 HTTP 库提供了很多优势。
+现在，C Api 均可用于 Xbox Live 的一些功能。 使用新的 API 层为受支持的功能，包括自定义内存管理、 手动线程管理对于异步任务，以及新的 HTTP 库提供了很多优势。
 
 有关详细信息，请参阅[Xbox Live C Api](../xsapi-flat-c.md)。
 

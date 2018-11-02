@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b6a0856c23ebaf06eab7ef7fc1688e06cc445b4b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5868120"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5925300"
 ---
 # <a name="initialuploadrequest-json"></a>InitialUploadRequest (JSON)
-POST GameClip 体上传请求。 
+POST GameClip 的正文上传请求。 
 <a id="ID4EN"></a>
 
  
@@ -27,7 +27,7 @@ InitialUploadRequest 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| <b>greatestMomentId</b>| 字符串| 若要使用该剪辑的名称将文本字符串 ID。 这是托管，本地化作品配置文件中的游戏开发人员。| 
+| <b>greatestMomentId</b>| 字符串| 若要使用该剪辑的名称作为文本字符串 ID。 这是托管，并且可以本地化为标题配置文件中的游戏开发人员。| 
 | <b>userCaption</b>| 字符串| 可选。 最多 250 个字符的最大长度的游戏剪辑的备用用户输入名称。| 
 | <b>sessionRef</b>| 字符串| 可选。 在这期间完成录制的游戏会话引用。| 
 | <b>dateRecorded</b>| DateTime| 录制的启动时间，采用 UTC。 封送作为字符串采用 ISO 8601 格式 （有关详细信息，请参阅<a href="http://www.w3.org/TR/NOTE-datetime">日期和时间格式</a>）。| 
@@ -35,15 +35,15 @@ InitialUploadRequest 对象具有以下规范。
 | <b>expectedBlocks</b>| 32 位无符号的整数| 可选。 文件将划分到其中的块数量。 如果将在单个请求传输文件，省略。| 
 | <b>fileSize</b>| 32 位无符号的整数| 以字节为单位的视频将上传的文件大小。| 
 | <b>type</b>| [GameClipType 枚举](../enums/gvr-enum-gamecliptypes.md)| 剪辑，作为枚举的以逗号分隔的字符串值封送的类型。| 
-| <b>源</b>| [GameClipSource 枚举](../enums/gvr-enum-gameclipsource.md)| 指定如何来自该剪辑，作为枚举的字符串值封送。| 
+| <b>源</b>| [GameClipSource 枚举](../enums/gvr-enum-gameclipsource.md)| 指定如何来自该剪辑，封送为字符串值的枚举。| 
 | <b>可见性</b>| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 它在系统中发布后，请指定游戏剪辑的可见性。| 
-| <b>titleData</b>| 字符串| 可选。 与此代码片段关联的特定于游戏的属性的属性包。 存储中，并且作为返回的是。 游戏开发人员可以使用此字段保留有关剪辑自己元数据。| 
-| <b>titleData</b>| 字符串| 可选。 与此代码片段关联的特定于控制台的属性的属性包。 存储中，并且作为返回的是。 控制台平台可以使用此字段保留有关剪辑自己元数据。| 
+| <b>titleData</b>| 字符串| 可选。 与此代码片段关联的特定于游戏的属性的属性包。 存储和作为返回的是。 游戏开发人员可以使用此字段保留有关剪辑自己元数据。| 
+| <b>titleData</b>| 字符串| 可选。 与此代码片段关联的特定于控制台的属性的属性包。 存储和作为返回的是。 控制台平台可以使用此字段保留有关剪辑自己元数据。| 
 | <b>systemProperties</b>| 字符串| 可选。 与此代码片段关联的特定于控制台的属性的属性包。 存储并返回原样。 控制台平台可以使用此字段保留有关剪辑自己元数据。| 
-| <b>usersInSession</b>| 字符串的数组| 可选。 当前会话中的用户的列表。| 
+| <b>usersInSession</b>| 字符串的数组| 可选。 当前的会话中的用户的列表。| 
 | <b>thumbnailSource</b>| [ThumbnailSource 枚举](../enums/gvr-enum-thumbnailsource.md)| 可选。 缩略图的源。| 
 | <b>thumbnailOffsetMillseconds</b>| 32 位有符号整数| 指定偏移生成的缩略图的偏移量 （以毫秒为单位）。 仅指定当<b>thumbnailSource</b>设置为偏移量。| 
-| <b>savedByUser</b>| 布尔值| 可选。 设置保存到用户的配额，而不是 FIFO 存储该剪辑。 默认值为 false。| 
+| <b>savedByUser</b>| 布尔值| 可选。 设置要保存到用户的配额，而不是 FIFO 存储的剪辑。 默认值为 false。| 
   
 <a id="ID4ERH"></a>
 

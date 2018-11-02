@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f00618c3ecb51a0934b1b3f73a51553b49f153b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5862761"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944024"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 包含有关错误对服务调用失败时返回的信息。 
@@ -27,8 +27,8 @@ ServiceError 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| code| 32 位有符号整数 | 错误类型。 请参阅下表有关可能的值。 | 
-| 源| 字符串 | 引发错误的服务的名称。 例如，值为<code>ReputationFD</code>指示错误是在信誉服务。 | 
+| code| 32 位有符号整数 | 错误类型。 请参阅下表了解可能的值。 | 
+| 源| 字符串 | 引发错误服务的名称。 例如，值为<code>ReputationFD</code>指示错误是在信誉服务。 | 
 | description| 字符串| 错误的描述。 | 
  
 <a id="ID4EBC"></a>
