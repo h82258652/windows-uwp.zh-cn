@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 71247b8e04e63e5f792a872256dd79447c4d36cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6762d31ea7ebaeb966cd60f121591ba1534517a3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927960"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969067"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>向 Microsoft Store 发送请求
 
@@ -79,7 +79,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  指定 7 以返回设备的最高排名外部测试版组，或者指定 8 以返回当前用户和设备的最高排名外部测试版组。 我们建议为 *requestKind* 参数使用值 8，因为此值将在成员中返回当前用户和设备的最高排名外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 在 Windows 开发人员中心仪表板中为你已在其中定义了远程变量的项目 ID 分配 *projectId* 字段。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将*projectId*字段分配给已定义的合作伙伴中心中的远程变量的项目 ID。
 
 ```json
 { 

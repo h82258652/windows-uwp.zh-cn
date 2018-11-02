@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f113f47a905e8b542dde4c982a162341fc0196
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ad6381562b37b1a759a575e070edd6b1bf63402d
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920689"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991232"
 ---
 # <a name="get-an-add-on-submission"></a>获取加载项提交
 
@@ -25,7 +25,7 @@ ms.locfileid: "5920689"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 使用你的开发人员中心帐户为应用创建加载项提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建加载项提交](create-an-add-on-submission.md)方法。
+* 创建一个应用的加载项提交。 你可以执行此操作在合作伙伴中心，或者可以执行此操作通过使用[创建加载项提交](create-an-add-on-submission.md)的方法。
 
 ## <a name="request"></a>请求
 
@@ -47,8 +47,8 @@ ms.locfileid: "5920689"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 加载项（包含要获取的提交）的应用商店 ID。 可通过开发人员中心仪表板获取应用商店 ID，它包含在[创建加载项](create-an-add-on.md)或[获取加载项详细信息](get-all-add-ons.md)请求的响应数据中。  |
-| submissionId | 字符串 | 必需。 要获取的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的提交，此 ID 也包含在仪表板中的提交页面的 URL 中。  |
+| inAppProductId | 字符串 | 必需。 加载项（包含要获取的提交）的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID，它包含在[创建加载项](create-an-add-on.md)或[获取加载项的详细信息](get-all-add-ons.md)的请求的响应数据中。  |
+| submissionId | 字符串 | 必需。 要获取的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -140,7 +140,7 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到提交。 |
-| 409  | 提交不属于指定的加载项，或者加载项使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
+| 409  | 提交不属于指定的加载项，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

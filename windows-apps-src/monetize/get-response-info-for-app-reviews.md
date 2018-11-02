@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 回复信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 71497a858060109eaac0f593ce03f2ba3cbf03cc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919534"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968641"
 ---
 # <a name="get-response-info-for-reviews"></a>获取评价的回复信息
 
@@ -49,7 +49,7 @@ ms.locfileid: "5919534"
 
 | 参数        | 类型   | 说明                                     |  必需  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | 字符串 | 其中的应用包含要确定是否可以回复的评价的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 其中的应用包含要确定是否可以回复的评价的应用商店 ID。 应用商店 ID 在合作伙伴中心中的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | reviewId | 字符串 | 要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。 <br/>如果忽略此参数，此方法的回复正文将指示你是否有回复指定应用的任何评价的权限。 |  否  |
 
 
@@ -87,6 +87,6 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相关主题
 
 * [使用 Microsoft Store 分析 API 提交对评价的回复](submit-responses-to-app-reviews.md)
-* [使用开发人员中心仪表板回复客户评价](../publish/respond-to-customer-reviews.md)
+* [回复客户评论使用合作伙伴中心](../publish/respond-to-customer-reviews.md)
 * [使用 Microsoft Store 服务回复评价](respond-to-reviews-using-windows-store-services.md)
 * [获取应用评价](get-app-reviews.md)

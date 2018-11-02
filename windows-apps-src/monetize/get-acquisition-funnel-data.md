@@ -7,16 +7,16 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 购置, 漏斗
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c07425542c207c2289c6b512102e10f64bab66
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8aaceb9af3eed04039148bdd863ca3e473c7c245
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924294"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970204"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>获取应用购置漏斗数据
 
-使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置漏斗数据。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md#acquisition-funnel)中获取此信息。
+使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置漏斗数据。 此信息也是在合作伙伴中心中的[购置报告](../publish/acquisitions-report.md#acquisition-funnel)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

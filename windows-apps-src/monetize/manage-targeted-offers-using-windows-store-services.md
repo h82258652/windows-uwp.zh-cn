@@ -8,16 +8,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 定向优惠
 ms.localizationpriority: medium
-ms.openlocfilehash: 706f48e64fb8e7534686b8fd7e9666b98dffd9b7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: dbfefefdb7f7b96dbe99b35656b610b393ab3afa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5942019"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969153"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用应用商店服务管理定向优惠
 
-如果你在 Windows 开发人员中心仪表板的**参与 > 定向优惠**页面中为应用创建了*定向优惠*，请在应用代码中使用 *Microsoft Store 定向优惠 API* 检索信息，以便为此定向优惠实现应用内体验。 有关定向优惠和如何在仪表板中创建定向优惠的更多信息，请参阅[使用定向优惠最大化参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
+如果你创建在*定向的优惠***参与 > 定向优惠**为你的应用在合作伙伴中心，使用*Microsoft Store 定向优惠 API*在你的应用的代码来检索信息，可帮助你实现应用内体验页面定向的优惠。 有关定向优惠和如何在仪表板中创建定向优惠的更多信息，请参阅[使用定向优惠最大化参与度和转换率](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
 
 定向优惠 API 是一个简单的 REST API，可用来获取为当前用户提供的定向优惠，具体取决于用户是否属于该定向优惠所针对的客户细分的一部分。 若要在你的应用中使用此 API，请执行以下步骤：
 

@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929611"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969173"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
 
@@ -164,7 +164,7 @@ People 选取器创建 Uri 使用 **ms-people** 协议的 ContentLinkInfo。
 - 如果 LinkContentKind 不是 "People"，则将打开**人脉**应用。 例如，如果你在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
 
 > [!TIP]
-> 有关从你的应用打开其他应用和网站的更多信息，请参阅[使用 URI 启动应用] (/windows/uwp/launch-resume/launch-app-with-uri) 下的主题。
+> 有关从你的应用打开其他应用和网站的详细信息，请参阅下[使用 Uri 启动应用](/windows/uwp/launch-resume/launch-app-with-uri)的主题。
 
 #### <a name="invoked"></a>Invoked
 

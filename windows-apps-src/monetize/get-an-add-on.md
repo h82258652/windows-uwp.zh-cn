@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的应用的加载项相关信息。
+description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的应用的加载项相关的信息。
 title: 获取加载项
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36638c3e3890d5e2bca149d1006469bb97057f05
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9620b0b7cf4d1ecb583215b2ab0fafe0e82712bf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924963"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991679"
 ---
 # <a name="get-an-add-on"></a>获取加载项
 
-在 Microsoft Store 提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的应用的加载项（也称为应用内产品或 IAP）相关信息。
+在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的应用的加载项 （也称为应用内产品或 IAP） 相关的信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -46,7 +46,7 @@ ms.locfileid: "5924963"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | 字符串 | 必需。 要检索的加载项的应用商店 ID。 开发人员中心仪表板上会提供该应用商店 ID。  |
+| id | 字符串 | 必需。 要检索的加载项的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -99,7 +99,7 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到指定的加载项。 |
-| 409  | 加载项使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
+| 409  | 加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。  |
 
 
 ## <a name="related-topics"></a>相关主题

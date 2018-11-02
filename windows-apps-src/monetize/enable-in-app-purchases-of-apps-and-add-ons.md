@@ -8,12 +8,12 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c5a5536ef1853a726421bdc75269f0cb5c1a84b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: beb7165586c62770fd6b18fff8c7ad0095bc78ba
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5947185"
+ms.locfileid: "5981137"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>支持应用内购买应用和加载项
 
@@ -32,8 +32,8 @@ ms.locfileid: "5947185"
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到 Microsoft Store 中。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
-* 如果你想要对应用的某个加载项启用应用内购买，还必须[在开发人员中心仪表板中创建加载项](../publish/add-on-submissions.md)。
+* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)并将此应用在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 如果你想要启用应用内购买的加载项的应用，则必须[创建合作伙伴中心中的加载项](../publish/add-on-submissions.md)。
 
 此示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。

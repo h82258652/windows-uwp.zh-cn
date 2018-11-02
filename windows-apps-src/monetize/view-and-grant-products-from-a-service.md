@@ -8,12 +8,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 收集 API, Microsoft Store 购买 API, 查看产品, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e1437e8b55474d3fcc0c34919e23d14a86ea89
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940924"
+ms.locfileid: "5991613"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服务中的产品权益
 
@@ -32,7 +32,7 @@ ms.locfileid: "5940924"
 以下步骤介绍了使用 Microsoft Store 收集 API 和购买 API 的端到端过程：
 
 1.  [配置 Azure ad 应用程序](#step-1)。
-2.  [将 Azure AD 应用程序 ID 与你在 Windows 开发人员中心仪表板中的应用相关联](#step-2)。
+2.  [将 Azure AD 应用程序 ID 与你在合作伙伴中心中的应用相关联](#step-2)。
 3.  在你的服务中，[创建 Azure AD 访问令牌](#step-3)，这些令牌表示你的发布者标识。
 4.  在客户端 Windows 应用中，[创建 Microsoft Store ID 密钥](#step-4)表示当前用户，并传递此密钥的标识返回到你的服务。
 5.  在你具有所需的 Azure AD 访问令牌和 Microsoft Store ID 密钥后，[从你的服务调用 Microsoft Store 收集 API 或购买 API](#step-5)。
@@ -72,14 +72,14 @@ ms.locfileid: "5940924"
 
 <span id="step-2"/>
 
-## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-windows-dev-center"></a>步骤 2： 将你的 Azure AD 应用程序 ID 与你在 Windows 开发人员中心中的客户端应用相关联
+## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>步骤 2： 将你的 Azure AD 应用程序 ID 与你在合作伙伴中心中的客户端应用相关联
 
-你可以使用 Microsoft Store 收集 API 或购买 API 以配置的所有权和购买你的应用或加载项之前，必须在开发人员中心仪表板来将 Azure AD 应用程序 ID 与此应用 （或者包含加载项的应用） 相关联。
+你可以使用 Microsoft Store 收集 API 或购买 API 以配置的所有权和购买你的应用或加载项之前，必须在合作伙伴中心中将 Azure AD 应用程序 ID 关联与此应用 （或者包含加载项的应用）。
 
 > [!NOTE]
 > 你只需执行一次此任务。
 
-1.  登录[开发人员中心仪表板](https://dev.windows.com/overview)并选择你的应用。
+1.  登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)，然后选择你的应用。
 2.  转到**服务** &gt; **产品收集和购买**页面上，为一个可用的**客户端 ID**字段中输入你的 Azure AD 应用程序 ID。
 
 <span id="step-3"/>
