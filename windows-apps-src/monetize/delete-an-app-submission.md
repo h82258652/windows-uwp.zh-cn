@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 删除
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f23bebd196cb28088bf68e673a17a4c0aebf5a3
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: da2533eb8b6e45e4426a1d25931638466547e01b
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922441"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972003"
 ---
 # <a name="delete-an-app-submission"></a>删除应用提交
 
@@ -47,7 +47,7 @@ ms.locfileid: "5922441"
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要删除的提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的提交，此 ID 也包含在仪表板中的提交页面的 URL 中。  |
+| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但在其当前状态下无法删除；或者应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
+| 409  | 指定的提交已找到，但它无法删除在其当前状态，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题

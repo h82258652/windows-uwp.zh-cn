@@ -8,16 +8,16 @@ ms.date: 09/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 81dabcf92136174b08c6a20fd9a98122fcd2c813
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: fd463bf98fb751efa011ba5fc3e1e7b9eb7b41eb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939252"
+ms.locfileid: "5971950"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>获取应用的错误报告数据
 
-在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 此方法仅可以检索过去 30 天内发生的错误。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取此信息。
+在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 此方法仅可以检索过去 30 天内发生的错误。 此信息也是可在合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分。
 
 你可以使用[获取错误详细信息](get-details-for-an-error-in-your-app.md)、[获取堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)和[下载 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)获取其他错误信息。
 
@@ -50,7 +50,7 @@ ms.locfileid: "5939252"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要检索错误报告数据的应用的 Store ID。 Store ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 要检索错误报告数据的应用的 Store ID。 应用商店 ID 在合作伙伴中心中的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | startDate | date | 要检索的错误报告数据日期范围中的开始日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。<p/><p/>**注意：**&nbsp;&nbsp;此方法仅可以检索过去 30 天内发生的错误。  |  否  |
 | endDate | date | 要检索的错误报告数据日期范围中的结束日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |

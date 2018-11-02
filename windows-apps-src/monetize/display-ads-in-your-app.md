@@ -8,12 +8,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
-ms.openlocfilehash: 738c643f3c83a4f88f5c52c7337c467366ac8fe5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7acf2424a7d2fee322ba799ec670f0576b33a208
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938089"
+ms.locfileid: "5970666"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
@@ -92,7 +92,7 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>步骤 3：创建广告单元和配置中介
 
-完成你的应用的测试并且准备好将其提交到 Microsoft Store 后，在 Windows 开发人员中心仪表板的[应用内广告](../publish/in-app-ads.md)页面上创建一个广告单元。 然后，更新应用代码以使用此广告单元，从而使你的应用能够接收实时广告。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+你完成应用测试并准备好将其提交到应用商店后，请在合作伙伴中心中的[应用内广告](../publish/in-app-ads.md)页面上创建一个广告单元。 然后，更新应用代码以使用此广告单元，从而使你的应用能够接收实时广告。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 默认情况下，你的应用将显示来自 Microsoft 付费广告网络的广告。 若要最大化广告收益，可以为广告单元启用[广告中介](ad-mediation-service.md)，以显示来自其他付费广告网络（如 Taboola 和 Smaato）的广告。 你还可以通过在 Microsoft 应用促销活动中提供广告服务，来提高你的应用推广能力。
 
@@ -100,9 +100,9 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>步骤 4：提交你的应用并查看性能
 
-在完成带广告的应用开发后，你可以[将更新的应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)到开发人员中心仪表板，以便在应用商店中上架应用。 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
+包含广告的应用开发完成后，你可以在合作伙伴中心，以使其在应用商店中可用的[提交已更新的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
 
-在你的应用发布并通过应用商店中提供之后，可在仪表板中查看你的[广告业绩报告](../publish/advertising-performance-report.md)，并继续更改中介设置以优化广告效果。 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
+你的应用是在应用商店中发布和可用后，你可以查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)，并继续更改中介设置以优化广告的性能。 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
 
 <span id="additional-help" />
 

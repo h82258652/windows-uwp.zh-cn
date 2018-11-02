@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bbf42acb90d81892fec2788c83c3595f5b6b2f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d3c8aad90e028ece42128e86f5e255be7fd29177
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932943"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972278"
 ---
 # <a name="command-bar"></a>命令栏
 
@@ -35,7 +35,7 @@ ms.locfileid: "5932943"
 CommandBar 控件是一款通用、灵活、轻型的控件，可显示复杂内容（如图像或文本块）以及简单的命令（如 [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx) 和 [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx) 控件）。
 
 > [!NOTE]
-XAML 提供 [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) 控件和 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 控件。 应仅在升级使用 AppBar 的通用 Windows 8 应用时使用 AppBar，并且需要最大程序减少更改。 对于 Windows 10 中的新应用，我们建议改用 CommandBar 控件。 此文档假定你将要使用 CommandBar 控件。
+> XAML 提供 [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) 控件和 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 控件。 应仅在升级使用 AppBar 的通用 Windows 8 应用时使用 AppBar，并且需要最大程序减少更改。 对于 Windows 10 中的新应用，我们建议改用 CommandBar 控件。 此文档假定你将要使用 CommandBar 控件。
 
 ## <a name="examples"></a>示例
 

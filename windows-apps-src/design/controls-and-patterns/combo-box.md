@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f641ec3333ed0eda1fdfa5ff82ef236b5ec186ba
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927101"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971890"
 ---
 # <a name="combo-box"></a>组合框
 
@@ -169,15 +169,15 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selected-item-behavior-change"></a>选定的项行为更改
 
-在 RS5 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 选定项的行为将更新以支持可编辑的组合框。
+在 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，更新选定项的行为以支持可编辑的组合框。
 
-之前 RS5，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 所需位于组合框的项目集合。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
+之前 SDK 17763，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 所需位于组合框的项目集合。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex =-1
 
-在 RS5 及更高版本，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 不需要是组合框的项目集合中。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
+在 SDK 17763 及更高版本，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 不需要是组合框的项目集合中。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
 
 - SelectedItem = 粉红色
 - SelectedValue = 粉红色
@@ -192,7 +192,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 ## <a name="make-a-combo-box-editable"></a>使组合框可编辑
 
 > [!IMPORTANT]
-> 此功能需要的[最新的 Windows 10 Insider Preview 版本和 SDK](https://insider.windows.com/for-developers/)。
+> 此功能需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
 
 默认情况下，一个组合框让用户从预定义的选项列表中进行选择。 但是，有列表仅包含一个子集的有效的值，并且用户应该能够输入未列出的其他值的情况。 若要支持此功能，你可以进行组合框可编辑。
 

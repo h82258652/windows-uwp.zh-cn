@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: a29c4aeb5a5928e04e0018d68884fdb4a4876332
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919599"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971625"
 ---
 # <a name="export-restrictions-on-cryptography"></a>有关加密的出口限制
 
@@ -35,7 +35,7 @@ ms.locfileid: "5919599"
 
 首先，确定应用是否使用了出口管理条例监管的加密类型。 该问题包括显示在以下列表中的示例；但是切记，此列表不包括每种可能的加密应用。
 
-> **重要提示**不仅要考虑代码为你的应用，但还所有软件库、 实用工具和你的应用包括或链接到的操作系统组件。
+> **重要**不仅要考虑代码为你的应用，但还所有软件库、 实用工具和你的应用包括或链接到的操作系统组件。
 
 -   对数字签名的任何使用，例如身份验证或完整性检查
 -   对你的应用使用或访问的任何数据或文件的加密
