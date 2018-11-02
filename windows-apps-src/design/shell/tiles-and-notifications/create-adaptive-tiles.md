@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0af7dc153f75826444a517d4958bfeba53b103d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870373"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938332"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
@@ -210,7 +210,7 @@ TileContent content = new TileContent()
 
 你可以控制动态磁贴底部的品牌（显示名称和角徽标），方法是使用通知负载上的品牌属性。 你可以选择显示“无”、仅“名称”、仅“徽标”，或使用“nameAndLogo”显示两者。
 
-**注意**Windows Mobile 不支持在 Mobile 上角徽标，因此"徽标"和"nameAndLogo"默认值为"名称"。
+**注意**Windows Mobile 不支持在 Mobile 上角徽标，因此"徽标"和"nameAndLogo"默认为"名称"。
 
  
 
@@ -487,7 +487,7 @@ new AdaptiveText()
 
 若要在各个设备和屏幕上提供最佳体验，请提供多个组。 如果有多个组，你的磁贴将可以适应更大的屏幕。
 
-**注意**一组的唯一有效子级是子组。
+**注意**组的唯一有效子级是子组。
 
  
 
@@ -681,7 +681,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 
 ![子组，总权重为 100](images/adaptive-tiles-subgroups03.png)
 
-**注意**两列之间自动添加 8 个像素的边距。
+**注意**列之间将自动添加 8 个像素的边距。
 
  
 

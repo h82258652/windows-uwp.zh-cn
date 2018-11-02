@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881850"
+ms.locfileid: "5934988"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
@@ -98,7 +98,7 @@ ms.locfileid: "5881850"
 
 使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件实现基本输入功能，而无需为每个指针输入设备编写代码。 但是，你仍可以使用此对象的指针、手势和操作事件来利用每台设备的特殊功能（例如鼠标滚轮事件）。
 
-**示例：** 请参阅我们[的应用示例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中实际此功能。
+**示例：** 请参阅我们的[应用示例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中实际此功能。
 
 
 - [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)

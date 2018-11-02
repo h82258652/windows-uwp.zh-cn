@@ -11,11 +11,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b9148b2d57c55bdff09be9a9d6bb8a6b65d93f12
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5883340"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935021"
 ---
 # <a name="speech-recognition"></a>语音识别
 
@@ -28,17 +28,17 @@ ms.locfileid: "5883340"
 
 ## <a name="configure-speech-recognition"></a>配置语音识别
 
-若要支持与你的应用的语音识别，用户必须连接并使其在设备上，麦克风和接受 Microsoft 隐私策略授予对你的应用权限才能使用它。
+若要支持与你的应用的语音识别，用户必须连接并使其在设备上，麦克风和接受 Microsoft 隐私策略授予权限，为你的应用使用它。
 
-若要自动与系统对话框，请求访问和使用麦克风权限提示用户的音频源 （示例中的[语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)如下所示），只需设置**麦克风**[设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[应用包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+自动与系统对话框，请求访问和使用麦克风权限提示用户的音频源 （示例中的[语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)如下所示），只需设置**麦克风**[设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[应用包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
-![麦克风的访问权限的隐私策略](images/speech/privacy.png)
+![用于访问麦克风的隐私策略](images/speech/privacy.png)
 
-如果用户单击是访问权限授予给麦克风，你的应用添加到批准的应用程序的设置列表-> 隐私-> 麦克风页面。 但是，因为用户可以选择在任何时候关闭此设置，你应确认你的应用尝试使用它之前有权访问麦克风。
+如果用户单击是访问权限授予给麦克风，你的应用添加到列表中批准的应用程序的设置-> 隐私-> 麦克风页面。 但是，因为用户可以选择在任何时候关闭此设置，你应确认你的应用尝试使用它之前有权访问麦克风。
 
-如果你还想要支持 Cortana、 听写或其他语音识别服务 （如[预定义的语法](#predefined-grammars)的主题约束中定义），你还必须确认**联机语音识别**(设置-> 隐私-> 语音) 是已启用。
+如果你还想要支持 Cortana、 听写或其他语音识别服务 （如[预定义的语法](#predefined-grammars)的主题约束中定义），你还必须确认**联机语音识别**(设置-> 隐私-> 语音) 是启用。
 
-此代码段显示了你的应用如何检查是否存在麦克风和它有权使用它。
+此代码段显示了如何，你的应用可以检查是否存在麦克风，并且它有权使用它。
 
 ```csharp
 public class AudioCapturePermissions
@@ -212,7 +212,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 *约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
 
-识别语音输入，可以使用以下类型的约束。
+识别语音输入，你可以使用以下类型的约束。
 
 ### <a name="predefined-grammars"></a>预定义的语法
 

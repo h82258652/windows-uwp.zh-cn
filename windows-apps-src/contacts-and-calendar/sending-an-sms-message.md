@@ -9,17 +9,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d84646685c6944ab0e816b42cf6fb2125f8a57
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5879690"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936316"
 ---
 # <a name="send-an-sms-message"></a>发送短信
 
 本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。
 
-若要调用此代码，声明在程序包清单中的**聊天**、 **smsSend**，以及**chatSystem**功能。 这是[受限的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)，但你可以在应用中使用它们。 仅当你打算将应用发布到应用商店，你需要批准。 请参阅[帐户类型、 位置和费用](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)。
+若要调用此代码，声明在程序包清单中的**聊天**、 **smsSend**和**chatSystem**功能。 这是[受限的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)，但你可以在应用中使用它们。 仅当你打算将应用发布到应用商店，你需要批准。 请参阅[帐户类型、 位置和费用](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)。
 
 ## <a name="launch-the-compose-sms-dialog"></a>启动撰写短信对话框
 

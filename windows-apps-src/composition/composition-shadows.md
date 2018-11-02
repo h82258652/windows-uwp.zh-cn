@@ -8,19 +8,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c2f42235e6a74747059723841d3082037b558c7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864901"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938578"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的阴影
 
-[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)类提供了方法创建一个可以应用于[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)或[LayerVisual](/uwp/api/windows.ui.composition.layervisual) （视觉效果的子树） 的可配置阴影。 原样惯用的可视化层中的对象，可以使用 Compositionanimation 动画 DropShadow 的所有属性。
+[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)类提供了方法创建一个可应用于[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)或[LayerVisual](/uwp/api/windows.ui.composition.layervisual) （视觉效果的子树） 的可配置阴影。 原样惯用的可视化层中的对象，可以使用 Compositionanimation 动画 DropShadow 的所有属性。
 
 ## <a name="basic-drop-shadow"></a>基本投影
 
-若要创建基本卷影，只需创建新 DropShadow，并将其关联到你的视觉对象。 阴影默认为矩形。 一组标准的属性都可调整在阴影的外观。
+若要创建基本卷影，只需创建新 DropShadow，并将它与你的 visual 相关联。 阴影默认为矩形。 一组标准的属性都可调整你的卷影外观和感觉。
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -37,17 +37,17 @@ basicRectVisual.Shadow = basicShadow;
 
 ![矩形可视基本 DropShadow](images/rectangular-dropshadow.png)
 
-## <a name="shaping-the-shadow"></a>影响阴影
+## <a name="shaping-the-shadow"></a>塑造阴影
 
 有几种方法，为你 DropShadow 定义形状：
 
-- 默认情况下，DropShadow 形状的**使用默认值**被定义 CompositionDropShadowSourcePolicy 上的默认模式。 SpriteVisual，默认值为矩形，除非提供掩码。 LayerVisual，默认值为继承使用视觉对象的画笔的 alpha 蒙板。
+- **使用默认设置**-默认情况下，DropShadow 形状 CompositionDropShadowSourcePolicy 上的默认模式由定义。 SpriteVisual，默认值为矩形，除非蒙板提供。 LayerVisual，默认值为继承使用视觉对象的画笔的 alpha 蒙板。
 - **设置掩码**– 你可能会设置[掩码](/uwp/api/windows.ui.composition.dropshadow.mask)属性定义的阴影不透明蒙板。
-- **指定用于继承掩码**– 设置[SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)属性使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)。 若要使用生成的视觉对象的画笔的 alpha 蒙板 InheritFromVisualContent。
+- **指定用于继承掩码**– 设置要使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy) [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)属性。 若要使用生成的视觉对象的画笔的 alpha 蒙板 InheritFromVisualContent。
 
-## <a name="masking-to-match-your-content"></a>掩码来匹配你的内容
+## <a name="masking-to-match-your-content"></a>掩码，以匹配你的内容
 
-如果你希望在阴影以匹配视觉对象的内容可以用于视觉对象的画笔在阴影掩码属性，或设置阴影掩码自动继承该内容。 如果使用 LayerVisual，阴影将默认继承掩码。
+如果你希望你的卷影以匹配视觉对象的内容可以使用视觉对象的画笔阴影掩码属性，或设置阴影掩码自动继承该内容。 如果使用 LayerVisual，阴影将继承掩码，默认情况下。
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -67,7 +67,7 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![具有屏蔽的投影的连接的 web 图像](images/ms-brand-web-dropshadow.png)
+![带屏蔽的投影的连接的 web 图像](images/ms-brand-web-dropshadow.png)
 
 ## <a name="using-an-alternative-mask"></a>使用备用掩码
 
@@ -99,7 +99,7 @@ imageSpriteVisual.Shadow = shadow;
 
 ## <a name="animating"></a>动态显示
 
-由于是标准可视化层中，DropShadow 属性可进行动画处理使用合成动画。 在下面，我们修改上述进行动画处理的阴影的模糊半径喷洒示例中的代码。
+由于是标准可视化层中，可以使用合成动画动画 DropShadow 属性。 在下面，我们修改上述进行动画处理的阴影的模糊半径喷洒示例中的代码。
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -121,7 +121,7 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 ## <a name="performance"></a>性能
 
-尽管可视化层中的位置来使效果高效且可用有许多优化，生成阴影可以耗费资源的操作具体取决于你设置的选项。 下面是高级别成本不同类型的阴影。 请注意，但是某些阴影可能不太昂贵它们可能仍需要在某些情况下尽量少使用。
+尽管可视化层中的位置来使效果高效且可用有许多优化，生成阴影可以根据你设置哪些选项耗费资源的操作。 下面是高级别成本不同类型的阴影。 请注意，但是某些阴影可能不太昂贵它们可能仍需要在某些情况下尽量少使用。
 
 阴影特性| 成本
 ------------- | -------------
@@ -129,7 +129,7 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 Shadow.Mask      | 高 
 CompositionDropShadowSourcePolicy.InheritFromVisualContent | 高 
 静态模糊半径 | 低
-模糊半径进行动画处理 | 高 
+创建动画模糊半径 | 高 
 
 ## <a name="additional-resources"></a>其他资源
 

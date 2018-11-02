@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876999"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944475"
 ---
 # <a name="property-path-syntax"></a>Property-path 语法
 
@@ -56,7 +56,7 @@ ms.locfileid: "5876999"
 
 例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 指向二队的一个特定队员的示例属性路径为：“Teams[1].Players[Smith]”。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
 
-**注意**的 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**对于 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="attached-properties"></a>附加属性
 

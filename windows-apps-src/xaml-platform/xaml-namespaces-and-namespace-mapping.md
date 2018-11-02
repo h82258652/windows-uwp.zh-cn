@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5868893"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943848"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
@@ -63,7 +63,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 -   **d:DesignHeight 和 d:DesignWidth 属性：** 这些属性有时应用于 Visual Studio 或其他 XAML 设计器图面为你创建的 XAML 文件的根。 例如，如果你向应用项目中添加了新的 **UserControl**，则这些属性是针对所创建的 XAML 的 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 根设置的。 这些属性更便于设计 XAML 内容组合，以便在将该 XAML 内容用于控件示例或更大 UI 页面的其他部分之后，你能够预测可能存在的布局约束。
 
-   **注意**如果你要从 Microsoft Silverlight 迁移 XAML 在代表整个 UI 页面的根元素上可能存在这些属性。 在这种情况下，你可能希望删除这些特性。 与使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小页面布局相比，XAML 设计器的其他功能（如模拟器）对于设计能够很好地处理缩放和视图状态的页面布局或许更有用。
+   **注意**如果你要从 Microsoft Silverlight 迁移 XAML 您可能存在下列特性，代表整个 UI 页面的根元素上。 在这种情况下，你可能希望删除这些特性。 与使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小页面布局相比，XAML 设计器的其他功能（如模拟器）对于设计能够很好地处理缩放和视图状态的页面布局或许更有用。
 
 -   **d:DataContext 特性：** 可以针对页面根或控件设置此特性，以便替代该对象所拥有的任何显式或继承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
 -   **d:DesignSource 特性：** 为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 指定设计时数据源，并替代 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。

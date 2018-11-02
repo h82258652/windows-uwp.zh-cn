@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b73464ea10aa835b82df17605e983ebdfb9cd890
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878637"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939589"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展
 
@@ -36,7 +36,7 @@ ms.locfileid: "5878637"
 -   可主动获取非永久性许可证。
 -   在一条消息中可获取多个许可证。
 
-    可以使用如 Windows8.1 中, 所示的多个密钥标识符 (Keyid) 使用 PlayReady 对象，也可以与多个 Keyid 使用[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 。
+    你可以如 Windows8.1 中, 所示的多个密钥标识符 (Keyid) 使用 PlayReady 对象，或使用多个 Keyid[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) 。
 
     > [!NOTE]
     > 在 windows 10，多个密钥标识符下支持&lt;KeyID&gt;在 CDMData 中。

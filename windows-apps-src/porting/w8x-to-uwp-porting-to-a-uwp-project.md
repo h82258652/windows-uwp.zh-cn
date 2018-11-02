@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e0ff78f2872e572c370411a1aad38ccbd7fb6a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5880493"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939362"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>将 Windows 运行时 8.x 项目移植到 UWP 项目
 
@@ -23,9 +23,9 @@ ms.locfileid: "5880493"
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>创建项目并向其复制文件
 
-这些步骤侧重于 Visual Studio 中创建一个新的 windows 10 项目，并将你的文件复制到其中的选项。 某些围绕着所创建的项目数和要复制的文件展开的特定步骤，将依赖于[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md)及其后的部分中所述的规格和决策。 这些步骤中假设了最简单的应用场景。
+这些步骤侧重于 Visual Studio 中创建新的 windows 10 项目，并将你的文件复制到其中的选项。 某些围绕着所创建的项目数和要复制的文件展开的特定步骤，将依赖于[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md)及其后的部分中所述的规格和决策。 这些步骤中假设了最简单的应用场景。
 
-1.  启动 Microsoft Visual Studio2015 并创建一个新的空白应用程序 （Windows 通用） 项目。 有关详细信息，请参阅[快速启动你的 Windows 运行时 8.x 应用使用模板 (C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新建项目会构建一个可在所有设备系统上运行的应用包（appx 文件）。
+1.  启动 Microsoft Visual Studio2015 并创建一个新的空白应用程序 （Windows 通用） 项目。 有关详细信息，请参阅[快速启动你的 Windows 运行时 8.x 应用使用模板 （C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新建项目会构建一个可在所有设备系统上运行的应用包（appx 文件）。
 2.  在 Universal 8.1 App 项目中，标识要重用的所有源代码文件和视觉资产文件。 通过使用文件资源管理器，将数据模型、视图模型、视觉资产、资源词典，文件夹结构和想要重用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
 3.  还可以将视图（例如，MainPage.xaml 和 MainPage.xaml.cs）复制到新项目中。 同样，也可根据需要创建新的子文件夹，并从项目中删除现有视图。 但在覆盖或删除 Visual Studio 生成的视图之前，请保留一份副本，因为在以后引用它时，这可能会很有用。 移植通用 8.1 应用的第一个阶段侧重于使其在某一设备系列上正常显示并良好运行。 之后，将侧重点转到确保视图能自行适应所有外观规格，也可以选择添加任何自适应代码以最大程度地利用特定的设备系列。
 4.  在**解决方案资源管理器**中，请确保将**显示所有文件**切换为打开。 选择要复制的文件，右键单击这些文件，然后单击**包括在项目中**。 这将自动包括其所包含的文件夹。 然后，可根据需要将 **“显示所有文件”** 切换为关闭。 备用工作流（如果选择）旨在使用 **“添加现有项”** 命令，以便在 Visual Studio **“解决方案资源管理器”** 中创建任何必要子文件夹。 仔细检查可见资源是否已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不复制**。
@@ -73,7 +73,7 @@ ms.locfileid: "5880493"
 
 如果你使用条件编译 （借助 C# 预处理器指令），以便你的代码文件适用于 Windows 8.1 和 Windows Phone 8.1，则你现在可以查看该条件编译，而在 windows 10 中完成的融合工作。 融合意味着，在 windows 10 应用中，某些条件可以已彻底删除。 而其他条件将更改为运行时检查，如下面的示例所示。
 
-**注意**如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，在单个代码文件中，则可以做到这一点。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例显示了从通用 8.1 应用删除条件编译并用等效代码针对 windows 10 应用的更简单情况。
+**注意**如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，在单个代码文件中，则可以做到这一点。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例显示了从通用 8.1 应用删除条件编译并用等效代码针对 windows 10 应用的更简单的用例。
 
 第一个示例将演示 **PickSingleFileAsync** API（仅适用于 Windows 8.1）和 **PickSingleFileAndContinue** API（仅适用于 Windows Phone 8.1）的使用模式。
 
@@ -85,7 +85,7 @@ ms.locfileid: "5880493"
 #endif // WINDOWS_APP
 ```
 
-Windows 10 上[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API，融合，因此对这简化了你的代码：
+Windows 10 上[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API，融合，因此这简化你的代码：
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
@@ -175,7 +175,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 ## <a name="related-topics"></a>相关主题
 
 * [开发通用 Windows 平台应用](http://msdn.microsoft.com/library/dn975273.aspx)
-* [快速启动 Windows 运行时 8.x 应用使用模板 (C#，c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [快速启动你的 Windows 运行时 8.x 应用使用模板 (C#，c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)
 

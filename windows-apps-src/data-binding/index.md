@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 37193d28bbb060bc7e315a15dd83fc0084a6b861
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5880978"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938352"
 ---
 # <a name="data-binding"></a>数据绑定
 
@@ -25,4 +25,4 @@ ms.locfileid: "5880978"
 | [深入了解数据绑定](data-binding-in-depth.md) | 本主题详细介绍数据绑定功能。 |
 | [设计面图上以及用于原型制作的示例数据](displaying-data-in-the-designer.md) | 为了使你的控件填充 Visual Studio 设计器中的数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你要生成一个草图（或原型）应用，示例数据也可能非常有用并且省时。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。 |
 | [绑定分层数据和创建大纲/细节视图](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | 你可以通过将项目控件绑定到 [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 |
-| [数据绑定和 MVVM](data-binding-and-mvvm.md) | 本主题介绍模型-视图-模型 (MVVM) UI 体系结构设计模式。 数据绑定是 MVVM，核心和启用 UI 和非 UI 代码之间的松散耦合。 |
+| [数据绑定和 MVVM](data-binding-and-mvvm.md) | 本主题介绍的模型-视图-模型 (MVVM) UI 体系结构的设计模式。 数据绑定是 MVVM，核心和启用 UI 和非 UI 代码之间的松散耦合。 |

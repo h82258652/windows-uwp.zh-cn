@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5880597"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940356"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
@@ -41,7 +41,7 @@ ms.locfileid: "5880597"
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但你还可以选择**3 个月**、 **6 个月**，**每年**，还是**24 个月**。
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但你也可以选择**3 个月**、 **6 个月**，**每年**，还是**24 个月**。
 
 > [!IMPORTANT]
 > 加载项发布之后，将无法更改**订阅期限**选择。
@@ -99,7 +99,7 @@ ms.locfileid: "5880597"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
 
 > [!NOTE]
-> **自定义开发人员数据**字段不可用于面向 Windows8 和 Windows8.1 的程序包。
+> **自定义开发人员数据**字段不可用于使用面向 Windows8 和 Windows8.1 的程序包。
 
  
 

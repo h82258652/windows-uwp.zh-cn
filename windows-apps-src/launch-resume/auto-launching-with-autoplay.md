@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5868352"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937100"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
@@ -220,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果你的相机内存卡将图片存储在 AVCHD 或 PRIVATE\ACHD 文件夹中，则将需要相应地更新代码。
-    **注意**如果你没有相机内存卡，如果它具有一个名为根目录中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹，其中包含图像，你可以使用闪存驱动器。
+    **注意**如果你没有相机内存卡，你可以使用闪存驱动器，如果它具有一个名为根中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹，其中包含图像。
 
 ## <a name="register-for-an-autoplay-device"></a>注册自动播放设备
 
@@ -229,7 +229,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 下面显示了如何将应用标识为在将相机连接到电脑时的**自动播放**选项。 此应用会注册为 **WPD\\ImageSourceAutoPlay** 事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
 
-**重要提示** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用可以仅在桌面设备系列，例如电脑中的 windows 10 设备上使用这些 Api。
+**重要** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 仅在桌面设备系列，例如电脑中的 windows 10 设备上，应用可以使用这些 Api。
 
  
 

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 240cbb84713fb09b0bc51d70ca93b640797f2752
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867633"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938099"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，可帮助你解决并查看 Windows 设备的实时性能。
+Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，可帮助你解决并查看你的 Windows 设备的实时性能。
 
 Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以也与该设备上的浏览器本地连接。
 
@@ -28,7 +28,7 @@ Windows Device Portal 的功能实现与[REST Api](device-portal-api-core.md) �
 ## <a name="setup"></a>设置
 
 每台设备都有有关连接到 Device Portal 的特定说明，但每台设备都需要以下常规步骤：
-1. 在你的设备 （已在设置应用配置） 上启用开发人员模式和 Device Portal。
+1. （在设置应用中配置） 在设备上启用开发人员模式和 Device Portal。
 2. 通过本地网络或 USB 连接你的设备和电脑。
 3. 在浏览器中导航到 Device Portal 页面。 此表显示的端口和协议使用的每个设备系列。
 
@@ -65,12 +65,12 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="apps-manager"></a>应用管理器
 
-应用管理器提供安装/卸载和管理功能的应用程序包和捆绑在主机设备上。
+应用管理器提供安装/卸载的应用的管理功能程序包和捆绑在主机设备上。
 
-![设备门户的应用管理器页面](images/device-portal/wdp-apps.png)
+![设备门户应用管理器页](images/device-portal/wdp-apps.png)
 
-- **已安装应用**： 使用下拉菜单中删除或开始菜单在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册 loose 文件从网络共享。
-- **正在运行的应用**： 获取有关当前正在运行并在必要时关闭它们的应用的信息。
+- **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动 UX 部署已打包的应用从本地安装、 网络或 web 托管和注册 loose 文件从网络共享。
+- **正在运行的应用**： 获取有关当前正在运行，并根据需要关闭它们的应用的信息。
 
 #### <a name="install-an-app"></a>安装应用
 
@@ -79,12 +79,12 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 2.  在 Device Portal 的应用管理器部分中，单击**添加**，然后选择**从本地存储的应用包安装**。
 3.  单击**浏览**并找到你的应用包。
 3.  单击**浏览**并找到证书 (_.cer_) 文件 （不需要在所有设备上）
-4.  查看各个框内，如果你想要安装可选的框架包以及应用安装。 如果你有多个依赖项，请分别添加每一个。     
+4.  如果你想要安装可选的各个框内或框架包以及应用安装检查。 如果你有多个依赖项，请分别添加每一个。     
 5.  单击**下一步**移动到下一步和**安装**启动安装。 
 
 #### <a name="uninstall-an-app"></a>卸载应用
 1.  确保应用未在运行。 
-2.  如果是，请转到**正在运行的应用**，并关闭它。 如果你尝试进行卸载应用运行时，它将尝试重新安装该应用时导致问题。 
+2.  如果是，请转到**正在运行的应用**，并关闭它。 如果你尝试在应用运行时卸载，它将尝试重新安装该应用时导致问题。 
 3.  从下拉列表中选择的应用，然后单击**删除**。
 
 ### <a name="running-processes"></a>正在运行的进程
@@ -97,7 +97,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 此页面允许你查看和操纵由旁加载的任何应用存储的文件。 请参阅[使用应用文件资源管理器](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)博客文章以了解有关文件资源管理器以及如何使用它的详细信息。 
 
-![设备门户文件资源管理器页面](images/device-portal/mob-device-portal-AppFileExplorer.png)
+![设备门户文件资源管理器页](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
 ### <a name="performance"></a>性能
 
@@ -106,7 +106,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 可用的指标如下所示：
 - **CPU**： 的总可用的 CPU 使用率百分比
 - **内存**： 总数，正在使用、 可用提交、 页面缓冲，和非页面缓冲
-- **I/O**： 读取和写入数据数量
+- **I/O**： 读取和写入数据的数量
 - **网络**： 接收和发送数据
 - **GPU**: %的总可用 GPU 引擎使用率
 
@@ -115,7 +115,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 ### <a name="event-tracing-for-windows-etw-logging"></a>事件 Windows 跟踪 (ETW) 日志记录
 
-ETW 日志记录页面管理设备上的实时事件跟踪 Windows (ETW) 信息。
+ETW 日志记录页面管理设备上的实时事件跟踪的 Windows (ETW) 信息。
 
 ![设备门户 ETW 日志记录页面](images/device-portal/mob-device-portal-etw.png)
 
@@ -125,15 +125,15 @@ ETW 日志记录页面管理设备上的实时事件跟踪 Windows (ETW) 信息�
   2. 严重错误
   3. 警告
   4. 非错误警告
-  5. 详细的跟踪
+  5. 详细跟踪 \
 
   单击或点击**启用**以开始跟踪。 提供程序将添加到**已启用的提供程序**下拉列表。
 - **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不在 GUID 中包含括号。
 - **已启用提供程序**： 这将列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击**禁用**来停止跟踪。 单击或点击**全部停止**来暂停所有跟踪。
 - **提供程序历史记录**： 这将显示当前会话期间启用的 ETW 提供程序。 单击或点击**启用**来激活已禁用的提供程序。 单击或点击**清除**来清除历史记录。
-- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格形式的 ETW 事件。 下表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到一个本地 CSV 文件。
+- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格的 ETW 事件。 表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到一个本地 CSV 文件。
 
-有关使用 ETW 日志记录的更多详细信息，请参阅[使用设备门户，以查看调试日志](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)博客文章。 
+有关使用 ETW 日志记录的详细信息，请参阅[使用 Device Portal，以查看调试日志](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)博客文章。 
 
 ### <a name="performance-tracing"></a>性能跟踪
 
@@ -144,19 +144,19 @@ ETW 日志记录页面管理设备上的实时事件跟踪 Windows (ETW) 信息�
 - **可用配置文件**：从下拉列表中选择 WPR 配置文件，然后单击或点击**开始**以开始跟踪。
 - **自定义配置文件**：单击或点击**浏览**以从电脑中选择 WPR 配置文件。 单击或点击**上载并启动**以开始跟踪。
 
-若要停止跟踪，请单击**停止**。 保留在此页面上，直到跟踪文件 (。ETL) 已完成下载。
+若要停止跟踪，请单击**停止**。 停留在此页面上，直到跟踪文件 (。ETL) 已完成下载。
 
-捕获。可以进行分析[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx)打开 ETL 文件。
+捕获。可用于在[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx)分析打开 ETL 文件。
 
 ### <a name="device-manager"></a>设备管理器
 
-设备管理器页面枚举连接到你的设备的所有外围设备。 你可以单击要查看每个属性的设置图标。
+设备管理器页面枚举所有外围设备连接到你的设备。 你可以单击要查看每个属性的设置图标。
 
-![设备门户设备管理器页面](images/device-portal/mob-device-portal-devices.png)
+![设备门户设备管理器页](images/device-portal/mob-device-portal-devices.png)
 
 ### <a name="networking"></a>网络
 
-网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将可能断开连接你与 Device Portal。
+网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置很可能使断开连接你从 Device Portal。
 - **可用的网络**： 显示适用于该设备的 WiFi 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
 - **IP 配置**： 显示设备的网络端口的有关其中每个主机的地址信息。
 

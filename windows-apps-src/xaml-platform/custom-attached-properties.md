@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: de2d319f536b2c9d25d53e0b1ec2886831c66e12
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878393"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937600"
 ---
 # <a name="custom-attached-properties"></a>自定义附加属性
 
@@ -41,7 +41,7 @@ ms.locfileid: "5878393"
 
 要将附加属性定义为依赖属性，可声明一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public** **static** **readonly** 属性。 你可以使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法的返回值来定义此属性。 属性名称必须与你指定为 **RegisterAttached** *name* 参数的附加属性名称相匹配，并在末尾添加字符串“Property”。 这是相对于其表示的属性来命名依赖属性标识符的既有约定。
 
-定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 而不是使用[自定义依赖属性](custom-dependency-properties.md)中所述的包装器技术，你还必须提供静态 **获取 *** PropertyName*和 **设置 *** PropertyName*附加属性的访问器方法。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
+定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 而不是使用[自定义依赖属性](custom-dependency-properties.md)中所述的包装器技术，你还必须提供静态 **获取 *** PropertyName*和 **设置 *** PropertyName*访问器作为附加属性的方法。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
 
 > [!IMPORTANT]
 > 如果未正确定义访问器，XAML 处理器将无法访问你的附加属性，尝试使用它的任何人都可能会得到一个 XAML 分析器错误。 另外，在引用的程序集中遇到自定义依赖属性时，设计和编码工具常常依赖于“\*Property”约定来命名标识符。
@@ -75,7 +75,7 @@ ms.locfileid: "5878393"
 
 此示例展示了依赖属性注册（使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法），以及一个自定义附加属性的 **Get** 和 **Set** 访问器。 在此示例中，附加属性名称为 `IsMovable`。 因此，访问器必须命名为 `GetIsMovable` 和 `SetIsMovable`。 附加属性的所有者是自身不具有 UI 的名为 `GameService` 服务类；其目的只是在使用 **GameService.IsMovable** 附加属性时提供附加属性服务。
 
-定义附加的属性在 C + + /CX 是更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + +，必须定义此属性-字段关系 CX 显式而不.NET **readonly**关键字和隐式依赖备份的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
+定义附加的属性在 C + + /CX 是更复杂一些。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + +，必须定义此属性-字段关系 CX 显式而不在.NET **readonly**关键字和隐式依赖备份的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
 
 ```csharp
 public class GameService : DependencyObject

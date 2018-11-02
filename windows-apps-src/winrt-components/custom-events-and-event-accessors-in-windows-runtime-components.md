@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5868867"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5936306"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows 运行时组件中的自定义事件和事件访问器
 
@@ -101,7 +101,7 @@ NumberChanged 事件的以下代码显示了 UWP 事件的基本模式。 在本
 
 静态（在 Visual Basic 中为 Shared）GetOrCreateEventRegistrationTokenTable 方法延迟创建 EventRegistrationTokenTable&lt;T&gt; 对象的事件实例。 将保留令牌表实例的类级别字段传递到此方法。 如果该字段为空，该方法会创建表、在字段中存储对表的引用并返回对表的引用。 如果该字段已经包含令牌表引用，该方法将仅返回该引用。
 
-> **重要提示**若要确保线程安全，保留 EventRegistrationTokenTable 的事件实例的字段&lt;T&gt;必须是类级别字段。 如果它是类级别字段，GetOrCreateEventRegistrationTokenTable 方法会确保在多个线程尝试创建令牌表时，所有线程均会获取相同的表实例。 对于指定事件，对 GetOrCreateEventRegistrationTokenTable 方法的所有调用都必须使用相同的类级别字段。
+> **重要**若要确保线程安全，保留 EventRegistrationTokenTable 事件实例的字段&lt;T&gt;必须是类级别字段。 如果它是类级别字段，GetOrCreateEventRegistrationTokenTable 方法会确保在多个线程尝试创建令牌表时，所有线程均会获取相同的表实例。 对于指定事件，对 GetOrCreateEventRegistrationTokenTable 方法的所有调用都必须使用相同的类级别字段。
 
 在删除访问器和 [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) 方法（在 C# 中是 OnRaiseEvent 方法）中调用 GetOrCreateEventRegistrationTokenTable 方法可确保在以下情况下不会发生任何异常：在添加任何事件处理程序委托之前调用这些方法。
 

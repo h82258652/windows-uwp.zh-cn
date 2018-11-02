@@ -9,15 +9,15 @@ keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2db3d34ed223b318d65ec497cc0feb7cb16342
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5880242"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938630"
 ---
 # <a name="gradual-package-rollout"></a>逐步程序包推出
 
-当你发布更新提交时，你可以选择逐步推出已更新的软件包到你的应用的客户的百分比 （包括 Xbox） 的 Windows 10 上。 这使你可以监视特定程序包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
+当你发布更新提交时，你可以选择逐步推出已更新的软件包的应用客户百分比到 Windows 10 （包括 Xbox） 上。 这使你可以监视特定程序包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新无虑。 你可以随时增加比例（或停止更新），而无需创建新的提交。 
 
 > [!IMPORTANT]
 > 推出选择将应用于所有程序包，但仅适用于运行的 OS 版本支持软件包外部测试版（Windows.Desktop 版本 10586 或更高版本、Windows.Mobile 版本 10586.63 或更高版本以及 Xbox）的客户，其中包括通过[应用商店托管（联机）许可](organizational-licensing.md)、[适用于企业的 Microsoft 应用商店](https://businessstore.microsoft.com/store)或[适用于教育的 Microsoft 应用商店](https://educationstore.microsoft.com/store)获取应用的所有客户。 逐步推出程序包时，使用较早 OS 版本的客户将不会从最新提交中获取程序包，直到你完成程序包推出，如以下所述。

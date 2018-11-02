@@ -10,16 +10,16 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 1866c4f94c5ef681080ae2a5658c6edba11ec44b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885054"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938640"
 ---
 # <a name="media-capture-page-dev-home"></a>媒体捕获页面 （开发人员主页）
    
   
-开发人员主页的**媒体捕获**页面捕获视频的游戏的当前在控制台上运行。   
+开发人员主页的**媒体捕获**页面捕获视频的当前在控制台运行的标题。   
  ![捕获的开发人员主页的页面](images/devhome_capture.png)   
   
 **媒体捕获**页面包含以下窗格：   
@@ -34,13 +34,13 @@ ms.locfileid: "5885054"
 ## <a name="video-capture"></a>视频捕获  
    
   
-**视频捕获**窗格包含记录开发人员控制台的视频流的工具。 你可以捕获视频的最后几秒从控制台。   
+**视频捕获**窗格包含录制视频流从开发人员控制台的工具。 你还可以捕获视频的最后几秒从控制台。   
   
 <a id="ID4ERB"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

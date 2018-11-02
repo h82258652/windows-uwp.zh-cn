@@ -10,18 +10,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 59a2e93f7c09266b0e33d58bf6a2571e60c7a607
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873133"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935650"
 ---
 # <a name="notifications-visualizer"></a>通知可视化工具
 
  
 
 
-通知可视化工具是一个新的通用 Windows 平台 (UWP) 应用[的应用商店中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可帮助开发人员设计自适应动态磁贴和交互式 toast 通知的 windows 10。
+通知可视化工具是新的通用 Windows 平台 (UWP) 应用[的应用商店中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可帮助开发人员设计自适应动态磁贴和交互式 toast 通知的 windows 10。
 
 
 ## <a name="overview"></a>概述

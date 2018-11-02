@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c617f3ec6d189f3ee75fcf2fd0ff96d386ec32c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5883875"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937485"
 ---
 # <a name="which-networking-technology"></a>选择哪一种网络技术？
 
@@ -71,7 +71,7 @@ ms.locfileid: "5883875"
 
 当你希望通过网络可靠地传输文件时，请使用[后台传输 API](background-transfers.md)。 后台传输 API 提供了高级的上载和下载功能，这些功能可在应用暂停期间在后台运行，并且在应用终止后仍保持运行。 该 API 监视网络状态以及在失去连接时自动暂停和恢复传输，而且传输同样也既为数据敏感型又为电池敏感型，这意味着下载活动将根据当前连接性和设备电池状态进行调整。 当你的应用在移动设备或电池供电的设备上运行时，这些功能是必不可少的。 该 API 非常适合于使用 HTTP 上载和下载大型文件。 还支持 FTP，但只能用于下载。
 
-Windows 10 中的新后台传输功能是能够文件传输完成，以便你可以更新本地目录，激活其他应用，或在下载完成时通知用户时触发后期处理。
+Windows 10 中的新后台传输功能是能够在文件传输完成，以便你可以更新本地目录，激活其他应用，或在下载完成时通知用户时触发后期处理。
 
 ### <a name="when-to-use-background-transfers"></a>何时使用后台传输
 
@@ -129,7 +129,7 @@ Windows 10 中的新后台传输功能是能够文件传输完成，以便你可
 
 ### <a name="mobile-operators"></a>移动运营商
 
-Windows 10 向开发人员受众公开具有之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
+Windows 10 到开发人员受众公开了之前只公开给设备制造商和移动运营商的某些 Api。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
 
 ### <a name="network-operations"></a>网络运营
 

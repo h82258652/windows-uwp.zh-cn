@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b3b4da17c8e616640205e5b8b9892a41bc2ea647
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871024"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5934902"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -66,7 +66,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择的模拟的设备。
+若要在仿真器中运行应用，只需从 Visual Studio 中的**运行**下拉菜单中选择一个模拟的设备。
 
 ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 
@@ -179,7 +179,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 -   右上角部分会列出日志。 当你将一对设备触碰到一起（或触碰到 POS 终端）时，将记录触碰事件，而当设备取消触碰时，将记录取消触碰事件。 此部分还记录你的应用是否在连接中断前响应或记录你在模拟器 UI 中执行的任何其他操作，并带有时间戳。 日志在模式切换后仍然保留，并且你可以随时通过点击“日志”**** 屏幕上方的“清除”**** 按钮清除日志。
 -   屏幕的下半部分是消息日志，显示通过当前选择的连接发送或接收的所有消息的报道，具体取决于所选择的模式。
 
-> **重要提示**当你首次启动触碰器工具时，你会收到一个 Windows 防火墙提示。 你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
+> **重要**当你首次启动触碰器工具时，你会收到一个 Windows 防火墙提示。 你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
 
 在启动快速启动安装程序后，请确保按照上述说明选中防火墙提示上的全部 3 个复选框。 此外，必须安装触碰器工具，并且在与 Microsoft 模拟器相同的物理主机上使用它。
 
@@ -454,7 +454,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         -   如果你在同步操作正在进行时单击“取消同步”****，将弹出该卡，并且同步操作的结果会不完整。
     -   “弹出 SD 卡”**** 按钮将更改回“插入 SD 卡”****。
 
-> **注意**手机使用的由于 SD 卡已使用 FAT32 文件系统格式化，32 GB 的最大大小。
+> **注意**手机使用的由于 SD 卡已格式化为 FAT32 文件系统，32 GB 的最大大小。
 
 读取和写入模拟 SD 卡的速度受到限制以模仿真实速度。 访问 SD 卡的速度慢于访问计算机的硬盘驱动器的速度。
 
@@ -623,7 +623,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>错误消息：“删除虚拟以太网交换机时失败”
 
-在某些情况下，包括后更新为新 windows 10 外部测试版，与模拟器相关联的虚拟网络交换机可以进入其中不能通过用户界面删除的状态。
+在某些情况下，包括后更新到新 windows 10 外部测试版，与模拟器相关联的虚拟网络交换机可以进入其中不能通过用户界面删除的状态。
 
 若要在此情况下恢复，请在管理员命令提示符下运行“netcfg -d”：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 当命令结束运行时，需要重新启动计算机才能完成恢复过程。
 

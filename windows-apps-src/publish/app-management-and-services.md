@@ -8,18 +8,18 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 112f69704c502f1aa394aa1dd8d544aa0728477d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881419"
+ms.locfileid: "5933940"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
-可管理和查看与每一个应用的相关的详细信息 [合作伙伴中心中，并配置服务，例如通知、 A / B 测试和地图。
+你可以管理和查看与每一个应用的相关的详细信息 [合作伙伴中心中，并配置服务，例如通知、 A / B 测试和地图。
 
-使用合作伙伴中心中的应用时，你将看到在左侧的导航菜单中的部分**服务**和**应用管理**。 可以展开这些部分，访问如下所述的功能。
+使用合作伙伴中心中的应用时，你将看到**服务**和**应用管理**的左侧的导航菜单中的部分。 可以展开这些部分，访问如下所述的功能。
 
 ## <a name="services"></a>服务
 
@@ -39,22 +39,19 @@ ms.locfileid: "5881419"
 
 ## <a name="maps"></a>地图
 
-若要在之前发布的应用适用于 Windows Phone 8.1 及更早版本中使用地图服务，你需要在你的应用代码中包含地图服务应用程序 ID 和令牌。 可在**服务**部分的**地图**页面上获取此令牌。
+若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图身份验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
 
-> [!NOTE]
-> 若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关详细信息，请参阅[请求地图身份验证密钥](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)。
-
-有关详细信息，请参阅[使用地图服务](use-map-services.md)。
+仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求你的应用代码中包含的地图服务应用程序 ID 和令牌。 当你单击**获取令牌**时，我们将生成的地图服务应用程序 ID (**ApplicationID**) 和地图服务的身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你的程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
 ## <a name="product-collections-and-purchases"></a>产品收集和购买
 
-若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 下面。 请注意，需要 16 个小时才能使这些更改生效。
+若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 此处。 请注意，需要 16 个小时才能使这些更改生效。
 
 有关详细信息，请参阅[管理来自服务的产品授权](../monetize/view-and-grant-products-from-a-service.md)。
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[委派的权限或应用程序权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
 
 有关详细信息，请参阅[请求同意整个租户](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
@@ -90,7 +87,7 @@ f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限
 **WNS/MPNS**部分提供了可帮助你创建并向你的应用客户发送通知的选项。 
 
 > [!TIP]
-> 对于 UWP 应用，我们建议使用合作伙伴中心中的**通知**功能。 此功能，可以将通知发送到所有应用的客户，或者你符合条件的 Windows 10 客户子集定向到已定义[的客户类别](create-customer-segments.md)中。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
+> 对于 UWP 应用，我们建议使用合作伙伴中心中**通知**功能。 将通知发送到所有应用的客户，你可以使用此功能，或者你符合条件的 Windows 10 客户子集定向到已定义[的客户类别](create-customer-segments.md)中。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
 具体取决于你的应用包类型及其特定要求，你还可以使用以下选项之一： 
 

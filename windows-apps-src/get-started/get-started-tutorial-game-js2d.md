@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865792"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943732"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -26,7 +26,7 @@ ms.locfileid: "5865792"
 ## <a name="introduction"></a>简介
 
 
-应用发布到 Microsoft 应用商店意味着你可以共享 （或其出售 ！） 与数百万人，许多不同设备上。  
+应用发布到 Microsoft 应用商店意味着你可以将其共享 （或其出售 ！） 与数百万人，许多不同设备上。  
 
 若要将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
 
@@ -63,7 +63,7 @@ ms.locfileid: "5865792"
 
 现在，你可以运行此游戏！
 
-按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙 （如果稀疏） 站立风光中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
+按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙站立于旖旎风光 （如果稀疏） 中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
 
 ![只是一个普通的恐龙，一只忍者神猫坐在其背部](images/JS2D_3.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "5865792"
 
 ## <a name="walkthough"></a>操作实例
 
-如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
+如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
 
 ### <a name="1-setting-the-stage"></a>1. 设置舞台
 
@@ -259,7 +259,7 @@ function animate_clouds()
 
 ## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
 
-现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
+现在你有一个 UWP 应用，则可以将其发布到 Microsoft Store （假设已先了改进 ！） 
 
 此流程包含几个步骤。
 

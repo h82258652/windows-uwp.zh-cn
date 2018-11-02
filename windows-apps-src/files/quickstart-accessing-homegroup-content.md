@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 398c44db6a391008605ed6fa4dad877bcead035d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876725"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940657"
 ---
 # <a name="accessing-homegroup-content"></a>访问家庭组内容
 
@@ -195,7 +195,7 @@ ms.locfileid: "5876725"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **打开用户的文件选择的读取访问权限，并将文件流设置为的源**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，并且然后播放该文件。
+3.  **打开用户的文件选择的读取访问权限，并将文件流设置为的源**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，，然后播放该文件。
     ```cs
     if (file != null)
     {

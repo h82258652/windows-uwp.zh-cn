@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-description: 通过在 Visual Studio 中创建新的 windows 10 项目并将文件复制到其中开始移植过程。
-title: WindowsPhone Silverlight 将项目移植到 UWP 项目
+description: 你可以通过在 Visual Studio 中创建新的 windows 10 项目，并将文件复制到其中开始移植过程。
+title: 移植到 UWP 项目的 WindowsPhone Silverlight 项目
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,23 +9,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d1224c1707d3e86c9ddd309ecf06bd0c0767fb83
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882638"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939302"
 ---
-# <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>WindowsPhone Silverlight 将项目移植到 UWP 项目
+# <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>移植到 UWP 项目的 WindowsPhone Silverlight 项目
 
 
 上一主题是[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
 
-通过在 Visual Studio 中创建新的 windows 10 项目并将文件复制到其中开始移植过程。
+你可以通过在 Visual Studio 中创建新的 windows 10 项目，并将文件复制到其中开始移植过程。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>创建项目并将文件复制到其中
 
-1.  启动 Microsoft Visual Studio2015 并创建一个新的空白应用程序 （Windows 通用） 项目。 有关详细信息，请参阅[快速启动你的 Windows 运行时 8.x 应用使用模板 (C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 你的新项目会生成一个将在所有设备系列上运行的应用包（appx 文件）。
-2.  在 WindowsPhone Silverlight 应用项目中，标识所有源代码文件和视觉资产文件，你想要重复使用。 通过使用文件资源管理器，将数据模型、视图模型、视觉资源、资源词典，文件夹结构和想要重复使用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
+1.  启动 Microsoft Visual Studio2015 并创建一个新的空白应用程序 （Windows 通用） 项目。 有关详细信息，请参阅[快速启动你的 Windows 运行时 8.x 应用使用模板 （C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 你的新项目会生成一个将在所有设备系列上运行的应用包（appx 文件）。
+2.  在 WindowsPhone Silverlight 应用项目中，标识所有源代码文件和你想要重复使用的视觉资源文件。 通过使用文件资源管理器，将数据模型、视图模型、视觉资源、资源词典，文件夹结构和想要重复使用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
 3.  还可以将视图（例如，MainPage.xaml 和 MainPage.xaml.cs）复制到新项目节点中。 同样，也可根据需要创建新的子文件夹，并从项目中删除现有视图。 但是，在覆盖或删除 Visual Studio 生成的视图之前，请保留一份副本，因为在以后引用它时，这可能会很有用。 将 WindowsPhone Silverlight 应用移植的第一个阶段侧重于一设备系列上正常工作并让其。 之后，将侧重点转到确保视图能自行适应所有外形规格，也可以选择添加任何自适应代码以最大程度地利用特定的设备系列。
 4.  在**解决方案资源管理器**中，请确保将**显示所有文件**切换为打开。 选择要复制的文件，右键单击这些文件，然后单击**包括在项目中**。 这将自动包括其所包含的文件夹。 然后，可根据需要将 **“显示所有文件”** 切换为关闭。 备用工作流（如果选择）旨在使用 **“添加现有项”** 命令，以便在 Visual Studio **“解决方案资源管理器”** 中创建任何必要子文件夹。 仔细检查可见资源是否已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不复制**。
 5.  在此阶段中，命名空间和类名称之间的差异将生成大量生成错误。 例如，在打开 Visual Studio 生成的视图时，你将会看到它们的类型是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，而不是 **PhoneApplicationPage**。 XAML 标记和命令性代码之间的许多差异将在本移植指南的以下主题中详细介绍。 只需按照以下常规步骤操作，即可快速取得进展：在 XAML 标记的命名空间前缀声明中将“clr-namespace”更改为“using”；使用[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)主题和 Visual Studio 的 **Find and Replace** 命令以批量更改到源代码（例如，将“System.Windows”替换为“Windows.UI.Xaml”）；并通过 Visual Studio 中的强制性代码编辑器使用上下文菜单上的 **Resolve** 和 **Organize Usings** 命令，以进行更具针对性的更改。
@@ -79,7 +79,7 @@ ms.locfileid: "5882638"
 #endif // WINDOWS_UAP
 ```
 
-如果你有一个 WindowsPhone Silverlight 应用和 Windows 运行时 8.x 应用之间共享的代码，则可能已经具有包含如下逻辑的源代码：
+如果你有一个 WindowsPhone Silverlight 应用和 Windows 运行时 8.x 应用之间共享的代码，则可能已具有包含如下逻辑的源代码：
 
 ```csharp
 #if NETFX_CORE
@@ -89,7 +89,7 @@ ms.locfileid: "5882638"
 #endif // NETFX_CORE
 ```
 
-如果是这样，且现在想要支持除此之外的 windows 10，然后你可以这样做，过。
+如果是这样，并且现在想要支持除此之外的 windows 10，然后你可以这样做，太。
 
 ```csharp
 #if WINDOWS_UAP
@@ -147,7 +147,7 @@ ms.locfileid: "5882638"
 
 值得了解的是，如何编辑应用包清单，因为后面的主题将讨论如何针对各种声明、功能和某些功能所需的其他设置使用它。 你可以使用 Visual Studio 应用包清单编辑器来编辑它。 如果未显示**解决方案资源管理器**，请从**视图**菜单中选择它。 双击 **Package.appxmanifest**。 此时会打开“清单编辑器”窗口。 选择相应的选项卡来进行更改，然后保存更改。 你可能要确保已移植的应用清单中的 **pm:PhoneIdentity** 元素与要移植的应用的应用清单中的元素匹配（有关完整详细信息，请参阅 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 主题）。
 
-查看[程序包清单架构参考的 windows 10](https://msdn.microsoft.com/library/windows/apps/dn934820)。
+请参阅[程序包清单架构参考的 windows 10](https://msdn.microsoft.com/library/windows/apps/dn934820)。
 
 下一主题为[疑难解答](wpsl-to-uwp-troubleshooting.md)。
 

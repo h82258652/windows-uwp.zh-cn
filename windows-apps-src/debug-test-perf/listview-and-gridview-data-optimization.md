@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92b81c79eb1be9e21aa7c306ef31b0b3bb62e7d1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867134"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936622"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 和 GridView 数据虚拟化
 
@@ -29,7 +29,7 @@ ms.locfileid: "5867134"
 -   数据集的来源（本地磁盘、网络或云）
 -   应用的总内存消耗。
 
-**注意**请注意，一项功能默认启用的 ListView 和 GridView 的显示临时占位符视觉效果，当用户平移/滚动时快速。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
+**注意**功能默认情况下启用的 ListView 和 GridView 的显示临时占位符视觉效果，当用户平移/滚动时快速。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
 
 下面是有关增量和随机访问数据虚拟化技术的更多详细信息。
 

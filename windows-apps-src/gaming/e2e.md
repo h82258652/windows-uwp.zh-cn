@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
 ms.openlocfilehash: d29e647b2932e1d89247da5b91d8f836d11260d6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865607"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938487"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -590,7 +590,7 @@ Windows JavaScript 应用可以采用一种简单而又直观的方式访问 Uni
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>你的游戏应该使用哪个版本的 DirectX？
 
-如果你的游戏选择 DirectX 时，你将需要确定使用哪个版本： Microsoft Direct3D12 或 Microsoft Direct3D11。
+如果你的游戏选择 DirectX 时，你将需要确定要使用哪个版本： Microsoft Direct3D12 或 Microsoft Direct3D11。
 
 DirectX 12 比以前的任何版本都更快更高效。 Direct3D 12 提供更丰富的场景、更多的对象、更复杂的效果，并且能全面利用 Windows 10 电脑和 Xbox One 上的现代 GPU 硬件。 由于 Direct3D 12 在较低级别工作，因此它能够向专业图形开发团队或有经验的 DirectX 11 开发团队提供最大程度优化图形所需的所有控制。
 
@@ -1290,7 +1290,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
         <td><a href="http://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
     </tr>
     <tr>
-        <td>DirectXTK （博客文章） 中的 Direct3D12 支持</td>
+        <td>Direct3D12 支持 DirectXTK （博客文章）</td>
         <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">对 DirectX 12 的支持</a></td>
     </tr>
 </table>

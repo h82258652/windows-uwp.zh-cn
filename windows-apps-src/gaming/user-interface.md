@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 模板
 ms.localizationpriority: medium
 ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871878"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939222"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 游戏项目模板
 
@@ -26,12 +26,12 @@ DirectX 和通用 Windows 平台 (UWP) 模板使你可以快速创建一个项�
 
 要创建该项目，你需要执行以下操作：
 
--   [下载 Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions)。 视觉 Studio2015 具有图形编程，例如调试工具的工具。 有关 DirectX 图形和游戏功能及工具的概述，请参阅 [用于 DirectX 游戏开发的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
+-   [下载 Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio2015 具有图形编程，例如调试工具的工具。 有关 DirectX 图形和游戏功能及工具的概述，请参阅 [用于 DirectX 游戏开发的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
 
 ## <a name="choosing-a-template"></a>选择模板
 
 
-视觉 Studio2015 包含三个 DirectX 和 UWP 模板：
+Visual Studio2015 包含三个 DirectX 和 UWP 模板：
 
 -   DirectX 11 应用（通用 Windows）- DirectX 11 应用（通用 Windows）模板创建向使用 DirectX 11 的应用窗口直接呈现的 UWP 项目。
 -   DirectX 12 应用（通用 Windows）- DirectX 12 应用（通用 Windows）模板创建向使用 DirectX 12 的应用窗口直接呈现的UWP 项目。

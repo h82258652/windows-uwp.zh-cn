@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
 ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881598"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940757"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
 你可以查看和更新你的开发者帐户设置和[合作伙伴中心](https://partner.microsoft.com/dashboard)的**帐户设置**部分中的个人资料信息。 
 
 > [!NOTE]
-> 可以在**消息中心**（你可以选择访问合作伙伴中心的顶部附近的消息图标） 中管理通知首选项 （如哪种类型的通知，以接收和如何接收）。
+> 在**消息中心**（你可以选择访问合作伙伴中心的顶部附近的消息图标），可以管理通知首选项 （如哪种类型的通知，以接收和如何接收）。
 
 ## <a name="account-settings"></a>帐户设置
 
@@ -50,7 +50,7 @@ ms.locfileid: "5881598"
 - **开发人员中心会员计划**： 你可以选择在或退出[开发人员中心会员计划](dev-center-insider-program.md)从主**帐户设置**页面。
 - **付款帐户**和**税务资料**：可在此[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 - **企业关联**：接受希望发布应用以供其独家使用的企业的邀请。 有关详细信息，请参阅[将业务线应用分配到企业](distribute-lob-apps-to-enterprises.md)。
-- **用户**： 将用户添加到你的帐户，并向其分配角色和权限。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+- **用户**： 将用户添加到你的帐户，并为其分配角色和权限。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
 - **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将你的合作伙伴中心帐户与 Azure AD 关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。

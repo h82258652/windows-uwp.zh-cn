@@ -2,7 +2,7 @@
 author: normesta
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: 手动打包应用程序 （桌面桥）
+title: 手动打包应用 （桌面桥）
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879538"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935310"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
@@ -22,7 +22,7 @@ ms.locfileid: "5879538"
 
 若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-请考虑手动打包，如果使用 xcopy 命令安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统进行的更改并且想要更精确地控制过程。
+如果使用 xcopy 命令，安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统所作的更改，请考虑手动打包，并且想要更精确地控制过程。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
@@ -85,11 +85,11 @@ ms.locfileid: "5879538"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果你已保留在 Windows 应用商店应用程序名称，你可以通过使用 Windows 开发人员中心仪表板中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
+> 如果你已保留在 Windows 应用商店应用程序的名称，你可以通过使用 Windows 开发人员中心仪表板中获取的名称和发布者。 如果你计划旁加载到其他系统的应用程序，你可以提供对于这些名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
 
 ### <a name="properties"></a>属性
 
-[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是你在应用商店上, 传到应用商店的应用中保留的应用程序的名称。
+[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是你在应用商店，适用于应用的上传到应用商店中预留的应用程序的名称。
 
 ```XML
 <Properties>
@@ -119,7 +119,7 @@ ms.locfileid: "5879538"
 ```
 
 ### <a name="capabilities"></a>功能
-适用于桌面应用创建程序包的你将需要添加``runFullTrust``功能。
+对于桌面应用创建的包的你将需要添加``runFullTrust``功能。
 
 ```XML
 <Capabilities>
@@ -132,7 +132,7 @@ ms.locfileid: "5879538"
 
 ### <a name="application-element"></a>应用程序元素
 
-对于桌面应用创建包，``EntryPoint``应用程序元素的属性始终是``Windows.FullTrustApplication``。
+对于桌面应用创建程序包，``EntryPoint``应用程序元素的属性始终是``Windows.FullTrustApplication``。
 
 ```XML
 <Applications>
@@ -206,7 +206,7 @@ ms.locfileid: "5879538"
 若要更新应用的 .exe 或 .dll 文件，请将程序包中的现有文件替换为新文件、增加 AppxManifest.xml 中的版本号，然后再次运行上述命令。
 
 > [!NOTE]
-> 已打包的应用程序始终作为交互用户运行，并且任何安装已打包的应用程序上的驱动器必须格式化为 NTFS 格式。
+> 已打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -224,4 +224,4 @@ ms.locfileid: "5879538"
 
 **对你的应用程序进行签名，然后将它分发**
 
-请参阅[分布的已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分发打包的桌面应用程序](desktop-to-uwp-distribute.md)

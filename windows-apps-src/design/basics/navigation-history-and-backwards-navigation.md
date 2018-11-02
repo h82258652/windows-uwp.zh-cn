@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d2f437db1a1792df22fd084cedee31cb6e590d24
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873186"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942283"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
 
@@ -28,7 +28,7 @@ ms.locfileid: "5873186"
 
 ## <a name="back-button"></a>后退按钮
 
-若要创建后退按钮，使用具有的[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将该按钮放置在你的应用的 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
+若要创建后退按钮，请使用具有的[按钮](../controls-and-patterns/buttons.md)控件`NavigationBackButtonNormalStyle`样式，并将该按钮放在你的应用的 UI 的左上角 （有关详细信息，请参阅下面的 XAML 代码示例）。
 
 ![应用的 UI 的左上角的后退按钮](images/back-nav/BackEnabled.png)
 
@@ -169,7 +169,7 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-更高版本，我们向后处理的单个页面的导航。 如果你想要从后退导航排除特定页面或你想要显示页面前执行页面级别代码，你可以处理每个页面中的导航。
+更高版本，我们向后处理单个页面的导航。 如果你想要从后退导航，排除特定页面或你想要显示页面前执行页面级别代码，你可以处理每个页面中的导航。
 
 若要处理向后导航的整个应用，你将注册全局侦听器的[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)事件`App.xaml`代码隐藏文件。
 
@@ -284,7 +284,7 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>针对后向兼容性的系统后退行为
 
-以前，UWP 应用使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 该 API 将继续支持以确保向后兼容，但我们不会再建议依靠[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
+以前，UWP 应用使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 来实现向后导航。 该 API 将继续受支持，以确保后向兼容性，但我们不会再建议依靠[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 相反，你的应用应该绘制自己的应用内后退按钮。
 
 如果你的应用将继续使用[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，然后的系统 UI 将呈现系统后退按钮：
 
@@ -292,7 +292,7 @@ bool App::On_BackRequested()
 
     ![标题栏后退按钮](images/nav-back-pc.png)
 
-- 如果应用**选项卡**，则后退按钮呈现在新的系统后退栏。
+- 如果应用**选项卡**，那么后退按钮呈现内新的系统后退栏。
 
     ![系统绘制后退按钮栏](images/back-nav/tabs.png)
 
@@ -303,7 +303,7 @@ bool App::On_BackRequested()
 
 系统后退栏是"区带"选项卡区带和应用的内容区域之间插入。 此区带横跨整个应用，“后退”按钮位于左边缘。 此区带都有垂直高度为 32 像素，以确保后退按钮的足够的触摸目标大小。
 
-系统后退栏基于“后退”按钮的可见性动态显示。 当后退按钮可见时，系统后退栏插入，将通过以下选项卡区带 32 像素向下移动应用内容。 当后退按钮隐藏时，系统后退栏动态删除，32 像素，以满足选项卡区带移动应用内容。 若要避免你的应用的 UI shift 向上或向下，我们建议绘制[应用内后退按钮](#back-button)。
+系统后退栏基于“后退”按钮的可见性动态显示。 后退按钮可见时，系统后退栏插入，将通过以下选项卡区带 32 像素向下移位应用内容。 当后退按钮隐藏时，系统后退栏动态删除，通过 32 像素，以满足选项卡区带移动应用内容。 若要避免你的应用的 UI shift 向上或向下，我们建议绘制[应用内后退按钮](#back-button)。
 
 [标题栏自定义](../shell/title-bar.md)会延续到应用选项卡和系统后退栏。 如果你的应用指定后台和前景色属性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，则颜色将应用到选项卡和系统后退栏。
 
@@ -341,7 +341,7 @@ bool App::On_BackRequested()
 <td style="vertical-align:top;"><strong>页面到页面，同一对等组，带有屏幕导航元素</strong>
 <p>用户从一个页面导航到同一对等组内的另一个页面。 这两个页面显示在相同的导航元素，如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
 <td style="vertical-align:top;"><strong>视情况而定</strong>
-<p>是，将添加到导航历史记录，有两个明显例外。 如果你希望你的应用的用户经常，在对等组中的页面之间切换，或者如果你想要保留的导航层次结构，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
+<p>是，将添加到导航历史记录，有两个明显例外。 如果你希望你的应用的用户通常情况下，对等组中的页面之间切换，或者如果你想要保留的导航层次结构，则不要添加到导航历史记录。 在这种情况下，当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

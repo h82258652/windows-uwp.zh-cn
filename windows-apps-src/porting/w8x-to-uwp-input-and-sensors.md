@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870809"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937870"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
 
@@ -39,7 +39,7 @@ ms.locfileid: "5870809"
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>检测正运行你的应用的平台
 
 
-应用面向 windows 10 的更改所做的方式。 新增的概念模型是，应用面向通用 Windows 平台 (UWP)，并且可跨所有 Windows 设备运行。 这样它便可以选择充分利用特定设备系列所独有的功能。 特别是，该应用还可以选择自行限制为面向一个或多个设备系列（如果需要）。 有关具体设备系列（以及如何确定要面向哪一个设备系列）的详细信息，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+做更改的应用面向 windows 10 的方法。 新增的概念模型是，应用面向通用 Windows 平台 (UWP)，并且可跨所有 Windows 设备运行。 这样它便可以选择充分利用特定设备系列所独有的功能。 特别是，该应用还可以选择自行限制为面向一个或多个设备系列（如果需要）。 有关具体设备系列（以及如何确定要面向哪一个设备系列）的详细信息，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 如果你在通用 8.1 应用中具有代码（可检测到运行它的操作系统），你可能需要做一些更改，具体取决于理性逻辑。 如果应用正在通过操作系统传递值，但没有在该系统上执行任何操作，你可能需要继续收集该操作系统的相关信息。
 
@@ -71,7 +71,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 ## <a name="location"></a>位置
 
 
-声明其应用包清单中的位置功能的应用上运行时 windows 10，则系统将提示最终用户同意。 这是 true 指示应用是否在 Windows Phone 应用商店应用或 windows 10 应用。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
+声明了位置功能其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 这是 true 指示应用是否在 Windows Phone 应用商店应用或 windows 10 应用。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
 
  
 

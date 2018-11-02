@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 评分, 评价
 ms.localizationpriority: medium
 ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869227"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935091"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>请求应用的评分和评价
 
@@ -23,7 +23,7 @@ ms.locfileid: "5869227"
 当您准备好分析评分和评价数据后，可以查看 Windows 开发人员中心仪表板中的数据，或使用 Microsoft Store 分析 API 以编程方式检索此数据。
 
 > [!IMPORTANT]
-> 在添加你的应用内评分函数时，所有评论必须都发送到应用商店的评分机制，而不考虑星级评分所选的用户。 如果你从用户收集反馈或评论，它必须清除它不相关的应用评分或评价的应用商店中，但直接发送到应用开发人员。 请参阅开发人员行为准则[Fraudulent 或恶意活动](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)相关的详细信息。
+> 在添加你的应用内评分函数时，所有评论必须将用户都发送到应用商店的评分机制，而不考虑星级评分所选。 如果你从用户收集反馈或评论，它必须清除它不相关的应用评分或评价的应用商店中，但直接发送到应用开发人员。 请参阅开发人员行为准则[Fraudulent 或恶意活动](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)相关的详细信息。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>在应用中显示评分和评价对话框
 

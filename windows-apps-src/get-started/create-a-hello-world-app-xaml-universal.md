@@ -2,18 +2,18 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 了解如何创建“Hello, world”应用 (XAML)
-description: 使用 C# Extensible Application Markup Language (XAML) 在 windows 10 上创建简单 Hello，world 应用面向通用 Windows 平台 (UWP)。
+description: 使用 C# 使用 Extensible Application Markup Language (XAML) 在 windows 10 上创建简单 Hello，world 应用面向通用 Windows 平台 (UWP)。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
 ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864911"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5941175"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -50,7 +50,7 @@ ms.locfileid: "5864911"
 
 3.  从左侧的模板列表中，选择**已安装 > Visual C# > Windows 通用**以查看 UWP 项目模板列表。
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[进行设置](get-set-up.md)。）
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[准备工作](get-set-up.md)。）
 
     ![如何重复安装流程](images/win10-cs-install.png)
 
@@ -102,7 +102,7 @@ ms.locfileid: "5864911"
 -   Assets/Square44x44Logo.png 表示你的应用的开始菜单、 任务栏和任务管理器应用列表中。
 -   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
--   Assets/LockScreenLogo.scale-200.png 可以用于系统处于锁定状态时表示在锁屏上的应用。
+-   Assets/LockScreenLogo.scale-200.png 可以用于系统处于锁定状态时，表示在锁屏上的应用。
 
 ## <a name="step-2-adding-a-button"></a>步骤 2：添加按钮
 
@@ -235,7 +235,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>小结
 
-恭喜，你已为 windows 10 和 UWP 创建第一个应用 ！
+恭喜，你已为 windows 10 和 UWP 中创建第一个应用 ！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 

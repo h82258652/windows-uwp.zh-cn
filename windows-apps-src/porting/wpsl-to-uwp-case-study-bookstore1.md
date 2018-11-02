@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c335f607eb1897f79035850cd6a5af9e7a7a56dc
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886596"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943535"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore1
 
@@ -46,7 +46,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 -   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
 -   复制 MainPage.xaml 并替换目标位置中的文件。
 
-我们可以保留的 App.xaml 和 App.xaml.cs 中的 Visual Studio 生成为我们在 windows 10 项目中。
+我们可以保留的 App.xaml 和 App.xaml.cs Visual Studio 生成为我们在 windows 10 项目中。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
 
@@ -80,7 +80,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 默认情况下，支持所有方向。 WindowsPhone Silverlight 应用将自身明确约束为仅纵向，因此债务项 \#1 # 1 和 \#2 支付通过转到新项目中的应用包清单并选中**纵向**下**支持方向**。
 
-对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 和 \#5，我们需要找到与已在使用 WindowsPhone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock**样式。 你可以在仿真器中运行 WindowsPhone Silverlight 应用并将其比较[文本](wpsl-to-uwp-porting-xaml-and-ui.md)部分中的图示并行。 通过执行此操作，以及查看 WindowsPhone Silverlight 系统样式的属性，我们可以生成此表。
+对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 \#5，我们需要找到与已在使用 WindowsPhone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock**样式。 可以在仿真器中运行 WindowsPhone Silverlight 应用，并将其与下图中的[文本](wpsl-to-uwp-porting-xaml-and-ui.md)部分并行进行比较。 通过执行此操作，以及查看 WindowsPhone Silverlight 系统样式的属性，我们可以生成此表。
 
 | Windows Phone Silverlight 样式键 | UWP 样式键          |
 |-------------------------------------|------------------------|

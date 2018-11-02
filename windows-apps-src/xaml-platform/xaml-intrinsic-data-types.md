@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5880737"
+ms.locfileid: "5934674"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 固有数据类型
 
@@ -39,7 +39,7 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 **x:Single**。 除本节表格中所列项目外，适用于 Windows 运行时的 XAML 当前不支持其他 XAML 词汇表或 XAML 2009 规格所定义的 XAML 语言原语。
 
-**注意**的日期和时间 （使用[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)或[**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)或[**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)的属性） 不能不可使用 XAML 原语设置。 总体而言，这些属性根本不可以采用 XAML 设置，因为 Windows 运行时 XAML 分析程序中没有用于日期和时间的从字符串转换的默认行为。 若要获取任何日期和时间属性的初始化值，必须使用在页面或元素加载时运行的代码隐藏文件。
+**注意**的日期和时间 （使用[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)或[**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)的属性） 不能不可使用 XAML 原语设置。 总体而言，这些属性根本不可以采用 XAML 设置，因为 Windows 运行时 XAML 分析程序中没有用于日期和时间的从字符串转换的默认行为。 若要获取任何日期和时间属性的初始化值，必须使用在页面或元素加载时运行的代码隐藏文件。
 
 ## <a name="related-topics"></a>相关主题
 

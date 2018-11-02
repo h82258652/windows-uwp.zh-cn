@@ -13,11 +13,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861730"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938191"
 ---
 # <a name="keyboard-accelerators"></a>键盘加速键
 
@@ -250,7 +250,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>替代默认键盘行为
 
-在某些情况下，你可能需要重写特定键，如空格键或 Enter 键的默认行为。 例如， 
+在某些情况下，你可能需要替代特定键，如空格键或 Enter 键的默认行为。 例如， 
 
 ## <a name="disable-a-keyboard-accelerator"></a>禁用键盘快捷方式 
 
@@ -362,7 +362,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 默认情况下，当声明键盘快捷方式时，所有控件 （除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 对应的键组合中都显示工具提示。
 
 > [!NOTE] 
-> 如果控件具有多个快捷方式定义，则显示只有第一个。
+> 如果某个控件具有多个快捷方式定义，则显示只有第一个。
 
 ![加速键工具提示](images/accelerators/accelerators_tooltip_savebutton_small.png)
 

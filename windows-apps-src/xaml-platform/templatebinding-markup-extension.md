@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877501"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937954"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 
@@ -61,13 +61,13 @@ ms.locfileid: "5877501"
 > [!NOTE]
 > 在 ControlTemplate 中使用 X:bind 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-从 Windows 10 版本 1809，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**任意位置。 
+从 Windows 10 版本 1809，开始，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**任意位置。 
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)属性必需 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)属性必需的 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
 
 使用**X:bind**支持，你可以使用这两个[函数绑定](../data-binding/function-bindings.md)作为[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也为双向绑定。
 
-在此示例中，该**TextBlock.Text**属性的值为**Button.Content.ToString**。 在该 ControlTemplate TargetType 作为数据源，并完成与到父 TemplateBinding 相同的结果。
+在此示例中， **TextBlock.Text**属性评估为**Button.Content.ToString**。 在该 ControlTemplate TargetType 充当数据源，并完成到父 TemplateBinding 与相同的结果。
 
 ```xaml
 <ControlTemplate TargetType="Button">
