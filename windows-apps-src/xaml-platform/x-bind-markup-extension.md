@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行时间和减少相比绑定，并支持将更好的调试的内存。
+description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind--在 Windows 10 的新的运行时间和减少内存比绑定和支持更好的调试。
 title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9674aeed846fab53de3ecb057ebcc46dbda560c3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5862253"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929657"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
 **注意**有关使用数据的一般信息随 **{x: Bind}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{X: Bind}** 标记扩展，windows 10 的新功能-是 **{Binding}** 的替代方法。 **{x: Bind}** 运行时间和减少相比 **{绑定}** 和支持更好的调试的内存。
+**{X: Bind}** 标记扩展，用于 windows 10 的新功能 — 是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新 (`Mode="OneWay"`)。 该对象也可以配置为将其自己的值的更改推送回源属性 (`Mode="TwoWay"`)。
 

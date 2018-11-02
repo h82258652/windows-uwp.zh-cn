@@ -8,11 +8,11 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876377"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5933142"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 

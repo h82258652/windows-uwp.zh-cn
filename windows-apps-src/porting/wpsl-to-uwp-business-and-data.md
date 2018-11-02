@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 301dcbe95d7509db07d5b7dd11a16460063bbffe
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884350"
+ms.locfileid: "5929578"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>移植 WindowsPhone Silverlight 业务和数据层到 UWP
 
@@ -28,11 +28,11 @@ ms.locfileid: "5884350"
 
 ## <a name="background-processing"></a>后台处理
 
-WindowsPhone Silverlight 应用可以使用托管的**ScheduledTaskAgent**对象来执行某项任务，该应用未在前台运行时。 UWP 应用使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类以类似的方式创建和注册后台任务。 定义用于实现后台任务操作的类。 系统通过调用要执行该操作的类的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法，定期运行后台任务。 在 UWP 应用中，请记得设置应用包清单中的 **“后台任务”** 声明。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)。
+WindowsPhone Silverlight 应用可以使用托管的**ScheduledTaskAgent**对象来执行某项任务，同时应用不在前台运行。 UWP 应用使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类以类似的方式创建和注册后台任务。 定义用于实现后台任务操作的类。 系统通过调用要执行该操作的类的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法，定期运行后台任务。 在 UWP 应用中，请记得设置应用包清单中的 **“后台任务”** 声明。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)。
 
-若要传输较大的数据文件在后台，WindowsPhone Silverlight 应用，请使用**BackgroundTransferService**类。 UWP 应用将使用 [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间中的 API 来执行此操作。 这些功能使用相似的模式启动传输，但是新的 API 已改进功能和性能。 有关详细信息，请参阅[在后台传输数据](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975)。
+若要传输较大的数据文件，在后台，WindowsPhone Silverlight 应用，请使用**BackgroundTransferService**类。 UWP 应用将使用 [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间中的 API 来执行此操作。 这些功能使用相似的模式启动传输，但是新的 API 已改进功能和性能。 有关详细信息，请参阅[在后台传输数据](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975)。
 
-WindowsPhone Silverlight 应用使用**Microsoft.Phone.BackgroundAudio**命名空间中的托管的类不在前台应用时播放音频。 有关 UWP 使用 Windows Phone 应用商店应用模型的信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)和[后台音频](http://go.microsoft.com/fwlink/p/?linkid=619997)示例。
+WindowsPhone Silverlight 应用使用**Microsoft.Phone.BackgroundAudio**命名空间中的托管的类才可以播放音频，同时应用不在前台运行。 有关 UWP 使用 Windows Phone 应用商店应用模型的信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)和[后台音频](http://go.microsoft.com/fwlink/p/?linkid=619997)示例。
 
 ## <a name="cloud-services-networking-and-databases"></a>云服务、网络和数据库
 
@@ -46,9 +46,9 @@ UWP 应用目前不提供对数据密集型应用场景（如业务线 (LOB) 应
 
 ## <a name="launchers-and-choosers"></a>启动器和选择器
 
-借助启动器和选择器 （ **Microsoft.Phone.Tasks**命名空间中找到），WindowsPhone Silverlight 应用可以执行常见操作，例如编写电子邮件、 选择照片，或共享某些类型的操作系统进行交互的与其他应用的数据。 搜索**Microsoft.Phone.Tasks**主题中的[Windows Phone silverlight 移植到 windows 10 命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)以找到等效的 UWP 类型。 类似机制（名为启动器和选取器）中的这些范围，用于通过在应用之间共享数据来实现合约。
+借助启动器和选择器 （ **Microsoft.Phone.Tasks**命名空间中找到），WindowsPhone Silverlight 应用可以执行常见操作，例如编写电子邮件、 选择照片，或共享某些类型的操作系统进行交互的与其他应用的数据。 搜索**Microsoft.Phone.Tasks**主题中的[Windows Phone Silverlight 到 windows 10 命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)以找到等效的 UWP 类型。 类似机制（名为启动器和选取器）中的这些范围，用于通过在应用之间共享数据来实现合约。
 
-WindowsPhone Silverlight 应用可以将其置于休眠状态或甚至逻辑删除时使用，例如，照片选择器任务。 当使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 类时，UWP 应用将保持活动状态并在运行。
+WindowsPhone Silverlight 应用可以将其置于休眠状态即使其逻辑删除时使用，例如，照片选择器任务。 当使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 类时，UWP 应用将保持活动状态并在运行。
 
 ## <a name="monetization-trial-mode-and-in-app-purchases"></a>盈利（试用模式和应用内购买）
 
@@ -84,7 +84,7 @@ WindowsPhone Silverlight 应用可用于 UWP [**CurrentApp**](https://msdn.mic
 
 ## <a name="storage-file-access"></a>存储（文件访问）
 
-将应用设置为在隔离存储中的键 / 值对 WindowsPhone Silverlight 代码可轻松进行移植。 下面是之前和之后的示例中，首先 WindowsPhone Silverlight 版本：
+将应用设置存储为在隔离存储中的键 / 值对的 WindowsPhone Silverlight 代码轻松进行移植。 下面是之前和之后的示例中，首先 WindowsPhone Silverlight 版本：
 
 ```csharp
     var propertySet = IsolatedStorageSettings.ApplicationSettings;
@@ -103,7 +103,7 @@ WindowsPhone Silverlight 应用可用于 UWP [**CurrentApp**](https://msdn.mic
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-尽管适用于他们**Windows.Storage**命名空间的子集，许多 WindowsPhone Silverlight 应用执行的文件 i/o 通过**IsolatedStorageFile**类，因为它都受支持的较长时间。 假定正在使用**IsolatedStorageFile** ，下面是之前和之后示例的写入和读取文件，首先 WindowsPhone Silverlight 版本：
+尽管适用于他们**Windows.Storage**命名空间的子集，许多 WindowsPhone Silverlight 应用将执行与**IsolatedStorageFile** i/o 类，因为它都受支持的较长时间的文件。 假定正在使用**IsolatedStorageFile** ，下面是之前和之后示例的写入和读取文件，首先 WindowsPhone Silverlight 版本：
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";

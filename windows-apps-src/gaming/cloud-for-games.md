@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887834"
+ms.locfileid: "5926523"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 
@@ -201,7 +201,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发�
 ## <a name="learning-resources"></a>学习资源
 
 * //版本 2016：[CodeLabs &mdash; 使用 Microsoft Azure App Service 和 Microsoft SQL Azure 后端在 Unity 中保存游戏分数](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* 版本 2017年:[使用 Microsoft Azure 提供世界级游戏体验： 从 Halo、 杀手，等 WalkingDead （视频） 的游戏中汲取](https://channel9.msdn.com/Events/Build/2017/P4062)
+* 版本 2017年:[使用 Microsoft Azure 提供世界级游戏体验： 从 Halo、 Hitman，等 WalkingDead （视频） 的游戏中汲取](https://channel9.msdn.com/Events/Build/2017/P4062)
 * 可重复使用的一组构建块、项目、服务和最佳做法，旨在在 GitHub 上使用 Azure 支持常见游戏工作负荷：[Azure 上的游戏构建块](https://github.com/MicrosoftDX/nether)
 * [Azure 上的游戏服务（视频）](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 

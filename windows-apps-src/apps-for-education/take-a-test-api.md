@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10，uwp，教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: d64901c08e2945f34e66055d8e2e7d3a8301f66e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884852"
+ms.locfileid: "5928858"
 ---
 # <a name="take-a-test-javascript-api"></a>参加测验 JavaScript API
 
-[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是基于浏览器的 UWP 应用，呈现锁定的在线评估为高利害关系测试，使教师能够专注于评估内容，而不是如何提供安全的测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是基于浏览器的 UWP 应用，呈现锁定的在线评估为高利害关系测试，使教师能够专注于评估内容而不是如何提供安全的测试环境。 为了实现此目的，它使用任何 Web 应用程序都可以利用的 JavaScript API。 “参加测验”API 支持高利害关系通用核心测试的 [SBAC 浏览器 API 标准](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
 有关应用本身的详细信息，请参阅[参加测验应用技术参考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "5884852"
 
 ### <a name="security-namespace"></a>安全命名空间
 
-安全命名空间可以锁定设备、 检查用户和系统进程的列表、 获取 MAC 和 IP 地址以及清除缓存的 web 资源。
+安全命名空间允许你锁定设备、 检查用户和系统进程的列表、 获取 MAC 和 IP 地址以及清除缓存的 web 资源。
 
 | 方法 | 描述   |
 |--------|---------------|

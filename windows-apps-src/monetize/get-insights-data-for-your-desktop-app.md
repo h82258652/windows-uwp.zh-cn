@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e1ecdf192f54c0158ce503a58aafb65108b8fdc
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5862829"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5931958"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 
-在 Microsoft Store 分析 API 中使用此方法来获取对已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在 Windows 开发人员中心仪表板中的桌面应用程序[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
+在 Microsoft Store 分析 API 中使用此方法来获取与你已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在 Windows 开发人员中心仪表板中的桌面应用程序[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -53,7 +53,7 @@ ms.locfileid: "5862829"
 
 ### <a name="request-example"></a>请求示例
 
-下面的示例演示了一个请求用于获取的见解数据。 *ApplicationId*值替换为桌面应用程序的相应值。
+以下示例演示了一个请求用于获取的见解数据。 *ApplicationId*值替换为桌面应用程序的相应值。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/insights?applicationId=10238467886765136388&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'health' HTTP/1.1
@@ -76,8 +76,8 @@ Authorization: Bearer <your access token>
 
 | 值               | 类型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | 字符串 | 要为其检索的见解数据的桌面应用程序的产品 ID。     |
-| insightDate                | 字符串 | 我们标识特定指标的更改的日期。 此日期表示一周中，我们检测到了显著增加结束或减少相比于前的一周的指标。 |
+| applicationId       | 字符串 | 要为其检索见解数据的桌面应用程序的产品 ID。     |
+| insightDate                | 字符串 | 我们在其标识特定指标的更改的日期。 此日期表示一周中，我们检测到了显著增加结束或减少相对于前的一周的指标。 |
 | 数据类型     | 字符串 | 指定此相关的见解通知的常规分析区域的字符串。 目前，此方法仅支持**运行状况**。    |
 | insightDetail          | array | 一个或多个[InsightDetail 值](#insightdetail-values)表示当前相关的见解的详细信息。    |
 
@@ -87,13 +87,13 @@ Authorization: Bearer <your access token>
 | 值               | 类型   | 说明                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | 字符串 | 一个字符串，指示的当前相关的见解和当前维度描述的指标。 目前，此方法仅支持值**点击次数**。  |
-| SubDimensions         | array |  介绍了相关的见解的单个跃点数的一个或多个对象。   |
-| PercentChange            | 字符串 |  指标跨整个客户群的销售量更改百分比。  |
-| 具有           | 字符串 |  指标当前维度中所述的名称。 示例包括**事件类型**、**市场**、 **DeviceType**，以及**PackageVersion**。   |
-| DimensionValue              | 字符串 | 在当前维度中描述的指标的值。 例如，如果**维度**， **EventType** **DimensionValue**可能**崩溃**或**挂起**。   |
-| FactValue     | 字符串 | 绝对的度量值相关的见解检测到的日期。  |
+| SubDimensions         | array |  介绍相关的见解的单个跃点数的一个或多个对象。   |
+| PercentChange            | 字符串 |  指标跨整个客户群的销售量更改的百分比。  |
+| 维度           | 字符串 |  指标当前维度中所述的名称。 示例包括**EventType**、**市场**、 **DeviceType**，和**PackageVersion**。   |
+| DimensionValue              | 字符串 | 在当前维度中描述的度量值。 例如，如果**维度**， **EventType** **DimensionValue**可能**崩溃**或**挂起**。   |
+| FactValue     | 字符串 | 绝对的度量值上相关的见解的检测的日期。  |
 | Direction | 字符串 |  更改 （**正**或**负**） 的方向。   |
-| 日期              | 字符串 |  我们确定与当前相关的见解或当前维度相关的更改的日期。   |
+| 日期              | 字符串 |  我们在其标识与当前相关的见解或当前维度相关的更改的日期。   |
 
 ### <a name="response-example"></a>回复示例
 

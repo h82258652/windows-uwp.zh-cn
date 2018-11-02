@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871506"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928442"
 ---
 # <a name="improve-garbage-collection-performance"></a>提高垃圾回收性能
 
@@ -44,7 +44,7 @@ ms.locfileid: "5871506"
 
 可以通过调用 [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx) 来引发某一代的垃圾回收，其中 n 是要回收的代（0、1 或 2）。
 
-**注意**我们建议不要在你的应用都强制垃圾回收因为垃圾回收器使用许多启发式技术来确定执行回收的最佳时间且强制进行回收在许多情况下不必要的 cpu 消耗。 但是，如果你知道自己的应用中有大量不再使用的对象，并且你希望将此内存返回给系统，此时则适合强制进行垃圾回收。 例如，在游戏中，在某个加载序列结束时你可以引发回收，以在游戏开始之前释放内存。
+**注意**我们建议不要在应用中都强制垃圾回收因为垃圾回收器使用许多启发式技术来确定执行回收的最佳时间且强制进行回收在许多情况下不必要的 cpu 消耗。 但是，如果你知道自己的应用中有大量不再使用的对象，并且你希望将此内存返回给系统，此时则适合强制进行垃圾回收。 例如，在游戏中，在某个加载序列结束时你可以引发回收，以在游戏开始之前释放内存。
  
 为了避免意外引发过多垃圾回收，可以将 [**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) 设置为 **Optimized**。 这会指导垃圾回收器仅在确定回收将足够富有成效，可证明其合理性时才启动回收。
 

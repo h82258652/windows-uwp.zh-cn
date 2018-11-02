@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864676"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929243"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -49,20 +49,20 @@ ms.locfileid: "5864676"
 
 **注意事项和建议**
 
-使用通过提供完整平台用户交互体验，包括选择和操作行为的 Windowsto 生成应用中的语言框架公开的内置控件。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
+使用内置控件通过提供完整平台用户交互体验，包括选择和操作行为的 Windowsto 生成应用中的语言框架公开。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
 
 使用标准 UWP 文本控件时，本主题中所述的选择行为和视觉对象不能自定义。
 
 **文本选择**
 
-如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windowsselection 行为。
+如果你的应用需要支持文本选择的自定义 UI，我们建议你遵循此处描述的 Windowsselection 行为。
 
 **可编辑的内容和不可编辑的内容**
 
 
 借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windowstouch 交互，计时的交互仅限于点按操作和手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应调整选择 UI、 反馈以及功能。
+Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应地调整选择 UI、 反馈以及功能。
 
 **可编辑的内容**
 

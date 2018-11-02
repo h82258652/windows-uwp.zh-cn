@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp, 链接, windows 应用商店协议, 链接到应用
 ms.localizationpriority: medium
 ms.openlocfilehash: d0d0a9fc862734611167e5118392126cb42687f2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870984"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930882"
 ---
 # <a name="link-to-your-app"></a>链接到你的应用
 
 
-你可以通过帮助客户发现你的应用链接到你的应用一览的 Microsoft 应用商店中。
+你可以通过帮助客户发现你的应用链接到你的应用的 Microsoft 应用商店中的一览。
 
 ## <a name="getting-the-link-to-your-apps-store-listing"></a>获取指向你的应用的应用商店一览的链接
 
@@ -29,9 +29,9 @@ ms.locfileid: "5870984"
 
 ## <a name="linking-to-your-apps-store-listing-with-the-microsoft-store-badge"></a>链接到你的应用具有的 Microsoft 应用商店锁屏提醒的应用商店一览
 
-你可以直接链接到具有自定义的锁屏提醒，以让客户知道你的应用是在 Microsoft Store 中的应用的一览。
+你可以直接链接到你的应用具有自定义的锁屏提醒，以让客户知道你的应用在 Microsoft Store 中的一览。
 
-若要创建锁屏提醒，请访问的[Microsoft 应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面。 需要具有 12 个字符的应用的**应用商店 ID**才能生成锁屏提醒和链接。 可以在**应用管理**部分的[应用标识](view-app-identity-details.md)页查找应用的**应用商店 ID**。
+若要创建锁屏提醒，请访问[的 Microsoft 应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面。 需要具有 12 个字符的应用的**应用商店 ID**才能生成锁屏提醒和链接。 可以在**应用管理**部分的[应用标识](view-app-identity-details.md)页查找应用的**应用商店 ID**。
 
 > [!NOTE]
 > 有关信息和要求相关的 Microsoft 应用商店锁屏提醒你使用，请参阅[应用营销指南](app-marketing-guidelines.md)。

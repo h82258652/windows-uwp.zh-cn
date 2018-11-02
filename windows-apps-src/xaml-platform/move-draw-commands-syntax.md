@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865917"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5932391"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移动和绘制命令语法
 
@@ -229,7 +229,7 @@ ms.locfileid: "5865917"
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>用于生成移动和绘制命令的设计工具
 
-在 Blend for Microsoft Visual Studio2015 中使用**触控笔**工具和其他绘图工具通常将生成[**路径**](/uwp/api/Windows.UI.Xaml.Shapes.Path)对象，与移动和绘制命令。
+使用 Blend for Microsoft Visual Studio2015 中的**笔**工具和其他绘图工具通常将生成一个[**路径**](/uwp/api/Windows.UI.Xaml.Shapes.Path)，具有对象移动和绘制命令。
 
 你可能在某些控件部件中看到现有移动和绘制命令数据，这些部件已在控件的 Windows 运行时 XAML 默认模板中定义。 例如，某些控件将已定义数据的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 用作移动和绘制命令。
 

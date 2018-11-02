@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7cb93c410f583884f75f21d9beda03db87c024f9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884918"
+ms.locfileid: "5931981"
 ---
 # <a name="handle-app-suspend"></a>处理应用暂停
 
@@ -141,7 +141,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) 对象上的 [**GetDeferral**](http://aka.ms/Kt66iv) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 对象上的 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法。
 
-延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。 若要扩展处于挂起状态使用[**ExtendedExecutionSession**时间](run-minimized-with-extended-execution.md)
+延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。 若要扩展正在挂起状态使用[**ExtendedExecutionSession**的时间](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
 > 为了提高 Windows8.1 中的系统响应，应用提供低优先级访问资源暂停时。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。

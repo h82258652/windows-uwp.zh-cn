@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888886"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5932815"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用模板和模式设置日期和时间格式
 
@@ -115,7 +115,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 是关于资源文件 (.resw) 中的可本地化资源的资源标识符。 对于默认语言是英语 （美国），这将设置为的值为"{0} |{1}"以及注释说明"{0}"的日期和"{1}"是指时间。 这样，翻译人员可以按需调整格式项。 例如，如果在某个语言或区域中将时间放在日期前面显得更自然，则他们可以更改项的顺序。 或者，他们也可以将“|”替换为其他分隔符。
+`CustomDateTimeFormatString` 是关于资源文件 (.resw) 中的可本地化资源的资源标识符。 对于默认语言是英语 （美国），这将设置为的值"{0} |{1}"以及注释说明"{0}"的日期和"{1}"是指时间。 这样，翻译人员可以按需调整格式项。 例如，如果在某个语言或区域中将时间放在日期前面显得更自然，则他们可以更改项的顺序。 或者，他们也可以将“|”替换为其他分隔符。
 
 实现此示例的另一种方法是查询这两个格式化程序的格式模式，将它们连接起来，然后从结果格式模式构建第三个格式化程序。
 

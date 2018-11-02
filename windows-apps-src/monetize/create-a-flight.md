@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: 57ad1847e8989cb6aed20024d1c13d36e154d834
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877554"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5933507"
 ---
 # <a name="create-a-package-flight"></a>创建软件包外部测试版
 

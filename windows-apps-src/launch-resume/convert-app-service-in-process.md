@@ -9,11 +9,11 @@ keywords: windows 10，uwp，应用服务
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: 272102f08b145c0681b0e036be4d41bc7c9ad9ff
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867505"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5927767"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>将应用服务转换为与其主机应用在同一个进程中运行
 
@@ -40,13 +40,13 @@ ms.locfileid: "5867505"
 >   </Applications>
 > ```
 
-删除`EntryPoint`属性`<Extension>`元素是现在[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)时调用应用服务将使用的入口点。
+删除`EntryPoint`属性`<Extension>`元素是现在[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)时调用应用服务后将使用的入口点。
 
 第二项更改是将服务逻辑从其单独的后台任务项目移动至可从 **OnBackgroundActivated()** 调用的方法。
 
 此时，应用程序可直接运行应用服务。 例如，在 App.xaml.cs 中：
 
-[!NOTE] 下面的代码是不同的示例 1 （进程外服务） 提供。 下面的代码仅用于说明目的提供，并且不应作为的示例 2 （进程内服务） 的一部分。  继续示例中的文章的过渡到示例 2 （进程内服务） 1 （进程外服务） 继续使用而不是下面说明的代码示例 1 提供的代码。
+[!NOTE] 下面的代码是不同于提供示例 1 （进程外服务）。 下面的代码仅用于图提供，并且不在的一部分示例 2 （进程内服务）。  若要继续示例中的文章的过渡 1 （进程外服务） 到示例 2 （进程内服务） 继续使用而不是下面说明的代码示例 1 提供的代码。
 
 ``` cs
 using Windows.ApplicationModel.AppService;

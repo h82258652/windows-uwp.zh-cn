@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 371fbed113af10c8e5b388a8f271d99df4b4c4e9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887735"
+ms.locfileid: "5926083"
 ---
 # <a name="download-analytics-reports"></a>下载分析报告
 
@@ -22,7 +22,7 @@ ms.locfileid: "5887735"
 
 查看分析报告时，将在每个可以下载数据的部分中看到一个箭头图标。 单击箭头以生成一个可下载的 .tsv 文件，可以在 Microsoft Excel 或其他支持制表符分隔值 (TSV) 文件的程序中打开该文件。
 
-通过在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，在左侧的导航菜单中展开**分析**，然后选择**下载的报告**，还可以下载你的所有应用，或特定应用，报告。 在**选择应用**下拉列表中，选择**所有应用**或特定应用。 选择希望下载的报告，然后选择所需的聚合级别和日期范围。 单击**下载报告**按钮以生成一个可下载的 .tsv 文件，可以在 Microsoft Excel 或其他支持制表符分隔值 (TSV) 文件的程序中打开该文件。
+通过在左侧的导航菜单中的[合作伙伴中心](https://partner.microsoft.com/dashboard)中，展开**分析**，然后选择**下载的报告**，还可以下载所有应用，或特定应用，报告。 在**选择应用**下拉列表中，选择**所有应用**或特定应用。 选择希望下载的报告，然后选择所需的聚合级别和日期范围。 单击**下载报告**按钮以生成一个可下载的 .tsv 文件，可以在 Microsoft Excel 或其他支持制表符分隔值 (TSV) 文件的程序中打开该文件。
 
 > [!NOTE]
 > 广告效果数据当前不通过**下载报告**页面提供。 若要下载此数据以供脱机使用，请导航到[广告效果报告](advertising-performance-report.md)并单击该页面上的箭头图标。 

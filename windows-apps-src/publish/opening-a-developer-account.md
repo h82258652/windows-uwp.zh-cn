@@ -2,22 +2,22 @@
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: 开设开发者帐户
-description: 下面是如何 Winodws 开发者帐户注册 Microsoft 应用商店和其他 Microsoft 计划在合作伙伴中心的概述。
+description: 下面是如何 Winodws 开发者帐户注册 Microsoft 应用商店和其他 Microsoft 计划，合作伙伴中心中的概述。
 ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b34bdfae8faf7fee2b2eae373483eb9e4dea1972
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864964"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5932661"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
-下面是概述了如何注册[合作伙伴中心](https://partner.microsoft.com/dashboard)中的 Windows 开发人员帐户。
+下面是如何注册[合作伙伴中心](https://partner.microsoft.com/dashboard)中的 Windows 开发人员帐户的概述。
 
 > [!NOTE]
 > 当你注册开发者帐户时，我们将使用你在联系人信息中提供的电子邮件地址，以发送与你的帐户相关的电子邮件通信。 有时，其中可能包括有关我们的计划的信息性电子邮件。 如果你通过单击[退出](http://go.microsoft.com/fwlink/p/?LinkId=533280)选择不接收这些信息电子邮件，则请注意，我们仍然会向你发送交易电子邮件（例如，为了让你知道你的应用已经通过认证，或付款已在路上）。 这些电子邮件是你的帐户的必要组成部分，除非关闭你的帐户，否则你将继续收到这些交易电子邮件。
@@ -57,15 +57,15 @@ ms.locfileid: "5864964"
 ## <a name="additional-guidelines-for-company-accounts"></a>有关公司帐户的其他指南
 
 > [!IMPORTANT]
-> 若要允许多位用户访问开发者帐户，我们建议使用 Azure Active Directory 将角色分配给个别用户 （而不是对 Microsoft 帐户的共享访问）。 每个用户则可以通过使用自己的单独登录到合作伙伴中心访问开发人员帐户的 Azure AD 凭据。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+> 若要允许多位用户访问开发者帐户，我们建议使用 Azure Active Directory 将角色分配给个别用户 （而不是对 Microsoft 帐户的共享访问）。 每个用户然后可以通过使用其个别登录到合作伙伴中心访问开发人员帐户的 Azure AD 凭据。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
 
 如果你将需要具有多个用户访问权限，通过使用打开它的 Microsoft 帐户 （而不是作为单个用户添加到帐户），以下指南的公司帐户可能会有所帮助：
 
--   创建使用尚未属于你或其他个人，如电子邮件地址的 Microsoft 帐户MyCompany_PartnerCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是在你的公司已经使用 Azure AD。 (如上所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
+-   创建使用尚未属于你或其他个人，如电子邮件地址的 Microsoft 帐户MyCompany_PartnerCenter@outlook.com。 不要使用在贵公司的域的电子邮件地址，尤其是在你的公司已经使用 Azure AD。 (如上文所述，你可以添加其他用户从你的公司的 Azure AD 更高版本。)
 -   将此 Microsoft 帐户的访问权限限制为尽可能少的用户。
--   设置公司电子邮件分发列表，其中包括每位需要访问开发人员帐户，并将添加到此电子邮件地址 [Microsoft 帐户关联的安全信息 [(https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如当新的安全信息添加到 t他帐户，或者从新设备的访问时）。
--   添加 Microsoft 帐户的安全信息的公司电话号码。 尝试使用无需分机并可供关键团队成员的数字。
--   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登录到贵公司的开发人员帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
+-   设置公司电子邮件分发列表，其中包括每位需要访问开发人员帐户，并将添加到此电子邮件地址 [Microsoft 帐户关联的安全信息 [(https://account.microsoft.com/security)。 此列表，以接收安全代码发送到此别名允许的所有员工。 如果设置分发列表不可行，你可以将个人的电子邮件地址添加到你的安全信息，但该电子邮件地址的所有者将是唯一的人可以访问和共享安全代码收到提示时 （例如，当将新的安全信息添加到 t他帐户，或者从新设备的访问时）。
+-   添加 Microsoft 帐户的安全信息的公司电话号码。 尝试使用大量不需要扩展，可供关键团队成员。
+-   一般情况下，让开发人员使用[受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登录到贵公司的开发者帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。 每个帐户每周可生成的代码数量有限。
 -   如果需要允许从不受信任的电脑访问帐户，请将开发人员访问人数上限限制为五人。 理想情况下，这些开发人员应从共享相同地理和网络位置的计算机访问该帐户。
 -   请经常在 https://account.microsoft.com/security 上查看公司的安全信息以确保它都是当前信息。
 
@@ -76,7 +76,7 @@ ms.locfileid: "5864964"
 
 Microsoft 帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。 你可以通过转到 https://account.microsoft.com/security 并使用 Microsoft 帐户登录来管理你的安全信息。 有关详细信息，请参阅[安全信息和安全代码](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
 
-在你登录到合作伙伴中心使用 Microsoft 帐户，系统可能会要求你验证身份通过发送安全代码，你必须将其提供来完成登录过程。 我们建议指定为*受信任的设备*经常使用的电脑。 当你从受信任的设备登录时，通常不会提示你的代码，尽管可能偶尔系统提示你在特定情况下，或者如果你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+在你登录到合作伙伴中心使用 Microsoft 帐户，系统可能会要求你验证身份，通过将发送安全代码，你必须将其提供来完成登录过程。 我们建议指定为*受信任的设备*经常使用的电脑。 当你从受信任的设备登录时，通常不会提示你的代码中，尽管可能偶尔系统提示你在特定情况下，或者如果你未登录该设备中很长时间。 有关详细信息，请参阅[添加到你的 Microsoft 帐户受信任的设备](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
 
 
 ## <a name="closing-your-account"></a>关闭你的帐户

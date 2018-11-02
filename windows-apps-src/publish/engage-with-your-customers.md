@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f266538c42b83da9135079f51a3f935f459020
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878248"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930832"
 ---
 # <a name="engage-with-your-customers"></a>与客户互动
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)包含功能可帮助你的客户参与度和满意度。 了解如何使用通知、 定向优惠、 回复评论和反馈的详细信息。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)包含功能可帮助你客户参与度和满意度。 了解如何使用通知、 定向优惠、 回复评论和反馈，等等。
 
 -   [创建客户组](create-customer-groups.md)
 -   [回复客户评论](respond-to-customer-reviews.md)

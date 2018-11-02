@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 69aae85f4e0bb01833114ae5b2cbfab45e9dd84d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861294"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5933036"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 运行时 8.x 到 UWP 案例研究： QuizGame 示例应用
 
@@ -22,9 +22,9 @@ ms.locfileid: "5861294"
 
 本主题介绍运行对等测验游戏 WinRT 8.1 示例应用移植到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。
 
-通用 8.1 应用是一种生成两个版本的应用在同一个应用： 一个应用包用于 Windows8.1，以及适用于 Windows Phone 8.1 的不同应用包。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows8.1 应用包可用作该主机测验游戏会话，而 Windows Phone 8.1 应用包到主机的客户端的角色。 测验游戏会话的两个部分通过对等网络进行通信。
+通用 8.1 应用是生成同一应用的两个版本： Windows8.1，一个应用包和适用于 Windows Phone 8.1 的不同应用包。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows8.1 应用包可用作该主机对于测验游戏会话，而 Windows Phone 8.1 应用包到主机的客户端的角色。 测验游戏会话的两个部分通过对等网络进行通信。
 
-针对电脑和手机定制两个部分，每个部分都很有意义。 但是，如果你刚好可以在你选择的任何设备上运行主机和客户端不是更好吗？ 在此情况下研究中，我们将移植到 windows 10，它们将其中分别生成到单个应用包中的用户可以安装到种类广泛的设备上的两个应用。
+针对电脑和手机定制两个部分，每个部分都很有意义。 但是，如果你刚好可以在你选择的任何设备上运行主机和客户端不是更好吗？ 在此情况下研究，我们将移植到 windows 10，它们将其中分别生成到单个应用包中，用户可以安装到种类广泛的设备上的两个应用。
 
 该应用使用可充分利用视图和视图模型的模式。 由于此明确的分离，此应用的移植过程如你所将看到的一样，非常直观简单。
 
@@ -92,7 +92,7 @@ QuizGame 具有以下部分。
 
 **QuizGame10 解决方案**
 
--   创建一个新的解决方案 (**新建项目** &gt; **其他项目类型** &gt; **Visual Studio 解决方案**) 并将其命名为 QuizGame10。
+-   创建新的解决方案 (**新建项目** &gt; **其他项目类型** &gt; **Visual Studio 解决方案**) 并将其命名为 QuizGame10。
 
 **P2PHelper**
 
@@ -108,9 +108,9 @@ QuizGame 具有以下部分。
 
 **QuizGameHost**
 
--   创建一个新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白应用程序**) 并将其命名为 QuizGameHost。
+-   创建新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白应用程序**) 并将其命名为 QuizGameHost。
 -   添加对 P2PHelper 的引用 (**添加引用** &gt; **项目** &gt; **解决方案** &gt; **P2PHelper**)。
--   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**添加** &gt; **现有项**并向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
+-   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**添加** &gt; **现有项目**，向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
 -   将 MainPage.xaml 从 \\QuizGame.Windows\\ 复制到 \\QuizGameHost\\ ，并将命名空间更改为 QuizGameHost。
 -   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameHost\\，并将命名空间更改为 QuizGameHost。
 -   我们会将该版本保留在新项目中，并只进行一个定向更改以支持本地测试模式，而不是覆盖 app.xaml.cs。 在 app.xaml.cs 中，将此行代码
@@ -135,9 +135,9 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 **QuizGameClient**
 
--   创建一个新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白应用程序**) 并将其命名为 QuizGameClient。
+-   创建新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白应用程序**) 并将其命名为 QuizGameClient。
 -   添加对 P2PHelper 的引用 (**添加引用** &gt; **项目** &gt; **解决方案** &gt; **P2PHelper**)。
--   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**添加** &gt; **现有项**并向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
+-   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**添加** &gt; **现有项目**，向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
 -   将 MainPage.xaml 从 \\QuizGame.WindowsPhone\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
 -   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
 -   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
@@ -146,7 +146,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="adaptive-ui"></a>自适应 UI
 
-当应用在宽窗口 （这是仅在带有大屏幕的设备上） 中运行时为 QuizGameHost windows 10 应用看起来很美观。 但是，当应用的窗口较窄时（会出现在小型设备上，但也可能出现在大型设备上），UI 会因过分拥挤而无法阅读。
+当应用在宽窗口 （只可能具有大屏幕的设备上） 运行时为 QuizGameHost windows 10 应用看起来很美观。 但是，当应用的窗口较窄时（会出现在小型设备上，但也可能出现在大型设备上），UI 会因过分拥挤而无法阅读。
 
 我们可以使用自适应视觉状态管理器功能修复此问题，正如在我们在[案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 中所说明的。 首先，在视觉元素上设置属性，以便在默认情况下以较窄的状态设置 UI 布局。 所有这些更改都发生在 \\View\\HostView.xaml 中。
 
@@ -156,7 +156,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 -   在由注释 `<!-- Content -->` 指示的 **Grid** 上，设置 `x:Name="contentGrid"` 和 `Margin="-18,12,0,0"`。
 -   在紧挨在注释 `<!-- Options -->` 上方的 **TextBlock** 上，设置 `Margin="0,0,0,24"`。
 -   在默认 **TextBlock** 样式（文件中的第一个资源）中，将 **FontSize** 资源库的值更改为“15”。
--   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些是更灵活大小比我们为 Windows8.1 应用使用的"30"。
+-   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些是更灵活的大小比我们为 Windows8.1 应用使用的"30"。
 -   最后，将相应的视觉状态管理器标记添加到根 **Grid**。
 
 ```xml
@@ -179,7 +179,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ## <a name="universal-styling"></a>通用样式设置
 
 
-你将注意到在 windows 10，按钮不具有其模板中填充相同的触摸目标。 可以通过两个小更改修复该问题。 第一，将此标记添加到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
+你将注意到在 windows 10，按钮不具有同一面向触摸填充其模板中。 可以通过两个小更改修复该问题。 第一，将此标记添加到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
 
 ```xml
 <Style TargetType="Button">

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，分析，报告，仪表板、 应用、 数据指标
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886629"
+ms.locfileid: "5928726"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 
@@ -66,7 +66,7 @@ ms.locfileid: "5886629"
 * [了解如何使用适用于 Power BI 的 Windows 开发人员中心内容包连接到分析数据](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> 若要连接到适用于 Power BI 的 Windows 开发人员中心内容包，我们建议你指定从 Azure AD 目录与你的合作伙伴中心帐户相关联的凭据。 如果你使用 Microsoft 帐户凭据，Power BI 中的分析数据不会自动刷新，而是需要登录到 Power BI 才能刷新数据。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以[免费获取它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 有关关联设置的详细信息，请参阅[Azure Active Directory 相关联与合作伙伴中心帐户](associate-azure-ad-with-dev-center.md)。
+> 若要连接到适用于 Power BI 的 Windows 开发人员中心内容包，我们建议你指定从 Azure AD 目录与你的合作伙伴中心帐户相关联的凭据。 如果你使用 Microsoft 帐户凭据，Power BI 中的分析数据不会自动刷新，而是需要登录到 Power BI 才能刷新数据。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以[免费获取它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 有关关联设置的详细信息，请参阅[Azure Active Directory 相关联与你的合作伙伴中心帐户](associate-azure-ad-with-dev-center.md)。
 
 ### <a name="dev-center-app"></a>开发人员中心应用
 

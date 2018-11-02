@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10，uwp，程序包上, 传，程序包上传
 ms.localizationpriority: medium
 ms.openlocfilehash: f02ca7c43443289ef9d2d0562be25f277068685b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872636"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5927091"
 ---
 # <a name="upload-app-packages"></a>上传应用包
 
-**程序包**页面是其中上传所有的应用，你要提交的程序包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload 和/或.appxbundle）。 你可以上传在此页上，在同一应用的所有程序包，并且当客户下载应用时，应用商店将自动向每个客户提供最适合他们的设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
+**程序包**页面是上载你要提交的应用包文件 （.msix、.msixupload、.msixbundle、.appx、.appxupload 和/或.appxbundle） 的所有位置。 你可以上传在此页上，在同一应用的所有程序包，并且当客户下载应用时，应用商店将自动向每位客户提供最适合他们的设备的程序包。 上传程序包后，将看到一个表格，指示将以排名顺序[向特定 Windows 10 设备系列（如果适用，也包含早期 OS 版本）提供哪些程序包](#device-family-availability)。
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
@@ -34,7 +34,7 @@ ms.locfileid: "5872636"
 
 如果你已为应用创建了任何[软件包外部测试版](package-flights.md)，你将看到一个下拉列表，带有从其中一个软件包外部测试版中复制程序包的选项。 选择具有你想要引入的程序包的软件包外部测试版。 然后，即可选择要包含在此提交中的任何或所有程序包。
 
-如果验证它时检测到的包的错误，我们将显示一条消息，让你知道什么是错误。 你将需要删除该程序包，修复该问题，然后尝试重新上载。 你还可能会看到一条警告，告知你可能导致错误的问题，但不会阻止你继续提交。
+如果验证它时检测到的包的错误，我们将显示一条消息，让你知道什么是错误。 你将需要删除该程序包，修复该问题，然后尝试重新上载它。 你还可能会看到一条警告，告知你可能导致错误的问题，但不会阻止你继续提交。
 
 
 ## <a name="device-family-availability"></a>设备系列可用性

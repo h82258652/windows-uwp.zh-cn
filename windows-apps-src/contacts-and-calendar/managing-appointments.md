@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 约会, 日历
 ms.localizationpriority: medium
 ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5862374"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928101"
 ---
 # <a name="manage-appointments"></a>管理约会
 

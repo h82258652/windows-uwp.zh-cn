@@ -10,17 +10,17 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885173"
+ms.locfileid: "5933006"
 ---
 # <a name="settings-page-dev-home"></a>设置页面 （开发人员主页）
    
   
 开发人员主页**设置**页面可访问开发控制台的各种设置。   
- ![设置页面的开发人员主页](images/devhome_settings.png)   
+ ![开发人员主页的设置页面](images/devhome_settings.png)   
   
 **设置**页面包含以下窗格：   
  
@@ -48,7 +48,7 @@ ms.locfileid: "5885173"
 ## <a name="os-recovery-update-settings"></a>操作系统恢复更新设置  
    
   
-**操作系统恢复更新设置**窗格中配置控制台的自动更新设置。 请注意，更改这些设置可能需要 24 小时才能生效。   
+**操作系统恢复更新设置**窗格配置控制台的自动更新设置。 请注意，更改这些设置可能需要 24 小时才能生效。   
   
 <a id="ID4EYB"></a>
 
@@ -57,7 +57,7 @@ ms.locfileid: "5885173"
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-在**Visual Studio**窗格用于将控制台与 Visual Studio 配对。 你还可以删除所有配对的 Visual Studio 实例。   
+用于将控制台与 Visual Studio 配对**Visual Studio**窗格。 你还可以删除所有配对的 Visual Studio 实例。   
   
 <a id="ID4ECC"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "5885173"
 ## <a name="debug-settings"></a>调试设置  
    
   
-**调试设置**窗格中用于查看和切换常见调试设置。   
+**调试设置**窗格用于查看和切换常见调试设置。   
   
 <a id="ID4EMC"></a>
 
@@ -84,13 +84,13 @@ ms.locfileid: "5885173"
 ## <a name="default-home-experience"></a>默认主页体验  
    
   
-**默认主页体验**窗格确定主机启动时是否显示零售主页屏幕或[主机 （开发人员主页） 上的开发人员主页](dev-home.md)屏幕。   
+**默认主页体验**窗格确定控制台启动时是否显示零售主页屏幕或[主机 （开发人员主页） 上的开发人员主页](dev-home.md)屏幕。   
   
 <a id="ID4EJD"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

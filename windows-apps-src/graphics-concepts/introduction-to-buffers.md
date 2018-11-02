@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 14e78aec9afa361b2627d62d92f0ee7d7ab0565b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885296"
+ms.locfileid: "5932159"
 ---
 # <a name="introduction-to-buffers"></a>缓冲区简介
 
@@ -23,7 +23,7 @@ ms.locfileid: "5885296"
 
 缓冲区元素由 1 到 4 个组件组成。 缓冲区元素可以包含打包数据值（如 R8G8B8A8 表面值）、单个 8 位整数或四个 32 位浮点值。
 
-缓冲区是作为非结构化资源创建的。 由于它是非结构化，一个缓冲区不能包含任何 mipmap 级别不能获取筛选读取时，它无法进行多重采样。
+缓冲区是作为非结构化资源创建的。 由于它是非结构化，缓冲区不能包含任何 mipmap 级别不能获取筛选读取时，它无法进行多重采样。
 
 ## <a name="span-idbuffertypesspanspan-idbuffertypesspanspan-idbuffertypesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>缓冲区类型
 
@@ -53,7 +53,7 @@ ms.locfileid: "5885296"
 -   Offset - 缓冲区起点到第一个顶点数据之间的字节数。
 -   BaseVertexLocation - 从偏移到相应的绘图调用所使用的第一个顶点之间的字节数。
 
-在创建顶点缓冲区之前，你需要定义其布局。 创建输入布局对象后，你可以将它绑定到[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)。
+在创建顶点缓冲区之前，你需要定义其布局。 创建输入布局对象后，你可以将其绑定到[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)。
 
 ### <a name="span-idindexbufferspanspan-idindexbufferspanspan-idindexbufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>索引缓冲区
 
@@ -64,24 +64,24 @@ ms.locfileid: "5885296"
 使用以下参数查找存储在索引缓冲区中的连续索引：
 
 -   偏移-从索引缓冲区的基本地址之间的字节数。
--   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 在开始屏幕位置是指要呈现的第一个索引。
+-   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 开始屏幕位置表示要呈现的第一个索引。
 -   IndexCount - 要呈现的索引的数量。
 
-开始菜单的索引缓冲区 = 索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation \ * ElementSize （字节）;
+开始菜单索引缓冲区的索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation = \ * ElementSize （字节）;
 
 在此计算，ElementSize 是每个索引缓冲区元素大小，这是两个或 4 个字节。
 
 ### <a name="span-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshader-constant-bufferspanconstant-buffer"></a><span id="Shader_Constant_Buffer"></span><span id="shader_constant_buffer"></span><span id="SHADER_CONSTANT_BUFFER"></span><span id="shader-constant-buffer"></span>常量缓冲区
 
-常量缓冲区使你能够高效地提供给管道的着色器常量数据。 你可以使用常量缓冲区存储流输出阶段的结果。 从概念上讲，常量缓冲区看起来就像单元素顶点缓冲区中，如下图所示。
+常量缓冲区允许你能够高效地提供给管道的着色器常量数据。 你可以使用常量缓冲区存储流输出阶段的结果。 从概念上讲，常量缓冲区看起来就像单元素顶点缓冲区中，如下图所示。
 
 ![着色器-常量缓冲区的图示](images/d3d10-shader-resource-buffer.png)
 
 每个元素存储 1 到 4 个组件常量（由所存储数据的格式决定）。
 
-常量缓冲区仅可使用一个绑定标志，它不能结合使用任何其他绑定标志。
+常量缓冲区仅可使用一个绑定标志，但这不能与任何其他绑定标志结合。
 
-若要从着色器读取的着色器-常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
+若要从着色器中读取的着色器-常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

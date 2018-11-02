@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a398b621ff309af8c6f8252613d3ea106d96485
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886258"
+ms.locfileid: "5925606"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
 
@@ -47,7 +47,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 可以在 Windows 8.1 或更高版本上开发和编译 UWP 应用，但需要运行 Windows 10。 如果你要在 Windows 8.1 电脑上开发 UWP 应用，你可以远程调试在另一台 Windows 10 设备上运行的 UWP 应用，前提是主机和目标计算机在同一个 LAN 上。 若要执行此操作，请在两台计算机上下载和安装 [Visual Studio 远程工具](https://www.visualstudio.com/downloads/)。 已安装的版本必须与你已安装的现有 Visual Studio 版本匹配，并且你选择的体系结构（x86、x64）还必须与你的目标应用的体系结构匹配。   
 
 ## <a name="package-layout"></a>程序包布局
-截至 Visual Studio 2015 Update 3，我们添加了适用于开发人员来指定他们的 UWP 应用的布局路径的选项。 当你生成应用时，这将确定程序包布局将复制到磁盘上的位置。 默认情况下，此属性相对于项目的根目录设置。 如果未修改此属性，行为将与以前版本的 Visual Studio 保持相同。
+从 Visual Studio 2015 更新 3 中，我们添加了开发人员可以指定布局路径为其 UWP 应用的选项。 当你生成应用时，这将确定程序包布局将复制到磁盘上的位置。 默认情况下，此属性相对于项目的根目录设置。 如果未修改此属性，行为将与以前版本的 Visual Studio 保持相同。
 
 可以在项目的 **Debug** 属性中设置此属性。
 
@@ -67,7 +67,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 ![“远程连接”对话框](images/debug-remote-connections.png)
 
-若要返回到此对话框，可以打开项目属性，并转到**调试**选项卡。从该处，选择**查找**旁边**远程计算机：**
+若要返回到此对话框，你可以打开项目属性，并转到**调试**选项卡。从该处，选择**查找**旁边**远程计算机：**
 
 ![“调试”选项卡](images/debug-remote-machine-config.png)
 
@@ -75,7 +75,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 ### <a name="c-and-javascript"></a>C++ 和 JavaScript
 
-若要指定为 c + + 或 JavaScriptUWP 应用中的远程计算机目标：
+若要指定为 c + + 或 JavaScriptUWP 的应用中的远程计算机目标：
 
 1. 在“解决方案资源管理器”**** 中，右键打击项目，然后单击“属性”****。
 2. 转到“调试”**** 设置，然后在“要启动的调试器”**** 下选择“远程计算机”****。
@@ -134,7 +134,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 ### <a name="requirements"></a>要求
 若要利用高级远程部署选项，你必须满足以下要求：
-* Visual Studio 2015 更新 3 或一些更高版本 Visual Studio 与 Windows 10 Tools 1.4.1 一起安装或更高版本 （其中包括 Windows 10 周年更新 SDK） 我们建议你使用最新版本的 Visual Studio 更新以确保你获取所有最新的开发和安全功能。
+* Visual Studio 2015 更新 3 或一些更高版本 Visual Studio 与 Windows 10 Tools 1.4.1 一起安装或更高版本 （其中包括 Windows 10 周年更新 SDK） 我们建议你使用 Visual Studio 的最新版本更新以确保你获取所有最新的开发和安全功能。
 * 面向 Windows 10 周年更新 Xbox 远程设备或 Windows 10 创意者更新电脑 
 * 使用通用身份验证模式
 
@@ -179,7 +179,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 > [!NOTE]
 > **从网络注册布局**当前在运行 Windows 10 周年更新的 Xbox 上和运行 Windows 10 创意者更新的电脑上受支持。
 
-在远程设备上，布局注册到以下默认位置，具体取决于设备系列： `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` -此挂载到**程序包注册路径**电脑不使用挂载并改为直接注册**程序包注册路径**
+在远程设备上，布局注册到以下默认位置，具体取决于设备系列： `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` -这是挂载到**程序包注册路径**电脑不使用挂载并改为直接注册**程序包注册路径**
 
 
 ## <a name="debugging-options"></a>调试选项
@@ -192,7 +192,7 @@ Microsoft Visual Studio 允许你部署和调试通用 Windows 平台 (UWP) 应�
 
 - **允许本地网络环回**
 
-  出于安全原因，以标准方式安装的 UWP 应用不允许对安装了它的设备进行网络调用。 默认情况下，Visual Studio 部署针对已部署应用从此规则创建豁免。 此豁免允许你在单台计算机上测试通信过程。 应用提交到 Microsoft Store，你需要测试你的应用不具有豁免。
+  出于安全原因，以标准方式安装的 UWP 应用不允许对安装了它的设备进行网络调用。 默认情况下，Visual Studio 部署针对已部署应用从此规则创建豁免。 此豁免允许你在单台计算机上测试通信过程。 应用提交到 Microsoft Store 之前，你应测试你的应用不具有豁免。
 
   若要从应用中删除网络环回豁免：
 

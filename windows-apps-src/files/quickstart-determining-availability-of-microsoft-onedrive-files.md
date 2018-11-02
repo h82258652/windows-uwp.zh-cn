@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864606"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928141"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>确定 Microsoft OneDrive 文件的可用性
 

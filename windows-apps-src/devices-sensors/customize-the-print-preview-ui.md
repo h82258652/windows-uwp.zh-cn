@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873974"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5933099"
 ---
 # <a name="customize-the-print-preview-ui"></a>自定义打印预览 UI
 
@@ -98,7 +98,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要提示**调用[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 将删除所有打印选项从在打印预览 UI，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
+**重要**调用[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 将删除所有打印选项从在打印预览 UI，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
 
 ### <a name="specify-default-options"></a>指定默认选项
 

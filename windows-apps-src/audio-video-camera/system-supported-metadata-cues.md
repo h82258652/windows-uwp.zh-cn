@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 元数据, 提示, 语言, 章节
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885401"
+ms.locfileid: "5930615"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>系统支持的计时元数据提示
 本文介绍如何利用可以在媒体文件或流中嵌入的多种格式的计时元数据。 UWP 应用可以注册在播放过程中每当遇到这些元数据提示时由媒体管道引发的事件。 通过使用 [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) 类，应用可以实现自己的自定义元数据提示，但是本文重点介绍由媒体管道自动检测的几种元数据标准，包括：

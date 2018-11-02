@@ -14,11 +14,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887081"
+ms.locfileid: "5929516"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -377,7 +377,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-**注意**： [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)样式不具有[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)支持的所有文本渐变样式，主要是因为**RichTextBlock**的基于块的文档对象模型使在个别文本上设置属性元素。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+**注意**： [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)样式不具有[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)的作用的所有文本渐变样式，主要是因为**RichTextBlock**的基于块的文档对象模型使在个别文本上设置属性元素。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
 
 ## <a name="miscellaneous-named-styles"></a>其他命名样式
 

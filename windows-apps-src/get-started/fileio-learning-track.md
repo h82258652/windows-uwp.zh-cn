@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.openlocfilehash: 02ac4d3f157343182097e67dc8825dde940302c3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869521"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928812"
 ---
 # <a name="work-with-files"></a>处理文件
 
@@ -62,7 +62,7 @@ await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entr
 
 ## <a name="read-text-from-a-file"></a>从文件读取文本
 
-与写入文件相同，读取文件也是从指定文件的位置开始。 我们将使用与上述示例使用的相同位置。 然后我们将使用**FileIO**类读取其内容。
+与写入文件相同，读取文件也是从指定文件的位置开始。 我们将使用与上述示例使用的相同位置。 然后，我们将使用**FileIO**类以读取其内容。
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

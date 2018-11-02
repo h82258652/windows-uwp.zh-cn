@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 促销, 推广, 特色, 展示, 应用商店
 ms.localizationpriority: medium
 ms.openlocfilehash: 43970ce024408032f0e2e9891eaae34efa68e014
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865014"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5932996"
 ---
 # <a name="make-your-app-easier-to-promote"></a>使你的应用更易于推广
 
@@ -29,7 +29,7 @@ Microsoft Store 中展示了各种应用，按类别或主题分组。 好的应
 
     在使应用具有特色时，Microsoft Store 可能会在各种布局中使用你的[应用屏幕截图和图像](app-screenshots-and-images.md)。 请确保设计代表你的应用的出色屏幕截图，并确保第一张屏幕截图特别具有代表性和吸引力。 可以提供不同的屏幕截图，以展示应用在其支持的每种设备类型上的外观。
 
-    若要最大化应用在 Microsoft Store 中获得特别推荐的机会，请在 Microsoft Store 一览的**应用商店徽标**和**其他插图资源**部分提供所有适用图像。 **9:16 海报插图 （720 x 1080 或 1440 x 2160 像素）** 和**16:9 超级人物插图 （1920 x 1080 或 3840 x 2160 像素）** 图像是尤为重要。 如果你的应用支持 Xbox 和/或全息设备系列，我们建议另外为这些设备系列提供所有适用图像。 更多详细信息和指南，请参阅[应用屏幕截图、图像和预告片](app-screenshots-and-images.md)。
+    若要最大化应用在 Microsoft Store 中获得特别推荐的机会，请在 Microsoft Store 一览的**应用商店徽标**和**其他插图资源**部分提供所有适用图像。 **9:16 海报插图 （720 x 1080 或 1440 x 2160 像素）** **16:9 超级人物插图 （1920 x 1080 或 3840 x 2160 像素）** 图像并且尤为重要。 如果你的应用支持 Xbox 和/或全息设备系列，我们建议另外为这些设备系列提供所有适用图像。 更多详细信息和指南，请参阅[应用屏幕截图、图像和预告片](app-screenshots-and-images.md)。
 
 -   **只为应用生成一个版本，而不生成一个免费版本和另外一个付费版本**
 
