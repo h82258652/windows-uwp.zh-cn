@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 加载项转换, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940263"
+ms.locfileid: "5974671"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>通过通道获取加载项转换
 
@@ -21,7 +21,7 @@ ms.locfileid: "5940263"
 * *转换*是指客户（使用 Microsoft 帐户登录）最近获取了你的加载项应用许可证（无论你是否收费）。
 * *通道*是客户用来访问你的应用的列表页面的方法（例如，通过应用商店或[自定义应用推广活动](../publish/create-a-custom-app-promotion-campaign.md)）。
 
-在 Windows 开发人员中心仪表板的[加载项购置报告](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id)中也提供了此信息。
+此信息也是在合作伙伴中心中的[加载项购置报告](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

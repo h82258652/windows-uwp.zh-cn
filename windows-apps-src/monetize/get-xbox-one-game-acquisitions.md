@@ -8,16 +8,16 @@ ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox One 游戏购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ca46903e581922cc571a854d9fa110fa261ece
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941027"
+ms.locfileid: "5976588"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>获取 Xbox One 游戏购置
 
-在 Microsoft Store 分析 API 中使用此方法来获取通过 Xbox 开发人员门户 (XDP) 引入并在 XDP 分析开发人员中心仪表板中提供的某个 Xbox One 游戏的聚合购置数据（JSON 格式）。
+使用 Microsoft Store 分析 API 中获取的聚合购置数据采用 JSON 格式的 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析仪表板中的此方法。
 
 ## <a name="prerequisites"></a>先决条件
 

@@ -7,16 +7,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b26f36d7fe2dc553e211ae48f7bd66651c5827
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 024c903ea43d9fabc90b2f6b7891f6de4e92b1d5
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931603"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5976097"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的堆栈跟踪
 
-在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的错误堆栈跟踪。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。 还可以在 Windows 开发人员中心仪表板的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中获取堆栈跟踪。
+在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的错误堆栈跟踪。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。 堆栈跟踪还可以在合作伙伴中心中的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)。
 
 在可以使用此方法之前，必须首先使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件 ID 哈希。
 
@@ -50,7 +50,7 @@ ms.locfileid: "5931603"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | string | 要为其获取堆栈跟踪的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 |  是  |
+| applicationId | string | 要为其获取堆栈跟踪的桌面应用程序的产品 ID。 若要获取桌面应用程序的产品 ID，请打开 （如**运行状况报告**） 的任何[桌面应用程序在合作伙伴中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)，并从 URL 检索产品 ID。 |  是  |
 | cabIdHash | string | 获取与要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID 哈希。 要获取此值，请使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索应用程序中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
 
  

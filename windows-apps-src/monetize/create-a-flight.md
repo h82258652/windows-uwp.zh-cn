@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: 在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建一个软件包外部测试版。
+description: 在 Microsoft Store 提交 API 中使用此方法创建软件包外部测试，为注册到你的合作伙伴中心帐户的应用。
 title: 创建软件包外部测试版
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 57ad1847e8989cb6aed20024d1c13d36e154d834
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933507"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5977557"
 ---
 # <a name="create-a-package-flight"></a>创建软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建一个软件包外部测试版。
+在 Microsoft Store 提交 API 中使用此方法创建软件包外部测试，为注册到你的合作伙伴中心帐户的应用。
 
 > [!NOTE]
 > 此方法无需任何提交即可创建软件包外部测试版。 若要创建软件包外部测试版的提交，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)中的方法。
@@ -100,7 +100,7 @@ Content-Type: application/json
 
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | 字符串  | 软件包外部测试版的 ID。 此值由开发人员中心提供。  |
+| flightId            | 字符串  | 软件包外部测试版的 ID。 此值由合作伙伴中心提供。  |
 | friendlyName           | 字符串  | 软件包外部测试版的名称，如请求中所指定。   |  
 | groupIds           | 数组  | 包含与软件包外部测试版关联的外部测试版组 ID 的字符串数组，如请求中所指定。 有关外部测试版组的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
 | rankHigherThan           | 字符串  | 排名紧跟在当前软件包外部测试版之后的软件包外部测试版的友好名称，如请求中所指定。 有关排名的外部测试版组的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
@@ -113,7 +113,7 @@ Content-Type: application/json
 | 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 请求无效。 |
-| 409  | 由于应用的当前状态，或者应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，所以无法创建软件包外部测试版。 |   
+| 409  | 由于其当前状态下无法创建软件包外部测试版，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

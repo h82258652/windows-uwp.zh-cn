@@ -7,16 +7,16 @@ ms.date: 03/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c69e9697b75a5afa1eaf33ef2706404555ab6ff
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f9dcd76767662b5e40f587d7ac32ffd7d94a6053
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935550"
+ms.locfileid: "5975319"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>下载桌面应用程序中错误的 CAB 文件
 
-在 Microsoft Store 分析 API 使用此方法，可下载与已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序特定错误关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 还可以在 Windows 开发人员中心仪表板的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中下载 CAB 文件。
+在 Microsoft Store 分析 API 使用此方法，可下载与已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序特定错误关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 下载 CAB 文件还可以在合作伙伴中心中的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)。
 
 开始使用此方法之前，必须先使用[获取桌面应用程序中错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索你想下载的 CAB 文件的 ID 哈希。
 
@@ -50,7 +50,7 @@ ms.locfileid: "5935550"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | string | 要下载 CAB 文件的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 |  是  |
+| applicationId | string | 要下载 CAB 文件的桌面应用程序的产品 ID。 若要获取桌面应用程序的产品 ID，请打开任何[合作伙伴中心分析报告的桌面应用程序](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**），并从 URL 检索产品 ID。 |  是  |
 | cabIdHash | string | 想要下载的 CAB 文件的唯一 ID 哈希。 要获取此值，请使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索应用程序中特定错误的详细信息，并使用该方法的响应正文中的 **cabIdHash** 值。 |  是  |
 
 

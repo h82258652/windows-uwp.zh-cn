@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b89cad4c299f7326d0bb7d9ea4b8c6685f70f26c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933109"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973702"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -35,7 +35,7 @@ UWP 应用的订阅加载项支持以下功能：
 
 若要在你的应用中支持购买订阅加载项，请执行以下步骤。
 
-1. 在开发人员中心仪表板中为你的订阅[创建加载项提交](../publish/add-on-submissions.md)，并发布此提交。 在你执行加载项提交流程时，请密切注意以下属性：
+1. 为你的订阅在合作伙伴中心中[创建加载项提交](../publish/add-on-submissions.md)并发布此提交。 在你执行加载项提交流程时，请密切注意以下属性：
 
     * [产品类型](../publish/set-your-add-on-product-id.md#product-type)：确保选择**订阅**。
 
@@ -70,8 +70,8 @@ UWP 应用的订阅加载项支持以下功能：
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到 Microsoft Store 中。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
-* 你已经在开发人员中心仪表板中[为该应用创建了一个订阅加载项](../publish/add-on-submissions.md)。
+* 你有合作伙伴中心中的[创建应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)并将此应用在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你可以在合作伙伴中心中的[创建订阅加载项的应用](../publish/add-on-submissions.md)。
 
 这些示例中的代码假设：
 * 此代码文件包含对 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间的 **using** 语句。

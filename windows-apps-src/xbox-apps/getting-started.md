@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b45386d93d37d00b8448a4f4a3548be6de7f685b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5918828"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5975850"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One 上的 UWP 应用开发入门
 
@@ -33,7 +33,7 @@ ms.locfileid: "5918828"
 
 1.  安装 Visual Studio 2015 Update 3 或 Visual Studio 2017。
 
-    如果你要安装 Visual Studio 2015 Update 3，请确保选择**自定义**安装，然后选择**通用 Windows 应用开发工具**复选框-它不是默认安装的一部分。 如果你是 C++ 开发人员，确保选择“自定义安装”****，然后选择“C++”****。
+    如果你要安装 Visual Studio 2015 Update 3，请确保你选择**自定义**安装，然后选择**通用 Windows 应用开发工具**复选框-它不是默认安装的一部分。 如果你是 C++ 开发人员，确保选择“自定义安装”****，然后选择“C++”****。
 
     如果要安装 Visual Studio 2017，请确保选择**通用 Windows 平台开发**工作负载。 如果你是 c + + 开发人员，在**摘要**右侧窗格中，在**通用 Windows 平台开发**，确保你选择的**c + + 通用 Windows 平台工具**复选框。 它不是默认安装的一部分。
 
@@ -62,13 +62,13 @@ ms.locfileid: "5918828"
 
 ## <a name="creating-your-first-project-in-visual-studio"></a>在 Visual Studio 中创建你的第一个项目
 
-有关详细信息，请参阅[设置 Xbox 开发环境上的 UWP](development-environment-setup.md)。
+有关更多详细信息，请参阅[设置 Xbox 开发环境上的 UWP](development-environment-setup.md)。
 
-1.  **对于 C#**： 创建一个新的通用 Windows 项目，并在**解决方案资源管理器**中，右键单击该项目并选择**属性**。 选择**调试**选项卡、 到**远程计算机**更改**目标设备**、 在**远程计算机**字段中，键入的 IP 地址或 Xbox One 主机的主机名和选择**通用 （未加密协议）** 中**身份验证模式**下拉列表。   
+1.  **对于 C#**： 创建一个新的通用 Windows 项目，在**解决方案资源管理器**中，右键单击项目并选择**属性**。 选择**调试**选项卡、 到**远程计算机**更改**目标设备**、 在**远程计算机**字段中，键入的 IP 地址或 Xbox One 主机的主机名和选择**通用 （未加密协议）** 中**身份验证模式**下拉列表。   
 
     你可以通过在主机上启动“开发人员主页”（“主页”右侧的大磁贴）并查看左上角找到你的 Xbox One IP 地址。 有关开发人员主页的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。  
 
-2.  **对于 c + + 和 HTML/Javascript 项目**： 你遵循相似路径 C# 项目，但在项目属性转到**调试**选项卡中，选择调试程序以打开下拉列表中，键入的 IP 地址或主机名中的**远程计算机****计算机名称**字段中，并选择**通用 （未加密协议）** **身份验证类型**字段中的主机。
+2.  **对于 c + + 和 HTML/Javascript 项目**： 你遵循相似路径 C# 项目，但在项目属性转到**调试**选项卡中，选择调试器打开下拉列表中，键入的 IP 地址或主机名中的**远程计算机****计算机名称**字段中，并选择**通用 （未加密协议）** **身份验证类型**字段中的控制台。
 
 3. 在顶部菜单栏中的绿色播放按钮的左侧，从下拉列表中选择**x64** 。
    

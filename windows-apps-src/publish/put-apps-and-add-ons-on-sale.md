@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5942108"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5975358"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
@@ -27,7 +27,7 @@ ms.locfileid: "5942108"
 将产品进行促销后，客户将能够在所选时间段内以更低价格购买该产品。 如果将价格降为**免费**，客户可以在促销期间免费下载产品。
 
 > [!IMPORTANT]
-> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 仅向所有者的其他产品提供的销售片仅向 Windows 10 版本 1607年或更高版本的客户显示。
+> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 仅向 Windows 10 版本 1607年或更高版本的客户显示你提供仅向所有者的其他产品的销售。
 > 
 > 在其他操作系统上，客户看到的是应用或加载项的常规价格，将无法以促销价进行购买。 你始终可以通过在新提交中选择其他价格区间来更改价格，但该价格不以限时促销的形式显示。
 

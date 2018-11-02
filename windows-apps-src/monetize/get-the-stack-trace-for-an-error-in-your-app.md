@@ -8,16 +8,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 75eac585517ce4d4d41b8933a76cf8f4fe20be96
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0befb91175690576b4c0b44fe6e701d4c4efd7df
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941752"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5977768"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>获取应用中的错误的堆栈跟踪
 
-使用 Microsoft Store 分析 API 中的此方法，可获取应用中的错误堆栈跟踪。 此方法仅可以下载过去 30 天内发生的应用错误的堆栈跟踪。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取堆栈跟踪。
+使用 Microsoft Store 分析 API 中的此方法，可获取应用中的错误堆栈跟踪。 此方法仅可以下载过去 30 天内发生的应用错误的堆栈跟踪。 堆栈跟踪还可以在合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分。
 
 在可以使用此方法之前，必须首先使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件 ID。
 
@@ -51,7 +51,7 @@ ms.locfileid: "5941752"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要获取堆栈跟踪的应用的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 要获取堆栈跟踪的应用的应用商店 ID。 应用商店 ID 在合作伙伴中心中的[应用标识页](../publish/view-app-identity-details.md)上可用。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
 | cabId | 字符串 | 获取与想要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabId** 值。 |  是  |
 
  

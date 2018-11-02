@@ -14,15 +14,15 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947558"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5975758"
 ---
 # <a name="handle-app-activation"></a>处理应用激活
 
-了解如何通过重写[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)方法处理应用激活。
+了解如何通过替代[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)方法处理应用激活。
 
 ## <a name="override-the-launch-handler"></a>替代启动处理程序
 

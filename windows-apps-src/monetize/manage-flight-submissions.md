@@ -1,32 +1,32 @@
 ---
 author: Xansky
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: 在 Microsoft Store 提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。
+description: 在 Microsoft Store 提交 API 中使用这些方法来管理已注册到你的合作伙伴中心帐户的应用的软件包外部测试版提交。
 title: 管理软件包外部测试版提交
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b3379d66485fcd5ab417ecb2782b06f6e80e67
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926954"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973310"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
 Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部测试版提交的方法，包括逐步软件包推出。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果使用 Microsoft Store 提交 API 创建程序包外部测试版提交，请务必只使用此 API 而非开发人员中心仪表板对提交进行进一步更改。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> 如果你使用 Microsoft Store 提交 API 创建软件包外部测试版提交，请务必对进行进一步更改提交只能通过使用 API，而不是合作伙伴中心。 如果你使用仪表板更改你最初使用此 API 创建的提交，则将无法再使用此 API 更改或提交该提交。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
 
-使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 在使用这些方法之前，程序包外部测试版必须已存在于你的开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或者使用[管理软件包外部测试版](manage-flights.md)中所述的 Microsoft Store 提交 API 方法，可以创建软件包外部测试版。
+使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须在合作伙伴中心上已存在软件包外部测试版。 你可以创建软件包外部测试版[中的合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 若要创建软件包外部测试版提交，请遵循此过程。
 
-1. 如果尚未执行此操作，请完成[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先决条件，包括将 Azure AD 应用程序与 Windows 开发人员中心帐户相关联并获取客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
+1. 如果尚未不执行此操作，完成必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取你的客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -121,7 +121,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将向开发人员中心发出警报：已完成提交，更新现在应该应用到了帐户。
+5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将通知合作伙伴中心，你完成提交，更新现在应该应用到你的帐户。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -135,7 +135,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
     若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
 
-7. 在提交成功完成之后，提交会发送至应用商店以供引入。 可以通过使用前面的方法，或者通过访问开发人员中心仪表板，继续监视提交进度。
+7. 在提交成功完成之后，提交会发送至应用商店以供引入。 你可以继续监视提交进度，通过使用前面的方法，或者通过访问合作伙伴中心。
 
 <span/>
 
@@ -157,7 +157,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理软件包外部测试版提交的逐步软件包推出
 
-可在软件包外部测试版提交中逐步向 Windows10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
+可在软件包外部测试版提交中逐步向 Windows10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何启用和管理合作伙伴中心中的逐步软件包推出，请参阅[本文](../publish/gradual-package-rollout.md)说明。
 
 若要以编程方式启用软件包外部测试版提交的逐步软件包推出，请遵循此过程使用 Microsoft Store 提交 API 中的以下方法：
 
@@ -333,13 +333,13 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 此资源具有以下值。
 
 > [!NOTE]
-> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
+> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 由合作伙伴中心，其他值进行填充。
 
 | 值           | 类型    | 说明              |
 |-----------------|---------|------|
 | fileName   |   字符串      |  程序包的名称。    |  
 | fileStatus    | 字符串    |  程序包的状态。 这可以是以下值之一： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  字符串   |  唯一标识程序包的 ID。 此值由开发人员中心使用。   |     
+| id    |  字符串   |  唯一标识程序包的 ID。 通过合作伙伴中心，则使用此值。   |     
 | version    |  字符串   |  应用包的版本。 有关详细信息，请参阅[程序包版本编号](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  字符串   |  应用包的体系结构（例如 ARM）。   |     
 | languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
@@ -391,7 +391,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 | fallbackSubmissionId    |  字符串   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
 
 > [!NOTE]
-> *packageRolloutStatus* 和 *fallbackSubmissionId* 值由开发人员中心分配，但不是由开发人员设置。 如果已将这些值包括在请求正文中，则忽略这些值。
+> *PackageRolloutStatus*和*fallbackSubmissionId*值由合作伙伴中心分配，但不是由开发人员设置。 如果已将这些值包括在请求正文中，则忽略这些值。
 
 <span/>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931531"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5975335"
 ---
 # <a name="viewports-and-clipping"></a>视区和剪切
 
@@ -59,7 +59,7 @@ Direct3D 使用视区位置和尺寸来缩放顶点，以便将呈现的场景�
 
 此矩阵根据视区尺寸和所需的深度范围缩放顶点，并将它们转换到平移目标图面上的合适位置。 此矩阵还将翻转 y 坐标以在左上角反射屏幕原点，同时让 y 向下增大。 应用此矩阵后，顶点仍然是同类的（即，它们仍作为 \[x,y,z,w\] 顶点存在），并且它们在发送到光栅器之前必须平移到非同类坐标。
 
-**注意**应用程序通常将 MinZ 和 MaxZ 为 0.0 和 1.0 分别以使系统呈现到整个深度范围。 但是，你可以使用其他值实现某些效果。 例如，你可以将这两个值都设置为 0.0 以强制所有对象位于前台，或将这两个值设置为 1.0 以将所有对象呈现到后台。
+**注意**应用程序通常将 MinZ 和 MaxZ 为 0.0 和 1.0，分别，从而使系统呈现到整个深度范围。 但是，你可以使用其他值实现某些效果。 例如，你可以将这两个值都设置为 0.0 以强制所有对象位于前台，或将这两个值设置为 1.0 以将所有对象呈现到后台。
 
  
 

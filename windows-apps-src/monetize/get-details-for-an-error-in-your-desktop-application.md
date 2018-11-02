@@ -7,16 +7,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息, 桌面应用程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fbd3e037b2b81743ec2bb137b6df2a04736a76
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 922ab18bfebfbe539788ade3caa7626919d6b19a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5923660"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5976180"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的详细信息
 
-使用 Microsoft Store 分析 API 中的此方法，可以 JSON 格式获取应用的特定错误的详细数据。 此方法仅可以检索过去 30 天内发生的错误的详细信息。 还可以在 Windows 开发人员中心仪表板的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中获取详细错误数据。
+使用 Microsoft Store 分析 API 中的此方法，可以 JSON 格式获取应用的特定错误的详细数据。 此方法仅可以检索过去 30 天内发生的错误的详细信息。 详细的错误数据也是在合作伙伴中心中的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中可用。
 
 可以使用此方法之前，必须首先使用[获取错误报告数据](get-error-reporting-data.md)方法来检索希望获取详细信息的错误的 ID。
 
@@ -50,7 +50,7 @@ ms.locfileid: "5923660"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | string | 要为其检索错误详细信息的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 |  是  |
+| applicationId | string | 要为其检索错误详细信息的桌面应用程序的产品 ID。 若要获取桌面应用程序的产品 ID，请打开 （如**运行状况报告**） 的任何[桌面应用程序在合作伙伴中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)，并从 URL 检索产品 ID。 |  是  |
 | failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，请使用[获取错误报告数据](get-error-reporting-data.md)方法，并使用该方法的响应正文中的 **failureHash** 值。 |  是  |
 | startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。<p/><p/>**注意：**&nbsp;&nbsp;此方法仅可以检索过去 30 天内发生的错误的详细信息。 |  否  |
 | endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |

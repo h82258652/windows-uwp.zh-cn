@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 811c2c978d04e7636bb5f52a2ebf7587193c4786
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5918682"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973290"
 ---
 # <a name="create-add-on-store-listings"></a>创建加载项 Store 一览
 
-提交时在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的加载项，在**应用商店一览**步骤中提供的信息，在他们可看到获取加载项的选项将显示给客户。 请务必仔细考虑 Store 一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义 Store 一览。
+提交加载项在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的，当你在**应用商店一览**步骤中提供的信息在他们看到获取加载项的选项将显示向你的客户。 请务必仔细考虑 Store 一览信息，以便通过吸引客户注意力的方式准确地展示你的加载项。 你可以针对不同的语言提供自定义 Store 一览。
 
 > [!TIP]
 > 你还可以[导入和导出应用商店一览](import-and-export-store-listings.md)的加载项如果你想要在.csv 文件，而不是合作伙伴中心中直接提供此信息输入一览信息脱机。 此操作在使用多种语言创建一览时尤其方便。 但是，你始终可以直接在[合作伙伴中心](https://partner.microsoft.com/dashboard)，而无需使用导入/导出功能中输入你的信息。

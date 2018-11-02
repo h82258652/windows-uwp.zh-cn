@@ -8,12 +8,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 55843f229252b2f68df096442f27544a59ce69cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 495bf2e58fafd9e321937bd6fdb3be8c8dea68e2
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945236"
+ms.locfileid: "5973609"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 示例：应用、加载项和外部测试版的提交
 
@@ -38,7 +38,7 @@ ms.locfileid: "5945236"
 以下示例实现一个命令行计划，该计划可调用本文中的其他示例方法演示使用 Microsoft Store 提交 API 的不同方法。 若要调整此程序以供自己使用，请执行以下操作：
 
 * 为你想管理的应用 ID、加载项和软件包外部测试版分配 ```ApplicationId```、```InAppProductId``` 和 ```FlightId``` 属性。
-* 将 ```ClientId``` 和 ```ClientSecret``` 属性指定为你应用的客户端 ID 和密钥，并将 ```TokenEndpoint``` URL 中的 *tenantid* 字符串更换为你应用的租户 ID。 有关详细信息，请参阅 [如何将 Azure AD 应用程序与你的 Windows 开发人员中心帐户相关联](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
+* 将 ```ClientId``` 和 ```ClientSecret``` 属性指定为你应用的客户端 ID 和密钥，并将 ```TokenEndpoint``` URL 中的 *tenantid* 字符串更换为你应用的租户 ID。 有关详细信息，请参阅[如何将 Azure AD 应用程序与合作伙伴中心帐户相关联](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
@@ -56,13 +56,13 @@ ms.locfileid: "5945236"
 
 ## <a name="create-an-app-submission"></a>创建应用提交
 
-以下示例实现一个类，该类使用 Microsoft Store 提交 API 中的多种方法更新应用提交。 该类中的 ```RunAppSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunAppSubmissionUpdateSample``` 方法执行以下任务：
+以下示例实现一个类，该类使用 Microsoft Store 提交 API 中的多种方法更新应用提交。 ```RunAppSubmissionUpdateSample```方法在类中的创建新提交作为克隆的上次发布的提交，然后更新并提交到合作伙伴中心克隆的提交。 具体来说，```RunAppSubmissionUpdateSample``` 方法执行以下任务：
 
 1. 首先，此方法[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
-5. 接下来，它会[更新](update-an-app-submission.md)并将新提交[提交](commit-an-app-submission.md)到 Windows 开发人员中心。
+5. 接下来，该[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]
@@ -77,7 +77,7 @@ ms.locfileid: "5945236"
 1. 首先，该方法会 [创建新加载项](create-an-add-on.md)。
 2. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)。
 3. 该方法会将包含提交图标的 ZIP 存档上传至 Azure Blob 存储。
-4. 接下来，该方法会  [将新提交提交到 Windows 开发人员中心](commit-an-add-on-submission.md)。
+4. 接下来，它[提交到合作伙伴中心的新提交](commit-an-add-on-submission.md)。
 5. 最后，该方法定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]
@@ -87,12 +87,12 @@ ms.locfileid: "5945236"
 
 ## <a name="update-an-add-on-submission"></a>更新加载项提交
 
-以下示例实现一个类，该类使用 Microsoft Store 提交 API 中的多种方法更新现有的加载项提交。 该类中的 ```RunInAppProductSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunInAppProductSubmissionUpdateSample``` 方法执行以下任务：
+以下示例实现一个类，该类使用 Microsoft Store 提交 API 中的多种方法更新现有的加载项提交。 ```RunInAppProductSubmissionUpdateSample```方法在类中的创建新提交作为克隆的上次发布的提交，然后更新并提交到合作伙伴中心克隆的提交。 具体来说，```RunInAppProductSubmissionUpdateSample``` 方法执行以下任务：
 
 1. 首先，此方法[获取指定加载项的数据](get-an-add-on.md)。
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
-3. 然后，该方法会 [创建新的加载项提交](create-an-add-on-submission.md)（新提交是上次发布的提交的副本）。
-5. 接下来，该方法会 [更新](update-an-add-on-submission.md)并将新提交 [提交](commit-an-add-on-submission.md) 到 Windows 开发人员中心。
+3. 然后，此方法[会创建新的加载项提交](create-an-add-on-submission.md)（新提交时是上次发布的提交副本）。
+5. 接下来，该[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]
@@ -102,13 +102,13 @@ ms.locfileid: "5945236"
 
 ## <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
-以下示例实现一个类，该类使用 Microsoft Store 提交 API 中的多种方法更新软件包外部测试版提交。 该类中的 ```RunFlightSubmissionUpdateSample``` 方法创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```RunFlightSubmissionUpdateSample``` 方法执行以下任务：
+以下示例实现一个类，该类使用 Microsoft Store 提交 API 中的多种方法更新软件包外部测试版提交。 ```RunFlightSubmissionUpdateSample```方法在类中的创建新提交作为克隆的上次发布的提交，然后更新并提交到合作伙伴中心克隆的提交。 具体来说，```RunFlightSubmissionUpdateSample``` 方法执行以下任务：
 
 1. 首先，此方法[获取指定软件包外部测试版的数据](get-a-flight.md)。
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将新的提交程序包上载到 Azure Blob 存储。
-5. 接下来，它会[更新](update-a-flight-submission.md)并将新提交[提交](commit-a-flight-submission.md)到 Windows 开发人员中心。
+5. 接下来，该[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)到合作伙伴中心的新提交。
 6. 最后，该方法定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
 > [!div class="tabbedCodeSnippets"]

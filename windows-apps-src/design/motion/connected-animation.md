@@ -4,19 +4,19 @@ description: 连贯动画让你可以通过为一个元素在两种不同视图�
 title: 连贯动画
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 10/25/2017
+ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10，uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77050103bb78788a5c1868a41d315edd6832a5fe
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 51cf9dd0d28590d86bf05cc16634e465e260626c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938844"
+ms.locfileid: "5977079"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
 
@@ -55,9 +55,9 @@ ms.locfileid: "5938844"
 ## <a name="configure-connected-animation"></a>配置连贯的动画
 
 > [!IMPORTANT]
-> 此功能需要你的应用的目标版本是 RS5 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 或更高版本。 配置属性不可用更早版本的 Sdk 中。 你可以指定目标低于 RS5 最低版本 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 使用自适应代码或条件 XAML。 有关详细信息，请参阅[版本自适应应用](/debug-test-perf/version-adaptive-apps)。
+> 此功能需要你的应用的目标版本是 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 配置属性不可用更早版本的 Sdk 中。 你可以指定目标低于 SDK 17763 最低版本使用自适应代码或条件 XAML。 有关详细信息，请参阅[版本自适应应用](/debug-test-perf/version-adaptive-apps)。
 
-从开始 RS5，连贯的动画进一步体现 Fluent design 通过提供动画配置定制专门为向前和向后页面导航。
+在 Windows 10 版本 1809，启动连贯的动画进一步体现 Fluent design 通过提供动画配置定制专门为向前和向后页面导航。
 
 你可以通过在 ConnectedAnimation 上设置配置属性指定动画配置。 （我们将介绍这方面的示例在下一节。）
 
@@ -74,7 +74,7 @@ ms.locfileid: "5938844"
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
-| 这是默认值 （和仅） RS5 之前的 SDK 版本中使用的动画 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM)。 |
+| 这是默认值 （和仅） 在 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 之前的版本中使用的动画。 |
 
 ### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService 配置
 
