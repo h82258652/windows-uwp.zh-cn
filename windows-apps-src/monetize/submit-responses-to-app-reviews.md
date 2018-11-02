@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 加载项购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdfe811a90eae1e67ef7f626815be1ef78a4c61
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928588"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970111"
 ---
 # <a name="submit-responses-to-reviews"></a>提交评价回复
 
@@ -23,7 +23,7 @@ ms.locfileid: "5928588"
 当客户提交评价时，他们可以选择不接收针对其评价的回复。 如果你尝试回复客户已选择不接收回复的评价，此方法的回复正文将显示回复尝试未成功。 调用此方法前，你可以选择使用[获取应用评价的回复信息](get-response-info-for-app-reviews.md)方法确定是否可以回复给定评价。
 
 > [!NOTE]
-> 除了使用此方法以编程方式回复评价以外，还可以[使用 Windows 开发人员中心仪表板](../publish/respond-to-customer-reviews.md)回复评价。
+> 除了使用此方法以编程方式回复评价之外，你可以回复评价[使用合作伙伴中心](../publish/respond-to-customer-reviews.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -67,7 +67,7 @@ ms.locfileid: "5928588"
 
 | 值        | 类型   | 说明           |  必需  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 位于开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)。 Store ID 示例：9WZDNCRFJ3Q8。   |  是  |
+| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 在合作伙伴中心的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。   |  是  |
 | ReviewId | 字符串 |  要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字符串 | 要提交的回复。 你的回复必须遵循[以下准则](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字符串 | 应用的支持电子邮件地址，客户可以用它来直接与你联系。 必须为有效的电子邮件地址。     |  是  |
@@ -146,7 +146,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用开发人员中心仪表板回复客户评价](../publish/respond-to-customer-reviews.md)
+* [回复客户评论使用合作伙伴中心](../publish/respond-to-customer-reviews.md)
 * [使用 Microsoft Store 服务回复评价](respond-to-reviews-using-windows-store-services.md)
 * [获取应用评价的回复信息](get-response-info-for-app-reviews.md)
 * [获取应用评价](get-app-reviews.md)

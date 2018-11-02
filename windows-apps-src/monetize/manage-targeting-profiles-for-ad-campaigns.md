@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 50960a079e2c38d52d3a15403aef091ea99d7696
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925451"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980998"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  目标市场配置文件的 ID。     |   是    |       |   否      |       
 |  name   |  字符串   |   目标市场配置文件的名称。    |    否   |      |  是     |       
-|  targetingType   |  字符串   |  以下值之一： <ul><li>**Auto**：指定此值可允许 Microsoft 根据开发人员中心里你的应用的设置选择目标市场配置文件。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
+|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**： 指定此值可允许 Microsoft 在选择的目标市场配置文件，具体取决于你在合作伙伴中心中的应用的设置。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
 |  age   |  数组   |   一个或多个整数，用于标识要针对的用户的年龄范围。 有关整数的完整列表，请参阅本文章中的[年龄值](#age-values)。    |    否    |  null    |     否    |       
 |  gender   |  数组   |  一个或多个整数，用于标识要针对的用户的性别。 有关整数的完整列表，请参阅本文章中的[性别值](#gender-values)。       |  否    |  null    |     否    |       
 |  country   |  数组   |  一个或多个整数，用于标识要针对的用户所在的国家或地区代码。 有关整数的完整列表，请参阅本文章中的[国家或地区代码值](#country-code-values)。    |  否    |  null   |      否   |       

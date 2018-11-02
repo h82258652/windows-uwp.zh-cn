@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 删除, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: afc68c3e851652fd0af0749540e1978ee6cc539c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 2196a6b7023a062905ae721ebdb536e2c8044057
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940524"
+ms.locfileid: "5997446"
 ---
 # <a name="delete-a-package-flight-submission"></a>删除软件包外部测试版提交
 
@@ -47,8 +47,8 @@ ms.locfileid: "5940524"
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要删除的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的外部测试版，此 ID 也包含在仪表板中的外部测试版页面的 URL 中。  |
-| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的提交，此 ID 也包含在仪表板中的提交页面的 URL 中。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要删除的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
+| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但在其当前状态下无法删除；或者应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
+| 409  | 指定的提交已找到，但它无法删除在其当前状态，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题

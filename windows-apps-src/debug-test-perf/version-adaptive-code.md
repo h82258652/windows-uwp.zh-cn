@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: e25a3bd447519ce344a95a1c335451f731552487
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931191"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971151"
 ---
 # <a name="version-adaptive-code"></a>版本自适应代码
 

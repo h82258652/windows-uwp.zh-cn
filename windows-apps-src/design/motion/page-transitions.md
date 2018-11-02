@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e39e8e2cf1caa5673a925481848147cf445188
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941716"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969047"
 ---
 # <a name="page-transitions"></a>页面过渡
 
@@ -57,9 +57,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>水平幻灯片
 
-使用水平幻灯片显示同级页面都显示并排。 [NavigationView](../controls-and-patterns/navigationview.md)控件会自动将此动画将用于顶级导航，但如果你构建自己的水平导航体验，然后可以实现与 SlideNavigationTransitionInfo 水平滑动。
+使用水平幻灯片显示同级页面都显示并排。 [NavigationView](../controls-and-patterns/navigationview.md)控件自动使用此动画时的顶级导航，但如果你要构建自己的水平导航体验，然后可以实现与 SlideNavigationTransitionInfo 水平滑动。
 
-所需的感觉是用户正在相邻的页面之间进行导航。 
+所需的感觉是用户正在是并排的页面之间进行导航。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage

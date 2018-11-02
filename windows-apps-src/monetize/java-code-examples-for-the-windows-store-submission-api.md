@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3280b6b9c0f012f36588d6eb0297b415e07f78
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930733"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970791"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 示例：应用、加载项和外部测试版的提交
 
@@ -70,13 +70,13 @@ ms.locfileid: "5930733"
 
 ## <a name="create-an-app-submission"></a>创建应用提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建应用提交。 若要实现此目的，```SubmitNewApplicationSubmission``` 方法将创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```SubmitNewApplicationSubmission``` 方法执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建应用提交。 若要执行此操作，```SubmitNewApplicationSubmission```方法创建新提交作为克隆的上次发布的提交，然后更新并提交到合作伙伴中心克隆的提交。 具体来说，```SubmitNewApplicationSubmission``` 方法执行以下任务：
 
 1. 首先，此方法[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
-5. 接下来，它会[更新](update-an-app-submission.md)并将新提交[提交](commit-an-app-submission.md)到 Windows 开发人员中心。
+5. 接下来，该[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
@@ -85,13 +85,13 @@ ms.locfileid: "5930733"
 
 ## <a name="create-an-add-on-submission"></a>创建加载项提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建加载项提交。 若要实现此目的，```SubmitNewInAppProductSubmission``` 方法将创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```SubmitNewInAppProductSubmission``` 方法执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建加载项提交。 若要执行此操作，```SubmitNewInAppProductSubmission```方法创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，```SubmitNewInAppProductSubmission``` 方法执行以下任务：
 
 1. 首先，此方法[获取指定加载项的数据](get-an-add-on.md)。
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的加载项提交](create-an-add-on-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将包含提交图标的 ZIP 存档上载到 Azure Blob 存储。
-5. 接下来，它会[更新](update-an-add-on-submission.md)并将新提交[提交](commit-an-add-on-submission.md)到 Windows 开发人员中心。
+5. 接下来，该[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
@@ -100,13 +100,13 @@ ms.locfileid: "5930733"
 
 ## <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建软件包外部测试版提交。 若要实现此目的，```SubmitNewFlightSubmission``` 方法将创建新提交作为上次发布的提交的克隆，然后将克隆的提交更新并提交到 Windows 开发人员中心。 具体来说，```SubmitNewFlightSubmission``` 方法执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建软件包外部测试版提交。 若要执行此操作，```SubmitNewFlightSubmission```方法创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，```SubmitNewFlightSubmission``` 方法执行以下任务：
 
 1. 首先，此方法[获取指定软件包外部测试版的数据](get-a-flight.md)。
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将新的提交程序包上载到 Azure Blob 存储。
-5. 接下来，它会[更新](update-a-flight-submission.md)并将新提交[提交](commit-a-flight-submission.md)到 Windows 开发人员中心。
+5. 接下来，该[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)PartnerCenter 到新的提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]

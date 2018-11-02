@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的特定应用的相关信息。
+description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
 title: 获取应用
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c46363f75c75bb595b184e5a142e737a32ea50
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933431"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5997646"
 ---
 # <a name="get-an-app"></a>获取应用
 
-在 Microsoft Store 提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的特定应用的相关信息。
+在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到指定的应用。 |
-| 409  | 应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
+| 409  | 应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。  |
 
 
 ## <a name="related-topics"></a>相关主题

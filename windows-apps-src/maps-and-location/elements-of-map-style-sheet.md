@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 地图样式表
 ms.localizationpriority: medium
 ms.openlocfilehash: eace82801b2e3d1423eeec9e9da7cf56db043666
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931498"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5997666"
 ---
 # <a name="map-style-sheet-reference"></a>地图样式表参考
 
@@ -47,12 +47,12 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
     }
 ```
 
-本主题介绍可以用于自定义地图外观的 JSON 条目和[属性](#properties)。  此外可以将这些属性应用到用户地图元素通过[MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry)属性。
+本主题介绍可以用于自定义地图外观的 JSON 条目和[属性](#properties)。  此外可以将这些属性应用到用户通过[MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry)属性的地图元素。
 
 <a id="entries" />
 
 ## <a name="entries"></a>条目
-使用此表“>”字符表示条目层次结构中的级别。  它还显示哪个版本的 Windows 支持每个条目和它忽略它。
+使用此表“>”字符表示条目层次结构中的级别。  它还显示哪个版本的 Windows 支持的每个条目，这将忽略它。
 
 | Version | Windows 版本名称 |
 |---------|----------------------|
@@ -72,15 +72,15 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 | >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 业务或兴趣点高度集中的区域。 |
 | >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含 cemeteries 区域。 |
 | >>> continent                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 大陆的区域的标签。 |
-| >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包括学校和其他教育设施的区域。 |
-| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含原住民人民保留的区域。 |
+| >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包括学校和其他教育机构的区域。 |
+| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含原住民人民保留区域。 |
 | >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 用于工业用途的区域。 |
 | >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 岛区域标签。 |
 | >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗用途的区域 (例如： 医院园区)。 |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含 military 库或具有 military 使用的区域。 |
-| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于航海相关的区域。 |
+| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含 military 库或具有 military 用途的区域。 |
+| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用于航海相关用途的区域。 |
 | >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 邻居的区域标签。 |
-| >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用作飞机跑道的区域。 |
+| >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用作飞机 runway 的区域。 |
 | >>> sand                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 沙地区域（如海滩）。 |
 | >>> shoppingCenter           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 为商场或其他购物中心分配的土地区域。 |
 | >>> stadium                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含体育场区域。 |
@@ -90,20 +90,20 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 | >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含高尔夫课程的区域。 |
 | >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含公园区域。 |
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 提取的球场，如棒球场或网球场。 |
-| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含性质保留的区域。 |
-| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 使用某种图标绘制的所有点功能。 |
+| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含性质保留区域。 |
+| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 使用某种形式的图标绘制的所有点功能。 |
 | >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | 地址数字标签。 |
-| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示自然功能的图标。 |
+| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示自然功能图标。 |
 | >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示山峰的图标。 |
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示火山山峰的图标。 |
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示水景位置（如瀑布）的图标。 |
 | >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示有趣的任何位置的图标。 |
-| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示任何业务其中的图标。 |
-| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示风景看博物馆、 zoos 等的图标。 |
-| >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示社区的常规用途的位置的图标。 |
+| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示任何业务其中图标。 |
+| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示博物馆、 zoos 等风景焦点图标。 |
+| >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示社区的常规使用的位置的图标。 |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示学校和其他教育图标相关的位置。 |
-| >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示娱乐场合剧院、 cinemas 等的图标。 |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示必要的服务，如停车、 银行、 油门等的图标。 |
+| >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示剧院、 cinemas 等娱乐场合图标。 |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示重要的服务，如停车、 银行、 油门等的图标。 |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 表示餐馆、 咖啡馆等的图标。 |
 | >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示酒店和其他住宿企业图标。 |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 表示房地产企业图标。 |
@@ -142,7 +142,7 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 | >> water                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 看起来像水的任何对象。 这包括海洋和溪流。 |
 | >>> river                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 河流、溪流或其他水路。  轻注意，这可能是线条或多边形，并且可能会连接到非河流水体。 |
 | > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 所有路线的相关的条目。 |
-| >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 路由行相关的条目。 |
+| >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 路由行相关条目。 |
 | >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 表示驾车路线的线条。 |
 | >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 表示已加入观光驾车路线的线条。 |
 | >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 行表示步行路线。 |
@@ -180,7 +180,7 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 | landColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 在该陆地上绘制任何内容之前，陆地的 ARGB 颜色值。 |
 | logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示具有 **Organization** 属性的项目是应绘制相应徽标还是使用通用图标。 |
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示具有正式颜色属性的项目（如中国的交通线）是否应绘制该颜色。 例如，为黑白地图关闭此值。 |
-| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示要绘制光栅区域，它们具有比矢量 （日本和韩国） 更好的表示形式。 |
+| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示要绘制在其具有比矢量 （日本和韩国） 的更好地表示的光栅区域。 |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示是否要在地图上绘制海拔底纹。 |
 | shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 晕渲地貌阴暗面的颜色。  Alpha 通道表示最大 alpha 值。 |
 | shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 晕渲地貌光明面的颜色。  Alpha 通道表示最大 alpha 值。 |
@@ -220,7 +220,7 @@ Microsoft 映射技术使用_地图样式表_定义地图的外观。  地图样
 | borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 填色多边形边框的辅助或包围线条颜色。 |
 | borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 填色多边形边框的主线条颜色。 |
 | borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 笔划的边框缩放的量。 例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
+| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 边框划缩放的量。 例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 
 <a id="pointstyle" />
 

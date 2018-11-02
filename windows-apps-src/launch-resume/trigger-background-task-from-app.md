@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 后台任务触发器后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 6846cfe77272a78eff7ddc05c9a7e48dddd21fc2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945414"
+ms.locfileid: "5997396"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>从应用中触发后台任务
 

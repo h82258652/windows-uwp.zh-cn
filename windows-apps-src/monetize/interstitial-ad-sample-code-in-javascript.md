@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, javascript, 示例代码
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ff810808e0e7b8d83152f7d23e535c721d3405
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1921725e5b598a2e5e79ed90c607414e4efe574e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5918772"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968542"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript 中的间隙广告示例代码
 
@@ -25,7 +25,7 @@ ms.locfileid: "5918772"
 
 此示例应用使用两个按钮请求和启动间隙广告。 Visual Studio 生成的 main.js 和 index.html 文件已修改，如下所示。 script.js 文件（如下所示）包含示例中的大部分代码，应该将此文件添加到项目的 **js** 文件夹中。
 
-将应用提交到 Microsoft Store 之前，将 ```applicationId``` 和 ```adUnitId``` 变量的值替换为 Windows 开发人员中心的实时值。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+值替换为```applicationId```和```adUnitId```变量从合作伙伴中心提交到应用商店应用之前的实时值。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 > [!NOTE]
 > 若要更改此示例以显示间隙横幅广告而不是间隙视频广告，请将值 **InterstitialAdType.display** 传递至 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一个参数而不是 **InterstitialAdType.video**。 有关详细信息，请参阅[间隙广告](interstitial-ads.md)。

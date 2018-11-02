@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1641cb4c50b86d7f678bf18fa85ad0215b4b15
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5923226"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969678"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>捕获游戏音频、视频、屏幕截图和元数据
 本文介绍如何捕获游戏视频、音频和屏幕截图，以及如何提交元数据。系统将该元数据嵌入到捕获和广播的媒体中，使你的应用和其他人可以创建被同步到游戏事件的动态体验。 

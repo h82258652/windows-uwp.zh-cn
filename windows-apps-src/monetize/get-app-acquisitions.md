@@ -8,17 +8,17 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 应用购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a19ca3c45e0420f51d6f52661935681315929b1
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0c2e972b46c830dd6c9ea778e525f0abceda3e99
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5942505"
+ms.locfileid: "5970887"
 ---
 # <a name="get-app-acquisitions"></a>获取应用购置
 
 
-使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置聚合数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md)中获取此信息。
+使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置聚合数据（格式为 JSON）。 此信息也是在合作伙伴中心中的[购置报告](../publish/acquisitions-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

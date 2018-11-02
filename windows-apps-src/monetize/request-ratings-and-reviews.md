@@ -7,12 +7,12 @@ ms.date: 06/15/2018
 ms.topic: article
 keywords: windows 10, uwp, 评分, 评价
 ms.localizationpriority: medium
-ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935091"
+ms.locfileid: "5981186"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>请求应用的评分和评价
 
@@ -20,7 +20,7 @@ ms.locfileid: "5935091"
 * 您可以直接在应用上下文中显示评分和评价对话框。
 * 你可以在 Microsoft Store 中以编程方式打开你的应用的评级和评论页面。
 
-当您准备好分析评分和评价数据后，可以查看 Windows 开发人员中心仪表板中的数据，或使用 Microsoft Store 分析 API 以编程方式检索此数据。
+当你准备好分析评分和评价数据时，你可以在合作伙伴中心中查看数据，或使用 Microsoft Store 分析 API 以编程方式检索此数据。
 
 > [!IMPORTANT]
 > 在添加你的应用内评分函数时，所有评论必须将用户都发送到应用商店的评分机制，而不考虑星级评分所选。 如果你从用户收集反馈或评论，它必须清除它不相关的应用评分或评价的应用商店中，但直接发送到应用开发人员。 请参阅开发人员行为准则[Fraudulent 或恶意活动](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)相关的详细信息。
@@ -102,7 +102,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>分析你的评分和评价数据
 
 要分析你的客户对应用的评分和评价数据，你有多个选择：
-* 可以使用从 Windows 开发人员中心仪表板中的[审查](../publish/reviews-report.md)报告以查看客户的评分和评价。 还可以下载该报告以便脱机查看。
+* 你可以使用合作伙伴中心中的[评价](../publish/reviews-report.md)报告以查看你的客户的评分和评价。 还可以下载该报告以便脱机查看。
 * 你可以使用 Microsoft Store 分析 API 中的 [Get app ratings](get-app-ratings.md) 和 [Get app reviews](get-app-reviews.md) 方法以编程方式获取 JSON 格式的客户评分和评价。
 
 ## <a name="related-topics"></a>相关主题

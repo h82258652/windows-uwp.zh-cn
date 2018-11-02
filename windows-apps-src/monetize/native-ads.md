@@ -7,12 +7,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告控件, 本机广告
 ms.localizationpriority: medium
-ms.openlocfilehash: 123934c911f342dd57033c8e204e58bc00a5f18f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 36b96add3aa785ad20ddd1c42cd46e498d0264a6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933895"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969408"
 ---
 # <a name="native-ads"></a>本机广告
 
@@ -49,11 +49,11 @@ ms.locfileid: "5933895"
 
 5.  在应用的相应位置（例如，在 ```MainPage``` 或部分其他页面）声明 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 对象和几个字符串字段，这些字段代表本机广告的应用程序 ID 和广告单元 ID。 以下代码示例将 `myAppId` 和 `myAdUnitId` 字段分配给本机广告的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
     > [!NOTE]
-    > 每个 **NativeAdsManagerV2** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为本机广告控件提供广告，每个广告单元都包含*广告单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 在将应用发布到 Microsoft Store 之前，必须在 Windows 开发人员中心[将这些测试值替换为实时值](#release)。
+    > 每个 **NativeAdsManagerV2** 都有一个对应的*广告单元*，我们的服务使用该广告单元来为本机广告控件提供广告，每个广告单元都包含*广告单元 ID* 和*应用程序 ID*。 在这些步骤中，你将为控件分配测试广告单元 ID 和应用程序 ID 值。 这些测试值只能在应用的测试版本中使用。 将应用发布到应用商店之前，必须[替换这些测试值的实时值](#release)从合作伙伴中心。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManagerV2** object and wire up event handlers for the **AdReady** and **ErrorOccurred** events of the object.
+6.  在启动时运行的代码中（例如，在页面的构造函数中）实例化 **NativeAdsManagerV2** 对象，并为对象的 **AdReady** 和 **ErrorOccurred** 事件连接事件处理程序。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
@@ -97,7 +97,7 @@ ms.locfileid: "5933895"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
-9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. 下面的示例在测试期间将错误信息写入 Visual Studio **输出**窗口。
+9.  为 **ErrorOccurred** 事件定义一个事件处理程序，以处理与本机广告相关的错误。 下面的示例在测试期间将错误信息写入 Visual Studio **输出**窗口。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
@@ -111,17 +111,17 @@ ms.locfileid: "5933895"
 
 1.  请确保你的本机广告实现遵守[本机广告指南](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)。
 
-2.  在开发人员中心仪表板中转到[应用内广告](../publish/in-app-ads.md)页面，然后[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**本机**。 记下广告单元 ID 和应用程序 ID。
+2.  在合作伙伴中心中，转到[应用内广告](../publish/in-app-ads.md)页和[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**本机**。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在仪表板中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用的应用商店 ID（例如应用商店 ID 值类似于 9NBLGGH4R315）匹配。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （示例应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
 
 3. 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）的设置为本机广告启用广告中介。 广告中介能够显示多个广告网络的广告，让你最大程度地增加广告收益，并充分利用应用促销功能。
 
-4.  在代码中将测试广告单元值（即 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) 构造函数的 *applicationId* 和 *adUnitId* 参数）替换为在开发人员中心生成的实时值。
+4.  在代码中，将测试广告单元值 （即， *applicationId*和*adUnitId* [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)构造函数的参数） 替换在合作伙伴中心中生成的实时值。
 
-5.  使用开发人员中心仪表板[提交应用](../publish/app-submissions.md)至应用商店。
+5.  [你的应用提交](../publish/app-submissions.md)到应用商店使用合作伙伴中心。
 
-6.  在开发人员中心仪表板中查看你的[广告性能报告](../publish/advertising-performance-report.md)。
+6.  查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)。
 
 ## <a name="manage-ad-units-for-multiple-native-ads-in-your-app"></a>管理你的应用中多个本机广告的广告单元
 

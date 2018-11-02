@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 加载项购置
 ms.localizationpriority: medium
-ms.openlocfilehash: c1fb44457b8589c9e1525de9c8dca2801c0c47bf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940316"
+ms.locfileid: "5969688"
 ---
 # <a name="get-add-on-acquisitions"></a>获取加载项购置
 
-使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内你的应用的聚合加载项购置数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[加载项购置报告](../publish/add-on-acquisitions-report.md)中获取此信息。
+使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内你的应用的聚合加载项购置数据（格式为 JSON）。 此信息也是在合作伙伴中心中的[加载项购置报告](../publish/add-on-acquisitions-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

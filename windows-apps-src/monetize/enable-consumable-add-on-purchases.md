@@ -8,12 +8,12 @@ ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fc67e2b48779e7b22f20dc4adfbe28580bc325fc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e4687833b55f1456d298b552f5cce897f8b4eaa1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5946732"
+ms.locfileid: "5980936"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>支持购买可消耗加载项
 
@@ -47,8 +47,8 @@ ms.locfileid: "5946732"
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中[创建了一个应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并且该应用已发布到 Microsoft Store 中。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
-* 你已经在开发人员中心仪表板中[为该应用创建了一个可使用加载项](../publish/add-on-submissions.md)。
+* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)并将此应用在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 必须在合作伙伴中心中[创建一个应用的易耗型加载项](../publish/add-on-submissions.md)。
 
 这些示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。

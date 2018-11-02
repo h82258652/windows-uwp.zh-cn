@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: 使用 Microsoft Store 分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。
+description: 使用 Microsoft Store 分析 API 以编程方式检索分析数据的应用已注册到你的或组织的 ' s Windows 合作伙伴中心帐户。
 title: 使用应用商店服务访问分析数据
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 876500bf57de386ca551a1b51a02df62657f147c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8656270b81e0aae46c5d4f3a7b651135c163f76d
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938917"
+ms.locfileid: "5970051"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
-使用 *Microsoft Store 分析 API*，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用*Microsoft Store 分析 API*以编程方式检索注册到你的或组织的 Windows 的合作伙伴中心帐户的应用的分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍端到端过程：
 
@@ -31,17 +31,17 @@ ms.locfileid: "5938917"
 
 在开始编写调用 Microsoft Store 分析 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以[创建新的 Azure AD 在合作伙伴中心中](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)任何附加费用。
 
-* 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
+* 必须将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、 检索租户 ID 和应用程序的客户端 ID 并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
     > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
-要将 Azure AD 应用程序与开发人员中心帐户相关联并检索所需值，请执行以下操作：
+若要将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并检索所需的值：
 
-1.  在开发人员中心，[将组织的开发人员中心帐户与组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
+1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  然后，从开发人员中心的**帐户设置**部分的**用户**页面[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，这里的应用程序表示应用或服务并且将用于访问开发人员中心帐户的分析数据。 请确保为此应用程序分配**管理员**角色。 如果应用程序在 Azure AD 目录中尚不存在，可以[在开发人员中心创建新的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
+2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的分析数据的**帐户设置**部分中的**用户**页面。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
@@ -66,7 +66,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-对于 POST URI 中的 *tenant\_id*、*client\_id* 和 *client\_secret* 参数，请为从上一部分的开发人员中心中检索到的应用程序指定租户 ID、客户端 ID 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
+对于 POST URI 中的*client\_id*和*client\_secret*参数*tenant\_id*值，指定的租户 ID、 客户端 ID 和你从上一部分中的合作伙伴中心中检索的应用程序的密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
 在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
@@ -78,7 +78,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-uwp-apps"></a>适用于 UWP 应用的方法
 
-在开发人员中心，UWP 应用可以使用以下分析方法。
+适用于合作伙伴中心中的 UWP 应用可使用以下分析方法。
 
 | 方案       | 方法      |
 |---------------|--------------------|
@@ -111,7 +111,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-xbox-one-games"></a>适用于 Xbox One 游戏的方法
 
-以下其他方法在 XDP 分析开发人员中心仪表板中提供，可供通过 Xbox 开发人员门户 (XDP) 引入的 Xbox One 游戏开发人员帐户使用。
+以下其他方法是在 XDP 分析仪表板中提供，可供通过 Xbox 开发人员门户 (XDP) 引入的 Xbox One 游戏的开发人员帐户使用。
 
 | 方案       | 方法      |
 |---------------|--------------------|

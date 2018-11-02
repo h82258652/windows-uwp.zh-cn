@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: 在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用获取软件包外部测试版的数据。
+description: 在 Microsoft Store 提交 API 中使用此方法，为注册到你的合作伙伴中心帐户的应用的软件包外部测试版中获取数据。
 title: 获取软件包外部测试版
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 772dd59ad25cd5439df8b88cd8818f98334c2969
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940790"
+ms.locfileid: "5970400"
 ---
 # <a name="get-a-package-flight"></a>获取软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用获取软件包外部测试版的数据。
+在 Microsoft Store 提交 API 中使用此方法，为注册到你的合作伙伴中心帐户的应用的软件包外部测试版中获取数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -46,8 +46,8 @@ ms.locfileid: "5940790"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 开发人员中心仪表板上会提供应用的应用商店 ID。  |
-| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 对于在开发人员中心仪表板中创建的外部测试版，此 ID 也包含在仪表板中的外部测试版页面的 URL 中。  |
+| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | 字符串  | 软件包外部测试版的 ID。 此值由开发人员中心提供。  |
+| flightId            | 字符串  | 软件包外部测试版的 ID。 此值由合作伙伴中心提供。  |
 | friendlyName           | 字符串  | 软件包外部测试版的名称，如开发人员所指定。   |  
 | lastPublishedFlightSubmission       | 对象 | 提供有关软件包外部测试版的上次发布提交的信息的对象。 有关详细信息，请参阅下面的[提交对象](#submission_object)部分。  |
 | pendingFlightSubmission        | 对象  |  提供有关软件包外部测试版的当前挂起提交的信息的对象。 有关详细信息，请参阅下面的[提交对象](#submission_object)部分。  |   
@@ -118,7 +118,7 @@ Authorization: Bearer <your access token>
 |--------|---------------------  |
 | 400  | 请求无效。 |
 | 404  | 找不到指定的软件包外部测试版。   |   
-| 409  | 应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |                                                                                                 
+| 409  | 应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |                                                                                                 
 
 
 ## <a name="related-topics"></a>相关主题

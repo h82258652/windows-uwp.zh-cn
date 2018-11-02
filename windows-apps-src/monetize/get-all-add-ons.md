@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: 在 Microsoft Store 提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用检索所有加载项数据。
+description: 在 Microsoft Store 提交 API 中使用此方法，检索注册到你的合作伙伴中心帐户的所有应用的所有加载项数据。
 title: 获取所有加载项
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 43875ae33c531e66c288f8b54f74116315715380
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4d58b29a959ed791665af52018062d0cf0a3a969
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922477"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991282"
 ---
 # <a name="get-all-add-ons"></a>获取所有加载项
 
-在 Microsoft Store 提交 API 中使用这些方法，检索注册到 Windows 开发人员中心帐户的所有应用的所有加载项的数据。
+在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的所有应用的所有加载项的数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -147,7 +147,7 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 404  | 找不到任何加载项。 |
-| 409  | 应用或加载项使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
+| 409  | 应用或加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。  |
 
 
 ## <a name="related-topics"></a>相关主题

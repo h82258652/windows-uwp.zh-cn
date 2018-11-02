@@ -1,32 +1,32 @@
 ---
 author: Xansky
-Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
-title: 记录开发人员中心的自定义事件
+Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+title: 记录合作伙伴中心的自定义的事件
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, 日志事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921463"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970340"
 ---
-# <a name="log-custom-events-for-dev-center"></a>记录开发人员中心的自定义事件
+# <a name="log-custom-events-for-partner-center"></a>记录合作伙伴中心的自定义的事件
 
-Windows 开发人员中心仪表板中的[使用情况](https://msdn.microsoft.com/windows/uwp/publish/usage-report)报告可使你获取有关在通用 Windows 平台 (UWP) 应用中已定义的自定义事件的信息。 自定义事件是表示应用中的某个事件或活动的任意字符串。 例如，游戏可能定义名为 *firstLevelPassed*、*secondLevelPassed* 等的自定义事件，用户在游戏中通过每个关卡时记录这些事件。
+在合作伙伴中心中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)可供你获取有关你的通用 Windows 平台 (UWP) 应用中所定义的自定义事件的信息。 自定义事件是表示应用中的某个事件或活动的任意字符串。 例如，游戏可能定义名为 *firstLevelPassed*、*secondLevelPassed* 等的自定义事件，用户在游戏中通过每个关卡时记录这些事件。
 
-若要记录应用中的自定义事件，请将自定义事件字符串传递到 Microsoft Store Services SDK 提供的 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 可在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中查看自定义事件的总发生次数。
+若要记录应用中的自定义事件，请将自定义事件字符串传递到 Microsoft Store Services SDK 提供的 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 你可以自定义事件[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作伙伴中心中的**自定义事件**部分中查看的总发生次数。
 
 > [!NOTE]
-> 你记录到开发人员中心的自定义事件与 [Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)无关，它们不会显示在**事件查看器**中。
+> 与[Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)，无关你登录到合作伙伴中心的自定义事件，并且它们不会显示在**事件查看器**。
 
 ## <a name="prerequisites"></a>先决条件
 
-必须先在应用商店中发布应用，然后才能在仪表板中查看应用的**使用情况报告**中的自定义日志记录事件。
+你可以为你的应用在合作伙伴中心中查看的**使用情况报告**中的自定义日志记录事件之前，必须在应用商店中发布你的应用。
 
 ## <a name="how-to-log-custom-events"></a>如何记录自定义事件
 

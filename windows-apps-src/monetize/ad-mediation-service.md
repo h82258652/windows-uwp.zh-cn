@@ -7,12 +7,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ebffbd7a2fa209289c99780e0bbbea94afac2e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920626"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971243"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
 
@@ -30,7 +30,7 @@ ms.locfileid: "5920626"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>管理广告网络关系的复杂性  
 
-广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft 广告 SDK 在应用中显示广告后，你可以[使用开发人员中心仪表板](../publish/in-app-ads.md#mediation-settings)修改广告中介设置以显示来自多个广告网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
+广告中介服务与大量广告网络集成，你无需进行此项工作。 使用 Microsoft 广告 SDK 在应用中显示广告后，你可以修改广告中介设置[合作伙伴中心中](../publish/in-app-ads.md#mediation-settings)以显示来自多个广告网络的广告。 无需对代码进行任何更改，便可以收到来自新广告网络的广告。
 
 我们代表你管理与广告网络的端到端关系。 从网络集成到投放广告、报告和付款，所有工作都由我们来处理，你无需进行任何操作。
 
@@ -49,7 +49,7 @@ ms.locfileid: "5920626"
 
 新的广告网络通过学习预算自动包含并评估性能。 在很短的时间内，它们就会在瀑布中找到自己的位置。 这使得广告网络更具竞争力，并且可以帮助开发人员通过应用获得最大收益。
 
-强烈建议使用[推荐的中介设置](../publish/in-app-ads.md#mediation-settings)使应用中的广告产生的收益最大化。 我们的算法可以借此让你的应用产生最大收益。 不过，你也可以在开发人员中心仪表板中自由选择自己的中介设置，以便更好地控制投放广告的广告网络和广告投放顺序。
+强烈建议使用[推荐的中介设置](../publish/in-app-ads.md#mediation-settings)使应用中的广告产生的收益最大化。 我们的算法可以借此让你的应用产生最大收益。 但是，你也可以自由地在合作伙伴中心，以更好地控制投放广告和广告投放的顺序广告网络中选择你自己的中介设置。
 
 ## <a name="rich-data-and-signals"></a>丰富的数据和信号
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 示例, 应用程序, 照片, 编辑器
 ms.localizationpriority: medium
 ms.openlocfilehash: 60bfcd79ed2d659aff8d435bd397df05eb45af72
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924454"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991828"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>照片编辑器 C++/WinRT 示例应用程序
 你可以从[照片编辑器 C++/WinRT 示例应用程序](https://github.com/Microsoft/Windows-appsample-photo-editor) GitHub 存储库克隆或下载此示例应用程序。

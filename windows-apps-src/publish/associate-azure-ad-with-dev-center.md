@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, azure ad, azure 租户, aad 租户, azure ad 租户, 租户管理, 租户
 ms.localizationpriority: medium
 ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941577"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971016"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>将 Azure Active Directory 与你的合作伙伴中心帐户相关联
 
@@ -21,7 +21,7 @@ ms.locfileid: "5941577"
 [合作伙伴中心](https://partner.microsoft.com/dashboard)利用 Azure AD 进行多用户帐户访问和管理。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以创建一个新的 Azure AD 租户从合作伙伴中心内产生任何附加费用。
 
 > [!TIP]
-> 本主题仅适用于 Windows 应用开发人员计划在[合作伙伴中心](https://partner.microsoft.com/dashboard)，不过租户关联和用户管理流程类似 Windows 桌面应用程序计划中的帐户 （请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)详细信息） 在 Windows 硬件开发人员计划 （其中到了**管理员**角色的引用内容也适用于具有**管理员**角色的硬件帐户; 的详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)）。
+> 本主题仅适用于 Windows 应用开发人员计划的[合作伙伴中心](https://partner.microsoft.com/dashboard)中，不过租户关联和用户管理流程类似 Windows 桌面应用程序计划中的帐户 （请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)详细信息） 在 Windows 硬件开发人员计划 （其中到了**管理员**角色的引用内容也适用于具有**管理员**角色的硬件帐户; 的详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)）。
 
 一个 Azure AD 租户可与多个合作伙伴中心帐户相关联。 你只需拥有一个即可添加多个帐户用户，与你的合作伙伴中心帐户相关联的 Azure AD 租户，但你还可以选择将多个 Azure AD 租户添加到一个合作伙伴中心帐户。 任何拥有合作伙伴中心帐户中了**管理员**角色的用户将可以选择添加和从帐户中删除 Azure AD 租户。
 
@@ -64,17 +64,17 @@ ms.locfileid: "5941577"
 
 ### <a name="add-multiple-azure-ad-tenants-to-your-partner-center-account"></a>将多个 Azure AD 租户添加到你的合作伙伴中心帐户
 
-凡是有了**管理员**角色的合作伙伴中心帐户的用户可以将 Azure AD 租户与帐户相关联。
+凡是有了**管理员**角色，合作伙伴中心帐户的用户可以将 Azure AD 租户与帐户相关联。
 
 若关联新租户，请选择**关联其他 Azure AD 租户**，然后按照上方提示的步骤操作。 请注意，系统会提示你输入要关联的 Azure AD 租户的凭据。
 
 
 ### <a name="remove-an-azure-ad-tenant-from-your-partner-center-account"></a>从合作伙伴中心帐户中删除 Azure AD 租户
 
-凡是有了**管理员**角色的合作伙伴中心帐户的用户可以从帐户中删除 Azure AD 租户。
+凡是有了**管理员**角色，合作伙伴中心帐户的用户可以从帐户中删除 Azure AD 租户。
 
 > [!IMPORTANT]
-> 当你删除租户时，从该租户添加到合作伙伴中心帐户的所有用户将不再能够登录到帐户。 
+> 当你删除租户时，从该租户添加到合作伙伴中心帐户的所有用户将不再能够登录帐户。 
 
 若要删除租户，**租户**页面上查找其名称，（在**帐户设置**），然后选择**删除**。 系统将提示你确认删除租户。 一旦你执行此操作，该租户中的任何用户将无法登录到合作伙伴中心帐户中，并将删除你已配置这些用户的任何权限。
 
