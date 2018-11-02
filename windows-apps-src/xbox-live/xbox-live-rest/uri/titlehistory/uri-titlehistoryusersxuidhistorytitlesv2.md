@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b404b6b48139236397e765f885caef953acd87ff
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5876773"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946679"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  
-此通用资源标识符 (URI) 提供了访问用户的成就相关的游戏历史记录。
+此通用资源标识符 (URI) 提供对用户的成就相关游戏历史记录访问。
  
 这些 Uri 的域是`achievements.xboxlive.com`。
  
@@ -38,7 +38,7 @@ ms.locfileid: "5876773"
 
 [GET](uri-titlehistoryusersxuidhistorytitlesgetv2.md)
 
-&nbsp;&nbsp;获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回用户的游戏播放或启动完整历史记录。
+&nbsp;&nbsp;获取一份标题为其用户已解锁或对其成就的进度。 此 API 不会返回游戏播放或启动的用户的完整历史记录。
  
 <a id="ID4EKC"></a>
 

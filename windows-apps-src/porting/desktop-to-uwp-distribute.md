@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865832"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946174"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>分发打包的桌面应用程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "5865832"
 
 [Microsoft Store](https://www.microsoft.com/store/apps) 是客户获取应用最便利的方法。
 
-发布到该应用商店应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发到其组织通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
+发布到该应用商店的应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发给其组织通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
 
 如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
@@ -38,17 +38,17 @@ ms.locfileid: "5865832"
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>但不将其置于 Microsoft Store 分发你的应用程序
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>而不将其置于 Microsoft Store 分发你的应用程序
 
-如果您不会无需使用应用商店分发你的应用程序，你可以手动将应用分配到一个或多个设备。
+如果您而不是将无需使用应用商店分发你的应用程序，你可以手动将应用分配到一个或多个设备。
 
 如果要更好地控制分发体验，或者不想涉及 Microsoft Store 证书过程，这很有意义。
 
-若要而不将其置于应用商店分配应用程序与其他设备，你需要获取一个证书，你的应用程序使用对进行签名的证书，然后旁加载到这些设备上的应用程序。
+若要将分配到其他设备的应用程序，而其置于应用商店，你必须获取一个证书，使用该证书，然后旁加载到这些设备上的应用程序对你的应用程序。
 
 你可以[创建证书](../packaging/create-certificate-package-signing.md)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
-如果你打算分发到运行 Windows 10 S 的设备上应用程序，你的应用程序已由 Microsoft 应用商店签名，因此你必须先完成应用商店提交过程，然后可以分发到这些设备上的应用程序。
+如果你打算分发到运行 Windows 10 S 的设备上的应用程序，你的应用程序将已签名通过 Microsoft 应用商店中，因此你必须先完成应用商店提交过程，然后可以分发到这些设备上的应用程序。
 
 如果创建证书，则必须将其安装到运行应用的每台设备上的**受信任根**或**受信任人**证书存储区中。 如果从热门供应商处获取证书，则不必在其他系统上安装除应用外的任何内容。  
 
@@ -57,7 +57,7 @@ ms.locfileid: "5865832"
 
 若要对你的应用程序使用证书进行签名，请参阅[登录应用程序包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
-旁加载应用程序到其他设备，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+旁加载到其他设备，你的应用程序，请参阅[Windows 10 中的旁加载 LOB 应用](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
 
 **视频**
 
@@ -72,12 +72,12 @@ ms.locfileid: "5865832"
 分发应用前，请考虑向程序包清单添加几个扩展，以便帮助用户养成使用打包的应用的习惯。 下面是一些可以执行的操作。
 
 * 将现有“开始”磁贴和任务栏按钮指向打包后的应用。
-* 将打包应用程序与一组文件类型相关联。
+* 将打包的应用程序与一组文件类型相关联。
 * 使打包应用程序默认打开特定类型的文件。
 
 有关扩展的完整列表以及如何使用它们的指南，请参阅[将用户切换到应用](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
 
-此外，请考虑向完成这些任务的打包应用程序添加代码：
+此外，请考虑向完成这些任务的打包应用程序中添加代码：
 
 * 迁移至打包的应用的相应文件夹位置的桌面应用程序与相关联的用户数据。
 * 为用户提供卸载桌面版应用的选项。

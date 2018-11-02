@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 促销代码, 促销代码, 预付码, 预付码
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fe89f65ff4f3278b0ba88ef4c5ca9d22bc67817
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5888186"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944704"
 ---
 # <a name="generate-promotional-codes"></a>生成促销充值码
 
@@ -38,7 +38,7 @@ ms.locfileid: "5888186"
 -   必须按照[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定义的要求进行操作，包括 **3k. 促销代码**部分。
 
 > [!NOTE]
-> 即使你的应用是对客户不可用，你可以使用促销代码 (也就是说，如果你已选择**可用，但不可被发现在应用商店中使此产品**与**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码，同时使用的 Windows 10 设备**你的提交[可发现性](choose-visibility-options.md#discoverability)部分中的选项)。 使用此选项，客户必须在 Windows 10 （包括 Xbox） 上才能获取你的产品的促销代码。
+> 即使你的应用是对客户不可用，你可以使用促销充值码 (也就是说，如果你已选择**可用，但不可被发现在应用商店中使此产品**与**停止购置： 任何具有直接链接的客户可以看到产品的应用商店一览，但它们才能够下载该如果他们拥有之前，产品或拥有一个促销代码并使用的是 Windows 10 设备**你的提交[可发现性](choose-visibility-options.md#discoverability)部分中的选项)。 使用此选项，客户必须在 Windows 10 （包括 Xbox） 上才能获取你的产品的促销代码。
 
 
 ## <a name="order-promotional-codes"></a>预订促销代码

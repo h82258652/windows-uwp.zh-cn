@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5860782"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944958"
 ---
 # <a name="launch-an-app-for-results"></a>针对结果启动应用
 
@@ -27,7 +27,7 @@ ms.locfileid: "5860782"
 
 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是*针对结果启动应用*。 此处示例演示了如何针对结果使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 启动应用。
 
-新应用到应用通信 windows 10 中的 Api 使 Windows 应用 （和 Windows Web 应用） 来启动应用并交换数据和文件。 这样你便可以从多个应用生成混合解决方案。 使用这些新 API，使得原本需要用户使用多个应用才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用来完成支付流程。
+新应用到应用通信 windows 10 中的 Api 使 Windows 应用 （和 Windows Web 应用） 可以启动应用并交换数据和文件。 这样你便可以从多个应用生成混合解决方案。 使用这些新 API，使得原本需要用户使用多个应用才能完成的复杂任务现在可以无缝地进行处理。 例如，你的应用可启动社交网络应用来选择联系人，或启动结算应用来完成支付流程。
 
 将针对结果启动的应用称为启动应用。 启动应用的应用称为调用应用。 针对此示例，将编写调用应用和启动应用。
 

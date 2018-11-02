@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 581c2bc4204a7eab002ef2680e335a4109716d74
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869870"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946693"
 ---
 # <a name="data-binding-overview"></a>数据绑定概述
 
@@ -328,7 +328,7 @@ MainPage::MainPage()
 
 一个常见情形是绑定到业务对象的集合。 在 C# 和 Visual Basic 中，通用 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 类是数据绑定的一个很好的集合选择，因为它实现了 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 接口。 当添加或删除项目或者列表本身的属性更改时，这些接口将向绑定提供更改通知。 如果你希望你的绑定控件使用集合中的对象属性更改进行更新，则业务对象也应该实现 **INotifyPropertyChanged**。 有关详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
-如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以了解有关绑定到一个可观测集合中的详细信息[XAML 项目控件; 绑定到 C + + /winrt 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)。 如果你阅读该主题首次，然后意图的 C + + WinRT 如下所示的代码列表将会清晰。
+如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你可以了解有关绑定到一个可观测集合中的详细信息[XAML 项目控件; 绑定到 C + + /winrt 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)。 如果你阅读该主题第一次，然后意图的 C + + WinRT 如下所示的代码列表将为更清晰。
 
 下面这个示例演示了将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到 `Recording` 对象的集合。 让我们先将该集合添加到视图模型。 只需将这些新成员添加到 **RecordingViewModel** 类。
 
@@ -454,7 +454,7 @@ public:
 
 ![绑定列表视图](images/xaml-databinding1.png)
 
-若要解决此问题，我们也可以替代[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)返回值的**OneLineSummary**，或者我们可以提供一个数据模板。 数据模板选项是一个更常见的解决方案，以及一个更灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
+若要解决此问题，我们既可以替代[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)返回的值**OneLineSummary**，或者我们可以提供一个数据模板。 数据模板选项是一个更常见的解决方案和一个更灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -502,7 +502,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 如果你使用 C + + /winrt 或 VisualC + + 组件扩展 (C + + CX) 然后，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展时，你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要绑定到任何运行时类。 若要使用[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，不需要该属性。
 
 > [!IMPORTANT]
-> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
+> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，那么[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
 
 首先介绍的是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技术。
 
@@ -577,13 +577,13 @@ public ref class Recording sealed
 而在每种情况下结果均相同。
 
 > [!NOTE]
-> 如果你使用 c + +，则你的 UI 将不会完全一样图： **ReleaseDateTime**属性的呈现是不同。 请参阅下一节详细本主题的讨论。
+> 如果你使用 c + +，你的 UI 将不会查找一样图： **ReleaseDateTime**属性的呈现是不同。 请参阅下一节详细本主题的讨论。
 
 ![绑定列表视图](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>设置数据值的格式或对其进行转换，以供显示
 
-没有以上呈现问题。 **ReleaseDateTime**属性不只是一个日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果你使用 c + +，那么它是[**日历**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它被显示高于所需精度的精度。 和在 c + + 呈现为类型名称。 一种解决方案是将字符串属性添加到返回的等效项的**录制**类`this.ReleaseDateTime.ToString("d")`。 命名该属性**ReleaseDate**将指示它将返回一个日期，并且不日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
+没有以上呈现问题。 **ReleaseDateTime**属性不是只是一个日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果你使用 c + +，那么它是[**日历**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它显示高于所需精度的精度。 和在 c + + 呈现为类型名称。 一种解决方案是将字符串属性添加到返回的等效的**录制**类`this.ReleaseDateTime.ToString("d")`。 命名**ReleaseDate**该属性可指示它将返回日期，并且不日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
 
 一个更灵活的解决方案是使用称为值转换器的工具。 下面是如何创作你自己的值转换器的示例。 将此代码添加到你的 Recording.cs 源代码文件。
 
@@ -716,14 +716,14 @@ public:
 ...
 ```
 
-如你所见上述，格式灵活性我们使用标记将格式字符串传递到该转换器通过转换器参数。 在使本主题中，仅 C# 值转换器中所示的代码示例使用该参数。 但你可以轻松地传递 c + + 样式格式字符串形式的转换器参数，并在你的值转换器与**wprintf**或**swprintf**等格式函数中使用的。
+你可以看到上方，格式灵活性我们使用标记将格式字符串传递到该转换器通过转换器参数。 使本主题中，仅 C# 值转换器中所示的代码示例中使用该参数。 但你可以轻松地传递 c + + 样式格式字符串形式的转换器参数，并在你的值转换器，例如**wprintf**或**swprintf**格式功能中使用的。
 
 此处是结果。
 
 ![显示具有自定义格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 从 Windows 10，版本 1607年开始，XAML 框架提供了内置的布尔值到可见性转换器。 转换器将映射**true**到**Visibility.Visible**枚举值和**false**到**Visibility.Collapsed**以便你可以将 Visibility 属性绑定到布尔值而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607年开始，XAML 框架提供了内置的布尔值到可见性转换器。 转换器将映射**true**到**Visibility.Visible**枚举值和**false**到**Visibility.Collapsed**以便你可以将 Visibility 属性绑定到布尔值而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="see-also"></a>另请参阅
 * [数据绑定](index.md)

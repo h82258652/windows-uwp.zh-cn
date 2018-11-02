@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5868196"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945671"
 ---
 # <a name="advertising-performance-report"></a>广告效果报告
 
 
 [合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告性能报告**显示了如何执行你的[广告单元](in-app-ads.md)，包括社区广告。 此报告包含来自使用[广告中介](in-app-ads.md#mediation)的 UWP 应用中的多个广告提供商的数据。
 
-若要查看此报告，请展开左侧导航菜单中的**分析**，然后选择**广告效果**。 你可以在合作伙伴中心中查看此数据或下载的报告数据以供脱机查看通过单击该页面上的箭头图标。 或者，你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取广告效果数据](../monetize/get-ad-performance-data.md)方法以编程方式检索此数据。
+若要查看此报告，请展开左侧导航菜单中的**分析**，然后选择**广告效果**。 你可以在合作伙伴中心中查看此数据或下载的报告数据，以供脱机查看通过单击该页面上的箭头图标。 或者，你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取广告效果数据](../monetize/get-ad-performance-data.md)方法以编程方式检索此数据。
 
 查看广告效果报告时，请注意最近三天的报告数据可能会发生更改，因为我们会收到并处理来自各种来源的新数据。 此外，数据重述可能发生在过去最多 90 天内。
 
@@ -60,7 +60,7 @@ ms.locfileid: "5868196"
 | 填充率  | 从显示广告的应用发送广告请求的百分比。  |
 | 点击量  |  客户单击应用中的广告的次数。 |
 | CTR  |  点击率，是指单击广告的次数与曝光数之比。 |
-| 可见性 | 查看你的应用中的广告曝光量的百分比。 有关如何计算此值的更多详细信息，请参阅[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)。 |
+| 可见性 | 查看你的应用中的广告曝光的百分比。 有关如何计算此值的更多详细信息，请参阅[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)。 |
 | 获取的积分数  | 如果正在开展[社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)活动，那么这表示你通过在应用中展示社区广告提升广告空间而获得的积分数。  |
 | 花费的积分数  | 如果正在开展[社区广告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)活动，那么这表示你已为自己的应用广告花费的积分数。  |
 

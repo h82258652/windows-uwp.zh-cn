@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d15bd82197a22ddcf6abf836e726774fd1c7943
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5877755"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5932364"
 ---
 # <a name="get-usersxuidxuid"></a>GET (/users/xuid({xuid}))
 发现其他用户或客户端存在。
@@ -24,7 +24,7 @@ ms.locfileid: "5877755"
   * [URI 参数](#ID4EDB)
   * [查询字符串参数](#ID4EOB)
   * [授权](#ID4E4C)
-  * [资源的隐私设置的效果](#ID4EAE)
+  * [在资源的隐私设置的效果](#ID4EAE)
   * [需的请求标头](#ID4EVH)
   * [可选的请求标头](#ID4E1BAC)
   * [请求正文](#ID4E1CAC)
@@ -35,7 +35,7 @@ ms.locfileid: "5877755"
 
 ## <a name="remarks"></a>备注
 
-该响应可以进行筛选，以提供的[presencerecord，他的](../../json/json-presencerecord.md)一部分，如果使用者不感兴趣的整个对象。
+可以筛选响应，如果使用者不感兴趣的整个对象提供的[presencerecord，他的](../../json/json-presencerecord.md)一部分。
 
 > [!NOTE] 
 > 返回的数据会受到隐私和内容隔离规则。
@@ -58,7 +58,7 @@ ms.locfileid: "5877755"
 
 | 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- |
-| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除活动的整个树。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> |
+| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回整个树活动除外。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> |
 
 <a id="ID4E4C"></a>
 
@@ -72,7 +72,7 @@ ms.locfileid: "5877755"
 <a id="ID4EAE"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>资源的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>在资源的隐私设置的效果
 
 此方法将始终返回 200 确定，但可能不会在响应正文中返回的内容。
 
@@ -98,7 +98,7 @@ ms.locfileid: "5877755"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
 | x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
-| 接受| 字符串| 内容类型可接受。 支持的唯一一个是 application/json，但它必须在标头中指定。|
+| 接受| 字符串| 内容类型的可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
 | 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
 
@@ -128,7 +128,7 @@ ms.locfileid: "5877755"
 
 ### <a name="sample-response"></a>示例响应
 
-如果没有现有记录的用户，则返回任何设备的记录。
+如果没有现有记录的用户，将返回任何设备的记录。
 
 
 ```cpp

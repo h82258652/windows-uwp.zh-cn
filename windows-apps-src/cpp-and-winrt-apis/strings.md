@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
 ms.openlocfilehash: 72032c3c522a8434d266842a83c443889e8efc19
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878706"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946801"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理
 
-与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用 c + + 标准库宽字符串类型，例如**std:: wstring** (注意： 不与例如**std:: string**窄字符串类型)。 C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
+与[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，你可以调用 Windows 运行时 Api 使用 c + + 标准库宽字符串类型，例如**std:: wstring** (注意： 不使用窄字符串类型，例如**std:: string**)。 C++/WinRT 确实有名为 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自定义字符串类型（在 C++/WinRT 基础库 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` 中定义）。 这是 Windows 运行时构造函数、函数和属性实际上采用并返回的字符串类型。 但在很多情况下（由于 **hstring** 的转换构造函数和转换运算符），你可以选择是否要注意客户端代码中的 **hstring**。 如果你要*创作* API，则很可能需要了解 **hstring**。
 
 C++ 中有很多字符串类型。 除了 C++ 标准库中的 **std::basic_string** 之外，变体还存在于很多库中。 C++17 具有字符串转换实用程序和 **std::basic_string_view**，用来消除所有字符串类型之间的差别。  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 利用 **std::wstring_view** 提供了可转换性，以实现 **std::basic_string_view** 应有的互操作性。
 

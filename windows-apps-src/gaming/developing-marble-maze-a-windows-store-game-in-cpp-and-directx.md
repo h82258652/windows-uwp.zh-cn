@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a808c36ab319d76f16c653c5812ebe4b269ec59
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5862170"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5947241"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏
 
@@ -53,7 +53,7 @@ Marble Maze 为用户提供了多种方式来与游戏板交互。 如果你有�
 ## <a name="who-should-read-this"></a>谁应该阅读本文？
 
 
-如果你感兴趣创建 3D 游戏或其他图形密集型应用程序的 windows 10，本文适合你。 我们希望你使用本文列出的原则和实践来创建自己的 UWP 游戏。 如果你了解一定的 C++ 和 DirectX 编程背景知识或对其有着强烈的兴趣，这将帮助你充分利用本文档。 如果你没有 DirectX 方面的经验，而有类似的 3D 图形编程环境方面的经验，仍将从本文档受益。
+如果你感兴趣创建 3D 游戏或其他图形密集型应用程序，为 windows 10，本文适合你。 我们希望你使用本文列出的原则和实践来创建自己的 UWP 游戏。 如果你了解一定的 C++ 和 DirectX 编程背景知识或对其有着强烈的兴趣，这将帮助你充分利用本文档。 如果你没有 DirectX 方面的经验，而有类似的 3D 图形编程环境方面的经验，仍将从本文档受益。
 
 文档[操作实例：使用 DirectX 创建简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)描述了另一个使用 DirectX 和 C++ 实现基本 3D 射击游戏的示例。
 

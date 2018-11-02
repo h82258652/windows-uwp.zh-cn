@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: 84944060bac0a14e78cb4a5b28bbc848a71d7602
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5869623"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942301"
 ---
 # <a name="xbox-arena"></a>Xbox Arena
 
@@ -80,7 +80,7 @@ Xbox Arena 角色（设置锦标赛）   | 游戏的角色（游戏）
 
 文章 | 描述
 --- | ---
-[Xbox Arena 操作门户](operations-portal.md) | 描述了可用于创建和管理与 Xbox Arena 集成的游戏的官方锦标赛的操作门户。
+[Xbox Arena 操作门户](operations-portal.md) | 介绍了可用于创建和管理游戏与 Xbox Arena 集成的官方锦标赛操作门户。
 
 ## <a name="user-experience-guidance"></a>用户体验指南
 

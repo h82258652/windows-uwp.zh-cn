@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 位置功能
 ms.localizationpriority: medium
 ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877481"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943894"
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
@@ -46,7 +46,7 @@ ms.locfileid: "5877481"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步骤 1：请求访问用户的位置
 
-除非你的应用具有粗糙 location 功能 （参见备注），你必须使用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)之前尝试访问的位置请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
+除非你的应用具有粗糙 location 功能 （参见备注），你必须使用之前[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法访问的位置中请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -58,7 +58,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
 
->注意： 粗糙 location 功能使你的应用可以获取有意模糊 （不精确） 的位置，而无需获得用户明确许可 （系统级的位置开关仍必须为**上**，但是）。 若要了解如何利用你的应用中的粗糙位置，请参阅[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)类中的[**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)方法。
+>注意： 粗糙位置功能允许应用，而无需获得用户明确许可 （系统级的位置开关仍必须为**上**，但是） 获取有意模糊 （不精确） 的位置。 若要了解如何利用你的应用中的粗糙位置，请参阅[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)类中的[**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)方法。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步骤 2：获取用户的位置并注册位置权限的更改
 

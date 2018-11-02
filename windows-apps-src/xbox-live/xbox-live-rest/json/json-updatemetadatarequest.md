@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0b7a3d90e5a69807e3ac9532a58a845568c93f2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879851"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942330"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
-应针对剪辑元数据。 
+应更新剪辑元数据。 
 <a id="ID4EN"></a>
 
  

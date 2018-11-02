@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd82e4574ab6c6aff30d762f2eacc0d62fd6bdf
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870452"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946459"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -79,7 +79,7 @@ VSTS 适用于基于 TFS 和 GIT 的代码存储库。
 
 #### <a name="configure-the-build-solution-build-task"></a>配置生成解决方案生成任务
 
-此任务将在对二进制文件的工作文件夹，并且生成输出应用包文件的任何解决方案编译。 此任务使用 MSbuild 参数。  你必须指定这些参数的值。 使用下表作为指南。 
+此任务将编译且未对二进制文件的工作文件夹中生成输出应用包文件的任何解决方案。 此任务使用 MSbuild 参数。  你必须指定这些参数的值。 使用下表作为指南。 
 
 |**MSBuild 参数**|**值**|**说明**|
 |--------------------|---------|---------------|
@@ -315,17 +315,17 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果要分发应用而不将其发布到应用商店，则可将应用直接旁加载到设备，前提是这些设备信任用于对应用包签名的证书。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分，并将然后安装或更新的应用包文件。
+使用 `Add-AppDevPackage.ps1` PowerShell 脚本安装应用。 此脚本将证书添加到本地计算机的受信任的根证书部分将然后安装或更新的应用包文件。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 周年更新旁加载应用
-在 Windows 10 周年更新中，你可以双击应用包文件，并通过在对话框中选择安装按钮来安装你的应用。 
+在 Windows 10 周年更新中，你可以双击应用包文件，并安装你的应用通过在对话框中选择安装按钮。 
 
 ![在 rs1 中旁加载](images/building-screen18.png) 
 
 >[!NOTE]
 > 此方法不安装证书或关联的依赖项。
 
-如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点的列表。 否则，Windows 将该文件标记为锁定。 
+如果你想要分发你从 VSTS 或 HockeyApp 之类的网站的 Windows 应用程序包，你将需要将该站点添加到你的浏览器中的受信任的站点列表。 否则，Windows 将该文件标记为锁定。 
 
 <span id="certificates-best-practices"/>
 

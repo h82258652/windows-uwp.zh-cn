@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 工具, 玩家重置, live 跟踪分析器, LTA, xbox live 帐户工具
 ms.localizationpriority: medium
 ms.openlocfilehash: 69c1a22c1984ae78a096b7a279225c0e658285e6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5874178"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5927953"
 ---
 # <a name="development-tools-for-xbox-live"></a>适用于 Xbox Live 的开发工具
 

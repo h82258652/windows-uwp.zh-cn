@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c90dbca0e16cf1dcebc53fd8fa90006ca7ae7caf
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5863788"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936608"
 ---
 # <a name="titleassociation-json"></a>TitleAssociation (JSON)
 与成就关联的标题。 
@@ -29,7 +29,7 @@ TitleAssociation 对象具有以下规范。
 | --- | --- | --- | 
 | name| 字符串| 本地化的内容的名称。| 
 | id| 字符串| TitleId （32 位无符号整数、 小数中返回）。| 
-| version| 字符串| （如果适用） 相关联的游戏的特定版本。| 
+| version| 字符串| （如果适用） 关联的游戏的特定版本。| 
   
 <a id="ID4E4B"></a>
 

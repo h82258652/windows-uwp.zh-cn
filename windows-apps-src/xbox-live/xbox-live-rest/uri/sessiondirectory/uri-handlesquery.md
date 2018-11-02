@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d4ce38768923f9adb2cdb8e2237e9afcb774433b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5860896"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940190"
 ---
 # <a name="handlesquery"></a>/handles/query
 支持创建会话句柄查询 POST 操作。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它被用于使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本。  
 
  
 <a id="ID4EQ"></a>
@@ -32,7 +32,7 @@ sessiondirectory.xboxlive.com
 
  
 ## <a name="remarks"></a>备注
-此 URI 的句柄支持查询。 会话与查询不同，这些字符串和批处理查询句柄查询使用查询处理器样式。 最多 100 句柄均受支持。  
+此 URI 支持句柄查询。 会话与查询不同，这些字符串和批处理查询句柄查询使用查询处理器样式。 最多 100 句柄均受支持。  
 <a id="ID4E2"></a>
 
  

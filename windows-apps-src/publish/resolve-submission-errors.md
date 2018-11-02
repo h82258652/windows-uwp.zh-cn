@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5860254"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945385"
 ---
 # <a name="resolve-submission-errors"></a>解决提交错误
 
@@ -21,18 +21,18 @@ ms.locfileid: "5860254"
 
 ## <a name="uwp-apps"></a>UWP 应用
 
-如果你要提交 UWP 应用，你可能在预处理过程程序包文件不由 Visual Studio 生成的应用商店.msixupload 或.appxupload 文件中看到的错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用包文件时，仅上载的提交中，不是.msix/appx 或.msixbundle/appxbundle 的[程序包](upload-app-packages.md)页面的.msixupload 或.appxupload 文件.
+如果你要提交 UWP 应用，你可能在预处理过程程序包文件不由 Visual Studio 生成的应用商店.msixupload 或.appxupload 文件中看到的错误。 请确保按照[程序包使用 Visual Studio 的 UWP 应用](../packaging/packaging-uwp-apps.md)中的步骤，创建你的应用程序文件时，仅上载的提交中，不是.msix/appx 或.msixbundle/appxbundle 的[程序包](upload-app-packages.md)页面的.msixupload 或.appxupload 文件.
 
 如果显示了编译错误，请确保能够在发布模式中成功生成应用程序。 有关详细信息，请参阅 [.NET 本机内部编译器错误](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
 ## <a name="desktop-application"></a>桌面应用程序
 
-如果你计划提交包包含的 Win32 和 UWP 二进制文件，请确保使用 Windows 打包项目中提供的 Visual Studio 2017 更新 4 创建该程序包。 如果你使用的 UWP 项目模板创建程序包，你可能无法提交的打包到应用商店或旁加载到其他电脑上。 即使该程序包发布成功，它可能会出现用户的电脑上的异常情况。 有关详细信息，请参阅[包使用 Visual Studio （桌面桥） 的应用]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果你计划提交包包含的 Win32 和 UWP 二进制文件，请确保使用 Windows 打包项目可在 Visual Studio 2017 更新 4 中创建该程序包。 如果你使用的 UWP 项目模板创建程序包，你可能无法提交的打包到应用商店或旁加载到其他电脑上。 即使该程序包发布成功，它可能会出现用户的电脑上的异常情况。 有关详细信息，请参阅[使用 Visual Studio （桌面桥） 的应用包]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 及更早版本
 
 > [!IMPORTANT]
-> 从 2018 年 10 月 31 日起新创建的产品不能包含程序包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 从 2018 年 10 月 31 日起，新创建的产品不能包含包面向 Windows Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 在预处理过程中检测到 Windows Phone 程序包的问题时，你可能会看到**错误 2001**。 在大多数情况下，需要重新生成你的应用包来更正错误。 完成后，请在提交的[程序包](upload-app-packages.md)页面上将旧程序包替换为新程序包，然后再单击“提交到应用商店”****。
 

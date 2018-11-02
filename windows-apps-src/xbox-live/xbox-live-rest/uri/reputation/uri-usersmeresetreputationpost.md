@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a08d4b8ecb72bc1db7e9607f0118f0e80e1e2980
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882387"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945824"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
 启用后 （例如） 帐户劫持设置为某些任意值的当前用户的信誉评分，强制执行团队。 这些 Uri 的域是`reputation.xboxlive.com`。
@@ -31,27 +31,27 @@ ms.locfileid: "5882387"
  
 ## <a name="remarks"></a>备注
  
-通过任何其他合作伙伴的所有除零售沙盒和 Retail，除非出于测试目的的所有沙盒中的用户，也可能会调用此方法。 请注意，此请求用于设置用户的"基本"信誉评分，他正面反馈权重将全部归零。在执行此调用后用户的实际信誉将这些基本评分以及他大使奖金他关注者奖金。
+通过任何其他合作伙伴的所有除零售沙盒和 Retail，除非出于测试目的的所有沙盒中的用户，也可能会调用此方法。 请注意，此请求用于设置用户的"基本"信誉评分，他的正面反馈权重将全部归零。在执行此调用后用户的实际信誉将这些基本评分以及他大使奖金和他的关注者奖金。
   
 <a id="ID4E5"></a>
 
  
 ## <a name="authorization"></a>授权
  
-从合作伙伴： 为零售沙盒， **PartnerClaim**来自强制执行团队;对于所有其他沙盒， **PartnerClaim**。
+从合作伙伴： 零售沙盒， **PartnerClaim**从强制执行团队;对于所有其他沙盒， **PartnerClaim**。
  
-用户： 以外的所有沙盒零售、 **XuidClaim**和**TitleClaim**除外。
+从用户： 以外的所有沙盒零售、 **XuidClaim**和**TitleClaim**除外。
   
 <a id="ID4ETB"></a>
 
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-来自所有： **Content-type: application/json**。
+从所有： **Content-type: application/json**。
  
 从合作伙伴： **X Xbl 协定版本**（当前版本是 101）、 **X Xbl 沙盒**。
  
-用户: （当前版本是 101） **X Xbl 协定版本**。
+从用户: （当前版本是 101） **X Xbl 协定版本**。
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | 
@@ -86,23 +86,23 @@ ms.locfileid: "5882387"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源所做的请求的响应，该服务返回其中一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 确定。| 
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
+| 400| 错误请求| 服务可能不理解的格式不正确的请求。 通常参数无效。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
   
 <a id="ID4EFH"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-成功时，响应正文为空。 失败时，会返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+成功时，响应正文为空。 在失败，返回[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
  
 <a id="ID4ERH"></a>
 

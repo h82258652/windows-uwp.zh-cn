@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 标记扩展允许函数在标记中使用。
+description: XBind 标记扩展允许在标记中使用的功能。
 title: x:Bind 中的函数
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881111"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943376"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
@@ -106,7 +106,7 @@ public class MyPage : Page
 - 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
 - 函数的返回类型需要匹配正使用绑定的属性的类型
 
-从开始到 Windows 10 的下一个主要更新，则绑定引擎将响应属性更改通知触发的函数名称和重新评估根据绑定。 例如： 
+从开始到 Windows 10 的下一个主要更新，则绑定引擎将响应属性更改通知触发的函数名称和重新计算绑定根据需要。 例如： 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">

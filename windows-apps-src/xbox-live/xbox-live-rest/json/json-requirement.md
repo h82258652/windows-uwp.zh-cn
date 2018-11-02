@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d03f9139bcd8067c5d0b945c92bf09728a28366
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5865429"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944283"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
-成就和用户向会议它们是距离解锁条件。 
+解锁成就和远的用户是向满足这些条件。 
 <a id="ID4EN"></a>
 
  
@@ -29,9 +29,9 @@ ms.locfileid: "5865429"
 | --- | --- | --- | 
 | id| 字符串| 要求的 ID。| 
 | 当前| 字符串| 要求的进度的当前值。| 
-| target| 字符串| 要求目标值。| 
-| ： 键入| 字符串| 要求操作类型。 有效值为总和、 最小值、 最大值。| 
-| ruleParticipationType| 字符串| 要求参与类型。 有效值为个人，组。| 
+| target| 字符串| 要求的目标值。| 
+| ： 键入| 字符串| 操作类型的要求。 有效值为总和、 最小值、 最大值。| 
+| ruleParticipationType| 字符串| 参与要求的类型。 有效值为个人、 组。| 
   
 <a id="ID4ETC"></a>
 

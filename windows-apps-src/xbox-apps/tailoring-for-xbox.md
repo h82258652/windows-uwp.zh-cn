@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5883314"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944757"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -24,7 +24,7 @@ ms.locfileid: "5883314"
 
 ### <a name="do-turn-off-mouse-mode"></a>*应做事项：* 关闭鼠标模式
 
-Xbox 用户喜欢其控制器。 若要优化控制器输入，[禁用鼠标模式](how-to-disable-mouse-mode.md)，并启用方向导航（也称为 [X-Y 焦点](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)）。 请注意焦点陷阱和不可访问的 UI。
+Xbox 用户喜欢其控制器。 若要优化控制器输入，[禁用鼠标模式](how-to-disable-mouse-mode.md)，并启用方向导航（也称为 [X-Y 焦点](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)）。 注意焦点陷阱和不可访问的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*应做事项：* 绘制适用于 10 英尺体验的焦点矩形
 
@@ -45,7 +45,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*注意事项：* 使用电视安全颜色
 
-电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 读取[颜色](../design/devices/designing-for-tv.md#colors)若要了解如何使你良好地适应每个人的应用 ！
+电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 读取[颜色](../design/devices/designing-for-tv.md#colors)，若要了解如何使你良好地适应每个人的应用 ！
 
 ### <a name="remember-you-can-disable-scaling"></a>*记住：* 可以禁用缩放
 

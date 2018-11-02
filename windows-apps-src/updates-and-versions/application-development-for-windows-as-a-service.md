@@ -9,11 +9,11 @@ keywords: Windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
 ms.openlocfilehash: 536679068d66a279e158790bf0fcc0f8757709cc
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5860851"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944978"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>面向 Windows 即服务的应用程序开发
 
@@ -22,7 +22,7 @@ ms.locfileid: "5860851"
 -   Windows 10 移动版
 -   Windows 10 IoT 核心版 
 
-在当今的环境中，用户期望经常受到以设备为中心的体验影响，需要以月而非年为单位衡量完整的产品周期。 此外，新版本必须持续提供，并且必须在对用户影响最小的情况下部署。 Microsoft 设计 windows 10 以满足这些要求通过实现的创新、 开发和交付称为[Windows 即服务 (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview)的新方法。 在保持高质量级别的同时极大地缩短产品周期的关键是创新以社区为中心测试方法，Microsoft 已针对 windows 10 实现。 名为“Windows 预览体验成员”的社区由世界各地数百万的用户组成。 当 Windows 预览体验成员选择加入社区时，他们将在产品周期的过程中测试许多版本，并通过名为“外部测试版”的迭代方法向 Microsoft 提供反馈。
+在当今的环境中，用户期望经常受到以设备为中心的体验影响，需要以月而非年为单位衡量完整的产品周期。 此外，新版本必须持续提供，并且必须在对用户影响最小的情况下部署。 Microsoft 设计的 windows 10 以满足这些要求，通过实现的创新、 开发和交付称为[Windows 即服务 (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview)的新方法。 保持高质量级别的同时大地缩短产品周期的关键是创新社区中心测试方法方法，Microsoft 已针对 windows 10 实现。 名为“Windows 预览体验成员”的社区由世界各地数百万的用户组成。 当 Windows 预览体验成员选择加入社区时，他们将在产品周期的过程中测试许多版本，并通过名为“外部测试版”的迭代方法向 Microsoft 提供反馈。
 
 作为“外部测试版”分配的版本向 Windows 工程团队提供大量关于版本在实际使用中执行情况的数据。 与 Windows 预览体验成员一起执行外部测试版还使 Microsoft 能够在比以往更多的不同硬件、应用程序和网络环境中测试版本，并且更快地发现问题。 因此，Microsoft 认为侧重于社区的外部测试版将实现比以往更快速的创新交付和更好的公开发布质量。
 
@@ -30,13 +30,13 @@ ms.locfileid: "5860851"
 
 尽管 Microsoft 向 Windows 预览体验成员发布外部测试版，但 Microsoft 将持续向公众广泛发布两种类型的 Windows 10 版本：
 
-**功能更新**在已运行 windows 10 的设备上安装最新特性、 体验和功能。 因为功能更新包含整个 Windows 副本，它们也是什么的客户使用在运行 windows7 作为或 Windows8.1，现有设备和新的设备上安装 windows 10 不装有任何操作系统。 Microsoft 希望发布更新半年一次。 
+**功能更新**在已运行 windows 10 的设备上安装最新特性、 体验和功能。 因为功能更新包含整个 Windows 副本，它们也是什么的客户使用安装 windows 10 上运行 windows7 作为或 Windows8.1，现有设备，并在新设备上没有操作系统安装了。 Microsoft 希望发布更新半年一次。 
 
 **质量更新**提供安全问题解决方案和其他重要的 Bug 修复。 以每月一次或多次的频率提供质量更新，以对当前受支持的每项功能进行改进。 Microsoft 将继续在“更新星期二”（有时称为“修补程序星期二”）发布质量更新。 此外，Microsoft 可能会发布其他质量更新 windows 10 之外的更新星期二过程时需要满足客户需求。
 
-Windows 10 开发期间，Microsoft 简化了 Windows 产品工程设计和发布周期，以便我们可以提供特性、 体验和功能的客户希望，比以往更快地。 同时我们创造新的方法来交付并安装功能更新和质量更新，从而简化部署和持续的管理、扩大保持使用最新 Windows 功能和体验的员工基础，并降低企业的总成本。 因此，我们已实现新服务选项 – 指半年频道和 Long-Term Servicing Channel (LTSC) – 提供实用解决方案，以使更多设备比以前的企业环境中最新。
+Windows 10 开发期间，Microsoft 简化了 Windows 产品工程设计和发布周期，以便我们可以提供的特性、 体验，客户需要以及功能，比以往更快。 同时我们创造新的方法来交付并安装功能更新和质量更新，从而简化部署和持续的管理、扩大保持使用最新 Windows 功能和体验的员工基础，并降低企业的总成本。 因此，我们已实现新的服务选项 – 指半年频道和 Long-Term Servicing Channel (LTSC) – 用于提供实用解决方案，以使更多设备比以前可能企业环境中最新。
 
-下表显示了介绍了各种服务分支和及其主要属性。
+下表显示了描述各种服务分支及其主要属性。
 
 | 服务选项 | 新功能升级的安装可用性 | 服务生存期 | 主要优势 | 支持版本 |
 | --- | --- | --- | --- | --- |
@@ -66,7 +66,7 @@ Windows 10 开发期间，Microsoft 简化了 Windows 产品工程设计和发�
 
 我们了解兼容性对开发人员的重要性。 ISV 和开发人员希望确保他们的应用在所有受支持版本的 Windows 操作系统上会按预期运行。 消费者和企业在这方面进行了重点投资，他们希望确保所购买的应用仍可继续运行。 我们知道兼容性对购买决定起着主要作用。 发布新的 Windows 版本时，基于最佳做法编写良好的应用所需进行的代码改动较少且可减少碎片 - 这些应用在维护方面可减少工程投入成本，并可更快推向市场。
 
-在 windows7 作为时间范围中，兼容性方法非常被动。 在 Windows8，我们一开始看待，使用 Windows 时确保兼容性按设计实现，而不是事后补救。 Windows 10 是最兼容按设计实现的最佳版本的日期到操作系统。 下面提供了我们实现兼容性的几个关键方法：
+在 windows7 作为时间范围中，兼容性方法非常被动。 在 Windows8，我们一开始看待，使用 Windows 时确保兼容性按设计实现，而不是事后补救。 Windows 10 是最兼容按设计实现的最佳版本日期到的操作系统。 下面提供了我们实现兼容性的几个关键方法：
 -   **应用遥测**：这有助于我们在 Windows 生态系统中了解应用的热门程度，以通知兼容性测试。
 -   **ISV 合作关系**：直接与外部合作伙伴协作，以向他们提供数据并帮助修复我们的用户遇到的问题。
 -   **设计审查，上游检测**：合作伙伴与功能团队合作，以减少对 Windows 进行重大更改的次数。 兼容性审查是我们的功能团队必须通过的门槛。
@@ -81,7 +81,7 @@ Microsoft 使用诊断和使用情况数据，以便标识和解决问题、改�
 
 ### <a name="windows-version-check"></a>Windows 版本检查
 
-OS 版本已根据 windows 10 递增。 这意味着内部版本号已更改为 10.0。 同过去一样，在 OS 版本更改后我们将尽力维护应用程序和设备兼容性。 对于大多数应用类别 （不具有任何内核依存关系），此更改不会造成负面影响的应用功能，并且现有应用将继续在 windows 10 上正常工作。
+OS 版本已根据 windows 10 递增。 这意味着内部版本号已更改为 10.0。 同过去一样，在 OS 版本更改后我们将尽力维护应用程序和设备兼容性。 对于大多数应用类别 （不具有任何内核依存关系），此更改不会造成负面影响的应用功能和现有的应用将继续在 windows 10 上正常工作。
 
 此更改的体现特定于应用。 这意味着专门检查 OS 版本的任何应用将获得更高的版本号，这可能会导致出现以下一个或多个情形：
 -   应用安装程序可能无法安装应用，并且应用可能无法启动。
@@ -102,7 +102,7 @@ OS 版本已根据 windows 10 递增。 这意味着内部版本号已更改为 
 
 ### <a name="develop-universal-windows-platform-uwp-and-centennial-apps"></a>开发通用 Windows 平台 (UWP) 和 Centennial 应用
 
-我们鼓励所有 Win32 应用 ISV 开发[通用 Windows 平台 (UWP)](http://go.microsoft.com/fwlink/?LinkID=780560)，特别是 [Centennial](http://go.microsoft.com/fwlink/?LinkID=780562) 应用要与时俱进。 开发这些应用包有许多好处，而使用传统 Win32 安装程序则没有。 UWP 应用还可以支持在[Microsoft Store](http://go.microsoft.com/fwlink/?LinkID=780563)中，使其更加轻松地你的用户自动更新到一致版本，从而降低支持成本。
+我们鼓励所有 Win32 应用 ISV 开发[通用 Windows 平台 (UWP)](http://go.microsoft.com/fwlink/?LinkID=780560)，特别是 [Centennial](http://go.microsoft.com/fwlink/?LinkID=780562) 应用要与时俱进。 开发这些应用包有许多好处，而使用传统 Win32 安装程序则没有。 UWP 应用还可以支持在[Microsoft Store](http://go.microsoft.com/fwlink/?LinkID=780563)中，使其更加轻松地在你的用户自动更新到一致版本，从而降低支持成本。
 
 如果你的 Win32 应用类型不适用于 Centennial 模型，我们强烈你使用正确的安装程序，并确保经过全面测试。 安装程序是用户或客户对你的应用的首次体验，因此确保该安装程序运行良好。 安装程序时常运行不良，或者并未针对所有情形进行全面测试。 在你的用户开始操作之前，[Windows 应用认证工具包](http://go.microsoft.com/fwlink/?LinkID=780565)可以帮助你测试 Win32 应用的安装和卸载、帮助标识未记录的 API 的使用情况以及其他与性能相关的基本最佳做法问题。
 
@@ -121,7 +121,7 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 ### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>步骤 1：成为 Windows 预览体验成员并参与外部测试版
 作为 [Windows 预览体验成员](http://go.microsoft.com/fwlink/p/?LinkId=521639)，你可以帮助塑造 Windows 的未来 - 你的反馈将帮助我们改进该平台中的特性和功能。 这是一个充满活力的社区，在这里你可以联系其他爱好者、加入论坛、交换意见，以及了解即将推出的仅面向预览体验成员的活动。
 
-由于你有权访问预览版的 windows 10、 windows 10 移动版和最新的 Windows SDK 和模拟器，因此你必须所有工具随意使用来开发出色的应用，并了解什么是通用 Windows 平台和 Microsoft 应用商店中的新增功能。
+由于你有权访问预览版的 windows 10、 windows 10 移动版和最新的 Windows SDK 和仿真器，因此你必须所有工具来开发出色的应用，并了解什么是通用 Windows 平台和 Microsoft 应用商店中的新增功能你支配。
 
 这还是一个生成出色硬件的极好机会，借助预览版的硬件开发工具包，你可以开发适用于 Windows 的通用驱动程序。 在受支持的 IoT 开发板上还提供 IoT Core Insider Preview，以便你可以使用通用 Windows 平台生成令人惊叹的连接解决方案。
 
@@ -136,11 +136,11 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 ### <a name="step-2-test-your-scenarios"></a>步骤 2：测试你的方案
 
 在你更新到外部测试版后，以下是一些帮助你开始测试和收集反馈的示例测试用例。 对于其中大多数测试，请确保包括 x86 和 AMD64 系统。
-**全新安装测试：** 在全新安装的 windows 10 上，确保你的应用是完全正常运行。 如果你的应用未通过此测试和升级测试，则该问题很可能是由底层操作系统更改或应用中的 Bug 造成的。 如果在研究之后，发现前一种情形是问题的原因，请务必使用 Windows 预览体验计划提供反馈并协助制定解决方案。
+**全新安装测试：** 全新安装 windows 10，请确保你的应用是完全正常运行。 如果你的应用未通过此测试和升级测试，则该问题很可能是由底层操作系统更改或应用中的 Bug 造成的。 如果在研究之后，发现前一种情形是问题的原因，请务必使用 Windows 预览体验计划提供反馈并协助制定解决方案。
 
 **升级测试：** 后，检查你的应用运行从低级别版本的 Windows （即 windows7 作为或 Windows8.1） 升级到 windows 10。 你的应用在升级过程中不应该导致回退，并且在升级之后应继续按预期运行 - 这对于实现无缝升级体验至关重要。
 
-**重新安装测试：** 确保可以通过重新安装你的应用，从低级别操作系统升级到 windows 10 电脑后恢复应用功能。 如果应用未通过升级测试，并且尚无法排查到这些问题的原因，重新安装可能会恢复丢失的功能。 通过重新安装测试表明，该应用的某些部分可能尚未迁移到 windows 10。
+**重新安装测试：** 确保可以通过重新安装你的应用从低级别操作系统升级到 windows 10 电脑后恢复应用功能。 如果应用未通过升级测试，并且尚无法排查到这些问题的原因，重新安装可能会恢复丢失的功能。 通过重新安装测试表明，该应用的某些部分可能尚未迁移到 windows 10。
 
 **操作系统\\设备功能测试：** 如果应用依赖操作系统中的特定功能，请确保应用按预期运行。 用于测试的常见区域如下所示（为确保覆盖范围，通常选择常用电脑型号）：
 -   音频
@@ -160,7 +160,7 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 
 ### <a name="step-4-register-on-ready-for-windows"></a>步骤 4：注册 Ready For Windows
 
-  [Ready for Windows](http://go.microsoft.com/fwlink/?LinkID=780580) 网站是支持 Windows10 的软件的目录。 它适用于全球范围内公司和组织的 IT 管理员，这些管理员要针对其部署考虑使用 Windows10。 IT 管理员可以查看该站点来了解其企业中部署的软件是否受支持在 windows 10 中。
+  [Ready for Windows](http://go.microsoft.com/fwlink/?LinkID=780580) 网站是支持 Windows10 的软件的目录。 它适用于全球范围内公司和组织的 IT 管理员，这些管理员要针对其部署考虑使用 Windows10。 IT 管理员可以查看该站点来了解其企业中部署的软件是否受支持在 windows 10。
 
 ## <a name="related-topics"></a>相关主题
 [用于更新和升级的 Windows 10 服务选项](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)

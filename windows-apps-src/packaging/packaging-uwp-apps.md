@@ -12,11 +12,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: ba0ed6cb2fe2b932dcb3011ff7cf9cf7ce197182
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5863361"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5947032"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual Studio 打包 UWP 应用
 
@@ -42,7 +42,7 @@ ms.locfileid: "5863361"
 3.  [创建应用包上传文件](#create-an-app-package-upload-file)。 使用 Visual Studio 应用包向导创建应用包，然后使用 Windows 应用认证工具包验证程序包。
 4.  [旁加载应用包](#sideload-your-app-package)。 将应用旁加载到设备后，你可以测试该应用是否按预期运行。
 
-完成上述步骤之后，你可以随时分发你的应用。 如果你有不打算出售仅供内部用户的业务线 (LOB) 应用，你可以旁加载该应用以在任何 windows 10 设备上安装它。
+完成上述步骤之后，你可以随时分发你的应用。 如果你不打算出售仅供内部用户的业务线 (LOB) 应用，你可以旁加载该应用以在任何 windows 10 设备上安装它。
 
 ## <a name="before-packaging-your-app"></a>在打包应用前
 
@@ -78,7 +78,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="create-an-app-package-upload-file"></a>创建应用包上传文件
 
-若要通过 Microsoft Store 分发应用，你必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到开发人员中心已打包的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可以单独向开发人员中心提交应用包或应用程序包，但我们鼓励你提交上传包。
+若要通过 Microsoft 应用商店分发应用，你必须创建应用包 （.appx 或.msix）、 应用程序包 （.appxbundle 或.msixbundle） 或上传程序包 (.appxupload) 和[提交到开发人员中心已打包的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可以单独向开发人员中心提交应用包或应用程序包，但我们鼓励你提交上传包。
 
 >[!NOTE]
 > 应用包上传文件 (.appxupload) 是**唯一**一种能够使用 Visual Studio 创建的对开发人员中心有效的应用包类型。 其他有效的[可以手动创建的应用包](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，无需使用 Visual Studio。 
@@ -121,10 +121,10 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 有关将应用提交到开发人员中心的详细信息，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
-**验证应用包的远程 windows 10 设备**
+**验证你在远程 windows 10 设备上的应用包**
 
-1.  通过[启用设备进行开发](https://msdn.microsoft.com/library/windows/apps/Dn706236)说明启用 windows 10 设备进行开发。
-    **重要提示**无法用于 windows 10 验证应用包的远程 ARM 设备上。
+1.  按照[启用设备进行开发](https://msdn.microsoft.com/library/windows/apps/Dn706236)启用 windows 10 设备进行开发。
+    **重要**不能为 windows 10 中验证你的应用包的远程 ARM 设备上。
 2.  下载并安装适用于 Visual Studio 的远程工具。 这些工具用于远程运行 Windows 应用认证工具包。 你可以通过访问[在远程计算机上运行 UWP 应用](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)获取有关这些工具的详细信息，包括下载位置。
 3.  下载所需的[Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然后将它安装在远程 windows 10 设备。
 4.  在向导的**程序包创建已完成**页面上，选择**远程计算机**选项按钮，然后选择**测试连接**按钮旁边的省略号按钮。
@@ -143,7 +143,7 @@ Windows 10 周年更新引入了双击应用包文件安装应用包的简单方
 > 应用安装程序假定设备信任此应用。 如果你旁加载开发人员或企业应用，则需要向存储在设备上的“Trusted People or Trusted Publishers Certification Authorities”安装签名证书。 如果你不确定如何执行此操作，请参阅[安装测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-on-previous-versions-of-windows"></a>在以前版本的 Windows 上旁加载应用
-对于 UWP 应用包，应用不会像桌面应用那样安装到设备上。 通常，你会从 Microsoft Store 下载 UWP 应用，这也会将应用安装到你的设备上。 你可以在不将应用发布到 Microsoft Store 的情况下安装应用（旁加载）。 这允许你安装和测试应用程序使用的应用包文件中创建。 如果你有一款不想在应用商店中出售的应用（如业务线 (LOB) 应用），你可以旁加载该应用，以便你的公司中的其他用户也可以使用它。
+对于 UWP 应用包，应用不会像桌面应用那样安装到设备上。 通常，你会从 Microsoft Store 下载 UWP 应用，这也会将应用安装到你的设备上。 你可以在不将应用发布到 Microsoft Store 的情况下安装应用（旁加载）。 这允许你安装和测试应用使用的应用包文件中创建。 如果你有一款不想在应用商店中出售的应用（如业务线 (LOB) 应用），你可以旁加载该应用，以便你的公司中的其他用户也可以使用它。
 
 下面的列表提供了旁加载应用的要求。
 

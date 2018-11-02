@@ -10,18 +10,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d61d8f23936dc40648637df793d7610159498ac0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882390"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943946"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
 详细信息和元数据，产品/服务返回有关的一个或多个项目。 这些 Uri 的域是`eds.xboxlive.com`。
  
-API 不同于相关的 API 和浏览 API 的详细信息 (当在 ID passin) 因为这些 API 将返回显式或隐式方法，与 fiven ID 相关联的其他项目的信息，而详细信息 API 返回的其他信息有关相同的项。
+API 不同于相关的 API 和浏览 API 的详细信息 (当 passin id) 为这些 API 返回显式或隐式方法，与 fiven ID 相关联的其他项目的信息，而详细信息 API 返回的其他信息有关相同的项。
  
-可以将多个 Id 的不同的媒体项类型传递到单个调用 （只要它们不的类型 ProviderContentID-如下所示），但它们都必须属于相同的媒体组。 但是，有几个调用方不知道媒体组在其中的客户端方案。 该 API sepcial 值为"未知"媒体组在以下情况下的，从而支持此操作：
+可以将多个不同的媒体项的类型 Id 传递到单个调用 （只要它们不类型 ProviderContentID-请参阅下面的），但它们都必须属于同一媒体组。 但是，有几个调用方不知道媒体组在其中的客户端方案。 该 API sepcial 值为"未知"的介质组在以下情况下，从而支持此操作：
  
    * idType = XboxHexTitle，这将产生 AppType 或 GameType 项
    * idType = ProviderContentId，这将产生 MovieType 或 TVType 项
