@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, xim, 聊天
 ms.localizationpriority: medium
 ms.openlocfilehash: b5e67e75a981a6abc88b877983e544293055e90b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5933933"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5986823"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>通过带外保留将 XIM 用作专门的聊天解决方案
 

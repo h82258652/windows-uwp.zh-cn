@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 755d30796c7e948a2fe97e84986a74a461795f83
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5924405"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992021"
 ---
 # <a name="usersowneridclips"></a>/users/{ownerId}/clips
 访问用户的剪辑的列表。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，根据问题的 URI 的函数。

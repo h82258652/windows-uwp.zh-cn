@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: d34b1fd2a40508d100e39b784d24b5604237d499
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938542"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5981337"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 

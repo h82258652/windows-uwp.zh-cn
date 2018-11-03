@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: ec865b56254b624655e29df43a42ebedd58e4cf0
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940081"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5968277"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows 开发人员中心服务配置
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 0622014160c3e0b675bd0cf53793eeb06ef907c5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944227"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994433"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a>如何获取 Xbox 开发工具包 (XDK)
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, xbox one, xbox 集成多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e4645de174bb572b75a8d5a5dcbb4091a693e75
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5934762"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5975380"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C++)
 

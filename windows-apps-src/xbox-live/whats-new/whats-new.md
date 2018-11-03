@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c70f0dee1226057a69cb876dac4f4512b378b5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5929220"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5981596"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。

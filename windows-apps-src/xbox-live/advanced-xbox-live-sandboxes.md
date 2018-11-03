@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
 ms.openlocfilehash: 025a6ecbf4431ff465a70e8a11324d170748d117
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5932867"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5974441"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 

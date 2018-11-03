@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fc69717c737621e83fb1a34247aeb29ca31b95f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5921747"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5991523"
 ---
 # <a name="get-untrustedplatformusersxuidxuidscidssciddatapath"></a>GET (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path})
 列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。

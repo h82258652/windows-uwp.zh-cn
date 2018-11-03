@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox live 创意者, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d3fca6a8a61f97fe452cc5177c2b3d8d564ca0d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5934231"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5974184"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a>使用 Visual Studio 开发 Xbox Live 创意者计划主题作品入门
 

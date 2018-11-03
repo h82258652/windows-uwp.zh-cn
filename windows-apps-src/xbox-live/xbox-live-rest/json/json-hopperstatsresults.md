@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b6f1322d2c22e65c33667ea409b10d9209628d3b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5919549"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5984152"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 表示漏斗的统计信息的 JSON 对象。 

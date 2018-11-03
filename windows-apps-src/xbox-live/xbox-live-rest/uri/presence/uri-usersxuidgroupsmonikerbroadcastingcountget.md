@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c33977a2cc7a96db07bb48fd0902663b306e71a5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5925473"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5977396"
 ---
 # <a name="get-usersxuidxuidgroupsmonikerbroadcastingcount-"></a>GET (/users/xuid({xuid})/groups/{moniker}/broadcasting/count )
 检索与在 URI 中出现的 XUID 相关的组名字对象由指定的广播用户的计数。 这些 Uri 的域是`userpresence.xboxlive.com`。

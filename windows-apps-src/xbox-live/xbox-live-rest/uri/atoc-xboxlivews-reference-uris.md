@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947502"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5981353"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
@@ -75,7 +75,7 @@ ms.locfileid: "5947502"
 
 [信誉 URI](reputation/atoc-reference-reputation.md)
 
-&nbsp;&nbsp;Uri 和信誉服务相关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法信誉服务。
 
 [会话目录 URI](sessiondirectory/atoc-reference-sessiondirectory.md)
 
@@ -83,7 +83,7 @@ ms.locfileid: "5947502"
 
 [游戏成就历史记录 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法为*游戏历史记录*。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为*游戏历史记录*。
 
 [标题存储 URI](storage/atoc-reference-storagev2.md)
 

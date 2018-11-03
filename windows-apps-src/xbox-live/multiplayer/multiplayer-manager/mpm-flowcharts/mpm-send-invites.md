@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a08ed2620bf3483cdfe4d77d683cc3abec26f7b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5929708"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5975312"
 ---
 # <a name="flowchart---send-an-invitation-to-another-player"></a>流程图 - 向其他玩家发送邀请
 

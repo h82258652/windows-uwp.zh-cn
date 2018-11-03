@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b30453946536a5bebce7577fec04e0346c8ac97
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5919959"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5971200"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>编译 Xbox 开发人员工具包 (XDK) Xbox Live API 源
 

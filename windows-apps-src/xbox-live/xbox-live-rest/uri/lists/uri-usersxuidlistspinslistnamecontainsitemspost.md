@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f3deb042d03fbc8e15d12359d00a594cc36c1a87
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941194"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5978533"
 ---
 # <a name="post-usersxuidxuidlistspinslistnamecontainsitems"></a>POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 确定列表是否无需检索将整个列表包含一组 （由 itemId 指定） 的项目。 这些 Uri 的域是`eplists.xboxlive.com`。

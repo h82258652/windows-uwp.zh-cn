@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live，Xbox，游戏，uwp，windows 10，Xbox one，xbox live 摘要，摘要，发布，xbox live 历史记录、 命令栏、 历史记录选项卡、 摘要表
 ms.openlocfilehash: c2f8f661b55d105e1f1410bafd09903f55882aaa
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5934159"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5976334"
 ---
 # <a name="the-xbox-live-configuration-summary-page"></a>Xbox Live 配置摘要页
 

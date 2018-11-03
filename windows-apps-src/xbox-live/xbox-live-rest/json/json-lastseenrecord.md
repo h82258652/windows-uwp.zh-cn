@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d4889ced5f8942c080b3336bda8c0d8d9b25af2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5919481"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5996788"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
 有关系统上一次看到用户，当用户在没有有效 DeviceRecord 可用的信息。 

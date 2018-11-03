@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: b2576c11e50092b5d8e70189e0e8a88cfab716f9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941557"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5997274"
 ---
 # <a name="xaml-overview"></a>XAML 概述
 
@@ -90,7 +90,7 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 例如，将前缀 `myTypes` 映射到命名空间 `myCompany.myTypes` 的属性语法为：`    xmlns:myTypes="using:myCompany.myTypes"`，而代表的元素用法为： `<myTypes:CustomButton/>`
 
-有关自定义类型映射 XAML 命名空间的详细信息，包括特殊注意事项 VisualC + + 组件扩展 (C + + CX)，请参阅[XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
+有关自定义类型映射 XAML 命名空间的详细信息，包括特殊的注意事项 VisualC + + 组件扩展 (C + + CX)，请参阅[XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空间
 
@@ -254,6 +254,6 @@ XAML 在应用开发过程中发挥着多项重要作用。
 
 一旦应用真正运行，如果任何 XAML 分析错误在设计时未经检测，公共语言运行时 (CLR) 就会报告这些错误作为 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 有关可以对运行时 **XamlParseException** 执行的操作的详细信息，请参阅[采用 C# 或 Visual Basic 的 Windows 运行时应用的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
-**注意**应用程序使用 C + + /CX 代码为未获取特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
+**注意**应用，使用 C + + /CX 代码为未获取特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
 
 有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。

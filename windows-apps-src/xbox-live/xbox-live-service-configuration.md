@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置
 ms.localizationpriority: medium
 ms.openlocfilehash: f23f35ca105a3ba2bbf9d5ec01cf94c4e20b2a4f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938019"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5990671"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live 服务配置
 

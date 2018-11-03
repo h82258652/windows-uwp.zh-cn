@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 44f0ea17d1034ae617b4b8c96cf61cc4829a6704
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5947102"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5993241"
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 

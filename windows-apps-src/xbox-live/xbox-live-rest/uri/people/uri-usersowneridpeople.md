@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5191249e3ee0cdea9ca07f8f3bfbdd15992a3145
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5925044"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5987497"
 ---
 # <a name="usersowneridpeople"></a>/users/{ownerId}/people
 访问调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。

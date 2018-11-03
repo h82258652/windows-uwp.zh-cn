@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c7c00e9322881aedafeddddcd5129ae0248e718
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5925529"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5972421"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 列表公共剪辑。 此 URI 的域是`gameclipsmetadata.xboxlive.com`。

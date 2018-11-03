@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 社交管理器, 示例
 ms.localizationpriority: medium
 ms.openlocfilehash: e3d65b55a351073ded99a2ec8d2d1e03f4ab3c34
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5947227"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5970652"
 ---
 # <a name="programming-social-services"></a>对社交服务进行编程
 

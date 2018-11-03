@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d15bd82197a22ddcf6abf836e726774fd1c7943
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5932364"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994629"
 ---
 # <a name="get-usersxuidxuid"></a>GET (/users/xuid({xuid}))
 发现其他用户或客户端存在。

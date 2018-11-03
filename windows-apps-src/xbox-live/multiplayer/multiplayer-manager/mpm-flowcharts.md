@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
 ms.openlocfilehash: 203a08e2fddfd2c650738a8b37e4a0ae5b52b3d9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5925336"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5976258"
 ---
 # <a name="multiplayer-manager-flowcharts"></a>多人游戏管理器流程图
 

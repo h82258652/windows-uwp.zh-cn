@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8658a77babdc53a621b3dd811552298fd781efc6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5932739"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5986869"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes)
 列出所有受支持的 mediaItemTypes 给定 EDS 版本。 这些 Uri 的域是`eds.xboxlive.com`。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛
 ms.localizationpriority: medium
 ms.openlocfilehash: b4171aac6cb7643a79454b7fc40b92a16e7ef75e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943962"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992647"
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 

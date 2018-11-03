@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, 排行榜
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cc6855a572a1636e92f3bcbf0a8e0d9a96a8bb4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5934510"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5979487"
 ---
 # <a name="player-stats"></a>玩家统计数据
 

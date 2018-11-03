@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, mpsd, 多人游戏会话目录。
 ms.localizationpriority: medium
 ms.openlocfilehash: 05e42fcce988f7b3ac880082cd1300b6f4b9294f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5927318"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5996765"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>多人游戏会话目录 (MPSD)
 

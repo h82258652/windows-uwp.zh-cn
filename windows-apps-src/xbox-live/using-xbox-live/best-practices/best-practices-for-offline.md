@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 脱机
 ms.localizationpriority: medium
 ms.openlocfilehash: a552f275a69fde67f22d25a79b5b8c318c4f8dc3
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5922345"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994391"
 ---
 # <a name="best-practices-for-offline"></a>脱机最佳实践
 

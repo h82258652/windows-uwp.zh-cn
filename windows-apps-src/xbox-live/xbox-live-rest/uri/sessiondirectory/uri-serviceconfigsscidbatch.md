@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f32b4d3198d073a13d48ef5ec0cbb817a2a29d6e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5921117"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5990612"
 ---
 # <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid}/batch
 支持在服务配置标识符级别为批处理查询 POST 操作。
