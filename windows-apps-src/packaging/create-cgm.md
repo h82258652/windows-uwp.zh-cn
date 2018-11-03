@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 内容组映射, 流式处理安装, uwp 应用流式处理安装, 源内容组映射
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a2922d6d3f54d693a9fe9c0982ea06cc5f2caae
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941729"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979212"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 
@@ -168,4 +168,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 还有仍前你的应用是完全准备好的 Microsoft 应用商店的准备工作。 若要详细了解将 UWP 应用流式处理安装添加到应用的完整过程，请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 还有许多操作需要执行操作之前，你的应用是完全准备好的 Microsoft 应用商店。 若要详细了解将 UWP 应用流式处理安装添加到应用的完整过程，请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。

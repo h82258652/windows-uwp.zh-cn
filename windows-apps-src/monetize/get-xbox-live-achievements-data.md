@@ -7,16 +7,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 成就
 ms.localizationpriority: medium
-ms.openlocfilehash: a589ee480ee025f2940de93efaf7e453af488690
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6b635a659a8516184998b5f0b05d2d7692a42af1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941633"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979550"
 ---
 # <a name="get-xbox-live-achievements-data"></a>获取 Xbox Live 成就数据
 
-在 Microsoft Store 分析 API 中使用此方法获取在成就数据可用的最近一天内、到那天的前 30 天，游戏的总存在时间内到那天为止已经解锁你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的每个成就的客户的数量。 还可以在 Windows 开发人员中心仪表板的 [Xbox 分析报告](../publish/xbox-analytics-report.md)中获取此信息。
+在 Microsoft Store 分析 API 中使用此方法获取在成就数据可用的最近一天内、到那天的前 30 天，游戏的总存在时间内到那天为止已经解锁你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的每个成就的客户的数量。 此信息也是在合作伙伴中心中的[Xbox 分析报告](../publish/xbox-analytics-report.md)中可用。
 
 > [!IMPORTANT]
 > 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。

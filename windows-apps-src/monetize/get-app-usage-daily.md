@@ -8,16 +8,16 @@ ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d533f0e28161e17c3a842f6c3c4c6b6ef4a196d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 24542f165c0caa2c07db1866c96603916c6ac750
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5923011"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5984305"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
-在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式的聚合的使用情况数据 （不包括 Xbox 多人游戏） 获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序。 此信息也是在 Windows 开发人员中心仪表板中的[使用情况报告](../publish/usage-report.md)中可用。
+在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式的聚合的使用情况数据 （不包括 Xbox 多人游戏） 获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

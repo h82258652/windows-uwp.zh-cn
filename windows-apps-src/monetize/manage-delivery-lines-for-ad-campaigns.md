@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 346383504abd7927cf863afa59bcb574ddd2495d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e3d4a09524f1ebc0e944036bd9458b1b32ee04d3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939312"
+ms.locfileid: "5980186"
 ---
 # <a name="manage-delivery-lines"></a>管理投放渠道
 
@@ -21,16 +21,16 @@ ms.locfileid: "5939312"
 
 有关投放渠道与广告活动、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
->**注意**&nbsp;&nbsp;在使用此 API 为广告活动成功创建投放渠道之前，你必须先[在开发人员中心仪表板中使用**推广你的应用**页面创建一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)，并且必须在此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用 API 创建的广告活动将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
+>**注意**&nbsp;&nbsp;成功，你可以创建使用此 API 为广告活动的投放渠道，必须首先[创建一个付费的广告市场活动使用合作伙伴中心中的**广告市场活动**页面](../publish/create-an-ad-campaign-for-your-app.md)，必须添加至少一次付款才能此页面上的检测。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用 API 创建的广告市场活动将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用这些方法，首先需要执行以下操作：
 
 * 如果尚未开始操作，请先完成 Microsoft Store 促销 API 的所有[先决条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
   > [!NOTE]
-  > 作为必备条件的一部分，请确保[在开发人员中心仪表板中创建至少一个付费广告活动](../publish/create-an-ad-campaign-for-your-app.md)并在仪表板中为广告活动添加至少一种付款方式。 使用此 API 创建的投放渠道将按照在仪表板中的**推广你的应用**页面中选择的默认付款方式自动进行计费。
+  > 作为必备条件的一部分，该[创建合作伙伴中心中的至少一个付费的广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)，请确保你的广告市场活动的至少一种付款方式合作伙伴中心中添加。 使用此 API 创建的投放渠道将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
 
 * [获取 Azure AD 访问令牌](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 

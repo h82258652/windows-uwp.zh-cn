@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f24b2494470f60371e466bb4d1e1878475d963
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927581"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5982799"
 ---
 # <a name="get-ad-performance-data"></a>获取广告性能数据
 
 
 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内你的应用程序的广告性能聚合数据。 此方法返回采用 JSON 格式的数据。
 
-此方法返回 Windows 开发人员中心仪表板上的[广告性能报告](../publish/advertising-performance-report.md)提供的相同数据。
+此方法将返回由合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)相同的数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -118,12 +118,12 @@ Authorization: Bearer <your access token>
 | applicationId       | 字符串 | 要检索广告性能数据的应用的应用商店 ID。     |
 | applicationName     | 字符串 | 应用的显示名称。                         |
 | adUnitId           | 字符串 | 广告单元的 ID。        |
-| adUnitName           | 字符串 | 由开发人员在开发人员中心仪表板上指定的广告单元的名称。              |
+| adUnitName           | 字符串 | 通过在合作伙伴中心开发人员指定的广告单元的名称。              |
 | adProvider           |  字符串  |  广告提供商的名称   |
 | deviceType          | 字符串 | 广告投放所在设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                              |
 | market              | 字符串 | 广告投放所在地市场的 ISO 3166 国家/地区代码。             |
 | accountCurrencyCode     | 字符串 | 帐户的货币代码。        |
-| pubCenterAppName       |  字符串  |   与开发人员中心中的应用关联的 pubCenter 应用的名称。   |
+| pubCenterAppName       |  字符串  |   与合作伙伴中心中的应用关联的 pubCenter 应用名称。   |
 | adProviderRequests        | 整型 | 指定广告提供商的广告请求数。                 |
 | impressions           | 整型 | 广告曝光数。        |
 | clicks            | 整型 | 广告点击数。       |

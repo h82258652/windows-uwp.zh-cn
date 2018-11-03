@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5918632"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987051"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>使用应用安装程序文件遇到的安装问题的疑难解答
 
@@ -74,7 +74,7 @@ ms.locfileid: "5918632"
 
 ### <a name="verify-app-package-file-installation"></a>验证应用包文件安装
 
-- 应用包文件下载到本地文件夹，并尝试使用[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令进行安装。
+- 将应用包文件下载到本地文件夹，并尝试使用[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令安装它。
 
 - 将 `.appinstaller` 文件下载到本地文件夹，并尝试使用 `Add-AppxPackage -Appinstaller` PowerShell 命令进行安装。
 

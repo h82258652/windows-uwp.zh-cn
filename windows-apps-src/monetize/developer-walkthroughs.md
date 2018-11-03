@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 演练
 ms.localizationpriority: medium
 ms.openlocfilehash: eed52167655e16b3245bdb5f918244f95b378676
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944415"
+ms.locfileid: "5986250"
 ---
 # <a name="implement-ads-in-your-app"></a>在应用中实现广告
 

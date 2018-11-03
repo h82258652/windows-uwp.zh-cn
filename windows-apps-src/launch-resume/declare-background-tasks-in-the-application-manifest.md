@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 343cca5b89dbe5fd7e1309b9487e8939218203d0
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931141"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5982122"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
@@ -211,7 +211,7 @@ ms.locfileid: "5931141"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次用 SupportsMultipleInstances 属性触发新触发器时，在新进程中运行
 
-此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 若要使用此属性，你必须面向 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
+此示例声明在新进程中运行的后台任务，每次触发新触发器时，该进程会获取自己的资源限制（内存和 CPU）。 请注意使用可启用此行为的 `SupportsMultipleInstances`。 要使用此属性，你必须面向 SDK 版本"10.0.15063"（Windows 10 创意者更新） 或更高版本。
 
 ```xml
 <Package

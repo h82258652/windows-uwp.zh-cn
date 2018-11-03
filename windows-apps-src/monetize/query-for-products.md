@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 查看产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dded9b66fbae4f65b936335eda406d8773420c4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920051"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979102"
 ---
 # <a name="query-for-products"></a>查询产品
 
@@ -134,7 +134,7 @@ CollectionItemContractV6 对象包含以下参数。
 | devOfferId           | 字符串             | 应用内购买的优惠 ID。              | 否       |
 | EndDate              | 日期/时间           | 项目的结束日期。              | 是      |
 | FulfillmentData      | 字符串             | 不适用         | 否       |
-| InAppOfferToken      | 字符串             | 开发人员指定的产品 ID 字符串，该字符串已分配给 Windows 开发人员中心仪表板中的项目。 示例产品 ID 为 *product123*。 | 否       |
+| InAppOfferToken      | 字符串             | 开发人员指定的产品 ID 字符串分配给合作伙伴中心中的项。 示例产品 ID 为*product123*。 | 否       |
 | ItemID               | 字符串             | 用于从用户所拥有的其他项目标识此集合项 的 ID。 此 ID 对于每个产品都是唯一的。   | 是      |
 | localTicketReference | string             | 请求正文中上次提供的 *localTicketReference* 的 ID。                  | 是      |
 | ModifiedDate         | 日期/时间           | 最后修改此项目的日期。              | 是      |

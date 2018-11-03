@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: 基于 ARM、 ARM、 构建 win32 ARM64 应用构建 ARM64 驱动程序的 Windows 10
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945052"
+ms.locfileid: "5980060"
 ---
 # <a name="windows-10-on-arm"></a>基于 ARM 的 Windows 10
 在 ARM 处理器的电脑上运行 Windows 10。 本页提供了你要开始开发应用并详细了解平台的信息。 我们还鼓励你通过使用在页面底部的链接中提供你的反馈。

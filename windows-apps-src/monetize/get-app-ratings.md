@@ -8,16 +8,16 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评分
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e3ae8ffcc8277f09afe8d1aef41e9905c2f85
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922854"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5983701"
 ---
 # <a name="get-app-ratings"></a>获取应用评分
 
-使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评价报告](../publish/reviews-report.md)中获取此信息。
+使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 此信息也是在合作伙伴中心中的[评价报告](../publish/reviews-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

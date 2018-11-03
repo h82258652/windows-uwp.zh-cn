@@ -7,17 +7,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 多玩家
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f6b4c5742b4abc9bfd5b56e0242376770516a7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6074f3774d099c63f6c39ac4ef0e95a7b6745912
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932312"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980509"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>获取 Xbox Live 多人游戏数据
 
 
-在 Microsoft Store 分析 API 中使用此方法每天或每月获取你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的多玩家数据。 还可以在 Windows 开发人员中心仪表板的 [Xbox 分析报告](../publish/xbox-analytics-report.md)中获取此信息。
+在 Microsoft Store 分析 API 中使用此方法每天或每月获取你的[支持 Xbox Live 的游戏](../xbox-live/index.md)的多玩家数据。 此信息也是在合作伙伴中心中的[Xbox 分析报告](../publish/xbox-analytics-report.md)中可用。
 
 > [!IMPORTANT]
 > 该方法只支持 Xbox 游戏或使用 Xbox Live 服务的游戏。 这些游戏必须经过[概念审批流程](../gaming/concept-approval.md)，其中包括 [Microsoft 合作伙伴](../xbox-live/developer-program-overview.md#microsoft-partners)发布的游戏以及通过 [ID@Xbox 计划](../xbox-live/developer-program-overview.md#id)提交的游戏。 该方法当前不支持通过 [Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)发布的游戏。

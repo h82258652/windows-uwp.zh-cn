@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: 在 Microsoft Store 提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的加载项提交。
+description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项提交到合作伙伴中心。
 title: 确认加载项提交
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 52dce19410741c0ac7b006b14d572ec7280a5e2c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926244"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5985496"
 ---
 # <a name="commit-an-add-on-submission"></a>确认加载项提交
 
-在 Microsoft Store 提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的加载项（也称为应用内产品或 IAP）提交。 确认操作向开发人员中心发送提交数据已上传（包括任何相关图标）的警报。 作为响应，开发人员中心确认对提交数据所做的更改以供引入和发布。 确认操作成功后，对提交所做的更改将显示在开发人员中心仪表板中。
+在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项 （也称为应用内产品或 IAP） 提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的图标）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示对提交更改。
 
 有关确认操作如何适用通过使用 Microsoft Store 提交 API 提交加载项过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
@@ -49,8 +49,8 @@ ms.locfileid: "5926244"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 加载项（包含要确认的提交）的应用商店 ID。 可通过开发人员中心仪表板获取应用商店 ID，它包含在[获取所有加载项](get-all-add-ons.md)和[创建加载项](create-an-add-on.md)请求的响应数据中。 |
-| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的提交，此 ID 也包含在仪表板中的提交页面的 URL 中。  |
+| inAppProductId | 字符串 | 必需。 加载项（包含要确认的提交）的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID，它包含[获取所有加载项](get-all-add-ons.md)和[创建加载项](create-an-add-on.md)的请求的响应数据中。 |
+| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -91,7 +91,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但在其当前状态下无法确认；或者加载项使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
+| 409  | 指定的提交已找到，但它可能无法确认; 在其当前状态，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题
