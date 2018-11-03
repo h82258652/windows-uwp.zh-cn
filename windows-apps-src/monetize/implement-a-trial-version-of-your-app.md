@@ -8,16 +8,16 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b078f0573d94e80b590f473f7c9a9b0395115ee
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d428128430a6d7743ebdf94fb8d9aff8286d8d77
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930862"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988211"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>实现应用的试用版
 
-如果你[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)，以便客户可以在试用期内免费使用你的应用，可通过在试用期内排除或限制某些功能吸引客户升级到应用的完整版。 请在开始编码之前确定哪些功能应受到限制，然后确保你的应用只在已购买完整版许可之后才允许这些功能运作。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
+如果你为[应用配置为免费试用合作伙伴中心中](../publish/set-app-pricing-and-availability.md#free-trial)，以便客户可以在试用期内免费使用你的应用，则可以吸引客户升级到你的应用的完整版通过排除或限制试用期内的某些功能。 请在开始编码之前确定哪些功能应受到限制，然后确保你的应用只在已购买完整版许可之后才允许这些功能运作。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
 本文介绍如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的成员来确定用户是否有应用的试用许可证，以及在应用运行时许可证的状态发生更改的情况下是否获得通知。 
 
@@ -63,7 +63,7 @@ ms.locfileid: "5930862"
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中创建了一个应用（已配置为[免费试用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，没有时间限制），并且该应用已在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你已配置为[免费试用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)与无时间限制的合作伙伴中心中创建应用，并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
 
 此示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。

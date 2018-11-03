@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 删除, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c5d9e905f6b3d8acffc53e943d946f6ac7c3c68
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941620"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987814"
 ---
 # <a name="delete-an-add-on-submission"></a>删除加载项提交
 
@@ -46,8 +46,8 @@ ms.locfileid: "5941620"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 加载项（包含要删除的提交）的应用商店 ID。 开发人员中心仪表板上会提供该应用商店 ID。  |
-| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的提交，此 ID 也包含在仪表板中的提交页面的 URL 中。  |
+| inAppProductId | 字符串 | 必需。 加载项（包含要删除的提交）的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID。  |
+| submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但在其当前状态下无法删除；或者加载项使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
+| 409  | 指定的提交已找到，但它无法删除在其当前状态，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题

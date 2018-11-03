@@ -8,17 +8,17 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3cc69065ef2898aebafc832da1639985231d60
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931433"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989078"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
 有关逐渐将移植的代码中的策略您[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)项目[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中讨论[移动到 C + + WinRT 从 C + + CX](move-to-winrt-from-cx.md)。
 
-本主题介绍了两个帮助程序函数，可用于转换为 C + + /CX 和 C + + /winrt 对象在同一项目中的。 你可以使用它们将使用两个语言投影，代码之间的互操作，或者你可以使用函数移植你的代码从 C + + CX 到 C + + WinRT。
+本主题介绍了两个帮助程序函数，可用于转换为 C + + /CX 和 C + + /winrt 对象在同一项目中的。 你可以使用它们向使用这两种语言投影中，代码之间的互操作或者你可以使用功能，如移植你的代码从 C + + CX 到 C + + WinRT。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函数
 下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) 接口指针。 然后，它对该指针调用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 来查询 C++/WinRT 对象的默认接口。 **QueryInterface** 是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 **IUnknown** 接口指针的地址，使该地址能够设置为其他值。
@@ -47,11 +47,11 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 }
 ```
 
-## <a name="example-project-showing-the-two-helper-functions-in-use"></a>显示两个帮助程序函数中使用的示例项目
+## <a name="example-project-showing-the-two-helper-functions-in-use"></a>介绍正在使用的两个帮助程序函数的示例项目
 
-要重现，简单的方法，方案逐渐移植的代码中的 C + + CX 项目到 C + + WinRT，可以首先创建一个新项目在 Visual Studio 中使用 C + + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
+要重现，简单的方法，该方案逐渐移植的代码中的 C + + CX 项目到 C + + WinRT，你可以通过开始使用 C + 其中一个 Visual Studio 中创建一个新项目 + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
 
-此示例项目还说明了方式则可以使用命名空间别名为不同岛的代码中，以便处理潜在的命名空间冲突之间 C + + WinRT 投影和 C + + /CX 投影。
+此示例项目还说明了方式则可以使用命名空间别名为不同岛的代码，以便处理潜在的命名空间冲突之间 C + + WinRT 投影和 C + + /CX 投影。
 
 - 创建**Visual c + +** \> **Windows 通用** > **核心应用 (C + + WinRT)** 项目。
 - 在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**。 这将打开项目支持 C + + CX。

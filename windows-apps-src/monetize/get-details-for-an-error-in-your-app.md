@@ -8,16 +8,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad667f1da8b14c2ab60fb79369f0f4c51306ff6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e947314da1309c3f31af292bc70addbad8b0d4d9
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947898"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987923"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>获取应用中的错误的详细信息
 
-使用 Microsoft Store 分析 API 中的此方法，可以 JSON 格式获取应用的特定错误的详细数据。 此方法仅可以检索过去 30 天内发生的错误的详细信息。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取详细错误数据。
+使用 Microsoft Store 分析 API 中的此方法，可以 JSON 格式获取应用的特定错误的详细数据。 此方法仅可以检索过去 30 天内发生的错误的详细信息。 在合作伙伴中心中的[运行状况报告](../publish/health-report.md)的**故障**部分还有详细的错误数据。
 
 可以使用此方法之前，必须首先使用[获取错误报告数据](get-error-reporting-data.md)方法来检索希望获取详细信息的错误的 ID。
 
@@ -51,7 +51,7 @@ ms.locfileid: "5947898"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要检索详细错误数据的应用的 Store ID。 Store ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 要检索详细错误数据的应用的 Store ID。 应用商店 ID 在合作伙伴中心中的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，请使用[获取错误报告数据](get-error-reporting-data.md)方法，并使用该方法的响应正文中的 **failureHash** 值。 |  是  |
 | startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。<p/><p/>**注意：**&nbsp;&nbsp;此方法仅可以检索过去 30 天内发生的错误的详细信息。 |  否  |
 | endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
