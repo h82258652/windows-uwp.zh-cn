@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 3adbc12b0e891461a97bb90575141517b280be76
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941811"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992556"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -42,7 +42,7 @@ ms.locfileid: "5941811"
 
 你没有看到广告的原因有很多，其中包括网络错误。 其他原因可能包括：
 
-* 在 Windows 开发人员中心中选择某个广告单元，其大小大于或小于应用代码中的 **AdControl** 的大小。
+* 在合作伙伴中心中选择某个广告单元，且大小大于或小于应用代码中的**AdControl**的大小。
 
 * 在运行动态应用时，如果将[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)用于广告单元 ID，则广告不会显示。
 
@@ -60,7 +60,7 @@ ms.locfileid: "5941811"
 
 * 旁加载应用或在仿真器中运行的应用不会显示实时广告。
 
-当实时广告单元服务测试广告时，该广告单元的状态会在 Windows 开发人员中心中显示**活动并服务测试广告**。 这当前不适用于手机应用。
+当实时广告单元服务测试广告时，该广告单元的状态将显示**活动并服务测试广告**在合作伙伴中心。 这当前不适用于手机应用。
 
 
 <span id="reference_errors"/>

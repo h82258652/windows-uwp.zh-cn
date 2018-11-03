@@ -1,24 +1,23 @@
 ---
 author: Xansky
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: 在仪表板中定义实验
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in Partner Center.
+title: 在合作伙伴中心中定义实验
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acbeb0f67985537524a352507910f5e526ae0bd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 98c1d48524bcc525f57f42e5364d27611602ab52
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939855"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995096"
 ---
-# <a name="define-your-experiment-in-the-dashboard"></a>在仪表板中定义实验
+# <a name="define-your-experiment-in-partner-center"></a>在合作伙伴中心中定义实验
 
-
-            [在开发人员中心仪表板中创建项目并定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)以及[为实验编写应用代码](code-your-experiment-in-your-app.md)后，你可以随时在项目中创建实验。 在创建实验时，要定义目标以及用户将收到的变体。
+你[创建项目并定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)并后[为实验编写应用代码](code-your-experiment-in-your-app.md)，可以随时在项目中创建实验。 在创建实验时，要定义目标以及用户将收到的变体。
 
 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
@@ -27,7 +26,7 @@ ms.locfileid: "5939855"
 
 ## <a name="create-your-experiment"></a>创建实验
 
-1. 登录到[开发人员中心仪表板](https://dev.windows.com/overview)。
+1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 2. 在 **“你的应用”** 下，选择你想为之创建实验的应用。
 3. 在导航窗格中，选择**服务**，然后选择**实验**。
 4. 在**实验**页面上，标识项目表中要在其中添加实验的项目，然后单击该项目的**添加实验**链接。
@@ -37,7 +36,7 @@ ms.locfileid: "5939855"
     > 如果你要创建发布给客户的实验（即，与提供给客户的应用版本中使用的项目 ID 相关联的实验），则请勿选中此框。 编辑处于活动状态的实验会导致实验结果失效。
 
 7. 在**项目名称**下拉列表中，会自动选中当前项目。 如果想要将新实验添加到其他项目，可以从此处选择目标项目。 否则，请保留该选择。
-8.   记下[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 值。 当你[为实验编写应用代码](code-your-experiment-in-your-app.md)时，必须在代码中引用此 ID，以便可以接收变体数据，并将查看和转换事件报告给开发人员中心。
+8.   记下[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 值。 当你[为实验编写应用代码](code-your-experiment-in-your-app.md)，你必须引用此 ID 在代码中以便可以接收变体数据并将视图和转换事件报告给合作伙伴中心。
 9. 在**视图事件**部分的**视图事件名称**字段中，键入实验的[视图事件](run-app-experiments-with-a-b-testing.md#terms)名称。
 10. 在**目标和转换事件**部分中，为你的实验定义至少一个目标：
   * 在**目标名称**字段中，为目标键入描述性的名称。 运行实验后，此名称将显示在实验的结果摘要中。
@@ -45,7 +44,7 @@ ms.locfileid: "5939855"
   * 在**目标**字段中，选择**最大化**或**最小化**，具体取决于你是想要最大化还是最小化转换事件的发生次数。 此信息将用于实验的结果摘要。
 
 > [!NOTE]
-> 开发人员中心中在 24 小时时间段内向每个用户视图仅报告第一个转换事件。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了在目标是最大化执行转换的用户数时，帮助防止单个用户扭曲一组示例用户得出的实验结果。
+> 合作伙伴中心仅报告第一个转换事件中在 24 小时时间段内向每个用户视图。 如果用户在 24 小时时段内在应用中触发多个转换事件，仅报告第一个转换事件。 这是为了在目标是最大化执行转换的用户数时，帮助防止单个用户扭曲一组示例用户得出的实验结果。
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
 
@@ -67,7 +66,7 @@ ms.locfileid: "5939855"
 
 当你完成输入实验的所需字段后，单击**保存**以保存实验。
 
-如果你对实验参数感到满意，并且已准备好激活它以开始收集应用的实验数据，请单击**激活**。 实验已激活时，应用便可以检索变体变量，并向开发人员中心报告视图和转换事件。 有关详细信息，请参阅[在开发人员中心仪表板中运行和管理实验](manage-your-experiment.md)。
+如果你对实验参数感到满意，并且已准备好激活它以开始收集应用的实验数据，请单击**激活**。 激活实验时，你的应用可以检索变体的变量，并向合作伙伴中心报告视图和转换事件。 有关详细信息，请参阅[运行和管理你在合作伙伴中心中的实验](manage-your-experiment.md)。
 
 > [!IMPORTANT]
 > 项目一次只可以包含一个活动实验。 激活实验后，不可再对实验参数进行修改，除非在创建实验时，选中了**可编辑实验**复选框。 在激活实验之前，我们建议你在应用中为实验编码。
@@ -90,12 +89,12 @@ ms.locfileid: "5939855"
 
 ## <a name="next-steps"></a>后续步骤
 
-在开发人员中心仪表板定义实验并在你的应用中为实验编码后，你就已经准备好[在开发人员中心仪表板运行和管理实验](manage-your-experiment.md)。
+在合作伙伴中心中定义实验并在应用中为实验编码后，你可以随时[运行](manage-your-experiment.md)和合作伙伴中心中管理实验。
 
 ## <a name="related-topics"></a>相关主题
 
-* [在开发人员中心仪表板中创建项目和定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [针对实验为你的应用编码](code-your-experiment-in-your-app.md)
-* [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
+* [创建项目并在合作伙伴中心中定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [为实验编写应用代码](code-your-experiment-in-your-app.md)
+* [合作伙伴中心中管理实验](manage-your-experiment.md)
 * [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)

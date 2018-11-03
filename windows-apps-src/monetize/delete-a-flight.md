@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
-description: 在 Microsoft Store 提交 API 中使用此方法，可删除注册到 Windows 开发人员中心帐户的应用的软件包外部测试版。
+description: 在 Microsoft Store 提交 API 中使用此方法，可删除注册到你的合作伙伴中心帐户的应用的软件包外部测试版。
 title: 删除软件包外部测试版
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 删除外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 56f7c4fa55620d4c5be8baddc6323a9c7482e02f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940617"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995270"
 ---
 # <a name="delete-a-package-flight"></a>删除软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，可删除注册到 Windows 开发人员中心帐户的应用的软件包外部测试版。
+在 Microsoft Store 提交 API 中使用此方法，可删除注册到你的合作伙伴中心帐户的应用的软件包外部测试版。
 
 
 ## <a name="prerequisites"></a>先决条件
@@ -47,8 +47,8 @@ ms.locfileid: "5940617"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版）的应用商店 ID。 开发人员中心仪表板上会提供应用的应用商店 ID。  |
-| flightId | 字符串 | 必需。 要删除的软件包外部测试版的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的外部测试版，此 ID 也包含在仪表板中的外部测试版页面的 URL 中。  |
+| applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| flightId | 字符串 | 必需。 要删除的软件包外部测试版的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定的软件包外部测试版。  |
-| 409  | 指定的软件包外部测试版已找到，但在其当前状态下无法删除；或者应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
+| 409  | 在指定的软件包外部测试版已找到，但它无法删除在其当前状态，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

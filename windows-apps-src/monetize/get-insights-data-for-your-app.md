@@ -7,16 +7,16 @@ ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
-ms.openlocfilehash: ff70f38ff636b0b1d885981fb9e353ac9afe69c2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3d74d1f9cbdd374dfd363e6da1e98aafcb226d5e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933258"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5997139"
 ---
 # <a name="get-insights-data"></a>获取的见解数据
 
-若要获取的见解数据在 Microsoft Store 分析 API 中的此方法相关购置、 运行状况和使用情况的应用的指标给定的日期范围和其他可选筛选器内使用。 此信息也是在 Windows 开发人员中心仪表板中的[洞察报告](../publish/insights-report.md)中可用。
+若要获取的见解数据在 Microsoft Store 分析 API 中的此方法相关购置、 运行状况和使用情况的应用的指标给定的日期范围和其他可选筛选器内使用。 此信息也是在合作伙伴中心中的[洞察报告](../publish/insights-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 

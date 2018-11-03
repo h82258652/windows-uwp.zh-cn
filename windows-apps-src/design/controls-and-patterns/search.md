@@ -14,11 +14,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b506b439ff98da873823bd586bb5388fe360b2ba
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931330"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5990869"
 ---
 # <a name="search-and-find-in-page"></a>搜索和在页面中查找
 
@@ -33,7 +33,7 @@ ms.locfileid: "5931330"
 
 **输入。** 文本是最常见的搜索输入模式，并且是本指南的重点。 其他常见的输入模式包括语音和相机，但这些输入模式通常要求能够与设备硬件相连接，并且在应用内可能需要其他控件或自定义 UI。
 
-**零输入。** 用户已激活输入的字段，但用户输入文本之前，你可以显示所谓的"零输入的画布。 零输入画布通常显示在应用画布中，以便[自动建议](auto-suggest-box.md)在用户开始输入查询时替换此内容。 最近搜索历史记录、热门搜索、上下文搜索建议、提示和使用技巧都非常适用于零输入状态。
+**零输入。** 后，用户已激活输入的字段中，但用户已输入文本之前，你可以显示所谓的"零输入的画布。 零输入画布通常显示在应用画布中，以便[自动建议](auto-suggest-box.md)在用户开始输入查询时替换此内容。 最近搜索历史记录、热门搜索、上下文搜索建议、提示和使用技巧都非常适用于零输入状态。
 
 ![零输入画布上的 Cortana 示例](images/search-cortana-example.png)
 

@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
-description: 在 Microsoft Store 提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的软件包外部测试版提交。
+description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的软件包外部测试版提交到合作伙伴中心。
 title: 确认软件包外部测试版提交
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 7388e18f70cef0000d354536b0c78244f51f756d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941676"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5996156"
 ---
 # <a name="commit-a-package-flight-submission"></a>确认软件包外部测试版提交
 
-在 Microsoft Store 提交 API 中使用此方法，向 Windows 开发人员中心确认新的或更新的软件包外部测试版提交。 确认操作向开发人员中心发送提交数据已上传（包括任何相关软件包）的警报。 作为响应，开发人员中心确认对提交数据所做的更改以供引入和发布。 确认操作成功后，对提交所做的更改将显示在开发人员中心仪表板中。
+在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的软件包外部测试版提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的软件包）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示对提交更改。
 
 有关确认操作如何适应使用 Microsoft Store 提交 API 创建软件包外部测试版提交的过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
@@ -49,9 +49,9 @@ ms.locfileid: "5941676"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要确认的软件包外部测试版提交）的应用商店 ID。 开发人员中心仪表板上会提供应用的应用商店 ID。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要确认的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的外部测试版，此 ID 也包含在仪表板中的外部测试版页面的 URL 中。  |
-| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在开发人员中心仪表板中创建的提交，此 ID 也包含在仪表板中的提交页面的 URL 中。  |
+| applicationId | 字符串 | 必需。 应用（包含要确认的软件包外部测试版提交）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要确认的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
+| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -92,7 +92,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但在其当前状态下无法确认；或者应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |
+| 409  | 指定的提交已找到，但它可能无法确认; 在其当前状态，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题

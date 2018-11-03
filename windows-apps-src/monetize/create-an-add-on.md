@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: 在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建加载项。
+description: 在 Microsoft Store 提交 API 中使用此方法创建加载项，为注册到 PartnerCenter 帐户的应用。
 title: 创建加载项
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b6be05d1efc1cbc23f26a509230750c8896c87
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939292"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992605"
 ---
 # <a name="create-an-add-on"></a>创建加载项
 
-在 Microsoft Store 提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建加载项（也称为应用内产品或 IAP）。
+在 Microsoft Store 提交 API 中使用此方法创建加载项 （也称为应用内产品或 IAP），为注册到你的合作伙伴中心帐户的应用。
 
 > [!NOTE]
 > 此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
@@ -99,7 +99,7 @@ Content-Type: application/json
 | 错误代码 |  描述                                                                                                                                                                           |
 |--------|------------------|
 | 400  | 请求无效。 |
-| 409  | 由于加载项的当前状态，或者加载项使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，无法创建加载项。 |   
+| 409  | 由于其当前状态下无法创建加载项或加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

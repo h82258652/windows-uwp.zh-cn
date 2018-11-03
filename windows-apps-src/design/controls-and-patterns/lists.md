@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f54985d446c0c95f4ee0b917a1d91e546e359483
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3594697292d6dfe9435036b838a0ba4bd2dbfc05
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928766"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5993285"
 ---
 # <a name="lists"></a>列表
 
@@ -39,7 +39,7 @@ ms.locfileid: "5928766"
 > <strong>Windows 10 Fall Creators Update - 行为更改</strong>
 > </div>
 > 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 请参阅 [ScrollViewer 类] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API 参考主题了解详细信息。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 请参阅有关详细信息的[ScrollViewer 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)API 参考主题。
 
 ## <a name="list-views"></a>列表视图
 

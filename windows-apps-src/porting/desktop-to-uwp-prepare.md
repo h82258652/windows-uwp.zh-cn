@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a0b3a9f5ce7c03b8add9cc459bade684b9daf21
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941941"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995538"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包的桌面应用程序
 
@@ -27,13 +27,13 @@ ms.locfileid: "5941941"
 
 + __你的应用程序始终使用提升的安全权限运行__。 你的应用程序需要以交互用户身份运行时工作。 从 Microsoft Store 安装应用程序用户可能不是系统管理员，因此需要你的应用程序运行提升的意味着它无法为标准用户运行正常。 Microsoft Store 中不接受任何功能部分需要提升的应用。
 
-+ __你的应用程序需要在内核模式驱动程序或 Windows 服务__。 该桥适用于应用，但不支持内核模式驱动程序或需要在系统帐户下运行的 Windows 服务。 使用[后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
++ __你的应用程序需要内核模式驱动程序或 Windows 服务__。 该桥适用于应用，但不支持内核模式驱动程序或需要在系统帐户下运行的 Windows 服务。 使用[后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
 
 + __在进程内将应用的模块加载到不在 Windows 应用包中的进程__。 不允许此操作，这意味着不支持进程中扩展，如 [shell 扩展](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)。 但是，如果你在同一个程序包中有两个应用，则可以在它们之间执行进程间通信。
 
-+ __你的应用程序使用自定义应用程序用户模型 ID (AUMID)__。 如果进程调用[SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx)以设置其自己的 AUMID，则它仅可以使用应用模型环境 /windows 应用程序包为其生成的 AUMID。 无法定义自定义 AUMID。
++ __你的应用程序使用自定义应用程序用户模型 ID (AUMID)__。 如果进程调用[SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx)以设置其自己的 AUMID，则它仅可以使用应用模型环境 /windows 应用包为其生成的 AUMID。 无法定义自定义 AUMID。
 
-+ __你的应用程序修改 HKEY_LOCAL_MACHINE (HKLM) 注册表配置单元__。 任何你的应用程序创建 HKLM 键，或以尝试打开另一个用于修改，将导致拒绝访问失败。 请记住，你的应用程序具有其自己的注册表的专用虚拟化的视图，因此不适用于用户和计算机范围注册表配置单元 （即 HKLM 的新增功能） 的概念。 你将需要找到另一种方法来实现 HKLM 的用途，如改为写入 HKEY_CURRENT_USER (HKCU)。
++ __你的应用程序修改 HKEY_LOCAL_MACHINE (HKLM) 注册表配置单元__。 任何你的应用程序创建 HKLM 键，或以尝试打开另一个用于修改，都将导致拒绝访问失败。 请记住，你的应用程序具有其自己的注册表的专用虚拟化的视图，因此不适用于用户和计算机范围注册表配置单元 （即 HKLM 的新增功能） 的概念。 你将需要找到另一种方法来实现 HKLM 的用途，如改为写入 HKEY_CURRENT_USER (HKCU)。
 
 + __你的应用程序使用 ddeexec 注册表子项作为启动另一个应用一种方法__。 改为使用[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中的各种可激活*扩展配置的 DelegateExecute 谓词处理程序之一。
 
@@ -45,7 +45,7 @@ ms.locfileid: "5941941"
 
 + __你的应用程序写入到你的应用的安装目录__。 例如，你的应用程序写入到日志文件放置在与你的 exe 的同一目录中。 此操作不受支持，因此你需要找到另一个位置，如本地应用数据存储。
 
-+ __你的应用程序安装需要用户交互__。 应用程序安装程序必须能够采用静默方式运行，并且它必须安装所有不在默认情况下上一个全新的操作系统映像, 及其先决条件。
++ __你的应用程序安装需要用户交互__。 应用程序安装程序必须能够采用静默方式运行，并且它必须安装所有不在默认情况下，清理的操作系统映像上其先决条件。
 
 + __你的应用程序使用当前工作目录__。 在运行时，你已打包的桌面应用程序不会得到你之前在桌面中指定的相同工作目录。LNK 快捷方式。 你需要更改 CWD 在运行时，如果具有正确的目录很重要的应用程序才能正常工作。
 
@@ -55,7 +55,7 @@ ms.locfileid: "5941941"
 
    打包的 COM 支持适用于现有的 COM API，但不适用于依赖直接读取注册表的应用程序扩展，因为打包的 COM 位于一个专用位置。
 
-+ __你的应用程序公开 GAC 程序集以供其他进程使用__。 在当前版本中，你的应用程序无法供来自 Windows 应用包外部的可执行文件的进程公开 GAC 程序集以供使用。 来自程序包内的进程可以照常注册和使用 GAC 程序集，但它们在外部将不可见。 这意味着，OLE 等互操作方案在被外部进程调用时不起作用。
++ __你的应用程序公开 GAC 程序集以供其他进程使用__。 在当前版本中，你的应用程序无法公开 GAC 程序集以供来自 Windows 应用包外部可执行文件的进程。 来自程序包内的进程可以照常注册和使用 GAC 程序集，但它们在外部将不可见。 这意味着，OLE 等互操作方案在被外部进程调用时不起作用。
 
 + __你的应用程序链接 C 运行时库 (CRT) 不受支持的方式__。 Microsoft C/C++ 运行时库提供用于为 Microsoft Windows 操作系统编程的例程。 这些例程自动执行许多不采用 C 和 C++ 语言提供的常见编程任务。 如果你的应用程序利用 C/c + + 运行时库，你需要确保它以受支持的方式链接。
 
@@ -101,17 +101,17 @@ ms.locfileid: "5941941"
 
     - __你的应用程序添加跳转列表条目通过绝对路径的应用的程序包中的资源引用__。 应用程序的安装路径可能会更改时应用的程序包更新，从而更改资源 （如图标、 文档、 可执行文件等） 的位置。 如果跳转列表条目通过绝对路径引用此类资源，则应用程序应定期刷新其跳转列表 （例如，应用程序启动） 以确保正确解析路径。 或者，改用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，使你可以使用程序包相对的 ms-resource URI 方案（也与语言、DPI 和高对比度相关）来引用字符串和图像资源。
 
-+ __你的应用程序启动一个实用工具以执行任务__。 避免启动 PowerShell 和 Cmd.exe 等命令实用工具。 事实上，如果用户安装到运行 Windows 10 S 的系统上的应用程序，然后你的应用程序将无法启动它们。 这可能阻止你无法提交至 Microsoft Store 的应用程序，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容
++ __你的应用程序启动一个实用工具以执行任务__。 避免启动 PowerShell 和 Cmd.exe 等命令实用工具。 事实上，如果用户安装到运行 Windows 10 S 的系统上的应用程序，则你的应用程序将无法启动它们根本。 这可能阻止你无法提交至 Microsoft Store 的应用程序，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容
 
 启动实用工具通常可以提供一种方便的方法，用于从操作系统获取信息、访问注册表或访问系统功能。 但是，你可以改为使用 UWP API 完成这些类型的任务。 这些 Api 非常性能更佳，因为它们无需单独的可执行文件运行，但更重要的是，它们会一直从到达程序包外部应用程序。 应用的设计保持一致的隔离、 信任和附带的应用程序打包，并且你的应用程序将按预期在运行 Windows 10 s。 的系统上的安全
 
 + __你的应用程序主机的加载项、 插件或扩展__。   在许多情况下，只要尚未对扩展打包并且该扩展以完全信任方式安装，COM 样式的扩展则可能会继续工作。 这是因为那些安装程序可以使用其完全信任的功能修改注册表，并将扩展文件放置任意主机应用程序应找到这些位置。
 
-   但是，如果这些扩展都打包在一起，并且然后安装为 Windows 应用包，它们不起作用，因为每个包 （主机应用程序和扩展） 将彼此相互隔离。 若要了解有关应用程序的方式从系统隔离，请参阅[桌面桥幕后](desktop-to-uwp-behind-the-scenes.md)。
+   但是，如果这些扩展打包，并安装作为 Windows 应用包，它们不起作用，因为每个包 （主机应用程序和扩展） 将彼此相互隔离。 若要详细了解如何应用程序是独立从系统、[桌面桥幕后](desktop-to-uwp-behind-the-scenes.md)看到。
 
  用户安装到运行 Windows 10 S 的系统上的所有应用程序和扩展都必须作为 Windows 应用包安装。 因此如果你想要对扩展打包，或者打算鼓励你的参与者对其打包，请考虑如何能够促进主机应用程序包和任意扩展包之间的通信。 能够做到这点的一种方法是使用[应用服务](../launch-resume/app-services.md)。
 
-+ __你的应用程序生成代码__。 你的应用程序可以在内存中，生成它使用的代码，但避免将生成的代码写入磁盘，因为 Windows 应用认证过程无法验证该代码在应用提交之前。 此外，向磁盘写入代码的应用将不会正确系统上运行运行 Windows 10 s。这可能阻止你无法提交至 Microsoft Store 的应用程序，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容
++ __你的应用程序生成代码__。 你的应用程序可以在内存中，生成它使用的代码，但避免生成的代码写入到磁盘，因为 Windows 应用认证过程无法验证该应用提交之前的代码。 此外，向磁盘写入代码的应用将不会正确系统上运行运行 Windows 10 s。这可能阻止你无法提交至 Microsoft Store 的应用程序，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容
 
 >[!IMPORTANT]
 > 创建 Windows 应用包后，请测试你的应用程序，以确保它正常系统上运行 Windows 10 s。提交到 Microsoft Store 的所有应用都必须符合应用商店中不接受不兼容的 Windows 10 s。 应用。 请参阅[测试适用于 Windows 10 S 的 Windows 应用](desktop-to-uwp-test-windows-s.md)。

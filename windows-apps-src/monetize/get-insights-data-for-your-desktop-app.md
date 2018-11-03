@@ -7,16 +7,16 @@ ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，见解
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1ecdf192f54c0158ce503a58aafb65108b8fdc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8d0e117f8d71593874a7e65bdaf6590507db6456
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931958"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5990889"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 
-在 Microsoft Store 分析 API 中使用此方法来获取与你已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在 Windows 开发人员中心仪表板中的桌面应用程序[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
+在 Microsoft Store 分析 API 中使用此方法来获取与你已添加到[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的桌面应用程序的运行状况指标的数据相关的见解。 此数据也是在合作伙伴中心中的桌面应用程序[运行状况报告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -46,7 +46,7 @@ ms.locfileid: "5931958"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 想要获取的见解数据的桌面应用程序的产品 ID。 要获取桌面应用程序的产品 ID，请打开任意[桌面应用程序的开发人员中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)（如**运行状况报告**）并从 URL 检索产品 ID。 如果未指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
+| applicationId | 字符串 | 想要获取的见解数据的桌面应用程序的产品 ID。 若要获取桌面应用程序的产品 ID，请打开 （如**运行状况报告**） 的任何[桌面应用程序在合作伙伴中心分析报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)，并从 URL 检索产品 ID。 如果未指定此参数，响应正文将包含注册到帐户的所有应用的见解数据。  |  否  |
 | startDate | date | 开始菜单的见解数据日期范围中要检索的日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | date | 中的结束日期的见解数据日期范围以检索。 默认值为当前日期。 |  否  |
 | filter | 字符串  | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 *filter* 参数中的字符串值必须使用单引号括起来。 例如， *filter = dataType eq 购置*。 <p/><p/>当前此方法仅支持筛选**运行状况**。  | 否   |

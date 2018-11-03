@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931738"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994443"
 ---
 # <a name="xname-attribute"></a>x:Name 属性
 
@@ -59,7 +59,7 @@ CombiningCharacter::= none
 
 无法在 XAML 属性元素语法中或在代码中使用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 设置 **x:Name**。 只能在元素上使用 XAML 属性语法来设置 **x:Name**。
 
-**注意**是专为 C + + /CX 应用**X:name**引用的支持字段不会创建为 XAML 文件或页面的根元素。 如果你需要从 C++ 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**注意**是专为 C + + /CX 应用**X:name**引用的支持字段不会创建一个 XAML 文件或页面的根元素。 如果你需要从 C++ 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ### <a name="xname-and-other-name-properties"></a>x:Name 和其他 Name 属性
 
@@ -67,7 +67,7 @@ UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例
 
 如果 **Name** 可用作一个元素上的可设置属性，**Name** 和 **x:Name** 可在 XAML 中交替使用，但如果在相同元素上指定了这两个属性，会发生错误。 有时，会存在一个只读的 **Name** 属性（如 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)）。 如果出现这种情况，请在 XAML 中始终使用 **x:Name** 对该元素进行命名，而且对于一些少见的代码方案使用只读的 **Name**。
 
-**请注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不应作为一种方法来更改最初由**X:name**，设置值，但有一些例外一般规则的方案。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
+**注意**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不应作为一种方式更改最初由**X:name**，设置值，但有一些例外一般规则的方案。 在典型的场景中，XAML 名称范围的创建和定义是一个 XAML 处理器操作。 在运行时修改 **FrameworkElement.Name** 可能会导致不一致的 XAML 名称范围/专用字段命名对齐，这种不一致在代码隐藏文件中很难跟踪。
 
 ### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 

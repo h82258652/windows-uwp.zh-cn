@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931574"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5990787"
 ---
 # <a name="specular-lighting"></a>高光照明
 
@@ -57,7 +57,7 @@ Cₛ 的值为：
 -   顶点颜色 2，前提为镜面材料来源是反射顶点颜色，且在顶点声明中提供第二个顶点的颜色。
 -   材料反射颜色
 
-**注意**如果使用任何一种反射材料来源选项和未提供顶点颜色，则使用材料反射颜色。
+**注意**如果任一镜面材料来源选项和未提供顶点颜色，则使用材料反射颜色。
 
  
 

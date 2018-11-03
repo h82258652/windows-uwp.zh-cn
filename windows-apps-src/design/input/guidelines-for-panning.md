@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0ca4bf518837f072fb58fc0a152e08a82cf5dfad
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939740"
+ms.locfileid: "5989624"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
@@ -84,7 +84,7 @@ ms.locfileid: "5939740"
 > <strong>Windows 10 Fall Creators Update - 行为更改</strong>
 > </div>
 > 默认情况下，主动笔现在可在 UWP 应用中滚动/平移，而不是进行文本选择（与触控、触摸板和被动笔一样）。  
-> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 请参阅 [ScrollViewer 类] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API 参考主题了解详细信息。
+> 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 请参阅有关详细信息的[ScrollViewer 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)API 参考主题。
 
 根据输入设备的不同，用户使用以下方式之一在可平移区域内进行平移：
 

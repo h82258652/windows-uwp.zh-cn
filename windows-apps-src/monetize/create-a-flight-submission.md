@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: 在 Microsoft Store 提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新的软件包外部测试版提交。
+description: 在 Microsoft Store 提交 API 中使用此方法来创建新的软件包外部测试版提交，为注册到你的合作伙伴中心帐户的应用。
 title: 创建软件包外部测试版提交
 ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b06f922de1de1dd9943d460672fab218b51a5eb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4cdcc0f06820600523be111d67d3cad5e38b6ceb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925854"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989975"
 ---
 # <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
@@ -30,7 +30,7 @@ ms.locfileid: "5925854"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 使用你的开发人员中心帐户为应用创建软件包外部测试版。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建软件包外部测试版](create-a-flight.md)方法。
+* 创建应用的软件包外部测试版。 你可以执行此操作在合作伙伴中心，或者可以执行此操作通过使用[创建软件包外部测试版](create-a-flight.md)的方法。
 
 ## <a name="request"></a>请求
 
@@ -119,7 +119,7 @@ Authorization: Bearer <your access token>
 | 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 由于请求无效，无法创建软件包外部测试版提交。 |
-| 409  | 由于应用的当前状态，或者应用使用的开发人员中心仪表板功能[当前不受 Microsoft Store 提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，无法创建软件包外部测试版提交。 |   
+| 409  | 由于应用的当前状态，无法创建软件包外部测试版提交，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

@@ -8,16 +8,16 @@ ms.date: 06/16/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: af32a994f8dbfc7563c56f853bc0226f0da45940
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 047340d180e3de9f963dc76c85edaa6abea67327
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921423"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994466"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下载应用中错误的 CAB 文件
 
-在 Microsoft Store 分析 API 中使用此方法，可下载与应用中报告给开发人员中心的特定错误相关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**部分下载 CAB 文件。
+在 Microsoft Store 分析 API 中使用此方法，可下载与已报告给合作伙伴中心在应用中特定错误相关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 下载 CAB 文件还可以在合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分。
 
 开始使用此方法之前，你必须使用[获取应用中错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索你想下载的 CAB 文件的 ID。
 
@@ -51,7 +51,7 @@ ms.locfileid: "5921423"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供了应用商店 ID。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 应用商店 ID 在合作伙伴中心的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | cabId | 字符串 | 想要下载的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabId** 值。 |  是  |
 
  

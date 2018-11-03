@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, .net, unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b795ed47249eee1f9dc21b195d46f450997019e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919337"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992467"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>在 Unity 和 UWP 中缺少的 .NET API
 
