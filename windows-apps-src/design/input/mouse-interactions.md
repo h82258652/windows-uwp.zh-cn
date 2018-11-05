@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 3ec0f99f069950776ab934c82bd3197bdd6c9dd6
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970164"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032921"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
@@ -98,14 +98,14 @@ ms.locfileid: "5970164"
 
 使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件实现基本输入功能，而无需为每个指针输入设备编写代码。 但是，你仍可以使用此对象的指针、手势和操作事件来利用每台设备的特殊功能（例如鼠标滚轮事件）。
 
-**示例：** 请参阅我们的[应用示例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中实际此功能。
+**示例：** 请参阅我们的[应用示例](https://go.microsoft.com/fwlink/p/?LinkID=264996)中实际此功能。
 
 
-- [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
 
-- [输入示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+- [输入示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
 
 ## <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -141,16 +141,16 @@ ms.locfileid: "5970164"
 * [标识输入设备](identify-input-devices.md)
 
 **示例**
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 

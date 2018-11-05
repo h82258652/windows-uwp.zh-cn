@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 挂起的更新, 多步骤交互性, 多步骤交互
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d21c96676eec1b8b1a1f4397880af937dd8f4b6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5975508"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6036837"
 ---
 # <a name="toast-with-pending-update-activation"></a>具有挂起更新激活的 Toast
 

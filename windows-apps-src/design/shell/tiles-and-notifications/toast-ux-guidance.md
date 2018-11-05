@@ -1,6 +1,6 @@
 ---
 author: manoskow
-Description: Learn how to create effective and user-focused notifications that make your users prductive and happy.
+Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: Toast UX 指南
 label: Toast UX Guidance
 template: detail.hbs
@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，集合、 组、 ux，ux 指南，指导、 操作、 toast，操作中心、 noninterruptive、 有效通知、 非侵入式通知，操作，管理，组织
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77719bd45c3169ec02a280099d27e10099a25c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974714"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032698"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast 通知 UX 指南
 通知是现代生命; 的必要组成部分这些设置有助于用户更高效、 应用和网站，以及使用任何更新保持当前使用的预定。 不过，通知可以快速打开从适用于 overbearing 和如果它们不设计以用户为中心的方式产生干扰。 通知是远离正在处于关闭状态，一个右键单击，并且它后不太可能处于关闭状态，它们将处于打开状态再次。  因此请确保你的通知尊重用户的屏幕空间和时间，以便你可以将此参与通道保留打开。
@@ -57,7 +57,7 @@ ctionable 通知是一个非常强大的工具，以帮助用户感觉高效、 
 这两个这些 gorup 通知，因此相关的内容保持在一起的方式 （即考虑区分不同的体育联赛中的体育应用中，或按群聊对消息进行排序）。 集合与组 notificaitons，以更明显的方式，而标头是更巧妙的但同时允许用户会审和更快地挑选通知。 
 
 ## <a name="other-resources"></a>其他资源
-上述这些四个点是我们已发现 efffective 通过遥测，我们自己分析和第一个和第三方实验的指南。 记住，但是，这些指南只是： 指南。  我们确信这些规则有助于提高参与度和效率的通知，但不是可以替代以用户为中心的考虑，并了解从自己的数据。  
+上述这些四个点是我们发现有效通过遥测，我们自己分析和第一个和第三方实验的指南。 记住，但是，这些指南只是： 指南。  我们确信这些规则有助于提高参与度和效率的通知，但不是可以替代以用户为中心的考虑，并了解从自己的数据。  
 
 如果现在将通知发送到你的 UWP 应用，你可以在[开发人员中心](https://developer.microsoft.com/en-us/windows)中通知发生了什么事情查看分析 ！ 使用[应用商店服务 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)或[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)时，可以免费此数据。 这些指标将为你提供更深入通知在 windows 平台上，会发生什么情况以及如何为用户通知与之交互。 通过转到菜单中，在左侧参与上访问该仪表板 > 通知，然后单击"分析"选项卡中通知页面上。  该文件位于同一位置会从开发人员中心门户发送通知。
 
