@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bffed44921df05a72025e86917901a65fe7ea82
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5985153"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6023675"
 ---
 # <a name="rotation"></a>旋转
 
@@ -105,20 +105,20 @@ Windows8 支持三种类型的旋转： 自由、 受限以及组合。
 
 
 **示例**
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦点视觉示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **存档示例**
-* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触摸点击测试示例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和笔势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [输入：XAML 用户输入事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：触摸点击测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 滚动、平移以及缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [输入：使用 GestureRecognizer 的笔势和操作](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [输入：操作和笔势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 触控输入示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

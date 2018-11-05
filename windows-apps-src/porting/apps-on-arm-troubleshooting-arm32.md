@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, 基于 ARM 的 ARM32 应用, 基于 ARM 的 windows 10, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eaeccb8b4003bb835ee4700d1df57cd8cefcda0
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5985288"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6026227"
 ---
 # <a name="troubleshooting-arm32-uwp-apps"></a>ARM32 UWP 应用疑难解答
 >[!IMPORTANT]

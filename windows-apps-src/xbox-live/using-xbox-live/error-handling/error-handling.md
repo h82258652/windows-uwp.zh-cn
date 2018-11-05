@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 服务调用
 ms.localizationpriority: medium
 ms.openlocfilehash: 1728af14afb0840975ad175608da3f0e9b03645d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5990523"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6051782"
 ---
 # <a name="error-handling"></a>错误处理
 

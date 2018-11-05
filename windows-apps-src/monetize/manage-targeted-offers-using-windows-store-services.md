@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 定向优惠
 ms.localizationpriority: medium
 ms.openlocfilehash: dbfefefdb7f7b96dbe99b35656b610b393ab3afa
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5969153"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6044024"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用应用商店服务管理定向优惠
 

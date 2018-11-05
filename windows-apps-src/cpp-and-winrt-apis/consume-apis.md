@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: cffda0c15e8234f57486995308c335842ce058c8
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5976014"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6052272"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 

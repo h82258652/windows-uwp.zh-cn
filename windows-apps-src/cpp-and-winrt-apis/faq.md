@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 问的, 问题, 常见问题
 ms.localizationpriority: medium
 ms.openlocfilehash: 83fa27f982f777d9c023b5af68144eb67ac5d9aa
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5972461"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6025395"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT 常见问题
 你可能有的关于创作和使用与 Windows 运行时 Api 的问题的解答[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。

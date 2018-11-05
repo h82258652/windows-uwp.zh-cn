@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82623a86548866a78f56385ee0a535bfcb822c46
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970234"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6044246"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
