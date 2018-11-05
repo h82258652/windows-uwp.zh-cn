@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5989806"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6028633"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]
