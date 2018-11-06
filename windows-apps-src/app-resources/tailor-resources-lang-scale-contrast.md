@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 563807798cefe083fa1de85dc1f7e4c3ae679211
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 018740b9ceaa10425ec71f6a2775d547b7c30e82
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992513"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048476"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -39,7 +39,7 @@ ms.locfileid: "5992513"
 
 下面是一个使用限定符命名包含资产文件的文件夹的示例。 如果每个限定符都有一些资产文件，请在文件夹名称中使用限定符。 这样，你可以在文件夹级别设置一次限定符，限定符便可应用于文件夹内的所有内容。
 
-```
+```console
 \Assets\Images\contrast-standard\<logo.png, and other image files>
 \Assets\Images\contrast-high\<logo.png, and other image files>
 \Assets\Images\contrast-black\<logo.png, and other image files>
@@ -52,7 +52,7 @@ ms.locfileid: "5992513"
 
 你可以使用限定符来命名资源文件本身，而不是创建和命名文件夹。 如果每个限定符只有一个资源文件，你可能更喜欢执行此操作。 以下提供了一个示例。
 
-```
+```console
 \Assets\Images\logo.contrast-standard.png
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.contrast-black.png
@@ -68,7 +68,7 @@ ms.locfileid: "5992513"
 ## <a name="actual-and-neutral-qualifier-matches"></a>实际与中性限定符匹配项
 你无需为*每个*限定符值都提供资源文件。 例如，如果你发现高对比度和标准对比度都只需要一个视觉资产，则可以按如下所示命名这些资产。
 
-```
+```console
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.png
 ```
@@ -81,7 +81,7 @@ ms.locfileid: "5992513"
 
 如果只需要一组资产用于高对比度，一组资产用于标准对比度，则可以使用文件夹名称而不是文件名。 在此情况下，彻底忽略文件夹名称可为你提供中性匹配项。
 
-```
+```console
 \Assets\Images\contrast-high\<logo.png, and other images to load when high contrast theme is not None>
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
@@ -92,7 +92,7 @@ ms.locfileid: "5992513"
 
 你可以在文件夹名称和文件名中合并限定符。 例如，你可能希望应用在高对比度模式处于打开状态*并且*显示比例系数为 400 时加载图像资产。 执行此操作的一种方法是使用嵌套文件夹。
 
-```
+```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
 ```
 
@@ -100,7 +100,7 @@ ms.locfileid: "5992513"
 
 另一个选项是在一个文件夹名称中合并多个限定符。
 
-```
+```console
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
@@ -108,7 +108,7 @@ ms.locfileid: "5992513"
 
 你可以用相同格式在文件名中合并多个限定符。
 
-```
+```console
 \Assets\Images\logo.contrast-high_scale-400.png
 ```
 
@@ -160,14 +160,14 @@ public void SetLicenseLevel(BrandID brand)
 
 但是，万不得已时，可以使用 devicefamily 限定符来命名包含 XAML 视图的文件夹（XAML 视图是包含 UI 布局和控件的 XAML 文件）。
 
-```
+```console
 \devicefamily-desktop\<MainPage.xaml, and other markup files to load when running on a desktop computer>
 \devicefamily-mobile\<MainPage.xaml, and other markup files to load when running on a phone>
 ```
 
 或者，你可以命名文件。
 
-```
+```console
 \MainPage.devicefamily-desktop.xaml
 \MainPage.devicefamily-mobile.xaml
 ```
@@ -203,21 +203,21 @@ public void SetLicenseLevel(BrandID brand)
 
 你通常使用 `language` 限定符来命名包含资源文件 (`.resw`) 的文件夹。
 
-```
+```console
 \Strings\language-en\Resources.resw
 \Strings\language-ja\Resources.resw
 ```
 
 你可以忽略 `language` 限定符的 `language-` 部分（即，限定符名称）。 你不能对其他类型的限定符执行此操作；只能在文件夹名称中进行此操作。
 
-```
+```console
 \Strings\en\Resources.resw
 \Strings\ja\Resources.resw
 ```
 
 你可以使用 `language` 限定符来命名资源文件本身，而不是命名文件夹。
 
-```
+```console
 \Strings\Resources.language-en.resw
 \Strings\Resources.language-ja.resw
 ```
@@ -234,7 +234,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 下面是在文件夹级别设置限定符的示例。
 
-```
+```console
 \Assets\Images\scale-100\<logo.png, and other image files>
 \Assets\Images\scale-200\<logo.png, and other image files>
 \Assets\Images\scale-400\<logo.png, and other image files>
@@ -242,7 +242,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 此示例在文件级别对其进行设置。
 
-```
+```console
 \Assets\Images\logo.scale-100.png
 \Assets\Images\logo.scale-200.png
 \Assets\Images\logo.scale-400.png

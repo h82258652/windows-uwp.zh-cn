@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴
 ms.localizationpriority: medium
 ms.openlocfilehash: e27786701fa2ae9ac00a7eab57e840ec9a0dc811
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992009"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047818"
 ---
 # <a name="secondary-tiles"></a>辅助磁贴
 
