@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 590acdd89d83fa21a401b5573053ba341f7f05c7
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995430"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6027336"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
 用户的适用性会话都包含聚合的数据。 

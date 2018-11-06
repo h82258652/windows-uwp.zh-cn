@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, 游戏, uwp, windows 10, Xbox one, Windows 开发人员中心, Xbox Live 设置
 ms.openlocfilehash: 761d5e721220a3094c455273a71d029fc8c26ba1
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5978191"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6044625"
 ---
 # <a name="configure-xbox-live-setup-on-windows-dev-center"></a>在 Windows 开发人员中心中配置 Xbox Live 设置
 

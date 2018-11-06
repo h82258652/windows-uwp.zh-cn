@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 节流, 速率限制
 ms.localizationpriority: medium
 ms.openlocfilehash: b4af61b6fc629e45366a935cc82688afb0e72193
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5978401"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6041877"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a>Xbox Live 细化速率限制
 

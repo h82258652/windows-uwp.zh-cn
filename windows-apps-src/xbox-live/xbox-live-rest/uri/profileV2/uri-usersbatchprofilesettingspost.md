@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b947bf1d9897416623472e078bc49e9ea9df164d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5986665"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6042896"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 获取用户或用户配置文件。 这些 Uri 的域是`profile.xboxlive.com`。

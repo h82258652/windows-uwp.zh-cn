@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bb78941f2ab9cab4395dbb1ba5eb8fb3b09dee08
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5977976"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6023129"
 ---
 # <a name="activityrecord-json"></a>ActivityRecord (JSON)
 有关一个或多个用户的完整状态格式化和本地化字符串。 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态, 策略
 ms.localizationpriority: medium
 ms.openlocfilehash: ae44a0b5619023848437c95bcfcd8025375189df
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5985779"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6031958"
 ---
 # <a name="rich-presence-policies-and-limitations"></a>“完整状态”策略和限制
 

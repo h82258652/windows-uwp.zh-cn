@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b1d86a870e32457b903053c7a8c3b1d722c9c559
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5988809"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6027464"
 ---
 # <a name="standard-http-request-and-response-headers"></a>标准 HTTP 请求和响应标头
  

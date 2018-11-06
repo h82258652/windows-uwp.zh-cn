@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d2586662121b48701c7eb33f3b8f91e5243bd6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5968309"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6026884"
 ---
 # <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a>DELETE (/users/xuid({xuid})/devices/current/titles/current)
 删除结束标题，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。

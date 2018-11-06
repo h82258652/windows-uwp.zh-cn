@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d8f04950b5aff14bf943f9827f0a2af52ddbcb9c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5991490"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6037437"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 获取用户的个人资料或支持用户，人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。

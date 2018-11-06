@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ba9221b7b213cfd6c92a9a6cfcd5c6dec5c051fb
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5982446"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6040758"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
 使访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 094476d4e846fb7e4194f67d3de6bd1d9c7316df
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5991794"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048205"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  

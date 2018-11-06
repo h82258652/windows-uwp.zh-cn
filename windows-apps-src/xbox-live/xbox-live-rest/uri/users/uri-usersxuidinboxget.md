@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3649e07fb8860c3519971ab64fe494fe738f902d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5987402"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6026790"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
 从服务检索指定的数量的用户消息摘要。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c039a2c78824de64c503786d911bb3427e53cf64
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5991163"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6041874"
 ---
 # <a name="game-session-and-game-party-visibility-and-joinability"></a>游戏会话和群体游戏的可见性和可加入性
 

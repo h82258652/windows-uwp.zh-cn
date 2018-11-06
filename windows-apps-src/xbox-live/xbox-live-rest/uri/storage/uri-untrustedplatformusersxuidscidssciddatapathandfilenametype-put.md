@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 49830ccfadf0ecaa7970af9dd5089c87c63b5411
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5977442"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6050559"
 ---
 # <a name="put-untrustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>PUT (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 将文件上传。 可在其中的数据和元数据发送一条消息，或在其中的数据和元数据发送一系列的较小的块多块上载的完整上载上传数据。 可以为一条消息发送小于 4 兆字节的文件。 数据类型 json 不支持多块上载。 这些 Uri 的域是`titlestorage.xboxlive.com`。

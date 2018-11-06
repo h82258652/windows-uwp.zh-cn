@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bf424aed0d0edcee7f042f9d4f84a73fd4d653d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5989478"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6034282"
 ---
 # <a name="serviceconfigsscidsessiontemplates"></a>/serviceconfigs/{scid}/sessiontemplates
 支持 GET 操作以检索一组的 MPSD 会话模板。 

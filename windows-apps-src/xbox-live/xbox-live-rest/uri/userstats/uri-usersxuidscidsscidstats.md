@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd3298c5191f5cfc2e470203567722251371ecb
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5993368"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048577"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
 访问代表指定用户的用户统计信息名称的以逗号分隔列表范围的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: e3042d7dac5fd9ef3e99c874dc4ca1937db94fff
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5989504"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6025206"
 ---
 # <a name="using-game-chat-2-c"></a>使用游戏聊天 2 (C++)
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: ba30743f6b3e13d5aa3e62b9c385cf7281341b38
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5971482"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6022679"
 ---
 # <a name="troubleshooting-xbox-live"></a>Xbox Live 疑难解答
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b1cb2adaafba2370e27eb98a10a5143166f0ce
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5980000"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6025526"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [人 (JSON)](json-person.md)对象的集合。 

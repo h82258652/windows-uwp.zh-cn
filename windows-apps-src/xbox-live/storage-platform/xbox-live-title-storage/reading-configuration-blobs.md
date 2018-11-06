@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: be118ff3bc12cd3dd541d6889daa70c7e5a8eab3
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5970758"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049990"
 ---
 # <a name="reading-a-configuration-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中读取配置 blob
 

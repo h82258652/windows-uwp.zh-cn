@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器
 ms.localizationpriority: medium
 ms.openlocfilehash: 142a09bca9c33aa53a4e034c08bb405ac7b75fce
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5977621"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6024384"
 ---
 # <a name="multiplayer-manager-api-overview"></a>多人游戏管理器 API 概述
 

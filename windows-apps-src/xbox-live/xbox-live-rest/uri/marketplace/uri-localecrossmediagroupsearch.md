@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a5a672c2b9abf986ac46850c8d43ad9ff927871
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5971598"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6031932"
 ---
 # <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/{marketplaceId}/crossMediaGroupSearch
 访问多个不同的媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。

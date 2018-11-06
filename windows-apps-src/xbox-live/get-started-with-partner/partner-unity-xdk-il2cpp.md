@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 975bcb25f330c0baad2027d42956a9fcee4016df
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5974061"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6043163"
 ---
 # <a name="add-xbox-live-support-to-unity-for-xdk-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 XDK 带有 IL2CPP 脚本后端的 Unity 添加 Xbox Live 支持
 

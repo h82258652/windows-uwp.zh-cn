@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 41b8aafc25c3f8ae8ca677f8049235f327c0e36e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5983405"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6038137"
 ---
 # <a name="reward-json"></a>Reward (JSON)
 与成就关联的奖励。

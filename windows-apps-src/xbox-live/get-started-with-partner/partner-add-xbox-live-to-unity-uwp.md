@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: d34ded59574566252d3ff5a7e3f408ab74d51371
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5968321"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6034623"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-net-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 UWP 带有 .NET 脚本后端的 Unity 添加 Xbox Live 支持
 

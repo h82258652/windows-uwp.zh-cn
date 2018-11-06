@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc67b61d9130838802774460cd38ec08e2e349b
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5981849"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6024558"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。

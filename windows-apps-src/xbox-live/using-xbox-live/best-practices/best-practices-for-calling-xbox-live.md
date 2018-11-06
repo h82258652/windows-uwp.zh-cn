@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 最佳实践
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a28595b74fc316950d6d5b93b234ffa7a26e550
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5976831"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6022881"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a>调用 Xbox Live 的最佳实践
 

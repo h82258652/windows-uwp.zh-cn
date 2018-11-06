@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 协议激活, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 35cdb8765ba40e1a6d4a7c624b1a81f37a8f7fa0
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5983306"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6046375"
 ---
 # <a name="configure-your-appxmanifest-for-multiplayer"></a>为多人游戏配置 AppXManifest
 

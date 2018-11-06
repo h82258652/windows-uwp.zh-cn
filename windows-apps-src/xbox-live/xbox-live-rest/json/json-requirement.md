@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d03f9139bcd8067c5d0b945c92bf09728a28366
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5975559"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6029271"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
 解锁成就和远的用户是向满足这些条件。 

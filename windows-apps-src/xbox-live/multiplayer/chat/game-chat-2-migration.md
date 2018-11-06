@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 467e4ca69550e6cebdd0b20711dd0e7a6abd305d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5987823"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6022963"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 

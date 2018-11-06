@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b076aa0816600be65b92e2d59a76f07485b7d4ff
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5981340"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6022808"
 ---
 # <a name="using-xbox-live"></a>使用 Xbox Live
 

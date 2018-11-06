@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 本地化字符串, Windows 开发人员中心
 ms.openlocfilehash: da81c21c858aaa62cc6bbe385f08dd6ab613c979
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5987326"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6024094"
 ---
 # <a name="configuring-localized-strings-on-windows-dev-center"></a>在 Windows 开发人员中心配置本地化字符串
 
