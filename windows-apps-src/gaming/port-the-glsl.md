@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, glsl, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5980479"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048813"
 ---
 # <a name="port-the-glsl"></a>移植 GLSL
 
