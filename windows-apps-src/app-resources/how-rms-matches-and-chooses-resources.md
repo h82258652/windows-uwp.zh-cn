@@ -8,12 +8,12 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996852"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045274"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>资源管理系统如何匹配和选择资源
 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有候选资源，然后确定要返回的最佳候选资源。 为此，需考虑所有限定符，以便对所有候选资源评级。
@@ -41,7 +41,7 @@ ms.locfileid: "5996852"
 ## <a name="example-of-choosing-a-resource-candidate"></a>选择候选资源的示例
 考虑这些文件。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -53,7 +53,7 @@ de/images/logo.jpg
 
 并假设这些是当前上下文中的设置。
 
-```
+```console
 Application language: en-US; fr-FR;
 Scale: 400
 Contrast: Standard
@@ -61,7 +61,7 @@ Contrast: Standard
 
 资源管理系统消除三个文件，因为高对比度和德语不匹配设置定义的上下文。 这些候选项被保留。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -70,7 +70,7 @@ fr/images/logo.scale-100.jpg
 
 对于那些剩余的候选项，资源管理系统使用最高优先级上下文限定符，即语言。 英语资源比法语资源更加匹配，因为英语在设置中列于法语的前面。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -78,13 +78,13 @@ en/images/logo.scale-100.jpg
 
 接下来，在资源管理系统使用次高优先级上下文限定符，即缩放比例。 因此，这是返回的资源。
 
-```
+```console
 en/images/logo.scale-400.jpg
 ```
 
 你可以使用高级 [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) 方法，按照候选项与上下文设置的匹配度顺序检索所有候选项。 在我们刚刚演示的示例中，**ResolveAll** 按照该顺序返回候选项。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -94,7 +94,7 @@ fr/images/logo.scale-100.jpg
 ## <a name="example-of-producing-a-fallback-choice"></a>生成回退选择的示例
 考虑这些文件。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -105,7 +105,7 @@ de/images/contrast-standard/logo.jpg
 
 并假设这些是当前上下文中的设置。
 
-```
+```console
 User language: de-DE;
 Scale: 400
 Contrast: High
@@ -113,7 +113,7 @@ Contrast: High
 
 所有文件都不匹配上下文，因此全部被消除。 因此我们输入默认传递，这是在 PRI 文件创建过程中的默认值（请参阅[使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)）。
 
-```
+```console
 Language: fr-FR;
 Scale: 400
 Contrast: Standard
@@ -121,7 +121,7 @@ Contrast: Standard
 
 所有匹配当前用户或默认值的资源被保留。
 
-```
+```console
 fr/images/contrast-standard/logo.scale-400.jpg
 fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
@@ -129,7 +129,7 @@ de/images/contrast-standard/logo.jpg
 
 资源管理系统使用最高优先级上下文限定符，即语言，返回分数最高的命名资源。
 
-```
+```console
 de/images/contrast-standard/logo.jpg
 ```
 
