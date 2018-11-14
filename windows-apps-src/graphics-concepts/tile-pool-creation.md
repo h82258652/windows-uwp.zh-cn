@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cbb8b61c8eeef1a842a7c6b61d09670f056bb409
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206521"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6457424"
 ---
 # <a name="tile-pool-creation"></a>创建磁贴池
 

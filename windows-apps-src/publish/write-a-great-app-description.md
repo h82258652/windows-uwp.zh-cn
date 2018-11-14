@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 描述, 说明, Microsoft Store 一览, 营销
 ms.localizationpriority: medium
 ms.openlocfilehash: 382bfe760165b4dee3fbdbb63166648c2e475325
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051683"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6282879"
 ---
 # <a name="write-a-great-app-description"></a>编写出色的应用提要
 
@@ -27,7 +27,7 @@ ms.locfileid: "6051683"
 -   **使用列表和简短的段落。** 潜在客户可能只会快速浏览应用的提要。 使用简短的段落和列表将内容拆分可以更加方便用户浏览。
 
     > [!NOTE]
-    > 添加[产品功能](create-app-store-listings.md#product-features)的列表还可以帮助快速显示该应用的功能。 此列表应直接位于应用提要下方。
+    > 添加[产品功能](create-app-store-listings.md#product-features)的列表还可以帮助快速显示你的应用的功能。 此列表应直接位于应用提要下方。
 
 -   **避免使用枯燥乏味的语言。** 应使用引人入胜的语言来撰写提要。 确保措辞能够清楚地描述你的应用的功能，但请用有趣的方式来介绍。 对于大多数应用，采用随和而友好的语气效果较好。
 -   **提要的长度应恰到好处。** 一个好的提要应该读起来轻松快速，但也要包含足够的信息以让读者产生兴趣，并将应用的功能介绍清楚。 复杂的应用将需要更多篇幅来介绍；而简单的应用可能只需要几句话。 在大多数情况下，合适的长度在 200 字左右，但最好不要超过 3000 字。

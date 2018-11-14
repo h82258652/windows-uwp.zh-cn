@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b45386d93d37d00b8448a4f4a3548be6de7f685b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4761b668877af6380ad176e56fb84410a4f509fc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042448"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185017"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One 上的 UWP 应用开发入门
 
@@ -50,7 +50,7 @@ ms.locfileid: "6042448"
 
 ## <a name="setting-up-your-xbox-one-console"></a>设置 Xbox One 主机
 
-1.  在 Xbox One 上激活开发人员模式。 下载该应用，获取激活代码，然后输入你的开发人员中心帐户中的[管理 Xbox One 主机](https://partner.microsoft.com/xboxactivate)页面。 有关详细信息，请参阅 [Xbox One 开发人员模式激活](devkit-activation.md)。 
+1.  在 Xbox One 上激活开发人员模式。 下载该应用，获取激活代码，然后输入你的合作伙伴中心帐户中的[管理 Xbox One 主机](https://partner.microsoft.com/xboxactivate)页面。 有关详细信息，请参阅 [Xbox One 开发人员模式激活](devkit-activation.md)。 
 
 2.  打开**开发人员模式激活**应用，然后选择**切换并重启**。 恭喜，你现在具有处于开发人员模式下的 Xbox One！
   
@@ -62,15 +62,15 @@ ms.locfileid: "6042448"
 
 ## <a name="creating-your-first-project-in-visual-studio"></a>在 Visual Studio 中创建你的第一个项目
 
-有关更多详细信息，请参阅[设置 Xbox 开发环境上的 UWP](development-environment-setup.md)。
+有关详细信息，请参阅[设置 Xbox 开发环境上的 UWP](development-environment-setup.md)。
 
-1.  **对于 C#**： 创建一个新的通用 Windows 项目，在**解决方案资源管理器**中，右键单击项目并选择**属性**。 选择**调试**选项卡、 到**远程计算机**更改**目标设备**、 在**远程计算机**字段中，键入的 IP 地址或 Xbox One 主机的主机名和选择**通用 （未加密协议）** 中**身份验证模式**下拉列表。   
+1.  **对于 C#**： 创建一个新的通用 Windows 项目，并在**解决方案资源管理器**中，右键单击项目并选择**属性**。 选择**调试**选项卡、 到**远程计算机**更改**目标设备**、 在**远程计算机**字段中，键入的 IP 地址或 Xbox One 主机的主机名和选择**通用 （未加密协议）** 中**身份验证模式**下拉列表。   
 
     你可以通过在主机上启动“开发人员主页”（“主页”右侧的大磁贴）并查看左上角找到你的 Xbox One IP 地址。 有关开发人员主页的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。  
 
-2.  **对于 c + + 和 HTML/Javascript 项目**： 你遵循相似路径 C# 项目，但在项目属性转到**调试**选项卡中，选择调试器打开下拉列表中，键入的 IP 地址或主机名中的**远程计算机****计算机名称**字段中，并选择**通用 （未加密协议）** **身份验证类型**字段中的控制台。
+2.  **对于 c + + 和 HTML/Javascript 项目**： 你遵循相似路径 C# 项目，但在项目属性转到**调试**选项卡中，选择调试程序以打开下拉列表中，键入的 IP 地址或主机名中的**远程计算机****计算机名称**字段中，并选择**通用 （未加密协议）** **身份验证类型**字段中的主机。
 
-3. 在顶部菜单栏中的绿色播放按钮的左侧，从下拉列表中选择**x64** 。
+3. 在顶部菜单栏中绿色播放按钮的左侧，从下拉列表中选择**x64** 。
    
 4.  按 F5 后，你的应用将生成并开始在 Xbox One 上部署。
   

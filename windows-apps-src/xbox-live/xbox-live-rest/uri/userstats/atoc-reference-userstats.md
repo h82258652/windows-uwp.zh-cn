@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f850cfcb99df079698a685399680bfdb6e32c813
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6031793"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6282802"
 ---
 # <a name="user-statistics-uris"></a>用户统计信息 URI
  
@@ -29,7 +29,7 @@ ms.locfileid: "6031793"
 
 [/batch](uri-batch.md)
 
-&nbsp;&nbsp;用于在多个游戏的多个玩家统计数据的访问复杂的批处理请求。
+&nbsp;&nbsp;对于跨多个游戏的多个玩家统计数据的访问复杂的批处理请求。
 
 [/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023790"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6450985"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -30,7 +30,7 @@ PlayReady DRM 允许开发人员在强制执行内容提供商定义的访问规
 
 ## <a name="whats-new-in-playready-drm"></a>PlayReady DRM 中的新增功能
 
-下表介绍的新功能和到适用于 windows 10 的 PlayReady DRM 所做的更改。
+下表介绍了新功能和对适用于 windows 10 的 PlayReady DRM 所做的更改。
 
 -   添加了硬件数字版权管理 (HWDRM)。
 

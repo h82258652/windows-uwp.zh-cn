@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049277"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191685"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
@@ -26,7 +26,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
 
-使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须在合作伙伴中心上已存在软件包外部测试版。 你可以创建软件包外部测试版[中的合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
+使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须已经在合作伙伴中心中存在软件包外部测试版。 你可以创建软件包外部测试版[中的合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 若要创建软件包外部测试版提交，请遵循此过程。
 
-1. 如果尚未不执行此操作，完成必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取你的客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
+1. 如果尚未不执行此操作，完整必备条件中所述[创建使用 Microsoft Store 服务和管理提交](create-and-manage-submissions-using-windows-store-services.md)，包括将 Azure AD 应用程序与你的合作伙伴中心帐户相关联并获取你的客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Microsoft Store 提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -121,7 +121,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将通知合作伙伴中心，你完成提交，更新现在应该应用到你的帐户。
+5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将向合作伙伴中心警报完成与你的提交，更新现在应该应用到你的帐户。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit

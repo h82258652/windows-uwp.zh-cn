@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 36be1a1f30c659bec70fdd67a02bbe5ad7ffad3d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041925"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190526"
 ---
 # <a name="usersmescidsscidclipsgameclipid"></a>/users/me/scids/{scid}/clips/{gameClipId}
-访问游戏剪辑数据和元数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，根据问题的 URI 的函数。
+访问游戏剪辑数据和元数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -29,7 +29,7 @@ ms.locfileid: "6041925"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| GameClip 所访问的资源的 ID。| 
+| gameClipId| 字符串| GameClip 正在访问的资源的 ID。| 
   
 <a id="ID4E3B"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "6041925"
 
 [POST (/users/me/scids/{scid}/clips/{gameClipId})](uri-usersmescidclipsgameclipidpost.md)
 
-&nbsp;&nbsp;更新游戏剪辑元数据的用户的数据。
+&nbsp;&nbsp;更新用户自己的数据的游戏剪辑元数据。
  
 <a id="ID4EJC"></a>
 

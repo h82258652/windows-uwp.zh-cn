@@ -13,21 +13,21 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030764"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189507"
 ---
 # <a name="combo-box"></a>组合框
 
-使用组合框 （也称为下拉列表） 显示用户可以从中进行选择的项的列表。 组合框启动处于紧凑状态，并展开以显示可选项目的列表。
+使用组合框 （也称为下拉列表） 存在的用户可以从中进行选择的项目列表。 组合框启动处于紧凑状态，并展开以显示可选项目的列表。
 
-当关闭组合框时，它显示当前选择或者如果没有选定的项为空。 当用户扩展的组合框时，它将显示可选项目的列表。
+当关闭组合框时，它显示当前选择或者如果没有选定的项为空。 当用户展开组合框时，它将显示可选项目的列表。
 
-> **重要 Api**: [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、 [Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **重要的 Api**: [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、 [Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
-处于紧凑状态的标头组合框。
+处于紧凑状态的标头的组合框。
 
 ![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "6030764"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/ComboBox">打开该应用，请参阅的实际组合框</a>。</p>
+    <p>如果你有安装的<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/ComboBox">打开该应用，请参阅的实际组合框</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -68,7 +68,7 @@ ms.locfileid: "6030764"
 
 ## <a name="create-a-combo-box"></a>创建一个组合框
 
-通过将对象添加到[项](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)集合直接或通过将[ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性绑定到数据源，你可以填充组合框。 在[ComboBoxItem](/uwp/api/windows.ui.xaml.controls.comboboxitem)容器中包装项添加到组合框。
+通过将对象添加到[项](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)集合直接或通过将[ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)属性绑定到数据源，你可以填充组合框。 添加到组合框项包装在[ComboBoxItem](/uwp/api/windows.ui.xaml.controls.comboboxitem)容器中。
 
 下面是在 XAML 中添加项目的简单组合框。
 
@@ -81,7 +81,7 @@ ms.locfileid: "6030764"
 </ComboBox>
 ```
 
-以下示例演示了将组合框绑定到 FontFamily 对象的集合。
+下面的示例演示了将组合框绑定到 FontFamily 对象的集合。
 
 ```xaml
 <ComboBox x:Name="FontsCombo" Header="Fonts" Height="44" Width="296"
@@ -102,20 +102,20 @@ public MainPage()
 
 ### <a name="item-selection"></a>项目选择
 
-ListView 和 GridView，如 ComboBox 派生自[选择器](/uwp/api/windows.ui.xaml.controls.primitives.selector)，以便你可以获取用户的选择标准方式相同。
+ListView 和 GridView，如组合框派生[选择器](/uwp/api/windows.ui.xaml.controls.primitives.selector)，以便你可以获取用户的选择标准方式相同。
 
-你可以获取或设置组合框的选中项目由使用[SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)属性，获取或通过使用[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)属性来设置选定的项目的索引。
+可以获取或设置组合框的所选项目使用[SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)属性，并获取或通过使用[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)属性来设置所选项目的索引。
 
-若要获取有关选定的数据项的特定属性的值，你可以使用[SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue) 。 在此情况下，设置[SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath)在所选项目，以获取将该值从上指定的属性。
+若要获取有关选定的数据项的特定属性的值，你可以使用[SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue)属性。 在此情况下，设置[SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath)在所选项目，以获取将该值从上指定的属性。
 
 > [!TIP]
-> 如果你设置 SelectedItem 或 SelectedIndex 以指示默认选择，如果之前已填充组合框项集合设置该属性发生异常。 除非你在 XAML 中定义你的项，最好是处理组合框已加载的事件，并将 SelectedItem 或 SelectedIndex 设置 Loaded 的事件处理程序中。
+> 如果你设置 SelectedItem 或 SelectedIndex 指示默认选择，如果之前已填充组合框项集合设置该属性发生异常。 除非你在 XAML 中定义你的项，则最好处理组合框已加载的事件，并将 SelectedItem 或 SelectedIndex 设置 Loaded 的事件处理程序中。
 
 你可以将绑定到在 XAML 中，这些属性或处理[SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)事件来响应选择更改。
 
-在事件处理程序代码中，你可以从[SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)属性获取选定的项目。 你可以从[SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)属性中获取的先前选定的项 （如果有）。 否则 AddedItems 和 RemovedItems 集合每个包含只有 1 个项目，因为组合框不支持多项选择。
+在事件处理程序代码中，你可以从[SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)属性获取选定的项目。 你可以从[SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)属性获取先前选定的项 （如果有）。 否则 AddedItems 和 RemovedItems 集合每个包含只有 1 个项目，因为组合框不支持多项选择。
 
-此示例显示了如何处理 SelectionChanged 事件，以及如何将绑定到所选项目。
+此示例显示如何处理 SelectionChanged 事件，以及如何将绑定到所选项目。
 
 ```xaml
 <StackPanel>
@@ -163,21 +163,21 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selectionchanged-and-keyboard-navigation"></a>SelectionChanged 和键盘导航
 
-默认情况下，当用户点击量、 点击时，或按某个项目的 enter 键提交选择，列表中和组合框关闭时，会发生 SelectionChanged 事件。 当用户使用键盘箭头键导航开放式组合框列表，选择保持不变。
+默认情况下，当用户点击量、 点击时，或在列表中提交选择，按 enter 键的项和组合框关闭时，将发生 SelectionChanged 事件。 当用户使用键盘箭头键导航打开组合框列表，选择保持不变。
 
-若要使时的组合框"动态更新"用户正在使用箭头键 （如字体所选内容下拉列表） 进行导航打开的列表，请将[SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger)设置为[始终](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)。 这将导致发生焦点更改到另一个打开的列表中的项时 SelectionChanged 事件。
+若要使的组合框"动态更新"，而用户正在使用箭头键 （如字体所选内容下拉列表） 进行导航打开列表，请将[SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger)设置为[始终](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)。 这将导致发生焦点更改打开的列表中的其他项目时 SelectionChanged 事件。
 
 #### <a name="selected-item-behavior-change"></a>选定的项行为更改
 
 在 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，更新选定项的行为以支持可编辑的组合框。
 
-之前 SDK 17763，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 所需位于组合框的项目集合。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
+之前 SDK 17763，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 需要进行组合框的项目集合中。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`将导致：
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex =-1
 
-在 SDK 17763 及更高版本，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 不需要是组合框的项目集合中。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`导致：
+在 SDK 17763 及更高版本，SelectedItem 属性的值 (并因此，SelectedValue 和 SelectedIndex) 不需要在组合框的项目集合。 使用前面示例中，设置`colorComboBox.SelectedItem = "Pink"`将导致：
 
 - SelectedItem = 粉红色
 - SelectedValue = 粉红色
@@ -194,15 +194,15 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 > [!IMPORTANT]
 > 此功能需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。
 
-默认情况下，一个组合框让用户从预定义的选项列表中进行选择。 但是，有列表仅包含一个子集的有效的值，并且用户应该能够输入未列出的其他值的情况。 若要支持此功能，你可以进行组合框可编辑。
+默认情况下，一个组合框允许用户从预定义的选项列表中进行选择。 但是，有列表仅包含一个子集的有效的值，并且用户应该能够输入未列出的其他值的情况。 若要支持这一点，你可以进行组合框可编辑。
 
 **若要使组合框可编辑， [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)设置** 然后，处理[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)事件来处理用户输入的值。
 
-默认情况下，当用户提交自定义文本更新 SelectedItem 值。 你可以通过将**Handled**设置为**true**在 TextSubmitted 事件参数中替代此行为。 会将事件标记为已处理，当组合框将不执行任何进一步的操作事件之后，并将保持正在编辑的状态。 SelectedItem 将不会更新。
+默认情况下，当用户提交的自定义文本更新 SelectedItem 值。 你可以通过将**Handled**设置为**true**在 TextSubmitted 事件参数中替代此行为。 会将事件标记为已处理，当组合框将不执行任何进一步的操作事件之后，并将保持正在编辑的状态。 SelectedItem 将不会更新。
 
-此示例显示了一个简单的可编辑组合框。 此列表包含简单的字符串和用户输入的任何值用作输入。
+此示例显示了一个简单的可编辑组合框。 包含简单的字符串，并且用户输入的任何值用作输入。
 
-"最近使用的名称"的选择器使用户可以输入自定义字符串。 RecentlyUsedNames 列表包含用户可以选择从，某些值，但用户还可以添加一个新的自定义的值。 CurrentName 属性表示的当前输入的名称。
+"最近使用的名称"的选择器使用户可以输入自定义字符串。 RecentlyUsedNames 列表中包含用户可以选择从，某些值，但用户还可以添加一个新的自定义的值。 CurrentName 属性表示当前输入的名称。
 
 ```xaml
 <ComboBox IsEditable="true"
@@ -214,21 +214,21 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 你可以处理[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)事件来处理用户输入的值。 在事件处理程序中，你将通常验证用户输入的值是有效，然后在应用中使用的值。 根据情况，你可能会将值添加到组合框的选项列表中以供将来使用。
 
-满足这些条件时发生 TextSubmitted 事件：
+当满足这些条件，则 TextSubmitted 事件发生：
 
 - IsEditable 属性是**true**
 - 用户输入的不匹配组合框列表中的现有输入的文本
-- 用户按下 enter 键，或将焦点移从组合框。
+- 用户按 Enter，或将焦点移动的组合框中。
 
-如果用户输入文本，然后在列表中导航向上或向下 TextSubmitted 事件不会。
+如果用户输入文本，然后在列表中导航向上或向下不会发生 TextSubmitted 事件。
 
 ### <a name="sample---validate-input-and-use-locally"></a>示例-验证输入和本地使用
 
 在此 examle，字体大小选择器包含一组值对应于字体大小渐变，但用户可以输入不在列表中的字体大小。
 
-当用户将添加一个值，不在列表、 字体大小更新，但的值不添加到列表中的字体大小。
+当用户将添加一个值，不在列表、 字体大小更新，但的值未添加到字体大小的列表。
 
-如果新输入的值不是有效的你可以使用 SelectedValue 将 Text 属性恢复到最后一个已知良好的值。
+如果新输入的值不是有效的你使用 SelectedValue 将 Text 属性恢复到最后一个已知良好的值。
 
 ```xaml
 <ComboBox x:Name="fontSizeComboBox"
@@ -257,7 +257,7 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 
 ### <a name="sample---validate-input-and-add-to-list"></a>示例-验证输入，并将添加到列表
 
-在这里，"最喜爱的颜色选择器"包含最常见最喜爱的颜色 （红色、 蓝色、 绿色、 Orange），但用户可以输入最喜爱的颜色为不在列表中。 当用户添加 （如粉红色） 是有效的颜色时，新输入的颜色是添加到列表，并将设置为活动"最喜爱的颜色"。
+在这里，"最喜爱的颜色选择器"包含最常见最喜爱的颜色 （红色、 蓝色、 绿色、 Orange），但用户可能会输入最喜爱的颜色为不在列表中。 当用户添加 （如粉红色） 是有效的颜色时，新输入的颜色添加到列表，并设置为活动"最喜爱的颜色"。
 
 ```xaml
 <ComboBox x:Name="favoriteColorComboBox"

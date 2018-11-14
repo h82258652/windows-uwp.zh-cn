@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9c3c4d803c4e5c2bc369449b83cf711bda6f99
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027415"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189264"
 ---
 # <a name="accessibility-checklist"></a>辅助功能清单
 

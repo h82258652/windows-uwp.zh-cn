@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 34d686b8e20d384da4a3db1ea3805ad082d5f8a8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028172"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196044"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 示例：应用、加载项和外部测试版的提交
 
@@ -54,7 +54,7 @@ ms.locfileid: "6028172"
 
 ## <a name="create-an-app-submission"></a>创建应用提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建应用提交。 若要执行此操作，代码创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建应用提交。 若要执行此操作，代码创建新提交作为克隆的上次发布的提交，然后更新和提交的克隆到合作伙伴中心提交。 具体来说，示例执行以下任务：
 
 1. 首先，此示例[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
@@ -69,7 +69,7 @@ ms.locfileid: "6028172"
 
 ## <a name="create-an-add-on-submission"></a>创建加载项提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建加载项提交。 若要执行此操作，代码创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建加载项提交。 若要执行此操作，代码创建新提交作为克隆的上次发布的提交，然后更新和提交的克隆到合作伙伴中心提交。 具体来说，示例执行以下任务：
 
 1. 首先，此示例[获取指定加载项的数据](get-an-add-on.md)。
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
@@ -84,7 +84,7 @@ ms.locfileid: "6028172"
 
 ## <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建软件包外部测试版提交。 若要执行此操作，代码创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建软件包外部测试版提交。 若要执行此操作，代码创建新提交作为克隆的上次发布的提交，然后更新和提交的克隆到合作伙伴中心提交。 具体来说，示例执行以下任务：
 
 1. 首先，此示例[获取指定软件包外部测试版的数据](get-a-flight.md)。
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。

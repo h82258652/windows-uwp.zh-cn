@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 255fe2918f10bb3b941cf2023ff358c58e191cbf
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6159610"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6273052"
 ---
 # <a name="user-json"></a>User (JSON)
 包含用户排行榜数据。 

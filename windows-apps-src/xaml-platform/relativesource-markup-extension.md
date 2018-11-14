@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023525"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183211"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} 标记扩展
 
@@ -62,7 +62,7 @@ ms.locfileid: "6023525"
 
 `RelativeSource={RelativeSource Self}` 的另一个用途是作为将对象的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 设置为其自身的一种方式。  例如，你可能在某些 SDK 示例中看到过此技术，其中使用了已为其自身的数据绑定提供可用的视图模型的自定义属性扩展 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类，诸如此类： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注意** **RelativeSource**的 XAML 用法仅显示的用法针对： 作为绑定表达式的一部分[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)在 XAML 中设置一个值。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)，也可能还有其他用法。
+**请注意** **RelativeSource**的 XAML 用法仅显示的用法针对： 作为绑定表达式的一部分[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)在 XAML 中设置一个值。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)，也可能还有其他用法。
 
 ## <a name="related-topics"></a>相关主题
 

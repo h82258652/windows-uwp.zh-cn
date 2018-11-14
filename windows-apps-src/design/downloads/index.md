@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f223b858861cf0f965c5b7ea8778426a8340af
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6185882"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458019"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  

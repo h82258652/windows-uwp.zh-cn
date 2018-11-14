@@ -8,12 +8,12 @@ ms.date: 06/07/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 合作伙伴, ID@Xbox
 ms.localizationpriority: medium
-ms.openlocfilehash: fc9f6831f3c759c9d49ea936a458c84cbf4c0edf
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 74b343ce248201b997f5bcd357095154e221092f
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6152611"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190110"
 ---
 # <a name="get-started-with-xbox-live-as-a-managed-partner-or-an-idxbox-developer"></a>以托管合作伙伴或 ID@Xbox 开发人员的身份开始使用 Xbox Live
 
@@ -21,7 +21,7 @@ ms.locfileid: "6152611"
 
 托管的合作伙伴和 ID@Xbox 开发人员可以针对通用 Windows 平台 (UWP) 或 Xbox 开发人员工具包 (XDK) 平台开发 Xbox Live 主题作品。
 
-除了此处提供的内容之外，还有供拥有授权开发中心帐户的合作伙伴使用的其他文档。 你可以在此处访问这些文档：[Xbox Live 合作伙伴内容](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content)。
+除了提供的内容在这里，还有供拥有授权的合作伙伴中心帐户与合作伙伴的其他文档。 你可以在此处访问这些文档：[Xbox Live 合作伙伴内容](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content)。
 
 ## <a name="why-should-you-use-xbox-live"></a>为什么要使用 Xbox Live？
 
@@ -41,13 +41,13 @@ Xbox Live 提供了一系列功能，旨在帮助你推广游戏和吸引玩家�
   - 对于 Xbox One，请参阅 [Xbox One 上的 UWP](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)，尤其是 [Xbox One 上 UWP 应用和游戏的系统资源](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)
 - 跨平台游戏通常是使用 XDK 和 UWP 路径的面向 Xbox One 和 Windows 电脑的游戏。
 
-## <a name="2-ensure-that-you-have-a-title-created-on-dev-center-or-xdp"></a>2. 确保你已在开发人员中心或 XDP 上创建了一个主题作品
-必须先在开发人员中心或 Xbox 开发人员门户 (XDP) 上定义每个 Xbox Live 主题作品，然后才能登录并进行 Xbox Live 调用。  [创建新的主题作品](create-a-new-title.md)将为你介绍如何执行此操作。
+## <a name="2-ensure-that-you-have-a-title-created-in-partner-center-or-xdp"></a>2.确保你有在合作伙伴中心或 XDP 中创建作品
+每个 Xbox Live 的主题作品必须在合作伙伴中心或 Xbox 开发人员门户 (XDP) 中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的主题作品](create-a-new-title.md)将为你介绍如何执行此操作。
 
 ## <a name="3-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>3. 遵循相应指南设置 IDE 或游戏引擎
 你可以遵循适用于自己平台和引擎的相应入门指南，并在过程中了解 Xbox Live 的基础知识。
 
-* [使用适用于 UWP 游戏的 Visual Studio 入门](get-started-with-visual-studio-and-uwp.md)将为你介绍如何关联 Visual Studio 项目与开发人员中心上的 Xbox Live 配置。
+* [使用适用于 UWP 游戏的 Visual Studio 的入门](get-started-with-visual-studio-and-uwp.md)将向你介绍如何关联 Visual Studio 项目与合作伙伴中心中的 Xbox Live 配置。
 * [使用适用于 UWP 游戏的 Unity 入门](partner-add-xbox-live-to-unity-uwp.md)将为你介绍如何新建支持 Xbox Live 的 Unity 主题作品，如何为主题作品添加排行榜等功能，以及如何生成本机 Visual Studio 项目。
 * [使用适用于基于 XDK 的游戏的 Visual Studio 入门](xdk-developers.md)将向你介绍如何在使用 XDK 制作 Xbox One 主题作品时获取 Visual Studio 项目设置。
 * [制作跨平台游戏入门](get-started-with-cross-play-games.md)介绍如何制作适用于 Xbox One 的基于 XDK 的游戏，以及适用于 Windows 10 电脑的基于 UWP 的游戏。

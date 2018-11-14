@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050384"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181347"
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向传感器
 
@@ -46,7 +46,7 @@ ms.locfileid: "6050384"
 
 ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC #，和事件。
 
 你使用的设备或仿真器必须支持方向传感器。
 

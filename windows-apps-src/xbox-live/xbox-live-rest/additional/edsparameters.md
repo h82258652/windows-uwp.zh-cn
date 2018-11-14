@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e8cd15ec205c9a3a102a94e8a2fae5428ba3ea
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6141527"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182226"
 ---
 # <a name="eds-parameters"></a>EDS 参数
 

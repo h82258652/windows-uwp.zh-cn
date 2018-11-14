@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b5a9c86e9fd56bab3e4eb30206f64debdf6ac9bf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: ef85dfa85f6beaabc038a1bec1c9a66cf6ea4148
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6038271"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194818"
 ---
 # <a name="configure-your-xbox-development-console"></a>配置 Xbox 开发主机
 
@@ -40,4 +40,4 @@ ms.locfileid: "6038271"
 
 ## <a name="sign-in-with-a-development-account"></a>使用开发帐户登录
 
-你可以创建用于登录 [Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) 或 [Windows 开发人员中心](https://developer.microsoft.com/en-us/windows) 的开发帐户。
+你可以创建用于登录[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上的开发帐户

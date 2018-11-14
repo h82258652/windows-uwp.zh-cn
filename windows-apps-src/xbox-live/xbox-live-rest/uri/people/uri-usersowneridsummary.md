@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ce4bd9d444069af95c4f3c875cc12e4ff950cc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6025733"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194009"
 ---
 # <a name="usersowneridsummary"></a>/users/{ownerId}/summary
 有关从调用方的角度来看所有者访问摘要数据。

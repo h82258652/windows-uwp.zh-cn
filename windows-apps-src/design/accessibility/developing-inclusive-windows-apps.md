@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2adb3c67c4c7c1d024cd969af15cc12baa424511
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043566"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6446968"
 ---
 # <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 

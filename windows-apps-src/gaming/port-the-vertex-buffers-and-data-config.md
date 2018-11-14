@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 移植, 顶点缓冲区, 数据, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: b32747a4e11d258f71d4e55e41b7f54bb5e99246
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023512"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6457118"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>移植顶点缓冲区和数据
 

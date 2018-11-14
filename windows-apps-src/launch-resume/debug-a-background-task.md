@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b1e6a5fce559e9e6bf900bae3e3f83921567e6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035016"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6450540"
 ---
 # <a name="debug-a-background-task"></a>调试后台任务
 
@@ -32,7 +32,7 @@ ms.locfileid: "6035016"
 
 -   在 C# 和 C++ 中，确保主项目引用后台任务项目。 如果此引用没有就位，则后台任务将不包括在应用包中。
 -   在 C# 和 C++ 中，确保后台任务项目的 **Output type** 是“Windows 运行时组件”。
--   在后台类必须在程序包清单中的入口点属性中声明。
+-   必须在程序包清单中的入口点属性中声明后台类。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>手动触发后台任务以调试后台任务代码
 

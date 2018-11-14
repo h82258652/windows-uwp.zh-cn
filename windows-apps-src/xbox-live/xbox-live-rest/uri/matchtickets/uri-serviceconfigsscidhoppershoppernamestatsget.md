@@ -10,18 +10,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e072ffa2ced07982247cebd633564606d1e9bb4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6023389"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190387"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
 漏斗中获取统计信息。
 
 > [!IMPORTANT]
-> 此方法旨在使用协定 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此方法旨在用于与合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E5)
@@ -34,7 +34,7 @@ ms.locfileid: "6023389"
 
 
 ## <a name="remarks"></a>备注
-此 HTTP/REST 方法获取从命名漏斗在服务配置 ID (SCID) 级别的统计信息。 此方法可以通过**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API 包装。  
+此 HTTP/REST 方法获取从在服务配置 ID (SCID) 级别的名为漏斗的统计信息。 此方法可以通过**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API 包装。  
 <a id="ID4E5"></a>
 
 
@@ -42,7 +42,7 @@ ms.locfileid: "6023389"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | name| 字符串| 漏斗的名称。|
 
 <a id="ID4EJB"></a>
@@ -52,9 +52,9 @@ ms.locfileid: "6023389"
 
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。 | 403|
-| 特权和设备类型| 是| 当用户的 deviceType 设置控制台时，仅具有多人游戏中其声明特权的用户允许到匹配服务的调用。 | 403|
-| 主题作品 ID/概念证明购买/设备类型| 是| 正在匹配到游戏必须允许指定的主题作品声明，设备类型组合的匹配。 | 403|
+| XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话的成员。 | 403|
+| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。 | 403|
+| 主题作品 ID/购买/设备类型的概念证明| 是| 正在匹配到游戏必须允许匹配的指定的主题作品声明，设备类型组合。 | 403|
 
 <a id="ID4E3C"></a>
 

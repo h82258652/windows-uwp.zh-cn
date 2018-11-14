@@ -6,14 +6,14 @@ ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10，uwp，帐户用户，管理用户、 azure ad，多用户、 多个用户
+keywords: windows 10，uwp，帐户用户，管理用户、 azure ad，多用户，多个用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 01517ebd2cc4b86fa1ac440446a5cc59172014b3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024805"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190507"
 ---
 # <a name="manage-account-users"></a>管理帐户用户
 
@@ -24,8 +24,8 @@ ms.locfileid: "6024805"
 本部分介绍了如何执行以下操作：
 
 -   [将 Azure Active Directory 与你的合作伙伴中心帐户相关联](associate-azure-ad-with-dev-center.md)
--   [添加用户、 组和 Azure AD 应用程序与你的合作伙伴中心帐户](add-users-groups-and-azure-ad-applications.md)
+-   [添加用户、 组和 Azure AD 应用程序到合作伙伴中心帐户](add-users-groups-and-azure-ad-applications.md)
 -   [为帐户用户设置角色和自定义权限](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> 这些主题适用于 Windows 应用开发人员计划，在合作伙伴中心，不过租户关联和用户管理流程类似 Windows 硬件开发人员计划中的帐户 （有关详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)） 或Windows 桌面应用程序计划 （有关详细信息，请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)）。
+> 这些主题适用于 Windows 应用开发人员计划在合作伙伴中心，不过租户关联和用户管理流程类似 Windows 硬件开发人员计划中的帐户 （有关详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)） 或在Windows 桌面应用程序计划 （有关详细信息，请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)）。

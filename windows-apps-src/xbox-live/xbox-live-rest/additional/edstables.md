@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb33b2bdbbccfa447b48c161a8ee18a53f9e619
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6044961"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6180809"
 ---
 # <a name="eds-tables"></a>EDS 表
 
@@ -30,14 +30,14 @@ ms.locfileid: "6044961"
 
 | 媒体组| 媒体项类型| 
 | --- | --- |
-| GameType| Xbox360Game XboxGameTrial、 Xbox360GameContent、 Xbox360GameDemo、 XboxTheme、 XboxOriginalGame、 XboxGamerTile、 XboxArcadeGame、 XboxGameConsumable、 XboxGameVideo、 XboxGameTrailer、 XboxBundle、 XboxXnaCommunityGame、 XboxMarketplace、 AvatarItem，MobileGame XboxMobilePDLC、 XboxMobileConsumable、 WebGame、 MetroGame、 MetroGameContent、 MetroGameConsumable、 DGame、 DGameDemo、 DConsumable、 DDurable|
+| GameType| Xbox360Game、 XboxGameTrial、 Xbox360GameContent、 Xbox360GameDemo、 XboxTheme、 XboxOriginalGame、 XboxGamerTile、 XboxArcadeGame、 XboxGameConsumable、 XboxGameVideo、 XboxGameTrailer、 XboxBundle、 XboxXnaCommunityGame、 XboxMarketplace、 AvatarItem，MobileGame、 XboxMobilePDLC、 XboxMobileConsumable、 WebGame、 MetroGame、 MetroGameContent、 MetroGameConsumable、 DGame、 DGameDemo、 DConsumable、 DDurable|
 | AppType| XboxApp DApp|
 | MovieType| 电影|
-| TVType| TVShow （一次性电视节目） TVEpisode，TVSeries TVSeason|
+| TVType| TVShow （一次性电视节目），TVEpisode，TVSeries TVSeason|
 | MusicType| 唱片集，跟踪，MusicVideo|
 | MusicArtistType| MusicArtist|
 | WebVideoType| WebVideo WebVideoCollection|
-| EnhancedContentType| GameLayer GameActivity、 AppActivity、 VideoLayer、 VideoActivity、 DActivity、 DNativeApp|
+| EnhancedContentType| GameLayer、 GameActivity、 AppActivity、 VideoLayer、 VideoActivity、 DActivity、 DNativeApp|
 | SubscriptionType| 订阅|
 
 <a id="ID4EFD"></a>

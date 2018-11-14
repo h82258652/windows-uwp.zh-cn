@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd3298c5191f5cfc2e470203567722251371ecb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048577"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182042"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
 访问代表指定用户的用户统计信息名称的以逗号分隔列表范围的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
@@ -38,11 +38,11 @@ ms.locfileid: "6048577"
 
 [GET](uri-usersxuidscidsscidstatsget.md)
 
-&nbsp;&nbsp;获取由逗号分隔的代表指定用户的用户统计信息名称列表范围的服务配置。
+&nbsp;&nbsp;获取由逗号分隔列表的代表指定用户的用户统计数据名称范围的服务配置。
 
 [获取与值元数据](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 
-&nbsp;&nbsp;获取指定的统计数据，包括与统计数据值，指定的服务配置中的用户关联的元数据的列表。
+&nbsp;&nbsp;获取指定的统计数据，包括与统计信息值，指定的服务配置中的用户相关联的元数据的列表。
  
 <a id="ID4EKC"></a>
 

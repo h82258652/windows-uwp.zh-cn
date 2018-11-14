@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: f9d9d6a2aafe1b81ff331bac92662b111eb48956
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029339"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184225"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件; 绑定到 C++/WinRT 集合
 
-可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何实现可观测集合中的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将绑定 XAML 项目控件到它们。
+可有效地绑定到 XAML 项目控件的集合称为*可观测*集合。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何实现可观测集合中的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 绑定项目控件到它们。
 
 本演练围绕在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中创建的项目展开，而且它将添加到该主题中所述的概念。
 
@@ -34,7 +34,7 @@ ms.locfileid: "6029339"
 在 [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md)中，我们已将类型 **BookSku** 的属性添加到主视图模型。 在此步骤中，我们将使用[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)工厂函数模板来帮助我们在同一视图模型上实现**BookSku**可观测集合。
 
 > [!NOTE]
-> 如果你尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本，然后查看[是否有较早版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)有关你可以使用而不是**winrt::single_ 可观测矢量模板的列表threaded_observable_vector**。
+> 如果尚未安装了 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年) 或更高版本，然后查看[是否有较早版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)有关你可以使用而不是**winrt::single_ 可观测矢量模板的列表threaded_observable_vector**。
 
 声明 `BookstoreViewModel.idl` 中的新属性。
 

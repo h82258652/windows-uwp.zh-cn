@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可本地化性, 本地化, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: ac69701eca128d327dfd80cfddc7fad41c50c50e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193924"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6447292"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>调整布局和字体并支持 RTL
 设计应用，使其支持多种语言布局和字体，包括 RTL（从右到左）排列方向。 排列方向是脚本的写入方向和显示方向，页面上的 UI 元素是目视浏览的。

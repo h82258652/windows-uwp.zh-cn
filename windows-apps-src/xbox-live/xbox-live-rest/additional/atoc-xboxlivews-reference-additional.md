@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 106fe8e79752125a8c30670e226aebd689c3d240
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049157"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185554"
 ---
 # <a name="additional-reference"></a>其他参考
 
-此部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 补充参考资料。
+本部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
 
 <a id="ID4EZ"></a>
 
@@ -27,11 +27,11 @@ ms.locfileid: "6049157"
 
 [授权类型](authorizationtypes.md)
 
-&nbsp;&nbsp;介绍了 Xbox Live 服务使用标准的授权类型。
+&nbsp;&nbsp;介绍使用 Xbox Live 服务的标准授权类型。
 
 [数据类型概述](datatypeoverview.md)
 
-&nbsp;&nbsp;介绍了 Xbox Live 服务使用标准标识相关的数据类型。
+&nbsp;&nbsp;介绍使用 Xbox Live 服务的标准标识相关的数据类型。
 
 [辅助 EDS API](eds-apis.md)
 
@@ -53,7 +53,7 @@ ms.locfileid: "6049157"
 
 [EDS 反向查找视频](edsreverselookup.md)
 
-&nbsp;&nbsp;查找视频，具体取决于反向数据。
+&nbsp;&nbsp;查找视频基于反向数据。
 
 [EDS 表](edstables.md)
 
@@ -65,11 +65,11 @@ ms.locfileid: "6049157"
 
 [标准 HTTP 请求和响应标头](httpstandardheaders.md)
 
-&nbsp;&nbsp;介绍在 Xbox Live 服务请求时使用的标准 HTTP 标头。
+&nbsp;&nbsp;介绍了进行 Xbox Live 服务请求时使用的标准 HTTP 标头。
 
 [标准 HTTP 状态代码](httpstatuscodes.md)
 
-&nbsp;&nbsp;介绍由该服务返回的标准 HTTP 状态代码。
+&nbsp;&nbsp;描述了由该服务返回的标准 HTTP 状态代码。
 
 <a id="ID4ECC"></a>
 
