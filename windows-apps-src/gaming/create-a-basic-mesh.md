@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 网格, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045447"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6453729"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>创建和显示基本网格
 
@@ -21,7 +21,7 @@ ms.locfileid: "6045447"
 
 3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。 构成这些多边形对象和图面的结构的顶点列表称为网格。 在这里，我们为立方体对象创建一个基本网格并为其提供用于呈现和显示的着色器管道。
 
-> **重要**包含的示例代码，这里使用的类型 （如 directx:: Xmfloat3 和 DirectX::XMFLOAT4X4） 和内联方法使用在 DirectXMath.h 中声明。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
+> **重要提示**包含的示例代码此处使用类型 （如 directx:: Xmfloat3 和 DirectX::XMFLOAT4X4） 和内联方法使用在 DirectXMath.h 中声明。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
 
  
 
@@ -207,7 +207,7 @@ unsigned short cubeIndices[] =
 
 在该示例中，我们只有一个从不更改的恒定缓冲区：三个矩阵的 DirectX::XMFLOAT4X4 数据。
 
-> **注意**此处呈现的示例代码使用列主序矩阵。 可以通过在 HLSL 中使用 **row\_major** 关键字并且确保源矩阵数据也是行主序来使用行主序矩阵。 DirectXMath 使用行主序矩阵，并且可以直接用于使用 **row\_major** 关键字定义的 HLSL 矩阵。
+> **请注意**此处呈现的示例代码使用列主序矩阵。 可以通过在 HLSL 中使用 **row\_major** 关键字并且确保源矩阵数据也是行主序来使用行主序矩阵。 DirectXMath 使用行主序矩阵，并且可以直接用于使用 **row\_major** 关键字定义的 HLSL 矩阵。
 
  
 
@@ -259,7 +259,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **注意**通常声明投影矩阵当设置特定于设备的资源，因为与它相乘的结果必须与当前 2d 视口大小参数 (这通常与相对应的像素高度和宽度显示）。 如果这些内容发生改变，则必须相应地缩放 x 和 y 坐标值。
+> **请注意**通常声明投影矩阵当设置特定于设备的资源，因为与它相乘的结果必须与当前 2d 视口大小参数 (这通常与相对应的像素高度和宽度显示）。 如果这些内容发生改变，则必须相应地缩放 x 和 y 坐标值。
 
  
 

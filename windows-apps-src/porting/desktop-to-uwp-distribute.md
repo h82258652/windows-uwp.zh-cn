@@ -2,23 +2,23 @@
 author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: 发布到 Windows 应用商店或旁加载你已打包的桌面应用程序它到一个或多个设备上。
+title: 发布到 Microsoft 应用商店或旁加载打包桌面应用程序它到一个或多个设备上。
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: f79e641b377f0e34ece8f0be434fae11cba621a6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6210188"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668704"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>分发打包的桌面应用程序
 
-发布到 Windows 应用商店或旁加载你已打包的桌面应用程序它到一个或多个设备上。  
+发布到 Microsoft 应用商店或旁加载打包桌面应用程序它到一个或多个设备上。  
 
 > [!NOTE]
 > 你是否拥有如何将用户切换到打包应用程序的计划？ 分发应用前，请参阅本指南的[将用户切换到打包的应用](#transition-users)部分，获得一些参考。
@@ -27,7 +27,7 @@ ms.locfileid: "6210188"
 
 [Microsoft Store](https://www.microsoft.com/store/apps) 是客户获取应用最便利的方法。
 
-发布到该应用商店应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发到其组织通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
+发布到 Microsoft Store 的应用程序，以获得最广泛的受众。 此外，组织客户还可以获取你的应用程序内部分发到其组织通过[适用于企业的 Microsoft 应用商店](https://www.microsoft.com/business-store)。
 
 如果你打算发布到 Microsoft Store，在提交过程中，系统将要求你额外回答几个问题。 这是因为程序包清单声明名为 **runFullTrust** 的受限功能，我们需要批准该功能对你的应用程序的使用。 可以在此处了解有关此要求的详细信息：[受限功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "6210188"
 
 如果要更好地控制分发体验，或者不想涉及 Microsoft Store 证书过程，这很有意义。
 
-若要而不将其置于应用商店分配应用程序与其他设备，你需要获取一个证书，使用该证书，然后旁加载应用程序到这些设备上的登录你的应用程序。
+若要将分配到其他设备的应用程序，而将其放置在应用商店中，你必须获取一个证书，使用该证书，然后旁加载应用程序到这些设备上的登录你的应用程序。
 
 你可以[创建证书](../packaging/create-certificate-package-signing.md)或从 [Verisign](https://www.verisign.com/) 等热门供应商处获取。
 
