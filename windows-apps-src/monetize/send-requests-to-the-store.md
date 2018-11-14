@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: 6762d31ea7ebaeb966cd60f121591ba1534517a3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041642"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452187"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>向 Microsoft Store 发送请求
 
@@ -79,7 +79,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  指定 7 以返回设备的最高排名外部测试版组，或者指定 8 以返回当前用户和设备的最高排名外部测试版组。 我们建议为 *requestKind* 参数使用值 8，因为此值将在成员中返回当前用户和设备的最高排名外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将*projectId*字段分配给已定义的合作伙伴中心中的远程变量的项目 ID。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将*projectId*字段分配给在其中定义在合作伙伴中心中的远程变量的项目 ID。
 
 ```json
 { 

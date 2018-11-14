@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051418"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6446978"
 ---
 # <a name="app-submissions"></a>应用提交
 
@@ -25,10 +25,10 @@ ms.locfileid: "6051418"
 > [!NOTE]
 > 为了将应用提交到 Microsoft Store，必须在[合作伙伴中心](https://partner.microsoft.com/dashboard)中具有一个活动的[开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
 
-你的应用发布后，你可以通过在合作伙伴中心中创建另一个提交来发布更新的版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 要创建新的提交已发布的应用，请单击其**概述**页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （并让其可再次更高版本，如果你想要）。
+你的应用发布后，你可以通过在合作伙伴中心中创建另一个提交来发布更新的版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 要创建新的提交已发布的应用，请单击其**概述**页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （，然后将其提供再次更高版本，如果你想要）。
 
 > [!NOTE]
-> 文档的此部分介绍了如何在合作伙伴中心中创建应用提交。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行应用提交。
+> 文档的此部分介绍如何在合作伙伴中心中创建应用提交。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行应用提交。
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
@@ -100,7 +100,7 @@ ms.locfileid: "6051418"
 | **预告片**                  | 可选                                    | [预告片](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 和 Xbox 图像（16:9 超级人物图片）**     | 推荐        | [Windows 10 和 Xbox 图像 （16:9 超级人物图片）
 ] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox 图像**     | 所需的正确显示，如果你向 Xbox 发布        | [Xbox 图像
+| **Xbox 图像**     | 如果你向 Xbox 发布所需的正确显示        | [Xbox 图像
 ] (应用屏幕截图和 images.md #xbox 图像) |
 | **补充字段**  | 可选                                    | [补充字段](create-app-store-listings.md#supplemental-fields) 
 | **搜索词**              | 可选                                    | [搜索词](create-app-store-listings.md#search-terms)         |

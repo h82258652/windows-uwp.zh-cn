@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 定期工作项, 线程处理, 计时器
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052232"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6448160"
 ---
 # <a name="create-a-periodic-work-item"></a>创建定期工作项
 
@@ -31,9 +31,9 @@ ms.locfileid: "6052232"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 返回一个 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 对象。 存储该对象，以防需要取消计时器。
 
-> **注意**避免指定值为零 （或小于 1 微秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
+> **请注意**避免指定值为零 （或小于 1 微秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
 
-> **注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
+> **请注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
 
 以下示例创建每 60 秒运行一次的工作项：
 
