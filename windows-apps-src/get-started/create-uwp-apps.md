@@ -7,18 +7,18 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 入门
 ms.localizationpriority: medium
-ms.openlocfilehash: dde635624101fdcf0803770bc69e7922f56f704e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4bc64b0a6919180b6041bdbf4f81463019d274eb
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031576"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261575"
 ---
 # <a name="start-coding"></a>开始编写代码
 
 ![生成应用](images/build-your-app.png)
 
-欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在本页面上，我们将为你提供开始编写你要创建的 Windows 10 应用的代码所需的适当信息。
+欢迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在此页上，我们将指向你开始编写你想要创建的 Windows 10 应用所需的正确信息。
 
 开始开发之前，你应该已完成[准备工作](get-set-up.md)。
 
