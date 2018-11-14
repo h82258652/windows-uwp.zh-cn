@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，投影，XAML，自定义，模板化控件
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e06a28125b3cf3a760d7e9170512b6467c0170d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6278363"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6459961"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML 自定义（模板化）控件与 C++/WinRT
 

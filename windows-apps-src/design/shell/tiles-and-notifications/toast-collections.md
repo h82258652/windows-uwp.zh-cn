@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知, 集合, 通知分组, 分组, 组织, 操作中心, toast
 ms.localizationpriority: medium
 ms.openlocfilehash: be7c4ec2e9a47eeeb00663ae94f89e44c6751352
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6249295"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6462518"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>通过集合对 Toast 通知分组
 在操作中心使用集合来组织应用的 Toast。 集合能帮助用户更轻松地在操作中心找到信息，并帮助开发人员更好地管理他们的通知。  以下 API 可用于删除、创建和更新通知集合。

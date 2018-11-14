@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6189750"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6457776"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows 运行时组件中的自定义事件和事件访问器
 

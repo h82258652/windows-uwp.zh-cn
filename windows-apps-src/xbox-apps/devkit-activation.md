@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9bbc2962bc0d11f9969bf41840be515c9c0881
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6279511"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6648252"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 开发人员模式激活
 

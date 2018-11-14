@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 211bd4ce660726030f8b90d29c4ea4d8a14564de
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6252801"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6657960"
 ---
 # <a name="get-a-preview-frame"></a>获取预览帧
 

@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f964c8ac4a579fe4c360967c6bc9e613659a668b
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 7fc8c8e68e4b20498f84b4d20d84eca0dbfa7237
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469790"
+ms.locfileid: "6650895"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 将桌面应用程序打包
 
@@ -122,7 +122,7 @@ Desktop App Converter (DAC) 创建程序包的桌面应用程序集成的最新�
 你将通过使用参数指定应用程序的包名称、 发布者和版本号。
 
 > [!NOTE]
-> 如果你在 Microsoft Store 中预留了应用名称，则可以通过使用 Windows 开发人员中心仪表板获取包名称和发布者名称。 如果你打算将应用旁加载到其他系统上，只要选择的发布者名称与用于对应用进行签名的证书上的名称相匹配，就可以提供自己的名称。
+> 如果你已保留应用名称的 Microsoft 应用商店中，你可以通过[合作伙伴中心](https://partner.microsoft.com/dashboard)中获取的程序包和发布者名称。 如果你打算将应用旁加载到其他系统上，只要选择的发布者名称与用于对应用进行签名的证书上的名称相匹配，就可以提供自己的名称。
 
 ### <a name="a-quick-look-at-command-parameters"></a>命令参数概览
 
@@ -145,7 +145,7 @@ DesktopAppConverter.exe
 * [打包的应用程序具有安装程序 (.msi) 文件](#installer-conversion)
 * [打包的应用程序具有安装程序可执行文件](#setup-conversion)
 * [打包的应用程序没有安装程序](#no-installer-conversion)
-* [将应用打包、对应用进行签名并为 Microsoft Store 提交做好准备](#optional-parameters)
+* [将应用打包、 对应用进行签名并为应用商店提交做好准备](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -158,7 +158,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> 以下是在执行此操作时要记住的两个重要事项。 首先，请确保安装程序位于独立文件夹中，并确保只有与该安装程序相关的文件位于同一文件夹中。 转换器将该文件夹的所有内容复制到隔离的 Windows 环境中。 <br> 其次，如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。  
+> 以下是在执行此操作时要记住的两个重要事项。 首先，请确保安装程序位于独立文件夹中，并确保只有与该安装程序相关的文件位于同一文件夹中。 转换器将该文件夹的所有内容复制到隔离的 Windows 环境中。 <br> 其次，如果合作伙伴中心为你以数字开头的程序包分配了标识，请确保您还传入<i>-AppId</i>参数，并使用仅字符串后缀 （在句点分隔符之后） 作为该参数的值。  
 
 **视频**
 
@@ -176,7 +176,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。
+>如果合作伙伴中心将标识分配给你以数字开头的程序包，请确保还传入<i>-AppId</i>参数，并使用仅字符串后缀 （在句点分隔符之后） 作为该参数的值。
 
 ``InstallerArguments`` 参数是可选参数。 但是，因为 Desktop App Converter 需要安装程序在无人参与模式下运行，你可能需要使用它，如果你的应用程序需要无提示标志以静默方式运行。 ``/S`` 标志是十分常见的无提示标志，但你使用的标志可能有所不同，具体取决于用于创建安装程序文件的安装程序技术。
 
@@ -197,7 +197,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。
+>如果合作伙伴中心将标识分配给你以数字开头的程序包，请确保还传入<i>-AppId</i>参数，并使用仅字符串后缀 （在句点分隔符之后） 作为该参数的值。
 
 **视频**
 
@@ -213,7 +213,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。
+>如果合作伙伴中心将标识分配给你以数字开头的程序包，请确保还传入<i>-AppId</i>参数，并使用仅字符串后缀 （在句点分隔符之后） 作为该参数的值。
 
 ``Sign``参数生成一个证书，然后对其应用程序进行签名。 若要运行应用，你需要安装生成的证书。 若要了解如何操作，请参阅本指南的[运行已打包的应用](#run-app)部分。
 
@@ -271,13 +271,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-MakeAppx [&lt;SwitchParameter&gt;]  |可选 |一个告知此脚本对输出调用 MakeAppx 的开关（如果有）。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |可选 |切换，如果存在，告知此脚本以 MSIX 程序包输出打包。 |
 |<a id="identity-params" /><strong>程序包标识符参数</strong>||
-|-PackageName &lt;String&gt; |必填 |通用 Windows 应用包的名称。 如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。 |
+|-PackageName &lt;String&gt; |必填 |通用 Windows 应用包的名称。 如果合作伙伴中心将标识分配给你以数字开头的程序包，请确保还传入<i>-AppId</i>参数，并使用仅字符串后缀 （在句点分隔符之后） 作为该参数的值。 |
 |-Publisher &lt;String&gt; |必需 |通用 Windows 应用包的发布者 |
 |-Version &lt;Version&gt; |必需 |通用 Windows 应用包的版本号 |
 |<a id="manifest-params" /><strong>程序包清单参数</strong>||
 |-AppExecutable &lt;String&gt; |可选 |应用程序的主要可执行文件的名称（例如“MyApp.exe”）。 无安装程序的转换需要使用此参数。 |
 |-AppFileTypes &lt;String&gt;|可选 |应用程序将与其关联的文件类型的以逗号分隔的列表。 用法示例：-AppFileTypes "'.md', '.markdown'"。|
-|-AppId &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将应用程序 ID 设置为的值。 如果未指定，则将其设置为为 *PackageName* 传入的值。 在许多情况下，使用 *PackageName* 很合适。 但是，如果开发人员中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。 |
+|-AppId &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将应用程序 ID 设置为的值。 如果未指定，则将其设置为为 *PackageName* 传入的值。 在许多情况下，使用 *PackageName* 很合适。 但是，如果合作伙伴中心为你以数字开头的程序包分配了标识，确保你还传入<i>-AppId</i>参数，并使用仅字符串后缀 （在句点分隔符之后） 作为该参数的值。 |
 |-AppDisplayName &lt;String&gt;  |可选 |在 Windows 应用程序包清单中指定要将应用程序显示名称设置为的值。 如果未指定，则将其设置为为 *PackageName* 传入的值。 |
 |-AppDescription &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将应用程序描述设置为的值。 如果未指定，则将其设置为为 *PackageName* 传入的值。|
 |-PackageDisplayName &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将程序包显示名称设置为的值。 如果未指定，则将其设置为为 *PackageName* 传入的值。 |

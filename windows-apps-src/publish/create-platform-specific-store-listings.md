@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 自定义, 一览, 描述, 之前
 ms.localizationpriority: medium
 ms.openlocfilehash: c2bc58540f49afb8b24eaa58150132fea1d27f84
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6159482"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6650475"
 ---
 # <a name="create-platform-specific-store-listings"></a>创建特定于平台的 Microsoft Store 一览
 
