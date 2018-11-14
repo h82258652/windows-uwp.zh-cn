@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c874c690826dfa74b8dcb2312204cd549db3db2b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035682"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452167"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -60,7 +60,7 @@ ms.locfileid: "6035682"
 
 ## <a name="send-a-simple-get-request-over-http"></a>通过 HTTP 发送简单的 GET 请求
 
-正如本文前面提到的，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何 GET 请求发送到http://www.contoso.com使用[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)类和[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)类读取来自 GET 请求的响应。
+正如本文前面提到的，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何获取请求发送到http://www.contoso.com使用[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)类和[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)类读取来自 GET 请求的响应。
 
 ```csharp
 //Create an HTTP client object

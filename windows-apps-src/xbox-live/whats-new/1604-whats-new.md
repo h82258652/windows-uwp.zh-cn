@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 5971a586269a53c973653fcfc45409c7b5057dfe
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 0efeb16866628a4d318964f9b1a7a293c7679be8
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6164125"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6442538"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---april-2016"></a>Xbox Live SDK 的新增功能 - 2016 年 4 月
 
@@ -29,7 +29,7 @@ Xbox Live SDK 支持 Windows 10 RTM [版本 10.0.10240] 和 Visual Studio 2015 R
 
 ## <a name="documentation"></a>文档
 - [登录疑难解答指南](../using-xbox-live/troubleshooting/troubleshooting-sign-in.md)列出了一些调试登录失败的一般策略，以及根据错误代码要执行的步骤。
-- 面向 Xbox One 开发人员的[应用商店](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)文档现在只能在“编程指南”中找到。  UWP 开发人员应继续咨询 Windows 开发人员中心了解应用商店文档的情况。
+- 面向 Xbox One 开发人员的[应用商店](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)文档现在只能在“编程指南”中找到。  UWP 开发人员应继续咨询合作伙伴中心了解在应用商店的文档。
 - 如果你有兴趣将 Xbox One 游戏带入通用 Windows 平台，可以参阅[从 XDK 到 UWP 的移植指南](../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)。
 - 请参阅[细化速率限制](../using-xbox-live/best-practices/fine-grained-rate-limiting.md)一文，了解如何对各个 Xbox Live 服务终结点和方案强制执行这些限制，以及有关具体限制的信息。
 

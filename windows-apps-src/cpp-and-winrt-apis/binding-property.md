@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b7c20e0e6cf56afa7e2193739401bf49e0403a2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6467224"
+ms.locfileid: "6654981"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件; 绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为*观察者模式*的软件设计模式。 本主题介绍如何实现可观测属性[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何将 XAML 控件绑定到它们。
@@ -208,7 +208,7 @@ namespace Bookstore
 
 保存文件。 该项目将不会生成完成时，但现在生成很有用，它以执行操作，因为它会重新生成源代码文件中实现**MainPage**运行时类 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此继续操作并立即生成。 你会看到此阶段生成错误**MainViewModel': 不是 winrt::Bookstore::implementation::MainPage 的成员**。
 
-如果忽略的包含`BookstoreViewModel.idl`(的列表，请参阅`MainPage.idl`上方)，则你将看到错误**预期 \ < 附近"MainViewModel"**。 另一条提示是确保你在相同的命名空间中保留的所有类型： 代码一览中显示的命名空间。
+如果忽略的包含`BookstoreViewModel.idl`(的列表，请参阅`MainPage.idl`以上)，然后你将看到**预期 \< 附近"MainViewModel"** 错误。 另一条提示是确保你在相同的命名空间中保留的所有类型： 代码一览中显示的命名空间。
 
 若要解决我们希望看到此错误，你现在需要复制访问器存根针对**MainViewModel**属性从生成的文件 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
 

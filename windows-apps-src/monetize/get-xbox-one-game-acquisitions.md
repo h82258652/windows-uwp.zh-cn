@@ -8,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox One 游戏购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: 200f18e443e8a130a7e5c673b03c146b73c9083b
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6258922"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6459548"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>获取 Xbox One 游戏购置
 
@@ -60,7 +60,7 @@ ms.locfileid: "6258922"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示用于获取 Xbox One 游戏购置数据的多个请求。 将 *applicationId* 值替换为你的游戏的 Store ID。
+以下示例演示用于获取 Xbox One 游戏购置数据的多个请求。 *ApplicationId*值替换为你的游戏的产品 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0 HTTP/1.1
