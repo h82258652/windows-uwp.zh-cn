@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281199"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6468496"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 

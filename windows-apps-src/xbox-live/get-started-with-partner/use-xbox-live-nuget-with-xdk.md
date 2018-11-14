@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, NuGet
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a1212a1d05ab3dab502c34bdd5c814030e9d638
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030537"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264503"
 ---
 # <a name="use-the-xbox-live-api-nuget-package-to-develop-xdk-titles"></a>使用 Xbox Live API NuGet 程序包开发 XDK 主题作品
 

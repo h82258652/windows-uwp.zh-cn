@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 云中的操作中心, 全局消除, 通知, 跨设备, 一次消除即全部消除
 ms.localizationpriority: medium
 ms.openlocfilehash: 40a9c446172b25f2430a3f75014c8e168a91c233
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6454337"
+ms.locfileid: "6653796"
 ---
 # <a name="universal-dismiss"></a>全局消除
 

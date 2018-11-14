@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏 uwp, windows 10, xbox one, 多人游戏 2015, 状态代码, 会话
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e8e73008505457949fd8123b1c4bd1452785ef
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6276592"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6442572"
 ---
 # <a name="multiplayer-session-status-codes"></a>多人游戏会话状态代码
 

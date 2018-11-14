@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a62dd48857ed9c7ba8601d5ca08179c6a32b0db5
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6204601"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267791"
 ---
 # <a name="gamesession-json"></a>GameSession (JSON)
 多人游戏会话表示游戏数据的 JSON 对象。 

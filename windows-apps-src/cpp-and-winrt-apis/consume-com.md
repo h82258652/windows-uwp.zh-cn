@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，标准，c + +，cpp，winrt，COM、 组件、 类、 接口
 ms.localizationpriority: medium
 ms.openlocfilehash: a07c9877a6d6d953e578d927959b1202444ede21
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275962"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6647426"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 

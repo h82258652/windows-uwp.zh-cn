@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, iap, 价格
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc557306fe2e5e24ce1210e75ac5f29628306ae
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197672"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279718"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>设置加载项定价和可用性
 

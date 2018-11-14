@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入, 原始游戏控制器
 ms.localizationpriority: medium
 ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041564"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651689"
 ---
 # <a name="raw-game-controller"></a>原始游戏控制器
 

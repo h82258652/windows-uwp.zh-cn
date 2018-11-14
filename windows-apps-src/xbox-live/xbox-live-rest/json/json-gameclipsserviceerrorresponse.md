@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 70cc7d7796a9f58cc092e85f4ae28b46c0ee17e5
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6191297"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267713"
 ---
 # <a name="gameclipsserviceerrorresponse-json"></a>GameClipsServiceErrorResponse (JSON)
 /Users/ {ownerId} {scid} /scids/ /clips/ {gameClipId} 响应的可选部分/uri/格式 / {gameClipUriType} API。 

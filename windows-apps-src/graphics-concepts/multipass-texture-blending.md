@@ -10,18 +10,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c55f371e97daba5f81945812f8179eb708bbadd6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027508"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268118"
 ---
 # <a name="multipass-texture-blending"></a>多通道纹理混合
 
 
 通过在多通道呈现的过程中将不同纹理应用到基元，Direct3D 应用程序可以实现多个特殊效果。 我们通用将此称为*多通道纹理混合*。 多通道纹理混合通常用于：通过应用几种不同纹理的多种颜色来模拟复杂照明及着色模型的效果。 比如*光照映射*。 请参阅[使用纹理的光映射](light-mapping-with-textures.md)。
 
-**注意**某些设备都能向在单程基元应用多个纹理。 参见[纹理混合](texture-blending.md)。
+**请注意**某些设备都能向在单程基元应用多个纹理。 参见[纹理混合](texture-blending.md)。
 
  
 

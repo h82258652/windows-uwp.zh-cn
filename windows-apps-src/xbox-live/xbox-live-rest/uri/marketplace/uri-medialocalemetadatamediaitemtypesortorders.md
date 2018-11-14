@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 59b2e59315d9b787f75221391c39cdc6a0faf89b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193023"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267694"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 可用的访问排序顺序为给定的 mediaitem 类型和 EDS 的给定的版本。 这些 Uri 的域是`eds.xboxlive.com`。

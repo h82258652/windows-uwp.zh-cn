@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6270649"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458197"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 

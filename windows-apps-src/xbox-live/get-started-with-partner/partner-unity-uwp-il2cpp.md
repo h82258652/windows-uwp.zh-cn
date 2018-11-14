@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 4260b860bb761af36a7c2b7b6c12bb7a832dc199
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: ebdb68549791d943a4fbf64682a27c1fb758cc64
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6039905"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269936"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>针对 ID@Xbox 和托管的合作伙伴，为适用于 UWP 带有 IL2CPP 脚本后端的 Unity 添加 Xbox Live 支持
 
@@ -168,7 +168,7 @@ public class XboxLiveTest : MonoBehaviour
 
 a) 计算机已设置为开发人员沙盒。  使用 Xbox Live SDK 中 \Tools 文件夹下的 SwitchSandbox.cmd 脚本来执行此操作。
 
-b) 你当前用于登录的 Xbox Live 帐户登录有权限访问开发人员沙盒。  常规的零售版 Xbox Live 帐户没有访问权限。  你可以使用 XDP 或开发人员中心创建测试帐户。
+b) 你当前用于登录的 Xbox Live 帐户登录有权限访问开发人员沙盒。  常规的零售版 Xbox Live 帐户没有访问权限。  你可以使用 XDP 或合作伙伴中心创建测试帐户。
 
 c) UWP 应用中的 package.appxmanfiest 已设为正确的标识。  你可以手动编辑它，但最简单的方法是在 Visual Studio 中右键单击项目，然后选择“应用商店”\|“将应用程序与应用商店关联”。
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 导入 store 一览, 导出 store 一览, 导入导出, store 一览 csv
 ms.localizationpriority: medium
 ms.openlocfilehash: 9df66baa1b5771055894b2e3accc0c8a9dff8a60
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6254347"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6645758"
 ---
 # <a name="import-and-export-store-listings"></a>导入和导出 Store 一览
 

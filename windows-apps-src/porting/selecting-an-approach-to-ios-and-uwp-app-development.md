@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c62624e83d1e8334cce711869088817e2f9dc5e0
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6254136"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6652946"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 

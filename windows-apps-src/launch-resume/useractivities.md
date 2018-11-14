@@ -8,11 +8,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209221"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267433"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 

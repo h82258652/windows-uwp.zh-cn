@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 信誉, 玩家反馈
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a0d6693fb1d97a408a8b6559bb7c317a0af0030
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6186105"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6273217"
 ---
 # <a name="sending-player-feedback-from-your-title"></a>从游戏中发送玩家反馈
 Xbox Live 成员大部分都很出色，但有一小部分“坏苹果”损害了其他人的游戏体验。 我们通过用户和游戏提交的反馈发现了这一小部分用户。 我们通过确保让这些“坏苹果”只有有限的多玩家体验，从而无法干扰良好玩家玩游戏，来保护其余的用户。 Xbox 非常依赖用户报告其他用户行为来保持系统的准确性，但 Xbox One 中的游戏可以直接参与并显著改善用户信誉群体的准确性。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 61b526cd7aa2da8733457b16dd0487ef4ead9cca
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257869"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6460117"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到你的应用包而非资源包
 

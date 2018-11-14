@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 并行使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 4506176dcd62a4699c57343c50dfc1b0e7a40b14
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6155205"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654856"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>获取 Xbox Live 并发使用情况数据
 
