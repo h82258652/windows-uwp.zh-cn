@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
-ms.openlocfilehash: 335a214976b0a7d8382c0c7ea3845e5e485889eb
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: bd540e8ed6caccfc8daa000ff72d227573078f01
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6160838"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190269"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
@@ -44,7 +44,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 ## <a name="initial-setup-for-a-title"></a>主题作品的初始设置
 
-主题作品源自于 Xbox 开发人员门户 (XDP) 或 Windows 开发人员中心。 本文档介绍源自在 XDP 中的主题作品。 标题分配一个作品 ID、 产品 ID 和服务配置 ID (SCID)。
+作品源自于 Xbox 开发人员门户 (XDP) 或合作伙伴中心。 本文档介绍源自在 XDP 中的主题作品。 标题分配一个作品 ID、 产品 ID 和服务配置 ID (SCID)。
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 
@@ -121,11 +121,11 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 帐户 (MSA)。 这些帐户在 Xbox Live 中用于开发。 开发人员帐户：
 
--   必须从 XDP 或 Windows 开发人员中心创建。
+-   必须通过 XDP 或合作伙伴中心创建。
 
 -   被分配外部开发人员角色（如果由发布者创建）。
 
--   绑定到创建了开发人员帐户的 XDP 帐户或 Windows 开发人员中心帐户。
+-   绑定到的 XDP 帐户或创建的开发人员帐户的合作伙伴中心帐户。
 
 -   只能登录到开发人员工具包。 不能在零售设备上登录到开发人员帐户。
 
@@ -208,7 +208,7 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 如果主题作品已准备好公开发行，则首先需要进行认证。 CERT 沙盒是 Microsoft 控制的沙盒，只有认证中的个人用户才能访问该沙盒。 发布者可以查看他们拥有的哪些内容将进行认证。
 
-无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复由发布者使用 XDP 或 Windows 开发人员中心。
+无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复由发布者使用 XDP 或合作伙伴中心。
 
 <a name="retail-sandbox"></a>RETAIL 沙盒
 --------------

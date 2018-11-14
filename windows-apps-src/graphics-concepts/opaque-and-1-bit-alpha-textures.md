@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027392"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189670"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位 alpha 纹理
 
@@ -132,7 +132,7 @@ Color\_0 和 Color\_1 是处于两个极值的颜色，其布局如下：
 
 这看起来像下面说明的一系列颜色。
 
-**注意**在图像中，像素 (0，0) 显示在左上角。
+**请注意**在图像中，像素 (0，0) 显示在左上角。
 
  
 

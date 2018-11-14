@@ -1,20 +1,20 @@
 ---
-title: 开发人员中心上的特权配置
+title: 在合作伙伴中心中的特权配置
 author: aablackm
-description: 了解如何在 Windows 开发人员中心上配置特权
+description: 了解如何在合作伙伴中心中配置权限
 ms.author: aablackm
 ms.date: 04/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, 游戏, uwp, windows 10, Xbox one, 特权, Windows 开发人员中心
-ms.openlocfilehash: be502aadbd5900838f143132171838cdf235c01c
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，特权，合作伙伴中心
+ms.openlocfilehash: f51fd7f9da1758d28301031ecd10d3d7650c1121
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6161404"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207925"
 ---
-# <a name="configure-privileges-on-windows-dev-center"></a>在 Windows 开发人员中心上配置特权
+# <a name="configure-privileges-in-partner-center"></a>在合作伙伴中心中配置权限
 
 特权配置页面用于指示是否限制玩家流式传输你的作品和 [Mixer](https://mixer.com/) 等服务。 默认情况下，你的游戏将不限制在任何流式传输平台上广播，只有当你要限制广播时才需要更改此页面。 可以通过以下两种方式限制广播。 你可以通过选中**默认**部分中的复选框来禁止到处广播，也可以通过在**沙盒替代**部分中添加沙盒来限制通过沙盒广播。
 

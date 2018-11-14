@@ -9,11 +9,11 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046970"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251986"
 ---
 # <a name="send-email"></a>发送电子邮件
 
@@ -49,7 +49,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> 通过使用[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)类添加到一封电子邮件附件将显示仅在邮件应用。 如果用户已配置为其默认邮件程序的任何其他邮件程序，撰写窗口将显示而无需附件。 这是一个已知的问题。
+> 通过使用[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)类添加到电子邮件附件将显示仅在邮件应用。 如果用户已配置为其默认邮件程序的任何其他邮件程序，撰写窗口将显示而无需附件。 这是一个已知的问题。
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 

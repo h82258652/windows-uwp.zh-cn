@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 40389232f5a1f6ab606720068fe8c9ac80fd5093
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 91a30a81123902d7b4b2f8311ae1f24bd23b3e43
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6142414"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209569"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>将 Xbox Live 代码从 Xbox 开发人员工具包 (XDK) 移植到通用 Windows 平台 (UWP)
 
@@ -27,17 +27,17 @@ ms.locfileid: "6142414"
 
 <a name="_Setting_up_and"></a>
 
-## <a name="setting-up-and-configuring-your-project-in-dev-center-and-xdp"></a>在开发人员中心和 XDP 中设置和配置项目
+## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>设置和配置你的项目在合作伙伴中心和 XDP 中
 
-使用 Xbox Live 服务的 UWP 游戏需要在[Windows 开发人员中心](https://dev.windows.com/en-us)或[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/)中配置。 有关最新信息，请参阅 Xbox Live 编程指南中的[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，该指南包含在 [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 中。
+使用 Xbox Live 服务的 UWP 游戏需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中配置。 有关最新信息，请参阅 Xbox Live 编程指南中的[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，该指南包含在 [Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) 中。
 
 该页面上的主题包含在作品中使用 Xbox Live 服务的以下步骤：
 
--   在 Windows 开发人员中心中创建 UWP 应用项目。
+-   在合作伙伴中心中创建 UWP 应用项目。
 
 -   使用 XDP 设置用于 Xbox Live 的项目。
 
--   将开发人员中心产品链接到 XDP 产品。
+-   合作伙伴中心产品链接到 XDP 产品。
 
 -   在 XDP 中创建开发人员帐户（在沙盒中运行 Xbox Live 作品时需要使用它）。
 
@@ -77,7 +77,7 @@ ms.locfileid: "6142414"
 
 Xbox 与 UWP 版本的 appxmanifest.xml 文件之间的最常见更改包括：
 
-1. UWP 中的程序包标识非常重要，即使在开发期间也是如此。 标识名称和发布者*必须与*在开发人员中心为 UWP 应用定义的信息相符。
+1. UWP 中的程序包标识非常重要，即使在开发期间也是如此。 标识名称和发布者*必须匹配*已定义的内容在合作伙伴中心为 UWP 应用。
 
 1. 需要填写“程序包依赖关系”部分。 例如：
 
@@ -382,7 +382,7 @@ RequestExtension();
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>支持在 Xbox One 与电脑 UWP 之间进行多人跨平台联机游戏
 
-除了 XDP 中的新会话模板要求（请参阅[在开发人员中心和 XDP 中设置和配置项目](#_Setting_up_and)）以外，跨平台联机游戏还增加了对会话加入功能的限制。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
+除了在 XDP 中的新会话模板要求 （请参阅[设置和配置你在合作伙伴中心和 XDP 中的项目](#_Setting_up_and)），跨平台游玩随附新限制对会话加入功能。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
 
 此外，由于 Windows 10 多人游戏需要 **userAuthorizationStyle** 功能，加入和读取限制默认为“本地”。
 

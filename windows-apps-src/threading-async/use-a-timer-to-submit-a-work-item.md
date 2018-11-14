@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
 ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031179"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200151"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用计时器提交工作项
 
@@ -29,7 +29,7 @@ ms.locfileid: "6031179"
 
 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 结构指定延迟。
 
-> **注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
+> **请注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
 
 以下示例创建三分钟后运行的工作项：
 

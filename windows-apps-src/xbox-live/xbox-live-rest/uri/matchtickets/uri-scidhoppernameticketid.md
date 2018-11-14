@@ -10,18 +10,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c64d54b3f1d8515018e256400af8e04f77d8955
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6026668"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195773"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
 支持的匹配票证的删除操作。
 
 > [!IMPORTANT]
-> 此 URI 旨在使用协定 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此 URI 用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
 <a id="ID4ER"></a>
 
@@ -32,7 +32,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>备注
-此 URI 支持值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。  
+此 URI 支持的值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。  
 <a id="ID4E2"></a>
 
 
@@ -40,7 +40,7 @@ momatch.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | name| 字符串| 漏斗的名称。|
 | 票证 Id| GUID| 票证 id。|
 

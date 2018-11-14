@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0880105fccca297204c27e80099f0cfc6d016a27
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050256"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197807"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客户并推广应用
 
-一旦你的应用在 Microsoft Store 中，是时候尽可能前面尽可能多的客户获取它。 [合作伙伴中心](https://partner.microsoft.com/dashboard)提供了许多功能，可帮助你推广产品并扩大客户群，包括广告市场活动、 促销代码，销售定价等。
+一旦你的应用在 Microsoft Store 中，是时候尽可能前面尽可能多的客户获取它。 [合作伙伴中心](https://partner.microsoft.com/dashboard)提供了许多功能，可帮助你推广产品并扩大客户群，包括广告市场活动、 促销代码，促销定价和详细信息。
 
 -   [生成促销充值码](generate-promotional-codes.md)
 -   [为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)

@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 上下文搜索, 广播, 游戏剪辑
 ms.localizationpriority: medium
-ms.openlocfilehash: dba22050f53ece134cb805bad60746e55f952476
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 17d24b31087db9c73f6b286a140c6dcf3a7e1eb4
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022904"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192458"
 ---
 # <a name="contextual-search"></a>上下文搜索
 
@@ -27,4 +27,4 @@ ms.locfileid: "6022904"
 * 在操作中呈现新 DLC
 * 根据上下文提供创建者评论
 
-只需在 XDP 或 Windows 开发人员中心进行配置，你的作品的上下文搜索便会在广播应用程序时立即自动启动，Xbox Shell 和 Cortana 将于晚些时候推出。  而且，游戏可以直接在游戏中利用这些搜索 API，让用户无需离开游戏便可获得差异化的体验。  无论集成级别如何，你都将为你的作品实现巨大的价值和曝光度。
+只需在 XDP 或合作伙伴中心进行配置，上下文搜索你的游戏将自动亮起在广播应用程序时立即 Xbox Shell 和 Cortana 在以后的日期。  而且，游戏可以直接在游戏中利用这些搜索 API，让用户无需离开游戏便可获得差异化的体验。  无论集成级别如何，你都将为你的作品实现巨大的价值和曝光度。

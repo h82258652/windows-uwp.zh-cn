@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b45f4556628b64726b96b47b373b3408cf6ddf3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041206"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199186"
 ---
 # <a name="gamerpic-uris"></a>玩家头像 URI
  
-本部分提供有关的玩家图片通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*图片*。
+本部分提供有关的玩家图片通用资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*图片*。
  
 这些 Uri 的域是`gamerpics.xboxlive.com`。
  
@@ -27,16 +27,16 @@ ms.locfileid: "6041206"
 生成的游戏玩家图片的基本流程如下所示：
  
    * 标题为用户提供与能够创建其游戏内字符的图像。 
-     * 如果没有，则游戏可以则消息，它们不具有适当权限的用户。
-     * 如果用户具有权限，用户可以继续创建其字符玩家图片。
+     * 如果不是，游戏可以然后消息它们没有相应的权限的用户。
+     * 如果用户具有权限，用户可以继续创建其字符玩家头像。
   
-   * 用户创建图像和标题向玩家图片服务发送 1080 x 1080.png 文件。
+   * 用户创建图像和标题向玩家头像服务发送 1080 x 1080.png 文件。
    * 该服务将存储该图像，并设置为用户的新玩家图片的图像。
-   * 为用户的玩家图片调用任何体验将获取更新的映像。
+   * 为用户的玩家图片调用任何体验将获取更新的图像。
   
-设置游戏玩家图片的功能仅强制执行特权 (211) 由控制。 如果强制执行吊销权限，将阻止用户保存的游戏玩家图片中，并且该服务将返回 403。 游戏应调用 CheckPrivilege 以验证允许用户要共享的内容 （专用 211）。
+能够设置的游戏玩家图片受仅限强制执行的权限 (211)。 如果强制执行撤销权限，用户将无法保存的游戏的玩家图片，以及该服务将返回 403。 游戏应调用 CheckPrivilege 以验证允许用户要共享的内容 （专用 211）。
  
-目前，才能使用此服务，你的游戏必须列入白名单。 若要请求审批，发送电子邮件至`slsgamerpics@microsoft.com`。
+目前，才能使用此服务，你的游戏必须列入白名单。 若要请求批准，请发送电子邮件至`slsgamerpics@microsoft.com`。
  
 <a id="ID4EGC"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "6041206"
 
 [/users/me/gamerpic](uri-usersmegamerpic.md)
 
-&nbsp;&nbsp;访问 1080 x 1080 玩家图片。
+&nbsp;&nbsp;访问 1080 x 1080 玩家头像。
  
 <a id="ID4EMC"></a>
 

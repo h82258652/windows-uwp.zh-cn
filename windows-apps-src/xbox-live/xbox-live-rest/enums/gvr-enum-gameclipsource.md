@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 470ee6056beaa96ff120ade912680d09908531d6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6028453"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198806"
 ---
 # <a name="gameclipsource-enumeration"></a>GameClipSource 枚举
 详细介绍 GameClipSource 枚举。 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e17bb64fd31c8a3cf86b57453e709e15b0cf7e6f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6046460"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201614"
 ---
 # <a name="title-storage-uris"></a>标题存储 URI
  
@@ -35,7 +35,7 @@ ms.locfileid: "6046460"
 
 [/global/scids/{scid}/data/{path}](uri-globalscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/global/scids/{scid}/data/{pathAndFileName},{type}](uri-globalscidssciddatapathandfilenametype.md)
 
@@ -51,7 +51,7 @@ ms.locfileid: "6046460"
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{path}](uri-jsonusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
@@ -63,7 +63,7 @@ ms.locfileid: "6046460"
 
 [/sessions/{sessionId}/scids/{scid}/data/{path}](uri-sessionssessionidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
@@ -79,7 +79,7 @@ ms.locfileid: "6046460"
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
@@ -95,7 +95,7 @@ ms.locfileid: "6046460"
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;列出了在指定的路径的文件信息。 
+&nbsp;&nbsp;列出了在指定路径的文件信息。 
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 

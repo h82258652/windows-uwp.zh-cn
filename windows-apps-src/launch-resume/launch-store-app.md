@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030489"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200836"
 ---
 # <a name="launch-the-microsoft-store-app"></a>打开 Microsoft Store 应用
 
 
 
-本主题介绍了 **ms-windows-store:** URI 方案。 你的应用可以使用此 URI 方案来启动到应用商店中的特定页面的 Microsoft 应用商店应用通过使用[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)方法。
+本主题介绍了 **ms-windows-store:** URI 方案。 你的应用可以使用此 URI 方案来启动到应用商店中的特定页面的 Microsoft 应用商店应用通过使用[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)的方法。
 
-此示例演示了如何打开存储到的游戏页面：
+此示例演示了如何打开到游戏页面的存储：
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));

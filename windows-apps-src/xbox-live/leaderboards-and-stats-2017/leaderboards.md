@@ -8,12 +8,12 @@ ms.date: 09/28/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 25b0b16963147328a7ababf58634bcd9c134637a
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 69fd69f596204b07f3b8c2d78f27a26a7be9fe94
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6160652"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6249789"
 ---
 # <a name="leaderboards"></a>排行榜
 
@@ -368,7 +368,7 @@ m_statsManager->get_leaderboard(user, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`中使用`GetLeaderboard()`调用必须配置为你的游戏在其[Windows 开发人员中心仪表板](https://developer.microsoft.com/en-us/dashboard/windows/overview)中，这是区分大小写的统计数据名称相同。
+> `statName`中使用`GetLeaderboard()`调用必须配置为你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)，这是区分大小写的统计数据名称相同。
 
 ### <a name="4-read-the-leaderboard-data"></a>4.读取排行榜数据
 
@@ -538,7 +538,7 @@ statManager.GetLeaderboard(xboxLiveUser, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`中使用`GetLeaderboard()`调用必须配置为你的游戏在其[Windows 开发人员中心仪表板](https://developer.microsoft.com/en-us/dashboard/windows/overview)中，这是区分大小写的统计数据名称相同。
+> `statName`中使用`GetLeaderboard()`调用必须配置为你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)，这是区分大小写的统计数据名称相同。
 
 ### <a name="4-read-leaderboard-data"></a>4.读取排行榜数据
 

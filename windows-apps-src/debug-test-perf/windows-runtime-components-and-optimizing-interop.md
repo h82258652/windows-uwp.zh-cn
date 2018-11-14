@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 726dc4aaa34b9b68aa198e236abcef57b78b21f4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046754"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192908"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 
@@ -32,7 +32,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 当你使用 C# 或 Visual Basic 开发 UWP 应用时，你所使用的两个最常见的 API 组合是 UWP API 和 UWP 应用的 .NET API。 通常，在 UWP 中定义的类型位于以“Windows”开头的命名空间中。 而 .NET 类型位于以“System”开头的命名空间中。 但是，存在例外情况。 UWP 应用的 .NET 中的类型在使用时不要求互操作性。 如果你发现在使用 UWP 的区域出现较差性能，你可以使用适用于 UWP 应用的 .NET 来获取更佳性能。
 
-**注意**与 windows 10 交付的 UWP 组件的大多数 c + + 实现，因此你从 C# 或 Visual Basic 中使用它们时可跨越互操作性边界。 如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
+**请注意**与 windows 10 交付的 UWP 组件的大多数在 c + + 实现，因此你从 C# 或 Visual Basic 使用它们时可跨越互操作性边界。 如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
 
 在本主题中，我们提及“UWP 组件”时，我们是指以 C# 或 Visual Basic 以外的语言编写的组件。
 

@@ -8,12 +8,12 @@ ms.date: 6/13/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 工具, 玩家重置, live 跟踪分析器, LTA, xbox live 帐户工具
 ms.localizationpriority: medium
-ms.openlocfilehash: ff152f96d745b2ff1e076b34a7e2b91e5f1e5ab6
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 0f2e4b8b0ac5940eb09b1c0b5361846b1ae66c01
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6145697"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207006"
 ---
 # <a name="development-tools-for-xbox-live"></a>适用于 Xbox Live 的开发工具
 
@@ -23,7 +23,7 @@ ms.locfileid: "6145697"
 > 下载中包含的 MatchSim 和 XboxLiveCompute 工具仅可由托管的合作伙伴或注册合作伙伴[ID@Xbox](http://www.xbox.com/Developers/id)计划。 若要了解有关的可用的开发人员计划的详细信息，请参阅[开发人员计划概述](https://docs.microsoft.com/windows/uwp/xbox-live/developer-program-overview)。 
 
 ## <a name="global-storage"></a>全局存储
-全局标题存储用于存储每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 它是一种[标题存储](../storage-platform/xbox-live-title-storage/xbox-live-title-storage.md)。 全局存储工具用于管理测试沙盒中的全局标题存储。 数据仍须通过 Windows 开发人员中心或 Xbox 开发人员门户 (XDP) 发布到 RETAIL。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。 可使用[开发工具库](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)创建自定义工具。
+全局标题存储用于存储每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 它是一种[标题存储](../storage-platform/xbox-live-title-storage/xbox-live-title-storage.md)。 全局存储工具用于管理测试沙盒中的全局标题存储。 数据仍必须发布到 RETAIL 通过合作伙伴中心或 Xbox 开发人员门户 (XDP)。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。 可使用[开发工具库](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)创建自定义工具。
 
 ## <a name="multiplayer-session-history-viewer"></a>多人游戏会话历史记录查看器
 通过多人游戏会话历史记录查看器，可查看多人游戏会话文档历史记录（包括已删除文档）的所有更改的历史时间线。 通过此工具可更深入地了解 MPSD 会话文档随时间推移发生的变化。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中作为独立工具提供。
@@ -41,4 +41,4 @@ Xbox Live 开发人员帐户工具可用于管理开发人员帐户的身份验�
 [Xbox Live 帐户工具](xbox-live-account-tool.md)旨在帮助你为测试游戏方案设置现有测试帐户。 例如，可使用 Xbox Live 帐户工具更改帐户的玩家代号或为帐户的好友列表快速添加 1000 位关注者。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。
 
 ## <a name="config-as-source"></a>配置为源
-[配置为源](https://github.com/Microsoft/xbox-live-developer-tools/blob/master/CONFIGASSOURCE.md)是 Microsoft 为满足高级用户需求开发的一套工具，为集成到我们的配置服务提供官方支持的工具和 API。 这些 Xbox Live 服务通常在开发人员中心为你的作品配置，其中包括从排行榜到成就，再到 Web 服务和依赖方等多种服务。 对于许多游戏开发人员而言，使用开发人员中心就足够了。 但对于高级用户，他们有将常见配置任务集成到自有过程和工具的需求。  “配置为源”旨在通过提供命令行工具和新的 API 支持到现有工作流和管道的集成，从而支持这些场景。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。
+[配置为源](https://github.com/Microsoft/xbox-live-developer-tools/blob/master/CONFIGASSOURCE.md)是 Microsoft 为满足高级用户需求开发的一套工具，为集成到我们的配置服务提供官方支持的工具和 API。 这些 Xbox Live 服务通常为你的游戏在合作伙伴中心，包括从排行榜到成就，到 web 服务和依赖方服务配置。 对于许多游戏开发人员，使用合作伙伴中心就足够了。 但对于高级用户，他们有将常见配置任务集成到自有过程和工具的需求。  “配置为源”旨在通过提供命令行工具和新的 API 支持到现有工作流和管道的集成，从而支持这些场景。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。

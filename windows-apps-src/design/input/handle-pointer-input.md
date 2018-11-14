@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051346"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188304"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
@@ -77,7 +77,7 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
-<strong>注意</strong>没有相应的指针捕获事件。
+<strong>请注意</strong>没有任何相应的指针捕获事件。
 </div>
 <div>
  

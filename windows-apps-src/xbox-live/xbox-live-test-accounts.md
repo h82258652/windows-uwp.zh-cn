@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 测试帐户
 ms.localizationpriority: medium
 ms.openlocfilehash: 20aea3164ab438251181c146ea351ede7ebc9960
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199916"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6256873"
 ---
 # <a name="xbox-live-test-accounts"></a>Xbox Live 测试帐户
 

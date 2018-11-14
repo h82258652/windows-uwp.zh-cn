@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 交换链缩放, 覆盖, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043812"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196772"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>交换链缩放和覆盖
 
@@ -150,7 +150,7 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **注意**如果 DXGI 适配器支持覆盖，则继续下一步。 如果设备不支持覆盖，使用多个交换链进行呈现时速度将会下降。 这时需要在相同的交换链中以降低的分辨率作为实时游戏内容来呈现 UI。
+    > **请注意**如果 DXGI 适配器支持覆盖，则继续下一步。 如果设备不支持覆盖，使用多个交换链进行呈现时速度将会下降。 这时需要在相同的交换链中以降低的分辨率作为实时游戏内容来呈现 UI。
 
      
 
@@ -166,7 +166,7 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **注意**重新设置[**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) ，每次调整交换链的大小时。
+    > **请注意**重新设置[**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) ，每次调整交换链的大小时。
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(

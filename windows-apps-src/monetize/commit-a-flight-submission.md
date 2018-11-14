@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034183"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197092"
 ---
 # <a name="commit-a-package-flight-submission"></a>确认软件包外部测试版提交
 
-在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的软件包外部测试版提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的软件包）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示对提交更改。
+在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的软件包外部测试版提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的软件包）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示提交更改。
 
 有关确认操作如何适应使用 Microsoft Store 提交 API 创建软件包外部测试版提交的过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
@@ -49,9 +49,9 @@ ms.locfileid: "6034183"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要确认的软件包外部测试版提交）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| applicationId | 字符串 | 必需。 应用（包含要确认的软件包外部测试版提交）的应用商店 ID。 在合作伙伴中心中会提供应用应用商店 ID。  |
 | flightId | 字符串 | 必需。 软件包外部测试版（包含要确认的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
-| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文

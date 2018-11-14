@@ -1,29 +1,29 @@
 ---
 title: 2017 特别推荐的统计数据和排行榜
 author: shrutimundra
-description: 了解如何在 Windows 开发人员中心上配置 Xbox Live 2017 特别推荐的统计数据和排行榜
+description: 了解如何在合作伙伴中心中配置 Xbox Live 特别推荐的统计数据和排行榜 2017
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, 游戏, uwp, Windows 10, Xbox one, 特别推荐的统计数据和排行榜, 排行榜, 统计数据 2017, Windows 开发人员中心
-ms.openlocfilehash: 7db8efe28c6dc85c129823ec8f6b0ddac69b49f4
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，特别推荐的统计数据和排行榜，排行榜，统计数据 2017，合作伙伴中心
+ms.openlocfilehash: eebf1e96601f7bb576088f71239196f0bb5a124c
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6159709"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188157"
 ---
-# <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>在 Windows 开发人员中心上配置 2017 特别推荐的统计数据和排行榜
+# <a name="configuring-featured-stats-and-leaderboards-2017-in-partner-center"></a>在合作伙伴中心配置特别推荐的统计数据和排行榜 2017
 
-若要让游戏与统计数据服务交互，需要在 [Windows 开发人员中心](https://developer.microsoft.com/dashboard)上定义统计数据。 所有特别推荐的统计数据都将显示在游戏中心内，因而它可以自动充当排行榜。 我们将存储原始值，但是游戏具备可确定是否应提供新值的逻辑。
+对于游戏与统计数据服务交互，需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)中进行定义统计数据。 所有特别推荐的统计数据都将显示在游戏中心内，因而它可以自动充当排行榜。 我们将存储原始值，但是游戏具备可确定是否应提供新值的逻辑。
 
 ![游戏中心成就页面的屏幕截图](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png)上图显示特别推荐的统计数据在标题 GameHub 中的效果。 特别推荐的统计数据带红色方框显示。
 
 使用 Data Platform 2017，你只需要配置用于精选到玩家游戏中心页面的社交排行榜的统计数据。
 
-可以使用 Windows 开发人员中心配置与你的游戏关联的特别推荐的统计数据和排行榜。 通过执行以下操作添加配置：
+可以使用合作伙伴中心配置特别推荐的统计数据和排行榜与你的游戏相关联。 通过执行以下操作添加配置：
 
 1. 导航到针对你的作品的**特别推荐的统计数据和排行榜**部分（位于**服务** > **Xbox Live** > **特别推荐的统计数据和排行榜**下）。
 2. 单击**新建**按钮会打开一个强制回应表单。 填写完成后，单击**保存**。

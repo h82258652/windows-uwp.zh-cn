@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 96055bd7a2d4169c15e37b55aa70a94fab128a59
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6044599"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253838"
 ---
 # <a name="marketplace-uris"></a>市场 URI
 
 本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*应用商店*服务，也称为娱乐发现服务 (EDS)。
 
-仅 Xbox 360、 Windows Phone 设备，或在 Xbox.com 上运行的游戏均可使用此服务。
+仅在 Xbox 360 上、 在 Windows Phone 设备上，或在 Xbox.com 上运行的游戏可以使用此服务。
 
 这些 Uri 的域是 eds.xboxlive.com 和 inventory.xboxlive.com。
 
@@ -31,7 +31,7 @@ ms.locfileid: "6044599"
 
 [/users/me/inventory](uri-inventory.md)
 
-&nbsp;&nbsp;访问当前与提供的用户相关联的清单的集。
+&nbsp;&nbsp;访问当前与提供的用户相关联的库存集。
 
 [/users/me/consumables/{itemID}](uri-inventoryconsumablesitemurl.md)
 
@@ -67,11 +67,11 @@ ms.locfileid: "6044599"
 
 [/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes](uri-medialocalemetadatamediagroupsmediaitemtypes.md)
 
-&nbsp;&nbsp;访问每个媒体组可用 mediaItemTypes EDS 的给定版本。
+&nbsp;&nbsp;访问每个媒体组 EDS 的给定版本可用 mediaItemTypes。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields](uri-medialocalemetadatamediaitemtypefields.md)
 
-&nbsp;&nbsp;访问从其中一个期待看到的数据，为给定的 mediaitemtype 和 EDS 给定的版本字段。
+&nbsp;&nbsp;访问从其中一个期待看到的数据，为给定的 mediaitemtype 和 EDS 的给定的版本字段。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
@@ -79,11 +79,11 @@ ms.locfileid: "6044599"
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 
-&nbsp;&nbsp;访问可接受的值为给定的查询精选名称和给定的媒体项的类型。
+&nbsp;&nbsp;访问可接受的值为给定的查询精选名称和给定的媒体项类型。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
 
-&nbsp;&nbsp;为某个给定的查询精选值 (例如，"subgenres 在给定流派") 的访问权限的子值列表。
+&nbsp;&nbsp;对于给定的查询精选值 (例如，"subgenres 在给定流派") 的访问权限的子值列表。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes](uri-medialocalemetadatamediaitemtypes.md)
 
@@ -91,11 +91,11 @@ ms.locfileid: "6044599"
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
 
-&nbsp;&nbsp;可用的访问排序给定的 mediaitem 类型和 EDS 给定的版本。
+&nbsp;&nbsp;可用的访问排序顺序为给定的 mediaitem 类型和 EDS 的给定的版本。
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 
-&nbsp;&nbsp;允许搜索单个媒体组中的项。
+&nbsp;&nbsp;允许搜索在单个媒体组中的项目。
 
 <a id="ID4EFD"></a>
 

@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040096"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205132"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>从 Windows 运行时 8.x 移动到 UWP
 
 
-如果你有一个通用 8.1 应用，无论它面向面向 Windows8.1、 Windows Phone 8.1，—，你会发现，你的源代码和技能将顺利地移植到 windows 10。 与 windows 10，你可以创建通用 Windows 平台 (UWP) 应用，这是可供客户安装到各种设备的单个应用包。 有关更多背景 windows 10，UWP 应用和自适应代码和我们将在此移植指南中提及的自适应 UI 的概念，请参阅[UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果你有一个通用 8.1 应用，无论它面向 Windows8.1、 Windows Phone 8.1 或两者 —，你会发现，你的源代码和技能将顺利地移植到 windows 10。 使用 windows 10，你可以创建通用 Windows 平台 (UWP) 应用，这是可供客户安装到各种设备的单个应用包。 在 windows 10 上的更多背景，UWP 应用和自适应代码和我们将在此移植指南中提及的自适应 UI 的概念有关[向 UWP 应用的指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 在移植时，你会发现 windows 10 与之前的平台，以及 XAML 标记、 UI 框架和工具，共享大部分 Api，你会发现全都很熟悉。 和以前一样，你仍可以在 C++、C# 和 Visual Basic 之中选择要与 XAML UI 框架一起使用的编程语言。 规划要对当前的一个或多个应用具体执行哪些操作的前期步骤将取决于你所拥有的应用和项目的种类。 这将在以下部分中介绍。
 

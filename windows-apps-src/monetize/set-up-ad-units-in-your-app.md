@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: 了解如何将应用程序 ID 和广告单元 ID 值从合作伙伴中心添加到你的应用之前提交到应用商店应用。
+description: 了解如何将应用程序 ID 和广告单元 ID 值从合作伙伴中心添加到你的应用之前你提交到应用商店应用。
 title: 在应用中设置广告单元
 ms.author: mhopkins
 ms.date: 05/11/2018
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告单元, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045477"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191079"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 
@@ -21,7 +21,7 @@ ms.locfileid: "6045477"
 
 我们提供了[测试广告单元值](#test-ad-units)，你可以在测试过程中使用这些值来确定应用是否显示测试广告。 这些测试值只能在应用的测试版本中使用。 如果你尝试在发布动态应用后在其中使用测试值，应用将不会收到广告。
 
-完成你的 UWP 应用的测试并准备好将其提交到合作伙伴中心后，你必须从合作伙伴中心中的[应用内广告](../publish/in-app-ads.md)页面[创建实时广告单元](#live-ad-units)，并更新你的应用代码才能使用此广告单元的应用程序 ID 和广告单元 ID 值。
+完成测试你的 UWP 应用并准备好将其提交到合作伙伴中心后，你必须从合作伙伴中心中的[应用内广告](../publish/in-app-ads.md)页面[创建实时广告单元](#live-ad-units)，并更新你的应用代码才能使用此广告单元的应用程序 ID 和广告单元 ID 值。
 
 有关在应用代码中分配应用程序 ID 和广告单元 ID 值的详细信息，请参阅以下文章：
 * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
@@ -60,7 +60,7 @@ ms.locfileid: "6045477"
 
 2.  创建新的广告单元后，在**盈利** &gt; **应用内的广告**页面的可用广告单元表中检索**应用程序 ID** 和**广告单位 ID**。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （示例应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （例如应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
 
 3.  在应用的代码中指定应用程序 ID 和广告单元 ID 值。 有关详细信息，请参阅以下文章：
     * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)

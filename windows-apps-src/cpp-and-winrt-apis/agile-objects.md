@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 敏捷, 对象, 敏捷性, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa129a60c7dfcc170a9ddeec318a062fb8cbe56
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043766"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194642"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT 中的敏捷对象
 
-在大多数情况下，可以从任何线程 （就像大多数标准 c + + 对象可以） 访问 Windows 运行时类的实例。 这样的 Windows 运行时类是*敏捷对象*。 只有 Windows 附带的 Windows 运行时类的一小部分是非敏捷的但当你使用它们，你需要考虑它们的线程模型和封送行为 （封送跨边界传送数据单元）。 它是一个好的默认每个 Windows 运行时对象是敏捷的因此你自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)类型均为敏捷型默认情况下。
+在大多数情况下，可以从任何线程 （就像大多数标准 c + + 对象可以） 访问 Windows 运行时类的实例。 这样的 Windows 运行时类是*敏捷对象*。 只有 Windows 附带的 Windows 运行时类的一小部分是非敏捷的但当你使用它们，你需要考虑它们的线程模型和封送行为 （封送跨边界传送数据单元）。 它是一个好的默认为每个 Windows 运行时对象是敏捷的因此你自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)类型均为敏捷型默认情况下。
 
 但你可以选择退出。例如，你可能会有令人信服的理由来要求类型的对象驻留在某个给定的单线程单元中。 对于重入要求，通常需要这样做。 不过，敏捷对象越来越多，甚至用户界面 (UI) API 也提供敏捷对象。 总之，敏捷性是最简单、最有效率的选项。 此外，当实现一个激活工厂时，即使对应的运行时类不是敏捷的，激活工厂也必须是敏捷的。
 

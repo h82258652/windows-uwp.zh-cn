@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d612a259785c8ba29ab975ba910c4f3e7df61d6f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037533"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194881"
 ---
 # <a name="audio-device-information-properties"></a>音频设备信息属性
 

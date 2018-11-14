@@ -9,24 +9,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050743"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195381"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>适用于 iOS 开发人员的 UWP 入门
 
 
-如果你是考虑为 windows 10 进行开发的 iOS 开发人员，这些文档会是很好的开始。 它们将向你的一些概念，你将需要知道开始编写应用，并讨论了如何将发布你的 Microsoft 应用商店的工作。
+如果你是考虑为 windows 10 进行开发的 iOS 开发人员，这些文档会是很好的开始。 它们将向你的一些概念你将需要知道当你开始编写应用，并讨论了如何可以发布你的 Microsoft 应用商店的工作。
 
 在本部分中，我们将逐渐开始并查看如何使用 Microsoft Visual Studio 和 C# 编程语言创建简单应用，特别是此过程会如何随着当前使用工具的变化而变化。 （对 C# 不感兴趣？ 不用担心，我们会提供其他编程语言和工具，并且将在[入门：选择一种编程语言](getting-started-choosing-a-programming-language.md)中介绍它们）。
 
-Windows 10 引入了新的平台，用于创建桌面、 笔记本电脑、 平板电脑、 手机设备上吸引人的应用以及更多内容。 由于通用 Windows 平台 (UWP) 应用提供了许多独特的功能，因此，直接移植你的 iOS 应用可能会错过这些功能。 因此，我们鼓励你尝试新控件和新功能，查看它们如何使你作为开发人员的生活更轻松，以及帮助你开发新应用。
+Windows 10 引入了新的平台有吸引力且和创建应用在台式机、 笔记本电脑、 平板电脑、 手机设备上的详细信息。 由于通用 Windows 平台 (UWP) 应用提供了许多独特的功能，因此，直接移植你的 iOS 应用可能会错过这些功能。 因此，我们鼓励你尝试新控件和新功能，查看它们如何使你作为开发人员的生活更轻松，以及帮助你开发新应用。
 
-不要单单移植应用，而是要**重新构建**应用，并且利用新功能和新设备，这是底线。 不要满足于最低共同，但创建通过 Cortana 使用唯一的 windows 10 功能，例如动态磁贴、 通知和交互的丰富体验。
+不要单单移植应用，而是要**重新构建**应用，并且利用新功能和新设备，这是底线。 不要满足于最低的公用标准，而创建通过 Cortana 使用唯一的 windows 10 功能，例如动态磁贴、 通知和交互的丰富体验。
 
-若要开始这些操作实例，你将需要具有 windows 10 和 Microsoft Visual Studio 安装的计算机。 你可以下载这些[用于 UWP 应用编程的开发人员下载](https://developer.microsoft.com/en-us/windows/downloads)。 没有 PC？ 不要担心，你可以使用 Mac：请参阅[在 Mac 上安装 Windows 和开发人员工具](setting-up-your-mac-with-windows-10.md)。
+若要开始使用这些演练，你将需要使用 windows 10 和 Microsoft Visual Studio 安装的计算机。 你可以下载这些[用于 UWP 应用编程的开发人员下载](https://developer.microsoft.com/en-us/windows/downloads)。 没有 PC？ 不要担心，你可以使用 Mac：请参阅[在 Mac 上安装 Windows 和开发人员工具](setting-up-your-mac-with-windows-10.md)。
 
 | 主题 | 说明 |
 |-------|-------------|

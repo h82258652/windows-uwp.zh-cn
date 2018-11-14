@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 65afbaa4440a5bce43ca6d48126e6cc2b8316466
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023665"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194487"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件的详细信息，并建议在发生故障的情况下操作。
+在[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在发生故障的操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
@@ -306,22 +306,22 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="background"></a>背景
 
-适用于 UWP 应用 （Windows 运行时或受支持的 Win32 Api） 的 Microsoft 应用商店进行认证，应用必须使用的 Api。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
+应用必须使用适用于 UWP 应用 （Windows 运行时或受支持的 Win32 Api） 的 Microsoft 应用商店认证的 Api。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
 
 ### <a name="test-details"></a>测试详细信息
 
--   验证，应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持的 UWP 应用开发的 Win32 API。
+-   验证该应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持的 UWP 应用开发的 Win32 API。
 -   验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。
 
 ### <a name="corrective-actions"></a>更正操作
 
 确保应用编译为一个发行版本，而不是调试版本。
 
-> **注意**即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)，应用的调试版本将无法通过此测试。
+> **请注意**即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)，应用的调试版本将无法通过此测试。
 
 检查错误消息，识别应用所用的不是[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
 
-> **注意**即使配置仅适用于 UWP 应用中使用 Windows SDK 中的 Api，内置于该调试配置中的 c + + 应用将无法通过此测试。 请参阅有关详细信息的[UWP 应用中的 Windows Api 替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **请注意**即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api，内置于该调试配置中的 c + + 应用将无法通过此测试。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 的替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
 ## <a name="performance-tests"></a>性能测试
 
@@ -431,7 +431,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 <tr><td>
 <p>“resources.pri”文件不得启用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于你打算分发通过 Microsoft Store 的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。</p>
+<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们不建议执行此操作适用于要通过 Microsoft 应用商店分发的应用。 通过 Microsoft Store 分发应用的 resources.pri 必须为应用包的根目录中，并包含应用支持的所有语言参考。</p>
 </td></tr>
 <tr><td>
 <p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
@@ -499,7 +499,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="background"></a>背景
 
-要通过 Microsoft 应用商店的认证，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过认证的 Microsoft 应用商店，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -507,7 +507,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="corrective-actions"></a>更正操作
 
--   将其提交到 Microsoft Store 之前，请将应用编译为发行版本。
+-   提交到 Microsoft Store 之前，将应用编译为发行版本。
 -   确保你安装了正确版本的 .NET Framework。
 -   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 
@@ -549,7 +549,7 @@ Microsoft 应用商店要求使用 Direct3D 正确呈现或正常功能级别 9 
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D 暂停后修正
 
-> **注意**此测试仅适用于 UWP 应用开发的 Windows8.1 及更高版本。
+> **请注意**此测试仅适用于 UWP 应用开发的 Windows8.1 及更高版本。
 
 ### <a name="background"></a>后台
 

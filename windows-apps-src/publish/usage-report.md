@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp, 使用情况, 自定义事件, 报告, 遥测, 用户会话
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f22d9aafada5bab8deaef246f64a7447569c82
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038691"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203377"
 ---
 # <a name="usage-report"></a>使用情况报告
 
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**使用情况**报告可让你查看 Windows 10 （包括 Xbox） 客户如何使用你的应用，并显示有关已定义的自定义事件的信息。 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**使用情况**报告可让你查看 Windows 10 （包括 Xbox） 客户如何使用你的应用，并显示有关已定义的自定义事件的信息。 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。
 
 
 ## <a name="apply-filters"></a>应用筛选器
@@ -48,12 +48,12 @@ ms.locfileid: "6038691"
 - **持续时间**：显示总参与小时数（用户活跃使用你的应用的小时数）。
 - **参与**： 显示每个用户 （所有用户会话的平均持续时间） 的平均参与分钟。 
 - **保持期**：显示选定时间段内的 **DAU/MAU**（每日活动用户/每月活动用户）。
-- **改动预期**： 显示有多少我们预测的用户可能很快停止使用你的应用，具体取决于其最近的使用情况。
+- **改动预期**： 显示有多少用户我们预测可能很快停止使用你的应用，具体取决于其最近的使用情况。
 
-**30d**选定时间段后，你可能会看到圆圈标记时查看的**用户**、**设备**或**持续时间**的选项卡。 这些表示显著增加或减少在我们认为你会想要了解有关为给定值。 在其出现圆的日期表示一周中，我们检测到了显著增加或减少相对于前的一周结尾。 若要查看有关的更改的更多详细信息，请悬停在圆圈。  
+**30d**选定时间段后，你可能会看到圆圈标记，当查看**用户**、**设备**或**持续时间**的选项卡。 这些表示显著增加或减少我们认为你想要了解有关为给定值。 在其出现圆的日期表示一周中，我们检测到了显著增加或减少相比于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
 
 > [!TIP]
-> 你可以查看过去 30 天内[洞察报告](insights-report.md)中相关的重大更改的多个见解。
+> 你可以查看过去 30 天内[洞察报告](insights-report.md)中相关的重大更改的更多见解。
 
 
 ## <a name="user-sessions"></a>用户会话

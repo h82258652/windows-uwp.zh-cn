@@ -8,11 +8,11 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c70d696c1211cfa4f929178f0cf0d9da76ae74c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041065"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201073"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>创建多实例通用 Windows 应用
 
@@ -21,7 +21,7 @@ ms.locfileid: "6041065"
 从 Windows 10 版本 1803 (10.0;版本 17134） 开始，你的 UWP 应用可以选择支持多个实例。 如果多实例 UWP 应用的一个实例正在运行，并发生后续的激活请求，平台将不会激活现有实例。 相反，它将创建一个新实例，而且在单独的进程中运行。
 
 > [!IMPORTANT]
-> 对于 JavaScript 应用程序，支持多实例，但不是多实例重定向。 由于 JavaScript 应用程序不支持多实例重定向， [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)类对于毫无用处此类应用程序。
+> 支持多实例的 JavaScript 应用程序，但不是多实例重定向。 由于 JavaScript 应用程序不支持多实例重定向， [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)类不适用于此类应用程序。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>选择加入多实例行为
 
@@ -54,13 +54,13 @@ ms.locfileid: "6041065"
 
  对 UWP 应用的多实例支持不仅仅能够启动应用的多个实例。 当你考虑是启动应用的新实例还是激活已经运行的实例时，可以进行自定义。 例如，如果启动应用以编辑另一实例中已在编辑的文件，你可能会想要将激活操作重定向到该实例，而不是打开另一个已在编辑该文件的实例。
 
-若要了解实际操作，请观看此视频，如何创建多实例 UWP 应用。
+若要了解实际操作，观看此视频，有关创建多实例 UWP 应用。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
 如上所示，**多实例重定向 UWP 应用**模板将 `SupportsMultipleInstances` 添加到 package.appxmanifest 文件，并且还将 **Program.cs**（或 **Program.cpp**，如果使用的是模板的 C++ 版本）添加到包含 `Main()` 函数的项目中。 用于重定向激活操作的逻辑包含在 `Main` 函数中。 **Program.cs**的模板如下所示。
 
-如果存在， [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示此激活请求，提供 shell 的首选的实例 (或`null`如果还没有一个)。 如果 shell 将提供首选项，然后你可以将重定向激活到该实例，或如果你选择将可以忽略它。
+如果有的话， [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)属性表示此激活请求，该提供 shell 的首选的实例 (或`null`如果没有)。 如果 shell 将提供首选项，然后对该实例，重定向激活，或如果你选择将可以忽略它。
 
 ``` csharp
 public static class Program
@@ -127,10 +127,10 @@ public static class Program
 ## <a name="additional-considerations"></a>其他注意事项
 
 - 面向桌面和物联网 (IoT) 项目的 UWP 应用支持多实例。
-- 若要避免发生争用和争用导致的问题，多实例应用需要采取措施对访问设置、应用本地存储以及能在多个实例之间共享的任何其他资源（例如用户文件、数据存储等）进行分区/同步。 标准同步机制，如互斥体、 信号灯、 事件和等等，可使用。
+- 若要避免发生争用和争用导致的问题，多实例应用需要采取措施对访问设置、应用本地存储以及能在多个实例之间共享的任何其他资源（例如用户文件、数据存储等）进行分区/同步。 标准同步机制，如互斥体、 信号灯、 事件和等等，都可用。
 - 如果应用的 Package.appxmanifest 文件中有 `SupportsMultipleInstances`，则其扩展无需声明 `SupportsMultipleInstances`。 
 - 如果将 `SupportsMultipleInstances` 添加到除后台任务或应用服务之外的任何其他扩展，并且托管该扩展的应用也不在其 Package.appxmanifest 文件中声明 `SupportsMultipleInstances`，则会发生架构错误。
-- 应用可以使用在其清单中[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)声明多个后台任务归入同一主机进行分组。 这与多实例相冲突，在多实例中，每个激活操作会进入单独的主机。 因此，应用无法在其清单中同时声明 `SupportsMultipleInstances` 和 `ResourceGroup`。
+- 应用可以使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)声明在其清单中组合多个后台任务归入同一主机。 这与多实例相冲突，在多实例中，每个激活操作会进入单独的主机。 因此，应用无法在其清单中同时声明 `SupportsMultipleInstances` 和 `ResourceGroup`。
 
 ## <a name="sample"></a>示例
 

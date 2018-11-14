@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: db92c3e405029d76264b0e1e9b159ae2650d6650
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024074"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6248911"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  
@@ -27,10 +27,10 @@ GameClipUri 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| <b>uri</b>| 字符串| 为视频资产的位置的 URI。| 
+| <b>uri</b>| 字符串| 为视频资产的位置 URI。| 
 | <b>fileSize</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 
 | <b>uriType</b>| GameClipUriType| URI 的类型。| 
-| <b>到期</b>| DateTime| 此响应中包含的 uri 的到期时间。 如果 URL 为空，或者被视为过期前播放，调用方应调用 RefreshUrl API。| 
+| <b>到期</b>| DateTime| 此响应中包含该 URI 的到期时间。 如果 URL 为空，或者被视为过期前播放，调用方应调用 RefreshUrl API。| 
   
 <a id="ID4EMC"></a>
 
