@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 磁贴, 磁贴通知, 磁贴内容, 架构, 磁贴负载
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cdcf8b609b76283ba680ec9ca4d2502624e2024
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6161601"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6662447"
 ---
 # <a name="tile-content-schema"></a>磁贴内容架构
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 联网, websocket, messagewebsocket, streamwebsocketwindows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: eaba8d7b87d9e2762d13bd86629ee4a996e2d5e8
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6205709"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267936"
 ---
 # <a name="websockets"></a>WebSockets
 WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信，同时支持 UTF-8 和二进制消息。

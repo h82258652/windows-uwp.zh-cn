@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cdadf2533ee12c92f2b486408b9305d2919acb66
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6039499"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6251539"
 ---
 # <a name="put-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a>PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
-将文件上传。 数据类型 json 不支持多块上载。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+将文件上传。 多块上载不受支持的类型 json 数据。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [授权](#ID4EEB)
@@ -35,16 +35,16 @@ ms.locfileid: "6039499"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家发出请求者。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)，并且正斜杠 （/）。路径部分可能为空。有效的字符 （最终正斜杠后的所有内容） 的文件名称部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9) 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且反斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果不允许调用方访问此资源，该服务将返回 403 禁止访问响应。 如果标头是无效或不存在，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头是无效或不存在，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4ERB"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "6039499"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| clientFileTime| DateTime| 日期/时间的任何客户端上的文件最后一次上载文件。| 
+| clientFileTime| DateTime| 日期/时间任何客户端上的文件的最后一次上载文件。| 
 | displayName| 字符串| 应该向用户显示的文件的名称。| 
   
 <a id="ID4EXC"></a>
@@ -73,42 +73,42 @@ ms.locfileid: "6039499"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 指定 ETag 必须匹配的某个现有项目即可完成此操作。| 
-| If-None-Match| 指定必须不匹配任何现有项目，以完成此操作的 ETag。| 
+| If-Match| 指定 ETag 符合必须要完成此操作的现有项目。| 
+| If-None-Match| 指定 ETag，不匹配任何现有项目，以完成此操作。| 
   
 <a id="ID4EDF"></a>
 
  
 ## <a name="request-body"></a>请求正文 
  
-请求正文中包含正在上传该文件的完整内容。 
+请求正文中包含正在上传该文件的完整的内容。 
   
 <a id="ID4EOF"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
-| 201| 已创建 | 已创建的实体。| 
-| 400| 错误请求 | 服务可能不理解的格式不正确的请求。 通常参数无效。| 
+| 201| 已创建 | 创建实体。| 
+| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常无效参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
-| 406| 不允许 | 资源版本不受支持。| 
-| 408| 请求超时 | 请求所花的时间太长，才能完成。| 
+| 406| 不允许 | 不支持资源版本。| 
+| 408| 请求超时 | 请求时间太长，才能完成。| 
 | 500| 内部服务器错误 | 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
 <a id="ID4EBDAC"></a>
 
  
 ## <a name="response-body"></a>响应正文 
  
-如果成功上传，用 {} 响应返回 201。
+如果成功上传，{} 响应返回 201。
   
 <a id="ID4EODAC"></a>
 

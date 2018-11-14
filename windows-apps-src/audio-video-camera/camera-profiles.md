@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1af7453e8bfea973a67dc878438050accc01fb4c
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6187183"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6657779"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>通过相机配置文件发现和选择相机功能
 

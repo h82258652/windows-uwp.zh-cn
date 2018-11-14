@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c0f1d0b27e0d9448240f20addb96188a03581f9c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6029131"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250104"
 ---
 # <a name="permissionid-enumeration"></a>PermissionId 枚举
 详细介绍 PermissionId 枚举。
@@ -23,23 +23,23 @@ ms.locfileid: "6029131"
    * [GET (/users/{requestorId}/permission/validate)](../uri/privacy/uri-privacyusersrequestoridpermissionvalidateget.md)
    * [POST (/users/{requestorId}/permission/validate)](../uri/privacy/uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-这些 Id 包括针对的用户，如检查目标或单个特权参与者的单个隐私设置的特定设置的直接检查。 此外，还有权限可与权限 API 和将针对为特定用户操作的多个设置的检查的 Id。
+这些 Id 包括针对的用户，如检查目标或单个特权参与者的单个隐私设置的特定设置的直接检查。 此外，还有权限可与权限 API 和合并检查针对特定用户操作的多个设置的 Id。
 
 <a id="ID4EIB"></a>
 
 
 ## <a name="permissions"></a>权限
 
-以下是调用方可以使用它来检查是否可以执行特定操作的值。 与上述的设置，这些封装定义服务的策略，并不能直接更改由用户，但在大多数情况下，基于其值由用户定义的一个或多个设置将构建策略。 以下是针对多个上面定义的设置通常复合检查。 示例： <b>ViewProfile</b>权限执行操作目标<b>ShareProfile</b>隐私设置和请求者<b>AllowProfileViewing</b>权限的检查。
+以下是调用方可以使用它来检查是否可以执行特定操作的值。 与上述的设置，这些封装定义服务的策略，并不能直接更改由用户，但在大多数情况下，这些策略生成顶部其值由用户定义的一个或多个设置。 以下是针对多个上面定义的设置通常复合检查。 示例： <b>ViewProfile</b>权限执行操作目标的<b>ShareProfile</b>隐私设置和请求者的<b>AllowProfileViewing</b>权限的检查。
 
 一般情况下，建议的调用方请求需要检查，而不是直接检查隐私设置和权限的操作的权限 ID。 这允许隐私策略，如新的检查合并，完全一致地更改跨整个服务。
 
 | 权限名称| 说明|
 | --- | --- |
-| CommunicateUsingText| 检查用户可以向目标用户发送一条消息，具有文本内容|
-| CommunicateUsingVideo| 检查用户可以使用目标用户的视频通信|
+| CommunicateUsingText| 检查用户可以向目标用户发送的邮件包含文本内容|
+| CommunicateUsingVideo| 检查用户可以使用与目标用户的视频通信|
 | CommunicateUsingVoice| 检查用户可以使用目标用户的语音通信|
-| ViewTargetProfile| 检查用户可以查看目标用户的个人资料|
+| ViewTargetProfile| 检查用户可以查看目标用户的配置文件|
 | ViewTargetGameHistory| 检查用户可以查看目标用户的游戏历史记录|
 | ViewTargetVideoHistory| 检查用户可以查看的详细视频观看历史记录目标用户|
 | ViewTargetMusicHistory| 检查用户可以查看目标用户的详细的音乐侦听历史记录|

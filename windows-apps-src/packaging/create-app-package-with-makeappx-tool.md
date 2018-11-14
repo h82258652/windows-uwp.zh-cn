@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, 打包, windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5cc0d73975b591d7584b1ac606aa3323cd6da3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 86472e4b3f9c7390eb7e6236de088ba2649901d1
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206922"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268455"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
 
@@ -23,7 +23,7 @@ ms.locfileid: "6206922"
 > [!IMPORTANT] 
 > 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.msix 或.appx 和.appxsym。 .Appxsym 文件是一个压缩的 .pdb 文件，包含在 Windows 开发人员中心中用于[崩溃分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的应用的公共符号。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
+请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.msix 或.appx 和.appxsym。 .Appxsym 文件是应用的包含用于在合作伙伴中心中的[故障分析](../publish/health-report.md)你的公共符号的压缩的.pdb 文件。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](../publish/upload-app-packages.md)。 
 
  更新到最新版本的 Windows 10 中的此工具不会影响.appx 包使用情况。 你可以继续使用此工具与.appx 程序包，或支持针对.msix 包使用该工具，如下所述。
 

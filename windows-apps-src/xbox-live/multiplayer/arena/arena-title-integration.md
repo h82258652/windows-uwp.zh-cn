@@ -8,12 +8,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛
 ms.localizationpriority: medium
-ms.openlocfilehash: b4171aac6cb7643a79454b7fc40b92a16e7ef75e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 3da29f8e93ed8ce98648cad4711e35577f6d4823
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6043110"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200064"
 ---
 # <a name="arena-title-integration-guide"></a>Arena 游戏集成指南
 
@@ -326,7 +326,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 
 ## <a name="configuring-a-title-for-arena"></a>为 Arena 配置游戏
 
-若要为 Arena 启用游戏，当你在 Xbox 开发人员门户 (XDP) 或通用开发人员中心 (UDC) 进行配置时需要执行一些额外步骤。
+若要为 Arena 启用游戏，一些额外步骤时所需的 Xbox 开发人员门户 (XDP) 或[合作伙伴中心](https://partner.microsoft.com/dashboard)中对其进行配置。
 
 ### <a name="enabling-arena-for-your-title"></a>为你的游戏启用 Arena
 
@@ -341,9 +341,9 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 * **Arena 平台** - 你可以为你的游戏选择玩锦标赛的平台。
 * **锦标赛资产** -（以前位于“多人游戏和匹配”部分。）这些是你的游戏的锦标赛图像。
 
-此外可以在 Xbox Live 服务下的**锦标赛**菜单中的 Windows 开发人员中心中启用 arena。
+Arena 还可以在启用在合作伙伴中心中的 Xbox Live 服务下的**锦标赛**菜单中。
 
-![在 Windows 开发人员中心上的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
+![在合作伙伴中心中的 arena 菜单](../../images/arena/Arena_On_WDC.JPG)
 
 您必须发布服务配置，你的更改才会生效。 目前不支持通过 UDC 进行自助式 Arena 配置。 如果你使用 UDC 进行服务配置，则与你的开发客户经理一起进行 Arena 入门培训。
 

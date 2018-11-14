@@ -9,11 +9,11 @@ keywords: windows 10，uwp，后台任务，应用服务
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 47008fd7ba0b7724aa8fbdc2dd6cbd55288faea0
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6467775"
+ms.locfileid: "6650935"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>将进程外后台任务移植到进程内后台任务
 

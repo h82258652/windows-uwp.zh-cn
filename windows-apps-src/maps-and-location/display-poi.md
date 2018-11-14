@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图钉
 ms.localizationpriority: medium
 ms.openlocfilehash: 13c0ea463cbab97e03c87c4e558bba0eff92300c
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275677"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6664452"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地图上显示目标点
 

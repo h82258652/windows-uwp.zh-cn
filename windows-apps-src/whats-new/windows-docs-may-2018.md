@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6464368"
+ms.locfileid: "6650547"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月中的新增功能
 
@@ -114,11 +114,11 @@ MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持与
 
 ### <a name="advertising-performance-report"></a>广告效果报告
 
-在开发人员中心仪表板中的[广告性能报告](../publish/advertising-performance-report.md)现在提供了可见性指标。 我们还添加[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)文章提供有关优化你的广告的可见性的建议。
+在合作伙伴中心中[的广告性能报告](../publish/advertising-performance-report.md)现在提供可见性指标。 我们还添加[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)文章提供有关优化你的广告的可见性的建议。
 
 ### <a name="targeted-push-notifications"></a>定向的推送通知
 
-在开发人员中心仪表板中的[通知](../publish/send-push-notifications-to-your-apps-customers.md)页面现在提供的图形和世界地图视图中所有通知的额外分析数据。
+在合作伙伴中心的[通知](../publish/send-push-notifications-to-your-apps-customers.md)页面现在提供的图形和世界地图视图中所有通知的额外分析数据。
 
 ## <a name="videos"></a>视频
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: dbed55af1a9fa3df14f0a7e3e7c6d1f599b40fd3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037553"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250305"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService 设备功能
 你可以通过声明应用程序包清单中的功能请求访问 PointOfService API] 你可以使用 Microsoft Visual Studio 中的清单设计器声明大多数功能，也可以手动添加。  

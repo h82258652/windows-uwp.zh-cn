@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 阴影卷, 深度缓冲区, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471768"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6672542"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
 

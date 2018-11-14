@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, ui, 导航
 ms.localizationpriority: medium
 ms.openlocfilehash: a0ec2790f6dddf93959a8c826602c0ac622a7d23
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6207023"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6665942"
 ---
 # <a name="ui-navigation-controller"></a>UI 导航控制器
 

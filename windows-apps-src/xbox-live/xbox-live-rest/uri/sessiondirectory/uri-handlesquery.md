@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d4ce38768923f9adb2cdb8e2237e9afcb774433b
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6148300"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253349"
 ---
 # <a name="handlesquery"></a>/handles/query
 支持 POST 操作以创建用于会话句柄查询。 

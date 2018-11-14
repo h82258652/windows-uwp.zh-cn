@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，打印，3dprinting，3d 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 51afa49dac094bdd203e080c682e681f752d15e4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6258709"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6665349"
 ---
 # <a name="printing-and-scanning"></a>打印和扫描
 

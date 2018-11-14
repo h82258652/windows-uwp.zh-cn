@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d95d3f0f171fa0e529d57ab5deca8160ddc3c43
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041978"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267772"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 将移动列表中的一项。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -30,7 +30,7 @@ ms.locfileid: "6041978"
 | --- | --- | --- | 
 | XUID| 字符串| 用户的 XUID。| 
 | listname| 字符串| 列表来操作的名称。| 
-| 索引| 字符串| 指定要移动的项的当前索引。 零个或正整数索引值时，这是指当前索引的项，并调用的请求正文应为空。 但是，如果的索引值为"-1"，要移动的项必须指定由 ItemId 或提供商/ProviderID 调用的请求正文中。 | 
+| 索引| 字符串| 指定要移动的项的当前索引。 零个或正整数索引值时，这是指当前索引的项，并调用，请求正文应为空。 但是，如果的索引值为"-1"，必须由 ItemId 或提供商/ProviderID 调用，请求正文中指定要移动的项。 | 
   
 <a id="ID4EHC"></a>
 
