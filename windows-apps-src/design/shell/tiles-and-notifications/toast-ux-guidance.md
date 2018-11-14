@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10，uwp，通知，集合、 组、 ux，ux 指南，指导、 操作、 toast，操作中心、 noninterruptive、 有效通知、 非侵入式通知，操作，管理，组织
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6273610"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6463477"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast 通知的 UX 指南
 通知是必不可少的现代生命; 一它们可以帮助用户更高效、 应用和网站，以及使用任何更新保持当前使用的预定。 不过，通知可以快速打开从适用于 overbearing 和如果它们不设计以用户为中心的方式产生干扰。 通知是一个右键单击离开正在处于关闭状态，并且后处于关闭状态，它是不太可能，它们会将重新打开。  因此，请确保你的通知是尊重用户的屏幕空间和时间，因此你可以将此参与通道保留打开。
