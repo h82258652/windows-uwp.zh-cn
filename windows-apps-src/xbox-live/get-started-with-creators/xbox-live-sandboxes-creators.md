@@ -8,16 +8,16 @@ ms.date: 10/30/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: bb11578fcc641c34b4337d90ee37d4084b16da55
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: d82447801d499c6339775882b9363883430726fa
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6042978"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6251132"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live 沙盒简介
 
-[Xbox Live 服务配置](xbox-live-service-configuration-creators.md)文章中说明了你必须在 [Windows 开发人员中心](http://dev.windows.com)中配置与你的作品有关的信息。 此信息包括统计数据、排行榜、本地化等。 对你的 Xbox Live 服务配置进行的更改需要先从开发人员中心发布到你的开发沙盒，然后 Xbox Live 的其余部分才能选取它们，并可以在你的作品中进行访问。
+[Xbox Live 服务配置](xbox-live-service-configuration-creators.md)本文说明了有关你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，你必须配置信息。 此信息包括统计数据、排行榜、本地化等。 需要通过合作伙伴中心发布到你的开发沙盒之前所做的更改 Xbox Live 的其余部分进行选取，并可以访问你的作品中对你的 Xbox Live 服务配置更改。
 
 利用开发沙盒，你可以在隔离环境中处理对作品进行的更改。 沙盒具有多个优点：
 
@@ -29,7 +29,7 @@ ms.locfileid: "6042978"
 
 ## <a name="finding-out-about-your-sandbox"></a>了解你的沙盒
 
-在你创建作品时，系统将为你创建沙盒。 通过在 **Windows 开发人员中心**中打开你的产品，然后导航到**服务** > **Xbox Live**，你可以找到你的沙盒 ID。 将会在页面顶部列出**沙盒 ID**。
+在你创建作品时，系统将为你创建沙盒。 你可以通过在**合作伙伴中心**中打开你的产品，导航到**服务**中找到你的沙盒 ID > **Xbox Live**。 将会在页面顶部列出**沙盒 ID**。
 
 ![](../images/getting_started/devcenter_sandbox_id.png)
 
@@ -110,4 +110,4 @@ SwitchSandbox.cmd RETAIL
 
 ### <a name="sign-in-with-the-xbox-app"></a>使用 Xbox 应用登录
 
-一旦你已切换你的开发电脑，你会想要验证，你要登录到 Xbox Live 符合条件的测试帐户与你的游戏使用正确的沙盒。 这可以通过登录到[Xbox Live 的应用](https://www.xbox.com/en-US/xbox-app)。 你的开发环境开始使用 Xbox 应用所需的沙盒后将登录用户使用相同的约束为任何其他 Xbox Live 服务在沙盒上运行。 这使得有用验证沙盒使用有效的帐户。
+切换你的开发电脑为你的游戏使用正确的沙盒后你会想要验证，你要登录到 Xbox Live 的符合条件的测试帐户。 这可以通过登录到[Xbox Live 的应用](https://www.xbox.com/en-US/xbox-app)。 你的开发环境开始使用 Xbox 应用所需的沙盒后将登录用户使用相同的约束为任何其他 Xbox Live 服务在沙盒上运行。 这使得有用验证沙盒使用有效的帐户。

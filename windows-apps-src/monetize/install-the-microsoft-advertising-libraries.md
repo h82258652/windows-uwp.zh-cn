@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
 ms.openlocfilehash: c08acaf3f5d4ddf59121e68782c0e8b78e8c358e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046451"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255483"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 

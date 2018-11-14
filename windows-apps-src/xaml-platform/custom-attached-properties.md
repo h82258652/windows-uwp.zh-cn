@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: de2d319f536b2c9d25d53e0b1ec2886831c66e12
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046250"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255029"
 ---
 # <a name="custom-attached-properties"></a>自定义附加属性
 
@@ -75,7 +75,7 @@ ms.locfileid: "6046250"
 
 此示例展示了依赖属性注册（使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法），以及一个自定义附加属性的 **Get** 和 **Set** 访问器。 在此示例中，附加属性名称为 `IsMovable`。 因此，访问器必须命名为 `GetIsMovable` 和 `SetIsMovable`。 附加属性的所有者是自身不具有 UI 的名为 `GameService` 服务类；其目的只是在使用 **GameService.IsMovable** 附加属性时提供附加属性服务。
 
-定义附加的属性在 C + + /CX 是更复杂一些。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + +，必须定义此属性-字段关系 CX 显式而不在.NET **readonly**关键字和隐式依赖备份的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
+定义附加的属性在 C + + /CX 是更复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C + +，必须定义此属性-字段关系 CX 显式而不依赖于.NET **readonly**关键字和隐式支持的简单属性。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
 
 ```csharp
 public class GameService : DependencyObject

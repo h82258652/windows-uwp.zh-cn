@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: 本部分介绍了如何移植现有应用到其中，你可以创建可供客户安装到所有类型的设备上的单个 windows 10 应用包通用 Windows 平台 (UWP)。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
+description: 本部分介绍了如何移植现有应用到其中，你可以创建可供客户安装到所有类型的设备上的单个 windows 10 的应用包通用 Windows 平台 (UWP)。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
 title: 将应用移植到 windows 10
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bb5c6ae373e4e35e640223fe08a5a49f2e7a5dd3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045932"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209636"
 ---
 # <a name="porting-apps-to-windows10"></a>将应用移植到 windows 10
 
 
-本部分介绍了如何移植现有应用到其中，你可以创建可供客户安装到所有类型的设备上的单个 windows 10 应用包通用 Windows 平台 (UWP)。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
+本部分介绍了如何移植现有应用到其中，你可以创建可供客户安装到所有类型的设备上的单个 windows 10 的应用包通用 Windows 平台 (UWP)。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
 
 Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用的技术。 有关 WinRT 和 UWP 应用的更多背景知识，请参考[什么是通用 Windows 平台 (UWP) 应用？](https://msdn.microsoft.com/library/windows/apps/dn726767)。
 

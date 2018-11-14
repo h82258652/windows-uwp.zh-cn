@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 61803e3a4a18dee260b78468c7970a875d8aff73
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045304"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255264"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -52,9 +52,9 @@ ms.locfileid: "6045304"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML 中发现错误。 “Executable”特性无效 - 根据其数据类型，值“MyApp.EXE”无效
 
-如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响是否在你的应用程序运行，这可能导致 DAC 生成此错误。
+如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响是否你的应用程序运行，这可能导致 DAC 生成此错误。
 
-若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以在应用程序小写字母从大写更改的所有可执行文件的大小写 (例如： 从。EXE.exe)。
+若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以更改为大写小写应用程序中的所有可执行文件的大小写 (例如： 从。EXE.exe)。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>已损坏或格式不正确的验证码签名
 
@@ -123,7 +123,7 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 
 **选项 3：CertUtil**
 
-从命令行运行**certutil** ，对 PFX 文件，并从输出中复制*使用者*字段。
+运行**certutil**从命令行对 PFX 文件，然后从输出中复制*使用者*字段。
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -133,13 +133,13 @@ certutil -dump <cert_file.pfx>
 
 ### <a name="bad-pe-certificate-0x800700c1"></a>损坏的 PE 证书 (0x800700C1)
 
-当你的程序包包含已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
+当你的包包含一个已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
 
-* 开始菜单的不是图像的证书的末尾。  
+* 证书的开始菜单不末尾的图像。  
 
 * 证书的大小不积极。
 
-* 证书开始屏幕后不是`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
+* 证书开始菜单未在`IMAGE_NT_HEADERS32`结构为一个 32 位可执行文件或之后`IMAGE_NT_HEADERS64`结构的 64 位可执行文件。
 
 * 证书指针未正确对齐 WIN_CERTIFICATE 结构。
 

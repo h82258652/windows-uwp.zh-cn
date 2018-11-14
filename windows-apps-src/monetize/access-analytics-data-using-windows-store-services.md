@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 8656270b81e0aae46c5d4f3a7b651135c163f76d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 80ca7d66489f936e8097e9466f74032fbfb78eaf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051551"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6257976"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -31,7 +31,7 @@ ms.locfileid: "6051551"
 
 在开始编写调用 Microsoft Store 分析 API 的代码之前，确保已完成以下先决条件。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以[创建新的 Azure AD 在合作伙伴中心中](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)任何附加费用。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以为任何附加费用[创建合作伙伴中心中的新 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) 。
 
 * 必须将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、 检索租户 ID 和应用程序的客户端 ID 并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
@@ -41,7 +41,7 @@ ms.locfileid: "6051551"
 
 1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的分析数据的**帐户设置**部分中的**用户**页面。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
+2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的分析数据的**帐户设置**部分中的**用户**页面中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
@@ -78,7 +78,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-uwp-apps"></a>适用于 UWP 应用的方法
 
-适用于合作伙伴中心中的 UWP 应用可使用以下分析方法。
+适用于 UWP 应用在合作伙伴中心中提供以下分析方法。
 
 | 方案       | 方法      |
 |---------------|--------------------|
@@ -115,7 +115,7 @@ grant_type=client_credentials
 
 | 方案       | 方法      |
 |---------------|--------------------|
-| 购置 |  <ul><li>[获取 Xbox One 游戏购置](get-xbox-one-game-acquisitions.md)</li></ul> |
+| 购置 |  <ul><li>[获取 Xbox One 游戏购置](get-xbox-one-game-acquisitions.md)</li><li>[获取 Xbox One 的加载项购置](get-xbox-one-add-on-acquisitions.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
 

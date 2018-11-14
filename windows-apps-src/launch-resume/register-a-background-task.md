@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: faed3f762594ae46b617831615df2448391e1c7d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040932"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202489"
 ---
 # <a name="register-a-background-task"></a>注册后台任务
 
@@ -76,7 +76,7 @@ ms.locfileid: "6040932"
 
 你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 属性并在结果上迭代来检查现有注册。 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。
 
-> **注意**使用特定于你的应用的后台任务名称。 确保每个后台任务都具有唯一的名称。
+> **请注意**使用特定于你的应用的后台任务名称。 确保每个后台任务都具有唯一的名称。
 
 以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 注册后台任务：
 
@@ -149,7 +149,7 @@ ms.locfileid: "6040932"
 
 否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224786) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224772)。
 
-> **注意**后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
+> **请注意**后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 > **注意** 如果你要注册在应用所在的同一进程中运行的后台任务，请向 `taskEntryPoint` 参数发送 `String.Empty` 或 `null`。
 
 以下示例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）：

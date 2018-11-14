@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034706"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195968"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
@@ -89,7 +89,7 @@ ms.locfileid: "6034706"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)的前后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)和后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -126,7 +126,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)的前后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)和后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -298,7 +298,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 下面的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
+> 此处的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
 
 现在，生成并运行应用。 单击显示“单击以转到第 2 页”的链接。 在顶部显示“第 2 页”的第二个页面应加载并显示在框架中。
 
@@ -332,7 +332,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-在`HyperlinkButton_Click`Page1.xaml 代码隐藏文件中，事件处理程序添加参数引用`Text`属性`name` **TextBox**到`Navigate`方法。
+在`HyperlinkButton_Click`事件处理程序中的 Page1.xaml 代码隐藏文件中，添加参数引用`Text`属性`name` **TextBox**到`Navigate`方法。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bee897396236e0bb4423517371ebc2d25482c3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6026842"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201292"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 获取会话对象。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EMB)
@@ -33,7 +33,7 @@ ms.locfileid: "6026842"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法读取会话文档为指定的名称，并检索会话。 成功时，它将返回该会话对象，与所有属性，从服务器获取。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**换行显示。 GET 方法的参数直接并行这些对象中指定**MultiplayerSessionReference**会话， **GetCurrentSessionAsync** *sessionReference*参数中传递。
+此 HTTP/REST 方法读取会话文档为指定的名称，并检索会话。 成功时，它将返回该会话对象，与所有属性，从服务器获取。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**换行。 GET 方法的参数直接并行这些对象中指定**MultiplayerSessionReference**会话，在**GetCurrentSessionAsync** *sessionReference*参数中传递。
 
 GET 方法的线格式如下所示。
 
@@ -54,7 +54,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4EZB"></a>
 

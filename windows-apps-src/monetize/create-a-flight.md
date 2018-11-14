@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039279"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195928"
 ---
 # <a name="create-a-package-flight"></a>创建软件包外部测试版
 
@@ -113,7 +113,7 @@ Content-Type: application/json
 | 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 请求无效。 |
-| 409  | 由于其当前状态下无法创建软件包外部测试版，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 由于其当前状态下，无法创建软件包外部测试版，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

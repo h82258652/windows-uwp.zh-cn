@@ -8,12 +8,12 @@ ms.date: 5/30/2018
 ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb9c9aa4267e7485b8e1583ff011b6d1cd6070e
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: faf010e2a61199d56a1ae5b9ed08fd373f89cd80
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6157197"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206852"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 
@@ -28,7 +28,7 @@ Xbox Live 创意者计划仅支持创建适用于[通用 Windows 平台](https:/
 Xbox One 为玩家提供策展式 Microsoft Store 体验，玩家可以用 Xbox 在 Microsoft Store 全新创意者集锦版块中购买通过 Xbox Live 创意者计划发布的游戏。 这样，便在确保人人都能基于开放式平台开发并交付游戏与主机玩家逐步了解并期待获得特选 Microsoft Store 体验之间达成平衡。 在 Windows 10 上，你的作品将与其他所有 Xbox Live 游戏一起发布在 Microsoft Store 中。
 
 ### <a name="publishing-and-certification"></a>发布和认证
-作为 Xbox Live 创意者计划的一部分，你必须通过注册[开发人员中心开发人员计划](https://developer.microsoft.com/store/register)发布游戏。 你的游戏必须符合下面两组要求：
+你必须在[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)中发布游戏的 Xbox Live 创意者计划中注册。 你的游戏必须符合下面两组要求：
 
 1. 集成 Xbox Live 登录并显示用户身份（玩家代号、玩家头像等）。 所有其他 Xbox Live 服务都是可选的。
 2. 遵循标准的 [Microsoft Store 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)。

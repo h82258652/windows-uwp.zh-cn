@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: ca291312345646bb48691615854503f5121c8888
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 49806ea48b8af691d5b161e21426c73d65712408
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6153175"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193231"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 
@@ -31,7 +31,7 @@ ms.locfileid: "6153175"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>开发人员帐户不能访问适用于运行时访问的沙盒
 
-* 测试帐户 （也称为开发帐户） 或经授权的开发人员帐户必须用于登录到正在开发中主题作品。  请确保你要尝试进行登录与一个或在 XDP 上创建其他测试帐户[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)。 在 Windows 开发人员中心上的 xbox live 相关联的开发人员帐户，你可以授权[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* 测试帐户 （也称为开发帐户） 或经授权的开发人员帐户必须用于登录到正在开发中主题作品。  请确保你要尝试进行登录与一个或在 XDP 上创建其他测试帐户[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)。 在合作伙伴中心上的 xbox live 相关联的开发人员帐户，你可以授权[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * 确保帐户有权访问你的游戏发布到沙盒。  在 XDP 中创建的测试帐户继承了创建它们的 XDP 帐户的权限
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>你的设备未位于正确的沙盒上
@@ -40,7 +40,7 @@ ms.locfileid: "6153175"
 
 #### <a name="your-titles-service-configuration-is-not-published-to-the-correct-development-sandbox"></a>你的游戏服务配置未发布到正确的开发沙盒。
 
-请确保已将你的游戏服务配置发布到开发沙盒中。  你无法在某个游戏的给定开发沙盒中登录到 Xbox Live，除非该游戏已发布到相同沙盒。  请参阅 [XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)，了解有关该操作的信息。 你可以读取[开发人员中心文档](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)，了解如何发布你的 Windows 开发人员中心配置。
+请确保已将你的游戏服务配置发布到开发沙盒中。  你无法在某个游戏的给定开发沙盒中登录到 Xbox Live，除非该游戏已发布到相同沙盒。  请参阅 [XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)，了解有关该操作的信息。 你可以读取[合作伙伴中心文档](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)，了解如何发布你的合作伙伴中心配置。
 
 ### <a name="ids-configured-incorrectly"></a>ID 配置不正确
 
@@ -48,10 +48,10 @@ ms.locfileid: "6153175"
 
 需要注意的事项如下：
 
-* 确保你的应用 ID 正确输入到 XDP 或开发人员中心
-* 确保将 PFN 正确输入到 XDP 或开发人员中心
+* 确保你的应用 ID 正确输入到 XDP 或合作伙伴中心
+* 确保将 PFN 正确输入到 XDP 或合作伙伴中心
 * 如[将 Xbox Live 添加到新的或现有的 UWP 项目](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)指南所述，仔细检查你是否已在 Visual Studio 项目所在的相同目录中创建 xboxservices.config。
-* 确保 appxmanifest 中的“程序包标识符”是正确的。  它显示在 Windows 开发人员中心“应用标识符”部分的“程序包/标识符/名称”中。
+* 确保 appxmanifest 中的“程序包标识符”是正确的。  这是显示在合作伙伴中心的"程序包/标识符/名称"中的应用标识部分。
 
 ### <a name="title-id-or-scid-not-configured-correctly"></a>游戏 ID 或 SCID 未正确配置
 
@@ -82,9 +82,9 @@ ms.locfileid: "6153175"
 
 ![解决方案资源管理器中的 pfx 文件](../../images/troubleshooting/pfx_file.png)
 
-如果使用用于预配 Windows 开发人员中心应用的 Microsoft 帐户无法登录 Visual Studio，则 Visual Studio 将会根据你的个人 Microsoft 帐户或域帐户自动生成签名 pfx 文件。 构建 appx 程序包时，Visual Studio 将使用自动生成的 pfx 签署该程序包并更改 package.appxmanifest 中的程序包“发布者”部分。 因此，生成的位（尤其是，appxmanifest.xml）所具有的程序包标识符与你预期使用的程序包标识符不同。 
+如果你未登录到 Visual Studio 使用用于预配合作伙伴中心中的应用的 Microsoft 帐户，Visual Studio 将自动生成签名 pfx 文件，具体取决于你的个人 Microsoft 帐户或域帐户。 构建 appx 程序包时，Visual Studio 将使用自动生成的 pfx 签署该程序包并更改 package.appxmanifest 中的程序包“发布者”部分。 因此，生成的位（尤其是，appxmanifest.xml）所具有的程序包标识符与你预期使用的程序包标识符不同。 
 
-2. 仔细检查你的 package.appxmanifest 是否已设为该游戏在开发人员中心上的相同应用程序标识符。 你可以右键单击项目并选择“应用商店”->“将应用与应用商店关联...”，如以下屏幕截图中所示。 或者，手动编辑你的 package.appxmanifest。 请参阅[适用于 UWP 游戏的 Visual Studio 入门](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，了解详细信息。
+2. 仔细检查你的 package.appxmanifest 在合作伙伴中心中设置为你的游戏在同一个应用程序标识。 你可以右键单击项目并选择“应用商店”->“将应用与应用商店关联...”，如以下屏幕截图中所示。 或者，手动编辑你的 package.appxmanifest。 请参阅[适用于 UWP 游戏的 Visual Studio 入门](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，了解详细信息。
 
 ![与 Microsoft Store 相关联](../../images/troubleshooting/appxmanifest_binding.png)
 
@@ -92,11 +92,11 @@ ms.locfileid: "6153175"
 
 总体而言，这意味着设备或用户无法访问指定游戏。
 
-1. 这可能意味着你未使用测试帐户尝试登录或者你的测试帐户没有所登录沙盒的访问权限。 请仔细检查[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)中创建测试帐户的说明，并[开发人员中心文档。](../../xbox-live-test-accounts.md) 如果需要创建一个新的测试帐户有权访问相应沙盒。
+1. 这可能意味着你未使用测试帐户尝试登录或者你的测试帐户没有所登录沙盒的访问权限。 请仔细检查[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)中创建测试帐户的说明，并[合作伙伴中心文档。](../../xbox-live-test-accounts.md) 如果需要创建一个新的测试帐户有权访问相应沙盒。
 
 你可能需要删除 Windows 10 中的旧帐户，可通过转至“开始”菜单中的“设置”并转至“帐户”来进行删除。
 
-2. 仔细检查你的游戏是否已发布到尝试使用的沙盒。 请有关如何执行此操作的信息，参阅[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)或[开发人员中心文档](../../xbox-live-service-configuration.md#sandbox-ids)。
+2. 仔细检查你的游戏是否已发布到尝试使用的沙盒。 请有关如何执行此操作的信息，参阅[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)或[合作伙伴中心文档](../../xbox-live-service-configuration.md#sandbox-ids)。
 
 ### <a name="0x87dd0005-unexpected-or-unknown-title"></a>0x87DD0005 意外或未知游戏
 

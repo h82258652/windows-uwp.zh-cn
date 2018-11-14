@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: da918cbbf76a757e16aea10cf4fbc6b2646de9fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6037997"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209734"
 ---
 # <a name="permissioncheckbatchuserresponse-json"></a>PermissionCheckBatchUserResponse (JSON)
-批处理权限的原因检查的一个目标用户的权限值列表。 
+批处理权限的原因检查的一个目标用户的权限值的列表。 
 <a id="ID4EN"></a>
 
  
@@ -28,7 +28,7 @@ PermissionCheckBatchUserResponse 对象具有以下规范。
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | 用户| 字符串| 必需。 如果请求用户允许执行与目标用户请求的操作，此成员为<b>true</b> 。| 
-| 权限| [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)的数组| 必需。 原始请求中，如请求中所示的相同顺序要求提供每项权限[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。| 
+| 权限| [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)的数组| 必需。 原始请求中，如请求中所示的相同顺序要求的每项权限[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。| 
   
 <a id="ID4E4B"></a>
 
