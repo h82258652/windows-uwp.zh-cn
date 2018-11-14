@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: df9c4764b8f7d752a132d6759054660f481cce55
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026000"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6271089"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服务点设备声明和启用模型
 
@@ -109,7 +109,7 @@ ms.locfileid: "6026000"
     }
 ```
 
-然后在与你已声明的设备关联注册事件处理程序
+然后与你已声明的设备注册事件处理程序
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

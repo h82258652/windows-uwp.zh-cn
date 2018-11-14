@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
 ms.openlocfilehash: 7acf2424a7d2fee322ba799ec670f0576b33a208
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044710"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6673482"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
-通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 我们的广告盈利平台提供了各种可以无缝集成到你应用和支持的中介通过各种受欢迎的广告网络的广告格式。 我们的平台兼容 OpenRTB、 各种 2.x、 MRAID 2 和 VPAID 3 标准的并且与护城河和 IAS 兼容。 
+通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 我们的广告盈利平台提供了多种可以无缝集成到你应用和支持的中介与很多受欢迎的广告网络的广告格式。 我们的平台是符合 OpenRTB、 各种 2.x、 MRAID 2 和 VPAID 3 标准，并且是与护城河和 IAS 兼容。 
 
 <br/>
 
@@ -100,9 +100,9 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>步骤 4：提交你的应用并查看性能
 
-包含广告的应用开发完成后，你可以在合作伙伴中心，以使其在应用商店中可用的[提交已更新的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
+完成你的应用将带广告的开发后，你可以在合作伙伴中心，以使其在应用商店中可用的[提交更新的应用](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 显示广告的应用必须满足 [Microsoft Store 政策的 10.10 部分](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[应用开发人员协议的附录 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 中指定的其他要求。
 
-你的应用是在应用商店中发布和可用后，你可以查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)，并继续更改中介设置以优化广告的性能。 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
+你的应用是在应用商店中发布和可用后，你可以查看你的合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)，并继续更改中介设置以优化你的广告的性能。 广告收入包含在你的[支出汇总](../publish/payout-summary.md)中。
 
 <span id="additional-help" />
 

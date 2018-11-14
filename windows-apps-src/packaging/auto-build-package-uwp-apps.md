@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 78cb7240fd11cee77556078f10500ca1a2087f0e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194841"
+ms.locfileid: "6258180"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -293,7 +293,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件，该文件包含 Microsoft Store 关联信息。 如果你将源代码存储在公用存储库（如 GitHub）中，则此文件将包含该帐户的所有应用保留名称。 可在公开前排除或删除此文件。
 
-如果你无权访问用于发布该应用的开发人员中心帐户，则可以按照以下文档中的说明操作：[为第三方生成应用？如何打包它们的 Microsoft Store 应用](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
+如果你没有访问用于发布该应用的合作伙伴中心帐户，你可以按照本文档中的说明：[为第三方生成应用？如何打包它们的应用商店应用](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
 
 然后你需要验证生成步骤是否包含以下参数：
 
@@ -307,11 +307,11 @@ Microsoft Store 关联向导生成名为 Package.StoreAssociation.xml 的文件�
 
 对 Microsoft Store 使用 Visual Studio Team Services 扩展以便与 Microsoft Store API 集成，并将应用包发送到 Microsoft Store。
 
-你需要将开发人员帐户与 Azure Active Directory (AD) 连接起来，然后在 AD 中创建一个应用以对请求进行身份验证。 可按照扩展页中的指南完成该操作。
+需要连接你的合作伙伴中心帐户与 Azure Active Directory (AD)，然后在你的广告请求进行身份验证中创建一个应用。 可按照扩展页中的指南完成该操作。
 
 一旦你已配置了扩展，你可以添加生成任务，并与你的应用 ID 和上传文件的位置对其进行配置。
 
-![配置开发人员中心](images/building-screen17.png)
+![配置合作伙伴中心](images/building-screen17.png)
 
 其中 `Package File` 参数的值将是：
 

@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 112e9f60e38bc5a665d9011f35b9e92189f15f80
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6460900"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671963"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
@@ -48,7 +48,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详细信息](https://docs.microsoft.com/en-us/collaborate)。
 
-![在开发人员中心仪表板中的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
+![在合作伙伴中心中的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>打包桌面应用程序以及 UWP 项目
 

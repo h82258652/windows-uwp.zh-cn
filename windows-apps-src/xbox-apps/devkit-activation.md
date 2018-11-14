@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e497eb404129a7d8cc8ce9784c2e28a9c9456fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bf9bbc2962bc0d11f9969bf41840be515c9c0881
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052202"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279511"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 开发人员模式激活
 
@@ -42,9 +42,9 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
     
 5.  转到[partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate)。
 
-6.  使用你的开发人员中心帐户登录到开发人员中心。
+6.  与你的帐户凭据登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
-7.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 开发人员模式激活后，开发人员中心将指示：你已将其中一个激活与你的帐户关联。
+7.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 开发人员模式激活后，合作伙伴中心将指示你已将其中一个激活与你的帐户关联。
 
     ![激活步骤 8](images/activation-step-8-rs2.png)    
     

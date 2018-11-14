@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b85b1997f11a81d7223bddd78591db604d8ad4
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6191019"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6273214"
 ---
 # <a name="rich-presence-configuration"></a>“完整状态”配置
 

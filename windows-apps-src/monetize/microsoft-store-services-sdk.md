@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037097"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209131"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 吸引客户
 
-Microsoft Store Services SDK 提供的功能可帮助你吸引客户在通用 Windows 平台 (UWP) 应用中，例如向应用发送定向的通知和运行 A / B 实验在你的应用。 此 SDK 是 Visual Studio 2015 和更高版本的 Visual Studio 的扩展。
+Microsoft Store Services SDK 提供的功能可帮助你吸引客户在你的通用 Windows 平台 (UWP) 应用，例如向应用发送定向的通知和运行 A / B 实验在你的应用。 此 SDK 是 Visual Studio 2015 和更高版本的 Visual Studio 的扩展。
 
 > [!NOTE]
 > 要在 UWP 应用中显示广告，请使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 而不是 Microsoft Store Services SDK。 广告库已从 Microsoft Store Services SDK 移至 Microsoft 广告 SDK。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md)。
@@ -30,10 +30,10 @@ Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 
 
 |  方案  |  说明   |
 |------------|----------------|
-|  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在合作伙伴中心中定义实验后，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类以在应用中获取实验变体，使用此数据修改正在测试的功能的行为，然后使用 LogForVariation [](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法将视图事件和转换事件发送到合作伙伴中心。 最后，使用合作伙伴中心查看结果并管理实验。  |
+|  [在 UWP 应用中使用 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在合作伙伴中心中定义实验后，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类以在应用中获取实验变体，使用此数据修改正在测试的功能的行为，然后使用 LogForVariation [](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法将视图事件和转换事件发送到合作伙伴中心。 最后，使用合作伙伴中心以查看结果并管理实验。  |
 |  [从 UWP 应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类将 Windows10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，管理此[反馈报告](../publish/feedback-report.md)合作伙伴中心中的反馈。 |
-|  [配置你的 UWP 应用以接收推送通知合作伙伴中心](configure-your-app-to-receive-dev-center-notifications.md)    |  UWP 应用中使用[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)类注册应用以接收定向的推送通知，将其发送给客户使用合作伙伴中心。  |
-|   [在 UWP 应用，以便在合作伙伴中心中的使用情况报告中记录自定义事件](log-custom-events-for-dev-center.md)   |  UWP 应用中使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)类与合作伙伴中心中的应用相关联的自定义事件记录。 然后，查看你的合作伙伴中心中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)**自定义事件**部分中的自定义事件的总发生次数。  |
+|  [配置你的 UWP 应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)    |  使用 UWP 应用中的[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)类注册应用以接收定向的推送通知发送给客户使用合作伙伴中心。  |
+|   [在 UWP 应用，以便在合作伙伴中心中的使用情况报告中记录自定义事件](log-custom-events-for-dev-center.md)   |  使用 UWP 应用中的[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)类与你在合作伙伴中心中的应用相关联的自定义事件记录。 然后，查看你的合作伙伴中心中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的**自定义事件**部分中的自定义事件的总发生次数。  |
 
 <span id="prerequisites" />
 
@@ -143,5 +143,5 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 库�
 * [Microsoft Store Services SDK API 参考](https://docs.microsoft.com/uwp/api/overview/engagement)
 * [通过 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)
 * [从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)
-* [配置应用以接收推送通知合作伙伴中心](configure-your-app-to-receive-dev-center-notifications.md)
+* [配置应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)
 * [记录合作伙伴中心的自定义的事件](log-custom-events-for-dev-center.md)

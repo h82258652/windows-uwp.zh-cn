@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4d36fa22953bc4745b631303aae62985a5aa05
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444594"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671611"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中创作事件
 
@@ -148,7 +148,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>参数化的委托和简单信号，跨 ABI
 
-如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;事件必须使用 Windows 运行时委托类型。 上面的示例使用[**Windows::Foundation::EventHandler\ < 所 >**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\ < TSender，TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
+如果你的事件必须可访问性跨应用程序二进制接口 (ABI)&mdash;例如组件和其使用的应用程序&mdash;事件必须使用 Windows 运行时委托类型。 上述示例使用[**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) Windows 运行时委托类型。 [**TypedEventHandler\<TSender、 TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 运行时委托类型的另一个示例。
 
 这些两个委托类型的类型参数必须跨 ABI，以便类型参数必须也是 Windows 运行时类型。 这包括第一方和第三方运行时类，以及基元类型，如数字和字符串。 编译器帮助你与"*必须是 WinRT 类型*"错误，如果你忘记了此约束。
 

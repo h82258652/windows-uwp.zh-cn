@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9766222ea3a1c8671eadd42458b1c5aceaf0f587
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6023658"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269766"
 ---
 # <a name="usersxuidxuidachievementsscidachievementid"></a>/users/xuid({xuid})/achievements/{scid}/{achievementid}
 返回有关成就，包括其配置的元数据和特定于用户的数据的详细信息。 
@@ -34,9 +34,9 @@ ms.locfileid: "6023658"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问的资源的用户。 必须匹配的身份验证的用户的 XUID。| 
-| scid| GUID| 其成就所访问的服务配置的唯一标识符。| 
-| achievementid| 32 位无符号的整数| 正在访问的成就 （中指定的 SCID) 的唯一标识符。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 正在访问其资源的用户。 必须匹配的身份验证的用户的 XUID。| 
+| scid| GUID| 正在访问其成就的服务配置的唯一标识符。| 
+| achievementid| 32 位无符号的整数| 正在访问的成就的 （中指定的 SCID) 的唯一标识符。| 
   
 <a id="ID4EMC"></a>
 

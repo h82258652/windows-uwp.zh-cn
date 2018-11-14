@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a410e0e2759dcdfd6adff9c25238447fe4138b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6207494"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6280808"
 ---
 # <a name="projection-transform"></a>投影转换
 

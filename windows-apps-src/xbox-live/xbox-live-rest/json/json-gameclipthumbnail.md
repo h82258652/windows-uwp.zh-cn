@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fae93f76d9c8647b2d4264463b434d86897e2a5
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6187510"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279418"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
 包含一个单独的缩略图的相关信息。 可以有多个大小每个剪辑，并由客户端选择正确显示。 
