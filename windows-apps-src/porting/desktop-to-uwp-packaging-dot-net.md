@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: cc71a58594c8794369bedd7f415518100892ff67
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6195103"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6667292"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
-可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，可将该包发布到 Microsoft Store 或将其旁加载到一台或多台电脑中。
+可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将该包发布到 Microsoft 应用商店或旁加载它到一个或多个电脑上。
 
 Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 
@@ -66,7 +66,7 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 7. 使用[创建应用包](../packaging/packaging-uwp-apps.md)向导生成 appxupload 文件。
 
-   你可以直接将该文件上传到 Microsoft Store 中。
+   你可以直接向应用商店上传该文件。
 
 **视频**
 
