@@ -8,19 +8,19 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10，编译器的本机映像
 ms.localizationpriority: medium
-ms.openlocfilehash: 231d5aa895cb4cf63ade01660df61e32424e67c7
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444721"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6656785"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>优化你的.NET 桌面应用使用本机映像
 
 > [!NOTE]
 > 与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
 
-你可以通过预编译你的二进制文件来提高你的.NET Framework 应用程序的启动时间。 你可以使用此技术上的大型应用程序打包并通过 Windows 应用商店进行分配。 在某些情况下，我们已观测到 20%性能改进。 你可以了解有关此技术的[技术概述](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)的详细信息。
+你可以通过预编译你的二进制文件来提高你的.NET Framework 应用程序的启动时间。 你可以使用此技术上的大型应用程序打包并通过 Microsoft 应用商店进行分配。 在某些情况下，我们已观测到 20%性能改进。 你可以了解有关此技术的[技术概述](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)的详细信息。
 
 我们已发布的本机映像编译器的预览版本作为[NuGet 程序包](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)。 你可以将此包应用到任何针对.NET Framework 版本 4.6.2 的.NET Framework 应用程序或更高版本。 此包添加 post 生成步骤，包括对你的应用程序使用的所有二进制文件的本机负载。 在应用程序运行在.NET 4.7.2 和更高版本的同时，以前的版本将仍可以加载的 MSIL 代码时，将加载此优化的负载。
 
@@ -59,7 +59,7 @@ ms.locfileid: "6444721"
 
 1. 右键单击你的解决方案，然后选择**配置管理器**。
 
-2. 选择 **< 新.>** 中的项目的生成可执行文件的名称旁边的**平台**下拉列表中菜单。
+2. 选择 **<New.>** 中的项目的生成可执行文件的名称旁边的**平台**下拉列表中菜单。
 
 3. 在**新建项目平台**对话框中，请确保，**复制设置从**下拉列表设置为**任何 CPU**。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015, 会话, mpsd
 ms.localizationpriority: medium
 ms.openlocfilehash: e3678d983cc75a2b6c7855279a1b96fb526440d1
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272875"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6647250"
 ---
 # <a name="mpsd-session-details"></a>MPSD 会话详细信息
 
