@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82623a86548866a78f56385ee0a535bfcb822c46
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044246"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6270812"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -56,7 +56,7 @@ ms.locfileid: "6044246"
 
 ### <a name="consistency"></a>一致
 
-导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)用户，所熟悉并且以下标准约定图标、 位置和样式设置用户将觉得导航可预测且直观。
+导航应该与用户期望一致。 使用[标准控件](#use-the-right-controls)，用户所熟悉并且以下标准约定图标、 位置和样式设置用户将觉得导航可预测且直观。
 
 ![页面组件图像](images/nav/page-components.svg)
 
@@ -97,7 +97,7 @@ ms.locfileid: "6044246"
 
 1. 考虑用户的想法。 找出他们可能用来访问你的应用的典型路径；对于每个页面，思考为何用户在那里以及他们可能想去哪里。
 
-2. 避免使用深入导航层次结构。 如果导航级别超过三个，你将面临让用户置身于深度分层、难以脱身的风险。
+2. 避免深入导航层次结构。 如果导航级别超过三个，你将面临让用户置身于深度分层、难以脱身的风险。
 
 3. 避免“弹跳”。 “弹跳”会在以下情况下发生：存在相关内容，但导航到该内容需要用户先转到上一级，然后再返回。
 
@@ -118,7 +118,7 @@ ms.locfileid: "6044246"
 
         - 可以按任意顺序查看页面。
         - 页面之间明显不同，并且不具有明显的父/子关系。
-        - 组中存在少于 8 页面。 <br>
+        - 在组中有页面少于 8。 <br>
         （当存在多个页面时，用户可能难以区分页面或难以弄清它们当前在组中的位置。 如果你认为这对你的应用不构成问题，请继续将页面作为对等方平行排列。 否则，请考虑使用层次结构将页面分为两个或更多的组。）
 
     :::column-end:::
@@ -186,7 +186,7 @@ ms.locfileid: "6044246"
         Use top navigation when:
 
         - 你想要显示在屏幕上的所有导航选项。
-        - 你希望为你的应用内容的更多空间。
+        - 你希望为你的应用的内容的更多空间。
         - 图标不能清楚地描述你导航类别。
         
         使用 tab 键时：

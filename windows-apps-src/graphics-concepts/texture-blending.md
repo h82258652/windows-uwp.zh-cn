@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4121bd402b048ee6102ed3be30b94a66e274273
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032808"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6270702"
 ---
 # <a name="texture-blending"></a>纹理混合
 
@@ -32,7 +32,7 @@ Direct3D 支持通过使用纹理层实现单程内的多个纹理混合。 纹�
 
 如上图所示，纹理层使用指定的运算符将两个参数混合。 常见操作包括简单的调制，或者添加参数的颜色或 α 值，但此外还有二十多个操作也受支持。 纹理层参数可以是一个相关的纹理、重复的颜色或 α 值（在高洛德着色过程中重复）、任意的颜色或 α 值，也可以是从之前纹理层获得的结果。
 
-**注意** Direct3D 将颜色混合与 α 混合区分开来。 应用程序针对颜色和 α 单独设置混合操作以及相关参数，所以这些设置的结果是相互独立的。
+**请注意** Direct3D 将颜色混合与 α 混合区分开来。 应用程序针对颜色和 α 单独设置混合操作以及相关参数，所以这些设置的结果是相互独立的。
 
  
 

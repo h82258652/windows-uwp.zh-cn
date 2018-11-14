@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 加载项购置
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039997"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6275355"
 ---
 # <a name="submit-responses-to-reviews"></a>提交评价回复
 
@@ -67,11 +67,11 @@ ms.locfileid: "6039997"
 
 | 值        | 类型   | 说明           |  必需  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 应用商店 ID 在合作伙伴中心的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。   |  是  |
+| ApplicationId | 字符串 |  要回复评价的应用的应用商店 ID。 会提供合作伙伴中心的[应用标识页](../publish/view-app-identity-details.md)上的应用商店 ID。 Store ID 示例：9WZDNCRFJ3Q8。   |  是  |
 | ReviewId | 字符串 |  要回复的评价 ID（这是一个 GUID）。 评价 ID 位于 Microsoft Store 分析 API 中的[获取应用评价](get-app-reviews.md)方法的回复数据中，以及[评价报告](../publish/reviews-report.md)的[脱机下载](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字符串 | 要提交的回复。 你的回复必须遵循[以下准则](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字符串 | 应用的支持电子邮件地址，客户可以用它来直接与你联系。 必须为有效的电子邮件地址。     |  是  |
-| IsPublic | 布尔值 |  如果你指定**为 true**，你的回复将显示在你的应用的应用商店一览，客户评价的正下方，并且将向所有客户可见。 如果你指定**为 false** ，且用户未选择退出接收电子邮件回复，你的回复将发送给客户通过电子邮件，并且它不会对你的应用的应用商店一览中的其他客户可见。 如果你指定**为 false** ，用户已选择不接收回复电子邮件，将返回一个错误。   |  是  |
+| IsPublic | 布尔值 |  如果你指定**为 true**，你的回复将显示在你的应用的应用商店一览中，客户评价的正下方，并且将向所有客户可见。 如果你指定**为 false** ，且用户未选择退出接收电子邮件响应，你的回复将发送给客户通过电子邮件，并且它不会对你的应用的应用商店一览中的其他客户可见。 如果你指定**为 false** ，用户已选择不接收电子邮件回复，则将返回错误。   |  是  |
 
 
 ### <a name="request-example"></a>请求示例

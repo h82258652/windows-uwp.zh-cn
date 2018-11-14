@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044760"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269228"
 ---
 # <a name="commit-an-add-on-submission"></a>确认加载项提交
 
-在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项 （也称为应用内产品或 IAP） 提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的图标）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示对提交更改。
+在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项 （也称为应用内产品或 IAP） 提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的图标）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示提交更改。
 
 有关确认操作如何适用通过使用 Microsoft Store 提交 API 提交加载项过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
@@ -49,8 +49,8 @@ ms.locfileid: "6044760"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 加载项（包含要确认的提交）的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID，它包含[获取所有加载项](get-all-add-ons.md)和[创建加载项](create-an-add-on.md)的请求的响应数据中。 |
-| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| inAppProductId | 字符串 | 必需。 加载项（包含要确认的提交）的应用商店 ID。 在合作伙伴中心，会提供应用商店 ID，它包含在响应数据中[获取所有加载项](get-all-add-ons.md)和[创建加载项](create-an-add-on.md)的请求。 |
+| submissionId | 字符串 | 必需。 要确认的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文

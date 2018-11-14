@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00923b4448d96943cf00eade46c39c42e87c4f96
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023011"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164553"
 ---
 # <a name="set-speech-recognition-timeouts"></a>设置语音识别超时
 
@@ -33,7 +33,7 @@ ms.locfileid: "6023011"
 -   BabbleTimeout - SpeechRecognizer 先继续侦听无法识别的声音（干扰），之后再假定语音输入已结束并结束识别操作的时长。
 -   EndSilenceTimeout - SpeechRecognizer 检测静默（在生成任何识别结果之后），并假定语音输入已结束的时长。
 
-**注意**可以基于每个识别器设置超时。
+**请注意**可以基于每个识别器设置超时。
 
  
 

@@ -8,11 +8,11 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab8e8c18a0b1db0991bf470f194f8774f2357b4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029993"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6270613"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent 设计系统的 Windows 应用创意者
 
@@ -37,11 +37,11 @@ Fluent 体验可根据行为和意图进行调整 &mdash; 它们能了解和预�
 通过融入物理世界的元素，Fluent 体验挖掘到了根本的东西。 它运用光线、阴影、运动、深度和纹理，以一种直观和本能的方式整理信息。
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>将 Fluent Design 应用于与 UWP 应用
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>应用到你的应用的 UWP 的 Fluent 设计
 
 ![Fluent 设计徽标](images/fluentdesign_header.png)
 
-我们的设计指南中介绍了如何适用于应用的 Fluent 设计原则。 哪种类型的应用？ 尽管我们的指南中的许多可应用于任何平台，我们将创建 UWP （通用 Windows 平台） 以支持 Fluent Design。
+我们的设计指南中介绍如何适用于应用的 Fluent 设计原则。 哪种类型的应用？ 尽管我们的指南中的许多可应用于任何平台，我们创建了 UWP （通用 Windows 平台） 以支持 Fluent Design。
 
 Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素和通用输入系统）是自动的。 你无需编写额外的代码，可以直接使用这些功能。 其他功能（如亚克力）是可选的；你需要通写用于包含它们代码，从而将它们添加到应用。
 
@@ -118,7 +118,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素
 
 ## <a name="make-it-intuitive"></a>使直观
 
-行为符合用户预期它的方式时，该体验就显得直观。 通过使用已建立的控件和模式并利用对可访问性和全球化的平台支持，你可以打造一种帮助用户提高效率的毫不费力的体验。
+当它的行为，用户期望到它的方法，该体验就显得直观。 通过使用已建立的控件和模式并利用对可访问性和全球化的平台支持，你可以打造一种帮助用户提高效率的毫不费力的体验。
 
 体现共鸣就是在正确的时间做正确的事情。
 

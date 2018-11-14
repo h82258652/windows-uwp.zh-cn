@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023675"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207484"
 ---
 # <a name="rotation"></a>旋转
 
@@ -46,7 +46,7 @@ ms.locfileid: "6023675"
 
 ![演示旋转支持的各种手指姿势的图表。](images/ux-rotate-positions.png)
 
-**注意**从直观上来说，多数情况下，旋转点是两个触摸点之一除非用户指定与接触点 （例如，在绘图或布局应用程序） 无关的旋转点。 以下图像演示了不采用这种方式限制旋转点时如何降级用户体验。
+**请注意**除非用户可以指定与接触点 （例如，在绘图或布局应用程序） 无关的旋转点从直观上来说，多数情况下，旋转点是两个触摸点之一。 以下图像演示了不采用这种方式限制旋转点时如何降级用户体验。
 
 首张图片显示第一个（拇指）和第二个（食指）接触点：食指接触树，拇指接触树枝。
 
@@ -90,7 +90,7 @@ Windows8 支持三种类型的旋转： 自由、 受限以及组合。
 <td align="left">组合旋转</td>
 <td align="left"><p>组合旋转支持包含区域（类似于<a href="guidelines-for-panning.md">平移指南</a>中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度对齐点上。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
 <div class="alert">
-<strong>注意</strong>用户界面围栏是一项功能周围的目标某个区域限制向特定值或位置，从而影响其选择的移动。
+<strong>请注意</strong>用户界面围栏是目标周围的某个区域周围限制向特定值或位置，从而影响其选择移动的功能。
 </div>
 <div>
  

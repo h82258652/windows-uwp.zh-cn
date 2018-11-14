@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d4ff66e988634cf1ba48809688ea6535e6e95b03
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033825"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161108"
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
@@ -96,7 +96,7 @@ ms.locfileid: "6033825"
 
 请参阅[对话框文章](dialogs.md)。 
 
-## <a name="how-to-create-a-flyout"></a>如何创建浮出控件
+## <a name="how-to-create-a-flyout"></a>如何创建一个浮出控件
 
 请参阅[浮出控件文章](flyouts.md)。 
 
