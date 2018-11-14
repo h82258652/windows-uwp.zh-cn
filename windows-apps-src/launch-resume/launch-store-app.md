@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: ecb99c16d413e5e9869215f2d048ad6d9d52206f
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6454112"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668472"
 ---
 # <a name="launch-the-microsoft-store-app"></a>打开 Microsoft Store 应用
 
@@ -43,7 +43,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">启动产品的产品详细信息页面 (PDP)。 <p>应用商店 ID 已向所有使用 Windows 10 的客户推荐，并且将适用于所有操作系统版本，但执行此操作的早期方法（例如：PFN）仍受支持。</p>
-<p>可以在每个应用的应用管理部分中“应用标识”<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx"></a>页面上的 Windows 开发人员中心仪表板中找到这些值。</p>
+<p>每个应用的应用管理部分中的<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">应用标识</a>页面上，可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)中找到这些值。</p>
 </td>
 <td>
 应用商店 ID <p>（建议）</p>

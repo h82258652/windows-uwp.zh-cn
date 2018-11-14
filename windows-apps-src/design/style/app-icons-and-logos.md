@@ -10,12 +10,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: d31916c4db51d278c294de56a7ec8a56d2178a91
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450112"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663656"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -52,7 +52,7 @@ ms.locfileid: "6450112"
 | 应用图标 | 在开始菜单、 任务栏、 任务管理器中的应用列表 | Square44x44Logo.png |
 | 初始屏幕 | 应用的初始屏幕 | 是 SplashScreen.png  |
 | 锁屏提醒徽标 | 你的应用的磁贴 | BadgeLogo.png  |
-| 程序包徽标/应用商店徽标 | 应用安装程序，开发人员中心，应用商店的应用商店中的"写评论"选项中的"报告应用程序"选项 | StoreLogo.png  |
+| 程序包徽标/应用商店徽标 | 应用安装程序，合作伙伴中心中，在应用商店，在应用商店中的"写评论"选项中的"报告应用程序"选项 | StoreLogo.png  |
 
 \ * 使用，除非你选择[仅显示上传的应用商店中的图像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。 
 
