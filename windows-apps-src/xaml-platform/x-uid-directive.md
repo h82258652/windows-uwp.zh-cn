@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bec4bd5d35fc2bb3013b37c1386520a769ddeb6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032818"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188075"
 ---
 # <a name="xuid-directive"></a>x:Uid 指令
 

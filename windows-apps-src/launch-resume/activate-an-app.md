@@ -14,15 +14,15 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028968"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187929"
 ---
 # <a name="handle-app-activation"></a>处理应用激活
 
-了解如何通过替代[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)方法处理应用激活。
+了解如何通过重写[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)方法处理应用激活。
 
 ## <a name="override-the-launch-handler"></a>替代启动处理程序
 
@@ -42,7 +42,7 @@ ms.locfileid: "6028968"
 替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 只要用户启动该应用，就会调用此方法。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
 
 > [!NOTE]
-> 在 Windows 上，启动开始磁贴或应用列表从暂停的应用不会调用此方法。
+> 在 Windows 上，启动开始菜单磁贴或应用列表中已暂停的应用不会调用此方法。
 
 ```csharp
 using System;
@@ -266,7 +266,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)属性以确定是否从主或辅助磁贴启动应用，具体取决于该信息，确定是否应显示新或恢复应用体验。
+> 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)属性，以确定是否从主或辅助磁贴启动应用，具体取决于该信息，确定是否应显示新或恢复应用体验。
 
 ## <a name="important-apis"></a>重要的 API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f06174faa01ceebcd997141c7c2cc943b66797e4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6031935"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6271019"
 ---
 # <a name="users-uris"></a>用户 URI
  
@@ -33,7 +33,7 @@ ms.locfileid: "6031935"
 
 [/users/xuid({xuid})/outbox](uri-usersxuidoutbox.md)
 
-&nbsp;&nbsp;提供的消息仅发送给用户的访问权限的 Xbox LIVE 服务的发件箱。 
+&nbsp;&nbsp;提供仅发送给用户的访问权限的邮件发件箱为 Xbox LIVE 服务。 
  
 <a id="ID4EOB"></a>
 

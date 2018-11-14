@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
 ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047715"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205434"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
-你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)，从而有助于推广你的应用并扩大用户群中创建广告市场活动。 默认情况下，我们将选择目标受众为你的广告根据你在合作伙伴中心，应用的设置，但你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
+你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)，从而有助于推广你的应用并扩大用户群中创建广告市场活动。 默认情况下，我们将选择目标受众为你的广告根据你在合作伙伴中心中的应用的设置，但你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
 
 你可以仅为通过[应用认证过程](the-app-certification-process.md) 的最终发布阶段的应用创建广告市场活动。
 

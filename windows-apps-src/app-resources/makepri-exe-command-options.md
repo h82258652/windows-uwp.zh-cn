@@ -9,22 +9,22 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: c777996dceeb443c25fcf526e3a029fca00047c1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043480"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160679"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 具有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主题对命令行选项的使用进行详细介绍。
 
 > [!NOTE]
-> 检查安装 Windows 软件开发工具包时**适用于托管的 UWP 应用的 Windows SDK**选项时，MakePri.exe 会安装。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 检查安装 Windows 软件开发工具包时**适用于托管的 UWP 应用的 Windows SDK**选项时，MakePri.exe 会安装。 它安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 ## <a name="getting-help-from-the-command-line"></a>从命令行中获取帮助
 
-你可以运行`MakePri.exe help`或`MakePri.exe /?`以查看你可以使用 MakePri.exe 命令。 你还可以发出`MakePri.exe <command> /?`若要查看有关某个命令，在极少数情况下的细节，即使`MakePri.exe <command> <option>`以查看有关选项的详细信息。
+你可以运行`MakePri.exe help`或`MakePri.exe /?`以查看你可以使用 MakePri.exe 命令。 你还可以发出`MakePri.exe <command> /?`若要查看有关某个命令，并在极少数情况下的细节，甚至是`MakePri.exe <command> <option>`以查看有关选项的详细信息。
 
 ## <a name="makepri-commands"></a>MakePri 命令
 
@@ -426,7 +426,7 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 /IndexOptions(io) <OPTIONS>
 ```
 
-**选项**是包含以下选项中的逗号分隔列表。
+**选项**是由以下选项中的逗号分隔列表。
 
 - + /-HiddenFiles(hf)。 索引 （+） 或忽略 （-） 隐藏的文件和文件夹。
 - + /-LinkedFiles(lf)。 索引 （+） 或忽略 （-） 链接的文件和文件夹。

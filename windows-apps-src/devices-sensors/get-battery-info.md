@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033732"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206123"
 ---
 # <a name="get-battery-information"></a>获取电池信息
 
@@ -30,7 +30,7 @@ ms.locfileid: "6033732"
 
 某些设备拥有多个电池，而对于每个电池在此类设备的总能量容量中所发挥的功能，并非总是显而易见。 这时就要用到 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 类了。 *聚合电池*表示所有连接到设备的电池控制器并可提供一个整体 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。
 
-**注意**[**电池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
+**请注意**[**电池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)类实际上对应于电池控制器。 控制器有时连接至物理电池，而有时又连接至设备机箱，具体视设备而定。 因此，即使没有电池也可以创建电池对象。 其他时候，电池对象可能为 **null**。
 
 一旦有了聚合电池对象，你便可以调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 来获取对应的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)。
 

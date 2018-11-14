@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d757c2d5fc985e4944f11aaaaccf53fabb0401
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049154"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6275643"
 ---
 # <a name="gameclipuritype-enumeration"></a>GameClipUriType 枚举
 详细介绍 GameClipUriType 枚举。 

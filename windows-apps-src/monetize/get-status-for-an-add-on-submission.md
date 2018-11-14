@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 状态
 ms.localizationpriority: medium
 ms.openlocfilehash: e2013a081898dbf46958190da1df01adaac9d820
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039315"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6278068"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>获取加载项提交的状态
 
@@ -25,7 +25,7 @@ ms.locfileid: "6039315"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建一个应用的加载项提交。 你可以执行此操作在合作伙伴中心，或者可以执行此操作通过使用[创建加载项提交](create-an-add-on-submission.md)的方法。
+* 创建一个应用的加载项提交。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建加载项提交](create-an-add-on-submission.md)的方法。
 
 ## <a name="request"></a>请求
 
@@ -48,7 +48,7 @@ ms.locfileid: "6039315"
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | 字符串 | 必需。 加载项（包含要获取状态的提交）的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID。  |
-| submissionId | 字符串 | 必需。 要获取状态的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| submissionId | 字符串 | 必需。 要获取状态的提交的 ID。 此 ID 包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文

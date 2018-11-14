@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, mpsd, 多人游戏会话目录。
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e42fcce988f7b3ac880082cd1300b6f4b9294f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6d39435f7f6669a0bdb953e0501f69fc80c4d179
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050947"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205854"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>多人游戏会话目录 (MPSD)
 
@@ -213,7 +213,7 @@ MPSD 通过 REST 功能在会话更新中支持开放式并发，方法是使用
 
 ### <a name="using-the-multiplayer-rest-api-to-interact-with-mpsd"></a>使用多人游戏 REST API 与 MPSD 交互
 
-游戏或其服务可以使用对多人游戏 REST API 和匹配 REST API 的标准 HTTP 调用。 在直接使用 REST 功能时，调用方针对大多数操作的会话目录 URI 发出 DELETE、PUT、POST 和 GET 调用。 在 PUT 请求中，请求正文合并到现有会话中。 如果没有现有会话，请求正文用于创建新会话，以及存储在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上的会话模板。 所有字段都是可选的，只有增量必须指定。 因此，{}是增量为零的有效 PUT 请求。
+游戏或其服务可以使用对多人游戏 REST API 和匹配 REST API 的标准 HTTP 调用。 在直接使用 REST 功能时，调用方针对大多数操作的会话目录 URI 发出 DELETE、PUT、POST 和 GET 调用。 在 PUT 请求中，请求正文合并到现有会话中。 如果没有现有会话，请求正文用于创建新会话，以及存储在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上的会话模板。 所有字段都是可选的，只有增量必须指定。 因此，{}是增量为零的有效 PUT 请求。
 
 若要执行返回合并结果的假设 PUT 请求而不影响服务器的官方会话副本，可以将查询字符串“?nocommit=true”附加到 PUT 请求中。
 
@@ -277,7 +277,7 @@ MPSD 通过 REST 功能在会话更新中支持开放式并发，方法是使用
 #### <a name="display-available-sessions-and-templates"></a>显示可用会话和模板
 
 1.  在工具中单击 SCID 以在登录用户属于其成员的 SCID 中显示会话列表。
-2.  在同一页面上，你可以单击 SCID，显示 SCID 的服务配置中的会话模板和本地化字符串。 这些项目通过[XDP](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)引入。
+2.  在同一页面上，你可以单击 SCID，显示 SCID 的服务配置中的会话模板和本地化字符串。 这些项目通过[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)引入。
 
 
 #### <a name="display-the-full-contents-of-a-session"></a>显示会话的完整内容

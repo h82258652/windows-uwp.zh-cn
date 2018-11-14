@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 14e78aec9afa361b2627d62d92f0ee7d7ab0565b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040852"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6272336"
 ---
 # <a name="introduction-to-buffers"></a>缓冲区简介
 
@@ -64,10 +64,10 @@ ms.locfileid: "6040852"
 使用以下参数查找存储在索引缓冲区中的连续索引：
 
 -   偏移-从索引缓冲区的基本地址之间的字节数。
--   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 开始屏幕位置表示要呈现的第一个索引。
+-   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 在开始屏幕位置表示要呈现的第一个索引。
 -   IndexCount - 要呈现的索引的数量。
 
-开始菜单索引缓冲区的索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation = \ * ElementSize （字节）;
+开始菜单的索引缓冲区 = 索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation \ * ElementSize （字节）;
 
 在此计算，ElementSize 是每个索引缓冲区元素大小，这是两个或 4 个字节。
 
@@ -79,9 +79,9 @@ ms.locfileid: "6040852"
 
 每个元素存储 1 到 4 个组件常量（由所存储数据的格式决定）。
 
-常量缓冲区仅可使用一个绑定标志，但这不能与任何其他绑定标志结合。
+常量缓冲区仅可使用一个绑定标志，它不能结合使用任何其他绑定标志。
 
-若要从着色器中读取的着色器-常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
+若要从着色器读取的着色器-常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

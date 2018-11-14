@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052082"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6273740"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙盒 API 参考   
 你可以使用此 REST API 获取和设置 Xbox Live 沙盒。

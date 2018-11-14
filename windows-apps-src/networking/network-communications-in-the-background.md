@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032260"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6281696"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
-若要继续网络通信，不在前台时，你的应用可以使用后台任务，这两个选项之一。
+若要继续网络通信不在前台时，你的应用可以使用后台任务和这两个选项之一。
 - 套接字代理。 如果你的应用使用套接字进行长期连接然后，当它离开前台时，它可以将套接字的所有权委托给系统套接字代理。 然后代理： 流量到达套接字; 上激活你的应用所有权传输回你的应用;并且，你的应用然后处理到达的流量。
 - 控制通道触发器。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在后台任务中执行网络操作
-- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 的后台任务应终止以节省电量。
+- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止，以节省电量。
 - 在检索到程序包并且需要执行生存期较长的任务时，使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 激活后台任务。
 
 **与网络相关的条件和标志**
@@ -432,7 +432,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 与 HttpClient
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上接收数据包的请求的处理方式。
 
-**注意**使用 SSL [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)当前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+**请注意**[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 目前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
  
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应遵循以下使用模式和最佳做法：
 

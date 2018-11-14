@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 异步编程, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f395136ff7f331f58b9c8e0ac1ee9efea296c02
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047592"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6277134"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>异步编程（DirectX 和 C++）
 
@@ -38,7 +38,7 @@ ms.locfileid: "6047592"
 
 你的应用可以在多个并发线程上处理这些组件。 文件 I/O（尤其是资源加载）可以从异步加载中得到很大好处，因为在加载或流式传输数兆（或数百兆）字节的资源时，你的游戏或应用可以处于交互状态。 创建和管理这些线程的最简单方式是使用[并行模式库](https://msdn.microsoft.com/library/dd492418.aspx)和 **task** 模式，它们包含在 PPLTasks.h 中定义的 **concurrency** 命名空间中。 如果使用[并行模式库](https://msdn.microsoft.com/library/dd492418.aspx)，将直接利用多核和超线程 CPU，并且可以改进从预知加载时间到伴随密集 CPU 计算或网络处理出现的停滞和滞后等所有方面。
 
-> **注意**在通用 Windows 平台 (UWP) 应用中，用户界面完全在单线程单元 (STA) 中运行。 如果你要为使用 [XAML 互操作](directx-and-xaml-interop.md)的 DirectX 游戏创建 UI，则只能使用 STA 访问控件。
+> **请注意**在通用 Windows 平台 (UWP) 应用中，用户界面完全在单线程单元 (STA) 中运行。 如果你要为使用 [XAML 互操作](directx-and-xaml-interop.md)的 DirectX 游戏创建 UI，则只能使用 STA 访问控件。
 
  
 
