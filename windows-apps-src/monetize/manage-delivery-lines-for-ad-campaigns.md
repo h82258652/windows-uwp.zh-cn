@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: e3d4a09524f1ebc0e944036bd9458b1b32ee04d3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044339"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147558"
 ---
 # <a name="manage-delivery-lines"></a>管理投放渠道
 
@@ -21,7 +21,7 @@ ms.locfileid: "6044339"
 
 有关投放渠道与广告活动、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
->**注意**&nbsp;&nbsp;成功，你可以创建使用此 API 为广告活动的投放渠道，必须首先[创建一个付费的广告市场活动使用合作伙伴中心中的**广告市场活动**页面](../publish/create-an-ad-campaign-for-your-app.md)，必须添加至少一次付款才能此页面上的检测。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用 API 创建的广告市场活动将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
+>**请注意**&nbsp;&nbsp;之前成功，你可以创建使用此 API 为广告活动的投放渠道，必须首先[创建一个付费的广告市场活动使用合作伙伴中心中的**广告市场活动**页面](../publish/create-an-ad-campaign-for-your-app.md)，并且你必须添加至少一次付款此页面上的检测。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的广告市场活动将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
 
 ## <a name="prerequisites"></a>先决条件
 

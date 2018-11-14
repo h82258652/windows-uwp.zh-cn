@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026941"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199054"
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 
@@ -53,7 +53,7 @@ ms.locfileid: "6026941"
 | [在地图上显示目标点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 |
 | [显示路线和方向](routes-and-directions.md) | 请求路线和方向并在应用中显示它们。 |
 | [执行地理编码和反向地理编码](geocoding.md) | 通过调用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
-| [查找并下载供离线使用的地图包](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在过去，你的应用必须将用户定向到设置应用下载离线地图。 现在，可以使用类[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空间中用于在给定区域 （基于[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)等。） 查找下载的包。 <br> 你可以也检查和侦听的地图包下载状态以及开始下载，而无需用户离开你的应用。 <br> 你可以找到有关如何执行此操作的参考内容和[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例。
+| [查找并下载供离线使用的地图包](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在过去，你的应用必须将用户定向到设置应用下载离线地图。 现在，你可以使用[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空间中的类以查找 （基于[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)等。） 在给定区域中的已下载的程序包。 <br> 你可以也检查侦听的地图包的已下载状态以及无需用户离开你的应用开始下载。 <br> 你可以找到有关如何执行此操作的参考内容和[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例。
 
 ## <a name="get-the-users-location"></a>获取用户的位置
 

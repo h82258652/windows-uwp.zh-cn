@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a59110fa094aeae3d40dca1372fde9889c108e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047798"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190162"
 ---
 # <a name="create-an-experiment-project-in-partner-center"></a>在合作伙伴中心中创建实验项目
 
-若要开始实验，合作伙伴中心中创建实验[项目](run-app-experiments-with-a-b-testing.md#terms)为你的应用，并定义你的应用可以访问的远程变量。
+若要开始实验，在合作伙伴中心中创建实验[项目](run-app-experiments-with-a-b-testing.md#terms)为你的应用，并定义你的应用可以访问的远程变量。
 
 以下说明介绍了用于创建项目的核心步骤。 有关演示如何创建项目、然后运行实验的端到端过程的详细演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 

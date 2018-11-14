@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f37412ac88b001f412a1495f2b4efa029cf4d3a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047342"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252342"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常见的认证失败
 
@@ -33,7 +33,7 @@ ms.locfileid: "6047342"
 
 -   提供使用你的应用时所需的[任何必要信息](notes-for-certification.md)，例如，如果应用要求用户登录某项服务，则需要提供测试帐户的用户名和密码；还可能需要说明访问隐藏的功能或锁定的功能所需的任何步骤。
 
--   如果你的应用需要一个;，包括[隐私策略 URL](enter-app-properties.md#privacy-policy-url)例如，如果你的应用访问任何种类的个人信息以任何方式或在其他所需的法律。 若要帮助确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[Microsoft Store 策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+-   如果你的应用需要一个;，包括[隐私策略 URL](enter-app-properties.md#privacy-policy-url)例如，如果你的应用访问任何种类的个人信息以任何方式或在其他所需的法律。 若要帮助确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[Microsoft 应用商店策略](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 -   请确保你的应用的说明清晰地展示应用的用途。 有关帮助，请参阅[编写出色的应用说明](write-a-great-app-description.md)中提供的相关指南。
 

@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 测试帐户
 ms.localizationpriority: medium
-ms.openlocfilehash: 2316a40e9524240b20645419ca8952d27374ca04
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 20aea3164ab438251181c146ea351ede7ebc9960
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022926"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199916"
 ---
 # <a name="xbox-live-test-accounts"></a>Xbox Live 测试帐户
 
@@ -41,8 +41,8 @@ ms.locfileid: "6022926"
 
 如果你是 ID@Xbox 开发人员，则还可以创建专用于开发沙盒的测试帐户。  此外，你一次可以创建多个测试帐户。
 
-转到开发人员中心上的“测试帐户管理”页。
-1. 转到“开发人员中心”仪表板
+转到合作伙伴中心中的测试帐户管理页面。
+1. 转到[合作伙伴中心](https://partner.microsoft.com/dashboard)
 2. 单击右上方的齿轮图标，以转到“帐户设置”
 3. 单击“测试帐户”。
 

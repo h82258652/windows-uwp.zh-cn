@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cdd1548a4d120027afd06a178cc338c88cb5cc4b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037891"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202267"
 ---
 # <a name="audio-graphs"></a>音频图
 
@@ -45,7 +45,7 @@ Windows 运行时音频图 API：
 -   比使用 XAudio2 简单得多。
 -   除了受 C++ 支持，还可以通过 C# 使用。
 -   可以直接使用音频文件，包括压缩的文件格式。 XAudio2 仅在音频缓冲区上运行，不提供任何文件 I/O 功能。
--   可以在 windows 10 中使用的低延迟的音频管道。
+-   可以在 windows 10 中使用的低延迟音频管道。
 -   支持在默认终结点参数处于使用状态时，自动切换终结点。 例如，如果用户从设备扬声器切换到耳机，则音频会自动重定向到新输入。
 
 ## <a name="audiograph-class"></a>AudioGraph 类

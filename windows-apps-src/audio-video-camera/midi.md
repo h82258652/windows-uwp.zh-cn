@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d1e4afd620b871d4273699aea5c02cc9faec80
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029369"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158877"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。 Windows 10 支持 MIDI over USB （类符合和最专有驱动程序），通过蓝牙 LE MIDI (Windows 10 周年纪念版及更高版本)，并可以自由地可用的第三方产品、 MIDI 以太网和路由 MIDI 通过。
+本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。 Windows 10 支持通过 USB （类符合要求和最专有驱动程序），通过蓝牙 LE MIDI 的 MIDI (Windows 10 周年纪念版及更高版本)，并通过免费提供的第三方产品、 MIDI 以太网和路由 MIDI。
 
 ## <a name="enumerate-midi-devices"></a>枚举 MIDI 设备
 

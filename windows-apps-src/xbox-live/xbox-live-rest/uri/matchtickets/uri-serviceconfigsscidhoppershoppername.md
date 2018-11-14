@@ -10,18 +10,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 29bbde83fd5480575ff4f9ff6620ab3bf5a15797
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041693"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6252134"
 ---
 # <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs/{scid}/hoppers/{hoppername}
 
 支持 POST 操作以创建匹配票证。
 
 > [!IMPORTANT]
-> 此 URI 旨在使用协定 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此 URI 用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
 
 <a id="ID4ER"></a>
 
@@ -35,7 +35,7 @@ momatch.xboxlive.com
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 的会话。|
+| scid| GUID| 服务配置标识符 (SCID) 会话。|
 | hoppername | 字符串 | 漏斗的名称。 |
 
 <a id="ID4E2B"></a>

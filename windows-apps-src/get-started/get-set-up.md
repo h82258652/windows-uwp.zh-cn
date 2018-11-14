@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fd4d481d30eda68acaf4e48e4d1c1bf4ed7d24
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029809"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158930"
 ---
 # <a name="get-set-up"></a>准备工作
 
@@ -23,7 +23,7 @@ ms.locfileid: "6029809"
 
 ## <a name="1-download-or-update-visual-studio"></a>1. 下载或更新 Visual Studio
 
-Microsoft Visual Studio2017 有助于设计、 编码、 测试和调试应用。
+Microsoft Visual Studio2017 可帮助你设计、 编码、 测试和调试你的应用。
 
 如果你尚未获得 Visual Studio2017，你可以安装免费的 Microsoft Visual Studio Community2017。 此下载包含用于测试应用的设备模拟器：
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f8334d75263a9d11d0aa23904cb520a452a0c84
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040567"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6248658"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefiners"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners
 对于给定的媒体项的类型，请访问查询优化器。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -38,7 +38,7 @@ ms.locfileid: "6040567"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners)](uri-medialocalemetadatamediaitemtypequeryrefinersget.md)
 
-&nbsp;&nbsp;列出了查询优化器的给定的媒体项的类型。
+&nbsp;&nbsp;列出了给定的媒体项类型查询优化器。
  
 <a id="ID4ELC"></a>
 

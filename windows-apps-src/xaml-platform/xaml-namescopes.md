@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fcbc1566d2b2b5ffc6889a57dd7656a3466d2a9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049618"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203802"
 ---
 # <a name="xaml-namescopes"></a>XAML 名称范围
 
@@ -32,7 +32,7 @@ XAML 名称范围中的名称使用户代码能够引用最初在 XAML 中声明
 
 从技术上讲，所发生的事情是，在 XAML 和它为代码隐藏定义的分部类一起编译时，XAML 本身也会经历标记编译器过程。 每个在标记中定义了 **Name** 或 [x:Name 属性](x-name-attribute.md)的对象元素都会生成一个内部字段，该字段的名称与 XAML 名称相匹配。 此字段最初没有内容。 然后，该类生成一个 **InitializeComponent** 方法，只有在加载了所有 XAML 之后才会调用该方法。 在 **InitializeComponent** 逻辑内，然后会向每个内部字段填充每个等效名称字符串的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 返回值。 要自行查看此基础结构，可以在编译后查看 Windows 运行时应用项目的 /obj 子文件夹中为每个 XAML 页面创建的“.g”（生成的）文件。 如果反射你最终的程序集或检查它们的接口语言内容，也可以看到字段和 **InitializeComponent** 方法是这些结果程序集的成员。
 
-**注意**特别是对于 VisualC + + 组件扩展 (C + + CX) 的应用， **X:name**引用的支持字段不会创建一个 XAML 文件的根元素。 如果你需要从 C++/CX 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**请注意**特别是对于 VisualC + + 组件扩展 (C + + CX) 的应用， **X:name**引用的支持字段不会创建一个 XAML 文件的根元素。 如果你需要从 C++/CX 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>在运行时使用 XamlReader.Load 创建对象
 

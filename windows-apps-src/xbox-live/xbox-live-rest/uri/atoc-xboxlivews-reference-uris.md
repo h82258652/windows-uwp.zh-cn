@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048117"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253946"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>统一资源标识符 (URI) 参考
 
@@ -35,7 +35,7 @@ ms.locfileid: "6048117"
 
 [游戏 DVR URI](dvr/atoc-reference-dvr.md)
 
-&nbsp;&nbsp;Uri 和游戏 dvr 关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的游戏 DVR 的 HTTP 方法。
 
 [玩家头像 URI](gamerpic/atoc-reference-gamerpic.md)
 
@@ -51,7 +51,7 @@ ms.locfileid: "6048117"
 
 [市场 URI](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri 和 Xbox 应用商店服务相关联的 HTTP 方法。
+&nbsp;&nbsp;Uri 和关联的 Xbox 应用商店服务的 HTTP 方法。
 
 [匹配 URI](matchtickets/atoc-reference-matchtickets.md)
 
@@ -67,7 +67,7 @@ ms.locfileid: "6048117"
 
 [隐私 URI](privacy/atoc-reference-privacyv2.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法出于隐私。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的隐私。
 
 [配置文件 URI](profileV2/atoc-reference-profiles.md)
 
@@ -79,7 +79,7 @@ ms.locfileid: "6048117"
 
 [会话目录 URI](sessiondirectory/atoc-reference-sessiondirectory.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法为多人游戏会话目录 (MPSD)。
+&nbsp;&nbsp;Uri 和关联的 HTTP 方法的多人游戏会话目录 (MPSD)。
 
 [游戏成就历史记录 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
@@ -95,7 +95,7 @@ ms.locfileid: "6048117"
 
 [用户 URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri 和关联的 HTTP 方法，为用户。
+&nbsp;&nbsp;Uri 和关联的用户的 HTTP 方法。
 
 [用户统计信息 URI](userstats/atoc-reference-userstats.md)
 

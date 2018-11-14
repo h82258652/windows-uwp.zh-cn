@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 01ef13f6f27b45a4cc41244e4ebed0a54804fc8e
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6161845"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6253979"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 桌面应用疑难解答
 >[!IMPORTANT]

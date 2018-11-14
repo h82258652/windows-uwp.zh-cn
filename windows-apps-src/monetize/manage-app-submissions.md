@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026732"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152147"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 
@@ -23,7 +23,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 > 如果你使用 Microsoft Store 提交 API 创建应用提交，请务必对进行进一步更改提交只能通过使用 API，而不是合作伙伴中心。 如果你使用合作伙伴中心更改你最初使用 API 创建一个提交，你将不再能够更改或提交该提交使用该 API。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 > [!IMPORTANT]
-> 你无法使用此 API 来直接向企业发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交或发布 [LOB 应用](../publish/distribute-lob-apps-to-enterprises.md)的提交。 对于这两种方案中，你必须使用合作伙伴中心发布该提交。
+> 你无法使用此 API 来直接向企业发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交或发布 [LOB 应用](../publish/distribute-lob-apps-to-enterprises.md)的提交。 对于这两种方案，你必须使用合作伙伴中心发布该提交。
 
 
 <span id="methods-for-app-submissions" />
@@ -127,7 +127,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 通过执行以下方法[确认应用提交](commit-an-app-submission.md)。 这将通知合作伙伴中心，你完成提交，更新现在应该应用到你的帐户。
+5. 通过执行以下方法[确认应用提交](commit-an-app-submission.md)。 这将向合作伙伴中心警报完成与你的提交，更新现在应该应用到你的帐户。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -339,7 +339,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 | 值      | 类型   | 描述      |
 |------------|--------|-------------------|
-| id            | 字符串  | 提交的 ID。 此 ID 包含在 [create an app submission](create-an-app-submission.md)、[get all apps](get-all-apps.md) 和 [get an app](get-an-app.md) 请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| id            | 字符串  | 提交的 ID。 此 ID 包含在 [create an app submission](create-an-app-submission.md)、[get all apps](get-all-apps.md) 和 [get an app](get-an-app.md) 请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 | applicationCategory           | 字符串  |   为应用指定[类别和/或子类别](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字符串。 通过下划线“_”字符将类别和子类别组合为单个字符串，例如 **BooksAndReference_EReader**。      |  
 | pricing           |  对象  | 包含应用的定价信息的[定价资源](#pricing-object)。        |   
 | visibility           |  字符串  |  应用的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -362,7 +362,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
 | allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
-| friendlyName           |   字符串  |  在合作伙伴中心中所示的提交的友好名称。 当你创建提交时，系统会为你生成此值。       |  
+| friendlyName           |   字符串  |  友好名称的提交中，在合作伙伴中心中所示。 当你创建提交时，系统会为你生成此值。       |  
 | trailers           |  数组 |   一个包含最多 15 个[预告片资源](#trailer-object)的数组，用于表示应用一览的视频预告片。<br/><br/>   |  
 
 
@@ -390,7 +390,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 > [!IMPORTANT]
 > **销售**资源不再受支持，并且当前不能使用 Microsoft Store 提交 API 获取或修改应用提交的销售数据。 将来，我们将更新 Microsoft Store 提交 API，以引入以编程方式访问应用提交的销售信息的新方法。
 >    * 调用 [GET 方法以获取应用提交](get-an-app-submission.md)后，*销售*值将为空。 你可以继续使用合作伙伴中心以获取应用提交的销售数据。
->    * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用合作伙伴中心更改你的应用提交的销售数据。
+>    * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用合作伙伴中心来更改应用提交的销售数据。
 
 此资源具有以下值。
 
@@ -460,7 +460,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 ### <a name="gaming-options-resource"></a>游戏选项资源
 
-此资源包含应用的游戏相关设置。 此资源中的值对应于[游戏的设置](../publish/enter-app-properties.md#game-settings)的合作伙伴中心中的提交。
+此资源包含应用的游戏相关设置。 此资源中的值对应于[游戏设置](../publish/enter-app-properties.md#game-settings)中的合作伙伴中心提交。
 
 ```json
 {
@@ -726,7 +726,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 |  Base               |   未设置价格段；使用应用的基价。      |     
 |  NotAvailable              |   应用在特定区域中不可用。    |     
 |  Free              |   应用是免费的。    |    
-|  Tier*xxx*               |   一个字符串，用于为应用指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看完整的表格的价格层可用于开发者帐户，包括与每个层关联的特定于市场的价格，转到任何你在合作伙伴中心在应用提交的**定价和可用性**页面和单击**市场和自定义价格**部分中的**查看表**链接 （对于某些开发人员帐户，此链接是在**定价**部分）。    |
+|  Tier*xxx*               |   一个字符串，用于为应用指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看完整的价格适用于你的开发人员帐户，包括与每个层的特定于市场的价格段转到任何你在合作伙伴中心在应用提交的**定价和可用性**页面和单击**市场和自定义价格**部分中的**查看表**链接 （对于某些开发人员帐户，此链接是在**定价**部分）。    |
 
 
 <span id="enterprise-licensing" />
@@ -736,7 +736,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 以下值表示应用的组织授权行为。 有关这些选项的详细信息，请参阅[组织许可选项](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing)。
 
 > [!NOTE]
-> 尽管可以通过提交 API 配置组织授权选项进行应用提交，但你无法使用此 API 发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交。 若要发布提交到适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft Store，你必须使用合作伙伴中心。
+> 尽管可以通过提交 API 配置组织授权选项进行应用提交，但你无法使用此 API 发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交。 若要发布提交到适用于企业的 Microsoft 应用商店和适用于教育的 Microsoft 应用商店，你必须使用合作伙伴中心。
 
 
 | 值           |  说明      |

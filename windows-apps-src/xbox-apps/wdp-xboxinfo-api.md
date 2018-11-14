@@ -1,6 +1,6 @@
 ---
 author: M-Stahl
-title: 设备门户 Xbox 信息 API 参考
+title: Device Portal Xbox 信息 API 参考
 description: 了解如何访问 Xbox 设备信息。
 ms.author: mstahl
 ms.date: 11/7/2017
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，xbox，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039292"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198853"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 信息 API 参考   
 你可以访问 Xbox One 使用此 API 的设备信息。
@@ -21,7 +21,7 @@ ms.locfileid: "6039292"
 
 **请求**
 
-有关在 Xbox One，可以获取设备的信息。
+您可以获取有关你的 Xbox One 设备的信息。
 
 方法      | 请求 URI
 :------     | :-----
@@ -46,10 +46,10 @@ GET | /ext/xbox/info
 * OsEdition-（字符串） 版本的操作系统，如"2017 年 3 月"或"2017 年 3 月 QFE 1"。
 * ConsoleId-（字符串） 控制台的 id。
 * DeviceId-（字符串） 控制台的 Xbox Live 设备 id。
-* SerialNumber-（字符串） 控制台的序列号。
+* 序列号-（字符串） 控制台的序列号。
 * DevMode-（字符串） 控制台的当前开发人员模式，例如"None"或"零售"。
 * ConsoleType-（字符串） 控制台的类型，如"Xbox One"或"Xbox One S"。
-* DevkitCertificateExpirationTime-(Number) 以秒为单位控制台的开发人员工具包证书将到期时的 UTC 时间。
+* DevkitCertificateExpirationTime-(Number) 以秒为单位控制台的开发人员工具包证书过期时的 UTC 时间。
 
 **状态代码**
 

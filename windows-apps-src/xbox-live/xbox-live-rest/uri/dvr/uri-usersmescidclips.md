@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 47349cf13d2c1ad3a526dec516948795afb29455
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030728"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209645"
 ---
 # <a name="usersmescidsscidclips"></a>/users/me/scids/{scid}/clips
-访问初始上传请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，根据问题的 URI 的函数。
+访问初始上传请求。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [URI 参数](#ID4EX)
  
@@ -37,7 +37,7 @@ ms.locfileid: "6030728"
 
 [POST (/users/me/scids/{scid}/clips)](uri-usersmescidclipspost.md)
 
-&nbsp;&nbsp;发出请求，初始上载。
+&nbsp;&nbsp;发出初始上载请求。
  
 <a id="ID4E4B"></a>
 

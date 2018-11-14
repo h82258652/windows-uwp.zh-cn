@@ -10,16 +10,16 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 5968a2dad76343a1aa589caadf62ec3cd823aed0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025104"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252973"
 ---
 # <a name="networking-page-dev-home"></a>网络页面 （开发人员主页）
    
   
-开发人员主页**网络**页面模拟各种网络条件，为了进行故障排除。 它还允许你启动网络数据包跟踪。   
+开发人员主页**网络**页面模拟各种网络条件为了进行故障排除。 它还允许你启动网络数据包跟踪。   
  ![网络页面的开发人员主页](images/devhome_networking.png)   
   
 **网络**页面包含以下窗格：   
@@ -35,7 +35,7 @@ ms.locfileid: "6025104"
 ## <a name="network-simulation"></a>网络模拟  
    
   
-**网络模拟**窗格中运行的网络模拟，可针对各种带宽配置文件进行测试。   
+**网络模拟**窗格运行网络模拟，可针对各种带宽配置文件进行测试。   
   
 <a id="ID4EOB"></a>
 

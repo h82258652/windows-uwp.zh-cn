@@ -10,17 +10,17 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031449"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197712"
 ---
 # <a name="settings-page-dev-home"></a>设置页面 （开发人员主页）
    
   
-开发人员主页**设置**页面可访问开发控制台的各种设置。   
- ![开发人员主页的设置页面](images/devhome_settings.png)   
+开发人员主页**设置**页面提供对开发控制台的各种设置的访问。   
+ ![设置页面的开发人员主页](images/devhome_settings.png)   
   
 **设置**页面包含以下窗格：   
  
@@ -57,7 +57,7 @@ ms.locfileid: "6031449"
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-用于将控制台与 Visual Studio 配对**Visual Studio**窗格。 你还可以删除所有配对的 Visual Studio 实例。   
+在**Visual Studio**窗格用于将控制台与 Visual Studio 配对。 你还可以删除所有配对的 Visual Studio 实例。   
   
 <a id="ID4ECC"></a>
 
@@ -75,7 +75,7 @@ ms.locfileid: "6031449"
 ## <a name="unattended-script-configuration"></a>无人参与的脚本配置  
    
   
-**无人参与脚本配置**窗格中管理 Xbox One 主机的安装脚本。   
+在**无人参与脚本配置**窗格管理 Xbox One 主机的安装脚本。   
   
 <a id="ID4E3C"></a>
 
@@ -84,7 +84,7 @@ ms.locfileid: "6031449"
 ## <a name="default-home-experience"></a>默认主页体验  
    
   
-**默认主页体验**窗格确定控制台启动时是否显示零售主页屏幕或[主机 （开发人员主页） 上的开发人员主页](dev-home.md)屏幕。   
+**默认主页体验**窗格确定主机启动时是否显示零售主页屏幕或[主机 （开发人员主页） 上的开发人员主页](dev-home.md)屏幕。   
   
 <a id="ID4EJD"></a>
 

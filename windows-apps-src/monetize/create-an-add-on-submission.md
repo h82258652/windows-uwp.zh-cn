@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c4aecb07034b7c8a161546fc9d8001247e9234cb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032113"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6263423"
 ---
 # <a name="create-an-add-on-submission"></a>创建加载项提交
 
@@ -53,7 +53,7 @@ ms.locfileid: "6032113"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字符串 | 必需。 要创建提交的加载项的应用商店 ID。 在合作伙伴中心中，会提供应用商店 ID，它包含在[创建加载项](create-an-add-on.md)或[获取加载项的详细信息](get-all-add-ons.md)的请求的响应数据中。  |
+| inAppProductId | 字符串 | 必需。 要创建提交的加载项的应用商店 ID。 在合作伙伴中心，会提供应用商店 ID，它包含在[创建加载项](create-an-add-on.md)或[获取加载项的详细信息](get-all-add-ons.md)的请求的响应数据中。  |
 
 
 ### <a name="request-body"></a>请求正文

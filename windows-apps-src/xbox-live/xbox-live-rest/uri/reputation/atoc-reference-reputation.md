@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 56c7627a3b0761419537d10e595afc38943e7354
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040105"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199001"
 ---
 # <a name="reputation-uris"></a>信誉 URI
  
@@ -31,11 +31,11 @@ ms.locfileid: "6040105"
 
 [/users/xuid({xuid})/feedback](uri-reputationusersxuidfeedback.md)
 
-&nbsp;&nbsp;如果你希望在游戏中，相较于使用 shell 添加反馈选项，用于从你的游戏。
+&nbsp;&nbsp;如果想要在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。
 
 [/users/batchfeedback](uri-reputationusersbatchfeedback.md)
 
-&nbsp;&nbsp;你的游戏服务用于在你的游戏界面之外的批处理形式发送反馈。
+&nbsp;&nbsp;使用你的游戏服务来发送你的游戏界面之外的批处理表单中的反馈。
 
 [/users/me/resetreputation](uri-usersmeresetreputation.md)
 
@@ -43,7 +43,7 @@ ms.locfileid: "6040105"
 
 [/users/xuid({xuid})/deleteuserdata](uri-usersxuiddeleteuserdata.md)
 
-&nbsp;&nbsp;完全重置为测试用户的信誉数据。 仅供测试。
+&nbsp;&nbsp;完全重置为测试用户信誉数据。 仅供测试。
 
 [/users/xuid({xuid})/resetreputation](uri-usersxuidresetreputation.md)
 

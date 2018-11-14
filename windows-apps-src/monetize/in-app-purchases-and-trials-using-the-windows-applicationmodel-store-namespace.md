@@ -9,11 +9,11 @@ ms.topic: article
 keywords: uwp, 应用内购买, IAP, 加载项, 试用, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 28fe27cc4464598414fec11d6812e2e9ea377aff
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036357"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6153179"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 
@@ -22,7 +22,7 @@ ms.locfileid: "6036357"
 本部分中的文章提供有关针对多个常见方案使用 **Windows.ApplicationModel.Store** 命名空间中的成员的深入指南和代码示例。 有关与 UWP 中的应用内购买相关的基本概念概述，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。 有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 命名空间不再更新新功能。 如果你的项目针对的是 Visual Studio 中的 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本（即，针对 Windows 10 版本 1607 或更高版本），我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 有关详细信息，请参阅[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 **Windows.ApplicationModel.Store**命名空间不支持在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序或应用或游戏，使用合作伙伴中心中的开发沙盒 （例如，这是这种情况的任何游戏的与 Xbox Live 集成）。 这些产品必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
+> **Windows.ApplicationModel.Store** 命名空间不再更新新功能。 如果你的项目针对的是 Visual Studio 中的 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本（即，针对 Windows 10 版本 1607 或更高版本），我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 有关详细信息，请参阅[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序或应用或游戏，使用合作伙伴中心中的开发沙盒中不受支持**Windows.ApplicationModel.Store**命名空间 （例如，这是这种情况的任何游戏的与 Xbox Live 集成）。 这些产品必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>开始使用 CurrentApp 和 CurrentAppSimulator 类
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc67b61d9130838802774460cd38ec08e2e349b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024558"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158176"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -49,11 +49,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求下, 表中所示的标头都是必需的。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 正在提交的数据的类型。| 
+| 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -75,7 +75,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果不允许调用方访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务将在响应中返回 401 未经授权。
  
 <a id="ID4EEE"></a>
 
@@ -113,7 +113,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括的标头下表中所示。
+响应将始终会包括下表中所示的标头。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -142,11 +142,11 @@ gameserverds.xboxlive.com
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 变体| 变体的数组。| 
 | variantId| 变体的 Id。| 
-| name| 变体的名称。| 
+| name| 变体名称。| 
 | isPublisher|  | 
 | 排名|  | 
 | gameVariantSchemaId|  | 
-| variantSchemas| 变体的架构的数组。| 
+| variantSchemas| 数组的变体的架构。| 
 | variantSchemaId| 架构的 Id。| 
 | schemaContent| 架构内容| 
 | name| 架构的名称| 
@@ -156,7 +156,7 @@ gameserverds.xboxlive.com
 | gsiSetId| GSI 集的 Id。| 
 | gsiSetName| GSI 集的名称。| 
 | selectionOrder|  | 
-| variantSchemaId| 设置 varaint 架构 GSI 中使用的 id。| 
+| variantSchemaId| 设置在 GSI 中使用的 varaint 方案的 id。| 
  
 <a id="ID4EYBAC"></a>
 

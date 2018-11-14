@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f40219503c0a57f76fcee81858acf51f59b1df
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043726"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190930"
 ---
 # <a name="get-a-package-flight-submission"></a>获取软件包外部测试版提交
 
@@ -25,7 +25,7 @@ ms.locfileid: "6043726"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 在合作伙伴中心中创建软件包外部测试版提交的应用。 你可以执行此操作在合作伙伴中心，或者可以执行此操作通过使用[创建软件包外部测试版提交](create-a-flight-submission.md)的方法。
+* 在合作伙伴中心中创建软件包外部测试版提交的应用。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建软件包外部测试版提交](create-a-flight-submission.md)的方法。
 
 ## <a name="request"></a>请求
 
@@ -49,7 +49,7 @@ ms.locfileid: "6043726"
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | flightId | 字符串 | 必需。 软件包外部测试版（包含要获取的提交）的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
-| submissionId | 字符串 | 必需。 要获取的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于已在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
+| submissionId | 字符串 | 必需。 要获取的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文

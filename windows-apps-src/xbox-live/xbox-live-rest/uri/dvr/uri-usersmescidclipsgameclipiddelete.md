@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 04083701697bd799ed11e0ae31952256a70b1ac3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044706"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198901"
 ---
 # <a name="delete-usersmescidsscidclipsgameclipid"></a>DELETE (/users/me/scids/{scid}/clips/{gameClipId})
-删除游戏剪辑这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，根据问题的 URI 的函数。
+删除这些 Uri 的域的游戏剪辑`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
  
   * [备注](#ID4EX)
   * [URI 参数](#ID4ECB)
@@ -50,14 +50,14 @@ ms.locfileid: "6044706"
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | 
 | scid| 字符串| 正在访问的资源的服务配置 ID。 必须匹配的身份验证的用户的 SCID。| 
-| gameClipId| 字符串| GameClip 所访问的资源的 ID。| 
+| gameClipId| 字符串| GameClip 正在访问的资源的 ID。| 
   
 <a id="ID4ENB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-需要为此方法仅的 Xuid 声明。
+需要为此方法仅 Xuid 声明。
   
 <a id="ID4EYB"></a>
 
@@ -67,7 +67,7 @@ ms.locfileid: "6044706"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅路由到该服务后验证标头、 身份验证令牌等中的声明的有效性。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌用语请求。| 
@@ -94,15 +94,15 @@ ms.locfileid: "6044706"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-本部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 204| “确定”| 该剪辑的成功删除。| 
+| 204| “确定”| 成功删除的剪辑。| 
 | 401| 未授权| 没有在请求中的身份验证令牌格式问题。| 
 | 403| 已禁止| 缺少某些必需声明。| 
-| 404| 找不到| 在 URL 中指定该剪辑不存在 （或其已被删除第二次）。| 
-| 503| 不允许| 该服务或一些下游的依赖项都已关闭。 使用标准后关闭行为重试。| 
+| 404| 找不到| 在 URL 中指定该剪辑时不存在 （或者它已删除第二次）。| 
+| 503| 不允许| 该服务或一些下游依赖项都已关闭。 使用标准后关闭行为重试。| 
   
 <a id="ID4EIAAC"></a>
 
@@ -111,12 +111,12 @@ ms.locfileid: "6044706"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅路由到该服务后验证标头、 身份验证令牌等中的声明的有效性。示例： 1，vnext。| 
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。| 
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌用语请求。| 
 | 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。| 
 | 重试后| 字符串| 指示客户端在不可用的服务器的情况下稍后重试。| 
-| 有所不同| 字符串| 指示下游代理如何缓存响应。| 
+| 不同| 字符串| 指示下游代理如何缓存响应。| 
   
 <a id="ID4E2CAC"></a>
 
@@ -132,7 +132,7 @@ ms.locfileid: "6044706"
  
 ## <a name="response-body"></a>响应正文
  
-该服务将通过 HTTP 状态代码的 204 （任何内容） 成功后做出响应。 尝试为删除同一个对象，或不存在对象将返回 404。
+该服务将通过 HTTP 状态代码的 204 （任何内容） 后成功做出响应。 尝试为删除同一个对象，或不存在对象将返回 404。
  
 发生错误，将返回一个**ServiceErrorResponse**对象。
   

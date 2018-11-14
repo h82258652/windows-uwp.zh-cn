@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 95a6a912e663773d427a6786a6af7b1fdf26c548
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6033351"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158062"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
 URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -35,11 +35,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求下, 表中所示的标头都是必需的。
+当发出请求下, 表中所示的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | 
-| 内容类型| 应用程序/json| 正在提交的数据的类型。| 
+| 内容类型| 应用程序/json| 提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -49,7 +49,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括的标头下表中所示。
+响应将始终会包括下表中所示的标头。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | --- | 

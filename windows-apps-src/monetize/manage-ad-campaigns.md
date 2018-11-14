@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c86c0d5d1a10442c7addeed11cdbfc37846f337
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027627"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206218"
 ---
 # <a name="manage-ad-campaigns"></a>管理广告活动
 
 在 [Microsoft Store 促销 API](run-ad-campaigns-using-windows-store-services.md) 中使用这些方法来创建、编辑和获取适合你的应用的促销性广告活动。 使用此方法创建的每个活动只能与一个应用关联。
 
->**注意**&nbsp;&nbsp;你还可以创建和管理广告市场活动使用合作伙伴中心中，并可在合作伙伴中心中访问以编程方式创建的市场活动。 有关合作伙伴中心中管理广告活动的详细信息，请参阅[创建广告市场活动为你的应用](../publish/create-an-ad-campaign-for-your-app.md)。
+>**请注意**&nbsp;&nbsp;你还可以创建和管理广告市场活动使用合作伙伴中心中，并且可以在合作伙伴中心中访问以编程方式创建的市场活动。 有关合作伙伴中心中管理广告活动的详细信息，请参阅[创建广告市场活动的应用](../publish/create-an-ad-campaign-for-your-app.md)。
 
 使用这些方法创建或更新活动时，你通常还需要调用以下一种或多种方法来管理与活动关联的*投放渠道*、*目标市场配置文件*和*创意*。 有关活动与投放渠道、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
@@ -33,7 +33,7 @@ ms.locfileid: "6027627"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 促销 API 的所有[先决条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
-  >**注意**&nbsp;&nbsp;作为必备条件的一部分，该[创建合作伙伴中心中的至少一个付费的广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)，请确保你的广告市场活动的至少一种付款方式合作伙伴中心中添加。 使用此 API 创建的广告市场活动的投放渠道将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
+  >**请注意**&nbsp;&nbsp;作为必备条件的一部分，请确保该[创建合作伙伴中心中的至少一个付费的广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)，你的广告市场活动的至少一种付款方式合作伙伴中心中添加。 使用此 API 创建的广告市场活动的投放渠道将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
 
 * [获取 Azure AD 访问令牌](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 

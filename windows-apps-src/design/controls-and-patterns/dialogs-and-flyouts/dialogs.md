@@ -15,11 +15,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba4bfcd38acba2bcd7c8399b8b17184edacc15a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034726"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191985"
 ---
 ## <a name="dialog-controls"></a>对话框控件
 
@@ -28,13 +28,13 @@ ms.locfileid: "6034726"
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要 Api**: [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要的 Api**: [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用对话框通知用户重要信息或在可以完成某个操作之前请求确认或其他信息。
 
-有关在何时使用何时使用浮出控件 （类似控件），请参阅[对话框和浮出控件](index.md)与对话框的建议。 
+有关何时使用何时使用浮出控件 （类似控件），请参阅[对话框和浮出控件](index.md)与对话框的建议。 
 
 ## <a name="examples"></a>示例
 

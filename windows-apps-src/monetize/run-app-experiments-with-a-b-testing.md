@@ -9,32 +9,32 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 6697d522ee14a00bb8cb9c0c2c367f01d6e50ef4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028994"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250486"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>通过 A/B 测试运行应用实验
 
-你可以使用合作伙伴中心定义远程变量，你可以在运行时从通用 Windows 平台 (UWP) 应用，并且你可以测试这些值的变体，用户标识用于驱动所需的用户行为的最有效的值。 应用可以使用远程变量配置应用体验，例如应用内购买、注册流程、描述文字和广告发布。
+你可以使用合作伙伴中心定义远程变量，你可以在运行时从通用 Windows 平台 (UWP) 应用，并且还可以测试这些值的变体的用户标识用于驱动所需的用户行为的最有效的值。 应用可以使用远程变量配置应用体验，例如应用内购买、注册流程、描述文字和广告发布。
 
-A/B 测试的目标应该是标识远程变量值的变体，该变体可能会通过提供更具吸引力的应用体验提高转换率（例如更多应用内购买）。 在标识成功变体后，你可以立即结束实验并启用该变体，为整个用户受众从合作伙伴中心中，而无需重新发布你的应用。
+A/B 测试的目标应该是标识远程变量值的变体，该变体可能会通过提供更具吸引力的应用体验提高转换率（例如更多应用内购买）。 在标识成功变体后，你可以立即结束实验并启用为整个用户受众从合作伙伴中心中，该变体，而无需重新发布你的应用。
 
 ## <a name="create-and-run-an-ab-test"></a>创建并运行 A/B 测试
 
 若要创建并运行 A/B 测试，请执行以下步骤：
 
-1. [创建项目并定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 此项目包含你的实验的变量和默认变量值。  
-2. [针对实验为你的应用编码](code-your-experiment-in-your-app.md)。 使用 Microsoft Store Services SDK 中的 API 获取你在合作伙伴中心中创建项目的远程变量值、 使用此数据修改正在测试的功能的行为，并将视图事件和转换事件发送到合作伙伴中心。
+1. [创建项目和定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 此项目包含你的实验的变量和默认变量值。  
+2. [针对实验为你的应用编码](code-your-experiment-in-your-app.md)。 使用 Microsoft Store Services SDK 中 API 获取你在合作伙伴中心中创建项目的远程变量值、 使用此数据修改正在测试的功能的行为并将视图事件和转换事件发送到合作伙伴中心。
 3. [定义你在合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)。 在你的项目中创建一个可定义你的 A/B 测试的唯一目标和变体的测试。
-4. [运行和管理在合作伙伴中心 ashboard 实验](manage-your-experiment.md)。 激活实验，并使用合作伙伴中心查看实验结果并完成实验。
+4. [运行和管理合作伙伴中心 ashboard 实验](manage-your-experiment.md)。 激活实验，并使用合作伙伴中心查看实验结果并完成实验。
 
 有关演示端到端过程的演练，请参阅[通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 ## <a name="requirements"></a>要求
 
-A / B 测试在合作伙伴中心支持仅适用于 UWP 应用。
+A / B 测试在合作伙伴中心中受支持仅适用于 UWP 应用。
 
 在可以通过 A/B 测试运行实验之前，必须设置你的开发计算机：
 
@@ -64,7 +64,7 @@ A / B 测试在合作伙伴中心支持仅适用于 UWP 应用。
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建项目并在合作伙伴中心中定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [创建项目并定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [为实验编写应用代码](code-your-experiment-in-your-app.md)
 * [在合作伙伴中心中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
 * [合作伙伴中心中管理实验](manage-your-experiment.md)

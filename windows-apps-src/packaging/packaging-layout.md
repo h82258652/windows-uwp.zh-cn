@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 9342b4ce35cb50037813ed2210e2d7246411ad92
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032981"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154209"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
 
@@ -145,7 +145,7 @@ ms.locfileid: "6032981"
 
 每个可选包都有自己独特的包系列名称，必须使用 **PackageFamily** 元素进行定义，同时将 **Optional** 属性指定为 **true**。 **RelatedSet** 属性用于指定可选包是否在相关集中（默认为 true）- 可选包是否应随主包一起更新。
 
-**PrebuiltPackage**元素用于添加包布局以包含或引用要构建的应用包文件中未定义的包。 在此情况下，另一个 DLC 可选包包含在此处，以便主应用包文件可以引用它并使其成为相关集的一部分。
+**PrebuiltPackage**元素用于添加包布局以包含或引用要构建的应用包文件中未定义的包。 在此情况下，另一个 DLC 可选包包含以下，以便在主应用包文件可以引用它并使其成为相关集的一部分。
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用包布局和 MakeAppx.exe 构建应用包

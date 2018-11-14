@@ -2,22 +2,22 @@
 author: JnHs
 title: 广告市场活动报告
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: 合作伙伴中心中的广告市场活动报告可使你查看应用推广广告市场活动的执行方式。
+description: 在合作伙伴中心中的广告市场活动报告可使你查看应用推广广告市场活动的执行方式。
 ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装
 ms.localizationpriority: medium
 ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025688"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210028"
 ---
 # <a name="ad-campaign-report"></a>广告市场活动报告
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看报告，在左侧的导航菜单中展开**吸引**，然后选择**广告市场活动**。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告市场活动**报告可使你可以查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看报告，在左侧的导航菜单中展开**吸引**并选择**广告市场活动**。
 
 ## <a name="definitions"></a>定义
 
@@ -69,7 +69,7 @@ ms.locfileid: "6025688"
 2.  客户已登录 Microsoft 帐户。
 3.  客户满足 [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要求（无法跟踪不满足 COPPA 要求的客户）。
 
-因此，应用安装跟踪有可能低估由广告市场活动所产生的实际安装量。 请注意，你可以查看的应用的安装总数 (通过市场活动和其他) 在合作伙伴中心中的[购置](acquisitions-report.md)报告。
+因此，应用安装跟踪有可能低估由广告市场活动所产生的实际安装量。 请注意，你可以查看应用的安装总数 (通过市场活动和其他) 在合作伙伴中心中的[购置](acquisitions-report.md)报告。
 
 
 ## <a name="account-billing-history"></a>帐户帐单历史记录

@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eaba6a02fa2ebb00ef4861a5bf37963796b78b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6033950"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198969"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a>/users/xuid({xuid})/deleteuserdata
-完全重置为测试用户的信誉数据。 仅供测试。 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。
+完全重置为测试用户信誉数据。 仅供测试。 这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。
  
   * [URI 参数](#ID4EV)
  
@@ -37,7 +37,7 @@ ms.locfileid: "6033950"
 
 [POST (/users/xuid({xuid})/deleteuserdata)](uri-usersxuiddeleteuserdatapost.md)
 
-&nbsp;&nbsp;完全重置为测试用户的信誉数据。 仅供测试。
+&nbsp;&nbsp;完全重置为测试用户信誉数据。 仅供测试。
  
 <a id="ID4ECC"></a>
 

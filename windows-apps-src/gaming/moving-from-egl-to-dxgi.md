@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027234"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6204720"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>将 EGL 代码与 DXGI 和 Direct3D 进行比较
 
@@ -30,7 +30,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 
 和 EGL 一样，DXGI 和 Direct3D 提供配置图形资源、获取你的着色器要绘制到的呈现上下文以及在窗口中显示结果的方法。 但是，DXGI 和 Direct3D 具有更多选项，因此从 EGL 移植时需要花费更多精力才能获得正确设置。
 
-> **注意**本指南基于 EGL 1.4 中，找到 Khronos Group 打开规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
+> **请注意**本指南基于 EGL 1.4 中，找到 Khronos Group 开放规范： [khronos 原生平台图形界面 （EGL 版本 1.4-2011 年 4 月 6 日） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指南中未涉及语法中特定于其他平台和开发语言的差别。
 
  
 
@@ -74,7 +74,7 @@ DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用�
 6.  当管道已执行且已将框架绘制到后台缓冲区时，使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 将其显示到屏幕。
 
 要更详细地检查此过程，请查看 [DirectX 图形入门](https://msdn.microsoft.com/library/windows/desktop/hh309467)。 本文的其余部分介绍许多基本图形管道设置和管理的常见步骤。
-> **注意** Windows 桌面应用具有不同的 Api 来获取 Direct3D 交换链，如[**d3d11device:: createdeviceandswapchain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)，并且不使用[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)对象。
+> **请注意** Windows 桌面应用具有不同的 Api 来获取 Direct3D 交换链，如[**d3d11device:: createdeviceandswapchain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)，并且不使用[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)对象。
 
  
 

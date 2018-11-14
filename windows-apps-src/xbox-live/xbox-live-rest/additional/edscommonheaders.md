@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 80a38dfa2dad97b4383f86328ddbf61d6e4a299f
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6186900"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6260875"
 ---
 # <a name="eds-common-headers"></a>EDS 通用标头
 

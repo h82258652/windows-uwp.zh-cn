@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 63214ce47bffc5a0b13f421e5185d06cd810ea34
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023070"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154083"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
 Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 \(UWP\) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 模拟器不使用相同的用户界面与 Surface Hub，但它可用于测试你的应用的外观和行为与 Surface Hub 的屏幕大小和分辨率。
 
-有关详细信息的模拟器工具一般情况下，请参阅[在模拟器中运行的 UWP 应用](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)。
+有关详细信息的模拟器工具一般情况下，请参阅[在模拟器中的运行 UWP 应用](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)。
 
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>将 Surface Hub 分辨率添加到模拟器
 若要将 Surface Hub 分辨率添加到模拟器，请执行以下操作：
@@ -80,7 +80,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 默认情况下，Surface Hub 仅从 Microsoft Store 安装应用。 若要安装由其他来源签名的应用，必须启用开发人员模式。
 
 > [!NOTE]
-> 在启用开发人员模式后，你将需要重置 Surface Hub，如果你想要重新禁用该。 重置设备将删除所有本地用户文件和配置，然后重新安装 Windows。
+> 启用开发人员模式后，你将需要重置 Surface Hub，如果你想要重新禁用该。 重置设备将删除所有本地用户文件和配置，然后重新安装 Windows。
 
 1. 从 Surface Hub 的“开始”**** 菜单中，打开“设置”应用。
 
@@ -92,7 +92,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 3. 选择“开发人员模式”**** 并接受警告提示。
 
 ### <a name="deploy-your-app-from-visual-studio"></a>从 Visual Studio 部署应用
-有关部署过程的详细信息一般情况下，请参阅[部署和调试 UWP 应用](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
+在部署过程的详细信息一般情况下，请参阅[部署和调试 UWP 应用](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
 
    > [!NOTE]
    > 此功能需要 Visual Studio 2015 Update 1 个或更高版本，但我们建议你使用最新的最新版本的 Visual Studio。 你的所有最新的开发和安全更新，将 gibe 保持最新的 Visual Studio 实例。
@@ -108,7 +108,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
    > [!TIP] 
    > 在启用开发人员模式后，你可以在欢迎屏幕上找到 Surface Hub 的 IP 地址。
 
-3. 选择**开始调试 (F5)** 部署和调试你的应用在 Surface Hub 中，或者在按住 Ctrl + F5 仅部署应用。
+3. 选择**开始调试 (F5)** 部署和调试你的应用在 Surface Hub，或按 Ctrl + F5 仅部署应用。
 
    > [!TIP]
-   > 如果 Surface Hub 显示欢迎屏幕，将其消除选择任意按钮。
+   > 如果 Surface Hub 显示欢迎屏幕，请选择任意按钮清除它。

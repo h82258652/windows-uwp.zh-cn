@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 40d2c29dcab1a54046cb0def882cfa5f80b1f1f6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029525"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209111"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>实现 C++/WinRT 与 ABI 之间的互操作
 
-本主题介绍如何将 SDK 应用程序二进制接口 (ABI) 之间的转换和[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)对象。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
+本主题介绍如何在 SDK 应用程序二进制接口 (ABI) 之间转换和[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)对象。 你可以借助这些技术，为使用 Windows 运行时的这两种编程方式的代码实现互操作，也可以在将代码从 ABI 逐步迁移到 C++/WinRT 时使用这些技术。
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>什么是 Windows 运行时 ABI？什么是 ABI 类型？
 Windows 运行时类（运行时类）实际上是一种抽象。 这种抽象定义了一个二进制接口（应用程序二进制接口，或 ABI），它允许各种编程语言与一个对象进行交互。 不管使用何种编程语言，客户端代码与 Windows 运行时对象的交互发生在最低级别，在此客户端语言构造被转换为对象的 ABI 调用。

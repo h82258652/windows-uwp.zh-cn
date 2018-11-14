@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 610b794c0ded6791e93c14d8960366132afd973b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044577"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201913"
 ---
 # <a name="game-flow-management"></a>游戏流管理
 
@@ -291,7 +291,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <td align="left">OnDpiChanged</td>
 <td align="left">处理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 显示器的 DPI 已更改，且游戏相应地调整其资源。
 <div class="alert">
-<strong>注意</strong>[<strong>CoreWindow</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404559)坐标位于[direct2d](https://msdn.microsoft.com/library/windows/desktop/dd370987)的 Dip （与设备独立像素）。 因此，要正确显示任何 2D 资产或基元，必须通知 Direct2D 关于 DPI 的更改。
+<strong>请注意</strong>[<strong>CoreWindow</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404559)坐标位于[direct2d](https://msdn.microsoft.com/library/windows/desktop/dd370987)的 Dip （设备无关的像素）。 因此，要正确显示任何 2D 资产或基元，必须通知 Direct2D 关于 DPI 的更改。
 </div>
 <div>
 </div></td>

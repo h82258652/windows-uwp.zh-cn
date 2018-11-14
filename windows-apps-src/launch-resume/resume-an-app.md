@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 717c819aaa732cf8d29e0a701a1fec81485f48ac
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051458"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202459"
 ---
 # <a name="handle-app-resume"></a>处理应用恢复
 
@@ -118,7 +118,7 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> 因为[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)事件未从 UI 线程中引发，调度程序必须使用你的处理程序中调度对你的 UI 的任何调用。
+> 由于[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)事件未从 UI 线程中引发，因此调度程序必须使用你的处理程序中调度对你的 UI 的任何调用。
 
 ## <a name="remarks"></a>备注
 

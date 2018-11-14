@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039850"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6259234"
 ---
 # <a name="getting-started-animation"></a>入门：动画
 
@@ -128,7 +128,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 可手动编辑此 XAML，或返回到 Blend 以继续在其上执行操作。 Blend 使创建有趣的用户界面变得很有意思，并且使用图形工具设置界面动画的能力可极大加快开发速度。 有关动画的详细信息，请参阅[动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**注意**适用于<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 应用</span>的动画信息，请参阅[设置动画的 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**请注意**适用于<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 应用</span>的动画信息，请参阅[设置动画的 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
 ### <a name="next-step"></a>下一步
 

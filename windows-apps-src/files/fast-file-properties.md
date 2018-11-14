@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp, 文件, 属性
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f63e848820361a64a2a96348a8e1cc2419f233
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035343"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207959"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速访问 UWP 中的文件属性 
 
 了解如何从库中收集文件及其属性的列表，然后在应用中使用这些属性。  
 
 先决条件 
-- **异步编程适用于通用 Windows 平台 (UWP) 应用**    可了解如何在 C# 或 Visual Basic 编写异步应用，请参阅[调用异步 Api 采用 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
+- **异步编程适用于通用 Windows 平台 (UWP) 应用**    你可以了解如何在 C# 或 Visual Basic 编写异步应用，请参阅[调用异步 Api 采用 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
 - **对库的访问权限**这些示例中的代码需要**picturesLibrary**功能，但你的文件位置可能根本需要其他功能或任何功能。 若要了解详细信息，请参阅[文件访问权限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
 - **简单文件枚举**此示例使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)来设置几个高级的枚举属性。 要详细了解如何只获取一个较小目录的简单文件列表，请参阅[枚举和查询文件和文件夹](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
 

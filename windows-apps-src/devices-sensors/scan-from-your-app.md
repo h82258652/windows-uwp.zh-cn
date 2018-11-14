@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9128056cbb3b9218d164b243948d9dd16af0786
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045557"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6256470"
 ---
 # <a name="scan-from-your-app"></a>从应用扫描
 
@@ -26,7 +26,7 @@ ms.locfileid: "6045557"
 
 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 
-**重要** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) Api 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用可以使用这些 Api 仅在 windows 10 桌面版上。
+**重要提示** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) Api 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用可以使用这些 Api 仅在 windows 10 桌面版上。
 
 若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象并获取 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
 
@@ -100,7 +100,7 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
 
 要以默认设置进行扫描，你的应用将依靠 [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 命名空间选择一个扫描仪并从该来源进行扫描。 未更改扫描设置。 可能的扫描仪为自动配置、平板或送纸器。 此类型的扫描最有可能产生成功的扫描操作，即使它从错误的来源进行扫描，如从平板扫描仪而不是从送纸器。
 
-**注意**如果用户送纸器中放置要扫描的文档，扫描仪将从平板改为扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
+**请注意**如果用户送纸器中扫描的文档，扫描仪将从平板改为扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
@@ -111,7 +111,7 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
 
 应用可以使用设备的[自动配置的扫描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)来以最佳的扫描设置进行扫描。 使用此选项，设备本身可以根据要扫描的内容确定最佳扫描设置，例如颜色模式和扫描分辨率。 设备在运行时为每个新的扫描作业选择扫描设置。
 
-**注意**并非所有扫描仪都支持此功能，因此应用必须检查扫描仪是否支持使用此设置前此功能。
+**请注意**并非所有扫描仪都支持此功能，因此应用必须检查扫描仪是否支持使用此设置前此功能。
 
 在本示例中，应用首先检查扫描仪是否可以进行自动配置，然后进行扫描。 要指定平板扫描仪或送纸器扫描仪，只需使用 **Flatbed** 或 **Feeder** 替换 **AutoConfigured**。
 

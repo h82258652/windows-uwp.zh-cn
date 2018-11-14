@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 成就, 奖励
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c7d192bfe4b156e3767617ad9243efd1d94bd8e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024407"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199559"
 ---
 # <a name="achievement-rewards"></a>成就奖励
 
@@ -38,7 +38,7 @@ Xbox Live 支持以下类型的奖励：
 
 当用户解锁玩家分数成就时，Xbox Live 会自动将用户的玩家分数提高配置的数量。
 
-在可将玩家分数作为成就奖励的游戏方面存在限制。 请参阅上策略文档https://developer.xboxlive.com/获取最新信息。
+在可将玩家分数作为成就奖励的游戏方面存在限制。 请参阅上策略文档https://developer.xboxlive.com/的最新信息。
 
 #### <a name="art"></a>艺术作品 ####
 你是否拥有一些设计人员在游戏早期初始阶段绘制的有趣的概念艺术作品？ 你是否拥有漂亮、分辨率高的图像，用于在玩家访问时装饰中心应用程序？ 也许你的应用支持多种皮肤？ 通过艺术奖励，你可以在游戏中获得华丽、美观的体验，除此以外，玩家必须赢取才能获得。

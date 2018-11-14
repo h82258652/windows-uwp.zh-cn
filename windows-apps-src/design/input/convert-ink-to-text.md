@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 83142b0a3b24e25f8e7a922d800262f505cd8cc2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027913"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151957"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -475,7 +475,7 @@ string str = "Recognition result\n";
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
-**注意**用户可以看到的已安装的语言列表，方法转到**设置-&gt;时间和语言**。 已安装的语言在**语言**下列出。
+**请注意**用户可以看到的已安装的语言列表，方法转到**设置-&gt;时间和语言**。 已安装的语言在**语言**下列出。
 
 若要安装新语言包并为该语言启用手写识别：
 

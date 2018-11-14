@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 039cc9cf1d7d1d77330ff280d7cff5619971b075
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050461"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6204911"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript 对象表示法 (JSON) 对象参考
  
 JavaScript 对象表示法 (JSON) 是轻量、 基于标准的且面向对象表示法封装 web 上的数据。
  
-Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象。 本部分提供有关每个使用 Xbox Live 服务的 JSON 对象的参考信息。
+Xbox Live 服务定义中，请求和响应，该服务使用的 JSON 对象。 本部分提供有关每个使用 Xbox Live 服务的 JSON 对象的参考信息。
  
 <a id="ID4EHB"></a>
 
@@ -37,21 +37,21 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [ActivityRequest (JSON)](json-activityrequest.md)
 
-&nbsp;&nbsp;有关完整状态的一个或多个用户的请求。
+&nbsp;&nbsp;有关一个或多个用户的完整状态信息请求。
 
 [AggregateSessionsResponse (JSON)](json-aggregatesessionsresponse.md)
 
-&nbsp;&nbsp;用户的适用性会话都包含聚合的数据。
+&nbsp;&nbsp;为用户的适用性会话包含聚合的数据。
 
 [BatchRequest (JSON)](json-batchrequest.md)
 
-&nbsp;&nbsp;用来筛选状态信息，如用户、 设备和标题属性的数组。
+&nbsp;&nbsp;用来筛选状态信息，如用户、 设备和游戏的属性的数组。
 
 [DeviceEndpoint (JSON)](json-deviceendpoint.md)
 
 [DeviceRecord (JSON)](json-devicerecord.md)
 
-&nbsp;&nbsp;有关设备，包括其类型和活动对其游戏的信息。
+&nbsp;&nbsp;有关设备，包括其类型和作品在其上的信息。
 
 [Feedback (JSON)](json-feedback.md)
 
@@ -65,7 +65,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [GameClipThumbnail (JSON)](json-gameclipthumbnail.md)
 
-&nbsp;&nbsp;包含与单个缩略图相关的信息。 可以有多个大小每个剪辑，并由客户端选择正确显示。
+&nbsp;&nbsp;包含一个单独的缩略图的相关信息。 可以有多个大小每个剪辑，并由客户端选择正确显示。
 
 [GameClipUri (JSON)](json-gameclipuri.md)
 
@@ -75,15 +75,15 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [GameResult (JSON)](json-gameresult.md)
 
-&nbsp;&nbsp;表示数据，以描述游戏会话的结果的 JSON 对象。
+&nbsp;&nbsp;表示数据，以描述的游戏会话的结果的 JSON 对象。
 
 [GameSession (JSON)](json-gamesession.md)
 
-&nbsp;&nbsp;JSON 对象，多人游戏会话表示游戏的数据。
+&nbsp;&nbsp;多人游戏会话表示游戏数据的 JSON 对象。
 
 [GameSessionSummary (JSON)](json-gamesessionsummary.md)
 
-&nbsp;&nbsp;为游戏会话表示摘要数据一个 JSON 对象。
+&nbsp;&nbsp;为游戏会话表示摘要数据的 JSON 对象。
 
 [GetClipResponse (JSON)](json-getclipresponse.md)
 
@@ -101,15 +101,15 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [inventoryItem (JSON)](json-inventoryitem.md)
 
-&nbsp;&nbsp;核心库存项目表示标准项可授予权利。
+&nbsp;&nbsp;核心清单项表示标准项可授予权利。
 
 [LastSeenRecord (JSON)](json-lastseenrecord.md)
 
-&nbsp;&nbsp;有关系统上一次看到用户，当用户在没有有效 DeviceRecord 可用的信息。
+&nbsp;&nbsp;有关系统上次看到的用户，当用户在没有有效 DeviceRecord 提供的信息。
 
 [MatchTicket (JSON)](json-matchticket.md)
 
-&nbsp;&nbsp;表示匹配票证，玩家用于查找其他玩家通过多人游戏会话目录 (MPSD) 的 JSON 对象。
+&nbsp;&nbsp;表示玩家用于查找其他玩家通过多人游戏会话目录 (MPSD) 的匹配票证的 JSON 对象。
 
 [MediaAsset (JSON)](json-mediaasset.md)
 
@@ -129,7 +129,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [MultiplayerSessionRequest (JSON)](json-multiplayersessionrequest.md)
 
-&nbsp;&nbsp;对于**MultiplayerSession**对象上的操作传递请求的 JSON 对象。
+&nbsp;&nbsp;请求的 JSON 对象传递**MultiplayerSession**对象的操作。
 
 [MultiplayerSession (JSON)](json-multiplayersession.md)
 
@@ -149,11 +149,11 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [PermissionCheckBatchResponse (JSON)](json-permissioncheckbatchresponse.md)
 
-&nbsp;&nbsp;批处理权限的结果检查的多个用户的权限值列表。
+&nbsp;&nbsp;结果的批处理权限检查的多个用户的权限值列表。
 
 [PermissionCheckBatchUserResponse (JSON)](json-permissioncheckbatchuserresponse.md)
 
-&nbsp;&nbsp;批处理权限的原因检查的一个目标用户的权限值列表。
+&nbsp;&nbsp;批处理权限的原因检查的一个目标用户的权限值的列表。
 
 [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)
 
@@ -165,7 +165,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [Person (JSON)](json-person.md)
 
-&nbsp;&nbsp;有关单个人员人脉系统中的元数据。
+&nbsp;&nbsp;人脉系统中的单个用户相关的元数据。
 
 [PersonSummary (JSON)](json-personsummary.md)
 
@@ -173,15 +173,15 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [Player (JSON)](json-player.md)
 
-&nbsp;&nbsp;在游戏会话包含玩家数据。
+&nbsp;&nbsp;在游戏会话中包含玩家数据。
 
 [PresenceRecord (JSON)](json-presencerecord.md)
 
-&nbsp;&nbsp;联机状态相关的单个用户的数据。
+&nbsp;&nbsp;有关单个用户的联机状态的数据。
 
 [Profile (JSON)](json-profile.md)
 
-&nbsp;&nbsp;用户的个人资料设置。
+&nbsp;&nbsp;用户的个人配置文件设置。
 
 [Progression (JSON)](json-progression.md)
 
@@ -193,7 +193,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [QueryClipsResponse (JSON)](json-queryclipsresponse.md)
 
-&nbsp;&nbsp;包装返回的游戏剪辑，以及分页信息列表的列表。
+&nbsp;&nbsp;换行分页信息的列表以及返回游戏剪辑的列表。
 
 [quotaInfo (JSON)](json-quota.md)
 
@@ -201,11 +201,11 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [Requirement (JSON)](json-requirement.md)
 
-&nbsp;&nbsp;解锁成就和远的用户是向满足这些条件。
+&nbsp;&nbsp;成就和用户向会议它们是距离解锁条件。
 
 [ResetReputation (JSON)](json-resetreputation.md)
 
-&nbsp;&nbsp;包含用户的现有评分应更改的新的基本信誉评分。
+&nbsp;&nbsp;包含新的基本信誉评分应更改用户的现有评分。
 
 [Reward (JSON)](json-reward.md)
 
@@ -221,7 +221,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [ServiceErrorResponse (JSON)](json-serviceerrorresponse.md)
 
-&nbsp;&nbsp;当遇到服务错误时，将返回一个相应的 HTTP 错误代码。 （可选） 服务还可能包括 ServiceErrorResponse 对象，如下面定义。 在生产环境中可能包含较少的数据。
+&nbsp;&nbsp;当遇到服务错误时，将返回一个相应的 HTTP 错误代码。 （可选） 服务还可能包括 ServiceErrorResponse 对象，如下面定义。 在生产环境中，较少的数据可能包括在内。
 
 [SessionEntry (JSON)](json-sessionentry.md)
 
@@ -253,7 +253,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [UserClaims (JSON)](json-userclaims.md)
 
-&nbsp;&nbsp;返回当前身份验证的用户的信息。
+&nbsp;&nbsp;返回当前身份验证的用户信息。
 
 [UserList (JSON)](json-userlist.md)
 
@@ -269,7 +269,7 @@ Xbox Live 服务定义中，请求和响应，该服务所使用的 JSON 对象�
 
 [VerifyStringResult (JSON)](json-verifystringresult.md)
 
-&nbsp;&nbsp;结果代码对应于每个提交给[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)的字符串。
+&nbsp;&nbsp;结果代码对应于提交到[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)每个字符串。
 
 [XuidList (JSON)](json-xuidlist.md)
 

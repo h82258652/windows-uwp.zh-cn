@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045606"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207992"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>入门：选择编程语言
 
@@ -30,9 +30,9 @@ ms.locfileid: "6045606"
 -   [创建第一个 UWP 应用使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [创建第一个 UWP 应用使用 JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
-**注意**对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准不是本地不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
+**请注意**对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准不是本地不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
 -   [角度](https://code.google.com/p/angleproject/)
--   [创建第一个使用 DirectX UWP 应用](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [创建在第一个使用 DirectX 的 UWP 应用](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [使用 DirectX 的 UWP 应用示例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 在哪里？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 

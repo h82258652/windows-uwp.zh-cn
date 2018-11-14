@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 227cd378a92fcdfec88e1ae0ccd7173986d37abf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022833"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149858"
 ---
 # <a name="multiplayer-session-browse"></a>多人游戏会话浏览
 

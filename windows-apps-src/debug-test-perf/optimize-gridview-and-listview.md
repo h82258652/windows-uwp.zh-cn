@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036222"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189577"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 和 GridView UI 优化
 
 
-**注意**更多详细信息，请参阅 //build/ 会议：[可以显著提高性能与大量数据 GridView 和 ListView 中的用户交互时](https://channel9.msdn.com/events/build/2013/3-158)。
+**请注意**的详细信息，请参阅 //build/ 会议：[可以显著提高性能与大量数据 GridView 和 ListView 中的用户交互时](https://channel9.msdn.com/events/build/2013/3-158)。
 
 通过 UI 虚拟化、元素减少和项目的进度更新来改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关数据虚拟化技术，请参阅 [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md)。
 

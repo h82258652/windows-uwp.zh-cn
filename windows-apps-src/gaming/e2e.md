@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: d29e647b2932e1d89247da5b91d8f836d11260d6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031556"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186578"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -104,26 +104,16 @@ ms.locfileid: "6031556"
     </tr>        
 </table>
 
-### <a name="windows-dev-center"></a>Windows 开发人员中心
+### <a name="partner-center"></a>合作伙伴中心
 
-在 Windows 开发人员中心中注册开发人员帐户是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Microsoft Store。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。 
+[注册合作伙伴中心中的开发人员帐户](https://developer.microsoft.com/store/register)是发布 Windows 游戏的第一步。 开发人员帐户让你可以保留游戏名称和将免费或付费游戏提交到适用于所有 Windows 设备的 Microsoft Store。 使用开发人员帐户管理游戏和游戏内产品、获取详细分析，以及支持全世界玩家创建绝佳体验的服务。 
 
-Microsoft 还提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 我们建议在注册开发人员中心帐户之前查看是否有适合你的任何内容。 有关详细信息，请转到[开发人员计划](#developer-programs)
+Microsoft 还提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 我们建议查看是否有最适合自己之前注册合作伙伴中心帐户。 有关详细信息，请转到[开发人员计划](#developer-programs)
 
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>注册开发者帐户</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/bg124287">准备好注册了吗？</a></td>
-    </tr> 
-</table>
 
 ### <a name="developer-programs"></a>开发人员计划
 
-Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Microsoft Store 中发布游戏，你还需要在 Windows 开发人员中心创建开发者帐户。
+Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 如果你想要开发适用于 Xbox One 的游戏并在游戏中集成 Xbox Live 功能，请考虑加入开发人员计划。 若要在 Microsoft Store 中发布游戏，你还需要在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建开发者帐户。
 
 #### <a name="xbox-live-creators-program"></a>Xbox Live 创意者计划
 
@@ -146,7 +136,7 @@ Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows �
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 建议你先申请 ID@Xbox，然后在 Windows 开发人员中心注册开发者帐户。
+ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 我们建议你将应用到ID@Xbox先在合作伙伴中心开发者帐户注册。
 
 <table>
     <colgroup>
@@ -590,7 +580,7 @@ Windows JavaScript 应用可以采用一种简单而又直观的方式访问 Uni
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>你的游戏应该使用哪个版本的 DirectX？
 
-如果你的游戏选择 DirectX 时，你将需要确定要使用哪个版本： Microsoft Direct3D12 或 Microsoft Direct3D11。
+如果你的游戏选择 DirectX 时，你将需要确定使用哪个版本： Microsoft Direct3D12 或 Microsoft Direct3D11。
 
 DirectX 12 比以前的任何版本都更快更高效。 Direct3D 12 提供更丰富的场景、更多的对象、更复杂的效果，并且能全面利用 Windows 10 电脑和 Xbox One 上的现代 GPU 硬件。 由于 Direct3D 12 在较低级别工作，因此它能够向专业图形开发团队或有经验的 DirectX 11 开发团队提供最大程度优化图形所需的所有控制。
 
@@ -1290,7 +1280,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
         <td><a href="http://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
     </tr>
     <tr>
-        <td>Direct3D12 支持 DirectXTK （博客文章）</td>
+        <td>DirectXTK （博客文章） 中的 Direct3D12 支持</td>
         <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">对 DirectX 12 的支持</a></td>
     </tr>
 </table>
@@ -1368,9 +1358,9 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 </table>
  
 
-### <a name="enable-in-app-product-iap-purchases"></a>启用应用内产品 (IAP) 购买
+### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品 （加载项） 购买
 
-IAP（应用内产品）是供玩家在游戏中购买的补充项。 IAP 可以是新的加载项、游戏级别、项目或玩家可能喜欢的任何其他内容。 如果使用得当，则 IAP 可以在改进游戏体验的同时，提供收入。 通过 Windows 开发人员中心仪表板定义和发布游戏 IAP， 并支持使用游戏代码进行应用内购买。
+加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏的加载项通过合作伙伴中心，并使你的游戏代码中的应用内购买。
 
 <table>
     <colgroup>
@@ -1378,20 +1368,20 @@ IAP（应用内产品）是供玩家在游戏中购买的补充项。 IAP 可以
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>持久型应用内产品</td>
+        <td>持久型加载项</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219684">启用应用内产品购买</a></td>
     </tr>
     <tr>
-        <td>可消费应用内产品</td>
+        <td>易耗型加载项</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219683">启用可消费应用内产品购买</a></td>
     </tr>
     <tr>
-        <td>应用内产品详细信息和提交</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">IAP 提交</a></td>
+        <td>加载项的详细信息和提交</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">加载项提交</a></td>
     </tr>
     <tr>
-        <td>监视游戏的 IAP 销售和统计数据</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">IAP 购置报告</a></td>
+        <td>监视加载项销售和你的游戏的统计数据</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">加载项购置报告</a></td>
     </tr>
 </table>
  
@@ -1548,7 +1538,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
 
 ### <a name="publishing"></a>发布
 
-你将使用新的统一 Windows 开发人员中心仪表板发布和管理游戏程序包。
+你将使用[合作伙伴中心](https://partner.microsoft.com/dashboard)发布和管理游戏程序包。
 
 <table>
     <colgroup>
@@ -1556,15 +1546,15 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows 开发人员中心应用发布</td>
+        <td>合作伙伴中心应用发布</td>
         <td><a href="https://dev.windows.com/publish">发布 Windows 应用</a></td>
     </tr>
     <tr>
-        <td>Windows 开发人员中心高级发布 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Windows 开发人员中心仪表板高级发布指南</a></td>
+        <td>合作伙伴中心高级发布 (GDN)</td>
+        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">合作伙伴中心高级发布指南</a></td>
     </tr>
     <tr>
-        <td>使用 Azure Active Directory (AAD) 将用户添加到开发人员中心帐户</td>
+        <td>使用 Azure Active Directory (AAD) 将用户添加到你的合作伙伴中心帐户</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">管理帐户用户</a></td>
     </tr>   
     <tr>
@@ -1664,7 +1654,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
 
 完成开发并交付游戏并不意味着“游戏结束”。 你可能完成了一个版本的开发，但你在市场中的游戏之路才刚刚开始。 你会想要监视使用情况和错误报告、回复用户反馈以及发布游戏更新。
 
-### <a name="windows-dev-center-analytics-and-promotion"></a>Windows 开发人员中心分析和推广
+### <a name="partner-center-analytics-and-promotion"></a>合作伙伴中心分析和推广
 
 <table>
     <colgroup>
@@ -1673,10 +1663,10 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     </colgroup>
     <tr>
         <td>开发人员中心应用</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">用于查看已发布应用性能的开发人员中心 Windows10 应用</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">获取应用以查看已发布的应用的性能</a></td>
     </tr>  
     <tr>
-        <td>Windows 开发人员中心分析</td>
+        <td>合作伙伴中心分析</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">分析应用性能</a></td>
     </tr>
     <tr>

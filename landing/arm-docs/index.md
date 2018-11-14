@@ -1,6 +1,6 @@
 ---
 layout: LandingPage
-description: 本页提供了你可以开始开发 ARM64 win32 和 UWP 应用的信息。
+description: 本页提供了有关你可以开始开发 ARM64 win32 和 UWP 应用的信息。
 title: 基于 ARM 的 Windows 10
 author: msatranjr
 ms.author: misatran
@@ -9,35 +9,35 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: 基于 ARM、 ARM、 构建 win32 ARM64 应用构建 ARM64 驱动程序的 Windows 10
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042329"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252814"
 ---
 # <a name="windows-10-on-arm"></a>基于 ARM 的 Windows 10
-在 ARM 处理器的电脑上运行 Windows 10。 本页提供了你要开始开发应用并详细了解平台的信息。 我们还鼓励你通过使用在页面底部的链接中提供你的反馈。
+在 ARM 处理器受支持的电脑上运行 Windows 10。 本页提供了有关你可以了解有关平台的详细信息并开始开发应用的信息。 我们还鼓励你通过使用在页面底部的链接提供你的反馈。
 
 ## <a name="introductory-videos"></a>入门视频
-监视并了解如何在 ARM 上运行 Windows 10。
+观看并了解如何在 ARM 上运行 Windows 10。
 
 <ul class="cols cols3">
     <li>
         <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
-        <h3>生成 ARM64 Win32 c + + 应用</h3><p>了解如何安装适用于 Visual Studio ARM64 工具。 然后我们将指导你完成创建和新的 ARM 64 项目编译的步骤。</p>
+        <h3>构建 ARM64 Win32 c + + 应用程序</h3><p>了解如何安装适用于 Visual Studio ARM64 工具。 然后我们将指导你完成创建和编译的新的 ARM 64 项目的步骤。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>生成 2018年面向开发人员的 ARM 上的 Windows 10</h3><p>了解有关 Windows 10 上的 ARM 设备，如何神奇的 x86 模拟的工作原理，以及最后如何提交并在 ARM 上生成适用于 Windows 10 的应用。 我们将介绍如何生成 ARM64 的桌面应用和 UWP 的应用。</p>
+        <h3>Build 2018 适用于开发人员的 ARM 上的 Windows 10</h3><p>了解有关 Windows 10 上的 ARM 设备，如何幻的 x86 模拟的工作原理，以及最后如何提交和 ARM 上生成适用于 Windows 10 的应用。 我们将介绍如何生成 ARM64 的桌面应用和 UWP 的应用。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
-        <h3>Windows 社区站立与古柯 Gallo</h3><p>深入了解如何在 ARM64 上, 运行 Windows 10 和熟悉应用和此平台上的体验。</p>
+        <h3>Windows 社区站立与古柯 Gallo</h3><p>深入了解如何在 ARM64 上, 运行 Windows 10 和获取应用和此平台上的体验的感觉。</p>
     </li>
 </ul>
 
-## <a name="understanding-windows-10-on-arm"></a>基于 ARM 的了解 Windows 10
-获取通过查看这些资源了解平台。
+## <a name="understanding-windows-10-on-arm"></a>了解 Windows 10 在 ARM 上运行
+可以通过查看这些资源知道该平台。
 
 <ul class="cardsF panelContent cols cols2">
     <li>
@@ -49,8 +49,8 @@ ms.locfileid: "6042329"
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>基于 ARM 的 Windows 10 入门</h3>
-                    <p class="x-hidden-focus">请查看文档，以了解基础知识。</p>
+                    <h3>在 ARM 上的 Windows 10 入门</h3>
+                    <p class="x-hidden-focus">请查看文档，了解基础知识。</p>
                 </div>
             </div>
         </div>
@@ -89,20 +89,20 @@ ms.locfileid: "6042329"
 </ul>
 
 ## <a name="developing-for-windows-10-on-arm"></a>针对基于 ARM 的 Windows 10 进行开发
-在 ARM 上定制你的应用到 Windows 10 开始菜单，并那里充分利用可用的功能。  
+在 ARM 上定制你的应用到 Windows 10 开始菜单和那里充分利用可用的功能。  
 
 <ul class="cardsF panelContent cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="构建 ARM64 应用" data-linktype="absolute-path">
+                <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="生成 ARM64 应用" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Build ARM64 Win32 apps blog icon" src="/media/common/i_build.svg" data-linktype="external" />
                     </div>
                     </a>
                 <div class="cardText">
                     <h3>生成 ARM64 sdk 的新应用</h3>
-                    <p class="x-hidden-focus">请查看其中我们指导你完成编译为 ARM64 本机基于 ARM 的 Windows 10 上运行你的应用这篇博客文章。</p>
+                    <p class="x-hidden-focus">查看其中我们指导你完成你的应用编译为 ARM64 在基于 ARM 的 Windows 10 上本地运行此博客文章。</p>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@ ms.locfileid: "6042329"
                 </a>
                 <div class="cardText">
                     <h3>在 ARM 上的 UWP 应用</h3>
-                    <p class="x-hidden-focus">请按照本指南来设置你针对成功的通用 Windows 平台 (UWP) 应用。</p>                    
+                    <p class="x-hidden-focus">请按照本指南来设置你的通用 Windows 平台 (UWP) 应用获得成功。</p>                    
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@ ms.locfileid: "6042329"
 </ul>-->
 
 ## <a name="let-us-know-if-you-have-feedback"></a>让我们知道是否你有的反馈
-通过利用来自你和现有客户的反馈，我们会不断改进我们的产品。 如果你有想法，仍然问题，或只是想要如何出色共享你的体验，这些链接将帮助你。
+由你和现有客户利用反馈，我们将不断改进我们的产品。 如果你有想法，仍然问题，或只是想要如何出色共享是你的体验时，这些链接将帮助你。
 
 <ul class="cardsM cols cols3">
 <li>
@@ -208,8 +208,8 @@ ms.locfileid: "6042329"
         <a class="card" href="mailto:woafeedback@microsoft.com" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg" data-linktype="external" />
             <div class="cardText">
-                <h3>报告错误</h3>
-                <p>在我们的平台中发现一个 bug？ 发送电子邮件至我们的详细信息。</p>
+                <h3>报告 bug</h3>
+                <p>在我们的平台中发现一个 bug？ 电子邮件通知我们的详细信息。</p>
             </div>
         </a>
     </li>
@@ -217,8 +217,8 @@ ms.locfileid: "6042329"
         <a class="card" href="https://github.com/MicrosoftDocs/windows-uwp/tree/docs/landing/arm-docs" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
-                <h3>反馈文档</h3>
-                <p>你已使用我们的文档中找到问题？ 你是否要我们来创造更清晰的内容？ 在我们的文档 GitHub 存储库中创建问题。</p>
+                <h3>提供文档反馈</h3>
+                <p>你已使用我们的文档中找到问题？ 你是否要我们来创造更清楚内容？ 在我们的文档 GitHub 存储库上创建一个问题。</p>
             </div>
         </a>
     </li>

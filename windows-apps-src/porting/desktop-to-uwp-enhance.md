@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e76d3d517be73417777eb31dfc3994f92186522
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044664"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191390"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
@@ -58,11 +58,11 @@ ms.locfileid: "6044664"
 
 :white_check_mark: **首先，确定你要添加哪些体验**
 
-有许多选项。 例如，你可以使用盈利 Api 或直接注意力吸引到你的应用程序，当你拥有要共享的信息，如另一个用户已发布了新图片有趣的内容时简化你的采购订单流。
+有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你拥有要共享，如另一个用户已发布了新图片有趣的内容时简化你采购订单流。
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
-即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这加强用户与你的应用程序，并且具有使应用程序与操作系统深度集成的互动。 稍后，我们将向你演示用于该体验的代码。
+即使用户忽略或关闭你的消息，他们仍可在操作中心中再次看到该消息，然后单击该消息打开你的应用。 这加强用户与你的应用程序，并已使你的应用程序与操作系统深度集成的互动。 稍后，我们将向你演示用于该体验的代码。
 
 访问我们的[开发人员中心](https://developer.microsoft.com/windows)获取灵感。
 
@@ -70,7 +70,7 @@ ms.locfileid: "6044664"
 
 你经常会听到我们使用术语“增强”和“扩展”，因此我们需要花些时间来说明一下这两个术语的确切含义。
 
-我们使用术语"增强"来描述你可以直接从桌面应用程序调用的 Windows 运行时 Api。 当你选择 Windows 10 体验后，请确定创建它所需的 API，然后查看该 API 是否出现在此[列表](desktop-to-uwp-supported-api.md)中。 这是你可以直接从桌面应用程序中调用的 API 的列表。 如果你的 API 未出现在此列表中，那是因为与该 API 关联的功能只在 UWP 进程内运行。 通常情况下，其中包括显示新式 UI（例如 UWP 地图控件或 Windows Hello 安全提示）的 API。
+我们使用术语"增强"来描述可以直接从桌面应用程序调用的 Windows 运行时 Api。 当你选择 Windows 10 体验后，请确定创建它所需的 API，然后查看该 API 是否出现在此[列表](desktop-to-uwp-supported-api.md)中。 这是你可以直接从桌面应用程序中调用的 API 的列表。 如果你的 API 未出现在此列表中，那是因为与该 API 关联的功能只在 UWP 进程内运行。 通常情况下，其中包括显示新式 UI（例如 UWP 地图控件或 Windows Hello 安全提示）的 API。
 
 也就是说，如果要在你的应用程序中包含这些体验，只需通过向你的解决方案中添加 UWP 项目来“扩展”应用程序即可。 桌面项目仍是应用程序的入口点，但 UWP 项目使你可以访问此[列表](desktop-to-uwp-supported-api.md)中未显示的所有 API。 桌面应用程序可以使用应用服务来与 UWP 进程通信，我们可针对如何进行相关设置提供很多指导。 如果你要添加的体验需要 UWP 项目，请参阅[用 UWP 扩展](desktop-to-uwp-extend.md)。
 
@@ -206,7 +206,7 @@ void UWP::ShowToast()
 
 可以不考虑用户所运行的 Windows 版本而为所有 Windows 用户编译一组二进制文件。 你的应用程序调用 Windows 运行时 Api 仅当用户时运行应用程序打包的应用程序作为 Windows 10 上。
 
-若要添加到你的代码运行时检查最简单方法是将此 Nuget 程序包安装：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法来关闭调用 Windows 运行时 Api 的所有代码的入口。 请参阅此博客文章以了解详细信息：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
+若要添加到你的代码运行时检查最简单方法是将此 Nuget 程序包安装：[桌面桥帮助程序](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然后使用``IsRunningAsUWP()``方法来关闭调用 Windows 运行时 Api 的所有代码的门槛。 请参阅此博客文章以了解详细信息：[桌面桥 - 标识应用程序的上下文](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
 
 ## <a name="related-video"></a>相关视频
 

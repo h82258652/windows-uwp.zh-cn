@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 删除外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040985"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198700"
 ---
 # <a name="delete-a-package-flight"></a>删除软件包外部测试版
 
@@ -47,7 +47,7 @@ ms.locfileid: "6040985"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版）的应用商店 ID。 在合作伙伴中心中会提供应用应用商店 ID。  |
 | flightId | 字符串 | 必需。 要删除的软件包外部测试版的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 视频, GDC, 版本
 ms.localizationpriority: medium
 ms.openlocfilehash: 83865ca17801d51fdd611e6ad0187da98a4bec9e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041435"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206508"
 ---
 # <a name="game-development-videos"></a>游戏开发视频
 
@@ -28,11 +28,11 @@ ms.locfileid: "6041435"
 * [游戏开发的方式独立 studio 蓬松仙女利方法增长命中仅 8 周后游戏](https://channel9.msdn.com/Shows/Level-Up/Fluffy-Fairys-Lean-Approach-to-Game-Development-How-an-Indie-Studio-Grew-a-Hit-Game-After-Only-8-W)-从蓬松仙女 Oliver Löffler
 * [1 天： 你的游戏，随时随地](https://channel9.msdn.com/Shows/Level-Up/Your-game-everywhere-PlayFab)-Brendan Vanous
 * [2 天： 你的游戏的每个人都使用 PlayFab （演示文稿）](https://channel9.msdn.com/Shows/Level-Up/Your-Game-For-Everyone-With-PlayFab-Theater-Presentation) -Brendan Vanous
-* [天 3： 你的游戏，每个方法播放](https://channel9.msdn.com/Shows/Level-Up/Your-game-every-way-its-played-PlayFab-Theater-Presentation)-Brendan Vanous
+* [天 3： 你的游戏，播放每个方法](https://channel9.msdn.com/Shows/Level-Up/Your-game-every-way-its-played-PlayFab-Theater-Presentation)-Brendan Vanous
 
 ### <a name="azure-cloud-services"></a>Azure 云服务
 
-* [如何步行死否男士的陆地游戏构建为在 Azure 上的缩放](https://channel9.msdn.com/Shows/Level-Up/How-The-Walking-Dead-No-Mans-Land-was-built-to-scale-on-Azure-Theater-Presentation)-从 Next Games Kalle Hiitola
+* [如何步行死否男士的陆地的游戏构建为在 Azure 上的缩放](https://channel9.msdn.com/Shows/Level-Up/How-The-Walking-Dead-No-Mans-Land-was-built-to-scale-on-Azure-Theater-Presentation)-从 Next Games Kalle Hiitola
 * [Azure Cosmos DB： 全面概述](https://channel9.msdn.com/Shows/Level-Up/Azure-Cosmos-DB-Comprehensive-Overview)-Aleksey Savateyev
 * [容器、 群集和适用于游戏的云](https://channel9.msdn.com/Shows/Level-Up/Containers-Clusters-and-the-Cloud-for-Gaming-Theater-Presentation-1)-James Trott
 * [在 Azure 中呈现](https://channel9.msdn.com/Shows/Level-Up/Rendering-in-Azure-Theater-Presentation)的 John Thuotte
@@ -44,58 +44,58 @@ ms.locfileid: "6041435"
 
 ### <a name="mixer"></a>Mixer
 
-* [获取与 Mixer 工作量最少的大规模升级](https://channel9.msdn.com/Shows/Level-Up/Get-massive-promotion-for-minimal-effort-with-Mixer-Theater-presentation)-Gersh Payzer
+* [获取通过 Mixer 工作量最少的大规模升级](https://channel9.msdn.com/Shows/Level-Up/Get-massive-promotion-for-minimal-effort-with-Mixer-Theater-presentation)-Gersh Payzer
 
 ### <a name="visual-studio-team-services-vsts-and-app-center"></a>Visual Studio Team Services (VSTS) 和应用中心
 
 VSTS 是什么？ 了解如何在生成过程中实现 DevOps： [Visual Studio Team Services 简介](https://channel9.msdn.com/Shows/Level-Up/Introduction-to-Visual-Studio-Team-Services)-Dmitry Lyalin、 James Montemagno
 
-* [规划和生成游戏使用 VSTS 的完整功能： 敏捷，CI 和 CD 端到端演示](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo)-Rogan Ferguson
-* [生成由 Visual Studio Team Services 和 Unity 团队云生成游戏下一步](https://channel9.msdn.com/Shows/Level-Up/Build-your-next-game-powered-by-Visual-Studio-Team-Services-and-Unity-Teams-cloud-build-Theater)-Dmitry Lyalin
+* [规划和生成游戏使用 VSTS 的完整功能： 敏捷的 CI 和光盘的端到端演示](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo)-Rogan Ferguson
+* [构建在由 Visual Studio Team Services 和 Unity 团队云生成的下一个游戏](https://channel9.msdn.com/Shows/Level-Up/Build-your-next-game-powered-by-Visual-Studio-Team-Services-and-Unity-Teams-cloud-build-Theater)-Dmitry Lyalin
 * [连续地测试、 分配和监视你的游戏与应用中心](https://channel9.msdn.com/Shows/Level-Up/Continuously-Test-distribute-and-monitor-your-game-with-App-Center-Theater-Presentation)-James 白色
-* [安装 Node.js、 Python、.NET、 转到、 Ruby 或 Java-以分钟为单位管道 CI/CD](https://channel9.msdn.com/Shows/Level-Up/Setup-your-CICD-pipeline-for-Nodejs-Python-NET-Go-Ruby-or-Java-in-Minutes) -Abel 王安
-* [敏捷工具集与 VSTS](https://channel9.msdn.com/Shows/Level-Up/Agile-tooling-set-with-VSTS) -Rogan Ferguson、 James Montemagno
+* [安装 Node.js、 Python、.NET、 转到、 Ruby、 或 Java-以分钟为单位管道 CI/CD](https://channel9.msdn.com/Shows/Level-Up/Setup-your-CICD-pipeline-for-Nodejs-Python-NET-Go-Ruby-or-Java-in-Minutes) -Abel 王安
+* [Agile 工具集与 VSTS](https://channel9.msdn.com/Shows/Level-Up/Agile-tooling-set-with-VSTS) -Rogan Ferguson、 James Montemagno
 
 ### <a name="git"></a>Git
 
-熟悉版本控制系统？ Git 和 Git 虚拟文件系统 (GVFS) 简介：[简介 GVFS](https://channel9.msdn.com/Shows/Level-Up/Introduction-to-GVFS) -爱德华 Thomson、 James Montemagno
+新版本控制系统？ Git 和 Git 虚拟文件系统 (GVFS) 简介：[简介 GVFS](https://channel9.msdn.com/Shows/Level-Up/Introduction-to-GVFS) -爱德华 Thomson、 James Montemagno
 
-* [使用大二进制游戏资产，使用 Git 大型文件系统](https://channel9.msdn.com/Shows/Level-Up/Working-with-large-binary-game-assets-using-Git-Large-File-system)-爱德华 Thomson
+* [使用大二进制游戏资产，使用 Git 大型文件系统](https://channel9.msdn.com/Shows/Level-Up/Working-with-large-binary-game-assets-using-Git-Large-File-system)的爱德华 Thomson
 * [使用 Unity 游戏开发的 Git](https://channel9.msdn.com/Shows/Level-Up/Git-with-Unity-for-Game-Development) -爱德华 Thomson
 
 ### <a name="visual-studio"></a>Visual Studio
 
-* [Unity 和 Visual Studio 中，最好一起使用](https://channel9.msdn.com/Shows/Level-Up/Unity-and-Visual-Studio-better-together)-Arturo Nunez 从 Unity
+* [Unity 和 Visual Studio 中，最好一起使用](https://channel9.msdn.com/Shows/Level-Up/Unity-and-Visual-Studio-better-together)-从 Unity Arturo Nunez
 
 ### <a name="game-development-experiences"></a>游戏开发体验
 
-* [Photogrammetry 和激光扫描在 Forza Motorsport 7](https://channel9.msdn.com/Shows/Level-Up/Photogrammetry-and-Laser-Scanning-in-Forza-Motorsport-7-Theater-Presentation-1) -特拉 Gosnell
+* [Photogrammetry 和激光扫描 Forza Motorsport 7](https://channel9.msdn.com/Shows/Level-Up/Photogrammetry-and-Laser-Scanning-in-Forza-Motorsport-7-Theater-Presentation-1) -特拉 Gosnell
 * [构建 Astroneer： 新图表且更富有挑战性课程](https://channel9.msdn.com/Shows/Level-Up/Building-Astroneer-Charting-new-and-challenging-courses)-Brendan Wilson
 
 ### <a name="microsoft-store"></a>Microsoft Store
 
 * [的 Microsoft 应用商店： 如何可以访问 Xbox One 和 Windows 10 用户](https://channel9.msdn.com/Shows/Level-Up/Microsoft-Store-How-You-Can-Reach-Xbox-One-and-Windows-10-users)-Bernardo Zamora
-* [为什么 Candy Crush 在 Windows 10 和 Microsoft 应用商店](https://channel9.msdn.com/Shows/Level-Up/Why-Candy-Crush-on-Windows-10-and-in-Microsoft-Store)-Alex von Roth 从 k
+* [为什么 Candy Crush 在 Windows 10 和 Microsoft 应用商店中](https://channel9.msdn.com/Shows/Level-Up/Why-Candy-Crush-on-Windows-10-and-in-Microsoft-Store)的 Alex von Roth 从 k
 
 ### <a name="mixed-reality"></a>混合现实
 
 * [生成 Windows MR 应用使用 Unity](https://channel9.msdn.com/Shows/Level-Up/Building-Windows-MR-Apps-with-Unity) -Jaime Rodriguez
-* [AR 云： 为什么在未来的 MR 不是设备，它是所有这些](https://channel9.msdn.com/Shows/Level-Up/The-AR-Cloud-Why-the-future-of-MR-is-not-a-device-itsall-of-them)-Jesse McCulloch
+* [AR 云： 原因的 MR 未来不是设备，它是所有这些](https://channel9.msdn.com/Shows/Level-Up/The-AR-Cloud-Why-the-future-of-MR-is-not-a-device-itsall-of-them)-Jesse McCulloch
 
 ## <a name="game-accessibility-conference-2018"></a>游戏辅助功能会议 2018
 
 * [查找亮。 2017 的游戏辅助功能前进](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Looking-Bright-2017s-Game-Accessibility-Advances)的良好 Hamilton 辅助功能行业专家
-* [CVAA 以及这意味着游戏的访问权限](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-The-CVAA-and-What-it-Means-for-Gaming-Access)-从联邦通信委员会 Karen Petlz 施特劳斯
-* [我是否进行我游戏直接访问 – 你不认为发生了什么事情下一步...](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) -从 MetalPop 游戏 Michelle 圣马丁
+* [CVAA 以及这意味着游戏访问](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-The-CVAA-and-What-it-Means-for-Gaming-Access)-从联邦通信委员会 Karen Petlz 施特劳斯
+* [做我游戏直接访问 – 你不认为发生了什么事情接下来...](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) -从 MetalPop 游戏 Michelle 圣马丁
 * [认知辅助功能设计选项和音乐教育版 Autism](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Cognitive-Accessibility-Design-Choices-and-Music-Education-for-Autism) -从 Berklee 音乐大学 Lori Landay
 * [辅助功能设置 Ramping](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Ramping-Up-Accessibility) -从 EA 体育 Karen Stevens
 * [现代游戏辅助功能。向解决方案中更改慰问](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Modern-Game-Accessibility-Changing-Sympathy-to-Solution)-从游戏站古柯 Keeker 和 Sam Thompson 从索尼世界宽 Studios
 * [无需看到播放主要视频游戏](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Playing-Mainstream-Video-Games-Without-Sight)-SightlessKombat，辅助功能提供支持
-* [社区协作如何提高开发](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-How-Community-Collaboration-Improves-Development)-Jason Canam 从家庭游戏
-* [如何在实时流式处理带来了下一步的级别包含](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Beyond-Gaming-How-Live-Streaming-Brings-Next-Level-Inclusion)-从 Mixer Tara Voelker
-* [所有 Deaf 玩家想要执行的操作是具有一些有趣](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-All-Deaf-Gamers-Wanna-Do-is-Have-Some-Fun)的面板扬声器： Chris Robinson Kristen Piersa，辅助功能支持。 从 Microsoft Michael 安
-* [为游戏行业充满爱字母](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-A-Fraught-Love-Letter-to-the-Games-Industry)-Cherry Thompson 辅助功能提供支持
-* [访问游戏历史记录](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Accessible-Gaming-History)-Barrie Ellis 从 OneSwitch 和特殊效果
+* [社区协作如何提高开发](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-How-Community-Collaboration-Improves-Development)-从家庭游戏 Jason Canam
+* [如何实时流式处理带来了下一步的级别包含](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Beyond-Gaming-How-Live-Streaming-Brings-Next-Level-Inclusion)-从 Mixer Tara Voelker
+* [所有 Deaf 玩家想要执行是具有一些有趣](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-All-Deaf-Gamers-Wanna-Do-is-Have-Some-Fun)的面板扬声器： Chris Robinson Kristen Piersa，辅助功能支持。 从 Microsoft Michael 安
+* [为游戏行业充满爱号](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-A-Fraught-Love-Letter-to-the-Games-Industry)-Cherry Thompson 辅助功能提供支持
+* [访问游戏历史记录](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Accessible-Gaming-History)-Barrie Ellis OneSwitch 和特殊效果
 
 ## <a name="build-2017-videos"></a>版本 2017年视频
 
@@ -104,7 +104,7 @@ VSTS 是什么？ 了解如何在生成过程中实现 DevOps： [Visual Studio 
 ## <a name="gdc-2017-game-dev-session-videos"></a>GDC 2017 游戏开发会议视频
 
 * [使用 Xbox 和 Windows 发现新的游戏开发人员机会](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-001) - Chris Charla
-* [对于 Xbox andWindows 引入空间音频功能](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002)-Scott Selfon
+* [对于 Xbox andWindows 引入了空间音频功能](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002)-Scott Selfon
 * [进行 D3D12 性能调整和调试使用 PIX 和 GPUValidation](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003) -Shawn Hargreaves、 Max McMullen
 * [游戏模式和演变的跨平台 UWP GameDevelopment](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-004) -Eric Walston
 * [Xbox Live 的 AllGame](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005) -Brian Tyler

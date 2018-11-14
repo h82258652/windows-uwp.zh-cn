@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dbfe207483f5814d2cd32ffcd5ac651c0ab5aa52
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6036267"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6251907"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting/count
-访问的组名字对象由指定的广播用户计数相关出现在 URI 中的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。
+访问的组名字对象由指定的广播用户计数与在 URI 中出现的 XUID。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -29,7 +29,7 @@ ms.locfileid: "6036267"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID) 相关的组中的 Xuid 的用户。| 
-| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象大写 P 是"People"。| 
+| 名字对象| 字符串| 定义的用户组的字符串。 目前仅接受名字对象以大写 P 是"People"。| 
   
 <a id="ID4E4B"></a>
 

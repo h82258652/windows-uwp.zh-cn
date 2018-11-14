@@ -9,15 +9,15 @@ keywords: Windows 10, uwp, 类别, 类别, 目标组, 客户
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052122"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149937"
 ---
 # <a name="create-customer-segments"></a>创建客户类别
 
-有时出于促销和提升参与度的目的，可能需要面向客户群子集。 你可以完成此[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建[客户组](create-customer-groups.md)称为包含年龄*段*的 Windows 10 客户满足人口统计或收益条件，你选择的一类。
+有时出于促销和提升参与度的目的，可能需要面向客户群子集。 你可以完成此[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一种[客户组](create-customer-groups.md)称为包含 Windows 10 客户满足人口统计或收益条件，你选择的*类别*。
 
 例如，可创建仅包含年龄在 50 岁或以上的客户的类别，或创建包含在 Microsoft Store 中花费超过 10 美元的客户。 还可将这些条件组合起来，创建包含年龄在 50 岁以上并且在应用商店中花费超过 10 美元的所有客户。 
 

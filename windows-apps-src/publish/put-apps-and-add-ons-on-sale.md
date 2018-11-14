@@ -9,25 +9,25 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045374"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149829"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>打折出售应用和加载项
 
-你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。 并且，你可以选择是否要将促销提供给每位用户，或使其拥有其他产品的其中一个客户供独占的产品/服务。
+你还可以通过限时折扣在 Microsoft Store 中促销你的应用或加载项。 可以选择以更低的价格段或基于百分比的折扣提供产品。 并且，你可以选择是否要将促销提供给每位用户，或使其用于拥有其他产品的客户的独占的产品/服务。
 
 > [!NOTE]
-> 订阅加载项不支持促销价格。
+> 订阅加载项不支持的促销定价。
 
 使用提交的**定价和可用性**页的**促销价**部分暂时降低应用或加载项的价格时，查看“应用商店一览”的客户将看到删除线定价，指示价格降低（与[计划的价格更改](set-and-schedule-app-pricing.md#schedule-price-changes)不同，后者可以在不在应用商店中显示更改的情况下降低或提高价格）。 
 
 将产品进行促销后，客户将能够在所选时间段内以更低价格购买该产品。 如果将价格降为**免费**，客户可以在促销期间免费下载产品。
 
 > [!IMPORTANT]
-> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 仅向 Windows 10 版本 1607年或更高版本的客户显示你提供仅向所有者的其他产品的销售。
+> 促销价格将仅显示给你在 windows 10 设备，包括 Xbox One 上的客户。 仅向所有者的其他产品提供的销售仅显示给 Windows 10 版本 1607年或更高版本上的客户。
 > 
 > 在其他操作系统上，客户看到的是应用或加载项的常规价格，将无法以促销价进行购买。 你始终可以通过在新提交中选择其他价格区间来更改价格，但该价格不以限时促销的形式显示。
 

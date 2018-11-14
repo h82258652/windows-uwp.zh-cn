@@ -8,12 +8,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dfb486eca6135526dc6c0081e77b5bc9dbbbeb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: b8136aa4d07204d2c97fec393439a17d3660f934
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041880"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199959"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>创意者计划的 Xbox Live 服务配置
 
@@ -25,13 +25,13 @@ ms.locfileid: "6041880"
 
 不过，要做到这一点，你需要执行某种一次性配置，使 Xbox Live 了解你的排行榜。 例如，值应以升序还是降序排序，以及应对哪部分数据进行排序。
 
-可在 Xbox Live 创意者计划的[开发人员中心](http://dev.windows.com)中执行此配置，并请参阅 [ Xbox Live 入门](get-started-with-xbox-live-creators.md)了解如何进行设置。
+此配置发生在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的 Xbox Live 创意者计划，并且你可以读取[Xbox Live 入门](get-started-with-xbox-live-creators.md)若要了解如何获取设置。
 
 ## <a name="get-your-ids"></a>获取你的 ID
 
 若要启用 Xbox Live 服务，你需要获取多个 ID，以配置你的开发环境和作品。 这些 ID 可通过更新你的 Xbox Live 服务配置获得。
 
-如果你当前在开发人员中没有主题作品，请参阅[创建和测试新的创意者主题作品](create-and-test-a-new-creators-title.md)获取指导信息。
+如果你当前没有游戏在合作伙伴中心中，请参阅[创建和测试新的创意者主题作品](create-and-test-a-new-creators-title.md)，以获取指导信息。
 
 ### <a name="critical-ids"></a>重要 ID
 

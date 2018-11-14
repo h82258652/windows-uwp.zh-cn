@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 269d51ec6005bcd61ac01a66d72c34bdb2901add
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035353"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6259086"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
 
 
 
-**注意**你需要示例数据的程度 — 多少它能帮助你 — 取决于你的绑定是否使用[{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)的或[{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
+**请注意**你需要示例数据的程度 — 多少它能帮助你 — 取决于你的绑定是否使用[{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)或[{x: Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主题中所述的技术基于对 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用，因此它们仅适用于 **{Binding}**。 但是，如果你使用的是 **{x:Bind}**，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
 
 也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。 为了使你的控件填充数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你正要生成一个草图（或原型）应用，则示例数据可能真的非常有用而且节省时间。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。
 
@@ -141,7 +141,7 @@ else
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 所有设计工具所做的这种情况下是解析为其可绑定的属性的类，并显示这些**数据**面板中，并在**创建数据绑定**对话框。
+**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 所有设计工具所做在此情况下是分析其可绑定的属性的类和显示这些**数据**面板中，并在**创建数据绑定**对话框。
 
 <a name="sample-data-for-prototyping"></a>用于原型制作的示例数据
 --------------------------------------------------------

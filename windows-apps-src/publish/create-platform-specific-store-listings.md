@@ -9,18 +9,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 自定义, 一览, 描述, 之前
 ms.localizationpriority: medium
 ms.openlocfilehash: c2bc58540f49afb8b24eaa58150132fea1d27f84
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050684"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261701"
 ---
 # <a name="create-platform-specific-store-listings"></a>创建特定于平台的 Microsoft Store 一览
 
 
-如果你以前发布的应用面向不同的操作系统的程序包，你可以选择自定义部分的较早的操作系统版本上的客户在应用商店一览 (Windows 8.x 或更早版本和/或 Windows Phone 8.x 或更早版本)。 
+如果你以前发布的应用具有面向不同操作系统的程序包，你可以选择自定义部分的较早的操作系统版本上的客户在应用商店一览 (Windows 8.x 或更早版本和/或 Windows Phone 8.x 或更早版本)。 
 
-在 windows 10 （包括 Xbox） 的客户将始终看到默认[应用商店一览](create-app-store-listings.md)。 你将不会看到创建特定于平台的应用商店一览，除非你已发布你的应用与支持一个或多个较早的操作系统版本的程序包的选项。 
+在 windows 10 （包括 Xbox） 的客户将始终看到默认[应用商店一览](create-app-store-listings.md)。 你将不会看到创建特定于平台的应用商店一览，除非你已发布你的应用支持一个或多个较早的操作系统版本的程序包的选项。 
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。

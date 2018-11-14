@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e04f1711d83679ac0b41c74c1c391b26bc7969
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6039823"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149979"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
-更新游戏与用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
+使用用户的状态更新游戏。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4EEB)
@@ -32,9 +32,9 @@ ms.locfileid: "6039823"
  
 ## <a name="remarks"></a>备注
  
-此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和标题的媒体状态数据。
+此 URI 可由非控制台平台上的所有游戏添加和更新的状态、 完整状态和游戏的媒体状态数据。
  
-现在，检索 XToken 声明从**SandboxId**并强制执行。 如果不存在**SandboxId** ，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
@@ -56,7 +56,7 @@ ms.locfileid: "6039823"
 | titleId| 是| 职务标题的 Id| 403 已禁止| 
 | deviceId| 是针对 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
 | deviceType| 是针对 Web 除外| 调用方的 deviceType| 403 已禁止| 
-| sandboxId| 是，对于来自调用的 | 调用方的沙盒| 403 已禁止| 
+| sandboxId| 对于来自调用的是 | 调用方的沙盒| 403 已禁止| 
   
 <a id="ID4ENE"></a>
 
@@ -66,8 +66,8 @@ ms.locfileid: "6039823"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
-| Content-Type| 字符串| 请求正文中的示例值的 mime 类型： application/json。| 
+| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
+| Content-Type| 字符串| 示例值的请求的正文的 mime 类型： application/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
   
@@ -78,7 +78,7 @@ ms.locfileid: "6039823"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 名称/的内部版本号应指向此请求的 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
 <a id="ID4ERH"></a>
 
@@ -108,9 +108,9 @@ ms.locfileid: "6039823"
  
 ## <a name="response-body"></a>响应正文
  
-如果成功，200 或 201 创建 HTTP 状态代码将返回，根据需要。
+如果成功，HTTP 状态代码的 200 或 201 创建将返回，根据需要。
  
-发生错误 （HTTP 4xx 或 5xx），在响应正文中返回相应的错误的信息。
+如果出现错误 （HTTP 4xx 或 5xx），则在响应正文中返回相应的错误信息。
   
 <a id="ID4EVAAC"></a>
 

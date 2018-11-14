@@ -10,15 +10,15 @@ keywords: windows 10, uwp, 发布, 销售, 分发, Microsoft Store, 仪表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 229e1eab05e392a4091c9eee5bc9af948c678d96
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049448"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200604"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
  
-你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)将你的应用和游戏发布到 Microsoft Store。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
+你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)将你的应用和游戏发布到 Microsoft 应用商店。 <a href="//developer.microsoft.com/store/register">立即注册！</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>

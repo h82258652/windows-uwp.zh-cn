@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 扩展执行, 最小化, ExtendedExecutionSession, �
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 30e05259306a222a3cb18268aeb58a8380f6d4d2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049651"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266546"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>使用扩展执行来推迟应用挂起
 
