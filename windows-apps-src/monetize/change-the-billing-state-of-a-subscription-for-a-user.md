@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: 8daec4928867c92734fc3f6322836eb923aeda21
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042733"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6462359"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>更改用户订阅的计费状态
 
@@ -55,7 +55,7 @@ ms.locfileid: "6042733"
 
 | 名称         | 类型  | 说明   |  必填  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | 字符串 | 想要更改的订阅 ID。 若要获取此 ID，调用[获取用户订阅](get-subscriptions-for-a-user.md)，标识代表想要更改的订阅加载项的响应正文条目用于条目**id**字段的值。     | 是      |
+| recurrenceId | 字符串 | 想要更改的订阅 ID。 若要获取此 ID，调用[获取用户订阅](get-subscriptions-for-a-user.md)的方法，标识代表想要更改的订阅加载项的响应正文条目用于条目**id**字段的值。     | 是      |
 
 
 ### <a name="request-body"></a>请求正文

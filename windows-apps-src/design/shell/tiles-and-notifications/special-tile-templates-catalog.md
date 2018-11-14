@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 74b915e4d698503a13c5066348f4e46ebd3125c8
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6202409"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651742"
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
  

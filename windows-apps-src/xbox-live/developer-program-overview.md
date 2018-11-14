@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: medium
 ms.openlocfilehash: faf010e2a61199d56a1ae5b9ed08fd373f89cd80
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206852"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6252302"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 

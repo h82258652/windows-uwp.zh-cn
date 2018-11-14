@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: b437055704c307dc3e3fa506a9885ff892585503
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6181908"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6443949"
 ---
 # <a name="globalization-and-localization"></a>全球化和本地化
 

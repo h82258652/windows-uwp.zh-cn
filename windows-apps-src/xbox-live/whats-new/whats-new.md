@@ -7,12 +7,12 @@ ms.date: 10/23/2018
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c70f0dee1226057a69cb876dac4f4512b378b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bf536298f075535bf9f5e5198573a87db33dd2a4
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6023521"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198275"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live 的新增功能
 你也可以查看 [Xbox Live API GitHub 提交历史记录](https://github.com/Microsoft/xbox-live-api/commits/master)，了解 Xbox Live API 的所有最新的代码更改。
@@ -34,7 +34,7 @@ ms.locfileid: "6023521"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API 图层
 
-现在，C Api 均可用于 Xbox Live 的一些功能。 使用新的 API 层为受支持的功能，包括自定义内存管理、 手动线程管理对于异步任务，以及新的 HTTP 库提供了很多优势。
+C Api 现已推出的 Xbox Live 的一些功能。 新的 API 层为受支持的功能，包括自定义内存管理、 异步任务的手动线程管理和新的 HTTP 库提供了很多优势。
 
 有关详细信息，请参阅[Xbox Live C Api](../xsapi-flat-c.md)。
 
@@ -121,7 +121,7 @@ API 可用于直接从你的游戏内创建和管理游戏内俱乐部。 这些
 
 #### <a name="data-platform-2017"></a>数据平台 2017
 
-我们引入了简化的统计 API。  传统上来讲，你必须发送与 XDP 或开发人员中心定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
+我们引入了简化的统计 API。  从传统上讲您必须以发送与 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
 
 使用 Stats 2017，你的标题现在可以控制统计信息值。  你只需调用包含最新统计信息值的 API，它们即可被直接发送到服务，无需发送事件。  这使用新的 `StatsManager` API，你可以在[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)中了解更多信息
 
@@ -144,7 +144,7 @@ Xbox Live 创意者计划是一项开发人员计划，为更广大的开发人�
 |[Xbox Live 服务配置](../xbox-live-service-configuration.md) | 更新了为 Xbox Live 游戏进行服务配置的相关信息
 | [配置 Unity 中的 Xbox Live](../get-started-with-creators/configure-xbox-live-in-unity.md) | 针对 Xbox Live 创意者计划开发人员的 Unity 设置的新信息 |
 | [Xbox Live 沙盒](../xbox-live-sandboxes.md) | Xbox Live 沙盒和内容隔离的简化指南 |
-| [Xbox Live 测试帐户](../xbox-live-test-accounts.md) | 有关测试帐户如何工作，以及如何在 Windows 开发人员中心创建帐户的信息 |
+| [Xbox Live 测试帐户](../xbox-live-test-accounts.md) | 了解如何测试帐户工作，以及如何在合作伙伴中心创建帐户 |
 
 ## <a name="archived"></a>已存档
 

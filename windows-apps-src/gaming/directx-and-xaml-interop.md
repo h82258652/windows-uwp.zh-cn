@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, xaml 互操作
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042792"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6457930"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 和 XAML 互操作
 
@@ -23,7 +23,7 @@ ms.locfileid: "6042792"
 
 如果你的应用主要侧重于 2D 呈现，你可能需要使用 [Win2D](https://github.com/microsoft/win2d) Windows 运行时库。 此库由 Microsoft 维护，并且基于核心 Direct2D 技术生成。 它大大简化了实现 2D 图形的使用模式，并包括对本文档中所述的某些技术的有用抽象。 有关更多详细信息，请参阅项目页面。 本文档介绍有关选择*不*使用 Win2D 的应用开发人员的指南。
 
-> **注意**DirectX Api 没有定义为 Windows 运行时类型，所以你通常使用 VisualC + + 组件扩展 (C + + CX) 来开发可与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
+> **请注意**DirectX Api 没有定义为 Windows 运行时类型，所以你通常使用 VisualC + + 组件扩展 (C + + CX) 来开发可与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
 
  
 

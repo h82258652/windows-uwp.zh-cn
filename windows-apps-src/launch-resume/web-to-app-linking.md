@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034963"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6259836"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>启用使用应用 URI 处理程序的网站应用
 
@@ -78,7 +78,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 | **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，给定`"excludePaths" : [ "/news/*", "/blog/*" ]`在上面的示例中，你的应用将支持开始菜单与你的网站地址 (例如 msn.com)，**除非**下的所有路径`/news/`和`/blog/`。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
+例如，对于指定`"excludePaths" : [ "/news/*", "/blog/*" ]`在上面的示例中，你的应用将支持开始菜单与你的网站地址 (例如 msn.com)，**除非**下的所有路径`/news/`和`/blog/`。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
 
 ### <a name="multiple-apps"></a>多个应用
 
@@ -166,7 +166,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 -   程序包系列名称 (PFN)：你的应用的 PFN
 -   文件路径：用于本地验证的 JSON 文件（例如 C:\\SomeFolder\\windows-app-web-link）
 
-如果该工具未返回任何内容，验证生效时上传该文件。 如果存在错误代码，它不起作用。
+如果该工具未返回任何内容，验证将在该文件上载时上工作。 如果存在错误代码，它不起作用。
 
 你可以启用以下注册表项以强制路径匹配适用于旁加载应用作为本地验证的一部分：
 
@@ -197,7 +197,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 
 ## <a name="see-also"></a>另请参阅
 
-[Web 到应用的示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 注册](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [处理 URI 激活](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)演示了如何使用 launchuriasync （) API。

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 打包, 体系结构, 包配置
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192088"
+ms.locfileid: "6254459"
 ---
 # <a name="app-package-architectures"></a>应用包体系结构
 

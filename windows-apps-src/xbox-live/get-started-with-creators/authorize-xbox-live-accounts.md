@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 帐户, 测试帐户
 ms.localizationpriority: medium
 ms.openlocfilehash: 6add43ecabacb8e62e055954dd502fdf9d25a903
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6205443"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6259022"
 ---
 # <a name="authorize-xbox-live-accounts-for-testing-in-your-environment"></a>在你的环境中授权 Xbox Live 帐户以进行测试
 

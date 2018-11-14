@@ -8,16 +8,16 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: a506eec99aabaddac6251eb6548a671ecd283d0b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: a687aa7ed1115692f765e516dc8c8b15504b709e
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281114"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6648199"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 
-![通用 Windows 平台应用可在各种设备上运行，支持自适应式用户界面、自然用户输入、一个应用商店、一个开发人员中心，以及云服务](images/universalapps-overview.png)
+![通用 Windows 平台应用的各种设备上运行，支持自适应式用户界面、 自然用户输入、 一个应用商店、 合作伙伴中心和云服务](images/universalapps-overview.png)
 
 UWP 应用是：
 
@@ -132,9 +132,9 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 - 了解如何[将 Cortana 添加到应用](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382)以使你的应用能够响应语音命令。
 - 将[推送通知](https://msdn.microsoft.com/library/windows/apps/mt187203)和[应用内购买](https://msdn.microsoft.com/library/windows/apps/mt219684)包含在你的规划中。 这些功能应该能够跨设备运行。
 
-### <a name="submit-your-app-to-the-store"></a>向 Microsoft Store 提交应用
+### <a name="submit-your-app-to-the-store"></a>提交到应用商店应用
 
-利用统一的新 Windows 开发人员中心仪表板，你可以在同一位置管理和提交所有面向 Windows 设备的应用。 若要了解如何在 Microsoft Store 中提交应用以供发布，请参阅[使用统一的 Windows 开发人员中心仪表板](../publish/using-the-windows-dev-center-dashboard.md)。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)允许你管理和提交所有面向 Windows 设备在一个位置中的应用。 请参阅[发布 Windows 应用和游戏](../publish/index.md)以了解如何提交以供在 Microsoft Store 中发布应用。
 
 新功能简化了流程，同时给予你更多的控制。 你还会找到与[付款详细信息](https://msdn.microsoft.com/library/windows/apps/dn986925)组合的详细[分析报告](https://msdn.microsoft.com/library/windows/apps/mt148522)、[推广你的应用并与客户互动](https://msdn.microsoft.com/library/windows/apps/mt148526)的方式，等等。
 

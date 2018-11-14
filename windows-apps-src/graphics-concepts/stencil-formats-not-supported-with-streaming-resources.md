@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d10478d76be88138d1382793bd8b5e0d5b3ef41a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6196732"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267410"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a>使用流式资源时，模板格式不受支持
 

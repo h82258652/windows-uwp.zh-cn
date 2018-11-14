@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9187aa43d3d4ee3a76ec834ac0352b66fe59167f
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190473"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267445"
 ---
 # <a name="post-usersbatch"></a>POST (/users/batch)
 获取一批用户状态。

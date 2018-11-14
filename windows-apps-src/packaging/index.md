@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: d8728094292f1de81eb90752ee496090df4cb6e0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183489"
+ms.locfileid: "6250785"
 ---
 # <a name="packaging-apps"></a>打包应用
 
@@ -34,4 +34,4 @@ ms.locfileid: "6183489"
 | [使用 WinAppDeployCmd.exe 工具安装应用](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows 应用程序部署 (WinAppDeployCmd.exe) 是可用于将部署到任意 windows 10 移动版设备从 windows 10 计算机的 UWP 应用的命令行工具。 此工具可用于在 windows 10 移动版设备而无需为该应用的 Microsoft Visual Studio 或解决方案是通过 USB 连接还是位于同一子网的情况下部署应用包。 本文介绍如何使用此工具安装 UWP 应用。 |
 | [设置 UWP 应用的自动生成](auto-build-package-uwp-apps.md) | 如果你希望在自动生成过程中打包应用，本主题介绍如何使用 Visual Studio Team Services (VSTS) 执行此操作。 |
 | [应用功能声明](app-capability-declarations.md) | 功能必须在你的 UWP 应用的[程序包清单](https://msdn.microsoft.com/library/windows/apps/BR211474)中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。 |
-| [从 Microsoft Store 下载并安装程序包更新](self-install-package-updates.md) | 你的 UWP 应用可以以编程方式检查程序包更新，并安装这些更新。 你的应用还可以查询已在 Windows 开发人员中心仪表板上标记为必需的程序包，以及完成安装该必需更新前禁用功能。  |
+| [从 Microsoft Store 下载并安装程序包更新](self-install-package-updates.md) | 你的 UWP 应用可以以编程方式检查程序包更新，并安装这些更新。 你的应用可以查询已标记为必需在合作伙伴中心中的程序包和安装必需更新前禁用功能。  |

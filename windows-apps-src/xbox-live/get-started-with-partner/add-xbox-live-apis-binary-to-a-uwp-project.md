@@ -9,18 +9,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, nuget
 ms.localizationpriority: medium
 ms.openlocfilehash: 29280b55cb2178d05414ff3413cd0a92d2f93916
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040475"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6208083"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>向 UWP 项目添加 Xbox Live API 二进制文件包
 
 ## <a name="requirements"></a>要求
 
 2. **[Windows 10](https://microsoft.com/windows)**。
-3. **[Visual Studio](https://www.visualstudio.com/)**。 使用 Visual Studio 2015 更新 3 或更高版本，可以生成 UWP 应用。 我们建议你使用 Visual Studio 的最新版本，开发人员和安全更新。
+3. **[Visual Studio](https://www.visualstudio.com/)**。 使用 Visual Studio 2015 更新 3 或更高版本，可以生成 UWP 应用。 我们建议你使用最新版本的 Visual Studio 开发人员和安全更新。
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 或更高版本。
 
 ## <a name="add-the-binary-package-via-nuget"></a>通过 NuGet 添加二进制文件包

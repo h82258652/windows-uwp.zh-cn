@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，分析，报告，仪表板、 应用、 数据指标
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6249285"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6461373"
 ---
 # <a name="analyze-app-performance"></a>分析应用性能
 

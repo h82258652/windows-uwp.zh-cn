@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 872d3967e48a9c8122e3cc3043a1440950f70e9b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029664"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203214"
 ---
 # <a name="vat-info"></a>VAT 信息
 
 
-如果你需要在合作伙伴中心注册过程中提供 VAT ID 号码，下面是一些信息，让你开始。
+如果你需要在合作伙伴中心注册过程中提供 VAT ID 号码，下面是一些信息让你开始。
 
 ## <a name="understanding-vat-numbers"></a>了解 VAT 号码
 

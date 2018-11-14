@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
 ms.openlocfilehash: dbe932eb9391a4de0304b4be42944b2bced3287a
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6151261"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458555"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 

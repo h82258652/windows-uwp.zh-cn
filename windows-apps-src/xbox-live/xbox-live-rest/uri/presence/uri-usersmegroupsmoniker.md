@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c8701e87274195e206f779263afc339a089d7f8
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6180786"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6258402"
 ---
 # <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
 访问 presencerecord，他的有关我的用户组。 这些 Uri 的域是`userpresence.xboxlive.com`。

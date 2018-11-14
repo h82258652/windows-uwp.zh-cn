@@ -9,11 +9,11 @@ keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 1eeac0239bd0c6df38f82fa185c1ed6f7eb3f9dc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028477"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264517"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
@@ -90,7 +90,7 @@ sealed partial class App : Application
 }
 ```
 
-有关的更丰富的**OnBackgroundActivated**示例，请参阅[转换为与其主机应用相同的进程中运行的应用服务](convert-app-service-in-process.md)。
+有关的更丰富的**OnBackgroundActivated**示例，请参阅[将转换应用服务在其托管应用所在的同一进程中运行](convert-app-service-in-process.md)。
 
 ## <a name="handle-background-task-progress-and-completion"></a>处理后台任务进度和完成
 

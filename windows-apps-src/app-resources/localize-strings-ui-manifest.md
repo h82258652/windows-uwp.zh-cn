@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032486"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261923"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>本地化 UI 和应用包清单中的字符串
 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。
@@ -30,12 +30,12 @@ ms.locfileid: "6032486"
 1. 设置应用的默认语言。
     1. 在 Visual Studio 中打开你的解决方案后，打开 `Package.appxmanifest`。
     2. 在应用程序选项卡上，确认已设置相应的默认语言（如“en”或“en-US”）。 其余步骤将假设你已经将默认语言设置为“en-US”。
-    <br>**注意**至少，你需要提供针对此默认语言本地化的字符串资源。 如果没有找到与用户的首选语言或显示语言设置更好的匹配，将加载这些资源。
+    <br>**请注意**至少，你需要提供针对此默认语言本地化的字符串资源。 如果没有找到与用户的首选语言或显示语言设置更好的匹配，将加载这些资源。
 2. 创建默认语言的资源文件 (.resw)。
     1. 在你的项目节点下，创建一个新文件夹，并将其命名为“字符串”。
     2. 在 `Strings` 下，创建一个新的子文件夹，并将其命名为“en-US”。
     3. 在 `en-US` 下，创建一个新的资源文件 (.resw)，并确认其名称为“Resources.resw”。
-    <br>**注意**如果你有想要移植的.NET 资源文件 (.resx)，请参阅[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
+    <br>**请注意**如果你有想要移植的.NET 资源文件 (.resx)，请参阅[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
 3.  打开 `Resources.resw` 并添加这些字符串资源。
 
     `Strings/en-US/Resources.resw`
@@ -61,7 +61,7 @@ ms.locfileid: "6032486"
 
 你可能不会想要从资源文件设置**宽度**，而是想要允许控件根据内容动态调整大小。
 
-**注意**[附加属性](../xaml-platform/attached-properties-overview.md)，你需要在.resw 文件的名称列中的一种特殊语法。 例如，要设置“Greeting”标识符的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加属性的值，下面是需要在“名称”列中输入的内容。
+**请注意**[附加属性](../xaml-platform/attached-properties-overview.md)，你需要在.resw 文件的名称列中的一种特殊语法。 例如，要设置“Greeting”标识符的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加属性的值，下面是需要在“名称”列中输入的内容。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -96,7 +96,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
+如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)以你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -118,7 +118,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>本地化字符串资源
 1. 复制你的资源文件 (.resw) 用于另一种语言。
     1. 在“字符串”下，创建一个新的子文件夹并将其命名为“de-DE”，表示德语（德国）。
-   <br>**注意**的文件夹名称，你可以使用任何[BCP 47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)。 请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)获取有关语言限定符和常用语言标记列表的详细信息。
+   <br>**请注意**的文件夹名称，你可以使用任何[BCP 47 语言标记](http://go.microsoft.com/fwlink/p/?linkid=227302)。 请参阅[定制语言、比例和其他限定符的资源](tailor-resources-lang-scale-contrast.md)获取有关语言限定符和常用语言标记列表的详细信息。
    2. 在 `Strings/de-DE` 文件夹中复制 `Strings/en-US/Resources.resw`。
 2. 翻译字符串。
     1. 打开 `Strings/de-DE/Resources.resw` 并翻译“值”列中的值。 你无需翻译评论。
@@ -173,13 +173,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果要将“AppDisplayName”资源从 `Resources.resw` 移动到 `ManifestResources.resw`，在应用包清单中，需将 `ms-resource:AppDisplayName` 更改为 `ms-resource:/ManifestResources/AppDisplayName`。
 
-如果分段资源文件名 (它包含"。"字符)，然后在名称中保留点时引用它。 **不要**替换正斜杠 （"/"） 字符，像针对资源名称的点。
+如果分段资源文件名 (它包含"。"字符)，然后在名称中保留点时引用它。 **不要**使用正斜杠 （"/"） 字符，像针对资源名称替换点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
+如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)以你的应用的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -266,20 +266,20 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-为 Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后使用资源映射名称中的点。
+Windows 运行时库 (通用 Windows)，如果分段默认命名空间 (它包含"。"字符)，然后在资源映射名称中使用点。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-你无需执行该操作的类库 (通用 Windows)。 如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)组件或库的 PRI 文件转储。 每个资源的`uri`转储文件中显示。
+你无需执行该操作的类库 (通用 Windows)。 如果有疑问，你可以使用[MakePri.exe](makepri-exe-command-options.md)转储组件或库的 PRI 文件。 每个资源的`uri`转储文件中显示。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>从其他包加载字符串
-应用包的资源进行管理和访问通过程序包的拥有可从当前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)访问的顶级[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 。 在每一个包中，各种组件可以具有其 ownResourceMapsubtrees，你可以通过[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)访问。
+应用包的资源进行管理和访问通过程序包的拥有可从当前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)访问的顶级[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 。 在每个包中，各种组件可以具有其 ownResourceMapsubtrees，你可以通过[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)访问。
 
 框架包可以使用绝对资源标识符 URI 访问自己的资源。 另请参阅 [URI 方案](uri-schemes.md)。
 

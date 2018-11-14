@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: caea254143561d3e38b6583db90945118671e435
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6251153"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6442323"
 ---
 # <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a>在合作伙伴中心中使用 Data Platform 2017 配置特别推荐的统计数据或排行榜
 

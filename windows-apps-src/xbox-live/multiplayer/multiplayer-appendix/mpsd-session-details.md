@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015, 会话, mpsd
 ms.localizationpriority: medium
-ms.openlocfilehash: ad551d07d94f90d89f8abda0b188ea281b4930c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: e3678d983cc75a2b6c7855279a1b96fb526440d1
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6034791"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6272875"
 ---
 # <a name="mpsd-session-details"></a>MPSD 会话详细信息
 
@@ -31,7 +31,7 @@ ms.locfileid: "6034791"
 
 ## <a name="session-overview"></a>会话概述
 
-多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 此模板中找不到[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)和[Windows 开发人员中心](https://partner.microsoft.com/dashboard/windows/overview)服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据开发人员通过 XDP 或 Windows 开发人员中心设置访问策略的服务配置对执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
+多人游戏会话目录 (MPSD) 会话具有会话名称并被标识为会话模板，这是为会话提供默认设置的 JSON 文档的实例。 模板是具有服务配置标识符 (SCID) 的服务配置的一部分，这是一个 GUID。 可以在[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)和[合作伙伴中心](https://partner.microsoft.com/dashboard)上找到此模板。 服务配置是面向开发人员的资源用于引入、 管理和安全策略。 当通过 MPSD 访问会话时，主要授权根据设置开发人员通过 XDP 或合作伙伴中心访问策略的服务配置对执行。 当会话在授予了服务配置的访问权限后加载时，辅助访问检查（如会话成员身份验证）在会话级别执行。
 
 本主题假设你的模板使用协定版本 107，即当前的 MPSD 为 Xbox One 使用的版本。 如果你有基于协定版本 105（与 104 相同）定义的模板，你必须更改这些设置以支持版本 107。 有关说明，请参阅[常见的多人游戏 2015 迁移问题](common-issues-when-adapting-multiplayer.md)。
 
@@ -175,7 +175,7 @@ https://{authority}/serviceconfigs/{service-config-id}/sessiontemplates/{session
 
 有两种方法来控制会话配置：
 
--   使用通过 XDP 或 Windows 开发人员中心引入的会话模板。
+-   使用通过 XDP 或合作伙伴中心引入的会话模板。
 -   使用多人游戏和匹配 WinRT API 或 REST API 调用。 你必须仍使用模板，但模板不必包含你想要配置的值。 请注意，你的作品无法覆盖模板中已设置的常量。
 
 将提供单独的 JSON 文档来定义会话本身。 此外，开发人员还必须实现特定作品所需的任何 WinRT 包装器功能。 JSON 文档和任何 WinRT 包装器代码的内容必须彼此准确反映，并且必须反映最新的模板协定版本。
@@ -193,7 +193,7 @@ https://{authority}/serviceconfigs/{service-config-id}/sessiontemplates/{session
 
 ## <a name="session-capabilities"></a>会话功能
 
-功能是 MPSD 会话中的常量，该会话配置 MPSD 应该对其应用的行为。 你最常使用 XDP 和 Windows 开发人员中心来设置会话模板中的功能。 它们在 /constants/system/capabilities 对象中设置。 如果不需要功能，则使用空的功能对象。
+功能是 MPSD 会话中的常量，该会话配置 MPSD 应该对其应用的行为。 你最常使用 XDP 和合作伙伴中心来设置会话模板中的功能。 它们在 /constants/system/capabilities 对象中设置。 如果不需要功能，则使用空的功能对象。
 
 | 注意                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------|

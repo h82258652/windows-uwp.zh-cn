@@ -9,11 +9,11 @@ keywords: windows 10，uwp 安全
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028053"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267052"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -177,7 +177,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果你的应用使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他相关的登录体验的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时，忽略此属性。
+> （可选） 如果你的应用使用的登录提示 （若要填充的默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时忽略此属性。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -337,7 +337,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>删除已存储帐户
 
-如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样一来，他们可以有效地"注销"的应用： 他们的帐户信息将不会再将自动启动时加载。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
+如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样一来，他们可以有效地"注销"的应用： 他们的帐户信息将不再自动启动时加载。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

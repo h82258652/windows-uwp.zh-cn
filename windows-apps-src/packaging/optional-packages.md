@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10，uwp，可选包，相关的集，包扩展，visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a782ba90fbf350d9a18098d342c05c75dca6ceb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: c21b84467151493836186d1d55ab5e4e542899ec
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192198"
+ms.locfileid: "6259119"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>可选包和相关集的创作
 可选包中包含可与主要包相集成的内容。 这些是可用于可下载内容 (DLC) 划分大型应用大小限制，或者用于随附的任何其他内容从原始应用单独。
@@ -29,7 +29,7 @@ ms.locfileid: "6192198"
 若要获取所有最新的开发工具，请参阅[下载和适用于 Windows 10 的工具](https://developer.microsoft.com/windows/downloads)。
 
 > [!NOTE]
-> 若要提交到 Microsoft Store 中使用可选包和/或相关的集的应用，你将需要权限。 如果未将可选包和相关集提交到 Microsoft Store，则无需开发人员中心权限即可以将它们用于业务线 (LOB) 或企业应用。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
+> 若要提交到 Microsoft Store 中使用可选包和/或相关的集的应用，你将需要权限。 如果它们不提交到应用商店，可以为合作伙伴中心未经许可的业务线 (LOB) 或企业应用使用可选包和相关的集。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
 
 ### <a name="code-sample"></a>代码示例
 虽然你正在阅读本文，但建议你遵循[可选包的代码示例](https://github.com/AppInstaller/OptionalPackageSample)在 GitHub 上以便动手了解如何可选包和相关集 Visual Studio 中的工作。
