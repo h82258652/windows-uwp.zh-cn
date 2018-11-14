@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be90230407c3d539c55dc05d1272fbaaa2ae10e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190068"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6658258"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -108,7 +108,7 @@ ms.locfileid: "6190068"
 
 ### <a name="restricted-capability-approval-process"></a>受限功能审核流程
 
-以前，你需要联系支持部门来获得使用某项功能的批准。 现在，你可以在开发人员中心仪表板中作为[提交过程](../publish/app-submissions.md)的一部分提供该信息。
+以前，你需要联系支持部门来获得使用某项功能的批准。 我们现在允许你在[提交过程](../publish/app-submissions.md)的一部分提供[合作伙伴中心](https://partner.microsoft.com/dashboard/)中的此信息。
 
 当你为你的提交上传程序包时，我们将检测是否声明所有受限的功能。 如果我们检测到声明了此类功能，则你需要在[提交选项](../publish/manage-submission-options.md#restricted-capabilities)页面上提供有关你的产品如何使用每项功能的详细信息。 请务必提供尽可能详细的信息，以帮助我们了解你的产品需要声明该功能的原因。 请注意，这可能会给你的提交增加一些额外的时间来完成认证过程。
 
@@ -117,7 +117,7 @@ ms.locfileid: "6190068"
 如果我们不批准你使用该功能，你的提交将无法通过认证，并且我们将提供在认证报告中的反馈。 然后，你可以选择创建新的提交并上传未声明该功能的程序包，或者在适用情况下解决与使用该功能有关的任何问题，然后在新提交中申请批准。
 
 > [!NOTE]
-> 如果你的提交在开发人员中心中使用了开发沙盒（例如，任何与 Xbox Live 集成的游戏都是这种情况），则你必须提前申请批准，而不是在**提交选项**页面上提供信息。 若要执行该操作，请访问 [Windows 开发人员支持页面](https://developer.microsoft.com/windows/support)。 选择开发人员支持主题**仪表板问题**、 问题类型**应用提交**和子类别**其他**。 然后介绍如何使用该功能，以及为何需要你的产品。 如果不提供所有必要信息，将拒绝你的请求。 我们也可能会要求你提供更多信息。 请注意，该流程通常需要 5 个工作日或更长时间，因此请提前提交请求。
+> 如果你的提交将在合作伙伴中心使用开发沙盒 （例如，这是与 Xbox Live 集成的任何游戏的情况），你必须请求事先批准，而不是无需**提交选项**页面上提供信息。 若要执行该操作，请访问 [Windows 开发人员支持页面](https://developer.microsoft.com/windows/support)。 选择开发人员支持主题**仪表板问题**、 问题类型**应用提交**和子类别**其他**。 然后介绍如何使用该功能，以及为何需要你的产品。 如果不提供所有必要信息，将拒绝你的请求。 我们也可能会要求你提供更多信息。 请注意，该流程通常需要 5 个工作日或更长时间，因此请提前提交请求。
 >
 > 你也可以使用此方法的请求审批 （而不提供此信息在你的提交过程），指示是否你使用的开发沙盒，如果你想要确认您已批准使用受限的功能，在开始之前你提交。
 

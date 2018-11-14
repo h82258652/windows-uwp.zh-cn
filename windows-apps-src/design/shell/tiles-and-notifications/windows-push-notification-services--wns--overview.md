@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: 633fd26a7dfc799f9b9c9058f88ba6b1fa40ac57
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6282568"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6672466"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述
  
@@ -38,7 +38,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>注册你的应用，并为你的云服务接收凭据
 
 
-在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请转到 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=511146)并选择**仪表板**。 创建应用后，可以按照**应用管理 - WNS/MPNS** 页面上的说明检索凭证。 如果想使用 Live 服务解决方案，请访问此页面上的 **Live 服务网站**链接。
+在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 创建应用后，可以按照**应用管理 - WNS/MPNS** 页面上的说明检索凭证。 如果想使用 Live 服务解决方案，请访问此页面上的 **Live 服务网站**链接。
 
 每个应用都有其各自的一组云服务凭据。 这些凭据无法用于向其他任何应用发送通知。
 

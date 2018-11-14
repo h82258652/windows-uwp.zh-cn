@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6203842"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458059"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>在 Mac 上设置 Windows 10
 

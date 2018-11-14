@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 图形
 ms.localizationpriority: medium
 ms.openlocfilehash: e9834a83620343f26acaabd0e05b30cc2c1dcfab
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206382"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661990"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>DirectX 游戏的基本 3D 图形
 

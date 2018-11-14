@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b28653fc7746075c57f862b0c885beac6d4934f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272211"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6471226"
 ---
 # <a name="spring-animations"></a>弹簧动画
 

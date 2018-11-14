@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e6d3d4a549c5e815464ef696a938b44dbe6128c
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267896"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6459707"
 ---
 # <a name="discover-remote-devices"></a>发现远程设备
 你的应用可以使用无线网络、蓝牙和云连接来发现使用发现设备的相同 Microsoft 帐户登录的 Windows 设备。 无需安装任何特殊软件，即可发现远程设备。

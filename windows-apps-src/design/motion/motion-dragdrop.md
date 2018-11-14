@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d271d0b9c8e7ce73835457789aca3fa2cb5eda97
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6443834"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668350"
 ---
 # <a name="drag-animations"></a>拖动动画
 

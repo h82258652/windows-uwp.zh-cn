@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 云中的操作中心, 通知镜像, 通知, 跨设备
 ms.localizationpriority: medium
 ms.openlocfilehash: c36b5ffcbb016e5b89fa1c960a7493767192296c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6470488"
+ms.locfileid: "6658183"
 ---
 # <a name="notification-mirroring"></a>通知镜像
 

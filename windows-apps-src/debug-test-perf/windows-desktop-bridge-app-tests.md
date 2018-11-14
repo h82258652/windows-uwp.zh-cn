@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 8363bc3085e9d6ec4e1a86751b691266b12b365c
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6265905"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6456604"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 

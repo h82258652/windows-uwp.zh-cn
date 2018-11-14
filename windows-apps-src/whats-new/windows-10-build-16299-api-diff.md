@@ -8,11 +8,11 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 95f7b7adb351db840647cc3f4a69ad7f43663a03
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6452716"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6656392"
 ---
 # <a name="new-apis-in-windows-10-build-16299"></a>Windows 10 版本 16299 中的新增 API
 
