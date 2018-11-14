@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042382"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142174"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
@@ -249,7 +249,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </ul>
 <p>在 Windows 10 中，鸟瞰图和 3D 视图样式相同。</p>
 <div class="alert">
-**注意**省略**sty**参数将产生相同的结果与 sty = r。
+**请注意**省略**sty**参数将产生相同的结果与 sty = r。
 </div>
 <div>
  
@@ -287,7 +287,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 <b>ss</b> 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 <b>cp</b> 参数结合使用，指定街道级视图的位置。</p>
 <div class="alert">
-**注意**街道级图像在所有地区不可用。
+**请注意**街道级图像在所有地区不可用。
 </div>
 <div>
  
@@ -301,7 +301,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
 <div class="alert">
-**注意**路况数据在所有地区不可用。
+**请注意**路况数据在所有地区不可用。
 </div>
 <div>
  
@@ -330,7 +330,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
-**注意**可以由**pos**参数值指定位置的位置使用标题。 将显示标题，而不是显示纬度和经度。
+**请注意**可以由**pos**参数值指定该位置的位置使用标题。 将显示标题，而不是显示纬度和经度。
 </div>
 <div>
  

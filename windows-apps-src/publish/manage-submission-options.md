@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 发布暂停, 发布日期, 发送提交以发布, 受限功能审核, windows 10, uwp, publishing hold, publish date, send submission to publish, restricted capability approval
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f7d58989035db1a14aba685c8951d23d2f94b52
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028497"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159390"
 ---
 # <a name="manage-submission-options"></a>管理提交选项
 
@@ -40,7 +40,7 @@ ms.locfileid: "6028497"
 
 选择**于此日期开始发布此提交**来确保在特定日期之前不发布提交。 使用此选项，你的提交将在你指定的日期当天或之后立即发布。 该日期必须为 24 小时之后的一个日期。 除了日期，还可指定开始发布提交的时间。 
 
-你可以更改此之后，将产品提交的发布日期，只要它尚未进入发布步骤。 
+你可以更改此后，将产品提交的发布日期，只要它尚未进入发布步骤。 
  
 如前文所述，如果你希望为提交指定特定的发布日期，请使用**通过认证后立即发布此提交（或按照计划部分中选择的日期）** 并将**发布暂停选项**保留为默认选择。 使用**于此日期开始发布此提交**选项意味着你的提交在这个日期之前不会开始发布过程，不过认证或发布期间的推迟可能导致实际发布日期晚于你选择的日期。 
 

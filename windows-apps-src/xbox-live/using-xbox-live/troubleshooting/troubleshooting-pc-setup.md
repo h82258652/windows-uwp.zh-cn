@@ -8,16 +8,16 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 186300b160c611eae58566d51ef50bc6920e2ad0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 9484a324b060bbbf3e31dab0ace915bd4c551ebb
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041899"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192402"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a>Windows 电脑上的 Xbox Live 设置疑难解答
 
-Windows 10 电脑上，你可以确保你的计算机正确使用这些步骤的设置：
+Windows 10 电脑上，你可以确保你的计算机设置正确使用以下步骤：
 
 1. 更改你的计算机为指向示例设计运行的 XDKS.1 沙盒。  通过运行以下脚本执行此操作：
 
@@ -31,6 +31,6 @@ Windows 10 电脑上，你可以确保你的计算机正确使用这些步骤的
 1. 将构建目标平台更改为“Win32”或“x64”。
 1. 右键单击解决方案并重建所有内容。
 1. 在调试程序中启动应用。
-1. 登录[Xbox 开发人员门户](https://xdp.xboxlive.com)中，创建的开发帐户或与[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上授权零售开发者帐户。
+1. 登录与你在[Xbox 开发人员门户](https://xdp.xboxlive.com)创建开发帐户或零售开发者帐户有权在[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 1. 授予应用访问 Xbox Live 信息的权限。
 1. 验证该应用是否可以检索你的信息以及你是否能够看到你的玩家代号。

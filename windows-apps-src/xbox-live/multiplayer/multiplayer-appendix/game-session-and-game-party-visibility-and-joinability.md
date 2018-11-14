@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c039a2c78824de64c503786d911bb3427e53cf64
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041874"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157855"
 ---
 # <a name="game-session-and-game-party-visibility-and-joinability"></a>游戏会话和群体游戏的可见性和可加入性
 
@@ -39,7 +39,7 @@ ms.locfileid: "6041874"
 ## <a name="game-session-joinability"></a>游戏会话的可加入性
 
 
-访问控制的第二个方面是可加入性。 它可以在会话生存期内动态设置，并确定哪类用户可以加入会话。 会话 joinabilityare 值：
+访问控制的第二个方面是可加入性。 它可以在会话生存期内动态设置，并确定哪类用户可以加入会话。 会话 joinabilityare 为的值：
 
 -   *无*（默认值）- 对于可以加入会话的人没有限制。
 

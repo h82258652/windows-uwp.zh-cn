@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049518"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157313"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
@@ -31,7 +31,7 @@ ms.locfileid: "6049518"
 
 ## <a name="product-lifetime"></a>产品生命周期
 
-如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果你愿意，你可以更改**产品生命周期**，以便加载项后一段时间 （可选择 1 至 365 天） 过期。
+如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 耐用型加载项的默认**产品生命周期**为**永久**，这意味着加载项永不过期。 如果你愿意，你可以更改**产品生命周期**，以便该加载项后一段时间 （可选择 1 至 365 天） 过期。
 
 
 ## <a name="quantity"></a>数量
@@ -41,7 +41,7 @@ ms.locfileid: "6049518"
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但你也可以选择**3 个月**、 **6 个月**，**每年**，还是**24 个月**。
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但你还可以选择**3 个月**、 **6 个月**，**每年**，还是**24 个月**。
 
 > [!IMPORTANT]
 > 加载项发布之后，将无法更改**订阅期限**选择。
@@ -86,7 +86,7 @@ ms.locfileid: "6049518"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
 
 > [!NOTE]
-> 关键字不可用于面向 Windows8 和 Windows8.1 的程序包。
+> 关键字不是可用于面向 Windows8 和 Windows8.1 的程序包。
 
 <span id="custom-developer-data" />
 
@@ -99,7 +99,7 @@ ms.locfileid: "6049518"
 若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
 
 > [!NOTE]
-> **自定义开发人员数据**字段不可用于使用面向 Windows8 和 Windows8.1 的程序包。
+> **自定义开发人员数据**字段不是可用于面向 Windows8 和 Windows8.1 的程序包的。
 
  
 

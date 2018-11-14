@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ca8bd73ce7b71ddbe4a159a4d3e089c5adb9ad87
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6025529"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182678"
 ---
 # <a name="put-handleshandle-idsession"></a>PUT (/handles/{handle-id}/session)
 创建或更新会话由取消引用句柄。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4ECB)
@@ -33,7 +33,7 @@ ms.locfileid: "6025529"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法将新的或更新会话写入多人游戏服务，使用提供的会话句柄 id。 结果是表示新的或更新会话，如从服务器返回的对象。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**换行显示。
+此 HTTP/REST 方法将新的或更新会话写入多人游戏服务，使用提供的会话句柄 id。 结果是一个表示新的或更新会话，如从服务器返回的对象。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**换行。
 
 此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取的 ID 从协议激活后用户已接受游戏邀请。
 

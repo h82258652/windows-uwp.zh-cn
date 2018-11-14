@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024226"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148955"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移动和绘制命令语法
 
@@ -81,7 +81,7 @@ ms.locfileid: "6024226"
 
 大写 **M** 指示 *startPoint* 是绝对坐标；小写 **m** 指示 *startPoint* 是上一个点的偏移或 (0,0)（如果没有上一个点）。
 
-**注意**是合法在移动命令后指定多个点。 向这些点绘制一条直线，就像你指定了直线命令一样。 但是这不是建议的样式；请改为使用专门的直线命令。
+**请注意**是合法在移动命令后指定多个点。 向这些点绘制一条直线，就像你指定了直线命令一样。 但是这不是建议的样式；请改为使用专门的直线命令。
 
 **绘制命令**
 
@@ -229,7 +229,7 @@ ms.locfileid: "6024226"
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>用于生成移动和绘制命令的设计工具
 
-使用 Blend for Microsoft Visual Studio2015 中的**笔**工具和其他绘图工具通常将生成一个[**路径**](/uwp/api/Windows.UI.Xaml.Shapes.Path)，具有对象移动和绘制命令。
+在 Blend for Microsoft Visual Studio2015 中使用**触控笔**工具和其他绘图工具通常会生成[**路径**](/uwp/api/Windows.UI.Xaml.Shapes.Path)对象，与移动和绘制命令。
 
 你可能在某些控件部件中看到现有移动和绘制命令数据，这些部件已在控件的 Windows 运行时 XAML 默认模板中定义。 例如，某些控件将已定义数据的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 用作移动和绘制命令。
 

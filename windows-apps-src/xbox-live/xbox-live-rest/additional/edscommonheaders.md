@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 80a38dfa2dad97b4383f86328ddbf61d6e4a299f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030689"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186900"
 ---
 # <a name="eds-common-headers"></a>EDS 通用标头
 
@@ -22,26 +22,26 @@ ms.locfileid: "6030689"
 
 
 
-## <a name="entertainment-discovery-services-eds-common-request-headers"></a>娱乐发现服务 (EDS) 常见的请求标头
+## <a name="entertainment-discovery-services-eds-common-request-headers"></a>娱乐发现服务 (EDS) 公共请求标头
 
 | 标头名称| 说明| 是否为必需？| 注释|
 | --- | --- | --- | --- |
 | <b>x xbl 协定版本</b>| EDS 服务版本| 是| 3.2|
-| <b>x xbl 客户端类型</b>| 客户端类型的标头| 是| 与团队，获取你自己的客户端类型进行交流。|
+| <b>x xbl 客户端类型</b>| 客户端类型标头| 是| 说到团队，获取你自己的客户端类型。|
 | <b>x xbl 客户端版本</b>| 客户端版本| 是| 任何非空字符串。|
-| <b>x xbl 父 ig</b>| 印象 guid| 是| 用于跟踪日志中以及跨其他服务调用的请求。|
-| <b>x xbl 设备类型</b>| 设备类型| 是| 客户端所表示的设备。|
+| <b>x xbl 父 ig</b>| 印象 guid| 是| 用于跟踪日志中记录和其他服务调用的请求。|
+| <b>x xbl 设备类型</b>| 设备类型| 是| 表示客户端的设备。|
 | <b>接受</b>| 接受类型| 是| XML 或 JSON。|
 | <b>授权</b>| 身份验证标头| 是|  |
-| <b>x xbl 自动建议-种子-文本转换功能</b>| 自动建议种子文本| 否| 使用为 BI 和相关性|
+| <b>x xbl 自动建议-种子-文本转换功能</b>| 自动建议种子文本| 否| 用于为 BI 和相关性|
 | <b>x xbl 搜索词</b>| 搜索词| 否|  |
-| <b>x xbl 输入方法</b>| 使用用户的输入的法| 否| 控制器，语音，Kinect。|
+| <b>x xbl 输入方法</b>| 用户使用的输入的法| 否| 控制器，语音，Kinect。|
 | <b>x-xbl-kinect 启用</b>| 启用 Kinect| 否| 是/否。|
 | <b>x-xbl-语音的会话的 id</b>| 语音会话 ID| 否| 是否使用语音启动会话。|
 | <b>x xbl 客户端 id</b>| 匿名客户端 Id| 否| 用于 BI 报告和相关性。|
 | <b>x xbl 设备 id</b>| 设备 ID| 否| 用于 BI 报告和相关性。|
 | <b>x xbl 用户代理</b>| 客户端用户代理| 否| 用于 BI。 "&lt;名称 > /&lt;版本 > (&lt;操作系统版本 >;&lt;平台 >;&lt;功能 >;&lt;制造 >;&lt;模型 >)"。|
-| <b>x xbl 父 ig</b>| 对于"Chained"调用之前印象 Guid| 否 （但强烈建议）| BI 相关性来说很重要。 例如，浏览调用 IG 是以下父 IG 详细调用。|
+| <b>x xbl 父 ig</b>| 对于"Chained"调用之前印象 Guid| 否 （但强烈建议）| BI 相关性来说很重要。 例如，浏览调用 IG 是以下父 IG 细节调用。|
 | <b>delid</b>| 委托标识| 否| 使用内部服务来代表用户工作。|
 
 ## <a name="common-response-headers"></a>常见的响应标头

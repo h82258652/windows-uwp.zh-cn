@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp, 自定义, 应用, 促销, 市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037833"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157227"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>创建自定义应用促销市场活动
 
 除了创建将在 Windows 应用中运行的[应用的广告市场活动](create-an-ad-campaign-for-your-app.md)外，你还可以使用其他渠道推广你的应用。 例如，你可以使用第三方应用营销提供商推广你的应用，或者可以在社交媒体站点上发布指向你的应用的链接。 这些活动被称为*自定义市场活动*。
 
-如果你为应用举行自定义市场活动，你可以通过为每个自定义市场活动创建不同的 URL（其中每个 URL 包含不同的*市场活动 ID*）来跟踪每个市场活动的相对表现。 当运行 windows 10 的客户单击包含市场活动 ID 的 URL 时，Microsoft 将单击与相应的自定义市场活动相关联，并使此数据可供你在[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+如果你为应用举行自定义市场活动，你可以通过为每个自定义市场活动创建不同的 URL（其中每个 URL 包含不同的*市场活动 ID*）来跟踪每个市场活动的相对表现。 当运行 windows 10 的客户单击包含市场活动 ID 的 URL 时，Microsoft 将该单击与相应的自定义市场活动相关联，并使此数据可供你在[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
 > [!IMPORTANT]
 > 仅，在 windows 10 上的客户对此数据被跟踪。 使用其他操作系统的客户仍可以跟踪你的应用一览的链接，但有关这些客户的活动的数据将不包括在内。
@@ -28,7 +28,7 @@ ms.locfileid: "6037833"
 
 你可以通过以下方式检索应用的自定义市场活动表现数据：
 
-* [购置报告](acquisitions-report.md)中，你可以查看页面查看次数和转换的**应用页面查看和市场活动 ID 转换**和**总市场活动转换**的图表从你的应用或加载项相关的数据。
+* [购置报告](acquisitions-report.md)中，你可以查看页面查看次数和转换为你的应用或加载项的**应用页面查看次数和转换按市场活动 ID**和**总市场活动转换**图表相关的数据。
 * 如果你的应用是通用 Windows 平台 (UWP) 应用，则可以使用 Windows SDK 中的 API 以编程方式检索导致转换的自定义市场活动 ID。
 
 ## <a name="example-custom-campaign-scenario"></a>自定义市场活动方案示例
@@ -47,7 +47,7 @@ ms.locfileid: "6037833"
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>了解购置如何限定为转换
 
-自定义市场活动*转换*是由客户单击通过自定义市场活动推广的 URL 所导致的购置。 限定为转换为[购置报告](acquisitions-report.md)中的**应用页面查看和市场活动 ID 转换**和**总市场活动转换**的图表和限定为转换[不同的方案以编程方式检索市场活动 ID](#programmatically)。
+自定义市场活动*转换*是由客户单击通过自定义市场活动推广的 URL 所导致的购置。 限定为转换为[购置报告](acquisitions-report.md)中的**应用页面查看次数和转换按市场活动 ID**和**总市场活动转换**图表和限定为转换[不同的方案以编程方式检索市场活动 ID](#programmatically)。
 
 ### <a name="qualifying-conversions-in-the-acquisitions-report"></a>限定转换中的购置报告
 
@@ -195,4 +195,4 @@ public async Task<string> GetCampaignId()
 
 3.  再多次单击该 URL，在每次访问应用的页面后关闭 UWP 应用或浏览器页面。 在其中**一次**访问你的应用页面时，购置你的应用可生成转换。 计算你单击 URL 的总次数。
 
-4. 确认是否预期的页面查看次数和转换显示在[购置报告](acquisitions-report.md)中，**应用页面查看和市场活动 ID 转换**和**市场活动转换总量**图表中和测试你的应用代码以确认它是否可以成功检索市场活动 ID 使用上文所述的 Api。
+4. 确认是否预期的页面查看次数和转换显示在[购置报告](acquisitions-report.md)中，**应用页面查看次数和市场活动 ID 转换**和**市场活动转换总量**图表中，并测试你的应用代码以确认它是否可以成功检索市场活动 ID 使用上文所述的 Api。

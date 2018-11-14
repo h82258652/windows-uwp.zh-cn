@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 音频, 输入, 联网
 ms.localizationpriority: medium
 ms.openlocfilehash: 190f8a67dc8dc86bdddc1be2e073da9e5969255b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047176"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189620"
 ---
 # <a name="uwp-programming"></a>UWP 编程
 

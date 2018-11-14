@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044037"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183463"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>呈现框架 I：呈现简介
 
@@ -618,7 +618,7 @@ __DX::DeviceResources__ 类位于 __DeviceResources.cpp__/__.h__文件中，控�
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX 图形基础结构 (DXGI) 是与封装的一些低级别任务 Direct3D 10 所需的 WindowsVista 引入的新子系统 10.1、 11 和 11.1。 在多线程应用程序中使用 DXGI 时需要格外小心，以确保不会发生死锁。 有关详细信息，请参阅 [DirectX 图形基础结构 (DXGI)：最佳做法-多线程](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX 图形基础结构 (DXGI) 是一个新子系统中引入的 WindowsVista 封装的一些低级别任务所需的 Direct3D 10、 10.1、 11 和 11.1。 在多线程应用程序中使用 DXGI 时需要格外小心，以确保不会发生死锁。 有关详细信息，请参阅 [DirectX 图形基础结构 (DXGI)：最佳做法-多线程](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>功能级别
 
@@ -628,7 +628,7 @@ Microsoft DirectX 图形基础结构 (DXGI) 是与封装的一些低级别任务
 
 使用功能级别，在创建设备时，你可以尝试为想要请求的功能级别创建设备。 如果设备创建成功，该功能级别将存在，如果失败，硬件将不支持该功能级别。 你可以尝试在更低的功能级别重新创建设备，也可以选择退出应用程序。 例如，12\_0 功能级别需要 Direct3D 11.3 或 Direct3D 12，以及着色器模型 5.1。 有关详细信息，请参阅 [Direct3D 功能级别：各功能级别概述](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
 
-使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后在 9、 10 或 11 硬件 （有某些例外） 上运行 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后运行它上 9、 10 或 11 硬件 （除一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
 
 ### <a name="stereo-rendering"></a>立体呈现
 

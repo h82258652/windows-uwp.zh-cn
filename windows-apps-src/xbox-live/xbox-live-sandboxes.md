@@ -8,18 +8,18 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d2e102e80e7d415562e2917d626152331f3fff
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 60452c65a00aca134cfa33aa6378da06b94ac865
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049434"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195297"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 
-[Xbox Live 服务配置](xbox-live-service-configuration.md)中说明了你必须联机配置与你的作品有关的信息，此操作通常在 [Windows 开发人员中心](http://dev.windows.com)上执行。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
+在[Xbox Live 服务配置](xbox-live-service-configuration.md)中，它说明了你必须配置信息联机状态，你的作品有关通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
 
-在对你的服务配置进行更改时，你需要先通过开发人员中心发布这些更改，然后 Xbox Live 的其余部分才能选取它们，并显示给你的作品。
+当你对你的服务配置进行更改时，这些需要从合作伙伴中心发布，才能更改由 Xbox Live 的其余部分进行选取，并可以通过你的游戏中看到。
 
 你可以发布到所谓的开发沙盒。  利用这些沙盒，你可以在隔离环境中执行对作品的更改。  这些沙盒具有很多优点，如以下部分中所述。
 
@@ -43,7 +43,7 @@ ms.locfileid: "6049434"
 
 绝大多数的开发人员都只需要一个沙盒。  幸运的是，在你创建作品时，系统将为你创建沙盒。
 
-1. 你可通过转到下面的“开发人员中心”仪表板了解沙盒：
+1. 你了解你的沙盒通过此处转到合作伙伴中心：
 ![](images/getting_started/first_xbltitle_dashboard.png)
 
 1. 然后，单击你的作品：
@@ -93,7 +93,7 @@ ms.locfileid: "6049434"
     2. 通过运行开始使用 `Import-Module XboxlivePSModule`
     3. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
-* 若要使用它从 zip 文件在[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开 PowerShell 窗口，
+* 若要从 zip 文件时使用它[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开一个 PowerShell 窗口，
     1. 运行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 

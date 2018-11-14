@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032665"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188384"
 ---
 # <a name="getting-started-navigation"></a>入门：导航
 
@@ -24,7 +24,7 @@ iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和
 
 相比之下，包含多个视图的 windows 10 应用需要更多网站方法进行导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)。
 
-管理 windows 10 应用中的此导航的方法之一是使用[**框架**](https://msdn.microsoft.com/library/windows/apps/br242682)类。 以下演练将向你展示如何尝试执行此操作。
+管理 windows 10 应用中的此导航的方法之一是使用[**帧**](https://msdn.microsoft.com/library/windows/apps/br242682)类。 以下演练将向你展示如何尝试执行此操作。
 
 继续使用之前启动的解决方案，打开 **MainPage.xaml** 文件，然后在 **“设计”** 视图中添加按钮。 将该按钮的 **Content** 属性从“Button”更改为“Go To Page”。 然后为按钮的 **Click** 事件创建一个处理程序，如下图所示。 如果忘记了如何执行此操作，可回顾之前部分中的操作实例（提示：双击 **“设计”** 视图中的按钮）。
 
@@ -83,7 +83,7 @@ public BlankPage()
 
 有关导航的详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 个性化动画示例](http://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
-**注意**适用于使用 JavaScript 和 HTML 的 UWP 应用的导航信息，请参阅[快速入门： 使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
+**请注意**适用于使用 JavaScript 和 HTML 的 UWP 应用的导航信息，请参阅[快速入门： 使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  
 ### <a name="next-step"></a>下一步
 

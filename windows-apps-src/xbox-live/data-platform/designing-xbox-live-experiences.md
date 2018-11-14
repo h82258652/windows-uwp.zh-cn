@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 统计信息, 成就, 排行榜, 设计
 ms.localizationpriority: medium
-ms.openlocfilehash: 21d5e23a6123d8f6fd759973d4afd90ce9a9f9d0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4bcf2c0697f932e8ad121fe0e3cc52c221b7ed5f
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6044628"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182194"
 ---
 # <a name="designing-xbox-live-experiences"></a>设计 Xbox Live 体验
 
@@ -77,6 +77,6 @@ ms.locfileid: "6044628"
 * 收集的汽车最多
 
 ## <a name="next-steps"></a>后续步骤
-既然你已经了解了如何有效地设计“统计信息”、“排行榜”和“成就”，现在你便可以开始在你的作品中实现这些体验了。  接下来的几个部分将介绍从开发人员中心内的配置开始的端到端过程。
+既然你已经了解了如何有效地设计“统计信息”、“排行榜”和“成就”，现在你便可以开始在你的作品中实现这些体验了。  接下来的几个部分将介绍在合作伙伴中心中的配置开始的端到端流程。
 
 请参阅[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)

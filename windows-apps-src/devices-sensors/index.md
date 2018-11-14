@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ca78338b501b8c24549b1348c051a02ea62a501
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030421"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188434"
 ---
 # <a name="devices-sensors-and-power"></a>设备、传感器和电源
 
@@ -35,6 +35,6 @@ ms.locfileid: "6030421"
 | [蓝牙](bluetooth.md) | 本部分包含有关如何将蓝牙集成到通用 Windows 平台 (UWP) 应用的文章，包括如何使用 RFCOMM、GATT 和低功耗 (LE) 广告。 | 
 | [打印和扫描](printing-and-scanning.md) | 本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。 | 
 | [3D 打印](3d-printing.md) | 本部分介绍了如何在通用 Windows 应用中使用 3D 打印功能。 |
-| [创建 NFC 智能卡应用](host-card-emulation.md) | Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。 这限制了未与 MNO 密切合作的其他商户或开发人员提供的各种可能的支付解决方案。 在 windows 10 移动版中，我们引入了称为主机卡仿真 (HCE) 的新的卡仿真技术。 HCE 技术使你的应用可以直接与 NFC 读卡器通信。 本主题演示了主机卡仿真 (HCE) 在 windows 10 移动版设备上的工作原理以及如何开发 HCE 应用，以便你的客户能够无需与 MNO 协作通过他们的手机而非物理卡访问你的服务。 |
+| [创建 NFC 智能卡应用](host-card-emulation.md) | Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。 这限制了未与 MNO 密切合作的其他商户或开发人员提供的各种可能的支付解决方案。 在 windows 10 移动版中，我们引入了称为主机卡仿真 (HCE) 的新的卡仿真技术。 HCE 技术使你的应用可以直接与 NFC 读卡器通信。 本主题演示了主机卡仿真 (HCE) 在 windows 10 移动版设备上的工作原理以及如何开发 HCE 应用，以便你的客户可以无需与 MNO 协作通过他们的手机而非物理卡访问你的服务。 |
 | [获取电池信息](get-battery-info.md) | 了解如何使用 [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) 命名空间中的 API 获取电池的详细信息。 |
 

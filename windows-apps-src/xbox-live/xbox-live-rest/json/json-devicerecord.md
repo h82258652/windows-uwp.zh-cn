@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: ecfaf3ff6ee83c2d577614dc613939669ef60d62
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030443"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148106"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
-有关设备，包括其类型和活动对其游戏的信息。 
+有关设备，包括其类型和作品在其上的信息。 
 <a id="ID4EN"></a>
 
  
@@ -27,8 +27,8 @@ DeviceRecord 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| type| 字符串| 设备的设备类型。 可能性包括"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7，"和"PC"(G4WL)。 如果的类型是未知 （适用于示例 iOS、 Android 或 web 浏览器中嵌入一个标题），则返回"Web"。| 
-| 主题作品| [TitleRecord](json-titlerecord.md)的数组| 此设备上的活动标题的列表。| 
+| type| 字符串| 设备的设备类型。 可能性包括"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"和"PC"(G4WL)。 如果的类型是未知 （适用于示例 iOS、 Android 或嵌入在 web 浏览器标题），则返回"Web"。| 
+| 主题作品| [TitleRecord](json-titlerecord.md)的数组| 此设备上的活动的标题的列表。| 
   
 <a id="ID4EWB"></a>
 

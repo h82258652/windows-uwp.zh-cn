@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 37f87dd58d260d414bb5dcfcd551d77c051e5aa6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022682"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158167"
 ---
 # <a name="systemstringsvalidate"></a>/system/strings/validate
 访问用于验证字符串的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
@@ -26,7 +26,7 @@ ms.locfileid: "6022682"
 
 [POST (/system/strings/validate)](uri-systemstringsvalidatepost.md)
 
-&nbsp;&nbsp;接受验证的字符串的数组，并返回数组大小相同的结果。
+&nbsp;&nbsp;接受用于验证字符串的数组，并返回数组大小相同的结果。
  
 <a id="ID4E6"></a>
 

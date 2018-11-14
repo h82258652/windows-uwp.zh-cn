@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: db2b4a74b5b40060779dd82764dcf2ed2799b285
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028242"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151439"
 ---
 # <a name="getting-started-common-controls"></a>入门：常见控件
 
@@ -53,7 +53,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 
 有关其他更多控件，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-**注意**控件适用于使用 JavaScript 和 HTML 的 UWP 应用的列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
+**请注意**控件适用于使用 JavaScript 和 HTML 的 UWP 应用的列表，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/hh465453)。
 
 ### <a name="next-step"></a>下一步
 

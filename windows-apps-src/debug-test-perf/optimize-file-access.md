@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040749"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149849"
 ---
 # <a name="optimize-file-access"></a>优化文件访问
 
@@ -198,7 +198,7 @@ ms.locfileid: "6040749"
 
 在读取或写入较大的数据集时，你可以通过为 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法提供较大的缓冲区大小来提高读取或写入吞吐量。 这将为数据流适配器提供较大的内部缓冲区大小。 例如，将来自大型文件的数据流传递给 XML 分析程序时，分析程序可以从数据流中执行多个连续的小读取操作。 大型缓冲区可以减少对基础 UWP 流的调用次数并提高性能。
 
-> **注意**应非常小心时将缓冲区大小设置为大于约 80 KB，这可能导致垃圾回收器堆上产生碎片 （请参阅[改进垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
+> **请注意**应非常小心时将缓冲区大小设置大于约 80 KB，这可能导致垃圾回收器堆上产生碎片 （请参阅[改进垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

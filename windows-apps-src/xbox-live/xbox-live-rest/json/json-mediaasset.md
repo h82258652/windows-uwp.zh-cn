@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b50cb58f6c6262d653e90e1e6ca9666cecadf680
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044703"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6150815"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
 与成就或其奖励媒体资产。
@@ -29,7 +29,7 @@ MediaAsset 对象具有以下规范。
 | --- | --- | --- |
 | name| 字符串| MediaAsset，如"tile01"的名称。|
 | type| MediaAssetType 枚举| 媒体资产类型： <ul><li>图标 (0): 成就图标。</li><li>插图 (1): 数字艺术资源。</li></ul> | 
-| url| 字符串| MediaAsset 的 URL。|
+| url| 字符串| MediaAsset URL。|
 
 <a id="ID4EFC"></a>
 

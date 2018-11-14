@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 287287879f6b7f2334d23a9ff1836a61ddd1ce42
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022701"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187777"
 ---
 # <a name="feedback-json"></a>Feedback (JSON)
 包含有关玩家的反馈信息。
@@ -38,43 +38,43 @@ ms.locfileid: "6022701"
 
 ### <a name="feedback-types"></a>反馈类型
 
-"发送"列指示谁可以提交反馈。
+在"发送"列指示谁可以提交反馈。
 
-   * "用户"意味着它才能提交用于 XToken 身份验证，因此控制台 API 可以接受**SubmitFeedback**。
-   * "合作伙伴"意味着可以提交它由合作伙伴使用声明证书，因此该 API 可接受**SubmitBatchFeedback**。
+   * "用户"意味着它才能提交用于 XToken 身份验证，因此控制台 API 可接受**SubmitFeedback**。
+   * "合作伙伴"意味着它可以提交的合作伙伴使用声明证书，因此该 API 可接受**SubmitBatchFeedback**。
    * "隐私"意味着只有 SLS 隐私服务可以发送反馈。
-   * "None"意味着反馈审核的 SLS 信誉服务由内部生成，并且无法发送的任何调用方。
+   * "None"意味着反馈 SLS 信誉服务审核内部生成，并且无法发送的任何调用方。
 
-| 类型| 发送的| 注释|
+| 类型| 通过发送| 注释|
 | --- | --- | --- | --- | --- | --- |
-| CommsAbusiveVoice| 用户| 用户向报告不恰当的语音通信从游戏内和从 Xbox 操作面板发送反馈。 |
+| CommsAbusiveVoice| 用户| 用户向报告不恰当语音通信从游戏内和 Xbox 仪表板发送反馈。 |
 | CommsInappropriateVideo| 用户合作伙伴| 用户和合作伙伴发送反馈报告不恰当视频从游戏内和从 Xbox 操作面板。 |
 | CommsMuted| 隐私| 当用户静音另一个玩家时，隐私向信誉服务发送此反馈。 |
-| CommsPhishing| 用户| 用户将其发送此反馈报告网络钓鱼消息。 |
-| CommsPictureMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，具体取决于图片的通信并报告给执行团队的反馈。 |
-| CommsSpam| 用户| 用户将其发送此反馈报告垃圾邮件。 |
-| CommsTextMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，报告给执行团队的反馈。 **注意：** 收件箱 UI 应该有一个按钮，以允许用户标志一条消息。 |
+| CommsPhishing| 用户| 用户发送此反馈报告的钓鱼消息。 |
+| CommsPictureMessage| 用户| 收件箱服务调用信誉服务，它会更新发件人的信誉，具体取决于图片的通信并报告给执行团队的反馈。 |
+| CommsSpam| 用户| 用户发送此反馈报告垃圾邮件。 |
+| CommsTextMessage| 用户| 收件箱服务调用信誉服务，该更新发件人的信誉，报告给执行团队的反馈。 **注意：** 收件箱 UI 应该有一个按钮，以允许用户在标志一条消息。 |
   | CommsVoiceMessage | 用户 | 收件箱服务调用信誉服务，该更新发件人的信誉，具体取决于语音消息的通信并报告给执行团队的反馈。  |
   | FairPlayBlock | 隐私 | 当用户阻止其他玩家，隐私向信誉服务发送此反馈。  |
   | FairPlayCheater | 用户合作伙伴 | 确定用户在作弊的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayConsoleBanRequest | 合作伙伴 | 合作伙伴提供的建议，以禁止从 Xbox Live 控制台为发送此反馈。  |
-  | FairPlayIdler | 用户合作伙伴 | 如果用户处于空闲状态目的游戏时，通常圆形后舍入，确定的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayKicked | 用户合作伙伴 | 检测用户已进行投票退出游戏 （踢） 的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayKillsTeammates | 用户合作伙伴 | 当玩家 killls 可以自动确定的游戏他名队友就可以发送此反馈无需用户干预。  |
+  | FairPlayConsoleBanRequest | 合作伙伴 | 合作伙伴将作为建议禁止从 Xbox Live 的主机发送此反馈。  |
+  | FairPlayIdler | 用户合作伙伴 | 如果用户处于空闲目的游戏时，通常圆形后一轮，确定的游戏可以发送此反馈无需用户干预。  |
+  | FairPlayKicked | 用户合作伙伴 | 检测用户已进行投票退出 （踢） 的游戏的游戏可以发送此反馈无需用户干预。  |
+  | FairPlayKillsTeammates | 用户合作伙伴 | 可以在玩家 killls 时自动确定的游戏他名队友就可以发送此反馈无需用户干预。  |
   | FairPlayQuitter | 用户合作伙伴 | 确定用户提前退出游戏的游戏可以发送此反馈无需用户干预。  |
-  | FairPlayTampering | 用户合作伙伴 | 确定用户已篡改磁盘上的内容的游戏可以发送此反馈无需用户干预。  |
+  | FairPlayTampering | 用户合作伙伴 | 确定用户已经篡改磁盘上的内容的游戏可以发送此反馈无需用户干预。  |
   | FairPlayUnblock | 隐私 | 当用户取消阻止其他玩家，隐私向信誉服务发送此反馈。  |
   | FairPlayUserBanRequest | 合作伙伴 | 合作伙伴将作为建议禁止从 Xbox Live 用户发送此反馈。  |
-  | InternalAmbassadorScoreUpdated | 无 | 这是不用于由调用方内部反馈类型。  |
-  | InternalReputationReset | 无 | 这是不用于由调用方内部反馈类型。  |
-  | InternalReputationUpdated | 无 | 这是不用于由调用方内部反馈类型。  |
+  | InternalAmbassadorScoreUpdated | 无 | 这是不用于调用方内部反馈类型。  |
+  | InternalReputationReset | 无 | 这是不用于调用方内部反馈类型。  |
+  | InternalReputationUpdated | 无 | 这是不用于调用方内部反馈类型。  |
   | PositiveHelpfulPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈提交正从游戏、 论坛、 等内的有用同事的玩家有关的信息。  |
-  | PositiveHighQualityUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户提交正面的反馈，在从游戏内的共享 UGC 例如，调节 Forza 中的设置。  |
+  | PositiveHighQualityUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户提交上的游戏内从共享 UGC 正面的反馈，调整 Forza 中的设置。  |
   | PositiveSkilledPlayer | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏可以让用户能够 MPSD 会话结束时对 MVP 投票。  |
-  | UserContentGamerpic | 用户 | 用户将其发送此反馈报告直接通过玩家卡片的不恰当的玩家图片。  |
-  | UserContentGamertag | 用户 | 用户将其发送此反馈报告不恰当的玩家标记直接通过玩家卡片。  |
+  | UserContentGamerpic | 用户 | 用户发送此反馈报告直接通过玩家卡片不恰当的玩家图片。  |
+  | UserContentGamertag | 用户 | 用户发送此反馈报告直接通过玩家卡片的不恰当玩家标记。  |
   | UserContentInappropriateUGC | 用户合作伙伴 | 用户和合作伙伴发送此反馈以指示游戏应允许用户标志在游戏中的不恰当共享的 UGC 例如，Forza 画图作业。  |
-  | UserContentPersonalInfo | 用户 | 用户将其发送此反馈报告简介和玩家卡片直接从其他个人信息。  |
+  | UserContentPersonalInfo | 用户 | 用户发送此反馈报告简介并直接通过玩家卡片其他个人信息。  |
 
 <a id="ID4EFEAC"></a>
 

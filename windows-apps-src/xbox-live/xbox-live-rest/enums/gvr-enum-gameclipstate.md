@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce2ec90377dcd78797fa5708577f24028c3ccf2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6033437"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164053"
 ---
 # <a name="gameclipstate-enumeration"></a>GameClipState 枚举
 详细介绍 GameClipState 枚举。 
@@ -26,7 +26,7 @@ ms.locfileid: "6033437"
 | <b>枚举</b>| <b>说明</b>| 
 | --- | --- | 
 | 无 | 游戏剪辑服务状态为未知或未设置。| 
-| PendingUpload | 游戏剪辑服务正在等待资产上载。| 
+| PendingUpload | 游戏剪辑服务正在等待资产上传。| 
 | PendingDelete | 在队列中删除的游戏剪辑。 （有效即"删除"）。| 
 | 已处理 | 游戏剪辑已完成所有处理。| 
 | Processing| 正在处理游戏剪辑 （编码，缩略图等。）。| 

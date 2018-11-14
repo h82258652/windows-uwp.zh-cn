@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 81e77fb01347c2a6ec2630e08f3a00ee6cf47de7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046012"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152530"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用 Microsoft Store 服务开展广告活动
 
@@ -25,10 +25,10 @@ ms.locfileid: "6046012"
 2.  在 Microsoft Store 促销 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 促销 API。 该令牌到期后，可以重新生成一个。
 3.  [调用 Microsoft Store 促销 API](#call-the-windows-store-promotions-api)。
 
-或者，你可以创建和管理广告市场活动使用合作伙伴中心中，并通过 Microsoft Store 促销 API 也可以在合作伙伴中心中访问以编程方式创建的任何广告活动。 有关合作伙伴中心中管理广告活动的详细信息，请参阅[创建广告市场活动为你的应用](../publish/create-an-ad-campaign-for-your-app.md)。
+或者，你可以创建和管理广告市场活动使用合作伙伴中心中，并通过 Microsoft Store 促销 API 也可以访问合作伙伴中心中以编程方式创建的任何广告活动。 有关合作伙伴中心中管理广告活动的详细信息，请参阅[创建广告市场活动的应用](../publish/create-an-ad-campaign-for-your-app.md)。
 
 > [!NOTE]
-> 任何合作伙伴中心帐户的开发人员可以使用 Microsoft Store 促销 API 管理其应用的广告市场活动。 媒体机构还可以请求访问该 API 代表他们的广告商开展广告活动。 如果你是希望了解该 API 详情或请求其访问权限的媒体机构，请将请求发送至 storepromotionsapi@microsoft.com。
+> 合作伙伴中心帐户的任何开发人员可以使用 Microsoft Store 促销 API 管理他们的应用的广告市场活动。 媒体机构还可以请求访问该 API 代表他们的广告商开展广告活动。 如果你是希望了解该 API 详情或请求其访问权限的媒体机构，请将请求发送至 storepromotionsapi@microsoft.com。
 
 <span id="prerequisites" />
 
@@ -36,9 +36,9 @@ ms.locfileid: "6046012"
 
 在开始编写调用 Microsoft Store 促销 API 的代码之前，确保已完成以下先决条件。
 
-* 成功创建和开始使用此 API 的广告市场活动之前，必须首先[创建一个付费的广告市场活动使用合作伙伴中心中的**广告市场活动**页面](../publish/create-an-ad-campaign-for-your-app.md)，而且必须此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的广告市场活动的投放渠道将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
+* 成功创建和开始使用此 API 的广告市场活动之前，必须首先[创建一个付费的广告市场活动使用合作伙伴中心中的**广告市场活动**页面](../publish/create-an-ad-campaign-for-your-app.md)，并且你必须在此页面上添加至少一种付款方式。 完成以上操作之后，你就能够使用此 API 为广告活动成功创建计费投放渠道。 使用此 API 创建的广告市场活动的投放渠道将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
 
-* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以[创建新的 Azure AD 在合作伙伴中心中](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)任何附加费用。
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以为任何附加费用[创建合作伙伴中心中的新 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) 。
 
 * 必须将 Azure AD 应用程序与你的合作伙伴中心帐户相关联、 检索租户 ID 和应用程序的客户端 ID 并生成一个密钥。 Azure AD 应用程序是指要从中调用 Microsoft Store 促销 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
@@ -48,7 +48,7 @@ ms.locfileid: "6046012"
 
 1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于管理你的合作伙伴中心帐户的促销活动的**帐户设置**部分中的**用户**页面。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
+2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于管理你的合作伙伴中心帐户的促销活动的**帐户设置**部分中的**用户**页面中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 

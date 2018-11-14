@@ -1,21 +1,21 @@
 ---
-title: 在开发人员中心配置单一登录
+title: 在合作伙伴中心配置单一登录
 author: KevinAsgari
-description: 介绍如何在开发人员中心配置单一登录，以允许游戏通过用户的 Xbox Live ID 让用户登录你的服务。
+description: 介绍如何配置单一登录合作伙伴中心，以允许游戏用户登录你的服务使用其 Xbox Live id。
 ms.assetid: ''
 ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心, 单一登录
-ms.openlocfilehash: 42f3e77e8f1f622d8c275769b6f77fdd85a1bff0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 01714289ff12d096a17c5474f6a7619680481aa3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6042050"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182865"
 ---
-# <a name="configure-single-sign-on-in-dev-center"></a>在开发人员中心配置单一登录
+# <a name="configure-single-sign-on-in-partner-center"></a>在合作伙伴中心配置单一登录
 
 单一登录允许使用你游戏的玩家使用他们的 Xbox Live 登录来登录你的服务。 这样，登录 Xbox Live 的玩家就可以运行你的提供服务的应用或游戏，而无需使用特定于你的服务的其他帐户凭据再次登录。
 
@@ -32,7 +32,7 @@ ms.locfileid: "6042050"
 
 通过执行以下操作添加配置：
 
-1. 在[开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)选择主题作品后，导航到**服务** > **Xbox Live**。
+1. 选择后你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，导航到**服务** > **Xbox Live**。
 
 2. 点击以下 **Xbox Live 单一登录**链接。
 

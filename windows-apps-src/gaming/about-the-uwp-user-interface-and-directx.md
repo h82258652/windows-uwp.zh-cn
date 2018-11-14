@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, directx, 应用对象
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e29a19410915836be3c54c0dc04a6d7dc29ceeb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027607"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6162297"
 ---
 # <a name="the-app-object-and-directx"></a>应用对象和 DirectX
 
@@ -34,7 +34,7 @@ ms.locfileid: "6027607"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意**如果你未开发 UWP 应用，请使用特定于 JavaScript 或 XAML 的库和命名空间，而不是这些命名空间中提供的类型中提供的用户界面组件。
+> **请注意**如果你未开发 UWP 应用，请使用特定于 JavaScript 或 XAML 的库和命名空间，而不是这些命名空间中提供的类型中提供的用户界面组件。
 
  
 

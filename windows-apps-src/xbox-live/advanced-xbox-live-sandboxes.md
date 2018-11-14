@@ -8,20 +8,21 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
-ms.openlocfilehash: 025a6ecbf4431ff465a70e8a11324d170748d117
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 335a214976b0a7d8382c0c7ea3845e5e485889eb
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6033328"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160838"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
-> **请注意** 本文将阐释沙盒的高级用法，它主要适用于拥有多个团队和复杂权限要求的大型游戏工作室。  如果你是 Xbox Live 创意者计划中的一员或 ID@Xbox 开发人员，建议你查看 [Xbox Live 沙盒简介](xbox-live-sandboxes.md)
+> [!NOTE]
+> 本文介绍的沙盒的高级的用法，并它主要适用于拥有多个团队和复杂权限要求的大型游戏工作室。  如果你是 Xbox Live 创意者计划中的一员或 ID@Xbox 开发人员，建议你查看 [Xbox Live 沙盒简介](xbox-live-sandboxes.md)
 
 Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什么是沙盒，它们存在的原因，如何适用于发布者，以及如何影响内部 Xbox 团队。 本文档面向的读者是生成 Xbox One 内容和使用沙盒的发布者。
 
-## <a name="summary"></a>摘要
+## <a name="isolate-content-on-xbox-live"></a>隔离 Xbox Live 上的内容
 
 在 Xbox Live 中，只有一个生产环境，所有预发行版（开发版和 Beta 版）、证书以及零售内容均驻留在此环境中。
 
@@ -47,7 +48,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 
-为在 XDP 上创建作品，发布者创建一个产品组、 指定产品组的类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
+若要在 XDP 上创建作品，发布者创建一个产品组、 指定产品组，流派，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
 
 图 2. 产品组、产品、产品实例以及沙盒之间的关系。
 
@@ -83,7 +84,8 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 *运行时访问*—从 Xbox 主机访问—允许开发人员、测试人员以及客户运行和操作产品实例。
 
-**注意** 为了能够进行运行时访问，必须将产品实例置于沙盒中。 将生成的产品实例置于沙盒中后，有权访问该沙盒的 XDP 用户或开发人员工具包设备便可以运行该实例。 为此，他们通过 Xbox 主机使用其开发人员帐户登录 Xbox One—以虚拟用户身份运行的用于运行时访问的特殊帐户。
+> [!NOTE]
+> 为了能够进行运行时访问，必须将产品实例置于沙盒中。 将生成的产品实例置于沙盒中后，有权访问该沙盒的 XDP 用户或开发人员工具包设备便可以运行该实例。 为此，他们通过 Xbox 主机使用其开发人员帐户登录 Xbox One—以虚拟用户身份运行的用于运行时访问的特殊帐户。
 
 当我们谈及沙盒，我们通常都是在谈论对在 Xbox Live 上运行的内容的运行时访问。 访问 Xbox Live 中的服务时，需要主题作品 ID。 一旦 **appxmanifest** 包含主题作品 ID，主机就会将主题作品 ID 发送到 Xbox Live。 只有当相关主体（设备或用户）获得主题作品访问权限时，Xbox Live 安全服务才会返回有效的令牌。
 
@@ -135,7 +137,8 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 因此，在将用户组分配到沙盒后，将与该用户组中的 XDP 用户关联的开发人员帐户添加到相应的主体组中，并使用设置回该沙盒的主要资源集为这些主体组设置策略。
 
-**注意** 为访问沙盒而创建的用户组就是用于阻止访问产品组和产品的 XDP 中的配置数据的用户组。
+> [!NOTE]
+> 为访问沙盒而创建的用户组是相同的用户组，用于防止对在 XDP 中的产品组和产品的配置数据的访问。
 
 ### <a name="device-setup"></a>设备设置
 
@@ -225,9 +228,9 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 ## <a name="organizing-your-sandboxes"></a>组织你的沙盒
 
-此部分提供了发布者如何组织沙盒的示例。 发布者需要了解如何使用沙盒组织数据。
+此部分提供了发布者如何组织沙盒的示例。 发布者需要了解如何使用沙盒组织数据。  
 
-**注意** 下面的示例仅说明了如何使用内容隔离管理运行时访问。
+仅显示使用内容隔离的运行时访问管理以下示例。
 
 ### <a name="scenario-1-two-titles-one-sandbox"></a>场景 1：两个主题作品、一个沙盒
 
@@ -263,7 +266,8 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 此外，财务用户（组 C）可对 TitleX 进行设计时访问。 由于财务用户组通常不需要对主题作品执行任何运行时调试，因此会被分离出来。
 
-**注意** 不论组织如何，XDP 用户都可以属于多个用户组。
+> [!NOTE]
+> 无论组织结构为何 XDP 用户都可以属于多个用户组中。
 
 ![](images/sandboxes/sandboxes_image7.png)
 
@@ -310,6 +314,25 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 -   供应商设备组 C 是仅限供应商的用户组，可访问沙盒 XLDP.3。
 
 ![](images/sandboxes/sandboxes_image9.png)
+
+## <a name="determine-the-sandbox-your-device-is-targeting"></a>确定面向你的设备的沙盒
+
+Xbox Live Api 包含将允许你查看你的游戏面向在运行时的沙盒应用配置单一实例。 这通过访问的**沙盒**属性`xbox::services::xbox_live_app_config`。
+
+C + + XDK
+```cpp
+auto appConfig = xbox::services::xbox_live_app_config::get_app_config_singleton();
+string_t sandbox = appConfig->sandbox;
+```
+
+C# WinRT
+```csharp
+XboxLiveAppConfiguration appConfig = XboxLiveAppConfiguration.SingletonInstance;
+string sandbox = appConfig.Sandbox;
+```
+
+> [!NOTE]
+> 用户登录前，沙盒属性不会获得值。
 
 ## <a name="summary"></a>摘要
 

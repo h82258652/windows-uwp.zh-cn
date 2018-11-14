@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 346e6790c6578bf861ba1dda937eae6d4d50f00f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034223"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189487"
 ---
 # <a name="app-analysis-overview"></a>应用分析概述
 
@@ -62,7 +62,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-示例 2 代码隐藏 （不良）-将其连接到树前设置 BitmapImage 的 UriSource。
+示例 2 代码隐藏 （不良）-在连接到树前设置 BitmapImage 的 UriSource。
 
 ```vb
 var bitmapImage = new BitmapImage();

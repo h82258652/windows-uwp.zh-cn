@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eaca23a72ff794a85ffd8ac13c3f522cabf32aa7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026712"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190283"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>适用于 UWP 应用的磁贴、锁屏提醒和通知
  
@@ -53,7 +53,7 @@ ms.locfileid: "6026712"
 | --- | --- |
 | [Toast 通知](adaptive-interactive-toasts.md) | 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。 |
 | [发送本地 toast 通知](send-local-toast.md) | 了解如何发送交互式的 toast 通知。 |
-| [通知可视化工具](notifications-visualizer.md) | 通知可视化工具是新的通用 Windows 平台 (UWP) 应用中[的应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可帮助开发人员设计自适应动态磁贴的 windows 10。 |
+| [通知可视化工具](notifications-visualizer.md) | 通知可视化工具是新的通用 Windows 平台 (UWP) 应用在[应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可帮助开发人员设计自适应动态磁贴的 windows 10。 |
 | [选择通知传递方法](choosing-a-notification-delivery-method.md) | 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。 |
 | [定期通知概述](periodic-notification-overview.md) | 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。 |
 | [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md) | Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。 |

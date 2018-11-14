@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f223b858861cf0f965c5b7ea8778426a8340af
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038285"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185882"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
@@ -98,21 +98,21 @@ ms.locfileid: "6038285"
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
-      **适用于 Adobe Photoshop 的磁贴和图标生成器**这一套适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 个文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
+      **适用于 Adobe Photoshop 的磁贴和图标生成器**这组适用于 Adobe Photoshop 操作生成了 68 推荐磁贴和图标资源从只需 7 个文件。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下载磁贴和图标生成器</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>示例
 
-![Fluent 的 XAML 主题编辑器图像](images/XamlThemeEditor_screenshot.png)
+![Fluent XAML 主题编辑器图像](images/XamlThemeEditor_screenshot.png)
 **Fluent XAML 主题编辑器**<br>
-Fluent 的 XAML 主题编辑器是一个工具，可帮助展示 Fluent 设计系统的灵活性，以及通过生成 XAML 标记，我们使用通用 Windows 平台应用程序中的 ResourceDictionary 框架来支持应用开发过程（uwp 一样）。
+Fluent 的 XAML 主题编辑器是一个工具，可帮助展示 Fluent 设计系统的灵活性，以及通过生成 XAML 标记为我们在通用 Windows 平台应用中使用的 ResourceDictionary 框架来支持应用开发过程（uwp 一样）。
 <a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">下载工具示例</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">请查看 GitHub 上的工具</a>
 
 ![VanArsdel 图像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的下一步波形。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及 ux 框架和合成的强大的基本功能，它会使广泛使用改进的密度和新的控件。 本示例演示了如何构建的丰富管理和购买 （在此情况下，灯） 的 IoT 设备工作效率体验。<br>
+生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及强大的 ux 框架和合成的基础功能，它会使广泛使用改进的密度和新的控件。 该示例显示了如何构建的丰富管理和购买 （在此情况下，灯） 的 IoT 设备工作效率体验。<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下载 VanArsdel 示例</a> <br><a href="https://github.com/microsoft/vanarsdel">请查看 GitHub 上的 VanArsdel 示例</a>
 
 ![构建强制转换映像](images/buildcast.png)

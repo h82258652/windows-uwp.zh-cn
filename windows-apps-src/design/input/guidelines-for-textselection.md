@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 32d8e7d858ff28a6ef6a9af517e0a584c6106cd5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039051"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145003"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -55,14 +55,14 @@ ms.locfileid: "6039051"
 
 **文本选择**
 
-如果你的应用需要支持文本选择的自定义 UI，我们建议你遵循此处描述的 Windowsselection 行为。
+如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处所述的 Windowsselection 行为。
 
 **可编辑的内容和不可编辑的内容**
 
 
 借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windowstouch 交互，计时的交互仅限于点按操作和手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应地调整选择 UI、 反馈以及功能。
+Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑，并相应调整选择 UI、 反馈以及功能。
 
 **可编辑的内容**
 
@@ -80,7 +80,7 @@ Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑�
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**注意**如果拼写错误的单词这些交互会稍。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**请注意**如果拼写错误的单词这些交互会稍。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 

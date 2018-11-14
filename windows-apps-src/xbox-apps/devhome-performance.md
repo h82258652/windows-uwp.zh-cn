@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 6035463473eb6ddb1a3ec7fa554f9a12b8f764fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037077"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146461"
 ---
 # <a name="performance-page-dev-home"></a>平均页面 （开发人员主页）
    
@@ -35,7 +35,7 @@ ms.locfileid: "6037077"
 ## <a name="disk-simulation"></a>磁盘模拟  
    
   
-**磁盘模拟**窗格模拟磁盘从系统或其他应用的活动。   
+**磁盘模拟**窗格模拟从系统或其他应用的磁盘活动。   
   
 <a id="ID4EOB"></a>
 
@@ -44,7 +44,7 @@ ms.locfileid: "6037077"
 ## <a name="cpu-simulation"></a>CPU 模拟  
    
   
-**CPU 模拟**窗格模拟 CPU6 上的活动 （共享的核心版）。   
+**CPU 模拟**窗格模拟 CPU6 上的活动 （共享的核心）。   
   
 <a id="ID4EYB"></a>
 

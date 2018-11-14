@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046990"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189111"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -29,7 +29,7 @@ ms.locfileid: "6046990"
 
 ## <a name="worldwide-distribution-channel"></a>全球分配渠道
 
-在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[市场和自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
+在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区世界范围内，支持通过各种形式的包括 Visa、 Mastercard 和 PayPal 的付款方式。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
@@ -39,8 +39,8 @@ ms.locfileid: "6046990"
 
 ### <a name="base-price"></a>基价
 
-游戏基价可确定你的游戏属于_付费_还是_免费_类别。 你可以使用[开发人员中心仪表板](https://developer.microsoft.com/windows)根据国家和地区配置基价。
-确定价格的过程可能包括[销往其他国家/地区时的税收义务](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)和[特定市场的成本注意事项](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 还可以[为特定市场设置自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 有关详细信息，请参阅[定义价格和市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+游戏基价可确定你的游戏属于_付费_还是_免费_类别。 你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)配置基于国家和地区的基本价格。
+确定价格的过程可能包括[销往其他国家/地区时的税收义务](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)和[特定市场的成本注意事项](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 还可以[为特定市场设置自定义价格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>售价
 
@@ -49,18 +49,18 @@ ms.locfileid: "6046990"
 
 ## <a name="in-game-purchases"></a>游戏内购买
 
-游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft 应用商店中，这些产品称为_加载项_。 [加载项](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)通过 Windows 开发人员中心仪表板发布。 你还需要在你的游戏代码中启用加载项。
+游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft Store，这些产品称为_加载项_。 通过合作伙伴中心的[加载项发布](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 你还需要在你的游戏代码中启用加载项。
 
 ### <a name="types-of-add-ons"></a>加载项类型
 
 你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为玩家跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 会跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
 最新应用内购买和许可证信息 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的一部分（从 Windows10 版本 1607 开始）。 如果你要面向 1607 或更高版本开发新游戏，我们建议你使用 __Windows.Services.Store__ 命名空间，因为它支持最新的加载项类型并且性能更佳。
-它还设计用于与 Windows 开发人员中心和应用商店支持的以后类型的产品和功能兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
+它还设计为与将来的产品和在合作伙伴中心和应用商店支持的功能类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
 
 有关详细信息，请转到[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 
@@ -93,14 +93,14 @@ ms.locfileid: "6046990"
 1. 在 Visual Studio 中打开你的游戏解决方案。
 2. 在 Visual Studio 内，转到__项目__ > __应用商店__ > __创建应用包...__
 3. 对于__你希望生成要上传到 Microsoft Store 的程序包？__ 选项，选择__是__。
-4. 登录你的开发人员中心开发者帐户。 或者[注册](https://developer.microsoft.com/store/register)开发者帐户（如果没有）。
+4. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)开发者帐户。 或者[注册](https://developer.microsoft.com/store/register)开发者帐户（如果没有）。
 5. 选择要为其创建上传包的应用。 如果尚未创建应用提交，请提供新的应用名称创建新提交。 有关详细信息，请参阅[通过保留名称创建应用](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功创建程序包后，单击__启动 Windows 应用认证工具包__启动测试过程。
 7. 修复所有错误即可创建游戏程序包。
 
 #### <a name="publish-the-game-as-hidden"></a>将游戏发布为已隐藏
 
-1. 转到[开发人员中心](https://developer.microsoft.com/store)并登录。
+1. 转到[合作伙伴中心](https://partner.microsoft.com/dashboard)并登录。
 2. 在__仪表板概述__或__所有应用__页面上，单击要使用的应用。 如果尚未创建应用提交，请单击__创建新应用__并保留名称。
 3. 在__应用概述__页面上，单击__开始提交__。
 4. 配置此新提交。 在提交页面上：
@@ -120,7 +120,7 @@ ms.locfileid: "6046990"
 通过在 Visual Studio 中打开你的游戏解决方案：
 
 1. 转到__项目__ > __应用商店__ > __将应用与应用商店相关联...__
-2. 登录开发人员中心开发者帐户，然后选择要与其关联此解决方案的应用名称。
+2. 登录到合作伙伴中心开发者帐户并选择要与其关联此解决方案的应用名称。
 3. 双击 __Package.appxmanifest.xml 文件__并转到__打包__选项卡，检查游戏是否已正确关联。
 
 如果已将解决方案关联到处于活动状态并在应用商店中列出的已发布游戏，你的解决方案将具有活动许可证，这进一步完成了为你的游戏创建加载项过程。 有关详细信息，请参阅[打包应用](https://msdn.microsoft.com/windows/uwp/packaging/index)。
@@ -129,7 +129,7 @@ ms.locfileid: "6046990"
 
 创建加载项时，确保将它们与正确的游戏提交相关联。 有关如何配置与加载项相关联的所有各种信息的详细信息，请参阅[加载项提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
-1. 转到[开发人员中心](https://developer.microsoft.com/store)并登录。
+1. 转到[合作伙伴中心](https://partner.microsoft.com/dashboard)并登录。
 2. 在__仪表板概述__或__所有应用__页面上，单击要为其创建加载项的应用。
 3. 在__应用概述__页面上的__加载项__部分中，选择__创建新加载项__。
 4. 选择该加载项的产品类型：__开发人员托管的易耗型__、__应用商店托管的易耗型__或__耐用型__。

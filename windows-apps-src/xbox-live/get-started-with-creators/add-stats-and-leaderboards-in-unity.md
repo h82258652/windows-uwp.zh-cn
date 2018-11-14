@@ -8,12 +8,12 @@ ms.date: 10/19/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e7a89f694c174a0c93fb45eb7642d70456c895
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: ce81cd20b817efed09e341b04dc667e39567ebed
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6035721"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182839"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>向 Unity 项目添加玩家统计数据和排行榜
 
@@ -50,7 +50,7 @@ Xbox Live Unity 插件中提供了多个与玩家统计数据相关的 prefabs �
 
 要添加玩家统计数据，只需将与统计数据的数据类型匹配的 prefab 拖动到场景上。 在统计数据的 Unity 检查器中，你可以指定三个值：
 
-* 统计数据的 ID。必须与在 Windows 开发人员中心配置的 ID 匹配，区分大小写。
+* 统计数据的 ID。这必须匹配在合作伙伴中心中配置的 ID，并且区分大小写。
 * 统计数据的显示名称（此名称在 StatPanel prefab UI 中显示）。
 * 场景启动时，统计数据的初始值。
 

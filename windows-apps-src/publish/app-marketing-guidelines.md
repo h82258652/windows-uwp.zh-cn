@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048740"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183003"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft 应用商店营销指南的应用
 
@@ -21,7 +21,7 @@ ms.locfileid: "6048740"
 
 ## <a name="store-badges"></a>应用商店锁屏提醒
 
-我们创建了特殊的促销锁屏提醒，帮助你带动更多客户，你的应用一览，Microsoft Store 中。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
+我们创建了特殊的促销锁屏提醒，帮助你带动更多客户的 Microsoft 应用商店中你的应用一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
 [![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 应用商店锁屏提醒指南 （PDF，英语）**
 
@@ -43,13 +43,13 @@ ms.locfileid: "6048740"
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 
-*Microsoft 商标授权*意味着*Microsoft 锁屏提醒*的[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面上所述。 若要使用这些锁屏提醒，必须满足以下条件：
+*Microsoft 商标授权*意味着[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面中描述了*Microsoft 锁屏提醒*。 若要使用这些锁屏提醒，必须满足以下条件：
 
--   在 Microsoft store 中具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   在 Microsoft Store，具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
--   如果你已注册合作伙伴中心中成为应用开发人员，遵守应用开发人员协议的["许可向 Microsoft 商标授权"](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
+-   如果你已注册合作伙伴中心中成为应用开发人员，符合应用开发人员协议的["许可向 Microsoft 商标授权"](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)部分。
 
--   如果未注册成为应用开发人员，在合作伙伴中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
+-   如果你尚未注册成为应用开发人员在合作伙伴中心，Microsoft 将授予你世界范围内、 无排他性、 不可转让、 免版税的许可证使用锁屏提醒，仅在 Microsoft 应用商店锁屏提醒指南中所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
 
 -   请按照[Microsoft 应用商店锁屏提醒指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的徽标使用规范。
 

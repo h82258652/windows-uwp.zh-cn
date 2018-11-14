@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 标记扩展允许在标记中使用的功能。
+description: XBind 标记扩展允许函数在标记中使用。
 title: x:Bind 中的函数
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028829"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192705"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
-**注意**有关使用数据的一般信息随 **{x: Bind}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**请注意**有关使用数据的常规信息绑定在你的应用与 **{x: Bind}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
 
@@ -106,7 +106,7 @@ public class MyPage : Page
 - 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
 - 函数的返回类型需要匹配正使用绑定的属性的类型
 
-从开始到 Windows 10 的下一个主要更新，则绑定引擎将响应属性更改通知触发的函数名称和重新计算绑定根据需要。 例如： 
+从开始到 Windows 10 的下一个主要更新，绑定引擎将响应属性更改通知触发的函数名称和重新评估根据需要的绑定。 例如： 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -161,7 +161,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 可以使用 X:bind 中的函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
+> 可以使用 X:bind 中函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
 
 ## <a name="function-arguments"></a>函数参数
 
@@ -175,7 +175,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双向函数绑定
 
-在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 完成此操作使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
+在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 这是使用**绑**绑定属性。 在以下示例中，该函数应该具有一个参数，其值需要返回给模型。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

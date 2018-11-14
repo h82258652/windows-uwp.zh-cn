@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 98c1d48524bcc525f57f42e5364d27611602ab52
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033147"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149783"
 ---
 # <a name="define-your-experiment-in-partner-center"></a>在合作伙伴中心中定义实验
 
-你[创建项目并定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)并后[为实验编写应用代码](code-your-experiment-in-your-app.md)，可以随时在项目中创建实验。 在创建实验时，要定义目标以及用户将收到的变体。
+你[创建项目和定义远程变量在合作伙伴中心中的](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)，并[为实验编写应用代码](code-your-experiment-in-your-app.md)之后, 你已准备好在项目中创建实验。 在创建实验时，要定义目标以及用户将收到的变体。
 
 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
@@ -66,7 +66,7 @@ ms.locfileid: "6033147"
 
 当你完成输入实验的所需字段后，单击**保存**以保存实验。
 
-如果你对实验参数感到满意，并且已准备好激活它以开始收集应用的实验数据，请单击**激活**。 激活实验时，你的应用可以检索变体的变量，并向合作伙伴中心报告视图和转换事件。 有关详细信息，请参阅[运行和管理你在合作伙伴中心中的实验](manage-your-experiment.md)。
+如果你对实验参数感到满意，并且已准备好激活它以开始收集应用的实验数据，请单击**激活**。 激活实验时，你的应用可以检索变体变量，并向合作伙伴中心报告视图和转换事件。 有关详细信息，请参阅[运行和管理你在合作伙伴中心中的实验](manage-your-experiment.md)。
 
 > [!IMPORTANT]
 > 项目一次只可以包含一个活动实验。 激活实验后，不可再对实验参数进行修改，除非在创建实验时，选中了**可编辑实验**复选框。 在激活实验之前，我们建议你在应用中为实验编码。
@@ -93,7 +93,7 @@ ms.locfileid: "6033147"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建项目并在合作伙伴中心中定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [创建项目并定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [为实验编写应用代码](code-your-experiment-in-your-app.md)
 * [合作伙伴中心中管理实验](manage-your-experiment.md)
 * [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)

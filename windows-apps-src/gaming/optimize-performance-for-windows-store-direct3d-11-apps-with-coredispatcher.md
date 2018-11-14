@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 输入延迟
 ms.localizationpriority: medium
 ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047828"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145867"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 
@@ -235,7 +235,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-在 Microsoft Visual Studio2015 的**DirectX 11 和 XAML 应用 (通用 Windows)** 模板将游戏循环拆分为多个采用相似的线程。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
+在 Microsoft Visual Studio2015 的**DirectX 11 和 XAML 应用 (通用 Windows)** 模板将游戏循环拆分为多个线程以类似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 对象启动专用于处理输入的线程，还创建独立于 XAML UI 线程的呈现线程。 有关这些模板的更多详细信息，请阅读[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>缩短输入延迟的其他方法
 
@@ -248,7 +248,7 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 ![图 1 DirectX 中的输入延迟 ](images/input-latency1.png)
 
-在 Windows8.1，DXGI 引入了用于交换链，它使应用即可轻松地缩短该延迟，无需实现启发以保持 Present 队列为空**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**标志。 使用该标志创建的交换链将作为可等待的交换链进行引用。 图 2 显示了使用可等待的交换链时输入事件的大致生命周期和响应情况：
+在 Windows8.1，DXGI 引入了用于交换链，它使应用即可轻松地缩短该延迟，无需实现启发以保持 Present 队列为空的**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**标志。 使用该标志创建的交换链将作为可等待的交换链进行引用。 图 2 显示了使用可等待的交换链时输入事件的大致生命周期和响应情况：
 
 图 2
 

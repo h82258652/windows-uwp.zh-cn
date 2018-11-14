@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e68f8f48ca9ba67a29c8a52a5d59767a080f642b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026073"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196187"
 ---
 # <a name="flyouts"></a>浮出控件
 
@@ -26,13 +26,13 @@ ms.locfileid: "6026073"
 
 ![嵌套在浮出控件内的上下文菜单](../images/flyout-nested.png)
 
-> **重要 Api**: [Flyout 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要的 Api**：[浮出控件类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 * 不要使用浮出控件替代[工具提示](../tooltips.md)或[上下文菜单](../menus.md)。 使用工具提示显示在指定时间后隐藏的简短描述。 针对与 UI 元素相关的上下文操作（如复制和粘贴）使用上下文菜单。
 
-有关何时使用浮出控件与何时使用对话框 （类似控件），请参阅[对话框和浮出控件](index.md)的建议。 
+建议在何时使用浮出控件与何时使用对话框 （类似控件），请参阅[对话框和浮出控件](index.md)。 
 
 ## <a name="examples"></a>示例
 
@@ -50,7 +50,7 @@ ms.locfileid: "6026073"
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>如何创建浮出控件
+##  <a name="how-to-create-a-flyout"></a>如何创建一个浮出控件
 
 
 浮出控件附加到特定控件。 你可以使用 [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) 属性指定浮出控件显示的位置：顶部、左侧、底部、右侧或完整。 如果你选择[完整放置模式](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)，应用将拉伸浮出控件，并使其在应用窗口中居中。 某些控件（如 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)）提供可用于关联浮出控件或[上下文菜单](../menus.md) 的 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) 属性。

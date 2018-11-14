@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
-ms.openlocfilehash: f5a26e0a111d9df5e13127b9ece79678b9399ddc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 68997bc3a7ff6a7b1dfa67862ece49020539dba3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6038029"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181426"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -28,7 +28,7 @@ ms.locfileid: "6038029"
 
 XSAPI 提供了一种叫做 SmartMatch 的匹配服务，它由[多人游戏管理器 API](../multiplayer-manager/multiplayer-manager-api-overview.md) 包装。  有关高级 API 使用情况的信息，可参考 **MatchmakingService 类**，但如果你发现有使用多人游戏管理器无法实现的匹配场景，请通过 DAM 向我们提供反馈。  无论你使用何种 API，本文中的概念信息均适用。
 
-SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请求来对玩家进行分组。 匹配基于服务器，这意味着用户可以提供对该服务的请求，然后他们稍后会在找到匹配时收到通知。 在为 Xbox one 创建游戏时，你可以如[使用 SmartMatch 匹配](using-smartmatch-matchmaking.md)中所述使用 SmartMatch。 或者，你可以如[使用你自己的匹配服务](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service)中所述使用你自己的匹配服务。 请注意，访问该链接要求你拥有为 Xbox Live 开发启用的 Microsoft 开发人员中心帐户。
+SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请求来对玩家进行分组。 匹配基于服务器，这意味着用户可以提供对该服务的请求，然后他们稍后会在找到匹配时收到通知。 在为 Xbox one 创建游戏时，你可以如[使用 SmartMatch 匹配](using-smartmatch-matchmaking.md)中所述使用 SmartMatch。 或者，你可以如[使用你自己的匹配服务](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service)中所述使用你自己的匹配服务。 请注意，访问该链接要求你拥有为 Xbox Live 开发启用的[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户。
 
 ### <a name="about-smartmatch"></a>关于 SmartMatch
 
@@ -105,7 +105,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 游戏指定匹配票证会话内的各成员的每个成员属性。 通过使用“matchAttrs”的属性名称并调用 MultiplayerSession.SetCurrentUserMemberCustomPropertyJson 方法来对它们进行设置。 此调用将 /members/{index}/properties/custom/matchAttrs 字段中的属性置于票证会话中的每个玩家上。
 
-匹配过程将"平展"每个成员为单个票证级别属性，基于为漏斗的 Xbox Live 配置 UI 中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)上配置。
+匹配过程将"平展"每个成员为单个票证级别属性，基于为漏斗的 Xbox Live 配置 UI 中的属性指定的平展方法。 这可以在[XDP](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上配置。
 
 
 ### <a name="making-the-match"></a>进行匹配
@@ -175,7 +175,7 @@ SmartMatch 匹配基于用户信息以及想要一起游戏的用户的匹配请
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch 匹配运行时操作配置
 
-SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[Windows 开发人员中心](https://developer.microsoft.com/dashboard/windows/overview)，会都发生。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
+SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)都进行。 配置使用游戏的“ServiceConfiguration-&gt;多人游戏和匹配”部分。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>匹配会话模板配置
@@ -190,7 +190,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-与配置的 XDP 或开发人员中心的用户界面中，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+配置 XDP 或合作伙伴中心的 UI，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置
@@ -426,7 +426,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 ### <a name="configuring-team-rules"></a>配置团队规则
 
-若要设置团队规则，首先创建一个选择的配置平台 （XDP 或开发人员中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
+若要设置团队规则，首先创建一个选择的配置平台 （XDP 或合作伙伴中心） 上。 填写你的游戏预期从此漏斗中匹配的票证创建的团队大小。 例如，如果你的游戏预期是 4v4，你应创建两项，预期每个项的最大大小为 4，并采用不同名称。 还有最小团队大小，如果某个游戏在团队的玩家较少时也能玩，则使用此大小。 否则，最小值和最大值应相同。
 
 
 #### <a name="using-team-rules"></a>使用团队规则

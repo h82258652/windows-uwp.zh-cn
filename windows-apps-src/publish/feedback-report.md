@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026040"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147762"
 ---
 # <a name="feedback-report"></a>反馈报告
 
@@ -24,7 +24,7 @@ ms.locfileid: "6026040"
 
 鼓励客户向你提供有关你的应用的反馈是了解对客户来说非常重要的问题和功能的绝佳方法。 当客户知道他们可以直接向你发送反馈时，则不太可能在应用商店中留下负面评论的反馈。
 
-可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的反馈 API，以便允许客户[直接从应用启动“反馈中心”](../monetize/launch-feedback-hub-from-your-app.md)。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以通过使用“反馈中心”应用来留下该应用的反馈。 因此，你可能会看到客户反馈，在此报告中，即使你未明确要求反馈从应用中。
+可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的反馈 API，以便允许客户[直接从应用启动“反馈中心”](../monetize/launch-feedback-hub-from-your-app.md)。 请记住，已在支持反馈中心的 Windows 10 设备上下载了你的应用的任何客户可以通过使用“反馈中心”应用来留下该应用的反馈。 因此，你可能会看到在此报告中的客户反馈，即使你未明确要求反馈从你的应用内。
 
 使用[软件包外部测试版](package-flights.md)，因为，**反馈**报告将展示每个客户已在其设备安装，当客户留下反馈的特定程序包时反馈也会有所帮助。
 
@@ -56,7 +56,7 @@ ms.locfileid: "6026040"
 - **热门**：从已获得最新活动的反馈开始，显示其他客户在最近七天内进行投票的反馈。
 - **最近**：从最近留下的反馈开始，显示所有反馈。
 
-在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场，他们所用当客户留下反馈、 该设备和**Windows 预览体验成员**的类型的 Windows 预览体验成员提交反馈的客户是否在设备已安装的特定程序包计划。
+在每个评论的旁边，你将看到留下反馈的日期和反馈类型。 你还将看到客户的市场，他们使用当客户留下反馈、 类型的设备，以及**Windows 预览体验成员**的 Windows 预览体验成员提交反馈的客户是否在设备已安装的特定程序包计划。
 
 还将在此看到[回复反馈](respond-to-customer-feedback.md)的选项。
 

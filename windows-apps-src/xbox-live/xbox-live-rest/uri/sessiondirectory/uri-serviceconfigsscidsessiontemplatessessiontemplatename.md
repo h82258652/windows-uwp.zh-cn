@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3011ca3622e79bc3b2062f1c572d2f1db3167b87
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6029238"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182146"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}
-支持 GET 操作以检索一组的会话模板名称。 
+支持 GET 操作来检索一组会话模板名称。 
 <a id="ID4EO"></a>
 
  
@@ -40,7 +40,7 @@ sessiondirectory.xboxlive.com
 
 [GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
 
-&nbsp;&nbsp;检索一组的会话模板名称。
+&nbsp;&nbsp;检索一组会话模板名称。
  
 <a id="ID4ECC"></a>
 

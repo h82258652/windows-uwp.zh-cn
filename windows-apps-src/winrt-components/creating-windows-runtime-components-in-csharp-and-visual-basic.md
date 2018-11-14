@@ -9,14 +9,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031854"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191504"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 创建 Windows 运行时组件
-从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。 你可以将通用 Windows 平台 (UWP) 应用与 C++、JavaScript、Visual Basic 或 C# 一起使用。 本主题概述了用于创建组件，规则，并讨论了.NET Framework 支持 Windows 运行时的一些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
+从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。 你可以将通用 Windows 平台 (UWP) 应用与 C++、JavaScript、Visual Basic 或 C# 一起使用。 本主题概述了用于创建的组件，规则，并讨论了.NET Framework 支持的 Windows 运行时中的某些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
 
 如果你要创建仅在 UWP 应用中与 Visual Basic 或 C# 一起使用的组件，并且该组件不包含 UWP 控件，请考虑使用“类库”**** 模板而非“Windows 运行时组件”**** 模板。 简单类库所受限制较少。
 
@@ -27,7 +27,7 @@ ms.locfileid: "6031854"
 
 -   组件中的所有公共类型和成员的字段、参数和返回值必须是 Windows 运行时类型。
 
-    此限制包括你创建的 Windows 运行时类型以及 Windows 运行时本身提供的类型。 它还包括许多 .NET Framework 类型。 包括这些类型是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分：你的代码看起来像使用熟悉的 .NET Framework 类型，而非基本的 Windows 运行时类型。 例如，你可以使用 .NET Framework 基元类型（例如 Int32 和双精度型）、某些基本类型（例如 DateTimeOffset 和 Uri）以及一些常用的泛型接口类型（例如 IEnumerable&lt;T&gt;，这在 Visual Basic 中是 IEnumerable(Of T) 和 IDictionary&lt;TKey,TValue&gt;）。 （请注意，这些泛型类型的类型参数必须是 Windows 运行时类型）。这 Windows 运行时类型传递到托管代码的部分中所述和托管的传递到 Windows 运行时，在本主题后面的类型。
+    此限制包括你创建的 Windows 运行时类型以及 Windows 运行时本身提供的类型。 它还包括许多 .NET Framework 类型。 包括这些类型是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分：你的代码看起来像使用熟悉的 .NET Framework 类型，而非基本的 Windows 运行时类型。 例如，你可以使用 .NET Framework 基元类型（例如 Int32 和双精度型）、某些基本类型（例如 DateTimeOffset 和 Uri）以及一些常用的泛型接口类型（例如 IEnumerable&lt;T&gt;，这在 Visual Basic 中是 IEnumerable(Of T) 和 IDictionary&lt;TKey,TValue&gt;）。 （请注意，这些泛型类型的类型参数必须是 Windows 运行时类型）。这 Windows 运行时类型传递到托管代码的部分中所述，并将托管的传递到 Windows 运行时，在本主题后面的类型。
 
 -   公共类和接口可以包含方法、属性和事件。 你可以为事件声明委托或使用 EventHandler&lt;T&gt; 委托。 公共类或接口无法：
 
@@ -92,11 +92,11 @@ ms.locfileid: "6031854"
 
 在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将传递或返回一个字典&lt;int，string&gt; (Dictionary （Of Integer，String) 在 Visual Basic) 为 IDictionary&lt;int，string&gt;、 IReadOnlyDictionary&lt;int，string&gt;，或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey，TValue&gt;&gt;。
 
-**重要**JavaScript 使用最先显示在托管的类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**重要提示**JavaScript 使用最先显示在托管的类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
 在 Windows 运行时中，IMap&lt;K, V&gt; 和 IMapView&lt;K, V&gt; 使用 IKeyValuePair 进行迭代。 在将它们传递到托管代码时，它们显示为 IDictionary&lt;TKey, TValue&gt; 和 IReadOnlyDictionary&lt;TKey, TValue&gt;，所以自然而然地，你会使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 枚举它们。
 
-接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如，PropertySet 类实现 IMap&lt;K, V&gt;，而它在托管代码中显示为 IDictionary&lt;TKey, TValue&gt;。 PropertySet 显示为好像实现了 IDictionary&lt;TKey, TValue&gt; 而非 IMap&lt;K, V&gt;，所以在托管代码中，它似乎具有 Add 方法，其行为类似于 .NET Framework 字典上的 Add 方法。 它不会显示为具有 Insert 方法。 你可以查看本主题中的示例[演练： 在 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
+接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如，PropertySet 类实现 IMap&lt;K, V&gt;，而它在托管代码中显示为 IDictionary&lt;TKey, TValue&gt;。 PropertySet 显示为好像实现了 IDictionary&lt;TKey, TValue&gt; 而非 IMap&lt;K, V&gt;，所以在托管代码中，它似乎具有 Add 方法，其行为类似于 .NET Framework 字典上的 Add 方法。 它不会显示为具有 Insert 方法。 你可以查看本主题中的示例[演练： 采用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>将托管的类型传递到 Windows 运行时
 如前面部分中所述，一些 Windows 运行时类型可在组件成员的签名或 Windows 运行时成员的签名中显示为 .NET Framework 类型（如果你在 IDE 中使用这些类型）。 在你将 .NET Framework 类型传递到这些成员或将它们用作组件成员的返回值时，它们将作为相应的 Windows 运行时类型显示为另一侧的代码。 有关此操作在通过 JavaScript 调用组件时产生的影响的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中的“从组件返回托管的类型”部分。
@@ -251,7 +251,7 @@ function asyncExample(id) {
 
 在从组件引发异常时，你可以使 JavaScript 或 C++ 调用方处理异常变得更简单，方法是引发其 HResult 属性值特定于你的组件的非公共异常类型。 HRESULT 通过异常对象的编号属性提供给 JavaScript 调用方，并通过 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 属性提供给 C++ 调用方。
 
-> **注意**使用负值，为你的 HRESULT。 正值解释为成功，并且在 JavaScript 或 C++ 调用方中没有引发任何异常。
+> **请注意**使用负值，为你的 HRESULT。 正值解释为成功，并且在 JavaScript 或 C++ 调用方中没有引发任何异常。
 
 ## <a name="declaring-and-raising-events"></a>声明和引发事件
 在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 作为事件类型，并将事件参数类型用作泛型类型参数。 就像在 .NET Framework 应用程序中一样引发该事件。

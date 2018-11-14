@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024831"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183574"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -70,7 +70,7 @@ UWP 应用的订阅加载项支持以下功能：
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你有合作伙伴中心中的[创建应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)并将此应用在应用商店中发布。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你有合作伙伴中心中的[创建应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
 * 你可以在合作伙伴中心中的[创建订阅加载项的应用](../publish/add-on-submissions.md)。
 
 这些示例中的代码假设：
@@ -126,7 +126,7 @@ UWP 应用的订阅加载项支持以下功能：
 目前订阅加载项不支持以下情形。
 
 * 目前不支持直接通过应用商店向客户销售订阅。 订阅只能通过数字产品的应用内购买提供。
-* 客户不能使用他们的 Microsoft 帐户的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到不同订阅期，客户必须取消其当前的订阅，然后从你的应用中购买具有订阅期不同的订阅。
+* 客户不能使用他们的 Microsoft 帐户的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 页面切换到不同订阅期。 若要切换到不同订阅期，客户必须取消其当前订阅，然后购买了订阅期从你的应用。
 * 订阅加载项目前不支持分级订阅（例如，将客户从基本订阅切换到包含更多功能的高级订阅）。
 * 目前订阅加载项不支持[销售](../publish/put-apps-and-add-ons-on-sale.md)和[促销代码](../publish/generate-promotional-codes.md)。
 

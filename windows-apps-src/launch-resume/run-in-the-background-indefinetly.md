@@ -3,17 +3,17 @@ author: TylerMSFT
 title: 在后台无限期运行
 description: 使用 extendedExecutionUnconstrained 功能可在后台无限期运行后台任务或扩展执行会话。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 后台任务，扩展执行，资源，限制，后台任务
+keywords: 后台任务，扩展执行，资源、 限制，后台任务
 ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: eb6e0735620c4a940d3414f22aaa4f09bb608424
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027963"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164703"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在后台无限期运行
 
