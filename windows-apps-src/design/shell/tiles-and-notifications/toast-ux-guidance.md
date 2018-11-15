@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，集合、 组、 ux，ux 指南，指导、 操作、 toast，操作中心、 noninterruptive、 有效通知、 非侵入式通知，操作，管理，组织
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 849c8ffc66661546a088a3d89747e6690a763e71
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6463477"
+ms.locfileid: "6666580"
 ---
 # <a name="toast-notification-ux-guidance"></a>Toast 通知的 UX 指南
 通知是必不可少的现代生命; 一它们可以帮助用户更高效、 应用和网站，以及使用任何更新保持当前使用的预定。 不过，通知可以快速打开从适用于 overbearing 和如果它们不设计以用户为中心的方式产生干扰。 通知是一个右键单击离开正在处于关闭状态，并且后处于关闭状态，它是不太可能，它们会将重新打开。  因此，请确保你的通知是尊重用户的屏幕空间和时间，因此你可以将此参与通道保留打开。
@@ -59,7 +59,7 @@ ctionable 通知是一个非常强大的工具，以帮助用户感觉高效、 
 ## <a name="other-resources"></a>其他资源
 上述这些四个点是我们发现有效通过遥测，我们自己分析和第一个和第三方实验的指南。 记住，但是，这些指南只是： 指南。  我们确信这些规则有助于提高参与度和效率的通知，但不是可以替代以用户为中心的考虑，并了解从自己的数据。  
 
-如果现在将通知发送到你的 UWP 应用，你可以查看分析上[开发人员中心](https://developer.microsoft.com/en-us/windows)中通知发生了什么事情 ！ 使用[应用商店服务 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)或[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)时，可以免费此数据。 这些指标将为你提供更深入通知在 windows 平台上，会发生什么情况以及如何为用户通知与之交互。 通过在左侧参与上转到菜单中访问该仪表板 > 通知，然后单击"分析"选项卡中通知页面上。  该文件位于同一位置会从开发人员中心门户发送通知。
+如果现在将通知发送到你的 UWP 应用，你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)中通知发生了什么事情查看分析 ！ 使用[应用商店服务 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)或[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)时，可以免费此数据。 这些指标将为你提供更深入通知在 windows 平台上，会发生什么情况以及如何为用户通知与之交互。 通过在左侧参与上转到菜单中访问此数据 > 通知，然后单击"分析"选项卡中通知页面上。  该文件位于同一位置会从合作伙伴中心发送通知。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 55d90ffb50d6db71e135cbecf56487b96ba3377c
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451578"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668317"
 ---
 # <a name="beta-testing"></a>Beta 测试
 
@@ -42,9 +42,9 @@ ms.locfileid: "6451578"
 
 ## <a name="next-steps"></a>后续步骤
 
-在统一的 Windows 开发人员中心仪表板中，你可以限制为仅向你的测试人员分发应用，而不必考虑你的应用所面向的操作系统。 没有必要使用单独的名称和程序包标识创建单独的应用版本；你可以先执行测试，然后当你准备好向大众发布应用时，再创建新的提交。 （如果你愿意，当然可以创建单独的应用仅供测试。 如果要这样做，请确保为其指定的名称不同于你打算使用的最终的公共应用名称。）
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)，你可以限制分发你的应用仅向你测试人员，而不考虑哪些操作系统应用面向。 没有必要使用单独的名称和程序包标识创建单独的应用版本；你可以先执行测试，然后当你准备好向大众发布应用时，再创建新的提交。 （如果你愿意，当然可以创建单独的应用仅供测试。 如果要这样做，请确保为其指定的名称不同于你打算使用的最终的公共应用名称。）
 
-请参阅 [Beta 测试和目标分发](https://msdn.microsoft.com/library/windows/apps/Mt185377)了解如何将应用提交到应用商店进行 Beta 测试。
+请参阅 [Beta 测试和目标分发](../publish/beta-testing-and-targeted-distribution.md)了解如何将应用提交到应用商店进行 Beta 测试。
 
  
 
