@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657802"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843464"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -71,7 +71,7 @@ ms.locfileid: "6657802"
 
 ## <a name="walkthough"></a>操作实例
 
-如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为大量的代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
+如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
 
 ### <a name="1-setting-the-stage"></a>1. 设置舞台
 
@@ -259,7 +259,7 @@ function animate_clouds()
 
 ## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
 
-现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft 应用商店 （假设已先了改进 ！） 
+现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
 
 此流程包含几个步骤。
 

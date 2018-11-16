@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671377"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6973402"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
-**请注意**有关使用数据的常规信息绑定在你的应用与 **{x: Bind}** （和 **{Binding}** **{x: Bind}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的常规信息随 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
 
@@ -86,7 +86,7 @@ public class MyPage : Page
 }
 ```
 
-你还可以直接在标记中使用系统功能，例如完成日期格式、 文本格式，文本串联等之类的简单方案：
+你还可以直接在标记中使用系统功能，例如完成日期格式、 文本格式、 文本串联等之类的简单方案：
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -106,7 +106,7 @@ public class MyPage : Page
 - 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
 - 函数的返回类型需要匹配正使用绑定的属性的类型
 
-从开始到 Windows 10 的下一个主要更新，绑定引擎将响应属性更改通知触发的函数名称和重新评估根据需要的绑定。 例如： 
+从开始到 Windows 10 的下一个主要更新，则绑定引擎将响应属性更改通知触发的函数名称和重新评估根据需要绑定。 例如： 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -161,7 +161,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 可以使用 X:bind 中函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
+> 可以使用在 x: Bind 函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
 
 ## <a name="function-arguments"></a>函数参数
 

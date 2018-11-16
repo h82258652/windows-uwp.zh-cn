@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告单元, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652392"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842356"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 
@@ -21,7 +21,7 @@ ms.locfileid: "6652392"
 
 我们提供了[测试广告单元值](#test-ad-units)，你可以在测试过程中使用这些值来确定应用是否显示测试广告。 这些测试值只能在应用的测试版本中使用。 如果你尝试在发布动态应用后在其中使用测试值，应用将不会收到广告。
 
-完成测试你的 UWP 应用并准备好将其提交到合作伙伴中心后，你必须从合作伙伴中心中的[应用内广告](../publish/in-app-ads.md)页面[创建实时广告单元](#live-ad-units)，并更新你的应用代码才能使用此广告单元的应用程序 ID 和广告单元 ID 值。
+完成你的 UWP 应用的测试并且准备好将其提交到合作伙伴中心后，你必须从合作伙伴中心中的[应用内广告](../publish/in-app-ads.md)页面[创建实时广告单元](#live-ad-units)，并更新你的应用代码才能使用此广告单元的应用程序 ID 和广告单元 ID 值。
 
 有关在应用代码中分配应用程序 ID 和广告单元 ID 值的详细信息，请参阅以下文章：
 * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
@@ -54,7 +54,7 @@ ms.locfileid: "6652392"
 
 若要从合作伙伴中心中获取实时广告单元，并将其用于你的应用：
 
-1.  合作伙伴中心中的**应用内广告**页面上[创建一个广告单元](../publish/in-app-ads.md#create-ad-unit)。 请务必为应用中要使用的广告控件指定正确的广告单元类型。
+1.  合作伙伴中心中的**应用内广告**页面上[创建广告单元](../publish/in-app-ads.md#create-ad-unit)。 请务必为应用中要使用的广告控件指定正确的广告单元类型。
     > [!NOTE]
     > 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分的设置为广告单元启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络）的广告以及 Microsoft 应用促销活动的广告，能够最大化广告收益和应用促销能力。 默认情况下，我们会使用机器学习算法为你的应用自动选择广告中介，以帮助最大化你的广告在应用支持的市场中的收益，但是，你也可以选择手动配置中介设置。
 

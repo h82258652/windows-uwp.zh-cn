@@ -8,11 +8,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656498"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840487"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>为应用启用订阅加载项
 
@@ -71,7 +71,7 @@ UWP 应用的订阅加载项支持以下功能：
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
 * 你有合作伙伴中心中的[创建应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
-* 你可以在合作伙伴中心中的[创建订阅加载项的应用](../publish/add-on-submissions.md)。
+* 必须在合作伙伴中心中[创建订阅加载项的应用](../publish/add-on-submissions.md)。
 
 这些示例中的代码假设：
 * 此代码文件包含对 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间的 **using** 语句。

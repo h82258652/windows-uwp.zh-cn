@@ -9,11 +9,11 @@ keywords: windows 10，uwp，应用服务
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: 272102f08b145c0681b0e036be4d41bc7c9ad9ff
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651193"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843644"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>将应用服务转换为与其主机应用在同一个进程中运行
 
@@ -46,7 +46,7 @@ ms.locfileid: "6651193"
 
 此时，应用程序可直接运行应用服务。 例如，在 App.xaml.cs 中：
 
-[!NOTE] 下面的代码是不同于提供示例 1 （进程外服务）。 下面的代码仅用于说明目的提供，并且不应作为的示例 2 （进程内服务） 的一部分。  若要继续示例中的文章的过渡 1 （进程外服务） 到示例 2 （进程内服务） 继续使用而不是下面说明的代码示例 1 提供的代码。
+[!NOTE] 下面的代码是不同于提供示例 1 （进程外服务）。 下面的代码仅用于图提供，并且不在的一部分示例 2 （进程内服务）。  若要继续示例中的文章的过渡 1 （进程外服务） 到示例 2 （进程内服务） 继续使用而不是下面说明的代码示例 1 提供的代码。
 
 ``` cs
 using Windows.ApplicationModel.AppService;

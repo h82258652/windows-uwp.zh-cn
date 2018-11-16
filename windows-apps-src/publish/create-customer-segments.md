@@ -9,15 +9,15 @@ keywords: Windows 10, uwp, 类别, 类别, 目标组, 客户
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657013"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974802"
 ---
 # <a name="create-customer-segments"></a>创建客户类别
 
-有时出于促销和提升参与度的目的，可能需要面向客户群子集。 你可以完成此[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一种[客户组](create-customer-groups.md)称为包含 Windows 10 客户满足人口统计或收益条件，你选择的*类别*。
+有时出于促销和提升参与度的目的，可能需要面向客户群子集。 你可以达到此在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建[客户组](create-customer-groups.md)称为包含年龄*段*的 Windows 10 客户满足人口统计或收益条件，你选择的类型。
 
 例如，可创建仅包含年龄在 50 岁或以上的客户的类别，或创建包含在 Microsoft Store 中花费超过 10 美元的客户。 还可将这些条件组合起来，创建包含年龄在 50 岁以上并且在应用商店中花费超过 10 美元的所有客户。 
 
@@ -43,7 +43,7 @@ ms.locfileid: "6657013"
 4.  在**包含此应用的客户**列表中，选择一个目标应用。
 5.  在**定义包含条件**部分中，指定类别的筛选条件。
 
-    你可以选择各种筛选条件，包括**购置**、**购置源**、**人口统计**、**评分**，**改动预期**、**应用商店购买**、**应用商店购置**以及**应用商店花费**。
+    你可以选择各种筛选条件，包括**购置**、**购置源**、**人口统计**、**评分**，**改动预期**、**应用商店购买**、**应用商店购置**，以及**应用商店花费**。
 
     例如，如果希望创建仅包含 18 至 24 岁的应用客户的类别，可从下拉列表中选择筛选条件 \[**人口统计**\] \[**年龄组**\]\ [**是**\] \[**18 至 24**\]。
 

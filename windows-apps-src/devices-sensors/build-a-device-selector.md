@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 036ea8b7d9797112dca9b6594e9bc1e33e923588
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6663095"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843938"
 ---
 # <a name="build-a-device-selector"></a>生成设备选择器
 
@@ -38,7 +38,7 @@ ms.locfileid: "6663095"
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 使用规范 AQS 语法，但并非所有运营商都受支持。 有关构造筛选器字符串时可用的属性列表，请参阅[设备信息属性](device-information-properties.md)。
 
-**警告**定义的自定义属性`{GUID} PID`构造 AQS 筛选器字符串时，不能使用格式。 这是因为属性类型派生自已知的属性名称。
+**警告**定义的自定义属性`{GUID} PID`在构造 AQS 筛选器字符串时，不能使用格式。 这是因为属性类型派生自已知的属性名称。
 
  
 
@@ -64,7 +64,7 @@ ms.locfileid: "6663095"
 
 > **提示**你可以指定**NULL** **COP\_EQUAL**或**COP\_NOTEQUAL**。 这将转换为一个没有值或值不存在的属性。 在 AQS 中，可以使用空括号 \[\] 指定 **NULL**。
 
-> **重要提示**在使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**运算符时，它们的行为不同的方式与字符串和字符串数组。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
+> **重要**在使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**运算符时，它们的行为不同字符串和字符串数组。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
 
 如果你无法创建可相应地设置结果范围的单个 AQS 筛选器字符串，则可以在接收结果后进行筛选。 但是，如果你选择执行此操作，我们建议你在将结果提供给 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，尽量从初始 AQS 筛选器字符串限制结果。 这将有助于提高你的应用程序的性能。
 

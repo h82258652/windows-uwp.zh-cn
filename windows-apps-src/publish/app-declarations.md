@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6455414"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843061"
 ---
 # <a name="product-declarations"></a>产品声明
 
-在[提交过程](app-submissions.md)的[属性](enter-app-properties.md)页面的**产品声明**部分可帮助确保你的应用以相应地显示并交付给正确的客户，并帮助他们了解如何使用你的应用。
+[提交过程](app-submissions.md)的[属性](enter-app-properties.md)页面的**产品声明**部分可帮助确保你的应用以适当的方式显示并交付给正确的客户，以及它们如何，他们可以使用你的应用。
 
 以下部分介绍一些声明和你需要确定是否每个声明都适用于你的应用时的注意事项。 请注意，这些声明的两个检查默认情况下 （如下面所述）。具体取决于你的产品类别，你还可能会看到其他声明。 请务必查看所有声明并确保它们准确反映你的提交。
 
@@ -48,7 +48,7 @@ ms.locfileid: "6455414"
 
 默认情况下，以使客户能够将应用安装到外部或可移动存储媒体 SD 卡，如或非系统卷驱动器等外部驱动器，此框处于选中状态。
 
-如果你想要阻止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。 （请注意，如果没有限制，以便*应用只能*安装选项安装到可移动存储媒体。）
+如果你想要阻止你的应用安装到备用驱动器或可移动存储，并仅允许安装到其设备上的内部硬盘驱动器，请取消选中此框。 （注意，如果没有限制，以便*应用只能*安装选项安装到可移动存储媒体。）
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。

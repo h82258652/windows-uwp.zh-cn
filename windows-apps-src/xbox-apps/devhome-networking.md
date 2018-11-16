@@ -2,7 +2,7 @@
 author: v-angraf
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
 title: 网络页面 （开发人员主页）
-description: 提供信息适用于 Xbox One 开发人员主页应用的网络页面。
+description: 提供有关网络应用的页面的开发人员主页适用于 Xbox One 的信息。
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 5968a2dad76343a1aa589caadf62ec3cd823aed0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6645482"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974832"
 ---
 # <a name="networking-page-dev-home"></a>网络页面 （开发人员主页）
    
@@ -35,7 +35,7 @@ ms.locfileid: "6645482"
 ## <a name="network-simulation"></a>网络模拟  
    
   
-**网络模拟**窗格运行网络模拟，可针对各种带宽配置文件进行测试。   
+**网络模拟**窗格中运行网络模拟，可针对各种带宽配置文件进行测试。   
   
 <a id="ID4EOB"></a>
 

@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a25697d46b7006d81623cfbaa61db940388ae27
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6255713"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6842342"
 ---
 # <a name="get-globalscidssciddatapath"></a>GET (/global/scids/{scid}/data/{path})
-列出了在指定路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
+列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
  
   * [URI 参数](#ID4EX)
   * [可选的查询字符串参数](#ID4ECB)
@@ -35,7 +35,7 @@ ms.locfileid: "6255713"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | scid| guid| 若要查找的服务配置 ID。| 
-| path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
+| path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
   
 <a id="ID4ECB"></a>
 
@@ -44,16 +44,16 @@ ms.locfileid: "6255713"
  
 | 参数| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
-| skipItems| int| 返回的项目在集合中，例如，N + 1 处开始跳过 N 项目。| 
-| ContinuationToken| 字符串| 返回在给定的延续令牌启动的项目。 如果同时提供，continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
-| maxItems| int| 要从该集合，这可以与 skipItems 和 continuationToken 返回项目的范围结合使用返回的项目的最大数量。 如果 maxItems 不存在，并且可能会返回少于 maxItems，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
+| skipItems| int| 返回在集合中，例如，N + 1 处开始的项跳过 N 的项目。| 
+| ContinuationToken| 字符串| 返回在给定的延续令牌启动的项。 如果同时提供 continuationToken 参数优先于 skipItems。 换言之，如果存在 continuationToken 参数在 skipItems 参数将被忽略。| 
+| maxItems| int| 要从该集合，这可以与 skipItems 和 continuationToken 返回项目的范围结合使用返回的项数的最大数量。 如果 maxItems 不存在，并且可能会返回少于 maxItems，即使尚未返回结果的最后一页服务可能会提供一个默认值。 | 
   
 <a id="ID4EWC"></a>
 
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头是无效或不存在，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头丢失或无效，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4EDD"></a>
 
@@ -77,18 +77,18 @@ ms.locfileid: "6255713"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 请求已成功。| 
 | 201| 已创建 | 创建实体。| 
-| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常无效参数。| 
+| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常参数无效。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
 | 406| 不允许 | 不支持资源版本。| 
-| 408| 请求超时 | 请求时间太长，才能完成。| 
+| 408| 请求超时 | 请求所花的时间太长，才能完成。| 
 | 500| 内部服务器错误 | 服务器时遇到意外的情况，执行此请求将阻止它。| 
 | 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   

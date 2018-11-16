@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6669155"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840251"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 语法指南
 
@@ -89,7 +89,7 @@ XAML 与大部分 XML 用法之间的一大区别在于，XAML 通常并非通�
 </UserControl ...>
 ```
 
-**请注意**一些结构无法声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 和 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。
+**注意**一些结构无法声明为对象元素。 初始化文本不受支持，而且不能用作资源。 你必须使用属性语法才能在 XAML 中将属性设置为这些值。 这些类型包括：[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 和 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。
 
 ## <a name="setting-properties"></a>设置属性
 
@@ -240,7 +240,7 @@ XAML 中的集合语法给人一种设置只读属性的感觉，但其实不是
 
 另一个 XAML 规则是元素的属性必须能够按照任何顺序进行设置。 例如，`<Rectangle Height="50" Width="100" />` 和 `<Rectangle Width="100"  Height="50" />` 之间没有区别。 使用哪种顺序只是样式问题。
 
-**请注意**XAML 设计人员通常提升排序约定，如果你使用的设计表面不是 XML 编辑器，但你可以在后来任意编辑该 XAML，以对属性重新排序或者引入新属性。
+**注意**XAML 设计人员通常提升排序约定，如果你使用的设计表面不是 XML 编辑器，但你可以在后来任意编辑该 XAML，以对属性重新排序或者引入新属性。
 
 ## <a name="attached-properties"></a>附加属性
 
@@ -269,7 +269,7 @@ XAML通过添加一个名为*附加属性*的语法元素对 XML 进行了扩展
 
 因为左括号 \{ 是标记扩展序列的开始，所以必须使用一个转义序列来指定一个以“\{”开始的文字字符串值。 该转义序列是“\{\}”。 例如，要指定一个是单个左括号的字符串值，可以将该属性值指定为“\{\}\{”。 你也可以使用引号（例如，一个由 **""** 分隔的属性值中的 **'**）来以字符串形式提供“\{”值。
 
-**请注意**内的引用的属性时，还可以运行"\}"。
+**注意**内的引用的属性时，还可以运行"\}"。
  
 ## <a name="enumeration-values"></a>枚举值
 
@@ -278,7 +278,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 -   请勿使用限定形式，因为它不起作用。 例如，下面的 XAML 无效：`<Button Visibility="Visibility.Visible"/>`
 -   请勿使用常量的值。 换句话说，请勿依赖显式或隐式依赖枚举定义方式的枚举的整数值。 尽管看似可行，但无论采用 XAML 形式还是代码形式，这都是不合适的做法，因为你依赖的可能是过渡实现的详细信息。 例如，请勿执行如下操作：`<Button Visibility="1"/>`。
 
-**请注意**在使用 XAML 和使用枚举的 Api 参考主题中，单击枚举类型的**属性值**部分中的**语法**的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
+**注意**在使用 XAML 和使用枚举的 Api 参考主题中，单击**属性值**部分中的**语法**枚举类型的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
 
 枚举可以具有与标志相同的作用，即，它们可以被归类于 **FlagsAttribute**。 如果你需要将具有标志作用的枚举的值组合指定为一个 XAML 属性值，请使用每个枚举常量的名称，在每个名称之间加一个逗号 (,)，不要有任何多余的空格字符。 具有标志作用的属性在 Windows 运行时 XAML 词汇中并不常见，但 [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) 示例表明了支持以 XAML 的形式设置具有标志作用的枚举值。
 
