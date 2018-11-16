@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6856588"
+ms.locfileid: "6978966"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 吸引客户
 
@@ -144,4 +144,4 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 库�
 * [通过 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)
 * [从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)
 * [配置应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)
-* [记录合作伙伴中心的自定义的事件](log-custom-events-for-dev-center.md)
+* [记录合作伙伴中心的自定义事件](log-custom-events-for-dev-center.md)

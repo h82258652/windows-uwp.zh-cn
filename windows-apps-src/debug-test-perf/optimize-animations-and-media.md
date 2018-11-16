@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671086"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853163"
 ---
 # <a name="optimize-animations-media-and-images"></a>优化动画、媒体和图像
 
@@ -56,7 +56,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 对 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 进行动画处理似乎不是一个好方法。 除了有损性能，它还可能导致要播放的视频内容中出现断裂或其他痕迹。
 
-> **请注意** **MediaPlayerElement**本文章中的建议也适用于[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
+> **注意** **MediaPlayerElement**本文章中的建议也适用于[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>尽量少使用无限动画
 
@@ -68,7 +68,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空间包含一个高性能的、流畅的动画库，这些动画与其他 Windows 动画的外观一致。 相关类的名称中含有“主题”，并在[动画概述](https://msdn.microsoft.com/library/windows/apps/Mt187350)中进行了介绍。 此动画库支持许多常见的动画方案，例如创建应用的第一个视图的动画以及创建状态转换和内容转换。 我们建议尽可能使用此动画库以改进性能并提高 UWP UI 的一致性。
 
-> **请注意**的动画库无法创建所有可能属性的动画。 有关动画库不适用的 XAML 方案，请参阅[情节提要动画](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
+> **注意**的动画库无法创建所有可能属性的动画。 有关动画库不适用的 XAML 方案，请参阅[情节提要动画](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>独立播放 CompositeTransform3D 属性的动画

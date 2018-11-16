@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: f228cb4783c33bc0ea2acecba79893939cadd91e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673203"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6969628"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 应用认证工具包
 
@@ -26,7 +26,7 @@ ms.locfileid: "6673203"
 测试通用 Windows 应用的先决条件：
 
 -   你必须安装并运行 windows 10。
--   你必须安装[Windows 应用认证工具包版本 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，这为 windows 10 包含在 Windows 软件开发工具包 (SDK)。
+-   你必须安装[Windows 应用认证工具包版本 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，它包含在 Windows 软件开发工具包 (SDK) 适用于 windows 10。
 -   必须[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 -   必须将要测试的 Windows 应用部署到计算机。
 
@@ -44,7 +44,7 @@ ms.locfileid: "6673203"
 
 3.  在已输入或选定要测试的应用后，单击“下一步”****。
 
-4.  在下一屏幕中，你将看到与正在测试的应用类型相对应的测试工作流。 如果列表中的某一测试灰显，则表示该测试不适用于你的环境。 例如，如果你正在 Windows 7 上测试 Windows 10 应用，则只有静态测试才能应用到工作流。 请注意 Microsoft 应用商店可能会应用来自此工作流的所有测试。 选择要运行的测试，然后单击“下一步”****。
+4.  在下一屏幕中，你将看到与正在测试的应用类型相对应的测试工作流。 如果列表中的某一测试灰显，则表示该测试不适用于你的环境。 例如，如果你正在 Windows 7 上测试 Windows 10 应用，则只有静态测试才能应用到工作流。 请注意，在 Microsoft 应用商店可能会应用来自此工作流的所有测试。 选择要运行的测试，然后单击“下一步”****。
 
     Windows App 认证工具包开始验证该应用。
 
@@ -54,17 +54,17 @@ ms.locfileid: "6673203"
 
 6.  打开报告文件并查看测试结果。
 
-**请注意**如果你使用 Visual Studio，你可以创建应用包时运行 Windows 应用认证工具包。 请参阅[打包 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Mt627715)以了解操作方法。
+**注意**如果你使用 Visual Studio，你可以创建应用包时运行 Windows 应用认证工具包。 请参阅[打包 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Mt627715)以了解操作方法。
 
  
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>从命令行使用 Windows 应用认证工具包验证 Windows 应用
 
-**重要提示**必须在活动用户会话的上下文中运行 Windows 应用认证工具包。
+**重要**必须在活动用户会话的上下文中运行的 Windows 应用认证工具包。
 
 1.  在命令窗口中，导航到包含 Windows 应用认证工具包的目录。
 
-    **请注意**的默认路径是 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
+    **注意**的默认路径是 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
 2.  按此顺序输入以下命令，以测试已安装在你的测试计算机上的应用：
 
@@ -80,17 +80,17 @@ ms.locfileid: "6673203"
 
 3.  在测试完成后，打开名为 `[report file name]` 的报告文件并查看测试结果。
 
-**请注意**可以从某个服务中，运行 Windows 应用认证工具包，但是该服务必须在活动用户会话内启动工具包过程，并且不得在 Session0 中运行。
+**注意**可以从某个服务中，运行 Windows 应用认证工具包，但是该服务必须在活动用户会话内启动工具包过程，并且不得在 Session0 中运行。
 
-**请注意**有关 Windows 应用认证工具包命令行的详细信息，请输入命令 `appcert.exe /?`
+**注意**有关 Windows 应用认证工具包命令行的详细信息，请输入命令 `appcert.exe /?`
 
 ## <a name="testing-with-a-low-power-computer"></a>使用低能耗电脑进行测试
 
 Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能。
 
-执行测试的计算机的属性会影响测试结果。 若要确定你的应用性能是否符合[Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我们建议你测试你的应用在低能耗计算机上，例如基于 Intel Atom 处理器的计算机使用的屏幕分辨率为 1366x768 （或更高版本） 和旋转硬盘驱动器（相对于固态硬盘驱动器） 的驱动器。
+执行测试的计算机的属性会影响测试结果。 若要确定你的应用性能是否符合[Microsoft Store 策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我们建议你测试你的应用的低能耗计算机上，例如基于 Intel Atom 处理器的计算机使用的屏幕分辨率为 1366x768 （或更高版本） 和旋转硬盘驱动器（相对于固态硬盘驱动器） 的驱动器。
 
-随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 引用到最新的[Microsoft 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)和测试你的应用最新版本的 Windows 应用认证工具包，以确保应用遵守的最新的性能要求。
+随着低能耗计算机的发展，其性能特征可能会随时间的推移而改变。 请参阅最新的[Microsoft 应用商店策略](https://msdn.microsoft.com/library/windows/apps/Dn764944)和测试你的应用最新版本的 Windows 应用认证工具包，以确保应用遵守的最新的性能要求。
 
 ## <a name="related-topics"></a>相关主题
 

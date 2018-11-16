@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660819"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858609"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>在 Mac 上设置 Windows 10
 
@@ -24,15 +24,15 @@ ms.locfileid: "6660819"
 
 准备好开始开发通用 Windows 应用，却没有一台随手可用的电脑？ 没关系 - 你可以使用 Mac！ 使用受欢迎的第三方解决方案，如 Apple Boot Camp、 Oracle VirtualBox、 VMware Fusion 和 Parallels Desktop，你可以在 Apple 计算机上安装 windows 10 和 Microsoft Visual Studio。
 
-**请注意**你将需要在磁盘或 U 盘上的 windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果你不是订户，可以从[Microsoft Store](http://apps.microsoft.com/windows/app)购买安装程序。 也可以从[此位置](http://go.microsoft.com/fwlink/?LinkId=623906)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
+**注意**你将需要在磁盘或 U 盘上的 windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果你不是订户，可以从[Microsoft Store](http://apps.microsoft.com/windows/app)购买安装程序。 也可以从[此位置](http://go.microsoft.com/fwlink/?LinkId=623906)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
 
-一旦运行的是 Windows，然后可以从[开发人员下载 windows 10](https://developer.microsoft.com/en-us/windows/downloads)安装最新版本的 Visual Studio 并开始编写应用 ！
+具有后运行的是 Windows，然后可以从[开发人员下载 windows 10](https://developer.microsoft.com/en-us/windows/downloads)安装最新版本的 Visual Studio 并开始编写应用 ！
 
-**请注意**如果你打算使用 Visual Studio 设备仿真程序，你**必须**安装 64 位 (x64) 版本的 windows 10 专业版或更好。 遗憾的是，某些较旧的 Mac 电脑无法运行 64 位 Windows。 请在此 [Apple 支持页面](http://go.microsoft.com/fwlink/p/?LinkID=397959)上与 Apple 联系以核实你的硬件是否兼容。
+**注意**如果你打算使用 Visual Studio 设备仿真程序，你**必须**安装 64 位 (x64) 版本的 windows 10 专业版或更好。 遗憾的是，某些较旧的 Mac 电脑无法运行 64 位 Windows。 请在此 [Apple 支持页面](http://go.microsoft.com/fwlink/p/?LinkID=397959)上与 Apple 联系以核实你的硬件是否兼容。
 
 ## <a name="apple-boot-camp"></a>Apple Boot Camp
 
-每个新的 Mac 上预安装 Boot Camp Assistant 应用，并启动它将指导你完成安装 windows 10 的过程。 你只需要一个 Windows 的副本（来自上面列出的源）和至少 30 GB 的可用磁盘空间。 安装后，你可以选择启动到 Mac OSX 或 Windows 10 中。 有关详细信息，请参阅 Apple 的 [Boot Camp 说明页面](http://go.microsoft.com/fwlink/?LinkId=623912)。
+Boot Camp Assistant 应用是每个新的 Mac 上预安装和启动它将指导你完成安装 windows 10 的过程。 你只需要一个 Windows 的副本（来自上面列出的源）和至少 30 GB 的可用磁盘空间。 安装后，你可以选择启动到 Mac OSX 或 Windows 10 中。 有关详细信息，请参阅 Apple 的 [Boot Camp 说明页面](http://go.microsoft.com/fwlink/?LinkId=623912)。
 
 ## <a name="parallels-desktop"></a>Parallels Desktop
 

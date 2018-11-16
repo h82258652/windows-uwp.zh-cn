@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 38f9d0daf230007d1d32a7d2187d54baa90986e5
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6860855"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992537"
 ---
 # <a name="composition-animations"></a>合成动画
 
@@ -23,7 +23,7 @@ Windows.UI.Composition API 允许你在统一的 API 层中创建、设置动画
 
 想一想电影中的运动设计。 运动的无缝过渡让你能够专注于故事，为你带来真实体验。 我们可以邀请该感觉融入设计，引导人们从一个任务到下一个轻松。 动作通常是用户界面和用户体验之间的区别性因子。
 
-为 Windows UI 平台的基本构建基块，Compositionanimation 提供一种强大且有效的方法，在你的应用程序 UI 中创建的运动体验。 动画引擎已被从头开始设计设置以确保你的运动独立于 UI 线程的 60 FPS 的频率运行。 这些动画用于提供灵活生成基于时间、 输入和其他属性的创新的运动体验。
+为 Windows UI 平台的基本构建基块，Compositionanimation 提供一种强大且有效的方法来创建你的应用程序 UI 中的运动体验。 动画引擎已被从头开始设计设置以确保你的运动独立于 UI 线程的 60 FPS 的频率运行。 这些动画旨在提供灵活生成创新的运动体验，具体取决于时间、 输入和其他属性。
 
 ### <a name="examples-of-motion"></a>动作示例
 
@@ -41,9 +41,9 @@ Windows.UI.Composition API 允许你在统一的 API 层中创建、设置动画
 
 若要在 UI 中生成运动，开发人员可以访问 XAML （链接到情节提要下面） 或可视化层中的动画。 在可视化层的动画为开发人员提供一系列的好处：
 
-- 性能 – 而不是传统 UI 线程绑定动画，在 Windows UI 平台上的动画针对独立线程 60 FPS，启用平滑的运动体验时进行操作。
-- 模板化模型 – Windows UI 层中的动画都是模板，意味着可以使用多个对象上的单个动画，并调整属性或参数，而无需担心阻碍以前使用。
-- 自定义 – Windows UI 层不仅可以轻松进行美观的 UI，但是使用一系列动画类型，可以创建新的和令人惊叹的体验是自定义的渐变
+- 性能 – 而不是传统 UI 线程绑定动画，在 Windows UI 的平台上的动画针对独立线程 60 FPS，启用平滑的运动体验时进行操作。
+- 模板化模型 – Windows UI 层中的动画都是模板、 含义可以使用多个对象上的单个动画，并调整属性或参数，而无需担心阻碍以前使用。
+- 自定义 – Windows UI 层不仅可以轻松进行美观的 UI，但是使用一系列动画类型，以创建新的和令人惊叹的体验是自定义的渐变
 
 作为开发人员在 Windows UI 层创建体验，你有权访问大量的动画概念来使你的设计变的栩栩如生。 你可以使用任何这些概念来创建属性的动画或 subchannel 的任何 CompositionObject 的组件 （如果适用）。
 
@@ -51,12 +51,12 @@ Windows.UI.Composition API 允许你在统一的 API 层中创建、设置动画
 > 并非所有的 CompositionObject 的属性是可进行动画处理。 请参阅来确定某个属性是否可进行动画处理的单个 CompositionObject 的文档。
 
 > [!NOTE]
-> 术语_通道_是指组件形式的属性。 例如，X 或 XY subchannel 的 Vector3 Offset 属性。
+> 术语_通道_指的是一组件形式的属性。 例如，X 或 XY subchannel 的 Vector3 Offset 属性。
 
 | 动画概念 | 说明 |
 | ----------------- | ----------- |
-| [使用 KeyFrameAnimations 基于时间的动画](time-animations.md)  | KeyFrameAnimations 用于直接控制的时间段内的运动体验全部。 开发人员描述运动的开始菜单、 结束、 在之间的内插和传统关键的方式的持续时间。 |
+| [使用 KeyFrameAnimations 基于时间的运动](time-animations.md)  | KeyFrameAnimations 用于直接控制的时间段内的运动体验全部。 开发人员描述运动的开始菜单、 结束、 在之间的内插和持续时间以一种传统关键的方式。 |
 | [在使用 Expressionanimation 相对运动](relation-animations.md)  | Expressionanimation 用于描述应如何相对于另一个对象的属性驱动的运动的一个对象的属性。 开发人员定义数学等式来定义基于引用的关系。 |
-| ImplicitAnimations | 这些动画是基于触发器和定义独立于核心应用逻辑。 ImplicitAnimations 用于描述如何以及何时动画是作为响应的直接属性更改。 |
-| [输入驱动的运动与输入动画](input-driven-animations.md)  | 输入的动画介绍了一组使开发人员可以将介绍通过触摸或其他输入的形式操作基于运动的方案。 在活动用户输入或手势，都驱动这些动画。 |
+| ImplicitAnimations | 这些动画基于触发器并定义独立于核心应用逻辑。 ImplicitAnimations 用于描述如何以及何时动画是作为响应直接属性更改。 |
+| [输入驱动的运动与输入动画](input-driven-animations.md)  | 输入的动画介绍了一组使开发人员可以描述通过触摸或其他输入的形式操作基于运动的方案。 在活动用户输入或手势，都驱动这些动画。 |
 | [Naturalmotionanimation 与基于物理学的运动](natural-animations.md)  | Naturalmotionanimation 用于描述自然和熟悉的运动体验，具体取决于真实强制驱动的运动。 而不是定义时，开发人员定义特性 (例如为弹簧 damping ratio) 的运动 |

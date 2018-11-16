@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e68f8f48ca9ba67a29c8a52a5d59767a080f642b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6663742"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6978857"
 ---
 # <a name="flyouts"></a>浮出控件
 
@@ -26,7 +26,7 @@ ms.locfileid: "6663742"
 
 ![嵌套在浮出控件内的上下文菜单](../images/flyout-nested.png)
 
-> **重要的 Api**：[浮出控件类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要 Api**：[浮出控件类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -50,7 +50,7 @@ ms.locfileid: "6663742"
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>如何创建一个浮出控件
+##  <a name="how-to-create-a-flyout"></a>如何创建浮出控件
 
 
 浮出控件附加到特定控件。 你可以使用 [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) 属性指定浮出控件显示的位置：顶部、左侧、底部、右侧或完整。 如果你选择[完整放置模式](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)，应用将拉伸浮出控件，并使其在应用窗口中居中。 某些控件（如 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)）提供可用于关联浮出控件或[上下文菜单](../menus.md) 的 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) 属性。

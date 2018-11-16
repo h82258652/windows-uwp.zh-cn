@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 6697d522ee14a00bb8cb9c0c2c367f01d6e50ef4
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854735"
+ms.locfileid: "6980484"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>通过 A/B 测试运行应用实验
 
@@ -67,5 +67,5 @@ A / B 测试在合作伙伴中心支持仅适用于 UWP 应用。
 * [创建项目并定义远程变量在合作伙伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [为实验编写应用代码](code-your-experiment-in-your-app.md)
 * [在合作伙伴中心中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
-* [合作伙伴中心中管理实验](manage-your-experiment.md)
+* [在合作伙伴中心中管理实验](manage-your-experiment.md)
 * [通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)

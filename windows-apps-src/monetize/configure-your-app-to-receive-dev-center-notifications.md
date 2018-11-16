@@ -9,17 +9,17 @@ keywords: windows 10，uwp，Microsoft Store Services SDK，定向推送通知�
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1281436ce0fe8c7b04429cea897eedc58b15d9
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670716"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6976908"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>针对定向推送通知配置应用
 
-可以使用合作伙伴中心中的**推送通知**页面直接通过在其上安装通用 Windows 平台 (UWP) 应用的设备发送定向的推送通知吸引客户。 例如，可以使用定向推送通知鼓励客户采取行动（如为应用评分或试用新功能）。 可以发送多个不同类型的推送通知，包括 Toast 通知、磁贴通知和 XML 原始通知。 还可以跟踪由推送通知导致的应用启动的速度。 有关此功能的详细信息，请参阅[将推送通知发送到应用客户](../publish/send-push-notifications-to-your-apps-customers.md)。
+可以使用合作伙伴中心中的**推送通知**页来直接与客户交流通过在其上安装通用 Windows 平台 (UWP) 应用的设备发送定向的推送通知。 例如，可以使用定向推送通知鼓励客户采取行动（如为应用评分或试用新功能）。 可以发送多个不同类型的推送通知，包括 Toast 通知、磁贴通知和 XML 原始通知。 还可以跟踪由推送通知导致的应用启动的速度。 有关此功能的详细信息，请参阅[将推送通知发送到应用客户](../publish/send-push-notifications-to-your-apps-customers.md)。
 
-可以从合作伙伴中心向客户发送定向的推送通知之前，你必须使用 Microsoft Store Services SDK 中[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)类的方法来注册应用以接收通知。 你可以使用此类的其他方法通知 （如果你想要跟踪的应用启动的通知导致的速度），你的应用已启动响应定向的推送通知的合作伙伴中心; 若要停止接收通知。
+可以从合作伙伴中心向客户发送定向的推送通知之前，你必须使用 Microsoft Store Services SDK 中[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)类的方法来注册应用以接收通知。 你可以使用此类的其他方法以通知 （如果你想要跟踪的应用启动的通知导致的速度），你的应用已启动响应定向的推送通知的合作伙伴中心; 若要停止接收通知。
 
 ## <a name="configure-your-project"></a>配置项目
 
@@ -75,9 +75,9 @@ ms.locfileid: "6670716"
 
 ## <a name="notify-partner-center-of-your-app-launch"></a>通知的应用启动的合作伙伴中心
 
-如果你选择的**跟踪应用启动速率**选项为你在合作伙伴中心的定向的推送通知，通知合作伙伴中心，你的应用已在应用中的相应入口点中调用[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)方法启动以响应推送通知。
+如果你选择定向的推送通知合作伙伴中心中的**跟踪应用启动速率**选项，从通知合作伙伴中心，你的应用已在应用中的相应入口点调用[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)方法启动以响应推送通知。
 
-该方法还会返回应用的原始启动参数。 当你选择跟踪推送通知的应用启动速率时，将不透明跟踪 ID 添加到启动参数，以帮助跟踪应用启动在合作伙伴中心。 必须将你的应用的启动参数传递给[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)方法，并且此方法将跟踪 ID 发送到合作伙伴中心、 跟踪 ID 删除的启动参数，并返回到的原始启动参数你代码。
+该方法还会返回应用的原始启动参数。 当你选择跟踪推送通知的应用启动速率时，将不透明跟踪 ID 添加到启动参数，以帮助跟踪应用启动在合作伙伴中心。 你必须将你的应用的启动参数传递给[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)方法，并且此方法将跟踪 ID 发送到合作伙伴中心、 删除跟踪 ID 中的启动参数，并返回到的原始启动参数你代码。
 
 调用此方法的方式取决于推送通知的激活类型：
 

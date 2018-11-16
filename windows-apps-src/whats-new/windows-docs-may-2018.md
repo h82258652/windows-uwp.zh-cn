@@ -8,15 +8,15 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861090"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6981634"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月中的新增功能
+# <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>什么是 Windows 开发人员文档中 2018 年 5 月的新增功能
 
-Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例已在五月以符合[Microsoft Build 2018](https://www.microsoft.com/build)开发者会议中可用。
+Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、 开发人员指南、 视频和示例已可使用在五月与[Microsoft Build 2018](https://www.microsoft.com/build)开发者会议一致。
 
 只需在 Windows10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
@@ -26,16 +26,16 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 在 Fluent 设计系统的运动的用户正在发展，计时、 缓动、 方向性和引力的基础上生成。 应用这些基础将帮助指导你的应用，用户和其数字体验用连接由反映自然世界。 有关详细信息，此文章：
 
-* [运动概述](../design/motion/index.md)已更新为反映这些基础知识。
-* [运动的实践](../design/motion/motion-in-practice.md)提供如何应用这些基础你的应用内的示例。
+* [运动概述](../design/motion/index.md)已更新以反映这些基础知识。
+* [运动的实践](../design/motion/motion-in-practice.md)提供如何应用这些基础应用中的示例。
 * [方向性和引力](../design/motion/directionality-and-gravity.md)固化你的应用的用户的心理模型。
-* [计时和缓动](../design/motion/timing-and-easing.md)向你的应用中的运动现实感。
+* [计时和缓动](../design/motion/timing-and-easing.md)向你的应用中运动现实感。
 
 ![操作运动](../design/motion/images/contextual.gif)
 
 ### <a name="fluent-design-updates"></a>Fluent Design 更新
 
-已对以下 Fluent Design 页面视觉更新和细微的更改：
+视觉更新和细微的改动进行了以下 Fluent Design 页面：
 
 * [对齐方式，填充、 边距](../design/layout/alignment-margin-padding.md)
 * [颜色](../design/style/color.md)
@@ -50,20 +50,20 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 此外，我们已经重写提供他们的内容区域的所有新信息的以下页面：
 
-* [图标](../design/style/icons.md)现在提供实用建议使用图标，并使它们变成可点击状态。
-* [版式](../design/style/typography.md)整合了来自类似的文章，信息将所有内容放在一个位置的更新的指南和图示。
+* [图标](../design/style/icons.md)现在提供实用建议使用图标并使用户成为变成可点击状态。
+* [版式](../design/style/typography.md)合并从类似文章的信息将所有内容放在一个位置的更新的指南和插图。
 
 ![颜色调色板图像](../design/style/images/color/accent-color-palette.svg)
 
 ### <a name="app-installer-files-in-visual-studio"></a>在 Visual Studio 中的应用安装程序文件
 
-现在可以使用 Visual Studio 2017 更新 15.7 开始创建应用安装程序文件。 [了解如何使用 Visual Studio 创建应用安装程序文件](../packaging/create-appinstallerfile-vs.md)，并启用自动更新向你的应用。 如果你遇到问题，请参阅[疑难解答的安装问题的应用安装程序文件](../packaging/troubleshoot-appinstaller-issues.md)以查看常见问题和解决方案。
+现在可以使用 Visual Studio 2017 更新 15.7 开始创建应用安装程序文件。 [了解如何使用 Visual Studio 创建应用安装程序文件](../packaging/create-appinstallerfile-vs.md)和启用自动更新向你的应用。 如果你遇到问题，请参阅[疑难解答的安装问题的应用安装程序文件](../packaging/troubleshoot-appinstaller-issues.md)以查看常见问题和解决方案。
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>边缘 WebView 控件，用于 Windows 窗体和 WPF 应用程序
 
 通过使用 WebView 控件，之前仅适用于 UWP 应用程序在桌面应用程序中显示 web 内容。 此控件使用 Microsoft Edge 的呈现引擎来嵌入视图呈现丰富格式化 HTML 内容从远程 web 服务器、 动态生成的代码或内容文件。 查找 WebView 控件中的最新版本[Windows 社区工具包。](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
 
-对于其他控件，如 WebView 在将来版本的 Windows 社区工具包的外观。 有关详细信息，请参阅[主机 UWP 控件在 WPF 和 Windows 窗体应用程序。](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+对于其他控件，如 WebView 在将来的版本的 Windows 社区工具包的外观。 有关详细信息，请参阅[主机 UWP 控件在 WPF 和 Windows 窗体应用程序。](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="gaze-input-and-interactions"></a>凝视输入和交互
 
@@ -75,17 +75,17 @@ MSIX 宣布 Microsoft Build 2018 大会，是适用于所有 Windows 应用程�
 
 * 可靠的安装和更新。 
 * 管理与灵活功能系统安全模型。
-* 在 Microsoft Store、 企业管理和支持许多自定义分发模型。
+* 在 Microsoft 应用商店、 企业管理和支持许多自定义分发模型。
 
-工具，用于创建这些程序包将在未来版本的 Visual Studio 和 Windows SDK 中可用。
+工具，用于创建这些程序包将在未来版本的 Visual Studio 和 Windows SDK 提供。
 
-MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持与他们的工具和解决方案的 MSIX 生态系统。 若要详细了解 MSIX 打包格式，请参阅[MSIX SDK](https://github.com/Microsoft/msix-packaging)。 
+MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持 MSIX 生态系统使用其工具和解决方案。 若要详细了解 MSIX 打包格式，请参阅[MSIX SDK](https://github.com/Microsoft/msix-packaging)。 
 
 ![MSIX 打包图像](images/msix.png)
 
 ### <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
 
-现在，你的应用中的可选包可以包含可执行文件的 C# 代码。 [了解如何使用 Visual Studio 配置要支持在主应用包的可选的加载项包。](../packaging/optional-packages-with-executable-code.md)
+现在，你的应用中的可选包可以包含可执行文件的 C# 代码。 [了解如何使用 Visual Studio 配置要支持主应用包的可选的加载项包。](../packaging/optional-packages-with-executable-code.md)
 
 ### <a name="page-transitions"></a>页面过渡
 
@@ -95,7 +95,7 @@ MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持与
 
 项目 rome 团队已检查其 iOS 和 Android 的 Sdk，添加新功能，如用户活动和重构很多代码以不同的 Sdk 提供一致的编程体验。 [所有新的 API 参考和操作方法文档](https://docs.microsoft.com/windows/project-rome/)将介绍实时 Build 2018 开发者会议期间。
 
-### <a name="sets"></a>设置
+### <a name="sets"></a>集
 
 设置功能在 Windows Insider preview 版本中可用。 使用集功能时，你的应用绘制到窗口，可能会与其他应用，与具有自己的选项卡标题栏中的每个应用共享。 
 
@@ -103,7 +103,7 @@ MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持与
 
 ### <a name="get-started"></a>入门
 
-我们已大大增加我们获取启动较新的学习轨迹的内容。 这些新主题旨在为新 Windows 10 开发人员提供了他们可能想要完成的一些常见任务的信息。 它们不是教程并不提供手持演练中，但改为指出现有文档所在以及如何使用它。 请查看改良[开始编写代码](../get-started/create-uwp-apps.md)页上，也可以浏览每个单独的学习轨迹：
+我们已大大增加我们获取启动较新的学习轨迹的内容。 这些新主题旨在为新 Windows 10 开发人员提供了他们可能想要完成的一些常见任务的信息。 它们不教程且不提供手持演练中，但改为指出现有文档所在以及如何使用它。 请查看改良[开始编写代码](../get-started/create-uwp-apps.md)页上，或了解每个单独的学习轨迹：
 
 * [构建表单](../get-started/construct-form-learning-track.md)
 * [以列表形式显示客户](../get-started/display-customers-in-list-learning-track.md)
@@ -114,17 +114,17 @@ MSIX 打包格式是一种开放源格式，以便我们的合作伙伴支持与
 
 ### <a name="advertising-performance-report"></a>广告效果报告
 
-在合作伙伴中心中[的广告性能报告](../publish/advertising-performance-report.md)现在提供可见性指标。 我们还添加[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)文章提供有关优化你的广告的可见性的建议。
+合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)现在提供了可见性指标。 我们还添加[优化广告单元的可见性](../monetize/optimize-ad-unit-viewability.md)文章提供有关优化你的广告的可见性的建议。
 
 ### <a name="targeted-push-notifications"></a>定向的推送通知
 
-在合作伙伴中心的[通知](../publish/send-push-notifications-to-your-apps-customers.md)页面现在提供的图形和世界地图视图中所有通知的额外分析数据。
+在合作伙伴中心[通知](../publish/send-push-notifications-to-your-apps-customers.md)页面现在提供的图形和世界地图视图中所有通知的额外分析数据。
 
 ## <a name="videos"></a>视频
 
 ### <a name="cwinrt"></a>C++/WinRT
 
-C + + /winrt 是一种新创作和使用 Windows 运行时 Api。 它有在标头文件中，实现唯一，旨在为你提供对现代应用功能的一流访问。 [观看视频](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)以了解它的工作原理，然后[阅读开发人员文档](../cpp-and-winrt-apis/index.md)的详细信息。
+C + + /winrt 是一种的创作和使用 Windows 运行时 Api 的新方法。 它有在标头文件中，实现唯一，旨在为你提供对现代应用功能的一流访问。 [观看视频](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)以了解它的工作原理，然后[阅读开发人员文档](../cpp-and-winrt-apis/index.md)的详细信息。
 
 ### <a name="multi-instance-uwp-apps"></a>多实例 UWP 应用
 
@@ -134,4 +134,4 @@ Windows 现在允许你与每个单独进程中运行的 UWP 应用中，多个�
 
 ### <a name="customer-database-tutorial"></a>客户数据库教程
 
-本教程中创建基本的 UWP 应用用于管理客户列表，并介绍概念和企业开发中非常有用的做法。 它将指导你完成实现的 UI 元素和添加针对本地 SQLite 数据库中，操作，并提供用于连接到远程 REST 数据库，如果你想要继续进行操作的松散指南。 [请查看下面的教程](../enterprise/customer-database-tutorial.md)
+本教程创建基本的 UWP 应用用于管理客户列表，并介绍了概念和企业开发中非常有用的做法。 它将指导你通过实现 UI 元素并添加针对本地 SQLite 数据库中，操作，并提供用于连接到远程的其余部分数据库，如果你想要继续进行操作的松散指南。 [请查看下面的教程](../enterprise/customer-database-tutorial.md)

@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
-title: 合作伙伴中心中管理实验
+title: 在合作伙伴中心中管理实验
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1cdb80a2278850f18cecc631fef0b5dff0fefc
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6838782"
+ms.locfileid: "6988216"
 ---
-# <a name="manage-your-experiment-in-partner-center"></a>合作伙伴中心中管理实验
+# <a name="manage-your-experiment-in-partner-center"></a>在合作伙伴中心中管理实验
 
 你[定义你在合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)，并[为实验编写应用代码](code-your-experiment-in-your-app.md)之后, 你已准备好激活实验，并使用合作伙伴中心查看实验结果。 在获取所需的全部数据后，可以结束你的实验，然后选择是继续使用你的所有应用的控件变体中的变量值还是切换到使用其他变体之一中的变量值。
 

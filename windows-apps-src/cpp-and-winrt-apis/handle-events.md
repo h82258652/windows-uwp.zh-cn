@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ca257de29be8e732e05c343a4b782b1676627bf
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861120"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6991658"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用代理处理事件
 
@@ -51,7 +51,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 当注册委托，上面的代码示例会传递原始*此*指针 （指向当前对象）。 若要了解如何建立的强引用或与当前的弱引用，请参阅[安全地访问*此*指针事件处理委托](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)部分的**如果你使用的成员函数用作代理**子部分。
+> 当注册委托，上面的代码示例会传递原始*此*指针 （指向当前对象）。 若要了解如何建立的强引用或对当前对象的弱引用，请参阅[安全地访问*此*指针事件处理委托](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)部分的**如果你使用的成员函数用作代理**子部分。
 
 还有其他方法可用来构建 **RoutedEventHandler**。 下面是摘自 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) 的文档主题的语法块（从页面上的**语言**下拉菜单选择 *C++/WinRT*）。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
 
@@ -124,9 +124,9 @@ private:
 };
 ```
 
-而不是一个强引用，如上述示例中所示，你可以存储对按钮的弱引用 (请参阅[强引用和弱引用在 C + + WinRT](weak-references.md))。
+而不是强引用，如上述示例中所示，你可以存储对按钮的弱引用 (请参阅[强引用和弱引用在 C + + WinRT](weak-references.md))。
 
-或者，当你注册委托时，你可以指定**winrt:: auto_revoke** （这是一个值的类型[**winrt:: auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)） 以请求一个事件撤销程序 （的类型[**winrt:: event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件撤销程序为你保留对事件源 （引发事件的对象） 的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
+或者，当你注册委托时，你可以指定**winrt:: auto_revoke** （这是一个值的类型[**winrt:: auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)） 以请求一个事件撤销程序 (of 类型[**winrt:: event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 事件撤销程序为你保留对事件源 （引发事件的对象） 的弱引用。 你可以通过调用 **event_revoker::revoke** 成员函数手动撤销；但事件撤销程序会在该函数超出范围时自动调用函数本身。 **撤销**函数检查事件源是否仍然存在，如果存在，将撤销你的代理。 在本示例中，无需存储事件源，并且不需要析构函数。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -232,7 +232,7 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地访问*此*指针事件处理委托
 
-如果你处理事件的对象的成员函数，或从内的 lambda 函数对象的成员函数，则需要考虑事件接收者 （处理事件的对象） 和事件源 （的对象的相对生存期引发事件）。 有关详细信息和代码示例，请参阅[强引用和弱引用在 C + + WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果你处理事件的对象的成员函数，或从内的 lambda 函数对象的成员函数，则你需要考虑事件接收者 （处理事件的对象） 和事件源 （的对象的相对生存期引发事件）。 有关详细信息和代码示例，请参阅[强引用和弱引用在 C + + WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要的 API
 * [winrt:: auto_revoke_t 标记结构](/uwp/cpp-ref-for-winrt/auto-revoke-t)

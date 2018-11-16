@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6860990"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6967709"
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -61,7 +61,7 @@ Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店�
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>我已出售我的 Xbox One，并且将它保留在开发人员模式下。 如何停用开发人员模式？
 
-如果你无法再访问你的 Xbox one，可以在 Windows 合作伙伴中心中停用它。 有关详细信息，请参阅[Xbox One 开发人员模式停用](devkit-deactivation.md#deactivate-your-console-using-partner-center)主题中的**停用主机使用合作伙伴中心**部分。 
+如果你无法再访问你的 Xbox one，可以在 Windows 合作伙伴中心中停用它。 有关详细信息，请参阅主题中的[Xbox One 开发人员模式停用](devkit-deactivation.md#deactivate-your-console-using-partner-center)**停用主机使用合作伙伴中心**部分。 
 
 ### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我退出开发人员计划使用合作伙伴中心，但我仍处于开发人员模式。 我该怎么办？
 
