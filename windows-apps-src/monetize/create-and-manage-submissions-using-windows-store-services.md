@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API
 ms.localizationpriority: medium
 ms.openlocfilehash: c91c7b42642df9a03aab1324f074799b63157e62
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6666735"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851209"
 ---
 # <a name="create-and-manage-submissions"></a>创建和管理提交
 
@@ -29,7 +29,7 @@ ms.locfileid: "6666735"
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> 如果你使用此 API 创建应用提交，软件包外部测试版或加载项，请确保只能通过使用此 API 而不是在合作伙伴中心中对提交进行进一步更改。 如果你使用合作伙伴中心更改你最初使用 API 创建一个提交，你将不再能够更改或提交该提交使用该 API。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> 如果你使用此 API 创建应用提交，软件包外部测试版或加载项，请确保只能通过使用此 API 而不是合作伙伴中心中对提交进行进一步更改。 如果你使用合作伙伴中心更改你最初使用 API 创建一个提交，你将不再能够更改或提交该提交使用该 API。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 > [!IMPORTANT]
 > 你无法使用此 API 来直接向企业发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交或发布 [LOB 应用](../publish/distribute-lob-apps-to-enterprises.md)的提交。 对于这两种情况，你必须使用合作伙伴中心中发布该提交。
@@ -49,9 +49,9 @@ ms.locfileid: "6666735"
 
 * 使用 Microsoft Store 提交 API 对应用进行准备：
 
-  * 如果在合作伙伴中心中尚不存在你的应用，则必须[创建你的应用通过保留在合作伙伴中心中的名称](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 你无法使用 Microsoft Store 提交 API 在合作伙伴中心; 创建应用你必须使用合作伙伴中心创建它，然后后，你可以使用该 API 访问应用并以编程方式创建它的提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
+  * 如果在合作伙伴中心中尚不存在你的应用，则必须[创建你的应用通过保留在合作伙伴中心其名称](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 你无法使用 Microsoft Store 提交 API 创建应用在合作伙伴中心;你必须使用合作伙伴中心创建它，然后后，你可以使用该 API 访问应用并以编程方式创建它的提交。 不过，可以使用该 API 以编程方式创建加载项和软件包外部测试版，然后再为它们创建提交。
 
-  * 你可以创建使用此 API 为给定应用提交之前，必须首先[创建一个合作伙伴中心中的应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)问卷调查。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
+  * 你可以创建使用此 API 为给定应用提交之前，你必须首先[创建一个合作伙伴中心中的应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)问卷调查。 完成此操作后，才可以使用该 API 为此应用以编程方式创建新的提交。 无需创建加载项提交或软件包外部测试版提交，即可将该 API 用于这些类型的提交。
 
   * 如果你要创建或更新应用提交并需要包括应用包，请事先[准备应用包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)。
 
@@ -70,7 +70,7 @@ ms.locfileid: "6666735"
 
 1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的提交的**帐户设置**部分中的**用户**页面中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
+2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的提交的**帐户设置**部分中的**用户**页中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 

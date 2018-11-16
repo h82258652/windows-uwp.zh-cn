@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 82311d96296b3b7c7db0a3485348b7d1bf4a734c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664491"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6857626"
 ---
 # <a name="update-an-app-submission"></a>更新应用提交
 
@@ -27,7 +27,7 @@ ms.locfileid: "6664491"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建一个应用提交。 你可以执行此操作在合作伙伴中心，或者你可以执行此操作通过使用[创建应用提交](create-an-app-submission.md)的方法。
+* 创建一个应用提交。 你可以执行此操作在合作伙伴中心，或者你可以通过使用[创建应用提交](create-an-app-submission.md)的方法。
 
 ## <a name="request"></a>请求
 
@@ -73,7 +73,7 @@ ms.locfileid: "6664491"
 | hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
-| applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 由合作伙伴中心，其他值进行填充。   |    
+| applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由合作伙伴中心进行填充。   |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅[软件包传递选项对象](manage-app-submissions.md#package-delivery-options-object)部分。  |
 | enterpriseLicensing           |  字符串  |  [企业授权值](manage-app-submissions.md#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    

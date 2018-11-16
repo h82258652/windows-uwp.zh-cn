@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c379097efaef65357bc1c6b036695ef84671ea6
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672838"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6981321"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>通过后台任务更新动态磁贴
 
@@ -154,7 +154,7 @@ namespace BackgroundTasks
 6.  单击或点击“应用程序 UI”**** 选项卡。
 7.  将“锁屏界面通知”**** 设置为“锁屏提醒和磁贴文本”****。
 8.  在“锁屏提醒徽标”**** 字段中，将路径设置为 24x24 像素图标。
-    **重要提示**此图标必须使用单色透明像素。
+    **重要**此图标必须使用单色透明像素。
 9.  在“小徽标”**** 字段中，将路径设置为 30x30 像素图标。
 10. 在“宽徽标”**** 字段中，将路径设置为 310x150 像素图标。
 
@@ -163,7 +163,7 @@ namespace BackgroundTasks
 
 创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以注册你的任务。
 
-> **请注意**从 Windows8.1 开始，后台任务注册参数验证注册的时间。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
+> **注意**从 Windows8.1 开始，后台任务注册参数在进行验证注册的时间。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
  
 
 在应用的主页中，添加 **RegisterBackgroundTask** 方法并在 **OnNavigatedTo** 事件处理程序中进行调用。

@@ -9,17 +9,17 @@ keywords: Windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6838225"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6979310"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>适用于旁加载 UWP 应用的中转 Windows 运行时组件
 
 本文讨论 windows 10，这允许触摸友好的.NET 应用使用对主要关键业务操作负责的现有代码支持的面向企业的功能。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 >**注意**可能为[Visual Studio 2015 & 2017年](https://aka.ms/brokeredsample)下载本文附带的示例代码。 用于生成中转 Windows 运行时组件的 Microsoft Visual Studio 模板可以在此处下载：[面向 Windows 10 通用 Windows 应用的 Visual Studio 2015 模板](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 

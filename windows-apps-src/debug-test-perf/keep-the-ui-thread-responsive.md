@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7884c7187bf127e15aaaed38a55e5f9827a3990d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670590"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850555"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>保持 UI 线程有响应
 
@@ -24,7 +24,7 @@ ms.locfileid: "6670590"
 
 你需要使用 UI 线程进行几乎所有对 UI 线程的更改，包括创建 UI 类型以及访问其成员。 无法从后台线程更新 UI，但可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 向其发布消息以使代码在该处运行。
 
-> **请注意**的一个例外是存在单独的呈现线程可以应用 UI 更改不会影响输入的处理方式或基本布局。 例如，许多不会影响布局的动画和过渡都可以在此呈现线程上运行。
+> **注意**的一个例外是存在单独的呈现线程可以应用 UI 更改不会影响输入的处理方式或基本布局。 例如，许多不会影响布局的动画和过渡都可以在此呈现线程上运行。
 
 ## <a name="delay-element-instantiation"></a>延迟元素实例化
 
@@ -43,7 +43,7 @@ ms.locfileid: "6670590"
 
 编写事件处理程序以便快速返回。 在需要执行大量工作的情况下，将工作安排在后台线程并返回。
 
-你可以使用 C# 中的 **await** 运算符、Visual Basic 中的 **Await** 运算符或 C++ 中的委托异步安排工作。 但这并不保证你安排的工作将在后台线程上运行。 许多通用 Windows 平台 (UWP) API 将为你在后台线程中安排工作，但如果你仅使用 **await** 或某个委托调用你的应用代码，请在 UI 线程上运行该委托或方法。 你必须明确指出希望何时在后台线程上运行你的应用代码。 C# 和 Visual Basic 中可以完成此操作通过将代码传递给[**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx)。
+你可以使用 C# 中的 **await** 运算符、Visual Basic 中的 **Await** 运算符或 C++ 中的委托异步安排工作。 但这并不保证你安排的工作将在后台线程上运行。 许多通用 Windows 平台 (UWP) API 将为你在后台线程中安排工作，但如果你仅使用 **await** 或某个委托调用你的应用代码，请在 UI 线程上运行该委托或方法。 你必须明确指出希望何时在后台线程上运行你的应用代码。 C# 和 Visual Basic 中就可以达成通过将代码传递给[**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx)。
 
 请记住，可能只能从 UI 线程访问 UI 元素。 先使用 UI 线程访问 UI 元素，再启动后台工作，并且/或者在后台线程上使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 或 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918)。
 
@@ -103,7 +103,7 @@ public class AsyncExample
 
 在此示例中，`NextMove-Click` 处理程序将在 **await** 返回，以便保持 UI 线程有响应。 但在 `ComputeNextMove`（在后台线程上执行）完成后，执行过程将再次调用该处理程序。 该处理程序中的其余代码将使用结果更新 UI。
 
-> **请注意**也是适用于 UWP，可用于类似方案[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621)和[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API。 有关详细信息，请参阅[线程和异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
+> **注意**还没有适用于 UWP，可用于类似方案[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621)和[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API。 有关详细信息，请参阅[线程和异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
 
 ## <a name="related-topics"></a>相关主题
 

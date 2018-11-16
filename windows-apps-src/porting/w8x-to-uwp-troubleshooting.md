@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 98bb74f2c37e91d5b7d9b02a5733b42877769c54
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665484"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847532"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>将 Windows 运行时 8.x 移植到 UWP 疑难解答
 
@@ -26,15 +26,15 @@ ms.locfileid: "6665484"
 
 XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含义明确的错误消息时。 请确保已将调试程序配置为捕获第一轮异常（以便试图捕获早期的分析异常）。 你可以检查调试程序中的异常变量，以确定 HRESULT 或消息中是否具有任何有用的信息。 也可以检查 Visual Studio 的输出窗口，以获取由 XAML 分析器输出的错误消息。
 
-如果你的应用终止，并且你只知道在 XAML 标记分析期间引发了未经处理的异常，则这可能是引用缺失资源 （即资源对于通用 8.1 应用，但不是适用于 windows 10 应用中存在其键存在的结果例如某些系统**TextBlock**样式键)。 或者，它可以是在 **UserControl**、自定义控件或自定义布局面板内部引发的异常。
+如果你的应用终止，并且你只知道在 XAML 标记分析期间引发了未经处理的异常，则这可能是引用缺失资源 （即，资源对于通用 8.1 应用，但不是适用于 windows 10 应用中存在其键存在的结果例如某些系统**TextBlock**样式键)。 或者，它可以是在 **UserControl**、自定义控件或自定义布局面板内部引发的异常。
 
 最后一项措施是进行二进制拆分。 从页面中删除大约一半标记并重新运行应用。 然后，你将知道错误是在已删除的那一半中（你现在应该在任何情况下恢复）还是在*未*删除的那一半中。 通过拆分包含错误的那一半来重复此过程，依此类推，直到完全解决了问题。
 
 ## <a name="targetplatformversion"></a>TargetPlatformVersion
 
-本部分介绍了如何操作，在 Visual Studio 中打开 windows 10 项目，你看到消息"需要 Visual Studio 更新。 一个或多个项目需要平台 SDK <version>（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。”
+本部分介绍了执行何种，在 Visual Studio 中打开 windows 10 项目时，你看到消息"需要 Visual Studio 更新。 一个或多个项目需要平台 SDK <version>（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。”
 
--   首先，确定你已安装的 windows 10 版本的 SDK 版本号。 导航到 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** 并记下 *<versionfoldername>*，格式为四部分表示法“Major.Minor.Build.Revision”。
+-   首先，确定已安装的 windows 10 的 SDK 版本号。 导航到 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** 并记下 *<versionfoldername>*，格式为四部分表示法“Major.Minor.Build.Revision”。
 -   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 将它们编辑为如下形式，使用你在磁盘上找到的四部分表示法版本号替换 *<versionfoldername>*：
 
 ```xml

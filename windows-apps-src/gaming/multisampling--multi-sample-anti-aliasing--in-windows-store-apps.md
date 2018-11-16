@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 多重采样, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651971"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847979"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台 (UWP) 应用中的多重采样
 
@@ -84,7 +84,7 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
     }
     ```
 
-    > **请注意**使用[**id3d11device2:: checkmultisamplequalitylevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)而如果你需要检查多重采样支持平铺资源缓冲区。
+    > **注意**使用[**id3d11device2:: checkmultisamplequalitylevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)而如果你需要检查多重采样支持平铺资源缓冲区。
 
      
 

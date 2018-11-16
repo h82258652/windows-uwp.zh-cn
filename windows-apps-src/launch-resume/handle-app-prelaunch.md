@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a13ec942080d7fe517a10b837bea9ae8fae27750
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664984"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855519"
 ---
 # <a name="handle-app-prelaunch"></a>处理应用预启动
 
@@ -37,7 +37,7 @@ XAML 项目（C#、VB、C++）和 WinJS 的默认模板适合在 Visual Studio 2
 
 ## <a name="detect-and-handle-prelaunch"></a>检测和处理预启动
 
-在激活期间，应用会收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志运行应仅运行时在用户显式启动该应用，如下所示为[**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)下面的修改的代码。
+在激活期间，应用会收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志运行应仅当时运行用户显式启动应用时，如下面的修改到[**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)中所示的代码。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -112,9 +112,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-注意`TryEnablePrelaunch()`函数，更高版本。 在调用的原因为`CoreApplication.EnablePrelaunch()`构造外传入此函数是因为 （只是在时间编译） JIT 调用一个方法时，将尝试编译整个方法。 如果不支持的 Windows 10 版本上运行你的应用`CoreApplication.EnablePrelaunch()`，然后 JIT 将失败。 通过将计入时应用确定该平台支持仅调用一个方法调用`CoreApplication.EnablePrelaunch()`，我们避免此问题。
+注意`TryEnablePrelaunch()`函数，更高版本。 在调用的原因到`CoreApplication.EnablePrelaunch()`分解外传入此函数是因为当调用一个方法时，将尝试 JIT （只是在时间编译） 来编译整个方法。 如果不支持的 Windows 10 版本上运行你的应用`CoreApplication.EnablePrelaunch()`，然后 JIT 将失败。 通过将计入时应用确定该平台支持仅调用一个方法调用`CoreApplication.EnablePrelaunch()`，我们避免此问题。
 
-没有还在上面的示例代码，你可以取消你的应用需要先选择退出预启动 Windows 10 版本 1511年上运行时。 在版本 1511年中，所有 UWP 应用已自动都选择到预启动，这可能不适合你的应用。
+没有还在上面的示例代码，你可以取消注释如果你的应用需要选择退出预启动 Windows 10 版本 1511年上运行时。 在版本 1511年中，所有 UWP 应用已自动都选择到预启动，这可能不会适用于你的应用。
 
 ## <a name="use-the-visibilitychanged-event"></a>使用 VisibilityChanged 事件
 

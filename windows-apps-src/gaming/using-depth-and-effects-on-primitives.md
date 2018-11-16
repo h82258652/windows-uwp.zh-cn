@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 深度, 效果, 基元, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664908"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858267"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>对基元使用深度和效果
 

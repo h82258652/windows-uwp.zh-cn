@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f381b7fbd53ee50d4589201edf74ac1f241d40
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662281"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855857"
 ---
 # <a name="bluetooth"></a>蓝牙
 本部分包含有关如何将蓝牙集成到通用 Windows 平台 (UWP) 应用的文章。 有两个不同的蓝牙技术，你可以选择在应用中实现。

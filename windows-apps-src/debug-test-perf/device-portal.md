@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 240cbb84713fb09b0bc51d70ca93b640797f2752
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670603"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853296"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概述
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，可帮助你解决并查看你的 Windows 设备的实时性能。
+Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，可帮助你解决并查看 Windows 设备的实时性能。
 
-Windows Device Portal 是你可以从电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以还与该设备上的浏览器本地连接。
+Windows Device Portal 是你可以通过在电脑上的 web 浏览器连接到的设备上的 web 服务器。 如果你的设备具有 web 浏览器，你可以还与该设备上的浏览器本地连接。
 
 Windows Device Portal 是适用于每个设备系列，但功能和设置因每个设备的要求。 本文提供了 Device Portal 的常规说明以及指向包含每个设备系列的更具体信息的文章链接。
 
@@ -61,22 +61,22 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 使用沿页面左侧的导航窗格中的链接导航到适用于你的设备的可用管理和监视工具。
 
-下面介绍了跨设备系列均通用的工具。 根据设备的不同可能提供其他选项。 有关详细信息，请参阅你的设备类型的特定页面。
+此处所述的通用设备系列的工具。 根据设备的不同可能提供其他选项。 有关详细信息，请参阅你的设备类型的特定页面。
 
 ### <a name="apps-manager"></a>应用管理器
 
-应用管理器提供了安装/卸载和管理功能的应用程序包和捆绑在主机设备上。
+应用管理器提供安装/卸载和应用管理功能包并将捆绑在主机设备上。
 
-![设备门户的应用管理器页](images/device-portal/wdp-apps.png)
+![设备门户应用管理器页](images/device-portal/wdp-apps.png)
 
-- **已安装应用**： 使用下拉菜单中删除或开始在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册 loose 文件从网络共享。
-- **正在运行的应用**： 获取有关当前正在运行并在必要时关闭它们的应用的信息。
+- **已安装应用**： 使用下拉菜单中删除或开始菜单在设备安装的应用。 通过单击**添加**安装新的应用。 这将启动安装 UX 部署已打包的应用从本地、 网络或 web 托管和注册 loose 文件从网络共享。
+- **正在运行的应用**： 获取有关当前正在运行，并根据需要关闭它们的应用的信息。
 
 #### <a name="install-an-app"></a>安装应用
 
 1.  创建应用包后，可以将其远程安装到设备上。 在 Visual Studio 中生成它后，将生成一个输出文件夹。
   ![应用安装](images/device-portal/iot-installapp0.png)
-2.  在 Device Portal 的应用管理器部分中，单击**添加**，然后选择**从本地存储的应用包安装**。
+2.  在设备门户的应用管理器部分中，单击**添加**，然后选择**从本地存储的应用包安装**。
 3.  单击**浏览**并找到你的应用包。
 3.  单击**浏览**并找到证书 (_.cer_) 文件 （不需要在所有设备上）
 4.  如果你想要安装可选的各个框内或框架包以及应用安装检查。 如果你有多个依赖项，请分别添加每一个。     
@@ -84,7 +84,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 #### <a name="uninstall-an-app"></a>卸载应用
 1.  确保应用未在运行。 
-2.  如果是，请转到**正在运行的应用**，并关闭它。 如果你尝试在应用运行时卸载，它将尝试重新安装该应用时导致问题。 
+2.  如果是，请转到**正在运行的应用**，并关闭它。 如果你尝试进行卸载应用运行时，它将尝试重新安装该应用时导致问题。 
 3.  从下拉列表中选择的应用，然后单击**删除**。
 
 ### <a name="running-processes"></a>正在运行的进程
@@ -125,26 +125,26 @@ ETW 日志记录页面管理设备上的实时事件跟踪 Windows (ETW) 信息�
   2. 严重错误
   3. 警告
   4. 非错误警告
-  5. 详细的跟踪
+  5. 详细跟踪 \
 
   单击或点击**启用**以开始跟踪。 提供程序将添加到**已启用的提供程序**下拉列表。
 - **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不在 GUID 中包含括号。
 - **已启用提供程序**： 这将列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击**禁用**来停止跟踪。 单击或点击**全部停止**来暂停所有跟踪。
 - **提供程序历史记录**： 这将显示当前会话期间启用的 ETW 提供程序。 单击或点击**启用**来激活已禁用的提供程序。 单击或点击**清除**来清除历史记录。
-- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格形式的 ETW 事件。 下表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到一个本地 CSV 文件。
+- **筛选器 / 事件**:**事件**部分列出了来自选定提供程序以表格的 ETW 事件。 表将实时更新。 使用**筛选器**菜单设置自定义筛选器将为其显示事件。 单击**清除**按钮以从表中删除所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击**保存到文件**将当前收集的 ETW 事件导出到本地 CSV 文件。
 
 有关使用 ETW 日志记录的更多详细信息，请参阅[使用设备门户，以查看调试日志](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)博客文章。 
 
 ### <a name="performance-tracing"></a>性能跟踪
 
-性能跟踪页面允许你查看与主机设备的[Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx)跟踪。
+性能跟踪页面允许你为视图与主机设备的[Windows Performance Recorder (WPR)](https://msdn.microsoft.com/library/hh448205.aspx)跟踪。
 
 ![设备门户性能跟踪页面](images/device-portal/mob-device-portal-perf-tracing.png)
 
 - **可用配置文件**：从下拉列表中选择 WPR 配置文件，然后单击或点击**开始**以开始跟踪。
 - **自定义配置文件**：单击或点击**浏览**以从电脑中选择 WPR 配置文件。 单击或点击**上载并启动**以开始跟踪。
 
-若要停止跟踪，请单击**停止**。 停留在此页面上，直到跟踪文件 (。ETL) 已完成下载。
+若要停止跟踪，请单击**停止**。 停留在此页面上，直到跟踪文件 (。ETL) 完成下载。
 
 捕获。可用于在[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/desktop/hh448170.aspx)分析打开 ETL 文件。
 
@@ -156,8 +156,8 @@ ETW 日志记录页面管理设备上的实时事件跟踪 Windows (ETW) 信息�
 
 ### <a name="networking"></a>网络
 
-网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置将可能断开连接你从 Device Portal。
-- **可用的网络**： 显示 WiFi 网络适用于该设备。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
+网络页面管理设备上的网络连接。 除非你连接到 Device Portal 通过 USB，更改这些设置很可能使断开连接你从 Device Portal。
+- **可用的网络**： 显示适用于该设备的 WiFi 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 Device Portal 尚不支持企业身份验证。 你还可以使用**配置文件**下拉列表来尝试连接到任何已知到设备的 WiFi 配置文件。
 - **IP 配置**： 显示设备的网络端口的有关其中每个主机的地址信息。
 
 ![设备门户网络页面](images/device-portal/mob-device-portal-network.png)
@@ -182,7 +182,7 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 为了防止受到 [CSRF 攻击](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
 
 > [!IMPORTANT]
-> 此保护可防止从独立客户端 （例如命令行实用程序） 使用 REST api。 这可以通过 3 种方法解决： 
+> 此保护可防止从独立客户端 （如命令行实用程序） 使用 REST Api。 这可以通过 3 种方法解决： 
 > - 使用"auto-"用户名。 将“auto-”置于其用户名前面的客户端将绕过 CSRF 保护。 此用户名不能用于通过浏览器登录到 Device Portal，这一点很重要，因为它将针对 CSRF 攻击打开服务。 示例：如果 Device Portal 的用户名为“admin”，则 ```curl -u auto-admin:password <args>``` 应该用于绕过 CSRF 保护。 
 > - 在客户端中实现 Cookie 到标头的方案。 这需要 GET 请求来建立会话 Cookie，并包含所有后续请求的标头和 Cookie。 
 > - 禁用身份验证并使用 HTTP。 CSRF 保护仅适用于 HTTPS 终结点，因此 HTTP 终结点上的连接无需执行上述任一操作。 

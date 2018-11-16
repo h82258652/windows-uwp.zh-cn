@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff5cd40cad43a73a8ba51a25710e2f2cbaf2a7b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672252"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849863"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>已打包的桌面应用程序在幕后
 
@@ -25,7 +25,7 @@ ms.locfileid: "6672252"
 
 ## <a name="installation"></a>安装
 
-应用包安装在 *C:\Program Files\WindowsApps\package_name* 下，并且可执行文件的标题为 *app_name.exe*。 每个软件包文件夹都包含一个清单（名为 AppxManifest.xml），其中包含已打包应用的特殊 XML 命名空间。 该清单文件内部是一个 ```<EntryPoint>``` 元素，该元素引用完全信任的应用。 当启动该应用程序时，它不会在应用容器，内部运行，但改为它以用户身份运行像往常一样。
+应用包安装在 *C:\Program Files\WindowsApps\package_name* 下，并且可执行文件的标题为 *app_name.exe*。 每个软件包文件夹都包含一个清单（名为 AppxManifest.xml），其中包含已打包应用的特殊 XML 命名空间。 该清单文件内部是一个 ```<EntryPoint>``` 元素，该元素引用完全信任的应用。 该应用程序启动时，它不会在应用容器，内部运行，但改为它以用户身份运行像往常一样。
 
 部署后，软件包文件由操作系统标记为只读并严格锁定。 如果这些文件遭到篡改，Windows 将阻止应用启动。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6672252"
 
 ### <a name="packaged-vfs-locations"></a>打包的 VFS 位置
 
-下表显示了为应用在系统上的哪个位置覆盖作为程序包一部分交付的文件。 你的应用程序将会发现这些文件位于所列的系统位置中，当实际上它们位于*C:\Program Files\WindowsApps\package_name\VFS*内的重定向位置。 根据 [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 常量确定 FOLDERID 位置。
+下表显示了为应用在系统上的哪个位置覆盖作为程序包一部分交付的文件。 你的应用程序将识别时，实际上它们内*C:\Program Files\WindowsApps\package_name\VFS*重定向位置中位于所列的系统位置中，这些文件。 根据 [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 常量确定 FOLDERID 位置。
 
 系统位置 | 重定向位置（在 [PackageRoot]\VFS\ 下） | 支持的体系结构
  :--- | :--- | :---
@@ -73,7 +73,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86, amd64
 
 应用包含有一个 registry.dat 文件，该文件充当真实注册表中的 *HKLM\Software* 的逻辑等效项。 在运行时，此虚拟注册表将此配置单元的内容合并到原生系统配置单元，以提供两者的单一视图。 例如，如果 registry.dat 包含单个项“Foo”，则运行时 *HKLM\Software* 的读取也将显示为包含“Foo”（除了所有原生系统项）。
 
-仅 *HKLM\Software* 下的项是软件包的一部分；*HKCU* 或注册表其他部分下的项不是。 不允许写入软件包中的项或值。 写入项或值不允许包的一部分，只要用户具有的权限。
+仅 *HKLM\Software* 下的项是软件包的一部分；*HKCU* 或注册表其他部分下的项不是。 不允许写入软件包中的项或值。 写入项或值不属于软件包允许，只要用户具有的权限。
 
 HKCU 下的所有写入都在写入时复制到每用户、每应用位置。 在传统上，卸载程序无法清除 *HKEY_CURRENT_USER*，因为注销用户的注册表数据已卸载并且不可用。
 

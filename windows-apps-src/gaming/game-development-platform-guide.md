@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 技术, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670116"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6983160"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>适用于 UWP 应用的游戏技术
 
@@ -24,7 +24,7 @@ ms.locfileid: "6670116"
 ##  <a name="benefits-of-windows10-for-game-development"></a>对于游戏开发的 windows 10 的优势
 
 
-在 windows 10 的 UWP 的引入，windows 10 标题将能够跨越所有 Microsoft 平台。 通过从以前版本的 Windows 的免费迁移，没有 windows 10 客户端数量将稳定增加。 这两个事实的结合意味着你的 windows 10 标题将能够覆盖大量客户通过 Microsoft 应用商店。
+在 windows 10 的 UWP 的引入，windows 10 标题将能够跨越所有 Microsoft 平台。 通过从以前版本的 Windows 的免费迁移，没有 windows 10 客户端数量将稳定增加。 这两个事实的结合意味着你的 windows 10 标题能够访问大量通过 Microsoft 应用商店的客户。
 
 此外，windows 10 还提供了许多对游戏极其有益的新功能：
 
@@ -39,7 +39,7 @@ ms.locfileid: "6670116"
 ## <a name="development-environment"></a>开发环境
 
 
-若要创建 UWP 游戏，你将需要通过安装 Visual Studio 2015 或更高版本设置你的开发环境。 我们建议你安装最新版本的 Visual Studio 中，使你可以访问的最新的开发和安全更新。 Visual Studio 允许你创建 UWP 应用，并提供用于游戏开发工具：
+若要创建 UWP 游戏，你将需要通过安装 Visual Studio 2015 或更高版本来设置开发环境。 我们建议你安装最新版本的 Visual Studio 中，使你可以访问的最新的开发和安全更新。 Visual Studio 允许你创建 UWP 应用，并提供用于游戏开发工具：
 
 -   用于 DX 游戏编程的 Visual Studio 工具 - Visual Studio 提供用于创建、编辑、预览和导出图像、模型和着色器资源的工具。 还有一些工具，可以用来在生成时转换资源以及调试 DirectX 图形代码。 有关详细信息，请参阅[使用 Visual Studio 工具进行游戏编程](set-up-visual-studio-for-game-development.md)。
 -   Visual Studio 图形诊断功能 - 图形诊断工具现在在 Windows 中作为可选功能提供。 诊断工具允许你 执行图形调试、图形帧分析以及实时监视 GPU 使用情况。 有关详细信息，请参阅[使用 DirectX 运行时和 Visual Studio 图形诊断功能](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)。
@@ -323,7 +323,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
 
 ## <a name="xbox-live-services"></a>Xbox Live 服务
 
-[Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，任何开发人员可以将 Xbox Live 集成到其 UWP 游戏中并发布到 Xbox One 和 windows 10。 你可以使用最少的开发时间，将 Xbox Live 社交体验（如登录、状态、排行榜等）集成到游戏中。 Xbox Live 社交功能旨在有机增加你的受众，在 5,500 多万名活跃玩家中扩大你的知名度。
+[Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，任何开发人员都可以将 Xbox Live 集成到其 UWP 游戏中并发布到 Xbox One 和 windows 10。 你可以使用最少的开发时间，将 Xbox Live 社交体验（如登录、状态、排行榜等）集成到游戏中。 Xbox Live 社交功能旨在有机增加你的受众，在 5,500 多万名活跃玩家中扩大你的知名度。
 
 如果想访问主 Xbox One 应用商店中特别推荐的更多 Xbox Live 功能、专门的营销和开发支持和机会，则你可以申请 [ID@Xbox](http://www.xbox.com/developers/id) 计划。 若要查看可用于 Xbox Live 创意者计划和 ID@Xbox 计划的功能，请参阅[功能表](../xbox-live/developer-program-overview.md#feature-table)。
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 14e78aec9afa361b2627d62d92f0ee7d7ab0565b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653011"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844824"
 ---
 # <a name="introduction-to-buffers"></a>缓冲区简介
 
@@ -46,7 +46,7 @@ ms.locfileid: "6653011"
 
 ![包含位置、法线和纹理数据的顶点缓冲区的图示](images/d3d10-vertex-buffer-element.png)
 
-此顶点缓冲区包含每顶点数据;每个顶点存储 3 个元素 （位置、 法线和纹理坐标）。 通常，使用 3 个 32 位浮点指定每个位置和法线，使用两个 32 位浮点指定纹理坐标。
+此顶点缓冲区包含每个顶点数据;每个顶点存储 3 个元素 （位置、 法线和纹理坐标）。 通常，使用 3 个 32 位浮点指定每个位置和法线，使用两个 32 位浮点指定纹理坐标。
 
 若要访问顶点缓冲区中的数据，你需要知道要顶点的访问权限，以及以下其他缓冲区参数：
 
@@ -64,10 +64,10 @@ ms.locfileid: "6653011"
 使用以下参数查找存储在索引缓冲区中的连续索引：
 
 -   偏移-从索引缓冲区的基本地址之间的字节数。
--   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 在开始屏幕位置表示要呈现的第一个索引。
+-   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 开始屏幕位置表示要呈现的第一个索引。
 -   IndexCount - 要呈现的索引的数量。
 
-开始菜单的索引缓冲区 = 索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation \ * ElementSize （字节）;
+开始菜单索引缓冲区的索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation = \ * ElementSize （字节）;
 
 在此计算，ElementSize 是每个索引缓冲区元素大小，这是两个或 4 个字节。
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
 ms.localizationpriority: medium
 ms.openlocfilehash: 6474fc334922d49489c377a0c29841fc45889e1d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6663551"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850386"
 ---
 # <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 
@@ -30,7 +30,7 @@ ms.locfileid: "6663551"
 > [!IMPORTANT]
 > 在“计划”部分指定的日期仅适用于 Windows 10 的客户。
 >
->如果你以前发布的应用支持较早的操作系统版本，你选择的任何**停止购置**日期将不适用于这些客户;他们仍然能够获取该应用 （除非你提交更新的新选项[可见性](choose-visibility-options.md#discoverability)部分中，或如果你选择从**应用概述**页面的**不可用的应用**）。
+>如果你以前发布的应用支持较早的操作系统版本，你选择的任何**停止购置**日期将不适用于这些客户;他们仍然能够获取该应用 （除非你提交更新的新选项[可见性](choose-visibility-options.md#discoverability)部分中，或如果你选择从**应用概述**页面的**使禁止提供应用**）。
 
 
 ## <a name="base-schedule"></a>基准计划

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 盈利, 参与, 促销, 应用商店服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665639"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6983362"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和应用商店服务
 
@@ -31,7 +31,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 | [通过 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)      |   在你的通用 Windows 平台 (UWP) 应用上运行 A/B 测试，为某些客户测量这些功能的有效性，之后再将它们发布给每位用户。 此功能需要 Microsoft Store Services SDK。  |
 | [从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)      |   将代码添加到 UWP 应用以将 Windows10 客户定向至“反馈中心”，他们可以在其中提交问题、提出建议并进行投票。 然后，管理此[反馈报告](../publish/feedback-report.md)合作伙伴中心中的反馈。 此功能需要 Microsoft Store Services SDK。   |
 | [配置应用以接收合作伙伴中心推送通知](configure-your-app-to-receive-dev-center-notifications.md)  |  注册通知通道为 UWP 应用，以便它可以接收[合作伙伴中心推送通知](../publish/send-push-notifications-to-your-apps-customers.md)，并跟踪由推送通知导致的应用启动的速度。 此功能需要 Microsoft Store Services SDK。  |
-| [记录合作伙伴中心的自定义的事件](log-custom-events-for-dev-center.md)  | 记录你的 UWP 应用中的自定义事件，并查看在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中的事件。 此功能需要 Microsoft Store Services SDK。 |
+| [记录合作伙伴中心的自定义事件](log-custom-events-for-dev-center.md)  | 记录你的 UWP 应用中的自定义事件，并查看合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中的事件。 此功能需要 Microsoft Store Services SDK。 |
 | [请求评分和评价](request-ratings-and-reviews.md) |  以编程方式显示评分和评价 UI，从而鼓励客户对应用进行评分或评价。  |
 | [Microsoft Store 服务](using-windows-store-services.md)    |  了解如何使用 RESTful API 将提交到应用商店和访问应用的分析数据自动化以及将与应用商店相关的其他任务自动化。    |
 | [零售演示 (RDX) 功能添加到你的应用](retail-demo-experience.md)        |  在你的 Windows 应用中包括零售演示模式，以便试用电脑和设备销售地板上的客户可以直接跳转中。  |

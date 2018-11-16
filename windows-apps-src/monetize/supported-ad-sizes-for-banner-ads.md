@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 大小, 横幅
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f23be9a58a138a82cc4510039a1c0899ef092a2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646697"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849089"
 ---
 # <a name="supported-banner-ad-sizes"></a>受支持的横幅广告大小
 
@@ -28,7 +28,7 @@ ms.locfileid: "6646697"
 * 728x90
 
 > [!NOTE]
-> 为了获得最佳体验，我们建议在 Windows 10 移动版设备上使用以下大小： 300 x 50、 320 x 50、 和 640 x 100。
+> 为了获得最佳体验，我们建议在 Windows 10 移动版设备上使用以下大小： 300 x 50、 320 x 50 和 640 x 100。
 
 下表提供了演示每个横幅广告大小的示例。
 

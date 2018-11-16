@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live，Xbox，游戏，uwp，windows 10，Xbox one，合作伙伴中心，Xbox Live 设置
 ms.openlocfilehash: 8d3aa7c7407dc3d3fd3f2bcdf9640b605c734447
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6261171"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851710"
 ---
 # <a name="configure-xbox-live-setup-in-partner-center"></a>在合作伙伴中心中配置 Xbox Live 设置
 
@@ -32,7 +32,7 @@ ms.locfileid: "6261171"
 > [!NOTE]
 > 此外，可以在“本地化字符串”页面上本地化所有字符串。  
 
-![选择要在合作伙伴中心中选择默认区域设置的下拉列表的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
+![选择下拉列表在合作伙伴中心中选择默认区域设置的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
 
 ## <a name="product-type"></a>产品类型
 此下拉菜单允许你更改产品的类型。 它默认为类型**游戏**。 你所做的选择将影响 XboxLivefeatures 提供给你。 有三个可供选择的选项：

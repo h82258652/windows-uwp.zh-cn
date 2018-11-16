@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 24542f165c0caa2c07db1866c96603916c6ac750
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646736"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847864"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
-在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式的聚合的使用情况数据 （不包括 Xbox 多人游戏） 获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
+在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序聚合的使用情况数据 （不包括 Xbox 多人游戏）。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -58,7 +58,7 @@ ms.locfileid: "6646736"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示用于获取每日应用使用情况数据的请求。 将 *applicationId* 值替换为你的应用的 Store ID。
+下面的示例演示了一个请求用于获取每日应用使用情况数据。 将 *applicationId* 值替换为你的应用的 Store ID。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagedaily?applicationId=XXXXXXXXXXXX&startDate=2018-08-10&endDate=2018-08-14 HTTP/1.1
@@ -91,10 +91,10 @@ Authorization: Bearer <your access token>
 | packageVersion            | 字符串  | 使用情况发生的位置的程序包版本。                          |
 | market                    | 字符串  | 客户使用你的应用的市场的 ISO 3166 国家/地区代码。 |
 | subscriptionName          | 字符串  | 指示用法是通过 Xbox Game Pass。                            |
-| dailySessionCount         | 长型    | 在那一天的用户会话数量。                                  |
+| dailySessionCount         | 长型    | 在这一天的用户会话数量。                                  |
 | engagementDurationMinutes | Double  | 用户在其中主动使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或非活动状态一段时间后结束分钟。             |
 | dailyActiveUsers          | 长型    | 这一天使用该应用的客户数量。                           |
-| dailyActiveDevices        | 长型    | 每日用于与你的应用交互的所有用户的设备数量。  |
+| dailyActiveDevices        | 长型    | 每日用于与你的应用交互的所有用户的设备数目。  |
 | dailyNewUsers             | 长型    | 第一次那一天使用你的应用的客户数。    |
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                         |
 | monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                      |

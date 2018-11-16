@@ -15,12 +15,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f392d1d6c8eaa309e1774e8a98671a7743fdc9d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: e6bba6c22b7f0055a93bfd1826bc3a2acc0f2164
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665017"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6968381"
 ---
 # <a name="designing-for-mixed-reality"></a>针对混合现实而开发
 
@@ -86,7 +86,7 @@ HoloLens 和混合现实平台上均支持键盘和鼠标。 你可以通过蓝�
 * [遥控器设备](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)（仅限 HoloLens）
 * [运动控制器](https://developer.microsoft.com/windows/mixed-reality/motion_controllers)（仅限混合现实设备，如上所示。）
 
-这些控制器使得与虚拟对象的交互似乎变得自然和精确。 其中一些交互可免费获取。 例如，HoloLens 选择手势或单击运动控制器的 Windows 键或扳机键将生成你所预期的输入响应，同样，无需在部件上进行任何编码。
+这些控制器使得与虚拟对象的交互似乎变得自然和精确。 其中一些交互可免费获取。 例如，HoloLens 选择手势或单击运动控制器的 Windows 键或扳机键将生成你所预期，同样，在部件上进行任何编码的输入的响应。
 
 其他情况下，你可能需要添加代码以利用可用的额外信息和输入。 例如，运动控制器可用于通过精细控制操纵对象，前提是你编写用于将其位置和按钮按下置于帐户中的代码。
 

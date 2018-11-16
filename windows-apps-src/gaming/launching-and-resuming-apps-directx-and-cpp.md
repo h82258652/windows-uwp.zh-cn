@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 启动, 恢复
 ms.localizationpriority: medium
 ms.openlocfilehash: ebcec430c4fc916e77ebdf25ee53deb23b02185d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6461254"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858932"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>启动和恢复应用（DirectX 和 C++）
 

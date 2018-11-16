@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649984"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851631"
 ---
 # <a name="transcode-media-files"></a>转换媒体文件代码
 
@@ -84,9 +84,9 @@ ms.locfileid: "6649984"
 
 
 ## <a name="encode-a-metadata-stream"></a>对元数据流进行编码
-从 Windows 10，版本 1803年开始，你可以包含计时元数据时转换媒体文件。 与上述的视频转换代码示例中，它使用内置媒体编码配置文件创建方法，如[**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，你必须手动创建元数据编码配置文件以支持类型的元数据编码.
+从 Windows 10，版本 1803年开始，你可以包含计时元数据时转换媒体文件。 与上面的视频转换代码示例中，它使用内置媒体编码配置文件创建方法，如[**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，你必须手动创建的元数据编码配置文件以支持类型的元数据编码.
 
-在创建元数据 incoding 配置文件中的第一步是创建描述要转换代码的元数据编码 [**TimedMetadataEncodingProperties**] 对象。 子类型属性是指定的元数据类型的 GUID。 每个元数据类型的编码详细信息，专并不由 Windows 提供。 在此示例中，使用 GoPro 元数据 (gprs) 的 GUID。 接下来，调用[**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)以设置描述特定于元数据格式的流格式的数据的二进制文件 blob。 下一步， **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)创建的编码属性，并跟踪标签和名称是允许应用程序读取 endcoded 流标识元数据流和 （可选） 在 UI 中显示的流名称。 
+创建元数据 incoding 配置文件此第一步是创建描述要转换代码的元数据编码的 [**TimedMetadataEncodingProperties**] 对象。 子类型属性是指定的元数据类型的 GUID。 每个元数据类型的编码详细信息，专并不由 Windows 提供。 在此示例中，使用 GoPro 元数据 (gprs) 的 GUID。 接下来，调用[**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)以设置描述特定于元数据格式的流格式的数据的二进制文件 blob。 下一步， **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)创建从编码属性，并且轨道标签和名称允许应用程序读取 endcoded 流标识元数据流和 （可选） 在 UI 中显示的流名称。 
  
 [!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 

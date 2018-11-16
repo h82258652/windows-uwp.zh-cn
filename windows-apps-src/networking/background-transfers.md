@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bc007ee1725ea3048895ccb9e7340bc0f08e8b8
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458701"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848397"
 ---
 # <a name="background-transfers"></a>后台传输
 使用后台传输 API 以便在网络上可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
@@ -30,7 +30,7 @@ ms.locfileid: "6458701"
 > [!NOTE]
 > 由于每个应用资源所限，应用在任何时刻的传输数均不应多于 200 (DownloadOperations + UploadOperations)。 超出该限制可能会将应用的传输队列置于无法恢复的状态。
 
-当启动应用程序时，它必须在所有现有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)对象上调用[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) 。 不执行此操作将导致的已完成传输泄漏，并且最终将使你使用后台传输功能毫无用处。
+应用程序启动时，它必须在所有现有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)对象上调用[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) 。 不执行此操作将导致的已完成传输泄漏，并且最终将使你使用后台传输功能毫无用处。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用后台传输执行经过身份验证的文件请求
 后台传输可提供支持基本的服务器和代理凭据、cookie 的方法，并且还支持每个传输操作使用自定义的 HTTP 头（通过 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)）。
@@ -42,7 +42,7 @@ ms.locfileid: "6458701"
 
 虽然后台传输功能具备其自己的处理网络状态更改的机制，但对于使用网络连接功能的应用还有其他需要考虑的常规连接因素。 有关其他信息，请阅读[利用可用的网络连接信息](https://msdn.microsoft.com/library/windows/apps/hh452983)。
 
-> **请注意**对于移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、 漫游状态传输数据量的功能和用户数据计划。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
+> **注意**对于移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、 漫游状态传输数据量的功能和用户数据计划。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
 
 下表指示在电话的当前给定状态下，对于每个 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值，允许在电话上进行后台传输的时间。 你可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 类确定电话的当前状态。
 
@@ -262,7 +262,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立连接之后，将中止在两分钟内未收到响应的 HTTP 请求消息。
 
-> **请注意**在任一情况下，假定存在 Internet 连接，后台传输将自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
+> **注意**在任一情况下，假定存在 Internet 连接，后台传输将自动重试一个请求三次。 如果未检测到 Internet 连接，则其他请求将一直等待，直到检测到 Internet 连接。
 
 ## <a name="debugging-guidance"></a>调试指南
 在 Microsoft Visual Studio 中停止调试会话与关闭你的应用相似；PUT 上载将暂停，POST 上载将终止。 即使在调试时，你的应用也应该枚举，然后重新启动或取消任何保持的上载。 例如，如果对该调试会话之前的操作没有兴趣，你可以使应用在应用启动时取消已枚举的持续上载操作。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661918"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848065"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone silverlight 移植到 UWP API 的映射
 
@@ -24,7 +24,7 @@ ms.locfileid: "6661918"
 
 **如何使用该表：** 首先，搜索你要使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，就会在此处列出类。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
 
-**请注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。
+**注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。
 此外，在 windows 10 应用中，你将受益于.NET Native，这是先进障碍的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
 
 | WindowsPhone Silverlight | Windows 运行时 |

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e8cd15ec205c9a3a102a94e8a2fae5428ba3ea
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6255168"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848792"
 ---
 # <a name="eds-parameters"></a>EDS 参数
 
@@ -28,30 +28,30 @@ ms.locfileid: "6255168"
 | 参数| 类型| 说明|
 | --- | --- | --- |
 | combinedContentRating| 字符串| 可选。 请参阅[GET (/media/ {marketplaceId} / contentRating)](../uri/marketplace/uri-medialocalecontentratingget.md)。|
-| ContinuationToken| 字符串| 可选。 延续令牌是包含该服务需要分页某些应用场景中的信息的不透明 blob。 如果省略值，第一页结果返回 （其中页面大小由 maxItems 参数），以及可用于获取结果的第二页一个延续令牌。 第二个页面将包含结果的第三页的延续令牌，依此类推。|
-| 所需的| 字符串| 可选。 请参阅组合的字段名称 API。|
+| ContinuationToken| 字符串| 可选。 延续令牌是包含该服务需要分页某些应用场景中的信息的不透明 blob。 如果省略值，第一页结果返回 （其中页面大小由 maxItems 参数），以及可用于获取结果的第二页一个延续令牌。 第二个页面将包含结果的第三页的延续令牌等等。|
+| 所需| 字符串| 可选。 请参阅组合的字段名称 API。|
 | desiredMediaItemTypes| 字符串的数组| 可选。 此参数确定要在响应中返回的项目类型。|
 | 域| 字符串| 可选。 域参数确定的游戏和应用的市场上下文中的客户端调用的。 默认情况下域是"现代"，以指示客户端可以仅请求 Xbox One 的内容。 如果客户端想要切换到图面 Xbox 360 内容的域，它必须为"Xbox360"指定域。 目前，跨域结果不支持。 可能的值为： <ul><li>Xbox360</li><li>现代</li></ul> SingleMediaGroupSearch 仅支持"Xbox360"值。 支持浏览和详细信息。 crossMediaGroupSearch 不受支持，并将返回 400 错误。|
 | 字段| 字符串| 可选。 请参阅[GET (/media/ {marketplaceId} / 字段)](../uri/marketplace/uri-medialocalefieldsget.md)。|
-| firstPartyOnly| 布尔值| 可选的筛选参数。 确定是否返回仅第一方内容或这两个第一方和第三方内容从查询返回是否。 |
+| firstPartyOnly| 布尔值| 可选的筛选参数。 确定是否返回仅第一方内容或这两个第一方和第三方内容将从查询返回是否。 |
 | freeOnly| 布尔值| 可选的筛选参数。 限制结果以仅无内容。|
-| GroupBy| TK| GroupBy 参数用于帮助归类到组的结果集，而不是单个结果集。 指定此参数将修改的结果集返回多个项目的列表，其中每个存储桶中项目数由 maxItems 参数。 <ul><li>MediaGroup-MediaGroup 结果进行分组。</li></ul> |
+| GroupBy| TK| GroupBy 参数用于帮助归类到组的结果集，而不是单个结果集。 指定此参数将修改的结果集返回多个项目的列表，每个存储桶中项目数由 maxItems 参数。 <ul><li>MediaGroup-MediaGroup 结果进行分组。</li></ul> |
 | hasTrailer| 布尔值| 可选的筛选参数。 确定是否返回的项目必须包含预告片，或如果遇到预告片是可选的。 如果值为 true，所有项都必须都具有预告片。|
 | id| 字符串| 可选。 如果提供，限制仅可与给定的 ID 项的子项的结果 如果未提供此参数，还必须指定 MediaItemType。 |
-| id| 字符串的数组| 必需。 所有将为其返回的详细信息 （最多 10) 的 Id。 注意，任何 ID 包含字符非法放入中的 URL （ProviderContentId 类型 Id 是正常的完整 Url 本身，从而包含非法字符） 必须使用 URL 编码，以便正确发送到 EDS。|
-| idType| 字符串| 可选。 Id 它在传递给 id 参数的类型。 有效的值包括： <ul><li>规范 （必应/市场）</li><li>XboxHexTitle （在主机上播放的应用）</li></ul>  所提供的所有 Id 必须共享同一个 idType。 如果省略此值，将假定所有 Id 可 Canonical。|
+| id| 字符串的数组| 必需。 所有将为其返回的详细信息 （最多 10) 的 Id。 注意任何 ID，包含非法放入中的字符的 URL （ProviderContentId 类型 Id 是正常的完整 Url 本身，从而包含非法字符） 必须使用 URL 编码，以便正确发送到 EDS。|
+| idType| 字符串| 可选。 Id 它在传递给 id 参数的类型。 有效的值包括： <ul><li>规范 （必应/市场）</li><li>XboxHexTitle （在控制台上播放的应用）</li></ul>  所提供的所有 Id 必须共享同一个 idType。 如果省略此值，则会假设所有 Id 为 Canonical。|
 | latestOnly| 布尔值| 可选的筛选参数。 限制为仅使用最新的发布日期的结果。|
 | maxItems| 32 位有符号整数| 可选。 确定应从调用返回的项目的最大数量。 有效值介于 1 和 25，非独占之间的数字。 如果省略，该参数将默认为 25。|
 | mediaGroup| 字符串| 可选。 媒体组的 Id。 所提供的所有 Id 必须共享相同的媒体组。|
 | MediaItemType| 字符串| 可选。 其 ID 已 id 参数中指定的项目类型。 如果提供 id 参数，则还必须指定此参数。|
-| orderBy| 字符串| 必需。 OrderBy 参数确定要返回的项目的排序方式。 此字段的常见值此处列出，但一些 Api 可能会支持其他值。<ul><li>playCountDaily-通过次数播放的媒体，最近一天。</li><li>freeAndPaidCountDaily-通过免费和付费购买，最近一天的计数。</li><li>paidCountAllTime-通过仅付费购买，所有时间的计数。</li><li>paidCountDaily-通过付费的购买，最近一天的计数。</li><li>digitalReleaseDate-下载可用的日期。</li><li>releaseDate-通过存储中可用的日期回退到数字的发布日期 （如果可用）。</li><li>userRatings 内的平均用户分级。</li></ul> |
-| preferredProvider| 字符串| 可选。 如果用户首选内容提供商，如 Comcast Xfinity 或 Verizon FIOS 可以传入该提供商的 ID。 在实际的顺序的项目将不会更改，对于每个项，指定的提供程序的信息将显示在提供程序列表的顶部 （如果首选的内容提供商有可用的项）。|
+| orderBy| 字符串| 必需。 OrderBy 参数确定要返回的项目的排序方式。 此字段的常见值此处列出，但某些 Api 可能会支持其他值。<ul><li>playCountDaily-按的次数计数播放的媒体，最近一天。</li><li>freeAndPaidCountDaily-通过免费和付费购买，最近一天的计数。</li><li>paidCountAllTime-通过仅付费购买，所有时间的计数。</li><li>paidCountDaily-通过付费的购买，最近一天的计数。</li><li>digitalReleaseDate-下载可用的日期。</li><li>releaseDate-通过存储中可用的日期回退到数字发布日期 （如果可用）。</li><li>userRatings 内的平均用户分级。</li></ul> |
+| preferredProvider| 字符串| 可选。 如果用户首选内容提供商，如 Comcast Xfinity 或 Verizon FIOS 可以传入该提供程序的 ID。 在实际的顺序的项目将不会更改，对于每个项，指定的提供程序的信息将显示在提供程序列表的顶部 （如果首选的内容提供商有可用的项）。|
 | q| 字符串| 必需。 查询搜索中使用的术语。|
-| queryRefiners| 字符串的数组| 可选。 请参阅[EDS 查询优化器](edsqueryrefiners.md)的列表。|
+| queryRefiners| 字符串的数组| 可选。 查看[EDS 查询优化器](edsqueryrefiners.md)的列表。|
 | 关系| 字符串| 可选。 使用 ID 参数作为基本搜索其他产品的指定的关系类型匹配的筛选器： <ul><li>bundledWith-查找捆绑包产品 ID 参数所在这些捆绑包的一部分。</li><li>bundledProducts-查找包含在捆绑包 ID 参数指定的产品。</li></ul>  （可以在浏览调用返回） 的市场中可见的唯一产品会返回此参数。 捆绑包是否隐藏的产品，它仍然是捆绑包的一部分，但不是会返回这些结果中。|
-  | ScopeId | 字符串 | 在反向查找方案中使用此参数为视频媒体。 |
-  | ScopeIdType | 字符串 | 在反向查找方案中使用此参数为视频媒体。 可能的值： 标题。 |
-  | skipItems | 32 位有符号整数 | 可选。 对于非跨组方案中的页面，skipItems 参数用于确定已检测到多少项 （并因此应显示哪些项首先结果中设置）。 该值是基于 0，因此 skipItems = 0 （或只不提供 skipItems） 开始检索开始时的列表。 skipItems = 3 会跳过列表中的前三个项目，并开始与第四个项的检索。 |
+  | ScopeId | 字符串 | 此参数用于在方案中反向查找视频媒体。 |
+  | ScopeIdType | 字符串 | 此参数用于在方案中反向查找视频媒体。 可能的值： 标题。 |
+  | skipItems | 32 位有符号整数 | 可选。 用于非跨组方案中的分页、 skipItems 参数用于确定已检测到多少项 （并因此应显示哪些项首先的结果中设置）。 该值是基于 0，因此 skipItems = 0 （或只需不提供 skipItems） 开始检索在开始菜单的列表。 skipItems = 3 将跳过列表中的前三个项目，并开始与第四个项的检索。 |
   | subscriptionLevel | 字符串的数组 | 可选的筛选参数。 SubscriptionLevel 参数确定订阅用户的类型有 （如用户是否有付费的订阅或免费订阅）。 可能的值如下所示。 <ul><li>金牌： 用户有付费的订阅</li><li>银牌： 用户有免费订阅。</li></ul>  |
 | 目标| 字符串| EDS 提供适用于目标设备的灵活地筛选产品/服务。 产品/服务 （ProviderContent 或可用性） 返回的项目可以限制到目标设备。|
 | topRatedOnly| 布尔值| 可选的筛选参数。 限制为仅最佳分级的内容的结果。|

@@ -9,23 +9,23 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4d7d03bc218d7507c8c2971bf76946a9fca6b4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6261036"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849184"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-creators-program"></a>Xbox Live 创意者计划集成分步指南
 
 此部分将帮助你准备主题作品并让其在 Xbox Live 上运行：
 
 ## <a name="1-ensure-you-have-a-title-created-in-partner-center"></a>1.确保你在合作伙伴中心中创建主题作品
-每个 Xbox Live 的主题作品必须在[合作伙伴中心](https://partner.microsoft.com/dashboard)中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的创意者主题作品](create-and-test-a-new-creators-title.md)将为你介绍如何执行此操作。
+每个 Xbox Live 主题作品必须先将能够在登录并进行 Xbox Live 服务调用定义在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  [创建新的创意者主题作品](create-and-test-a-new-creators-title.md)将为你介绍如何执行此操作。
 
 ## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>2. 遵循相应指南设置 IDE 或游戏引擎
 你可以遵循适用于自己平台和引擎的相应入门指南，并在过程中了解 Xbox Live 的基础知识。
 
-* [开发创意者主题作品使用 Visual Studio](develop-creators-title-with-visual-studio.md)将向你介绍如何关联 Visual Studio 项目与合作伙伴中心中的 Xbox Live 配置。
+* [针对开发创意者主题作品使用 Visual Studio](develop-creators-title-with-visual-studio.md)将向你介绍如何关联 Visual Studio 项目与合作伙伴中心中的 Xbox Live 配置。
 
 * [使用 Unity 开发创意者主题作品](develop-creators-title-with-unity.md)将为你介绍如何创建支持 Xbox Live 的 Unity 主题作品、如何为主题作品添加排行榜等功能，以及如何生成本机 Visual Studio 项目。
 

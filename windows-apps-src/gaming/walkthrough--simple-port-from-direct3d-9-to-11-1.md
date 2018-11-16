@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 端口, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661725"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851176"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
@@ -70,7 +70,7 @@ ms.locfileid: "6661725"
 ## <a name="prerequisites"></a>先决条件
 
 
-应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 加载本演练中的代码示例。
+应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 你还不需要模板，但你将需要 Microsoft Visual Studio2015 来加载此演练中的代码示例。
 
 访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此演练中显示的 DirectX 11 和 UWP 编程概念。
 
