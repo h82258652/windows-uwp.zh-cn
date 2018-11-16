@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0af7dc153f75826444a517d4958bfeba53b103d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6443785"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6833511"
 ---
 # <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
@@ -210,7 +210,7 @@ TileContent content = new TileContent()
 
 你可以控制动态磁贴底部的品牌（显示名称和角徽标），方法是使用通知负载上的品牌属性。 你可以选择显示“无”、仅“名称”、仅“徽标”，或使用“nameAndLogo”显示两者。
 
-**请注意**Windows Mobile 不支持在 Mobile 上角徽标，因此"徽标"和"nameAndLogo"默认值为"名称"。
+**注意**Windows Mobile 不支持在 Mobile 上角徽标，因此"徽标"和"nameAndLogo"默认为"名称"。
 
  
 
@@ -282,7 +282,7 @@ TileContent content = new TileContent()
 
 如果你未在通知负载中指定品牌，基本磁贴的属性将决定品牌。 如果基本磁贴显示了显示名称，则品牌将默认为“名称”。 否则，如果未显示显示名称，品牌将默认为“无”。
 
-**请注意**这是与 Windows8.x，在该版本中默认品牌为"徽标"。
+**注意**这是与 Windows8.x，在该版本中默认品牌为"徽标"。
 
  
 
@@ -408,7 +408,7 @@ new AdaptiveText()
 
 ![自适应磁贴文本样式](images/adaptive-tiles-textstyles.png)
 
-**请注意**如果未指定提示样式，该样式将默认为描述文字。
+**注意**如果未指定提示样式，该样式将默认为描述文字。
 
  
 
@@ -487,7 +487,7 @@ new AdaptiveText()
 
 若要在各个设备和屏幕上提供最佳体验，请提供多个组。 如果有多个组，你的磁贴将可以适应更大的屏幕。
 
-**请注意**一组的唯一有效子级是子组。
+**注意**一组的唯一有效子级是子组。
 
  
 
@@ -681,7 +681,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 
 ![子组，总权重为 100](images/adaptive-tiles-subgroups03.png)
 
-**请注意**两列之间自动添加 8 个像素的边距。
+**注意**在两列之间将自动添加 8 个像素的边距。
 
  
 

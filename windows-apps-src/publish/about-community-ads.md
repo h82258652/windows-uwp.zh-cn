@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653646"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838679"
 ---
 # <a name="about-community-ads"></a>有关社区广告
 
@@ -34,8 +34,8 @@ ms.locfileid: "6653646"
 
 若要选择加入社区广告的 UWP 应用：
 
-1. 选择你所使用的应用和滚动中关闭到**中介设置**广告单元。
-2. 如果选择**让 Microsoft 优化我的设置**，则会自动将社区广告启用为广告单元。 否则为在**目标**下拉列表中选择基准配置或特定于市场的配置，然后查看**其他广告网络**列表中的**Microsoft 社区广告**框。
+1. 选择你所使用的应用和滚动中下移到**中介设置**广告单元。
+2. 如果选择**让 Microsoft 优化我的设置**时，社区广告会自动启用为广告单元。 否则为在**目标**下拉列表中选择基准配置或特定于市场的配置，然后查看**其他广告网络**列表中的**Microsoft 社区广告**框。
 
     > [!NOTE]
     > 你可以使用**权重**字段指定你想要显示来自付费的网络和其他广告网络，包括社区广告的广告的比例。

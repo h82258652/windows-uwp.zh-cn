@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 91bcae367e42b3dc728b794d1e68550e86dcfeaa
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6257222"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842167"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 获取用户的 XUID 从调用方的用户集合。 这些 Uri 的域是`social.xboxlive.com`。
@@ -72,8 +72,8 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。| 
+| X RequestedServiceVersion| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。| 
   
 <a id="ID4EHF"></a>
 
@@ -126,11 +126,11 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| “确定”| "获取"方法时成功。| 
+| 200| “确定”| "帮"方法时成功。| 
 | 204| 任何内容| 成功时的方法是"添加"或者"删除"。| 
 | 400| 错误请求| 方法参数已丢失或格式不正确，或用户 Id 格式不正确。| 
 | 403| 已禁止| 无法分析 XUID 声明与授权标头中。| 
@@ -150,7 +150,7 @@ POST 操作不会修改任何资源，因此如果执行一次或多次，这将
  
 ## <a name="response-body"></a>响应正文
  
-"获取"请求方法时，将只会发送的响应正文。 没有"添加"或"删除"无响应正文。
+"帮"请求方法时，将只会发送的响应正文。 没有"添加"或"删除"无响应正文。
  
 如果"获取"方法调用成功，该服务集合和数组，其中包含调用方的用户集合返回的用户总数中调用方的人。 无响应"添加"和"删除"方法返回。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
  

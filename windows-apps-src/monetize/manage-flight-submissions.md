@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661655"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832826"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
@@ -26,7 +26,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理软件包外部测试版提交的方法
 
-使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须已经在合作伙伴中心中存在软件包外部测试版。 你可以创建软件包外部测试版[中的合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
+使用以下方法获取、创建、更新、提交或删除软件包外部测试版提交。 你可以使用这些方法之前，必须已在合作伙伴中心存在软件包外部测试版。 你可以创建软件包外部测试版[在合作伙伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或通过使用中的 Microsoft 应用商店提交 API 方法中所述[管理软件包外部测试版](manage-flights.md)。
 
 <table>
 <colgroup>
@@ -121,7 +121,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将向合作伙伴中心警报完成与你的提交，更新现在应该应用到你的帐户。
+5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将向合作伙伴中心警报你完成提交，更新现在应该应用到你的帐户。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -333,7 +333,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 此资源具有以下值。
 
 > [!NOTE]
-> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 由合作伙伴中心，其他值进行填充。
+> 当调用[更新应用提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由合作伙伴中心进行填充。
 
 | 值           | 类型    | 说明              |
 |-----------------|---------|------|

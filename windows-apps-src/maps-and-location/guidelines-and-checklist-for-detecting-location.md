@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670809"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842014"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
@@ -77,7 +77,7 @@ ms.locfileid: "6670809"
 
         提供位置数据的设备可跟踪不同应用所请求的报告间隔，并以请求的最小间隔提供数据报告。 这样，对准确性要求最高的应用就会接收到其所需的数据。 因此，如果其他应用请求的更新频率更高，则定位程序可能以高于你的应用所请求的频率生成更新。
 
-        **请注意**不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
+        **注意**不保证位置源会针对给定的报告间隔兑现请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
 
     -   为了帮助节省电耗，请设置 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 属性，以向位置平台指示你的应用是否需要高精度的数据。 如果应用都不需要高精度的数据，则系统可以不打开 GPS 提供程序以节省电耗。
 
@@ -89,7 +89,7 @@ ms.locfileid: "6670809"
         例如：
 
         -   如果应用要获取位置用于广告调整、天气、新闻，5000 米的精度一般足够。
-        -   如果你的应用显示附近的街区中的交易，300 米的精度最好通常提供结果。
+        -   如果你的应用显示附近的邻居中的交易，300 米的精度，最好通常提供结果。
         -   如果用户查找附件餐厅的推荐，我们可能要获取一个街区内的位置，因此 100 米的精度足够了。
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。

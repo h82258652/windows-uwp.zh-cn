@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c75687cdc745468deec41a686d0d8b9d2f0ba9c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671900"
+ms.locfileid: "6835696"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -97,7 +97,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
 > [!Tip]
-> 当你有在 UI 中的某些元素是**折叠**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 当你有在 UI 中的元素是**Collapsed**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>样式资源
 

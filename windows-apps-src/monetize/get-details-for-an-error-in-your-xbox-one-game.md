@@ -1,24 +1,24 @@
 ---
 author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法，以获取详细的数据的特定错误在 Xbox One 游戏。
-title: 获取游戏在 Xbox One 中错误的详细信息
+title: 获取游戏的 Xbox One 中的错误的详细信息
 ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
 ms.openlocfilehash: 33733af7f323817bc82d49800c2dc17c5f7b9887
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469362"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6832889"
 ---
-# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>获取游戏在 Xbox One 中错误的详细信息
+# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>获取游戏的 Xbox One 中的错误的详细信息
 
-使用 Microsoft Store 分析 API 中获取详细的数据的特定错误在 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析开发人员中心仪表板中的此方法。 此方法仅可以检索过去 30 天内发生的错误的详细信息。
+使用 Microsoft Store 分析 API 中以获取详细的数据的特定错误在 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析开发人员中心仪表板中的此方法。 此方法仅可以检索过去 30 天内发生的错误的详细信息。
 
-你可以使用此方法之前，你都必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索希望获取详细的信息的错误的 ID。
+你可以使用此方法之前，必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索想要获取详细的信息的错误的 ID。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -27,7 +27,7 @@ ms.locfileid: "6469362"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 获取希望获取详细信息的错误的 ID。 若要获取此 ID，使用[获取错误报告数据对于你的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。
+* 获取希望获取详细信息的错误的 ID。 若要获取此 ID，使用[获取错误报告数据的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。
 
 ## <a name="request"></a>请求
 
@@ -50,8 +50,8 @@ ms.locfileid: "6469362"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其检索错误详细信息的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
-| failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，使用[获取错误报告数据对于你的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。 |  是  |
+| applicationId | 字符串 | 要为其检索错误详细信息的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，使用[获取错误报告数据的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。 |  是  |
 | startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 | packageVersion  | 字符串  | 与此错误相关联的游戏程序包版本。    |
 | deviceModel           | 字符串  | 用于指定发生错误时，运行游戏的 Xbox One 主机的以下字符串之一。<p/><ul><li><strong>Microsoft Xbox One</strong></li><li><strong>Microsoft Xbox One S</strong></li><li><strong>Microsoft Xbox One X</strong></li></ul>  |
 | osVersion       | 字符串  | 出现错误的操作系统版本。 此值始终是**Windows 10**。    |
-| osRelease       | 字符串  |  用于指定的 Windows 10 操作系统版本或外部测试 ring （作为操作系统版本内的亚组） 发生了错误的以下字符串之一。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>预览体验成员 - 快</strong></li><li><strong>预览体验成员 - 慢</strong></li></ul><p>如果操作系统版本或外部测试 Ring 未知，则此字段的值为 <strong>Unknown</strong>。</p>    |
+| osRelease       | 字符串  |  用于指定 Windows 10 操作系统版本或外部测试 ring （作为操作系统版本内的亚组） 发生了错误的以下字符串之一。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>预览体验成员 - 快</strong></li><li><strong>预览体验成员 - 慢</strong></li></ul><p>如果操作系统版本或外部测试 Ring 未知，则此字段的值为 <strong>Unknown</strong>。</p>    |
 | deviceType      | 字符串  | 出现错误的设备的类型。 此值始终是**控制台**。     |
 | cabDownloadable           | 布尔值  | 指示是否可为此用户下载 CAB 文件。   |
 

@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: df3af90bda9d972a891dce67730f8f320b7607c1
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672914"
+ms.locfileid: "6835174"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>获取你的 Xbox One 中的错误的堆栈跟踪游戏
 
-使用 Microsoft Store 分析 API 中获取你的 Xbox One 中的错误的堆栈跟踪游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析开发人员中心仪表板中的此方法。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。
+使用 Microsoft Store 分析 API 中获取你的 Xbox One 中的错误堆栈跟踪游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析开发人员中心仪表板中的此方法。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。
 
 你可以使用此方法之前，你都必须首先使用[获取 Xbox One 游戏中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件的 ID。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6672914"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要检索堆栈跟踪的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| applicationId | 字符串 | 要为其检索堆栈跟踪 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
 | cabId | 字符串 | 获取与想要检索堆栈跟踪的错误相关联的 CAB 文件的唯一 ID。 若要获取此 ID，使用[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索你的应用中特定错误的详细信息，并使用该方法的响应正文中的**cabId**值。 |  是  |
 
  
@@ -123,5 +123,5 @@ Authorization: Bearer <your access token>
 
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)
-* [获取游戏在 Xbox One 中错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
+* [获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
 * [下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)

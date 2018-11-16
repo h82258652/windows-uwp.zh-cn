@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 街机摇杆, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665623"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844980"
 ---
 # <a name="arcade-stick"></a>街机摇杆
 
@@ -30,15 +30,15 @@ ms.locfileid: "6665623"
 
 要重现单独街机的感觉并实现其高精度数字控制，街机摇杆是尤为重要的输入设备。 街机摇杆对于肉搏战和其他街机风格的游戏来说是完美的输入设备，并适合所有能正常使用全数字控件的游戏。 街机摇杆在 Windows 10 和 Xbox One UWP 应用中受 [Windows.Gaming.Input][] 命名空间支持。
 
-Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按钮 （表示为 A1 A6 下图中） 和两个**特殊**按钮 （表示为 S1 和 S2）;它们是全数字输入的设备，不支持模拟控件或震动。 Xbox One 街机摇杆还配备了用于支持 UI 导航**视图**和**菜单**按钮，但不是打算支持游戏命令，并且无法如同游戏杆按钮一样访问。
+Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按钮 （表示为 A1 A6 下图中） 和两个**特殊**按钮 （表示为 S1 和 S2）;它们是全数字输入的设备，不支持模拟控件或震动。 Xbox One 街机摇杆还配备了用于支持 UI 导航**视图**和**菜单**按钮，但不是打算支持游戏命令，并且不能作为游戏杆按钮随时访问。
 
-![街机摇杆用 4 方向操纵杆 6 个操作按钮 (A1-A6)，以及 2 个特殊的按钮 （S1 和 S2）](images/arcade-stick-1.png)
+![街机摇杆了 4 方向游戏杆，6 个操作按钮 (A1-A6)，以及 2 个特殊的按钮 （S1 和 S2）](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>UI 导航
 
 为了减轻支持很多适用于用户界面导航的不同输入设备的负担并促进游戏和设备之间的一致性，大多数_物理_输入设备同时充当单独的称为 [UI 导航控制器](ui-navigation-controller.md) 的_逻辑_输入设备。 UI 导航控制器可跨各种输入设备提供通用的 UI 导航命令词汇。
 
-作为 UI 导航控制器，街机摇杆将导航命令[所需的设置](ui-navigation-controller.md#required-set)映射到游戏杆和**视图**、**菜单**、**操作 1**和**操作 2**按钮。
+作为 UI 导航控制器，街机摇杆的游戏杆和**视图**、**菜单**、**操作 1**和**操作 2**按钮会映射导航命令[所需的设置](ui-navigation-controller.md#required-set)。
 
 | 导航命令 | 街机摇杆输入  |
 | ------------------:| ------------------- |
@@ -143,7 +143,7 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 ### <a name="reading-the-buttons"></a>读取按钮
 
-每个街机摇杆按钮&mdash;游戏杆，六个**操作**按钮和两个**特殊**按钮的四个方向&mdash;提供指示它是按下 （向下） 还是释放 （向上） 的数字读数。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到的单独位域由[ArcadeStickButtons][]枚举。
+每个街机摇杆按钮&mdash;游戏杆，六个**操作**按钮和两个**特殊**按钮的四个方向&mdash;提供指示它是按下 （向下） 还是释放 （向上） 的数字读数。 为了提高效率，按钮读数不以单独的布尔值; 表示相反，它们是全部打包到的单独位域所表示的[ArcadeStickButtons][]枚举。
 
 > [!NOTE]
 > 街机摇杆配备了用于 UI 导航，如**View**和**Menu**按钮的其他按钮。 这些按钮不是 `ArcadeStickButtons` 枚举的一部分，只能作为 UI 导航设备通过访问街机摇杆进行读取。 有关详细信息，请参阅 [UI 导航设备](ui-navigation-controller.md)。

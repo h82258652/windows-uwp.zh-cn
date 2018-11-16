@@ -170,7 +170,6 @@
 ### [磁贴和 Toast 通知的语言、比例和高对比度支持](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [将应用固定到任务栏](shell/pin-to-taskbar.md)
 ## [标题栏自定义](shell/title-bar.md)
-## [集设计](shell/design-for-sets.md)
 
 ## 通知
 ### Toast 通知

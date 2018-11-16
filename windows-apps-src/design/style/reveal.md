@@ -13,17 +13,17 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669685"
+ms.locfileid: "6832316"
 ---
 # <a name="reveal-highlight"></a>突出显示展示
 
 ![主图](images/header-reveal-highlight.svg)
 
-显示突出显示是当用户附近移动指针它们时突出显示交互性元素，如命令栏，一种灯光效果。 
+展示突出显示是当用户附近移动指针它们时突出显示交互性元素，如命令栏，一种灯光效果。 
 
 > **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 

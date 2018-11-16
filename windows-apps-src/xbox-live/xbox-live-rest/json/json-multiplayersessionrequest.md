@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 889db33ff81d3bf10743376118a0fab00ae44d8d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272743"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833342"
 ---
 # <a name="multiplayersessionrequest-json"></a>MultiplayerSessionRequest (JSON)
 请求的 JSON 对象传递**MultiplayerSession**对象的操作。 
@@ -26,16 +26,16 @@ MultiplayerSessionRequest JSON 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| 常量| object| 会话模板，以产生会话常量与合并的只读的设置。 | 
+| 常量| object| 会话模板，以生成会话常量与合并的只读的设置。 | 
 | 属性 | object | 合并到的会话属性更改。| 
-| members.me | object| 常量和大量的属性，例如顶级对应。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 | 
+| members.me | object| 常量和大量的属性，例如其顶级对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 | 
 | 成员 | object| 表示用户添加到会话中，从零开始的索引键控其他对象。 在请求中的成员数开始时始终具有 0，即使会话已包含成员。 成员将添加到会话中请求中的显示的顺序。 成员属性只能由用户属于其设置。 | 
 | 服务器 | object| 关联的服务器参与者的设置的值，该值指示更新和添加到会话。 服务器指定为 null，如果是从会话中删除该服务器条目。 | 
   
 <a id="ID4EZ"></a>
 
  
-## <a name="request-structure"></a>请求的结构
+## <a name="request-structure"></a>请求结构
  
 
 ```json

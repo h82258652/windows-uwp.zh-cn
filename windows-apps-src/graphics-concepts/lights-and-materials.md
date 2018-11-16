@@ -10,18 +10,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f690e08d211692b05f0a80722aa4a3e3a06b39f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651083"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6857649"
 ---
 # <a name="lighting"></a>照明
 
 
 光照用于照亮场景中的对象。 每个对象顶点的颜色基于当前纹理贴图、顶点颜色和光源。
 
-**请注意**此部分仅为固定函数管道。 可编程着色器显式执行所有照明。
+**注意**此部分仅适合固定函数管道。 可编程着色器显式执行所有照明。
 
  
 

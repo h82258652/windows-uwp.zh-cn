@@ -10,25 +10,25 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 933ca3f6d683d5a58e10f87059527038e7b696d1
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665708"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833755"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
 面向 Windows 的 XAML UI 框架提供丰富的控件库，这些控件可支持 UI 开发。 这些控件中的一部分具有直观的表示形式；其他控件发挥作为其他控件或内容（如图像和媒体）的容器的作用。 
 
-通过下载 [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，可以查看许多实际应用的 Windows UI 控件。
+通过下载 [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?LinkId=619992)，可以查看许多实际应用的 Windows UI 控件。
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开该应用，了解 NavigationView 的实际</a>到 </p>
+    <p>如果你安装了该<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开该应用，了解 NavigationView 的实际</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">获取源代码 (GitHub)</a></li>
@@ -56,21 +56,21 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[应用栏和命令栏控件指南](app-bars.md) 
 
-示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+示例代码：[XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>应用栏分隔符
 在视觉上分隔命令栏中的命令组。
 
 参考：[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+示例代码：[XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>应用栏切换按钮
 用于在命令栏中切换命令的按钮。
 
 参考：[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+示例代码：[XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>命令栏
 一个特殊的应用栏，用于调整应用栏按钮元素的大小。
@@ -88,7 +88,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[应用栏和命令栏控件指南](app-bars.md)
 
-示例代码：[XAML 命令示例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+示例代码：[XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>按钮
 
@@ -116,7 +116,7 @@ ms.locfileid: "6665708"
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
-                 NavigateUri="http://www.microsoft.com"/>
+                 NavigateUri="https://www.microsoft.com"/>
 ```
 
 参考：[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -168,7 +168,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[列表](lists.md) 
 
-示例代码：[ListView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+示例代码：[ListView 示例](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### <a name="items-control"></a>项目控件
 显示数据模板所指定 UI 中项目集合的控件。 
@@ -193,7 +193,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[列表](lists.md) 
 
-示例代码：[ListView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+示例代码：[ListView 示例](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## <a name="date-and-time-controls"></a>日期和时间控件
 
@@ -290,7 +290,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[菜单和上下文菜单](menus.md) 
 
-示例代码：[XAML 上下文菜单示例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+示例代码：[XAML 上下文菜单示例](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>弹出菜单
 一个自定义菜单，用于显示你所指定的命令。
@@ -326,7 +326,7 @@ ms.locfileid: "6665708"
 
 设计和操作指南：[图像和 ImageBrush](images-imagebrushes.md) 
 
-示例代码：[XAML 图像示例](http://go.microsoft.com/fwlink/p/?linkid=226867)
+示例代码：[XAML 图像示例](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>图形和墨迹
 
@@ -355,7 +355,7 @@ ms.locfileid: "6665708"
 
 操作方法：[绘制形状](../../graphics/drawing-shapes.md) 
 
-示例代码：[基于 XAML 矢量的绘图示例](http://go.microsoft.com/fwlink/p/?linkid=226866)
+示例代码：[基于 XAML 矢量的绘图示例](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>布局控件
 
@@ -455,7 +455,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[滚动和平移控件指南](scroll-controls.md) 
 
-示例代码：[XAML 滚动、平移和缩放示例](http://go.microsoft.com/fwlink/p/?linkid=238577)
+示例代码：[XAML 滚动、平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>堆栈面板
 可以将子元素按水平或垂直方向排列到单行中的布局面板。
@@ -544,7 +544,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[媒体元素控件指南](media-playback.md) 
 
-示例代码：[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+示例代码：[媒体传输控件示例](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>视频
 请参阅媒体元素。
@@ -553,7 +553,7 @@ ms.locfileid: "6665708"
 
 ### <a name="navigationview"></a>NavigationView
 
-适应性容器和实现顶级导航的左侧的导航窗格，表模式的灵活的导航模型。
+适应性容器和灵活的导航模型实现的左侧的导航窗格中，顶部导航和表模式。
 
 参考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
@@ -585,7 +585,7 @@ ms.locfileid: "6665708"
 可托管 Web 内容的容器控件。
 
 ```xaml
-<WebView x:Name="webView1" Source="http://dev.windows.com" 
+<WebView x:Name="webView1" Source="https://developer.microsoft.com" 
          Height="400" Width="800"/>
 ```
 
@@ -593,7 +593,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：Web 视图指南 
 
-示例代码：[XAML WebView 控件示例](http://go.microsoft.com/fwlink/p/?linkid=238582)
+示例代码：[XAML WebView 控件示例](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### <a name="semantic-zoom"></a>语义式缩放
 
@@ -614,7 +614,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[语义式缩放控件指南](semantic-zoom.md)
 
-示例代码：[XAML GridView 组和 SemanticZoom 示例](http://go.microsoft.com/fwlink/p/?linkid=226564)
+示例代码：[XAML GridView 组和 SemanticZoom 示例](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>进度控件
 
@@ -665,7 +665,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[文本控件](text-controls.md)、[自动建议框控件指南](auto-suggest-box.md)
 
-示例代码：[AutoSuggestBox 迁移示例](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+示例代码：[AutoSuggestBox 迁移示例](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>多行文本框
 请参阅文本框。
@@ -684,7 +684,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[文本控件](text-controls.md)、[密码框控件指南](password-box.md) 
 
-示例代码：[XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?linkid=251417)
+示例代码：[XAML 文本显示示例](https://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>富编辑框
 使用户可以编辑带有格式化文本、超链接和图像等内容的富文本文档的控件。
@@ -697,7 +697,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[文本控件](text-controls.md)、[可编辑对话框控件指南](rich-edit-box.md)
 
-示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
+示例代码：[XAML 文本示例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>搜索框
 请参阅自动建议框
@@ -721,7 +721,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[文本控件](text-controls.md)、[文本块控件指南](text-block.md)、[RTF 块控件指南](rich-text-block.md)
 
-示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
+示例代码：[XAML 文本示例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>文本框
 单行或多行纯文本字段。
@@ -737,7 +737,7 @@ ms.locfileid: "6665708"
 
 设计和操作方法：[文本控件](text-controls.md)、[文本框控件指南](text-box.md) 
 
-示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
+示例代码：[XAML 文本示例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>选择控件
 

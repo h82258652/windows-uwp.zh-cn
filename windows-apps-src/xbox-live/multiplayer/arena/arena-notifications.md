@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
 ms.openlocfilehash: 2637603f129e40f3cdf2f2ca9cff8aa5dfb8a3e1
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6256132"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834089"
 ---
 # <a name="arena-notifications"></a>Arena 通知
 

@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bf8d5f1587cc27082944cf0fc63edc274cb2bc7d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6669168"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6835572"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>创建 NFC 智能卡应用
 
 
-**重要提示**本主题仅适用于 windows 10 移动版。
+**重要**本主题仅适用于 windows 10 移动版。
 
 Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。 这限制了未与 MNO 密切合作的其他商户或开发人员提供的各种可能的支付解决方案。 在 windows 10 移动版中，我们引入了称为主机卡仿真 (HCE) 的新的卡仿真技术。 HCE 技术使你的应用可以直接与 NFC 读卡器通信。 本主题演示了主机卡仿真 (HCE) 在 windows 10 移动版设备上的工作原理以及如何开发 HCE 应用，以便你的客户可以无需与 MNO 协作通过他们的手机而非物理卡访问你的服务。
 
@@ -38,9 +38,9 @@ Windows 10 移动版将实现提供以下功能的 HCE 服务。
 -   应用程序协议数据单元 (APDU) 命令和响应的冲突解决和路由将基于外部读卡器选择和用户首选项与已注册的其中一个应用进行配对。
 -   按照用户操作的结果处理应用的事件和通知。
 
-Windows 10 支持模拟智能卡基于 ISO-DEP (ISO-IEC 14443-4) 并使用 ISO-IEC 7816-4 规范定义的 apdu 进行通信。 Windows 10 支持 ISO/IEC 14443-4 类型 A 技术用于 HCE 应用。 默认情况下，类型 B、类型 F 和非 ISO-DEP（如 MIFARE）技术将路由到 SIM 卡。
+Windows 10 支持智能卡仿真智能卡基于 ISO-DEP (ISO-IEC 14443-4) 并使用 ISO-IEC 7816-4 规范定义的 apdu 进行通信。 Windows 10 支持 ISO/IEC 14443-4 类型 A 技术用于 HCE 应用。 默认情况下，类型 B、类型 F 和非 ISO-DEP（如 MIFARE）技术将路由到 SIM 卡。
 
-仅 windows 10 移动版设备的卡仿真功能还支持。 基于 sim 卡和基于 HCE 的卡仿真不可用于其他版本的 windows 10。
+仅 windows 10 移动版设备还支持卡仿真功能。 基于 sim 卡和基于 HCE 的卡仿真不可用于其他版本的 windows 10。
 
 在下图中显示了基于 HCE 和 SIM 卡的卡仿真支持的体系结构。
 
@@ -74,7 +74,7 @@ HCE 应用必须使用它们可以处理的特定 AID 自行注册，以便它�
 
 **与基于 SIM 卡的 NFC 应用程序共存**
 
-在 windows 10 移动版中，系统将设置用于在控制器层确认路由决策的 NFC 控制器路由表。 该表包含以下各项的路由信息。
+在 windows 10 移动版中，系统会 NFC 控制器路由表，可用于在控制器层确认路由决策。 该表包含以下各项的路由信息。
 
 -   单个 AID 路由。
 -   基于协议的路由 (ISO-DEP)。
@@ -326,7 +326,7 @@ Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartC
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-对基于 HCE 和 AID 的 UICC 路由的支持仅适用于最近发布的设备，例如 Lumia 730、830、640 和 640 XL。 任何运行 windows 10 移动版的新 NFC 能够设备应支持 HCE 和。 你的应用可以检查是否支持 HCE，如下所示。
+对基于 HCE 和 AID 的 UICC 路由的支持仅适用于最近发布的设备，例如 Lumia 730、830、640 和 640 XL。 任何新 NFC 功能的设备运行 windows 10 移动版和应支持 HCE。 你的应用可以检查是否支持 HCE，如下所示。
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
@@ -334,7 +334,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>锁定屏幕和屏幕关闭行为
 
-Windows 10 移动版具有设备级卡仿真设置，可以通过移动运营商或设备的制造商设置。 默认情况下，“点击以支付”切换处于禁用状态，并且“设备级的启用策略”设置为“始终”，除非 MO 或 OEM 重写这些值。
+Windows 10 移动版具有设备级卡仿真设置，它们可以通过移动运营商或设备的制造商设置。 默认情况下，“点击以支付”切换处于禁用状态，并且“设备级的启用策略”设置为“始终”，除非 MO 或 OEM 重写这些值。
 
 你的应用程序可以查询设备级的 [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) 的值，并针对每种情况执行操作，具体取决于每个状态中的应用的所需行为。
 
@@ -384,4 +384,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-* * 重要 * * Windows Phone 8.1 支持传统二进制短信拦截已删除并替换为新范围更广的短信支持在 windows 10 移动版中，但依赖的任何传统 Windows Phone 8.1 应用必须更新为使用新的 windows 10 移动版短信Api。
+* * 重要 * * Windows Phone 8.1 支持传统二进制短信拦截已删除并替换为新更广泛的短信支持在 windows 10 移动版中，但依赖的任何传统 Windows Phone 8.1 应用必须更新为使用新的 windows 10 移动版短信Api。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 482092e43acd6999361640e598a44391ac3f11a5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659192"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847337"
 ---
 # <a name="use-the-accelerometer"></a>使用加速计
 
@@ -33,7 +33,7 @@ ms.locfileid: "6659192"
 
 ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC #，和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
 
 你使用的设备或仿真器必须支持加速计。
 

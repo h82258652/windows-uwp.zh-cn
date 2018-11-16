@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b4da88a85535d6be97607663c96e416e226efb31
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6263994"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834073"
 ---
 # <a name="game-dvr-uris"></a>游戏 DVR URI
  
@@ -22,7 +22,7 @@ ms.locfileid: "6263994"
  
 仅主机可以录制游戏剪辑，但可以访问的任何设备可以显示剪裁。
  
-根据问题的 URI 的功能，这些 Uri 的域是：
+根据问题的 URI 的函数，提供了这些 Uri 的域：
  
    *  gameclipsmetadata.xboxlive.com 
    *  gameclipstransfer.xboxlive.com 
@@ -34,7 +34,7 @@ ms.locfileid: "6263994"
 
 [/public/scids/{scid}/clips](uri-publicscidclips.md)
 
-&nbsp;&nbsp;访问公开剪辑。 此 URI 实际上可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
+&nbsp;&nbsp;访问公共剪辑。 此 URI 实际上中可以指定两种形式，`/public/scids/{scid}/clips`和`/public/titles/{titleId}/clips`。 有关详细信息，请参阅下方。
 
 [/{uri}](uri-uri.md)
 

@@ -10,15 +10,15 @@ keywords: windows 10，uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: 041bf37072b595c0889bd1493857e508e27c510c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647806"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832509"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>运行、 调试和测试打包的桌面应用程序
 
-运行打包应用程序并查看其外观而无需对其进行签名。 然后，设置断点并单步执行代码。 当你已准备好在生产环境中测试你的应用程序时，对你的应用程序进行签名，然后安装它。 本主题演示如何执行以下各项操作。
+运行打包应用程序并查看其外观而无需对其进行签名。 然后，设置断点并单步执行代码。 当你准备好在生产环境中测试你的应用程序时，对你的应用程序进行签名，然后安装它。 本主题演示如何执行以下各项操作。
 
 <a id="run-app" />
 
@@ -39,10 +39,10 @@ Add-AppxPackage –Register AppxManifest.xml
 ```
 要启动应用，请在 Windows“开始”菜单中找到它。
 
-![在开始菜单中的已打包应用程序](images/desktop-to-uwp/converted-app-installed.png)
+![在开始菜单中打包的应用程序](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
-> 已打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
+> 打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
 
 ## <a name="debug-your-app"></a>调试应用
 
@@ -72,7 +72,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 在某些情况下，你可能希望更精细地控制调试过程，包括应用启动前调试你的应用程序的能力。
 
-你可以使用[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)来获取对包括暂停、 恢复和终止的应用程序生命周期的完全控制。
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)可用于获取对包括暂停、 恢复和终止的应用程序生命周期的完全控制。
 
 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 包含在 Windows SDK 中。
 
@@ -86,7 +86,7 @@ Visual Studio 对你的应用程序通过使用测试证书进行签名。 你�
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>测试使用 Desktop App Converter (DAC) 打包的应用程序
 
-如果使用 Desktop App Converter 打包你的应用程序，你可以使用``sign``参数，以自动对你的应用程序通过使用生成的证书进行签名。 必须安装该证书，然后再安装应用。 请参阅[运行打包的应用](desktop-to-uwp-run-desktop-app-converter.md#run-app)。   
+如果你使用 Desktop App Converter 打包你的应用程序，你可以使用``sign``参数，以自动对你的应用程序使用生成的证书进行签名。 必须安装该证书，然后再安装应用。 请参阅[运行打包的应用](desktop-to-uwp-run-desktop-app-converter.md#run-app)。   
 
 
 ### <a name="manually-sign-apps-optional"></a>手动对应用进行签名（可选）
@@ -97,7 +97,7 @@ Visual Studio 对你的应用程序通过使用测试证书进行签名。 你�
 
 2. 将该证书安装到系统上**受信任根**或**受信任人**证书存储区中。
 
-3. 通过使用该证书对你的应用程序，请参阅[签名的应用包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
+3. 通过使用该证书对你的应用程序，请参阅[签名应用包使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
   > [!IMPORTANT]
   > 确保证书上的发布者名称与应用的发布者名称匹配。
@@ -107,9 +107,9 @@ Visual Studio 对你的应用程序通过使用测试证书进行签名。 你�
     [SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
 
 
-### <a name="test-your-application-for-windows-10-s"></a>测试你的应用程序适用于 Windows 10 S
+### <a name="test-your-application-for-windows-10-s"></a>测试应用程序适用于 Windows 10 S
 
-在发布你的应用之前，请确保在运行 Windows 10 s。 设备上它也将正常运行事实上，如果你打算发布到 Microsoft 应用商店应用程序，你必须执行此操作因为这是应用商店要求。 无法在运行 Windows 10 S 的设备上正常运行的应用将不会通过认证。
+在发布你的应用之前，请确保，它将设备上正常运行 Windows 10 s。事实上，如果你打算发布到 Microsoft 应用商店应用程序，你必须执行此操作因为这是应用商店要求。 无法在运行 Windows 10 S 的设备上正常运行的应用将不会通过认证。
 
 请参阅[测试适用于 Windows 10 S 的 Windows 应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)。
 

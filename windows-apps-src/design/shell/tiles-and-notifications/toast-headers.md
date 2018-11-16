@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 标题, toast 标题, 通知, toast 分组, 操作中心
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc515b811a11be045ce80ed816708d230720a29
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664788"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834306"
 ---
 # <a name="toast-headers"></a>Toast 标题
 

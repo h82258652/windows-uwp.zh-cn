@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: 在 Microsoft Store 提交 API 中使用此方法创建加载项注册到 PartnerCenter 帐户的应用。
+description: 在 Microsoft Store 提交 API 中使用此方法创建加载项，为注册到你 PartnerCenter 帐户的应用。
 title: 创建加载项
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648051"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855592"
 ---
 # <a name="create-an-add-on"></a>创建加载项
 

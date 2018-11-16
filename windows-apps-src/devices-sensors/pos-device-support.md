@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662887"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842435"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 
@@ -37,7 +37,7 @@ ms.locfileid: "6662887"
 | Honeywell     | N5680                          | 2D         | 内置     | 组件    | HID 的 POS 扫描仪           |
 | Honeywell     | N3680                          | 2D         | 内置     | 组件    | HID 的 POS 扫描仪           |
 | Honeywell     | 轨道 7190g                    | 2D         | USB          | 演示 | HID 的 POS 扫描仪           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | 计数器   | HID 的 POS 扫描仪           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | 在计数器   | HID 的 POS 扫描仪           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | 手持     | HID 的 POS 扫描仪           |

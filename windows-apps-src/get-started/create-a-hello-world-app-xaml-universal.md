@@ -8,16 +8,16 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 28b30a592951017fb4a0b3803261cb0258be6ae3
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466458"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844546"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单"Hello，world"应用的 windows 10 上的 Windows 通用平台 (UWP)。 通过在 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 windows 10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单"Hello，world"应用的通用 Windows 平台 (UWP) 在 windows 10。 通过在 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 windows 10 设备上运行的应用。
 
 在此处，你将了解如何：
 
@@ -50,7 +50,7 @@ ms.locfileid: "6466458"
 
 3.  从左侧的模板列表中，选择**已安装 > Visual C# > Windows 通用**以查看 UWP 项目模板列表。
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[进行设置](get-set-up.md)。）
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以通过在**新建项目**对话框中单击*打开 Visual Studio 安装程序*来重复安装流程并添加 UWP 支持。 请参阅[准备工作](get-set-up.md)。）
 
     ![如何重复安装流程](images/win10-cs-install.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "6466458"
 -   包括依赖项、 资源以及你的应用包含的文件的列表。
 
 *一组徽标图像*
--   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中或范围大小） 在开始菜单中。
+-   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中等或范围大小） 在开始菜单中。
 -   Assets/Square44x44Logo.png 表示你的应用的开始菜单、 任务栏和任务管理器应用列表中。
 -   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
@@ -204,7 +204,7 @@ ms.locfileid: "6466458"
 
 3.  编辑 *MainPage.xaml.cs*（即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
 
-```C#
+```cs
 private void Button_Click(object sender, RoutedEventArgs e)
 {
 
@@ -213,18 +213,18 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
   让我们更改它，使它如下所示：
 
-```C#
+```cs
 private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MediaElement mediaElement = new MediaElement();
-            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
-            mediaElement.SetSource(stream, stream.ContentType);
-            mediaElement.Play();
-        }
+{
+    MediaElement mediaElement = new MediaElement();
+    var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+    Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
+    mediaElement.SetSource(stream, stream.ContentType);
+    mediaElement.Play();
+}
 ```
 
-此外，确保包含了 **async** 关键字，否则尝试运行应用时会出错。
+请确保为将方法签名现在包含**异步**关键字，或当你尝试运行应用时，你将收到错误。
 
 ### <a name="what-did-we-just-do"></a>我们刚才做了什么？
 

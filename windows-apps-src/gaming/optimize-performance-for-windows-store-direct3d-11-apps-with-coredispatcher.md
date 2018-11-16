@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 输入延迟
 ms.localizationpriority: medium
 ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646058"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844533"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 

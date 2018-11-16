@@ -12,19 +12,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 028cc9586180f2d94337282c3ed0cd58317b539b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653852"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832276"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
 
-在通用 Windows 平台 (UWP) 应用中，*命令元素*是使用户可以执行发送电子邮件、 删除项或提交表单等操作的交互式 UI 元素。 *命令接口*组成常见命令元素、 承载它们的命令图面、 它们支持的交互以及它们提供的体验。
+在通用 Windows 平台 (UWP) 应用中，*命令元素*是使用户可以执行诸如发送一封电子邮件、 删除项或提交表单等操作的交互式 UI 元素。 *命令接口*组成常见命令元素、 承载它们的命令图面、 它们支持的交互以及它们提供的体验。
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳的命令体验
 
-命令界面的最重要方面是什么你尝试让用户完成操作。 规划你的应用的功能，请考虑完成这些任务和你想要启用的用户体验所需的步骤。 完成这些体验的初始草稿后，你可以使的工具和交互的决策，以实现它们。
+命令界面的最重要方面是什么你尝试让用户完成。 规划你的应用的功能时，请考虑完成这些任务和你想要启用的用户体验所需的步骤。 一旦你已完成这些体验的初始草稿，然后做出的决策的工具和交互以实现它们。
 
 下面是一些常见的应用程序体验：
 
@@ -34,7 +34,7 @@ ms.locfileid: "6653852"
 - 打开、保存和删除文件
 - 编辑或创建内容
 
-有创意的命令体验的设计。 选择你的应用的输入设备支持，并且你的应用如何响应每台设备。 通过支持最广泛的功能和首选项为可用，移植，且可访问尽可能使你的应用。
+通过使用命令体验的设计。 选择你的应用的输入设备支持，并且你的应用如何响应每台设备。 通过支持最广泛的功能和首选项为可用，移植，且可访问尽可能使你的应用。
 
 
 
@@ -44,7 +44,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="choose-the-right-command-elements"></a>选择正确的命令元素
 
-在命令界面中使用正确的元素可以使直观的易用应用和费解、 令人困惑的应用之间的区别。 在通用 Windows 平台 (UWP) 提供的全套命令元素。 下面是列出了一些最常见的 UWP 命令元素。
+在命令界面中使用正确的元素可以使直观的易于使用应用和费解、 令人困惑的应用之间的区别。 在通用 Windows 平台 (UWP) 提供的全套命令元素。 下面是列出了一些最常见的 UWP 命令元素。
 
 :::row:::
     :::column:::
@@ -100,11 +100,11 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="place-commands-on-the-right-surface"></a>将命令放置在合适的图面上
 
-在你的应用，包括应用画布或特殊命令容器，例如命令栏、 命令栏浮出控件、 菜单栏上或对话框中，可以将命令元素放置在多个图面。
+在你的应用，包括应用画布或特殊命令容器，例如命令栏、 命令栏浮出控件、 菜单栏上或对话框中，可以将命令元素放置在各种图面上。
 
-始终尝试让用户直接操纵内容而不是通过命令作用于内容，如拖放以重新排列列表项而不是上移和下移命令按钮。 
+始终尝试让用户直接操作内容而不是通过命令作用于内容，如拖放以重新排列列表项而不是上移和下移命令按钮。 
 
-但是，这可能无法使用某些输入设备，或当以适应特定用户能力和首选项。 在这些情况下，尽可能情况下，提供尽可能多的命令提示并将这些命令元素放置在应用中的命令图面上。
+但是，这可能不可能与某些输入设备，或适应特定用户能力和首选项。 在这些情况下，尽可能情况下，提供尽可能多的命令提示并将这些命令元素放置在应用中的命令图面上。
 
 下面列出了一些最常见的命令图面。
 
@@ -144,7 +144,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="provide-command-feedback"></a>提供命令反馈 
 
-命令反馈表达给用户，检测到的交互或命令，它是如何解释和处理，和是否它是成功还是失败。 这有助于用户了解他们做了，以及他们下一步可以做。 理想的情况下，应该在 UI 中自然地集成反馈，这样用户就不必被打断或采取额外行动（除非绝对有必要）。
+命令反馈与用户通信，，检测到的交互或命令、 如何它已解释和处理，以及是否已成功或不。 这有助于用户了解他们做了，以及他们下一步可以做。 理想的情况下，应该在 UI 中自然地集成反馈，这样用户就不必被打断或采取额外行动（除非绝对有必要）。
 
 > [!NOTE]
 > 不提供反馈，除非绝对必要和反馈在其他地方不可用。 保持你的应用程序 UI 干净整洁除非你要添加的值。
@@ -168,7 +168,7 @@ When designing a command interface, the most important decision is choosing what
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">浮出控件</a>是可以通过点击或单击浮出控件之外的某个位置来消除轻型上下文弹出窗口。
 :::row-end:::
 
 :::row:::

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669534"
+ms.locfileid: "6832945"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>从网页中安装 UWP 应用
 
@@ -31,7 +31,7 @@ ms.locfileid: "6669534"
 ### <a name="requirements-for-protocol-activation-scheme"></a>协议激活方案的要求
 
 1. Web 服务器需要支持字节范围请求 (HTTP/1.1)
-    - 支持 HTTP/1.1 协议的服务器都必须支持字节范围请求 
+    - 支持 HTTP/1.1 协议的服务器都应具有支持字节范围请求 
 2. Web 服务器将需要知道的有关 Windows 10 应用包的内容类型
     - 下面介绍了如何将新的内容类型声明为[web 配置文件](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)的一部分
 

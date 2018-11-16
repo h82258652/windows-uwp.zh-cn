@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c3c4a9e46ce38298d7dcdd50477c4de0e9960c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6453438"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6835353"
 ---
 # <a name="animations-in-xaml"></a>XAML 中的动画
 
@@ -351,7 +351,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 与过渡动画不同，主题动画没有自动运行的内置触发器（过渡）。 你必须使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 来包含主题动画，才能在 XAML 中定义它。 还可以更改动画的默认表现方式。 例如，可以通过增加 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 时间值来放缓淡出。
 
-**请注意**对于显示基本动画技术的用途，我们将使用应用代码启动动画，通过调用[**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)的方法。 你可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 和 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
+**注意**对于显示基本动画技术的用途，我们将使用应用代码启动动画，通过调用[**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)的方法。 你可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 和 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
 
  
 

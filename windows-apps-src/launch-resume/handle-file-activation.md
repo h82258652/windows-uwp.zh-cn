@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 9f1e41c3e09d9a711ce9174a5a658a55c7c44abd
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667646"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6835161"
 ---
 # <a name="handle-file-activation"></a>处理文件激活
 
@@ -33,7 +33,7 @@ ms.locfileid: "6667646"
 
 这些步骤显示了如何注册自定义文件类型 .alsdk，以及在用户启动 .alsdk 文件时如何激活你的应用。
 
-> **请注意**在 UWP 应用中，某些 Uri 和文件扩展都保留以供内置应用和操作系统。 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 有关详细信息，请参阅[保留的文件和 URI 方案名](reserved-uri-scheme-names.md)。
+> **注意**在 UWP 应用中，某些 Uri 和文件扩展保留以供内置应用和操作系统。 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 有关详细信息，请参阅[保留的文件和 URI 方案名](reserved-uri-scheme-names.md)。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>步骤 1：指定程序包清单中的扩展点
 
@@ -125,7 +125,7 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 > [!NOTE]
 > 通过文件合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
 
-我们建议你创建一个新 XAML**框架**为打开新页面的每个激活事件。 这种方式，新 XAML 框架的导航 backstack 不包含应用暂停时在当前窗口可能具有所有早期内容。 如果你决定启动和文件合约使用单个 XAML**框架**，则应导航到新页面之前清除该**框架**的导航日志中的页面。
+我们建议你创建一个新的 XAML**框架**的每个激活事件打开新页面。 这样一来的导航 backstack，新 XAML 框架不包含应用暂停时在当前窗口可能具有所有早期内容。 如果你决定启动和文件合约使用单个 XAML**框架**，则应导航到新页面之前清除该**框架**的导航日志中的页面。
 
 通过文件激活启动应用时，你应该考虑包括允许用户返回到应用顶部页面的 UI。
 

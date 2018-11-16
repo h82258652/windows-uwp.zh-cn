@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6446374"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844619"
 ---
 # <a name="bc6h-format"></a>BC6H 格式
 
@@ -32,7 +32,7 @@ BC6H 由以下 DXGI \ _FORMAT 枚举值指定：
 -   **DXGI\_FORMAT\_BC6H\_UF16**。 此 BC6H 格式不使用 16 位浮点颜色通道值中的符号位。
 -   **DXGI\_FORMAT\_BC6H\_SF16**。 此 BC6H 格式使用 16 位浮点颜色通道值中的符号位。
 
-**请注意** 16 位浮点颜色通道格式通常称为"半"浮点格式。 此格式具有以下位布局：
+**注意** 16 位浮点颜色通道格式通常称为"半"浮点格式。 此格式具有以下位布局：
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16（无符号浮点） | 5 个指数位 + 11 个尾数位              |

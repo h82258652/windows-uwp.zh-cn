@@ -9,18 +9,18 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: d5e84e2e124a8ca6cac814dfb05120a8e6137ac3
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6280431"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6837507"
 ---
 # <a name="configure-achievements-2017-in-partner-center"></a>在合作伙伴中心中配置 Achievements 2017
 
 > [!IMPORTANT]
 > 成就仅适用于 ID@Xbox 或托管合作伙伴。 参加 Xbox Live 创意者计划的游戏不受支持。
 
-你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)配置与你的游戏相关联的[Achievements 2017](../../achievements-2017/simplified-achievements.md) 。 通过以下操作添加新成就：
+[合作伙伴中心](https://partner.microsoft.com/dashboard)可用于配置与你的游戏相关联的[Achievements 2017](../../achievements-2017/simplified-achievements.md) 。 通过以下操作添加新成就：
 
 1. 导航至游戏中的“成就”部分，位于**服务** > **Xbox Live** > **成就**下。
 2. 单击**新成就**按钮并填写表格。  完成后，单击**保存**。

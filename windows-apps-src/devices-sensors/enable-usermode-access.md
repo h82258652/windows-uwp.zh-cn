@@ -9,11 +9,11 @@ keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
 ms.openlocfilehash: ead1ef6dc9c9a840b61b1d18567860d85201b26a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669394"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852339"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 
@@ -746,7 +746,7 @@ devcon status *msft8000
 
 现在 rhproxy 已经运行，它应该已经创建了可由用户模式访问的设备接口。 我们将使用几种命令行工具来枚举设备，并查看它们是否显示。
 
-克隆[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存储库并生成`GpioTestTool`、 `I2cTestTool`， `SpiTestTool`，并且`Mincomm`示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
+克隆[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存储库并生成`GpioTestTool`， `I2cTestTool`， `SpiTestTool`，并且`Mincomm`示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
 
 ```ps
 I2cTestTool.exe -list

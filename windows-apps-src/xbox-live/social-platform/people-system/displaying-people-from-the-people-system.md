@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e02b11a12c77c3be3d1ae2951d6c174c0ac6283
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272707"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836211"
 ---
 # <a name="display-people-from-the-people-system"></a>显示来自人脉系统的联系人
 

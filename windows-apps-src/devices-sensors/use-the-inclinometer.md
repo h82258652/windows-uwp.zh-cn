@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd335d56fb2a01ed1b9255f974bcaacd47f623f5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649597"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850976"
 ---
 # <a name="use-the-inclinometer"></a>使用测斜仪
 
@@ -33,7 +33,7 @@ ms.locfileid: "6649597"
 
  ## <a name="prerequisites"></a>先决条件
 
-你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC #，和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、 Microsoft VisualC # 和事件。
 
 你使用的设备或仿真器必须支持测斜仪。
 

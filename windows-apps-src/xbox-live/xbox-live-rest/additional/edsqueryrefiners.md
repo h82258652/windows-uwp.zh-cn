@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 52cbb5240c686d79d2b0532e46d7bf2f6dd85066
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6264160"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6831928"
 ---
 # <a name="eds-query-refiners"></a>EDS 查询优化器
  
@@ -22,15 +22,15 @@ ms.locfileid: "6264160"
 
   
  
-可以使用以下参数来优化对更有针对性的项目集的娱乐发现服务 (EDS) 查询。 所有这些参数必需的任何 API 中，但他们要接受在接受查询优化器的任何 API。
+以下参数可以用于优化到更有针对性的一组项娱乐发现服务 (EDS) 查询。 所有这些参数必需的任何 API 中，但是要接受任何 API 接受查询优化器中。
  
 参数名称可以传入中作为值的任何"queryRefiners"参数。 此随后返回如果与查询精选重复请求将返回的项数应用，按查询精选的每个值。
  
-下面是这实际上可能工作的方式：
+下面是这可能会中的工作方式做法：
  
    * 浏览 api 调用，包括参数"queryRefiners = 流派"。
-   * 该 API 将返回八个游戏。 除了项，每个流派包含多个项的列表将返回，以及多少项属于该流派。 对于游戏时，这可能是"射击： 3，拼图： 5"。
-   * 由另一个查询。 它等同于第一，不同之处在于，"流派 = 射击"添加。
+   * 该 API 将返回八个游戏。 除了项，每个流派包含多个项的列表将返回，以及有多少项属于该流派。 对于游戏时，这可能是"射击： 3，拼图： 5"。
+   * 由另一个查询。 它等同于第一个不同之处在于，"流派 = 射击"添加。
    * 现在，则响应将包含仅涉及三个游戏，所有这些属于"射击游戏"类别。
   
 | 参数| 数据类型| 说明| 
@@ -38,14 +38,14 @@ ms.locfileid: "6264160"
 | <b>十年期</b>| 字符串| 在其中的所有项必须已都发布的十年期。| 
 | <b>流派</b>| 字符串的数组| 所有项都必须都有流派的列表。| 
 | <b>labelOwner</b>| 字符串| 与艺术家、 唱片集或跟踪关联的音乐标签。| 
-| <b>网络</b>| 字符串的数组| 在创建项目的网络。| 
+| <b>网络</b>| 字符串的数组| 创建项目的网络。| 
 | <b>studio</b>| 字符串的数组| 创建项目 studio。| 
 | <b>xboxAppCategories</b>| 字符串的数组| 所有 Xbox 应用都必须都包含的类别的列表。| 
-| <b>xboxAvatarClothes</b>| 字符串的数组| 所有 Xbox 虚拟形象项目必须都具有衣服类型的列表。| 
-| <b>xboxAvatarStores</b>| 字符串的数组| 属于哪个所有 Xbox 虚拟形象项目必须的存储的列表。| 
-| <b>xboxGamePublisherBits</b>| 字符串的数组| 游戏发布者位，必须在所有 GameType 项目或 AppType 项目上设置的列表。| 
-| <b>xboxIsBrowsable</b>| 布尔值| 如果<b>true</b>，将返回完整的游戏不是直接操作除了可操作的内容。 默认值为<b>false</b>。| 
-| <b>xboxHasChildMediaItemTypes</b>| 字符串的数组| 游戏的媒体组的所有返回的项目必须具有子元素的媒体项目类型是一个提供的值。| 
+| <b>xboxAvatarClothes</b>| 字符串的数组| 所有 Xbox 头像项必须都具有衣服类型的列表。| 
+| <b>xboxAvatarStores</b>| 字符串的数组| 属于哪个所有 Xbox 头像项目必须的存储的列表。| 
+| <b>xboxGamePublisherBits</b>| 字符串的数组| 游戏发布者位，必须对所有 GameType 项目或 AppType 项设置列表。| 
+| <b>xboxIsBrowsable</b>| 布尔值| 如果<b>true</b>，将返回完整游戏直接不可除了可操作的内容。 默认值为<b>false</b>。| 
+| <b>xboxHasChildMediaItemTypes</b>| 字符串的数组| 游戏的媒体组的所有返回的项目必须具有其媒体项目类型是一个提供的值的子元素。| 
   
 <a id="ID4EEF"></a>
 

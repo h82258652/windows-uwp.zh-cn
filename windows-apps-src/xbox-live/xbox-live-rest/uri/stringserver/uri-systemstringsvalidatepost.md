@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c3364d3020627aa0d0826a390bf5c4f0b633af8
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6264621"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834214"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
-接受用于验证字符串的数组，并返回数组大小相同的结果。 这些 Uri 的域是`client-strings.xboxlive.com`。
+接受一个用于验证字符串数组并返回结果同等大小的数组。 这些 Uri 的域是`client-strings.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [需的请求标头](#ID4EIB)
@@ -37,7 +37,7 @@ ms.locfileid: "6264621"
  
 
 > [!NOTE] 
-> 生成<b>VerifyStringResult</b>将仅报告第一个字符串中的有问题单词。 可能有其他冲突字符串中的字词。 如果你打算替换为有问题的字词，以使字符串可用，你应替换为有问题的单词或子字符串，然后重新检查要查找其他有问题的子字符串的字符串。  
+> 生成<b>VerifyStringResult</b>将仅报告第一个字符串中的有问题单词。 可能有其他冲突字符串中的字词。 如果你打算替换为有问题的字词，以使字符串可用，你应替换为有问题的单词或子字符串，然后重新验证要查找其他有问题的子字符串的字符串。  
 
  
   
@@ -83,7 +83,7 @@ ms.locfileid: "6264621"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | 
@@ -91,14 +91,14 @@ ms.locfileid: "6264621"
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 406| 不允许| 缺少<b>content-type: application/json</b>标头。| 
-| 408| 请求超时| 服务可能不理解格式不正确的请求。 通常无效参数。| 
+| 408| 请求超时| 服务可能不理解格式不正确的请求。 通常参数无效。| 
   
 <a id="ID4ETF"></a>
 
  
 ## <a name="response-body"></a>响应正文
  
-返回[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，该请求数组大小相同的数组。
+返回的[VerifyStringResult (JSON)](../../json/json-verifystringresult.md)，与请求数组大小相同的数组。
   
 <a id="ID4EAG"></a>
 

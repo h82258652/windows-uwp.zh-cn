@@ -8,17 +8,17 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: 070cb8929ac7a3b0f5041abc0383afb71182223d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673050"
+ms.locfileid: "6837939"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>获取错误报告数据在 Xbox One 游戏
 
 使用 Microsoft Store 分析 API，获取聚合错误报告数据在 Xbox One 游戏中通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析开发人员中心仪表板中的此方法。
 
-你可以通过使用[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)、[获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)，并[下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)的方法来检索其他错误信息。
+你可以通过使用的[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)、[获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)，并[下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)的方法来检索其他错误信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -49,7 +49,7 @@ ms.locfileid: "6673050"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其检索错误报告数据的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| applicationId | 字符串 | 要为其检索错误报告数据的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
 | startDate | date | 要检索的错误报告数据日期范围中的开始日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。  |  否  |
 | endDate | date | 要检索的错误报告数据日期范围中的结束日期。 默认值为当前日期。 如果 *aggregationLevel* 是 **day**、**week** 或 **month**，此参数应采用 ```mm/dd/yyyy``` 格式指定日期。 如果 *aggregationLevel* 是 **hour**，此参数可以采用 ```mm/dd/yyyy``` 格式指定日期或者采用 ```yyyy-mm-dd hh:mm:ss``` 格式指定日期和时间。 |  否  |
 | top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
@@ -90,14 +90,14 @@ Authorization: Bearer <your access token>
 
 | 值           | 类型    | 说明        |
 |-----------------|---------|---------------------|
-| date            | string  | 错误数据的日期范围内的第一个日期，格式为 ```yyyy-mm-dd```。 如果请求指定某一天，此值就是该日期。 如果请求指定更长的日期范围，此值则是该日期范围的第一个日期。 对于指定**小时** *aggregationLevel*值的请求，此值还包括一个时间值的格式```hh:mm:ss```在本地时区发生了错误。  |
+| date            | string  | 错误数据的日期范围内的第一个日期，格式为 ```yyyy-mm-dd```。 如果请求指定某一天，此值就是该日期。 如果请求指定更长的日期范围，此值则是该日期范围的第一个日期。 对于*aggregationLevel*的值指定为**小时**的请求，此值还包括一个时间值的格式```hh:mm:ss```在本地时区发生了错误。  |
 | applicationId   | 字符串  | 你要为其检索错误数据的 Xbox One 游戏的产品 ID。   |
 | applicationName | 字符串  | 游戏的显示名称。   |
 | failureName     | string  | 故障的名称，它由四个部分组成：一个或多个问题类、异常/错误检查代码、发生故障的映像的名称和相关的函数名称。  |
 | failureHash     | 字符串  | 错误的唯一标识符。   |
 | symbol          | 字符串  | 分配给该错误的符号。 |
 | osVersion       | 字符串  | 出现错误的操作系统版本。 此值始终是**Windows 10**。  |
-| osRelease       | 字符串  |  用于指定的 Windows 10 操作系统版本或外部测试 ring （作为操作系统版本内的亚组） 发生了错误的以下字符串之一。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>预览体验成员 - 快</strong></li><li><strong>预览体验成员 - 慢</strong></li></ul><p>如果操作系统版本或外部测试 Ring 未知，则此字段的值为 <strong>Unknown</strong>。</p>    |
+| osRelease       | 字符串  |  用于指定 Windows 10 操作系统版本或外部测试 ring （作为操作系统版本内的亚组） 发生了错误的以下字符串之一。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>预览体验成员 - 快</strong></li><li><strong>预览体验成员 - 慢</strong></li></ul><p>如果操作系统版本或外部测试 Ring 未知，则此字段的值为 <strong>Unknown</strong>。</p>    |
 | eventType       | 字符串  | 以下字符串之一：<ul><li>**crash**</li><li>**hang**</li><li>**内存故障**</li></ul>      |
 | market          | 字符串  | 设备市场的 ISO 3166 国家/地区代码。   |
 | deviceType      | 字符串  | 出现错误的设备的类型。 此值始终是**控制台**。    |
@@ -140,7 +140,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [获取游戏在 Xbox One 中错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
+* [获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
 * [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)

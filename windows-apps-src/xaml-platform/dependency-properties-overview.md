@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fbf6e7ee8a224a6957428fddd11a2922adbecf4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6668185"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832905"
 ---
 # <a name="dependency-properties-overview"></a>依赖属性概述
 
@@ -23,7 +23,7 @@ ms.locfileid: "6668185"
 
 依赖属性是一种特定类型的属性。 这种属性的特殊之处在于，其属性值受到 Windows 运行时中专用属性系统的跟踪和影响。
 
-为了支持依赖属性，定义该属性的对象必须是一个 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)（也就是说，一个在其继承中的某个位置具有 **DependencyObject** 基类的类）。 使用适用于 UWP 应用使用 XAML UI 定义的类型的许多将**DependencyObject**子类，并且将支持依赖属性。 但是，对于任何来自 Windows 运行时命名空间的类型，如果其名称中没有“XAML”，便不支持依赖属性；这种类型的属性都是普通属性，它们不具有属性系统的依赖行为。
+为了支持依赖属性，定义该属性的对象必须是一个 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)（也就是说，一个在其继承中的某个位置具有 **DependencyObject** 基类的类）。 使用适用于 UWP 应用使用 XAML UI 定义的类型的许多**DependencyObject**子类，且会将支持依赖属性。 但是，对于任何来自 Windows 运行时命名空间的类型，如果其名称中没有“XAML”，便不支持依赖属性；这种类型的属性都是普通属性，它们不具有属性系统的依赖行为。
 
 依赖属性的用途是提供一种系统方式，用来基于其他输入（在应用运行时其内部出现的其他属性、事件和状态）计算属性的值。 其他输入可能包括：
 
@@ -32,7 +32,7 @@ ms.locfileid: "6668185"
 - 多用途模板模式，例如资源和样式
 - 通过与对象树中其他元素的父子关系知道的值
 
-依赖属性代表或支持编程模型的某种特定功能，用于定义 Windows 运行时应用中使用 XAML 的 UI 和 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 的代码。 这些功能包括：
+依赖属性代表或支持编程模型的某种特定功能，用于定义 Windows 运行时应用中的使用 XAML 编写 UI 和 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 的代码。 这些功能包括：
 
 - 数据绑定
 - 样式

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653865"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836739"
 ---
 # <a name="get-add-ons-for-an-app"></a>获取应用的加载项
 
-在 Microsoft Store 提交 API 中使用此方法，列出注册到你的合作伙伴中心帐户的应用的加载项。
+在 Microsoft Store 提交 API 中使用此方法，列出，为注册到你的合作伙伴中心帐户的应用的加载项。
 
 ## <a name="prerequisites"></a>先决条件
 

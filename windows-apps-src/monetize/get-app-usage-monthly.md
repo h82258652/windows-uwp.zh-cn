@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
 ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665067"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848783"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 
-在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式的聚合的使用情况数据 （不包括 Xbox 多人游戏） 获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
+在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序聚合的使用情况数据 （不包括 Xbox 多人游戏）。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -58,7 +58,7 @@ ms.locfileid: "6665067"
 
 ### <a name="request-example"></a>请求示例
 
-以下示例演示用于获取每月的应用使用情况数据的请求。 将 *applicationId* 值替换为你的应用的 Store ID。
+下面的示例演示了一个请求用于获取每月的应用使用情况数据。 将 *applicationId* 值替换为你的应用的 Store ID。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/usagemonthly?applicationId=XXXXXXXXXXXX&startDate=2018-06-01&endDate=2018-07-01 HTTP/1.1  
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                                           |
 | monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                                        |
 | monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户数。                    |
-| averageDailyActiveUsers   | Double  | 每天都使用该应用的客户的平均数量。                             |
+| averageDailyActiveUsers   | Double  | 每天都使用应用的客户的平均数量。                             |
 | averageDailyActiveDevices | Double  | 用于与应用交互的所有用户每天设备的平均数量。 |
 
 

@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10，uwp，流式处理安装，uwp 应用流式安装
 ms.localizationpriority: medium
 ms.openlocfilehash: e4915d2fb4d1133cd190d766d38c79934d9f3956
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654625"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852306"
 ---
 # <a name="uwp-app-streaming-install"></a>UWP 应用流式安装
 借助通用 Windows 平台 (UWP) 应用流式安装，可指定希望 Microsoft Store 首先下载应用的哪些部分。 当首先下载了该应用的基本文件后，用户就可以启动该应用并与其进行交互，而应用的其余部分则会在后台完成下载。 
 
-若要使用 UWP 应用流式安装将需要划分部分应用的文件。 若要执行此操作，将创建内容组映射，这是与你的应用打包在一起的 XML 文件，允许你设置下载优先级和顺序。 请参阅下面链接的详细信息的主题。
+若要使用 UWP 应用流式安装将需要划分部分应用的文件。 若要执行此操作，你将创建内容组映射，这是与你的应用打包在一起的 XML 文件，允许你设置下载优先级和顺序。 请参阅下面链接的详细信息的主题。
 
-有关添加到你的 UWP 应用的 UWP 应用流式安装的完整指南，请查看此[博客系列](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+有关添加到你的 UWP 应用的 UWP 应用流式安装的完整指南，请观看此[博客系列](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
 
 | 主题 | 说明 | 
 |-------|-------------|

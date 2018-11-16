@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662664"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6835893"
 ---
 # <a name="get-file-properties"></a>获取文件属性
 
@@ -47,7 +47,7 @@ ms.locfileid: "6662664"
 
 很多顶级文件属性都可以作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类的成员进行访问。 这些属性包括文件属性、内容类型、创建日期、显示名称和文件类型等。
 
-**请注意**请记住声明**picturesLibrary**功能。
+**注意**请记住声明**picturesLibrary**功能。
 
  
 

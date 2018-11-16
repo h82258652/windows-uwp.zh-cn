@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 36081c14cfb75a1cedb103ba17eff4a05f5e4e83
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6674285"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843724"
 ---
 # <a name="bringing-it-together"></a>综合运用
 
@@ -97,9 +97,9 @@ ms.locfileid: "6674285"
 - [边框](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-可以更改隐式动画的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个的转换类型。
+可以更改隐式动画的每个属性都有相应的_转换_属性。 属性进行动画处理，你将过渡类型分配到相应的_转换_属性。 此表显示_转换_属性以及用于每个转换类型。
 
-| 动画的属性 | 转换属性 | 隐式转换类型 |
+| 动画化的属性 | 转换属性 | 隐式转换类型 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |

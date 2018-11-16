@@ -8,11 +8,11 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab8e8c18a0b1db0991bf470f194f8774f2357b4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669122"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6833722"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent 设计系统的 Windows 应用创意者
 
@@ -26,7 +26,7 @@ Fluent Design 系统是用于创建自适应、 共鸣和美观用户界面的�
 
 **自适应：Fluent 体验在每台设备上都显得自然**
 
-Fluent 体验可根据环境进行调整。 Fluent 体验感觉舒适平板电脑、 台式机、 和 Xbox 上，它甚至可以很好运行混合现实头戴显示设备上。 此外，当你添加更多硬件时（例如用于电脑的一台额外显示器），Fluent 体验将利用它。
+Fluent 体验可根据环境进行调整。 Fluent 体验感觉舒适平板电脑、 台式机、 和 Xbox 上-它甚至可以很好运行混合现实头戴显示设备上。 此外，当你添加更多硬件时（例如用于电脑的一台额外显示器），Fluent 体验将利用它。
 
 **共鸣：Fluent 体验直观且强大**
 
@@ -37,11 +37,11 @@ Fluent 体验可根据行为和意图进行调整 &mdash; 它们能了解和预�
 通过融入物理世界的元素，Fluent 体验挖掘到了根本的东西。 它运用光线、阴影、运动、深度和纹理，以一种直观和本能的方式整理信息。
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>应用到你的应用的 UWP 的 Fluent 设计
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>将 Fluent Design 应用于与 UWP 应用
 
 ![Fluent 设计徽标](images/fluentdesign_header.png)
 
-我们的设计指南中介绍如何适用于应用的 Fluent 设计原则。 哪种类型的应用？ 尽管我们的指南中的许多可应用于任何平台，我们创建了 UWP （通用 Windows 平台） 以支持 Fluent Design。
+我们的设计指南中介绍如何适用于应用的 Fluent 设计原则。 哪种类型的应用？ 尽管我们的指南中的许多可应用于任何平台，我们创建了 UWP （通用 Windows 平台） 以支持 Fluent 设计。
 
 Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素和通用输入系统）是自动的。 你无需编写额外的代码，可以直接使用这些功能。 其他功能（如亚克力）是可选的；你需要通写用于包含它们代码，从而将它们添加到应用。
 
@@ -49,7 +49,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素
 
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
-除了设计指南，我们 Fluent Design 文章还向你介绍如何编写代码，使你的设计发生这种情况。 UWP 使用 XAML 中，可轻松创建用户界面的基于标记语言。 下面是一个示例：
+除了设计指南，我们 Fluent Design 文章还向你介绍如何编写代码，使你的设计发生这种情况。 UWP 使用 XAML 中，可简化创建用户界面的基于标记的语言。 下面是一个示例：
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
@@ -118,7 +118,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（如有效像素
 
 ## <a name="make-it-intuitive"></a>使直观
 
-当它的行为，用户期望到它的方法，该体验就显得直观。 通过使用已建立的控件和模式并利用对可访问性和全球化的平台支持，你可以打造一种帮助用户提高效率的毫不费力的体验。
+行为符合用户预期到它的方式时，该体验就显得直观。 通过使用已建立的控件和模式并利用对可访问性和全球化的平台支持，你可以打造一种帮助用户提高效率的毫不费力的体验。
 
 体现共鸣就是在正确的时间做正确的事情。
 

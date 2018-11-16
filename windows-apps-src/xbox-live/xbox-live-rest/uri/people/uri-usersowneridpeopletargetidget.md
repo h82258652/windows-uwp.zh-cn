@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b9c821e9d2cecc0b9a6bd02da650d40385a3fd91
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275604"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836267"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-调用方的用户集合中获取目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
+目标 ID 由用户从集合中获取调用方的人。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
@@ -71,8 +71,8 @@ ms.locfileid: "6275604"
  
 | 标题| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。| 
+| X RequestedServiceVersion| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。| 
   
 <a id="ID4EWE"></a>
 
@@ -86,7 +86,7 @@ ms.locfileid: "6275604"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

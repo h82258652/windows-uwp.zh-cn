@@ -10,24 +10,24 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: b309064c0110084d5445e8680d65f9935a3f69fe
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654401"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844778"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包的桌面应用程序
 
-本主题介绍了如何打包你的应用程序无需使用 Visual Studio 或 Desktop App Converter (DAC) 等工具。
+本主题介绍了如何在不使用 Visual Studio 或 Desktop App Converter (DAC) 等工具的情况下打包你的应用程序。
 
 若要手动打包应用，请创建程序包清单文件，然后运行命令行工具生成 Windows 应用包。
 
-如果使用 xcopy 命令安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统进行的更改，请考虑手动打包并且想要更精确地控制过程。
+如果使用 xcopy 命令安装你的应用程序，或者你已经熟悉了你的应用安装程序对系统进行的更改，请考虑手动打包并且想要更精确地控制进程。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
 >[!IMPORTANT]
->在 Windows 10 版本 1607年中引入能够创建桌面应用程序 （也称为桌面桥） 的 Windows 应用包和它仅可用于面向 Windows 10 周年更新 (10.0; 的项目中内部版本 14393） 或更高版本的 Visual Studio。
+>在 Windows 10 版本 1607年中引入能够创建桌面应用程序 （也称为桌面桥） 的 Windows 应用包和它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
@@ -85,7 +85,7 @@ ms.locfileid: "6654401"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果你已保留在 Microsoft 应用商店中你的应用程序的名称，你可以通过使用[合作伙伴中心](https://partner.microsoft.com/dashboard)中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
+> 如果你已保留你的 Microsoft 应用商店中的应用程序名称，你可以通过使用[合作伙伴中心](https://partner.microsoft.com/dashboard)中获取的名称和发布者。 如果你计划旁加载到其他系统应用程序，你可以提供这些自己的名称，只要你用于对应用进行签名的证书上的名称匹配，你选择的发布者名称。
 
 ### <a name="properties"></a>属性
 
@@ -119,7 +119,7 @@ ms.locfileid: "6654401"
 ```
 
 ### <a name="capabilities"></a>功能
-适用于桌面应用创建程序包的你将需要添加``runFullTrust``功能。
+对于桌面应用创建的包的你将需要添加``runFullTrust``功能。
 
 ```XML
 <Capabilities>
@@ -175,7 +175,7 @@ ms.locfileid: "6654401"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>生成包资源索引 (PRI) 文件
 
-如果你创建基于目标的资源，如上述部分所述，或修改了任何视觉资源应用程序创建程序包后，你需要生成一个新的 PRI 文件。
+如果你创建基于目标的资源，如上述部分所述或修改了任何视觉资源应用程序创建程序包后，你需要生成一个新的 PRI 文件。
 
 1.  打开**适用于 VS 2017 的开发人员命令提示符**。
 
@@ -206,7 +206,7 @@ ms.locfileid: "6654401"
 若要更新应用的 .exe 或 .dll 文件，请将程序包中的现有文件替换为新文件、增加 AppxManifest.xml 中的版本号，然后再次运行上述命令。
 
 > [!NOTE]
-> 已打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
+> 打包的应用程序始终作为交互用户运行，并且任何驱动器安装到你已打包的应用程序都必须格式化为 NTFS 格式。
 
 ## <a name="next-steps"></a>后续步骤
 

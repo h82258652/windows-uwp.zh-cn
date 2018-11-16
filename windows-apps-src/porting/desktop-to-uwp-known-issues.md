@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 61803e3a4a18dee260b78468c7970a875d8aff73
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656642"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6836271"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已打包的桌面应用程序的已知的问题
 
@@ -36,7 +36,7 @@ ms.locfileid: "6656642"
 
 若要解决此问题，请尝试从提升的命令提示符中运行命令 `Netsh int ipv4 reset`，然后重启计算机。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET 应用程序使用"AnyCPU"生成选项编译，并且无法安装
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>你的.NET 应用程序使用"AnyCPU"生成选项编译，并且无法安装
 
 如果将主要可执行文件或任何依赖项放置在 **Program Files** 或 **Windows\System32** 文件夹层次结构中的任意位置，则可能会出现这种情况。
 
@@ -54,7 +54,7 @@ ms.locfileid: "6656642"
 
 如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展名的大小写不应影响是否你的应用程序运行，这可能导致 DAC 生成此错误。
 
-若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以更改为大写小写应用程序中的所有可执行文件的大小写 (例如： 从。EXE.exe)。
+若要解决此问题，请尝试在打包时指定 **-AppExecutable** 标志，并使用小写的“.exe”作为主要可执行文件的扩展名（例如 MYAPP.exe）。    或者你可以在你的应用程序从小写为大写更改的所有可执行文件的大小写 (例如： 从。EXE.exe)。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>已损坏或格式不正确的验证码签名
 
@@ -135,7 +135,7 @@ certutil -dump <cert_file.pfx>
 
 当你的包包含一个已损坏的证书的二进制文件时，会出现此错误。 下面是一些会出现此错误原因的原因：
 
-* 证书的开始菜单不末尾的图像。  
+* 开始菜单的证书不末尾的图像。  
 
 * 证书的大小不积极。
 
@@ -155,7 +155,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-在**控制台窗口**中将显示有关文件包含损坏的 PE 证书的信息。 例如：
+有关文件包含损坏的 PE 证书的信息将显示在**控制台窗口**中。 例如：
 
 ```
 ...

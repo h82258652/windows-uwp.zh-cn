@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 59a2e93f7c09266b0e33d58bf6a2571e60c7a607
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652991"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845443"
 ---
 # <a name="notifications-visualizer"></a>通知可视化工具
 
@@ -36,7 +36,7 @@ ms.locfileid: "6652991"
 
 借助通知可视化工具，可以创建和测试自适应磁贴和 Toast 有效负载，而无需编辑和部署自己的应用。 创建了视觉效果很理想的负载后，可以将其集成到应用中。 若要了解更多详细信息，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)和[发送本地 Toast](send-local-toast.md)。
 
-**请注意**的 Windows 开始菜单和 toast 通知的通知可视化工具的模拟并不总是完全准确，并且它不支持某些高级有效负载属性。 当拥有所需的磁贴和 Toast 时，可通过固定磁贴或弹出 Toast 对其进行测试来验证它是否会按预期显示。
+**注意**的 Windows 开始菜单和 toast 通知的通知可视化工具的模拟并不总是完全准确，并且它不支持某些高级有效负载属性。 当拥有所需的磁贴和 Toast 时，可通过固定磁贴或弹出 Toast 对其进行测试来验证它是否会按预期显示。
 
  
 

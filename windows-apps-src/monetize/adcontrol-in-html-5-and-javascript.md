@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, 广告控件, javascript, HTML
 ms.localizationpriority: medium
 ms.openlocfilehash: df5623b8c73dc6c96c2869156d22da64f6a6b58d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646985"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849630"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
@@ -26,7 +26,7 @@ ms.locfileid: "6646985"
 * 使用 Visual Studio 2015 或更高版本的 Visual Studio 安装 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp)。 有关安装说明，请参阅[此文章](install-the-microsoft-advertising-libraries.md)。
 
 > [!NOTE]
-> 如果你已安装 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本的 Windows SDK，你还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 
+> 如果已安装的 Windows 10 SDK 版本 10.0.14393 （周年更新） 或更高版本的 Windows SDK，你还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。 
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>在应用中集成横幅广告
 
@@ -109,7 +109,7 @@ ms.locfileid: "6646985"
 如果你使用此代码，并且没有看到广告，则可以尝试将 **position:relative** 的属性插入包含 **AdControl** 的 **div** 中。 这将替代 **IFrame** 的默认设置。 广告将正确显示，除非它们由于此属性的值而没有显示。 请注意，新的广告单元可能在长达 30 分钟内不可用。
 
 > [!NOTE]
-> 此示例中显示的 *applicationId* 和 *adUnitId* 值是[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)。 将应用提交的提交之前必须从合作伙伴中心中[替换这些值的实时值](set-up-ad-units-in-your-app.md#live-ad-units)。
+> 此示例中显示的 *applicationId* 和 *adUnitId* 值是[测试模式值](set-up-ad-units-in-your-app.md#test-ad-units)。 在提交应用之前必须合作伙伴中心中的[替换为实时值这些值](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 <span id="release" />
 
@@ -117,7 +117,7 @@ ms.locfileid: "6646985"
 
 1. 确保在应用中对横幅广告的使用遵循我们的[横幅广告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)。
 
-1.  在合作伙伴中心中，转到[应用内广告](../publish/in-app-ads.md)页面并[创建一个广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
+1.  在合作伙伴中心中，转到[应用内广告](../publish/in-app-ads.md)页和[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
     > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （例如应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
 
@@ -127,7 +127,7 @@ ms.locfileid: "6646985"
 
 4.  [你的应用提交](../publish/app-submissions.md)到应用商店使用合作伙伴中心。
 
-5.  查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)。             
+5.  查看[广告性能报告](../publish/advertising-performance-report.md)合作伙伴中心中。             
 
 <span id="manage" />
 
