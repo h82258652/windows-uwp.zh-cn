@@ -10,20 +10,20 @@ keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: cc71a58594c8794369bedd7f415518100892ff67
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667292"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855200"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
-可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将该包发布到 Microsoft 应用商店或旁加载它到一个或多个电脑上。
+可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将发布到 Microsoft 应用商店或旁加载其打包到一个或多个电脑上。
 
 Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 
 >[!IMPORTANT]
->在 Windows 10 版本 1607年中引入能够创建桌面应用程序 （也称为桌面桥） 的 Windows 应用包和它仅可用于面向 Windows 10 周年更新 (10.0; 的项目中内部版本 14393） 或更高版本的 Visual Studio。
+>在 Windows 10 版本 1607年中引入能够创建桌面应用程序 （也称为桌面桥） 的 Windows 应用包和它仅用于在项目中面向 Windows 10 周年更新 (10.0;内部版本 14393） 或更高版本的 Visual Studio。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
@@ -83,7 +83,7 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**运行、 调试或测试的桌面应用程序**
+**运行、 调试或测试桌面应用程序**
 
 请参阅[运行、 调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md)
 

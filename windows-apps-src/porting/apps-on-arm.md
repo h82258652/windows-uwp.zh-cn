@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 始终连接, ARM, ARM64, x86 模拟
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f62a873e84f200a019bde23038ae10b21150072
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6843884"
+ms.locfileid: "6973295"
 ---
 # <a name="windows-10-on-arm"></a>基于 ARM 的 Windows 10
 起初，Windows 10（与 Windows 10 移动版不同）只能在采用 x86 和 x64 处理器的电脑上运行。 但现在，应用了 Fall Creators Update 的 Windows 10 桌面版（专业版和 S 版本）可在采用 ARM64 处理器的计算机上运行。 ARM CPU 体系结构的省电特性使这些电脑拥有全天的电池使用时间，并且支持移动数据网络。 这些电脑将提供出色的应用程序兼容性，让你在不进行任何修改的情况下运行现有的 x86 win32 应用程序。 例如 Adobe reader。 有关详细信息或演示，请观看[第 9 频道视频：始终连接的电脑](https://channel9.msdn.com/Events/Build/2017/P4171)。 

@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3cc69065ef2898aebafc832da1639985231d60
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654691"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6985158"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
-有关逐渐将移植的代码中的策略您[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)项目[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中讨论[移动到 C + + WinRT 从 C + + CX](move-to-winrt-from-cx.md)。
+有关逐渐将移植的代码中的策略您[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx)投影到[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中讨论[移动到 C + + WinRT 从 C + + CX](move-to-winrt-from-cx.md)。
 
 本主题介绍了两个帮助程序函数，可用于转换为 C + + /CX 和 C + + /winrt 对象在同一项目中的。 你可以使用它们将使用两个语言投影，代码之间的互操作，或者你可以使用函数移植你的代码从 C + + CX 到 C + + WinRT。
 
@@ -49,9 +49,9 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>显示两个帮助程序函数中使用的示例项目
 
-要重现，简单的方法，该方案的逐渐移植的代码中的 C + + CX 项目到 C + + WinRT，就可以开始通过创建新项目在 Visual Studio 中使用 C + + WinRT 项目模板 (请参阅[Visual Studio 支持 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
+要重现，简单的方法，该方案的逐渐移植的代码中的 C + + CX 项目到 C + + WinRT，你可以通过开始创建一个新项目在 Visual Studio 中使用 C + + /winrt 项目模板 (，请参阅[Visual Studio 支持 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
 
-此示例中的项目还说明了才能处理 C + 之间潜在的命名空间冲突，针对不同岛的代码中，使用命名空间别名 + WinRT 投影和 C + + /CX 投影。
+此示例项目还说明了可以使用命名空间别名为不同岛的代码中，才能处理潜在的命名空间冲突之间 C + + WinRT 投影和 C + + /CX 投影。
 
 - 创建**Visual c + +** \> **Windows 通用** > **核心应用 (C + + WinRT)** 项目。
 - 在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**。 这将打开项目支持 C + + CX。

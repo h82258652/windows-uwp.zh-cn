@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92b81c79eb1be9e21aa7c306ef31b0b3bb62e7d1
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655090"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850263"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 和 GridView 数据虚拟化
 
 
-**请注意**的详细信息，请参阅 //build/ 会议：[可以显著提高性能与大量数据 GridView 和 ListView 中的用户交互时](https://channel9.msdn.com/Events/Build/2013/3-158)。
+**注意**更多详细信息，请参阅 //build/ 会议：[可以显著提高性能与大量数据 GridView 和 ListView 中的用户交互时](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
 通过数据虚拟化改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关 UI 虚拟化、元素缩减和项目的进度更新，请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
 
@@ -29,7 +29,7 @@ ms.locfileid: "6655090"
 -   数据集的来源（本地磁盘、网络或云）
 -   应用的总内存消耗。
 
-**请注意**请注意，一项功能默认启用的 ListView 和 GridView 显示临时占位符视觉效果，当用户快速平移/滚动时。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
+**注意**请注意，一项功能默认启用的 ListView 和 GridView 的显示临时占位符视觉效果，当用户平移/滚动时快速。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
 
 下面是有关增量和随机访问数据虚拟化技术的更多详细信息。
 
@@ -43,7 +43,7 @@ ms.locfileid: "6655090"
 
 诸如此类的数据源是可以不断扩展的内存中列表。 项目控件将使用标准 [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) 索引器和计数属性请求项目。 计数应表示本地项目的数目，而不是数据集的真实大小。
 
-当项目控件接近现有数据的末尾时，它将调用 [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems)。 如果返回 **true**，它将调用 [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync)，用于传递要加载项目的建议数目。 根据加载数据的来源（本地磁盘、网络或云），你可以选择加载与建议数目不同的项目。 例如，如果你的服务支持 50 个项目的批处理，但项目控件仅请求 10 个项目，你仍可以加载 50 个项目。 从后端加载数据、将其添加到列表，然后通过 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引发变更通知，以使项目控件了解新项目。 还需返回实际记载的项目计数。 如果你加载的项目少于建议数目，或者项目控件甚至在此期间已进一步平移/滚动，则需要为更多项目再次调用数据源，然后继续循环。 你可以了解有关 Windows8.1 下载[XAML 数据绑定示例](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)和 windows 10 应用中重复使用其源代码。
+当项目控件接近现有数据的末尾时，它将调用 [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems)。 如果返回 **true**，它将调用 [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync)，用于传递要加载项目的建议数目。 根据加载数据的来源（本地磁盘、网络或云），你可以选择加载与建议数目不同的项目。 例如，如果你的服务支持 50 个项目的批处理，但项目控件仅请求 10 个项目，你仍可以加载 50 个项目。 从后端加载数据、将其添加到列表，然后通过 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引发变更通知，以使项目控件了解新项目。 还需返回实际记载的项目计数。 如果你加载的项目少于建议数目，或者项目控件甚至在此期间已进一步平移/滚动，则需要为更多项目再次调用数据源，然后继续循环。 你可以了解详细信息通过为 Windows8.1 下载[XAML 数据绑定示例](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)，在 windows 10 应用中重新使用其源代码。
 
 ## <a name="random-access-data-virtualization"></a>随机访问数据虚拟化
 

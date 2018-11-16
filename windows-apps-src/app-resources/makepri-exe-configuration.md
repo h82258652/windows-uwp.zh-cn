@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 3becb43fb1f173926ce4873aa61368f095bef5d4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660337"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6859835"
 ---
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 配置文件
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) XML 配置文件的架构；也称为 PRI 配置文件。 MakePri.exe 工具具有 [createconfig 命令](makepri-exe-command-options.md#createconfig-command)，可用于创建一个新的初始化 PRI 配置文件。
 
 > [!NOTE]
-> 检查安装 Windows 软件开发工具包时**适用于托管的 UWP 应用的 Windows SDK**选项时，MakePri.exe 会安装。 它安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 当你选择**适用于 UWP 管理应用的 Windows SDK**选项安装 Windows 软件开发工具包时，会安装 MakePri.exe。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及中名为其他体系结构的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 配置文件控制索引哪些资源以及如何索引。 配置 XML 必须符合以下架构。
 

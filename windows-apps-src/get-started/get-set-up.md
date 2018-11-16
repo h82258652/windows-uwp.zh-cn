@@ -2,24 +2,24 @@
 author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
-description: 准备工作比想像中的简单。 请按照以下说明，并开始创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
+description: 准备工作比想像中的简单。 请按照以下说明和开始菜单创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fd4d481d30eda68acaf4e48e4d1c1bf4ed7d24
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672479"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850150"
 ---
 # <a name="get-set-up"></a>准备工作
 
 ![使用 Visual Studio 的准备工作](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-准备工作比想像中的简单。 请按照以下说明，并开始创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
+准备工作比想像中的简单。 请按照以下说明和开始菜单创建适用于 windows 10 通用 Windows 平台 (UWP) 应用。
 
 ## <a name="1-download-or-update-visual-studio"></a>1. 下载或更新 Visual Studio
 

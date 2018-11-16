@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, uwp, 购置, 应用销售, 应用下载, 安装, 漏斗, 购置, 转换, 渠道, 应用页面视图
 ms.localizationpriority: medium
 ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6832093"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6994896"
 ---
 # <a name="acquisitions-report"></a>购置报告
 
 
-在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**购置**报告可使你可以查看哪些用户购置并安装你的应用，以及客户统计和平台详细信息，以及有关在 windows 10 （包括 Xbox） 的客户找到你的应用一览的方式显示信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。 
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**购置**报告可以查看哪些用户购置并安装你的应用，以及客户统计和平台详细信息，以及有关在 windows 10 （包括 Xbox） 的客户找到你的应用一览的方式显示信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。 
 
 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 或者，也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
@@ -48,14 +48,14 @@ ms.locfileid: "6832093"
 
 默认情况下，我们显示的**每日应用**视图，其中包括附近实时数据。 你还可以通过选择**应用累计**看到应用的终生购置数。 这将显示从首次发布应用起所有购置的累计总数。
 
-为你的应用 （从 2016 年 10 月-存在) 的**总销售**还可以在此图表中显示 （在美元） 的应用销售中获得的总金额。 请注意，此金额不考虑任何退款、 撤单、 拒付等。
+**销售总额**（从 2016 年 10 月-存在) 应用还可以在此图表中显示的应用销售 （中美元） 从赚取的总金额。 请注意，此金额不考虑任何退款、 撤单、 拒付等。
 
 你可以选择按照购置是否源于客户端或基于 Web 的应用商店和/或按照操作系统版本来筛选结果。
 
 > [!NOTE]
 > 你也可以使用我们的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取应用购置](../monetize/get-app-acquisitions.md)方法以编程方式检索此数据。
 
-在**每日应用**视图中，选中**30d**时间段后，你可能会看到圆圈标记。 这些表示显著增加或减少我们认为你想要了解有关为给定值。 在其出现圆的日期表示一周中，我们检测到了显著增加或减少相比于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
+在**每日应用**视图中，选中**30d**时间段后，你可能会看到圆圈标记。 这些表示显著增加或减少在我们认为你会想要了解有关为给定值。 在其出现圆的日期表示一周中我们检测到了显著增加或减少相比于前的一周结尾。 若要查看有关更改内容的更多详细信息，请悬停在圆圈。  
 
 > [!TIP]
 > 你可以查看过去 30 天内[洞察报告](insights-report.md)中相关的重大更改的更多见解。
@@ -115,7 +115,7 @@ ms.locfileid: "6832093"
 
 ## <a name="app-page-views-and-conversions-by-channel"></a>应用页面查看和通道转换
 
-**应用页面查看次数和转换的通道**图表允许你查看 windows 10 的客户如何找到所选时段内你的应用一览。
+**应用页面查看和管道转换**图表了解 windows 10 上的客户如何找到所选时段内你的应用一览。
 
 在此图表中，*通道*是指客户找到你的应用一览页的方法（例如，浏览并搜索应用商店、外部网站的链接、自定义市场活动之一的链接等）。 包括以下通道类型：
 

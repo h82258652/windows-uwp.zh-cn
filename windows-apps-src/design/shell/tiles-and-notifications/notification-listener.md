@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659040"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848108"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -281,7 +281,7 @@ foreach (uint id in toBeRemoved)
 > [!IMPORTANT] 
 > 已知问题： 前台事件将导致 CPU 循环上最新版本的 Windows，并且之前无法正常工作之前。 不要使用前台事件。 在即将推出更新到 Windows 中，我们将解决此问题。
 
-而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用关闭或运行时。
+而不是使用前台事件，使用前面显示的[单进程模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)后台任务的代码。 后台任务还允许你收到的更改事件通知这两个应用已关闭或运行时。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)
@@ -296,4 +296,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>如何 fixdelays 后台任务
 
-测试应用时，后台任务有时可能会延迟，数分钟不能触发。 若要解决此问题，你将需要提示的用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况、 在列表中找到你的应用、 选择它，并将其更改为"始终允许在后台运行"。在此之后，后台任务应始终触发内收到通知后一秒。
+测试应用时，后台任务有时可能会延迟，数分钟不能触发。 若要解决此问题，你将需要提示的用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况、 列表中找到你的应用、 选择它，并将其更改为"始终允许在后台运行"。在此之后，后台任务应始终触发内收到通知后一秒。

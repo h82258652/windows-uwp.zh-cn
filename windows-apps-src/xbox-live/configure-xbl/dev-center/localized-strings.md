@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，本地化字符串，合作伙伴中心
 ms.openlocfilehash: b7d8f53656f60932c0f27f492f3769ddae8434ba
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6251458"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848976"
 ---
 # <a name="configuring-localized-strings-in-partner-center"></a>在合作伙伴中心配置本地化字符串
 
@@ -26,7 +26,7 @@ ms.locfileid: "6251458"
 
 ![在合作伙伴中心本地化的字符串配置页面的屏幕截图](../../images/dev-center/localized-strings/localized-strings-1.png)
 
-3. 你可以通过复制添加本地化的字符串 <Value locale="en-US">Maze 播放</Value> 标记，并将区域设置的值更改为所选的语言和本地化字符串的值。 你必须在开发人员显示区域设置中拥有至少一个值标记，以避免出现错误。
+3. 你可以通过复制添加本地化的字符串 <Value locale="en-US">Maze 播放</Value> 标记，并将区域设置的值更改为你选择的语言和本地化字符串的值。 你必须在开发人员显示区域设置中拥有至少一个值标记，以避免出现错误。
 
 ![编辑本地化字符串](../../images/dev-center/localized-strings/localized-strings.gif)
 
@@ -40,4 +40,4 @@ ms.locfileid: "6251458"
 |---------------------------|-------------|
 | XSD 验证失败：命名空间‘http://config.mgt.xboxlive.com/schema/localization/1’中的元素‘LocalizedString’不能包含文本。 需要的可能元素列表：命名空间‘http://config.mgt.xboxlive.com/schema/localization/1’中的‘值’ | XML 文档格式不正确时会发生此情况 |
 | 本地化字符串缺少开发人员显示区域设置的项目 | 本地化字符串缺少其区域设置与开发人员显示区域设置不匹配的项目时，会发生这种情况 |
-| XSD 验证失败：‘区域设置’属性无效 - 根据其数据类型‘http://config.mgt.xboxlive.com/schema/localization/1:NonEmptyString’‘ ’值无效 - 模式约束失败。 | 当本地化的字符串缺少中的区域设置值时，会发生此情况 <Value> tag|
+| XSD 验证失败：‘区域设置’属性无效 - 根据其数据类型‘http://config.mgt.xboxlive.com/schema/localization/1:NonEmptyString’‘ ’值无效 - 模式约束失败。 | 发生这种情况时的本地化的字符串缺少中的区域设置值 <Value> tag|

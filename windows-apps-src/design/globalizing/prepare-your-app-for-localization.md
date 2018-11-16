@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6455759"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858465"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -62,7 +62,7 @@ ms.locfileid: "6455759"
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-在另一个示例中，考虑语句"提醒我在{0}分钟。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
+在另一个示例中，考虑语句"提醒我在{0}分钟后。" “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 
@@ -98,7 +98,7 @@ ms.locfileid: "6455759"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保翻译知道每个参数的目的，以便他们可以反向格式中的项顺序的格式字符串 (例如，"{1} {0}")，适用于目标语言。
+此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保 translator 知道每个参数的意图，以便它们可以反向格式中的项顺序的格式字符串 (例如，"{1} {0}")，适用于目标语言。
 
 ## <a name="dont-over-localize"></a>不要过度本地化
 

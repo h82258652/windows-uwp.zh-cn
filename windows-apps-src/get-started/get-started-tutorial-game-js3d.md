@@ -9,11 +9,11 @@ keywords: windows 10，uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6669424"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858201"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -258,7 +258,7 @@ ___
 
 如果遇到问题，你可以复制和粘帖此 CodePen 中的所有 JavaScript 来加以解决，或者可以对其进行编辑，以调整某些光和更改部分颜色。 
 
-<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光、 相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
+<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光，相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
 </iframe>
 
 
@@ -1083,7 +1083,7 @@ function lockChange() {
 
 
 ## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
-现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft 应用商店 （假设已先了改进 ！）有几个步骤过程。
+现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！）有几个步骤过程。
 
 1.  你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
 2.  你必须使用应用提交[清单](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。

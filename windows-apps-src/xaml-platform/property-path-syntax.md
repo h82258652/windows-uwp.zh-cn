@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6832667"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6990125"
 ---
 # <a name="property-path-syntax"></a>Property-path 语法
 
@@ -56,7 +56,7 @@ ms.locfileid: "6832667"
 
 例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 指向二队的一个特定队员的示例属性路径为：“Teams[1].Players[Smith]”。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
 
-**请注意**的 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**对于 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="attached-properties"></a>附加属性
 
@@ -94,7 +94,7 @@ ms.locfileid: "6832667"
 
 虽然并不是常见情形，但可以对附加属性进行动画处理，前提是附加属性具有与动画类型匹配的属性值。 因为附加属性的识别名称中已包括点，所以你必须将任何附加属性名称括在括号内，以便不会将点视为对象-属性的分隔符。 例如，用于指定你希望对某个对象上的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/hh759795) 附加属性进行动画处理的字符串使用属性路径“(Grid.Row)”。
 
-**请注意**此示例中，对于[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)的值是**Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 组件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 设置为整数（如“0”或“1”）。
+**注意**此示例中，对于[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)的值是**Int32**属性类型。 因此无法使用 **Double** 动画对其进行动画处理， 而应该定义一个具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 组件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 设置为整数（如“0”或“1”）。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>动画目标属性路径中的属性所遵守的规则
 

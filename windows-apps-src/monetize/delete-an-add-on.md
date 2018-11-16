@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 删除, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653756"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6846514"
 ---
 # <a name="delete-an-add-on"></a>删除加载项
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求无效。 |
 | 404  | 找不到指定的加载项。  |
-| 409  | 指定的加载项已找到，但无法在其当前状态，删除，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 指定的加载项已找到，但它无法删除在其当前状态，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

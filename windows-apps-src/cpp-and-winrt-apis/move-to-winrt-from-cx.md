@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 35fe84747624c9a855df5520322546b83772379b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6650158"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6978406"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -20,19 +20,19 @@ ms.locfileid: "6650158"
 
 ## <a name="porting-strategies"></a>移植策略
 
-如果你想要逐渐移植你的 C + + CX 代码与 C + + /winrt 中，则可以。 C + + /CX 和 C + + WinRT 代码可以在同一项目中，使用 XAML 编译器支持和 Windows 运行时组件的异常中共存。 有关这些两个例外，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。
+如果你想要逐渐移植 C + + /CX 代码为 C + + WinRT，则可以。 C + + /CX 和 C + + /winrt 代码可以在同一项目中，XAML 编译器支持和 Windows 运行时组件的例外共存。 有关这些两个例外，你将需要针对 C + + /CX 或 C + + WinRT 在同一项目中的。
 
 > [!IMPORTANT]
 > 如果你的项目生成一个 XAML 应用程序，然后一个建议的工作流是先创建新项目在 Visual Studio 中使用 C + + /winrt 项目模板 (请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 然后，开始菜单复制的源代码和标记从 C + + CX 项目。 你可以添加新**项目**的 XAML 页面 \> **添加新项...** \>  **Visual c + +** > **空白页面 (C + + WinRT)**。
 >
-> 或者，你可以使用 Windows 运行时组件为因素代码之外的 XAML C + + CX 项目为将其移植。 将移动尽可能多的 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用两个它们从你的应用程序项目，并逐渐移植到另一个。 请参阅[互 C + + /winrt 与 C + + CX](interop-winrt-cx.md)为在同一项目中使用两个语言投影的更多详细信息。
+> 或者，你可以使用 Windows 运行时组件为因素代码之外的 XAML C + + CX 项目为将其移植。 无论是移动尽可能 C + + CX 代码以及你可以为组件，然后将 XAML 项目更改为 C + + WinRT。 或其他人将 XAML 项目 C + + CX，创建新的 C + + WinRT 组件，并开始移植 C + + /CX 代码出 XAML 项目，并在组件。 你还可以有了 C + + CX 组件项目旁边的 C + + 在同一个解决方案中的 WinRT 组件项目引用这两张信用卡从你的应用程序项目，并逐渐移植到另一个。 请参阅[互 C + + /winrt 与 C + + CX](interop-winrt-cx.md)为在同一项目中使用两个语言投影的更多详细信息。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 **Windows** 中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-对比记住上面提到的异常的第一步中移植 C + + CX 项目到 C + + WinRT 是手动添加 C + + 向其 WinRT 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留支持处于关闭状态，以便生成消息帮助你查找 （和端口） 所有依赖项的 C + + CX，或者你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **使用 Windows 运行时扩展** \> **是 (/ZW)**)，并将逐渐移植。
+对比记住上面提到的异常的第一步中移植 C + + CX 项目到 C + + WinRT 是手动添加 C + + 向其 WinRT 支持 (，请参阅[Visual Studio 支持 C + + /winrt 以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要执行该操作，编辑你的 `.vcxproj` 文件，找到 `<PropertyGroup Label="Globals">`，在该属性组内，设置属性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 它是一个好主意，将留支持处于关闭状态，以便生成消息帮助你查找 （和端口） 所有依赖项的 C + + /CX，或你可以重新打开支持 (在项目属性中， **C/c + +** \> **常规** \> **消耗 Windows 运行时扩展** \> **是 (/ZW)**)，和逐渐移植。
 
-确保**常规**该项目属性 \> **目标平台版本**设置为 10.0.17134.0 (Windows 10，版本 1803年) 或更高版本。
+确保**常规**该项目属性 \> **目标平台版本**设置为 10.0.17134.0 (Windows 10 版本 1803年) 或更高版本。
 
 在预编译的标头文件（通常为 `pch.h`）中，包括 `winrt/base.h`。
 
@@ -72,7 +72,7 @@ if (userList != nullptr)
     ...
 ```
 
-时移植到等效的 C + + WinRT 的代码中，你基本上要删除顶帽并更改箭头运算符 (-&gt;) 为点运算符 （.），因为 C + + /winrt 投影类型是值，而不是指针。
+当移植到等效的 C + + WinRT 代码中，你基本上要删除顶帽并更改箭头运算符 (-&gt;) 为点运算符 （.），因为 C + + /winrt 投影类型是值，而不是指针。
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -189,7 +189,7 @@ private:
 ```
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>从一个基本的运行时类转换为一个派生
-它是通常具有引用到-基于你知道指的是派生类型的对象。 在 C + + CX，你使用`dynamic_cast`为*强制转换*为基准引用到引用派生。 `dynamic_cast`是实际上只是隐藏的[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)调用。 下面是一个典型示例&mdash;你处理依赖属性更改事件，并且你想要从**DependencyObject**转换回拥有的依赖属性的实际类型。
+它是通常具有引用到的基础，你知道指的是派生类型的对象。 在 C + + CX，你使用`dynamic_cast`为*强制转换*为基准引用到引用派生。 `dynamic_cast`是实际上只是隐藏的[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)调用。 下面是一个典型示例&mdash;你处理依赖属性更改事件，并且你想要从**DependencyObject**转换回拥有依赖属性的实际类型。
 
 ```cpp
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
