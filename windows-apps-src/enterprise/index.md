@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6989050"
+ms.locfileid: "7102033"
 ---
 # <a name="enterprise"></a>企业版
 
@@ -118,7 +118,7 @@ MSIX 是打包格式构建为可安全、 安全且可靠，具体取决于.msi�
 
 <a id="distribution" />
 
-## <a name="security"></a>安全性
+## <a name="security"></a>安全
 
 Windows 10 提供了一套适用于应用开发人员保护其用户、 公司网络安全和存储在设备上的任何业务数据的标识安全功能。 新增功能的 windows 10 是 Microsoft Passport、 轻松部署的双重密码替代项，是辅助应用通过使用 PIN 或 Windows Hello，提供企业级安全并支持指纹、 面部和虹膜基于识别。
 

@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 示例代码, 代码示例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: ef8f99ade3fa5e4d9f12b8670bf22242e7c4e585
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6983514"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7128707"
 ---
 # <a name="get-uwp-app-samples"></a>获取 UWP 应用示例
 

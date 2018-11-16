@@ -8,11 +8,11 @@ ms.topic: article
 keywords: webvr，edge，web 开发、 babylon、 babylonjs、 babylon.js javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 72681c3f91fc2dcbfcc4e4531359d6d668e18b80
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6987938"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7128697"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>将 WebVR 支持添加到 3D Babylon.js 游戏
 
@@ -39,7 +39,7 @@ ms.locfileid: "6987938"
 
 
 
-## <a name="getting-started"></a>入门
+## <a name="getting-started"></a>开始使用
 
 若要开始使用的最简单方法是访问[Windows 教程 web GitHub 存储库](https://github.com/Microsoft/Windows-tutorials-web)中，按绿色**克隆或下载**按钮，然后选择**在 Visual Studio 中打开**。
 
