@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 位置功能
 ms.localizationpriority: medium
 ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670246"
+ms.locfileid: "6834478"
 ---
 # <a name="get-the-users-location"></a>获取用户位置
 
@@ -46,7 +46,7 @@ ms.locfileid: "6670246"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步骤 1：请求访问用户的位置
 
-除非你的应用具有粗糙 location 功能 （参见备注），你必须使用之前[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法访问的位置请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
+除非你的应用具有粗糙 location 功能 （参见备注），你必须使用之前尝试[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法访问的位置请求访问用户的位置。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。\*
 
 ```csharp
 using Windows.Devices.Geolocation;

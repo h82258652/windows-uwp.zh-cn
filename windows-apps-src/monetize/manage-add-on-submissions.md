@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673351"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847512"
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
@@ -26,7 +26,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 
 ## <a name="methods-for-managing-add-on-submissions"></a>管理加载项提交的方法
 
-使用以下方法获取、创建、更新、提交或删除加载项提交。 你可以使用这些方法之前，该加载项必须已存在于你的合作伙伴中心帐户中。 通过[定义其产品类型和产品 ID](../publish/set-your-add-on-product-id.md)或中所述[管理加载项](manage-add-ons.md)使用的 Microsoft 应用商店提交 API 方法，你可以在合作伙伴中心中创建加载项。
+使用以下方法获取、创建、更新、提交或删除加载项提交。 你可以使用这些方法之前，该加载项必须已存在于你的合作伙伴中心帐户。 通过[定义其产品类型和产品 ID](../publish/set-your-add-on-product-id.md)或中所述[管理加载项](manage-add-ons.md)使用的 Microsoft 应用商店提交 API 方法，你可以在合作伙伴中心中创建加载项。
 
 <table>
 <colgroup>
@@ -121,7 +121,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 通过执行以下方法确认提交。 这将向合作伙伴中心警报完成与你的提交，更新现在应该应用到你的帐户。 有关详细信息，请参阅[确认加载项提交](commit-an-add-on-submission.md)。
+5. 通过执行以下方法确认提交。 这将向合作伙伴中心警报你完成提交，更新现在应该应用到你的帐户。 有关详细信息，请参阅[确认加载项提交](commit-an-add-on-submission.md)。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -245,7 +245,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 | status  | 字符串  |  提交的状态。 这可以是以下值之一： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。 |
 | fileUploadUrl           | 字符串  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建加载项提交](#create-an-add-on-submission)。  |
-| friendlyName  | 字符串  |  友好名称的提交中，在合作伙伴中心中所示。 当你创建提交时，系统会为你生成此值。  |
+| friendlyName  | 字符串  |  提交，在合作伙伴中心中所示的友好名称。 当你创建提交时，系统会为你生成此值。  |
 
 <span id="listing-object" />
 
@@ -354,7 +354,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 |  Base               |   未设置价格段；使用加载项的基价。      |     
 |  NotAvailable              |   加载项在特定区域中不可用。    |     
 |  Free              |   加载项是免费的。    |    
-|  Tier*xxxx*               |   一个字符串，用于为加载项指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看完整的价格适用于你的开发人员帐户，包括与每个层的特定于市场的价格段转到任何你在合作伙伴中心在应用提交的**定价和可用性**页面和单击**市场和自定义价格**部分中的**查看表**链接 （对于某些开发人员帐户，此链接是在**定价**部分）。     |
+|  Tier*xxxx*               |   一个字符串，用于为加载项指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看完整的价格层可用于开发者帐户，包括与每个层关联的特定于市场的价格，转到任何你在合作伙伴中心在应用提交的**定价和可用性**页面和单击**市场和自定义价格**部分中的**查看表**链接 （对于某些开发人员帐户，此链接是在**定价**部分）。     |
 
 <span id="submission-status-code" />
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c733fe0f4e8ee955c68ff4ec30bd9f9f2675899d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 6d4c752438af3425fffc69ecf71ff0dc8abe5963
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649771"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851571"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -50,7 +50,7 @@ ms.locfileid: "6649771"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-还可以使用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) 和从 [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/br225427) 返回的值创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)，以便在设备上的可用帧源组更改时（例如接入外部相机时）接收通知。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+你还可以创建[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和从[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)返回的值以在设备上可用的帧源组时接收通知更改，例如当外部相机。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 

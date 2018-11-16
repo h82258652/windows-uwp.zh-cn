@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649264"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851385"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -20,7 +20,7 @@ ms.locfileid: "6649264"
 
 C++/WinRT 是 Windows 运行时 (WinRT) API 的完全标准新式 C++17 语言投影，以基于标头文件的库的形式实现，旨在为你提供对新式 Windows API 的一流访问。 利用 C++/WinRT，你可以采用任何符合标准的 C++17 编译器创作和使用 Windows 运行时 API。 Windows SDK 包含 C++/WinRT；它已在版本 10.0.17134.0（Windows 10，版本 1803）中引用。
 
-C + + WinRT 是 Microsoft 推荐[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)语言投影，以及[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整列表[主题有关 C + + WinRT](index.md#topics-about-cwinrt)包括信息、 与之和从移植，C + + /CX 和 WRL。
+C + + /winrt 是 Microsoft 的建议的替换[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)语言投影，以及[Windows 运行时 c + + 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整列表[主题有关 C + + WinRT](index.md#topics-about-cwinrt)包括信息，与之和从移植，C + + /CX 和 WRL。
 
 > [!IMPORTANT]
 > C++/WinRT 的最需要注意的其中两个部分在[针对 C++/WinRT 的 SDK 支持](#sdk-support-for-cwinrt)和[针对 C++/WinRT 以及 VSIX 的 Visual Studio 支持](#visual-studio-support-for-cwinrt-and-the-vsix)章节中进行了说明。
@@ -40,13 +40,13 @@ Windows 运行时基于组件对象模型 (COM) API，可通过*语言投影* �
 对于 Visual Studio 中的 C++/WinRT 项目模板以及 C++/WinRT MSBuild 属性和目标，请从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 中下载并安装 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。
 
 > [!NOTE]
-> 使用版本 1.0.181002.2 （或更高版本） 的 VSIX 安装，创建新的 C + + WinRT 项目会自动安装该项目的[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 程序包提供改进了 C + + WinRT 项目生成支持，使你的项目之间的开发计算机和生成代理 （在其只有 NuGet 程序包，以及不 VSIX，安装） 移植。
+> 使用版本 1.0.181002.2 （或更高版本） 的 VSIX 安装，创建新的 C + + WinRT 项目自动安装该项目的[Microsoft.Windows.CppWinRT NuGet 程序包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 程序包提供改进的 C + + WinRT 项目生成支持，从而使你的项目之间的开发计算机和生成代理 （在其只有 NuGet 程序包，以及不 VSIX，已安装） 移植。
 >
 > 现有项目的&mdash;已安装版本 1.0.181002.2 之后 （或更高版本） 的 VSIX&mdash;我们建议你在 Visual Studio 中打开项目，单击**项目** \> **管理 NuGet 程序包...** \> **浏览**，键入或粘贴**Microsoft.Windows.CppWinRT**在搜索框中，选择搜索结果中的项，然后单击**安装**安装该项目的程序包。
 
-你将需要 Visual Studio 2017 (至少需要版本 15.6，但我们建议至少是 15.7)，以及 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)。 如果你尚未安装它，你将需要安装 Visual Studio 安装程序内的从**c + + 通用 Windows 平台工具**选项。 并在 Windows**设置** > **更新 \ & 安全** > **适用于开发人员**，选择**开发人员模式**选项，而不是**旁加载应用**选项。
+你将需要 Visual Studio 2017 (至少需要版本 15.6，但我们建议至少是 15.7)，以及 Windows SDK 版本 10.0.17134.0 (Windows 10 版本 1803年)。 如果你尚未安装它，你将需要安装 Visual Studio 安装程序内的从**c + + 通用 Windows 平台工具**选项。 并在 Windows**设置** > **更新 \ & 安全** > **适用于开发人员**，选择**开发人员模式**选项，而不是**旁加载应用**选项。
 
-然后将能够创建和生成、 或打开，C + + WinRT 项目在 Visual Studio 中，并将其部署。 或者，你可以通过添加来转换现有项目`<CppWinRTEnabled>true</CppWinRTEnabled>`属性及其`.vcxproj`文件。
+然后将能够创建和生成、 或打开，C + + WinRT 项目在 Visual Studio 中，并将其部署。 或者，也可以通过添加转换现有项目`<CppWinRTEnabled>true</CppWinRTEnabled>`属性及其`.vcxproj`文件。
 
 ```xml
 <Project ...>

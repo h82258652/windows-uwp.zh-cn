@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649948"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845539"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
@@ -29,7 +29,7 @@ ms.locfileid: "6649948"
 
 了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
-本主题假定你已创建一个后台任务类，包括可作为后台任务入口点的**Run**方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点**运行**的方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 本主题也适用于进程内后台任务。 但是，而不是**Run**方法中，使用替换**OnBackgroundActivated**。 进程内后台任务不需要你使用永久性存储发送取消信号，因为你可以使用应用状态传达取消（如果后台任务与前台应用在同一进程中运行）。
 
@@ -38,7 +38,7 @@ ms.locfileid: "6649948"
 编写一个用于处理取消事件的方法。
 
 > [!NOTE]
-> 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或该应用不会对其进行处理，则将终止后台任务，没有警告且不引发 OnCanceled 事件。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
+> 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或应用不会对其进行处理，则没有警告且不引发 OnCanceled 事件的情况下，将会终止后台任务。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
 
 创建一个名为 **OnCanceled** 的方法，如下所示。 该方法是 Windows 运行时在针对后台任务进行取消请求时调用的入口点。
 
@@ -135,7 +135,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 当收到取消请求时，执行后台工作的方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 停止工作并退出。 对于进程内后台任务，这意味着从**OnBackgroundActivated**方法返回。 对于进程外后台任务，这意味着从**Run**方法返回。
 
-修改后台任务类的代码以在它工作时检查该标志变量。 如果**\_cancelRequested**变得设置为 true，则停止工作将在继续操作。
+修改后台任务类的代码以在它工作时检查该标志变量。 如果**\_cancelRequested**变为设置为 true，则停止工作将在继续操作。
 
 [后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包括后台任务取消时停止定期计时器回调的检查。
 

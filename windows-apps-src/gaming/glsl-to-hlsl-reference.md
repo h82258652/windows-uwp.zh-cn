@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, 着色器
 ms.localizationpriority: medium
 ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652671"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838914"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL 到 HLSL 参考
 
@@ -67,7 +67,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">着色器编译被集成到了图形 API 中</td>
 <td align="left">HLSL 编译器<a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">将着色器编译为</a>中间二进制表示，然后 Direct3D 将其传递给驱动程序。
 <div class="alert">
-<strong>请注意</strong>此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
+<strong>注意</strong>此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
 </div>
 <div>
  
@@ -96,7 +96,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">行主序矩阵（默认设置）</td>
 <td align="left">列主序矩阵（默认设置）
 <div class="alert">
-<strong>请注意</strong>使用<strong>row_major</strong>类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
+<strong>注意</strong>使用<strong>row_major</strong>类型修饰符来更改一个变量的布局。 有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">变量语法</a>。 还可以指定编译器标志或 pragma 来更改全局默认设置。
 </div>
 <div>
  
@@ -111,7 +111,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 
  
 
-> **请注意**HLSL 让纹理和采样器作为两个不同的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
+> **注意**HLSL 让纹理和采样器作为两个不同的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
 
  
 

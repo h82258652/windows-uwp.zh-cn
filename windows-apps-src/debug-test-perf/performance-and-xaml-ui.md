@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dfc4e5d3d2741cf36a1a9aae8c0c22feed5305e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659776"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850773"
 ---
 # <a name="performance"></a>性能
 
 
 用户希望他们的应用保持响应状态、感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 本部分将向你介绍如何组织你的性能工作流、修复动画故障和帧速率问题以及调整你的启动时间、页面导航时间和内存使用情况。
 
-如果你尚未完成此操作，请在步骤，我们已经在较大的性能改进的结果只需移植你的应用以面向 windows 10。 多项 XAML 优化 （例如， [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)） 将仅可在 windows 10 应用中。 请参阅[将应用移植到 windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321)以及 //build/ 会话[移动到通用 Windows 平台](http://channel9.msdn.com/Events/Build/2015/3-741)。
+如果你尚未完成此操作，请在步骤，我们已经了解在较大的性能改进的结果只需移植你的应用以面向 windows 10。 多项 XAML 优化 （例如， [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)） 将仅可在 windows 10 应用中。 请参阅[将应用移植到 windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321)以及 //build/ 会话[移动到通用 Windows 平台](http://channel9.msdn.com/Events/Build/2015/3-741)。
 
 | 主题 | 描述 |
 |-------|-------------|

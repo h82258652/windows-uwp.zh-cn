@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673389"
+ms.locfileid: "6836666"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
@@ -29,7 +29,7 @@ ms.locfileid: "6673389"
 
 了解如何设置控制何时运行后台任务的条件。
 
-有时，后台任务需要为后台任务成功满足某些条件。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件。 然后将排队的后台任务，但满足所有所需的条件之前不会运行。
+有时，后台任务还需要某些条件满足后台任务继续进行。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件。 然后将排队的后台任务，但满足所有所需的条件之前不会运行。
 
 设置条件对后台任务节省电池使用时间和 CPU 阻止任务不必要地运行。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
 
@@ -43,7 +43,7 @@ ms.locfileid: "6673389"
 
 添加条件之前，创建[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)对象来表示必须实际用于运行后台任务的条件。 在构造函数中，指定必须满足[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)枚举值的条件。
 
-以下代码将创建[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)对象的指定**InternetAvailable**条件：
+以下代码将创建一个[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)对象，指定**InternetAvailable**条件：
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);

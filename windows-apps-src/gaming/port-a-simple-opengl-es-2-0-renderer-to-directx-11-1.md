@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652177"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848740"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
 
@@ -82,7 +82,7 @@ typedef struct
 
 该结构具有一个实例，并且包含用于呈现非常简单的顶点作色网格所需的所有组件。
 
-> **请注意**本主题中的所有 OpenGL ES 2.0 代码都基于 Khronos Group，提供 Windows API 实现和使用 Windows C 编程语法。
+> **注意**本主题中的所有 OpenGL ES 2.0 代码都基于 Khronos Group，提供 Windows API 实现和使用 Windows C 编程语法。
 
  
 

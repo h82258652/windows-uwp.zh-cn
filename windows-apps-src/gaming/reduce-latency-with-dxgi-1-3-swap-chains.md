@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651848"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855804"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
@@ -37,7 +37,7 @@ ms.locfileid: "6651848"
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **请注意**与某些标志，此标记不能将添加或删除使用[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
+> **注意**与某些标志，此标记不能将添加或删除使用[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)。 如果此标记的设置方式与创建交换链时不同，DXGI 会返回一个错误代码。
 
  
 

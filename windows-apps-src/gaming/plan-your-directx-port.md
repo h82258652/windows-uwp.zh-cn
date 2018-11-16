@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664848"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845743"
 ---
 # <a name="plan-your-directx-port"></a>规划 DirectX 移植
 
@@ -37,7 +37,7 @@ ms.locfileid: "6664848"
 
 你必须将 D3DX 和 DXUT 帮助程序库替换为你自己的帮助程序库或替换为社区工具。 有关详细信息，请参阅[功能映射](feature-mapping.md)部分。
 
-> **请注意**你可以使用[DirectX 工具包](http://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)来替换以前由 D3DX 和 DXUT 提供一些功能。
+> **注意**你可以使用[DirectX 工具包](http://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)来替换以前由 D3DX 和 DXUT 提供一些功能。
 
  
 

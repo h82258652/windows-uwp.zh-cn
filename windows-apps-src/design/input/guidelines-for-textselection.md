@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 32d8e7d858ff28a6ef6a9af517e0a584c6106cd5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657053"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848694"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -49,7 +49,7 @@ ms.locfileid: "6657053"
 
 **注意事项和建议**
 
-使用内置控件通过提供完整平台用户交互体验，包括选择和操作行为的 Windowsto 生成应用中的语言框架公开。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
+使用通过提供完整平台用户交互体验，包括选择和操作行为的 Windowsto 生成应用中的语言框架公开的内置控件。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
 
 使用标准 UWP 文本控件时，本主题中所述的选择行为和视觉对象不能自定义。
 
@@ -80,7 +80,7 @@ Windowsrecognizes 两个可能状态为选择交互，可编辑和不可编辑�
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**请注意**如果拼写错误的单词这些交互会稍。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**注意**如果拼写错误的单词这些交互会稍。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 

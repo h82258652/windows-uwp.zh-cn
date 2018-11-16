@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: ef7136868fc9c212640c142db2751bd6e9a0b179
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652518"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848265"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
 
 Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要推出你的应用的市场，按市场或市场组自定义许多[定价和可用性](set-app-pricing-and-availability.md)功能。
 
-有助于使你的应用来自世界各地的适用于客户的信息，请参阅[使你的应用可本地化](../design/globalizing/prepare-your-app-for-localization.md)和[全球化指南](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
+为了使你的应用来自世界各地的适用于客户的信息，请参阅[使你的应用可本地化](../design/globalizing/prepare-your-app-for-localization.md)和[全球化指南](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
 
 > [!NOTE]
 > 虽然本主题提及应用，但加载项提交的市场选择也使用同样的过程。
@@ -36,12 +36,12 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 请注意，此处的选择仅适用于新获取的应用；如果客户已在某个市场中获取你的应用，而你之后删除了该市场，则已拥有该该市场中应用的用户可继续使用该应用，但不会获得你提交的更新，且该市场中的新客户无法获得该应用。
 
 > [!IMPORTANT]
-> 即使此处或合作伙伴中心中并未列出这些规定，它是所有本地法律规定，你有责任。
+> 它是所有本地法律规定，你有责任尽管此处或合作伙伴中心中并未列出这些规定。
 
 请记住，即使你选择了所有市场，本地法律和限制或其他因素可能会阻止某些应用列入一些国家和地区。 此外，某些市场可能有与年龄分级相关的特定要求。 如果你的应用不满足这些要求，我们将无法在该市场中提供你的应用。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
 
 > [!NOTE]
-> 适用于以前发布的应用包含面向 Windows8 或 Windows8.1 的程序包，某些个别市场被视为单个"世界其他地区"市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
+> 对于以前发布的应用包含面向 Windows8 或 Windows8.1 的程序包，某些个别市场被视为单个"世界其他地区"市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
 
 你还将看到一个复选框，指示是否向应用商店将来可能添加的任何市场推出你的应用。 如果选中此框，我们将来添加新市场时，你的提交的基本价格和公开发布日期将用于你在这些市场的应用。 如果不希望这样做，可取消选中该框，我们将不会在未来添加的市场中发布你的应用（但你可在将来随时添加这些市场）。
  
@@ -478,7 +478,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果你以前发布的应用包含程序包面向 Windows 8.x 不同，请务必要注意的市场被视为单个"世界其他地区"市场使用的 Windows 应用商店客户 8.x 不同，即使它们显示为个别市场在合作伙伴中心。
+如果你以前发布的应用包含程序包面向 Windows 8.x 不同，请务必注意大量市场被视为单个"世界其他地区"市场使用的 Windows 应用商店客户 8.x 不同，即使它们显示为个别市场在合作伙伴中心。
 
 如果你保留默认市场选择提交应用时，你无需担心此问题，并且你的应用将在提供给所有可能的市场。 但是，如果你想要排除特定市场，请记住，即使其中一个"世界其他地区"市场中排除意味着你的应用不会提供*任何*Windows8 或 Windows8.1 的客户的"世界其他地区"市场中。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657442"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974264"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>资源管理系统如何匹配和选择资源
 请求资源时，可能有多个候选项在一定程度上匹配当前的资源上下文。 资源管理系统将分析所有候选资源，然后确定要返回的最佳候选资源。 为此，需考虑所有限定符，以便对所有候选资源评级。
@@ -22,7 +22,7 @@ ms.locfileid: "6657442"
 
 有关如何完成语言标记匹配的详细信息，请参阅[资源管理系统如何匹配语言标记](how-rms-matches-lang-tags.md)。
 
-对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，为"缩放比例-100"的上下文匹配"缩放比例-400"某种程度较小，但不以及候选限定为"比例为 200"or （适用于完全匹配）"比例-400"限定的候选项。
+对于某些限定符，例如缩放比例和对比度，始终有一些最低的匹配度。 例如，为"缩放比例-100"的上下文匹配"缩放比例-400"某种程度较小，但不以及候选限定为"缩放比例-200"或 （适用于完全匹配）"比例-400"限定的候选项。
 
 但是，对于其他限定符（例如语言或住宅区域），可能有非匹配比较（以及匹配度）。 例如，语言限定为“en-US”的候选项与“en-GB”的上下文部分匹配，但限定为“fr”的候选项完全不匹配。 同样，主区域限定为“155”（西欧）的候选项在一定程度上匹配主区域设置为“FR”的用户的上下文，但限定为“US”的候选项完全不匹配。
 

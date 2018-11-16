@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6666469"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6846146"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>绑定分层数据和创建大纲/细节视图
 
 
 
-> **请注意**另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **注意**另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 你可以通过将项目控件绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 

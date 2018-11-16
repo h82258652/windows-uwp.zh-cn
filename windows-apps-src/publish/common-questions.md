@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669268"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6856525"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>有关广告市场活动的常见问题
 
@@ -43,7 +43,7 @@ ms.locfileid: "6669268"
 
 广告市场活动当前在以下国家和地区中受支持：
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+阿尔及利亚、阿根廷、澳大利亚、奥地利、巴哈马、巴林、巴巴多斯、比利时、伯利兹、玻利维亚、巴西、加拿大、智利、中国、哥伦比亚、丹麦、多米尼加共和国、厄瓜多尔、埃及、萨尔瓦多、芬兰、法国、德国、危地马拉、海地、洪都拉斯、香港特別行政区、印度、印度尼西亚、伊拉克、爱尔兰、意大利、牙买加、约旦、科威特、黎巴嫩、马来西亚、墨西哥、摩洛哥、新西兰、荷兰、尼加拉瓜、挪威、阿曼、巴拿马、巴拉圭、秘鲁、菲律宾、波多黎各、卡塔尔、沙特阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台湾、泰国、特立尼达和多巴哥、突尼斯、阿拉伯联合酋长国、英国、美国、乌拉圭、委内瑞拉、越南。
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>广告市场活动支持哪些语言？
 
@@ -61,5 +61,5 @@ Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Bel
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>如何删除信用卡或编辑信用卡详细信息？
 
-转到<http://commerce.microsoft.com>，使用你的 Microsoft 帐户凭据登录并进行必要的更改。
+转到<http://commerce.microsoft.com>、 使用登录 Microsoft 帐户凭据，然后做出必要的更改。
 

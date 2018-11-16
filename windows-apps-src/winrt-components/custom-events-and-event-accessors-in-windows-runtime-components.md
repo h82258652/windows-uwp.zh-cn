@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671407"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845519"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows 运行时组件中的自定义事件和事件访问器
 
@@ -33,7 +33,7 @@ ms.locfileid: "6671407"
 
 NumberChanged 事件的以下代码显示了 UWP 事件的基本模式。 在本示例中，事件参数对象 NumberChangedEventArgs 的构造函数接受代表更改的数字值的单精度整数参数。
 
-> **请注意**这与编译器用于在 Windows 运行时组件中声明的普通事件的模式相同。
+> **注意**这与编译器用于在 Windows 运行时组件中声明的普通事件的模式相同。
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -101,7 +101,7 @@ NumberChanged 事件的以下代码显示了 UWP 事件的基本模式。 在本
 
 静态（在 Visual Basic 中为 Shared）GetOrCreateEventRegistrationTokenTable 方法延迟创建 EventRegistrationTokenTable&lt;T&gt; 对象的事件实例。 将保留令牌表实例的类级别字段传递到此方法。 如果该字段为空，该方法会创建表、在字段中存储对表的引用并返回对表的引用。 如果该字段已经包含令牌表引用，该方法将仅返回该引用。
 
-> **重要提示**若要确保线程安全，保留 EventRegistrationTokenTable 的事件实例的字段&lt;T&gt;必须是类级别字段。 如果它是类级别字段，GetOrCreateEventRegistrationTokenTable 方法会确保在多个线程尝试创建令牌表时，所有线程均会获取相同的表实例。 对于指定事件，对 GetOrCreateEventRegistrationTokenTable 方法的所有调用都必须使用相同的类级别字段。
+> **重要**若要确保线程安全，保留 EventRegistrationTokenTable 的事件实例的字段&lt;T&gt;必须是类级别字段。 如果它是类级别字段，GetOrCreateEventRegistrationTokenTable 方法会确保在多个线程尝试创建令牌表时，所有线程均会获取相同的表实例。 对于指定事件，对 GetOrCreateEventRegistrationTokenTable 方法的所有调用都必须使用相同的类级别字段。
 
 在删除访问器和 [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) 方法（在 C# 中是 OnRaiseEvent 方法）中调用 GetOrCreateEventRegistrationTokenTable 方法可确保在以下情况下不会发生任何异常：在添加任何事件处理程序委托之前调用这些方法。
 
@@ -110,11 +110,11 @@ NumberChanged 事件的以下代码显示了 UWP 事件的基本模式。 在本
 -   [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) 方法生成事件处理程序委托的令牌、在表中存储委托、将其添加到调用列表以及返回该令牌。
 -   [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) 方法重载会从表和调用列表中删除委托。
 
-    >**请注意**AddEventHandler 和 removeeventhandler （eventregistrationtoken） 方法锁定表以帮助确保线程安全。
+    >**注意**AddEventHandler 和 removeeventhandler （eventregistrationtoken） 方法锁定表以帮助确保线程安全。
 
 -   [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) 属性返回包括所有事件处理程序的委托，并且这些事件处理程序当前已注册为处理该事件。 使用此委派引发事件，或使用委派类的方法单独调用处理程序。
 
-    >**请注意**我们建议你遵循在本文的前面部分中提供的示例所示的模式，并在调用它之前委托复制到临时变量。 这可避免一个线程删除最后的处理程序的争用条件，从而在其他线程尝试调用委派之前将其减少为 null。 委派不可变动，因此副本仍然有效。
+    >**注意**我们建议你遵循在本文的前面部分中提供的示例所示的模式，并委托前将复制到临时变量调用它。 这可避免一个线程删除最后的处理程序的争用条件，从而在其他线程尝试调用委派之前将其减少为 null。 委派不可变动，因此副本仍然有效。
 
 根据情况将自己的代码置于访问器中。 如果线程安全出现问题，必须自行锁定代码。
 

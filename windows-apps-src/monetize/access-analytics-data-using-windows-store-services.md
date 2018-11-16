@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: a5d2689f5041035ba78cd9aef1f0610f0e1619dd
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458671"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851681"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
-使用*Microsoft Store 分析 API*以编程方式检索注册到你的或组织的 Windows 的合作伙伴中心帐户的应用的分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+使用*Microsoft Store 分析 API*以编程方式检索注册到你的或组织的 Windows 合作伙伴中心帐户的应用的分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
 以下步骤介绍端到端过程：
 
@@ -41,7 +41,7 @@ ms.locfileid: "6458671"
 
 1.  在合作伙伴中心，[将你的组织的合作伙伴中心帐户与你的组织的 Azure AD 目录相关联](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的分析数据的**帐户设置**部分中的**用户**页面中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
+2.  接下来，从合作伙伴中心、[添加 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)表示应用或服务并且将用于访问你的合作伙伴中心帐户的分析数据的**帐户设置**部分中的**用户**页中。 请确保为此应用程序分配**管理员**角色。 如果应用程序不存在，但在你的 Azure AD 目录，你可以[创建一个新合作伙伴中心中的 Azure AD 应用程序](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。
 
 3.  返回到**用户**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下**租户 ID** 和**客户端 ID** 值。
 
@@ -78,7 +78,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-uwp-apps"></a>适用于 UWP 应用的方法
 
-适用于 UWP 应用在合作伙伴中心中提供以下分析方法。
+适用于合作伙伴中心中的 UWP 应用可使用以下分析方法。
 
 | 方案       | 方法      |
 |---------------|--------------------|
@@ -116,11 +116,11 @@ grant_type=client_credentials
 | 方案       | 方法      |
 |---------------|--------------------|
 | 购置 |  <ul><li>[获取 Xbox One 游戏购置](get-xbox-one-game-acquisitions.md)</li><li>[获取 Xbox One 的加载项购置](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| 错误 |  <ul><li>[获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[获取游戏在 Xbox One 中错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
+| 错误 |  <ul><li>[获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>适用于硬件和驱动程序的方法
 
-属于[Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户有权访问一组额外的方法来检索分析数据的硬件和驱动程序。 有关详细信息，请参阅[硬件仪表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
+属于[Windows 硬件开发人员中心计划](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的开发者帐户有权访问一组额外的方法来检索硬件和驱动程序的分析数据。 有关详细信息，请参阅[硬件仪表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
 
 ## <a name="code-example"></a>代码示例
 

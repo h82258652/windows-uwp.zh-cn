@@ -9,22 +9,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cec8171b381a607616e2054784fa888074d3f90e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670524"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847009"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
 
-本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用程序包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建的单个应用包的可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建的单个应用包的可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
 本部分中之前的主题介绍了平台之间的差异，并且提供有关将应用的各个方面从 XAML 标记移植到访问数据（通过绑定到视图模型）这一过程的详细信息和指南。 案例研究旨在通过在真实示例中实际显示指南来补充该指南。 案例研究假设你已阅读该指南，因此不会重复该指南。
 
-**请注意**时在 Visual Studio 中打开 Bookstore1Universal\_10，如果你看到消息"需要 Visual Studio 更新"，然后按照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步骤。
+**注意**时在 Visual Studio 中打开 Bookstore1Universal\_10，如果你看到消息"需要 Visual Studio 更新"，然后按照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步骤。
 
 ## <a name="downloads"></a>下载
 
@@ -64,7 +64,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 **从 Windows 项目中**
 
--   复制 BookstoreStyles.xaml。 我们会使用此一个作为合适的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;不会等效的 WindowsPhone 文件中的一部分。
+-   复制 BookstoreStyles.xaml。 我们将使用此证书合适的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;不会等效的 WindowsPhone 文件中的一部分。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1\_81 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**在文件中替换**功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本，请将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1\_81”更改为“BOOKSTORE1UNIVERSAL\_10”。
 

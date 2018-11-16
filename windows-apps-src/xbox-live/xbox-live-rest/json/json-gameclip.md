@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0882125e1cf7f82be6273e5f456d22cdf79891e
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6253592"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853013"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -31,7 +31,7 @@ GameClip 对象具有以下规范。
 | <b>状态</b>| GameClipState| 在系统中的游戏剪辑的状态。| 
 | <b>dateRecorded</b>| DateTime| 日期和时间开始录制，采用 UTC （ISO 8601 格式）。| 
 | <b>lastModified</b>| DateTime| 上次修改时间的游戏剪辑或其元数据，采用 UTC （ISO 8601 格式）。| 
-| <b>userCaption</b>| 字符串| 用户输入非本地化字符串的游戏剪辑。| 
+| <b>userCaption</b>| 字符串| 用户进入非本地化字符串的游戏剪辑。| 
 | <b>type</b>| GameClipTypes| 剪辑的类型。 可以是多个值，并且将为以逗号分隔的如果是这样。| 
 | <b>源</b>| GameClipSource| 如何确定该剪辑的源。| 
 | <b>可见性</b>| GameClipVisibility| 游戏剪辑后在系统中发布的可见性。| 

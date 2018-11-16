@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669464"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855764"
 ---
 # <a name="networking-basics"></a>网络基础知识
 针对任何支持网络的应用的必做事项。
@@ -38,7 +38,7 @@ ms.locfileid: "6669464"
 | **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
-[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于 Windows8，在此目的，并且它们在 windows 10 中仍受支持。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供更好的功能降低开销，对于某些方案，例如已启用推送的流套接字： 套接字代理和套接字活动触发器。
+[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 控制通道触发器用于 Windows8，在此目的，它们在 windows 10 中仍受支持。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供更好的功能降低开销，对于某些方案，例如已启用推送的流套接字： 套接字代理和套接字活动触发器。
 
 如果你的应用使用了 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)，则你的应用可以将开放套接字的所有权转移给系统提供的套接字代理，然后退出前台甚至终止。 在已传输的套接字上建立连接或流量送达该套接字后，你的应用或其指定的后台任务将被激活。 如果你的应用未运行，它将启动。 然后，套接字代理将使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 通知你的应用收到新流量。 你的应用将从套接字代理回收套接字并处理该套接字上的流量。 这意味着，当你的应用未处理网络流量时，将消耗非常少的系统资源。
 

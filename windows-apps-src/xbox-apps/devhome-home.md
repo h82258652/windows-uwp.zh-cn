@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: b95637b38aafeb4111ecb25279dcec448ca3c30f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660835"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839565"
 ---
 # <a name="home-page-dev-home"></a>主页 （开发人员主页）
    
@@ -37,7 +37,7 @@ ms.locfileid: "6660835"
 ## <a name="quick-actions"></a>快速操作  
    
   
-**快速操作**窗格中包含以下按钮可提供快速访问经常执行的操作：   
+**快速操作**窗格包含以下按钮可提供快速访问经常执行的操作：   
  
    *  **显示 Visual Studio pin:** 显示可用于将开发控制台与你的计算机上安装 Visual Studio 配对的代码。   
    *  **更改沙盒：** 使你能够更改控制台处于的沙盒。   
@@ -54,7 +54,7 @@ ms.locfileid: "6660835"
 ## <a name="games--apps"></a>游戏和应用   
    
   
-**游戏和应用**窗格可以用于执行以下操作：   
+可以在**的游戏和应用**窗格中，用于执行以下操作：   
  
    *  查看游戏和应用安装在开发控制台上的列表。  
    *  快速启动游戏和应用。  
@@ -70,10 +70,10 @@ ms.locfileid: "6660835"
 ## <a name="test-accounts"></a>测试帐户  
    
   
-**测试帐户**窗格可以用于执行以下操作：   
+可以在**测试帐户**窗格中，用于执行以下操作：   
  
-   *  查看用户在控制台上注册的列表。  
-   *  签署一次单击的用户或缩小。  
+   *  在控制台上注册用户的列表视图。  
+   *  登录或注销一次单击的用户。  
    *  添加用户和来宾帐户。  
    *  查看用户和来宾帐户的详细信息。  
 
@@ -85,7 +85,7 @@ ms.locfileid: "6660835"
 ## <a name="connect-with-your-browser"></a>联系你的浏览器  
    
   
-**连接与你的浏览器**窗格中显示的 IP 地址和端口，但是你可以使用从 web 浏览器管理你的主机。   
+**连接与你的浏览器**窗格中显示的 IP 地址和端口，但是你可以使用可以从 web 浏览器管理你的主机。   
   
 <a id="ID4EPE"></a>
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 890ee500cc29ca6766830e7a8b648865dfbb159d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6276999"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842154"
 ---
 # <a name="usersxuidxuidinbox"></a>/users/xuid({xuid})/inbox
 提供访问用户的 Xbox LIVE 服务的邮件收件箱。 这些 Uri 的域是`msg.xboxlive.com`。
@@ -29,7 +29,7 @@ ms.locfileid: "6276999"
 | 参数| 类型| 说明| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
-| 邮件 Id | string [50] | 要检索或删除该消息的 ID。 | 
+| 邮件 Id | string [50] | 要检索或删除的消息 ID。 | 
   
 <a id="ID4EDC"></a>
 

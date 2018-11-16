@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647845"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848321"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>获取应用和加载项的产品信息
 
@@ -29,7 +29,7 @@ ms.locfileid: "6647845"
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
 * 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
-* 如果你想要获取应用的加载项的产品信息，则必须[创建合作伙伴中心中的加载项](../publish/add-on-submissions.md)。
+* 如果你想要获取应用的加载项的产品信息，还必须[创建合作伙伴中心中的加载项](../publish/add-on-submissions.md)。
 
 这些示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。

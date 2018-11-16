@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652558"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851894"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -29,7 +29,7 @@ ms.locfileid: "6652558"
 
 ## <a name="worldwide-distribution-channel"></a>全球分配渠道
 
-在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区世界范围内，支持通过各种形式的包括 Visa、 Mastercard 和 PayPal 的付款方式。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
@@ -49,18 +49,18 @@ ms.locfileid: "6652558"
 
 ## <a name="in-game-purchases"></a>游戏内购买
 
-游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft Store，这些产品称为_加载项_。 通过合作伙伴中心的[加载项发布](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 你还需要在你的游戏代码中启用加载项。
+游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft 应用商店中，这些产品称为_加载项_。 通过合作伙伴中心的[发布加载项](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 你还需要在你的游戏代码中启用加载项。
 
 ### <a name="types-of-add-ons"></a>加载项类型
 
 你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为玩家跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
 最新应用内购买和许可证信息 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的一部分（从 Windows10 版本 1607 开始）。 如果你要面向 1607 或更高版本开发新游戏，我们建议你使用 __Windows.Services.Store__ 命名空间，因为它支持最新的加载项类型并且性能更佳。
-它还设计为与将来的产品和在合作伙伴中心和应用商店支持的功能类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
+它还设计为与将来在合作伙伴中心和应用商店支持的产品和功能类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
 
 有关详细信息，请转到[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 

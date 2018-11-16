@@ -9,25 +9,25 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: c9212f3a120e03bd436b77e0dd66be4367ded8e1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6459921"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6857126"
 ---
 # <a name="code-your-app-for-experimentation"></a>为实验编写应用代码
 
-完成后你[创建项目和定义远程变量在合作伙伴中心中的](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)，你可以随时更新你的通用 Windows 平台 (UWP) 应用中的代码：
+完成后你[创建项目并定义远程变量在合作伙伴中心中的](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)，你可以随时更新你的通用 Windows 平台 (UWP) 应用中的代码：
 * 从合作伙伴中心接收远程变量值。
 * 使用远程变量为你的用户配置应用体验。
 * 登录到合作伙伴中心，指示用户查看实验并执行所需的操作 （也称为*转换*） 时的事件。
 
 若要向你的应用添加此行为，请使用 Microsoft Store Services SDK 所提供的 API。
 
-以下部分介绍了获取实验变体和将事件记录到合作伙伴中心的一般过程。 针对实验为应用编码后，你可以[定义在合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)。 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
+以下部分介绍了获取实验变体和将事件记录到合作伙伴中心的一般过程。 针对实验为应用编码后，你可以[定义合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)。 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 > [!NOTE]
-> 某些实验性 Api 在 Microsoft Store Services SDK 中使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)来从合作伙伴中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
+> 某些实验性 Api 在 Microsoft Store Services SDK 中使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)从合作伙伴中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
 
 ## <a name="configure-your-project"></a>配置项目
 
@@ -52,7 +52,7 @@ ms.locfileid: "6459921"
 
 以下步骤详细描述了此过程的重要部分。
 
-1. 声明一个表示当前变体分配[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)对象和[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)对象将用来登录到合作伙伴中心的视图和转换事件。
+1. 声明一个表示当前变体分配[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)对象和[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)对象将用来查看和转换事件记录到合作伙伴中心。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "6459921"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
-5. 使用 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 对象的 [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、[GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、[GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) 或 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 方法获取变体分配的值。 在每个方法中，第一个参数是你想要检索的变体名称 （这是你在合作伙伴中心中输入的变体的相同名称）。 第二个参数是默认值，该方法应返回如果不能从合作伙伴中心中检索指定的值 （例如，如果没有网络连接），并且缓存的变体版本不可用。
+5. 使用 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 对象的 [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、[GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、[GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) 或 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 方法获取变体分配的值。 在每个方法中，第一个参数是你要检索的变体名称 （这是你在合作伙伴中心中输入的变体的相同名称）。 第二个参数是默认值，该方法应返回如果不能从合作伙伴中心中检索指定的值 （例如，如果没有网络连接），并且缓存的变体版本不可用。
 
     以下示例使用 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 获取名为 *buttonText* 的变量，并指定 **Grey Button** 的默认变量值。
 

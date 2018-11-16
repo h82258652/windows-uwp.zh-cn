@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653888"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6847059"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -105,7 +105,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，打开**Package.appxmanifest**使用默认编辑器中，并在"打包"选项卡中查找。在这里，"应用"是与共享目标视图相对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，打开**Package.appxmanifest**使用默认编辑器，并在"打包"选项卡中查找。在这里，"应用"是与共享目标视图相对应的可激活类。
 
 ## <a name="running-as-a-my-people-share-target"></a>作为“我的人脉”共享目标运行
 

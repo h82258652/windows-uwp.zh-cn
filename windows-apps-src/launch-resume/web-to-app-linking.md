@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655923"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834890"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>启用使用应用 URI 处理程序的网站应用
 
-网站应用，以便当用户打开指向你的网站的链接，而不是打开浏览器启动应用时，与网站关联你的应用。 如果未安装你的应用，你的网站打开浏览器中像往常一样。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够查看他们已注册的 web 到应用链接的所有方法转到设置 > 应用 > 网站应用。
+网站应用关联你的应用与网站，以便当用户打开指向你的网站的链接，而不是打开浏览器时启动你的应用。 如果未安装你的应用，你的网站打开浏览器中像往常一样。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。 用户将能够查看他们已注册的 web 到应用链接的所有方法转到设置 > 应用 > 网站应用。
 
 若要启用 web 到应用链接，你将需要：
 - 在清单文件中标识你的应用将处理的 URI
@@ -25,7 +25,7 @@ ms.locfileid: "6655923"
 - 处理应用中的激活。
 
 > [!Note]
-> 从 Windows 10 创意者更新开始，受支持的 Microsoft Edge 中单击的链接将启动相应的应用。 受支持的链接 （如 Internet Explorer 等），其他浏览器中单击将使你在浏览体验。
+> 从 Windows 10 创意者更新开始，受支持的 Microsoft Edge 中单击的链接将启动相应的应用。 受支持的链接 （例如 Internet Explorer 等），其他浏览器中单击将使你在浏览体验。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>注册以处理应用部件清单中的 http 和 https 链接
 
@@ -166,7 +166,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 -   程序包系列名称 (PFN)：你的应用的 PFN
 -   文件路径：用于本地验证的 JSON 文件（例如 C:\\SomeFolder\\windows-app-web-link）
 
-如果该工具未返回任何内容，验证将在该文件上载时上工作。 如果存在错误代码，它不起作用。
+如果该工具不返回任何内容，验证将在该文件上载时上工作。 如果没有错误代码，它不起作用。
 
 你可以启用以下注册表项以强制路径匹配适用于旁加载应用作为本地验证的一部分：
 
@@ -197,7 +197,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 
 ## <a name="see-also"></a>另请参阅
 
-[Web 到应用示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[Web 到应用的示例项目](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol 注册](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [处理 URI 激活](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)演示了如何使用 launchuriasync （) API。

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648719"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840527"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 alpha 通道的纹理
 
@@ -39,7 +39,7 @@ ms.locfileid: "6648719"
 
 ![64 位透明数据块图示](images/colors4.png)
 
-**请注意**的 Direct3D 压缩法使用四个最高有效位。
+**注意**的 Direct3D 压缩法使用四个最高有效位。
 
  
 

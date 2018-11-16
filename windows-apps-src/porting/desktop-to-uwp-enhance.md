@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e76d3d517be73417777eb31dfc3994f92186522
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672232"
+ms.locfileid: "6842919"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增强用于 Windows 10 的桌面应用程序
 
@@ -58,7 +58,7 @@ ms.locfileid: "6672232"
 
 :white_check_mark: **首先，确定你要添加哪些体验**
 
-有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你拥有要共享，如另一个用户已发布了新图片有趣的内容时简化你采购订单流。
+有许多选项。 例如，你可以使用盈利 Api 或直接注意到你的应用程序，当你有要共享，如另一个用户已发布了新图片有趣的内容来简化你采购订单流。
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
@@ -153,7 +153,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支持 Windows XP、Windows Vista 和 Windows 7/8 安装库
 
-无需创建新分支和维护不同代码库，可以增加你的应用程序在 Windows 10 的现代体验。
+你可以增加你的应用程序在 Windows 10 的现代体验无需创建新分支和维护不同代码库。
 
 如果要为 Windows 10 用户生成单独的二进制文件，请使用条件编译。 如果你希望生成要部署到所有 Windows 用户的一组二进制文件，请使用运行时检查。
 

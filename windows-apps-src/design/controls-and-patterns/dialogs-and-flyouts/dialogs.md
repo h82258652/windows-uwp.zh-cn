@@ -15,11 +15,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba4bfcd38acba2bcd7c8399b8b17184edacc15a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6650650"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6854061"
 ---
 ## <a name="dialog-controls"></a>对话框控件
 
@@ -28,7 +28,7 @@ ms.locfileid: "6650650"
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要的 Api**: [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要 Api**: [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

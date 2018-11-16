@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667126"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853206"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -27,7 +27,7 @@ ms.locfileid: "6667126"
 
 定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
 
-**请注意**可了解详细信息通过为 Windows8.1 下载[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)在 windows 10 应用中重新使用其源代码。
+**注意**了解可以通过下载[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)Windows8.1 为你的 windows 10 应用中重复使用其源代码的详细信息。
 
  
 

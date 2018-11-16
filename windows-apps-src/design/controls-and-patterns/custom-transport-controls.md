@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0486fbab829b7c4ce501f9ac20dac97e6abef595
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654243"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974988"
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 

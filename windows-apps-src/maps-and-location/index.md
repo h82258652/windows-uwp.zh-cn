@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660165"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855170"
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 
@@ -53,7 +53,7 @@ ms.locfileid: "6660165"
 | [在地图上显示目标点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 |
 | [显示路线和方向](routes-and-directions.md) | 请求路线和方向并在应用中显示它们。 |
 | [执行地理编码和反向地理编码](geocoding.md) | 通过调用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
-| [查找并下载供离线使用的地图包](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在过去，你的应用必须将用户定向到设置应用下载离线地图。 现在，你可以使用[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空间中的类以查找 （基于[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)等。） 在给定区域中的已下载的程序包。 <br> 你可以也检查侦听的地图包的已下载状态以及无需用户离开你的应用开始下载。 <br> 你可以找到有关如何执行此操作的参考内容和[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例。
+| [查找并下载供离线使用的地图包](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在过去，你的应用必须将用户定向到设置应用下载离线地图。 现在，可以使用类[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空间中以查找 （基于[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)等。） 在给定区域中的已下载的程序包。 <br> 你可以也检查和侦听的地图包的已下载状态以及无需用户离开你的应用开始下载。 <br> 你可以找到有关如何执行此操作的参考内容和[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例。
 
 ## <a name="get-the-users-location"></a>获取用户的位置
 
@@ -65,7 +65,7 @@ ms.locfileid: "6660165"
 | [位置感知应用设计指南](guidelines-and-checklist-for-detecting-location.md) | 需要访问用户位置的应用的性能指南。 |
 | [获取用户的位置](get-location.md) | 获取对用户位置的访问权限，然后检索该位置。 | 
 | [有关使用访问跟踪的指南](guidelines-for-visits.md) | 了解如何使用功能强大的访问跟踪功能进行更实用的位置跟踪。 |
-| [地理围栏设计指南](guidelines-for-geofencing.md) | 使用地理围栏功能的应用的性能指南。 |
+| [地理围栏设计指南](guidelines-for-geofencing.md) | 地理围栏功能的应用的性能指南。 |
 | [设置地理围栏](set-up-a-geofence.md) | 在你的应用中设置地理围栏并了解如何处理前台和后台中的通知。 |
 
 ## <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用

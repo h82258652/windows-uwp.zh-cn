@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 57d5c174b4519cb60b339a907fe41fb07af5f3ed
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656089"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851438"
 ---
 # <a name="barcode-scanner"></a>条形码扫描仪
 
@@ -22,7 +22,7 @@ ms.locfileid: "6656089"
 
 |主题 |描述 |
 |------|------------|
-| [配置条形码扫描仪](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何配置条形码扫描仪的目标应用程序。 |
+| [配置条形码扫描仪](../devices-sensors/pos-barcodescanner-configure.md)  | 了解如何配置条形码扫描仪预期应用程序。 |
 | [使用软件触发器](../devices-sensors/pos-barcodescanner-software-trigger.md) | 了解如何控制从软件进行扫描的操作。 |
 | [使用标志](pos-barcodescanner-symbologies.md) | 了解如何确定条形码扫描仪支持的条形码类型，并控制条形码扫描仪将从应用程序识别哪些条形码类型。 |
 | [获取并了解条形码数据](pos-barcodescanner-scan-data.md) | 了解如何获取和解释你扫描条形码数据。 |
