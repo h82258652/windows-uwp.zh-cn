@@ -14,11 +14,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6860937"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6987888"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -204,7 +204,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) 是控件所继承的基类，并且具有 [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement**。
 
-此时，[Page](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [Border](https://msdn.microsoft.com/library/windows/apps/br209250) 都具有资源字典，并且都具有名为“greeting”的资源。 名为 textBlock2 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)位于**边框**，因此其资源查找**边框**的资源，则该**页面**的资源和[应用程序](https://msdn.microsoft.com/library/windows/apps/br242324)资源。 **TextBlock** 将读取“Hola mundo”。
+此时，[Page](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [Border](https://msdn.microsoft.com/library/windows/apps/br209250) 都具有资源字典，并且都具有名为“greeting”的资源。 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)名为 textBlock2 是内部**边框**，因此其资源查找**边框**的资源，则该**页面**的资源，然后[应用程序](https://msdn.microsoft.com/library/windows/apps/br242324)资源。 **TextBlock** 将读取“Hola mundo”。
 
 若要从代码访问元素的资源，请使用该元素的 [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 在代码（而非 XAML）中访问 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) 的资源，将仅在该字典中查找，而不在父级元素的字典中查找。
 

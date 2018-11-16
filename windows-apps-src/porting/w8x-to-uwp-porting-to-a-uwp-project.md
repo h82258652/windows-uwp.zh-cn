@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e0ff78f2872e572c370411a1aad38ccbd7fb6a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667206"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6971697"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>将 Windows 运行时 8.x 项目移植到 UWP 项目
 
 
 
-在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一个选项是在 Visual Studio 中创建新的 windows 10 项目并将你的文件复制到其中。 本主题的第一部分描述了第二个选择，但本主题的其余部分提供了同时适用于这两个选择的其他信息。 你还可以选择将新 windows 10 项目保留在现有项目的同一个解决方案中并共享源代码文件使用共享的项目。 或者，你也可以将新项目保留在它自己的解决方案中，并使用 Visual Studio 中链接的文件功能共享源代码文件。
+在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一种方式是在 Visual Studio 中创建新的 windows 10 项目并将你的文件复制到其中。 本主题的第一部分描述了第二个选择，但本主题的其余部分提供了同时适用于这两个选择的其他信息。 你还可以选择将新 windows 10 项目保留为现有项目在同一个解决方案和共享源代码文件使用的是共享的项目。 或者，你也可以将新项目保留在它自己的解决方案中，并使用 Visual Studio 中链接的文件功能共享源代码文件。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>创建项目并向其复制文件
 
@@ -41,7 +41,7 @@ ms.locfileid: "6667206"
 -   你应该能够删除通用 8.1 应用源代码中的大量条件编译指令，如果你仅需要支持 windows 10。 请参阅本主题中的[条件编译和自适应代码](#conditional-compilation-and-adaptive-code)。
 -   若要使用未在所有设备系列上提供的功能（例如打印机、扫描仪或相机按钮），你可以编写自适应代码。 请参阅本主题的[条件编译和自适应代码](#conditional-compilation-and-adaptive-code)中的第三个示例。
 -   如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，你可以将三个项目都保留在同一个解决方案中并与共享的项目共享代码。 此外，你可以在项目之间共享源代码文件。 以下是操作方法：在 Visual Studio 中，在**解决方案资源管理器**中右键单击项目、选择**添加现有项**、选择要共享的文件，然后单击**添加为链接**。 将源代码文件存储在文件系统上的常用文件夹中，可在指向它们的链接所在的项目中看到这些文件。 不要忘记将它们添加到源控件中。
--   有关在二进制级别（而不是源代码级别）上重复使用的信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)。 此外存在一些可移植类库，这些库支持 Windows 8.1、 Windows Phone 8.1 和 windows 10 应用 (.NET Core)，.NET Framework 以及整个.NET Framework 中可用的.NET api 子集。 可移植类库程序集为二进制形式，可与所有这些平台兼容。 使用 Visual Studio 创建一个面向可移植类库的项目。 请参阅[使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)。
+-   有关在二进制级别（而不是源代码级别）上重复使用的信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)。 还有一些可移植类库，这些库支持 Windows 8.1、 Windows Phone 8.1 和 windows 10 应用 (.NET Core)，.NET Framework 以及整个.NET Framework 中可用的.NET api 子集。 可移植类库程序集为二进制形式，可与所有这些平台兼容。 使用 Visual Studio 创建一个面向可移植类库的项目。 请参阅[使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)。
 
 ## <a name="extension-sdks"></a>扩展 SDK
 
@@ -73,7 +73,7 @@ ms.locfileid: "6667206"
 
 如果你使用条件编译 （借助 C# 预处理器指令），以便你的代码文件适用于 Windows 8.1 和 Windows Phone 8.1，则你现在可以查看该条件编译，而在 windows 10 中完成的融合工作。 融合意味着，在 windows 10 应用中，某些条件可以已彻底删除。 而其他条件将更改为运行时检查，如下面的示例所示。
 
-**请注意**如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，在单个代码文件中，则可以做到这一点。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例显示了从通用 8.1 应用删除条件编译并用等效代码针对 windows 10 应用的更简单情况。
+**注意**如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，在单个代码文件中，则也可以那样。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例显示了从通用 8.1 应用删除条件编译并用等效代码针对 windows 10 应用的更为简单的案例。
 
 第一个示例将演示 **PickSingleFileAsync** API（仅适用于 Windows 8.1）和 **PickSingleFileAndContinue** API（仅适用于 Windows Phone 8.1）的使用模式。
 
@@ -85,7 +85,7 @@ ms.locfileid: "6667206"
 #endif // WINDOWS_APP
 ```
 
-Windows 10 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API 上融合，以便你的代码简化：
+Windows 10 上[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API，融合，因此你的代码简化：
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync

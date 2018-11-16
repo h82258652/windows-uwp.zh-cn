@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 14d0cd40e0a7a170a835b000dc66ec683c2fb59c
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6832073"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6983408"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
@@ -42,7 +42,7 @@ ms.locfileid: "6832073"
 
 易耗型加载项的类型有两种：
 - **开发人员管理的易耗品**：必须在应用中管理平衡和实施情况。 所有的操作系统版本都支持。
-- **应用商店管理的易耗品：** Microsoft 会跟踪运行 Windows 10 版本 1607 或更高版本的所有客户设备的平衡；所有较早的操作系统版本不支持此功能。 若要使用此选项，父产品必须使用 Windows 10 SDK 版本 14393 或更高版本编译。 另请注意，（但可以在合作伙伴中心中创建提交，并随时处理） 发布的父产品前，你无法将应用商店管理的易耗型加载项添加到应用商店。 需要在提交的**属性**步骤中输入应用商店管理的易耗型加载项数量。
+- **应用商店管理的易耗品：** Microsoft 会跟踪运行 Windows 10 版本 1607 或更高版本的所有客户设备的平衡；所有较早的操作系统版本不支持此功能。 若要使用此选项，父产品必须使用 Windows 10 SDK 版本 14393 或更高版本编译。 另请注意，（尽管可以在合作伙伴中心中创建提交，并可随时处理） 发布的父产品前，你无法将应用商店管理的易耗型加载项添加到应用商店。 需要在提交的**属性**步骤中输入应用商店管理的易耗型加载项数量。
 
 ### <a name="subscription"></a>订阅
 
@@ -52,15 +52,15 @@ ms.locfileid: "6832073"
 
 订阅加载项仅适用于运行 Windows 10、版本 1607 或更高版本的客户。 必须使用 Windows 10 SDK 版本 14393 或更高版本编译父应用，并且必须使用 **Windows.Services.Store** 命名空间（而不是 **Windows.ApplicationModel.Store** 命名空间）中的应用内购买 API。 有关详细信息，请参阅[为应用启用订阅加载项](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
-你可以将订阅加载项发布到应用商店 （但可以在合作伙伴中心中创建提交，并随时处理） 之前，必须提交父产品。
+你可以将订阅加载项发布到应用商店 （但可以在合作伙伴中心中创建提交，并可随时处理） 之前，必须提交父产品。
 
 ## <a name="product-id"></a>产品 ID
 
-无论选择何种产品类型，将需要为加载项输入唯一的产品 ID。 此名称将用于标识你的加载项在合作伙伴中心，并且你可以使用此标识符来[引用在代码中加载项](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code)。
+无论选择何种产品类型，将需要为加载项输入唯一的产品 ID。 此名称将用于标识在合作伙伴中心，你的加载项，你可以使用此标识符来[引用在代码中加载项](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code)。
 
 以下是在选择产品 ID 时应记住的一些事项：
 
--   产品 ID 必须是唯一的父产品内。
+-   产品 ID 内必须是唯一的父产品。
 -   你无法在加载项发布后更改或删除其产品 ID。
 -   产品 ID 的长度不可超过 100 个字符。
 -   产品 ID 不可包含以下任何字符：**&lt; &gt; \* % & : \\ ? + ,**

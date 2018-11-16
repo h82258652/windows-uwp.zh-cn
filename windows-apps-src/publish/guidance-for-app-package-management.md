@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e625522b0e9fd03fda49eb28bbedb20c00c15634
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861110"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6988655"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -30,7 +30,7 @@ ms.locfileid: "6861110"
 
 不同的操作系统可以运行不同类型的程序包。 如果有多个程序包可在客户的设备上运行，则 Microsoft Store 将提供最佳的可用匹配。
 
-通常来说，较高的操作系统版本可运行适用于相同设备系列的面向以前操作系统版本的程序包。 Windows 10 设备可以运行所有以前受支持的操作系统版本 （每个设备系列）。 Windows 10 桌面设备可以运行 Windows8.1 或 Windows8; 生成的应用Windows 10 移动设备可以运行为 Windows Phone 8.1，WindowsPhone8，甚至是 Windows Phone 7.x。 但是，Windows 10 上的客户将只获取这些程序包，如果该应用不包含面向适用的设备系列的 UWP 程序包。
+通常来说，较高的操作系统版本可运行适用于相同设备系列的面向以前操作系统版本的程序包。 Windows 10 设备可以运行所有以前受支持的操作系统版本 （每个设备系列）。 Windows 10 桌面设备可以运行 Windows8.1 或 Windows8; 生成的应用Windows 10 移动设备可以运行为 Windows Phone 8.1，WindowsPhone8，甚至是 Windows Phone 7.x。 但是，Windows 10 的客户将只获取这些程序包，如果该应用不包含面向适用的设备系列的 UWP 程序包。
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/)。
@@ -50,14 +50,14 @@ ms.locfileid: "6861110"
 后禁止提供应用，你将仍看到它在合作伙伴中心。 如果决定将应用重新提供给客户，你可以从“应用概述”页中单击“提供应用”****。 确认后，应用将在数小时内提供给新客户（除非受上一次提交中的设置的限制）。
 
 > [!NOTE]
-> 如果你想要保持应用可用，但又不想继续将它提供给使用特定操作系统版本的新用户，你可以创建新提交，并删除要阻止新获取的操作系统版本的所有程序包。 例如，如果你先前有包用于 Windows Phone 8.1 和 windows 10，并且你不希望应用继续提供给新客户 WindowsPhone8.1，删除所有 WindowsPhone8.1 程序包从提交。 发布更新后，WindowsPhone8.1 任何新客户将不能够获取该应用，尽管已拥有它的客户可以继续使用它）。 但是，该应用仍将适用于 windows 10 的新客户。
+> 如果你想要保持应用可用，但又不想继续将它提供给使用特定操作系统版本的新用户，你可以创建新提交，并删除要阻止新获取的操作系统版本的所有程序包。 例如，如果你先前有包用于 Windows Phone 8.1 和 windows 10，并且你不希望应用继续提供给新客户 WindowsPhone8.1，删除所有 WindowsPhone8.1 程序包从提交。 发布更新后，WindowsPhone8.1 任何新客户将不能够获取该应用，尽管已拥有它的客户可以继续使用它）。 但是，应用将仍然可供 windows 10 的新客户。
 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
 如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的支持你的应用之前，将提示您确认，这是你的意图，你可以在**程序包**页面上保存更改之前的所有程序包。
 
-当发布的提交，删除所有可在你的应用以前支持的设备系列运行的程序包时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
+当发布的提交，删除所有包可在你的应用以前支持的设备系列上运行时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
 
 请注意，即使你删除支持某些设备系列的所有程序包，已在该设备类型上安装应用的任何现有客户仍可以使用它，并且他们将获取你以后提供的任何更新。
 
@@ -66,11 +66,11 @@ ms.locfileid: "6861110"
 
 ## <a name="adding-packages-for-windows10-to-a-previously-published-app"></a>将 windows 10 程序包添加到以前发布的应用
 
-如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x 的应用，并希望为 windows 10 更新你的应用，创建一个新提交并在[程序包](upload-app-packages.md)阶段添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 windows 10 的客户的新的购置 UWP 程序包。
+如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x 的应用，并希望为 windows 10 更新你的应用、 创建新提交并在[程序包](upload-app-packages.md)阶段添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 windows 10 的客户的新购置 UWP 程序包。
 
 > [!NOTE]
-> 在 windows 10 上的客户获取 UWP 程序包后, 不能回退到使用任何以前操作系统版本的程序包回滚该客户。 
+> 后 windows 10 的客户获取 UWP 程序包，你不能倾斜使客户回退到使用任何以前操作系统版本的程序包。 
 
-请注意，windows 10 程序包的版本号必须始终高于那些你使用了任何 Windows8、 Windows8.1，和/或 Windows Phone 8.1 程序包。 有关详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
+请注意，windows 10 程序包的版本号必须始终高于那些你已使用任何 Windows8、 Windows8.1，和/或 Windows Phone 8.1 程序包。 有关详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
 
 有关如何包装 UWP 应用以上架 Microsoft Store 的详细信息，请参阅[包装应用](../packaging/index.md)。

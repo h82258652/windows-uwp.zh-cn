@@ -8,11 +8,11 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6860442"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6996141"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Windows 开发人员文档中的新增 2018 年 9 月
 
