@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
 ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662066"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6860712"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -1360,7 +1360,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品 （加载项） 购买
 
-加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏的加载项通过合作伙伴中心，并使你的游戏代码中的应用内购买。
+加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏的加载项通过合作伙伴中心，并启用应用内购买你的游戏代码中。
 
 <table>
     <colgroup>
@@ -1380,7 +1380,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">加载项提交</a></td>
     </tr>
     <tr>
-        <td>监视加载项销售和你的游戏的统计数据</td>
+        <td>监视加载项销售和为你的游戏的统计数据</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">加载项购置报告</a></td>
     </tr>
 </table>

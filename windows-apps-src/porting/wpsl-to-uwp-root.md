@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: 如果你是一名开发人员的 WindowsPhone Silverlight 应用，然后你可以使用你的技能组合和源代码在进行移动到 windows 10。
-title: 从 WindowsPhone Silverlight 移动到 UWP
+title: 从 WindowsPhone Silverlight 转到 UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb2617fc3fbd14d17635435c8bfd6d58817a7a1b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6836530"
+ms.locfileid: "6980644"
 ---
-#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>从 WindowsPhone Silverlight 移动到 UWP
+#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>从 WindowsPhone Silverlight 转到 UWP
 
 
 如果你是一名开发人员的 WindowsPhone Silverlight 应用，然后你可以使用你的技能组合和源代码在进行移动到 windows 10。 使用 windows 10，你可以创建通用 Windows 平台 (UWP) 应用，这是可供客户安装到各种设备的单个应用包。 有关更多背景 windows 10，UWP 应用和自适应代码和我们将在此移植指南中提及的自适应 UI 的概念，请参阅[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。

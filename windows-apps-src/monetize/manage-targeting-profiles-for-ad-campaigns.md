@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660633"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6968687"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  目标市场配置文件的 ID。     |   是    |       |   否      |       
 |  name   |  字符串   |   目标市场配置文件的名称。    |    否   |      |  是     |       
-|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**： 指定此值可允许 Microsoft 在选择目标市场配置文件基于你的应用在合作伙伴中心中的设置。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
+|  targetingType   |  字符串   |  以下值之一： <ul><li>**自动**： 指定此值可允许 Microsoft 在选择具体取决于你的应用在合作伙伴中心中的设置的目标市场配置文件。</li><li>**Manual**：指定此值可定义你自己的目标市场配置文件。</li></ul>     |  否     |  Auto    |   是    |       
 |  age   |  数组   |   一个或多个整数，用于标识要针对的用户的年龄范围。 有关整数的完整列表，请参阅本文章中的[年龄值](#age-values)。    |    否    |  null    |     否    |       
 |  gender   |  数组   |  一个或多个整数，用于标识要针对的用户的性别。 有关整数的完整列表，请参阅本文章中的[性别值](#gender-values)。       |  否    |  null    |     否    |       
 |  country   |  数组   |  一个或多个整数，用于标识要针对的用户所在的国家或地区代码。 有关整数的完整列表，请参阅本文章中的[国家或地区代码值](#country-code-values)。    |  否    |  null   |      否   |       
@@ -466,7 +466,7 @@ Authorization: Bearer <your access token>
 |     185      |            UY                  |
 |     186      |            UZ                  |
 |     189      |            ZM                  |
-|     为 190      |            ZW                  |
+|     190      |            ZW                  |
 |     219      |            MD                  |
 |     224      |            PS                  |
 |     225      |            RE                  |

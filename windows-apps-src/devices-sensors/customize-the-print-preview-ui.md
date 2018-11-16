@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667970"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852175"
 ---
 # <a name="customize-the-print-preview-ui"></a>自定义打印预览 UI
 
@@ -50,7 +50,7 @@ ms.locfileid: "6667970"
 
 但是，通过使用此方法所进行的修改将仅影响打印预览 UI。 通过在打印预览 UI 中点击“更多设置”****，用户始终可以访问打印机支持的所有选项。
 
-**请注意**尽管你的应用可以指定要显示的任何打印选项，但只有所选打印机支持的那些显示在打印预览 UI 中。 打印 UI 不会显示所选打印机不支持的选项。
+**注意**尽管你的应用可以指定要显示的任何打印选项，但只有所选打印机支持的那些显示在打印预览 UI 中。 打印 UI 不会显示所选打印机不支持的选项。
 
  
 
@@ -98,7 +98,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要提示**调用[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 将删除所有打印选项从在打印预览 UI，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
+**重要**调用[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 将删除所有打印选项从在打印预览 UI，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
 
 ### <a name="specify-default-options"></a>指定默认选项
 

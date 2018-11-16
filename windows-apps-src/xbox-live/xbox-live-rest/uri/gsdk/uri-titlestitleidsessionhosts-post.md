@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dbbc7baf12daea485dec22389846e5e4acec16c1
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267263"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853010"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 创建新群集请求。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -46,7 +46,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求时, 显示下表中的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
@@ -61,8 +61,8 @@ gameserverms.xboxlive.com
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| 这是调用方指定的标识符。 它已分配给会话主机进行分配和返回。 更高版本上，你可以通过此标识符来引用特定 sessionhost。 必须全局唯一 (即 GUID)。| 
-| SandboxId| 在你想要在分配的会话主机的沙盒。| 
+| sessionId| 这是调用方指定的标识符。 它已分配给会话主机进行分配和返回。 更高版本上，你可以通过此标识符来引用特定 sessionhost。 它必须是全局唯一 (即 GUID)。| 
+| SandboxId| 你想要中分配的会话主机沙盒。| 
 | cloudGameId| 云游戏标识符。| 
 | 位置| 你想要从分配的会话的首选位置的排序的列表。| 
 | sessionCookie| 这是调用方指定不透明的字符串。 它与 sessionhost 相关联，并可以在你的游戏代码中引用。 使用此成员将从客户端的少量的信息传递到服务器 （最大大小为 4 KB）。| 
@@ -157,7 +157,7 @@ gameserverms.xboxlive.com
    * 404-主题作品 id 不具有任何订阅分配给它。
    * 409 — 相同的请求大约在同一时间进行 (相同 sessionId)，此响应时，可以。 如果分配请求和会话主机已指定的 sessionId 已处于活动状态，我们将返回有关该 sessionhost 详细信息。 如果会话主机，但是，并不活动状态，但你将收到冲突。
    * 500-意外的服务器错误。
-   * 503 — 无 sessionhosts StandingBy。 这些资源的一些可用时，请重试请求。
+   * 503 — 无 sessionhosts StandingBy。 这些资源的一部分时可用，请重试请求。
    
 <a id="ID4EFG"></a>
 

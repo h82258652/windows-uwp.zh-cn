@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6459072"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853336"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 
@@ -386,7 +386,7 @@ void GameMain::Run()
 
 当用户最终结束游戏会话时，我们需要清理。 这时要使用 **Uninitialize**。
 
-在 windows 10，关闭应用窗口不会终止应用的进程，而改为写入内存将应用 singleton 的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
+在 windows 10，关闭应用窗口不会终止应用的进程，而改为写入内存应用 singleton 的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

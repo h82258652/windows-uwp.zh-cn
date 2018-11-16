@@ -13,11 +13,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: fae2a222ae20c64e8e8adb2abfa973d62216239e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672176"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853990"
 ---
 # <a name="xaml-lighting"></a>XAML 照明
 
@@ -36,7 +36,7 @@ ms.locfileid: "6672176"
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 是基类，可以用于创建自定义光。
 
-此示例显示了适用于目标 Uielement 和画笔的彩色的聚焦的自定义 XamlLight 的定义。
+此示例显示了适用于定向 UIElements 和画笔的彩色的聚焦的自定义 XamlLight 的定义。
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight

@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, uwp, 加载项销售, 加载项购置, iap 销售, 应用内产品, iap, 加载项
 ms.localizationpriority: medium
 ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6674648"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852524"
 ---
 # <a name="add-on-acquisitions-report"></a>加载项购置报告
 
 
-在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**加载项购置**报告可以查看多少加载项，你已售出，以及客户统计和平台详细信息，以及显示有关 windows 10 的客户 （包括 Xbox） 的转换信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**加载项购置**报告可以查看多少加载项，你已售出以及客户统计和平台详细信息，以及显示有关 windows 10 的客户 （包括 Xbox） 的转换信息。 你还可以查看附近实时购置数据的最后一个小时或有 70 两小时时段。
 
 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 或者，也可以使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[获取加载项购置](../monetize/get-in-app-acquisitions.md)方法以编程方式检索此数据。
 
@@ -30,7 +30,7 @@ ms.locfileid: "6674648"
 
 ## <a name="apply-filters"></a>应用筛选器
 
-在页面顶部附近，可以选择希望显示数据的时间段。 默认选择为 **30D**（30 天），但你可以选择要显示 3、6 或 12 个月的数据或指定的自定义数据范围的数据。 你还可以选择**1 H**或**72h**一小时或有 70 两小时; 显示近乎实时的购置数据这些时间段仅应用于**加载项购置**图的**每天加载项**选项卡和**市场**图的**购置**选项卡。 
+在页面顶部附近，可以选择希望显示数据的时间段。 默认选择为 **30D**（30 天），但你可以选择要显示 3、6 或 12 个月的数据或指定的自定义数据范围的数据。 你还可以选择**1 H**或**72h**向近乎实时的购置数据显示为一小时或有 70 两小时;这些时间段仅应用于**加载项购置**图的**每日加载项**选项卡和**市场**图的**购置**选项卡。 
 
 你还可以展开**筛选器**，以按照特定加载项、市场和/或设备类型筛选该页面上的所有数据。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659720"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853540"
 ---
 # <a name="optimize-file-access"></a>优化文件访问
 
@@ -135,7 +135,7 @@ ms.locfileid: "6659720"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>UWP 与 .NET 数据流之间的缓冲
 
-当你希望将 UWP 数据流（例如 [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) 或 [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)）转换为 .NET 数据流 ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)) 时，可以使用多种方案。 例如，在编写 UWP 应用并希望将在数据流上可用的现有 .NET 代码用于 UWP 文件系统时，这非常有用。 若要启用此功能，适用于 UWP 应用的.NET Api 提供允许在.NET 与 UWP 流类型间转换的扩展方法。 有关详细信息，请参阅 [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)。
+当你希望将 UWP 数据流（例如 [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) 或 [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)）转换为 .NET 数据流 ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)) 时，可以使用多种方案。 例如，在编写 UWP 应用并希望将在数据流上可用的现有 .NET 代码用于 UWP 文件系统时，这非常有用。 为了启用此功能，适用于 UWP 应用的.NET Api 提供允许在.NET 与 UWP 流类型间转换的扩展方法。 有关详细信息，请参阅 [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)。
 
 在将 UWP 流转换为 .NET 流时，有效地为基础 UWP 流创建适配器。 在某些情况下，在 UWP 数据流上调用方法会产生与此行为关联的运行时成本。 这可能会影响你的应用的速度，尤其在执行若干频繁读或写的小操作时。
 
@@ -198,7 +198,7 @@ ms.locfileid: "6659720"
 
 在读取或写入较大的数据集时，你可以通过为 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 和 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 扩展方法提供较大的缓冲区大小来提高读取或写入吞吐量。 这将为数据流适配器提供较大的内部缓冲区大小。 例如，将来自大型文件的数据流传递给 XML 分析程序时，分析程序可以从数据流中执行多个连续的小读取操作。 大型缓冲区可以减少对基础 UWP 流的调用次数并提高性能。
 
-> **请注意**应非常小心时将缓冲区大小设置大于约 80 KB，这可能导致垃圾回收器堆上产生碎片 （请参阅[改进垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
+> **注意**应非常小心时将缓冲区大小设置大于约 80 KB，这可能导致垃圾回收器堆上产生碎片 （请参阅[改进垃圾回收性能](improve-garbage-collection-performance.md)）。 以下代码示例创建具有 81,920 个字节缓冲区的托管流适配器。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

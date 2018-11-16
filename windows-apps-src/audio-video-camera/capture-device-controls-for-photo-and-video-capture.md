@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475910adffd24e4484b539f65633dfb8fc054a8
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660727"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6854318"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>用于照片和视频捕获的手动相机控件
 
@@ -337,7 +337,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 在针对 **ManipulationDelta** 事件的处理程序中，将根据用户的收缩手势的变化更新缩放系数。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值表示收缩手势的比例变化，如此收缩大小的小幅上升是略大于 1.0 的数字，并且收缩大小的小幅下降是略小于 1.0 的数字。 在此示例中，缩放控制的当前值乘以比例增量。
 
-在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最后，你必须确保该缩放系数是由[**步骤**](https://msdn.microsoft.com/library/windows/apps/dn633818)属性在设备支持该缩放步长的倍数。 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
+在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最后，你必须确保该缩放系数是由[**步骤**](https://msdn.microsoft.com/library/windows/apps/dn633818)属性指示受设备支持该缩放步长的倍数。 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
 
 通过创建新的 [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) 对象，在捕获设备上设置缩放级别。 将 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) 属性设置为 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，然后将 [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) 属性设置为你想要的缩放系数。 最后，调用 [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) 在设备上设置新的缩放值。 该设备将平滑过渡到新的缩放值。
 

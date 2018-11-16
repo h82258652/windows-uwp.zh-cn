@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6658763"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6968976"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
 可以使用**自动播放**功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用**自动播放**功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
 
-> **请注意**如果你是设备制造商，并且你想要为你的设备的**自动播放**处理程序关联[的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)，你可以标识该应用在设备元数据中的。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **注意**如果你是设备制造商，而且你想要为你的设备的**自动播放**处理程序关联[的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)，你可以中标识该应用在设备元数据。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
 
 ## <a name="register-for-autoplay-content"></a>注册自动播放内容
 
@@ -108,7 +108,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **请注意**`DisplayImages`和`CopyImages`方法会在以下步骤。
+> **注意**`DisplayImages`和`CopyImages`方法在以下步骤中添加。
 
 ### <a name="step-4-add-code-to-display-images"></a>步骤 4：添加用于显示图像的代码
 
@@ -220,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果你的相机内存卡将图片存储在 AVCHD 或 PRIVATE\ACHD 文件夹中，则将需要相应地更新代码。
-    **请注意**如果你没有相机内存卡，如果它具有一个名为根中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹，其中包含图像，你可以使用闪存驱动器。
+    **注意**如果你没有相机内存卡，如果它具有一个名为根中的**DCIM**文件夹，并且 DCIM 文件夹具有一个子文件夹，其中包含图像，你可以使用闪存驱动器。
 
 ## <a name="register-for-an-autoplay-device"></a>注册自动播放设备
 
@@ -229,7 +229,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 下面显示了如何将应用标识为在将相机连接到电脑时的**自动播放**选项。 此应用会注册为 **WPD\\ImageSourceAutoPlay** 事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
 
-**重要提示** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用可以仅在桌面设备系列，例如电脑中的 windows 10 设备上使用这些 Api。
+**重要** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用可以仅在桌面设备系列，例如电脑中的 windows 10 设备上使用这些 Api。
 
  
 
@@ -338,7 +338,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **请注意**`ShowImages`方法将在以下步骤中添加。
+> **注意**`ShowImages`在以下步骤中添加方法。
 
 ### <a name="step-5-add-code-to-display-device-information"></a>步骤 5：添加用于显示设备信息的代码
 
@@ -366,7 +366,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **请注意**`GetImageList`和`GetThumbnail`方法在以下步骤中添加。
+> **注意**`GetImageList`和`GetThumbnail`方法在以下步骤中添加。
 
 ### <a name="step-6-add-code-to-display-images"></a>步骤 6：添加用于显示图像的代码
 
@@ -409,7 +409,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行你的应用，请将相机连接到你的计算机。 然后从“自动播放”选项列表中选择该应用。
-    **请注意**并非所有相机都播发**WPD\\ImageSource**自动播放设备事件。
+    **注意**并非所有相机都播发**WPD\\ImageSource**自动播放设备事件。
 
 ## <a name="configure-removable-storage"></a>配置可移动存储
 
@@ -434,7 +434,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 2.  打开 Package.appxmanifest 文件，选择**功能**选项卡。选择**可移动存储**功能。 这使应用能够访问可移动存储设备上的文件和文件夹。
 3.  在清单文件中，选择**声明**选项卡。在**可用声明**下拉列表中，选择**自动播放内容**，然后单击**添加**。 选择已添加到**支持的声明**列表中的新**自动播放内容**项。
 
-    **请注意**或者，你还可以选择要添加自定义自动播放事件**自动播放设备**声明。  
+    **注意**或者，你还可以选择要添加自定义自动播放事件**自动播放设备**声明。  
 4.  在**自动播放内容**事件声明的**启动操作**部分中，为第一个启动操作输入下表中的以下值。
 5.  在**可用声明**下拉列表中，选择**文件类型关联**，然后单击**添加**。 在新**文件类型关联**声明的“属性”中，将**显示名称**字段设置为**显示 .ms 文件**，并将**名称**字段设置为 **ms\_association**。 在**支持的文件类型**部分中，单击**新增**。 将**文件类型**字段设置为 **.ms**。 对于内容事件，“自动播放”功能会筛选掉任何未与应用显式关联的文件类型。
 6.  保存并关闭清单文件。
@@ -477,7 +477,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **请注意**`DisplayFiles`方法将在以下步骤中添加。
+> **注意**`DisplayFiles`在以下步骤中添加方法。
 
  
 

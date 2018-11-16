@@ -8,19 +8,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 开发人员中心, 帐户设置, 个人资料, 帐户个人资料, 开发人员帐户, 开发人员帐户设置
 ms.localizationpriority: medium
-ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0acbf8378d2cffa7c083e1da06ed0775df69d60e
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670643"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974632"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帐户设置和个人资料信息
 
 你可以查看和更新你的开发者帐户设置和[合作伙伴中心](https://partner.microsoft.com/dashboard)的**帐户设置**部分中的个人资料信息。 
 
 > [!NOTE]
-> 可在**消息中心**（你可以通过选择合作伙伴中心的顶部附近的消息图标来访问） 中管理通知首选项 （如哪种类型的通知，以接收和如何接收）。
+> 可在**消息中心**（你可以选择访问合作伙伴中心的顶部附近的消息图标） 中管理通知首选项 （如哪种类型的通知，以接收和如何接收）。
 
 ## <a name="account-settings"></a>帐户设置
 
@@ -46,7 +46,7 @@ ms.locfileid: "6670643"
 
 以下是**帐户设置**部分中会出现的一些其他项目。
 
-- **验证状态**： 当你的帐户正在进行验证过程 （例如，当你首次登录或大量更改联系人信息后），你可以在此查看验证状态。
+- **验证状态**： 当你的帐户正在进行验证处理 （例如，当你首次登录或大量更改联系人信息后），你可以在此查看验证状态。
 - **开发人员中心会员计划**： 你可以选择在或退出[开发人员中心会员计划](dev-center-insider-program.md)从主**帐户设置**页面。
 - **付款帐户**和**税务资料**：可在此[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 - **企业关联**：接受希望发布应用以供其独家使用的企业的邀请。 有关详细信息，请参阅[将业务线应用分配到企业](distribute-lob-apps-to-enterprises.md)。
@@ -54,6 +54,6 @@ ms.locfileid: "6670643"
 - **租户**： 管理你的 Azure AD 租户关联。 有关详细信息，请参阅[将你的合作伙伴中心帐户与 Azure AD 关联](associate-azure-ad-with-dev-center.md)。
 - **计划**：查看正在参加的计划的详细信息，了解可能感兴趣的其他计划。
 - **协议**：查看帐户已接受的协议。
-- **开发人员设备**： 查看和管理[已解锁用于测试的 Windows Phone 8.x 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
+- **开发人员设备**： 查看和管理[Windows Phone 8.x 设备已解锁用于测试](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[为开发启用的 Xbox One 主机](../xbox-apps/devkit-activation.md)。 
 
 
