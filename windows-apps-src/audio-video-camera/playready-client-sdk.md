@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660474"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834766"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -513,7 +513,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 ## <a name="use-playready-drm-on-xbox-one"></a>在 Xbox One 上使用 PlayReady DRM
 
-若要在 Xbox One 上的 UWP 应用中使用 PlayReady DRM，首先需要注册[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户，你使用发布应用以授权使用 PlayReady。 可以通过两种方式之一完成此操作：
+若要在 Xbox One 上的 UWP 应用中使用 PlayReady DRM，首先需要注册你要用于发布应用以授权使用 PlayReady 的[合作伙伴中心](https://partner.microsoft.com/dashboard)帐户。 可以通过两种方式之一完成此操作：
 
 * 在 Microsoft 请求权限上提供你的联系人信息。
 * 通过将发送到你的合作伙伴中心帐户和公司名称申请获得授权[pronxbox@microsoft.com](mailto:pronxbox@microsoft.com)。

@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 173c7dd42e0e5fda0d18e270c32a594171ebd7b6
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267185"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833695"
 ---
 # <a name="progression-json"></a>Progression (JSON)
-在用户解锁成就的进度。 
+用户解锁成就的进度。 
 <a id="ID4EN"></a>
 
  
@@ -28,7 +28,7 @@ ms.locfileid: "6267185"
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | 要求| 要求的数组| 若要获得成就的要求，沿用户远距离解锁它。| 
-| timeUnlocked| DateTime| 成就是第一家解锁时间。| 
+| timeUnlocked| DateTime| 成就已解除锁定前的时间。| 
   
 <a id="ID4ETB"></a>
 

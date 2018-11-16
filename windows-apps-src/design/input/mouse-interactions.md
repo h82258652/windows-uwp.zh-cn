@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ec0f99f069950776ab934c82bd3197bdd6c9dd6
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651352"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834192"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
@@ -67,7 +67,7 @@ ms.locfileid: "6651352"
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>请注意</strong>，右键单击可显示上下文菜单，如果选择或应用栏命令不是适合的 UI 行为。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>，右键单击可显示上下文菜单，如果选择或应用栏命令不是适合的 UI 行为。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
  

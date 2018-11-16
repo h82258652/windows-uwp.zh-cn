@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: eb3fe5b0f51867987510e49477d0c5aa8e6c1c50
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6259253"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833952"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 完全重置为测试用户信誉数据。 仅供测试。
@@ -31,9 +31,9 @@ ms.locfileid: "6259253"
 
 ## <a name="remarks"></a>备注
 
-调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 执行团队可能会调用此 API 使用任何沙盒 id。
+调用此 API 将删除所有反馈项目和信誉数据从用户。 合作伙伴可以通过调用此 API 针对任何除零售沙盒。 执行团队可以通过调用此 API 使用任何沙盒 id。
 
-这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 始终调用此 URI。
+这些 Uri 的域是`reputation.xboxlive.com`。 端口 10443 上始终调用此 URI。
 
 <a id="ID4E5"></a>
 
@@ -65,12 +65,12 @@ Retail 沙盒中，从强制执行团队**PartnerClaim** 。
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。|
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常参数无效。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 404| 找不到| 找不到指定的资源。|
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。|

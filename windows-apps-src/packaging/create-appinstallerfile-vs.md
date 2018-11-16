@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653842"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6970703"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual Studio 创建应用安装程序文件
 
@@ -32,7 +32,7 @@ ms.locfileid: "6653842"
 
 ### <a name="create-packages"></a>创建程序包
 
-若要通过旁加载应用的分配，必须创建应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle) 并将其发布在共享位置。
+若要分发通过旁加载应用，必须创建应用包 (.appx/.msix) 或应用程序包 (.appxbundle/.msixbundle)，并将其发布在共享位置。
 
 要执行该操作，请使用 Visual Studio 中的**创建应用序包**向导，并执行以下步骤。
 

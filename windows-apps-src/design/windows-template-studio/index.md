@@ -11,17 +11,17 @@ pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 97df5037d2cdc07361cbc7f80830ba951a0a3caa
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670756"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6834123"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 
 ![主图](images/wts1.png)
 
-Windows 模板 Studio (WTS) 是一个 Visual Studio 2017 扩展，加快了创建新的通用 Windows 平台 (UWP) 应用使用基于向导的体验。 生成的 UWP 项目是标准格式，可读实现成熟的模式和最佳做法的同时包含最新的 Windows 10 功能的代码。 我们到处散布着整个生成的代码必须文档、 Stack Overflow 和博客的链接提供有用的见解。 WTS 支持在 C# 或 Visual Basic 中创建的应用。
+Windows 模板 Studio (WTS) 是一个 Visual Studio 2017 扩展，加快了创建新的通用 Windows 平台 (UWP) 应用使用基于向导的体验。 生成的 UWP 项目是标准格式，可读实现成熟的模式和最佳做法时合并的最新的 Windows 10 功能的代码。 我们到处散布着整个生成的代码必须文档、 Stack Overflow 和博客的链接提供有用的见解。 WTS 支持在 C# 或 Visual Basic 中创建的应用。
 
 有关详细信息，请访问[GitHub 上的项目存储库](https://github.com/microsoft/windowsTemplateStudio)。
 

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 60452c65a00aca134cfa33aa6378da06b94ac865
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6266793"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838011"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 
-在[Xbox Live 服务配置](xbox-live-service-configuration.md)中，它说明了你必须配置信息联机状态，你的作品有关通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
+在[Xbox Live 服务配置](xbox-live-service-configuration.md)中，它说明了你必须配置信息与你的作品联机，有关通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
 
 当你对你的服务配置进行更改时，这些需要从合作伙伴中心发布，才能更改由 Xbox Live 的其余部分进行选取，并可以通过你的游戏中看到。
 
@@ -93,7 +93,7 @@ ms.locfileid: "6266793"
     2. 通过运行开始使用 `Import-Module XboxlivePSModule`
     3. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 
-* 若要从 zip 文件时使用它[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开一个 PowerShell 窗口，
+* 若要从 zip 文件时使用它[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)，打开 PowerShell 窗口，
     1. 运行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. 运行 cmdlet，即 Set-XblSandbox XDKS.1 或 Get-XblSandbox
 

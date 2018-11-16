@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de1d7dedbd2bd3d51bd2e1c1a9652d18f2b78ef0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6658489"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6836497"
 ---
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 属性
 
@@ -38,5 +38,5 @@ ms.locfileid: "6658489"
 
 **x:FieldModifier** 仅适合具有 [x:Name 属性](x-name-attribute.md)的元素，因为一旦该名称是公共的，它将用来引用字段。
 
-**请注意**Windows 运行时 XAML 不支持**X:classmodifier**或**X:subclass**。
+**注意** **X:classmodifier**或**X:subclass**Windows 运行时 XAML 不支持。
 

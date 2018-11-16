@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6454600"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6835598"
 ---
 # <a name="ambient-lighting"></a>环境光
 
@@ -46,7 +46,7 @@ Cₐ 的值为：
 -   vertex color2，如果 AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2，并在顶点声明中提供第二个顶点颜色。
 -   材料环境颜色。
 
-**请注意**如果使用任一 AMBIENTMATERIALSOURCE 选项，并且未提供顶点颜色，则使用材料环境颜色。
+**注意**如果使用任一 AMBIENTMATERIALSOURCE 选项，并且未提供顶点颜色，则使用材料环境颜色。
 
  
 

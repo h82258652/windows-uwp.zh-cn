@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: 48fc818c1ae7a9a46912ff52c2b00b07f19c366e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6448613"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6836610"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>将应用更新到最新的横幅广告库
 
@@ -88,4 +88,4 @@ ms.locfileid: "6448613"
 
 测试应用以确保它按预期显示横幅广告。
 
-如果你的应用的以前版本已在应用商店中，为在合作伙伴中心，以重新发布你的应用更新的应用[创建一个新提交](../publish/app-submissions.md)中可用。
+如果你的应用的以前版本已在应用商店中，为在合作伙伴中心，以重新发布你的应用已更新的应用[创建新提交](../publish/app-submissions.md)中可用。

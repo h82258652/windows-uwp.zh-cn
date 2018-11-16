@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: a03a26262d03d93ea2f23f2a61ba1ee603a2d507
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664393"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852633"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 
 了解如何使用[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)计划一次性后台任务，或运行定期后台任务。
 
-请参阅**Scenario4**在[后台激活示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)以查看如何在本主题中实现的时触发的后台任务所述的示例。
+请参阅**Scenario4**在[后台激活示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)以查看如何实现触发的后台任务所述的时间，本主题中的示例。
 
-本主题假定你拥有需要定期，或在特定时间运行的后台任务。 如果你尚未获得后台任务，可将示例后台任务位于[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 或者，按照中[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)来创建一个步骤。
+本主题假定你拥有需要定期，或在特定时间运行的后台任务。 如果你尚未获得后台任务，则示例后台任务在[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 或者，按照中[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)来创建一个步骤。
 
 ## <a name="create-a-time-trigger"></a>创建时间触发器
 
@@ -73,7 +73,7 @@ SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::U
 
 ##  <a name="call-requestaccessasync"></a>调用 RequestAccessAsync()
 
-注册**ApplicationTrigger**后台任务之前，调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)来确定用户允许，因为用户可能已禁用你的应用的后台活动的后台活动的级别。 请参阅有关方式用户详细信息的[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制后台活动的设置。
+注册**ApplicationTrigger**后台任务之前，调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)来确定用户允许，因为用户可能已禁用，为你的应用的后台活动的后台活动的级别。 请参阅有关方式用户详细信息的[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制后台活动的设置。
 
 ```cs
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -119,14 +119,14 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。 请参阅有关方式用户详细信息的[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制后台活动的设置。
 
-- 内存： 调整你的应用的内存和能耗使用是确保操作系统将允许你的后台任务运行的关键。 使用的[内存管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)以查看你的后台任务正在使用的内存量。 更多内存你的后台任务使用，以让它保持运行另一个应用位于前台时，操作系统越难。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
+- 内存： 调整你的应用的内存和能耗使用是确保操作系统将允许你运行的后台任务关键。 使用的[内存管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)以查看你的后台任务正在使用的内存量。 更多内存你的后台任务使用，让它保持运行另一个应用位于前台时，操作系统越难。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
 - CPU 时间： 后台任务受限制的基于触发器类型时，他们获取的时钟时间量。
 
 有关适用于后台任务的资源限制，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 ## <a name="remarks"></a>备注
 
-从 windows 10 开始，它不再需要用户将你的应用添加到锁屏界面上，即可利用后台任务。
+从 windows 10 开始，它不再需要为用户将你的应用添加到锁屏界面上，即可利用后台任务。
 
 如果你已先调用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)使用**TimeTrigger**仅运行后台任务。
 

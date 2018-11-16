@@ -15,11 +15,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a2b58ef505c4b6d045197dee525c5264a7dd518
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667750"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6835631"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -29,7 +29,7 @@ ms.locfileid: "6667750"
 
 | **获取 Windows UI 库** |
 | - |
-| 此控件是 Windows UI 库，其中包含新的控件和适用于 UWP 应用的 UI 功能的 NuGet 程序包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控件是 Windows UI 库中，包含新的控件和适用于 UWP 应用的 UI 功能的 NuGet 包的一部分。 有关详细信息，包括安装说明，请参阅[Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows UI 库 Api** |
 | - | - |
@@ -39,17 +39,17 @@ ms.locfileid: "6667750"
 
 菜单和上下文菜单通过在用户不需要使用时对命令进行组织和隐藏，从而节省空间。 如果需要经常使用某一特定命令并希望有可用的空间，请考虑将该命令直接置于其自己的元素（而非菜单）中，以便用户无需遍历菜单即可访问它。
 
-菜单和上下文菜单用于整理命令; 在若要显示任意内容，例如通知或确认请求使用[对话框或浮出控件](dialogs.md)。
+菜单和上下文菜单用于整理命令; 在若要显示任意内容，如通知或确认请求使用[对话框或浮出控件](dialogs.md)。
 
 ### <a name="menubar-vs-menuflyout"></a>菜单栏与 MenuFlyout
 
-若要显示菜单浮出控件附加到的画布上的 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选的子菜单）。
+若要显示菜单浮出控件附加到在画布 UI 元素中，使用 MenuFlyout 控件托管菜单项。 作为常规菜单或上下文菜单，你可以调用菜单浮出控件。 菜单浮出控件承载单个顶级菜单 （和可选子菜单）。
 
-若要显示的多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
+若要显示多个顶级菜单的一组水平行中，使用菜单栏。 你通常定位在应用窗口顶部的菜单栏。
 
 ### <a name="menubar-vs-commandbar"></a>菜单栏与 CommandBar
 
-菜单栏和命令栏都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开，可能需要更多的组织或分组比 CommandBar 允许的应用的命令集。
+菜单栏和命令栏两者都表示可用于向用户公开的命令图面。 在菜单栏提供了一种快速而简单的方式来公开命令可能需要更多的组织或分组多于 CommandBar 允许的应用的一组。
 
 你还可以与 CommandBar 配合使用菜单栏。 在菜单栏用于提供大部分命令和 CommandBar 突出显示的最常用的命令。
 
@@ -71,7 +71,7 @@ ms.locfileid: "6667750"
 
 ## <a name="menus-vs-context-menus"></a>菜单与上下文菜单
 
-菜单和上下文菜单会在它们的外观和可以包含的内容类似。 事实上，你可以使用相同的控件， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，创建它们。 不同之处在于，允许用户访问它的方式。
+菜单和上下文菜单在外观和可以包含的内容类似。 事实上，你可以使用相同的控件， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，创建它们。 不同之处在于，允许用户访问它的方式。
 
 何时应使用菜单或上下文菜单？
 
@@ -91,7 +91,7 @@ ms.locfileid: "6667750"
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 相关联[的浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，通过某个元素或者分组在应用窗口顶部菜单栏中。
+- 与其[浮出控件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx)或[FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)属性，通过某个元素关联或分组在应用窗口顶部菜单栏中。
 
 ### <a name="context-menus"></a>上下文菜单
 
@@ -127,7 +127,7 @@ ms.locfileid: "6667750"
 ````
 
 > [!TIP]
-> MenuFlyoutItem 中的大小是图标的 16x16 像素。 如果你使用 SymbolIcon、 FontIcon 或 PathIcon，图标自动缩放到正确的大小，且不会失真。 如果你使用 BitmapIcon，请确保你的资产为 16x16 像素。  
+> MenuFlyoutItem 中图标的大小为 16x16 像素。 如果你使用 SymbolIcon、 FontIcon 或 PathIcon，图标自动缩放到正确的大小，且不会失真。 如果你使用 BitmapIcon，请确保你的资产为 16x16 像素。  
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>创建菜单浮出控件或上下文菜单
 
@@ -140,7 +140,7 @@ ms.locfileid: "6667750"
 - [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) - 打开或关闭选项。
 - [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) - 直观地区分菜单项。
 
-此示例创建[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) ，并使用[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)属性，该属性适用于大多数控件来显示为上下文菜单的 MenuFlyout。
+此示例创建[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)并[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)属性，该属性适用于大多数控件，用于显示为上下文菜单的 MenuFlyout。
 
 ````xaml
 <Rectangle
@@ -218,9 +218,9 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-menu-bar"></a>创建菜单栏
 
-> **预览**： 菜单栏需要[最新的 Windows 10 Insider Preview 版本和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> **预览**： 菜单栏需要的[最新的 Windows 10 Insider Preview 版本和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-使用相同的元素来创建如菜单浮出控件中所示的菜单栏中的菜单。 但是，而不是组合 MenuFlyout MenuFlyoutItem 对象，你将它们组合 MenuBarItem 元素中。 每个 MenuBarItem 作为顶级菜单添加到在菜单栏。
+你可以使用相同的元素来创建如菜单浮出控件中所示的菜单栏中的菜单。 但是，而不是组合 MenuFlyout MenuFlyoutItem 对象，你将它们组合 MenuBarItem 元素中。 每个 MenuBarItem 作为顶级菜单添加到在菜单栏。
 
 ![菜单栏示例](images/menu-bar-submenu.png)
 

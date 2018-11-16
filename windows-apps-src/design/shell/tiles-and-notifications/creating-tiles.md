@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f4388b67335bce497987ab22e3b281cf86e029af
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661715"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855741"
 ---
 # <a name="tiles-for-uwp-apps"></a>适用于 UWP 应用的磁贴
 

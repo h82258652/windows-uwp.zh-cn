@@ -9,31 +9,31 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb2617fc3fbd14d17635435c8bfd6d58817a7a1b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661635"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836530"
 ---
 #  <a name="move-from-windowsphone-silverlight-to-uwp"></a>从 WindowsPhone Silverlight 移动到 UWP
 
 
-如果你是一名开发人员的 WindowsPhone Silverlight 应用，然后你可以使用你的技能组合和源代码在进行移动到 windows 10。 使用 windows 10，你可以创建通用 Windows 平台 (UWP) 应用，这是可供客户安装到各种设备的单个应用包。 有关更多背景 windows 10，UWP 应用和自适应代码和我们将在此移植指南中提及的自适应 UI 的概念看到[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果你是一名开发人员的 WindowsPhone Silverlight 应用，然后你可以使用你的技能组合和源代码在进行移动到 windows 10。 使用 windows 10，你可以创建通用 Windows 平台 (UWP) 应用，这是可供客户安装到各种设备的单个应用包。 有关更多背景 windows 10，UWP 应用和自适应代码和我们将在此移植指南中提及的自适应 UI 的概念，请参阅[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 当你将 WindowsPhone Silverlight 应用移植到 windows 10 应用时，你将能够补充在已[在 Windows Phone 8.1 中引入](https://msdn.microsoft.com/library/windows/apps/dn632424)的移动功能和远不止他们使用其应用模型和 UI 框架的通用 Windows 平台 (UWP)在所有 windows 10 设备上的通用。 这使得通过一个基本代码和一个应用包支持 PC、平板电脑、手机和大量其他种类的设备成为可能。 这将大幅增加应用的潜在受众，并通过共享数据、购买消费品等创造新的可能性。 有关新功能的详细信息，请参阅[什么是 windows 10 中的开发人员的新增功能](https://dev.windows.com/getstarted/whats-new-windows-10)。
 
-如果你选择，你的应用的 WindowsPhone Silverlight 版本和 windows 10 版本都可以向客户提供一次。
+如果你选择，你的应用的 WindowsPhone Silverlight 版本和 windows 10 版本都可以提供给客户在同一时间。
 
-**请注意**本指南旨在帮助你将 WindowsPhone Silverlight 应用移植到 windows 10 手动。 除了使用本指南中的信息来移植你的应用外，你还可以尝试 **Mobilize.NET Silverlight Bridge** 的开发者预览版来帮助实现移植过程的自动化。 此工具分析你的应用的源代码，并将对 WindowsPhone Silverlight 控件的引用和 Api 转换为其 UWP 的对应项。 因为此工具仍为开发人员预览版，所以它还无法处理所有转换方案。 但是，大多数开发人员通过开始使用此工具可以节省一些时间和精力。 若要尝试开发者预览版，请访问 [Mobilize.NET](http://go.microsoft.com/fwlink/p/?LinkId=624546) 的网站。
+**注意**本指南旨在帮助你将 WindowsPhone Silverlight 应用移植到 windows 10 手动。 除了使用本指南中的信息来移植你的应用外，你还可以尝试 **Mobilize.NET Silverlight Bridge** 的开发者预览版来帮助实现移植过程的自动化。 此工具分析你的应用的源代码，并将对 WindowsPhone Silverlight 控件和引用 Api 转换为其 UWP 的对应项。 因为此工具仍为开发人员预览版，所以它还无法处理所有转换方案。 但是，大多数开发人员通过开始使用此工具可以节省一些时间和精力。 若要尝试开发者预览版，请访问 [Mobilize.NET](http://go.microsoft.com/fwlink/p/?LinkId=624546) 的网站。
 
 ## <a name="xaml-and-net-or-html"></a>XAML 和 .NET 或 HTML？
 
-WindowsPhone Silverlight 具有基于 Silverlight 4.0 和计划针对.NET Framework 的版本和 UWP Api 的一小部分的 XAML UI 框架。 由于 WindowsPhone Silverlight 应用中使用 Extensible Application Markup Language (XAML)，它是，XAML 可能将是 windows 10 版本所选因为大部分知识和经验将传输，也将许多源代码和你使用软件模式。 甚至你的 UI 标记和设计也可以随时进行移植。 你会发现托管 API、XAML 标记、UI 框架和工具全都令人熟悉，并且你可以在 UWP 应用中将 C++、C# 或 Visual Basic 与 XAML 一起使用。 即便过程中存在一些挑战，你可能仍会对过程是如此的简单感到惊讶。
+WindowsPhone Silverlight 具有基于 Silverlight 4.0，并且你可以根据.NET Framework 的版本和 UWP Api 的一小部分的 XAML UI 框架。 由于 WindowsPhone Silverlight 应用中使用 Extensible Application Markup Language (XAML)，它是，XAML 可能将是 windows 10 版本所选因为大部分知识和经验将传输，也将许多源代码和你使用软件模式。 甚至你的 UI 标记和设计也可以随时进行移植。 你会发现托管 API、XAML 标记、UI 框架和工具全都令人熟悉，并且你可以在 UWP 应用中将 C++、C# 或 Visual Basic 与 XAML 一起使用。 即便过程中存在一些挑战，你可能仍会对过程是如此的简单感到惊讶。
 
 请参阅[使用 C# 或 Visual Basic 的通用 Windows 平台 (UWP) 应用的路线图](https://msdn.microsoft.com/library/windows/apps/br229583)。
 
-**请注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。 因此，现在是移植你 WindowsPhone Silverlight 并使你的.NET 代码刚好编译并起效新的平台上的绝佳时机。 请参阅[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
-将你的现有.NET 源代码重新编译到 windows 10 应用的另一个绝佳理由是，你将受益于.NET Native，这是先进障碍的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
+**注意**windows 10 支持更多的.NET framework 比 Windows Phone 应用商店应用。 例如，windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、 System.Net.NetworkInformation 和 System.Net.Sockets。 因此，现在是移植你 WindowsPhone Silverlight 并使你的.NET 代码刚好编译并起效新的平台上的绝佳时机。 请参阅[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
+若要将你的现有.NET 源代码重新编译到 windows 10 应用的另一个绝佳理由是，你将受益于.NET Native，这是先进障碍的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
 
 此移植指南将侧重于 XAML，或者你可以使用 JavaScript、级联样式表 (CSS) 和 HTML5 以及 Windows JavaScript 库，生成在功能上等效的应用（通过调用许多相同的 UWP API）。 尽管使用 XAML 的 Windows 运行时 UI 框架不同于使用 HTML 的 Windows 运行时 UI 框架，但无论你选择哪一个，它都需要通用于所有类型的 Windows 设备。
 
@@ -69,13 +69,13 @@ WindowsPhone Silverlight 具有基于 Silverlight 4.0 和计划针对.NET Framew
 | 主题| 说明|
 |------|------------| 
 | [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md) | 本主题提供 WindowsPhone Silverlight api 到其 UWP 等效项的全面映射。 |
-| [移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md) | 通过在 Visual Studio 中创建一个新的 windows 10 项目并将文件复制到其中开始移植过程。 |
+| [移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md) | 通过在 Visual Studio 中创建新的 windows 10 项目并将文件复制到其中开始移植过程。 |
 | [疑难解答](wpsl-to-uwp-troubleshooting.md) | 我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。 阅读到该末尾后，你可以注释或排除非必要的代码，然后稍后返回支付该债务，从而临时加快进度。 本主题中的疑难解答症状和补救办法的表格可能在此阶段对你有用，尽管它无法替代阅读接下来的一些主题。 在你进行到以后的主题时，你可以随时重新参考该表。 |
 | [移植 XAML 和 UI](wpsl-to-uwp-porting-xaml-and-ui.md) | 声明性 XAML 标记的形式定义 UI 的做法非常好地将 WindowsPhone Silverlight 转换为 UWP 应用。 你将发现，更新了系统资源键引用、更改了某些元素类型名称并将“clr-namespace”更改为“using”后，标记的一大部分将可兼容。 |
 | [针对 I/O、设备和应用模型进行移植](wpsl-to-uwp-input-and-sensors.md) | 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不将此代码视为 UI 层或数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。 |
 | [移植业务和数据层](wpsl-to-uwp-business-and-data.md) | 业务和数据层位于你的 UI 之后。 这两个层中的代码将调用操作系统和 .NET Framework API（例如，后台处理、位置、相机、文件系统、网络和其他数据访问）。 绝大多数这些代码都[适用于 UWP 应用](https://msdn.microsoft.com/library/windows/apps/br211369)，你进而希望能够在不进行更改的情况下移植大部分此类代码。 |
 | [针对外形规格和 UX 进行移植](wpsl-to-uwp-form-factors-and-ux.md) | Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。|
-|[案例研究：Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | 本主题介绍了移植非常简单的 WindowsPhone Silverlight 应用到 Windows10UWP 应用的案例研究。 借助 windows 10，你可以创建的单个应用包的可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 |
+|[案例研究：Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | 本主题介绍了一个非常简单 WindowsPhone Silverlight 应用移植到 Windows10UWP 应用的案例研究。 借助 windows 10，你可以创建的单个应用包的可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 |
 | [案例研究：Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | 此案例研究-基于[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)中提供的信息，首先研究可显示分组数据**的 LongListSelector**中 WindowsPhone Silverlight 应用。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 |
 
 ## <a name="related-topics"></a>相关主题

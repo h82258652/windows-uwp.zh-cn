@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 目标组, 客户, 外部测试版组, 用户组, 已知用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 44f0ea17d1034ae617b4b8c96cf61cc4829a6704
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654130"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840540"
 ---
 # <a name="create-known-user-groups"></a>创建已知用户组
 
@@ -38,7 +38,7 @@ ms.locfileid: "6654130"
 
 ## <a name="to-edit-a-known-user-group"></a>编辑已知用户组
 
-你不能删除从合作伙伴中心的已知的用户组 （或更改其名称） 后创建，但你可以随时编辑其成员身份。
+你无法从合作伙伴中心删除已知的用户组 （或更改其名称） 后创建，但你可以随时编辑其成员身份。
 
 若要查看和编辑已知用户组，展开左侧导航菜单中的**参与**菜单，然后选择**客户组**。 在**我的客户组**下，选择要编辑的组名称。 通过在创建新的外部测试版时选择**查看并管理现有组**，或者从软件包外部测试版的概述页选择组名称，还可以从软件包外部测试版创建页面中编辑已知用户组。 
 

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2087debd758a24b50ac1885cb68d4b97ea2898fd
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6645900"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840608"
 ---
 # <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
 
@@ -39,7 +39,7 @@ ms.locfileid: "6645900"
 
 ![将手指并拢可缩小对象，将手指分开可放大](images/objectresize.png)
 
-**请注意**不应与[语义式缩放](../controls-and-patterns/semantic-zoom.md)混淆光学缩放。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
+**注意**光学缩放不应与[语义式缩放](../controls-and-patterns/semantic-zoom.md)混淆。 尽管两种交互使用相同的手势，但语义式缩放是指在单个视图中组织的内容的表示和导航（如计算机的文件夹结构、文档库或相册）。
 
  
 
@@ -67,7 +67,7 @@ ms.locfileid: "6645900"
     -   可调整大小的项可以显示在可调整大小的画布或画板上的绘图应用程序中。
     -   具有嵌入对象（如地图）的网页。
 
-    **请注意**在所有情况下，除非所有触摸点都都位于可调整大小的对象，否则调整内容区域。
+    **注意**在所有情况下，内容区域调整大小，除非所有触摸点都都位于可调整大小的对象。
 
      
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6462939"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842879"
 ---
 # <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
  
@@ -26,7 +26,7 @@ ms.locfileid: "6462939"
 若要获取最新的开发工具，请参阅[适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)。 
 
 > [!NOTE]
-> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 如果它们不提交到应用商店，可以为合作伙伴中心未经许可的业务线 (LOB) 或企业应用使用可选包和相关的集。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
+> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 如果它们不提交到应用商店，可以业务线 (LOB) 或企业应用，无需合作伙伴中心权限即使用可选包和相关的集。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
 
 ## <a name="c-optional-packages-with-executable-code"></a>包含可执行代码的 C++ 可选包
 

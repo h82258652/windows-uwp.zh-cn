@@ -1,18 +1,18 @@
 ---
 author: M-Stahl
-title: Device Portal Xbox 信息 API 参考
-description: 了解如何访问 Xbox 设备信息。
+title: 设备门户 Xbox 信息 API 参考
+description: 了解如何以访问 Xbox 设备信息。
 ms.author: mstahl
 ms.date: 11/7/2017
 ms.topic: article
 keywords: windows 10，uwp，xbox，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665269"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839921"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 信息 API 参考   
 你可以访问 Xbox One 使用此 API 的设备信息。
@@ -21,7 +21,7 @@ ms.locfileid: "6665269"
 
 **请求**
 
-您可以获取有关你的 Xbox One 设备的信息。
+你可以获取有关你的 Xbox One 设备信息。
 
 方法      | 请求 URI
 :------     | :-----

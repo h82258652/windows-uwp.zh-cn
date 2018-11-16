@@ -9,15 +9,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b0c97e2b5b4f9561385f7854ea2ee13292278fc8
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275795"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834076"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One 多人游戏会话目录
 
-本主题使用新的 Xbox One 多人游戏会话目录 (MPSD) 服务提供多人游戏会话创建的概述。 本文主要面向将自己的会话模板直接提交到 Xbox 开发门户 (XDP) 的 Xbox One 游戏开发人员。 MPSD 服务可以与合作伙伴中心，配置，但不专注于在本文中。 它旨在让开发人员熟悉与 MPSD 配置、使用情况以及多人游戏会话疑难解答关联的术语和概念。
+本主题使用新的 Xbox One 多人游戏会话目录 (MPSD) 服务提供多人游戏会话创建的概述。 本文主要面向将自己的会话模板直接提交到 Xbox 开发门户 (XDP) 的 Xbox One 游戏开发人员。 MPSD 服务可配置的合作伙伴中心，但不专注于在本文中。 它旨在让开发人员熟悉与 MPSD 配置、使用情况以及多人游戏会话疑难解答关联的术语和概念。
 
 ## <a name="revision-summary"></a>修订摘要
 

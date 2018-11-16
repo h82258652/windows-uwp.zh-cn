@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告, 性能
 ms.localizationpriority: medium
 ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655452"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838450"
 ---
 # <a name="get-ad-performance-data"></a>获取广告性能数据
 
@@ -118,7 +118,7 @@ Authorization: Bearer <your access token>
 | applicationId       | 字符串 | 要检索广告性能数据的应用的应用商店 ID。     |
 | applicationName     | 字符串 | 应用的显示名称。                         |
 | adUnitId           | 字符串 | 广告单元的 ID。        |
-| adUnitName           | 字符串 | 由开发人员在合作伙伴中心的广告单元的名称。              |
+| adUnitName           | 字符串 | 由开发人员在合作伙伴中心中指定的广告单元的名称。              |
 | adProvider           |  字符串  |  广告提供商的名称   |
 | deviceType          | 字符串 | 广告投放所在设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                              |
 | market              | 字符串 | 广告投放所在地市场的 ISO 3166 国家/地区代码。             |

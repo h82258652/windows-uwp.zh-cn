@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92e52e4ebb58abb3a522f81a5ae4cce6486785f0
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6442351"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833642"
 ---
 # <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
-完整状态的信息应使用哪些信息请求。 
+完整状态信息应使用哪些信息请求。 
 <a id="ID4EN"></a>
 
  
@@ -29,7 +29,7 @@ RichPresenceRequest 对象具有以下规范。
 | --- | --- | --- | 
 | id| 字符串| 要使用的完整状态字符串<b>friendlyName</b> 。| 
 | scid| 字符串| 告诉我们定义的完整状态字符串的位置的 Scid。| 
-| 参数| 字符串的数组| 用来完成的完整状态字符串<b>friendlyName</b>字符串数组。 应指定仅枚举友好名称，不统计数据。保留为空这将删除以前的任何值。| 
+| 参数| 字符串的数组| 用来完成完整状态字符串<b>friendlyName</b>字符串的数组。 应指定仅枚举友好名称，不统计数据。保留此为空，则将删除以前的任何值。| 
   
 <a id="ID4EDC"></a>
 

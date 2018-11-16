@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d2586662121b48701c7eb33f3b8f91e5243bd6
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6251221"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6837232"
 ---
 # <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a>DELETE (/users/xuid({xuid})/devices/current/titles/current)
-删除结束游戏，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
+删除关闭标题，而不是等待[presencerecord，他的](../../json/json-presencerecord.md)过期的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
  
   * [URI 参数](#ID4EZ)
   * [授权](#ID4EEB)
@@ -44,7 +44,7 @@ ms.locfileid: "6251221"
 | --- | --- | --- | --- | --- | --- | --- | 
 | XUID| 是| 调用方的 Xbox 用户 ID (XUID)| 403 已禁止| 
 | titleId| 是| 职务标题的 Id| 403 已禁止| 
-| deviceId| 是针对 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
+| deviceId| 是所有 Windows 和 Web 除外| 调用方的 deviceid-| 403 已禁止| 
 | deviceType| 是针对 Web 除外| 调用方的 deviceType| 403 已禁止| 
   
 <a id="ID4ERD"></a>
@@ -55,8 +55,8 @@ ms.locfileid: "6251221"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
-| Content-Type| 字符串| 示例值的请求的正文的 mime 类型： application/json。| 
+| x xbl 协定版本| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。| 
+| Content-Type| 字符串| 请求正文中的示例值的 mime 类型： application/json。| 
 | Content-Length| 字符串| 请求正文的长度。 示例值： 312。| 
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。| 
   
@@ -67,7 +67,7 @@ ms.locfileid: "6251221"
  
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
+| X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。| 
   
 <a id="ID4EVG"></a>
 

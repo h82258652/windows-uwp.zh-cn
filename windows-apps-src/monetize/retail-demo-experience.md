@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 零售演示应用
 ms.localizationpriority: medium
 ms.openlocfilehash: ee0344d521b4c31449a2291517b20a09280818fc
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659424"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6835834"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>零售演示 (RDX) 功能添加到你的应用
 
@@ -21,9 +21,9 @@ ms.locfileid: "6659424"
 
 当客户在零售商店中，他们希望能够试用的电脑和设备的演示。 他们通常会花费相当大块的将与通过[零售演示体验 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)应用的一起玩游戏的时间。
 
-你可以设置你的应用提供不同的体验，在_正常_或_零售_模式。 例如，如果你的应用启动与安装过程，你可以在零售模式下，跳过它，预填充应用的示例数据和默认设置，以便他们可以直接跳转中。
+你可以设置你的应用提供不同的体验，在_正常_或_零售_模式。 例如，如果你的应用启动与安装过程中，你可以在零售模式下，跳过它，预填充应用的示例数据和默认设置，以便他们可以直接跳转中。
 
-从客户的角度是仅在一个应用。 若要帮助客户区分两种模式，我们建议在零售模式下你的应用时，它显示单词"零售"突出在标题栏或适合位置。
+从客户的角度，没有只能在一个应用。 为了帮助客户区分两种模式，我们建议应用在零售模式下时，它显示单词"零售"突出的标题栏中或在合适的位置。
 
 除了适用于应用的 Microsoft 应用商店要求，RDX 感知应用还必须符合 RDX 设置、 清理和更新过程，以确保客户在零售商店具有一致良好的体验。
 
@@ -31,7 +31,7 @@ ms.locfileid: "6659424"
 
 * **展示你的精华**。 使用零售演示体验展示你的应用的精彩。 这很可能在首次你的客户将看到你的应用，因此显示它们的最佳部分 ！
 
-* **显示快速**。 客户可能没有耐心 - 用户越快体验应用的真正价值越好。
+* **显示快速它**。 客户可能没有耐心 - 用户越快体验应用的真正价值越好。
 
 * **使故事保持简单**。 零售演示体验是价值的电梯为你的应用的值。
 
@@ -39,7 +39,7 @@ ms.locfileid: "6659424"
 
 ## <a name="technical-requirements"></a>技术要求
 
-由于 RDX 感知应用旨在展示你的应用向零售客户的精华，它们必须满足技术要求并遵守的 Microsoft 应用商店有针对所有零售演示体验应用的隐私法规。
+由于 RDX 感知应用旨在展示你的应用向零售客户的精华，它们必须满足技术要求并遵守隐私法规的 Microsoft 应用商店针对所有零售演示体验应用。
 
 这可以用作一个清单，帮助你为验证过程做准备，并在测试过程中提供清晰度。 请注意，不仅仅在验证过程中，还必须在零售演示体验应用的整个生存期中保留这些要求；只要应用在零售演示设备上保持运行。
 
@@ -55,15 +55,15 @@ ms.locfileid: "6659424"
 
 ### <a name="high-priority-requirements"></a>高优先级要求
 
-不满足这些高优先级要求的 RDX 感知应用需要立即调查获取修复。 如果无法立即找到修复，此应用可能从所有零售演示设备中删除。
+不满足这些高优先级要求的 RDX 感知应用需要将立即受到调查以获取修复。 如果无法立即找到修复，此应用可能从所有零售演示设备中删除。
 
 * **Memorable 脱机体验**。 你的应用需要展现绝佳的离线体验，因为大约 50%的设备在零售地点处于离线。 这是为了确保与离线应用交互的客户仍然能够获得有意义且正面的体验。
 
-* **更新内容体验**。 你的应用应永远不会提示联机时的更新。 如果需要更新，应以静默方式执行它们。
+* **已更新内容体验**。 你的应用应永远不会更新联机时提示。 如果需要更新，应以静默方式执行它们。
 
-* **无匿名通信**。 由于使用零售演示设备的客户是匿名用户，他们不应能够从设备消息或共享内容。
+* **无匿名通信**。 使用零售演示设备的客户是匿名用户，因为它们不应能够从设备消息或共享内容。
 
-* **提供一致的体验，使用清理过程**。 当客户走到零售演示设备前时，每个客户都应具有相同的体验。 你的应用应使用[清理过程](#clean-up-process)以在每次使用后返回到相同的默认状态。 我们不希望查看在最后一个客户留下的下一个客户。 这包括计分牌、成就和解锁。
+* **提供一致的体验，使用清理过程**。 当客户走到零售演示设备前时，每个客户都应具有相同的体验。 你的应用应使用[清理过程](#clean-up-process)以在每次使用后返回到相同的默认状态。 我们不希望下一位客户看到的最后一个客户留下的。 这包括计分牌、成就和解锁。
 
 * **适合年龄的内容**。 所有应用内容都需要分配为青少年或更低的分级类别。 若要了解详细信息，请参阅[获取你的应用由 IARC 分级](https://www.globalratings.com/for-developers.aspx)和[ESRB 分级](https://www.esrb.org/ratings/ratings_guide.aspx)。
 
@@ -71,14 +71,14 @@ ms.locfileid: "6659424"
 
 Windows 零售商店团队可能直接联系开发人员，以设置有关如何解决这些问题的讨论。
 
-* **能够在广泛的设备上成功运行**。 应用必须在所有设备，包括带有低端规范的设备上正常运行。 如果不满足最低要求的设备上安装该应用，则应用将需要清楚地告知用户这。 必须公布最低设备要求，以便应用可以始终高性能地运行。
+* **能够在广泛的设备上成功运行**。 应用必须在所有设备，包括带有低端规范的设备上正常运行。 如果不满足最低要求的设备上安装应用，则应用将需要清楚地告知用户这。 必须公布最低设备要求，以便应用可以始终高性能地运行。
 
 * **满足零售商店应用大小要求**。 应用必须小于 800MB。 如果你 RDX 感知应用不满足大小要求，请联系 Windows 零售商店团队直接进行进一步讨论。
 
 ## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>RetailInfo API： 准备你的代码演示模式
 
 ### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
-在[**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)实用程序类中，这是 Windows 10 SDK 中的[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空间的一部分， [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)属性用作的布尔值指示器用来指定你的应用运行-在哪个代码路径_法线_模式或_零售_模式。
+在[**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)实用程序类中，这是 Windows 10 SDK 中的[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空间的一部分， [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)属性用作的布尔值指示器指定你的应用运行扩充 — 哪个代码路径_法线_模式或_零售_模式。
 
 ``` csharp
 using Windows.Storage;
@@ -231,7 +231,7 @@ namespace Windows.System.Profile
 
 ## <a name="cleanup-process"></a>清理过程
 
-清理开始购物者停止与设备交互后两分钟。 零售演示播放，并且 Windows 开始重置联系人、 照片和其他应用中的任何示例数据。 根据设备，这可能需要之间 1-5 分钟才能完全所有内容都将重置为正常。 这将确保零售商店中的每个客户可以走到设备，与设备交互时获得相同的体验。
+清理开始购物者停止与设备交互后两分钟。 零售演示播放，并且 Windows 开始重置联系人、 照片和其他应用中的任何示例数据。 根据设备，这可能需要 1-5 分钟内以完全所有内容都将重置为正常。 这将确保零售商店中的每个客户可以走到设备，与设备交互时获得相同的体验。
 
 步骤 1： 清理
 * 关闭所有 Win32 和应用商店应用
@@ -245,7 +245,7 @@ namespace Windows.System.Profile
 
 ### <a name="store-data-across-user-sessions"></a>跨用户会话存储数据
 
-若要跨用户会话存储数据，可以存储信息__ApplicationData.Current.TemporaryFolder__中，因为默认清理过程不会自动删除此文件夹中的数据。 请注意，清理过程期间删除使用*LocalState*存储的信息。
+若要跨用户会话存储数据，可以存储信息__ApplicationData.Current.TemporaryFolder__中，因为默认清理过程不会自动删除此文件夹中的数据。 请注意，在清理过程期间删除使用*LocalState*存储的信息。
 
 ### <a name="customize-the-cleanup-process"></a>自定义清理过程
 
@@ -253,7 +253,7 @@ namespace Windows.System.Profile
 
 需要自定义清理逻辑的方案包括运行广泛的设置、 下载和缓存数据，或者不希望*LocalState*要删除数据。
 
-步骤 1： 声明你的应用清单中的_Microsoft RetailDemo 清理_服务。
+步骤 1： 声明你的应用清单中的_Microsoft-RetailDemo-Cleanup_服务。
 ``` CSharp
   <Applications>
       <Extensions>

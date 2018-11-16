@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651041"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836169"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]
@@ -114,7 +114,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   因为第二个延续是基于值的，所以如果通过调用 [**DeleteAsync**][deleteAsync] 启动的操作引发异常，则第二个延续根本不会执行。
 
-**请注意**创建任务链只是之一使用**task**类组合异步操作的方法。 还可以通过使用连接和选择运算符 **&&** 和 **||** 来组合操作。 有关详细信息，请参阅[任务并行度（并发运行时）][taskParallelism]。
+**注意**创建任务链只是之一使用**task**类组合异步操作的方法。 还可以通过使用连接和选择运算符 **&&** 和 **||** 来组合操作。 有关详细信息，请参阅[任务并行度（并发运行时）][taskParallelism]。
 
 ## <a name="lambda-function-return-types-and-task-return-types"></a>Lambda 函数返回类型和任务返回类型
 在任务延续中，lambda 函数的返回类型包含在 **task** 对象中。 如果该 lambda 返回 **double**，则延续任务的类型为 **task<double>**。 但是，任务对象的设计目的是为了不生成无需嵌套的返回类型。 如果 lambda 返回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，则延续返回 **task&lt;SyndicationFeed^&gt;**，而不是 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 此过程称为*异步解包*，并且它还确保延续内部的异步操作在调用下一个延续之前完成。

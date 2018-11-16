@@ -13,11 +13,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f9d56090e8fc1de83eeb4e8a68ca1830692c5b2f
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6468844"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6854937"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -70,14 +70,14 @@ ms.locfileid: "6468844"
 
  ![应用内亚克力](images/AppAcrylic_DarkTheme.png)
 
- 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建分散注意力的光学错觉。
+ 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建人分心光学错觉。
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如 NavigationView 或串联命令元素使用应用内亚克力。 
-* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于视觉维持与触发瞬态 UI 的内容。
+* 用于支持 UI，例如 NavigationView 或行中的命令元素使用应用内亚克力。 
+* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
 
-如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 会执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将亚克力边缘到边缘内的多个，这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让设计，视觉协调，但不正确，使用时可能会导致视觉干扰。
+如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
 
 请考虑以下使用模式，确定如何最佳亚克力融入你的应用：
 
@@ -93,18 +93,18 @@ ms.locfileid: "6468844"
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果您垂直窗格打开内容顶部，如在 NavigationView**折叠**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果内容顶部打开你的垂直窗格，如在 NavigationView **Collapsed**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
 
-### <a name="transient-surfaces"></a>暂时图面
+### <a name="transient-surfaces"></a>瞬态图面
 
 如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
 
-![使用信息的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
+![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
 
 默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力在调用时。
 
 > [!Note]
-> 呈现亚克力图面是 GPU 密集型，这导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
+> 呈现亚克力图面进行 GPU，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
 
 ## <a name="usability-and-adaptability"></a>可用性和适应性
 亚克力外观可自动适应各种设备和上下文。

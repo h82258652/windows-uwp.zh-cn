@@ -9,24 +9,24 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1cdb80a2278850f18cecc631fef0b5dff0fefc
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667626"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838782"
 ---
 # <a name="manage-your-experiment-in-partner-center"></a>合作伙伴中心中管理实验
 
 你[定义你在合作伙伴中心中的实验](define-your-experiment-in-the-dev-center-dashboard.md)，并[为实验编写应用代码](code-your-experiment-in-your-app.md)之后, 你已准备好激活实验，并使用合作伙伴中心查看实验结果。 在获取所需的全部数据后，可以结束你的实验，然后选择是继续使用你的所有应用的控件变体中的变量值还是切换到使用其他变体之一中的变量值。
 
 > [!NOTE]
-> 当激活某个实验时，合作伙伴中心会立即开始从进行检测以数据为你的实验记录的任何应用中收集数据。 但是，可能需要几个小时实验数据，以显示在合作伙伴中心。
+> 当激活某个实验时，合作伙伴中心会立即开始从进行检测以数据为你的实验记录的任何应用中收集数据。 但是，可能需要几个小时才实验数据，以显示在合作伙伴中心。
 
 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 ## <a name="activate-your-experiment"></a>激活实验
 
-当你在合作伙伴中心中的实验的参数满意，并且你已更新你的应用代码时，你可以随时激活实验，以便你可以开始从你的应用中收集实验数据。 激活实验后，你的应用可以检索变体值，并向合作伙伴中心报告视图和转换事件。
+当你在合作伙伴中心中的实验的参数满意，并且已更新你的应用代码时，可以随时激活实验，以便你可以开始从你的应用中收集实验数据。 激活实验时，你的应用可以检索变体值，并向合作伙伴中心报告视图和转换事件。
 
 1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 2. 在 **“你的应用”** 下，通过要激活的实验选择该应用。

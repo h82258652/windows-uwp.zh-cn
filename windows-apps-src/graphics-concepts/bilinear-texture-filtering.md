@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 48e16162a76b1a599c1a43e763243be4348810af
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667364"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839911"
 ---
 # <a name="bilinear-texture-filtering"></a>双线性纹理筛选
 

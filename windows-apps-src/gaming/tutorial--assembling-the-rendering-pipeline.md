@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661675"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839542"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>呈现框架 I：呈现简介
 
@@ -628,7 +628,7 @@ Microsoft DirectX 图形基础结构 (DXGI) 是一个新子系统中引入的 Wi
 
 使用功能级别，在创建设备时，你可以尝试为想要请求的功能级别创建设备。 如果设备创建成功，该功能级别将存在，如果失败，硬件将不支持该功能级别。 你可以尝试在更低的功能级别重新创建设备，也可以选择退出应用程序。 例如，12\_0 功能级别需要 Direct3D 11.3 或 Direct3D 12，以及着色器模型 5.1。 有关详细信息，请参阅 [Direct3D 功能级别：各功能级别概述](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
 
-使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后运行它上 9、 10 或 11 硬件 （除一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+使用功能级别，你可以开发适用于 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，应用程序，然后运行它在 9、 10 或 11 硬件 （除一些例外情况）。 有关详细信息，请参阅 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
 
 ### <a name="stereo-rendering"></a>立体呈现
 

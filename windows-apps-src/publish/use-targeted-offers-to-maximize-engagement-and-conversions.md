@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10，uwp，定向优惠，优惠/产品/服务，通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f6e1f8119522cd0441157131362d860feff3410
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6468315"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6968444"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>使用定向优惠最大程度地提高参与度和转换率
 
@@ -34,7 +34,7 @@ ms.locfileid: "6468315"
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>创建和发送定向优惠
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，在左侧的导航菜单中，展开**参与**，然后选择**目标产品/服务**。
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，在左侧的导航菜单中，展开**参与**，然后选择**定向产品/服务**。
 2.  在**定向优惠**页上，查看可用优惠。 针对任何想要实施的优惠，选择**创建新优惠**。
 
     > [!NOTE]
@@ -44,7 +44,7 @@ ms.locfileid: "6468315"
 4.  如果要创建更多优惠，请重复步骤 2 和 3。 对于同一个应用，只要每次为优惠选择的加载项不同，就可以多次实施同一种类型的优惠。 此外，可将同一个加载项与多个优惠类型关联。
 5.  创建完优惠后，单击**保存**。
 
-实施优惠后，你可以返回到合作伙伴中心，以查看每个优惠的转换总数的**定向优惠**页。
+实施优惠后，你可以返回到合作伙伴中心，以查看每个产品/服务的总转换中的**目标产品/服务**页面。
 
 如果决定不使用优惠（或如果不想再继续使用它），请单击**删除**。
 

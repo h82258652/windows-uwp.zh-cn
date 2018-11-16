@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地理编码, 地图, 位置
 ms.localizationpriority: medium
 ms.openlocfilehash: bdd956dece4435ceb8e14121ec2b545095af3a11
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662612"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6833831"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
 
@@ -22,11 +22,11 @@ ms.locfileid: "6662612"
 > [!TIP]
 > 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的[Windows 通用示例存储库](hhttps://github.com/Microsoft/Windows-universal-samples)下载[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)示例。
 
-涉及地理编码和反向地理编码的类如下所示。
+涉及地理编码和反向地理编码的类进行组织，如下所示。
 
 -   [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)类包含处理地理编码 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理编码 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
 -   这些方法都返回[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)实例。
--   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)的[**位置**](https://msdn.microsoft.com/library/windows/apps/dn627552)属性会公开[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象的集合。 
+-   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)的[**位置**](https://msdn.microsoft.com/library/windows/apps/dn627552)属性公开[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象的集合。 
 -   [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象具有[**地址**](https://msdn.microsoft.com/library/windows/apps/dn636929)属性，它将公开表示街道地址的[**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533)对象，并公开表示地理位置的[**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint)对象[**点**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point)属性。
 
 > [!IMPORTANT]
@@ -36,7 +36,7 @@ ms.locfileid: "6662612"
 
 本部分显示了如何将街道地址或地点名称转换为地理位置 （地理编码）。
 
-1.  调用一个[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)类与地点名称或街道地址[**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)方法的重载。
+1.  调用与地点名称或街道地址[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)类[**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)方法的重载之一。
 2.  [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)方法返回一个[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)对象。
 3.  使用[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)的[**位置**](https://msdn.microsoft.com/library/windows/apps/dn627552)属性公开集合[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象。 可能是多个[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象，因为系统可能会发现对应于给定的输入的多个位置。
 
@@ -87,7 +87,7 @@ result = (47.6406099647284,-122.129339994863)
 1.  调用 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的 [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法。
 2.  [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
 3.  使用[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)的[**位置**](https://msdn.microsoft.com/library/windows/apps/dn627552)属性公开集合[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象。 可能是多个[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)对象，因为系统可能会发现对应于给定的输入的多个位置。
-4.  通过每个[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)的[**地址**](https://msdn.microsoft.com/library/windows/apps/dn636929)属性访问[**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533)对象。
+4.  通过每个[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)[**地址**](https://msdn.microsoft.com/library/windows/apps/dn636929)属性访问[**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533)对象。
 
 ```csharp
 using Windows.Services.Maps;

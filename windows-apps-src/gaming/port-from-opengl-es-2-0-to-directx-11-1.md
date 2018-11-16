@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植, 图形
 ms.localizationpriority: medium
 ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659710"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838155"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>从 OpenGL ES 2.0 移植到 Direct3D 11
 
@@ -21,7 +21,7 @@ ms.locfileid: "6659710"
 
 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
 
-> **请注意**移植 OpenGL ES 2.0 项目的中间步骤是使用 Microsoft 应用商店的 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。 有关 ANGLE 的详细信息，请转到[适用于 Microsoft Store 的 ANGLE Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)。
+> **注意**移植 OpenGL ES 2.0 项目的中间步骤是使用 Microsoft 应用商店的 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。 有关 ANGLE 的详细信息，请转到[适用于 Microsoft Store 的 ANGLE Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)。
 
  
 

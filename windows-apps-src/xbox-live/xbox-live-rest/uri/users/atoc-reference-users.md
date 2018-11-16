@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f06174faa01ceebcd997141c7c2cc943b66797e4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6271019"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6831954"
 ---
 # <a name="users-uris"></a>用户 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*用户*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*用户*。
  
 这些 Uri 的域是 msg.xboxlive.com。
  
@@ -33,7 +33,7 @@ ms.locfileid: "6271019"
 
 [/users/xuid({xuid})/outbox](uri-usersxuidoutbox.md)
 
-&nbsp;&nbsp;提供仅发送给用户的访问权限的邮件发件箱为 Xbox LIVE 服务。 
+&nbsp;&nbsp;提供的消息仅发送给用户的访问权限的 Xbox LIVE 服务发件箱。 
  
 <a id="ID4EOB"></a>
 

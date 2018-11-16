@@ -91,7 +91,7 @@ ms.locfileid: "6674608"
     > [!NOTE]
     > 在 **MediaPlayer** 中开始播放主要视频内容之前，应该等待 **requestSchedule** 或 **requestScheduleByUrl** 返回。 在 **requestSchedule** 返回之前开始播放媒体（就前导广告而言），前导广告的播放将中断主要视频内容。 即使函数失败，也必须调用 **play**，因为 **AdScheduler** 将告诉 **MediaPlayer** 跳过广告，直接转到内容。 你可能具有不同的业务要求，例如插入内置广告（如果无法成功远程获取广告）。
 
-8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 以下代码显示了部分事件，包括 **onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete** 和 **onErrorOccurred**。
+8.  在播放期间，你可以处理让你的应用跟踪进度和/或在初始广告匹配进程后可能发生的错误的其他事件。 The following code shows some of these events, including **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete**, and **onErrorOccurred**.
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
 

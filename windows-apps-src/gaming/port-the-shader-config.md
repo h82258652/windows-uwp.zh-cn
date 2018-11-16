@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 移植, 着色器, direct3d, opengl
 ms.localizationpriority: medium
 ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6443853"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6835046"
 ---
 # <a name="port-the-shader-objects"></a>移植着色器对象
 
@@ -27,7 +27,7 @@ ms.locfileid: "6443853"
 
 移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。
 
-> **请注意**创建新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
+> **注意**创建新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
 
  
 
@@ -80,7 +80,7 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 在 Direct3D 中，着色器不是在运行时期间编译的，当编译程序的其余部分时，它们始终被编译为 CSO 文件。 当使用 Microsoft Visual Studio 编译应用时，HLSL 文件被编译为应用必须加载的 CSO (.cso) 文件。 确保在打包时将这些 CSO 文件与你的应用包含在一起。
 
-> **请注意**下面的示例执行的着色器加载和编译使用**自动**关键字和 lambda 语法异步。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
+> **注意**下面的示例执行的着色器加载和编译使用**自动**关键字和 lambda 语法异步。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
 
  
 

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b1711c29486b0a8d50c2dbed4c0240886febc084
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651332"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6835906"
 ---
 # <a name="guidelines-for-panning"></a>平移指南
 
@@ -34,7 +34,7 @@ ms.locfileid: "6651332"
 
 -   显示平移指示器和滚动条以提供位置和大小提示。如果你提供自定义导航功能，则隐藏它们。
 
-    **请注意**与标准滚动条，平移指示器是纯粹用于提供信息。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **注意**与标准滚动条，平移指示器是纯粹用于提供信息性。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
 
      
 
@@ -118,7 +118,7 @@ Windows8 支持三种类型的平移：
 -   触摸平移指示器。
 -   用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动条。
 
-**请注意**平移指标器才可见的可平移区域内进行触摸接触时。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
+**注意**平移指标器才可见的可平移区域内进行触摸接触时。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
 
  
 

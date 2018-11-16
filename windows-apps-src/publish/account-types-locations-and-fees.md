@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
 ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652628"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6970942"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
-Windows 中[的合作伙伴中心](https://partner.microsoft.com/dashboard)的产品/服务计划个人和公司帐户许多[国家和地区](#developer-account-and-app-submission-markets)。 你将应用发布到应用商店和参与其他 Microsoft 计划访问权限的帐户提供的任何一种类型。
+Windows 在[合作伙伴中心](https://partner.microsoft.com/dashboard)产品/服务计划这两个个人和公司帐户许多[国家和地区](#developer-account-and-app-submission-markets)。 你将应用发布到应用商店和参与其他 Microsoft 计划访问权限的帐户提供的任何一种类型。
 
 > [!NOTE]
 > 当打开开发者帐户，请确保你想要使用的开发者帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
@@ -39,7 +39,7 @@ Windows 中[的合作伙伴中心](https://partner.microsoft.com/dashboard)的�
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 直到进行验证，但在等待，尽管你可以[保留应用名称](create-your-app-by-reserving-a-name.md)才能提交中的公司帐户的应用继续生成和测试应用，以及适用于准备你的提交。
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在无法前进行验证，但时在等待，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)，将从公司帐户的应用继续生成和测试应用，以及在准备你的提交中工作。
 
 可在**帐户设置**页上查看验证状态。 
 

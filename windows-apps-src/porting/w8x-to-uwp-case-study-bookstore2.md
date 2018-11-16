@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d37f2507f3e4c96c3462fd075dbe945117dd82
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6668244"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838185"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore2
 
 
-此案例研究（基于 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件中显示分组数据。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **SemanticZoom** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows10Universal Windows 平台 (UWP) 应用中的步骤。
+此案例研究（基于 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件中显示分组数据。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **SemanticZoom** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows10Universal Windows 平台 (UWP) 应用的步骤。
 
-**请注意**时在 Visual Studio 中打开 Bookstore2Universal\_10，如果你看到消息"需要 Visual Studio 更新"，然后按照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步骤。
+**注意**时在 Visual Studio 中打开 Bookstore2Universal\_10，如果你看到消息"需要 Visual Studio 更新"，然后按照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步骤。
 
 ## <a name="downloads"></a>下载
 
@@ -53,7 +53,7 @@ Windows Phone 上的Bookstore2\_81，缩小视图
 
 Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Windows 项目为 Windows8.1，生成应用包，Bookstore2\_81.WindowsPhone 项目为 Windows Phone 8.1 生成应用包。 Bookstore2\_81.Shared 是包含经常由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
 
-就像与上一个案例研究中，我们将 （的选项的[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md)中所述） 将移植项目的内容共享到 windows 10 面向通用设备系列。
+就像与上一个案例研究中，我们将采取 （的选项类型，[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md)中所述） 将移植共享项目的内容投影到 windows 10 面向通用设备系列。
 
 首先创建新的空白应用程序（Windows 通用）项目。 将其命名为 Bookstore2Universal\_10。 这些是要从 Bookstore2\_81 复制到 Bookstore2Universal\_10 的文件。
 
@@ -65,7 +65,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 **从 Windows 项目中**
 
--   复制 BookstoreStyles.xaml。 我们会使用此一个作为合适的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;不会等效的 WindowsPhone 文件中的一部分。
+-   复制 BookstoreStyles.xaml。 我们将使用此证书合适的起始点，因为此文件中的所有资源键将都解析在 windows 10 应用中;不会等效的 WindowsPhone 文件中的一部分。
 -   复制 SeZoUC.xaml 和 SeZoUC.xaml.cs。 我们将从此视图的 Windows 版本开始（此版本适用于宽窗口），然后我们将使其适应较小的窗口，从而适应较小的设备。
 
 编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2\_81 命名空间的任何引用都更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用 **“在文件中替换”** 功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本的应用，请将 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“Bookstore2\_81”更改为“BOOKSTORE2UNIVERSAL\_10”。
@@ -169,7 +169,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 
 ![在移动设备上运行的已移植的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-在移动设备上使用，缩小视图运行的已移植的 windows 10 应用
+在移动设备，缩小视图上运行的已移植的 windows 10 应用
 
 ## <a name="conclusion"></a>总结
 

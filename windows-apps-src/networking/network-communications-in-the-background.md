@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6443811"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6859670"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
 若要继续网络通信不在前台时，你的应用可以使用后台任务和这两个选项之一。
@@ -21,14 +21,14 @@ ms.locfileid: "6443811"
 - 控制通道触发器。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在后台任务中执行网络操作
-- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止，以节省电量。
+- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止以节省电量。
 - 在检索到程序包并且需要执行生存期较长的任务时，使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 激活后台任务。
 
 **与网络相关的条件和标志**
 
 - 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件可以省电，因为必须有网络连接才会执行后台任务。 此条件不提供实时激活。
 
-无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务未使用**IsNetworkRequested**，你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时）。
+无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务未使用**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时）。
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>套接字代理和 SocketActivityTrigger
 如果应用使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 连接，尽管它不在前台，你应该使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和套接字代理收到流量到达你的应用的通知。
@@ -432,7 +432,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 与 HttpClient
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上接收数据包的请求的处理方式。
 
-**请注意**[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 目前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+**注意**[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)使用 SSL 目前不支持使用网络触发器功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
  
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应遵循以下使用模式和最佳做法：
 

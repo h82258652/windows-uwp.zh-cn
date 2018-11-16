@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: da2a3fc507915f3ed20b718f5a40cca3d0ba5e0b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6248861"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834227"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-指示，已使用所有或易耗型库存项目的部分和递减请求量该消耗品的数量。
+指示，已使用所有或易耗型库存项目的部分和递减请求的距离该消耗品的数量。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
   * [备注](#ID4EX)
@@ -30,15 +30,15 @@ ms.locfileid: "6248861"
 
 ## <a name="remarks"></a>备注
 
-   * 如果调用方要求占用的数量超过剩余提供的项目，则调用将被拒绝。
+   * 如果调用方要求占用的数量超过剩余可以提供的项目，则调用将被拒绝。
    * 调用方要求占用的数量必须是上述 0 正整数。 消耗值为 0 或更低的调用将被拒绝。
    * 如果调用方提供一个空的事务 ID，将拒绝该请求。
-   * 如果可用，以便它可以确定哪些游戏报告消耗，将记录的主题作品声明。
+   * 如果可用，以便它将能够确定哪些游戏报告消耗，将会记录的主题作品声明。
    * 使用相同的 transactionId 的其他文章将被忽略某个时间段。
 
 
 > [!NOTE]
-> 此 API <b>x xbl 合约版本标头</b>是"4"。
+> 此 API <b>x xbl 协定版本标头</b>是"4"。
 
 
 <a id="ID4EQB"></a>
@@ -70,7 +70,7 @@ ms.locfileid: "6248861"
 ```
 
 
-删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供了一种方法重试限制两次计数使用相同的风险时使用易耗型内容的操作与调用方。
+删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供能够限制两次计数相同的使用情况的风险时使用易耗型内容操作重试调用方。
 
 <a id="ID4ENC"></a>
 

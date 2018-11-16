@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 图形
 ms.localizationpriority: medium
 ms.openlocfilehash: e9834a83620343f26acaabd0e05b30cc2c1dcfab
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661990"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6837193"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>DirectX 游戏的基本 3D 图形
 
@@ -35,7 +35,7 @@ ms.locfileid: "6661990"
 
 下面我们介绍如何使用 DirectX 和 C++\\Cx 开发 3D 图形。 此教程包含五个部分，向你介绍 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API 以及在其他许多 DirectX 示例中也会用到的概念和代码。 这些部分从介绍如何为 UWP C++ 应用配置 DirectX，到如何设置基元的纹理和添加效果，循序渐进，逐层深入。
 
-> **请注意**本教程中使用具有列向量的右手坐标系统。 很多 DirectX 示例和应用都使用具有行向量的左手坐标系。 为了获得更完整的图形数学解决方案以及支持具有行向量的左手坐标系的解决方案，请考虑使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)。 有关详细信息，请参阅[将 DirectXMath 与 Direct3D 结合使用](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D)。
+> **注意**本教程使用具有列向量的右手坐标系统。 很多 DirectX 示例和应用都使用具有行向量的左手坐标系。 为了获得更完整的图形数学解决方案以及支持具有行向量的左手坐标系的解决方案，请考虑使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)。 有关详细信息，请参阅[将 DirectXMath 与 Direct3D 结合使用](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D)。
 
  
 

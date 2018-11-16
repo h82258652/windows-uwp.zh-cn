@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b139d0b8747931f7cac9885d441122af97f7dad
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664050"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834986"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>通过 MediaFrameReader 使用开放源计算机视觉库 (OpenCV)
 
@@ -30,7 +30,7 @@ ms.locfileid: "6664050"
 
 若要查看和下载本文中所述方案的完整、端到端工作示例，除了这些文章以外，请参阅 Windows 通用示例 GitHub 存储库中的[相机帧 + OpenCV 示例](https://go.microsoft.com/fwlink/?linkid=854003)。
 
-若要开始使用快速开发，你可以包含 OpenCV 库在 UWP 应用项目中使用 NuGet 程序包，但这些包可能不会通过应用 certficication 过程，当你提交到应用商店，你的应用，因此建议你下载 OpenCV库源代码和提交你的应用之前自行生成二进制文件。 使用 OpenCV 进行开发的信息可以在 [http://opencv.org](http://opencv.org) 中找到
+若要开始快速开发，你可以包含 OpenCV 库在 UWP 应用项目中使用 NuGet 程序包，但这些程序包可能不会传递应用 certficication 过程，当你提交到应用商店，你的应用，因此建议你下载 OpenCV库源代码和提交你的应用之前自行生成二进制文件。 使用 OpenCV 进行开发的信息可以在 [http://opencv.org](http://opencv.org) 中找到
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>实施 OpenCVHelper 本机 Windows 运行时组件

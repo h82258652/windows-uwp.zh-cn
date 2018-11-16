@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6650177"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6837113"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
@@ -89,7 +89,7 @@ ms.locfileid: "6650177"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)和后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)的前后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -126,7 +126,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)和后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)的前后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -332,7 +332,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-在`HyperlinkButton_Click`事件处理程序中的 Page1.xaml 代码隐藏文件中，添加参数引用`Text`属性`name` **TextBox**到`Navigate`方法。
+在`HyperlinkButton_Click`Page1.xaml 代码隐藏文件中，事件处理程序添加参数引用`Text`属性`name` **TextBox**到`Navigate`方法。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

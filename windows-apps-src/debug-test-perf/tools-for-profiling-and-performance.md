@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b51e50415e85f8cb1ddca6c358c8d27aa5f0fe
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662864"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6837302"
 ---
 # <a name="tools-for-profiling-and-performance"></a>用于分析和性能的工具
 
 
 Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的工具。 请按以下链接了解如何使用这些工具。
 
-**在 Visual Studio 中的 XAML UI 响应能力工具**。 用于衡量应用内的性能影响的最佳工具之一是 XAML UI 响应能力工具。 这已[更新](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx)，以支持更多方案。
+**在 Visual Studio 中的 XAML UI 响应能力工具**。 用于衡量应用内的性能影响的最佳工具之一是 XAML UI 响应能力工具。 此已[更新](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx)，以支持更多方案。
 
 另请参阅：
 
