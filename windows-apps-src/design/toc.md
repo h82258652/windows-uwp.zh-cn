@@ -30,7 +30,6 @@
 ## 转换
 ### [概述](layout/transforms.md)
 ### [3D 透视效果](layout/3-d-perspective-effects.md)
-## [Z 深度和阴影](layout/depth-shadow.md)
 
 # 控件
 ## [概述](controls-and-patterns/index.md)

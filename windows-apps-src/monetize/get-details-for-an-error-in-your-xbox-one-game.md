@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 33733af7f323817bc82d49800c2dc17c5f7b9887
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 6f665b99b7f64e41597a5767d58b86ac8e85c6bd
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6978346"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155533"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>获取游戏的 Xbox One 中的错误的详细信息
 
-使用 Microsoft Store 分析 API 中以获取详细的数据的特定错误在 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析开发人员中心仪表板中的此方法。 此方法仅可以检索过去 30 天内发生的错误的详细信息。
+使用 Microsoft Store 分析 API 中以获取详细的数据的特定错误在 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。 此方法仅可以检索过去 30 天内发生的错误的详细信息。
 
 你可以使用此方法之前，必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索想要获取详细的信息的错误的 ID。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6978346"
 
 | 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其检索错误详细信息的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| applicationId | 字符串 | 要为其检索错误详细信息的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 合作伙伴中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
 | failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，使用[获取错误报告数据的 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)的方法，并使用该方法的响应正文中的**failureHash**值。 |  是  |
 | startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
 | endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
