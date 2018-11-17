@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91732a6c4abc082283dc397fb87ad38d9de452b8
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119063"
+ms.locfileid: "7144141"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>保留的文件和 URI 方案名称
 

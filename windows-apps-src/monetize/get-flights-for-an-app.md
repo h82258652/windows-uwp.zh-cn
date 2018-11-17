@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
 ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6994388"
+ms.locfileid: "7144537"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6986340"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7164326"
 ---
 # <a name="get-file-properties"></a>获取文件属性
 

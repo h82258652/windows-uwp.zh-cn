@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 云服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "6992006"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7154117"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>使用适用于 UWP 游戏的云服务
 

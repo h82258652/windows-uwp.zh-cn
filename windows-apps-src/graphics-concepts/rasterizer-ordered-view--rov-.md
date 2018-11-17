@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7327304e2b42ff5ff71be136220b58e99c6228d2
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6996900"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7106120"
 ---
 # <a name="rasterizer-ordered-view-rov"></a>光栅器排序视图 (ROV)
 

@@ -7,17 +7,19 @@ ms.date: 09/21/2018
 ms.topic: article
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 69eb9f72d6b4cf01185f7e4886a7ed5c30a669df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6972425"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7145337"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的桌面应用程序托管 API
 
 > [!NOTE]
-> UWP XAML 托管 API 是为开发人员预览当前可用。 尽管我们鼓励你尝试在原型代码中的此 API 现在，我们不建议你使用它在生产代码中这一次。 此 API 将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
+> UWP XAML 托管 API 和 XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些功能将继续成熟并在将来稳定的 Windows 版本。 Microsoft 对于此处提供的信息不作任何明示或默示的担保。
+>
+> 如果你有关于托管 API 和 XAML 群岛 XAML 反馈，发送反馈XamlIslandsFeedback@microsoft.com。 你的见解和方案是对我们而言至关重要。
 
 从 Windows 10 Insider Preview SDK 开始构建 17709，非 UWP 桌面应用程序 （包括 WPF、 Windows 窗体和 c + + Win32 应用程序） 可以在任何与窗口句柄 （相关联的 UI 元素中使用*UWP XAML 托管 API*到托管 UWP 控件HWND)。 此 API 使非 UWP 桌面应用程序使用将仅可通过 UWP 控件的最新 Windows 10 UI 功能。 例如，非 UWP 桌面应用程序可以使用此 API 对使用[Fluent Design 系统](../design/fluent-design-system/index.md)和支持[Windows Ink](../design/input/pen-and-stylus-interactions.md)托管 UWP 控件。
 

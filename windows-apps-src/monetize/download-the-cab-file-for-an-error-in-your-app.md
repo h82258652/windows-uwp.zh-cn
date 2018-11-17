@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 047340d180e3de9f963dc76c85edaa6abea67327
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6993765"
+ms.locfileid: "7173474"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下载应用中错误的 CAB 文件
 

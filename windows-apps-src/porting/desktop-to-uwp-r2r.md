@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，编译器的本机映像
 ms.localizationpriority: medium
 ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7128937"
+ms.locfileid: "7164234"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>优化你的.NET 桌面应用使用本机映像
 

@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: 517a1cbb8ec2cafe49ded53bce34e17537bc5efc
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: ad1e3339fe50087c3a3d8cdcf3a99f27c1c868df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968211"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147011"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>下载你的 Xbox One 游戏中的错误的 CAB 文件
 
-在 Microsoft Store 分析 API 中使用此方法，可下载与已引入 Xbox 开发人员门户 (XDP) 通过在 Xbox One 游戏中的特定错误相关联，可在 XDP 分析开发人员中心仪表板的 CAB 文件。 此方法只能下载过去 30 天内发生的错误的 CAB 文件。
+在 Microsoft Store 分析 API 中使用此方法，可下载与已引入 Xbox 开发人员门户 (XDP) 通过在 Xbox One 游戏中的特定错误相关联，可在 XDP 分析合作伙伴中心仪表板的 CAB 文件。 此方法只能下载过去 30 天内发生的错误的 CAB 文件。
 
 你可以使用此方法之前，你都必须首先使用[获取 Xbox One 游戏中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索想要下载的 CAB 文件的 ID。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6968211"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 你下载的 CAB 文件的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 开发人员中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
+| applicationId | 字符串 | 你下载的 CAB 文件的 Xbox One 游戏的产品 ID。 若要获取你的游戏的产品 ID，请导航到 Xbox 开发人员门户 (XDP) 中你的游戏，并从 URL 中检索产品 ID。 或者，如果你从 Windows 合作伙伴中心分析报告下载你的运行状况数据，该.tsv 文件中包含的产品 ID。 |  是  |
 | cabId | 字符串 | 想要下载的 CAB 文件的唯一 ID。 若要获取此 ID，使用[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)的方法来检索你的应用中特定错误的详细信息，并使用该方法的响应正文中的**cabId**值。 |  是  |
 
  

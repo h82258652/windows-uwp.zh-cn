@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c3861d5a135e0ee7a688a93a57cce801a05cf9a5
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6975835"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7153307"
 ---
 # <a name="manage-add-ons"></a>管理加载项
 

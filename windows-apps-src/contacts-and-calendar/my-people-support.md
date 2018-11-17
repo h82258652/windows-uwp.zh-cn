@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e567db01916367c8ea30d98e59f421581ac7aa
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7103748"
+ms.locfileid: "7145624"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
 
