@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bc55367100cb05c2cce1e85d3629fa9c7c8173f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6264051"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150445"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---march-2017"></a>Xbox Live SDK 的新增功能 - 2017 年 3 月
 
@@ -23,7 +23,7 @@ ms.locfileid: "6264051"
 
 ### <a name="data-platform-2017"></a>数据平台 2017
 
-我们引入了简化的统计 API。  从传统上讲您必须以发送与 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
+我们引入了简化的统计 API。  从传统上讲你必须以发送与 XDP 或合作伙伴中心上定义的统计规则对应的事件，并且这会更新云中的统计信息值。  我们将此模型称为 Stats 2013。
 
 使用 Stats 2017，你的标题现在可以控制统计信息值。  你只需调用包含最新统计信息值的 API，它们即可被直接发送到服务，无需发送事件。  这使用新的 `StatsManager` API，你可以在[玩家统计信息](../leaderboards-and-stats-2017/player-stats.md)中了解更多信息
 

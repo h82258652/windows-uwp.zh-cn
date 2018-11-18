@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a55ca557902990e296bf099b5c677346034bd783
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471734"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7165156"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsincludevaluemetadata"></a>GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)
 获取指定的统计数据，包括与统计信息值，指定的服务配置中的用户相关联的元数据的列表。
@@ -35,7 +35,7 @@ ms.locfileid: "6471734"
 
 ## <a name="remarks"></a>备注
 
-？ 包括 = valuemetadata 查询参数允许该响应包含任何关联的用户统计数据值，如的模型和颜色的汽车用于实现跑道上的某个时间使用元数据。
+？ 包括 = valuemetadata 查询参数允许包括任何相关联的用户统计数据值，如的模型和颜色的汽车用于实现跑道上的某个时间使用的元数据的响应。
 
 若要在响应中包含值元数据，请求调用还必须将标头值 X Xbl 协定版本为 3。
 
@@ -47,7 +47,7 @@ ms.locfileid: "6471734"
 | 参数| 类型| 说明|
 | --- | --- | --- |
 | xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。|
-| scid| GUID| 服务配置，其中包含所访问的资源的标识符。|
+| scid| GUID| 服务配置，其中包含正在访问的资源的标识符。|
 
 <a id="ID4ELB"></a>
 
@@ -66,8 +66,8 @@ ms.locfileid: "6471734"
 
 没有针对内容隔离和访问控制方案实现的授权逻辑。
 
-   * 假设调用方提交请求的有效 XSTS 令牌，可以从任何平台上的客户端读取排行榜和用户统计信息。 写入仅限于数据平台支持的客户端。
-   * 游戏开发人员可以将统计数据标记为打开或使用 XDP 或合作伙伴中心限制。 排行榜是开放的统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或合作伙伴中心管理到沙盒的用户身份验证。
+   * 排行榜和用户统计信息可以读取的所有平台上的客户端，前提是调用方提交与请求有效的 XSTS 令牌。 写入仅限于数据平台支持的客户端。
+   * 游戏开发人员可以将统计数据标记为打开或使用 XDP 或合作伙伴中心限制。 排行榜是打开统计信息。 打开统计信息可以访问 Smartglass，以及 iOS、 Android、 Windows、 Windows Phone 和 web 应用程序，只要用户有权访问沙盒。 通过 XDP 或合作伙伴中心管理到沙盒的用户身份验证。
 
 检查伪代码如下所示：
 
@@ -100,7 +100,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | 生成此请求应定向到该服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
+| X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到该服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
 <a id="ID4EHG"></a>
 
@@ -114,13 +114,13 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 304| 未修改| 资源未修改由于最后一次请求。|
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。|
+| 304| 未修改| 资源不已修改由于最后一次请求。|
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常参数无效。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 403| 已禁止| 为用户或服务不允许该请求。|
 | 404| 找不到| 找不到指定的资源。|

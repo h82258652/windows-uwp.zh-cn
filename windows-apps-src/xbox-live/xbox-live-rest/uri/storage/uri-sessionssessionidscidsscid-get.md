@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 47b88e62b722af30c61e94f78d796cd00352fe65
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6265914"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162840"
 ---
 # <a name="get-sessionssessionidscidsscid"></a>GET (/sessions/{sessionId}/scids/{scid})
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -41,7 +41,7 @@ ms.locfileid: "6265914"
  
 ## <a name="authorization"></a>授权
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头是无效或不存在，该服务将返回 401 未经授权的响应。 
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头丢失或无效，该服务将返回 401 未经授权的响应。 
   
 <a id="ID4ENB"></a>
 
@@ -65,18 +65,18 @@ ms.locfileid: "6265914"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 请求已成功。| 
 | 201| 已创建| 创建实体。| 
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常参数无效。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 403| 已禁止| 为用户或服务不允许该请求。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 406| 不允许| 不支持资源版本。| 
-| 408| 请求超时| 请求时间太长，才能完成。| 
+| 408| 请求超时| 请求所花的时间太长，才能完成。| 
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
 | 503| 服务不可用| 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
   
@@ -85,7 +85,7 @@ ms.locfileid: "6265914"
  
 ## <a name="response-body"></a>响应正文
  
-如果调用成功，该服务将返回一个[quotaInfo (JSON)](../../json/json-quota.md)对象。 
+如果在调用成功，该服务将返回一个[quotaInfo (JSON)](../../json/json-quota.md)对象。 
  
 <a id="ID4EKAAC"></a>
 

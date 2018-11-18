@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 861228c4b00cba6ee011b96f1f2d0493b7eafbfe
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6250272"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7144013"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessions"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
 检索会话模板文档。
 
 > [!IMPORTANT]
-> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上每个请求。
+> 此 URI 方法需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EKB)
@@ -42,7 +42,7 @@ ms.locfileid: "6250272"
 
 
 > [!NOTE] 
-> 每次调用此方法必须包括关键字、 Xbox 用户 ID 筛选器或两者。 如果调用方不具有正确的<i>私钥</i>和<i>预订</i>参数的权限，该方法将返回 403 禁止，错误代码，确实存在任何此类会话。  
+> 每次调用此方法必须包括关键字、 Xbox 用户 ID 筛选器或两者。 如果调用方不具有正确的<i>私钥</i>和<i>预订</i>参数的权限，方法将返回 403 禁止，错误代码，无论确实存在任何此类会话。  
 
 
 <a id="ID4EKB"></a>
@@ -53,13 +53,13 @@ ms.locfileid: "6250272"
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话的 id。|
-| 关键字| 字符串| 用于筛选结果以标识与该字符串的只是会话的关键字。|
-| xuid| GUID| 为其检索会话的用户的 Xbox 用户 Id。 用户必须在会话处于活动状态。 |
+| 关键字| 字符串| 用来筛选结果以标识与该字符串的只是会话的关键字。|
+| xuid| GUID| 要检索会话为其用户的 Xbox 用户 Id。 用户必须在会话处于活动状态。 |
 | 预订| 字符串| 值，该值指示如果会话列表包括用户具有不接受。 仅可以将此参数设置为 true。 此设置要求调用方拥有对会话，服务器级访问权限或调用方的 XUID 声明以匹配的 Xbox 用户 ID 筛选器。 |
-| 处于非活动状态| 字符串| 指示会话列表包括用户已接受，但不会主动玩游戏的值。 仅可以将此参数设置为 true。 |
-| 专用| 字符串| 值，指示会话列表是否包含专用会话。 仅可以将此参数设置为 true。 仅在查询你自己的会话，或进行服务器到服务器查询时，它是有效。 将此参数设置为 true 要求调用方拥有对会话，服务器级访问权限或调用方的 XUID 声明以匹配的 Xbox 用户 ID 筛选器。 |
-| 可见性| 字符串| 指示用于筛选结果的可见性状态的枚举值。 当前此参数可以仅在设置为打开包含打开的会话。 请参阅<b>MultiplayerSessionVisibility</b>。 |
-| version| 字符串| 正整数指示主要的会话版本或较低的会话以包括。 值必须小于或等于 100 模请求的协定版本。 |
+| 处于非活动状态| 字符串| 值，该值指示会话列表包括用户已接受，但不会主动玩游戏。 仅可以将此参数设置为 true。 |
+| 专用| 字符串| 值，该值指示会话列表是否包含专用会话。 仅可以将此参数设置为 true。 仅在查询你自己的会话，或进行服务器到服务器查询时，它是有效。 将此参数设置为 true 要求调用方拥有对会话，服务器级访问权限或调用方的 XUID 声明以匹配的 Xbox 用户 ID 筛选器。 |
+| 可见性| 字符串| 指示用于筛选结果的可见性状态的枚举值。 当前此参数可以仅设置为打开包含打开的会话。 请参阅<b>MultiplayerSessionVisibility</b>。 |
+| version| 字符串| 正整数，该值的主要的会话版本或较低的会话以包括。 值必须小于或等于 100 模请求的协定版本。 |
 | 参加| 字符串| 正整数指示会话最大数量来检索。|
 
 <a id="ID4EXB"></a>

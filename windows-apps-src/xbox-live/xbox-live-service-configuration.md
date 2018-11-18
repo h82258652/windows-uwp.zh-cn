@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置
 ms.localizationpriority: medium
 ms.openlocfilehash: dc5db2d750f297c226f377d8f90ddc3ff900f6f3
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6279550"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7147756"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live 服务配置
 
@@ -25,9 +25,9 @@ ms.locfileid: "6279550"
 
 不过，要做到这一点，你需要执行某种一次性配置，使 Xbox Live 了解你的排行榜。 例如，值应以升序还是降序排序，以及应对哪部分数据进行排序。
 
-此配置出现在[合作伙伴中心](https://partner.microsoft.com/dashboard)上大部分时间。 但是，某些开发人员将使用 [Xbox 开发人员门户 (XDP)](http://xdp.xboxlive.com)。
+在[合作伙伴中心](https://partner.microsoft.com/dashboard)大多数情况下，此配置会发生。 但是，某些开发人员将使用 [Xbox 开发人员门户 (XDP)](http://xdp.xboxlive.com)。
 
-如果你是 Xbox Live 创意者计划的一部分的开发你的作品，你可使用[合作伙伴中心](https://partner.microsoft.com/dashboard)，并可以读取[Xbox Live 入门](get-started-with-creators/get-started-with-xbox-live-creators.md)若要了解如何获取设置。
+如果你是开发你的作品，作为 Xbox Live 创意者计划的一部分，你使用[合作伙伴中心](https://partner.microsoft.com/dashboard)，并可以读取[Xbox Live 入门](get-started-with-creators/get-started-with-xbox-live-creators.md)若要了解如何获取设置。
 
 如果你是 ID@Xbox 开发人员，或要与作为 Microsoft 合作伙伴的发布者合作，请阅读下文。
 
@@ -61,7 +61,7 @@ ms.locfileid: "6279550"
 使用 XDP 为 UWP 应用程序配置 Xbox Live 服务时，应注意以下几个重要事项：
 
 * **一旦将游戏的 Xbox Live 服务配置发布到 XDP 中的 CERT/RETAIL，就没有任何退路！** 该游戏的 Xbox Live 服务配置需要在游戏作品的生命周期内一直保留在 XDP 中。
-* **没有从 XDP 到合作伙伴中心的迁移路径。** 如果在 XDP 中启动你的 Xbox Live 配置，你必须手动重新创建它在合作伙伴中心中如果你想要将其移动。
+* **没有从 XDP 到合作伙伴中心的迁移路径。** 如果在 XDP 中启动你的 Xbox Live 配置，你必须手动重新创建它在合作伙伴中心如果你想要将该画笔移动。
 
 鉴于这两个注意事项，我们建议使用合作伙伴中心对电脑/手机游戏，除非属于上述类别之一。
 
@@ -74,7 +74,7 @@ Xbox One 与电脑之间的跨设备游戏称为跨平台联机游戏，是对 W
 
 * **使用 XDP 配置和发布你的 XDK 游戏。** 此时，合作伙伴中心不支持 Xbox One XDK 游戏。
 * **无论是 XDK 版还是 UWP 版游戏，都使用你在 XDP 中创建的单个 Xbox Live 服务配置。** 现在，XDP 的新增功能允许游戏在 XDK 版和 UWP 版游戏之间共享单个 Xbox Live 服务配置。
-* **使用合作伙伴中心引入和发布你的 UWP 游戏。** 但是，不使用合作伙伴中心配置 Xbox Live 服务，因为你的游戏将使用你在 XDP 中创建的服务配置。
+* **使用合作伙伴中心引入和发布你的 UWP 游戏。** 但是，不使用合作伙伴中心配置 Xbox Live 服务，因为你的游戏将使用在 XDP 中创建的服务配置。
 * **不要在拆分 XDP 和合作伙伴中心之间的 Xbox Live 服务配置。** XDP 和合作伙伴中心不能感知的互相冲突，并发布服务配置从一个源覆盖从其他来源发布的配置。 这可能会导致数据丢失（缺少成就、擦除游戏保存内容等），从而带来糟糕的用户体验。 出于这个原因，**我们要求，对于 XDK 和 UWP 跨平台联机游戏，Xbox Live 服务配置必须全部在 XDP 中完成。**
 
 [跨平台联机游戏入门](get-started-with-partner/get-started-with-cross-play-games.md)指南中提供了有关此过程的更多详细信息，包括*不*属于自助服务的项目
@@ -82,7 +82,7 @@ Xbox One 与电脑之间的跨设备游戏称为跨平台联机游戏，是对 W
 ### <a name="separate-versions-of-xbox-one-and-pcmobile-games-that-are-not-cross-play"></a>不属于跨平台联机游戏的 Xbox One 和电脑/手机游戏的单独版本
 你可以决定使游戏的 Xbox One 版本与电脑/手机版本分隔开来。 在这种情况下，你可以创建两个单独的产品，并按照指南分别仅对 Xbox One XDK 和电脑/手机 UWP 游戏执行操作。
 
-你不能在这种情况下，这两个版本使用相同的服务配置，并且你必须手动创建你的游戏，每个单独版本的服务配置在 XDP 中或在合作伙伴中心中相应地。
+不能在此情况下，这两个版本使用相同的服务配置，并且你必须手动创建你的游戏，每个单独版本的服务配置在 XDP 中或在合作伙伴中心中相应地。
 
 <a name="get_ids"></a>
 
@@ -112,7 +112,7 @@ Xbox One 与电脑之间的跨设备游戏称为跨平台联机游戏，是对 W
 
 **XDP**
 
-如果你要在 XDP 上配置你的游戏，你获取你的沙盒 ID 概述页面上为你的产品，如下所示：
+如果你要在 XDP 上配置你的作品，则你的沙盒 ID 上获得概述页面为你的产品，如下所示：
 
 ![](images/getting_started/xdp_sandbox_id.png)
 
@@ -124,7 +124,7 @@ SCID 区分大小写。
 
 **合作伙伴中心**
 
-若要检索你在合作伙伴中心中的 SCID，导航到 Xbox Live 服务部分，然后转到*Xbox Live 设置*。 你的 SCID 将显示在下表中：
+若要检索你的 SCID 合作伙伴中心中，导航到 Xbox Live 服务部分，然后转到*Xbox Live 设置*。 你的 SCID 将显示在下表中：
 
 ![](images/getting_started/devcenter_scid.png)
 
@@ -142,7 +142,7 @@ SCID 区分大小写。
 
 **合作伙伴中心**
 
-你在合作伙伴中心中的主题作品 ID 位于同一个表中的*Xbox Live 设置*页面中的 SCID。
+在合作伙伴中心中作品 ID 位于同一个表中的*Xbox Live 设置*页面中的 SCID。
 
 **XDP**
 

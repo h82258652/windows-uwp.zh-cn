@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，特权，合作伙伴中心
 ms.openlocfilehash: f51fd7f9da1758d28301031ecd10d3d7650c1121
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6833289"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7153856"
 ---
 # <a name="configure-privileges-in-partner-center"></a>在合作伙伴中心中配置权限
 

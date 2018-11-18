@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb87b331fabf61ecd44dddf14a1f9c1ede51cff
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6263351"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162445"
 ---
 # <a name="gameresult-json"></a>GameResult (JSON)
-表示数据，以描述的游戏会话的结果的 JSON 对象。 
+表示数据，以描述游戏会话的结果的 JSON 对象。 
 <a id="ID4EN"></a>
 
   
@@ -27,8 +27,8 @@ GameResult JSON 对象具有以下成员。
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | blob| 8 位无符号整数数组| 自定义特定于游戏的结果数据。| 
-| 结果| 字符串| 游戏会话的玩家参与的结果。 有效值为"Win"、"丢失"绑定"。 | 
-| 分数| 64 位有符号整数| 玩家收到游戏会话中的高分。| 
+| 结果| 字符串| 游戏会话的玩家的参与的结果。 有效值为"Win"、"丢失"绑定"。 | 
+| 分数| 64 位有符号整数| 评分，玩家收到游戏会话中。| 
 | time| 64 位有符号整数| 游戏会话的玩家的时间。| 
 | xuid| 64 位无符号的整数| 结果将应用到其玩家的 Xbox 用户 ID。| 
   

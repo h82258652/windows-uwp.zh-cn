@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
 ms.openlocfilehash: b247a69e0def8a2e3a62a8c05a8fac3106bded35
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267442"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162795"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -65,7 +65,7 @@ typedef struct AsyncBlock
 * *context* - 用于向回调函数传递数据。
 * *queue* - 一个 async_queue_handle_t，作为指定 **AsyncQueue** 的句柄。 如果未设置此队列，将使用默认队列。
 
-你应该在每个异步调用的 API 在堆栈上创建新 AsyncBlock。  AsyncBlock 必须位于之前称为 AsyncBlock 的完成回调，然后可以将其删除。
+你应该在每个异步调用的 API 在堆栈上创建新 AsyncBlock。  AsyncBlock 必须实时之前称为 AsyncBlock 的完成回调，然后可以将其删除。
 
 > [!IMPORTANT]
 > **AsyncBlock** 必须一直保留在内存中，直到**异步任务**完成。 如果是动态分配的，可以在 AsyncBlock 的**完成回调**内部将其删除。
@@ -78,7 +78,7 @@ typedef struct AsyncBlock
 * 通过 true 值调用 **GetAsyncStatus** 一直等到它完成。
 * 在 **AsyncBlock** 中设置一个 waitEvent，并等待发出事件信号
 
-借助**GetAsyncStatus**和 waitEvent，**异步任务**被视为完成后 AsyncBlock 的**完成回调**执行但 AsyncBlock 的**完成回调**是可选的。
+借助**GetAsyncStatus**和 waitEvent，**异步任务**视作完成后 AsyncBlock 的**完成回调**执行但 AsyncBlock 的**完成回调**是可选的。
 
 一旦**异步任务**完成，你就可以获取结果。
 
@@ -148,7 +148,7 @@ STDAPI CreateSharedAsyncQueue(
 > 如果已存在具有此 ID 和调度模式的队列，将引用该队列。  否则，将创建新的队列。
 
 创建 **AsyncQueue** 之后，请直接将其添加到 **AsyncBlock** 以控制工作和完成函数的线程处理。
-当你完成使用**AsyncQueue**时，通常时即将结束游戏，你可以关闭它与**CloseAsyncQueue**:
+当你完成使用**AsyncQueue**时，通常当即将结束游戏，你可以关闭它与**CloseAsyncQueue**:
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(
@@ -273,7 +273,7 @@ DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 }
 ```
 
-它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，然后你将需要确保不会错过代码的任何事件如：
+它是最佳做法，用于实现与 Win32 信号灯对象。  如果改为实现使用 Win32 事件对象，那么你将需要确保不会错过代码的任何事件如：
 
 ```cpp
     case WAIT_OBJECT_0: 

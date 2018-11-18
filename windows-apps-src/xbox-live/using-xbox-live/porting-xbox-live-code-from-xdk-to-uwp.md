@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a30a81123902d7b4b2f8311ae1f24bd23b3e43
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6258212"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152501"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>将 Xbox Live 代码从 Xbox 开发人员工具包 (XDK) 移植到通用 Windows 平台 (UWP)
 
@@ -382,7 +382,7 @@ RequestExtension();
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>支持在 Xbox One 与电脑 UWP 之间进行多人跨平台联机游戏
 
-除了在 XDP 中的新会话模板要求 （请参阅[设置和配置你在合作伙伴中心和 XDP 中的项目](#_Setting_up_and)），跨平台游玩随附新限制对会话加入功能。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
+除了在 XDP 中的新会话模板要求 （请参阅[设置和配置你在合作伙伴中心和 XDP 中的项目](#_Setting_up_and)），跨平台游玩附带对会话加入功能的限制。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
 
 此外，由于 Windows 10 多人游戏需要 **userAuthorizationStyle** 功能，加入和读取限制默认为“本地”。
 

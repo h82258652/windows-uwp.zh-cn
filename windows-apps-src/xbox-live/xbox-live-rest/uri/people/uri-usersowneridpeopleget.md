@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a9761e3e9dff2cef330c48674a62b33f63fbd096
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6257225"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7160364"
 ---
 # <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 获取调用方的用户集合。
@@ -54,8 +54,8 @@ ms.locfileid: "6257225"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- |
-| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表中的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 不同于所属的用户调用用户是否支持仅**所有**的值。|
-| startIndex| 32 位无符号的整数| 返回起始位置给定索引的项目。  
+| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表上的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 不同于所属的用户调用用户是否支持仅**所有**的值。|
+| startIndex| 32 位无符号的整数| 返回起始位置给定索引的项。  
 | maxItems| 32 位无符号的整数| 用户从开始菜单索引从开始集合中返回的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
 
 <a id="ID4ERD"></a>
@@ -83,8 +83,8 @@ ms.locfileid: "6257225"
 
 | 标题| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。|
+| X RequestedServiceVersion| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。|
 
 <a id="ID4E5G"></a>
 
@@ -98,7 +98,7 @@ ms.locfileid: "6257225"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -121,7 +121,7 @@ ms.locfileid: "6257225"
 
 ## <a name="response-body"></a>响应正文
 
-如果调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
+如果在调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
 
 <a id="ID4EZCAC"></a>
 

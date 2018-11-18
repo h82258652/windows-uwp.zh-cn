@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aaef11864a513b42cb5a1c036e7699477884b4a
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6251336"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150916"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
 为特定的库存项目提供完整的详细信息集。 这些 Uri 的域是`inventory.xboxlive.com`。
@@ -28,7 +28,7 @@ ms.locfileid: "6251336"
  
 ## <a name="remarks"></a>备注
  
-没有策略检查，强制执行，或筛选会作为此调用的一部分。
+没有策略检查，强制执行，否则筛选会作为此调用的一部分。
   
 <a id="ID4EAB"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "6251336"
  
 ### <a name="sample-response"></a>示例响应
  
-GET 请求，假设传递身份验证并分配适当授权上下文中，该响应是具有完整的项目属性集的单个清单项。
+GET 请求，假设传递身份验证并分配适当授权上下文中，该响应是具有完整的项目属性集的单个库存项。
  
 
 ```cpp

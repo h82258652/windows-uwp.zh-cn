@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: 525249475a9fc8a22d976398cf277620de6655e1
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6253965"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7146459"
 ---
 # <a name="configure-access-policies-in-partner-center"></a>配置在合作伙伴中心访问策略
 

@@ -10,18 +10,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c64d54b3f1d8515018e256400af8e04f77d8955
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6257667"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166824"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
 支持的匹配票证的删除操作。
 
 > [!IMPORTANT]
-> 此 URI 用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上每个请求。
+> 此 URI 旨在用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -32,7 +32,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>备注
-此 URI 支持的值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。  
+此 URI 支持的值 xuid、 gt，和我的目标用户的配置中的所有者标识符。  
 <a id="ID4E2"></a>
 
 

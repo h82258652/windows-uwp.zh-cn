@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 95a6a912e663773d427a6786a6af7b1fdf26c548
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471668"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7167431"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [需的请求标头](#ID4EBB)
   * [所需的响应标头](#ID4EUC)
@@ -35,7 +35,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求时, 显示下表中的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | 
@@ -66,7 +66,7 @@ gameserverds.xboxlive.com
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | qosservers| 服务器信息的数组。| 
-| serverFqdn| 服务器的完全限定的域名。| 
+| serverFqdn| 完全限定的域名的服务器。| 
 | serverSecureDeviceAddress| 服务器的安全设备地址。| 
 | targetLocation| 服务器的地理位置。| 
  

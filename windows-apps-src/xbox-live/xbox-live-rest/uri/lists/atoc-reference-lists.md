@@ -10,17 +10,17 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c84b68f990392d17342e333b18e5f5d38d2266
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6257832"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7145801"
 ---
 # <a name="lists-uris"></a>列表 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*Pin*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*Pin*。
  
-仅游戏和 Xbox 360 上，Windows Phone 设备、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
+仅游戏和 Xbox 360、 Windows Phone 设备上、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
  
 这些 Uri 的域是 eplists.xboxlive.com。
  

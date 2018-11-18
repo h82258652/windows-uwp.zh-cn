@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox live 创意者, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: f256d8a10fb78c04f6b124ecbbd906d798381736
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272482"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7164335"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a>使用 Visual Studio 开发 Xbox Live 创意者计划主题作品入门
 
@@ -32,7 +32,7 @@ ms.locfileid: "6272482"
 
 ## <a name="create-a-new-product-in-partner-center"></a>在合作伙伴中心中创建新产品
 
-每个 Xbox Live 的主题作品必须具有[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建，你将能够在登录并进行 Xbox Live 服务调用之前的产品。 有关详细信息，请参阅[创建新创意者主题作品](create-and-test-a-new-creators-title.md)。
+每个 Xbox Live 主题作品必须具有[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建，你将能够在登录并进行 Xbox Live 服务调用之前的产品。 有关详细信息，请参阅[创建新创意者主题作品](create-and-test-a-new-creators-title.md)。
 
 ## <a name="configuring-your-development-device"></a>配置开发设备
 
@@ -105,7 +105,7 @@ Xbox 服务 API 同时支持 C++ 和 WinRT，其命名结构的形式为 **Micro
 
 ### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a>4. 将 Visual Studio 项目与 UWP 应用关联
 
-为你的游戏支持登录，它必须与你在合作伙伴中心中创建的产品相关联。 您可以通过使用 Microsoft Store 关联向导在 Visual Studio 中关联你的游戏。 在 Visual Studio 中，执行以下操作：
+为你的游戏支持登录，它必须与你在合作伙伴中心中创建的产品关联。 您可以通过使用 Microsoft Store 关联向导在 Visual Studio 中关联你的游戏。 在 Visual Studio 中，执行以下操作：
 
 1.  右键单击主项目（启动项目），然后单击 **Store** > **Associate App with the Store...**
 2.  如果需要，使用用于创建应用的 **Windows 开发人员帐户**登录并按照提示进行操作。

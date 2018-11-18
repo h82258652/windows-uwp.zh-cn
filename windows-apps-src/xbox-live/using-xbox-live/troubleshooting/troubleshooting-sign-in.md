@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 登录, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 49806ea48b8af691d5b161e21426c73d65712408
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6250617"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149402"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live 登录疑难解答
 
@@ -31,7 +31,7 @@ ms.locfileid: "6250617"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>开发人员帐户不能访问适用于运行时访问的沙盒
 
-* 测试帐户 （也称为开发帐户） 或经授权的开发人员帐户必须用于登录到正在开发中主题作品。  请确保你要尝试进行登录与一个或在 XDP 上创建其他测试帐户[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)。 在合作伙伴中心上的 xbox live 相关联的开发人员帐户，你可以授权[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* 测试帐户 （也称为开发帐户） 或经授权的开发人员帐户必须用于登录到正在开发中的游戏。  请确保你尝试使用其中一个登录或在 XDP 上创建其他测试帐户[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)。 在合作伙伴中心上的 xbox live 相关联的开发人员帐户，你可以授权[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * 确保帐户有权访问你的游戏发布到沙盒。  在 XDP 中创建的测试帐户继承了创建它们的 XDP 帐户的权限
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>你的设备未位于正确的沙盒上
@@ -82,9 +82,9 @@ ms.locfileid: "6250617"
 
 ![解决方案资源管理器中的 pfx 文件](../../images/troubleshooting/pfx_file.png)
 
-如果你未登录到 Visual Studio 使用用于预配合作伙伴中心中的应用的 Microsoft 帐户，Visual Studio 将自动生成签名 pfx 文件，具体取决于你的个人 Microsoft 帐户或域帐户。 构建 appx 程序包时，Visual Studio 将使用自动生成的 pfx 签署该程序包并更改 package.appxmanifest 中的程序包“发布者”部分。 因此，生成的位（尤其是，appxmanifest.xml）所具有的程序包标识符与你预期使用的程序包标识符不同。 
+如果你未登录到 Visual Studio 用于预配合作伙伴中心中的应用的 Microsoft 帐户，Visual Studio 将自动生成签名 pfx 文件，具体取决于你的个人 Microsoft 帐户或域帐户。 构建 appx 程序包时，Visual Studio 将使用自动生成的 pfx 签署该程序包并更改 package.appxmanifest 中的程序包“发布者”部分。 因此，生成的位（尤其是，appxmanifest.xml）所具有的程序包标识符与你预期使用的程序包标识符不同。 
 
-2. 仔细检查你的 package.appxmanifest 在合作伙伴中心中设置为你的游戏在同一个应用程序标识。 你可以右键单击项目并选择“应用商店”->“将应用与应用商店关联...”，如以下屏幕截图中所示。 或者，手动编辑你的 package.appxmanifest。 请参阅[适用于 UWP 游戏的 Visual Studio 入门](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，了解详细信息。
+2. 仔细检查你的 package.appxmanifest 在合作伙伴中心设为相同应用程序标识为你的游戏。 你可以右键单击项目并选择“应用商店”->“将应用与应用商店关联...”，如以下屏幕截图中所示。 或者，手动编辑你的 package.appxmanifest。 请参阅[适用于 UWP 游戏的 Visual Studio 入门](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)，了解详细信息。
 
 ![与 Microsoft Store 相关联](../../images/troubleshooting/appxmanifest_binding.png)
 
@@ -92,7 +92,7 @@ ms.locfileid: "6250617"
 
 总体而言，这意味着设备或用户无法访问指定游戏。
 
-1. 这可能意味着你未使用测试帐户尝试登录或者你的测试帐户没有所登录沙盒的访问权限。 请仔细检查[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)中创建测试帐户的说明，并[合作伙伴中心文档。](../../xbox-live-test-accounts.md) 如果需要创建一个新的测试帐户有权访问相应沙盒。
+1. 这可能意味着你未使用测试帐户尝试登录或者你的测试帐户没有所登录沙盒的访问权限。 请仔细检查在[XDP 文档](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)中创建测试帐户的说明，并[合作伙伴中心文档。](../../xbox-live-test-accounts.md) 如果需要创建一个新的测试帐户有权访问相应沙盒。
 
 你可能需要删除 Windows 10 中的旧帐户，可通过转至“开始”菜单中的“设置”并转至“帐户”来进行删除。
 

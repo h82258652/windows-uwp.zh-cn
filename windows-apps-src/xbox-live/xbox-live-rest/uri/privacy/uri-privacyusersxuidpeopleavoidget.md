@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 68237ed101870a8fed4b7b5fb298006f784a0910
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471701"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7147232"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -32,7 +32,7 @@ ms.locfileid: "6471701"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，仅返回该用户，如果它们不在阻止列表中，也可以为空如果它们不。
+如果给定目标，仅返回该用户，如果它们在阻止列表中，也可以为空如果它们不。
 
 <a id="ID4EZ"></a>
 
@@ -67,12 +67,12 @@ ms.locfileid: "6471701"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| URI 中指定的目标 ID 不正确。|
+| 400| 错误请求| 无效的 URI 中指定的目标 ID。|
 | 403| 已禁止| URI 中指定的所有者不是经过身份验证的用户。|
 | 404| 找不到| URI 中指定的所有者不存在。|
 
@@ -84,7 +84,7 @@ ms.locfileid: "6471701"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
-| Content-Length| 字符串| 在响应中发送的字节数。 示例值： 34。 最大大小： none。|
+| Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|
 | 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4ESH"></a>

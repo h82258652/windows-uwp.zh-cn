@@ -1,7 +1,7 @@
 ---
 title: 配置 Stats and Leaderboards 2017
 author: KevinAsgari
-description: 了解如何在合作伙伴中心中使用 Data Platform 2017 中配置 Xbox Live 特别推荐的统计数据和排行榜。
+description: 了解如何使用 Data Platform 2017 的合作伙伴中心中配置 Xbox Live 特别推荐的统计数据和排行榜。
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.author: kevinasg
 ms.date: 04/04/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: caea254143561d3e38b6583db90945118671e435
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6442323"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7160977"
 ---
 # <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a>在合作伙伴中心中使用 Data Platform 2017 配置特别推荐的统计数据或排行榜
 

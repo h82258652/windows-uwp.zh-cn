@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 825b101ef5b450910f0bd9b2ab84991daa8074a7
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6265116"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163490"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
-获取当前用户的[PresenceRecord](../../json/json-presencerecord.md) ，而无需知道用户的 XUID。
+获取当前用户的[presencerecord，他的](../../json/json-presencerecord.md)无需知道用户的 XUID。
 这些 Uri 的域是`userpresence.xboxlive.com`。
 
   * [查询字符串参数](#ID4EZ)
@@ -34,7 +34,7 @@ ms.locfileid: "6265116"
 
 | 参数| 类型| 描述|
 | --- | --- | --- |
-| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除活动的整个树。</li><li><b>所有</b>： 返回整个树中，包括活动级别状态。</li></ul> | 
+| level| 字符串| 可选。 <ul><li><b>用户</b>： 返回仅用户节点。</li><li><b>设备</b>： 返回用户节点和设备节点。</li><li><b>标题</b>： 默认值。 返回除外活动将整个树。</li><li><b>所有</b>： 返回整个树，包括活动级别状态。</li></ul> | 
 
 <a id="ID4EIC"></a>
 
@@ -53,8 +53,8 @@ ms.locfileid: "6265116"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。|
-| x xbl 协定版本| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
-| 接受| 字符串| 内容类型可接受。 支持的唯一一个是 application/json，但它必须在标头中指定。|
+| x xbl 协定版本| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 示例值： 3，vnext。|
+| 接受| 字符串| 内容类型可接受。 只有一个受状态是 application/json，但它必须在标头中指定。|
 | 接受的语言| 字符串| 在响应中的字符串的可接受区域设置。 示例值： EN-US。|
 | Host| 字符串| 服务器的域名。 示例值： presencebeta.xboxlive.com。|
 
@@ -65,7 +65,7 @@ ms.locfileid: "6265116"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
+| X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 1。|
 
 <a id="ID4EPG"></a>
 

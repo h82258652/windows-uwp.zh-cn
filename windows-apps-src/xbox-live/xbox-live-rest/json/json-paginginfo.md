@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e86fbe2ee840a33e3e4cb21cb9584381d389394a
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6251635"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150810"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
 包含分页信息数据页中返回的结果。 
@@ -25,7 +25,7 @@ ms.locfileid: "6251635"
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| ContinuationToken| 字符串| 用于访问结果的下一步页面不透明延续令牌。 最大 32 个字符。调用方可以提供<b>continuationToken</b>查询参数中的此值，以检索下一组的集合中的项。 如果此属性为<b>null</b>，则没有任何其他项目集合中。 此属性是必需的并且即使与<b>skipItems</b>调时集合提供。| 
+| ContinuationToken| 字符串| 用于访问结果的下一个页不透明延续令牌。 最大 32 个字符。调用方可以提供<b>continuationToken</b>查询参数中的此值，以检索下一组的集合中的项。 如果此属性为<b>null</b>，则没有任何其他项目集合中。 此属性是必需的并且即使与<b>skipItems</b>调时集合提供。| 
 | totalItems| 32 位有符号整数| 集合中项的总数。 这不会提供服务是否处于无法提供实时概况集合的大小。| 
   
 <a id="ID4E4B"></a>

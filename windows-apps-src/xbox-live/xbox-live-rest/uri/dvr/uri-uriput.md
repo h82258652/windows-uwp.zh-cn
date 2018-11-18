@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 56a5150e354568f3ea7ec772953bd1e1e8efa579
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6280002"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163333"
 ---
 # <a name="put-uri"></a>PUT (/{uri})
 上传游戏剪辑数据。
@@ -38,7 +38,7 @@ ms.locfileid: "6280002"
 
 返回**InitialUploadResponse**后，通过该对象中返回**uploadUri**执行上传。 客户端应将文件拆分为**expectedBlocks**连续块中，不大于 2 MB。 它们可以并行上传。
 
-如果你要上载块中的文件，服务器将返回 HTTP 状态代码的接受 (202) 为每个请求，直到它已经收到所有预期的块中，在这种情况下它作为一个文件，返回创建 (201) 提交的所有块。 在这些情况下，响应不包含一个对象，并将服务器可能计划额外的处理。 在发生错误， **ServiceErrorResponse**对象可能会返回以及相应的 HTTP 状态代码。
+如果你要上载块中的文件，服务器将返回 HTTP 状态代码的已接受 (202) 为每个请求，直到它已经收到所有预期的块中，在这种情况下它作为一个文件，返回创建 (201) 提交的所有块。 在这些情况下，响应不包含一个对象，并且服务器可能计划额外的处理。 在发生错误， **ServiceErrorResponse**对象可能会返回以及相应的 HTTP 状态代码。
 
 在恢复的错误代码，客户端应使用标准后关闭重试机制重试。
 
@@ -62,7 +62,7 @@ ms.locfileid: "6280002"
 
 | 参数| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- |
-| <b>blockNum</b>| 32 位无符号的整数| 如果设置<b>expectedBlocks</b>必需。 零开始编制块确定排序的文件中的块数量。 例如，如果<b>expectedBlocks</b> 7，则<b>blockNum</b>可以是从 0 到 6。 |
+| <b>blockNum</b>| 32 位无符号的整数| 如果设置<b>expectedBlocks</b>必需。 零开始编制块确定排序的文件中的块数量。 例如，如果<b>expectedBlocks</b> 7，然后<b>blockNum</b>可以是从 0 到 6。 |
 | <b>uploadId</b>| 字符串| 必需。 <b>GameClipsServiceUploadResponse</b>对象中的不透明 ID。|
 
 <a id="ID4EBE"></a>
@@ -73,7 +73,7 @@ ms.locfileid: "6280002"
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>|
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。|
 | 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。|
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌用语请求。|
@@ -100,19 +100,19 @@ ms.locfileid: "6280002"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 原因短语| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 301| 已永久移动| 该服务已移动到不同的 URI。|
 | 307| 临时重定向| 该服务已移动到不同的 URI。|
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。|
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常参数无效。|
 | 401| 未授权| 请求要求用户身份验证。|
 | 403| 已禁止| 为用户或服务不允许该请求。|
 | 404| 找不到| 找不到指定的资源。|
 | 406| 不允许| 不支持资源版本。|
-| 408| 请求超时| 请求时间太长，才能完成。|
+| 408| 请求超时| 请求所花的时间太长，才能完成。|
 | 410| 前面| 所请求的资源不再可用。|
 
 <a id="ID4EYEAC"></a>
@@ -122,7 +122,7 @@ ms.locfileid: "6280002"
 
 | 标头| 类型| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
+| X RequestedServiceVersion| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。|
 | 缓存控制| 字符串| 若要指定缓存行为的礼貌用语请求。|
 | 接受| 字符串| 内容类型的可接受的值。 示例： <b>application/json</b>。|

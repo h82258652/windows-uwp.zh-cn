@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b39060c84742f1b37087b17ebc33b021b2c5eb7
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6254057"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7147169"
 ---
 # <a name="post-usersxuidxuidresetreputation"></a>POST (/users/xuid({xuid})/resetreputation)
-启用后 （例如） 帐户劫持到某些任意值设置指定的用户的信誉评分，强制执行团队。 这些 Uri 的域是`reputation.xboxlive.com`。
+使执行团队后 （例如） 帐户劫持将指定的用户的信誉评分设置为某些任意值。 这些 Uri 的域是`reputation.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
@@ -32,7 +32,7 @@ ms.locfileid: "6254057"
  
 ## <a name="remarks"></a>备注
  
-通过任何其他合作伙伴的所有除零售沙盒和 Retail，除非出于测试目的的所有沙盒中的用户，也可能会调用此方法。 请注意，此请求用于设置用户的"基本"信誉评分，他正面反馈权重将全部归零。在执行此调用后用户的实际信誉将这些基本评分以及他大使奖金和他关注者奖金。
+通过任何其他合作伙伴的所有除零售沙盒和 Retail，除非出于测试目的的所有沙盒中的用户，也可能会调用此方法。 请注意，此请求用于设置用户的"基本"信誉评分，他正面反馈权重将全部归零。在执行此调用后用户的实际信誉将这些基本评分以及他大使奖金他关注者奖金。
   
 <a id="ID4E5"></a>
 
@@ -48,7 +48,7 @@ ms.locfileid: "6254057"
  
 ## <a name="authorization"></a>授权
  
-从合作伙伴： 为零售沙盒， **PartnerClaim**来自强制执行团队;对于所有其他沙盒， **PartnerClaim**。
+从合作伙伴： 为零售沙盒， **PartnerClaim**从强制执行团队;对于所有其他沙盒， **PartnerClaim**。
  
 用户： 以外的所有沙盒零售、 **XuidClaim**和**TitleClaim**除外。
   
@@ -66,7 +66,7 @@ ms.locfileid: "6254057"
 | 标头| 类型| 说明| 
 | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值:"XBL3.0 x =&lt;userhash >;&lt;令牌 >"。| 
-| X RequestedServiceVersion|  | 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
+| X RequestedServiceVersion|  | 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 请求将仅可路由到的服务验证该标头，身份验证令牌中的声明的有效性后，依此类推。 默认值： 101。| 
   
 <a id="ID4EYD"></a>
 
@@ -96,12 +96,12 @@ ms.locfileid: "6254057"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源进行的请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
 | 代码| 原因短语| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 确定。| 
-| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常无效参数。| 
+| 400| 错误请求| 服务可能不理解格式不正确的请求。 通常参数无效。| 
 | 401| 未授权| 请求要求用户身份验证。| 
 | 404| 找不到| 找不到指定的资源。| 
 | 500| 内部服务器错误| 服务器时遇到意外的情况，执行此请求将阻止它。| 
@@ -112,7 +112,7 @@ ms.locfileid: "6254057"
  
 ## <a name="response-body"></a>响应正文
  
-成功时，响应正文为空。 失败时，会返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
+成功时，响应正文为空。 失败时，将返回一个[ServiceError (JSON)](../../json/json-serviceerror.md)文档。
  
 <a id="ID4E3H"></a>
 

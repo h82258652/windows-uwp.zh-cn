@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d757c2d5fc985e4944f11aaaaccf53fabb0401
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275643"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155665"
 ---
 # <a name="gameclipuritype-enumeration"></a>GameClipUriType 枚举
 详细介绍 GameClipUriType 枚举。 
@@ -23,7 +23,7 @@ ms.locfileid: "6275643"
  
 ## <a name="gameclipuritype"></a>GameClipUriType
  
-| <b>枚举</b>| <b>说明</b>| 
+| <b>枚举器</b>| <b>说明</b>| 
 | --- | --- | 
 | 无| 游戏剪辑 URI 类型是未知或未设置。| 
 | 源语言| 游戏剪辑 URI 处于未处理的形式的原始游戏剪辑的位置。| 

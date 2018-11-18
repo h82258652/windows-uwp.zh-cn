@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 106fe8e79752125a8c30670e226aebd689c3d240
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272629"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7160503"
 ---
 # <a name="additional-reference"></a>其他参考
 
-本部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
+本部分中的主题提供 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
 
 <a id="ID4EZ"></a>
 
@@ -27,15 +27,15 @@ ms.locfileid: "6272629"
 
 [授权类型](authorizationtypes.md)
 
-&nbsp;&nbsp;介绍使用 Xbox Live 服务的标准授权类型。
+&nbsp;&nbsp;介绍了 Xbox Live 服务使用标准的授权类型。
 
 [数据类型概述](datatypeoverview.md)
 
-&nbsp;&nbsp;介绍使用 Xbox Live 服务的标准标识相关的数据类型。
+&nbsp;&nbsp;介绍 Xbox Live 服务使用标准标识相关的数据类型。
 
 [辅助 EDS API](eds-apis.md)
 
-&nbsp;&nbsp;介绍了辅助 EDS Api。
+&nbsp;&nbsp;介绍的辅助 EDS Api。
 
 [EDS 授权](edsauthorization.md)
 
@@ -61,15 +61,15 @@ ms.locfileid: "6272629"
 
 [分页参数](pagingparameters.md)
 
-&nbsp;&nbsp;介绍了进行 Xbox Live 服务请求时可能会使用的分页参数。
+&nbsp;&nbsp;介绍在 Xbox Live 服务请求时可能会使用的分页参数。
 
 [标准 HTTP 请求和响应标头](httpstandardheaders.md)
 
-&nbsp;&nbsp;介绍了进行 Xbox Live 服务请求时使用的标准 HTTP 标头。
+&nbsp;&nbsp;介绍在 Xbox Live 服务请求时使用的标准 HTTP 标头。
 
 [标准 HTTP 状态代码](httpstatuscodes.md)
 
-&nbsp;&nbsp;描述了由该服务返回的标准 HTTP 状态代码。
+&nbsp;&nbsp;介绍由该服务返回的标准 HTTP 状态代码。
 
 <a id="ID4ECC"></a>
 

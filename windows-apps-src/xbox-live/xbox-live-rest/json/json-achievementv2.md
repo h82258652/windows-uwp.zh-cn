@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a9cee88a2fdc5b0244119399620c3448f54f75
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267826"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166661"
 ---
 # <a name="achievement-json"></a>Achievement (JSON)
 成就对象 （版本 2）。
@@ -31,7 +31,7 @@ ms.locfileid: "6267826"
 | serviceConfigId| 字符串| 此资源的 SCID。 标识此成就相关的标题。 |
 | name| 字符串| 本地化的成就名称。|
 | titleAssociations| [TitleAssociation](json-titleassociation.md)的数组| TitleAssociation 数组。|
-| progressState| **ProgressState**枚举| 进度的状态： <ul><li>无效 (0): 成就进度处于未知状态。</li><li>实现 (1): 已解锁成就。</li><li>正在进行 (2): 成就处于锁定状态，但用户已解锁它的进度。</li><li>notStarted (3): 成就处于锁定状态和用户尚未建立任何进度解锁它。</li></ul> | 
+| progressState| **ProgressState**枚举| 进度的状态： <ul><li>无效 (0): 成就进度处于未知状态。</li><li>实现 (1): 已解锁成就。</li><li>正在进行 (2): 成就被锁定，但用户是否已进行了距离解锁它的进度。</li><li>notStarted (3): 成就处于锁定状态和用户尚未建立任何进度解锁它。</li></ul> | 
 | 进度| [进度](json-progression.md)| 用户的成就内的进度。|
 | mediaAssets| [MediaAsset](json-mediaasset.md)的数组| 与成就，如图像 Id 关联的媒体资产。 |
 | 平台| 字符串| 平台成就已赢得上。|
@@ -39,9 +39,9 @@ ms.locfileid: "6267826"
 | description| 字符串| 当解锁成就的说明。|
 | lockedDescription| 字符串| 成就解锁之前的说明。|
 | productId| 字符串| 成就的 ProductId 一起发布。|
-| achievementType| **AchievementType**枚举| （不与相同传统成就的以前类型） 的成就类型： <ul><li>无效 (0): 未知和不受支持的成就类型。</li><li>永久性 (1): 没有结束日期，可以随时解锁成就。</li><li>(2) 的质询： 具有特定时段期间，它可以是一种解锁成就。</li></ul> |
+| achievementType| **AchievementType**枚举| （不与相同传统成就的以前类型） 的成就类型： <ul><li>无效 (0): 未知和不受支持的成就类型。</li><li>永久性 (1): 没有结束日期，可以随时解锁成就。</li><li>(2) 的挑战： 具有特定时间窗口期间可能会解锁成就。</li></ul> |
 | participationType| **ParticipationType**枚举| 成就参与类型。 有效值为个人或组。|
-| timeWindow| TimeWindow| 在此期间可能会解锁成就的时段。 仅支持挑战。|
+| timeWindow| TimeWindow| 在此期间可能会解锁成就时间窗口。 仅支持挑战。|
 | 奖励| [奖励](json-reward.md)的数组| 解锁时获得的奖励的集合。|
 | estimatedTime| 时间跨度| 估计的时间成就需要获得。|
 | deeplink| 字符串| 到游戏 deeplink。|

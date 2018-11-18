@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c87af8cb76ce452c067edddb55c382d8c604ca25
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275792"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162017"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
 允许客户端创建 Xbox Live 计算服务器实例的 URI。 这些 Uri 的域是`gameserverms.xboxlive.com`。
@@ -47,7 +47,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-当发出请求下, 表中所示的标头是必需的。
+发出请求时, 显示下表中的标头是必需的。
  
 | 标头| 值| 说明| 
 | --- | --- | --- | --- | --- | 
@@ -63,7 +63,7 @@ gameserverms.xboxlive.com
  
 ## <a name="authorization"></a>授权
  
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果在标头丢失或无效，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头是无效或不存在，该服务将在响应中返回 401 未经授权。
   
 <a id="ID4EWD"></a>
 
@@ -75,7 +75,7 @@ gameserverms.xboxlive.com
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | sessionId| 从 MPSD 会话标识符。| 
-| abortIfQueued| 可选参数，该设置为 true 告知 GSMS 不进行排队此会话的资源，如果它可以不立即完成。 如果由于此值为 true，将中止请求，将包含响应对象<code>"fulfillmentState" : "Aborted"</code>。 | 
+| abortIfQueued| 可选参数，该设置为 true 告知 GSMS 不进行排队此会话的资源，如果它可以不立即完成。 如果请求中止，因为此值为 true，将包含响应对象<code>"fulfillmentState" : "Aborted"</code>。 | 
  
 <a id="ID4ERE"></a>
 
@@ -118,8 +118,8 @@ gameserverms.xboxlive.com
  
 | 成员| 说明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是估计，当群集将准备好，但而对调用方轮询给定当前池的请求和实施情况率和订阅状态更新的频率的建议。| 
-| fulfillmentState| 指示是否提供的会话立即分配一个资源，"完成"，添加到队列的未来的资源、 可用性"队列"，或终止，"中止"，因为无法满足请求时立即请求为"true"的指定的 abortIfQueued。 | 
+| pollIntervalMilliseconds| 建议毫秒才能完成轮询间隔。 请注意，这不是的估计值，当群集将准备好，但而对调用方轮询给定当前池的订阅和请求和实施情况率的状态更新的频率的建议。| 
+| fulfillmentState| 指示是否提供的会话被立即分配一个资源，"完成"，添加到队列的未来的资源，可用性"排队"，或终止，"中止"，因为无法满足请求时立即请求为"true"的指定的 abortIfQueued。 | 
  
 <a id="ID4EWH"></a>
 
@@ -143,7 +143,7 @@ gameserverms.xboxlive.com
  
 收到以下响应代码时，游戏应仅重试对服务调用：
  
-   * 408-服务器超时
+   * 408 — 服务器超时
    * 429： 请求过多
    * 500-服务器错误
    * 502 — 错误的网关

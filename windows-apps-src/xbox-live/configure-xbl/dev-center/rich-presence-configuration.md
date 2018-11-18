@@ -1,5 +1,5 @@
 ---
-title: 在合作伙伴中心中的 Rich Presence 配置
+title: 在合作伙伴中心的 Rich Presence 配置
 author: aablackm
 description: 了解如何在合作伙伴中心中配置完整状态字符串
 ms.author: aablackm
@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，Rich Presence 字符串，合作伙伴中心
 ms.openlocfilehash: cb16b7e8c3776f2509207f15a6c26341f9028fe5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6645299"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149450"
 ---
 # <a name="configure-rich-presence-in-partner-center"></a>在合作伙伴中心中配置完整状态
 
@@ -45,7 +45,7 @@ Rich Presence 字符串可显示用户的游戏内活动。 这些字符串将�
 
 通过以下说明导航到 Rich Presence 配置页：
 
-1. Developer.microsoft.com 上，请转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
+1. Developer.microsoft.com 上，转到[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 2. 如果已请求登录，使用已注册的 Windows 开发人员帐户登录。
 3. 从**概述**页面中选择支持 Xbox Live 的你的作品或应用。 不要选择创意者计划作品，因为将不会为 Rich Presence 字符串配置启用此类作品。
 4. 单击**服务**下拉列表，选择 Xbox Live。

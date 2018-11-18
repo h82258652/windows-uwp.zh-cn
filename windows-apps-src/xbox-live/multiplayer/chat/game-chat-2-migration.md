@@ -7,12 +7,12 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 467e4ca69550e6cebdd0b20711dd0e7a6abd305d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: 2c00ade176d4ee9ec405b5554ddd311bf81abed7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6262714"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7147770"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>从游戏聊天迁移到游戏聊天 2
 
@@ -411,7 +411,7 @@ switch (chatUser->chat_indicator())
 
 ### <a name="game-chat"></a>游戏聊天
 
-游戏聊天通过 `RestrictionMode` 属性公开特权和隐私信息。 该属性可通过检查 `GameChatUser::RestrictionMode` 进行检索。
+游戏聊天公开特权和隐私信息通过`RestrictionMode`属性。 该属性可通过检查 `GameChatUser::RestrictionMode` 进行检索。
 
 ### <a name="game-chat-2"></a>游戏聊天 2
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b76637d0c88e4ef2bc8905ff1b4dd894fd819a0
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6274518"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7153560"
 ---
 # <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
 访问列表中的项目。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -30,7 +30,7 @@ ms.locfileid: "6274518"
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID)。| 
 | listtype| 字符串| 列表 （如何使用和其工作原理） 的类型。 始终"固定"对于这些相关的方法。| 
-| listname| 字符串| 列表的名称 （给定 listtype 执行哪些列表）。 始终为"XBLPins"中的 Pin 的项。| 
+| listname| 字符串| 列表的名称 （给定 listtype 执行哪些列表）。 始终为"XBLPins"的 Pin 中的项目。| 
   
 <a id="ID4EGC"></a>
 
@@ -51,7 +51,7 @@ ms.locfileid: "6274518"
 
 [PUT](uri-usersxuidlistspinslistnameput.md)
 
-&nbsp;&nbsp;更新根据指定的请求正文中的每个项目的索引列表中的项。
+&nbsp;&nbsp;更新根据指定每个项目，请求正文中的索引列表中的项。
  
 <a id="ID4EZC"></a>
 

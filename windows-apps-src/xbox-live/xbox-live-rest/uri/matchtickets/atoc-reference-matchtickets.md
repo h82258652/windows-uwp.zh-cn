@@ -10,15 +10,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: dc3aa9844a00d3a2055f263f3f7c17f33fb7d370
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6252490"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163633"
 ---
 # <a name="matchmaking-uris"></a>匹配 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的匹配服务。 
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的匹配服务。 
  
 <a id="ID4E6"></a>
 
@@ -30,7 +30,7 @@ momatch.xboxlive.com
  
 ## <a name="service-version"></a>服务版本
  
-这些 HTTP/REST Uri 的调用方必须 X-Xbl-合同的版本，指定的服务版本的娱乐发现服务 (EDS) 的 HTTP 标头的传递值 103 或更高版本。 
+这些 HTTP/REST Uri 的调用方必须为 X-Xbl-合同的版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 103 或更高版本。 
   
 <a id="ID4ELB"></a>
 

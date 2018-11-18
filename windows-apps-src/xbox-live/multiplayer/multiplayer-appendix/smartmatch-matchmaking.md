@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 68997bc3a7ff6a7b1dfa67862ece49020539dba3
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267710"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7148485"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch 匹配
 
@@ -190,7 +190,7 @@ SmartMatch 匹配的所有配置通过[Xbox 开发人员门户 (XDP)](https://xd
 
 对于目标会话，你必须创建用于配对游戏的模板。 它应具备可在开始游戏之前在玩家间启用 QoS 检查的设置，并且必须标有“游戏”功能。
 
-配置 XDP 或合作伙伴中心的 UI，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
+通过 XDP 或合作伙伴中心的 UI 的配置，你可以将每个会话映射到一个或多个漏斗，确定如何会话匹配在一起该 hopper 中每个包含规则。 有关更多信息，请参阅“用于匹配的基本漏斗配置”。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>用于匹配的基本漏斗配置

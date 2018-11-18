@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live，Xbox，游戏，uwp，windows 10，Xbox one，合作伙伴中心，Xbox Live 设置
 ms.openlocfilehash: 8d3aa7c7407dc3d3fd3f2bcdf9640b605c734447
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6851710"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7154146"
 ---
 # <a name="configure-xbox-live-setup-in-partner-center"></a>在合作伙伴中心中配置 Xbox Live 设置
 

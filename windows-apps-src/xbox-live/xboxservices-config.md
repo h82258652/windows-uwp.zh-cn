@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, xboxservices.config
 ms.localizationpriority: medium
 ms.openlocfilehash: 9055f51af5a598f57d2872898f7c0f0a7ce5fea4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6250298"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7169401"
 ---
 # <a name="xboxservicesconfig-file-description"></a>XboxServices.config 文件描述
 
-在开发启用 Xbox Live 的 UWP 游戏时，项目中必须包括 XboxServices.config 文件。  该文件启用 Xbox Live SDK 以将你的游戏与你的合作伙伴中心的应用和 Xbox Live 服务配置相关联。 此文件包含一个 JSON 对象，详细介绍服务配置 ID、作品 ID 等信息。
+在开发启用 Xbox Live 的 UWP 游戏时，项目中必须包括 XboxServices.config 文件。  该文件启用 Xbox Live SDK 以将你的游戏与你的合作伙伴中心应用和 Xbox Live 服务配置相关联。 此文件包含一个 JSON 对象，详细介绍服务配置 ID、作品 ID 等信息。
 
 如果你要使用 Unity，利用 Xbox Live 插件来设计 Xbox Live 创意者计划游戏，Xbox Live 关联向导会自动创建该文件。
 

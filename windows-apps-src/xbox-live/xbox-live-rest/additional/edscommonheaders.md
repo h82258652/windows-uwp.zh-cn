@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 80a38dfa2dad97b4383f86328ddbf61d6e4a299f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6260875"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155486"
 ---
 # <a name="eds-common-headers"></a>EDS 通用标头
 
@@ -27,9 +27,9 @@ ms.locfileid: "6260875"
 | 标头名称| 说明| 是否为必需？| 注释|
 | --- | --- | --- | --- |
 | <b>x xbl 协定版本</b>| EDS 服务版本| 是| 3.2|
-| <b>x xbl 客户端类型</b>| 客户端类型标头| 是| 说到团队，获取你自己的客户端类型。|
+| <b>x xbl 客户端类型</b>| 客户端类型标头| 是| 与团队，获取你自己的客户端类型进行交流。|
 | <b>x xbl 客户端版本</b>| 客户端版本| 是| 任何非空字符串。|
-| <b>x xbl 父 ig</b>| 印象 guid| 是| 用于跟踪日志中记录和其他服务调用的请求。|
+| <b>x xbl 父 ig</b>| 印象 guid| 是| 用于跟踪日志中以及跨其他服务调用的请求。|
 | <b>x xbl 设备类型</b>| 设备类型| 是| 表示客户端的设备。|
 | <b>接受</b>| 接受类型| 是| XML 或 JSON。|
 | <b>授权</b>| 身份验证标头| 是|  |
@@ -41,7 +41,7 @@ ms.locfileid: "6260875"
 | <b>x xbl 客户端 id</b>| 匿名客户端 Id| 否| 用于 BI 报告和相关性。|
 | <b>x xbl 设备 id</b>| 设备 ID| 否| 用于 BI 报告和相关性。|
 | <b>x xbl 用户代理</b>| 客户端用户代理| 否| 用于 BI。 "&lt;名称 > /&lt;版本 > (&lt;操作系统版本 >;&lt;平台 >;&lt;功能 >;&lt;制造 >;&lt;模型 >)"。|
-| <b>x xbl 父 ig</b>| 对于"Chained"调用之前印象 Guid| 否 （但强烈建议）| BI 相关性来说很重要。 例如，浏览调用 IG 是以下父 IG 细节调用。|
+| <b>x xbl 父 ig</b>| 对于"Chained"调用之前印象 Guid| 否 （但强烈建议）| BI 相关性来说很重要。 例如，浏览调用 IG 是关注父 IG 向上细节调用。|
 | <b>delid</b>| 委托标识| 否| 使用内部服务来代表用户工作。|
 
 ## <a name="common-response-headers"></a>常见的响应标头

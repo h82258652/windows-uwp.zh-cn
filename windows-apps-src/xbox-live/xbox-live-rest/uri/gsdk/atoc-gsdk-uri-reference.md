@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eff98593c122001cab591b9f45793aa6649736a
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6264045"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150002"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a>游戏服务器统一资源标识符 (URI) 参考
 客户端用于创建游戏的游戏服务器开发工具包服务器实例的 Uri。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -26,7 +26,7 @@ ms.locfileid: "6264045"
 
 [/qosservers](uri-qosservers.md)
 
-&nbsp;&nbsp;URI 由客户端使用 Xbox Live 计算获取可用的 QoS 服务器的列表。
+&nbsp;&nbsp;URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。
 
 [/titles/{titleId}/clusters](uri-titlestitleidclusters.md)
 
@@ -42,5 +42,5 @@ ms.locfileid: "6264045"
 
 [/titles/{titleId}/sessions/{sessionId}/allocationStatus](uri-titlestitleidsessionssessionidallocationstatus.md)
 
-&nbsp;&nbsp;对于给定的作品 id 和会话 id，获取票证请求的状态。
+&nbsp;&nbsp;对于给定的作品 id 和会话 id，来获取票证请求的状态。
  

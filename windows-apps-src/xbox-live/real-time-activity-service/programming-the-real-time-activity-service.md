@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动
 ms.localizationpriority: medium
 ms.openlocfilehash: bfe40908297922568bc9c63a5b3bf0e6254bf901
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6251141"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7154179"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>使用 C++ API 对实时活动服务进行编程
 
@@ -50,7 +50,7 @@ void Example_RealTimeActivity_ConnectAsync()
 
 ### <a name="creating-a-statistic"></a>创建统计数据
 
-如果你是 XDK 开发人员，或者正在开发跨平台联机作品，则可以在 XDP 上创建统计数据。  如果你要在 Windows 10 上运行的纯 UWP，可以在合作伙伴中心中创建统计数据。
+如果你是 XDK 开发人员，或者正在开发跨平台联机作品，则可以在 XDP 上创建统计数据。  如果你要在 Windows 10 上运行的纯 UWP，可以在合作伙伴中心中创建统计信息。
 
 #### <a name="xdk-developers"></a>XDK 开发人员
 
@@ -58,10 +58,10 @@ void Example_RealTimeActivity_ConnectAsync()
 
 #### <a name="uwp-developers"></a>UWP 开发人员
 
-如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP，你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)中定义统计数据。 读取[合作伙伴中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在合作伙伴中心上配置的统计数据。
+如果你要开发不是跨平台游玩游戏的 Windows 10 上的 UWP，你可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)定义统计数据。 读取[合作伙伴中心的统计数据配置文章](../leaderboards-and-stats-2017/player-stats-configure-2017.md)以了解如何在合作伙伴中心上配置的统计数据。
 
 > [!NOTE]
-> Stats 2013 开发人员将需要联系其 DAM 获取有关[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)[合作伙伴中心](https://partner.microsoft.com/dashboard)中的信息。
+> Stats 2013 开发人员将需要联系其 DAM 有关[Stats 2013 配置](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)[合作伙伴中心](https://partner.microsoft.com/dashboard)中的信息。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>与实时活动服务断开连接
 
@@ -131,6 +131,6 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 ```
 
 > [!IMPORTANT]
-> 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证标记到期时刷新。
+> 实时活动服务将断开连接使用两个小时后，你的代码必须能够检测到此和重新建立与实时活动服务的连接，如果仍然需要它。 这主要是为了确保身份验证令牌到期时刷新。
 > 
-> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测到的 RTA 会话已关闭，并开始在会话之外的用户。 它是对 RTA 客户端以检测何时关闭的连接并启动重新连接并重新订阅 MPSD 结束会话之前。
+> 如果客户端使用 RTA 为多人游戏会话，并且断开连接时 30 秒，多人游戏会话 Directory(MPSD) 检测 RTA 会话已关闭，并开始在会话之外的用户。 它是由 RTA 客户端连接关闭时检测和启动重新连接并重新订阅 MPSD 结束会话之前。

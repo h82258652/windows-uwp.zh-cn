@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: a0b7a3d90e5a69807e3ac9532a58a845568c93f2
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275496"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7154452"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
 应更新剪辑元数据。 
@@ -28,7 +28,7 @@ UpdateMetadataRequest 对象具有以下规范。
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
 | userCaption| 字符串| 更改游戏剪辑的用户输入非本地化字符串。| 
-| 可见性| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 在系统中发布时，请更改游戏剪辑的可见性。| 
+| 可见性| [GameClipVisibility 枚举](../enums/gvr-enum-gameclipvisibility.md)| 更改游戏剪辑的可见性，因为它在系统中发布。| 
 | titleData| 字符串| 特定于游戏的属性包中。 最大大小： 10 KB。| 
   
 <a id="ID4EBC"></a>

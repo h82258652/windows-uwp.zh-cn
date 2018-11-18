@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: defd8161211065318242077dde02d8a6f777ac0b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6256783"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151757"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -36,7 +36,7 @@ ms.locfileid: "6256783"
 
 [POST](uri-reputationusersxuidfeedbackpost.md)
 
-&nbsp;&nbsp;如果想要在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。
+&nbsp;&nbsp;如果你希望能够在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。
  
 <a id="ID4EDC"></a>
 

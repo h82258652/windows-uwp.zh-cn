@@ -10,14 +10,14 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c877988111eb1ee19ee91bf01d4a6077ce4600
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6257063"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7164289"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
-允许浏览单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
+允许浏览的单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
  
 此 API 还允许在给定的项的子项的浏览。 例如，通过为 Xbox 360 游戏 ID 和 MediaItemType 参数中传递，这可以浏览和 diltering 该项目，如虚拟形象项目或 DLC 游戏的子元素上。
  
@@ -26,7 +26,7 @@ ms.locfileid: "6257063"
 用于检索子某些方案包括：
  
    * 为轨唱片集
-   * 季节系列
+   * 为季节系列
    * 季节到剧集：
    * 跟踪对音乐视频
    * 照相艺术家
@@ -52,7 +52,7 @@ ms.locfileid: "6257063"
 
 [GET (media/{marketplaceId}/browse)](uri-medialocalebrowseget.md)
 
-&nbsp;&nbsp;允许浏览单个媒体组中的项。 
+&nbsp;&nbsp;允许浏览的单个媒体组中的项。 
  
 <a id="ID4EXC"></a>
 

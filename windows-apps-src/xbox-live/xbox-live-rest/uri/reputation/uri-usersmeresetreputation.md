@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e3e0eef31daae4bf1fe7d8b6f4f1fba0e1ff92
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6252496"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151572"
 ---
 # <a name="usersmeresetreputation"></a>/users/me/resetreputation
 使访问当前用户的信誉评分，强制执行团队。 这些 Uri 的域是`reputation.xboxlive.com`。
@@ -26,7 +26,7 @@ ms.locfileid: "6252496"
 
 [POST (/users/me/resetreputation)](uri-usersmeresetreputationpost.md)
 
-&nbsp;&nbsp;启用后 （例如） 帐户劫持设置为某些任意值的当前用户的信誉评分，强制执行团队。
+&nbsp;&nbsp;使执行团队后 （例如） 帐户劫持将当前用户的信誉评分设置为某些任意值。
  
 <a id="ID4E6"></a>
 

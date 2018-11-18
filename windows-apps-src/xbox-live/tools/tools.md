@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 工具, 玩家重置, live 跟踪分析器, LTA, xbox live 帐户工具
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f2e4b8b0ac5940eb09b1c0b5361846b1ae66c01
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6254198"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7157897"
 ---
 # <a name="development-tools-for-xbox-live"></a>适用于 Xbox Live 的开发工具
 
@@ -23,7 +23,7 @@ ms.locfileid: "6254198"
 > 下载中包含的 MatchSim 和 XboxLiveCompute 工具仅可由托管的合作伙伴或注册合作伙伴[ID@Xbox](http://www.xbox.com/Developers/id)计划。 若要了解有关的可用的开发人员计划的详细信息，请参阅[开发人员计划概述](https://docs.microsoft.com/windows/uwp/xbox-live/developer-program-overview)。 
 
 ## <a name="global-storage"></a>全局存储
-全局标题存储用于存储每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 它是一种[标题存储](../storage-platform/xbox-live-title-storage/xbox-live-title-storage.md)。 全局存储工具用于管理测试沙盒中的全局标题存储。 数据仍必须发布到 RETAIL 通过合作伙伴中心或 Xbox 开发人员门户 (XDP)。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。 可使用[开发工具库](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)创建自定义工具。
+全局标题存储用于存储每个人均可读取的数据，如名单、地图、挑战，或艺术资源。 它是一种[标题存储](../storage-platform/xbox-live-title-storage/xbox-live-title-storage.md)。 全局存储工具用于管理测试沙盒中的全局标题存储。 数据必须仍可通过发布到 RETAIL 合作伙伴中心或 Xbox 开发人员门户 (XDP)。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中，通过命令行使用。 可使用[开发工具库](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)创建自定义工具。
 
 ## <a name="multiplayer-session-history-viewer"></a>多人游戏会话历史记录查看器
 通过多人游戏会话历史记录查看器，可查看多人游戏会话文档历史记录（包括已删除文档）的所有更改的历史时间线。 通过此工具可更深入地了解 MPSD 会话文档随时间推移发生的变化。 该工具在 [开发工具](https://aka.ms/xboxliveuwptools) 压缩包中作为独立工具提供。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 合作伙伴, ID@Xbox
 ms.localizationpriority: medium
 ms.openlocfilehash: 74b343ce248201b997f5bcd357095154e221092f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6260669"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7144026"
 ---
 # <a name="get-started-with-xbox-live-as-a-managed-partner-or-an-idxbox-developer"></a>以托管合作伙伴或 ID@Xbox 开发人员的身份开始使用 Xbox Live
 
@@ -42,7 +42,7 @@ Xbox Live 提供了一系列功能，旨在帮助你推广游戏和吸引玩家�
 - 跨平台游戏通常是使用 XDK 和 UWP 路径的面向 Xbox One 和 Windows 电脑的游戏。
 
 ## <a name="2-ensure-that-you-have-a-title-created-in-partner-center-or-xdp"></a>2.确保你有在合作伙伴中心或 XDP 中创建作品
-每个 Xbox Live 的主题作品必须在合作伙伴中心或 Xbox 开发人员门户 (XDP) 中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的主题作品](create-a-new-title.md)将为你介绍如何执行此操作。
+每个 Xbox Live 主题作品必须在合作伙伴中心或 Xbox 开发人员门户 (XDP) 中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的主题作品](create-a-new-title.md)将为你介绍如何执行此操作。
 
 ## <a name="3-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>3. 遵循相应指南设置 IDE 或游戏引擎
 你可以遵循适用于自己平台和引擎的相应入门指南，并在过程中了解 Xbox Live 的基础知识。

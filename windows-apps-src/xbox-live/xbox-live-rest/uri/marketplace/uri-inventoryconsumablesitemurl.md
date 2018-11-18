@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: bbdf869cffae575f53555b31d9ed66647d3d09b2
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6860887"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163422"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 访问完整的一组特定的易耗型库存项目的详细信息。
@@ -38,7 +38,7 @@ ms.locfileid: "6860887"
 
 [POST ({itemID})](uri-inventoryconsumablesitemurlpost.md)
 
-&nbsp;&nbsp;指示，已使用所有或易耗型库存项目的部分和递减请求量该消耗品的数量。
+&nbsp;&nbsp;指示，已使用所有或易耗型库存项目的部分和递减请求的距离该消耗品的数量。
 
 <a id="ID4E4B"></a>
 
