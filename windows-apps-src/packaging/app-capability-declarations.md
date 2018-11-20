@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: bb692aaada7296f230e1243a3ce515b471f1ba98
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152675"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296962"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -208,7 +208,7 @@ ms.locfileid: "7152675"
 | **系统固件和 BIOS** | **smbios** 功能允许应用访问 BIOS 数据和系统固件数据。 |
 | **完全信任权限级别** | **RunFullTrust**受限功能允许应用在用户的计算机上运行完全信任权限级别。 若要使用[FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API，则需要此功能。<br /><br />此功能也是必需的任何桌面应用程序作为 appx 或 msix 的程序包交付 （与[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)），打包这些应用使用 Desktop App Converter (DAC) 时将自动显示在你的清单或Visual Studio。 |
 | **提升权限** | **AllowElevation**受限功能允许应用创建的 Microsoft 合作伙伴和企业以保留需要自动提升启动或在应用的生命周期期间的现有桌面功能。<br/><br/>我们不建议你声明此功能在你提交到 Microsoft Store 的应用程序中。 在大多数情况下，不会批准使用此功能。 它将仅批准到其专用应用商店通过适用于企业的 Microsoft Store 的企业部署的业务线应用。  |
-| **Windows 团队设备的凭据** | **TeamEditionDeviceCredentials**受限功能允许应用访问请求运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的设备帐户凭据的 Api。<br/><br/>我们不建议你声明此功能在你提交到 Microsoft Store 的应用程序中。 在大多数情况下，不会批准使用此功能。 |
+| **Windows 团队设备的凭据** | **TeamEditionDeviceCredential**受限功能允许应用访问请求运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的设备帐户凭据的 Api。<br/><br/>我们不建议你声明此功能在你提交到 Microsoft Store 的应用程序中。 在大多数情况下，不会批准使用此功能。 |
 | **Windows 团队应用程序视图** | **TeamEditionView**受限功能允许应用访问托管在运行 Windows 10 版本 1703年或更高版本的 Surface Hub 设备上的应用程序视图的 Api。<br/><br/>我们不建议你声明此功能在你提交到 Microsoft Store 的应用程序中。 在大多数情况下，不会批准使用此功能。 |
 | **相机处理扩展** | **CameraProcessingExtension**受限功能允许应用处理从而无需直接相机控制相机捕获的图像。<br /><br />若要在[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)命名空间中调用 Api，则需要此功能。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
 | **数据使用量管理*** | **NetworkDataUsageManagement**受限功能允许应用收集网络数据使用情况信息。<br /><br />若要调用[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)，需要此功能。<br /><br />任何人都可以请求访问要提交到应用商店的此功能。 |
