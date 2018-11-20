@@ -12,12 +12,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5f11afbafc424a4ed7f2c973f0417c792ab7da65
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 08bf867b6690a84f89b61cac9942b8ad6c27cd99
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160175"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280625"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用维护触发器
 
@@ -35,7 +35,7 @@ ms.locfileid: "7160175"
 
 有关编写后台任务类的详细信息可以在[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)中找到。
 
-创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
+创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
 > [!NOTE]
 > 如果*FreshnessTime*设置为少于 15 分钟，在尝试注册后台任务时，会引发异常。

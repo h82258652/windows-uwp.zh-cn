@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 017a3061fbb72c45bd46ed4e1f134c022284ecfe
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7159124"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7284837"
 ---
 # <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 

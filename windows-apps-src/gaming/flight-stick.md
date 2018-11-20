@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 飞行杆
 ms.localizationpriority: medium
 ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162906"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7278718"
 ---
 # <a name="flight-stick"></a>飞行杆
 

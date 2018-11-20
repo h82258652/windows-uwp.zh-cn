@@ -9,11 +9,11 @@ ms.topic: article
 keywords: uwp, 应用内购买, IAP, 加载项, 试用, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 28fe27cc4464598414fec11d6812e2e9ea377aff
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169447"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7284070"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 

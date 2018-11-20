@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8699ee06da545e3b34711f496a887fd7aa2c935
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163042"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7287610"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 

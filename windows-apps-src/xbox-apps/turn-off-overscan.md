@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
 ms.localizationpriority: medium
 ms.openlocfilehash: 32932845db47ed47b7e80f68cf4e424ba97e85c0
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163441"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7307397"
 ---
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>如何将 UI 绘制到屏幕的边缘   
 考虑到电视安全区域，应用程序默认会将边框置于视口的边缘（有关详细信息，请参阅[针对 Xbox 和电视进行设计](../design/devices/designing-for-tv.md#tv-safe-area)）。 

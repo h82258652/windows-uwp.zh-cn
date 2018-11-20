@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, low light fusion, 位图, 图像处理
 ms.localizationpriority: medium
 ms.openlocfilehash: aa1fa0ae298bf9f0403a3a565f44010b022ba1f6
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162896"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7286634"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>使用 Low Light Fusion API 处理位图
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7173540"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285752"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>获取你的 Xbox One 中的错误的堆栈跟踪游戏
 

@@ -8,11 +8,11 @@ ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c4c326dbafa719273c4535a42d58184c7ce360fe
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7147084"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7286357"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 

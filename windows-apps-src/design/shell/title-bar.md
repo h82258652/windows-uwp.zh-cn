@@ -10,11 +10,11 @@ keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ebe590f98afef031ab183589fc7dcfc29cd9493
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171147"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7286923"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 

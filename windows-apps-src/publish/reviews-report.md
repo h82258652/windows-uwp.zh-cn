@@ -8,12 +8,12 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: windows 10、 uwp、 查看、 注释和审阅者
 ms.localizationpriority: medium
-ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: e5deef6d5e67c1236fb88f93269fcf91bb50243c
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158248"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7281779"
 ---
 # <a name="reviews-report"></a>评价报告
 
@@ -22,7 +22,7 @@ ms.locfileid: "7158248"
 
 你可以在合作伙伴中心中，或[下载报告](download-analytic-reports.md)以供脱机查看中查看此数据。 或者，你可以以编程方式检索此数据[的 Microsoft 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用的[获取应用评价](../monetize/get-app-reviews.md)的方法。
 
-你还可以响应客户评论[直接在此页](respond-to-customer-reviews.md)，以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+你还可以响应客户评论[直接在此页](respond-to-customer-reviews.md)或以编程方式[通过 Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)。
 
 > [!TIP]
 > 若要快速查看最近 30 天中所有应用的评论、评分和用户反馈，请在左侧导航菜单中展开**参与**，然后选择**评论和反馈。** 
@@ -114,7 +114,7 @@ ms.locfileid: "7158248"
 
 ## <a name="responding-to-customer-reviews"></a>回复客户评论
 
-你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)， [Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)，或[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)来发送对许多客户评论回复。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
+你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)或[Microsoft Store 评价 API](../monetize/submit-responses-to-app-reviews.md)来发送对许多客户评论回复。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
 
 根据你所看到的评分和评论，不妨考虑下面提供的一些其他措施。
 
