@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 发布暂停, 发布日期, 发送提交以发布, 受限功能审核, windows 10, uwp, publishing hold, publish date, send submission to publish, restricted capability approval
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f7d58989035db1a14aba685c8951d23d2f94b52
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305925"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7446016"
 ---
 # <a name="manage-submission-options"></a>管理提交选项
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通用
 ms.localizationpriority: medium
 ms.openlocfilehash: a687aa7ed1115692f765e516dc8c8b15504b709e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7291528"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7446076"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>什么是通用 Windows 平台 (UWP) 应用？
 

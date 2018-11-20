@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图, smartmatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f957683607c9e50679e4ff2c141e194e72340e2
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7172151"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7445626"
 ---
 # <a name="find-a-multiplayer-game-by-using-smartmatch"></a>通过使用 SmartMatch 查找多人游戏
 
