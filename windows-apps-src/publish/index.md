@@ -10,11 +10,11 @@ keywords: windows 10, uwp, 发布, 销售, 分发, Microsoft Store, 仪表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 229e1eab05e392a4091c9eee5bc9af948c678d96
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7286787"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421228"
 ---
 # <a name="publish-windows-apps-and-games"></a>发布 Windows 应用和游戏  
  

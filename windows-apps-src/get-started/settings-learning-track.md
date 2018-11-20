@@ -9,11 +9,11 @@ keywords: 入门, uwp, windows 10, 学习轨迹, 设置, 保存设置, 加载设
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 63af8aa4ab4d12a3a4aa69bd7d870106e21844f5
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7307142"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421863"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 应用中保存和加载设置
 
