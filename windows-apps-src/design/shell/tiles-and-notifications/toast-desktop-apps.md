@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 桌面桥, 用于发送 toast 的选项, com 服务器, com 激活器, com, 虚假 com, 无 com, 没有 com, 发送 toast
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee44d990ef29fa8281a14c8ad03b6c6ff16a4cf
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7154912"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7307347"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
