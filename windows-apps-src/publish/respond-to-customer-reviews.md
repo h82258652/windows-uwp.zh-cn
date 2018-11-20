@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ded7cc66cda75fbb6edb9ab9d84c21c2d02cff
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 9552e9dede62d4d89b71f031cd2ff2c76964d0cb
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158554"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305028"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评价
 
@@ -23,7 +23,7 @@ ms.locfileid: "7158554"
 若要查看你的应用的相关评论并提供回复，请在[合作伙伴中心](https://partner.microsoft.com/dashboard)中找到该应用。 在左侧的导航菜单中，展开*分析**，然后单击以显示的[评价报告](reviews-report.md)的**评论**。 选择**响应查看**提供你的回复。
 
 > [!TIP]
-> 除了使用合作伙伴中心回复评价之外，你可以响应评价[以编程方式](../monetize/submit-responses-to-app-reviews.md)，或使用[开发人员中心应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+> 除了使用合作伙伴中心回复评价之外，你可以回复评价[以编程方式](../monetize/submit-responses-to-app-reviews.md)。
 
 默认情况下，将在应用商店，原始客户评价的正下方中发布你的回复。 这些响应将在 Windows 10 设备上查看应用商店的任何客户可见。 如果留下评价的客户使用运行 Windows 10 版本 1803年或更高版本的设备，并且它们未选择退出接收电子邮件响应，一份你的回复将还会发送到该客户通过电子邮件。  你将需要提供才能提交你的回复，我们将向客户电子邮件中包含一个有效的电子邮件地址。 然后，他们可以使用此电子邮件地址来直接与你联系。
 
