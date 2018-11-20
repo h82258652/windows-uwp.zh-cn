@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 79426a302be59af73536081cd13e14cad4facbe3
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155421"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285297"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 

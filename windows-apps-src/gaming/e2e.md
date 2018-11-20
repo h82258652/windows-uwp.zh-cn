@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 7481c1d0f64ccb25168200cdf5e6ccc068f769b9
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155395"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7291631"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -247,8 +247,8 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows 应用开发人员论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Windows 应用商店和应用论坛</a></td>
+        <td>发布的应用和游戏开发人员论坛</td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">发布和应用内广告</a></td>
     </tr>
     <tr>
         <td>UWP 应用开发人员论坛</td>
@@ -1661,10 +1661,6 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     <col width="50%" />
     <col width="50%" />
     </colgroup>
-    <tr>
-        <td>开发人员中心应用</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">获取应用以查看已发布的应用的性能</a></td>
-    </tr>  
     <tr>
         <td>合作伙伴中心分析</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">分析应用性能</a></td>
