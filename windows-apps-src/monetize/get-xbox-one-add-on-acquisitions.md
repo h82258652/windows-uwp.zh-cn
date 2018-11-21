@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，Xbox One 的加载项购置
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305976"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443962"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>获取 Xbox One 的加载项购置
 
