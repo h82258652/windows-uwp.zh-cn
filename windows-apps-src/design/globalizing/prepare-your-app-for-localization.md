@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305404"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7435317"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 

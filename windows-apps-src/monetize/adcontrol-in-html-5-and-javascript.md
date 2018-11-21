@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, 广告控件, javascript, HTML
 ms.localizationpriority: medium
 ms.openlocfilehash: df5623b8c73dc6c96c2869156d22da64f6a6b58d
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7296680"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436271"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 

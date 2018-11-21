@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
 ms.openlocfilehash: 77911b101f488bb7bfef82b9cc480679ce15b1f3
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7291551"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7435195"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 你可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。

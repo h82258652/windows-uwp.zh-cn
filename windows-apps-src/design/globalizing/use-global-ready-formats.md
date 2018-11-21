@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 173198c2c61530704dad02e2e92e6a7e47aae420
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7294357"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7437553"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化日期/时间/数字格式
 
