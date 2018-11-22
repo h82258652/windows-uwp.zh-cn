@@ -10,12 +10,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: c67f3531d248ef46a162b992850d0240c37ba21a
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7416823"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7568090"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 
@@ -259,7 +259,7 @@ foreach (UserNotification userNotification in userNotifications)
         toBeRemoved.Remove(userNotification.Id);
     }
  
-    // Othwerise it's a new notification
+    // Otherwise it's a new notification
     else
     {
         // Display it on the Wearable
@@ -296,4 +296,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>如何 fixdelays 后台任务
 
-测试应用时，后台任务有时可能会延迟，数分钟不能触发。 若要解决此问题，你将需要提示的用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况、 列表中找到你的应用、 选择它，并将其更改为"始终允许在后台运行"。在此之后，后台任务应始终触发内收到通知后一秒。
+测试你的应用，你可能会注意到该后台任务有时延迟，数分钟不能触发。 若要修复延迟，提示用户多哥对系统设置-> 系统-> 电池-> 应用的电池使用情况，在列表中找到你的应用、 选中，然后将其设置为"始终允许在后台运行"。在此之后，后台任务应始终触发内收到通知后一秒。
