@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 会员, 开发人员中心会员, 预览功能
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: 950c80967851c858212fecc6999c93b55dd439de
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7432082"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576611"
 ---
 # <a name="dev-center-insider-program"></a>开发人员中心会员计划
 

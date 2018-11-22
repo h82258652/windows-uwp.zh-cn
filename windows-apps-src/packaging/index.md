@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
 ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7428703"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7575684"
 ---
 # <a name="packaging-apps"></a>打包应用
 

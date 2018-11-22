@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 规划, 辅助功能, 云, 盈利, 软件包, 技术, 概念, 审批
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7424307"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576780"
 ---
 # <a name="planning-for-uwp-games"></a>UWP 游戏规划
 

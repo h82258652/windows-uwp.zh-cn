@@ -9,11 +9,11 @@ keywords: windows 10 s, 始终连接, 限制, 基于 ARM 的 Windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
 ms.openlocfilehash: 24afc8a876b976f21d0f4ebd5892ceef7c403018
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7444581"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7580823"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM 上的应用和体验限制
 基于 ARM 的 Windows 10 有以下必要限制：
