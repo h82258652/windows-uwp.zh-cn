@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 文件, 属性
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f63e848820361a64a2a96348a8e1cc2419f233
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7432111"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578353"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速访问 UWP 中的文件属性 
 
