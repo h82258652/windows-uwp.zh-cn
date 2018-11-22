@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，广告，广告，AdControl，横幅广告
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a8a08f81328be5dcf28a3f73a592e88e1edd135
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7435713"
+ms.locfileid: "7564433"
 ---
 # <a name="banner-ads"></a>横幅广告
 
