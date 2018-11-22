@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d8e90f98dd79150cf19727fe31e51278a88a198
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423853"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7572972"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP Live Streaming (HLS) 标记支持
 下表列出了 UWP 应用支持的 HLS 标记。

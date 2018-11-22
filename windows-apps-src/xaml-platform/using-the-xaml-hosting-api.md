@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 69eb9f72d6b4cf01185f7e4886a7ed5c30a669df
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438208"
+ms.locfileid: "7571917"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的桌面应用程序托管 API
 

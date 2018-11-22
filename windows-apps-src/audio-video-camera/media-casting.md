@@ -79,7 +79,7 @@ ms.locfileid: "7562739"
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-在 **ErrorOccurred** 和 **StateChanged** 事件处理程序中，应更新 UI 以通知用户当前转换状态。 在有关创建自定义转换设备选取器的下一节中详细讨论了这些事件。
+In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. 在有关创建自定义转换设备选取器的下一节中详细讨论了这些事件。
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
@@ -147,7 +147,7 @@ ms.locfileid: "7562739"
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-在 **ErrorOccurred** 事件的处理程序中，更新你的 UI 以让用户知道发生了转换错误，并取消选择列表框中的当前 **CastingDevice** 对象。
+In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
