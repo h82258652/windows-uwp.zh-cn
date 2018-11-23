@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: e397f2f07bc62082cd542387fc1603e17be38694
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7148894"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7572161"
 ---
 # <a name="connected-storage"></a>连接存储
 连接存储旨在允许游戏保存游戏数据以及应在设备之间漫游的其他相关状态数据。 连接存储 API 允许 Xbox One 和通用 Windows 平台 (UWP) 上的游戏保存、加载和删除本地存储的游戏数据，并在 Xbox One 或 UWP 游戏连接到 Internet 时保存、加载和删除同步到云的数据。 在同步发生后运行游戏的任何其他设备都可以使用保存的数据。 建议开发人员尽可能准确地保存游戏状态以提供最佳外出游戏体验。 连接存储允许你在家里玩游戏，然后在支持相同游戏的任何其他设备上从离开的游戏进度处继续游戏。

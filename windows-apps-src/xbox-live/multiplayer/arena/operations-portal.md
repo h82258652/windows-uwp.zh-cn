@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live，xbox，游戏、 uwp、 windows 10，xbox one，arena，锦标赛、 操作，门户
 ms.localizationpriority: medium
 ms.openlocfilehash: c7d7aa9abe1aa78241e8920a81dda681b6256559
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7147751"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7570439"
 ---
 # <a name="xbox-arena-operations-portal"></a>Xbox Arena 操作门户
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4163e25559ef91ad0309ab6080ee4ed4f54c7c3e
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165089"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7581593"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
 使用你的游戏服务来在你的游戏界面之外的批处理形式发送反馈。 这些 Uri 的域是`reputation.xboxlive.com`。

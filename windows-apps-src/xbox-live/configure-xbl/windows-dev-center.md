@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
 ms.openlocfilehash: e43d62610774552cce4153c7b8eca9be5406281b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7149870"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7573546"
 ---
 # <a name="partner-center-service-configuration"></a>合作伙伴中心服务配置
 

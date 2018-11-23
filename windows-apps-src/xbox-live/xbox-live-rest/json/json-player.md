@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 0454f364bf2612c88b8f212ba935872968ce2476
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166755"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7558573"
 ---
 # <a name="player-json"></a>Player (JSON)
 在游戏会话中包含玩家数据。 

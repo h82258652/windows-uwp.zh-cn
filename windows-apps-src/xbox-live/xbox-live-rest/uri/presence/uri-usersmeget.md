@@ -10,11 +10,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 825b101ef5b450910f0bd9b2ab84991daa8074a7
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163490"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7563175"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
 获取当前用户的[presencerecord，他的](../../json/json-presencerecord.md)无需知道用户的 XUID。
