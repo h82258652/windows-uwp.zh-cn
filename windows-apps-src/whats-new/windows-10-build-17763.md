@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 面向开发人员的 Windows 10 中的新增工具和功能
 description: Windows 10 版本 17763 和新开发人员工具提供工具、 功能和通用 Windows 平台支持的体验。
 keywords: 新增功能，新功能，更新，更新，功能，新，Windows 10，最新，开发人员，17763
-ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ff1f4327b82e2b81cc1ec3d64b352e4e85e7bb12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc18577015db5384c2a1f13e8a48758634a053a5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560300"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691688"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>对于开发人员，生成 17763，什么是 Windows 10 中的新增功能
 
@@ -23,7 +21,7 @@ Windows 10 版本 17763 (也称为年 10 月 2018年更新或版本 1809年)，�
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 说明
+功能 | 描述
  :------ | :------
 应用图标和徽标 | [应用图标和徽标页面](../design/style/app-icons-and-logos.md)已重新编写，现在显示的最新的 Visual Studio 图标工具，并将图像添加到你的应用一览的 Microsoft 应用商店中提供的信息。
 设计登录页面 | [更新登录页的设计](https://developer.microsoft.com/windows/apps/design)都有一个一览概述 UWP 设计区域和 Fluent 设计添加的最新功能的信息。
@@ -40,7 +38,7 @@ Windows UI 库 | [Windows UI 库](https://aka.ms/winui-docs)是一组提供适�
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 说明
+功能 | 描述
  :------ | :------
 条形码扫描仪 | 已重新整理，并改进了更多详细信息和代码段的[条形码扫描仪](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)文档。 我们还添加了新的主题中，[获取并了解条形码数据](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，这就解释了如何获取和使用来自条形码扫描仪的数据。
 C++/WinRT | [C + + WinRT](https://aka.ms/cppwinrt)包含许多新功能、 更改和修复了此版本。 有新的函数和基本类，你在实现你自己的[集合属性和集合类型](/windows/uwp/cpp-and-winrt-apis/collections); 支持而现在可以在[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 标记扩展使用与你的 C + + WinRT 运行时类 （有关代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)）。 有关新的和更改在此版本中的所有内容的完整说明，请参阅[新增 C + + WinRT](../cpp-and-winrt-apis/news.md)。</br></br>其他新 C + + WinRT 内容包括： [XAML 自定义控件](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[创作 COM 组件](/windows/uwp/cpp-and-winrt-apis/author-coclasses);[值类别](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories);和[强和弱引用](../cpp-and-winrt-apis/weak-references.md)。
@@ -59,7 +57,7 @@ Windows Mixed Reality | 开发人员现在可以将受硬件保护的请求后�
 
 ## <a name="iot-core"></a>IoT Core
 
-功能 | 说明
+功能 | 描述
  :------ | :------
 AssignedAccessSettings | [AssignedAccessSettings 类](https://docs.microsoft.com/uwp/api/windows.system.userprofile.assignedaccesssettings)支持不同方法的调用和属性来访问用户的分配的访问为特定设备的设置。
 默认应用概述 | [Windows 10 IoT 核心版默认应用](https://docs.microsoft.com/windows/iot-core/develop-your-app/iotcoredefaultapp)已使用的新特性和功能，例如，天气、 墨迹书写、 更新和音频。
@@ -71,7 +69,7 @@ Windows.System.Update | 新[Windows.System.Update 命名空间](https://docs.mic
 
 ## <a name="web-development"></a>Web 开发
 
-功能 | 说明
+功能 | 描述
  :------ | :------
 EdgeHTML 18 | Windows 2018 年 10 月 10 [EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)，最新的更新在 Microsoft Edge 浏览器和适用于 UWP 应用的 JavaScript 引擎更新海上。 EdgeHTML 18 带来了对 Web 身份验证 API、 新 WebView 控件功能的详细信息的现代化和扩展支持 ！ 一侧工具，EdgeHTML 18 带来 WebDriver 的新功能和自动更新以及增强了对 Edge DevTools 和 Edge DevTools 协议。 有关所有详细信息，请查看[EdgeHTML 18 中的新增](https://docs.microsoft.com/microsoft-edge/dev-guide)和[最新的 Windows 10 中的 DevTools 更新 (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new) 。
 渐进式 Web 应用 | Windows 10 JavaScript 应用 （ *WWAHost.exe*进程中运行的 web 应用） 现在支持启动才能激活任何视图是一个可选[每个应用程序背景脚本](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide#progressive-web-apps)和过程的持续时间内运行。 与此，可以监视和修改导航、 跨导航跟踪状态、 监视导航错误，以及在视图激活之前运行代码。 如果指定为[`StartPage`](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema2010-v2/element-application)在[应用清单](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)你，每个应用的视图 (windows) 公开给该脚本作为的新实例[`WebUIView`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.webui.webuiview)类，以在常规 (Win32) [WebView](https://docs.microsoft.com/en-us/uwp/api/windows.web.ui.iwebviewcontrol)中提供相同的事件、 属性和方法。
@@ -80,7 +78,7 @@ WebVR | 我们已主要更新中[WebVR 开发人员指南](https://docs.microsof
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 
-功能 | 说明
+功能 | 描述
  :------ | :------
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview)是提供对所有 Windows 应用的现代打包体验的新 Windows 应用包格式。 开源 MSIX 格式保留现有程序包的功能并启用现代的部署功能。
 MSIX 打包工具 | 使用新[MSIX 打包工具](https://docs.microsoft.com/windows/msix/mpt-overview)） 可以重新打包你现有的桌面应用程序以 MSIX 格式，即使你不有权访问他们的源代码。 它可以运行命令行中，或通过其交互式 UI。

@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 创建和使用应用扩展
 description: 编写并托管通用 Windows 平台 (UWP) 应用扩展，这些扩展允许你通过用户可从 Microsoft Store 中安装的程序包来扩展你的应用。
 keywords: 应用扩展, 应用服务, 后台
-ms.author: twhitney
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c4c326dbafa719273c4535a42d58184c7ce360fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 99ba3ee5f62ed9455e95d9e760abdba6009e5027
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569385"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712362"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 

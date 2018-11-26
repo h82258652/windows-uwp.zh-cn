@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 title: 生成复杂的通用 Windows 平台 (UWP) 应用
 description: 在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
-ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce5e0d272e14b9c69f660c8c7de6a838fa7956ac
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 05a69cfdf96d6c7d3426b8d1ba414a42ff48a117
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559779"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691838"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>生成复杂的通用 Windows 平台 (UWP) 应用
 

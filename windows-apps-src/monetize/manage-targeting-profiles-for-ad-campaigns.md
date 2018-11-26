@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: 在 Microsoft Store 促销 API 中使用此方法管理促销性广告活动的目标市场配置文件。
 title: 管理目标市场配置文件
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573467"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712839"
 ---
 # <a name="manage-targeting-profiles"></a>管理目标市场配置文件
 
@@ -42,7 +40,7 @@ ms.locfileid: "7573467"
 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 说明         |
+| 标头        | 类型   | 描述         |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |

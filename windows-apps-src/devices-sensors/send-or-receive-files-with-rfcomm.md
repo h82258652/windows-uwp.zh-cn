@@ -1,9 +1,7 @@
 ---
-author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: 蓝牙 RFCOMM
 description: 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
-ms.author: misatran
 ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, uwp
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c1159f1e30c6956bf2ae029de8d1e283085517c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 27adf5bb39a06e24b7d76e272ceb8dcf6348b57e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574463"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694464"
 ---
 # <a name="bluetooth-rfcomm"></a>蓝牙 RFCOMM
 

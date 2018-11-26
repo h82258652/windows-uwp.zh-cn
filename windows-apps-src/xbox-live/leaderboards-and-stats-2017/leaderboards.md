@@ -1,19 +1,17 @@
 ---
 title: 排行榜
-author: aablackm
 description: 了解如何使用 Xbox Live 排行榜对玩家做以比较。
 ms.assetid: 132604f9-6107-4479-9246-f8f497978db7
-ms.author: aablackm
 ms.date: 09/28/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 69fd69f596204b07f3b8c2d78f27a26a7be9fe94
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8fd7e30b99418fda614a888d9269548cdc57a88a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7565375"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719985"
 ---
 # <a name="leaderboards"></a>排行榜
 
@@ -255,7 +253,7 @@ LeaderboardResult boardResult = await boardService.GetLeaderboardAsync(
 
 `LeaderboardResult` 有多个函数和属性来促进排行榜数据的读数。
 
-|属性  |说明  |
+|属性  |描述  |
 |---------|---------|
 |公用 IAsyncOperation<LeaderboardResult> GetNextAsync (uint maxItems);     |检索下一组提高排名达到 maxItems 参数的数量。 这是本质上再次调用 `GetLeaderboard()`         |
 |公用 LeaderboardQuery GetNextQuery();     |检索可用于进行排行榜调用来检索数据的下一组 LeaderboardQuery。         |
@@ -339,7 +337,7 @@ m_statsManager = stats_manager::get_singleton_instance();
 
 A`leaderboard_query`有几个属性可以设置这将影响返回的数据：
 
-|属性 |说明  |
+|属性 |描述  |
 |---------|---------|
 |m_skipResultToRank     |此 uint 变量将确定哪些排名的排行榜数据将从开始时返回。 在级别 1，排名开始菜单。         |
 |m_skipResultToMe     |如果设置为 true，此布尔值将导致的排行榜数据返回以在开始`XboxLiveUser`中使用`get_leaderboard()`调用。  |
@@ -505,7 +503,7 @@ public sealed class LeaderboardQuery : __ILeaderboardQueryPublicNonVirtuals
 
 A`LeaderboardQuery`有几个属性可以设置这将影响返回的数据：
 
-|属性 |说明  |
+|属性 |描述  |
 |---------|---------|
 |SkipResultToRank     |此 uint 变量将确定哪些排名的排行榜数据将从开始时返回。 在级别 1，排名开始菜单。         |
 |SkipResultToMe     |如果设置为 true，此布尔值将导致的排行榜数据返回以在开始`XboxLiveUser`中使用`GetLeaderboard()`调用。  |

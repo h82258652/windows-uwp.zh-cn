@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 游戏编程
 description: 通用 Windows 平台 (UWP) 提供了创建、分配游戏以及通过游戏获益的新机会。 了解有关启动新游戏或移植现有游戏的信息。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.author: mtoepke
 ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 1642251ac7019d8bdf0216487eb7085d616863cf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565548"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712862"
 ---
 # <a name="game-programming"></a>游戏编程
 

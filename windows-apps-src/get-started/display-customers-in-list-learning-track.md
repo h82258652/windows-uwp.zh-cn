@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 学习轨迹 - 以列表形式显示客户
 description: 了解以列表形式显示客户对象的集合需要执行的操作。
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6f9710e613a1fa7abc1793e016c7bbebdbd2cda3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581087"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712143"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 

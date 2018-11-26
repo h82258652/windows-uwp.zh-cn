@@ -2,19 +2,17 @@
 title: PresenceRecord (JSON)
 assetID: 414e6ef5-f7bd-70d0-7386-7aa1c3a56e21
 permalink: en-us/docs/xboxlive/rest/json-presencerecord.html
-author: KevinAsgari
 description: " PresenceRecord (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: febf5e377c73572e4e231f830d737b4e704d262e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d531352c4336e00c93a91e7c945602ab69695f2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563739"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707292"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
 联机状态相关的单个用户的数据。
@@ -25,7 +23,7 @@ ms.locfileid: "7563739"
 
 Presencerecord，他的对象具有以下规范。
 
-| 成员| 类型| 说明|
+| 成员| 类型| 描述|
 | --- | --- | --- |
 | xuid| 字符串| Xbox 用户 ID (XUID) 目标用户。 为此用户提供的状态数据。|
 | 设备| [DeviceRecord](json-devicerecord.md)的数组| 记录列表中用户的设备。|

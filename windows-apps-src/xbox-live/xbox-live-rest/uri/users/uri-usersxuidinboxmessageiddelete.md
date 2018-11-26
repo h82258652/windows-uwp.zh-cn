@@ -2,19 +2,17 @@
 title: DELETE (/users/xuid({xuid})/inbox/{messageId})
 assetID: c54eede3-3e3b-2cbe-1be9-8bf3a48171bc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageiddelete.html
-author: KevinAsgari
 description: " DELETE (/users/xuid({xuid})/inbox/{messageId})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d550147fe18a0233fd4f0a62ccb2826ef2a5c03
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 80ec2a462648177cc6bfc846b9c84278821b0e5e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566901"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712858"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 删除用户的收件箱中用户消息。 这些 Uri 的域是`msg.xboxlive.com`。
@@ -41,7 +39,7 @@ ms.locfileid: "7566901"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
 | 邮件 Id | string [50] | 要检索或删除的消息 ID。 | 
@@ -81,7 +79,7 @@ ms.locfileid: "7566901"
  
 发生错误，该服务可能会返回一个服务器对象，其中可能包含的服务的环境中的值。
  
-| 属性| 类型| 说明| 
+| 属性| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 错误码| 字符串| 指示错误的来源。| 
 | 错误代码| int| 与 （可以为 null） 的错误相关联的数字代码。| 

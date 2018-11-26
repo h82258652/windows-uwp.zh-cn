@@ -1,20 +1,18 @@
 ---
-author: jwmsft
 description: 自定义桌面应用的标题栏以匹配应用的个性。
 title: 标题栏自定义
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ebe590f98afef031ab183589fc7dcfc29cd9493
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557359"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698486"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 

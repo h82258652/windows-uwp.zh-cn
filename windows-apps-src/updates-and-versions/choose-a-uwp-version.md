@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 选择 UWP 版本
 description: 在 Microsoft Visual Studio 中编写 UWP 应用时，可以选择要面向的版本。 了解不同的 UWP 版本之间的区别，以及如何在新项目和现有项目中配置你的选择。
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, 版本, 内部版本, Windows, 选择, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582227"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691891"
 ---
 # <a name="choose-a-uwp-version"></a>选择 UWP 版本
 
@@ -24,7 +22,7 @@ ms.locfileid: "7582227"
 
 下表介绍了 Windows 10 的可用版本。 请注意，此表仅适用于构建只在 Windows 10 上受支持的 UWP 应用。 无法开发适用于 Windows 旧版本的 UWP 应用，并且必须[已安装 SDK 的正确内部版本](http://go.microsoft.com/fwlink/?LinkId=821431) 以面向对应的 Windows 版本。 
 
-| 版本 | 说明 |
+| 版本 | 描述 |
 | --- | --- |
 | 生成 17763 （版本 1809年） | 这是最新版本的 Windows 10，在 2018 年 10 月发布。 **请注意，_必须_使用 Visual Studio 2017 以面向此版本的 Windows。** 此版本中的一些突出功能如下： </br> \* **Windows 机器学习：** Windows 机器学习具有现在正式启动后，为尖端机器学习模型提供更快地评估和支持等功能。 若要了解有关此平台的详细信息，请参阅 [Windows 机器学习](https://docs.microsoft.com/windows/ai/)。 </br> \* **Fluent Design:** 为 Windows 10 添加了新功能，例如菜单栏、 命令栏浮出控件，以及 XAML 属性的动画。 请在 [Fluent Design 概述](../design/fluent-design-system/index.md)中查看最新内容。 </br> 有关这些功能以及许多其他功能，此版本的 Windows 中添加信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)或的详细信息页面上[什么是适用于开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-17763.md)
 | 内部版本 17134（版本 1803） | 这是版本的 Windows 10 已于 2018 年 4 月发布。 **请注意，_必须_使用 Visual Studio 2017 以面向此版本的 Windows。** 此版本中的一些突出功能如下： </br> \* **Fluent Design：** Windows 10 已添加树状视图、下拉刷新和导航视图等新功能。 请在 [Fluent Design 概述](../design/fluent-design-system/index.md)中查看最新内容。 </br> \* **控制台 UWP 应用：** 现可编写在控制台窗口（如 DOS 或 PowerShell 控制台窗口）中运行的 C++ /WinRT 或 /CX UWP 控制台应用。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows10 中的新增功能](../whats-new/windows-10-build-17134.md)上的详细信息页面。

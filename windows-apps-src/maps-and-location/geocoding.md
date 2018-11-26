@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 执行地理编码和反向地理编码
 description: 本指南介绍了如何将街道地址转换为地理位置 （地理编码），并通过调用 Windows.Services.Maps 命名空间中 MapLocationFinder 类的方法，将转换为街道地址 （反向地理编码） 的地理位置。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.author: pafarley
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 地理编码, 地图, 位置
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd956dece4435ceb8e14121ec2b545095af3a11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578230"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706894"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>执行地理编码和反向地理编码
 

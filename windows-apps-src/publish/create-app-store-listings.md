@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
 title: 创建 Microsoft Store 一览
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
-ms.openlocfilehash: ec1867e747f3458e3a9cffabe9a45535d4c27489
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570117"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694353"
 ---
 # <a name="create-app-store-listings"></a>创建 Microsoft Store 一览
 

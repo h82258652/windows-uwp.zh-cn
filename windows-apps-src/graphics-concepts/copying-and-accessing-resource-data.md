@@ -4,17 +4,15 @@ description: 用法标志指示应用程序应如何使用资源数据以将资�
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
 keywords:
 - 复制和访问资源数据
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b0f06711b4a908f8990dfb16968400c685c15f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d4364bf9973b69587ae042a809d026b553ee2ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563400"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695056"
 ---
 # <a name="copying-and-accessing-resource-data"></a>复制和访问资源数据
 

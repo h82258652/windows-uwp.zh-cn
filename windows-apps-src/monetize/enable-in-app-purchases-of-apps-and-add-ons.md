@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: 了解如何使用 Windows.Services.Store 命名空间购买应用或其加载项之一。
 title: 支持应用内购买应用和加载项
 keywords: windows 10, uwp, 加载项, 应用内购买, IAP, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb7165586c62770fd6b18fff8c7ad0095bc78ba
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560658"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720163"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>支持应用内购买应用和加载项
 

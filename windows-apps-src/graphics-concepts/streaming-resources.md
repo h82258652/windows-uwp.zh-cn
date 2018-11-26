@@ -6,17 +6,15 @@ keywords:
 - 流式资源
 - 资源，流式
 - 资源，平铺
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dac89fc678e35b1e3a39d26d836f03c18d3c4684
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c15c8a82219109a96d0a9ca192c4dfff5d86c9aa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582107"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692568"
 ---
 # <a name="streaming-resources"></a>流式资源
 

@@ -2,18 +2,16 @@
 title: 创建随机数
 description: 此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中创建随机数或在加密中使用的缓冲区。
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: a128535617c97e73b5a389db827fcf8c579b7f13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f36e50f2de36df39177370d688b9add5591403e1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564985"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693954"
 ---
 # <a name="create-random-numbers"></a>创建随机数
 

@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 title: xPhase 属性
 description: 将 xPhase 与 xBind 标记扩展结合使用，以便能以增量方式呈现 ListView 和 GridView 项并改进平移体验。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 17ee99553b5713acb1917ccb697abb2387d00da2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567718"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718981"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 

@@ -1,19 +1,17 @@
 ---
 title: 流程图 - SmartMatch 匹配
-author: KevinAsgari
 description: Xbox Live 多人游戏管理器流程图 - 使用 SmartMatch 匹配进行多人游戏。
 ms.assetid: ee25be78-5745-4484-8982-1e1991617b4d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b175c76a610df13f7527327bdb490bc7a8399a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: db3d5beaa5750d11da4b45680dd2fe8e1ac70ab5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566033"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720034"
 ---
 # <a name="flowchart---play-a-multiplayer-game-by-using-smartmatch-matchmaking"></a>流程图 - 使用 SmartMatch 匹配进行多人游戏
 

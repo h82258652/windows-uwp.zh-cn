@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 后台任务指南
 description: 确保你的应用满足运行后台任务的要求。
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: fd98a3019efc8f2774fb7a1b52f5dcd27778cd2a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd851b6deab0f7a2772720fac83bb2bfa3175071
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576311"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691638"
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 

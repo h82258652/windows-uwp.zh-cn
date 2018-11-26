@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 本文介绍了常见的应用和加载项，包括应用内购买、 许可和自行安装应用更新的应用商店操作错误代码。
 title: Microsoft Store 操作错误代码
-ms.author: mhopkins
 ms.date: 08/24/2017
 ms.topic: article
 keywords: windows 10，uwp，应用内购买，Iap，加载项，错误代码
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582187"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720303"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 操作错误代码
 

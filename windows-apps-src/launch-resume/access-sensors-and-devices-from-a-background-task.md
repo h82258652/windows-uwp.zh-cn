@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 title: 从后台任务访问传感器和设备
 description: DeviceUseTrigger 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 1666d64c26c8ccfecda142e50f2e672d0f4c8864
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576793"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718831"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 

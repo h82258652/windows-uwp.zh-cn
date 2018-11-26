@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置漏斗数据。
 title: 获取应用购置漏斗数据
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 购置, 漏斗
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aaceb9af3eed04039148bdd863ca3e473c7c245
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d9ccbb081ef6f39ad795105ee2449de4d8442ab3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569520"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692275"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>获取应用购置漏斗数据
 
@@ -38,7 +36,7 @@ ms.locfileid: "7569520"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -85,7 +83,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                  |
+| 值      | 类型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 包含应用的购置漏斗数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[漏斗值](#funnel-values)部分。                  |
 | TotalCount | int    | 在 *Value* 数组中的对象总数。        |

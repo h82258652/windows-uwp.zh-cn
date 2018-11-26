@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 启动远程设备上的应用
 description: 了解如何使用“Rome”项目在远程设备上启动应用。
-ms.author: pafarley
 ms.date: 02/12/2018
 ms.topic: article
 keywords: windows 10，uwp，连接设备、 远程系统、 rome、 项目 rome
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: cbd548e0c591c679ecfbee88793c51e2a2ca2b37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565856"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691708"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>启动远程设备上的应用
 

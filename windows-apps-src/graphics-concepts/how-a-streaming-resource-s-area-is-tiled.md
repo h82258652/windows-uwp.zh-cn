@@ -6,17 +6,15 @@ keywords:
 - 流式资源区域的平铺方式
 - 资源区域, 平铺
 - 尺寸表, 资源, 平铺
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ad096389c27fb65970424569c7c1d2ea0cb097
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7251d4595a3e87a8629d6e717bb4f52e5b7c35fe
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581896"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693248"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>流式资源区域的平铺方式
 

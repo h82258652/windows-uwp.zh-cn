@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: 本文介绍了如何使用 AdvancedPhotoCapture 类捕获高动态范围 (HDR) 和低亮度照片。
 title: 高动态范围 (HDR) 和低亮度照片捕获
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc81fdc03096dd8cac5e844a496b38da78eb6136
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a4c5005885d150fdd4f6a41b3fb2586e2728bbd5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557922"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695864"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高动态范围 (HDR) 和低亮度照片捕获
 

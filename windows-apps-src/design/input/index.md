@@ -1,22 +1,20 @@
 ---
 description: 针对笔、Surface Dial 和其他类型的输入优化应用。
 title: 输入和交互
-author: Karl-Bridge-Microsoft
 keywords: 应用输入, 自定义 UWP 应用程序
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: a69ebdb983fe8c023f2940a38ea6152d569f987c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555692"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695781"
 ---
 # <a name="input-and-interactions"></a>输入和交互
 

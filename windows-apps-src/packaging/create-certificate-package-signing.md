@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 title: 为程序包签名创建证书
 description: 使用 PowerShell 工具为应用包签名创建和导出证书。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 419fa90dfd21c42d256aeea8848862b8c5eb3628
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580707"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692618"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 

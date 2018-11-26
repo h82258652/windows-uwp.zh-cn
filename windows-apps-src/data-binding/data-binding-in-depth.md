@@ -1,9 +1,7 @@
 ---
-author: stevewhims
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: 深入了解数据绑定
 description: 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。
-ms.author: stwhi
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 0d7f6667aeb2f6c7c07f8f4c2d5944f559ebe0d8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dcaad17df5c036069dcdd729e662e5418db7646e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563465"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720203"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 

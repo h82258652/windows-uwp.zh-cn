@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: 本文描述了如何在通用 Windows 平台 (UWP) 应用的 XAML 页面内快速显示相机预览流。
 title: 显示相机预览
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b258569b707f50051eaa266e2cae5b9971894cf3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559143"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720383"
 ---
 # <a name="display-the-camera-preview"></a>显示相机预览
 

@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: 合成动画
 description: 许多合成对象和效果属性均可使用关键帧和表达式动画设置动画，以便 UI 元素的属性可以随时间变化或基于计算发生变化。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f9d0daf230007d1d32a7d2187d54baa90986e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566073"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712756"
 ---
 # <a name="composition-animations"></a>合成动画
 
@@ -53,7 +51,7 @@ Windows.UI.Composition API 允许你在统一的 API 层中创建、设置动画
 > [!NOTE]
 > 术语_通道_指的是一组件形式的属性。 例如，X 或 XY subchannel 的 Vector3 Offset 属性。
 
-| 动画概念 | 说明 |
+| 动画概念 | 描述 |
 | ----------------- | ----------- |
 | [使用 KeyFrameAnimations 基于时间的运动](time-animations.md)  | KeyFrameAnimations 用于直接控制的时间段内的运动体验全部。 开发人员描述运动的开始菜单、 结束、 在之间的内插和持续时间以一种传统关键的方式。 |
 | [在使用 Expressionanimation 相对运动](relation-animations.md)  | Expressionanimation 用于描述应如何相对于另一个对象的属性驱动的运动的一个对象的属性。 开发人员定义数学等式来定义基于引用的关系。 |

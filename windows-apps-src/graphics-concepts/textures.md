@@ -4,17 +4,15 @@ description: 纹理是在计算机生成的 3D 图像中创建逼真效果的强
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
 keywords:
 - 纹理
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 516a15c17546d9f9b5e7cb7f8c0651f1372275ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 81d77b262cc77c23d859cf76227a34bc72b15b96
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556283"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693328"
 ---
 # <a name="textures"></a>纹理
 

@@ -1,19 +1,17 @@
 ---
 title: 管理本地连接存储
-author: aablackm
 description: 了解如何在开发环境中管理本地连接存储数据。
 ms.assetid: 630cb5fc-5d48-4026-8d6c-3aa617d75b2e
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a741dbb202f9c5573342bb15098fc4553a7edc7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f4a0549a92a7855abb2c55bcef246018aacbb9b0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575080"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719967"
 ---
 # <a name="managing-local-connected-storage"></a>管理本地连接存储
 使用连接存储在云中存储游戏数据时，连接存储服务还有本地存储组件。 无论你在使用电脑还是主机，都存在包含已同步到云的数据的本地连接存储数据缓存。 无论你要创建 XDK 还是 UWP 主题作品，都有工具可用来管理本地连接存储数据。
@@ -46,7 +44,7 @@ Xbstorage 具有以下六个开发人员可以在 XDK 命令提示符下用来�
 
 <a id="xbstorage_reset"></a>
 
-|命令  |说明  |
+|命令  |描述  |
 |---------|---------|
 |reset    |对连接存储执行出厂重置。         |
 |import   |将数据从指定的 XML 文件导入连接存储空间。         |

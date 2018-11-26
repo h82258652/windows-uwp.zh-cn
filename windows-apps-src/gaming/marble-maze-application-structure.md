@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Marble Maze 应用程序结构
 description: DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
-ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 1272200bf128443c82807aec9df5559f207819e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d19fe1a81a193baf7fe6b7b86865dfb7ea65c00b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565462"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691858"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 

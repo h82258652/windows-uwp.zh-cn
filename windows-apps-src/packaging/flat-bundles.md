@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 平面捆绑应用包
 description: 介绍如何创建平面捆绑包来将你的应用的 .appx 包文件与对应用包的引用进行绑定。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, 打包, 包配置, 平面捆绑包
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d95591f12b61054a654b9b1284bdd90d74a937b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b7066b7f2e5bd72ebee3169e03c7940b6fef4dba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555064"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712849"
 ---
 # <a name="flat-bundle-app-packages"></a>平面捆绑应用包 
 

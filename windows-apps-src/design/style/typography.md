@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 description: 了解如何在应用中使用版式帮助用户轻松了解内容。
 title: UWP 应用中的版式
-ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3763581c06ef9dc416fde41599e8b041b3c32096
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557323"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698666"
 ---
 # <a name="typography"></a>版式
 

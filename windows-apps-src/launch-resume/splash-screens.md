@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 初始屏幕
 description: 此部分介绍如何设置和配置应用的初始屏幕。
 ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45609a0feb244f746fb8dfbf3dee0dacbe541fc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559520"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720193"
 ---
 # <a name="splash-screens"></a>初始屏幕
 
@@ -31,7 +29,7 @@ ms.locfileid: "7559520"
 
 此外，你可以使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类来自定义你的应用的启动体验。 你可以对你创建的延长初始屏幕进行适当定位，以使你的应用具有更多时间来完成诸如准备应用 UI 或完成网络操作等附加任务。 你还可以使用 **SplashScreen** 类以在初始屏幕消失时通知你，以便你可以开始进入动画。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |

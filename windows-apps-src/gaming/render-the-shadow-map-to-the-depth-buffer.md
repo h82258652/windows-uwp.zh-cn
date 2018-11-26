@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 将阴影映射呈现到深度缓冲区
 description: 从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 阴影映射, 深度缓冲区, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: a73754fef6d87505751460ec134d853c6bca0530
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559246"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692265"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 

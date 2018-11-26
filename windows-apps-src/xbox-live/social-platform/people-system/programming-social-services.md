@@ -1,19 +1,17 @@
 ---
 title: 对社交服务进行编程
-author: KevinAsgari
 description: 提供如何使用 Xbox Live 社会管理器 API 的代码示例。
 ms.assetid: 101d059a-e03f-472c-8300-800aa5730ee2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 社交管理器, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d65b55a351073ded99a2ec8d2d1e03f4ab3c34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5039d9ed205cadfee3b2e64527a1f58f1624accc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563607"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719936"
 ---
 # <a name="programming-social-services"></a>对社交服务进行编程
 

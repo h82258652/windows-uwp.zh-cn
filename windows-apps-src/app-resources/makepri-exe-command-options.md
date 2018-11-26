@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
 title: MakePri.exe 命令行选项
 template: detail.hbs
-ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: c777996dceeb443c25fcf526e3a029fca00047c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569550"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720473"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法来下载你的 Xbox One 游戏中的错误的 CAB 文件。
 title: 下载你的 Xbox One 游戏中的错误的 CAB 文件
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1e3339fe50087c3a3d8cdcf3a99f27c1c868df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 736219533a254e6380c10600e97f707f15e37de6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561144"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712501"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>下载你的 Xbox One 游戏中的错误的 CAB 文件
 
@@ -41,7 +39,7 @@ ms.locfileid: "7561144"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

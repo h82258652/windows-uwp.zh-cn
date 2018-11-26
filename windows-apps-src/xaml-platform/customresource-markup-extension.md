@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 通过计算对来源于自定义资源查找实现的资源的引用，为任何 XAML 属性提供值。 资源查找是通过 CustomXamlResourceLoader 类实现执行的。
 title: CustomResource 标记扩展
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fb88fc3a764a89dfe7ac8a9c399149b6b98eca5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7eabcb188aa1687d36d4b4e6f432783aa68969de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579654"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696412"
 ---
 # <a name="customresource-markup-extension"></a>{CustomResource} 标记扩展
 

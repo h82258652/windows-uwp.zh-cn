@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新加载项提交到合作伙伴中心。
 title: 确认加载项提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577475"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694926"
 ---
 # <a name="commit-an-add-on-submission"></a>确认加载项提交
 
@@ -40,7 +38,7 @@ ms.locfileid: "7577475"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

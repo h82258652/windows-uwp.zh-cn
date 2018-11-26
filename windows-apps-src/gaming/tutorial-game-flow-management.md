@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 游戏流管理
 description: 了解如何初始化游戏状态、处理事件和设置游戏更新循环。
 ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 610b794c0ded6791e93c14d8960366132afd973b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6d13b848a9e5d2dfc145431f732187c35c46ab6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577273"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692325"
 ---
 # <a name="game-flow-management"></a>游戏流管理
 

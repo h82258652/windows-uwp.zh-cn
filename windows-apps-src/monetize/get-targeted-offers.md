@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: 在 Microsoft Store 定向优惠 API 中使用此方法来获取为当前应用上下文中的当前用户提供的定向优惠。
 title: 获取定向优惠
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 定向优惠 API, 获取定向优惠
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557237"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695235"
 ---
 # <a name="get-targeted-offers"></a>获取定向优惠
 
@@ -35,7 +33,7 @@ ms.locfileid: "7557237"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明  |
+| 标头        | 类型   | 描述  |
 |---------------|--------|--------------|
 | 授权 | 字符串 | 必填。 当前已登录应用的用户的 Microsoft 帐户令牌采用的令牌格式为 **Bearer** &lt;*token*&gt;。 |
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: 传感器
 description: 传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e05c18bd2c8fa2ddd7d6a9bc8e474d02f27a93e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c29673a0b41b4f071d438f0c03255c2d73831dc5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578898"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693268"
 ---
 # <a name="sensors"></a>传感器
 

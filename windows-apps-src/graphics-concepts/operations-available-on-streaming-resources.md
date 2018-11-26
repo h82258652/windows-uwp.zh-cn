@@ -4,17 +4,15 @@ description: 本节列出了可对流式资源执行的操作。
 ms.assetid: 700D8C54-0E20-4B2B-BEA3-20F6F72B8E24
 keywords:
 - 可用于流式资源的操作
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1289b01e7ffb780c7e3faa52585eb5f002cf519c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561012"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693308"
 ---
 # <a name="operations-available-on-streaming-resources"></a>可用于流式资源的操作
 

@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: 使用选取器保存文件
 description: 使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a053047324fcb795a30951d70c5e0e78fbb5547
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a7e278df29a531e5bf1d0d92946cd0199f85515d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556876"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691548"
 ---
 # <a name="save-a-file-with-a-picker"></a>使用选取器保存文件
 

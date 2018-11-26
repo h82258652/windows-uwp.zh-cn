@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 了解如何向 UWP 应用中添加本机广告。
 title: 本机广告
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告控件, 本机广告
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b96add3aa785ad20ddd1c42cd46e498d0264a6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c978a07ceb30aaf9c2d0df3d38ff7ee9abbb5b2a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558341"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692708"
 ---
 # <a name="native-ads"></a>本机广告
 
@@ -53,7 +51,7 @@ ms.locfileid: "7558341"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManagerV2** object and wire up event handlers for the **AdReady** and **ErrorOccurred** events of the object.
+6.  在启动时运行的代码中（例如，在页面的构造函数中）实例化 **NativeAdsManagerV2** 对象，并为对象的 **AdReady** 和 **ErrorOccurred** 事件连接事件处理程序。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
@@ -97,7 +95,7 @@ ms.locfileid: "7558341"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
-9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. 下面的示例在测试期间将错误信息写入 Visual Studio **输出**窗口。
+9.  为 **ErrorOccurred** 事件定义一个事件处理程序，以处理与本机广告相关的错误。 下面的示例在测试期间将错误信息写入 Visual Studio **输出**窗口。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 

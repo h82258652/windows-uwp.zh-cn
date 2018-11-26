@@ -2,19 +2,17 @@
 title: XuidList (JSON)
 assetID: 06938a52-e582-a15b-ec7f-4b053dfc28ad
 permalink: en-us/docs/xboxlive/rest/json-xuidlist.html
-author: KevinAsgari
 description: " XuidList (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 990357eef8ef0ea8ec43822090a5133a10f8ec6c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d8172063d40f8df77827ab845c4dfd0c0799811
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564642"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707157"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 要对其执行操作的 Xuid 列表。 
@@ -25,7 +23,7 @@ ms.locfileid: "7564642"
  
 XuidList 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 字符串的数组| 在其应执行的操作，或应返回数据的 Xbox 用户 ID (XUID) 值的列表。| 
   

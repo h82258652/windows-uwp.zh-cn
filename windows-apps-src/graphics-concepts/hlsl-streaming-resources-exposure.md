@@ -4,17 +4,15 @@ description: 支持 Shader 模型 5 中的流式资源需要特定 Microsoft 高
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
 keywords:
 - HLSL 流式资源暴露
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a8523f4895c541ffb3b92ee00d5b62c57343ae00
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572129"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693588"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL 流式资源暴露
 

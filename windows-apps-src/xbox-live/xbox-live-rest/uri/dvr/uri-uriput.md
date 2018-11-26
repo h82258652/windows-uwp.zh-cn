@@ -2,19 +2,17 @@
 title: PUT (/{uri})
 assetID: 24a24c93-f43b-017e-91e0-29e190fec8a8
 permalink: en-us/docs/xboxlive/rest/uri-uriput.html
-author: KevinAsgari
 description: " PUT (/{uri})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 56a5150e354568f3ea7ec772953bd1e1e8efa579
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 862b956e29222bb9d28f98510f13d42fd1a51b6f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569516"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707203"
 ---
 # <a name="put-uri"></a>PUT (/{uri})
 上传游戏剪辑数据。
@@ -51,7 +49,7 @@ ms.locfileid: "7569516"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | <b>uri</b>| 字符串| <b>InitialUploadResponse</b>对象内<b>uploadUri</b>字段。|
 
@@ -60,7 +58,7 @@ ms.locfileid: "7569516"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- |
 | <b>blockNum</b>| 32 位无符号的整数| 如果设置<b>expectedBlocks</b>必需。 零开始编制块确定排序的文件中的块数量。 例如，如果<b>expectedBlocks</b> 7，然后<b>blockNum</b>可以是从 0 到 6。 |
 | <b>uploadId</b>| 字符串| 必需。 <b>GameClipsServiceUploadResponse</b>对象中的不透明 ID。|
@@ -70,7 +68,7 @@ ms.locfileid: "7569516"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <b>Xauth =&lt;authtoken ></b>|
 | X RequestedServiceVersion| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
@@ -83,7 +81,7 @@ ms.locfileid: "7569516"
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Accept-Encoding| 字符串| 可接受的压缩编码。 示例值： gzip，桥，标识。|
 | ETag| 字符串| 用于缓存优化。 示例值:"686897696a7c876b7e"。|
@@ -102,7 +100,7 @@ ms.locfileid: "7569516"
 
 此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 说明|
+| 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 301| 已永久移动| 该服务已移动到不同的 URI。|
@@ -120,7 +118,7 @@ ms.locfileid: "7569516"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X RequestedServiceVersion| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例： 1，vnext。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 示例： <b>application/json</b>。|
@@ -134,7 +132,7 @@ ms.locfileid: "7569516"
 
 ## <a name="optional-response-headers"></a>可选的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Etag| 字符串| 用于缓存优化。 示例:"686897696a7c876b7e"。|
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 异步编程（DirectX 和 C++）
 description: 本主题介绍在你使用 DirectX 进行异步编程和线程处理时需要考虑的各种注意事项。
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 异步编程, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f395136ff7f331f58b9c8e0ac1ee9efea296c02
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8551a49512d4b17ab1bab704596d9e5389de3eb6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560969"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712925"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>异步编程（DirectX 和 C++）
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: 本部分介绍了如何移植现有应用到其中，你可以创建可供客户安装到所有类型的设备上的单个 windows 10 应用包通用 Windows 平台 (UWP)。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
 title: 将应用移植到 windows 10
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5c6ae373e4e35e640223fe08a5a49f2e7a5dd3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eefebbd7087070f85ead09e562f154f43ed49e37
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580846"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692788"
 ---
 # <a name="porting-apps-to-windows10"></a>将应用移植到 windows 10
 

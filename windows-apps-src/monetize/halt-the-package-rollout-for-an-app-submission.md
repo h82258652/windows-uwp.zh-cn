@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 提交 API 中的此方法终止应用提交的软件包推出。
 title: 终止应用提交的推出
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 应用提交, 终止
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
-ms.openlocfilehash: df6db5ee434aabaaa56b309e02aa9197d72f4469
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 08450b7aa9608e610a31d114059dd49e3ef3e10c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572509"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720103"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>终止应用提交的推出
 
@@ -44,7 +42,7 @@ ms.locfileid: "7572509"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

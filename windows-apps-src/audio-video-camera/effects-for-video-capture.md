@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: 本主题介绍了如何将效果应用到相机预览和录制视频流，还介绍了如何使用视频防抖动效果。
 title: 视频捕获的效果
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d427a532e9821b81b6f23d08babecd692c8c95e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557068"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695980"
 ---
 # <a name="effects-for-video-capture"></a>视频捕获的效果
 

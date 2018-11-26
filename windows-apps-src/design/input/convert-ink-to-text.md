@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
 title: 将 Windows Ink 笔划识别为文本和形状
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keywords: Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas, 手写识别，用户交互，输入
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 83142b0a3b24e25f8e7a922d800262f505cd8cc2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b25a37fb06688e7841490e00d1c83640d3155d50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569127"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692878"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -274,7 +272,6 @@ private void DrawText(string recognizedText, Rect boundingRect)
 | ![分析前](images/ink/ink-analysis-raw2-small.png) | ![分析后](images/ink/ink-analysis-analyzed2-small.png) |
 
 ---
-
 ## <a name="constrained-handwriting-recognition"></a>受限制的手写识别
 
 在上一个部分（[带有墨迹分析的自由格式识别](#free-form-recognition-with-ink-analysis)）中，我们演示了如何使用[墨迹分析 API](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) 分析和识别 InkCanvas 区域内的任意墨迹笔划。

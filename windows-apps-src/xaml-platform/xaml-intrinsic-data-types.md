@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。
 title: XAML 固有数据类型
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556896"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694223"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 固有数据类型
 

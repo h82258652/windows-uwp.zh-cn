@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: UWP 游戏规划
 description: UWP 游戏的游戏规划。
 ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 规划, 辅助功能, 云, 盈利, 软件包, 技术, 概念, 审批
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576780"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712945"
 ---
 # <a name="planning-for-uwp-games"></a>UWP 游戏规划
 

@@ -1,19 +1,17 @@
 ---
 title: 连接存储技术概述
-author: aablackm
 description: 连接存储内部工作原理的深入探讨。
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 8740d9287ff63ba113266d6c7cf39f2a21823d4b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6eddd11a370b8dcadc5108fe00539c2c6d1d9d1a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563790"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692414"
 ---
 # <a name="connected-storage"></a>连接存储
 
@@ -76,7 +74,6 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 <a name="connected-storage"></a>连接存储
 -----------------
-
 连接存储旨在帮助应用保存 Xbox One 游戏数据，以及应该在控制台之间漫游的其他相关的应用状态数据。 连接存储 API（特定于 Xbox One）可协助你保存和上传此数据。 API 可与 Xbox One 应用程序模型结合使用。
 
 连接存储 API 提供以下功能：
@@ -96,7 +93,6 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 <a name="xbox-live-title-storage"></a>Xbox Live 标题存储
 -----------------------
-
 标题存储服务使用以下功能为数据存储提供跨平台 REST API：
 
 -   可跨用户、应用和各平台共享数据
@@ -118,7 +114,6 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 <a name="local-temporary-storage"></a>本地临时存储
 -----------------------
-
 在控制台上，应用有权访问具有以下特征的本地临时存储：
 
 -   2 GB 的专用硬盘存储，可通过路径 T:\\ 访问。
@@ -129,7 +124,6 @@ Xbox One 提供多个存储选项，每个选项都有各自的优势和限制�
 
 <a name="configuring-your-app-for-connected-storage"></a>配置应用的连接存储
 ------------------------------------------
-
 使用连接存储 API 时，所有读写操作都与在应用的清单文件 (AppXManifest.xml) 中定义的 Xbox Live 主要服务配置 ID (SCID) 关联：
 
 ```xml

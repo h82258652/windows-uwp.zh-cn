@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: 显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。
 title: 发送电子邮件
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: 联系人, 电子邮件, 发送
-ms.author: normesta
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565568"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695274"
 ---
 # <a name="send-email"></a>发送电子邮件
 

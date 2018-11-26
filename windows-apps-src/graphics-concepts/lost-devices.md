@@ -4,17 +4,15 @@ description: Direct3D 设备可以处于运行状态或丢失状态。
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
 keywords:
 - 丢失的设备
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 92dc9437dc2417b8f3da99df7cd6d6eb0c8edd1b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580481"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695016"
 ---
 # <a name="lost-devices"></a>丢失的设备
 

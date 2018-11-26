@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: 在 Microsoft Store 提交 API 中使用这些方法，可检索注册到你的合作伙伴中心帐户的应用的数据。
 title: 获取应用数据
-ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用数据
 ms.localizationpriority: medium
-ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 312729c25d5d9f34471c7154a84273bcbf844da4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571349"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720223"
 ---
 # <a name="get-app-data"></a>获取应用数据
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 提交 API 中的此方法获取应用提交的软件包推出信息。
 title: 获取应用提交的推出信息
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 应用提交
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 247c4e58740450bb9846c543e883ac62a8009429
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 301973fd231570f0fe63b8838971906c25e2d55c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565442"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692110"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a>获取应用提交的推出信息
 
@@ -39,7 +37,7 @@ ms.locfileid: "7565442"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

@@ -1,18 +1,16 @@
 ---
-author: muhsinking
 title: 创建自适应布局教程
 description: 本文介绍有关 XAML 中的自适应布局的基础知识
 keywords: XAML, UWP, 入门
-ms.author: mukin
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 000aa2d8f3684aa813b85076d9124a87a71b6a8c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556776"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695086"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 

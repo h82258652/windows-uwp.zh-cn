@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
 title: XAML 命名空间和命名空间映射
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582207"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693188"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 

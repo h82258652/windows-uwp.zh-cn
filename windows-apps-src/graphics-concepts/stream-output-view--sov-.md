@@ -4,17 +4,15 @@ description: 流输出视图可输出顶点、分割和几何图形着色器附�
 ms.assetid: F528A920-0EAD-4634-BA5F-CB34A8FAEFFA
 keywords:
 - 流输出视图 (SOV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d99aadb9f83d2820cd81fa3a4433c6fab8ee82
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b0fbd684787062d9416b4e6e4ac90b82e07e186
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576858"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720463"
 ---
 # <a name="stream-output-view-sov"></a>流输出视图 (SOV)
 

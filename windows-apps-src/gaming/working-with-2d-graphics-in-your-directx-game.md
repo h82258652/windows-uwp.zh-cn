@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DirectX 游戏的 2D 图形
 description: 我们将讨论 2D 位图图形的使用和效果，以及如何在游戏中使用它们。
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 2d, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570390"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691728"
 ---
 # <a name="2d-graphics-for-directx-games"></a>DirectX 游戏的 2D 图形
 

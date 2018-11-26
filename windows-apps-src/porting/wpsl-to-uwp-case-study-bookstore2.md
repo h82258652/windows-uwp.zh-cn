@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: 此案例研究，以 Bookstore 中提供的信息，首先显示分组数据 LongListSelector 中的 WindowsPhone Silverlight 应用。
 title: WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577488"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719539"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone silverlight 移植到 UWP 案例研究： Bookstore2
 
@@ -275,8 +273,8 @@ ms.locfileid: "7577488"
 当我们将 **CollectionViewSource.Source** 绑定到 Authors 时，我们要传达的唯一信息是 Authors 中的每个 Author 都是一个包含*某些内容*的组。 我们将其保留为 **CollectionViewSource**，以确定在此情况下 Author 确实是一组 BookSku。 该方法可用：但是不灵活。 如果我们希望 Author *既属于*一组 BookSku *又属于*一组作者的住址呢？ Author 不可能同时*属于*这两个组。 但 Author 可以*包含*任意数量的组。 而这就是解决方案：使用*包含组*模式而不是我们当前在使用的*属于组*模式。 操作方法如下：
 
 -   更改 Author，这样它就不再从 **List&lt;T&gt;** 派生。
--   将此字段添加到 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
--   将此属性添加到 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
+-   添加到此字段 
+-   添加到此属性 
 -   当然，我们可以重复上述两个步骤，向 Author 添加所需数量的组。
 -   将 AddBookSku 方法的实现更改为 `this.BookSkus.Add(bookSku);`。
 -   既然 Author *包含*至少一个组，我们需要向 **CollectionViewSource** 表明它应该使用其中的哪个组。 为此，请将此属性添加到 **CollectionViewSource**： `ItemsPath="BookSkus"`

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: 服务点入门
 description: 本文包含有关 PointOfService UWP API 入门的信息。
-ms.author: jken
 ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 46dd1f615e42f6e89ee9a92cb980299e9a0e5205
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b4ff9443c40cf44e171bf898b627de3e2819034
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580667"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692355"
 ---
 # <a name="getting-started-with-point-of-service"></a>服务点入门
 
@@ -32,7 +30,7 @@ ms.locfileid: "7580667"
 
 ## <a name="see-also"></a>另请参阅
 
-| 主题   | 说明 |
+| 主题   | 描述 |
 |:--------|:------------|
 | [应用程序的分发](../publish/distribute-lob-apps-to-enterprises.md) | 了解如何在将应用分配给企业客户的选项。 |
 | [应用程序的生命周期](../launch-resume/app-lifecycle.md) | 了解如何在 UWP 应用程序生命周期和 Windows 启动、 暂停，和恢复你的应用时会发生什么情况。 |

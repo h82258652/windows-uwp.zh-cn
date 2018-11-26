@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 启动屏幕截取
 description: 本主题介绍了 ms screenclip 和 ms screensketch URI 方案。 你的应用可以使用这些 URI 方案来启动代码段和 Sketch 应用或打开新的代码段。
-ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
 keywords: windows 10，uwp，uri、 截图草图
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ef83c3b5c23b703fcd40f7e4a7570b263cbc8e00
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556796"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691080"
 ---
 # <a name="launch-screen-snipping"></a>启动屏幕截取
 

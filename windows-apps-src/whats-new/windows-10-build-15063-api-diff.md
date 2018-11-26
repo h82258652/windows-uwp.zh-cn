@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 创意者更新 API 更改
 description: 开发人员可以使用以下列表标识 Windows 10 版本 15063 中的新增或更改的命名空间
 keywords: 新增功能, 更新, Windows 10, 1703, 创意者, 15063
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
 ms.localizationpriority: medium
-ms.openlocfilehash: e82c05acb80cee443db983d4f6d7f911d01748b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fb258c23e38fb2aee5f6f5194371bb72940e51b5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566807"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694806"
 ---
 # <a name="new-apis-in-windows-10-build-15063"></a>Windows 10 版本 15063 中的新增 API
 

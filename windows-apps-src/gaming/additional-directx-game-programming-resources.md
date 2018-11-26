@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 游戏编程资源
 description: 有关在 Windows 上进行游戏编程的详细信息，请查看以下资源。
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
-ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557167"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692958"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 

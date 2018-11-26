@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: 了解受支持的横幅广告大小。
 title: 受支持的横幅广告大小
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 广告, 大小, 横幅
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f23be9a58a138a82cc4510039a1c0899ef092a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6bc59026f8e2ba9b736db8514508ca9ccfad62f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576661"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692488"
 ---
 # <a name="supported-banner-ad-sizes"></a>受支持的横幅广告大小
 

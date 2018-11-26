@@ -1,19 +1,17 @@
 ---
 title: 配置在合作伙伴中心访问策略
-author: KevinAsgari
 description: 介绍如何在合作伙伴中心，以允许其他应用、 游戏和服务，以访问 Xbox Live 设置配置访问策略。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
-ms.openlocfilehash: 525249475a9fc8a22d976398cf277620de6655e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae26c18abdac30ff988e90ee5c56f178bf14b74a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575901"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712911"
 ---
 # <a name="configure-access-policies-in-partner-center"></a>配置在合作伙伴中心访问策略
 

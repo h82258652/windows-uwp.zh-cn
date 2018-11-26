@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的通道聚合转换数据。
 title: 通过通道获取应用转换
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 应用转换, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb5d5dfbfcbabbd3fa3004c84e2a1a5fff9f2d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d196ffeebcda7653e7464358b772def48c17cefb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568153"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692031"
 ---
 # <a name="get-app-conversions-by-channel"></a>通过通道获取应用转换
 
@@ -43,7 +41,7 @@ ms.locfileid: "7568153"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -80,7 +78,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                  |
+| 值      | 类型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 包含聚合应用转换数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[转换值](#conversion-values)部分。                                                                                                                      |
 | @nextLink  | string | 如果存在其他数据页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的转换数据超过 10 行时，就会返回此值。 |

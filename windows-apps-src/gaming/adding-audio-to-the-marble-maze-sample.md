@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 向 Marble Maze 示例添加音频
 description: 本文档介绍了在使用音频时要考虑的重要实践，并展示了 Marble Maze 如何应用这些实践。
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
-ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, 音频, 游戏, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 666ea75f1d4f18121b7ae9fa3def3b455ae3e7a3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573131"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712796"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>向 Marble Maze 添加音频示例
 

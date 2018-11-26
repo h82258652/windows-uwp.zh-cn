@@ -4,17 +4,15 @@ description: Direct3D 应用程序可以在窗口模式或全屏模式中运行�
 ms.assetid: EE8B9F87-822B-4576-A446-CA603E786862
 keywords:
 - 窗口与全屏模式
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b2f8c52835801f6cabccad3419bef9ef510522dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d84bbebfaf19b756e6abc6c592187b6b0ee92200
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579953"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718873"
 ---
 # <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>窗口与全屏模式
 
