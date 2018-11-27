@@ -1,18 +1,16 @@
 ---
-author: mijacobs
 title: 创建自定义样式
 description: 本文介绍有关在 XAML 中设置 UI 元素样式的基础知识
 keywords: XAML、UWP、入门
-ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560086"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716990"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 

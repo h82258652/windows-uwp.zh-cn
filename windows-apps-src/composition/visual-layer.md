@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: 可视化层
 description: Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571386"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716125"
 ---
 # <a name="visual-layer"></a>可视化层
 

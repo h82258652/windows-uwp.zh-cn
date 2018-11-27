@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 版本 10586 中的新增功能 - 2015 年 11 月
 description: Windows 10 版本 10586 和新开发人员工具将提供新的通用 Windows 平台支持的工具、功能和体验。
 keywords: 新增功能, 更新, 功能, 新增, Windows 10, 1511, 11 月, 10586
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 99abbc0e06f84fea87c4bbc96cb912424f9a2272
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6557648e3998cedee2a6eb0bcc9e58ca2f4c27d9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556886"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716085"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>面向开发人员的 Windows 10 版本 10586 中的新增功能
 

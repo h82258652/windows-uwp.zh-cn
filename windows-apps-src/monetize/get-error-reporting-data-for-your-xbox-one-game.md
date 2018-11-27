@@ -1,24 +1,22 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。
 title: 获取错误报告数据在 Xbox One 游戏
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e494b3e93e2dd6ac23ef1562c32485bf2e7ddb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560313"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713471"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>获取错误报告数据在 Xbox One 游戏
 
 使用 Microsoft Store 分析 API，获取聚合错误报告数据在 Xbox One 游戏中通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。
 
-你可以通过使用的[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)、[获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)，并[下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)的方法来检索其他错误信息。
+你可以通过使用[获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)、[获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)，并[下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)的方法来检索其他错误信息。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -40,7 +38,7 @@ ms.locfileid: "7560313"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -77,7 +75,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型    | 说明     |
+| 值      | 类型    | 描述     |
 |------------|---------|--------------|
 | 值      | array   | 包含聚合错误报告数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[错误值](#error-values)部分。     |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的错误超过 10000 行时，就会返回此值。 |
@@ -90,7 +88,7 @@ Authorization: Bearer <your access token>
 
 | 值           | 类型    | 说明        |
 |-----------------|---------|---------------------|
-| date            | string  | 错误数据的日期范围内的第一个日期，格式为 ```yyyy-mm-dd```。 如果请求指定某一天，此值就是该日期。 如果请求指定更长的日期范围，此值则是该日期范围的第一个日期。 对于*aggregationLevel*的值指定为**小时**的请求，此值还包括一个时间值的格式```hh:mm:ss```在本地时区发生了错误。  |
+| date            | string  | 错误数据的日期范围内的第一个日期，格式为 ```yyyy-mm-dd```。 如果请求指定某一天，此值就是该日期。 如果请求指定更长的日期范围，此值则是该日期范围的第一个日期。 对于指定**小时** *aggregationLevel*值的请求，此值还包括一个时间值格式```hh:mm:ss```中发生了错误的本地时区。  |
 | applicationId   | 字符串  | 你要为其检索错误数据的 Xbox One 游戏的产品 ID。   |
 | applicationName | 字符串  | 游戏的显示名称。   |
 | failureName     | string  | 故障的名称，它由四个部分组成：一个或多个问题类、异常/错误检查代码、发生故障的映像的名称和相关的函数名称。  |
@@ -140,7 +138,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相关主题
 
-* [获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
-* [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [获取游戏在 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
+* [获取 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)

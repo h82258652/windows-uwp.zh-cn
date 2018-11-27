@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: 了解应用中广告的 UI 和用户体验指南。
 title: 广告的 UI 和用户体验指南
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d502c721f98269c1256510a6f91f8c6dc8cd0fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564160"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713271"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -105,13 +103,13 @@ ms.locfileid: "7564160"
 
 * 理想情况下，在你需要显示广告之前，请预取广告（通过调用 [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)）30 至 60 秒。
 
-* Subscribe to all four events exposed in the [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
+* 订阅 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 类中显示的全部四个事件（**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**），并使用它们来做出适用于应用的正确决策。
 
 * 将一些内置体验用于替代服务器匹配的广告。 你会发现这在以下几种情况下非常有用：
 
     * 脱机模式，即无法访问广告服务器时。
 
-    * When the **ErrorOccurred** event fires.
+    * 引发 **ErrorOccurred** 事件时。
 
     * 如果你选择保存基于 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 的用户带宽，**ConnectionProfile** 类中的 API 可以提供帮助。
 
@@ -153,7 +151,7 @@ ms.locfileid: "7564160"
 
 * 使用间隙广告获取任何可以作为货币消费或与其他用户交易的内容。
 
-* Requesting a new interstitial ad in the context of the event handler for the [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) event. 这可能会导致无限循环，以及广告服务的操作问题。
+* 在 [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) 事件的事件处理程序上下文中请求新的间隙广告。 这可能会导致无限循环，以及广告服务的操作问题。
 
 * 只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告后收到 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，则应用中所示的下一个间隙广告必须是已准备好通过 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示的广告。
 

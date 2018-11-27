@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 使用 SourceModifier 的下拉刷新
 description: 使用 SourceModifier 创建自定义的下拉刷新控件
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 997082d2ed7375d99a7be1543901d1dd854be1a0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566659"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714999"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用 SourceModifier 的下拉刷新
 

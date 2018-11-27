@@ -2,18 +2,16 @@
 title: 常见的加密任务
 description: 这些文章提供有关常见的通用 Windows 平台 (UWP) 加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bca6496498c9d7a9caaf958fdc7e74dc16ccc98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d52943ab28ba9cb7544db827528985746585e361
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570187"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715248"
 ---
 # <a name="common-cryptography-tasks"></a>常见的加密任务
 

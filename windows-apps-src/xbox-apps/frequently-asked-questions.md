@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: 常见问题
 description: 有关 Xbox 上的 UWP 的常见问题解答。
-ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564463"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714153"
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -69,7 +67,7 @@ Xbox 不再支持 x86 应用开发或将 x86 应用商店提交到应用商店�
 
 ### <a name="can-i-publish-my-app"></a>我是否可以发布我的应用？
 
-如果你拥有[的开发者帐户](https://developer.microsoft.com/store/register)，可以通过合作伙伴中心中[发布应用](../publish/index.md)。 在零售 Xbox One 主机上创建和测试的 UWP 应用将经过当今 Windows 执行的相同引入、审阅和发布过程，以及符合当今 Xbox One 标准的其他审阅。
+如果你有一个[开发者帐户](https://developer.microsoft.com/store/register)，可以通过合作伙伴中心中[发布应用](../publish/index.md)。 在零售 Xbox One 主机上创建和测试的 UWP 应用将经过当今 Windows 执行的相同引入、审阅和发布过程，以及符合当今 Xbox One 标准的其他审阅。
 
 ### <a name="can-i-publish-my-game"></a>我是否可以发布我的游戏？
 

@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: Beta 测试
 description: Beta 测试使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d90ffb50d6db71e135cbecf56487b96ba3377c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 2eca388b37cc95803b7ecb94bc0b0b5b990f5de3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417113"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715417"
 ---
 # <a name="beta-testing"></a>Beta 测试
 

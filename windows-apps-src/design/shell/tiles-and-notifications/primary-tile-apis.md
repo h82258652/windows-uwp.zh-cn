@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
 title: 主要磁贴 API
 label: Primary tile API's
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10，uwp，StartScreenManager，固定主要磁贴，主要磁贴 api, 检查是否固定了磁贴, 动态磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d5c65881552199fce6f90bbf15e4bb2bac950ce
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6156920"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713863"
 ---
 # <a name="primary-tile-apis"></a>主要磁贴 API
  
@@ -86,7 +84,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 如果你的主要磁贴当前未固定，并且“开始”菜单支持它，你可以向用户显示提示，告诉他们可以固定你的主要磁贴。
 
 > [!NOTE]
-> 虽然你的应用位于前台，并且你才应调用此 APIafterthe 用户的专门请求后的主要磁贴 bepinned （例如之后你提示有关将磁贴固定到是单击的用户）,，你必须从 UI 线程调用此 API。
+> 你的应用位于前台，而应调用此 APIafterthe 用户的专门请求后的主要磁贴 bepinned （例如之后你提示有关磁贴固定到是单击的用户）, 的情况下，必须从 UI 线程调用此 API。
 
 如果用户单击你的按钮固定主要磁贴，你应随后调用 [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) 方法请求将你的磁贴固定到“开始”菜单。 这会显示一个对话框，要求用户确认他们要将你的磁贴固定到“开始”菜单。
 

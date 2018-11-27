@@ -1,25 +1,23 @@
 ---
-author: stevewhims
 description: 在开始移植过程时，你有两个选择。
 title: 将 Windows 运行时 8.x 项目移植到 UWP 项目'
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e0ff78f2872e572c370411a1aad38ccbd7fb6a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 428f6787dfeb18d7ebf02f96acea2a6ab55c7fe7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576135"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7714859"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>将 Windows 运行时 8.x 项目移植到 UWP 项目
 
 
 
-在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一种方式是在 Visual Studio 中创建新的 windows 10 项目并将你的文件复制到其中。 本主题的第一部分描述了第二个选择，但本主题的其余部分提供了同时适用于这两个选择的其他信息。 你还可以选择将新 windows 10 项目保留为现有项目在同一个解决方案和共享源代码文件使用的是共享的项目。 或者，你也可以将新项目保留在它自己的解决方案中，并使用 Visual Studio 中链接的文件功能共享源代码文件。
+在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一个选项是 Visual Studio 中创建一个新的 windows 10 项目，并将你的文件复制到其中。 本主题的第一部分描述了第二个选择，但本主题的其余部分提供了同时适用于这两个选择的其他信息。 你还可以选择将新 windows 10 项目保留在现有项目的同一个解决方案中并共享源代码文件使用共享的项目。 或者，你也可以将新项目保留在它自己的解决方案中，并使用 Visual Studio 中链接的文件功能共享源代码文件。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>创建项目并向其复制文件
 
@@ -73,7 +71,7 @@ ms.locfileid: "7576135"
 
 如果你使用条件编译 （借助 C# 预处理器指令），以便你的代码文件适用于 Windows 8.1 和 Windows Phone 8.1，则你现在可以查看该条件编译，而在 windows 10 中完成的融合工作。 融合意味着，在 windows 10 应用中，某些条件可以已彻底删除。 而其他条件将更改为运行时检查，如下面的示例所示。
 
-**注意**如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，在单个代码文件中，则也可以那样。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例显示了从通用 8.1 应用删除条件编译并用等效代码针对 windows 10 应用的更为简单的案例。
+**注意**如果你想要支持 Windows 8.1、 Windows Phone 8.1 和 windows 10，在单个代码文件中，则可以做到这一点。 如果你查看 windows 10 项目在项目属性页中，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例显示了从通用 8.1 应用删除条件编译并用等效代码针对 windows 10 应用的更简单的用例。
 
 第一个示例将演示 **PickSingleFileAsync** API（仅适用于 Windows 8.1）和 **PickSingleFileAndContinue** API（仅适用于 Windows Phone 8.1）的使用模式。
 
@@ -164,7 +162,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="app-package-manifest"></a>应用包清单
 
-[Windows 10 中的更改内容](https://msdn.microsoft.com/library/windows/apps/dn705793)本主题列出了对程序包清单架构参考的 windows 10，其中包括已添加、 删除和更改的元素的更改。 有关该架构中所有元素、属性和类型的参考信息，请参阅[元素层次结构](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果你要移植 Windows Phone 应用商店应用，或者你的应用是对 Windows Phone 应用商店应用的更新，请确保 **pm:PhoneIdentity** 元素与上一个应用的应用清单中的相应项匹配（使用由应用商店分配给应用的相同 GUID）。 这将确保要升级到 Windows 10 的应用用户将接收您的新应用作为更新而不是重复项。 请参阅 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 参考主题以了解更多详细信息。
+[Windows 10 中的更改](https://msdn.microsoft.com/library/windows/apps/dn705793)主题列出了对程序包清单架构参考的 windows 10，其中包括已添加、 删除和更改的元素的更改。 有关该架构中所有元素、属性和类型的参考信息，请参阅[元素层次结构](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果你要移植 Windows Phone 应用商店应用，或者你的应用是对 Windows Phone 应用商店应用的更新，请确保 **pm:PhoneIdentity** 元素与上一个应用的应用清单中的相应项匹配（使用由应用商店分配给应用的相同 GUID）。 这将确保要升级到 Windows 10 的应用用户将接收您的新应用作为更新而不是重复项。 请参阅 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 参考主题以了解更多详细信息。
 
 你的项目中的设置（包括任何扩展 SDK 引用）决定了你的应用可以调用的 API 图面区域。 但是，你的应用包清单决定了你的客户可以从应用商店将你的应用安装在哪些实际的设备集上。 有关详细信息，请参阅 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 中的相关示例。
 
@@ -175,7 +173,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 ## <a name="related-topics"></a>相关主题
 
 * [开发通用 Windows 平台应用](http://msdn.microsoft.com/library/dn975273.aspx)
-* [快速启动你的 Windows 运行时 8.x 应用使用模板 (C#，c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [快速启动你的 Windows 运行时 8.x 应用使用模板 (C#、 c + +、 Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)
 

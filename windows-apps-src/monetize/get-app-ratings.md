@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。
 title: 获取应用评分
-ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评分
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 32f32d3389a340c25d99ec0f0a68e0c20af89c2b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561404"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715742"
 ---
 # <a name="get-app-ratings"></a>获取应用评分
 
@@ -40,7 +38,7 @@ ms.locfileid: "7561404"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -68,7 +66,7 @@ ms.locfileid: "7561404"
 
 有关支持的字段列表，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
 
-| 字段        |  说明        |
+| 字段        |  描述        |
 |---------------|-----------------|
 | market | 包含对应用评分所在地市场的 ISO 3166 国家/地区代码的字符串。 |
 | osVersion | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
@@ -93,7 +91,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                                                                                                                                                                                                                                                                            |
+| 值      | 类型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 包含聚合评分数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[评分值](#rating-values)部分。                                                                                                                           |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的评分置数据超过 10000 行时，就会返回此值。 |

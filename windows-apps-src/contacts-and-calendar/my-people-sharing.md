@@ -1,18 +1,16 @@
 ---
 title: “我的人脉”共享
 description: 介绍如何为“我的人脉”共享添加支持
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569339"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716062"
 ---
 # <a name="my-people-sharing"></a>“我的人脉”共享
 
@@ -105,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，打开**Package.appxmanifest**使用默认编辑器，并在"打包"选项卡中查找。在这里，"应用"是与共享目标视图相对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，打开**Package.appxmanifest**使用默认编辑器中，并在"打包"选项卡中查找。在这里，"应用"是与共享目标视图相对应的可激活类。
 
 ## <a name="running-as-a-my-people-share-target"></a>作为“我的人脉”共享目标运行
 

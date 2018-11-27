@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad, in your Universal Windows Platform (UWP) applications.
 title: 处理指针输入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f1030e6cddf5a0ded289545de752d926789314ed
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577590"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716625"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 

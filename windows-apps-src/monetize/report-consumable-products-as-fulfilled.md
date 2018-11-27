@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: 使用 Microsoft Store 收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。
 title: 将可消费产品报告为已完成
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 完成, 可消费
 ms.localizationpriority: medium
-ms.openlocfilehash: 69795a40ae5e46f95330cd6a6d2738adc9a74686
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567632"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713501"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>将可消费产品报告为已完成
 
@@ -46,7 +44,7 @@ ms.locfileid: "7567632"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 说明                                                                                           |
+| 标头         | 类型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |

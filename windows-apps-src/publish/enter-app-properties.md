@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: 输入应用属性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 游戏设置, 显示模式, 系统要求, 硬件要求, 最低硬件, 建议硬件, 隐私策略, 支持联系人信息, 应用网站, 支持信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 80220f8402b225691a2e4eb3202f1f04d48e06b4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578413"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714898"
 ---
 # <a name="enter-app-properties"></a>输入应用属性
 

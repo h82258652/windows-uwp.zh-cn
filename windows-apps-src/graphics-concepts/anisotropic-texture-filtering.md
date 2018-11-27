@@ -4,17 +4,15 @@ description: 各向异性是可见于 3D 对象的纹素中的失真，此 3D �
 ms.assetid: 58923809-EF76-4C16-BCE7-922A66425F83
 keywords:
 - 各向异性纹理筛选
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e91c707b31de859d61ae926518c40812758320e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: efac0a9454f750d4b9040577b613496d29a30bc3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582167"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715795"
 ---
 # <a name="anisotropic-texture-filtering"></a>各向异性纹理筛选
 

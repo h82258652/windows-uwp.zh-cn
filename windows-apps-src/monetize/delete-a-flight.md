@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除注册到你的合作伙伴中心帐户的应用的软件包外部测试版。
 title: 删除软件包外部测试版
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 删除外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7446136"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715815"
 ---
 # <a name="delete-a-package-flight"></a>删除软件包外部测试版
 
@@ -38,7 +36,7 @@ ms.locfileid: "7446136"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -47,8 +45,8 @@ ms.locfileid: "7446136"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版）的应用商店 ID。 在合作伙伴中心中会提供应用应用商店 ID。  |
-| flightId | 字符串 | 必需。 要删除的软件包外部测试版的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 对于在合作伙伴中心中创建的外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
+| applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| flightId | 字符串 | 必需。 要删除的软件包外部测试版的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文
@@ -77,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定的软件包外部测试版。  |
-| 409  | 在指定的软件包外部测试版已找到，但它无法删除在其当前状态，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 在指定的软件包外部测试版已找到，但无法在其当前状态，删除，或者应用使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

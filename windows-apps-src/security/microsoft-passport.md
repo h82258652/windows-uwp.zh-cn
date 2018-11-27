@@ -2,18 +2,16 @@
 title: Windows Hello
 description: 本文介绍了作为 Windows 10 操作系统的一部分随附的新 Windows Hello 技术，并讨论了开发人员可如何实现此技术来保护他们的通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b2ee216059163e7232d65eb515645d9e7db56b3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ccffc523dd1196c208c2fe0abdb7297c19892279
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581967"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716010"
 ---
 # <a name="windows-hello"></a>Windows Hello
 

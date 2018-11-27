@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 使用 2D、3D 和街景视图方式显示地图
 description: 你可以在名为地图*地点卡* 的可轻型消除窗口中或在功能齐全的地图控件中显示地图。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b162be26073db6989f9ea13cc7805d2d0f3f0d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564779"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714849"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和 Streetside 视图显示地图
 

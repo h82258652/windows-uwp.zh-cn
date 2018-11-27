@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 图形诊断工具
 description: 了解如何在 Visual Studio 中获取和使用图形诊断功能，包括图形调试、图形框架分析和 GPU 使用率。
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 图形, 诊断, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581296"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716645"
 ---
 # <a name="graphics-diagnostics-tools"></a>图形诊断工具
 

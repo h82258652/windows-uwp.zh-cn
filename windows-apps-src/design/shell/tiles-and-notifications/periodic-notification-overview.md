@@ -1,20 +1,18 @@
 ---
-author: mijacobs
 Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
 title: 定期通知概述
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f7a5054fde1a1a24945b193f578b8389519dc2d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575388"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714243"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -27,7 +25,7 @@ ms.locfileid: "7575388"
 
 定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
 
-**注意**了解可以通过下载[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)Windows8.1 为你的 windows 10 应用中重复使用其源代码的详细信息。
+**注意**你可以了解有关 Windows8.1 下载[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)和 windows 10 应用中重复使用其源代码。
 
  
 

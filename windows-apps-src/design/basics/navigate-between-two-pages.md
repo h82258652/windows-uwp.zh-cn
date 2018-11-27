@@ -1,12 +1,10 @@
 ---
-author: Jwmsft
 Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
 title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -15,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e72dc726143d17f605283fa801f8e286c2c58878
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581328"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717106"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
@@ -89,7 +87,7 @@ ms.locfileid: "7581328"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)的前后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)和后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -126,7 +124,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)的前后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素作为根[**网格**](https://msdn.microsoft.com/library/windows/apps/br242704)和后的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -298,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 此处的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
+> 下面的代码使用[**导航**](https://msdn.microsoft.com/library/windows/apps/br242694)的返回值引发应用异常，如果导航至应用的初始窗口框架失败。 当 **Navigate** 返回 **true** 时，就会进行导航。
 
 现在，生成并运行应用。 单击显示“单击以转到第 2 页”的链接。 在顶部显示“第 2 页”的第二个页面应加载并显示在框架中。
 

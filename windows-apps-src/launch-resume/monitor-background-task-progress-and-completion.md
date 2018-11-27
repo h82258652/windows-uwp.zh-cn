@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 监视后台任务进度和完成
 description: 了解应用如何识别后台任务报告的进度和完成情况。
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10，uwp，后台任务
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9c71d8a42a71d221f6a20850f1d002be922517be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12772d81742815b8d739f61aee9461e64f970ef2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582417"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715855"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成
 
@@ -36,7 +34,7 @@ ms.locfileid: "7582417"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>创建一个事件处理程序以处理完成的后台任务
 
 ### <a name="step-1"></a>步骤 1
-创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)对象以及[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)对象。
+创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)对象和[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)对象。
 
 使用以下足迹对于**OnCompleted**后台任务事件处理程序方法。
 

@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to use custom timestamps on your toast notifications.
 title: Toast 上的自定义时间戳
 label: Custom timestamps on toasts
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 自定义时间戳, 时间戳, 通知, 操作中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 290825fa079052b79fb2feaec8af928f8da93f95
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c18c32e1dcee5486ff6545a1db0ec8f0cd67bfae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571459"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714263"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Toast 上的自定义时间戳
 

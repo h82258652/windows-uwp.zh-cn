@@ -1,22 +1,20 @@
 ---
-author: jwmsft
-description: XBind 标记扩展允许函数在标记中使用。
+description: XBind 标记扩展允许在标记中使用的功能。
 title: x:Bind 中的函数
-ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560003"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715473"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函数
 
-**注意**有关使用数据的常规信息随 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的一般信息随 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作：
 
@@ -161,7 +159,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 可以使用在 x: Bind 函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
+> 可以使用 X:bind 中的函数来实现作为内容已通过转换器和多重绑定在 WPF 所支持的方案相同。
 
 ## <a name="function-arguments"></a>函数参数
 

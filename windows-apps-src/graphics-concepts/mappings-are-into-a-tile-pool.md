@@ -4,17 +4,15 @@ description: 作为流式资源创建资源时，构成资源的磁贴来自于�
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
 keywords:
 - 映射到磁贴池
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553983"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713451"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>映射到磁贴池
 
@@ -33,7 +31,7 @@ ms.locfileid: "7553983"
 
 假设每个页表条目为 64 位。
 
-对于最坏情况页表大小单个表面，给定 Direct3D11 中的资源限制，假设流式资源创建使用 128 位 / 元素格式 （如 RGBA 浮点值），因此 64KB 磁贴包含仅 4096 个像素。 最大支持的 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小为 16384\*16384\*2048（但只有一个 mipmap），如果使用 64 位表条目完全填充（不包括 mipmap），则其在页表中需要约 1GB 的存储空间。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
+对于最坏的页表大小单个表面，给定 Direct3D11 中的资源限制，假设流式资源创建使用 128 位 / 元素格式 （如 RGBA 浮点值），因此 64KB 磁贴包含仅 4096 个像素。 最大支持的 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小为 16384\*16384\*2048（但只有一个 mipmap），如果使用 64 位表条目完全填充（不包括 mipmap），则其在页表中需要约 1GB 的存储空间。 添加 mipmap 会使完全映射（最坏情况）的页表存储增长约三分之一，达到约 1.3GB。
 
 这种情况需要访问约 10.6 TB 的可寻址内存。 但可寻址内存的量可能存在限制，这将减少这些数量，可能缩减至约 TB 范围。
 

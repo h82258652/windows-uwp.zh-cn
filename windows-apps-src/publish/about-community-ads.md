@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
 title: 有关社区广告
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8acf83e2b39ece5fcd46c3d89d921e4f3013b67
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570463"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714335"
 ---
 # <a name="about-community-ads"></a>有关社区广告
 
@@ -21,7 +19,7 @@ ms.locfileid: "7570463"
 
 以下是此计划的运作方式：
 
-* 你选择登录后加入社区广告如下所述，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)。 然后，你的应用将与其他开发人员同样选择加入社区广告共享推广广告空间。 你的应用将会显示其他加入社区广告的开发人员发布的应用的广告，而他们的应用也会显示你的应用的广告。
+* 你选择登录后加入社区广告，如下所述，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)。 然后，你的应用将与其他开发人员同样选择加入社区广告共享推广广告空间。 你的应用将会显示其他加入社区广告的开发人员发布的应用的广告，而他们的应用也会显示你的应用的广告。
 * 通过在你的应用中显示社区广告，你可以获取在其他应用中拥有推广广告空间的信用。 信用根据以下过程计算：
   * 对于每个有提供社区广告的应用的国家或地区，该国家或地区的当前市场行情 eCPM（每千次印象有效成本）值乘以你的应用在该国家或地区进行的社区广告请求数。 此值就是你在该国家或地区为你的应用获取的信用。
   * 你在给定时间段内获取的总信用等于每个提供社区广告的应用在每个国家或地区获取的所有信用之和。
@@ -34,8 +32,8 @@ ms.locfileid: "7570463"
 
 若要选择加入社区广告的 UWP 应用：
 
-1. 选择你所使用的应用和滚动中下移到**中介设置**广告单元。
-2. 如果选择**让 Microsoft 优化我的设置**时，社区广告会自动启用为广告单元。 否则为在**目标**下拉列表中选择基准配置或特定于市场的配置，然后查看**其他广告网络**列表中的**Microsoft 社区广告**框。
+1. 选择你所使用的应用和滚动中关闭到**中介设置**广告单元。
+2. 如果选择**让 Microsoft 优化我的设置**，则会自动将社区广告启用为广告单元。 否则为在**目标**下拉列表中选择基线配置或特定于市场的配置，然后查看**其他广告网络**列表中的**Microsoft 社区广告**框。
 
     > [!NOTE]
     > 你可以使用**权重**字段指定你想要显示来自付费的网络和其他广告网络，包括社区广告的广告的比例。

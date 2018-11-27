@@ -1,19 +1,17 @@
 ---
 title: 入门教程 - 用 JavaScript 编写的 3D UWP 游戏
 description: 适用于 Microsoft 应用商店、 用 JavaScript 及 three.js 编写的 UWP 游戏
-author: abbycar
-ms.author: abigailc
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10，uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553967"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713577"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
 
@@ -30,7 +28,7 @@ ms.locfileid: "7553967"
 </iframe>
 
 > [!NOTE] 
-> 这不是完整的游戏;它旨在展示使用 JavaScript 和第三方库将应用发布到 Microsoft 应用商店的准备工作。
+> 这不是一个完整的游戏;它旨在展示使用 JavaScript 和第三方库将应用发布到 Microsoft 应用商店的准备工作。
 
 
 ## <a name="requirements"></a>要求
@@ -258,7 +256,7 @@ ___
 
 如果遇到问题，你可以复制和粘帖此 CodePen 中的所有 JavaScript 来加以解决，或者可以对其进行编辑，以调整某些光和更改部分颜色。 
 
-<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光，相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
+<iframe height='300' scrolling='no' title='光、 相机、 立方体 ！' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>光、 相机、 立方体 ！</a> 通过 Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
 </iframe>
 
 
@@ -1083,7 +1081,7 @@ function lockChange() {
 
 
 ## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
-现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！）有几个步骤过程。
+现在你有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！）有几个步骤的过程。
 
 1.  你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
 2.  你必须使用应用提交[清单](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。

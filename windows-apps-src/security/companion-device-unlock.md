@@ -1,19 +1,17 @@
 ---
 title: 具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 description: Windows Hello 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用 Windows Hello 配套设备框架，即使是在生物识别不可用时（例如，在 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备时），配套设备也能提供丰富的 Windows Hello 体验。
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf1ae02a1c1937c02b6c750872dc784d28cd8e0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b33cf07ef10d0891f2747a06caf098b7d37b62f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582147"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716725"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>具有 Windows Hello 配套 (IoT) 设备的 Windows 解锁
 

@@ -1,23 +1,21 @@
 ---
-author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: 创建客户类别
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 类别, 类别, 目标组, 客户
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0df23f0da4efe01877c45e5b2b6b5f4e2142a92
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555448"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714444"
 ---
 # <a name="create-customer-segments"></a>创建客户类别
 
-有时出于促销和提升参与度的目的，可能需要面向客户群子集。 你可以达到此在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建[客户组](create-customer-groups.md)称为包含年龄*段*的 Windows 10 客户满足人口统计或收益条件，你选择的类型。
+有时出于促销和提升参与度的目的，可能需要面向客户群子集。 你可以达到此[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一种[客户组](create-customer-groups.md)称为包含 Windows 10 客户满足人口统计或收益条件，你选择的*类别*。
 
 例如，可创建仅包含年龄在 50 岁或以上的客户的类别，或创建包含在 Microsoft Store 中花费超过 10 美元的客户。 还可将这些条件组合起来，创建包含年龄在 50 岁以上并且在应用商店中花费超过 10 美元的所有客户。 
 
@@ -43,7 +41,7 @@ ms.locfileid: "7555448"
 4.  在**包含此应用的客户**列表中，选择一个目标应用。
 5.  在**定义包含条件**部分中，指定类别的筛选条件。
 
-    你可以选择各种筛选条件，包括**购置**、**购置源**、**人口统计**、**评分**，**改动预期**、**应用商店购买**、**应用商店购置**，以及**应用商店花费**。
+    你可以选择各种筛选条件，包括**购置**、**购置源**、**人口统计**、**分级**，**改动预期**、**应用商店购买**、**应用商店购置**以及**应用商店花费**。
 
     例如，如果希望创建仅包含 18 至 24 岁的应用客户的类别，可从下拉列表中选择筛选条件 \[**人口统计**\] \[**年龄组**\]\ [**是**\] \[**18 至 24**\]。
 

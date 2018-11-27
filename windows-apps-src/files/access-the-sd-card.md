@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: 访问 SD 卡
 description: 你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。
-ms.author: lahugh
 ms.date: 03/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sd 卡, 存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578503"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713068"
 ---
 # <a name="access-the-sd-card"></a>访问 SD 卡
 

@@ -1,25 +1,23 @@
 ---
-author: Xansky
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: 在 Microsoft Store 促销 API 中使用此方法创建、编辑和获取促销性广告活动。
 title: 管理广告活动
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c86c0d5d1a10442c7addeed11cdbfc37846f337
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6529c1a21865b2997d36e9b254b19f971f620490
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573909"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715709"
 ---
 # <a name="manage-ad-campaigns"></a>管理广告活动
 
 在 [Microsoft Store 促销 API](run-ad-campaigns-using-windows-store-services.md) 中使用这些方法来创建、编辑和获取适合你的应用的促销性广告活动。 使用此方法创建的每个活动只能与一个应用关联。
 
->**注意**&nbsp;&nbsp;你还可以创建和管理广告市场活动使用合作伙伴中心中，并且可以在合作伙伴中心中访问以编程方式创建的市场活动。 有关合作伙伴中心中管理广告活动的详细信息，请参阅[创建广告市场活动为你的应用](../publish/create-an-ad-campaign-for-your-app.md)。
+>**注意**&nbsp;&nbsp;你还可以创建和管理广告市场活动使用合作伙伴中心中，并可在合作伙伴中心访问以编程方式创建的市场活动。 有关合作伙伴中心中管理广告活动的详细信息，请参阅[创建广告市场活动的应用](../publish/create-an-ad-campaign-for-your-app.md)。
 
 使用这些方法创建或更新活动时，你通常还需要调用以下一种或多种方法来管理与活动关联的*投放渠道*、*目标市场配置文件*和*创意*。 有关活动与投放渠道、目标市场配置文件和创意之间关系的详细信息，请参阅[使用 Microsoft Store 服务开展广告活动](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
@@ -33,7 +31,7 @@ ms.locfileid: "7573909"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 促销 API 的所有[先决条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
-  >**注意**&nbsp;&nbsp;作为必备条件的一部分，请确保该[创建合作伙伴中心中的至少一个付费的广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)，你的广告市场活动的至少一种付款方式合作伙伴中心中添加。 使用此 API 创建的广告市场活动的投放渠道将自动进行计费在合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
+  >**注意**&nbsp;&nbsp;作为必备条件的一部分，请确保该[创建合作伙伴中心中的至少一个付费的广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)，你的广告市场活动的至少一种付款方式合作伙伴中心中添加。 使用此 API 创建的广告市场活动的投放渠道将自动进行计费的合作伙伴中心中的**广告市场活动**页面上选择的默认付款方式。
 
 * [获取 Azure AD 访问令牌](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在这些方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -52,7 +50,7 @@ ms.locfileid: "7573909"
 
 ### <a name="header"></a>Header
 
-| 标头        | 类型   | 说明         |
+| 标头        | 类型   | 描述         |
 |---------------|--------|---------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 | 跟踪 ID   | GUID   | 选填。 跟踪调用流的 ID。                                  |

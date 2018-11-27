@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 ResourceDictionary 中定义，而 StaticResource 用法则在 ResourceDictionary 中引用该资源的键。
 title: StaticResource 标记扩展
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573603"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715153"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 标记扩展
 
@@ -40,7 +38,7 @@ ms.locfileid: "7573603"
 
 本主题未介绍 **StaticResource** 解析为资源字典中的项时所遵循的规则。 这些规则取决于引用和资源是否都存在于模板中，以及是否使用了合并的资源字典，等等。 有关如何定义资源和正确使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的详细信息（包括示例代码），请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-**重要** **StaticResource**不应尝试将引用转发到已定义资源的 XAML 文件中按词法进一步。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
+**重要提示** **StaticResource**不应尝试将引用转发到资源定义在 XAML 文件中按词法进一步。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
 
 尝试为无法解析的键指定 **StaticResource** 会在运行时引发 XAML 分析异常。 设计工具还可能会提供警告或错误。
 

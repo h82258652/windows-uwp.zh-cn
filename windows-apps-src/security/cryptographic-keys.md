@@ -2,18 +2,16 @@
 title: 加密密钥
 description: 本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a47ba36c84176e83a81dd234d05315aa1e2525
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573241"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714616"
 ---
 # <a name="cryptographic-keys"></a>加密密钥
 

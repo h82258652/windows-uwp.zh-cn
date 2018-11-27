@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 移植 GLSL
 description: 转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, glsl, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554026"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713078"
 ---
 # <a name="port-the-glsl"></a>移植 GLSL
 
@@ -60,7 +58,6 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 <a name="instructions"></a>说明
 ------------
-
 ### <a name="step-1-port-the-vertex-shader"></a>步骤 1：移植顶点着色器
 
 在我们的简单 OpenGL ES 2.0 示例中，顶点着色器具有三个输入：一个常量模型视图投影 4x4 矩阵和两个 4 坐标矢量。 这两个矢量包含顶点位置及其颜色。 着色器将位置矢量转换为透视坐标，并将其分配给 gl\_Position 内部函数以进行光栅化。 还需要将顶点颜色复制到 varying 变量以在光栅化期间进行内插。
@@ -160,10 +157,8 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 [移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md) 下一步
 ---------
-
 [绘制到屏幕](draw-to-the-screen.md) 备注
 -------
-
 了解 HLSL 语义以及常量缓冲区的打包可以为你省去调试的麻烦，并且还可以提供优化机会。 如果有机会，请通读[变量语法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)、[Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)以及[如何创建常量缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果没有机会通读这些内容，那么请记住下面这些有关语义和常量缓冲区的开始提示：
 
 -   始终要仔细检查呈现器的 Direct3D 配置代码，以确保常量缓冲区的结构与 HLSL 中的 cbuffer struct 声明相匹配，并且确保两个声明之间的组件标量类型相匹配。

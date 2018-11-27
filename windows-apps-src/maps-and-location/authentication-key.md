@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 请求地图身份验证密钥
 description: 通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
 ms.localizationpriority: medium
-ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e986880ccedfdb4648b1554c35c23a8a841fe820
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571269"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715014"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 

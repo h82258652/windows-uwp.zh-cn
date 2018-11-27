@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: 创建定期工作项
 description: 了解如何创建定期重复的工作项。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 定期工作项, 线程处理, 计时器
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570310"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715218"
 ---
 # <a name="create-a-periodic-work-item"></a>创建定期工作项
 
@@ -31,7 +29,7 @@ ms.locfileid: "7570310"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 返回一个 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 对象。 存储该对象，以防需要取消计时器。
 
-> **注意**避免指定值为零 （或小于 1 微秒的任何值） 的间隔。 这将导致定期计时器像单次计时器一样操作。
+> **注意**不要指定值为零 （或小于 1 微秒的任何值） 的时间间隔。 这将导致定期计时器像单次计时器一样操作。
 
 > **注意** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)可用于访问 UI 并显示工作项的进度。
 

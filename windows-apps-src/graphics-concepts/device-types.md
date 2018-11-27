@@ -4,17 +4,15 @@ description: Direct3D 设备类型包括硬件抽象层 (hal) 设备和参考光
 ms.assetid: 64084B23-10C0-4541-8E93-FB323385D2F0
 keywords:
 - 设备类型
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf7d984226984391da340c74791dad4a6c0d8fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5ddb1dc0e42f88cf65464841388b9addfb4b5748
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553904"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715752"
 ---
 # <a name="device-types"></a>设备类型
 

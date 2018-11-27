@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 description: 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,14 +7,13 @@ title: XAML 样式
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
-ms.author: jimwalk
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f1086db85dbac732a92670d2b5844c313bc851
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d9f77d92e3c80e4a0d4e0808289f032b4a1125a5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673854"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714709"
 ---
 # <a name="xaml-styles"></a>XAML 样式
 

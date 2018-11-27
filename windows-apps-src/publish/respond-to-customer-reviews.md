@@ -1,33 +1,31 @@
 ---
-author: jnHs
 Description: You can respond directly to reviews of your app to let customers know you’re listening to their feedback.
 title: 回复客户评价
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，响应，响应，查看
 ms.localizationpriority: medium
-ms.openlocfilehash: 9552e9dede62d4d89b71f031cd2ff2c76964d0cb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1feb6f463fe018d356d678b23199716ad0cbd3e8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569636"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716036"
 ---
 # <a name="respond-to-customer-reviews"></a>回复客户评价
 
 
-你可以回复评价的应用以让客户知道你正在听取他们的反馈。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 将所有 windows 10 客户都可以看到在 Microsoft 应用商店中显示你的回复。 你还可以选择通过电子邮件向客户发送你的回复，（如果他们没有选择退出，并在使用运行 Windows 10 版本 1803年或更高版本的设备）。
+你可以回复评价的应用以让客户知道你正在听取他们的反馈。 使用评论回复，可以告诉客户你根据他们的评论已添加的功能或已修复的错误，或获取有关如何改进应用的更具体的反馈。 你的回复将显示在所有 windows 10 客户都可以看到 Microsoft 应用商店中。 你还可以选择通过电子邮件向客户发送你的回复，（如果他们没有选择退出，并在使用运行 Windows 10 版本 1803年或更高版本的设备）。
 
-若要查看你的应用的相关评论并提供回复，请在[合作伙伴中心](https://partner.microsoft.com/dashboard)中找到该应用。 在左侧的导航菜单中，展开*分析**，然后单击以显示的[评价报告](reviews-report.md)的**评论**。 选择**响应查看**提供你的回复。
+若要查看你的应用的相关评论并提供回复，请在[合作伙伴中心](https://partner.microsoft.com/dashboard)中找到该应用。 在左侧的导航菜单中，展开*分析**，然后单击以显示[评价报告](reviews-report.md)的**评论**。 选择**响应查看**提供你的回复。
 
 > [!TIP]
 > 除了使用合作伙伴中心回复评价之外，你可以回复评价[以编程方式](../monetize/submit-responses-to-app-reviews.md)。
 
-默认情况下，将在应用商店，原始客户评价的正下方中发布你的回复。 这些响应将在 Windows 10 设备上查看应用商店的任何客户可见。 如果留下评价的客户使用运行 Windows 10 版本 1803年或更高版本的设备，并且它们未选择退出接收电子邮件响应，一份你的回复将还会发送到该客户通过电子邮件。  你将需要提供才能提交你的回复，我们将向客户电子邮件中包含一个有效的电子邮件地址。 然后，他们可以使用此电子邮件地址来直接与你联系。
+默认情况下，将在应用商店，原始的客户评价的正下方发布你的回复。 这些响应将在 Windows 10 设备上查看应用商店的任何客户可见。 如果留下评价的客户使用运行 Windows 10 版本 1803年或更高版本的设备，并且它们未选择退出接收电子邮件响应，一份你的回复将还会发送到该客户通过电子邮件。  你将需要提供有效的电子邮件地址才能提交你的回复，我们将添加到客户电子邮件中。 然后，他们可以使用此电子邮件地址来直接与你联系。
 
-如果你不希望你的回复显示在应用商店中，并改为想要仅通过电子邮件向客户做出响应，请取消选中**公开此回复**框。 请注意，你将无法取消选中此框，如果客户已选择不接收回复电子邮件和/或如果他们使用的设备未运行 Windows 10 版本 1803年或更高版本。
+如果你不希望你的回复显示在应用商店中，并改为想要仅通过电子邮件回复客户，请取消选中**公开此回复**框。 请注意，你将无法取消选中此框，如果客户已选择不接收回复电子邮件和/或如果他们使用的在设备未运行 Windows 10 版本 1803年或更高版本。
 
 ## <a name="guidelines-for-responses"></a>回复准则
 
