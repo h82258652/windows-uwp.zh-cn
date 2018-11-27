@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706874"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830812"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>针对外形规格和 UX 进行移植 WindowsPhone silverlight 移植到 UWP
 
 
 上一主题是[移植业务和数据层](wpsl-to-uwp-business-and-data.md)。
 
-Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。 设备，例如物理大小、 默认方向和有效像素分辨率到通用 Windows 平台 (UWP) 应用通过 windows 10 的呈现的方式之间的差异。 好消息是，系统使用智能概念（例如有效像素）为你处理了大量繁琐的工作。
+Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。 例如物理大小、 默认方向和有效像素分辨率为通用 Windows 平台 (UWP) 应用通过 windows 10 的呈现的方式的设备之间的差异。 好消息是，系统使用智能概念（例如有效像素）为你处理了大量繁琐的工作。
 
 ## <a name="different-form-factors-and-user-experience"></a>不同的外形规格和用户体验
 
@@ -30,7 +30,7 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 客观来讲，屏幕应以英寸为测量单位，并且应采用物理（原始）像素。 知道这两个指标后，你便可以知道一英寸可以容纳的像素数。 这是像素密度，既可称为 DPI（每英寸点数），又可称为 PPI（每英寸像素）。 DPI 的倒数近似于像素的物理大小。 像素密度也称为*分辨率*，尽管该术语通常用于表示像素计数。
 
-由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 windows 10 将考虑使用 dpi 和设备中的典型观看距离来计算 UI 元素以物理像素为单位，以提供最佳的观看体验的最佳大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
+由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 windows 10 将考虑使用 DPI 和设备的典型观看距离来计算 UI 元素以物理像素为单位，以提供最佳的观看体验的最佳大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我们仍建议你用多种不同的设备来测试你的应用，以便你可以自行确认每种体验。
 
@@ -52,7 +52,7 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 除了诸如列表视图和网格视图等新控件的大多数已建立的布局类型从 WindowsPhone Silverlight 在通用 Windows 平台 (UWP) 中都有等效项。 例如，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 和 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。 移植使用这些类型的大部分 UI 应该比较简单，但应始终寻找利用这些布局面板的动态布局功能以自动调整大小并在不同大小的设备上重新布局的方法。
 
-除了内置于系统控件和布局面板的动态布局，我们可以使用一个称为[自适应视觉状态管理器](wpsl-to-uwp-porting-xaml-and-ui.md)的新 windows 10 功能。
+除了内置于系统控件和布局面板的动态布局外，我们可以使用一个称为[自适应视觉状态管理器](wpsl-to-uwp-porting-xaml-and-ui.md)的新 windows 10 功能。
 
 ## <a name="input-modalities"></a>输入形式
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 11, 设备丢失
 ms.localizationpriority: medium
 ms.openlocfilehash: c11bbf7657644fbf616590f50d75d93f62ed993e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691300"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846835"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>在 Direct3D 11 中处理设备删除方案
 
@@ -26,7 +26,7 @@ ms.locfileid: "7691300"
 -   图形设备停止响应并进行重置。
 -   已采用物理方式附加或删除图形适配器。
 
-出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 使用 Microsoft Visual Studio2015 提供的 DirectX 11 应用 (通用 Windows) 模板提供代码示例。
+出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 使用 Microsoft Visual Studio2015 提供的 DirectX 11 应用 (通用 Windows) 模板提供的代码示例。
 
 ## <a name="instructions"></a>说明
 
@@ -166,4 +166,4 @@ if (m_deviceNotify != nullptr)
 
 对于与 Visual Studio 图形诊断相关的 Direct3D 事件捕获和播放，Visual Studio 开发人员命令提示符支持命令行工具“dxcap”。 当你的应用正在运行时，你可以使用命令行选项“-forcetdr”，以便强制执行 GPU 超时检测和恢复事件，进而触发 DXGI\_ERROR\_DEVICE\_REMOVED 并允许你测试错误处理代码。
 
-> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 如何安装图形适用于 Windows 10 工具的详细信息可以在此处找到： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
+> **注意** DXCap 及其支持 DLL 将安装到 system32/syswow64 中作为适用于 Windows 10 的图形工具的一部分，从而将不会再通过 Windows SDK 进行分配。 不过，它们将通过图形工具按需功能（它是可选的操作系统组件）进行提供，并且必须先进行安装，然后才能启用并使用 Windows 10 上的图形工具。 如何安装为 Windows 10 图形工具的详细信息可以在此处找到： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>

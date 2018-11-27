@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707076"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828796"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用程序
 
@@ -42,7 +42,7 @@ ms.locfileid: "7707076"
 
 请确保你的桌面应用程序具有的文件，则需要调用 Windows 运行时 Api 的参考。
 
-若要执行此操作，请参阅主题[增强 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)的[第一次，设置你的项目](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)部分。
+若要执行此操作，请参阅主题[增强 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)的[首先，设置你的项目](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)部分。
 
 ### <a name="add-a-uwp-project"></a>添加 UWP 项目
 
@@ -76,7 +76,7 @@ ms.locfileid: "7707076"
 
 ### <a name="build-your-solution"></a>生成解决方案
 
-生成解决方案以确保未显示任何错误。 如果你收到错误，打开**配置管理器**，并确保你的项目面向相同的平台。
+生成你的解决方案，以确保未显示任何错误。 如果你收到错误，打开**配置管理器**，并确保你的项目面向相同的平台。
 
 ![配置管理器](images/desktop-to-uwp/config-manager.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "7707076"
 ![自适应设计](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->此示例显示了通过向解决方案中添加 UWP 项目的 XAML UI。 这是显示 XAML Ui 中的桌面应用程序的稳定支持的方法。 此方法的替代方法是使用 XAML 岛直接向桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前为开发人员预览。 尽管我们鼓励你试用它们在原型代码中现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[在桌面应用程序的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>此示例显示了通过向解决方案中添加一个 UWP 项目的 XAML UI。 这是显示桌面应用程序中的 XAML Ui 稳定受支持的方法。 此方法的替代方法是通过使用 XAML 岛直接向你的桌面应用程序添加 UWP XAML 控件。 XAML 群岛目前作为开发人员预览版。 尽管我们鼓励你试用它们在原型代码现在，我们不建议你使用它们在生产代码中这一次。 这些 Api 和控件将继续成熟并在将来稳定的 Windows 版本。 若要了解有关 XAML 群岛的详细信息，请参阅[在桌面应用程序的 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>设计模式
 
@@ -250,11 +250,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 可使你的桌面应用程序成为共享目标，以使用户能够轻松地共享数据，如来自支持共享的其他应用的图片。
 
-例如，用户可能选择你的应用程序共享来自 Microsoft Edge，照片应用的图片。 下面是具有该功能的 WPF 示例应用程序。
+例如，用户可能选择你的应用程序来共享来自 Microsoft Edge 照片应用的图片。 下面是具有该功能的 WPF 示例应用程序。
 
 ![共享目标](images/desktop-to-uwp/share-target.png).
 
-完整的示例，请参阅[下面](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
+完整示例，请参阅[下面](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
 
 ### <a name="the-design-pattern"></a>设计模式
 
@@ -268,7 +268,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 : four：[添加完全信任的进程扩展](#full-trust)
 
-: five：[修改的桌面应用程序来获取共享的文件](#modify-desktop)
+: five：[修改的桌面应用程序，以获取共享的文件](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -333,7 +333,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 <a id="desktop-extensions" />
 
-### <a name="add-desktop-extensions-to-the-uwp-project"></a>桌面扩展添加到 UWP 项目
+### <a name="add-desktop-extensions-to-the-uwp-project"></a>向 UWP 项目中添加桌面扩展
 
 将**适用于 UWP 的 Windows 桌面扩展**扩展添加到 UWP 应用项目。
 
@@ -343,7 +343,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="add-the-full-trust-process-extension"></a>添加完全信任的进程扩展
 
-在**解决方案资源管理器**中，在解决方案中，打开打包项目的**package.appxmanifest**文件，然后添加旁边你之前添加此文件共享目标扩展的完全信任过程扩展。
+在**解决方案资源管理器**中，在解决方案中，打开打包项目的**package.appxmanifest**文件，然后添加旁边之前添加此文件共享目标扩展完全信任过程扩展。
 
 ```xml
 <Extensions>
@@ -353,19 +353,19 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 </Extensions>  
 ```
 
-此扩展将使 UWP 应用启动到你想要共享文件的桌面应用程序。 在示例中，我们引用的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序的可执行文件。
+此扩展将使 UWP 应用启动到你想要共享文件的桌面应用程序。 在示例中，我们谈及[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序的可执行文件。
 
 <a id="modify-desktop" />
 
-### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改的桌面应用程序来获取共享的文件
+### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改的桌面应用程序，以获取共享的文件
 
-修改桌面应用程序以查找并处理共享的文件。 此示例中，在 UWP 应用存储在本地应用数据文件夹中的共享的文件。 因此，我们将修改的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序向拉取照片从该文件夹。
+修改桌面应用程序以查找并处理共享的文件。 在此示例中，UWP 应用存储在本地应用数据文件夹中的共享的文件。 因此，我们将修改的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面应用程序向拉取照片从该文件夹。
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-对于用户打开已有的桌面应用程序的情况下，我们还可能会处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件并在路径中传递到文件位置。 该方法任何打开的实例的桌面应用程序将显示共享的照片。
+对于用户打开已有的桌面应用程序的情况下，我们还可能处理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件并在路径中传递到文件位置。 该方法任何打开的实例的桌面应用程序将显示共享的照片。
 
 ```csharp
 ...
@@ -401,7 +401,7 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 该任务发出 http 请求并测量从请求到返回响应所用的时间。 你的任务可能会更有意义，但该示例对了解后台任务的基本机制非常有用。
 
-完整的示例，请参阅[下面](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)。
+完整示例，请参阅[下面](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)。
 
 ### <a name="the-design-pattern"></a>设计模式
 

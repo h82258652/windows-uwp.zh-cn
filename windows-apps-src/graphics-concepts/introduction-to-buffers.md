@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719940"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855535"
 ---
 # <a name="introduction-to-buffers"></a>缓冲区简介
 
@@ -44,14 +44,14 @@ ms.locfileid: "7719940"
 
 ![包含位置、法线和纹理数据的顶点缓冲区的图示](images/d3d10-vertex-buffer-element.png)
 
-此顶点缓冲区包含每个顶点数据;每个顶点存储 3 个元素 （位置、 法线和纹理坐标）。 通常，使用 3 个 32 位浮点指定每个位置和法线，使用两个 32 位浮点指定纹理坐标。
+此顶点缓冲区包含每顶点数据;每个顶点存储 3 个元素 （位置、 法线和纹理坐标）。 通常，使用 3 个 32 位浮点指定每个位置和法线，使用两个 32 位浮点指定纹理坐标。
 
 若要访问顶点缓冲区中的数据，你需要知道要顶点的访问权限，以及以下其他缓冲区参数：
 
 -   Offset - 缓冲区起点到第一个顶点数据之间的字节数。
 -   BaseVertexLocation - 从偏移到相应的绘图调用所使用的第一个顶点之间的字节数。
 
-在创建顶点缓冲区之前，你需要定义其布局。 创建输入布局对象后，你可以将其绑定到[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)。
+在创建顶点缓冲区之前，你需要定义其布局。 创建输入布局对象后，你可以将它绑定到[输入装配器 (IA) 阶段](input-assembler-stage--ia-.md)。
 
 ### <a name="span-idindexbufferspanspan-idindexbufferspanspan-idindexbufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>索引缓冲区
 
@@ -62,10 +62,10 @@ ms.locfileid: "7719940"
 使用以下参数查找存储在索引缓冲区中的连续索引：
 
 -   偏移-从索引缓冲区的基本地址之间的字节数。
--   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 开始屏幕位置表示要呈现的第一个索引。
+-   StartIndexLocation-指定从基本地址和偏移量的第一个索引缓冲区元素。 开始屏幕位置是指要呈现的第一个索引。
 -   IndexCount - 要呈现的索引的数量。
 
-开始菜单索引缓冲区的索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation = \ * ElementSize （字节）;
+开始菜单的索引缓冲区 = 索引缓冲区基本地址 + 偏移 （字节） + StartIndexLocation \ * ElementSize （字节）;
 
 在此计算，ElementSize 是每个索引缓冲区元素大小，这是两个或 4 个字节。
 
@@ -77,9 +77,9 @@ ms.locfileid: "7719940"
 
 每个元素存储 1 到 4 个组件常量（由所存储数据的格式决定）。
 
-常量缓冲区仅可使用一个绑定标志，它不能结合使用任何其他绑定标志。
+常量缓冲区仅可使用一个绑定标志，但这不能与任何其他绑定标志结合。
 
-若要从着色器读取的着色器-常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
+若要从着色器中读取的着色器常量缓冲区，使用 HLSL 负载函数。 每个着色器阶段允许最多 15 个着色器-常量缓冲区；每个缓冲区可包含最多 4096 个常量。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

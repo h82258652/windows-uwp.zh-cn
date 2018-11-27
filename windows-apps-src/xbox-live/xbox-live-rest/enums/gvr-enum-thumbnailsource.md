@@ -2,19 +2,17 @@
 title: ThumbnailSource 枚举
 assetID: 82c42460-ba6d-fa50-4796-60188595a4f5
 permalink: en-us/docs/xboxlive/rest/gvr-enum-thumbnailsource.html
-author: KevinAsgari
 description: " ThumbnailSource 枚举"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b97271c96b09ef83069ddb597bcfd5c9f71509
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1fa68fcffbca4326ccdb5a65404260f81458c8d7
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555618"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840735"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 枚举
 详细介绍 ThumbnailSource 枚举。 
@@ -23,9 +21,9 @@ ms.locfileid: "7555618"
  
 ## <a name="thumbnailsource"></a>ThumbnailSource
  
-| <b>枚举器</b>| <b>说明</b>| 
+| <b>枚举器</b>| <b>描述</b>| 
 | --- | --- | 
-| 默认值| 从该剪辑中的 3 个第二个点会生成一个大型和小型调整大小的缩略图。| 
-| Offset| 从该剪辑 InitialUploadRequest 中指定的值情况下，会生成一个大型和小型调整大小的缩略图。| 
-| 上传| 缩略图生成，并上传独立于 GameClips 服务。| 
+| 默认值| 从剪辑中的 3 个第二个点会生成一个大型和小型调整大小的缩略图。| 
+| Offset| 大和小尺寸的缩略图生成的该剪辑 InitialUploadRequest 中指定的值。| 
+| 上传| 生成并上传独立 GameClips 服务的缩略图。| 
   

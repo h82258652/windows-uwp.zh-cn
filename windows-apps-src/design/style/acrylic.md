@@ -11,11 +11,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 336e4e64cc0b1819081a7e42b6e3e2d099355248
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698646"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827540"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -68,16 +68,16 @@ ms.locfileid: "7698646"
 
  ![应用内亚克力](images/AppAcrylic_DarkTheme.png)
 
- 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建人分心光学错觉。
+ 图层谨慎使用多个亚克力图面： 多层背景亚克力可以创建分散注意力的光学错觉。
 
 ## <a name="when-to-use-acrylic"></a>何时使用亚克力
 
-* 用于支持 UI，例如 NavigationView 或行中的命令元素使用应用内亚克力。 
-* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案中使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
+* 用于支持 UI，例如 NavigationView 或串联命令元素使用应用内亚克力。 
+* 对于瞬态 UI 元素，如上下文菜单、 浮出控件和光 dimsissable UI 使用背景亚克力。<br />在瞬态方案使用亚克力有助于 visual 维持与触发瞬态 UI 的内容。
 
-如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将多个亚克力边缘到边缘-这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
+如果你使用的应用内亚克力导航的图面，请考虑扩展亚克力窗格以提高你的应用上的流下方的内容。 使用 NavigationView 将执行此操作为你自动。 但是，若要避免而导致产生条纹效果，不尝试将亚克力边缘到边缘内的多个，这可以创建两个模糊表面之间不需要的接合处。 亚克力是一种工具来让 visual 协调设计，但不正确，使用时可能会导致视觉干扰。
 
-请考虑以下使用模式，确定如何最佳亚克力融入你的应用：
+请考虑以下使用模式，以确定如何最佳亚克力融入你的应用：
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
 
@@ -86,27 +86,27 @@ ms.locfileid: "7698646"
 
 ![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
 
-此外，在顶部拥有你的内容扩展或下亚克力的滚动将为应用提供更加沉浸式和无缝体验。
+此外，在顶部拥有你的内容扩展或下亚克力的滚动将为应用提供更多的沉浸式和无缝体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用而不是亚克力的不透明背景。 如果您垂直窗格打开内容顶部，如在 NavigationView 的**精简**或**最小**模式下，我们建议你使用应用内亚克力来帮助维护该页面的上下文，当用户在打开该窗格。
+对于垂直窗格或图面，可帮助你的应用关闭内容部分，我们建议你使用的不透明背景亚克力而。 如果内容顶部打开你的垂直窗格，如在 NavigationView 的**精简**或**最小**模式下，我们建议应用内亚克力用于帮助维护该页面的上下文，当用户在打开该窗格。
 
-### <a name="transient-surfaces"></a>瞬态图面
+### <a name="transient-surfaces"></a>暂时的图面
 
 如应用带有菜单浮出控件，非模式弹出窗口或轻型消除窗格，建议使用背景亚克力。
 
 ![使用信息性的浮出控件的邮件应用模式](images/Mail_TransientContextMenu.png)
 
-默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力在调用时。
+默认情况下，许多控件将使用亚克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[组合框](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和类似控件与光 dimiss 弹出窗口将所有使用瞬态亚克力时它们进行调用。
 
 > [!Note]
-> 呈现亚克力图面进行 GPU，从而导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
+> 呈现亚克力图面是 GPU 密集型，这导致设备的功耗增加并缩短电池使用时间。 亚克力效果会自动禁用设备进入节电模式，并且用户可以禁用亚克力效果的所有应用，如果他们选择。
 
 ## <a name="usability-and-adaptability"></a>可用性和适应性
 亚克力外观可自动适应各种设备和上下文。
 
-在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力均显示为纯色：
+在高对比度模式中，用户仍将看到自己选择的熟悉的背景颜色，而非亚克力。 此外，背景亚克力和应用内亚克力会显示为纯色：
  - 当用户关闭设置中的透明度 > 个性化 > 颜色
  - 当激活节电模式
  - 应用在低端硬件上运行时
@@ -193,7 +193,7 @@ ms.locfileid: "7698646"
  - **TintColor**：颜色/色调覆盖层。 考虑指定 RGB 颜色值和 alpha 通道不透明度。
  - **TintOpacity**：色调层不透明度。 我们建议将 80%不透明度作为起点，尽管不同的颜色看起来可能在其他 translucencies 更具吸引力。
  - **BackgroundSource**：指定使用背景亚克力还是应用内亚克力的标记。
- - **FallbackColor**： 使用节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
+ - **FallbackColor**： 节电模式中替换亚克力的纯色。 对于背景亚克力，当应用并非位于活动状态桌面窗口中或者应用正在手机和 Xbox 上运行时，回退颜色也会替换亚克力。
 
 ![浅色主题亚克力样本](images/CustomAcrylic_Swatches_LightTheme.png)
 
@@ -320,7 +320,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="how-we-designed-acrylic"></a>如何设计亚克力
 
-我们微调亚克力的关键组件以凸显其独特外观和属性。 我们从透明度、 模糊和噪点设置为平滑图面增添视觉深度和维度开始。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
+我们微调亚克力的关键组件以凸显其独特外观和属性。 我们从透明度、 模糊和噪点设置为平面的图面增添视觉深度和维度开始。 我们添加了排除混合模式层，以确保放置在亚克力背景上的 UI 的对比度和可读性。 最后，我们添加了各种颜色色调，以供用户进行个性化设置。 这些图层协同作用，形成了全新的实用材料。
 
 ![亚克力设置](images/AcrylicRecipe_Diagram.jpg)
 <br/>亚克力设置：背景、模糊、排除混合、颜色/色调覆盖、噪点

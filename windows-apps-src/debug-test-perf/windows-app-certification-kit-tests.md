@@ -1,22 +1,22 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 应用认证工具包测试
-description: Windows 应用认证工具包包含大量测试，可以帮助确保你的应用已准备好在 Microsoft store 中发布。
+description: Windows 应用认证工具包包含大量测试，可帮助确保你的应用已准备好在 Microsoft store 中发布。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720213"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855565"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
 
-[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件，详细信息，并建议在发生故障的操作。
+[Windows 应用认证工具包](windows-app-certification-kit.md)包含大量测试，帮助确保你的应用已准备好发布到 Microsoft Store。 这些测试下面列出了自己的条件的详细信息，并建议在发生故障的操作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和启动测试
 
@@ -308,7 +308,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="test-details"></a>测试详细信息
 
--   验证，应用包中的每个二进制文件均不依赖于不支持的 UWP 应用开发通过检查二进制文件的导入地址表的 Win32 API。
+-   验证该应用包中的每个二进制文件均不依赖于通过检查二进制文件的导入地址表不支持用于 UWP 应用开发的 Win32 API。
 -   验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。
 
 ### <a name="corrective-actions"></a>更正操作
@@ -317,7 +317,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 > **注意**即使该应用使用仅[适用于 UWP 应用的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)，应用的调试版本将无法通过此测试。
 
-检查错误消息，识别应用所用的不是[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
+查看错误消息，识别应用所用的不是[适用于 UWP 应用的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的 API。
 
 > **注意**即使配置仅适用于 UWP 应用使用 Windows SDK 中的 Api，内置于该调试配置中的 c + + 应用将无法通过此测试。 请参阅，有关详细信息的[UWP 应用中的 Windows Api 的替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
@@ -497,7 +497,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="background"></a>背景
 
-要通过认证的 Microsoft 应用商店，应用必须不编译为调试，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+要通过 Microsoft 应用商店的认证，应用不得编译为调试和不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
 ### <a name="test-details"></a>测试详细信息
 
@@ -505,7 +505,7 @@ UWP 应用应该完整并且功能齐全。 使用默认图像（来自模板或
 
 ### <a name="corrective-actions"></a>更正操作
 
--   提交到 Microsoft Store 之前，将应用编译为发行版本。
+-   提交到 Microsoft Store 之前，请将应用编译为发行版本。
 -   确保你安装了正确版本的 .NET Framework。
 -   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
 

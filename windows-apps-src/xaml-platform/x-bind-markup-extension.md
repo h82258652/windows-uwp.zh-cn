@@ -1,23 +1,23 @@
 ---
-description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行在更少的时间和更低的内存比绑定和支持更好的调试。
+description: XBind 标记扩展是 Binding 的高性能的替代方法。 xBind-新的 Windows 10-运行在更少的时间和更低的内存比绑定，并支持更好的调试。
 title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5407849c15da25adc29fa97c0215b9734a5d3258
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694846"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855395"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
-**注意**有关使用数据的常规信息随 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**有关使用数据的一般信息随 **{x: Bind}** （和 **{x: Bind}** 和 **{Binding}** 之间的全方位比较），在应用中的绑定，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{X: Bind}** 标记扩展-windows 10 的新功能 — 是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
+**{X: Bind}** 标记扩展，用于 windows 10 的新功能-是 **{Binding}** 的替代方法。 **{x: Bind}** 运行在更少的时间和更低的内存比 **{绑定}** 和支持更好的调试。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新 (`Mode="OneWay"`)。 该对象也可以配置为将其自己的值的更改推送回源属性 (`Mode="TwoWay"`)。
 
@@ -85,7 +85,7 @@ XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 对于 C++/CX，**{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 无需使用 **\[Bindable\]** 属性。
 
-使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用该元素的名称作为路径的第一部分为绑定因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。 
 
 
 ### <a name="collections"></a>集合
@@ -111,7 +111,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 ## <a name="functions-in-binding-paths"></a>绑定路径中的函数
 
-从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能启用多个方案在标记中的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
+从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这是一项强大功能允许在标记中的几个方案的数据绑定。 [函数绑定](../data-binding/function-bindings.md)的详细信息，请参阅。
 
 ## <a name="event-binding"></a>事件绑定
 
@@ -143,7 +143,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 | **模式** | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
 | **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | **BindBack** | 指定要用于双向绑定的相反方向的函数。 |
-| **UpdateSourceTrigger** | 指定何时将更改从控件推送回 TwoWay 绑定中的模式。 除 TextBox.Text 以外的所有属性默认为 PropertyChanged，TextBox.Text 默认为 LostFocus。|
+| **UpdateSourceTrigger** | 指定何时将更改从控件推送回 TwoWay 绑定中的模式。 除 textbox.text 以外的所有属性默认为 PropertyChanged;Textbox.text 默认为 LostFocus。|
 
 > [!NOTE]
 > 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}**，请注意在 **Mode** 属性默认值方面的差异。
@@ -154,7 +154,7 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 因为 **{x:Bind}** 使用生成的代码来达成目标，所以它在编译时需使用类型信息。 这意味着你无法绑定到预先不知道类型的属性。 因此，不能将 **{x:Bind}** 与 **DataContext** 属性结合使用，因为它为 **Object** 类型，并且还可能会在运行时出现更改。
 
-在将 **{x:Bind}** 用于数据模板时，需通过设置 **x:DataType** 值来指示要绑定到的类型，如以下示例所示。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
+时使用的数据模板中使用 **{x: Bind}** ，你必须指示要绑定到通过设置**X:datatype**值，在[示例](#examples)部分中所示的类型。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
 
 已编译的绑定取决于代码生成。 因此，如果你在资源字典中使用 **{x:Bind}**，则该资源字典需要有一个代码隐藏类。 有关代码示例，请参阅[带有 {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) 的资源字典。
 

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699094"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827269"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
 可以使用**自动播放**功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用**自动播放**功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
 
-> **注意**如果你是设备制造商，而且你想要为你的设备的**自动播放**处理程序关联[的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)，你可以中标识该应用在设备元数据。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **注意**如果你是设备制造商，并且你想要为你的设备的**自动播放**处理程序关联[的 Microsoft 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)，你可以中标识该应用在设备元数据。 有关详细信息，请参阅 [Microsoft Store 设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
 
 ## <a name="register-for-autoplay-content"></a>注册自动播放内容
 
@@ -106,7 +106,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意**`DisplayImages`和`CopyImages`方法在以下步骤中添加。
+> **注意**`DisplayImages`和`CopyImages`方法添加以下步骤中。
 
 ### <a name="step-4-add-code-to-display-images"></a>步骤 4：添加用于显示图像的代码
 
@@ -227,7 +227,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 下面显示了如何将应用标识为在将相机连接到电脑时的**自动播放**选项。 此应用会注册为 **WPD\\ImageSourceAutoPlay** 事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
 
-**重要** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用可以仅在桌面设备系列，例如电脑中的 windows 10 设备上使用这些 Api。
+**重要提示** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用可以仅在桌面设备系列，例如电脑中的 windows 10 设备上使用这些 Api。
 
  
 
@@ -407,7 +407,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  按 F5 生成并部署应用（在调试模式下）。
 2.  若要运行你的应用，请将相机连接到你的计算机。 然后从“自动播放”选项列表中选择该应用。
-    **注意**并非所有相机都播发**WPD\\ImageSource**自动播放设备事件。
+    **注意**不是所有相机都播发**WPD\\ImageSource**自动播放设备事件。
 
 ## <a name="configure-removable-storage"></a>配置可移动存储
 

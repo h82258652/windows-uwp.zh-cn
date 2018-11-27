@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696165"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854099"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -23,13 +23,13 @@ ms.locfileid: "7696165"
 
 | IRS 税单 | 说明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 将打开或**1 月 31**日之前加盖邮戳打印的表单，并将在[合作伙伴中心](https://partner.microsoft.com/dashboard)中提供.pdf 副本 (在**帐户设置 > 税务资料**) 在同一时间 |
-|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 打印的表单将加盖邮戳，或之前**3 月 15 日**，并将在合作伙伴中心中提供.pdf 副本 (在**帐户设置 > 税务资料**) 在同一时间 |
+|1099-MISC、1099-K | 与你参与 Microsoft 市场的销售活动和/或收到的付款金额相关 | 将打开或**1 月 31**日之前加盖邮戳打印的表单和.pdf 副本将在[合作伙伴中心](https://partner.microsoft.com/dashboard)中可用 (在**帐户设置 > 税务资料**) 在同一时间 |
+|1042-S | 与你收到的应缴纳美国预扣税的付款金额相关 | 将上或在**3 月 15**日之前加盖邮戳打印的表单，并将在合作伙伴中心中提供.pdf 副本 (在**帐户设置 > 税务资料**) 在同一时间 |
 
 > [!NOTE]
 > 我们在 IRS 税单使用的地址来自于你的[税务配置文件](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 如果你的地址已变更，请务必更新**税务资料**中的地址。
 
-税单将从以下地址发送给你：
+从以下地址，将向你发送的税单：
 
 **美国公民：**
 <table>
@@ -41,8 +41,8 @@ ms.locfileid: "7696165"
 **非美国公民：**
 <table>
 <tr><th>业务组</th><th>法人</th><th>地址</th></tr>
-<tr><td>Windows、 Office 和 Azure</td><td>Microsoft 爱尔兰操作限制 （付款时所使用的 Microsoft Corporation 通过 Microsoft 爱尔兰充当限定中介 Microsoft Corporation）</td><td>一个 Microsoft 位置<br>南美洲&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
-<tr><td>广告 *</td><td>Microsoft 爱尔兰操作限制 （付款由 Microsoft 联机 Inc.通过 Microsoft 爱尔兰充当 Microsoft 联机 inc.付款代理）</td><td>一个 Microsoft 位置<br>南美洲&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
+<tr><td>Windows、 Office 和 Azure</td><td>Microsoft 爱尔兰操作限制 （付款时所使用的 Microsoft Corporation 通过 Microsoft 爱尔兰充当限定中介 Microsoft Corporation）</td><td>一个 Microsoft 位置<br>南&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
+<tr><td>广告 *</td><td>Microsoft 爱尔兰操作限制 （付款由 Microsoft 联机 Inc.通过 Microsoft 爱尔兰充当 Microsoft 联机 inc.付款代理）</td><td>一个 Microsoft 位置<br>南&nbsp;县&nbsp;业务&nbsp;Park<br>Leopardstown，都柏林 18 爱尔兰</td></tr>
 <tr><td>广告</td><td>Microsoft Online inc.</td><td>6100 他道路<br>89511 Reno，NV USA</td></tr>
 <tr><td colspan="3">* 将通过 Microsoft 爱尔兰操作有限支付收益广告收益的以下国家/地区的公民： 奥地利、 比利时、 保加利亚、 克罗地亚、 塞浦路斯、 捷克共和国、 丹麦、 爱沙尼亚、 芬兰、 法国、 德国、 希腊、 匈牙利、 爱尔兰、曼岛、 意大利、 拉脱维亚、 列支敦士登、 立陶宛、 卢森堡、 马耳他、 摩纳哥、 荷兰、 挪威、 波兰、 葡萄牙、 罗马尼亚、 斯洛伐克、 斯洛文尼亚、 南非、 西班牙、 瑞典、 瑞士、 英国</td></tr>
 </table>

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719379"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834095"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
@@ -32,7 +32,7 @@ ms.locfileid: "7719379"
 
 使用 **x:DeferLoadStrategy** 时的限制有：
 
-- 你必须定义一个[X:name](x-name-attribute.md)元素，因为那里需要以后查找该元素的方法。
+- 你必须定义一个[X:name](x-name-attribute.md)元素，因为存在需要以后查找该元素的方法。
 - 可以仅延迟派生自 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 或 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的类型。
 - 不能在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延迟根元素。
 - 不能在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中延迟元素。

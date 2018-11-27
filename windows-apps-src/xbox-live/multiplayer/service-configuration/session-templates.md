@@ -1,19 +1,17 @@
 ---
 title: 多人游戏会话模板
-author: KevinAsgari
 description: 了解 Xbox Live 多人游戏会话模板。
 ms.assetid: 178c9863-0fce-4e6a-9147-a928110b53a2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 会话模板
 ms.localizationpriority: medium
-ms.openlocfilehash: 0296aaa21d9e3d873b7edff3026ea22f9b5b2b67
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0bbe4f6a3afe2d39fb18b4d4bad13e2aa91d246e
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572015"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840716"
 ---
 # <a name="multiplayer-session-templates"></a>多人游戏会话模板
 

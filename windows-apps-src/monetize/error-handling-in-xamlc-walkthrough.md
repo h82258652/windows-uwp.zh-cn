@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 投放广告, 错误处理, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b2ffd15a07dc6f1018bd28cf9799e1e5209c0b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718037"
+ms.locfileid: "7827497"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 演练中的错误处理
 

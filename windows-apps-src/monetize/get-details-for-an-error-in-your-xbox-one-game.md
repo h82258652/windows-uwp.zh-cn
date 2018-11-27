@@ -1,22 +1,22 @@
 ---
 description: 在 Microsoft Store 分析 API 中使用此方法，以获取详细的数据的特定错误在 Xbox One 游戏。
-title: 获取游戏的 Xbox One 中的错误的详细信息
+title: 获取游戏在 Xbox One 中的错误的详细信息
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712601"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827771"
 ---
-# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>获取游戏的 Xbox One 中的错误的详细信息
+# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>获取游戏在 Xbox One 中的错误的详细信息
 
 使用 Microsoft Store 分析 API 中以获取详细的数据的特定错误在 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。 此方法仅可以检索过去 30 天内发生的错误的详细信息。
 
-你可以使用此方法之前，必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索想要获取详细的信息的错误的 ID。
+你可以使用此方法之前，你都必须首先使用[获取错误报告数据 Xbox One 游戏的](get-error-reporting-data-for-your-xbox-one-game.md)方法来检索希望获取详细的信息的错误的 ID。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -139,5 +139,5 @@ Authorization: Bearer <your access token>
 
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)
-* [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [获取 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [下载你的 Xbox One 游戏中的错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)

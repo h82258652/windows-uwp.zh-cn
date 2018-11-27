@@ -12,11 +12,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0f881c470d92ea1eafb08f24e6cf1fd06f4fc75e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719138"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855475"
 ---
 # <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
 
@@ -136,7 +136,7 @@ ms.locfileid: "7719138"
 
 ## <a name="make-the-icon-do-something"></a>让图标发挥作用
 
-图标之后下, 一步是使其执行某些操作通过将它与命令或导航操作相关联。 若要执行此操作的最佳方法是将图标添加到某个按钮或命令栏。 
+图标之后下, 一步是使其执行某些操作通过将它与命令或导航操作相关联。 若要执行此操作的最佳方式是将图标添加到某个按钮或命令栏。 
 
 ![命令栏图像](images/icons/app-bar-desktop.svg)
 

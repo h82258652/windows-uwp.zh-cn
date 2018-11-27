@@ -7,26 +7,26 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 444243bdb1d50146ba54af4f1417103566f97f93
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694213"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854798"
 ---
 # <a name="app-submissions"></a>应用提交
 
 
 [通过保留名称创建应用](create-your-app-by-reserving-a-name.md)后，你可以开始着手其发布工作。 第一步是创建**提交**。
 
-你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，以便你可以返回，并在其上工作，只要你准备就绪。
+你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 保存你对你的提交的更新，因此可回来，也可以在其上工作，只要你准备就绪。
 
 > [!NOTE]
-> 才能将应用提交到 Microsoft Store，必须在[合作伙伴中心](https://partner.microsoft.com/dashboard)中具有一个活动的[开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
+> 为了将应用提交到 Microsoft Store，必须在[合作伙伴中心](https://partner.microsoft.com/dashboard)中具有一个活动的[开发者帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
 
 你的应用发布后，你可以通过在合作伙伴中心中创建另一个提交来发布更新的版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 要创建新的提交已发布的应用，请单击其**概述**页面上显示的最近提交旁边的**更新**。 你可以[删除从应用商店应用](guidance-for-app-package-management.md#removing-an-app-from-the-store)，如果你需要执行此操作 （并让其可再次更高版本，如果你想要）。
 
 > [!NOTE]
-> 文档的此部分介绍如何在合作伙伴中心中创建应用提交。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行应用提交。
+> 文档的此部分介绍了如何在合作伙伴中心中创建应用提交。 此外，你也可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行应用提交。
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
@@ -98,7 +98,7 @@ ms.locfileid: "7694213"
 | **预告片**                  | 可选                                    | [预告片](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 和 Xbox 图像（16:9 超级人物图片）**     | 推荐        | [Windows 10 和 Xbox 图像 （16:9 超级人物图片）
 ] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox 图像**     | 如果你向 Xbox 发布所需的正确显示        | [Xbox 图像
+| **Xbox 图像**     | 所需的正确显示，如果你向 Xbox 发布        | [Xbox 图像
 ] (应用屏幕截图和 images.md #xbox 图像) |
 | **补充字段**  | 可选                                    | [补充字段](create-app-store-listings.md#supplemental-fields) 
 | **搜索词**              | 可选                                    | [搜索词](create-app-store-listings.md#search-terms)         |
@@ -115,7 +115,7 @@ ms.locfileid: "7694213"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **发布暂停选项**     | 默认：通过认证后立即发布此提交（或按照计划部分中选择的日期发布）      | [发布暂停选项](manage-submission-options.md#publishing-hold-options)    
 | **认证说明**     | 推荐          | [认证说明](notes-for-certification.md)             |
-| **受限功能**     | 如果你的产品声明了任何[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
+| **受限功能**     | 如果你的产品声明[受限的功能](../packaging/app-capability-declarations.md#restricted-capabilities)的任何所需    | [受限功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, 客户组, 类别, 外部测试版组, 已知用户�
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: b757c304398c60bd539eb3c023892b68138880db
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693797"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854818"
 ---
 # <a name="create-customer-groups"></a>创建客户组
 

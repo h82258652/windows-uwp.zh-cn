@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714616"
+ms.locfileid: "7846540"
 ---
 # <a name="cryptographic-keys"></a>加密密钥
 

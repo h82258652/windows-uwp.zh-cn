@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704418"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827312"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
 
-本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建一个应用包，可供客户安装到种类广泛的设备，并且我们将在此案例研究中所执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用程序包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建一个应用包，可供客户安装到种类广泛的设备，并且我们将在此案例研究中所执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
@@ -50,7 +50,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 -   Bookstore1\_81.WindowsPhone。 这是为 Windows Phone 8.1 生成应用包的项目。
 -   Bookstore1\_81.Shared。 这是包含由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
 
-对于此案例研究，我们针对要支持的设备提供[如果你有通用 8.1 应用](w8x-to-uwp-root.md)中所述的常用选项。 此处的决策很简单： 此应用具有相同的功能，并且具有大部分相同的代码，其 Windows8.1 和 Windows Phone 8.1 形式中。 因此，我们将共享项目 （和其他项目中我们所需要任何其他内容） 的内容移植到面向通用设备系列 （一种可安装到种类最广泛的设备） windows 10。
+对于此案例研究，我们针对要支持的设备提供[如果你有通用 8.1 应用](w8x-to-uwp-root.md)中所述的常用选项。 此处的决策很简单： 此应用具有相同的功能，并且具有大部分相同的代码，其 Windows8.1 和 Windows Phone 8.1 形式中。 因此，我们将共享项目 （和其他项目中我们所需要任何其他内容） 的内容移植到面向通用设备系列 （一种可安装到种类最广泛的设备） 的 windows 10。
 
 可快速完成以下任务：在 Visual Studio 中创建新项目、将文件从 Bookstore1\_81 复制到其中并将已复制的文件包含在新项目中。 首先创建一个新的空白应用程序（Windows 通用）项目。 将它命名为 Bookstore1Universal\_10。 这些是要从 Bookstore1\_81 复制到 Bookstore1Universal\_10 的文件。
 

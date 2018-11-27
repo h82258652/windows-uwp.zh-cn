@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696511"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828163"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -24,7 +24,7 @@ ms.locfileid: "7696511"
 ## <a name="introduction"></a>简介
 
 
-应用发布到 Microsoft 应用商店意味着你可以将其共享 （或其出售 ！） 与数百万人，许多不同设备上。  
+应用发布到 Microsoft 应用商店意味着你可以共享 （或其出售 ！） 与数百万人，许多不同设备上。  
 
 若要将应用发布到 Microsoft Store，必须将其编写为 UWP （通用 Windows 平台） 应用。 不过，UWP 非常灵活，并且支持多种语言和框架。 为了证明这一点，以下示例为用 JavaScript 编写并且使用了多个 CreateJS 库的简单游戏，它展示了如何绘制子画面、创建游戏循环、支持键盘和鼠标以及适用于不同的屏幕尺寸。
 
@@ -61,7 +61,7 @@ ms.locfileid: "7696511"
 
 现在，你可以运行此游戏！
 
-按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙站立于旖旎风光 （如果稀疏） 中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
+按 **F5** 即可开始运行此应用。 你应看到一个打开的窗口，我们熟悉的恐龙 （如果稀疏） 站立风光中。 现在，我们将测试该应用、解释某些重要部分并在进行的过程中探索其他功能。
 
 ![只是一个普通的恐龙，一只忍者神猫坐在其背部](images/JS2D_3.png)
 
@@ -69,7 +69,7 @@ ms.locfileid: "7696511"
 
 ## <a name="walkthough"></a>操作实例
 
-如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码是当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
+如果通过 F5 开始游戏，则可能会想知道发生了什么。 答案是"并不多"，因为许多代码当前被注释掉。到目前为止，你将看到所有是只有恐龙以及按空格键所请求。 
 
 ### <a name="1-setting-the-stage"></a>1. 设置舞台
 
@@ -88,7 +88,7 @@ EaselJS 可以为我们提供一个被称为*舞台*的新对象。 该舞台链
 
 ### <a name="2-loading-the-bitmaps"></a>2. 加载位图
 
-EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以创建简单的形状（如用于天空的蓝色矩形）或位图（例如我们将要添加的云彩）、文本对象和子画面。 子画面使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 一个包含多个图像的单一位图。 例如，我们使用此 SpriteSheet 来存储恐龙动画的不同帧：
+EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以创建简单的形状（如用于天空的蓝色矩形）或位图（例如我们将要添加的云彩）、文本对象和子画面。 子画面使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 一个包含多个图像的单个位图。 例如，我们使用此 SpriteSheet 来存储恐龙动画的不同帧：
 
 ![行走的恐龙的子画面表](images/JS2D_4.png)
 
@@ -257,7 +257,7 @@ function animate_clouds()
 
 ## <a name="publishing-to-the-microsoft-store"></a>发布到 Microsoft 应用商店
 
-现在你拥有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
+现在你有一个 UWP 应用，就可以将其发布到 Microsoft Store （假设已先了改进 ！） 
 
 此流程包含几个步骤。
 

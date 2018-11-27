@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706668"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840541"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
@@ -48,7 +48,7 @@ ms.locfileid: "7706668"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-你还可以创建[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和从[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)返回的值以在设备上可用的帧源组时接收通知更改，例如当外部相机。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+你还可以创建[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和从[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)返回的值以在设备上的可用帧源组时接收通知更改，例如当接通外部相机。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 

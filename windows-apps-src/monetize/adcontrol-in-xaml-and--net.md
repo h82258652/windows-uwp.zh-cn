@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, AdControl, 广告控件, XAML, .net, 演练
 ms.localizationpriority: medium
 ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691161"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826626"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
@@ -126,7 +126,7 @@ ms.locfileid: "7691161"
 
 2.  在合作伙伴中心中，转到[应用内广告](../publish/in-app-ads.md)页和[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （例如应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （示例应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
 
 3. 你可以选择通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）的设置为 **AdControl** 启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络，如 Taboola 和 Smaato）的广告及 Microsoft 应用促销活动的广告，从而使你能够最大化你的广告收益和应用促销能力。
 
@@ -134,7 +134,7 @@ ms.locfileid: "7691161"
 
 5.  [你的应用提交](../publish/app-submissions.md)到应用商店使用合作伙伴中心。
 
-6.  查看[广告性能报告](../publish/advertising-performance-report.md)合作伙伴中心中。
+6.  查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)。
 
 <span id="manage" />
 

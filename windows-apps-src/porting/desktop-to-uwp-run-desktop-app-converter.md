@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699613"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833900"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 将桌面应用程序打包
 
@@ -292,7 +292,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-LogFile &lt;String&gt;  |可选 |指定日志文件。 如果省略此参数，将创建一个日志文件临时位置。 |
 | -Sign [&lt;SwitchParameter&gt;] |可选 |出于测试目的，告知此脚本使用生成的证书对输出 Windows 应用包进行签名。 此开关应该位于开关 ```-MakeAppx``` 的旁边。 |
 |&lt;通用参数&gt; |必需 |此 cmdlet 支持通用参数：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 和 *OutVariable*。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
-| -Verify [&lt;SwitchParameter&gt;] |可选 |一个开关，当存在时告知 DAC 根据验证应用程序包已打包的应用和 Microsoft 应用商店要求。 结果是一个“VerifyReport.xml”验证报告，该报告在浏览器中能够以最佳方式显示。 此开关应该位于开关 `-MakeAppx` 的旁边。 |
+| -Verify [&lt;SwitchParameter&gt;] |可选 |一个开关，当存在时告知 DAC 根据验证应用程序包已打包的应用和 Microsoft Store 要求。 结果是一个“VerifyReport.xml”验证报告，该报告在浏览器中能够以最佳方式显示。 此开关应该位于开关 `-MakeAppx` 的旁边。 |
 |-PublishComRegistrations| 可选| 扫描你的安装程序进行的所有公共 COM 注册，并发布你的清单中有效的注册。 仅当想使这些注册可供其他应用程序使用时才使用此标志。 如果这些注册将仅由你的应用程序使用，则无需使用此标志。 <br><br>请查看[本文](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97)以确保在你将应用打包后，COM 注册会按预期工作。
 
 <a id="run-app" />
@@ -303,7 +303,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 一种方法是打开 PowerShell 命令提示符，然后键入此命令：```Add-AppxPackage –Register AppxManifest.xml```。 这可能是运行你的应用程序，因为你无需对其进行签名的最简单方法。
 
-另一种方法是对你的应用程序使用证书进行签名。 如果你使用```sign```参数，Desktop App Converter 将为你生成一个，然后登录你的应用程序与之。 该文件名为 **auto-generated.cer**，你可以在已打包应用的根文件夹中找到它。
+另一种方法是对你的应用程序使用证书进行签名。 如果你使用```sign```参数，Desktop App Converter 将为你生成一个，然后对其应用程序进行签名。 该文件名为 **auto-generated.cer**，你可以在已打包应用的根文件夹中找到它。
 
 请按照以下步骤安装生成的证书，然后运行应用。
 
@@ -330,7 +330,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 ## <a name="modify-the-packaged-app"></a>修改已打包的应用
 
-你将可能更改到你已打包的应用程序，以解决 bug、 添加视觉资源或增强你的应用程序使用动态磁贴等现代体验。
+你可能将对你已打包的应用程序，以解决 bug、 添加视觉资源或增强你的应用程序使用动态磁贴等现代体验进行更改。
 
 进行更改之后，无需再次运行转换器。 在大多数情况下，你可以只需重新打包你的应用程序使用 MakeAppx 工具和 DAC 生成 appxmanifest.xml 文件为你的应用。 请参阅[生成 Windows 应用包](desktop-to-uwp-manual-conversion.md#make-appx)。
 
@@ -347,7 +347,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-以下两个部分介绍了几个可选修复杀到的可能需要考虑的已打包应用程序。
+以下两个部分介绍了几个可选修复杀到打包的应用程序可能需要考虑。
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>删除不必要的文件和注册表项
 
@@ -402,4 +402,4 @@ Desktop App Converter 不支持 Unicode；因此，没有可用于该工具的�
 
 **分发应用**
 
-请参阅[分配的已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分配已打包的桌面应用程序](desktop-to-uwp-distribute.md)

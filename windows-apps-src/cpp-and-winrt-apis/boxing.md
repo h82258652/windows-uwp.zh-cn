@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 装箱, 标量, 值
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c86d1ac8ce83ea092ce0e2730ea0e9d4a201b94
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720263"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846474"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱
  
@@ -18,7 +18,7 @@ ms.locfileid: "7720263"
 
 换言之，可向任何运行时类的实例传递需要 **IInspectable** 的函数。 但是你无法将标量值（如数值或文本值）直接传递到此类函数。 相反，标量值需要封装到引用类对象内。 该封装过程称为对值进行*装箱*。
 
-[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供[**winrt:: box_value**](/uwp/cpp-ref-for-winrt/box-value)函数，它将标量值并返回到**IInspectable**装箱的值。 对于取消 **IInspectable** 装箱返回到标量值，提供 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函数。
+[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供[**winrt:: box_value**](/uwp/cpp-ref-for-winrt/box-value)函数，它将标量值，并返回到**IInspectable**装箱的值。 对于取消 **IInspectable** 装箱返回到标量值，提供 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函数。
 
 ## <a name="examples-of-boxing-a-value"></a>取消值装箱的示例
 [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) 访问器函数返回 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)，这是一个标量值。 我们可以将该 **hstring** 值进行装箱并将其传递到需要 **IInspectable** 的函数，如下所示。

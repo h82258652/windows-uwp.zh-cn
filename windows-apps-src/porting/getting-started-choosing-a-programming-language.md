@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a9544c1eecc4c1a86552d053694872743a17142c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693909"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829635"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>入门：选择编程语言
 
@@ -30,7 +30,7 @@ ms.locfileid: "7693909"
 
 **注意**对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准不是本地不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解 **“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
 -   [角度](https://code.google.com/p/angleproject/)
--   [创建你第一个使用 DirectX 的 UWP 应用](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [创建在第一个使用 DirectX 的 UWP 应用](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [使用 DirectX 的 UWP 应用示例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 在哪里？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 

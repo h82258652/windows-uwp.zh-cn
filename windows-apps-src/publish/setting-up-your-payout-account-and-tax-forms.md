@@ -7,23 +7,23 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a24e038dc2645b0aea7b1e7e516886af9a9e6f09
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701730"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834414"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>设置付款帐户和税单
 
 
 若要从 Microsoft Store 中的应用销售中获得收益，你需要设置付款帐户并填写必要的税单在[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
-如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用 （或加载项），你可以设置付款帐户和此时填写税单。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
+如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用 （或加载项），你可以设置付款帐户并此时填写税单。 在付款帐户和纳税配置文件设置完成前，将无法提交任何付费应用或加载项。
 
 > [!NOTE]
 > 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
 
-[设置开发人员帐户](opening-a-developer-account.md)后，有两个事项你之前需要做你可以销售应用 （或加载项） 在 Microsoft Store 中：
+[设置开发人员帐户](opening-a-developer-account.md)后，有两种情况，你需要执行操作之前，你可以销售应用 （或加载项） 在 Microsoft Store 中：
 
 -   [设置付款帐户](#payout-account)
 -   [填写税单](#tax-forms)
@@ -42,7 +42,7 @@ ms.locfileid: "7701730"
  
 **设置付款帐户**
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择右上角中的**帐户设置**图标，然后选择**开发人员设置**。
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，选择右上角中的**帐户设置**图标，然后选择**开发人员设置**。
 2.  在左侧的导航菜单中，选择**付款帐户**。
 
    > [!NOTE]
@@ -72,7 +72,7 @@ ms.locfileid: "7701730"
 
 -   **我需要有怎样的 PayPal 设置才能接收付款？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](http://go.microsoft.com/fwlink/p/?linkid=513139)。
 -   **我所在的国家/地区是否受支持？** 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md)以了解哪些地方支持 PayPal 的付款方式。
--   **我的 PayPal 帐户是否需要在同一国家/地区为我的合作伙伴中心帐户中注册？** 否。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
+-   **我的 PayPal 帐户是否已在同一个国家/地区为我的合作伙伴中心帐户中注册？** 否。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
 -   **我是否必须手动接受 PayPal 付款？** 否。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
 
 
@@ -126,7 +126,7 @@ ms.locfileid: "7701730"
 -   指定你的居住地和公民身份所属的国家/地区。
 -   填写相应的税单。
 
-你可以填写和提交以电子方式在合作伙伴中心; 税单在大多数情况下，你不需要打印和邮寄任何税单。
+你可以填写和提交电子税单在合作伙伴中心; 税单在大多数情况下，你不需要打印和邮寄任何税单。
 
 > [!IMPORTANT]
 > 不同的国家和地区有不同的纳税要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 另外，你所获得的应用销售收益可能需要缴纳所得税。 我们强烈建议你联系你所在国家或地区最好地帮助你确定你的 Microsoft 应用商店开发人员活动的正确纳税信息的相关机构。
@@ -134,7 +134,7 @@ ms.locfileid: "7701730"
  
 **完成税务配置文件**
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，选择右上角中的**帐户设置**图标，然后选择**开发人员设置**。
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，选择右上角中的**帐户设置**图标，然后选择**开发人员设置**。
 2.  在左侧的导航菜单中，选择**税务配置文件**。
 
    > [!NOTE]
@@ -144,7 +144,7 @@ ms.locfileid: "7701730"
 4.  回答有关美国公民身份和居住地的问题，然后单击“下一步”****。
 5.  如果显示了你的姓名和地址信息，请进行确认以申报税款。
 
-接下来，将会看到必须填写的电子版本的税单。 无论你所在国家/地区居住或公民，你必须填写美国税单任何应用或加载项通过 Microsoft Store 进行销售。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
+接下来，将会看到必须填写的电子版本的税单。 无论你所在国家/地区居住或公民，你必须填写美国税单销售任何应用或加载项通过 Microsoft 应用商店。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
 
 不需要提供美国个人纳税识别号码（或 ITIN）即可从 Microsoft 接收付款或申请免税待遇。
 

@@ -2,19 +2,17 @@
 title: DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 assetID: f390cc37-6a30-962c-ccd5-e1528a91d30b
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersxuidscidssciddatapathandfilenametype-delete.html
-author: KevinAsgari
 description: " DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ee9f657722efd8a89508b1f841b759560b5c4c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4af180d758d14a2726046a6221889acc33efc897
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552749"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829092"
 ---
 # <a name="delete-untrustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 删除文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -32,11 +30,11 @@ ms.locfileid: "7552749"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家发出请求者。| 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且正斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且反斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9) 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续的句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件或 json。| 
   
 <a id="ID4EEB"></a>
@@ -44,14 +42,14 @@ ms.locfileid: "7552749"
  
 ## <a name="authorization"></a>授权 
  
-请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果在标头丢失或无效，该服务将返回 401 未经授权的响应。
+请求必须包含有效的 Xbox LIVE 授权标头。 如果调用方不允许访问此资源，该服务将返回 403 禁止访问响应。 如果标头无效或不存在，该服务将返回 401 未经授权的响应。
   
 <a id="ID4ERB"></a>
 
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 1| API 协定版本。| 
 | 授权| XBL3.0 x = [哈希];[令牌]| STS 身份验证令牌。 STSTokenString 替换为由身份验证请求返回的令牌。 有关检索 STS 令牌和创建授权标头的其他信息，请参阅 Authenticating 和授权 Xbox LIVE 服务请求。| 
@@ -61,7 +59,7 @@ ms.locfileid: "7552749"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标题| 说明| 
+| 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | If-Match| 指定必须匹配要完成此操作的现有项目 ETag。| 
   
@@ -77,20 +75,20 @@ ms.locfileid: "7552749"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码 
  
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定” | 该文件已成功，删除，或不存在。| 
 | 201| 已创建 | 创建实体。| 
-| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常参数无效。| 
+| 400| 错误请求 | 服务可能不理解格式不正确的请求。 通常是一个无效的参数。| 
 | 401| 未授权 | 请求要求用户身份验证。| 
 | 403| 已禁止 | 为用户或服务不允许该请求。| 
 | 404| 找不到 | 找不到指定的资源。| 
-| 406| 不允许 | 不支持资源版本。| 
+| 406| 不允许 | 资源版本不受支持。| 
 | 408| 请求超时 | 请求所花的时间太长，才能完成。| 
-| 500| 内部服务器错误 | 服务器时遇到意外的情况，执行此请求将阻止它。| 
-| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 的客户端重试值后重试请求。| 
+| 500| 内部服务器错误 | 服务器时遇到意外的情况，使其不能完成请求。| 
+| 503| 服务不可用 | 请求已被阻止，以秒为单位 （例如 5 秒更高版本） 客户端重试值后重试请求。| 
   
 <a id="ID4EUBAC"></a>
 

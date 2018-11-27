@@ -7,11 +7,11 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697210"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828029"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -146,7 +146,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。 
 
 > [!NOTE]
-> 如果没有正确安装开发人员模式下，我们鼓励你提出的反馈请求。 在**反馈中心**应用中，选择**添加新反馈**，并选择**开发人员平台**类别和**开发人员模式**子类别。 提交反馈将帮助 Microsoft 解决遇到的问题。
+> 如果没有正确安装开发人员模式下，我们鼓励你提出的反馈请求。 在**反馈中心**应用中，选择**添加新反馈**，并选择**开发人员平台**类别和**开发人员模式**子类别。 提交反馈将帮助 Microsoft 解决你遇到此问题。
 
 ### <a name="failed-to-locate-the-package"></a>无法找到该程序包
 

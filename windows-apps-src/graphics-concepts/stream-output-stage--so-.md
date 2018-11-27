@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707191"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840581"
 ---
 # <a name="stream-output-so-stage"></a>流输出 (SO) 阶段
 
@@ -43,7 +43,7 @@ ms.locfileid: "7707191"
 
 流输出 (SO) 阶段可持续地将几何着色器 (GS) 阶段等之前的有效阶段输出（或流式传输）至内存中的一个或多个缓冲区。 如果几何着色器 (GS) 阶段无效，那么流输出 (SO) 阶段会持续地将域着色器 (DS) 阶段的顶点数据输出至内存缓冲区（如果 DS 也无效，则从顶点着色器 (VS) 阶段输出）。
 
-当三角形或直线带绑定到输入装配器 (IA) 阶段时，那么所有带会都转换列表流出之前。顶点始终写出成完整基元 （例如，3 个顶点的三角形一次）;不完整的基元不会流出。带邻近度的基元类型会在数据流出之前放弃相邻数据。
+当三角形或直线带绑定到输入装配器 (IA) 阶段时，那么所有带会都转换列表流出之前。顶点都始终写成完整基元 （例如，3 个顶点的三角形一次）;不完整的基元不会流出。带邻近度的基元类型数据流出之前放弃相邻数据。
 
 流输出阶段支持最多同时 4 个缓冲区。
 

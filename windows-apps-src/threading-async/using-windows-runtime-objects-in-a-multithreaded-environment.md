@@ -7,11 +7,11 @@ ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, 计时器, 线程
 ms.localizationpriority: medium
 ms.openlocfilehash: 82e1431a6689ef9ece91cef7e2b018e24f834039
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7716970"
+ms.locfileid: "7828049"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多线程环境中使用 Windows 运行时对象
 本文讨论了 .NET Framework 从 C# 和 Visual Basic 代码到 Windows 运行时或 Windows 运行时组件提供的对象处理调用的方式。

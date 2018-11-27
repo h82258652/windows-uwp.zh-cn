@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, azure ad, azure 租户, aad 租户, azure ad 租户, 租户管理, 租户
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f807799740d7e832da2f6a6fa3ea63e00deaee4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704398"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830088"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>将 Azure Active Directory 与你的合作伙伴中心帐户相关联
 
@@ -21,7 +21,7 @@ ms.locfileid: "7704398"
 > [!TIP]
 > 本主题仅适用于 Windows 应用开发人员计划的[合作伙伴中心](https://partner.microsoft.com/dashboard)中，不过租户关联和用户管理流程类似 Windows 桌面应用程序计划中的帐户 （请参阅[Windows 桌面应用程序](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)详细信息） 在 Windows 硬件开发人员计划 （其中到了**管理员**角色的引用内容也适用于具有**管理员**角色的硬件帐户; 有关详细信息，请参阅[仪表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)）。
 
-一个 Azure AD 租户可与多个合作伙伴中心帐户相关联。 你只需拥有一个即可添加多个帐户用户，与你的合作伙伴中心帐户相关联的 Azure AD 租户，但你还可以选择将多个 Azure AD 租户添加到一个合作伙伴中心帐户。 任何拥有合作伙伴中心帐户中了**管理员**角色的用户将可以选择添加和从帐户中删除 Azure AD 租户。
+一个 Azure AD 租户可与多个合作伙伴中心帐户相关联。 你只需拥有一个即可添加多个帐户用户，与你的合作伙伴中心帐户相关联的 Azure AD 租户，但你也可以选择将多个 Azure AD 租户添加到一个合作伙伴中心帐户。 任何拥有合作伙伴中心帐户中了**管理员**角色的用户将可以选择添加和从帐户中删除 Azure AD 租户。
 
 > [!IMPORTANT]
 > 你将你的合作伙伴中心帐户与 Azure AD 租户相关联后，以便添加和管理帐户用户，在该租户，你将需要在同一租户拥有了**管理员**角色的用户身份登录到合作伙伴中心。
@@ -38,10 +38,10 @@ ms.locfileid: "7704398"
 5.  如果关联成功，则将准备好添加和管理合作伙伴中心中的**用户**部分中的帐户用户。
 
 > [!IMPORTANT]
-> 若要创建新用户或者对 Azure AD 进行其他更改，你需要使用对 Azure AD 租户拥有[全局管理员权限](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)的帐户登录到该租户。 但是，不需要全局管理员权限即可关联租户，或将已存在的用户在该租户中添加到你的合作伙伴中心帐户。
+> 若要创建新用户或者对 Azure AD 进行其他更改，你需要使用对 Azure AD 租户拥有[全局管理员权限](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)的帐户登录到该租户。 但是，不需要全局管理员权限即可关联租户，或将该租户中已经存在的用户添加到合作伙伴中心帐户。
 
 
-## <a name="create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account"></a>创建要与合作伙伴中心帐户相关联的全新 Azure AD
+## <a name="create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account"></a>创建全新的 Azure AD，以将与你的合作伙伴中心帐户相关联
 
 如果你需要将新的 Azure AD 设置为与你的合作伙伴中心帐户链接，请按照以下步骤。
 

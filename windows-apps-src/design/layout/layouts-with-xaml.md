@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82a528b3ec98f56e1079e11ec1123d86de15d50f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701642"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834105"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 
@@ -95,7 +95,7 @@ Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
 > [!Tip]
-> 当你有在 UI 中的元素是**Collapsed**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 当你有在 UI 中的某些元素是**折叠**默认情况下时，会创建这些对象仍然在启动时，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>样式资源
 
@@ -232,7 +232,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在之前示例中，**网格**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
+> 在前面的示例中， **Grid**元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
 
 ### <a name="attached-property-syntax"></a>附加属性语法
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 试用, 消耗品, 耐用型, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718322"
+ms.locfileid: "7827302"
 ---
 # <a name="in-app-purchases-and-trials"></a>应用内购买和试用
 
