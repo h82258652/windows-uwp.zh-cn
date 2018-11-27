@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 向 Marble Maze 添加可视内容示例
 description: 本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
-ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 示例, directx, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 5171578b844829ec590b654194639ed6c8ebbfe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60dd12c3e18b82118053d72d0983e13008dd8a0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558824"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696778"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>向 Marble Maze 添加可视内容示例
 

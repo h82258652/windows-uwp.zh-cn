@@ -1,19 +1,17 @@
 ---
-author: JordanRh1
 title: 启用 GPIO、I2C 和 SPI 的用户模式访问
 description: 本教程介绍如何对 Windows 10 上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: ead1ef6dc9c9a840b61b1d18567860d85201b26a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555408"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696921"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
 

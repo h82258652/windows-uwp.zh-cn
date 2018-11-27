@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 定义游戏的 UWP 应用框架
 description: 为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563027"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697300"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 

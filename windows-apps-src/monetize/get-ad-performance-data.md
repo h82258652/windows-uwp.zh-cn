@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的广告性能聚合数据。
 title: 获取广告性能数据
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告, 性能
 ms.localizationpriority: medium
-ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6bec86929284e49e4e882597422d316276c0a33
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561572"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697500"
 ---
 # <a name="get-ad-performance-data"></a>获取广告性能数据
 
@@ -44,7 +42,7 @@ ms.locfileid: "7561572"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明           |
+| 标头        | 类型   | 描述           |
 |---------------|--------|--------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -74,7 +72,7 @@ ms.locfileid: "7561572"
 
 有关支持的字段列表，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
 
-| 字段 | 说明                                                              |
+| 字段 | 描述                                                              |
 |--------|--------------------------------------------------------------------------|
 | market    | 包含广告投放所在地市场的 ISO 3166 国家/地区代码的字符串。 |
 | deviceType    | 以下字符串之一：<strong>PC/Tablet</strong> 或 <strong>Phone</strong>。 |
@@ -101,7 +99,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                                                                                                                                                                                                                                                                            |
+| 值      | 类型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | 数组  | 包含广告性能聚合数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[广告性能值](#ad-performance-values)部分。                                                                                                                      |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 5，但查询的数据超过 5 项时，就会返回此值。 |

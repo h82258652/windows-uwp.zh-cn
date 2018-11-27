@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: 了解如何在应用中捕获 AdControl 错误。
 title: JavaScript 演练中的错误处理
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 广告, AdControl, 错误处理, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 65887bba125d8d7db1b224c1842da8c9ab34f117
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 68f49cd97e8b4e2ef5e20502909a7dc8cb4ab676
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572188"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697330"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 演练中的错误处理
 
@@ -21,14 +19,14 @@ ms.locfileid: "7572188"
 
 这些示例假定你拥有一个 JavaScript 应用，它包含一个 **AdControl**。 有关演示如何向你的应用添加 **AdControl** 的分步说明，请参阅 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
-1.  In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**. 在 default.html 文件中找到以下代码。
+1.  在 default.html 文件中，在 **div** 中针对 **AdControl** 定义 **data-win-options** 的所在位置添加适用于 **onErrorOccurred** 事件的值。 在 default.html 文件中找到以下代码。
     ``` HTML
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
       data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test'}">
     </div>
     ```
-    Following the **adUnitId** attribute, add the value for the **onErrorOccurred** event.
+    在 **adUnitId** 属性之后，添加适用于 **onErrorOccurred** 事件的值。
     ``` HTML
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"

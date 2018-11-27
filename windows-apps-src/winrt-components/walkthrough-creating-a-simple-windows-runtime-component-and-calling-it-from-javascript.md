@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 description: 本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571967"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696888"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 

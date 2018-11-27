@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 在 AWS 上为 Web 安装托管 UWP 应用包
 description: 设置的 AWS web 服务器验证通过应用安装程序应用的应用安装教程
-ms.author: cdon
 ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10，Windows 10，UWP，应用安装程序，AppInstaller 旁, 加载，相关集，可选包，AWS
 ms.localizationpriority: medium
-ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579082"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696194"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>在 AWS 上为 Web 安装托管 UWP 应用包
 

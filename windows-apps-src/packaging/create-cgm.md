@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: 创建和转换源内容组映射
 description: 为让通用 Windows 平台 (UWP) 应用做好添加 UWP 应用流式安装的准备，需要创建内容组映射。 本文介绍有关创建和转换内容组映射的具体信息，同时提供一些相关提示和技巧。
-ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 内容组映射, 流式处理安装, uwp 应用流式处理安装, 源内容组映射
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2922d6d3f54d693a9fe9c0982ea06cc5f2caae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560172"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697520"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 通过深度测试呈现场景
 description: 通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 场景, 深度测试, direct3d, 阴影
 ms.localizationpriority: medium
-ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568335"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696663"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>通过深度测试呈现场景
 
