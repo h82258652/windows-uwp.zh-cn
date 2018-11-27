@@ -1,34 +1,32 @@
 ---
-author: stevewhims
 description: 要在网络通信不在后台运行的情况下继续网络通信，应用可以使用后台任务以及套接字代理或控制通道触发器。
 title: 后台网络通信
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.author: stwhi
 ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555379"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713564"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
-若要继续网络通信不在前台时，你的应用可以使用后台任务和这两个选项之一。
-- 套接字代理。 如果你的应用使用套接字进行长期连接然后，当它离开前台时，它可以将套接字的所有权委托给系统套接字代理。 然后代理： 流量到达套接字; 上激活你的应用所有权传输回你的应用;并且，你的应用然后处理到达的流量。
+若要继续网络通信，尽管它不在前台，你的应用可以使用后台任务，这两个选项之一。
+- 套接字代理。 如果你的应用使用套接字进行长期连接然后，它离开前台时，它可以将套接字的所有权委托给系统套接字代理。 然后代理： 流量到达套接字; 上激活你的应用所有权传输回你的应用;并且，你的应用然后处理到达的流量。
 - 控制通道触发器。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在后台任务中执行网络操作
-- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止以节省电量。
+- 在检索到程序包并且需要执行生存期较短的任务时，使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 激活后台任务。 执行任务后, 后台任务应终止，以节省电量。
 - 在检索到程序包并且需要执行生存期较长的任务时，使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 激活后台任务。
 
 **与网络相关的条件和标志**
 
 - 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件可以省电，因为必须有网络连接才会执行后台任务。 此条件不提供实时激活。
 
-无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务未使用**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时）。
+无论使用哪种触发器，请设置后台任务上的 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务未使用**IsNetworkRequested**，你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时）。
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>套接字代理和 SocketActivityTrigger
 如果应用使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 连接，尽管它不在前台，你应该使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和套接字代理收到流量到达你的应用的通知。

@@ -1,12 +1,13 @@
 ---
-author: JordanEllis6809
 title: Unity - 对你的 UWP 项目进行版本控制
 description: 对你的 Unity UWP 项目进行版本控制。
-ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205687"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711629"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：对你的 UWP 项目进行版本控制
 
@@ -48,19 +49,19 @@ ms.locfileid: "205687"
 
 ## <a name="folders"></a>文件夹  
 
-`Assets` | ***Include*** | 包含 Windows 应用商店图像  
-`Data`   | ***Ignore*** | Unity 将你的项目编译到的位置（Scenes、Shaders、Scripts、Prefabs 等）  
-`Dependencies` | ***Include*** | 此文件夹是创建用于保留所有 UWP 依赖项（例如 XboxLiveSDK.dll）的文件夹  
-`Properties` | ***Include*** | 包含可由开发人员修改的更多高级设置  
-`Unprocessed` | ***Ignore*** | 包含 Unity `.dll` 和 `.pdb` 文件  
+`Assets` | ***包括***|包含的 Microsoft 应用商店图像  
+`Data`   | ***忽略***|其中 Unity 你将项目编译到 （场景、 着色器、 脚本、 Prefabs 等）  
+`Dependencies` | ***包括***|此文件夹是创建用于保留所有 UWP 依赖项 (例如 XboxLiveSDK.dll)  
+`Properties` | ***包括***|包含可由开发人员修改的更多高级的设置  
+`Unprocessed` | ***忽略***|包含 Unity`.dll`和`.pdb`文件  
 
 ## <a name="files"></a>文件  
 
-`App.cs` | ***Include*** | UWP 应用程序的入口点；可进行修改并使用其他源文件进行扩展  
-`Package.appxmanifest` | ***Include*** | 你的 AppX 的程序包清单  
-`project.json` | ***Include*** | 描述你的 `*.csproj` 所依赖的 NuGet 包  
-`ScrapyardPhoenix.csproj` | ***Include*** | 描述你的 UWP 生成目标；如果你将其他依赖项添加到 UWP 项目，此 `*.csproj` 文件将包含该信息  
-`ScrapyardPhoenix.csproj.user` | ***Ignore*** | 此文件包含本地用户信息
+`App.cs` | ***包括***|UWP 应用程序; 的入口点这可进行修改并使用其他源文件进行扩展  
+`Package.appxmanifest` | ***包括***|应用包清单源文件的 AppX  
+`project.json` | ***包括***|介绍的 NuGet 包在`*.csproj`取决于  
+`ScrapyardPhoenix.csproj` | ***包括***|介绍了你的 UWP 生成目标;如果你将其他依赖项添加到你的 UWP 项目，此`*.csproj`文件将包含该信息  
+`ScrapyardPhoenix.csproj.user` | ***忽略***|此文件包含本地用户信息
 
 ## <a name="resulting-gitignore"></a>生成的 .gitignore
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 绘制到屏幕
 description: 最终，我们会移植可将旋转立方体绘制到屏幕的代码。
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, directx, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 0050b854b6c8c02cd6eda5e4903fe07ee25d521d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fc93111d48f71a6ca8acad8191a2afb535fad2f0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560847"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711968"
 ---
 # <a name="draw-to-the-screen"></a>绘制到屏幕
 

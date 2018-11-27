@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 分配托管的 Windows 运行时组件
 description: 你可以通过文件副本分配 Windows 运行时组件。
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef51e2235d8ac5c46af6093809d241d5c137d57d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581179"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711543"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>分配托管的 Windows 运行时组件
 

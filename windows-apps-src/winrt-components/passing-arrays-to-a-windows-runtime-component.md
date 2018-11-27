@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 将数组传递到 Windows 运行时组件
 description: 在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553066"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711692"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>将数组传递到 Windows 运行时组件
 

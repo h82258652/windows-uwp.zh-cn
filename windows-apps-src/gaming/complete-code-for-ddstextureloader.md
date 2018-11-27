@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DDSTextureLoader 的完整代码
 description: 从内存中加载 DDS 纹理的类和方法的完整代码。
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, ddstextureloader
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ba0de548cb1c4222783ae4245e1aacba4ab09e2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570280"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713391"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader 的完整代码
 
@@ -69,7 +67,6 @@ ms.locfileid: "7570280"
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-
 #pragma once
 
 void CreateDDSTextureFromMemory(
@@ -102,7 +99,6 @@ void CreateDDSTextureFromMemory(
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-
 #include "pch.h"
 #include <dxgiformat.h>
 #include <assert.h>

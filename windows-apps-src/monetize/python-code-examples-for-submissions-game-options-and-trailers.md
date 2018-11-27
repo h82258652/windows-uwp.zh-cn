@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 使用此部分中的 Python 代码示例了解有关使用 Microsoft Store 提交 API 提交游戏选项和预告片的详细信息。
 title: Python 示例 - 使用游戏选项和预告片的应用提交
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, 游戏选项, 预告片, 高级应用一览, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c753e51d15b142cdcd7e54b3ed0304d13169b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 59306e32fe1fcc68978c977b89934e64d85b8cc8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582387"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713211"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Python 示例：使用游戏选项和预告片的应用提交
 

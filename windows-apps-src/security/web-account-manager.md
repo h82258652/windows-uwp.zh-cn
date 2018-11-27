@@ -1,19 +1,17 @@
 ---
 title: Web 帐户管理器
 description: 本文介绍如何通过 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569936"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711848"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
@@ -177,7 +175,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果你的应用使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时忽略此属性。
+> （可选） 如果你的应用使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他相关的登录体验的特殊属性，则列出**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中。 这将导致系统缓存的 web 帐户，可以防止在缓存中的帐户不匹配时，忽略此属性。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 

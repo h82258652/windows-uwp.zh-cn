@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: 使用画笔
 description: Brush 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。
-ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e96604daa9f8736601f52c917b556369ec620e96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e46ef0e459ede5fd1185d78186968735d886e63
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580441"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713933"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用画笔绘制背景、前景和轮廓
 

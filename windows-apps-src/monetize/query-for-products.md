@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: 在 Microsoft Store 收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。
 title: 查询产品
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 查看产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581400"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713158"
 ---
 # <a name="query-for-products"></a>查询产品
 
@@ -43,7 +41,7 @@ ms.locfileid: "7581400"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 说明                                                                                           |
+| 标头         | 类型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |
@@ -134,7 +132,7 @@ CollectionItemContractV6 对象包含以下参数。
 | devOfferId           | 字符串             | 应用内购买的优惠 ID。              | 否       |
 | EndDate              | 日期/时间           | 项目的结束日期。              | 是      |
 | FulfillmentData      | 字符串             | 不适用         | 否       |
-| InAppOfferToken      | 字符串             | 开发人员指定的产品 ID 字符串已分配给合作伙伴中心中的项。 示例产品 ID 为*product123*。 | 否       |
+| InAppOfferToken      | 字符串             | 分配给合作伙伴中心中的项目的开发人员指定的产品 ID 字符串。 示例产品 ID 为*product123*。 | 否       |
 | ItemID               | 字符串             | 用于从用户所拥有的其他项目标识此集合项 的 ID。 此 ID 对于每个产品都是唯一的。   | 是      |
 | localTicketReference | string             | 请求正文中上次提供的 *localTicketReference* 的 ID。                  | 是      |
 | ModifiedDate         | 日期/时间           | 最后修改此项目的日期。              | 是      |
