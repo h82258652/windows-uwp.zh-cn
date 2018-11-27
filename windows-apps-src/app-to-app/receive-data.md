@@ -2,18 +2,16 @@
 description: 本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。
 title: 接收数据
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d64e4a2d4251aca6bbce39b5f24e3e5f35295b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563268"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716745"
 ---
 # <a name="receive-data"></a>接收数据
 

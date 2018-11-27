@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: ''
 description: 在 Microsoft Store 分析 API 中使用此方法，可下载应用中错误的 CAB 文件。
 title: 下载应用中错误的 CAB 文件
-ms.author: mhopkins
 ms.date: 06/16/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: 047340d180e3de9f963dc76c85edaa6abea67327
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a4643f94236e62c46c12fd656ab5ddba5e1e0632
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582297"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718017"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下载应用中错误的 CAB 文件
 
-在 Microsoft Store 分析 API 中使用此方法，可下载与已报告给合作伙伴中心在应用中特定错误相关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 下载 CAB 文件还可以在合作伙伴中心中的[运行状况报告](../publish/health-report.md)的**故障**部分。
+在 Microsoft Store 分析 API 中使用此方法，可下载与已报告给合作伙伴中心在应用中特定错误相关联的 CAB 文件。 此方法仅可以下载过去 30 天内发生的应用错误的 CAB 文件。 下载 CAB 文件还可以在合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分。
 
 开始使用此方法之前，你必须使用[获取应用中错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索你想下载的 CAB 文件的 ID。
 
@@ -42,7 +40,7 @@ ms.locfileid: "7582297"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -51,7 +49,7 @@ ms.locfileid: "7582297"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 会在合作伙伴中心的[应用标识页面](../publish/view-app-identity-details.md)上提供的应用商店 ID。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
+| applicationId | 字符串 | 要下载 CAB 文件的应用的应用商店 ID。 应用商店 ID 在合作伙伴中心的[应用标识页](../publish/view-app-identity-details.md)上可用。 Store ID 示例：9WZDNCRFJ3Q8。 |  是  |
 | cabId | 字符串 | 想要下载的 CAB 文件的唯一 ID。 若要获取此 ID，请使用[获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)方法来检索应用中特定错误的详细信息，并使用该方法的响应正文中的 **cabId** 值。 |  是  |
 
  

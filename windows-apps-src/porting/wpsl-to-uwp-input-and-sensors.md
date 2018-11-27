@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
-title: 针对 I/O、 设备和应用模型进行移植到 UWP 的 WindowsPhone Silverlight
+title: 针对 I/O、 设备和应用模型进行移植到 UWP 的 WindowsPhone Silverlight'
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a0041fd154a4ce32930e10e21175706e8e7ad988
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559809"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717514"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>针对 I/O、 设备和应用模型进行移植 WindowsPhone silverlight 移植到 UWP
 
@@ -34,7 +32,7 @@ WindowsPhone Silverlight 应用包含代码，用于保存和还原其应用程�
 
 ## <a name="camera"></a>相机
 
-WindowsPhone Silverlight 相机捕获代码使用**Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**或**Microsoft.Phone.Tasks.CameraCaptureTask**类。 若要将该代码移植到通用 Windows 平台 (UWP)，你可以使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) 主题中提供一个代码示例。 该方法使你可以将照片捕获到存储文件，而且它要求**麦克风**和**摄像头**[**设备功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)以在应用包清单中进行设置。
+WindowsPhone Silverlight 相机捕获代码使用**Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**或**Microsoft.Phone.Tasks.CameraCaptureTask**类。 若要将该代码移植到通用 Windows 平台 (UWP)，你可以使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) 主题中提供一个代码示例。 该方法使你可以将照片捕获到存储文件，并且它需要的**麦克风**和**摄像头**[**设备功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)的应用包清单中设置。
 
 另一个选项是[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)类，这也需要**麦克风**和**摄像头**的[**设备功能**](https://msdn.microsoft.com/library/windows/apps/dn934747)。
 
@@ -42,7 +40,7 @@ WindowsPhone Silverlight 相机捕获代码使用**Microsoft.Devices.Camera**、
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>检测正运行你的应用的平台
 
-考虑应用面向 windows 10 的更改的方式。 新增的概念模型是，应用面向通用 Windows 平台 (UWP)，并且可跨所有 Windows 设备运行。 这样它便可以选择充分利用特定设备系列所独有的功能。 特别是，该应用还可以选择自行限制为面向一个或多个设备系列（如果需要）。 有关具体设备系列（以及如何确定要面向哪一个设备系列）的详细信息，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+应用面向 windows 10 的更改所做的方式。 新增的概念模型是，应用面向通用 Windows 平台 (UWP)，并且可跨所有 Windows 设备运行。 这样它便可以选择充分利用特定设备系列所独有的功能。 特别是，该应用还可以选择自行限制为面向一个或多个设备系列（如果需要）。 有关具体设备系列（以及如何确定要面向哪一个设备系列）的详细信息，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 **注意**我们建议你不使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](wpsl-to-uwp-porting-to-a-uwp-project.md)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
 
@@ -88,7 +86,7 @@ WindowsPhone Silverlight 应用可以使用**Microsoft.Phone.Info.DeviceStatus**
 
 ## <a name="location"></a>位置
 
-声明了位置功能其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
+声明了位置功能在其应用包清单中的应用上运行时 windows 10，则系统将提示最终用户同意。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
 
 ## <a name="orientation"></a>方向
 

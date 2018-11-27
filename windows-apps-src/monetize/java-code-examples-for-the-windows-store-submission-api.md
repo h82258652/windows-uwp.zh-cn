@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: 使用此部分中的 Java 代码示例了解有关使用 Microsoft Store 提交 API 的详细信息。
 title: Java 示例 - 应用、加载项和外部测试版的提交
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579317"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718588"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 示例：应用、加载项和外部测试版的提交
 
@@ -76,7 +74,7 @@ ms.locfileid: "7579317"
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
-5. 接下来，它[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
+5. 接下来，该[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
@@ -91,7 +89,7 @@ ms.locfileid: "7579317"
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的加载项提交](create-an-add-on-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将包含提交图标的 ZIP 存档上载到 Azure Blob 存储。
-5. 接下来，它[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
+5. 接下来，该[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
@@ -106,7 +104,7 @@ ms.locfileid: "7579317"
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将新的提交程序包上载到 Azure Blob 存储。
-5. 接下来，它[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)PartnerCenter 到新的提交。
+5. 接下来，该[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)PartnerCenter 到新的提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
 title: 认证说明
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 测试人员说明
 ms.localizationpriority: medium
-ms.openlocfilehash: ab3ba2eb08c01bac3b9c0536ce11b8e2bea96054
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d47933ac3482f610fb8fe28b7fb52238ac7ca294
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554418"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717783"
 ---
 # <a name="notes-for-certification"></a>认证说明
 
@@ -22,7 +20,7 @@ ms.locfileid: "7554418"
 
 请务必包括以下内容（如果适用于你的应用）：
 
--   **测试帐户用户名和密码**： 如果你的应用需要用户登录到的服务或社交媒体帐户，提供的用户名和密码测试帐户。 认证测试人员在审查你的应用时将使用此帐户。
+-   **测试帐户用户名和密码**： 如果你的应用需要用户登录到服务或社交媒体帐户，提供的用户名和密码的测试帐户。 认证测试人员在审查你的应用时将使用此帐户。
 
 -   **访问隐藏或锁定功能的步骤**： 简要介绍如何测试人员可以访问任何功能、 模式或不太明显的内容。 看起来不完整的应用可能无法通过认证。
 
@@ -30,7 +28,7 @@ ms.locfileid: "7554418"
 
 -  **行为根据地区或其他客户设置预期差异**： 例如，如果不同地区的客户将看到不同内容，请确保加入此信息，以便测试人员了解差异，并作出适当评价。
 
--   **有关应用更新中的更改内容的信息**： 对于对以前发布的应用更新，你可能希望让测试人员了解已更改的内容，尤其是在你的程序包相同，并且你只需对应用一览 （如添加更多进行更改屏幕截图、 更改应用类别或编辑提要）。
+-   **有关应用更新中的更改内容的信息**： 对于对以前发布的应用更新，你可能希望让测试人员了解已更改的内容，尤其是相同的程序包，并且你只需对应用一览 （如添加更多进行更改屏幕截图、 更改应用类别或编辑提要）。
 
 -   **输入说明的日期**： 这一点尤为重要，如果你在合作伙伴中心中使用的开发沙盒 （例如，这是与 Xbox Live 集成的任何游戏的情况），由于时输入的说明将发布到沙盒保持在请求认证时。 看到日期可帮助测试人员评估是否存在可能不会再产生的暂时问题。
 

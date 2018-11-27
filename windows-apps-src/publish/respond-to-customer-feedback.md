@@ -1,19 +1,17 @@
 ---
 title: 回复客户反馈
 description: 可以直接回复客户在反馈中心中留下的反馈。
-author: JnHs
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da9e96bace29dc33874d5b8c3e4ac846eddeb63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574888"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717030"
 ---
 # <a name="respond-to-customer-feedback"></a>回复客户反馈
 

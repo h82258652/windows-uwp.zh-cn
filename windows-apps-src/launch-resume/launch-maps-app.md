@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 启动 Windows 地图应用
 description: 了解如何从你的应用启动 Windows 地图应用。
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567751"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717610"
 ---
 # <a name="launch-the-windows-maps-app"></a>启动 Windows 地图应用
 
@@ -330,7 +328,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
-**注意**如果由**pos**参数值指定位置可以针对某个位置使用标题。 将显示标题，而不是显示纬度和经度。
+**注意**可以由**pos**参数值指定位置位置使用标题。 将显示标题，而不是显示纬度和经度。
 </div>
 <div>
  

@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Windows10 UWP 应用生命周期
 description: 本主题介绍 Windows10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 keywords: 已暂停的应用生命周期恢复启动激活
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574277"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718425"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows10 通用 Windows 平台 (UWP) 应用生命周期
 
@@ -58,7 +56,7 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 |**ClosedByUser** | 用户使用平板电脑模式下的关闭手势或 Alt+F4 关闭了应用。 当用户关闭应用时，它将首先暂停，然后终止。 | 从本质上说，由于应用经历了导致处于 Terminated 状态的相同步骤，因此处理此状态的步骤与 Terminated 状态相同。|
 |**Running** | 当用户尝试再次启动应用时，该应用已经打开。 | 无。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
 
-**注意***当前用户会话*都基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
+**注意***当前用户会话*基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
 
 需要注意的一种重要情形是：如果设备具有足够资源，操作系统会预启动针对该行为选择的常用应用，以优化响应性。 在后台启动要预启动的应用，然后快速暂停，以便当用户切换到这些应用时，可以恢复它们，这比启动应用的速度要快得多。
 
@@ -187,7 +185,7 @@ suspending 事件处理程序是保存应用状态的最佳位置。 但是，�
 
 没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 及更高版本，应用已被用户关闭后，应用删除从屏幕和切换列表，但不是会显式终止。
 
-**通过用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序确定应用被用户还是被 Windows 终止。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**由用户关闭行为：** 如果你的应用需要执行不同于被 Windows 关闭时用户关闭时，你可以使用激活事件处理程序来确定应用被用户还是被 Windows 终止。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 

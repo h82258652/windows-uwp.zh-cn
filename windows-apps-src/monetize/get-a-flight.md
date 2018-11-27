@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: 在 Microsoft Store 提交 API 中使用此方法，可获取软件包外部测试，为注册到你的合作伙伴中心帐户的应用的数据。
+description: 在 Microsoft Store 提交 API 中使用此方法，可获取注册到你的合作伙伴中心帐户的应用的软件包外部测试版的数据。
 title: 获取软件包外部测试版
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568196"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717967"
 ---
 # <a name="get-a-package-flight"></a>获取软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法，可获取软件包外部测试，为注册到你的合作伙伴中心帐户的应用的数据。
+在 Microsoft Store 提交 API 中使用此方法，可获取注册到你的合作伙伴中心帐户的应用的软件包外部测试版的数据。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,7 +35,7 @@ ms.locfileid: "7568196"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -46,8 +44,8 @@ ms.locfileid: "7568196"
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 在合作伙伴中心中会提供应用应用商店 ID。  |
-| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 对于在合作伙伴中心中创建的外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
+| applicationId | 字符串 | 必需。 应用（包含要获取的软件包外部测试版）的应用商店 ID。 在合作伙伴中心是可用的应用商店 ID。  |
+| flightId | 字符串 | 必需。 要获取的软件包外部测试版的 ID。 在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中提供了此 ID。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 
 
 ### <a name="request-body"></a>请求正文

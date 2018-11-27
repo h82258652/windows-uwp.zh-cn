@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心的应用的应用内购买相关信息。
 title: 获取应用的加载项
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec065eef5d411e35515837b169fd57d71e4ef6ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567087"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718468"
 ---
 # <a name="get-add-ons-for-an-app"></a>获取应用的加载项
 
-在 Microsoft Store 提交 API 中使用此方法，列出，为注册到你的合作伙伴中心帐户的应用的加载项。
+在 Microsoft Store 提交 API 中使用此方法，列出注册到你的合作伙伴中心帐户的应用的加载项。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,7 +35,7 @@ ms.locfileid: "7567087"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

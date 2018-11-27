@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
 title: Microsoft 应用商店营销指南的应用
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 19b76966cf4909af460575882e2d2be7c82743a0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576891"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716856"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft 应用商店营销指南的应用
 
@@ -21,7 +19,7 @@ ms.locfileid: "7576891"
 
 ## <a name="store-badges"></a>应用商店锁屏提醒
 
-我们创建了特殊的促销锁屏提醒，帮助你带动更多客户的 Microsoft 应用商店中的应用的一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
+我们创建了特殊的促销锁屏提醒，帮助你带动更多客户，你的应用一览，Microsoft Store 中。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
 [![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft 应用商店锁屏提醒指南 （PDF，英语）**
 
@@ -43,7 +41,7 @@ ms.locfileid: "7576891"
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 
-*Microsoft 商标授权*意味着[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面中描述了*Microsoft 锁屏提醒*。 若要使用这些锁屏提醒，必须满足以下条件：
+*Microsoft 商标授权*意味着*Microsoft 锁屏提醒*的[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页面上所述。 若要使用这些锁屏提醒，必须满足以下条件：
 
 -   在 Microsoft store 中具有你的应用或其他内容存在或者是[Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 

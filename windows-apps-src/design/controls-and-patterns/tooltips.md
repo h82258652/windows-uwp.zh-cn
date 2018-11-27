@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
 title: 工具提示
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 87001cb99a7d5cb1a150bceed3f6c9ba187caa94
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 651914cfb2abd4326c6ac6295f10ad359925d465
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568143"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716190"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -114,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 默认情况下，工具提示在指针上方居中显示。 工具提示的放置位置不受应用窗口的约束，因此工具提示可能部分或完全显示在应用窗口边界的外部。
 
-对于广泛的调整，用于[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否在工具提示应绘制上方、 下方、 左方或右方指针。 你可以设置要更改在指针和工具提示之间的距离的[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性。 只有一个两个偏移量值将会影响最终位置-VerticalOffset 放置时保留放置的顶部或底部，HorizontalOffset 或向右。
+对于广泛的调整，用于[放置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性或**ToolTipService.Placement**附加属性指定是否在工具提示应绘制上方、 下方、 左方或右方指针。 你可以设置[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)属性，以更改在指针和工具提示之间的距离。 只有一个两个偏移量值将会影响最终位置-VerticalOffset 放置时顶部或底部，HorizontalOffset 向左放置时或向右。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -127,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果工具提示遮盖了它所指的内容，你可以调整它精确地使用新的**PlacementRect**属性的位置。 PlacementRect 定位在工具提示的位置，并且还可用作工具提示将不会阻挡，一个区域提供没有足够的屏幕空间来绘制该区域之外的工具提示。 你可以指定相对于工具提示的所有者和高度矩形的原点和排除区域的宽度。 如果工具提示应绘制上方、 下方、 左方或右方 PlacementRect，定义的[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性。 
+如果工具提示遮盖了它所指的内容，你可以调整它准确地使用新的**PlacementRect**属性的位置。 PlacementRect 定位在工具提示的位置，并且还可用作工具提示将不会阻挡，一个区域提供没有足够的屏幕空间，以绘制该区域外的工具提示。 你可以指定相对于工具提示的所有者和高度矩形的原点和排除区域的宽度。 如果工具提示应绘制上方、 下方、 左方或右方 PlacementRect，定义的[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)属性。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

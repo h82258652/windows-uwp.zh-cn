@@ -4,17 +4,15 @@ description: 利用光栅器排序视图，可以解决一些深度缓冲区限�
 ms.assetid: BCB1EE0D-4C1D-4E17-BDB7-173F448E0A7B
 keywords:
 - 光栅器排序视图 (ROV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7327304e2b42ff5ff71be136220b58e99c6228d2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ed49ba81c44a799e4d827d636f601c77d01333b3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559736"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717304"
 ---
 # <a name="rasterizer-ordered-view-rov"></a>光栅器排序视图 (ROV)
 

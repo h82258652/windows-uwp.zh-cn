@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: AEP 服务类 ID
 description: 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f103ee3c281ca95abcaee76cdc6f88b74a49eb1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568385"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718365"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
 

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: 年龄分级
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
-ms.author: wdg-dev-content
 ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, 年龄分级, 游戏分级, iarc, 分级, 问卷调查, 分级委员会, 内容分级
 ms.localizationpriority: medium
-ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8268e4f3fa6517da480c2ab220863de9523e845
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576158"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716817"
 ---
 # <a name="age-ratings"></a>年龄分级
 

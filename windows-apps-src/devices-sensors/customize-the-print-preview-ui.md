@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: 自定义打印预览 UI
 description: 本部分介绍了如何在打印预览 UI 中自定义打印选项和设置。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 打印
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570781"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718518"
 ---
 # <a name="customize-the-print-preview-ui"></a>自定义打印预览 UI
 
@@ -98,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要**调用[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 将删除所有打印选项从在打印预览 UI，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
+**重要提示**调用[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 将删除所有打印选项从在打印预览 UI，包括**更多设置**链接。 请务必附加你希望在打印预览 UI 上显示的选项。
 
 ### <a name="specify-default-options"></a>指定默认选项
 

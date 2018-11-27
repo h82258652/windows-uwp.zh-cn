@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 适用于游戏的项目模板和工具
 description: 向你显示开始为通用 Windows 平台 (UWP) 编写 DirectX 游戏所需的内容。
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 模板, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571519"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717373"
 ---
 # <a name="project-templates-and-tools-for-games"></a>适用于游戏的项目模板和工具
 

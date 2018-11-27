@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: 了解如何在 UWP 应用中启用应用内购买和试用。
 title: 应用内购买和试用
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 试用, 消耗品, 耐用型, 订阅
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566201"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718322"
 ---
 # <a name="in-app-purchases-and-trials"></a>应用内购买和试用
 
@@ -21,7 +19,7 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 
 * **应用内购买**&nbsp;&nbsp;无论你的应用是否免费，你都可以直接从应用中销售内容或新的应用功能（例如解锁游戏的下一关卡）。
 
-* **试用功能**&nbsp;&nbsp;如果你[应用配置为在合作伙伴中心中的免费试用版](../publish/set-app-pricing-and-availability.md#free-trial)，则可以吸引客户通过排除或限制某些功能在试用期内购买你的应用的完整版。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
+* **试用功能**&nbsp;&nbsp;如果你[应用配置为在合作伙伴中心中的免费试用版](../publish/set-app-pricing-and-availability.md#free-trial)，则可以吸引客户购买你的应用的完整版通过排除或限制试用期内的某些功能。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
 本文提供应用内购买和试用在 UWP 应用内的工作原理概述。
 
@@ -36,7 +34,7 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Windows 10 的所有版本还支持此命名空间中用于应用内购买和试用的较早 API。 有关 **Windows.ApplicationModel.Store** 命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 命名空间不再更新新功能，如果可能，建议你的应用改用 **Windows.Services.Store** 命名空间。 **Windows.ApplicationModel.Store**命名空间不支持在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序或应用或游戏，使用合作伙伴中心中的开发沙盒 （例如，这是这种情况的任何游戏的与 Xbox Live 集成）。
+> **Windows.ApplicationModel.Store** 命名空间不再更新新功能，如果可能，建议你的应用改用 **Windows.Services.Store** 命名空间。 在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序或应用或游戏，在合作伙伴中心中使用的开发沙盒中不受支持**Windows.ApplicationModel.Store**命名空间 （例如，这是这种情况的任何游戏的与 Xbox Live 集成）。
 
 <span id="concepts" />
 
@@ -46,13 +44,13 @@ Microsoft Store 中提供的每一个项目通常称为*产品*。 大多数开�
 
 加载项是指你在应用的上下文中向客户提供的产品或功能：例如，要在应用或游戏中使用的货币、游戏的新地图或武器、使用无广告应用的功能，或数字内容，如应用的音乐或视频（前提是应用能够提供此类内容）。 每个应用和加载项都有关联的许可证，用于指示用户是否有权使用该应用或加载项。 如果用户有权将该应用或加载项作为试用来使用，则许可证还提供关于该试用的其他信息。
 
-若要向你的应用中的客户提供加载项，你必须[定义为你在合作伙伴中心中的应用的加载项](../publish/add-on-submissions.md)以便使应用商店知道它。 然后，应用可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空间中的 API 提供加载项，作为应用内购买向用户销售。
+若要在应用中向客户提供加载项，你必须[定义为你在合作伙伴中心中的应用的加载项](../publish/add-on-submissions.md)以便使应用商店知道它。 然后，应用可以使用 **Windows.Services.Store** 或 **Windows.ApplicationModel.Store** 命名空间中的 API 提供加载项，作为应用内购买向用户销售。
 
 UWP 应用可提供以下类型的加载项。
 
 | 加载项类型 |  说明  |
 |---------|-------------------|
-| 耐用品  |  加载项的持续时间为生命周期该你[在合作伙伴中心中指定](../publish/enter-iap-properties.md)。 <p/><p/>默认情况下，耐用型加载项永远不会过期，在此情况下只能购买它们一次。 如果你为加载项指定特定的持续时间，则用户可以在它过期后重新购买该加载项。 |
+| 耐用品  |  持续时间为生命周期的[合作伙伴中心中指定](../publish/enter-iap-properties.md)的加载项。 <p/><p/>默认情况下，耐用型加载项永远不会过期，在此情况下只能购买它们一次。 如果你为加载项指定特定的持续时间，则用户可以在它过期后重新购买该加载项。 |
 | 开发人员管理的易耗品  |  可以购买、使用并在用完后再次购买的加载项。 你负责跟踪用户拥有的加载项所表示商品的余量。<p/><p/>当用户使用与该加载项关联的任何商品时，你负责维护加载项所表示的商品的用户余量，并在用户消耗完所有商品后向 Microsoft Store 将加载项购买报告为已完成。 在你的应用将之前的加载项购买报告为已完成前，用户无法再次购买该加载项。 <p/><p/>例如，如果你的加载项表示游戏中的 100 个硬币，并且用户消耗了 10 个硬币，则你的用户或服务必须为该用户保留 90 个硬币的新剩余余额。 在用户消耗完全部 100 个硬币后，你的应用必须将加载项报告为已完成，然后用户才可以再次购买 100 个硬币的加载项。    |
 | Microsoft Store 管理的易耗品  |  可以随时购买、使用并再次购买的加载项。 Microsoft Store 会跟踪用户拥有的加载项所表示商品的余量。<p/><p/>当用户消耗任何与加载项关联的商品时，你负责向 Microsoft Store 报告这些商品已完成，然后 Microsoft Store 会更新用户的余量。 用户可以根据需要多次购买加载项（他们不需要首先使用这些项目）。 你的应用可以随时查询用户的当前余量。 <p/><p/> 例如，如果你的加载项在游戏中表示 100 个硬币的初始数量，并且用户消耗了 50 个硬币，则你的应用将向 Microsoft Store 报告 50 个单位的加载项已完成，然后 Microsoft Store 会更新剩余余额。 如果用户再次购买你的加载项（增加 100 个硬币），他们现在总共有 150 个硬币。 <p/><p/>**注意**&nbsp;&nbsp;若要使用 Microsoft Store 管理的易耗品，应用必须在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间，而不是 **Windows.ApplicationModel.Store** 命名空间。  |
 | 订阅 | 一种持久型加载项，客户需要按重复时间间隔付费才能继续使用此加载项。 客户可以随时取消订阅，以免日后继续产生费用。 <p/><p/>**注意**&nbsp;&nbsp;若要使用订阅加载项，应用必须在 Visual Studio 中面向 **Windows 10 周年纪念版（10.0；版本 14393）** 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间，而不是 **Windows.ApplicationModel.Store** 命名空间。  |
@@ -128,7 +126,7 @@ UWP 应用可提供以下类型的加载项。
 
 若要使用 **Windows.Services.Store** 命名空间在应用中向客户提供应用内购买：
 
-1. 如果你的应用提供加载项可供客户购买，[创建适用于合作伙伴中心中应用的加载项提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
+1. 如果你的应用提供可供客户购买，[创建合作伙伴中心中为应用的加载项提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)的加载。
 
 2. 在应用中编写代码以[检索应用或应用提供的加载项的产品信息](get-product-info-for-apps-and-add-ons.md)，然后[确定许可证是否处于活动状态](get-license-info-for-apps-and-add-ons.md)（即，用户是否具有使用该应用或加载项的许可证）。 如果许可证不处于活动状态，请显示提供应用或加载项以作为应用内购买向用户销售的 UI。
 
@@ -160,15 +158,15 @@ UWP 应用可提供以下类型的加载项。
 
 如果你的应用使用 **Windows.Services.Store** 命名空间中的 API 实现应用内购买和试用功能，则你必须将应用发布到 Microsoft Store，然后将此应用下载到开发设备上以使用其许可证进行测试。 请按照下述过程测试你的代码：
 
-1. 如果你的应用尚未发布并可在应用商店中，请确保你的应用满足最低[Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)要求，在合作伙伴中心，[提交你的应用](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并确保你的应用通过认证过程。 在测试应用期间，你可以[将应用配置为在 Microsoft Store 中隐藏](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 请注意[软件包外部测试版](../publish/package-flights.md)的正确配置。 未正确配置的软件包外部测试版可能无法下载。
+1. 如果你的应用尚未发布并可在应用商店中，请确保你的应用满足最低[Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)要求，在合作伙伴中心，[将应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并确保你的应用通过认证过程。 在测试应用期间，你可以[将应用配置为在 Microsoft Store 中隐藏](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 请注意[软件包外部测试版](../publish/package-flights.md)的正确配置。 未正确配置的软件包外部测试版可能无法下载。
 
 2. 接下来，确保已完成以下操作：
 
     * 在使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类和 **Windows.Services.Store** 命名空间中的其他相关类型的应用中编写代码以实现[应用内购买](#implement-iap)或[试用功能](#implement-trial)。
     * 如果你的应用提供的加载项可供客户购买，[创建加载项提交的合作伙伴中心应用](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
-    * 如果你想要排除或限制你的应用，[配置为免费试用合作伙伴中心中应用](../publish/set-app-pricing-and-availability.md#free-trial)的试用版中的某些功能。
+    * 如果你想要排除或限制某些功能在你的应用，[配置为免费试用合作伙伴中心中应用](../publish/set-app-pricing-and-availability.md#free-trial)的试用版。
 
-3. 在项目在 Visual Studio 中打开的情况下，单击**项目菜单**、指向** Microsoft Store**，然后单击**将应用与 Microsoft Store 关联**。 完成向导中的说明，以将应用项目与你想要用于测试的合作伙伴中心帐户中的应用相关联。
+3. 在项目在 Visual Studio 中打开的情况下，单击**项目菜单**、指向** Microsoft Store**，然后单击**将应用与 Microsoft Store 关联**。 完成该向导中的说明你想要用于测试的合作伙伴中心帐户中的应用相关联的应用项目。
     > [!NOTE]
     > 如果你未将项目与 Microsoft Store 中的应用关联，则 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法会将其返回值的 **ExtendedError** 属性设置为错误代码值 0x803F6107。 此值指示 Microsoft Store 并不了解关于该应用的任何信息。
 4. 如果你尚未关联，请从 Microsoft Store 安装你在上一步中指定的应用、运行该应用一次，然后关闭此应用。 这可确保将应用的有效许可证安装到你的开发设备。
@@ -227,7 +225,7 @@ UWP 应用可提供以下类型的加载项。
 
 ### <a name="products-skus-and-availabilities"></a>产品、SKU 和可用性
 
-Microsoft Store 中的每个产品都至少有一个 *SKU*，而每个 SKU 都至少有一个*可用性*。 这些概念抽象合作伙伴中心中的大多数开发人员，并且大多数开发人员将永远不需要定义 Sku 或可用性为其应用或加载项。 但是，由于 **Windows.Services.Store** 命名空间中的 Microsoft Store 产品的对象模型包括 SKU 和可用性，因此大致了解这些概念对于某些情况可能很有帮助。
+Microsoft Store 中的每个产品都至少有一个 *SKU*，而每个 SKU 都至少有一个*可用性*。 这些概念抽象合作伙伴中心中的大多数开发人员，并且大多数开发人员将永远不会定义 Sku 或为其应用或加载项的可用性。 但是，由于 **Windows.Services.Store** 命名空间中的 Microsoft Store 产品的对象模型包括 SKU 和可用性，因此大致了解这些概念对于某些情况可能很有帮助。
 
 | 对象 |  说明  |
 |---------|-------------------|

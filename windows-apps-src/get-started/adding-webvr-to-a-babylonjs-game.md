@@ -1,31 +1,29 @@
 ---
 title: 将 WebVR 支持添加到 3D Babylon.js 游戏
 description: 了解如何将 WebVR 支持添加到现有的 3D Babylon.js 游戏。
-author: abbycar
-ms.author: abigailc
 ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr，edge，web 开发、 babylon、 babylonjs、 babylon.js javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 72681c3f91fc2dcbfcc4e4531359d6d668e18b80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3e2081f0dbe163dcbcf35d83ea111caf573dacfb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553262"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718342"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>将 WebVR 支持添加到 3D Babylon.js 游戏
 
-如果你已使用 Babylon.js 创建 3D 游戏并认为，它可能看起来出色虚拟现实 (VR) 中，请按照说明操作的简单的步骤以使其成为现实本教程。
+如果你已使用 Babylon.js 创建 3D 游戏，并认为它看起来出色虚拟现实 (VR) 中，在本教程中以使其成为现实按照简单的步骤。
 
-我们将将 WebVR 支持添加到游戏如下所示。 继续并插入了 Xbox 控制器来尝试一下 ！
+我们将添加到游戏如下所示的 WebVR 支持。 继续并插入了 Xbox 控制器来尝试一下 ！
 
 
 <iframe height='300' scrolling='no' title='使用 Babylon.GUI Babylon.js 恐龙游戏' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅笔<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>Babylon.js 恐龙游戏使用 Babylon.GUI</a> ，Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) 可以在<a href='https://codepen.io'>CodePen</a>上。
 </iframe>
 
-这是有关平面屏幕，但什么良好工作的 3D 游戏中 VR？
-在本教程中，我们将演练的几个步骤它采用若要获取此和使用 WebVR 运行。 我们将使用 WebVR 在 Microsoft Edge 中添加了对支持可以利用[Windows 混合现实](https://developer.microsoft.com/en-us/windows/mixed-reality)耳机。 我们将这些更改应用于游戏后，你可以希望它还支持 WebVR 其他浏览器/头戴显示设备组合中工作。
+这是适用于平面屏幕，但什么有关 3D 游戏中 VR？
+在本教程中，我们将演练的几个步骤它采用若要获取此和使用 WebVR 运行。 我们将使用 WebVR 在 Microsoft Edge 中添加了对支持可以利用[Windows 混合现实](https://developer.microsoft.com/en-us/windows/mixed-reality)耳机。 我们将这些更改应用于游戏后，你可以预期它还支持 WebVR 其他浏览器/头戴显示设备组合中工作。
 
 
 
@@ -46,7 +44,7 @@ ms.locfileid: "7553262"
 ![克隆或下载按钮](images/3dclone.png)
 
 如果不想克隆项目，则可以将其下载为 zip 文件。
-然后，你将有两个文件夹、[之前](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)和[之后](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/after)。 "之前"文件夹是我们的游戏之前添加任何 VR 功能，以及"后"文件夹是完成的 VR 支持游戏。
+然后，你将有两个文件夹、[之前](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)和[之后](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/after)。 "之前"文件夹是我们的游戏之前添加任何 VR 功能，以及"后"文件夹是具有 VR 支持完成的游戏。
 
 之前和之后的文件夹包含这些文件：
 -   **纹理 /** -包含任何游戏中使用的图像的文件夹。
@@ -59,31 +57,31 @@ ms.locfileid: "7553262"
 
 
 
-## <a name="the-mixed-reality-portal"></a>混合的现实门户
+## <a name="the-mixed-reality-portal"></a>在混合的现实门户
 
-如果你不熟悉 Windows Mixed Reality，并且具有兼容的显卡的计算机上安装了 Windows 10 创意者更新，请尝试从 Windows 10 中的开始菜单打开**混合现实门户**应用。
+如果你不熟悉 Windows Mixed Reality，并且具有兼容的显卡的计算机上安装了 Windows 10 创意者更新，请尝试从 Windows 10 中的开始菜单中打开**混合现实门户**应用。
 
 ![混合的现实门户搜索](images/mixed-reality-portal.png)
 
-如果满足所有要求，然后可以打开开发人员功能并模拟 Windows 混合现实耳机插入到你的计算机。 如果你是幸运具有附近的实际头戴显示设备，插入它，并运行安装程序。
+如果满足所有要求，然后可以打开开发人员功能并模拟 Windows 混合现实耳机插入到你的计算机。 如果你是幸运具有附近的实际耳机，插入它，并运行安装程序。
 
 > [!IMPORTANT]
-> 混合现实门户必须在本教程中始终在打开。
+> 在本教程中始终，必须打开在混合现实门户。
 
 你现在已经准备好体验 WebVR 与 Microsoft Edge。
 
 ## <a name="2d-ui-in-a-virtual-world"></a>在虚拟世界中的 2D UI
 
 >[!NOTE]
-> 获取[**之前**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)文件夹以获取初学者示例。
+> 获取[**之前**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)文件夹，以获取初学者示例。
 
 [Babylon.GUI](https://doc.babylonjs.com/how_to/gui) VR 友好库，使你要创建简单，交互式用户界面适合 VR 该工作和非 VR 显示。
-Babylon.js，扩展了`GUI`库是使用的 throuhout 该示例来创建 2D 元素。
+一个扩展到 Babylon.js，`GUI`库是使用的 throuhout 该示例来创建 2D 元素。
 
 
 2D 文本`GUI`可以使用几行，具体取决于你想要调整多少属性创建元素。
 以下代码段都已经位于我们[**之前**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)的示例中，但我们正在发生的操作实例。
-首先，我们将[`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture)若要建立 GUI 将介绍的对象。 该示例将此设置为`CreateFullScreenUI()`，这意味着我们的 UI 将覆盖整个屏幕。 使用`AdvancedDynamicTexture`我们创建，然后进行游戏使用启动后，会显示一个 2D 文本框`GUI.Rectanlge()`和`GUI.TextBlock()`。
+首先，我们将[`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture)对象来建立 GUI 将介绍。 该示例将其设置`CreateFullScreenUI()`，这意味着我们的 UI 将覆盖整个屏幕。 使用`AdvancedDynamicTexture`我们创建，然后进行游戏使用启动后，会显示一个 2D 文本框`GUI.Rectanlge()`和`GUI.TextBlock()`。
 
 
 在[**main.js**](https://github.com/Microsoft/Windows-tutorials-web/blob/master/BabylonJS-game-with-WebVR/before/js/main.js#L157-L168)中添加此代码。
@@ -129,19 +127,19 @@ navigator.getVRDisplays().then(function (displays) {
 });
 ```
 
-信息存储在`headset`变量，我们现在能够选择最适合用户相机。
+信息存储在`headset`变量，我们现在能够选择最适合用户的相机。
 
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>创建并选择初始相机
 
-与 Babylon.js，WebVR 可以快速补位通过使用[`WebVRFreeCamera`](http://doc.babylonjs.com/classes/3.1/webvrfreecamera)。 此相机可以采取键盘输入，并使你可以使用 VR 头戴显示设备来控制"标头"旋转。
+与 Babylon.js、 WebVR 可以快速补位通过使用[`WebVRFreeCamera`](http://doc.babylonjs.com/classes/3.1/webvrfreecamera)。 此相机可能键盘输入，并且使你能够使用 VR 耳机控制"标头"旋转。
 
 
 ### <a name="step-1-checking-for-headsets"></a>步骤 1： 检查头戴显示设备
 
-对于我们回退摄像机，我们将使用[`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera)，当前使用原始游戏中。
+对于我们回退的摄像头，我们将使用[`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera)，当前使用原始的游戏中。
 
-我们将查看我们`headset`变量，以确定是否我们可以使用`WebVRFreeCamera`相机。
+我们将查看我们`headset`变量，以确定是否可以使用`WebVRFreeCamera`相机。
 
 替换`camera = new BABYLON.UniversalCamera("Camera", new BABYLON.Vector3(0, 18, -45), scene);`使用下面的代码。
 ```javascript
@@ -169,11 +167,11 @@ navigator.getVRDisplays().then(function (displays) {
         }
 ```
 
-在游戏中的单击现在创建一条提示，如下所示，或显示游戏在头戴显示设备中立即如果用户已接受之前的提示。
+在游戏中的单击现在创建一条提示，如下所示，或在游戏中显示耳机立即如果用户已接受之前的提示。
 
 ![沉浸式提示](images/immersiveview.png)
 
-我们还可以添加代码，将显示一条`UniversalCamera`我们切换到之前查看我们`WebVRFreeCamera`，从而允许用户看一下游戏而不是一个蓝色窗口。 
+我们还可以添加代码，将显示一条`UniversalCamera`我们切换到之前，查看我们`WebVRFreeCamera`，从而允许用户看一下游戏而不是一个蓝色窗口。 
 
 添加后的进行以下`engine.runRenderLoop(function () {`。
 ```javascript
@@ -189,7 +187,7 @@ navigator.getVRDisplays().then(function (displays) {
 
 ### <a name="step-3-adding-gamepad-support"></a>步骤 3： 添加游戏板支持
 
-由于`WebVRFreeCamera`最初不支持游戏板，我们会将我们的游戏板按钮映射到键盘箭头键。 我们将执行此操作很快找到它们到`inputs`相机的属性。 通过添加左摇杆的相应代码向上、 向下、 左和向右以符合箭头键，我们的游戏板是重新登录操作。
+由于`WebVRFreeCamera`最初不支持游戏板，我们将我们的游戏板按钮映射到键盘箭头键。 我们将执行此操作很快找到它们到`inputs`相机的属性。 通过添加左摇杆的相应代码向上、 向下、 左和向右以符合箭头键时，我们的游戏板是重新登录操作。
 
 
 添加此下面的代码`scene.onPointerDown = function() {...}`调用。
@@ -213,4 +211,4 @@ navigator.getVRDisplays().then(function (displays) {
 
 ## <a name="conclusion"></a>总结
 
-恭喜你！ 你现在可以使用 WebVR 支持的完整 Babylon.js 游戏。 在此处，你可以采取所学生成更好的游戏，或关闭此生成。
+恭喜你！ 你现在可以使用 WebVR 支持的完整 Babylon.js 游戏。 在这里，你可以充分所学生成更好的游戏中，或关闭此生成。

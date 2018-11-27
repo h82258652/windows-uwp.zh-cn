@@ -4,17 +4,15 @@ description: Direct3D 11 中的纹理块压缩 (BC) 支持已经过扩展，以�
 ms.assetid: 63506C46-BF14-464B-B20C-8B8F359E7AFE
 keywords:
 - 纹理块压缩
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dec33768eff90b9bd35a3ea60f3158fce663345e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575219"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716272"
 ---
 # <a name="texture-block-compression"></a>纹理块压缩
 

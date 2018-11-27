@@ -4,17 +4,15 @@ description: 世界转换将坐标从相对模型的本地原点定义顶点的�
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
 keywords:
 - 世界转换
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c6ada4bd964a9430d6ef47bd46f954ca76c404a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: af694ed32d845e518f4189f75309f1f371743f90
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572267"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718598"
 ---
 # <a name="world-transform"></a>世界转换
 

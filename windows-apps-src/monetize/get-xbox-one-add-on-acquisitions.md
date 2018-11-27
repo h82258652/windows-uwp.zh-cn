@@ -1,22 +1,20 @@
 ---
-author: Xansky
-description: 在 Microsoft Store 分析 API 中使用此方法，可获取聚合加载项购置数据。
+description: 在 Microsoft Store 分析 API 中使用此方法，可获取加载项的聚合购置数据。
 title: 获取 Xbox One 的加载项购置
-ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，Xbox One 的加载项购置
 ms.localizationpriority: medium
-ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569497"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717977"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>获取 Xbox One 的加载项购置
 
-使用 Microsoft Store 分析 API 中获取聚合加载项购置数据采用 JSON 格式的某个 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。
+使用 Microsoft Store 分析 API 中获取聚合加载项购置数据采用 JSON 格式的 Xbox One 游戏通过 Xbox 开发人员门户 (XDP) 引入并提供在 XDP 分析合作伙伴中心仪表板中的此方法。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,7 +35,7 @@ ms.locfileid: "7569497"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明          |
+| 标头        | 类型   | 描述          |
 |---------------|--------|--------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -48,7 +46,7 @@ ms.locfileid: "7569497"
 
 | 参数        | 类型   |  说明      |  必需  |
 |---------------|--------|---------------|------|
-| applicationId | 字符串 | 要为其检索购置数据的 Xbox One 游戏*productId* 。 若要获取你的游戏的*productId* ，导航到你的游戏在 XDP 分析程序中，并从 URL 检索*产品 Id* 。 或者，如果你从合作伙伴中心分析报告下载购置数据，该.tsv 文件中包含*productId* 。 |  是  |
+| applicationId | 字符串 | 要为其检索购置数据的 Xbox One 游戏*的 productId* 。 若要获取你的游戏的*productId* ，导航到你的游戏在 XDP 分析程序中，并从 URL 检索*产品 Id* 。 或者，如果你从合作伙伴中心分析报告下载购置数据，该.tsv 文件中包含*productId* 。 |  是  |
 | addonProductId | 字符串 | 你要检索购置数据的加载项*产品 Id* 。  | 是  |
 | startDate | 日期 | 要检索的加载项购置数据日期范围中的开始日期。 默认值为当前日期。 |  否  |
 | endDate | 日期 | 要检索的加载项购置数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
@@ -57,7 +55,7 @@ ms.locfileid: "7569497"
 | filter |字符串  | <p>在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 eq 或 ne 运算符进行关联，并且语句可以使用 and 或 or 进行组合。 filter 参数中的字符串值必须使用单引号括起来。 例如，filter=market eq 'US' and gender eq 'm'。</p> <p>你可以指定响应正文中的以下字段：</p> <ul><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul>| 否   |
 | aggregationLevel | 字符串 | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。 | 否 |
 | orderby | 字符串 | 对每个加载项购置的结果数据值进行排序的语句。 语法是<em>orderby = field [order]，[order]，字段...</em><em>域</em>参数可以是以下字符串之一：<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：<ul><li><strong>日期型</strong></li><li><strong>applicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如： <em> &amp;groupby = 期限，市场&amp;aggregationLevel = week</em></p> |  否  |
+| groupby | 字符串 | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：<ul><li><strong>日期型</strong></li><li><strong>applicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如： <em> &amp;groupby = 期限，market&amp;aggregationLevel = week</em></p> |  否  |
 
 
 ### <a name="request-example"></a>请求示例
@@ -80,7 +78,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明         |
+| 值      | 类型   | 描述         |
 |------------|--------|------------------|
 | 值      | 数组  | 包含聚合加载项购置数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[加载项购置值](#add-on-acquisition-values)部分。                                                                                                              |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的加载项购置数据超过 10000 行时，就会返回此值。 |
@@ -104,9 +102,9 @@ Authorization: Bearer <your access token>
 | storeClient         | 字符串  | <p>用于指示发生购置的 Microsoft Store 版本的以下字符串之一：</p> <ul><li>"Windows Phone 应用商店 （客户端）"</li><li>"Microsoft Store (client)"(或"Windows 应用商店 （客户端）"如果查询 2018 年 3 月 23 日之前的数据)</li><li>"Microsoft Store (web)"(或"Windows 应用商店 (web)"如果查询 2018 年 3 月 23 日之前的数据)</li><li>"组织批量购买"</li><li>"其他"</li></ul>                                                                                            |
 | osVersion           | 字符串  | 发生购置行为的操作系统版本。 对于此方法，此值始终是"Windows 10"。                                                                                                   |
 | market              | 字符串  | 发生购置行为的市场的 ISO 3166 国家/地区代码。                                                                                                                                                                  |
-| gender              | 字符串  | <p>用于指定进行购置的用户的性别的以下字符串之一：</p> <ul><li>"m"</li><li>"f"代表</li><li>"未知"</li></ul>                                                                                                    |
-| age            | 字符串  | <p>用于指示进行购置的用户的年龄段的以下字符串之一：</p> <ul><li>"小于 13"</li><li>"13-17"</li><li>"18 至 24"</li><li>"25 34"</li><li>"35-44"</li><li>"44-55"</li><li>"大于 55"</li><li>"未知"</li></ul>                                                                                                 |
-| acquisitionType     | 字符串  | <p>下列字符串之一，用于指示购置类型：</p> <ul><li>"免费"</li><li>"试用版"</li><li>"付款"</li><li>"促销充值码"</li><li>"Iap"</li><li>"订阅 Iap"</li><li>"私人受众"</li><li>"预顺序"</li><li>"Xbox Game Pass"（或者"Game Pass"如果查询 2018 年 3 月 23 日之前的数据）</li><li>"磁盘"</li><li>"预付的码"</li><li>"收费预顺序"</li><li>"取消预顺序"</li><li>"失败预顺序"</li></ul>                                                                                                    |
+| gender              | 字符串  | <p>用于指定进行购置的用户的性别的以下字符串之一：</p> <ul><li>"m"</li><li>"f"</li><li>"未知"</li></ul>                                                                                                    |
+| age            | 字符串  | <p>用于指示进行购置的用户的年龄段的以下字符串之一：</p> <ul><li>"小于 13"</li><li>"13 17"</li><li>"18 至 24"</li><li>"25 34"</li><li>"35 44"</li><li>"44-55"</li><li>"大于 55"</li><li>"未知"</li></ul>                                                                                                 |
+| acquisitionType     | 字符串  | <p>下列字符串之一，用于指示购置类型：</p> <ul><li>"免费"</li><li>"试用"</li><li>"付款"</li><li>"促销充值码"</li><li>"Iap"</li><li>"订阅 Iap"</li><li>"私人受众"</li><li>"预顺序"</li><li>"Xbox Game Pass"（或者"Game Pass"查询 2018 年 3 月 23 日之前的数据）</li><li>"磁盘"</li><li>"预付的码"</li><li>"收费预顺序"</li><li>"取消预顺序"</li><li>"失败预顺序"</li></ul>                                                                                                    |
 | acquisitionQuantity | 整数 | 发生的购置数。                        |
 
 

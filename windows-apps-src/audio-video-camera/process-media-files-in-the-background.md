@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: 本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。
 title: 在后台处理媒体文件
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569808"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716675"
 ---
 # <a name="process-media-files-in-the-background"></a>在后台处理媒体文件
 

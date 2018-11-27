@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 向基元应用纹理
 description: 下面，我们将使用之前在“对基元使用深度和效果”中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 纹理, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 437c861e6d3017d83b520732dd0e279d882835c5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577741"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717650"
 ---
 # <a name="apply-textures-to-primitives"></a>向基元应用纹理
 
@@ -34,7 +32,6 @@ ms.locfileid: "7577741"
 
 <a name="instructions"></a>说明
 ------------
-
 ### <a name="1-defining-variables-for-a-textured-cube"></a>1. 为纹理化的立方体定义变量
 
 首先，我们需要为纹理化的立方体定义 **BasicVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置、方向和纹理以及查看立方体的方式。 或者，按照上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)的类似方法来声明变量。
