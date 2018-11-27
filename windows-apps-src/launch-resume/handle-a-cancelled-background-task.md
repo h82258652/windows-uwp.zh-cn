@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 处理取消的后台任务
 description: 介绍如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10，uwp，后台任务
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581663"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701844"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 

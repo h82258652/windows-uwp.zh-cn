@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 本主题介绍如何使用 C++/WinRT 注册和撤销事件处理委托。
 title: 在 C++/WinRT 中使用委托处理事件
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ca257de29be8e732e05c343a4b782b1676627bf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f30ff39b0dcb54cd50808381bcb30e58e7dfe07d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554268"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700726"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用代理处理事件
 

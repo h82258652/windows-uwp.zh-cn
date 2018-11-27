@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows10 版本 1607 API 更改
 description: 开发人员可以使用以下列表在 Windows 10 版本 1607 中标识新的或更改的命名空间
 keywords: 新增功能, 更新, Windows 10, 1607, 14393, 周年
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c6ea939e96a2172c9f008d2238d5a84c228afe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1635ab0d7043057c09a3e9ac451ccdba1410b471
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553824"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706239"
 ---
 # <a name="new-apis-in-windows-10-build-14393"></a>Windows 10 版本 14393 中的新增 API
 

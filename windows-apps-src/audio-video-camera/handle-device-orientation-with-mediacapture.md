@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: af3941c0-3508-4ba2-a79e-fc71657c605f
 description: 本文将向你展示在使用帮助程序类捕获照片和视频时，如何处理设备方向。
 title: 使用 MediaCapture 处理设备方向
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1367c880bd6dde573ab4fc30733ed9d1fefa6b0b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 866a3b02d67409d03fccf427663de65cc94919b2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560781"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701386"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>使用 MediaCapture 处理设备方向
 当你的应用捕获要在应用之外查看的照片或视频时，如保存到用户设备上的某个文件中或在线共享，请务必使用正确的方向元数据对该图像进行编码，以便当其他应用或设备显示该图像时，方向正确。 确定要包含在媒体文件中的正确方向数据可能是项非常复杂的任务，因为有几个变量需要考虑，如设备底盘的方向、屏幕的方向以及相机在底盘上的位置（是前置相机还是后置相机）。 

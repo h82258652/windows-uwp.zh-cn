@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 在应用程序清单中声明后台任务
 description: 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 343cca5b89dbe5fd7e1309b9487e8939218203d0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4527cface4681bf4866249c6398d43e6af782725
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559663"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700485"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 

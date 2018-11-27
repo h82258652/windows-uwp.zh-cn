@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: Device Portal SMB API 参考
 description: 了解如何以编程方式访问 SMB API。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a337fe722d73a08c1c75a84478fc31e5bdf6b03
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e248a6ff666efe7dca262daa81a21ab44a4dc5aa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562426"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704846"
 ---
 # <a name="developer-folder-api-reference"></a>开发人员文件夹 API 参考   
 你可以使用标准文件资源管理器来访问 Xbox One 中与开发相关的文件。 这使你可以轻松查看文件，并将文件从电脑重新放置到主机。

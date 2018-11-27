@@ -4,17 +4,15 @@ description: Direct3D 支持多种基元拓扑，后者定义管道（如点列�
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
 keywords:
 - 基元拓扑
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d7456cd773196520e066062c664f5e3073941dfe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 85d1c41fc10f509f3872fb1e4a0af5fa1e1e7c30
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574513"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706210"
 ---
 # <a name="primitive-topologies"></a>基元拓扑
 

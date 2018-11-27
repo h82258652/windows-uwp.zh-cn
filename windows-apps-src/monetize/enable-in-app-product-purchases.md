@@ -1,26 +1,24 @@
 ---
-author: Xansky
 Description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 title: 启用应用内产品购买
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: uwp, 加载项, 应用内购买, IAP, Windows.ApplicationModel.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a203ef79fc6ebb45107cd9ac9d79cadf330f7a5d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565005"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705274"
 ---
 # <a name="enable-in-app-product-purchases"></a>启用应用内产品购买
 
 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 我们在此处显示了如何在应用中启用这些产品。
 
 > [!IMPORTANT]
-> 本文介绍如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员来支持应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 **Windows.Services.Store**命名空间支持最新的加载项类型，如应用商店管理的易耗型加载项和订阅，并且设计为与将来合作伙伴中心和应用商店支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关启用应用内产品购买使用**Windows.Services.Store**命名空间的详细信息，请参阅[本文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
+> 本文介绍如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员来支持应用内产品购买。 此命名空间不再更新新功能，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间。 **Windows.Services.Store**命名空间支持最新的加载项类型，如应用商店管理的易耗型加载项和订阅，并且设计为与将来合作伙伴中心和应用商店支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间在 Windows 10 版本 1607 中引入，它仅可用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或 Visual Studio** 更高版本的项目中。 有关启用使用**Windows.Services.Store**命名空间的应用内产品购买的详细信息，请参阅[本文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
 > [!NOTE]
 > 试用版应用不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
@@ -54,7 +52,7 @@ ms.locfileid: "7565005"
     * “RainbowThemePack”
 
   > [!NOTE]
-  > 在代码中使用的应用内优惠标记必须匹配时指定的[产品 ID](../publish/set-your-add-on-product-id.md#product-id)值[定义为你的应用在合作伙伴中心中为相应加载项](../publish/add-on-submissions.md)。
+  > 在代码中使用的应用内优惠标记必须匹配时指定的[产品 ID](../publish/set-your-add-on-product-id.md#product-id)值[定义为你在合作伙伴中心中的应用的相应加载项](../publish/add-on-submissions.md)。
 
 2.  **在条件块中编码功能**
 

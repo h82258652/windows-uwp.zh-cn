@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 规划从 OpenGL ES 2.0 到 Direct3D 的移植
 description: 如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 2308c0b931b58209d1233205c355ac09680803dd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b17f18876ebc2faead08d8c777c7502e937aef86
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574613"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703091"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>规划从 OpenGL ES 2.0 到 Direct3D 的移植
 

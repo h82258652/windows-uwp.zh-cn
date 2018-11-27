@@ -1,18 +1,16 @@
 ---
-author: msatranjr
 title: 蓝牙 GATT 客户端
 description: 本文概述了适用于通用 Windows 平台 (UWP) 应用，以及针对常见的用例的示例代码的蓝牙通用属性配置文件 (GATT) 客户端。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 345e6f82ddf97c2595dad0029ca432f075a6190b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572700"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703594"
 ---
 # <a name="bluetooth-gatt-client"></a>蓝牙 GATT 客户端
 

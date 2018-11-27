@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。
 title: TemplateBinding 标记扩展
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
-ms.author: jimwalk
 ms.date: 10/29/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554085"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702325"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 

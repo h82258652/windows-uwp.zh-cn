@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 提交 API 中的此方法终止软件包外部测试版的软件包推出。
 title: 终止外部测试版的推出
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 外部测试版提交, 终止
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca3b457158ee1f509591c89ee6ac2819c819326
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571077"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703291"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>终止外部测试版的推出
 
@@ -42,7 +40,7 @@ ms.locfileid: "7571077"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

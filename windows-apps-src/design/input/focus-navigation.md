@@ -1,24 +1,22 @@
 ---
-author: Karl-Bridge-Microsoft
 title: 适用于键盘、手柄、遥控器和辅助功能工具的焦点导航
 Description: ''
 label: ''
 template: detail.hbs
 keywords: 键盘, 游戏控制器, 遥控器, 导航, 定向内部导航, 定向区域, 导航策略, 输入, 用户交互, 辅助功能, 可用性
 ms.date: 03/02/2018
-ms.author: kbridge
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c86847e02c4ba987f8b1dcc42016145b175193
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c76e62a4fcccec91fc6b3a083671ff68af2202e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580597"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705059"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>适用于键盘、手柄、遥控器和辅助功能工具的焦点导航
 

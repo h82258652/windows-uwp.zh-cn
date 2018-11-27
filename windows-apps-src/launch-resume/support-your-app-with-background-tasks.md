@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 使用后台任务支持应用
 description: 此部分中的主题介绍了如何使在后台运行的轻型代码响应触发器。
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
-ms.author: twhitney
 ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2413a27c12a9b36f0fd57482492414e7b5a379b6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568938"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705601"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
@@ -26,14 +24,14 @@ ms.locfileid: "7568938"
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>进程内后台任务和进程外后台任务
 
-有两个可实现后台任务的方法：
+有两种方式实现后台任务：
 
 * 进程内： 应用及其后台进程运行的同一进程中
 * 进程外： 应用及其后台进程运行在单独进程中。
 
 进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-因为后台进程不会使应用崩溃出现问题的进程外后台任务更具复原能力。 但复原的代价在于复杂性会升高来管理应用和后台任务之间的跨进程通信。
+由于出现错误时，后台进程不能使应用崩溃，进程外后台任务是更具复原能力。 但复原的代价来管理应用和后台任务之间的跨进程通信的更为复杂的价格。
 
 进程外后台任务实现为实现[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)接口操作系统在单独进程 (backgroundtaskhost.exe) 中运行的轻型类。 通过使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
@@ -44,7 +42,7 @@ ms.locfileid: "7568938"
 若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 从 windows 10 开始，不再需要将应用锁屏界面上放置以注册后台任务的先决条件。
+> 从 windows 10 开始，不再需要将应用放在锁屏上，为注册后台任务的先决条件。
 
 ## <a name="background-tasks-for-system-events"></a>系统事件的后台任务
 
@@ -75,7 +73,7 @@ ms.locfileid: "7568938"
 
 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 这种情况节省电源，因为可用网络之前，不会执行后台任务。 此条件不提供实时激活。
 
-如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，然后你的后台任务将无法访问网络当处于连接待机模式时 （例如，手机屏幕处于关闭状态时。）
+如果你的后台任务需要网络连接，设置[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以确保后台任务运行时网络，保持。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果你的后台任务不会设置**IsNetworkRequested**，则你的后台任务将无法访问网络当处于连接待机模式时 （例如，当手机屏幕处于关闭状态。）
  
 有关后台任务条件的详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
 
@@ -141,7 +139,7 @@ ms.locfileid: "7568938"
 
 除非你豁免你的应用，以便它可以在节电模式打开时仍可以运行后台任务和接收推送通知，否则当节电模式功能启用时，如果设备未连接到外部电源且电量低于指定剩余电量，它将阻止后台任务运行。 这不会阻止你注册后台任务。
 
-但是，企业应用，并将不会在 Microsoft Store 中发布的应用，请参阅[在后台无限期运行](run-in-the-background-indefinetly.md)若要了解如何使用功能在后台无限期运行后台任务或扩展的执行会话。
+但是，企业应用，并将不会在 Microsoft Store 中发布的应用，请参阅[在后台无限期运行](run-in-the-background-indefinetly.md)，以了解如何使用功能在后台无限期运行后台任务或扩展的执行会话。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>后台任务资源保证实时通信
 
@@ -169,7 +167,7 @@ ms.locfileid: "7568938"
 [处理取消的后台任务](handle-a-cancelled-background-task.md)  
 [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
-在应用启动期间检查你的后台任务注册。 确保你的应用的分组的后台任务中 BackgroundTaskBuilder.AllTasks 存在。 重新注册的那些不存在。 取消注册不再需要的任何任务。 这将确保所有后台任务注册在每次启动应用时都是最新。
+在应用启动期间检查你的后台任务注册。 请确保在 BackgroundTaskBuilder.AllTasks 中存在你的应用取消的后台任务。 重新注册的不存在。 不再需要的任何任务取消。 这将确保所有后台任务注册在每次启动时应用都是最新。
 
 ## <a name="related-topics"></a>相关主题
 

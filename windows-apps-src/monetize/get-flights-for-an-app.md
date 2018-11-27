@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: 在 Microsoft Store 提交 API 中使用此方法，检索注册到你的合作伙伴中心帐户的应用的软件包外部测试版信息。
 title: 获取应用的软件包外部测试版
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556816"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705811"
 ---
 # <a name="get-package-flights-for-an-app"></a>获取应用的软件包外部测试版
 
-在 Microsoft Store 提交 API 中使用此方法列出，为注册到你的合作伙伴中心帐户的应用的软件包外部测试版。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
+在 Microsoft Store 提交 API 中使用此方法，列出注册到你的合作伙伴中心帐户的应用的软件包外部测试版。 有关软件包外部测试版的详细信息，请参阅[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,7 +35,7 @@ ms.locfileid: "7556816"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

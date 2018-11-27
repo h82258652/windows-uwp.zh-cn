@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 使用 URI 启动应用
 description: 本节介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。
 ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a42a59f76da99461b2e2428f5732ca0c433b6540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570270"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705946"
 ---
 # <a name="launch-an-app-with-a-uri"></a>使用 URI 启动应用
 
@@ -29,7 +27,7 @@ ms.locfileid: "7570270"
 | [启动 UWP 应用](launch-store-app.md) | 本主题介绍了 ms-windows-store URI 方案。 应用可以使用此 URI 方案将 UWP 应用启动到 Microsoft Store 中的特定页面。 |
 | [启动 Windows 地图应用](launch-maps-app.md) | 了解如何从你的应用启动 Windows 地图应用。 |
 | [启动“人脉”应用](launch-people-apps.md) | 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。 |
-| [启动屏幕截取](launch-screen-snipping.md) | 了解如何使用 URI 方案来打开新的代码段，或打开代码段和 Sketch 应用。 |
+| [启动屏幕截取](launch-screen-snipping.md) | 了解如何使用 URI 方案来打开新的代码段中，或打开代码段和 Sketch 应用。 |
 | [启用使用应用 URI 处理程序的网站应用](web-to-app-linking.md) | 通过网站功能支持应用推动用户与你的应用的互动。 |
 
 ## <a name="related-topics"></a>相关主题

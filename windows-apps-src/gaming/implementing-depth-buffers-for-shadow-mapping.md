@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 操作实例 -- Direct3D 11 阴影卷深度缓冲区
 description: 本操作实例演示如何使用深度映射呈现阴影卷，并在所有 Direct3D 功能级别的设备上使用 Direct3D 11。
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 阴影卷, 深度缓冲区, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562300"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697260"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
 

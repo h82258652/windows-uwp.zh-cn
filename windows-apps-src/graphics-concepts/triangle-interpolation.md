@@ -4,17 +4,15 @@ description: 在呈现期间，管道会在每个三角形中内插顶点数据�
 ms.assetid: 1A76DD78-CED7-42BE-BA81-B9050CD3AF9B
 keywords:
 - 三角形内插
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 56ce3520248a0fca25230d7ee2a822d827d842a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8017cd75ed3dfd4129d6c15d668648792cc8d0a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561246"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704305"
 ---
 # <a name="triangle-interpolation"></a>三角形内插
 

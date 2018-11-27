@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: 在 Microsoft Store 分析 API 中使用此方法，可获取给定的日期范围和其他可选筛选器的每日应用使用情况数据。
 title: 获取每日应用使用情况
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
-ms.openlocfilehash: 24542f165c0caa2c07db1866c96603916c6ac750
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3460b61e6a9a7c36be6fd87c4dc7fcc1ab811d1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563644"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703341"
 ---
 # <a name="get-daily-app-usage"></a>获取每日应用使用情况
 
@@ -37,7 +35,7 @@ ms.locfileid: "7563644"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -71,7 +69,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                                                                                                                         |
+| 值      | 类型   | 描述                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 包含聚合的使用情况数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。 |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的评价数据超过 10000 行时，就会返回此值。                 |

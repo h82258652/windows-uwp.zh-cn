@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 学习轨迹 - 构建和配置表单
 description: 了解在应用中创建可靠表单所需完成的工作。
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c624a3c666dcc405ee2375738c605ae147b7d9d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575229"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697077"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 

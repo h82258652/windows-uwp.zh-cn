@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 创建和注册进程内后台任务
 description: 创建和注册在前台应用所在的同一进程中运行的进程内任务。
-ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eeac0239bd0c6df38f82fa185c1ed6f7eb3f9dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2a59fe6056661289726fdaa6c2dd26e90d5e3fad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577913"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709016"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
@@ -70,7 +68,7 @@ ms.locfileid: "7577913"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>将你的后台活动代码放置在 OnBackgroundActivated() 中
 
-将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)以它将会触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
+将你的后台活动代码放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)它触发时响应后台触发器。 就像[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)可以视为**OnBackgroundActivated** 。 该方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)参数，其中包含**Run**方法提供的所有内容。 例如，在 App.xaml.cs 中：
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -90,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-有关的更丰富的**OnBackgroundActivated**示例，请参阅[将转换应用服务在其托管应用所在的同一进程中运行](convert-app-service-in-process.md)。
+有关的更丰富的**OnBackgroundActivated**示例，请参阅[转换为与其主机应用相同的进程中运行的应用服务](convert-app-service-in-process.md)。
 
 ## <a name="handle-background-task-progress-and-completion"></a>处理后台任务进度和完成
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 从 OpenGL ES 2.0 移植到 Direct3D 11
 description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植, 图形
 ms.localizationpriority: medium
-ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9af5e42a27e21b8a4300edc4b8171f7abc64bac7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581032"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696868"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>从 OpenGL ES 2.0 移植到 Direct3D 11
 

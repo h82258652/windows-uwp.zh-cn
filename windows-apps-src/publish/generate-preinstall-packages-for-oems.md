@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages so that an OEM can include your app in their OS image.
 title: 生成适用于 OEM 的预安装程序包
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02f7c1ad1a396464532a1c63c925bf9e19600f1b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ab17adc80a643c04ac7793945486c3ff975fde5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561236"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704674"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>生成适用于 OEM 的预安装程序包
 
@@ -22,7 +20,7 @@ ms.locfileid: "7561236"
 
 ## <a name="important-preinstall-policy--limitations"></a>预安装策略及限制重要提示
 
-预安装的应用必须通过[合作伙伴中心](https://partner.microsoft.com/dashboard)，以获取最新的应用商店许可，以便它们可以无法连接到应用商店并接收应用更新进行认证。
+预安装的应用必须通过[合作伙伴中心](https://partner.microsoft.com/dashboard)以获取最新的应用商店许可，它们能够连接到应用商店并接收应用更新进行认证。
 
 任何预安装的应用必须在所有市场中保持免费。
 

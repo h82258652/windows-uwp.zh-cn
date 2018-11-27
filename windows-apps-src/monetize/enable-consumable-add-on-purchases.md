@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: 了解如何使用 Windows.Services.Store 命名空间处理可消耗加载项。
 title: 支持购买可消耗加载项
 keywords: windows 10, uwp, 易耗品, 加载项, 应用内购买, IAP, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4687833b55f1456d298b552f5cce897f8b4eaa1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572926"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705139"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>支持购买可消耗加载项
 
@@ -47,7 +45,7 @@ ms.locfileid: "7572926"
 
 这些示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在 Microsoft Store 中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
 * 必须在合作伙伴中心中[创建一个应用的易耗型加载项](../publish/add-on-submissions.md)。
 
 这些示例中的代码假设：

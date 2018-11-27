@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: UI 导航控制器
 description: 使用 Windows.Gaming.Input UI 导航控制器 API 来检测和读取各种适用于 UI 导航的输入设备。
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
-ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, ui, 导航
 ms.localizationpriority: medium
-ms.openlocfilehash: a0ec2790f6dddf93959a8c826602c0ac622a7d23
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7cc879ba89dc3c70ebc08d948b25f31bc30a3c6e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554559"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696396"
 ---
 # <a name="ui-navigation-controller"></a>UI 导航控制器
 

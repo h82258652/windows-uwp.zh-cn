@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法获取 Xbox Live 游戏中心数据。
 title: 获取 Xbox Live 游戏中心数据
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 游戏中心
 ms.localizationpriority: medium
-ms.openlocfilehash: f565f0fc3799ebf2d23f9dd7b9320323588f4caa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 09c2a2c69e32d151c393c5a0652c1d9de7b4360e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555712"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697860"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>获取 Xbox Live 游戏中心数据
 

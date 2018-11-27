@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 在 DirectX 游戏中加载资源
 description: 大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（例如着色器、纹理、预先定义的网络或其他图形数据）。
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载资源
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554622"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703131"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 

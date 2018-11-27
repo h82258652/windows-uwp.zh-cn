@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新应用提交到合作伙伴中心。
 title: 确认应用提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582074"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697360"
 ---
 # <a name="commit-an-app-submission"></a>确认应用提交
 
@@ -41,7 +39,7 @@ ms.locfileid: "7582074"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

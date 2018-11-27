@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 启用使用应用 URI 处理程序的网站应用
 description: 通过网站功能支持应用推动用户与你的应用的互动。
 keywords: 深层链接 Windows
-ms.author: twhitney
 ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561582"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699325"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>启用使用应用 URI 处理程序的网站应用
 

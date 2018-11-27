@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: 在 Microsoft Store 提交 API 中使用此方法创建加载项，为注册到你 PartnerCenter 帐户的应用。
 title: 创建加载项
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572089"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700176"
 ---
 # <a name="create-an-add-on"></a>创建加载项
 
@@ -40,7 +38,7 @@ ms.locfileid: "7572089"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

@@ -4,17 +4,15 @@ description: 高光照明可标识光照射至物体表面且反射至相机时�
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
 keywords:
 - 高光照明
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570643"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708014"
 ---
 # <a name="specular-lighting"></a>高光照明
 
@@ -57,7 +55,7 @@ Cₛ 的值为：
 -   顶点颜色 2，前提为镜面材料来源是反射顶点颜色，且在顶点声明中提供第二个顶点的颜色。
 -   材料反射颜色
 
-**注意**如果任一镜面材料来源选项和未提供顶点颜色，则使用材料反射颜色。
+**注意**如果使用任何一种反射材料来源选项和未提供顶点颜色，则使用材料反射颜色。
 
  
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 移植游戏循环
 description: 介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 IFrameworkView 来控制全屏 CoreWindow。
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 移植, 游戏循环, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563730"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707611"
 ---
 # <a name="port-the-game-loop"></a>移植游戏循环
 

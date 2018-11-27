@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to pin a secondary tile from your UWP app.
 title: 固定辅助磁贴
 label: Pin secondary tiles
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fcea65a43ec3ca3d7e29056bec129e0f03d4229
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6fda249e38ddc9126816b0ea479ec0339fc6202b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573583"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703737"
 ---
 # <a name="pin-secondary-tiles"></a>固定辅助磁贴
 

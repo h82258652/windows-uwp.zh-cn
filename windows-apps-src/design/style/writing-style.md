@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 写入样式
 description: 要让应用的文本看上去与其设计自然融为一体，使用正确的语音和语气非常重要。
 keywords: UWP, Windows 10, 文本, 编写, 语音, 语气, 设计, UI, UX
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 500eb490083dfa631f9ff84195ec3ae86027e3ab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b09265164ccd922ab310c06e6c2bd14b6d7a841c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576095"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697057"
 ---
 # <a name="writing-style"></a>写入样式
 

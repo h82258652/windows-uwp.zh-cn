@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内指定应用程序的广告市场活动性能聚合数据。
 title: 获取广告市场活动性能数据
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告市场活动
 ms.localizationpriority: medium
-ms.openlocfilehash: c9d348ffc0895d5adb16886c5a66af14a1884b8b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569027"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697590"
 ---
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
@@ -43,7 +41,7 @@ ms.locfileid: "7569027"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                |
+| 标头        | 类型   | 描述                |
 |---------------|--------|---------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -82,7 +80,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明  |
+| 值      | 类型   | 描述  |
 |------------|--------|---------------|
 | 值      | 数组  | 包含广告市场活动性能聚合数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[市场活动性能对象](#campaign-performance-object)部分。          |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 5，但查询的数据超过 5 项时，就会返回此值。 |

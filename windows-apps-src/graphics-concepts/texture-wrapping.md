@@ -4,17 +4,15 @@ description: 纹理环绕通过使用为每个顶点指定的纹理坐标，改�
 ms.assetid: C28FB369-9A91-4D57-A96D-4A5D36484B35
 keywords:
 - 纹理环绕
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 28dcb134b87ac136b341d5b1f349ac9d656ef642
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6618b7573be7cd39f703299b9418d1575297120e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553451"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706344"
 ---
 # <a name="texture-wrapping"></a>纹理环绕
 

@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
 description: 配置 Windows 10 设备进行开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
-ms.author: quradic
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0355b5e29a450b909bf6dcacf1c1b88c80ff1335
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575826"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697210"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 

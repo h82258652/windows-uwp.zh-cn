@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
 description: 使用本部分中的代码示例了解有关使用 Microsoft Store 提交 API 的详细信息。
 title: 提交 API 的代码示例
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10，uwp，Microsoft Store 提交 API，代码示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9c2acbdd6c45c00ba96bdc11a8273a66a67116
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60668ba81bbaefe2c190f7212618684797366bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558169"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707928"
 ---
 # <a name="code-examples-for-the-submission-api"></a>提交 API 的代码示例
 

@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 概念审批
 description: 了解如何提交产品以供概念审批，产品需要通过该审批才能在 Xbox 上运行或使用 Xbox Live。
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
-ms.author: elcowle
 ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 概念审批
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b63e3002d6816b30a71c775cfcf87817d4f9879
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561450"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697740"
 ---
 # <a name="concept-approval"></a>概念审批
 

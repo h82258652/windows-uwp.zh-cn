@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 飞行杆
 description: 使用 Windows.Gaming.Input 飞行杆 API 可从飞行杆读取输入。
 ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
-ms.author: wdg-dev-content
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 飞行杆
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564242"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707532"
 ---
 # <a name="flight-stick"></a>飞行杆
 

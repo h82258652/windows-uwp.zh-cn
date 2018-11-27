@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除现有加载项提交。
 title: 删除加载项提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 删除, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cdcd74b86ce846f19f8a4eb912781762adb66a2d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581561"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700322"
 ---
 # <a name="delete-an-add-on-submission"></a>删除加载项提交
 
@@ -37,7 +35,7 @@ ms.locfileid: "7581561"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

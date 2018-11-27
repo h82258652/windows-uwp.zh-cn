@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: 使用 Microsoft Store 分析 API 中的此方法，可获取应用的特定错误的详细数据。
 title: 获取应用中的错误的详细信息
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误, 详细信息
 ms.localizationpriority: medium
-ms.openlocfilehash: e947314da1309c3f31af292bc70addbad8b0d4d9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5176e123d57b8bcc5d4981acc91b22329ad4c643
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566037"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702951"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>获取应用中的错误的详细信息
 
@@ -78,7 +76,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型    | 说明    |
+| 值      | 类型    | 描述    |
 |------------|---------|------------|
 | 值      | array   | 包含详细错误数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[错误详细信息值](#error-detail-values)部分。          |
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |

@@ -4,17 +4,15 @@ description: 磁贴池可与传统资源等其他进程共享。 涉及无法跨
 ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords:
 - 跨进程和设备共享的流式资源
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f9bc985b69b71bedfd8d198f2a313f073b81a7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a0bff43cfd26c43bb5f75f37a66c55e556429470
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571845"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703251"
 ---
 # <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>跨进程和设备共享的流式资源
 

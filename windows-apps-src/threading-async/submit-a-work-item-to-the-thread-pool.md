@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: 向线程池提交工作项
 description: 了解如何通过向线程池提交工作项，在单独的线程中完成工作。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: fe73520782b18fb7419807695296bc6487f9c018
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579923"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705352"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
@@ -352,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-你可以了解详情，请在的[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)为 Windows8.1，编写此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
+你可以了解详情，请在[创建 ThreadPool 工作项示例](http://go.microsoft.com/fwlink/p/?LinkID=328569)编写 Windows8.1，此快速入门下载代码并在 win_unap windows 10 应用中重复使用的源代码。
 
 ## <a name="related-topics"></a>相关主题
 

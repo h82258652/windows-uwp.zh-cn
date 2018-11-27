@@ -1,18 +1,16 @@
 ---
 title: ARM 上的程序兼容性疑难解答
-author: msatranjr
 description: 介绍当你的应用无法在 ARM 上正常工作时如何调整兼容性设置
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, 兼容性疑难解答, 基于 ARM 的 windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572317"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701134"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程序兼容性疑难解答
 模拟以支持 x86 应用是为基于 ARM64 的 Windows 10 创建的一项新功能。 有时，模拟可以执行优化，但无法提供最佳体验。 你可以使用程序兼容性疑难解答切换 x86 应用的模拟设置，从而减少默认优化并有可能提高兼容性。

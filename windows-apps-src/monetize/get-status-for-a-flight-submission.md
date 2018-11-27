@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: 在 Microsoft Store 提交 API 中使用此方法，可获取软件包外部测试版提交的状态。
 title: 获取软件包外部测试版提交的状态
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 状态
 ms.localizationpriority: medium
-ms.openlocfilehash: 4378df5333e29dfe570ff50efd37b0361b9a6ca9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1cd898c51d694d2dd60185623126c7f566af0f55
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560598"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697390"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>获取软件包外部测试版提交的状态
 
@@ -38,7 +36,7 @@ ms.locfileid: "7560598"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

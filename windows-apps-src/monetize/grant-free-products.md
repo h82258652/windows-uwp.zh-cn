@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 在 Microsoft Store 购买 API 中使用此方法，可向给定用户授予免费应用或加载项。
 title: 授予免费产品
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 授予产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 27503148d4406cb0ba1c2ce9782ca7131c8ce081
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75edbe720e2e4483432d3d865650e5d7e7a24b40
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578533"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703451"
 ---
 # <a name="grant-free-products"></a>授予免费产品
 
@@ -42,7 +40,7 @@ ms.locfileid: "7578533"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 说明                                                                                           |
+| 标头         | 类型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |

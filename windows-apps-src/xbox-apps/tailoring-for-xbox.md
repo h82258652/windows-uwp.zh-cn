@@ -1,18 +1,16 @@
 ---
-author: payzer
 title: Xbox 最佳做法
 description: 如何针对 Xbox 优化你的应用程序。
-ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e64feb8938be3e7338c87acdf8fd18fb13e525b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554147"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699487"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 

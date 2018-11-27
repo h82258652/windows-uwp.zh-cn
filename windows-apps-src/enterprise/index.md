@@ -2,18 +2,16 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: 此路线图提供适用于 windows 10 和通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
 title: 企业版
-author: awkoren
-ms.author: alkoren
 ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b3106df6d8a1fd85b92aa06dd5c5cf7a7f79ded5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579072"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696703"
 ---
 # <a name="enterprise"></a>企业版
 
@@ -187,7 +185,7 @@ Windows 10 提供了一套适用于应用开发人员保护其用户、 公司�
 
 操作-谈乔什和/或 Karl 才能一起获取更多侧重于企业的示例。
 
-| 主题 |  说明 |
+| 主题 |  描述 |
 |------ |--------------|
 | [VanArsdel 清单示例](https://github.com/Microsoft/InventorySample) | 示例 Windows 10 应用程序 （使用通用 Windows 平台） 侧重于在业务线方案中，显示了如何在桌面应用程序使用最新的 Windows 功能。 该示例基于创建和管理客户、 订单和产品的虚构公司 VanArsdel。
 突出显示 MVVM，SQL 数据库，实体框架。 列出其他人。|

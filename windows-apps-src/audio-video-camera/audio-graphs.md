@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
 description: 本文介绍如何使用 Windows.Media.Audio 命名空间中的 API 来创建音频路由、混合和处理方案的音频图。
 title: 音频图
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cdd1548a4d120027afd06a178cc338c88cb5cc4b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0211e451c3e700da34d24e39a5045f9e046020a8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565876"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701200"
 ---
 # <a name="audio-graphs"></a>音频图
 

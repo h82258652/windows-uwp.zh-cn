@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Marble Maze 示例基础
-description: 本文档介绍了 Marble Maze 项目; 的基本特征例如，它如何使用 Visual c + + Windows 运行时环境中，如何创建和构造，它是以及如何生成它。
+description: 本文档介绍了 Marble Maze 项目; 的基本特征例如，它如何在 Windows 运行时环境中使用 Visual c + +、 如何创建和构造，它是和如何生成它。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
-ms.author: elcowle
 ms.date: 08/22/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 基础知识
 ms.localizationpriority: medium
-ms.openlocfilehash: f595c8f429c93a13d6342c281a90f3b0f5741621
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577018"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704126"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 示例基础
 
@@ -36,7 +34,7 @@ ms.locfileid: "7577018"
 ## <a name="creating-the-visual-studio-project"></a>创建 Visual Studio 项目
 
 
-如果你已下载并解压缩了该示例，你可以在 Visual Studio 中打开的**MarbleMaze_VS2017.sln**文件 （在**c + +** 文件夹），并且你将有前面你的代码。
+如果你已下载并解压缩了该示例，你可以在 Visual Studio 中打开的**MarbleMaze_VS2017.sln**文件 （在**c + +** 文件夹中），并且你将有前面你的代码。
 
 当我们为 Marble Maze 创建了 Visual Studio 项目时，我们从一个现有项目开始。 但是，如果现有的项目没有提供你的 DirectX UWP 游戏所需的基本功能，建议你基于 Visual Studio **DirectX 11 应用（通用 Windows）** 模板创建一个项目，因为它提供了基本的有效 3D 应用程序。 要实现此目的，请执行下列步骤：
 
@@ -44,7 +42,7 @@ ms.locfileid: "7577018"
 
 2. 在**新建项目**窗口的左边栏中选择**已安装 > 模板 > Visual c + +**。
 
-3. 在中间列表中，选择**DirectX 11 应用 (通用 Windows)**。 如果你没有看到此选项，你可能不具有安装所需的组件&mdash;有关如何安装其他组件的信息，请参阅[修改 Visual Studio 2017 中通过添加或删除的工作负载和组件](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)。
+3. 在中间的列表中，选择**DirectX 11 应用 (通用 Windows)**。 如果你看不到此选项，你可能不具有安装所需的组件&mdash;有关如何安装其他组件的信息，请参阅[修改 Visual Studio 2017 中通过添加或删除的工作负载和组件](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)。
 
 4. 为你的项目**名称**、**位置**的文件存储和**解决方案的名称**，并单击**确定**。
 
@@ -72,14 +70,14 @@ ms.locfileid: "7577018"
 -   使用触摸、 A 或开始屏幕上控制器或鼠标来挑选一个菜单项的按钮。
 -   使用触摸、加速计、左操纵杆或鼠标来倾斜迷宫。
 -   使用触摸、 A 或开始按钮上控制器或鼠标来关闭菜单，例如高分表。
--   使用开始按钮上的控制器或键盘上的 P 键暂停或恢复游戏。
+-   使用控制器或 P 键键盘上的开始按钮暂停或恢复游戏。
 -   使用控制器上的“后退”按钮或键盘上的 Home 键重新启动游戏。
 -   高分表可见时，使用后退按钮上控制器或键盘上的 Home 键清除所有分数。
 
 ##  <a name="code-conventions"></a>代码转换
 
 
-Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UWP 应用的编程接口。 此类应用使用经授权的函数、 数据类型和设备，并从 Microsoft 应用商店进行分配。 在最低级别上，Windows 运行时由一个应用程序二进制接口 (ABI) 组成。 ABI 是一个低级二进制合约，它使得 Windows 运行时 API 能够访问多种编程语言，例如 JavaScript、.NET 语言和 Visual C++。
+Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UWP 应用的编程接口。 此类应用使用经授权的函数、 数据类型和设备，并从 Microsoft Store 分发。 在最低级别上，Windows 运行时由一个应用程序二进制接口 (ABI) 组成。 ABI 是一个低级二进制合约，它使得 Windows 运行时 API 能够访问多种编程语言，例如 JavaScript、.NET 语言和 Visual C++。
 
 为了从 JavaScript 和 .NET 调用 Windows 运行时 API，这些语言需要特定于每种语言环境的投影。 当你从 JavaScript 或 .NET 调用 Windows 运行时 API 时，你调用的是投影，而投影又会调用基础的 ABI 函数。 尽管你可以直接从 C++ 调用 ABI 函数，但 Microsoft 也为 C++ 提供了投影，因为这些投影可让使用 Windows 运行时 API 更简单，同时仍然保持较高的性能。 Microsoft 还提供了明确支持 Windows 运行时投影的 Visual C++ 的语言扩展。 其中很多语言扩展都和 C++/CLI 语言有着类似的语法。 但是，原生应用将此语法用于 Windows 运行时，而不是公共语言运行时 (CLR)。 对象引用或乘幂号 (^) 修饰符是这种新语法的一个重要部分，因为它支持以引用计数的方式自动删除运行时对象。 无需调用 [AddRef](https://msdn.microsoft.com/library/windows/desktop/ms691379) 和 [Release](https://msdn.microsoft.com/library/windows/desktop/ms682317) 等方法来管理 Windows 运行时对象的生命周期，运行时在没有其他组件引用该对象时删除它，例如在它离开范围或你将所有引用设置为 **nullptr** 时。 使用 Visual C++ 创建 UWP 应用的另一个重要部分是 **ref new** 关键字。 使用 **ref new** 而不是 **new** 来创建引用计数的 Windows 运行时对象。 有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822)。
 
@@ -121,7 +119,7 @@ Marble Maze 使用异常处理作为处理意外错误的主要方式。 尽管�
 
 通过使用 Microsoft 源代码注释语言 (SAL)，你可注释或描述函数使用其参数的方式。 SAL 注释也可描述返回值。 SAL 注释可与 C/C++ 代码分析工具一起发现 C 和 C++ 源代码中的可能缺陷。 该工具报告的常见编码错误包括：缓冲区溢出、未初始化的内存、null 指针取消引用，以及内存和资源泄漏。
 
-请考虑**basicloader:: Loadmesh**方法，它在[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)中声明。 此方法使用`_In_`若要指定该*文件名*是一个输入的参数 （并因此将仅从读取），`_Out_`指定*vertexBuffer*和*indexBuffer*输出参数 （并因此将仅写入），和`_Out_opt_`指定， *vertexCount*和*indexCount*是可选的输出参数 （和可能写入）。 因为 *vertexCount* 和 *indexCount* 是可选的输出参数，所以允许它们使用 **nullptr**。 C/C++ 代码分析工具检查对此方法的调用，以确保它传递的参数满足这些条件。
+请考虑在[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)中声明**basicloader:: Loadmesh**方法。 此方法使用`_In_`若要指定该*文件名*是一个输入的参数 （并因此将仅从读取），`_Out_`指定*vertexBuffer*和*indexBuffer*输出参数 （并因此将仅写入），和`_Out_opt_`指定， *vertexCount*和*indexCount*是可选的输出参数 （和可能写入）。 因为 *vertexCount* 和 *indexCount* 是可选的输出参数，所以允许它们使用 **nullptr**。 C/C++ 代码分析工具检查对此方法的调用，以确保它传递的参数满足这些条件。
 
 ```cpp
 void LoadMesh(
@@ -133,7 +131,7 @@ void LoadMesh(
     );
 ```
 
-若要对你的应用，在菜单栏上，执行代码分析选择**生成 > 对解决方案运行代码分析**。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](https://docs.microsoft.com/visualstudio/code-quality/analyzing-c-cpp-code-quality-by-using-code-analysis)。
+若要执行代码分析你的应用，在菜单栏上，选择**生成 > 对解决方案运行代码分析**。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](https://docs.microsoft.com/visualstudio/code-quality/analyzing-c-cpp-code-quality-by-using-code-analysis)。
 
 可用注释的完整列表在 sal.h 中定义。 有关详细信息，请参阅 [SAL 注释](https://docs.microsoft.com/cpp/c-runtime-library/sal-annotations)。
 

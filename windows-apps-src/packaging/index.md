@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: 打包应用
 description: 本节包含或链接到有关打包通用 Windows 平台 (UWP) 应用的文章。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575684"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703051"
 ---
 # <a name="packaging-apps"></a>打包应用
 

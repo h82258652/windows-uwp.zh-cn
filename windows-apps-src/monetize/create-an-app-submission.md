@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: 在 Microsoft Store 提交 API 中使用此方法创建新提交，为注册到你的合作伙伴中心帐户的应用。
 title: 创建应用提交
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建应用提交
 ms.localizationpriority: medium
-ms.openlocfilehash: fd97efca42049fd9f5adc4d051688074d91132fa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562446"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702851"
 ---
 # <a name="create-an-app-submission"></a>创建应用提交
 
@@ -41,7 +39,7 @@ ms.locfileid: "7562446"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

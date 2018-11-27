@@ -4,17 +4,15 @@ description: 通常，为顶点指定的点不与屏幕上的像素精确匹配�
 ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
 keywords:
 - 光栅化规则简介
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65522195b9729ddd4f2ebeb193f43c905359eda2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d1907be029254d99be9e6158c93c179baea1fb0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575375"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698806"
 ---
 # <a name="introduction-to-rasterization-rules"></a>光栅化规则简介
 

@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 在计时器上运行后台任务
 description: 了解如何计划一次性后台任务，或运行周期性后台任务。
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: a03a26262d03d93ea2f23f2a61ba1ee603a2d507
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b64ca35e47044cbc2320ca77c1d1ba2e3d66fcb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553358"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698836"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 

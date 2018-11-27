@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除现有软件包外部测试版提交。
 title: 删除软件包外部测试版提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交, 删除, 软件包外部测试版
 ms.localizationpriority: medium
-ms.openlocfilehash: 2196a6b7023a062905ae721ebdb536e2c8044057
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1222c730f4e7819037ee42fc0897cf2924586b25
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564147"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707888"
 ---
 # <a name="delete-a-package-flight-submission"></a>删除软件包外部测试版提交
 
@@ -37,7 +35,7 @@ ms.locfileid: "7564147"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -47,7 +45,7 @@ ms.locfileid: "7564147"
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 应用（包含要删除的软件包外部测试版提交）的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字符串 | 必需。 软件包外部测试版（包含要删除的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 对于在合作伙伴中心中创建的外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
+| flightId | 字符串 | 必需。 软件包外部测试版（包含要删除的提交）的 ID。 此 ID 包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。 在合作伙伴中心中创建外部测试版，此 ID 也包含在合作伙伴中心中的外部测试版页面的 URL 中可用。  |
 | submissionId | 字符串 | 必需。 要删除的提交的 ID。 此 ID 包含在[创建软件包外部测试版提交](create-a-flight-submission.md)请求的响应数据中。 对于在合作伙伴中心中创建的提交，此 ID 也包含在合作伙伴中心中的提交页面的 URL 中可用。  |
 
 

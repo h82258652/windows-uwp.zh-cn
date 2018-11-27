@@ -2,18 +2,16 @@
 title: 指纹生物识别
 description: 本文介绍了如何将指纹生物识别添加到通用 Windows 平台 (UWP) 应用中。
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccd2efee17c7f1205bcac6f05b016af7e6c6dae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573517"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699838"
 ---
 # <a name="fingerprint-biometrics"></a>指纹生物识别
 

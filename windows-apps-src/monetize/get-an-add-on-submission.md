@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: 在 Microsoft Store 提交 API 中使用此方法，可获取现有加载项提交的数据。
 title: 获取加载项提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ad6381562b37b1a759a575e070edd6b1bf63402d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a87f0e694434774db215f3f5323588f94ec0465b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565833"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697570"
 ---
 # <a name="get-an-add-on-submission"></a>获取加载项提交
 
@@ -38,7 +36,7 @@ ms.locfileid: "7565833"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

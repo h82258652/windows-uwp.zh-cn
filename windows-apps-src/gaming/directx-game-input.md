@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: DirectX 游戏的游戏输入
 description: DirectX 游戏的游戏输入。
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 输入, 鼠标, 触摸, 控件
 ms.localizationpriority: medium
-ms.openlocfilehash: 8787400cc1d77afb32df51ba943ae72a99c2b470
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581545"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707522"
 ---
 # <a name="game-input-for-directx-games"></a>DirectX 游戏的游戏输入
 

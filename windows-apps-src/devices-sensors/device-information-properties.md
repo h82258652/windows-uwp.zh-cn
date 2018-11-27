@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: 设备信息属性
 description: 每台设备都具有相关联的 DeviceInformation 属性，在你需要特定的信息或生成设备选择器时可以使用这些属性。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca733ef88eb8b575b8974f71f9395800d5de3875
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558607"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703857"
 ---
 # <a name="device-information-properties"></a>设备信息属性
 

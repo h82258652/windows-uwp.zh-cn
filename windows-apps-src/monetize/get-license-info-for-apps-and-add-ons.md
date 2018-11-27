@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: 了解如何使用 Windows.Services.Store 命名空间获取当前应用及其加载项的许可证信息。
 title: 获取应用和加载项的许可证信息
-ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 许可证, 应用, 加载项, 应用内购买, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 545e052794a8649daa62872cf74b0986cb7bf4b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576901"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705377"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>获取应用和加载项的许可证信息
 
@@ -26,8 +24,8 @@ ms.locfileid: "7576901"
 
 本示例有以下先决条件：
 * 适用于面向 **Windows 10 周年纪念版（10.0；版本 14393）或**更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
-* 如果你想获取应用的加载项的许可证信息，还必须[创建合作伙伴中心中的加载项](../publish/add-on-submissions.md)。
+* 你有合作伙伴中心中的[创建应用提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，并在应用商店中发布此应用。 在测试应用期间，你可以选择将应用配置为在应用商店中隐藏。 有关详细信息，请参阅我们的[测试指南](in-app-purchases-and-trials.md#testing)。
+* 如果你想获取应用的加载项的许可证信息，则必须[创建合作伙伴中心中的加载项](../publish/add-on-submissions.md)。
 
 此示例中的代码假设：
 * 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。

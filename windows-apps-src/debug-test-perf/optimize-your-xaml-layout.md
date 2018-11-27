@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: 优化 XAML 布局
 description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可提高 XAML 应用的布局性能的简单步骤。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ab894a9ba9c51b091e593503be2db57ba3b1a913
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7576911"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708747"
 ---
 # <a name="optimize-your-xaml-layout"></a>优化 XAML 布局
 
@@ -136,7 +134,7 @@ ms.locfileid: "7576911"
 
 常见的 UI 要求是具有元素互相重叠的布局。 通常填充、边距、对齐和转换用于以这种方式定位元素。 已优化 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控件以提高重叠元素的布局性能。
 
-**重要**若要查看改进，请使用单个单元[**网格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要提示**若要查看改进，请使用单个单元[**网格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### <a name="examples"></a>示例
 

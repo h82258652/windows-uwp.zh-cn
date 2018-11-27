@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: 为 Device Portal 编写自定义插件
 description: 了解如何编写使用 Windows Device Portal 承载网页并提供诊断信息的 UWP 应用。
-ms.author: pafarley
 ms.date: 03/24/2017
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: cceceae4b6b9bf4cecd3c3bee36344f4e5a1eed1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560290"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705591"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>为 Device Portal 编写自定义插件
 

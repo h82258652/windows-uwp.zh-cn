@@ -1,25 +1,23 @@
 ---
-author: PatrickFarley
 title: 使用应用服务和扩展
 description: 本部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。
 ms.assetid: 30003e60-492b-4511-b426-24b97d70694a
-ms.author: pafarley
 ms.date: 10/04/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a2fd10df36954b611745135b77872fa3597ac55d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b6e85c47c569f1a4a0a39a8ce12bc7c091316c10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568648"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698941"
 ---
 # <a name="use-app-services-and-extensions"></a>使用应用服务和扩展
 
 本部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。
 
-| 主题 | 说明 |
+| 主题 | 描述 |
 |-------|-------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
 | [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |

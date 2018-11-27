@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 本主题介绍如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。
 title: 从 C++/CX 移动到 C++/WinRT
-ms.author: stwhi
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fe84747624c9a855df5520322546b83772379b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a6a778f1efe16d56c24e437a0c25a8b8c5e3bc7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560195"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700746"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 

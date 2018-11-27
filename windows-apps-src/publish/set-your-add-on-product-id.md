@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
 title: 设置加载项产品类型和产品 ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 14d0cd40e0a7a170a835b000dc66ec683c2fb59c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51807b96d80245b8dc5b22f1f376f603285d518a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573563"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705824"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 
@@ -42,7 +40,7 @@ ms.locfileid: "7573563"
 
 易耗型加载项的类型有两种：
 - **开发人员管理的易耗品**：必须在应用中管理平衡和实施情况。 所有的操作系统版本都支持。
-- **应用商店管理的易耗品：** Microsoft 会跟踪运行 Windows 10 版本 1607 或更高版本的所有客户设备的平衡；所有较早的操作系统版本不支持此功能。 若要使用此选项，父产品必须使用 Windows 10 SDK 版本 14393 或更高版本编译。 另请注意，（尽管可以在合作伙伴中心中创建提交，并可随时处理） 发布的父产品前，你无法将应用商店管理的易耗型加载项添加到应用商店。 需要在提交的**属性**步骤中输入应用商店管理的易耗型加载项数量。
+- **应用商店管理的易耗品：** Microsoft 会跟踪运行 Windows 10 版本 1607 或更高版本的所有客户设备的平衡；所有较早的操作系统版本不支持此功能。 若要使用此选项，父产品必须使用 Windows 10 SDK 版本 14393 或更高版本编译。 另请注意，在发布父产品 （但可以在合作伙伴中心中创建提交，并可随时处理） 前，无法将应用商店管理的易耗型加载项添加到应用商店。 需要在提交的**属性**步骤中输入应用商店管理的易耗型加载项数量。
 
 ### <a name="subscription"></a>订阅
 
@@ -56,15 +54,15 @@ ms.locfileid: "7573563"
 
 ## <a name="product-id"></a>产品 ID
 
-无论选择何种产品类型，将需要为加载项输入唯一的产品 ID。 此名称将用于标识在合作伙伴中心，你的加载项，你可以使用此标识符来[引用在代码中加载项](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code)。
+无论选择何种产品类型，将需要为加载项输入唯一的产品 ID。 此名称将用于标识你的加载项在合作伙伴中心，并且你可以使用此标识符来[引用在代码中加载项](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code)。
 
 以下是在选择产品 ID 时应记住的一些事项：
 
--   产品 ID 内必须是唯一的父产品。
+-   产品 ID 必须是唯一的父产品内。
 -   你无法在加载项发布后更改或删除其产品 ID。
 -   产品 ID 的长度不可超过 100 个字符。
 -   产品 ID 不可包含以下任何字符：**&lt; &gt; \* % & : \\ ? + ,**
 -   客户不会看到产品 id。 （稍后，你可以输入一个用于向客户显示的[标题和描述](create-add-on-descriptions.md)。）
--   如果你以前发布的应用支持 Windows Phone 8.1 或更早版本，你必须只使用字母数字字符、 句点和/或下划线在你的产品 id。 如果你使用任何其他类型的字符，该加载项将不可供运行 Windows Phone 8.1 或更早版本的客户购买。
+-   如果你以前发布的应用支持 Windows Phone 8.1 或更早版本，必须只使用字母数字字符、 句点和/或下划线在你的产品 id。 如果你使用任何其他类型的字符，该加载项将不可供运行 Windows Phone 8.1 或更早版本的客户购买。
 
  

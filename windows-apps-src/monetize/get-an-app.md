@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的特定应用相关的信息。
 title: 获取应用
-ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569735"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707908"
 ---
 # <a name="get-an-app"></a>获取应用
 
@@ -37,7 +35,7 @@ ms.locfileid: "7569735"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

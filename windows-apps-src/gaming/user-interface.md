@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DirectX 游戏项目模板
 description: 了解用于创建通用 Windows 平台 (UWP) 和 DirectX 游戏的模板。
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 模板
 ms.localizationpriority: medium
-ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556590"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700623"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 游戏项目模板
 

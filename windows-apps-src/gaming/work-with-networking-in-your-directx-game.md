@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 游戏联网
 description: 了解如何在你的 DirectX 游戏中开发并融入联网功能。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 网络, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2697564e703cfe290e33f204125346f3e8bad8ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579208"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702007"
 ---
 # <a name="networking-for-games"></a>游戏网络
 

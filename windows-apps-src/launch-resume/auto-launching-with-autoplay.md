@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 借助自动播放功能自动启动
 description: 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558834"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699094"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
 
@@ -516,7 +514,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 使用**自动播放**系统，应用可以注册各种设备和卷（磁盘）到达事件。 若要注册**自动播放**内容事件，则必须在程序包清单中启用**可移动存储**功能。 此表显示了可以注册的事件及其引发时间。
 
-| 方案                                                           | 事件                              | 说明   |
+| 方案                                                           | 事件                              | 描述   |
 |--------------------------------------------------------------------|------------------------------------|---------------|
 | 使用相机上的照片                                           | **WPD\ImageSource**                | 针对标识为 Windows Portable Devices 且提供 ImageSource 功能的相机引发。 |
 | 使用自动播放器上的音乐                                     | **WPD\AudioSource**                | 针对标识为 Windows Portable Devices 且提供 AudioSource 功能的媒体播放器引发。 |

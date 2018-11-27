@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 用服务、扩展和包扩展应用
 description: 了解如何创建在通用 Windows 平台 (UWP) 应用商店应用更新时运行的后台任务。
-ms.author: twhitney
 ms.date: 05/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 扩展, 组件化, 应用服务, 包, 扩展
 ms.localizationpriority: medium
-ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 110fa8ec9feba1f54155d41b4c726ffb28f71630
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579495"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703071"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>用服务、扩展和包扩展应用
 

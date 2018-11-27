@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: 在 Microsoft Store 提交 API 中使用这些方法来管理已注册到你的合作伙伴中心帐户的应用的加载项。
 title: 管理加载项
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: c3861d5a135e0ee7a688a93a57cce801a05cf9a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51c940fffde3c770f397999e566570410528a1e8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558957"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703391"
 ---
 # <a name="manage-add-ons"></a>管理加载项
 

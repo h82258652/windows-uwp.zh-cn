@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: Explains how to define a ResourceDictionary element and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package.
 MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,17 +7,16 @@ title: ResourceDictionary 和 XAML 资源引用
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51461df47fe92c296fee198a6f2ed1c34e833cd7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571027"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705920"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -204,7 +202,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) 是控件所继承的基类，并且具有 [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement**。
 
-此时，[Page](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [Border](https://msdn.microsoft.com/library/windows/apps/br209250) 都具有资源字典，并且都具有名为“greeting”的资源。 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)名为 textBlock2 是内部**边框**，因此其资源查找**边框**的资源，则该**页面**的资源，然后[应用程序](https://msdn.microsoft.com/library/windows/apps/br242324)资源。 **TextBlock** 将读取“Hola mundo”。
+此时，[Page](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [Border](https://msdn.microsoft.com/library/windows/apps/br209250) 都具有资源字典，并且都具有名为“greeting”的资源。 名为 textBlock2 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)是内部**边框**，因此其资源查找**边框**的资源，则该**页面**的资源和[应用程序](https://msdn.microsoft.com/library/windows/apps/br242324)资源。 **TextBlock** 将读取“Hola mundo”。
 
 若要从代码访问元素的资源，请使用该元素的 [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 在代码（而非 XAML）中访问 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) 的资源，将仅在该字典中查找，而不在父级元素的字典中查找。
 
@@ -451,7 +449,7 @@ sealed partial class App : Application
 
 大部分情况下，[ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 均在 XAML 中专门处理。 你要在 UI 定义文件中将内部的 **ResourceDictionary** 容器和资源声明为 XAML 文件或 XAML 节点集。 然后，使用 XAML 资源引用从 XAML 的其他部分请求这些资源。 不过，在某些特定情况下，你的应用可能需要使用在应用运行时执行的代码来调整 **ResourceDictionary** 的内容，或者至少需要查询 **ResourceDictionary** 的内容以查看是否已定义某个资源。 这些代码调用在 **ResourceDictionary** 实例上执行，所以必须首先通过获得 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 来检索对象树中的即时 ResourceDictionary，或者检索 `Application.Current.Resources`。
 
-在 C\# 或 Microsoft Visual Basic 代码中，你可以使用索引器 ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) 引用给定 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 中的资源。 **ResourceDictionary** 是一个字符串键控字典，因此索引器使用字符串键，而不使用整数索引。 在 VisualC + + 组件扩展 (C + + CX) 的代码，请使用[查找](https://msdn.microsoft.com/library/windows/apps/br208800)。
+在 C\# 或 Microsoft Visual Basic 代码中，你可以使用索引器 ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) 引用给定 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 中的资源。 **ResourceDictionary** 是一个字符串键控字典，因此索引器使用字符串键，而不使用整数索引。 在 VisualC + + 组件扩展 (C + + / CX) 的代码，请使用[查找](https://msdn.microsoft.com/library/windows/apps/br208800)。
 
 当使用代码检查或更改 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 时，API 的行为（如 [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) 或 [Item](https://msdn.microsoft.com/library/windows/apps/jj603134)）不会从直接资源遍历到应用资源；这是仅在加载 XAML 页面时发生的 XAML 分析程序行为。 在运行时，键作用域将自包含到此时所使用的 **ResourceDictionary** 实例中。 但是，该作用域不会扩展到 [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801) 中。
 

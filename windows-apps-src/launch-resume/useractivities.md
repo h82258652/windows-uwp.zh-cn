@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 即便跨设备，也继续用户活动
 description: 本主题介绍如何帮助用户继续执行之前其在应用中，甚至是在多台设备中所执行的操作。
 keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 从我离开的位置继续, project rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561849"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708054"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>即便跨设备，也继续用户活动
 

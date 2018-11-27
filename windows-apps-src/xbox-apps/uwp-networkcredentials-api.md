@@ -1,23 +1,22 @@
 ---
-author: WilliamsJason
-title: 设备门户网络凭据 API 参考
+title: Device Portal 网络凭据 API 参考
 description: 了解如何添加、 删除或以编程方式更新网络凭据。
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e00169f92ee6f0aa48df64ec4a1186f9682b358
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "410114"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705099"
 ---
-# <a name="network-credentials-api-reference"></a>网络凭据 API 参考 （英文）
-您可以添加、 删除或更新使用此 REST API 您 devkit 存储的网络凭据。
+# <a name="network-credentials-api-reference"></a>网络凭据 API 参考
+你可以添加、 删除或更新在使用此 REST API 在开发工具包上的存储的网络凭据。
 
 ## <a name="get-existing-credentials"></a>获取现有凭据
 
 **请求**
 
-您可以获取用户拥有的网络共享的凭据的用户名以及存储的共享的列表。
+你可以获取具有该网络共享凭据的用户的用户名以及存储的共享的列表。
 
 方法      | 请求 URI
 :------     | :-----
@@ -37,10 +36,10 @@ GET | /ext/networkcredential
 
 **响应**   
 
-- JSON 数组按以下格式：
+- 采用以下格式的 JSON 数组：
 * 凭据
   * NetworkPath-网络共享文件夹的路径。
-  * 用户名-已存储凭据的用户名。
+  * 用户名-这具有存储凭据的用户名。
 
 **状态代码**
 
@@ -52,7 +51,7 @@ HTTP 状态代码      | 说明
 4XX | 错误代码
 5XX | 错误代码
 
-## <a name="add-or-update-stored-credentials-for-a-user"></a>添加或更新的用户存储的凭据
+## <a name="add-or-update-stored-credentials-for-a-user"></a>添加或更新为用户存储的凭据
 
 **请求**
 
@@ -64,9 +63,9 @@ POST | /ext/networkcredential
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数      | 说明     | 
+| URI 参数      | 描述     | 
 | ------------------ |-----------------|
-| NetworkPath        | 共享文件夹的网络路径要添加的凭据以访问。 |
+| NetworkPath        | 共享的网络路径要添加凭据来访问。 |
 <br>
 
 **请求标头**
@@ -75,9 +74,9 @@ POST | /ext/networkcredential
 
 **请求正文**
 
-- 下面的 JSON 元素：
+- 以下 JSON 元素：
 * NetworkPath-网络共享文件夹的路径。
-* 用户名-用于存储凭据的用户名。
+* 用户名-存储凭据的用户名。
 * 密码-此用户的新的或更新密码。
 
 **响应**   
@@ -94,7 +93,7 @@ HTTP 状态代码      | 说明
 4XX | 错误代码
 5XX | 错误代码
 
-## <a name="remove-stored-credentials-for-a-share"></a>删除针对共享存储的凭据。
+## <a name="remove-stored-credentials-for-a-share"></a>删除共享存储的凭据。
 
 **请求**
 
@@ -106,9 +105,9 @@ DELETE | /ext/networkcredential
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数      | 说明     | 
+| URI 参数      | 描述     | 
 | ------------------ |-----------------|
-| NetworkPath        | 指向要从中删除存储的凭据的共享的网络路径。 |
+| NetworkPath        | 将从中删除存储的凭据的共享网络路径。 |
 <br>
 
 **请求标头**
@@ -129,7 +128,7 @@ DELETE | /ext/networkcredential
 
 HTTP 状态代码      | 说明
 :------     | :-----
-204 | 为凭据请求是成功的。
+204 | 凭据的请求已成功。
 4XX | 错误代码
 5XX | 错误代码
 

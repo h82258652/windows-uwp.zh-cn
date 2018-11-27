@@ -4,17 +4,15 @@ description: 输出合并 (OM) 阶段将各种类型的输出数据（像素着�
 ms.assetid: ED2DC4A0-2B92-47AF-884A-BFC2183C78B8
 keywords:
 - 输出合并 (OM) 阶段
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e2bbac12ddd3b60b2e4dd78f37b8934a8afea8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555732"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705313"
 ---
 # <a name="output-merger-om-stage"></a>输出合并 (OM) 阶段
 

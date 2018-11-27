@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: 通过保留名称创建应用
 keywords: Windows 10, uwp, 预留名称, 应用名称, 应用名, 名称, 产品名称, 命名, 保留名称, 标题, 名, 题目
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b00ace982bb39b99816013a8491b5b75be765833
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573311"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704633"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>通过保留名称创建应用
 
@@ -24,12 +22,12 @@ ms.locfileid: "7573311"
 在[上载应用程序包](upload-app-packages.md)时，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 值必须与为应用所保留的名称相匹配。 如果使用 Microsoft Visual Studio 创建应用程序包，则将为你填充此特性。
 
 > [!IMPORTANT]
-> 你可以为保留其他名称应用，并且你可以选择使用其中一个引擎在你的应用的已发布版本而不是保留在合作伙伴中心中首先创建你的应用时站点。 但是，请注意，在某些应用的[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)** 将使用你在此处输入的名字。 这些值可以显示给某些用户，且不能更改，因此请确保你保留的名称是适用于此用。
+> 你可以保留其他名称的应用，并且你可以选择使用其中一种在你的应用的已发布版本而不是保留时先在合作伙伴中心中创建你的应用的一个。 但是，请注意，将某些你的应用[标识详细信息](view-app-identity-details.md)，如**程序包系列名称 (PFN)** 中使用你在此处输入的名字。 这些值可以显示给某些用户，且不能更改，因此请确保你保留的名称是适用于此用。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>通过保留新名称创建应用
 
-保留名称是在合作伙伴中心创建应用的第一步。 
+保留名称是在合作伙伴中心中创建应用的第一步。 
 
 1.  在**概述**页面上，单击**创建新应用**。
 2.  在文本框中，输入要使用的名称，然后选择**检查可用性**。 如果该名称可用，你将看到绿色复选标记。 （如果你输入的名称已经由另一个开发人员保留或使用，你将看到一条指示该名称不可用的消息。）
@@ -52,7 +50,7 @@ ms.locfileid: "7573311"
     > 在各种位置显示的实际字符数目可能有所不同，具体取决于分配的长度和你的应用名称所使用的字符类型。 例如，在 Windows 使用的 Segoe UI 字体中，10 个“W”字符占用的空间大约相当于 30 个“I”字符。 由于这一变化，请确保测试你的应用，并验证其名称的显示方式在其磁贴 （如果你选择覆盖应用名称）、 搜索结果和应用本身内。 另外，请考虑应用要采用的每种语言。 请记住，东亚字符往往比拉丁字符宽，因此将显示的字符会比拉丁字符少。
 -   **保持独创性。** 确保使用与众不同的应用名称，这样不易与现有应用产生混淆。
 -   **请勿使用其他人注册商标的名称。** 确保你有权使用你保留的名称。 如果其他人将该名称注册为商标，他们有权投诉侵权，你将无法继续使用该名称。 如果在你的应用发布后发生这种情况，我们会将其从应用商店中删除。 你将需要更改你的应用名称以及出现在应用及其内容中该名称的所有实例，然后才能再次[提交你的应用](app-submissions.md)进行认证。
--   **避免在名称末尾添加区别性信息。** 如果将用于区分多个应用的信息添加到名称末尾，则客户可能会忽略此信息，尤其是在名称很长的情况下；这样所有应用看上去似乎都采用了相同名称。 如果这是不可避免，使用不同的徽标和应用图像以使其更轻松地区分与另一个应用。
+-   **避免在名称末尾添加区别性信息。** 如果将用于区分多个应用的信息添加到名称末尾，则客户可能会忽略此信息，尤其是在名称很长的情况下；这样所有应用看上去似乎都采用了相同名称。 如果这是不可避免，使用不同的徽标和应用图像以使其更轻松地区分从另一个应用。
 -   **不要在名称中添加表情符号。** 你不能保留包含表情符号或其他不受支持的字符的名称。
 
 

@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 使用 C++ 创建 Windows 运行时组件
 description: 本主题介绍了如何使用 C + + /CX 创建一个 Windows 运行时组件，它是一个组件，可通过使用 C#、 Visual Basic、 c + + 或 Javascript 生成的通用 Windows 应用调用。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
-ms.author: misatran
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a7e7a29d766cc226b3e4afd4376a6c5c9ec42a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4dacca1cff943001c03f9f432404b6dab2fb5b94
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553957"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701616"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>使用 C++/CX 创建 Windows 运行时组件
 > [!NOTE]

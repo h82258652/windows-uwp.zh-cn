@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法获取 Xbox Live 俱乐部数据。
 title: 获取 Xbox Live 中心数据
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, Xbox Live 分析, 俱乐部
 ms.localizationpriority: medium
-ms.openlocfilehash: fd28e6877f5b2bb3fa7d85f9dbc7c82672b7ea2f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565144"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697983"
 ---
 # <a name="get-xbox-live-club-data"></a>获取 Xbox Live 中心数据
 

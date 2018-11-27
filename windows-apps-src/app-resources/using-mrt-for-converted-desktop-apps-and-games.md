@@ -1,18 +1,16 @@
 ---
-author: ptorr-msft
 title: 为已转换的桌面应用和游戏使用 MRT
 description: 通过将你的 .NET 或 Win32 应用或游戏打包为 AppX 包，你可以利用资源管理系统加载为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
-ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
-ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576806"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706162"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
@@ -305,7 +303,7 @@ ms.locfileid: "7576806"
  * `/f` 设置要使用的映射文件（在上一步中创建） 
  * `/p` 设置输出程序包名称
  * `/o` 设置为“覆盖输出文件”（如果存在）
-0. 创建程序包后，必须对它进行签名。 获取签名证书的最简单方法是通过在 Visual Studio 中创建一个空的通用 Windows 项目，并将复制`.pfx`文件，它将创建，但你可以创建一个使用手动`MakeCert`和`Pvk2Pfx`中所述的实用程序 [**如何创建应用包签名证书**MSDN 上的主题] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)。 
+0. 创建程序包后，必须对它进行签名。 获取签名证书的最简单方法是在 Visual Studio 中创建一个空的通用 Windows 项目，然后复制`.pfx`文件，它将创建，但你可以创建一个使用手动`MakeCert`和`Pvk2Pfx`中所述的实用程序 [**如何创建应用包签名证书**MSDN 上的主题] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)。 
  * **重要提示：** 如果你手动创建签名证书，请确保将文件放在不同于源项目或包源的目录中，否则它可能会被作为程序包的一部分，包括私钥！
 0. 若要对包签名，请使用以下命令。 请注意，`AppxManifest.xml` 的 `Identity` 元素中指定的 `Publisher` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
 

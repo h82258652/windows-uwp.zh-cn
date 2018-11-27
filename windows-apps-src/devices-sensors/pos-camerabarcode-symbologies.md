@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: 相机条形码扫描仪标志
 description: 相机条形码扫描仪支持的标志
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: c74e72c826687c2b21284c169c345e145505e104
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ecb40528ee0104a2e25b5e95499c4404057eba1f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576767"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708097"
 ---
 # <a name="symbologies"></a>标志
 本主题为 Windows 10 附带的软件条形码解码器支持的每个标志提供示例条形码，包括：UPC/EAN、Code 39、Code 128、Interleaved 2 of 5、Databar Omnidirectional、Databar Stacked、QR 码和 GS1DWCode。

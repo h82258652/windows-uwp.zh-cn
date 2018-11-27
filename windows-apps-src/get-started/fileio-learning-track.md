@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 处理文件
 description: 了解如何在通用 Windows 平台中处理文件。
-ms.author: twhitney
 ms.date: 05/01/2018
 ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 68240e5b3d2fb476b731853e6a7d020ecd9e2887
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556949"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707868"
 ---
 # <a name="work-with-files"></a>处理文件
 
@@ -63,7 +61,7 @@ await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entr
 
 ## <a name="read-text-from-a-file"></a>从文件读取文本
 
-与写入文件相同，读取文件也是从指定文件的位置开始。 我们将使用与上述示例使用的相同位置。 然后我们将使用**FileIO**类以读取其内容。
+与写入文件相同，读取文件也是从指定文件的位置开始。 我们将使用与上述示例使用的相同位置。 然后，我们将使用**FileIO**类以读取其内容。
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

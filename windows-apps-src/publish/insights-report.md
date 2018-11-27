@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: 洞察报告
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，相关的见解、 趋势、 异常、 异常情况，数据发生更改
 ms.localizationpriority: medium
-ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 95cb43c45731c88ec758806aef91c3d7d8f36ad6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573952"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702558"
 ---
 # <a name="insights-report"></a>洞察报告
 

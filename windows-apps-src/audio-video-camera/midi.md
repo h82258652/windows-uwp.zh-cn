@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: 本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。
 title: MIDI
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d1e4afd620b871d4273699aea5c02cc9faec80
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443326"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701499"
 ---
 # <a name="midi"></a>MIDI
 

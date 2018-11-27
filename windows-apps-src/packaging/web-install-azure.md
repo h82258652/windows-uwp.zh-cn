@@ -1,18 +1,16 @@
 ---
-author: c-don
 title: 从 Azure Web 服务器安装 UWP 应用
 description: 阅读此教程，了解如何设置 Azure Web 服务器、如何验证 Web 应用可以托管应用包，以及如何有效调用和使用应用安装程序。
-ms.author: cdon
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ea002686199b992af45af775f53c96fd108a13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f0e4fe6cd2b05c2de4648a410ba43ce27e48922
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567977"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705228"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>从 Azure Web 应用安装 UWP 应用
 

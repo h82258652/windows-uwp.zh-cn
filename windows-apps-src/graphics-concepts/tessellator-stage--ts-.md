@@ -4,17 +4,15 @@ description: 细化器 (TS) 阶段创建代表几何图形修补程序的域的�
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
 keywords:
 - 细化器 (TS) 阶段
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562056"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702027"
 ---
 # <a name="tessellator-ts-stage"></a>细化器 (TS) 阶段
 

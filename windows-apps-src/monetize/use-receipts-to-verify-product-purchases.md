@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: 每个成功购买产品的 Microsoft Store 交易都可以选择返回交易收据。
 title: 使用收据验证产品购买
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563153"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702741"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 

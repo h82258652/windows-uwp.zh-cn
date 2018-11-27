@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 游戏板和振动
 description: 使用 Windows.Gaming.Input 游戏板 API 检测、读取振动和脉冲命令并向游戏板发送这些命令。
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
-ms.author: wdg-dev-content
 ms.date: 09/06/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏板, 振动
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea8afb0a9e66ccb4ea603bd78dc5030ca18babe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e65b22039c381bd333516bd9f98c60bbddb9621c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562089"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702901"
 ---
 # <a name="gamepad-and-vibration"></a>游戏板和振动
 

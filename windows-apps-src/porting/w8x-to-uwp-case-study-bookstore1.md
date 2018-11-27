@@ -1,24 +1,22 @@
 ---
-author: stevewhims
 title: Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: 本主题介绍了移植非常简单的通用 8.1 应用到 windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cec8171b381a607616e2054784fa888074d3f90e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566830"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704418"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
 
-本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建的单个应用包的可供客户安装到种类广泛的设备，并且我们将在此案例研究中执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主题介绍了移植非常简单的通用 8.1 应用到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是一种生成 Windows8.1，一个应用包和适用于 Windows Phone 8.1 的不同应用包。 借助 windows 10，你可以创建一个应用包，可供客户安装到种类广泛的设备，并且我们将在此案例研究中所执行的操作。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将**生成操作**设置为**内容**，并将**复制到输出目录**设置为**不要复制**。
 
@@ -72,11 +70,11 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 ![初始源代码发生更改的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
-在桌面设备上运行的 windows 10 应用的初始源代码发生更改
+Windows 10 的初始源代码发生更改应用在桌面设备上运行
 
 ![初始源代码发生更改的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
-在移动设备上运行的 windows 10 应用的初始源代码发生更改
+Windows 10 的初始源代码发生更改应用在移动设备上运行
 
 视图和视图模型正确地协同工作，并且 **ListBox** 处于运行状态。 我们只需修复样式。 在浅色主题的移动设备中，我们可以看到列表框的边框，但是该边框很容易处于隐藏状态。 并且版式太大，因此我们将更改我们正在使用的样式。 此外，如果我们希望应用看起来像默认状态，应用在桌面设备上运行时应使用浅色。 因此，我们将更改该设置。
 
@@ -95,11 +93,11 @@ Bookstore1\_81 应用使用两个不同的资源词典 (BookstoreStyles.xaml) �
 
 ![即将完成移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
-在桌面设备上运行的即将完成移植的 windows 10 应用
+在桌面设备上运行即将完成移植的 windows 10 应用
 
 ![即将完成移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
-在移动设备上运行的即将完成移植的 windows 10 应用
+在移动设备上运行即将完成移植的 windows 10 应用
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>对移动设备的列表框的可选调整
 

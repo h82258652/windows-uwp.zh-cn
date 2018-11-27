@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: 在 Microsoft Store 分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一加载项的聚合购置数据。
 title: 获取加载项购置
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 加载项购置
 ms.localizationpriority: medium
-ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cd7e907994943dbce83d195e80a15770833f7e4b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559006"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703331"
 ---
 # <a name="get-add-on-acquisitions"></a>获取加载项购置
 

@@ -4,17 +4,15 @@ description: 通过在多通道呈现的过程中将不同纹理应用到基元�
 ms.assetid: FB4D6E3F-4EF5-4D20-BF7E-1008E790E30C
 keywords:
 - 多通道纹理混合
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c55f371e97daba5f81945812f8179eb708bbadd6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d6b1e8958874ede50a18f2d2446c8f156361210e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559673"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697890"
 ---
 # <a name="multipass-texture-blending"></a>多通道纹理混合
 

@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Windows 运行时类型的 .NET Framework 映射
 description: 下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1869038ad98b8b4103b9706534a2d456f17e734
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559385"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701629"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 运行时类型的 .NET framework 映射
 

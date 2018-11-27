@@ -1,18 +1,16 @@
 ---
-author: PatrickFarley
 title: 用户活动的最佳做法
 description: 本指南概述了用于创建和更新用户活动的推荐的做法。
 keywords: 用户活动, 时间线, cortana 从你离开的位置继续, cortana 从我离开的位置继续, project rome
-ms.author: pafarley
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 199499e8737d638301f32d01a00ac603e3f5348f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 33103ebfc7ee3e26a11de781af7981bce78b349c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577668"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699315"
 ---
 # <a name="user-activities-best-practices"></a>用户活动的最佳做法
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: 在 Microsoft Store 购买 API 中使用此方法来获取给定用户有权使用的订阅。
 title: 获取用户订阅
-ms.author: mhopkins
 ms.date: 07/10/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
-ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b568531ce0807ebc5be0d27a78b94547e8473ae6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579445"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698186"
 ---
 # <a name="get-subscriptions-for-a-user"></a>获取用户订阅
 
@@ -43,7 +41,7 @@ ms.locfileid: "7579445"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 说明      |
+| 标头         | 类型   | 描述      |
 |----------------|--------|-------------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |

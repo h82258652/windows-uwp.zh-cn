@@ -1,19 +1,17 @@
 ---
-author: jwmsft
-description: 我们将介绍在 Windows 运行时应用中，事件的编程概念时使用的 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 作为编程语言中，并使用 XAML 进行 UI 定义。
+description: 我们将介绍在 Windows 运行时应用中，事件的编程概念，当使用 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + / CX) 作为编程语言中，并使用 XAML 进行 UI 定义。
 title: 事件和路由事件概述
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570583"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708024"
 ---
 # <a name="events-and-routed-events-overview"></a>事件和路由事件概述
 
@@ -21,7 +19,7 @@ ms.locfileid: "7570583"
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-我们将介绍在 Windows 运行时应用中，事件的编程概念时使用的 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 作为编程语言中，并使用 XAML 进行 UI 定义。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持*路由事件*：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
+我们将介绍在 Windows 运行时应用中，事件的编程概念，当使用 C#、 Visual Basic 或 VisualC + + 组件扩展 (C + + / CX) 作为编程语言中，并使用 XAML 进行 UI 定义。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持*路由事件*：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
 
 ## <a name="events-as-a-programming-concept"></a>事件即编程概念
 
@@ -29,7 +27,7 @@ ms.locfileid: "7570583"
 
 当你使用 C#、Visual Basic 或 C++/CX 作为编程语言时，UI 是通过标记 (XAML) 定义的。 对于 XAML 标记语法，将事件与标记元素和运行时代码实体联系起来的某些原则与其他 Web 技术（例如 ASP.NET 或 HTML5）类似。
 
-**注意**为 XAML 定义的 ui 提供运行时逻辑的代码常常称为*代码隐藏*或在代码隐藏文件。 在 Microsoft Visual Studio 解决方案视图中，此关系以图形方式显示，同时代码隐藏文件是一个独立、嵌套的文件，而不是它引用的 XAML 页面。
+**注意**为 XAML 定义的 UI 提供运行时逻辑的代码常常称为*代码隐藏*或代码隐藏文件。 在 Microsoft Visual Studio 解决方案视图中，此关系以图形方式显示，同时代码隐藏文件是一个独立、嵌套的文件，而不是它引用的 XAML 页面。
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>按钮.单击：事件和 XAML 简介
 
@@ -151,7 +149,7 @@ End Sub
 
 **注意**Visual Studio 以及其 XAML 设计界面一般都提倡使用实例处理技术，而不是**处理**的关键字。 这是因为在 XAML 中建立事件处理程序连接是典型的设计人员-开发人员工作流中的一部分，并且 **Handles** 关键字技术与在 XAML 中连接事件处理程序不兼容。
 
-在 C + + CX，你还使用**+=** 语法，但与基本 C# 形式有区别：
+在 C + + / CX，你还使用**+=** 语法，但与基本 C# 形式有区别：
 
 -   不存在委托推断，所以必须为委托实例使用 **ref new** 关键字。
 -   委托构造函数有两个参数，并且需要目标对象作为第一个参数。 通常由你指定 **this**。

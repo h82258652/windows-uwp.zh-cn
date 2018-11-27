@@ -4,17 +4,15 @@ description: 着色器资源视图通常以方便着色器访问纹理的方式�
 ms.assetid: 4505BCD2-0EDA-40F2-887C-EC081FE32E8F
 keywords:
 - 着色器资源视图 (SRV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e98b9942dfc14604c061a036cd3c9803abaf3915
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd6cca08c0845e2da5420fc1f040cc285c87953d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580727"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702681"
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>着色器资源视图 (SRV) 和无序的访问视图 (UAV)
 

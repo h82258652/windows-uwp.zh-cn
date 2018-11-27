@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: 使用 C# 或 Visual Basic 调用异步 API
 description: 通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, C#, Visual Basic, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571635"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704886"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>使用 C# 或 Visual Basic 调用异步 API
 

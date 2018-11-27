@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: 输入加载项属性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570623"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699507"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 

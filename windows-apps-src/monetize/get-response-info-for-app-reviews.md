@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: 在 Microsoft Store 评价 API 中使用此方法可以确定是否可以回复特定评价，或者是否可以回复针对给定应用的任何评价。
 title: 获取评价的回复信息
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 评价 API, 回复信息
 ms.localizationpriority: medium
-ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553993"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698206"
 ---
 # <a name="get-response-info-for-reviews"></a>获取评价的回复信息
 
@@ -40,7 +38,7 @@ ms.locfileid: "7553993"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

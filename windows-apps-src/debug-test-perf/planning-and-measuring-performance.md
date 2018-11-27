@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: 规划性能
 description: 用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563504"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704959"
 ---
 # <a name="planning-for-performance"></a>规划性能
 
@@ -173,7 +171,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
--   你在将应用提交到应用商店进行认证之前，请确保你测试将计划合并到性能相关测试用例的[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)和中的"性能测试"部分中所述"性能和[UWP 应用测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的稳定性"部分。
+-   你在将应用提交到应用商店进行认证之前，请务必将合并到测试计划与性能相关测试用例的[Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)和中的"性能测试"部分所述"性能和[UWP 应用测试用例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的稳定性"部分。
 
 有关详细信息，请参阅以下资源和分析工具。
 

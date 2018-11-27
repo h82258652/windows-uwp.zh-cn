@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 条件 XAML
 description: 在保持与以前版本的兼容性的同时在 XAML 标记中使用新 API
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46954968f11f000025ee352676d3f0d17ecb9621
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3c75a6c487fe4a7f7cb56deff869b36309a4b9c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570430"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705039"
 ---
 # <a name="conditional-xaml"></a>条件 XAML
 

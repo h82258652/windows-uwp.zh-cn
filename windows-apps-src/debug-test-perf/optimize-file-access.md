@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: 优化文件访问
 description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cacd915530bb599936730ec404a6e524fef0105d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557035"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700445"
 ---
 # <a name="optimize-file-access"></a>优化文件访问
 

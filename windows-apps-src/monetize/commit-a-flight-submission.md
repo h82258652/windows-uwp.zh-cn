@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的软件包外部测试版提交到合作伙伴中心。
 title: 确认软件包外部测试版提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认外部测试版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581486"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702651"
 ---
 # <a name="commit-a-package-flight-submission"></a>确认软件包外部测试版提交
 
@@ -40,7 +38,7 @@ ms.locfileid: "7581486"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

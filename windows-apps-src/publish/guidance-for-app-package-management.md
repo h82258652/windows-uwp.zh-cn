@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: 应用包管理指南
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e625522b0e9fd03fda49eb28bbedb20c00c15634
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573672"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704787"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -30,7 +28,7 @@ ms.locfileid: "7573672"
 
 不同的操作系统可以运行不同类型的程序包。 如果有多个程序包可在客户的设备上运行，则 Microsoft Store 将提供最佳的可用匹配。
 
-通常来说，较高的操作系统版本可运行适用于相同设备系列的面向以前操作系统版本的程序包。 Windows 10 设备可以运行所有以前受支持的操作系统版本 （每个设备系列）。 Windows 10 桌面设备可以运行 Windows8.1 或 Windows8; 生成的应用Windows 10 移动设备可以运行为 Windows Phone 8.1，WindowsPhone8，甚至是 Windows Phone 7.x。 但是，Windows 10 的客户将只获取这些程序包，如果该应用不包含面向适用的设备系列的 UWP 程序包。
+通常来说，较高的操作系统版本可运行适用于相同设备系列的面向以前操作系统版本的程序包。 Windows 10 设备可以运行所有以前受支持的操作系统版本 （每个设备系列）。 Windows 10 桌面设备可以运行 Windows8.1 或 Windows8; 生成的应用Windows 10 移动设备可以运行为 Windows Phone 8.1，WindowsPhone8，甚至是 Windows Phone 7.x。 但是，Windows 10 上的客户将只获取这些程序包，如果该应用不包含面向适用的设备系列的 UWP 程序包。
 
 > [!IMPORTANT]
 > 从 2018 年 10 月 31 日起，新创建的产品不能包含面向 Windows 8.x/Windows 程序包 Phone 8.x 或更早版本。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/)。
@@ -55,7 +53,7 @@ ms.locfileid: "7573672"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>删除以前受支持的设备系列中的程序包
 
-如果你删除的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的支持你的应用之前，将提示您确认，这是你的意图，你可以在**程序包**页面上保存更改之前的所有程序包。
+如果你删除所有程序包的某些[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)支持你的应用之前，将提示您确认这是你的意图之前的**程序包**页面上，可以保存所做的更改。
 
 当发布的提交，删除所有包可在你的应用以前支持的设备系列上运行时，新客户将无法获取该设备系列上的应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
 
@@ -66,10 +64,10 @@ ms.locfileid: "7573672"
 
 ## <a name="adding-packages-for-windows10-to-a-previously-published-app"></a>将 windows 10 程序包添加到以前发布的应用
 
-如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x 的应用，并希望为 windows 10 更新你的应用、 创建新提交并在[程序包](upload-app-packages.md)阶段添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 windows 10 的客户的新购置 UWP 程序包。
+如果你有一个应用中仅包括包在 Windows 应用商店 8.x 和/或 Windows Phone 8.x，并且你想要为 windows 10 更新你的应用、 创建新提交并在[程序包](upload-app-packages.md)阶段添加 UWP.msixupload 或.appxupload 程序包。 你的应用完成认证过程后，还将适用于 windows 10 的客户的新购置 UWP 程序包。
 
 > [!NOTE]
-> 后 windows 10 的客户获取 UWP 程序包，你不能倾斜使客户回退到使用任何以前操作系统版本的程序包。 
+> Windows 10 的客户获取 UWP 程序包后, 无法回退到使用任何以前操作系统版本的程序包回滚该客户。 
 
 请注意，windows 10 程序包的版本号必须始终高于那些你已使用任何 Windows8、 Windows8.1，和/或 Windows Phone 8.1 程序包。 有关详细信息，请参阅[程序包版本编号](package-version-numbering.md)。
 

@@ -1,18 +1,16 @@
 ---
-author: JnHs
 Description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
 title: 使用定向优惠最大程度地提高参与度和转换率
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10，uwp，定向优惠，优惠/产品/服务，通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6e1f8119522cd0441157131362d860feff3410
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e894e81b560f071cf42198f09aad0b2b82eae2cd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564945"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705303"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>使用定向优惠最大程度地提高参与度和转换率
 
@@ -34,7 +32,7 @@ ms.locfileid: "7564945"
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>创建和发送定向优惠
 
-1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，在左侧的导航菜单中，展开**参与**，然后选择**定向产品/服务**。
+1.  在[合作伙伴中心](https://partner.microsoft.com/dashboard)，在左侧的导航菜单中，展开**参与**，然后选择**定向优惠**。
 2.  在**定向优惠**页上，查看可用优惠。 针对任何想要实施的优惠，选择**创建新优惠**。
 
     > [!NOTE]

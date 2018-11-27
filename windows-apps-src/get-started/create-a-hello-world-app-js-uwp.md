@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: 创建“Hello, world”应用 (JS)
 description: 本教程指导你如何使用 JavaScript 和 HTML 创建简单和 \#0034;Hello，world & \#0034;面向 windows 10 上的通用 Windows 平台 (UWP) 应用。
-ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575995"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705798"
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
 
@@ -32,7 +30,7 @@ ms.locfileid: "7575995"
 ## <a name="before-you-start"></a>开始之前...
 
 -   [UWP 应用是什么？](universal-application-platform-guide.md)。
--   若要完成本教程，你需要 windows 10 和 Visual Studio2017。 [准备工作](get-set-up.md)。
+-   若要完成本教程中，你需要 windows 10 和 Visual Studio2017。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在**窗口**菜单中，通过使用**重置窗口布局**命令来重置它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目。

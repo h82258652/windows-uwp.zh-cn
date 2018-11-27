@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
 description: 在 Microsoft Store 提交 API 中使用此方法，可删除注册到你的合作伙伴中心帐户的应用的加载项。
 title: 删除加载项
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 删除, 应用内产品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565866"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705119"
 ---
 # <a name="delete-an-add-on"></a>删除加载项
 
@@ -37,7 +35,7 @@ ms.locfileid: "7565866"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -75,7 +73,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求无效。 |
 | 404  | 找不到指定的加载项。  |
-| 409  | 指定的加载项已找到，但它无法删除在其当前状态，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 指定的加载项已找到，但无法在其当前状态，删除，或者加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

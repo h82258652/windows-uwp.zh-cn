@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用 Microsoft Store 提交 API 中的此方法完成软件包外部测试版提交的软件包推出。
 title: 完成外部测试版提交的推出
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 外部测试版提交, 完成
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
-ms.openlocfilehash: 560576dd60c42f48c625b8c4c55a2b0c85ce511c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 29ac212e0549e754c0865aab5d497fa6d51f075f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578983"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702921"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>完成外部测试版提交的推出
 
@@ -41,7 +39,7 @@ ms.locfileid: "7578983"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 

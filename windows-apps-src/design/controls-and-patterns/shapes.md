@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: 绘制图形
 description: 了解如何绘制形状，如椭圆、矩形、多边形以及路径。 Path 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。
-ms.author: jimwalk
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a576add7a080874fb0f042748bef7472e04ac817
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562899"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706028"
 ---
 # <a name="draw-shapes"></a>绘制形状
 
@@ -104,7 +102,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![呈现的矩形。](images/shapes-rectangle.jpg)
 
-**提示**有一些场景对于 UI 定义，而不是使用一个[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，[**边框**](https://msdn.microsoft.com/library/windows/apps/BR209250)可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
+**提示**有某些方案对于 UI 定义，而不是使用一个[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，[**边框**](https://msdn.microsoft.com/library/windows/apps/BR209250)可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
 
 另一方面，[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 可能是控件组合的较好选择。 **Rectangle** 形状可以在很多控件模板中看到，因为它用作可获得焦点的控件的“FocusVisual”部分。 当控件处于“已设置焦点”视觉状态时，此矩形可见，在其他状态时，它处于隐藏状态。
 
@@ -171,7 +169,7 @@ layoutRoot.Children.Add(line1);
 
 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 与 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
-**注意**你可以明确设置相同的起点和的[**点**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)中的终结点设置为[**折线**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)，但是，在此情况下你可能具有[**多边形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)改为。
+**注意**你可以明确设置相同的起点和[**点**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)中的终结点设置为[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)，但是在这种情况下你可能具有[**多边形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)相反。
 
 如果你指定 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 元素时所呈现的内容相似。
 

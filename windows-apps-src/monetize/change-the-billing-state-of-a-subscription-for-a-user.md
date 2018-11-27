@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: 在 Microsoft Store 购买 API 中使用此方法来更改用户订阅的计费状态。
 title: 更改用户订阅的计费状态
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
-ms.openlocfilehash: 8daec4928867c92734fc3f6322836eb923aeda21
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e4cf27331a218c0c0ef06ee1a80c141b889504a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567884"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699960"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>更改用户订阅的计费状态
 
@@ -43,7 +41,7 @@ ms.locfileid: "7567884"
 
 ### <a name="request-header"></a>请求标头
 
-| 标头         | 类型   | 说明   |
+| 标头         | 类型   | 描述   |
 |----------------|--------|-------------|
 | 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **purchase.mp.microsoft.com**。                                            |

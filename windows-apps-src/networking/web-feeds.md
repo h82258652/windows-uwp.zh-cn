@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。
 title: RSS/Atom 源
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562576"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697270"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 源
 

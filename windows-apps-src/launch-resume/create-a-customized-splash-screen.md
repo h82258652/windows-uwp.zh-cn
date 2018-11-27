@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: 延长显示初始屏幕的时间
 description: 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.author: mcleans
 ms.date: 11/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8886b1e8ea8b897d5c5e867b937e3592509cdbef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 142ee642806ebba41d6ddb4d49fe55217e7a0e2e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572069"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699209"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延长显示初始屏幕的时间
 

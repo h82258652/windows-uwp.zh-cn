@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: 使用自定义的 SSL 证书预配 Device Portal
 description: 待定
-ms.author: pafarley
 ms.date: 07/11/2017
 ms.topic: article
 keywords: windows 10，uwp，设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 525c64ab289d26a4835168f410ac4ba3fc14343a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559123"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700405"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自定义的 SSL 证书预配 Device Portal
 在 Windows 10 创意者更新，Windows Device Portal 添加设备管理员使用自定义的证书安装在 HTTPS 通信的一种方法。 

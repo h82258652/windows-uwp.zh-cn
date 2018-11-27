@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to capture and recognize long-form, continuous dictation speech input.
 title: 启用连续听写
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
 keywords: 语音，语音，语音识别，自然语言，听写，输入，用户交互
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557733"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705029"
 ---
 # <a name="continuous-dictation"></a>连续听写
 
@@ -28,7 +26,7 @@ ms.locfileid: "7557733"
 对于较长的连续语音识别会话（例如听写或电子邮件），则使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn913913) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn653226) 属性以获取 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 对象。
 
 > [!NOTE]
-> 听写语言支持取决于你的应用正在运行其中的[设备](https://docs.microsoft.com/windows/uwp/design/devices/)。 电脑和笔记本电脑，仅 EN-US 被识别，而 Xbox 和手机可以识别支持语音识别的所有语言。 有关详细信息，请参阅[指定语音识别器语言](specify-the-speech-recognizer-language.md)。
+> 听写语言支持取决于你的应用正在运行其中的[设备](https://docs.microsoft.com/windows/uwp/design/devices/)。 电脑和笔记本电脑，识别仅为 EN-US，而 Xbox 和手机可以识别支持语音识别的所有语言。 有关详细信息，请参阅[指定语音识别器语言](specify-the-speech-recognizer-language.md)。
 
 ## <a name="set-up"></a>设置
 
