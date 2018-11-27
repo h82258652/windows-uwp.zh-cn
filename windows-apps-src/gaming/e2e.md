@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Windows10 游戏开发指南
 description: 开发通用 Windows 平台 (UWP) 游戏的资源和信息的端到端指南。
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.author: joanlee
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: 7481c1d0f64ccb25168200cdf5e6ccc068f769b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582036"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707624"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 游戏开发指南
 
@@ -248,7 +246,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </colgroup>
     <tr>
         <td>发布的应用和游戏开发人员论坛</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">发布和应用内广告</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">发布和应用广告</a></td>
     </tr>
     <tr>
         <td>UWP 应用开发人员论坛</td>
@@ -1360,7 +1358,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>启用应用内产品 （加载项） 购买
 
-加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏的加载项通过合作伙伴中心，并启用应用内购买你的游戏代码中。
+加载项 （应用内产品） 是玩家可以在游戏中购买的补充项。 加载项可以是游戏级别、 项目或玩家可能喜欢的任何其他内容。 如果使用得当，加载项可以在改进游戏体验的同时提供收入。 定义和发布你的游戏通过合作伙伴中心的加载项，然后启用你的游戏代码中的应用内购买。
 
 <table>
     <colgroup>
@@ -1380,7 +1378,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">加载项提交</a></td>
     </tr>
     <tr>
-        <td>监视加载项销售和为你的游戏的统计数据</td>
+        <td>监视加载项销售和你的游戏的统计数据</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">加载项购置报告</a></td>
     </tr>
 </table>

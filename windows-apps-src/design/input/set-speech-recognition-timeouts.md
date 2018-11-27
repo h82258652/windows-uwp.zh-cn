@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 title: 设置语音识别超时
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
 keywords: 语音，语音，语音识别，自然语言，听写，输入，用户交互
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00923b4448d96943cf00eade46c39c42e87c4f96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 73c7e889b4633dae9e416cf7ccde13eb3f58e8ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581113"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708687"
 ---
 # <a name="set-speech-recognition-timeouts"></a>设置语音识别超时
 

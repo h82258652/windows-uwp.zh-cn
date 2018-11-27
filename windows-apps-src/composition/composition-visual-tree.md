@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: 合成视觉对象
 description: 合成视觉对象组成了合成 API 的所有其他功能均可使用和基于的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e43d5697a8fe4536e3574d93bda5836133ec8a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573732"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711237"
 ---
 # <a name="composition-visual"></a>合成视觉对象
 

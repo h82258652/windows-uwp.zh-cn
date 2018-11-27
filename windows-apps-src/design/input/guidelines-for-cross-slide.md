@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 title: 交叉滑动指南
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6a37af19c9e3e9beaebbadfcc71f3ad01e3087c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570084"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711057"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑动指南
 
@@ -58,7 +56,7 @@ ms.locfileid: "7570084"
 
 对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://msdn.microsoft.com/library/windows/apps/hh465382)。
 
-**注意**在其中可以在两个方向，如 web 浏览器或电子阅读器中平移内容区域的情况下应使用按下保持定时的交互来调用如图像和超链接的对象的上下文菜单。
+**注意**在其中可以在两个方向，如 web 浏览器或电子阅读器中平移内容区域的情况下应使用按下保持定时的交互来调用上下文菜单，如图像和超链接的对象。
 
  
 

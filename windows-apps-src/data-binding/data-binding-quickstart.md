@@ -1,9 +1,7 @@
 ---
-author: stevewhims
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: 数据绑定概述
 description: 本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。
-ms.author: stwhi
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 581c2bc4204a7eab002ef2680e335a4109716d74
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc8e4d1753333579b016a44adf9429d355d29fb6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558894"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710709"
 ---
 # <a name="data-binding-overview"></a>数据绑定概述
 
@@ -35,9 +33,9 @@ ms.locfileid: "7558894"
 
 每个绑定均由一个绑定目标和一个绑定源构成。 通常，绑定目标是控件或其他 UI 元素的属性，而绑定源是类实例（数据模型或视图模型）的属性。 本示例演示了如何将控件绑定到单个项目。 绑定目标是 **TextBlock** 的 **Text** 属性。 绑定源是一个名为 **Recording** 的简单类的实例，该类表示音频录制。 我们先来看一下类。
 
-如果你使用 C# 或 C + + CX，然后将新类添加到你的项目，并将命名的类**录制**。
+如果你使用 C# 或 C + + / CX，然后将新类添加到你的项目，并将命名类**录制**。
 
-如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后将新**Midl 文件 (.idl)** 项目添加到项目中，名为如下所示的 C + + 以下 WinRT 代码示例列表。 这些新文件的内容替换为应用一览中显示的[MIDL 3.0](/uwp/midl-3/intro)代码、 生成项目，以生成`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然后将代码添加到生成的文件以匹配列表。 有关这些生成的文件的详细信息以及如何将它们复制到你的项目，请参阅[XAML 控件; 绑定到 C + + /winrt 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后将新的**Midl 文件 (.idl)** 项目添加到项目中，名为如下所示的 C + + 以下 WinRT 代码示例列表。 这些新文件的内容替换为应用一览中显示的[MIDL 3.0](/uwp/midl-3/intro)代码、 生成项目，以生成`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然后将代码添加到生成的文件，以匹配列表。 有关这些生成的文件的详细信息以及如何将它们复制到你的项目，请参阅[XAML 控件; 绑定到 C + + /winrt 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
 ```csharp
 namespace Quickstart
@@ -318,7 +316,7 @@ MainPage::MainPage()
 </Page>
 ```
 
-如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你将需要以便要生成的项目中删除**mainpage:: Clickhandler**函数。
+如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后你将需要为要生成的项目的顺序删除**mainpage:: Clickhandler**函数。
 
 下面是结果。
 
@@ -454,7 +452,7 @@ public:
 
 ![绑定列表视图](images/xaml-databinding1.png)
 
-若要解决此问题，我们可以通过重写[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)返回的值的**OneLineSummary**，或者我们可以提供一个数据模板。 数据模板选项是一个更常见的解决方案和一个更灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
+若要解决此问题，我们既可以替代[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)返回值的**OneLineSummary**，或者我们可以提供一个数据模板。 数据模板选项是一个更常见的解决方案和一个更灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -494,15 +492,15 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 你可以选择在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 项目中显示 **Recording** 对象的所有详细信息。 但这样做会占用大量空间。 不过，你可以在该项目中仅显示足够多的数据来标识它，然后在用户做出选择时，你可以在 UI 的单个部分（即，详细信息视图）中显示选定项的所有详细信息。 这种排列也称为主视图/详细信息视图或列表/详细信息视图。
 
-有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 属性。 或者，你可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，你在此情况下绑定到**CollectionViewSource** （为你执行当前选定的项目是采用小心） **ListView**和详细信息视图。 这两种方法如下所示，并且它们都提供相同的结果 （如图所示）。
+有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 属性。 或者，你可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，你在这种情况下绑定到**CollectionViewSource** （为你执行当前选定的项目是采用小心） **ListView**和详细信息视图。 这两种方法如下所示，并且它们都提供相同的结果 （如图所示）。
 
 > [!NOTE]
 > 到目前为止，本主题中我们仅使用了 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，而将在下面介绍的这两种技术要求更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-如果你使用 C + + WinRT 或 VisualC + + 组件扩展 (C + + CX) 然后，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展时，你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要绑定到任何运行时类。 若要使用[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，不需要该属性。
+如果你使用 C + + /winrt 或 VisualC + + 组件扩展 (C + + CX) 然后，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展时，你将需要将[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性添加到你想要绑定到任何运行时类。 若要使用[{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，不需要该属性。
 
 > [!IMPORTANT]
-> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你将需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
+> 如果你使用的[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然后[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性是可用，如果你安装了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更高版本。 如果没有该属性，你需要实现的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)接口，才能够使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)标记扩展。
 
 首先介绍的是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技术。
 
@@ -583,7 +581,7 @@ public ref class Recording sealed
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>设置数据值的格式或对其进行转换，以供显示
 
-没有以上呈现问题。 **ReleaseDateTime**属性不只是一个日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果你使用 c + +，则它是[**日历**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它显示高于所需精度的精度。 和在 c + + 呈现为类型名称。 一种解决方案是将字符串属性添加到返回的等效项的**录制**类`this.ReleaseDateTime.ToString("d")`。 命名**ReleaseDate**该属性可指示它将返回日期，并且不日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
+没有以上呈现问题。 **ReleaseDateTime**属性不是只是一个日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果你使用 c + +，则它是[**日历**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它显示高于所需精度的精度。 和在 c + + 呈现为类型名称。 一种解决方案是将字符串属性添加到返回的等效的**录制**类`this.ReleaseDateTime.ToString("d")`。 该属性**ReleaseDate**命名将指示它将返回一个日期，并且不日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
 
 一个更灵活的解决方案是使用称为值转换器的工具。 下面是如何创作你自己的值转换器的示例。 将此代码添加到你的 Recording.cs 源代码文件。
 
@@ -716,14 +714,14 @@ public:
 ...
 ```
 
-你可以看到上方，格式灵活性我们使用标记将格式字符串传递到该转换器通过转换器参数。 在使本主题中，仅 C# 值转换器中所示的代码示例使用该参数。 但你可以轻松地传递 c + + 样式格式字符串形式的转换器参数，并在你的值转换器，如**wprintf**或**swprintf**格式功能中使用的。
+如你所见上述，格式灵活性我们使用标记将格式字符串传递到该转换器通过转换器参数。 将显示在本主题中，仅 C# 值转换器的代码示例中使用该参数。 但是，你可以轻松地传递 c + + 样式格式字符串形式的转换器参数，并在你的值转换器，例如**wprintf**或**swprintf**格式功能中使用的。
 
 此处是结果。
 
 ![显示具有自定义格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 从 Windows 10，版本 1607年开始，XAML 框架提供内置布尔值到可见性转换器。 转换器将映射**true**到**Visibility.Visible**枚举值和**false**到**Visibility.Collapsed**以便你可以将 Visibility 属性绑定到布尔值而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607年开始，XAML 框架提供了内置的布尔值到可见性转换器。 转换器将映射**true** **Visibility.Visible**枚举值和**false**到**Visibility.Collapsed**以便你可以将 Visibility 属性绑定为布尔值而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="see-also"></a>另请参阅
 * [数据绑定](index.md)

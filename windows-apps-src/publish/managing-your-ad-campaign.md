@@ -1,24 +1,22 @@
 ---
-author: jnHs
 Description: Manage ad campaigns for your apps in Partner Center.
 title: 管理广告市场活动
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
-ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ead654573d16628e5dd07c58c937d4f71cb7f84c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582427"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711355"
 ---
 # <a name="manage-your-ad-campaign"></a>管理广告市场活动
 
 
-若要管理你的应用在[合作伙伴中心](https://partner.microsoft.com/dashboard)中的广告市场活动，在左侧的导航菜单中展开**吸引**，然后选择**广告市场活动**。 可看到与应用关联的所有广告市场活动，以及每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[广告市场活动报告](promote-your-app-report.md)中关于这些术语的定义。
+若要管理[合作伙伴中心](https://partner.microsoft.com/dashboard)中的应用的广告市场活动，在左侧的导航菜单中展开**吸引**，然后选择**广告市场活动**。 可看到与应用关联的所有广告市场活动，以及每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[广告市场活动报告](promote-your-app-report.md)中关于这些术语的定义。
 
 若要筛选广告市场活动列表，请单击“部分筛选器”**** 下拉菜单，然后从以下筛选器中进行选择：
 

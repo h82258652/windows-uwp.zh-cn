@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Xbox One 工具简介
 description: 特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。
-ms.author: elcowle
 ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, xbox one, 工具, windows 10, uwp, xbox one, tools
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fd9f3ad1c3fcf02420502692518310b896f52a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580886"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709088"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Xbox One 工具简介
 

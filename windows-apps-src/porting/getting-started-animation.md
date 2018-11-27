@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: 动画入门
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: 在此项目中，我们将移动一个矩形，应用淡出效果，然后再使其显示在视图中。
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582097"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708799"
 ---
 # <a name="getting-started-animation"></a>入门：动画
 
@@ -128,7 +126,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 可手动编辑此 XAML，或返回到 Blend 以继续在其上执行操作。 Blend 使创建有趣的用户界面变得很有意思，并且使用图形工具设置界面动画的能力可极大加快开发速度。 有关动画的详细信息，请参阅[动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**注意**有关<span class="legacy-term">使用 JavaScript 和 HTML UWP 应用</span>的动画信息，请参阅[设置动画的 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**注意**适用于<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 应用</span>的动画信息，请参阅[设置动画的 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
 ### <a name="next-step"></a>下一步
 

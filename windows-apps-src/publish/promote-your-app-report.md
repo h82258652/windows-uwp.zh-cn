@@ -1,23 +1,21 @@
 ---
-author: JnHs
 title: 广告市场活动报告
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 合作伙伴中心中的广告市场活动报告可使你查看应用推广广告市场活动的执行方式。
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 推广, 应用, 市场活动, 报告, 安装
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f99c9af9fd3f8c9a94b79b3324fea6ebbd710c5b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7573656"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711457"
 ---
 # <a name="ad-campaign-report"></a>广告市场活动报告
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，**吸引**展开左侧的导航菜单中，然后选择**广告市场活动**。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)中的**广告市场活动**报告可使你查看你的应用推广[广告市场活动](create-an-ad-campaign-for-your-app.md)的执行方式。 若要查看该报告，在左侧的导航菜单中展开**吸引**，然后选择**广告市场活动**。
 
 ## <a name="definitions"></a>定义
 

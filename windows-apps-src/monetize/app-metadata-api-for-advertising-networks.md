@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 了解如何使用应用元数据 REST API 访问应用的某些类型的元数据。 此 API 旨在供广告网络用于检索 Microsoft Store 中的应用的有关信息，以便它们可以改进向广告商销售广告空间的方式。
 title: 广告网络的应用元数据 API
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 广告网络, 应用元数据
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 9533b244174cc5770a68f866c722db1781fdd544
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2fd0381d9ec8917f381cfeb045d58bfa3436de74
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568848"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711326"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>广告网络的应用元数据 API
 

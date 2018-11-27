@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
 title: 标识输入设备
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 keywords: 设备、数字化器、输入、交互
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568375"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711197"
 ---
 # <a name="identify-input-devices"></a>标识输入设备
 
@@ -29,7 +27,7 @@ ms.locfileid: "7568375"
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**注意**此处讨论的属性返回的值基于所有检测到鼠标： 如果至少一个鼠标支持特定功能，，数值属性返回任何一个公开的最大值，布尔属性返回非零值鼠标。
+**注意**此处讨论的属性返回的值基于所有检测到鼠标： 如果至少一个鼠标支持特定功能，并且数值属性返回任何一个公开的最大值，布尔属性返回非零值鼠标。
 
  
 
@@ -67,7 +65,7 @@ private void GetKeyboardProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
-**注意**此处讨论的属性返回的值基于所有检测到的触摸数字化器： 布尔属性返回非零值，如果至少一个数字化器支持特定功能，，数值属性返回的最大值任何一个数字化器公开。
+**注意**此处讨论的属性返回的值基于所有检测到的触摸数字化器： 布尔属性返回非零值，如果至少一个数字化器支持特定功能，并且数值属性返回的最大值任何一个数字化器公开。
 
  
 
@@ -87,7 +85,7 @@ private void GetTouchProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
-**注意**此处讨论的属性返回的值基于所有检测到的指针设备： 布尔属性返回非零值，如果至少一个设备支持特定功能，并且数值属性返回公开的最大值任何一个指针设备。
+**注意**此处讨论的属性返回的值基于所有检测到的指针设备： 布尔属性返回非零值，如果至少一个设备支持的特定功能，数值属性返回公开的最大值任何一个指针设备。
 
 以下代码使用一个表格来显示每个指针设备的属性和值。
 

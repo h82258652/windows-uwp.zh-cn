@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间转换。
 title: 实现 C++/WinRT 与 ABI 之间的互操作
-ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 40d2c29dcab1a54046cb0def882cfa5f80b1f1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6597846ae96b498a7b0068151a33cf31d17511d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565392"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710683"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>实现 C++/WinRT 与 ABI 之间的互操作
 

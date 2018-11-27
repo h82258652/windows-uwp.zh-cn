@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: 了解如何使用 Microsoft 广告 SDK 将间隙广告纳入到面向 Windows 10 的 UWP 应用。
 title: 间隙广告
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, ad control, interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ef8173db2976d58f9ccd0422a1217e2bd91d13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573692"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708387"
 ---
 # <a name="interstitial-ads"></a>间隙广告
 
@@ -217,7 +215,7 @@ ms.locfileid: "7573692"
 
 2.  在合作伙伴中心中，转到[应用内广告](../publish/in-app-ads.md)页和[创建广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请选择**视频间隙**或**横幅间隙**，具体取决于你将要显示的间隙广告类型。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
-    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，该广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （例如应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
+    > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 在合作伙伴中心中创建实时 UWP 广告单元时，广告单元的应用程序 ID 值始终与应用商店 ID 为你的应用 （示例应用商店 ID 值类似于 9NBLGGH4R315） 匹配。
 
 3. 你可以选择性地通过配置[中介设置](../publish/in-app-ads.md#mediation)部分（位于[应用内广告](../publish/in-app-ads.md)页面上）中的设置为**间隙广告**启用广告中介。 广告中介显示来自多个广告网络（包括其他付费广告网络，如 Taboola 和 Smaato）的广告及 Microsoft 应用促销活动的广告，从而使你能够最大化你的广告收益和应用促销能力。
 
@@ -225,7 +223,7 @@ ms.locfileid: "7573692"
 
 5.  [你的应用提交](../publish/app-submissions.md)到应用商店使用合作伙伴中心。
 
-6.  查看[广告性能报告](../publish/advertising-performance-report.md)合作伙伴中心中。
+6.  查看你在合作伙伴中心中的[广告性能报告](../publish/advertising-performance-report.md)。
 
 <span id="manage" />
 

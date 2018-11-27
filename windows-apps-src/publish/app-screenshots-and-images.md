@@ -1,29 +1,27 @@
 ---
-author: jnHs
 Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: 应用屏幕截图、图像和预告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
-ms.openlocfilehash: 4899e117096cf6d03c497fec79038e6d96aca3fd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0019ded3b409acf0e6530bffa4ad73f85bfa8855
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581840"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709452"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
 设计精良的图像是在应用商店中向潜在客户表示应用的主要途径之一。
 
-你可以提供[屏幕截图](#screenshots)、[徽标](#store-logos)、[预告片](#trailers)和其他插图资源要包含在你的应用的应用商店一览中。 这些项目中的一些是必要的，一些是可选的（不过一些可选图像应该包含在内，以获得最佳的应用商店显示）。
+你可以提供[屏幕截图](#screenshots)、[徽标](#store-logos)、[预告片](#trailers)和在你的应用商店一览中包含其他插图资源。 这些项目中的一些是必要的，一些是可选的（不过一些可选图像应该包含在内，以获得最佳的应用商店显示）。
 
 在[应用提交过程](app-submissions.md)中，你将在[应用商店一览](create-app-store-listings.md)步骤中提供这些插图资源。 注意，应用商店中使用的图像和图像显示方式可能有所不同，具体取决于客户的操作系统以及其他因素。
 
-你的应用的图标和其他图像你包含在你的应用包中，也可以使用应用商店。 提交应用前，请运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)来确定你是否缺少任何必需的图像。 有关指南和建议这些图像，请参阅[应用图标和徽标](../design/style/app-icons-and-logos.md)。
+你的应用图标和你的应用程序包中包含的其他映像，也可以使用应用商店。 提交应用前，请运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)来确定你是否缺少任何必需的图像。 有关指南和建议这些图像，请参阅[应用图标和徽标](../design/style/app-icons-and-logos.md)。
 
 ## <a name="screenshots"></a>屏幕截图
 
@@ -65,7 +63,7 @@ ms.locfileid: "7581840"
 
 ### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>9:16 海报图片（720 x 1080 或 1440 x 2160 像素）
 
-这种图像用作 Windows 10 和 Xbox 设备客户的主要徽标图像，因此**强烈建议**提供此图像以确保正确显示。 你的一览可能不看起来很美观如果你不包括，则并不能与客户在浏览应用商店时看到其他一览保持一致。 在搜索结果或编辑精选的集锦中，也可使用此图像。
+这种图像用作 Windows 10 和 Xbox 设备客户的主要徽标图像，因此**强烈建议**提供此图像以确保正确显示。 你的一览可能不看起来很美观如果不包含它，并且不能与客户在浏览应用商店时看到其他一览保持一致。 在搜索结果或编辑精选的集锦中，也可使用此图像。
 
 此图像应包括你的应用名称，图像中的任何文本消息应满足可访问的可读性要求（4.51 对比率）。 请注意，此图像底部的 1/4 区域中可能出现文本重叠，因此请确保不要在此包括文本消息或关键图像。
 
@@ -81,17 +79,17 @@ ms.locfileid: "7581840"
 
 ### <a name="11-app-tile-icon-300-x-300-pixels"></a>1:1 应用磁贴图标（300 x 300 像素）
 
-此图像需要在 Windows Phone 8.1 及更早版本上才能正常显示。 如果你以前发布的应用支持 Windows Phone 8.1 或更早版本，并且你未提供此图像，这些客户将看到你的应用一览空白图标。 （如果这也适用于 Windows 10 客户你的应用仅有面向 Windows Phone 8.1 或更早版本的程序包。）
+此图像需要在 Windows Phone 8.1 及更早版本上才能正常显示。 如果你以前发布的应用支持 Windows Phone 8.1 或更早版本，并且你未提供此图像，这些客户将看到空白图标的应用一览。 （如果这也适用于 Windows 10 客户你的应用仅有面向 Windows Phone 8.1 或更早版本的程序包。）
 
-如果你提交*仅*包含 UWP 程序包，你无需提供此图像 （除非下一步中所述的**Windows 10 和 Xbox 上的客户显示已上传的徽标图像，而不是我程序包中的图像**，请选中此框部分）。
+如果你提交*仅*包含 UWP 程序包，你无需提供此图像 （除非下一步中所述的**Windows 10 和 Xbox 上的客户显示已上传的徽标图像，而不是包中的图像**，请选中此框部分）。
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>仅显示上传的应用商店中的徽标图像
 
-你可以选择防止应用商店向 Windows 10 （包括 Xbox） 上的客户显示你的一览时使用你的应用的软件包中的徽标图像，并改为具有应用商店使用你上传的图像。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果你以前发布的应用支持较早的操作系统版本，这些客户可能仍会看到你的程序包中的图像。）
+你可以选择防止应用商店使用你的应用程序包中的徽标图像，向 Windows 10 （包括 Xbox） 客户显示你的一览时，并改为具有应用商店使用你上传的图像。 这可以使你更好地控制应用在整个 Microsoft Store 上针对 Windows 10（包括 Xbox）客户的各种显示的外观。 （如果你以前发布的应用支持较早的操作系统版本，这些客户可能仍会看到你的程序包中的图像。）
 
-若要为 Windows 10 和 Xbox 上的客户，显示在应用商店仅使用图像你上传 （适用于使用 Windows 10 客户，包括 Xbox），并且不使用你的程序包中的任何图像，请检查框**上传的徽标图像而不是我程序包中的图像**.
+以 For Windows 10 和 Xbox 上的客户，显示应用商店使用 （适用于 Windows 10，包括 Xbox 客户） 上, 传的图像并且不使用你的程序包中的任何图像，请检查框**上传的徽标图像，而不是包中的图像**.
 
-选中此框，出现了名为**应用商店显示图像**的新部分。 在这里，你可以上传 3 张图像，其中包括**1:1 应用磁贴图标 （300 x 300 像素）** 大小 （如果你选中此框，提供该图像将移动到此部分的字段）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
+选中此框，当将显示一个新的部分，名为**应用商店显示图像**。 在这里，你可以上传 3 张图像，包括**1:1 应用磁贴图标 （300 x 300 像素）** 的大小 （如果你选中该框，以提供该图像将移动到此部分的字段）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
 
 
 <span id="promotional-images" />
@@ -106,7 +104,7 @@ ms.locfileid: "7581840"
 
 ### <a name="trailers"></a>预告片
 
-预告片是一个简短视频，可为客户提供在实际操作中查看产品的方法，以便他们能更好地了解产品内容。 它们会显示在你的应用的应用商店一览 （只要你包含[16:9 超级人物插图](#windows-10-and-xbox-image-169-super-hero-art)图像） 的顶部。 
+预告片是一个简短视频，可为客户提供在实际操作中查看产品的方法，以便他们能更好地了解产品内容。 它们显示在应用的应用商店一览 （只要包含[16:9 超级人物插图](#windows-10-and-xbox-image-169-super-hero-art)图像） 的顶部。 
 
 预告片采用[平滑流式处理](http://www.iis.net/downloads/microsoft/smooth-streaming)进行编码，可根据客户端的可用带宽和 CPU 资源实时调整传送到客户端的视频流质量。
 
@@ -120,7 +118,7 @@ ms.locfileid: "7581840"
 你必须为提供的每支预告片上传视频文件（.mp4 或 .mov）、缩略图图像和标题。
 
 > [!IMPORTANT]
-> 当使用预告片，还必须提供以使预告片的应用商店一览顶部显示的顺序中的[16:9 超级人物插图](#windows-10-and-xbox-image-169-super-hero-art)图像部分。 预告片播放完成后将显示此图像。
+> 当使用预告片，还必须提供[16:9 超级人物插图](#windows-10-and-xbox-image-169-super-hero-art)图像部分中以使预告片的应用商店一览顶部显示的顺序。 预告片播放完成后将显示此图像。
 
 遵循以下建议，以使你的预告片有效：
 - 预告片质量应较高，并为最小长度(建议为 60 秒或更短且小于 2 GB)。 
@@ -139,7 +137,7 @@ ms.locfileid: "7581840"
 > [!TIP]
 > 如果创建了多种语言的 Microsoft Store 一览，则你可以选择**从现有预告片中选择**，以重复使用已上传的预告片。 无需为每种语言单独上传。
 
-若要从列表中删除预告片，请单击其文件名旁边的 **X**。 你可以选择是否将其从仅当前应用商店一览中，删除，或将其删除来自所有产品的应用商店一览 （每种语言）。
+若要从列表中删除预告片，请单击其文件名旁边的 **X**。 你可以选择是否将其从仅当前应用商店一览中，删除，或将其删除来自所有产品的 Store 一览 （每种语言）。
 
 
 ### <a name="trailer-requirements"></a>预告片要求
@@ -223,7 +221,7 @@ ms.locfileid: "7581840"
 
 ### <a name="windows-10-and-xbox-image-169-super-hero-art"></a>Windows 10 和 Xbox 图像（16:9 超级人物图片）
 
-在**Windows 10 和 Xbox 图像**部分中，在所有 Windows 10 设备类型 （包括 Xbox） 上的 Microsoft Store 中的各种布局中使用了该**16:9 超级人物插图 （1920 x 1080 或 3840 x 2160 像素）** 图像。 无论你的应用针对哪种操作系统版本或设备类型，我们都建议提供此图像。
+在**Windows 10 和 Xbox 图像**部分中，在所有 Windows 10 设备类型 （包括 Xbox） 上的 Microsoft Store 中的各种布局中使用**16:9 超级人物插图 （1920 x 1080 或 3840 x 2160 像素）** 映像。 无论你的应用针对哪种操作系统版本或设备类型，我们都建议提供此图像。
 
 如果一览包括[视频预告片](#trailers)，则*需要*使用此图像进行正确显示。 对于 Windows 10 版本 1607 或更高版本（包括 Xbox）的客户，它会作为 Microsoft Store 一览顶部的主图像（或在任何预告片播放完成后出现）。 此外它还可以在整个 Microsoft Store 的促销布局中突出显示你的应用。 注意：此图像不得包含产品的标题或其他文本消息。
 
@@ -265,7 +263,7 @@ ms.locfileid: "7581840"
 
 ### <a name="images-only-for-windows-8x-andor-windows-phone-8x"></a>图像仅适用于 Windows 8.x 和/或 Windows Phone 8.x 
 
-如果你以前提交的应用支持较早的操作系统版本 (Windows 8.x 和/或 Windows Phone 8.x)，必须提供这些图像，以便我们考虑特别推荐你在促销布局中的应用 （但它们不能保证你的应用将获得特别推荐） 中。 如果你的应用不支持这些较早的操作系统版本，跳过此部分。 （此部分以前称为**可选促销图像**。）
+如果你以前提交的应用支持较早的操作系统版本 (Windows 8.x 和/或 Windows Phone 8.x)，必须提供这些图像，以便我们可以考虑特别推荐你在促销布局中的应用 （但他们不能保证你的应用将获得特别推荐） 中。 如果你的应用不支持这些较早的操作系统版本，跳过此部分。 （此部分以前称为**可选促销图像**。）
 
 **对于 Windows Phone 8.1 及更早版本**，促销布局中可使用两种图像大小：**1000 x 800 像素 (5:4)** 和 **358 x 358 像素 (1:1)**。 如果你的应用运行在 Windows Phone 8.1 或更早版本，我们建议提供这两种大小的图像。  
 

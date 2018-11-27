@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
 description: 本文将向你介绍当应用在后台运行时如何播放媒体。
 title: 在后台播放媒体
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e1ec460403617cbbf0fb6d6bbff9950046790039
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b8a859f27ff24dba15f7e4fde66a8d54a84a8bf4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574553"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706500"
 ---
 # <a name="play-media-in-the-background"></a>在后台播放媒体
 本文介绍了如何配置应用，以便在应用从前台移至后台后，媒体可以继续播放。 这意味着，即使在用户已最小化你的应用、返回到主屏幕，或已以其他方式离开你的应用后，你的应用仍可继续播放音频。 

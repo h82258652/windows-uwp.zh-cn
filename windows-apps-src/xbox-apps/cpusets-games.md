@@ -1,12 +1,13 @@
 ---
 title: 适用于游戏开发的 CPUSets
 description: 本文概述了通用 Windows 平台 (UWP) 新增的 CPUSets API，涵盖了对于游戏和应用程序开发相当重要的核心信息。
-author: hammondsp
-ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 942c6b79d3b26e620ebb6e1318e1f7ffd75f929c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.locfileid: "205651"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708627"
 ---
 # <a name="cpusets-for-game-development"></a>适用于游戏开发的 CPUSets
 
@@ -46,7 +47,7 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
  **表 1. 适用于游戏开发的数据成员。**
 
-| 成员名称  | 数据类型 | 提要 |
+| 成员名称  | 数据类型 | 说明 |
 | ------------- | ------------- | ------------- |
 | Type  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
 | Id  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |

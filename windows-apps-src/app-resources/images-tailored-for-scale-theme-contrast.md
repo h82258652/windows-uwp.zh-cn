@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
 title: 加载为比例、主题、高对比度和其他定制的图像和资产
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db96cea273348b4e1bc7059446f7528ba30a645
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569150"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709770"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>加载为比例、主题、高对比度和其他定制的图像和资产
 你的应用可以加载为[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、主题、高对比度和其他运行时上下文定制的图像资源文件（或其他资产文件）。 这些图像可以从强制性代码或 XAML 标记引用，如作为 **Image** 的 **Source** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中 &mdash; 例如，作为 Visual Studio 清单设计器的“视觉资源”选项卡上应用图标的值 &mdash; 或显示在磁贴和 toast 上。 通过在图像的文件名中使用限定符，并选择性地在 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 的帮助下动态加载它们，你可以加载与用户的显示比例、主题、高对比度、语言和其他上下文的运行时设置最匹配的最合适图像文件。

@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
 description: 在 Microsoft Store 分析 API 中使用此方法，可获取给定的日期范围和其他可选筛选器的每月的应用使用情况数据。
 title: 获取每月的应用使用情况
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，使用情况
 ms.localizationpriority: medium
-ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567182"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710696"
 ---
 # <a name="get-monthly-app-usage"></a>获取每月的应用使用情况
 
-在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序聚合的使用情况数据 （不包括 Xbox 多人游戏）。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
+在 Microsoft Store 分析 API 中使用此方法采用 JSON 格式的聚合的使用情况数据 （不包括 Xbox 多人游戏） 获取给定的日期范围 （过去 90 天内仅） 和其他可选筛选器应用程序。 此信息也是在合作伙伴中心中的[使用情况报告](../publish/usage-report.md)中可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -37,7 +35,7 @@ ms.locfileid: "7567182"
 
 ### <a name="request-header"></a>请求头
 
-| 标头        | 类型   | 说明                                                                 |
+| 标头        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
@@ -70,7 +68,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值      | 类型   | 说明                                                                                                                         |
+| 值      | 类型   | 描述                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 包含聚合的使用情况数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下表格。 |
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的评价数据超过 10000 行时，就会返回此值。                 |
@@ -88,14 +86,14 @@ Authorization: Bearer <your access token>
 | applicationName           | 字符串  | 应用的显示名称。                                                                |
 | market                    | 字符串  | 客户使用你的应用的市场的 ISO 3166 国家/地区代码。                   |
 | packageVersion            | 字符串  | 使用情况发生的位置的程序包版本。                                            |
-| deviceType                | 字符串  | 以下字符串之一，指定的设备使用情况发生的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                                           |
+| deviceType                | 字符串  | 以下字符串之一，指定使用情况发生的位置的设备的类型：<ul><li>**电脑**</li><li>**电话**</li><li>**控制台**</li><li>**Tablet**</li><li>**IoT**</li><li>**服务器**</li><li>**全息**</li><li>**未知**</li></ul>                                                                                                                           |
 | subscriptionName          | 字符串  | 指示用法是通过 Xbox Game Pass。                                              |
 | monthlySessionCount       | 长型    | 在该月期间的用户会话的数量。                                              |
-| engagementDurationMinutes | Double  | 用户在其中主动使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或非活动状态一段时间后结束分钟。                               |
+| engagementDurationMinutes | Double  | 用户在其中主动使用你的应用由不同的时间段，在应用启动时启动测量 （进程开始） 或终止 （进程结束） 或处于非活动状态一段时间后结束分钟。                               |
 | monthlyActiveUsers        | 长型    | 使用该月的应用的客户数量。                                           |
-| monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或非活动状态一段时间后数。                                                        |
+| monthlyActiveDevices      | 长型    | 设备运行你的应用不同的时间段，在应用启动时启动 （进程开始） 和结束时终止 （进程结束） 或处于非活动状态一段时间后数。                                                        |
 | monthlyNewUsers           | 长型    | 使用你的应用第一次该月的客户数。                    |
-| averageDailyActiveUsers   | Double  | 每天都使用应用的客户的平均数量。                             |
+| averageDailyActiveUsers   | Double  | 每天都使用该应用的客户的平均数量。                             |
 | averageDailyActiveDevices | Double  | 用于与应用交互的所有用户每天设备的平均数量。 |
 
 

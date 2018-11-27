@@ -4,17 +4,15 @@ description: 通过光源照亮时，采用高度发光材料的闪光对象会�
 ms.assetid: 9B3AC5EC-DDAA-4671-BC81-0E3C79D87A81
 keywords:
 - 高光映射
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd9db0afa914ef7a56dbd55c938129b86a43743
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7d88989be04704395c056f1bae058e2aefd1a2a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564656"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707585"
 ---
 # <a name="specular-light-maps"></a>高光映射
 

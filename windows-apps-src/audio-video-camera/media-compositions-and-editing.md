@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: Windows.Media.Editing 命名空间中的 API 允许你快速开发应用，从而使用户从音频和视频源文件创建媒体合成。
 title: 媒体合成和编辑
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565641"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711316"
 ---
 # <a name="media-compositions-and-editing"></a>媒体合成和编辑
 

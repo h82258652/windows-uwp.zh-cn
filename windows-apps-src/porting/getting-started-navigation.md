@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: 导航入门
 description: 导航入门
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 63a39dfcfaab8b42afc98b7fe786a05908d49d16
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567791"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711207"
 ---
 # <a name="getting-started-navigation"></a>入门：导航
 
@@ -83,7 +81,7 @@ public BlankPage()
 
 有关导航的详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 个性化动画示例](http://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
-**注意**有关适用于使用 JavaScript 和 HTML 的 UWP 应用的导航信息，请参阅[快速入门： 使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
+**注意**适用于使用 JavaScript 和 HTML 的 UWP 应用的导航信息，请参阅[快速入门： 使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  
 ### <a name="next-step"></a>下一步
 

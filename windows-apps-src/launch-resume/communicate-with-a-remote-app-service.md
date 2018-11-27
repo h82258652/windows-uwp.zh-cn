@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 与远程应用服务通信
 description: 使用项目“Rome”与在远程设备上运行的应用服务交换消息。
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，连接设备，远程系统、 rome、 项目 rome、 后台任务，应用服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 044197ebae111e9300f06783f02de7f0636d4a11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568608"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709059"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 
@@ -42,7 +40,7 @@ ms.locfileid: "7568608"
 ...
 ```
 
-若要使用此**uap3**命名空间中的元素，必须添加命名空间定义的清单文件顶部如果尚未存在。
+才能使用此**uap3**命名空间中的元素，你必须在清单文件顶部添加命名空间定义如果尚未存在。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

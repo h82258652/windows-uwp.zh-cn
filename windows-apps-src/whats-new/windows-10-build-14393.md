@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 面向开发人员的 Windows 10 中的新增工具和功能
 description: Windows 10 版本 14393 和新开发人员工具将提供新的通用 Windows 平台支持的工具、功能和体验。
 keywords: 新增功能, 更新, 功能, 新增, Windows 10, 1607, 7 月, 最新, 14393
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: a350ff9cd5a2a3ec22637eabbcfc55b693cdd283
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aff0812da6b7c3d8e55bc31ed196211f54252e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570217"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709710"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>面向开发人员的 Windows 10 版本 14393 中的新增功能
 

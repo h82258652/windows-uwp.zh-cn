@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 本主题讨论处理使用 C++/WinRT 编程时出现的错误的策略。
 title: 使用 C++/WinRT 的错误处理
-ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 错误, 处理, 异常
 ms.localizationpriority: medium
-ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570725"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710839"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT 的错误处理
 

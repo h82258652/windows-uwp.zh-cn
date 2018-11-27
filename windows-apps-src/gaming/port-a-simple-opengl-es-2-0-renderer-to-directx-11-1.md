@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
 description: 作为首个移植练习，我们将从最基本的内容开始：将旋转且顶点着色的立方体的简单呈现器从 OpenGL ES 2.0 移植到 Direct3D 中，以便它与 Visual Studio 2015 中的 DirectX 11 应用（通用 Windows）模板相匹配。
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, opengl, direct3d 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559189"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707703"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
 

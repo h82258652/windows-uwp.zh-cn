@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
 title: 旋转
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578696"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711017"
 ---
 # <a name="rotation"></a>旋转
 
@@ -90,7 +88,7 @@ Windows8 支持三种类型的旋转： 自由、 受限以及组合。
 <td align="left">组合旋转</td>
 <td align="left"><p>组合旋转支持包含区域（类似于<a href="guidelines-for-panning.md">平移指南</a>中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度对齐点上。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
 <div class="alert">
-<strong>注意</strong>用户界面围栏是目标周围的某个区域周围限制向特定值或位置，从而影响其选择移动一项功能。
+<strong>注意</strong>用户界面围栏是目标周围的某个区域周围限制向特定值或位置，从而影响其选择移动的功能。
 </div>
 <div>
  

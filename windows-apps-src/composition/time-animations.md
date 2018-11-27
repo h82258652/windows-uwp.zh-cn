@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 时间动画
 description: 使用 KeyFrameAnimation 类可随着时间推移更改 UI。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: bf6d3f16c7b240ca370c01a787fef09862f35863
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0a1fe8c1fcb641c3bc79f1f058befe6f4b44044a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569998"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710958"
 ---
 # <a name="time-based-animations"></a>基于时间的动画
 

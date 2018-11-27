@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: 如果你的应用提供较大的应用内产品目录，你可以选择按照本主题中描述的过程来帮助管理你的目录。
 title: 管理应用内产品的大目录
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 目录, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: f57adf62939c28794e3ecdf6e59f2c4763de9c21
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581022"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710295"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理应用内产品的大目录
 

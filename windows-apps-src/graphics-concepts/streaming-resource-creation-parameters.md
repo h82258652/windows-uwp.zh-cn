@@ -4,17 +4,15 @@ description: 可以作为流式资源创建的 Direct3D 资源类型存在某些
 ms.assetid: 6FC5AD93-6F47-479E-947C-895C99B427BC
 keywords:
 - 流式资源创建参数
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ddb150e570e25af7162a50309b9b0fc30cedf60
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576281"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711177"
 ---
 # <a name="streaming-resource-creation-parameters"></a>流式资源创建参数
 
@@ -34,7 +32,7 @@ Texture2D\[Array\]（包括 TextureCube\[Array\]，这是 Texture2D\[Array\] 的
 <span id="Supported-Resource-Misc-Flags"></span><span id="supported-resource-misc-flags"></span><span id="SUPPORTED-RESOURCE-MISC-FLAGS"></span>**受支持的资源杂项标记**  
 平铺式，即流式处理（按照定义）、纹理立方体、绘图间接参数、允许存在原始视图的缓冲区、结构化缓冲区、资源夹或生成 mips。
 
-**不受支持：** 共享、 共享键控互斥体、 GDI 兼容，共享 NT 句柄、 限制内容、 限制共享的资源、 限制共享的资源的驱动程序、 受保护，或磁贴池。
+**不受支持：** 共享、 共享键控互斥体、 可兼容的 GDI 共享 NT 句柄、 限制内容、 限制共享的资源、 限制共享的资源的驱动程序、 受保护或磁贴池。
 
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**受支持的绑定标志**  
 作为着色器资源、呈现目标、深度模板或无序的访问绑定。

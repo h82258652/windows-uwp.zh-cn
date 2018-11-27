@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: 演示如何在 UWP 应用中录制游戏音频、视频和元数据。
 title: 捕获游戏音频、视频、屏幕截图和元数据
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
-ms.openlocfilehash: 906422e8bcca90c35821ecac95c02279c65fa400
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4bdc5c210c466d6065fbcf1c856276bbb485788a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569863"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708167"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>捕获游戏音频、视频、屏幕截图和元数据
 本文介绍如何捕获游戏视频、音频和屏幕截图，以及如何提交元数据。系统将该元数据嵌入到捕获和广播的媒体中，使你的应用和其他人可以创建被同步到游戏事件的动态体验。 
@@ -145,7 +143,7 @@ ms.locfileid: "7569863"
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元数据缓存存储限制
-你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将删除在删除**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 其优先级的元数据之前**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级值写入的元数据。
+你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将删除前删除**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 其优先级的元数据与**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级值写入的元数据。
 
 在任何时候，你都可以通过调用 **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 的方式检查在你的应用的元数据缓存中可用的字节数。 你可以选择设置你自己的应用定义的阈值，之后可以选择减少你写入到缓存的元数据量。 下面的示例演示了此模式的简单实现。
 

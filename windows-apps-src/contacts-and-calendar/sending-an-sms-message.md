@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: 本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。
 title: 发送短信
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: 联系人, 短信, 发送
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d84646685c6944ab0e816b42cf6fb2125f8a57
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 427eb1b895269727d82e42d5abc3ae1f1da1a35d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578210"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706083"
 ---
 # <a name="send-an-sms-message"></a>发送短信
 

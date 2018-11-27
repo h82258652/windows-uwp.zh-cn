@@ -1,12 +1,10 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
 title: 键盘事件
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: 键盘, 游戏板, 远程, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互, 键放开, 键按下
-ms.author: kbridge
 ms.date: 03/29/2017
 ms.topic: article
 pm-contact: chigy
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9abc16a4992dedead598f96061811c82c5a5c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563556"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710072"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -331,7 +329,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 你可以替代特定控件（如 [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)）的键事件，以针对各种输入设备（包括键盘和游戏板）提供一致的焦点导航。
 
-在以下示例中，我们按下任意箭头键时，该控件子类并替代 KeyDown 行为，以将焦点移动到 GridView 内容。
+在下面的示例中，我们按下任意箭头键时，该控件子类并替代 KeyDown 行为，以将焦点移动到 GridView 内容。
 
 ```csharp
 public class CustomGridView : GridView

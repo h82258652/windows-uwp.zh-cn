@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
 description: 本文列出了 UWP 应用可用的相机功能以及指向显示如何使用这些功能的操作方法文章的链接。
 title: 相机
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d330a762844e4889d0da9ae5457acc8d9f0c2b91
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e28a4a7abaacd8b2de60c6163055bd9d667ba412
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554850"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711368"
 ---
 # <a name="camera"></a>相机
 
