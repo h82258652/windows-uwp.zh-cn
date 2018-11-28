@@ -6,21 +6,21 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699084"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853392"
 ---
 # <a name="pointofservice-device-sharing"></a>PointOfService 设备共享
 
-了解如何在多台电脑依赖于共享外围设备，而不是专用的外设连接到每台计算机的环境中的其他计算机共享网络或连接蓝牙外围设备。
+了解如何在多台电脑依赖于共享的外围设备，而不是专用的外设连接到每台计算机的环境中的其他计算机共享网络或连接蓝牙外围设备。
 
 ## <a name="device-sharing"></a>设备共享
 
-网络和蓝牙连接的 PointOfService 外设时通常使用环境 wheere 在多个客户端设备共享相同的外设全天。  忙碌的零售或食物服务环境中要将附加到外围设备的客户端设备的功能中的任何延迟关联可以关闭交易记录与客户和移到下的效率对没有影响。 在使用为厨房打印机客户的订单的详细信息，将传输到准备厨房收据打印机的其中一个快速服务餐馆方案将从客户获得订单的多个客户端设备。  顺序完成后每个客户端设备应该能够声明共享的打印机并立即打印厨房的顺序。
+网络和蓝牙连接的 PointOfService 外设时通常使用环境 wheere 在多个客户端设备共享相同的外设全天。  忙碌的零售或食物服务环境中要将附加到外围设备的客户端设备的功能中的任何延迟影响对可以关闭与客户交易并转到下一个关联的效率。 在使用厨房打印机作为客户的订单的详细信息，将传输到准备厨房收据打印机的其中一个快速服务餐馆方案将从客户获得订单的多个客户端设备。  完成订单后的每个客户端设备应该能够声明共享的打印机并立即打印厨房的顺序。
 
-在这些环境中，务必为完全**释放**设备对象的应用程序，以便另一个可以声明相同的设备。
+在以下环境中，务必为完全**释放**设备对象的应用程序，以便另一个可以声明相同的设备。
 
 释放的末尾的使用阻止 PosPrinter
 
