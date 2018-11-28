@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 示例, directx, 基础知识
 ms.localizationpriority: medium
 ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704126"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7854984"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 示例基础
 
@@ -44,7 +44,7 @@ ms.locfileid: "7704126"
 
 3. 在中间的列表中，选择**DirectX 11 应用 (通用 Windows)**。 如果你看不到此选项，你可能不具有安装所需的组件&mdash;有关如何安装其他组件的信息，请参阅[修改 Visual Studio 2017 中通过添加或删除的工作负载和组件](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)。
 
-4. 为你的项目**名称**、**位置**的文件存储和**解决方案的名称**，并单击**确定**。
+4. 为你的项目**名称**、**位置**的文件存储和**解决方案名称**，并单击**确定**。
 
 ![新项目](images/marble-maze-sample-fundamentals-1.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "7704126"
 
  
 
-从 Microsoft Store 获取每个 UWP 应用以在应用包的形式。 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单还允许指定项目属性，例如支持的设备旋转方向、磁贴图像和初始屏幕。 你可以打开项目中的 **Package.appxmanifest** 来编辑清单。 有关应用包的详细信息，请参阅[打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)。
+从 Microsoft Store 获取每个 UWP 应用来自应用包的形式。 应用包中包含一个程序包清单，后者包含有关应用的信息。 例如，你可指定应用的功能（如需要的访问受保护的系统资源或用户数据的能力）。 如果你确定应用需要某些功能，可使用程序包清单来声明所需的功能。 清单还允许指定项目属性，例如支持的设备旋转方向、磁贴图像和初始屏幕。 你可以打开项目中的 **Package.appxmanifest** 来编辑清单。 有关应用包的详细信息，请参阅[打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)。
 
 ##  <a name="building-deploying-and-running-the-game"></a>生成、部署和运行游戏
 
@@ -84,7 +84,7 @@ Windows 运行时是可用于创建仅在特殊应用程序环境中运行的 UW
 > [!IMPORTANT]
 > 当创建 Windows 运行时对象或创建 Windows 运行时组件时，只能使用 **^** 和 **ref new**。 当编写不使用 Windows 运行时的核心应用程序代码时，可以使用标准 C++ 语法。
 
-Marble Maze 结合使用 **^** 和 **Microsoft::WRL::ComPtr** 来管理堆分配的对象并且最大程度减少内存泄露。 我们建议你使用 ^ 来管理 Windows 运行时变量的生存期**ComPtr**来管理 COM 变量 （如使用 DirectX 时），和**shared\_ptr**或**unique\_ptr**管理生命周期的所有其他的生存时间堆分配的 c + + 对象。
+Marble Maze 结合使用 **^** 和 **Microsoft::WRL::ComPtr** 来管理堆分配的对象并且最大程度减少内存泄露。 我们建议你使用 ^ 来管理 Windows 运行时变量的生存期**ComPtr**来管理 COM 变量 （如使用 DirectX 时），并且**shared\_ptr**或**unique\_ptr**管理生命周期的所有其他的生存时间堆分配的 c + + 对象。
 
  
 
@@ -119,7 +119,7 @@ Marble Maze 使用异常处理作为处理意外错误的主要方式。 尽管�
 
 通过使用 Microsoft 源代码注释语言 (SAL)，你可注释或描述函数使用其参数的方式。 SAL 注释也可描述返回值。 SAL 注释可与 C/C++ 代码分析工具一起发现 C 和 C++ 源代码中的可能缺陷。 该工具报告的常见编码错误包括：缓冲区溢出、未初始化的内存、null 指针取消引用，以及内存和资源泄漏。
 
-请考虑在[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)中声明**basicloader:: Loadmesh**方法。 此方法使用`_In_`若要指定该*文件名*是一个输入的参数 （并因此将仅从读取），`_Out_`指定*vertexBuffer*和*indexBuffer*输出参数 （并因此将仅写入），和`_Out_opt_`指定， *vertexCount*和*indexCount*是可选的输出参数 （和可能写入）。 因为 *vertexCount* 和 *indexCount* 是可选的输出参数，所以允许它们使用 **nullptr**。 C/C++ 代码分析工具检查对此方法的调用，以确保它传递的参数满足这些条件。
+请考虑在[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)中声明**basicloader:: Loadmesh**方法。 此方法使用`_In_`若要指定该*文件名*是一个输入的参数 （并因此仅可从读取），`_Out_`指定*vertexBuffer*和*indexBuffer*输出参数 （并因此将仅写入），和`_Out_opt_`指定*vertexCount*和*indexCount*可选输出参数 （和可能写入）。 因为 *vertexCount* 和 *indexCount* 是可选的输出参数，所以允许它们使用 **nullptr**。 C/C++ 代码分析工具检查对此方法的调用，以确保它传递的参数满足这些条件。
 
 ```cpp
 void LoadMesh(

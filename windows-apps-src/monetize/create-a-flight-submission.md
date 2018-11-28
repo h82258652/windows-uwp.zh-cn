@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691658"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839412"
 ---
 # <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
@@ -28,7 +28,7 @@ ms.locfileid: "7691658"
 
 * 如果尚未开始操作，请先完成 Microsoft Store 提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 创建应用的软件包外部测试。 你可以执行此操作在合作伙伴中心，或者你可以通过使用[创建软件包外部测试版](create-a-flight.md)的方法。
+* 创建应用的软件包外部测试版。 你可以执行此操作在合作伙伴中心，或者你可以通过使用[创建软件包外部测试版](create-a-flight.md)的方法。
 
 ## <a name="request"></a>请求
 

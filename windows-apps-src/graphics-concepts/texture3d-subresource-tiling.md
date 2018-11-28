@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c9c232bc60bbbb3cccc16618d82ec23452c58ee8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692908"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852409"
 ---
 # <a name="texture3d-subresource-tiling"></a>Texture3D 子资源平铺
 
@@ -21,7 +21,7 @@ ms.locfileid: "7692908"
 
 此表采用了 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 平铺，将 x/y 尺寸分别除以 4，再加上 16 层的深度值。 第一平面的所有磁贴（二维平面的磁贴限定前 16 层的深度值）先于后面的平面出现。
 
-**注意**在流式资源的[**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562)支持流式资源的初步实现中并不显现，但所需的磁贴形状的未来版本中可能支持此处列出。
+**注意**在流式资源的[**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562)支持流式资源的初步实现中并不显现，但可能在未来版本中支持的所需的磁贴形状此处列出。
 
  
 

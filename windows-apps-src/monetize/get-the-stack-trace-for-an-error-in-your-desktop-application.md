@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 堆栈跟踪, 错误, 桌面应用程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698166"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853783"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>获取桌面应用程序中的错误的堆栈跟踪
 
-在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的错误堆栈跟踪。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。 堆栈跟踪还可以在合作伙伴中心中的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)。
+在 Microsoft Store 分析 API 使用此方法，可获取已添加到 [Windows 桌面应用程序计划](https://msdn.microsoft.com/library/windows/desktop/mt826504)的桌面应用程序的错误堆栈跟踪。 此方法只能下载过去 30 天内发生的错误的堆栈跟踪。 堆栈跟踪，还提供在合作伙伴中心中的桌面应用程序[运行状况报告](https://msdn.microsoft.com/library/windows/desktop/mt826504)。
 
 在可以使用此方法之前，必须首先使用[获取桌面应用程序中的错误的详细信息](get-details-for-an-error-in-your-desktop-application.md)方法来检索与想要检索堆栈跟踪的错误相关联的 CAB 文件 ID 哈希。
 

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, directx, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: abbcd688df01b779a1cb3ab9e30bd13709926be4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691438"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839895"
 ---
 # <a name="plan-your-directx-port"></a>规划 DirectX 移植
 
 
 
-**小结**
+**摘要**
 
 -   规划 DirectX 移植
 -   [从 Direct3D 9 到 Direct3D 11 的重要更改](understand-direct3d-11-1-concepts.md)

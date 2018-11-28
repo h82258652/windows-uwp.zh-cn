@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, 版本, 内部版本, Windows, 选择, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691891"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7853512"
 ---
 # <a name="choose-a-uwp-version"></a>选择 UWP 版本
 
@@ -24,7 +24,7 @@ ms.locfileid: "7691891"
 
 | 版本 | 描述 |
 | --- | --- |
-| 生成 17763 （版本 1809年） | 这是最新版本的 Windows 10，在 2018 年 10 月发布。 **请注意，_必须_使用 Visual Studio 2017 以面向此版本的 Windows。** 此版本中的一些突出功能如下： </br> \* **Windows 机器学习：** Windows 机器学习具有现在正式启动后，为尖端机器学习模型提供更快地评估和支持等功能。 若要了解有关此平台的详细信息，请参阅 [Windows 机器学习](https://docs.microsoft.com/windows/ai/)。 </br> \* **Fluent Design:** 为 Windows 10 添加了新功能，例如菜单栏、 命令栏浮出控件，以及 XAML 属性的动画。 请在 [Fluent Design 概述](../design/fluent-design-system/index.md)中查看最新内容。 </br> 有关这些功能以及许多其他功能，此版本的 Windows 中添加信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)或的详细信息页面上[什么是适用于开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-build-17763.md)
+| 生成 17763 （版本 1809年） | 这是最新版本的 Windows 10，10 月 2018 年发布。 **请注意，_必须_使用 Visual Studio 2017 以面向此版本的 Windows。** 此版本中的一些突出功能如下： </br> \* **Windows 机器学习：** Windows 机器学习具有现在正式启动后，为尖端机器学习模型提供更快地评估和支持等功能。 若要了解有关此平台的详细信息，请参阅 [Windows 机器学习](https://docs.microsoft.com/windows/ai/)。 </br> \* **Fluent Design:** 为 Windows 10 添加了新功能，例如菜单栏、 命令栏浮出控件，以及 XAML 属性的动画。 请在 [Fluent Design 概述](../design/fluent-design-system/index.md)中查看最新内容。 </br> 有关这些功能以及许多其他功能添加到此版本的 Windows 中的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)或的详细信息页面上[适用于开发人员的 Windows 10 中的新增](../whats-new/windows-10-build-17763.md)
 | 内部版本 17134（版本 1803） | 这是版本的 Windows 10 已于 2018 年 4 月发布。 **请注意，_必须_使用 Visual Studio 2017 以面向此版本的 Windows。** 此版本中的一些突出功能如下： </br> \* **Fluent Design：** Windows 10 已添加树状视图、下拉刷新和导航视图等新功能。 请在 [Fluent Design 概述](../design/fluent-design-system/index.md)中查看最新内容。 </br> \* **控制台 UWP 应用：** 现可编写在控制台窗口（如 DOS 或 PowerShell 控制台窗口）中运行的 C++ /WinRT 或 /CX UWP 控制台应用。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows10 中的新增功能](../whats-new/windows-10-build-17134.md)上的详细信息页面。
 | 内部版本 16299（Fall Creators Update 1709 版） | 此版本的 Windows 10 已于 2017 年 10 月发布。 **请注意，_必须_使用 Visual Studio 2017 以面向此版本的 Windows。** 此版本中的一些突出功能如下： </br> \* **.NET Standard 2.0：** 显著增加了 .NET API，并在 .NET Standard 中融入了最常用的 NuGet 程序包以及第三方库。 在[此处](https://docs.microsoft.com/dotnet/standard/net-standard)查看更多详细信息并探索文档。 请注意：必须将你的**最低版本**设置为版本 16299 才可访问这些新 API。 </br> \* **Fluent Design：** 使用光线、深度、透视和移动来改善应用并帮助用户关注重要的 UI 元素。 </br> \* **条件 XAML：** 根据在运行时是否存在 API 轻松设置属性并实例化对象，从而使应用能够跨不同设备和版本无缝运行。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows10 中的新增功能](../whats-new/windows-10-build-16299.md)上的详细信息页面。
 | 内部版本 15063（Creators Update 1703 版） | 此版本的 Windows 10 已于 2017 年 3 月发布。 **请注意，你_必须_使用 Visual Studio 2017 以面向此版本的 Windows**。 此版本中的一些突出功能如下：  </br> \* **墨迹分析：** Windows Ink 现在可将墨迹笔划分类为编写笔划或绘图笔划，并识别文本、形状和基本布局结构。 </br> \* **Windows.Ui.Composition API：** 在应用中轻松结合并应用动画。 </br> \* **动态编辑：** 在应用运行的时候编辑 XAML，并可查看实时更改。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows10 中的新增功能](../whats-new/windows-10-build-15063.md)上的详细信息页面。  |
@@ -42,9 +42,9 @@ Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改�
 
 ## <a name="net-api-availability-in-uwp-versions"></a>在 UWP 版本的.NET API 可用性
 
-UWP 支持有限的.NET Api，无论的**目标版本**或你的项目的**最低版本**提供的子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支持有限的可用无论的**目标版本**或你的项目的**最低版本**的.NET Api 子集。 [本页提供了可用的类型的详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-如果你想要创建可重用的跨平台库，.NET Standard 支持在 UWP 上。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 中支持的 UWP 版本的信息。
+如果你想要创建可重用的跨平台库，.NET Standard 支持在 UWP 上。 [.NET Standard 文档](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 受支持的 UWP 版本中的信息。
 
 如果你要开发的桌面应用，请参阅改为[.NET Framework 版本和依赖项](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的详细信息。
 

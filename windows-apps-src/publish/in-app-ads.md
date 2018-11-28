@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e212e16039d49e3ffd08aa5886d48c61ee24e9e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719594"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7841752"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
-使用**盈利**&gt;在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建和管理个广告单元的**应用内广告**页面：
+使用**盈利**&gt;在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建和管理广告单元的**应用内广告**页面：
 
 * 使用 [Microsoft 广告 SDK](http://aka.ms/ads-sdk-uwp) 的通用 Windows 平台 (UWP) 应用。
 * 以前发布的 Windows 8.x 和 Windows Phone 8.x 应用使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](http://aka.ms/store-8-sdk)。
@@ -70,7 +70,7 @@ ms.locfileid: "7719594"
 若要编辑 UWP 广告单元的[中介设置](#mediation)或此广告单元所用于的应用的 [COPPA 合规性](#coppa)，请单击广告单元的名称。
 
 > [!NOTE]
-> 如果广告单元过去六个月不有任何活动，我们将其标记为**非活动**，并最终从合作伙伴中心中删除它。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
+> 如果广告单元过去六个月中具有不活动，我们将其标记为**非活动**，并最终从合作伙伴中心中删除它。 你可以使用筛选器来仅显示**活动**或**停用**广告单位。 如果看到你认为被不准确地标记为**停用**的任何广告单元，请[联系支持人员](http://aka.ms/storesupport)。
 
 <span id="mediation" />
 
@@ -87,7 +87,7 @@ ms.locfileid: "7719594"
 2. 在**应用内广告**页面上，转到的**中介设置**部分和配置你的设置。
 
     * 默认情况下，选择**让 Microsoft 优化我的设置**复选框。 我们建议你使用此选项。 此选项会使用机器学习算法自动为你的应用选择广告中介设置，以帮助最大化你在你的应用所支持的各市场中的广告收益。 当你使用此选项时，你还可以选择你想要使用的配置中的广告网络。 取消选中还不想要配置的一部分，并且我们的算法将确保你的应用仅在所选的广告网络接收广告的广告网络。
-    * 如果你想要选择自己的广告中介设置，选择**修改默认设置**。
+    * 如果你想要选择你自己的广告中介设置，则选择**修改默认设置**。
 
     > [!NOTE]
     > 本部分中的其余步骤将仅适用于你选择**修改默认设置**。
@@ -152,7 +152,7 @@ ms.locfileid: "7719594"
 
 ## <a name="coppa-compliance"></a>COPPA 合规性
 
-当你[创建一个广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)， **COPPA 合规性**部分显示在页面底部的广告单元选定的应用是否至少一个提交已到达[应用商店中](../publish/the-app-certification-process.md#in-the-store)步骤在应用中认证过程。
+当你[创建广告单元](#create-ad-unit)或[选择现有广告单元](#available-ad-units)， **COPPA 合规性**部分显示在页面底部的广告单元选定的应用是否至少一个提交已到达[应用商店中](../publish/the-app-certification-process.md#in-the-store)步骤在应用中认证过程。
 
 根据《儿童在线隐私保护法》（“COPPA”），如果你的应用面向 13 岁以下的儿童，则你必须在这个部分选择**此应用程序面向 13 岁以下的儿童**。 如果选择此选项，则 Microsoft 将采取措施以在向你的应用发送广告时禁用其行为广告服务。
 

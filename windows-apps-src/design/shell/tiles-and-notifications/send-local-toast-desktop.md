@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 发送 toast, 发送本地 toast, 桌面桥, C#, c sharp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c32ba5928d3c272ef77a70790640346fb000762
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697107"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842412"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
@@ -66,7 +66,7 @@ ms.locfileid: "7697107"
 
 ## <a name="step-4-implement-the-activator"></a>步骤 4：实现激活器
 
-你必须实现 toast 激活的处理程序，以便用户单击你的 toast 时，你的应用可以执行某些操作。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
+必须实现 toast 激活的处理程序，以便用户单击 toast 时，你的应用可以执行某些操作。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
 
 扩展 **NotificationActivator** 类，然后添加下面列出的三个属性，并使用联机 GUID 生成器（有多种可选）为应用创建一个唯一的 GUID CLSID。 操作中心通过此 CLSID（类标识符）了解要对哪个类实施 COM 激活。
 

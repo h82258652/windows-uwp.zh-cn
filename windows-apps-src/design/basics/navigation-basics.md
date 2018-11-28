@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719604"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848648"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -96,7 +96,7 @@ ms.locfileid: "7719604"
 
 1. 考虑用户的想法。 找出他们可能用来访问你的应用的典型路径；对于每个页面，思考为何用户在那里以及他们可能想去哪里。
 
-2. 避免深入导航层次结构。 如果导航级别超过三个，你将面临让用户置身于深度分层、难以脱身的风险。
+2. 避免使用深入导航层次结构。 如果导航级别超过三个，你将面临让用户置身于深度分层、难以脱身的风险。
 
 3. 避免“弹跳”。 “弹跳”会在以下情况下发生：存在相关内容，但导航到该内容需要用户先转到上一级，然后再返回。
 
@@ -117,7 +117,7 @@ ms.locfileid: "7719604"
 
         - 可以按任意顺序查看页面。
         - 页面之间明显不同，并且不具有明显的父/子关系。
-        - 组中存在少于 8 页面。 <br>
+        - 组中有页面少于 8。 <br>
         （当存在多个页面时，用户可能难以区分页面或难以弄清它们当前在组中的位置。 如果你认为这对你的应用不构成问题，请继续将页面作为对等方平行排列。 否则，请考虑使用层次结构将页面分为两个或更多的组。）
 
     :::column-end:::
@@ -185,12 +185,12 @@ ms.locfileid: "7719604"
         Use top navigation when:
 
         - 你想要显示在屏幕上的所有导航选项。
-        - 你希望为你的应用的内容的更多空间。
+        - 你希望为你的应用内容的更多空间。
         - 图标不能清楚地描述你导航类别。
         
         使用 tab 键时：
 
-        - 你想要保留导航历史记录和页面状态。
+        - 你想要保留导航历史记录和页面的状态。
         - 你预期用户经常标签之间进行切换。
 
 :::row-end:::

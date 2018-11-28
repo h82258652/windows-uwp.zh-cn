@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691045"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845826"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
-可管理和查看与每一个应用的相关的详细信息 [合作伙伴中心中，并配置服务，例如通知、 A / B 测试和地图。
+你可以管理和查看与每一个应用的相关的详细信息 [合作伙伴中心中，并配置服务，例如通知、 A / B 测试和地图。
 
-使用合作伙伴中心中的应用时，你将看到**服务**和**应用管理**的左侧的导航菜单中的部分。 可以展开这些部分，访问如下所述的功能。
+使用合作伙伴中心中的应用时，你将看到在左侧的导航菜单中的部分**服务**和**应用管理**。 可以展开这些部分，访问如下所述的功能。
 
 ## <a name="services"></a>服务
 
@@ -27,7 +27,7 @@ ms.locfileid: "7691045"
 
 如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](http://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布你的 Xbox Live 创意者计划游戏。
 
-有关详细信息，请参阅[Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)和[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+有关详细信息，请参阅[开始使用 Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，并[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
 ## <a name="experimentation"></a>实验
 
@@ -37,19 +37,19 @@ ms.locfileid: "7691045"
 
 ## <a name="maps"></a>地图
 
-若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图身份验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
+若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
 
-仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求地图服务应用程序 ID 和令牌要包含在你的应用代码中。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务的身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你的程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
+仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求你的应用代码中包含的地图服务应用程序 ID 和令牌。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你的程序包并提交应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
 ## <a name="product-collections-and-purchases"></a>产品收集和购买
 
-若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 此处。 请注意，需要 16 个小时才能使这些更改生效。
+若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 下面。 请注意，需要 16 个小时才能使这些更改生效。
 
 有关详细信息，请参阅[管理来自服务的产品授权](../monetize/view-and-grant-products-from-a-service.md)。
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
+f 产品与 Azure AD 集成，并且调用 Api 请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意的情况下，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
 
 有关详细信息，请参阅[同意整个租户的请求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 

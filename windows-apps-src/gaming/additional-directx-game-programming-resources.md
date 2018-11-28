@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
 ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692958"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838294"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
@@ -45,7 +45,7 @@ ms.locfileid: "7692958"
 -   [DirectXTex 纹理处理库](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio[图形诊断](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 一个易于使用的 Windows 运行时 API，具有带 GPU 加速的立即模式 2D 图形呈现。
--   [适用于 Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387) -通过将转换到 DirectX 11 API 调用的 OpenGL ES API 调用的 Windows 上运行 OpenGL ES 内容。
+-   [适用于 Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387) -通过到 DirectX 11 API 调用的 OpenGL ES API 调用的 Windows 上运行 OpenGL ES 内容。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 游戏开发会议视频
 

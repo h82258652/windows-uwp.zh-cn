@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: 在 Microsoft Store 提交 API 中使用此方法创建加载项，为注册到你 PartnerCenter 帐户的应用。
+description: 在 Microsoft Store 提交 API 中使用此方法创建加载项注册到 PartnerCenter 帐户的应用。
 title: 创建加载项
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700176"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837698"
 ---
 # <a name="create-an-add-on"></a>创建加载项
 
@@ -97,7 +97,7 @@ Content-Type: application/json
 | 错误代码 |  描述                                                                                                                                                                           |
 |--------|------------------|
 | 400  | 请求无效。 |
-| 409  | 由于其当前状态下，无法创建加载项或加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 由于其当前状态下，无法创建加载项，或者加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题

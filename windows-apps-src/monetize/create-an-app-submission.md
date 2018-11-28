@@ -1,21 +1,21 @@
 ---
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: 在 Microsoft Store 提交 API 中使用此方法创建新提交，为注册到你的合作伙伴中心帐户的应用。
+description: 在 Microsoft Store 提交 API 中使用此方法，以创建新的提交，为注册到你的合作伙伴中心帐户的应用。
 title: 创建应用提交
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建应用提交
 ms.localizationpriority: medium
 ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702851"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850527"
 ---
 # <a name="create-an-app-submission"></a>创建应用提交
 
-在 Microsoft Store 提交 API 中使用此方法创建新提交，为注册到你的合作伙伴中心帐户的应用。 使用此方法成功创建新提交后，[更新提交](update-an-app-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-app-submission.md)以供引入和发布。
+在 Microsoft Store 提交 API 中使用此方法，以创建新的提交，为注册到你的合作伙伴中心帐户的应用。 使用此方法成功创建新提交后，[更新提交](update-an-app-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-app-submission.md)以供引入和发布。
 
 有关此方法如何适用通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
 

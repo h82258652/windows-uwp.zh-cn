@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702112"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7849404"
 ---
 # <a name="supported-languages"></a>支持的语言
 
 
-你可以将应用提交到 Microsoft Store 用 100 多种语言。
+你可以提交到 Microsoft Store 用 100 多种语言的应用。
 
 若要了解有关在应用中配置语言的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)和[了解用户配置文件语言和应用清单语言](../design/globalizing/manage-language-and-region.md)。 我们还提供[多语言应用工具包](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，用于帮助你编写支持多种语言的应用。
 
@@ -25,7 +25,7 @@ ms.locfileid: "7702112"
 
 以下是 Microsoft 应用商店支持的语言。 你的应用必须支持至少其中一种语言。 
 
-此处将不包括的语言代码不受应用商店。 我们建议你不要包含面向以外; 下面列出的语言代码的程序包此类软件包不会分发给客户，并且可能导致延迟或失败认证。
+此处将不包括的语言代码不受应用商店。 我们建议你不要包含面向以外; 下面列出的语言代码的程序包此类软件包将不会分发给客户，并且可能导致延迟或失败认证。
 
 | 语言名称         | 支持的语言代码                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

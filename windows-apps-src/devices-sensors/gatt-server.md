@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a68e78bef540717d4f4c33d3132748fa727b4068
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7714083"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840010"
 ---
 # <a name="bluetooth-gatt-server"></a>蓝牙 GATT 服务器
 
@@ -31,7 +31,7 @@ ms.locfileid: "7714083"
 Windows 通常可在客户端角色运行。 不过，很多情况下会出现这需要 Windows 将充当蓝牙 LE GATT 服务器以及。 IoT 设备，以及大多数跨平台 BLE 通信的几乎所有情况下将需要 Windows GATT 服务器。 此外，将通知发送到附近可穿戴设备已成为受欢迎的情况下需要以及这种技术。  
 > 请确保[GATT 客户端文档](gatt-client.md)中的所有概念是都很明显，然后再继续。  
 
-服务器操作将围绕在服务提供商和 GattLocalCharacteristic。 这两个类将提供声明、 实现和公开到远程设备上的数据结构所需的功能。
+服务器操作将围绕在服务提供商和 GattLocalCharacteristic。 这两个类将提供声明、 实现和公开到远程设备上的数据层次结构所需的功能。
 
 ## <a name="define-the-supported-services"></a>定义的受支持的服务
 你的应用可能会声明将发布的 Windows 的一个或多个服务。 UUID 唯一地标识每个服务。 
@@ -68,7 +68,7 @@ Windows 通常可在客户端角色运行。 不过，很多情况下会出现�
 
 > 请注意，广播不支持这一次。  指定广播 GattCharacteristicProperty 将导致出现异常。
 
-### <a name="build-up-the-heirarchy-of-services-and-characteristics"></a>构建服务和特性的层次结构
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>生成层次结构中的服务和特性
 GattServiceProvider 用于创建和播发根主要服务定义。  每个服务需要它是自己的服务提供商对象，在 GUID 中： 
 
 ```csharp

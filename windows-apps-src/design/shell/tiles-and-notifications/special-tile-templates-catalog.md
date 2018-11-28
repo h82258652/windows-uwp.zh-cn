@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698136"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850004"
 ---
 # <a name="special-tile-templates"></a>特殊磁贴模板
  
@@ -184,7 +184,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>“人脉”磁贴模板
 
 
-Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 此磁贴模板以来推出 windows 10 版本 10572，，任何人都在其应用中使用它。
+Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 此磁贴模板以来推出 windows 10 版本 10572，并且任何人都在其应用中使用它。
 
 “人脉”磁贴模板可用于以下大小的磁贴：
 

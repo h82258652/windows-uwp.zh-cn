@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 网格, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693607"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848821"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>创建和显示基本网格
 
@@ -19,7 +19,7 @@ ms.locfileid: "7693607"
 
 3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。 构成这些多边形对象和图面的结构的顶点列表称为网格。 在这里，我们为立方体对象创建一个基本网格并为其提供用于呈现和显示的着色器管道。
 
-> **重要**包含的示例代码在此处使用类型 （如 directx:: Xmfloat3 和 DirectX::XMFLOAT4X4） 和内联方法使用在 DirectXMath.h 中声明。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
+> **重要提示**包含的示例代码，此处使用的类型 （如 directx:: Xmfloat3 和 DirectX::XMFLOAT4X4） 和内联方法使用在 DirectXMath.h 中声明。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
 
  
 

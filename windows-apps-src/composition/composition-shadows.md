@@ -1,24 +1,24 @@
 ---
 title: 合成阴影
-description: 阴影 Api 让你可以添加自定义的动态阴影 UI 内容。
+description: 阴影 Api 让你可以添加到 UI 内容的可自定义的动态阴影。
 ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703171"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837266"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的阴影
 
-[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)类提供了方法创建一个可以应用于[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)或[LayerVisual](/uwp/api/windows.ui.composition.layervisual) （视觉效果的子树） 的可配置阴影。 原样惯用的可视化层中的对象，可以使用 Compositionanimation 动画 DropShadow 的所有属性。
+[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)类提供了方法来创建可应用于[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)或[LayerVisual](/uwp/api/windows.ui.composition.layervisual) （视觉效果的子树） 的可配置阴影。 原样惯用的可视化层中的对象，可以使用 Compositionanimation 动画 DropShadow 的所有属性。
 
-## <a name="basic-drop-shadow"></a>基本投影
+## <a name="basic-drop-shadow"></a>基本的投影
 
-若要创建基本卷影，只需创建新 DropShadow，并将它与你视觉对象相关联。 阴影默认为矩形。 一组标准的属性都可调整你阴影的外观和感觉。
+若要创建基本卷影，只需创建新的 DropShadow，并将其关联到你的视觉对象。 阴影默认为矩形。 一组标准的属性都可调整你阴影的外观。
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -40,12 +40,12 @@ basicRectVisual.Shadow = basicShadow;
 有几种方法，为你 DropShadow 定义形状：
 
 - 默认情况下，DropShadow 形状的**使用默认值**被定义 CompositionDropShadowSourcePolicy 上的默认模式。 SpriteVisual，默认值为矩形，除非提供掩码。 LayerVisual，默认值为继承使用视觉对象的画笔的 alpha 蒙板。
-- **设置掩码**– 你可能会设置[掩码](/uwp/api/windows.ui.composition.dropshadow.mask)属性定义的阴影不透明蒙板。
-- **指定要使用继承掩码**– 设置要使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy) [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)属性。 若要使用生成的视觉对象的画笔的 alpha 蒙板 InheritFromVisualContent。
+- **设置掩码**– 可能设置[掩码](/uwp/api/windows.ui.composition.dropshadow.mask)属性，以定义不透明蒙板的阴影。
+- **指定要使用继承掩码**– 设置[SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)属性使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)。 若要使用生成的视觉对象的画笔的 alpha 蒙板的 InheritFromVisualContent。
 
 ## <a name="masking-to-match-your-content"></a>掩码，以匹配你的内容
 
-如果你希望你阴影以匹配视觉对象的内容可以使用视觉对象的画笔阴影掩码属性，或设置自动从内容继承掩码的阴影。 如果使用 LayerVisual，阴影将默认继承掩码。
+如果你希望你阴影以匹配视觉对象的内容可以使用视觉对象的画笔阴影掩码属性，或设置阴影自动从内容继承掩码。 如果使用 LayerVisual，阴影将默认继承掩码。
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -67,11 +67,11 @@ imageSpriteVisual.Shadow = shadow;
 
 ![带屏蔽的投影的连接的 web 图像](images/ms-brand-web-dropshadow.png)
 
-## <a name="using-an-alternative-mask"></a>使用备用掩码
+## <a name="using-an-alternative-mask"></a>使用了替代蒙板
 
-在某些情况下，你可能想要形状阴影，以便它与视觉对象的内容不匹配。 若要实现此效果，你将需要显式设置使用具有 alpha 的画笔的掩码属性。
+在某些情况下，你可能想要形状阴影，以便它与视觉对象的内容不匹配。 若要实现此效果，你将需要显式设置画笔使用 alpha 蒙板属性。
 
-在以下示例中，我们加载两个表面-一个用于的视觉内容和一个用于阴影掩码：
+在以下示例中，我们加载两个表面-一个用于可视内容，另一个用于阴影掩码：
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -97,7 +97,7 @@ imageSpriteVisual.Shadow = shadow;
 
 ## <a name="animating"></a>动态显示
 
-是，因此标准可视化层中，DropShadow 属性可进行动画处理使用合成动画。 在下面，我们修改上方进行动画处理的阴影的模糊半径喷洒示例中的代码。
+由于是标准可视化层中，可以使用合成动画动画 DropShadow 属性。 在下面，我们修改上述进行动画处理的阴影的模糊半径喷洒示例中的代码。
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -111,7 +111,7 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 ## <a name="shadows-in-xaml"></a>在 XAML 中的阴影
 
-如果你想要为更复杂的框架元素添加阴影，有几种方法为使用阴影 XAML 和合成之间的互操作：
+如果你想要为更复杂的框架元素添加阴影，有几种方法，为具有阴影 XAML 和合成之间的互操作：
 
 1. 使用 Windows 社区工具包中[DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) 。 有关如何使用它，请参阅[DropShadowPanel 文档](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)获取详细信息。
 1. 创建一个可视，用于将用作阴影主机和将其绑定到 XAML handout 视觉对象。
@@ -119,9 +119,9 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 ## <a name="performance"></a>性能
 
-尽管可视化层中的位置来使效果高效且可用有许多优化，生成阴影可以耗费资源的操作具体取决于你设置的选项。 下面是高级别成本不同类型的阴影。 请注意，但是某些阴影可能不太昂贵它们可能仍需要在某些情况下尽量少使用。
+可视化层中的位置来使效果高效且可用有许多优化，尽管生成阴影是一个耗费资源的操作，具体取决于你设置的选项。 下面是高级别成本不同类型的阴影。 请注意，但是某些阴影可能不太昂贵它们可能仍需要在某些情况下尽量少使用。
 
-卷影特性| 成本
+阴影特性| 成本
 ------------- | -------------
 “矩形”    | 低
 Shadow.Mask      | 高 

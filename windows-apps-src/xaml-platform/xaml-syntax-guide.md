@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693348"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842105"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 语法指南
 
@@ -276,7 +276,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 -   请勿使用限定形式，因为它不起作用。 例如，下面的 XAML 无效：`<Button Visibility="Visibility.Visible"/>`
 -   请勿使用常量的值。 换句话说，请勿依赖显式或隐式依赖枚举定义方式的枚举的整数值。 尽管看似可行，但无论采用 XAML 形式还是代码形式，这都是不合适的做法，因为你依赖的可能是过渡实现的详细信息。 例如，请勿执行如下操作：`<Button Visibility="1"/>`。
 
-**注意**在使用 XAML 和使用枚举的 Api 参考主题中，单击**属性值**部分中的**语法**枚举类型的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
+**注意**在使用 XAML 和使用枚举的 Api 参考主题中，单击枚举类型的**属性值**部分中的**语法**的链接。 在指向枚举页面的此链接中，你可以发现该枚举的命名常量。
 
 枚举可以具有与标志相同的作用，即，它们可以被归类于 **FlagsAttribute**。 如果你需要将具有标志作用的枚举的值组合指定为一个 XAML 属性值，请使用每个枚举常量的名称，在每个名称之间加一个逗号 (,)，不要有任何多余的空格字符。 具有标志作用的属性在 Windows 运行时 XAML 词汇中并不常见，但 [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) 示例表明了支持以 XAML 的形式设置具有标志作用的枚举值。
 
@@ -286,7 +286,7 @@ Windows 运行时 API 中的许多属性都使用枚举作为值。 如果成员
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 运行时参考中的 XAML 占位符约定
 
-参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”**** 部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法是不同于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + CX) 语法因为 XAML 语法是一种用法语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”**** 部分中的某些占位符。
+参考主题中有针对可以使用 XAML 的 Windows 运行时 API 的“语法”**** 部分，如果你阅读过其中某个部分，就可能会看到语法中包含很多占位符。 XAML 语法是不同于 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展 (C + + / CX) 语法因为 XAML 语法是一种用法语法。 它会提示你在自己的 XAML 文件中的最终用法，但不会过度规定可以使用的值。 因此，通常用法描述混合了文本和占位符的语法类型，并定义“XAML 值”**** 部分中的某些占位符。
 
 当你在某个属性的 XAML 语法中看到类型名称/元素名称时，显示的名称为最初定义该属性的类型的名称。 但 Windows 运行时 XAML 支持基于 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的类的类继承模型。 因此，通常你可以使用以下类中的属性：该类从字面上看不属于定义类，但派生自首先定义该属性/特性的类。 例如，你可以将 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 设置为使用深度继承的任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生类上的属性。 例如：`<Button Visibility="Visible" />`。 因此，对于任意 XAML 用法语法中显示的元素名称，都不要过于拘泥于字面意思；该语法对于表示该类的元素以及表示派生类的元素也可能同样适用。 在类型很少或不能显示为采用真实用法的定义元素时，该类型名称在语法中刻意小写。 例如，你看到的 **UIElement.Visibility** 的语法为：
 

@@ -1,22 +1,22 @@
 ---
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
-description: 在 Microsoft Store 提交 API 中使用此方法创建新的加载项提交，为注册到合作伙伴中心的应用。
+description: 在 Microsoft Store 提交 API 中使用此方法，以创建新的加载项提交，为注册到合作伙伴中心的应用。
 title: 创建加载项提交
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 创建加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691808"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851660"
 ---
 # <a name="create-an-add-on-submission"></a>创建加载项提交
 
 
-在 Microsoft Store 提交 API 中使用此方法创建新的加载项 （也称为应用内产品或 IAP） 提交，为注册到你的合作伙伴中心帐户的应用。 使用此方法成功创建新提交后，[更新提交](update-an-add-on-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-add-on-submission.md)以供引入和发布。
+在 Microsoft Store 提交 API 中使用此方法，以创建新的加载项 （也称为应用内产品或 IAP） 提交，为注册到你的合作伙伴中心帐户的应用。 使用此方法成功创建新提交后，[更新提交](update-an-add-on-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-an-add-on-submission.md)以供引入和发布。
 
 有关此方法如何适用通过使用 Microsoft Store 提交 API 创建应用提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 

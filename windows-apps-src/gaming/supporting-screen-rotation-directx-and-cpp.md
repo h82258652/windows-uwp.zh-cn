@@ -1,25 +1,25 @@
 ---
 title: 支持屏幕方向（DirectX 和 C++）
-description: 在这里，我们将讨论处理屏幕旋转在 UWP DirectX 应用中，最佳做法，以便高效且有效地使用 windows 10 设备的图形硬件。
+description: 在这里，我们将讨论处理屏幕旋转，在 UWP DirectX 应用中，最佳做法，以便高效且有效地使用 windows 10 设备的图形硬件。
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 屏幕方向, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712541"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7842817"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>支持屏幕方向（DirectX 和 C++）
 
 
 
-通用 Windows 平台 (UWP) 应用可以在你处理 [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 事件时支持多个屏幕方向。 在这里，我们将讨论处理屏幕旋转在 UWP DirectX 应用中，最佳做法，以便高效且有效地使用 windows 10 设备的图形硬件。
+通用 Windows 平台 (UWP) 应用可以在你处理 [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 事件时支持多个屏幕方向。 在这里，我们将讨论处理屏幕旋转，在 UWP DirectX 应用中，最佳做法，以便高效且有效地使用 windows 10 设备的图形硬件。
 
-在开始之前，请记住图形硬件始终以同样的方式输出像素数据，而不管设备方向如何。 Windows 10 设备可以确定其当前屏幕方向 （使用某种传感器，或使用某个软件开关），并允许用户更改屏幕设置。 由于此，windows 10 本身会处理图像以确保它们处于"直立状态"具体取决于设备的方向的旋转。 默认情况下，你的应用会收到关于某些项目（例如，窗口大小）在方向上已更改的通知。 这种情况下，windows 10 会立即旋转最终显示的图像。 对于四个特定屏幕方向 （稍后会讨论） 的三个，windows 10 将使用其他图形资源和计算来显示最终图像。
+在开始之前，请记住图形硬件始终以同样的方式输出像素数据，而不管设备方向如何。 Windows 10 设备可以确定其当前屏幕方向 （使用某种传感器，或使用某个软件开关），并允许用户更改屏幕设置。 由于此问题，windows 10 本身会处理的图像，以确保它们处于"直立状态"具体取决于设备的方向旋转。 默认情况下，你的应用会收到关于某些项目（例如，窗口大小）在方向上已更改的通知。 这种情况下，windows 10 会立即旋转最终显示的图像。 对于三个四个特定屏幕方向 （稍后会讨论），windows 10 将使用其他图形资源和计算来显示最终图像。
 
 对于使用 DirectX 应用，[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) 对象会提供你的应用可以查询的基本屏幕方向数据。 默认方向为“横向”**，其中屏幕的像素宽度大于高度；替代方向为“纵向”**， 其中屏幕会在任一方向上旋转 90 度，且宽度会变得小于高度。
 
@@ -30,9 +30,9 @@ Windows 10 定义了四个特定屏幕方向模式：
 -   横向(翻转) - 已将屏幕旋转 180 度（上下颠倒）。
 -   纵向(翻转) - 已将显示顺时针旋转 90 度（或逆时间旋转 270 度）。
 
-当屏幕从一个方向旋转到另一台时，windows 10 会内部执行一个旋转操作以与新方向，绘制的图像对齐和用户在屏幕上看到一个直立的图像。
+当屏幕从一个方向旋转到另一台时，windows 10 会内部执行一个旋转操作以绘制的图像与新方向对齐，并且用户在屏幕上看到一个直立的图像。
 
-另外，windows 10 会显示自动过渡动画以从一个方向转移到另一台时创建流畅的用户体验。 在屏幕方向转移时，用户会将这些转移看作显示的屏幕图像的一个固定缩放和旋转动画。 时间由 windows 10 分配给新方向中的布局的应用。
+另外，windows 10 会显示自动过渡动画以创建流畅的用户体验，当从一个方向转移到另一台。 在屏幕方向转移时，用户会将这些转移看作显示的屏幕图像的一个固定缩放和旋转动画。 时间由 windows 10 分配给新方向中的布局的应用。
 
 总之，这是处理屏幕方向中的更改的一般过程：
 
@@ -366,7 +366,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 ## <a name="reduce-the-rotation-delay-by-using-corewindowresizemanager"></a>通过使用 CoreWindowResizeManager 减少旋转延迟
 
 
-默认情况下，windows 10 提供任何应用，无论应用模型或语言，来完成图像的旋转时间很短但很明显的窗口。 但是，很可能当你的应用使用此处所述的技术之一执行旋转计算时，在此时间窗口已关闭之前，此计算将很好地完成。 你更愿意回到那个时候并完成旋转动画，是吗？ 这就是 [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) 出现的位置。
+默认情况下，windows 10 提供任何应用，而不考虑应用模型或语言，来完成图像的旋转的时间很短但很明显的窗口。 但是，很可能当你的应用使用此处所述的技术之一执行旋转计算时，在此时间窗口已关闭之前，此计算将很好地完成。 你更愿意回到那个时候并完成旋转动画，是吗？ 这就是 [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) 出现的位置。
 
 以下是使用 [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) 的方法：当引发 [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 事件时，在该事件的处理程序内调用 [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) 以获取 **CoreWindowResizeManager** 的实例，并且当完成并演示新方向的布局时，调用 [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) 以让 Windows 知道它可以完成旋转动画并显示应用屏幕。
 
@@ -383,10 +383,10 @@ resizeManager->NotifyLayoutCompleted();
 当用户旋转屏幕的方向时，windows 10 动画独立于你的应用作为反馈向用户显示。 按以下顺序发生的动画有三个部分：
 
 -   Windows 10 将缩小原始图像。
--   Windows 10 会保留一段图像的时间来重新生成新布局。 这是你要减少的时间窗口， 因为你的应用很可能并不需要全部时间窗口。
+-   Windows 10 会保留一段图像重新生成新布局所花费的时间。 这是你要减少的时间窗口， 因为你的应用很可能并不需要全部时间窗口。
 -   当布局窗口过期时，或者当收到布局完成通知时，Windows 会旋转图像，然后对新方向进行交叉淡入淡出缩放。
 
-根据第三个项目符号中的建议，当应用调用[**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605)，windows 10 停止超时窗口、 完成旋转动画并将控制权返回到你的应用，现在正在新屏幕方向中进行绘制。 总体效果是你的应用现在感觉到更流畅一点且响应更快一点，且工作效率更高一点！
+根据第三个项目符号中的建议，当应用调用[**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605)，windows 10 停止超时窗口、 完成旋转动画并将控制权返回给你的应用，现在正在新的屏幕方向中进行绘制。 总体效果是你的应用现在感觉到更流畅一点且响应更快一点，且工作效率更高一点！
 
 ## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>附录 A：应用矩阵以进行屏幕旋转 (2-D)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 代码示例, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692628"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844793"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 示例：应用、加载项和外部测试版的提交
 
@@ -52,13 +52,13 @@ ms.locfileid: "7692628"
 
 ## <a name="create-an-app-submission"></a>创建应用提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建应用提交。 若要执行此操作，该代码创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建应用提交。 若要执行此操作，代码将创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
 
 1. 首先，此示例[获取指定应用的数据](get-an-app.md)。
 2. 接下来，此方法会[删除应用的挂起提交](delete-an-app-submission.md)（如果存在）。
 3. 然后，此方法会[创建新的应用提交](create-an-app-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会更改新提交的部分详细信息并将新的提交包上载到 Azure Blob 存储。
-5. 接下来，它[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
+5. 接下来，该[更新](update-an-app-submission.md)，然后[提交](commit-an-app-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-app-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
@@ -67,13 +67,13 @@ ms.locfileid: "7692628"
 
 ## <a name="create-an-add-on-submission"></a>创建加载项提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建加载项提交。 若要执行此操作，该代码创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建加载项提交。 若要执行此操作，代码将创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
 
 1. 首先，此示例[获取指定加载项的数据](get-an-add-on.md)。
 2. 接下来，此方法会[删除加载项的挂起提交](delete-an-add-on-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的加载项提交](create-an-add-on-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将包含提交图标的 ZIP 存档上载到 Azure Blob 存储。 有关详细信息，请参阅[创建加载项提交](manage-add-on-submissions.md#create-an-add-on-submission)中关于将 ZIP 存档上载至 Azure Blob 存储的相关说明。
-5. 接下来，它[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
+5. 接下来，该[更新](update-an-add-on-submission.md)，然后[提交](commit-an-add-on-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-an-add-on-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
@@ -82,13 +82,13 @@ ms.locfileid: "7692628"
 
 ## <a name="create-a-package-flight-submission"></a>创建软件包外部测试版提交
 
-以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建软件包外部测试版提交。 若要执行此操作，该代码创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
+以下示例介绍如何使用 Microsoft Store 提交 API 中的多种方法创建软件包外部测试版提交。 若要执行此操作，代码将创建新提交作为克隆的上次发布的提交，然后提交更新并提交克隆到合作伙伴中心。 具体来说，示例执行以下任务：
 
 1. 首先，此示例[获取指定软件包外部测试版的数据](get-a-flight.md)。
 2. 接下来，此方法会[删除软件包外部测试版的挂起提交](delete-a-flight-submission.md)（如果存在）。
 3. 然后，此方法[会创建新的软件包外部测试版提交](create-a-flight-submission.md)（新提交时是上次发布的提交副本）。
 4. 它会将新的提交程序包上载到 Azure Blob 存储。 有关详细信息，请参阅[创建软件包外部测试版提交](manage-flight-submissions.md#create-a-package-flight-submission)中关于将 ZIP 存档上载至 Azure Blob 存储的相关说明。
-5. 接下来，它[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)到合作伙伴中心的新提交。
+5. 接下来，该[更新](update-a-flight-submission.md)，然后[提交](commit-a-flight-submission.md)到合作伙伴中心的新提交。
 6. 最后，它会定期[检查新提交的状态](get-status-for-a-flight-submission.md)，直到其成功提交。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]

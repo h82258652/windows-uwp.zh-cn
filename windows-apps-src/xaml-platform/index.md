@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696808"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851038"
 ---
 # <a name="xaml-platform"></a>XAML 平台
 
 
-本部分包含主题解释了普遍适用于任何应用的写入，如果你使用 C#、 Microsoft Visual Basic 或 VisualC + + 组件扩展编程概念 (C + + CX) 作为编程语言并使用 XAML 为你的 UI定义。 这包括基本的编程概念（例如使用属性和事件）以及如何在通用 Windows 平台 (UWP) 应用编程中应用这些概念。 通用 Windows 平台 (UWP) 通过添加依赖属性系统，扩展了 C#、Visual Basic 或 C++/CX 属性概念以及它们的值。 本部分中的主题还介绍了 UWP 所使用的 XAML 语言，并通过介绍一些基本方案和高级主题，说明了如何使用 XAML 定义 UWP 应用的 UI。
+本部分包含主题解释了普遍适用于任何应用的写入，如果你使用的 C#、 Microsoft Visual Basic 中，或 VisualC + + 组件扩展编程概念 (C + + / CX) 作为编程语言并使用 XAML 为你的 UI定义。 这包括基本的编程概念（例如使用属性和事件）以及如何在通用 Windows 平台 (UWP) 应用编程中应用这些概念。 通用 Windows 平台 (UWP) 通过添加依赖属性系统，扩展了 C#、Visual Basic 或 C++/CX 属性概念以及它们的值。 本部分中的主题还介绍了 UWP 所使用的 XAML 语言，并通过介绍一些基本方案和高级主题，说明了如何使用 XAML 定义 UWP 应用的 UI。
 
 | 主题 | 描述 |
 |-------|-------------|

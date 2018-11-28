@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b40fd56a85be6dce441324a427790cda28f9d7ac
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719231"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845482"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
 Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 \(UWP\) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 模拟器不使用相同的用户界面与 Surface Hub，但它可用于测试你的应用的外观和行为与 Surface Hub 的屏幕大小和分辨率。
@@ -78,7 +78,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 默认情况下，Surface Hub 仅从 Microsoft Store 安装应用。 若要安装由其他来源签名的应用，必须启用开发人员模式。
 
 > [!NOTE]
-> 在启用开发人员模式后，你将需要重置 Surface Hub，如果你想要重新禁用该。 重置设备将删除所有本地用户文件和配置，然后重新安装 Windows。
+> 启用开发人员模式后，你将需要重置 Surface Hub，如果你想要再次将其禁用。 重置设备将删除所有本地用户文件和配置，然后重新安装 Windows。
 
 1. 从 Surface Hub 的“开始”**** 菜单中，打开“设置”应用。
 
@@ -90,10 +90,10 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 3. 选择“开发人员模式”**** 并接受警告提示。
 
 ### <a name="deploy-your-app-from-visual-studio"></a>从 Visual Studio 部署应用
-有关部署过程的详细信息一般情况下，请参阅[部署和调试 UWP 应用](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
+部署过程的详细信息一般情况下，请参阅[部署和调试 UWP 应用](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
 
    > [!NOTE]
-   > 此功能需要 Visual Studio 2015 Update 1 个或更高版本，但我们建议你使用最新的最新版本的 Visual Studio。 你的所有最新的开发和安全更新，将 gibe 保持最新的 Visual Studio 实例。
+   > 此功能需要 Visual Studio 2015 更新 1 个或更高版本，但我们建议你使用最新的最新版本的 Visual Studio。 你的所有最新的开发和安全更新，将 gibe 保持最新的 Visual Studio 实例。
 
 1. 导航到“开始调试”**** 按钮旁边的调试目标下拉列表，然后选择“远程计算机”****。
 
@@ -109,4 +109,4 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
 3. 选择**开始调试 (F5)** 部署和调试你的应用在 Surface Hub 中，或者在按住 Ctrl + F5 仅部署应用。
 
    > [!TIP]
-   > 如果 Surface Hub 显示欢迎屏幕，将其消除选择任意按钮。
+   > 如果 Surface Hub 显示欢迎屏幕，请选择任意按钮以清除它。
