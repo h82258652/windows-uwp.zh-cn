@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 16d1ea6186cc8ccabacd1751db61e752a97930f7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718952"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841583"
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向传感器
 

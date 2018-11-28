@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 可以使用 PropertyPath 类和字符串语法来实例化 XAML 或代码中的 PropertyPath 值。
 title: Property-path 语法
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574088"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838760"
 ---
 # <a name="property-path-syntax"></a>Property-path 语法
 
@@ -56,7 +54,7 @@ ms.locfileid: "7574088"
 
 例如，考虑一个业务对象，它有一个“Teams”的列表（排序列表），每个队有一本名为“Players”的字典，每个队员使用姓氏作为键。 指向二队的一个特定队员的示例属性路径为：“Teams[1].Players[Smith]”。 （使用 1 来指示“Teams”中的第二个项，因为该列表的索引是从零开始编制的。）
 
-**注意**对于 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**的 c + + 数据源的索引支持受到限制;请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="attached-properties"></a>附加属性
 

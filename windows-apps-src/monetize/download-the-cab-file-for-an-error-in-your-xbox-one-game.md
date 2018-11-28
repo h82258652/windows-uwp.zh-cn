@@ -1,16 +1,16 @@
 ---
-description: 在 Microsoft Store 分析 API 中使用此方法来下载你的 Xbox One 游戏中的错误的 CAB 文件。
+description: 在 Microsoft Store 分析 API 中使用此方法，若要下载的 Xbox One 游戏中错误的 CAB 文件。
 title: 下载你的 Xbox One 游戏中的错误的 CAB 文件
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下载 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 736219533a254e6380c10600e97f707f15e37de6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712501"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834837"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>下载你的 Xbox One 游戏中的错误的 CAB 文件
 
@@ -69,5 +69,5 @@ Authorization: Bearer <your access token>
 
 * [使用 Microsoft Store 服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取错误报告数据在 Xbox One 游戏](get-error-reporting-data-for-your-xbox-one-game.md)
-* [获取游戏的 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
-* [获取你的 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [获取游戏在 Xbox One 中的错误的详细信息](get-details-for-an-error-in-your-xbox-one-game.md)
+* [获取 Xbox One 中的错误的堆栈跟踪游戏](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)

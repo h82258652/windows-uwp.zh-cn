@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 348b937b7967cbde80c0bc25a502e727a04e8af0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719349"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840805"
 ---
 # <a name="media-capture-page-dev-home"></a>媒体捕获页面 （开发人员主页）
    
@@ -32,13 +32,13 @@ ms.locfileid: "7719349"
 ## <a name="video-capture"></a>视频捕获  
    
   
-**视频捕获**窗格包含记录从开发人员控制台的视频流的工具。 你还可以捕获视频的最后几秒从控制台。   
+**视频捕获**窗格包含录制视频流从开发人员控制台的工具。 你还可以捕获视频的最后几秒从控制台。   
   
 <a id="ID4ERB"></a>
 
    
 
 ## <a name="see-also"></a>另请参阅  
- [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

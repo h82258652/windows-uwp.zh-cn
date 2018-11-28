@@ -1,21 +1,21 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 了解如何创建“Hello, world”应用 (XAML)
-description: 使用 C# 使用 Extensible Application Markup Language (XAML) 在 windows 10 上创建简单 Hello，world 应用面向通用 Windows 平台 (UWP)。
+description: 用 C# 使用 Extensible Application Markup Language (XAML) 在 windows 10 上创建简单 Hello，world 应用面向通用 Windows 平台 (UWP)。
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
 ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700475"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834702"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单"Hello，world"应用的通用 Windows 平台 (UWP) 在 windows 10。 通过在 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 windows 10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单"Hello，world"应用的 windows 10 上的 Windows 通用平台 (UWP)。 通过在 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 windows 10 设备上运行的应用。
 
 在此处，你将了解如何：
 
@@ -96,11 +96,11 @@ ms.locfileid: "7700475"
 -   包括依赖项、 资源以及你的应用包含的文件的列表。
 
 *一组徽标图像*
--   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中等或范围大小） 在开始菜单中。
+-   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 表示你的应用 （中或范围大小） 在开始菜单中。
 -   Assets/Square44x44Logo.png 表示你的应用的开始菜单、 任务栏和任务管理器应用列表中。
 -   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
--   Assets/LockScreenLogo.scale-200.png 可以用于系统处于锁定状态时表示在锁屏上的应用。
+-   Assets/LockScreenLogo.scale-200.png 可以用于表示在锁屏上的应用时系统处于锁定状态。
 
 ## <a name="step-2-adding-a-button"></a>步骤 2：添加按钮
 
@@ -222,7 +222,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-请确保为将方法签名现在包含**异步**关键字，或当你尝试运行应用时，你将收到错误。
+请确保为将方法签名现在包含**异步**关键字，或尝试运行应用时，你将收到错误。
 
 ### <a name="what-did-we-just-do"></a>我们刚才做了什么？
 
@@ -233,7 +233,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>小结
 
-恭喜，你已为 windows 10 和 UWP 创建第一个应用 ！
+恭喜，你已为 windows 10 和 UWP 中创建第一个应用 ！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../design/layout/grid-tutorial.md)，或直接跳至[下一步](learn-more.md)。
 

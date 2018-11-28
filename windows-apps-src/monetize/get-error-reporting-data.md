@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 错误
 ms.localizationpriority: medium
 ms.openlocfilehash: 69504fd8d670158a35e5afd5dcd035acd296f084
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692077"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834956"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>获取应用的错误报告数据
 
-在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 此方法仅可以检索过去 30 天内发生的错误。 此信息也是可在合作伙伴中心中的[运行状况报告](../publish/health-report.md)的**故障**部分。
+在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的应用聚合错误报告数据（格式为 JSON）。 此方法仅可以检索过去 30 天内发生的错误。 此信息也是可在合作伙伴中心中的[运行状况报告](../publish/health-report.md)**故障**部分。
 
 你可以使用[获取错误详细信息](get-details-for-an-error-in-your-app.md)、[获取堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)和[下载 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)获取其他错误信息。
 

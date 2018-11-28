@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 广告市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697590"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841842"
 ---
 # <a name="get-ad-campaign-performance-data"></a>获取广告市场活动性能数据
 
 
 在 Microsoft Store 分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用程序的促销广告市场活动性能数据的聚合摘要。 此方法返回采用 JSON 格式的数据。
 
-此方法返回由[广告市场活动报告](../publish/app-install-ads-reports.md)合作伙伴中心中提供的相同数据。 有关广告市场活动的详细信息，请参阅[为应用创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)。
+此方法将返回由[广告市场活动报告](../publish/app-install-ads-reports.md)合作伙伴中心中提供的相同数据。 有关广告市场活动的详细信息，请参阅[为应用创建广告市场活动](../publish/create-an-ad-campaign-for-your-app.md)。
 
 若要创建、更新或检索广告市场活动的详细信息，你可以使用 [Microsoft Store 推广 API](run-ad-campaigns-using-windows-store-services.md) 中的[管理广告市场活动](manage-ad-campaigns.md)方法。
 

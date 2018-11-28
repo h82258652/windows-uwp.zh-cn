@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 更新, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fd0bb8df9b9fc36216da72e4ad01ebd2e650ad1a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698023"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835372"
 ---
 # <a name="update-an-add-on-submission"></a>更新加载项提交
 
@@ -189,7 +189,7 @@ Content-Type: application/json
 | 错误代码 |  描述   |
 |--------|------------------|
 | 400  | 由于请求无效，无法更新提交。 |
-| 409  | 由于的加载项的当前状态，无法更新提交或加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
+| 409  | 由于该加载项的当前状态，无法更新提交，或者加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相关主题
