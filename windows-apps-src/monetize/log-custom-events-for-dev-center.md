@@ -7,11 +7,11 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, 日志事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692748"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7841573"
 ---
 # <a name="log-custom-events-for-partner-center"></a>记录合作伙伴中心的自定义事件
 
@@ -20,7 +20,7 @@ ms.locfileid: "7692748"
 若要记录应用中的自定义事件，请将自定义事件字符串传递到 Microsoft Store Services SDK 提供的 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 你可以自定义事件[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作伙伴中心中的**自定义事件**部分中查看的总发生次数。
 
 > [!NOTE]
-> 与[Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)，无关登录到合作伙伴中心的自定义事件并它们不会显示在**事件查看器**。
+> 与[Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)，无关登录到合作伙伴中心的自定义事件，并它们不会显示在**事件查看器**。
 
 ## <a name="prerequisites"></a>先决条件
 

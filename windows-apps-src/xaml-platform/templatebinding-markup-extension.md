@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702325"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841124"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 标记扩展
 
@@ -52,20 +52,20 @@ ms.locfileid: "7702325"
 
 **TemplateBinding** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“{”和“}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
-**注意**在 Windows 运行时 XAML 处理器实现中，没有**TemplateBinding**没有支持类表示。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
+**注意**中的 Windows 运行时 XAML 处理器实现中，没有**TemplateBinding**没有支持类表示。 **TemplateBinding** 专用于 XAML 标记中。 无法通过一种简单的方式来重现代码中的行为。
 
-### <a name="xbind-in-controltemplate"></a>x: Bind ControlTemplate 中
+### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
 
 > [!NOTE]
-> 在 ControlTemplate 中使用 x: Bind 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 在 ControlTemplate 中使用 X:bind 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 从 Windows 10 版本 1809，你可以使用**X:bind**标记扩展在[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**的任何地方。 
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)属性需要 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)属性必需 （不是可选的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**时。
 
-使用**x: Bind**支持，你可以使用这两个[函数绑定](../data-binding/function-bindings.md)作为[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也为双向绑定。
+使用**X:bind**支持，你可以使用这两个[函数绑定](../data-binding/function-bindings.md)作为[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也为双向绑定。
 
-在此示例中，该**TextBlock.Text**属性的值为**Button.Content.ToString**。 在该 ControlTemplate TargetType 充当数据源，并完成与到父 TemplateBinding 相同的结果。
+在此示例中，该**TextBlock.Text**属性的值为**Button.Content.ToString**。 在 ControlTemplate TargetType 充当数据源，并完成与到父 TemplateBinding 相同的结果。
 
 ```xaml
 <ControlTemplate TargetType="Button">

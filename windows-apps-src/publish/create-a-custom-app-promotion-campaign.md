@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 自定义, 应用, 促销, 市场活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704614"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838545"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>创建自定义应用促销市场活动
 
@@ -45,7 +45,7 @@ ms.locfileid: "7704614"
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>了解购置如何限定为转换
 
-自定义市场活动*转换*是由客户单击通过自定义市场活动推广的 URL 所导致的购置。 限定为转换为[购置报告](acquisitions-report.md)中的**应用页面查看次数和转换数量按市场活动 ID**和**总市场活动转换**图表和限定为转换[不同的方案以编程方式检索市场活动 ID](#programmatically)。
+自定义市场活动*转换*是由客户单击通过自定义市场活动推广的 URL 所导致的购置。 限定为转换为[购置报告](acquisitions-report.md)中的**应用页面查看次数和转换按市场活动 ID**和**总市场活动转换**的图表和限定为转换[不同的方案以编程方式检索市场活动 ID](#programmatically)。
 
 ### <a name="qualifying-conversions-in-the-acquisitions-report"></a>限定转换中的购置报告
 

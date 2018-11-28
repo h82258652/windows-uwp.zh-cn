@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707372"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7844634"
 ---
 # <a name="developer-settings-api-reference"></a>开发人员设置 API 参考   
 你可以使用此 API 访问有助于开发的 Xbox One 设置。
@@ -53,7 +53,7 @@ GET | /ext/settings
 * Max-(Number) 此字段指示设置的最大数值。
 
 如果已选择设置：
-* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，可以在无需重启更改有效选项。
+* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，无需重启可以更改有效选项。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**
@@ -104,7 +104,7 @@ GET | /ext/settings/\&lt;setting name\&gt;
 * Max-(Number) 此字段指示设置的最大数值。
 
 如果已选择设置：
-* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，可以在无需重启更改有效选项。
+* OptionsVariable-("Yes"|"否"） 此字段指示设置选项是否可变，无需重启可以更改有效选项。
 * 选项 - JSON 数组，将有效的选择选项包含为字符串。
 
 **状态代码**

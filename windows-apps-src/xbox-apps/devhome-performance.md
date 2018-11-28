@@ -1,24 +1,24 @@
 ---
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
 title: 平均页面 （开发人员主页）
-description: 提供有关开发人员主页应用的性能页适用于 Xbox One 的信息。
+description: 提供了适用于 Xbox One 开发人员主页应用的性能页的信息。
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702185"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844278"
 ---
 # <a name="performance-page-dev-home"></a>平均页面 （开发人员主页）
    
   
-开发人员主页的**性能**页模拟各种磁盘活动和 CPU 使用情况，为了进行故障排除。   
- ![开发人员主页的平均页面](images/devhome_performance.png)   
+开发人员主页的**性能**页面模拟各种磁盘活动和 CPU 使用情况，为了进行故障排除。   
+ ![开发人员主页的性能页](images/devhome_performance.png)   
   
 **平均**页面包含以下窗格：   
  
@@ -49,6 +49,6 @@ ms.locfileid: "7702185"
    
 
 ## <a name="see-also"></a>另请参阅  
- [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

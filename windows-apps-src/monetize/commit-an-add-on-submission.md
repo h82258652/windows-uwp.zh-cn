@@ -1,21 +1,21 @@
 ---
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新加载项提交到合作伙伴中心。
+description: 在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项提交到合作伙伴中心。
 title: 确认加载项提交
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 确认加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694926"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838459"
 ---
 # <a name="commit-an-add-on-submission"></a>确认加载项提交
 
-在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项 （也称为应用内产品或 IAP） 提交到合作伙伴中心。 确认操作警报合作伙伴中心发送提交数据已上传 （包括任何相关的图标）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示对提交更改。
+在 Microsoft Store 提交 API 中使用此方法，来确认新的或更新的加载项 （也称为应用内产品或 IAP） 提交到合作伙伴中心。 确认操作警报合作伙伴中心，提交数据已上传 （包括任何相关的图标）。 作为响应，合作伙伴中心提交以供引入和发布的提交数据所做的更改。 确认操作成功后，在合作伙伴中心中显示提交更改。
 
 有关确认操作如何适用通过使用 Microsoft Store 提交 API 提交加载项过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
@@ -89,7 +89,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但它可能无法确认; 在其当前状态，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
+| 409  | 指定的提交已找到，但它可能无法确认; 在其当前状态，或者加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题
