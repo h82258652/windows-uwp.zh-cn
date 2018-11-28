@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832177"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7968576"
 ---
 # <a name="manage-creatives"></a>管理创意
 

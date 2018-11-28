@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 优化, 多重采样, 交换链
 ms.localizationpriority: medium
 ms.openlocfilehash: e9618a35ecd8f9d1a37b627494c0f00a5ed84806
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7854678"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7968855"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>DirectX 游戏的优化和高级主题
 
