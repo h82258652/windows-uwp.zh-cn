@@ -1,17 +1,17 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: 本文介绍的推荐的方式来使用异步方法在 VisualC + + 组件扩展 (C + + CX) 通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类。
+description: 本文介绍的推荐的方式来使用异步方法在 VisualC + + 组件扩展 (C + + / CX) 通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类。
 title: 使用 C++ 进行异步编程
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, uwp, 线程, 异步, C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699868"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834725"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>使用 C++/CX 异步编程
 > [!NOTE]

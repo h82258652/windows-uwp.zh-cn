@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 街机摇杆, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692798"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830885"
 ---
 # <a name="arcade-stick"></a>街机摇杆
 
@@ -28,15 +28,15 @@ ms.locfileid: "7692798"
 
 要重现单独街机的感觉并实现其高精度数字控制，街机摇杆是尤为重要的输入设备。 街机摇杆对于肉搏战和其他街机风格的游戏来说是完美的输入设备，并适合所有能正常使用全数字控件的游戏。 街机摇杆在 Windows 10 和 Xbox One UWP 应用中受 [Windows.Gaming.Input][] 命名空间支持。
 
-Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按钮 （表示为 A1 A6 下图中） 和两个**特殊**按钮 （表示为 S1 和 S2）;它们是全数字输入的设备，不支持模拟控件或震动。 Xbox One 街机摇杆还配备了用于支持 UI 导航**视图**和**菜单**按钮，但不是打算支持游戏命令，并且不能作为游戏杆按钮随时访问。
+Xbox One 街机摇杆配备了一个 8 向数字游戏杆，六个**操作**按钮 （表示为 A1 A6 图所示） 和两个**特殊**的按钮 （表示为 S1 和 S2）;它们不支持模拟控件或震动的全数字输入的设备。 Xbox One 街机摇杆还配备了用于支持 UI 导航**视图**和**菜单**按钮，但不是打算支持游戏命令，并且不能作为游戏杆按钮随时访问。
 
-![街机摇杆了 4 方向游戏杆，6 个操作按钮 (A1-A6)，以及 2 个特殊的按钮 （S1 和 S2）](images/arcade-stick-1.png)
+![街机摇杆用 4 方向操纵杆 6 个操作按钮 (A1-A6)，以及 2 个特殊的按钮 （S1 和 S2）](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>UI 导航
 
 为了减轻支持很多适用于用户界面导航的不同输入设备的负担并促进游戏和设备之间的一致性，大多数_物理_输入设备同时充当单独的称为 [UI 导航控制器](ui-navigation-controller.md) 的_逻辑_输入设备。 UI 导航控制器可跨各种输入设备提供通用的 UI 导航命令词汇。
 
-作为 UI 导航控制器，街机摇杆的游戏杆和**视图**、**菜单**、**操作 1**和**操作 2**按钮会映射导航命令[所需的设置](ui-navigation-controller.md#required-set)。
+作为 UI 导航控制器，街机摇杆将导航命令[所需的设置](ui-navigation-controller.md#required-set)映射到游戏杆和**视图**、**菜单**、**操作 1**和**操作 2**按钮。
 
 | 导航命令 | 街机摇杆输入  |
 | ------------------:| ------------------- |
@@ -148,7 +148,7 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 从 [ArcadeStickReading][] 结构的 `Buttons` 属性中读取按钮值。 由于此属性为位域，因此使用按位掩码隔离你感兴趣的按钮值。 设置相应位时按钮为按下（向下）；否则，按钮为释放（向上）。
 
-以下示例确定是否按下**操作 1**按钮。
+以下示例确定是否按下了**操作 1**按钮。
 
 ```cpp
 if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action1))

@@ -4,11 +4,11 @@ title: 作为对象的内容
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691398"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833236"
 ---
 # <a name="content-as-objects"></a>作为对象的内容
 

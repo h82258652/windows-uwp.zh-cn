@@ -7,28 +7,28 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aabaa932c8bd21baf81970564b15421931ad39f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698003"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838058"
 ---
 # <a name="manage-app-submissions"></a>管理应用提交
 
 Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括逐步推出软件包。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果你使用 Microsoft Store 提交 API 创建应用提交，请务必对进行进一步更改提交只能通过使用 API，而不是合作伙伴中心。 如果你使用合作伙伴中心更改你最初使用 API 创建一个提交，你将不再能够更改或提交该提交使用该 API。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
+> 如果你使用 Microsoft Store 提交 API 创建应用提交，请务必进行进一步更改提交到仅使用 API，而不是合作伙伴中心。 如果你使用合作伙伴中心更改你最初使用 API 创建一个提交，你将不再能够更改或提交该提交使用该 API。 在某些情况下，在提交过程中无法继续进行时，提交可能会处于错误状态。 如果发生这种情况，你必须删除提交并创建新的提交。
 
 > [!IMPORTANT]
-> 你无法使用此 API 来直接向企业发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交或发布 [LOB 应用](../publish/distribute-lob-apps-to-enterprises.md)的提交。 对于这两种方案中，你必须使用合作伙伴中心发布该提交。
+> 你无法使用此 API 来直接向企业发布[通过适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store 批量购买](../publish/organizational-licensing.md)的提交或发布 [LOB 应用](../publish/distribute-lob-apps-to-enterprises.md)的提交。 对于这两种方案，你必须使用合作伙伴中心发布该提交。
 
 
 <span id="methods-for-app-submissions" />
 
 ## <a name="methods-for-managing-app-submissions"></a>管理应用提交的方法
 
-使用以下方法获取、创建、更新、提交或删除应用提交。 你可以使用这些方法之前，应用必须已存在于你的合作伙伴中心帐户和必须先在合作伙伴中心中创建应用的提交。 有关详细信息，请参阅[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
+使用以下方法获取、创建、更新、提交或删除应用提交。 你可以使用这些方法之前，应用必须已存在于你的合作伙伴中心帐户，并且必须先在合作伙伴中心中创建应用的提交。 有关详细信息，请参阅[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
 <table>
 <colgroup>
@@ -360,7 +360,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 | enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
 | allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔值，指示是否允许应用面向指定的设备系列。     |    
-| friendlyName           |   字符串  |  提交，在合作伙伴中心中所示的友好名称。 当你创建提交时，系统会为你生成此值。       |  
+| friendlyName           |   字符串  |  在合作伙伴中心中所示的提交的友好名称。 当你创建提交时，系统会为你生成此值。       |  
 | trailers           |  数组 |   一个包含最多 15 个[预告片资源](#trailer-object)的数组，用于表示应用一览的视频预告片。<br/><br/>   |  
 
 
@@ -388,7 +388,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 > [!IMPORTANT]
 > **销售**资源不再受支持，并且当前不能使用 Microsoft Store 提交 API 获取或修改应用提交的销售数据。 将来，我们将更新 Microsoft Store 提交 API，以引入以编程方式访问应用提交的销售信息的新方法。
 >    * 调用 [GET 方法以获取应用提交](get-an-app-submission.md)后，*销售*值将为空。 你可以继续使用合作伙伴中心以获取应用提交的销售数据。
->    * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用合作伙伴中心来更改应用提交的销售数据。
+>    * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用合作伙伴中心更改你的应用提交的销售数据。
 
 此资源具有以下值。
 
@@ -423,9 +423,9 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 |  copyrightAndTrademarkInfo                |   字符串      |  可选的[版权和/或商标信息](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
 |  keywords                |  数组       |  [关键字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)数组，用于帮助应用出现在搜索结果中。    |
 |  licenseTerms                |    字符串     | 可选的应用[许可条款](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms)。     |
-|  privacyPolicy                |   字符串      |   此值已作废。 若要设置或更改你的应用的隐私策略 URL，你必须执行此操作在合作伙伴中心中的[属性](../publish/enter-app-properties.md#privacy-policy-url)页上。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。       |
-|  supportContact                |   字符串      |  此值已作废。 若要设置或更改支持部门联系 URL 或电子邮件地址为你的应用，你必须执行此操作在合作伙伴中心中的[属性](../publish/enter-app-properties.md#support-contact-info)页上。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。        |
-|  websiteUrl                |   字符串      |  此值已作废。 若要设置或更改你的应用的网页的 URL，你必须执行此操作在合作伙伴中心中的[属性](../publish/enter-app-properties.md#website)页上。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。      |    
+|  privacyPolicy                |   字符串      |   此值已作废。 若要设置或更改你的应用的隐私策略 URL，你必须执行此操作在合作伙伴中心[属性](../publish/enter-app-properties.md#privacy-policy-url)页面上。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。       |
+|  supportContact                |   字符串      |  此值已作废。 若要设置或更改的支持部门联系 URL 或电子邮件地址为你的应用，你必须执行此操作在合作伙伴中心[属性](../publish/enter-app-properties.md#support-contact-info)页面上。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。        |
+|  websiteUrl                |   字符串      |  此值已作废。 若要设置或更改你的应用的网页的 URL，你必须执行此操作在合作伙伴中心[属性](../publish/enter-app-properties.md#website)页面上。 在调用提交 API 时可以忽略此值。 如果设置此值，它将被忽略。      |    
 |  说明               |    字符串     |   应用一览的[说明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)。   |     
 |  features               |    数组     |  一个最多 20 个字符串的数组，用于列出应用的[功能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)。     |
 |  releaseNotes               |  字符串       |  应用的[发行说明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes)。    |
@@ -458,7 +458,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 
 ### <a name="gaming-options-resource"></a>游戏选项资源
 
-此资源包含应用的游戏相关设置。 此资源中的值对应于[游戏设置](../publish/enter-app-properties.md#game-settings)中的合作伙伴中心提交。
+此资源包含应用的游戏相关设置。 此资源中的值对应于[游戏设置](../publish/enter-app-properties.md#game-settings)合作伙伴中心中的提交。
 
 ```json
 {
@@ -565,7 +565,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 此资源具有以下值。  
 
 > [!NOTE]
-> 当调用[更新应用提交](update-an-app-submission.md)法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由合作伙伴中心进行填充。
+> 当调用[更新应用提交](update-an-app-submission.md)法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 由合作伙伴中心，其他值进行填充。
 
 | 值           | 类型    | 说明                   |
 |-----------------|---------|------|
@@ -724,7 +724,7 @@ Microsoft Store 提交 API 提供可用于管理应用提交的方法，包括�
 |  Base               |   未设置价格段；使用应用的基价。      |     
 |  NotAvailable              |   应用在特定区域中不可用。    |     
 |  Free              |   应用是免费的。    |    
-|  Tier*xxx*               |   一个字符串，用于为应用指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看完整的价格层可用于开发者帐户，包括与每个层关联的特定于市场的价格，转到任何你在合作伙伴中心在应用提交的**定价和可用性**页面和单击**市场和自定义价格**部分中的**查看表**链接 （对于某些开发人员帐户，此链接是在**定价**部分）。    |
+|  Tier*xxx*               |   一个字符串，用于为应用指定价格段（**Tier<em>xxxx</em>** 格式）。 目前，支持以下价格段范围：<br/><br/><ul><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **true**，则你的帐户的可用价格段值为 **Tier1012** - **Tier1424**。</li><li>如果[定价资源](#pricing-object)的 *isAdvancedPricingModel* 值为 **false**，则你的帐户的可用价格段值为 **Tier2** - **Tier96**。</li></ul>若要查看完整的价格适用于你的开发人员帐户，包括与每个层关联的特定于市场的价格段转到任何你在合作伙伴中心在应用提交的**定价和可用性**页面和单击**市场和自定义价格**部分中的**查看表**链接 （对于某些开发人员帐户，此链接是在**定价**部分）。    |
 
 
 <span id="enterprise-licensing" />
