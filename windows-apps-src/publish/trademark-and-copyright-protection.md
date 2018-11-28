@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 658694e157a526f9090a5dbf387c80087ae1d4fc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701558"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7849974"
 ---
 # <a name="trademark-and-copyright-protection"></a>商标和版权保护
 
@@ -21,7 +21,7 @@ ms.locfileid: "7701558"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. 如何在 Windows 应用中报告侵犯我的知识产权的行为？
 
 
-请使用以下[表单](http://go.microsoft.com/fwlink/p/?LinkId=273879)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 如果您需要有关 Microsoft DMCA 政策的其他信息，请访问： [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)。
+请使用以下[表单](http://go.microsoft.com/fwlink/p/?LinkId=273879)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 如果你需要有关 Microsoft DMCA 政策的其他信息，请访问： [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)。
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. 我创建了要使用 Microsoft 产品/服务的应用。 我可以在我的应用名称中使用 Microsoft 产品/服务名称吗？
 

@@ -8,15 +8,15 @@ keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719043"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847764"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
-可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将发布到 Microsoft 应用商店或旁加载其打包到一个或多个电脑上。
+可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将该包发布到 Microsoft 应用商店或旁加载它到一个或多个电脑上。
 
 Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 
@@ -95,4 +95,4 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 **分发应用**
 
-请参阅[分配的已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分配已打包的桌面应用程序](desktop-to-uwp-distribute.md)

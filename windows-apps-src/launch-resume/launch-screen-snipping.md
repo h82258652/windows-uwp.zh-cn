@@ -7,11 +7,11 @@ keywords: windows 10，uwp，uri、 截图草图
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691080"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850421"
 ---
 # <a name="launch-screen-snipping"></a>启动屏幕截取
 
@@ -21,7 +21,7 @@ ms.locfileid: "7691080"
 
 **Ms screenclip:** URI 允许应用自动打开并启动新的代码段。 生成的代码段复制到用户的剪贴板，但不是会自动传递回打开应用。
 
-**ms screenclip:** 使用以下参数：
+**ms screenclip:** 采用以下参数：
 
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
@@ -30,13 +30,13 @@ ms.locfileid: "7691080"
 
 ## <a name="launching-the-snip--sketch-app"></a>启动代码段和 Sketch 应用
 
-**Ms screensketch:** URI 允许你以编程方式启动代码段和 Sketch 的应用，并在批注该应用中打开特定的图像。
+**Ms screensketch:** URI 允许你以编程方式启动代码段和 Sketch 的应用，并打开批注该应用中的特定的图像。
 
-**ms screensketch:** 使用以下参数：
+**ms screensketch:** 采用以下参数：
 
 | 参数 | 类型 | 必需 | 描述 |
 | --- | --- | --- | --- |
-| sharedAccessToken | 字符串 | 否 | 用于标识要在代码段和 Sketch 的应用中打开的文件访问令牌。 从[SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)检索。 如果省略此参数，则将打开的文件不启动应用。 |
+| sharedAccessToken | 字符串 | 否 | 用于标识要在代码段和 Sketch 的应用中打开的文件访问令牌。 从[SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)检索。 如果省略此参数，则应用将启动没有打开文件中。 |
 | 源 | 字符串 | 否 | 要指示启动 URI 的源的自由格式字符串。 |
 | isTemporary | Bool | 否 | 如果设置为 True，屏幕草图将尝试打开它后删除文件。 |
 
