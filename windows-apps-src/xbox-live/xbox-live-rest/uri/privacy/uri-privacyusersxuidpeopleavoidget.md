@@ -2,19 +2,17 @@
 title: GET (/users/{ownerId}/people/avoid)
 assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/people/avoid)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 68237ed101870a8fed4b7b5fb298006f784a0910
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 745893b4b975b5fbf64fe76591ec15d18af59d73
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566395"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825604"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 获取用户避免列表。
@@ -32,14 +30,14 @@ ms.locfileid: "7566395"
 
 ## <a name="remarks"></a>备注
 
-如果给定目标，仅返回该用户，如果它们在阻止列表中，也可以为空如果它们不。
+如果给定目标，仅返回该用户，如果它们不在阻止列表中，也可以为空如果它们不。
 
 <a id="ID4EZ"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为<code>xuid({xuid})</code>。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>。 最大大小： none。 |
 
@@ -57,22 +55,22 @@ ms.locfileid: "7566395"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权 | 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>Xauth=&lt;authtoken></code>。 最大大小： none。|
-| 接受| 字符串| 内容类型可接受。 示例值： <code>application/json</code>。 最大大小： none。|
+| 接受| 字符串| 内容类型的可接受。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4EYD"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 说明|
+| 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
-| 400| 错误请求| 无效的 URI 中指定的目标 ID。|
+| 400| 错误请求| URI 中指定的目标 ID 不正确。|
 | 403| 已禁止| URI 中指定的所有者不是经过身份验证的用户。|
 | 404| 找不到| URI 中指定的所有者不存在。|
 
@@ -81,11 +79,11 @@ ms.locfileid: "7566395"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>。 最大大小： none。|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34。 最大大小： none。|
-| 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
+| 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例值： <code>application/json</code>。 最大大小： none。|
 
 <a id="ID4ESH"></a>
 

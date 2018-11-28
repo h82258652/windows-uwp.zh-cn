@@ -2,22 +2,20 @@
 title: /media/{marketplaceId}/singleMediaGroupSearch
 assetID: f5599db7-4050-640e-db96-2df01a007c07
 permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearch.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/singleMediaGroupSearch"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 3157f7152d7bf4d864d706e04a7ea345e248a431
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b26b4c2dc51ef5591480372aa9908a49d2f8cbe2
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7579415"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7993249"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
-允许搜索单个媒体组中的项。 请注意，此搜索从返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询优化器。
+允许搜索单个媒体组中的项。 请注意，此搜索返回的数据的页面使用可以访问非连续 skipItems 参数而不是使用延续令牌。 此 API 将接受查询优化器。
  
 这些 Uri 的域是`eds.xboxlive.com`。
  
@@ -28,7 +26,7 @@ ms.locfileid: "7579415"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   

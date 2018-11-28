@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7721843"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7994066"
 ---
 ## <a name="support-and-feedback"></a>支持和反馈
 
 ### <a name="find-answers-to-your-questions"></a>查找问题的答案
 
-有问题？ 向我们提问在[Stack Overflow](https://aka.ms/pos-stackoverflow)或[MSDN UWP 论坛](https://aka.ms/pos-msdn-uwpforum)
+有问题？ 向我们提问[Stack Overflow](https://aka.ms/pos-stackoverflow)或[MSDN UWP 论坛](https://aka.ms/pos-msdn-uwpforum)
 
 帮助我们找到问题：
-- 将[pointofservice](https://aka.ms/pos-stackoverflow)标记添加到您 Stack Overflow 上的问题。 
+- 将[pointofservice](https://aka.ms/pos-stackoverflow)标记添加到 Stack Overflow 上问题。 
 - 在你在 MSDN UWP 论坛文章中包含["pointofservice"](https://aka.ms/pos-msdn-uwpforum)术语
 
 ### <a name="make-feature-suggestions-or-give-feedback"></a>提出功能建议或提供反馈

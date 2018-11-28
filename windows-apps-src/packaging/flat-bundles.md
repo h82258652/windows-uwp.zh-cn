@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 打包, 包配置, 平面捆绑包
 ms.localizationpriority: medium
 ms.openlocfilehash: b7066b7f2e5bd72ebee3169e03c7940b6fef4dba
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7851148"
+ms.locfileid: "7969545"
 ---
 # <a name="flat-bundle-app-packages"></a>平面捆绑应用包 
 

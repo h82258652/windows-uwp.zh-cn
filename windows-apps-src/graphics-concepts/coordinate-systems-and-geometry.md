@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 962002d635c3e6edbf1f9581a4cbc57fbd5b1d96
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7851138"
+ms.locfileid: "7971487"
 ---
 # <a name="coordinate-systems-and-geometry"></a>坐标系统和几何结构
 

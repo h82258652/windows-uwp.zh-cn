@@ -1,18 +1,16 @@
 ---
 title: 连接存储最佳做法
-author: aablackm
 description: 有关如何从连接存储获取最佳性能和体验的建议
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c72ca14ed4bda118994a765cb0624a0e3b190a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dbdb8f95e9afc44a3280d897e74f74d327f94b97
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558099"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825896"
 ---
 # <a name="connected-storage-best-practices"></a>连接存储最佳做法
 

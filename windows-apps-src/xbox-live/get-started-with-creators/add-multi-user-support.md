@@ -1,19 +1,17 @@
 ---
 title: 向 Unity 游戏添加多用户支持
-author: KevinAsgari
 description: 使用 Xbox Live Unity 插件向 Unity 游戏添加多用户支持
 ms.assetid: ''
-ms.author: heba
 ms.date: 07/14/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 多用户
 ms.localizationpriority: medium
-ms.openlocfilehash: 73dcb6bb177cd8d6c2e2e532e6f1b7a62ade7adc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 483a0e966be756de483bf7e2ab8458647397687b
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7574854"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825990"
 ---
 # <a name="add-multi-user-support-to-your-unity-game"></a>向 Unity 游戏添加多用户支持
 > [!IMPORTANT]

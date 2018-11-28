@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7843751"
+ms.locfileid: "7966662"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>HTTP 动态自适应流式处理 (DASH) 配置文件支持
 

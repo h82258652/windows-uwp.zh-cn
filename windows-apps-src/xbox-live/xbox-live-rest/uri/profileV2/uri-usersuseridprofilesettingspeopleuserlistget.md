@@ -2,19 +2,17 @@
 title: GET (/users/{userId}/profile/settings/people/{userList})
 assetID: f6553499-89e2-f21b-a00f-7e5437c045ff
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlistget.html
-author: KevinAsgari
 description: " GET (/users/{userId}/profile/settings/people/{userList})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f04950b5aff14bf943f9827f0a2af52ddbcb9c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f868fdf4f3d5cd36000784d9c5a3437fa5d67ffa
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7560894"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825945"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 获取用户的个人资料或支持用户，与人脉名字对象。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -30,33 +28,33 @@ ms.locfileid: "7560894"
  
 ## <a name="remarks"></a>备注
  
-**userList**和**Userid**是互斥的参数。 如果指定了这两或任何一个，你将得到**BadRequest** 。 **userList**是数组，以便在多个命名的列表是适用于请求方案未来篡改。 **Userid**构成 Xuid 十进制字符串-JSON 会降低时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
+**userList**和**Userid**是互斥的参数。 如果指定了这两或任何一个，则你将得到**BadRequest** 。 **userList**是数组，以便在多个已命名的列表是适用于请求方案前瞻性保护。 **Userid**构成 Xuid 十进制字符串-JSON 已损坏时序列化 64 位无符号的整数。 最后，将设置、 使用正常的用户可读的名称，而不是 64 位无符号的整数或模糊的常量，如**XONLINE_PROFILE_ASDF**命名 Xbox One 中的设置。
   
 <a id="ID4EKB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
-| 用户 Id| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
-| userList| 字符串| 用户获取设置已命名的列表。 目前，用户是唯一支持的列表。| 
+| userId| 字符串| 可以是 xuid(12345)'、 'gt(myGamertag) 或 me。| 
+| userList| 字符串| 用户获取设置已命名的列表。 目前，用户是唯一受支持的列表。| 
   
 <a id="ID4EVB"></a>
 
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
-| settings| 字符串| 设置名称的逗号分隔的列表。| 
+| settings| 字符串| 设置名称的以逗号分隔的列表。| 
   
 <a id="ID4EQC"></a>
 
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl 协定版本| 32 位有符号整数| 值 = 2| 
 | 内容类型| 字符串| 值 = <code>application/json</code>| 

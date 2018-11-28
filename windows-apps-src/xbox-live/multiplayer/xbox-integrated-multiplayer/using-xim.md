@@ -1,18 +1,16 @@
 ---
 title: 使用 XIM (C++)
-author: KevinAsgari
 description: 了解如何将 Xbox 集成多人游戏 (XIM) 与 C++ 结合使用。
-ms.author: kevinasg
 ms.date: 04/24/2018
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, xbox one, xbox 集成多人游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e4645de174bb572b75a8d5a5dcbb4091a693e75
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb01ac741a40b54e00efb5a602ec39c24f2990e0
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558252"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7827009"
 ---
 # <a name="using-xim-c"></a>使用 XIM (C++)
 
