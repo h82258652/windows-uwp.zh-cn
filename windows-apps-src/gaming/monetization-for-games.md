@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 盈利
 ms.localizationpriority: medium
 ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697117"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831303"
 ---
 #  <a name="monetization-for-games"></a>通过游戏盈利
 
@@ -27,7 +27,7 @@ ms.locfileid: "7697117"
 
 ## <a name="worldwide-distribution-channel"></a>全球分配渠道
 
-在 Microsoft 应用商店可以使你的游戏可用于下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+在 Microsoft 应用商店可以使你的游戏可供下载 200 多个国家和地区支持通过各种形式的付款包括 Visa、 Mastercard 和 PayPal 全球。 有关国家和地区的完整列表，请参阅[定义市场选择](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ## <a name="set-a-price-for-your-game"></a>为你的游戏设置价格
 
@@ -37,7 +37,7 @@ ms.locfileid: "7697117"
 
 ### <a name="base-price"></a>基价
 
-游戏基价可确定你的游戏属于_付费_还是_免费_类别。 你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)配置基于国家和地区的基本价格。
+游戏基价可确定你的游戏属于_付费_还是_免费_类别。 可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)配置基于国家和地区的基本价格。
 确定价格的过程可能包括[销往其他国家/地区时的税收义务](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)和[特定市场的成本注意事项](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 还可以[为特定市场设置自定义价格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>售价
@@ -47,18 +47,18 @@ ms.locfileid: "7697117"
 
 ## <a name="in-game-purchases"></a>游戏内购买
 
-游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft 应用商店中，这些产品称为_加载项_。 通过合作伙伴中心的[发布加载项](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 你还需要在你的游戏代码中启用加载项。
+游戏内购买是指在游戏内购买的产品。 它们还通常称为_应用内购买_。 在 Microsoft 应用商店中，这些产品称为_加载项_。 通过合作伙伴中心，[加载项发布](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)之后。 你还需要在你的游戏代码中启用加载项。
 
 ### <a name="types-of-add-ons"></a>加载项类型
 
 你可以在应用商店中创建两种类型的加载项：_耐用型_或_易耗型_。 耐用型加载项可以保留一段指定时间，并且在过期前只能购买一次。 易耗型加载项可以反复购买和使用。
 
-创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为玩家跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+创建易耗型加载项时，确定你想要跟踪它们的方式，&mdash;即它们由_开发人员托管_还是由_应用商店托管_（此功能将在 Windows10 版本 1607 中开始提供）。 使用开发人员管理的易耗品，你负责为玩家跟踪商品库存;与应用商店管理的易耗品，Microsoft Store 会跟踪的商品为你。 有关详细信息，请参阅[易耗型加载项概述](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>创建游戏内购买
 
 最新应用内购买和许可证信息 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的一部分（从 Windows10 版本 1607 开始）。 如果你要面向 1607 或更高版本开发新游戏，我们建议你使用 __Windows.Services.Store__ 命名空间，因为它支持最新的加载项类型并且性能更佳。
-它还设计为与将来在合作伙伴中心和应用商店支持的产品和功能类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
+它还设计为与将来的产品和在合作伙伴中心和应用商店受支持的功能类型兼容。 如果要面向以前版本的 Windows10 开发，请改为使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间。
 
 有关详细信息，请转到[应用内购买和试用](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 
@@ -90,7 +90,7 @@ ms.locfileid: "7697117"
 
 1. 在 Visual Studio 中打开你的游戏解决方案。
 2. 在 Visual Studio 内，转到__项目__ > __应用商店__ > __创建应用包...__
-3. 对于__你希望生成要上传到 Microsoft Store 的程序包？__ 选项，选择__是__。
+3. 对于__你希望生成要上传到 Microsoft Store 的程序包？__ 选项中，选择__是__。
 4. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)开发者帐户。 或者[注册](https://developer.microsoft.com/store/register)开发者帐户（如果没有）。
 5. 选择要为其创建上传包的应用。 如果尚未创建应用提交，请提供新的应用名称创建新提交。 有关详细信息，请参阅[通过保留名称创建应用](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功创建程序包后，单击__启动 Windows 应用认证工具包__启动测试过程。

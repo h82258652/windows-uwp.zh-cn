@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 促销 API, 广告活动
 ms.localizationpriority: medium
 ms.openlocfilehash: 363f7034d7e353d9ee110637971e7b848dbca1bb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718249"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844896"
 ---
 # <a name="manage-delivery-lines"></a>管理投放渠道
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 评价
 ms.localizationpriority: medium
 ms.openlocfilehash: 084158c0eb20f1d2a03c0e178064ac168c689872
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707948"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851224"
 ---
 # <a name="get-app-reviews"></a>获取应用评价
 

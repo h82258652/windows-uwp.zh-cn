@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cb4b16cea3368660ffcb1bc4b252391a73ab13e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7710085"
+ms.locfileid: "7849892"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
 通过使用 [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。

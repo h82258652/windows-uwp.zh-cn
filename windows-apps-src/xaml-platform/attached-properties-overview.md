@@ -11,11 +11,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 265a99e7abbb9b2f4c3341f90aecc3661ce3ffbf
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704025"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850566"
 ---
 # <a name="attached-properties-overview"></a>附加属性概述
 
@@ -36,7 +36,7 @@ ms.locfileid: "7704025"
 ```
 
 > [!NOTE]
-> 我们只需将[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)用作示例附加属性而不完全介绍使用它的原因。 如果你希望了解有关 **Canvas.Left** 的目的以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何处理其布局子项的详细信息，请参阅 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 参考主题或[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+> 我们只需将用作示例附加属性使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) ，而不完全介绍使用它的原因。 如果你希望了解有关 **Canvas.Left** 的目的以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何处理其布局子项的详细信息，请参阅 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 参考主题或[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
 ## <a name="why-use-attached-properties"></a>为什么使用附加属性？
 

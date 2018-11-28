@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: caf0e8e63716f6ba140ef9346257687f0e7293bb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699447"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831267"
 ---
 # <a name="search-and-find-in-page"></a>搜索和在页面中查找
 
@@ -31,7 +31,7 @@ ms.locfileid: "7699447"
 
 **输入。** 文本是最常见的搜索输入模式，并且是本指南的重点。 其他常见的输入模式包括语音和相机，但这些输入模式通常要求能够与设备硬件相连接，并且在应用内可能需要其他控件或自定义 UI。
 
-**零输入。** 后用户已激活输入的字段，但用户输入文本之前，你可以显示所谓的"零输入的画布。 零输入画布通常显示在应用画布中，以便[自动建议](auto-suggest-box.md)在用户开始输入查询时替换此内容。 最近搜索历史记录、热门搜索、上下文搜索建议、提示和使用技巧都非常适用于零输入状态。
+**零输入。** 后，用户已激活输入的字段中，但用户已输入文本之前，你可以显示所谓的"零输入的画布。 零输入画布通常显示在应用画布中，以便[自动建议](auto-suggest-box.md)在用户开始输入查询时替换此内容。 最近搜索历史记录、热门搜索、上下文搜索建议、提示和使用技巧都非常适用于零输入状态。
 
 ![零输入画布上的 Cortana 示例](images/search-cortana-example.png)
 
@@ -56,7 +56,7 @@ ms.locfileid: "7699447"
 
 一些常见的搜索范围包括：
 
-**全局**和**上下文/精确。** 搜索跨多个云源以及本地内容。 各种结果，包括 URL、文档、媒体、操作、应用等。
+**全局**并**上下文/精确。** 搜索跨多个云源以及本地内容。 各种结果，包括 URL、文档、媒体、操作、应用等。
 
 **Web。** 搜索 web 索引。 结果包括页面、条目和解答。
 

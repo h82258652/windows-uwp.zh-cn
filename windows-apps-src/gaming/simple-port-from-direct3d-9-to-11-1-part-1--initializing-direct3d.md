@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, direct3d 11, 初始化, 移植, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707572"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852049"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
 
 
-**小结**
+**摘要**
 
 -   第 1 部分：初始化 Direct3D 11
 -   [第 2 部分：转换呈现框架](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)

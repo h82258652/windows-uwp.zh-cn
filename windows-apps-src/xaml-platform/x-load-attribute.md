@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693158"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830978"
 ---
 # <a name="xload-attribute"></a>x:Load 属性
 
 你可以使用**X:load**优化启动、 可视化树创建和 XAML 应用的内存使用量。 使用**X:load**具有**可见性**，类似的视觉效果，不同之处在于，元素不加载时，会释放其内存和内部小占位符用于标记它的可视化树中的位置。
 
-使用 X:load 属性化的 UI 元素可以加载和卸载通过代码，或使用[X:bind](x-bind-markup-extension.md)表达式。 这对于减少偶尔出现或按一定条件出现的元素的成本非常有用。 如网格或 StackPanel 的容器上使用 X:load 时，在容器以及所有及其子元素加载或卸载成组。
+使用 X:load 属性化的 UI 元素可以是加载和卸载通过代码，或使用[X:bind](x-bind-markup-extension.md)表达式。 这对于减少偶尔出现或按一定条件出现的元素的成本非常有用。 如网格或 StackPanel 的容器上使用 X:load 时，容器及其所有及其子元素加载或卸载成组。
 
-延迟元素的跟踪由 XAML 框架向每个元素以占位符考虑使用 X:load，归因内存使用量添加约 600 个字节。 因此，它是可以过分使用此属性的范围内实际上会降低性能。 我们建议你仅使用它需要隐藏的元素上。 如果你的容器上使用 X:load，然后仅适用于具有 X:load 属性的元素会支付开销。
+由 XAML 框架延迟元素的跟踪向每个元素的占位符考虑使用 X:load，归因内存使用量添加约 600 个字节。 因此，它是可以过分使用此属性的范围内实际上会降低性能。 我们建议你仅使用它需要隐藏的元素上。 如果你的容器上使用 X:load，仅适用于使用 X:load 属性元素支付开销。
 
 > [!IMPORTANT]
 > 从 Windows 10 版本 1703 （创意者更新） 开始，可 X:load 属性。 要使用 x:Load，Visual Studio 项目所面向的最低版本必须为 *Windows 10 创意者更新（10.0，版本 15063）*。
@@ -46,7 +46,7 @@ ms.locfileid: "7693158"
 以上面列出的任何方法创建了延迟元素后，会立即发生以下情况：
 
 - 将引发该元素上的 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 事件。
-- 设置 x： 名称字段。
+- 设置 X:name 的字段。
 - 将评估该元素上的任何 X:bind 绑定。
 - 如果已注册为接收有关某属性（包含延迟元素的属性）的属性更改通知，将引发此通知。
 
@@ -55,33 +55,33 @@ ms.locfileid: "7693158"
 若要卸载元素：
 
 - 使用 X:bind 表达式指定的加载状态。 表达式应返回**true**加载与**false**卸载该元素。
-- 在页面或 UserControl，调用**UnloadObject**并传入的对象引用
-- 调用**Windows.UI.Xaml.Markup.XamlMarkupHelper.UnloadObject**并传入的对象引用
+- 在页面或 UserControl，调用**UnloadObject**并传入对象引用
+- 调用**Windows.UI.Xaml.Markup.XamlMarkupHelper.UnloadObject**并传入对象引用
 
-当卸载对象时，它将被替换在树中的占位符。 对象实例将保留在内存中，直到已发布的所有引用。 页面/UserControl UnloadObject API 旨在发布持有的 x： 名称和 x: Bind 代码生成器的引用。 如果你在应用代码中他们也需要发放持有其他引用。
+当卸载对象时，它将被替换在树中的占位符。 对象实例将保留在内存中，直到已发布的所有引用。 页面/UserControl UnloadObject API 旨在释放持有 X:name 和 x: Bind 的代码生成器的引用。 如果他们也需要发布的应用代码中保留额外的引用。
 
-卸载元素时，与元素相关联的所有状态将被丢弃，因此如果使用 X:load 作为优化版本的可见性，然后确保所有状态绑定，通过应用或者 Loaded 的事件触发时重新应用由代码。
+卸载元素时，与元素相关联的所有状态将被丢弃，因此如果使用 X:load 作为优化版本的可见性，然后确保所有状态绑定，通过应用或者重新应用由代码加载的事件触发时。
 
 ## <a name="restrictions"></a>限制
 
 使用**X:load**的限制是：
 
-- 你必须定义一个[X:name](x-name-attribute.md)元素，因为那里需要以后查找该元素的方法。
+- 你必须定义一个[X:name](x-name-attribute.md)元素，因为存在需要以后查找该元素的方法。
 - 你只能从[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)或[**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249)派生的类型上使用 X:load。
 - 你无法使用 X:load[**页面**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)或在[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)中的根元素上。
 - 不能在[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)中的元素上使用 X:load。
-- 不能使用 X:load 上使用[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)加载的松动 XAML。
+- 你无法在使用[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)加载的松动 XAML 使用 X:load。
 - 移动父元素将清除尚未加载任何元素。
 
 ## <a name="remarks"></a>备注
 
-你可以使用 X:load 嵌套元素上，不过它们必须实现从最外层的元素中。 如果尝试先实现子元素再实现父元素，将引发异常。
+你可以嵌套元素上使用 X:load，不过它们必须实现从最外层的元素中。 如果尝试先实现子元素再实现父元素，将引发异常。
 
 通常情况下，建议延迟第一帧中无法查看的元素。一个用于查找要延迟的候选项的准则是，查找正使用折叠的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 创建的元素。 此外，由用户交互触发的 UI 也是用于查找可延迟的元素的好位置。
 
 延迟 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 中的元素时请谨慎操作，因为延迟此类元素虽然会减少启动时间，但同时也可能降低平移性能，具体取决于要创建的内容。 如果想要提升平移性能，请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)和 [x:Phase 特性](x-phase-attribute.md)文档。
 
-如果使用[X:phase 属性](x-phase-attribute.md)结合**X:load**然后，在实现某个元素或元素树后，该绑定会应用至当前阶段并包括当前阶段。 **X:phase**为指定的阶段不会影响或控制元素的加载状态。 作为一部分来回收的平移列表项时，已实现的元素的行为将相同的方式与其他活动元素，并且使用相同的规则，包括分段处理已编译的绑定 （**{x: Bind}** 绑定）。
+如果使用[X:phase 属性](x-phase-attribute.md)结合**X:load**然后，在实现某个元素或元素树后，该绑定会应用至当前阶段并包括当前阶段。 **X:phase**为指定的阶段不会影响或控制元素的加载状态。 平移，一部分来回收某个列表项时，实现的元素将行为相同的方式与其他活动元素，并使用相同的规则，包括分段处理已编译的绑定 （**{x: Bind}** 绑定）。
 
 一般原则是在操作前和操作后测量应用性能，以确保获得所需性能。
 

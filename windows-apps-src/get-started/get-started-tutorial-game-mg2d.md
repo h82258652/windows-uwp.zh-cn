@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702661"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832253"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>用 MonoGame 2D 创建 UWP 游戏
 
@@ -26,21 +26,21 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 
 ## <a name="prerequisites"></a>必备条件
 +   Windows 10 和 Microsoft Visual Studio 2017。  [单击此处了解如何设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ .NET 的桌面开发框架。 如果你尚未获得此安装，你可以通过重新运行 Visual Studio 安装程序和修改你安装的 Visual Studio 2017 获取它。
++ .NET 的桌面开发框架。 如果你尚未获得此安装，你可以通过重新运行 Visual Studio 安装程序和修改你的 Visual Studio 2017 的安装来获取它。
 +   C# 或类似面向对象的编程语言的基础知识。 [单击此处以了解如何开始使用 C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 +   熟悉基本的计算机科学概念如类、方法以及变量，将有所帮助。
 
 ## <a name="why-monogame"></a>为什么选择 MonoGame？
-谈及游戏开发环境时，我们并不缺少选择。 从功能齐全的引擎（如 Unity）到全面、复杂的多媒体 API（如 DirectX），但这些都让人很难知道从何处入手。 MonoGame 是一组工具，其复杂度处于游戏引擎与更专业的 API（如 DirectX）之间。 它提供了易于使用的内容管道，以及用于创建在各种平台上运行的轻型游戏所需的所有功能。 最重要的是，MonoGame 应用用纯 C# 编写，并通过 Microsoft 应用商店或其他类似的分发平台，可以快速分发它们。
+谈及游戏开发环境时，我们并不缺少选择。 从功能齐全的引擎（如 Unity）到全面、复杂的多媒体 API（如 DirectX），但这些都让人很难知道从何处入手。 MonoGame 是一组工具，其复杂度处于游戏引擎与更专业的 API（如 DirectX）之间。 它提供了易于使用的内容管道，以及用于创建在各种平台上运行的轻型游戏所需的所有功能。 最重要的是，MonoGame 应用用纯 C# 中，并通过 Microsoft 应用商店或其他类似的分发平台，可以快速分发它们。
 
 ## <a name="get-the-code"></a>获取代码
 如果你不想跟着教程逐步学习，只想了解 MonoGame 的实际应用，[请单击此处以获得完成后的应用](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-在 Visual Studio 2017 中，打开项目，然后按**F5**以运行样本。 首次进行此操作可能会需要一段时间，因为 Visual Studio 需要提取安装中缺少的所有 NuGet 包。
+在 Visual Studio 2017 中，打开项目，并按**F5**运行示例。 首次进行此操作可能会需要一段时间，因为 Visual Studio 需要提取安装中缺少的所有 NuGet 包。
 
 如果已完成此操作，则请跳至下一节“设置 MonoGame”，以查看代码的分步操作实例。
 
-**注意：** 此示例中创建的游戏并不完整（或完全没有乐趣）。 其唯一目的是展示用 MonoGame 2d 游戏开发的所有核心概念。 你可随意使用此代码并进行改进，或者在掌握基础知识之后从头开始。
+**注意：** 此示例中创建的游戏并不完整（或完全没有乐趣）。 其唯一目的是为了演示用 MonoGame 2d 游戏开发的所有核心概念。 你可随意使用此代码并进行改进，或者在掌握基础知识之后从头开始。
 
 ## <a name="set-up-monogame-project"></a>设置 MonoGame 项目
 1. 从 [MonoGame.net](http://www.monogame.net/) 中安装适用于 Visual Studio 的 **MonoGame 3.6**。
@@ -66,7 +66,7 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 
 **protected override void UnloadContent()** 此方法用于卸载非内容管理器内容。 我们不会用到此方法。
 
-**受保护的 override void Update (GameTime gameTime)** 每个游戏循环周期调用此方法一次。 我们在此更新游戏中使用的任何对象或变量的状态。 这包括对象的位置、速度或颜色等等。 这也是处理用户输入的位置。 简而言之，此方法用于处理游戏逻辑的每个部分（在屏幕上绘制对象除外）。
+**受保护的 override void Update (GameTime gameTime)** 每个游戏循环周期调用此方法一次。 我们在此更新游戏中使用的任何对象或变量的状态。 这包括对象的位置、速度或颜色等等。 这是处理用户输入的位置。 简而言之，此方法用于处理游戏逻辑的每个部分（在屏幕上绘制对象除外）。
 **protected override void Draw(GameTime gameTime)** 这是在屏幕上使用“Update”方法提供的位置绘制对象的地方。
 
 ## <a name="draw-a-sprite"></a>绘制子画面
@@ -80,7 +80,7 @@ MonoGame 是一款轻型游戏开发框架。 本教程介绍了用 MonoGame 进
 - 打开**解决方案资源管理器**
 - 右键单击 **Content** 文件夹中的** Content.mgcb** 并选择**打开方式**。 从弹出菜单中选择 **Monogame 管道**，并选择**确定**。
 - 在新窗口中，右键单击**内容**项并选择**添加 -> 现有项目**。
-- 查找并在文件浏览器中选择绿色矩形。
+- 查找并选择文件浏览器中的绿色矩形。
 - 将此项命名为“grass.png”并选择**添加**。
 
 ### <a name="3-add-class-variables"></a>3. 添加类变量
@@ -379,7 +379,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7.处理键盘输入
-接下来，我们需要通过键盘处理用户输入的新方法。 将此方法添加到**Game1.cs**:
+接下来，我们需要一种新的方法来通过键盘处理用户输入。 **Game1.cs**中加入此方法：
 
 ```CSharp
 void KeyboardHandler()
@@ -484,7 +484,7 @@ dino.Draw(spriteBatch);
 
 在 MonoGame 中，对 **spriteBatch.Draw** 的新调用将会覆盖任何先前的调用。 这意味着，花椰菜和恐龙子画面将绘制现有的草地子画面，因此它们可以永远不会隐藏无论其位置。
 
-现在尝试运行游戏，并通过箭头键和空格键移动恐龙。 如果已遵循以上步骤，你应该能够让你在游戏窗口内移动的头像和花椰菜应生成速度将会不断增长。
+现在尝试运行游戏，并通过箭头键和空格键移动恐龙。 如果已遵循以上步骤，你应该能够让你在游戏窗口内移动的头像和花椰菜应生成速度不断增长。
 
 ![玩家头像和障碍物](images/monogame-tutorial-2.png)
 
@@ -600,7 +600,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-此方法用于检测两个矩形对象是否发生了碰撞。 该算法通过测试来确定是否存在任何矩形的边平行之间的间距。 如果存在间隙，则没有发生碰撞；如果没有间隙，则必定发生了碰撞。
+此方法用于检测两个矩形对象是否发生了碰撞。 该算法通过测试，以查看是否有任何矩形的边平行之间的间距。 如果存在间隙，则没有发生碰撞；如果没有间隙，则必定发生了碰撞。
 
 ### <a name="2-load-new-textures"></a>2. 加载新纹理
 
@@ -684,7 +684,7 @@ if (gameOver)
 ![游戏结束](images/monogame-tutorial-4.png)
 
 ## <a name="publish-to-the-microsoft-store"></a>发布到 Microsoft Store
-因为我们的生成此游戏为 UWP 应用，就可以将此项目发布到 Microsoft Store。 此流程包含几个步骤。
+由于我们的生成此游戏为 UWP 应用，就可以将此项目发布到 Microsoft Store。 此流程包含几个步骤。
 
 你必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/en-us/store/register)。
 

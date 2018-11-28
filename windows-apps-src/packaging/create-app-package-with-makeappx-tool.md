@@ -8,11 +8,11 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697180"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831632"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
 
@@ -22,7 +22,7 @@ ms.locfileid: "7697180"
 > [!IMPORTANT] 
 > 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.msix 或.appx 和.appxsym。 .Appxsym 文件是包含用于在合作伙伴中心中的[故障分析](../publish/health-report.md)应用的公共符号的压缩的.pdb 文件。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](../publish/upload-app-packages.md)。 
+请注意，**MakeAppx.exe** 不会创建 .appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.msix 或.appx 和.appxsym。 .Appxsym 文件是压缩的.pdb 文件，其中包含用于在合作伙伴中心中的[故障分析](../publish/health-report.md)应用的公共符号。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](../publish/upload-app-packages.md)。 
 
  更新到最新版本的 Windows 10 中的此工具不会影响.appx 包使用情况。 你可以继续使用此工具与.appx 程序包，或支持针对.msix 包使用该工具，如下所述。
 

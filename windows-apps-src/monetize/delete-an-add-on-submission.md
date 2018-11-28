@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 删除, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: cdcd74b86ce846f19f8a4eb912781762adb66a2d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700322"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844667"
 ---
 # <a name="delete-an-add-on-submission"></a>删除加载项提交
 
@@ -74,7 +74,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 请求参数无效。 |
 | 404  | 找不到指定提交。 |
-| 409  | 指定的提交已找到，但它无法删除在其当前状态，或者加载项使用[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
+| 409  | 指定的提交已找到，但它无法删除在其当前状态，或者加载项使用的是[当前不受 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作伙伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相关主题

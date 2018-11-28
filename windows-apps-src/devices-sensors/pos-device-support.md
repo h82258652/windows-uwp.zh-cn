@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714296"
+ms.locfileid: "7845174"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支持的服务点外设
 

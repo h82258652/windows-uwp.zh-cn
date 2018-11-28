@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7712011"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7844614"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>启动文件的默认应用
 

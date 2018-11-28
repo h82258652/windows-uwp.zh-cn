@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用提交, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712674"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7842118"
 ---
 # <a name="update-an-app-submission"></a>更新应用提交
 
@@ -71,7 +71,7 @@ ms.locfileid: "7712674"
 | hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Microsoft Store 商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
-| applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由合作伙伴中心进行填充。   |    
+| applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 由合作伙伴中心，其他值进行填充。   |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅[软件包传递选项对象](manage-app-submissions.md#package-delivery-options-object)部分。  |
 | enterpriseLicensing           |  字符串  |  [企业授权值](manage-app-submissions.md#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    

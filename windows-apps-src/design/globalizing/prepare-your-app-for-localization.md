@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720133"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845412"
 ---
 # <a name="make-your-app-localizable"></a>对应用进行可本地化处理
 
@@ -96,7 +96,7 @@ ms.locfileid: "7720133"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保 translator 知道每个参数的意图，以便它们可以反向格式中的项顺序的格式字符串 (例如，"{1} {0}")，适用于目标语言。
+此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 确保 translator 知道每个参数的意图，以便它们可以反向格式中的项顺序的格式字符串 (例如，"{1} {0}") 为适合于目标语言。
 
 ## <a name="dont-over-localize"></a>不要过度本地化
 

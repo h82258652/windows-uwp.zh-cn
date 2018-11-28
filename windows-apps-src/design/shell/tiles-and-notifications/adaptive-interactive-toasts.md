@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
 ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7713331"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7844429"
 ---
 # <a name="toast-content"></a>toast 内容
 

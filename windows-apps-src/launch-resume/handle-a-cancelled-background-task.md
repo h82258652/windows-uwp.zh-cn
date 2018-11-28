@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701844"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845531"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
@@ -83,7 +83,7 @@ private:
     volatile bool CancelRequested;
 ```
 
-在步骤 1 中创建的**OnCanceled**方法，将标志变量**\_CancelRequested**设置为**true**。
+在步骤 1 中创建的**OnCanceled**方法，将设置为**true**的标志变量**\_CancelRequested** 。
 
 完整的[后台任务示例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法将**\_CancelRequested**设置为**true** ，并编写可能有用的调试输出。
 
@@ -115,7 +115,7 @@ void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, Ba
 }
 ```
 
-后台任务的**Run**方法，在开始工作之前注册**OnCanceled**事件处理程序方法。 在进程内后台任务中，执行此注册操作可能是应用程序初始化的一部分。 例如，使用下面的代码行。
+后台任务的**Run**方法，在开始工作之前注册**OnCanceled**事件处理程序方法。 在进程内后台任务中，执行此注册操作可能是应用程序初始化的一部分。 例如，使用以下代码行。
 
 ```csharp
 taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
@@ -135,7 +135,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 修改后台任务类的代码以在它工作时检查该标志变量。 如果**\_cancelRequested**变为设置为 true，则停止工作将在继续操作。
 
-[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包括后台任务取消时停止定期计时器回调的检查。
+[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含一个检查，以后台任务取消时停止定期计时器回调。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -261,7 +261,7 @@ else
 
 ## <a name="run-method-example"></a>Run 方法示例
 
-完成**Run**方法和计时器回调代码时，请从[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)如下所示的上下文。
+完成**运行**方法和计时器回调代码时，请从[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)如下所示的上下文。
 
 ```csharp
 // The Run method is the entry point of a background task.

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 程序包要求, 程序包, 程序包格式, 受支持的版本, 提交, windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704093"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833121"
 ---
 # <a name="app-package-requirements"></a>应用包要求
 
@@ -30,14 +30,14 @@ ms.locfileid: "7704093"
 
 在 Visual Studio 中创建程序包时，请确保使用与你的开发者帐户关联的相同帐户登录。 程序包清单的某些部分具有与你的帐户相关的特定详细信息。 将自动检测和添加此信息。 如果没有将其他信息添加到清单，你可能会遇到软件包上传失败。 
 
-生成你的应用的 UWP 程序包时，Visual Studio 可以创建.msix 或 appx 文件或在.msixupload 或.appxupload 文件。 对于 UWP 应用，我们建议你始终上传中的[程序包](upload-app-packages.md)页面的.msixupload 或.appxupload 文件。 有关如何打包 UWP 应用以上架 Microsoft Store 的详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)。
+在生成你的应用的 UWP 程序包时，Visual Studio 可以创建.msix 或 appx 文件或在.msixupload 或.appxupload 文件。 对于 UWP 应用，我们建议你始终上传.msixupload 或.appxupload 文件中的[程序包](upload-app-packages.md)页面。 有关如何打包 UWP 应用以上架 Microsoft Store 的详细信息，请参阅[使用 Visual Studio 打包 UWP 应用](../packaging/packaging-uwp-apps.md)。
 
 不必使用来自受信任的证书颁发机构的根证书对你的应用包进行签名。
 
 
 ### <a name="app-bundles"></a>应用程序包
 
-对于 UWP 应用，Visual Studio 可以生成应用程序包 （.msixbundle 或.appxbundle），以减少用户下载的应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
+对于 UWP 应用，Visual Studio 可以生成应用程序包 （.msixbundle 或.appxbundle），以减少用户下载应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
 
 > [!NOTE]
 > 一个应用程序包可以包含所有体系结构的程序包。
@@ -57,7 +57,7 @@ ms.locfileid: "7704093"
 > 清单中的值区分大小写。 空格和其他标点符号也必须匹配。 请小心输入值并进行检查，以确保这些值准确无误。
 
 
-应用程序包 （.msixbundle 或.appxbundle） 使用不同的清单。 查看[捆绑包清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在.msixbundle 或.appxbundle 中，每一个包中包含的清单必须使用的相同的元素和属性，除了[标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**属性。
+应用程序包 （.msixbundle 或.appxbundle） 使用不同的清单。 查看[捆绑包清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文档，以获取应用程序包清单的详细信息和要求。 请注意，在.msixbundle 或.appxbundle 中，每个包含的程序包清单必须使用的相同元素和属性，除了[标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素**ProcessorArchitecture**属性。
 
 > [!TIP]
 > 在提交软件包之前，请确保运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)。 此操作可帮助你确定你的清单是否存在任何可能导致认证或提交失败的问题。
@@ -69,7 +69,7 @@ ms.locfileid: "7704093"
 
 | 应用包属性 | 要求                                                          |
 |----------------------|----------------------------------------------------------------------|
-| 程序包大小         | .msixbundle 或.appxbundle： 每个捆绑包最大为 25 GB <br>.msix 或.appx 程序包面向 Windows 10: 25 每个程序包最大 GB<br>面向 Windows 8.1 的 .appx 程序包：每个程序包最大为 8 GB <br> 面向 Windows 8 的 .appx 程序包：每个程序包最大为 2 GB <br> 面向 Windows Phone 8.1 的 .appx 程序包：每个程序包最大为 4 GB <br> .xap 程序包：每个程序包最大为 1 GB                                                                           |
+| 程序包大小         | .msixbundle 或.appxbundle： 每个捆绑包最大为 25 GB <br>面向 Windows 10: 25.msix 或.appx 包每个程序包最大 GB<br>面向 Windows 8.1 的 .appx 程序包：每个程序包最大为 8 GB <br> 面向 Windows 8 的 .appx 程序包：每个程序包最大为 2 GB <br> 面向 Windows Phone 8.1 的 .appx 程序包：每个程序包最大为 4 GB <br> .xap 程序包：每个程序包最大为 1 GB                                                                           |
 | 块映射哈希     | SHA2-256 算法                                                   |
 
 > [!IMPORTANT]
@@ -86,7 +86,7 @@ ms.locfileid: "7704093"
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML 文件
 
-StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 如果使用，StoreManifest.xml 与提交应用包，并且必须在你的应用的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
+StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 该文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Microsoft Store 设备应用或声明程序包适用于某个设备所依据的要求。 如果使用，StoreManifest.xml 与应用包提交，并且必须在应用的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
  
 
