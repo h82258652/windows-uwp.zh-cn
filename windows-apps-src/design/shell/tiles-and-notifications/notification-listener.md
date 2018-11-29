@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知侦听器, usernotificationlistener, 文档, 访问通知
 ms.localizationpriority: medium
 ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7983889"
+ms.locfileid: "8194680"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知侦听器：访问所有通知
 

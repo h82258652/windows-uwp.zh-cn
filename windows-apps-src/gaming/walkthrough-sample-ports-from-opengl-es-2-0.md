@@ -4,11 +4,11 @@ description: 这一组主题介绍了一些复杂程度不同的 OpenGL ES 2.0 �
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7977224"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8189561"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>从 OpenGL ES 2.0 移植的操作实例示例
 

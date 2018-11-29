@@ -2,25 +2,23 @@
 title: GET (/handles/{handle-id})
 assetID: c95b5ab5-d56a-f70d-20d8-afb48d122ccd
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidget.html
-author: KevinAsgari
 description: " GET (/handles/{handle-id})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 39d39db0fa17c85dfad3dcca7526d13618835135
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 501d36f4d1ac079af15d6bb7f35a90d5328fc8db
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562197"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8204166"
 ---
 # <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
 检索句柄 ID 指定的句柄
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法使用 2015年多人游戏，并将应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4EDB)
@@ -33,16 +31,16 @@ ms.locfileid: "7562197"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法获取用户的当前活动会话，指定的句柄。 返回是会话对象，使用所有属性。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**换行。
+此 HTTP/REST 方法获取用户的当前活动会话，指定的句柄。 返回会话对象，使用所有属性。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**换行。
 
-此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取的 ID 从协议激活后用户已接受游戏邀请。
+此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取 ID 从协议激活后用户已接受游戏邀请。
 
 <a id="ID4EDB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | handleId| GUID| 会话句柄的唯一 ID。|
 

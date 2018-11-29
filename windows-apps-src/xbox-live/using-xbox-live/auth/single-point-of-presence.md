@@ -1,19 +1,17 @@
 ---
 title: 单点入网 (SPOP)
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 单点入网 (SPOP) 确保只可在一个设备上玩游戏一次。
 ms.assetid: 40f19319-9ccc-4d35-85eb-4749c2cf5ef8
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, spop, 单点入网
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7159c5478d8e3325dabdb86e212d84c43cfb18
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f1503a6168a50175e861e17027e8b642d1b7834d
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564613"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8217897"
 ---
 # <a name="single-point-of-presence-spop"></a>单点入网 (SPOP)
 
