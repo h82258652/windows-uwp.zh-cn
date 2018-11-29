@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bdc5c210c466d6065fbcf1c856276bbb485788a
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7839795"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992229"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>捕获游戏音频、视频、屏幕截图和元数据
 本文介绍如何捕获游戏视频、音频和屏幕截图，以及如何提交元数据。系统将该元数据嵌入到捕获和广播的媒体中，使你的应用和其他人可以创建被同步到游戏事件的动态体验。 
@@ -152,7 +152,7 @@ ms.locfileid: "7839795"
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>当系统清除元数据时收到通知
-你可以为 **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件注册一个处理程序，以便当系统开始清除应用的元数据时收到通知。
+你可以注册系统开始清除通过登记**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件处理程序中的为你的应用的元数据时收到通知。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

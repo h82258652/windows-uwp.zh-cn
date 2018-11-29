@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7835432"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7988304"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
 

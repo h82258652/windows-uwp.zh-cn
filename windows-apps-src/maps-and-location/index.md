@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图服务
 ms.localizationpriority: medium
 ms.openlocfilehash: aea553a46357a26028848db5ff0e9b5debbeae56
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7836911"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992864"
 ---
 # <a name="maps-and-location-overview"></a>地图和位置概述
 

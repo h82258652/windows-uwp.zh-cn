@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 数据, 数据库, 关系, 表, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7846384"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989563"
 ---
 # <a name="data-access"></a>数据访问
 

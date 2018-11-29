@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，连接设备，远程系统、 rome、 项目 rome、 后台任务，应用服务
 ms.localizationpriority: medium
 ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7831878"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7985480"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 

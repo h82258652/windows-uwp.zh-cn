@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e2321c301535fe89f2a7bba13497d51c6d8b78
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 368454e32ba2c88994161f6c7deb554fff73972a
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827372"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983383"
 ---
 # <a name="scroll-viewer-controls"></a>滚动查看器控件
 
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-此 XAML 显示如何在滚动查看器中放置图像并启用缩放。
+此 XAML 显示了如何启用水平滚动、 滚动查看器中放置图像并启用缩放。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
