@@ -5,12 +5,12 @@ ms.date: 09/17/2018
 ms.topic: article
 keywords: windows 10，uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7842392"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990513"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本自适应应用：在保持与以前版本的兼容性的同时使用新 API
 
@@ -56,7 +56,7 @@ ms.locfileid: "7842392"
 | 创意者更新 | 1703 | 15063 |
 | 秋季创意者更新 | 1709 | 16299 |
 | 2018 年 4 月更新 | 1803 | 17134 |
-| 2018 年 10 月更新 | 1809 | _Insider Preview_ |
+| 2018 年 10 月更新 | 1809 | 17763 |
 
 可以从 [Windows SDK 和模拟器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何已发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/Home/BuildWithWindows) 站点的开发人员部分下载最新的 Windows Insider Preview SDK。
 

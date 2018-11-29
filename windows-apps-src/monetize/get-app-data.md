@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用数据
 ms.localizationpriority: medium
-ms.openlocfilehash: 312729c25d5d9f34471c7154a84273bcbf844da4
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7829952"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992382"
 ---
 # <a name="get-app-data"></a>获取应用数据
 
@@ -109,7 +109,7 @@ ms.locfileid: "7829952"
 
 <span id="add-on-object" />
 
-### <a name="add-on-resouce"></a>加载项资源
+### <a name="add-on-resource"></a>加载项资源
 
 该资源提供有关加载项的信息。
 
