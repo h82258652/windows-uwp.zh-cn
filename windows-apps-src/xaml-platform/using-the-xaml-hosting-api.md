@@ -1,16 +1,16 @@
 ---
 description: 本文介绍了如何在桌面应用程序中托管 UWP XAML 用户界面。
 title: 使用 UWP XAML 中的桌面应用程序中托管 API
-ms.date: 09/21/2018
+ms.date: 11/27/2018
 ms.topic: article
 keywords: windows 10，uwp，windows 窗体、 wpf win32
 ms.localizationpriority: medium
-ms.openlocfilehash: b6883b605bed0b259cd70d1f6dc0264476eddd40
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: df6c47fd93c3f42721fd072d6406a2d32f7889db
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837559"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990114"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的桌面应用程序中托管 API
 
@@ -46,8 +46,8 @@ ms.locfileid: "7837559"
 
 在 Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件作为使用 UWP WPF 和 Windows 窗体应用程序中托管 API 参考示例。 在以下位置是可用的源代码：
 
-  * 该控件，[请转到此处](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost)的 WPF 版本。 从[**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)派生 WPF 版本。
-  * 该控件，[请转到此处](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost)的 Windows 窗体版本。 Windows 窗体版本派生自[**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
+  * 该控件，[请转到此处](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost)的 WPF 版本。 从[**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)派生 WPF 版本。
+  * 该控件，[请转到此处](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost)的 Windows 窗体版本。 Windows 窗体版本派生自[**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -161,8 +161,8 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
 有关完整示例，演示了以下任务的工作示例应用程序上下文中，请参阅下面的代码文件：
 
   * **C + + Win32:** 请参阅[XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting)示例中的[Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp)文件或[XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32)示例中的[Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp)文件。
-  * **WPF:** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)文件。  
-  * **Windows 窗体：** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs)文件。
+  * **WPF:** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)文件。  
+  * **Windows 窗体：** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs)文件。
 
 
 ## <a name="how-to-host-custom-uwp-xaml-controls"></a>如何自定义的主机 UWP XAML 控件
@@ -174,11 +174,11 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
 
 1. 定义派生自[**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application)并且还将实现[**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider)的自定义类型。 此类型的自定义在当前目录中的程序集的应用程序的 UWP XAML 类型的元数据加载到充当根元数据提供程序。
 
-    有关示例，演示了如何执行此操作，请参阅 Windows 社区工具包中的[XamlApplication.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/XamlApplication.cs)代码文件。 此文件是实现的共享中，同时**WindowsXamlHost**类的 WPF 和 Windows 窗体帮助说明了如何使用 UWP XAML 承载这些类型的应用中的 API 的一部分。
+    有关示例，演示了如何执行此操作，请参阅 Windows 社区工具包中的[XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs)代码文件。 此文件是实现的共享中，同时**WindowsXamlHost**类的 WPF 和 Windows 窗体帮助说明了如何使用 UWP XAML 承载这些类型的应用中的 API 的一部分。
 
 2. UWP XAML 控件的类型名称分配时调用[**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype)付款方式根元数据提供程序 （这可能在代码中分配在运行时，或者你可能会选择启用该选项可在 Visual Studio 属性窗口中分配）。
 
-    有关示例，演示了如何执行此操作，请参阅 Windows 社区工具包中的[UWPTypeFactory.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/UWPTypeFactory.cs)代码文件。 此文件是实现的 WPF 和 Windows 窗体共享**WindowsXamlHost**类的一部分。
+    有关示例，演示了如何执行此操作，请参阅 Windows 社区工具包中的[UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs)代码文件。 此文件是实现的 WPF 和 Windows 窗体共享**WindowsXamlHost**类的一部分。
 
 3. 将自定义 UWP XAML 控件的源代码集成到你的主机应用程序解决方案、 生成自定义控件，并按以下[这些说明](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control)在你的应用程序中使用它。
 
@@ -193,8 +193,8 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
 2. 当用户位于你**DesktopWindowXamlSource**的最后一个可聚焦元素，并按下**Tab**键或箭头键时，引发[**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested)事件。 处理此事件并以编程方式将焦点移至主机应用程序中的下一个可聚焦元素。 例如，在**DesktopWindowXamlSource** [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)中的托管位置 WPF 应用程序，你可以使用[**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus)方法将焦点传输到主机应用程序中的下一个可聚焦元素。
 
 有关演示如何执行此操作的有效示例应用程序上下文中的示例，请参阅下面的代码文件：
-  * **WPF:** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)文件。  
-  * **Windows 窗体：** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs)文件。
+  * **WPF:** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)文件。  
+  * **Windows 窗体：** 请参阅 Windows 社区工具包中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs)文件。
 
 ## <a name="how-to-handle-layout-changes"></a>如何处理布局更改
 
@@ -209,8 +209,8 @@ UWP XAML 托管 API 包括[**DesktopWindowXamlSource**](https://docs.microsoft.c
     * 在 Windows 窗体应用程序中你可以这样做从[**控件**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged)事件处理程序中承载**DesktopWindowXamlSource**。
 
 有关演示如何执行此操作的有效示例应用程序上下文中的示例，请参阅下面的代码文件：
-  * **WPF:** 请参阅 Windows 社区工具包中的[WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)文件。  
-  * **Windows 窗体：** 请参阅 Windows 社区工具包中的[WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs)文件。
+  * **WPF:** 请参阅 Windows 社区工具包中的[WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)文件。  
+  * **Windows 窗体：** 请参阅 Windows 社区工具包中的[WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs)文件。
 
 ## <a name="how-to-handle-dpi-changes"></a>如何处理 DPI 更改
 
