@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 延迟, dxgi, 交换链, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: ec315cc9ed59a4b3272151f2ee1bb4bde8d9df10
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7965590"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8197477"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>利用 DXGI 1.3 交换链减少延迟
 
