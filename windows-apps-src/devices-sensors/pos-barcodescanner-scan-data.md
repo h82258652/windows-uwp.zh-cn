@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ece246ffd369ee21c089598f07b2566424757f55
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7851088"
+ms.locfileid: "7973554"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>获取并了解条形码数据
 
