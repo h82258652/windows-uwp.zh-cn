@@ -3,11 +3,11 @@ title: 设备门户 HTTP 监视器 API 参考
 description: 了解如何从 Xbox 上的侧重型应用访问 HTTP 流量。
 ms.localizationpriority: medium
 ms.openlocfilehash: 81de2a2a3194384e9c5de1c5c45a827e4d965c91
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7982174"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8195601"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 监视器 API 参考   
 如果已通过在开发人员主页选中相应的框在 Xbox 主机上启用 HTTP 监视器，则可使用此 API 访问侧重型应用的实时 HTTP 流量。

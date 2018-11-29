@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7970849"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8192566"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>包资源索引 (PRI) API 和自定义生成系统
 通过[包资源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，你可以为 UWP 应用的资源开发自定义生成系统。 生成系统可以创建、改编和转储（作为 XML）包资源索引 (PRI) 文件，以适应 UWP 应用所需的任何级别的复杂性。 如果具有当前使用 MakePri.exe 命令行工具的自定义生成系统（请参阅[使用 MakePri.exe 手动编译资源](makepri-exe-command-options.md)），为了提供更佳的性能和控制，我们建议更改为调用 PRI API，而不是调用 MakePri.exe。

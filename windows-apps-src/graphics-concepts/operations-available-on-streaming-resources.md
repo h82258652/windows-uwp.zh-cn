@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7987198"
+ms.locfileid: "8195036"
 ---
 # <a name="operations-available-on-streaming-resources"></a>可用于流式资源的操作
 

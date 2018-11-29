@@ -7,11 +7,11 @@ keywords: windows 10, uwp, Microsoft Store 提交 API, 软件包推出, 外部�
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e60ecfccecda850a5c83e5840626e1b789a068d
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985592"
+ms.locfileid: "8190326"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>获取外部测试版提交的推出信息
 

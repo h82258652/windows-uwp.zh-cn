@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast, 自定义时间戳, 时间戳, 通知, 操作中心
 ms.localizationpriority: medium
 ms.openlocfilehash: c18c32e1dcee5486ff6545a1db0ec8f0cd67bfae
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7965530"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8190083"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Toast 上的自定义时间戳
 

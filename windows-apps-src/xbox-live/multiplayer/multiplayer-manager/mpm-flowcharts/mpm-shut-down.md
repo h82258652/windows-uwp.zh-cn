@@ -1,19 +1,17 @@
 ---
 title: 流程图 - 关闭多人游戏
-author: KevinAsgari
 description: Xbox Live 多人游戏管理器流程图 - 多人游戏结束后将其关闭。
 ms.assetid: f80eb3ca-faf5-459e-8f55-acb9aedec542
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fab527d1198914d707f8c3b4545cb882974bd3d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78fb5e87e30f763354067e90039b805b17f0b594
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556335"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8215632"
 ---
 # <a name="flowchart---shut-down-after-a-multiplayer-game-is-complete"></a>流程图 - 多人游戏结束后将其关闭
 

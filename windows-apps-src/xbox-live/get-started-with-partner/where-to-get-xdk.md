@@ -1,28 +1,26 @@
 ---
 title: 如何获取 XDK
-author: KevinAsgari
 description: 了解如何以托管合作伙伴的身份获取 Xbox 开发人员工具包 (XDK)。
 ms.assetid: 5e7abfb7-5d68-4e77-a941-13dd081268ac
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 0622014160c3e0b675bd0cf53793eeb06ef907c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bcb9d5ffe3bcc691d92f56c570432c3bdca48353
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556302"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8196453"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a>如何获取 Xbox 开发工具包 (XDK)
 
 Xbox 开发工具包 (XDK) 公开不可用。 有两个组，托管的合作伙伴和ID@Xbox开发人员允许访问 XDK 和关联的开发资源，如文档和中间件的工具。 可以从[软件下载页面](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)developer.microsoft.com 网站上下载 XDK。
 
-如果你没有访问该站点的访问权限将无法下载或使用 XDK。 如果你不没有访问权限将联系你的帐户管理员。
+如果你没有访问该站点的访问权限将无法下载或使用 XDK。 如果你不没有访问权限，请联系你的帐户管理员。
 
-为了有资格获取 XDK 访问可[申请成为ID@Xbox开发人员](https://www.xbox.com/en-us/Developers/id)。
-[单击此处](../developer-program-overview.md)以了解有关ID@Xbox程序和其他开发人员层。
+为了有资格获取 XDK 访问权限，你可以[申请成为ID@Xbox开发人员](https://www.xbox.com/en-us/Developers/id)。
+[单击此处](../developer-program-overview.md)以了解详细信息ID@Xbox计划和其他开发人员层。
 
 ## <a name="software-requirements"></a>软件要求
 
@@ -35,14 +33,14 @@ Xbox 开发工具包 (XDK) 公开不可用。 有两个组，托管的合作伙�
 - Xbox One 开发工具包
 - Xbox One XDK
 - Visual Studio
-    - Visual Studio 2012、 Visual Studio 2015、 Visual Studio 2017 或 Visual Studio 的最新版本。 最新版本的 Visual Studio 将向你提供访问开发和安全的最新更新。
+    - Visual Studio 2012、 Visual Studio 2015，Visual Studio 2017 或 Visual Studio 的最新版本。 最新版本的 Visual Studio 将向你提供访问开发和安全的最新更新。
 
 ## <a name="use"></a>用途
 
-XDK 访问还将授予访问权限的资源，它将指导你完成它的使用。 就像在 XDK 这些资源不是公共和，仅适用于ID@Xbox和托管合作伙伴开发。
+XDK 的权限也将授予访问权限的资源，它将指导你完成它的使用。 就像这些资源不是公共和，仅适用于 XDKID@Xbox和托管合作伙伴开发。
 
 - 阅读有关在[XDK 文档](https://developer.microsoft.com/en-us/games/xbox/partner/development-documentation)中使用 Xbox Live 开发工具包。
-- 获取更多帮助可以有关社区的帮助，请查看[开发人员论坛](https://forums.xboxlive.com/index.html)或联系你的帐户管理员。
+- 获取更多帮助可以咨询[开发人员论坛](https://forums.xboxlive.com/index.html)寻求社区，或联系你的帐户管理员。
 
 ## <a name="install-the-xdk"></a>安装 XDK
 
