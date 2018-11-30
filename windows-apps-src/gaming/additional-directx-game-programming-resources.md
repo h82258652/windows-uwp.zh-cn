@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
 ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986461"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8217076"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
