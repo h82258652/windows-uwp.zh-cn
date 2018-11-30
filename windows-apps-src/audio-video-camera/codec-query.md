@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 编解码器, 编码器, 解码器, 查询
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8202099"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8328684"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查询设备上安装的编解码器
 可通过 **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 类查询当前设备上安装的编解码器。 文章[支持的编解码器](supported-codecs.md)中给出了 Windows 10 附带的用于不同设备系列的编解码器列表，但是由于用户和应用可以在设备上安装其他编解码器，因此你可能要在运行时查询编解码器支持，以确定当前设备上可用的编解码器。

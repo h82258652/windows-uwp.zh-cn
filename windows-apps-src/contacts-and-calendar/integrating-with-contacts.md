@@ -8,11 +8,11 @@ keywords: windows 10, uwp, 联系人, 联系人卡片, 注释
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198632"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8328483"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 

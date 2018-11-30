@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217194"
+ms.locfileid: "8325517"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>获取应用和加载项的产品信息
 
