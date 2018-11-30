@@ -7,11 +7,11 @@ keywords: windows 10，uwp，应用商店服务，Microsoft Store 分析 API，�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5545d27668b23e5b7ae91201421dfa4c92f9c8ed
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210857"
+ms.locfileid: "8328878"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>获取桌面应用程序的见解数据
 

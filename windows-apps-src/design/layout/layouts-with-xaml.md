@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82a528b3ec98f56e1079e11ec1123d86de15d50f
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8189957"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8327300"
 ---
 # <a name="responsive-layouts-with-xaml"></a>采用 XAML 的响应式布局
 

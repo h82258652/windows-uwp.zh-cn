@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7251d4595a3e87a8629d6e717bb4f52e5b7c35fe
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8218070"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8329864"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>流式资源区域的平铺方式
 

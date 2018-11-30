@@ -1,19 +1,17 @@
 ---
 title: XDK 项目的身份验证
-author: KevinAsgari
 description: 了解如何在 Xbox 开发工具包 (XDK) 游戏中登录 Xbox Live 用户。
 ms.assetid: 713bb2e3-80c5-4ac9-8697-257525f243d3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d11a9ce213e8ba1cb51d633cd11364285a64154
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 597b3becfa2083955d8bd4e0adc91e4ae9b827a1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556367"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8351832"
 ---
 # <a name="authentication-for-xdk-projects"></a>XDK 项目的身份验证
 
