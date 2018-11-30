@@ -1,19 +1,17 @@
 ---
 title: 处理协议激活
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 多人游戏管理器处理协议激活。
 ms.assetid: e514bcb8-4302-4eeb-8c5b-176e23f3929f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 协议激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 9046686a9db1428935e834e28f02269d710cd8ad
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0b5dead742e18bbf5f3e9c271109352ae48e8fef
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566069"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8351858"
 ---
 # <a name="handle-protocol-activation"></a>处理协议激活
 

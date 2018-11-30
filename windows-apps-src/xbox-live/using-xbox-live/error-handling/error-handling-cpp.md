@@ -1,19 +1,17 @@
 ---
 title: C++ API 错误处理
-author: KevinAsgari
 description: 了解在通过 C++ API 进行 Xbox Live 服务调用时如何处理错误。
 ms.assetid: 10b47e68-8b1f-4023-96a4-404f3f6a9850
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 处理
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9947180764d196579569536ec979fc31f3570d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 90fd816f8d44b27c1df0ded9bee6473f642478a9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564020"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8351799"
 ---
 # <a name="c-api-error-handling"></a>C++ API 错误处理
 
