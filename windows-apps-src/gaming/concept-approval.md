@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 概念审批
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7971899"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213965"
 ---
 # <a name="concept-approval"></a>概念审批
 
