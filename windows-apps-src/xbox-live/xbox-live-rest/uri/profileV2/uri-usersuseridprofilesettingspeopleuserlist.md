@@ -2,19 +2,17 @@
 title: /users/{userId}/profile/settings/people/{userList}?settings={settings}
 assetID: 0ba20eba-f0ab-28ab-61d3-b4f9e4c07bc5
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist.html
-author: KevinAsgari
 description: " /users/{userId}/profile/settings/people/{userList}?settings={settings}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c5140838ccc29c9b60d80c7a1f52e4d6eb90a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 24b58c817156a7c372a8e6acfab895e6b7c51207
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557390"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8352007"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
 访问用户或用户，人脉名字对象支持的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -26,10 +24,10 @@ ms.locfileid: "7557390"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
-| 用户 Id| 字符串| 可以是 xuid(12345)、 gt(myGamertag) 或 me。| 
-| userList| 字符串| 用户获取设置已命名的列表。 目前，用户是唯一支持的列表。| 
+| userId| 字符串| 可以是 xuid(12345)'、 'gt(myGamertag) 或 me。| 
+| userList| 字符串| 用户获取设置已命名的列表。 目前，用户是唯一受支持的列表。| 
   
 <a id="ID4E1B"></a>
 
