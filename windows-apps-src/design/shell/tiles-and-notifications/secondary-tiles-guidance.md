@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp, 辅助磁贴, 指南, 指导, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992903"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8217799"
 ---
 # <a name="secondary-tile-guidance"></a>辅助磁贴指南
 

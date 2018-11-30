@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de67a61b4d5982675d32e0446b67d7cf70051923
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7975738"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8214083"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 应用的设备基础版
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: c946d9f72107dd787efec34b12272402fc660cbf
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7973580"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8214257"
 ---
 # <a name="camera-barcode-scanner"></a>相机条形码扫描仪
 相机条形码扫描仪在 Windows 将连接到计算机的相机与软件解码器配对时动态创建。  每个相机 - 解码器对都是一个功能完全的条形码扫描仪。   

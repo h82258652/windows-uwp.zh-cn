@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ea005dd33bbb5461921fa17eded8430d7648c87
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7964386"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8215750"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>适用于 UWP 应用的磁贴、锁屏提醒和通知
  
