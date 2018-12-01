@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: dc18577015db5384c2a1f13e8a48758634a053a5
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213520"
+ms.locfileid: "8338955"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>对于开发人员，生成 17763，什么是 Windows 10 中的新增功能
 
@@ -45,7 +45,7 @@ C++/WinRT | [C + + WinRT](https://aka.ms/cppwinrt)包含许多新功能、 更�
 C + + WinRT 代码示例 | 我们添加了 250 C + + WinRT 代码一览主题中我们的文档，附带的现有 C + + / CX 代码示例。
 投稿指南 | 我们为我们的 UWP 文档更新[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
 DirectX 图形 Infastructure (DXGI) | 表示缺失的 DXGI Api 添加了新文档，并且我们提供了有关的最佳做法的文章 Windows 10 上的显示。 </br> * [为了获得最佳性能，使用 DXGI 翻转模型](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)： 提供有关如何最大限度提高性能和现代版本的 Windows 上演示文稿堆栈中的效率的指南。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)： 通知应用程序，受支持硬件拉伸。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 枚举](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)： 描述了支持硬件合成的哪些级别。
-即刻体验 | 我们[要开始使用](../get-started/index.md)的内容已被大大增加与提供有关如何开发人员新 Windows 10 可能完成下列常见任务的信息和指南的新主题： </br> * [构建表单](../get-started/construct-form-learning-track.md) </br> * [以列表形式显示客户](../get-started/display-customers-in-list-learning-track.md) </br> * [保存和加载设置](../get-started/settings-learning-track.md) </br> * [处理文件](../get-started/fileio-learning-track.md)
+入门 | 我们[要开始使用](../get-started/index.md)的内容已被大大增加与提供有关如何开发人员新 Windows 10 可能完成下列常见任务的信息和指南的新主题： </br> * [构建表单](../get-started/construct-form-learning-track.md) </br> * [以列表形式显示客户](../get-started/display-customers-in-list-learning-track.md) </br> * [保存和加载设置](../get-started/settings-learning-track.md) </br> * [处理文件](../get-started/fileio-learning-track.md)
 地图样式表编辑器 | 使用新的[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab)应用程序以交互方式自定义你将添加到你的应用程序的地图的外观。
 了解 Microsoft | 新的[Microsoft 了解站点](https://www.microsoft.com/learning/default.aspx)向 Microsoft 开发人员提供新动手学习和培训机会。 目前，Microsoft 了解提供培训和 Microsoft 365、 Microsoft Azure、 Office 365 和 Windows Server 的认证。
 记事本 | [已更新，记事本](http://aka.ms/ant-man)，添加缩放、 环绕查找/替换，并且对 Unix/Linux （换行符） 和 Mac （回车） 行尾的支持。
