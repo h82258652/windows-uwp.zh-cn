@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，StartScreenManager，固定主要磁贴，主要磁贴 api, 检查是否固定了磁贴, 动态磁贴
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210467"
+ms.locfileid: "8346739"
 ---
 # <a name="primary-tile-apis"></a>主要磁贴 API
  
