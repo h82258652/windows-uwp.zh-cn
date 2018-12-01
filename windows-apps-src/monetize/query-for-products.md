@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 查看产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217403"
+ms.locfileid: "8340275"
 ---
 # <a name="query-for-products"></a>查询产品
 

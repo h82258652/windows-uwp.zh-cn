@@ -3,11 +3,11 @@ title: 设备门户 SSH Pin 码 API 参考
 description: 了解如何以编程方式删除所有受信任的 SSH Pin 码。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddf15d3cdb4089a8ef010a4ae46d247a06a10d7
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201268"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8335518"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH Pin 码 API 参考
 可以使用此 REST API 删除开发工具包上的所有受信任 SSH Pin 码。

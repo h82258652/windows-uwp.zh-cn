@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bf27de9c9b1bce2b35918b2a9d1357d2f3ba20b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8214729"
+ms.locfileid: "8342919"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>移动设备的相机 UI 功能
 
