@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b32b390cc4ca6af5b03a22e30323ded5aeac516
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217282"
+ms.locfileid: "8344643"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 
@@ -46,7 +46,7 @@ ms.locfileid: "8217282"
 
 * 如果你在过去半小时创建了新的广告单元 ID，可能无法看到广告，直到服务器通过系统传播新数据为止。 之前显示了广告的现有 ID 应会立即显示广告。
 
-如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在该页面上，选择**应用内广告**。
+如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果遇到问题，请联系[产品支持人员](https://developer.microsoft.com/en-us/windows/support)。 在该页面上，选择**联系我们**。
 
 你还可在[论坛](http://go.microsoft.com/fwlink/p/?LinkId=401266)发布问题。
 

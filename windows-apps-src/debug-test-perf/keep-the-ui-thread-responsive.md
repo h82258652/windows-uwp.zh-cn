@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd5df1d22189698f6544af4ab72c09425531602
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 0bc555030c2f5202e5c128c1d1a2fe45b5b71b4b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8214792"
+ms.locfileid: "8347424"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>保持 UI 线程有响应
 
@@ -50,7 +50,7 @@ ms.locfileid: "8214792"
 ```csharp
 public class AsyncExample
 {
-    private async void NextMove-Click(object sender, RoutedEventArgs e)
+    private async void NextMove_Click(object sender, RoutedEventArgs e)
     {
         // The await causes the handler to return immediately.
         await System.Threading.Tasks.Task.Run(() => ComputeNextMove());
@@ -71,7 +71,7 @@ public class AsyncExample
 > public class Example
 > {
 >     // ...
->     private async void NextMove-Click(object sender, RoutedEventArgs e)
+>     private async void NextMove_Click(object sender, RoutedEventArgs e)
 >     {
 >         await Task.Run(() => ComputeNextMove());
 >         // Update the UI with results
@@ -87,7 +87,7 @@ public class AsyncExample
 > ```vb
 > Public Class Example
 >     ' ...
->     Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>     Private Async Sub NextMove_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
 >         Await Task.Run(Function() ComputeNextMove())
 >         ' update the UI with results
 >     End Sub
@@ -99,7 +99,7 @@ public class AsyncExample
 > End Class
 > ```
 
-在此示例中，`NextMove-Click` 处理程序将在 **await** 返回，以便保持 UI 线程有响应。 但在 `ComputeNextMove`（在后台线程上执行）完成后，执行过程将再次调用该处理程序。 该处理程序中的其余代码将使用结果更新 UI。
+在此示例中，`NextMove_Click` 处理程序将在 **await** 返回，以便保持 UI 线程有响应。 但在 `ComputeNextMove`（在后台线程上执行）完成后，执行过程将再次调用该处理程序。 该处理程序中的其余代码将使用结果更新 UI。
 
 > **注意**也是适用于 UWP，可用于类似方案[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621)和[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API。 有关详细信息，请参阅[线程和异步编程](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
 
