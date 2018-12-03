@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d8c58ee4888cbbe7d9a752531c489b1da3fdde86
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322588"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8457316"
 ---
 # <a name="globalscidssciddatapathandfilenametype"></a>/global/scids/{scid}/data/{pathAndFileName},{type}
 下载文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。

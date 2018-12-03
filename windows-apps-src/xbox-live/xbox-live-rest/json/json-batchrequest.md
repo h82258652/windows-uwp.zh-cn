@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 51073c71700613edcd7c22e18cc0c00a9222d7e5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/03/2018
-ms.locfileid: "8345117"
+ms.locfileid: "8486812"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
 用来筛选状态信息，如用户、 设备和游戏的属性的数组。

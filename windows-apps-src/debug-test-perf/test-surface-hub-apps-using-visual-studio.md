@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b40fd56a85be6dce441324a427790cda28f9d7ac
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8329027"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8462335"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
 Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及测试通用 Windows 平台 \(UWP\) 应用（包括针对 Microsoft Surface Hub 生成的应用）的环境。 模拟器不使用相同的用户界面与 Surface Hub，但它可用于测试你的应用的外观和行为与 Surface Hub 的屏幕大小和分辨率。

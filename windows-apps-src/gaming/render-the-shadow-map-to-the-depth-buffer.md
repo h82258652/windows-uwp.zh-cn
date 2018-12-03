@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 呈现, 阴影映射, 深度缓冲区, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334487"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8487099"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>将阴影映射呈现到深度缓冲区
 

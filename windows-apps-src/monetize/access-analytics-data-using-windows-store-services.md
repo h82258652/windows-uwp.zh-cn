@@ -8,11 +8,11 @@ keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: c6bd559a630c1299c28ff135692ee15e9443180c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338494"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486939"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 

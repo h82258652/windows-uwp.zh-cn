@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, 异步, 异步的, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f49d630d20c9f21f67baa4824b2d52ae3bcb446
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8345901"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8487229"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>通过 C++/WinRT 的并发和异步操作
 
