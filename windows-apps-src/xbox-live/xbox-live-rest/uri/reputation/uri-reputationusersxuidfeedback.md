@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/feedback
 assetID: 86c9663c-650b-bb0c-743c-8280ee3a82f7
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedback.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/feedback"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: defd8161211065318242077dde02d8a6f777ac0b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7bf186091eacfcdb39c41bf256000990613d3685
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575278"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327101"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -25,7 +23,7 @@ ms.locfileid: "7575278"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| ulong| Xbox 用户 ID (XUID) 所报告的用户。| 
   
@@ -36,7 +34,7 @@ ms.locfileid: "7575278"
 
 [POST](uri-reputationusersxuidfeedbackpost.md)
 
-&nbsp;&nbsp;如果你希望能够在你的游戏，相较于使用 shell 中添加的反馈选项，用于从你的游戏。
+&nbsp;&nbsp;如果你希望能够在游戏中，而不是使用 shell 添加反馈选项，用于从你的游戏。
  
 <a id="ID4EDC"></a>
 

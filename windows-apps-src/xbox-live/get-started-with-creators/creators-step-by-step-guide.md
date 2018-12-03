@@ -1,26 +1,24 @@
 ---
 title: Xbox Live 创意者分步指南
-author: KevinAsgari
 description: 提供为创意者计划集成 Xbox Live 的步骤指南。
 ms.assetid: 7f9d093e-479a-4ad4-9965-a4ea6f0b2ac3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4d7d03bc218d7507c8c2971bf76946a9fca6b4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae02fe412e6300ac74b3f1106cdf6a5bb304d36b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554361"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322691"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-creators-program"></a>Xbox Live 创意者计划集成分步指南
 
 此部分将帮助你准备主题作品并让其在 Xbox Live 上运行：
 
 ## <a name="1-ensure-you-have-a-title-created-in-partner-center"></a>1.确保你在合作伙伴中心中创建主题作品
-每个 Xbox Live 主题作品必须先将能够在登录并进行 Xbox Live 服务调用定义在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  [创建新的创意者主题作品](create-and-test-a-new-creators-title.md)将为你介绍如何执行此操作。
+每个 Xbox Live 的主题作品必须在[合作伙伴中心](https://partner.microsoft.com/dashboard)中定义之前你将能够在登录并进行 Xbox Live 服务调用。  [创建新的创意者主题作品](create-and-test-a-new-creators-title.md)将为你介绍如何执行此操作。
 
 ## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>2. 遵循相应指南设置 IDE 或游戏引擎
 你可以遵循适用于自己平台和引擎的相应入门指南，并在过程中了解 Xbox Live 的基础知识。

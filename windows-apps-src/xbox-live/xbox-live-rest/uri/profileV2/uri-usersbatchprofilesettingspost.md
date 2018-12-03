@@ -2,19 +2,17 @@
 title: POST (/users/batch/profile/settings)
 assetID: 2a619148-a626-f413-bda1-a2790063075d
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettingspost.html
-author: KevinAsgari
 description: " POST (/users/batch/profile/settings)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b947bf1d9897416623472e078bc49e9ea9df164d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aa029c0cffa369eeb802521b394a52b958b54557
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582070"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337681"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 获取用户或用户配置文件。 这些 Uri 的域是`profile.xboxlive.com`。
@@ -30,23 +28,23 @@ ms.locfileid: "7582070"
  
 ## <a name="remarks"></a>备注
  
-这是仅完全限定的配置文件 URL 中允许。 从客户端的所有其他配置文件 Api 会被阻止。
+这是仅完全限定的个人资料 URL 中允许。 从客户端的所有其他配置文件 Api 会被阻止。
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="authorization"></a>授权
  
-若要访问配置文件，仅正常身份验证令牌和声明需要。
+若要访问配置文件，只有一个普通的身份验证令牌和声明需要。
   
 <a id="ID4EOB"></a>
 
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | 
-| x xbl 协定版本| 32 位无符号的整数| 协定版本必须设置为 2，来区分从 Xbox 360 API 此调用。| 
+| x xbl 协定版本| 32 位无符号的整数| 协定版本必须设置为 2，来区分来自 Xbox 360 API 此调用。| 
 | 内容类型| 字符串| 值 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>

@@ -1,19 +1,17 @@
 ---
 title: 配置上下文搜索
-author: KevinAsgari
 description: 了解如何配置上下文搜索以标记游戏剪辑和广播。
 ms.assetid: 6cb2cb10-811a-4b20-9b9b-a3fc59a033c2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务配置, 上下文搜索, 游戏剪辑, 广播
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e310eb0a38f64796d773075bdc9ca9034e7e536
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c8c78f115a160c82a28881a3c551a958cdf4b68c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581289"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327960"
 ---
 # <a name="configuring-contextual-search"></a>配置上下文搜索
 
@@ -58,7 +56,7 @@ ms.locfileid: "7581289"
 
   ![](../images/contextual_search/config03.png)
 
-  请注意，仅支持统计信息实例 - 不接受统计信息模板。  你还应该了解为统计信息实例 （已在 XDP 或合作伙伴中心的统计数据部分配置） 设置的可见性。  仅标记为**开放**的统计信息将显示在第三方体验中。
+  请注意，仅支持统计信息实例 - 不接受统计信息模板。  你还应该了解为统计信息实例 （配置的 XDP 或合作伙伴中心的统计信息部分中） 设置的可见性。  仅标记为**开放**的统计信息将显示在第三方体验中。
 
 2. 选择统计信息优先级。 这是指定这一统计信息相对于搜索体验/算法的其他方面的重要性的方式。  可接受值为 1-10（1 是最高）。  若要忽略，将此值保留为 0 或空白。
 3. 添加显示名称。  这是向最终用户显示的可本地化的字符串。

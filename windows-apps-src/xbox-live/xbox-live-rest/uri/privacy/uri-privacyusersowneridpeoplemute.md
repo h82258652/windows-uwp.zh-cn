@@ -2,19 +2,17 @@
 title: /users/{ownerId}/people/mute
 assetID: efb929d8-79a7-83f0-c348-c92ced42bc05
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
-author: KevinAsgari
 description: " /users/{ownerId}/people/mute"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 569aa173a0074fd147092716b9a36d53acaef0db
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 86010d11ff0a7ebe188766f51bc3160a4f2befa4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563620"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335570"
 ---
 # <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
 访问用户的静音列表。
@@ -26,9 +24,9 @@ ms.locfileid: "7563620"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
-| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"me" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
+| ownerId| 字符串| 必需。 正在访问其资源的用户的标识符。 可能的值为"我" <code>xuid({xuid})</code>，或 gt({gamertag})。 必须经过身份验证的用户。 示例值： <code>xuid(2603643534573581)</code>， <code>gt(SomeGamertag)</code>。 最大大小： none。 |
 
 <a id="ID4ETB"></a>
 

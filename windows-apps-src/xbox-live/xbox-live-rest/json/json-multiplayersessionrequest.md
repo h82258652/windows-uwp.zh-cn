@@ -2,19 +2,17 @@
 title: MultiplayerSessionRequest (JSON)
 assetID: 2e311c6d-3427-5a39-1989-06dc08483057
 permalink: en-us/docs/xboxlive/rest/json-multiplayersessionrequest.html
-author: KevinAsgari
 description: " MultiplayerSessionRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 889db33ff81d3bf10743376118a0fab00ae44d8d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 18929c060adeae47f0305422dd312e7410f93981
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558372"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345714"
 ---
 # <a name="multiplayersessionrequest-json"></a>MultiplayerSessionRequest (JSON)
 请求的 JSON 对象传递**MultiplayerSession**对象的操作。 
@@ -24,18 +22,18 @@ ms.locfileid: "7558372"
  
 MultiplayerSessionRequest JSON 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| 常量| object| 会话模板，以生成会话常量与合并的只读的设置。 | 
-| 属性 | object | 合并到的会话属性更改。| 
-| members.me | object| 常量和大量的属性，例如其顶级对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 | 
+| 常量| object| 会话模板，以产生会话常量与合并的只读的设置。 | 
+| 属性 | object | 若要合并到的会话属性的更改。| 
+| members.me | object| 常量和大量的属性，例如其顶层的对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 | 
 | 成员 | object| 表示用户添加到会话中，从零开始的索引键控其他对象。 在请求中的成员数开始时始终具有 0，即使会话已包含成员。 成员将添加到会话中请求中的显示的顺序。 成员属性只能由用户属于其设置。 | 
 | 服务器 | object| 关联的服务器参与者的设置的值，该值指示更新和添加到会话。 服务器指定为 null，如果是从会话中删除该服务器条目。 | 
   
 <a id="ID4EZ"></a>
 
  
-## <a name="request-structure"></a>请求结构
+## <a name="request-structure"></a>请求的结构
  
 
 ```json

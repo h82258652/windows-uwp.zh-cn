@@ -2,19 +2,17 @@
 title: 游戏服务器统一资源标识符 (URI) 参考
 assetID: bbd7e3f3-77ac-6ffd-8951-fe4b8b48eb4c
 permalink: en-us/docs/xboxlive/rest/atoc-gsdk-uri-reference.html
-author: KevinAsgari
 description: " 游戏服务器统一资源标识符 (URI) 参考"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eff98593c122001cab591b9f45793aa6649736a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a9a0a38cff9214485b2d7e8b1f8a28acb3207444
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552686"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334473"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a>游戏服务器统一资源标识符 (URI) 参考
 客户端用于创建游戏的游戏服务器开发工具包服务器实例的 Uri。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -26,7 +24,7 @@ ms.locfileid: "7552686"
 
 [/qosservers](uri-qosservers.md)
 
-&nbsp;&nbsp;URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。
+&nbsp;&nbsp;通过适用于 Xbox Live 计算获取可用的 QoS 服务器列表中的客户端调用的 URI。
 
 [/titles/{titleId}/clusters](uri-titlestitleidclusters.md)
 
@@ -34,7 +32,7 @@ ms.locfileid: "7552686"
 
 [/titles/{titleId}/variants](uri-titlestitleidvariants.md)
 
-&nbsp;&nbsp;URI 由客户端以获取可用的变体的标题。
+&nbsp;&nbsp;调用由客户端的游戏获取可用的变体的 URI。
 
 [/titles/{titleId}/sessionhosts](uri-titlestitleidsessionhosts.md)
 
@@ -42,5 +40,5 @@ ms.locfileid: "7552686"
 
 [/titles/{titleId}/sessions/{sessionId}/allocationStatus](uri-titlestitleidsessionssessionidallocationstatus.md)
 
-&nbsp;&nbsp;对于给定的作品 id 和会话 id，来获取票证请求的状态。
+&nbsp;&nbsp;对于给定的作品 id 和会话 id，获取票证请求的状态。
  

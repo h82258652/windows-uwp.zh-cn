@@ -2,22 +2,20 @@
 title: DeviceRecord (JSON)
 assetID: aca4f4d3-f9b4-8919-5b6d-5ae0fe11e162
 permalink: en-us/docs/xboxlive/rest/json-devicerecord.html
-author: KevinAsgari
 description: " DeviceRecord (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfaf3ff6ee83c2d577614dc613939669ef60d62
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9746706c00a09cd8b64913b4ae8b5c3426551e48
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555285"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325249"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
-有关设备，包括其类型和作品在其上的信息。 
+有关设备，包括其类型和游戏在其上的信息。 
 <a id="ID4EN"></a>
 
  
@@ -25,9 +23,9 @@ ms.locfileid: "7555285"
  
 DeviceRecord 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| type| 字符串| 设备的设备类型。 可能性包括"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"和"PC"(G4WL)。 如果的类型是未知 （适用于示例 iOS、 Android 或嵌入在 web 浏览器标题），则返回"Web"。| 
+| type| 字符串| 设备的设备类型。 可能性包括"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"和"PC"(G4WL)。 如果该类型是未知 （适用于示例 iOS、 Android 或嵌入在 web 浏览器标题），则返回"Web"。| 
 | 主题作品| [TitleRecord](json-titlerecord.md)的数组| 此设备上的活动的标题的列表。| 
   
 <a id="ID4EWB"></a>

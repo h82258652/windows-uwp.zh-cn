@@ -2,19 +2,17 @@
 title: /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 assetID: edcb19bd-87a5-732b-0c45-6f7355fc2dd1
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindex.html
-author: KevinAsgari
 description: " /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d95d3f0f171fa0e529d57ab5deca8160ddc3c43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b56b563c72c206340aa2c1ce9f73aa8dfe50809d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572677"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339635"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 将移动列表中的一项。 这些 Uri 的域是`eplists.xboxlive.com`。
@@ -26,11 +24,11 @@ ms.locfileid: "7572677"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | XUID| 字符串| 用户的 XUID。| 
 | listname| 字符串| 列表来操作的名称。| 
-| 索引| 字符串| 指定要移动的项的当前索引。 零或正整数索引值时，这是指项的当前索引和请求正文中调用的应为空。 但是，如果的索引值为"-1"，必须由 ItemId 或提供程序/ProviderID 调用，请求正文中指定要移动的项。 | 
+| 索引| 字符串| 指定要移动的项的当前索引。 零或正整数索引值时，这是指当前项目的索引和调用，请求正文应为空。 但是，如果索引值为"-1"，必须 ItemId 或提供商/ProviderID 调用，请求正文中指定要移动的项。 | 
   
 <a id="ID4EHC"></a>
 

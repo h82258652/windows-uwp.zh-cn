@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 标题存储
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 标题存储来存储云中标题的游戏信息。
 ms.assetid: a4182bc8-d232-4e77-93ae-97fe17ac71b1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e659a9f41b43781ff40ac5449155fdf179b93f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 472a2131c113cdde5d7383e169e4fbe638e4e555
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553036"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347608"
 ---
 # <a name="xbox-live-title-storage"></a>Xbox Live 标题存储
 

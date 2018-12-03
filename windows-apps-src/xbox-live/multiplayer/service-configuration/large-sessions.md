@@ -1,18 +1,16 @@
 ---
 title: 大型会话
-author: KevinAsgari
 description: 了解如何将大型会话用于 Xbox Live 多人游戏平台。
-ms.author: kevinasg
 ms.date: 07/11/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 大型会话, 最近的玩家
 ms.localizationpriority: medium
-ms.openlocfilehash: 52b65f0e6c4ee8642b49ff71533961f50761be98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dcd7b27bc0aea8b8406e7eccb420140cf32c1ed5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554803"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332351"
 ---
 # <a name="large-sessions"></a>大型会话
 

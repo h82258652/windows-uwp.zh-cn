@@ -2,19 +2,17 @@
 title: PUT (/users/me/gamerpic)
 assetID: ddf71c62-197d-a81d-35a7-47c6dc9e1b0c
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpicput.html
-author: KevinAsgari
 description: " PUT (/users/me/gamerpic)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d9346303e82dea2dbbd60b542c4ee207dd40901
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aedc7cbd8366c9cb8d3a60e2cb1f5e843b24a8a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554162"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328544"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
 用于上传 1080 x 1080 玩家图片。 
@@ -34,9 +32,9 @@ ms.locfileid: "7554162"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | 
 | 200| “确定”| 成功获取。| 
 | 201| 创建。| 上传已成功。| 

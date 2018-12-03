@@ -2,19 +2,17 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 assetID: 6a4c4a13-c968-3271-cbc3-b742a8de98b3
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.html
-author: KevinAsgari
 description: " GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d1bee897396236e0bb4423517371ebc2d25482c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 21d534d7b55934d7174c925838ed88980acff609
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552695"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322643"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 获取会话对象。
@@ -33,7 +31,7 @@ ms.locfileid: "7552695"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法读取会话文档，以指定名称的状态并检索会话。 成功时，它将返回该会话对象，与所有属性，从服务器获取。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**换行。 GET 方法的参数直接并行这些对象中指定**MultiplayerSessionReference**会话，在**GetCurrentSessionAsync** *sessionReference*参数中传递。
+此 HTTP/REST 方法读取会话文档为指定的名称，并检索会话。 成功时，它将返回该会话对象，与所有属性，从服务器获取。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**换行。 GET 方法的参数直接并行这些对象中指定**MultiplayerSessionReference**会话，在**GetCurrentSessionAsync** *sessionReference*参数中传递。
 
 GET 方法的线格式如下所示。
 
@@ -50,11 +48,11 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4EZB"></a>
 

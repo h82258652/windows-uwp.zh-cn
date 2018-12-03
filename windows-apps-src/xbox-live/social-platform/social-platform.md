@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 社交平台 - 针对游戏和玩家
-author: aablackm
 description: 提供了解 Xbox Live 社交平台服务的链接。
 ms.assetid: 27b85218-60f3-4eb0-9f7e-fe90e027db5c
-ms.author: aablackm
 ms.date: 09/18/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c02fc7510f3856b7e31aad4d47fcf07d935dd126
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9bc835d5980aacc414b173d2ee3896ae14392790
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559338"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344771"
 ---
 # <a name="xbox-live-social-platform---for-games-and-gamers"></a>Xbox Live 社交平台 - 针对游戏和玩家
 

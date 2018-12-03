@@ -2,33 +2,31 @@
 title: GameResult (JSON)
 assetID: 43d863c0-2179-ae46-5d4a-2f08cd44b667
 permalink: en-us/docs/xboxlive/rest/json-gameresult.html
-author: KevinAsgari
 description: " GameResult (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb87b331fabf61ecd44dddf14a1f9c1ede51cff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b408b1aaae5e6f54958a016575c4a2c37765f1e9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576959"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350751"
 ---
 # <a name="gameresult-json"></a>GameResult (JSON)
-表示数据，以描述游戏会话的结果的 JSON 对象。 
+表示介绍游戏会话的结果的数据的 JSON 对象。 
 <a id="ID4EN"></a>
 
   
  
 GameResult JSON 对象具有以下成员。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | blob| 8 位无符号整数数组| 自定义特定于游戏的结果数据。| 
-| 结果| 字符串| 游戏会话的玩家的参与的结果。 有效值为"Win"、"丢失"绑定"。 | 
-| 分数| 64 位有符号整数| 评分，玩家收到游戏会话中。| 
+| 结果| 字符串| 游戏会话的玩家参与的结果。 有效值为"Win"、"丢失"绑定"。 | 
+| 分数| 64 位有符号整数| 玩家收到游戏会话中的高分。| 
 | time| 64 位有符号整数| 游戏会话的玩家的时间。| 
 | xuid| 64 位无符号的整数| 结果将应用到其玩家的 Xbox 用户 ID。| 
   

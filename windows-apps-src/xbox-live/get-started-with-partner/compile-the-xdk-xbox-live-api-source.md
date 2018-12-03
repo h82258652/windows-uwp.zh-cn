@@ -1,19 +1,17 @@
 ---
 title: 编译 XDK Xbox Live API 源
-author: KevinAsgari
 description: 了解如何编译 Xbox 开发人员工具包 (XDK) 附带的 Xbox Live API 源。
 ms.assetid: 78425e82-c132-4f6b-9db3-2536862f1ce5
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b30453946536a5bebce7577fec04e0346c8ac97
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a98af637c8c60449cd2005c4fc6f83f9b0719cf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552790"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340503"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>编译 Xbox 开发人员工具包 (XDK) Xbox Live API 源
 

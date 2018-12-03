@@ -2,26 +2,24 @@
 title: /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 assetID: 25deb7fe-859c-01d2-d14f-455a36c08a7c
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketid.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c64d54b3f1d8515018e256400af8e04f77d8955
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9722d06af64c5fd24f53485a1bcfe765f89b08cf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552614"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8333090"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
 支持的匹配票证的删除操作。
 
 > [!IMPORTANT]
-> 此 URI 旨在用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此 URI 旨在用于合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
 <a id="ID4ER"></a>
 
@@ -32,15 +30,15 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>备注
-此 URI 支持的值 xuid、 gt，和我的目标用户的配置中的所有者标识符。  
+此 URI 支持值 xuid、 gt，和我的目标用户的配置中配置的所有者标识符。  
 <a id="ID4E2"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 会话。|
+| scid| GUID| 服务配置标识符 (SCID) 的会话。|
 | name| 字符串| 漏斗的名称。|
 | 票证 Id| GUID| 票证 id。|
 

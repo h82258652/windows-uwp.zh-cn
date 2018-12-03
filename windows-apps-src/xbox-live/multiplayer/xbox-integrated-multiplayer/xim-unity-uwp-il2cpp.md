@@ -1,18 +1,16 @@
 ---
 title: 使用 XIM（带有 IL2CPP 的 Unity）
-author: KevinAsgari
 description: 通过带有 IL2CPP 脚本后端的适用于 UWP 的 Unity 使用 Xbox 集成多人游戏
-ms.author: kevinasg
 ms.date: 04/03/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, Xbox 集成多人游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 4171fa830059eb557106ad3a7c485a6e96deeec6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a600fd253efae1daca34241b105a69514561e01d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558038"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340094"
 ---
 # <a name="use-xim-unity-with-il2cpp"></a>使用 XIM（带有 IL2CPP 的 Unity）
 

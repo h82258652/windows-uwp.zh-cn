@@ -2,19 +2,17 @@
 title: POST (/users/xuid({xuid})/outbox)
 assetID: de991d88-efe0-04f2-f6b2-0bc3e68bfd46
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidoutboxpost.html
-author: KevinAsgari
 description: " POST (/users/xuid({xuid})/outbox)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 86853a490ab407fa96d40c4b2e3deb42c5f346a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b225e8441fee3d499f172e2e5701096cdbc161a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556622"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322627"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
 指定的消息发送到收件人的列表。
@@ -23,7 +21,7 @@ ms.locfileid: "7556622"
   * [备注](#ID4EV)
   * [URI 参数](#ID4EAB)
   * [授权](#ID4ENB)
-  * [在资源上的隐私设置的效果](#ID4EYB)
+  * [有关资源的隐私设置的效果](#ID4EYB)
   * [请求正文](#ID4E3F)
   * [HTTP 状态代码](#ID4ETCAC)
   * [响应正文](#ID4E1EAC)
@@ -40,7 +38,7 @@ ms.locfileid: "7556622"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 |
 
@@ -54,18 +52,18 @@ ms.locfileid: "7556622"
 <a id="ID4EYB"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a>在资源上的隐私设置的效果
+## <a name="effect-of-privacy-settings-on-resource"></a>有关资源的隐私设置的效果
 
-成功用户将消息发送到玩家，无论该玩家好友，会导致的结果代码为 200。 但是，如果你向已阻止你的任何人发送一条消息，接收者不会收到消息，并将不会收到你的消息未成功任何指示。
+成功用户将消息发送到玩家，无论该玩家好友，会导致的结果代码为 200。 但是，如果向已阻止你的任何人发送一条消息，接收者不会收到的消息，并将不会收到任何指示你的消息未成功。
 
-在多少消息可发送每日和到多少好友和非好友，如下所示还存在限制。
+在多少消息可发送每日和多少好友和非好友，如下所示还存在限制。
 
    * 每个消息 20 陌生人
    * 200 陌生人 / 24 小时
    * 250 邮件总数 / 24 小时
-   * 每 24 小时的收件人 2500年总数
+   * 2500 / 24 小时的收件人总数
 
-| 发出请求的用户| 目标用户的隐私设置| 行为|
+| 请求的用户| 目标用户的隐私设置| 行为|
 | --- | --- | --- | --- | --- | --- |
 | 我| -| 所述。|
 | 好友| 每个人都| 200 OK|
@@ -98,7 +96,7 @@ ms.locfileid: "7556622"
 
 | 属性| 类型| 最大长度| 使用者| 备注|
 | --- | --- | --- | --- | --- |
-| xuid| ulong|  | 全部| 收件人的 XUID。 如果玩家代号，将会发送不使用。|
+| xuid| ulong|  | 全部| 受邀的 XUID。 如果玩家代号，将会发送不使用。|
 | 玩家代号| 字符串| 15| 全部| 受邀的玩家代号。 如果发送 XUID 不使用。|
 
 #### <a name="sample-request-body"></a>示例请求正文 
@@ -122,16 +120,16 @@ ms.locfileid: "7556622"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
 | 代码| 说明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| 成功。|
-| 400| 收件人列表为空或超过最大长度;指定玩家代号和 XUID; 或或 messageText 太长。|
+| 400| 收件人的列表为空或超过最大长度。指定的玩家代号和 XUID; 或或 messageText 太长。|
 | 403| XUID 不能转换。|
 | 404| 玩家代号无效或找不到用户。|
 | 409| 用户已达到每日由系统强制实施的限制。|
-| 500| 常规服务器端错误。|
+| 500| 常规的服务器端错误。|
 
 <a id="ID4E1EAC"></a>
 
@@ -156,4 +154,4 @@ ms.locfileid: "7556622"
 <a id="ID4EZFAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>引用[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参考[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)

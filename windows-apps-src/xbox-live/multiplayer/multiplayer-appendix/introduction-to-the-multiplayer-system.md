@@ -1,19 +1,17 @@
 ---
 title: 多人游戏系统简介
-author: KevinAsgari
 description: 提供对 Xbox Live 多人游戏 2015 系统的高级介绍。
 ms.assetid: d025bd2b-2ca4-4ba9-9394-4950d96ad264
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: fa677b6bdc9d8649fac2cc9f13a5d0843062bb83
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a739aaa650a7086dfe58b1b8ca170e15b3b2ef0
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557709"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347397"
 ---
 # <a name="introduction-to-the-multiplayer-system"></a>多人游戏系统简介
 

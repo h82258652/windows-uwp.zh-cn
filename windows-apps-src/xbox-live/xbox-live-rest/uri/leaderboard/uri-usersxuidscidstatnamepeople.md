@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
 assetID: 0983dad0-59b7-45b7-505d-603e341fe0cc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c6967cb337da2188b0403450db373ee3c9088a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 85a6470a64ceef3b154384d1ca859fb28733aad3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572696"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322801"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}
-访问 （排名） 在社交排行榜。
+访问 （排名） 的社交排行榜。
 这些 Uri 的域是`leaderboards.xboxlive.com`。
 
   * [URI 参数](#ID4EV)
@@ -27,12 +25,12 @@ ms.locfileid: "7572696"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | xuid| 字符串| 用户的标识符。|
-| scid| 字符串| 服务配置，其中包含正在访问的资源的标识符。|
+| scid| 字符串| 服务配置，其中包含所访问的资源的标识符。|
 | statname| 字符串| 正在访问的用户统计数据资源的唯一标识符。|
-| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅由该用户指定为常用联系人的联系人。|
+| all\ | 最喜爱| 枚举| 是否要排名统计数据值 （分数） 为当前用户的所有已知的联系人或仅由用户指定为常用联系人的联系人。|
 
 <a id="ID4EOC"></a>
 
@@ -41,7 +39,7 @@ ms.locfileid: "7572696"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;返回在社交排行榜的统计数据值 （分数） 为当前用户的任何一种所有已知的联系人或仅由该用户指定为常用联系人的联系人的排名。
+&nbsp;&nbsp;返回社交排行榜的统计数据值 （分数） 为当前用户的任何一种所有已知的联系人或仅由用户指定为常用联系人的联系人的排名。
 
 <a id="ID4EYC"></a>
 

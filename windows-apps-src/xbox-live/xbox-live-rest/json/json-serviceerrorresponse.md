@@ -2,22 +2,20 @@
 title: ServiceErrorResponse (JSON)
 assetID: a2077df8-f76c-0233-8e41-68267b681862
 permalink: en-us/docs/xboxlive/rest/json-serviceerrorresponse.html
-author: KevinAsgari
 description: " ServiceErrorResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da4a36bca0cad761ef4dda89f86b23f6cf44c30
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 86f9389f6f76c1c51955a6c784393e9b05909298
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554165"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330708"
 ---
 # <a name="serviceerrorresponse-json"></a>ServiceErrorResponse (JSON)
-当遇到服务错误时，将返回一个相应的 HTTP 错误代码。 （可选） 服务还可能包括 ServiceErrorResponse 对象，如下面定义。 在生产环境中，较少的数据可能会包含。 
+当遇到服务错误时，将返回一个相应的 HTTP 错误代码。 （可选） 服务还可能包括 ServiceErrorResponse 对象，如下面定义。 在生产环境中可能包含较少的数据。 
 <a id="ID4EN"></a>
 
  
@@ -25,7 +23,7 @@ ms.locfileid: "7554165"
  
 ServiceErrorResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | <b>错误代码</b>| 32 位有符号整数| 与错误 （可以为 null） 关联的代码。| 
 | <b>errorMessage</b>| 字符串| 有关错误的其他详细信息。| 

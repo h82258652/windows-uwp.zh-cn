@@ -1,19 +1,17 @@
 ---
 title: 开发人员计划概述
-author: KevinAsgari
 description: 了解可供使用 Xbox Live 的各种开发人员计划。
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
-ms.author: kevinasg
 ms.date: 5/30/2018
 ms.topic: article
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, 开发人员计划, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: faf010e2a61199d56a1ae5b9ed08fd373f89cd80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 621e9adac30e67ea5e9a2e164f3d427e96bd51a3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576844"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325853"
 ---
 # <a name="developer-program-overview"></a>开发人员计划概述
 
@@ -28,7 +26,7 @@ Xbox Live 创意者计划仅支持创建适用于[通用 Windows 平台](https:/
 Xbox One 为玩家提供策展式 Microsoft Store 体验，玩家可以用 Xbox 在 Microsoft Store 全新创意者集锦版块中购买通过 Xbox Live 创意者计划发布的游戏。 这样，便在确保人人都能基于开放式平台开发并交付游戏与主机玩家逐步了解并期待获得特选 Microsoft Store 体验之间达成平衡。 在 Windows 10 上，你的作品将与其他所有 Xbox Live 游戏一起发布在 Microsoft Store 中。
 
 ### <a name="publishing-and-certification"></a>发布和认证
-你必须在[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)中发布游戏的 Xbox Live 创意者计划中注册。 你的游戏必须符合下面两组要求：
+你必须在要发布的游戏，Xbox Live 创意者计划的一部分的[合作伙伴中心开发人员计划](https://developer.microsoft.com/store/register)中注册。 你的游戏必须符合下面两组要求：
 
 1. 集成 Xbox Live 登录并显示用户身份（玩家代号、玩家头像等）。 所有其他 Xbox Live 服务都是可选的。
 2. 遵循标准的 [Microsoft Store 策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)。

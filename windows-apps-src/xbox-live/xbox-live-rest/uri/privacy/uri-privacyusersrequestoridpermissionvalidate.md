@@ -2,19 +2,17 @@
 title: /users/{requestorId}/permission/validate
 assetID: 400a9721-bf43-76df-4cd1-9f2ae6ca5035
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidate.html
-author: KevinAsgari
 description: " /users/{requestorId}/permission/validate"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aadd94fbee7fff63ff6c98dc2f71e5b50ed7343
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a062fd417bae37fd66c944e0e534ef7a50de5fa
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7565226"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325724"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -25,7 +23,7 @@ ms.locfileid: "7565226"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | requestorId| 字符串| 必需。 执行该操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>和<code>me</code>。 这必须是已登录的用户。 示例值： <code>xuid(0987654321)</code>。| 
   
@@ -36,11 +34,11 @@ ms.locfileid: "7565226"
 
 [GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作或否答案。
+&nbsp;&nbsp;获取有关是否允许用户执行与目标用户指定的操作 yes 或 no 答案。
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-&nbsp;&nbsp;获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
+&nbsp;&nbsp;获取一套 yes 或 no 常见问题解答是否允许用户执行一组的目标用户指定的操作。
  
 <a id="ID4EAC"></a>
 

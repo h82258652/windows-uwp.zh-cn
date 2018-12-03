@@ -1,19 +1,17 @@
 ---
 title: 多人游戏会话状态代码
-author: KevinAsgari
 description: 介绍在请求多人游戏会话时从 Xbox Live 服务返回的状态代码。
 ms.assetid: 4ab320d6-8050-41a9-9f00-faaad3b128fd
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏 uwp, windows 10, xbox one, 多人游戏 2015, 状态代码, 会话
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e8e73008505457949fd8123b1c4bd1452785ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8fbddd0070eb24d6fc050c59fa2a0197f98ee08c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552953"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337126"
 ---
 # <a name="multiplayer-session-status-codes"></a>多人游戏会话状态代码
 

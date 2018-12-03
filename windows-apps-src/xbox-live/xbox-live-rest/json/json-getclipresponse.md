@@ -2,22 +2,20 @@
 title: GetClipResponse (JSON)
 assetID: ef128790-dc6a-6055-92d5-2ac08b708443
 permalink: en-us/docs/xboxlive/rest/json-getclipresponse.html
-author: KevinAsgari
 description: " GetClipResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: bd1d536cb4f7ba44208f2c298928b4fa4ed3074e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef6875bfecfe7ee90fb1794164240116fd39ed91
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581960"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337716"
 ---
 # <a name="getclipresponse-json"></a>GetClipResponse (JSON)
-换行游戏剪辑。 
+包装游戏剪辑。 
 <a id="ID4EN"></a>
 
  
@@ -25,7 +23,7 @@ ms.locfileid: "7581960"
  
 GetClipResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | gameClip| [GameClip](json-gameclip.md)| 满足查询单个游戏剪辑。| 
   

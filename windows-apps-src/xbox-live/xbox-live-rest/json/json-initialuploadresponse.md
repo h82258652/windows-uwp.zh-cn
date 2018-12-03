@@ -2,19 +2,17 @@
 title: InitialUploadResponse (JSON)
 assetID: 6abb7d37-2c35-2cc3-d9e5-eff695235262
 permalink: en-us/docs/xboxlive/rest/json-initialuploadresponse.html
-author: KevinAsgari
 description: " InitialUploadResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 24dc0b140991b7aab27472e291646da6f564a789
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dab59fefb389cf550a1bc4fc6429f6b0970f50ab
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576940"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337662"
 ---
 # <a name="initialuploadresponse-json"></a>InitialUploadResponse (JSON)
  
@@ -25,12 +23,12 @@ ms.locfileid: "7576940"
  
 InitialUploadResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| 字符串| 上传数据请求的分配的 ID。| 
 | <b>uploadUri</b>| URI| 游戏剪辑应上传到的位置。| 
-| <b>largeThumbnailUri</b>| URI| 可选。 较大的缩略图应上传到的位置。 此字段存在由<b>InitialUploadRequest</b> （当将会出现指定上传） 中的[ThumbnailSource 枚举](../enums/gvr-enum-thumbnailsource.md)值确定。| 
-| <b>smallThumbnailUri</b>| URI| 可选。 较小缩略图应上传到的位置。 此字段存在由<b>InitialUploadRequest</b> （当将会出现指定上传） 中的[ThumbnailSource 枚举](../enums/gvr-enum-thumbnailsource.md)值确定。| 
+| <b>largeThumbnailUri</b>| URI| 可选。 较大的缩略图应上传到的位置。 <b>InitialUploadRequest</b> （当将会出现在指定上传） 中的[ThumbnailSource 枚举](../enums/gvr-enum-thumbnailsource.md)值确定存在此字段。| 
+| <b>smallThumbnailUri</b>| URI| 可选。 较小缩略图应上传到的位置。 <b>InitialUploadRequest</b> （当将会出现在指定上传） 中的[ThumbnailSource 枚举](../enums/gvr-enum-thumbnailsource.md)值确定存在此字段。| 
   
 <a id="ID4EYC"></a>
 

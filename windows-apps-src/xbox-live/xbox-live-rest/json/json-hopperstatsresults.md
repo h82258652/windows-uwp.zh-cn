@@ -2,19 +2,17 @@
 title: HopperStatsResults (JSON)
 assetID: 91927da1-2e97-f7bc-ae62-7e0e9966b98e
 permalink: en-us/docs/xboxlive/rest/json-hopperstatsresults.html
-author: KevinAsgari
 description: " HopperStatsResults (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f1322d2c22e65c33667ea409b10d9209628d3b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 38e345fc20e92cdf6446c6ae1100e347fe634eff
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563162"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329509"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 表示漏斗的统计信息的 JSON 对象。 
@@ -24,7 +22,7 @@ ms.locfileid: "7563162"
  
 HopperStatsResults JSON 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | hopperName| 字符串| 所选的漏斗的名称。| 
 | waitTime| 32 位有符号整数| 匹配漏斗 （不可或缺秒数） 时间的平均。 | 

@@ -1,19 +1,17 @@
 ---
 title: 社交管理器简介
-author: aablackm
 description: 了解跟踪在线好友的 Xbox Live 社交管理器 API。
 ms.assetid: d4c6d5aa-e18c-4d59-91f8-63077116eda3
-ms.author: aablackm
 ms.date: 03/26/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e4a9f244b3ce699e097b8de34556a21e423f8d5e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5dff3dcfd79fe43ff8af1513a4358bd0ff98b8d1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7568129"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349643"
 ---
 # <a name="introduction-to-social-manager"></a>社交管理器简介
 

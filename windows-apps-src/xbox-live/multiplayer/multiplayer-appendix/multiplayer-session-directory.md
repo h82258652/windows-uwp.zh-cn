@@ -1,19 +1,17 @@
 ---
 title: 多人游戏会话目录
-author: KevinAsgari
 description: 了解 Xbox Live 多人游戏会话目录 (MPSD)。
 ms.assetid: a9b029ea-4cc1-485a-8253-e1c74184f35e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, mpsd, 多人游戏会话目录。
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d39435f7f6669a0bdb953e0501f69fc80c4d179
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1681fe59533ebaf0db197efb95ca46b828846f5d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573863"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338420"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>多人游戏会话目录 (MPSD)
 

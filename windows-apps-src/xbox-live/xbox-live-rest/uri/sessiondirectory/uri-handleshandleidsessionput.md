@@ -2,25 +2,23 @@
 title: PUT (/handles/{handle-id}/session)
 assetID: d8a3d473-1192-ec0c-3935-c301f4f61e03
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionput.html
-author: KevinAsgari
 description: " PUT (/handles/{handle-id}/session)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8bd73ce7b71ddbe4a159a4d3e089c5adb9ad87
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a1872857d8b8e692f67e3c7b2a067ae86663c00
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582064"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347941"
 ---
 # <a name="put-handleshandle-idsession"></a>PUT (/handles/{handle-id}/session)
 创建或更新会话由取消引用句柄。
 
 > [!IMPORTANT]
-> 此方法使用 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
+> 此方法使用 2015年多人游戏，并将应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本，并且需要 X Xbl 协定版本的标头元素： 104/105 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4ECB)
@@ -33,16 +31,16 @@ ms.locfileid: "7582064"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法将新的或更新会话写入多人游戏服务，使用提供的会话句柄 id。 结果是一个表示新的或更新会话，如从服务器返回的对象。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**换行。
+此 HTTP/REST 方法将新的或更新会话写入多人游戏服务，使用提供的会话句柄 id。 结果是表示新的或更新会话，如从服务器返回的对象。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**换行。
 
-此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取的 ID 从协议激活后用户已接受游戏邀请。
+此方法的调用方从玩家的**MultiplayerActivityDetails**对象获得的句柄 ID。 或者，调用方获取 ID 从协议激活后用户已接受游戏邀请。
 
 <a id="ID4ECB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | handleId| GUID| 会话句柄的唯一 ID。|
 

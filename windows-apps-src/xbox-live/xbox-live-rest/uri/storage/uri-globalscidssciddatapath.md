@@ -2,19 +2,17 @@
 title: /global/scids/{scid}/data/{path}
 assetID: d6353cd3-9127-98d4-bb99-5df690e07022
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapath.html
-author: KevinAsgari
 description: " /global/scids/{scid}/data/{path}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ad4c3238dca10150293af60aedb14a4d1ca756
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b8788ae6773c53c2f86b3f51ee9023876416feeb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552671"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351544"
 ---
 # <a name="globalscidssciddatapath"></a>/global/scids/{scid}/data/{path}
 列出了在指定的路径的文件信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -26,10 +24,10 @@ ms.locfileid: "7552671"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | scid| guid| 若要查找的服务配置 ID。| 
-| path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括 (A-Z) 的大写字母、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 256 的最大长度。| 
+| path| 字符串| 要返回的数据项路径。 获取返回所有匹配的目录和子目录。 有效字符包括大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_) 和正斜杠 （/）。 可能为空。 最大长度为 256。| 
   
 <a id="ID4E3B"></a>
 

@@ -2,22 +2,20 @@
 title: PersonSummary (JSON)
 assetID: 22fedb5f-5602-98d8-04a6-786fe3905921
 permalink: en-us/docs/xboxlive/rest/json-personsummary.html
-author: KevinAsgari
 description: " PersonSummary (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b1cb2adaafba2370e27eb98a10a5143166f0ce
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a787992507405a70185140e879be731d72806eff
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561097"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345527"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
-[人 (JSON)](json-person.md)对象的集合。 
+[个人 (JSON)](json-person.md)对象的集合。 
 <a id="ID4ER"></a>
 
  
@@ -25,14 +23,14 @@ ms.locfileid: "7561097"
  
 PersonSummary 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | hasCallerMarkedTargetAsFavorite| 布尔值| 是否调用方已标记为常用的目标。 示例值： true| 
 | hasCallerMarkedTargetAsKnown| 布尔值| 是否已知调用方已标记为目标。 示例值： true| 
-| isCallerFollowingTarget| 布尔值| 是否调用方关注目标。 示例值： true| 
+| isCallerFollowingTarget| 布尔值| 是否调用方是按照目标。 示例值： true| 
 | isTargetFollowingCaller| 布尔值| 目标是否关注调用方。 示例值： true| 
 | legacyFriendStatus| 字符串| 目标所示的调用方的旧好友状态。 可以是"None"，"MutuallyAccepted"、"OutgoingRequest"或"IncomingRequest"。 示例值:"MutuallyAccepted"| 
-| recentChangeCount| 32 位无符号的整数| 可选。 在目标的社交图片的最新更改的数量。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
+| recentChangeCount| 32 位无符号的整数| 可选。 在目标计算机的社交图片的最新更改的数量。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 
 | targetFollowerCount| > 32 位无符号的整数| 遵循的是目标的用户数。 示例值： 1308年| 
 | targetFollowingCount| 32 位无符号的整数| 目标关注的用户数。 示例值： 112| 
 | 水印| 字符串| 可选。 该目标的的最新更改水印。 此值将仅存在时用户正在查看其自己的摘要。 示例值： 5| 

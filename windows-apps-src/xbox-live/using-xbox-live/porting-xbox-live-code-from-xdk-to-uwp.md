@@ -1,19 +1,17 @@
 ---
 title: 将 Xbox Live 代码从 XDK 移植到 UWP
-author: KevinAsgari
 description: 了解如何将 Xbox Live 代码从 Xbox 开发工具包 (XDK) 平台移植到通用 Windows 平台 (UWP)。
 ms.assetid: 69939f95-44ad-4ffd-851f-59b0745907c8
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, xdk, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 91a30a81123902d7b4b2f8311ae1f24bd23b3e43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6e8a6ebe716f1e062940066184e9f734441371b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7565388"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328824"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>将 Xbox Live 代码从 Xbox 开发人员工具包 (XDK) 移植到通用 Windows 平台 (UWP)
 
@@ -57,7 +55,7 @@ ms.locfileid: "7565388"
 
 2.  [安装 **Xbox Live 平台扩展 SDK**](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) - 如果你需要为 UWP 使用安全套接字 API 和/或游戏保存 API（也称为连接存储）。
 
-3.  在 Visual Studio 中为通用 Windows 应用项目添加 Xbox Live 支持。 你可以添加完整源或引用二进制文件，通过将 NuGet 程序包安装到 Visual Studio 项目。 程序包以 C++ 和 WinRT 的形式提供。 有关更多详细信息，请参阅[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
+3.  在 Visual Studio 中为通用 Windows 应用项目添加 Xbox Live 支持。 你可以添加完整源或引用二进制文件，通过 NuGet 程序包安装到 Visual Studio 项目。 程序包以 C++ 和 WinRT 的形式提供。 有关更多详细信息，请参阅[将 Xbox Live 添加到新的或现有的 UWP 项目](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)
 
 4.  将你的开发计算机配置为使用沙盒。 你可以在管理员命令提示符下运行 Xbox Live SDK 的工具目录中的命令行脚本（例如：SwitchSandbox.cmd XDKS.1）。
 
@@ -382,7 +380,7 @@ RequestExtension();
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>支持在 Xbox One 与电脑 UWP 之间进行多人跨平台联机游戏
 
-除了在 XDP 中的新会话模板要求 （请参阅[设置和配置你在合作伙伴中心和 XDP 中的项目](#_Setting_up_and)），跨平台游玩附带对会话加入功能的限制。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
+除了 XDP 中的新会话模板要求 （请参阅[设置和配置你在合作伙伴中心和 XDP 中的项目](#_Setting_up_and)），跨平台游玩附带对会话加入功能的限制。 你不能再将“无”用作会话加入限制。 你必须使用“已关注”或“本地”（默认限制是“本地”）。
 
 此外，由于 Windows 10 多人游戏需要 **userAuthorizationStyle** 功能，加入和读取限制默认为“本地”。
 

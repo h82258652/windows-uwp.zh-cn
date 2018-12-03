@@ -1,19 +1,17 @@
 ---
 title: 向 Xbox Live Prefabs 添加控制器支持
-author: KevinAsgari
 description: 使用 Xbox Live Unity 插件向 Xbox Live Prefabs 添加控制器支持
 ms.assetid: ''
-ms.author: heba
 ms.date: 07/14/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, unity, 控制器支持
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fb8f710a04b2243f32daadc652aca8404d4577
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 20defe8598b8360787454134eab3b2daaf244441
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553216"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322740"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>向 Xbox Live Prefabs 添加控制器支持
 

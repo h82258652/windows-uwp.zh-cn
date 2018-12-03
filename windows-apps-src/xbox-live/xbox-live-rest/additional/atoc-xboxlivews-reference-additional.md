@@ -2,23 +2,21 @@
 title: 其他参考
 assetID: 2ed55e24-4a4f-625b-7cbb-f10855382bb4
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-additional.html
-author: KevinAsgari
 description: " 其他参考"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 106fe8e79752125a8c30670e226aebd689c3d240
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fdb0bd26ebe97b5f93a04e31b1cb1921c4059516
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552668"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329761"
 ---
 # <a name="additional-reference"></a>其他参考
 
-本部分中的主题提供 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
+本部分中的主题提供有关 Xbox Live 服务和娱乐发现服务 (EDS) 的补充参考资料。
 
 <a id="ID4EZ"></a>
 
@@ -35,7 +33,7 @@ ms.locfileid: "7552668"
 
 [辅助 EDS API](eds-apis.md)
 
-&nbsp;&nbsp;介绍的辅助 EDS Api。
+&nbsp;&nbsp;介绍了辅助 EDS Api。
 
 [EDS 授权](edsauthorization.md)
 
@@ -53,7 +51,7 @@ ms.locfileid: "7552668"
 
 [EDS 反向查找视频](edsreverselookup.md)
 
-&nbsp;&nbsp;查找视频基于反向数据。
+&nbsp;&nbsp;查找视频，具体取决于相反的数据。
 
 [EDS 表](edstables.md)
 
@@ -69,7 +67,7 @@ ms.locfileid: "7552668"
 
 [标准 HTTP 状态代码](httpstatuscodes.md)
 
-&nbsp;&nbsp;介绍由该服务返回的标准 HTTP 状态代码。
+&nbsp;&nbsp;描述了由该服务返回的标准 HTTP 状态代码。
 
 <a id="ID4ECC"></a>
 

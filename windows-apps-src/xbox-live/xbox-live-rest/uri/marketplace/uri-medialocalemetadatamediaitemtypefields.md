@@ -2,22 +2,20 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields
 assetID: fc9b556a-7fc7-64ec-cb5c-b5cabd2ab4ce
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypefields.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 086538c2817e39cb80c66f9689327ae84a5feff2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53d0113368754abc3be36b4e7dda213adf38b640
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581321"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325648"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields
-访问从其中一个期待看到的数据，为给定的 mediaitemtype 和 EDS 的给定的版本字段。 这些 Uri 的域是`eds.xboxlive.com`。
+访问从其中一个期待给定的 mediaitemtype 和 EDS 给定的版本的数据字段。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,7 +24,7 @@ ms.locfileid: "7581321"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
 | mediaitemtype| 字符串| 必需。 从值之一[GET (/media/ {marketplaceId} / /metadata/mediagroups/ {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 
@@ -38,7 +36,7 @@ ms.locfileid: "7581321"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)](uri-medialocalemetadatamediaitemtypefieldsget.md)
 
-&nbsp;&nbsp;列出了从其中一个期待看到的数据，为给定的 mediaitemtype 和 EDS 的给定的版本字段。
+&nbsp;&nbsp;列出了从其中一个期待给定的 mediaitemtype 和 EDS 给定的版本的数据的字段。
  
 <a id="ID4ELC"></a>
 

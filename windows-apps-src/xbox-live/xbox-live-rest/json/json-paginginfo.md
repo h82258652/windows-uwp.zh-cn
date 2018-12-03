@@ -2,30 +2,28 @@
 title: PagingInfo (JSON)
 assetID: 645e575d-3e8e-d954-90e6-e51dd83da93b
 permalink: en-us/docs/xboxlive/rest/json-paginginfo.html
-author: KevinAsgari
 description: " PagingInfo (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e86fbe2ee840a33e3e4cb21cb9584381d389394a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0e773d73499e79fe23f736a536027932ca1a07b4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580102"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341396"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
-包含分页信息数据页中返回的结果。 
+包含分页信息中的数据的页面将返回的结果。 
 <a id="ID4EN"></a>
 
  
 ## <a name="paginginfo"></a>PagingInfo
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| ContinuationToken| 字符串| 用于访问结果的下一个页不透明延续令牌。 最大 32 个字符。调用方可以提供<b>continuationToken</b>查询参数中的此值，以检索下一组的集合中的项。 如果此属性为<b>null</b>，则没有任何其他项目集合中。 此属性是必需的并且即使与<b>skipItems</b>调时集合提供。| 
+| ContinuationToken| 字符串| 用于访问结果的下一页不透明延续令牌。 最大 32 个字符。调用方可以提供<b>continuationToken</b>查询参数中的此值，以检索接下来的集合中的项。 如果此属性为<b>null</b>，则没有任何其他项目集合中。 此属性是必需的并且即使与<b>skipItems</b>调时集合提供。| 
 | totalItems| 32 位有符号整数| 集合中项的总数。 这不会提供服务是否处于无法提供实时概况集合的大小。| 
   
 <a id="ID4E4B"></a>

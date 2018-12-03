@@ -1,19 +1,17 @@
 ---
 title: 游戏会话的可见性和可加入性
-author: KevinAsgari
 description: 介绍 Xbox Live 游戏会话和游戏派对的可见性和可加入性。
 ms.assetid: 39b6dac1-0c6b-4dc1-9fe0-3cb7c471fbab
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c039a2c78824de64c503786d911bb3427e53cf64
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 65da0d60080cd790b84ce46f8598c2f6f638ff05
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554757"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334539"
 ---
 # <a name="game-session-and-game-party-visibility-and-joinability"></a>游戏会话和群体游戏的可见性和可加入性
 
@@ -119,6 +117,5 @@ ms.locfileid: "7554757"
 
 <a name="client-multiplayer-flow"></a>客户端多人游戏流
 -----------------------
-
 ![](../../images/whitepapers/gamesessionvisibility_image1.png)
 ![](../../images/whitepapers/gamesessionvisibility_image2.png)

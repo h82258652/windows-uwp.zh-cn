@@ -8,18 +8,18 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: fdd28cb94b31102d9af98aa95afde45424dadce9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719998"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325262"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
 删除匹配票证。
 
 > [!IMPORTANT]
-> 此方法旨在用于合同 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
+> 此方法旨在用于合约 103 或更高版本，并且需要 X Xbl 协定版本的标头元素： 103 或更高版本上的每个请求。
 
   * [备注](#ID4ET)
   * [URI 参数](#ID4E2)
@@ -41,7 +41,7 @@ ms.locfileid: "7719998"
 
 | 参数| 类型| 描述|
 | --- | --- | --- | --- |
-| scid| GUID| 服务配置标识符 (SCID) 会话。|
+| scid| GUID| 服务配置标识符 (SCID) 的会话。|
 | name| 字符串| 漏斗的名称。|
 | 票证 Id| GUID| 票证 id。|
 
@@ -53,7 +53,7 @@ ms.locfileid: "7719998"
 | 类型| 必需| 描述| 如果缺少的响应|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | XUID (用户 ID)| 是| 发出请求的用户必须是指代票证的票证会话成员。| 403|
-| 特权和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。| 403|
+| 权限和设备类型| 是| 当用户的 deviceType 设置为主机时，仅具有多人游戏中其声明特权的用户允许对匹配服务进行调用。| 403|
 
 <a id="ID4EOC"></a>
 

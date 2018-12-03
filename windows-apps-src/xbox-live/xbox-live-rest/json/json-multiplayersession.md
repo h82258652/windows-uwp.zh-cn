@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 32eca20af0714c5968cf51fcd568d89f2768f369
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8217772"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329558"
 ---
 # <a name="multiplayersession-json"></a>MultiplayerSession (JSON)
 表示**MultiplayerSession**的 JSON 对象。 

@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 帐户工具
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 帐户工具快速创建用于测试 Xbox Live 游戏的测试帐户。
 ms.assetid: ec5959f9-1c60-4aa4-94a6-5d8bdcf77a96
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 测试, 测试帐户
 ms.localizationpriority: medium
-ms.openlocfilehash: e76f12ab9ebaffff6b106c13c033d5a7210346d0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dead4e62e41b7b597ba9a578ee8f174386529937
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558080"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331828"
 ---
 # <a name="xbox-live-account-tool"></a>Xbox Live 帐户工具
 
@@ -29,7 +27,7 @@ Xbox Live 帐户工具是一款设计用于帮助开发人员为测试游戏方�
   5. 更改用户的玩家代号
 
 ## <a name="where-can-i-find-xbox-live-account-tool"></a>我可以在哪找到 Xbox Live 帐户工具？
-Xbox Live 帐户工具可以找到一部分的 Xbox Live 工具包从[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)。
+从 Xbox Live 工具程序包的一部分找不到 Xbox Live 帐户工具[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)。
 
 ## <a name="how-do-i-log-in"></a>如何登录？
 你需要使用想要管理的用户凭据并指定正确的沙盒。 请确保开发人员帐户有权访问沙盒，否则登录可能会失败。 该工具设计用于使用沙盒的开发人员帐户。

@@ -2,19 +2,17 @@
 title: /trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}
 assetID: be789e70-517d-383e-ea35-b0c39e846081
 permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidssciddatapathandfilenametype.html
-author: KevinAsgari
 description: " /trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d8b60d5e47da5281789232f91e6995367f63f1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 035f30279321b7b386f59e014fa6d185e6b71b57
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564695"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327957"
 ---
 # <a name="trustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}
 下载、 上传，或删除的文件。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -26,11 +24,11 @@ ms.locfileid: "7564695"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家发出请求者。| 
 | scid| guid| 若要查找的服务配置 ID。| 
-| pathAndFileName| 字符串| 要访问的项的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包括 (A-Z) 的大写字母、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且正斜杠 （/）。路径部分可能为空。有效的字符 （所有最终正斜杠后） 的文件名称部分包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9)、 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续句点。| 
+| pathAndFileName| 字符串| 若要访问该项目的路径和文件名。 有效的字符 （至当前阶段并包括最终正斜杠） 的路径部分包含大写字母 (A-Z)、 小写字母 (a-z)、 下划线 (_) 的数字 (0-9)，并且反斜杠 （/）。路径部分可能为空。有效的字符的文件名部分 （最终正斜杠后面的所有内容） 包含大写字母 (A-Z)、 小写字母 (a-z)、 数字 (0-9) 下划线 (_)，句点 （.） 和连字符 （-）。 文件名称不能为空，以句号结尾或包含两个连续的句点。| 
 | type| 字符串| 数据的格式。 可能的值为二进制文件或 json。| 
   
 <a id="ID4EOC"></a>
@@ -48,7 +46,7 @@ ms.locfileid: "7564695"
 
 [PUT](uri-trustedplatformusersxuidscidssciddatapathandfilenametype-put.md)
 
-&nbsp;&nbsp;将文件上传。 可在其中的数据和元数据发送一条消息，或作为其中的数据和元数据发送一系列的较小的块中多块上载完整上载上传数据。 可以在一个消息发送仅小于四个兆字节的文件。 数据类型 json 不支持多块上载。 
+&nbsp;&nbsp;将文件上传。 可在其中的数据和元数据发送一条消息，或作为多块上载的数据和元数据以发送一系列较小块完整上载上传数据。 可以为一条消息发送小于 4 兆字节的文件。 多块上载不受支持的类型 json 数据。 
  
 <a id="ID4E5C"></a>
 

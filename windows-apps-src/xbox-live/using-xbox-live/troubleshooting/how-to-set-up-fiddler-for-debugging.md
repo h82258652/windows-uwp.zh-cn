@@ -1,19 +1,17 @@
 ---
 title: 使用 Fiddler 的 Xbox Live 疑难解答
-author: KevinAsgari
 description: 了解如何使用 Fiddler 解决 Xbox Live 服务调用问题。
 ms.assetid: 7d76e444-027b-4659-80d5-5b2bf56d199e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, fiddler, 服务调用, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: e8d1acabbf6059b8a5989a471c01d98243e53fb4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d1dfc240e4545c7ab7002cedfba7621cfc397345
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575005"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342362"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>使用 Fiddler 的 Xbox Live 疑难解答
 

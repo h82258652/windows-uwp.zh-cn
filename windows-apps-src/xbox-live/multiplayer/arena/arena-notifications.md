@@ -1,18 +1,16 @@
 ---
 title: Arena 通知
-author: KevinAsgari
 description: 描述发给玩家以使其完成锦标赛阶段的 Xbox Arena 通知。
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, arena, 锦标赛, ux
 ms.localizationpriority: medium
-ms.openlocfilehash: 2637603f129e40f3cdf2f2ca9cff8aa5dfb8a3e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 46865c9c8684b20637c2e971989f493dd2490c63
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573827"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342948"
 ---
 # <a name="arena-notifications"></a>Arena 通知
 

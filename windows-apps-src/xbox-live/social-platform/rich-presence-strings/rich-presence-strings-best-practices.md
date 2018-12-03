@@ -1,19 +1,17 @@
 ---
 title: “完整状态”最佳实践
-author: KevinAsgari
 description: 了解有关使用 Xbox Live“完整状态”的最佳实践。
 ms.assetid: 51a84137-37e4-4f98-b3d3-5ae70e27753d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态, 最佳实践
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b671ef58850fde91f2bf19167672cc20157959a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75268575dd9dce59141d8909a59909bc973edbec
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564547"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347772"
 ---
 # <a name="rich-presence-best-practices"></a>“完整状态”最佳实践
 

@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/achievements
 assetID: 4dd89962-ab73-c25b-7a11-3ed35475492e
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsv2.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/achievements"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 094476d4e846fb7e4194f67d3de6bd1d9c7316df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d4ac8c1fbf3d5f3fcc645e284059c1644495d62
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552870"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326155"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
@@ -27,7 +25,7 @@ ms.locfileid: "7552870"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 所访问其 （资源） 的用户。 必须匹配的身份验证的用户的 XUID。| 
   
@@ -38,7 +36,7 @@ ms.locfileid: "7552870"
 
 [GET](uri-achievementsusersxuidachievementsgetv2.md)
 
-&nbsp;&nbsp;获取的游戏，这些用户，解锁或这些用户具有正在上定义的成就的列表。
+&nbsp;&nbsp;获取游戏，这些用户，解锁或这些用户具有正在上定义的成就的列表。
  
 <a id="ID4EKC"></a>
 

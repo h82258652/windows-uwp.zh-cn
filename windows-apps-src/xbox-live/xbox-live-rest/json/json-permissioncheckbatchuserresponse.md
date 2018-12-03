@@ -2,22 +2,20 @@
 title: PermissionCheckBatchUserResponse (JSON)
 assetID: c587dbc1-9436-4d55-afcb-deb47e3c2664
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchuserresponse.html
-author: KevinAsgari
 description: " PermissionCheckBatchUserResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: da918cbbf76a757e16aea10cf4fbc6b2646de9fc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c9e20cc195ad737a7e847a8ad41b76247220adfe
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564629"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341855"
 ---
 # <a name="permissioncheckbatchuserresponse-json"></a>PermissionCheckBatchUserResponse (JSON)
-单个目标用户的权限值的列表中检查批处理权限的原因。 
+批处理权限的原因检查的一个目标用户的权限值列表。 
 <a id="ID4EN"></a>
 
  
@@ -25,7 +23,7 @@ ms.locfileid: "7564629"
  
 PermissionCheckBatchUserResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | 用户| 字符串| 必需。 如果请求用户允许执行与目标用户请求的操作，此成员为<b>true</b> 。| 
 | 权限| [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)的数组| 必需。 原始请求中，如请求中所示的相同顺序要求提供每项权限[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。| 

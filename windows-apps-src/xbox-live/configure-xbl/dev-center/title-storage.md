@@ -1,18 +1,16 @@
 ---
 title: 标题存储配置在合作伙伴中心
-author: aablackm
 description: 了解如何在合作伙伴中心配置标题存储
-ms.author: aablackm
 ms.date: 04/24/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one，标题存储，合作伙伴中心
-ms.openlocfilehash: 38abe0188dff74bdf0584bcb6664c5f6453e7e42
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d32f9f2f4e003db50ad560acc513511a850d43b5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554364"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8348927"
 ---
 # <a name="configure-storage-for-you-title-in-partner-center"></a>在合作伙伴中心中配置为标题存储
 
@@ -34,7 +32,7 @@ ms.locfileid: "7554364"
 
 |存储类型 |说明 |示例用法  |
 |---------|---------|---------|
-|全局             |数据上传到合作伙伴中心，可通过任何设备进行读取，并且对每个用户访问。 可以仅将写入的开发人员上传到合作伙伴中心。 | 通过游戏内新闻源向所有用户发布更新通知。     |
+|全局             |数据上传到合作伙伴中心，可通过任何设备进行读取，并且对每个用户访问。 只能写入到由开发人员上传到合作伙伴中心。 | 通过游戏内新闻源向所有用户发布更新通知。     |
 |连接存储  |允许后台同步 Xbox One 和 Windows 10 游戏上的游戏数据。 可靠的容错游戏保存服务。 可通过任何设备进行读取，可通过 Xbox One 和 Windows 10 设备写入    | 可保存单个用户的文件，让用户能在单独的控制台上进行游戏。         |
 |通用          |可通过网络访问的 blob 存储，通过除 Xbox 360 或 Windows Phone 外的其他设备均可进行读取/写入。 可通过 Android 和 iOS 设备进行读取。      | 可保存玩游戏的时间或其他统计数据，可从多个 Windows 设备访问这些数据。        |
 |受信任            |可通过网络访问的 blob 存储，只能通过 Xbox One、Xbox 360 和 Windows Phone 进行写入。 可通过任何设备进行读取。 可通过 Android 和 iOS 进行读取。     | 可存储玩家在多人游戏中的排名。        |

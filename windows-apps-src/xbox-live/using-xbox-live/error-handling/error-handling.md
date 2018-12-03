@@ -1,19 +1,17 @@
 ---
 title: 错误处理
-author: KevinAsgari
 description: 了解如何在进行 Xbox Live 服务调用时处理错误。
 ms.assetid: e433dfbd-488b-44ff-8333-1dcf0329cd60
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 服务调用
 ms.localizationpriority: medium
-ms.openlocfilehash: 1728af14afb0840975ad175608da3f0e9b03645d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 637b9da84ef3ae50ea6235ca86e6318ae62acd11
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575835"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337936"
 ---
 # <a name="error-handling"></a>错误处理
 

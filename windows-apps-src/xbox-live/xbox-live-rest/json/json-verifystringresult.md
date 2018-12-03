@@ -2,22 +2,20 @@
 title: VerifyStringResult (JSON)
 assetID: 272c688e-179e-c7e9-086b-e76d0d4bcb57
 permalink: en-us/docs/xboxlive/rest/json-verifystringresult.html
-author: KevinAsgari
 description: " VerifyStringResult (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ba5336ed0bf734eff60a4bbffca3397fd1ea3eb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b01793222be80efccdca1f24f5226a2e9ff78064
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554235"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341716"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
-结果代码对应于提交到[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)每个字符串。
+结果代码对应于每个提交给[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)的字符串。
 <a id="ID4ER"></a>
 
 
@@ -25,10 +23,10 @@ ms.locfileid: "7554235"
 
 VerifyStringResult 对象具有以下规范。
 
-| 成员| 类型| 说明|
+| 成员| 类型| 描述|
 | --- | --- | --- |
 | resultCode| 32 位无符号的整数| 必需。 HResult 代码对应于提交字符串。|
-| offendingString| 字符串| 必需。 字符串值，导致被拒绝的字符串。|
+| offendingString| 字符串| 必需。 导致被拒绝的字符串的字符串值。|
 
 <a id="ID4EXB"></a>
 

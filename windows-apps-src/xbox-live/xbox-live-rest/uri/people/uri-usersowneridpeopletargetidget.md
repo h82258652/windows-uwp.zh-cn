@@ -2,22 +2,20 @@
 title: GET (/users/{ownerId}/people/{targetid})
 assetID: 2fd37b8e-b886-14f2-3399-59f530d85e4e
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopletargetidget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/people/{targetid})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c821e9d2cecc0b9a6bd02da650d40385a3fd91
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 408b4df30f53e27b04e2a1e654e9686d2b359637
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562200"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345054"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-目标 ID 由用户从集合中获取调用方的人。 这些 Uri 的域是`social.xboxlive.com`。
+调用方的用户集合中获取目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [备注](#ID4EV)
   * [URI 参数](#ID4E5)
@@ -41,7 +39,7 @@ ms.locfileid: "7562200"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
 | targetid| 字符串| 正在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
@@ -60,7 +58,7 @@ ms.locfileid: "7562200"
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-| 标题| 说明| 
+| 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。| 
   
@@ -69,10 +67,10 @@ ms.locfileid: "7562200"
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-| 标题| 说明| 
+| 标题| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。| 
+| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。| 
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。| 
   
 <a id="ID4EWE"></a>
 
@@ -86,9 +84,9 @@ ms.locfileid: "7562200"
  
 ## <a name="http-status-codes"></a>HTTP 状态代码
  
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
  
-| 代码| 原因短语| 说明| 
+| 代码| 原因短语| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| “确定”| 成功。| 
 | 400| 错误请求| 用户 Id 的格式不正确。| 
@@ -100,7 +98,7 @@ ms.locfileid: "7562200"
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-| 标头| 类型| 说明| 
+| 标头| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Content-Length| 32 位无符号的整数| 长度，以字节为单位，响应正文。 示例值： 22。| 
 | Content-Type| 字符串| 响应正文的 MIME 类型。 这将始终为<b>application/json</b>。| 

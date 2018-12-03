@@ -2,19 +2,17 @@
 title: EDS 反向查找视频
 assetID: 773f7a8e-7571-3aec-96d6-478437696ea6
 permalink: en-us/docs/xboxlive/rest/edsreverselookup.html
-author: KevinAsgari
 description: " EDS 反向查找视频"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e46bfb70ad377723694bfedb1dde0448564a97a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d535dec8a95eba4d486bfc6946e187e2da66ae49
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581347"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331693"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>EDS 反向查找视频
  
@@ -42,7 +40,7 @@ GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaIt
 ```
 
  
-   * 颁发反向查找使用从以前的响应**ProviderMediaId**字段的调用： 
+   * 发出反向查找使用以前的响应中的**ProviderMediaId**字段的调用： 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -51,7 +49,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-如果不从 EDS 检索到**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
+如果不具有从 EDS 检索到**ProviderMediaId**字段的字段必须为 URL 编码，以便正确传递给 EDS。
   
 <a id="ID4EOC"></a>
 

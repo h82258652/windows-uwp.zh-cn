@@ -2,19 +2,17 @@
 title: GameClipUriType 枚举
 assetID: 945b5ac9-1f4e-5363-1a69-fa7e10c34e05
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipuritype.html
-author: KevinAsgari
 description: " GameClipUriType 枚举"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 33d757c2d5fc985e4944f11aaaaccf53fabb0401
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2d7689f8b43cffad3bb7dd0acdcb8b525cada0bf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571982"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326142"
 ---
 # <a name="gameclipuritype-enumeration"></a>GameClipUriType 枚举
 详细介绍 GameClipUriType 枚举。 

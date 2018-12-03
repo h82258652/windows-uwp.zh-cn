@@ -1,19 +1,17 @@
 ---
 title: 多人游戏附录
-author: KevinAsgari
 description: 提供了可以了解更多 Xbox Live 多人游戏 2015 服务信息的链接。
 ms.assetid: 412ae5f4-6975-4a8b-9cc2-9747e093ec4d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 051a81f68440b293d7198dcdd68479cf3f28e22a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 703e48c0f200c59fa6f9181905756ef834aabe4a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573830"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326972"
 ---
 # <a name="multiplayer-appendix"></a>多人游戏附录
 

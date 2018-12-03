@@ -2,25 +2,23 @@
 title: /handles/query
 assetID: e00d31ad-b9ba-8e52-1333-83192eab0446
 permalink: en-us/docs/xboxlive/rest/uri-handlesquery.html
-author: KevinAsgari
 description: " /handles/query"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ce38768923f9adb2cdb8e2237e9afcb774433b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eaa148972ce1e65056470a6c4082cb4e50de3f09
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571023"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328122"
 ---
 # <a name="handlesquery"></a>/handles/query
-支持 POST 操作以创建用于会话句柄查询。 
+支持创建会话句柄查询 POST 操作。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏，并将应用仅向该多人游戏版本及更高版本。 它旨在与模板合约 104/105 或更高版本一起使用。  
 
  
 <a id="ID4EQ"></a>
@@ -32,7 +30,7 @@ sessiondirectory.xboxlive.com
 
  
 ## <a name="remarks"></a>备注
-此 URI 支持的句柄查询。 会话与查询不同，字符串和批处理查询，即句柄查询使用查询处理器样式。 最多 100 句柄均受支持。  
+此 URI 的句柄支持查询。 会话与查询不同，这些字符串和批处理查询句柄查询使用查询处理器样式。 支持最多 100 句柄。  
 <a id="ID4E2"></a>
 
  

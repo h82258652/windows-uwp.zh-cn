@@ -2,19 +2,17 @@
 title: GET (media/{marketplaceId}/singleMediaGroupSearch)
 assetID: 52096f6d-e670-dc07-b191-039ea80c6291
 permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearchget.html
-author: KevinAsgari
 description: " GET (media/{marketplaceId}/singleMediaGroupSearch)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 581fec6739c64d9d6cd093d8b8f58b1488b82680
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9295459c3eb715f1120d4287e69c596654d65fa
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7560907"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338642"
 ---
 # <a name="get-mediamarketplaceidsinglemediagroupsearch"></a>GET (media/{marketplaceId}/singleMediaGroupSearch)
 允许搜索单个媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -29,16 +27,16 @@ ms.locfileid: "7560907"
  
 ## <a name="remarks"></a>备注
  
-非连续而不使用延续令牌使用 skipItems 参数可以访问页面从此搜索返回的数据。 此 API 将接受查询优化器。 
+非连续使用 skipItems 参数，而不使用延续令牌可以访问来自此搜索返回的数据的页面。 此 API 将接受查询优化器。 
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+**SandboxId**现在从 XToken 声明检索并强制执行。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   
@@ -61,7 +59,7 @@ ms.locfileid: "7560907"
  
 ### <a name="sample-response"></a>示例响应
  
-下面的 JSON 代码是为了响应在调用`/media/en-us/singleMediaGroupSearch?q=vector&desiredMediaItemTypes=DGame&fields=all`。
+下面的代码 JSON 是为了响应在调用`/media/en-us/singleMediaGroupSearch?q=vector&desiredMediaItemTypes=DGame&fields=all`。
  
 
 ```cpp

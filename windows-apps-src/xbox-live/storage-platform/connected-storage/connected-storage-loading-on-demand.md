@@ -1,19 +1,17 @@
 ---
 title: 按需加载连接存储
-author: aablackm
 description: 了解如何按需加载连接存储数据，而不是一次性全部加载。
 ms.assetid: a0797a14-c972-4017-864c-c6ba0d5a3363
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7bff55582aed0308df4d847f208bce53772b24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 31c1893f09e6d56682b4e718ee8b905ce72c7ad8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581521"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328923"
 ---
 # <a name="connected-storage-loading-on-demand"></a>按需加载连接存储
 

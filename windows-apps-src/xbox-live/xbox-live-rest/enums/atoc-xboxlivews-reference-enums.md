@@ -8,15 +8,15 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: d0deb009ec40eaeda09687e5ed9dbb69066ca317
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707101"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335762"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript 对象表示法 (JSON) 对象中使用的枚举
  
-Xbox Live 服务定义中，请求和响应，该服务使用的 JSON 对象。 许多服务使用的 JavaScript 对象表示法 (JSON) 对象有关联的指定允许在 JavaScript 对象表示法 (JSON) 对象中出现的字段的值的枚举。 本部分列出了 JavaScript 对象表示法 (JSON) 对象中使用的枚举。 
+Xbox Live 服务定义中，请求和响应，该服务使用的 JSON 对象。 许多服务使用的 JavaScript 对象表示法 (JSON) 对象有关联的指定允许出现在 JavaScript 对象表示法 (JSON) 对象的字段的值的枚举。 本部分列出了 JavaScript 对象表示法 (JSON) 对象中使用的枚举。 
  
 <a id="ID4EJB"></a>
 

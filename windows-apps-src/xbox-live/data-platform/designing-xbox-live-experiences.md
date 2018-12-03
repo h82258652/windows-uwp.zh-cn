@@ -1,19 +1,17 @@
 ---
 title: 设计 Xbox Live 体验
-author: KevinAsgari
 description: 了解如何通过为游戏规划玩家统计信息、排行榜和成就来为 Xbox Live 成员设计出色的体验。
 ms.assetid: d2a85621-7d02-4b11-a7fa-9ebaee0092d5
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 统计信息, 成就, 排行榜, 设计
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bcf2c0697f932e8ad121fe0e3cc52c221b7ed5f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f080593727ec6d7ddd529b2ce976708174250ba
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569579"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330242"
 ---
 # <a name="designing-xbox-live-experiences"></a>设计 Xbox Live 体验
 

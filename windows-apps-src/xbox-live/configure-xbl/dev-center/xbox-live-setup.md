@@ -1,23 +1,21 @@
 ---
 title: Xbox Live 设置配置
-author: shrutimundra
 description: 介绍如何在合作伙伴中心中配置 Xbox Live 设置。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live，Xbox，游戏，uwp，windows 10，Xbox one，合作伙伴中心，Xbox Live 设置
-ms.openlocfilehash: 8d3aa7c7407dc3d3fd3f2bcdf9640b605c734447
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a846a4b7f0069216e92eb123b33d9fc0f7f67c9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580746"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350009"
 ---
 # <a name="configure-xbox-live-setup-in-partner-center"></a>在合作伙伴中心中配置 Xbox Live 设置
 
-可以使用[合作伙伴中心](https://developer.microsoft.com/dashboard)配置 Xbox Live 的属性与你的游戏相关联的初始集。 通过执行以下操作添加配置：
+可以使用[合作伙伴中心](https://developer.microsoft.com/dashboard)配置与你的游戏关联的 Xbox Live 属性的初始集。 通过执行以下操作添加配置：
 
 1. 导航到作品的 **Xbox Live 设置**部分（位于**服务** > **Xbox Live** > **Xbox Live 设置**下面）。
 2. 在此页面上，你可以设置作品名称、默认区域设置、产品类型、设备系列和禁运日期。 设置完配置后，单击**保存**按钮以提交更改。
@@ -32,7 +30,7 @@ ms.locfileid: "7580746"
 > [!NOTE]
 > 此外，可以在“本地化字符串”页面上本地化所有字符串。  
 
-![选择下拉列表在合作伙伴中心中选择默认区域设置的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
+![选择要在合作伙伴中心中选择默认区域设置的下拉列表的图像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
 
 ## <a name="product-type"></a>产品类型
 此下拉菜单允许你更改产品的类型。 它默认为类型**游戏**。 你所做的选择将影响 XboxLivefeatures 提供给你。 有三个可供选择的选项：

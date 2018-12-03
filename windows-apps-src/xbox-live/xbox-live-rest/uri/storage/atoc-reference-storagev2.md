@@ -2,23 +2,21 @@
 title: 标题存储 URI
 assetID: 32bba1e4-0980-785e-c098-a96cd88a8e5f
 permalink: en-us/docs/xboxlive/rest/atoc-reference-storagev2.html
-author: KevinAsgari
 description: " 标题存储 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e17bb64fd31c8a3cf86b57453e709e15b0cf7e6f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0296eff0937ea5075630db0e049c86e2ea2c8ce
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572820"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332428"
 ---
 # <a name="title-storage-uris"></a>标题存储 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live*标题*存储服务。
+本部分提供了从*标题存储*的 Xbox Live 服务的统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息。
  
 所有平台上运行的游戏均可使用此服务。
  

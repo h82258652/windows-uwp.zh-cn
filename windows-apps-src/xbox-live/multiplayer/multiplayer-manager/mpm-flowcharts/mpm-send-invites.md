@@ -1,19 +1,17 @@
 ---
 title: 流程图 - 邀请其他玩家
-author: KevinAsgari
 description: Xbox Live 多人游戏管理器流程图 - 向其他玩家发送邀请。
 ms.assetid: d43b5030-a639-4445-ba33-7bddd35d13e1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a08ed2620bf3483cdfe4d77d683cc3abec26f7b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a95e53ebd948404858500695bdec28ec4f5d6c42
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571976"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336887"
 ---
 # <a name="flowchart---send-an-invitation-to-another-player"></a>流程图 - 向其他玩家发送邀请
 

@@ -2,19 +2,17 @@
 title: /{uri}
 assetID: 40b256c3-197d-66c9-5680-15ddddde82ee
 permalink: en-us/docs/xboxlive/rest/uri-uri.html
-author: KevinAsgari
 description: " /{uri}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b759fe8049b5f194a0754c9b357a4aab271950e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 58df5fba21d207e352b6c6915ef21688cde8a7a4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556197"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324648"
 ---
 # <a name="uri"></a>/{uri}
 访问游戏剪辑数据。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
@@ -26,7 +24,7 @@ ms.locfileid: "7556197"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | <b>uri</b>| 字符串| 要使用的 URI。 请参阅方法的详细信息页面。| 
   

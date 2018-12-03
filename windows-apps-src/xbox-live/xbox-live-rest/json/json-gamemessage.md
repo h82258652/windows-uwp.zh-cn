@@ -2,19 +2,17 @@
 title: GameMessage (JSON)
 assetID: c11606e6-701f-5807-4aef-5608c98ad831
 permalink: en-us/docs/xboxlive/rest/json-gamemessage.html
-author: KevinAsgari
 description: " GameMessage (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f8d04b0487c7b42becd9a899c3532a6e5221f22e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2bddd9e26b4716fd1e33c4b5bbde56672b5d3f8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577958"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347617"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 一个游戏会话的消息队列中定义为一条消息的数据的 JSON 对象。 
@@ -24,13 +22,13 @@ ms.locfileid: "7577958"
  
 GameMessage JSON 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
-| 数据| 8 位无符号整数数组| Base64 编码的数据的游戏的客户端想要发送到其他游戏的客户端。 此值不透明到服务器。 | 
+| 数据| 8 位无符号整数数组| 游戏的客户端想要发送到其他游戏的客户端 Base64 编码的数据。 此值不透明到服务器。 | 
 | senderXuid| 64 位无符号的整数| 玩家发送消息的 Xbox 用户 ID。 | 
-| 序列号| 32 位有符号整数| 该游戏的消息的序列号。 由服务器分配此值。 序列号保证单调递增，但可能不是连续。 序列号是唯一内的消息队列解释，但不能在消息队列。 | 
+| 序列号| 32 位有符号整数| 该游戏的消息的序列号。 服务器分配此值。 序列号保证单调递增，但可能不会连续。 序列号是唯一内的消息队列解释，但不能在消息队列。 | 
 | queueIndex| 32 位有符号整数| 消息的会话消息队列的索引。 可能的值为 0-3。| 
-| 时间戳| DateTime| 游戏的消息队列中创建的服务器，采用 UTC 时间。 | 
+| 时间戳| DateTime| 游戏的消息队列中创建的服务器，采用 UTC 的时间。 | 
   
 <a id="ID4ERC"></a>
 

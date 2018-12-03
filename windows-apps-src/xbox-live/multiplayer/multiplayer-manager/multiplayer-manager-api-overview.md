@@ -1,19 +1,17 @@
 ---
 title: 多人游戏管理器 API 概述
-author: KevinAsgari
 description: 了解 Xbox Live 多人游戏管理器 API。
 ms.assetid: 658babf5-d43e-4f5d-a5c5-18c08fe69a66
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器
 ms.localizationpriority: medium
-ms.openlocfilehash: 142a09bca9c33aa53a4e034c08bb405ac7b75fce
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7838de6845bc6c49acf649c0e859cd0d7020490f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555120"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348699"
 ---
 # <a name="multiplayer-manager-api-overview"></a>多人游戏管理器 API 概述
 

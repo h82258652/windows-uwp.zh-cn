@@ -2,19 +2,17 @@
 title: PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 assetID: e3e4f164-ac5e-cbd9-8c05-2e1ac00dc55e
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.html
-author: KevinAsgari
 description: " PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c5e104add620c68f06a589be8f49f2a625de63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d35b3f89f8b866a5236e8f5ac91eb37d9a82d306
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556354"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337969"
 ---
 # <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 创建、 更新或加入会话。
@@ -33,9 +31,9 @@ ms.locfileid: "7556354"
 
 ## <a name="remarks"></a>备注
 
-此 HTTP/REST 方法创建，加入，或更新会话，具体取决于同一个 JSON 请求正文模板子集发送。 成功时，它将返回一个**MultiplayerSession**对象，包含从服务器返回的响应。 在其中的属性可能不同于传入的**MultiplayerSession**对象中的属性。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**换行。
+此 HTTP/REST 方法创建时，连接，或更新会话，具体取决于发送相同的 JSON 请求正文模板的子集。 成功时，它将返回一个**MultiplayerSession**对象，包含从服务器返回的响应。 在其属性可能不同于传入的**MultiplayerSession**对象中的属性。 此方法可以通过**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**换行。
 
-会话创建和更新操作 PUT 使用 application/json 正文，表示要应用更改。 操作是幂等，相同的更改的多个应用程序，即有任何其他效果。
+会话创建和更新操作 PUT 使用 application/json 正文，表示要应用更改。 操作幂等，相同的更改的多个应用程序，即有任何其他效果。
 
 JSON 请求正文镜像会话数据结构。 所有字段和子字段都是可选的。
 
@@ -81,11 +79,11 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4EFC"></a>
 
@@ -99,11 +97,11 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 下面是示例请求正文用于创建或加入会话。 请求正文中的以下成员都是可选的。 其他所有可能的成员被禁止在请求中。
 
-| 成员| 类型| 说明|
+| 成员| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 常量| object| 会话模板，以生成会话常量与合并的只读的设置。 |
-| 属性 | object | 合并到的会话属性更改。|
-| members.me | object| 常量和大量的属性，例如其顶级对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 |
+| 常量| object| 会话模板，以产生会话常量与合并的只读的设置。 |
+| 属性 | object | 若要合并到的会话属性的更改。|
+| members.me | object| 常量和大量的属性，例如其顶层的对应项。 任何 PUT 方法需要用户是会话的成员，并添加用户，如有必要。 "我"指定为 null，如果是从会话中删除发出请求的成员。 |
 | 成员 | object| 表示用户添加到会话中，从零开始的索引键控其他对象。 在请求中的成员数开始时始终具有 0，即使会话已包含成员。 成员将添加到会话中请求中的显示的顺序。 成员属性只能由用户属于其设置。 |
 | 服务器 | object| 关联的服务器参与者的设置的值，该值指示更新和添加到会话。 服务器指定为 null，如果是从会话中删除该服务器条目。 |
 

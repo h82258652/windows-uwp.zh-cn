@@ -1,19 +1,17 @@
 ---
 title: Multiplayer 2015 常见问题和疑难解答
-author: KevinAsgari
 description: 有关 Xbox Live 多人游戏 2015 的常见问题和疑难解答。
 ms.assetid: 75823f10-b342-4e20-b885-e5ad4392bc3d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c6778ebc90d917a883a437d905112cf32a6829
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 171d80f4fc925d95d80043f40bb387b045a4fe23
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559239"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336983"
 ---
 # <a name="multiplayer-2015-faq-and-troubleshooting"></a>Multiplayer 2015 常见问题和疑难解答
 

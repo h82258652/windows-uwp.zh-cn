@@ -1,19 +1,17 @@
 ---
 title: 成就奖励
-author: KevinAsgari
 description: 介绍如何配置成就以提供奖励。
 ms.assetid: b6fc5bdb-ba7b-4687-985e-894182f066da
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 成就, 奖励
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c7d192bfe4b156e3767617ad9243efd1d94bd8e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0fbbcb06a2aba927301cf982d09fdb55192ec84c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571979"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348838"
 ---
 # <a name="achievement-rewards"></a>成就奖励
 
@@ -38,7 +36,7 @@ Xbox Live 支持以下类型的奖励：
 
 当用户解锁玩家分数成就时，Xbox Live 会自动将用户的玩家分数提高配置的数量。
 
-在可将玩家分数作为成就奖励的游戏方面存在限制。 请参阅上策略文档https://developer.xboxlive.com/的最新信息。
+在可将玩家分数作为成就奖励的游戏方面存在限制。 请参阅上策略文档https://developer.xboxlive.com/最新信息。
 
 #### <a name="art"></a>艺术作品 ####
 你是否拥有一些设计人员在游戏早期初始阶段绘制的有趣的概念艺术作品？ 你是否拥有漂亮、分辨率高的图像，用于在玩家访问时装饰中心应用程序？ 也许你的应用支持多种皮肤？ 通过艺术奖励，你可以在游戏中获得华丽、美观的体验，除此以外，玩家必须赢取才能获得。

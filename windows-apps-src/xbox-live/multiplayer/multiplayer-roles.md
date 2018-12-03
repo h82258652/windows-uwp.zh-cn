@@ -1,18 +1,16 @@
 ---
 title: 多人游戏角色
-author: KevinAsgari
 description: 了解有关使用角色定义 Xbox Live 多人游戏中的玩家角色。
-ms.author: kevinasg
 ms.date: 06/29/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a61230d3ef857698fbe54fa528808d6166b2a3b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac5e7758bd8e068681d1c8dab2d47d11374c2616
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558114"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330776"
 ---
 # <a name="roles"></a>角色
 

@@ -2,19 +2,17 @@
 title: GET (/media/{marketplaceId}/crossMediaGroupSearch)
 assetID: 7c509af1-8dce-f419-c4de-2fad54fd1edb
 permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearchget.html
-author: KevinAsgari
 description: " GET (/media/{marketplaceId}/crossMediaGroupSearch)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 16baf465eb534e40854fcda1df7abb8c10ff2fbe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7258e8870519478ce49b7b2e60493a91a1277bbc
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581804"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328044"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
 获取多个不同的媒体组中的项。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -31,14 +29,14 @@ ms.locfileid: "7581804"
  
 跨组 API 允许客户端搜索的几个不同的媒体组中的项。 此 API 需要分页结果使用仅向前延续令牌。 此 API 将接受查询优化器。
  
-**SandboxId**现在从 XToken 声明检索并强制执行。 如果**SandboxId**不存在，娱乐发现服务 (EDS) 将引发 400 错误请求错误。
+**SandboxId**现在从 XToken 声明检索并强制执行。 如果不存在**SandboxId** ，则娱乐发现服务 (EDS) 将引发 400 错误请求错误。
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   
@@ -47,7 +45,7 @@ ms.locfileid: "7581804"
  
 ## <a name="query-string-parameters"></a>查询字符串参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | --- | 
 | ContinuationToken| 字符串| 可选。 请参阅 ContinuationToken 参数。| 
 | q| 字符串| 必需。 查询搜索中使用的术语。| 
@@ -62,7 +60,7 @@ ms.locfileid: "7581804"
  
 ### <a name="sample-response"></a>示例响应
  
-下面的 JSON 代码是为了响应在调用`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`。
+下面的代码 JSON 是为了响应在调用`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`。
  
 
 ```cpp

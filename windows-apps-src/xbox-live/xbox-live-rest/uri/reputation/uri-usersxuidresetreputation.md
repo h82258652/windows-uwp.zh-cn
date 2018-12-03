@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/resetreputation
 assetID: 85c74beb-a12f-4015-e244-36942e366afc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputation.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/resetreputation"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ba9221b7b213cfd6c92a9a6cfcd5c6dec5c051fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6cd2f28833cdc86fb3fd01bb85890dcb0654901
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557915"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344906"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
-使访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
+允许访问指定的用户的信誉评分，强制执行团队。 这些 Uri 的域和端口号是`reputation.xboxlive.com:10433`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,7 +24,7 @@ ms.locfileid: "7557915"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| 字符串| Xbox 用户 ID (XUID) 指定的用户。| 
   

@@ -1,19 +1,17 @@
 ---
 title: 更新的多人游戏邀请流程
-author: KevinAsgari
 description: 提供了更新的 Xbox Live 多人游戏邀请实现流程。
 ms.assetid: 1569588e-3bbc-47d3-8b7d-cc9774071adc
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: 257dea8d3a69195b81e23dd43f304eabf99779ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1092c84521271e996db0b89630d22f7e51727bfa
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552940"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348591"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a>更新的多人游戏邀请流程
 

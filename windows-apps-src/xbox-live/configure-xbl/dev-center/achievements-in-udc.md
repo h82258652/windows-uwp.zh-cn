@@ -1,26 +1,24 @@
 ---
 title: Achievements 2017
-author: PhillipLucas
 description: 介绍如何在合作伙伴中心，以提供奖励配置成就。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 11/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心
-ms.openlocfilehash: d5e84e2e124a8ca6cac814dfb05120a8e6137ac3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ef2365ee560e273108c38570697d599adde4c0b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564413"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329837"
 ---
-# <a name="configure-achievements-2017-in-partner-center"></a>在合作伙伴中心中配置 Achievements 2017
+# <a name="configure-achievements-2017-in-partner-center"></a>在合作伙伴中心配置 Achievements 2017
 
 > [!IMPORTANT]
 > 成就仅适用于 ID@Xbox 或托管合作伙伴。 参加 Xbox Live 创意者计划的游戏不受支持。
 
-[合作伙伴中心](https://partner.microsoft.com/dashboard)可用于配置与你的游戏相关联的[Achievements 2017](../../achievements-2017/simplified-achievements.md) 。 通过以下操作添加新成就：
+你可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)配置与你的游戏相关联的[Achievements 2017](../../achievements-2017/simplified-achievements.md) 。 通过以下操作添加新成就：
 
 1. 导航至游戏中的“成就”部分，位于**服务** > **Xbox Live** > **成就**下。
 2. 单击**新成就**按钮并填写表格。  完成后，单击**保存**。
@@ -66,7 +64,7 @@ ms.locfileid: "7564413"
 ### <a name="reward-details"></a>奖励详细信息
 填写奖励详细信息以关联新奖励。 完成后，单击**添加**。
 
-![在合作伙伴中心中配置成就奖励详细信息的屏幕截图](../../images/dev-center/achievements-5.png)
+![在合作伙伴中心配置成就奖励详细信息的屏幕截图](../../images/dev-center/achievements-5.png)
 
 可以创建两种类型的成就奖励。 它们是：
 

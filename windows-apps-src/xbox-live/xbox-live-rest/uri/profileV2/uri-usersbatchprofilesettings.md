@@ -2,19 +2,17 @@
 title: /users/batch/profile/settings
 assetID: 2809adc7-5daa-1483-8a2e-48380430e6e1
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettings.html
-author: KevinAsgari
 description: " /users/batch/profile/settings"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 273f693c52d880b1b33153704dfee084f7210e2e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c04c825dde06ab6f75a61d308d758115f898177
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552620"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344837"
 ---
 # <a name="usersbatchprofilesettings"></a>/users/batch/profile/settings
 访问用户或用户的配置文件。 这些 Uri 的域是`profile.xboxlive.com`。

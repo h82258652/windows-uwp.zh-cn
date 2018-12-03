@@ -2,19 +2,17 @@
 title: BatchRequest (JSON)
 assetID: 2ca34506-8801-efc5-7c83-3c9ec5572276
 permalink: en-us/docs/xboxlive/rest/json-batchrequest.html
-author: KevinAsgari
 description: " BatchRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 29effaaa7fe70a2b3ae19e9e30d8a852d954c9a9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51073c71700613edcd7c22e18cc0c00a9222d7e5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581429"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345117"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
 用来筛选状态信息，如用户、 设备和游戏的属性的数组。
@@ -25,13 +23,13 @@ ms.locfileid: "7581429"
 
 BatchRequest 对象具有以下规范。
 
-| 成员| 类型| 说明|
+| 成员| 类型| 描述|
 | --- | --- | --- |
 | 用户| 字符串的数组| 用户想要了解，最多个一次 1100 Xuid 其状态的列表 XUIDs。|
-| deviceTypes| 字符串的数组| 使用你想要了解有关用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，不会被筛选掉）。|
+| deviceTypes| 字符串的数组| 使用你想要了解有关的用户的设备类型的列表。 如果该数组留空，则默认为所有可能的设备类型 （即，不会被筛选掉）。|
 | 主题作品| 32 位无符号整数的数组| 设备的列表类型你想要了解有关其的用户。 如果该数组留空，则默认为所有可能的游戏 （即，不会被筛选掉）。|
-| level| 字符串| 可能值： <ul><li>用户-获取用户节点</li><li>设备-获取用户和设备节点</li><li>标题-获取基本标题级别信息</li><li>所有-获取完整状态信息、 媒体信息，或同时</li></ul>默认值为"标题"。| 
-| onlineOnly| 布尔值| 如果此属性为 true，批处理操作会筛选掉记录脱机用户 （包括遮盖的）。 如果它不提供，则将返回在线和离线用户。|
+| level| 字符串| 可能值： <ul><li>用户-获取用户节点</li><li>设备-获取用户和设备节点</li><li>游戏-获取基本标题级别信息</li><li>所有-获取完整状态信息和媒体信息</li></ul>默认值为"标题"。| 
+| onlineOnly| 布尔值| 如果此属性为 true，批处理操作筛选掉记录脱机用户 （包括遮盖的订阅）。 如果未提供的数据，则将返回在线和离线用户。|
 
 <a id="ID4EAD"></a>
 

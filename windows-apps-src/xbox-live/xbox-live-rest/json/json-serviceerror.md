@@ -2,19 +2,17 @@
 title: ServiceError (JSON)
 assetID: 81c43f6e-bfff-c4b5-d25c-eace22649f01
 permalink: en-us/docs/xboxlive/rest/json-serviceerror.html
-author: KevinAsgari
 description: " ServiceError (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f00618c3ecb51a0934b1b3f73a51553b49f153b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: da3d682a1b66d25a12f21a93e9596d13afae7f90
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563874"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337550"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 包含有关错误对服务调用失败时返回的信息。 
@@ -27,8 +25,8 @@ ServiceError 对象具有以下规范。
  
 | 成员| 类型| 说明| 
 | --- | --- | --- | 
-| code| 32 位有符号整数 | 错误的类型。 请参阅下表有关可能的值。 | 
-| 源| 字符串 | 引发错误服务的名称。 例如，值为<code>ReputationFD</code>指示错误是在信誉服务。 | 
+| code| 32 位有符号整数 | 错误类型。 请参阅下表了解可能的值。 | 
+| 源| 字符串 | 引发了错误的服务的名称。 例如，值为<code>ReputationFD</code>指示错误是在信誉服务。 | 
 | description| 字符串| 错误的描述。 | 
  
 <a id="ID4EBC"></a>
@@ -36,11 +34,11 @@ ServiceError 对象具有以下规范。
  
 ### <a name="error-codes"></a>错误代码
  
-| 值| 说明| 
+| 值| 描述| 
 | --- | --- | --- | --- | --- | 
 | 0| 成功无错误| 
 | 4000| 提交与 POST 请求失败验证的请求正文的 JSON 文档无效。 请参阅描述字段的详细信息。 | 
-| 4100| 用户不会不存在 XUID 请求 URI 中包含不表示 XBOX Live 上的有效用户。| 
+| 4100| 用户不会不存在 XUID 请求 URI 中包含不表示 XBOX Live 上有效的用户。| 
 | 4500| 授权错误调用方无权执行请求的操作。| 
 | 5000| 服务错误时出现内部服务错误| 
 | 5300| 服务不可用服务不可用。| 

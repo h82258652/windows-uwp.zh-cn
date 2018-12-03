@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 538547c85648970ab3e9fe3ae413e8a03df814ad
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993146"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324978"
 ---
 # <a name="permissioncheckbatchrequest-json"></a>PermissionCheckBatchRequest (JSON)
 PermissionCheckBatchRequest 对象的集合。 

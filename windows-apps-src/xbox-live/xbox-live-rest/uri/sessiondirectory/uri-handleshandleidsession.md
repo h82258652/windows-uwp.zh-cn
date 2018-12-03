@@ -2,25 +2,23 @@
 title: /handles/{handleId}/session
 assetID: 4ed2dcf5-5d1f-91ce-4a3f-eb3ba68727bf
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsession.html
-author: KevinAsgari
 description: " /handles/{handleId}/session"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fa1ad62b2e76dceda79744c59eb59ddc50ea90
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e7b6990917437c22dd4d9282492e2a0eab37893b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567850"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324681"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 支持 PUT 并获得对会话的操作，使用句柄取消引用。 
 
 > [!NOTE] 
-> 此 URI 由 2015年多人游戏和应用仅向该多人游戏版本及更高版本。 它旨在用于使用模板合约 104/105 或更高版本。  
+> 此 URI 由 2015年多人游戏，并将应用仅向该多人游戏版本及更高版本。 它旨在与模板合约 104/105 或更高版本一起使用。  
 
  
 
@@ -38,7 +36,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | --- | --- | 
 | handleId| GUID| 会话句柄的唯一 ID。| 
   

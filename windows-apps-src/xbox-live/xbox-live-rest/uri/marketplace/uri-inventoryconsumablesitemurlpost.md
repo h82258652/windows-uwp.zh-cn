@@ -2,22 +2,20 @@
 title: POST ({itemID})
 assetID: 2c3c166b-e638-cfb9-d68e-9f8ab9a838d3
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurlpost.html
-author: KevinAsgari
 description: " POST ({itemID})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: da2a3fc507915f3ed20b718f5a40cca3d0ba5e0b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559516"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344477"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-指示，已使用所有或易耗型库存项目的部分和递减请求的距离该消耗品的数量。
+指示，已使用全部或易耗型的库存项目的一部分并减少所请求的距离该消耗品的数量。
 这些 Uri 的域是`inventory.xboxlive.com`。
 
   * [备注](#ID4EX)
@@ -31,14 +29,14 @@ ms.locfileid: "7559516"
 ## <a name="remarks"></a>备注
 
    * 如果调用方要求占用的数量超过剩余可以提供的项目，则调用将被拒绝。
-   * 调用方要求占用的数量必须是上述 0 正整数。 消耗值为 0 或更低的调用将被拒绝。
+   * 调用方要求占用的数量必须大于 0 正整数。 将拒绝消耗值为 0 或更低的调用。
    * 如果调用方提供一个空的事务 ID，将拒绝该请求。
-   * 如果可用，以便它将能够确定哪些游戏报告消耗，将会记录的主题作品声明。
+   * 如果可用，因此它将能够确定哪些游戏报告消耗，将记录的主题作品声明。
    * 使用相同的 transactionId 的其他文章将被忽略某个时间段。
 
 
 > [!NOTE]
-> 此 API <b>x xbl 协定版本标头</b>是"4"。
+> 此 api <b>x xbl 协定版本标头</b>是"4"。
 
 
 <a id="ID4EQB"></a>
@@ -46,7 +44,7 @@ ms.locfileid: "7559516"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | itemID| 字符串| 特定于每个用户单数库存项目的 ID|
 
@@ -70,14 +68,14 @@ ms.locfileid: "7559516"
 ```
 
 
-删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供能够限制两次计数相同的使用情况的风险时使用易耗型内容操作重试调用方。
+删除数量字段允许调用方指示他们想要删除该消耗品的剩余数量的易耗品的数量。 交易 ID 字段提供了一种方法重试限制两次计数相同的使用情况的风险时使用易耗型内容的操作与调用方。
 
 <a id="ID4ENC"></a>
 
 
 ## <a name="response-body"></a>响应正文
 
-POST，假设传递身份验证并分配适当授权上下文的响应是具有相同的 transactionId 收据 acknolodgement 传递给中 POST 请求、 在易耗型项的 URL 和项目的新的服务数量值。
+POST，假设传递身份验证并分配适当授权上下文响应是具有相同的 transactionId 收据 acknolodgement 传递给中 POST 请求、 易耗型项的 URL 和项目的新的服务数量值。
 
 <a id="ID4EVC"></a>
 

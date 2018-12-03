@@ -2,23 +2,21 @@
 title: 匹配 URI
 assetID: 667b02a9-6f34-8165-001b-ee8782575202
 permalink: en-us/docs/xboxlive/rest/atoc-reference-matchtickets.html
-author: KevinAsgari
 description: " 匹配 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: dc3aa9844a00d3a2055f263f3f7c17f33fb7d370
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c52abca7ed49d4a5e14520095ae944938b86f093
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567310"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325288"
 ---
 # <a name="matchmaking-uris"></a>匹配 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的匹配服务。 
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的匹配服务。 
  
 <a id="ID4E6"></a>
 
@@ -30,14 +28,14 @@ momatch.xboxlive.com
  
 ## <a name="service-version"></a>服务版本
  
-这些 HTTP/REST Uri 的调用方必须为 X-Xbl-合同的版本，HTTP 标头，指定的服务版本的娱乐发现服务 (EDS) 传递值 103 或更高版本。 
+这些 HTTP/REST Uri 的调用方必须将值传递 103 或更高版本的 X-Xbl-合约的版本，指定的服务版本娱乐发现服务 (EDS) 的 HTTP 标头。 
   
 <a id="ID4ELB"></a>
 
  
 ## <a name="system-objects-and-properties"></a>系统对象和属性
  
-目前，匹配服务的所有配置都发生手动，使用[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)的服务配置部分。 为 MPSD 定义的对象也反映匹配的一些信息。 
+目前，匹配服务的所有配置都发生手动，使用[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com)或[合作伙伴中心](https://partner.microsoft.com/dashboard)的服务配置部分。 在为 MPSD 定义的对象还反映匹配的一些信息。 
  
 [MatchTicket (JSON)](../../json/json-matchticket.md)和[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)中定义的主要用于配置匹配的 JSON 对象。 请注意，所有匹配票证必须都定义一个**ticketSessionRef**对象来提供对包含玩家或想要与其他人匹配的玩家的多人游戏会话的引用。 
   

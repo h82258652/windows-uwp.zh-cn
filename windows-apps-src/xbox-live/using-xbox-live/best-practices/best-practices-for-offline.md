@@ -1,19 +1,17 @@
 ---
 title: 脱机最佳实践
-author: KevinAsgari
 description: 了解在支持 Xbox Live 的游戏中处理脱机情形的最佳实践。
 ms.assetid: 6290dd67-1145-4fe2-8ada-c3a29a9ad29a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 脱机
 ms.localizationpriority: medium
-ms.openlocfilehash: a552f275a69fde67f22d25a79b5b8c318c4f8dc3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5680b045873ebf6eed1422cb915f3f53df748790
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557517"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351055"
 ---
 # <a name="best-practices-for-offline"></a>脱机最佳实践
 

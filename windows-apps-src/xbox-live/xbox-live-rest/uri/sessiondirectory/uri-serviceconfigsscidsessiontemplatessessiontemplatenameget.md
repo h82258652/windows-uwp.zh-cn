@@ -2,19 +2,17 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 assetID: 81139619-dc27-1601-30ba-08f6c45aaaca
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.html
-author: KevinAsgari
 description: " GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 25a2e4cd0ec13baea6ea14c44b277a8d14e1b3eb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e70c2412728eafe76e520e871fbe106c4b1a8ea3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560491"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331402"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 检索一组会话模板名称。
@@ -32,7 +30,7 @@ ms.locfileid: "7560491"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话的 id。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话的 id。 |

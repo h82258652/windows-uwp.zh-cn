@@ -1,19 +1,17 @@
 ---
 title: 读取二进制文件 blob
-author: KevinAsgari
 description: 了解在 Xbox Live 标题存储中读取二进制文件 blob。
 ms.assetid: 9b8e0c35-0cea-4491-bf30-22fad224f11b
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 标题存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dc5e429ab36621db1c5525ae7f1a8dc5da3b4fc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e2a0be72142a3e11c7c680cfc998287f396c2afc
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555138"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340448"
 ---
 # <a name="reading-a-binary-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中读取二进制文件 blob
 

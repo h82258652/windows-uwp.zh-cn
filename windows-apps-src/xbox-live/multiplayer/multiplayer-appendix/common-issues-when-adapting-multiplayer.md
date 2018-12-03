@@ -1,19 +1,17 @@
 ---
 title: 多人游戏 2015 迁移的常见问题
-author: KevinAsgari
 description: 了解在调整多人游戏 2014 游戏以适应 2015 多人游戏时你可能遇到的常见问题。
 ms.assetid: 206f8fe4-c7aa-44b8-923b-18f679d8439f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 0704fe3919a84df718c9c1fba44a4fff85ee02ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a04370ee2f45534c88467700b9523c5a4ad11094
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577543"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348360"
 ---
 # <a name="common-issues-when-adapting-your-multiplayer-2014-title-to-multiplayer-2015"></a>调整多人游戏 2014 游戏以适应多人游戏 2015 时的常见问题
 

@@ -1,19 +1,17 @@
 ---
 title: 使用 SmartMatch 匹配
-author: KevinAsgari
 description: 了解如何使用 Xbox Live SmartMatch 在多人游戏中匹配玩家。
 ms.assetid: 10b6413e-51d9-4fec-9110-5e258d291040
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 匹配, smartmatch
 ms.localizationpriority: medium
-ms.openlocfilehash: c013995c29b0916d10291a954a22787c3dfa9716
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 89f33768efcd649987866fd0798c222aa97f7ff8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552892"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330500"
 ---
 # <a name="using-smartmatch-matchmaking"></a>使用 SmartMatch 匹配
 

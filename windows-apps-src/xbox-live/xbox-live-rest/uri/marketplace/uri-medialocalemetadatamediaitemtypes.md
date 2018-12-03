@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes
 assetID: a88f4c31-082a-45d2-e5d7-b881e829e357
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypes.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/metadata/mediaItemTypes"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b752b23c5fdbfe8fa26bd49d0dfaf7472559441c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd5884b2d416c74fa7043791c8e817e66dd6e5ef
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572794"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332655"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypes"></a>/media/{marketplaceId}/metadata/mediaItemTypes
 访问所有受支持的 mediaItemTypes 给定 EDS 版本。 这些 Uri 的域是`eds.xboxlive.com`。
@@ -26,7 +24,7 @@ ms.locfileid: "7572794"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   
@@ -37,7 +35,7 @@ ms.locfileid: "7572794"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes)](uri-medialocalemetadatamediaitemtypesget.md)
 
-&nbsp;&nbsp;列出所有受支持的 mediaItemTypes 给定 EDS 版本。
+&nbsp;&nbsp;列出了所有受支持的 mediaItemTypes 给定 EDS 版本。
  
 <a id="ID4E5B"></a>
 

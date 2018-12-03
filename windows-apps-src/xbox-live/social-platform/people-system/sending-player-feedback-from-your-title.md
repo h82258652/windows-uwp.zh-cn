@@ -1,19 +1,17 @@
 ---
 title: 从游戏中发送玩家反馈
-author: KevinAsgari
 description: 了解你的游戏如何通过向 Xbox Live 信誉服务发送玩家反馈来帮助提升积极的玩家体验。
 ms.assetid: 49f8eb44-1e31-4248-b645-9123df6f8689
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 信誉, 玩家反馈
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0d6693fb1d97a408a8b6559bb7c317a0af0030
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3e8d82fc9b195f174bf7a46a8d21fb20b2df9551
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555132"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347140"
 ---
 # <a name="sending-player-feedback-from-your-title"></a>从游戏中发送玩家反馈
 Xbox Live 成员大部分都很出色，但有一小部分“坏苹果”损害了其他人的游戏体验。 我们通过用户和游戏提交的反馈发现了这一小部分用户。 我们通过确保让这些“坏苹果”只有有限的多玩家体验，从而无法干扰良好玩家玩游戏，来保护其余的用户。 Xbox 非常依赖用户报告其他用户行为来保持系统的准确性，但 Xbox One 中的游戏可以直接参与并显著改善用户信誉群体的准确性。

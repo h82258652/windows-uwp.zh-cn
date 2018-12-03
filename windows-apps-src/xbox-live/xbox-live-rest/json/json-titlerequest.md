@@ -2,22 +2,20 @@
 title: TitleRequest (JSON)
 assetID: 43aeb6f9-726d-9260-e2ba-f005ea688bf1
 permalink: en-us/docs/xboxlive/rest/json-titlerequest.html
-author: KevinAsgari
 description: " TitleRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ab030f1f8086bc33243b4a764ccafd8747ea6c81
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a90f42c2f830ba6f04f77a1acaba067a2746a062
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576962"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322640"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
-有关游戏信息请求。 
+有关游戏的请求。 
 <a id="ID4EN"></a>
 
  
@@ -27,10 +25,10 @@ TitleRequest 对象具有以下规范。
  
 | 成员| 类型| 描述| 
 | --- | --- | --- | 
-| id| 32 位无符号的整数| 标题的标识符。| 
-| 活动| [ActivityRequest](json-activityrequest.md)| 游戏内信息，包括丰富的状态和媒体信息，如果可用。| 
+| id| 32 位无符号的整数| 游戏的标识符。| 
+| 活动| [ActivityRequest](json-activityrequest.md)| 游戏内信息，包括丰富的状态和媒体信息，如可用。| 
 | 状态| 字符串| 无论用户是否处于活动状态。 若要将标记为非活动用户，需要使用此字段。 默认值为"活动"。| 
-| 放置| 字符串| 游戏放置模式。 可能的值包括"完全"、"fill"，"贴靠"或"background"。 默认值为"完全"。| 
+| 放置| 字符串| 游戏所放置模式。 可能的值包括"完全"、"fill"，"贴靠"或"background"。 默认值为"完全"。| 
   
 <a id="ID4EJC"></a>
 

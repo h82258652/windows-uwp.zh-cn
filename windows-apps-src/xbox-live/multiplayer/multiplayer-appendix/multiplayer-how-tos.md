@@ -1,19 +1,17 @@
 ---
 title: 多人游戏操作指南
-author: KevinAsgari
 description: 介绍如何在 Xbox Live 多人游戏 2015 中实现常见任务。
 ms.assetid: 99c5b7c4-018c-4f7a-b2c9-0deed0e34097
-ms.author: kevinasg
 ms.date: 08/29/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: e845d1d714b42e1c1989b442a9c232f610b72ae4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 20bf3486491e8173ce946a3a5dc2e4bc83305c83
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554800"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344411"
 ---
 # <a name="multiplayer-how-tos"></a>多人游戏操作指南
 

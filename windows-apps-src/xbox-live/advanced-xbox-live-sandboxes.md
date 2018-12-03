@@ -1,24 +1,22 @@
 ---
 title: 高级 Xbox Live 沙盒
-author: KevinAsgari
 description: 了解如何使用沙盒在开发期间以托管合作伙伴的身份隔离相关内容。
 ms.assetid: bd8a2c51-2434-4cfe-8601-76b08321a658
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, xbox one, xdk, 托管合作伙伴, 沙盒, 内容隔离
 ms.localizationpriority: medium
-ms.openlocfilehash: bd540e8ed6caccfc8daa000ff72d227573078f01
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e95999fc132e5dcda556120e9cf42f9c302f654
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562003"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324616"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高级 Xbox Live 沙盒
 
 > [!NOTE]
-> 本文介绍的沙盒的高级的用法，它主要适用于拥有多个团队和复杂权限要求的大型游戏工作室。  如果你是 Xbox Live 创意者计划中的一员或 ID@Xbox 开发人员，建议你查看 [Xbox Live 沙盒简介](xbox-live-sandboxes.md)
+> 本文介绍的沙盒的高级的用法，它主要适用于具有多个团队和复杂权限要求的大型游戏工作室。  如果你是 Xbox Live 创意者计划中的一员或 ID@Xbox 开发人员，建议你查看 [Xbox Live 沙盒简介](xbox-live-sandboxes.md)
 
 Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什么是沙盒，它们存在的原因，如何适用于发布者，以及如何影响内部 Xbox 团队。 本文档面向的读者是生成 Xbox One 内容和使用沙盒的发布者。
 
@@ -48,7 +46,7 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 在这个全新的世界里，主题作品或产品本身对 Xbox Live 来说没有任何意义。 因为我们必须支持单个主题作品的同步零售和开发，以及主题作品*实例化*，以做出并保持必要的区分。 主题作品实例驻留在沙盒中，这就是沙盒起作用的地方。
 
-为在 XDP 上创建作品，发布者创建一个产品组、 指定产品组的类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
+若要在 XDP 上创建作品，发布者创建一个产品组、 指定产品组的类型，然后创建单个产品。 （有关更多详细信息，请参阅 XDP 文档。）下面的图表阐明了产品组、产品、产品实例以及沙盒之间的关系。
 
 图 2. 产品组、产品、产品实例以及沙盒之间的关系。
 
@@ -56,7 +54,6 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 <a name="product-instances"></a>产品实例
 -----------------
-
 *产品实例*是对某一特定沙盒中的主题作品、产品和配置数据的一种投射。 此数据将从以下三方面进行描述：服务配置、目录源数据和二进制文件。
 
 ### <a name="service-configuration"></a>服务配置
@@ -77,7 +74,6 @@ Xbox Live *沙盒*为开发提供了整个专用环境。 本文档将介绍什�
 
 <a name="getting-the-access-right"></a>获取访问权
 ------------------------
-
 在 Xbox One 中，有两种不同的内容访问类型：
 
 *设计时访问*—通过 XDP 工具从 PC 端访问—允许人们操作你的产品以上传、整理以及使用内容、配置和元数据，但不允许他们运行或操作产品实例。
@@ -152,24 +148,20 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 <a name="what-is-a-sandbox"></a>什么是沙盒？
 ------------------
-
 简而言之，*沙盒是分隔生产中的数据的一种方法*。
 
 <a name="why-do-we-need-sandboxes"></a>我们为什么需要沙盒？
 -------------------------
-
 正如用户和设备访问主题作品一样，主题作品可以访问服务。 我们引入了“主题作品组”的概念，其中，多组主题作品可获得服务资源的访问权限。
 
 由于所有内容（预发行和零售）都由单个 Xbox One 生产环境承载，因此，必须阻止主题作品的多个实例（预发行/零售）在资源的相同实例上运行。
 
 <a name="what-is-in-a-sandbox"></a>沙盒里有什么？
 ---------------------
-
 沙盒包含添加到沙盒中的每个主题作品的产品实例。
 
 <a name="what-is-a-sandbox-id"></a>什么是沙盒 ID？
 ---------------------
-
 沙盒 ID 是作品、产品或服务配置数据的分隔单元。多个作品可以位于同一个沙盒中，这是这些作品可以共享任何服务配置数据的先决条件。
 
 沙盒 ID （区分大小写） 是一个字符串采用以下格式： &lt;PublisherMoniker&gt;。*n*。 例如，沙盒 ID XLDP.5 的说明如下：
@@ -182,21 +174,18 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 <a name="what-data-is-sandboxed"></a>哪些数据可实现沙盒化？
 -----------------------
-
 下图显示了哪些用户和主题作品数据可实现沙盒化。
 
 ![](images/sandboxes/sandboxes_image5.png)
 
 <a name="global-override-sandbox"></a>全局替代沙盒
 -----------------------
-
 由于开发人员在开发人员工具包中设置沙盒 ID，因此，可以设置在其中运行该开发人员工具包的沙盒；这也称为全局替代沙盒。 因此，从开发人员工具包中的所有主题作品（shell 应用和常规应用）向 Xbox Live 服务（例如，成就、匹配、许可和 EDS 等）发出的所有请求都是在该沙盒中发出的。
 
 全局替代沙盒还意味着，只有全局替代沙盒中引入的内容才在浏览时可见。
 
 <a name="types-of-sandboxes"></a>沙盒类型
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 有两种不同类别的沙盒。 这些类别的定义如下：
 
 -   *发布者沙盒*。 发布者可访问其开发中的沙盒。 这些沙盒可能看起来像 XLDP.0、XLDP.1、XLDP.2、XLDP.3 等。这是发布者放置其主题作品产品实例的位置。 对于发布者向其授予访问权限的用户/设备来说，其对这些沙盒的访问受到限制。
@@ -205,14 +194,12 @@ Xbox One 中的开发人员帐户就是应用了特殊规则的标准 Microsoft 
 
 <a name="cert-sandbox"></a>CERT 沙盒
 ------------
-
 如果主题作品已准备好公开发行，则首先需要进行认证。 CERT 沙盒是 Microsoft 控制的沙盒，只有认证中的个人用户才能访问该沙盒。 发布者可以查看他们拥有的哪些内容将进行认证。
 
-无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复由发布者使用 XDP 或合作伙伴中心。
+无法通过认证中的任何产品实例可召回至开发沙盒进行调试和修复的发布者使用 XDP 或合作伙伴中心。
 
 <a name="retail-sandbox"></a>RETAIL 沙盒
 --------------
-
 RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 主题作品在通过认证后，将添加到 RETAIL 沙盒中。 只有绿色签名内容才能在 RETAIL 沙盒中运行。 这暗示着发布者驱动的 Beta 版也是在 RETAIL 沙盒中完成的。 在 RETAIL 沙盒中生成的数据其实是客户生产数据。
@@ -223,14 +210,13 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 <a name="cross-sandbox-data-interaction"></a>跨沙盒数据交互
 ------------------------------
-
 按照定义，沙盒是限制数据共享的容器。 因此，跨沙盒数据交互是不可能的。
 
 ## <a name="organizing-your-sandboxes"></a>组织你的沙盒
 
 此部分提供了发布者如何组织沙盒的示例。 发布者需要了解如何使用沙盒组织数据。  
 
-仅显示使用内容隔离的运行时访问管理以下示例。
+仅显示使用内容隔离的运行时访问管理下面的示例演示。
 
 ### <a name="scenario-1-two-titles-one-sandbox"></a>场景 1：两个主题作品、一个沙盒
 
@@ -315,9 +301,9 @@ RETAIL 沙盒是为 Xbox One 创建的所有内容的最终目的地。
 
 ![](images/sandboxes/sandboxes_image9.png)
 
-## <a name="determine-the-sandbox-your-device-is-targeting"></a>确定面向你的设备的沙盒
+## <a name="determine-the-sandbox-your-device-is-targeting"></a>确定目标设备的沙盒
 
-Xbox Live Api 包含将允许你查看你的游戏面向在运行时的沙盒应用配置单一实例。 这通过访问的**沙盒**属性`xbox::services::xbox_live_app_config`。
+Xbox Live Api 包含将允许你查看你的游戏面向在运行时的沙盒应用配置单一实例。 这通过访问**沙盒**属性`xbox::services::xbox_live_app_config`。
 
 C + + XDK
 ```cpp

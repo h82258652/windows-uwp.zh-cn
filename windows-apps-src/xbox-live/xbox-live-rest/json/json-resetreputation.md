@@ -2,22 +2,20 @@
 title: ResetReputation (JSON)
 assetID: 15edb5e7-a00b-4188-9b49-9db5774c4a10
 permalink: en-us/docs/xboxlive/rest/json-resetreputation.html
-author: KevinAsgari
 description: " ResetReputation (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: cf6db0ec47e92023fb43c7599fac3dcc9cdd9f0a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d09c8bbc1130f91dfea3d4c35e391dcf9adcf127
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577037"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324632"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
-包含用户的现有评分应更改到新的基本信誉评分。 
+包含新的基本信誉评分应更改用户的现有评分。 
 <a id="ID4EN"></a>
 
  
@@ -25,7 +23,7 @@ ms.locfileid: "7577037"
  
 ResetReputation 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | fairplayReputation| 数字| 所需新基础 （有效范围为 0 到 75） 的用户的公平比赛信誉评分。| 
 | commsReputation| 数字| 所需新基础 （有效范围为 0 到 75） 的用户的通信和信誉评分。| 

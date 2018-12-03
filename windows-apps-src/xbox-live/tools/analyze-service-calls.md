@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 跟踪分析器
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 跟踪分析器来查看游戏进行的服务调用。
 ms.assetid: b4490fae-d554-403d-bbbc-601af38af0ef
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 服务调用, 测试, 跟踪分析器
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eaec6d830dece484d3300ea244f05bf2add5a60
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fa8ca37842edfbeaab0063cd953f3a34358a82da
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555506"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340461"
 ---
 # <a name="xbox-live-trace-analyzer"></a>Xbox Live 跟踪分析器
 
@@ -66,7 +64,6 @@ ms.locfileid: "7555506"
 
 <a name="starting-and-stopping-tracing-by-using-protocol-activation"></a>使用协议激活开始和停止跟踪
 ----------------------------------------------------------
-
 也可以使用“xbApp 启动”的协议激活功能控制跟踪。 你必须知道游戏的 titleid 才能通过协议激活开始和停止跟踪。 你可以在游戏的清单文件中找到游戏 id。 通过包含“serviceCallTracking”参数的 URI 控制跟踪。 以下示例展示了如何对游戏 id 为 12345678 的游戏开始和停止跟踪：
 
     xbapp launch "ms-xbl-12345678://serviceCallTracking?state=start"

@@ -1,19 +1,17 @@
 ---
 title: 创建新主题作品
-author: KevinAsgari
-description: 了解如何通过使用合作伙伴中心为 Xbox Live 创建新主题作品。
+description: 了解如何通过使用合作伙伴中心进行 Xbox Live 创建新主题作品。
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b072ba3112a363111bce751069bccebfaf7465da
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1aa2447a2044bec9b2013b30c05e45342b763fc3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554555"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342346"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>为 Xbox Live 创建新主题作品
 
@@ -28,7 +26,7 @@ ms.locfileid: "7554555"
 3. 你正在使用带有自定义游戏引擎的 Visual Studio 或 Unity。
 4. 开发计算机运行的是 Windows 10。
 
-假如上述条件均成立，本文的其余部分将介绍通过获取在合作伙伴中心、 创建新项目和 Xbox Live 登录代码编写和测试配置主题作品所需的所有内容。
+假如上述条件均成立，本文的其余部分将介绍通过获取合作伙伴中心，创建新项目和 Xbox Live 登录代码中编写和测试配置主题作品所需的所有内容。
 
 > [!NOTE]
 > 如果你是 Xbox Live 创意者计划的一员，则上述假设适用你，并应遵循本文中的内容。
@@ -38,7 +36,7 @@ ms.locfileid: "7554555"
 你需要作为先决条件任何 Xbox Live 功能在[合作伙伴中心](https://partner.microsoft.com/dashboard)中创建一个支持 Xbox Live 的主题作品。
 
 ### <a name="create-a-microsoft-account"></a>创建 Microsoft 帐户
-如果你没有 Microsoft 帐户 (也称为 MSA)，你将需要首先创建一个在[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
+如果你没有 Microsoft 帐户 (也称为 MSA)，你将需要先创建一个在[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)。  如果你有 Office 365 帐户、使用 Outlook.com 或拥有 Xbox Live 帐户，则你可能已经有 MSA 了。
 
 ### <a name="register-as-an-app-developer"></a>注册成为应用开发人员。
 你将需要先注册成为应用开发人员，然后允许你在合作伙伴中心中创建新主题作品。
@@ -46,7 +44,7 @@ ms.locfileid: "7554555"
 若要注册，请转到https://developer.microsoft.com/en-us/store/register并按照注册流程。
 
 ### <a name="create-a-new-uwp-title"></a>创建新的 UWP 主题作品
-接下来，你需要在合作伙伴中心中定义一个 UWP 主题作品。  需要先转到仪表板才能执行此操作
+接下来，你需要在合作伙伴中心中定义的 UWP 主题作品。  需要先转到仪表板才能执行此操作
 
 ![](../images/getting_started/first_xbltitle_dashboard.png)
 

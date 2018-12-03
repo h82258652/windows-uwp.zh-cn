@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 数据平台
-author: KevinAsgari
 description: Xbox Live 数据平台概述，包括用于管理成就、玩家统计信息和排行榜的各项服务。
 ms.assetid: a8bb7c4f-09fe-4dba-b3ce-1fab60453831
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 统计信息, 成就, 排行榜, 数据平台
 ms.localizationpriority: medium
-ms.openlocfilehash: bcb71bf7707a03bab4924b0e263b54ba2dc1f46b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9a14c508e265cdfc510896eb621466d03c66776
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556243"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338005"
 ---
 # <a name="xbox-live-data-platform---stats-leaderboards-achievements"></a>Xbox Live 数据平台 - 统计信息、排行榜、成就
 

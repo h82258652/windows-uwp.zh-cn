@@ -2,22 +2,20 @@
 title: Progression (JSON)
 assetID: cdff6415-f12b-0a45-61f2-26dbf47b1b56
 permalink: en-us/docs/xboxlive/rest/json-progression.html
-author: KevinAsgari
 description: " Progression (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 173c7dd42e0e5fda0d18e270c32a594171ebd7b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dda124e5be9a4d21a1ee5b9d6130290207e31921
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580105"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340392"
 ---
 # <a name="progression-json"></a>Progression (JSON)
-用户解锁成就的进度。 
+在用户解锁成就的进度。 
 <a id="ID4EN"></a>
 
  
@@ -25,10 +23,10 @@ ms.locfileid: "7580105"
  
 进度对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | 要求| 要求的数组| 若要获得成就的要求，沿用户远距离解锁它。| 
-| timeUnlocked| DateTime| 成就已解除锁定前的时间。| 
+| timeUnlocked| DateTime| 成就是第一家解锁时间。| 
   
 <a id="ID4ETB"></a>
 

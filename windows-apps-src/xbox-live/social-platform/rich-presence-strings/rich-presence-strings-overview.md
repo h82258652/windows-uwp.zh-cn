@@ -1,19 +1,17 @@
 ---
 title: 完整状态
-author: KevinAsgari
 description: 了解 Xbox Live“完整状态”如何帮助提升你的游戏。
 ms.assetid: 00042359-f877-4b26-9067-58834590b1dd
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 完整状态
 ms.localizationpriority: medium
-ms.openlocfilehash: 280df5a5fb2ffda28117d7e49196f2a19fc4ecd6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0ae0d0189954ed8fa9a0bc7651d6a90b9789c388
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555236"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349711"
 ---
 # <a name="rich-presence"></a>完整状态
 

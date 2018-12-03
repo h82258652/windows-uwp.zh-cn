@@ -1,19 +1,17 @@
 ---
 title: 读取 JSON blob
-author: KevinAsgari
 description: 了解如何在 Xbox Live 标题存储中读取 JSON blob。
 ms.assetid: 3697af16-d054-4835-af7f-7fee8c628345
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c1115f1faf22438ddac07fe2b38c27e9ddeb7ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 30d2b9f6539e73df1c5ea5ae18b3d1a6ca061d60
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558265"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341697"
 ---
 # <a name="reading-a-json-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中读取 JSON blob
 

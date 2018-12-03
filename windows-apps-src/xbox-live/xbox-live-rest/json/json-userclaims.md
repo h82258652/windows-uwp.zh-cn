@@ -2,22 +2,20 @@
 title: UserClaims (JSON)
 assetID: f88d5ee0-2875-fcfb-3098-3cd6afce8748
 permalink: en-us/docs/xboxlive/rest/json-userclaims.html
-author: KevinAsgari
 description: " UserClaims (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 718c5847a1588e492c5d290d042dd4d5a9ca4283
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 21b4322d002747145c3b09e0f3cd7eb03874380b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581580"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334384"
 ---
 # <a name="userclaims-json"></a>UserClaims (JSON)
-返回有关当前身份验证的用户信息。 
+返回当前身份验证的用户的信息。 
 <a id="ID4EN"></a>
 
  
@@ -25,7 +23,7 @@ ms.locfileid: "7581580"
  
 UserClaims 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | 玩家代号| 字符串| 用户的玩家代号。| 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的用户。| 

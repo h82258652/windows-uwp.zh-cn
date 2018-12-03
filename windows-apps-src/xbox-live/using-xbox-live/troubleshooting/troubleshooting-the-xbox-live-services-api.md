@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 服务 API 疑难解答
-author: KevinAsgari
 description: 了解如何在解决 Xbox Live API 问题时记录额外的错误信息。
 ms.assetid: 3827bba1-902f-4f2d-ad51-af09bd9354c4
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 疑难解答, 错误, 日志
 ms.localizationpriority: medium
-ms.openlocfilehash: fad6a36c3678a6b3c48dcbd78d9c19ed843a118f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 67735d83e5ff301ee4434a6917fce814cabe8309
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563663"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341293"
 ---
 # <a name="troubleshooting-the-xbox-live-apis"></a>Xbox Live API 疑难解答
 

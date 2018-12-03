@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b73ffc2d6d6b80159651a90aabbf5595b146560d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707206"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337675"
 ---
 # <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
 访问预定义的全球排行榜。 这些 Uri 的域是`leaderboards.xboxlive.com`。
@@ -26,7 +26,7 @@ ms.locfileid: "7707206"
  
 | 参数| 类型| 描述| 
 | --- | --- | --- | 
-| scid| GUID| 服务配置，其中包含正在访问的资源的标识符。| 
+| scid| GUID| 服务配置，其中包含所访问的资源标识符。| 
 | leaderboardname| 字符串| 正在访问的预定义的排行榜资源的唯一标识符。| 
   
 <a id="ID4E3B"></a>
@@ -36,7 +36,7 @@ ms.locfileid: "7707206"
 
 [GET](uri-scidsscidleaderboardsleaderboardnameget.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;获取的预定义的全局排行榜。
+&nbsp;&nbsp;&nbsp;&nbsp;获取预定义的全球排行榜。
 
 
 [获取与值元数据](uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md)

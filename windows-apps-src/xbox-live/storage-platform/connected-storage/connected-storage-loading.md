@@ -1,19 +1,17 @@
 ---
 title: 使用连接存储加载数据
-author: aablackm
 description: 了解如何使用连接存储加载数据。
 ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a54076f6105c4dbef257408a4af0cfe19f0574e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2f7498e8063e290dc506de72b34d2c77d29b26e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554215"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350565"
 ---
 # <a name="use-connected-storage-to-load-data"></a>使用连接存储加载数据
 

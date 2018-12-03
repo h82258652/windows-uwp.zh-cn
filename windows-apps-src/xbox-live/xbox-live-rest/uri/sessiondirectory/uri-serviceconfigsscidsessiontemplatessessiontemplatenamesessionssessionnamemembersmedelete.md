@@ -2,19 +2,17 @@
 title: DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)
 assetID: aa5de623-7787-a47c-b7e4-305693b9fe35
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.html
-author: KevinAsgari
 description: " DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e67b48653b7cccb3a9ff30bc833df0f9d3189638
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3de35398f4685a0b0cfda1a251c65ed6a74956d7
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564828"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334099"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)
 从会话中删除成员。
@@ -38,11 +36,11 @@ ms.locfileid: "7564828"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- |
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。|
 | sessionTemplateName| 字符串| 会话模板的当前实例的名称。 第 2 部分会话标识符。|
-| 会话名| GUID| 会话的唯一 ID。 会话标识符的第 3 部分。|
+| 会话名| GUID| 在会话的唯一 ID。 会话标识符的第 3 部分。|
 
 <a id="ID4EHB"></a>
 

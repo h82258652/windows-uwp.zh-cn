@@ -1,19 +1,17 @@
 ---
 title: 配置 Xbox 开发主机
-author: KevinAsgari
 description: 了解如何配置 Xbox 开发主机以支持 Xbox Live 开发。
 ms.assetid: f8fd1caa-b1e9-4882-a01f-8f17820dfb55
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: ef85dfa85f6beaabc038a1bec1c9a66cf6ea4148
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 479be2401e0c54801645ad1c0d91b11b7ffb6869
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562039"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330984"
 ---
 # <a name="configure-your-xbox-development-console"></a>配置 Xbox 开发主机
 
@@ -40,4 +38,4 @@ ms.locfileid: "7562039"
 
 ## <a name="sign-in-with-a-development-account"></a>使用开发帐户登录
 
-你可以创建用于登录[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)或[合作伙伴中心](https://partner.microsoft.com/dashboard)的开发帐户
+你可以创建用于登录[Xbox 开发人员门户 (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)或[合作伙伴中心](https://partner.microsoft.com/dashboard)上的开发帐户

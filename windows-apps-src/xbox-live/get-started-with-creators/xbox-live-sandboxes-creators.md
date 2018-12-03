@@ -1,23 +1,21 @@
 ---
 title: Xbox Live 沙盒
-author: PhillipLucas
 description: Xbox Live 沙盒简介
 ms.assetid: e7daf845-e6cb-4561-9dfa-7cfba882f494
-ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d82447801d499c6339775882b9363883430726fa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3f2e5496c9aab2629591a121850685e7f5a1b2fe
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7560217"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340998"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live 沙盒简介
 
-在[Xbox Live 服务配置](xbox-live-service-configuration-creators.md)文章中，说明了有关你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，你必须配置信息。 此信息包括统计数据、排行榜、本地化等。 需要通过合作伙伴中心发布到你的开发沙盒之前所做的更改通过 Xbox Live 的其余部分进行选取，并可以访问你的作品中对你的 Xbox Live 服务配置更改。
+在[Xbox Live 服务配置](xbox-live-service-configuration-creators.md)文章中说明了有关你的游戏在[合作伙伴中心](https://partner.microsoft.com/dashboard)中，你必须配置信息。 此信息包括统计数据、排行榜、本地化等。 需要通过合作伙伴中心发布到你的开发沙盒之前所做的更改通过 Xbox Live 的其余部分进行选取，并可以访问你的作品中对你的 Xbox Live 服务配置更改。
 
 利用开发沙盒，你可以在隔离环境中处理对作品进行的更改。 沙盒具有多个优点：
 
@@ -110,4 +108,4 @@ SwitchSandbox.cmd RETAIL
 
 ### <a name="sign-in-with-the-xbox-app"></a>使用 Xbox 应用登录
 
-切换你的开发电脑为你的游戏使用正确的沙盒后，你会想要验证，你要登录到 Xbox Live 使用符合条件的测试帐户。 这可以通过登录到[Xbox Live 的应用](https://www.xbox.com/en-US/xbox-app)。 你的开发环境开始使用 Xbox 应用所需的沙盒后将登录用户使用相同的约束为任何其他 Xbox Live 服务在沙盒上运行。 这使得有用验证沙盒使用有效的帐户。
+切换后你的开发电脑，你会想要验证，你要登录到 Xbox Live 的符合条件的测试帐户的游戏中使用正确的沙盒。 这可以通过登录到[Xbox Live 的应用](https://www.xbox.com/en-US/xbox-app)。 你的开发环境开始使用 Xbox 应用所需的沙盒后将登录用户使用相同的约束为任何其他 Xbox Live 服务沙盒上运行。 这使得有用验证沙盒使用有效的帐户。

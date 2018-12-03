@@ -2,19 +2,17 @@
 title: ThumbnailType 枚举
 assetID: a74ead24-596c-2f3e-1d6b-5658ce504b75
 permalink: en-us/docs/xboxlive/rest/gvr-enum-thumbnailtype.html
-author: KevinAsgari
 description: " ThumbnailType 枚举"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: dd588da7172894cfa094f503ce8749b74cb2b30c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ee9c97a01ce9edc945dd7b83cc13328c8668631
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557656"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351088"
 ---
 # <a name="thumbnailtype-enumeration"></a>ThumbnailType 枚举
 详细介绍 ThumbnailType 枚举。 

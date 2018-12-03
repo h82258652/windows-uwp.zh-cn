@@ -1,19 +1,17 @@
 ---
 title: 信誉
-author: KevinAsgari
 description: 了解 Xbox Live 如何使用信誉服务鼓励正面的游戏玩法。
 ms.assetid: f8966184-5db7-4cab-93ca-9a0250a6077d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 信誉, 社交平台
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b3ff2d546dc142331406f198848e9d7a7077b3d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4e7763294458f19509d5b797a6fa10e03678abee
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553020"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348562"
 ---
 # <a name="reputation"></a>信誉
 

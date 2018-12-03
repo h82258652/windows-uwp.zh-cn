@@ -1,19 +1,17 @@
 ---
 title: 存储 JSON blob
-author: KevinAsgari
 description: 了解如何在 Xbox Live 标题存储中存储 JSON blob。
 ms.assetid: f424aca1-e671-4e31-84c6-098fda4a9558
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 标题存储
 ms.localizationpriority: medium
-ms.openlocfilehash: 629bc38e8d5e5afa4c9d78349587585d0701b3de
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dabcd0634bb20bc6b82ae302c77338b5bb726a63
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7574920"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328279"
 ---
 # <a name="storing-a-json-blob-in-xbox-live-title-storage"></a>在 Xbox Live 标题存储中存储 JSON blob
 

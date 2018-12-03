@@ -1,19 +1,17 @@
 ---
 title: 使用 SmartMatch 进行多人游戏
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 多人游戏管理器让玩家通过使用 SmartMatch 查找多人游戏。
 ms.assetid: f9001364-214f-4ba0-a0a6-0f3be0b2f523
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图, smartmatch
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f957683607c9e50679e4ff2c141e194e72340e2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0c0ba897f23eb690c3044b00cdb4ce3bea975e71
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559236"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334346"
 ---
 # <a name="find-a-multiplayer-game-by-using-smartmatch"></a>通过使用 SmartMatch 查找多人游戏
 

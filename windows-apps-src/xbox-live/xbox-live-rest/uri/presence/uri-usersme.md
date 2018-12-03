@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a99bfaf11074092bd4c6aa1ed822f71f65a9d62
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720040"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326621"
 ---
 # <a name="usersme"></a>/users/me
 访问当前用户的状态。 这些 Uri 的域是`userpresence.xboxlive.com`。
@@ -24,7 +24,7 @@ ms.locfileid: "7720040"
 
 [GET (/users/me)](uri-usersmeget.md)
 
-&nbsp;&nbsp;获取当前用户的[presencerecord，他的](../../json/json-presencerecord.md)无需知道用户的 XUID。
+&nbsp;&nbsp;获取当前用户的[PresenceRecord](../../json/json-presencerecord.md) ，而无需知道用户的 XUID。
  
 <a id="ID4E6"></a>
 

@@ -1,19 +1,17 @@
 ---
 title: 向 Unity 项目添加玩家统计数据和排行榜
-author: KevinAsgari
 description: 了解如何使用 Xbox Live Unity 插件向 Unity 项目添加玩家统计数据和排行榜。
 ms.assetid: 756b3c31-a459-4ad2-97af-119adcd522b5
-ms.author: kevinasg
 ms.date: 10/19/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, Unity, 创意者
 ms.localizationpriority: medium
-ms.openlocfilehash: ce81cd20b817efed09e341b04dc667e39567ebed
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 17af9afc8a9048e7222115d2afdc6108d25df1d7
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553004"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8343562"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>向 Unity 项目添加玩家统计数据和排行榜
 

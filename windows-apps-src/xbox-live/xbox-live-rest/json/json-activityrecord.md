@@ -2,22 +2,20 @@
 title: ActivityRecord (JSON)
 assetID: e3a7465b-3451-0266-f8ba-b7602b59f7af
 permalink: en-us/docs/xboxlive/rest/json-activityrecord.html
-author: KevinAsgari
 description: " ActivityRecord (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: bb78941f2ab9cab4395dbb1ba5eb8fb3b09dee08
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a8679c96c86754a8b929b44b5bd4eb402d851e90
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575545"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334542"
 ---
 # <a name="activityrecord-json"></a>ActivityRecord (JSON)
-有关一个或多个用户的完整状态格式化和本地化字符串。 
+有关一个或多个用户的完整状态进行了格式化，本地化字符串。 
 <a id="ID4EN"></a>
 
  

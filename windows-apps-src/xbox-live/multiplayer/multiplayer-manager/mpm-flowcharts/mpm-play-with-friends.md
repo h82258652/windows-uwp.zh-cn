@@ -1,19 +1,17 @@
 ---
 title: 流程图 - 与好友一起玩
-author: KevinAsgari
 description: Xbox Live 多人游戏管理器流程图 - 与好友一起玩多人/合作游戏。
 ms.assetid: ead5b172-6410-4aae-97fc-3c295745d27e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
-ms.openlocfilehash: 866b4da39314e120906a8e2de841432d09bfe2ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5393d473efae96a1b43c68eacc9e34ca4c897999
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558015"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326728"
 ---
 # <a name="flowchart---play-a-multiplayerco-op-game-with-friends"></a>流程图 - 与好友一起玩多人/合作游戏
 

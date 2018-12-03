@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
 ms.openlocfilehash: dbdb8f95e9afc44a3280d897e74f74d327f94b97
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7825896"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338964"
 ---
 # <a name="connected-storage-best-practices"></a>连接存储最佳做法
 

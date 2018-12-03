@@ -2,23 +2,21 @@
 title: 列表 URI
 assetID: 84dcbd11-86a0-8a1e-7db9-bcecf9b7f853
 permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
-author: KevinAsgari
 description: " 列表 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c84b68f990392d17342e333b18e5f5d38d2266
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a6f1e743542e70ee96ad93ee1cf2a7f2c3ed7158
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7579567"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326391"
 ---
 # <a name="lists-uris"></a>列表 URI
  
-本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息从 Xbox Live 服务的*Pin*。
+本部分提供有关统一资源标识符 (URI) 地址和关联的超文本传输协议 (HTTP) 方法的详细信息，从 Xbox Live 服务的*Pin*。
  
 仅游戏和 Xbox 360、 Windows Phone 设备上、 SmartGlass，或在 Xbox.com 上运行的应用程序可以使用此服务。
  
@@ -35,7 +33,7 @@ ms.locfileid: "7579567"
 
 [/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
-&nbsp;&nbsp;确定是否项目 （由 itemId 指定） 的一组包含在列表中而不检索整个列表。
+&nbsp;&nbsp;确定是否一组项 （由 itemId 指定） 包含在列表中而不检索将整个列表。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 

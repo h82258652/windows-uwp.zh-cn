@@ -1,19 +1,17 @@
 ---
 title: Xbox Live API 的新增功能 - 2017 年 4 月
-author: KevinAsgari
 description: Xbox Live API 的新增功能 - 2017 年 4 月
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 竞技场, 锦标赛
 ms.localizationpriority: medium
-ms.openlocfilehash: e223c0c9bfca3b516d7eb623aba968cc8b547747
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a9256bfce05c14a0bfa63c7ec656dd899648d844
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573047"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345701"
 ---
 # <a name="whats-new-for-the-xbox-live-apis---april-2017"></a>Xbox Live API 的新增功能 - 2017 年 4 月
 

@@ -1,19 +1,17 @@
 ---
 title: 更新 Stats 2017
-author: KevinAsgari
 description: 了解如何通过使用 Stats 2017 更新 Xbox Live 玩家统计数据。
 ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
-ms.author: kevinasg
 ms.date: 08/24/2018
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 玩家统计数据, stats 2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f61858347955bde007d97420cfb33d8e0298fd2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d5b37c008e6aa719b641321c5e5a1c3360b20786
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556400"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346930"
 ---
 # <a name="updating-stats-2017"></a>更新 Stats 2017
 

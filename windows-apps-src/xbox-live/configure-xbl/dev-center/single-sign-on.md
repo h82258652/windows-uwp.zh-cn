@@ -1,19 +1,17 @@
 ---
 title: 在合作伙伴中心配置单一登录
-author: KevinAsgari
 description: 介绍如何配置单一登录合作伙伴中心，以允许游戏用户登录你的服务使用其 Xbox Live id。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, udc, 通用开发人员中心, 单一登录
-ms.openlocfilehash: 01714289ff12d096a17c5474f6a7619680481aa3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 32f06edd407d8c1fa74795d0a230c7d56ba8e838
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7568245"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339560"
 ---
 # <a name="configure-single-sign-on-in-partner-center"></a>在合作伙伴中心配置单一登录
 

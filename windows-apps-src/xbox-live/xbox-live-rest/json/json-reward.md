@@ -2,19 +2,17 @@
 title: Reward (JSON)
 assetID: d1c92e8a-afbc-22c5-c0b5-6063963f8c4d
 permalink: en-us/docs/xboxlive/rest/json-reward.html
-author: KevinAsgari
 description: " Reward (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 41b8aafc25c3f8ae8ca677f8049235f327c0e36e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d58d34263e7e0e90091c41c1df4fd5e078f5055
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581849"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334365"
 ---
 # <a name="reward-json"></a>Reward (JSON)
 与成就关联的奖励。
@@ -30,7 +28,7 @@ ms.locfileid: "7581849"
 | name| 字符串| 奖励面向用户的名称。|
 | description| 字符串| 奖励面向用户的描述。|
 | 值| 字符串| 奖励的值。|
-| type| RewardType 枚举| 奖励类型： <ul><li>无效 (0): 未知和不受支持的奖励类型已配置。</li><li>玩家分数 (1): 奖励将点添加到玩家的玩家分数。</li><li>inApp (2): 定义和游戏提供奖励。</li><li>插图 (3): 奖励是数字资产。</li></ul> | 
+| type| RewardType 枚举| 奖励类型： <ul><li>无效 (0): 未知和不受支持的奖励类型已配置。</li><li>玩家分数 (1): 奖励将点添加到玩家的玩家分数。</li><li>inApp (2): 定义和游戏提供奖励。</li><li>插图 (3): 奖励是一项数字资产。</li></ul> | 
 | valueType| ProgressValueDataType 枚举| 值的类型。 有关详细信息，请参阅[要求 (JSON)](json-requirement.md) 。|
 
 <a id="ID4EBD"></a>

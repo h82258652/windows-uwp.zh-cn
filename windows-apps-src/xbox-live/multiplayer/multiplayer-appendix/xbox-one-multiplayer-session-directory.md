@@ -1,23 +1,21 @@
 ---
 title: Xbox One 多人游戏会话目录
-author: KevinAsgari
 description: 了解如何通过使用 Xbox Live 多人游戏会话目录 (MPSD) 服务创建多人游戏会话。
 ms.assetid: 70da1be3-5f39-4eed-b62d-9cdd47e413d2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c97e2b5b4f9561385f7854ea2ee13292278fc8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 52b363492d1cd17ae54ae5d23d04371c5adf73ed
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557987"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328492"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One 多人游戏会话目录
 
-本主题使用新的 Xbox One 多人游戏会话目录 (MPSD) 服务提供多人游戏会话创建的概述。 本文主要面向将自己的会话模板直接提交到 Xbox 开发门户 (XDP) 的 Xbox One 游戏开发人员。 MPSD 服务可配置的合作伙伴中心，但不专注于在本文中。 它旨在让开发人员熟悉与 MPSD 配置、使用情况以及多人游戏会话疑难解答关联的术语和概念。
+本主题使用新的 Xbox One 多人游戏会话目录 (MPSD) 服务提供多人游戏会话创建的概述。 本文主要面向将自己的会话模板直接提交到 Xbox 开发门户 (XDP) 的 Xbox One 游戏开发人员。 MPSD 服务可以使用合作伙伴中心，配置，但不专注于在本文中。 它旨在让开发人员熟悉与 MPSD 配置、使用情况以及多人游戏会话疑难解答关联的术语和概念。
 
 ## <a name="revision-summary"></a>修订摘要
 

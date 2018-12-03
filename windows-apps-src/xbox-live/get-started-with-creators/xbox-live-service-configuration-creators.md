@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 创意者服务配置
-author: KevinAsgari
 description: 了解创意者计划的 Xbox Live 服务配置。
 ms.assetid: 22b8f893-abb3-426e-9840-f79de0753702
-ms.author: kevinasg
 ms.date: 10/03/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b8136aa4d07204d2c97fec393439a17d3660f934
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 76d25a48caadb908e30e6e1897c19178e2b837e1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580809"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342600"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>创意者计划的 Xbox Live 服务配置
 

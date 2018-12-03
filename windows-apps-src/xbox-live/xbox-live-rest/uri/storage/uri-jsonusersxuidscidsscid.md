@@ -2,19 +2,17 @@
 title: /json/users/xuid({xuid})/scids/{scid}
 assetID: e528a5e9-219b-7b28-8ca7-0cd12ae11eff
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidsscid.html
-author: KevinAsgari
 description: " /json/users/xuid({xuid})/scids/{scid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e13ee887c9f17f070d4a3a067f26f569107f7a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9108dc46ec1b688b4082bca8b1a3e82633d964c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571812"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346400"
 ---
 # <a name="jsonusersxuidxuidscidsscid"></a>/json/users/xuid({xuid})/scids/{scid}
 检索此存储类型的配额信息。 这些 Uri 的域是`titlestorage.xboxlive.com`。
@@ -26,9 +24,9 @@ ms.locfileid: "7571812"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
-| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家用户发出请求。| 
+| xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家发出请求者。| 
 | scid| guid| 若要查找的服务配置 ID。| 
   
 <a id="ID4E3B"></a>

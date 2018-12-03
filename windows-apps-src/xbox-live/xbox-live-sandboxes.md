@@ -1,25 +1,23 @@
 ---
 title: Xbox Live 沙盒
-author: KevinAsgari
 description: 了解用于 Xbox Live 开发的沙盒。
 ms.assetid: a5acb5bf-dc11-4dff-aa94-6d1f01472d2a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 60452c65a00aca134cfa33aa6378da06b94ac865
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ee284550a9b508a8d46556bf0353bd75d55014f3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7578745"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336606"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live 沙盒简介
 
-在[Xbox Live 服务配置](xbox-live-service-configuration.md)中，它说明了你必须配置信息与你的作品联机，有关通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
+在[Xbox Live 服务配置](xbox-live-service-configuration.md)中，它说明了你必须配置信息与你的作品 online、 有关通常在[合作伙伴中心](https://partner.microsoft.com/dashboard)。  此信息包括你的作品要显示的排行榜和玩家可解锁的成就，以及匹配配置等内容。
 
-当你对你的服务配置进行更改时，这些需要从合作伙伴中心发布，才能更改由 Xbox Live 的其余部分进行选取，并可以通过你的游戏中看到。
+当你对你的服务配置进行更改时，需要这些之前所做的更改由 Xbox Live 的其余部分进行选取，并可以看到你的游戏通过合作伙伴中心发布。
 
 你可以发布到所谓的开发沙盒。  利用这些沙盒，你可以在隔离环境中执行对作品的更改。  这些沙盒具有很多优点，如以下部分中所述。
 

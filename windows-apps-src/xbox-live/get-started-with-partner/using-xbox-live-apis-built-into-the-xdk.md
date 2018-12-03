@@ -1,19 +1,17 @@
 ---
 title: 使用 XDK 内置的 Xbox Live API
-author: KevinAsgari
 description: 了解如何在 Xbox 开发人员工具包 (XDK) 项目中使用内置的 Xbox Live API。
 ms.assetid: 539caca3-58bc-49d9-8432-ca8e57755be2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: e127dd2adb53e8fdf5fb0469ce9deae5759eb899
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c762dd8abbbc80948d232610e4123b6e4893936d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552898"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324156"
 ---
 # <a name="using-xbox-live-apis-built-into-the-xdk"></a>使用 XDK 内置的 Xbox Live API
 

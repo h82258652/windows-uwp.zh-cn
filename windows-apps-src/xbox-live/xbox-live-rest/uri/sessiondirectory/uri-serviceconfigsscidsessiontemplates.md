@@ -2,19 +2,17 @@
 title: /serviceconfigs/{scid}/sessiontemplates
 assetID: 330e36ec-734c-5bad-0d3c-e9afe45a4a25
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplates.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/sessiontemplates"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf424aed0d0edcee7f042f9d4f84a73fd4d653d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e7ca5fdc7f418895cb23ee0e3b03d4ca39c33756
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561723"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349476"
 ---
 # <a name="serviceconfigsscidsessiontemplates"></a>/serviceconfigs/{scid}/sessiontemplates
 支持 GET 操作以检索一组的 MPSD 会话模板。 
@@ -28,7 +26,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
   

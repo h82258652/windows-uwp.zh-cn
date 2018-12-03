@@ -1,19 +1,17 @@
 ---
 title: 使用连接存储保存数据
-author: aablackm
 description: 了解如何使用连接存储保存数据。
 ms.assetid: ccf7488c-5d55-480e-b3aa-412220d03104
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 连接存储
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c29a3371383209ef2c13eaf2b2ffc69b7e0455
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4140e3bbe0f0ab229e3637008e01892f4179292e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564392"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348956"
 ---
 # <a name="use-connected-storage-to-save-data"></a>使用连接存储保存数据
 

@@ -2,22 +2,20 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 assetID: 221c440d-c448-11e9-f455-6d0f95fc16ef
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortorders.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b2e59315d9b787f75221391c39cdc6a0faf89b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e807f1a29712f55fc2e404e3905c7c69eb50d166
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563241"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334869"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
-可用的访问排序顺序给定的 mediaitem 类型和 EDS 的给定的版本。 这些 Uri 的域是`eds.xboxlive.com`。
+可用的访问排序给定的 mediaitem 类型和 EDS 给定的版本的顺序。 这些 Uri 的域是`eds.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,7 +24,7 @@ ms.locfileid: "7563241"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
 | mediaitemtype| 字符串| 必需。 从值之一[GET (/media/ {marketplaceId} / /metadata/mediagroups/ {mediagroup} / mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)。| 

@@ -1,19 +1,17 @@
 ---
 title: 与好友进行多人游戏
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 多人游戏管理器让玩家与好友进行多人游戏。
 ms.assetid: 6eefee0e-6c0d-473a-97e7-f3e45f574712
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af1979a92821a62a625ea9d637a7dbcf9a59edb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0d946cdbd29fb51d98c8febb52c5855f948b4ea
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566297"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337618"
 ---
 # <a name="play-a-multiplayer-game-with-friends"></a>与好友进行多人游戏
 

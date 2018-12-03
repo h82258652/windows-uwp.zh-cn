@@ -1,18 +1,16 @@
 ---
 title: 使用游戏聊天 2
-author: KevinAsgari
 description: 了解如何通过使用 Xbox Live 游戏聊天 2 将语音通信添加到游戏中。
-ms.author: kevinasg
 ms.date: 3/20/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: e3042d7dac5fd9ef3e99c874dc4ca1937db94fff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: addc1e7bee0599663155d7958cad4669b8e79adf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559227"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330533"
 ---
 # <a name="using-game-chat-2-c"></a>使用游戏聊天 2 (C++)
 

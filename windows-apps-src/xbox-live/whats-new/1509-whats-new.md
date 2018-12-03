@@ -1,19 +1,17 @@
 ---
 title: Xbox Live SDK 的新增功能 - 2015 年 9 月
-author: KevinAsgari
 description: Xbox Live SDK 的新增功能 - 2015 年 9 月
 ms.assetid: 84b82fde-f6f3-4dc2-b2df-c7c7313a2cc3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: cf5908dface210a1baffc18876fb349441618745
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c618a738dc2670d3d3de1fa2f4c4108c24130eb0
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552867"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347076"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---september-2015"></a>Xbox Live SDK 的新增功能 - 2015 年 9 月
 

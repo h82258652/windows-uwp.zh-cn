@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/outbox
 assetID: 0b66b885-15ff-be55-f8be-e6e9d85d087e
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidoutbox.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/outbox"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: a10fbb4b2008a3c953d101111d064c6f06491e10
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88f3f3753aeac99db0a8a53e0a2ddde21d034ac5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566603"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324074"
 ---
 # <a name="usersxuidxuidoutbox"></a>/users/xuid({xuid})/outbox
-提供的消息仅发送给用户的访问权限的 Xbox LIVE 服务发件箱。 这些 Uri 的域是`msg.xboxlive.com`。
+提供的消息仅发送给用户的访问权限的 Xbox LIVE 服务的发件箱。 这些 Uri 的域是`msg.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,7 +24,7 @@ ms.locfileid: "7566603"
  
 ## <a name="uri-parameters"></a>URI 参数 
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid | 64 位无符号的整数 | Xbox 用户 ID (XUID) 发出请求的玩家。 | 
   

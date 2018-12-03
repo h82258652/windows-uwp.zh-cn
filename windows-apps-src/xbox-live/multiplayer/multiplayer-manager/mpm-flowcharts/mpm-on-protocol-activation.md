@@ -1,19 +1,17 @@
 ---
 title: 流程图 - 处理协议激活
-author: KevinAsgari
 description: Xbox Live 多人游戏管理器流程图 - 处理协议激活。
 ms.assetid: f375af52-a18d-4845-aae7-0762d8ec0f1e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏管理器, 流程图
 ms.localizationpriority: medium
-ms.openlocfilehash: d23e9390b96ecb0e06ad3d80fcabcd438ee96491
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dcce4de4c8b0ff79d65223cbca7a48635d0ce0f0
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558331"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8333993"
 ---
 # <a name="flowchart---handle-protocol-activation"></a>流程图 - 处理协议激活
 

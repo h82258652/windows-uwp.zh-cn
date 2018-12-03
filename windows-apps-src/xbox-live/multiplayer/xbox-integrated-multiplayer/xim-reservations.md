@@ -1,19 +1,17 @@
 ---
 title: XIM 带外保留
-author: KevinAsgari
 description: 描述如何通过带外保留将 Xbox 集成多人游戏 (XIM) 用作专用聊天解决方案。
 ms.assetid: 0ed26d19-defb-414d-a414-c4877bd0ed37
-ms.author: kevinasg
 ms.date: 01/28/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, xim, 聊天
 ms.localizationpriority: medium
-ms.openlocfilehash: b5e67e75a981a6abc88b877983e544293055e90b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 217517031c230cfca98bf4420d1f5b9876afbdc1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572174"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322624"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>通过带外保留将 XIM 用作专门的聊天解决方案
 

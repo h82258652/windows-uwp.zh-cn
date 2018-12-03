@@ -2,19 +2,17 @@
 title: /users/{ownerId}/clips
 assetID: cc200b89-dc63-9ab5-b037-7a910f46dae9
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclips.html
-author: KevinAsgari
 description: " /users/{ownerId}/clips"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 755d30796c7e948a2fe97e84986a74a461795f83
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cd711777bcdf0b073dd0821222049b03aa35a23c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554168"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345579"
 ---
 # <a name="usersowneridclips"></a>/users/{ownerId}/clips
 访问权限的用户的剪辑的列表。 这些 Uri 的域是`gameclipsmetadata.xboxlive.com`和`gameclipstransfer.xboxlive.com`，则根据问题的 URI 的函数。
@@ -26,7 +24,7 @@ ms.locfileid: "7554168"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | ownerId| 字符串| 用户的用户身份的正在访问其资源。 支持的格式:"me"或"xuid(123456789)"。 最大长度： 16。| 
   

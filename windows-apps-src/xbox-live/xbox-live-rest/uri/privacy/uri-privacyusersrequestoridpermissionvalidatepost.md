@@ -2,22 +2,20 @@
 title: POST (/users/{requestorId}/permission/validate)
 assetID: 7a5ea583-ffca-5da7-a02a-535c52535928
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidatepost.html
-author: KevinAsgari
 description: " POST (/users/{requestorId}/permission/validate)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 0848aaa74fcecec599c701d944c54defae1fa011
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: edd91560ffb5d81b30da4b1453612cc5853a456f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553417"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332077"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
-获取有关是否允许用户执行一组的目标用户的指定的操作或否答案的一组。
+获取一套 yes 或 no 常见问题解答是否允许用户执行一组的目标用户指定的操作。
 
   * [备注](#ID4EQ)
   * [URI 参数](#ID4ECB)
@@ -33,16 +31,16 @@ ms.locfileid: "7553417"
 
 ## <a name="remarks"></a>备注
 
-请求正文中获取用户的列表和列表的设置，并结果是每个用户/设置对允许/阻止结果。
+请求正文中获取用户列表和列表的设置，并结果是每个用户/设置对允许/阻止结果。
 
-在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和不这样做的关闭网络用户之间） 的情况下多人游戏，请参阅针对用户类型[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
+在跨网络 （其中隐私通信检查必须执行用户具有 Xbox 用户 ID (XUID) 和不这样做的关闭网络用户之间） 的情况下多人游戏，请参阅有关用户键入[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md) 。
 
 <a id="ID4ECB"></a>
 
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | requestorId| 字符串| 必需。 执行该操作的用户的标识符。 可能的值为<code>xuid({xuid})</code>和<code>me</code>。 这必须是已登录的用户。 示例值： <code>xuid(0987654321)</code>。|
 
@@ -60,10 +58,10 @@ ms.locfileid: "7553417"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串| HTTP 身份验证的身份验证凭据。 示例值： <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| 字符串| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
+| X RequestedServiceVersion| 字符串| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。示例值： 1。|
 
 <a id="ID4E4D"></a>
 
@@ -100,9 +98,9 @@ ms.locfileid: "7553417"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 说明|
+| 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 已成功检索会话。|
 | 400| 请求无效。| 示例： 设置不正确 Id、 不正确的 Uri 等。|
@@ -113,11 +111,11 @@ ms.locfileid: "7553417"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| 字符串| 请求正文的 MIME 类型。 示例值： <code>application/json</code>|
 | Content-Length| 字符串| 正在发送响应中的字节数。 示例值： 34|
-| 缓存控制| 字符串| 礼貌用语请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
+| 缓存控制| 字符串| 礼貌请求从服务器指定缓存行为。 示例： <code>no-cache, no-store</code>|
 
 <a id="ID4E5H"></a>
 

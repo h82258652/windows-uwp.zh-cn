@@ -2,19 +2,17 @@
 title: TitleBlob (JSON)
 assetID: fd1c904d-e8d0-f61f-e403-40b25bd4ac14
 permalink: en-us/docs/xboxlive/rest/json-titleblob.html
-author: KevinAsgari
 description: " TitleBlob (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ed09f078be5c7063d00d35d3bc3749f791d042
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51a0b17a46d1c71ffdf9098d4637ca59d840c90a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557873"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344918"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
 包含有关作品存储中的信息。 
@@ -25,7 +23,7 @@ ms.locfileid: "7557873"
  
 TitleBlob 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | clientFileTime| DateTime| [可选]日期和时间的上次上传的文件。| 
 | displayName| 字符串| [可选]向用户显示的文件的名称。| 

@@ -1,18 +1,16 @@
 ---
 title: 异步 C API 调用模式
-author: aablackm
 description: 了解 XSAPI C API 的异步 C API 调用模式
-ms.author: aablackm
 ms.date: 06/10/2018
 ms.topic: article
 keywords: 'xbox live, xbox, 游戏, uwp, windows 10, xbox one, 开发人员计划, '
 ms.localizationpriority: medium
-ms.openlocfilehash: b247a69e0def8a2e3a62a8c05a8fac3106bded35
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: edc6248a363b844d94c8fa03ab7ce071cc941908
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7578004"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347056"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI 平面 C 层异步调用的调用模式
 
@@ -65,7 +63,7 @@ typedef struct AsyncBlock
 * *context* - 用于向回调函数传递数据。
 * *queue* - 一个 async_queue_handle_t，作为指定 **AsyncQueue** 的句柄。 如果未设置此队列，将使用默认队列。
 
-你应该在每个异步调用的 API 在堆栈上创建新 AsyncBlock。  AsyncBlock 必须实时之前称为 AsyncBlock 的完成回调，然后可以将其删除。
+你应该在每个异步调用的 API 在堆栈上创建新的 AsyncBlock。  AsyncBlock 必须位于之前称为 AsyncBlock 的完成回调，则可以将其删除。
 
 > [!IMPORTANT]
 > **AsyncBlock** 必须一直保留在内存中，直到**异步任务**完成。 如果是动态分配的，可以在 AsyncBlock 的**完成回调**内部将其删除。
@@ -148,7 +146,7 @@ STDAPI CreateSharedAsyncQueue(
 > 如果已存在具有此 ID 和调度模式的队列，将引用该队列。  否则，将创建新的队列。
 
 创建 **AsyncQueue** 之后，请直接将其添加到 **AsyncBlock** 以控制工作和完成函数的线程处理。
-当你完成使用**AsyncQueue**时，通常当即将结束游戏，你可以关闭它与**CloseAsyncQueue**:
+当你完成使用**AsyncQueue**时，通常时即将结束游戏，你可以将它放置**CloseAsyncQueue**:
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(

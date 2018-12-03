@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 细化速率限制
-author: KevinAsgari
 description: 了解 Xbox Live 细化速率限制的工作方式，以及如何防止你的游戏受到速率限制。
 ms.assetid: ceca4784-9fe3-47c2-94c3-eb582ddf47d6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 节流, 速率限制
 ms.localizationpriority: medium
-ms.openlocfilehash: a639fb503111e9949ffa02fcccd68087bba61279
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b79a4f0a873ffaf5dd824a0c9832f61aa4a7d77f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556452"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340955"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a>Xbox Live 细化速率限制
 
@@ -94,7 +92,7 @@ Xbox Live 坚信无论每个用户在玩什么游戏/应用，他/她都应该�
 
 ## <a name="implemented-limits"></a>已实施的限制
 
-下面的服务已实施 FGRL 限制，这些限制从 **2016 年 5 月** 开始执行。 重申一点，这些限制在所有沙盒和作品中都是一样的。 **通过 Xbox 开发人员平台或合作伙伴中心发布并在 2016 月之前交付的任何标题将被视为旧版，并因此将免受限制。**
+下面的服务已实施 FGRL 限制，这些限制从 **2016 年 5 月** 开始执行。 重申一点，这些限制在所有沙盒和作品中都是一样的。 **通过 Xbox 开发人员平台或合作伙伴中心发布并在 5 月 2016年之前交付的任何标题将被视为旧版，并因此将免受限制。**
 
 | **名称** | **突增限制**（每位用户每个作品 15 秒） | **持续限制**（每位用户每个作品 300 秒） | **认证限制**（10 倍于持续限制，每位用户每个作品 300 秒） |
 |----------------------------|---------------------------|----------------------------|----------------------------|

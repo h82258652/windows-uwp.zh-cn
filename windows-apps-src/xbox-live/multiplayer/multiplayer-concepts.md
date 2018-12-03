@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e2ba32b2eaff757cfa6401952567f6b0163f632
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720059"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335845"
 ---
 # <a name="xbox-live-multiplayer-concepts"></a>Xbox Live 多人游戏概念
 

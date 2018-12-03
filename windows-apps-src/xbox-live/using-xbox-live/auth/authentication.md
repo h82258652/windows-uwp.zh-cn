@@ -1,19 +1,17 @@
 ---
 title: 身份验证
-author: KevinAsgari
 description: 了解如何在游戏中登录 Xbox Live 用户。
 ms.assetid: 7a9dfb3c-1ccc-4948-a218-37101069c91a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 身份验证, 登录
 ms.localizationpriority: medium
-ms.openlocfilehash: f74453ee618fe19d1e6c32e99c5710abc65a6037
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6fd94a8fbe759655b495feed8df4dad689936c4e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567737"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342368"
 ---
 # <a name="authentication"></a>身份验证
 
