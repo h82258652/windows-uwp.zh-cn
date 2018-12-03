@@ -2,22 +2,20 @@
 title: PermissionCheckResponse (JSON)
 assetID: 7a749001-b569-b0e0-2a35-f299474c8710
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckresponse.html
-author: KevinAsgari
 description: " PermissionCheckResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 79ac86b1cd99b8d1a6074b6aaadc8b6a62eec6db
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7623a45fa21e30a015bd5c6a7c1f5add19cc189b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581914"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346705"
 ---
 # <a name="permissioncheckresponse-json"></a>PermissionCheckResponse (JSON)
-从单个权限设置对单个目标用户的单个用户检查的结果。 
+从单个权限设置针对单个目标用户的单个用户检查的结果。 
 <a id="ID4EN"></a>
 
  
@@ -25,10 +23,10 @@ ms.locfileid: "7581914"
  
 PermissionCheckResponse 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | IsAllowed| 布尔值| 必需。 如果请求用户允许执行与目标用户请求的操作，此成员为<b>true</b> 。| 
-| 结果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)的数组| 可选。 如果<b>IsAllowed</b>已 false 检查已被并被拒绝请求者相关的内容，指示的权限被拒绝的原因。| 
+| 结果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)的数组| 可选。 如果<b>IsAllowed</b>是 false，并检查被拒绝的请求者相关的内容指示的权限被拒绝的原因。| 
   
 <a id="ID4E3B"></a>
 

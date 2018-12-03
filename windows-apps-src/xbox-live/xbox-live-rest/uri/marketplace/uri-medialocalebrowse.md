@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/browse
 assetID: 4fedc780-b3c2-c83b-e7af-9e18666a4771
 permalink: en-us/docs/xboxlive/rest/uri-medialocalebrowse.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/browse"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c877988111eb1ee19ee91bf01d4a6077ce4600
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f692fb66580e20ffeefb3595b8cf9d795f504311
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577073"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327445"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
 允许浏览的单个媒体组中的项。 浏览 API 允许客户端浏览的单个媒体组内从项。 非连续而不使用延续令牌使用 skipItems 参数可以访问的数据的页面。
@@ -23,14 +21,14 @@ ms.locfileid: "7577073"
  
 此 API 将接受查询优化器。
  
-用于检索子某些方案包括：
+某些情况下，用于检索子元素包括：
  
    * 为轨唱片集
    * 为季节系列
    * 季节到剧集：
    * 跟踪对音乐视频
    * 照相艺术家
-   * 游戏的游戏加载项 （DLC、 头像、 主题、 等。）
+   * 为游戏加载项 （DLC、 头像、 主题等） 游戏
   
 这些 Uri 的域是`eds.xboxlive.com`。
  
@@ -41,7 +39,7 @@ ms.locfileid: "7577073"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | marketplaceId| 字符串| 必需。 字符串从<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>获得的值。| 
   

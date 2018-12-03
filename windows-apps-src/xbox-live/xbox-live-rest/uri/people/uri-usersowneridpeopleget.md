@@ -2,19 +2,17 @@
 title: GET (/users/{ownerId}/people)
 assetID: c948d031-ec19-7571-31ef-23cb9c5ebfaf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopleget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/people)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: a9761e3e9dff2cef330c48674a62b33f63fbd096
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c8672188a93b2e8d27a081ae068387e7ee7aa42
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557163"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327359"
 ---
 # <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 获取调用方的用户集合。
@@ -43,7 +41,7 @@ ms.locfileid: "7557163"
 
 ## <a name="uri-parameters"></a>URI 参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- |
 | ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。|
 
@@ -52,11 +50,11 @@ ms.locfileid: "7557163"
 
 ## <a name="query-string-parameters"></a>查询字符串参数
 
-| 参数| 类型| 说明|
+| 参数| 类型| 描述|
 | --- | --- | --- | --- | --- | --- |
-| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表上的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表拥有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有人。</li></br>**注意：** 不同于所属的用户调用用户是否支持仅**所有**的值。|
-| startIndex| 32 位无符号的整数| 返回起始位置给定索引的项。  
-| maxItems| 32 位无符号的整数| 用户从开始菜单索引从开始集合中返回的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
+| 视图| 字符串| 返回与视图关联的用户。 默认值是"全部"。 可能的值为： <ul><li><b>所有</b>-返回用户联系人列表中的所有人。 这是默认值。</li><li><b>最喜爱</b>的用户的人脉列表具有最喜爱的人物属性返回的所有人。</li><li><b>LegacyXboxLiveFriends</b> -返回有关用户的人脉列表中的用户也是旧 Xbox LIVE 好友的所有用户。</li></br>**注意：** 不同于所属的用户调用用户是否支持**所有**的值。|
+| startIndex| 32 位无符号的整数| 返回的起始位置给定索引的项目。  
+| maxItems| 32 位无符号的整数| 用户从开始菜单索引的集合返回的最大数量。 如果<b>maxItems</b>不存在，并且可能会返回<b>maxItems</b>少于 （即使尚未返回结果的最后一页），该服务可能会提供一个默认值。|
 
 <a id="ID4ERD"></a>
 
@@ -72,7 +70,7 @@ ms.locfileid: "7557163"
 
 ## <a name="required-request-headers"></a>需的请求标头
 
-| 标题| 说明|
+| 标题| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 授权| 字符串。 授权 Xbox LIVE 的数据。 这通常是加密的 XSTS 令牌。 示例值： <b>XBL3.0 x =&lt;userhash >;&lt;令牌 ></b>。|
 
@@ -81,10 +79,10 @@ ms.locfileid: "7557163"
 
 ## <a name="optional-request-headers"></a>可选的请求标头
 
-| 标题| 说明|
+| 标题| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| 名称/的内部版本号此请求应定向到 Xbox LIVE 的服务。 验证在标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
-| 接受| 字符串。 内容类型的调用方接受在响应中。 所有响应都是<b>application/json</b>。|
+| X RequestedServiceVersion| 生成此请求应定向到 Xbox LIVE 的服务的名称/数。 验证该标头、 身份验证令牌等中的声明的有效性后仅为请求路由到该服务。默认值： 1。|
+| 接受| 字符串。 内容类型的调用方接受在响应中。 所有的响应是<b>application/json</b>。|
 
 <a id="ID4E5G"></a>
 
@@ -98,9 +96,9 @@ ms.locfileid: "7557163"
 
 ## <a name="http-status-codes"></a>HTTP 状态代码
 
-此部分中使用此方法对此资源区域设置发出请求的响应，该服务返回的状态代码之一。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
+此部分中使用此方法对此资源所做的请求的响应，该服务返回一个状态代码。 有关使用 Xbox Live 服务的标准 HTTP 状态代码的完整列表，请参阅[标准 HTTP 状态代码](../../additional/httpstatuscodes.md)。
 
-| 代码| 原因短语| 说明|
+| 代码| 原因短语| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| “确定”| 成功。|
 | 400| 错误请求| 查询参数或用户 Id 的格式不正确。|
@@ -111,7 +109,7 @@ ms.locfileid: "7557163"
 
 ## <a name="required-response-headers"></a>所需的响应标头
 
-| 标头| 类型| 说明|
+| 标头| 类型| 描述|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Length| 32 位无符号的整数| 长度，以字节为单位，响应正文。 示例值： 22。|
 | Content-Type| 字符串| 响应正文的 MIME 类型。 这将始终为<b>application/json</b>。|
@@ -121,7 +119,7 @@ ms.locfileid: "7557163"
 
 ## <a name="response-body"></a>响应正文
 
-如果在调用成功，该服务的调用方的用户集合和数组，其中包含调用方的用户集合中返回用户的总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
+如果在调用成功，该服务将返回调用方的用户集合和数组，其中包含调用方的用户集合中的用户总数。 请参阅[PeopleList (JSON)](../../json/json-peoplelist.md)。
 
 <a id="ID4EZCAC"></a>
 

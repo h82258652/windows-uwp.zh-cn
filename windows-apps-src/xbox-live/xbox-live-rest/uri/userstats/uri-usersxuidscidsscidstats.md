@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/scids/{scid}/stats
 assetID: 3cf9ffd4-9a8b-2658-402b-2e933f7f6f1b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstats.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/scids/{scid}/stats"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd3298c5191f5cfc2e470203567722251371ecb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53a6c7bb0e7390b024b01e221d8061316a80509e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569892"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347058"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
-访问范围由逗号分隔的代表指定用户的用户统计信息名称列表的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
+访问代表指定用户的用户统计信息名称的以逗号分隔列表范围内的服务配置。 这些 Uri 的域是`userstats.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,10 +24,10 @@ ms.locfileid: "7569892"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | xuid| GUID| Xbox 用户 ID (XUID) 的用户的名义访问服务配置。| 
-| scid| GUID| 服务配置，其中包含正在访问的资源的标识符。| 
+| scid| GUID| 服务配置，其中包含所访问的资源的标识符。| 
   
 <a id="ID4E4B"></a>
 
@@ -38,7 +36,7 @@ ms.locfileid: "7569892"
 
 [GET](uri-usersxuidscidsscidstatsget.md)
 
-&nbsp;&nbsp;获取由逗号分隔的代表指定用户的用户统计信息名称列表范围的服务配置。
+&nbsp;&nbsp;获取由逗号分隔列表的代表指定用户的用户统计数据名称范围的服务配置。
 
 [获取与值元数据](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 

@@ -1,19 +1,17 @@
 ---
 title: 多人游戏服务配置
-author: KevinAsgari
 description: 了解如何配置 Xbox Live 多人游戏服务。
 ms.assetid: d042d4d5-1c75-4257-8a6f-07eddd39ca7e
-ms.author: kevinasg
 ms.date: 07/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 多人游戏, 服务配置, 会话模板, 自定义邀请字符串, smartmatch hopper
 ms.localizationpriority: medium
-ms.openlocfilehash: 44cf15cf63ce1ebbb7d205af44b07149e1ee3a4a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bf829069824443cdc1c8c0658fcfdfcbe72d0b93
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555135"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337517"
 ---
 # <a name="multiplayer-service-configuration"></a>多人游戏服务配置
 为了让你的作品充分利用 Xbox Live 提供的服务，你必须先定义服务配置。 此服务配置位于 Xbox Live 云服务中，可定义 Xbox Live 服务与任何运行你的作品/游戏的设备的交互方式。
@@ -52,7 +50,7 @@ ms.locfileid: "7555135"
 
 创建新的匹配 hopper 时，你必须定义以下各项：
 
-| 字段 | 说明 |
+| 字段 | 描述 |
 |---|---|
 |名称| 输入一个名称，该名称既描述了匹配 hopper 的特征，又便于你记忆和识别。 该名称必须是文本字符串，最多包含 140 个字符。 |
 | 最小组大小 | 指定可接受的最小玩家数。 最小值为 1。 |

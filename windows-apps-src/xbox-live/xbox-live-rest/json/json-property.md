@@ -2,19 +2,17 @@
 title: Property (JSON)
 assetID: 93de547e-d936-6fcc-92cb-e4dd284dd609
 permalink: en-us/docs/xboxlive/rest/json-property.html
-author: KevinAsgari
 description: " Property (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d37054d03f6ebe8299db78673dc631c9b4b4bc16
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7e2a721886509c49c60d663d491f8d49bc3c95e9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556464"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349128"
 ---
 # <a name="property-json"></a>Property (JSON)
 包含匹配请求条件为提供的客户端的属性数据。
@@ -28,7 +26,7 @@ ms.locfileid: "7556464"
 | 成员| 类型| 描述|
 | --- | --- | --- |
 | id| 字符串| 此属性的 id。|
-| type| 32 位有符号整数 | 该属性的类型。 支持的值包括： <ul><li>0 = 整数</li><li>1 = string</li></ul>| 
+| type| 32 位有符号整数 | 该属性的类型。 受支持的值为： <ul><li>0 = 整型</li><li>1 = string</li></ul>| 
 | 值| 字符串| 此属性的值。|
 
 <a id="ID4EGC"></a>

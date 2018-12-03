@@ -2,22 +2,20 @@
 title: Player (JSON)
 assetID: eaf6d082-869b-d2d3-d548-5cef65e54541
 permalink: en-us/docs/xboxlive/rest/json-player.html
-author: KevinAsgari
 description: " Player (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 0454f364bf2612c88b8f212ba935872968ce2476
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a5967cbfecd47c5675926bd45939442c45dda7b6
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558573"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329561"
 ---
 # <a name="player-json"></a>Player (JSON)
-在游戏会话中包含玩家数据。 
+在游戏会话包含玩家数据。 
 <a id="ID4EN"></a>
 
  
@@ -25,10 +23,10 @@ ms.locfileid: "7558573"
  
 玩家对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | customData| 8 位无符号整数的数组| 1024 字节的 Base64 编码的特定于游戏的玩家数据。 此值不透明到服务器。| 
-| 玩家代号| 字符串| 玩家代号 — 最多 15 个字符的 — 的玩家。 识别的玩家时，客户端应在 UI 中使用此值。 | 
+| 玩家代号| 字符串| 玩家代号，最多 15 个字符的 — 的玩家。 在确定玩家时，客户端应在 UI 中使用此值。 | 
 | isCurrentlyInSession| 布尔值| 指示玩家当前在会话中或离开会话。| 
 | seatIndex| 32 位有符号整数| 玩家在会话中的索引。| 
 | xuid| 64 位无符号的整数| Xbox 用户 ID (XUID) 的玩家。| 

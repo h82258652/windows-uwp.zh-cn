@@ -1,19 +1,17 @@
 ---
 title: Xbox Live 示例
-author: KevinAsgari
 description: 详细说明可用于 Xbox Live 的 API 代码示例。
 ms.assetid: 4bb6fa66-34d1-4db9-87c8-7e24ad5afc0a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 示例, 示例
 ms.localizationpriority: medium
-ms.openlocfilehash: 30078629f164f30fffcecb0dce76046b896c21f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4accccee453a0b2bed5ff351b52d5dbd3d0a251d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581041"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345524"
 ---
 # <a name="xbox-live-samples"></a>Xbox Live 示例
 

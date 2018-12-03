@@ -2,19 +2,17 @@
 title: /inventory/{itemID}
 assetID: e53242a3-e74d-77a2-4427-62ef7954c731
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurl.html
-author: KevinAsgari
 description: " /inventory/{itemID}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b551daee0f9b7eba898c2b04dcd150129b8e6d65
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: adac175675230e107b3066d1d8f955e660bdbd00
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552611"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339757"
 ---
 # <a name="inventoryitemid"></a>/inventory/{itemID}
 访问完整的一组特定的库存项目的详细信息。 这些 Uri 的域是`inventory.xboxlive.com`。
@@ -24,7 +22,7 @@ ms.locfileid: "7552611"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | itemID| 字符串| 特定于每个用户单数库存项目的 ID| 
   
@@ -35,7 +33,7 @@ ms.locfileid: "7552611"
 
 [GET (/inventory/{itemID})](uri-inventoryitemurlget.md)
 
-&nbsp;&nbsp;为特定的库存项目提供完整的详细信息集。
+&nbsp;&nbsp;为特定的清单项提供完整的详细信息集。
  
 <a id="ID4EZB"></a>
 

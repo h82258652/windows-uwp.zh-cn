@@ -1,19 +1,17 @@
 ---
 title: 实时活动服务
-author: KevinAsgari
 description: 了解 Xbox Live 实时活动服务。
 ms.assetid: 50de262f-fc55-4301-83b5-0a8a30bc7852
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 实时活动服务
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ee5c78cfbb64a509a2d8b6a0f563f0267a46419
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 36389fac3bd6dea2d2e24c0935087781118d8046
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553007"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346176"
 ---
 # <a name="real-time-activity-service"></a>实时活动服务
 

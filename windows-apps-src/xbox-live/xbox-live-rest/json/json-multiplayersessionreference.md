@@ -2,19 +2,17 @@
 title: MultiplayerSessionReference (JSON)
 assetID: 6e03e060-8c9b-b394-415f-af7e85be569f
 permalink: en-us/docs/xboxlive/rest/json-multiplayersessionreference.html
-author: KevinAsgari
 description: " MultiplayerSessionReference (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f7e6e4e9579059f690baffd29e1fa855b4b67d9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5986079e1cae3338d8cc24a9e85f6941cf4fbec4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577770"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328038"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
 表示**MultiplayerSessionReference**的 JSON 对象。 
@@ -24,7 +22,7 @@ ms.locfileid: "7577770"
  
 MultiplayerSessionReference JSON 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | scid| GUID| 服务配置标识符 (SCID)。 第 1 部分会话标识符。| 
 | templateName | 字符串 | 会话模板的当前实例的名称。 第 2 部分会话标识符。 | 

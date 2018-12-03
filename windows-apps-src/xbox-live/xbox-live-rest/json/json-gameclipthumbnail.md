@@ -2,22 +2,20 @@
 title: GameClipThumbnail (JSON)
 assetID: 3ed87fc1-734c-d8b5-d908-0ae3359769ed
 permalink: en-us/docs/xboxlive/rest/json-gameclipthumbnail.html
-author: KevinAsgari
 description: " GameClipThumbnail (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fae93f76d9c8647b2d4264463b434d86897e2a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a491b70b8e34c1c736667b50271af7b970b6bb2a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575604"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349850"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
-包含一个单独的缩略图的相关信息。 可以有多个大小每个剪辑，并由客户端可选择正确显示。 
+包含一个单独的缩略图的相关信息。 可以有多个大小每个剪辑，并由客户端，可选择正确显示。 
 <a id="ID4EN"></a>
 
  
@@ -25,10 +23,10 @@ ms.locfileid: "7575604"
  
 GameClipThumbnail 对象具有以下规范。
  
-| 成员| 类型| 说明| 
+| 成员| 类型| 描述| 
 | --- | --- | --- | 
 | <b>uri</b>| 字符串| 缩略图图像的 URI。| 
-| <b>fileSize</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 
+| <b>文件大小</b>| 32 位无符号的整数| 缩略图图像的总文件大小。| 
 | <b>thumbnailType</b>| ThumbnailType| 缩略图图像的类型。| 
   
 <a id="ID4EAC"></a>

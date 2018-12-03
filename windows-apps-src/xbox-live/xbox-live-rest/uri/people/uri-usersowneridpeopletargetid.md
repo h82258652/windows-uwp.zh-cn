@@ -2,22 +2,20 @@
 title: /users/{ownerId}/people/{targetid}
 assetID: 9dd19e75-3b48-d7e0-fc65-6760c15ddf62
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopletargetid.html
-author: KevinAsgari
 description: " /users/{ownerId}/people/{targetid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: f745e416c573bdf4c6aa172c62a82204ba077dcd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6238996abdeaca9b7a9a7a20d3f1ae9702e95a73
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558123"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349535"
 ---
 # <a name="usersowneridpeopletargetid"></a>/users/{ownerId}/people/{targetid}
-调用方的用户集合中访问通过目标 ID 的人员。 这些 Uri 的域是`social.xboxlive.com`。
+调用方的用户集合中访问目标 ID 由一个人。 这些 Uri 的域是`social.xboxlive.com`。
  
   * [URI 参数](#ID4EV)
  
@@ -26,7 +24,7 @@ ms.locfileid: "7558123"
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 类型| 说明| 
+| 参数| 类型| 描述| 
 | --- | --- | --- | 
 | ownerId| 字符串| 正在访问其资源的用户的标识符。 必须匹配身份验证的用户。 可能的值为"我"、 xuid({xuid}) 或 gt({gamertag})。| 
 | targetid| 字符串| 正在从所有者的人脉列表中，Xbox 用户 ID (XUID) 或玩家代号检索其数据的用户的标识符。 示例值： xuid(2603643534573581)、 gt(SomeGamertag)。| 
@@ -38,7 +36,7 @@ ms.locfileid: "7558123"
 
 [GET](uri-usersowneridpeopletargetidget.md)
 
-&nbsp;&nbsp;目标 ID 由用户从集合中获取调用方的人。
+&nbsp;&nbsp;调用方的用户集合中获取目标 ID 由一个人。
  
 <a id="ID4E1B"></a>
 

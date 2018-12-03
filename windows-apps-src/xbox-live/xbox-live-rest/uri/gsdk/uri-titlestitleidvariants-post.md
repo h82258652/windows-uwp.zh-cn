@@ -2,19 +2,17 @@
 title: POST (/titles/{titleId}/variants)
 assetID: 84303448-5a11-d96f-907d-77f57f859741
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidvariants-post.html
-author: KevinAsgari
 description: " POST (/titles/{titleId}/variants)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc67b61d9130838802774460cd38ec08e2e349b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 17974ddf7dec26abac18ccee9fda5249bc9d656f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558698"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348795"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
@@ -33,7 +31,7 @@ URI 由客户端检索列表的游戏的变体，为指定的游戏 id。这些 
  
 ## <a name="uri-parameters"></a>URI 参数
  
-| 参数| 说明| 
+| 参数| 描述| 
 | --- | --- | 
 | titleid| 游戏应在其中操作该请求 ID。| 
   
@@ -49,11 +47,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>需的请求标头
  
-发出请求时, 显示下表中的标头是必需的。
+当发出请求，如下表所示的标头是必需的。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | 
-| 内容类型| 应用程序/json| 提交的数据的类型。| 
+| 内容类型| 应用程序/json| 在提交的数据的类型。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 请求对象的长度。| 
 | x xbl 协定版本| 1| API 协定版本。| 
@@ -64,9 +62,9 @@ gameserverds.xboxlive.com
  
 ## <a name="optional-request-headers"></a>可选的请求标头
  
-发出请求时, 显示下表中的标头是可选的。
+当发出请求，如下表所示的标头是可选的。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X XblCorrelationId|  | 请求正文的 mime 类型。| 
   
@@ -75,7 +73,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>授权
 
-请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头是无效或不存在，该服务将在响应中返回 401 未经授权。
+请求必须包含有效的 Xbox Live 授权标头。 如果调用方不允许访问此资源，该服务将在响应中返回 403 禁止访问。 如果标头无效或不存在，该服务将在响应中返回 401 未经授权。
  
 <a id="ID4EEE"></a>
 
@@ -84,7 +82,7 @@ gameserverds.xboxlive.com
  
 请求必须包含一个具有以下成员的 JSON 对象。
  
-| 成员| 说明| 
+| 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 区域设置| 若要返回的变体本地。| 
 | maxVariants| 变体，要返回的最大数量。| 
@@ -113,9 +111,9 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>所需的响应标头
  
-响应将始终会包括下表中所示的标头。
+响应将始终会包括的标头，如下表所示。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 内容类型| 应用程序/json| 响应正文中的数据的类型。| 
 | Content-Length|  | 响应正文的长度。| 
@@ -127,7 +125,7 @@ gameserverds.xboxlive.com
  
 响应可能包括的标头，如下所示。
  
-| 标头| 值| 说明| 
+| 标头| 值| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | X XblCorrelationId|  | 响应正文的 mime 类型。| 
   
@@ -138,21 +136,21 @@ gameserverds.xboxlive.com
  
 如果在调用成功，该服务将返回一个具有以下成员的 JSON 对象。
  
-| 成员| 说明| 
+| 成员| 描述| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 变体| 变体的数组。| 
 | variantId| 变体的 Id。| 
-| name| 变体的名称。| 
+| name| 变体名称。| 
 | isPublisher|  | 
 | 排名|  | 
 | gameVariantSchemaId|  | 
-| variantSchemas| 变体的架构的数组。| 
+| variantSchemas| 数组的变体的架构。| 
 | variantSchemaId| 架构的 Id。| 
 | schemaContent| 架构内容| 
 | name| 架构的名称| 
 | gsiSets| GSI 集的数组。| 
 | minRequiredPlayers| 最小的变体的玩家人数。| 
-| maxAllowedPlayers| 最大为变体的玩家数。| 
+| maxAllowedPlayers| 变体的玩家的最大数量。| 
 | gsiSetId| GSI 集的 Id。| 
 | gsiSetName| GSI 集的名称。| 
 | selectionOrder|  | 

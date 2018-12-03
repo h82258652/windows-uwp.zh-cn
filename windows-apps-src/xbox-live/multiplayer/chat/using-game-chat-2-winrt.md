@@ -1,18 +1,16 @@
 ---
 title: 使用游戏聊天 2 WinRT 投影
-author: KevinAsgari
 description: 了解如何使用 Xbox Live 游戏聊天 2 WinRT 投影将语音通信添加到游戏中。
-ms.author: kevinasg
 ms.date: 4/11/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 游戏聊天 2, 游戏聊天, 语音通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 65587bc47f6c6cca0412935f6a2a463df5ba38ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3f39328ee2f77833dfecb484346b7f543ba17348
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566158"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331214"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>使用游戏聊天 2（WinRT 投影）
 

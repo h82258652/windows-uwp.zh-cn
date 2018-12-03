@@ -2,22 +2,20 @@
 title: /qosservers
 assetID: 6adbcc27-474c-959b-f0b7-de97241862c7
 permalink: en-us/docs/xboxlive/rest/uri-qosservers.html
-author: KevinAsgari
 description: " /qosservers"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: fbf22063c3eabc61f97b4892e0a2a9bb9c24e387
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fdd55e1c4b1d162906dc4480aa7349e4dd734a49
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571225"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332552"
 ---
 # <a name="qosservers"></a>/qosservers
-URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
+通过适用于 Xbox Live 计算获取可用的 QoS 服务器列表中的客户端调用的 URI。 这些 Uri 的域是`gameserverds.xboxlive.com`和`gameserverms.xboxlive.com`。
  
   * [主机名](#ID4EZ)
  
@@ -35,5 +33,5 @@ gameserverds.xboxlive.com
 
 [GET](uri-qosservers-get.md)
 
-&nbsp;&nbsp;URI 由客户端以用于 Xbox Live 计算获取可用的 QoS 服务器的列表。
+&nbsp;&nbsp;通过适用于 Xbox Live 计算获取可用的 QoS 服务器列表中的客户端调用的 URI。
  

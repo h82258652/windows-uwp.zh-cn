@@ -1,19 +1,17 @@
 ---
 title: WinRT API 错误处理
-author: KevinAsgari
 description: 了解在通过 WinRT API 进行 Xbox Live 服务调用时如何处理错误。
 ms.assetid: b4f04798-df91-430e-90f0-83b5a48b9ab2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox live, xbox, 游戏, uwp, windows 10, xbox one, 错误, 处理
 ms.localizationpriority: medium
-ms.openlocfilehash: d1127811e44eecb03cfc9a9818733a2b2234d2c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e72dfa0b6f98284c240cf6af2dde02439d694b48
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561927"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347068"
 ---
 # <a name="winrt-api-error-handling"></a>WinRT API 错误处理
 

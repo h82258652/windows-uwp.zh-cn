@@ -1,19 +1,17 @@
 ---
 title: 上下文搜索
-author: KevinAsgari
 description: 了解如何使用上下文搜索使用相关的元数据自动标记广播和游戏剪辑。
 ms.assetid: 0c2afbfa-f32a-4ddd-9e9e-c8ac7eedae18
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 上下文搜索, 广播, 游戏剪辑
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d24b31087db9c73f6b286a140c6dcf3a7e1eb4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a4112af4c54d21280b57cb0d976f129201efc269
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554686"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344207"
 ---
 # <a name="contextual-search"></a>上下文搜索
 
@@ -27,4 +25,4 @@ ms.locfileid: "7554686"
 * 在操作中呈现新 DLC
 * 根据上下文提供创建者评论
 
-只需在 XDP 或合作伙伴中心进行配置，上下文搜索你的游戏将自动亮起在广播应用程序时立即 Xbox Shell 和 Cortana 在以后的日期。  而且，游戏可以直接在游戏中利用这些搜索 API，让用户无需离开游戏便可获得差异化的体验。  无论集成级别如何，你都将为你的作品实现巨大的价值和曝光度。
+只需在 XDP 或合作伙伴中心进行配置，为你的游戏的上下文搜索将自动亮起在广播应用程序时立即 Xbox Shell 和 Cortana 在以后的日期。  而且，游戏可以直接在游戏中利用这些搜索 API，让用户无需离开游戏便可获得差异化的体验。  无论集成级别如何，你都将为你的作品实现巨大的价值和曝光度。

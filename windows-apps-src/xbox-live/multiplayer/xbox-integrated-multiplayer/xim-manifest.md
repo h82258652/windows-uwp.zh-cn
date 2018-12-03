@@ -1,19 +1,17 @@
 ---
 title: XIM 项目配置
-author: KevinAsgari
 description: 描述如何配置 UWP 应用清单，以使用 Xbox 集成多人游戏 (XIM)。
 ms.assetid: 5d0ed7bd-9527-42a3-ae09-8cc9012c1111
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, xbox 集成多人游戏, 清单
 ms.localizationpriority: medium
-ms.openlocfilehash: f83cad8ffc78fa34d5b5198d53dd024e363ff038
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 926cc4495236fc4762f9b3176a5d6a4a579e2e2e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558306"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345458"
 ---
 # <a name="xim-project-configuration"></a>XIM 项目配置
 

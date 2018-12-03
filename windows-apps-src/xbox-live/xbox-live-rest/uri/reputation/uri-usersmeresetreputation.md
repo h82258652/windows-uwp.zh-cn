@@ -2,19 +2,17 @@
 title: /users/me/resetreputation
 assetID: 24de66b1-5514-b880-f47a-aff2c1d30f7b
 permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputation.html
-author: KevinAsgari
 description: " /users/me/resetreputation"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e3e0eef31daae4bf1fe7d8b6f4f1fba0e1ff92
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f43244e39d825e75d6c6cd71fd9633ca158a7a16
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563264"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338021"
 ---
 # <a name="usersmeresetreputation"></a>/users/me/resetreputation
 使访问当前用户的信誉评分，强制执行团队。 这些 Uri 的域是`reputation.xboxlive.com`。
@@ -26,7 +24,7 @@ ms.locfileid: "7563264"
 
 [POST (/users/me/resetreputation)](uri-usersmeresetreputationpost.md)
 
-&nbsp;&nbsp;使执行团队后 （例如） 帐户劫持将当前用户的信誉评分设置为某些任意值。
+&nbsp;&nbsp;启用后 （例如） 帐户劫持设置为某些任意值的当前用户的信誉评分，强制执行团队。
  
 <a id="ID4E6"></a>
 

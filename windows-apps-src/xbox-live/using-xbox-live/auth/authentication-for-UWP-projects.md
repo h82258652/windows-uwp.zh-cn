@@ -1,19 +1,17 @@
 ---
 title: UWP 项目的身份验证
-author: aablackm
 description: 了解如何在通用 Windows 平台 (UWP) 游戏中登录 Xbox Live 用户。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
-ms.author: aablackm
 ms.date: 03/14/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 身份验证, 登录
 ms.localizationpriority: medium
-ms.openlocfilehash: 36373fbc25c7f478bda9bbbf14f996f3997e91d2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d9872ab1fef773cb3f3dadfaea20a55dbe43f0de
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558284"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347062"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP 项目的身份验证
 
