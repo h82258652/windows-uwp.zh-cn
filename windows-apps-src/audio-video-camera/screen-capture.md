@@ -2,16 +2,16 @@
 title: 屏幕捕获
 description: Windows.Graphics.Capture 命名空间提供从屏幕或应用程序窗口获取帧的 API，以创建用于生成协作和交互式体验的视频流或快照。
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.date: 10/09/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 屏幕捕获
 ms.localizationpriority: medium
-ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328453"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470761"
 ---
 # <a name="screen-capture"></a>屏幕捕获
 
@@ -383,6 +383,10 @@ namespace WindowsGraphicsCapture
     }
 }
 ```
+
+## <a name="record-a-video"></a>录制视频
+
+如果你想要你的应用程序的视频录制，你可以执行操作以便更轻松地[Windows.Media.AppRecording 命名空间](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 这是桌面扩展 SDK 的一部分，因此它仅适用于桌面版上，并且需要你添加对它从你的项目的引用。 有关详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 ## <a name="see-also"></a>另请参阅
 

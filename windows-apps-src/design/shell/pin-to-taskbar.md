@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 任务栏, 任务栏管理器, 固定到任务栏, 主要磁贴
 ms.localizationpriority: medium
 ms.openlocfilehash: 640dc637a1c50718210d87af87cb8b8e706a5ab7
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342105"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8464691"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>将应用固定到任务栏
 
