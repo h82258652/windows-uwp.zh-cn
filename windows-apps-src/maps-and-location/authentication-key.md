@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
 ms.localizationpriority: medium
 ms.openlocfilehash: e986880ccedfdb4648b1554c35c23a8a841fe820
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338925"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467495"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 

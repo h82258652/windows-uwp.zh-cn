@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10，uwp，应用安装程序，AppInstaller 旁, 加载，相关集，可选包，IIS 服务器
 ms.localizationpriority: medium
-ms.openlocfilehash: b447093ba54f2c979d35793a6a4eaa7538ee4892
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352131"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469367"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>从 IIS 服务器安装 UWP 应用
 
@@ -119,7 +119,7 @@ ms.locfileid: "8352131"
 
 由于网络隔离，如应用安装程序的 UWP 应用被限制为使用 IP 环回地址，如http://localhost/。 使用本地 IIS 服务器时，必须将应用安装程序添加到环回豁免列表。 
 
-若要执行此操作，以打开**命令提示符**的**管理员**并输入以下内容: '' 命令行 CheckNetIsolation.exe LoopbackExempt-a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+若要执行此操作，以打开**命令提示符**的**管理员**并输入以下内容: '' 命令行 CheckNetIsolation.exe LoopbackExempt-a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -131,7 +131,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 通过应用安装程序安装应用的本地验证完成后，你可以删除你通过此步骤中添加环回豁免：
 
-'' 命令行 CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+'' 命令行 CheckNetIsolation.exe LoopbackExempt-d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 ## Step 9 - Run the Web App 

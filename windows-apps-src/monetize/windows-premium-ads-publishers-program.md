@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告
 ms.localizationpriority: medium
 ms.openlocfilehash: 638854066c02edb923c8d4153f2125142d6b966b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332689"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467737"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows 高级广告发布者计划
 

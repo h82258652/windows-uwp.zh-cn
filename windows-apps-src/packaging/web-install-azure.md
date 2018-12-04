@@ -1,24 +1,22 @@
 ---
 title: 从 Azure Web 服务器安装 UWP 应用
 description: 阅读此教程，了解如何设置 Azure Web 服务器、如何验证 Web 应用可以托管应用包，以及如何有效调用和使用应用安装程序。
-ms.date: 09/30/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f0e4fe6cd2b05c2de4648a410ba43ce27e48922
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325629"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469208"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>从 Azure Web 应用安装 UWP 应用
 
 通过应用安装程序，开发人员和 IT 专业人员可以通过在各自的内容分发网络 (CDN) 上托管应用的方式来分发 Windows 10 应用。 这种方式适用于不希望或不需要将应用发布到 Microsoft Store，但仍希望利用 Windows 10 打包和部署平台的企业。
 
 本主题概述了配置 Azure Web 服务器以托管 UWP 应用包的步骤，并介绍如何使用应用安装程序来安装应用包。
-
-在此教程中，将介绍如何设置 IIS 服务器以在本地验证 Web 应用程序能否正常托管应用包，并有效地调用和使用应用安装程序。 我们还另外提供了教程，介绍如何在外部的常用云 Web 服务（Azure 和 AWS）中正确托管 Web 应用程序，以确保其满足应用安装程序的 Web 安装要求。 此分步教程不需要任何专家知识，很容易学习。 
 
 ## <a name="setup"></a>设置
 
