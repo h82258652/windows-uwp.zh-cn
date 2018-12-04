@@ -3,11 +3,11 @@ title: 设备门户远程输入 API 参考
 description: 了解如何在 Xbox 上远程发送控制器、键盘和鼠标输入。
 ms.localizationpriority: medium
 ms.openlocfilehash: e0db86ad50bfb1cb27f516243542a554e710c3ea
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326497"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483585"
 ---
 # <a name="remote-input-api-reference"></a>远程输入 API 参考   
 可以通过此 API 远程实时发送控制器、键盘和鼠标输入。

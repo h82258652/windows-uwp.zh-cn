@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: aea2a339c450f50ca3ae6f6250d056b4a1e70aa1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334113"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479977"
 ---
 # <a name="camera-barcode-scanner-system-requirements"></a>相机条形码扫描仪的系统要求
 从 Windows 10 版本 1803 开始，你可以通过来自通用 Windows 应用程序的标准相机镜头来读取条形码。

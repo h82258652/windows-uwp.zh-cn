@@ -7,11 +7,11 @@ keywords: windows 10，uwp、 标准、 c + +，cpp，winrt、 投影、 移动�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334414"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483932"
 ---
 # <a name="value-categories-and-references-to-them"></a>值类别和对它们的引用
 本主题介绍在 c + + 中存在各种类别的值 （和值的引用）。 你将肯定所知，*左值*和*rvalues*，但你可能不将其视为它们在本主题提供的条款。 还有其他类型的值，过。
