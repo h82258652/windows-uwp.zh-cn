@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, direct3d, 深度缓冲区
 ms.localizationpriority: medium
 ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326837"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485645"
 ---
 # <a name="create-depth-buffer-device-resources"></a>创建深度缓冲区设备资源
 
