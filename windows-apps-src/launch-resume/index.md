@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务，应用服务连接的设备，远程系统
 ms.localizationpriority: medium
 ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333163"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481321"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
