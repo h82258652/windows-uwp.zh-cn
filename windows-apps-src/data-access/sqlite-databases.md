@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 应用中使用 SQLite 数据库
 description: 在 UWP 应用中使用 SQLite 数据库。
-ms.date: 06/08/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 1588dfbfb1c33b246caba0816c584135f2094f35
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 3780423b0c2fc2bbe1ebc81054e13997d5ebde7f
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336944"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473187"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 你可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
@@ -163,10 +163,11 @@ namespace DataAccessLibrary
 
 ```
 
-将以下 using 语句添加到此文件顶部。
+添加以下 using 语句到此文件的顶部。
 
 ```csharp
 using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
 ```
 
 <a id="initialize" />

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333778"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472834"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用应用安装程序文件安装相关集
 
