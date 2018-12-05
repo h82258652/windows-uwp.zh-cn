@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e1d955ce7e70f2f2a454823020df38db66e47d
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487149"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696227"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>启用或禁用 Windows 附带的软件解码器
 在 Windows 10 版本 1803 中，软件解码器默认安装和启用。  如果你不想使用相机条形码扫描仪，或者如果你已获取了使用 Windows.Devices.PointOfService.BarcodeScanner API 的第三方解码器且不希望两个同时使用，则可以禁用 Windows 附带的软件解码器。

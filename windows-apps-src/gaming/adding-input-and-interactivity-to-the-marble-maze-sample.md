@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 输入, 示例
 ms.localizationpriority: medium
 ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467806"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8695973"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>向 Marble Maze 添加输入和交互性示例
 
