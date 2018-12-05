@@ -7,11 +7,11 @@ keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8476109"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8692741"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 

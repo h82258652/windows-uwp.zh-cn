@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 定价, 定价应用, 应用价格, 销售应用, 价格更改, 自定义价格, 价格, 单价, 成本, 替代基价, 自由格式价格, 自由格式
 ms.localizationpriority: medium
-ms.openlocfilehash: d901ec630c680adfaa637d5555fc2182749bec89
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: ea873d2c1f78762741d6272fafe1496d6b3a71ea
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462217"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696773"
 ---
 # <a name="set-and-schedule-app-pricing"></a>设置和计划应用定价
 
@@ -32,7 +32,7 @@ ms.locfileid: "8462217"
 
 在**定价**部分中，单击**查看转换表**，可查看以每种货币表示的相应价格。 其中还会显示与每个价格段关联的 ID 号，如果使用 [Microsoft Store 提交 API](../monetize/manage-app-submissions.md#price-tiers)输入价格，则需要使用这个号码。 可单击**下载**，以 .csv 文件格式下载价格段表的一个副本。
 
-请记住，你选择的价格段可能包含你的客户必须支付的销售税或增值税。 若要了解有关选定市场中应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)。
+请记住，你选择的价格段可能包含你的客户必须支付的销售税或增值税。 若要了解有关选定市场中应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 还应查看[特定市场的价格考虑因素](define-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
 > 如果你选择下**可用，但不可被发现在应用商店中使此产品**的**停止购置**选项中的[可见性](choose-visibility-options.md#discoverability)部分），你将无法设置定价 （因为没有人能够获取该应用提交除非他们使用促销代码免费获取应用）。

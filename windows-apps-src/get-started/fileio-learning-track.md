@@ -7,11 +7,11 @@ keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8482774"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685507"
 ---
 # <a name="work-with-files"></a>处理文件
 

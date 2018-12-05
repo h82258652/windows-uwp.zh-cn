@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户、 组、 多个用户，多用户
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd300aa6a37c205e01c6f73d95ef1818d516fc0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461396"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685801"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>添加用户、 组和 Azure AD 应用程序与你的合作伙伴中心帐户
 
@@ -19,11 +19,11 @@ ms.locfileid: "8461396"
 将用户添加到帐户后，你可以[编辑帐户详细信息](#edit)、更改[角色和权限](set-custom-permissions-for-account-users.md)或[删除用户](#remove)。
 
 > [!IMPORTANT]
-> 若要将用户添加到你的帐户，必须[将你的合作伙伴中心帐户与你的组织的 Azure Active Directory 租户相关联](associate-azure-ad-with-dev-center.md)的第一个。 
+> 若要将用户添加到你的帐户，必须[将你的合作伙伴中心帐户与你的组织的 Azure Active Directory 租户相关联](associate-azure-ad-with-partner-center.md)的第一个。 
 
 在添加用户时，你将需要通过向其分配一个[角色或自定义权限集](set-custom-permissions-for-account-users.md)来指定他们对你的合作伙伴中心帐户的访问。 
 
-请记住，所有合作伙伴中心用户 （包括组和 Azure AD 应用程序） 必须[与你的合作伙伴中心帐户关联的 Azure AD 租户](associate-azure-ad-with-dev-center.md)中都拥有一个活动帐户。 您可以在一个租户中一次性完成用户管理工作；但你必须使用你想要在其中添加或编辑用户的租户的管理员帐户登录。 在合作伙伴中心中创建新用户还将创建为该用户帐户在 Azure AD 租户的已登录，并对合作伙伴中心中的用户名称进行更改将在你的组织的 Azure AD 租户中进行相同的更改。
+请记住，所有合作伙伴中心用户 （包括组和 Azure AD 应用程序） 必须[与你的合作伙伴中心帐户关联的 Azure AD 租户](associate-azure-ad-with-partner-center.md)中都拥有一个活动帐户。 您可以在一个租户中一次性完成用户管理工作；但你必须使用你想要在其中添加或编辑用户的租户的管理员帐户登录。 在合作伙伴中心中创建新用户还将创建为该用户帐户在 Azure AD 租户的已登录，并对合作伙伴中心中的用户名称进行更改将在你的组织的 Azure AD 租户中进行相同的更改。
 
 > [!NOTE]
 > 如果你的组织使用[的目录集成](http://go.microsoft.com/fwlink/p/?LinkID=724033)以同步你的 Azure AD 的本地目录服务，你将无法在合作伙伴中心中创建新用户、 组或 Azure AD 应用程序。 你 （或你的本地目录中的其他管理员） 将需要先创建它们的本地目录中直接将能够查看和合作伙伴中心中添加它们。
@@ -92,7 +92,7 @@ ms.locfileid: "8461396"
 如果需要重新发送邀请，请在**用户**页上查找用户，然后选择他们的电子邮件地址（或者显示**邀请挂起**的文本）。 然后在页面底部单击**重新发送邀请**。
 
 > [!IMPORTANT]
-> 外部用户的邀请加入你的合作伙伴中心帐户可分配相同的角色和权限与其他用户。 但是，外部用户无法在 Visual Studio 中执行某些任务，例如将应用与 Microsoft Store 关联，或创建要上传到 Microsoft Store 的程序包。 如果用户需要执行这些任务，请选择**创建新用户**而不是**邀请外部用户**。 （如果你不希望将这些用户添加到现有 Azure AD 租户，可以[创建新租户](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)，然后在该租户中为他们创建新用户帐户。） 
+> 外部用户的邀请加入你的合作伙伴中心帐户可分配相同的角色和权限与其他用户。 但是，外部用户无法在 Visual Studio 中执行某些任务，例如将应用与 Microsoft Store 关联，或创建要上传到 Microsoft Store 的程序包。 如果用户需要执行这些任务，请选择**创建新用户**而不是**邀请外部用户**。 （如果你不希望将这些用户添加到现有 Azure AD 租户，可以[创建新租户](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)，然后在该租户中为他们创建新用户帐户。） 
 
 
 ### <a name="changing-a-users-directory-password"></a>更改用户的目录密码

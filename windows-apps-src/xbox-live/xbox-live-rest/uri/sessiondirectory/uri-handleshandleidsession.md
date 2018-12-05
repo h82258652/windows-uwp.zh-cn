@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e7b6990917437c22dd4d9282492e2a0eab37893b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8324681"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8705095"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 支持 PUT 并获得对会话的操作，使用句柄取消引用。 

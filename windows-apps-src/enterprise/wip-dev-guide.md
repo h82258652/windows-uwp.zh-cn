@@ -9,11 +9,11 @@ keywords: windows 10, uwp, wip, Windows 信息保护, 企业数据, 企业数据
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
 ms.openlocfilehash: 229d97c137344de26be0168be437825bea8e9700
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8477825"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685560"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 信息保护 (WIP) 开发人员指南
 
