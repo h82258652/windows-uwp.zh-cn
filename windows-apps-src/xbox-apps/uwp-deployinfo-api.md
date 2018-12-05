@@ -3,11 +3,11 @@ title: Device Portal 部署信息 API 参考
 description: 了解如何以编程方式访问部署信息 API。
 ms.localizationpriority: medium
 ms.openlocfilehash: c44089313b100880b419e9b55a26101e877496f3
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487249"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8712173"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>请求一个或多个已安装程序包的部署信息。
 

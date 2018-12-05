@@ -6,12 +6,12 @@ ms.date: 11/20/2018
 ms.topic: article
 keywords: windows 10, uwp, 税收, 应用税收, 税收要求, 商业扩张, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bf36e8e5e07c73e8c59088be167e9dfb584c60
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8480029"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709865"
 ---
 # <a name="tax-details-for-paid-apps"></a>付费应用的税收明细
 
@@ -19,7 +19,7 @@ ms.locfileid: "8480029"
 若要了解有关价格选择、付款含义和税收责任的税收注意事项，请在下面的表格中查看分配的国家/地区。
 
 > [!NOTE]
-> 商业扩张调整也许在一些特定的国家/地区中具有付款含义。 有关商业扩张调整的进一步详细信息及其适用的市场，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[受影响国家/地区](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)的列表。
+> 商业扩张调整也许在一些特定的国家/地区中具有付款含义。 有关商业扩张调整的进一步详细信息及其适用的市场，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[受影响国家/地区](define-market-selection.md#price-considerations-for-specific-markets)的列表。
 
 > [!IMPORTANT]
 > 税率可能随时改变。 Microsoft 不能保证下表中的税率始终准确。

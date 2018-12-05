@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 数据, 类型
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b0b529bbf397b76acb1eb589095a84f5c85745c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462633"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707691"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>标准 C++ 数据类型和 C++/WinRT
 

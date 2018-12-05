@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 异步, 线程, 线程
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467704"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8705705"
 ---
 # <a name="threading-and-async-programming"></a>线程处理和异步编程
 线程和异步编程可让你的应用在并行线程中以异步方式完成工作。

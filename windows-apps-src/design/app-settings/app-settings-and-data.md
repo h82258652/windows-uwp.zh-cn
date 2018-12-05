@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5790e9fcd05cb873958e53786e3282094ec0a3d4
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8477805"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709700"
 ---
 # <a name="app-settings-and-data"></a>应用设置和数据
 
