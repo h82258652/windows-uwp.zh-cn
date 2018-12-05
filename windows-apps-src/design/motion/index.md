@@ -13,11 +13,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8475523"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691034"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
 

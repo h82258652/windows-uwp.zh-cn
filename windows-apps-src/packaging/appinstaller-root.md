@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: ca72f9570c5ecef4a93b03f297ecb1d5064c5bef
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479701"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8690641"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>使用应用安装程序来安装 UWP 应用
 
