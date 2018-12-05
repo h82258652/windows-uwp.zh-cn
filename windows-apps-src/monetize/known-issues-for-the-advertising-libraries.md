@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8471376"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8703108"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
 

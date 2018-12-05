@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 网格, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479504"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8703231"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>创建和显示基本网格
 

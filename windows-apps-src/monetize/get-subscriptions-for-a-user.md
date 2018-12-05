@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 购买 API, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: b568531ce0807ebc5be0d27a78b94547e8473ae6
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8472434"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700762"
 ---
 # <a name="get-subscriptions-for-a-user"></a>获取用户订阅
 

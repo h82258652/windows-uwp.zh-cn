@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b8ef16d9fe789c2c386b27ffe221aa797a3b5ef
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8472424"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700125"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常见的认证失败
 
@@ -37,7 +37,7 @@ ms.locfileid: "8472424"
 
 -   针对[年龄分级](age-ratings.md)部分中的所有问题提供完整并且准确无误的答案。
 
--   除非你已经进行专门的工程处理和测试，确定了应用适用于辅助功能方案，否则不要[将应用声明为辅助应用](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines)。
+-   除非你已经进行专门的工程处理和测试，确定了应用适用于辅助功能方案，否则不要[将应用声明为辅助应用](product-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines)。
 
 -   如果你的应用使用来自 [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 命名空间的商用 API，请确保对应用进行测试并验证它是否可处理常见的异常情况。 此外，请确保你的应用使用 [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 类（而非 [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 类，该类仅用于测试）。 （请注意，如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间的成员，而非使用 Windows.ApplicationModel.Store 命名空间。）
 
