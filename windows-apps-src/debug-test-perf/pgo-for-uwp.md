@@ -2,11 +2,11 @@
 title: 在通用 Windows 平台 (UWP) 应用上运行按配置优化 (PGO)
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d7321f0ef49c12ac4506fb72fab937fde77f740
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8480322"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707060"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>在通用 Windows 平台应用上运行按配置优化 
  
