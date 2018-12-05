@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10，uwp，可选包，相关的集，包扩展，visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: e19f9673090501d59e260a698f9968a8f98f1cd5
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.openlocfilehash: f62d6c99acc75033403fac7a498308cea6f7d3f8
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699039"
+ms.locfileid: "8750243"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>可选包和相关集的创作
 可选包中包含可与主要包相集成的内容。 这些是可用于可下载内容 (DLC) 划分大型应用大小限制，或者用于随附的任何其他内容从原始应用单独。
@@ -34,7 +34,7 @@ ms.locfileid: "8699039"
 
 ## <a name="optional-packages"></a>可选包
 若要在 Visual Studio 中创建可选包，你将需要：
-1. 请确保你的应用的**目标平台最小版本**设置为： 10.0.15063.0。
+1. 请确保你的应用的**目标平台最小版本**设置为： 10.0.15063.0 或更高版本。
 2. 从**主要包**项目中，打开`Package.appxmanifest`文件。 导航至"Packaging"选项卡，然后记下你的**程序包系列名称**，这是"_"字符之前的所有内容。
 3. 从**可选包**项目中，右键单击`Package.appxmanifest`，然后选择**打开方式 > XML （文本） 编辑器**。
 4. 找到`<Dependencies>`文件中的元素。 添加以下代码：
@@ -62,6 +62,7 @@ ms.locfileid: "8699039"
 2. 在窗口中，搜索".txt"已安装的模板，并添加新的文本文件。
 > [!IMPORTANT]
 > 新的文本文件必须命名为： `Bundle.Mapping.txt`。
+
 3. 在`Bundle.Mapping.txt`文件将指定任何可选包项目或外部的程序包的相对路径。 示例`Bundle.Mapping.txt`文件应如下所示：
 
 ```syntax
@@ -75,7 +76,7 @@ ms.locfileid: "8699039"
 
 你的解决方案配置时这种方式，Visual Studio 将使用所有的相关集所需的元数据创建主程序包捆绑包清单。 
 
-请注意，如可选包`Bundle.Mapping.txt`相关集的文件仅适用于 Windows 10 版本 1703年。 此外，你的应用的目标平台最小版本应设置为 10.0.15063.0。
+请注意，如可选包`Bundle.Mapping.txt`相关集的文件仅适用于 Windows 10 版本 1703年或更高版本。 此外，你的应用的目标平台最小版本应设置为 10.0.15063.0 或更高版本。
 
 ## 已知问题<a name="known_issues"></a>
 
