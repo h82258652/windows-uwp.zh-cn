@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 145912f08075678c98dfb34ac491e123577c69e3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8701462"
+ms.locfileid: "8733969"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>关键帧动画以及缓动函数动画
 

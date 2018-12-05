@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8703527"
+ms.locfileid: "8729353"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>从网页中安装 UWP 应用
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709667"
+ms.locfileid: "8729685"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。

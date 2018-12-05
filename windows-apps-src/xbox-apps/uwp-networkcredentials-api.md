@@ -3,11 +3,11 @@ title: Device Portal 网络凭据 API 参考
 description: 了解如何添加、 删除或以编程方式更新网络凭据。
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699109"
+ms.locfileid: "8730968"
 ---
 # <a name="network-credentials-api-reference"></a>网络凭据的 API 参考
 你可以添加、 删除或更新在使用此 REST API 在开发工具包上的存储的网络凭据。

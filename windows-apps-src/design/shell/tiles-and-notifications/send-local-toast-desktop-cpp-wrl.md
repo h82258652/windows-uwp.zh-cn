@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, 桌面, toast 通知, 发送 toast, 发送本地 toast, 桌面桥, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 8508ed18e216270b901a5462d80238fae0763982
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687934"
+ms.locfileid: "8732538"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 

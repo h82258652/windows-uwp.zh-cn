@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8712620"
+ms.locfileid: "8730869"
 ---
 # <a name="controller-api-reference"></a>控制器 API 参考   
 通过使用此 REST API，可以获取附加物理控制器的数量并将其关闭。

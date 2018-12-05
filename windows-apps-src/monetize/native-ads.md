@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告控件, 本机广告
 ms.localizationpriority: medium
 ms.openlocfilehash: c978a07ceb30aaf9c2d0df3d38ff7ee9abbb5b2a
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696300"
+ms.locfileid: "8735697"
 ---
 # <a name="native-ads"></a>本机广告
 

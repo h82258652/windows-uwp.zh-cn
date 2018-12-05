@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 用户界面, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 09005eb12997126a9cad68c388beb0473b19fda3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687295"
+ms.locfileid: "8743790"
 ---
 # <a name="add-a-user-interface"></a>添加用户界面
 

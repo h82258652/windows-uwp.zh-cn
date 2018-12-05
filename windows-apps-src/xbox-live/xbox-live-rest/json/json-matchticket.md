@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc638dfe7735856295ed92f35e244213be7bc1e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8351934"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8750492"
 ---
 # <a name="matchticket-json"></a>MatchTicket (JSON)
 表示玩家用于查找其他玩家通过多人游戏会话目录 (MPSD) 的匹配票证的 JSON 对象。 

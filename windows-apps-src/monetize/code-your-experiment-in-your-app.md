@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B 测试, 实验
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d977d41cea873fc0f5e00bea8d0259586517d5
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.openlocfilehash: edd0fbcf841dc9d8fa43873da95dc08b276a5418
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687597"
+ms.locfileid: "8734470"
 ---
 # <a name="code-your-app-for-experimentation"></a>为实验编写应用代码
 
@@ -64,7 +64,7 @@ ms.locfileid: "8687597"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
 
-4. 检查 [IsStale](htthttps://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) 属性，确定是否需要通过服务器的远程变体分配刷新缓存的变体分配。 如果它确实需要刷新，请调用静态 [GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) 方法检查服务器的更新的变体分配，并刷新本地缓存的变体。
+4. 检查 [IsStale](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) 属性，确定是否需要通过服务器的远程变体分配刷新缓存的变体分配。 如果它确实需要刷新，请调用静态 [GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) 方法检查服务器的更新的变体分配，并刷新本地缓存的变体。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 

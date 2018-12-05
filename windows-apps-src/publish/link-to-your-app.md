@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 链接, windows 应用商店协议, 链接到应用
 ms.localizationpriority: medium
 ms.openlocfilehash: 59df207adf44cea04505e41a3323da1743170c46
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487279"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8731037"
 ---
 # <a name="link-to-your-app"></a>链接到你的应用
 

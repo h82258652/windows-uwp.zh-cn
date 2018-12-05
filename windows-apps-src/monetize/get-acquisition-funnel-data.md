@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API, 购置, 漏斗
 ms.localizationpriority: medium
 ms.openlocfilehash: d9ccbb081ef6f39ad795105ee2449de4d8442ab3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690131"
+ms.locfileid: "8734324"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>获取应用购置漏斗数据
 

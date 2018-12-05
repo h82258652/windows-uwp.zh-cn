@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8685781"
+ms.locfileid: "8730034"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
 若要继续网络通信，尽管它不在前台，你的应用可以使用后台任务，这两个选项之一。

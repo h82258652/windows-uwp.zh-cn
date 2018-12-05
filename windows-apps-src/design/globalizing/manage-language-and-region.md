@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
 ms.openlocfilehash: 1443730e343bc00563142e937d534282b9b34524
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8700003"
+ms.locfileid: "8744285"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解用户配置文件语言和应用清单语言
 Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**来配置首选显示语言的排序列表或一种首选显示语言。 某种语言可能会具有区域变体。 例如，可以选择西班牙使用的西班牙语、墨西哥使用的西班牙语、美国使用的西班牙语等。
