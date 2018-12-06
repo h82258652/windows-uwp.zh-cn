@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709984"
+ms.locfileid: "8743065"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>将辅助的磁贴固定到开始菜单
 

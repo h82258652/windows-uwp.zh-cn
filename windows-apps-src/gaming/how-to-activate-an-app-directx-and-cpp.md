@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8713407"
+ms.locfileid: "8741825"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>如何激活应用（DirectX 和 C++）
 
