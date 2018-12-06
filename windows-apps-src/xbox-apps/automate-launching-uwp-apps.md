@@ -3,11 +3,11 @@ title: 自动启动 Windows 10 通用 Windows 平台 (UWP) 应用
 description: 开发人员可以使用协议激活和启动激活来自动启动他们的 UWP 应用或游戏以进行自动化测试。
 ms.localizationpriority: medium
 ms.openlocfilehash: 123e2dfff909265673a711f480f5fe636590afa4
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473727"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8751831"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自动启动 Windows 10 UWP 应用
 
