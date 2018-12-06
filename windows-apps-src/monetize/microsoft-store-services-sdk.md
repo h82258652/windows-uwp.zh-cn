@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 8394a1a44173541e8982a660591e84b25b985205
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.openlocfilehash: c0c283f9edd33b8c39ebccd0a71019741a0d1448
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696134"
+ms.locfileid: "8755293"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 吸引客户
 
@@ -99,7 +99,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 5. 在搜索框中，键入 **Microsoft.Services.Store.Engagement** 并安装 Microsoft.Services.Store.Engagement 包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
-    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。
+    > 如果**输出**窗口报告指示指定路径过长的 *Install-Package* 错误，则可能需要配置 NuGet 以将软件包提取到路径短于默认位置的备用位置。 若要执行此操作，将 ```repositoryPath``` 值添加到计算机上的 nuget.config 文件，并将其分配到可从中提取 NuGet 包的短文件夹路径。 有关详细信息，请参阅 NuGet 文档中的[此文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，可尝试将 Visual Studio 项目移到路径较短的备用文件夹。 通过你的全局程序包路径过长时也可能导致该问题。 在此情况下，添加```globalPackagesFolder```到 nuget.config 文件的值。
 
 6. 关闭包含你的项目的 Visual Studio 解决方案，然后重新打开解决方案。
 

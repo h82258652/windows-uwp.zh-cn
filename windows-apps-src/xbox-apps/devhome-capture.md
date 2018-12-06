@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 348b937b7967cbde80c0bc25a502e727a04e8af0
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704291"
+ms.locfileid: "8752272"
 ---
 # <a name="media-capture-page-dev-home"></a>媒体捕获页面 （开发人员主页）
    

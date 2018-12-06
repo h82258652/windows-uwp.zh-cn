@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 游戏, 示例, directx, 图形
 ms.localizationpriority: medium
 ms.openlocfilehash: 60dd12c3e18b82118053d72d0983e13008dd8a0e
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8694066"
+ms.locfileid: "8755063"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>向 Marble Maze 添加可视内容示例
 
