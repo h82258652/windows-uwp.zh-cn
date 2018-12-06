@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, 游戏, 广播
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699119"
+ms.locfileid: "8755163"
 ---
 # <a name="manage-game-broadcasting"></a>管理游戏广播
 本文向你演示如何管理 UWP 应用的游戏广播。 用户必须使用内置在 Windows 中的系统 UI 启动广播，但从 Windows 10 版本 1709 开始，应用可以启动系统广播 UI，而且当广播开始和停止时可以收到通知。
