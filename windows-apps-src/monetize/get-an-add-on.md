@@ -1,21 +1,21 @@
 ---
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: 在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的应用的加载项相关的信息。
+description: 在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的应用的加载项相关的信息。
 title: 获取加载项
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8757746"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798930"
 ---
 # <a name="get-an-add-on"></a>获取加载项
 
-在 Microsoft Store 提交 API 中使用此方法，可检索注册到你的合作伙伴中心帐户的应用的加载项 （也称为应用内产品或 IAP） 相关的信息。
+在 Microsoft Store 提交 API 中使用此方法可检索注册到你的合作伙伴中心帐户的应用的加载项 （也称为应用内产品或 IAP） 相关的信息。
 
 ## <a name="prerequisites"></a>先决条件
 

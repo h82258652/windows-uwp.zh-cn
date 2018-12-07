@@ -6,11 +6,11 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732654"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797554"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Windows 开发人员文档中的新增 2018 年 9 月
 
@@ -22,7 +22,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="windows-machine-learning"></a>Windows 机器学习
 
-[Windows 机器学习文档](https://docs.microsoft.com/windows/ai/)现在驻留在其自己网站上，并针对最新的 Windows 预览体验成员 SDK 更新。 桌面版和 UWP 教程，在 c + + 和 C# 可帮助你开始将 WinML 添加到你的应用程序。
+[Windows 机器学习文档](https://docs.microsoft.com/windows/ai/)现在驻留在其自己网站上，并为最新的 Windows 预览体验成员 SDK 更新。 桌面版和 UWP 教程，在 c + + 和 C# 可帮助你开始将 WinML 添加到你的应用程序。
 
 已更新为最新的 Windows 预览体验成员 SDK [Windows.AI.MachineLearning API 参考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)。
 
@@ -34,25 +34,25 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 [Windows UI 库](https://aka.ms/winui-docs)是一组提供适用于 UWP 应用的控件和其他用户界面元素的 NuGet 程序包。 这些程序包也是与早期版本的 Windows 10 兼容，因此即使你的用户不具有最新的操作系统版本的工作原理你的应用。
 
-Windows UI 库的详细信息，请参阅[NuGet 程序包中包含的 API 命名空间此列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
+Windows UI 库的详细信息，请参阅[NuGet 包中包含的 API 命名空间此列表。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>开发人员指南
 
 ### <a name="how-blur-effects-work"></a>如何模糊效果工作
 
-我们的作家 esteemed Mike Jacobs，其中一个已开始一系列有关模糊，从设想摄影应用和游戏设计为在中等文章。 如果感兴趣了解有关此普遍的视觉效果的详细信息，请查看[影像和摄影第一篇文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)以及[抗锯齿在图形上的第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+我们作家 esteemed Mike Jacobs，其中一个已开始一系列文章中中等有关模糊，从到摄影应用和游戏设计的愿景。 如果你感兴趣了解有关此普遍的视觉效果的详细信息，请查看[影像和摄影上的第一个文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)和[抗锯齿在图形上的第二个。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
-![模糊操作](images/blur-example.jpg)
+![模糊操作中](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>投稿指南
 
-我们为我们的 UWP 文档更新[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
+我们为我们的 UWP 文档更新了[我们提供的指南](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 此新指南阐明的工作流和我们的文档的外部贡献的期望。
 
 ## <a name="videos"></a>视频
 
 ### <a name="one-dev-question"></a>一个开发人员的问题
 
-在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队文化和历史记录的问题。 下面是我们回答的最新问题 ！
+在开发人员的一个问题视频系列中，longtime Microsoft 开发人员介绍一系列有关 Windows 开发、 团队区域性和历史记录的问题。 下面是我们已回答的最新问题 ！
 
 兆辉 Gustafson:
 
@@ -60,8 +60,8 @@ Windows UI 库的详细信息，请参阅[NuGet 程序包中包含的 API 命名
 
 Chris Heilmann
 
-* [取决于 webhint 工具的 4 个视频](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [4 个视频 webhint 工具](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
 Larry Osterman:
 
-* [在 Windows 运行时中有 COM 的哪些部分？](https://youtu.be/_nsMjHqRn1w)
+* [在 Windows 运行时中的 COM 哪些部分？](https://youtu.be/_nsMjHqRn1w)

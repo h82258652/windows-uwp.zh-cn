@@ -8,15 +8,15 @@ keywords: windows 10，uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729383"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794974"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 打包的桌面应用程序
 
-可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将该包发布到 Microsoft 应用商店或旁加载它到一个或多个电脑上。
+可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以将发布到 Microsoft 应用商店或旁加载其打包到一个或多个电脑上。
 
 Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
 
@@ -81,7 +81,7 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**运行、 调试或测试桌面应用程序**
+**运行、 调试或测试你的桌面应用程序**
 
 请参阅[运行、 调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md)
 
@@ -95,4 +95,4 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
 
 **分发应用**
 
-请参阅[分配已打包的桌面应用程序](desktop-to-uwp-distribute.md)
+请参阅[分布的已打包的桌面应用程序](desktop-to-uwp-distribute.md)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738983"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793514"
 ---
 # <a name="input-for-games"></a>游戏输入
 
@@ -51,7 +51,7 @@ ms.locfileid: "8738983"
 
 原始游戏控制器是游戏控制器的通用表示形式，具有许多不同种类的常见游戏控制器上的输入。 这些输入作为未命名按钮、开关和轴的简单数组进行公开。 使用原始游戏控制器，可以使客户能够创建自定义输入映射（无论使用何种类型的控制器）。
 
-有关如何在 UWP 游戏中使用原始游戏控制器的详细信息，请参阅[原始游戏控制器](raw-game-controller.md)。
+有关如何在你的 UWP 游戏中使用原始游戏控制器的详细信息，请参阅[原始游戏控制器](raw-game-controller.md)。
 
 ### <a name="ui-navigation-controllers"></a>UI 导航控制器
 

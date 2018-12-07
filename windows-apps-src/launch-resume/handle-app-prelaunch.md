@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745764"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797266"
 ---
 # <a name="handle-app-prelaunch"></a>处理应用预启动
 
@@ -110,9 +110,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-注意`TryEnablePrelaunch()`函数，更高版本。 原因调用到`CoreApplication.EnablePrelaunch()`分解外传入此函数是因为 （只是在实时编译） JIT 时调用方法时，将尝试编译整个方法。 如果不支持的 Windows 10 版本上运行你的应用`CoreApplication.EnablePrelaunch()`，然后 JIT 将失败。 通过将计入应用确定该平台支持时，将仅调用一个方法调用`CoreApplication.EnablePrelaunch()`，我们避免此问题。
+注意`TryEnablePrelaunch()`函数，更高版本。 在调用的原因到`CoreApplication.EnablePrelaunch()`分解外传入此函数是因为 （只是在时间编译） JIT 调用一个方法时，将尝试编译整个方法。 如果不支持的 Windows 10 版本上运行你的应用`CoreApplication.EnablePrelaunch()`，然后 JIT 将失败。 通过将计入时应用确定该平台支持仅调用一个方法调用`CoreApplication.EnablePrelaunch()`，我们避免此问题。
 
-没有还在上面的示例代码，你可以取消你的应用需要先选择退出预启动 Windows 10 版本 1511年上运行时。 在版本 1511年中，所有 UWP 应用已自动都选择到预启动，这可能不适合你的应用。
+没有还在上面的示例代码，你可以取消注释如果你的应用需要选择退出预启动时在 Windows 10 版本 1511年上运行。 在版本 1511年中，所有 UWP 应用已自动都选择到预启动，这可能不适合你的应用。
 
 ## <a name="use-the-visibilitychanged-event"></a>使用 VisibilityChanged 事件
 
@@ -203,7 +203,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     -   一个性能含义的示例是，你可能会等到用户切换到应用时才检索当前天气信息（而非在应用预启动时加载该信息），并且需要在应用可见时重新加载该信息，以确保该信息是最新的。
 -   如果你的应用在启动时清除动态磁贴，请将此操作延迟到执行可见性更改事件时。
 -   应用的遥测应可以区分正常磁贴激活和预启动激活，以便更轻松地缩小发生问题的方案。
--   如果你拥有 Microsoft Visual Studio2015 Update 1 和 windows 10，版本 1511 中，你可以模拟应用预 Visual Studio2015 你的应用选择**调试** &gt; **其他调试目标** &gt; **调试 Windows 通用应用预启动**。
+-   如果你拥有 Microsoft Visual Studio2015 Update 1 和 windows 10，版本 1511 中，你可以模拟应用预 Visual Studio2015 你的应用通过选择**调试** &gt; **其他调试目标** &gt; **调试 Windows 通用应用预启动**。
 
 ## <a name="related-topics"></a>相关主题
 

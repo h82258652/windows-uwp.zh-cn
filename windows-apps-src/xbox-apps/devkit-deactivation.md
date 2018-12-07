@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8711885"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793308"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Xbox One 开发人员模式停用
 
@@ -72,9 +72,9 @@ ms.locfileid: "8711885"
 
 ## <a name="deactivate-your-console-using-partner-center"></a>停用主机使用合作伙伴中心
 
-如果你不能访问你的主机出于任何原因，你可以也停用开发人员模式在主机上使用合作伙伴中心。
+如果你无法访问你的主机出于任何原因，你可以也停用开发人员模式在主机上使用合作伙伴中心。
 
-1. 导航到合作伙伴中心中[管理 Xbox One 主机](https://partner.microsoft.com/xboxdevices)页面。 系统可能会提示你登录。
+1. 导航到合作伙伴中心中[管理 Xbox One 主机](https://partner.microsoft.com/xboxdevices)的页面。 系统可能会提示你登录。
 
 2. 通过匹配序列号、主机 ID 或设备 ID，在主机列表中找到要停用的主机。  
 

@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live，Xbox，游戏，uwp，windows 10，Xbox one、 特别推荐的统计数据和排行榜，排行榜，统计数据 2017，合作伙伴中心
 ms.openlocfilehash: e152ea8aa745536f0b7843f4f7d372a79dc3223f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8757699"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795769"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-in-partner-center"></a>在合作伙伴中心配置特别推荐的统计数据和排行榜 2017
 

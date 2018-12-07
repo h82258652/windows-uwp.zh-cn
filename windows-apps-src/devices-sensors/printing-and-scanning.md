@@ -4,14 +4,14 @@ title: 打印和扫描
 description: 本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，打印 3dprinting，3d 打印
+keywords: windows 10，uwp，打印，3dprinting，3d 打印
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cfc91ae6f74117c6c3414691137b334cfd0dc4f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704908"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795094"
 ---
 # <a name="printing-and-scanning"></a>打印和扫描
 

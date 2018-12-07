@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce39e87f3c5c9e11f3e9ddb1424d606356ee3c8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752031"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796385"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 运行时 8.x 到 UWP 案例研究： QuizGame 示例应用
 
@@ -20,7 +20,7 @@ ms.locfileid: "8752031"
 
 本主题介绍运行对等测验游戏 WinRT 8.1 示例应用移植到 Windows10Universal Windows 平台 (UWP) 应用的案例研究。
 
-通用 8.1 应用是生成同一应用的两个版本： Windows8.1，一个应用包和适用于 Windows Phone 8.1 的不同应用包。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows8.1 应用包可用作该主机测验游戏会话，而 Windows Phone 8.1 应用包到主机的客户端的角色。 测验游戏会话的两个部分通过对等网络进行通信。
+通用 8.1 应用是一种生成两个版本的应用在同一个应用： 一个应用包用于 Windows8.1，以及适用于 Windows Phone 8.1 的不同应用包。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows8.1 应用包可用作该主机对于测验游戏会话，而 Windows Phone 8.1 应用包到主机的客户端的角色。 测验游戏会话的两个部分通过对等网络进行通信。
 
 针对电脑和手机定制两个部分，每个部分都很有意义。 但是，如果你刚好可以在你选择的任何设备上运行主机和客户端不是更好吗？ 在此情况下研究中，我们将移植到 windows 10，它们将其中分别生成到单个应用包中的用户可以安装到种类广泛的设备上的两个应用。
 
@@ -90,11 +90,11 @@ QuizGame 具有以下部分。
 
 **QuizGame10 解决方案**
 
--   创建新的解决方案 (**新建项目** &gt; **其他项目类型** &gt; **Visual Studio 解决方案**) 并将其命名为 QuizGame10。
+-   创建新的解决方案 (**新项目** &gt; **其他项目类型** &gt; **Visual Studio 解决方案**) 并将其命名为 QuizGame10。
 
 **P2PHelper**
 
--   在解决方案中，创建一个新 windows 10 类库项目 (**新建项目** &gt; **Windows 通用** &gt; **类库 （Windows 通用）**) 并将其命名为 P2PHelper。
+-   在解决方案中，创建一个新 windows 10 类库项目 (**新项目** &gt; **Windows 通用** &gt; **类库 （Windows 通用）**) 并将其命名为 P2PHelper。
 -   从新项目中删除 Class1.cs。
 -   将 P2PSession.cs、P2PSessionClient.cs 和 P2PSessionHost.cs 复制到新项目的文件夹中，并在新项目中包括已复制的文件。
 -   该项目无需其他更改即可构建。
@@ -106,7 +106,7 @@ QuizGame 具有以下部分。
 
 **QuizGameHost**
 
--   创建新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白应用程序**) 并将其命名为 QuizGameHost。
+-   创建新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **空白应用程序 （Windows 通用）**) 并将其命名为 QuizGameHost。
 -   添加对 P2PHelper 的引用 (**添加引用** &gt; **项目** &gt; **解决方案** &gt; **P2PHelper**)。
 -   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**添加** &gt; **现有项目**，向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
 -   将 MainPage.xaml 从 \\QuizGame.Windows\\ 复制到 \\QuizGameHost\\ ，并将命名空间更改为 QuizGameHost。
@@ -133,7 +133,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 **QuizGameClient**
 
--   创建新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白应用程序**) 并将其命名为 QuizGameClient。
+-   创建新的 windows 10 应用项目 (**添加** &gt; **新项目** &gt; **Windows 通用** &gt; **空白应用程序 （Windows 通用）**) 并将其命名为 QuizGameClient。
 -   添加对 P2PHelper 的引用 (**添加引用** &gt; **项目** &gt; **解决方案** &gt; **P2PHelper**)。
 -   在“解决方案资源管理器”中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**添加** &gt; **现有项目**，向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”。
 -   将 MainPage.xaml 从 \\QuizGame.WindowsPhone\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
@@ -144,7 +144,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="adaptive-ui"></a>自适应 UI
 
-当应用在宽窗口 （只可能具有大屏幕的设备上） 运行 QuizGameHost windows 10 应用看起来很美观。 但是，当应用的窗口较窄时（会出现在小型设备上，但也可能出现在大型设备上），UI 会因过分拥挤而无法阅读。
+当应用在宽窗口 （这是仅在带有大屏幕的设备上） 中运行时为 QuizGameHost windows 10 应用看起来很美观。 但是，当应用的窗口较窄时（会出现在小型设备上，但也可能出现在大型设备上），UI 会因过分拥挤而无法阅读。
 
 我们可以使用自适应视觉状态管理器功能修复此问题，正如在我们在[案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 中所说明的。 首先，在视觉元素上设置属性，以便在默认情况下以较窄的状态设置 UI 布局。 所有这些更改都发生在 \\View\\HostView.xaml 中。
 
@@ -154,7 +154,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 -   在由注释 `<!-- Content -->` 指示的 **Grid** 上，设置 `x:Name="contentGrid"` 和 `Margin="-18,12,0,0"`。
 -   在紧挨在注释 `<!-- Options -->` 上方的 **TextBlock** 上，设置 `Margin="0,0,0,24"`。
 -   在默认 **TextBlock** 样式（文件中的第一个资源）中，将 **FontSize** 资源库的值更改为“15”。
--   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些是更加灵活大小比我们为 Windows8.1 应用使用的"30"。
+-   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些是更灵活大小比我们为 Windows8.1 应用使用的"30"。
 -   最后，将相应的视觉状态管理器标记添加到根 **Grid**。
 
 ```xml
@@ -195,4 +195,4 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="conclusion"></a>总结
 
-我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一部分是直接归功于 windows 10 开发人员平台与 Windows8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。
+我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一些是直接归功于 windows 10 开发人员平台与 Windows8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。

@@ -8,16 +8,16 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8ffcbbcc73db049498eb09ea60061f93cd7b09f2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751627"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795473"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
  
 
-设计和流畅的设计 UWP 应用的 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/downloads">我们的主下载页</a>。 
+设计和 Fluent 的设计 UWP 应用的 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/downloads">我们的主下载页</a>。 
 
 
 ## <a name="design-toolkits"></a>设计工具包
@@ -106,15 +106,15 @@ ms.locfileid: "8751627"
 
 ![Fluent XAML 主题编辑器图像](images/XamlThemeEditor_screenshot.png)
 **Fluent XAML 主题编辑器**<br>
-Fluent 的 XAML 主题编辑器是一种工具，用于展示 Fluent 设计系统的灵活性，以及通过生成 XAML 标记为我们在通用 Windows 平台应用中使用的 ResourceDictionary 框架来支持应用开发过程（uwp 一样）。
+Fluent 的 XAML 主题编辑器是一个工具，可帮助演示 Fluent 设计系统的灵活性，以及通过生成 XAML 标记为我们在通用 Windows 平台应用中使用的 ResourceDictionary 框架来支持应用开发过程（uwp 一样）。
 <a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">下载工具示例</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">请查看 GitHub 上的工具</a>
 
 ![VanArsdel 图像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及 ux 框架和合成的强大的基本功能，它会使广泛使用改进的密度和新的控件。 本示例演示如何构建的丰富管理和购买 （在本例中为灯） 的 IoT 设备工作效率体验。<br>
+生成 Van Arsdel 有限公司的端到端 UWP 示例应用展示 Microsoft Fluent 设计系统的一批。 在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 库</a>以及强大的 ux 框架和合成的基础功能，它会使广泛使用改进的密度和新的控件。 该示例显示了如何构建的丰富管理和购买 （在此情况下，灯） 的 IoT 设备工作效率体验。<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下载 VanArsdel 示例</a> <br><a href="https://github.com/microsoft/vanarsdel">请查看 GitHub 上的 VanArsdel 示例</a>
 
-![构建强制转换映像](images/buildcast.png)
+![生成强制转换映像](images/buildcast.png)
 **BuildCast**<br>
 BuildCast 是一个端到端示例，用于展示 Fluent 设计系统和 UWP。 它允许浏览、下载和播放特定视频播客，包括第 9 频道中的最热门内容和一些 Windows 技术爱好者内容的示例。 它还具有墨迹注释、书签和远程播放的功能。 此示例最初是在 2017 Build 大会的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">借助 Fluent 设计构建精彩应用</a>演讲期间展示的。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下载 BuildCast 示例</a> <br><a href="https://github.com/Microsoft/BuildCast">在 GitHub 上查看 BuildCast 示例</a>

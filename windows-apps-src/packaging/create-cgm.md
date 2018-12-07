@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 内容组映射, 流式处理安装, uwp 应用流式处理安装, 源内容组映射
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738152"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797634"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 
@@ -23,7 +23,7 @@ ms.locfileid: "8738152"
 
 我们将演练一个简单的方案，在此方案中利用 UWP 应用流式处理安装非常有用。 
 
-假设创建了一个 UWP 游戏，但最终应用的大小超过 100 GB。 这将花费很长时间才能从 Microsoft Store 下载，非常不方便。 如果你选择使用 UWP 应用流式处理安装，则可以指定下载应用文件的顺序。 告知应用商店先下载必要的文件，用户就能够尽快地使用应用，同时在后台下载其他不重要的文件。
+假设创建了一个 UWP 游戏，但最终应用的大小超过 100 GB。 这将需要很长时间来下载从 Microsoft Store，非常不方便。 如果你选择使用 UWP 应用流式处理安装，则可以指定下载应用文件的顺序。 告知应用商店先下载必要的文件，用户就能够尽快地使用应用，同时在后台下载其他不重要的文件。
 
 > [!NOTE]
 > 使用 UWP 应用流式处理安装很大程度上依赖于应用的文件结构。 建议尽快就 UWP 应用流式处理安装方面考虑应用的内容布局，使应用文件的分段更简单。

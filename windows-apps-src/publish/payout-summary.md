@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 付款摘要, 声明, 付款, 收益, 支出, 付款, 收入
 ms.localizationpriority: medium
 ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746220"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796395"
 ---
 # <a name="payout-summary"></a>付款摘要
 
@@ -27,7 +27,7 @@ ms.locfileid: "8746220"
 >
 > 月付（如果已达到任何适用的付款阈值）。 我们以后通常在每月的第 15 日支付指定月的任何到期付款。 请注意，付款通常需要 3 到 10 个工作日才会到达你的付款帐户。 有关详细信息，请参阅[付款阈值、方法和时间范围](payment-thresholds-methods-and-timeframes.md)。
 
-若要查看你的**付款摘要**，请单击显示在合作伙伴中心中的右上角附近的**付款**图标，然后选择**付款摘要**。
+若要查看你的**付款摘要**，单击在合作伙伴中心的右上角附近显示的**付款**图标，然后选择**付款摘要**。
 
 ## <a name="current-proceeds-and-payments"></a>当前收益和付款
 

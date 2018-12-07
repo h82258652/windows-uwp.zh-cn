@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748439"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793524"
 ---
 # <a name="app-management-and-services"></a>应用管理和服务
 
-你可以管理和查看与每一个应用的相关的详细信息 [合作伙伴中心中，并配置服务，例如通知、 A / B 测试和地图。
+你可以管理和查看与每一个中的应用相关的详细信息 [合作伙伴中心中，并配置服务，例如通知、 A / B 测试和地图。
 
-使用合作伙伴中心中的应用时，你将看到在左侧的导航菜单中的部分**服务**和**应用管理**。 可以展开这些部分，访问如下所述的功能。
+使用合作伙伴中心中的应用时，你将看到**服务**和**应用管理**的左侧的导航菜单中的部分。 可以展开这些部分，访问如下所述的功能。
 
 ## <a name="services"></a>服务
 
@@ -27,7 +27,7 @@ ms.locfileid: "8748439"
 
 如果你要发布游戏，你可以启用此页面上的[Xbox Live 创意者计划](http://xbox.com/developers/creators-program)。 这允许你启动配置和测试 Xbox Live 功能，并最终发布你的 Xbox Live 创意者计划游戏。
 
-有关详细信息，请参阅[开始使用 Xbox Live 创意者计划](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，并[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+有关详细信息，请参阅[Xbox Live 创意者计划入门](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)和[创建新的 Xbox Live 创意者计划主题作品并发布到测试环境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
 ## <a name="experimentation"></a>实验
 
@@ -37,21 +37,21 @@ ms.locfileid: "8748439"
 
 ## <a name="maps"></a>地图
 
-若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
+若要在面向 Windows 10 或 Windows 8.x 的应用中使用地图服务，请访问[必应地图开发人员中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 有关如何从必应地图开发人员中心中请求地图身份验证密钥并将其添加到你的应用的信息，请参阅有关详细信息的[请求地图验证密钥](../maps-and-location/authentication-key.md)。 
 
-仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求你的应用代码中包含的地图服务应用程序 ID 和令牌。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你的程序包并提交应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
+仅对以前发布的应用适用于 Windows Phone 8.1 及更早版本中使用**地图**页面。 若要在这些应用中使用地图服务，你将需要请求你的应用代码中包含的地图服务应用程序 ID 和令牌。 当你单击**获取令牌**时，我们将生成地图服务应用程序 ID (**ApplicationID**) 和地图服务的身份验证令牌 (**AuthenticationToken**) 为你的应用。 请务必将这些值添加到你的代码之前你的程序包并提交你的应用。 有关详细信息，请参阅[如何将地图控件添加某一页面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
 ## <a name="product-collections-and-purchases"></a>产品收集和购买
 
-若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 下面。 请注意，需要 16 个小时才能使这些更改生效。
+若要使用 Microsoft Store 收集 API 和 Microsoft Store 购买 API 访问应用和加载项的所有权信息，你需要输入关联 Azure AD 客户端 Id 此处。 请注意，需要 16 个小时才能使这些更改生效。
 
 有关详细信息，请参阅[管理来自服务的产品授权](../monetize/view-and-grant-products-from-a-service.md)。
 
 ## <a name="administrator-consent"></a>管理员同意
 
-f 产品与 Azure AD 集成，并且调用 Api 请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意的情况下，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品租户中的所有用户的名义执行其组织授权同意获取该应用。
+f 你的产品与 Azure AD 集成，并调用的 Api，请求[应用程序权限或委派的权限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要管理员同意，输入你的 Azure AD 客户端 ID。 这将允许管理员为你的产品执行租户中的所有用户的名义其组织授权同意获取该应用。
 
-有关详细信息，请参阅[同意整个租户的请求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+有关详细信息，请参阅[请求同意整个租户](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>应用管理
 
@@ -85,15 +85,15 @@ f 产品与 Azure AD 集成，并且调用 Api 请求[应用程序权限或委�
 **WNS/MPNS**部分提供了可帮助你创建并向你的应用客户发送通知的选项。 
 
 > [!TIP]
-> 对于 UWP 应用，我们建议使用合作伙伴中心中的**通知**功能。 将通知发送到所有应用的客户，你可以使用此功能或[客户类别](create-customer-segments.md)中所定义的你符合条件的 Windows 10 客户定向子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
+> 对于 UWP 应用，我们建议你在合作伙伴中心中使用**通知**功能。 将通知发送到所有应用的客户，你可以使用此功能或[客户类别](create-customer-segments.md)中所定义的你符合条件的 Windows 10 客户定向子集。 有关详细信息，请参阅[将通知发送到应用客户](send-push-notifications-to-your-apps-customers.md)。
 
-具体取决于你的应用包类型及其特定要求，你还可以使用以下选项之一： 
+具体取决于你的应用的包类型及其特定要求，你还可以使用以下选项之一： 
 
 -   可使用 **Windows 推送通知服务 (WNS)** 从自己的云服务中发送 Toast、磁贴、锁屏提醒和原始更新。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 -   你可以使用 **Microsoft Azure 移动应用**发送推送通知、验证和管理应用用户，以及将应用数据存储在云中。 有关详细信息，请参阅[“移动应用”文档](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推送通知服务 (MPNS)** 可以使用 Windows Phone 以前发布的.xap 程序包。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到提供的**WNS/MPNS**页面上的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推送通知服务 (MPNS)** 可以使用 Windows Phone 以前发布的.xap 程序包。 你可以在此处发送有限数量的未经验证的通知而不进行任何配置，不过为了避免节流限制，我们建议使用经过验证的通知。 如果你使用的 MPNS，你将需要证书上传到**WNS/MPNS**页面上提供的字段。 有关详细信息，请参阅[设置经过验证的 Web 服务以发送 Windows Phone 8 的推送通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

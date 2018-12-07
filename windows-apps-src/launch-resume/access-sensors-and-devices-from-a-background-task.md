@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746655"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794522"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 
@@ -29,7 +29,7 @@ ms.locfileid: "8746655"
 
 当你的应用不再对用户可见时，Windows 会暂停或终止应用以回收内存和 CPU 资源。 这允许其他应用在前台运行并减少电池消耗。 出现这种情况时，如未获得后台任务的帮助，正在进行的数据事件将丢失。 Windows 提供了后台任务触发器 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，让你的应用从后台安全地在设备和传感器上执行长时间运行的同步和监视操作，即使你的应用暂停也是如此。 有关应用生命周期的详细信息，请参阅[启动、恢复和后台任务](index.md)。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-**注意**在通用 Windows 应用在后台同步设备需要用户批准你的应用执行后台同步。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
+**注意**在通用 Windows 应用中，在后台同步设备需要用户批准你的应用执行后台同步。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
 
 ### <a name="limitation-critical-device-operations"></a>限制：关键设备操作
 

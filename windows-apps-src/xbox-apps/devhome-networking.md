@@ -1,23 +1,23 @@
 ---
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
 title: 网络页面 （开发人员主页）
-description: 提供了适用于 Xbox One 开发人员主页应用的网络页的信息。
+description: 提供有关网络应用的页面的开发人员主页适用于 Xbox One 的信息。
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740335"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797220"
 ---
 # <a name="networking-page-dev-home"></a>网络页面 （开发人员主页）
    
   
-开发人员主页**网络**页面模拟各种网络条件，为了进行故障排除。 它还允许你启动网络数据包跟踪。   
+开发人员主页**网络**页面模拟各种网络条件为了进行故障排除。 它还允许你启动网络数据包跟踪。   
  ![网络页面的开发人员主页](images/devhome_networking.png)   
   
 **网络**页面包含以下窗格：   
@@ -33,7 +33,7 @@ ms.locfileid: "8740335"
 ## <a name="network-simulation"></a>网络模拟  
    
   
-**网络模拟**窗格中运行网络模拟，可针对各种带宽配置文件进行测试。   
+**网络模拟**窗格运行网络模拟，可针对各种带宽配置文件进行测试。   
   
 <a id="ID4EOB"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8740335"
    
 
 ## <a name="see-also"></a>另请参阅  
- [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

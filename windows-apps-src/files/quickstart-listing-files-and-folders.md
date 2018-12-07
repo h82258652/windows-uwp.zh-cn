@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750821"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799527"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
@@ -31,7 +31,7 @@ ms.locfileid: "8750821"
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何编写异步应用 C + + /winrt 中，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何编写异步应用 C + + CX，请参阅[进行异步编程 C + + / CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何编写异步应用 C + + /winrt 中，请参阅[并发和异步操作通过 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何编写异步应用 C + + CX，请参阅[进行异步编程 C + + CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **对位置的访问权限**
 
@@ -42,7 +42,7 @@ ms.locfileid: "8750821"
 > [!NOTE]
 > 请记住声明 **picturesLibrary** 功能。
 
-在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法 （不在子文件夹中） 获得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件，并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法获取**PicturesLibrary**中的所有子文件夹并列出每个子文件夹的名称。
+在此示例中我们首先使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法 （不在子文件夹中） 获取[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根文件夹中的所有文件，并列出每个文件的名称。 接下来，我们使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法**PicturesLibrary**中获取所有子文件夹并列出每个子文件夹的名称。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -280,7 +280,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>查询某个位置中的文件并枚举匹配的文件
 
-在此示例中我们查询按月和此次分组[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)中的所有文件的示例会递归到子文件夹。 首先，我们调用 [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) 并将 [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) 值传递给该方法。 这向我们提供了一个 [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) 对象。
+在此示例中我们查询按月和这一次分组[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)中的所有文件的示例会递归到子文件夹。 首先，我们调用 [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) 并将 [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) 值传递给该方法。 这向我们提供了一个 [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) 对象。
 
 接下来，我们调用 [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync)，它将返回表示虚拟文件夹的 [**StorageFolder**](/uwp/api/windows.storage.storagefolder) 对象。 在此示例中，我们按月分组，因此每个虚拟文件夹都表示一组具有相同月份的文件。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f6348cc713d4fb93dfed9310eea9d3fd1025a2de
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755093"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797859"
 ---
 # <a name="enumerate-devices"></a>枚举设备
 
@@ -123,7 +123,7 @@ async void enumerateSnapshot(){
 
 将设备作为后台任务监视与上述的创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 非常类似。 实际上，你仍需要先创建一个常规的 **DeviceWatcher** 对象（如前一部分中所述）。 创建后，你就可以调用 [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) 而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 如果你调用 **GetBackgroundTrigger**，则必须指定哪些是你感兴趣的通知：添加、删除或更新。 如果不请求添加，你也无法请求更新或删除。 一旦你注册了触发器，**DeviceWatcher** 将立刻开始在后台运行。 从此刻开始，只要收到匹配条件的应用程序新通知，就会触发后台任务并向你提供自其上次触发应用程序以来最新的更改。
 
-**重要提示** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)触发你的应用程序的第一次将观察程序一时间**EnumerationCompleted**状态。 这意味着它将包含所有的初始结果。 不管将来何时触发你的应用程序，它将仅包含自上次触发就已出现的添加、更新和删除通知。 这与前台的 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象略有不同，因为初始结果并不是一个个地依次而来，而是在达到 **EnumerationCompleted** 后以捆绑的形式传送。
+**重要提示** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)触发你的应用程序的第一次将观察程序到达**EnumerationCompleted**状态时。 这意味着它将包含所有的初始结果。 不管将来何时触发你的应用程序，它将仅包含自上次触发就已出现的添加、更新和删除通知。 这与前台的 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 对象略有不同，因为初始结果并不是一个个地依次而来，而是在达到 **EnumerationCompleted** 后以捆绑的形式传送。
 
  
 

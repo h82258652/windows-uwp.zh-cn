@@ -1,24 +1,24 @@
 ---
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
 title: 设置页面 （开发人员主页）
-description: 提供有关开发人员主页应用的设置页面适用于 Xbox One 的信息。
+description: 提供信息适用于 Xbox One 开发人员主页应用的设置页。
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735029"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797654"
 ---
 # <a name="settings-page-dev-home"></a>设置页面 （开发人员主页）
    
   
-开发人员主页**设置**页面可访问开发控制台的各种设置。   
- ![开发人员主页的设置页](images/devhome_settings.png)   
+开发人员主页的**设置**页提供对各种设置用于开发主机访问。   
+ ![设置页面的开发人员主页](images/devhome_settings.png)   
   
 **设置**页面包含以下窗格：   
  
@@ -37,7 +37,7 @@ ms.locfileid: "8735029"
 ## <a name="console-settings"></a>控制台设置  
    
   
-**控制台设置**窗格中提供"一览"视图的控制台设置和信息。 这些工具可用于查看和编辑控制台的主机名、 沙盒和安全访问键设置。   
+**控制台设置**窗格中提供"一览"视图的控制台设置和信息。 你可以使用这些工具查看和编辑控制台的主机名、 沙盒和安全访问键设置。   
   
 <a id="ID4EOB"></a>
 
@@ -89,6 +89,6 @@ ms.locfileid: "8735029"
    
 
 ## <a name="see-also"></a>另请参阅  
- [主机 （开发人员主页） 上的开发人员主页](dev-home.md)
+ [在控制台 （开发人员主页） 上的开发人员主页](dev-home.md)
 
   

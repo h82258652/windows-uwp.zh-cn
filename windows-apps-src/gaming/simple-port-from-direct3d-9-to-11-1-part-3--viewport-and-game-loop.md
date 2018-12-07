@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 移植, 游戏循环, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732972"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793798"
 ---
 # <a name="port-the-game-loop"></a>移植游戏循环
 
@@ -131,7 +131,7 @@ while (true)
 
 DirectX UWP 模板包含可随时与游戏结合使用的强大 Direct3D 设备基础结构。 有关选取正确模板的指南，请参阅[从模板创建 DirectX 游戏项目](user-interface.md)。
 
-请访问下列做深入阐述的 Microsoft Store 游戏开发文章：
+请访问下列做深入阐述的 Microsoft 应用商店游戏开发文章：
 
 -   [操作实例：使用 DirectX 的简单 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)
 -   [游戏音频](working-with-audio-in-your-directx-game.md)

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e64feb8938be3e7338c87acdf8fd18fb13e525b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479268"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795773"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -43,7 +43,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*注意事项：* 使用电视安全颜色
 
-电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 阅读以了解如何使你良好地适应每个人的应用的[颜色](../design/devices/designing-for-tv.md#colors)！
+电视不会处理严重的颜色浓度，但计算机监视器会处理。 避免在应用中使用高浓度颜色，以免用户看到奇怪的带状效果或褪色的图像。 另外，请注意，电视间的差异是指在*你的*电视上显示良好的颜色可能不适用于用户。 读取[颜色](../design/devices/designing-for-tv.md#colors)以了解如何使你良好地适应每个人的应用 ！
 
 ### <a name="remember-you-can-disable-scaling"></a>*记住：* 可以禁用缩放
 
@@ -63,11 +63,11 @@ UWP 应用将自动缩放，以确保 UI 元素（如控件和字体）在所有
 - [UWP 开发 1：生成自适应 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
 - [浏览器外的 Web 应用：跨平台与跨设备](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>在 Xbox 上的应用开发
+## <a name="app-dev-on-xbox"></a>在 Xbox 上的应用开发人员
 
 **在 Xbox 上的应用开发人员**事件是很好的起点，适用于开发人员熟悉 Xbox 上生成应用。
 
-* [观看的录制的会话](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [观看的会话记录](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [阅读博客文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>另请参阅

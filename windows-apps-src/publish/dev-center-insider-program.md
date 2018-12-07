@@ -7,17 +7,17 @@ keywords: windows 10, uwp, 会员, 开发人员中心会员, 预览功能
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: ad70e986a35767c687d863a7db0754bd980be5db
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756906"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795170"
 ---
 # <a name="dev-center-insider-program"></a>开发人员中心会员计划
 
-作为[注册的开发人员](http://go.microsoft.com/fwlink/?LinkID=615100)，你可以帮助影响我们的功能可通过加入开发人员中心会员计划。 此计划允许你在向所有开发人员提供新功能前试用它们。 我们鼓励你通过向我们提供反馈有关这些功能在仪表板右上角中使用问号图标下的反馈链接。 我们将仔细阅读从开发人员中心会员收到的所有反馈，并给予优先考虑。
+作为[注册的开发人员](http://go.microsoft.com/fwlink/?LinkID=615100)，你可以帮助影响我们的功能可通过加入开发人员中心会员计划。 此计划允许你在向所有开发人员提供新功能前试用它们。 我们鼓励你通过向我们提供你的反馈有关这些功能在你的仪表板右上角中使用问号图标下的反馈链接。 我们将仔细阅读从开发人员中心会员收到的所有反馈，并给予优先考虑。
 
-若要加入该计划，选择**帐户设置**页面上。 你可以随时选择退出。
+若要加入该计划，在选择**帐户设置**页上。 你可以随时选择退出。
 
 > [!IMPORTANT]
 > 参加该计划应遵守[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的条款。 请在加入该计划前阅读它们，尤其是附录 I。 请记住，向开发人员中心会员计划中的人员独占提供的功能可能包含实验性和提前预发布的服务。 这意味着，这些功能通常尚未提供文档，并且你可能在使用它们时遇到意外的结果。

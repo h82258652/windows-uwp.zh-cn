@@ -1,25 +1,27 @@
 ---
 title: UWP 项目的身份验证
+author: aablackm
 description: 了解如何在通用 Windows 平台 (UWP) 游戏中登录 Xbox Live 用户。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
+ms.author: aablackm
 ms.date: 03/14/2018
 ms.topic: article
 keywords: xbox live, xbox, 游戏, uwp, windows 10, xbox one, 身份验证, 登录
 ms.localizationpriority: medium
-ms.openlocfilehash: d9872ab1fef773cb3f3dadfaea20a55dbe43f0de
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: adea0d0e964c994c74ccb14b55907a152858f35e
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8748853"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795377"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP 项目的身份验证
 
 为了在游戏中充分利用 Xbox Live 功能，用户需要创建一个 Xbox Live 个人资料，以在 Xbox Live 社区标识自己的身份。  Xbox Live 服务将会跟踪使用该 Xbox Live 个人资料的游戏相关活动，例如用户的玩家代号和玩家图片、用户的游戏好友、用户所玩的游戏、用户已解锁的成就、用户在特定游戏的排行榜中的排名等。
 
-如果想要在特定设备上访问特定游戏的 Xbox Live 服务，则用户需要先进行身份验证。  游戏可以通过调用 Xbox Live API 来启动身份验证过程。  在某些情况下，用户将会看到一个用于提供其他信息的界面，如输入要使用的 Microsoft 帐户的用户名和密码、提供游戏的授权同意、解决帐户问题、接受新的使用条款等。
+如果想要在特定设备上访问特定游戏的 Xbox Live 服务，则用户需要先进行身份验证。  游戏可以通过调用 Xbox Live Api 来启动身份验证过程。  在某些情况下，用户将会看到一个用于提供其他信息的界面，如输入要使用的 Microsoft 帐户的用户名和密码、提供游戏的授权同意、解决帐户问题、接受新的使用条款等。
 
-经过身份验证后，用户将与设备关联在一起，直到他们通过 Xbox 应用明确注销 Xbox Live。  在一台设备上一次只允许对一个玩家进行身份验证（适用于所有 Xbox Live 游戏）；如果要在设备上对新玩家进行身份验证，则经过身份验证的现有玩家必须先注销。
+身份验证后，用户将与该设备，直到他们明确注销 Xbox Live 从 Xbox 应用。  允许上进行身份验证的非控制台设备 （适用于所有 Xbox Live 游戏）; 一次只有一个玩家 若要进行身份验证的非主机设备上对新玩家，经过身份验证的现有玩家必须先注销。
 
 ## <a name="steps-to-sign-in"></a>登录步骤
 
@@ -34,7 +36,7 @@ ms.locfileid: "8748853"
 
 ### <a name="creating-an-xboxliveuser-object"></a>创建 XboxLiveUser 对象
 
-大部分 Xbox Live 活动与 Xbox Live 用户相关。  作为游戏开发人员，你需要先创建一个代表本地用户的 XboxLiveUser 对象。
+大多数 Xbox Live 活动与 Xbox Live 用户相关。  作为游戏开发人员，你需要先创建一个代表本地用户的 XboxLiveUser 对象。
 
 C++：
 
@@ -84,7 +86,7 @@ Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Win
 
 * **coreDispatcher**
 
-  线程调度程序用于在线程之间进行通信。 尽管静默登录 API 不会显示任何 UI，但 XSAPI 仍需要使用 UI 线程调度程序来获取与 appx 区域设置相关的信息。 你可以通过调用 UI 线程中的 Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher 来获取静态 UI 线程调度程序。 或者，如果你确定该 UI 将在 UI 线程上调用，则可以传递 nullptr（例如在 JS UWA 上）。
+  线程调度程序用于在线程之间进行通信。 尽管静默登录 API 不会显示任何 UI，但 XSAPI 仍需要 UI 线程调度程序用于获取与 appx 区域设置的信息。 你可以通过调用 UI 线程中的 Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher 来获取静态 UI 线程调度程序。 或者，如果你确定该 UI 将在 UI 线程上调用，则可以传递 nullptr（例如在 JS UWA 上）。
 
 
 静默登录尝试存在 3 种可能结果
@@ -353,11 +355,13 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
 
 ## <a name="determining-if-the-device-is-offline"></a>确定设备是否处于脱机状态
 
-脱机时，如果用户已登录一次，则登录 API 仍成功，并且将会返回最后登录的帐户。
+登录 Api 仍将成功时脱机如果用户已登录一次，并且将会返回最后登录的帐户。  
 
-如果可以脱机玩游戏（配套模式等），无论设备是处于联机还是脱机状态，均允许用户玩游戏并且将通过 WriteInGameEvent API 和连接存储 API 记录游戏进度，这两者在设备处于脱机状态时仍可正常工作。
+如果没有用户具有已登录之前，脱机登录不会实现。
 
-如果无法脱机玩游戏（多人游戏或基于服务器的游戏等），则游戏应调用 GetNetworkConnectivityLevel API 来确定设备是否处于脱机状态，并通知用户相关状态及可能的解决方案（例如，“你需要连接至 Internet 才能继续…”）
+如果可以脱机玩游戏 （配套模式等），可以允许用户玩游戏，并通过 WriteInGameEvent API 和连接存储 API 记录游戏进度，这两个其正常工作设备处于脱机状态时。
+
+如果无法脱机玩游戏 （多人游戏或基于服务器的游戏等），则游戏应调用 GetNetworkConnectivityLevel API 来查明在设备处于脱机状态，并通知用户相关状态及可能的解决方案 (例如，你需要连接到 Internet 才能继续...)。
 
 ## <a name="online-status-code-samples"></a>联机状态代码示例
 
